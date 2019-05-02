@@ -1,0 +1,73 @@
+- name: Documentación sobre el Kit de desarrollo de Azure Stack
+  href: index.yml
+- name: Información general
+  expanded: true
+  items:
+    - name: ¿Qué es el Kit de desarrollo de Azure Stack?
+      href: asdk-what-is.md
+    - name: Notas de la versión del Kit de desarrollo de Azure Stack
+      href: asdk-release-notes.md
+- name: Conceptos
+  items:
+    - name: Consideraciones de planeación de implementación
+      href: asdk-deploy-considerations.md
+    - name: Arquitectura de Development Kit
+      href: asdk-architecture.md
+    - name: Conceptos básicos de administración del Kit de desarrollo de Azure Stack
+      href: asdk-admin-basics.md
+    - name: Tareas de evaluación avanzadas
+      href: asdk-advanced-eval.md
+- name: Procedimientos
+  items:
+    - name: Configuración del ASDK
+      items:
+        - name: Descargue y extraiga el kit de desarrollo
+          href: asdk-download.md
+        - name: Preparación del equipo host del Kit de desarrollo de Azure Stack
+          href: asdk-prepare-host.md
+        - name: 'Implementación del Kit de desarrollo de Azure Stack: Instalador'
+          href: asdk-install.md
+        - name: 'Implementación del Kit de desarrollo de Azure Stack: PowerShell'
+          href: asdk-deploy-powershell.md
+        - name: Configuración posterior a la implementación
+          href: asdk-post-deploy.md
+        - name: Reimplementación del Kit de desarrollo de Azure Stack
+          href: asdk-redeploy.md
+    - name: Registro del Kit de desarrollo de Azure Stack
+      href: asdk-register.md
+    - name: Configuración de los valores de telemetría de Azure Stack
+      href: asdk-telemetry.md
+    - name: Inicio y detención del kit de desarrollo de Azure Stack
+      href: asdk-start-stop.md
+    - name: Validación de una copia de seguridad de Azure Stack
+      href: asdk-validate-backup.md
+    - name: Conectarse al ASDK
+      href: asdk-connect.md
+    - name: solución de problemas
+      href: asdk-troubleshooting.md
+- name: Referencia
+  items:
+    - name: PowerShell de Azure Stack
+      href: /powershell/azure/azure-stack/overview?view=azurestackps-1.2.10
+    - name: CLI de Azure Stack
+      href: /cli/azure/?view=azure-cli-2017-03-09-profile
+- name: Temas relacionados
+  items:
+    - name: Documentación del operador de Azure Stack
+      href: /azure-stack/operator
+    - name: Documentación de usuario de Azure Stack
+      href: /azure-stack/user/
+- name: Recursos
+  items:
+    - name: Mapa de ruta de Azure Stack
+      href: 'https://azure.microsoft.com/roadmap/?tag=azure-stack'
+    - name: Foro de MSDN de Azure Stack
+      href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStack'
+    - name: Comentarios sobre la documentación de Azure Stack
+      href: 'https://feedback.azure.com/forums/344565-azure-stack?category_id=160275'
+    - name: Información de precios
+      href: 'https://azure.microsoft.com/overview/azure-stack/how-to-buy/'
+    - name: Stack Overflow
+      href: 'https://stackoverflow.com/questions/tagged/azure-stack'
+    - name: Aprendizaje y certificación
+      href: /azure-stack/operator/azure-stack-train-and-cert

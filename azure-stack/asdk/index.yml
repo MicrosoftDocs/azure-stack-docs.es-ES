@@ -1,0 +1,40 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Documentación sobre el Kit de desarrollo de Azure Stack
+metadata:
+  document_id: null
+  title: 'Documentación sobre el Kit de desarrollo de Azure Stack: tutoriales y referencia de API'
+  description: Aprenda a implementar y usar el Kit de desarrollo de Azure Stack.
+  services: azure-stack
+  author: jeffgilb
+  manager: femila
+  ms.service: azure-stack
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 04/13/2018
+  ms.author: jeffgilb
+abstract:
+  description: 'El Kit de desarrollo de Azure Stack (ASDK) es una implementación de un único nodo de Azure Stack que puede descargar y usar de forma gratuita. El Kit de desarrollo de Azure Stack está pensado para proporcionar un entorno en el que puede evaluar Azure Stack y desarrollar aplicaciones actuales con API y herramientas coherentes con Azure en un entorno que no es de producción. <br/><br/>Si es un operador de Azure Stack que administra la infraestructura de sistemas integrados y ofrece servicios, consulte la <a href="/azure-stack/operator">documentación del operador</a>.<br/><br/>Si es un usuario de Azure Stack que usa los servicios o compila aplicaciones para Azure Stack, consulte la <a href="/azure-stack/user">documentación de usuario</a>.'
+sections:
+  - title: Tutoriales detallados
+    items:
+      - type: paragraph
+        text: Aprenda a agregar servicios a la implementación del Kit de desarrollo de Azure Stack.
+      - type: list
+        style: ordered
+        items:
+          - html: <a href="/azure-stack/asdk/asdk-install">Implementación del Kit de desarrollo de Azure Stack</a>
+          - html: <a href="/azure-stack/operator/azure-stack-create-and-publish-marketplace-item">Incorporación de un elemento de Marketplace de Azure Stack</a>
+          - html: <a href="/azure-stack/operator/azure-stack-tutorial-tenant-vm">Ofertas de servicios de IaaS</a>
+          - html: <a href="/azure-stack/user/azure-stack-subscribe-services">Suscripción a una oferta</a>
+          - html: <a href="/azure-stack/operator/create-add-on-plan">Actualización de ofertas y planes</a>
+          - html: <a href="/azure-stack/user/azure-stack-create-vm-template">Creación de una máquina virtual desde una plantilla</a>
+  - title: Referencia
+    items:
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: Línea de comandos
+            html: <p><a href="/powershell/azure/azure-stack/overview?view=azurestackps-1.2.10">Azure Stack PowerShell</a></p><p><a href="/cli/azure/?view=azure-cli-2017-03-09-profile">CLI de Azure Stack</a></p>

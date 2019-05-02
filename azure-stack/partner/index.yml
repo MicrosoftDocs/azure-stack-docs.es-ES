@@ -1,0 +1,41 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Documentación de asociado de Azure Stack
+metadata:
+  document_id: null
+  title: 'Documentación de asociado de Azure Stack: tutoriales y referencia de API'
+  description: Aprenda a validar el hardware para hospedar Azure Stack. La validación como servicio es un servicio nativo de Azure diseñado para su uso por los asociados de la solución que diseñan de forma conjunta ofertas de Azure Stack con Microsoft.
+  services: azure-stack
+  author: mattbriggs
+  manager: femila
+  ms.service: azure-stack
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 07/25/2018
+  ms.author: mabrigg
+  ms.reviewer: johnhas
+abstract:
+  description: Puede utilizar la validación como servicio para comprobar su hardware para su uso con Azure Stack. El servicio es un servicio nativo de Azure diseñado para su uso por los asociados de la solución que diseñan de forma conjunta ofertas de Azure Stack con Microsoft.
+sections:
+  - title: Inicio rápido en 5 minutos
+    items:
+      - type: paragraph
+        text: Aprenda a usar el portal de validación como servicio para programar pruebas en el hardware.
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: media/i_account-management.svg
+            text: Uso del portal de validación como servicio para programar la primera prueba
+            href: azure-stack-vaas-schedule-test-pass.md
+  - title: Tutoriales detallados
+    items:
+      - type: paragraph
+        text: Aprenda a validar el hardware de Azure Stack.
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="/azure-stack/partner/azure-stack-vaas-validate-solution-new">Validación de una nueva solución de Azure Stack</a>
+          - html: <a href="/azure-stack/partner/azure-stack-vaas-validate-oem-package">Validación de paquetes de OEM</a>
+          - html: <a href="/azure-stack/partner/azure-stack-vaas-validate-microsoft-updates">Validación de las actualizaciones de software de Microsoft</a>

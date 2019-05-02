@@ -1,0 +1,64 @@
+- name: Documentación de asociado de Azure Stack
+  href: index.yml
+- name: Información general
+  href: index.yml
+  expanded: true
+  items:
+    - name: Validación como servicio para Azure Stack
+      href: azure-stack-vaas-overview.md
+    - name: Notas de la versión
+      href: azure-stack-vaas-release-notes.md
+- name: Tutorial
+  items:
+    - name: Configuración de los recursos
+      href: azure-stack-vaas-set-up-resources.md
+    - name: Automatización de la validación de Azure Stack con PowerShell
+      href: azure-stack-vaas-automate-with-powershell.md
+- name: Guía de procedimientos
+  items:
+    - name: Implementación del agente local
+      href: azure-stack-vaas-local-agent.md
+    - name: Programación de la prueba
+      href: azure-stack-vaas-schedule-test-pass.md
+    - name: Creación de un paquete de OEM
+      href: azure-stack-vaas-create-oem-package.md
+    - name: Validación de paquetes de OEM
+      href: azure-stack-vaas-validate-oem-package.md
+    - name: Validación de una nueva solución de Azure Stack
+      href: azure-stack-vaas-validate-solution-new.md
+    - name: Validación de las actualizaciones de software de Microsoft
+      href: azure-stack-vaas-validate-microsoft-updates.md
+    - name: Pruebas de comprobación de características interactivas
+      href: azure-stack-vaas-interactive-feature-verification.md
+- name: Conceptos
+  items:
+    - name: Conceptos clave
+      href: azure-stack-vaas-key-concepts.md
+    - name: Procedimientos recomendados
+      href: azure-stack-vaas-best-practice.md
+    - name: Supervisión y administración de pruebas en el portal de VaaS
+      href: azure-stack-vaas-monitor-test.md
+    - name: Parámetros comunes de flujo de trabajo
+      href: azure-stack-vaas-parameters.md
+    - name: Solución de problemas de la validación como servicio
+      href: azure-stack-vaas-troubleshoot.md
+- name: Temas relacionados
+  items:
+    - name: Documentación de Azure Stack
+      href: /azure-stack/operator
+    - name: Azure Active Directory
+      href: /azure/active-directory/
+- name: Recursos
+  items:
+    - name: Mapa de ruta de Azure Stack
+      href: 'https://azure.microsoft.com/roadmap/?tag=azure-stack'
+    - name: Foro de MSDN de Azure Stack
+      href: 'https://social.msdn.microsoft.com/Forums/home?forum=AzureStack'
+    - name: Comentarios sobre la documentación de Azure Stack
+      href: 'https://feedback.azure.com/forums/344565-azure-stack?category_id=160275'
+    - name: Información de precios
+      href: 'https://azure.microsoft.com/overview/azure-stack/how-to-buy/'
+    - name: Stack Overflow
+      href: 'https://stackoverflow.com/questions/tagged/azure-stack'
+    - name: Aprendizaje y certificación
+      href: /azure-stack/operator/azure-stack-train-and-cert
