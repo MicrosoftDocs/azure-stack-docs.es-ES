@@ -3,24 +3,24 @@ title: Eliminación del proveedor de recursos de MySQL en Azure Stack | Microsof
 description: Obtenga información sobre cómo puede quitar el proveedor de recursos de MySQL de la implementación de Azure Stack.
 services: azure-stack
 documentationCenter: ''
-author: WenJason
-manager: digimobile
+author: jeffgilb
+manager: femila
 editor: ''
 ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-origin.date: 11/20/2018
-ms.date: 12/31/2018
-ms.author: v-jay
+ms.date: 05/06/2019
+ms.author: jeffgilb
 ms.reviewer: quying
-ms.openlocfilehash: 41b89e5239d72954de7202b87aaf02a2bdf90fd1
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.lastreviewed: 11/20/2018
+ms.openlocfilehash: 69624d94be7742256b1adf6ed22100a6d3b826d8
+ms.sourcegitcommit: ccd86bd0862c45de1f6a4993f783ea2e186c187a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64307077"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65172323"
 ---
 # <a name="remove-the-mysql-resource-provider"></a>Eliminación del proveedor de recursos de MySQL
 
@@ -60,5 +60,3 @@ El operador de Azure Stack es responsable de las siguientes tareas de limpieza:
 ## <a name="next-steps"></a>Pasos siguientes
 
 [Oferta de App Services como PaaS](azure-stack-app-service-overview.md)
-
-<!-- Update_Description: wording update -->

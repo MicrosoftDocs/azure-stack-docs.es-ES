@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/19/2019
+ms.date: 05/07/2019
 ms.author: sethm
-ms.lastreviewed: 01/19/2019
-ms.openlocfilehash: eb3649beb2acc56663988d2710c633d7032262ba
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.lastreviewed: 05/07/2019
+ms.openlocfilehash: ab5b0b5ac0e67a2a625285bd37a04b084fa8da0f
+ms.sourcegitcommit: 39ba6d18781aed98b29ac5e08aac2d75c37bf18c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985930"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65386599"
 ---
 # <a name="configure-ipsecike-policy-for-site-to-site-vpn-connections"></a>Configuración de la directiva IPsec/IKE para conexiones VPN de sitio a sitio
 
