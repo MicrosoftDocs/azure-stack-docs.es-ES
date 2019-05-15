@@ -3,26 +3,25 @@ title: Arquitectura de identidad para Azure Stack | Microsoft Docs
 description: Conozca la arquitectura de identidad que se puede usar con Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: PatAltimore
+manager: femila
 editor: ''
 ms.assetid: ''
 ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: get-started-article
-origin.date: 02/11/2019
-ms.date: 03/04/2019
-ms.author: v-jay
+ms.topic: conceptual
+ms.date: 05/09/2019
+ms.author: patricka
 ms.reviewer: fiseraci
-ms.lastreviewed: 02/11/2019
-ms.openlocfilehash: 9ae8a55d04c34ec65d964927fd25c3bc01adeae4
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.lastreviewed: 05/09/2019
+ms.openlocfilehash: e09451c1bf49a2de075388f555cb7b80e70db63f
+ms.sourcegitcommit: 426380a3a27954cd609ba52d1066d9d69f5267fe
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64310029"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65532315"
 ---
 # <a name="identity-architecture-for-azure-stack"></a>Arquitectura de identidad para Azure Stack
 
@@ -42,7 +41,7 @@ El proveedor de identidad que elija puede limitar las opciones, incluida la comp
 |Compatibilidad con herramientas como la CLI de Azure, Visual Studio y PowerShell  |Sí |Sí|
 |Creación de entidades de servicio mediante Azure Portal     |Sí |Sin |
 |Creación de entidades de servicio con certificados      |Sí |Sí|
-|Creación de entidades de servicio con secretos (claves)    |Sí |Sin |
+|Creación de entidades de servicio con secretos (claves)    |Sí |Sí|
 |Las aplicaciones pueden usar el servicio Graph           |Sí |Sin |
 |Las aplicaciones pueden utilizar el proveedor de identidades para iniciar sesión |Sí |Sí. Requiere que las aplicaciones se federen con instancias de AD FS locales. |
 
@@ -101,4 +100,3 @@ Esta topología presenta las siguientes características:
 ## <a name="next-steps"></a>Pasos siguientes
 - [Introducción a las identidades](azure-stack-identity-overview.md)   
 - [Integración del centro de datos: identidad](azure-stack-integrate-identity.md)
-<!-- Update_Description: link update -->

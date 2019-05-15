@@ -3,7 +3,7 @@ title: Actualización del proveedor de recursos de MySQL de Azure Stack | Micros
 description: Aprenda cómo actualizar el proveedor de recursos de MySQL de Azure Stack.
 services: azure-stack
 documentationCenter: ''
-author: jeffgilb
+author: mattbriggs
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -12,15 +12,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/29/2019
-ms.author: jeffgilb
+ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 976c05449704b0ecbc48ee5bd4799f300fcac0aa
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: a81b1f0dae233adc29437bc88a82e4560fc36f10
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64308259"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65617905"
 ---
 # <a name="update-the-mysql-resource-provider"></a>Actualización del proveedor de recursos de MySQL 
 

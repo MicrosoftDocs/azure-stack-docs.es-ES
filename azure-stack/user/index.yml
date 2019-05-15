@@ -6,14 +6,14 @@ metadata:
   title: 'Documentación sobre Azure Stack: tutoriales y referencia de API'
   description: Aprenda a usar los servicios y a compilar aplicaciones de Azure Stack.
   services: azure-stack
-  author: jeffgilb
+  author: mattbriggs
   manager: femila
   ms.service: azure-stack
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
   ms.date: 10/16/2018
-  ms.author: jeffgilb
+  ms.author: mabrigg
 abstract:
   description: 'Azure Stack es una plataforma en la nube híbrida que le permite usar servicios de Azure desde el centro de datos del proveedor de servicios o de su empresa. Como desarrollador, puede compilar aplicaciones en Azure Stack. Luego, puede implementarlas en Azure Stack o en Azure, o bien puede compilar aplicaciones realmente híbridas que aprovechen la conectividad entre una nube de Azure Stack y Azure. Aprenda a crear recursos e implementar aplicaciones con nuestros inicios rápidos y tutoriales.<br/><br/>Si es un operador de Azure Stack que administra la infraestructura y ofrece servicios, consulte la <a href="/azure-stack/operator">documentación del operador</a>.<br/><br/>Si es un operador de Azure Stack interesado en el Kit de desarrollo de Azure Stack (ASDK), una implementación de un único nodo de Azure Stack que puede descargar y usar gratuitamente, consulte la <a href="/azure-stack/asdk">documentación sobre ASDK</a>.'
 sections:

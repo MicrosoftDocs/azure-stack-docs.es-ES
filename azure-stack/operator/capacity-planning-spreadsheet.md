@@ -3,7 +3,7 @@ title: Hoja de cálculo de planeamiento de capacidad de Azure Stack | Microsoft 
 description: Obtenga más información sobre la hoja de cálculo de planeamiento de la capacidad de Azure Stack de las implementaciones de Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: jeffgilb
+author: mattbriggs
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/06/2019
-ms.author: jeffgilb
+ms.author: mabrigg
 ms.reviewer: prchint
 ms.lastreviewed: 12/11/2018
-ms.openlocfilehash: da0740cd416af26f3e9c284c2ff405d6e06ffcb7
-ms.sourcegitcommit: ccd86bd0862c45de1f6a4993f783ea2e186c187a
+ms.openlocfilehash: 1756499b7736c309b07856bf5edfba45f3c0e11a
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65172634"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618872"
 ---
 # <a name="azure-stack-capacity-planner"></a>Herramienta de planeamiento de capacidad de Azure Stack
 La Herramienta de planeamiento de capacidad de Azure Stack es una hoja de cálculo que se usa para planear la capacidad de recursos de Azure Stack. La herramienta de planeamiento de capacidad le permite diseñar varias asignaciones de recursos informáticos y ver cómo estos se ajustarían a través de una selección de ofertas de hardware. A continuación se proporcionan instrucciones detalladas para el uso de Azure Stack Calculator.

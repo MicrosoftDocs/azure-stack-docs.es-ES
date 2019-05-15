@@ -3,7 +3,7 @@ title: Decisiones sobres las implementaciones conectadas de Azure en sistemas in
 description: Determine qué decisiones de planeamiento hay que tomar en las implementaciones de Azure Stack multinodo con conexión a Azure.
 services: azure-stack
 documentationcenter: ''
-author: jeffgilb
+author: mattbriggs
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,15 +13,15 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/12/2019
-ms.author: jeffgilb
+ms.author: mabrigg
 ms.reviewer: wfayed
 ms.lastreviewed: 11/05/2018
-ms.openlocfilehash: a39ab2eb6d08f478ed68aed2bc753e5225185fe3
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: e783d9ea577c76505f59e73230b2a00c90f867cf
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64306327"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618770"
 ---
 # <a name="azure-connected-deployment-planning-decisions-for-azure-stack-integrated-systems"></a>Decisiones del planeamiento de una implementación conectada de Azure en sistemas integrados de Azure Stack
 Una vez que haya decidido [cómo va a integrar Azure Stack en el entorno de nube híbrida](azure-stack-connection-models.md), puede concluir sus decisiones de implementación de Azure Stack.

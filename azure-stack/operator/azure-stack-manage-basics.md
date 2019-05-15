@@ -3,8 +3,8 @@ title: Aspectos básicos de administración de Azure Stack | Microsoft Docs
 description: Aprenda lo necesario para administrar Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: mattbriggs
+manager: femila
 editor: ''
 ms.assetid: 856738a7-1510-442a-88a8-d316c67c757c
 ms.service: azure-stack
@@ -12,16 +12,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-origin.date: 02/12/2019
-ms.date: 04/29/2019
-ms.author: v-jay
+ms.date: 02/12/2019
+ms.author: mabrigg
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: 8449770d7fa3d42afa8aad790878b29c95be773e
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 83c4295c5f14cb89122aca096b7e90cfd44d8d4a
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64307341"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618597"
 ---
 # <a name="azure-stack-administration-basics"></a>Aspectos básicos de administración de Azure Stack
 Hay varias cosas que debe saber si no está familiarizado con la administración de Azure Stack. En este artículo se proporciona información general acerca del rol de operador de Azure Stack, y de lo que debe decir a los usuarios para que aumenten su productividad rápidamente.

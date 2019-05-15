@@ -3,25 +3,24 @@ title: Uso de las bases de datos proporcionadas por el RP del adaptador de MySQL
 description: Cómo crear y administrar bases de datos MySQL aprovisionadas con el proveedor de recursos del adaptador de MySQL
 services: azure-stack
 documentationCenter: ''
-author: WenJason
-manager: digimobile
+author: mattbriggs
+manager: femila
 editor: ''
 ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-origin.date: 02/12/2019
-ms.date: 03/04/2019
-ms.author: v-jay
+ms.date: 02/12/2019
+ms.author: mabrigg
 ms.reviewer: quying
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: 6eaba728b794c0102ec4e28791b218efa28b51b5
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 4cf406461c7a231617d40c50d2b5491bb4427b63
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64309393"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618628"
 ---
 # <a name="create-mysql-databases"></a>Creación de bases de datos MySQL
 Un usuario de Azure Stack, suscrito a una oferta que incluye el servicio de base de datos de MySQL, puede crear y administrar el autoservicio de bases de datos de MySQL en el portal de usuarios.
@@ -68,5 +67,3 @@ Puede modificar la contraseña cambiándola la primera vez en la instancia del s
 ## <a name="next-steps"></a>Pasos siguientes
 
 [Actualización del proveedor de recursos de MySQL](azure-stack-mysql-resource-provider-update.md)
-
-<!-- Update_Description: wording update -->

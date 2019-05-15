@@ -3,7 +3,7 @@ title: Aplicaciones web y API disponibles para los usuarios de Azure Stack | Mic
 description: Tutorial para instalar el proveedor de recursos de App Service y crear ofertas que permitan a los usuarios de Azure Stack crear aplicaciones web y de API.
 services: azure-stack
 documentationcenter: ''
-author: jeffgilb
+author: mattbriggs
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/11/2019
-ms.author: jeffgilb
+ms.author: mabrigg
 ms.reviewer: anwestg
 ms.custom: mvc
 ms.lastreviewed: 11/05/2018
-ms.openlocfilehash: aa897867c4f9735369cc0dec1c4d8527273e2f7f
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 9954e351ecd584925d264d0c8c5e8fb8e2507192
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63447409"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618656"
 ---
 # <a name="tutorial-make-web-and-api-apps-available-to-your-azure-stack-users"></a>Tutorial: Aplicaciones web y aplicaciones de API disponibles para los usuarios de Azure Stack
 

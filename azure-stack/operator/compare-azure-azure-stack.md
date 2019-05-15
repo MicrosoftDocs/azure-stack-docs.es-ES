@@ -17,12 +17,12 @@ ms.author: mabrigg
 ms.reviewer: unknown
 ms.custom: ''
 ms.lastreviewed: 03/29/2019
-ms.openlocfilehash: d604175cede436dc7d07020271d61c19f2fd542a
-ms.sourcegitcommit: 61de365c93eb7435891867f9808ec37486882d7f
+ms.openlocfilehash: 768d4bd9ad2d70878e9794b1ba315559e76884df
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65097143"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618758"
 ---
 # <a name="differences-between-global-azure-azure-stack-and-azure-stack-hci"></a>Diferencias entre Azure global, Azure Stack y Azure Stack HCI
 

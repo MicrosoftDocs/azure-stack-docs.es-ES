@@ -3,7 +3,7 @@ title: Oferta de bases de datos MySQL de alta disponibilidad en Azure Stack | Mi
 description: Obtenga información sobre cómo crear un equipo host de proveedor de recursos de MySQL Server y bases de datos de alta disponibilidad MySQL con Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: jeffgilb
+author: mattbriggs
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/12/2019
-ms.author: jeffgilb
+ms.author: mabrigg
 ms.reviewer: quying
 ms.lastreviewed: 10/23/2018
-ms.openlocfilehash: f620b8f2d1abe4d656e8f7cf8c34a5798d517e2a
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 1b1ebd27f87030b34b132eb31c4b4ae83f13a3b0
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63447931"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618232"
 ---
 # <a name="tutorial-offer-highly-available-mysql-databases"></a>Tutorial: Oferta de bases de datos MySQL de alta disponibilidad
 

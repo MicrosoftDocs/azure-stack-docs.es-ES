@@ -3,8 +3,8 @@ title: Bases de datos SQL disponibles para los usuarios de Azure Stack | Microso
 description: Tutorial para instalar al proveedor de recursos de SQL Server y crear ofertas que permiten a los usuarios de Azure Stack crear bases de datos SQL.
 services: azure-stack
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: mattbriggs
+manager: femila
 editor: ''
 ms.assetid: ''
 ms.service: azure-stack
@@ -12,18 +12,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-origin.date: 02/12/2019
-ms.date: 04/29/2019
-ms.author: v-jay
+ms.date: 02/12/2019
+ms.author: mabrigg
 ms.reviewer: quying
 ms.lastreviewed: 11/05/2018
 ms.custom: mvc
-ms.openlocfilehash: 26ab5b0528f54a351c7168269cb1cfb4b1e13f9e
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: e65bebf5b6126455ef1294fabeb1450f91689d5d
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63447391"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618369"
 ---
 # <a name="tutorial-make-sql-databases-available-to-your-azure-stack-users"></a>Tutorial: poner bases de datos SQL a disposición de los usuarios de Azure Stack
 
@@ -89,5 +88,3 @@ Prosiga con el siguiente tutorial para aprender a:
 
 > [!div class="nextstepaction"]
 > [Aplicaciones web, móviles y de API disponibles para los usuarios]( azure-stack-tutorial-app-service.md)
-
-<!-- Update_Description: wording update -->

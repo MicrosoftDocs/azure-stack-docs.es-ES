@@ -3,8 +3,8 @@ title: Planeamiento del firewall de Azure Stack para sistemas integrados de Azur
 description: Describe las consideraciones del firewall de Azure Stack para implementaciones de varios nodos con conexión a Azure en Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: mattbriggs
+manager: femila
 editor: ''
 ms.assetid: ''
 ms.service: azure-stack
@@ -12,17 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-origin.date: 02/12/2019
-ms.date: 03/04/2019
-ms.author: v-jay
+ms.date: 02/12/2019
+ms.author: mabrigg
 ms.reviewer: wfayed
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: 023201d221ee5d7ec884c6a760407e8da8340d3f
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: a98f89866fd7679a0d6ce7c6ecb40d7e8e8b51e7
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64309993"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618688"
 ---
 # <a name="azure-stack-firewall-integration"></a>Integración del firewall de Azure Stack
 Se recomienda que use un dispositivo de firewall para ayudar a proteger Azure Stack. Los firewalls pueden ayudarle a defenderse contra ataques por denegación de servicio distribuido (DDOS), a detectar intrusos y a inspeccionar el contenido que reciba. Sin embargo, también pueden convertirse en un cuello de botella en el rendimiento de los servicios de Azure Storage como blobs, tablas y colas.

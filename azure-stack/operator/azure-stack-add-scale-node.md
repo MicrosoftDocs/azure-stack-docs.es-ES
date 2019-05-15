@@ -3,7 +3,7 @@ title: Incorporación de nodos de escalado en Azure Stack | Microsoft Docs
 description: Agregue nodos a unidades de escalado en Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: jeffgilb
+author: mattbriggs
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,15 +13,15 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/12/2019
-ms.author: jeffgilb
+ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 09/17/2018
-ms.openlocfilehash: 17da540bd6077b8e045f125fd3cf13dc0e043000
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 7a2ba164c5d35bc1f5b52d3ff68c18b7b3e47dcd
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64307929"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618938"
 ---
 # <a name="add-additional-scale-unit-nodes-in-azure-stack"></a>Incorporación de nodos de unidad de escalado adicionales en Azure Stack
 

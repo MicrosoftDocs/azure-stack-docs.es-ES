@@ -3,7 +3,7 @@ title: Actualización y administración de VM con Azure Stack | Microsoft Docs
 description: Obtenga información sobre cómo usar las soluciones Azure Monitor para VM, Update Management, Change Tracking e Inventario en Azure Automation para administrar VM Windows y Linux que se implementan en Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: jeffgilb
+author: mattbriggs
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,15 +13,15 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
-ms.author: jeffgilb
+ms.author: mabrigg
 ms.reviewer: rtiberiu
 ms.lastreviewed: 03/20/2019
-ms.openlocfilehash: cb8258c0f837d0e70ba87a26246f055b0efe5c00
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 6726e8ff261565691e2e9e3c01827e8e056db139
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64311517"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618817"
 ---
 # <a name="azure-stack-vm-update-and-management"></a>Administración y actualización de VM en Azure Stack
 Puede usar las siguientes características de solución de Azure Automation para administrar máquinas virtuales de Windows y Linux que se implementan mediante Azure Stack:

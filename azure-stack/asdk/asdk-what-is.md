@@ -3,7 +3,7 @@ title: Introducción al Kit de desarrollo de Azure Stack (ASDK) | Microsoft Docs
 description: Describe qué es ASDK y los casos de uso comunes para evaluar Microsoft Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: jeffgilb
+author: mattbriggs
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: overview
 ms.custom: mvc
 ms.date: 02/08/2019
-ms.author: jeffgilb
+ms.author: mabrigg
 ms.reviewer: misainat
 ms.lastreviewed: 02/08/2019
-ms.openlocfilehash: edde001bece869e1398ee13fbcc7b3fa32616cfa
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 08f5d51eb4ded47d1e52ec53d4c75903d13c8815
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64312744"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65617680"
 ---
 # <a name="what-is-the-azure-stack-development-kit"></a>¿Qué es el Kit de desarrollo de Azure Stack?
 El tamaño de los [sistemas integrados de Microsoft Azure Stack](../operator/azure-stack-overview.md) va de los 4 a los 16 nodos y tiene un soporte técnico conjunto por parte de un asociado de hardware y Microsoft. Use los sistemas integrados de Azure Stack para permitir nuevos escenarios para las cargas de trabajo de producción. Si es un operador de Azure Stack que administra la infraestructura de sistemas integrados y ofrece servicios, consulte la [documentación del operador](/azure-stack/operator).

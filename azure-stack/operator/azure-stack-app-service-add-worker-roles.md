@@ -3,7 +3,7 @@ title: 'Escalado horizontal de roles de trabajo de App Services: Azure Stack | M
 description: Instrucciones detalladas de escalado de App Services en Azure Stack
 services: azure-stack
 documentationcenter: ''
-author: jeffgilb
+author: mattbriggs
 manager: femila
 editor: ''
 ms.assetid: 3cbe87bd-8ae2-47dc-a367-51e67ed4b3c0
@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/06/2019
-ms.author: jeffgilb
+ms.author: mabrigg
 ms.reviewer: anwestg
 ms.lastreviewed: 06/08/2018
-ms.openlocfilehash: d693a7f6a5cbe7d818dedcc664cc8846bcebc11c
-ms.sourcegitcommit: ccd86bd0862c45de1f6a4993f783ea2e186c187a
+ms.openlocfilehash: 0d783e8383dc8b46371812a55300e92063a5d1f8
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65172485"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618257"
 ---
 # <a name="app-service-on-azure-stack-add-more-infrastructure-or-worker-roles"></a>App Service en Azure Stack: Incorporación de más infraestructura o roles de trabajo
 

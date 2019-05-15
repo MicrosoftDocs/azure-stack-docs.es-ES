@@ -3,7 +3,7 @@ title: Arquitectura del Kit de desarrollo de Azure Stack | Microsoft Docs
 description: Describe la arquitectura del Kit de desarrollo de Azure Stack (ASDK).
 services: azure-stack
 documentationcenter: ''
-author: jeffgilb
+author: mattbriggs
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,15 +13,15 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 01/21/2019
-ms.author: jeffgilb
+ms.author: mabrigg
 ms.reviewer: misainat
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: c69b124f84e87e8f0b937dfa275378c376894f9b
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 520b90bdd272086bcef3a27928f6d31b3314b0fa
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64306225"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65617363"
 ---
 # <a name="microsoft-azure-stack-development-kit-architecture"></a>Arquitectura del Kit de desarrollo de Microsoft Azure Stack
 El Kit de desarrollo de Azure Stack (ASDK) es una implementación de un único nodo de Azure Stack que se ejecuta en un único equipo host. Los componentes de enrutamiento perimetral se instalan en el equipo host para proporcionar funcionalidades NAT y VPN para Azure Stack. Los roles de infraestructura de Azure Stack se ejecutan en la capa de Hyper-V del equipo host físico.
