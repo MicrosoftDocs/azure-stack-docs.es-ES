@@ -1,6 +1,6 @@
 ---
-title: Implementación de una aplicación web de C# ASP.Net en una máquina virtual en Azure Stack | Microsoft Docs
-description: Implemente una aplicación web de C# ASP.Net en una máquina virtual en Azure Stack.
+title: Implementación de una aplicación web de C# ASP.NET en una máquina virtual en Azure Stack | Microsoft Docs
+description: Implemente una aplicación web de C# ASP.NET en una VM en Azure Stack.
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
@@ -9,121 +9,133 @@ ms.date: 04/24/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 04/24/2019
-ms.openlocfilehash: 3f925d7c6a7f08257dbcb054044403e1488d38cb
-ms.sourcegitcommit: 41927cb812e6a705d8e414c5f605654da1fc6952
+ms.openlocfilehash: b41c64d64a2c2abe6d1f145f11c2d4d84686b207
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/25/2019
-ms.locfileid: "64482401"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65617704"
 ---
-# <a name="how-to-deploy-a-c-aspnet-web-app-to-a-vm-in-azure-stack"></a>Implementación de una aplicación web de C# ASP.Net en una máquina virtual en Azure Stack
+# <a name="deploy-a-c-aspnet-web-app-to-a-vm-in-azure-stack"></a>Implementar una aplicación web de C# ASP.NET en una VM en Azure Stack
 
-Puede crear una máquina virtual para hospedar la aplicación web de C# (ASP.NET) en Azure Stack. En este artículo se examinan los pasos que debería seguir para ajustar los parámetros del servidor, configurarlo para hospedar su aplicación web de C# (ASP.NET) y, a continuación, implementar la aplicación directamente desde Visual Studio.
+Puede crear una máquina virtual (VM) para hospedar la aplicación web de C# ASP.NET en Azure Stack. En este artículo se indican las instrucciones que deben seguirse al instalar el servidor, configurarlo para hospedar su aplicación web de C# ASP.NET y, a continuación, implementar la aplicación directamente desde Visual Studio.
 
 C# es un lenguaje de programación multiparadigma destinado a fines genéricos que abarca disciplinas de programación de tipado fuerte, de ámbito léxico, imperativas, declarativas, funcionales, genéricas y orientadas a objetos y componentes. Para conocer el lenguaje de programación de C# y consultar recursos adicionales para C#, consulte [la guía de C#](https://docs.microsoft.com/dotnet/csharp/).
 
-En este artículo se usará una aplicación C# 6.0 que usa ASP.NET Core 2.2 y se ejecuta en un servidor Windows Server 2016.
+En este artículo se usa una aplicación C# 6.0 que usa ASP.NET Core 2.2 y se ejecuta en un servidor Windows Server 2016.
 
 ## <a name="create-a-vm"></a>Crear una VM
 
 1. Cree una [máquina virtual de Windows Server](azure-stack-quick-windows-portal.md).
 
-2. Ejecute el siguiente script para instalar los componentes en la máquina virtual. El script:
-      - Instale IIS (con la consola de administración).
-      - Instale ASP.NET Core 4.6.
+1. Para instalar los componentes IIS (con la Consola de administración) y ASP.NET 4.6 en la VM, ejecute el siguiente script:
 
-        ```PowerShell  
-        # Install IIS (with Management Console)
-        Install-WindowsFeature -name Web-Server -IncludeManagementTools
-        
-        # Install ASP.NET 4.6
-        Install-WindowsFeature Web-Asp-Net45
-        
-        # Install Web Management Service
-        Install-WindowsFeature -Name Web-Mgmt-Service
-        ```
+    ```PowerShell  
+    # Install IIS (with Management Console)
+    Install-WindowsFeature -name Web-Server -IncludeManagementTools
+    
+    # Install ASP.NET 4.6
+    Install-WindowsFeature Web-Asp-Net45
+    
+    # Install Web Management Service
+    Install-WindowsFeature -Name Web-Mgmt-Service
+    ```
 
-3. Descargue el [MSI para la implementación web 3.6](https://www.microsoft.com/download/details.aspx?id=43717). Instale desde el MSI y, a continuación, habilítelo en todas las características.
+1. Descargue [Web Deploy v3.6](https://www.microsoft.com/download/details.aspx?id=43717). Instálelo desde el archivo MSI y, a continuación, habilítelo en todas las características.
 
-4. Instale el lote de hospedaje de .NET Core para 2.2 en el servidor. Para conocer los pasos, consulte [.NET Core Installer](https://dotnet.microsoft.com/download/dotnet-core/2.2) (Instalador de .NET Core). Asegúrese de que está utilizando la misma versión de .NET Core en el equipo de desarrollo y el servidor de destino.
+1. Instale el conjunto de hospedaje de .NET Core  2.2 en el servidor. Para obtener instrucciones, consulte la página del [instalador de .NET Core](https://dotnet.microsoft.com/download/dotnet-core/2.2). Asegúrese de que está utilizando la misma versión de .NET Core en la máquina de desarrollo y el servidor de destino.
 
-5. Vuelva al portal de Azure Stack y abra los puertos en la configuración de red para la máquina virtual.
+1. Vuelva al portal de Azure Stack y abra los puertos que se indican en la configuración de red para la VM.
 
-    1. Abra el portal de Azure Stack de su inquilino.
-    2. Busque su máquina virtual. Es posible que haya anclado la máquina virtual en el panel; si no, puede buscarla en el cuadro **Buscar recursos**.
-    3. Seleccionar **Redes**.
-    4. Seleccione **Agregar regla de puerto de entrada** en la máquina virtual.
-    1. Agregue una regla de seguridad de entrada para los puertos siguientes:
+     a. Abra el portal de Azure Stack de su inquilino.
+
+    b. Busque su VM. Es posible que haya anclado la VM al panel; si no, puede buscarla en el cuadro **Buscar recursos**.
+
+    c. Seleccionar **Redes**.
+
+    d. Seleccione **Agregar regla de puerto de entrada** en la máquina virtual.
+
+    e. Agregue una regla de seguridad de entrada para los puertos siguientes:
 
     | Port | Protocolo | DESCRIPCIÓN |
     | --- | --- | --- |
     | 80 | HTTP | El protocolo de transferencia de hipertexto (HTTP) es un protocolo de aplicación para los sistemas de información de hipermedia distribuidos y colaborativos. Los clientes se conectarán a la aplicación web con la dirección IP pública o el nombre DNS de la máquina virtual. |
     | 443 | HTTPS | El protocolo de transferencia de hipertexto con cifrado de Capa de sockets seguros (HTPPS) es una extensión del Protocolo de transferencia de hipertexto (HTTP). Se usa para establecer una comunicación segura a través de la red de un equipo. Los clientes se conectarán a la aplicación web con la dirección IP pública o el nombre DNS de la máquina virtual. |
-    | 22 | SSH | Secure Shell (SSH) es un protocolo de red criptográfico que permite usar servicios de red de forma segura a través de una red no segura. Usará esta conexión con un cliente SSH para configurar la máquina virtual e implementar la aplicación. |
-    | 3389 | RDP | Opcional. El Protocolo de escritorio remoto permite que una conexión de escritorio remoto utilice una interfaz gráfica de usuario de su equipo.   |
+    | 22 | SSH | Secure Shell (SSH) es un protocolo de red criptográfico que permite usar servicios de red de forma segura a través de una red no segura. Esta conexión se usa con un cliente SSH para configurar la VM e implementar la aplicación. |
+    | 3389 | RDP | Opcional. El Protocolo de escritorio remoto (RDP) permite que una conexión de escritorio remoto utilice una interfaz gráfica de usuario con su máquina.   |
 
     Para cada puerto:
 
-    1. Seleccione **Cualquiera** para Origen.
-    1. Escriba `*` para el intervalo de puertos de origen.
-    1. Seleccione **Cualquiera** para **Destino**.
-    1. Agregue el puerto que desea abrir al **intervalo de puertos de destino**.
-    1. Seleccione **Cualquiera** para **Protocolo**.
-    1. En **Acción**, seleccione **Permitir**.
-    1. Deje el valor predeterminado para **Prioridad**.
-    1. Ponga un **nombre** y añada una **descripción** para anotar por qué abrió el puerto.
-    1. Seleccione Agregar.
+     a. En **Origen**, seleccione **Cualquiera**.
 
-5.  En la configuración de **Redes** para su máquina virtual en Azure Stack, cree un nombre DNS para el servidor. Los usuarios pueden conectarse a su sitio web utilizando la dirección URL.
+    b. En **Intervalo de puertos de origen**, escriba un asterisco (**\***).
 
-    1. Abra el portal de Azure Stack de su inquilino.
-    1. Busque su máquina virtual. Es posible que haya anclado la máquina virtual en el panel; si no, puede buscarla en el cuadro **Buscar recursos**.
-    1. Seleccione **Información general**.
-    1. Seleccione **Configurar** en la VM.
-    1. Seleccione **Dinámica** para **Asignación**.
-    1. Escriba la etiqueta de nombre DNS como `mywebapp` para que su dirección URL completa tenga un aspecto similar a: `mywebapp.local.cloudapp.azurestack.external`.
+    c. En **Destino**, seleccione **Cualquiera**.
+
+    d. En **Intervalo de puertos de destino**, agregue el puerto que quiere abrir.
+
+    e. En **Protocolo**, seleccione **Cualquiera**.
+
+    f. En **Acción**, seleccione **Permitir**.
+
+    g. En **Prioridad**, deje el valor predeterminado.
+
+    h. Complete los campos **Nombre** y **Descripción** para recordar fácilmente el motivo por el que el puerto está abierto.
+
+    i. Seleccione **Agregar**.
+
+1.  En la configuración de **Redes** para su máquina virtual en Azure Stack, cree un nombre DNS para el servidor. Los usuarios pueden conectarse a su sitio web mediante la dirección URL.
+
+     a. Abra el portal de Azure Stack de su inquilino.
+
+    b. Busque su VM. Es posible que haya anclado la VM al panel; si no, puede buscarla en el cuadro **Buscar recursos**.
+
+    c. Seleccione **Información general**.
+
+    d. En **VM**, seleccione **Configurar**.
+
+    e. En **Asignación**, seleccione **Dinámica**.
+
+    f. Escriba la etiqueta del nombre DNS, como **mywebapp**, de modo que su dirección URL completa se convierta en *mywebapp.local.cloudapp.azurestack.external*.
 
 ## <a name="create-an-app"></a>Creación de una aplicación 
 
-Puede usar su propia aplicación web o bien el ejemplo de [Publicar una aplicación de ASP.NET Core en Azure con Visual Studio](https://docs.microsoft.com/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-2.2&tabs=visual-studio
-).
-
-En este artículo se describe cómo crear y publicar una aplicación web ASP.NET en una máquina virtual de Azure mediante la característica de publicación Microsoft Azure Virtual Machines en Visual Studio 2017. Una vez que haya instalado su aplicación y se haya asegurado de que se ejecuta localmente, actualizará su destino de publicación a la máquina virtual de Windows en su instancia de Azure Stack.
+Puede usar su propia aplicación web, o bien el ejemplo de [Publicar una aplicación de ASP.NET Core en Azure con Visual Studio](https://docs.microsoft.com/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-2.2&tabs=visual-studio
+). En este artículo se describe cómo crear y publicar una aplicación web de ASP.NET en una máquina virtual de Azure mediante la característica de publicación Azure Virtual Machines en Visual Studio 2017. Una vez que haya instalado su aplicación y se haya asegurado de que se ejecuta localmente, actualizará su destino de publicación a la VM Windows en su instancia de Azure Stack.
 
 ## <a name="deploy-and-run-the-app"></a>Implementación y ejecución de la aplicación
 
 Cree un destino de publicación a la máquina virtual en Azure Stack.
 
-1. Haga clic con el botón derecho en el proyecto en el Explorador de soluciones y seleccione **Publicar**.
+1. En el **Explorador de soluciones**, haga clic con el botón derecho en el proyecto y seleccione **Publicar**.
 
-    ![Implementación de una aplicación web ASP.NET en Azure Stack y publicación](media/azure-stack-dev-start-howto-vm-dotnet/deploy-app-to-azure-stack.png)
+    ![Implementación y publicación de una aplicación web de ASP.NET en Azure Stack](media/azure-stack-dev-start-howto-vm-dotnet/deploy-app-to-azure-stack.png)
 
-2.  En la ventana Publicar, haga clic en Nuevo perfil.
-3. Seleccione IIS, FTP, etc.
-4. Seleccione Publicar.
+1. En la ventana **Publicar**, seleccione **Nuevo perfil**.
+1. Seleccione **IIS**, **FTP**, etc.
+1. Seleccione **Publicar**.
+1. En **Método de publicación**, seleccione **Web Deploy**.
+1. En **Servidor**, escriba el nombre DNS que definió anteriormente, como *w21902.local.cloudapp.azurestack.external*.
+1. En **Nombre del sitio**, escriba **Sitio web predeterminado**.
+1. En **Nombre de usuario**, escriba el nombre de usuario de la máquina.
+1. En **Contraseña**, escriba la contraseña de la máquina.
+1. En **Dirección URL de destino**, escriba la dirección URL del sitio, como *mywebapp.local.cloudapp.azurestack.external*.
 
-5.  Seleccione **Web Deploy** como **método de publicación**.
-6.  Para **Servidor** escriba el nombre DNS que definió anteriormente, como `w21902.local.cloudapp.azurestack.external`
-7.  Para **Nombre del sitio**, escriba `Default Web Site`.
-8.  Para **Nombre de usuario**, escriba el nombre de usuario para la máquina.
-9.  Para **Contraseña**, escriba la contraseña de la máquina.
-10. Para **Dirección URL de destino**, escriba la dirección URL del sitio, como `mywebapp.local.cloudapp.azurestack.external`.
+    ![Implementación de una aplicación web de ASP.NET: configuración de Web Deploy](media/azure-stack-dev-start-howto-vm-dotnet/configure-web-deploy.png)
 
-    ![Implementación de la aplicación web de ASP.NET: configuración de Web Deploy](media/azure-stack-dev-start-howto-vm-dotnet/configure-web-deploy.png)
+1. Para validar la configuración de Web Deploy, seleccione **Validar conexión** y, a continuación, elija **Siguiente**.
+1. Establezca **Configuración** en **Versión**.
+1. Establezca el **Marco de destino** como **netcoreapp2.2**.
+1. Establezca el **Tiempo de ejecución de destino** como **Portátil**.
+1. Seleccione **Guardar**.
+1. Seleccione **Publicar**.
+1. Vaya al nuevo servidor. Debería ver la aplicación web en ejecución.
 
-9. Seleccione **Validar conexión** para validar la configuración de Web Deploy. Y luego haga clic en **Siguiente**.
-10. Establezca su **Configuración** como **Versión**.
-11. Establezca el **Marco de destino** como **netcoreapp2.2**.
-12. Establezca el **Tiempo de ejecución de destino** como **Portátil**.
-13. Seleccione **Guardar**.
-14. Seleccione **Publicar**.
-15. Vaya a su nuevo servidor. Debería ver la aplicación web en ejecución.
-
-```HTTP  
-    mywebapp.local.cloudapp.azurestack.external
-```
+    ```HTTP  
+        mywebapp.local.cloudapp.azurestack.external
+    ```
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Obtenga más información acerca de cómo [desarrollar para Azure Stack](azure-stack-dev-start.md)
+- Consulte [Configurar un entorno de desarrollo en Azure Stack](azure-stack-dev-start.md) para conocer el procedimiento.
 - Obtenga información sobre las [implementaciones comunes para Azure Stack como IaaS](azure-stack-dev-start-deploy-app.md).
