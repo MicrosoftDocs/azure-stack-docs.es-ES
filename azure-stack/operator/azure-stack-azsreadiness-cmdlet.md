@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/30/2018
+ms.date: 05/09/2019
 ms.author: sethm
 ms.reviewer: unknown
-ms.lastreviewed: 12/04/2018
-ms.openlocfilehash: 03efa5e8e0dbb3ec29748383914d3d0361bc124b
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.lastreviewed: 05/09/2019
+ms.openlocfilehash: 1f8d7573d9d3da54ddb5fa7aae85ba15d1db4c3c
+ms.sourcegitcommit: 2b6a0b3b4dc63c26df3d0535d630d640ff232fb0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64986157"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65521248"
 ---
 # <a name="start-azsreadinesschecker-cmdlet-reference"></a>Referencia del cmdlet Start-AzsReadinessChecker
 
@@ -209,7 +209,7 @@ $PaaSCertificates = @{
     'PaaSFTPCert' = @{'pfxPath' = '<Path to FTP PFX>';'pfxPassword' = (ConvertTo-SecureString -String '<Password for PFX>' -AsPlainText -Force)}
     'PaaSSSOCert' = @{'pfxPath' = '<Path to SSO PFX>';'pfxPassword' = (ConvertTo-SecureString -String '<Password for PFX>' -AsPlainText -Force)}
 }
-Start-AzsReadinessChecker -PaaSCertificates $PaaSCertificates - RegionName east -FQDN azurestack.contoso.com
+Start-AzsReadinessChecker -PaaSCertificates $PaaSCertificates -RegionName east -FQDN azurestack.contoso.com
 ```
 
 En este ejemplo, se crea una tabla hash con las rutas de acceso y las contraseñas de cada certificado de PaaS. Los certificados se pueden omitir. `Start-AzsReadinessChecker` comprueba que cada ruta de acceso de PFX existe y la valida con la región **east** y el FQDN externo **azurestack.contoso.com**.
@@ -241,7 +241,7 @@ En este ejemplo, se solicitan las credenciales de cuenta de administrador del se
 
 ### <a name="example-validate-azure-identity-with-deployment-data-deployment-support"></a>Ejemplo: Validación de la identidad de Azure con datos de implementación (compatibilidad de implementación)
 
-```PowerSHell
+```PowerShell
 $serviceAdminCredential = Get-Credential -Message "Enter Credentials for Service Administrator of Azure Active Directory Tenant e.g. serviceadmin@contoso.onmicrosoft.com"
 Start-AzsReadinessChecker -AADServiceAdministrator $serviceAdminCredential -DeploymentDataJSONPath .\contoso-deploymentdata.json
 ```
@@ -278,7 +278,7 @@ Start-AzsReadinessChecker -PfxPassword $password -PfxPath .\certificates\ssl.pfx
 
 En este ejemplo, se solicita la contraseña PFX por seguridad. El archivo Ssl.pfx se importa en el almacén de certificados de la máquina local, se vuelve a exportar con la misma contraseña y se guarda como Ssl_new.pfx. Este procedimiento se utiliza cuando la validación del certificado marca que una clave privada no tiene establecido el atributo de **máquina local**, la cadena del certificado está rota, hay certificados irrelevantes en el PFX o la cadena del certificado está en un orden incorrecto.
 
-### <a name="example-view-validation-report-deployment-support"></a>Ejemplo: Vista del informe de validación (implementación y soporte técnico)
+### <a name="example-view-validation-report-deployment-and-support"></a>Ejemplo: Vista del informe de validación (implementación y soporte técnico)
 
 ```powershell
 Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json

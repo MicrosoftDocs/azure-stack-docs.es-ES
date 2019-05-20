@@ -1,33 +1,32 @@
 ---
 title: Implementación de plantillas con la línea de comandos en Azure Stack | Microsoft Docs
-description: Obtenga información acerca de cómo usar la interfaz de la línea de comandos (CLI) multiplataforma para implementar plantillas en Azure Stack.
+description: Obtenga información acerca de cómo usar la interfaz de la línea de comandos (CLI) multiplataforma para implementar plantillas en Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
 manager: femila
 editor: ''
-ms.assetid: 9584177f-4af3-4834-864d-930b09ae0995
 ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
+ms.devlang: CLI
 ms.topic: article
-ms.date: 01/09/2019
+ms.date: 05/09/2019
 ms.author: sethm
 ms.reviewer: unknown
-ms.lastreviewed: 01/09/2019
-ms.openlocfilehash: fcf84ee394c917e896bc50d5d6a97f42191451e9
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.lastreviewed: 05/09/2019
+ms.openlocfilehash: d225e113a19dc62ce66df49d89273d00e2e35683
+ms.sourcegitcommit: 2b6a0b3b4dc63c26df3d0535d630d640ff232fb0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985598"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65521115"
 ---
 # <a name="deploy-templates-in-azure-stack-using-the-command-line"></a>Implementación de plantillas en Azure Stack mediante la línea de comandos
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Use la línea de comandos para implementar plantillas de Azure Resource Manager en el entorno del Kit de desarrollo de Azure Stack. Las plantillas de Azure Resource Manager implementan y aprovisionan todos los recursos para su aplicación en una única operación coordinada.
+Use la Interfaz de la línea de comandos (CLI) de Azure para implementar plantillas de Azure Resource Manager en Azure Stack. Las plantillas de Azure Resource Manager implementan y aprovisionan recursos para su aplicación en una única operación coordinada.
 
 ## <a name="before-you-begin"></a>Antes de empezar
 
@@ -56,6 +55,4 @@ az storage account list
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Para más información sobre cómo implementar plantillas, consulte:
-
-[Implementación de plantillas con PowerShell](azure-stack-deploy-template-powershell.md)
+Obtenga más información sobre la [implementación de plantillas con PowerShell](azure-stack-deploy-template-powershell.md).

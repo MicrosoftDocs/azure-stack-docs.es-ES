@@ -10,16 +10,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/07/2019
+ms.date: 05/08/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 02/28/2019
-ms.openlocfilehash: a0f01a70be83a556dfa0f8839711c2de1e7c688e
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.lastreviewed: 05/08/2019
+ms.openlocfilehash: 69eb6e676fb8c134e0184d4df7df95ba0c75e854
+ms.sourcegitcommit: 879165a66ff80f1463b6bb46e2245684224a9b92
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64311367"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65473866"
 ---
 # <a name="use-api-version-profiles-with-azure-cli-in-azure-stack"></a>Uso de los perfiles de la versión de la API con la CLI de Azure en Azure Stack
 
@@ -81,69 +81,20 @@ Puede configurar un punto de conexión accesible públicamente que hospede un ar
 
 ### <a name="install-or-upgrade-cli"></a>Instalación o actualización de la CLI
 
-Inicie sesión en la estación de trabajo de desarrollo e instale la CLI. Azure Stack requiere la versión 2.0 o superior de la CLI de Azure. La versión más reciente de los perfiles de API requiere una versión actual de la CLI.  Puede instalar la CLI mediante los pasos descritos en el artículo [Instalación de la CLI de Azure](https://docs.microsoft.com/cli/azure/install-azure-cli). Para comprobar si la instalación se realizó correctamente, abra un terminal o una ventana del símbolo del sistema y ejecute el siguiente comando:
+Inicie sesión en la estación de trabajo de desarrollo e instale la CLI. Azure Stack requiere la versión 2.0 o superior de la CLI de Azure. La versión más reciente de los perfiles de API requiere una versión actual de la CLI.  Puede instalar la CLI mediante los pasos descritos en el artículo [Instalación de la CLI de Azure](https://docs.microsoft.com/cli/azure/install-azure-cli). 
 
-```shell
-az --version
-```
+1. Para comprobar si la instalación se realizó correctamente, abra un terminal o una ventana del símbolo del sistema y ejecute el siguiente comando:
 
-Debería ver la versión de la CLI de Azure y otras bibliotecas dependientes instaladas en su equipo.
-
-### <a name="install-python-on-windows"></a>Instalación de Python en Windows
-
-1. Instale [Python 3 en el sistema](https://www.python.org/downloads/).
-
-2. Actualice PIP. PIP es un administrador de paquetes para Python. Abra un símbolo del sistema cmd o un símbolo del sistema de PowerShell con privilegios elevados y escriba el siguiente comando:
-
-    ```powershell  
-    python -m pip install --upgrade pip
+    ```shell
+    az --version
     ```
 
-3. Instale el módulo **certifi**. [Certifi](https://pypi.org/project/certifi/) es un módulo y una colección de certificados raíz para validar la confiabilidad de los certificados SSL al comprobar la identidad de los hosts TLS. Abra un símbolo del sistema cmd o un símbolo del sistema de PowerShell con privilegios elevados y escriba el siguiente comando:
+    Debería ver la versión de la CLI de Azure y otras bibliotecas dependientes instaladas en su equipo.
 
-    ```powershell
-    pip install certifi
-    ```
+    ![CLI de Azure en la ubicación de Python de Azure Stack](media/azure-stack-version-profiles-azurecli2/cli-python-location.png)
 
-### <a name="install-python-on-linux"></a>Instalación de Python en Linux
+2. Tome nota de la ubicación de Python de la CLI. Si está ejecutando el ASDK, necesitará esta ubicación para agregar el certificado.
 
-1. La imagen de Ubuntu 16.04 incluye las instalaciones de Python 2.7 y Python 3.5 de forma predeterminada. Puede comprobar su versión de Python 3 si ejecuta el comando siguiente:
-
-    ```bash  
-    python3 --version
-    ```
-
-2. Actualice PIP. PIP es un administrador de paquetes para Python. Abra un símbolo del sistema cmd o un símbolo del sistema de PowerShell con privilegios elevados y escriba el siguiente comando:
-
-    ```bash  
-    sudo -H pip3 install --upgrade pip
-    ```
-
-3. Instale el módulo **certifi**. [Certifi](https://pypi.org/project/certifi/) es una colección de certificados raíz para validar la confiabilidad de los certificados SSL al verificar la identidad de los hosts TLS. Abra un símbolo del sistema cmd o un símbolo del sistema de PowerShell con privilegios elevados y escriba el siguiente comando:
-
-    ```bash
-    pip3 install certifi
-    ```
-
-### <a name="install-python-on-macos"></a>Instalación de Python en macOS
-
-1. Instale [Python 3 en el sistema](https://www.python.org/downloads/). Para las versiones 3.7 de Python, Python.org proporciona dos opciones de instalador binario para descargar. La variante predeterminada es solo de 64 bits y funciona en macOS 10.9 (Mavericks) y sistemas posteriores. Para comprobar la versión de Python, abra el terminal y escriba el siguiente comando:
-
-    ```bash  
-    python3 --version
-    ```
-
-2. Actualice PIP. PIP es un administrador de paquetes para Python. Abra un símbolo del sistema cmd o un símbolo del sistema de PowerShell con privilegios elevados y escriba el siguiente comando:
-
-    ```bash  
-    sudo -H pip3 install --upgrade pip
-    ```
-
-3. Instale el módulo **certifi**. [Certifi](https://pypi.org/project/certifi/) es un módulo y una colección de certificados raíz para validar la confiabilidad de los certificados SSL al comprobar la identidad de los hosts TLS. Abra un símbolo del sistema cmd o un símbolo del sistema de PowerShell con privilegios elevados y escriba el siguiente comando:
-
-    ```bash
-    pip3 install certifi
-    ```
 
 ## <a name="windows-azure-ad"></a>Windows (Azure AD)
 
@@ -153,15 +104,20 @@ Esta sección le guiará a través de la configuración de la CLI si usa Azure A
 
 Si usa el ASDK, deberá confiar en el certificado raíz de CA en la máquina remota. No será necesario que lo haga con los sistemas integrados.
 
-Para confiar en el certificado de raíz de CA de Azure Stack, debe anexarlo al certificado existente de Python.
+Para confiar en el certificado raíz de CA de Azure Stack, debe anexarlo al certificado existente de Python correspondiente a la versión de Python instalada con la CLI de Azure. Puede que esté ejecutando su propia instancia de Python. La CLI de Azure incluye su propia versión de Python.
 
-1. Busque la ubicación del certificado en la máquina. La ubicación puede variar dependiendo de dónde haya instalado Python. Abra un símbolo del sistema cmd o un símbolo del sistema de PowerShell con privilegios elevados y escriba el siguiente comando:
+1. Busque la ubicación del certificado en la máquina.  Para encontrar la ubicación, puede ejecutar el comando `az --version`.
+
+2. Navegue hasta la carpeta que contiene la aplicación Python de la CLI. Puede ejecutar esta versión de Python. Si ha configurado Python en la ruta de acceso del sistema, al iniciar Python, se ejecutará su propia versión. En su lugar, puede ejecutar la versión que usa la CLI y agregar su certificado a esta versión. Por ejemplo, su instancia de Python de la CLI puede estar en: `C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\`.
+
+    Use los comandos siguientes:
 
     ```powershell  
-      python -c "import certifi; print(certifi.where())"
+    cd "c:\pathtoyourcliversionofpython"
+    .\python -c "import certifi; print(certifi.where())"
     ```
 
-    Tome nota de la ubicación del certificado. Por ejemplo, `~/lib/python3.5/site-packages/certifi/cacert.pem`. La ruta de acceso particular dependerá del sistema operativo y de la versión de Python que esté instalada.
+    Tome nota de la ubicación del certificado. Por ejemplo, `C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\lib\site-packages\certifi\cacert.pem`. La ruta de acceso específica dependerá de su sistema operativo y de la instalación de la CLI.
 
 2. Para confiar en el certificado raíz de CA de Azure Stack, anéxelo al certificado existente de Python.
 
@@ -212,7 +168,7 @@ Para confiar en el certificado de raíz de CA de Azure Stack, debe anexarlo al c
     | Nombre del entorno | AzureStackUser | Use `AzureStackUser` para el entorno de usuario. Si es operador, especifique `AzureStackAdmin`. |
     | Punto de conexión de Resource Manager | https://management.local.azurestack.external | El valor de **ResourceManagerUrl** del Kit de desarrollo de Azure Stack (ASDK) es: `https://management.local.azurestack.external/` El valor de **ResourceManagerUrl** en los sistemas integrados es: `https://management.<region>.<fqdn>/` Para recuperar los metadatos necesarios: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0` Si tiene alguna pregunta sobre el punto de conexión del sistema integrado, póngase en contacto con su operador de nube. |
     | Punto de conexión de Storage | local.azurestack.external | `local.azurestack.external` es para el ASDK. Para un sistema integrado, puede utilizar un punto de conexión del sistema.  |
-    | Sufijo de Key Vault | .vault.local.azurestack.external | `.vault.local.azurestack.external` es para el ASDK. Para un sistema integrado, le recomendamos que utilice un punto de conexión del sistema.  |
+    | Sufijo de Key Vault | .vault.local.azurestack.external | `.vault.local.azurestack.external` es para el ASDK. Para un sistema integrado, le recomendamos que utilice un punto de conexión del sistema.  |
     | Punto de conexión del documento de alias de imagen de VM | https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json | URI del documento que contiene los alias de imagen de máquina virtual. Para obtener más información, consulte [Configuración del punto de conexión de alias de máquina virtual](#set-up-the-virtual-machine-aliases-endpoint). |
 
     ```azurecli  
@@ -228,7 +184,7 @@ Para confiar en el certificado de raíz de CA de Azure Stack, debe anexarlo al c
 1. Actualice la configuración del entorno para usar el perfil de la versión de API específico de Azure Stack. Para actualizar la configuración, ejecute el comando siguiente:
 
     ```azurecli
-    az cloud update --profile 2018-03-01-hybrid
+    az cloud update --profile 2019-03-01-hybrid
    ```
 
     >[!NOTE]  
@@ -332,7 +288,7 @@ Si usa el ASDK, deberá confiar en el certificado raíz de CA en la máquina rem
     | Nombre del entorno | AzureStackUser | Use `AzureStackUser` para el entorno de usuario. Si es operador, especifique `AzureStackAdmin`. |
     | Punto de conexión de Resource Manager | https://management.local.azurestack.external | El valor de **ResourceManagerUrl** del Kit de desarrollo de Azure Stack (ASDK) es: `https://management.local.azurestack.external/` El valor de **ResourceManagerUrl** en los sistemas integrados es: `https://management.<region>.<fqdn>/` Para recuperar los metadatos necesarios: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0` Si tiene alguna pregunta sobre el punto de conexión del sistema integrado, póngase en contacto con su operador de nube. |
     | Punto de conexión de Storage | local.azurestack.external | `local.azurestack.external` es para el ASDK. Para un sistema integrado, puede utilizar un punto de conexión del sistema.  |
-    | Sufijo de Key Vault | .vault.local.azurestack.external | `.vault.local.azurestack.external` es para el ASDK. Para un sistema integrado, le recomendamos que utilice un punto de conexión del sistema.  |
+    | Sufijo de Key Vault | .vault.local.azurestack.external | `.vault.local.azurestack.external` es para el ASDK. Para un sistema integrado, le recomendamos que utilice un punto de conexión del sistema.  |
     | Punto de conexión del documento de alias de imagen de VM | https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json | URI del documento que contiene los alias de imagen de máquina virtual. Para obtener más información, consulte [Configuración del punto de conexión de alias de máquina virtual](#set-up-the-virtual-machine-aliases-endpoint). |
 
     ```azurecli  
@@ -408,7 +364,7 @@ Si usa el ASDK, deberá confiar en el certificado raíz de CA en la máquina rem
 
 Para confiar en el certificado raíz de CA de Azure Stack, anéxelo al certificado existente de Python.
 
-1. Busque la ubicación del certificado en la máquina. La ubicación puede variar dependiendo de dónde haya instalado Python. Debe tener PIP y el [módulo certifi instalado](#install-python-on-linux). Puede usar el siguiente comando de Python desde el símbolo del sistema de bash:
+1. Busque la ubicación del certificado en la máquina. La ubicación puede variar dependiendo de dónde haya instalado Python. Debe tener PIP y el módulo certifi instalado. Puede usar el siguiente comando de Python desde el símbolo del sistema de bash:
 
     ```bash  
     python3 -c "import certifi; print(certifi.where())"
@@ -448,7 +404,7 @@ Use los pasos siguientes para conectarse a Azure Stack:
     | Nombre del entorno | AzureStackUser | Use `AzureStackUser` para el entorno de usuario. Si es operador, especifique `AzureStackAdmin`. |
     | Punto de conexión de Resource Manager | https://management.local.azurestack.external | El valor de **ResourceManagerUrl** del Kit de desarrollo de Azure Stack (ASDK) es: `https://management.local.azurestack.external/` El valor de **ResourceManagerUrl** en los sistemas integrados es: `https://management.<region>.<fqdn>/` Para recuperar los metadatos necesarios: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0` Si tiene alguna pregunta sobre el punto de conexión del sistema integrado, póngase en contacto con su operador de nube. |
     | Punto de conexión de Storage | local.azurestack.external | `local.azurestack.external` es para el ASDK. Para un sistema integrado, puede utilizar un punto de conexión del sistema.  |
-    | Sufijo de Key Vault | .vault.local.azurestack.external | `.vault.local.azurestack.external` es para el ASDK. Para un sistema integrado, le recomendamos que utilice un punto de conexión del sistema.  |
+    | Sufijo de Key Vault | .vault.local.azurestack.external | `.vault.local.azurestack.external` es para el ASDK. Para un sistema integrado, le recomendamos que utilice un punto de conexión del sistema.  |
     | Punto de conexión del documento de alias de imagen de VM | https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json | URI del documento que contiene los alias de imagen de máquina virtual. Para obtener más información, consulte [Configuración del punto de conexión de alias de máquina virtual](#set-up-the-virtual-machine-aliases-endpoint). |
 
     ```azurecli  
@@ -519,7 +475,7 @@ Si usa el ASDK, deberá confiar en el certificado raíz de CA en la máquina rem
 
 Para confiar en el certificado raíz de CA de Azure Stack, anéxelo al certificado existente de Python.
 
-1. Busque la ubicación del certificado en la máquina. La ubicación puede variar dependiendo de dónde haya instalado Python. Debe tener PIP y el [módulo certifi instalado](#install-python-on-linux). Puede usar el siguiente comando de Python desde el símbolo del sistema de bash:
+1. Busque la ubicación del certificado en la máquina. La ubicación puede variar dependiendo de dónde haya instalado Python. Debe tener PIP y el módulo certifi instalado. Puede usar el siguiente comando de Python desde el símbolo del sistema de bash:
 
     ```bash  
     python3 -c "import certifi; print(certifi.where())"
@@ -559,7 +515,7 @@ Use los pasos siguientes para conectarse a Azure Stack:
     | Nombre del entorno | AzureStackUser | Use `AzureStackUser` para el entorno de usuario. Si es operador, especifique `AzureStackAdmin`. |
     | Punto de conexión de Resource Manager | https://management.local.azurestack.external | El valor de **ResourceManagerUrl** del Kit de desarrollo de Azure Stack (ASDK) es: `https://management.local.azurestack.external/` El valor de **ResourceManagerUrl** en los sistemas integrados es: `https://management.<region>.<fqdn>/` Para recuperar los metadatos necesarios: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0` Si tiene alguna pregunta sobre el punto de conexión del sistema integrado, póngase en contacto con su operador de nube. |
     | Punto de conexión de Storage | local.azurestack.external | `local.azurestack.external` es para el ASDK. Para un sistema integrado, puede utilizar un punto de conexión del sistema.  |
-    | Sufijo de Key Vault | .vault.local.azurestack.external | `.vault.local.azurestack.external` es para el ASDK. Para un sistema integrado, le recomendamos que utilice un punto de conexión del sistema.  |
+    | Sufijo de Key Vault | .vault.local.azurestack.external | `.vault.local.azurestack.external` es para el ASDK. Para un sistema integrado, le recomendamos que utilice un punto de conexión del sistema.  |
     | Punto de conexión del documento de alias de imagen de VM | https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json | URI del documento que contiene los alias de imagen de máquina virtual. Para obtener más información, consulte [Configuración del punto de conexión de alias de máquina virtual](#set-up-the-virtual-machine-aliases-endpoint). |
 
     ```azurecli  
