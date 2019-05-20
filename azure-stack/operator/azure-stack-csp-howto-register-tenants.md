@@ -3,25 +3,24 @@ title: Adición de inquilinos en Azure Stack para uso y facturación | Microsoft
 description: Los pasos necesarios agregan un usuario final a Azure Stack administrado por un proveedor de servicios en la nube (CSP).
 services: azure-stack
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: sethmanheim
+manager: femila
 editor: ''
 ms.service: azure-stack
 ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-origin.date: 01/05/2019
-ms.date: 04/29/2019
-ms.author: v-jay
+ms.date: 05/07/2019
+ms.author: sethm
 ms.reviewer: alfredop
-ms.lastreviewed: 01/05/2019
-ms.openlocfilehash: 8e177944a5f57c9475287325b705fac34ec513c0
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.lastreviewed: 05/07/2019
+ms.openlocfilehash: 5f03b80b871d3df467bc52b735432ce5568a3ad8
+ms.sourcegitcommit: a78c0d143eadcab65a601746b9ea24be28091ad2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64307827"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65212302"
 ---
 # <a name="add-tenant-for-usage-and-billing-to-azure-stack"></a>Adición de inquilinos en Azure Stack para uso y facturación
 
@@ -33,34 +32,36 @@ Los CSP suelen ofrecen servicios a varios clientes finales (inquilinos) en su im
 
 La siguiente figura muestra los pasos que necesita seguir un CSP para habilitar un cliente nuevo en Azure Stack y para configurar el seguimiento de uso del cliente. Al agregar al cliente final, también puede administrar los recursos en Azure Stack. Tiene dos opciones para administrar los recursos:
 
-1. Puede mantener el cliente final y proporcionar las credenciales para la suscripción de Azure Stack local al cliente final.  
-2. El cliente final puede trabajar con su suscripción de forma local y agregar al CSP como invitado con permisos de propietario.  
+- Puede mantener el cliente final y proporcionar las credenciales para la suscripción de Azure Stack local al cliente final.  
+- El cliente final puede trabajar con su suscripción de forma local y agregar al CSP como invitado con permisos de propietario.  
 
-## <a name="steps-to-add-an-end-customer"></a>Pasos para agregar a un cliente final
+## <a name="add-an-end-customer"></a>Agregar a un cliente final
+
+Realice los pasos siguientes para agregar a un cliente final, como se muestra en la ilustración siguiente:
 
 ![Configuración del proveedor de servicios en la nube para el seguimiento de uso y la administración de la cuenta del cliente final](media/azure-stack-csp-enable-billing-usage-tracking/process-csp-enable-billing.png)
 
 ### <a name="create-a-new-customer-in-partner-center"></a>Creación de un nuevo cliente en el centro de partners
 
-En el centro de partners, cree una nueva suscripción de Azure para el cliente. Para obtener instrucciones, consulte [Adición de un nuevo cliente](https://msdn.microsoft.com/partner-center/add-a-new-customer).
+En el centro de partners, cree una nueva suscripción de Azure para el cliente. Para obtener instrucciones, consulte [Adición de un nuevo cliente](/partner-center/add-a-new-customer).
 
 ### <a name="create-an-azure-subscription-for-the-end-customer"></a>Creación de una suscripción de Azure para el cliente final
 
-Después de haber creado un registro del cliente en el centro de partners, le puede vender suscripciones a los productos del catálogo. Para obtener instrucciones, consulte [Creación, suspensión o cancelación de las suscripciones del cliente](https://msdn.microsoft.com/partner-center/create-a-new-subscription).
+Después de haber creado un registro del cliente en el centro de partners, le puede vender suscripciones a los productos del catálogo. Para obtener instrucciones, consulte [Creación, suspensión o cancelación de las suscripciones del cliente](/partner-center/create-a-new-subscription).
 
 ### <a name="create-a-guest-user-in-the-end-customer-directory"></a>Creación de un usuario invitado en el directorio de cliente final
 
-Si el cliente final administra su propia cuenta, cree un usuario invitado en su directorio y envíeles la información. El usuario final, a continuación, agregará al invitado y elevará los permisos del invitado a **Propietario** para la cuenta del CSP de Azure Stack.
+Si el cliente final administra su propia cuenta, cree un usuario invitado en su directorio y envíeles la información. A continuación, el usuario final agregará al invitado y elevará los permisos del invitado a **Propietario** para la cuenta del CSP de Azure Stack.
 
 ### <a name="update-the-registration-with-the-end-customer-subscription"></a>Actualización del registro con la suscripción del cliente final
 
-Actualice el registro con la suscripción del nuevo cliente. Azure informa acerca del uso del cliente con la identidad del cliente del centro de partners. Este paso garantiza que se informa del uso de cada cliente de esa suscripción del CSP individual del cliente. Esto facilita el seguimiento del uso del usuario y la facturación.
+Actualice el registro con la suscripción del nuevo cliente. Azure informa acerca del uso del cliente con la identidad del cliente del Centro de partners. Este paso garantiza que se informa del uso de cada cliente de esa suscripción del CSP individual del cliente. Esto facilita el seguimiento del uso del usuario y la facturación.
 
 > [!NOTE]  
-> Para realizar este paso, debe tener [Azure Stack registrado](azure-stack-registration.md ).
+> Para realizar este paso, debe tener [Azure Stack registrado](azure-stack-registration.md).
 
 1. Abra Windows PowerShell con un símbolo del sistema con privilegios elevados y ejecute:  
-    `Add-AzureRmAccount -EnvironmentName AzureChinaCloud`
+    `Add-AzureRmAccount`
 2. Escriba sus credenciales de Azure.
 3. En la sesión de PowerShell, ejecute:
 
