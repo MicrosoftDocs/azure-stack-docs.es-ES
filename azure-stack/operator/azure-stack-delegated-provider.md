@@ -11,22 +11,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/09/2019
+ms.date: 05/07/2019
 ms.author: sethm
 ms.reviewer: alfredop
-ms.lastreviewed: 01/09/2019
-ms.openlocfilehash: 68ba971ada087bed31a65db037963b601953f1c6
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.lastreviewed: 05/07/2019
+ms.openlocfilehash: 476ffeaf7712e5cee22befbc822545382f808de5
+ms.sourcegitcommit: 39ba6d18781aed98b29ac5e08aac2d75c37bf18c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64309567"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65386615"
 ---
 # <a name="delegate-offers-in-azure-stack"></a>Delegación de ofertas en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Como operador de Azure Stack, es posible que a menudo desee delegar en otras personas las tareas de registro de usuarios y creación de suscripciones. Por ejemplo, si es un proveedor de servicios puede desear que los distribuidores registren a los clientes y los administren en su nombre. Si forma parte de un grupo central de TI en una empresa, puede que quiera delegar el registro de usuarios a otro miembro de TI.
+Como operador de Azure Stack, es posible que a menudo desee delegar en otras personas las tareas de registro de usuarios y creación de suscripciones. Por ejemplo, si es un proveedor de servicios puede desear que los distribuidores registren a los clientes y los administren en su nombre. Si forma parte de un grupo central de TI en una empresa, puede que quiera delegar el registro de usuarios a otro miembro de TI.
 
 La delegación permite que sea más fácil llegar a más usuarios y administrarlos, de lo que podría hacer por sí solo, como se muestra en la ilustración siguiente:
 
@@ -34,9 +34,7 @@ La delegación permite que sea más fácil llegar a más usuarios y administrarl
 
 Con la delegación, el proveedor delegado administra una oferta (oferta delegada) y los clientes finales obtienen suscripciones bajo dicha oferta sin intervención del administrador del sistema.
 
-## <a name="understand-delegation-roles-and-steps"></a>Descripción de los roles y pasos de delegación
-
-### <a name="delegation-roles"></a>Roles de delegación
+## <a name="delegation-roles"></a>Roles de delegación
 
 Los roles siguientes forman parte de la delegación:
 
@@ -46,7 +44,7 @@ Los roles siguientes forman parte de la delegación:
 
 * Los *usuarios* se suscriben a las ofertas y las usan para administrar las cargas de trabajo, crear máquinas virtuales, almacenar datos, etcétera.
 
-### <a name="delegation-steps"></a>Pasos de delegación
+## <a name="delegation-steps"></a>Pasos de delegación
 
 Hay dos pasos básicos para configurar la delegación:
 
@@ -58,7 +56,7 @@ En la siguiente ilustración se muestra los pasos para configurar la delegación
 
 ![Crear el proveedor delegado y habilitarlo para que puedan suscribir a los usuarios](media/azure-stack-delegated-provider/image2.png)
 
-#### <a name="delegated-provider-requirements"></a>Requisitos del proveedor delegado
+### <a name="delegated-provider-requirements"></a>Requisitos del proveedor delegado
 
 Para actuar como proveedor delegado, un usuario debe establecer una relación con el proveedor principal mediante la creación de una suscripción. Esta suscripción proporciona a los proveedores delegados el derecho a presentar las ofertas delegadas en nombre del proveedor principal.
 

@@ -16,12 +16,12 @@ ms.date: 05/06/2019
 ms.author: mabrigg
 ms.reviewer: prchint
 ms.lastreviewed: 01/23/2019
-ms.openlocfilehash: 505aa6dea47c4694b5f432da8421b51265f4d9bf
-ms.sourcegitcommit: ccd86bd0862c45de1f6a4993f783ea2e186c187a
+ms.openlocfilehash: c7486cb56dee87b8a894d165fce4c3a0dfaae6d9
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65172679"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618117"
 ---
 # <a name="microsoft-azure-stack-troubleshooting"></a>Solución de problemas de Microsoft Azure Stack
 

@@ -15,12 +15,12 @@ ms.date: 05/06/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 24e1e315a9b52693cb2b9ff26bf424ee8e9d4f3f
-ms.sourcegitcommit: ccd86bd0862c45de1f6a4993f783ea2e186c187a
+ms.openlocfilehash: d9d91dce762265da498a0a1232b023c2956edefd
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65172310"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65617843"
 ---
 # <a name="mysql-resource-provider-maintenance-operations"></a>Operaciones de mantenimiento del proveedor de recursos de MySQL
 
