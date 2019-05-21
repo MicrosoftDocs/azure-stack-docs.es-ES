@@ -1,5 +1,5 @@
 ---
-title: 'Notas de la versión de Azure Stack: problemas conocidos de la compilación 1904 | Microsoft Docs'
+title: Problemas conocidos de Azure Stack 1904 | Microsoft Docs
 description: Obtenga información sobre los problemas conocidos de Azure Stack 1904.
 services: azure-stack
 documentationcenter: ''
@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 05/10/2019
 ms.author: sethm
 ms.reviewer: hectorl
-ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 782e0aaea0eadddae24795616aaba6053b728134
-ms.sourcegitcommit: 39ba6d18781aed98b29ac5e08aac2d75c37bf18c
+ms.lastreviewed: 05/10/2019
+ms.openlocfilehash: f2e20377a976c5dba7a63d9f8cf8b3e2d100e060
+ms.sourcegitcommit: 426380a3a27954cd609ba52d1066d9d69f5267fe
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65387171"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65532261"
 ---
 # <a name="azure-stack-1904-known-issues"></a>Problemas conocidos de Azure Stack 1904
 
@@ -29,6 +29,13 @@ En este artículo se enumeran los problemas conocidos de la versión de 1904 de 
 
 > [!IMPORTANT]  
 > Revise esta sección antes de aplicar la actualización.
+
+## <a name="update-process"></a>Proceso de actualización
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Al intentar instalar una actualización de Azure Stack, es posible que se produzca un error en el estado de esa actualización y dicho estado se cambie a **PreparationFailed**. La causa es que el proveedor de recursos de actualización (URP) no se puede transferir correctamente desde el contenedor de almacenamiento a un recurso compartido de infraestructura interno para su procesamiento.
+- Corrección: A partir de la versión 1901 (1.1901.0.95), para solucionar este problema, puede hacer clic en **Actualizar ahora** de nuevo (en lugar de en **Reanudar**). A continuación, URP limpia los archivos del intento anterior y vuelve a iniciar la descarga.
+- Repetición: Común
 
 ## <a name="portal"></a>Portal
 
@@ -139,15 +146,14 @@ El error se produce si habilita el diagnóstico de arranque en una VM, pero elim
 - Corrección: Utilice el acceso a la VM para la extensión de Linux a fin de implementar las claves SSH después del aprovisionamiento o utilice la autenticación basada en contraseña.
 - Repetición: Común
 
-## <a name="infrastructure-backup"></a>Copia de seguridad de infraestructura
-
-<!--Bug 3615401 - scheduler config lost; new issue in YYMM;  hectorl-->
-Después de habilitar las copias de seguridad automáticas, el servicio de programador pasa al estado deshabilitado de forma inesperada. El servicio del controlador de copia de seguridad detectará que las copias de seguridad automáticas están desactivadas y generará una advertencia en el portal de administrador. Esta advertencia se espera cuando las copias de seguridad automáticas están deshabilitadas.
+### <a name="compute-host-agent-alert"></a>Alerta del agente de host de proceso
 
 - Aplicable a: se trata de un nuevo problema con la versión 1904.
-- Causa: Este problema se debe a un error en el servicio que da lugar a la pérdida de la configuración del programador. Este error no cambia la ubicación de almacenamiento, el nombre de usuario, la contraseña o la clave de cifrado.
-- Corrección: Para mitigar este problema, abra la hoja de configuración del controlador de copia de seguridad en el proveedor de recursos de copia de seguridad de infraestructura y seleccione **Habilitar copias de seguridad automáticas**. Asegúrese de establecer el período de retención y la frecuencia deseada.
-- Repetición: Bajo
+- Causa: La advertencia del "agente de host de proceso" se muestra después de reiniciar un nodo en la unidad de escalado. El reinicio cambia la configuración de inicio predeterminada del servicio del agente de host de proceso.
+- Corrección:
+  - Esta alerta puede omitirse. El agente que no responde no tiene ningún impacto en las operaciones del operador y el usuario o las aplicaciones del usuario. Esta alerta volverá a aparecer al cabo de 24 horas si se cierra manualmente.
+  - El Soporte técnico de Microsoft puede corregir el problema cambiando la configuración de inicio para el servicio. Esto requiere la apertura de una incidencia de soporte técnico. Si se vuelve a reiniciar el nodo, se muestra una nueva alerta.
+- Repetición: Común
 
 <!-- ## Storage -->
 <!-- ## SQL and MySQL-->
