@@ -10,17 +10,17 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/05/2019
+ms.date: 05/16/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 01/05/2019
+ms.lastreviewed: 05/16/2019
 <!-- dev: viananth -->
-ms.openlocfilehash: ab3b93d313a185a55f86232bf7bc3a7d4b46ef3d
-ms.sourcegitcommit: 24d5c16132d4c40a760ad6f631739af86188a09f
+ms.openlocfilehash: ee5906e825af59e3b67792e8370cc5d26901ff2b
+ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64910096"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65782593"
 ---
 # <a name="use-api-version-profiles-with-python-in-azure-stack"></a>Usar perfiles de la versión de la API con Python en Azure Stack
 

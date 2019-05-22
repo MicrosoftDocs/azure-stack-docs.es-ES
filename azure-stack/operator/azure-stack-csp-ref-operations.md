@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/23/2019
+ms.date: 05/16/2019
 ms.author: mabrigg
 ms.reviewer: alfredop
 ms.lastreviewed: 01/08/2019
-ms.openlocfilehash: 7714d051c21a84ea1acdedff608f3c5ab4df1d51
-ms.sourcegitcommit: 24d5c16132d4c40a760ad6f631739af86188a09f
+ms.openlocfilehash: faacd3faa954c1cad76bdc4601020e5d6c547537
+ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64910127"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65782239"
 ---
 # <a name="manage-tenant-registration-in-azure-stack"></a>Administración del registro de inquilinos en Azure Stack
 

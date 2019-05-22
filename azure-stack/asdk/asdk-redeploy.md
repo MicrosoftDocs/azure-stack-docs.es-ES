@@ -17,12 +17,12 @@ ms.date: 02/12/2019
 ms.author: mabrigg
 ms.reviewer: misainat
 ms.lastreviewed: 11/05/2018
-ms.openlocfilehash: 0658943a36673df4658b6f1951ed7992996aba41
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: cc5c756075b2dbeb789727a6c6647cf3e97cac28
+ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65617477"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65782120"
 ---
 # <a name="redeploy-the-asdk"></a>Reimplementación del Kit de desarrollo de Azure Stack
 En este artículo, aprenderá a reimplementar el Kit de desarrollo de Azure Stack (ASDK) en un entorno que no sea de producción. Dado que la actualización del Kit de desarrollo de Azure Stack, debe volver a implementarla completamente para pasar a una versión más reciente. También puede volver a implementar el Kit de desarrollo de Azure Stack en cualquier momento en el que desea volver a empezar desde el principio.
@@ -39,7 +39,7 @@ Para quitar el recurso de registro, utilice el cmdlet **Remove-AzsRegistration**
 
 2. Ejecute los siguientes comandos de PowerShell para anular el registro de la instalación de Kit de desarrollo de Azure Stack y eliminar el grupo de recursos **azurestack** de su suscripción de Azure:
 
-   ```Powershell    
+   ```powershell    
    #Import the registration module that was downloaded with the GitHub tools
    Import-Module C:\AzureStack-Tools-master\Registration\RegisterWithAzure.psm1
 

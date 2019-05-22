@@ -3,24 +3,23 @@ title: Tamaños de máquinas virtuales admitidos en Azure Stack | Microsoft Docs
 description: Referencia para los tamaños de máquinas virtuales admitidos en Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: mattbriggs
+manager: femila
 ms.service: azure-stack
 ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-origin.date: 04/02/2019
-ms.date: 04/29/2019
-ms.author: v-jay
+ms.date: 04/02/2019
+ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: d2507fd649e10cd442af86195a731caaf467e8d9
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: ab8c6c32a21afffd590a6f98359e051c7208b6ec
+ms.sourcegitcommit: 87d93cdcdb6efb06e894f56c2f09cad594e1a8b3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64311085"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65712280"
 ---
 # <a name="virtual-machine-sizes-supported-in-azure-stack"></a>Tamaños de máquinas virtuales admitidos en Azure Stack
 
@@ -92,7 +91,7 @@ Los tamaños de máquina virtual de uso general proporcionan una relación equil
 ### <a name="dv2-series"></a>Serie Dv2
 |Tamaño     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
 |-------------------|----|----|-----|----|------|------------|---------|
-|**Standard_D1_v2** |1   |3,5 |50   |500 |3000  |4 / 4x500   |1 |
+|**Standard_D1_v2** |1   |3,5 |50   |500 |3000  |4 / 4x500   |2 |
 |**Standard_D2_v2** |2   |7   |100  |500 |6000  |8 / 8x500   |2 |
 |**Standard_D3_v2** |4   |14  |200  |500 |12000 |16 / 16x500 |4 |
 |**Standard_D4_v2** |8   |28  |400  |500 |24000 |32 / 32x500 |8 |
@@ -187,5 +186,3 @@ Los tamaños de las máquinas virtuales optimizadas para memoria ofrecen una rel
 ## <a name="next-steps"></a>Pasos siguientes
 
 [Consideraciones sobre máquinas virtuales en Azure Stack](azure-stack-vm-considerations.md)
-
-<!-- Update_Description: wording update -->

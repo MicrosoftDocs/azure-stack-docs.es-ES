@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/09/2019
+ms.date: 05/16/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 01/09/2019
-ms.openlocfilehash: fa3058f42986063946b943652a1e261b9a34e5d7
-ms.sourcegitcommit: 24d5c16132d4c40a760ad6f631739af86188a09f
+ms.lastreviewed: 05/16/2019
+ms.openlocfilehash: 1bf4842746aa6a7bcdeedb41f58c267919cf1542
+ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64910141"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65782544"
 ---
 # <a name="use-api-version-profiles-with-ruby-in-azure-stack"></a>Uso de los perfiles de la versión de la API con Ruby en Azure Stack
 

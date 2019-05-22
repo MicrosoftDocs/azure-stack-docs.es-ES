@@ -3,25 +3,24 @@ title: Acciones de los nodos de unidad de escalado en Azure Stack | Microsoft Do
 description: Aprenda a ver el estado de los nodos y a usar las acciones de nodo para conectar, desconectar, deshabilitar y reanudar en un sistema integrado de Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: mattbriggs
+manager: femila
 editor: ''
 ms.service: azure-stack
 ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: article
-origin.date: 01/22/2019
-ms.date: 03/04/2019
-ms.author: v-jay
+ms.date: 05/16/2019
+ms.author: mabrigg
 ms.reviewer: ppacent
 ms.lastreviewed: 01/22/2019
-ms.openlocfilehash: cd7e66961a0b9a80150a3d3e132efd29485cdb66
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: fa0292419a228fcf9bbfef2bbfc2503f4ba5a702
+ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64307869"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65782334"
 ---
 # <a name="scale-unit-node-actions-in-azure-stack"></a>Acciones de los nodos de unidad de escalado en Azure Stack
 
@@ -86,7 +85,7 @@ Esta acción se utiliza normalmente cuando un nodo está en un estado bloqueado 
 
 Para ejecutar la acción de detención, abra un símbolo de sistema de PowerShell con privilegios elevados y ejecute el siguiente cmdlet:
 
-```PowerShell  
+```powershell  
   Stop-AzsScaleUnitNode -Location <RegionName> -Name <NodeName>
 ```
 
@@ -100,7 +99,7 @@ La acción de **inicio** activa el nodo. Es lo mismo que si se presiona el botó
  
 Para ejecutar la acción de inicio, abra un símbolo de sistema de PowerShell con privilegios elevados y ejecute el siguiente cmdlet:
 
-```PowerShell  
+```powershell  
   Start-AzsScaleUnitNode -Location <RegionName> -Name <NodeName>
 ```
 
@@ -119,7 +118,7 @@ Esta acción se suele utilizar durante el reemplazo de diversos componentes, por
 
 Para ejecutar la acción de purga, abra un símbolo de sistema de PowerShell con privilegios elevados y ejecute el siguiente cmdlet:
 
-```PowerShell  
+```powershell  
   Disable-AzsScaleUnitNode -Location <RegionName> -Name <NodeName>
 ```
 
@@ -131,7 +130,7 @@ La acción de **reanudación** reanuda un nodo deshabilitado y lo marca como act
 
 Para reanudar la acción de purga, abra un símbolo de sistema de PowerShell con privilegios elevados y ejecute el siguiente cmdlet:
 
-```PowerShell  
+```powershell  
   Enable-AzsScaleUnitNode -Location <RegionName> -Name <NodeName>
 ```
 
@@ -150,7 +149,7 @@ Al ejecutar la acción de reparación, debe especificar la dirección IP de BMC.
 
 Para reanudar la acción de reparación, abra un símbolo de sistema de PowerShell con privilegios elevados y ejecute el siguiente cmdlet:
 
-  ```PowerShell
+  ```powershell
   Repair-AzsScaleUnitNode -Location <RegionName> -Name <NodeName> -BMCIPv4Address <BMCIPv4Address>
   ```
 
@@ -164,7 +163,7 @@ Si se produce un error en la operación de apagado, intente la operación de [pu
 
 Para ejecutar la acción de apagado, abra un símbolo de sistema de PowerShell con privilegios elevados y ejecute el siguiente cmdlet:
 
-  ```PowerShell
+  ```powershell
   Stop-AzsScaleUnitNode -Location <RegionName> -Name <NodeName> -Shutdown
   ```
 

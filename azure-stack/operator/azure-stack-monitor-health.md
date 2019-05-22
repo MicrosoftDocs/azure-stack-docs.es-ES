@@ -3,24 +3,23 @@ title: Supervisar el estado y las alertas en Azure Stack | Microsoft Docs
 description: Aprenda cómo supervisar el estado y las alertas en Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: mattbriggs
+manager: femila
 editor: ''
 ms.service: azure-stack
 ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-origin.date: 01/18/2019
-ms.date: 03/04/2019
-ms.author: v-jay
+ms.date: 05/16/2019
+ms.author: mabrigg
 ms.lastreviewed: 01/18/2019
-ms.openlocfilehash: 3e37b8f45d7068586d20b9c4b3ccdabb017d0416
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 4763025917172e3b8acaeb1ad748410e65143864
+ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64309573"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65782515"
 ---
 # <a name="monitor-health-and-alerts-in-azure-stack"></a>Supervisar el estado y las alertas en Azure Stack
 
@@ -96,5 +95,3 @@ Después de que la instancia de rol de la infraestructura vuelve a estar en lín
 [Administrar las actualizaciones en Azure Stack](azure-stack-updates.md)
 
 [Administración de regiones en Azure Stack](azure-stack-region-management.md)
-
-<!-- Update_Description: wording update -->

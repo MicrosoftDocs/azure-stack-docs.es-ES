@@ -10,16 +10,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/25/2019
+ms.date: 05/16/2019
 ms.author: mabrigg
 ms.reviewer: ppacent
 ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: e0556eb5cc3d0f140067a4e3b4a9054a47b91417
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 1c342b1edb86629fff95dc04735fd5b6d98fc70a
+ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64307131"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65782270"
 ---
 # <a name="azure-stack-certificates-signing-request-generation"></a>Generación de solicitudes de firma de certificados de Azure Stack
 

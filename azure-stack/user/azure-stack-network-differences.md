@@ -5,18 +5,18 @@ services: azure-stack
 keywords: ''
 author: mattbriggs
 manager: femila
-ms.date: 01/25/2019
+ms.date: 05/16/2019
 ms.topic: article
 ms.service: azure-stack
 ms.author: mabrigg
 ms.reviewer: scottnap
 ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: a887564356b387000ff450c090eab45700fc5fee
-ms.sourcegitcommit: 1f216d15fed9bd4065015cb2f9908797388e34aa
+ms.openlocfilehash: 841e30367ded29e10c28573056f4a70361e28a9e
+ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "64564075"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65782557"
 ---
 # <a name="considerations-for-azure-stack-networking"></a>Consideraciones para las redes de Azure Stack
 
