@@ -16,12 +16,12 @@ ms.date: 02/12/2019
 ms.author: mabrigg
 ms.reviewer: unknown
 ms.lastreviewed: 09/17/2018
-ms.openlocfilehash: 3282464bf1df7fcbbdb532735c8d4b1dabfa0401
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: 18451de91427242986a824fab968d11f6a3fd734
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985039"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618509"
 ---
 # <a name="overview-of-offering-services-in-azure-stack"></a>Introducción a la oferta de servicios en Azure Stack
 

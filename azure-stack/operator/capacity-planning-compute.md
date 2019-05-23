@@ -17,12 +17,12 @@ ms.author: mabrigg
 ms.reviewer: prchint
 ms.lastreviewed: 04/03/2019
 ms.custom: ''
-ms.openlocfilehash: f20dd8499abf4d8c7fd2097d47e655790c19d33d
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: 907a10caa2a23b58d0c63ee1abb7f4e4a074d1a1
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64984001"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618916"
 ---
 # <a name="azure-stack-compute-capacity-planning"></a>Planeamiento de la capacidad de proceso de Azure Stack
 Los [tamaños de máquinas virtuales admitidos en Azure Stack](../user/azure-stack-vm-sizes.md) son un subconjunto de los admitidos por Azure. Azure impone límites de recursos junto con varios vectores para evitar el consumo excesivo de recursos (nivel de servicio y local del servidor). Sin la imposición de algunos límites sobre el consumo del inquilino, las experiencias de este se verán afectadas cuando otros inquilinos consuman recursos en exceso. Para la salida de redes de la máquina virtual, hay extremos de ancho de banda en Azure Stack que coinciden con las limitaciones de Azure. En el caso de los recursos de almacenamiento, los límites de IOPS de almacenamiento se han implementado en Azure Stack para evitar el consumo excesivo básico de recursos por parte de los inquilinos para el acceso de almacenamiento.  

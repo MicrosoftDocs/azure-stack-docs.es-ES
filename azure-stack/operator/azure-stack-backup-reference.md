@@ -16,12 +16,12 @@ ms.date: 02/12/2019
 ms.author: mabrigg
 ms.reviewer: hectorl
 ms.lastreviewed: 10/25/2018
-ms.openlocfilehash: 890eb9a6f5b817c3bf77e18ce7019b9e99709d49
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: 7b95dba4b3462b2c0e36aa1464faf217fccd7a6a
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64983607"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65617806"
 ---
 # <a name="infrastructure-backup-service-reference"></a>Referencia del servicio Infrastructure Backup
 

@@ -13,13 +13,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/14/2019
 ms.author: mabrigg
+ms.reviewer: ppacent
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 2c775c982cf72d687d04b32db742fdbcd8e38fb9
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: ef82c50a8150f10fdbe2b38acf77b5539c575b51
+ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64986136"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65782790"
 ---
 # <a name="create-a-virtual-machine-using-a-secure-password-stored-in-azure-stack-key-vault"></a>Creación de una máquina virtual mediante una contraseña segura almacenada en Key Vault de Azure Stack
 

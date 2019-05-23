@@ -11,12 +11,12 @@ ms.date: 04/30/2019
 ms.author: mabrigg
 ms.reviewer: adshar
 ms.lastreviewed: 11/20/2018
-ms.openlocfilehash: aaa929924399eb7e999bccdaa45e5ae9ce0dfa3a
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: c2f552035fdffebbb24fbd64e5c416179853c51e
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985357"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618044"
 ---
 # <a name="azure-stack-diagnostics-tools"></a>Herramientas de diagnóstico de Azure Stack
 

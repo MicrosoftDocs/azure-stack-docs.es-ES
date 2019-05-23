@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/14/2019
+ms.date: 05/16/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 96708a3c88b593f0d423b227d43c356ef38c1515
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: 8c6881ebcb07f2ca922bcd7d8fbfb07f395c9007
+ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985190"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65782352"
 ---
 # <a name="manage-role-based-access-control"></a>Administrar el control de acceso basado en roles
 
@@ -50,5 +50,5 @@ En Azure Stack, un usuario puede ser un lector, propietario o colaborador de cad
 4. En la hoja **Roles**, haga clic en **Agregar** para agregar permisos para el grupo de Active Directory del grupo universal.
 
 ## <a name="next-steps"></a>Pasos siguientes
-[Add a new Azure Stack tenant account in Azure Active Directory](azure-stack-add-new-user-aad.md)
 
+[Add a new Azure Stack tenant account in Azure Active Directory](azure-stack-add-new-user-aad.md)

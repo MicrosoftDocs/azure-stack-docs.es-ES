@@ -16,12 +16,12 @@ ms.date: 02/28/2019
 ms.author: mabrigg
 ms.reviewer: scottnap
 ms.lastreviewed: 02/28/2019
-ms.openlocfilehash: 3697dd623f7531491cac7e8f7d8a327de0c02af7
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: 9fb373d350c5225de4b6bb2f53b2ff75185a4096
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64986087"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618299"
 ---
 # <a name="add-public-ip-addresses"></a>Agregar direcciones IP públicas
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*  
