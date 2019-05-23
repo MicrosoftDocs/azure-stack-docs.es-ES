@@ -9,12 +9,12 @@ ms.service: azure-stack
 ms.author: bryanla
 ms.date: 05/21/2019
 ms.topic: hub-page
-ms.openlocfilehash: c611932bf9b7d225539bc92b25bf998fd48d2c57
-ms.sourcegitcommit: 6fcd5df8b77e782ef72f0e1419f1f75ec8c16c04
+ms.openlocfilehash: 080abfeb6e780fbdcc80f95c38874b124c707c6e
+ms.sourcegitcommit: 1067b2391632e95528a001da91bb6a8efafe470f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65991211"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66009361"
 ---
 <div id="main" class="v2">
 <h1>Documentación de Azure Stack</h1>
@@ -94,7 +94,7 @@ ms.locfileid: "65991211"
                             </div>
                             <div class="cardText x-hidden-focus">
                                 <h3>Operador</h3>
-                                <p>Documentación para las tareas del operador.</p>
+                                <p>Documentación para las tareas del operador.<br><br></p>
                             </div>
                         </div>
                     </div>
@@ -113,7 +113,7 @@ ms.locfileid: "65991211"
                             </div>
                             <div class="cardText">
                                 <h3 class="x-hidden-focus">Usuario</h3>
-                                <p>Documentación para las tareas del usuario.</p>
+                                <p>Documentación para las tareas del usuario.<br><br></p>
                             </div>
                         </div>
                     </div>
