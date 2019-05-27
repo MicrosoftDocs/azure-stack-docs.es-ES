@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/09/2019
-ms.author: efemmano
-ms.lastreviewed: 01/09/2019
-ms.openlocfilehash: b0dba609acd7b12cdb95c1ec3e40ad906674244d
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.date: 05/10/2019
+ms.author: sethm
+ms.lastreviewed: 05/10/2019
+ms.openlocfilehash: 792589eabf13b9aca493e230f7e3e93cfab21736
+ms.sourcegitcommit: 426380a3a27954cd609ba52d1066d9d69f5267fe
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64984771"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65532365"
 ---
 # <a name="create-subscriptions-to-offers-in-azure-stack"></a>Creación de suscripciones para ofertas en Azure Stack
 
@@ -92,9 +92,9 @@ Como usuario, puede iniciar sesión en el portal de usuarios para buscar y suscr
 
 Si la oferta tiene un plan complementario, puede añadirlo a su suscripción en cualquier momento.  
 
-1. En el portal de usuarios, seleccione **todos los servicios**. A continuación, en la categoría **GENERAL** seleccione **Suscripciones** y, después, seleccione la suscripción que desea cambiar. Si hay planes complementarios disponibles, la opción **+Agregar plan** está activa y hay un icono para **Planes complementarios**. 
+1. En el portal de usuarios, seleccione **todos los servicios**. A continuación, en la categoría **GENERAL** seleccione **Suscripciones** y, después, seleccione la suscripción que desea cambiar. Si hay planes complementarios disponibles, la opción **+ Agregar plan** está activa y hay un icono para **Planes complementarios**.
 
-   Si **+Agregar plan** no está activo, no hay ningún plan complementario para la oferta asociado a esa suscripción.
+   Si **+ Agregar plan** no está activo, no hay ningún plan complementario para la oferta asociado a esa suscripción.
 
 1. Seleccione **+ Agregar plan** o el icono **Planes complementarios**. En **Planes complementarios**, seleccione el plan que desea agregar.
 

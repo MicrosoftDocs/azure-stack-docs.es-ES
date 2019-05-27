@@ -2,26 +2,28 @@
 title: 'Integración del centro de datos de Azure Stack: DNS'
 description: Obtenga información sobre cómo integrar el DNS de Azure Stack con el DNS de su centro de datos.
 services: azure-stack
-author: jeffgilb
+author: mattbriggs
 manager: femila
 ms.service: azure-stack
 ms.topic: article
-ms.date: 02/12/2019
-ms.author: jeffgilb
+ms.date: 05/09/2019
+ms.author: mabrigg
 ms.reviewer: wfayed
-ms.lastreviewed: 10/15/2018
+ms.lastreviewed: 05/09/2019
 keywords: ''
-ms.openlocfilehash: e14fa6c172fcf579acf28bc8f3ea20f34148b90c
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: bf1aed6c8140f0c0753f49195082dfd71737868a
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985283"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618673"
 ---
 # <a name="azure-stack-datacenter-integration---dns"></a>Integración del centro de datos de Azure Stack: DNS
+
 Para tener acceso a los puntos de conexión de Azure Stack (**portal**, **adminportal**, **management**, **adminmanagement**, etc.) desde fuera de Azure Stack, debe integrar los servicios de DNS de Azure Stack con los servidores DNS que hospedan las zonas DNS que quiere usar en Azure Stack.
 
 ## <a name="azure-stack-dns-namespace"></a>Espacio de nombres de DNS de Azure Stack
+
 Se le solicitará que proporcione información importante relacionada con DNS cuando implemente Azure Stack.
 
 
@@ -51,6 +53,19 @@ Para usar este espacio de nombres DNS de ejemplo para una implementación de Azu
 
 Para poder resolver nombres DNS para puntos de conexión e instancias de Azure Stack desde fuera de Azure Stack, debe integrar los servidores DNS que hospedan la zona DNS externa para Azure Stack con los servidores DNS que hospedan la zona principal que quiere usar.
 
+### <a name="dns-name-labels"></a>Etiquetas de nombre DNS
+
+Azure Stack admite la adición de una etiqueta de nombre DNS a una dirección IP pública para permitir la resolución de nombres de las direcciones IP públicas. Para los usuarios, puede ser una manera práctica de acceder a las aplicaciones y los servicios hospedados en Azure Stack por el nombre. La etiqueta de nombre DNS usa un espacio de nombres ligeramente diferente al de los puntos de conexión de la infraestructura. Siguiendo el ejemplo de espacio de nombres anterior, el espacio de nombres para las etiquetas de nombre DNS aparece de la siguiente manera:
+
+`*.east.cloudapp.cloud.fabrikam.com`
+
+Por lo tanto, si un inquilino indica un valor **Myapp** en el campo de la etiqueta de nombre DNS de un recurso de dirección IP pública, crea un registro A para **myapp** en la zona **east.cloudapp.cloud.fabrikam.com** en el servidor DNS externo de Azure Stack. El nombre de dominio completo resultante aparece de la siguiente manera:
+
+`myapp.east.cloudapp.cloud.fabrikam.com`
+
+Si quiere aprovechar esta funcionalidad y usar este espacio de nombres, debe integrar los servidores DNS que hospedan la zona DNS externa para Azure Stack con los servidores DNS que hospedan la zona principal que también quiere utilizar. Se trata de un espacio de nombres distinto del espacio de nombres de los puntos de conexión de servicio de Azure Stack, por lo que debe crear una delegación adicional o la regla de reenvío condicional.
+
+Para obtener más información acerca del funcionamiento de la etiqueta de nombre DNS, consulte [Using DNS in Azure Stack](../user/azure-stack-dns.md) (Uso de DNS en Azure Stack).
 
 ## <a name="resolution-and-delegation"></a>Resolución y delegación
 

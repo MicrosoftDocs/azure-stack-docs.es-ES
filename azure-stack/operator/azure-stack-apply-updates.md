@@ -15,12 +15,12 @@ ms.date: 04/25/2019
 ms.author: mabrigg
 ms.reviewer: justini
 ms.lastreviewed: 02/11/2019
-ms.openlocfilehash: 124dc554e18f6d387a3e41d37809d43276094879
-ms.sourcegitcommit: 0d8ccf2a32b08ab9bcbe13d54c7c3dce2379757f
+ms.openlocfilehash: 147e6b7555d67b562b44102bfd022e954a87e0ae
+ms.sourcegitcommit: 2b6a0b3b4dc63c26df3d0535d630d640ff232fb0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/25/2019
-ms.locfileid: "64490122"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65521222"
 ---
 # <a name="apply-updates-in-azure-stack"></a>Aplicación de actualizaciones en Azure Stack
 
@@ -68,14 +68,14 @@ Si usa la versión 1807, o una versión anterior, de los sistemas integrados, de
 
 Cuando haya disponible un paquete de actualización de OEM o Microsoft para Azure Stack, descárguelo a una ubicación a la que se pueda acceder desde Azure Stack y revise el contenido del paquete. Normalmente, un paquete de actualización consta de los siguientes archivos:
 
-- Un archivo `<PackageName>.exe` autoextraíble. Este archivo contiene la carga útil de la actualización, por ejemplo la actualización acumulativa más reciente de Windows Server.
+- Un archivo `<PackageName>.zip` autoextraíble. Este archivo contiene la carga útil de la actualización, por ejemplo la actualización acumulativa más reciente de Windows Server.
 
-- Los archivos `<PackageName>.bin` que correspondan. Estos archivos proporcionan compresión para la carga que está asociada el archivo *PackageName*.exe.
+- Los archivos `<PackageName>.bin` que correspondan. Estos archivos proporcionan compresión para la carga útil que está asociada al archivo *PackageName*.zip.
 
 - Un archivo `Metadata.xml`. Este archivo contiene información esencial acerca de la actualización, como el editor, nombre, requisito previo, tamaño y dirección URL de ruta de acceso de soporte.
 
 > [!IMPORTANT]  
-> Después de aplicar el paquete de actualización de Azure Stack 1901, el formato de empaquetado de los paquetes de actualización de Azure Stack cambiará de .exe, .bin(s) y .xml a .zip(s) y .xml. Los operadores de Azure Stack que tengan marcas conectadas no se verán afectados. Los operadores de Azure Stack que están desconectados no tienen más que importar los archivos .xml y .zip utilizando el mismo proceso que se describe a continuación.
+> Después de aplicar el paquete de actualización de Azure Stack 1901, el formato de empaquetado de los paquetes de actualización de Azure Stack cambiará de .zip, .bin(s) y .xml a .zip(s) y .xml. Los operadores de Azure Stack que tengan marcas conectadas no se verán afectados. Los operadores de Azure Stack que están desconectados no tienen más que importar los archivos .xml y .zip utilizando el mismo proceso que se describe a continuación.
 
 ## <a name="import-and-install-updates"></a>Importación e instalación de actualizaciones
 
@@ -102,13 +102,14 @@ El siguiente procedimiento muestra cómo importar e instalar actualizaciones en 
  
     ![Muestra cómo cargar los archivos de paquete](media/azure-stack-apply-updates/ApplyUpdates5.png)
 
-6. En **Cargar blob**, haga clic en el icono de la carpeta, vaya al archivo .exe del paquete de actualización y haga clic en **Abrir** en la ventana del explorador de archivos.
+6. En **Cargar blob**, haga clic en el icono de la carpeta, vaya al archivo .zip del paquete de actualización y haga clic en **Abrir** en la ventana del explorador de archivos.
   
 7. En **Cargar blob**, haga clic en **Cargar**.
   
     ![Muestra dónde se carga cada archivo de paquete](media/azure-stack-apply-updates/ApplyUpdates6.png)
 
-8. Repita los pasos 6 y 7 para los archivos *PackageName*.bin y Metadata.xml. No importe el archivo Supplemental Notice.txt si está incluido.
+8. Repita los pasos 6 y 7 para los archivos *PackageName*.bin y Metadata.xml. No importe el archivo Supplemental Notice.txt si está incluido. Tenga en cuenta que los archivos tendrán el formato .zip a partir de la versión 1901 en contraposición a .bin y .zip. Siga importando los archivos .xml como de costumbre.
+
 9. Cuando haya finalizado, puede revisar las notificaciones (el icono de campana de la esquina superior derecha del portal). Las notificaciones deben indicar que la carga se ha completado.
 10. Vuelva al icono de actualización del panel. El icono debe indicar que hay una actualización disponible. Haga clic en el icono para revisar el paquete de actualización recién agregado.
 11. Para instalar la actualización, seleccione el paquete que está marcado como **Listo** y haga clic con el botón derecho en él y seleccione **Actualizar ahora**, o bien haga clic en la acción **Actualizar ahora** cerca de la parte superior.
