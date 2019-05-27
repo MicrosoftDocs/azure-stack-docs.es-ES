@@ -16,13 +16,13 @@ ms.date: 03/29/2019
 ms.author: mabrigg
 ms.reviewer: unknown
 ms.custom: ''
-ms.lastreviewed: 03/29/2019
-ms.openlocfilehash: f8206c658170a16e517e64a328d188c015b9e394
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.lastreviewed: 05/14/2019
+ms.openlocfilehash: b98be2ae02e65fea9356f35f2d2554e57dfb5628
+ms.sourcegitcommit: 1655b2ef4d01d69ceeb52bc16f922bdc19cb968d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618069"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65706287"
 ---
 # <a name="azure-stack-overview"></a>Introducción a Azure Stack
 
@@ -76,17 +76,17 @@ Puede implementar Azure Stack, ya sea **con conexión** a Internet (y a Azure) o
 > Para más información, consulte las consideraciones para modelos de implementación [con conexión](azure-stack-connected-deployment.md) y [sin conexión](azure-stack-disconnected-deployment.md). 
 
 ### <a name="identity-provider"></a>Proveedor de identidades 
-Azure Stack usa Azure Active Directory (Azure AD) o los Servicios de federación de Active Directory (AD FS) como proveedor de identidades para establecer identidades de Azure Stack. 
+Azure Stack usa Azure Active Directory (Azure AD) o los Servicios de federación de Active Directory (AD FS) como proveedor de identidades. Azure AD es el proveedor de identidades multiinquilino basado en la nube de Microsoft. La mayoría de los escenarios híbridos con implementaciones con conexión a Internet usan Azure AD como almacén de identidades. 
+
+Para las implementaciones desconectadas de Azure Stack, puede elegir usar los Servicios de federación de Active Directory (AD FS). Los proveedores de recursos de Azure Stack y otras aplicaciones funcionan de manera similar con AD FS o Azure AD. Azure Stack incluye su propia instancia de Active Directory, así como una instancia de Graph API de Active Directory.
 
 > [!IMPORTANT]
-> Este es un punto clave en las decisiones. La elección entre Azure AD o AD FS como proveedor de identidades es una decisión puntual que debe realizar en el momento de la implementación. Para cambiarlo posteriormente es preciso volver a implementar todo el sistema.
-
-Azure AD es el proveedor de identidades multiinquilino basado en la nube de Microsoft. La mayoría de los escenarios híbridos con implementaciones con conexión a Internet usan Azure AD como almacén de identidades. No obstante, puede elegir usar los Servicios de federación de Active Directory (AD FS) para las implementaciones desconectadas de Azure Stack. Los proveedores de recursos de Azure Stack y otras aplicaciones funcionan con AD FS de manera muy similar a como lo hacen con Azure AD. Azure Stack incluye su propia instancia de Active Directory, así como una instancia de Graph API de Active Directory. 
+> No se puede cambiar el proveedor de identidades después de la implementación. Para usar otro proveedor de identidades, tiene que volver a implementar Azure Stack.
 
 > Puede obtener más información acerca de las consideraciones de identidad de Azure Stack en [Información general sobre identidades en Azure Stack](azure-stack-identity-overview.md).
 
 ## <a name="how-is-azure-stack-managed"></a>¿Cómo se administra Azure Stack?
-Después de implementar Azure Stack en una implementación de sistemas integrados o en una instalación de ASDK, los principales métodos para interactuar con Azure Stack son el portal de administración, el portal de usuarios y PowerShell. Cada uno de los portales de Azure Stack cuenta con el respaldo de instancias independientes de Azure Resource Manager. Un **operador de Azure Stack** usa el portal de administración para administrar Azure Stack y para hacer cosas como crear ofertas para inquilinos y mantener y supervisar el estado del sistema integrado. El portal de usuarios (conocido también como "portal de inquilinos") proporciona una experiencia de autoservicio para el consumo de recursos de nube, como máquinas virtuales, cuentas de almacenamiento y Web Apps. 
+Puede administrar Azure Stack con el portal de administración, el portal de usuarios o [PowerShell](https://docs.microsoft.com/powershell/azure/azure-stack/overview?view=azurestackps-1.7.1). Cada uno de los portales de Azure Stack cuenta con el respaldo de instancias independientes de Azure Resource Manager. Un **operador de Azure Stack** usa el portal de administración para administrar Azure Stack y para hacer cosas como crear ofertas para inquilinos y mantener y supervisar el estado del sistema integrado. El portal de usuarios (conocido también como portal de inquilinos) proporciona una experiencia de autoservicio para el consumo de recursos de nube, como máquinas virtuales, cuentas de almacenamiento y aplicaciones web. 
 
 > Para más información acerca de cómo administrar Azure Stack mediante el portal de administración, consulte el [inicio rápido del portal de administración de Azure Stack](azure-stack-manage-portals.md).
 
@@ -102,14 +102,14 @@ Si Azure Stack está configurado, un **usuario de Azure Stack** (también llamad
 Los proveedores de recursos son servicios web que forman la base de todos los servicios IaaS y PaaS de Azure Stack. Azure Resource Manager utiliza distintos proveedores de recursos para proporcionar acceso a los servicios. Cada uno de estos proveedores de recursos le ayuda a configurar y controlar sus respectivos recursos. Los administradores de servicios también pueden agregar nuevos proveedores de recursos personalizados. 
 
 ### <a name="foundational-resource-providers"></a>Proveedores de recursos fundamentales 
-Hay tres proveedores de recursos de IaaS fundamentales: Proceso, red y almacenamiento:
+Hay tres proveedores de recursos de IaaS fundamentales: 
 
-- **Proceso**. El proveedor de recursos de proceso permite a los inquilinos de Azure Stack crear sus propias máquinas virtuales. El proveedor de recursos de proceso incluye la capacidad de crear tanto máquinas virtuales como extensiones de máquina virtual. El servicio de extensión de Máquina virtual ayuda a proporcionar capacidades de IaaS a las máquinas virtuales Windows y Linux.  Por ejemplo, puede usar el proveedor de recursos de proceso para aprovisionar una máquina virtual Linux y ejecutar scripts de Bash durante la implementación para configurar la máquina virtual.
+- **Proceso**. El proveedor de recursos de proceso permite a los inquilinos de Azure Stack crear sus propias máquinas virtuales. El proveedor de recursos de proceso incluye la capacidad de crear tanto máquinas virtuales como extensiones de máquina virtual. El servicio de extensión de Máquina virtual ayuda a proporcionar capacidades de IaaS a las máquinas virtuales Windows y Linux. Por ejemplo, puede usar el proveedor de recursos de proceso para aprovisionar una máquina virtual Linux y ejecutar scripts de Bash durante la implementación para configurar la máquina virtual.
 - **Proveedor de recursos de red**. El proveedor de recursos de red ofrece una serie de características de Redes definidas por software (SDN) y Virtualización de función de red (NFV) a la nube privada. El proveedor de recursos de red puede usarse para crear recursos, como equilibradores de carga de software, direcciones IP públicas, grupos de seguridad de red y redes virtuales.
-- **Proveedor de recursos de almacenamiento**. El proveedor de recursos de almacenamiento ofrece cuatro servicios de almacenamiento coherentes con Azure: [blob](https://docs.microsoft.com/azure/storage/common/storage-introduction#blob-storage), [cola](https://docs.microsoft.com/azure/storage/common/storage-introduction#queue-storage), [tabla](https://docs.microsoft.com/azure/storage/common/storage-introduction#table-storage)y administración de cuentas de KeyVault, que proporciona administración y auditoría de secretos, como contraseñas y certificados. También ofrece un servicio de administración del almacenamiento en la nube para facilitar la administración del proveedor de los servicios de almacenamiento coherentes con Azure. Azure Storage proporciona la flexibilidad necesaria para almacenar y recuperar grandes cantidades de datos no estructurados, como documentos y archivos multimedia con Blobs de Azure y datos estructurados basados en NoSQL con Tablas de Azure. 
+- **Proveedor de recursos de almacenamiento**. El proveedor de recursos de almacenamiento ofrece cuatro servicios de almacenamiento coherentes con Azure: [blob](https://docs.microsoft.com/azure/storage/common/storage-introduction#blob-storage), [cola](https://docs.microsoft.com/azure/storage/common/storage-introduction#queue-storage), [tabla](https://docs.microsoft.com/azure/storage/common/storage-introduction#table-storage) y administración de cuentas de [KeyVault](https://docs.microsoft.com/azure/key-vault/), que proporciona administración y auditoría de secretos, como contraseñas y certificados. También ofrece un servicio de administración del almacenamiento en la nube para facilitar la administración del proveedor de los servicios de almacenamiento coherentes con Azure. Azure Storage proporciona la flexibilidad necesaria para almacenar y recuperar grandes cantidades de datos no estructurados, como documentos y archivos multimedia con Blobs de Azure y datos estructurados basados en NoSQL con Tablas de Azure. 
 
 ### <a name="optional-resource-providers"></a>Proveedores de recursos opcionales
-Hay tres proveedores de recursos de PaaS opcionales que puede implementar y usar con Azure Stack: Proveedores de recursos de App Service, SQL Server y MySQL Server:
+Hay tres proveedores de recursos de PaaS opcionales que puede implementar y usar con Azure Stack: 
 
 - **App Service**. [Azure App Service en Azure Stack](azure-stack-app-service-overview.md) es una oferta de plataforma como servicio (PaaS) de Microsoft Azure disponible en Azure Stack. El servicio habilita a sus clientes internos o externos para crear aplicaciones de Azure Functions, API y web para cualquier plataforma o dispositivo. 
 - **SQL Server**. Use el [proveedor de recursos de SQL Server](azure-stack-sql-resource-provider.md) para ofrecer las bases de datos de SQL como un servicio de Azure Stack. Después de instalar el proveedor de recursos y conectarse a una o varias instancias de SQL Server, usted y sus usuarios pueden crear bases de datos para aplicaciones nativas en la nube, sitios web que usan SQL y otras cargas de trabajo que usan SQL.
@@ -120,7 +120,7 @@ Para conseguir la alta disponibilidad de un sistema de producción con varias VM
 
 Si bien la infraestructura de Azure Stack ya es resistente ante errores, la tecnología subyacente (clústeres de conmutación por error) de todos modos tiene cierto tiempo de inactividad de las máquinas virtuales en un servidor físico si se produce un error de hardware. Azure Stack admite un conjunto de disponibilidad con un máximo de tres dominios de error para coherencia con Azure.
 
-- **Dominios de error**. Las máquinas virtuales colocadas en conjuntos de disponibilidad se aislarán físicamente entre sí al distribuirlas de la manera más uniforme que sea posible en varios dominios de error (nodos de Azure Stack). Si se produce un error de hardware, las máquinas virtuales del dominio de error que presente el error se reiniciarán en otros dominios de error pero, si es posible, se mantendrán en dominios de error independientes de las otras máquinas virtuales que se encuentran en el mismo conjunto de disponibilidad. Cuando el hardware vuelva a estar en línea, las máquinas virtuales se volverán a equilibrar para mantener la alta disponibilidad. 
+- **Dominios de error**. Las máquinas virtuales colocadas en conjuntos de disponibilidad se aislarán físicamente entre sí al distribuirlas de la manera más uniforme que sea posible en varios dominios de error (nodos de Azure Stack). Si se produce un error de hardware, las máquinas virtuales del dominio de error que presente el error se reiniciarán en otros dominios de error pero se mantendrán en dominios de error independientes de las otras máquinas virtuales que se encuentran en el mismo conjunto de disponibilidad, si es posible. Cuando el hardware vuelva a estar en línea, las máquinas virtuales se volverán a equilibrar para mantener la alta disponibilidad. 
  
 - **Dominios de actualización**. Los dominios de actualización son otro concepto de Azure que proporciona alta disponibilidad en los conjuntos de disponibilidad. Un dominio de actualización es un grupo lógico de hardware adyacente que puede someterse a mantenimiento al mismo tiempo. Las máquinas virtuales que se encuentran en el mismo dominio de actualización se reiniciarán en conjunto durante el mantenimiento planeado. Cuando los inquilinos crean máquinas virtuales dentro de un conjunto de disponibilidad, la plataforma de Azure las distribuye de manera automática entre estos dominios de actualización. En Azure Stack, las máquinas virtuales se migran en vivo entre los otros hosts en línea del clúster antes de que se actualice su host subyacente. Como no hay tiempo de inactividad para el inquilino durante una actualización del host, la característica de dominio de actualización de Azure Stack solo existe para compatibilidad de plantilla con Azure. 
 
@@ -132,7 +132,7 @@ RBAC de Azure Stack cuenta con tres roles básicos que se aplican a todos los ti
 > Para más información, consulte [Administración del control de acceso basado en rol](azure-stack-manage-permissions.md). 
 
 ## <a name="reporting-usage-data"></a>Creación de informes de datos de uso
-Microsoft Azure Stack recopila y agrega los datos de uso de todos los proveedores de recursos y los transmite a Azure para su procesamiento por parte de Comercio de Azure. Los datos de uso recopilados en Azure Stack pueden verse a través de una API de REST. Hay una API de inquilino coherente con Azure coherente, así como API de proveedor y de proveedor delegado para obtener datos de uso de todas las suscripciones del inquilino. Estos datos se pueden utilizar para realizar la integración con una herramienta o servicio externos con fines de facturación o contracargo. Una vez que Comercio de Azure ha procesado el uso, puede verse en el portal de facturación de Azure.
+Azure Stack recopila y agrega los datos de uso de todos los proveedores de recursos y los transmite a Azure para su procesamiento por parte de Azure Commerce. Los datos de uso recopilados en Azure Stack pueden verse a través de una API de REST. Hay una API de inquilino coherente con Azure coherente, así como API de proveedor y de proveedor delegado para obtener datos de uso de todas las suscripciones del inquilino. Estos datos se pueden utilizar para realizar la integración con una herramienta o servicio externos con fines de facturación o contracargo. Una vez que Comercio de Azure ha procesado el uso, puede verse en el portal de facturación de Azure.
 
 > Obtenga más información sobre la [creación de informes de datos de uso de Azure Stack en Azure](azure-stack-usage-reporting.md).
 

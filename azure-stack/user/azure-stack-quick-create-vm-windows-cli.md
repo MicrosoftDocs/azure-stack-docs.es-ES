@@ -1,6 +1,6 @@
 ---
 title: Creación de una máquina virtual Windows en Azure Stack con la CLI de Azure | Microsoft Docs
-description: Aprenda a crear una máquina virtual Windows en Azure Stack con la CLI de Azure.
+description: Creación de una máquina virtual Windows en Azure Stack con la CLI de Azure
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -11,18 +11,18 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 01/14/2019
+ms.date: 05/16/2019
 ms.author: mabrigg
 ms.custom: mvc
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 67e0ccfa883e79d66eb9ca38a6cf15f00154c487
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 090ad90f15056d614e5f61b848e5c8c248889ef2
+ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64312942"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65782630"
 ---
-# <a name="quickstart-create-a-windows-server-virtual-machine-by-using-azure-cli-in-azure-stack"></a>Guía de inicio rápido: Creación de una máquina virtual Windows Server con la CLI de Azure en Azure Stack
+# <a name="quickstart-create-a-windows-server-virtual-machine-using-azure-cli-in-azure-stack"></a>Inicio rápido: Creación de una máquina virtual Windows Server con la CLI de Azure en Azure Stack
 
 ‎*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
@@ -45,7 +45,7 @@ Un grupo de recursos es un contenedor lógico en el que puede implementar y admi
 > [!NOTE]
 >  Se asignan valores para todas las variables en los ejemplos de código. Sin embargo, puede asignar nuevos valores si lo desea.
 
-En el ejemplo siguiente, se crea un grupo de recursos denominado myResourceGroup en la ubicación local.
+En el ejemplo siguiente, se crea un grupo de recursos denominado myResourceGroup en la ubicación local:
 
 ```cli
 az group create --name myResourceGroup --location local
@@ -53,7 +53,7 @@ az group create --name myResourceGroup --location local
 
 ## <a name="create-a-virtual-machine"></a>de una máquina virtual
 
-Cree una máquina virtual con el comando [az vm create](/cli/azure/vm#az-vm-create). En el ejemplo siguiente se crea una máquina virtual denominada myVM. En este ejemplo se usa Demouser como el nombre de usuario administrativo y Demouser@123 como la contraseña del usuario. Actualice estos valores a un valor apropiado para su entorno.
+Cree una máquina virtual con el comando [az vm create](/cli/azure/vm#az-vm-create). En el ejemplo siguiente se crea una máquina virtual denominada myVM. En este ejemplo se usa Demouser como nombre de usuario administrador y Demouser@123 como la contraseña de administrador. Actualice estos valores a un valor apropiado para su entorno.
 
 ```cli
 az vm create \
@@ -65,13 +65,13 @@ az vm create \
   --location local
 ```
 
-Cuando se crea la máquina virtual, el parámetro **PublicIPAddress** de la salida contiene la dirección IP pública de la máquina virtual. Anote esta dirección porque la necesitará para acceder a la máquina virtual.
+Cuando se crea la máquina virtual, el parámetro **PublicIPAddress** de la salida contiene la dirección IP pública de la máquina virtual. Anote esta dirección porque la necesitará para usar la máquina virtual.
 
 ## <a name="open-port-80-for-web-traffic"></a>Apertura del puerto 80 para el tráfico web
 
 Dado que en esta máquina virtual se va a ejecutar el servidor web IIS, debe abrir el puerto 80 para el tráfico de Internet.
 
-Use el comando [az vm open-port](/cli/azure/vm) para abrir el puerto 80.
+Use el comando [az vm open-port](/cli/azure/vm) para abrir el puerto 80:
 
 ```cli
 az vm open-port --port 80 --resource-group myResourceGroup --name myVM
@@ -79,7 +79,7 @@ az vm open-port --port 80 --resource-group myResourceGroup --name myVM
 
 ## <a name="connect-to-the-virtual-machine"></a>Conexión a la máquina virtual
 
-Use el siguiente comando para crear una conexión a Escritorio remoto con la máquina virtual. Reemplace "Dirección IP pública" con la dirección IP de la máquina virtual. Cuando se le solicite, especifique el nombre de usuario y la contraseña que proporcionó cuando creó la máquina virtual.
+Use el siguiente comando para crear una conexión a Escritorio remoto con la máquina virtual. Reemplace "Dirección IP pública" con la dirección IP de la máquina virtual. Cuando se le pregunte, especifique el nombre de usuario y la contraseña que proporcionó cuando creó la máquina virtual.
 
 ```
 mstsc /v <Public IP Address>
@@ -95,7 +95,7 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
 ## <a name="view-the-iis-welcome-page"></a>Página principal de IIS
 
-Puede usar un explorador web de su elección para ver la página de bienvenida predeterminada de IIS. Use la dirección IP pública que ha anotado en la sección anterior para visitar la página predeterminada.
+Puede usar un explorador de su elección para ver la página de bienvenida predeterminada de IIS. Use la dirección IP pública enumerada en la sección anterior para visitar la página predeterminada:
 
 ![Sitio predeterminado de IIS](./media/azure-stack-quick-create-vm-windows-cli/default-iis-website.png)
 

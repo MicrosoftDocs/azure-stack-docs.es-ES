@@ -16,12 +16,12 @@ ms.author: mabrigg
 ms.custom: mvc
 ms.reviewer: kivenkat
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 04b2f2a5e4e9caa8e8eacc47b44c60a6884a6837
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: d6293aec1d9a4a7ce58442b21302c09162cc3a61
+ms.sourcegitcommit: 87d93cdcdb6efb06e894f56c2f09cad594e1a8b3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64986047"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65712434"
 ---
 # <a name="quickstart-create-a-windows-server-virtual-machine-by-using-powershell-in-azure-stack"></a>Inicio rápido: Creación de una máquina virtual Windows Server con PowerShell en Azure Stack
 
@@ -42,11 +42,14 @@ Puede crear una máquina virtual Windows Server 2016 mediante el uso de PowerShe
 
 * Azure Stack necesita una versión específica de Azure PowerShell para crear y administrar los recursos. Si no tiene PowerShell configurado para Azure Stack, siga estos pasos para [instalar](../operator/azure-stack-powershell-install.md) PowerShell.
 
-* Con Azure Stack PowerShell configurado, deberá conectarse al entorno de Azure Stack. Para instrucciones, consulte [Configuración del entorno de PowerShell del usuario de Azure Stack](azure-stack-powershell-configure-user.md).
+* Con Azure Stack PowerShell configurado, debe conectarse al entorno de Azure Stack. Para instrucciones, consulte [Configuración del entorno de PowerShell del usuario de Azure Stack](azure-stack-powershell-configure-user.md).
 
 ## <a name="create-a-resource-group"></a>Crear un grupo de recursos
 
-Un grupo de recursos es un contenedor lógico en el que se implementan y se administran los recursos de Azure Stack. Desde el kit de desarrollo o el sistema integrado de Azure Stack, ejecute el siguiente bloque de código para crear un grupo de recursos. Se asignan valores para todas las variables de este documento y puede utilizar estos valores o asignar otros nuevos.
+Un grupo de recursos es un contenedor lógico en el que se implementan y se administran los recursos de Azure Stack. Desde el kit de desarrollo o el sistema integrado de Azure Stack, ejecute el siguiente bloque de código para crear un grupo de recursos. 
+
+> [!NOTE]
+> Se asignan valores para todas las variables en los ejemplos de código. Sin embargo, puede asignar nuevos valores si lo desea.
 
 ```powershell
 # Create variables to store the location and resource group names.
@@ -109,7 +112,7 @@ $pip = New-AzureRmPublicIpAddress `
 
 ### <a name="create-a-network-security-group-and-a-network-security-group-rule"></a>Creación de un grupo de seguridad de red y una regla de grupo de seguridad de red
 
-El grupo de seguridad de red protege la máquina virtual con reglas de entrada y de salida. Permite crear una regla de entrada para el puerto 3389 para permitir las conexiones entrantes de Escritorio remoto y una regla de entrada para el puerto 80 que permita el tráfico web entrante.
+El grupo de seguridad de red protege la máquina virtual con reglas de entrada y de salida. Se creará una regla de entrada para el puerto 3389 para permitir las conexiones entrantes de Escritorio remoto y una regla de entrada para el puerto 80 que permita el tráfico web entrante.
 
 ```powershell
 # Create an inbound network security group rule for port 3389
@@ -214,7 +217,7 @@ Get-AzureRmPublicIpAddress `
   -ResourceGroupName $ResourceGroupName | Select IpAddress
 ```
 
-Ejecute el comando siguiente para crear una sesión de Escritorio remoto con la máquina virtual. Reemplace la dirección IP con el valor de publicIPAddress de la máquina virtual. Cuando se le pida, especifique el nombre de usuario y la contraseña que proporcionó cuando creó la máquina virtual.
+Ejecute el comando siguiente para crear una sesión de Escritorio remoto con la máquina virtual. Reemplace la dirección IP con el valor de *publicIPAddress* de la máquina virtual. Cuando se le pida, especifique el nombre de usuario y la contraseña que proporcionó cuando creó la máquina virtual.
 
 ```powershell
 mstsc /v <publicIpAddress>
@@ -230,7 +233,7 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
 ## <a name="view-the-iis-welcome-page"></a>Página principal de IIS
 
-Con IIS instalado y el puerto 80 abierto en la máquina virtual puede usar el explorador web que elija para ver la página principal de IIS. Use la dirección *publicIpAddress* que anotó en la sección anterior para visitar la página predeterminada.
+Con IIS instalado y el puerto 80 abierto en la máquina virtual, puede usar cualquier explorador para ver la página principal de IIS. Use la dirección *publicIpAddress* que anotó en la sección anterior para visitar la página predeterminada.
 
 ![Sitio predeterminado de IIS](./media/azure-stack-quick-create-vm-windows-powershell/default-iis-website.png)
 

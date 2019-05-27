@@ -15,14 +15,14 @@ ms.date: 03/11/2019
 ms.author: mabrigg
 ms.custom: mvc
 ms.lastreviewed: 12/03/2018
-ms.openlocfilehash: 95b81f6af8caa3e0f4dd7639614bed1b78915539
-ms.sourcegitcommit: 41927cb812e6a705d8e414c5f605654da1fc6952
+ms.openlocfilehash: 55f1395d66262b268b9107f196528270c1546bba
+ms.sourcegitcommit: 87d93cdcdb6efb06e894f56c2f09cad594e1a8b3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/25/2019
-ms.locfileid: "64477404"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65712288"
 ---
-# <a name="quickstart-create-a-linux-server-virtual-machine-by-using-powershell-in-azure-stack"></a>Inicio rápido: Creación de una máquina virtual para un servidor Linux con PowerShell en Azure Stack
+# <a name="quickstart-create-a-linux-server-virtual-machine-using-powershell-in-azure-stack"></a>Inicio rápido: Creación de una máquina virtual para un servidor Linux con PowerShell en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
@@ -40,13 +40,16 @@ Puede crear una máquina virtual Ubuntu Server 16.04 LTS mediante PowerShell par
 
 * Azure Stack necesita una versión específica de Azure PowerShell para crear y administrar los recursos. Si no tiene PowerShell configurado para Azure Stack, siga estos pasos para [instalar](../operator/azure-stack-powershell-install.md) PowerShell.
 
-* Con Azure Stack PowerShell configurado, deberá conectarse al entorno de Azure Stack. Para instrucciones, consulte [Configuración del entorno de PowerShell del usuario de Azure Stack](azure-stack-powershell-configure-user.md).
+* Con Azure Stack PowerShell configurado, debe conectarse al entorno de Azure Stack. Para instrucciones, consulte [Configuración del entorno de PowerShell del usuario de Azure Stack](azure-stack-powershell-configure-user.md).
 
 * Se guardó una clave SSH pública denominada id_rsa.pub en el directorio .ssh del perfil de usuario de Windows. Para obtener más información sobre la creación de claves SSH, consulte [How to use an SSH public key](azure-stack-dev-start-howto-ssh-public-key.md) (Uso de una clave pública SSH).
 
 ## <a name="create-a-resource-group"></a>Crear un grupo de recursos
 
-Un grupo de recursos es un contenedor lógico en el que puede implementar y administrar recursos de Azure Stack. Desde el kit de desarrollo o el sistema integrado de Azure Stack, ejecute el siguiente bloque de código para crear un grupo de recursos. Se asignan valores para todas las variables de este documento y puede utilizar estos valores o asignar otros nuevos.
+Un grupo de recursos es un contenedor lógico en el que puede implementar y administrar recursos de Azure Stack. Desde el kit de desarrollo o el sistema integrado de Azure Stack, ejecute el siguiente bloque de código para crear un grupo de recursos. 
+
+> [!NOTE]
+> Se asignan valores para todas las variables en los ejemplos de código. Sin embargo, puede asignar nuevos valores si lo desea.
 
 ```powershell  
 # Create variables to store the location and resource group names.
@@ -206,7 +209,7 @@ New-AzureRmVM `
 ## <a name="quick-create-virtual-machine---full-script"></a>Creación rápida de una máquina virtual: script completo
 
 > [!NOTE]
-> Es similar al código anterior combinado, pero con una contraseña en lugar de una clave SSH para la autenticación.
+> Es esencialmente el código anterior combinado, pero con una contraseña en lugar de una clave SSH para la autenticación.
 
 ```powershell
 ## Create a resource group
@@ -374,7 +377,7 @@ New-AzureRmVM `
 
 ## <a name="connect-to-the-virtual-machine"></a>Conexión a la máquina virtual
 
-Una vez implementada la máquina virtual, configure una conexión SSH para la máquina virtual. Use el comando [Get-AzureRmPublicIpAddress](/powershell/module/azurerm.network/get-azurermpublicipaddress) para devolver la dirección IP pública de la máquina virtual.
+Una vez implementada la máquina virtual, configure una conexión SSH para la máquina virtual. Use el comando [Get-AzureRmPublicIpAddress](/powershell/module/azurerm.network/get-azurermpublicipaddress) para obtener la dirección IP pública de la máquina virtual.
 
 ```powershell
 Get-AzureRmPublicIpAddress -ResourceGroupName myResourceGroup | Select IpAddress

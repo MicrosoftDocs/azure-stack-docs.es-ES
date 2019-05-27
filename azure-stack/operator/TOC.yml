@@ -293,6 +293,8 @@
       items:
         - name: Planeamiento de la capacidad de App Service
           href: azure-stack-app-service-capacity-planning.md
+        - name: Preguntas frecuentes acerca de la facturación de App Service
+          href: app-service-billing-faq.md
         - name: Antes de comenzar
           href: azure-stack-app-service-before-you-get-started.md
         - name: Implementación de App Service
