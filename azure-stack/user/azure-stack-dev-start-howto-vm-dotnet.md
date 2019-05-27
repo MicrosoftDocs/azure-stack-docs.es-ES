@@ -9,18 +9,16 @@ ms.date: 04/24/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 04/24/2019
-ms.openlocfilehash: b41c64d64a2c2abe6d1f145f11c2d4d84686b207
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 14baf5d5ca411e7c32cbfcf4a6138193a2215b0a
+ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65617704"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65783084"
 ---
 # <a name="deploy-a-c-aspnet-web-app-to-a-vm-in-azure-stack"></a>Implementar una aplicación web de C# ASP.NET en una VM en Azure Stack
 
 Puede crear una máquina virtual (VM) para hospedar la aplicación web de C# ASP.NET en Azure Stack. En este artículo se indican las instrucciones que deben seguirse al instalar el servidor, configurarlo para hospedar su aplicación web de C# ASP.NET y, a continuación, implementar la aplicación directamente desde Visual Studio.
-
-C# es un lenguaje de programación multiparadigma destinado a fines genéricos que abarca disciplinas de programación de tipado fuerte, de ámbito léxico, imperativas, declarativas, funcionales, genéricas y orientadas a objetos y componentes. Para conocer el lenguaje de programación de C# y consultar recursos adicionales para C#, consulte [la guía de C#](https://docs.microsoft.com/dotnet/csharp/).
 
 En este artículo se usa una aplicación C# 6.0 que usa ASP.NET Core 2.2 y se ejecuta en un servidor Windows Server 2016.
 
@@ -47,7 +45,7 @@ En este artículo se usa una aplicación C# 6.0 que usa ASP.NET Core 2.2 y se ej
 
 1. Vuelva al portal de Azure Stack y abra los puertos que se indican en la configuración de red para la VM.
 
-     a. Abra el portal de Azure Stack de su inquilino.
+    a. Abra el portal de Azure Stack de su inquilino.
 
     b. Busque su VM. Es posible que haya anclado la VM al panel; si no, puede buscarla en el cuadro **Buscar recursos**.
 
@@ -59,14 +57,15 @@ En este artículo se usa una aplicación C# 6.0 que usa ASP.NET Core 2.2 y se ej
 
     | Port | Protocolo | DESCRIPCIÓN |
     | --- | --- | --- |
-    | 80 | HTTP | El protocolo de transferencia de hipertexto (HTTP) es un protocolo de aplicación para los sistemas de información de hipermedia distribuidos y colaborativos. Los clientes se conectarán a la aplicación web con la dirección IP pública o el nombre DNS de la máquina virtual. |
-    | 443 | HTTPS | El protocolo de transferencia de hipertexto con cifrado de Capa de sockets seguros (HTPPS) es una extensión del Protocolo de transferencia de hipertexto (HTTP). Se usa para establecer una comunicación segura a través de la red de un equipo. Los clientes se conectarán a la aplicación web con la dirección IP pública o el nombre DNS de la máquina virtual. |
-    | 22 | SSH | Secure Shell (SSH) es un protocolo de red criptográfico que permite usar servicios de red de forma segura a través de una red no segura. Esta conexión se usa con un cliente SSH para configurar la VM e implementar la aplicación. |
-    | 3389 | RDP | Opcional. El Protocolo de escritorio remoto (RDP) permite que una conexión de escritorio remoto utilice una interfaz gráfica de usuario con su máquina.   |
+    | 80 | HTTP | El protocolo de transferencia de hipertexto (HTTP) es el protocolo que se utiliza para entregar páginas web desde los servidores. Los clientes se conectan mediante HTTP con un nombre DNS o dirección IP. |
+    | 443 | HTTPS | El protocolo de transferencia de hipertexto con cifrado de Capa de sockets seguros (HTTPS) es una versión segura de HTTP que requiere un certificado de seguridad y permite la transmisión cifrada de información.  |
+    | 22 | SSH | Secure Shell (SSH) es un protocolo de red cifrado para proteger las comunicaciones. Usará esta conexión con un cliente SSH para configurar la máquina virtual e implementar la aplicación. |
+    | 3389 | RDP | Opcional. El Protocolo de escritorio remoto permite que una conexión de escritorio remoto utilice una interfaz gráfica de usuario de su equipo.   |
+    | 8080 | Personalizado | El puerto predeterminado para el servicio de Apache Tomcat es 8080. Para un servidor de producción, querrá enrutar el tráfico a través de 80 y 443. |
 
     Para cada puerto:
 
-     a. En **Origen**, seleccione **Cualquiera**.
+    a. En **Origen**, seleccione **Cualquiera**.
 
     b. En **Intervalo de puertos de origen**, escriba un asterisco (**\***).
 
@@ -86,7 +85,7 @@ En este artículo se usa una aplicación C# 6.0 que usa ASP.NET Core 2.2 y se ej
 
 1.  En la configuración de **Redes** para su máquina virtual en Azure Stack, cree un nombre DNS para el servidor. Los usuarios pueden conectarse a su sitio web mediante la dirección URL.
 
-     a. Abra el portal de Azure Stack de su inquilino.
+    a. Abra el portal de Azure Stack de su inquilino.
 
     b. Busque su VM. Es posible que haya anclado la VM al panel; si no, puede buscarla en el cuadro **Buscar recursos**.
 
@@ -131,7 +130,7 @@ Cree un destino de publicación a la máquina virtual en Azure Stack.
 1. Seleccione **Publicar**.
 1. Vaya al nuevo servidor. Debería ver la aplicación web en ejecución.
 
-    ```HTTP  
+    ```http  
         mywebapp.local.cloudapp.azurestack.external
     ```
 
@@ -139,3 +138,4 @@ Cree un destino de publicación a la máquina virtual en Azure Stack.
 
 - Consulte [Configurar un entorno de desarrollo en Azure Stack](azure-stack-dev-start.md) para conocer el procedimiento.
 - Obtenga información sobre las [implementaciones comunes para Azure Stack como IaaS](azure-stack-dev-start-deploy-app.md).
+- Para conocer el lenguaje de programación de C# y consultar recursos adicionales, consulte [la guía de C#](https://docs.microsoft.com/dotnet/csharp/).
