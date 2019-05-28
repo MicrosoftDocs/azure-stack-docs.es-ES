@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/10/2019
+ms.date: 05/15/2019
 ms.author: sethm
 ms.reviewer: adepue
 ms.lastreviewed: 04/20/2019
-ms.openlocfilehash: fad8c68683b965c6716e600d2ea171c7e508d203
-ms.sourcegitcommit: 426380a3a27954cd609ba52d1066d9d69f5267fe
+ms.openlocfilehash: 5e0b19e753380c519704f9b2064ff56245004896
+ms.sourcegitcommit: 87d93cdcdb6efb06e894f56c2f09cad594e1a8b3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65532354"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65712319"
 ---
 # <a name="azure-stack-1903-update"></a>Actualización de Azure Stack 1903
 
@@ -144,7 +144,7 @@ Los siguientes son problemas conocidos posteriores a la instalación de esta com
 
   
 <!-- Daniel 3/28 -->
-- En el portal de usuarios, al intentar cargar un blob mediante la opción **OAuth(preview)**, la tarea genera un mensaje de error. Para solucionar este problema, cargue el blob mediante la opción **SAS**.
+- En el portal de usuarios, al intentar cargar un blob mediante la opción **OAuth(preview)** , la tarea genera un mensaje de error. Para solucionar este problema, cargue el blob mediante la opción **SAS**.
 
 - Cuando inicie sesión en los portales de Azure Stack, podría ver notificaciones sobre la instancia pública de Azure Portal. Puede ignorar estas notificaciones de forma segura, ya que actualmente no se aplican a Azure Stack (por ejemplo, "1 nueva actualización: las siguientes actualizaciones ya están disponibles: actualización de abril de 2019 de Azure Portal").
 
@@ -216,7 +216,8 @@ Los siguientes son problemas conocidos posteriores a la instalación de esta com
 ### <a name="app-service"></a>App Service
 
 <!-- 2352906 - IS ASDK -->
-- Debe registrar el proveedor de recursos de almacenamiento antes de crear su primera función de Azure en la suscripción.
+- Los inquilinos deben registrar el proveedor de recursos de almacenamiento antes de crear su primera instancia de Azure Functions en la suscripción.
+- Algunas experiencias de usuario del portal de inquilinos de App Service se rompen debido a una incompatibilidad con la el marco del portal en 1903; principalmente, la experiencia de usuario en las ranuras de implementación, las pruebas en producción y las extensiones de sitio. Para solucionar este problema, utilice el [módulo de PowerShell para Azure App Service](/azure/app-service/deploy-staging-slots#automate-with-powershell) o la [CLI de Azure](/cli/azure/webapp/deployment/slot?view=azure-cli-latest). La experiencia del portal se restaurará en la próxima versión de Azure App Service en Azure Stack 1.6 (Actualización 6).
 
 <!-- ### Usage -->
 

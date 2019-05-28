@@ -14,16 +14,16 @@ ms.date: 05/08/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 05/08/2019
-ms.openlocfilehash: 0d088dcfaf97173d267a1f4638751650b7befba2
-ms.sourcegitcommit: 879165a66ff80f1463b6bb46e2245684224a9b92
+ms.openlocfilehash: 36fd25897e2d45d454f8e1f956f5e72991d45059
+ms.sourcegitcommit: 1655b2ef4d01d69ceeb52bc16f922bdc19cb968d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65473798"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65706261"
 ---
 # <a name="resource-provider-api-versions-supported-by-profiles-in-azure-stack"></a>Versiones de API del proveedor de recursos compatibles con perfiles en Azure Stack
 
-Puede encontrar el proveedor de recursos y los números de versión para cada perfil de API usado por Azure Stack en este artículo. En las tablas de este artículo se enumeran las versiones compatibles con cada proveedor de recursos y las versiones de API de los perfiles. Cada proveedor de recursos contiene un conjunto de tipos de recursos y números de versión específicos. 
+Puede encontrar el proveedor de recursos y los números de versión para cada perfil de API usado por Azure Stack en este artículo. En las tablas de este artículo se enumeran las versiones compatibles con cada proveedor de recursos y las versiones de API de los perfiles. Cada proveedor de recursos contiene un conjunto de tipos de recursos y números de versión específicos.
 
 El perfil de API usa tres convenciones de nomenclatura:
 
@@ -33,10 +33,10 @@ El perfil de API usa tres convenciones de nomenclatura:
 
 Para obtener una explicación de los perfiles de API y el ritmo de lanzamientos de versiones para Azure Stack, consulte [Administración de perfiles de la versión de API en Azure Stack](azure-stack-version-profiles.md).
 
-> [!Note]  
+> [!Note]
 > El perfil de API **más reciente** contiene la versión de API del proveedor de recursos más reciente y no se enumera en este artículo.
 
-## <a name="overview-of-2019---03-01-hybrid"></a>Información general de 2019: 03-01-hybrid
+## <a name="overview-of-the-2019-03-01-hybrid-profile"></a>Introducción al perfil 2019-03-01-hybrid
 
 | Proveedor de recursos | Versión de API |
 |-----------------------------------------------|-----------------------------------------------------|
@@ -50,9 +50,9 @@ Para obtener una explicación de los perfiles de API y el ritmo de lanzamientos 
 | Microsoft.Authorization (operaciones de directiva) | 2016-09-01 |
 | Microsoft.Insights | 2018-01-01 |
 
-Para obtener una lista de las versiones de cada tipo de recursos de los proveedores del perfil de API, vea el perfil [Detalles de 2019-03-01-hybrid](#details-for-the-2019-03-01-hybrid).
+Para obtener una lista de las versiones de cada tipo de recursos de los proveedores del perfil de API, consulte [Detalles del perfil 2019-03-01-hybrid](#details-for-the-2019-03-01-hybrid-profile).
 
-## <a name="details-for-the-2019-03-01-hybrid"></a>Detalles de 2019-03-01-hybrid
+## <a name="details-for-the-2019-03-01-hybrid-profile"></a>Detalles del perfil 2019-03-01-hybrid
 
 ### <a name="microsoftauthorization"></a>Microsoft.Authorization
 

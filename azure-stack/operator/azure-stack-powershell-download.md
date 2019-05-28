@@ -3,25 +3,24 @@ title: Descarga de herramientas de Azure Stack desde GitHub | Microsoft Docs
 description: Obtenga información sobre cómo descargar las herramientas necesarias para trabajar con Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: mattbriggs
+manager: femila
 editor: ''
 ms.service: azure-stack
 ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: article
-origin.date: 01/14/2019
-ms.date: 04/29/2019
-ms.author: v-jay
+ms.date: 05/16/2019
+ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: e7c24431a508e45fea0a61025b62f9bc3443d97b
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 722fea2777071fa78c89372a21fe52022a56f264
+ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64308181"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65782249"
 ---
 # <a name="download-azure-stack-tools-from-github"></a>Descarga de herramientas de Azure Stack desde GitHub
 
@@ -64,5 +63,7 @@ El repositorio **AzureStack-Tools** contiene los módulos de PowerShell que admi
 
 
 ## <a name="next-steps"></a>Pasos siguientes
-* [Configuración del entorno de PowerShell del usuario de Azure Stack](../user/azure-stack-powershell-configure-user.md)   
-* [Conexión al Kit de desarrollo de Azure Stack a través de una VPN](../asdk/asdk-connect.md)  
+
+- [Introducción a PowerShell en Azure Stack](../user/azure-stack-powershell-overview.md)
+- [Configuración del entorno de PowerShell del usuario de Azure Stack](../user/azure-stack-powershell-configure-user.md)   
+- [Conexión al Kit de desarrollo de Azure Stack a través de una VPN](../asdk/asdk-connect.md)  

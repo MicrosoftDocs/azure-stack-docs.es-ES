@@ -12,22 +12,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/05/2019
+ms.date: 05/21/2019
 ms.author: sethm
 ms.reviewer: unknown
-ms.lastreviewed: 01/05/2019
-ms.openlocfilehash: e2bac108b47aeb1c4a1b6d777072fe4d6ff64f2d
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.lastreviewed: 05/21/2019
+ms.openlocfilehash: 9967da0434be577e3db8586f28e3078658623e9b
+ms.sourcegitcommit: 6fcd5df8b77e782ef72f0e1419f1f75ec8c16c04
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64310371"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65991332"
 ---
 # <a name="azure-resource-manager-template-considerations"></a>Consideraciones de la plantilla de Azure Resource Manager
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Al desarrollar la aplicación, es importante garantizar la portabilidad de las plantillas entre Azure y Azure Stack. Este artículo proporciona consideraciones para el desarrollo de [plantillas](https://download.microsoft.com/download/E/A/4/EA4017B5-F2ED-449A-897E-BD92E42479CE/Getting_Started_With_Azure_Resource_Manager_white_paper_EN_US.pdf) de Azure Resource Manager, por lo que puede crear un prototipo de la implementación de prueba y la aplicación en Azure sin acceder a un entorno de Azure Stack.
+Al desarrollar la aplicación, es importante garantizar la portabilidad de las plantillas entre Azure y Azure Stack. En este artículo se proporcionan consideraciones para el desarrollo de [plantillas de Azure Resource Manager](https://download.microsoft.com/download/E/A/4/EA4017B5-F2ED-449A-897E-BD92E42479CE/Getting_Started_With_Azure_Resource_Manager_white_paper_EN_US.pdf), con el fin de que pueda crear un prototipo de la aplicación y probar su implementación en Azure sin acceder a un entorno de Azure Stack.
 
 ## <a name="resource-provider-availability"></a>Disponibilidad del proveedor de recursos
 
@@ -35,7 +35,7 @@ La plantilla que tenga previsto implementar debe utilizar solo servicios de Micr
 
 ## <a name="public-namespaces"></a>Espacios de nombres públicos
 
-Como Azure Slack se hospeda en el centro de datos, tiene espacios de nombres de punto de conexión de servicio diferentes a la nube pública de Azure. Como resultado, se producirá un error en los puntos de conexión públicos codificados de forma rígida de las plantillas de Azure Resource Manager al tratar de implementarlos en Azure Stack. Puede compilar dinámicamente puntos de conexión de servicio con las funciones `reference` y `concatenate` para recuperar valores del proveedor de recursos durante la implementación. Por ejemplo, en lugar de codificar de forma rígida *blob.core.windows.net* en la plantilla, recupere[primaryEndpoints.blob](https://github.com/Azure/AzureStack-QuickStart-Templates/blob/master/101-vm-windows-create/azuredeploy.json#L175) para establecer dinámicamente el punto de conexión *osDisk.URI*:
+Como Azure Slack se hospeda en el centro de datos, tiene espacios de nombres de punto de conexión de servicio diferentes a la nube pública de Azure. Como resultado, se producirá un error en los puntos de conexión públicos codificados de forma rígida de las plantillas de Azure Resource Manager al tratar de implementarlos en Azure Stack. Puede compilar dinámicamente puntos de conexión de servicio con las funciones `reference` y `concatenate` para recuperar valores del proveedor de recursos durante la implementación. Por ejemplo, en lugar de codificar de forma rígida `blob.core.windows.net` en la plantilla, recupere [primaryEndpoints.blob ](https://github.com/Azure/AzureStack-QuickStart-Templates/blob/master/101-vm-windows-create/azuredeploy.json#L175)para establecer dinámicamente el punto de conexión *osDisk.URI*:
 
 ```json
 "osDisk": {"name": "osdisk","vhd": {"uri":
@@ -49,11 +49,11 @@ Las versiones de los servicios de Azure pueden diferir entre Azure y Azure Stack
 
 | Proveedor de recursos | apiVersion |
 | --- | --- |
-| Proceso |`'2015-06-15'` |
-| Red |`'2015-06-15'`, `'2015-05-01-preview'` |
-| Almacenamiento |`'2016-01-01'`, `'2015-06-15'`, `'2015-05-01-preview'` |
-| KeyVault | `'2015-06-01'` |
-| App Service |`'2015-08-01'` |
+| Proceso |**2015-06-15** |
+| Red |**2015-06-15**, **2015-05-01-preview** |
+| Almacenamiento |**2016-01-01**, **2015-06-15**, **2015-05-01-preview** |
+| KeyVault | **2015-06-01** |
+| App Service |**2015-08-01** |
 
 ## <a name="template-functions"></a>Funciones de plantillas
 

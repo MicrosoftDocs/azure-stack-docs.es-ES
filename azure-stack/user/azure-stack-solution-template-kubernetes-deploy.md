@@ -15,12 +15,12 @@ ms.date: 02/27/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 01/16/2019
-ms.openlocfilehash: e43ee8afd479d4bead1c513aee0229d8483fab33
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 55db30efd648c76938d71bc2067c7c68e6693f88
+ms.sourcegitcommit: 87d93cdcdb6efb06e894f56c2f09cad594e1a8b3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64310449"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65712346"
 ---
 # <a name="deploy-kubernetes-to-use-containers-with-azure-stack"></a>Implementación de Kubernetes para usar contenedores con Azure Stack
 
@@ -33,7 +33,7 @@ Puede seguir los pasos descritos en este artículo para implementar y configurar
 
 ## <a name="kubernetes-and-containers"></a>Kubernetes y contenedores
 
-Puede instalar Kubernetes mediante plantillas de Azure Resource Manager generadas por el motor de ACS en Azure Stack. [Kubernetes](https://kubernetes.io) es un sistema de código abierto para automatizar la implementación, el escalado y la administración de aplicaciones en contenedores. Un [contenedor](https://www.docker.com/what-container) está en una imagen. La imagen de contenedor es parecida a una VM aunque, a diferencia de una VM, el contenedor tan solo incluye los recursos necesarios para ejecutar una aplicación, como el código, el tiempo de ejecución para ejecutar el código, bibliotecas específicas y la configuración.
+Puede instalar Kubernetes mediante las plantillas de Azure Resource Manager que genera el motor de AKS en Azure Stack. [Kubernetes](https://kubernetes.io) es un sistema de código abierto para automatizar la implementación, el escalado y la administración de aplicaciones en contenedores. Un [contenedor](https://www.docker.com/what-container) está en una imagen. La imagen de contenedor es parecida a una VM aunque, a diferencia de una VM, el contenedor tan solo incluye los recursos necesarios para ejecutar una aplicación, como el código, el tiempo de ejecución para ejecutar el código, bibliotecas específicas y la configuración.
 
 Puede utilizar Kubernetes para:
 
@@ -50,7 +50,7 @@ Los pasos para implementar un clúster de Kubernetes en Azure Stack dependerán 
 - **Azure Active Directory (Azure AD)**  
 Para obtener instrucciones acerca de cómo instalar el clúster al usar Azure AD, consulte [Implementación de Kubernetes en Azure Stack con Azure Active Directory (Azure AD)](azure-stack-solution-template-kubernetes-azuread.md).
 
-- **Servicios de federación de Active Directory (AD FS)**.  
+- **Servicios de federación de Active Directory (AD FS)** .  
 Para obtener instrucciones acerca de cómo instalar el clúster al usar AD FS, consulte [Deploy Kubernetes to Azure Stack using Active Directory Federated Services (AD FS)](azure-stack-solution-template-kubernetes-adfs.md) [Implementación de Kubernetes en Azure Stack con los Servicios de federación de Active Directory (Azure AD)].
 
 ## <a name="connect-to-your-cluster"></a>Conexión al clúster

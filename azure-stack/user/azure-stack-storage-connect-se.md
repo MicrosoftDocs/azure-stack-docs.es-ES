@@ -14,38 +14,38 @@ ms.date: 03/14/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 03/14/2019
-ms.openlocfilehash: f6e9e8836cb2bbc16dbad7484f0b90ce1af5606a
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: f7631b049197c0721ffa801c225e1ecdf853524f
+ms.sourcegitcommit: 87d93cdcdb6efb06e894f56c2f09cad594e1a8b3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64986106"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65712479"
 ---
 # <a name="connect-storage-explorer-to-an-azure-stack-subscription-or-a-storage-account"></a>Conexión del Explorador de Storage a una suscripción de Azure Stack o una cuenta de almacenamiento
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-En este artículo, aprenderá a conectarse a sus suscripciones y cuentas de almacenamiento de Azure Stack mediante el explorador de almacenamiento. El Explorador de Azure Storage es una aplicación independiente que permite trabajar fácilmente con datos de almacenamiento de Azure Stack en Windows, macOS y Linux.
+En este artículo, aprenderá a conectarse a sus suscripciones y cuentas de almacenamiento de Azure Stack mediante el [Explorador de Storage](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer). El Explorador de Storage es una aplicación independiente que permite trabajar fácilmente con datos de almacenamiento de Azure Stack en Windows, macOS y Linux.
 
 > [!NOTE]  
 > Hay varias herramientas disponibles para mover datos hacia el almacenamiento de Azure Stack y desde este. Para más información, consulte [Herramientas de transferencia de datos de Azure Stack Storage](azure-stack-storage-transfer.md).
 
-Si no lo ha instalado todavía, [descargue el Explorador de Storage](https://www.storageexplorer.com/) e instálelo.
+Si no está instalado, [descargue el Explorador de Storage](https://www.storageexplorer.com/) e instálelo.
 
-Después de conectarse a una suscripción de Azure Stack o una cuenta de almacenamiento, puede usar los [artículos sobre el Explorador de Azure Storage](/azure/vs-azure-tools-storage-manage-with-storage-explorer) para trabajar con los datos de Azure Stack. 
+Después de conectarse a una suscripción de Azure Stack o a una cuenta de almacenamiento, puede usar los [artículos acerca del Explorador de Azure Storage](/azure/vs-azure-tools-storage-manage-with-storage-explorer) para trabajar con los datos de Azure Stack. 
 
 ## <a name="prepare-for-connecting-to-azure-stack"></a>Prepárese para conectarse a Azure Stack
 
-Necesita acceso directo a Azure Stack o una conexión VPN para que el Explorador de Storage pueda obtener acceso a la suscripción de Azure Stack. Para más información sobre cómo configurar una conexión VPN a Azure Stack, consulte [Conexión a Azure Stack con VPN](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn).
+Necesita acceso directo a Azure Stack o una conexión VPN para que el Explorador de Storage pueda acceder a la suscripción de Azure Stack. Para más información sobre cómo configurar una conexión VPN a Azure Stack, consulte [Conexión a Azure Stack con VPN](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn).
 
 Para el Kit de desarrollo de Azure Stack, debe exportar el certificado raíz de la entidad de certificación de Azure Stack.
 
 > [!Note]  
-> Para el ASDK, si se conecta al ASDK mediante VPN, no utilice el certificado raíz (CA.cer) que se creó durante el proceso de configuración de la VPN.  Este es un certificado con codificación DER y no permitirá que el Explorador de Storage recupere las suscripciones de Azure Stack. Siga estos pasos para exportar un certificado codificado en base 64 para usarlo con el Explorador de Storage.
+> En el caso de ASDK, si se va a conectar ASDK mediante VPN, no utilice el certificado raíz (CA.cer) que se creó en el proceso de configuración de la VPN.  Este certificado tiene codificación DER y no permitirá que el Explorador de Storage recupere las suscripciones de Azure Stack. Siga estos pasos para exportar un certificado codificado en base 64 para usarlo con el Explorador de Storage.
 
 ### <a name="export-and-then-import-the-azure-stack-certificate"></a>Exportación y posterior importación del certificado de Azure Stack
 
-Exporte y después importe el certificado de Azure Stack para ASDK. Para el sistema integrado, el certificado está firmado públicamente. Por lo tanto, este paso no es necesario mientras se configura la conexión del Explorador de Storage al sistema integrado de Azure Stack.
+Exporte y después importe el certificado de Azure Stack para ASDK. En el caso de los sistemas integrados, el certificado está firmado públicamente y este paso no es necesario.
 
 1. Abra `mmc.exe` en una máquina host de Azure Stack o una máquina local con una conexión VPN a Azure Stack. 
 
@@ -53,7 +53,7 @@ Exporte y después importe el certificado de Azure Stack para ASDK. Para el sist
 
 3. Seleccione la **cuenta de equipo** y haga clic en **Siguiente**. Seleccione **Equipo local** y luego haga clic en **Finalizar**.
 
-4.  En **Console Root\Certificated (equipo)\Trusted Root Certification Authorities\Certificates**. Busque **AzureStackSelfSignedRootCert**.
+4.  En **Console Root\Certificated (Local Computer)\Trusted Root Certification Authorities\Certificates** busque **AzureStackSelfSignedRootCert**.
 
     ![Carga del certificado raíz de Azure Stack a través de mmc.exe](./media/azure-stack-storage-connect-se/add-certificate-azure-stack.png)
 
@@ -61,30 +61,30 @@ Exporte y después importe el certificado de Azure Stack para ASDK. Para el sist
 
     Se usará el certificado exportado en el paso siguiente.
 
-6. Inicie el Explorador de Storage y, si ve el cuadro de diálogo **Connect to Azure Storage** (Conectar a Azure Storage), cancélelo.
+6. Inicie el Explorador de Storage. Si ve el cuadro de diálogo **Conectar a Azure Storage** , cancélelo.
 
-7. En el menú **Editar**, seleccione **Certificados SSL** y, luego, seleccione **Importar certificados**. Use el cuadro de diálogo del selector de archivos para buscar y abrir el certificado que exportó en el paso anterior.
+7. En el menú **Editar**, seleccione **Certificados SSL** y, después, **Importar certificados**. Use el cuadro de diálogo del selector de archivos para buscar y abrir el certificado que exportó en el paso anterior.
 
     Después de la importación del certificado, se le pedirá que reinicie el Explorador de Storage.
 
     ![Importación del certificado en el Explorador de Storage](./media/azure-stack-storage-connect-se/import-azure-stack-cert-storage-explorer.png)
 
-8. Después de que se reinicie el Explorador de Storage, seleccione el menú **Edit** (Editar) y compruebe que está seleccionada la opción **Target Azure Stack APIs** (API de Azure Stack de destino). Si no está seleccionada, seleccione **Target Azure Stack** (Azure Stack de destino) y, luego, reinicie el Explorador de Storage para que el cambio surta efecto. Esta configuración es necesaria para obtener compatibilidad con el entorno de Azure Stack.
+8. Después de que se reinicie el Explorador de Storage, seleccione el menú **Edit** (Editar) y compruebe si está seleccionada la opción **Target Azure Stack APIs** (API de Azure Stack de destino). Si no lo está, seleccione **Target Azure Stack** (Azure Stack de destino) y reinicie el Explorador de Storage para que el cambio surta efecto. Esta configuración es necesaria para obtener compatibilidad con el entorno de Azure Stack.
 
     ![Comprobación de que Azure Stack de destino está activada](./media/azure-stack-storage-connect-se/target-azure-stack.png)
 
 ## <a name="connect-to-an-azure-stack-subscription-with-azure-ad"></a>Conexión a una suscripción de Azure Stack con Azure AD
 
-Siga estos pasos para conectar el Explorador de Storage a una suscripción de Azure Stack que pertenece a una cuenta de Azure Active Directory (Azure AD).
+Siga estos pasos para conectar el Explorador de Storage a una suscripción de Azure Stack que pertenezca a una cuenta de Azure Active Directory (Azure AD).
 
-1. En el panel izquierdo del Explorador de Storage, seleccione **Administrar cuentas**. 
+1. En el panel izquierdo del Explorador de Storage, seleccione **Administrar cuentas**.  
     Se muestran todas las suscripciones de Microsoft en las que inició sesión.
 
 2. Para conectarse a la suscripción de Azure Stack, seleccione **Agregar una cuenta**.
 
     ![Adición de una cuenta de Azure Stack](./media/azure-stack-storage-connect-se/add-azure-stack-account.png)
 
-3. En el cuadro de diálogo Conectar a Azure Storage, en el **entorno de Azure**, seleccione **Azure**, **Azure China**, **Azure Alemania**, **Azure Gobierno de EE. UU.** o **Agregar nuevo entorno**, que depende de la cuenta de Azure Stack utilizada. Seleccione **Iniciar sesión** para iniciar sesión con la cuenta de Azure Stack que está asociada a una suscripción de Azure Stack activa por lo menos.
+3. En el cuadro de diálogo Conectar a Azure Storage, en **Entorno de Azure**, seleccione **Azure**, **Azure China 21Vianet**, **Azure Alemania**, **Azure Gobierno de EE. UU.** o **Agregar nuevo entorno** en función de la cuenta de Azure Stack que vaya a usar. Seleccione **Iniciar sesión** para iniciar sesión con la cuenta de Azure Stack que está asociada a una suscripción de Azure Stack activa por lo menos.
 
     ![Conectar a Azure Storage](./media/azure-stack-storage-connect-se/azure-stack-connect-to-storage.png)
 
@@ -105,7 +105,7 @@ Siga estos pasos para conectar el Explorador de Storage a una suscripción de Az
 1. Seleccione **Administrar cuentas**. El explorador enumera las suscripciones de Microsoft en las que ha iniciado sesión.
 2. Para conectarse a la suscripción de Azure Stack, seleccione **Agregar una cuenta**.
 
-    ![Agregar una cuenta](media/azure-stack-storage-connect-se/add-an-account.png)
+    ![Agregar una cuenta (Explorador de Storage)](media/azure-stack-storage-connect-se/add-an-account.png)
 
 3. Seleccione **Next** (Siguiente). En el cuadro de diálogo Conectar a Azure Storage, en **Entorno de Azure**, seleccione **Use Custom Environment** (Usar entorno personalizado) y luego haga clic en **Siguiente**.
 
@@ -118,15 +118,15 @@ Siga estos pasos para conectar el Explorador de Storage a una suscripción de Az
     | Nombre del entorno | El usuario puede personalizar este campo. |
     | Punto de conexión de Azure Resource Manager | Los ejemplos de los puntos de conexión de recursos de Azure Resource Manager del Kit de desarrollo de Azure Stack.<br>Para operadores: https://adminmanagement.local.azurestack.external <br> Para usuarios: https://management.local.azurestack.external |
 
-    Si está trabajando en el sistema integrado de Azure Stack y no conoce el punto de conexión de administración, póngase en contacto con su operador.
+    Si trabaja en un sistema integrado de Azure Stack y no conoce el punto de conexión de administración, póngase en contacto con el operador.
 
-    ![Agregar una cuenta](./media/azure-stack-storage-connect-se/custom-environments.png)
+    ![Agregar una cuenta (Entornos personalizados)](./media/azure-stack-storage-connect-se/custom-environments.png)
 
-5. Seleccione **Iniciar sesión** para conectarse a la cuenta de Azure Stack que está asociada a una suscripción de Azure Stack activa por lo menos.
+5. Seleccione **Iniciar sesión** para conectarse a la cuenta de Azure Stack que está asociada, como mínimo, a una suscripción de Azure Stack.
 
 
 
-6. Seleccione las suscripciones de Azure Stack con las que quiere trabajar. Seleccione **Aplicar**.
+6. Seleccione las suscripciones de Azure Stack con las que desea trabajar y luego seleccione **Aplicar**.
 
     ![Administración de cuentas](./media/azure-stack-storage-connect-se/account-management.png)
 
@@ -140,15 +140,15 @@ También puede conectarse a una cuenta de almacenamiento de Azure Stack mediante
 
 1. En el panel izquierdo del Explorador de Storage, seleccione Administrar cuentas. Se muestran todas las cuentas de Microsoft en las que inició sesión.
 
-    ![Agregar una cuenta](./media/azure-stack-storage-connect-se/azure-stack-sub-add-an-account.png)
+    ![Agregar una cuenta (Explorador de Storage)](./media/azure-stack-storage-connect-se/azure-stack-sub-add-an-account.png)
 
 2. Para conectarse a la suscripción de Azure Stack, seleccione **Agregar una cuenta**.
 
-    ![Agregar una cuenta](./media/azure-stack-storage-connect-se/azure-stack-use-a-storage-and-key.png)
+    ![Agregar una cuenta (Conectar a Azure Storage)](./media/azure-stack-storage-connect-se/azure-stack-use-a-storage-and-key.png)
 
 3. En el cuadro de diálogo Conectar a Azure Storage, seleccione **Use a storage account name and key** (Usar un nombre y una clave de cuenta de almacenamiento).
 
-4. Escriba el nombre de su cuenta en **Nombre de cuenta**, pegue la clave de cuenta en el cuadro de texto **Clave de cuenta**, seleccione **Otros (escribir a continuación)** en **Dominio de puntos de conexión de Storage** y escriba el punto de conexión de Azure Stack.
+4. Escriba el nombre de la cuenta en **Nombre de cuenta** y pegue la clave de la cuenta en el cuadro de texto **Clave de cuenta**. Luego, seleccione **Other (enter below)** [Otro (escribir siguiente)]en **Dominio de puntos de conexión de Storage** y escriba el punto de conexión de Azure Stack.
 
     Un punto de conexión de Azure Stack incluye dos partes: el nombre de una región y el dominio de Azure Stack. En el Kit de desarrollo de Azure Stack, el punto de conexión predeterminado es **local.azurestack.external**. Si no está seguro de cuál es su punto de conexión, póngase en contacto con el administrador de la nube.
 

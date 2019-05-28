@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/10/2019
+ms.date: 05/15/2019
 ms.author: sethm
 ms.reviewer: hectorl
-ms.lastreviewed: 05/10/2019
-ms.openlocfilehash: f2e20377a976c5dba7a63d9f8cf8b3e2d100e060
-ms.sourcegitcommit: 426380a3a27954cd609ba52d1066d9d69f5267fe
+ms.lastreviewed: 05/15/2019
+ms.openlocfilehash: 52279a7498e253771e16e66e0c5025b9afd4494d
+ms.sourcegitcommit: 442bd62d1dfbc1597592d7285aba1453298261ce
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65532261"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65969837"
 ---
 # <a name="azure-stack-1904-known-issues"></a>Problemas conocidos de Azure Stack 1904
 
@@ -38,13 +38,6 @@ En este artículo se enumeran los problemas conocidos de la versión de 1904 de 
 - Repetición: Común
 
 ## <a name="portal"></a>Portal
-
-### <a name="add-on-plans"></a>Planes complementarios
-
-- Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: No se pueden eliminar los planes que se agregan a una suscripción de usuario como planes complementarios, aunque se quite el plan de la suscripción de usuario. El plan permanece hasta que también se eliminan las suscripciones que hacen referencia al plan complementario.
-- Corrección: Sin mitigación.
-- Repetición: Común
 
 ### <a name="administrative-subscriptions"></a>Suscripciones administrativas
 
@@ -69,9 +62,23 @@ En este artículo se enumeran los problemas conocidos de la versión de 1904 de 
 
 ### <a name="marketplace-management"></a>Administración de Marketplace
 
-- Aplicable a: este problema se aplica a la versión 1904.
-- Causa: La pantalla de administración de Marketplace no está visible al iniciar sesión en el portal de administradores.
+- Aplicable a: se trata de un nuevo problema con la versión 1904.
+- Causa: La pantalla de administración de Marketplace no se ve al iniciar sesión en el portal de administradores.
 - Corrección: Actualice el explorador.
+- Repetición: Intermitente
+
+### <a name="marketplace-management"></a>Administración de Marketplace
+
+- Aplicable a: este problema se aplica a la versión 1904.
+- Causa: Al filtrar los resultados en la hoja **Add from Azure** (Agregar desde Azure), en la pestaña Marketplace management (Administración de Marketplace) del portal de administradores, puede ver los resultados filtrados incorrectos. 
+- Corrección: Ordene los resultados por la columna Nombre y se corregirán. 
+- Repetición: Intermitente
+
+### <a name="marketplace-management"></a>Administración de Marketplace
+
+- Aplicable a: este problema se aplica a la versión 1904.
+- Causa: Al filtrar los resultados de Al filtrar los resultados de Marketplace management (Administración de Marketplace) en el portal de administradores, verá nombres de publicadores duplicados en la lista desplegable de publicadores. 
+- Corrección: Seleccione todos los duplicados para tener la lista correcta de todos los productos de Marketplace que están disponibles en ese publicador. 
 - Repetición: Intermitente
 
 ### <a name="upload-blob"></a>Carga de blob
@@ -83,26 +90,26 @@ En este artículo se enumeran los problemas conocidos de la versión de 1904 de 
 
 ## <a name="networking"></a>Redes
 
-### <a name="load-balancer"></a>Load Balancer
+### <a name="load-balancer"></a>Equilibrador de carga
 
-#### <a name="add-backend-pool"></a>Agregar un grupo de back-end
+#### <a name="add-backend-pool"></a>Agregar grupo de back-end
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: En el portal de usuarios, si intenta agregar un **grupo de back-end** a una **instancia de Load Balancer**, se produce un error en la operación con el mensaje **Failed to update Load Balancer...** (No se pudo actualizar Load Balancer...).
-- Corrección: Use PowerShell, la CLI o una plantilla de Resource Manager para asociar el grupo de back-end a un recurso de equilibrador de carga.
+- Corrección: Use PowerShell, la CLI o una plantilla de Azure Resource Manager para asociar el grupo de back-end a un recurso del equilibrador de carga.
 - Repetición: Común
 
-#### <a name="create-inbound-nat"></a>Crear una regla NAT de entrada
+#### <a name="create-inbound-nat"></a>Crear una NAT de entrada
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: En el portal de usuarios, si intenta crear una **regla NAT de entrada** para una instancia de **Load Balancer**, se produce un error en la operación con el mensaje **Failed to update Load Balancer...** (No se pudo actualizar Load Balancer...).
-- Corrección: Use PowerShell, la CLI o una plantilla de Resource Manager para asociar el grupo de back-end a un recurso de equilibrador de carga.
+- Corrección: Use PowerShell, la CLI o una plantilla de Azure Resource Manager para asociar el grupo de back-end a un recurso del equilibrador de carga.
 - Repetición: Común
 
-#### <a name="create-load-balancer"></a>Cree un equilibrador de carga
+#### <a name="create-load-balancer"></a>Creación de un equilibrador de carga
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: En el portal de usuarios, la ventana **Crear equilibrador de carga** muestra una opción para crear una SKU **estándar** de Load Balancer. En Azure Stack no se admite esta opción.
+- Causa: En el portal de usuarios, la ventana **Crear equilibrador de carga** muestra una opción para crear una SKU **estándar** del equilibrador de carga. En Azure Stack no se admite esta opción.
 - Corrección: Use las opciones del equilibrador de carga básico en su lugar.
 - Repetición: Común
 
@@ -110,7 +117,7 @@ En este artículo se enumeran los problemas conocidos de la versión de 1904 de 
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: En el portal de usuarios, la ventana **Crear dirección IP pública** muestra una opción para crear una SKU **estándar**. En Azure Stack no se admite la SKU **estándar**.
-- Corrección: Utilice en su lugar el SKU básico para la dirección IP pública.
+- Corrección: Utilice en su lugar la SKU **básica** para las direcciones IP públicas.
 - Repetición: Común
 
 ## <a name="compute"></a>Proceso
@@ -149,15 +156,19 @@ El error se produce si habilita el diagnóstico de arranque en una VM, pero elim
 ### <a name="compute-host-agent-alert"></a>Alerta del agente de host de proceso
 
 - Aplicable a: se trata de un nuevo problema con la versión 1904.
-- Causa: La advertencia del "agente de host de proceso" se muestra después de reiniciar un nodo en la unidad de escalado. El reinicio cambia la configuración de inicio predeterminada del servicio del agente de host de proceso.
+- Causa: Aparece la advertencia **Compute host agent** (Agente de host de proceso) después de reiniciar un nodo en la unidad de escalado. El reinicio cambia la configuración de inicio predeterminada del servicio del agente de host de proceso.
 - Corrección:
   - Esta alerta puede omitirse. El agente que no responde no tiene ningún impacto en las operaciones del operador y el usuario o las aplicaciones del usuario. Esta alerta volverá a aparecer al cabo de 24 horas si se cierra manualmente.
   - El Soporte técnico de Microsoft puede corregir el problema cambiando la configuración de inicio para el servicio. Esto requiere la apertura de una incidencia de soporte técnico. Si se vuelve a reiniciar el nodo, se muestra una nueva alerta.
 - Repetición: Común
 
+## <a name="app-service"></a>App Service
+
+- Los inquilinos deben registrar el proveedor de recursos de almacenamiento antes de crear su primera instancia de Azure Functions en la suscripción.
+- Algunas experiencias de usuario del portal de inquilinos se rompen debido a una incompatibilidad con la el marco del portal en 1903; principalmente, la experiencia de usuario en las ranuras de implementación, las pruebas en producción y las extensiones de sitio. Para solucionar este problema, utilice el [módulo de PowerShell para Azure App Service](/azure/app-service/deploy-staging-slots#automate-with-powershell) o la [CLI de Azure](/cli/azure/webapp/deployment/slot?view=azure-cli-latest). La experiencia del portal se restaurará en la próxima versión de Azure App Service en Azure Stack 1.6 (Actualización 6).
+
 <!-- ## Storage -->
 <!-- ## SQL and MySQL-->
-<!-- ## App Service -->
 <!-- ## Usage -->
 <!-- ### Identity -->
 <!-- ### Marketplace -->

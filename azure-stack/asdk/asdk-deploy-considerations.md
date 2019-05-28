@@ -12,22 +12,23 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/06/2018
+ms.date: 05/13/2019
 ms.author: mabrigg
 ms.reviewer: misainat
-ms.lastreviewed: 12/12/2018
-ms.openlocfilehash: 85484e7428c4b384c2081d4f55af5e79259cc9d8
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.lastreviewed: 05/13/2019
+ms.openlocfilehash: 9cb349ec19edd493ca994b406b9311fe27bed242
+ms.sourcegitcommit: 87d93cdcdb6efb06e894f56c2f09cad594e1a8b3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65617509"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65712243"
 ---
 # <a name="azure-stack-deployment-planning-considerations"></a>Consideraciones de planeación de la implementación de Azure Stack
+
 Antes de implementar el Kit de desarrollo de Azure Stack (ASDK), asegúrese de que el equipo host del kit de desarrollo cumple los requisitos que se describen en este artículo.
 
-
 ## <a name="hardware"></a>Hardware
+
 | Componente | Mínima | Recomendado |
 | --- | --- | --- |
 | Unidades de disco: Sistema operativo |1 disco de sistema operativo con un mínimo de 200 GB disponibles para la partición del sistema (SSD o HDD) |Un disco del sistema operativo con un mínimo de 200 GB disponibles para la partición del sistema (SSD o HDD) |
@@ -39,6 +40,8 @@ Antes de implementar el Kit de desarrollo de Azure Stack (ASDK), asegúrese de q
 | Certificación del logotipo de hardware |[Certificado para Windows Server 2012 R2](https://windowsservercatalog.com/results.aspx?&chtext=&cstext=&csttext=&chbtext=&bCatID=1333&cpID=0&avc=79&ava=0&avq=0&OR=1&PGS=25&ready=0) |[Certificado para Windows Server 2016](https://windowsservercatalog.com/results.aspx?&chtext=&cstext=&csttext=&chbtext=&bCatID=1333&cpID=0&avc=79&ava=0&avq=0&OR=1&PGS=25&ready=0) |
 
 <sup>*</sup>Si tiene previsto agregar muchos de los [elementos de Marketplace](../operator/azure-stack-create-and-publish-marketplace-item.md) desde Azure, necesitará más capacidad de la que se recomienda.
+
+### <a name="hardware-notes"></a>Notas de hardware
 
 **Configuración de la unidad de disco de datos:** todas las unidades de datos deben ser del mismo tipo (SAS, SATA o NVMe) y tener la misma capacidad. Si se usan unidades de disco SAS, las unidades de disco debe estar conectadas a través de una ruta de acceso única (no se proporciona compatibilidad con MPIO ni con rutas de acceso múltiples).
 
@@ -63,6 +66,22 @@ Antes de implementar el Kit de desarrollo de Azure Stack (ASDK), asegúrese de q
 **HBA de ejemplo**: LSI 9207 8i, LSI-9300-8i o LSI-9265-8i en modo Paso a través
 
 Están disponibles configuraciones de OEM de ejemplo.
+
+### <a name="storage-resiliency-for-the-asdk"></a>Resistencia del almacenamiento del ASDK
+
+Al ser un sistema de nodo único, el ASDK no está diseñado para validar la redundancia de producción de un sistema integrado de Azure Stack. Sin embargo, puede aumentar el nivel de redundancia de almacenamiento subyacente del ADSK a través de la mezcla óptima de unidades HDD y SSD. Puede implementar una configuración de espejo bidireccional, similar a una RAID1, en lugar de una configuración de resistencia simple, que es similar a una configuración RAID0. Utilice suficiente capacidad, el tipo y el número de unidades para la configuración de Espacios de almacenamiento directo subyacente.
+
+Para usar una configuración de espejo bidireccional para la resistencia del almacenamiento:
+
+- Una capacidad de HDD en el sistema de más de dos terabytes.
+- Si no tiene ningún SSD en el ASDK, necesitará al menos ocho HDD para la configuración de espejo bidireccional.
+- Si dispone varios de SSD en el ASDK, junto con HDD, necesitará al menos cinco HDD. Sin embargo, se recomienda seis HDD. Para seis HDD, también sería aconsejable tener un mínimo de tres SSD correspondientes en el sistema para que cada disco de caché (SSD) sirva a dos unidades de capacidad (HDD).
+
+Ejemplo de configuración de espejo bidireccional:
+
+- Ocho HDD
+- Tres SSD/seis HDD
+- Cuatro SSD/ocho HDD
 
 ## <a name="operating-system"></a>Sistema operativo
 |  | **Requisitos** |
@@ -126,4 +145,7 @@ Azure Stack necesita acceso a Internet, ya sea directamente o a través de un pr
 
 
 ## <a name="next-steps"></a>Pasos siguientes
-[Descarga del paquete de implementación de ASDK](asdk-download.md)
+
+- [Descarga del paquete de implementación de ASDK](asdk-download.md)
+- Para más información acerca de Espacios de almacenamiento directo, consulte [Información general de Espacios de almacenamiento directos](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview).
+

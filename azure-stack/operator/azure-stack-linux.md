@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/15/2019
+ms.date: 05/21/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 11/16/2018
-ms.openlocfilehash: 2f7f0c55f02fd99a419619d878be8300d7326303
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 40a60c5207494ae70ccdfd051c8a223493b704c5
+ms.sourcegitcommit: 6fcd5df8b77e782ef72f0e1419f1f75ec8c16c04
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64309651"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65991108"
 ---
 # <a name="add-linux-images-to-azure-stack"></a>Agregar imágenes de Linux a Azure Stack
 
@@ -30,16 +30,17 @@ Puede implementar máquinas virtuales Linux en Azure Stack agregando una imagen 
 
 ## <a name="marketplace-management"></a>Administración de Marketplace
 
-Para descargar las imágenes de Linux desde Azure Marketplace, use los procedimientos descritos en el artículo [Descarga de elementos de Marketplace desde Azure a Azure Stack](azure-stack-download-azure-marketplace-item.md). Seleccione las imágenes de Linux que quiera ofrecer a los usuarios en Azure Stack. 
+Para descargar las imágenes de Linux desde Azure Marketplace, use los procedimientos descritos en el artículo [Descarga de elementos de Marketplace desde Azure a Azure Stack](azure-stack-download-azure-marketplace-item.md). Seleccione las imágenes de Linux que quiera ofrecer a los usuarios en Azure Stack.
 
-Tenga en cuenta que hay actualizaciones frecuentes de estas imágenes, así que compruebe la administración de Marketplace a menudo para estar al día.
+Hay actualizaciones frecuentes de estas imágenes, por lo que se recomienda comprobar Marketplace Management a menudo para estar al día.
 
 ## <a name="prepare-your-own-image"></a>Preparación de su propia imagen
 
-Siempre que sea posible, descargue las imágenes disponibles en Marketplace Management, que se han preparado y probado para Azure Stack.
+Siempre que sea posible, descargue las imágenes disponibles a través de Marketplace Management. Dichas imágenes se han preparado y probado para Azure Stack.
 
 ### <a name="azure-linux-agent"></a>Agente Linux de Azure
-Es necesario el agente Linux de Azure (suele denominarse `WALinuxAgent` o `walinuxagent`), y no todas las versiones del agente funcionarán en Azure Stack. No se admiten las versiones entre 2.2.20 y 2.2.35 en Azure Stack. Para usar las versiones de agente más recientes superiores a 2.2.35, aplique la revisión 1901/1902 o actualice su instancia de Azure Stack a la versión 1903 (o superior). Tenga en cuenta que no se admite [cloud-init](https://cloud-init.io/) en Azure Stack en este momento.
+
+El agente Linux de Azure (que suele llamarse `WALinuxAgent` o `walinuxagent`) es obligatorio, pero no todas las versiones del agente funcionan en Azure Stack. No se admiten las versiones entre 2.2.20 y 2.2.35 en Azure Stack. Para usar las versiones del agente más recientes, superiores a la 2.2.35, aplique las revisiones 1901 o 1902, o actualice Azure Stack a la versión 1903 (o cualquier versión superior). Tenga en cuenta que no se admite [cloud-init](https://cloud-init.io/) en Azure Stack en este momento.
 
 | Compilación de Azure Stack | Compilación del agente Linux de Azure |
 | ------------- | ------------- |
@@ -66,7 +67,5 @@ Después de agregar la imagen a Marketplace, se crea un elemento de Marketplace 
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Para obtener más información, consulte los siguientes artículos:
-
-- [Descarga de elementos de Marketplace desde Azure a Azure Stack](azure-stack-download-azure-marketplace-item.md)
-- [Información general de Azure Stack Marketplace](azure-stack-marketplace.md)
+* [Descarga de elementos de Marketplace desde Azure a Azure Stack](azure-stack-download-azure-marketplace-item.md)
+* [Información general de Azure Stack Marketplace](azure-stack-marketplace.md)
