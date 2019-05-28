@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/30/2019
+ms.date: 05/17/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 01/16/2019
-ms.openlocfilehash: 6e4402be7108f242e1d285ebe91dfece744f0805
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.lastreviewed: 05/17/2019
+ms.openlocfilehash: 62626240c59c9f78c0b0d21553e8c6ffeb0367a0
+ms.sourcegitcommit: 8cb2b567e9914d4d07e754d95c0864aa55868579
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64311601"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855386"
 ---
 # <a name="deploy-kubernetes-to-azure-stack-using-azure-active-directory"></a>Implementación de Kubernetes en Azure Stack con Azure Active Directory
 
@@ -61,25 +61,21 @@ Cree una entidad de servicio en Azure. La entidad de servicio permite que la apl
 
 1. Crear una aplicación de Azure.
 
-     a. Seleccione **Azure Active Directory** > **+ Registros de aplicaciones** > **Nuevo registro de aplicaciones**.
-
-    b. Escriba un **Nombre** para la aplicación.
-
-    c. Seleccione **Aplicación web/API**.
-
-    d. Escriba `http://localhost` para **URL de inicio de sesión**.
-
-    c. Haga clic en **Create**(Crear).
+     a. Inicie sesión en su cuenta de Azure mediante [Azure Portal](https://portal.azure.com).  
+    b. Haga clic en **Azure Active Directory** > **Registros de aplicaciones** > **Nuevo registro**.  
+    c. Proporcione un nombre y una dirección URL para la aplicación.  
+    d. Seleccione los **tipos de cuenta admitidos**.  
+    e.  Agregue `http://localhost` como identificador URI de la aplicación. Seleccione **Web** para indicar el tipo de aplicación que quiere crear. Después de configurar los valores, seleccione **Registrar**.
 
 1. Anote el **Id. de la aplicación**. Necesitará el identificador al crear el clúster. Se hace referencia al identificador como **Id. de cliente de entidad de servicio**.
 
-1. Seleccione **Configuración** > **Claves**.
+1. En la hoja de la entidad de servicio, seleccione **Nuevo secreto de cliente** . **Configuración** > **Claves**. Necesita generar una clave de autenticación para la entidad de servicio.
 
      a. Escriba la **Descripción**.
 
     b. Seleccione **Never expires** (Nunca expira) para **Expira**.
 
-    c. Seleccione **Guardar**. Tome nota de la cadena de clave. Necesitará la cadena de clave al crear el clúster. Se hace referencia a la clave como **Secreto de cliente de la entidad de servicio**.
+    c. Seleccione **Agregar**. Tome nota de la cadena de clave. Necesitará la cadena de clave al crear el clúster. Se hace referencia a la clave como **Secreto de cliente de la entidad de servicio**.
 
 ## <a name="give-the-service-principal-access"></a>Dar acceso a la entidad de servicio
 

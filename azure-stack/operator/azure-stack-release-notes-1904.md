@@ -16,12 +16,12 @@ ms.date: 05/06/2019
 ms.author: sethm
 ms.reviewer: ''
 ms.lastreviewed: 05/06/2019
-ms.openlocfilehash: 7047c44ec4828c07eeaefdf29bcfef3762942b21
-ms.sourcegitcommit: 405075e7826ba2fa545dbf5498160219ef8d2db5
+ms.openlocfilehash: 99906760e51c87a7403eabfb94a64b74b999aab5
+ms.sourcegitcommit: d2012e765c3fa5bccb4756d190349e890f9f48bd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65453735"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65941176"
 ---
 # <a name="azure-stack-1904-update"></a>Actualización 1904 de Azure Stack
 
@@ -100,7 +100,7 @@ El número de compilación de la actualización 1904 de Azure Stack es **1.190
 - Se ha quitado la opción para que los operadores de Azure Stack apaguen las instancias de rol de infraestructura en el portal de administradores. La funcionalidad de reinicio garantiza un intento de cierre correcto antes de reiniciar la instancia de rol de infraestructura. Para escenarios avanzados, la funcionalidad de la API y de PowerShell sigue estando disponible.
 
 <!-- Feature ## 4199257 -->
-- Se incluye una nueva experiencia de administración de Marketplace, con pantallas independientes para los proveedores de recursos y las imágenes de Marketplace. Por ahora, la ventana **Proveedor de recursos** está vacía, pero en futuras versiones aparecerán nuevas ofertas de servicios PaaS, que se administrarán en esta misma ventana.****
+- Se incluye una nueva experiencia de administración de Marketplace, con pantallas independientes para los proveedores de recursos y las imágenes de Marketplace. Por ahora, la ventana **Proveedor de recursos** está vacía, pero en futuras versiones aparecerán nuevas ofertas de servicios PaaS, que se administrarán en esta misma ventana. ****
 
 <!-- Feature ## 4199257 -->
 - Cambios en la experiencia de actualización en el portal del operador. Se incluye una nueva cuadrícula para las actualizaciones del proveedor de recursos. La capacidad de actualizar los proveedores de recursos aún no está disponible.
@@ -113,6 +113,8 @@ El número de compilación de la actualización 1904 de Azure Stack es **1.190
   - Se muestra una alerta crítica "severa" en el portal similar a la siguiente: "Se produjo un error en la actualización más reciente. Microsoft recomienda abrir una solicitud de servicio lo antes posible. Como parte del proceso de actualización, se ejecuta Test-AzureStack y, en función de la salida, se genera la alerta más adecuada. En este caso, también se produjeron errores en Test-AzureStack”.
 
 - Versión 2.2.38.0 del agente Linux de Azure actualizado. Esta compatibilidad permite que los clientes conserven imágenes coherentes de Linux entre Azure y Azure Stack.
+
+- Cambios en los registros de actualización en el portal del operador. Ya no están disponibles las solicitudes para recuperar registros de actualizaciones correctas. Al ser accionables en los diagnósticos, los registros de actualizaciones con errores siguen estando disponibles para su descarga.
 
 ### <a name="fixes"></a>Correcciones
 
@@ -149,6 +151,8 @@ El número de compilación de la actualización 1904 de Azure Stack es **1.190
 - Se ha corregido un problema en que, si se asignaba un rol de colaborador a un usuario para una suscripción, pero no se le concedían explícitamente permisos de lectura, se generaba un error similar a: **...El cliente "somelogonaccount@domain.com" con el id. de objeto {GUID} no tiene autorización para realizar la acción...** cuando se intentaba guardar un cambio en un recurso.
 
 - Se ha corregido un problema en que la pantalla de administración de Marketplace estaba vacía si se usaba la herramienta de redifusión sin conexión para cargar imágenes y alguna de ellas no tenía los URI del icono.
+
+- Se ha corregido un problema que impedía que los productos que no se descargaban se eliminaran de Marketplace Management.
 
 ### <a name="security-updates"></a>Actualizaciones de seguridad
 
