@@ -3,7 +3,7 @@ title: Introducción a App Service en Azure Stack | Microsoft Docs
 description: Introducción a App Service en Azure Stack
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: BryanLa
 manager: femila
 ms.assetid: ''
 ms.service: azure-stack
@@ -15,12 +15,12 @@ ms.date: 03/11/2019
 ms.author: mabrigg
 ms.reviewer: anwestg
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: 4db3aef81ea8f29475fcd565dbb791a0aeff6825
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: fcf2e977bbfebeab579d330c6228cc73f05d2307
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618456"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66269149"
 ---
 # <a name="app-service-on-azure-stack-overview"></a>Introducción a App Service en Azure Stack
 

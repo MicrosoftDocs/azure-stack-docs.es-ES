@@ -15,12 +15,12 @@ ms.date: 02/13/2019
 ms.author: patricka
 ms.reviewer: rtiberiu
 ms.lastreviewed: 02/13/2019
-ms.openlocfilehash: f5ccc5fc7a280cd8d0832edfe1be6f4ff35dba1d
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: 09a75b7aad3d0a9a919883641d8dc901353a5048
+ms.sourcegitcommit: 261df5403ec01c3af5637a76d44bf030f9342410
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985345"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66251908"
 ---
 # <a name="create-a-registration-role-for-azure-stack"></a>Creación de un rol de registro para Azure Stack
 
@@ -33,7 +33,7 @@ Para escenarios donde no quiera conceder permisos de propietario en la suscripci
 
 Al registrar Azure Stack, la cuenta de registro requiere los siguientes permisos de Azure Active Directory y permisos de suscripción a Azure:
 
-* **Permisos de registro de aplicación en el inquilino de Azure Active Directory:** Los administradores tienen permisos de registro de aplicaciones. El permiso para los usuarios es una configuración global para todos los usuarios en el inquilino. Para ver o cambiar la configuración, consulte [Creación de una aplicación de Azure AD y una entidad de servicio con acceso a los recursos]((/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions).
+* **Permisos de registro de aplicación en el inquilino de Azure Active Directory:** Los administradores tienen permisos de registro de aplicaciones. El permiso para los usuarios es una configuración global para todos los usuarios en el inquilino. Para ver o cambiar esta opción de configuración, vea [cómo crear una aplicación de Azure AD y una entidad de servicio con acceso a los recursos](/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions).
 
     La opción de configuración *Los usuarios pueden registrar aplicaciones* debe establecerse en **Sí** para habilitar una cuenta de usuario para registrar Azure Stack. Si la opción de configuración de registro de la aplicación se establece en **No**, no se puede usar una cuenta de usuario y debe usar una cuenta de administrador global para registrar Azure Stack.
 
@@ -41,7 +41,7 @@ Al registrar Azure Stack, la cuenta de registro requiere los siguientes permisos
 
 ## <a name="create-a-custom-role-using-powershell"></a>Creación de un rol personalizado con PowerShell
 
-Para crear un rol personalizado, debe tener el permiso `Microsoft.Authorization/roleDefinitions/write` en cada `AssignableScopes`, como [Propietario]((/azure/role-based-access-control/built-in-roles#owner) o [Administrador de acceso de usuario]((/azure/role-based-access-control/built-in-roles#user-access-administrator). Use la siguiente plantilla JSON para simplificar la definición del rol personalizado. La plantilla crea un rol personalizado que permite el acceso de lectura y escritura necesarios para el registro de Azure Stack.
+Para crear un rol personalizado, debe tener el permiso `Microsoft.Authorization/roleDefinitions/write` en todos los `AssignableScopes`, como [Propietario](/azure/role-based-access-control/built-in-roles#owner) o [Administrador de acceso de usuario](/azure/role-based-access-control/built-in-roles#user-access-administrator). Use la siguiente plantilla JSON para simplificar la definición del rol personalizado. La plantilla crea un rol personalizado que permite el acceso de lectura y escritura necesarios para el registro de Azure Stack.
 
 1. Cree un archivo JSON. Por ejemplo: `C:\CustomRoles\registrationrole.json`
 2. Agregue el siguiente JSON al archivo. Reemplace `<SubscriptionID>` con la identificación de su suscripción de Azure.
@@ -70,7 +70,7 @@ Para crear un rol personalizado, debe tener el permiso `Microsoft.Authorization/
     }
     ```
 
-3. En PowerShell, conéctese a Azure para usar Azure Resource Manager. Cuando se le solicite, autentíquese con una cuenta con los permisos suficientes, como [Propietario]((/azure/role-based-access-control/built-in-roles#owner) o [Administrador de acceso de usuario]((/azure/role-based-access-control/built-in-roles#user-access-administrator).
+3. En PowerShell, conéctese a Azure para usar Azure Resource Manager. Cuando se le solicite, autentíquese con una cuenta con permisos suficientes como [Propietario](/azure/role-based-access-control/built-in-roles#owner) o [Administrador de acceso de usuario](/azure/role-based-access-control/built-in-roles#user-access-administrator).
 
     ```azurepowershell
     Connect-AzureRmAccount
@@ -86,7 +86,7 @@ Para crear un rol personalizado, debe tener el permiso `Microsoft.Authorization/
 
 Después de crear el rol personalizado de registro, asigne los usuarios del rol mediante el registro de Azure Stack.
 
-1. Inicie sesión con la cuenta con los permisos suficientes en la suscripción de Azure para delegar derechos, como [Propietario]((/azure/role-based-access-control/built-in-roles#owner) o [Administrador de acceso de usuario]((/azure/role-based-access-control/built-in-roles#user-access-administrator).
+1. Inicie sesión con la cuenta con permisos suficientes en la suscripción a Azure para delegar derechos, como [Propietario](/azure/role-based-access-control/built-in-roles#owner) o [Administrador de acceso de usuario](/azure/role-based-access-control/built-in-roles#user-access-administrator) .
 2. En **Suscripciones**, seleccione **Control de acceso (IAM) > Agregar asignación de roles**.
 3. En **Rol**, elija el rol personalizado que creó en el *rol de registro de Azure Stack*.
 4. Seleccione los usuarios que quiere asignar al rol.
@@ -94,7 +94,7 @@ Después de crear el rol personalizado de registro, asigne los usuarios del rol 
 
     ![Selección de usuarios para asignar al rol](media/azure-stack-registration-role/assign-role.png)
 
-Para más información sobre los roles personalizados, consulte [Administración de acceso mediante RBAC y Azure Portal]((/azure/role-based-access-control/role-assignments-portal).
+Para saber más sobre los roles personalizados, vea [Administración del acceso mediante RBAC y Azure Portal](/azure/role-based-access-control/role-assignments-portal).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

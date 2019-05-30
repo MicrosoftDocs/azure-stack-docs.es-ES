@@ -3,7 +3,7 @@ title: 'Implementación de Azure Stack: PowerShell | Microsoft Docs'
 description: En este artículo, va a instalar el Kit de desarrollo de Azure Stack desde la línea de comandos mediante PowerShell.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.custom: ''
 ms.date: 05/06/2019
-ms.author: mabrigg
+ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 02/08/2019
-ms.openlocfilehash: 05a3d0a88f4852395942d58ac798d2eb06a1d766
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 4a32631441760db715443b8979e2769b55258fcf
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65617560"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66267171"
 ---
 # <a name="deploy-the-asdk-from-the-command-line"></a>Implementación del Kit de desarrollo de Azure Stack desde la línea de comandos
 El Kit de desarrollo de Azure Stack es un entorno de desarrollo y pruebas que se puede implementar para evaluar y probar las características y servicios de Azure Stack. Para ponerlo en ejecución, debe preparar el hardware del entorno y ejecutar algunos scripts (esta operación tardará varias horas). Una vez finalizado, puede iniciar sesión en los portales del administrador y de usuarios para comenzar a usar Azure Stack.

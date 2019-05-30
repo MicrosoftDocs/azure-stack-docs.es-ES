@@ -1,6 +1,6 @@
 ---
-title: Diferencias clave entre Azure y Azure Stack al usar servicios y compilar aplicaciones | Microsoft Docs
-description: Lo que necesita saber si usa servicios o compila aplicaciones para Azure Stack.
+title: Diferencias entre Azure Stack y Azure al usar servicios y compilar aplicaciones | Microsoft Docs
+description: Diferencias entre Azure y Azure Stack al usar servicios y compilar aplicaciones
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,16 +15,16 @@ ms.topic: overview
 ms.date: 04/08/2019
 ms.author: sethm
 ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: 3c3e00358efd582b5a6f1ddb0f1ae3634fe577c7
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 9fcf27c8ebbde86e775b54eda593b25fcd03979c
+ms.sourcegitcommit: be5382f715a9c1c18c660b630d8fcd823f13aae3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64312882"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66197287"
 ---
-# <a name="key-considerations-using-services-or-building-apps-for-azure-stack"></a>Consideraciones clave: uso de servicios o compilación de aplicaciones para Azure Stack
+# <a name="differences-between-azure-stack-and-azure-when-using-services-and-building-apps"></a>Diferencias entre Azure Stack y Azure al usar servicios y compilar aplicaciones
 
-Antes de usar servicios o compilar aplicaciones para Azure Stack, es importante que sepa que existen diferencias entre Azure Stack y Azure. En este artículo se identifican los principales aspectos que se deben tener en cuenta al usar Azure Stack como entorno de desarrollo de nube híbrida.
+Antes de usar servicios o compilar aplicaciones para Azure Stack, es importante que sepa que existen diferencias entre Azure Stack y Azure. En este artículo se identifican las diferentes características y aspectos clave que se deben tener en cuenta al usar Azure Stack como entorno de desarrollo en la nube híbrida.
 
 ## <a name="overview"></a>Información general
 
@@ -32,7 +32,7 @@ Azure Stack es una plataforma en la nube híbrida que permite usar servicios de 
 
 El operador de Azure Stack le permitirá saber de qué servicios dispone y cómo obtener soporte técnico. Le proporcionará estos servicios a través de sus ofertas y planes personalizados.
 
-El contenido técnico de Azure da por supuesto que las aplicaciones se están desarrollando para un servicio de Azure en lugar de para Azure Stack. Al compilar e implementar aplicaciones en Azure Stack, debe comprender algunas diferencias clave, como:
+El contenido técnico de Azure da por supuesto que las aplicaciones se están desarrollando para un servicio de Azure y no para Azure Stack. Al compilar e implementar aplicaciones en Azure Stack, debe comprender algunas diferencias clave, como:
 
 * Azure Stack ofrece un subconjunto de los servicios y características que están disponibles en Azure.
 * El proveedor del servicio o la empresa pueden elegir qué servicios desean ofrecer. Las opciones disponibles pueden incluir servicios o aplicaciones personalizados. Podrían ofrecer su propia documentación personalizada.
@@ -48,7 +48,7 @@ En la tabla siguiente se describen las diferencias de alto nivel entre Azure Sta
 | Ámbito | Azure (global) | Azure Stack |
 | -------- | ------------- | ----------|
 | ¿Quién lo administra? | Microsoft | Su organización o el proveedor de servicios.|
-| ¿Quién es su contacto de soporte técnico? | Microsoft | En el caso de un sistema integrado, póngase en contacto con su operador de Azure Stack (en su organización o proveedor de servicios) para obtener soporte técnico.<br><br>Para obtener soporte técnico para el Kit de desarrollo de Azure Stack, visite los [foros de Microsoft](https://social.msdn.microsoft.com/Forums/home?forum=azurestack). Dado que el kit de desarrollo es un entorno de evaluación, no se ofrece ningún soporte técnico oficial a través de los servicios de soporte al cliente (CSS) de Microsoft.
+| ¿Quién es su contacto de soporte técnico? | Microsoft | En el caso de un sistema integrado, póngase en contacto con su operador de Azure Stack (en su organización o proveedor de servicios) para obtener soporte técnico.<br><br>Para obtener soporte técnico para el Kit de desarrollo de Azure Stack, visite los [foros de Microsoft](https://social.msdn.microsoft.com/Forums/home?forum=azurestack). Dado que el kit de desarrollo es un entorno de evaluación, no se ofrece ningún soporte técnico oficial a través de los servicios de soporte técnico al cliente (CSS) de Microsoft.
 | Servicios disponibles | Consulte la lista de [productos de Azure](https://azure.microsoft.com/services/?b=17.04b). Los servicios disponibles varían según la región de Azure. | Azure Stack admite un subconjunto de servicios de Azure. Los servicios reales variarán en función de lo que el proveedor de servicios o la organización decidan ofrecer.
 | Punto de conexión de Azure Resource Manager* | https://management.azure.com | Para un sistema integrado de Azure Stack, use el punto de conexión que proporciona su operador de Azure Stack.<br><br>Para el kit de desarrollo, use: https://management.local.azurestack.external.
 | URL del portal* | [https://portal.azure.com](https://portal.azure.com) | Para un sistema integrado de Azure Stack, use la dirección URL que proporciona su operador de Azure Stack.<br><br>Para el kit de desarrollo, use: https://portal.local.azurestack.external.
@@ -57,7 +57,7 @@ En la tabla siguiente se describen las diferencias de alto nivel entre Azure Sta
 |Espacios de nombres, tipos de recursos y versiones de API compatibles | La versión más reciente (o versiones anteriores que no están en desuso). | Azure Stack es compatible con versiones específicas. Consulte la sección [Requisitos de versión](#version-requirements) de este mismo artículo.
 | | |
 
-* Si es un operador de Azure Stack, vea [Using the administrator portal](../operator/azure-stack-manage-portals.md) (Usar el portal de administrador) y [Administration basics](../operator/azure-stack-manage-basics.md) (Conceptos básicos de administración) para obtener más información.
+* Si es un operador de Azure Stack, consulte [Using the administrator portal](../operator/azure-stack-manage-portals.md) (Usar el portal de administrador) y [Administration basics](../operator/azure-stack-manage-basics.md) (Conceptos básicos de administración) para más información.
 
 ## <a name="helpful-tools-and-best-practices"></a>Herramientas útiles y prácticas recomendadas
 
@@ -79,7 +79,7 @@ Para asegurarse de que está usando una versión correcta de Azure PowerShell, u
 > [!NOTE]
 > Si usa el Kit de desarrollo de Azure Stack y tiene acceso administrativo, consulte la sección [Determinación de la versión actual](../operator/azure-stack-updates.md#determine-the-current-version) para determinar la compilación de Azure Stack.
 
-Para otras API, ejecute el siguiente comando de PowerShell para generar los espacios de nombres, los tipos de recursos y las versiones de API compatibles con la suscripción de Azure Stack. Tenga en cuenta que aún es posible que existan diferencias en el nivel de propiedad. Para que este comando funcione, es preciso debe haber [instalado](../operator/azure-stack-powershell-install.md) y [configurado](azure-stack-powershell-configure-user.md) PowerShell para un entorno de Azure Stack. También hay que tener una suscripción a una oferta de Azure Stack.
+Para otras API, ejecute el siguiente comando de PowerShell para generar los espacios de nombres, los tipos de recursos y las versiones de API compatibles con la suscripción de Azure Stack (aún podría haber diferencias en un nivel de propiedad). Para que este comando funcione, es preciso debe haber [instalado](../operator/azure-stack-powershell-install.md) y [configurado](azure-stack-powershell-configure-user.md) PowerShell para un entorno de Azure Stack. También hay que tener una suscripción a una oferta de Azure Stack.
 
 ```powershell
 Get-AzureRmResourceProvider | Select ProviderNamespace -Expand ResourceTypes | Select * -Expand ApiVersions | `
@@ -92,6 +92,6 @@ Resultado de ejemplo (truncado): ![resultado de ejemplo del comando Get-AzureRmR
 
 Para obtener más información detallada acerca de las diferencias en un nivel de servicio, consulte:
 
-* [Considerations for Virtual Machines in Azure Stack](azure-stack-vm-considerations.md) (Consideraciones para máquinas virtuales de Azure Stack)
+* [Consideraciones sobre máquinas virtuales en Azure Stack](azure-stack-vm-considerations.md)
 * [Considerations for Storage in Azure Stack](azure-stack-acs-differences.md) (Consideraciones para almacenamiento en Azure Stack)
 * [Considerations for Azure Stack networking](azure-stack-network-differences.md) (Consideraciones para los servicios de red de Azure Stack)

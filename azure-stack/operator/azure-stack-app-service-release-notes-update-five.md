@@ -3,8 +3,8 @@ title: Notas de la versión de la actualización 5 de App Service en Azure Stack
 description: Obtenga más información sobre el contenido de la actualización 5 de App Service en Azure Stack, los problemas conocidos y la ubicación de la descarga.
 services: azure-stack
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: bryanla
+manager: stefsch
 editor: ''
 ms.assetid: ''
 ms.service: azure-stack
@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-origin.date: 03/25/2019
-ms.date: 04/29/2019
-ms.author: v-jay
-ms.reviewer: ''
-ms.openlocfilehash: 44ecf4df7effe330463a611f66ebb6465f9019f0
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.date: 03/25/2019
+ms.author: anwestg
+ms.reviewer: anwestg
+ms.lastreviewed: 03/25/2019
+ms.openlocfilehash: e0801ecdce5ddeffd3bcae43d999121c62d3e052
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64306351"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66269165"
 ---
 # <a name="app-service-on-azure-stack-update-5-release-notes"></a>Notas de la versión de App Service en la actualización 5 de Azure Stack
 

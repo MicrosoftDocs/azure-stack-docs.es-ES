@@ -2,21 +2,21 @@
 title: Validación de una copia de seguridad de Azure Stack mediante el ASDK | Microsoft Docs
 description: Cómo validar una copia de seguridad de sistemas integrados de Azure Stack mediante el ASDK.
 services: azure-stack
-author: mattbriggs
+author: justinha
 manager: femila
 cloud: azure-stack
 ms.service: azure-stack
 ms.topic: article
 ms.date: 02/15/2019
-ms.author: mabrigg
+ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 02/15/2019
-ms.openlocfilehash: 6d300c54044f2eb22eac8efe6f9434660d0b6fb8
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 38c4de35b4d2b5eac16b8586aa6933b18c62b14a
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65617324"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66267328"
 ---
 # <a name="use-the-asdk-to-validate-an-azure-stack-backup"></a>Uso del ASDK para validar una copia de seguridad de Azure Stack
 Después de implementar Azure Stack y aprovisionar recursos de usuario, como ofertas, planes, cuotas y suscripciones, debe [habilitar la infraestructura de copia de seguridad de Azure Stack](../operator/azure-stack-backup-enable-backup-console.md). La programación y ejecución de copias de seguridad de infraestructura regulares asegurará que los datos de administración de infraestructura no se pierdan si se produce un error de servicio o de hardware muy grave.
@@ -110,7 +110,7 @@ Los pasos de esta sección muestran cómo implementar el ASDK mediante una inter
 > El instalador de la interfaz de usuario actual solo admite claves de cifrado.
 
 1. Una vez que el equipo host arranque correctamente en la imagen de CloudBuilder.vhdx, inicie sesión con las credenciales de administrador que especificó cuando [preparó el equipo host del kit de desarrollo](asdk-prepare-host.md) para la instalación del ASDK. Dichas credenciales deben coincidir con las de administrador local del host del kit de desarrollo.
-2. Abra una consola de PowerShell con privilegios elevados y ejecute el script de PowerShell **letra de unidad>\AzureStack_Installer\asdk-installer.ps1&lt;**. El script puede estar en una unidad distinta de C:\ en la imagen de CloudBuilder.vhdx. Haga clic en **Recuperar**.
+2. Abra una consola de PowerShell con privilegios elevados y ejecute el script de PowerShell **letra de unidad>\AzureStack_Installer\asdk-installer.ps1&lt;** . El script puede estar en una unidad distinta de C:\ en la imagen de CloudBuilder.vhdx. Haga clic en **Recuperar**.
 
     ![Script del instalador del ASDK](media/asdk-validate-backup/1.PNG) 
 

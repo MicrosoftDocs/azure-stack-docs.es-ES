@@ -15,12 +15,12 @@ ms.date: 02/11/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 02/11/2019
-ms.openlocfilehash: ca0dd74a08ce1abe454cb497a2569aae0b958d7c
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 367053882e9e44ba983d5df552929c65222fcafc
+ms.sourcegitcommit: be5382f715a9c1c18c660b630d8fcd823f13aae3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64311505"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66197362"
 ---
 # <a name="deploy-kubernetes-to-azure-stack-using-active-directory-federated-services"></a>Implementación de Kubernetes en Azure Stack con los Servicios de federación de Active Directory
 
@@ -83,7 +83,7 @@ Deberá trabajar con el administrador de Azure Stack para que configure la entid
        | Nombre del almacén de claves | Nombre del almacén.<br> Patrón de expresión regular: `^[a-zA-Z0-9-]{3,24}$`. |
        | Ubicación del grupo de recursos | Ubicación del grupo de recursos. Esta es la región que elige para la instalación de Azure Stack. |
 
-   - Abra PowerShell con un símbolo del sistema con privilegios elevados y [conéctelo a Azure Stack](azure-stack-powershell-configure-user.md#connect-with-ad-fs). Ejecute el siguiente script con los parámetros actualizados para coincidir con sus valores:
+   - Abra PowerShell con un símbolo del sistema con privilegios elevados y [conéctelo a Azure Stack](azure-stack-powershell-configure-user.md#connect-to-azure-stack-with-ad-fs). Ejecute el siguiente script con los parámetros actualizados para coincidir con sus valores:
 
    ```powershell  
        $armEndpoint="<Azure Resource Manager Endpoint>"
@@ -124,7 +124,7 @@ Deberá trabajar con el administrador de Azure Stack para que configure la entid
        | Azure Resource Manager Endpoint | El punto de conexión del Kit de desarrollo de Azure Stack (ASDK) es `https://management.local.azurestack.external/`.<br>El punto de conexión en los sistemas integrados es `https://management.<location>.ext-<machine-name>.masd.stbtest.microsoft.com/`. |
        | Id. de suscripción | El [identificador de suscripción](../operator/azure-stack-plan-offer-quota-overview.md#subscriptions) es su forma de tener acceso a las ofertas de Azure Stack. |
 
-   - Abra PowerShell con un símbolo del sistema con privilegios elevados y [conéctelo a Azure Stack](azure-stack-powershell-configure-user.md#connect-with-ad-fs). Ejecute el siguiente script con los parámetros actualizados para coincidir con sus valores:
+   - Abra PowerShell con un símbolo del sistema con privilegios elevados y [conéctelo a Azure Stack](azure-stack-powershell-configure-user.md#connect-to-azure-stack-with-ad-fs). Ejecute el siguiente script con los parámetros actualizados para coincidir con sus valores:
 
     ```powershell
         

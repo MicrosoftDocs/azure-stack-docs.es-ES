@@ -1,6 +1,6 @@
 ---
-title: Creación de una máquina virtual Windows Server con PowerShell en Azure Stack | Microsoft Docs
-description: Cree una máquina virtual Windows Server con PowerShell en Azure Stack.
+title: Creación de una máquina virtual con Windows Server mediante PowerShell en Azure Stack | Microsoft Docs
+description: Cree una máquina virtual con Windows Server mediante PowerShell en Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -16,14 +16,14 @@ ms.author: mabrigg
 ms.custom: mvc
 ms.reviewer: kivenkat
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: d6293aec1d9a4a7ce58442b21302c09162cc3a61
-ms.sourcegitcommit: 87d93cdcdb6efb06e894f56c2f09cad594e1a8b3
+ms.openlocfilehash: 1b0f367540012b86da322329f0536b3c484c39b4
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65712434"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66269562"
 ---
-# <a name="quickstart-create-a-windows-server-virtual-machine-by-using-powershell-in-azure-stack"></a>Inicio rápido: Creación de una máquina virtual Windows Server con PowerShell en Azure Stack
+# <a name="quickstart-create-a-windows-server-vm-by-using-powershell-in-azure-stack"></a>Inicio rápido: Creación de una máquina virtual con Windows Server mediante PowerShell en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
@@ -147,9 +147,9 @@ $nsg = New-AzureRmNetworkSecurityGroup `
   -SecurityRules $nsgRuleRDP,$nsgRuleWeb
 ```
 
-### <a name="create-a-network-card-for-the-virtual-machine"></a>Creación de una tarjeta de red para la máquina virtual
+### <a name="create-a-network-card-for-the-vm"></a>Creación de una tarjeta de red para la máquina virtual
 
-Esta conecta la máquina virtual a una subred, un grupo de seguridad de red y una dirección IP pública.
+La tarjeta de red conecta la máquina virtual a una subred, un grupo de seguridad de red y una dirección IP pública.
 
 ```powershell
 # Create a virtual network card and associate it with public IP address and NSG
@@ -162,17 +162,17 @@ $nic = New-AzureRmNetworkInterface `
   -NetworkSecurityGroupId $nsg.Id
 ```
 
-## <a name="create-a-virtual-machine"></a>de una máquina virtual
+## <a name="create-a-vm"></a>Crear una VM
 
-Cree una configuración de máquina virtual. Esta configuración incluye los valores usados al implementar la máquina virtual. Por ejemplo, credenciales, tamaño y la imagen de la máquina virtual.
+Creación de una configuración de máquina virtual Esta configuración incluye los valores usados al implementar la máquina virtual. Por ejemplo: credenciales, tamaño e imagen de la máquina virtual.
 
 ```powershell
-# Define a credential object to store the username and password for the virtual machine
+# Define a credential object to store the username and password for the VM
 $UserName='demouser'
 $Password='Password@123'| ConvertTo-SecureString -Force -AsPlainText
 $Credential=New-Object PSCredential($UserName,$Password)
 
-# Create the virtual machine configuration object
+# Create the VM configuration object
 $VmName = "VirtualMachinelatest"
 $VmSize = "Standard_A1"
 $VirtualMachine = New-AzureRmVMConfig `
@@ -192,7 +192,7 @@ $VirtualMachine = Set-AzureRmVMSourceImage `
   -Skus "2016-Datacenter" `
   -Version "latest"
 
-# Sets the operating system disk properties on a virtual machine.
+# Sets the operating system disk properties on a VM.
 $VirtualMachine = Set-AzureRmVMOSDisk `
   -VM $VirtualMachine `
   -CreateOption FromImage | `
@@ -201,14 +201,14 @@ $VirtualMachine = Set-AzureRmVMOSDisk `
   Add-AzureRmVMNetworkInterface -Id $nic.Id
 
 
-# Create the virtual machine.
+# Create the VM.
 New-AzureRmVM `
   -ResourceGroupName $ResourceGroupName `
   -Location $location `
   -VM $VirtualMachine
 ```
 
-## <a name="connect-to-the-virtual-machine"></a>Conexión a la máquina virtual
+## <a name="connect-to-the-vm"></a>Conexión a la máquina virtual
 
 Para conectar de forma remota con la máquina virtual que creó en el paso anterior, necesita su dirección IP pública. Ejecute el comando siguiente para obtenerla:
 
@@ -217,7 +217,7 @@ Get-AzureRmPublicIpAddress `
   -ResourceGroupName $ResourceGroupName | Select IpAddress
 ```
 
-Ejecute el comando siguiente para crear una sesión de Escritorio remoto con la máquina virtual. Reemplace la dirección IP con el valor de *publicIPAddress* de la máquina virtual. Cuando se le pida, especifique el nombre de usuario y la contraseña que proporcionó cuando creó la máquina virtual.
+Utilice el comando siguiente para crear una sesión del Escritorio remoto con la máquina virtual. Reemplace la dirección IP por el valor de *publicIPAddress* de la máquina virtual. Cuando se le pida, especifique el nombre de usuario y la contraseña que proporcionó cuando creó la máquina virtual.
 
 ```powershell
 mstsc /v <publicIpAddress>
@@ -237,7 +237,7 @@ Con IIS instalado y el puerto 80 abierto en la máquina virtual, puede usar cual
 
 ![Sitio predeterminado de IIS](./media/azure-stack-quick-create-vm-windows-powershell/default-iis-website.png)
 
-## <a name="delete-the-virtual-machine"></a>Eliminación de la máquina virtual
+## <a name="delete-the-vm"></a>Eliminación de la máquina virtual
 
 Cuando ya no sea necesario, use el siguiente comando para quitar el grupo de recursos que contiene la máquina virtual y sus recursos relacionados:
 
@@ -248,4 +248,4 @@ Remove-AzureRmResourceGroup `
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-En esta guía de inicio rápido, ha implementado una máquina virtual Windows sencilla. Para aprender más sobre las máquina virtuales de Azure Stack, continúe con el artículo [Considerations for Virtual Machines in Azure Stack](azure-stack-vm-considerations.md) (Consideraciones acerca de máquinas virtuales de Azure Stack).
+En esta guía de inicio rápido, ha implementado una máquina virtual Windows sencilla. Para más información acerca de las máquinas virtuales de Azure Stack, vaya a [Características de la máquina virtual de Azure Stack](azure-stack-vm-considerations.md).

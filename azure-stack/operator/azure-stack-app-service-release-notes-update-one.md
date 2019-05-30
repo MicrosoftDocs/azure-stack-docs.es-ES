@@ -3,8 +3,8 @@ title: Notas de la versión de la actualización 1 de App Service en Azure Stack
 description: Conozca el contenido de la actualización 1 para App Service en Azure Stack, los problemas conocidos y la ubicación dónde debe descargarse.
 services: azure-stack
 documentationcenter: ''
-author: WenJason
-manager: digmobile
+author: bryanla
+manager: stefsch
 editor: ''
 ms.assetid: ''
 ms.service: azure-stack
@@ -12,17 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-origin.date: 03/25/2018
-ms.date: 04/29/2019
-ms.author: v-jay
-ms.reviewer: sethm
+ms.date: 03/25/2019
+ms.author: anwestg
+ms.reviewer: anwestg
 ms.lastreviewed: 03/20/2018
-ms.openlocfilehash: 86eb23e57516bc108557bbdc4f2d131153f5e855
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: b9b884377e35b43670943f4cf94a24b5216bf233
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64306489"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66269122"
 ---
 # <a name="app-service-on-azure-stack-update-1-release-notes"></a>Notas de la versión de App Service en la actualización 1 de Azure Stack
 
@@ -224,5 +223,3 @@ Consulte la documentación de las [notas de la versión de Azure Stack 1802](azu
 
 - Para obtener información general de Azure App Service, consulte la [Información general de Azure App Service en Azure Stack](azure-stack-app-service-overview.md).
 - Para obtener más información acerca de cómo prepararse para implementar App Service en Azure Stack, consulte [Antes de empezar a trabajar con App Service en Azure Stack](azure-stack-app-service-before-you-get-started.md).
-
-<!-- Update_Description: wording update -->

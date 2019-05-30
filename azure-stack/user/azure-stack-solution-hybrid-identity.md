@@ -3,7 +3,7 @@ title: Configuración de la identidad de nube híbrida con aplicaciones de Azure
 description: Aprenda a configurar la identidad de nube híbrida con aplicaciones de Azure y Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: bryanla
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -12,15 +12,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/14/2019
-ms.author: mabrigg
+ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: a05f6fe12347e04d0329e2a0c81c1d4429af237d
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: ed85055c04e068ad614a406caf113555601bd620
+ms.sourcegitcommit: 261df5403ec01c3af5637a76d44bf030f9342410
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985806"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66252042"
 ---
 # <a name="tutorial-configure-hybrid-cloud-identity-for-azure-and-azure-stack-applications"></a>Tutorial: Configuración de la identidad de nube híbrida para aplicaciones de Azure y Azure Stack
 

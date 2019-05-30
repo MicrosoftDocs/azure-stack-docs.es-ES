@@ -3,7 +3,7 @@ title: API de uso de recursos de inquilino| Microsoft Docs
 description: Referencia de la API de uso de recursos, que recupera información de uso de Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: sethmanheim
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -12,15 +12,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/16/2019
-ms.author: mabrigg
+ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 2378bef2457b29271f048ec213ccf4b79454dd95
-ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
+ms.openlocfilehash: 6aaeff9ef708bcb89147d89205aa6526ebdb874f
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782204"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66268219"
 ---
 # <a name="tenant-resource-usage-api"></a>API de uso de recursos de inquilino
 

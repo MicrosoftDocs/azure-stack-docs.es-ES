@@ -3,7 +3,7 @@ title: Oferta de bases de datos SQL de alta disponibilidad en Azure Stack | Micr
 description: Obtenga información sobre cómo crear un equipo host proveedor de recursos de SQL Server y bases de datos AlwaysOn SQL de alta disponibilidad con Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/25/2019
-ms.author: mabrigg
+ms.author: justinha
 ms.reviewer: quying
 ms.lastreviewed: 10/23/2018
-ms.openlocfilehash: cf957fd69cf581d1ca63d1331f8ea407b24394ad
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: e21819fc6475161e63fcdb99a723847c5d7fbbad
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65617736"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66268409"
 ---
 # <a name="tutorial-offer-highly-available-sql-databases"></a>Tutorial: Oferta de bases de datos SQL de alta disponibilidad
 
@@ -88,7 +88,7 @@ Siga los pasos de esta sección para implementar el grupo de disponibilidad Alwa
     [![](media/azure-stack-tutorial-sqlrp/4-sm.PNG "Creación de implementación personalizada")](media/azure-stack-tutorial-sqlrp/4-lg.PNG#lightbox)
 
 
-6. En el portal de administración, seleccione **Grupos de recursos** y, a continuación, el nombre del grupo de recursos que creó para la implementación personalizada (**resource-group** en este ejemplo). Vea el estado de la implementación para asegurarse de que todas las implementaciones se han completado correctamente.<br><br>A continuación, revise los elementos del grupo de recursos y seleccione el elemento de la dirección IP pública **SQLPIPsql\<nombre del grupo de recursos\>**. Anote la dirección IP pública y el nombre de dominio completo de la dirección IP pública del equilibrador de carga. Deberá proporcionar esta información al operador de Azure Stack para que pueda crear un servidor de hospedaje SQL aprovechando este grupo de disponibilidad AlwaysOn de SQL.
+6. En el portal de administración, seleccione **Grupos de recursos** y, a continuación, el nombre del grupo de recursos que creó para la implementación personalizada (**resource-group** en este ejemplo). Vea el estado de la implementación para asegurarse de que todas las implementaciones se han completado correctamente.<br><br>A continuación, revise los elementos del grupo de recursos y seleccione el elemento de la dirección IP pública **SQLPIPsql\<nombre del grupo de recursos\>** . Anote la dirección IP pública y el nombre de dominio completo de la dirección IP pública del equilibrador de carga. Deberá proporcionar esta información al operador de Azure Stack para que pueda crear un servidor de hospedaje SQL aprovechando este grupo de disponibilidad AlwaysOn de SQL.
 
    > [!NOTE]
    > La implementación de la plantilla tardará varias horas en completarse.
@@ -137,7 +137,7 @@ Use estos comandos para establecer la opción del servidor de autenticación de 
 ## <a name="create-an-azure-stack-sql-hosting-server"></a>Creación de un servidor de hospedaje SQL de Azure Stack
 Una vez que el grupo de disponibilidad AlwaysOn de SQL Server se ha creado y configurado correctamente, un operador de Azure Stack debe crear un servidor de hospedaje de SQL de Azure Stack para facilitar una mayor capacidad que permita a los usuarios crear bases de datos. 
 
-Asegúrese de utilizar la dirección IP pública o el nombre de dominio completo para la dirección IP pública del equilibrador de carga SQL que anotó anteriormente, cuando creó el grupo de recursos del grupo de disponibilidad AlwaysOn de SQL (**SQLPIPsql\<nombre del grupo de recursos\>**). Además, tendrá que conocer las credenciales de autenticación de SQL Server utilizadas para tener acceso a las instancias de SQL en el grupo de disponibilidad AlwaysOn.
+Asegúrese de utilizar la dirección IP pública o el nombre de dominio completo para la dirección IP pública del equilibrador de carga SQL que anotó anteriormente, cuando creó el grupo de recursos del grupo de disponibilidad AlwaysOn de SQL (**SQLPIPsql\<nombre del grupo de recursos\>** ). Además, tendrá que conocer las credenciales de autenticación de SQL Server utilizadas para tener acceso a las instancias de SQL en el grupo de disponibilidad AlwaysOn.
 
 > [!NOTE]
 > Este paso se debe ejecutar desde el portal de administración de Azure Stack por un operador de Azure Stack.

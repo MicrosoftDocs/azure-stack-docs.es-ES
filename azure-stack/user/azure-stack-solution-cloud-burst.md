@@ -3,7 +3,7 @@ title: Creación de soluciones de escalado de toda la nube con Azure | Microsoft
 description: Aprenda a crear soluciones de escalado de toda la nube con Azure.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: bryanla
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -12,15 +12,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/14/2019
-ms.author: mabrigg
+ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: a82912b3acf18ce3be206e33da752bf8a03a4858
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: adbe1eba6c5d852466288ddf41c803072d4cd098
+ms.sourcegitcommit: 261df5403ec01c3af5637a76d44bf030f9342410
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63448717"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66252082"
 ---
 # <a name="tutorial-create-cross-cloud-scaling-solutions-with-azure"></a>Tutorial: Creación de soluciones de escalado de toda la nube con Azure
 
@@ -308,7 +308,7 @@ La creación de una definición de versión es el último paso en el proceso de 
 
 3.  En **Seleccionar una plantilla**, elija **Implementación de Azure App Service** y, a continuación, seleccione **Aplicar**.
 
-4.  En **Agregar artefacto**, en **Origen (definición de compilación)**, seleccione la aplicación de compilación en la nube de Azure.
+4.  En **Agregar artefacto**, en **Origen (definición de compilación)** , seleccione la aplicación de compilación en la nube de Azure.
 
 5.  En la pestaña **Canalización**, seleccione el vínculo **1 fase**, **1 tarea** para **Ver tareas de entorno**.
 
@@ -324,7 +324,7 @@ La creación de una definición de versión es el último paso en el proceso de 
 
 11. Guarde todos los cambios y vuelva a **Canalización**.
 
-12. En la pestaña **Canalización**, seleccione **Agregar artefacto** y elija **NorthwindCloud Traders-Vessel** en la lista **Origen (definición de compilación)**.
+12. En la pestaña **Canalización**, seleccione **Agregar artefacto** y elija **NorthwindCloud Traders-Vessel** en la lista **Origen (definición de compilación)** .
 
 13. En **Seleccionar una plantilla**, agregue otro entorno. Elija **Implementación de Azure App Service** y, a continuación, seleccione **Aplicar**.
 

@@ -3,7 +3,7 @@ title: Instalación del Kit de desarrollo de Azure Stack (ASDK) | Microsoft Docs
 description: Describe cómo instalar el Kit de desarrollo de Azure Stack (ASDK).
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,15 +13,15 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/06/2019
-ms.author: mabrigg
+ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 02/08/2019
-ms.openlocfilehash: c14b55379bfad08cbb604b8f27b45a125741a241
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 277b2e8c86cda65167a734d0e5775ec1748ef219
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65617410"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66267640"
 ---
 # <a name="install-the-azure-stack-development-kit-asdk"></a>Instalación del Kit de desarrollo de Azure Stack (ASDK)
 Después de [preparar el equipo host del Kit de desarrollo de Azure Stack](asdk-prepare-host.md), este se puede implementar en la imagen de CloudBuilder.vhdx mediante los siguientes pasos de este artículo.
@@ -34,7 +34,7 @@ Los pasos de este artículo muestran cómo implementar ASDK mediante una interfa
 
 
 1. Una vez que el equipo host arranque correctamente en la imagen de CloudBuilder.vhdx, inicie sesión con las credenciales de administrador que especificó cuando [preparó el equipo host del kit de desarrollo](asdk-prepare-host.md) para la instalación del ASDK. Dichas credenciales deben coincidir con las de administrador local del host del kit de desarrollo.
-2. Abra una consola de PowerShell con privilegios elevados y ejecute el script de PowerShell **letra de unidad>\AzureStack_Installer\asdk-installer.ps1&lt;**. Tenga en cuenta que el script puede estar en una unidad distinta de C:\ en la imagen de CloudBuilder.vhdx. Haga clic en **Instalar**.
+2. Abra una consola de PowerShell con privilegios elevados y ejecute el script de PowerShell **letra de unidad>\AzureStack_Installer\asdk-installer.ps1&lt;** . Tenga en cuenta que el script puede estar en una unidad distinta de C:\ en la imagen de CloudBuilder.vhdx. Haga clic en **Instalar**.
 
     ![](media/asdk-install/1.PNG) 
 
@@ -56,7 +56,7 @@ Los pasos de este artículo muestran cómo implementar ASDK mediante una interfa
       > [!TIP]
       > Para buscar una dirección IP de servidor horario, visite [pool.ntp.org](https://www.ntppool.org/) o haga ping a time.windows.com. 
 
-    **Opcionalmente,**, puede proporcionar una dirección IP de **reenviador DNS**. Se crea un servidor DNS como parte de la implementación de Azure Stack. Para permitir que los equipos dentro de la solución resuelvan nombres fuera de la marca, proporcione el servidor DNS de infraestructura existente. El servidor DNS en la marca reenvía solicitudes de resolución de nombres desconocidos a este servidor.
+    **Opcionalmente,** , puede proporcionar una dirección IP de **reenviador DNS**. Se crea un servidor DNS como parte de la implementación de Azure Stack. Para permitir que los equipos dentro de la solución resuelvan nombres fuera de la marca, proporcione el servidor DNS de infraestructura existente. El servidor DNS en la marca reenvía solicitudes de resolución de nombres desconocidos a este servidor.
 
     ![](media/asdk-install/4.PNG)
 

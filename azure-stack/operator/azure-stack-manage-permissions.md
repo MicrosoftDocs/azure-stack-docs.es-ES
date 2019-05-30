@@ -3,7 +3,7 @@ title: Administrar permisos para los recursos por usuario en Azure Stack (admini
 description: Si es administrador de servicios o inquilino, aprenda a administrar los permisos RBAC.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: PatAltimore
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -12,15 +12,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/16/2019
-ms.author: mabrigg
+ms.author: patricka
 ms.reviewer: thoroet
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 8c6881ebcb07f2ca922bcd7d8fbfb07f395c9007
-ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
+ms.openlocfilehash: 9fc4e6bb48c8cdd7508a1a85d193a22761c62e99
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782352"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66268595"
 ---
 # <a name="manage-role-based-access-control"></a>Administrar el control de acceso basado en roles
 

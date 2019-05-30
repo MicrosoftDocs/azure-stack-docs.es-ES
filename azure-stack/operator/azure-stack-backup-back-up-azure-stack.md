@@ -3,7 +3,7 @@ title: Copia de seguridad de Azure Stack | Microsoft Docs
 description: Realice una copia de seguridad a petición en Azure Stack con la copia de seguridad vigente.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 editor: ''
 ms.assetid: 9565DDFB-2CDB-40CD-8964-697DA2FFF70A
@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/12/2019
-ms.author: mabrigg
+ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 09/05/2018
-ms.openlocfilehash: dc2805b868475a181a0eb1902d0e238e14193cd8
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: a572275ff81918d1b8f739a99fbe7a57784d0651
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618789"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66269012"
 ---
 # <a name="back-up-azure-stack"></a>Copia de seguridad de Azure Stack
 

@@ -3,7 +3,7 @@ title: Aplicaciones web y API disponibles para los usuarios de Azure Stack | Mic
 description: Tutorial para instalar el proveedor de recursos de App Service y crear ofertas que permitan a los usuarios de Azure Stack crear aplicaciones web y de API.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/11/2019
-ms.author: mabrigg
+ms.author: justinha
 ms.reviewer: anwestg
 ms.custom: mvc
 ms.lastreviewed: 11/05/2018
-ms.openlocfilehash: 9954e351ecd584925d264d0c8c5e8fb8e2507192
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: fbf6993447f22a354c61102b9e670c8f1188f48d
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618656"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66268090"
 ---
 # <a name="tutorial-make-web-and-api-apps-available-to-your-azure-stack-users"></a>Tutorial: Aplicaciones web y aplicaciones de API disponibles para los usuarios de Azure Stack
 
@@ -68,7 +68,7 @@ En este ejemplo, vamos a crear un sistema de administración de contenido de la 
 
 ### <a name="create-a-sql-database"></a>Creación de una base de datos SQL
 
-1. Seleccione **+** > **Datos y almacenamiento** > **SQL Database**.
+1. Seleccione **+**  > **Datos y almacenamiento** > **SQL Database**.
 2. Mantenga los valores predeterminados, excepto para los campos siguientes:
 
     - **Nombre de base de datos**: DNNdb
@@ -82,7 +82,7 @@ En este ejemplo, vamos a crear un sistema de administración de contenido de la 
 
 ### <a name="create-a-dnn-app"></a>Creación de una aplicación DNN
 
-1. Seleccione **+** > **Ver todo** > **DNN Platform preview** (Versión preliminar de la plataforma DNN) > **Crear**.
+1. Seleccione **+**  > **Ver todo** > **DNN Platform preview** (Versión preliminar de la plataforma DNN) > **Crear**.
 2. Escriba *AppDNN* en **Nombre de la aplicación** y seleccione **OfertaDePruebaDeAppService** en **Suscripción**.
 3. Seleccione **Configurar los valores obligatorios** > **Crear nuevo** > para escribir un nombre de **Plan de App Service**.
 4. Seleccione **Plan de tarifa** > **F1 gratuito** > **Seleccionar** > **Aceptar**.

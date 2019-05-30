@@ -3,7 +3,7 @@ title: Registro de inquilinos en Azure Stack para el seguimiento de uso | Micros
 description: Obtenga información sobre las operaciones utilizadas para administrar los registros de inquilinos y cómo se realiza el seguimiento del uso de inquilinos en Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: sethmanheim
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -12,15 +12,15 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/16/2019
-ms.author: mabrigg
+ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 01/08/2019
-ms.openlocfilehash: faacd3faa954c1cad76bdc4601020e5d6c547537
-ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
+ms.openlocfilehash: 688726b0e74612400f4f48d2a5b7cffa3a8d188a
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782239"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66268653"
 ---
 # <a name="manage-tenant-registration-in-azure-stack"></a>Administración del registro de inquilinos en Azure Stack
 

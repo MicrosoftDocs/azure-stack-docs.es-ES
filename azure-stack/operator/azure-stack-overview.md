@@ -3,7 +3,7 @@ title: ¿Qué es Azure Stack? | Microsoft Docs
 description: Obtenga información sobre cómo Azure Stack le permite ejecutar servicios de Azure en su centro de datos.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
 ms.date: 03/29/2019
-ms.author: mabrigg
+ms.author: justinha
 ms.reviewer: unknown
 ms.custom: ''
 ms.lastreviewed: 05/14/2019
-ms.openlocfilehash: b98be2ae02e65fea9356f35f2d2554e57dfb5628
-ms.sourcegitcommit: 1655b2ef4d01d69ceeb52bc16f922bdc19cb968d
+ms.openlocfilehash: 1aa6f494320843cf1debe2c1887f353bf79a7303
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65706287"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66268354"
 ---
 # <a name="azure-stack-overview"></a>Introducción a Azure Stack
 

@@ -3,7 +3,7 @@ title: Implementación de una nube híbrida con Azure y Azure Stack | Microsoft 
 description: Obtenga información sobre cómo implementar una nube híbrida con Azure y Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: bryanla
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -12,15 +12,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/25/2019
-ms.author: mabrigg
+ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: 4a77221ac9fcb365966435ed828ab743dd8e1034
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: 7a599d3fdc68c6c41565111498108a202d8b3472
+ms.sourcegitcommit: 261df5403ec01c3af5637a76d44bf030f9342410
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985822"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66252071"
 ---
 # <a name="tutorial-deploy-a-hybrid-cloud-solution-with-azure-and-azure-stack"></a>Tutorial: Implementación de una solución en la nube híbrida con Azure y Azure Stack
 
@@ -102,7 +102,7 @@ Antes de comenzar este tutorial, asegúrese de que se cumplen los requisitos sig
 
    - **Dirección IP pública**. Puede usar la configuración predeterminada.
    - **Network security group** (Grupo de seguridad de red) (NSG). Cree un nuevo grupo de seguridad de red.
-   - **Extensions (Extensiones) y Monitoring (Supervisión)**. Mantenga la configuración predeterminada.
+   - **Extensions (Extensiones) y Monitoring (Supervisión)** . Mantenga la configuración predeterminada.
    - **Diagnostics storage account** (Cuenta de almacenamiento de información de diagnóstico). Si necesita una, cree una nueva cuenta.
    - Seleccione **OK** (Aceptar) para guardar la configuración.
 
@@ -301,7 +301,7 @@ Cuando se crea la aplicación web en un entorno de App Service, esta se inicia c
 
 ### <a name="enable-automatic-scale-out"></a>Habilitación del escalado horizontal automático
 
-1. En Azure, busque el plan de App Service para los sitios que desea escalar horizontalmente y, a continuación, seleccione **Escalar horizontalmente (plan de App Service)**.
+1. En Azure, busque el plan de App Service para los sitios que desea escalar horizontalmente y, a continuación, seleccione **Escalar horizontalmente (plan de App Service)** .
 
     ![Escalado horizontal](media/azure-stack-solution-hybrid-cloud/image16.png)
 
@@ -447,8 +447,8 @@ Usará esta vista para crear una alerta de escalado horizontal y una alerta de r
 
 ### <a name="create-the-scale-out-alert"></a>Creación de la alerta de escalado horizontal
 
-1. En **Configurar**, seleccione **Alertas (clásica)**.
-2. Seleccione **Agregar una alerta de métrica (clásica)**.
+1. En **Configurar**, seleccione **Alertas (clásica)** .
+2. Seleccione **Agregar una alerta de métrica (clásica)** .
 3. En **Agregar regla**, configure lo siguiente:
 
    - En **Nombre**, escriba **Burst into Azure Cloud**.
@@ -468,8 +468,8 @@ Usará esta vista para crear una alerta de escalado horizontal y una alerta de r
 
 ### <a name="create-the-scale-in-alert"></a>Creación de la alerta de reducción horizontal
 
-1. En **Configurar**, seleccione **Alertas (clásica)**.
-2. Seleccione **Agregar una alerta de métrica (clásica)**.
+1. En **Configurar**, seleccione **Alertas (clásica)** .
+2. Seleccione **Agregar una alerta de métrica (clásica)** .
 3. En **Agregar regla**, configure lo siguiente:
 
    - En **Nombre**, escriba **Scale back into Azure Stack**.

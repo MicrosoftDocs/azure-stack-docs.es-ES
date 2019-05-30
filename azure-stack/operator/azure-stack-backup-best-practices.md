@@ -3,7 +3,7 @@ title: Procedimientos recomendados del servicio Infrastructure Backup para Azure
 description: Puede seguir el conjunto de procedimientos recomendados al implementar y administrar Azure Stack en su centro de datos para ayudar a mitigar la pérdida de datos si se produce un error grave.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 editor: ''
 ms.assetid: 221FDE40-3EF8-4F54-A075-0C4D66EECE1A
@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/08/2019
-ms.author: mabrigg
+ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 02/08/2019
-ms.openlocfilehash: d2f62fd7a3a6253a077ad4cce2030b5165dc76cd
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 7859888e816402872023709a5832e1ae669617e9
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618346"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66268931"
 ---
 # <a name="infrastructure-backup-service-best-practices"></a>Procedimientos recomendados del servicio Infrastructure Backup
 

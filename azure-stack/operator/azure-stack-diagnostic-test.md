@@ -2,7 +2,7 @@
 title: Uso de la herramienta de validación de Azure Stack | Microsoft Docs
 description: Recopilación de archivos de registro de diagnósticos en Azure Stack
 services: azure-stack
-author: mattbriggs
+author: justinha
 manager: femila
 cloud: azure-stack
 ms.service: azure-stack
@@ -11,15 +11,15 @@ pms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: article
 ms.date: 04/20/2019
-ms.author: mabrigg
+ms.author: justinha
 ms.reviewer: adshar
 ms.lastreviewed: 12/03/2018
-ms.openlocfilehash: 90a3b35675a8197694d04395f51ef85f7a8fee14
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 3ec925406ad3553c0beb073d39d84ae20f5bc472
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65617970"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66268640"
 ---
 # <a name="validate-azure-stack-system-state"></a>Validación del estado del sistema de Azure Stack
 

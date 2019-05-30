@@ -3,7 +3,7 @@ title: Conexión a Azure Stack | Microsoft Docs
 description: Aprenda a conectarse al ASDK.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 editor: ''
 ms.assetid: 3cebbfa6-819a-41e3-9f1b-14ca0a2aaba3
@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/06/2019
-ms.author: mabrigg
+ms.author: justinha
 ms.reviewer: knithinc
 ms.lastreviewed: 10/25/2018
-ms.openlocfilehash: 39814c48af0a362bd62f7d7276a32d886628317b
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 9a16201db137e7f34b42a0b12bbe802d3b10bdff
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65617574"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66267217"
 ---
 # <a name="connect-to-the-asdk"></a>Conectarse al ASDK
 

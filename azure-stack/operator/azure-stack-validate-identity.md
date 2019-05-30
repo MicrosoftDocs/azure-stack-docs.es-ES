@@ -3,7 +3,7 @@ title: Validación de la identidad de Azure en Azure Stack | Microsoft Docs
 description: Use Azure Stack Readiness Checker para validar la identidad de Azure.
 services: azure-stack
 documentationcenter: ''
-author: sethmanheim
+author: PatAltimore
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/23/2019
-ms.author: sethm
+ms.author: patricka
 ms.reviewer: unknown
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: 876ed83e06d7daa9d2f9b513b3cb398a8e69072b
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: e8a52b1d3a111ee425276eab427c290c1ed2455e
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64984254"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66267901"
 ---
 # <a name="validate-azure-identity"></a>Validación de la identidad de Azure
 

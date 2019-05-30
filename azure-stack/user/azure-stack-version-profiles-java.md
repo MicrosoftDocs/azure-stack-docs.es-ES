@@ -3,7 +3,7 @@ title: Uso de perfiles de la versión de la API con Java en Azure Stack | Micros
 description: Más información sobre los perfiles de la versión de la API con Java en Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: sethmanheim
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,15 +13,15 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/16/2019
-ms.author: mabrigg
+ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: 90c4665b1519e078015f9a6096417c2d97425da9
-ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
+ms.openlocfilehash: 44ebb631ca916ed1c5b933517d40a756c987fee0
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782736"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66269483"
 ---
 # <a name="use-api-version-profiles-with-java-in-azure-stack"></a>Uso de los perfiles de la versión de la API con Java en Azure Stack
 

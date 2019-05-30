@@ -3,7 +3,7 @@ title: Telemetría de Azure Stack | Microsoft Docs
 description: Describe cómo configurar los valores de telemetría de Azure Stack mediante PowerShell.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,15 +13,15 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/12/2019
-ms.author: mabrigg
+ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: 78ca05eb15570022e6eb25a7023d91c5ff8b817f
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 24948fb53ed4c5bdbbe0490f581daff7c66c33bc
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65617333"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66267432"
 ---
 # <a name="azure-stack-telemetry"></a>Telemetría de Azure Stack
 
@@ -81,9 +81,9 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies
 
 Los niveles de telemetría son acumulativos y se clasifican en cuatro niveles (0-3):
 
-**0 (Seguridad)**. Solo datos de seguridad. Información que es necesaria para ayudar a proteger el sistema operativo, que incluye datos sobre la configuración del componente Experiencia del usuario y telemetría asociadas y Windows Defender. En este nivel no se emite ninguna telemetría específica de Azure Stack.
+**0 (Seguridad)** . Solo datos de seguridad. Información que es necesaria para ayudar a proteger el sistema operativo, que incluye datos sobre la configuración del componente Experiencia del usuario y telemetría asociadas y Windows Defender. En este nivel no se emite ninguna telemetría específica de Azure Stack.
 
-**1 (Básico)**. Datos de seguridad y datos básicos de mantenimiento y calidad. Información básica del dispositivo, lo que incluye datos relacionados con la calidad, compatibilidad con aplicaciones, datos de uso de aplicaciones y datos del nivel Seguridad. Al establecer el nivel de telemetría en Básico se habilita la telemetría de Azure Stack. Los datos recopilados en este nivel incluyen:
+**1 (Básico)** . Datos de seguridad y datos básicos de mantenimiento y calidad. Información básica del dispositivo, lo que incluye datos relacionados con la calidad, compatibilidad con aplicaciones, datos de uso de aplicaciones y datos del nivel Seguridad. Al establecer el nivel de telemetría en Básico se habilita la telemetría de Azure Stack. Los datos recopilados en este nivel incluyen:
 
 - **Información básica del dispositivo** que ayuda a comprender los tipos y las configuraciones de instancias de Windows Server 2016 nativas y virtualizadas del ecosistema, como por ejemplo:
   - Atributos de la máquina, como OEM, modelo
@@ -94,9 +94,9 @@ Los niveles de telemetría son acumulativos y se clasifican en cuatro niveles (0
 - **Información relacionada con la calidad** que ayuda a Microsoft a desarrollar un conocimiento básico del funcionamiento Azure Stack. Un ejemplo es el número de alertas críticas en una configuración de hardware determinada.
 - **Datos de compatibilidad**, que permiten saber qué proveedores de recursos están instalados en un sistema y en una máquina virtual, e identifican posibles problemas de compatibilidad.
 
-**2 (Mejorado)**. Información adicional, que incluye cómo se usan el sistema operativo y otros servicios de Azure Stack, cuál es su rendimiento, datos avanzados de confiabilidad y datos de los niveles Básico y Seguridad.
+**2 (Mejorado)** . Información adicional, que incluye cómo se usan el sistema operativo y otros servicios de Azure Stack, cuál es su rendimiento, datos avanzados de confiabilidad y datos de los niveles Básico y Seguridad.
 
-**3 (Completo)**. Todos los datos necesarios para identificar problemas y ayudar a su solución, además de los datos de los niveles **Seguridad**, **Básico** y **Mejorado**.
+**3 (Completo)** . Todos los datos necesarios para identificar problemas y ayudar a su solución, además de los datos de los niveles **Seguridad**, **Básico** y **Mejorado**.
 
 > [!NOTE]
 > El valor de nivel de telemetría predeterminado es 2 (mejorado).

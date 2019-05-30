@@ -3,7 +3,7 @@ title: Planeamiento de la capacidad de los roles de servidor de Azure App Servic
 description: Planeamiento de la capacidad de los roles de servidor de Azure App Service en Azure Stack
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: BryanLa
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -16,12 +16,12 @@ ms.date: 03/13/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/13/2019
-ms.openlocfilehash: 762e506f6e6f4e56eabbfdcb3e95dcb351e37aa7
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 8c41bd0241339cc4c29637bc70ef0fb71704feee
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618477"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66269193"
 ---
 # <a name="capacity-planning-for-azure-app-service-server-roles-in-azure-stack"></a>Planeamiento de la capacidad de los roles de servidor de Azure App Service en Azure Stack
 

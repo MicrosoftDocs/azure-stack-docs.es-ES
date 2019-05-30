@@ -3,7 +3,7 @@ title: Implementación de una aplicación en Azure Stack | Microsoft Docs
 description: Aprenda a implementar aplicaciones en Azure y Azure Stack con una canalización de CI/CD híbrida.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: bryanla
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -12,15 +12,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/11/2019
-ms.author: mabrigg
+ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/07/2018
-ms.openlocfilehash: 3b98714a6cbc3601f98d5f9dfcb26edb5182cfa4
-ms.sourcegitcommit: 2b6a0b3b4dc63c26df3d0535d630d640ff232fb0
+ms.openlocfilehash: dfec5ff97b4c7aa3c3de6b4817689412cb41ea6a
+ms.sourcegitcommit: 261df5403ec01c3af5637a76d44bf030f9342410
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65521233"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66252096"
 ---
 # <a name="tutorial-deploy-apps-to-azure-and-azure-stack"></a>Tutorial: Implementación de aplicaciones en Azure y Azure Stack
 
@@ -179,7 +179,7 @@ Puede establecer el ámbito en el nivel de suscripción, grupo de recursos o rec
 
     ![Visual Studio Enterprise](media/azure-stack-solution-hybrid-pipeline/000_11.png)
 
-3. En Visual Studio Enterprise, seleccione **Control de acceso (IAM)**.
+3. En Visual Studio Enterprise, seleccione **Control de acceso (IAM)** .
 
 4. Seleccione **Agregar asignación de roles**.
 
@@ -390,7 +390,7 @@ La creación de una canalización de versión es el último paso en el proceso d
 
     ![Aplicar plantilla](media/azure-stack-solution-hybrid-pipeline/102.png)
 
-4. En **Agregar artefacto**, en el menú desplegable **Origen (definición de compilación)**, seleccione la aplicación de compilación en la nube de Azure.
+4. En **Agregar artefacto**, en el menú desplegable **Origen (definición de compilación)** , seleccione la aplicación de compilación en la nube de Azure.
 
     ![Agregar artefacto](media/azure-stack-solution-hybrid-pipeline/103.png)
 
@@ -422,7 +422,7 @@ La creación de una canalización de versión es el último paso en el proceso d
 
     ![Texto alternativo](media/azure-stack-solution-hybrid-pipeline/110.png)
 
-12. En la pestaña **Canalización**, seleccione **Agregar artefacto** y elija **NorthwindCloud Traders-Vessel** en la lista desplegable **Origen (definición de compilación)**.
+12. En la pestaña **Canalización**, seleccione **Agregar artefacto** y elija **NorthwindCloud Traders-Vessel** en la lista desplegable **Origen (definición de compilación)** .
 
     ![Adición de un nuevo artefacto](media/azure-stack-solution-hybrid-pipeline/111.png)
 

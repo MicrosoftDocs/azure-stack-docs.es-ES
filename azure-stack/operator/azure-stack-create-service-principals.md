@@ -3,7 +3,7 @@ title: Administración de una entidad de servicio de Azure Stack | Microsoft Doc
 description: Describe cómo administrar una nueva entidad de servicio que puede usarse con el control de acceso basado en roles en Azure Resource Manager para administrar el acceso a los recursos.
 services: azure-resource-manager
 documentationcenter: na
-author: sethmanheim
+author: PatAltimore
 manager: femila
 ms.service: azure-resource-manager
 ms.devlang: na
@@ -11,14 +11,14 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/17/2019
-ms.author: sethm
+ms.author: patricka
 ms.lastreviewed: 05/17/2019
-ms.openlocfilehash: 1bb07c1725d5c8ed81ec4b8ccc546a4d41dc64e0
-ms.sourcegitcommit: 8cb2b567e9914d4d07e754d95c0864aa55868579
+ms.openlocfilehash: 57c5547c37fee58b37f8386983d43556ed0fd515
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855314"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66268791"
 ---
 # <a name="provide-applications-access-to-azure-stack"></a>Proporcionar a las aplicaciones acceso a Azure Stack
 

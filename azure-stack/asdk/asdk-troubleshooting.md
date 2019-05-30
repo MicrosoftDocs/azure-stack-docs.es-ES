@@ -3,7 +3,7 @@ title: Solución de problemas de Microsoft Azure Stack | Microsoft Docs
 description: Información acerca de la solución de problemas del Kit de desarrollo de Azure Stack (ASDK).
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/12/2019
-ms.author: mabrigg
+ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: 70985ce475ecfe956646941c6b61d70176639eac
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: a84e85eacb033fc872241feea905b742eee0591b
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65617495"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66267241"
 ---
 # <a name="microsoft-azure-stack-development-kit-asdk-troubleshooting"></a>Solución de problemas del Kit de desarrollo de Microsoft Azure Stack (ASDK)
 En este artículo se proporciona información para solucionar problemas comunes de ASDK. Si tiene algún problema que no esté documentado, asegúrese de consultar el [foro MSDN de Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack) para más información y ayuda.  
@@ -67,7 +67,7 @@ Si ve discos duros virtuales "huérfanos", es importante saber si forman parte d
 
 Puede leer más acerca de cómo configurar el umbral de conservación y las recuperaciones a petición en [Administración de cuentas de almacenamiento](../operator/azure-stack-manage-storage-accounts.md).
 
-## <a name="storage"></a>Almacenamiento
+## <a name="storage"></a>Storage
 ### <a name="storage-reclamation"></a>Recuperación de almacenamiento
 La funcionalidad reclamada capacidad puede tardar hasta 14 horas en mostrarse en el portal. La recuperación de espacio depende de diversos factores, como el porcentaje de uso de archivos de contenedor internos en el almacén de blobs de bloque. Por lo tanto, en función de cuántos datos se eliminen, no hay ninguna garantía de la cantidad de espacio que se podría recuperar cuando se ejecute el recolector de elementos no utilizados.
 

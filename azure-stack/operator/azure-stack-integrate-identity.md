@@ -10,12 +10,12 @@ ms.date: 05/10/2019
 ms.author: patricka
 ms.reviewer: thoroet
 ms.lastreviewed: 05/10/2019
-ms.openlocfilehash: 47c619b1f490f4e4d3498a7c83501f24e96c77b4
-ms.sourcegitcommit: 426380a3a27954cd609ba52d1066d9d69f5267fe
+ms.openlocfilehash: 6fb879dc49197b52133750d65aadf96b601bda69
+ms.sourcegitcommit: 914daff43ae0f0fc6673a06dfe2d42d9b4fbab48
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65532291"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66043232"
 ---
 # <a name="azure-stack-datacenter-integration---identity"></a>Integración del centro de datos de Azure Stack: identidad
 
@@ -348,10 +348,8 @@ Si se produce un error en cualquiera de los cmdlets, puede recopilar registros a
 2. Después, ejecute el cmdlet siguiente:
 
    ```powershell  
-   Get-AzureStackLog -OutputPath \\myworstation\AzureStackLogs -FilterByRole ECE
+   Get-AzureStackLog -OutputPath \\myworkstation\AzureStackLogs -FilterByRole ECE
    ```
 
-
-## <a name="next-steps"></a>Pasos siguientes
 
 [Integración de soluciones de supervisión externa](azure-stack-integrate-monitor.md)
