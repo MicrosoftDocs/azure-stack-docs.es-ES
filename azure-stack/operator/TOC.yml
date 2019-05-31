@@ -47,13 +47,6 @@
   items:
     - name: Planificación de capacidad
       href: capacity-planning.md
-      items:
-        - name: Planificación de la capacidad de Compute
-          href: capacity-planning-compute.md
-        - name: Planificación de la capacidad de Storage
-          href: capacity-planning-storage.md
-        - name: Herramienta de planeamiento de capacidad de Azure Stack
-          href: capacity-planning-spreadsheet.md
     - name: Integración del centro de datos
       href: azure-stack-customer-journey.md
       items:
