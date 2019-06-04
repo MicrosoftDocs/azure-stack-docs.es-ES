@@ -48,7 +48,15 @@
 - name: Conceptos
   items:
     - name: Planificación de capacidad
-      href: capacity-planning.md
+      items:
+        - name: Información general
+          href: azure-stack-capacity-planning-overview.md
+        - name: Proceso
+          href: azure-stack-capacity-planning-compute.md
+        - name: Storage
+          href: azure-stack-capacity-planning-storage.md
+        - name: Herramienta de planeamiento de capacidad de Azure Stack
+          href: azure-stack-capacity-planner.md
     - name: Integración del centro de datos
       href: azure-stack-customer-journey.md
       items:
@@ -374,9 +382,9 @@
         - name: Copia de seguridad de Azure Stack
           href: azure-stack-backup-back-up-azure-stack.md
         - name: Copia de seguridad de archivos y aplicaciones en Azure Stack
-          href: /azure/backup/backup-mabs-files-applications-azure-stack.md?toc=/azure/azure-stack/toc.json&bc=/azure/azure-stack/breadcrumb/toc.json
+          href: /azure/backup/backup-mabs-files-applications-azure-stack?toc=/azure/azure-stack/toc.json&bc=/azure/azure-stack/breadcrumb/toc.json
         - name: Replicación de máquinas virtuales de Azure Stack en Azure
-          href: /azure/site-recovery/azure-stack-site-recovery.md?toc=/azure/azure-stack/toc.json&bc=/azure/azure-stack/breadcrumb/toc.json
+          href: /azure/site-recovery/azure-stack-site-recovery?toc=/azure/azure-stack/toc.json&bc=/azure/azure-stack/breadcrumb/toc.json
         - name: Recuperación después de una pérdida de datos grave
           href: azure-stack-backup-recover-data.md
         - name: Procedimientos recomendados de copia de seguridad
