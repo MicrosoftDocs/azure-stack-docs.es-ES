@@ -3,7 +3,7 @@ title: Actualización de Azure App Service en Azure Stack | Microsoft Docs
 description: Guía detallada para actualizar Azure App Service en Azure Stack
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: BryanLa
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -11,28 +11,28 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/18/2019
+ms.date: 05/28/2019
 ms.author: anwestg
 ms.reviewer: anwestg
-ms.lastreviewed: 03/18/2019
-ms.openlocfilehash: bc379bfa93983c2e1579ebf657ce86558abc7d20
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.lastreviewed: 05/28/2019
+ms.openlocfilehash: 95611e776d2517bffaa7a3693362f5d227943bd0
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618209"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66269081"
 ---
 # <a name="update-azure-app-service-on-azure-stack"></a>Actualización de Azure App Service en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-> [!IMPORTANT]  
-> Aplique la actualización 1901 al sistema integrado de Azure Stack o implemente el kit de desarrollo de Azure Stack más reciente antes de implementar Azure App Service 1.5.
+> [!IMPORTANT]
+> Aplique la actualización 1904 al sistema integrado de Azure Stack o implemente el kit de desarrollo de Azure Stack más reciente antes de implementar Azure App Service 1.6.
 
 Siguiendo las instrucciones de este artículo, puede actualizar el [proveedor de recursos de App Service](azure-stack-app-service-overview.md) implementado en un entorno de Azure Stack que esté conectado a Internet.
 
-> [!IMPORTANT]  
-> Antes de ejecutar la actualización, asegúrese de que se completó la [implementación de Azure App Service en el proveedor de recursos de Azure Stack](azure-stack-app-service-deploy.md) y de haber leído las [notas de la versión](azure-stack-app-service-release-notes-update-five.md), que acompañan a la versión 1.5, para obtener información sobre nuevas funciones, correcciones y problemas conocidos que podrían afectar a la implementación.
+> [!IMPORTANT]
+> Antes de ejecutar la actualización, asegúrese de que se completó la [implementación de Azure App Service en el proveedor de recursos de Azure Stack](azure-stack-app-service-deploy.md) y de haber leído las [notas de la versión](azure-stack-app-service-release-notes-update-six.md), que acompañan a la versión 1.6, para obtener información sobre nuevas funciones, correcciones y problemas conocidos que podrían afectar a la implementación.
 
 ## <a name="run-the-app-service-resource-provider-installer"></a>Ejecución del instalador del proveedor de recursos de App Service
 
@@ -52,7 +52,7 @@ Durante este proceso, la actualización hará lo siguiente:
 
 Para actualizar la implementación de App Service en Azure Stack, siga estos pasos:
 
-1. Descargue el [instalador de App Service](https://aka.ms/appsvcupdate5installer)
+1. Descargue el [instalador de App Service](https://aka.ms/appsvcupdate6installer)
 
 2. Ejecute appservice.exe como administrador
 

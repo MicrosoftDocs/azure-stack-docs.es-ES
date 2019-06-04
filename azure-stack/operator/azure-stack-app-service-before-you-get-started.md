@@ -3,7 +3,7 @@ title: Antes de implementar App Service en Azure Stack | Microsoft Docs
 description: Pasos necesarios para implementar App Service en Azure Stack
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: BryanLa
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -12,16 +12,16 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/11/2019
+ms.date: 05/28/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/11/2019
-ms.openlocfilehash: 9b9e624abb23ef5c1bd0ae80e2338fdc0b1469ab
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: bb9d49c7feebc03f0f2f5bbaca084e9141f601e9
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618275"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66269207"
 ---
 # <a name="before-you-get-started-with-app-service-on-azure-stack"></a>Antes de empezar a trabajar con App Service en Azure Stack
 
@@ -30,7 +30,7 @@ ms.locfileid: "65618275"
 Antes de implementar Azure App Service en Azure Stack, debe completar los pasos de los requisitos previos de este artículo.
 
 > [!IMPORTANT]
-> Aplique la actualización 1901 al sistema integrado de Azure Stack o implemente el Kit de desarrollo de Azure Stack (ASDK) más reciente antes de implementar Azure App Service 1.5.
+> Aplique la actualización 1904 al sistema integrado de Azure Stack o implemente el Kit de desarrollo de Azure Stack (ASDK) más reciente antes de implementar Azure App Service 1.6.
 
 ## <a name="download-the-installer-and-helper-scripts"></a>Descarga de los scripts de la aplicación auxiliar y el instalador
 
@@ -196,6 +196,9 @@ Hay ahora disponible una [plantilla de inicio rápido de arquitectura de referen
 >[!IMPORTANT]
 > Si decide implementar App Service en una instancia de Virtual Network, el servidor de archivos debe implementarse en una subred independiente de App Service.
 
+>[!NOTE]
+> Si ha elegido implementar un servidor de archivos mediante cualquiera de las plantillas de inicio rápido que se mencionaron anteriormente, puede omitir esta sección ya que los servidores de archivos están configurados como parte de la implementación de la plantilla.
+
 #### <a name="provision-groups-and-accounts-in-active-directory"></a>Aprovisionar grupos y cuentas en Active Directory
 
 1. Crear los siguientes grupos de seguridad global de Active Directory:
@@ -296,6 +299,9 @@ icacls %WEBSITES_FOLDER% /grant *S-1-1-0:(OI)(CI)(IO)(RA,REA,RD)
 
 ## <a name="prepare-the-sql-server-instance"></a>Preparación de la instancia de SQL Server
 
+>[!NOTE]
+> Si ha elegido implementar la plantilla de inicio rápido para un servidor de archivos de alta disponibilidad y para SQL Server, puede omitir esta sección, ya que la plantilla implementa y configura SQL Server en una configuración de alta disponibilidad.
+
 Para que Azure App Service en Azure Stack hospede y mida bases de datos, debe preparar una instancia de SQL Server para almacenar las bases de datos de App Service.
 
 Para implementaciones del Kit de desarrollo de Azure Stack, puede usar SQL Server Express 2014 SP2 o versiones posteriores.
@@ -306,7 +312,7 @@ La instancia de SQL Server para Azure App Service en Azure Stack debe ser accesi
 
 > [!NOTE]
 > Varias imágenes de la máquina virtual IaaS de SQL están disponibles a través de la característica Administración de Marketplace. Asegúrese de descargar siempre la versión más reciente de la extensión IaaS de SQL antes de implementar una máquina virtual mediante un elemento de Marketplace. Las imágenes de SQL son las mismas que las máquinas virtuales de SQL disponibles en Azure. Para las máquinas virtuales de SQL creadas a partir de estas imágenes, la extensión de IaaS y las correspondientes mejoras del portal proporcionan características como las funcionalidades de copia de seguridad y de revisión automática.
-> 
+>
 > Para cualquiera de los roles de SQL Server, puede utilizar una instancia predeterminada o una instancia con nombre. Si usa una instancia con nombre, asegúrese de iniciar manualmente el servicio SQL Server Browser y abrir el puerto 1434.
 
 El instalador de App Service comprobará que la instancia de SQL Server tenga habilitada la contención de base de datos. Para habilitar la independencia de base de datos en la instancia de SQL Server que hospedará las bases de datos de App Service, ejecute estos comandos SQL:

@@ -14,12 +14,12 @@ ms.author: mabrigg
 ms.date: 04/02/2019
 ms.reviewer: waltero
 ms.lastreviewed: 03/20/2019
-ms.openlocfilehash: 0e02489bc9750183754b27887fa701d1dd1a8567
-ms.sourcegitcommit: 87d93cdcdb6efb06e894f56c2f09cad594e1a8b3
+ms.openlocfilehash: 33eed0b574ad28c5fc0d1fb44f1c9b5a1ad37bb7
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65712418"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66269389"
 ---
 # <a name="troubleshoot-kubernetes-deployment-to-azure-stack"></a>Solución de problemas de implementación de Kubernetes en Azure Stack
 
@@ -146,10 +146,10 @@ Siga estos pasos para recopilar y descargar los registros del clúster:
 
     | Parámetro           | DESCRIPCIÓN                                                                                                      | Ejemplo                                                                       |
     |---------------------|------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
-    | -d, --vmd-host      | La dirección IP pública o el nombre de dominio completo (FQDN) de la instancia de DVM. El nombre de la máquina virtual empieza por `vmd-`. | IP: 192.168.102.38<br>DNS: vmd-myk8s.local.cloudapp.azurestack.external |
+    | -d, --vmd-host      | La dirección IP pública o el nombre de dominio completo (FQDN) de la instancia de DVM. El nombre de la VM comienza por `vmd-`. | IP: 192.168.102.38<br>DNS: vmd-myk8s.local.cloudapp.azurestack.external |
     | -h, --help  | Uso de comandos de impresión. | |
     | -i, --identity-file | El archivo de clave privada RSA pasado al elemento de marketplace al crear el clúster de Kubernetes. Se necesita para iniciar sesión de forma remota en los nodos de Kubernetes. | C:\data\id_rsa.pem (Putty)<br>~/.ssh/id_rsa (SSH)
-    | -m, --master-host   | La dirección IP pública o el nombre de dominio completo (FQDN) de un nodo principal de Kubernetes. El nombre de la máquina virtual empieza por `k8s-master-`. | IP: 192.168.102.37<br>FQDN: k8s-12345.local.cloudapp.azurestack.external      |
+    | -m, --master-host   | La dirección IP pública o el nombre de dominio completo (FQDN) de un nodo principal de Kubernetes. El nombre de la VM comienza por `k8s-master-`. | IP: 192.168.102.37<br>FQDN: k8s-12345.local.cloudapp.azurestack.external      |
     | -u, --user          | El nombre de usuario pasado al elemento de marketplace al crear el clúster de Kubernetes. Se necesita para iniciar sesión de forma remota en los nodos de Kubernetes. | azureuser (valor predeterminado) |
 
 

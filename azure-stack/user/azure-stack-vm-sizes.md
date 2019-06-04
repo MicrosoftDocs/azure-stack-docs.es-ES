@@ -14,22 +14,22 @@ ms.date: 04/02/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: ab8c6c32a21afffd590a6f98359e051c7208b6ec
-ms.sourcegitcommit: 87d93cdcdb6efb06e894f56c2f09cad594e1a8b3
+ms.openlocfilehash: a7ec54d88a259b883f72c2396ab572118ba96a23
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65712280"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66269441"
 ---
-# <a name="virtual-machine-sizes-supported-in-azure-stack"></a>Tamaños de máquinas virtuales admitidos en Azure Stack
+# <a name="vm-sizes-supported-in-azure-stack"></a>Tamaños de máquinas virtuales admitidos en Azure Stack
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+*Se aplica a: sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
 En este artículo se incluyen los tamaños de máquinas virtuales que están disponibles en Azure Stack.
 
 IOPS (operaciones de entrada y salida por segundo) de disco en Azure Stack es una función del tamaño de máquina virtual en lugar del tipo de disco. Esto significa que para una VM de la serie Standard_Fs, independientemente de si elige SSD o HDD para el tipo de disco, el límite de IOPS de un único disco de datos adicional es de solo 2300 IOPS. Los límites de IOPS impuestos (máximo posible) sirven para evitar vecinos ruidosos. IOPS no es una garantía de que obtendrá un tamaño específico de la máquina virtual.
 
-## <a name="virtual-machine-general-purpose"></a>Propósito general de la máquina virtual
+## <a name="vm-general-purpose"></a>Máquina virtual de uso general
 
 Los tamaños de máquina virtual de uso general proporcionan una relación equilibrada entre la CPU y la memoria. Estas máquinas se usan para desarrollo y pruebas, bases de datos pequeñas o medianas, y servidores web de tráfico bajo o medio. Cada disco de datos tiene 2300 IOPS en los tamaños prémium de máquina virtual, excepto en la serie A básica. En el caso de la serie A básica, el tamaño del disco de datos es de 500 IOPS.
 
@@ -185,4 +185,4 @@ Los tamaños de las máquinas virtuales optimizadas para memoria ofrecen una rel
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Consideraciones sobre máquinas virtuales en Azure Stack](azure-stack-vm-considerations.md)
+[Características de las máquinas virtuales de Azure Stack](azure-stack-vm-considerations.md)

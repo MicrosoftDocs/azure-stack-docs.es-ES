@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/15/2019
+ms.date: 05/28/2019
 ms.author: sethm
 ms.reviewer: hectorl
-ms.lastreviewed: 05/15/2019
-ms.openlocfilehash: 52279a7498e253771e16e66e0c5025b9afd4494d
-ms.sourcegitcommit: 442bd62d1dfbc1597592d7285aba1453298261ce
+ms.lastreviewed: 05/28/2019
+ms.openlocfilehash: 9ebbdb19335db4f0c31d68c726f7b8c211d0f2e2
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65969837"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66268331"
 ---
 # <a name="azure-stack-1904-known-issues"></a>Problemas conocidos de Azure Stack 1904
 
@@ -60,6 +60,13 @@ En este artículo se enumeran los problemas conocidos de la versión de 1904 de 
 - Corrección: Use [PowerShell para verificar los permisos](/powershell/module/azurerm.resources/get-azurermroleassignment).
 - Repetición: Común
 
+
+### <a name="docker-extension"></a>Extensión de Docker
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En los portales de administrador y de usuario, si se busca "Docker", el elemento se devuelve de forma incorrecta. No está disponible en Azure Stack. Si se intenta crearlo, se muestra una hoja con una indicación de error.
+- Corrección: Sin mitigación.
+- Repetición: Común
+
 ### <a name="marketplace-management"></a>Administración de Marketplace
 
 - Aplicable a: se trata de un nuevo problema con la versión 1904.
@@ -70,16 +77,23 @@ En este artículo se enumeran los problemas conocidos de la versión de 1904 de 
 ### <a name="marketplace-management"></a>Administración de Marketplace
 
 - Aplicable a: este problema se aplica a la versión 1904.
-- Causa: Al filtrar los resultados en la hoja **Add from Azure** (Agregar desde Azure), en la pestaña Marketplace management (Administración de Marketplace) del portal de administradores, puede ver los resultados filtrados incorrectos. 
-- Corrección: Ordene los resultados por la columna Nombre y se corregirán. 
+- Causa: Al filtrar los resultados en la hoja **Add from Azure** (Agregar desde Azure), en la pestaña Marketplace management (Administración de Marketplace) del portal de administradores, puede ver los resultados filtrados incorrectos.
+- Corrección: Ordene los resultados por la columna Nombre y se corregirán.
 - Repetición: Intermitente
 
 ### <a name="marketplace-management"></a>Administración de Marketplace
 
 - Aplicable a: este problema se aplica a la versión 1904.
 - Causa: Al filtrar los resultados de Al filtrar los resultados de Marketplace management (Administración de Marketplace) en el portal de administradores, verá nombres de publicadores duplicados en la lista desplegable de publicadores. 
-- Corrección: Seleccione todos los duplicados para tener la lista correcta de todos los productos de Marketplace que están disponibles en ese publicador. 
+- Corrección: Seleccione todos los duplicados para tener la lista correcta de todos los productos de Marketplace que están disponibles en ese publicador.
 - Repetición: Intermitente
+
+### <a name="docker-extension"></a>Extensión de Docker
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En los portales de administrador y de usuario, si se busca **Docker**, el elemento se devuelve de forma incorrecta. No está disponible en Azure Stack. Si intenta crearlo, aparece un error.
+- Corrección: Sin mitigación.
+- Repetición: Común
 
 ### <a name="upload-blob"></a>Carga de blob
 
@@ -156,11 +170,37 @@ El error se produce si habilita el diagnóstico de arranque en una VM, pero elim
 ### <a name="compute-host-agent-alert"></a>Alerta del agente de host de proceso
 
 - Aplicable a: se trata de un nuevo problema con la versión 1904.
-- Causa: Aparece la advertencia **Compute host agent** (Agente de host de proceso) después de reiniciar un nodo en la unidad de escalado. El reinicio cambia la configuración de inicio predeterminada del servicio del agente de host de proceso.
+- Causa: Aparece la advertencia **Compute host agent** (Agente de host de proceso) después de reiniciar un nodo en la unidad de escalado. El reinicio cambia la configuración de inicio predeterminada del servicio del agente de host de proceso. Esta alerta es similar a la siguiente:
+
+   ```shell
+   NAME  
+   Compute Host Agent is not responding to calls.
+   SEVERITY  
+   Warning
+   STATE  
+   Active
+   CREATED TIME  
+   5/16/2019, 10:08:23 AM
+   UPDATED TIME  
+   5/22/2019, 12:27:27 PM
+   COMPONENT  
+   M#####-NODE02
+   DESCRIPTION  
+   Could not communicate with the Compute Host Agent running on node: M#####-NODE02
+   REMEDIATION  
+   Please disable Compute Host Agent feature flag and collect logs for further diagnosis.
+   ```
+
 - Corrección:
   - Esta alerta puede omitirse. El agente que no responde no tiene ningún impacto en las operaciones del operador y el usuario o las aplicaciones del usuario. Esta alerta volverá a aparecer al cabo de 24 horas si se cierra manualmente.
-  - El Soporte técnico de Microsoft puede corregir el problema cambiando la configuración de inicio para el servicio. Esto requiere la apertura de una incidencia de soporte técnico. Si se vuelve a reiniciar el nodo, se muestra una nueva alerta.
+  - El problema se ha corregido en la [última revisión de Azure Stack 1904](https://support.microsoft.com/help/4505688).
 - Repetición: Común
+
+## <a name="storage"></a>Storage
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: No se admite [ConvertTo-AzureRmVMManagedDisk](/powershell/module/azurerm.compute/convertto-azurermvmmanageddisk) en Azure Stack lo cual da como resultado la creación de un disco con el identificador **$null**. Esto le impide realizar operaciones en la máquina virtual como iniciarla o detenerla. El disco no aparece en la interfaz de usuario, ni aparece a través de la API. Una máquina virtual que ha alcanzado ese punto no se puede reparar y debe eliminarse.
+- Corrección: Para convertir los discos correctamente, siga la guía [Conversión en discos administrados](../user/azure-stack-managed-disk-considerations.md#convert-to-managed-disks).
 
 ## <a name="app-service"></a>App Service
 

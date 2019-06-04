@@ -3,7 +3,7 @@ title: Procedimientos recomendados de SQL Server para optimizar el rendimiento e
 description: Este artículo proporciona procedimientos recomendados de SQL server para ayudar a aumentar el rendimiento y optimizar SQL Server en máquinas virtuales de Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: bryanla
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,19 +13,19 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/02/2019
-ms.author: mabrigg
+ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 628e7bcb994c92bd00425b4ba11a45ebd1ff8f54
-ms.sourcegitcommit: 87d93cdcdb6efb06e894f56c2f09cad594e1a8b3
+ms.openlocfilehash: deed8e358c339e5a55cf2928002b9c0e6910f0d4
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65712353"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66269416"
 ---
 # <a name="sql-server-best-practices-to-optimize-performance-in-azure-stack"></a>Prácticas recomendadas de SQL Server para optimizar el rendimiento en Azure Stack
 
-Este artículo proporciona procedimientos recomendados de SQL server para optimizar SQL Server y mejorar el rendimiento de las máquinas virtuales de Microsoft Azure Stack. Mientras se ejecuta SQL Server en máquinas virtuales de Azure Stack, use las mismas opciones de ajuste de rendimiento de base de datos que son aplicables a SQL Server en el entorno de servidor local. El rendimiento de una base de datos relacional en una nube de Azure Stack depende de muchos factores, entre los que se incluyen el tamaño de la familia de una máquina virtual y la configuración de los discos de datos.
+Este artículo proporciona procedimientos recomendados de SQL Server para optimizar SQL Server y mejorar el rendimiento de las máquinas virtuales de Microsoft Azure Stack. Mientras se ejecuta SQL Server en máquinas virtuales de Azure Stack, use las mismas opciones de ajuste de rendimiento de base de datos que son aplicables a SQL Server en el entorno de servidor local. El rendimiento de una base de datos relacional en una nube de Azure Stack depende de muchos factores, entre los que se incluyen el tamaño de la familia de una máquina virtual y la configuración de los discos de datos.
 
 Al crear imágenes de SQL Server, [considere la posibilidad de aprovisionar las máquinas virtuales en el portal de Azure Stack](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision). Descargue la Extensión IaaS de SQL de Administración de Marketplace en el portal de administración de Azure Stack y descargue los discos duros virtuales de la máquina virtual SQL de su elección. Estos incluyen SQL2014SP2, SQL2016SP1 y SQL2017.
 
@@ -35,17 +35,17 @@ Al crear imágenes de SQL Server, [considere la posibilidad de aprovisionar las 
 Obtener el *mejor* rendimiento de SQL Server en máquinas virtuales de Azure Stack es el objetivo central de este artículo. Si su carga de trabajo es menos exigente, podría no necesitar todas las optimizaciones recomendadas. Tenga en cuenta sus necesidades de rendimiento y patrones de carga de trabajo a medida que evalúe estas recomendaciones.
 
 > [!NOTE]  
-> Para obtener la guía de rendimiento para SQL Server en Azure Virtual Machines, consulte [este artículo](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-performance).
+> Para obtener la guía de rendimiento de SQL Server en máquinas virtuales de Azure, consulte [este artículo](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-performance).
 
 ## <a name="checklist-for-sql-server-best-practices"></a>Lista de comprobación de procedimientos recomendados de SQL Server
 
-La siguiente es una lista de comprobación rápida para un rendimiento óptimo de SQL Server en máquinas virtuales de Azure Stack:
+La siguiente es una lista de comprobación para un rendimiento óptimo de SQL Server en máquinas virtuales de Azure Stack:
 
 
 |Ámbito|Optimizaciones|
 |-----|-----|
-|Tamaño de la máquina virtual |[DS3](azure-stack-vm-sizes.md) o posteriores para SQL Server Enterprise Edition.<br><br>[DS2](azure-stack-vm-sizes.md) o posteriores para ediciones de SQL Server Standard y Web.|
-|Almacenamiento |Use una familia de máquinas virtuales que admita [almacenamiento Premium](azure-stack-acs-differences.md).|
+|Tamaño de VM |[DS3](azure-stack-vm-sizes.md) o posteriores para SQL Server Enterprise Edition.<br><br>[DS2](azure-stack-vm-sizes.md) o posteriores para ediciones de SQL Server Standard y Web.|
+|Storage |Use una familia de máquinas virtuales que admita [almacenamiento Premium](azure-stack-acs-differences.md).|
 |Discos |Use un mínimo de dos discos de datos (uno para los archivos de registro y otro para el archivo de datos y TempDB) y elija el tamaño del disco en función de sus necesidades de capacidad. Establezca las ubicaciones predeterminadas de los archivos de datos para estos discos durante la instalación de SQL Server.<br><br>Evite el uso del sistema operativo o de discos temporales para el registro o almacenamiento de bases de datos.<br>Seccione varios discos de datos de Azure para obtener un mayor rendimiento de E/S mediante Espacios de almacenamiento.<br><br>Formato con tamaños de asignación documentados.|
 |E/S|Habilite la inicialización instantánea de archivos para archivos de datos.<br><br>Limite el crecimiento automático de las bases de datos con incrementos fijos razonablemente pequeños (64 MB a 256 MB).<br><br>Deshabilite la reducción automática de la base de datos.<br><br>Configure las ubicaciones predeterminadas de los archivos de copia de seguridad y de base de datos en los discos de datos y no en el disco del sistema operativo.<br><br>Habilite páginas bloqueadas.<br><br>Aplique los Service Pack y las actualizaciones acumulativas de SQL Server.|
 |Características específicas|Haga una copia de seguridad directamente en Blob Storage (si la versión de SQL Server en uso lo admite).|
@@ -53,7 +53,7 @@ La siguiente es una lista de comprobación rápida para un rendimiento óptimo d
 
 Para más información acerca de *cómo* y *por qué* llevar a cabo estas optimizaciones, repase los detalles y la guía que se proporcionan en las siguientes secciones.
 
-## <a name="virtual-machine-size-guidance"></a>Guía sobre el tamaño de la máquina virtual
+## <a name="vm-size-guidance"></a>Orientación sobre el tamaño de máquina virtual
 
 En aplicaciones sensibles al rendimiento, se recomienda usar los siguientes [tamaños de máquinas virtuales](azure-stack-vm-sizes.md):
 
@@ -78,9 +78,9 @@ Al crear una cuenta de almacenamiento en Azure Stack, la opción de replicación
 
 En una máquina virtual de Azure Stack hay tres tipos de disco principales:
 
-- **Disco del sistema operativo:** Cuando crea una máquina virtual de Azure Stack, la plataforma conectará al menos un disco (etiquetado como unidad **C**) a la máquina virtual para el disco del sistema operativo. El disco es un VHD almacenado como blob en páginas en almacenamiento.
+- **Disco del sistema operativo:** al crear una máquina virtual de Azure, la plataforma conectará al menos un disco (etiquetado como unidad **C**) a la máquina virtual como disco del sistema operativo. El disco es un VHD almacenado como blob en páginas en almacenamiento.
 
-- **Disco temporal:** Las máquinas virtuales de Azure Stack contienen otro disco denominado disco temporal (etiquetados como unidad **D**). Se trata de un disco en el nodo que se puede usar para el espacio de desecho.
+- **Disco temporal:** Las máquinas virtuales de Azure Stack contienen otro disco denominado disco temporal (etiquetado como unidad **D**). Se trata de un disco en el nodo que se puede usar para el espacio de desecho.
 
 - **Discos de datos:** Puede conectar más discos a la máquina virtual como discos de datos. Estos se guardarán en el almacenamiento como blobs en páginas.
 
@@ -120,8 +120,8 @@ Se recomienda almacenar TempDB en un disco de datos, ya que cada disco de datos 
        New-StoragePool -FriendlyName "DataFiles" -StorageSubsystemFriendlyName "Storage Spaces*" -PhysicalDisks $PhysicalDisks | New-VirtualDisk -FriendlyName "DataFiles" -Interleave 65536 -NumberOfColumns 2 -ResiliencySettingName simple -UseMaximumSize |Initialize-Disk -PartitionStyle GPT -PassThru |New-Partition -AssignDriveLetter -UseMaximumSize |Format-Volume -FileSystem NTFS -NewFileSystemLabel "DataDisks" -AllocationUnitSize 65536 -Confirm:$false
        ```
 
-- Determine el número de discos asociados al grupo de almacenamiento en función de sus expectativas de carga. Tenga en cuenta que diferentes tamaños de máquina virtual permiten diferentes números de discos de datos conectados. Para más información, consulte los [Tamaños de máquinas virtuales admitidos en Azure Stack](azure-stack-vm-sizes.md).
-- Para conseguir el máximo IOPS posible para los discos de datos, se recomienda agregar el número máximo de discos de datos que admita el [tamaño de la máquina virtual](azure-stack-vm-sizes.md) y usar el fraccionamiento en discos.
+- Determine el número de discos asociados al grupo de almacenamiento en función de sus expectativas de carga. Tenga en cuenta que diferentes tamaños de máquina virtual permiten diferentes números de discos de datos conectados. Para más información, consulte [Tamaños de máquinas virtuales admitidos en Azure Stack](azure-stack-vm-sizes.md).
+- Para conseguir el máximo número de IOPS posible para los discos de datos, se recomienda agregar el número máximo de discos de datos que admita el [tamaño de la máquina virtual](azure-stack-vm-sizes.md) y usar el fraccionamiento en discos.
 - **Tamaño de la unidad de asignación de NTFS:** Al formatear el disco de datos, se recomienda usar un tamaño de unidad de asignación de 64 KB no solo para los archivos de datos y de registro, sino también para TempDB.
 - **Procedimientos recomendados de administración de discos:** Al quitar un disco de datos, detenga el servicio SQL Server durante el cambio. Además, no cambie la configuración de caché en los discos ya que esto no supone ninguna mejora del rendimiento.
 

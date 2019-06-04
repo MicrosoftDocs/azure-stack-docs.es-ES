@@ -12,16 +12,16 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/27/2019
+ms.date: 05/28/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 6db643e1123a27fe1716aeeb5ec97d6497764632
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: e89e8a9d2f773c289bc279a1b4aa9f47e65e8741
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618963"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66269331"
 ---
 # <a name="add-an-app-service-resource-provider-to-azure-stack"></a>Incorporación de un proveedor de recursos de App Service a Azure Stack
 
@@ -29,16 +29,16 @@ ms.locfileid: "65618963"
 
 Use las instrucciones de este artículo para implementar App Service en Azure Stack.
 
-> [!IMPORTANT]  
-> Aplique la actualización 1901 al sistema integrado de Azure Stack o implemente el Kit de desarrollo de Azure Stack (ASDK) más reciente antes de implementar Azure App Service 1.5.
+> [!IMPORTANT]
+> Aplique la actualización 1904 al sistema integrado de Azure Stack o implemente el Kit de desarrollo de Azure Stack (ASDK) más reciente antes de implementar Azure App Service 1.6.
 
 Puede ofrecer a los usuarios la capacidad de crear aplicaciones web y API. Para permitir que los usuarios creen estas aplicaciones, deberá:
 
- - Agregue el [proveedor de recursos de App Service](azure-stack-app-service-overview.md) a la implementación de Azure Stack mediante los pasos descritos en este artículo.
- - Después de instalar el proveedor de recursos de App Service, puede incluirlos en sus planes y ofertas. Los usuarios pueden suscribirse entonces para obtener el servicio y empezar a crear aplicaciones.
+- Agregue el [proveedor de recursos de App Service](azure-stack-app-service-overview.md) a la implementación de Azure Stack mediante los pasos descritos en este artículo.
+- Después de instalar el proveedor de recursos de App Service, puede incluirlos en sus planes y ofertas. Los usuarios pueden suscribirse entonces para obtener el servicio y empezar a crear aplicaciones.
 
-> [!IMPORTANT]  
-> Antes de ejecutar el instalador del proveedor de recursos, asegúrese de haber seguido las instrucciones de [Antes de empezar a](azure-stack-app-service-before-you-get-started.md) y haber leído las [notas de la versión](azure-stack-app-service-release-notes-update-five.md) que acompañan a la versión 1.5, para obtener información sobre las nuevas funciones, correcciones y problemas conocidos que podrían afectar a su implementación.
+> [!IMPORTANT]
+> Antes de ejecutar el instalador del proveedor de recursos, asegúrese de haber seguido las instrucciones de [Antes de empezar a](azure-stack-app-service-before-you-get-started.md) y haber leído las [notas de la versión](azure-stack-app-service-release-notes-update-six.md) que acompañan a la versión 1.6, para obtener información sobre las nuevas funciones, correcciones y problemas conocidos que podrían afectar a su implementación.
 
 ## <a name="run-the-app-service-resource-provider-installer"></a>Ejecución del instalador del proveedor de recursos de App Service
 
@@ -72,14 +72,14 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
 6. En la página siguiente del instalador de App Service, siga estos pasos:
 
-     a. Seleccione **Conectar** situado junto al cuadro de **suscripciones de Azure Stack**.
+    a. Seleccione **Conectar** situado junto al cuadro de **suscripciones de Azure Stack**.
 
    - Si se usa Azure Active Directory (Azure AD), escriba la cuenta de administrador y la contraseña de Azure AD que proporcionó al implementar Azure Stack. Seleccione **Iniciar sesión**.
    - Si se usan los Servicios de federación de Active Directory (AD FS), debe proporcionar la cuenta de administrador. Por ejemplo, cloudadmin@azurestack.local. Escriba la contraseña y seleccione **Iniciar sesión**.
 
    b. En el cuadro de **suscripciones de Azure Stack**, seleccione **Default Provider Subscription** (Suscripción de proveedor predeterminada).
 
-     > [!IMPORTANT]  
+     > [!IMPORTANT]
      > App Service **debe** implementarse en la **suscripción de proveedor predeterminada**.
 
    c. En **Azure Stack Locations** (Ubicaciones de Azure Stack), seleccione la ubicación que corresponda a la región en la que se va a implementar. Por ejemplo, seleccione **local** si va a implementar con el Kit de desarrollo de Azure Stack.
@@ -88,7 +88,7 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
 7. Ahora puede realizar la implementación en una red virtual existente que haya configurado [siguiendo estos pasos](azure-stack-app-service-before-you-get-started.md#virtual-network), o dejar que el instalador de App Service cree una nueva red virtual y subredes. Para crear una red virtual, siga estos pasos:
 
-    a. Seleccione **Crear una red virtual con la configuración predeterminada**, acepte los valores predeterminados y haga clic en **Siguiente**.
+   a. Seleccione **Crear una red virtual con la configuración predeterminada**, acepte los valores predeterminados y haga clic en **Siguiente**.
 
    b. O, seleccione **Usar la red virtual y las subredes existentes**. Complete las siguientes acciones:
 
@@ -108,7 +108,7 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
 9. En la página siguiente del instalador de App Service, siga estos pasos:
 
-    a. En el cuadro **Identificador de la aplicación de identidad**, escriba el GUID de la aplicación que va a usar para la identidad (de Azure AD).
+   a. En el cuadro **Identificador de la aplicación de identidad**, escriba el GUID de la aplicación que va a usar para la identidad (de Azure AD).
 
    b. En el cuadro **Identity Application certificate file** (Archivo del certificado de la aplicación de identidad) escriba (o vaya a) la ubicación del archivo del certificado.
 
@@ -124,7 +124,7 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
     | Box | Ejemplo de nombre de archivo de certificado |
     | --- | --- |
-    | **Archivo de certificado SSL predeterminado de App Service**  | \_.appservice.local.AzureStack.external.pfx |
+    | **Archivo de certificado SSL predeterminado de App Service** | \_.appservice.local.AzureStack.external.pfx |
     | **Archivo de certificado SSL de API de App Service** | api.appservice.local.AzureStack.external.pfx |
     | **Archivo de certificado SSL del publicador de App Service** | ftp.appservice.local.AzureStack.external.pfx |
 
@@ -158,7 +158,7 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
 14. En la página siguiente del instalador de App Service, siga estos pasos:
 
-      a. Escriba el nombre de usuario y la contraseña del administrador de la máquina virtual con el rol de trabajo.
+     a. Escriba el nombre de usuario y la contraseña del administrador de la máquina virtual con el rol de trabajo.
 
      b. Escriba el nombre de usuario y la contraseña del administrador de la máquina virtual con otros roles.
 
@@ -168,7 +168,7 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
 15. En la página de resumen del instalador de App Service, siga estos pasos:
 
-     a. Compruebe las selecciones realizadas. Para realizar cambios, use los botones **Anterior** para visitar las páginas anteriores.
+    a. Compruebe las selecciones realizadas. Para realizar cambios, use los botones **Anterior** para visitar las páginas anteriores.
 
     b. Si las configuraciones son correctas, active la casilla.
 
@@ -178,7 +178,7 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
 16. En la página siguiente del instalador de App Service, siga estos pasos:
 
-     a. Realice un seguimiento del progreso de la instalación. App Service en Azure Stack tarda aproximadamente 60 minutos en realizar la implementación según las selecciones predeterminadas.
+    a. Realice un seguimiento del progreso de la instalación. App Service en Azure Stack tarda aproximadamente 60 minutos en realizar la implementación según las selecciones predeterminadas.
 
     b. Después de que el instalador finalice correctamente, seleccione **Salir**.
 
@@ -186,8 +186,20 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
 ## <a name="post-deployment-steps"></a>Pasos posteriores a la implementación
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Si proporcionó el proveedor de recursos de App Service con una instancia de SQL Always On, DEBE [agregar las bases de datos appservice_hosting y appservice_metering a un grupo de disponibilidad](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database), así como sincronizar dichas bases de datos para evitar la pérdida de servicio en caso de producirse una conmutación por error de base de datos.
+
+Si va a realizar la implementación en una red virtual existente y a usar una dirección IP interna para conectarse al servidor de archivos, debe agregar una regla de seguridad de salida. Esta regla habilita el tráfico SMB entre la subred de trabajo y el servidor de archivos.  Vaya a WorkersNsg, Grupo de seguridad de red, en el Portal de administración y agregue una regla de seguridad de salida con las siguientes propiedades:
+
+- Origen: Cualquiera
+- Intervalo de puertos de origen: *
+- Destino: Direcciones IP
+- Intervalo de direcciones IP de destino: Intervalo de direcciones IP del servidor de archivos
+- Intervalo de puertos de destino: 445
+- Protocolo: TCP
+- Acción: PERMITIR
+- Prioridad: 700
+- Nombre: Outbound_Allow_SMB445
 
 ## <a name="validate-the-app-service-on-azure-stack-installation"></a>Validación de la instalación de App Service en Azure Stack
 
@@ -196,18 +208,6 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 2. En la información general, debajo del estado, compruebe que en **Estado** se muestra el mensaje **Todos los roles están listos**.
 
     ![Administración de App Service](media/azure-stack-app-service-deploy/image12.png)
-
-    Si va a realizar la implementación en una red virtual existente y a usar una dirección IP interna para conectarse al servidor de archivos, debe agregar una regla de seguridad de salida. Esta regla habilita el tráfico SMB entre la subred de trabajo y el servidor de archivos.  Para ello, vaya a WorkersNsg en el Portal de administración y agregue una regla de seguridad de salida con las siguientes propiedades:
-
-    - Origen: Cualquiera
-    - Intervalo de puertos de origen: *
-    - Destino: Direcciones IP
-    - Intervalo de direcciones IP de destino: Intervalo de direcciones IP del servidor de archivos
-    - Intervalo de puertos de destino: 445
-    - Protocolo: TCP
-    - Acción: PERMITIR
-    - Prioridad: 700
-    - Nombre: Outbound_Allow_SMB445
 
 ## <a name="test-drive-app-service-on-azure-stack"></a>Prueba de App Service en Azure Stack
 
@@ -241,7 +241,7 @@ Para crear una aplicación web de prueba, siga estos pasos:
 
 ## <a name="deploy-a-wordpress-dnn-or-django-website-optional"></a>Implementación de un sitio web de WordPress, DNN o Django (opcional)
 
-1. En el portal del inquilino de Azure Stack, seleccione **+**, vaya a Azure Marketplace, implemente un sitio web de Django y, a continuación, espere a que finalice la implementación. La plataforma web de Django usa una base de datos basada en el sistema de archivos. No se necesita ningún proveedor de recursos adicional, como SQL o MySQL.
+1. En el portal del inquilino de Azure Stack, seleccione **+** , vaya a Azure Marketplace, implemente un sitio web de Django y, a continuación, espere a que finalice la implementación. La plataforma web de Django usa una base de datos basada en el sistema de archivos. No se necesita ningún proveedor de recursos adicional, como SQL o MySQL.
 
 2. Si también implementó un proveedor de recursos de MySQL, puede implementar un sitio web de WordPress en Marketplace. Cuando se le pidan los parámetros de la base de datos, escriba el nombre de usuario, como *Usario1\@Servidor1*, con el nombre de usuario y el nombre del servidor de su elección.
 
@@ -251,8 +251,8 @@ Para crear una aplicación web de prueba, siga estos pasos:
 
 También puede probar otros [servicios de Plataforma como servicio (PaaS)](azure-stack-offer-services-overview.md).
 
- - [Proveedor de recursos de SQL Server](azure-stack-sql-resource-provider-deploy.md)
- - [Proveedor de recursos de MySQL](azure-stack-mysql-resource-provider-deploy.md)
+- [Proveedor de recursos de SQL Server](azure-stack-sql-resource-provider-deploy.md)
+- [Proveedor de recursos de MySQL](azure-stack-mysql-resource-provider-deploy.md)
 
 <!--Links-->
 [Azure_Stack_App_Service_preview_installer]: https://go.microsoft.com/fwlink/?LinkID=717531

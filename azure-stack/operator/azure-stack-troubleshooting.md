@@ -3,7 +3,7 @@ title: Solución de problemas de Microsoft Azure Stack | Microsoft Docs
 description: Solución de problemas de Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 editor: ''
 ms.assetid: a20bea32-3705-45e8-9168-f198cfac51af
@@ -12,32 +12,27 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/06/2019
-ms.author: mabrigg
+ms.date: 05/20/2019
+ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 01/23/2019
-ms.openlocfilehash: c7486cb56dee87b8a894d165fce4c3a0dfaae6d9
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 9b78a7ee9af9dde3cbb40b52268cb4cbfc0a6dcc
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618117"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66268234"
 ---
 # <a name="microsoft-azure-stack-troubleshooting"></a>Solución de problemas de Microsoft Azure Stack
 
-Este documento proporciona información para solucionar problemas comunes de Azure Stack. 
-
-> [!NOTE]
-> Como Azure Stack Technical Development Kit (ASDK) se ofrece como un entorno de evaluación, no hay soporte técnico oficial de los Servicios de soporte al cliente de Microsoft. Si experimenta un problema, asegúrese de revisar el [foro MSDN de Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack) para obtener más ayuda e información.  
-
-Las recomendaciones para solucionar los problemas que se describen en esta sección se derivan de varios orígenes y pueden resolver o no el problema en particular. Los ejemplos de código se proporcionan tal cual y no se pueden garantizar los resultados esperados. Esta sección está sujeta a modificaciones y actualizaciones frecuentes cuando se implementan mejoras del producto.
+Este documento proporciona información para solucionar problemas comunes de Azure Stack. Las recomendaciones y ejemplos de código se muestran tal y como son, y no siempre pueden resolver el problema. 
 
 ## <a name="deployment"></a>Implementación
 ### <a name="general-deployment-failure"></a>Error de implementación general
 Si experimenta un error durante la instalación, puede reiniciar la implementación en el paso con errores con la opción -rerun del script de implementación.  
 
 ### <a name="at-the-end-of-asdk-deployment-the-powershell-session-is-still-open-and-doesnt-show-any-output"></a>Al final de la implementación de ASDK, la sesión de PowerShell todavía está abierta y no muestra ninguna salida.
-Este comportamiento probablemente sea solo el resultado del comportamiento predeterminado de una ventana de comandos de PowerShell, cuando se ha seleccionado. La implementación del kit de desarrollo se ha realizado correctamente, pero el script se ha puesto en pausa al seleccionar la ventana. Puede comprobar que se completó la configuración buscando la palabra "select" en la barra de título de la ventana de comandos.  Presione la tecla ESC para cancelar la selección; después debería mostrarse el mensaje de finalización.
+Este comportamiento probablemente sea solo el resultado del comportamiento predeterminado de una ventana de comandos de PowerShell, cuando se ha seleccionado. La implementación del kit de desarrollo se ha realizado correctamente, pero el script se ha puesto en pausa al seleccionar la ventana. Puede comprobar que se completó la configuración buscando la palabra "select" en la barra de título de la ventana de comandos. Presione la tecla ESC para cancelar la selección; después debería mostrarse el mensaje de finalización.
 
 ### <a name="deployment-fails-due-to-lack-of-external-access"></a>La implementación produce un error debido a la falta de acceso externo
 Cuando se produce un error en la implementación durante las etapas en las que se requiere de acceso externo, se devuelve una excepción similar al ejemplo siguiente:
@@ -49,7 +44,7 @@ An error occurred while trying to test identity provider endpoints: System.Net.W
 ```
 Si se produce este error, revise la [documentación del tráfico de red de implementación](deployment-networking.md) para asegurarse de que se cumplen todos los requisitos de red mínimos. También está disponible una herramienta de comprobación de redes para partners como parte del Kit de herramientas de partners.
 
-Los errores de implementación que presentan la excepción anterior suelen deberse a problemas para conectarse a recursos de Internet.
+Los errores de implementación que presenta la excepción anterior suelen deberse a problemas para conectarse a recursos de Internet.
 
 Para comprobar que este es el problema, puede realizar los pasos siguientes:
 
@@ -83,7 +78,7 @@ Si ve discos duros virtuales "huérfanos", es importante saber si forman parte d
 
 Puede leer más acerca de cómo configurar el umbral de conservación y las recuperaciones a petición en [Administración de cuentas de almacenamiento](azure-stack-manage-storage-accounts.md).
 
-## <a name="storage"></a>Almacenamiento
+## <a name="storage"></a>Storage
 ### <a name="storage-reclamation"></a>Recuperación de almacenamiento
 La funcionalidad reclamada capacidad puede tardar hasta 14 horas en mostrarse en el portal. La recuperación de espacio depende de diversos factores, como el porcentaje de uso de archivos de contenedor internos en el almacén de blobs de bloque. Por lo tanto, en función de cuántos datos se eliminen, no hay ninguna garantía de la cantidad de espacio que se podría recuperar cuando se ejecute el recolector de elementos no utilizados.
 

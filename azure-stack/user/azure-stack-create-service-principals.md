@@ -1,9 +1,9 @@
 ---
 title: Creación de una entidad de servicio de Azure Stack | Microsoft Docs
-description: Describe cómo crear una entidad de servicio que puede usarse con el control de acceso basado en roles en Azure Resource Manager para administrar el acceso a los recursos.
+description: Aprenda a crear una entidad de servicio que puede usarse con el control de acceso basado en roles en Azure Resource Manager para administrar el acceso a los recursos.
 services: azure-resource-manager
 documentationcenter: na
-author: mattbriggs
+author: PatAltimore
 manager: femila
 ms.service: azure-resource-manager
 ms.devlang: na
@@ -11,17 +11,17 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/15/2019
-ms.author: mabrigg
+ms.author: patricka
 ms.reviewer: thoroet
 ms.lastreviewed: 12/12/2018
-ms.openlocfilehash: 3860f8dcc99f3505fe2f838e75f5e8f09b78aefe
-ms.sourcegitcommit: 8cb2b567e9914d4d07e754d95c0864aa55868579
+ms.openlocfilehash: 8b3d0ad1f0854f7028e9dfff2d9114df141394a6
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855373"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66269603"
 ---
-# <a name="give-applications-access-to-azure-stack-resources-by-creating-service-principals"></a>Otorgue a las aplicaciones acceso a los recursos de Azure Stack mediante la creación de entidades de servicio
+# <a name="create-service-principals-to-give-applications-access-to-azure-stack-resources"></a>Creación de entidades de servicio para otorgar a las aplicaciones acceso a los recursos de Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
@@ -50,7 +50,7 @@ La manera en que ha configurado Active Directory para Azure Stack determina cóm
 * Creación de una entidad de servicio para [Azure Active Directory (Azure AD)](azure-stack-create-service-principals.md#create-service-principal-for-azure-ad).
 * Creación de una entidad de servicio para [Servicios de federación de Active Directory (AD FS)](azure-stack-create-service-principals.md#create-service-principal-for-ad-fs).
 
-Los pasos para asignar una entidad de servicio a un rol son los mismos para Azure AD y AD FS. Después de crear la entidad de servicio, puede [delegar permisos](azure-stack-create-service-principals.md) mediante la asignación a un rol.
+Los pasos para asignar una entidad de servicio a un rol son los mismos para Azure AD y AD FS. Después de crear la entidad de servicio, puede delegar permisos mediante la asignación a un rol.
 
 ## <a name="create-service-principal-for-azure-ad"></a>Crear una entidad de servicio para Azure AD
 
@@ -69,7 +69,7 @@ Para crear una entidad de servicio para la aplicación:
 4. Seleccione los **tipos de cuenta admitidos**.
 5.  Agregue un identificador URI para la aplicación. Seleccione **Web** para indicar el tipo de aplicación que quiere crear. Después de configurar los valores, seleccione **Registrar**.
 
-Creó una entidad de servicio para la aplicación.
+Ha creado una entidad de servicio para la aplicación.
 
 ### <a name="get-credentials"></a>Obtener credenciales
 

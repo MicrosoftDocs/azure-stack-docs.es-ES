@@ -3,7 +3,7 @@ title: Configuraciones después de la implementación del Kit de desarrollo de A
 description: Describe los cambios de configuración que se recomiendan realizar después de instalar el Kit de desarrollo de Azure Stack (ASDK).
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,19 +13,19 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/08/2019
-ms.author: mabrigg
+ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 10/10/2018
-ms.openlocfilehash: 308edbc351b52d94842a1a96602371f6edb8ff5d
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 3d6b7ff0d52874fcbb058e87a737d7510aecc5db
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65617524"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66267563"
 ---
 # <a name="post-asdk-installation-configuration-tasks"></a>Tareas de configuración posteriores a la instalación de ASDK
 
-Después de realizar la [instalación del Kit de desarrollo de Azure Stack (ASDK)](asdk-install.md), tendrá que efectuar algunos cambios de configuración recomendados mientras inicia sesión como AzureStack\AzureStackAdmin en el equipo host de ASDK. 
+Después de realizar la [instalación del Kit de desarrollo de Azure Stack (ASDK)](asdk-install.md), tendrá que efectuar algunos cambios de configuración recomendados mientras inicia sesión como AzureStack\AzureStackAdmin en el equipo host de ASDK.
 
 ## <a name="install-azure-stack-powershell"></a>Instalación de PowerShell de Azure Stack
 
@@ -37,7 +37,7 @@ Los comandos de PowerShell para Azure Stack se instalan a través de la Galería
 Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
 ```
 
-Puede usar perfiles de la versión de API para especificar los módulos AzureRM compatibles con Azure Stack.  Los perfiles de versión de la API proporcionan una manera de administrar las diferencias de versión entre Azure y Azure Stack. Un perfil de la versión de la API es un conjunto de módulos de PowerShell AzureRM con versiones específicas de la API. El módulo **AzureRM.Bootstrapper** que está disponible a través de la Galería de PowerShell proporciona cmdlet de PowerShell que son necesarios para trabajar con perfiles de la versión de API.
+Puede usar perfiles de la versión de API para especificar los módulos AzureRM compatibles con Azure Stack.  Los perfiles de versión de la API proporcionan una manera de administrar las diferencias de versión entre Azure y Azure Stack. Un perfil de la versión de la API es un conjunto de módulos de PowerShell AzureRM con versiones específicas de la API. El módulo **AzureRM.BootStrapper** que está disponible a través de la Galería de PowerShell proporciona cmdlet de PowerShell que son necesarios para trabajar con perfiles de la versión de API.
 
 El módulo de Azure Stack PowerShell más reciente se puede instalar con o sin conectividad a Internet en el equipo host de ASDK:
 
@@ -46,23 +46,22 @@ El módulo de Azure Stack PowerShell más reciente se puede instalar con o sin c
 
 - **Con conexión a internet** desde el equipo host de ASDK. Ejecute el siguiente script de PowerShell para instalar estos módulos en la instalación del kit de desarrollo:
 
-- Para las compilaciones 1904 o posteriores:
+  - Para las compilaciones 1904 o posteriores:
 
     ```powershell  
       # Install the AzureRM.BootStrapper module. Select Yes when prompted to install NuGet
       Install-Module -Name AzureRM.BootStrapper
-      
+
       # Install and import the API Version Profile required by Azure Stack into the current PowerShell session.
-      Get-AzureRMProfile -Update
       Use-AzureRmProfile -Profile 2019-03-01-hybrid -Force
       Install-Module -Name AzureStack -RequiredVersion 1.7.2
     ```
 
-- Con la versión de Azure Stack 1903 o anterior, instale solo los dos módulos siguientes:
+  - Con la versión de Azure Stack 1903 o anterior, instale solo los dos módulos siguientes:
 
     ```powershell
     # Install and import the API Version Profile required by Azure Stack into the current PowerShell session.
-    Install-Module AzureRM -RequiredVersion 2.4.0
+    Install-Module -Name AzureRM -RequiredVersion 2.4.0
     Install-Module -Name AzureStack -RequiredVersion 1.7.1
     ```
 
@@ -72,8 +71,8 @@ El módulo de Azure Stack PowerShell más reciente se puede instalar con o sin c
   - Azure Stack 1811:
 
     ``` PowerShell
-    # Install the AzureRM.Bootstrapper module. Select Yes when prompted to install NuGet. 
-    Install-Module -Name AzureRm.BootStrapper
+    # Install the AzureRM.BootStrapper module. Select Yes when prompted to install NuGet.
+    Install-Module -Name AzureRM.BootStrapper
 
     # Install and import the API Version Profile required by Azure Stack into the current PowerShell session.
     Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
@@ -119,12 +118,12 @@ El módulo de Azure Stack PowerShell más reciente se puede instalar con o sin c
 
   # Enforce usage of TLSv1.2 to download the Azure Stack tools archive from GitHub
   [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-  invoke-webrequest `
-    https://github.com/Azure/AzureStack-Tools/archive/master.zip `
+  Invoke-WebRequest `
+    -Uri https://github.com/Azure/AzureStack-Tools/archive/master.zip `
     -OutFile master.zip
 
   # Expand the downloaded files.
-  expand-archive master.zip -DestinationPath . -Force
+  Expand-Archive -Path master.zip -DestinationPath . -Force
 
   # Change to the tools directory.
   cd AzureStack-Tools-master
@@ -145,7 +144,7 @@ Las pruebas tardarán algunos minutos en completarse. Si la instalación no se r
 
 Si se produjo un error, siga los pasos de la solución de problemas para obtener ayuda.
 
-## <a name="reset-the-password-expiration-policy"></a>Restablecimiento de la directiva de expiración de contraseñas 
+## <a name="reset-the-password-expiration-policy"></a>Restablecimiento de la directiva de expiración de contraseñas
 
 Para asegurarse de que la contraseña del host del kit de desarrollo no expire antes de que termine el período de evaluación, siga estos pasos después de implementar ASDK.
 
