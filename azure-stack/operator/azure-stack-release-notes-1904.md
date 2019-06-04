@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/06/2019
+ms.date: 05/22/2019
 ms.author: sethm
 ms.reviewer: ''
-ms.lastreviewed: 05/06/2019
-ms.openlocfilehash: 99906760e51c87a7403eabfb94a64b74b999aab5
-ms.sourcegitcommit: d2012e765c3fa5bccb4756d190349e890f9f48bd
+ms.lastreviewed: 05/22/2019
+ms.openlocfilehash: 3bb69c9817eaa12f2a6fab0f20bc79f510a3c251
+ms.sourcegitcommit: 9f5157ce6b938d190ef9df5a2df4342266ca5545
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65941176"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66174349"
 ---
 # <a name="azure-stack-1904-update"></a>Actualización 1904 de Azure Stack
 
@@ -190,8 +190,7 @@ La versión 1904 de Azure Stack debe aplicarse en la versión 1903 con las re
 
 Después de instalar esta actualización, instale todas las revisiones aplicables. Para más información, consulte nuestra [directiva de servicio](azure-stack-servicing-policy.md).
 
-<!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- No hay revisiones disponibles para la actualización 1904.
+- [Azure Stack, revisión 1.1904.4.45](https://support.microsoft.com/help/4505688)
 
 ## <a name="automatic-update-notifications"></a>Notificaciones de actualización automáticas
 
