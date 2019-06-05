@@ -15,12 +15,12 @@ ms.date: 03/11/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 12/06/2018
-ms.openlocfilehash: 72449e25bf1787f686da786bc587b57a2a28254c
-ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
+ms.openlocfilehash: 78fe71768b83082e152685f7fe4c7cc606ae5b3c
+ms.sourcegitcommit: cf9440cd2c76cc6a45b89aeead7b02a681c4628a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782369"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66469199"
 ---
 # <a name="replace-a-scale-unit-node-on-an-azure-stack-integrated-system"></a>Reemplazar un nodo de la unidad de escalado en un sistema integrado de Azure Stack
 
@@ -69,7 +69,7 @@ Los pasos siguientes se proporcionan como una descripción general del proceso d
 
 4. Reemplace el equipo físico. Normalmente, esta tarea la realiza el proveedor de hardware de OEM.
 5. Use la acción [Reparar](azure-stack-node-actions.md#repair) para agregar el nuevo equipo físico a la unidad de escalado.
-6. Use el punto de conexión privilegiado para [comprobar el estado de la reparación del disco virtual](azure-stack-replace-disk.md#check-the-status-of-virtual-disk-repair). Con las nuevas unidades de datos, un trabajo de reparación del almacenamiento completo puede tardar varias horas, según la carga del sistema y el espacio consumido.
+6. Use el punto de conexión privilegiado para [comprobar el estado de la reparación del disco virtual](azure-stack-replace-disk.md#check-the-status-of-virtual-disk-repair-using-the-privileged-endpoint). Con las nuevas unidades de datos, un trabajo de reparación del almacenamiento completo puede tardar varias horas, según la carga del sistema y el espacio consumido.
 7. Una vez finalizada la acción de reparación, confirme que todas las alertas activas se cerraron automáticamente.
 
 ## <a name="next-steps"></a>Pasos siguientes

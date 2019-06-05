@@ -5,19 +5,19 @@ services: azure-stack
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 02/04/2019
+ms.date: 06/03/2019
 ms.topic: tutorial
 ms.service: azure-stack
 ms.reviewer: seyadava
 ms.custom: mvc
 manager: femila
-ms.lastreviewed: 02/04/2019
-ms.openlocfilehash: fe465abed3d8fd506df23534cd4139b39978111c
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.lastreviewed: 06/03/2019
+ms.openlocfilehash: 8f173ad486ed7fc1a4dae3c9a1c57f77ca623f0d
+ms.sourcegitcommit: 80775f5c5235147ae730dfc7e896675a9a79cdbe
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64986278"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66459084"
 ---
 # <a name="deploy-an-ethereum-blockchain-network-on-azure-stack"></a>Implementación de una red de la cadena de bloques Ethereum en Azure Stack
 

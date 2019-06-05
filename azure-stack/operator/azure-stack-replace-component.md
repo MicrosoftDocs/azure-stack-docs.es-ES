@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 03/11/2019
 ms.author: mabrigg
 ms.lastreviewed: 12/06/2018
-ms.openlocfilehash: ea316ebdba51ea80fcd02382023ccb46447a8cc0
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: 0e1f379b651d022b2c698777a7d8708ff33bf76f
+ms.sourcegitcommit: cf9440cd2c76cc6a45b89aeead7b02a681c4628a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64984815"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66469159"
 ---
 # <a name="replace-a-hardware-component-on-an-azure-stack-scale-unit-node"></a>Sustitución de un componente de hardware en un nodo de unidad de escalado de Azure Stack
 
@@ -70,7 +70,7 @@ Los pasos siguientes proporcionan una información general de alto nivel del pro
 4. Reemplace el componente de hardware dañado. Si el fabricante del hardware OEM realiza el reemplazo de componente podría variar en función del contrato de soporte técnico.  
 5. Actualice el firmware. Siga el proceso de actualización del firmware específico del proveedor con el host de ciclo de vida de hardware para asegurarse de que el componente de hardware de reemplazo tiene aplicado el nivel de firmware aprobado. Si el fabricante del hardware OEM realiza este paso podría variar en función del contrato de soporte técnico.  
 6. Use la acción de [reparación](azure-stack-node-actions.md#scale-unit-node-actions) para devolver el nodo de la unidad de escalado a la unidad de escalado.
-7. Use el punto de conexión con privilegios para [comprobar el estado de la reparación del disco virtual](azure-stack-replace-disk.md#check-the-status-of-virtual-disk-repair). Con las nuevas unidades de datos, un trabajo de reparación del almacenamiento completo puede tardar varias horas, según la carga del sistema y el espacio consumido.
+7. Use el punto de conexión con privilegios para [comprobar el estado de la reparación del disco virtual](azure-stack-replace-disk.md#check-the-status-of-virtual-disk-repair-using-the-privileged-endpoint). Con las nuevas unidades de datos, un trabajo de reparación del almacenamiento completo puede tardar varias horas, según la carga del sistema y el espacio consumido.
 8. Una vez finalizada la acción de reparación, confirme que todas las alertas activas se cerraron automáticamente.
 
 ## <a name="next-steps"></a>Pasos siguientes
