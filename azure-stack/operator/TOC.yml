@@ -15,7 +15,13 @@
         - name: Lista de comprobación para aplicar actualizaciones
           href: azure-stack-release-notes-checklist.md
         - name: Actualizaciones de seguridad
-          href: azure-stack-release-notes-security-updates-1904.md
+          href: azure-stack-release-notes-security-updates-1905.md
+        - name: Actualización 1905
+          items:
+            - name: Notas de la versión
+              href: azure-stack-release-notes-1905.md
+            - name: Problemas conocidos
+              href: azure-stack-release-notes-known-issues-1905.md
         - name: Actualización 1904
           items:
             - name: Notas de la versión
@@ -26,8 +32,6 @@
           href: azure-stack-update-1903.md
         - name: Actualización 1902
           href: azure-stack-update-1902.md
-        - name: Actualización 1901
-          href: azure-stack-update-1901.md
 - name: Guías de inicio rápido
   expanded: true
   items:
@@ -391,14 +395,18 @@
           href: azure-stack-backup-best-practices.md
         - name: Referencia de copia de seguridad
           href: azure-stack-backup-reference.md
-    - name: Solución de problemas
+    - name: Obtención de soporte técnico
       items:
-        - name: Problemas conocidos
-          href: azure-stack-troubleshooting.md
-        - name: Diagnósticos de Azure Stack
-          href: azure-stack-diagnostics.md
-        - name: Validación de Azure Stack
-          href: azure-stack-diagnostic-test.md
+        - name: Ayuda y soporte técnico
+          href: azure-stack-help-and-support-overview.md
+        - name: Solución de problemas
+          items:
+            - name: Problemas conocidos
+              href: azure-stack-troubleshooting.md
+            - name: Diagnósticos de Azure Stack
+              href: azure-stack-diagnostics.md
+            - name: Validación de Azure Stack
+              href: azure-stack-diagnostic-test.md
 - name: Referencia
   items:
     - name: PowerShell de Azure Stack
