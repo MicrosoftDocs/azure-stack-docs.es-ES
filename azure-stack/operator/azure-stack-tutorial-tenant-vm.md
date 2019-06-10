@@ -17,12 +17,12 @@ ms.author: justinha
 ms.reviewer: unknown
 ms.lastreviewed: 09/11/2018
 ms.custom: mvc
-ms.openlocfilehash: b39eaf4365f74e59c6dd60db67fdadf1162cb91d
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: 3719019ebdbc6edad17c523a937d77d4f11bb02a
+ms.sourcegitcommit: cf9440cd2c76cc6a45b89aeead7b02a681c4628a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66268131"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66469222"
 ---
 # <a name="tutorial-make-virtual-machines-available-to-your-azure-stack-users"></a>Tutorial: Máquinas virtuales disponibles para los usuarios de Azure Stack
 
@@ -41,7 +41,7 @@ En Azure Stack, los servicios se prestan a los usuarios mediante planes, ofertas
 
 ![Planes, ofertas y suscripciones](media/azure-stack-key-features/image4.png)
 
-Para más información, vea [Características y conceptos clave de Azure Stack](azure-stack-overview.md).
+Para obtener más información, consulte [Introducción a los planes, ofertas, cuotas y suscripciones](azure-stack-plan-offer-quota-overview.md).
 
 ## <a name="create-an-offer"></a>Creación de una oferta
 
@@ -109,7 +109,7 @@ Ahora que ha creado una oferta, puede probarla. Inicie sesión como usuario, sus
 
 1. **Suscripción a una oferta**
 
-    a. Inicie sesión en el portal de usuarios con una cuenta de usuario y seleccione el icono **Obtener una suscripción**.
+   a. Inicie sesión en el portal de usuarios con una cuenta de usuario y seleccione el icono **Obtener una suscripción**.
    - En un sistema integrado, la dirección URL varía en función de la región y el nombre de dominio externo del operador y tendrá el formato https://portal.&lt;*región*&gt;.&lt;*FQDN*&gt;.
    - Si usa el Kit de desarrollo de Azure Stack, la dirección del portal es https://portal.local.azurestack.external.
 
@@ -128,7 +128,7 @@ Ahora que ha creado una oferta, puede probarla. Inicie sesión como usuario, sus
 
    Desde el portal de usuarios puede aprovisionar una máquina virtual mediante la nueva suscripción.
 
-    a. Inicie sesión en el portal de usuario con una cuenta de usuario.
+   a. Inicie sesión en el portal de usuario con una cuenta de usuario.
    - En un sistema integrado, la dirección URL varía en función de la región y el nombre de dominio externo del operador y tendrá el formato https://portal.&lt;*región*&gt;.&lt;*FQDN*&gt;.
      - Si usa el Kit de desarrollo de Azure Stack, la dirección del portal es https://portal.local.azurestack.external.
 
