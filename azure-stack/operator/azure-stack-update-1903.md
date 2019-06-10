@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/15/2019
+ms.date: 05/30/2019
 ms.author: sethm
 ms.reviewer: adepue
 ms.lastreviewed: 04/20/2019
-ms.openlocfilehash: 5e0b19e753380c519704f9b2064ff56245004896
-ms.sourcegitcommit: 87d93cdcdb6efb06e894f56c2f09cad594e1a8b3
+ms.openlocfilehash: 972b47e5c8787d41d918544f220e082b9ac2d69d
+ms.sourcegitcommit: a427e72e4f3b6cd6000b1459af9bbf221e049e08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65712319"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66506281"
 ---
 # <a name="azure-stack-1903-update"></a>Actualización de Azure Stack 1903
 
@@ -32,9 +32,17 @@ En este artículo se describe el contenido del paquete de actualización 1903. L
 > [!IMPORTANT]
 > Este paquete de actualización es únicamente para los sistemas integrados de Azure Stack. No la aplique al Kit de desarrollo de Azure Stack.
 
+## <a name="archived-release-notes"></a>Archivado de notas de la versión
+
+Puede ver [las notas de la versión de las versiones anteriores de Azure Stack en la Galería de TechNet](http://aka.ms/azsarchivedrelnotes). Estas notas de la versión archivadas se proporcionan únicamente con fines de referencia y no implican que estas versiones se admitan. Para obtener más ayuda, póngase en contacto con los servicios de asistencia al cliente de Microsoft.
+
 ## <a name="build-reference"></a>Referencia de compilación
 
 El número de compilación de la actualización 1903 de Azure Stack es **1.1903.0.35**.
+
+### <a name="update-type"></a>Tipo de actualización
+
+El tipo de compilación de la actualización 1903 de Azure Stack es **Rápida**. Para obtener más información sobre cómo actualizar los tipos de compilación, consulte el artículo [Administración de actualizaciones en Azure Stack](azure-stack-updates.md). Se espera que la actualización 1903 tarde unas 16 horas en completarse, pero el tiempo exacto puede variar. Esta aproximación del tiempo de ejecución es específica para la actualización 1903 y no se debe comparar con otras actualizaciones de Azure Stack.
 
 > [!IMPORTANT]
 > La carga de 1903 no incluye una versión de ASDK.
@@ -56,8 +64,6 @@ Las revisiones de Azure Stack solo son aplicables a los sistemas integrados de A
 - **1903**: [KB 4500638: revisión de Azure Stack 1.1903.2.39](https://support.microsoft.com/help/4500638)
 
 ## <a name="improvements"></a>Mejoras
-
-- La carga de la actualización 1903 contiene una actualización para los componentes de Azure Stack que no incluyen el sistema operativo subyacente que hospeda Azure Stack. Esto permite limitar determinadas actualizaciones a un ámbito específico. Como resultado, el tiempo esperado para completar la actualización 1903 es menor (aproximadamente 16 horas, pero el tiempo exacto puede variar). Esta disminución en el tiempo de ejecución es específica de la actualización 1903 y las actualizaciones posteriores pueden contener actualizaciones del sistema operativo, lo que implica diferentes tiempos de ejecución. Las actualizaciones futuras proporcionarán una orientación similar sobre el tiempo esperado que la actualización tardará en completarse, dependiendo de la carga incluida.
 
 - Se ha corregido un error relativo a las redes que impedía que los cambios realizados en el valor de **tiempo de espera de inactividad (minutos)** de una **dirección IP pública** surtieran efecto. Anteriormente, los cambios en este valor se ignoraban, por lo que, independientemente de los cambios realizados, el valor se establecía de forma predeterminada en 4 minutos. Este parámetro controla la cantidad de minutos para mantener una conexión TCP abierta sin que dependa del envío de mensajes de mantenimiento de los clientes. Tenga en cuenta que este error solo afectaba a las direcciones IP públicas de nivel de instancia, no a las direcciones IP públicas asignadas a un equilibrador de carga.
 
@@ -188,6 +194,8 @@ Los siguientes son problemas conocidos posteriores a la instalación de esta com
 
 - No se puede quitar un conjunto de escalado desde la hoja **Virtual Machine Scale Sets**. Como alternativa, seleccione el conjunto de escalado que quiere quitar y, a continuación, haga clic en el botón **Eliminar** del panel **Información general**.
 
+- La creación de VM en un conjunto de disponibilidad de 3 dominios de error y la creación de una instancia de conjunto de escalado de máquinas virtuales genera un error **FabricVmPlacementErrorUnsupportedFaultDomainSize** durante el proceso de actualización en un entorno de Azure Stack de 4 nodos. Se pueden crear VM únicas en un conjunto de disponibilidad con 2 dominios de error correctamente. Sin embargo, la creación de instancias del conjunto de escalado todavía no está disponible durante el proceso de actualización en una instancia de Azure Stack de 4 nodos.
+
 ### <a name="networking"></a>Redes
 
 <!-- 3239127 - IS, ASDK -->
@@ -217,7 +225,7 @@ Los siguientes son problemas conocidos posteriores a la instalación de esta com
 
 <!-- 2352906 - IS ASDK -->
 - Los inquilinos deben registrar el proveedor de recursos de almacenamiento antes de crear su primera instancia de Azure Functions en la suscripción.
-- Algunas experiencias de usuario del portal de inquilinos de App Service se rompen debido a una incompatibilidad con la el marco del portal en 1903; principalmente, la experiencia de usuario en las ranuras de implementación, las pruebas en producción y las extensiones de sitio. Para solucionar este problema, utilice el [módulo de PowerShell para Azure App Service](/azure/app-service/deploy-staging-slots#automate-with-powershell) o la [CLI de Azure](/cli/azure/webapp/deployment/slot?view=azure-cli-latest). La experiencia del portal se restaurará en la próxima versión de Azure App Service en Azure Stack 1.6 (Actualización 6).
+- Algunas experiencias de usuario del portal de inquilinos se rompen debido a una incompatibilidad con la el marco del portal en 1903; principalmente, la experiencia de usuario en las ranuras de implementación, las pruebas en producción y las extensiones de sitio. Para solucionar este problema, utilice el [módulo de PowerShell para Azure App Service](/azure/app-service/deploy-staging-slots#automate-with-powershell) o la [CLI de Azure](/cli/azure/webapp/deployment/slot?view=azure-cli-latest). La experiencia del portal se restaurará en la próxima versión de Azure App Service en Azure Stack 1.6 (Actualización 6).
 
 <!-- ### Usage -->
 

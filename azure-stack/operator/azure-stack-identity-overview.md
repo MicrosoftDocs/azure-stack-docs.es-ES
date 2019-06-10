@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/14/2019
+ms.date: 06/03/2019
 ms.author: patricka
 ms.reviewer: fiseraci
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: bd58611e08bf0b0de6808c9719311f904ea682ba
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: f57ded9df4fe799a5795ee541f7a03e650202aab
+ms.sourcegitcommit: 80775f5c5235147ae730dfc7e896675a9a79cdbe
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985254"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66459060"
 ---
 # <a name="overview-of-identity-for-azure-stack"></a>Información general sobre identidades en Azure Stack
 
@@ -60,7 +60,7 @@ El modo en que cree y administre usuarios y grupos depende de la solución de id
 
 En Azure Stack, las cuentas de usuario:
 
-- Se crean con el formato *nombre de usuario\@dominio*. Aunque AD FS asigna las cuentas de usuario a una instancia de Active Directory, AD FS no admite el uso del formato *\\\<dominio>\\\<alias>*.
+- Se crean con el formato *nombre de usuario\@dominio*. Aunque AD FS asigna las cuentas de usuario a una instancia de Active Directory, AD FS no admite el uso del formato *\\\<dominio>\\\<alias>* .
 - Se pueden configurar para usar autenticación multifactor.
 - Están restringidas al directorio donde primero se registran, que es el directorio de la organización.
 - Se pueden importar desde los directorios locales. Para más información, consulte [Integración de los directorios locales con Azure Active Directory](/azure/active-directory/connect/active-directory-aadconnect).
@@ -156,7 +156,7 @@ Para aplicaciones y usuarios, la arquitectura de Azure Stack se define en cuatro
 
 Para autenticarse con el proveedor de identidades y recibir un token JWT, debe tener la siguiente información:
 
-1. **Dirección URL del sistema de identidad (autoridad)**: dirección URL a través de la que se puede acceder al proveedor de identidades. Por ejemplo, *https:\//login.windows.net*.
+1. **Dirección URL del sistema de identidad (autoridad)** : dirección URL a través de la que se puede acceder al proveedor de identidades. Por ejemplo, *https:\//login.windows.net*.
 2. **Identificador URI del identificador de aplicación de Azure Resource Manager**: el identificador único de Azure Resource Manager que se registra en el proveedor de identidades. También es único para cada instalación de Azure Stack.
 3. **Credenciales**: la credencial que se usa para autenticarse con el proveedor de identidades.
 4. **Dirección URL de Azure Resource Manager**: la dirección URL es la ubicación del servicio Azure Resource Manager. Por ejemplo, *https:\//management.azure.com* o *https:\//management.local.azurestack.external*.

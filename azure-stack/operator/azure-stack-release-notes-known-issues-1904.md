@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/28/2019
+ms.date: 05/31/2019
 ms.author: sethm
 ms.reviewer: hectorl
-ms.lastreviewed: 05/28/2019
-ms.openlocfilehash: 9ebbdb19335db4f0c31d68c726f7b8c211d0f2e2
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.lastreviewed: 05/31/2019
+ms.openlocfilehash: 9b92e6e2e059f4b57742248672751111b504136c
+ms.sourcegitcommit: cf9440cd2c76cc6a45b89aeead7b02a681c4628a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66268331"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66469136"
 ---
 # <a name="azure-stack-1904-known-issues"></a>Problemas conocidos de Azure Stack 1904
 
@@ -43,7 +43,7 @@ En este artículo se enumeran los problemas conocidos de la versión de 1904 de 
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: Las dos suscripciones administrativas que se incluyeron con la versión 1804 no deberían usarse. Los tipos de suscripción son **suscripción de medición** y **suscripción de consumo**.
-- Corrección: Estas suscripciones se suspenderán a partir de la versión 1905 y, posteriormente, se eliminarán. Si tiene recursos que se ejecutan en estas dos suscripciones, vuelva a crearlos en las suscripciones de usuario anteriores a la versión 1905.
+- Corrección: Estas suscripciones se suspenderán a partir de la versión 1906 y, posteriormente, se eliminarán. Si tiene recursos que se ejecutan en estas dos suscripciones, vuelva a crearlos en las suscripciones de usuario anteriores a la versión 1906.
 - Repetición: Común
 
 ### <a name="subscription-resources"></a>Recursos de suscripción
@@ -60,10 +60,10 @@ En este artículo se enumeran los problemas conocidos de la versión de 1904 de 
 - Corrección: Use [PowerShell para verificar los permisos](/powershell/module/azurerm.resources/get-azurermroleassignment).
 - Repetición: Común
 
-
 ### <a name="docker-extension"></a>Extensión de Docker
+
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: En los portales de administrador y de usuario, si se busca "Docker", el elemento se devuelve de forma incorrecta. No está disponible en Azure Stack. Si se intenta crearlo, se muestra una hoja con una indicación de error.
+- Causa: En los portales de administrador y de usuario, si se busca **Docker**, el elemento se devuelve de forma incorrecta. No está disponible en Azure Stack. Si intenta crearlo, aparece un error.
 - Corrección: Sin mitigación.
 - Repetición: Común
 
@@ -144,12 +144,12 @@ El error se produce si habilita el diagnóstico de arranque en una VM, pero elim
 - Corrección: Vuelva a crear la cuenta de almacenamiento con el mismo nombre que usó anteriormente.
 - Repetición: Común
 
-### <a name="virtual-machine-scale-set"></a>Conjunto de escalado de máquinas virtuales
+### <a name="virtual-machine-scale-set"></a>Conjunto de escalado de máquina virtual
 
 #### <a name="centos"></a>CentOS
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: La experiencia de creación de conjuntos de escalado de máquinas virtuales (VMSS) proporciona la versión 7.2 basada en CentOS como una opción para la implementación. CentOS 7.2 no está disponible en Azure Stack.
+- Causa: La experiencia de creación de conjuntos de escalado de máquinas virtuales proporciona la versión 7.2 basada en CentOS como una opción para la implementación. CentOS 7.2 no está disponible en Azure Stack.
 - Corrección: Seleccione otro sistema operativo para la implementación o use una plantilla de Azure Resource Manager en la que se especifique otra imagen de CentOS que el operador haya descargado de Marketplace antes de la implementación.
 - Repetición: Común
 
@@ -159,6 +159,12 @@ El error se produce si habilita el diagnóstico de arranque en una VM, pero elim
 - Causa: No se puede quitar un conjunto de escalado desde la hoja **Virtual Machine Scale Sets**.
 - Corrección: Seleccione el conjunto de escalado que quiere quitar y, a continuación, haga clic en el botón **Eliminar** del panel **Información general**.
 - Repetición: Común
+
+#### <a name="create-failures-during-patch-and-update-on-4-node-azure-stack-environments"></a>Crear errores durante la revisión y actualización de entornos de Azure Stack de 4 nodos
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: La creación de VM en un conjunto de disponibilidad de 3 dominios de error y la creación de una instancia de conjunto de escalado de máquinas virtuales genera un error **FabricVmPlacementErrorUnsupportedFaultDomainSize** durante el proceso de actualización en un entorno de Azure Stack de 4 nodos.
+- Corrección: Se pueden crear VM únicas en un conjunto de disponibilidad con 2 dominios de error correctamente. Sin embargo, la creación de instancias del conjunto de escalado todavía no está disponible durante el proceso de actualización en una instancia de Azure Stack de 4 nodos.
 
 ### <a name="ubuntu-ssh-access"></a>Acceso a SSH en Ubuntu
 
@@ -196,6 +202,12 @@ El error se produce si habilita el diagnóstico de arranque en una VM, pero elim
   - El problema se ha corregido en la [última revisión de Azure Stack 1904](https://support.microsoft.com/help/4505688).
 - Repetición: Común
 
+### <a name="virtual-machine-scale-set-instance-view"></a>Vista de instancia del conjunto de escalado de máquinas virtuales
+
+- Aplicable a: Este problema se aplica a las versiones 1904 y 1905.
+- Causa: la hoja de la vista de la instancia de un conjunto de escalado situado en el portal de Azure Stack, en **Panel** > **Virtual Machine Scale Sets**  >  **AnyScaleSet: Instancias** > **AnyScaleSetInstance** no se puede cargar.
+- Corrección: Actualmente no hay ninguna corrección y estamos trabajando en una solución. Hasta entonces, use el cmdlet de la CLI `az vmss get-instance-view` para obtener la vista de instancia de un conjunto de escalado de máquinas virtuales.
+
 ## <a name="storage"></a>Storage
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
@@ -205,7 +217,7 @@ El error se produce si habilita el diagnóstico de arranque en una VM, pero elim
 ## <a name="app-service"></a>App Service
 
 - Los inquilinos deben registrar el proveedor de recursos de almacenamiento antes de crear su primera instancia de Azure Functions en la suscripción.
-- Algunas experiencias de usuario del portal de inquilinos se rompen debido a una incompatibilidad con la el marco del portal en 1903; principalmente, la experiencia de usuario en las ranuras de implementación, las pruebas en producción y las extensiones de sitio. Para solucionar este problema, utilice el [módulo de PowerShell para Azure App Service](/azure/app-service/deploy-staging-slots#automate-with-powershell) o la [CLI de Azure](/cli/azure/webapp/deployment/slot?view=azure-cli-latest). La experiencia del portal se restaurará en la próxima versión de Azure App Service en Azure Stack 1.6 (Actualización 6).
+- Algunas experiencias de usuario del portal de inquilinos se rompen debido a una incompatibilidad con la el marco del portal en 1903; principalmente, la experiencia de usuario en las ranuras de implementación, las pruebas en producción y las extensiones de sitio. Para solucionar este problema, utilice el [módulo de PowerShell para Azure App Service](/azure/app-service/deploy-staging-slots#automate-with-powershell) o la [CLI de Azure](/cli/azure/webapp/deployment/slot?view=azure-cli-latest). Para restaurar la experiencia del portal, actualice la implementación de [Azure App Service en Azure Stack a 1.6 (Actualización 6)](azure-stack-app-service-release-notes-update-six.md).
 
 <!-- ## Storage -->
 <!-- ## SQL and MySQL-->

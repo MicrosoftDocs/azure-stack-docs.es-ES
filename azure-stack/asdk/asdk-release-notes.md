@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/01/2019
+ms.date: 05/30/2019
 ms.author: sethm
 ms.reviewer: misainat
-ms.lastreviewed: 05/01/2019
-ms.openlocfilehash: 935f144ebbb40da66ac43fc8e9d5dfc7c3e3d0b6
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.lastreviewed: 05/30/2019
+ms.openlocfilehash: 8de4447cd30204d0d4e1611afd057a75dc7688da
+ms.sourcegitcommit: 2cd17b8e7352891d8b3eb827d732adf834b7693e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64983601"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66428687"
 ---
 # <a name="asdk-release-notes"></a>Notas de la versión del Kit de desarrollo de Azure Stack
 
@@ -37,6 +37,15 @@ Para estar al día de las novedades del ASDK, suscríbase a la [![RSS](./media/a
 - Para obtener una lista de las nuevas características de esta versión, consulte [esta sección](../operator/azure-stack-release-notes-1904.md#whats-in-this-update) de las notas de la versión de Azure Stack.
 
 ### <a name="fixed-and-known-issues"></a>Problemas conocidos y resueltos
+
+- Debido a un tiempo de espera de la entidad de servicio mientras se ejecutaba el script de registro, para [registrar el ASDK](asdk-register.md) correctamente, debe editar el script de PowerShell **RegisterWithAzure.psm1**. Haga lo siguiente:
+
+  1. En el equipo host de ASDK, abra el archivo **C:\AzureStack-Tools-master\Registration\RegisterWithAzure.psm1** en un editor con permisos elevados.
+  2. En la línea 1249, agregue un parámetro `-TimeoutInSeconds 1800` al final. Esto es necesario debido a un tiempo de espera de entidad de servicio al ejecutar el script de registro. Ahora, la línea 1249 debe tener un aspecto similar al siguiente:
+
+     ```powershell
+      $servicePrincipal = Invoke-Command -Session $PSSession -ScriptBlock { New-AzureBridgeServicePrincipal -RefreshToken $using:RefreshToken -AzureEnvironment $using:AzureEnvironmentName -TenantId $using:TenantId -TimeoutInSeconds 1800 }
+      ```
 
 - Se ha corregido el problema de conexión de VPN identificado [aquí, en la versión 1902](#known-issues).
 

@@ -5,18 +5,18 @@ services: azure-stack
 keywords: ''
 author: mattbriggs
 manager: femila
-ms.date: 05/16/2019
+ms.date: 06/04/2019
 ms.topic: article
 ms.service: azure-stack
 ms.author: mabrigg
 ms.reviewer: scottnap
-ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: 841e30367ded29e10c28573056f4a70361e28a9e
-ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
+ms.lastreviewed: 06/04/2019
+ms.openlocfilehash: de39645d1414fc852b98036e7071befcf5262cb1
+ms.sourcegitcommit: cf9440cd2c76cc6a45b89aeead7b02a681c4628a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782557"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66469180"
 ---
 # <a name="considerations-for-azure-stack-networking"></a>Consideraciones para las redes de Azure Stack
 
@@ -68,6 +68,7 @@ En este artículo se proporciona información general sobre las consideraciones 
 |  | Grupos de seguridad de la aplicación | Compatible | Todavía no se admite. |
 |  | Etiqueta de nombre DNS interno | Compatible | Todavía no se admite. |
 |  | Versión de dirección IP privada | Se admiten tanto IPv6 como IPv4. | Se admite solo IPv4. |
+|  | Dirección MAC estática | No compatible | No compatible. Cada sistema de Azure Stack usa el mismo grupo de direcciones MAC. |
 | Network Watcher | Funciones de supervisión de red de inquilinos de Network Watcher | Compatible | Todavía no se admite. |
 | CDN | Perfiles de Content Delivery Network | Compatible | Todavía no se admite. |
 | puerta de enlace de aplicaciones | Equilibrio de carga de nivel 7 | Compatible | Todavía no se admite. |

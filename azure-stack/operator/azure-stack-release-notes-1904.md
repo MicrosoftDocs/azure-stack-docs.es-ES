@@ -1,6 +1,6 @@
 ---
 title: Notas de la versión 1904 de Azure Stack | Microsoft Docs
-description: Obtenga información sobre la actualización 1904 de los sistemas integrados de Azure Stack, como novedades, problemas conocidos y dónde se puede descargar dicha actualización.
+description: Obtenga información sobre la actualización 1904 de los sistemas integrados de Azure Stack, como novedades, problemas conocidos y dónde se puede descargar dicha actualización y las notas de la versión archivadas de Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/22/2019
+ms.date: 05/30/2019
 ms.author: sethm
 ms.reviewer: ''
-ms.lastreviewed: 05/22/2019
-ms.openlocfilehash: 3bb69c9817eaa12f2a6fab0f20bc79f510a3c251
-ms.sourcegitcommit: 9f5157ce6b938d190ef9df5a2df4342266ca5545
+ms.lastreviewed: 05/30/2019
+ms.openlocfilehash: 8d9603184e824bff5efc2536b3c4a89fdd87d685
+ms.sourcegitcommit: a427e72e4f3b6cd6000b1459af9bbf221e049e08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66174349"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66506346"
 ---
 # <a name="azure-stack-1904-update"></a>Actualización 1904 de Azure Stack
 
@@ -34,6 +34,10 @@ En este artículo se describe el contenido del paquete de actualización 1904. 
 
 > [!IMPORTANT]  
 > Este paquete de actualización es únicamente para los sistemas integrados de Azure Stack. No la aplique al Kit de desarrollo de Azure Stack.
+
+## <a name="archived-release-notes"></a>Archivado de notas de la versión
+
+Puede ver [las notas de la versión de las versiones anteriores de Azure Stack en la Galería de TechNet](http://aka.ms/azsarchivedrelnotes). Estas notas de la versión archivadas se proporcionan únicamente con fines de referencia y no implican que estas versiones se admitan. Para obtener más ayuda, póngase en contacto con los servicios de asistencia al cliente de Microsoft.
 
 ## <a name="build-reference"></a>Referencia de compilación
 
@@ -208,4 +212,4 @@ Los clientes con sistemas que pueden acceder a Internet desde la red de infraest
 - Para más información sobre cómo aplicar actualizaciones con Azure Stack, consulte [Aplicación de actualizaciones en Azure Stack](azure-stack-apply-updates.md).
 - Para revisar la directiva de servicio de los sistemas integrados de Azure Stack y lo que debe hacer para mantener el sistema en un estado admitido, consulte [Directiva de servicio de Azure Stack](azure-stack-servicing-policy.md).  
 - Para usar el punto de conexión con privilegios (PEP) para supervisar y reanudar las actualizaciones, consulte [Supervisión de las actualizaciones en Azure Stack mediante el uso del punto de conexión con privilegios](azure-stack-monitor-update.md).  
-- Rellene la encuesta para proporcionar [comentarios sobre las notas de la versión](https://forms.microsoft.com).
+

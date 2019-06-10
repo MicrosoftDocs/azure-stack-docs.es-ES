@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/10/2019
+ms.date: 05/30/2019
 ms.author: sethm
 ms.reviewer: adepue
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 3a59470075e7903f354646be5c6ddb9fb0e5b301
-ms.sourcegitcommit: 426380a3a27954cd609ba52d1066d9d69f5267fe
+ms.openlocfilehash: 4a69ece2b97fca13a87819dce6e02e8971121944
+ms.sourcegitcommit: a427e72e4f3b6cd6000b1459af9bbf221e049e08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65532329"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66506306"
 ---
 # <a name="azure-stack-1902-update"></a>Actualización 1902 de Azure Stack
 
@@ -32,9 +32,17 @@ En este artículo se describe el contenido del paquete de actualización 1902. L
 > [!IMPORTANT]  
 > Este paquete de actualización es únicamente para los sistemas integrados de Azure Stack. No la aplique al Kit de desarrollo de Azure Stack.
 
+## <a name="archived-release-notes"></a>Archivado de notas de la versión
+
+Puede ver [las notas de la versión de las versiones anteriores de Azure Stack en la Galería de TechNet](http://aka.ms/azsarchivedrelnotes). Estas notas de la versión archivadas se proporcionan únicamente con fines de referencia y no implican que estas versiones se admitan. Para obtener más ayuda, póngase en contacto con los servicios de asistencia al cliente de Microsoft.
+
 ## <a name="build-reference"></a>Referencia de compilación
 
 El número de compilación de la actualización 1902 de Azure Stack es **1.1902.0.69**.
+
+### <a name="update-type"></a>Tipo de actualización
+
+El tipo de compilación de la actualización 1902 de Azure Stack es **Completa**. Para obtener más información sobre cómo actualizar los tipos de compilación, consulte el artículo [Administración de actualizaciones en Azure Stack](azure-stack-updates.md).
 
 ## <a name="hotfixes"></a>Revisiones
 
@@ -220,7 +228,7 @@ Los siguientes son problemas conocidos posteriores a la instalación de esta com
    El error se produce si habilita el diagnóstico de arranque en una VM, pero elimina la cuenta de almacenamiento de diagnósticos de arranque. Para solucionar este problema, vuelva a crear la cuenta de almacenamiento con el mismo nombre que usó anteriormente.
 
 <!-- 2967447 - IS, ASDK, to be fixed in 1902 -->
-- La experiencia de creación de conjuntos de escalado de máquinas virtuales (VMSS) proporciona la versión 7.2 basada en CentOS como una opción para la implementación. Como esa imagen no está disponible en Azure Stack, seleccione otro sistema operativo para la implementación o use una plantilla de Azure Resource Manager en la que se especifique otra imagen de CentOS que el operador haya descargado de Marketplace antes de la implementación.  
+- La experiencia de creación de conjuntos de escalado de máquinas virtuales proporciona la versión 7.2 basada en CentOS como una opción para la implementación. Como esa imagen no está disponible en Azure Stack, seleccione otro sistema operativo para la implementación o use una plantilla de Azure Resource Manager en la que se especifique otra imagen de CentOS que el operador haya descargado de Marketplace antes de la implementación.  
 
 <!-- TBD - IS ASDK --> 
 - Después de aplicar la actualización 1902, se pueden producir los siguientes problemas al implementar VM con Managed Disks:
@@ -233,6 +241,8 @@ Los siguientes son problemas conocidos posteriores a la instalación de esta com
 - Una máquina virtual de Ubuntu 18.04 creada con la autorización de SSH habilitada no le permitirá usar las claves SSH para iniciar sesión. Como alternativa, utilice el acceso a la VM para la extensión de Linux a fin de implementar las claves SSH después del aprovisionamiento o utilice la autenticación basada en contraseña.
 
 - No se puede quitar un conjunto de escalado desde la hoja **Virtual Machine Scale Sets**. Como alternativa, seleccione el conjunto de escalado que quiere quitar y, a continuación, haga clic en el botón **Eliminar** del panel **Información general**.
+
+- La creación de VM en un conjunto de disponibilidad de 3 dominios de error y la creación de una instancia de conjunto de escalado de máquinas virtuales genera un error **FabricVmPlacementErrorUnsupportedFaultDomainSize** durante el proceso de actualización en un entorno de Azure Stack de 4 nodos. Se pueden crear VM únicas en un conjunto de disponibilidad con 2 dominios de error correctamente. Sin embargo, la creación de instancias del conjunto de escalado todavía no está disponible durante el proceso de actualización en una instancia de Azure Stack de 4 nodos.
 
 ### <a name="networking"></a>Redes  
 
@@ -256,6 +266,12 @@ Los siguientes son problemas conocidos posteriores a la instalación de esta com
 
 <!-- 3203799 - IS, ASDK -->
 - Actualmente, Azure Stack no permite conectar más de 4 interfaces de red (NIC) a una instancia de VM, independientemente del tamaño de la instancia.
+
+- En el portal de usuarios, si intenta agregar un **grupo de back-end** a una **instancia de Load Balancer**, se produce un error en la operación con el mensaje **Failed to update Load Balancer...** (No se pudo actualizar Load Balancer...).  Para solucionar este problema, use PowerShell, la CLI o una plantilla de Azure Resource Manager para asociar el grupo de back-end a un recurso del equilibrador de carga.
+
+- En el portal de usuarios, si intenta crear una **regla NAT de entrada** para una instancia de **Load Balancer**, se produce un error en la operación con el mensaje **Failed to update Load Balancer...** (No se pudo actualizar Load Balancer...).  Para solucionar este problema, use PowerShell, la CLI o una plantilla de Azure Resource Manager para asociar el grupo de back-end a un recurso del equilibrador de carga.
+
+- En el portal de usuarios, la ventana **Crear equilibrador de carga** muestra una opción para crear una SKU **estándar** del equilibrador de carga. En Azure Stack no se admite esta opción.
 
 <!-- ### SQL and MySQL-->
 

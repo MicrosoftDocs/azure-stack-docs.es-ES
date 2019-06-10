@@ -11,22 +11,23 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/26/2019
+ms.date: 05/31/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 02/26/2019
-ms.openlocfilehash: 52613c394d7a1caeef42a85f1dd4d5b645f5e8e4
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: 6a5ef529d2eabf8039be1da6c53da907c0b7aaaf
+ms.sourcegitcommit: 80775f5c5235147ae730dfc7e896675a9a79cdbe
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66267942"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66459046"
 ---
 # <a name="frequently-asked-questions-in-azure-stack-usage-api"></a>Preguntas frecuentes sobre la API de uso de Azure Stack
 
-En este artículo se responde a algunas preguntas frecuentes sobre la API de uso de Azure Stack.
+En este artículo se responden algunas preguntas frecuentes sobre la API de uso de Azure Stack.
 
 ## <a name="what-meter-ids-can-i-see"></a>¿Qué identificadores de medidor veo?
+
 Se informa del uso para los siguientes proveedores de recursos:
 
 ### <a name="network"></a>Red
@@ -76,7 +77,7 @@ Se informa del uso para los siguientes proveedores de recursos:
 **Id. de medidor**: 1B8C1DEC-EE42-414B-AA36-6229CF199370  
 **Nombre de medidor:** : TableDataTransOut  
 **Unidad**: Salida en GB  
-**Notas**: Salida de datos de Table service en GB  
+**Notas**: Salida de datos de Table service en GB.
   
 **Id. de medidor**: 43DAF82B-4618-444A-B994-40C23F7CD438  
 **Nombre de medidor:** : BlobTransactions  
@@ -108,7 +109,7 @@ Se informa del uso para los siguientes proveedores de recursos:
 **Unidad**: Salida en GB  
 **Notas**: Salida de datos de Queue service en GB  
 
-### <a name="compute"></a>Proceso 
+### <a name="compute"></a>Proceso
   
 **Id. de medidor**: FAB6EB84-500B-4A09-A8CA-7358F8BBAEA5  
 **Nombre de medidor:** : Horas de tamaño de la máquina virtual base  
@@ -123,7 +124,7 @@ Se informa del uso para los siguientes proveedores de recursos:
 **Id. de medidor**: 6DAB500F-A4FD-49C4-956D-229BB9C8C793  
 **Nombre de medidor:** : Horas de tamaño de la máquina virtual  
 **Unidad**: Horas de la máquina virtual  
-**Notas**: Captura de la máquina virtual base y Windows. No se ajusta para los núcleos.  
+**Notas**: Captura de VM base y Windows. No se ajusta para los núcleos.  
   
 ### <a name="managed-disks"></a>Managed Disks
 
@@ -385,13 +386,14 @@ Se informa del uso para los siguientes proveedores de recursos:
 **Unidad**: GB  
 **Notas**: Bytes de respuesta de solicitud de entrada total + bytes de solicitud de salida total + bytes de respuesta de solicitud FTP de entrada total + bytes de respuesta de solicitud de implementación web de entrada total.  
   
-
 ## <a name="how-do-the-azure-stack-usage-apis-compare-to-the-azure-usage-apihttpsdocsmicrosoftcomazurebillingbilling-usage-rate-card-overviewazure-resource-usage-api-preview-currently-in-public-preview"></a>¿Cómo se comparan las API de uso de Azure Stack con la [API de uso de Azure](https://docs.microsoft.com/azure/billing/billing-usage-rate-card-overview#azure-resource-usage-api-preview) (actualmente en versión preliminar pública)?
-* La API de uso de inquilinos es coherente con la API de Azure, con una excepción: actualmente, la marca *showDetails* no se admite en Azure Stack.
-* La API de uso de proveedor solo se aplica a Azure Stack.
-* Actualmente, la [API RateCard](https://docs.microsoft.com/azure/billing/billing-usage-rate-card-overview#azure-resource-ratecard-api-preview) disponible en Azure no se encuentra disponible en Azure Stack.
+
+* La API de uso de inquilinos es coherente con la API de Azure, con una excepción: actualmente, la marca *showDetails* no se admite en Azure Stack.
+* La API de uso del proveedor solo se aplica a Azure Stack.
+* Actualmente, la [API RateCard](/azure/billing/billing-usage-rate-card-overview#azure-resource-ratecard-api-preview) disponible en Azure no se encuentra disponible en Azure Stack.
 
 ## <a name="what-is-the-difference-between-usage-time-and-reported-time"></a>¿Cuál es la diferencia entre el tiempo notificado y el tiempo de uso?
+
 Los informes de datos de uso tienen dos valores de tiempo principales:
 
 * **Hora de notificación**. La hora cuando el evento de uso entró en el sistema de uso
@@ -402,6 +404,7 @@ Puede que vea una discrepancia en los valores de tiempo de uso y tiempo notifica
 Actualmente, solo se puede consultar mediante el *tiempo notificado*.
 
 ## <a name="what-do-these-usage-api-error-codes-mean"></a>¿Qué significan estos códigos de error de la API de uso?
+
 | **Código de estado HTTP** | **Código de error** | **Descripción** |
 | --- | --- | --- |
 | 400/Solicitud incorrecta |*NoApiVersion* |No se proporcionó el parámetro de consulta de la *api-version*. |
@@ -417,8 +420,7 @@ Actualmente, solo se puede consultar mediante el *tiempo notificado*.
 Las VM en ejecución y detenidas generan datos de uso. La desasignación es coherente con Azure y necesaria para detener la emisión de datos de uso. En el caso de que el portal no esté disponible, pero el proveedor de recursos de proceso aún se esté ejecutando, se emitirá el uso.
 
 ## <a name="next-steps"></a>Pasos siguientes
-[Facturación y contracargo del cliente en Azure Stack](azure-stack-billing-and-chargeback.md)
 
-[API de uso de recursos del proveedor](azure-stack-provider-resource-api.md)
-
-[API de uso de recursos del inquilino](azure-stack-tenant-resource-usage-api.md)
+* [Facturación y contracargo del cliente en Azure Stack](azure-stack-billing-and-chargeback.md)
+* [API de uso de recursos del proveedor](azure-stack-provider-resource-api.md)
+* [API de uso de recursos del inquilino](azure-stack-tenant-resource-usage-api.md)

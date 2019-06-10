@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/16/2019
+ms.date: 06/04/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
-ms.lastreviewed: 01/22/2019
-ms.openlocfilehash: 797e49f82938888776b2685ab44add281b730943
-ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
+ms.lastreviewed: 06/04/2019
+ms.openlocfilehash: bfe18e0aa59f81f614ae00057b2c1f287b1257da
+ms.sourcegitcommit: cf9440cd2c76cc6a45b89aeead7b02a681c4628a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782407"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66469290"
 ---
 # <a name="replace-a-physical-disk-in-azure-stack"></a>Reemplazar un disco físico en Azure Stack
 
@@ -50,10 +50,37 @@ Siga las instrucciones de FRU del fabricante de hardware del OEM para reemplazar
 Para evitar el uso de un disco no compatible en un sistema integrado, el sistema bloquea los discos que no son compatibles con el proveedor. Si intenta usar un disco no compatible, una nueva alerta le indica que un disco se ha puesto en cuarentena debido a un modelo no admitido o al firmware.
 
 Después de reemplazar el disco, Azure Stack descubre automáticamente el nuevo disco e inicia el proceso de reparación del disco virtual.
+
+## <a name="check-the-status-of-virtual-disk-repair-using-azure-stack-powershell"></a>Comprobar el estado de reparación del disco virtual mediante PowerShell de Azure Stack
+
+Después de reemplazar el disco, puede supervisar el estado de mantenimiento del disco virtual y el progreso del trabajo de reparación mediante PowerShell de Azure Stack.
+
+1. Asegúrese de que tiene instalado PowerShell de Azure Stack. Para más información, consulte [Instalación de PowerShell de Azure Stack](azure-stack-powershell-install.md).
+2. Conéctese a Azure Stack con PowerShell como operador. Para obtener más información, vea [Configuración del entorno de PowerShell de Azure Stack](azure-stack-powershell-configure-admin.md).
+3. Ejecute los siguientes cmdlets para comprobar el estado del disco virtual y el estado de reparación:
+    ```powershell  
+    $scaleunit=Get-AzsScaleUnit
+    $StorageSubSystem=Get-AzsStorageSubSystem -ScaleUnit $scaleunit.Name
+    Get-AzsVolume -StorageSubSystem $StorageSubSystem.Name -ScaleUnit $scaleunit.name | Select-Object VolumeLabel, OperationalStatus, RepairStatus
+    ```
+
+    ![Estado de volúmenes de Azure Stack](media/azure-stack-replace-disk/get-azure-stack-volumes-health.png)
+
+4. Valide el estado del sistema de Azure Stack. Para obtener instrucciones, consulte [Validación del estado del sistema de Azure Stack](azure-stack-diagnostic-test.md).
+5. Si quiere, puede ejecutar el siguiente comando para comprobar el estado del disco físico reemplazado.
+
+```powershell  
+$scaleunit=Get-AzsScaleUnit
+$StorageSubSystem=Get-AzsStorageSubSystem -ScaleUnit $scaleunit.Name
+
+Get-AzsDrive -StorageSubSystem $StorageSubSystem.Name -ScaleUnit $scaleunit.name | Format-Table Storagenode, Healthstatus, PhysicalLocation, Model, MediaType,  CapacityGB, CanPool, CannotPoolReason
+```
+
+![Discos físicos reemplazados en Azure Stack](media/azure-stack-replace-disk/get-azure-stack-volumes-health.png)
+
+## <a name="check-the-status-of-virtual-disk-repair-using-the-privileged-endpoint"></a>Comprobar el estado de la reparación del disco virtual mediante el punto de conexión con privilegios
  
-## <a name="check-the-status-of-virtual-disk-repair"></a>Comprobar el estado de reparación del disco virtual
- 
- Después de reemplazar el disco, puede supervisar el estado de mantenimiento del disco virtual y el progreso del trabajo de reparación con el punto de conexión con privilegios. Siga estos pasos desde cualquier equipo que tenga conectividad de red con el punto de conexión con privilegios.
+Después de reemplazar el disco, puede supervisar el estado de mantenimiento del disco virtual y el progreso del trabajo de reparación con el punto de conexión con privilegios. Siga estos pasos desde cualquier equipo que tenga conectividad de red con el punto de conexión con privilegios.
 
 1. Abra una sesión de Windows PowerShell y conéctese al punto de conexión con privilegios.
     ```powershell
@@ -74,7 +101,10 @@ Después de reemplazar el disco, Azure Stack descubre automáticamente el nuevo 
     ```
       ![Salida de PowerShell del comando Get-StorageJob](media/azure-stack-replace-disk/GetStorageJobOutput.png)
 
-## <a name="troubleshoot-virtual-disk-repair"></a>Solución de problemas de la reparación de disco
+4. Valide el estado del sistema de Azure Stack. Para obtener instrucciones, consulte [Validación del estado del sistema de Azure Stack](azure-stack-diagnostic-test.md).
+
+
+## <a name="troubleshoot-virtual-disk-repair-using-the-privileged-endpoint"></a>Solucionar problemas de reparación del disco virtual mediante el punto de conexión con privilegios
 
 Si el trabajo de reparación del disco virtual parece que no avanza, ejecute el siguiente comando para reiniciar el trabajo:
   ```powershell

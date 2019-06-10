@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/09/2019
+ms.date: 05/31/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: ca474c9addeec3b3b6fcaad8db55bc40a148bb8f
-ms.sourcegitcommit: c755c7eac0f871960f9290591421cf5990b9e734
+ms.openlocfilehash: d6f77483730c9609ad9750da9b11f62de2874ff2
+ms.sourcegitcommit: 07cc716d97bf484c7260eb165ae205ae25e09589
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65506097"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453440"
 ---
 # <a name="usage-reporting-infrastructure-for-cloud-service-providers"></a>Infraestructura de informes de uso para proveedores de servicios en la nube
 
@@ -34,7 +34,7 @@ Hay algunas diferencias entre cómo los servicios están valorados en Azure Stac
 
 Puede informarse sobre los medidores de Azure Stack utilizados en Commerce y sus precios en el centro de partners, de la misma manera que lo haría para los servicios de Azure:
 
-1. En el centro de partners, vaya al **menú del panel** > **Pricing and offers** (Precios y ofertas).
+1. En el Centro de partners, vaya al **menú del panel**, seleccione **Vender** y, a continuación, seleccione **Precios y ofertas**.
 2. En **Usage-based services** (Servicios basados en uso), seleccione **Current** (Actual).
 3. Abra la hoja de cálculo **Azure in Global CSP price list** (Lista de precios de Azure en CSP global).
 4. Filtre por **Region = Azure Stack** (Región = Azure Stack).

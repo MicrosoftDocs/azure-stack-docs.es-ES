@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/12/2019
+ms.date: 06/04/2019
 ms.author: mabrigg
 ms.reviewer: wamota
-ms.lastreviewed: 08/30/2018
-ms.openlocfilehash: a839faa7ec5a93a506ad967f3449ee1788f1a21a
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.lastreviewed: 06/04/2019
+ms.openlocfilehash: e9c373ebaa6452c57acad866c66c8b3d5ab0c5ed
+ms.sourcegitcommit: cf9440cd2c76cc6a45b89aeead7b02a681c4628a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618498"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66469174"
 ---
 # <a name="network-connectivity"></a>Conectividad de red
 En este artículo se ofrece información sobre la infraestructura de red de Azure Stack que le ayudará decidir cuál es la mejor forma de integrar Azure Stack en su entorno de red existente. 
@@ -30,7 +30,7 @@ En este artículo se ofrece información sobre la infraestructura de red de Azur
 > Para resolver nombres DNS externos de Azure Stack (por ejemplo, www\.bing.com), deberá proporcionar servidores DNS a fin de reenviar las solicitudes DNS. Para más información acerca de los requisitos de DNS de Azure Stack, consulte [Integración del centro de datos de Azure Stack: DNS](azure-stack-integrate-dns.md).
 
 ## <a name="physical-network-design"></a>Diseño de la red física
-La solución Azure Stack requiere una infraestructura física resistente y de alta disponibilidad para admitir sus operaciones y servicios. Los vínculos superiores desde ToR para conmutadores de borde se limitan a medios SFP+ o SFP28 y velocidades de 1 GB, 10 GB o 25 GB. Póngase en contacto con su proveedor de hardware del fabricante de equipos originales (OEM) para obtener información sobre la disponibilidad. El siguiente diagrama presenta nuestro diseño recomendado:
+La solución Azure Stack requiere una infraestructura física resistente y de alta disponibilidad para admitir sus operaciones y servicios. Los vínculos superiores desde ToR para conmutadores de perímetro se limitan a medios SFP+ o SFP28 y velocidades de 1 GB, 10 GB o 25 GB. Póngase en contacto con su proveedor de hardware del fabricante de equipos originales (OEM) para obtener información sobre la disponibilidad. El siguiente diagrama presenta nuestro diseño recomendado:
 
 ![Diseño de red de Azure Stack recomendado](media/azure-stack-network/recommended-design.png)
 
@@ -78,12 +78,28 @@ Esta red /26 es la subred que contiene las subredes IP /30 (2 IP de host) punto 
 Esta red /29 (6 IP de host) está dedicada a conectar los puertos de administración de los conmutadores. Permite el acceso fuera de banda para la implementación, administración y solución de problemas. Se calcula a partir de la red de infraestructura de conmutadores mencionada anteriormente.
 
 ## <a name="publish-azure-stack-services"></a>Publicar servicios de Azure Stack
-Debe poner disponibles los servicios de Azure Stack para los usuarios externos de Azure Stack. Azure Stack configura varios puntos de conexión para sus roles de infraestructura. Estos puntos de conexión se asignan a VIP desde el grupo de direcciones IP públicas. Se crea una entrada DNS para cada punto de conexión de la zona DNS externa, que se ha especificado durante la implementación. Por ejemplo, el portal de usuarios se asigna a la entrada de host de DNS de portal.*&lt;region>.&lt;fqdn>*.
+Debe poner disponibles los servicios de Azure Stack para los usuarios externos de Azure Stack. Azure Stack configura varios puntos de conexión para sus roles de infraestructura. Estos puntos de conexión se asignan a VIP desde el grupo de direcciones IP públicas. Se crea una entrada DNS para cada punto de conexión de la zona DNS externa, que se ha especificado durante la implementación. Por ejemplo, el portal de usuarios se asigna a la entrada de host de DNS de portal. *&lt;region>.&lt;fqdn>* .
 
 ### <a name="ports-and-urls"></a>Puertos y direcciones URL
 Para que los servicios de Azure Stack (como los portales, Azure Resource Manager, DNS, etc.) estén disponible para las redes externas, debe permitir tráfico entrante en estos puntos de conexión para las direcciones URL, puertos y protocolos específicos.
  
 En una implementación en la que un proxy transparente establece un vínculo superior a un servidor proxy tradicional, debe permitir puertos y direcciones URL concretos para la comunicación [entrante](azure-stack-integrate-endpoints.md#ports-and-protocols-inbound) y [saliente](azure-stack-integrate-endpoints.md#ports-and-urls-outbound). Aquí se incluyen puertos y direcciones URL de identidad, productos de Marketplace, revisiones y actualizaciones y datos de uso.
+
+### <a name="mac-address-pool"></a>Grupo de direcciones MAC
+
+Azure Stack usa un grupo de direcciones MAC estáticas para generar y asignar una dirección MAC a máquinas virtuales automáticamente.
+Este grupo de direcciones MAC se generan automáticamente durante la implementación. Se usa el intervalo siguiente:
+
+- StartMacAddress: 00-1D-D8-B7-00-00
+- EndMacAddress : 00-1D-D8-F4-FF-FF
+
+> [!Note]  
+> Este grupo de direcciones MAC es el mismo en todos los sistemas de Azure Stack y no se puede configurar.
+
+En función de cómo se conectan las redes virtuales con las redes corporativas existentes, cabe esperar que haya direcciones MAC duplicadas de máquinas virtuales.
+
+Para obtener más información sobre el uso de grupos de direcciones MAC, use el cmdlet [Get AzsMacAddressPool](https://docs.microsoft.com/powershell/module/azs.fabric.admin/get-azsmacaddresspool) en el módulo de PowerShell de administrador de Azure Stack.
+
 
 ## <a name="next-steps"></a>Pasos siguientes
 [Conectividad de borde](azure-stack-border-connectivity.md)
