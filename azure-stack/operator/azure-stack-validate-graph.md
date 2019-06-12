@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/28/2019
+ms.date: 06/10/2019
 ms.author: patricka
 ms.reviewer: jerskine
-ms.lastreviewed: 01/28/2019
-ms.openlocfilehash: a34d070e5e26113216fe8a5fd598b0b5e27687f2
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.lastreviewed: 06/10/2019
+ms.openlocfilehash: 75943b3259db736a3dfcd4b30b76f434eaf19111
+ms.sourcegitcommit: af63214919e798901399fdffef09650de4176956
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64984537"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66828432"
 ---
 # <a name="validate-graph-integration-for-azure-stack"></a>Validar la integración de Graph para Azure Stack
 

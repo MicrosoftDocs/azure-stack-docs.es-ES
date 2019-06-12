@@ -16,12 +16,12 @@ ms.date: 05/20/2019
 ms.author: patricka
 ms.reviewer: thoroet
 ms.lastreviewed: 09/17/2018
-ms.openlocfilehash: 83a927cd0198798b4b1beaf8b84ed0b7ad2a11a0
-ms.sourcegitcommit: 914daff43ae0f0fc6673a06dfe2d42d9b4fbab48
+ms.openlocfilehash: 70151d7793ef1f58b544517cecb7aa53bf5b3041
+ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66043107"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66691404"
 ---
 # <a name="add-a-new-azure-stack-tenant-account-in-azure-active-directory"></a>Adición de una nueva cuenta de inquilino de Azure Stack en Azure Active Directory
 
@@ -43,8 +43,8 @@ Debe tener una suscripción de Azure para usar el Portal de Azure.
 
    - **Nombre (obligatorio).** Nombre y apellidos del nuevo usuario. Por ejemplo, Mary Parker.
    - **Nombre de usuario (obligatorio).** Nombre de usuario del nuevo usuario. Por ejemplo, mary@contoso.com.
-       La parte de dominio del nombre de usuario debe usar el nombre de dominio predeterminado inicial <_nombre de dominio_>.onmicrosoft.com o un nombre de dominio personalizado, como contoso.com. Para más información sobre cómo crear un nombre de dominio personalizado, [Incorporación de un nombre de dominio personalizado a Azure Active Directory]((/azure/active-directory/fundamentals/add-custom-domain).
-   - **Perfil.** Si quiere, puede agregar más información sobre el usuario. También puede agregar información del usuario posteriormente. Para más información acerca de cómo agregar información de usuario, consulte [Incorporación o modificación de información del perfil de usuario]((/azure/active-directory/fundamentals/active-directory-users-profile-azure-portal).
+       La parte de dominio del nombre de usuario debe usar el nombre de dominio predeterminado inicial <_nombre de dominio_>.onmicrosoft.com o un nombre de dominio personalizado, como contoso.com. Para obtener más información sobre cómo crear un nombre de dominio personalizado, vea [Incorporación de un nombre de dominio personalizado a Azure Active Directory](/azure/active-directory/fundamentals/add-custom-domain).
+   - **Perfil.** Si quiere, puede agregar más información sobre el usuario. También puede agregar información del usuario posteriormente. Para obtener más información sobre cómo agregar información de usuario, vea [Incorporación o modificación de la información del perfil de usuario](/azure/active-directory/fundamentals/active-directory-users-profile-azure-portal).
    - **Rol del directorio.**  elija **Usuario**.
 
 5. Active **Mostrar contraseña** y copie la contraseña generada automáticamente proporcionada en el cuadro **Contraseña**. Necesitará esta contraseña para el proceso inicial de inicio de sesión.

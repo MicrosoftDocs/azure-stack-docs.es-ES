@@ -16,12 +16,12 @@ ms.date: 05/08/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 10/10/2018
-ms.openlocfilehash: 6d930c99890f8cf0be7b2a47199772c58a10b34d
-ms.sourcegitcommit: 4e0b450c91c6515794b663a39f9a4b8b49999918
+ms.openlocfilehash: aac9bb8edce4b15d3d058cdb3b6cc6e23aa58493
+ms.sourcegitcommit: 23816ec68f67f3ac51f78de925b7631590743a29
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66411472"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66835008"
 ---
 # <a name="post-asdk-installation-configuration-tasks"></a>Tareas de configuración posteriores a la instalación de ASDK
 
@@ -146,28 +146,6 @@ Las pruebas tardarán algunos minutos en completarse. Si la instalación no se r
 ![test-azurestack](media/asdk-post-deploy/test-azurestack.png)
 
 Si se produjo un error, siga los pasos de la solución de problemas para obtener ayuda.
-
-## <a name="reset-the-password-expiration-policy"></a>Restablecimiento de la directiva de expiración de contraseñas
-
-Para asegurarse de que la contraseña del host del kit de desarrollo no expire antes de que termine el período de evaluación, siga estos pasos después de implementar ASDK.
-
-### <a name="to-change-the-password-expiration-policy-from-powershell"></a>Para cambiar la directiva de expiración de contraseña desde Powershell
-
-En una consola de Powershell con privilegios elevados, ejecute el comando:
-
-```powershell
-Set-ADDefaultDomainPasswordPolicy -MaxPasswordAge 180.00:00:00 -Identity azurestack.local
-```
-
-### <a name="to-change-the-password-expiration-policy-manually"></a>Para cambiar la directiva de expiración de contraseña manualmente
-
-1. En el host del kit de desarrollo, abra **Administración de directivas de grupo** (GPMC.MMC) y vaya a **Administración de directivas de grupo** - **Bosque: azurestack.local** - **Dominios** - **azurestack.local**.
-2. Haga clic con el botón derecho en **Directiva predeterminada de dominio**  y, después, haga clic en **Editar**.
-3. En el Editor de administración de directivas de grupo, vaya a **Configuración del equipo** - **Directivas** - **Configuración de Windows** - **Configuración de seguridad** - **Directivas de cuenta** - **Directiva de contraseñas**.
-4. En el panel derecho, haga doble clic en **Vigencia máxima de la contraseña**.
-5. En el cuadro de diálogo **Maximum password age Properties** (Propiedades de Vigencia máxima de la contraseña), cambie el valor **Password will expire in** (La contraseña expirará en) a **180** y, después, haga clic en **Aceptar**.
-
-![Consola de administración de directivas de grupo](media/asdk-post-deploy/gpmc.png)
 
 ## <a name="enable-multi-tenancy"></a>Habilitación de servicios multiinquilino
 

@@ -13,12 +13,12 @@ ms.workload: na
 ms.date: 05/17/2019
 ms.author: patricka
 ms.lastreviewed: 05/17/2019
-ms.openlocfilehash: 57c5547c37fee58b37f8386983d43556ed0fd515
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: b08d2b59653b099b0cd0a314347ea2667fa42ca8
+ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66268791"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66691304"
 ---
 # <a name="provide-applications-access-to-azure-stack"></a>Proporcionar a las aplicaciones acceso a Azure Stack
 
@@ -45,7 +45,7 @@ Una vez que haya creado la entidad de servicio, se usa un conjunto de pasos comu
 
 ## <a name="manage-service-principal-for-azure-ad"></a>Administración de una entidad de servicio para Azure AD
 
-Si ha implementado Azure Stack con Azure Active Directory (Azure AD) como servicio de administración de identidades, puede crear entidades de servicio igual que haría para Azure. En este tema se muestra cómo realizar estos pasos a través del portal. Antes de comenzar, asegúrese de que tiene los [permisos obligatorios de Azure AD]((/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions).
+Si ha implementado Azure Stack con Azure Active Directory (Azure AD) como servicio de administración de identidades, puede crear entidades de servicio igual que haría para Azure. En este tema se muestra cómo realizar estos pasos a través del portal. Compruebe que tiene los [permisos de Azure AD necesarios](/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions) antes de comenzar.
 
 ### <a name="create-service-principal"></a>Creación de una entidad de servicio
 
@@ -181,7 +181,7 @@ Se requiere la siguiente información como entrada para los parámetros de autom
 
 2. Una vez finalizada la automatización, esta muestra los detalles necesarios para usar el SPN. Se recomienda guardar los resultados para su uso posterior.
 
-   Por ejemplo: 
+   Por ejemplo:
 
    ```shell
    ApplicationIdentifier : S-1-5-21-1512385356-3796245103-1243299919-1356
@@ -362,7 +362,7 @@ Se requiere la siguiente información como entrada para los parámetros de autom
 
 ## <a name="assign-a-role"></a>Asignar un rol
 
-Para acceder a los recursos de la suscripción, debe asignarle a la aplicación un rol. Decida qué rol representa los permisos adecuados para la aplicación. Para más información sobre los roles disponibles, consulte [RBAC: roles integrados]((/azure/role-based-access-control/built-in-roles).
+Para acceder a los recursos de la suscripción, debe asignarle a la aplicación un rol. Decida qué rol representa los permisos adecuados para la aplicación. Para obtener más información sobre los roles disponibles, vea [RBAC: Roles integrados](/azure/role-based-access-control/built-in-roles).
 
 Puede establecer el ámbito en el nivel de suscripción, grupo de recursos o recurso. Los permisos se heredan en los niveles inferiores del ámbito. Por ejemplo, el hecho de agregar una aplicación al rol Lector para un grupo de recursos significa que esta puede leer el grupo de recursos y los recursos que contenga.
 

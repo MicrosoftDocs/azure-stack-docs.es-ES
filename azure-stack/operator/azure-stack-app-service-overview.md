@@ -15,12 +15,12 @@ ms.date: 03/11/2019
 ms.author: mabrigg
 ms.reviewer: anwestg
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: fcf2e977bbfebeab579d330c6228cc73f05d2307
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: 4ae72e7f75147fc3891731da48ee210fc546bd97
+ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66269149"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66692047"
 ---
 # <a name="app-service-on-azure-stack-overview"></a>Introducción a App Service en Azure Stack
 
@@ -42,8 +42,8 @@ Estas son algunas de las características y funcionalidades principales de App S
 
 App Service ofrece varios tipos de aplicación, cada uno pensado para hospedar una carga de trabajo específica:
 
-- [Aplicaciones web]((/azure/app-service/overview) para hospedar sitios y aplicaciones web.
-- [API Apps]((/azure/app-service/overview) para hospedar las API REST.
+- [Web Apps](/azure/app-service/overview) para hospedar sitios y aplicaciones web.
+- [API Apps](/azure/app-service/overview) para hospedar las API REST.
 - Azure Functions para hospedar cargas de trabajo sin servidor basadas en eventos.
 
 La palabra *aplicación* hace referencia a los recursos de hospedaje dedicados a ejecutar una carga de trabajo. Si se toma *aplicación web* como ejemplo, probablemente está acostumbrado a pensar en una aplicación web como los recursos de proceso y el código de aplicación que juntos ofrecen funcionalidad a un explorador. En App Service, una aplicación web se compone de los recursos de procesos que Azure Stack proporciona para hospedar su código de aplicación.

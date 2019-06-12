@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: sethm
 ms.lastreviewed: 05/21/2019
-ms.openlocfilehash: 03aea7833e59d3262fc54e71d3d5409b5b95c488
-ms.sourcegitcommit: 6fcd5df8b77e782ef72f0e1419f1f75ec8c16c04
+ms.openlocfilehash: a8fe96d645d9277003e17144089a91e0722d0088
+ms.sourcegitcommit: e51cdc84a09250e8fa701bb2cb09de38d7de2c07
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65991292"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66836837"
 ---
 # <a name="about-vpn-gateway-for-azure-stack"></a>Acerca de VPN Gateway para Azure Stack
 
@@ -39,7 +39,7 @@ Antes de crear y configurar puertas de enlace de VPN para Azure Stack, revise la
 >[!NOTE]
 >En Azure, el rendimiento de ancho de banda de la SKU de la puerta de enlace de VPN que elija debe dividirse entre todas las conexiones que están conectadas a la puerta de enlace. Sin embargo, en Azure Stack, el valor de ancho de banda de la SKU de la puerta de enlace de VPN se aplica a cada recurso de conexión que está conectado a él.
 >
-> Por ejemplo: 
+> Por ejemplo:
 >
 > * En Azure, la SKU de la puerta de enlace de VPN básica puede alojar aproximadamente 100 Mbps de rendimiento agregado. Si crea dos conexiones a esa puerta de enlace de VPN y una usa 50 Mbps de ancho de banda, la otra dispone de otros 50 Mbps.
 > * En Azure Stack, **cada conexión** a la SKU de una puerta de enlace de VPN básica se le asignan 100 Mbps de rendimiento.
@@ -102,7 +102,6 @@ Tenga en cuenta la siguiente información cuando seleccione la SKU:
 * Azure Stack no admite puertas de enlace basadas en directivas.
 * El Protocolo de puerta de enlace de borde (BGP) no se admite en la SKU de nivel Básico.
 * Las configuraciones de la coexistencia de ExpressRoute-VPN Gateway no se admiten en Azure Stack.
-* Las conexiones de puerta de enlace de VPN S2S activa/activa solo pueden configurarse en la SKU de Alto rendimiento.
 
 ## <a name="estimated-aggregate-throughput-by-sku"></a>Rendimiento agregado estimado por SKU
 

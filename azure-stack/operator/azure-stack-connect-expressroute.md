@@ -14,12 +14,12 @@ ms.date: 03/22/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 10/22/2018
-ms.openlocfilehash: a039830e01b85ec5e8d9c66a0c815a38d9c694f8
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: 8f8d7ee82890788f60266f671bcc4041795c075e
+ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985741"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66691647"
 ---
 # <a name="connect-azure-stack-to-azure-using-azure-expressroute"></a>Conexión de Azure Stack a Azure mediante Azure ExpressRoute
 
@@ -33,7 +33,7 @@ Puede usar este artículo como tutorial y utilizar los ejemplos para configurar 
 
 Azure ExpressRoute le permite ampliar sus redes locales a la nube de Microsoft mediante una conexión privada que facilita un proveedor de conectividad. ExpressRoute no es una conexión VPN a través de la red pública de Internet.
 
-Para más información sobre Azure ExpressRoute, consulte [Introducción a ExpressRoute]((/azure/expressroute/expressroute-introduction).
+Para más información sobre Azure ExpressRoute, consulte [Información general sobre ExpressRoute](/azure/expressroute/expressroute-introduction).
 
 ### <a name="assumptions"></a>Supuestos
 
@@ -47,7 +47,7 @@ En este artículo se da por hecho que:
 
 Para conectar Azure Stack y Azure mediante ExpressRoute, debe cumplir los siguientes requisitos:
 
-* Un [circuito de ExpressRoute]((/azure/expressroute/expressroute-circuit-peerings) aprovisionado mediante un [proveedor de conectividad]((/azure/expressroute/expressroute-locations).
+* Un [circuito ExpressRoute](/azure/expressroute/expressroute-circuit-peerings) aprovisionado a través de un [proveedor de conectividad](/azure/expressroute/expressroute-locations).
 * Una suscripción a Azure para crear un circuito ExpressRoute y VNet en Azure.
 * Un enrutador que debe:
   * Admitir conexiones VPN de sitio a sitio entre su interfaz LAN y la puerta de enlace multiinquilino de Azure Stack.
@@ -324,22 +324,22 @@ Para más información sobre cómo crear redes virtuales en Azure, consulte [Cre
 
 ### <a name="configure-an-expressroute-circuit"></a>Configuración de un circuito ExpressRoute
 
-1. Revise los requisitos previos de ExpressRoute en la [lista de comprobación y los requisitos previos de ExpressRoute]((/azure/expressroute/expressroute-prerequisites).
+1. Revise los requisitos previos de ExpressRoute en [Requisitos previos y lista de comprobación de ExpressRoute](/azure/expressroute/expressroute-prerequisites).
 
-1. Siga los pasos de [Creación y modificación de un circuito de ExpressRoute]((/azure/expressroute/expressroute-howto-circuit-portal-resource-manager) para crear un circuito de ExpressRoute mediante la suscripción de Azure.
+1. Siga los pasos de [Creación y modificación de un circuito ExpressRoute](/azure/expressroute/expressroute-howto-circuit-portal-resource-manager) para crear un circuito ExpressRoute con su suscripción a Azure.
 
    >[!NOTE]
    >Proporcione la clave de servicio del circuito a su servicio para que puedan configurar el circuito de ExpressRoute en su extremo.
 
-1. Siga los pasos de [Creación y modificación del emparejamiento de un circuito de ExpressRoute]((/azure/expressroute/expressroute-howto-routing-portal-resource-manager) para configurar el emparejamiento privado en el circuito de ExpressRoute.
+1. Siga los pasos de [Creación y modificación del emparejamiento de un circuito ExpressRoute](/azure/expressroute/expressroute-howto-routing-portal-resource-manager) para configurar el emparejamiento privado en el circuito ExpressRoute.
 
 ### <a name="create-the-virtual-network-gateway"></a>Creación de la puerta de enlace de red virtual
 
-Siga los pasos de [Configuración de una puerta de enlace de red virtual para ExpressRoute con PowerShell]((/azure/expressroute/expressroute-howto-add-gateway-resource-manager) para crear una puerta de enlace de red virtual para ExpressRoute en la red virtual del centro de conectividad.
+Siga los pasos de [Configuración de una puerta de enlace de red virtual para ExpressRoute con PowerShell](/azure/expressroute/expressroute-howto-add-gateway-resource-manager) para crear una puerta de enlace de red virtual para ExpressRoute en la VNet de hub.
 
 ### <a name="create-the-connection"></a>Creación de la conexión
 
-Para vincular el circuito de ExpressRoute con la red vínculo del centro de conectividad, siga los pasos de [Conexión de una red virtual a un circuito de ExpressRoute]((/azure/expressroute/expressroute-howto-linkvnet-portal-resource-manager).
+Para vincular el circuito ExpressRoute con la VNet de hub, siga los pasos de [Conexión de una red virtual a un circuito ExpressRoute](/azure/expressroute/expressroute-howto-linkvnet-portal-resource-manager).
 
 ### <a name="peer-the-vnets"></a>Emparejamiento de las redes virtuales
 

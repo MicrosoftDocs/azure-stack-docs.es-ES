@@ -2,21 +2,20 @@
 title: Actualización de Antivirus de Windows Defender en Azure Stack
 description: Más información sobre cómo se mantiene actualizado el antivirus en Azure Stack
 services: azure-stack
-author: WenJason
-manager: digimobile
+author: PatAltimore
+manager: femila
 ms.service: azure-stack
 ms.topic: article
-origin.date: 01/14/2019
-ms.date: 02/18/2019
-ms.author: v-jay
+ms.date: 06/10/2019
+ms.author: patricka
 ms.reviewer: fiseraci
-ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 7899f235853991160e4d8b2c2c832d9a77171e83
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.lastreviewed: 06/10/2019
+ms.openlocfilehash: 6e9c4a5334ce44da777126f09ca0ecf578ccfcbd
+ms.sourcegitcommit: af63214919e798901399fdffef09650de4176956
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64308085"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66828110"
 ---
 # <a name="update-windows-defender-antivirus-on-azure-stack"></a>Actualización de Antivirus de Windows Defender en Azure Stack
 

@@ -16,12 +16,12 @@ ms.date: 04/24/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 12/10/2018
-ms.openlocfilehash: 5b35e69a5308589223d9b5987dd3de2e8bb49cc7
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: 5b90bc5014d0f8ebfaed8532f62b7c4f3aee8667
+ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985446"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66691860"
 ---
 # <a name="download-marketplace-items-from-azure-to-azure-stack"></a>Descarga de elementos de Marketplace desde Azure a Azure Stack
 
@@ -92,7 +92,7 @@ Este escenario tiene dos partes:
 
 - La herramienta de redifusión de Marketplace se descarga en el primer procedimiento. 
 
-- Puede instalar [AzCopy]((/azure/storage/common/storage-use-azcopy) para que la descarga se realice de forma óptima, pero no es necesario.
+- Puede instalar [AzCopy](/azure/storage/common/storage-use-azcopy) para que la descarga se realice de forma óptima, pero no es necesario.
 
 ### <a name="use-the-marketplace-syndication-tool-to-download-marketplace-items"></a>Uso de la herramienta de redifusión de Marketplace para descargar elementos de Marketplace
 
@@ -198,7 +198,7 @@ Este escenario tiene dos partes:
    
    4. En el panel Cargar blob, vaya a los archivos de paquete y de disco que se cargan en el almacenamiento y seleccione **Cargar**: [![Cargar](media/azure-stack-download-azure-marketplace-item/uploadsm.png "Upload")](media/azure-stack-download-azure-marketplace-item/upload.png#lightbox)  
 
-   5. Los archivos que se cargan aparecen en el panel del contenedor. Seleccione un archivo y, después, copie la dirección URL del panel **Propiedades del blob**. Esta dirección URL la usará en el paso siguiente, cuando importe el elemento de Marketplace en Azure Stack.  En la siguiente imagen, el contenedor es *blob-test-storage* y el archivo es *Microsoft.WindowsServer2016DatacenterServerCore-ARM.1.0.801.azpkg*.  La dirección URL del archivo es *https://testblobstorage1.blob.local.azurestack.external/blob-test-storage/Microsoft.WindowsServer2016DatacenterServerCore-ARM.1.0.801.azpkg*.  
+   5. Los archivos que se cargan aparecen en el panel del contenedor. Seleccione un archivo y, después, copie la dirección URL del panel **Propiedades del blob**. Esta dirección URL la usará en el paso siguiente, cuando importe el elemento de Marketplace en Azure Stack.  En la siguiente imagen, el contenedor es *blob-test-storage* y el archivo es *Microsoft.WindowsServer2016DatacenterServerCore-ARM.1.0.801.azpkg*.  La dirección URL del archivo es *https://testblobstorage1.blob.local.azurestack.external/blob-test-storage/Microsoft.WindowsServer2016DatacenterServerCore-ARM.1.0.801.azpkg* .  
       [![Propiedades de blob](media/azure-stack-download-azure-marketplace-item/blob-storagesm.png "Blob properties")](media/azure-stack-download-azure-marketplace-item/blob-storage.png#lightbox)  
 
 3. Importe la imagen de disco duro virtual en Azure Stack mediante el cmdlet **Add-AzsPlatformimage**. Cuando use este cmdlet, reemplace los valores *publisher*, *offer* y otros parámetros por los valores de la imagen que va a importar. 
@@ -231,7 +231,7 @@ Este escenario tiene dos partes:
    No use *Offer* para las extensiones.   
 
 
-4.  Use PowerShell para publicar el elemento de Marketplace en Azure Stack mediante el cmdlet **Add-AzsGalleryItem**. Por ejemplo:   
+4.  Use PowerShell para publicar el elemento de Marketplace en Azure Stack mediante el cmdlet **Add-AzsGalleryItem**. Por ejemplo:  
     ```powershell  
     Add-AzsGalleryItem `
      -GalleryItemUri "https://mystorageaccount.blob.local.azurestack.external/cont1/Microsoft.WindowsServer2016DatacenterServerCore-ARM.1.0.801.azpkg" `
@@ -240,7 +240,7 @@ Este escenario tiene dos partes:
 5. Después de publicar un elemento de la galería está disponible para su uso. Para confirmar que el elemento se ha publicado, vaya a **Todos los servicios** y en la categoría **GENERAL**, seleccione **Marketplace**.  Si la descarga es una plantilla de solución, asegúrese de agregar todas las imágenes de discos duros virtuales de dicha plantilla.  
   [![Ver Marketplace](media/azure-stack-download-azure-marketplace-item/view-marketplacesm.png "View marketplace")](media/azure-stack-download-azure-marketplace-item/view-marketplace.png#lightbox)  
 
-Con el lanzamiento de Azure Stack PowerShell 1.3.0 se pueden agregar extensiones de máquina virtual. Por ejemplo: 
+Con el lanzamiento de Azure Stack PowerShell 1.3.0 se pueden agregar extensiones de máquina virtual. Por ejemplo:
 
 ```powershell
 Add-AzsVMExtension -Publisher "Microsoft" -Type "MicroExtension" -Version "0.1.0" -ComputeRole "IaaS" -SourceBlob "https://github.com/Microsoft/PowerShell-DSC-for-Linux/archive/v1.1.1-294.zip" -SupportMultipleExtensions -VmOsType "Linux"

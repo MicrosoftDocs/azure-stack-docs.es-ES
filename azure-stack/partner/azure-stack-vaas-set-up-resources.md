@@ -15,12 +15,12 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/26/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: 0ed3dfda57bc544bd61efcc52ef7588a553ac634
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 9ad15342a8c0116f928b416f26e64b08563a5c14
+ms.sourcegitcommit: 75b13158347963063b7ee62b0ec57894b542c1be
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63447619"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66748945"
 ---
 # <a name="tutorial-set-up-resources-for-validation-as-a-service"></a>Tutorial: Configuración de recursos para la validación como servicio
 
@@ -74,7 +74,7 @@ Este proceso le otorga al inquilino autorización para la aplicación **Azure St
     |--------------------------------|---------------------------------------------------------------------------------------------|
     | Nombre de la organización | Nombre oficial de la organización. |
     | Nombre del directorio del inquilino de Azure AD | Nombre del directorio de inquilino de Azure AD que se registra. |
-    | Identificador del directorio de inquilino de Azure AD | GUID del directorio de inquilino de Azure AD asociado con el directorio. Para obtener información acerca de cómo encontrar el identificador del directorio de inquilino de Azure AD, consulte [Get tenant ID](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#get-tenant-id) (Obtención del identificador de inquilino). |
+    | Identificador del directorio de inquilino de Azure AD | GUID del directorio de inquilino de Azure AD asociado con el directorio. Para obtener información acerca de cómo encontrar el identificador del directorio de inquilino de Azure AD, consulte [Get tenant ID](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#get-values-for-signing-in) (Obtención del identificador de inquilino). |
 
 2. Espere la confirmación del equipo de Azure Stack Validation para comprobar que el inquilino puede usar el portal de VaaS.
 
@@ -111,7 +111,7 @@ La cuenta de almacenamiento de Azure se hospeda en la nube pública de Azure, no
     - De manera predeterminada, el campo **Modelo de implementación** se establece en **Resource Manager**.
     - El campo **Rendimiento** se establece en **Estándar** de forma predeterminada.
     - En el campo **Tipo de cuenta**, seleccione **Almacenamiento de blobs**.
-    - De manera predeterminada, el campo **Replicación** se establece en **Almacenamiento con redundancia local (LRS)**.
+    - De manera predeterminada, el campo **Replicación** se establece en **Almacenamiento con redundancia local (LRS)** .
     - El **nivel de acceso** se establece en **Frecuente** de forma predeterminada.
 
 7. Seleccione **Revisar y crear** para revisar la configuración de la cuenta de almacenamiento y crear la cuenta.

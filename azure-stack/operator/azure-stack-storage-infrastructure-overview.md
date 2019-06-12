@@ -15,12 +15,12 @@ ms.date: 03/11/2019
 ms.author: mabrigg
 ms.lastreviewed: 03/11/2019
 ms.reviewer: jiahan
-ms.openlocfilehash: e93c33659a2c2dac93ab23d3cba60994fb171131
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: c7ae7f0c8fa510b0f2b55e458266065544e1bd5e
+ms.sourcegitcommit: af63214919e798901399fdffef09650de4176956
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64984749"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66828217"
 ---
 # <a name="manage-storage-infrastructure-for-azure-stack"></a>Administración de la infraestructura de almacenamiento para Azure Stack
 
@@ -151,8 +151,6 @@ Utilice los siguientes comandos de PowerShell para supervisar el estado de mante
 $scaleunit_name = (Get-AzsScaleUnit)[0].name
 
 $subsystem_name = (Get-AzsStorageSubSystem -ScaleUnit $scaleunit_name)[0].name
-
-, SerialNumber
 
 Get-AzsDrive -ScaleUnit $scaleunit_name -StorageSubSystem $subsystem_name | Select-Object StorageNode, PhysicalLocation, HealthStatus, OperationalStatus, Description, Action, Usage, CanPool, CannotPoolReason, SerialNumber, Model, MediaType, CapacityGB
 ```

@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/04/2019
+ms.date: 06/10/2019
 ms.author: patricka
 ms.reviewer: bryanr
-ms.lastreviewed: 03/04/2019
-ms.openlocfilehash: a35b16d2c862547ffed340f3e06dc769e373eb85
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.lastreviewed: 06/10/2019
+ms.openlocfilehash: 8547c1aea70d7b72538b5a681e7c8dd4b4d10a02
+ms.sourcegitcommit: af63214919e798901399fdffef09650de4176956
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64309597"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66828307"
 ---
 # <a name="multi-tenancy-in-azure-stack"></a>Servicio multiinquilino en Azure Stack
 
@@ -110,7 +110,7 @@ Register-AzSWithMyDirectoryTenant `
 
 Ahora que usted y Mary han completado los pasos para incorporar el directorio de Mary, Mary puede instruir a los usuarios de Fabrikam para que inicien sesión.  Para iniciar sesión, los usuarios de Fabrikam (es decir, los usuarios con el sufijo fabrikam.onmicrosoft.com) van a https://portal.local.azurestack.external.  
 
-Mary indicará a todas las [entidades de seguridad externas]((/azure/role-based-access-control/rbac-and-directory-admin-roles) del directorio de Fabrikam (es decir, los usuarios del directorio de Fabrikam sin el sufijo de fabrikam.onmicrosoft.com) que inicien sesión con https://portal.local.azurestack.external/fabrikam.onmicrosoft.com.  Si no utilizan esta dirección URL, se envían a su directorio predeterminado (Fabrikam) y reciben un error que indica que su administrador no ha dado su consentimiento.
+Mary instruirá a todas las [entidades de seguridad externas](/azure/role-based-access-control/rbac-and-directory-admin-roles) en el directorio de Fabrikam (es decir, los usuarios en el directorio de Fabrikam sin el sufijo fabrikam.onmicrosoft.com) para que inicien sesión con https://portal.local.azurestack.external/fabrikam.onmicrosoft.com.  Si no utilizan esta dirección URL, se envían a su directorio predeterminado (Fabrikam) y reciben un error que indica que su administrador no ha dado su consentimiento.
 
 ## <a name="disable-multi-tenancy"></a>Deshabilitación del servicio multiinquilino
 

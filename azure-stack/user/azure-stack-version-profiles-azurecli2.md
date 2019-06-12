@@ -14,12 +14,12 @@ ms.date: 05/08/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/08/2019
-ms.openlocfilehash: 996dacc1c95a172ffa09247c56a12a5afd00e086
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: 7dba3d791a2ce19429506699ae538c747ed37dbd
+ms.sourcegitcommit: 7ceddf8b67f920d5a5eef4a84e157079a53b3374
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66269531"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66821793"
 ---
 # <a name="use-api-version-profiles-with-azure-cli-in-azure-stack"></a>Uso de los perfiles de la versión de la API con la CLI de Azure en Azure Stack
 
@@ -402,8 +402,8 @@ Use los pasos siguientes para conectarse a Azure Stack:
 1. Registre el entorno de Azure Stack. Para ello, ejecute el comando `az cloud register`. En algunos escenarios, la conectividad directa a internet saliente se enruta mediante un servidor proxy o firewall, que exige la intercepción de SSL. En estos casos, el comando `az cloud register` puede producir un error del tipo "Unable to get endpoints from the cloud" (No se pueden obtener los puntos de conexión de la nube). Para solucionar este error, puede establecer las siguientes variables de entorno:
 
    ```shell
-   set AZURE_CLI_DISABLE_CONNECTION_VERIFICATION=1 
-   set ADAL_PYTHON_SSL_NO_VERIFY=1
+   export AZURE_CLI_DISABLE_CONNECTION_VERIFICATION=1
+   export ADAL_PYTHON_SSL_NO_VERIFY=1
    ```
 
 2. Registre su entorno. Utilice los siguientes parámetros cuando ejecute `az cloud register`.
@@ -513,8 +513,8 @@ Use los pasos siguientes para conectarse a Azure Stack:
 1. Registre el entorno de Azure Stack. Para ello, ejecute el comando `az cloud register`. En algunos escenarios, la conectividad directa a internet saliente se enruta mediante un servidor proxy o firewall, que exige la intercepción de SSL. En estos casos, el comando `az cloud register` puede producir un error del tipo "Unable to get endpoints from the cloud" (No se pueden obtener los puntos de conexión de la nube). Para solucionar este error, puede establecer las siguientes variables de entorno:
 
    ```shell
-   set AZURE_CLI_DISABLE_CONNECTION_VERIFICATION=1 
-   set ADAL_PYTHON_SSL_NO_VERIFY=1
+   export AZURE_CLI_DISABLE_CONNECTION_VERIFICATION=1
+   export ADAL_PYTHON_SSL_NO_VERIFY=1
    ```
 
 2. Registre su entorno. Utilice los siguientes parámetros cuando ejecute `az cloud register`.

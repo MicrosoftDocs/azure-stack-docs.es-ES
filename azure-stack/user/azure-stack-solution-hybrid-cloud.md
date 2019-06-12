@@ -15,12 +15,12 @@ ms.date: 01/25/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: 7a599d3fdc68c6c41565111498108a202d8b3472
-ms.sourcegitcommit: 261df5403ec01c3af5637a76d44bf030f9342410
+ms.openlocfilehash: f1dd98c8c75c28ee176ca318fb9d274110e9b5fe
+ms.sourcegitcommit: 75b13158347963063b7ee62b0ec57894b542c1be
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66252071"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66749031"
 ---
 # <a name="tutorial-deploy-a-hybrid-cloud-solution-with-azure-and-azure-stack"></a>Tutorial: Implementación de una solución en la nube híbrida con Azure y Azure Stack
 
@@ -255,7 +255,7 @@ Deberá configurar el código de la aplicación para notificar los datos de tele
 
 1. Abra la aplicación web en Microsoft Visual Studio.
 
-2. [Agregue Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-asp-net-core#add-application-insights-telemetry) al proyecto para transmitir los datos de telemetría que utiliza Application Insights para crear alertas cuando el tráfico web aumenta o disminuye.
+2. [Agregue Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core#enable-client-side-telemetry-for-web-applications) al proyecto para transmitir los datos de telemetría que utiliza Application Insights para crear alertas cuando el tráfico web aumenta o disminuye.
 
 ### <a name="configure-dynamic-connection-strings"></a>Configuración de cadenas de conexión dinámicas
 

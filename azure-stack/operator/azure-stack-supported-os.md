@@ -16,24 +16,25 @@ ms.date: 02/17/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: 69a0a9f84e0c4a5d0cb51eb8d48b3c9ca88b9cfc
-ms.sourcegitcommit: 41927cb812e6a705d8e414c5f605654da1fc6952
+ms.openlocfilehash: aca2517a49936296f73c34392ab4c5439909872f
+ms.sourcegitcommit: 75b13158347963063b7ee62b0ec57894b542c1be
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/25/2019
-ms.locfileid: "64477343"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66748964"
 ---
 # <a name="guest-operating-systems-supported-on-azure-stack"></a>Sistemas operativos invitados compatibles con Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-## <a name="windows"></a> Windows
+## <a name="windows"></a>Windows
 
 Azure Stack admite los sistemas operativos invitados Windows que se indican en la siguiente tabla:
 
 | Sistema operativo | DESCRIPCIÓN | Disponible en Marketplace |
 | --- | --- | --- |
 | Windows Server, versión 1709 | 64 bits | Core con Containers |
+| Windows Server 2019 | 64 bits |  Datacenter, Datacenter Core, Datacenter con Containers |
 | Windows Server 2016 | 64 bits |  Datacenter, Datacenter Core, Datacenter con Containers |
 | Windows Server 2012 R2 | 64 bits |  Centro de datos |
 | Windows Server 2012 | 64 bits |  Centro de datos |
@@ -60,12 +61,13 @@ Las distribuciones Linux indicadas como disponibles en Marketplace incluyen el a
 | Distribución | DESCRIPCIÓN | Publicador | Marketplace |
 | --- | --- | --- | --- |
 | Basado en CentOS 6.9 | 64 bits | Rogue Wave | Sí |
-| Basado en CentOS 7.4 | 64 bits | Rogue Wave | Sí |
+| Basado en CentOS 7.5 | 64 bits | Rogue Wave | Sí |
+| Basado en CentOS 7.3 | 64 bits | Rogue Wave | Sí |
 | ClearLinux | 64 bits | ClearLinux.org | Sí |
 | Container Linux |  64 bits | CoreOS | Stable |
 | Debian 8 "Jessie" | 64 bits | credativ |  Sí |
 | Debian 9 "Stretch" | 64 bits | credativ | Sí |
-| Red Hat Enterprise Linux 7.1 (y posterior) | 64 bits | Red Hat |Traiga su propia imagen |
+| Red Hat Enterprise Linux 7.1 (y posterior) | 64 bits | Red Hat | Traiga su propia imagen |
 | SLES 11SP4 | 64 bits | SUSE | Sí |
 | SLES 12SP3 | 64 bits | SUSE | Sí |
 | Ubuntu 14.04 LTS | 64 bits | Canonical | Sí |

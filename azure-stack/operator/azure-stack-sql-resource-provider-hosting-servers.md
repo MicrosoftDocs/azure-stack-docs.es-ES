@@ -15,12 +15,12 @@ ms.date: 03/26/2019
 ms.author: mabrigg
 ms.reviewer: quying
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: a56e1e8c3c5109c638432652adf9260f59f6a467
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 04ae974148d47bde1e3131aeca45e8bddc9e6109
+ms.sourcegitcommit: 75b13158347963063b7ee62b0ec57894b542c1be
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618441"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66749005"
 ---
 # <a name="add-hosting-servers-for-the-sql-resource-provider"></a>Incorporación de servidores de hospedaje para el proveedor de recursos SQL
 
@@ -73,7 +73,7 @@ La siguiente información proporciona una guía de seguridad adicional:
 
 * Todo el almacenamiento de Azure Stack está cifrado con BitLocker, por lo que cualquier instancia de SQL en Azure Stack utilizará almacenamiento de blob cifrado.
 * El proveedor de recursos de SQL es totalmente compatible con TLS 1.2. Asegúrese de que cualquier servidor SQL Server que se administra mediante el proveedor de recursos de SQL está configurado _solo_ para TLS 1.2, y que el proveedor de recursos lo usará de forma predeterminada. Todas las versiones compatibles de SQL Server admiten TLS 1.2, consulte [Soporte de TLS 1.2 para Microsoft SQL Server](https://support.microsoft.com/en-us/help/3135244/tls-1-2-support-for-microsoft-sql-server).
-* Use Administrador de configuración de SQL Server para establecer la opción **ForceEncryption** para garantizar que todas las comunicaciones con SQL server están siempre cifradas. Consulte [Para configurar el servidor para forzar conexiones cifradas](https://docs.microsoft.com/sql/database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine?view=sql-server-2017#ConfigureServerConnections).
+* Use Administrador de configuración de SQL Server para establecer la opción **ForceEncryption** para garantizar que todas las comunicaciones con SQL server están siempre cifradas. Consulte [Para configurar el servidor para forzar conexiones cifradas](https://docs.microsoft.com/sql/database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine?view=sql-server-2017#to-configure-the-server-to-force-encrypted-connections).
 * Asegúrese de que cualquier aplicación cliente también se comunica a través de una conexión cifrada.
 * El proveedor de recursos está configurado para confiar en los certificados usados por las instancias de SQL Server.
 
