@@ -16,12 +16,12 @@ ms.date: 05/30/2019
 ms.author: sethm
 ms.reviewer: ''
 ms.lastreviewed: 05/30/2019
-ms.openlocfilehash: 8d9603184e824bff5efc2536b3c4a89fdd87d685
-ms.sourcegitcommit: a427e72e4f3b6cd6000b1459af9bbf221e049e08
+ms.openlocfilehash: 31f2df0b5c7598c678daff8abe34a40b4e08d590
+ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66506346"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66691602"
 ---
 # <a name="azure-stack-1904-update"></a>Actualización 1904 de Azure Stack
 
@@ -43,6 +43,10 @@ Puede ver [las notas de la versión de las versiones anteriores de Azure Stack 
 
 El número de compilación de la actualización 1904 de Azure Stack es **1.1904.0.36**.
 
+### <a name="update-type"></a>Tipo de actualización
+
+El tipo de compilación de la actualización 1904 de Azure Stack es **Rápida**. Para obtener más información sobre cómo actualizar los tipos de compilación, consulte el artículo [Administración de actualizaciones en Azure Stack](azure-stack-updates.md). Se espera que la actualización 1904 tarde unas 16 horas en completarse, pero el tiempo exacto puede variar. Esta aproximación del runtime es específica para la actualización 1904 y no se debe comparar con otras actualizaciones de Azure Stack.
+
 ## <a name="whats-in-this-update"></a>Novedades de esta actualización
 
 <!-- The current theme (if any) of this release. -->
@@ -52,8 +56,6 @@ El número de compilación de la actualización 1904 de Azure Stack es **1.190
 ### <a name="improvements"></a>Mejoras
 
 <!-- Changes and product improvements with tangible customer-facing value. -->
-
-- La carga de la actualización 1904 contiene una actualización para los componentes de Azure Stack que no incluyen el sistema operativo subyacente que hospeda Azure Stack. Esto permite limitar determinadas actualizaciones a un ámbito específico. Como resultado, el tiempo esperado para completar la actualización 1904 es menor (aproximadamente 16 horas, pero el tiempo exacto puede variar). Esta disminución del tiempo de ejecución es similar a la de la actualización 1903. No obstante, las actualizaciones posteriores pueden contener actualizaciones del sistema operativo, lo que implica diferentes tiempos de ejecución. Las actualizaciones futuras proporcionarán una orientación similar sobre el tiempo esperado que la actualización tardará en completarse, dependiendo de la carga incluida.
 
 - La actualización 1904 incluye mejoras significativas para la pila de redes definidas por software (SDN). Estas mejoras mejoran el mantenimiento general y la confiabilidad de la pila de SDN en Azure Stack.
 

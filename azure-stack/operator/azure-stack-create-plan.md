@@ -3,8 +3,8 @@ title: Creación de un plan en Azure Stack | Microsoft Docs
 description: Como administrador de la nube, cree un plan que permita a los suscriptores aprovisionar máquinas virtuales.
 services: azure-stack
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: sethmanheim
+manager: femila
 editor: ''
 ms.assetid: 3dc92e5c-c004-49db-9a94-783f1f798b98
 ms.service: azure-stack
@@ -12,23 +12,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-origin.date: 03/07/2019
-ms.date: 04/29/2019
-ms.author: v-jay
+ms.date: 06/11/2019
+ms.author: sethm
 ms.reviewer: efemmano
-ms.lastreviewed: 03/07/2019
-ms.openlocfilehash: 85c6fd58108653ba4876d8aa7802d5674ae1336c
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.lastreviewed: 06/11/2019
+ms.openlocfilehash: b120346d489f676919cb05863f81db9bfb102634
+ms.sourcegitcommit: e51cdc84a09250e8fa701bb2cb09de38d7de2c07
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64311241"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66836983"
 ---
 # <a name="create-a-plan-in-azure-stack"></a>Creación de un plan en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Los [planes](azure-stack-overview.md) son agrupaciones de uno o varios servicios y sus cuotas. Como proveedor puede crear planes y ofrecérselos a sus usuarios. A su vez, los usuarios se suscriben a las ofertas para usar los planes, los servicios y las cuotas que incluyen. Este ejemplo muestra cómo crear un plan que incluya a los proveedores de recursos de proceso, de red y de almacenamiento. Este plan ofrece a los suscriptores la capacidad de aprovisionar máquinas virtuales.
+Los [planes de Azure Stack](azure-stack-overview.md) son agrupaciones de uno o varios servicios y sus cuotas. Como proveedor puede crear planes y ofrecérselos a sus usuarios. A su vez, los usuarios se suscriben a las ofertas para usar los planes, los servicios y las cuotas que incluyen. Este ejemplo muestra cómo crear un plan que incluya a los proveedores de recursos de proceso, de red y de almacenamiento. Este plan ofrece a los suscriptores la capacidad de aprovisionar máquinas virtuales.
 
 ## <a name="create-a-plan-1902-and-later"></a>Crear un plan (1902 y posteriores)
 
@@ -48,11 +47,11 @@ Los [planes](azure-stack-overview.md) son agrupaciones de uno o varios servicios
 
    ![Especificar el grupo de recursos](media/azure-stack-create-plan/resource-group.png)
 
-5. Seleccione la pestaña **Servicios** y, a continuación, seleccione la casilla de verificación de **Microsoft.Compute**, **Microsoft.Network** y **Microsoft.Storage**.
+5. Seleccione la pestaña **Services** (Servicios) o haga clic en el botón **Next: Services >** (Siguiente: Servicios) y, a continuación, seleccione la casilla **Microsoft.Compute**, **Microsoft.Network** y **Microsoft.Storage**.
   
    ![Seleccionar servicios](media/azure-stack-create-plan/services.png)
 
-6. Seleccione la pestaña **Cuotas**. Junto a **Microsoft.Storage**, elija la cuota predeterminada del menú desplegable, o bien seleccione **Crear nueva** para crear una cuota personalizada.
+6. Seleccione la pestaña **Quotas** (Cuotas) o haga clic en el botón **Next: Quotas >** (Siguiente: Cuotas). Junto a **Microsoft.Storage**, elija la cuota predeterminada del menú desplegable, o bien seleccione **Crear nueva** para crear una cuota personalizada.
   
    ![Cuotas](media/azure-stack-create-plan/quotas.png)
 
@@ -70,13 +69,13 @@ Los [planes](azure-stack-overview.md) son agrupaciones de uno o varios servicios
 
 10. Cuando esté listo, seleccione **Crear** para crear el plan.
 
-11. Para ver el nuevo plan, seleccione **Planes** y, a continuación, busque el plan y seleccione su nombre. Si la lista de recursos es larga, utilice **Buscar** para encontrar el plan por su nombre.
+11. Para ver el nuevo plan, en el lado izquierdo haga clic en **All services** (Todos los servicios), seleccione **Plans** (Planes) y, después, busque el plan y seleccione su nombre. Si la lista de recursos es larga, utilice **Buscar** para encontrar el plan por su nombre.
 
 ## <a name="create-a-plan-1901-and-earlier"></a>Crear un plan (1901 y anteriores)
 
 1. Inicie sesión en el [Portal de administración de Azure Stack](https://adminportal.local.azurestack.external).
 
-2. Para crear un plan y una oferta a la que los usuarios puedan suscribirse, seleccione **+ Crear un recurso**, **Ofertas y planes** y, finalmente, **Plan**.
+2. Para crear un plan y una oferta a la que los usuarios puedan suscribirse, seleccione **+ New** (+Nuevo), después **Offers + Plans** (Ofertas y planes) y, finalmente, **Plan**.
   
    ![Seleccionar un plan](media/azure-stack-create-plan/select-plan1901.png)
 
@@ -104,7 +103,7 @@ Los [planes](azure-stack-overview.md) son agrupaciones de uno o varios servicios
   
    ![Asignación de la cuota](media/azure-stack-create-plan/assign-quota1901.png)
 
-8. Repita los pasos 6 y 7 para crear y asignar cuotas de **Microsoft.Network (local)** y **Microsoft.Compute (local)**. Cuando los tres servicios tienen cuotas asignadas, son similares a las del ejemplo siguiente.
+8. Repita los pasos 6 y 7 para crear y asignar cuotas de **Microsoft.Network (local)** y **Microsoft.Compute (local)** . Cuando los tres servicios tienen cuotas asignadas, son similares a las del ejemplo siguiente.
 
    ![Asignaciones de cuota realizadas](media/azure-stack-create-plan/all-quotas-assigned1901.png)
 
@@ -119,5 +118,3 @@ Los [planes](azure-stack-overview.md) son agrupaciones de uno o varios servicios
 ## <a name="next-steps"></a>Pasos siguientes
 
 * [Creación de una oferta](azure-stack-create-offer.md)
-
-<!-- Update_Description: wording update -->

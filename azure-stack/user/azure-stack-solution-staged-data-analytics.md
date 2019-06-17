@@ -15,18 +15,18 @@ ms.date: 04/15/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 12/01/2018
-ms.openlocfilehash: 9359c1393229709fc77ee08216a80a26de9135dc
-ms.sourcegitcommit: 261df5403ec01c3af5637a76d44bf030f9342410
+ms.openlocfilehash: a10f034e05e97942a6c20d019d0d1930f49f8c81
+ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66252009"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66691461"
 ---
 # <a name="tutorial-create-a-staged-data-analytics-solution-with-azure-and-azure-stack"></a>Tutorial: Creación de una solución de análisis de datos almacenados provisionalmente con Azure y Azure Stack 
 
 *Se aplica a: sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Aprenda a usar entornos locales y en la nube pública para satisfacer las necesidades de empresas con varias sedes. Azure Stack ofrece una solución rápida, segura y flexible para recopilar, procesar, almacenar y distribuir datos locales y remotos, especialmente en aquellos casos en que la seguridad, la confidencialidad, las directivas corporativas y los requisitos normativos pueden ser diferentes entre las distintas ubicaciones y usuarios.
+Aprenda a usar entornos locales y en la nube pública para satisfacer las necesidades de empresas con varias sedes. Azure Stack ofrece una solución rápida, segura y flexible para recopilar, procesar, almacenar y distribuir datos locales y remotos. Esto es importante cuando la seguridad, confidencialidad, directiva corporativa y los requisitos normativos pueden diferir entre ubicaciones y usuarios.
 
 Según este patrón, los clientes recopilan datos que requieren análisis en el mismo punto de recopilación para poder tomar decisiones rápidas. Esta recopilación de datos se produce con frecuencia sin acceso a Internet. Una vez restablecida la conectividad, puede que necesite un análisis intensivo del recurso de los datos para obtener información adicional. Puede analizar los datos aún cuando una nube pública esté retrasada o no disponible.
 
@@ -42,21 +42,21 @@ En este tutorial, creará un entorno de ejemplo para:
 
 > [!Tip]  
 > ![hybrid-pillars.png](./media/azure-stack-solution-cloud-burst/hybrid-pillars.png)  
-> Microsoft Azure Stack es una extensión de Azure. Azure Stack aporta la agilidad y la innovación de la informática en la nube a su entorno local y hace posible la única nube híbrida que le permite crear e implementar aplicaciones híbridas en cualquier parte.  
+> Microsoft Azure Stack es una extensión de Azure. Azure Stack aporta la agilidad e innovación de la informática en la nube a su entorno local y hace posible la única nube híbrida que le permite crear e implementar aplicaciones híbridas en cualquier parte.  
 > 
-> En las notas del producto [Consideraciones de diseño para aplicaciones híbridas](https://aka.ms/hybrid-cloud-applications-pillars) se revisan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
+> En las notas del producto [Consideraciones de diseño para aplicaciones híbridas](https://aka.ms/hybrid-cloud-applications-pillars) se examinan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
 
 ## <a name="prerequisites"></a>Requisitos previos
 
 Se requiere cierta preparación para crear esta solución:
 
--   Una instancia de Azure Stack instalada y en funcionamiento (puede encontrar más información aquí: [Azure Stack overview](azure-stack-storage-overview.md) (Introducción a Azure Stack)
+-   Una instancia de Azure Stack instalada y en funcionamiento. Para más información, consulte el artículo [Introducción a Azure Stack](azure-stack-storage-overview.md).
 
--   Una suscripción de Azure. (Cree una [cuenta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F))
+-   Una suscripción de Azure. Puede [crear una cuenta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
 -   Descargue e instale el [Explorador de Microsoft Azure Storage](https://storageexplorer.com/).
 
--   Deberá proporcionar sus propios datos para que los procesen las funciones. Los datos se deben generar y estar disponibles para cargarlos en el contenedor de blobs de almacenamiento de Azure Stack.
+-   Deberá especificar sus propios datos para que los procesen las funciones. Los datos se deben generar y estar disponibles para cargarlos en el contenedor de blobs de almacenamiento de Azure Stack.
 
 ## <a name="issues-and-considerations"></a>Problemas y consideraciones
 
@@ -82,7 +82,7 @@ La cuenta de almacenamiento y el contenedor de blobs contienen todos los datos o
 
 3.  Use la siguiente información para la cuenta:
 
-     a.  Nombre: **Su elección**
+    a.  Nombre: **Su elección**
 
     b.  Modelo de implementación: **Resource Manager**
 
@@ -104,7 +104,7 @@ La cuenta de almacenamiento y el contenedor de blobs contienen todos los datos o
 
 4.  Seleccione **Crear** para crear la cuenta de almacenamiento.
 
-    ![Texto alternativo](media/azure-stack-solution-staged-data-analytics/image1.png)
+    ![Crear una cuenta de almacenamiento en Azure Stack](media/azure-stack-solution-staged-data-analytics/image1.png)
 
 5.  Una vez creado, seleccione el nombre de la cuenta de almacenamiento.
 
@@ -112,7 +112,7 @@ La cuenta de almacenamiento y el contenedor de blobs contienen todos los datos o
 
 7.  En la parte superior de la hoja, seleccione **+ Contenedor** y **Contenedor**.
 
-    ![Texto alternativo](media/azure-stack-solution-staged-data-analytics/image2.png)
+    ![Seleccionar un contenedor en Azure Stack](media/azure-stack-solution-staged-data-analytics/image2.png)
 
 8.  Nombre: **la que elija**
 
@@ -130,7 +130,7 @@ Cree una función de Azure Stack para mover los datos limpios de Azure Stack a A
 2. Seleccione **Todos los servicios**.
 3. Seleccione **Function Apps** en el grupo **Web + Mobile** (Web y móvil).
 
-4.  Cree la aplicación de función mediante la configuración especificada en la tabla debajo de la imagen.
+4.  Cree la aplicación de función mediante la configuración especificada en la tabla siguiente:
 
     | Configuración | Valor sugerido | DESCRIPCIÓN |
     | ---- | ---- | ---- |
@@ -138,7 +138,7 @@ Cree una función de Azure Stack para mover los datos limpios de Azure Stack a A
     | Subscription | Su suscripción | Suscripción en la que se creará esta nueva aplicación de función. |
     | **Grupo de recursos** |  |  |
     | myResourceGroup | Nombre para el nuevo grupo de recursos en el que se va a crear la Function App. |  |
-    | SO |  Windows | El hospedaje sin servidor actualmente solo está disponible cuando se ejecuta en Windows. |
+    | SO | Windows | El hospedaje sin servidor actualmente solo está disponible cuando se ejecuta en Windows. |
     | **Plan de hospedaje** |  |  |
     | Plan de consumo | Plan de hospedaje que define cómo se asignan los recursos a la Function App. En el Plan de consumo predeterminado, los recursos se agregan dinámicamente según lo requieran sus funciones. En este hospedaje sin servidor, solo paga por el tiempo durante el cual se ejecutan las funciones. |  |
     | Ubicación | La región más cercana | Elija una región cerca de usted o cerca de otros servicios a los que tendrán acceso las funciones. |
@@ -153,25 +153,25 @@ Cree una función de Azure Stack para mover los datos limpios de Azure Stack a A
 
 6.  Seleccione el icono de notificación de la esquina superior derecha del portal y observe el mensaje **Implementación correcta**.
 
-    ![Definir nueva configuración de Function App](media/azure-stack-solution-staged-data-analytics/image7.png)
+    ![Implementación correcta (función nueva)](media/azure-stack-solution-staged-data-analytics/image7.png)
 
 7.  Seleccione **Ir al recurso** para ver la nueva aplicación de función.
 
-![Function App creada correctamente.](media/azure-stack-solution-staged-data-analytics/image8.png)
+![Ver nueva aplicación de función](media/azure-stack-solution-staged-data-analytics/image8.png)
 
 ### <a name="add-a-function-to-the-azure-stack-function-app"></a>Incorporación de una función a la aplicación de función de Azure Stack
 
 1.  Para crear una función, haga clic en **Funciones** y, luego, en el botón **+ Nueva función**.
 
-    ![Texto alternativo](media/azure-stack-solution-staged-data-analytics/image3.png)
+    ![Creación de una función](media/azure-stack-solution-staged-data-analytics/image3.png)
 
 2.  Seleccione **Desencadenador de temporizador**.
 
-    ![Texto alternativo](media/azure-stack-solution-staged-data-analytics/image4.png)
+    ![Desencadenador de temporizador para nueva función](media/azure-stack-solution-staged-data-analytics/image4.png)
 
-3.  Seleccione **C\#** como el idioma y el nombre de la función: `upload-to-azure`  Establezca la programación en `0 0 * * * *`, que en la notación de CRON es cada hora.
+3.  Seleccione **C\#** como lenguaje y asigne un nombre a la función `upload-to-azure`:  Establezca la programación en `0 0 * * * *`, que en la notación de CRON es cada hora.
 
-    ![Texto alternativo](media/azure-stack-solution-staged-data-analytics/image5.png)
+    ![Nueva configuración de función](media/azure-stack-solution-staged-data-analytics/image5.png)
 
 ## <a name="create-a-blob-storage-triggered-function"></a>Creación de una función desencadenada por Blob Storage
 
@@ -219,7 +219,7 @@ Cree una cuenta de almacenamiento de Azure Stack que contenga un blob y una cola
 
 ### <a name="storage-blob--data-archiving"></a>Archivado de datos de blob de almacenamiento
 
-Esta cuenta de almacenamiento hospedará dos contenedores. Estos contenedores consisten en un blob que se usa para contener los datos de archivo y una cola que se utiliza para el procesamiento de datos asignados para la distribución de la oficina central.
+Esta cuenta de almacenamiento hospedará dos contenedores. Estos contenedores constan de un blob que se usa para contener los datos de archivo y una cola que se utiliza para el procesamiento de los datos asignados para la distribución de la oficina central.
 
 Utilice los pasos y valores que se han descrito anteriormente para crear otra cuenta de almacenamiento y otro contenedor de blobs como almacenamiento de archivos.
 
@@ -233,9 +233,9 @@ Utilice los pasos y valores que se han descrito anteriormente para crear otra cu
 
 4.  Seleccione **Aceptar**.
 
-    ![Texto alternativo](media/azure-stack-solution-staged-data-analytics/image14.png)
+    ![Cola de almacenamiento](media/azure-stack-solution-staged-data-analytics/image14.png)
 
-    ![Texto alternativo](media/azure-stack-solution-staged-data-analytics/image15.png)
+    ![Agregar un nombre a la nueva cola de almacenamiento](media/azure-stack-solution-staged-data-analytics/image15.png)
 
 ## <a name="create-a-queue-triggered-function"></a>Crear una función desencadenada por la cola
 
