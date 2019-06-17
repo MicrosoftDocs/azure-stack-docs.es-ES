@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 06/07/2019
 ms.author: sethm
 ms.reviewer: alfredop
-ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 5f03b80b871d3df467bc52b735432ce5568a3ad8
-ms.sourcegitcommit: a78c0d143eadcab65a601746b9ea24be28091ad2
+ms.lastreviewed: 06/07/2019
+ms.openlocfilehash: edc6fc17e426e5e391eb61d510097101ddcfce58
+ms.sourcegitcommit: af63214919e798901399fdffef09650de4176956
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65212302"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66828330"
 ---
 # <a name="add-tenant-for-usage-and-billing-to-azure-stack"></a>Adición de inquilinos en Azure Stack para uso y facturación
 
@@ -51,7 +51,7 @@ Después de haber creado un registro del cliente en el centro de partners, le pu
 
 ### <a name="create-a-guest-user-in-the-end-customer-directory"></a>Creación de un usuario invitado en el directorio de cliente final
 
-Si el cliente final administra su propia cuenta, cree un usuario invitado en su directorio y envíeles la información. A continuación, el usuario final agregará al invitado y elevará los permisos del invitado a **Propietario** para la cuenta del CSP de Azure Stack.
+De forma predeterminada, como CSP, no tendrá acceso a la suscripción de Azure Stack para clientes finales. Sin embargo, si el cliente quiere que usted administre sus recursos, puede agregar su cuenta como propietario o colaborador a su suscripción a Azure Stack. Para ello, deberán agregar la cuenta como usuario invitado a su inquilino de AAD. Se aconseja que utilice una cuenta diferente de la cuenta de Azure CSP para administrar la suscripción del cliente a Azure Stack y asegurarse de que no pierda el acceso a la suscripción de Azure del cliente.
 
 ### <a name="update-the-registration-with-the-end-customer-subscription"></a>Actualización del registro con la suscripción del cliente final
 

@@ -15,12 +15,12 @@ ms.date: 03/29/2019
 ms.lastreviewed: 03/18/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
-ms.openlocfilehash: 7cc05316222f7652e8c5eecbad6a02eee901e697
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 1e4b8bddaa5bfa164e413ee7a20071fe6a0cc831
+ms.sourcegitcommit: 23816ec68f67f3ac51f78de925b7631590743a29
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65617932"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66835077"
 ---
 # <a name="deploy-the-sql-server-resource-provider-on-azure-stack"></a>Implementación del proveedor de recursos de SQL Server en Azure Stack
 
@@ -41,8 +41,8 @@ Hay varios requisitos previos que se deben cumplir antes de implementar el prove
   |Versión mínima de Azure Stack|Versión de SQL RP|
   |-----|-----|
   |Versión 1808 (1.1808.0.97)|[SQL RP, versión 1.1.33.0](https://aka.ms/azurestacksqlrp11330)|  
-  |Versión 1808 (1.1808.0.97)|[SQL RP, versión 1.1.30.0](https://aka.ms/azurestacksqlrp11300)|
-  |Versión 1804 (1.0.180513.1)|[SQL RP, versión 1.1.24.0](https://aka.ms/azurestacksqlrp11240)
+  |Versión 1808 (1.1808.0.97)|[SQL RP, versión 1.1.30.0](https://aka.ms/azurestacksqlrp11300)|  
+  |Versión 1804 (1.0.180513.1)|[SQL RP, versión 1.1.24.0](https://aka.ms/azurestacksqlrp11240)  
   |     |     |
 
 - Asegúrese de que se cumplen los requisitos previos de la integración del centro de datos:
@@ -50,8 +50,8 @@ Hay varios requisitos previos que se deben cumplir antes de implementar el prove
     |Requisito previo|Referencia|
     |-----|-----|
     |El reenvío condicional de DNS se ha establecido correctamente.|[Integración del centro de datos de Azure Stack: DNS](azure-stack-integrate-dns.md)|
-    |Los puertos de entrada para los proveedores de recursos están abiertos.|[Integración del centro de datos de Azure Stack: publicar puntos de conexión](azure-stack-integrate-endpoints.md#ports-and-protocols-inbound)|
-    |Se han establecido correctamente el SAN y el asunto del certificado.|[Requisitos previos de PKI obligatorios para la implementación de Azure Stack](azure-stack-pki-certs.md#mandatory-certificates)[Requisitos previos de certificado de PaaS para la implementación de Azure Stack](azure-stack-pki-certs.md#optional-paas-certificates)|
+    |Los puertos de entrada para los proveedores de recursos están abiertos.|[Integración del centro de datos de Azure Stack: protocolos y puertos de entrada](azure-stack-integrate-endpoints.md#ports-and-protocols-inbound)|
+    |Se han establecido correctamente el SAN y el asunto del certificado.|[Requisitos previos de PKI obligatorios de implementación de Azure Stack](azure-stack-pki-certs.md#mandatory-certificates)<br>[Requisitos previos de certificado de PaaS de implementación de Azure Stack](azure-stack-pki-certs.md#optional-paas-certificates)|
     |     |     |
 
 ### <a name="certificates"></a>Certificados
@@ -94,8 +94,8 @@ Puede especificar los parámetros siguientes en la línea de comandos. Si no lo 
 | **DefaultSSLCertificatePassword** | Contraseña para el certificado .pfx. | _Obligatorio_ |
 | **MaxRetryCount** | El número de veces que quiere volver a intentar cada operación si se produce un error.| 2 |
 | **RetryDuration** | Intervalo de tiempo de expiración entre reintentos, en segundos. | 120 |
-| **Desinstalación** | Se quita el proveedor de recursos y todos los recursos asociados (vea las notas siguientes). | Sin  |
-| **DebugMode** | Impide la limpieza automática en caso de error. | Sin  |
+| **Desinstalación** | Se quita el proveedor de recursos y todos los recursos asociados (vea las notas siguientes). | Sin |
+| **DebugMode** | Impide la limpieza automática en caso de error. | Sin |
 
 ## <a name="deploy-the-sql-resource-provider-using-a-custom-script"></a>Implementar el proveedor de recursos SQL con un script personalizado
 

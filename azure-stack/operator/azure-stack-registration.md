@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/16/2019
 ms.author: mabrigg
-ms.reviewer: brbartle
+ms.reviewer: avishwan
 ms.lastreviewed: 03/04/2019
-ms.openlocfilehash: b70cd30653b8b324ae4d11a4a3e8aafe47d9a179
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 94eb107450271722af773bc96bec7dfeb12ff52e
+ms.sourcegitcommit: e51cdc84a09250e8fa701bb2cb09de38d7de2c07
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65617983"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66836713"
 ---
 # <a name="register-azure-stack-with-azure"></a>Registro de Azure Stack con Azure
 
@@ -255,7 +255,17 @@ Si va a registrar Azure Stack en un entorno desconectado (sin conexión a Intern
 
 ### <a name="connect-to-azure-and-register"></a>Conexión a Azure y posterior registro
 
-En el equipo que esté conectado a Internet, siga los mismos pasos para importar el módulo de RegisterWithAzure.psm1 e inicie sesión en el contexto correcto de Azure Powershell. Luego, llame a Register-AzsEnvironment. Especifique el token de registro que desea registrar en Azure. Si va a registrar más de una instancia de Azure Stack mediante el mismo identificador de suscripción de Azure, especifique un nombre de registro único. Ejecute el siguiente cmdlet:
+En el equipo que esté conectado a Internet, siga los mismos pasos para importar el módulo de RegisterWithAzure.psm1 e inicie sesión en el contexto correcto de Azure Powershell. Luego, llame a Register-AzsEnvironment. Especifique el token de registro que desea registrar en Azure. Si va a registrar más de una instancia de Azure Stack mediante el mismo identificador de suscripción de Azure, especifique un nombre de registro único.
+
+Necesitará el token de registro y un nombre de token único.
+
+1. Inicie PowerShell ISE como administrador y vaya a la carpeta **Registration**del directorio **AzureStack-Tools-master** que creó cuando descargó las herramientas de Azure Stack. Importe el módulo **RegisterWithAzure.psm1**:  
+
+   ```powershell  
+   Import-Module .\RegisterWithAzure.psm1
+   ```
+
+2. Ejecute después los siguientes cmdlets de PowerShell:  
 
   ```powershell  
   $RegistrationToken = "<Your Registration Token>"
@@ -263,7 +273,17 @@ En el equipo que esté conectado a Internet, siga los mismos pasos para importar
   Register-AzsEnvironment -RegistrationToken $RegistrationToken -RegistrationName $RegistrationName
   ```
 
-Si lo desea, puede usar el cmdlet Get-Content para señalar a un archivo que contenga el token de registro:
+Si lo desea, puede usar el cmdlet Get-Content para señalar a un archivo que contenga el token de registro.
+
+Necesitará el token de registro y un nombre de token único.
+
+1. Inicie PowerShell ISE como administrador y vaya a la carpeta **Registration**del directorio **AzureStack-Tools-master** que creó cuando descargó las herramientas de Azure Stack. Importe el módulo **RegisterWithAzure.psm1**:  
+
+  ```powershell  
+  Import-Module .\RegisterWithAzure.psm1
+  ```
+
+2. Ejecute después los siguientes cmdlets de PowerShell:  
 
   ```powershell  
   $RegistrationToken = Get-Content -Path '<Path>\<Registration Token File>'

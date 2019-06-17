@@ -7,16 +7,16 @@ manager: femila
 editor: ''
 ms.service: azure-stack
 ms.topic: article
-ms.date: 05/31/2019
+ms.date: 06/04/2019
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 10/22/2018
-ms.openlocfilehash: 2cca789487803124e1a7b24efa199d7f68760fb6
-ms.sourcegitcommit: 07cc716d97bf484c7260eb165ae205ae25e09589
+ms.openlocfilehash: 98aae8378e4bd516181cae95b153e6ee445ce4bf
+ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66453413"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66691990"
 ---
 # <a name="make-virtual-machine-scale-sets-available-in-azure-stack"></a>Puesta en disponibilidad de conjuntos de escalado de máquinas virtuales en Azure Stack
 
@@ -29,14 +29,14 @@ Este artículo le guía por el proceso de poner a disposición de los usuarios l
 Los conjuntos de escalado de máquinas virtuales en Azure Stack son similares a los conjuntos de escalado de máquinas virtuales en Azure. Para obtener más información, consulte los siguientes vídeos:
 
 * [Mark Russinovich talks Azure Scale Sets](https://channel9.msdn.com/Blogs/Regular-IT-Guy/Mark-Russinovich-Talks-Azure-Scale-Sets/) (Mark Russinovich habla sobre los conjuntos de escalado de Azure)
-* [Virtual Machine Scale Sets with Guy Bowerman](https://channel9.msdn.com/Shows/Cloud+Cover/Episode-191-Virtual-Machine-Scale-Sets-with-Guy-Bowerman)
+* [Virtual Machine Scale Sets with Guy Bowerman](https://channel9.msdn.com/Shows/Cloud+Cover/Episode-191-Virtual-Machine-Scale-Sets-with-Guy-Bowerman) (Conjunto de escalado de máquinas virtuales con Guy Bowerman)
 
 En Azure Stack, los conjuntos de escalado de máquinas virtuales no admiten el escalado automático. Puede agregar más instancias a un conjunto de escalado con plantillas de Resource Manager, la CLI o PowerShell.
 
 ## <a name="prerequisites"></a>Requisitos previos
 
 * **Marketplace:** Registre Azure Stack con Azure global para habilitar la disponibilidad de los artículos en Marketplace. Siga las instrucciones de [Registro de Azure Stack con Azure](azure-stack-registration.md).
-* **Imagen del sistema operativo:** Para poder crear un conjunto de escalado de máquinas virtuales, primero debe descargar las imágenes de máquina virtual para usarlas en el VMSS desde [Azure Stack Marketplace](azure-stack-download-azure-marketplace-item.md). Las imágenes ya deben existir antes de que un usuario pueda crear un nuevo VMSS.
+* **Imagen del sistema operativo:** Para poder crear un conjunto de escalado de máquinas virtuales, antes es preciso descargar las imágenes de máquina virtual para usarlas en el conjunto de escalado desde [Azure Stack Marketplace](azure-stack-download-azure-marketplace-item.md). Para que un usuario pueda crear un conjunto de escalado, deben existir las imágenes.
 
 ## <a name="use-the-azure-stack-portal"></a>Uso del portal de Azure Stack
 

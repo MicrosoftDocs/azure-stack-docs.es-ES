@@ -16,12 +16,12 @@ ms.date: 02/19/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: cff86ea851b2be030faf0c42a91fed60ac17634d
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: a375cc83410214f56eb38f676bf45cf529641972
+ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66267027"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66691097"
 ---
 # <a name="asdk-administration-basics"></a>Conceptos básicos de administración del Kit de desarrollo de Azure Stack 
 Hay varias cosas que debe saber si no está familiarizado con la administración del Kit de desarrollo de Azure Stack. Esta guía proporciona información general acerca de su rol como operador de Azure Stack en el entorno de evaluación y cómo asegurarse de que los usuarios de prueba puede ser productivos rápidamente.
@@ -60,7 +60,9 @@ Además de ofrecer servicios, debe realizar todas las tareas habituales de un op
 - Reemplazar el hardware que no funcione del equipo host del kit de desarrollo 
 
 ## <a name="where-to-get-support"></a>Dónde obtener soporte técnico
-En el caso del kit de desarrollo, la única opción de soporte técnico es realizar preguntas en el [foro de Microsoft Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack). Si hace clic el icono de ayuda y soporte técnico (signo de interrogación) en la esquina superior derecha del portal de administración y, a continuación, hace clic en **Nueva solicitud de soporte técnico**, se abrirá el sitio de foros directamente. Estos foros se supervisan periódicamente. 
+Para el Kit de desarrollo de Azure Stack, puede dirigir las preguntas relacionadas con el soporte técnico a el [foro de MSDN de Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack). 
+
+Haga clic en **Ayuda** (signo de interrogación) en la esquina superior derecha del portal de administración y, después, haga clic en **Help and Support** (Ayuda y soporte técnico) para abrir la **información general** de la ayuda y el soporte técnico, que tiene un vínculo al foro. Los foros de MSDN se supervisan periódicamente.  
 
 > [!IMPORTANT]
 > Como el ASDK es un entorno de evaluación, no se ofrece soporte técnico oficial a través de los servicios de soporte técnico al cliente (CSS) de Microsoft.

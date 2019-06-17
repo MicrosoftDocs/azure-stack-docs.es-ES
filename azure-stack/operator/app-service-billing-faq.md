@@ -4,7 +4,7 @@ description: Más información sobre cómo se calculan los gastos de Azure App S
 services: azure-stack
 documentationcenter: ''
 author: apwestgarth
-manager: femila
+manager: stefsch
 editor: ''
 ms.assetid: ''
 ms.service: azure-stack
@@ -12,16 +12,16 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/23/2019
+ms.date: 06/10/2019
 ms.author: anwestg
 ms.reviewer: anwestg
-ms.lastreviewed: 05/23/2019
-ms.openlocfilehash: 7b11f00c98c6433ad035b6190789276ea5aa6fa7
-ms.sourcegitcommit: be5382f715a9c1c18c660b630d8fcd823f13aae3
+ms.lastreviewed: 06/10/2019
+ms.openlocfilehash: fa3bc647d11bca915c58aa1bd948881628405776
+ms.sourcegitcommit: af63214919e798901399fdffef09650de4176956
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66213051"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66828363"
 ---
 # <a name="azure-app-service-on-azure-stack-billing-overview-and-faq"></a>Introducción y preguntas frecuentes sobre la facturación de Azure App Service en Azure Stack
 
@@ -72,6 +72,22 @@ La activación de las licencias para la infraestructura de SQL Server y del serv
 ### <a name="the-usage-faq-lists-the-tenant-meters-but-not-the-prices-for-those-meters-where-can-i-find-them"></a>La sección de preguntas más frecuentes sobre el uso enumera los medidores del inquilino pero no los precios para tales medidores, ¿donde puedo encontrarlos?
 
 Los operadores de nube tienen libertad para aplicar sus propios modelos de precios a sus clientes finales. El servicio proporciona la medición del uso y el operador de nube debe utilizar la cantidad que indica el medidor para cobrar a sus clientes según el modelo de precios que el operador determine. Esta capacidad de establecer los precios permite a los operadores diferenciarse de otros operadores de Azure Stack.
+
+### <a name="as-a-csp-how-can-i-offer-free-and-shared-skus-for-customers-to-trial-the-service"></a>Como CSP, ¿cómo puedo ofrecer SKU gratis y compartidos para que los clientes prueben el servicio?
+
+Como operador en la nube, incurrirá en costos por ofrecer SKU gratis y compartidos, como hacemos en Azure, ya que están hospedados en los trabajos compartidos.  Para minimizar ese costo, puede optar por reducir verticalmente el nivel de trabajo compartido a un mínimo.  Por ejemplo, para ofrecer SKU de planes de App Service gratis y compartidos y para ofrecer funciones basadas en el consumo, es necesario tener disponible un mínimo de una instancia A1.  Los trabajos compartidos son multiinquilinos, por lo que pueden hospedar varias aplicaciones de clientes, cada uno de ellos aislado y protegido por el espacio aislado de App Service.  Al escalar el nivel de trabajo compartido de esta manera, puede limitar el desembolso al costo de 1vCPU por mes.
+
+Además, puede optar después por crear una cuota, para su uso en un plan, que solo ofrezca SKU gratis y compartidos y limite el número de planes de servicio de aplicaciones gratis y compartidos que el cliente puede crear.
+
+## <a name="sample-scripts-to-assist-with-billing"></a>Scripts de ejemplo para ayudar con la facturación
+
+El equipo de Azure App Service ha creado scripts de PowerShell de ejemplo para ayudar a consultar el servicio de uso de Azure Stack, para ayudar a los operadores de la nube a preparar su propia facturación para los inquilinos.  Los scripts de ejemplo se encuentran en el [repositorio de herramientas de Azure Stack](https://github.com/Azure/AzureStack-tools) de GitHub y los scripts de App Service se encuentran en la [capeta AppService bajo Usage](https://github.com/Azure/AzureStack-Tools/tree/master/Usage/AppService).
+
+Los scripts de ejemplo disponibles son los siguientes:
+
+- [Get-AppServiceBillingRecords](https://github.com/Azure/AzureStack-Tools/blob/master/Usage/AppService/Get-AppServiceBillingRecords.ps1): en este ejemplo se recupera Azure App Service en los registros de facturación de API Usage de Azure Stack.
+- [Get-AppServiceSubscriptionUsage](https://github.com/Azure/AzureStack-Tools/blob/master/Usage/AppService/Get-AppServiceSubscriptionUsage.ps1): en este ejemplo se calcula Azure App Service en las cantidades de uso de Azure Stack por suscripción.  Este script calcula las cantidades de uso basándose en los datos de la API Usage y en los precios proporcionados por medidor por el operador de la nube.
+- [Suspend-UserSubscriptions](https://github.com/Azure/AzureStack-Tools/blob/master/Usage/AppService/Suspend-UserSubscriptions.ps1): este ejemplo suspende o habilita la suscripción en función del límite de uso especificado por el operador de la nube.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

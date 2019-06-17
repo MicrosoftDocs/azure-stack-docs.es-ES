@@ -3,27 +3,26 @@ title: En este artículo, aprenderá a actualizar ofertas y planes de Azure Stac
 description: En este artículo se describe cómo ver y modificar ofertas y planes de Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: sethmanheim
+manager: femila
 editor: ''
 ms.assetid: ''
 ms.service: azure-stack
 ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.custom: mvc
-origin.date: 03/07/2019
-ms.date: 03/18/2019
-ms.author: v-jay
+ms.date: 06/11/2019
+ms.author: sethm
 ms.reviewer: efemmano
-ms.lastreviewed: 03/07/2019
-ms.openlocfilehash: 00bb17eadfee32e9b0d006ac76bb8e1cd614f13e
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.lastreviewed: 06/11/2019
+ms.openlocfilehash: 54c6c44d6ab5d03819ba07ca1d34269e7a87ee77
+ms.sourcegitcommit: e51cdc84a09250e8fa701bb2cb09de38d7de2c07
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64311541"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66836797"
 ---
 # <a name="azure-stack-add-on-plans"></a>Planes complementarios de Azure Stack
 
@@ -48,7 +47,7 @@ Los planes complementarios se crean al modificar una oferta existente.
 
    ![Creación de un plan complementario](media/create-add-on-plan/add-on1.png)
 
-4. Desplácese hasta el final de las propiedades de la oferta y seleccione **Planes complementarios**. Haga clic en **Agregar**.
+4. En la parte inferior de las propiedades de la oferta seleccione **Add-on plans** (Planes complementarios). Haga clic en **Agregar**.
 
     ![Creación de un plan complementario](media/create-add-on-plan/add-on2.png)
 

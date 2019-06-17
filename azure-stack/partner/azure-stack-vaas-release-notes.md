@@ -10,16 +10,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/11/2019
+ms.date: 06/10/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.lastreviewed: 03/11/2019
-ms.openlocfilehash: eefd39c751bdbd9ed9c8f3b9112fee1ddbffb9a0
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.lastreviewed: 06/10/2019
+ms.openlocfilehash: 9360e8e5f4db14fbebba2642ed11ca2e3830bdf1
+ms.sourcegitcommit: af63214919e798901399fdffef09650de4176956
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64310101"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66828402"
 ---
 # <a name="release-notes-for-validation-as-a-service"></a>Notas de la versión para la validación como servicio
 
@@ -28,6 +28,13 @@ ms.locfileid: "64310101"
 En este artículo se incluyen las notas de la versión para la validación como servicio de Azure Stack.
 
 ## <a name="version-405"></a>Versión 4.0.5
+
+7 de junio de 2019
+
+- Se ha actualizado Cloud Simulation Engine en el flujo de trabajo de validación de paquetes para acelerar el tiempo de validación:  
+    Tiempo de ejecución: Reducido a 6 horas  
+    Versión: 5.1.13.0 -> 5.1.22.0  
+
 
 17 de enero de 2019
 
@@ -40,7 +47,7 @@ En este artículo se incluyen las notas de la versión para la validación como 
 
 7 de enero de 2019
 
-Si ejecuta el flujo de trabajo de verificación de actualización mensual de Azure Stack, y la versión para el paquete de actualización de OEM no es 1810 o posterior, recibirá un error cuando se encuentre en el paso de actualización de OEM. Este es un error. Se está desarrollando una corrección. Los pasos de mitigación son los siguientes:
+Si ejecuta el flujo de trabajo de verificación de actualización mensual de Azure Stack, y la versión para el paquete de actualización de OEM no es 1810 o posterior, recibirá un error cuando se encuentre en el paso de actualización de OEM. Este es un error. Se está desarrollando una corrección. Los pasos de navegación son los siguientes:
 
 1. Ejecute la actualización de OEM con normalidad.
 2. Ejecute Test-AzureStack después de la aplicación correcta del paquete y guarde el resultado.

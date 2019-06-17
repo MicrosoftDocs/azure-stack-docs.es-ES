@@ -16,12 +16,12 @@ ms.date: 03/23/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: dc4cb3e7931b456de6e807d9f7b691f9bfb71a33
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: 2d2aab654f2283cf019e609e9de14790ed44a76a
+ms.sourcegitcommit: e51cdc84a09250e8fa701bb2cb09de38d7de2c07
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66269511"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66837035"
 ---
 # <a name="deploy-app-service-in-a-highly-available-configuration"></a>Implementación de App Service en una configuración de alta disponibilidad
 
@@ -234,8 +234,9 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
     ![Instalación finalizada](media/app-service-deploy-ha/16.png)
 
-
 ## <a name="next-steps"></a>Pasos siguientes
+
+[Agregue las bases de datos appservice_hosting y appservice_metering a un grupo de disponibilidad](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database) si ha proporcionado al proveedor de recursos de App Service una instancia de SQL Always On. Sincronice las bases de datos para evitar cualquier pérdida de servicio en caso de una conmutación por error de la base de datos.
 
 [Escalar horizontalmente App Service](azure-stack-app-service-add-worker-roles.md). Puede que necesite agregar trabajos de rol de la infraestructura de App Service adicionales para satisfacer la demanda esperada de la aplicación en el entorno. De forma predeterminada, App Service en Azure Stack es compatible con los niveles de trabajo gratuito y compartido. Para agregar otros niveles de trabajo, debe agregar más roles de trabajo.
 

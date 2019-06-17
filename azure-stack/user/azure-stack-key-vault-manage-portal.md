@@ -3,8 +3,8 @@ title: Administración de Key Vault en Azure Stack mediante el portal | Microsof
 description: Aprenda a administrar Key Vault en Azure Stack mediante el portal
 services: azure-stack
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: sethmanheim
+manager: femila
 editor: ''
 ms.assetid: D4300668-461F-45F6-BF3B-33B502C39D17
 ms.service: azure-stack
@@ -12,18 +12,17 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-origin.date: 01/04/2019
-ms.date: 02/18/2019
-ms.author: v-jay
+ms.date: 06/11/2019
+ms.author: sethm
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: bc73e80acddaac8676b4cb47c0b9ced2467cdc44
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 57a23dc63c72657c19a92fa8f69e029be7f12f60
+ms.sourcegitcommit: e51cdc84a09250e8fa701bb2cb09de38d7de2c07
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64311295"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66836845"
 ---
-# <a name="manage-key-vault-in-azure-stack-by-using-the-portal"></a>Administración de Key Vault en Azure Stack mediante el portal
+# <a name="manage-key-vault-in-azure-stack-using-the-portal"></a>Administrar Key Vault en Azure Stack mediante el portal
 
 Puede administrar KeyValut en Azure Stack mediante el portal de Azure Stack. En este artículo se describe cómo crear y administrar un almacén de claves en Azure Stack.
 
@@ -55,7 +54,7 @@ Debe suscribirse a una oferta que incluya el servicio Azure Key Vault.
 
 ## <a name="manage-keys-and-secrets"></a>Administración de claves y secretos
 
-Después de crear un almacén, siga este procedimiento para crear y administrar claves y secretos en el almacén.
+Después de crear un almacén de claves, siga este procedimiento para crear y administrar claves y secretos en el almacén.
 
 ### <a name="create-a-key"></a>Crear una clave
 
@@ -85,7 +84,7 @@ Después de que la clave se cree correctamente, puede seleccionarla en **Claves*
 
 3. En **Secretos**, seleccione **Agregar**.
 
-4. En **Crear un secreto**, en la lista de **Opciones de carga**, elija la opción con la cual quiere crear un secreto. Puede crear un secreto **Manualmente** especificando un valor para el secreto o cargar un **Certificado** de la máquina local.
+4. En **Crear un secreto**, en la lista de **Opciones de carga**, elija la opción con la cual quiere crear un secreto. Para crear un secreto **manualmente**, especifique un valor para el secreto o cargue un **certificado** de la máquina local.
 
 5. Escriba un **Nombre** para el secreto. El nombre del secreto solo puede contener caracteres alfanuméricos y el carácter de guion (-).
 

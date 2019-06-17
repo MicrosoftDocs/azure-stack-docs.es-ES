@@ -1,5 +1,5 @@
 ---
-title: Implementación de plantillas con la línea de comandos en Azure Stack | Microsoft Docs
+title: Implementación de una plantilla con la línea de comandos en Azure Stack | Microsoft Docs
 description: Obtenga información acerca de cómo usar la interfaz de la línea de comandos (CLI) multiplataforma para implementar plantillas en Azure Stack.
 services: azure-stack
 documentationcenter: ''
@@ -15,18 +15,18 @@ ms.date: 05/09/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: d225e113a19dc62ce66df49d89273d00e2e35683
-ms.sourcegitcommit: 2b6a0b3b4dc63c26df3d0535d630d640ff232fb0
+ms.openlocfilehash: 92c9189f8144804f36e551ab89d8b4fc4c1f8598
+ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65521115"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66691368"
 ---
-# <a name="deploy-templates-in-azure-stack-using-the-command-line"></a>Implementación de plantillas en Azure Stack mediante la línea de comandos
+# <a name="deploy-a-template-with-the-command-line-in-azure-stack"></a>Implementación de una plantilla con la línea de comandos en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Use la Interfaz de la línea de comandos (CLI) de Azure para implementar plantillas de Azure Resource Manager en Azure Stack. Las plantillas de Azure Resource Manager implementan y aprovisionan recursos para su aplicación en una única operación coordinada.
+Use la interfaz de la línea de comandos (CLI) de Azure para implementar plantillas de Azure Resource Manager en Azure Stack. Las plantillas de Azure Resource Manager implementan y aprovisionan recursos para su aplicación en una única operación coordinada.
 
 ## <a name="before-you-begin"></a>Antes de empezar
 

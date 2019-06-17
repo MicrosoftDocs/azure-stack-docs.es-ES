@@ -16,12 +16,12 @@ ms.date: 05/30/2019
 ms.author: sethm
 ms.reviewer: adepue
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 4a69ece2b97fca13a87819dce6e02e8971121944
-ms.sourcegitcommit: a427e72e4f3b6cd6000b1459af9bbf221e049e08
+ms.openlocfilehash: 53b33c7eb0dc71a65113ef8807de1c5b3c3c4c80
+ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66506306"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66691391"
 ---
 # <a name="azure-stack-1902-update"></a>Actualización 1902 de Azure Stack
 
@@ -63,7 +63,7 @@ Las revisiones de Azure Stack solo son aplicables a los sistemas integrados de A
 ## <a name="prerequisites"></a>Requisitos previos
 
 > [!IMPORTANT]
-> Puede instalar 1902 directamente desde la versión [1.1901.0.95 o 1.1901.0.99](azure-stack-update-1901.md#build-reference), sin necesidad de instalar ninguna revisión de 1901. Sin embargo, si ha instalado la revisión anterior **1901.2.103**, debe instalar la nueva [revisión 1901.3.105](https://support.microsoft.com/help/4495662) antes de continuar con la 1902.
+> 1902 se puede instalar directamente desde las versiones **1.1901.0.95** o **1.1901.0.99** sin necesidad de instalar ninguna revisión de 1901. Sin embargo, si ha instalado la revisión anterior **1901.2.103**, debe instalar la nueva [revisión 1901.3.105](https://support.microsoft.com/help/4495662) antes de continuar con la 1902.
 
 - Antes de iniciar la instalación de esta actualización, ejecute [Test-AzureStack](azure-stack-diagnostic-test.md) con los parámetros siguientes para validar el estado de Azure Stack y resolver todos los problemas operativos detectados, incluidas todas las advertencias y errores. Repase también las alertas activas y resuelva las que requieran alguna acción:
 

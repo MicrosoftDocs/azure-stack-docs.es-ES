@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/28/2019
+ms.date: 06/10/2019
 ms.author: anwestg
 ms.reviewer: ''
-ms.openlocfilehash: d280ffacf9cb74c519857ebafc907debc915ec21
-ms.sourcegitcommit: 85367001c332ed53fba0d2294eae3c06e8578070
+ms.openlocfilehash: d3464681463cfb66a368210beed79d5ef4c28739
+ms.sourcegitcommit: af63214919e798901399fdffef09650de4176956
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66307835"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66828320"
 ---
 # <a name="app-service-on-azure-stack-update-6-release-notes"></a>Notas de la versión de App Service en la actualización 6 de Azure Stack
 
@@ -102,6 +102,16 @@ Si decide realizar una implementación en una red virtual existente y en una dir
 ### <a name="known-issues-for-cloud-admins-operating-azure-app-service-on-azure-stack"></a>Problemas conocidos para los administradores en la nube que trabajan con Azure App Service en Azure Stack
 
 Consulte la documentación de las [notas de la versión de Azure Stack 1904](azure-stack-release-notes-1904.md).
+
+### <a name="known-issues-for-tenants-deploying-applications-on-azure-app-service-on-azure-stack"></a>Problemas conocidos de los inquilinos que implementan aplicaciones en Azure App Service en Azure Stack
+
+- El Centro de implementación está atenuado.
+
+Los inquilinos todavía no pueden hacer uso del Centro de implementación, que es una característica que se publicó en la nube pública a finales de 2018.  Los inquilinos todavía pueden utilizar los métodos de implementación estándar (FTP, Web Deploy, Git, etc.) mediante el portal, la CLI y PowerShell.
+
+- Las opciones de implementación (Clásica) y las opciones del portal de credenciales de implementación y de experiencia de usuario no están disponibles.
+
+Para alcanzar las opciones de implementación y las credenciales de implementación de las experiencias de usuario en la implementación de Azure Stack, los usuarios deben acceder al portal mediante este formato URL: https://portal.&lt ;*región*&gt;.&lt;*FQDN*&gt; /?websitesExtension_oldvsts=true que, para el ASDK, sería [https://portal.local.azurestack.external/?websitesExtension_oldvsts=true](https://portal.local.azurestack.external/?websitesExtension_oldvsts=true) y, después, desplazarse a sus aplicaciones normalmente.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

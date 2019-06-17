@@ -16,23 +16,25 @@ ms.date: 05/31/2019
 ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 05/31/2019
-ms.openlocfilehash: e549413798ffc3c06c95bfbcf50ab4929ffeaf63
-ms.sourcegitcommit: 80775f5c5235147ae730dfc7e896675a9a79cdbe
+ms.openlocfilehash: 6afaca6e9bad806f432cf56b79dca5881bb76455
+ms.sourcegitcommit: fbd6a7fed4f064113647540329a768347a6cf261
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66461098"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810225"
 ---
 # <a name="azure-stack-compute"></a>Proceso de Azure Stack
 
-Los [tamaños de VM](https://docs.microsoft.com/azure-stack/user/azure-stack-vm-sizes) admitidos en Azure Stack son un subconjunto de los que se admiten en Azure. Azure impone límites de recursos junto con varios vectores para evitar el consumo excesivo de recursos (nivel de servicio y local del servidor). Sin la imposición de algunos límites sobre el consumo del inquilino, las experiencias de este se verán afectadas cuando otros inquilinos consuman recursos en exceso. Para la salida de redes de la máquina virtual, hay extremos de ancho de banda en Azure Stack que coinciden con las limitaciones de Azure. En el caso de los recursos de almacenamiento, se han implementado límites de IOPS de almacenamiento en Azure Stack para evitar el consumo excesivo básico de recursos por parte de los inquilinos para el acceso de almacenamiento.
+Los [tamaños de VM](https://docs.microsoft.com/azure-stack/user/azure-stack-vm-sizes) admitidos en Azure Stack son un subconjunto de los que se admiten en Azure. Azure impone límites de recursos junto con varios vectores para evitar el consumo excesivo de recursos (nivel de servicio y local del servidor). Sin la imposición de algunos límites sobre el consumo del inquilino, las experiencias de este se verán afectadas cuando otros inquilinos consuman recursos en exceso. Para la salida de redes de la máquina virtual, hay extremos de ancho de banda en Azure Stack que coinciden con las limitaciones de Azure. En el caso de los recursos de almacenamiento en Azure Stack, los límites de almacenamiento de IOPS evitan el consumo excesivo básico de recursos por parte de los inquilinos para el acceso de almacenamiento.
 
 >[!IMPORTANT]
 >[Capacity Planner de Azure Stack](https://aka.ms/azstackcapacityplanner) no considera ni garantiza el rendimiento de IOPS.
 
 ## <a name="vm-placement"></a>Selección de ubicación de VM
 
-En Azure Stack, el motor de selección de ubicación selecciona automáticamente la ubicación de la VM entre los hosts disponibles. Las únicas dos consideraciones a la hora de seleccionar la ubicación de las VM son si hay suficiente memoria en el host para ese tipo de VM y si las VM forman parte de un [conjunto de disponibilidad](https://docs.microsoft.com/azure/virtual-machines/windows/manage-availability) o son [conjuntos de escalado de máquinas virtuales](https://docs.microsoft.com/azure/virtual-machine-scale-sets/overview).  
+El motor de ubicación de Azure Stack coloca las máquinas virtuales de los inquilinos a través de los hosts disponibles.
+
+Azure Stack usa dos consideraciones al ubicar máquinas virtuales. La primera, es la suficiente memoria en el host para ese tipo de máquina virtual. La segunda, si las máquinas virtuales forman parte de un [conjunto de disponibilidad](https://docs.microsoft.com/azure/virtual-machines/windows/manage-availability) o son [conjuntos de escalado de máquinas virtuales](https://docs.microsoft.com/azure/virtual-machine-scale-sets/overview).
 
 Para conseguir la alta disponibilidad de un sistema de producción con varias VM en Azure Stack, las VM se colocan en un conjunto de disponibilidad que las distribuye a varios dominios de error. Un dominio de error en un conjunto de disponibilidad se define como un único nodo en la unidad de escalado. Azure Stack admite un conjunto de disponibilidad con un máximo de tres dominios de error para coherencia con Azure. Las máquinas virtuales colocadas en conjuntos de disponibilidad se aislarán físicamente entre sí al distribuirlas de la manera más uniforme que sea posible en varios dominios de error, es decir, hosts de Azure Stack. Si se produce un error de hardware, las máquinas virtuales del dominio de error que presente el error se reiniciarán en otros dominios de error pero, si es posible, se mantendrán en dominios de error independientes de las otras máquinas virtuales que se encuentran en el mismo conjunto de disponibilidad. Cuando el host vuelva a estar en línea, las VM se volverán a equilibrar para mantener la alta disponibilidad.  
 
@@ -50,12 +52,14 @@ Puede revisar un gráfico circular en el portal de administración que muestra l
 
 ![Capacidad de memoria física](media/azure-stack-capacity-planning/physical-memory-capacity.png)
 
-La memoria usada está formada por varios componentes. Los siguientes componentes consumen la memoria de la sección de uso del gráfico circular.  
+La memoria usada está formada por varios componentes. Los componentes siguientes consumen la memoria de la sección de uso del gráfico circular.  
 
-- Reserva o uso de sistema operativo del host: se trata de la memoria que usa el sistema operativo (SO) en el host, las tablas de página de memoria virtual, los procesos que se ejecutan en el sistema operativo del host y la memoria caché de Espacios de almacenamiento directo. 
-- Servicios de infraestructura: se trata de las VM de infraestructura que forman Azure Stack. A partir de la versión de lanzamiento 1902 de Azure Stack, esto implica 31 VM que ocupan 242 GB + (4 GB x n.º de nodos). Esta estructura de servicio interno permite la futura introducción de nuevos servicios de infraestructura mientras se desarrollan.
-- Reserva de resistencia: Azure Stack reserva una parte de la memoria para permitir la disponibilidad del inquilino durante un error de host único, así como durante la revisión y actualización para permitir la correcta migración en vivo de VM. 
-- VM de inquilino: son VM de inquilino que crean los usuarios de Azure Stack. Además de ejecutar VM, las VM que llegan al tejido también consumen memoria. Esto significa que las VM con el estado **Creando** o **Error**, o las VM apagadas desde el invitado, consumirán memoria. Sin embargo, las VM desasignadas mediante la opción de detención de desasignación no consumirán memoria de Azure Stack. 
+ -  Reserva o uso de sistema operativo del host: se trata de la memoria que usa el sistema operativo (SO) en el host, las tablas de página de memoria virtual, los procesos que se ejecutan en el sistema operativo del host y la memoria caché de Espacios de almacenamiento directo. Dado que este valor depende de la memoria que utilizan los diferentes procesos de Hyper-V que se ejecutan en el host, puede fluctuar.
+ - Servicios de infraestructura: se trata de las VM de infraestructura que forman Azure Stack. A partir de la versión de lanzamiento 1904 de Azure Stack, esto implica aproximadamente 31 máquinas virtuales que ocupan 242 GB + (4 GB x número de nodos) de memoria. La utilización de la memoria del componente de servicios de infraestructura puede cambiar a medida que trabajamos para que los servicios de infraestructura sean más escalables y resistentes.
+ - Reserva de resistencia: Azure Stack reserva una parte de la memoria para permitir la disponibilidad del inquilino durante un error de host único, así como durante la revisión y actualización para permitir la correcta migración en vivo de VM.
+ - VM de inquilino: son VM de inquilino que crean los usuarios de Azure Stack. Además de ejecutar VM, las VM que llegan al tejido también consumen memoria. Esto significa que las máquinas virtuales con el estado "Creando" o "Error", o las máquinas virtuales apagadas desde el invitado, consumirán memoria. Sin embargo, las máquinas virtuales que se han desasignado mediante la opción de detención de desasignación del Portal, PowerShell o la CLI no consumirán memoria de Azure Stack.
+ - Proveedores de recursos de complementos: las máquinas virtuales implementadas para los proveedores de recursos de complementos, como SQL, MySQL, App Service etc.
+
 
 La mejor manera de comprender el consumo de memoria en el portal es usar [Capacity Planner de Azure Stack](https://aka.ms/azstackcapacityplanner) para ver el impacto de diversas cargas de trabajo. El siguiente cálculo es el mismo que usa la herramienta de planeación.
 
@@ -78,6 +82,23 @@ Este cálculo devuelve la memoria disponible total que se puede usar para la sel
 
 
 El valor V, la máquina virtual más grande de la unidad de escalado, se basa dinámicamente en el tamaño más grande de memoria de la máquina virtual del inquilino. Por ejemplo, el valor de la máquina virtual más grande podría ser 7 GB o 112 GB, así como cualquier otro tamaño de memoria de la máquina virtual admitido en la solución Azure Stack. Cambiar la mayor VM del tejido de Azure Stack provocará un aumento en la reserva de resistencia, además del aumento de memoria de la propia VM. 
+
+## <a name="frequently-asked-questions"></a>Preguntas frecuentes
+
+P: Mi inquilino ha implementado una nueva máquina virtual, ¿cuánto tiempo tardará el gráfico de capacidad del portal de administración en mostrar la capacidad restante?
+R: La hoja de capacidad se actualiza cada 15 minutos, por lo tanto, tenga esto en cuenta.
+
+P: El número de máquinas virtuales implementadas en mi instancia de Azure Stack no ha cambiado, pero mi capacidad fluctúa. ¿Por qué?
+R: La memoria disponible para la ubicación de las máquinas virtuales tiene múltiples dependencias, una de las cuales es la reserva del sistema operativo del host. Este valor depende de la memoria que utilizan los diferentes procesos de Hyper-V que se ejecutan en el host, que no es un valor constante.
+
+P: ¿En qué estado tienen que estar las máquinas virtuales de los inquilinos para consumir memoria?
+R: Además de ejecutar VM, las VM que llegan al tejido también consumen memoria. Esto significa que las máquinas virtuales que se encuentran en estado "Creando", "Con error" o las que se apaguen desde el invitado, en lugar de detenerse la desasignación desde el Portal o PowerShell o la cli, consumirán memoria.
+
+
+P: Tengo una instancia de Azure Stack de cuatro hosts. Mi inquilino tiene tres máquinas virtuales que consumen 56 GB de RAM (D5_v2) cada una. Una de las máquinas virtuales cambia de tamaño a 112 GB de RAM (D14_v2) y los informes de memoria disponibles en el panel dieron como resultado un aumento de 168 GB de uso en la hoja de capacidad. El cambio de tamaño posterior de las otras dos máquinas virtuales de D5_v2 a D14_v2 ha dado como resultado un aumento de solo 56 GB de RAM cada una. ¿Por qué ocurre esto?
+
+R: La memoria disponible es una función de la reserva de resistencia mantenida por Azure Stack. La reserva de resistencia es una función del mayor tamaño de máquina virtual en la marca de Azure Stack. Al principio, la máquina virtual más grande en la marca tenía 56 GB de memoria. Cuando se cambió de tamaño la máquina virtual, la más grande de la marca pasó a 112 GB de memoria, lo que no solo aumentó la memoria utilizada por la máquina virtual del inquilino, sino que también aumentó la reserva de resistencia. Esto dio como resultado un aumento de 56 GB (de 56 GB a 112 GB de aumento de la memoria de la máquina virtual del inquilino) más un aumento de la memoria de reserva de resistencia de 112 GB. Al cambiar el tamaño de las máquinas virtuales posteriores, se conservó el tamaño mayor de la máquina virtual como la máquina virtual de 112 GB y, por lo tanto, no se produjo un aumento de la reserva de resistencia. El aumento en el consumo de memoria fue solo el aumento de la memoria de la máquina virtual del inquilino (56 GB). 
+
 
 > [!NOTE]
 > Los requisitos de planeamiento de capacidad de red son mínimos, ya que solo se puede configurar el tamaño de la dirección VIP pública. Para obtener información sobre cómo agregar más direcciones IP públicas en Azure Stack, consulte [Add Public IP Addresses](azure-stack-add-ips.md) (Adición de direcciones IP públicas).

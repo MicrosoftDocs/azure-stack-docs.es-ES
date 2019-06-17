@@ -12,26 +12,26 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/14/2019
-ms.author: PatAltimore
+ms.date: 06/10/2019
+ms.author: patricka
 ms.reviewer: chengwei
-ms.lastreviewed: 02/14/2019
-ms.openlocfilehash: e0b62c9f9519e1b77211327c4f9b48d4b53cf99a
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.lastreviewed: 06/10/2019
+ms.openlocfilehash: 9da7ced492a86cb97a1b90a2224383d834073423
+ms.sourcegitcommit: af63214919e798901399fdffef09650de4176956
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985871"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66828352"
 ---
 # <a name="azure-stack-log-and-customer-data-handling"></a>Control de datos de clientes y registro de Azure Stack 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*  
 
-Como procesador o subprocesador de datos personales conectado con Azure Stack, a partir del 25 de mayo de 2018, Microsoft cumple para todos los clientes los compromisos reflejados en a) la disposición "Procesamiento de los Datos Personales; RGPD"de la sección [Términos de protección de los datos](https://nam06.safelinks.protection.outlook.com/?url=http%3A%2F%2Fwww.microsoftvolumelicensing.com%2FDocumentSearch.aspx%3FMode%3D3%26DocumentTypeId%3D31&data=02%7C01%7Ccomartin%40microsoft.com%7Ce2ce478261764c79c3f308d68df01136%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636852459551078818&sdata=cpWsfZTBHpqEFr50DWQOryq342U8shgeFgMXVPQz5ug%3D&reserved=0) y b) los términos del reglamento general de protección de datos de la Unión Europea en el anexo 4 de los [Términos de los servicios online](https://nam06.safelinks.protection.outlook.com/?url=http%3A%2F%2Fwww.microsoftvolumelicensing.com%2FDocumentSearch.aspx%3FMode%3D3%26DocumentTypeId%3D31&data=02%7C01%7Ccomartin%40microsoft.com%7Ce2ce478261764c79c3f308d68df01136%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636852459551088813&sdata=bv1CBiaCnYmjiv6S0dFCbWEd4fNCkPBjBwgylNa%2FNt0%3D&reserved=0). 
+Como procesador o subprocesador de datos personales conectado con Azure Stack, a partir del 25 de mayo de 2018, Microsoft cumple para todos los clientes los compromisos reflejados en a) la disposición "Procesamiento de los Datos Personales; RGPD"de la sección [Términos de protección de los datos](http://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31) y b) los términos del reglamento general de protección de datos de la Unión Europea en el anexo 4 de los [Términos de los servicios online](http://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31). 
 
 Como Azure Stack reside en los centros de datos del cliente, Microsoft es controlador únicamente de los datos que se comparten con Microsoft a través de [diagnósticos](azure-stack-diagnostics.md), [telemetría](azure-stack-telemetry.md) y [facturación](azure-stack-usage-reporting.md).  
 
 ## <a name="data-access-controls"></a>Controles de acceso de datos 
-Los empleados de Microsoft, que se asignan para investigar un caso de soporte técnico específico, recibirán acceso de solo lectura a los datos cifrados. Los empleados de Microsoft también tienen acceso a las herramientas que pueden usarse para eliminar los datos si es necesario. Todo el acceso a los datos de los clientes se audita y se registra.  
+Los empleados de Microsoft, que se asignan para investigar un caso de soporte técnico específico, recibirán acceso de solo lectura a los datos cifrados. Los empleados de Microsoft también tienen acceso a las herramientas que se usan para eliminar los datos si es necesario. Todo el acceso a los datos de los clientes se audita y se registra.  
 
 Controles de acceso de datos:
 1.  Los datos solo se conservan durante un máximo de 90 días después de cerrar el caso.

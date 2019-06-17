@@ -14,12 +14,12 @@ ms.date: 04/20/2019
 ms.author: justinha
 ms.reviewer: adshar
 ms.lastreviewed: 12/03/2018
-ms.openlocfilehash: 3ec925406ad3553c0beb073d39d84ae20f5bc472
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: f95dcf44c2d9d30bc6ba40facbecff97ff26bf49
+ms.sourcegitcommit: e51cdc84a09250e8fa701bb2cb09de38d7de2c07
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66268640"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66836689"
 ---
 # <a name="validate-azure-stack-system-state"></a>Validación del estado del sistema de Azure Stack
 
@@ -48,13 +48,9 @@ Como se indicó anteriormente, la herramienta de validación se ejecuta a travé
 
    Acuda a las secciones [Consideraciones sobre los parámetros](azure-stack-diagnostic-test.md#parameter-considerations) y [Ejemplos de caso de uso](azure-stack-diagnostic-test.md#use-case-examples) para más información.
 
-3. Si cualquier informe de pruebas aparece como **FAIL**, ejecute:
+3. Si cualquier informe de pruebas aparece como **FAIL**, ejecute `Get-AzureStackLog`. Para obtener instrucciones sobre un sistema integrado, consulte [Ejecución de Get-AzureStackLog en sistemas integrados de Azure Stack](/azure-stack-diagnostics#to-run-get-azurestacklog-on-azure-stack-integrated-systems) o, en el ASDK, consulte [Ejecución de Get-AzureStackLog en un sistema Kit de desarrollo de Azure Stack (ASDK)](/azure-stack-diagnostics#run-get-azurestacklog-on-an-azure-stack-development-kit-asdk-system).
 
-   ```powershell
-   Get-AzureStackLog -FilterByRole SeedRing -OutputSharePath "<path>" -OutputShareCredential $cred
-   ```
-
-   El cmdlet recopila registros generados por Test-AzureStack. Para más información sobre los registros de diagnóstico, consulte [Registros de diagnóstico de Azure Stack](azure-stack-diagnostics.md). Si las pruebas devuelven **WARN** (Advertir) no necesita recopilar registros ni ponerse en contacto con los Servicios de atención al cliente y soporte técnico de Microsoft (CSS).
+   El cmdlet recopila registros generados por Test-AzureStack. Si las pruebas devuelven **WARN** (Advertir) no necesita recopilar registros ni ponerse en contacto con los Servicios de atención al cliente y soporte técnico de Microsoft (CSS).
 
 4. Si el CSS le indicó que ejecutase la herramienta de validación, el representante del CSS le solicitará los registros que haya recopilado para continuar con la solución del problema.
 

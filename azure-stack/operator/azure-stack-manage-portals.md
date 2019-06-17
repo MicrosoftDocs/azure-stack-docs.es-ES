@@ -12,16 +12,16 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 02/25/2019
+ms.date: 06/07/2019
 ms.author: justinha
 ms.reviewer: efemmano
-ms.lastreviewed: 02/25/2019
-ms.openlocfilehash: b6863a86a5307375ea13f67c349da9f87b797fe5
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.lastreviewed: 06/07/2019
+ms.openlocfilehash: cb57d43306b69c3698441b9bb7b01c0c292bd704
+ms.sourcegitcommit: 7ceddf8b67f920d5a5eef4a84e157079a53b3374
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66268454"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66821750"
 ---
 # <a name="quickstart-use-the-azure-stack-administration-portal"></a>Inicio rápido: Uso del portal de administración de Azure Stack
 
@@ -86,7 +86,7 @@ Para acceder a la documentación del operador de Azure Stack, use el icono de Ay
 
 ### <a name="quick-access-to-help-and-support"></a>Acceso rápido a ayuda y soporte técnico
 
-Si selecciona el icono de ayuda y soporte técnico (signo de interrogación) en la esquina superior derecha del portal de administración y, a continuación, seleccione **New support request** (Nueva solicitud de soporte técnico), se producirá uno de los siguientes resultados:
+Si hace clic sucesivamente en el icono de ayuda (signo de interrogación) en la esquina superior derecha del portal de administración, en **Help + support** (Ayuda y soporte técnico) y en **New support request** (Nueva solicitud de soporte técnico) bajo **Support** (Soporte técnico), se producirá uno de los siguientes resultados:
 
 - Si usa un sistema integrado, esta acción abre un sitio donde puede abrir directamente un vale de soporte técnico para los servicios de soporte al cliente de Microsoft (CSS). Consulte [dónde obtener soporte técnico](azure-stack-manage-basics.md#where-to-get-support) para saber cuándo debe acudir al servicio de soporte técnico de Microsoft o al soporte técnico del proveedor de hardware OEM (fabricante de equipo original).
 - Si usa ASDK, esta acción abre directamente el [sitio de foros de Azure Stack](https://social.msdn.microsoft.com/Forums/home?forum=AzureStack). Estos foros se supervisan periódicamente. Dado que ASDK es un entorno de evaluación, el servicio de asistencia al cliente (CSS) de Microsoft no ofrece soporte técnico oficial.

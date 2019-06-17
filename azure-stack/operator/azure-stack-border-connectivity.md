@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/12/2019
+ms.date: 06/11/2019
 ms.author: mabrigg
 ms.reviewer: wamota
 ms.lastreviewed: 08/30/2018
-ms.openlocfilehash: 291329d4e681aaeba416e0873e9f6ddf599526de
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: bd83c8fc29697107a17eeedabfd0280ff684457f
+ms.sourcegitcommit: e51cdc84a09250e8fa701bb2cb09de38d7de2c07
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618693"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66836731"
 ---
 # <a name="border-connectivity"></a>Conectividad de borde 
 El planeamiento de la integración de red es un requisito previo importante para la correcta implementación, operación y administración de sistemas integrados de Azure Stack. El planeamiento de conectividad de borde comienza con la elección de si se debe usar el enrutamiento dinámico con el protocolo de puerta de enlace de borde (BGP). Esto requiere la asignación de un número de sistema autónomo de BGP de 16 bits (público o privado) o el uso del enrutamiento estático, en el cual se asigna una ruta estática predeterminada a los dispositivos de borde.
@@ -45,7 +45,7 @@ El enrutamiento estático requiere una configuración adicional para los disposi
 
 Para integrar Azure Stack en su entorno de red con enrutamiento estático, los cuatro vínculos físicos entre el borde y el dispositivo de Tor deben estar conectados, y no se puede garantizar la alta disponibilidad debido al modo en que el enrutamiento estático funciona.
 
-El dispositivo de borde debe configurarse con rutas estáticas que apunten a los dispositivos de Tor P2P para el tráfico destinado a direcciones VIP públicas y de red *externa*, y la red de la *infraestructura*. Requerirá rutas estáticas a la *BMC* y redes *externas* para la implementación. Los operadores pueden decidir dejar rutas estáticas en el borde para acceder a recursos de administración que residan en la red *BMC*. Es opcional agregar rutas estáticas a la red de *infraestructura de conmutadores* y de *administración de conmutadores*.
+El dispositivo de borde debe configurarse con rutas estáticas que apunten a los dispositivos P2P de Tor para el tráfico destinado a direcciones VIP públicas y de red *externa* y la red de la *infraestructura*. Requerirá rutas estáticas a la *BMC* y redes *externas* para la implementación. Los operadores pueden decidir dejar rutas estáticas en el borde para acceder a recursos de administración que residan en la red *BMC*. Es opcional agregar rutas estáticas a la red de *infraestructura de conmutadores* y de *administración de conmutadores*.
 
 Los dispositivos de Tor vienen configurados con una ruta estática predeterminada que envía todo el tráfico a los dispositivos de borde. La única excepción de tráfico a la regla predeterminada se da en el espacio privado, que se bloquea con una lista de control de acceso aplicada en la conexión de Tor a borde.
 

@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/07/2019
+ms.date: 06/11/2019
 ms.author: sethm
 ms.reviewer: efemmano
-ms.lastreviewed: 03/07/2019
-ms.openlocfilehash: 087c3b95f96600f6ff0cf14ab0fb8618046b86d7
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.lastreviewed: 06/11/2019
+ms.openlocfilehash: a2bb84cef5c24cd84653092a34dea7f0e20b624e
+ms.sourcegitcommit: e51cdc84a09250e8fa701bb2cb09de38d7de2c07
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64311733"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66836915"
 ---
 # <a name="create-an-offer-in-azure-stack"></a>Creación de una oferta en Azure Stack
 
@@ -34,11 +34,11 @@ Las [ofertas](azure-stack-overview.md) son grupos de uno o varios planes que los
 
 2. Aparece una interfaz de usuario con pestañas que le permite definir el nombre de la oferta, así como agregar planes base y complementarios existentes o crear nuevos. Lo más importante es que puede revisar los detalles de la oferta que crea, antes de decidirse a crearla.
 
-   En la pestaña **Conceptos básicos**, en **Nueva oferta**, escriba un **Nombre para mostrar** y un **Nombre de recurso** y, después, en **Grupo de recursos**, seleccione **Crear nuevo** o **Usar existente**. El nombre para mostrar es el nombre descriptivo de la oferta. Este nombre descriptivo es la única información acerca de la oferta que verán los usuarios cuando se suscriban a una oferta en el portal de usuarios. Utilice un nombre intuitivo que ayude al usuario a entender lo que incluye la oferta. Solo el administrador puede ver el nombre del recurso. Es el nombre que usan los administradores para trabajar con la oferta como un recurso de Azure Resource Manager. En esta pestaña, también puede elegir si quiere que esta oferta sea pública o mantenerla privada, que es la opción predeterminada. También puede [cambiar el estado público o privado de la oferta](#change-the-state-of-an-offer) más adelante.
+   En la pestaña **Basics** (Básico), escriba un **nombre para mostrar** y un **nombre de recurso** y, después, en **Resource Group** (Grupo de recursos), seleccione **Create new** (Crear nuevo) o **Use existing** (Usar existente). El nombre para mostrar es el nombre descriptivo de la oferta. Este nombre descriptivo es la única información acerca de la oferta que verán los usuarios cuando se suscriban a una oferta en el portal de usuarios. Utilice un nombre intuitivo que ayude al usuario a entender lo que incluye la oferta. Solo el administrador puede ver el nombre del recurso. Es el nombre que usan los administradores para trabajar con la oferta como un recurso de Azure Resource Manager. En esta pestaña, también puede elegir si quiere que esta oferta sea pública o mantenerla privada, que es la opción predeterminada. También puede [cambiar el estado público o privado de la oferta](#change-the-state-of-an-offer) más adelante.
 
    ![Nueva oferta](media/azure-stack-create-offer/new-offer.png)
   
-3. Seleccione la pestaña **Planes base**. Seleccione los planes que quiere incluir en la oferta.
+3. Seleccione la pestaña **Base plans** (Planes base) o haga clic en el botón **Next: Base plans >** (Siguiente: Planes base). Seleccione los planes que quiere incluir en la oferta.
 
    ![Seleccionar plan](media/azure-stack-create-offer/select-plan.png)
 
@@ -67,7 +67,7 @@ Hay dos formas de cambiar el estado de una oferta:
 
    ![Elegir el estado](media/azure-stack-create-offer/change-state.png)
 
-2. En **Todos los recursos**, seleccione el nombre de la oferta. A continuación, seleccione **Configuración de la oferta**. Elija el estado que quiere utilizar (por ejemplo, **Público**) y, después, seleccione **Guardar**.
+2. Seleccione **Offer settings** (Configuración de la oferta). Elija el estado que quiere utilizar (por ejemplo, **Público**) y, después, seleccione **Guardar**.
 
    ![Seleccionar Estado de accesibilidad](media/azure-stack-create-offer/offer-settings.png)
 
