@@ -27,7 +27,7 @@
           href: azure-stack-subscribe-services.md
         - name: Creación de una máquina virtual a partir de una plantilla
           href: azure-stack-create-vm-template.md
-    - name: Aplicaciones de la nube híbrida
+    - name: Introducción a las aplicaciones de la nube híbrida
       href: azure-stack-hybrid-cloud-patterns.md
       items:
         - name: Implementación de aplicaciones en Azure y Azure Stack
@@ -36,26 +36,30 @@
           href: azure-stack-solution-hybrid-identity.md
         - name: Configuración de conectividad de nube híbrida
           href: azure-stack-solution-hybrid-connectivity.md
-        - name: Creación de una solución de análisis de datos almacenados provisionalmente
-          href: azure-stack-solution-staged-data-analytics.md
         - name: Creación de soluciones de escalado de toda la nube con Azure
           href: azure-stack-solution-cloud-burst.md
         - name: Creación de una solución de aplicación distribuida geográficamente
           href: azure-stack-solution-geo-distributed.md
         - name: Implementación de una solución en la nube híbrida
           href: azure-stack-solution-hybrid-cloud.md
+        - name: Implementación del análisis de datos almacenados provisionalmente
+          href: azure-stack-solution-staged-data.md
+        - name: Implementación de MongoDB de alta disponibilidad
+          href: azure-stack-solution-mongodb-ha.md
+        - name: Implementación de SQL Server 2016 de alta disponibilidad
+          href: azure-stack-solution-sql-ha.md
 - name: Guías de procedimientos
   items:
     - name: Uso del portal de Azure Stack
       href: azure-stack-use-portal.md
     - name: Conexión con PowerShell
       href: azure-stack-powershell-configure-user.md
-    - name: Seguridad y cumplimiento
+    - name: 'Seguridad, cumplimiento e identidad'
       items:
         - name: Uso del control de acceso basado en rol
           href: azure-stack-manage-permissions.md
-        - name: Uso de entidades de servicio
-          href: Azure-stack-create-service-principals.md
+        - name: Uso de una identidad de aplicación para acceder a recursos
+          href: /azure-stack/operator/azure-stack-create-service-principals?toc=/azure-stack/user/toc.json&bc=/azure-stack/breadcrumb/toc.json
     - name: Uso de servicios
       items:
         - name: Proceso
@@ -184,7 +188,7 @@
                   href: azure-stack-version-profiles-net.md
                 - name: Java
                   href: azure-stack-version-profiles-java.md
-                - name: Azure CLI
+                - name: CLI de Azure
                   href: azure-stack-version-profiles-azurecli2.md
                 - name: Go
                   href: azure-stack-version-profiles-go.md
