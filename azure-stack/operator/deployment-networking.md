@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/12/2019
+ms.date: 06/13/2019
 ms.author: mabrigg
 ms.reviewer: wamota
 ms.lastreviewed: 08/30/2018
-ms.openlocfilehash: 20ec9e6ea8831e6667a282074ba28b16da3180f9
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 59858d5538552fb04ddf41de0ad59cf77dcd7783
+ms.sourcegitcommit: b79a6ec12641d258b9f199da0a35365898ae55ff
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618982"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67131066"
 ---
 # <a name="about-deployment-network-traffic"></a>Acerca del tráfico de red de implementación
 Comprender cómo fluye el tráfico de red durante la implementación de Azure Stack es fundamental para garantizar una correcta implementación. Este artículo le guía por el tráfico de red esperado durante el proceso de implementación para ayudarle a comprender lo que puede anticipar.

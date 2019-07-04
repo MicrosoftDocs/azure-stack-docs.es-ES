@@ -15,12 +15,12 @@ ms.date: 03/29/2019
 ms.lastreviewed: 03/18/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
-ms.openlocfilehash: 1e4b8bddaa5bfa164e413ee7a20071fe6a0cc831
-ms.sourcegitcommit: 23816ec68f67f3ac51f78de925b7631590743a29
+ms.openlocfilehash: ad4f1c2c7830b0b72118d013ef8fd5de2521180c
+ms.sourcegitcommit: bcaad8b7db2ea596018d973cb29283d8c6daebfb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66835077"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67419501"
 ---
 # <a name="deploy-the-sql-server-resource-provider-on-azure-stack"></a>Implementación del proveedor de recursos de SQL Server en Azure Stack
 
@@ -107,7 +107,7 @@ Cambie la información de cuenta predeterminada y las contraseñas según sea ne
 ```powershell
 # Install the AzureRM.Bootstrapper module, set the profile and install the AzureStack module
 # Note that this might not be the most currently available version of Azure Stack PowerShell
-Install-Module -Name AzureRm.BootStrapper -Force
+Install-Module -Name AzureRm.BootStrapper -RequiredVersion 0.5.0 -Force
 Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 Install-Module -Name AzureStack -RequiredVersion 1.6.0
 

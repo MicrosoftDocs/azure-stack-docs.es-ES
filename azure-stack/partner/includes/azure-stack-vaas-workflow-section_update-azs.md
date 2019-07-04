@@ -2,16 +2,16 @@
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: include
-ms.date: 03/04/2019
+ms.date: 06/13/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/26/2018
-ms.openlocfilehash: 058c8fd30bd56df8f28e71aa433cf2220ba7c6e4
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: e168a5d373f29d37dcb9fba49bb74a8f865d64b4
+ms.sourcegitcommit: b79a6ec12641d258b9f199da0a35365898ae55ff
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64309999"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67131569"
 ---
 Asegúrese de que se ha aplicado la actualización del mes actual. Para obtener la versión más reciente, consulte [Documentación del operador de Azure Stack > Información general > Notas de la versión](../../operator/index.yml).
 

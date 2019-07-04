@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/19/2019
+ms.date: 06/13/2019
 ms.author: mabrigg
 ms.reviewer: comartin
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: edd242251cac89029eab7b45f06bb08f4db8a6a3
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 136dee8980860bb463da14fda0dcd9aff84d3803
+ms.sourcegitcommit: b79a6ec12641d258b9f199da0a35365898ae55ff
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618729"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67131421"
 ---
 # <a name="azure-stack-telemetry"></a>Telemetría de Azure Stack
 

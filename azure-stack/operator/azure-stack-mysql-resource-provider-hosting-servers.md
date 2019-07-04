@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/26/2019
 ms.author: mabrigg
-ms.reviewer: quying
+ms.reviewer: xiaofmao
 ms.lastreviewed: 02/28/2019
-ms.openlocfilehash: 00469e3dedca4609b26e1d4e967837ff0925cb9c
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 9469904ddcb27d5526e35a33091e0ea3e54600f8
+ms.sourcegitcommit: 104ccafcb72a16ae7e91b154116f3f312321cff7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618579"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67308608"
 ---
 # <a name="add-hosting-servers-for-the-mysql-resource-provider"></a>Incorporación de servidores de hospedaje para el proveedor de recursos MySQL
 
@@ -37,7 +37,7 @@ Asegúrese de que tiene las credenciales de una cuenta con privilegios de admini
 
 1. Inicie sesión en el portal del operador de Azure Stack como administrador de servicios.
 2. Seleccione **Todos los servicios**.
-3. Bajo la categoría **RECURSOS ADMINISTRATIVOS**, seleccione **MySQL Hosting Servers** (Servidores de hospedaje de MySQL) > **+ Add** (Agregar). Esta acción abre el cuadro de diálogo **Add a MySQL Hosting Server** (Agregar un servidor de hospedaje MySQL), que se muestra en la siguiente captura de pantalla.
+3. Bajo la categoría **RECURSOS ADMINISTRATIVOS**, seleccione **MySQL Hosting Servers** (Servidores de hospedaje de MySQL) >  **+ Add** (Agregar). Esta acción abre el cuadro de diálogo **Add a MySQL Hosting Server** (Agregar un servidor de hospedaje MySQL), que se muestra en la siguiente captura de pantalla.
 
    ![Configurar un servidor host](./media/azure-stack-mysql-rp-deploy/mysql-add-hosting-server-2.png)
 
@@ -90,9 +90,9 @@ Como procedimiento recomendado, todos los servidores de hospedaje de una SKU deb
 
 Las SKU no se pueden asignar a usuarios o grupos específicos.
 
-Para editar una SKU, diríjase a **All services (Todos los servicios)** > **MySQL Adapter (Adaptador de MySQL)** > **SKUs (SKU)**. Seleccione la SKU que quiere modificar, realice los cambios necesarios y haga clic en **Guardar** para guardar los cambios. 
+Para editar una SKU, diríjase a **All services (Todos los servicios)**  > **MySQL Adapter (Adaptador de MySQL)**  > **SKUs (SKU)** . Seleccione la SKU que quiere modificar, realice los cambios necesarios y haga clic en **Guardar** para guardar los cambios. 
 
-Para eliminar una SKU que ya no es necesaria, vaya a **All services (Todos los servicios)** > **MySQL Adapter (Adaptador de MySQL)** > **SKUs (SKU)**. Haga clic en el nombre de la SKU y seleccione **Eliminar** para eliminarla.
+Para eliminar una SKU que ya no es necesaria, vaya a **All services (Todos los servicios)**  > **MySQL Adapter (Adaptador de MySQL)**  > **SKUs (SKU)** . Haga clic en el nombre de la SKU y seleccione **Eliminar** para eliminarla.
 
 > [!IMPORTANT]
 > Las nuevas SKU pueden tardar hasta cuatro horas en estar disponibles en el portal del usuario.

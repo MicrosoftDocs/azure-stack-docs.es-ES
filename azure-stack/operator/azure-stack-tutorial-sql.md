@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: justinha
-ms.reviewer: quying
+ms.reviewer: xiaofmao
 ms.lastreviewed: 10/23/2018
-ms.openlocfilehash: e21819fc6475161e63fcdb99a723847c5d7fbbad
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: fa9577bf0a620f8911ee6cf5238b55f460076883
+ms.sourcegitcommit: 3f52cf06fb5b3208057cfdc07616cd76f11cdb38
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66268409"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67316322"
 ---
 # <a name="tutorial-offer-highly-available-sql-databases"></a>Tutorial: Oferta de bases de datos SQL de alta disponibilidad
 
@@ -43,7 +43,7 @@ Antes de comenzar los pasos descritos en este tutorial, asegúrese de que el [pr
 > [!IMPORTANT]
 > Todos los elementos siguientes son necesarios para utilizar la plantilla de inicio rápido de Azure Stack.
 
-- Imagen de Marketplace de [Windows Server 2016 Datacenter](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.WindowsServer).
+- Imagen de Marketplace de [Windows Server 2016 Datacenter](https://azuremarketplace.microsoft.com/marketplace/apps/MicrosoftWindowsServer.WindowsServer).
 - SQL Server 2016 SP1 o SP2 (Developer, Standard o Enterprise) en la imagen del servidor de Windows Server 2016. Este tutorial se usa la imagen de Marketplace [SQL Server 2016 SP2 Enterprise en Windows Server 2016](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoftsqlserver.sql2016sp2-ws2016).
 - [Extensión IaaS de SQL Server](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-agent-extension), versión 1.2.30 o superior. La extensión IaaS de SQL instala los componentes que son necesarios para los elementos de Marketplace de SQL Server para todas las versiones de Windows. Permite que los parámetros específicos de SQL se configuren en máquinas virtuales de SQL. Si la extensión no está instalada en el Marketplace local, el aprovisionamiento de SQL generará un error.
 - [Extensión de script personalizada para Windows](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.CustomScriptExtension), versión 1.9.1 o superior. La extensión de script personalizada es una herramienta que puede usarse para iniciar automáticamente las tareas de personalización de la máquina virtual posteriores a la implementación.

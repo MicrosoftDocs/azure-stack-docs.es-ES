@@ -5,7 +5,6 @@ services: azure-stack
 documentationcenter: ''
 author: sethmanheim
 manager: femila
-editor: ''
 ms.assetid: ''
 ms.service: azure-stack
 ms.workload: na
@@ -14,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/25/2019
 ms.author: sethm
-ms.reviewer: ''
+ms.reviewer: efemmano
 ms.lastreviewed: 04/25/2019
-ms.openlocfilehash: 5a15d55a053fbacd3a947bd61d7186d93be77dbf
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: 2e0e4ef7abd1885d843832ed7cc9e845003d0ed7
+ms.sourcegitcommit: 593d40bccf1b2957a763017a8a2d7043f8d8315c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64987805"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67152541"
 ---
 # <a name="delete-quotas-plans-offers-and-subscriptions"></a>Eliminación de cuotas, planes, ofertas y suscripciones
 

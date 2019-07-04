@@ -4,18 +4,18 @@ description: Guía de introducción a las herramientas de desarrollo de almacena
 services: azure-stack
 author: mattbriggs
 ms.author: mabrigg
-ms.date: 02/27/2019
+ms.date: 06/13/2019
 ms.topic: conceptual
 ms.service: azure-stack
 manager: femila
 ms.reviewer: xiaofmao
 ms.lastreviewed: 02/27/2019
-ms.openlocfilehash: beb43a013f66d6de5cc781fbbbdfae9e9e67c2da
-ms.sourcegitcommit: 87d93cdcdb6efb06e894f56c2f09cad594e1a8b3
+ms.openlocfilehash: 10bf2bcc13ceab3b28e44759bbacae57d63b9b97
+ms.sourcegitcommit: b79a6ec12641d258b9f199da0a35365898ae55ff
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65712402"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67131661"
 ---
 # <a name="get-started-with-azure-stack-storage-development-tools"></a>Introducción a las herramientas de desarrollo de almacenamiento de Azure Stack
 

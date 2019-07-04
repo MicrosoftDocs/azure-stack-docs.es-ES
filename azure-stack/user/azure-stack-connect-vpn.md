@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/21/2019
+ms.date: 06/21/2019
 ms.author: sethm
 ms.reviewer: scottnap
 ms.lastreviewed: 10/24/2018
-ms.openlocfilehash: f49c6f87ba3f33ae8d9c22068fa9ac4893ab7f0a
-ms.sourcegitcommit: be5382f715a9c1c18c660b630d8fcd823f13aae3
+ms.openlocfilehash: a0e1312beac5f0591658295ac3e48f122aceec4b
+ms.sourcegitcommit: 3f52cf06fb5b3208057cfdc07616cd76f11cdb38
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66197401"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67316283"
 ---
 # <a name="connect-azure-stack-to-azure-using-vpn"></a>Conectar Azure Stack a Azure mediante VPN
 

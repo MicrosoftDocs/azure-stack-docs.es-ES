@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/14/2019
+ms.date: 06/13/2019
 ms.author: mabrigg
 ms.reviewer: scottnap
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 841d8607999f4135a86e0cd6668c79dddb80bd83
-ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
+ms.openlocfilehash: 41119ef008234b4226ce7cf2fb5070904becc493
+ms.sourcegitcommit: ca46bef5d5f824d22bdbc00605eb881410b1ffd0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66691951"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67042012"
 ---
 # <a name="introducing-idns-for-azure-stack"></a>Presentación de iDNS para Azure Stack
 

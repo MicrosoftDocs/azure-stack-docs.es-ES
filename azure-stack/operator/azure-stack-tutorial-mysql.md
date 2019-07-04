@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: justinha
-ms.reviewer: quying
+ms.reviewer: xiaofmao
 ms.lastreviewed: 10/23/2018
-ms.openlocfilehash: 61d839e0f34de9387023b272aff32cf69ad9ae13
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: e62e78705d6ca1ec8fa7d839b70eda3f147f82ab
+ms.sourcegitcommit: 3f52cf06fb5b3208057cfdc07616cd76f11cdb38
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66268497"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67316302"
 ---
 # <a name="tutorial-offer-highly-available-mysql-databases"></a>Tutorial: Oferta de bases de datos MySQL de alta disponibilidad
 

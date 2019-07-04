@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/12/2019
+ms.date: 06/13/2019
 ms.author: mabrigg
 ms.reviewer: asganesh
 ms.lastreviewed: 12/10/2018
-ms.openlocfilehash: db75a99f9b8e4b3c0db272ccd0e855ea944b7129
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 9282747cf26598aee93fb6ae302a3d687eee2b17
+ms.sourcegitcommit: b79a6ec12641d258b9f199da0a35365898ae55ff
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65617877"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67131542"
 ---
 # <a name="azure-stack-datacenter-integration"></a>Integración del centro de datos de Azure Stack
 

@@ -3,21 +3,20 @@ title: Preparación de un host de extensiones de Azure Stack | Microsoft Docs
 description: Obtenga información sobre cómo preparar un host de extensiones, que se habilite automáticamente con una actualización futura de Azure Stack.
 services: azure-stack
 keywords: ''
-author: WenJason
-ms.author: v-jay
-origin.date: 03/07/2019
-ms.date: 04/29/2019
+author: mattbriggs
+ms.author: mabrigg
+ms.date: 06/13/2019
 ms.topic: article
 ms.service: azure-stack
 ms.reviewer: thoroet
-manager: digimobile
+manager: femila
 ms.lastreviewed: 03/07/2019
-ms.openlocfilehash: 23f91454027b3073498ef3c1b4a388cca0c88bab
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: ab508956ddcc57baa04c74710ea485c07cc20416
+ms.sourcegitcommit: b79a6ec12641d258b9f199da0a35365898ae55ff
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64307083"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67131158"
 ---
 # <a name="prepare-for-extension-host-for-azure-stack"></a>Preparación de un host de extensiones de Azure Stack
 
@@ -128,10 +127,10 @@ Para seguir los pasos que se indican a continuación, utilice un equipo que pued
 > Este paso no es necesario si usa la delegación de zonas DNS para la integración de DNS.
 Si se han configurado registros A de un determinado host para publicar puntos de conexión de Azure Stack, será necesario crear dos registros A más:
 
-| IP | Nombre de host. | Type |
+| IP | Nombre de host. | type |
 |----|------------------------------|------|
-| \<IP> | *.Adminhosting.\<Region>.\<FQDN> | Una  |
-| \<IP> | *.Hosting.\<Region>.\<FQDN> | Una  |
+| \<IP> | *.Adminhosting.\<Region>.\<FQDN> | Una |
+| \<IP> | *.Hosting.\<Region>.\<FQDN> | Una |
 
 Las direcciones IP asignadas pueden recuperarse utilizando un punto de conexión con privilegios y ejecutando el cmdlet **Get-AzureStackStampInformation**.
 

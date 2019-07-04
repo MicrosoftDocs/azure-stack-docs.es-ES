@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/26/2019
 ms.author: mabrigg
-ms.reviewer: quying
+ms.reviewer: xiaofmao
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: 04ae974148d47bde1e3131aeca45e8bddc9e6109
-ms.sourcegitcommit: 75b13158347963063b7ee62b0ec57894b542c1be
+ms.openlocfilehash: 2e431a3351ea60ad3bf542242e34b2156da1cf2a
+ms.sourcegitcommit: 104ccafcb72a16ae7e91b154116f3f312321cff7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66749005"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67308572"
 ---
 # <a name="add-hosting-servers-for-the-sql-resource-provider"></a>Incorporación de servidores de hospedaje para el proveedor de recursos SQL
 

@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/12/2019
+ms.date: 06/13/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 09/17/2018
-ms.openlocfilehash: 7a2ba164c5d35bc1f5b52d3ff68c18b7b3e47dcd
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 56dbc301c87e819b241d9dd6e801544df4afa152
+ms.sourcegitcommit: b79a6ec12641d258b9f199da0a35365898ae55ff
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618938"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67131197"
 ---
 # <a name="add-additional-scale-unit-nodes-in-azure-stack"></a>Incorporación de nodos de unidad de escalado adicionales en Azure Stack
 
@@ -62,7 +62,7 @@ Puede usar el portal de administración o PowerShell para agregar nuevos nodos. 
 ### <a name="use-the-admin-portal"></a>Uso del portal de administración
 
 1. Inicie sesión en el portal de administración de Azure Stack como operador de Azure Stack.
-2. Vaya a **+ Create a resource (Crear un recurso)** > **Capacidad** > **Nodo de la unidad de escalado**.
+2. Vaya a **+ Create a resource (Crear un recurso)**  > **Capacidad** > **Nodo de la unidad de escalado**.
    ![Nodo de la unidad de escalado:](media/azure-stack-add-scale-node/select-node1.png)
 3. En el panel **Agregar nodo**, seleccione la *Región* y, a continuación, seleccione la *Unidad de escalado* a la que desea agregar el nodo. Especifique también la *DIRECCIÓN IP DE BMC* para el nodo de la unidad de escalado que va a agregar. Solo puede agregar un nodo a la vez.
    ![Incorporación de detalles de nodo](media/azure-stack-add-scale-node/select-node2.png)
@@ -121,7 +121,7 @@ El estado de la unidad de escalado y de los nodos de unidad de escalado se puede
 |Stopped               |El nodo no está disponible.|
 |Agregando                |El nodo se está agregando activamente a la unidad de escalado.|
 |Reparando             |El nodo se está reparando activamente.|
-|Mantenimiento            |El nodo está en pausa y no se está ejecutando ninguna carga de trabajo de usuario activa. |
+|Mantenimiento           |El nodo está en pausa y no se está ejecutando ninguna carga de trabajo de usuario activa. |
 |Requiere corrección  |Se detectó un error que requiere que el nodo se repare.|
 
 

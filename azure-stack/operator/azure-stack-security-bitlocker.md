@@ -2,21 +2,20 @@
 title: Cifrado de datos en reposo en Azure Stack
 description: Obtenga información sobre cómo Azure Stack protege sus datos con cifrado en reposo.
 services: azure-stack
-author: WenJason
-manager: digimobile
+author: PatAltimore
 ms.service: azure-stack
 ms.topic: article
-origin.date: 12/06/2018
-ms.date: 01/14/2019
-ms.author: v-jay
+ms.date: 06/17/2019
+ms.author: patricka
 ms.reviewer: fiseraci
+ms.lastreviewed: 03/11/2019
 keywords: ''
-ms.openlocfilehash: 018b8f6cf4fc5d3cd380535fca71a038b7fd4208
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 0e21808ad82a61014b69cb26958a0c13518af13a
+ms.sourcegitcommit: 7fa9b64aeae2b22be7acfb5c4987d233303107c5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64307065"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67166495"
 ---
 # <a name="data-at-rest-encryption-in-azure-stack"></a>Cifrado de datos en reposo en Azure Stack
 
@@ -43,10 +42,9 @@ Get-AzsRecoveryKeys
 
 Parámetros opcionales para el cmdlet *Get-AzsRecoveryKeys*:
 
-| Parámetro | DESCRIPCIÓN | Type | Obligatorio |
+| Parámetro | DESCRIPCIÓN | type | Obligatorio |
 |---------|---------|---------|---------|
 |*raw* (sin formato) | devuelve datos sin procesar de la asignación entre la clave de recuperación, el nombre de equipo y los identificadores de contraseña de cada volumen cifrado  | Modificador | no (diseñado para escenarios de soporte técnico)|
-
 
 ## <a name="troubleshoot-issues"></a>Solución de problemas
 

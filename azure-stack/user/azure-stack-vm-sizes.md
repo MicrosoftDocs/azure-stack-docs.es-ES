@@ -14,12 +14,12 @@ ms.date: 04/02/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: a7ec54d88a259b883f72c2396ab572118ba96a23
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: c77fe90579bb5d7b90ed172383c8e7bcf7b26416
+ms.sourcegitcommit: ca46bef5d5f824d22bdbc00605eb881410b1ffd0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66269441"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67041960"
 ---
 # <a name="vm-sizes-supported-in-azure-stack"></a>Tamaños de máquinas virtuales admitidos en Azure Stack
 
@@ -40,18 +40,18 @@ Los tamaños de máquina virtual de uso general proporcionan una relación equil
 
 |Tamaño - Tamaño\nombre |vCPU     |Memoria | Tamaño máximo del disco temporal | Rendimiento máximo del disco del SO: (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Rendimiento de discos de datos máx. (IOPS) | Nº máx. NIC |    
 |-----------------|-----|---------|---------|-----|------|-----------|----|
-|**A0\Basic_A0**  |1    |768 MB   | 20 GB   |300  | 300  |1 / 1x300  |1   |
-|**A1\Basic_A1**  |1    |1,75 GB  | 40 GB   |300  | 300  |2 / 2x300  |1   |
-|**A2\Basic_A2**  |2    |3,5 GB   | 60 GB   |300  | 300  |4 / 4x300  |1   |
-|**A3\Basic_A3**  |4    |7 GB     | 120 GB  |300  | 300  |8 / 8x300  |1   |
-|**A4\Basic_A4**  |8    |14 GB    | 240 GB  |300  | 300  |16 / 16X300 |1   |
+|**A0\Basic_A0**  |1    |768 MB   | 20 GB   |300  | 300  |1 / 1x300  |2   |
+|**A1\Basic_A1**  |1    |1,75 GB  | 40 GB   |300  | 300  |2 / 2x300  |2   |
+|**A2\Basic_A2**  |2    |3,5 GB   | 60 GB   |300  | 300  |4 / 4x300  |2   |
+|**A3\Basic_A3**  |4    |7 GB     | 120 GB  |300  | 300  |8 / 8x300  |2   |
+|**A4\Basic_A4**  |8    |14 GB    | 240 GB  |300  | 300  |16 / 16X300 |2   |
 
 ### <a name="standard-a"></a>Estándar A 
-|Tamaño     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |    
+|Size     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |    
 |----------------|--|------|----|----|----|-------|---------|
-|**Standard_A0** |1 |0,768 |20  |500 |500 |1x500  |1 |
-|**Standard_A1** |1 |1,75  |70  |500 |500 |2 x 500  |1 |
-|**Standard_A2** |2 |3,5   |135 |500 |500 |4x500  |1 |
+|**Standard_A0** |1 |0,768 |20  |500 |500 |1x500  |2 |
+|**Standard_A1** |1 |1,75  |70  |500 |500 |2 x 500  |2 |
+|**Standard_A2** |2 |3,5   |135 |500 |500 |4x500  |2 |
 |**Standard_A3** |4 |7     |285 |500 |500 |8x500  |2 |
 |**Standard_A4** |8 |14    |605 |500 |500 |16x500 |4 |
 |**Standard_A5** |2 |14    |135 |500 |500 |4x500  |2 |
@@ -61,7 +61,7 @@ Los tamaños de máquina virtual de uso general proporcionan una relación equil
 ### <a name="av2-series"></a>Serie Av2
 *Requiere la versión de Azure Stack 1804 o posterior*
 
-|Tamaño     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
+|Size     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
 |-----------------|----|----|-----|-----|------|--------------|---------|
 |**Standard_A1_v2**  |1   |2   |10   |500 |1000  |2 / 2x500   |2 |
 |**Standard_A2_v2**  |2   |4   |20   |500 |2000  |4 / 4x500   |2 |
@@ -72,24 +72,24 @@ Los tamaños de máquina virtual de uso general proporcionan una relación equil
 |**Standard_A8m_v2** |8   |64  |80   |500 |8000  |16 / 16x500 |8 |
 
 ### <a name="d-series"></a>Serie D
-|Tamaño     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
+|Size     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
 |----------------|----|----|-----|----|------|------------|---------|
-|**Standard_D1** |1   |3,5 |50   |500 |3000  |4 / 4x500   |1 |
+|**Standard_D1** |1   |3,5 |50   |500 |3000  |4 / 4x500   |2 |
 |**Standard_D2** |2   |7   |100  |500 |6000  |8 / 8x500   |2 |
 |**Standard_D3** |4   |14  |200  |500 |12000 |16 / 16x500 |4 |
 |**Standard_D4** |8   |28  |400  |500 |24000 |32 / 32x500 |8 |
 
 
 ### <a name="ds-series"></a>Serie DS
-|Tamaño     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
+|Size     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
 |-----------------|----|----|-----|-----|------|-------------|---------|
-|**Standard_DS1** |1   |3,5 |7    |1000 |4000  |4 / 4x2300   |1 |
+|**Standard_DS1** |1   |3,5 |7    |1000 |4000  |4 / 4x2300   |2 |
 |**Standard_DS2** |2   |7   |14   |1000 |8000  |8 / 8x2300   |2 |
 |**Standard_DS3** |4   |14  |28   |1000 |16000 |16 / 16x2300 |4 |
 |**Standard_DS4** |8   |28  |56   |1000 |32000 |32 / 32x2300 |8 |
 
 ### <a name="dv2-series"></a>Serie Dv2
-|Tamaño     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
+|Size     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
 |-------------------|----|----|-----|----|------|------------|---------|
 |**Standard_D1_v2** |1   |3,5 |50   |500 |3000  |4 / 4x500   |2 |
 |**Standard_D2_v2** |2   |7   |100  |500 |6000  |8 / 8x500   |2 |
@@ -98,9 +98,9 @@ Los tamaños de máquina virtual de uso general proporcionan una relación equil
 |**Standard_D5_v2** |16  |56  |800  |500 |48000 |64 / 64x500 |8 |
 
 ### <a name="dsv2-series"></a>DSv2-series
-|Tamaño     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
+|Size     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
 |--------------------|----|----|----|-----|------|-------------|---------|
-|**Standard_DS1_v2** |1   |3,5 |7   |1000 |4000  |4 / 4x2300   |1 |
+|**Standard_DS1_v2** |1   |3,5 |7   |1000 |4000  |4 / 4x2300   |2 |
 |**Standard_DS2_v2** |2   |7   |14  |1000 |8000  |8 / 8x2300   |2 |
 |**Standard_DS3_v2** |4   |14  |28  |1000 |16000 |16 / 16x2300 |4 |
 |**Standard_DS4_v2** |8   |28  |56  |1000 |32000 |32 / 32x2300 |8 |
@@ -111,7 +111,7 @@ Los tamaños de máquina virtual de uso general proporcionan una relación equil
 ### <a name="f-series"></a>Serie F
 *Requiere la versión de Azure Stack 1804 o posterior*
 
-|Tamaño     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
+|Size     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
 |-----------------|----|----|-----|----|------|------------|---------|
 |**Standard_F1**  |1   |2   |16   |500 |3000  |4 / 4x500   |2 |
 |**Standard_F2**  |2   |4   |32   |500 |6000  |8 / 8x500   |2 |
@@ -123,7 +123,7 @@ Los tamaños de máquina virtual de uso general proporcionan una relación equil
 ### <a name="fs-series"></a>Serie Fs
 *Requiere la versión de Azure Stack 1804 o posterior*  
 
-|Tamaño     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
+|Size     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
 |------------------|----|----|----|-----|------|-------------|---------|
 |**Standard_F1s**  |1   |2   |4   |1000 |4000  |4 / 4x2300   |2 |
 |**Standard_F2s**  |2   |4   |8   |1000 |8000  |8 / 8x2300   |2 |
@@ -135,12 +135,12 @@ Los tamaños de máquina virtual de uso general proporcionan una relación equil
 ### <a name="fsv2-series"></a>Serie Fsv2
 *Requiere la versión de Azure Stack 1804 o posterior* 
 
-|Tamaño     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
+|Size     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
 |---------------------|----|----|-----|-----|-------|--------------|---------|
 |**Standard_F2s_v2**  |2   |4   |16   |1000 |4000   |4 / 4x2300    |2 |
-|**Standard_F4s_v2**  |4   |8   |32   |1000 |8000   |8 / 8x2300    |4 |
-|**Standard_F8s_v2**  |8   |16  |64   |1000 |16000  |16 / 16x2300  |8 |
-|**Standard_F16s_v2** |16  |32  |128  |1000 |32000  |32 / 32x2300  |8 |
+|**Standard_F4s_v2**  |4   |8   |32   |1000 |8000   |8 / 8x2300    |2 |
+|**Standard_F8s_v2**  |8   |16  |64   |1000 |16000  |16 / 16x2300  |4 |
+|**Standard_F16s_v2** |16  |32  |128  |1000 |32000  |32 / 32x2300  |4 |
 |**Standard_F32s_v2** |32  |64  |256  |1000 |64000  |32 / 32x2300  |8 |
 |**Standard_F64s_v2** |64  |128 |512  |1000 |128000 |32 / 32x2300  |8 |
 
@@ -150,7 +150,7 @@ Los tamaños de máquina virtual de uso general proporcionan una relación equil
 Los tamaños de las máquinas virtuales optimizadas para memoria ofrecen una relación alta entre memoria y CPU que es excelente para servidores de bases de datos relacionales, memorias caché de medianas a grandes y análisis en memoria.
 
 ### <a name="mo-d"></a>Serie D
-|Tamaño     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
+|Size     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
 |------------------|---|----|----|--------|------|------------|---------|
 |**Standard_D11**  |2  |14  |100 |500     |6000  |8 / 8x500   |2 |
 |**Standard_D12**  |4  |28  |200 |500     |12000 |16 / 16x500 |4 |
@@ -158,7 +158,7 @@ Los tamaños de las máquinas virtuales optimizadas para memoria ofrecen una rel
 |**Standard_D14**  |16 |112 |800 |500     |48000 |64 / 64x500 |8 |
 
 ### <a name="mo-ds"></a>Series DS
-|Tamaño     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
+|Size     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
 |-------------------|---|----|----|--------|------|-------------|---------|
 |**Standard_DS11**  |2  |14  |28  |1000    |8000  |8 / 8x2300   |2 |
 |**Standard_DS12**  |4  |28  |56  |1000    |12000 |16 / 16x2300 |4 |
@@ -166,7 +166,7 @@ Los tamaños de las máquinas virtuales optimizadas para memoria ofrecen una rel
 |**Standard_DS14**  |16 |112 |224 |1000    |64000 |64 / 64x2300 |8 |
 
 ### <a name="mo-dv2"></a>Serie Dv2
-|Tamaño     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
+|Size     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
 |--------------------|----|----|-----|----|-------|-------------|---------|
 |**Standard_D11_v2** |2   |14  |100  |500 |6000   |8 / 8x500    |2 |
 |**Standard_D12_v2** |4   |28  |200  |500 |12000  |16 / 16x500  |4 |
@@ -175,7 +175,7 @@ Los tamaños de las máquinas virtuales optimizadas para memoria ofrecen una rel
 
 
 ### <a name="mo-dsv2"></a>Serie DSv2
-|Tamaño     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
+|Size     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
 |---------------------|----|----|-----|-----|-------|--------------|---------|
 |**Standard_DS11_v2** |2   |14  |28   |1000 |8000   |4 / 4x2300    |2 |
 |**Standard_DS12_v2** |4   |28  |56   |1000 |16000  |8 / 8x2300    |4 |

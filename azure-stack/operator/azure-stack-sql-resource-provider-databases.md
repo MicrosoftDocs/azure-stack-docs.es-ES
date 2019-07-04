@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/12/2019
+ms.date: 06/13/2019
 ms.author: mabrigg
-ms.reviewer: quying
+ms.reviewer: xiaofmao
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: 2b177f14fc787c05c0a7c1f654e8bcfaf8638b93
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: a8ebc50be9b1c3e1eaae491b6d8f8916f900e500
+ms.sourcegitcommit: 104ccafcb72a16ae7e91b154116f3f312321cff7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618193"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67308473"
 ---
 # <a name="create-sql-databases"></a>Creación de bases de datos SQL
 
@@ -69,7 +69,7 @@ En la captura de pantalla siguiente se muestra cómo puede usar SQL Server Manag
 
 ![Estado de las bases de datos AlwaysOn](./media/azure-stack-sql-rp-deploy/verifyalwayson.png)
 
-Las bases de datos AlwaysOn se muestran ahora como sincronizadas y disponibles en todas las instancias de SQL y aparecen en grupos de disponibilidad. En la captura de pantalla anterior, el ejemplo de base de datos es newdb1 y su estado es **newdb1 (sincronizado)**.
+Las bases de datos AlwaysOn se muestran ahora como sincronizadas y disponibles en todas las instancias de SQL y aparecen en grupos de disponibilidad. En la captura de pantalla anterior, el ejemplo de base de datos es newdb1 y su estado es **newdb1 (sincronizado)** .
 
 ### <a name="delete-an-alwayson-database"></a>Eliminación de una base de datos AlwaysOn
 
