@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: justinha
-ms.reviewer: quying
+ms.reviewer: xiaofmao
 ms.lastreviewed: 11/05/2018
 ms.custom: mvc
-ms.openlocfilehash: cc3af256adbcea8e6055b237945dc2286762437e
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: 7198b48eef8ceb2cd802fb81e8ab835f4e254e04
+ms.sourcegitcommit: 104ccafcb72a16ae7e91b154116f3f312321cff7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66267993"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67308443"
 ---
 # <a name="tutorial-make-sql-databases-available-to-your-azure-stack-users"></a>Tutorial: poner bases de datos SQL a disposición de los usuarios de Azure Stack
 
@@ -57,7 +57,7 @@ Ahora que ha implementado el proveedor de recursos de SQL Server y ha creado una
 
 ### <a name="subscribe-to-the-offer"></a>Suscripción a la oferta
 
-1. Inicie sesión en el portal de Azure Stack (https://portal.local.azurestack.external)) como inquilino.
+1. Inicie sesión en el portal de Azure Stack (https://portal.local.azurestack.external) ) como inquilino.
 2. Seleccione **Obtener una suscripción** y, después, escriba **TestSQLServerSubscription** en **Nombre para mostrar**.
 3. Seleccione **Seleccionar una oferta** > **TestSQLServerOffer** > **Crear**.
 4. Seleccione **Todos los servicios** > **Suscripciones** > **TestSQLServerSubscription** > **Proveedores de recursos**.
