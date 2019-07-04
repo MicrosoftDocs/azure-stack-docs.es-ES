@@ -51,4 +51,4 @@ En Azure Stack, un usuario puede ser un lector, propietario o colaborador de cad
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Add a new Azure Stack tenant account in Azure Active Directory](azure-stack-add-new-user-aad.md)
+[Adición de una nueva cuenta de inquilino de Azure Stack en Azure Active Directory](azure-stack-add-new-user-aad.md)
