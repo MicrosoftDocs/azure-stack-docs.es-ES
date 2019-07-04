@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/23/2019
+ms.date: 06/24/2019
 ms.author: patricka
 ms.reviewer: unknown
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: e8a52b1d3a111ee425276eab427c290c1ed2455e
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: 9f455d6614917c0365b2143f0523ff2a44b3c05d
+ms.sourcegitcommit: fdeb2760845c9760ea7df1414b8e140b0624a823
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66267901"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67334409"
 ---
 # <a name="validate-azure-identity"></a>Validación de la identidad de Azure
 
@@ -83,7 +83,7 @@ Se necesitan los siguientes requisitos previos:
    Invoke-AzsAzureIdentityValidation -AADServiceAdministrator $serviceAdminCredential -AzureEnvironment <environment name> -AADDirectoryTenantName contoso.onmicrosoft.com
    ```
 
-4. Después de ejecutar la herramienta, revise el resultado. Confirme que el estado es correcto para los requisitos de instalación. Una validación correcta tiene un aspecto similar al de la siguiente imagen:
+4. Después de ejecutar la herramienta, revise el resultado. Confirme que el estado es **correcto** para los requisitos de instalación. Una validación correcta tiene un aspecto similar al de la siguiente imagen:
 
    ```powershell
    Invoke-AzsAzureIdentityValidation v1.1809.1005.1 started.

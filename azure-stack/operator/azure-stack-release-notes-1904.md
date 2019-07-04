@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/30/2019
 ms.author: sethm
-ms.reviewer: ''
+ms.reviewer: hectorl
 ms.lastreviewed: 05/30/2019
-ms.openlocfilehash: 31f2df0b5c7598c678daff8abe34a40b4e08d590
-ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
+ms.openlocfilehash: d3a50288464b81104ddd1dd032f93128fde43eae
+ms.sourcegitcommit: 593d40bccf1b2957a763017a8a2d7043f8d8315c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66691602"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67152511"
 ---
 # <a name="azure-stack-1904-update"></a>Actualización 1904 de Azure Stack
 
@@ -76,8 +76,6 @@ El tipo de compilación de la actualización 1904 de Azure Stack es **Rápida*
 <!-- this applies to bug 3725384 and bug #4225643 -->
 - Volumen de mensajes de syslog mejorado al filtrar eventos innecesarios y proporcionar un parámetro de configuración para seleccionar el nivel de gravedad deseado para los mensajes reenviados. Para obtener más información sobre cómo configurar el nivel de gravedad, consulte [Azure Stack datacenter integration - syslog forwarding](azure-stack-integrate-security.md) (Integración del centro de datos de Azure Stack: reenvío de syslog).
 
-- La infraestructura de Azure Stack consume 12 GB adicionales + (4 GB * número de hosts de Azure Stack) desde la actualización 1904 en adelante. Esto significa que en un sello de 4 nodos habrá un consumo de capacidad adicional de 28 GB (12 GB + 4 GB * 4) reflejado en la pantalla de la capacidad del portal de administradores de Azure Stack. La actualización a la versión de 1904 debería realizarse correctamente aunque el consumo de memoria adicional sitúe el sello de Azure Stack por encima de la capacidad. Si su sello de Azure Stack supera el uso de memoria una vez completada la actualización, verá una alerta que refleja este estado, con los pasos de corrección para anular la asignación de algunas VM.
-
 <!--this applied to Bug 1473487 -->
 - Se ha agregado una nueva funcionalidad al cmdlet **Get-AzureStackLog** mediante la incorporación de un parámetro adicional, `-OutputSASUri`. Ahora puede recopilar registros de Azure Stack de su entorno y almacenarlos en el contenedor de blobs de Azure Storage especificado. Para más información, consulte [Diagnósticos de Azure Stack](azure-stack-diagnostics.md#examples).
 
@@ -106,7 +104,7 @@ El tipo de compilación de la actualización 1904 de Azure Stack es **Rápida*
 - Se ha quitado la opción para que los operadores de Azure Stack apaguen las instancias de rol de infraestructura en el portal de administradores. La funcionalidad de reinicio garantiza un intento de cierre correcto antes de reiniciar la instancia de rol de infraestructura. Para escenarios avanzados, la funcionalidad de la API y de PowerShell sigue estando disponible.
 
 <!-- Feature ## 4199257 -->
-- Se incluye una nueva experiencia de administración de Marketplace, con pantallas independientes para los proveedores de recursos y las imágenes de Marketplace. Por ahora, la ventana **Proveedor de recursos** está vacía, pero en futuras versiones aparecerán nuevas ofertas de servicios PaaS, que se administrarán en esta misma ventana. ****
+- Se incluye una nueva experiencia de administración de Marketplace, con pantallas independientes para los proveedores de recursos y las imágenes de Marketplace. Por ahora, la ventana **Proveedor de recursos** está vacía, pero en futuras versiones aparecerán nuevas ofertas de servicios PaaS, que se administrarán en esta misma ventana **.**
 
 <!-- Feature ## 4199257 -->
 - Cambios en la experiencia de actualización en el portal del operador. Se incluye una nueva cuadrícula para las actualizaciones del proveedor de recursos. La capacidad de actualizar los proveedores de recursos aún no está disponible.
