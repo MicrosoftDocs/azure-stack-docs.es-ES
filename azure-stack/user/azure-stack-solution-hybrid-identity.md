@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 01/14/2019
+ms.date: 06/26/2019
 ms.author: bryanla
 ms.reviewer: anajod
-ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: ed85055c04e068ad614a406caf113555601bd620
-ms.sourcegitcommit: 261df5403ec01c3af5637a76d44bf030f9342410
+ms.lastreviewed: 06/26/2019
+ms.openlocfilehash: 074d971c1f951797b5dc2d53a62eef56d0b7249f
+ms.sourcegitcommit: eccbd0098ef652919f357ef6dba62b68abde1090
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66252042"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67492321"
 ---
 # <a name="tutorial-configure-hybrid-cloud-identity-for-azure-and-azure-stack-applications"></a>Tutorial: Configuración de la identidad de nube híbrida para aplicaciones de Azure y Azure Stack
 
@@ -30,10 +30,10 @@ Aprenda a configurar la identidad de nube híbrida para sus aplicaciones de Azur
 
 Tiene dos opciones para conceder acceso a sus aplicaciones tanto en Azure global como en Azure Stack.
 
- * Cuando Azure Stack tiene conexión continua a Internet, puede usar Azure Active Directory (Azure AD).
- * Cuando Azure Stack se desconecta de Internet, puede usar los Servicios de federación de Active Directory (AD FS).
+ * Si Azure Stack tiene conexión continua a Internet, puede usar Azure Active Directory (Azure AD).
+ * Si Azure Stack no tiene conexión a Internet, puede usar los Servicios de federación de Active Directory (AD FS).
 
-Usará entidades de servicio para conceder acceso a las aplicaciones de Azure Stack, con el fin de realizar una implementación o configuración mediante Azure Resource Manager en Azure Stack.
+Las entidades de servicio se usan para conceder acceso a las aplicaciones de Azure Stack para la implementación o configuración mediante Azure Resource Manager en Azure Stack.
 
 En este tutorial, creará un entorno de ejemplo para:
 
@@ -47,16 +47,16 @@ Para seguir los pasos de este tutorial debe tener permisos de operador de Azure 
 > ![hybrid-pillars.png](./media/azure-stack-solution-cloud-burst/hybrid-pillars.png)  
 > Microsoft Azure Stack es una extensión de Azure. Azure Stack aporta la agilidad y la innovación de la informática en la nube a su entorno local y hace posible la única nube híbrida que le permite crear e implementar aplicaciones híbridas en cualquier parte.  
 > 
-> En las notas del producto [Consideraciones de diseño para aplicaciones híbridas](https://aka.ms/hybrid-cloud-applications-pillars) se revisan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, capacidad de administración y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
+> En las notas del producto [Consideraciones de diseño para aplicaciones híbridas](https://aka.ms/hybrid-cloud-applications-pillars) se examinan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
 
 
 ## <a name="create-a-service-principal-for-azure-ad-in-the-portal"></a>Crear a una entidad de servicio para Azure AD en el portal
 
-Si ha implementado Azure Stack con Azure AD como el almacén de identidades, puede crear entidades de servicio igual que hace para Azure. El artículo sobre la [creación de entidades de servicio](azure-stack-create-service-principals.md#create-service-principal-for-azure-ad) muestra cómo realizar los pasos en el portal. Compruebe que tiene los [permisos de Azure AD necesarios](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions) antes de comenzar.
+Si implementó Azure Stack con Azure AD como el almacén de identidades, puede crear entidades de servicio como lo hace para Azure. La sección [Uso de una identidad de aplicación para acceder a recursos](../operator/azure-stack-create-service-principals.md#manage-an-azure-ad-service-principal) muestra cómo realizar los pasos desde el portal. Asegúrese de que dispone de los [permisos de Azure AD necesarios](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions) antes de comenzar.
 
 ## <a name="create-a-service-principal-for-ad-fs-using-powershell"></a>Creación de una entidad de servicio para AD FS mediante PowerShell
 
-Si ha implementado Azure Stack con AD FS, puede usar PowerShell para crear una entidad de servicio, asignar un rol para el acceso e iniciar sesión en Powershell con dicha identidad. En la sección [Creación de una entidad de servicio para AD FS](azure-stack-create-service-principals.md#create-service-principal-for-ad-fs) se muestra cómo realizar los pasos necesarios con PowerShell.
+Si implementó Azure Stack con AD FS, puede usar PowerShell para crear una entidad de servicio, asignar un rol para el acceso e iniciar sesión en Powershell con dicha identidad. La sección [Uso de una identidad de aplicación para acceder a recursos](../operator/azure-stack-create-service-principals.md#manage-an-ad-fs-service-principal) muestra cómo realizar los pasos necesarios mediante PowerShell.
 
 ## <a name="using-the-azure-stack-api"></a>Uso de la API de Azure Stack
 
@@ -68,7 +68,7 @@ La guía de inicio rápido para [empezar a trabajar con PowerShell en Azure Stac
 
 ### <a name="prerequisites"></a>Requisitos previos
 
-Una instalación de Azure Stack conectada a Azure Active Directory con una suscripción a la que puede acceder. Si no tiene una instalación de Azure Stack, puede usar estas instrucciones para configurar un [Kit de desarrollo de Azure Stack](../asdk/asdk-install.md).
+Necesita una instalación de Azure Stack conectada a Azure Active Directory con una suscripción a la que puede acceder. Si no tiene una instalación de Azure Stack, puede usar estas instrucciones para configurar un [Kit de desarrollo de Azure Stack](../asdk/asdk-install.md).
 
 #### <a name="connect-to-azure-stack-using-code"></a>Conexión a Azure Stack mediante código
 

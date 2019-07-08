@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 05/06/2019
+ms.date: 06/20/2019
 ms.author: mabrigg
 ms.reviewer: anajod
-ms.lastreviewed: 05/06/2019
-ms.openlocfilehash: a1e13b471c9eaed9dcac79c4002ceca6b3b8e7d2
-ms.sourcegitcommit: a78c0d143eadcab65a601746b9ea24be28091ad2
+ms.lastreviewed: 06/20/2019
+ms.openlocfilehash: 442e12d435102c06a334a8a93271d3d4a27aa578
+ms.sourcegitcommit: 104ccafcb72a16ae7e91b154116f3f312321cff7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65212673"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67308765"
 ---
 # <a name="create-hybrid-cloud-apps-with-azure-and-azure-stack"></a>Creación de aplicaciones en la nube híbrida con Azure y Azure Stack
 
@@ -30,22 +30,19 @@ Microsoft Azure es una nube híbrida coherente. Azure le permite reutilizar el c
 
 Los escenarios híbridos varían considerablemente con los recursos que están disponibles para el desarrollo, y abarcan consideraciones como la geografía, la seguridad, el acceso a Internet, etc. Aunque estos escenarios no pueden abordar sus necesidades específicas, pueden proporcionarle algunas directrices y ejemplos clave para que pueda explorar la implementación de soluciones híbridas.
 
-Puede usar la nube híbrida para controlar lo siguiente:
-- Datos en capas de ejemplo.
-- SQL Server en Azure y Azure Stack.
-- Implementaciones integrales para bases de datos Mongo en Azure y Azure Stack.
-- Detección nula de inferencias de inteligencia artificial de Microsoft Edge.
-
 ## <a name="step-by-step-tutorials"></a>Tutoriales detallados
 
 - [Deploy apps across both Azure and Azure Stack](azure-stack-solution-pipeline.md) (Implementación de aplicaciones en Azure y Azure Stack)
 - [Implementación de aplicaciones en Azure Stack y Azure](azure-stack-solution-hybrid-identity.md)
 - [Configuración de la identidad de nube híbrida con aplicaciones de Azure y Azure Stack](azure-stack-solution-hybrid-connectivity.md)
 - [Configuración de la conectividad de nube híbrida con Azure y Azure Stack](azure-stack-solution-staged-data-analytics.md)
-- [Create a staged data analytics solution with Azure and Azure Stack](azure-stack-solution-cloud-burst.md) (Creación de una solución de análisis de datos almacenados provisionalmente con Azure y Azure Stack)
+- [Create a staged data analytics solution with Azure and Azure Stack](azure-stack-solution-staged-data.md) (Creación de una solución de análisis de datos almacenados provisionalmente con Azure y Azure Stack)
 - [Creación de soluciones de escalado de toda la nube con Azure](azure-stack-solution-cloud-burst.md)
 - [Creación de una solución de aplicación distribuida geográficamente con Azure y Azure Stack](azure-stack-solution-geo-distributed.md)
 - [Implementación de una solución en la nube híbrida con Azure y Azure Stack](azure-stack-solution-hybrid-cloud.md)
+- [Implementar MongoDB en Azure y Azure Stack](azure-stack-solution-mongodb-ha.md)
+- [Implementar SQL Server 2016 en Azure y Azure Stack](azure-stack-solution-sql-ha.md)
+
 
 ## <a name="next-steps"></a>Pasos siguientes
 

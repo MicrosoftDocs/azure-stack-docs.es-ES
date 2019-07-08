@@ -15,12 +15,12 @@ ms.date: 01/14/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 00f7c3b990e9930571ace8adec9a33d0c9105be6
-ms.sourcegitcommit: 261df5403ec01c3af5637a76d44bf030f9342410
+ms.openlocfilehash: 94554162cc91ddc4e9be7f24f9c7fafc32051e3c
+ms.sourcegitcommit: eccbd0098ef652919f357ef6dba62b68abde1090
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66252035"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67492397"
 ---
 # <a name="tutorial-configure-hybrid-cloud-connectivity-with-azure-and-azure-stack"></a>Tutorial: Configuración de la conectividad de nube híbrida con Azure y Azure Stack
 
@@ -31,19 +31,19 @@ Puede acceder a recursos con seguridad en Azure global y Azure Stack mediante el
 En este tutorial, creará un entorno de ejemplo para:
 
 > [!div class="checklist"]
-> - Mantener datos localmente para cumplir los requisitos de seguridad o normativos, pero tendrá acceso a los recursos de Azure global.
+> - Mantener datos en el entorno loca para cumplir los requisitos de privacidad o normativos, pero conservar el acceso a los recursos de Azure global.
 > - Mantener un sistema heredado mientras se usan recursos e implementaciones de aplicaciones escaladas en la nube en Azure global.
 
 > [!Tip]  
 > ![hybrid-pillars.png](./media/azure-stack-solution-cloud-burst/hybrid-pillars.png)  
 > Microsoft Azure Stack es una extensión de Azure. Azure Stack aporta la agilidad y la innovación de la informática en la nube a su entorno local y hace posible la única nube híbrida que le permite crear e implementar aplicaciones híbridas en cualquier parte.  
 > 
-> En las notas del producto [Consideraciones de diseño para aplicaciones híbridas](https://aka.ms/hybrid-cloud-applications-pillars) se revisan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, capacidad de administración y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
+> En las notas del producto [Consideraciones de diseño para aplicaciones híbridas](https://aka.ms/hybrid-cloud-applications-pillars) se examinan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
 
 
 ## <a name="prerequisites"></a>Requisitos previos
 
-Se requieren algunos componentes para crear una implementación de conectividad híbrida. Algunos de estos componentes tardarán tiempo en prepararse, por lo que tendrá que planear en consecuencia.
+Se requieren algunos componentes para crear una implementación de conectividad híbrida. Algunos de estos componentes tardarán en prepararse, por lo que tendrá que planear en consecuencia.
 
 **Azure Stack**
 
@@ -51,7 +51,7 @@ Un asociado de hardware u OEM de Azure puede implementar una instancia de Azure 
 
 **Componentes de Azure Stack**
 
-Un operador de Azure Stack debe implementar la instancia de App Service, crear planes y ofertas, crear una suscripción de inquilino y agregar la imagen de Windows Server 2016. Si ya tiene algunos de estos componentes, asegúrese de que cumplen los requisitos antes de empezar este tutorial.
+Un operador de Azure Stack debe implementar la instancia de App Service, crear planes y ofertas, crear una suscripción de inquilino y agregar la imagen de Windows Server 2016. Si ya tiene estos componentes, asegúrese de que cumplen los requisitos antes de empezar este tutorial.
 
 En este tutorial se da por supuesto que tiene algunos conocimientos básicos de Azure y Azure Stack. Para más información antes de iniciar el tutorial, lea los siguientes artículos:
 
@@ -77,7 +77,7 @@ En este tutorial se da por supuesto que tiene algunos conocimientos básicos de 
 
 Compruebe que se cumplen los siguientes criterios antes de empezar a configurar la conectividad de nube híbrida:
 
- - Necesita una dirección IPv4 pública externa para el dispositivo VPN. Esta dirección IP no puede estar detrás de un NAT.
+ - Necesita una dirección IPv4 pública externa para el dispositivo VPN. Esta dirección IP no puede estar detrás de una NAT (traducción de direcciones de red).
  - Todos los recursos se implementan en la misma región o ubicación.
 
 #### <a name="tutorial-example-values"></a>Valores de ejemplo del tutorial
@@ -86,13 +86,13 @@ Los ejemplos de este tutorial utilizan los valores siguientes. Puede usar estos 
 
 Especificaciones de conexión:
 
- - **Tipo de VPN**: basada en rutas
- - **Tipo de conexión**: de sitio a sitio (IPsec)
+ - **Tipo de VPN:** : basado en rutas
+ - **Tipo de conexión:** : de sitio a sitio (IPsec)
  - **Tipo de puerta de enlace**: VPN
  - **Nombre de conexión de Azure**: Azure-Gateway-AzureStack-S2SGateway (el portal rellenará automáticamente este valor)
  - **Nombre de conexión de Azure Stack**: Azure-Gateway-AzureStack-S2SGateway (el portal rellenará automáticamente este valor)
- - **Clave compartida**: cualquiera compatible con el hardware de VPN, con valores coincidentes en ambos lados de la conexión
- - **Suscripción**: la suscripción preferida
+ - **Clave compartida**: cualquiera compatible con el hardware de VPN, con valores coincidentes en ambos lados de la conexión.
+ - **Suscripción**: cualquier suscripción preferida.
  - **Grupo de recursos**: Test-Infra
 
 Direcciones IP de red y subred:
@@ -112,7 +112,7 @@ Direcciones IP de red y subred:
 
 ## <a name="create-a-virtual-network-in-global-azure-and-azure-stack"></a>Creación de una red virtual en Azure global y Azure Stack
 
-Para crear una red virtual mediante el portal, use los pasos siguientes. Puede utilizar estos  [valores de ejemplo](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal#values)  si usa este artículo como tutorial. Sin embargo, si utiliza este artículo para configurar un entorno de producción, sustituya los valores de ejemplo por sus propios valores.
+Para crear una red virtual mediante el portal, use los pasos siguientes. Puede utilizar estos  [valores de ejemplo](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal#values)  si usa este artículo solo como tutorial. Si usa este artículo para configurar un entorno de producción, sustituya los valores de ejemplo por sus propios valores.
 
 > [!IMPORTANT]
 > Debe asegurarse de que no hay ninguna superposición de direcciones IP en los espacios de direcciones de red virtual de Azure o Azure Stack.
@@ -120,7 +120,7 @@ Para crear una red virtual mediante el portal, use los pasos siguientes. Puede u
 Para crear una red virtual en Azure:
 
 1. Utilice un explorador para conectarse a [Azure Portal](https://portal.azure.com/)  e inicie sesión con su cuenta de Azure.
-2. Seleccione  **Crear un recurso**. En el campo  **Buscar en Marketplace** , escriba `virtual network`. Busque  **Red virtual**  en la lista de resultados y, seleccione  **Red virtual**.
+2. Seleccione  **Crear un recurso**. En el campo  **Buscar en Marketplace** , escriba "red virtual". Seleccione **Red virtual** en los resultados.
 3. En la lista **Seleccionar un modelo de implementación** , seleccione  **Resource Manager** y seleccione  **Crear**.
 4. En **Crear red virtual**, configure los valores correspondientes. Los nombres de los campos obligatorios van precedidos de un asterisco rojo.  Al escribir un valor válido, el asterisco se cambia a una marca de verificación verde.
 
@@ -154,7 +154,7 @@ Para crear una puerta de enlace de red virtual en Azure, use los pasos siguiente
 
    - **SKU**: básica.
    - **Red virtual**: seleccione la red virtual que ha creado antes. La subred de puerta de enlace que ha creado se selecciona automáticamente.
-   - **Primera configuración de IP**:  es la IP pública de la puerta de enlace.
+   - **Primera configuración de IP**:  IP pública de la puerta de enlace.
      - Seleccione **Crear configuración de IP de puerta de enlace**, que le lleva a la página **Elegir dirección IP pública**.
      - Seleccione **+Crear nueva** para abrir la página **Crear dirección IP pública**.
      - Escriba un **nombre** para la dirección IP pública. Deje el valor de SKU en **Básica** y seleccione **Aceptar** para guardar los cambios.
@@ -183,12 +183,12 @@ La puerta de enlace de red local suele hacer referencia a la ubicación local. A
   >Si la red local cambia o necesita cambiar la dirección IP pública del dispositivo VPN, puede actualizar fácilmente los valores más adelante.
 
 1. En el portal, seleccione  **+Crear un recurso**.
-2. En el cuadro de búsqueda, escriba  **Puerta de enlace de red local** y presione  **Entrar**  para realizar la búsqueda. Se devolverá una lista de resultados.
+2. En el cuadro de búsqueda, escriba  **Puerta de enlace de red local** y presione  **Entrar**  para realizar la búsqueda. Se mostrará una lista de resultados.
 3. Seleccione  **Puerta de enlace de red local** y, después, **Crear**  Se abrirá la página  **Crear puerta de enlace de red local** .
 4. En **Crear puerta de enlace de red local**, especifique los valores de la puerta de enlace de red local mediante nuestros **valores de ejemplo del tutorial**. Incluya los siguientes valores adicionales.
 
-    - **Dirección IP**: es la dirección IP pública del dispositivo VPN al que desea que Azure o Azure Stack se conecten. Especifique una dirección IP pública válida que no esté detrás de un NAT, para que Azure pueda llegar a la dirección. Si no tiene la dirección IP en este momento, puede usar un valor del ejemplo como marcador de posición, pero deberá volver y reemplazar el marcador de posición por la dirección IP pública del dispositivo VPN. Azure no puede conectarse al dispositivo hasta que proporcione una dirección válida.
-    - **Espacio de direcciones**: es el intervalo de direcciones de la red que representa esta red local. Puede agregar varios intervalos de espacios de direcciones. Asegúrese de que los intervalos que especifique no se superpongan con los de otras redes a las que quiera conectarse. Azure enrutará el intervalo de direcciones que especifique a la dirección IP del dispositivo VPN local. Utilice sus propios valores si quiere conectarse a su sitio local, no a un valor de ejemplo.
+    - **Dirección IP**: dirección IP pública del dispositivo VPN al que desea que Azure o Azure Stack se conecten. Especifique una dirección IP pública válida que no esté detrás de un NAT, para que Azure pueda llegar a la dirección. Si no tiene la dirección IP en este momento, puede usar un valor del ejemplo como marcador de posición, pero deberá volver y reemplazar el marcador de posición por la dirección IP pública del dispositivo VPN. Azure no puede conectarse al dispositivo hasta que proporcione una dirección válida.
+    - **Espacio de direcciones**: intervalo de direcciones de la red que representa esta red local. Puede agregar varios intervalos de espacios de direcciones. Asegúrese de que los intervalos que especifique no se superpongan con los de otras redes a las que quiera conectarse. Azure enrutará el intervalo de direcciones que especifique a la dirección IP del dispositivo VPN local. Utilice sus propios valores si quiere conectarse a su sitio local, no a un valor de ejemplo.
     - **Configurar BGP**: usar solo al configurar BGP. En caso contrario, no seleccione esta opción.
     - **Suscripción**: compruebe que se muestra la suscripción correcta.
     - **Grupo de recursos**: seleccione el grupo de recursos que quiere usar. Puede crear un grupo de recursos nuevo o seleccionar uno ya creado.
@@ -200,7 +200,7 @@ La puerta de enlace de red local suele hacer referencia a la ubicación local. A
 
 Las conexiones de sitio a sitio a una red local requieren un dispositivo VPN. El dispositivo VPN que configure se denomina conexión. Para configurar la conexión, necesita:
 
-- Una clave compartida. Se trata de la misma clave compartida que se especifica al crear la conexión VPN de sitio a sitio. En estos ejemplos se utiliza una clave compartida básica. Se recomienda que genere y utilice una clave más compleja.
+- Una clave compartida. Esta clave es la misma clave compartida que se especifica al crear la conexión VPN de sitio a sitio. En estos ejemplos se utiliza una clave compartida básica. Se recomienda que genere y utilice una clave más compleja.
 - La dirección IP pública de la puerta de enlace de red virtual. Puede ver la dirección IP pública mediante Azure Portal, PowerShell o la CLI. Para buscar la dirección IP pública de la puerta de enlace de VPN mediante Azure Portal, vaya a las puertas de enlace de red virtual y seleccione el nombre de su puerta de enlace.
 
 Utilice los pasos siguientes para crear la conexión VPN de sitio a sitio entre la puerta de enlace de red virtual y el dispositivo VPN local.
@@ -215,8 +215,8 @@ Utilice los pasos siguientes para crear la conexión VPN de sitio a sitio entre 
     - **Grupo de recursos**: seleccione el grupo de recursos de prueba.
     - **Puerta de enlace de red virtual**: seleccione la puerta de enlace de red virtual que ha creado.
     - **Puerta de enlace de red local**: seleccione la puerta de enlace de red local que ha creado.
-    - **Nombre de la conexión**: este valor se rellena automáticamente con los valores de las dos puertas de enlace.
-    - **Clave compartida**: este valor debe ser el mismo que el que usa para el dispositivo VPN local. En el ejemplo del tutorial se usa "abc123", pero puede (y debería) utilizar algo más complejo. Lo importante es que este valor DEBE ser el mismo que el que se especificó al configurar el dispositivo VPN.
+    - **Nombre de la conexión**: este nombre se rellena automáticamente con los valores de las dos puertas de enlace.
+    - **Clave compartida**: este valor debe ser el mismo que el que usa para el dispositivo VPN local. En el ejemplo del tutorial se usa "abc123", pero debería usar algo más complejo. Lo importante es que este valor DEBE ser el mismo que el que se especificó al configurar el dispositivo VPN.
     - Los valores de **Suscripción**, **Grupo de recursos** y **Ubicación** son fijos.
 
 6. Haga clic en **Aceptar** para crear la conexión.

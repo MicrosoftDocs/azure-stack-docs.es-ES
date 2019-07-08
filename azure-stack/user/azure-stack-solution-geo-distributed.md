@@ -1,6 +1,6 @@
 ---
-title: Creación de una solución de aplicación distribuida geográficamente con Azure y Azure Stack | Microsoft Docs
-description: Aprenda a crear una solución de aplicación distribuida geográficamente con Azure y Azure Stack.
+title: Tráfico directo con una solución de aplicación distribuida geográficamente con Azure y Azure Stack | Microsoft Docs
+description: Aprenda a crear una solución de aplicación distribuida geográficamente con Azure y Azure Stack que dirige el tráfico a puntos de conexión específicos.
 services: azure-stack
 documentationcenter: ''
 author: bryanla
@@ -15,14 +15,14 @@ ms.date: 01/14/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: eee89c90113187b51418801a46720f49e07fa533
-ms.sourcegitcommit: 261df5403ec01c3af5637a76d44bf030f9342410
+ms.openlocfilehash: a348e4e7eada9537defa292f667cfd3eb1e27438
+ms.sourcegitcommit: eccbd0098ef652919f357ef6dba62b68abde1090
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66252117"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67492458"
 ---
-# <a name="tutorial-create-a-geo-distributed-app-solution-with-azure-and-azure-stack"></a>Tutorial: Creación de una solución de aplicación distribuida geográficamente con Azure y Azure Stack
+# <a name="tutorial-create-a-geo-distributed-app-solution-to-direct-traffic-with-azure-and-azure-stack"></a>Tutorial: Crear una solución de aplicación distribuida geográficamente para dirigir el tráfico con Azure y Azure Stack
 
 *Se aplica a: sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
@@ -42,11 +42,11 @@ Con el patrón de distribución geográfica, la aplicación puede abarcar region
 
 #### <a name="scalability-considerations"></a>Consideraciones sobre escalabilidad
 
-La solución que va a crear con este tutorial no sirve para tener en cuenta la escalabilidad. Sin embargo, si se utiliza en combinación con otras soluciones y tecnologías de Azure y locales, puede dar cabida a los requisitos de escalabilidad. Para obtener información acerca de cómo crear una solución híbrida con ajuste de escala automático a través de Traffic Manager, consulte [Creación de soluciones de escalado en toda la nube con Azure](azure-stack-solution-cloud-burst.md).
+La solución que va a crear con este tutorial no admite la escalabilidad. Sin embargo, si se utiliza en combinación con otras soluciones de Azure y locales, puede dar cabida a los requisitos de escalabilidad. Para obtener información acerca de cómo crear una solución híbrida con ajuste de escala automático a través de Traffic Manager, consulte [Creación de soluciones de escalado en toda la nube con Azure](azure-stack-solution-cloud-burst.md).
 
 #### <a name="availability-considerations"></a>Consideraciones sobre disponibilidad
 
-Como sucede con las consideraciones sobre escalabilidad, esta solución no aborda directamente la disponibilidad. Sin embargo, también es similar en cuanto a las consideraciones sobre escalabilidad: se pueden implementar soluciones y tecnologías locales y de Azure dentro de esta solución para garantizar una alta disponibilidad para todos los componentes implicados.
+Como sucede con las consideraciones sobre escalabilidad, esta solución no aborda directamente la disponibilidad. Sin embargo, las soluciones locales y de Azure se pueden implementar dentro de esta solución para garantizar una alta disponibilidad para todos los componentes implicados.
 
 ### <a name="when-to-use-this-pattern"></a>Cuándo usar este patrón
 
@@ -54,7 +54,7 @@ Como sucede con las consideraciones sobre escalabilidad, esta solución no abord
 
 - Cada una de las oficinas extrae datos de los empleados, el negocio y las instalaciones, que requieren informes de actividad para cada normativa local y zona horaria.
 
-- Se pueden cumplir los requisitos de gran escala mediante el escalado horizontal de las aplicaciones, con la realización de varias implementaciones de la aplicación en una única región, así como entre regiones, para afrontar los requisitos extremos de carga.
+- Para cumplir los requisitos de gran escala, es necesario escalar horizontalmente las aplicaciones mediante varias implementaciones de la aplicación en una única región, así como entre regiones, para afrontar los requisitos extremos de carga.
 
 ### <a name="planning-the-topology"></a>Planeación de la topología
 
@@ -62,29 +62,29 @@ Antes de crear el entorno de una aplicación distribuida, resulta útil conocer 
 
 -   **Dominio personalizado para la aplicación:** ¿cuál es el nombre de dominio personalizado que los clientes usarán para acceder a la aplicación? Para la aplicación de ejemplo, el nombre de dominio personalizado es *www.scalableasedemo.com*.
 
--   **Dominio de Traffic Manager:** se debe elegir un nombre de dominio al crear un [perfil de Azure Traffic Manager](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-manage-profiles). Este nombre se combinará con el sufijo *trafficmanager.net* para registrar una entrada de dominio que es administrada por el Administrador de tráfico. Para la aplicación de ejemplo, el nombre elegido es *scalable-ase-demo*. Como resultado, el nombre de dominio completo administrado por Traffic Manager es *scalable-ase-demo.trafficmanager.net*.
+-   **Dominio de Traffic Manager:** se elige nombre de dominio al crear un [perfil de Azure Traffic Manager](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-manage-profiles). Este nombre se combina con el sufijo *trafficmanager.net* para registrar una entrada de dominio que administra Traffic Manager. Para la aplicación de ejemplo, el nombre elegido es *scalable-ase-demo*. Como resultado, el nombre de dominio completo administrado por Traffic Manager es *scalable-ase-demo.trafficmanager.net*.
 
--   **Estrategia para escalar el entorno de la aplicación:** ¿se va a distribuir el entorno de la aplicación entre varias instancias de App Service Environment de una sola región? ¿Varias regiones? ¿Usamos una combinación de ambos enfoques? La decisión debería basarse en las expectativas de dónde se vaya a originar el tráfico del cliente, así como también en la medida en que el resto de la infraestructura de back-end de apoyo de una aplicación pueda escalarse. Por ejemplo, con una aplicación totalmente sin estado, se puede escalar una aplicación de forma masiva mediante una combinación de varias instancias de App Service Environment por región de Azure, multiplicadas por más instancias de App Service Environment implementadas en varias regiones de Azure. Con más de 15 regiones de Azure globales entre las que elegir, los clientes pueden realmente crear una superficie de aplicación de gran escala en todo el mundo. Para la aplicación de ejemplo usada en este artículo, se crearon tres entornos de App Service en una sola región de Azure (Centro y Sur de EE. UU.).
+-   **Estrategia para escalar la superficie de la aplicación:** Decida si la superficie de la aplicación se va a distribuir en varias instancias de App Service Environment de una sola región, de varias regiones o de una opción combinada. La decisión debería basarse en las expectativas de dónde se vaya a originar el tráfico del cliente y de la escalabilidad del resto de la infraestructura de back-end complementaria de una aplicación. Por ejemplo, con una aplicación totalmente sin estado, se puede escalar una aplicación de forma masiva mediante una combinación de varias instancias de App Service Environment por región de Azure, multiplicadas por más instancias de App Service Environment implementadas en varias regiones de Azure. Con más de 15 regiones de Azure globales entre las que elegir, los clientes pueden realmente crear una superficie de aplicación de gran escala en todo el mundo. Para la aplicación de ejemplo que se usa aquí, se crearon tres instancias de App Service Environment en una sola región de Azure (Centro y Sur de EE. UU.).
 
--   **Convención de nomenclatura para las instancias de App Service Environment:** cada App Service Environment requiere un nombre único. Si existen más de uno o dos entornos de App Service Environment, resulta útil disponer de una convención de nomenclatura para ayudar a identificar cada uno. Para la aplicación de ejemplo, se usó una convención de nomenclatura sencilla. Los nombres de las tres instancias de App Service Environment son *fe1ase*, *fe2ase* y *fe3ase*.
+-   **Convención de nomenclatura para las instancias de App Service Environment:** cada instancia de App Service Environment requiere un nombre único. Si existen más de uno o dos entornos de App Service Environment, resulta útil disponer de una convención de nomenclatura que ayude a identificarlos. Para la aplicación de ejemplo que se usa aquí, se usó una convención de nomenclatura sencilla. Los nombres de las tres instancias de App Service Environment son *fe1ase*, *fe2ase* y *fe3ase*.
 
--   **Convención de nomenclatura para las aplicaciones:** dado que se van a implementar varias instancias de la aplicación, se necesita un nombre para cada instancia de la aplicación implementada. Con App Service Environments, se puede usar el mismo nombre de aplicación en varios entornos de App Service Environments. Dado que cada uno tiene un sufijo de dominio único, los desarrolladores pueden reutilizar el mismo nombre de aplicación en cada entorno. Por ejemplo, un desarrollador podría asignar los siguientes nombres a las aplicaciones:*miapp.foo1.p.azurewebsites.net*, *miapp.foo2.p.azurewebsites.net*, *miapp.foo3.p.azurewebsites.net, etc*. Para la aplicación en este escenario, cada instancia de la aplicación tiene un nombre único. Los nombres de las instancias de aplicación usados son *webfrontend1*, *webfrontend2* y *webfrontend3*.
+-   **Convención de nomenclatura para las aplicaciones:** dado que se van a implementar varias instancias de la aplicación, se necesita un nombre para cada instancia de la aplicación implementada. Con las instancias de App Service Environment, se puede usar el mismo nombre de aplicación en varios entornos. Dado que cada uno tiene un sufijo de dominio único, los desarrolladores pueden reutilizar el mismo nombre de aplicación en cada entorno. Por ejemplo, un desarrollador podría asignar los siguientes nombres a las aplicaciones:*miapp.foo1.p.azurewebsites.net*, *miapp.foo2.p.azurewebsites.net*, *miapp.foo3.p.azurewebsites.net, etc*. Para la aplicación que se usa aquí, cada instancia de la aplicación tiene un nombre único. Los nombres de las instancias de aplicación usados son *webfrontend1*, *webfrontend2* y *webfrontend3*.
 
 > [!Tip]  
 > ![hybrid-pillars.png](./media/azure-stack-solution-cloud-burst/hybrid-pillars.png)  
 > Microsoft Azure Stack es una extensión de Azure. Azure Stack aporta la agilidad y la innovación de la informática en la nube a su entorno local y hace posible la única nube híbrida que le permite crear e implementar aplicaciones híbridas en cualquier parte.  
 > 
-> En las notas del producto [Consideraciones de diseño para aplicaciones híbridas](https://aka.ms/hybrid-cloud-applications-pillars) se revisan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
+> En las notas del producto [Consideraciones de diseño para aplicaciones híbridas](https://aka.ms/hybrid-cloud-applications-pillars) se examinan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
 
 ## <a name="part-1-create-a-geo-distributed-app"></a>Parte 1: Crear una aplicación distribuida geográficamente
 
 En esta parte, creará una aplicación web.
 
 > [!div class="checklist"]
-> - Creación y publicación de aplicaciones web
-> - Adición de código a Azure Repos
+> - Crear y publicar aplicaciones web.
+> - Agregar código a Azure Repos.
 > - Dirigir la compilación de la aplicación a varios destinos en la nube.
-> - Administración y configuración del proceso de CD
+> - Administración y configuración del proceso de CD.
 
 ### <a name="prerequisites"></a>Requisitos previos
 
@@ -104,28 +104,28 @@ Actualice el archivo de zona DNS para el dominio. Azure AD puede entonces compro
 
 ### <a name="create-web-apps-and-publish"></a>Creación y publicación de aplicaciones web
 
-Configure la canalización de CI/CD híbrida para implementar la aplicación web en Azure y Azure Stack e insertar automáticamente los cambios en ambas nubes.
+Configure la canalización de integración y entrega continuas (CI/CD) híbrida para implementar la aplicación web en Azure y Azure Stack e insertar automáticamente los cambios en ambas nubes.
 
 > [!Note]  
-> Se requiere Azure Stack con las imágenes adecuadas sindicadas para ejecutarse (Windows Server y SQL) y la implementación de App Service. Revise la sección [Antes de empezar a trabajar con App Service en Azure Stack](../operator/azure-stack-app-service-before-you-get-started.md) de la documentación de App Service del operador de Azure Stack.
+> Se requiere Azure Stack con las imágenes adecuadas sindicadas para ejecutarse (Windows Server y SQL) y la implementación de App Service. Para obtener más información, consulte [Antes de empezar a trabajar con App Service en Azure Stack](../operator/azure-stack-app-service-before-you-get-started.md) en la documentación del operador de Azure Stack.
 
 #### <a name="add-code-to-azure-repos"></a>Adición de código a Azure Repos
 
 1. Inicie sesión en Visual Studio con **una cuenta que tenga derechos de creación de proyectos** en Azure Repos.
 
-    Se puede aplicar Integración continua/Entrega continua (CI/CD) híbrida tanto al código de la aplicación como al código de la infraestructura. Use [plantillas de Azure Resource Manager](https://azure.microsoft.com/resources/templates/) tanto para el desarrollo en la nube hospedado como para el privado.
+    La CI/CD se puede aplicar al código de aplicación y al código de infraestructura. Use [plantillas de Azure Resource Manager](https://azure.microsoft.com/resources/templates/) tanto para el desarrollo en la nube hospedado como para el privado.
 
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image1.JPG)
+    ![Conectarse a un proyecto en Visual Studio](media/azure-stack-solution-geo-distributed/image1.JPG)
 
 2. **Clone el repositorio**; para ello, cree y abra la aplicación web predeterminada.
 
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image2.png)
+    ![Clonar el repositorio en Visual Studio](media/azure-stack-solution-geo-distributed/image2.png)
 
 ### <a name="create-web-app-deployment-in-both-clouds"></a>Creación de una implementación de aplicaciones web en ambas nubes
 
-1.  Edite el archivo **WebApplication.csproj**: Seleccione **Runtimeidentifier** y agregue **win10-x64**. (Consulte la documentación de [Implementaciones autocontenidas](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd)).
+1.  Edite el archivo **WebApplication.csproj**: Seleccione `Runtimeidentifier` y agregue `win10-x64`. (Consulte la documentación de [Implementaciones autocontenidas](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd)).
 
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image3.png)
+    ![Editar el archivo de proyecto de aplicación web en Visual Studio](media/azure-stack-solution-geo-distributed/image3.png)
 
 1.  **Inserte el código en Azure Repos** mediante Team Explorer.
 
@@ -135,9 +135,9 @@ Configure la canalización de CI/CD híbrida para implementar la aplicación web
 
 1. **Inicie sesión en Azure Pipelines** para confirmar la posibilidad de crear definiciones de compilación.
 
-2. Agregue el código **-r win10-x64**. Esto es necesario para activar una implementación autocontenida con .Net Core.
+2. Agregue el código `-r win10-x64`. Esta adición es necesaria para activar una implementación autocontenida con .Net Core.
 
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image4.png)
+    ![Agregar código para la definición de compilación](media/azure-stack-solution-geo-distributed/image4.png)
 
 3. **Ejecute la compilación**. El proceso de [compilación de implementación autocontenida](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd) publicará los artefactos que se pueden ejecutar en Azure y Azure Stack.
 
@@ -149,107 +149,107 @@ El uso de un agente hospedado en Azure Pipelines es una opción adecuada para co
 
 Azure DevOps y Azure DevOps Server proporcionan una canalización con una gran capacidad de configuración y administración para versiones de varios entornos, como desarrollo, ensayo, control de calidad (QA) y producción, lo que incluye las aprobaciones necesarias en etapas específicas.
 
-#### <a name="create-release-definition"></a>Creación de la definición de versión
+## <a name="create-release-definition"></a>Creación de la definición de versión
 
+1.  Seleccione el botón **más** para agregar una nueva versión en la pestaña **Versiones** de la sección **Compilación y versión** de VSO.
 
-![Texto alternativo](media/azure-stack-solution-geo-distributed/image5.png)
+    ![Creación de una definición de versión](media/azure-stack-solution-geo-distributed/image5.png)
 
-1. Seleccione el botón **más** para agregar una nueva versión en la pestaña **Versiones** de la página Compilación y versión de Visual Studio Online (VSO).
+2. Aplique la plantilla Implementación de Azure App Service.
 
-   ![Texto alternativo](media/azure-stack-solution-geo-distributed/image6.png)
+   ![Aplicar la plantilla Implementación de Azure App Service](meDia/azure-stack-solution-geo-distributed/image6.png)
 
-2. Aplique la plantilla **Implementación de Azure App Service**.
+3. En **Agregar artefacto**, agregue el artefacto para la aplicación de compilación de nube de Azure.
 
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image7.png)
-
-3. En el menú desplegable Agregar artefacto, **agregue el artefacto** para la aplicación de compilación de nube de Azure.
-
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image8.png)
+   ![Agregar el artefacto a la compilación en la nube de Azure](media/azure-stack-solution-geo-distributed/image7.png)
 
 4. En la pestaña Canalización, seleccione el vínculo **Fase, Tarea** del entorno y establezca los valores del entorno de nube de Azure.
 
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image9.png)
+   ![Definir los valores de entorno de nube de Azure](media/azure-stack-solution-geo-distributed/image8.png)
 
-5. Establezca el **nombre del entorno** y seleccione la **suscripción** de Azure como el punto de conexión de la nube de Azure.
+5. Establezca el **nombre del entorno** y seleccione la **suscripción de Azure** como el punto de conexión de la nube de Azure.
 
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image10.png)
+      ![Seleccione la suscripción de Azure para el punto de conexión en la nube de Azure](media/azure-stack-solution-geo-distributed/image9.png)
 
-6. En Nombre del entorno, establezca el **nombre del servicio de aplicación de Azure** necesario.
+6. En **Nombre de App Service**, establezca el nombre del servicio de aplicación de Azure necesario.
 
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image11.png)
+      ![Definir el nombre del servicio de App Service](media/azure-stack-solution-geo-distributed/image10.png)
 
-7. Escriba **Hospedado VS2017** en Cola de agentes para el entorno hospedado de la nube de Azure.
+7. Escriba "Hospedado VS2017" en **Cola de agentes** para el entorno hospedado en la nube de Azure.
 
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image12.png)
+      ![Defina la Cola de agentes para el entorno hospedado de la nube de Azure.](media/azure-stack-solution-geo-distributed/image11.png)
 
-8. En el menú de implementación de Azure App Service, seleccione el **paquete o carpeta** válidos para el entorno. Seleccione Aceptar para la **ubicación de carpeta**.
+8. En el menú de implementación de Azure App Service, seleccione el **paquete o carpeta** válidos para el entorno. Seleccione **Aceptar** para la **ubicación de carpeta**.
+  
+      ![Seleccionar el paquete o la carpeta del entorno de Azure App Service](media/azure-stack-solution-geo-distributed/image12.png)
 
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image13.png)
-
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image14.png)
+      ![Seleccionar el paquete o la carpeta del entorno de Azure App Service](media/azure-stack-solution-geo-distributed/image13.png)
 
 9. Guarde todos los cambios y vuelva a la **canalización de versión**.
 
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image15.png)
+    ![Guardar los cambios en la canalización de versión](media/azure-stack-solution-geo-distributed/image14.png)
 
-10. Agregue un **nuevo artefacto**mediante la selección de la compilación para la aplicación de Azure Stack.
+10. Agregue un nuevo artefacto mediante la selección de la compilación de la aplicación de Azure Stack.
+    
+    ![Agregar nuevo artefacto para la aplicación de Azure Stack](media/azure-stack-solution-geo-distributed/image15.png)
 
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image16.png)
 
-11. Agregue un entorno más; para ello, aplique la plantilla **Implementación de Azure App Service**.
+11. Agregue un entorno más; para ello, aplique Implementación de Azure App Service.
+    
+    ![Agregar entorno en implementación de Azure App Service](media/azure-stack-solution-geo-distributed/image16.png)
 
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image17.png)
-
-12. Asigne al nuevo entorno el nombre **Azure Stack**.
-
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image18.png)
+12. Asigne al nuevo entorno el nombre Azure Stack.
+    
+    ![Nombrar entorno en implementación de Azure App Service](media/azure-stack-solution-geo-distributed/image17.png)
 
 13. Busque el entorno de Azure Stack en la pestaña **Tarea**.
+    
+    ![Entorno de Azure Stack](media/azure-stack-solution-geo-distributed/image18.png)
 
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image19.png)
+14. Seleccione la suscripción para el punto de conexión de Azure Stack.
+    
+    ![Seleccionar la suscripción para el punto de conexión de Azure Stack](media/azure-stack-solution-geo-distributed/image19.png)
 
-14. Seleccione la **suscripción** para el punto de conexión de Azure Stack.
+15. Establezca el nombre de la aplicación web de Azure Stack como el nombre del servicio de aplicación.
 
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image20.png)
+    ![Definir el nombre de la aplicación web de Azure Stack](media/azure-stack-solution-geo-distributed/image20.png)
 
-15. Establezca el nombre de la aplicación web de Azure Stack como el **nombre del servicio de aplicación**.
+16. Seleccione el agente de Azure Stack.
+    
+    ![Seleccionar el agente de Azure Stack](media/azure-stack-solution-geo-distributed/image21.png)
 
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image21.png)
+17. En la sección de implementación de Azure App Service, seleccione el **paquete o carpeta** válidos para el entorno. Seleccione **Aceptar** para la ubicación de carpeta.
 
-16. Seleccione el **agente de Azure Stack**.
+    ![Seleccionar carpeta para la implementación de Azure App Service](media/azure-stack-solution-geo-distributed/image22.png)
 
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image22.png)
+    ![Seleccionar carpeta para la implementación de Azure App Service](media/azure-stack-solution-geo-distributed/image23.png)
 
-17. En la sección de implementación de Azure App Service, seleccione el **paquete o carpeta** válidos para el entorno. Seleccione Aceptar para la **ubicación de carpeta**.
-
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image23.png)
-
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image24.png)
-
-18. En la pestaña **Variable**, agregue una variable denominada `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS`, establezca su valor como `true` y defina el ámbito como `Azure Stack`.
-
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image25.png)
+18. En la pestaña Variable, agregue una variable denominada `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS`, establezca su valor como **true** y defina el ámbito en Azure Stack.
+    
+    ![Agregar variable a la implementación de App de Azure](media/azure-stack-solution-geo-distributed/image24.png)
 
 19. Seleccione el icono del desencadenador de implementación **Continuo** en ambos artefactos y habilite el desencadenador de implementación **Continua**.
-
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image26.png)
+    
+    ![Seleccionar desencadenador de implementación continua](media/azure-stack-solution-geo-distributed/image25.png)
 
 20. Seleccione el icono de condiciones **previas a la implementación** en el entorno de Azure Stack y establezca el desencadenador en **After release** (Tras el lanzamiento).
+    
+    ![Seleccionar condiciones anteriores a la implementación](media/azure-stack-solution-geo-distributed/image26.png)
 
 21. Guarde todos los cambios.
 
 > [!Note]  
->  Algunos valores de configuración de las tareas se han definido automáticamente como [variables de entorno](https://docs.microsoft.com/vsts/build-release/concepts/definitions/release/variables?view=vsts#custom-variables) cuando se creó una definición de versión desde una plantilla. Estos valores de configuración no se pueden modificar en la configuración de tareas; para ello, debe seleccionar el elemento del entorno principal.
+> Algunos valores de configuración de las tareas se han definido automáticamente como [variables de entorno](https://docs.microsoft.com/azure/devops/pipelines/release/variables?view=vsts&tabs=batch#custom-variables) cuando se creó una definición de versión desde una plantilla. Estos valores de configuración no se pueden modificar en la configuración de tareas; para hacerlo, debe seleccionar el elemento del entorno principal.
 
 ## <a name="part-2-update-web-app-options"></a>Parte 2: Actualizar las opciones de la aplicación web
 
 [Azure App Service](https://docs.microsoft.com/azure/app-service/overview) proporciona un servicio de hospedaje web muy escalable y con aplicación de revisiones de un modo automático. 
 
-![Texto alternativo](media/azure-stack-solution-geo-distributed/image27.png)
+![Azure App Service](media/azure-stack-solution-geo-distributed/image27.png)
 
 > [!div class="checklist"]
-> - Asignar un nombre DNS personalizado a Azure Web Apps
-> - Puede usar un registro **CNAME o un **registro D** para asignar un nombre DNS personalizado a App Service.
+> - Asigne un nombre DNS personalizado a Azure Web Apps.
+> - Use un **registro CNAME** o un **registro A** para asignar un nombre DNS personalizado a App Service.
 
 ### <a name="map-an-existing-custom-dns-name-to-azure-web-apps"></a>Asignar un nombre DNS personalizado a Azure Web Apps
 
@@ -277,8 +277,7 @@ Actualice el archivo de zona DNS para el dominio. Azure AD comprobará la propie
 Por ejemplo, para agregar entradas DNS a fornorthwindcloud.com y www.northwindcloud.com, configure los valores de DNS del dominio raíz thenorthwindcloud.com.
 
 > [!Note]  
->  Un nombre de dominio puede adquirirse mediante [Azure Portal](https://docs.microsoft.com/azure/app-service/manage-custom-dns-buy-domain).  
-> Para asignar un nombre DNS personalizado a una aplicación web, el [plan de App Service](https://azure.microsoft.com/pricing/details/app-service/) de dicha aplicación debe ser un nivel de pago (**Compartido**, **Básico**, **Estándar** o **Premium**).
+>  Un nombre de dominio puede adquirirse mediante [Azure Portal](https://docs.microsoft.com/azure/app-service/manage-custom-dns-buy-domain). Para asignar un nombre DNS personalizado a una aplicación web, el [plan de App Service](https://azure.microsoft.com/pricing/details/app-service/) de dicha aplicación debe ser un nivel de pago (**Compartido**, **Básico**, **Estándar** o **Premium**).
 
 
 
@@ -321,35 +320,33 @@ Después de agregar el registro CNAME, la página de registros DNS es como la de
 
 5. Seleccione el icono **+** situado junto a **Agregar nombre de host**.
 
-1. Escriba el nombre de dominio completo, por ejemplo `www.northwindcloud.com`.
+6. Escriba el nombre de dominio completo, por ejemplo `www.northwindcloud.com`.
 
-2. Seleccione **Validar**.
+7. Seleccione **Validar**.
 
-3. Si se indica, agregue más registros de otros tipos (`A` o `TXT`) a los registros DNS de los registradores de nombres de dominio. Azure proporcionará los valores y los tipos de estos registros:
+8. Si se indica, agregue más registros de otros tipos (`A` o `TXT`) a los registros DNS de los registradores de nombres de dominio. Azure proporcionará los valores y los tipos de estos registros:
 
-    a.  Un registro **A** que se asigna a la dirección IP de la aplicación.
+   a.  Un registro **A** que se asigna a la dirección IP de la aplicación.
 
    b.  Un registro **TXT** que se asigna al nombre de host predeterminado de la aplicación <app_name>.azurewebsites.net. App Service usa este registro solo durante la configuración para confirmar la propiedad del dominio personalizado. Después de la confirmación, elimine el registro TXT.
 
-4. Complete esta tarea en la pestaña del registrador de dominio y vuelva a validar hasta que el botón **Agregar nombre de host** se active.
+9. Complete esta tarea en la pestaña del registrador de dominio y vuelva a validar hasta que el botón **Agregar nombre de host** se active.
 
-5. Asegúrese de que en **Tipo de registro de nombre de host está seleccionado **CNAME (www.example.com o cualquier subdominio)** .
+10. Asegúrese de que en **Tipo de registro de nombre de host** está seleccionado **CNAME** (www.example.com o cualquier subdominio).
 
-6. Seleccione **Agregar nombre de host**.
+11. Seleccione **Agregar nombre de host**.
 
-7. Escriba el nombre de dominio completo, por ejemplo `northwindcloud.com`.
+12. Escriba el nombre de dominio completo, por ejemplo `northwindcloud.com`.
 
-8. Seleccione **Validar**.
+13. Seleccione **Validar**. Se activa **Agregar**.
 
-9. Se activa **Agregar**.
+14. Asegúrese de que el **Tipo de registro de nombre de host** esté establecido en **Registro A** (example.com).
 
-10. Asegúrese de que el **Tipo de registro de nombre de host esté establecido en **Registro D (example.com)** .
-
-11. **Agregue un nombre de host**.
+15. **Agregue un nombre de host**.
 
     El nuevo nombre de host puede tardar algo en reflejarse en la página **Dominios personalizados** de la aplicación. Intente actualizar el explorador para actualizar los datos.
   
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image31.png) 
+    ![Dominios personalizados](media/azure-stack-solution-geo-distributed/image31.png) 
   
     Si se produce un error, aparecerá una notificación de error de comprobación en la parte inferior de la página. ![Error de comprobación](media/azure-stack-solution-geo-distributed/image32.png)
 
@@ -358,39 +355,39 @@ Después de agregar el registro CNAME, la página de registros DNS es como la de
 
 #### <a name="test-in-a-browser"></a>Prueba en un explorador
 
-Vaya a los nombres DNS que configuró anteriormente; por ejemplo, `northwindcloud.com`, www.northwindcloud.com.
+Vaya a los nombres DNS que configuró anteriormente (por ejemplo, `northwindcloud.com` o www.northwindcloud.com).
 
 ## <a name="part-3-bind-a-custom-ssl-cert"></a>Parte 3: Enlazar un certificado SSL personalizado
 
-En esta parte:
+En esta parte, seguiremos estos pasos:
 
 > [!div class="checklist"]
-> - Se enlazará el certificado SSL personalizado con App Service
-> - Se aplicará HTTPS para la aplicación
-> - Automatizar el enlace de certificado SSL con scripts
+> - Se enlazará el certificado SSL personalizado con App Service.
+> - Se aplicará HTTPS para la aplicación.
+> - Automatizar el enlace de certificado SSL con scripts.
 
 > [!Note]  
-> Si es necesario, se obtendrá un certificado SSL de cliente en Azure Portal y se enlazará a la aplicación web. Siga el tutorial [Incorporación de un certificado SSL a la aplicación App Service](https://docs.microsoft.com/azure/app-service/web-sites-purchase-ssl-web-site).
+> Si es necesario, se obtendrá un certificado SSL de cliente en Azure Portal y se enlazará a la aplicación web. Para obtener más información, consulte el [tutorial sobre App Service Certificates](https://docs.microsoft.com/azure/app-service/web-sites-purchase-ssl-web-site).
 
 ### <a name="prerequisites"></a>Requisitos previos
 
 Para completar este tutorial:
 
--   [Crear una aplicación de App Service](https://docs.microsoft.com/azure/app-service/)
--   [Asignar un nombre DNS personalizado a la aplicación web](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-domain)
--   Adquirir un certificado SSL de una entidad de certificación de confianza y usar la clave para firmarlo
+-   [Cree una aplicación de App Service](https://docs.microsoft.com/azure/app-service/).
+-   [Asigne un nombre DNS personalizado a la aplicación web.](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-domain)
+-   Adquiera un certificado SSL de una entidad de certificación de confianza y use la clave para firmar la solicitud.
 
 ### <a name="requirements-for-your-ssl-certificate"></a>Requisitos para el certificado SSL
 
 Para usar un certificado en App Service, el certificado debe cumplir los siguientes requisitos:
 
--   Estar firmado por una entidad de certificación de confianza
+-   Estar firmado por una entidad de certificación de confianza.
 
--   Haberse exportado como archivo PFX protegido por contraseña
+-   Haberse exportado como archivo PFX protegido por contraseña.
 
--   Contener una clave privada con una longitud de al menos 2048 bits
+-   Contener una clave privada con una longitud de al menos 2048 bits.
 
--   Contener todos los certificados intermedios de la cadena de certificados
+-   Contener todos los certificados intermedios de la cadena de certificados.
 
 > [!Note]  
 >  Los **certificados de criptografía de curva elíptica (ECC)** funcionan con App Service, pero están fuera del ámbito de esta guía. Consulte una entidad de certificación para obtener ayuda en la creación de certificados ECC. 
@@ -470,7 +467,7 @@ Combine varios certificados en la cadena.
 
 Exporte el certificado SSL combinado con la clave privada generada por el certificado.
 
-Se crea un archivo de clave privada a través de OpenSSL. Para exportar el certificado a PFX, ejecute el comando siguiente, reemplazando los marcadores de posición *\<private-key-file* y *\<merged-certificate-file>* por las rutas de acceso de la clave privada y el archivo de certificado combinado.
+Se crea un archivo de clave privada a través de OpenSSL. Para exportar el certificado a PFX, ejecute el comando siguiente y reemplace los marcadores de posición *\<private-key-file* y *\<merged-certificate-file>* por las rutas de acceso de la clave privada y el archivo de certificado combinado:
 
 ```powershell
 openssl pkcs12 -export -out myserver.pfx -inkey <private-key-file> -in <merged-certificate-file>
@@ -488,7 +485,7 @@ Cuando se usan IIS o **Certreq.exe** para generar la solicitud de certificado, i
 
 3. En **Archivo de certificado PFX**, seleccione el archivo PFX.
 
-4. 1. En **Contraseña del certificado**, escriba la contraseña que se creó al exportar el archivo PFX.
+4. En **Contraseña del certificado**, escriba la contraseña que se creó al exportar el archivo PFX.
 
 5. Seleccione **Cargar**.
 
@@ -496,7 +493,7 @@ Cuando se usan IIS o **Certreq.exe** para generar la solicitud de certificado, i
 
 Cuando App Service termina de cargar el certificado, este aparece en la página **Configuración de SSL**.
 
-![Texto alternativo](media/azure-stack-solution-geo-distributed/image39.png)
+![Configuración de SSL](media/azure-stack-solution-geo-distributed/image39.png)
 
 #### <a name="bind-your-ssl-certificate"></a>Enlazar el certificado SSL
 
@@ -507,23 +504,23 @@ Cuando App Service termina de cargar el certificado, este aparece en la página 
 
 1.  En la página **Agregar enlace SSL**, use las listas desplegables para seleccionar el nombre de dominio que se va a proteger, así como el certificado que pretende utilizar.
 
-2.  En **Tipo de SSL**, seleccione si se va a usar [**Indicación de nombre de servidor (SNI)** ](https://en.wikipedia.org/wiki/Server_Name_Indication) o SSL basada en IP.
+1.  En **Tipo de SSL**, seleccione si se va a usar [**Indicación de nombre de servidor (SNI)** ](https://en.wikipedia.org/wiki/Server_Name_Indication) o SSL basada en IP.
 
--   **SSL basada en SNI**: pueden agregarse varios enlaces SSL basados en SNI. Esta opción permite que varios certificados SSL protejan varios dominios en una misma dirección IP. Los exploradores más modernos (como Internet Explorer, Chrome, Firefox y Opera) admiten SNI (encontrará información de compatibilidad con exploradores más completa en [Indicación de nombre de servidor](https://wikipedia.org/wiki/Server_Name_Indication)).
+    - **SSL basada en SNI**: Se pueden agregar varios enlaces SSL basados en SNI. Esta opción permite que varios certificados SSL protejan varios dominios en una misma dirección IP. Los exploradores más modernos (como Internet Explorer, Chrome, Firefox y Opera) admiten SNI (encontrará información de compatibilidad con exploradores más completa en [Indicación de nombre de servidor](https://wikipedia.org/wiki/Server_Name_Indication)).
 
--   **SSL basada en IP**: solo pueden agregarse enlaces SSL basados en IP. Esta opción solo permite que un único certificado SSL proteja una dirección IP dedicada. Para proteger varios dominios, debe usar el mismo certificado SSL. Se trata de la opción tradicional para enlaces SSL.
+    - **SSL basada en IP**: solo puede agregarse un enlaces SSL basado en IP. Esta opción solo permite que un único certificado SSL proteja una dirección IP dedicada. Para proteger varios dominios, debe usar el mismo certificado SSL. La SSL basada en IP es la opción tradicional para enlaces SSL.
 
-    1.  Haga clic en **Agregar enlace**.
+1. Haga clic en **Agregar enlace**.
 
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image40.png)
+    ![Agregar enlace SSL](media/azure-stack-solution-geo-distributed/image40.png)
 
 Cuando App Service termina de cargar el certificado, este aparece en la sección **Enlaces SSL**.
 
-![Texto alternativo](media/azure-stack-solution-geo-distributed/image41.png)
+![Enlaces SSL](media/azure-stack-solution-geo-distributed/image41.png)
 
 #### <a name="remap-the-a-record-for-ip-ssl"></a>Reasignación del registro D en SSL de IP
 
-Si SSL basado en IP no se usa en la aplicación web, vaya a [Probar HTTPS para el dominio personalizado](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-ssl).
+Si la SSL basada en IP no se usa en la aplicación web, vaya a [Probar HTTPS para el dominio personalizado](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-ssl).
 
 De manera predeterminada, la aplicación web usa una dirección IP pública compartida. Cuando se enlaza un certificado con SSL basada en IP, App Service crea otra dirección IP dedicada para la aplicación web.
 
@@ -535,7 +532,7 @@ La página **Dominio personalizado** se actualiza con la nueva dirección IP ded
 
 En varios exploradores, vaya a https://<your.custom.domain> para garantizar que la aplicación web funciona.
 
-![Texto alternativo](media/azure-stack-solution-geo-distributed/image42.png)
+![Navegación a la aplicación web](media/azure-stack-solution-geo-distributed/image42.png)
 
 > [!Note]  
 > Si se producen errores de validación de certificado, la causa podría ser que hayan quedado un certificado autofirmado o certificados intermedios al exportar al archivo PFX.
@@ -548,7 +545,7 @@ En la página de la aplicación web, seleccione **Configuración de SL**. A cont
 
 ![Aplicación de HTTPS](media/azure-stack-solution-geo-distributed/image43.png)
 
-Una vez completada la operación, vaya a cualquiera de las direcciones URL HTTP que apuntan a la aplicación. Por ejemplo: 
+Una vez completada la operación, vaya a cualquiera de las direcciones URL HTTP que apuntan a la aplicación. Por ejemplo:
 
 -   https://<app_name>.azurewebsites.net
 -   https://northwindcloud.com
@@ -578,13 +575,13 @@ La aplicación permite [TLS](https://wikipedia.org/wiki/Transport_Layer_Security
 
     4.  En **Grupo de recursos**, cree un grupo de recursos nuevo en el cual colocar este perfil.
 
-    5.  En **Ubicación del grupo de recursos**, seleccione la ubicación del grupo de recursos. Esta configuración se refiere a la ubicación del grupo de recursos y no tiene efecto alguno sobre el perfil de Traffic Manager que se implementará globalmente.
+    5.  En **Ubicación del grupo de recursos**, seleccione la ubicación del grupo de recursos. Esta configuración hace referencia a la ubicación del grupo de recursos y no tiene efecto alguno sobre el perfil de Traffic Manager que se implementa globalmente.
 
     6.  Seleccione **Crear**.
 
     7.  Una vez que se complete la implementación global del perfil de Traffic Manager, aparecerá en el grupo de recursos respectivo como uno de los recursos.
 
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image45.png)
+    ![Grupos de recursos para crear un perfil de Traffic Manager](media/azure-stack-solution-geo-distributed/image45.png)
 
 ### <a name="add-traffic-manager-endpoints"></a>Incorporación de puntos de conexión de Traffic Manager
 
@@ -602,9 +599,9 @@ La aplicación permite [TLS](https://wikipedia.org/wiki/Transport_Layer_Security
 
 7. En el nombre de dominio completo (**FQDN**), use la dirección URL externa de la aplicación web de Azure Stack.
 
-8. En la asignación geográfica, seleccione la región o continente donde se encuentra el recurso, por ejemplo, **Europa**.
+8. En la asignación geográfica, seleccione la región o continente donde se encuentra el recurso. Por ejemplo, **Europa.**
 
-9. En la lista desplegable de países y regiones que aparece, seleccione el país que se aplicará a este punto de conexión; por ejemplo, **Alemania**.
+9. En la lista desplegable de países y regiones que aparece, seleccione el país que se aplica a este punto de conexión Por ejemplo, **Alemania**.
 
 10. No active la opción **Agregar como deshabilitado**.
 
@@ -614,15 +611,15 @@ La aplicación permite [TLS](https://wikipedia.org/wiki/Transport_Layer_Security
 
     1.  En **Tipo**, seleccione **Punto de conexión de Azure**.
 
-    2.  Proporcione un **Nombre** para este punto de conexión.
+    2.  Proporcione un **Nombre** para el punto de conexión.
 
     3.  En **Tipo de recurso de destino**, seleccione **App Service**.
 
-    4.  En **Recurso de destino**, seleccione **Elegir un servicio de aplicaciones** para mostrar la lista de Web Apps en la misma suscripción. En **Recurso**, elija el servicio de aplicación que quiere usar como el primer punto de conexión.
+    4.  En **Recurso de destino**, seleccione **Elegir un servicio de aplicaciones** para mostrar la lista de Web Apps en la misma suscripción. En **Recurso**, elija el servicio de aplicación que se usa como primer punto de conexión.
 
-13. En la asignación geográfica, seleccione la región o continente donde se encuentra el recurso, por ejemplo, **Norteamérica/Centroamérica/Caribe**.
+13. En la asignación geográfica, seleccione la región o continente donde se encuentra el recurso. Por ejemplo, **Norteamérica/Centroamérica/Caribe.**
 
-14. En la lista desplegable de países o regiones que aparece, deje esto en blanco para seleccionar toda la agrupación regional anterior.
+14. En la lista desplegable de países o regiones que aparece, deje este espacio en blanco para seleccionar toda la agrupación regional anterior.
 
 15. No active la opción **Agregar como deshabilitado**.
 
@@ -633,11 +630,11 @@ La aplicación permite [TLS](https://wikipedia.org/wiki/Transport_Layer_Security
 
 1. Cuando termine de agregar ambos puntos de conexión, aparecerán en **Perfil de Traffic Manager** junto con el estado de supervisión como **En línea**.
 
-    ![Texto alternativo](media/azure-stack-solution-geo-distributed/image46.png)
+    ![Estado de punto de conexión de perfil de Traffic Manager](media/azure-stack-solution-geo-distributed/image46.png)
 
 **La empresa global se basa en las capacidades de la distribución geográfica de Azure**
 
-Dirigir el tráfico de datos a través de Azure Traffic Manager y puntos de conexión específicos de la geografía permite a las empresas globales cumplir la legislación regional y mantener los datos conformes a la vez que seguros, lo que resulta crucial para el éxito del negocio local y en ubicaciones remotas.
+Dirigir el tráfico de datos a través de Azure Traffic Manager y puntos de conexión específicos de la geografía permite a las empresas globales cumplir la legislación regional y mantener los datos conformes a la vez que seguros, lo que resulta crucial para el éxito del negocio tanto en el entorno local como en ubicaciones remotas.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
