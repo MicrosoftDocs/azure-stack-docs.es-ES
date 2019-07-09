@@ -11,22 +11,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/21/2019
+ms.date: 06/21/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 03/21/2019
-ms.openlocfilehash: 8e47022d826d5983369fe7849cbde8c00f18838e
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 05a1e106a171df2a8948601376dbc152cb5ca70a
+ms.sourcegitcommit: 3f52cf06fb5b3208057cfdc07616cd76f11cdb38
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64306729"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67316193"
 ---
 # <a name="usage-and-billing-in-azure-stack"></a>Utilización y facturación en Azure Stack
 
 En este artículo se describe cómo se factura a los usuarios de Azure Stack por el uso de los recursos y cómo se accede a la información de facturación para el análisis y el contracargo.
 
-Azure Stack recopila y agrupa los datos de uso para los recursos que se usan. Después, Azure Stack reenvía estos datos a Azure Commerce. Azure Commerce factura el uso de Azure Stack de la misma forma que factura el uso de Azure.
+Azure Stack recopila y agrupa los datos de uso de los recursos utilizados y los reenvía a Azure Commerce. Azure Commerce factura el uso de Azure Stack de la misma forma que factura el uso de Azure.
 
 También puede obtener datos de uso y exportarlos a su propio sistema de facturación y cargos al usuario con el uso de un adaptador de facturación, o bien exportarlos a una herramienta de inteligencia empresarial, como Microsoft Power BI.
 
@@ -34,7 +34,7 @@ También puede obtener datos de uso y exportarlos a su propio sistema de factura
 
 Todos los proveedores de recursos de Azure Stack publican datos de uso en función de la utilización de los recursos. El servicio de uso agrega periódicamente (cada hora y cada día) los datos de uso y los almacena en la base de datos de uso. Los operadores y usuarios de Azure Stack pueden acceder a los datos de uso almacenados mediante las API de uso de recursos de Azure Stack.
 
-Si ha [registrado una instancia de Azure Stack en Azure](azure-stack-registration.md ), Azure Stack se configura para enviar los datos de uso a Azure Commerce. Una vez que los datos estén cargados en Azure, puede acceder a ellos a través del portal de facturación o mediante las API de uso de recursos de Azure. Para más información sobre el uso de datos que se notifica a Azure, consulte [Informes de datos de uso](azure-stack-usage-reporting.md).  
+Si ha [registrado una instancia de Azure Stack en Azure](azure-stack-registration.md), Azure Stack se configura para enviar los datos de uso a Azure Commerce. Una vez que los datos estén cargados en Azure, puede acceder a ellos a través del portal de facturación o mediante las API de uso de recursos de Azure. Para más información sobre el uso de datos que se notifica a Azure, consulte [Informes de datos de uso](azure-stack-usage-reporting.md).  
 
 La siguiente imagen muestra los principales componentes de la canalización de uso:
 
@@ -51,7 +51,7 @@ Después de que se hayan recopilado los datos de utilización, se [notifican a A
 
 El Portal de facturación de Azure muestra los datos de uso de los recursos facturables. Además de los recursos facturables, Azure Stack captura los datos de utilización de un conjunto más amplio de recursos, a los que se pueden obtener acceso en el entorno de Azure Stack a través de las API REST o cmdlets de PowerShell. Los operadores de Azure Stack pueden obtener los datos de uso de todas las suscripciones de usuario. Los usuarios individuales solo pueden obtener sus propios detalles de uso.
 
-## <a name="usage-reporting-for-multitenant-cloud-service-providers"></a>Informes de uso de proveedores de servicios en la nube multiempresa
+## <a name="usage-reporting-for-multi-tenant-cloud-service-providers"></a>Informes de uso de proveedores de servicios en la nube multiinquilino
 
 Un proveedor de servicios en la nube (CSP) multinquilino que tenga muchos clientes que usan Azure Stack puede tener la necesidad de elaborar un informe de uso de cada cliente, para poder cargar el uso a distintas suscripciones de Azure.
 
