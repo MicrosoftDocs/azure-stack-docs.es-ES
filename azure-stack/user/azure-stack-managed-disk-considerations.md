@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/23/2019
+ms.date: 06/25/2019
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: aca01d65df454f03f5726db67b3eaa766339bb77
-ms.sourcegitcommit: 914daff43ae0f0fc6673a06dfe2d42d9b4fbab48
+ms.openlocfilehash: 2e7737033b0f94473f4b794e452c9239f275c8f8
+ms.sourcegitcommit: d1fdecdfa843dfc0629bfc226f1baf14f3ea621d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66043009"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387741"
 ---
 # <a name="azure-stack-managed-disks-differences-and-considerations"></a>Discos administrados de Azure Stack: diferencias y consideraciones
 
@@ -29,17 +29,17 @@ En este artículo se resumen las diferencias conocidas entre los [discos adminis
 
 Los discos administrados simplifican la administración de discos para las máquinas virtuales de IaaS, ya que administran las [cuentas de almacenamiento](../operator/azure-stack-manage-storage-accounts.md) asociadas a los discos de la máquina virtual.
 
-> [!Note]  
-> Los discos administrados en Azure Stack están disponible desde la actualización 1808. Está habilitado de forma predeterminada al crear máquinas virtuales mediante el portal de Azure Stack a partir de la actualización 1811.
+> [!NOTE]  
+> Los discos administrados en Azure Stack están disponibles a partir de la actualización 1808. A partir de la actualización 1811, esta opción está habilitada de forma predeterminada al crear máquinas virtuales mediante el portal de Azure Stack.
   
 ## <a name="cheat-sheet-managed-disk-differences"></a>Hoja de referencia rápida: diferencias entre los discos administrados
 
 | Característica | Azure (global) | Azure Stack |
 | --- | --- | --- |
 |Cifrado de datos en reposo |Storage Service Encryption (SSE) de Azure, Azure Disk Encryption (ADE)     |Cifrado AES de 128 bits de BitLocker      |
-|Imagen          | Compatibilidad con la imagen personalizada administrada |Compatible|
-|Opciones de copia de seguridad |Compatibilidad con el servicio Azure Backup |Todavía no se admite |
-|Opciones de recuperación ante desastres |Compatibilidad con Azure Site Recovery |Todavía no se admite|
+|Imagen          | Imagen personalizada administrada |Compatible|
+|Opciones de copia de seguridad | Servicio Azure Backup |Todavía no se admite |
+|Opciones de recuperación ante desastres | Azure Site Recovery |Todavía no se admite|
 |Tipos de disco     |SSD Premium, SSD estándar y HDD estándar |SSD Premium, HDD estándar |
 |Discos premium  |Totalmente compatible |Se pueden aprovisionar, pero no hay límite de rendimiento o garantía  |
 |E/S por segundo de discos premium  |Depende del tamaño del disco  |2300 E/S por segundo por disco |
@@ -68,18 +68,21 @@ Los discos administrados de Azure Stack admiten las versiones de API siguientes:
 
 ## <a name="convert-to-managed-disks"></a>Conversión en discos administrados
 
+> [!NOTE]  
+> El cmdlet de Azure PowerShell **ConvertTo-AzureRmVMManagedDisk** no se puede usar para convertir un disco no administrado en un disco administrado en Azure Stack. Azure Stack no admite todavía este cmdlet.
+
 Puede usar el script siguiente para convertir una VM aprovisionada actualmente de discos no administrados a administrados. Reemplace los marcadores de posición por sus propios valores:
 
 ```powershell
 $SubscriptionId = "SubId"
 
-# The name of your resource group where your VM to be converted exists
+# The name of your resource group where your VM to be converted exists.
 $ResourceGroupName ="MyResourceGroup"
 
 # The name of the managed disk to be created.
 $DiskName = "mngddisk"
 
-# The size of the disks in GiB. It should be greater than the VHD file size.
+# The size of the disks in GB. It should be greater than the VHD file size.
 $DiskSize = "50"
 
 # The URI of the VHD file that will be used to create the managed disk.
@@ -91,7 +94,7 @@ $AccountType = "StandardLRS"
 
 # The Azure Stack location where the managed disk will be located.
 # The location should be the same as the location of the storage account in which VHD file is stored.
-# Configure the new managed VM point to the old unmanaged VM's configuration (network config, vm name, location).
+# Configure the new managed VM point to the old unmanaged VM configuration (network config, VM name, location).
 $Location = "local"
 $VirtualMachineName = "unmngdvm"
 $VirtualMachineSize = "Standard_D1"
@@ -99,36 +102,36 @@ $PIpName = "unmngdvm-ip"
 $VirtualNetworkName = "unmngdrg-vnet"
 $NicName = "unmngdvm"
 
-# Set the context to the subscription ID in which the managed disk will be created
+# Set the context to the subscription ID in which the managed disk will be created.
 Select-AzureRmSubscription -SubscriptionId $SubscriptionId
 
-# Delete old VM, but keep the OS disk
+# Delete old VM, but keep the OS disk.
 Remove-AzureRmVm -Name $VirtualMachineName -ResourceGroupName $ResourceGroupName
 
-# Create the managed disk configuration
+# Create the managed disk configuration.
 $DiskConfig = New-AzureRmDiskConfig -AccountType $AccountType -Location $Location -DiskSizeGB $DiskSize -SourceUri $VhdUri -CreateOption Import
 
-# Create managed disk
+# Create managed disk.
 New-AzureRmDisk -DiskName $DiskName -Disk $DiskConfig -ResourceGroupName $resourceGroupName
 $Disk = Get-AzureRmDisk -DiskName $DiskName -ResourceGroupName $ResourceGroupName
 $VirtualMachine = New-AzureRmVMConfig -VMName $VirtualMachineName -VMSize $VirtualMachineSize
 
 # Use the managed disk resource ID to attach it to the virtual machine.
-# Change the OS type to "-Windows" if the OS disk has Windows OS.
+# Change the OS type to "-Windows" if the OS disk has the Windows OS.
 $VirtualMachine = Set-AzureRmVMOSDisk -VM $VirtualMachine -ManagedDiskId $Disk.Id -CreateOption Attach -Linux
 
-# Create a public IP for the VM
-$PublicIp = Get-AzureRmPublicIpAddress -Name $PIpName -ResourceGroupName $ResourceGroupName 
+# Create a public IP for the VM.
+$PublicIp = Get-AzureRmPublicIpAddress -Name $PIpName -ResourceGroupName $ResourceGroupName
 
-# Get the virtual network where the virtual machine will be hosted
+# Get the virtual network where the virtual machine will be hosted.
 $VNet = Get-AzureRmVirtualNetwork -Name $VirtualNetworkName -ResourceGroupName $ResourceGroupName
 
-# Create NIC in the first subnet of the virtual network
+# Create NIC in the first subnet of the virtual network.
 $Nic = Get-AzureRmNetworkInterface -Name $NicName -ResourceGroupName $ResourceGroupName
 
 $VirtualMachine = Add-AzureRmVMNetworkInterface -VM $VirtualMachine -Id $Nic.Id
 
-# Create the virtual machine with managed disk
+# Create the virtual machine with managed disk.
 New-AzureRmVM -VM $VirtualMachine -ResourceGroupName $ResourceGroupName -Location $Location
 ```
 
@@ -148,7 +151,7 @@ Para Windows, siga la sección [Generalización de VM con Windows mediante Syspr
 
 ### <a name="step-2-create-the-managed-image"></a>Paso 2: Creación de la imagen administrada
 
-Puede usar el portal, PowerShell o CLI para crear la imagen administrada. Siga los pasos descritos en el artículo de Azure [aquí](/azure/virtual-machines/windows/capture-image-resource).
+Puede usar el portal, PowerShell o la CLI para crear la imagen administrada. Siga los pasos que se indican en el tema sobre la [creación de una imagen administrada](/azure/virtual-machines/windows/capture-image-resource).
 
 ### <a name="step-3-choose-the-use-case"></a>Paso 3: Elección del caso de uso
 
@@ -156,13 +159,13 @@ Puede usar el portal, PowerShell o CLI para crear la imagen administrada. Siga l
 
 Asegúrese de generalizar la máquina virtual correctamente antes de realizar este paso. Después de la generalización, ya no puede utilizar esta máquina virtual. La creación de una máquina virtual a partir de una imagen que no se ha generalizado correctamente provocará un error **VMProvisioningTimeout**.
 
-Siga las instrucciones que se indican [aquí](/azure/virtual-machines/windows/capture-image-resource#create-an-image-from-a-vhd-in-a-storage-account) para crear una imagen administrada a partir de un VHD generalizado en una cuenta de almacenamiento. Puede utilizar esta imagen en el futuro para crear máquinas virtuales gestionadas.
+Siga las instrucciones de [Creación de una imagen a partir de un VHD en una cuenta de almacenamiento](/azure/virtual-machines/windows/capture-image-resource#create-an-image-from-a-vhd-in-a-storage-account) para crear una imagen administrada a partir de un VHD generalizado en una cuenta de almacenamiento. Puede utilizar esta imagen en el futuro para crear máquinas virtuales gestionadas.
 
 #### <a name="case-2-create-managed-vm-from-managed-image-using-powershell"></a>Caso 2: Creación de una máquina virtual administrada a partir de una imagen administrada mediante Powershell
 
-Después de crear una imagen a partir de una máquina virtual de disco administrado existente mediante el script que se indica [aquí](/azure/virtual-machines/windows/capture-image-resource#create-an-image-from-a-managed-disk-using-powershell), el siguiente script de ejemplo crea una máquina virtual Linux similar a partir de un objeto de imagen existente:
+Después de crear una imagen a partir de una VM de disco administrado existente mediante el script de [Creación de una imagen a partir de un disco administrado mediante PowerShell](/azure/virtual-machines/windows/capture-image-resource#create-an-image-from-a-managed-disk-using-powershell), el siguiente script de ejemplo crea una VM Linux similar a partir de un objeto de imagen existente.
 
-Módulo de PowerShell de Azure Stack 1.7.0 o posterior: siga las instrucciones [aquí](/azure/virtual-machines/windows/create-vm-generalized-managed).
+Módulo de PowerShell de Azure Stack 1.7.0 o posterior: siga las instrucciones de [Creación de una máquina virtual a partir de una imagen administrada](/azure/virtual-machines/windows/create-vm-generalized-managed).
 
 Módulo de PowerShell de Azure Stack versión 1.6.0 o anterior:
 
@@ -223,9 +226,9 @@ También puede usar el portal para crear una máquina virtual desde una imagen a
 Después de aplicar la actualización 1808 o posterior, debe realizar la siguiente configuración antes de usar los discos administrados:
 
 - Si una suscripción se ha creado antes de la actualización 1808, siga estos pasos para actualizar la suscripción. En caso contrario, la implementación de máquinas virtuales en esta suscripción podría producir un error con un mensaje del tipo "Error interno en el administrador de discos".
-   1. En el portal del inquilino, vaya a **Suscripciones** y busque la suscripción. Haga clic en **Proveedores de recursos**, después en **Microsoft.Compute** y luego en **Volver a registrar**.
+   1. En el portal de usuarios de Azure Stack, vaya a **Suscripciones** y busque la suscripción. Haga clic en **Proveedores de recursos**, después en **Microsoft.Compute** y luego en **Volver a registrar**.
    2. En la misma suscripción vaya a **Control de acceso (IAM)** y compruebe que **Azure Stack – Managed Disk** (Azure Stack - Disco administrado) aparece en la lista.
-- Si usa un entorno de varios inquilinos, pida a su operador de nube (puede ser de su propia organización o del proveedor de servicios) que vuelva a configurar cada uno de los directorios de invitado siguiendo los pasos que se indican en [este artículo](../operator/azure-stack-enable-multitenancy.md#registering-azure-stack-with-the-guest-directory). En caso contrario, la implementación de VM en una suscripción asociada con ese directorio de invitado podría producir un error con un mensaje de error "Error interno en el administrador de discos".
+- Si usa un entorno de varios inquilinos, pida a su operador de nube (puede ser de su propia organización o del proveedor de servicios) que vuelva a configurar cada uno de los directorios de invitado siguiendo los pasos que se indican en [este artículo](../operator/azure-stack-enable-multitenancy.md#registering-azure-stack-with-the-guest-directory). En caso contrario, la implementación de VM en una suscripción asociada con ese directorio de invitado podría producir un error con el mensaje **Error interno en el administrador de discos**.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

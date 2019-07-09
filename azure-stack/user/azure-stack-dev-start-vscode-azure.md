@@ -5,16 +5,16 @@ services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: Howto
-ms.date: 05/31/2019
+ms.date: 06/25/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 05/31/2019
-ms.openlocfilehash: 8e64a570ab45e57e3cf58639bc2ec23d9b9bd81b
-ms.sourcegitcommit: 07cc716d97bf484c7260eb165ae205ae25e09589
+ms.lastreviewed: 06/25/2019
+ms.openlocfilehash: 4e7dd18267060f632e2d059b0a7b0d9158b2e260
+ms.sourcegitcommit: d1fdecdfa843dfc0629bfc226f1baf14f3ea621d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66453582"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387750"
 ---
 # <a name="connect-to-azure-stack-using-azure-account-extension-in-visual-studio-code"></a>Conectarse a Azure Stack mediante la extensión de la cuenta de Azure en Visual Studio Code
 
@@ -34,9 +34,15 @@ VS Code es un editor ligero para compilar y depurar aplicaciones web y en la nub
 
 ## <a name="steps-to-connect-to-azure-stack"></a>Pasos para conectar con Azure Stack
 
-1. Abra VS Code.
+1. Ejecute el script **Identity** desde las herramientas de Azure Stack en GitHub.
 
-2. Seleccione **Extensiones** en la esquina izquierda.
+    - Antes de ejecutar el script, deberá tener PowerShell instalado y configurado para su entorno. Para obtener instrucciones, consulte [Instalación de PowerShell para Azure Stack](../operator/azure-stack-powershell-install.md).
+
+    - Para el script **Identity** y sus instrucciones, consulte [AzureStack-Tools/Identity](https://github.com/Azure/AzureStack-Tools/tree/master/Identity).
+
+2. Abra VS Code.
+
+3. Seleccione **Extensiones** en la esquina izquierda.
 
 3. En el cuadro de búsqueda, escriba `Azure Account`.
 
@@ -55,7 +61,7 @@ VS Code es un editor ligero para compilar y depurar aplicaciones web y en la nub
 
     Por ejemplo, la dirección URL para recuperar los metadatos para el punto de conexión de Azure Resource Manager puede tener un aspecto similar a este: `https://management.local.azurestack.external/metadata/endpoints?api-version=1.0`
 
-    Anote el código JSON devuelto. Necesitará los valores para la propiedad `loginEndpoint` y `loginEndgraphEndpointpoint`.
+    Anote el código JSON devuelto. Necesitará los valores para la propiedad `loginEndpoint` y `audiences`.
 
 7. Presione **Ctrl + Mayús + P** y seleccione **Preferencias: Abrir configuración de usuario (JSON)** .
 
@@ -67,7 +73,7 @@ VS Code es un editor ligero para compilar y depurar aplicaciones web y en la nub
         | --- | --- |
         | `tenant-ID` | El valor de su [identificador de inquilino](../operator/azure-stack-identity-overview.md) de Azure Stack. |
         | `activeDirectoryEndpointUrl` | Esta es la dirección URL de la propiedad loginEndpoint. |
-        | `activeDirectoryResourceId` | Esta es la dirección URL de la propiedad loginEndgraphEndpointpoint.
+        | `activeDirectoryResourceId` | Se trata de la dirección URL de la propiedad Audiences.
         | `resourceManagerEndpointUrl` | Se trata de la dirección URL raíz de Azure Resource Manager para Azure Stack. | 
 
     - Fragmento de código JSON:
@@ -76,15 +82,15 @@ VS Code es un editor ligero para compilar y depurar aplicaciones web y en la nub
       "azure.tenant": "tenant-ID",
       "azure.ppe": {
           "activeDirectoryEndpointUrl": "Login endpoint",
-          "activeDirectoryResourceId": "graph audience",
-          "resourceManagerEndpointUrl": "Management Endpoint",
+          "activeDirectoryResourceId": "This is the URL from the audiences property.",
+          "resourceManagerEndpointUrl": "Aure Resource Management Endpoint",
       },
       "azure.cloud": "AzurePPE"
       ```
 
-8. Guarde la configuración de usuario y use **Ctrl + Mayús + P** una vez más. Seleccione **Azure: Sign in to Azure Cloud**. Se mostrará la nueva opción, **AzurePPE**, en la lista de destinos.
+9. Guarde la configuración de usuario y use **Ctrl + Mayús + P** una vez más. Seleccione **Azure: Sign in to Azure Cloud**. Se mostrará la nueva opción, **AzurePPE**, en la lista de destinos.
 
-9. Seleccione **AzurePPE**. La página de autenticación se cargará en el explorador. Inicie sesión en el punto de conexión.
+10. Seleccione **AzurePPE**. La página de autenticación se cargará en el explorador. Inicie sesión en el punto de conexión.
 
 11. Para comprobar que ha iniciado sesión correctamente en su suscripción de Azure Stack, use **Ctrl + Mayús + P** y seleccione **Azure: Seleccionar suscripción**. A continuación, compruebe si la suscripción está disponible.
 

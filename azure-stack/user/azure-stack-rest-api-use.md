@@ -1,5 +1,5 @@
 ---
-title: Uso de la API de Azure Stack | Microsoft Docs
+title: Realizar solicitudes de API a Azure Stack | Microsoft Docs
 description: Aprenda a recuperar una autenticación de Azure para realizar solicitudes de API a Azure Stack.
 services: azure-stack
 documentationcenter: ''
@@ -14,32 +14,32 @@ ms.date: 05/16/2019
 ms.author: sethm
 ms.reviewer: thoroet
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 22aeab6c6f33462ebea50bafa795630a648e2dd5
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: 83578f7644f7a4bfc47f854fe9974809c22bba02
+ms.sourcegitcommit: ad2f2cb4dc8d5cf0c2c37517d5125921cff44cdd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66269413"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67138906"
 ---
 <!--  cblackuk and charliejllewellyn. This is a community contribution by cblackuk-->
 
-# <a name="use-the-azure-stack-api"></a>Uso de la API de Azure Stack
+# <a name="make-api-requests-to-azure-stack"></a>Realizar solicitudes de API a Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Puede usar la interfaz de programación de aplicaciones (API) para automatizar operaciones como la incorporación de una máquina virtual a la nube de Azure Stack.
+Puede usar la interfaz de programación de aplicaciones (API) para automatizar operaciones como la incorporación de una máquina virtual (VM) a la nube de Azure Stack.
 
 La API requiere que el cliente se autentique en el punto de conexión de inicio de sesión de Microsoft Azure. Este punto de conexión devuelve un token en el encabezado de cada solicitud enviada a la API de Azure Stack. Microsoft Azure usa Oauth 2.0.
 
-En este artículo se proporcionan ejemplos que usan la utilidad **cURL** para crear solicitudes de Azure Stack. La aplicación, cURL, es una herramienta de línea de comandos con una biblioteca para transferir datos. Estos ejemplos lo guían por el proceso de recuperación de un token de acceso a la API de Azure Stack. La mayoría de los lenguajes de programación proporcionan bibliotecas Oauth 2.0, que presentan una buena administración de los tokens y controlan tareas tales como la actualización del token.
+En este artículo se proporcionan ejemplos que usan la utilidad **cURL** para crear solicitudes de Azure Stack. cURL es una herramienta de línea de comandos con una biblioteca para transferir datos. Estos ejemplos lo guían por el proceso de recuperación de un token de acceso a la API de Azure Stack. La mayoría de los lenguajes de programación proporcionan bibliotecas Oauth 2.0, que presentan una buena administración de los tokens y controlan tareas tales como la actualización del token.
 
-Examine todo el proceso de utilización de la API REST de Azure Stack con un cliente REST genérico, como **cURL**, para que le ayude a comprender las solicitudes subyacentes y lo que puede esperar recibir en la carga de respuesta.
+Examine todo el proceso de utilización de la API REST de Azure Stack con un cliente REST genérico, como **cURL**, para que le ayude a comprender las solicitudes subyacentes y lo que puede esperar de una carga de respuesta.
 
 En este artículo no se exploran todas las opciones disponibles para recuperar tokens, como el inicio de sesión interactivo o la creación de identificadores de aplicación dedicados. Para obtener información acerca de estos temas, consulte [Referencia de API REST de Azure](https://docs.microsoft.com/rest/api/).
 
 ## <a name="get-a-token-from-azure"></a>Obtención de un token de Azure
 
-Cree el cuerpo de la solicitud con el formato de tipo de contenido x-www-form-urlencoded para obtener un token de acceso. PUBLIQUE la solicitud en el punto de conexión de autenticación e inicio de sesión de REST de Azure.
+Cree el cuerpo de la solicitud con el formato de tipo de contenido x-www-form-urlencoded para obtener un token de acceso. Realice una solicitud POST en el punto de conexión de autenticación e inicio de sesión de REST de Azure.
 
 ### <a name="uri"></a>URI
 
@@ -66,19 +66,19 @@ grant_type=password
 
 Para cada valor:
 
-- **grant_type**  
-   El tipo de esquema de autenticación que se va a usar. En este ejemplo, el valor es `password`
+- **grant_type**:  
+   El tipo de esquema de autenticación que se va a usar. En este ejemplo, el valor es `password`.
 
-- **resource**  
+- **resource**:  
    El recurso al que accede al token. Para encontrar el recurso, consulte el punto de conexión de metadatos de administración de Azure Stack. Examine la sección **audiences**.
 
-- **Punto de conexión de administración de Azure Stack**  
+- **Punto de conexión de administración de Azure Stack**:  
    ```
    https://management.{region}.{Azure Stack domain}/metadata/endpoints?api-version=2015-01-01
    ```
 
   > [!NOTE]  
-  > Si es un administrador que trata de acceder a la API de inquilino, debe asegurarse de usar el punto de conexión de inquilino, por ejemplo: `https://adminmanagement.{region}.{Azure Stack domain}/metadata/endpoints?api-version=2015-01-011`  
+  > Si es un administrador que intenta acceder a la API de inquilino, asegúrese de usar el punto de conexión del inquilino. Por ejemplo: `https://adminmanagement.{region}.{Azure Stack domain}/metadata/endpoints?api-version=2015-01-011`  
 
   Por ejemplo, con el Kit de desarrollo de Azure Stack como punto de conexión:
 
@@ -168,7 +168,7 @@ Respuesta:
 
 ## <a name="api-queries"></a>Consultas de la API
 
-Una vez que obtenga el token de acceso, debe agregarlo como encabezado a todas las solicitudes de API. Para ello, debe crear un encabezado **authorization** con el valor: `Bearer <access token>`. Por ejemplo:
+Una vez que obtenga el token de acceso, agréguelo como un encabezado a todas las solicitudes de API. Para agregarlo como un encabezado, cree un encabezado **Authorization** con el valor: `Bearer <access token>`. Por ejemplo:
 
 Solicitud:
 
@@ -190,7 +190,7 @@ subscriptionPolicies : @{locationPlacementId=AzureStack}
 
 ### <a name="url-structure-and-query-syntax"></a>Sintaxis de estructura y consulta de URL
 
-La dirección URL genérica de solicitud consta de: {URI-scheme} :// {URI-host} / {resource-path} ? {cadena de consulta}
+URI de solicitud genérico, que consta de: `{URI-scheme} :// {URI-host} / {resource-path} ? {query-string}`
 
 - **Esquema de URI**:  
 El URI indica el protocolo usado para enviar la solicitud. Por ejemplo, `http` o `https`.

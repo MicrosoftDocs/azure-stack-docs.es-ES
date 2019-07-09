@@ -10,16 +10,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/22/2019
+ms.date: 06/22/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 10/22/2018
-ms.openlocfilehash: 8f8d7ee82890788f60266f671bcc4041795c075e
-ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
+ms.openlocfilehash: 04c793ceebf167220b74dfc40a7e4fc775723e93
+ms.sourcegitcommit: 3f52cf06fb5b3208057cfdc07616cd76f11cdb38
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66691647"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67316259"
 ---
 # <a name="connect-azure-stack-to-azure-using-azure-expressroute"></a>Conexión de Azure Stack a Azure mediante Azure ExpressRoute
 
@@ -58,25 +58,21 @@ Para conectar Azure Stack y Azure mediante ExpressRoute, debe cumplir los siguie
 
 ### <a name="expressroute-network-architecture"></a>Arquitectura de red de ExpressRoute
 
-En el diagrama siguiente se muestran los entornos de Azure y Azure Stack después de finalizar la configuración de ExpressRoute mediante los ejemplos de este artículo:
-
-*Ilustración 1. Red de ExpressRoute*
+En la figura siguiente se muestran los entornos de Azure y Azure Stack después de finalizar la configuración de ExpressRoute mediante los ejemplos de este artículo:
 
 ![Red de ExpressRoute](media/azure-stack-connect-expressroute/Conceptual.png)
 
-En el siguiente diagrama se muestra cómo varios inquilinos se conectan desde la infraestructura de Azure Stack a Azure en Microsoft Edge mediante el enrutador de ExpressRoute:
-
-*Ilustración 2. Conexiones multiinquilino*
+En la figura siguiente se muestra cómo varios inquilinos se conectan desde la infraestructura de Azure Stack a Azure en Microsoft Edge mediante el enrutador de ExpressRoute:
 
 ![Conexiones multiinquilino con ExpressRoute](media/azure-stack-connect-expressroute/Architecture.png)
 
-En el ejemplo de este artículo se usa la misma arquitectura multiinquilino mostrada en la Figura 2 para conectar Azure Stack a Azure mediante el emparejamiento privado de ExpressRoute. La conexión se realiza mediante una conexión VPN de sitio a sitio desde la puerta de enlace de red virtual en Azure Stack hasta un enrutador de ExpressRoute.
+En el ejemplo de este artículo se usa la misma arquitectura multiinquilino mostrada en este diagrama para conectar Azure Stack a Azure mediante el emparejamiento privado de ExpressRoute. La conexión se realiza mediante una conexión VPN de sitio a sitio desde la puerta de enlace de red virtual en Azure Stack hasta un enrutador de ExpressRoute.
 
 En los pasos de este artículo se muestra cómo crear una conexión de extremo a extremo entre dos redes virtuales desde dos inquilinos diferentes de Azure Stack hasta sus correspondientes redes virtuales en Azure. La configuración de dos inquilinos es opcional; también puede usar estos pasos para un solo inquilino.
 
 ## <a name="configure-azure-stack"></a>Configurar Azure Stack
 
-Para configurar el entorno de Azure Stack para el primer inquilino, use los pasos del diagrama siguiente como guía. Si va a configurar más de un inquilino, repita estos pasos:
+Para configurar el entorno de Azure Stack para el primer inquilino, use los pasos siguientes como guía. Si va a configurar más de un inquilino, repita estos pasos:
 
 >[!NOTE]
 >Estos pasos muestran cómo crear recursos mediante el portal de Azure Stack, pero también puede usar PowerShell.
@@ -96,7 +92,7 @@ Use los procedimientos siguientes para crear los recursos de red necesarios en A
 
 #### <a name="create-the-virtual-network-and-vm-subnet"></a>Creación de la red virtual y la subred de máquina virtual
 
-1. Inicie sesión en el portal de usuario con una cuenta de usuario (inquilino).
+1. Inicie sesión en el portal de usuarios de Azure Stack.
 
 2. En el portal, seleccione **+ Crear un recurso**.
 
@@ -144,14 +140,14 @@ Use los procedimientos siguientes para crear los recursos de red necesarios en A
 
 #### <a name="create-the-local-network-gateway"></a>Creación de la puerta de enlace de red local
 
-El recurso de la puerta de enlace de red local identifica la puerta de enlace remota en el otro extremo de la conexión VPN. En este ejemplo, el extremo remoto de la conexión es la subinterfaz LAN del enrutador de ExpressRoute. Para el inquilino 1, que se muestra en la Figura 2, la dirección remota es 10.60.3.255.
+El recurso de la puerta de enlace de red local identifica la puerta de enlace remota en el otro extremo de la conexión VPN. En este ejemplo, el extremo remoto de la conexión es la subinterfaz LAN del enrutador de ExpressRoute. Para el inquilino 1 del diagrama anterior, la dirección remota es 10.60.3.255.
 
 1. Inicie sesión en el portal de usuario de Azure Stack con su cuenta de usuario y seleccione **+Crear un recurso**.
 1. En **Azure Marketplace**, seleccione **Networking** (Red).
 1. Seleccione **local network gateway** (puerta de enlace de red local) en la lista de recursos de red.
 1. En el campo **Name** (Nombre), escriba **ER-Router-GW**.
-1. Para el campo **IP address** (Dirección IP), consulte la Figura 2. La dirección IP de la subinterfaz LAN del enrutador de ExpressRoute para el inquilino 1 es 10.60.3.255. Para su propio entorno, escriba la dirección IP de la interfaz correspondiente de su enrutador.
-1. En el campo **Address Space** (Espacio de direcciones), escriba el espacio de direcciones de las redes virtuales a las que quiere conectarse en Azure. Las subredes del inquilino 1 de la *Figura 2* son las siguientes:
+1. Para el campo **IP address** (Dirección IP), consulte la figura anterior. La dirección IP de la subinterfaz LAN del enrutador de ExpressRoute para el inquilino 1 es 10.60.3.255. Para su propio entorno, escriba la dirección IP de la interfaz correspondiente de su enrutador.
+1. En el campo **Address Space** (Espacio de direcciones), escriba el espacio de direcciones de las redes virtuales a las que quiere conectarse en Azure. Las subredes del inquilino 1 son las siguientes:
 
    * 192.168.2.0/24 es la red virtual central de Azure.
    * 10.100.0.0/16 es la red virtual radial de Azure.
@@ -295,8 +291,6 @@ El enrutador es una máquina virtual de Windows Server (AzS-BGPNAT01) que ejecut
 
 Cuando termine de configurar Azure Stack, puede implementar los recursos de Azure. En el siguiente diagrama se muestra un ejemplo de una red virtual de inquilino en Azure. Puede usar cualquier esquema de nombres y de direccionamiento para VNet en Azure. Sin embargo, el intervalo de direcciones de las redes virtuales en Azure y Azure Stack debe ser único y no superponerse:
 
-*Ilustración 3. Redes virtuales de Azure*
-
 ![Redes virtuales de Azure](media/azure-stack-connect-expressroute/AzureArchitecture.png)
 
 Los recursos que se implementan en Azure son similares a los recursos que se implementar en Azure Stack. Implementará los siguientes componentes:
@@ -356,9 +350,7 @@ Repita estos pasos para cualquier VNet de inquilino adicional que desee conectar
 
 ## <a name="configure-the-router"></a>Configuración del enrutador
 
-Puede usar el siguiente diagrama de configuración del enrutador de ExpressRoute como guía para configurar el enrutador de ExpressRoute. Este diagrama muestra dos inquilinos (Tenant 1 y Tenant 2) con sus circuitos ExpressRoute correspondientes. Cada inquilino está vinculado a su propio VRF (enrutamiento virtual y reenvío) en el lado LAN y WAN del enrutador de ExpressRoute. Esta configuración garantiza el aislamiento de un extremo a otro entre los dos inquilinos. Anote las direcciones IP usadas en las interfaces del enrutador a medida que siga la configuración de ejemplo.
-
-*Ilustración 4. Configuración del enrutador de ExpressRoute*
+Puede usar el siguiente diagrama de configuración del enrutador de ExpressRoute como guía para configurar el enrutador de ExpressRoute. Esta figura muestra dos inquilinos (Tenant 1 y Tenant 2) con sus circuitos ExpressRoute correspondientes. Cada inquilino está vinculado a su propio VRF (enrutamiento virtual y reenvío) en el lado LAN y WAN del enrutador de ExpressRoute. Esta configuración garantiza el aislamiento de un extremo a otro entre los dos inquilinos. Anote las direcciones IP usadas en las interfaces del enrutador a medida que siga la configuración de ejemplo.
 
 ![Configuración del enrutador de ExpressRoute](media/azure-stack-connect-expressroute/EndToEnd.png)
 
@@ -624,7 +616,7 @@ New-NetFirewallRule `
 
 Si quiere saber la cantidad de tráfico que pasa por la conexión, puede encontrar esta información en el portal de usuario de Azure Stack. También es conveniente saber si los datos de prueba de ping pasaron por las conexiones VPN y ExpressRoute:
 
-1. Inicie sesión en el portal de usuario de Azure Stack mediante la cuenta de inquilino y seleccione **All resources** (Todos los recursos).
+1. Inicie sesión en el portal de usuarios de Azure Stack y seleccione **All resources** (Todos los recursos).
 1. Vaya al grupo de recursos de VPN Gateway y seleccione el tipo de objeto **Connection** (Conexión).
 1. Seleccione la conexión **ConnectToAzure** en la lista.
 1. En **Connections** > **Overview** (Conexiones > Información general), puede ver las estadísticas de **Data in** (Entrada de datos) y **Data out** (Salida de datos). Verá algunos valores distintos de cero.

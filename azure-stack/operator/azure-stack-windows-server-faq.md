@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/31/2019
+ms.date: 06/22/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 11/12/2018
-ms.openlocfilehash: ffb58392075521b81d9b0cd71928ac0db680991f
-ms.sourcegitcommit: 80775f5c5235147ae730dfc7e896675a9a79cdbe
+ms.openlocfilehash: 0896ea921408d651a4b8e072c3d66ab4e333ebd6
+ms.sourcegitcommit: fdeb2760845c9760ea7df1414b8e140b0624a823
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66459071"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67334428"
 ---
 # <a name="windows-server-in-azure-stack-marketplace-faq"></a>Preguntas frecuentes sobre Windows Server en el Marketplace de Azure Stack
 
@@ -36,7 +36,7 @@ A continuación, si las instancias de Virtual Machine Scale Sets hacen referenci
 
 ### <a name="what-are-the-licensing-options-for-windows-server-marketplace-images-on-azure-stack"></a>¿Qué opciones hay para obtener licencias de imágenes de Windows Server en el Marketplace de Azure Stack?
 
-Microsoft ofrece dos versiones de imágenes de Windows Server a través del Marketplace de Azure Stack:
+Microsoft ofrece dos versiones de imágenes de Windows Server a través de Marketplace de Azure Stack. Solo una versión de esta imagen puede usarse en un entorno de Azure Stack.  
 
 - **Pago por uso**: estas imágenes ejecutan los medidores de precio completo de Windows.
    ¿Quién debe usarlo?: Clientes con contratos Enterprise (EA) que usan el *modelo de facturación de consumo*; o para CSP que no desean usar licencias de SPLA.
@@ -47,7 +47,9 @@ Ventaja de uso híbrido de Azure (AHUB) no se admite en Azure Stack. Los cliente
 
 ### <a name="what-if-i-downloaded-the-wrong-version-to-offer-my-tenantsusers"></a>¿Qué ocurre si descargué la versión incorrecta para mis inquilinos o usuarios?
 
-Primero, debe eliminar la versión incorrecta a través de Administración de Marketplace. Espere a que la eliminación finalice por completo (consulte las notificaciones que indican la finalización, no la hoja de **Administración de Marketplace**). A continuación, descargue la versión correcta.
+Primero, debe eliminar la versión incorrecta a través de Administración de Marketplace. Espere a que la eliminación finalice (consulte las notificaciones que indican la finalización, no la hoja **Administración de Marketplace**). A continuación, descargue la versión correcta.
+
+Si descarga ambas versiones de la imagen, solo la versión más reciente es visible para los clientes finales en la galería de Marketplace.
 
 ### <a name="what-if-my-user-incorrectly-checked-the-i-have-a-license-box-in-previous-windows-builds-and-they-dont-have-a-license"></a>¿Qué ocurre si mi usuario marco incorrectamente el cuadro "Tengo una licencia" en compilaciones anteriores de Windows y no tiene ninguna licencia?
 

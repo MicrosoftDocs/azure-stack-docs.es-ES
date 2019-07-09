@@ -11,23 +11,23 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/27/2019
+ms.date: 06/18/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 01/16/2019
-ms.openlocfilehash: 09fa7b503f0c594d2af0c6f16a6d4618cec0fac3
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.lastreviewed: 06/18/2019
+ms.openlocfilehash: 61d2739475a0593671e7a363671dd2859a6e6f24
+ms.sourcegitcommit: 3f52cf06fb5b3208057cfdc07616cd76f11cdb38
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64308481"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67316246"
 ---
 # <a name="add-kubernetes-to-the-azure-stack-marketplace"></a>Adición de Kubernetes a Marketplace de Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
 > [!note]  
-> Kubernetes en Azure Stack está en versión preliminar. El escenario sin conexión de Azure Stack no es compatible actualmente con la versión preliminar.
+> Kubernetes en Azure Stack está en versión preliminar. Un escenario sin conexión de Azure Stack no es compatible actualmente con la versión preliminar. Solo use el elemento de Marketplace para escenarios de desarrollo y pruebas.
 
 Puede ofrecer Kubernetes como un elemento de Marketplace a los usuarios. A continuación, los usuarios pueden implementar Kubernetes en una sola operación coordinada.
 
@@ -51,7 +51,7 @@ Cree un plan, una oferta y una suscripción para el elemento de Marketplace de K
 
 1. Seleccione **+ Crear un recurso** > **Offers and Plans** (Ofertas y planes)  > **Suscripción** para crear una suscripción.
 
-     a. Especifique un **Nombre para mostrar**.
+    a. Especifique un **Nombre para mostrar**.
 
     b. Especifique un **Usuario**. Use la cuenta de Azure AD asociada con su inquilino.
 
@@ -63,129 +63,7 @@ Cree un plan, una oferta y una suscripción para el elemento de Marketplace de K
 
 ## <a name="create-a-service-principal-and-credentials-in-ad-fs"></a>Creación de una entidad de servicio y las credenciales de AD FS
 
-Si usa Active Directory Federated Services (AD FS) para el servicio de administración de identidades, deberá crear una entidad de servicio para que los usuarios implementen un clúster de Kubernetes.
-
-1. Cree y exporte un certificado autofirmado que se usará para crear la entidad de servicio. 
-
-    - Necesita la siguiente información:
-
-       | Valor | DESCRIPCIÓN |
-       | ---   | ---         |
-       | Contraseña | Escriba una nueva contraseña para el certificado. |
-       | Ruta de acceso del certificado | Escriba la ruta de acceso y el nombre de archivo del certificado. Por ejemplo: `c:\certfilename.pfx` |
-       | Nombre del certificado | Escriba el nombre del certificado. |
-       | Ubicación del almacén de certificados |  Por ejemplo: `Cert:\LocalMachine\My` |
-
-    - Abra PowerShell con un símbolo del sistema con privilegios elevados. Ejecute el siguiente script con los parámetros actualizados para coincidir con sus valores:
-
-        ```powershell  
-        # Creates a new self signed certificate 
-        $passwordString = "<password>"
-        $certlocation = "<local certificate path>.pfx"
-        $certificateName = "CN=<certificate name>"
-        $certStoreLocation="<certificate store location>"
-        
-        $params = @{
-        CertStoreLocation = $certStoreLocation
-        DnsName = $certificateName
-        FriendlyName = $certificateName
-        KeyLength = 2048
-        KeyUsageProperty = 'All'
-        KeyExportPolicy = 'Exportable'
-        Provider = 'Microsoft Enhanced Cryptographic Provider v1.0'
-        HashAlgorithm = 'SHA256'
-        }
-        
-        $cert = New-SelfSignedCertificate @params -ErrorAction Stop
-        Write-Verbose "Generated new certificate '$($cert.Subject)' ($($cert.Thumbprint))." -Verbose
-        
-        #Exports certificate with password in a .pfx format
-        $pwd = ConvertTo-SecureString -String $passwordString -Force -AsPlainText
-        Export-PfxCertificate -cert $cert -FilePath $certlocation -Password $pwd
-        ```
-
-2.  Tome nota del nuevo identificador del certificado que aparece en la sesión de PowerShell, `1C2ED76081405F14747DC3B5F76BB1D83227D824`. El ID se usará para crear la entidad de servicio.
-
-    ```powershell  
-    VERBOSE: Generated new certificate 'CN=<certificate name>' (1C2ED76081405F14747DC3B5F76BB1D83227D824).
-    ```
-
-3. Cree una entidad de servicio con el certificado.
-
-    - Necesita la siguiente información:
-
-       | Valor | DESCRIPCIÓN                     |
-       | ---   | ---                             |
-       | IP de ERCS | En el ASDK, el punto de conexión con privilegios es normalmente `AzS-ERCS01`. |
-       | Nombre de la aplicación | Escriba un nombre sencillo para la entidad de servicio de la aplicación. |
-       | Ubicación del almacén de certificados | La ruta de acceso en el equipo en el que ha almacenado el certificado. Esto se indica mediante la ubicación del almacén y el identificador del certificado generado en el primer paso. Por ejemplo: `Cert:\LocalMachine\My\1C2ED76081405F14747DC3B5F76BB1D83227D824` |
-
-       Cuando se le solicite, use las siguientes credenciales para conectarse al punto de conexión con privilegios. 
-        - Nombre de usuario: especifique la cuenta CloudAdmin con el formato `<Azure Stack domain>\cloudadmin`. (Para ASDK, el nombre de usuario es azurestack\cloudadmin.)
-        - Contraseña: escriba la misma contraseña que proporcionó durante la instalación de la cuenta del administrador de dominio de AzureStackAdmin.
-
-    - Ejecute el siguiente script con los parámetros actualizados para coincidir con sus valores:
-
-        ```powershell  
-        #Create service principal using the certificate
-        $privilegedendpoint="<ERCS IP>"
-        $applicationName="<application name>"
-        $certStoreLocation="<certificate location>"
-        
-        # Get certificate information
-        $cert = Get-Item $certStoreLocation
-        
-        # Credential for accessing the ERCS PrivilegedEndpoint, typically domain\cloudadmin
-        $creds = Get-Credential
-
-        # Creating a PSSession to the ERCS PrivilegedEndpoint
-        $session = New-PSSession -ComputerName $privilegedendpoint -ConfigurationName PrivilegedEndpoint -Credential $creds
-
-        # Get Service principal Information
-        $ServicePrincipal = Invoke-Command -Session $session -ScriptBlock { New-GraphApplication -Name "$using:applicationName" -ClientCertificates $using:cert}
-
-        # Get Stamp information
-        $AzureStackInfo = Invoke-Command -Session $session -ScriptBlock { get-azurestackstampinformation }
-
-        # For Azure Stack development kit, this value is set to https://management.local.azurestack.external. This is read from the AzureStackStampInformation output of the ERCS VM.
-        $ArmEndpoint = $AzureStackInfo.TenantExternalEndpoints.TenantResourceManager
-
-        # For Azure Stack development kit, this value is set to https://graph.local.azurestack.external/. This is read from the AzureStackStampInformation output of the ERCS VM.
-        $GraphAudience = "https://graph." + $AzureStackInfo.ExternalDomainFQDN + "/"
-
-        # TenantID for the stamp. This is read from the AzureStackStampInformation output of the ERCS VM.
-        $TenantID = $AzureStackInfo.AADTenantID
-
-        # Register an AzureRM environment that targets your Azure Stack instance
-        Add-AzureRMEnvironment `
-        -Name "AzureStackUser" `
-        -ArmEndpoint $ArmEndpoint
-
-        # Set the GraphEndpointResourceId value
-        Set-AzureRmEnvironment `
-        -Name "AzureStackUser" `
-        -GraphAudience $GraphAudience `
-        -EnableAdfsAuthentication:$true
-        Add-AzureRmAccount -EnvironmentName "azurestackuser" `
-        -ServicePrincipal `
-        -CertificateThumbprint $ServicePrincipal.Thumbprint `
-        -ApplicationId $ServicePrincipal.ClientId `
-        -TenantId $TenantID
-
-        # Output the SPN details
-        $ServicePrincipal
-        ```
-
-    - La información de la entidad de servicio es similar al fragmento de código que se muestra a continuación:
-
-        ```Text  
-        ApplicationIdentifier : S-1-5-21-1512385356-3796245103-1243299919-1356
-        ClientId              : 3c87e710-9f91-420b-b009-31fa9e430145
-        Thumbprint            : 30202C11BE6864437B64CE36C8D988442082A0F1
-        ApplicationName       : Azurestack-MyApp-c30febe7-1311-4fd8-9077-3d869db28342
-        PSComputerName        : azs-ercs01
-        RunspaceId            : a78c76bb-8cae-4db4-a45a-c1420613e01b
-        ```
+Si usa Active Directory Federated Services (AD FS) para el servicio de administración de identidades, deberá crear una entidad de servicio para que los usuarios implementen un clúster de Kubernetes. Cree una entidad de servicio mediante un secreto de cliente. Para obtener instrucciones, consulte [Creación de una entidad de servicio mediante un secreto de cliente](azure-stack-create-service-principals.md#create-a-service-principal-that-uses-client-secret-credentials).
 
 ## <a name="add-an-ubuntu-server-image"></a>Agregar una imagen de Ubuntu Server
 

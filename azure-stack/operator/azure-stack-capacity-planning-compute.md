@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/31/2019
+ms.date: 06/13/2019
 ms.author: justinha
 ms.reviewer: prchint
-ms.lastreviewed: 05/31/2019
-ms.openlocfilehash: 6afaca6e9bad806f432cf56b79dca5881bb76455
-ms.sourcegitcommit: fbd6a7fed4f064113647540329a768347a6cf261
+ms.lastreviewed: 06/13/2019
+ms.openlocfilehash: 9c263b97deb12a199f2941be7ea4ae05a048837b
+ms.sourcegitcommit: b79a6ec12641d258b9f199da0a35365898ae55ff
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66810225"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67131634"
 ---
 # <a name="azure-stack-compute"></a>Proceso de Azure Stack
 
@@ -85,19 +85,21 @@ El valor V, la máquina virtual más grande de la unidad de escalado, se basa di
 
 ## <a name="frequently-asked-questions"></a>Preguntas frecuentes
 
-P: Mi inquilino ha implementado una nueva máquina virtual, ¿cuánto tiempo tardará el gráfico de capacidad del portal de administración en mostrar la capacidad restante?
-R: La hoja de capacidad se actualiza cada 15 minutos, por lo tanto, tenga esto en cuenta.
+**P.** : Mi inquilino ha implementado una nueva máquina virtual, ¿cuánto tiempo tardará el gráfico de capacidad del portal de administración en mostrar la capacidad restante?
 
-P: El número de máquinas virtuales implementadas en mi instancia de Azure Stack no ha cambiado, pero mi capacidad fluctúa. ¿Por qué?
-R: La memoria disponible para la ubicación de las máquinas virtuales tiene múltiples dependencias, una de las cuales es la reserva del sistema operativo del host. Este valor depende de la memoria que utilizan los diferentes procesos de Hyper-V que se ejecutan en el host, que no es un valor constante.
+**R.** : La hoja de capacidad se actualiza cada 15 minutos, por lo tanto, tenga esto en cuenta.
 
-P: ¿En qué estado tienen que estar las máquinas virtuales de los inquilinos para consumir memoria?
-R: Además de ejecutar VM, las VM que llegan al tejido también consumen memoria. Esto significa que las máquinas virtuales que se encuentran en estado "Creando", "Con error" o las que se apaguen desde el invitado, en lugar de detenerse la desasignación desde el Portal o PowerShell o la cli, consumirán memoria.
+**P.** : El número de máquinas virtuales implementadas en mi instancia de Azure Stack no ha cambiado, pero mi capacidad fluctúa. ¿Por qué?
 
+**R.** : La memoria disponible para la ubicación de las máquinas virtuales tiene múltiples dependencias, una de las cuales es la reserva del sistema operativo del host. Este valor depende de la memoria que utilizan los diferentes procesos de Hyper-V que se ejecutan en el host, que no es un valor constante.
 
-P: Tengo una instancia de Azure Stack de cuatro hosts. Mi inquilino tiene tres máquinas virtuales que consumen 56 GB de RAM (D5_v2) cada una. Una de las máquinas virtuales cambia de tamaño a 112 GB de RAM (D14_v2) y los informes de memoria disponibles en el panel dieron como resultado un aumento de 168 GB de uso en la hoja de capacidad. El cambio de tamaño posterior de las otras dos máquinas virtuales de D5_v2 a D14_v2 ha dado como resultado un aumento de solo 56 GB de RAM cada una. ¿Por qué ocurre esto?
+**P.** : ¿En qué estado tienen que estar las máquinas virtuales de los inquilinos para consumir memoria?
 
-R: La memoria disponible es una función de la reserva de resistencia mantenida por Azure Stack. La reserva de resistencia es una función del mayor tamaño de máquina virtual en la marca de Azure Stack. Al principio, la máquina virtual más grande en la marca tenía 56 GB de memoria. Cuando se cambió de tamaño la máquina virtual, la más grande de la marca pasó a 112 GB de memoria, lo que no solo aumentó la memoria utilizada por la máquina virtual del inquilino, sino que también aumentó la reserva de resistencia. Esto dio como resultado un aumento de 56 GB (de 56 GB a 112 GB de aumento de la memoria de la máquina virtual del inquilino) más un aumento de la memoria de reserva de resistencia de 112 GB. Al cambiar el tamaño de las máquinas virtuales posteriores, se conservó el tamaño mayor de la máquina virtual como la máquina virtual de 112 GB y, por lo tanto, no se produjo un aumento de la reserva de resistencia. El aumento en el consumo de memoria fue solo el aumento de la memoria de la máquina virtual del inquilino (56 GB). 
+v: Además de ejecutar VM, las VM que llegan al tejido también consumen memoria. Esto significa que las VM que están en estado "Creando" o "Error", o las VM que se apagan desde g
+
+**P.** : Tengo una instancia de Azure Stack de cuatro hosts. Mi inquilino tiene tres máquinas virtuales que consumen 56 GB de RAM (D5_v2) cada una. Una de las máquinas virtuales cambia de tamaño a 112 GB de RAM (D14_v2) y los informes de memoria disponibles en el panel dieron como resultado un aumento de 168 GB de uso en la hoja de capacidad. El cambio de tamaño posterior de las otras dos máquinas virtuales de D5_v2 a D14_v2 ha dado como resultado un aumento de solo 56 GB de RAM cada una. ¿Por qué ocurre esto?
+
+**R.** : La memoria disponible es una función de la reserva de resistencia mantenida por Azure Stack. La reserva de resistencia es una función del mayor tamaño de máquina virtual en la marca de Azure Stack. Al principio, la máquina virtual más grande en la marca tenía 56 GB de memoria. Cuando se cambió de tamaño la máquina virtual, la más grande de la marca pasó a 112 GB de memoria, lo que no solo aumentó la memoria utilizada por la máquina virtual del inquilino, sino que también aumentó la reserva de resistencia. Esto dio como resultado un aumento de 56 GB (de 56 GB a 112 GB de aumento de la memoria de la máquina virtual del inquilino) más un aumento de la memoria de reserva de resistencia de 112 GB. Al cambiar el tamaño de las máquinas virtuales posteriores, se conservó el tamaño mayor de la máquina virtual como la máquina virtual de 112 GB y, por lo tanto, no se produjo un aumento de la reserva de resistencia. El aumento en el consumo de memoria fue solo el aumento de la memoria de la máquina virtual del inquilino (56 GB). 
 
 
 > [!NOTE]

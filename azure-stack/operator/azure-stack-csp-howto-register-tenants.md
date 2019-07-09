@@ -15,12 +15,12 @@ ms.date: 06/07/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 06/07/2019
-ms.openlocfilehash: edc6fc17e426e5e391eb61d510097101ddcfce58
-ms.sourcegitcommit: af63214919e798901399fdffef09650de4176956
+ms.openlocfilehash: e69000eb862411dd0c8b415ab1f0ad7c8573f046
+ms.sourcegitcommit: bcaad8b7db2ea596018d973cb29283d8c6daebfb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66828330"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67419553"
 ---
 # <a name="add-tenant-for-usage-and-billing-to-azure-stack"></a>Adición de inquilinos en Azure Stack para uso y facturación
 
@@ -79,7 +79,7 @@ En la siguiente sección se describen los parámetros para el cmdlet **New-Azure
 | customerSubscriptionID | La suscripción de Azure (no de Azure Stack) que pertenece al cliente que se va a registrar. Se debe crear en la oferta del CSP; en la práctica, esto significa mediante el centro de partners. Si un cliente tiene más de un inquilino de Azure Active Directory, esta suscripción debe crearse en el inquilino que se usará para iniciar sesión en Azure Stack. El id. de suscripción de clientes debe usar letras minúsculas. |
 | resourceGroup | El grupo de recursos de Azure en el que se almacena el registro. |
 | registrationName | El nombre del registro de Azure Stack. Es un objeto almacenado en Azure. |
-| Properties (Propiedades) | Especifica las propiedades del recurso. Use este parámetro para especificar los valores de las propiedades que son específicos del tipo de recurso.
+| properties (Propiedades) | Especifica las propiedades del recurso. Use este parámetro para especificar los valores de las propiedades que son específicos del tipo de recurso.
 
 > [!NOTE]  
 > Los inquilinos se deben registrar en cada instancia de Azure Stack que utilicen. Si tiene dos implementaciones de Azure Stack y un inquilino utiliza ambas, debe actualizar los registros iniciales de cada implementación con la suscripción del inquilino.
@@ -94,6 +94,6 @@ Una vez que haya agregado al nuevo cliente a Azure Stack o el inquilino del clie
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Para revisar los mensajes de error que se desencadenen en el proceso de registro, consulte [Mensajes de error del registro de inquilinos](azure-stack-csp-ref-infrastructure.md#usage-and-billing-error-codes).
+- Para revisar los mensajes de error que se desencadenen en el proceso de registro, consulte [Mensajes de error del registro de inquilinos](azure-stack-registration-errors.md).
 - Para más información sobre cómo recuperar la información de utilización de recursos de Azure Stack, consulte [Uso y facturación en Azure Stack](azure-stack-billing-and-chargeback.md).
 - Para revisar cómo un cliente final puede agregarle, en calidad de CSP, como el administrador de su inquilino de Azure Stack, consulte [Habilitación de un proveedor de servicios en la nube para administrar la suscripción de Azure Stack](../user/azure-stack-csp-enable-billing-usage-tracking.md).

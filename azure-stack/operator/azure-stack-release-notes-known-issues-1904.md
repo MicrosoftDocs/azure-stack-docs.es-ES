@@ -16,12 +16,12 @@ ms.date: 05/31/2019
 ms.author: sethm
 ms.reviewer: hectorl
 ms.lastreviewed: 05/31/2019
-ms.openlocfilehash: 9b92e6e2e059f4b57742248672751111b504136c
-ms.sourcegitcommit: cf9440cd2c76cc6a45b89aeead7b02a681c4628a
+ms.openlocfilehash: f25bc769e7461c21e40017d6413cfbe35186441b
+ms.sourcegitcommit: bcaad8b7db2ea596018d973cb29283d8c6daebfb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66469136"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67419591"
 ---
 # <a name="azure-stack-1904-known-issues"></a>Problemas conocidos de Azure Stack 1904
 
@@ -43,7 +43,7 @@ En este artículo se enumeran los problemas conocidos de la versión de 1904 de 
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: Las dos suscripciones administrativas que se incluyeron con la versión 1804 no deberían usarse. Los tipos de suscripción son **suscripción de medición** y **suscripción de consumo**.
-- Corrección: Estas suscripciones se suspenderán a partir de la versión 1906 y, posteriormente, se eliminarán. Si tiene recursos que se ejecutan en estas dos suscripciones, vuelva a crearlos en las suscripciones de usuario anteriores a la versión 1906.
+- Corrección: Si tiene recursos que se ejecutan en estas dos suscripciones, vuelva a crearlos en las suscripciones de usuario.
 - Repetición: Común
 
 ### <a name="subscription-resources"></a>Recursos de suscripción
@@ -102,6 +102,13 @@ En este artículo se enumeran los problemas conocidos de la versión de 1904 de 
 - Corrección: Cargue el blob mediante la opción SAS.
 - Repetición: Común
 
+### <a name="template"></a>Plantilla
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, la interfaz de usuario de implementación de plantillas no rellena los parámetros de los nombres de plantilla que empiezan por "_" (carácter de subrayado).
+- Corrección: Quite el "_" (carácter de subrayado) del nombre de la plantilla.
+- Repetición: Común
+
 ## <a name="networking"></a>Redes
 
 ### <a name="load-balancer"></a>Equilibrador de carga
@@ -149,7 +156,7 @@ El error se produce si habilita el diagnóstico de arranque en una VM, pero elim
 #### <a name="centos"></a>CentOS
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: La experiencia de creación de conjuntos de escalado de máquinas virtuales proporciona la versión 7.2 basada en CentOS como una opción para la implementación. CentOS 7.2 no está disponible en Azure Stack.
+- Causa: La experiencia de creación de conjuntos de escalado de máquinas virtuales proporciona la versión 7.2 basada en CentOS como una opción para la implementación. CentOS 7.2 no está disponible en Azure Stack Marketplace, lo que causará errores en la implementación que indican que la imagen no se encuentra.
 - Corrección: Seleccione otro sistema operativo para la implementación o use una plantilla de Azure Resource Manager en la que se especifique otra imagen de CentOS que el operador haya descargado de Marketplace antes de la implementación.
 - Repetición: Común
 

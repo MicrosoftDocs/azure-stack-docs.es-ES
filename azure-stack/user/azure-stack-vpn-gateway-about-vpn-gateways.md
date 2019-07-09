@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: sethm
 ms.lastreviewed: 05/21/2019
-ms.openlocfilehash: a8fe96d645d9277003e17144089a91e0722d0088
-ms.sourcegitcommit: e51cdc84a09250e8fa701bb2cb09de38d7de2c07
+ms.openlocfilehash: 0df791c6eb9a898c5263b2c628899b512d49601c
+ms.sourcegitcommit: c4507a100eadd9073aed0d537d054e394b34f530
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66836837"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67198660"
 ---
 # <a name="about-vpn-gateway-for-azure-stack"></a>Acerca de VPN Gateway para Azure Stack
 
@@ -102,6 +102,14 @@ Tenga en cuenta la siguiente información cuando seleccione la SKU:
 * Azure Stack no admite puertas de enlace basadas en directivas.
 * El Protocolo de puerta de enlace de borde (BGP) no se admite en la SKU de nivel Básico.
 * Las configuraciones de la coexistencia de ExpressRoute-VPN Gateway no se admiten en Azure Stack.
+
+## <a name="gateway-availability"></a>Disponibilidad de la puerta de enlace
+
+Los escenarios de alta disponibilidad solo se pueden configurar en la SKU de conexión **Puerta de enlace de alto rendimiento**. A diferencia de Azure, que proporciona disponibilidad a través de las configuraciones activa/activa y activa/pasiva, Azure Stack solo admite la configuración activa/pasiva. 
+
+### <a name="failover"></a>Conmutación por error
+
+Hay 3 VM de infraestructura de puerta de enlace multiinquilino en Azure Stack. Dos de estas VM están en modo activo y la tercera está en modo redundante. Las VM activas permite la creación de conexiones VPN en ellas y la VM redundante solo acepta conexiones VPN en el caso de una conmutación por error. Si una VM de puerta de enlace activa no está disponible, la conexión VPN conmuta por error a la VM redundante tras un breve período (unos segundos) de pérdida de conexión.
 
 ## <a name="estimated-aggregate-throughput-by-sku"></a>Rendimiento agregado estimado por SKU
 

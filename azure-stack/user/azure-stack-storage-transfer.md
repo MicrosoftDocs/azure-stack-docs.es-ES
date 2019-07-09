@@ -14,12 +14,12 @@ ms.date: 03/11/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 12/03/2018
-ms.openlocfilehash: bdbf30a0913aeb4839d31e68c84a4b1b7965bf85
-ms.sourcegitcommit: 75b13158347963063b7ee62b0ec57894b542c1be
+ms.openlocfilehash: a76676c5f4fd1e23a20df04622dafb450e162448
+ms.sourcegitcommit: 6876ccb85c20794969264a1b27e479f4e938f990
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66748976"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67406895"
 ---
 # <a name="use-data-transfer-tools-for-azure-stack-storage"></a>Uso de herramientas de transferencia de datos en almacenamiento de Azure Stack
 
@@ -57,85 +57,57 @@ AzCopy es una utilidad de línea de comandos diseñada para copiar datos tanto a
 
 ### <a name="download-and-install-azcopy"></a>Descarga e instalación de AzCopy
 
-Hay dos versiones de la utilidad AzCopy: AzCopy en Windows y AzCopy en Linux.
+* Para la actualización 1811 o versiones más recientes, [descargue AzCopy v10 o posterior](/azure/storage/common/storage-use-azcopy-v10#download-azcopy).
+* Para versiones anteriores (actualizaciones 1802 a 1809), [descargue AzCopy 7.1.0](https://aka.ms/azcopyforazurestack20170417).
 
- - **AzCopy en Windows**
-    - Descargue la versión compatible de AzCopy para Azure Stack. AzCopy se puede instalar y usar en Azure Stack del mismo modo que Azure. Para más información, consulte [AzCopy en Windows](/azure/storage/common/storage-use-azcopy).
-        - Para la actualización 1811 o versiones más recientes, [descargue AzCopy 7.3.0](https://aka.ms/azcopyforazurestack20171109).
-        - Para versiones anteriores (actualizaciones 1802 a 1809), [descargue AzCopy 7.1.0](https://aka.ms/azcopyforazurestack20170417).
+### <a name="accopy-101-configuration-and-limits"></a>Configuración y límites de AcCopy 10.1
 
- - **AzCopy en Linux**
+AzCopy 10.1 ahora se puede configurar para usar versiones anteriores de la API. De este modo se habilita la compatibilidad (limitada) con Azure Stack.
+Para configurar la versión de la API de AzCopy para que admita Azure Stack, establezca la variable de entorno `AZCOPY_DEFAULT_SERVICE_API_VERSION` en `2017-11-09`.
 
-    - AzCopy se puede instalar y usar en Azure Stack del mismo modo que Azure. Para más información, consulte [AzCopy en Linux](/azure/storage/common/storage-use-azcopy-linux).
-    - Para versiones anteriores (actualizaciones 1802 a 1809), consulte los [pasos de instalación de AzCopy 7.1 y versiones anteriores](/azure/storage/common/storage-use-azcopy-v10#use-the-previous-version-of-azcopy).
+| Sistema operativo | Get-Help  |
+|--------|-----------|
+| **Windows** | En un símbolo del sistema, use: `set AZCOPY_DEFAULT_SERVICE_API_VERSION=2017-11-09`<br> En PowerShell, use: `$env:AZCOPY_DEFAULT_SERVICE_API_VERSION="2017-11-09"`|
+| **Linux** | `export AZCOPY_DEFAULT_SERVICE_API_VERSION=2017-11-09` |
+| **macOS** | `export AZCOPY_DEFAULT_SERVICE_API_VERSION=2017-11-09` |
+
+En AzCopy 10.1, las siguientes características son compatibles con Azure Stack:
+
+| Característica | Acciones admitidas |
+| --- | --- |
+|Manage container (Administrar contenedor)|Crear un contenedor<br>Enumerar el contenido de los contenedores
+|Manage job (Administrar trabajo)|Mostrar trabajos<br>Reanudar un trabajo
+|Remove blob (Quitar blob)|Quitar un solo blob<br>Quitar el directorio virtual de manera completa o parcial
+|Carga de archivo|Cargar un archivo<br>Subir un directorio<br>Subir el contenido de un directorio
+|Descarga de archivo|Descarga de un archivo<br>Descargar un directorio<br>Descargar el contenido de un directorio
+|Synchronize file (Sincronizar archivo)|Sincronizar un contenedor con un sistema de archivos local<br>Sincronizar un sistema de archivos local con un contenedor
+
+   > [!NOTE]
+   > * Azure Stack no permite proporcionar credenciales de autorización a AzCopy mediante Azure Active Directory (AD). Debe acceder a los objetos de almacenamiento en Azure Stack con un token de Firma de acceso compartido (SAS).
+   > * Azure Stack no admite la transferencia de datos sincrónica entre dos ubicaciones de blob de Azure Stack ni entre Azure Storage y Azure Stack. No se puede usar "azcopy cp" para mover datos de Azure Stack a Azure Storage (ni viceversa) directamente con AzCopy 10.1.
 
 ### <a name="azcopy-command-examples-for-data-transfer"></a>Ejemplos del comando AzCopy para la transferencia de datos
 
-En los ejemplos siguientes se muestran varios escenarios habituales para copiar datos a los blobs de Azure Stack y desde ellos. Para más información, consulte [AzCopy en Windows](/azure/storage/common/storage-use-azcopy) y [AzCopy en Linux](/azure/storage/common/storage-use-azcopy-linux).
+En los ejemplos siguientes se muestran varios escenarios habituales para copiar datos a los blobs de Azure Stack y desde ellos. Para obtener más información, consulte [Introducción a AzCopy](/azure/storage/common/storage-use-azcopy-v10).
 
 ### <a name="download-all-blobs-to-a-local-disk"></a>Descarga de todos los blobs en un disco local
 
-**Windows**
-
-```shell
-AzCopy.exe /source:https://myaccount.blob.local.azurestack.external/mycontainer /dest:C:\myfolder /sourcekey:<key> /S
 ```
-
-**Linux**
-
-```bash
-azcopy \
-    --source https://myaccount.blob.local.azurestack.external/mycontainer \
-    --destination /mnt/myfiles \
-    --source-key <key> \
-    --recursive
+azcopy cp "https://[account].blob.core.windows.net/[container]/[path/to/directory]?[SAS]" "/path/to/dir" --recursive=true
 ```
 
 ### <a name="upload-single-file-to-virtual-directory"></a>Carga de un solo archivo en el directorio virtual
 
-**Windows**
-
-```shell
-AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.local.azurestack.external/mycontainer/vd /DestKey:key /Pattern:abc.txt
 ```
-
-**Linux**
-
-```bash
-azcopy \
-    --source /mnt/myfiles/abc.txt \
-    --destination https://myaccount.blob.local.azurestack.external/mycontainer/vd/abc.txt \
-    --dest-key <key>
-```
-
-### <a name="move-data-between-azure-and-azure-stack-storage"></a>Movimiento de datos entre Azure y almacenamiento de Azure Stack
-
-No se admite la transferencia de datos asincrónica entre Azure Storage y Azure Stack. Debe especificar la transferencia con las opciones **/SyncCopy** o **--sync-copy**.
-
-**Windows**
-
-```shell
-Azcopy /Source:https://myaccount.blob.local.azurestack.external/mycontainer /Dest:https://myaccount2.blob.core.windows.net/mycontainer2 /SourceKey:AzSKey /DestKey:Azurekey /S /SyncCopy
-```
-
-**Linux**
-
-```bash
-azcopy \
-    --source https://myaccount1.blob.local.azurestack.external/myContainer/ \
-    --destination https://myaccount2.blob.core.windows.net/myContainer/ \
-    --source-key <key1> \
-    --dest-key <key2> \
-    --include "abc.txt" \
-    --sync-copy
+azcopy cp "/path/to/file.txt" "https://[account].blob.core.windows.net/[container]/[path/to/blob]?[SAS]"
 ```
 
 ### <a name="azcopy-known-issues"></a>Problemas conocidos de AzCopy
 
  - Las operaciones de AzCopy en un almacén de archivos no están disponibles, ya que el almacenamiento de archivos aún no está disponible en Azure Stack.
- - No se admite la transferencia de datos asincrónica entre Azure Storage y Azure Stack. Puede especificar la transferencia con la opción **/SyncCopy** para copiar los datos.
+ - Si quiere transferir datos entre dos ubicaciones de blob de Azure Stack, o entre Azure Stack y Azure Storage mediante AzCopy 10.1, primero debe descargar los datos en una ubicación local y, a continuación, volver a cargarlos en el directorio de destino en Azure Stack o Azure Storage. Puede usar AzCopy 7.1 y especificar la transferencia con la opción **/SyncCopy** para copiar los datos.  
  - La versión Linux de AzCopy solo admite la actualización 1802 o versiones posteriores. Y no es compatible con Table Storage.
-
+ 
 ## <a name="azure-powershell"></a>Azure PowerShell
 
 Azure PowerShell es un módulo que proporciona cmdlets para administrar servicios tanto en Azure como en Azure Stack. Se trata de un shell de línea de comandos basado en tareas y un lenguaje de scripts diseñado especialmente para la administración del sistema.
@@ -241,7 +213,7 @@ El formato del valor de retorno de `Get-AzureRmStorageAccountKey` en la versión
 
 Para más información, consulte [Get-AzureRmStorageAccountKey](/powershell/module/azurerm.storage/Get-AzureRmStorageAccountKey).
 
-## <a name="azure-cli"></a>Azure CLI
+## <a name="azure-cli"></a>CLI de Azure
 
 La CLI de Azure es la forma de usar la línea de comandos de Azure para administrar los recursos de Azure. Puede instalarla en macOS, Linux y Windows, y ejecutarla desde la línea de comandos.
 

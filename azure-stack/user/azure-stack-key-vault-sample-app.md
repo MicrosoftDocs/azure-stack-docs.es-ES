@@ -1,6 +1,6 @@
 ---
-title: Permitir a aplicaciones recuperar secretos del almacén de claves de Azure Stack | Microsoft Docs
-description: Usar una aplicación de ejemplo para trabajar con el almacén de claves de Azure Stack
+title: Permitir a las aplicaciones acceder a los secretos de Key Vault de Azure Stack | Microsoft Docs
+description: Aprenda a ejecutar una aplicación de ejemplo que recupere las claves y los secretos de un almacén de claves en Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,18 +15,18 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: sethm
 ms.lastreviewed: 04/08/2019
-ms.openlocfilehash: aca8e57a7476ac55729f30c1eadfd4a414409021
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: 6cc9475ee04bcdcb7b4c35f4ca5a39efc7c36aa8
+ms.sourcegitcommit: ad2f2cb4dc8d5cf0c2c37517d5125921cff44cdd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985645"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67138894"
 ---
-# <a name="a-sample-application-that-uses-keys-and-secrets-stored-in-a-key-vault"></a>Aplicación de ejemplo que usa claves y secretos almacenados en un almacén de claves
+# <a name="allow-apps-to-access-azure-stack-key-vault-secrets"></a>Permitir a las aplicaciones acceder a los secretos de Key Vault de Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Siga los pasos de este artículo para ejecutar la aplicación de ejemplo **HelloKeyVault** que recupera las claves y loa secretos de un almacén de claves en Azure Stack.
+Siga los pasos de este artículo para ejecutar la aplicación de ejemplo **HelloKeyVault** que recupera las claves y los secretos de un almacén de claves en Azure Stack.
 
 ## <a name="prerequisites"></a>Requisitos previos
 
@@ -35,17 +35,17 @@ Puede instalar los siguientes requisitos previos con el [Kit de desarrollo de Az
 * Instale los [módulos de Azure PowerShell compatibles con Azure Stack](../operator/azure-stack-powershell-install.md).
 * Descargue las [herramientas necesarias para trabajar con Azure Stack](../operator/azure-stack-powershell-download.md).
 
-## <a name="create-and-get-the-key-vault-and-application-settings"></a>Creación y obtención del almacén de claves y la configuración de la aplicación
+## <a name="create-a-key-vault-and-register-an-app"></a>Creación de un almacén de claves y registro de una aplicación
 
 Para preparar la aplicación de ejemplo:
 
 * Cree un almacén de claves en Azure Stack.
 * Registre una aplicación en Azure Active Directory (Azure AD).
 
-Puede usar Azure Portal o PowerShell para prepararse para la aplicación de ejemplo. En este artículo se muestra cómo crear un almacén de claves y registrar una aplicación mediante PowerShell.
+Use Azure Portal o PowerShell para los preparativos para la aplicación de ejemplo.
 
 > [!NOTE]
-> De forma predeterminada, este script de PowerShell crea una aplicación nueva en Active Directory. Sin embargo, también puede registrar una de las aplicaciones existentes.
+> De forma predeterminada, el script de PowerShell crea una aplicación nueva en Active Directory. Sin embargo, también puede registrar una de las aplicaciones existentes.
 
 Antes de ejecutar el siguiente script, asegúrese de proporcionar valores para las variables `aadTenantName` y `applicationPassword`. Si no especifica ningún valor para `applicationPassword`, este script genera una contraseña aleatoria.
 
@@ -145,7 +145,7 @@ Descargue el ejemplo de almacén de claves de la página de Azure [Key vault cli
 
 Para cargar el ejemplo **HelloKeyVault**:
 
-1. Vaya a la carpeta **Microsoft.Azure.KeyVault.Samples**, **ejemplos**, **HelloKeyVault**.
+1. Vaya a la carpeta **Microsoft.Azure.KeyVault.Samples** > **ejemplos** > **HelloKeyVault**.
 2. Abra la aplicación **HelloKeyVault** en Visual Studio.
 
 ### <a name="configure-the-sample-application"></a>Configurar la aplicación de ejemplo
@@ -153,13 +153,13 @@ Para cargar el ejemplo **HelloKeyVault**:
 En Visual Studio:
 
 1. Abra el archivo HelloKeyVault\App.config y busque el elemento `<appSettings>`.
-2. Actualice las claves **VaultUrl**, **AuthClientId** y **AuthClientSecret** con los valores devueltos por aquellas que se usaron para crear el almacén de claves. De forma predeterminada, el archivo App.config tiene un marcador de posición para `AuthCertThumbprint`. Reemplace este marcador de posición por `AuthClientSecret`.
+2. Actualice las claves **VaultUrl**, **AuthClientId** y **AuthClientSecret** con los valores devueltos al crear el almacén de claves. De forma predeterminada, el archivo App.config tiene un marcador de posición para `AuthCertThumbprint`. Reemplace este marcador de posición por `AuthClientSecret`.
 
    ![Configuración de la aplicación](media/azure-stack-key-vault-sample-app/appconfig.png)
 
 3. Recompile la solución.
 
-## <a name="run-the-application"></a>Ejecución de la aplicación
+## <a name="run-the-app"></a>Ejecución de la aplicación
 
 Al ejecutar **HelloKeyVault**, la aplicación inicia sesión en Azure AD y, a continuación, usa el token de `AuthClientSecret` para autenticarse en el almacén de claves de Azure Stack.
 

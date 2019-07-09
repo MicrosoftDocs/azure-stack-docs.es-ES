@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 12/27/2018
+ms.date: 06/11/2019
 ms.author: sethm
 ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: 35f7c5b15e9dce3b27fd01ab262154e139200f92
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 83fa2e96a7cd956c050efa33ab6e9564b1834e93
+ms.sourcegitcommit: 07c51a03f07a6a3ee2721aa942d31a7a4c6a339b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64311001"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67028298"
 ---
 # <a name="vpn-gateway-configuration-settings-for-azure-stack"></a>Valores de la configuración de una puerta de enlace VPN para Azure Stack
 
@@ -34,7 +34,7 @@ Una conexión de puerta de enlace de VPN se basa en la configuración de varios 
 
 ### <a name="gateway-types"></a>Tipos de puerta de enlace
 
-Cada red virtual de Azure Stack es compatible con una puerta de enlace de red virtual individual, que debe ser del tipo **Vpn**.  Esta compatibilidad difiere de la de Azure, que admite tipos adicionales.  
+Cada red virtual de Azure Stack es compatible con una puerta de enlace de red virtual individual, que debe ser del tipo **Vpn**.  Esta compatibilidad difiere de la de Azure, que admite tipos adicionales.
 
 Al crear una puerta de enlace de red virtual, debe asegurarse de que el tipo de puerta de enlace es el correcto para su configuración. Una puerta de enlace de VPN requiere la marca `-GatewayType Vpn`, por ejemplo:
 
@@ -50,17 +50,17 @@ Al crear una puerta de enlace de red virtual, debe especificar la SKU de la puer
 
 Azure Stack ofrece las SKU de VPN Gateway que aparecen en la siguiente tabla.
 
-|   | Rendimiento de VPN Gateway |Túneles IPsec máximos de VPN Gateway |
+| | Rendimiento de VPN Gateway |Túneles IPsec máximos de VPN Gateway |
 |-------|-------|-------|
 |**SKU básica**  | 100 Mbps  | 20    |
-|**SKU estándar**           | 100 Mbps  | 20    |
-|**SKU de alto rendimiento** | 200 Mbps    | 10    |
+|**SKU estándar**   | 100 Mbps  | 20 |
+|**SKU de alto rendimiento** | 200 Mbps | 10 |
 
 ### <a name="resizing-gateway-skus"></a>Cambio de tamaño de las SKU de puerta de enlace
 
 Azure Stack no admite un cambio de tamaño de las SKU entre las SKU heredadas admitidas.
 
-De igual modo, Azure Stack no admite un cambio de tamaño de una SKU heredada compatible (Básico, Estándar y Alto rendimiento), a una SKU más reciente compatibles con Azure (VpnGw1, VpnGw2 y VpnGw3).
+De igual modo, Azure Stack no admite un cambio de tamaño de una SKU heredada compatible (**Básica**, **Estándar** y **HighPerformance**), a una SKU más reciente compatible con Azure (**VpnGw1**, **VpnGw2** y **VpnGw3**).
 
 ### <a name="configure-the-gateway-sku"></a>Configuración de la SKU de puerta de enlace
 
@@ -70,7 +70,7 @@ Si usa el portal de Azure Stack para crear una puerta de enlace de red virtual d
 
 #### <a name="powershell"></a>PowerShell
 
-En el siguiente ejemplo de PowerShell se especifica **-GatewaySku** como `VpnGw1`.
+En el siguiente ejemplo de PowerShell se especifica `-GatewaySku` como **VpnGw1**:
 
 ```powershell
 New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg
@@ -80,9 +80,9 @@ New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg
 
 ### <a name="connection-types"></a>Tipos de conexión
 
-En el modelo de implementación de Resource Manager, cada configuración requiere un tipo de conexión de puerta de enlace de red virtual específico. Los valores de PowerShell de Resource Manager disponibles para **-ConnectionType** son:
+En el modelo de implementación de Resource Manager, cada configuración requiere un tipo de conexión de puerta de enlace de red virtual específico. Los valores de PowerShell de Resource Manager para `-ConnectionType` son:
 
-* IPsec
+* **IPsec**
 
    En el siguiente ejemplo de PowerShell, se crea una conexión S2S que requiere el tipo de conexión IPsec:
 
@@ -106,9 +106,9 @@ Al crear la puerta de enlace de red virtual para una configuración de puerta de
   >[!NOTE]
   >**PolicyBased** es compatible con Azure, pero no con Azure Stack.
 
-* **RouteBased**: las VPN basadas en rutas utilizan "rutas" que se configuran en la dirección IP de reenvío o en la tabla de enrutamiento para dirigir los paquetes a sus correspondientes interfaces de túnel. A continuación, las interfaces de túnel cifran o descifran los paquetes dentro y fuera de los túneles. La directiva o el selector de tráfico para las VPN **basadas en rutas** se configura como una conectividad universal (también se pueden usar caracteres comodín). De forma predeterminada, no se puede cambiar. El valor de un tipo de VPN **basada en ruta** es **RouteBased**.
+* **RouteBased**: las VPN basadas en rutas utilizan "rutas" que se configuran en la dirección IP de reenvío o en la tabla de enrutamiento para dirigir los paquetes a sus correspondientes interfaces de túnel. A continuación, las interfaces de túnel cifran o descifran los paquetes dentro y fuera de los túneles. La directiva o el selector de tráfico para las VPN **RouteBased** se configuran como una conectividad universal (también se pueden usar caracteres comodín). De forma predeterminada, no se puede cambiar. El valor de un tipo de VPN **basada en ruta** es **RouteBased**.
 
-En el siguiente ejemplo de PowerShell se especifica **-VpnType** como **RouteBased**. Al crear una puerta de enlace, debe asegurarse de que **-VpnType** es correcto para su configuración.
+En el siguiente ejemplo de PowerShell se especifica `-VpnType` como **RouteBased**. Al crear una puerta de enlace, debe asegurarse de que `-VpnType` es correcto para su configuración.
 
 ```powershell
 New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg
@@ -123,7 +123,7 @@ La tabla siguiente enumera los requisitos de las puertas de enlace VPN.
 | |VPN Gateway de nivel Básico basada en directiva | VPN Gateway de nivel Básico basada en ruta | VPN Gateway de nivel Estándar basada en ruta | VPN Gateway de alto rendimiento basada en ruta|
 |--|--|--|--|--|
 | **Conectividad de sitio a sitio (conectividad S2S)** | No compatible | Configuración de VPN de RouteBased | Configuración de VPN de RouteBased | Configuración de VPN de RouteBased |
-| **Método de autenticación**  | No compatible | Clave precompartida para conectividad S2S  | Clave precompartida para conectividad S2S  | Clave precompartida para conectividad S2S  |   
+| **Método de autenticación**  | No compatible | Clave precompartida para conectividad S2S  | Clave precompartida para conectividad S2S  | Clave precompartida para conectividad S2S  |
 | **Número máximo de conexiones S2S**  | No compatible | 20 | 20| 10|
 |**Compatibilidad con enrutamiento activo (BGP)** | No compatible | No compatible | Compatible | Compatible |
 
@@ -132,7 +132,7 @@ La tabla siguiente enumera los requisitos de las puertas de enlace VPN.
 Antes de crear una puerta de enlace de VPN, debe crear una subred de puerta de enlace. La subred de puerta de enlace contiene las direcciones IP que usan los servicios y las máquinas virtuales de la puerta de enlace de red virtual. Al crear la puerta de enlace de red virtual, las máquinas virtuales de puerta de enlace se implementan en la subred de puerta de enlace, y se configuran con las opciones de puerta de enlace de VPN necesarias. No implemente nada más (por ejemplo, máquinas virtuales adicionales) en la subred de puerta de enlace.
 
 >[!IMPORTANT]
->Para que la subred de puerta de enlace funcione correctamente, su nombre tiene que ser **GatewaySubnet** . Azure Stack usa este nombre para identificar la subred en la que se van a implementar las máquinas virtuales de la puerta de enlace de red y los servicios.
+>Para que la subred de puerta de enlace funcione correctamente, su nombre tiene que ser **GatewaySubnet** . Azure Stack usa este nombre para identificar la subred en la que se van a implementar las VM de la puerta de enlace de red y los servicios.
 
 Al crear la subred de puerta de enlace, especifique el número de direcciones IP que contiene la subred. Las direcciones IP de la subred de puerta de enlace se asignan a las máquinas virtuales y los servicios de puerta de enlace. Algunas configuraciones requieren más direcciones IP que otras. Consulte los requisitos de configuración que desea crear y compruebe que la subred de puerta de enlace que desea crear los cumple.
 
@@ -149,7 +149,7 @@ Add-AzureRmVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -AddressPrefix 10.0.
 
 ### <a name="local-network-gateways"></a>Puertas de enlace de red local
 
-Al crear una configuración de puerta de enlace de VPN en Azure, la puerta de enlace de red local a menudo representa la ubicación local. En Azure Stack representa cualquier dispositivo VPN remoto que se encuentra fuera de Azure Stack. Podría ser un dispositivo VPN de su centro de datos, un centro de datos remoto o VPN Gateway en Azure.
+Al crear una configuración de puerta de enlace de VPN en Azure, la puerta de enlace de red local a menudo representa la ubicación local. En Azure Stack representa cualquier dispositivo VPN remoto que se encuentra fuera de Azure Stack. Podría ser un dispositivo VPN de su centro de datos (o un centro de datos remoto) o VPN Gateway en Azure.
 
 Asigne un nombre a la puerta de enlace de red local, así como la dirección IP pública del dispositivo VPN y especificar los prefijos de dirección que se encuentran en la ubicación local. Azure examina los prefijos de dirección de destino para el tráfico de red, consulta la configuración que especificó para la puerta de enlace de red local y enruta los paquetes según corresponda.
 
@@ -187,10 +187,10 @@ A diferencia de Azure, que admite varias ofertas como iniciador y respondedor, A
 |Cifrados y algoritmos hash (autenticación) | GCMAES256|
 |Vigencia de SA (tiempo)  | 27 000 segundos  |
 |Vigencia de SA (Kilobytes) | 33 553 408     |
-|Confidencialidad directa perfecta (PFS) |Ninguna<sup>Consulte la nota 1</sup> |
+|Confidencialidad directa perfecta (PFS) |Ninguno (consulte la Nota 1) |
 |Detección de cuellos del mismo nivel | Compatible|  
 
-* *Nota 1*:  Antes de la versión 1807, Azure Stack usa un valor de PFS2048 para la confidencialidad directa perfecta (PFS).
+* *Nota 1*:  Antes de la versión 1807, Azure Stack usaba un valor de PFS2048 para la confidencialidad directa perfecta (PFS).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

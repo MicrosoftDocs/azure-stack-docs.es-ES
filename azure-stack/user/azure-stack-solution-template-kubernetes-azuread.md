@@ -11,23 +11,23 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/17/2019
+ms.date: 06/18/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 05/17/2019
-ms.openlocfilehash: 62626240c59c9f78c0b0d21553e8c6ffeb0367a0
-ms.sourcegitcommit: 8cb2b567e9914d4d07e754d95c0864aa55868579
+ms.lastreviewed: 06/18/2019
+ms.openlocfilehash: c6d96a24866f4371dcca8aa953137288f94ac7ff
+ms.sourcegitcommit: 104ccafcb72a16ae7e91b154116f3f312321cff7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855386"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67308483"
 ---
 # <a name="deploy-kubernetes-to-azure-stack-using-azure-active-directory"></a>Implementación de Kubernetes en Azure Stack con Azure Active Directory
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
 > [!Note]  
-> Kubernetes en Azure Stack está en versión preliminar. El escenario sin conexión de Azure Stack no es compatible actualmente con la versión preliminar.
+> Kubernetes en Azure Stack está en versión preliminar. Un escenario sin conexión de Azure Stack no es compatible actualmente con la versión preliminar. Solo use el elemento de Marketplace para escenarios de desarrollo y pruebas.
 
 Puede seguir los pasos descritos en este artículo para implementar y configurar los recursos de Kubernetes cuando use Azure Active Directory (Azure AD) como servicio de administración de identidad en una sola operación coordinada.
 
@@ -41,7 +41,7 @@ Para empezar, asegúrese de tener los permisos adecuados y de que la instancia d
 
 1. Genere un par de claves SSH pública y privada para iniciar sesión en la máquina virtual de Linux en Azure Stack. Necesitará la clave pública al crear el clúster.
 
-    Para obtener instrucciones sobre cómo generar una clave, consulte [SSH Key Generation](https://github.com/msazurestackworkloads/acs-engine/blob/master/docs/ssh.md#ssh-key-generation) (Generación de claves SSH).
+    Para obtener instrucciones sobre cómo generar una clave, consulte [SSH Key Generation](azure-stack-dev-start-howto-ssh-public-key.md) (Generación de claves SSH).
 
 1. Compruebe que tiene una suscripción válida en el portal del inquilino de Azure Stack y que tiene suficientes direcciones IP públicas disponibles para agregar nuevas aplicaciones.
 
@@ -61,7 +61,7 @@ Cree una entidad de servicio en Azure. La entidad de servicio permite que la apl
 
 1. Crear una aplicación de Azure.
 
-     a. Inicie sesión en su cuenta de Azure mediante [Azure Portal](https://portal.azure.com).  
+    a. Inicie sesión en su cuenta de Azure mediante [Azure Portal](https://portal.azure.com).  
     b. Haga clic en **Azure Active Directory** > **Registros de aplicaciones** > **Nuevo registro**.  
     c. Proporcione un nombre y una dirección URL para la aplicación.  
     d. Seleccione los **tipos de cuenta admitidos**.  
@@ -71,7 +71,7 @@ Cree una entidad de servicio en Azure. La entidad de servicio permite que la apl
 
 1. En la hoja de la entidad de servicio, seleccione **Nuevo secreto de cliente** . **Configuración** > **Claves**. Necesita generar una clave de autenticación para la entidad de servicio.
 
-     a. Escriba la **Descripción**.
+    a. Escriba la **Descripción**.
 
     b. Seleccione **Never expires** (Nunca expira) para **Expira**.
 
@@ -121,7 +121,7 @@ Dé a la entidad de servicio acceso a su suscripción para que la entidad pueda 
 
     ![Implementar plantilla de solución](media/azure-stack-solution-template-kubernetes-deploy/03_kub_config_settings-aad.png)
 
-1. Escriba el **nombre de usuario del administrador de la máquina virtual Linux**. Nombre de usuario de las máquinas virtuales de Linux que forman parte del clúster de Kubernetes y DVM.
+1. Escriba el **nombre de usuario del administrador de la VM Linux**. Nombre de usuario de las máquinas virtuales de Linux que forman parte del clúster de Kubernetes y DVM.
 
 1. Escriba la **clave pública SSH** utilizada para la autorización en todas las máquinas Linux creadas como parte del clúster de Kubernetes y DVM.
 
@@ -130,21 +130,21 @@ Dé a la entidad de servicio acceso a su suscripción para que la entidad pueda 
     > [!Note]  
     > Para cada clúster, use un prefijo de DNS del perfil principal nuevo y único.
 
-1. Seleccione la opción **Kubernetes Master Pool Profile Count** ( Recuento de perfiles del grupo maestro de Kubernetes). El recuento contiene el número de nodos en el grupo maestro. Puede haber entre 1 y 7. Este valor debe ser un número impar.
+1. Seleccione la opción **Kubernetes master pool profile count** ( Recuento de perfiles del grupo maestro de Kubernetes). El recuento contiene el número de nodos en el grupo maestro. Puede haber entre 1 y 7. Este valor debe ser un número impar.
 
-1. Seleccione **The VMSize of the Kubernetes master VMs** (VMSize de las máquinas virtuales maestras de Kubernetes).
+1. Seleccione **The VMSize of the Kubernetes master VMs** (VMSize de las máquinas virtuales maestras de Kubernetes). Así se especifica el tamaño de VM de las máquinas virtuales del maestro de Kubernetes. 
 
-1. Seleccione la opción **Kubernetes Node Pool Profile Count** ( Recuento de perfiles del grupo de nodos de Kubernetes). El recuento contiene el número de agentes en el clúster. 
+1. Seleccione la opción **Kubernetes node pool profile count** ( Recuento de perfiles del grupo de nodos de Kubernetes). El recuento contiene el número de agentes en el clúster. 
 
-1. Seleccione **The Storage Profile** (Perfil del almacenamiento). Puede elegir **Blob Disk** (Disco blob) o **Managed Disk** (Disco administrado). Así se especifica el tamaño de máquina virtual de las máquinas virtuales del nodo de Kubernetes. 
+1. Seleccione **The VMSize of the Kubernetes node VMs** (VMSize de las VM del nodo de Kubernetes). Así se especifica el tamaño de máquina virtual de las máquinas virtuales del nodo de Kubernetes. 
 
-1. Seleccione **Azure AD** como **sistema de identidad de Azure Stack** para la instalación de Azure Stack. 
+1. Seleccione **Azure AD** como **sistema de identidad de Azure Stack** para la instalación de Azure Stack.
 
-1. Escriba el **id. de cliente de la entidad de servicio**. El proveedor de nube de Azure Kubernetes usa este identificador. El identificador de cliente identificado como identificador de la aplicación cuando se creó la entidad de servicio.
+1. Escriba el **id. de cliente de la entidad de servicio**. El proveedor de nube de Azure Kubernetes usa este identificador. El id. de cliente identificado como identificador de la aplicación cuando el administrador de Azure Stack creó la entidad de servicio.
 
-1. Escriba el **secreto de cliente de la entidad de servicio** que creó al crear la entidad de servicio.
+1. Escriba el **Secreto de cliente de la entidad de servicio**. Este es el secreto de cliente que configuró al crear el servicio.
 
-1. Escriba la **versión del proveedor de nube de Azure Kubernetes**. Esta es la versión para el proveedor de Kubernetes Azure. Azure Stack publica una compilación de Kubernetes personalizada para cada versión de Azure Stack.
+1. Escriba la **Versión de Kubernetes**. Esta es la versión para el proveedor de Kubernetes Azure. Azure Stack publica una compilación de Kubernetes personalizada para cada versión de Azure Stack.
 
 ### <a name="3-summary"></a>3. Resumen
 

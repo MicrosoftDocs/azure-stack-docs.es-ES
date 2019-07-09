@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/05/2019
+ms.date: 06/14/2019
 ms.author: sethm
 ms.reviewer: hectorl
-ms.lastreviewed: 06/05/2019
-ms.openlocfilehash: 38c7ec337ba8cdb73925b1c07f77331c05b25d8a
-ms.sourcegitcommit: e51cdc84a09250e8fa701bb2cb09de38d7de2c07
+ms.lastreviewed: 06/14/2019
+ms.openlocfilehash: 40b2eb51b3e05a25706037f404a53d86fa7cae5a
+ms.sourcegitcommit: bcaad8b7db2ea596018d973cb29283d8c6daebfb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66836674"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67419584"
 ---
 # <a name="azure-stack-1905-known-issues"></a>Problemas conocidos de Azure Stack 1905
 
@@ -47,13 +47,6 @@ En este artículo se enumeran los problemas conocidos de la versión 1905 de Az
 - Repetición: Común
 
 ## <a name="portal"></a>Portal
-
-### <a name="administrative-subscriptions"></a>Suscripciones administrativas
-
-- Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: Las dos suscripciones administrativas que se incluyeron con la versión 1804 no deberían usarse. Los tipos de suscripción son **suscripción de medición** y **suscripción de consumo**.
-- Corrección: Estas suscripciones se suspenderán a partir de la versión 1906 y, posteriormente, se eliminarán. Si tiene recursos que se ejecutan en estas dos suscripciones, vuelva a crearlos en las suscripciones de usuario anteriores a la versión 1906.
-- Repetición: Común
 
 ### <a name="subscription-resources"></a>Recursos de suscripción
 
@@ -88,6 +81,13 @@ En este artículo se enumeran los problemas conocidos de la versión 1905 de Az
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: En el portal de usuarios, al intentar cargar un blob mediante la opción **OAuth(preview)** , la tarea genera un mensaje de error.
 - Corrección: Cargue el blob mediante la opción SAS.
+- Repetición: Común
+
+### <a name="template"></a>Plantilla
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, la interfaz de usuario de implementación de plantillas no rellena los parámetros de los nombres de plantilla que empiezan por "_" (carácter de subrayado).
+- Corrección: Quite el "_" (carácter de subrayado) del nombre de la plantilla.
 - Repetición: Común
 
 ## <a name="networking"></a>Redes
@@ -132,6 +132,13 @@ El error se produce si habilita el diagnóstico de arranque en una VM, pero elim
 - Corrección: Vuelva a crear la cuenta de almacenamiento con el mismo nombre que usó anteriormente.
 - Repetición: Común
 
+### <a name="vm-resize"></a>Cambio de tamaño de la VM
+
+- Aplicable a: Este problema se aplica a la versión 1905.
+- Causa: No se puede cambiar el tamaño de una VM de disco administrado correctamente. Al intentar cambiar el tamaño de la VM, se genera un error con "code": "InternalOperationError", "message": "An internal error occurred in the operation."
+- Corrección: Estamos trabajando para corregir esto en la próxima versión. Actualmente, debe volver a crear la VM con el nuevo tamaño de VM.
+- Repetición: Común
+
 ### <a name="virtual-machine-scale-set"></a>Conjunto de escalado de máquina virtual
 
 #### <a name="centos"></a>CentOS
@@ -154,11 +161,11 @@ El error se produce si habilita el diagnóstico de arranque en una VM, pero elim
 - Causa: La creación de VM en un conjunto de disponibilidad de 3 dominios de error y la creación de una instancia de conjunto de escalado de máquinas virtuales genera un error **FabricVmPlacementErrorUnsupportedFaultDomainSize** durante el proceso de actualización en un entorno de Azure Stack de 4 nodos.
 - Corrección: Se pueden crear VM únicas en un conjunto de disponibilidad con 2 dominios de error correctamente. Sin embargo, la creación de instancias del conjunto de escalado todavía no está disponible durante el proceso de actualización en una instancia de Azure Stack de 4 nodos.
 
-#### <a name="vmss-instance-view-blade-doesnt-load"></a>La hoja de la vista de la instancia de Virtual Machine Scale Sets no se carga
- 
+#### <a name="scale-set-instance-view-blade-doesnt-load"></a>La hoja de la vista de la instancia del conjunto de escalado no se carga
+
 - Aplicable a: Este problema se aplica a las versiones 1904 y 1905.
-- Causa: La hoja de la vista de la instancia de un conjunto de escala situado en Azure Stack Portal -> Dashboard  ->  Virtual Machine Scale Sets  -> AnyScaleSet - Instances  ->  AnyScaleSetInstance no se puede cargar.
-- Corrección: Actualmente no hay ninguna corrección y estamos trabajando en una solución. Hasta entonces, utilice el comando de la CLI az vmss get-instance-view para obtener la vista de la instancia de VMSS
+- Causa: La hoja de la vista de la instancia de un conjunto de escalado de máquinas virtuales que se encuentra en el portal de Azure Stack -> Panel  ->  Virtual Machine Scale Sets  -> AnyScaleSet - Instancias  ->  AnyScaleSetInstance no se puede cargar y muestra la imagen de una nube llorando.
+- Corrección: Actualmente no hay ninguna corrección y estamos trabajando en una solución. Hasta entonces, use el comando `az vmss get-instance-view` de la CLI para obtener la vista de instancia de un conjunto de escalado.
 
 ### <a name="ubuntu-ssh-access"></a>Acceso a SSH en Ubuntu
 

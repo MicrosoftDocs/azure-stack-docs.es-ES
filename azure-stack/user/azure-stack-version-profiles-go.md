@@ -14,12 +14,12 @@ ms.date: 05/26/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/26/2019
-ms.openlocfilehash: 4a7e36fda318c1987a39427c5ef1f5e5e307d1b6
-ms.sourcegitcommit: d04a93e913ff069e17f6d56811681804a6422b58
+ms.openlocfilehash: 6759264afaf3f44dd612662d9778d7de65a15924
+ms.sourcegitcommit: 6876ccb85c20794969264a1b27e479f4e938f990
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66373008"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67406955"
 ---
 # <a name="use-api-version-profiles-with-go-in-azure-stack"></a>Uso de los perfiles de la versión de la API con GO en Azure Stack
 
@@ -32,7 +32,7 @@ Un perfil es una combinación de diferentes tipos de recursos con distintas vers
 - Estabilidad para la aplicación mediante el bloqueo de versión específicas de la API.
 - Compatibilidad para la aplicación con Azure Stack y centros de datos de Azure regionales.
 
-En Azure SDK para Go, los perfiles están disponibles en la ruta de acceso de profiles, con la versión en formato **AAAA-MM-DD**. En este momento, la versión más reciente del perfil de API de Azure Stack es la **2019-03-01**. Para importar un servicio determinado de un perfil, importe su módulo correspondiente del perfil. Por ejemplo, para importar el servicio **Compute** del perfil **2019-03-01**, use el siguiente código:
+En Azure SDK para Go, los perfiles están disponibles en la ruta de acceso de profiles, con la versión en formato **AAAA-MM-DD**. En este momento, la versión más reciente del perfil de API de Azure Stack es **2019-03-01** para las versiones de marca 1904 o posteriores. Para importar un servicio determinado de un perfil, importe su módulo correspondiente del perfil. Por ejemplo, para importar el servicio **Compute** del perfil **2019-03-01**, use el siguiente código:
 
 ```go
 import "github.com/Azure/azure-sdk-for-go/profiles/2019-03-01/compute/mgmt/compute"
@@ -86,7 +86,7 @@ Para ejecutar un ejemplo de código de Go en Azure Stack:
 
 3. Si no está disponible, cree una suscripción y guarde su identificador para usarlo más adelante. Para obtener información acerca la creación de una suscripción, consulte [Creación de suscripciones a ofertas en Azure Stack](../operator/azure-stack-subscribe-plan-provision-vm.md).
 
-4. Cree una entidad de servicio con el ámbito **Suscripción** y el rol **Propietario**. Guarde el identificador y el secreto de la entidad de servicio. Para obtener información acerca de la creación de una entidad de servicio para Azure Stack, consulte [Creación de una entidad de servicio](azure-stack-create-service-principals.md). El entorno de Azure Stack ya está configurado.
+4. Cree una entidad de servicio que utilice un secreto de cliente, con el ámbito **Suscripción** y el rol **Propietario**. Guarde el identificador y el secreto de la entidad de servicio. Para obtener información acerca de la creación de una entidad de servicio para Azure Stack, consulte [Uso de una identidad de aplicación para acceder a recursos](../operator/azure-stack-create-service-principals.md). El entorno de Azure Stack ya está configurado.
 
 5. Importe en el código un módulo de servicio del perfil de SDK para GO. La versión actual del perfil de Azure Stack es **2019-03-01**. Por ejemplo, para importar un módulo de red del tipo de perfil **2019-03-01**, use este código:
 
@@ -132,7 +132,7 @@ Para obtener la propiedad **Authorizer** de Azure Active Directory mediante el S
 
 Authorizer se debe establecer como autorizador del cliente de recursos. Hay distintas formas de obtener tokens de autorizador en Azure Stack mediante credenciales de cliente:
 
-1. Si hay una entidad de servicio con el rol de propietario en la suscripción disponible, omita este paso. De lo contrario, cree una [entidad de servicio](azure-stack-create-service-principals.md) y asígnele un rol de "propietario" cuyo [ámbito sea su suscripción](azure-stack-create-service-principals.md#assign-the-service-principal-to-a-role). Guarde el identificador y el secreto de la aplicación de la entidad de servicio.
+1. Si hay una entidad de servicio con el rol de propietario en la suscripción disponible, omita este paso. En caso contrario, consulte [Uso de una identidad de aplicación para acceder a recursos](../operator/azure-stack-create-service-principals.md) para obtener instrucciones sobre cómo crear una entidad de servicio que use un secreto de cliente y asignarle un rol de "propietario" destinado a su suscripción. Asegúrese de capturar el identificador y el secreto de la aplicación de la entidad de servicio.
 
 2. Importe el paquete **adal** de Go-AutoRest en el código.
 

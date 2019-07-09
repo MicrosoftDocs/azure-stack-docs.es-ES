@@ -15,12 +15,12 @@ ms.date: 05/21/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 11/16/2018
-ms.openlocfilehash: 40a60c5207494ae70ccdfd051c8a223493b704c5
-ms.sourcegitcommit: 6fcd5df8b77e782ef72f0e1419f1f75ec8c16c04
+ms.openlocfilehash: 8e9617974984afac55c2b1542065ea0455da0acc
+ms.sourcegitcommit: 5a720b17bd6a5aab44929c0247db8d512e0669ef
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65991108"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67197150"
 ---
 # <a name="add-linux-images-to-azure-stack"></a>Agregar imágenes de Linux a Azure Stack
 
@@ -49,6 +49,7 @@ El agente Linux de Azure (que suele llamarse `WALinuxAgent` o `walinuxagent`) es
 |  1.1901.3.105   | 2.2.35 o más reciente |
 | 1.1902.2.73  | 2.2.35 o más reciente |
 | 1.1903.0.35  | 2.2.35 o más reciente |
+| Compilaciones posteriores a 1903 | 2.2.35 o más reciente |
 | No compatible | 2.2.21-2.2.34 |
 
 Puede preparar su propia imagen de Linux mediante las siguientes instrucciones:

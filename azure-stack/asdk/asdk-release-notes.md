@@ -11,22 +11,39 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/04/2019
+ms.date: 06/28/2019
 ms.author: sethm
 ms.reviewer: misainat
-ms.lastreviewed: 06/04/2019
-ms.openlocfilehash: 2ca85da5d9fde42fb06eef149e7304ab08bc32ee
-ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
+ms.lastreviewed: 06/28/2019
+ms.openlocfilehash: ba3ad4bf5e5d7f76d5d29e7967944be72e989c27
+ms.sourcegitcommit: 068350a79805366e7e6536fb7df85a412bd0be99
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66691200"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67511297"
 ---
 # <a name="asdk-release-notes"></a>Notas de la versión del Kit de desarrollo de Azure Stack
 
 En este artículo se proporciona información sobre los cambios, correcciones y problemas conocidos del Kit de desarrollo de Azure Stack (ASDK). Si no está seguro de qué versión se está ejecutando, puede usar el [portal de administración](../operator/azure-stack-updates.md#determine-the-current-version).
 
 Para estar al día de las novedades del ASDK, suscríbase a la [![RSS](./media/asdk-release-notes/feed-icon-14x14.png)](https://docs.microsoft.com/api/search/rss?search=Azure+Stack+Development+Kit+release+notes&locale=en-us#) [fuente RSS](https://docs.microsoft.com/api/search/rss?search=Azure+Stack+Development+Kit+release+notes&locale=en-us#).
+
+## <a name="build-11906030"></a>Compilación 1.1906.0.30
+
+### <a name="new-features"></a>Nuevas características
+
+- Para obtener una lista de las nuevas características de esta versión, consulte [esta sección](../operator/azure-stack-release-notes-1906.md#whats-in-this-update) de las notas de la versión de Azure Stack.
+
+### <a name="changes"></a>Cambios
+
+- Se ha agregado un VM de anillo de soporte **AzS-SRNG01** que hospeda el servicio de recopilación de registros para Azure Stack. Para más información, consulte [Roles de máquina virtual](asdk-architecture.md).
+
+### <a name="fixed-and-known-issues"></a>Problemas conocidos y resueltos
+
+- Al crear recursos de máquina virtual con algunas imágenes de Marketplace, es posible que no pueda completar la implementación. Como solución alternativa, puede hacer clic en el enlace **Descargar plantilla y parámetros** en la página **Resumen** y haga clic en el botón **Implementar** de la hoja **Plantilla**. 
+- Para ver una lista de los problemas de Azure Stack resueltos en esta versión, consulte [esta sección](../operator/azure-stack-release-notes-1906.md#fixes) de las notas de la versión de Azure Stack.
+- Para ver una lista de problemas conocidos, consulte [este artículo](../operator/azure-stack-release-notes-known-issues-1906.md).
+- Tenga en cuenta que [las revisiones disponibles de Azure Stack](../operator/azure-stack-release-notes-1906.md#hotfixes) no son aplicables a Azure Stack ASDK.
 
 ## <a name="build-11905040"></a>Compilación 1.1905.0.40
 
@@ -38,15 +55,7 @@ Para estar al día de las novedades del ASDK, suscríbase a la [![RSS](./media/a
 
 ### <a name="fixed-and-known-issues"></a>Problemas conocidos y resueltos
 
-- Debido a un tiempo de espera de la entidad de servicio mientras se ejecutaba el script de registro, para [registrar el ASDK](asdk-register.md) correctamente, debe editar el script de PowerShell **RegisterWithAzure.psm1**. Haga lo siguiente:
-
-  1. En el equipo host de ASDK, abra el archivo **C:\AzureStack-Tools-master\Registration\RegisterWithAzure.psm1** en un editor con permisos elevados.
-  2. En la línea 1249, agregue un parámetro `-TimeoutInSeconds 1800` al final. Esto es necesario debido a un tiempo de espera de entidad de servicio al ejecutar el script de registro. Ahora, la línea 1249 debe tener un aspecto similar al siguiente:
-
-     ```powershell
-      $servicePrincipal = Invoke-Command -Session $PSSession -ScriptBlock { New-AzureBridgeServicePrincipal -RefreshToken $using:RefreshToken -AzureEnvironment $using:AzureEnvironmentName -TenantId $using:TenantId -TimeoutInSeconds 1800 }
-      ```
-
+- Se ha corregido un problema en que tenía que modificar el script **RegisterWithAzure.psm1** de PowerShell para [registrar el ASDK](asdk-register.md) correctamente.
 - Para ver una lista de otros problemas resueltos de Azure Stack en esta versión, consulte [esta sección](../operator/azure-stack-release-notes-1905.md#fixes) de las notas de la versión de Azure Stack.
 - Para ver una lista de problemas conocidos, consulte [este artículo](../operator/azure-stack-release-notes-known-issues-1905.md).
 - Tenga en cuenta que [las revisiones disponibles de Azure Stack](../operator/azure-stack-release-notes-1905.md#hotfixes) no son aplicables a Azure Stack ASDK.
@@ -79,23 +88,6 @@ Para estar al día de las novedades del ASDK, suscríbase a la [![RSS](./media/a
 ## <a name="build-1903"></a>Compilación 1903
 
 La carga de 1903 no incluye una versión de ASDK.
-
-## <a name="build-11902069"></a>Compilación 1.1902.0.69
-
-### <a name="new-features"></a>Nuevas características
-
-- La compilación 1902 presenta una nueva interfaz de usuario en el portal de administrador de Azure Stack para crear planes, ofertas, cuotas y planes complementarios. Para obtener más información, incluidas las capturas de pantalla, consulte la documentación sobre [Crear planes, ofertas y cuotas](../operator/azure-stack-create-plan.md).
-
-- Para obtener una lista de otros cambios y mejoras de esta versión, consulte [esta sección](../operator/azure-stack-update-1902.md#improvements) de las notas de la versión de Azure Stack.
-
-<!-- ### New features
-
-- For a list of new features in this release, see [this section](../operator/azure-stack-update-1902.md#new-features) of the Azure Stack release notes.
-
-### Fixed and known issues
-
-- For a list of issues fixed in this release, see [this section](../operator/azure-stack-update-1902.md#fixed-issues) of the Azure Stack release notes. For a list of known issues, see [this section](../operator/azure-stack-update-1902.md#known-issues-post-installation).
-- Note that [available Azure Stack hotfixes](../operator/azure-stack-update-1902.md#azure-stack-hotfixes) are not applicable to the Azure Stack ASDK. -->
 
 ### <a name="known-issues"></a>Problemas conocidos
 

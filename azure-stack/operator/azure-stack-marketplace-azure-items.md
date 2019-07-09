@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/12/2019
+ms.date: 06/14/2019
 ms.author: sethm
-ms.reviewer: unknown
-ms.lastreviewed: 01/29/2019
-ms.openlocfilehash: 3c962f0ef9fccdf814ccfaf0a432b1c303a63368
-ms.sourcegitcommit: 23816ec68f67f3ac51f78de925b7631590743a29
+ms.reviewer: ihcherie
+ms.lastreviewed: 06/14/2019
+ms.openlocfilehash: dd6421e915f170ee576d6486362e8b93ac01465f
+ms.sourcegitcommit: 593d40bccf1b2957a763017a8a2d7043f8d8315c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66835105"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67152593"
 ---
 # <a name="azure-marketplace-items-available-for-azure-stack"></a>Elementos de Azure Marketplace disponibles para Azure Stack
 
@@ -54,7 +54,7 @@ Microsoft Azure Stack es compatible con las siguientes plantillas de soluciones 
 
 |  | Nombre del elemento | DESCRIPCIÓN | Publicador |
 | --- | --- | --- | --- |
-| ![Windows Server](media/azure-stack-marketplace-azure-items/windowsserver.png) | [Windows Server](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.WindowsServer) | Soluciones de clase empresarial que son fáciles de implementar, rentables, centradas en la aplicación y centradas en el usuario. Estas imágenes se actualizan periódicamente con las revisiones más recientes. **Información importante: las imágenes descargadas antes del 18 de enero de 2018 deben eliminarse y sustituirse por las de las versiones más recientes.** | Microsoft |
+| ![Windows Server](media/azure-stack-marketplace-azure-items/windowsserver.png) | [Windows Server](https://azuremarketplace.microsoft.com/marketplace/apps/MicrosoftWindowsServer.WindowsServer) | Soluciones de clase empresarial que son fáciles de implementar, rentables, centradas en la aplicación y centradas en el usuario. Estas imágenes se actualizan periódicamente con las revisiones más recientes. **Información importante: las imágenes descargadas antes del 18 de enero de 2018 deben eliminarse y sustituirse por las de las versiones más recientes.** | Microsoft |
 | ![SharePoint Server 2013 Trial](media/azure-stack-marketplace-azure-items/sharepoint.png) | [Versión de evaluación de SharePoint Server 2013](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.SharePointServer2013Trial) | Versión de evaluación de Microsoft SharePoint Server 2013 en Windows Server 2012 Datacenter y Visual Studio 2019 Community Edition. | Microsoft |
 | ![Versión de evaluación de SharePoint Server 2016](media/azure-stack-marketplace-azure-items/sharepoint.png) | [Versión de evaluación de SharePoint Server 2016](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.SharePointServer2016Trial) | Versión de evaluación de Microsoft SharePoint Server 2016 en Windows Server 2016 Datacenter. | Microsoft |
 | ![SQL Server 2014 SP2 en Windows Server 2012 R2](media/azure-stack-marketplace-azure-items/sql.png) | [SQL Server 2014 SP2 en Windows Server 2012 R2](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftsqlserver.sql2014sp2-ws2012r2) | SQL Server 2014 Service Pack 2. **Descarga necesaria:** Extensión IaaS de SQL. | Microsoft |
@@ -249,4 +249,5 @@ Microsoft Azure Stack es compatible con las siguientes plantillas de soluciones 
 | ![Quest Rapid Recovery](media/azure-stack-marketplace-azure-items/quest.png) | [Quest Rapid Recovery Core](https://azuremarketplace.microsoft.com/marketplace/apps/quest.rapid-recovery-core-vm) | La protección de datos avanzada de Rapid Recovery unifica la copia de seguridad, la replicación y la recuperación en una solución de software fácil de usar. | Quest Software |
 | ![SUSE Manager 3.1 Proxy (BYOS)](media/azure-stack-marketplace-azure-items/suse.png) | [SUSE Manager 3.1 Proxy (BYOS)](https://azuremarketplace.microsoft.com/marketplace/apps/suse.suse-manager-proxy-byos?tab=Overview) | Administración de infraestructura de código abierto avanzada. | SUSE |
 | ![CipherTrust Cloud Key Manager](media/azure-stack-marketplace-azure-items/cckm.png) | [CipherTrust Cloud Key Manager](https://azuremarketplace.microsoft.com/marketplace/apps/thales-vormetric.ciphertrust-ckm) | Al aprovechar Microsoft Azure y otras API de Bring Your Own Key (BYOK) de proveedores de nube, CipherTrust Cloud Key Manager reduce la complejidad de la administración de claves y los costos operativos, al ofrecerle control de nube múltiple del ciclo de vida de las claves de cifrado con administración y visibilidad centralizadas. | Thales eSecurity |
+| ![Veeam Backup & Replication](media/azure-stack-marketplace-azure-items/veeam.png) | [Veeam Backup & Replication](https://azuremarketplace.microsoft.com/marketplace/apps/veeam.veeam-backup-replication?tab=Overview) | Veeam® Backup & Replication™ ayuda a las empresas a conseguir una protección de datos completa para todas las cargas de trabajo (virtuales físicos y basados en la nube). Con una única consola, puede lograr de manera rápida, flexible y confiable la copia de seguridad, la recuperación y la replicación de todos los datos y aplicaciones. | Veeam Software |
 | ![ZeroDown Software BCaaS](media/azure-stack-marketplace-azure-items/zerodown.png) | [Continuidad empresarial de ZeroDown Software como servicio](https://azuremarketplace.microsoft.com/marketplace/apps/zerodown_software.bcaasforazure) | La tecnología de ZeroDown® Software proporciona a las empresas acceso continuo a sus datos corporativos mediante su arquitectura Business Continuity as a Service (BCaaS)™, y protección de las aplicaciones y las transacciones en caso de interrupciones de red que normalmente perjudicarían a la empresa. | ZeroDown Software |

@@ -5,18 +5,18 @@ services: azure-stack
 keywords: ''
 author: mattbriggs
 manager: femila
-ms.date: 06/04/2019
+ms.date: 06/17/2019
 ms.topic: article
 ms.service: azure-stack
 ms.author: mabrigg
 ms.reviewer: scottnap
 ms.lastreviewed: 06/04/2019
-ms.openlocfilehash: de39645d1414fc852b98036e7071befcf5262cb1
-ms.sourcegitcommit: cf9440cd2c76cc6a45b89aeead7b02a681c4628a
+ms.openlocfilehash: a59b716df7e8bf7c9a76abbfcdbe6b300c985c9f
+ms.sourcegitcommit: c4507a100eadd9073aed0d537d054e394b34f530
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66469180"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67198815"
 ---
 # <a name="considerations-for-azure-stack-networking"></a>Consideraciones para las redes de Azure Stack
 
@@ -35,6 +35,7 @@ En este artículo se proporciona información general sobre las consideraciones 
 |  | Zonas DNS por suscripción | 100 (valor predeterminado)<br>Puede aumentarse a petición. | 100 |
 |  | Conjuntos de registros DNS por zona | 5000 (valor predeterminado)<br>Puede aumentarse a petición. | 5000 |
 |  | Servidores de nombres para la delegación de zona | Azure proporciona cuatro servidores de nombres para cada zona de usuario (inquilino) que se crea. | Azure Stack proporciona dos servidores de nombres para cada zona de usuario (inquilino) que se crea. |
+| Azure Firewall | Servicio de seguridad de red | Azure Firewall es un servicio de seguridad de red administrado y basado en la nube que protege los recursos de Azure Virtual Network. | Todavía no se admite. |
 | Virtual Network | Emparejamiento de redes virtuales de Azure | Conecte dos redes virtuales de la misma región mediante la red troncal de Azure. | Todavía no se admite |
 |  | Direcciones IPv6 | Puede asignar una dirección IPv6 como parte de la [configuración de la interfaz de red](https://docs.microsoft.com/azure/virtual-network/virtual-network-network-interface-addresses#ip-address-versions). | Se admite solo IPv4. |
 |  | Plan de DDoS Protection | Compatible | Todavía no se admite. |
@@ -54,7 +55,7 @@ En este artículo se proporciona información general sobre las consideraciones 
 |  | Configuración de BGP | Azure admite la configuración de dirección de emparejamiento BGP y de peso del mismo nivel. | La dirección de emparejamiento BGP y el peso del mismo nivel se configuran automáticamente en Azure Stack. No hay ninguna manera de que el usuario configure estas opciones con sus propios valores. |
 |  | Sitio de puerta de enlace predeterminado | Azure admite la configuración de un sitio predeterminado para la tunelización forzada. | Todavía no se admite. |
 |  | Cambio del tamaño de la puerta de enlace | Azure permite cambiar el tamaño de la puerta de enlace después de la implementación. | No se permite cambiar el tamaño. |
-|  | Configuración activa/activa | Compatible | Todavía no se admite. |
+|  | Configuración de disponibilidad | activa/activa | activa/pasiva |
 |  | UsePolicyBasedTrafficSelectors | Azure admite el uso de selectores de tráfico en función de directivas con las conexiones de puerta de enlace basadas en rutas. | Todavía no se admite. |
 | Equilibrador de carga | SKU | Se admiten los equilibradores de carga Estándar y Básico. | Solo se admite el equilibrador de carga Básico.  La propiedad SKU no se admite. |
 |  | Zones | Availability Zones se admite. | Todavía no se admite |

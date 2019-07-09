@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/10/2019
+ms.date: 06/24/2019
 ms.author: anwestg
 ms.reviewer: ''
-ms.openlocfilehash: d3464681463cfb66a368210beed79d5ef4c28739
-ms.sourcegitcommit: af63214919e798901399fdffef09650de4176956
+ms.openlocfilehash: db403f68879efa9103e35bb3581801240c0d64d3
+ms.sourcegitcommit: 1545e18a31cd715a12c7ddc3bcb173b41eb41730
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66828320"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348733"
 ---
 # <a name="app-service-on-azure-stack-update-6-release-notes"></a>Notas de la versión de App Service en la actualización 6 de Azure Stack
 
@@ -112,6 +112,10 @@ Los inquilinos todavía no pueden hacer uso del Centro de implementación, que e
 - Las opciones de implementación (Clásica) y las opciones del portal de credenciales de implementación y de experiencia de usuario no están disponibles.
 
 Para alcanzar las opciones de implementación y las credenciales de implementación de las experiencias de usuario en la implementación de Azure Stack, los usuarios deben acceder al portal mediante este formato URL: https://portal.&lt ;*región*&gt;.&lt;*FQDN*&gt; /?websitesExtension_oldvsts=true que, para el ASDK, sería [https://portal.local.azurestack.external/?websitesExtension_oldvsts=true](https://portal.local.azurestack.external/?websitesExtension_oldvsts=true) y, después, desplazarse a sus aplicaciones normalmente.
+
+- La supervisión de Azure Functions sigue mostrando "Cargando" en el portal
+
+Al intentar supervisar instancias de Azure Functions individuales, en el portal del inquilino no verá ningún registro de invocaciones, recuento de operaciones correctas ni recuento de errores.  Para volver a habilitar esta funcionalidad, diríjase a su instancia de **Function App**, vaya a **Características de la plataforma** y luego a **Configuración de la aplicación**.  Agregue una nueva configuración de la aplicación (por ejemplo, **AzureWebJobsDashboard**) y establezca el mismo valor que se estableció en AzureWebJobsStorage.  A continuación, vaya a la vista Monitor en la función y verá la información de supervisión.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

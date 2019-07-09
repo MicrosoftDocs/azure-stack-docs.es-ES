@@ -1,5 +1,5 @@
 ---
-title: Azure Stack almacena las credenciales de entidad de servicio en Key Vault | Microsoft Docs
+title: Almacenar las credenciales de entidad de servicio en Key Vault en Azure Stack | Microsoft Docs
 description: Obtenga información sobre cómo Key Vault almacena las credenciales de entidad de servicio en Azure Stack
 services: azure-stack
 documentationcenter: ''
@@ -14,16 +14,16 @@ ms.topic: article
 ms.date: 05/21/2019
 ms.author: sethm
 ms.lastreviewed: 01/16/2019
-ms.openlocfilehash: 1a9fc71f6e57621dba4488821ea2ca8b1e119e48
-ms.sourcegitcommit: 6fcd5df8b77e782ef72f0e1419f1f75ec8c16c04
+ms.openlocfilehash: efa8dda8061ce81d751e9cce47c5e81a3917f2bf
+ms.sourcegitcommit: ad2f2cb4dc8d5cf0c2c37517d5125921cff44cdd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65991322"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67138838"
 ---
-# <a name="store-service-principal-credentials-in-key-vault"></a>Almacenamiento de credenciales de entidad de servicio en Key Vault
+# <a name="store-service-principal-credentials-in-azure-stack-key-vault"></a>Almacenar las credenciales de entidad de servicio de Key Vault en Azure Stack
 
-Desarrollar aplicaciones en Azure Stack habitualmente requiere crear una entidad de servicio y usar esas credenciales para realizar la autenticación antes de la implementación. Sin embargo, las credenciales almacenadas para la entidad de servicio suelen estar ubicadas incorrectamente. En este artículo se describe cómo crear una entidad de servicio y almacenar los valores en Azure Key Vault para su posterior recuperación.
+Desarrollar aplicaciones en Azure Stack habitualmente requiere crear una entidad de servicio y usar esas credenciales para realizar la autenticación antes de la implementación. Sin embargo, a veces se pierden las credenciales almacenadas para la entidad de servicio. En este artículo se describe cómo crear una entidad de servicio y almacenar los valores en Azure Key Vault para su posterior recuperación.
 
 Para más información sobre Key Vault, consulte [este artículo](azure-stack-key-vault-intro.md).
 
@@ -64,15 +64,15 @@ Para crear un almacén de claves, siga estos pasos:
 
 2. Seleccione **Azure Active Directory**, **Registros de aplicaciones** y, luego, **Agregar**.
 
-3. Proporcione un nombre y una dirección URL para la aplicación. Seleccione either **Web app / API** (Aplicación web/API) o **Nativa** para el tipo de aplicación que quiere crear. Después de configurar los valores, seleccione **Crear**.
+3. Proporcione un nombre y una dirección URL para la aplicación. Seleccione **Aplicación web o API** o **Nativa** para el tipo de aplicación que quiere crear. Después de configurar los valores, seleccione **Crear**.
 
 4. Seleccione **Active Directory**, **Registros de aplicaciones** y seleccione la aplicación.
 
-5. Copie el **id. de aplicación** y almacénelo en el código de la aplicación. Las aplicaciones en el ejemplo de aplicaciones usan el **id. de cliente** al hacer referencia al **id. de la aplicación**.
+5. Copie el **Id. de aplicación** y almacénelo en el código de la aplicación. Las aplicaciones de ejemplo usan el **Id. de cliente** al hacer referencia al **Id. de aplicación**.
 
 6. Para generar una clave de autenticación, seleccione **Claves**.
 
-7. Proporcione una descripción para la clave y una duración.
+7. Proporcione una descripción y una duración para la clave.
 
 8. Seleccione **Guardar**.
 
@@ -96,7 +96,7 @@ Para crear un almacén de claves, siga estos pasos:
 
 8. Seleccione **Crear** para iniciar la implementación.
 
-Cuando el secreto se cree correctamente, la información de la entidad de servicio se almacenará ahí. Puede seleccionarla en cualquier momento en **Secretos** y vea o modifique sus propiedades. La sección de propiedades contiene el identificador del secreto, que es un identificador uniforme de recursos (URI) que las aplicaciones externas usan para acceder a este secreto.
+Una vez que el secreto se ha creado correctamente, la información de la entidad de servicio se almacena ahí. Puede seleccionarla en cualquier momento en **Secretos** y ver o modificar sus propiedades. La sección de propiedades contiene el identificador del secreto, que es un identificador uniforme de recursos (URI) que las aplicaciones externas usan para acceder a este secreto.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

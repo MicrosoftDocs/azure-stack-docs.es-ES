@@ -11,22 +11,22 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.author: mabrigg
-ms.date: 04/02/2019
+ms.date: 06/18/2019
 ms.reviewer: waltero
-ms.lastreviewed: 03/20/2019
-ms.openlocfilehash: 33eed0b574ad28c5fc0d1fb44f1c9b5a1ad37bb7
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.lastreviewed: 06/18/2019
+ms.openlocfilehash: 89138601d1049f192946473d0a1fdb2c21df3e4c
+ms.sourcegitcommit: 104ccafcb72a16ae7e91b154116f3f312321cff7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66269389"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67308714"
 ---
 # <a name="troubleshoot-kubernetes-deployment-to-azure-stack"></a>Solución de problemas de implementación de Kubernetes en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
 > [!Note]  
-> Kubernetes en Azure Stack está en versión preliminar. El escenario sin conexión de Azure Stack no es compatible actualmente con la versión preliminar.
+> Kubernetes en Azure Stack está en versión preliminar. Un escenario sin conexión de Azure Stack no es compatible actualmente con la versión preliminar. Solo use el elemento de Marketplace para escenarios de desarrollo y pruebas.
 
 En este artículo se indica cómo solucionar los problemas de cualquier clúster de Kubernetes. Para empezar a solucionar problemas, examine los elementos necesarios para la implementación. Puede que deba recopilar los registros de implementación de Azure Stack o las máquinas virtuales Linux que hospedan Kubernetes. Para recuperar los registros de un punto de conexión administrativo, póngase en contacto con el administrador de Azure Stack.
 
@@ -112,7 +112,7 @@ Al implementar el clúster de Kubernetes, puede revisar el estado de implementac
     | Propiedad | DESCRIPCIÓN |
     | ----     | ----        |
     | Recurso | Nombre del recurso. |
-    | Type | Proveedor de recursos y tipo de recurso. |
+    | type | Proveedor de recursos y tipo de recurso. |
     | Status | Estado del elemento. |
     | TimeStamp | Marca de tiempo UTC de la hora. |
     | Detalles de la operación | Detalles de la operación, como el proveedor de recursos implicado en la operación, el punto de conexión del recurso y el nombre del recurso. |
@@ -146,9 +146,9 @@ Siga estos pasos para recopilar y descargar los registros del clúster:
 
     | Parámetro           | DESCRIPCIÓN                                                                                                      | Ejemplo                                                                       |
     |---------------------|------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
-    | -d, --vmd-host      | La dirección IP pública o el nombre de dominio completo (FQDN) de la instancia de DVM. El nombre de la VM comienza por `vmd-`. | IP: 192.168.102.38<br>DNS: vmd-myk8s.local.cloudapp.azurestack.external |
+    | -d, --vmd-host      | Dirección IP pública o nombre de dominio completo (FQDN) de la instancia de DVM. El nombre de la VM comienza por `vmd-`. | IP: 192.168.102.38<br>DNS: vmd-myk8s.local.cloudapp.azurestack.external |
     | -h, --help  | Uso de comandos de impresión. | |
-    | -i, --identity-file | El archivo de clave privada RSA pasado al elemento de marketplace al crear el clúster de Kubernetes. Se necesita para iniciar sesión de forma remota en los nodos de Kubernetes. | C:\data\id_rsa.pem (Putty)<br>~/.ssh/id_rsa (SSH)
+    | -i, --identity-file | Ruta de acceso al archivo de clave privada RSA pasado al elemento de Marketplace al crear el clúster de Kubernetes. Se necesita para iniciar sesión de forma remota en los nodos de Kubernetes. | C:\data\id_rsa.pem (Putty)<br>~/.ssh/id_rsa (SSH)
     | -m, --master-host   | La dirección IP pública o el nombre de dominio completo (FQDN) de un nodo principal de Kubernetes. El nombre de la VM comienza por `k8s-master-`. | IP: 192.168.102.37<br>FQDN: k8s-12345.local.cloudapp.azurestack.external      |
     | -u, --user          | El nombre de usuario pasado al elemento de marketplace al crear el clúster de Kubernetes. Se necesita para iniciar sesión de forma remota en los nodos de Kubernetes. | azureuser (valor predeterminado) |
 

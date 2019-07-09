@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/23/2019
+ms.date: 06/23/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: a777fc1d9052eb58bbebd319fe6cc7f42a09cb9a
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: ca2ea89ab73c7a8e056e4b4700e92a872e628f34
+ms.sourcegitcommit: 3f52cf06fb5b3208057cfdc07616cd76f11cdb38
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64307323"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67316171"
 ---
 # <a name="validate-azure-registration"></a>Validación del registro de Azure
 
@@ -40,7 +40,7 @@ Descargue la versión más reciente de **AzsReadinessChecker** desde [Galería d
 
 Se necesitan los siguientes requisitos previos:
 
-**El equipo en el que se ejecuta la herramienta:**
+### <a name="the-computer-on-which-the-tool-runs"></a>El equipo en el que se ejecuta la herramienta
 
 - Windows 10 o Windows Server 2016, con conectividad a internet.
 - Azure PowerShell 5.1 o posterior. Para comprobar la versión, ejecute el siguiente cmdlet de PowerShell y luego revise la versión **principal** y las versiones **secundarias**:  
@@ -52,7 +52,7 @@ Se necesitan los siguientes requisitos previos:
 - [PowerShell configurado para Azure Stack](azure-stack-powershell-install.md).
 - Versión más reciente de [Microsoft Azure Stack Readiness Checker](https://aka.ms/AzsReadinessChecker).  
 
-**Entorno de Azure Active Directory:**
+### <a name="azure-active-directory-environment"></a>Entorno de Azure Active Directory
 
 - Identifique el nombre de usuario y la contraseña de una cuenta que sea propietario de la suscripción de Azure que va a usar con Azure Stack.  
 - Indique el identificador de suscripción de la suscripción de Azure que va a usar.
@@ -106,7 +106,7 @@ Cada vez que se ejecuta la validación, los resultados se registran en **AzsRead
 
 Estos archivos pueden ayudar a compartir el estado de validación antes de implementar Azure Stack o investigar problemas de validación. Ambos archivos conservan los resultados de cada comprobación de validación posterior. El informe ofrece la confirmación del equipo de implementación de la configuración de identidad. El archivo de registro puede ayudar al equipo de implementación o de soporte técnico a investigar los problemas de validación.
 
-De forma predeterminada, los dos archivos se escriben en **C:\Users\<nombre de usuario>\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json**.  
+De forma predeterminada, los dos archivos se escriben en **C:\Users\nombre_de_usuario\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json**.  
 
 - Use el parámetro **-OutputPath** ***&lt;ruta de acceso&gt;***  al final de la línea de comandos de ejecución para especificar otra ubicación para el informe.
 - Use el parámetro **-CleanReport** al final del comando de ejecución para borrar la información de ejecuciones anteriores de la herramienta desde **AzsReadinessCheckerReport.json**.

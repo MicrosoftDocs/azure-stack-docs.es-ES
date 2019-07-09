@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 05/07/2019
 ms.author: sethm
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: ab5b0b5ac0e67a2a625285bd37a04b084fa8da0f
-ms.sourcegitcommit: 39ba6d18781aed98b29ac5e08aac2d75c37bf18c
+ms.openlocfilehash: d6944fefeb55c1b2a109964271c84daafb8b8ff8
+ms.sourcegitcommit: c9d11be7d27c73797bdf279d4fcabb7a22451541
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65386599"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67397295"
 ---
 # <a name="configure-ipsecike-policy-for-site-to-site-vpn-connections"></a>Configuración de la directiva IPsec/IKE para conexiones VPN de sitio a sitio
 
@@ -30,7 +30,7 @@ En este artículo se describen los pasos para configurar una directiva de IPsec 
 
 ## <a name="ipsec-and-ike-policy-parameters-for-vpn-gateways"></a>Parámetros de la directiva de IPsec e IKE para puertas de enlace de VPN
 
-El estándar del protocolo IPsec e IKE admite una gran variedad de algoritmos criptográficos en diversas combinaciones. Para ver qué parámetros se admiten en Azure Stack, consulte  [Parámetros de IPsec/IKE](azure-stack-vpn-gateway-settings.md#ipsecike-parameters), lo que puede ayudarle a cumplir los requisitos de cumplimiento o seguridad.
+El estándar del protocolo IPsec e IKE admite una gran variedad de algoritmos criptográficos en diversas combinaciones. Para ver qué parámetros se admiten en Azure Stack, consulte [Parámetros de IPsec/IKE](azure-stack-vpn-gateway-settings.md#ipsecike-parameters), lo que puede ayudarle a cumplir los requisitos de cumplimiento o seguridad.
 
 En este artículo se proporcionan instrucciones para crear y configurar una directiva de IPsec o IKE y aplicarla a una conexión nueva o existente.
 
@@ -38,9 +38,9 @@ En este artículo se proporcionan instrucciones para crear y configurar una dire
 
 Tenga en cuenta las siguientes consideraciones importantes al utilizar estas directivas:
 
-- La directiva de IPsec o IKE solo funciona en los SKU de puerta de enlace *Estándar* y *HighPerformance*  (basadas en rutas).
+- La directiva de IPsec o IKE solo funciona en los SKU de puerta de enlace *Estándar* y *HighPerformance* (basadas en rutas).
 
-- Solo se puede especificar **una** combinación de directivas para una conexión dada.
+- Solo se puede especificar **una** combinación de directivas para una conexión dada.
 
 - Es preciso especificar todos los algoritmos y parámetros de IKE (modo principal) e IPsec (modo rápido). No se permite la especificación de una directiva parcial.
 
@@ -111,7 +111,7 @@ En la tabla siguiente se muestran los grupos Diffie-Hellman admitidos en la dire
 | 20                   | ECP384    | ECP384        | ECP de 384 bits   |
 | 24                   | DHGroup24 | PFS24         | MODP de 2048 bits |
 
-Para más información, consulte [RFC3526](https://tools.ietf.org/html/rfc3526) y [RFC5114](https://tools.ietf.org/html/rfc5114).
+Para más información, consulte [RFC3526](https://tools.ietf.org/html/rfc3526) y [RFC5114](https://tools.ietf.org/html/rfc5114).
 
 ## <a name="part-3---create-a-new-site-to-site-vpn-connection-with-ipsecike-policy"></a>Parte 3: crear una nueva conexión VPN de sitio a sitio con una directiva de IPsec o IKE
 
@@ -119,15 +119,15 @@ En esta sección se describen los pasos necesarios para crear una conexión VPN 
 
 ![directiva de sitio a sitio](media/azure-stack-vpn-s2s/site-to-site.png)
 
-Consulte  [Creación de una conexión VPN de sitio a sitio](/azure/vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell) para obtener instrucciones detalladas sobre cómo crear una conexión VPN de sitio a sitio.
+Consulte [Creación de una conexión VPN de sitio a sitio](/azure/vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell) para obtener instrucciones detalladas sobre cómo crear una conexión VPN de sitio a sitio.
 
 ### <a name="prerequisites"></a>Requisitos previos
 
 Asegúrese de que dispone de los siguientes requisitos previos antes de empezar:
 
-- Una suscripción de Azure. Si todavía no la tiene, puede activar sus  [ventajas como suscriptor de MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) o registrarse para obtener una  [cuenta gratuita](https://azure.microsoft.com/pricing/free-trial/).
+- Una suscripción de Azure. Si todavía no la tiene, puede activar sus [ventajas como suscriptor de MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) o registrarse para obtener una [cuenta gratuita](https://azure.microsoft.com/pricing/free-trial/).
 
-- Los cmdlets de PowerShell de Azure Resource Manager. Consulte  [Instalación de PowerShell para Azure Stack](../operator/azure-stack-powershell-install.md) para más información sobre la instalación de los cmdlets de PowerShell.
+- Los cmdlets de PowerShell de Azure Resource Manager. Consulte [Instalación de PowerShell para Azure Stack](../operator/azure-stack-powershell-install.md) para más información sobre la instalación de los cmdlets de PowerShell.
 
 ### <a name="step-1---create-the-virtual-network-vpn-gateway-and-local-network-gateway"></a>Paso 1: crear la red virtual, la puerta de enlace de VPN y la puerta de enlace de red local
 
@@ -161,7 +161,7 @@ $LNGIP6 = "131.107.72.22"
 
 #### <a name="2-connect-to-your-subscription-and-create-a-new-resource-group"></a>2. Conexión a su suscripción y creación de un nuevo grupo de recursos
 
-Asegúrese de cambiar el modo de PowerShell para que use los cmdlets del Administrador de recursos. Para más información, consulte  [Conexión a Azure Stack con PowerShell como usuario](azure-stack-powershell-configure-user.md).
+Asegúrese de cambiar el modo de PowerShell para que use los cmdlets del Administrador de recursos. Para más información, consulte [Conexión a Azure Stack con PowerShell como usuario](azure-stack-powershell-configure-user.md).
 
 Abre la consola de PowerShell y conéctate a tu cuenta. Use el siguiente ejemplo para ayudarle a conectarse:
 
@@ -239,7 +239,7 @@ En la sección anterior se ha descrito cómo administrar la directiva de IPsec o
 3. Eliminar la directiva de IPsec o IKE de una conexión
 
 > [!NOTE]
-> La directiva de IPsec o IKE solo se admite en las puertas de enlace de VPN *Estándar* y *HighPerformance* basadas en rutas. No funciona en el SKU de puerta de enlace *Básico*.
+> La directiva de IPsec o IKE solo se admite en las puertas de enlace de VPN basadas en rutas *Standard* y *HighPerformance*. No funciona en el SKU de puerta de enlace *Básico*.
 
 ### <a name="1-show-the-ipsecike-policy-of-a-connection"></a>1. Mostrar la directiva de IPsec o IKE de una conexión
 
@@ -305,7 +305,7 @@ PfsGroup : None
 
 ### <a name="3-remove-an-ipsecike-policy-from-a-connection"></a>3. Eliminar una directiva de IPsec o IKE de una conexión
 
-Una vez que se quite la directiva personalizada de una conexión, Azure VPN Gateway vuelve a la  [propuesta predeterminada de IPsec o IKE](azure-stack-vpn-gateway-settings.md#ipsecike-parameters) y vuelve a negociar con el dispositivo VPN local.
+Una vez que se quite la directiva personalizada de una conexión, Azure VPN Gateway vuelve a la [propuesta predeterminada de IPsec o IKE](azure-stack-vpn-gateway-settings.md#ipsecike-parameters) y vuelve a negociar con el dispositivo VPN local.
 
 ```powershell
 $RG1 = "TestPolicyRG1"

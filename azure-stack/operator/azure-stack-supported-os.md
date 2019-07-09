@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/17/2019
+ms.date: 06/11/2019
 ms.author: sethm
-ms.reviewer: unknown
-ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: aca2517a49936296f73c34392ab4c5439909872f
-ms.sourcegitcommit: 75b13158347963063b7ee62b0ec57894b542c1be
+ms.reviewer: kivenkat
+ms.lastreviewed: 06/06/2018
+ms.openlocfilehash: 53acfa3a2d85e73b5d8136c7a1f42ee00d8ed1be
+ms.sourcegitcommit: 07c51a03f07a6a3ee2721aa942d31a7a4c6a339b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66748964"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67028268"
 ---
 # <a name="guest-operating-systems-supported-on-azure-stack"></a>Sistemas operativos invitados compatibles con Azure Stack
 
@@ -43,7 +43,7 @@ Azure Stack admite los sistemas operativos invitados Windows que se indican en l
 | Windows 10 *(vea la nota 1)* | 64 bits, Pro y Enterprise | Traiga su propia imagen |
 
 > [!NOTE]
-> Para implementar sistemas operativos cliente Windows 10 en Azure Stack, debe tener una [licencia por usuario de Windows](https://www.microsoft.com/en-us/Licensing/product-licensing/windows10.aspx) o adquirir a través de un proveedor de servicios de hosting cualificado multiinquilino ([QMTH](https://www.microsoft.com/en-us/CloudandHosting/licensing_sca.aspx)).
+> Para implementar sistemas operativos cliente Windows 10 en Azure Stack, debe tener una [licencia por usuario de Windows](https://www.microsoft.com/Licensing/product-licensing/windows10.aspx) o adquirir a través de un proveedor de servicios de hosting cualificado multiinquilino ([QMTH](https://www.microsoft.com/en-us/CloudandHosting/licensing_sca.aspx)).
 
 Las imágenes de Marketplace están disponibles para licencias de pago por uso o BYOL (EA/SPLA). No se admite el uso de ambas en una sola instancia de Azure Stack. Durante la implementación, Azure Stack inserta una versión adecuada del agente invitado en la imagen.
 
@@ -54,7 +54,7 @@ Las ediciones de Datacenter están disponibles en Marketplace para su descarga; 
 Las distribuciones Linux indicadas como disponibles en Marketplace incluyen el agente Linux de Microsoft Azure (WALA) necesario. Si trae su propia imagen para Azure Stack, siga las instrucciones de [Agregar imágenes de Linux a Azure Stack](azure-stack-linux.md).
 
 > [!NOTE]
-> Las imágenes personalizadas se deben compilar con la última versión pública de WALA (en la compilación de Azure Stack 1903 o superior, o con la revisión 1901/1902) o con la versión 2.2.20. Es posible que las versiones anteriores a 2.2.20 y las comprendidas entre 2.2.20 y 2.2.35 (no inclusive) no funcionen correctamente en Azure Stack. 
+> Las imágenes personalizadas se deben compilar con la última versión pública de WALA (en la compilación de Azure Stack 1903 o superior, o con la revisión 1901/1902) o con la versión 2.2.20. Es posible que las versiones anteriores a 2.2.20 y las comprendidas entre 2.2.20 y 2.2.35 (no inclusive) no funcionen correctamente en Azure Stack.
 >
 > No se admite [cloud-init](https://cloud-init.io/) en Azure Stack en este momento.
 
@@ -81,4 +81,4 @@ Para obtener información de soporte técnico de Red Hat Enterprise Linux, consu
 Para obtener más información sobre Azure Stack Marketplace, vea los siguientes artículos:
 
 - [Descarga de elementos de Marketplace](azure-stack-download-azure-marketplace-item.md)  
-- [Creación y publicación de un producto en Marketplace](azure-stack-create-and-publish-marketplace-item.md)
+- [Crear y publicar un elemento en Marketplace](azure-stack-create-and-publish-marketplace-item.md)

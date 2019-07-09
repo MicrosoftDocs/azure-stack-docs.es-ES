@@ -10,12 +10,12 @@ ms.date: 05/10/2019
 ms.author: patricka
 ms.reviewer: thoroet
 ms.lastreviewed: 05/10/2019
-ms.openlocfilehash: 6fb879dc49197b52133750d65aadf96b601bda69
-ms.sourcegitcommit: 914daff43ae0f0fc6673a06dfe2d42d9b4fbab48
+ms.openlocfilehash: de2c0c2181025b7dbbc01691b72b0756fa201274
+ms.sourcegitcommit: bcaad8b7db2ea596018d973cb29283d8c6daebfb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66043232"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67419506"
 ---
 # <a name="azure-stack-datacenter-integration---identity"></a>Integración del centro de datos de Azure Stack: identidad
 
@@ -116,7 +116,7 @@ El servicio Graph de Azure Stack utiliza los siguientes protocolos y puertos par
 
 El servicio Graph en Azure Stack usa los protocolos y puertos siguientes para comunicarse con la instancia de Active Directory de destino:
 
-|Type|Port|Protocolo|
+|type|Port|Protocolo|
 |---------|---------|---------|
 |LDAP|389|TCP y UDP|
 |SSL de LDAP|636|TCP|
@@ -131,6 +131,7 @@ Se requiere la siguiente información como entrada para los parámetros de autom
 |---------|---------|---------|---------|
 |CustomAdfsName|Nombre del proveedor de ADFS|Nombre del proveedor de notificaciones.<br>Aparece de este modo en la página de aterrizaje de AD FS.|Contoso|
 |CustomAD<br>FSFederationMetadataEndpointUri|URI de metadatos de ADFS|Vínculo de metadatos de federación| https:\//ad01.contoso.com/federationmetadata/2007-06/federationmetadata.xml |
+|SigningCertificateRevocationCheck|N/D|Parámetro opcional para omitir la comprobación de CRL|None|
 
 
 ### <a name="trigger-automation-to-configure-claims-provider-trust-in-azure-stack"></a>Automatización de desencadenador para configurar la relación de confianza de proveedor de notificaciones en Azure Stack

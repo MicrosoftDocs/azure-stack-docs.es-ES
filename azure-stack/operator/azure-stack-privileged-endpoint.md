@@ -15,12 +15,12 @@ ms.date: 05/16/2019
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: 850d99232b408aa9264caf0d928231ed229e5c23
-ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
+ms.openlocfilehash: b66354baa30bb6bf9ec4b8cb39cab0b9def763f6
+ms.sourcegitcommit: 7348876a97e8bed504b5f5d90690ec8d1d9472b0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782429"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67557894"
 ---
 # <a name="using-the-privileged-endpoint-in-azure-stack"></a>Uso del punto de conexión con privilegios en Azure Stack
 
@@ -84,7 +84,7 @@ Antes de comenzar este procedimiento en un sistema integrado, asegúrese de que 
      > [!NOTE]
      > Si no puede conectarse al punto de conexión de ERCS, repita los pasos primero y segundo con la dirección IP de una máquina virtual de ERCS a la que no haya intentado conectarse todavía.
 
-3. Después de conectarse, el símbolo del sistema cambia a **[*dirección IP o nombre de VM de ERCS*]: PS >** o a **[azs-ercs01]: PS >**, en función del entorno. Desde aquí, ejecute `Get-Command` para ver la lista de los cmdlets disponibles.
+3. Después de conectarse, el símbolo del sistema cambia a **[*dirección IP o nombre de VM de ERCS*]: PS >** o a **[azs-ercs01]: PS >** , en función del entorno. Desde aquí, ejecute `Get-Command` para ver la lista de los cmdlets disponibles.
 
    Muchos de estos cmdlets están concebidos únicamente para entornos de sistema integrados (por ejemplo, los cmdlets relacionados con la integración de centros de datos). En el ASDK, se han validado los siguientes cmdlets:
 
@@ -167,10 +167,16 @@ Lleve a cabo los siguientes pasos para importar la sesión del PEP al equipo loc
 Para cerrar la sesión del punto de conexión:
 
 1. Cree un recurso compartido de archivos externo al que se pueda acceder mediante el PEP. En un entorno de kit de desarrollo, solo puede crear un recurso compartido de archivos en el host del kit de desarrollo.
-2. Ejecute el cmdlet `Close-PrivilegedEndpoint`. 
-3. Se le pide una ruta de acceso en la que almacenar el archivo de registro de transcripción. Especifique el recurso compartido de archivos que creó anteriormente, en el formato &#92;&#92;*servername*&#92;*sharename*. Si no se especifica una ruta de acceso, se produce un error en el cmdlet y la sesión permanece abierta. 
+2. Ejecute el cmdlet: 
+    ```powershell
+    Close-PrivilegedEndpoint -TranscriptsPathDestination "\\fileshareIP\SharedFolder" -Credential Get-Credential
+    ```
+donde
+| Parámetro | DESCRIPCIÓN | type | Obligatorio |
+|---------|---------|---------|---------|
+| *TranscriptsPathDestination* | Ruta de acceso al recurso compartido de archivos externo definido como "fileshareIP\sharefoldername". | Cadena | Sí|
+| *Credential:* | Credenciales para acceder al recurso compartido de archivos. | SecureString |  Sí |
 
-    ![Salida del cmdlet Close-PrivilegedEndpoint que muestra dónde se especifica la ruta de acceso del destino de transcripción](media/azure-stack-privileged-endpoint/closeendpoint.png)
 
 Una vez los archivos de registro de transcripción se transfieren correctamente al recurso compartido de archivos, se eliminan automáticamente del PEP. 
 
