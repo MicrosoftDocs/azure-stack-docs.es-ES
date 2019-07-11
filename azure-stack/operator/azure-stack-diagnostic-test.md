@@ -14,12 +14,12 @@ ms.date: 06/26/2019
 ms.author: justinha
 ms.reviewer: adshar
 ms.lastreviewed: 12/03/2018
-ms.openlocfilehash: 25280d1f5465776aedf2e3e0dfd84118e866a944
-ms.sourcegitcommit: c9d11be7d27c73797bdf279d4fcabb7a22451541
+ms.openlocfilehash: f1c846b6d429fa323e1081d96cbca8bd10f877b5
+ms.sourcegitcommit: 1c4eda123857d714109e38bb853eb1ce49af5f5c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67397288"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67648080"
 ---
 # <a name="validate-azure-stack-system-state"></a>Validación del estado del sistema de Azure Stack
 
@@ -29,7 +29,7 @@ Como operador de Azure Stack, es esencial tener la capacidad de determinar a pet
 
 ## <a name="running-the-validation-tool-and-accessing-results"></a>Ejecución de la herramienta de validación y acceso a los resultados
 
-Como se indicó anteriormente, la herramienta de validación se ejecuta a través del PEP. Cada prueba devuelve un estado **PASS/FAIL** (correcto/incorrecto) en la ventana de PowerShell. Además, se crea un informe HTML detallado al que se puede tener acceso más adelante durante la [recopilación de registros](azure-stack-diagnostics.md). Este es un esquema del proceso de prueba de validación de un extremo a otro: 
+Como se indicó anteriormente, la herramienta de validación se ejecuta a través del PEP. Cada prueba devuelve un estado **PASS/FAIL** (correcto/incorrecto) en la ventana de PowerShell. Este es un esquema del proceso de prueba de validación de un extremo a otro: 
 
 1. Acceda al punto de conexión con privilegios (PEP). Ejecute los comandos siguientes para establecer una sesión de PEP:
 

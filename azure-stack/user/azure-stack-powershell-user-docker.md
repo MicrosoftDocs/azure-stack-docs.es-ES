@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: powershell
 ms.topic: article
-ms.date: 04/25/2019
+ms.date: 07/09/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 04/24/2019
-ms.openlocfilehash: 42ed9766b43ce3c0c1c455d8ea286a5b453df325
-ms.sourcegitcommit: 2ee75ded704e8cfb900d9ac302d269c54a5dd9a3
+ms.lastreviewed: 07/09/2019
+ms.openlocfilehash: 27f2b4c1817c28cf5d345f5aa9387a26cd18316b
+ms.sourcegitcommit: d2df594e8346a875967e3cfb04c23562a1bd2e3c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66394372"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67725753"
 ---
 # <a name="use-docker-to-run-powershell-in-azure-stack"></a>Uso de Docker para ejecutar PowerShell en Azure Stack
 
@@ -33,7 +33,7 @@ En este artículo, se usa Docker para crear contenedores basados en Windows en l
 1. En una herramienta de línea de comandos, como Powershell o Bash, escriba:
 
     ```bash
-        Docker -version
+        Docker --version
     ```
 
 1. Deberá ejecutar Docker mediante contenedores de Windows que requieran Windows 10. Cuando ejecute Docker, cambie a los contenedores de Windows.
