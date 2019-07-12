@@ -2,76 +2,55 @@
 documentType: LandingData
 title: Documentación de usuario de Azure Stack
 metadata:
-  document_id: cbf798da-6f1a-7d4d-7707-5d5e02589e22
   title: 'Documentación sobre Azure Stack: tutoriales y referencia de API'
-  description: Aprenda a usar los servicios y a compilar aplicaciones de Azure Stack.
+  meta.description: azure-stack
   services: azure-stack
   author: mattbriggs
   manager: femila
+  layout: LandingPage
+  ms.assetid: cbf798da-6f1a-7d4d-7707-5d5e02589e22
   ms.service: azure-stack
-  ms.tgt_pltfrm: na
-  ms.devlang: na
+  ms.tgt_pltfrm: from-team
+  ms.devlang: from-team
   ms.topic: landing-page
-  ms.date: 10/16/2018
+  ms.date: 07/11/2019
   ms.author: mabrigg
 abstract:
-  description: 'Azure Stack es una plataforma en la nube híbrida que le permite usar servicios de Azure desde el centro de datos del proveedor de servicios o de su empresa. Como desarrollador, puede compilar aplicaciones en Azure Stack. Luego, puede implementarlas en Azure Stack o en Azure, o bien puede compilar aplicaciones realmente híbridas que aprovechen la conectividad entre una nube de Azure Stack y Azure. Aprenda a crear recursos e implementar aplicaciones con nuestros inicios rápidos y tutoriales.<br/><br/>Si es un operador de Azure Stack que administra la infraestructura y ofrece servicios, consulte la <a href="/azure-stack/operator">documentación del operador</a>.<br/><br/>Si es un operador de Azure Stack interesado en el Kit de desarrollo de Azure Stack (ASDK), una implementación de un único nodo de Azure Stack que puede descargar y usar gratuitamente, consulte la <a href="/azure-stack/asdk">documentación sobre ASDK</a>.'
+  description: 'Azure Stack es una plataforma en la nube híbrida que le permite usar servicios de Azure desde el centro de datos del proveedor de servicios o de su empresa. Como desarrollador, puede compilar aplicaciones en Azure Stack. Luego, puede implementarlas en Azure Stack o en Azure, o bien puede compilar aplicaciones realmente híbridas que aprovechen la conectividad entre una nube de Azure Stack y Azure. Aprenda a crear recursos e implementar aplicaciones con nuestros inicios rápidos y tutoriales.<br/><br/>Si es un operador de Azure Stack que administra la infraestructura y ofrece servicios, consulte la <a href="../operator/">documentación del operador</a>.<br/><br/>Si es un usuario de Azure Stack interesado en el Kit de desarrollo de Azure Stack (ASDK), una implementación de un único nodo de Azure Stack que puede descargar y usar gratuitamente, consulte la <a href="../asdk">documentación sobre ASDK</a>.'
 sections:
-  - title: Inicio rápido en 5 minutos
-    items:
-      - type: paragraph
-        text: 'Aprenda a implementar una máquina virtual Windows en Azure Stack:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_portal.svg'
-            text: Portal
-            href: azure-stack-quick-windows-portal.md
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_powershell.svg'
-            text: PowerShell
-            href: azure-stack-quick-create-vm-windows-powershell.md
-          - image:
-              src: 'https://docs.microsoft.com/azure/virtual-machines/linux/media/index/cli.svg'
-            text: CLI
-            href: azure-stack-quick-create-vm-windows-cli.md
-      - type: paragraph
-        text: 'Aprenda a implementar una máquina virtual Linux en Azure Stack:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_portal.svg'
-            text: Portal
-            href: azure-stack-quick-linux-portal.md
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_powershell.svg'
-            text: PowerShell
-            href: azure-stack-quick-create-vm-linux-powershell.md
-          - image:
-              src: 'https://docs.microsoft.com/azure/virtual-machines/linux/media/index/cli.svg'
-            text: CLI
-            href: azure-stack-quick-create-vm-linux-cli.md
-  - title: Tutoriales detallados
-    items:
-      - type: paragraph
-        text: Implementación de aplicaciones en Azure y Azure Stack.
-      - type: list
-        style: ordered
-        items:
-          - html: <a href="/azure-stack/user/azure-stack-solution-pipeline">Implementación de aplicaciones en Azure Stack y Azure</a>
-          - html: <a href="/azure-stack/user/azure-stack-solution-hybrid-identity">Configuración de la identidad de nube híbrida con aplicaciones de Azure y Azure Stack</a>
-          - html: <a href="/azure-stack/user/azure-stack-solution-hybrid-connectivity">Configuración de la conectividad de nube híbrida con Azure y Azure Stack</a>
-          - html: <a href="/azure-stack/user/azure-stack-solution-staged-data-analytics">Creación de una solución de análisis de datos almacenados provisionalmente con Azure y Azure Stack</a>
-          - html: <a href="/azure-stack/user/azure-stack-solution-cloud-burst">Creación de soluciones de escalado de toda la nube con Azure</a>
-          - html: <a href="/azure-stack/user/azure-stack-solution-geo-distributed">Creación de una solución de aplicación distribuida geográficamente con Azure y Azure Stack</a>
-          - html: <a href="azure-stack-solution-hybrid-cloud.md">Implementación de una solución en la nube híbrida con Azure y Azure Stack</a>
-  - title: Referencia
+  - title: Introducción a Azure Stack
     items:
       - type: list
         style: cards
-        className: cardsD
+        className: cardsA
         items:
-          - title: Línea de comandos
-            html: <p><a href="/powershell/azure/azure-stack/overview?view=azurestackps-1.2.10">Azure Stack PowerShell</a></p><p><a href="/cli/azure/reference-index?view=azure-cli-2017-03-09-profile">CLI de Azure Stack</a></p>
+          - html: '<a href="/azure-stack/user/azure-stack-dev-start"> <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_code-edit.svg" alt=""> <br><b>Desarrollo de soluciones con Azure Stack</b></a> <p>Desarrolle aplicaciones para Azure Stack con una estación de trabajo de Windows 10, Linux o macOS.</p>'
+          - html: '<a href="/azure-stack/operator/azure-stack-powershell-install"> <img height="48" width="48" src="https://docs.microsoft.com/media/logos/logo_powershell.svg" alt=""> <br><b>PowerShell de Azure Stack</b></a> <p>Administre fácilmente los recursos de Azure Stack con PowerShell.</p>'
+          - html: '<a href="/azure-stack/user/azure-stack-version-profiles-azurecli2"> <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_cligeneric.svg" alt=""> <br><b>Interfaz de la línea de comandos (CLI) de Azure</b></a> <p>Uso de la línea de comandos para administrar los recursos de Azure Stack.</p>'
+  - title: Aplicaciones de la nube híbrida
+    items:
+      - type: list
+        style: cards
+        className: cardsA
+        items:
+          - html: '<a href="/azure-stack/user/azure-stack-solution-pipeline"> <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_workflow.svg" alt="hybrid cloud app ci/cd"> <br><b>Integración y entrega continuas de aplicaciones híbridas</b></a> <p>Implemente aplicaciones híbridas en Azure y Azure Stack mediante una canalización híbrida de integración y entrega continua (CI/CD).</p>'
+          - html: '<a href="/azure-stack/user/azure-stack-solution-hybrid-identity"> <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_identity-protection.svg" alt="hybrid cloud app identity"> <br><b>Configuración de una identidad de nube híbrida</b></a> <p>Configure una identidad de nube híbrida para sus aplicaciones de Azure y Azure Stack.</p>'
+          - html: '<a href="/azure-stack/user/azure-stack-solution-cloud-burst"> <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_multi-connect.svg" alt="hybrid cloud app scaling"> <br><b>Soluciones de escalado entre nubes</b></a> <p>Cree una solución entre nubes que proporcione un proceso desencadenado manualmente para cambiar de una aplicación web hospedada en Azure Stack a una aplicación web hospedada en Azure.</p>'
+  - title: Infraestructura como servicio (IaaS) en Azure Stack
+    items:
+      - type: list
+        style: cards
+        className: cardsA
+        items:
+          - html: '<a href="/azure-stack/user/azure-stack-create-vm-template"> <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_package.svg" alt=""> <br><b>Implementación de una máquina virtual de IaaS con una plantilla.</b></a> <p>Creación de una máquina virtual mediante plantillas de Resource Manager para Azure Stack</p>'
+          - html: '<a href="/azure-stack/user/azure-stack-quick-linux-portal"> <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_vmm-cloud.svg" alt=""> <br><b>Inicio rápido: Creación de una máquina virtual</b></a> <p>Cree una máquina virtual para hospedar la aplicación.</p>'
+          - html: '<a href="/azure-stack/user/azure-stack-dev-start-deploy-app"> <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_web-color.svg" alt=""> <br><b>Hospede aplicaciones escritas en su código.</b></a> <p>Configure una máquina virtual en Azure Stack e impleméntela mediante C#, Java, Python, Go, Ruby o NodeJS.</p>'
+  - title: Plataforma como servicio (PaaS) en Azure Stack
+    items:
+      - type: list
+        style: cards
+        className: cardsA
+        items:
+          - html: <a href="/azure-stack/user/azure-stack-solution-template-service-fabric-cluster"> <img height="48" width="48" src="/azure-stack/user/media/index/service-fabric-cluster.png" alt=""> <br><b>Implementación de un clúster de Service Fabric</b></a> <p>Implemente un clúster de Service Fabric protegido en Azure Stack.</p>
+          - html: <a href="/azure-stack/user/azure-stack-solution-template-kubernetes-deploy"> <img height="48" width="48" src="/azure-stack/user/media/index/kubernetes.png" alt=""> <br><b>Implementación de un clúster de Kubernetes</b></a> <p>Implemente y configure los recursos de Kubernetes en una operación única y coordinada.</p>
+          - html: <a href="/azure-stack/user/azure-stack-solution-template-cognitive-services"> <img height="48" width="48" src="/azure-stack/user/media/index/icon-cognitive-services.svg" alt=""> <br><b>Implementación de Azure Cognitive Services</b></a> <p>La compatibilidad con contenedores en Azure Cognitive Services le permite usar las mismas API que están disponibles en Azure.</p>
