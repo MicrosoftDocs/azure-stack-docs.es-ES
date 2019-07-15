@@ -16,12 +16,12 @@ ms.date: 06/25/2019
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: 2e7737033b0f94473f4b794e452c9239f275c8f8
-ms.sourcegitcommit: d1fdecdfa843dfc0629bfc226f1baf14f3ea621d
+ms.openlocfilehash: 9ea7c3de75be447870d0506cebbbbe8af0f2ffe9
+ms.sourcegitcommit: 1c4eda123857d714109e38bb853eb1ce49af5f5c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387741"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67648084"
 ---
 # <a name="azure-stack-managed-disks-differences-and-considerations"></a>Discos administrados de Azure Stack: diferencias y consideraciones
 
@@ -45,7 +45,7 @@ Los discos administrados simplifican la administración de discos para las máqu
 |E/S por segundo de discos premium  |Depende del tamaño del disco  |2300 E/S por segundo por disco |
 |Rendimiento de discos premium |Depende del tamaño del disco |145 MB/segundo por disco |
 |Tamaño del disco  |Disco Premium de Azure: P4 (32 GiB) a P80 (32 TiB)<br>Disco SSD estándar de Azure: E10 (128 GiB) a E80 (32 TiB)<br>Disco HDD estándar de Azure: S4 (32 GiB) a S80 (32 TiB) |M4: 32 GiB<br>M6: 64 GiB<br>M10: 128 GB<br>M15: 256 GiB<br>M20: 512 GB<br>M30: 1024 GiB |
-|Copia de instantáneas de discos|Discos administrados de Azure de instantáneas conectados a una máquina virtual en ejecución compatible|Todavía no se admite |
+|Copia de instantáneas de discos|Discos administrados de Azure de instantáneas conectados a una máquina virtual en ejecución compatible|Aún no se admite la creación de instantáneas de discos administrados de Azure vinculados a una VM en ejecución |
 |Análisis de rendimiento de discos |Compatibilidad con métricas agregadas y por disco |Todavía no se admite |
 |Migración      |Proporciona herramientas para migrar desde máquinas virtuales de Azure Resource Manager no administradas existentes sin necesidad de volver a crear la máquina virtual  |Todavía no se admite |
 

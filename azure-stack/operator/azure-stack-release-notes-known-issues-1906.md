@@ -16,12 +16,12 @@ ms.date: 06/28/2019
 ms.author: sethm
 ms.reviewer: hectorl
 ms.lastreviewed: 06/28/2019
-ms.openlocfilehash: d1d3b3c33652811964b16a35686df3e3a24eb59a
-ms.sourcegitcommit: 7348876a97e8bed504b5f5d90690ec8d1d9472b0
+ms.openlocfilehash: 96a29ab11ffc15b35c7035576fa68544caef594b
+ms.sourcegitcommit: 1c4eda123857d714109e38bb853eb1ce49af5f5c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67557874"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67648042"
 ---
 # <a name="azure-stack-1906-known-issues"></a>Problemas conocidos de Azure Stack 1906
 
@@ -71,6 +71,13 @@ En este artículo se enumeran los problemas conocidos de la versión 1906 de Az
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: En el portal de usuarios, al intentar cargar un blob mediante la opción **OAuth(preview)** , la tarea genera un mensaje de error.
 - Corrección: Cargue el blob mediante la opción SAS.
+- Repetición: Común
+
+### <a name="template"></a>Plantilla
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, la interfaz de usuario de implementación de plantillas no rellena los parámetros de los nombres de plantilla que empiezan por "_" (carácter de subrayado).
+- Corrección: Quite el "_" (carácter de subrayado) del nombre de la plantilla.
 - Repetición: Común
 
 ## <a name="networking"></a>Redes

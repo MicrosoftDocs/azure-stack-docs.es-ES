@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/14/2019
+ms.date: 07/09/2019
 ms.author: sethm
 ms.reviewer: ihcherie
-ms.lastreviewed: 06/14/2019
-ms.openlocfilehash: dd6421e915f170ee576d6486362e8b93ac01465f
-ms.sourcegitcommit: 593d40bccf1b2957a763017a8a2d7043f8d8315c
+ms.lastreviewed: 07/09/2019
+ms.openlocfilehash: d18775deb6d73117091a3822c5a60a32d94d4d38
+ms.sourcegitcommit: cb77ffe0d5da14696ad0fe7c09ee6b340c7f66e7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67152593"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678998"
 ---
 # <a name="azure-marketplace-items-available-for-azure-stack"></a>Elementos de Azure Marketplace disponibles para Azure Stack
 
@@ -36,9 +36,9 @@ Cada vez que haya actualizaciones de las extensiones de la máquina virtual que 
 |![Extensión IaaS de SQL](media/azure-stack-marketplace-azure-items/cse.png) | [Extensión IaaS de SQL](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-agent-extension)| **Descargue esta extensión para implementar cualquier servidor de SQL Server en el elemento de Marketplace (esta extensión es obligatoria).** | Microsoft | Windows |
 |![Custom Script Extension](media/azure-stack-marketplace-azure-items/cse.png) | [Extensión Custom Script](https://docs.microsoft.com/azure/virtual-machines/windows/extensions-customscript)| **Descargar esta actualización a la versión incluida en la extensión de script personalizado de Windows.** | Microsoft | Windows |
 |![Extensión DSC de PowerShell](media/azure-stack-marketplace-azure-items/dsc.png) | [Extensión DSC de PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/extensions-dsc-overview)| **Descargue esta actualización a la versión incluida de la extensión DSC de PowerShell. Actualizado para admitir TLS v1.2.** | Microsoft | Windows |
-| ![Extensión de Microsoft Antimalware](media/azure-stack-marketplace-azure-items/cse.png) | [Extensión de Microsoft Antimalware](https://docs.microsoft.com/azure/security/azure-security-antimalware)| Microsoft Antimalware para Azure es una solución de un único agente dirigida a entornos de aplicaciones e inquilinos, concebida para ejecutarse en segundo plano sin intervención humana. **Descargue esta actualización a la versión incluida de la extensión Antimalware.** | Microsoft | Windows |
+| ![Extensión de Microsoft Antimalware](media/azure-stack-marketplace-azure-items/cse.png) | [Extensión de Microsoft Antimalware](https://docs.microsoft.com/azure/security/azure-security-antimalware)| Microsoft Antimalware para Azure es una solución de un único agente dirigida a entornos de aplicaciones e inquilinos, diseñada para la ejecución en segundo plano sin intervención humana. **Descargue esta actualización a la versión incluida de la extensión Antimalware.** | Microsoft | Windows |
 | ![Extensión de diagnóstico de Microsoft Azure](media/azure-stack-marketplace-azure-items/cse.png) | [Extensión de diagnóstico de Microsoft Azure](https://docs.microsoft.com/azure/virtual-machines/extensions/diagnostics-windows)| Microsoft Azure Diagnostics es la funcionalidad de Azure que habilita la recopilación de datos de diagnóstico en una aplicación implementada. **Descargar esta actualización a la versión incluida en la extensión de diagnóstico para Windows.** | Microsoft | Windows |
-| ![Extensión de Microsoft Monitoring](media/azure-stack-marketplace-azure-items/cse.png) | [Extensión de Microsoft Monitoring Agent](https://docs.microsoft.com/azure/virtual-machines/extensions/oms-windows)| Extensión de Microsoft Monitoring Agent se usa con Microsoft Operations Management Suite para proporcionar funcionalidad de supervisión de máquinas virtuales. **Descargar esta actualización a la versión incluida en la Extensión de Monitoring Agent para Windows.** | Microsoft | Windows |
+| ![Extensión Azure Monitor, Update and Configuration Management](media/azure-stack-marketplace-azure-items/cse.png) | [Extensión Azure Monitor, Update and Configuration Management](https://docs.microsoft.com/azure/virtual-machines/extensions/oms-windows)| La extensión Azure Monitor, Update and Configuration Management se utiliza con Log Analytics, Azure Security Center y Azure Sentinel para proporcionar funcionalidad de supervisión de máquinas virtuales. **Descargar esta actualización a la versión incluida en la Extensión de Monitoring Agent para Windows.** | Microsoft | Windows |
 |![Custom Script Extension](media/azure-stack-marketplace-azure-items/cse.png) | - [Extensión de script personalizado (versión 1, en desuso)](https://docs.microsoft.com/azure/virtual-machines/extensions/custom-script-linuxostc) </b> - [Extensión de script personalizado (versión 2)](https://docs.microsoft.com/azure/virtual-machines/extensions/custom-script-linux) |**Descargue esta actualización a la versión incluida en la extensión de script personalizado para Linux. Hay varias versiones de esta extensión y debería descarga tanto 1.5.2.1 como 2.0.x.** | Microsoft | Linux |
 | ![VM Access para Linux](media/azure-stack-marketplace-azure-items/cse.png) | [VM Access para Linux](https://azure.microsoft.com/blog/using-vmaccess-extension-to-reset-login-credentials-for-linux-vm/)| **Descargue esta actualización para la versión incluida de la extensión VMAccess para Linux. Esta actualización es importante si tiene previsto usar máquinas virtuales Debian Linux.** | Microsoft | Linux |
 | ![Extensión de Acronis Backup para Linux](media/azure-stack-marketplace-azure-items/acronis.png) | [Extensión de Acronis Backup para Linux](https://azuremarketplace.microsoft.com/marketplace/apps/Acronis.acronis-backup-lin-arm) | La extensión de Acronis Backup para Microsoft Azure es parte de la familia de productos de protección de datos de Acronis Backup. | Acronis International GmbH. | Linux |
