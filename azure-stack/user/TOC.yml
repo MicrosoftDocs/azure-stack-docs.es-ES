@@ -240,6 +240,18 @@
           href: azure-stack-rest-api-use.md
     - name: Habilitamiento de un proveedor de servicios en la nube
       href: azure-stack-csp-enable-billing-usage-tracking.md
+- name: Conceptos
+  items:
+    - name: Patrones de nube híbrida
+      items:
+        - name: Introducción a los patrones de nube híbrida
+          href: azure-stack-edge-pattern-overview.md
+        - name: Escalado entre nubes
+          href: azure-stack-edge-pattern-cross-cloud-scaling.md
+        - name: DevOps (CI/CD híbridas)
+          href: azure-stack-edge-pattern-hybrid-ci-cd.md
+        - name: Aplicación distribuida geográficamente
+          href: azure-stack-edge-pattern-geo-distribution.md
 - name: Referencia
   items:
     - name: PowerShell de Azure Stack
