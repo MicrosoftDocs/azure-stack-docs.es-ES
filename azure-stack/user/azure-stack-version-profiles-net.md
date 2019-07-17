@@ -77,7 +77,7 @@ Para usar el SDK de Azure de .NET con Azure Stack, debe proporcionar los siguien
 | Id. de cliente                 | AZURE_CLIENT_ID       | El identificador de aplicación de la entidad de servicio que guardó al crear esta última en la sección anterior de este artículo. |
 | Id. de suscripción           | AZURE_SUBSCRIPTION_ID | El [*identificador de suscripción*][] es su forma de acceder a las ofertas de Azure Stack.                                                      |
 | Secreto del cliente             | AZURE_CLIENT_SECRET   | El secreto de aplicación de la entidad de servicio que guardó al crear esta última.                                      |
-| Punto de conexión de Resource Manager | ARM_ENDPOINT           | Consulte [*el punto de conexión de Resource Manager de Azure Stack*][].                                                                    |
+| Punto de conexión de Resource Manager | ARM_ENDPOINT           | Consulte [*Punto de conexión de Resource Manager de Azure Stack*][].                                                                    |
 | Location                  | RESOURCE_LOCATION     | Ubicación de Azure Stack.
 
 Para buscar el identificador de inquilino de Azure Stack, siga las instrucciones que se encuentran [aquí](../operator/azure-stack-csp-ref-operations.md). Para establecer las variables de entorno, realice los pasos siguientes:
