@@ -2,6 +2,8 @@
   href: index.yml
 - name: Información general
   items:
+    - name: Creación de soluciones con Azure
+      href: azure-stack-hybrid-cloud-patterns.md
     - name: Consideraciones clave
       href: azure-stack-considerations.md
 - name: Guías de inicio rápido
@@ -21,14 +23,203 @@
       href: azure-stack-quick-create-vm-linux-cli.md
 - name: Tutoriales
   items:
-    - name: Tareas comunes
+    - name: Creación de una máquina virtual a partir de una plantilla
+      href: azure-stack-create-vm-template.md
+- name: Guías de procedimientos
+  items:
+    - name: Comience a crear soluciones para la nube híbrida
       items:
         - name: Suscripción a una oferta
           href: azure-stack-subscribe-services.md
-        - name: Creación de una máquina virtual a partir de una plantilla
-          href: azure-stack-create-vm-template.md
-    - name: Introducción a las aplicaciones de la nube híbrida
-      href: azure-stack-hybrid-cloud-patterns.md
+        - name: Habilitamiento de un proveedor de servicios en la nube
+          href: azure-stack-csp-enable-billing-usage-tracking.md
+        - name: Uso del portal de Azure Stack
+          href: azure-stack-use-portal.md
+        - name: Configuración del cliente
+          items:
+            - name: Configurar entorno de desarrollo
+              href: azure-stack-dev-start.md
+            - name: Uso de PowerShell con Azure Stack
+              items:
+                - name: Introducción a PowerShell de Azure Stack
+                  href: azure-stack-powershell-overview.md
+                - name: Instalación de PowerShell de Azure Stack
+                  href: /azure-stack/operator/azure-stack-powershell-install?toc=/azure-stack/user/toc.json&bc=/azure-stack/breadcrumb/toc.json
+                  maintainContext: true
+                - name: Conexión con PowerShell
+                  href: azure-stack-powershell-configure-user.md
+                - name: Descarga de herramientas de Azure Stack
+                  href: /azure-stack/operator/azure-stack-powershell-download?toc=/azure-stack/user/toc.json&bc=/azure-stack/breadcrumb/toc.json
+                  maintainContext: true
+                - name: Uso de Docker para ejecutar PowerShell
+                  href: azure-stack-powershell-user-docker.md
+                - name: Uso del módulo de directivas de Azure Stack
+                  href: azure-stack-policy-module.md
+            - name: Uso de la CLI de Azure con Azure Stack
+              href: azure-stack-version-profiles-azurecli2.md
+            - name: Usar Visual Studio Code
+              href: azure-stack-dev-start-vscode-azure.md
+            - name: Usar Visual Studio
+              href: azure-stack-install-visual-studio.md
+            - name: Uso de Secure Shell
+              href: azure-stack-dev-start-howto-ssh-public-key.md
+            - name: Uso de un cliente REST con la API
+              href: azure-stack-rest-api-use.md
+        - name: Uso de plantillas de Resource Manager para Azure Stack
+          items:
+            - name: Introducción a las plantillas
+              href: azure-stack-arm-templates.md
+            - name: Consideraciones sobre plantillas
+              href: azure-stack-develop-templates.md
+            - name: Desarrollo de plantillas en Azure
+              href: azure-stack-developer.md
+            - name: Comprobación de plantillas
+              href: azure-stack-validate-templates.md
+            - name: Implementación con el portal
+              href: azure-stack-deploy-template-portal.md
+            - name: Implementación con PowerShell
+              href: azure-stack-deploy-template-powershell.md
+            - name: Implementación con la CLI
+              href: azure-stack-deploy-template-command-line.md
+            - name: Implementación con Visual Studio
+              href: azure-stack-deploy-template-visual-studio.md
+        - name: Uso de perfiles de la versión de API
+          items:
+            - name: Información general
+              href: azure-stack-version-profiles.md
+            - name: .NET
+              href: azure-stack-version-profiles-net.md
+            - name: Java
+              href: azure-stack-version-profiles-java.md
+            - name: Go
+              href: azure-stack-version-profiles-go.md
+            - name: Ruby
+              href: azure-stack-version-profiles-ruby.md
+            - name: Python
+              href: azure-stack-version-profiles-python.md
+            - name: API de proveedor de recursos compatibles con perfiles
+              href: azure-stack-profiles-azure-resource-manager-versions.md
+    - name: Uso de proveedores de recursos
+      items:
+        - name: 'Seguridad, cumplimiento e identidad'
+          items:
+            - name: Uso del control de acceso basado en rol
+              href: azure-stack-manage-permissions.md
+            - name: Uso de una identidad de aplicación para acceder a recursos
+              href: /azure-stack/operator/azure-stack-create-service-principals?toc=/azure-stack/user/toc.json&bc=/azure-stack/breadcrumb/toc.json
+        - name: Uso de servicios
+          items:
+            - name: Proceso
+              items:
+                - name: Información general
+                  href: azure-stack-compute-overview.md
+                - name: Consideraciones sobre máquinas virtuales
+                  href: azure-stack-vm-considerations.md
+                - name: Tamaños de VM
+                  href: azure-stack-vm-sizes.md
+                - name: Administración de discos de máquinas virtuales
+                  href: azure-stack-manage-vm-disks.md
+                - name: Consideraciones sobre discos administrados
+                  href: azure-stack-managed-disk-considerations.md
+                - name: Protección de máquinas virtuales
+                  href: azure-stack-manage-vm-protect.md
+                - name: Administración y actualización de la máquina virtual
+                  href: vm-update-management.md
+                - name: Consideraciones sobre VM con SQL Server
+                  href: azure-stack-sql-server-vm-considerations.md
+            - name: Storage
+              items:
+                - name: Información general
+                  href: azure-stack-storage-overview.md
+                - name: Consideraciones sobre el almacenamiento
+                  href: azure-stack-acs-differences.md
+                - name: Herramientas de desarrollo de almacenamiento
+                  href: azure-stack-storage-dev.md
+                - name: Herramientas de transferencia de datos
+                  href: azure-stack-storage-transfer.md
+                - name: Conexión con el explorador de Storage
+                  href: azure-stack-storage-connect-se.md
+            - name: Red
+              items:
+                - name: Información general
+                  href: azure-stack-network-overview.md
+                - name: Consideraciones sobre redes
+                  href: azure-stack-network-differences.md
+                - name: Puertas de enlace de VPN
+                  items:
+                    - name: Conexión mediante VPN
+                      href: azure-stack-connect-vpn.md
+                    - name: Acerca de VPN Gateway
+                      href: azure-stack-vpn-gateway-about-vpn-gateways.md
+                    - name: Configuración de las directivas de conexión IPsec/IKE
+                      href: azure-stack-vpn-s2s.md
+                    - name: Configuración de VPN Gateway
+                      href: azure-stack-vpn-gateway-settings.md
+                - name: iDNS para Azure Stack
+                  href: azure-stack-understanding-dns.md
+                - name: DNS en Azure Stack
+                  href: azure-stack-dns.md
+            - name: Key Vault
+              items:
+                - name: Información general
+                  href: azure-stack-key-vault-intro.md
+                - name: Administración con el portal
+                  href: azure-stack-key-vault-manage-portal.md
+                - name: Administración con PowerShell
+                  href: azure-stack-key-vault-manage-powershell.md
+                - name: Creación de una máquina virtual con un secreto
+                  href: azure-stack-key-vault-deploy-vm-with-secret.md
+                - name: Creación de una máquina virtual con un certificado
+                  href: azure-stack-key-vault-push-secret-into-vm.md
+                - name: Almacenamiento de credenciales en Key Vault
+                  href: azure-stack-key-vault-store-credentials.md
+                - name: Aplicación de ejemplos de Key Vault
+                  href: azure-stack-key-vault-sample-app.md
+            - name: Azure Monitor
+              href: azure-stack-metrics-azure-data.md
+              items:
+                - name: Métricas compatibles
+                  href: azure-stack-metrics-supported.md
+                - name: Consumo de datos de supervisión de Azure
+                  href: azure-stack-metrics-monitor.md
+        - name: Uso de plantillas de solución
+          items:
+            - name: Implementación de Ethereum
+              href: azure-stack-ethereum.md
+            - name: Implementación de un clúster de Service Fabric
+              href: azure-stack-solution-template-service-fabric-cluster.md
+            - name: Implementación de un clúster de Kubernetes
+              href: azure-stack-solution-template-kubernetes-deploy.md
+              items:
+                - name: Implementación de Kubernetes mediante Azure AD
+                  href: azure-stack-solution-template-kubernetes-azuread.md
+                - name: Implementación de Kubernetes mediante AD FS
+                  href: azure-stack-solution-template-kubernetes-adfs.md
+                - name: Habilitación del panel de Kubernetes
+                  href: azure-stack-solution-template-kubernetes-dashboard.md
+                - name: Solución de problemas de clúster de Kubernetes
+                  href: azure-stack-solution-template-kubernetes-trouble.md
+            - name: Implementación de Cognitive Services
+              href: azure-stack-solution-template-cognitive-services.md
+    - name: Implementación de aplicaciones
+      items:
+        - name: 'Implementación de una aplicación web en C# en una máquina virtual Windows'
+          href: azure-stack-dev-start-howto-vm-dotnet.md
+        - name: Implementación de una aplicación web en una máquina virtual Linux
+          items:
+            - name: Implementación de una máquina virtual Linux para una aplicación web
+              href: azure-stack-dev-start-howto-deploy-linux.md
+            - name: Implementación de una aplicación web de Java
+              href: azure-stack-dev-start-howto-vm-java.md
+            - name: Implementación de una aplicación web de Go
+              href: azure-stack-dev-start-howto-vm-go.md
+            - name: Implementación de una aplicación web de Ruby
+              href: azure-stack-dev-start-howto-vm-ruby.md
+            - name: Implementación de una aplicación web de Python
+              href: azure-stack-dev-start-howto-vm-python.md
+            - name: Implementación de una aplicación web de NodeJS
+              href: azure-stack-dev-start-howto-vm-nodejs.md
+    - name: Implementación de patrones de nube híbrida
       items:
         - name: Implementación de aplicaciones en Azure y Azure Stack
           href: azure-stack-solution-pipeline.md
@@ -48,198 +239,6 @@
           href: azure-stack-solution-mongodb-ha.md
         - name: Implementación de SQL Server 2016 de alta disponibilidad
           href: azure-stack-solution-sql-ha.md
-- name: Guías de procedimientos
-  items:
-    - name: Uso del portal de Azure Stack
-      href: azure-stack-use-portal.md
-    - name: Conexión con PowerShell
-      href: azure-stack-powershell-configure-user.md
-    - name: 'Seguridad, cumplimiento e identidad'
-      items:
-        - name: Uso del control de acceso basado en rol
-          href: azure-stack-manage-permissions.md
-        - name: Uso de una identidad de aplicación para acceder a recursos
-          href: /azure-stack/operator/azure-stack-create-service-principals?toc=/azure-stack/user/toc.json&bc=/azure-stack/breadcrumb/toc.json
-    - name: Uso de servicios
-      items:
-        - name: Proceso
-          items:
-            - name: Información general
-              href: azure-stack-compute-overview.md
-            - name: Consideraciones sobre máquinas virtuales
-              href: azure-stack-vm-considerations.md
-            - name: Tamaños de VM
-              href: azure-stack-vm-sizes.md
-            - name: Administración de discos de máquinas virtuales
-              href: azure-stack-manage-vm-disks.md
-            - name: Consideraciones sobre discos administrados
-              href: azure-stack-managed-disk-considerations.md
-            - name: Protección de máquinas virtuales
-              href: azure-stack-manage-vm-protect.md
-            - name: Administración y actualización de la máquina virtual
-              href: vm-update-management.md
-            - name: Consideraciones sobre VM con SQL Server
-              href: azure-stack-sql-server-vm-considerations.md
-        - name: Storage
-          items:
-            - name: Información general
-              href: azure-stack-storage-overview.md
-            - name: Consideraciones sobre el almacenamiento
-              href: azure-stack-acs-differences.md
-            - name: Herramientas de desarrollo de almacenamiento
-              href: azure-stack-storage-dev.md
-            - name: Herramientas de transferencia de datos
-              href: azure-stack-storage-transfer.md
-            - name: Conexión con el explorador de Storage
-              href: azure-stack-storage-connect-se.md
-        - name: Red
-          items:
-            - name: Información general
-              href: azure-stack-network-overview.md
-            - name: Consideraciones sobre redes
-              href: azure-stack-network-differences.md
-            - name: Puertas de enlace de VPN
-              items:
-                - name: Conexión mediante VPN
-                  href: azure-stack-connect-vpn.md
-                - name: Acerca de VPN Gateway
-                  href: azure-stack-vpn-gateway-about-vpn-gateways.md
-                - name: Configuración de las directivas de conexión IPsec/IKE
-                  href: azure-stack-vpn-s2s.md
-                - name: Configuración de VPN Gateway
-                  href: azure-stack-vpn-gateway-settings.md
-            - name: iDNS para Azure Stack
-              href: azure-stack-understanding-dns.md
-            - name: DNS en Azure Stack
-              href: azure-stack-dns.md
-        - name: Key Vault
-          items:
-            - name: Información general
-              href: azure-stack-key-vault-intro.md
-            - name: Administración con el portal
-              href: azure-stack-key-vault-manage-portal.md
-            - name: Administración con PowerShell
-              href: azure-stack-key-vault-manage-powershell.md
-            - name: Creación de una máquina virtual con un secreto
-              href: azure-stack-key-vault-deploy-vm-with-secret.md
-            - name: Creación de una máquina virtual con un certificado
-              href: azure-stack-key-vault-push-secret-into-vm.md
-            - name: Almacenamiento de credenciales en Key Vault
-              href: azure-stack-key-vault-store-credentials.md
-            - name: Aplicación de ejemplos de Key Vault
-              href: azure-stack-key-vault-sample-app.md
-        - name: Azure Monitor
-          href: azure-stack-metrics-azure-data.md
-          items:
-            - name: Métricas compatibles
-              href: azure-stack-metrics-supported.md
-            - name: Consumo de datos de supervisión de Azure
-              href: azure-stack-metrics-monitor.md
-        - name: Plantillas de solución
-          items:
-            - name: Implementación de Ethereum
-              href: azure-stack-ethereum.md
-            - name: Implementación de un clúster de Service Fabric
-              href: azure-stack-solution-template-service-fabric-cluster.md
-            - name: Implementación de un clúster de Kubernetes
-              href: azure-stack-solution-template-kubernetes-deploy.md
-              items:
-                - name: Implementación de Kubernetes mediante Azure AD
-                  href: azure-stack-solution-template-kubernetes-azuread.md
-                - name: Implementación de Kubernetes mediante AD FS
-                  href: azure-stack-solution-template-kubernetes-adfs.md
-                - name: Habilitación del panel de Kubernetes
-                  href: azure-stack-solution-template-kubernetes-dashboard.md
-                - name: Solución de problemas de clúster de Kubernetes
-                  href: azure-stack-solution-template-kubernetes-trouble.md
-            - name: Implementación de Cognitive Services
-              href: azure-stack-solution-template-cognitive-services.md
-    - name: Uso del administrador de recursos de Azure Stack
-      items:
-        - name: Configuración del cliente
-          items:
-            - name: Clientes del SDK de Azure
-              href: azure-stack-dev-start.md
-            - name: Cliente de PowerShell de Azure Stack
-              items:
-                - name: Introducción a PowerShell de Azure Stack
-                  href: azure-stack-powershell-overview.md
-                - name: Instalación de PowerShell de Azure Stack
-                  href: /azure-stack/operator/azure-stack-powershell-install?toc=/azure-stack/user/toc.json&bc=/azure-stack/breadcrumb/toc.json
-                  maintainContext: true
-                - name: Conexión con PowerShell
-                  href: azure-stack-powershell-configure-user.md
-                - name: Descarga de herramientas de Azure Stack
-                  href: /azure-stack/operator/azure-stack-powershell-download?toc=/azure-stack/user/toc.json&bc=/azure-stack/breadcrumb/toc.json
-                  maintainContext: true
-                - name: Uso de Docker para ejecutar PowerShell
-                  href: azure-stack-powershell-user-docker.md
-            - name: Cliente de Visual Studio Code
-              href: azure-stack-dev-start-vscode-azure.md
-            - name: Cliente de Visual Studio
-              href: azure-stack-install-visual-studio.md
-            - name: Cliente de Secure Shell
-              href: azure-stack-dev-start-howto-ssh-public-key.md
-            - name: Uso de perfiles de la versión de API
-              items:
-                - name: Información general
-                  href: azure-stack-version-profiles.md
-                - name: .NET
-                  href: azure-stack-version-profiles-net.md
-                - name: Java
-                  href: azure-stack-version-profiles-java.md
-                - name: CLI de Azure
-                  href: azure-stack-version-profiles-azurecli2.md
-                - name: Go
-                  href: azure-stack-version-profiles-go.md
-                - name: Ruby
-                  href: azure-stack-version-profiles-ruby.md
-                - name: Python
-                  href: azure-stack-version-profiles-python.md
-                - name: API de proveedor de recursos compatibles con perfiles
-                  href: azure-stack-profiles-azure-resource-manager-versions.md
-        - name: Implementación de una máquina virtual y una aplicación web
-          items:
-            - name: 'Implementación de una aplicación web en C# en una máquina virtual Windows'
-              href: azure-stack-dev-start-howto-vm-dotnet.md
-            - name: Implementación de una aplicación web en una máquina virtual Linux
-              items:
-                - name: Implementación de una máquina virtual Linux para una aplicación web
-                  href: azure-stack-dev-start-howto-deploy-linux.md
-                - name: Implementación de una aplicación web de Java
-                  href: azure-stack-dev-start-howto-vm-java.md
-                - name: Implementación de una aplicación web de Go
-                  href: azure-stack-dev-start-howto-vm-go.md
-                - name: Implementación de una aplicación web de Ruby
-                  href: azure-stack-dev-start-howto-vm-ruby.md
-                - name: Implementación de una aplicación web de Python
-                  href: azure-stack-dev-start-howto-vm-python.md
-                - name: Implementación de una aplicación web de NodeJS
-                  href: azure-stack-dev-start-howto-vm-nodejs.md
-        - name: Uso del módulo de directivas de Azure Stack
-          href: azure-stack-policy-module.md
-        - name: Uso de plantillas
-          items:
-            - name: Introducción a las plantillas
-              href: azure-stack-arm-templates.md
-            - name: Consideraciones sobre plantillas
-              href: azure-stack-develop-templates.md
-            - name: Desarrollo de plantillas en Azure
-              href: azure-stack-developer.md
-            - name: Comprobación de plantillas
-              href: azure-stack-validate-templates.md
-            - name: Implementación con el portal
-              href: azure-stack-deploy-template-portal.md
-            - name: Implementación con PowerShell
-              href: azure-stack-deploy-template-powershell.md
-            - name: Implementación con la CLI
-              href: azure-stack-deploy-template-command-line.md
-            - name: Implementación con Visual Studio
-              href: azure-stack-deploy-template-visual-studio.md
-        - name: Uso de REST para acceder a recursos
-          href: azure-stack-rest-api-use.md
-    - name: Habilitamiento de un proveedor de servicios en la nube
-      href: azure-stack-csp-enable-billing-usage-tracking.md
 - name: Conceptos
   items:
     - name: Patrones de nube híbrida
