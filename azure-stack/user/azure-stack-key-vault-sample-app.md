@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/08/2019
+ms.date: 07/17/2019
 ms.author: sethm
 ms.lastreviewed: 04/08/2019
-ms.openlocfilehash: 6cc9475ee04bcdcb7b4c35f4ca5a39efc7c36aa8
-ms.sourcegitcommit: ad2f2cb4dc8d5cf0c2c37517d5125921cff44cdd
+ms.openlocfilehash: fa5a602fbdca32aed635f587fef248bcff0dae06
+ms.sourcegitcommit: 2063332b4d7f98ee944dd1f443847eea70eb5614
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67138894"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68303165"
 ---
 # <a name="allow-apps-to-access-azure-stack-key-vault-secrets"></a>Permitir a las aplicaciones acceder a los secretos de Key Vault de Azure Stack
 

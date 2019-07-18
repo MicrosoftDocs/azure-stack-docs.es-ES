@@ -11,12 +11,12 @@ ms.date: 05/29/2019
 ms.author: justinha
 ms.reviewer: adshar
 ms.lastreviewed: 11/20/2018
-ms.openlocfilehash: 58d06d20da6890474969318b3a7450975848c84a
-ms.sourcegitcommit: ad2f2cb4dc8d5cf0c2c37517d5125921cff44cdd
+ms.openlocfilehash: b37c9599028cef0cc8d85bcd8004c5290604c1a3
+ms.sourcegitcommit: 2063332b4d7f98ee944dd1f443847eea70eb5614
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67138886"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68303137"
 ---
 # <a name="azure-stack-diagnostics-tools"></a>Herramientas de diagnóstico de Azure Stack
 
@@ -53,23 +53,22 @@ El Recopilador de seguimiento recopila estos archivos y los guarda en un recurso
 Para ejecutar la herramienta de recopilación de registros en un sistema integrado, debe tener acceso al punto de conexión con privilegios (PEP). Este es un script de ejemplo que se puede ejecutar mediante el PEP para recopilar registros en un sistema integrado:
 
 ```powershell
-$ip = "<IP ADDRESS OF THE PEP VM>" # You can also use the machine name instead of IP here.
+$ipAddress = "<IP ADDRESS OF THE PEP VM>" # You can also use the machine name instead of IP here.
 
-$pwd= ConvertTo-SecureString "<CLOUD ADMIN PASSWORD>" -AsPlainText -Force
-$cred = New-Object System.Management.Automation.PSCredential ("<DOMAIN NAME>\CloudAdmin", $pwd)
+$password = ConvertTo-SecureString "<CLOUD ADMIN PASSWORD>" -AsPlainText -Force
+$cred = New-Object -TypeName System.Management.Automation.PSCredential ("<DOMAIN NAME>\CloudAdmin", $password)
 
 $shareCred = Get-Credential
 
-$s = New-PSSession -ComputerName $ip -ConfigurationName PrivilegedEndpoint -Credential $cred
+$session = New-PSSession -ComputerName $ipAddress -ConfigurationName PrivilegedEndpoint -Credential $cred
 
 $fromDate = (Get-Date).AddHours(-8)
-$toDate = (Get-Date).AddHours(-2)  #provide the time that includes the period for your issue
+$toDate = (Get-Date).AddHours(-2) # Provide the time that includes the period for your issue
 
-Invoke-Command -Session $s {    Get-AzureStackLog -OutputSharePath "<EXTERNAL SHARE ADDRESS>" -OutputShareCredential $using:shareCred  -FilterByRole Storage -FromDate $using:fromDate -ToDate $using:toDate}
+Invoke-Command -Session $session { Get-AzureStackLog -OutputSharePath "<EXTERNAL SHARE ADDRESS>" -OutputShareCredential $using:shareCred  -FilterByRole Storage -FromDate $using:fromDate -ToDate $using:toDate}
 
-if($s)
-{
-    Remove-PSSession $s
+if ($session) {
+    Remove-PSSession -Session $session
 }
 ```
 
@@ -215,28 +214,25 @@ Actualmente, no se puede usar el parámetro `-FilterByRole` para filtrar la cole
 #### <a name="example-of-collecting-on-demand-logs"></a>Ejemplo de recopilación de registros a petición
 
 ```powershell
-$ip = "<IP address of the PEP VM>" # You can also use the machine name instead of IP here.
+$ipAddress = "<IP ADDRESS OF THE PEP VM>" # You can also use the machine name instead of IP here.
 
-$pwd= ConvertTo-SecureString "<cloud admin password>" -AsPlainText -Force
-$cred = New-Object System.Management.Automation.PSCredential ("<domain name>\CloudAdmin", $pwd)
+$password = ConvertTo-SecureString "<CLOUD ADMIN PASSWORD>" -AsPlainText -Force
+$cred = New-Object -TypeName System.Management.Automation.PSCredential ("<DOMAIN NAME>\CloudAdmin", $password)
 
 $shareCred = Get-Credential
 
-$s = New-PSSession -ComputerName $ip -ConfigurationName PrivilegedEndpoint -Credential $cred
+$session = New-PSSession -ComputerName $ipAddress -ConfigurationName PrivilegedEndpoint -Credential $cred
 
 $fromDate = (Get-Date).AddHours(-8)
-$toDate = (Get-Date).AddHours(-2)  #provide the time that includes the period for your issue
+$toDate = (Get-Date).AddHours(-2) # Provide the time that includes the period for your issue
 
-Invoke-Command -Session $s
-{
-   Invoke-AzureStackOnDemandLog -Generate -FilterByRole "<on-demand role name>" #Provide the supported on-demand role name : OEM, NC, SLB , Gateway
-   Get-AzureStackLog -OutputSharePath "<external share address>" -OutputShareCredential $using:shareCred  -FilterByRole Storage -FromDate $using:fromDate -ToDate $using:toDate
-
+Invoke-Command -Session $session {
+   Invoke-AzureStackOnDemandLog -Generate -FilterByRole "<on-demand role name>" # Provide the supported on-demand role name e.g. OEM, NC, SLB, Gateway
+   Get-AzureStackLog -OutputSharePath "<external share address>" -OutputShareCredential $using:shareCred -FilterByRole Storage -FromDate $using:fromDate -ToDate $using:toDate
 }
 
-if($s)
-{
-   Remove-PSSession $s
+if ($session) {
+   Remove-PSSession -Session $session
 }
 ```
 
