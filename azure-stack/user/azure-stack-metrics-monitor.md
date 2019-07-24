@@ -14,18 +14,18 @@ ms.topic: article
 ms.date: 04/15/2019
 ms.author: mabrigg
 ms.lastreviewed: 12/01/2018
-ms.openlocfilehash: a068576cb907dfc2f7fcc79b1beea08899a2cb2c
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 0b04a7834218d07706e6314a9c41e0370ff6f6fd
+ms.sourcegitcommit: b36d078e699c7924624b79641dbe9021af9606ba
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64310497"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67816189"
 ---
 # <a name="how-to-consume-monitoring-data-from-azure-stack"></a>Consumo de datos de supervisión de Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack*
 
-Con la canalización de Azure Monitor, puede buscar los datos de supervisión en un único lugar, al igual que ocurre con Azure Monitor en Azure global. Sin embargo, no todos los datos de supervisión de Azure global están disponibles en Azure Stack. En este artículo, se resumen los distintos mecanismos para ingerir datos de supervisión del servicio mediante programación.
+Con la canalización de Azure Monitor, los datos de supervisión se encuentran en una única ubicación, al igual que ocurre con Azure Monitor en Azure global. Sin embargo, no todos los datos de supervisión de Azure global están disponibles en Azure Stack. En este artículo, se proporciona un resumen de las distintas formas de utilizar los datos de supervisión en Azure Stack.
  
 ## <a name="options-for-data-consumption"></a>Opciones para el consumo de datos
 

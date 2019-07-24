@@ -14,52 +14,53 @@ ms.topic: article
 ms.date: 03/11/2019
 ms.author: mabrigg
 ms.lastreviewed: 12/06/2018
-ms.openlocfilehash: e63142a686343c64495da5f79bbc1721aa5412b5
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: 442fc6080f9b0aba87e0141257f79cdf910e0a41
+ms.sourcegitcommit: b36d078e699c7924624b79641dbe9021af9606ba
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64986068"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67816205"
 ---
-# <a name="supported-metrics-with-azure-monitor-on-azure-stack"></a>Métricas de Azure Stack compatibles con Azure Monitor
+# <a name="supported-metrics-for-azure-monitor-on-azure-stack"></a>Métricas de Azure Stack compatibles con Azure Monitor
 
-*Se aplica a: sistemas integrados de Azure Stack*
+*Se aplica a: Sistemas integrados de Azure Stack*
 
-Puede recuperar las métricas de Azure Monitor en Azure Stack igual que en Azure. Puede crear las medidas en el portal, obtenerlas con la API REST o consultarlas con PowerShell o la CLI.
+Las métricas de Azure Monitor en Azure Stack se recuperan de la misma manera que en Azure global. Puede crear las medidas en el portal, obtenerlas con la API REST o consultarlas con PowerShell o la CLI.
 
-En las tablas siguientes, se muestran las métricas disponibles con la canalización de métricas de Azure Monitor en Azure Stack. Para consultar estas métricas y acceder a ellas, necesita la versión **2018-01-01** del perfil de la API. Para más información sobre los perfiles de API y Azure Stack, consulte [Administración de perfiles de versión de API en Azure Stack](azure-stack-version-profiles.md).
+En las tablas siguientes, se muestran las métricas disponibles con la canalización de métricas de Azure Monitor en Azure Stack. Para consultar estas métricas y acceder a ellas, utilice la versión **2018-01-01** del perfil de la API. Para más información sobre los perfiles de API y Azure Stack, consulte [Administración de perfiles de versión de API en Azure Stack](azure-stack-version-profiles.md).
 
 ## <a name="microsoftcomputevirtualmachines"></a>Microsoft.Compute/virtualMachines
 
 | Métrica | Nombre de métrica para mostrar | Unidad | Tipo de agregación | DESCRIPCIÓN | Dimensiones |
 |----------------|---------------------|---------|------------------|-----------------------------------------------------------------------------------------------|---------------|
-| Porcentaje de CPU | Porcentaje de CPU | Percent | Media | El porcentaje de unidades de proceso asignadas que las máquinas virtuales usan actualmente | Sin dimensiones |
+| Porcentaje de CPU | Porcentaje de CPU | Percent | Media | El porcentaje de unidades de proceso asignadas que las máquinas virtuales usan actualmente. | Sin dimensiones |
 
 ## <a name="microsoftstoragestorageaccounts"></a>Microsoft.Storage/storageAccounts
 
 | Métrica | Nombre de métrica para mostrar | Unidad | Tipo de agregación | DESCRIPCIÓN | Dimensiones |
 |----------------------|------------------------|--------------|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|
-| UsedCapacity | Capacidad usada | Bytes | Media | Capacidad usada de la cuenta | Sin dimensiones |
-| Transacciones | Transacciones | Recuento | Total | El número de solicitudes realizadas a un servicio de almacenamiento o la operación de API especificada. Este número incluye solicitudes correctas y con errores, así como las solicitudes que generaron errores. Use la dimensión ResponseType para el número de diferentes tipos de respuesta. | ResponseType, GeoType, ApiName |
+| UsedCapacity | Capacidad usada | Bytes | Media | Capacidad usada de la cuenta. | Sin dimensiones |
+| Transacciones | Transacciones | Recuento | Total | El número de solicitudes realizadas a un servicio de almacenamiento o la operación de API especificada. Este número incluye solicitudes correctas y con errores, así como las solicitudes que generaron errores. Use la dimensión ResponseType para el número de diferentes tipos de respuestas. | ResponseType, GeoType, ApiName |
 | Entrada | Entrada | Bytes | Total | La cantidad de datos de entrada, en bytes. Este número incluye la entradas desde un cliente externo en Azure Storage, así como la entrada dentro de Azure. | GeoType, ApiName |
 | Salida | Salida | Bytes | Total | La cantidad de datos de salida, en bytes. Este número incluye la salida de un cliente externo en Azure Storage, así como la salida dentro de Azure. En consecuencia, este número no refleja las salidas facturables. | GeoType, ApiName |
 | SuccessServerLatency | Latencia del servidor correcta | Milisegundos | Media | La latencia media utilizada por Azure Storage para procesar una solicitud correcta, en milisegundos. Este valor no incluye la latencia de red especificada en AverageE2ELatency. | GeoType, ApiName |
 | SuccessE2ELatency | Latencia de E2E correcta | Milisegundos | Media | La latencia media de un extremo a otro de las solicitudes correctas realizadas a un servicio de almacenamiento o a la operación de API especificada, en milisegundos. Este valor incluye el tiempo de procesamiento requerido dentro de Azure Storage para leer la solicitud, enviar la respuesta y recibir la confirmación de la respuesta. | GeoType, ApiName |
-| Disponibilidad | Disponibilidad | Percent | Media | El porcentaje de disponibilidad para el servicio de almacenamiento o la operación de API especificada. Para calcular la disponibilidad hay que tomar el valor deTotalBillableRequests y dividirlo por el número de solicitudes aplicables, incluidas aquellas que generaron errores inesperados. Todos los errores inesperados reducen la disponibilidad del servicio de almacenamiento o de la operación de API especificada. | GeoType, ApiName |
+| Disponibilidad | Disponibilidad | Percent | Media | El porcentaje de disponibilidad para el servicio de almacenamiento o la operación de API especificada. Para calcular la disponibilidad, hay que tomar el valor de TotalBillableRequests y dividirlo por el número de solicitudes aplicables, incluidas aquellas que generaron errores inesperados. Todos los errores inesperados reducen la disponibilidad del servicio de almacenamiento o de la operación de API especificada. | GeoType, ApiName |
 
 ## <a name="microsoftstoragestorageaccountsblobservices"></a>Microsoft.Storage/storageAccounts/blobServices
 
 | Métrica | Nombre de métrica para mostrar | Unidad | Tipo de agregación | DESCRIPCIÓN | Dimensiones |
-|----------------------|------------------------|--------------|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|
+|----------------------|------------------------|--------------|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|
 | BlobCapacity | Capacidad de Blob | Bytes | Total | Cantidad de almacenamiento que ha usado la instancia de Blob service de la cuenta de almacenamiento, en bytes. | BlobType |
 | BlobCount | Recuento de blobs | Recuento | Total | Número de blobs en la instancia de Blob service de la cuenta de almacenamiento. | BlobType |
 | ContainerCount | Recuento de contenedores de blobs | Recuento | Media | Número de contenedores en la instancia de Blob service de la cuenta de almacenamiento. | Sin dimensiones |
-| Transacciones | Transacciones | Recuento | Total | El número de solicitudes realizadas a un servicio de almacenamiento o la operación de API especificada. Este número incluye solicitudes correctas y con errores, así como las solicitudes que generaron errores. Use la dimensión ResponseType para el número de diferentes tipos de respuesta. | ResponseType, GeoType, ApiName |
+| Transacciones | Transacciones | Recuento | Total | El número de solicitudes realizadas a un servicio de almacenamiento o la operación de API especificada. Este número incluye solicitudes correctas y con errores, así como las solicitudes que generaron errores. Use la dimensión ResponseType para el número de diferentes tipos de respuestas. | ResponseType, GeoType, ApiName |
 | Entrada | Entrada | Bytes | Total | La cantidad de datos de entrada, en bytes. Este número incluye la entradas desde un cliente externo en Azure Storage, así como la entrada dentro de Azure. | GeoType, ApiName |
 | Salida | Salida | Bytes | Total | La cantidad de datos de salida, en bytes. Este número incluye la salida de un cliente externo en Azure Storage, así como la salida dentro de Azure. En consecuencia, este número no refleja las salidas facturables. | GeoType, ApiName |
 | SuccessServerLatency | Latencia del servidor correcta | Milisegundos | Media | La latencia media utilizada por Azure Storage para procesar una solicitud correcta, en milisegundos. Este valor no incluye la latencia de red especificada en AverageE2ELatency. | GeoType, ApiName |
 | SuccessE2ELatency | Latencia de E2E correcta | Milisegundos | Media | La latencia media de un extremo a otro de las solicitudes correctas realizadas a un servicio de almacenamiento o a la operación de API especificada, en milisegundos. Este valor incluye el tiempo de procesamiento requerido dentro de Azure Storage para leer la solicitud, enviar la respuesta y recibir la confirmación de la respuesta. | GeoType, ApiName |
-| Disponibilidad | Disponibilidad | Percent | Media | El porcentaje de disponibilidad para el servicio de almacenamiento o la operación de API especificada. Para calcular la disponibilidad hay que tomar el valor deTotalBillableRequests y dividirlo por el número de solicitudes aplicables, incluidas aquellas que generaron errores inesperados. Todos los errores inesperados reducen la disponibilidad del servicio de almacenamiento o de la operación de API especificada. | GeoType, ApiName |
+| Disponibilidad | Disponibilidad | Percent | Media | El porcentaje de disponibilidad para el servicio de almacenamiento o la operación de API especificada. Para calcular la disponibilidad, hay que tomar el valor de TotalBillableRequests y dividirlo por el número de solicitudes aplicables, incluidas aquellas que generaron errores inesperados. Todos los errores inesperados reducen la disponibilidad del servicio de almacenamiento o de la operación de API especificada. | GeoType, ApiName |
 
 ## <a name="microsoftstoragestorageaccountstableservices"></a>Microsoft.Storage/storageAccounts/tableServices
 
@@ -68,12 +69,12 @@ En las tablas siguientes, se muestran las métricas disponibles con la canalizac
 | TableCapacity | Capacidad de Table | Bytes | Media | Cantidad de almacenamiento que ha utilizado la instancia de Table service de la cuenta de almacenamiento, en bytes. | Sin dimensiones |
 | TableCount | Recuento de tablas | Recuento | Media | Número de tablas en la instancia de Table service de la cuenta de almacenamiento. | Sin dimensiones |
 | TableEntityCount | Recuento de entidades de Table | Recuento | Media | Número de entidades de tabla en la instancia de Table service de la cuenta de almacenamiento. | Sin dimensiones |
-| Transacciones | Transacciones | Recuento | Total | El número de solicitudes realizadas a un servicio de almacenamiento o la operación de API especificada. Este número incluye solicitudes correctas y con errores, así como las solicitudes que generaron errores. Use la dimensión ResponseType para el número de diferentes tipos de respuesta. | ResponseType, GeoType, ApiName |
+| Transacciones | Transacciones | Recuento | Total | El número de solicitudes realizadas a un servicio de almacenamiento o la operación de API especificada. Este número incluye solicitudes correctas y con errores, así como las solicitudes que generaron errores. Use la dimensión ResponseType para el número de diferentes tipos de respuestas. | ResponseType, GeoType, ApiName |
 | Entrada | Entrada | Bytes | Total | La cantidad de datos de entrada, en bytes. Este número incluye la entradas desde un cliente externo en Azure Storage, así como la entrada dentro de Azure. | GeoType, ApiName |
 | Salida | Salida | Bytes | Total | La cantidad de datos de salida, en bytes. Este número incluye la salida de un cliente externo en Azure Storage, así como la salida dentro de Azure. En consecuencia, este número no refleja las salidas facturables. | GeoType, ApiName |
 | SuccessServerLatency | Latencia del servidor correcta | Milisegundos | Media | La latencia media utilizada por Azure Storage para procesar una solicitud correcta, en milisegundos. Este valor no incluye la latencia de red especificada en AverageE2ELatency. | GeoType, ApiName |
 | SuccessE2ELatency | Latencia de E2E correcta | Milisegundos | Media | La latencia media de un extremo a otro de las solicitudes correctas realizadas a un servicio de almacenamiento o a la operación de API especificada, en milisegundos. Este valor incluye el tiempo de procesamiento requerido dentro de Azure Storage para leer la solicitud, enviar la respuesta y recibir la confirmación de la respuesta. | GeoType, ApiName |
-| Disponibilidad | Disponibilidad | Percent | Media | El porcentaje de disponibilidad para el servicio de almacenamiento o la operación de API especificada. Para calcular la disponibilidad hay que tomar el valor deTotalBillableRequests y dividirlo por el número de solicitudes aplicables, incluidas aquellas que generaron errores inesperados. Todos los errores inesperados reducen la disponibilidad del servicio de almacenamiento o de la operación de API especificada. | GeoType, ApiName |
+| Disponibilidad | Disponibilidad | Percent | Media | El porcentaje de disponibilidad para el servicio de almacenamiento o la operación de API especificada. Para calcular la disponibilidad, hay que tomar el valor de TotalBillableRequests y dividirlo por el número de solicitudes aplicables, incluidas aquellas que generaron errores inesperados. Todos los errores inesperados reducen la disponibilidad del servicio de almacenamiento o de la operación de API especificada. | GeoType, ApiName |
 
 ## <a name="microsoftstoragestorageaccountsqueueservices"></a>Microsoft.Storage/storageAccounts/queueServices
 
@@ -82,12 +83,12 @@ En las tablas siguientes, se muestran las métricas disponibles con la canalizac
 | QueueCapacity | Capacidad de Queue | Bytes | Media | Cantidad de almacenamiento que ha utilizado la instancia de Queue service de la cuenta de almacenamiento, en bytes. | Sin dimensiones |
 | QueueCount | Recuento de colas | Recuento | Media | Número de colas en la instancia de Queue service de la cuenta de almacenamiento. | Sin dimensiones |
 | QueueMessageCount | Recuento de mensajes de Queue | Recuento | Media | Número aproximado de mensajes de cola en la instancia de Queue service de la cuenta de almacenamiento. | Sin dimensiones |
-| Transacciones | Transacciones | Recuento | Total | El número de solicitudes realizadas a un servicio de almacenamiento o la operación de API especificada. Este número incluye solicitudes correctas y con errores, así como las solicitudes que generaron errores. Use la dimensión ResponseType para el número de diferentes tipos de respuesta. | ResponseType, GeoType, ApiName |
+| Transacciones | Transacciones | Recuento | Total | El número de solicitudes realizadas a un servicio de almacenamiento o la operación de API especificada. Este número incluye solicitudes correctas y con errores, así como las solicitudes que generaron errores. Use la dimensión ResponseType para el número de diferentes tipos de respuestas. | ResponseType, GeoType, ApiName |
 | Entrada | Entrada | Bytes | Total | La cantidad de datos de entrada, en bytes. Este número incluye la entradas desde un cliente externo en Azure Storage, así como la entrada dentro de Azure. | GeoType, ApiName |
 | Salida | Salida | Bytes | Total | La cantidad de datos de salida, en bytes. Este número incluye la salida de un cliente externo en Azure Storage, así como la salida dentro de Azure. En consecuencia, este número no refleja las salidas facturables. | GeoType, ApiName |
 | SuccessServerLatency | Latencia del servidor correcta | Milisegundos | Media | La latencia media utilizada por Azure Storage para procesar una solicitud correcta, en milisegundos. Este valor no incluye la latencia de red especificada en AverageE2ELatency. | GeoType, ApiName |
 | SuccessE2ELatency | Latencia de E2E correcta | Milisegundos | Media | La latencia media de un extremo a otro de las solicitudes correctas realizadas a un servicio de almacenamiento o a la operación de API especificada, en milisegundos. Este valor incluye el tiempo de procesamiento requerido dentro de Azure Storage para leer la solicitud, enviar la respuesta y recibir la confirmación de la respuesta. | GeoType, ApiName |
-| Disponibilidad | Disponibilidad | Percent | Media | El porcentaje de disponibilidad para el servicio de almacenamiento o la operación de API especificada. Para calcular la disponibilidad hay que tomar el valor deTotalBillableRequests y dividirlo por el número de solicitudes aplicables, incluidas aquellas que generaron errores inesperados. Todos los errores inesperados reducen la disponibilidad del servicio de almacenamiento o de la operación de API especificada. | GeoType, ApiName |
+| Disponibilidad | Disponibilidad | Percent | Media | El porcentaje de disponibilidad para el servicio de almacenamiento o la operación de API especificada. Para calcular la disponibilidad, hay que tomar el valor de TotalBillableRequests y dividirlo por el número de solicitudes aplicables, incluidas aquellas que generaron errores inesperados. Todos los errores inesperados reducen la disponibilidad del servicio de almacenamiento o de la operación de API especificada. | GeoType, ApiName |
 
 ## <a name="next-steps"></a>Pasos siguientes
 

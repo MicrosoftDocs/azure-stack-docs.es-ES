@@ -1,5 +1,5 @@
 ---
-title: Tutorial&#58; Implementación de aplicaciones en Azure y Azure Stack | Microsoft Docs
+title: Implementación de aplicaciones en Azure y Azure Stack | Microsoft Docs
 description: Aprenda a implementar aplicaciones en Azure y Azure Stack con una canalización de CI/CD híbrida.
 services: azure-stack
 documentationcenter: ''
@@ -10,25 +10,25 @@ ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: tutorial
+ms.topic: solution
 ms.date: 03/11/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/07/2018
-ms.openlocfilehash: 9f0f25e5810fc4c9a27d3607defbaca9dcfc0388
-ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
+ms.openlocfilehash: 9fbadb923452fc2420d1f8626a69d377c4d72e12
+ms.sourcegitcommit: 2a4cb9a21a6e0583aa8ade330dd849304df6ccb5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66692084"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68286959"
 ---
-# <a name="tutorial-deploy-apps-to-azure-and-azure-stack"></a>Tutorial: Implementación de aplicaciones en Azure y Azure Stack
+# <a name="deploy-apps-to-azure-and-azure-stack"></a>Implementación de aplicaciones en Azure y Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
 Aprenda a implementar aplicaciones en Azure y Azure Stack mediante una canalización híbrida de integración continua y entrega continua (CI/CD).
 
-En este tutorial, creará un entorno de ejemplo para:
+En esta solución, creará un entorno de ejemplo para:
 
 > [!div class="checklist"]
 > * Iniciar una nueva compilación en función de las confirmaciones de código en el repositorio de Azure DevOps Services.
@@ -51,9 +51,9 @@ Para más información sobre la integración continua y la implementación conti
 
 > [!Tip]  
 > ![hybrid-pillars.png](./media/azure-stack-solution-cloud-burst/hybrid-pillars.png)  
-> Microsoft Azure Stack es una extensión de Azure. Azure Stack incorpora a sus entornos locales la agilidad e innovación de la informática en la nube. Es la única nube híbrida que permite compilar e implementar aplicaciones híbridas en cualquier lugar.  
+> Microsoft Azure Stack es una extensión de Azure. Azure Stack aporta la agilidad y la innovación de la informática en la nube a su entorno local y hace posible la única nube híbrida que le permite crear e implementar aplicaciones híbridas en cualquier parte.  
 > 
-> En las notas del producto [Consideraciones de diseño para aplicaciones híbridas](https://aka.ms/hybrid-cloud-applications-pillars) se examinan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas, lo que reduce los desafíos en los entornos de producción.
+> En el artículo [Consideraciones de diseño para aplicaciones híbridas](azure-stack-edge-pattern-overview.md) se examinan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
 
 ## <a name="prerequisites"></a>Requisitos previos
 
@@ -63,9 +63,9 @@ Necesita contar con algunos componentes para crear una canalización de CI/CD h�
 * Un operador de Azure Stack debe completar los siguientes elementos: implementar también la instancia de App Service, crear planes y ofertas, crear una suscripción de inquilino y agregar la imagen de Windows Server 2016.
 
 >[!NOTE]
->Si ya tiene implementados algunos de estos componentes, asegúrese de que cumplen todos los requisitos antes de empezar este tutorial.
+>Si ya tiene implementados algunos de estos componentes, asegúrese de que cumplen todos los requisitos antes de empezar esta solución.
 
-En este tutorial se da por supuesto que tiene algunos conocimientos básicos de Azure y Azure Stack. Para más información antes de iniciar el tutorial, lea los siguientes artículos:
+En esta solución se da por supuesto que tiene algunos conocimientos básicos de Azure y Azure Stack. Para obtener más información antes de iniciar la solución, lea los siguientes artículos:
 
 * [Introducción a Azure](https://azure.microsoft.com/overview/what-is-azure/)
 * [Conceptos clave de Azure Stack](../operator/azure-stack-overview.md)
@@ -73,12 +73,12 @@ En este tutorial se da por supuesto que tiene algunos conocimientos básicos de 
 ### <a name="azure-requirements"></a>Requisitos de Azure
 
 * Si no tiene una suscripción a Azure, cree una [cuenta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de empezar.
-* Cree una [aplicación web](https://docs.microsoft.com/azure/app-service/overview) en Azure. Tome nota de la dirección URL de la aplicación web, ya que la necesitará en el tutorial.
+* Cree una [aplicación web](https://docs.microsoft.com/azure/app-service/overview) en Azure. Tome nota de la dirección URL de la aplicación web, ya que la necesitará en la solución.
 
 ### <a name="azure-stack-requirements"></a>Requisitos de Azure Stack
 
 * Use un sistema integrado de Azure Stack o implemente el Kit de desarrollo de Azure Stack (ASDK). Para implementar ASDK:
-  * En el [Tutorial: Implementación de ASDK con el instalador](../asdk/asdk-install.md) se ofrecen instrucciones de implementación detalladas.
+  * La solución [: Implementación de ASDK con el instalador](../asdk/asdk-install.md) se ofrecen instrucciones de implementación detalladas.
   * Use el script de PowerShell [ConfigASDK.ps1](https://github.com/mattmcspirit/azurestack/blob/master/deployment/ConfigASDK.ps1 ) para automatizar los pasos posteriores a la implementación de ASDK.
 
     > [!Note]
@@ -324,7 +324,7 @@ Ahora que se ha creado el punto de conexión, la conexión de Azure DevOps con A
 
 ## <a name="develop-your-application-build"></a>Desarrollo de la aplicación
 
-En esta parte del tutorial, vamos a:
+En esta parte de la solución, llevará a cabo lo siguiente:
 
 * Agregar código a un proyecto de Azure DevOps Services.
 * Crear una implementación de aplicaciones web independiente.

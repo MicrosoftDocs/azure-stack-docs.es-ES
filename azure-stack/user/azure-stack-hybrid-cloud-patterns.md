@@ -1,5 +1,5 @@
 ---
-title: Creación de aplicaciones en la nube híbrida con Azure y Azure Stack | Microsoft Docs
+title: Compilación de soluciones de modelos de diseño de nube híbrida para Azure Stack | Microsoft Docs
 description: Información sobre cómo crear aplicaciones en la nube híbrida con Azure y Azure Stack
 services: azure-stack
 documentationcenter: ''
@@ -11,24 +11,30 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 06/20/2019
+ms.date: 07/16/2019
 ms.author: mabrigg
 ms.reviewer: anajod
 ms.lastreviewed: 06/20/2019
-ms.openlocfilehash: 442e12d435102c06a334a8a93271d3d4a27aa578
-ms.sourcegitcommit: 104ccafcb72a16ae7e91b154116f3f312321cff7
+ms.openlocfilehash: 538a626b2e89d15aa4b816674dbb8c374ec4a262
+ms.sourcegitcommit: 2a4cb9a21a6e0583aa8ade330dd849304df6ccb5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67308765"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68286812"
 ---
-# <a name="create-hybrid-cloud-apps-with-azure-and-azure-stack"></a>Creación de aplicaciones en la nube híbrida con Azure y Azure Stack
+#  <a name="build-solutions-hybrid-cloud-design-patterns-for-azure-stack"></a>Compilación de soluciones de modelos de diseño de nube híbrida para Azure Stack
 
 Microsoft Azure Stack es una extensión de Azure. Azure Stack incorpora la agilidad de la informática en la nube en su entorno local y en el perímetro al habilitar una nube híbrida. Puede compilar las aplicaciones en la nube híbrida en Azure e implementarlas en su centro de datos conectado o desconectado ubicado en cualquier lugar.
 
 Microsoft Azure es una nube híbrida coherente. Azure le permite reutilizar el código desarrollado en Azure e implementar la aplicación en nubes soberanas de Azure y Azure Stack. Las aplicaciones que abarcan las nubes también se conocen como *aplicaciones híbridas*.
 
 Los escenarios híbridos varían considerablemente con los recursos que están disponibles para el desarrollo, y abarcan consideraciones como la geografía, la seguridad, el acceso a Internet, etc. Aunque estos escenarios no pueden abordar sus necesidades específicas, pueden proporcionarle algunas directrices y ejemplos clave para que pueda explorar la implementación de soluciones híbridas.
+
+## <a name="hybrid-cloud-patterns"></a>Patrones de nube híbrida
+
+- [Patrón de escalado de toda la nube](azure-stack-edge-pattern-cross-cloud-scaling.md)
+- [Patrón distribuido geográficamente](azure-stack-edge-pattern-geo-distribution.md)
+- [Patrón DevOps](azure-stack-edge-pattern-hybrid-ci-cd.md)
 
 ## <a name="step-by-step-tutorials"></a>Tutoriales detallados
 
@@ -46,5 +52,5 @@ Los escenarios híbridos varían considerablemente con los recursos que están d
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Lea las notas del producto [Design Considerations for Hybrid Applications](https://aka.ms/hybrid-cloud-applications-pillars) (Consideraciones de diseño para aplicaciones híbridas) para revisar los pilares de la calidad del software para diseñar, implementar y usar aplicaciones híbridas.
+- Lea el artículo sobre [Consideraciones de diseño para aplicaciones híbridas](azure-stack-edge-pattern-overview.md) para revisar los pilares de la calidad del software para diseñar, implementar y usar aplicaciones híbridas.
 - [Configure un entorno de desarrollo en Azure Stack](azure-stack-dev-start.md) e [implemente su primera aplicación](azure-stack-dev-start-deploy-app.md) en Azure Stack.

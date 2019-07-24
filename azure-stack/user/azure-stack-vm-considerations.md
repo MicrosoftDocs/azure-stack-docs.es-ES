@@ -11,28 +11,28 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/09/2019
+ms.date: 07/16/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
-ms.lastreviewed: 12/19/2018
-ms.openlocfilehash: 2a9a9a2c402538eee428bad08c9772b288fa1740
-ms.sourcegitcommit: be5382f715a9c1c18c660b630d8fcd823f13aae3
+ms.lastreviewed: 07/16/2019
+ms.openlocfilehash: 09e38de68f740cab50e7a3e0ee8cc7364a9909b9
+ms.sourcegitcommit: 4139b507d6da98a086929da48e3b4661b70bc4f3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66197336"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68299432"
 ---
 # <a name="azure-stack-vm-features"></a>Características de las máquinas virtuales de Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Las máquinas virtuales de Azure Stack proporcionan recursos informáticos escalables y a petición. Para poder implementar máquinas virtuales, debe entender las diferencias entre las características de las máquinas virtuales disponibles en Azure Stack y en Microsoft Azure. Este artículo describe estas diferencias e identifica las principales consideraciones para planificar implementaciones de máquina virtual. Para obtener información acerca de las diferencias de alto nivel entre Azure y Azure Stack, consulte el artículo [Key considerations](azure-stack-considerations.md) (Consideraciones clave).
+Las máquinas virtuales de Azure Stack proporcionan recursos informáticos escalables y a petición. Para poder implementar máquinas virtuales, debe aprender las diferencias entre las características de las máquinas virtuales disponibles en Azure Stack y en Microsoft Azure. Este artículo describe estas diferencias e identifica las principales consideraciones para planificar implementaciones de máquina virtual. Para obtener información acerca de las diferencias de alto nivel entre Azure y Azure Stack, consulte el artículo [Key considerations](azure-stack-considerations.md) (Consideraciones clave).
 
 ## <a name="vm-differences"></a>Diferencias entre máquinas virtuales
 
 | Característica | Azure (global) | Azure Stack |
 | --- | --- | --- |
-| Imágenes de máquinas virtuales | Azure Marketplace contiene imágenes que puede usar para crear una máquina virtual. Consulte la página de [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/category/compute?subcategories=virtual-machine-images&page=1) para ver la lista de imágenes que están disponibles en Azure Marketplace. | De forma predeterminada, no hay ninguna imagen disponible en Marketplace de Azure Stack. El administrador de la nube de Azure Stack debe publicar o descargar imágenes en el Marketplace de Azure Stack antes de que los usuarios puedan usarlas. |
+| Imágenes de máquinas virtuales | Azure Marketplace tiene imágenes que puede usar para crear una máquina virtual. Consulte la página de [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/category/compute?subcategories=virtual-machine-images&page=1) para ver la lista de imágenes que están disponibles en Azure Marketplace. | De forma predeterminada, no hay ninguna imagen disponible en Marketplace de Azure Stack. El administrador de la nube de Azure Stack debe publicar o descargar imágenes en el Marketplace de Azure Stack antes de que los usuarios puedan usarlas. |
 | Tamaños de máquina virtual | Azure admite una amplia variedad de tamaños de máquinas virtuales. Para aprender más acerca de las opciones y los tamaños disponibles, consulte los temas [Tamaños de máquinas virtuales Windows](/azure/virtual-machines/virtual-machines-windows-sizes) y [Tamaños de máquina virtual Linux](/azure/virtual-machines/linux/sizes). | Azure Stack admite un subconjunto de tamaños de máquinas virtuales que están disponibles en Azure. Para ver la lista de tamaños admitidos, consulte la sección [Tamaños de máquina virtual](#vm-sizes) de este artículo. |
 | Cuotas de máquinas virtuales | Los [límites de cuota](/azure/azure-subscription-service-limits#service-specific-limits) los establece Microsoft. | El administrador de la nube de Azure Stack debe asignar cuotas antes de ofrecer máquinas virtuales a los usuarios. |
 | Extensiones de máquina virtual |Azure admite una amplia variedad de extensiones de máquinas virtuales. Para aprender acerca de las extensiones disponibles, consulte el artículo [Extensiones y características de las máquinas virtuales](/azure/virtual-machines/windows/extensions-features).| Azure Stack admite un subconjunto de extensiones que están disponibles en Azure y cada una de ellas tiene una versión específica. El administrador de la nube de Azure Stack puede elegir qué extensiones están disponibles para sus usuarios. Para ver la lista de extensiones admitidas, consulte la sección [Extensiones de máquina virtual](#vm-extensions) de este artículo. |
@@ -43,19 +43,20 @@ Las máquinas virtuales de Azure Stack proporcionan recursos informáticos escal
 | Servicio de metadatos de instancia de Azure | Azure Instance Metadata Service proporciona información sobre instancias de máquina virtual en ejecución que pueden usarse para administrar y configurar la máquina virtual.  | Azure Instance Metadata Service no es compatible con Azure Stack. |
 | Conjuntos de disponibilidad de máquinas virtuales|Varios dominios de error (2 o 3 por región).<br>Varios dominios de actualización.|Varios dominios de error (2 o 3 por región).<br>Varios dominios de actualización (hasta 20).|
 | Conjuntos de escalado de máquinas virtuales|Compatible con la escalabilidad automática.|No compatible con la escalabilidad automática.<br><br>Agregar más instancias a un conjunto de escalado con el portal, las plantillas de Resource Manager o PowerShell. |
-| Diagnóstico de máquina virtual | Se admiten los diagnósticos de máquinas virtuales Linux. | No se admiten los diagnósticos de una máquina virtual Linux en Azure Stack. Si implementa una máquina virtual Linux con diagnósticos de máquina virtual habilitado, se producirá un error en la implementación. Tampoco se podrá realizar la implementación si habilita las métricas básicas de máquina virtual Linux a través de la configuración de diagnóstico.
+| Testigo de Cloud | Seleccione los puntos de conexión de las propiedades de la cuenta de almacenamiento disponibles en Azure Stack. | El [testigo en la nube](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness) es un tipo de testigo de cuórum de clúster de conmutación por error que usa Microsoft Azure para proporcionar un voto en el cuórum de clúster.<br>Los puntos de conexión de Azure global en comparación con Azure Stack pueden tener el siguiente aspecto:<br>Para Azure global:<br>`https://mywitness.blob.core.windows.net/`<br>Para Azure Stack:<br>`https://mywitness.blob.<region>.<FQDN>/`|
+| Diagnóstico de máquina virtual | Se admiten los diagnósticos de máquinas virtuales Linux. | No se admiten los diagnósticos de una máquina virtual Linux en Azure Stack. Si implementa una máquina virtual Linux con diagnósticos de máquina virtual habilitado, se producirá un error en la implementación. Tampoco se podrá realizar la implementación si habilita las métricas básicas de máquina virtual Linux a través de la configuración de diagnóstico. |
 
 ## <a name="vm-sizes"></a>Tamaños de VM
 
-Azure Stack impone límites de recursos para evitar el consumo excesivo de recursos (nivel de servicio y local del servidor). Estos límites mejoran la experiencia del inquilino, ya que reducen el impacto del consumo de recursos por parte de otros inquilinos.
+Azure Stack impone límites de recursos para evitar el consumo excesivo de recursos (nivel de servicio y local del servidor). Estos límites mejoran la experiencia del inquilino, ya que reducen el efecto del consumo de recursos por parte de otros inquilinos.
 
 - Para la salida de redes de la máquina virtual, hay extremos de ancho de banda. Los extremos de Azure Stack son los mismos que en Azure.
-- En el caso de los recursos de almacenamiento, Azure Stack implementa límites de IOPS (operaciones de entrada/salida por segundo) de almacenamiento para evitar el consumo excesivo básico de recursos por parte de los inquilinos para el acceso de almacenamiento.
-- Para los discos de máquina virtual, las operaciones de entrada y salida por segundo de disco en Azure Stack es una función del tamaño de máquina virtual en lugar del tipo de disco. Esto significa que para una VM de la serie Standard_Fs, independientemente de si elige SSD o HDD para el tipo de disco, el límite de IOPS de un único disco de datos adicional es de solo 2300 IOPS.
+- En el caso de los recursos de almacenamiento, Azure Stack implementa límites de IOPS (operaciones de entrada/salida por segundo) de almacenamiento para evitar el consumo excesivo básico de recursos por parte de los inquilinos para el uso de almacenamiento.
+- Para los discos de máquina virtual, las operaciones de entrada y salida por segundo de disco en Azure Stack es una función del tamaño de máquina virtual en lugar del tipo de disco. Esto significa que para una VM de la serie Standard_Fs, independientemente de si elige SSD o HDD para el tipo de disco, el límite de IOPS de un segundo disco de datos es de solo 2300 IOPS.
 
 En la tabla siguiente se enumeran las máquinas virtuales que se admiten en Azure Stack junto con su configuración:
 
-| Type           | Tamaño          | Intervalo de tamaños admitidos |
+| type           | Size          | Intervalo de tamaños admitidos |
 | ---------------| ------------- | ------------------------ |
 |Uso general |A básico        |[A0 - A4](azure-stack-vm-sizes.md#basic-a)                   |
 |Uso general |Estándar A     |[A0 - A7](azure-stack-vm-sizes.md#standard-a)              |

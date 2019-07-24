@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/13/2019
+ms.date: 07/16/2019
 ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 06/13/2019
-ms.openlocfilehash: 9c263b97deb12a199f2941be7ea4ae05a048837b
-ms.sourcegitcommit: b79a6ec12641d258b9f199da0a35365898ae55ff
+ms.openlocfilehash: 224f5832af5d7fdc57f6b5fcb91d6308d479448b
+ms.sourcegitcommit: 2a4cb9a21a6e0583aa8ade330dd849304df6ccb5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67131634"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68286704"
 ---
 # <a name="azure-stack-compute"></a>Proceso de Azure Stack
 
@@ -38,9 +38,25 @@ Azure Stack usa dos consideraciones al ubicar máquinas virtuales. La primera, e
 
 Para conseguir la alta disponibilidad de un sistema de producción con varias VM en Azure Stack, las VM se colocan en un conjunto de disponibilidad que las distribuye a varios dominios de error. Un dominio de error en un conjunto de disponibilidad se define como un único nodo en la unidad de escalado. Azure Stack admite un conjunto de disponibilidad con un máximo de tres dominios de error para coherencia con Azure. Las máquinas virtuales colocadas en conjuntos de disponibilidad se aislarán físicamente entre sí al distribuirlas de la manera más uniforme que sea posible en varios dominios de error, es decir, hosts de Azure Stack. Si se produce un error de hardware, las máquinas virtuales del dominio de error que presente el error se reiniciarán en otros dominios de error pero, si es posible, se mantendrán en dominios de error independientes de las otras máquinas virtuales que se encuentran en el mismo conjunto de disponibilidad. Cuando el host vuelva a estar en línea, las VM se volverán a equilibrar para mantener la alta disponibilidad.  
 
-Los conjuntos de escalado de máquinas virtuales usan conjuntos de disponibilidad en el back-end y comprueban que cada instancia de conjunto de escalado de máquinas virtuales se coloque en un dominio de error distinto. Esto significa que usan nodos de infraestructura de Azure Stack independientes. Por ejemplo, en un sistema de Azure Stack de 4 nodos, puede haber una situación en que un conjunto de escalado de máquinas virtuales de 3 instancias genere un error durante la creación debido a la falta de la capacidad de 4 nodos para colocar 3 instancias de conjunto de escalado de máquinas virtuales en 3 nodos independientes de Azure Stack. Además, los nodos de Azure Stack se pueden completar a distintos niveles antes de intentar seleccionar su ubicación. 
+Los conjuntos de escalado de máquinas virtuales usan conjuntos de disponibilidad en el back-end y comprueban que cada instancia de conjunto de escalado de máquinas virtuales se coloque en un dominio de error distinto. Esto significa que usan nodos de infraestructura de Azure Stack independientes. Por ejemplo, en un sistema de Azure Stack de cuatro nodos, puede haber una situación en que un conjunto de escalado de máquinas virtuales de tres instancias genere un error durante la creación debido a la falta de la capacidad de cuatro nodos para colocar tres instancias de conjunto de escalado de máquinas virtuales en tres nodos independientes de Azure Stack. Además, los nodos de Azure Stack se pueden completar a distintos niveles antes de intentar seleccionar su ubicación. 
 
-Azure Stack no asigna más memoria de la necesaria. Sin embargo, se permite una confirmación excesiva del número de núcleos físicos. Dado que los algoritmos de selección no contemplan como factor la relación de aprovisionamiento excesivo existente de núcleos virtuales a físicos, cada host puede tener una relación diferente. Como Microsoft, no proporcionamos orientación sobre la relación de núcleos físicos a virtuales debido a la variación en las cargas de trabajo y los requisitos de nivel de servicio. 
+Azure Stack no asigna más memoria de la necesaria. Sin embargo, se permite una confirmación excesiva del número de núcleos físicos. 
+
+Dado que los algoritmos de selección no contemplan como factor la relación de aprovisionamiento excesivo existente de núcleos virtuales a físicos, cada host puede tener una relación diferente. Como Microsoft, no proporcionamos orientación sobre la relación de núcleos físicos a virtuales debido a la variación en las cargas de trabajo y los requisitos de nivel de servicio. 
+
+## <a name="consideration-for-total-number-of-vms"></a>Consideración para el número total de máquinas virtuales 
+
+Hay una nueva consideración para planear la capacidad de Azure Stack con precisión. Con la actualización 1901 (y cada actualización subsiguiente), ahora hay un límite en el número total de máquinas virtuales que se pueden crear. Este límite está diseñado para ser temporal y evitar la inestabilidad de la solución. El origen del problema de estabilidad en los números mayores de las máquinas virtuales se está abordando, pero aún no se ha determinado un tiempo específico para la corrección. Ahora hay un límite por servidor de 60 máquinas de virtuales con un límite total en la solución de 700. Por ejemplo, el límite de una máquina virtual de Azure Stack de 8 servidores sería 480 (8 * 60). Para una solución de Azure Stack de 12 a 16 servidores, el límite sería 700. Este límite se ha creado teniendo todas las consideraciones de capacidad de proceso en cuenta, como la reserva de resistencia y la relación entre la CPU virtual y la física que le gustaría mantener en el sello al operador. Para más información, consulte la nueva versión del planeador de capacidad. 
+
+En caso de que se alcanzara el límite de escalado de máquinas virtuales, se devolverían como resultado los códigos de error siguientes: VMsPerScaleUnitLimitExceeded, VMsPerScaleUnitNodeLimitExceeded.
+
+## <a name="considerations-for-deallocation"></a>Consideraciones para la desasignación
+
+Cuando una máquina virtual se encuentra en estado _desasignado_, no se usan recursos de memoria. Esto permite colocar otras máquinas virtuales en el sistema. 
+
+Si la máquina virtual desasignada se vuelve a iniciar, la utilización de memoria o la asignación se tratan como si se colocara una máquina virtual nueva en el sistema y se utiliza la memoria disponible. 
+
+Si no hay memoria disponible, la máquina virtual no se iniciará.
 
 ## <a name="azure-stack-memory"></a>Memoria de Azure Stack 
 

@@ -14,18 +14,18 @@ ms.date: 06/20/2019
 ms.author: mabrigg
 ms.reviewer: anajod
 ms.lastreviewed: 06/20/2019
-ms.openlocfilehash: 7148e93977f50a7c64d79c422c43c6825b22b4a3
-ms.sourcegitcommit: 104ccafcb72a16ae7e91b154116f3f312321cff7
+ms.openlocfilehash: ca4c2480fff511ab3bad43ea82fc81522d9afba0
+ms.sourcegitcommit: 2a4cb9a21a6e0583aa8ade330dd849304df6ccb5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67308988"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68286743"
 ---
-# <a name="tutorial-deploy-a-staged-data-analytics-solution-to-azure-stack"></a>Tutorial: Implementación de una solución de análisis de datos almacenados provisionalmente en Azure Stack
+# <a name="deploy-a-staged-data-analytics-solution-to-azure-stack"></a>Implementación de una solución de análisis de datos almacenados provisionalmente en Azure Stack
 
 En este artículo se muestra cómo implementar una solución de recopilación de datos que requiera análisis en el mismo punto de recopilación para poder tomar decisiones rápidas. Esta recopilación de datos se produce con frecuencia sin acceso a Internet. Una vez restablecida la conectividad, puede que necesite un análisis intensivo del recurso de los datos para obtener información adicional.
 
-En este tutorial, creará un entorno de ejemplo para:
+En esta solución, creará un entorno de ejemplo para:
 
 > [!div class="checklist"]
 > - Crear el blob de almacenamiento de datos sin procesar.
@@ -37,9 +37,9 @@ En este tutorial, creará un entorno de ejemplo para:
 
 > [!Tip]  
 > ![hybrid-pillars.png](./media/azure-stack-solution-cloud-burst/hybrid-pillars.png)  
-> Microsoft Azure Stack es una extensión de Azure. Azure Stack aporta la agilidad e innovación de la informática en la nube a su entorno local y hace posible la única nube híbrida que le permite crear e implementar aplicaciones híbridas en cualquier parte.  
+> Microsoft Azure Stack es una extensión de Azure. Azure Stack aporta la agilidad y la innovación de la informática en la nube a su entorno local y hace posible la única nube híbrida que le permite crear e implementar aplicaciones híbridas en cualquier parte.  
 > 
-> En las notas del producto [Consideraciones de diseño para aplicaciones híbridas](https://aka.ms/hybrid-cloud-applications-pillars) se examinan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
+> En el artículo [Consideraciones de diseño para aplicaciones híbridas](azure-stack-edge-pattern-overview.md) se examinan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
 
 ## <a name="architecture-for-staged-data-analytics"></a>Arquitectura de análisis de datos almacenados provisionalmente
 
@@ -53,7 +53,7 @@ En este tutorial, creará un entorno de ejemplo para:
   - Deberá proporcionar una colección de datos para el análisis de datos. Se proporcionan datos de ejemplo.
   - [Docker para Windows](https://docs.docker.com/docker-for-windows/) instalado en la máquina local.
 
-## <a name="get-the-docker-image"></a>Obtención de la imagen de Docker
+## <a name="get-the-docker-image"></a>Obtener la imagen de Docker
 
 Las imágenes de Docker para cada implementación eliminan los problemas de dependencia entre las distintas versiones de Azure PowerShell.
 1.  Asegúrese de que Docker para Windows utiliza contenedores de Windows.

@@ -10,23 +10,23 @@ ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: tutorial
+ms.topic: solution
 ms.date: 06/20/2019
 ms.author: mabrigg
 ms.reviewer: anajod
 ms.lastreviewed: 06/20/2019
-ms.openlocfilehash: 39b0078345c16b7931f41cd2394476f8258d92dd
-ms.sourcegitcommit: 104ccafcb72a16ae7e91b154116f3f312321cff7
+ms.openlocfilehash: 4565615caf4e4c13bda84e6596e23d523225d888
+ms.sourcegitcommit: 2a4cb9a21a6e0583aa8ade330dd849304df6ccb5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67308814"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68286892"
 ---
-# <a name="tutorial-deploy-a-sql-server-2016-availability-group-to-azure-and-azure-stack"></a>Tutorial: Implementar un grupo de disponibilidad de SQL Server 2016 en Azure y Azure Stack
+# <a name="deploy-a-sql-server-2016-availability-group-to-azure-and-azure-stack"></a>Implementar un grupo de disponibilidad de SQL Server 2016 en Azure y Azure Stack
 
 Este artículo le guiará a lo largo de una implementación automatizada de un clúster de SQL Server 2016 Enterprise de alta disponibilidad (HA) con un sitio de recuperación ante desastres (DR) asincrónica entre dos entornos de Azure Stack. Para obtener más información acerca de SQL Server 2016 y la alta disponibilidad, vea [Grupos de disponibilidad Always On: una solución de alta disponibilidad y recuperación ante desastres](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-2016).
 
-En este tutorial, creará un entorno de ejemplo para:
+En esta solución, creará un entorno de ejemplo para:
 
 > [!div class="checklist"]
 > - Coordinar una implementación en dos instancias de Azure Stack
@@ -35,9 +35,9 @@ En este tutorial, creará un entorno de ejemplo para:
 
 > [!Tip]  
 > ![hybrid-pillars.png](./media/azure-stack-solution-cloud-burst/hybrid-pillars.png)  
-> Microsoft Azure Stack es una extensión de Azure. Azure Stack aporta la agilidad e innovación de la informática en la nube a su entorno local y hace posible la única nube híbrida que le permite crear e implementar aplicaciones híbridas en cualquier parte.  
+> Microsoft Azure Stack es una extensión de Azure. Azure Stack aporta la agilidad y la innovación de la informática en la nube a su entorno local y hace posible la única nube híbrida que le permite crear e implementar aplicaciones híbridas en cualquier parte.  
 > 
-> En las notas del producto [Consideraciones de diseño para aplicaciones híbridas](https://aka.ms/hybrid-cloud-applications-pillars) se examinan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
+> En el artículo [Consideraciones de diseño para aplicaciones híbridas](azure-stack-edge-pattern-overview.md) se examinan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
 
 ## <a name="architecture-for-sql-server-2016"></a>Arquitectura para SQL Server 2016
 
@@ -48,7 +48,7 @@ En este tutorial, creará un entorno de ejemplo para:
   - Dos sistemas integrados de Azure Stack conectados (Azure Stack): esta implementación no funciona en los Kits de desarrollo de Azure Stack (ASDK). Para obtener más información sobre Azure Stack, consulte [¿Qué es Azure Stack?](https://azure.microsoft.com/overview/azure-stack/).
   - Una suscripción de inquilino en cada instancia de Azure Stack.    
       - **Tome nota de cada identificador de suscripción y del punto de conexión de Azure Resource Manager para cada instancia de Azure Stack.**
-  - Una entidad de servicio de Azure Active Directory (Azure AD) que tenga permisos para la suscripción del inquilino en Azure Stack. Es posible que deba crear dos entidades de servicio si las instancias de Azure Stack se implementan en diferentes inquilinos de Azure AD. Para obtener información sobre cómo crear una entidad de servicio para Azure Stack, visite [Creación de entidades de servicio para otorgar a las aplicaciones acceso a los recursos de Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-create-service-principals).
+  - Una entidad de servicio de Azure Active Directory (Azure AD) que tenga permisos para la suscripción del inquilino en Azure Stack. Es posible que deba crear dos entidades de servicio si las instancias de Azure Stack se implementan en diferentes inquilinos de Azure AD. Para obtener información sobre cómo crear una entidad de servicio para Azure Stack, visite [Creación de entidades de servicio para otorgar a las aplicaciones acceso a los recursos de Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-create-service-principals).
       - **Tome nota del id. de aplicación, el secreto de cliente y el nombre de inquilino (xxxxx.onmicrosoft.com) de cada entidad de servicio.**
   - SQL Server 2016 Enterprise sindicado en el Marketplace de cada instancia de Azure Stack. Para obtener más información acerca de la redifusión de Marketplace, vea [Descarga de elementos de Marketplace desde Azure a Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-download-azure-marketplace-item).
     **Asegúrese de que su organización disponga de las licencias de SQL correspondientes.**

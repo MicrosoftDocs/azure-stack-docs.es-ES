@@ -10,21 +10,21 @@ ms.date: 05/16/2019
 ms.author: mabrigg
 ms.reviewer: scottnap
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 7eb57c38de01c3ad7de34b96b4c6baf7a4c14ad8
-ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
+ms.openlocfilehash: e5e76c3edcaa93e412d2715d7dc732731ac3d2ce
+ms.sourcegitcommit: b36d078e699c7924624b79641dbe9021af9606ba
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782605"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67816143"
 ---
 # <a name="introduction-to-azure-stack-networking"></a>Introducción a los servicios de red de Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Azure Stack proporciona una variedad de funcionalidades de red que se pueden usarse conjuntamente o por separado:
+Azure Stack proporciona diferentes tipos de funcionalidades de red que se pueden usarse conjuntamente o por separado:
 
 - **Conectividad entre recursos de Azure Stack**  
-    Conecte juntos los recursos de Azure en una red virtual, privada y segura en la nube.
+    Conecte juntos los recursos de Azure en una red virtual privada y segura en la nube.
 - **Conectividad de Internet**  
     Comunique a y desde los recursos de Azure Stack a través de Internet.
 - **Conectividad local**  

@@ -10,16 +10,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/08/2019
+ms.date: 07/16/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/08/2019
-ms.openlocfilehash: 7dba3d791a2ce19429506699ae538c747ed37dbd
-ms.sourcegitcommit: 7ceddf8b67f920d5a5eef4a84e157079a53b3374
+ms.openlocfilehash: 788d0fd6479ab054568d549af2f7a4306a963d3b
+ms.sourcegitcommit: 4139b507d6da98a086929da48e3b4661b70bc4f3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66821793"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68299459"
 ---
 # <a name="use-api-version-profiles-with-azure-cli-in-azure-stack"></a>Uso de los perfiles de la versión de la API con la CLI de Azure en Azure Stack
 
@@ -29,7 +29,7 @@ Puede seguir los pasos de este artículo para configurar la Interfaz de la líne
 
 ## <a name="prepare-for-azure-cli"></a>Preparativos para la CLI de Azure
 
-Necesitará el certificado raíz de CA de Azure Stack para usar la CLI de Azure en la máquina de desarrollo. El certificado se usa para administrar recursos a través de la CLI.
+Si usa el Kit de desarrollo de Azure Stack, necesitará el certificado raíz de CA de Azure Stack para usar la CLI de Azure en la máquina de desarrollo. El certificado se usa para administrar recursos a través de la CLI.
 
  - **El certificado raíz de la CA de Azure Stack** es necesario si usa la CLI desde una estación de trabajo fuera del ASDK.  
 
@@ -102,7 +102,7 @@ Inicie sesión en la estación de trabajo de desarrollo e instale la CLI. Azure 
 
     ![CLI de Azure en la ubicación de Python de Azure Stack](media/azure-stack-version-profiles-azurecli2/cli-python-location.png)
 
-2. Tome nota de la ubicación de Python de la CLI. Si está ejecutando el ASDK, necesitará esta ubicación para agregar el certificado.
+2. Tome nota de la ubicación de Python de la CLI. Si está ejecutando el ASDK, necesitará usar esta ubicación para agregar el certificado.
 
 
 ## <a name="windows-azure-ad"></a>Windows (Azure AD)

@@ -16,12 +16,12 @@ ms.date: 05/31/2019
 ms.author: sethm
 ms.reviewer: hectorl
 ms.lastreviewed: 05/31/2019
-ms.openlocfilehash: f25bc769e7461c21e40017d6413cfbe35186441b
-ms.sourcegitcommit: bcaad8b7db2ea596018d973cb29283d8c6daebfb
+ms.openlocfilehash: 3a92a142181b9e2268948d430b0a62d6ffa189d8
+ms.sourcegitcommit: 90ed5aa051d0756b2432c8aca0e2232c8ec493a4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67419591"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68239447"
 ---
 # <a name="azure-stack-1904-known-issues"></a>Problemas conocidos de Azure Stack 1904
 
@@ -214,6 +214,11 @@ El error se produce si habilita el diagnóstico de arranque en una VM, pero elim
 - Aplicable a: Este problema se aplica a las versiones 1904 y 1905.
 - Causa: la hoja de la vista de la instancia de un conjunto de escalado situado en el portal de Azure Stack, en **Panel** > **Virtual Machine Scale Sets**  >  **AnyScaleSet: Instancias** > **AnyScaleSetInstance** no se puede cargar.
 - Corrección: Actualmente no hay ninguna corrección y estamos trabajando en una solución. Hasta entonces, use el cmdlet de la CLI `az vmss get-instance-view` para obtener la vista de instancia de un conjunto de escalado de máquinas virtuales.
+
+### <a name="user-image-service"></a>Servicio de imágenes de usuario
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: El error en la creación de una imagen de usuario pondrá el servicio de imágenes de usuario en mal estado. Se empezarán a producir errores en las operaciones de creación y eliminación de imágenes de usuario. Pueden producirse errores al eliminar la imagen de usuario: "Error: Se ha producido un error interno de administración de discos."
+- Corrección: Sin mitigación. Abra una incidencia de soporte técnico dirigida a Microsoft.
 
 ## <a name="storage"></a>Storage
 

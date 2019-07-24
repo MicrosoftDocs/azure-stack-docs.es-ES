@@ -1,24 +1,24 @@
 ---
-title: Diferencias y consideraciones de redes de Azure Stack | Microsoft Docs
+title: Diferencias entre los servicios de red de Azure Stack | Microsoft Docs
 description: Aprenda sobre las diferencias y consideraciones al trabajar con redes en Azure Stack.
 services: azure-stack
 keywords: ''
 author: mattbriggs
 manager: femila
-ms.date: 06/17/2019
+ms.date: 07/10/2019
 ms.topic: article
 ms.service: azure-stack
 ms.author: mabrigg
-ms.reviewer: scottnap
-ms.lastreviewed: 06/04/2019
-ms.openlocfilehash: a59b716df7e8bf7c9a76abbfcdbe6b300c985c9f
-ms.sourcegitcommit: c4507a100eadd9073aed0d537d054e394b34f530
+ms.reviewer: wamota
+ms.lastreviewed: 07/10/2019
+ms.openlocfilehash: 7e0f533c10e8dae0566284ffb09cfa7281213002
+ms.sourcegitcommit: ca7e6b7b9b27d0d93ee4d5d1eeaf3113bbcea4da
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67198815"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68229433"
 ---
-# <a name="considerations-for-azure-stack-networking"></a>Consideraciones para las redes de Azure Stack
+# <a name="differences-and-considerations-for-azure-stack-networking"></a>Diferencias y consideraciones para las redes de Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
@@ -49,19 +49,19 @@ En este artículo se proporciona información general sobre las consideraciones 
 |  | Grupos de seguridad de la aplicación | Compatible | Todavía no se admite. |
 | Puertas de enlace de red virtual | Puerta de enlace de VPN de punto a sitio | Compatible | Todavía no se admite. |
 |  | Puerta de enlace de VNET a VNET | Compatible | Todavía no se admite. |
-|  | Tipo de puerta de enlace de red virtual | Azure admite VPN<br> ExpressRoute <br> Red de Hyper | Azure Stack admite solo el tipo VPN en este momento. |
+|  | Tipo de puerta de enlace de red virtual | Azure admite VPN<br> ExpressRoute <br> Red de Hyper. | Actualmente, Azure Stack solo admite el tipo VPN. |
 |  | SKU de puerta de enlace de VPN | Compatibilidad con SKU básicas, GW1, GW2, GW3, alto rendimiento estándar, ultra alto rendimiento. | Compatibilidad con SKU básicas, estándar y de alto rendimiento. |
-|  | Tipo VPN | Azure admite tanto la basada en directivas como la basada en rutas. | Azure Stack admite solo la basada en rutas. |
+|  | Tipo VPN | Azure admite tanto la basada en directivas como la basada en rutas. | Azure Stack solo admite la basada en rutas. |
 |  | Configuración de BGP | Azure admite la configuración de dirección de emparejamiento BGP y de peso del mismo nivel. | La dirección de emparejamiento BGP y el peso del mismo nivel se configuran automáticamente en Azure Stack. No hay ninguna manera de que el usuario configure estas opciones con sus propios valores. |
 |  | Sitio de puerta de enlace predeterminado | Azure admite la configuración de un sitio predeterminado para la tunelización forzada. | Todavía no se admite. |
-|  | Cambio del tamaño de la puerta de enlace | Azure permite cambiar el tamaño de la puerta de enlace después de la implementación. | No se permite cambiar el tamaño. |
+|  | Cambio del tamaño de la puerta de enlace | Azure permite cambiar el tamaño de la puerta de enlace después de la implementación. | No se admite el cambio de tamaño. |
 |  | Configuración de disponibilidad | activa/activa | activa/pasiva |
 |  | UsePolicyBasedTrafficSelectors | Azure admite el uso de selectores de tráfico en función de directivas con las conexiones de puerta de enlace basadas en rutas. | Todavía no se admite. |
-| Equilibrador de carga | SKU | Se admiten los equilibradores de carga Estándar y Básico. | Solo se admite el equilibrador de carga Básico.  La propiedad SKU no se admite. |
+| Equilibrador de carga | SKU | Se admiten los equilibradores de carga Estándar y Básico. | Solo se admite el equilibrador de carga Básico.<br>La propiedad SKU no se admite.<br>El equilibrador de carga de SKU básico /path/ no puede tener más de cinco configuraciones de IP de front-end.  |
 |  | Zones | Availability Zones se admite. | Todavía no se admite |
-|  | Las reglas NAT de entrada admiten los puntos de conexión de servicio | Azure permite especificar puntos de conexión de servicio para las reglas NAT de entrada. | Azure Stack no admite aún puntos de conexión de servicio, por lo que estos no se pueden especificar. |
+|  | Las reglas NAT de entrada admiten los puntos de conexión de servicio | Azure permite especificar puntos de conexión de servicio para las reglas NAT de entrada. | Azure Stack todavía no admite puntos de conexión de servicio, por lo que estos no se pueden especificar. |
 |  | Protocolo | Azure permite especificar GRE o ESP. | En Azure Stack no se admite la clase de protocolo. |
-| Dirección IP pública | Version de dirección IP pública | Azure admite tanto IPv6 como IPv4 | Se admite solo IPv4. |
+| Dirección IP pública | Version de dirección IP pública | Azure admite tanto IPv6 como IPv4. | Se admite solo IPv4. |
 | Interfaz de red | Obtención de tabla de rutas efectivas | Compatible | Todavía no se admite. |
 |  | Obtención de ACL efectivas | Compatible | Todavía no se admite. |
 |  | Habilitar Accelerated Networking | Compatible | Todavía no se admite. |

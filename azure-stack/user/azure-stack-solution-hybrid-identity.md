@@ -10,19 +10,19 @@ ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: tutorial
+ms.topic: solution
 ms.date: 06/26/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 06/26/2019
-ms.openlocfilehash: 074d971c1f951797b5dc2d53a62eef56d0b7249f
-ms.sourcegitcommit: eccbd0098ef652919f357ef6dba62b68abde1090
+ms.openlocfilehash: 3ed0c109e0253fe6d710801dbc30de04c0b5a6e5
+ms.sourcegitcommit: 2a4cb9a21a6e0583aa8ade330dd849304df6ccb5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67492321"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68286825"
 ---
-# <a name="tutorial-configure-hybrid-cloud-identity-for-azure-and-azure-stack-applications"></a>Tutorial: Configuración de la identidad de nube híbrida para aplicaciones de Azure y Azure Stack
+# <a name="configure-hybrid-cloud-identity-for-azure-and-azure-stack-applications"></a>Configuración de la identidad de nube híbrida para aplicaciones de Azure y Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
@@ -35,19 +35,19 @@ Tiene dos opciones para conceder acceso a sus aplicaciones tanto en Azure global
 
 Las entidades de servicio se usan para conceder acceso a las aplicaciones de Azure Stack para la implementación o configuración mediante Azure Resource Manager en Azure Stack.
 
-En este tutorial, creará un entorno de ejemplo para:
+En esta solución, creará un entorno de ejemplo para:
 
 > [!div class="checklist"]
 > - Establecer una identidad híbrida en Azure global y Azure Stack
 > - Recuperar un token para acceder a la API de Azure Stack.
 
-Para seguir los pasos de este tutorial debe tener permisos de operador de Azure Stack.
+Para seguir los pasos de esta solución, debe tener permisos de operador de Azure Stack.
 
 > [!Tip]  
 > ![hybrid-pillars.png](./media/azure-stack-solution-cloud-burst/hybrid-pillars.png)  
 > Microsoft Azure Stack es una extensión de Azure. Azure Stack aporta la agilidad y la innovación de la informática en la nube a su entorno local y hace posible la única nube híbrida que le permite crear e implementar aplicaciones híbridas en cualquier parte.  
 > 
-> En las notas del producto [Consideraciones de diseño para aplicaciones híbridas](https://aka.ms/hybrid-cloud-applications-pillars) se examinan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
+> En el artículo [Consideraciones de diseño para aplicaciones híbridas](azure-stack-edge-pattern-overview.md) se examinan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
 
 
 ## <a name="create-a-service-principal-for-azure-ad-in-the-portal"></a>Crear a una entidad de servicio para Azure AD en el portal
@@ -60,7 +60,7 @@ Si implementó Azure Stack con AD FS, puede usar PowerShell para crear una entid
 
 ## <a name="using-the-azure-stack-api"></a>Uso de la API de Azure Stack
 
-El tutorial de la [API de Azure Stack](azure-stack-rest-api-use.md) le guía por el proceso de recuperación de un token de acceso a la API de Azure Stack.
+La solución [API de Azure Stack](azure-stack-rest-api-use.md) le guía por el proceso de recuperación de un token de acceso a la API de Azure Stack.
 
 ## <a name="connect-to-azure-stack-using-powershell"></a>Conexión a Azure Stack con Powershell
 

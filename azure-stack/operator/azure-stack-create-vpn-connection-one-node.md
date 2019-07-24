@@ -12,17 +12,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/02/2019
+ms.date: 07/16/2019
 ms.author: sethm
 ms.reviewer: scottnap
 ms.lastreviewed: 09/12/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: cee1ca68caa6742eb5d965b53b685746d9057691
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: f34ed3459ad8346860872a4b63a25e214501a2dd
+ms.sourcegitcommit: 4139b507d6da98a086929da48e3b4661b70bc4f3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985392"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68299464"
 ---
 # <a name="create-a-site-to-site-vpn-connection-between-two-virtual-networks-in-different-azure-stack-development-kit-environments"></a>Creación de una conexión VPN de sitio a sitio entre dos redes virtuales en diferentes entornos del Kit de desarrollo de Azure Stack
 
@@ -75,7 +75,7 @@ En la tabla siguiente se resume la configuración de red para ambos entornos de 
 ### <a name="get-the-ip-address-of-the-external-adapter-of-the-nat-vm"></a>Obtención de la dirección IP del adaptador externo de la máquina virtual de NAT
 
 1. Inicie sesión en la máquina física de Azure Stack para POC1.
-2. Edite el código de PowerShell siguiente para reemplazar la contraseña de administrador y, a continuación, ejecute el código en el host de POC:
+2. Edite el código de PowerShell siguiente para agregar la contraseña de administrador y, a continuación, ejecute el código en el host de POC:
 
    ```powershell
    cd \AzureStack-Tools-master\connect
@@ -96,7 +96,7 @@ En la tabla siguiente se resume la configuración de red para ambos entornos de 
 
 Ahora puede crear los recursos de red de POC1 que se necesitan para configurar las puertas de enlace. Las instrucciones siguientes describen cómo crear los recursos mediante el portal del usuario de Azure Stack. También puede usar código de PowerShell para crear los recursos.
 
-![Flujo de trabajo utilizado para crear recursos](media/azure-stack-create-vpn-connection-one-node-tp2/image2.png)
+![Flujo de trabajo para crear recursos](media/azure-stack-create-vpn-connection-one-node-tp2/image2.png)
 
 ### <a name="sign-in-as-a-tenant"></a>Inicio de sesión como un inquilino
 
@@ -168,12 +168,12 @@ Una manera de ver esto de forma más genérica es que el recurso de la puerta de
 6. En la hoja **Configuración**, seleccione **Puerta de enlace de red virtual** y, a continuación, seleccione **GW1**.
 7. Seleccione **Puerta de enlace de red local** y, a continuación, seleccione **POC2-GW**.
 8. En **Nombre de la conexión**, escriba **POC1-POC2**.
-9. En **Clave compartida (PSK)**, escriba **12345** y, a continuación, seleccione **Aceptar**.
+9. En **Clave compartida (PSK)** , escriba **12345** y, a continuación, seleccione **Aceptar**.
 10. En la hoja **Resumen**, seleccione **Aceptar**.
 
 ### <a name="create-a-vm"></a>Crear una VM
 
-Para validar los datos que pasan por la conexión VPN, debe tener las máquinas virtuales para enviar y recibir datos en cada entorno del Kit de desarrollo de Azure Stack. Ahora, cree una máquina virtual en POC1 y colóquela en la subred de máquina virtual en la red virtual.
+Para validar los datos que pasan por la conexión VPN, debe tener las máquinas virtuales para enviar y recibir datos en cada entorno del Kit de desarrollo de Azure Stack. Ahora, cree una máquina virtual en POC1 y colóquela en la subred de máquina virtual en la red virtual:
 
 1. En Azure Portal, seleccione **+ Crear un recurso**.
 2. Vaya a **Marketplace** y, a continuación, seleccione **Compute**.
@@ -242,12 +242,12 @@ Un administrador de servicios puede iniciar sesión como un inquilino para proba
 1. En el portal de usuario, seleccione **+ Crear un recurso**.
 2. Vaya a **Marketplace** y, a continuación, seleccione **Redes**.
 3. Seleccione **Conexión** en la lista de recursos.
-4. En la hoja de configuración **Básico**, para **Tipo de conexión**, elija **Sitio a sitio (IPSec)**.
+4. En la hoja de configuración **Básico**, para **Tipo de conexión**, elija **Sitio a sitio (IPSec)** .
 5. Seleccione la **Suscripción**, **Grupo de recursos** y **Ubicación** y, a continuación, seleccione **Aceptar**.
 6. En la hoja **Configuración**, seleccione **Puerta de enlace de red virtual** y, a continuación, seleccione **GW2**.
 7. Seleccione **Puerta de enlace de red local** y, a continuación, seleccione **POC1-GW**.
 8. En **Nombre de la conexión**, escriba **POC2-POC1**.
-9. En **Clave compartida (PSK)**, escriba **12345**. Si elige un valor diferente, recuerde que tiene que coincidir con el valor de la clave compartida que creó en POC1. Seleccione **Aceptar**.
+9. En **Clave compartida (PSK)** , escriba **12345**. Si elige un valor diferente, recuerde que tiene que coincidir con el valor de la clave compartida que creó en POC1. Seleccione **Aceptar**.
 10. Revise la hoja **Resumen** y, a continuación, seleccione **Aceptar**.
 
 ## <a name="create-a-virtual-machine"></a>de una máquina virtual
@@ -274,8 +274,6 @@ Para configurar la conexión VPN, debe crear una ruta de asignación de NAT est�
 
 > [!NOTE]
 > Esta configuración es necesaria solo para entornos del Kit de desarrollo de Azure Stack.
->
->
 
 ### <a name="configure-the-nat"></a>Configuración de la NAT
 

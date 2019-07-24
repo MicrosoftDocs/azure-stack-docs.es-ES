@@ -10,23 +10,23 @@ ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: tutorial
+ms.topic: scenario
 ms.date: 01/25/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: 97869ef7659cb5619ff962fc4b3bc8facbc599ed
-ms.sourcegitcommit: eccbd0098ef652919f357ef6dba62b68abde1090
+ms.openlocfilehash: 73fc9559e639973b07c576f8590c756032db0c3e
+ms.sourcegitcommit: 2a4cb9a21a6e0583aa8ade330dd849304df6ccb5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67492446"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68286938"
 ---
-# <a name="tutorial-deploy-a-hybrid-cloud-solution-with-azure-and-azure-stack"></a>Tutorial: Implementación de una solución en la nube híbrida con Azure y Azure Stack
+# <a name="deploy-a-hybrid-cloud-solution-with-azure-and-azure-stack"></a>Implementación de una solución en la nube híbrida con Azure y Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Este tutorial muestra cómo implementar una solución en la nube híbrida que usa la nube pública de Azure y la nube privada de Azure Stack.
+Este escenario muestra cómo implementar una solución en la nube híbrida que usa la nube pública de Azure y la nube privada de Azure Stack.
 
 Mediante el uso de una solución en la nube híbrida, puede combinar las ventajas de cumplimiento de una nube privada con la escalabilidad de la nube pública. Además, los desarrolladores pueden aprovechar el ecosistema de desarrolladores de Microsoft y aplicar sus conocimientos a los entornos en la nube y locales.
 
@@ -46,6 +46,12 @@ En este tutorial se describen las tareas siguientes:
 > - Configurar la supervisión y las alertas de Application Insights para un aumento del tráfico.
 > - Configurar la conmutación automática del tráfico entre Azure global y Azure Stack.
 
+> [!Tip]  
+> ![hybrid-pillars.png](./media/azure-stack-solution-cloud-burst/hybrid-pillars.png)  
+> Microsoft Azure Stack es una extensión de Azure. Azure Stack aporta la agilidad y la innovación de la informática en la nube a su entorno local y hace posible la única nube híbrida que le permite crear e implementar aplicaciones híbridas en cualquier parte.  
+> 
+> En el artículo [Consideraciones de diseño para aplicaciones híbridas](azure-stack-edge-pattern-overview.md) se examinan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
+
 ### <a name="assumptions"></a>Supuestos
 
 En este tutorial se da por supuesto que tiene conocimientos básicos de Azure global y Azure Stack. Para más información antes de iniciar el tutorial, consulte los siguientes artículos:
@@ -57,7 +63,7 @@ En este tutorial también se supone que tiene una suscripción de Azure. Si no t
 
 ## <a name="prerequisites"></a>Requisitos previos
 
-Antes de comenzar este tutorial, asegúrese de que cumple los requisitos siguientes:
+Antes de comenzar esta solución, asegúrese de que cumple los requisitos siguientes:
 
 - Un Kit de desarrollo de Azure Stack (ASDK) o una suscripción a un sistema integrado de Azure Stack. Para implementar un Kit de desarrollo de Azure Stack, siga las instrucciones de [Implementación de ASDK mediante el instalador](../asdk/asdk-install.md).
 - La instalación de Azure Stack debe tener instalado lo siguiente:

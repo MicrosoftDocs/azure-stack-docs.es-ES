@@ -16,12 +16,12 @@ ms.date: 05/30/2019
 ms.author: sethm
 ms.reviewer: adepue
 ms.lastreviewed: 04/20/2019
-ms.openlocfilehash: 7f335a6ad59d6f27c8e402863849d21c87f1cee2
-ms.sourcegitcommit: 75b13158347963063b7ee62b0ec57894b542c1be
+ms.openlocfilehash: fa8c8b43b354b3f63dfed87cc45baf39fa18652b
+ms.sourcegitcommit: 90ed5aa051d0756b2432c8aca0e2232c8ec493a4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66748899"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68239471"
 ---
 # <a name="azure-stack-1903-update"></a>Actualización de Azure Stack 1903
 
@@ -195,6 +195,8 @@ Los siguientes son problemas conocidos posteriores a la instalación de esta com
 - No se puede quitar un conjunto de escalado desde la hoja **Virtual Machine Scale Sets**. Como alternativa, seleccione el conjunto de escalado que quiere quitar y, a continuación, haga clic en el botón **Eliminar** del panel **Información general**.
 
 - La creación de VM en un conjunto de disponibilidad de 3 dominios de error y la creación de una instancia de conjunto de escalado de máquinas virtuales genera un error **FabricVmPlacementErrorUnsupportedFaultDomainSize** durante el proceso de actualización en un entorno de Azure Stack de 4 nodos. Se pueden crear VM únicas en un conjunto de disponibilidad con 2 dominios de error correctamente. Sin embargo, la creación de instancias del conjunto de escalado todavía no está disponible durante el proceso de actualización en una instancia de Azure Stack de 4 nodos.
+
+- El error en la creación de una imagen de usuario pondrá el servicio de imágenes de usuario en mal estado. Se empezarán a producir errores en las operaciones de creación y eliminación de imágenes de usuario. Pueden producirse errores al eliminar la imagen de usuario: "Error: Se ha producido un error interno de administración de discos."
 
 ### <a name="networking"></a>Redes
 

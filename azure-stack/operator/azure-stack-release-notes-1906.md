@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/01/2019
+ms.date: 07/15/2019
 ms.author: sethm
 ms.reviewer: hectorl
-ms.lastreviewed: 07/01/2019
-ms.openlocfilehash: cc348bba064ddb003bbe6a2a06d2694714ad7894
-ms.sourcegitcommit: 068350a79805366e7e6536fb7df85a412bd0be99
+ms.lastreviewed: 07/15/2019
+ms.openlocfilehash: 5330136bd1d4950ace26fa3f232be039c90ab144
+ms.sourcegitcommit: 12aef286fc14ab27ed737a17e2761c38f054b9b3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67511267"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67885357"
 ---
 # <a name="azure-stack-1906-update"></a>Actualización de Azure Stack 1906
 
@@ -128,7 +128,7 @@ Puede descargar la actualización de Azure Stack 1906 desde [la página de desc
 
 ## <a name="hotfixes"></a>Revisiones
 
-Azure Stack publica revisiones de forma periódica. Asegúrese de instalar la revisión más reciente de Azure Stack para la versión 1905 antes de actualizar Azure Stack a la versión 1906.
+Azure Stack publica revisiones de forma periódica. Asegúrese de instalar la revisión más reciente de Azure Stack para la versión 1905 antes de actualizar Azure Stack a la versión 1906. Después de la actualización, instale las [revisiones disponibles para 1906](#after-successfully-applying-the-1906-update).
 
 Las revisiones de Azure Stack solo son aplicables a los sistemas integrados de Azure Stack; no intente instalar revisiones en el ASDK.
 
@@ -144,7 +144,7 @@ La versión 1906 de Azure Stack debe aplicarse en la versión 1905 con las rev
 Después de instalar esta actualización, instale todas las revisiones aplicables. Para más información, consulte nuestra [directiva de servicio](azure-stack-servicing-policy.md).
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Azure Stack, revisión 1.1906.2.37](https://support.microsoft.com/help/4511282)
+- [Azure Stack, revisión 1.1906.11.52](https://support.microsoft.com/help/4513119)
 
 ## <a name="automatic-update-notifications"></a>Notificaciones de actualización automáticas
 
