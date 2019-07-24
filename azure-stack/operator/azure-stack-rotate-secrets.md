@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/15/2019
+ms.date: 07/15/2019
 ms.reviewer: ppacent
 ms.author: mabrigg
-ms.lastreviewed: 05/14/2019
-ms.openlocfilehash: 4b758cce6741440f5b6a4c00de045e9a4fc8f530
-ms.sourcegitcommit: 1655b2ef4d01d69ceeb52bc16f922bdc19cb968d
+ms.lastreviewed: 07/15/2019
+ms.openlocfilehash: 681daffabda3525effc1815e6aa6657c9c7c526c
+ms.sourcegitcommit: ca7e6b7b9b27d0d93ee4d5d1eeaf3113bbcea4da
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65706342"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68229459"
 ---
 # <a name="rotate-secrets-in-azure-stack"></a>Cambio de secretos en Azure Stack
 
@@ -66,7 +66,7 @@ Azure Stack admite el cambio de secretos con certificados externos desde una nue
 |De autofirmado|A empresarial|Compatible|1903 y posteriores|
 |De autofirmado|A autofirmado|No compatible||
 |De autofirmado|A pública<sup>*</sup>|Compatible|1803 y posterior|
-|De empresarial|A empresarial| Se admite. Desde 1803-1903: compatible siempre y cuando los clientes usen la MISMA entidad de certificación empresarial utilizada en la implementación|1803 y posterior|
+|De empresarial|A empresarial|Se admite. Desde 1803-1903: compatible siempre y cuando los clientes usen la MISMA entidad de certificación empresarial utilizada en la implementación|1803 y posterior|
 |De empresarial|A autofirmado|No compatible||
 |De empresarial|A pública<sup>*</sup>|Compatible|1803 y posterior|
 |De pública<sup>*</sup>|A empresarial|Compatible|1903 y posteriores|
@@ -135,7 +135,7 @@ Si ejecuta el cambio de secretos mediante las instrucciones que aparecen a conti
 > También es importante que la estructura de la carpeta del recurso compartido de archivos comience con la carpeta **Certificates**; de lo contrario, también se producirá un error en la validación.
 > El montaje del recurso compartido de archivos debe ser similar a **\\\\\<IPAddress>\\\<ShareName>\\** y debe contener la carpeta **Certificates\AAD** o **Certificates\ADFS** dentro.
 >
-> Por ejemplo: 
+> Por ejemplo:
 > - Fileshare = **\\\\\<IPAddress>\\\<ShareName>\\**
 > - CertFolder = **Certificates\AAD**
 > - FullPath = **\\\\\<IPAddress>\\\<ShareName>\Certificates\AAD**
@@ -192,7 +192,7 @@ Para cambiar los secretos externos:
     > [!IMPORTANT]  
     > No escriba la sesión, almacénela como una variable.
 
-3. Ejecute **[Invoke-Command](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/Invoke-Command?view=powershell-5.1)**. Pase la variable de sesión de PowerShell del punto de conexión con privilegios como parámetro **Session**.
+3. Ejecute **[Invoke-Command](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/Invoke-Command?view=powershell-5.1)** . Pase la variable de sesión de PowerShell del punto de conexión con privilegios como parámetro **Session**.
 
 4. Ejecute **Start-SecretRotation** con los siguientes parámetros:
     - **PfxFilesPath**  
@@ -298,11 +298,11 @@ El cmdlet **Start-SecretRotation** permite cambiar los secretos de la infraestru
 
 ### <a name="parameters"></a>Parámetros
 
-| Parámetro | Type | Obligatorio | Posición | Valor predeterminado | DESCRIPCIÓN |
+| Parámetro | type | Obligatorio | Posición | Valor predeterminado | DESCRIPCIÓN |
 | -- | -- | -- | -- | -- | -- |
-| `PfxFilesPath` | string  | False  | con nombre  | None  | La ruta de acceso del recurso compartido de archivos al directorio **\Certificates** que contiene todos los certificados del punto de conexión de la red externa. Solo se necesita al rotar secretos externos. El directorio final debe ser **\Certificates**. |
+| `PfxFilesPath` | Cadena  | False  | con nombre  | None  | La ruta de acceso del recurso compartido de archivos al directorio **\Certificates** que contiene todos los certificados del punto de conexión de la red externa. Solo se necesita al rotar secretos externos. El directorio final debe ser **\Certificates**. |
 | `CertificatePassword` | SecureString | False  | con nombre  | None  | La contraseña de todos los certificados que se proporcionan en -PfXFilesPath. Valor obligatorio si se proporciona PfxFilesPath al cambiar secretos externos. |
-| `Internal` | string | False | con nombre | None | La marca Internal se debe utilizar cada vez que un operador de Azure Stack quiera cambiar los secretos de infraestructura interna. |
+| `Internal` | Cadena | False | con nombre | None | La marca Internal se debe utilizar cada vez que un operador de Azure Stack quiera cambiar los secretos de infraestructura interna. |
 | `PathAccessCredential` | PSCredential | False  | con nombre  | None  | La credencial de PowerShell para el recurso compartido de archivos al directorio **\Certificates** que contiene todos los certificados del punto de conexión de la red externa. Solo se necesita al rotar secretos externos.  |
 | `ReRun` | SwitchParameter | False  | con nombre  | None  | ReRun se debe usar en cualquier momento en que se vuelva a intentar el cambio de secretos después de un intento fallido. |
 
@@ -369,9 +369,13 @@ Este comando cambia todos los secretos de la infraestructura expuestos a la red 
 
 El controlador de administración de placa base (BMC) supervisa el estado físico de sus servidores. Las especificaciones e instrucciones para actualizar el nombre de la cuenta de usuario y contraseña de BMC varían según el proveedor de hardware del fabricante de equipos originales (OEM). Debe actualizar regularmente las contraseñas de los componentes de Azure Stack.
 
-1. Actualice el BMC en los servidores físicos de Azure Stack con las instrucciones del OEM. El nombre de usuario y la contraseña para cada BMC de su entorno deben ser los mismos. Tenga en cuenta que los nombres de usuario de BMC no pueden superar los 16 caracteres.
+1. Actualice el BMC en los servidores físicos de Azure Stack con las instrucciones del OEM. El nombre de usuario y la contraseña para cada BMC de su entorno deben ser los mismos. Los nombres de usuario de BMC no pueden superar los 16 caracteres.
+
+    > [!Note]  
+    > En primer lugar, actualice las credenciales de BMC en el controlador de administración de la placa base del servidor físico; de lo contrario, se producirá un error en el comando de Azure Stack durante la validación.
+
 2. Abra un punto de conexión con privilegios en sesiones de Azure Stack. Para obtener instrucciones, consulte [Uso del punto de conexión con privilegios en Azure Stack](azure-stack-privileged-endpoint.md).
-3. Cuando el símbolo del sistema de PowerShell cambie a **[IP address or ERCS VM name]: PS >** o a **[azs-ercs01]: PS >**, en función del entorno, ejecute `Set-BmcCredential` mediante `Invoke-Command`. Pase la variable de sesión del punto de conexión con privilegios como parámetro. Por ejemplo: 
+3. Cuando el símbolo del sistema de PowerShell cambie a **[IP address or ERCS VM name]: PS >** o a **[azs-ercs01]: PS >** , en función del entorno, ejecute `Set-BmcCredential` mediante `Invoke-Command`. Pase la variable de sesión del punto de conexión con privilegios como parámetro. Por ejemplo:
 
     ```powershell
     # Interactive Version

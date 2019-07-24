@@ -10,25 +10,25 @@ ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: tutorial
+ms.topic: scenario
 ms.date: 01/14/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: a348e4e7eada9537defa292f667cfd3eb1e27438
-ms.sourcegitcommit: eccbd0098ef652919f357ef6dba62b68abde1090
+ms.openlocfilehash: 47a0fd72da842cc4d2f73372870c561f2d88e48d
+ms.sourcegitcommit: 2a4cb9a21a6e0583aa8ade330dd849304df6ccb5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67492458"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68286951"
 ---
-# <a name="tutorial-create-a-geo-distributed-app-solution-to-direct-traffic-with-azure-and-azure-stack"></a>Tutorial: Crear una solución de aplicación distribuida geográficamente para dirigir el tráfico con Azure y Azure Stack
+# <a name="create-a-geo-distributed-app-solution-to-direct-traffic-with-azure-and-azure-stack"></a>Crear una solución de aplicación distribuida geográficamente para dirigir el tráfico con Azure y Azure Stack
 
 *Se aplica a: sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
 Aprenda a dirigir el tráfico a puntos de conexión específicos en función de varias métricas con el patrón de aplicaciones distribuidas geográficamente. La creación de un perfil de Traffic Manager con la configuración de puntos de conexión y enrutamiento geográfico garantiza que la información se enruta a puntos de conexión en función de los requisitos regionales, la legislación internacional y corporativa, y su necesidad en cuanto a los datos.
 
-En este tutorial, creará un entorno de ejemplo para:
+En esta solución, creará un entorno de ejemplo para:
 
 > [!div class="checklist"]
 > - Crear una aplicación distribuida geográficamente.
@@ -42,7 +42,7 @@ Con el patrón de distribución geográfica, la aplicación puede abarcar region
 
 #### <a name="scalability-considerations"></a>Consideraciones sobre escalabilidad
 
-La solución que va a crear con este tutorial no admite la escalabilidad. Sin embargo, si se utiliza en combinación con otras soluciones de Azure y locales, puede dar cabida a los requisitos de escalabilidad. Para obtener información acerca de cómo crear una solución híbrida con ajuste de escala automático a través de Traffic Manager, consulte [Creación de soluciones de escalado en toda la nube con Azure](azure-stack-solution-cloud-burst.md).
+La solución que va a crear con este artículo no admite la escalabilidad. Sin embargo, si se utiliza en combinación con otras soluciones de Azure y locales, puede dar cabida a los requisitos de escalabilidad. Para obtener información acerca de cómo crear una solución híbrida con ajuste de escala automático a través de Traffic Manager, consulte [Creación de soluciones de escalado en toda la nube con Azure](azure-stack-solution-cloud-burst.md).
 
 #### <a name="availability-considerations"></a>Consideraciones sobre disponibilidad
 
@@ -74,7 +74,7 @@ Antes de crear el entorno de una aplicación distribuida, resulta útil conocer 
 > ![hybrid-pillars.png](./media/azure-stack-solution-cloud-burst/hybrid-pillars.png)  
 > Microsoft Azure Stack es una extensión de Azure. Azure Stack aporta la agilidad y la innovación de la informática en la nube a su entorno local y hace posible la única nube híbrida que le permite crear e implementar aplicaciones híbridas en cualquier parte.  
 > 
-> En las notas del producto [Consideraciones de diseño para aplicaciones híbridas](https://aka.ms/hybrid-cloud-applications-pillars) se examinan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
+> En el artículo [Consideraciones de diseño para aplicaciones híbridas](azure-stack-edge-pattern-overview.md) se examinan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
 
 ## <a name="part-1-create-a-geo-distributed-app"></a>Parte 1: Crear una aplicación distribuida geográficamente
 
@@ -260,9 +260,9 @@ Para migrar un sitio en vivo y su nombre de dominio DNS a App Service, consulte 
 
 ### <a name="prerequisites"></a>Requisitos previos
 
-Para completar este tutorial:
+Para realizar esta solución:
 
--   [Cree una aplicación de App Service](https://docs.microsoft.com/azure/app-service/) o use alguna aplicación que se haya creado para otro tutorial.
+-   [Cree una aplicación de App Service](https://docs.microsoft.com/azure/app-service/) o use alguna aplicación que se haya creado para otra solución.
 
 -   Compre un nombre de dominio y asegure el acceso al registro DNS para el proveedor de dominio.
 
@@ -371,7 +371,7 @@ En esta parte, seguiremos estos pasos:
 
 ### <a name="prerequisites"></a>Requisitos previos
 
-Para completar este tutorial:
+Para realizar esta solución:
 
 -   [Cree una aplicación de App Service](https://docs.microsoft.com/azure/app-service/).
 -   [Asigne un nombre DNS personalizado a la aplicación web.](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-domain)
