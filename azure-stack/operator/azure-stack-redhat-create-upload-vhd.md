@@ -3,8 +3,8 @@ title: Creación y carga de un VHD de Red Hat Enterprise Linux para su uso en Az
 description: Aprenda a crear y cargar un disco duro virtual (VHD) de Azure que contiene un sistema operativo Red Hat Linux.
 services: azure-stack
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: mattbriggs
+manager: femila
 editor: ''
 tags: ''
 ms.assetid: ''
@@ -13,17 +13,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-origin.date: 04/15/2019
-ms.date: 04/29/2019
-ms.author: v-jay
+ms.date: 07/23/2019
+ms.author: mabrigg
 ms.reviewer: jeffgo
 ms.lastreviewed: 08/15/2018
-ms.openlocfilehash: 636ac38785f2604b97ee5bf1cfc3615baa259d26
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 52ca03b01e762f980cbabcbe63d718bfd4c2c152
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64308175"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68418185"
 ---
 # <a name="prepare-a-red-hat-based-virtual-machine-for-azure-stack"></a>Preparación de una máquina virtual basada en Red Hat para Azure Stack
 
@@ -84,7 +83,7 @@ En esta sección, se supone que ya tiene un archivo ISO en el sitio web de Red H
     sudo subscription-manager register --auto-attach --username=XXX --password=XXX
     ```
 
-1. Modifique la línea de arranque de kernel de su configuración grub para que incluya parámetros de kernel adicionales para Azure. Para realizar esta modificación, abra `/etc/default/grub` en un editor de texto y modifique el parámetro `GRUB_CMDLINE_LINUX`. Por ejemplo: 
+1. Modifique la línea de arranque de kernel de su configuración grub para que incluya parámetros de kernel adicionales para Azure. Para realizar esta modificación, abra `/etc/default/grub` en un editor de texto y modifique el parámetro `GRUB_CMDLINE_LINUX`. Por ejemplo:
 
     ```sh
     GRUB_CMDLINE_LINUX="rootdelay=300 console=ttyS0 earlyprintk=ttyS0 net.ifnames=0"
@@ -221,7 +220,7 @@ En esta sección, se supone que ya tiene un archivo ISO en el sitio web de Red H
     subscription-manager register --auto-attach --username=XXX --password=XXX
     ```
 
-1. Modifique la línea de arranque de kernel de su configuración grub para que incluya parámetros de kernel adicionales para Azure. Para realizar esta configuración, abra `/etc/default/grub` en un editor de texto y modifique el parámetro `GRUB_CMDLINE_LINUX`. Por ejemplo: 
+1. Modifique la línea de arranque de kernel de su configuración grub para que incluya parámetros de kernel adicionales para Azure. Para realizar esta configuración, abra `/etc/default/grub` en un editor de texto y modifique el parámetro `GRUB_CMDLINE_LINUX`. Por ejemplo:
 
     ```sh
     GRUB_CMDLINE_LINUX="rootdelay=300 console=ttyS0 earlyprintk=ttyS0 net.ifnames=0"
@@ -279,7 +278,7 @@ En esta sección, se supone que ya tiene un archivo ISO en el sitio web de Red H
 
      Siga estas instrucciones para descargar WALinuxAgent:
     
-    a.   Descargar setuptools
+   a.   Descargar setuptools
     ```bash
     wget https://pypi.python.org/packages/source/s/setuptools/setuptools-7.0.tar.gz --no-check-certificate
     tar xzf setuptools-7.0.tar.gz
@@ -410,7 +409,7 @@ En esta sección se supone que ya instaló una máquina virtual RHEL en VMware. 
     sudo subscription-manager register --auto-attach --username=XXX --password=XXX
     ```
 
-1. Modifique la línea de arranque de kernel de su configuración grub para que incluya parámetros de kernel adicionales para Azure. Para realizar esta modificación, abra `/etc/default/grub` en un editor de texto y modifique el parámetro `GRUB_CMDLINE_LINUX`. Por ejemplo: 
+1. Modifique la línea de arranque de kernel de su configuración grub para que incluya parámetros de kernel adicionales para Azure. Para realizar esta modificación, abra `/etc/default/grub` en un editor de texto y modifique el parámetro `GRUB_CMDLINE_LINUX`. Por ejemplo:
 
     ```sh
     GRUB_CMDLINE_LINUX="rootdelay=300 console=ttyS0 earlyprintk=ttyS0 net.ifnames=0"
@@ -666,7 +665,7 @@ En esta sección se supone que ya instaló una máquina virtual RHEL en VMware. 
 
 1. Abra la configuración de la máquina virtual:
 
-     a. Cargue un nuevo disco duro virtual en la máquina virtual. Asegúrese de seleccionar **Formato VHD** y **Tamaño fijo**.
+    a. Cargue un nuevo disco duro virtual en la máquina virtual. Asegúrese de seleccionar **Formato VHD** y **Tamaño fijo**.
 
     b. Adjunte la imagen ISO de instalación a la unidad de DVD.
 
