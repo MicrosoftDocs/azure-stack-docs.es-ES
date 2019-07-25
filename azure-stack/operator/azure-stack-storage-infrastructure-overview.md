@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: ''
 ms.topic: article
-ms.date: 03/11/2019
+ms.date: 07/23/2019
 ms.author: mabrigg
 ms.lastreviewed: 03/11/2019
 ms.reviewer: jiahan
-ms.openlocfilehash: c7ae7f0c8fa510b0f2b55e458266065544e1bd5e
-ms.sourcegitcommit: af63214919e798901399fdffef09650de4176956
+ms.openlocfilehash: 4c57cad7a5b002e6c73c0555c450a8103eaf8aa4
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66828217"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68417997"
 ---
 # <a name="manage-storage-infrastructure-for-azure-stack"></a>Administración de la infraestructura de almacenamiento para Azure Stack
 

@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/04/2019
+ms.date: 07/23/2019
 ms.author: mabrigg
 ms.lastreviewed: 04/04/2019
 ms.reviewer: justini
-ms.openlocfilehash: 5fa84271c02ebc749871116badb3c767812a48ec
-ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
+ms.openlocfilehash: a5fb41e63a8cd9e5f57e4476b1b7c23738f116bb
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66691556"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68418009"
 ---
 # <a name="manage-updates-in-azure-stack-overview"></a>Introducción a la administración de actualizaciones en Azure Stack
 

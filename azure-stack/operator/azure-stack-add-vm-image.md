@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: conceptual
-ms.date: 04/02/2019
+ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 06/08/2018
-ms.openlocfilehash: 440e68b54b99139b85ad53fd67bc43c409d658a8
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: 84aa627f6c274d22ebdab411d6abd1064c6ecd6d
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985627"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68417462"
 ---
 # <a name="add-a-vm-image-to-offer-in-azure-stack"></a>Adición de una imagen de máquina virtual a la oferta en Azure Stack
 
@@ -46,7 +46,7 @@ Debe poderse hacer referencia a las imágenes mediante un identificador URI de B
 
    - Al cargar la [imagen de máquina virtual Windows](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-upload-image/), asegúrese de sustituir el paso **Inicio de sesión en Azure** por el paso [Configuración del entorno de PowerShell del operador de Azure Stack](azure-stack-powershell-configure-admin.md).  
 
-   - Anote el identificador URI donde cargará la imagen de Blob Storage. El identificador URI de Blob Storage tiene el siguiente formato: *&lt;storageAccount&gt;/&lt;blobContainer&gt;/&lt;targetVHDName&gt;*.vhd.
+   - Anote el identificador URI donde cargará la imagen de Blob Storage. El identificador URI de Blob Storage tiene el siguiente formato: *&lt;storageAccount&gt;/&lt;blobContainer&gt;/&lt;targetVHDName&gt;* .vhd.
 
    - Para que sea posible acceder al blob de manera anónima, vaya al contenedor de blobs de la cuenta de almacenamiento donde se cargó el disco duro virtual de la imagen de máquina virtual. Seleccione **Blob** y, a continuación, seleccione **Directiva de acceso**. Opcionalmente, puede generar una firma de acceso compartido para el contenedor e incluirla como parte del identificador URI del blob. Con este paso se garantiza la disponibilidad del blob para incorporarlo como imagen. Si no se puede acceder al blob de forma anónima, se creará la imagen de la máquina virtual con estado de error.
 
@@ -104,7 +104,7 @@ Debe poderse hacer referencia a las imágenes mediante un identificador URI de B
      El segmento del nombre de la SKU de la imagen de máquina virtual que usan los usuarios al implementar la imagen de máquina virtual. Un ejemplo es **Datacenter2016**. No incluya un espacio u otros caracteres especiales en este campo.  
    - **version**  
      Por ejemplo: `1.0.0`  
-     La versión de la imagen de máquina virtual que usan los usuarios al implementar la imagen de máquina virtual. Esta versión está en el formato *\#.\#.\#*. Un ejemplo es **1.0.0**. No incluya un espacio u otros caracteres especiales en este campo.  
+     La versión de la imagen de máquina virtual que usan los usuarios al implementar la imagen de máquina virtual. Esta versión está en el formato *\#.\#.\#* . Un ejemplo es **1.0.0**. No incluya un espacio u otros caracteres especiales en este campo.  
    - **osType**  
      Por ejemplo: `Linux`  
      El valor de osType de la imagen debe ser **Windows** o **Linux**.  
@@ -204,7 +204,7 @@ Cuando ya no necesite la imagen de máquina virtual que ha cargado, puede elimin
      El segmento del nombre de la SKU de la imagen de máquina virtual que usan los usuarios al implementar la imagen de máquina virtual. Un ejemplo es **Datacenter2016**. No incluya un espacio u otros caracteres especiales en este campo.  
    - **version**  
      Por ejemplo: `1.0.0`  
-     La versión de la imagen de máquina virtual que usan los usuarios al implementar la imagen de máquina virtual. Esta versión está en el formato *\#.\#.\#*. Un ejemplo es **1.0.0**. No incluya un espacio u otros caracteres especiales en este campo.  
+     La versión de la imagen de máquina virtual que usan los usuarios al implementar la imagen de máquina virtual. Esta versión está en el formato *\#.\#.\#* . Un ejemplo es **1.0.0**. No incluya un espacio u otros caracteres especiales en este campo.  
     
      Para más información sobre el cmdlet Remove-AzsPlatformImage, consulte la [documentación del módulo de operador de Azure Stack](https://docs.microsoft.com/powershell/module/) para Microsoft PowerShell.
 

@@ -10,17 +10,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/11/2019
+ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 03/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: ca22f29597cb452d6d33338b8ba0367c9377f6fb
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: d1cfc5c9c378ccfc48811c5896337ef91fdca2e8
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64310095"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68418557"
 ---
 # <a name="what-is-validation-as-a-service-for-azure-stack"></a>¿Qué es la validación como servicio de Azure Stack?
 

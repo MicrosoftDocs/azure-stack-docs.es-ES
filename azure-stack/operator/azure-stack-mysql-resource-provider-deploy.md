@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/29/2019
+ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 03/18/2019
-ms.openlocfilehash: 197c5002378be8229a6ec60fc0f3d7659b7c56b9
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 2ef279dd3970e14eb41f8a8135c2374cb751f5f7
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618152"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68417779"
 ---
 # <a name="deploy-the-mysql-resource-provider-on-azure-stack"></a>Implementación del proveedor de recursos MySQL en Azure Stack
 
@@ -100,8 +100,8 @@ Puede especificar estos parámetros en la línea de comandos. Si no lo hace, o s
 | **DefaultSSLCertificatePassword** | Contraseña para el certificado .pfx. | _Obligatorio_ |
 | **MaxRetryCount** | Número de veces que quiere volver a intentar cada operación si se produce un error.| 2 |
 | **RetryDuration** | Intervalo de tiempo de expiración entre reintentos, en segundos. | 120 |
-| **Desinstalación** | Se quita el proveedor de recursos y todos los recursos asociados (vea las notas siguientes). | Sin  |
-| **DebugMode** | Impide la limpieza automática en caso de error. | Sin  |
+| **Desinstalación** | Se quita el proveedor de recursos y todos los recursos asociados (vea las notas siguientes). | Sin |
+| **DebugMode** | Impide la limpieza automática en caso de error. | Sin |
 | **AcceptLicense** | Omite el aviso para aceptar la licencia GPL.  <https://www.gnu.org/licenses/old-licenses/gpl-2.0.html> | |
 
 ## <a name="deploy-the-mysql-resource-provider-using-a-custom-script"></a>Implementación del proveedor de recursos MySQL con un script personalizado

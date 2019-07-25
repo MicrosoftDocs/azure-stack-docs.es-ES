@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/29/2019
+ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: a81b1f0dae233adc29437bc88a82e4560fc36f10
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 6513138226bf60d37f7f2f541d8d00dcf8d87073
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65617905"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68417440"
 ---
 # <a name="update-the-mysql-resource-provider"></a>Actualización del proveedor de recursos de MySQL 
 
@@ -59,8 +59,8 @@ Puede especificar los siguientes parámetros desde la línea de comandos al ejec
 | **DefaultSSLCertificatePassword** | Contraseña para el certificado .pfx. | _Obligatorio_ | 
 | **MaxRetryCount** | Número de veces que quiere volver a intentar cada operación si se produce un error.| 2 | 
 | **RetryDuration** | Intervalo de tiempo de expiración entre reintentos, en segundos. | 120 | 
-| **Desinstalación** | Se quita el proveedor de recursos y todos los recursos asociados (vea las notas siguientes). | Sin  | 
-| **DebugMode** | Impide la limpieza automática en caso de error. | Sin  | 
+| **Desinstalación** | Se quita el proveedor de recursos y todos los recursos asociados (vea las notas siguientes). | Sin | 
+| **DebugMode** | Impide la limpieza automática en caso de error. | Sin | 
 | **AcceptLicense** | Omite el aviso para aceptar la licencia GPL.  (https://www.gnu.org/licenses/old-licenses/gpl-2.0.html) | | 
 
 ## <a name="update-script-example"></a>Ejemplo de actualización del script

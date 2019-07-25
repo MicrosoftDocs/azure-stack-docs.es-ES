@@ -2,21 +2,20 @@
 title: Cursos y certificaciones de Azure Stack
 description: Conozca las oportunidades de cursos y certificaciones de Azure Stack.
 services: azure-stack
-author: WenJason
-manager: digimobile
+author: mattbriggs
+manager: femila
 ms.service: azure-stack
 ms.topic: article
-origin.date: 04/15/2019
-ms.date: 04/29/2019
-ms.author: v-jay
+ms.date: 07/23/2019
+ms.author: mabrigg
 ms.lastreviewed: 03/20/2019
 ms.reviewer: efemmano
-ms.openlocfilehash: fc00a1e40e4bd78da7d9ee9ee0b9288aa311483a
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: dc4942df6a5a461b6b40ef402ea5a282cf1d01ee
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64309681"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68417858"
 ---
 # <a name="azure-stack-training-and-certification"></a>Cursos y certificaciones de Azure Stack
 

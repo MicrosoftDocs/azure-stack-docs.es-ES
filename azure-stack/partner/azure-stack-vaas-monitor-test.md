@@ -10,17 +10,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 03/11/2019
+ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 03/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 9b64631b274423edda35189a942e2f142ae591f1
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 5d3d32df25aeba90ef065fc4363f0887dcbc36e5
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63447841"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68418358"
 ---
 # <a name="monitor-and-manage-tests-in-the-vaas-portal"></a>Supervisión y administración de pruebas en el portal de VaaS
 

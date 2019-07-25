@@ -10,17 +10,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/11/2019
+ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 03/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 3830dc15cebe24a8fb910b641b7b986437aeec52
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 1ffb66bb1abe9f2ffb64162f834c682df2aaa609
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64310317"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68418404"
 ---
 # <a name="validation-as-a-service-key-concepts"></a>Conceptos clave de la validación como servicio
 
@@ -37,7 +37,7 @@ Una solución VaaS representa una solución de Azure Stack con una lista de mate
 3. Escriba un nombre para la solución. Para obtener sugerencias de nombres, consulte [Convenciones de nomenclatura para soluciones VaaS](azure-stack-vaas-best-practice.md#naming-convention-for-vaas-solutions).
 4. Seleccione **Guardar** para crear la solución.
 
-## <a name="workflows"></a>Flujos de trabajo
+## <a name="workflows"></a>Workflows
 
 Un flujo de trabajo VaaS funciona dentro del contexto de una solución VaaS. Representa una serie de conjuntos de pruebas que actúan sobre la funcionalidad de implementación de Azure Stack. Para cada actualización de software o implementación de una solución de Azure Stack, se debe crear un flujo de trabajo.
 

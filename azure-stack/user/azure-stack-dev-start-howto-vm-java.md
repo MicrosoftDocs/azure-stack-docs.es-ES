@@ -9,12 +9,12 @@ ms.date: 04/24/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 04/24/2019
-ms.openlocfilehash: 1738d106a0688518f7a739d3fb02ec1b16c2b8b9
-ms.sourcegitcommit: 05a16552569fae342896b6300514c656c1df3c4e
+ms.openlocfilehash: 28d60e8fc5b575cd2fbefee1298220418e4f59a1
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65838364"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68418239"
 ---
 # <a name="deploy-a-java-web-app-to-a-vm-in-azure-stack"></a>Implementación de una aplicación web de Java en una máquina virtual en Azure Stack
 
@@ -62,7 +62,7 @@ Puede crear una máquina virtual para hospedar la aplicación web de Python en A
         sudo groupadd tomcat
     ```
      
-    b. Cree un nuevo usuario de Tomcat. Agregue este usuario al grupo de Tomcat con un directorio de inicio de *tomcat/opt/*. Va a implementar Tomcat en este directorio:
+    b. Cree un nuevo usuario de Tomcat. Agregue este usuario al grupo de Tomcat con un directorio de inicio de *tomcat/opt/* . Va a implementar Tomcat en este directorio:
 
     ```bash  
         sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
@@ -284,15 +284,16 @@ Para obtener instrucciones sobre cómo desarrollar aplicaciones de Java en Azure
 
     a. Borre *TOMCAT_HOME/webapps*.
 
-    b. Agregue el archivo WAR a *TOMCAT_HOME/webapps* (por ejemplo, */opt/tomcat/webapps/*).
+    b. Agregue el archivo WAR a *TOMCAT_HOME/webapps* (por ejemplo, */opt/tomcat/webapps/* ).
 
-1.  Tomcat se expande automáticamente e implementa la aplicación. Puede verlo mediante el nombre DNS que ha creado anteriormente. Por ejemplo: 
+1.  Tomcat se expande automáticamente e implementa la aplicación. Puede verlo mediante el nombre DNS que ha creado anteriormente. Por ejemplo:
 
     ```HTTP  
        http://yourmachine.local.cloudapp.azurestack.external:8080/sample
+    ```
+    
+## <a name="next-steps"></a>Pasos siguientes
 
-## Next steps
-
-- Learn more about how to [develop for Azure Stack](azure-stack-dev-start.md).
-- Learn about [common deployments for Azure Stack as IaaS](azure-stack-dev-start-deploy-app.md).
-- To learn the Java programming language and find additional resources for Java, see [Java.com](https://www.java.com).
+- Obtenga más información sobre cómo [desarrollar para Azure Stack](azure-stack-dev-start.md).
+- Obtenga información sobre las [implementaciones comunes para Azure Stack como IaaS](azure-stack-dev-start-deploy-app.md).
+- Para conocer el lenguaje de programación de Java y consultar recursos adicionales para Java, consulte [Java.com](https://www.java.com).

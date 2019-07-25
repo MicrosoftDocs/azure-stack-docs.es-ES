@@ -11,17 +11,17 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 04/09/2019
+ms.date: 07/23/2019
 ms.author: mabrigg
 ms.custom: mvc
 ms.reviewer: kivenkat
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 1b0f367540012b86da322329f0536b3c484c39b4
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: 21dacbd9fc0bd7b646eb937e5460f6e7a89e3465
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66269562"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68417403"
 ---
 # <a name="quickstart-create-a-windows-server-vm-by-using-powershell-in-azure-stack"></a>Inicio rápido: Creación de una máquina virtual con Windows Server mediante PowerShell en Azure Stack
 

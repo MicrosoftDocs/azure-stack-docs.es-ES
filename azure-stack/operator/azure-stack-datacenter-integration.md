@@ -12,21 +12,22 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/14/2019
+ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: wfayed
 ms.lastreviewed: 09/12/2018
-ms.openlocfilehash: 53289e46a2f29a03535958b76743db107f6ecf64
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 07191c95ede4f9a3ce80117bfeca9b5a02cfc0b1
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65617783"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68417375"
 ---
 # <a name="datacenter-integration-considerations-for-azure-stack-integrated-systems"></a>Consideraciones de integración del centro de datos para sistemas integrados de Azure Stack
+
 Si está interesado en un sistema integrado de Azure Stack, debe comprender algunas de las principales consideraciones de planificación acerca de la implementación y el modo en que el sistema se adapta a su centro de datos. En este artículo se proporciona información general de alto nivel de estas consideraciones para ayudarle a tomar importantes decisiones de infraestructura para el sistema de varios nodos de Azure Stack. Entender estas consideraciones ayuda a trabajar con su proveedor de hardware OEM cuando se implementa Azure Stack en el centro de datos.  
 
-> [!NOTE]
+> [!NOTE]  
 > Los sistemas de varios nodos de Azure Stack solo pueden adquirirse en los proveedores de hardware autorizados. 
 
 Para implementar Azure Stack, debe proporcionar información de planeamiento al proveedor de soluciones antes de que comience la implementación a fin de facilitar el avance rápido y sencillo del proceso. La información requerida se extiende a través de redes, seguridad e información de identidad con muchas decisiones importantes, que pueden requerir conocimiento de diferentes áreas y de distintos responsables en la toma de decisiones. Por lo tanto, es posible que tenga que atraer a personas de varios equipos de su organización para asegurarse de que tiene lista toda la información necesaria antes de comenzar la implementación. Puede ser útil hablar con su proveedor de hardware mientras recopila esta información, ya que puede que tenga consejos útiles para su toma de decisiones.

@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/11/2019
+ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: ppacent
 ms.lastreviewed: 01/08/2019
-ms.openlocfilehash: abf2d10c50271217220d9dc218b4d50f7411d867
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: 8d929a3b1fd67f3ec73137b2e1a87f594ea5b544
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64984527"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68417834"
 ---
 # <a name="validate-azure-stack-pki-certificates"></a>Validación de certificados PKI de Azure Stack
 
@@ -83,13 +83,13 @@ Siga estos pasos para preparar y validar los certificados PKI de Azure Stack par
     ```
     
     > [!Note]  
-    > Se requieren AD FS y Graph si utiliza AD FS como sistema de identidad. Por ejemplo: 
+    > Se requieren AD FS y Graph si utiliza AD FS como sistema de identidad. Por ejemplo:
     >
     > ```powershell  
     > $directories = 'ACSBlob', 'ACSQueue', 'ACSTable', 'ADFS', 'Admin Extension Host', 'Admin Portal', 'ARM Admin', 'ARM Public', 'Graph', 'KeyVault', 'KeyVaultInternal', 'Public Extension Host', 'Public Portal'
     > ```
     
-     - Sitúe los certificados en los directorios apropiados que creó en el paso anterior. Por ejemplo:   
+     - Sitúe los certificados en los directorios apropiados que creó en el paso anterior. Por ejemplo:  
         - `c:\certificates\ACSBlob\CustomerCertificate.pfx`
         - `c:\certificates\Admin Portal\CustomerCertificate.pfx`
         - `c:\certificates\ARM Admin\CustomerCertificate.pfx`
@@ -102,7 +102,7 @@ Siga estos pasos para preparar y validar los certificados PKI de Azure Stack par
     Invoke-AzsCertificateValidation -CertificatePath c:\certificates -pfxPassword $pfxPassword -RegionName east -FQDN azurestack.contoso.com -IdentitySystem AAD  
     ```
 
-4. Compruebe que la salida y todos los certificados pasen todas las pruebas. Por ejemplo: 
+4. Compruebe que la salida y todos los certificados pasen todas las pruebas. Por ejemplo:
 
 ```powershell
 Invoke-AzsCertificateValidation v1.1809.1005.1 started.

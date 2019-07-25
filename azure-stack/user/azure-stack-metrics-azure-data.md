@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/11/2019
+ms.date: 07/23/2019
 ms.author: mabrigg
 ms.lastreviewed: 12/01/2018
-ms.openlocfilehash: d243a574e43d3a68d3d5caf0f60235019a57462a
-ms.sourcegitcommit: b36d078e699c7924624b79641dbe9021af9606ba
+ms.openlocfilehash: aafdc25293ea3cc584d24688d071dadb2151ce22
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67816253"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68418538"
 ---
 # <a name="use-azure-monitor-on-azure-stack"></a>Uso de Azure Monitor en Azure Stack
 

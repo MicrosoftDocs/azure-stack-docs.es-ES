@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: conceptual
-ms.date: 03/19/2019
+ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 03/19/2019
-ms.openlocfilehash: 5d5fe68d9641b6ba7099268f631c1bfe89fb0674
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: 4f9e9c4f79a06e0f1f74db8152047beb3af07b75
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985152"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68417534"
 ---
 # <a name="manage-azure-stack-storage-accounts"></a>Administración de cuentas de almacenamiento de Azure Stack
 

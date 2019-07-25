@@ -10,17 +10,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 03/11/2019
+ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 03/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: fb7b98a5307606f7335e76ada42d583b975730f5
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: fe744fc95c79cb7482e1baa213471335ebb6e1fd
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64312876"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68418296"
 ---
 # <a name="validate-a-new-azure-stack-solution"></a>Validación de una nueva solución de Azure Stack
 

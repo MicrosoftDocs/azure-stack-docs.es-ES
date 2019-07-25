@@ -10,17 +10,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 03/11/2019
+ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 03/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: d3db8ea8639f73f3522ddaa358195e7c9ef2f9a9
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: af36943ebaa78ad1838506d6614a7fd6671afe4f
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63448555"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68418474"
 ---
 # <a name="interactive-feature-verification-testing"></a>Pruebas de comprobación de características interactivas  
 
