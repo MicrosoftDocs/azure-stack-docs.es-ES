@@ -1,6 +1,6 @@
 ---
-title: En este tutorial, aprenderá a suscribirse a una oferta de Azure Stack | Microsoft Docs
-description: En este tutorial se muestra cómo crear una nueva suscripción a los servicios de Azure Stack y probar la oferta mediante la creación de una máquina virtual de prueba.
+title: Creación de una suscripción con una oferta en Azure Stack | Microsoft Docs
+description: Aprenda a crear una nueva suscripción con una oferta en Azure Stack y, luego, pruebe la oferta con una máquina virtual de prueba.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -17,23 +17,23 @@ ms.date: 06/04/2019
 ms.author: sethm
 ms.reviewer: efemmano
 ms.lastreviewed: 11/13/2018
-ms.openlocfilehash: 3f577ebd5a57b271a449b5db262ea70779ebdb3d
-ms.sourcegitcommit: a427e72e4f3b6cd6000b1459af9bbf221e049e08
+ms.openlocfilehash: 5b72ccee255aadd5d8f42aefea9e397ba310812c
+ms.sourcegitcommit: 72d45bb935db0db172d4d7c37d8e48e79e25af64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66506367"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68376810"
 ---
-# <a name="tutorial-create-and-test-a-subscription"></a>Tutorial: Creación y prueba de una suscripción
+# <a name="tutorial-create-and-test-a-subscription-in-azure-stack"></a>Tutorial: Creación y prueba de una suscripción en Azure Stack
 
-En este tutorial se muestra cómo crear una suscripción que contiene una oferta y, después, probarla. Para la prueba, inicie sesión en el portal de usuarios de Azure Stack como administrador de la nube, se suscribirá a la oferta y, después, creará una máquina virtual.
+En este tutorial se muestra cómo crear una suscripción que contiene una oferta y, después, probarla. Para la prueba, inicie sesión en el portal de usuarios de Azure Stack como administrador de la nube. Seguidamente, suscríbase a la oferta y cree una máquina virtual (VM).
 
 > [!TIP]
 > Para una experiencia de evaluación más avanzada, puede [crear una suscripción para un usuario en particular](../operator/azure-stack-subscribe-plan-provision-vm.md#create-a-subscription-as-a-cloud-operator) y después iniciar sesión como ese usuario en el portal de usuarios.
 
 En este tutorial se muestra cómo suscribirse a una oferta de Azure Stack.
 
-Lo qué aprenderá:
+Temas que se abordarán:
 
 > [!div class="checklist"]
 > * Suscripción a una oferta 
@@ -41,7 +41,7 @@ Lo qué aprenderá:
 
 ## <a name="subscribe-to-an-offer"></a>Suscripción a una oferta
 
-Para suscribirse a una oferta como usuario, inicie sesión en el portal de usuarios de Azure Stack para descubrir los servicios que ha ofrecido el operador de Azure Stack.
+Para suscribirse a una oferta como usuario, inicie sesión en el portal de usuarios de Azure Stack y consulte los recursos que ofrece el operador de Azure Stack.
 
 1. Inicie sesión en el portal de usuario y seleccione **Obtener una suscripción**.
 
@@ -52,7 +52,7 @@ Para suscribirse a una oferta como usuario, inicie sesión en el portal de usuar
    ![Creación de una oferta](media/azure-stack-subscribe-services/create-subscription.png)
 
    > [!TIP]
-   > Debe actualizar ahora el portal de usuarios para empezar a usar la suscripción.
+   > Actualice el portal de usuarios para empezar a usar la suscripción.
 
 3. Para ver la suscripción que creó, seleccione **Todos los servicios**. Luego, en la categoría **GENERAL** seleccione **Suscripciones** y, después, seleccione la suscripción nueva. Después de suscribirse a una oferta, actualice el portal para ver si se han incluido nuevos servicios como parte de la nueva suscripción. En este ejemplo, se ha agregado **Máquinas virtuales**.
 
@@ -60,14 +60,14 @@ Para suscribirse a una oferta como usuario, inicie sesión en el portal de usuar
 
 ## <a name="test-the-offer"></a>Probar la oferta
 
-Al iniciar sesión en el portal de usuarios, puede probar la oferta mediante el aprovisionamiento de una máquina virtual con las nuevas funcionalidades de suscripción.
+Al iniciar sesión en el portal de usuarios, pruebe la oferta mediante el aprovisionamiento de una máquina virtual con las nuevas funcionalidades de suscripción.
 
 > [!NOTE]
-> Esta prueba requiere que una máquina virtual de Windows Server 2016 Datacenter que ya se agregó a Marketplace de Azure Stack.
+> Esta prueba requiere que una máquina virtual de Windows Server 2016 Datacenter que se haya agregado primero a Marketplace de Azure Stack.
 
 1. Inicie sesión en el portal de usuario.
 
-2. En el portal de usuarios, seleccione **Máquinas virtuales**, después, **Agregar**, **Windows Server 2016 Datacenter** y, finalmente, haga clic en **Crear**.
+2. En el portal de usuarios, seleccione **Máquinas virtuales**, después, **Agregar**, **Windows Server 2016 Datacenter** y, finalmente, **Crear**.
 
 3. En la sección **Datos básicos**, escriba un **nombre**, **nombre de usuario** y **contraseña**, elija una **suscripción**, cree un **grupo de recursos** (o seleccione uno existente) y, a continuación, seleccione **Aceptar**.
 
@@ -75,9 +75,9 @@ Al iniciar sesión en el portal de usuarios, puede probar la oferta mediante el 
 
 5. En la hoja de **configuración**, acepte los valores predeterminados y seleccione **Aceptar**.
 
-6. En la sección **Resumen**, haga clic en **Aceptar** para crear la máquina virtual.  
+6. En la sección **Resumen**, seleccione **Aceptar** para crear la máquina virtual.  
 
-7. Para ver la nueva máquina virtual, seleccione **Máquinas virtuales** y, a continuación, busque la nueva máquina virtual y haga clic en su nombre.
+7. Para ver su nueva máquina virtual, seleccione **Máquinas virtuales** y, luego, busque la nueva y seleccione su nombre.
 
     ![Todos los recursos](media/azure-stack-subscribe-services/view-vm.png)
 
@@ -85,12 +85,6 @@ Al iniciar sesión en el portal de usuarios, puede probar la oferta mediante el 
 > La implementación de la máquina virtual tarda unos minutos en completarse.
 
 ## <a name="next-steps"></a>Pasos siguientes
-
-En este tutorial aprendió:
-
-> [!div class="checklist"]
-> * Suscripción a una oferta 
-> * Probar la oferta
 
 > [!div class="nextstepaction"]
 > [Creación de una máquina virtual a partir de una plantilla de comunidad](azure-stack-create-vm-template.md)
