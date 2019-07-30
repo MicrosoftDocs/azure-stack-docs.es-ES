@@ -11,22 +11,26 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/11/2019
+ms.date: 07/18/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
-ms.lastreviewed: 12/06/2018
-ms.openlocfilehash: 78fe71768b83082e152685f7fe4c7cc606ae5b3c
-ms.sourcegitcommit: cf9440cd2c76cc6a45b89aeead7b02a681c4628a
+ms.lastreviewed: 07/18/2019
+ms.openlocfilehash: 35f350628a5c13e26bf6f3d1c931aa78a05bfb53
+ms.sourcegitcommit: 159da88a52701679571bbedde1c36b72bbfe32dd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66469199"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68380483"
 ---
 # <a name="replace-a-scale-unit-node-on-an-azure-stack-integrated-system"></a>Reemplazar un nodo de la unidad de escalado en un sistema integrado de Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack*
 
 En este artículo se describe el proceso general para reemplazar un equipo físico (también denominado un nodo de la unidad de escalado) en un sistema integrado de Azure Stack. Los pasos para reemplazar el nodo de la unidad de escalado actual varían en función del proveedor de hardware del fabricante de equipos originales (OEM). Consulte la documentación de Field Replaceable Unit (FRU) del proveedor para obtener pasos detallados específicos para su sistema.
+
+> [!CAUTION]  
+> La nivelación del firmware es fundamental para el éxito de la operación que se describe en este artículo. La omisión de este paso puede dar lugar a inestabilidad del sistema, disminución del rendimiento, subprocesos de seguridad o evitar que la automatización de Azure Stack implemente el sistema operativo. Vea siempre la documentación del asociado de hardware cuando reemplace este para asegurarse de que el firmware aplicado coincide con la versión de OEM que se muestra en el [portal de administración de Azure Stack](azure-stack-updates.md).<br>
+Para obtener más información y vínculos a la documentación de los asociados, vea [Sustitución de un componente de hardware](azure-stack-replace-component.md).
 
 En el siguiente diagrama de flujo se muestra el proceso general de FRU para reemplazar un nodo completo de la unidad de escalado.
 

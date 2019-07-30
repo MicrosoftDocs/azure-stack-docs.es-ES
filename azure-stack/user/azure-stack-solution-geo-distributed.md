@@ -15,12 +15,12 @@ ms.date: 01/14/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 47a0fd72da842cc4d2f73372870c561f2d88e48d
-ms.sourcegitcommit: 2a4cb9a21a6e0583aa8ade330dd849304df6ccb5
+ms.openlocfilehash: ba6eb236086fe9ba0d3ee37d35e1ac69c8ee7224
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68286951"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68418167"
 ---
 # <a name="create-a-geo-distributed-app-solution-to-direct-traffic-with-azure-and-azure-stack"></a>Crear una solución de aplicación distribuida geográficamente para dirigir el tráfico con Azure y Azure Stack
 
@@ -60,7 +60,7 @@ Como sucede con las consideraciones sobre escalabilidad, esta solución no abord
 
 Antes de crear el entorno de una aplicación distribuida, resulta útil conocer lo siguiente:
 
--   **Dominio personalizado para la aplicación:** ¿cuál es el nombre de dominio personalizado que los clientes usarán para acceder a la aplicación? Para la aplicación de ejemplo, el nombre de dominio personalizado es *www.scalableasedemo.com*.
+-   **Dominio personalizado para la aplicación:** ¿cuál es el nombre de dominio personalizado que los clientes usarán para acceder a la aplicación? En el caso de la aplicación de ejemplo, el nombre de dominio personalizado es *www\.scalableasedemo.com*.
 
 -   **Dominio de Traffic Manager:** se elige nombre de dominio al crear un [perfil de Azure Traffic Manager](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-manage-profiles). Este nombre se combina con el sufijo *trafficmanager.net* para registrar una entrada de dominio que administra Traffic Manager. Para la aplicación de ejemplo, el nombre elegido es *scalable-ase-demo*. Como resultado, el nombre de dominio completo administrado por Traffic Manager es *scalable-ase-demo.trafficmanager.net*.
 
@@ -274,7 +274,7 @@ Actualice el archivo de zona DNS para el dominio. Azure AD comprobará la propie
 
 -   Actualice el archivo de zona DNS para el dominio. Para ello, agregue la entrada DNS que Azure AD proporcione.
 
-Por ejemplo, para agregar entradas DNS a fornorthwindcloud.com y www.northwindcloud.com, configure los valores de DNS del dominio raíz thenorthwindcloud.com.
+Por ejemplo, para agregar entradas DNS a northwindcloud.com y www\.northwindcloud.com, configure los valores de DNS del dominio raíz northwindcloud.com.
 
 > [!Note]  
 >  Un nombre de dominio puede adquirirse mediante [Azure Portal](https://docs.microsoft.com/azure/app-service/manage-custom-dns-buy-domain). Para asignar un nombre DNS personalizado a una aplicación web, el [plan de App Service](https://azure.microsoft.com/pricing/details/app-service/) de dicha aplicación debe ser un nivel de pago (**Compartido**, **Básico**, **Estándar** o **Premium**).

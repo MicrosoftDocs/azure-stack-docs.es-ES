@@ -11,12 +11,12 @@ ms.author: mabrigg
 ms.reviewer: wfayed
 ms.lastreviewed: 05/09/2019
 keywords: ''
-ms.openlocfilehash: bf1aed6c8140f0c0753f49195082dfd71737868a
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 748da2aa4391d7f28e6d4273830d8d024021bb79
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618673"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68417491"
 ---
 # <a name="azure-stack-datacenter-integration---dns"></a>Integración del centro de datos de Azure Stack: DNS
 
@@ -80,7 +80,7 @@ Azure Stack incluye servidores DNS autoritativos y recursivos. Los servidores re
 
 ## <a name="resolving-external-dns-names-from-azure-stack"></a>Resolver nombres DNS externos desde Azure Stack
 
-Para resolver nombres DNS para puntos de conexión fuera de Azure Stack (por ejemplo, www.bing.com), deberá proporcionar servidores DNS que Azure Stack pueda usar para reenviar las solicitudes DNS para las que Azure Stack no es autoritativo. Para la implementación, se requieren los servidores DNS a los que Azure Stack reenvía las solicitudes en la hoja de cálculo de implementación (en el campo Reenviador DNS). Proporcione al menos dos servidores en este campo por razones de tolerancia a errores. Sin estos valores, se produce un error de implementación de Azure Stack.
+Para resolver nombres DNS de puntos de conexión fuera de Azure Stack (por ejemplo: www\.bing.com), debe proporcionar servidores DNS que Azure Stack pueda usar para reenviar las solicitudes DNS para las que Azure Stack no es autoritativo. Para la implementación, se requieren los servidores DNS a los que Azure Stack reenvía las solicitudes en la hoja de cálculo de implementación (en el campo Reenviador DNS). Proporcione al menos dos servidores en este campo por razones de tolerancia a errores. Sin estos valores, se produce un error de implementación de Azure Stack.
 
 ### <a name="configure-conditional-dns-forwarding"></a>Configure el reenvío condicional de DNS
 

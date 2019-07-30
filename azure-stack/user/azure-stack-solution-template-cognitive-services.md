@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/15/2019
+ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: guanghu
 ms.lastreviewed: 12/11/2018
-ms.openlocfilehash: c642a3eeb07ef2ce94ca8dc338a781256c5b9f37
-ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
+ms.openlocfilehash: 9098be09e8b5bd20660f12789159a41d5a330408
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66691237"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68417310"
 ---
 # <a name="deploy-azure-cognitive-services-to-azure-stack"></a>Implementación de Azure Cognitive Services en Azure Stack
 
@@ -144,7 +144,7 @@ Detalles sobre los campos de claves:
 | ImageLocation | Indica la ubicación de la imagen de contenedor de Cognitive Services específica en ACR. Por ejemplo, el servicio de Face: `aicpppe.azurecr.io/microsoft/cognitive-services-face` |
 | BillingURL |La dirección URL del punto de conexión anotada en el paso [Creación de un recurso de Azure](#create-azure-resources) |
 | ApiKey | La clave de suscripción anotada en el paso [Creación de un recurso de Azure](#create-azure-resources) |
-| SecretName | El nombre de secreto que creó en el paso [Creación de un secreto de Kubernetes(#create-a-kubernetes-secret)] |
+| SecretName | Nombre del secreto que ha creado en el paso [Creación de un secreto de Kubernetes](#create-a-kubernetes-secret) |
 
 ## <a name="deploy-the-cognitive-service"></a>Implementación de la instancia de Cognitive Services
 

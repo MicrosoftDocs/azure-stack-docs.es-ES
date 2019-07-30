@@ -16,12 +16,12 @@ ms.date: 06/27/2019
 ms.author: sethm
 ms.reviewer: hectorl
 ms.lastreviewed: 06/27/2019
-ms.openlocfilehash: c5108dc8b24fec7569d54964217f146a5cefa5e6
-ms.sourcegitcommit: bcaad8b7db2ea596018d973cb29283d8c6daebfb
+ms.openlocfilehash: 49b4276da5c7e42728cf96261104f59c70355c20
+ms.sourcegitcommit: 159da88a52701679571bbedde1c36b72bbfe32dd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67419564"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68380407"
 ---
 # <a name="azure-stack-update-activity-checklist"></a>Lista de comprobación de actividades para la actualización de Azure Stack
 
@@ -29,15 +29,17 @@ Este artículo contiene una lista de comprobación de actividades relacionadas c
 
 ## <a name="prepare-for-azure-stack-update"></a>Preparación para una actualización de Azure Stack
 
-| Actividad              | Detalles                                                                          |
-|-----------------------|----------------------------------------------------------------------------------|
-| Revisión de problemas conocidos   | [Lista de los problemas conocidos](azure-stack-release-notes-known-issues-1906.md).                |
+| Actividad                     | Detalles                                                   |
+|------------------------------|-----------------------------------------------------------|
+| Revisión de problemas conocidos     | [Lista de los problemas conocidos](azure-stack-release-notes-known-issues-1906.md).                |
 | Revisión de las actualizaciones de seguridad | [Lista de actualizaciones de seguridad](azure-stack-release-notes-security-updates-1906.md).      |
-| Ejecución de Test-AzureStack   | Ejecute `Test-AzureStack -Group UpdateReadiness` para identificar los problemas operativos.      |
-| Resolución de problemas        | Resuelva los problemas operativos que haya identificado **Test-AzureStack**.                |
-| Aplicación de las revisiones más recientes | Aplique las revisiones más recientes que sean aplicables a la versión instalada actualmente.         |
-| Ejecutar la herramienta Capacity Planner | Asegúrese de que usa la versión más reciente de [Azure Stack Capacity Planner](https://aka.ms/azstackcapacityplanner)  para planificar la carga de trabajo y ajustar su tamaño. La última versión contiene correcciones de errores y proporciona nuevas características que se publican con cada actualización de Azure Stack. |
-| Actualización disponible       | Únicamente en los escenarios en los que estén conectadas, las implementaciones de Azure Stack comprueban periódicamente un punto de conexión seguro y le notifican automáticamente si una actualización está disponible para la nube. Los clientes que estén desconectados pueden descargar e importar el nuevo paquete 1906. Para ello, deben seguir el [proceso que se describe aquí](azure-stack-apply-updates.md).               |
+| Aplicación del paquete de OEM más reciente | Póngase en contacto con el OEM para asegurarse de que el sistema cumple los requisitos mínimos del paquete de OEM para la versión de Azure Stack a la que se está actualizando el sistema. |
+| Ejecución de Test-AzureStack     | Ejecute `Test-AzureStack -Group UpdateReadiness` para identificar los problemas operativos.      |
+| Resolución de problemas          | Resuelva los problemas operativos que haya identificado **Test-AzureStack**.                |
+| Aplicación de las revisiones más recientes   | Aplique las revisiones más recientes que sean aplicables a la versión instalada actualmente.         |
+| Ejecutar la herramienta Capacity Planner   | Asegúrese de que usa la versión más reciente de la herramienta [Azure Stack Capacity Planner](https://aka.ms/azstackcapacityplanner) para realizar el planeamiento y el ajuste de tamaño de la carga de trabajo. La última versión contiene correcciones de errores y proporciona nuevas características que se publican con cada actualización de Azure Stack. |
+| Actualización disponible        | Únicamente en los escenarios en los que estén conectadas, las implementaciones de Azure Stack comprueban periódicamente un punto de conexión seguro y le notifican automáticamente si una actualización está disponible para la nube. Los clientes que estén desconectados pueden descargar e importar el nuevo paquete 1906. Para ello, deben seguir el [proceso que se describe aquí](azure-stack-apply-updates.md). |
+
 
 ## <a name="during-azure-stack-update"></a>Durante la actualización de Azure Stack
 

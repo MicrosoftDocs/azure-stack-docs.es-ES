@@ -15,12 +15,12 @@ ms.date: 04/25/2019
 ms.author: mabrigg
 ms.reviewer: justini
 ms.lastreviewed: 02/11/2019
-ms.openlocfilehash: 147e6b7555d67b562b44102bfd022e954a87e0ae
-ms.sourcegitcommit: 2b6a0b3b4dc63c26df3d0535d630d640ff232fb0
+ms.openlocfilehash: 04494c3f394fb5a3b836c8fcf67cd02fb2900910
+ms.sourcegitcommit: 4f3e161e7632c8a6e3d41946b09f22b5bdb08d36
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65521222"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68413188"
 ---
 # <a name="apply-updates-in-azure-stack"></a>Aplicación de actualizaciones en Azure Stack
 
@@ -113,7 +113,7 @@ El siguiente procedimiento muestra cómo importar e instalar actualizaciones en 
 9. Cuando haya finalizado, puede revisar las notificaciones (el icono de campana de la esquina superior derecha del portal). Las notificaciones deben indicar que la carga se ha completado.
 10. Vuelva al icono de actualización del panel. El icono debe indicar que hay una actualización disponible. Haga clic en el icono para revisar el paquete de actualización recién agregado.
 11. Para instalar la actualización, seleccione el paquete que está marcado como **Listo** y haga clic con el botón derecho en él y seleccione **Actualizar ahora**, o bien haga clic en la acción **Actualizar ahora** cerca de la parte superior.
-12. Al hacer clic en el paquete de actualización de instalación, puede ver el estado en el área **Update run details** (Detalles de ejecución de actualización). Aquí también puede hacer clic en **Download full logs** (Descargar registros completos) para descargar los archivos de registro.
+12. Al hacer clic en el paquete de actualización de instalación, puede ver el estado en el área **Update run details** (Detalles de ejecución de actualización). Aquí también puede hacer clic en **Descargar resumen** para descargar los archivos de registro. Los registros de las ejecuciones de actualización están disponibles durante 6 meses después de la finalización del intento. 
 13. Cuando la actualización finaliza, el icono de actualización muestra la versión actualizada de Azure Stack.
 
 Puede eliminar manualmente las actualizaciones de la cuenta de almacenamiento después de haberlas instalado en Azure Stack. Azure Stack busca periódicamente los paquetes de actualización más antiguos y los elimina del almacenamiento. Azure Stack puede tardar dos semanas en quitar los paquetes antiguos.

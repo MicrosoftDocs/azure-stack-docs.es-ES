@@ -2,60 +2,82 @@
 documentType: LandingData
 title: Documentación del operador de Azure Stack
 metadata:
-  document_id: cbf798da-6f1a-7d4d-7707-5d5e02589e22
-  title: 'Documentación del operador de Azure Stack: tutoriales y referencia de API'
-  description: Aprenda a usar Azure Stack para prestar servicios de Azure desde el centro de datos. Conozca las características de un entorno de Development Kit o de sistemas integrados.
+  title: 'Documentación sobre Azure Stack: tutoriales y referencia de API'
+  meta.description: azure-stack
   services: azure-stack
-  author: mattbriggs
+  author: justinha
   manager: femila
+  layout: LandingPage
+  ms.assetid: cbf798da-6f1a-7d4d-7707-5d5e02589e22
   ms.service: azure-stack
-  ms.tgt_pltfrm: na
-  ms.devlang: na
+  ms.tgt_pltfrm: from-team
+  ms.devlang: from-team
   ms.topic: landing-page
-  ms.date: 06/17/2019
-  ms.author: mabrigg
+  ms.date: 07/09/2019
+  ms.author: justinha
 abstract:
   description: 'Microsoft Azure Stack es una nueva plataforma en la nube híbrida que le permite proporcionar servicios de Azure desde el centro su datos. Aprenda a administrar la infraestructura de sistemas integrados de Azure Stack y a ofrecer servicios con nuestros tutoriales y guías de inicio rápido.<br/><br/>Si es un usuario de Azure Stack que usa los servicios o compila aplicaciones para Azure Stack, consulte la <a href="/azure-stack/user">documentación de usuario</a>.<br/><br/>Si es un operador de Azure Stack interesado en el Kit de desarrollo de Azure Stack (ASDK), una implementación de un único nodo de Azure Stack que puede descargar y usar gratuitamente, consulte la <a href="/azure-stack/asdk">documentación sobre ASDK</a>.'
 sections:
-  - title: Guía de inicio rápido
-    items:
-      - type: paragraph
-        text: Aprenda a usar el portal de administración para las tareas de administración cotidianas.
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_deploy.svg'
-            text: Uso del portal de administración de Azure Stack
-            href: azure-stack-manage-portals.md
-  - title: Tutoriales detallados
-    items:
-      - type: paragraph
-        text: Aprenda a agregar servicios a la implementación de Azure Stack.
-      - type: list
-        style: ordered
-        items:
-          - html: <a href="/azure-stack/operator/azure-stack-tutorial-tenant-vm">Ofrecer Virtual Machines en Azure Stack</a>
-          - html: <a href="/azure-stack/operator/azure-stack-tutorial-sql-server">Ofrecer instancias de SQL Database en Azure Stack</a>
-          - html: <a href="/azure-stack/operator/azure-stack-tutorial-sql">Creación de bases de datos SQL de alta disponibilidad</a>
-          - html: <a href="/azure-stack/operator/azure-stack-tutorial-mysql">Creación de bases de datos MySQL de alta disponibilidad</a>
-          - html: <a href="/azure-stack/operator/azure-stack-tutorial-app-service">Ofrecer Web Apps en Azure Stack</a>
-  - title: Vídeo gratuito de aprendizaje de PluralSight
+  - title: Introducción a Azure Stack
     items:
       - type: list
         style: cards
-        className: cardsFTitle
+        className: cardsA
         items:
-          - title: Conozca los aspectos básicos de Azure Stack
-            href: 'https://www.pluralsight.com/courses/microsoft-azure-stack-big-picture?twoid=26658a98-62ff-48e5-aa5f-2741523aea54'
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_pluralsight.svg'
-              href: 'https://www.pluralsight.com/courses/microsoft-azure-stack-big-picture?twoid=26658a98-62ff-48e5-aa5f-2741523aea54'
-  - title: Referencia
+          - html: |-
+              <a href="/azure-stack/operator/azure-stack-manage-portals">
+              <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_portal.svg" alt="">
+              <br><b>Uso del portal de administración</b></a>
+              <p>Use el portal de administración para la administración y las operaciones diarias de Azure Stack.</p>
+          - html: |-
+              <a href="/azure-stack/operator/azure-stack-powershell-install">
+              <img height="48" width="48" src="https://docs.microsoft.com/media/logos/logo_powershell.svg" alt="">
+              <br><b>PowerShell de Azure Stack</b></a>
+              <p>Administre fácilmente los recursos de Azure Stack con PowerShell.</p>
+          - html: |-
+              <a href="/azure-stack/operator/azure-stack-capacity-planning-overview">
+              <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_load-testing.svg" alt="">
+              <br><b>Planeamiento de capacidad</b></a>
+              <p>Consulte cómo se adaptan las diferentes asignaciones de recursos de proceso a una selección de ofertas de hardware.</p>
+  - title: Oferta de servicios de Azure Stack
     items:
       - type: list
         style: cards
-        className: cardsD
+        className: cardsA
         items:
-          - title: Línea de comandos
-            html: <p><a href="/powershell/azure/azure-stack/overview?view=azurestackps-1.2.10">Azure Stack PowerShell</a></p>
+          - html: |-
+              <a href="/azure-stack/operator/azure-stack-sql-resource-provider">
+              <img height="48" width="48" src="https://docs.microsoft.com/media/logos/logo_SQL.svg" alt="hybrid cloud app ci/cd">
+              <br><b>Oferta de SQL como PaaS</b></a>
+              <p>Use el proveedor de recursos de SQL Server para ofrecer las bases de datos de SQL como un servicio de Azure Stack.</p>
+          - html: |-
+              <a href="/azure-stack/operator/azure-stack-mysql-resource-provider">
+              <img height="48" width="48" src="https://docs.microsoft.com/media/logos/logo_mysql.svg" alt="hybrid cloud app identity">
+              <br><b>Oferta de MySQL como PaaS</b></a>
+              <p>Use el proveedor de recursos de MySQL para ofrecer las bases de datos de MySQL como un servicio de Azure Stack.</p>
+          - html: |-
+              <a href="/azure-stack/operator/azure-stack-app-service-overview">
+              <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_web-apps.svg" alt="hybrid cloud app scaling">
+              <br><b>Oferta de Azure App Service como PaaS</b></a>
+              <p>Ayude a los usuarios a crear aplicaciones web y API para cualquier plataforma o dispositivo.</p>
+  - title: Administración de Azure Stack
+    items:
+      - type: list
+        style: cards
+        className: cardsA
+        items:
+          - html: |-
+              <a href="/azure-stack/operator/azure-stack-updates">
+              <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_upgrade.svg" alt="">
+              <br><b>Actualización de Azure Stack</b></a>
+              <p>Microsoft incluye un solo paquete cada mes para mantener actualizados los sistemas integrados de Azure Stack. </p>
+          - html: |-
+              <a href="/azure-stack/operator/azure-stack-backup-infrastructure-backup">
+              <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_usb.svg" alt="">
+              <br><b>Copia de seguridad de Azure Stack</b></a>
+              <p>Realice una copia de seguridad de la configuración y los datos de servicio y restáurelos con el servicio Copia de seguridad de infraestructura.</p>
+          - html: |-
+              <a href="/azure-stack/operator/azure-stack-security-configuration">
+              <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_cloud-security.svg" alt="">
+              <br><b>Configuración de la seguridad de Azure Stack</b></a>
+              <p>Azure Stack está diseñado para defenderse frente a amenazas modernas y satisfacer los estándares de cumplimiento normativo.</p>

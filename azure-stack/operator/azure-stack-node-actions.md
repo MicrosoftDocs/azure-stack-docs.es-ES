@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: article
-ms.date: 05/16/2019
+ms.date: 07/18/2019
 ms.author: mabrigg
-ms.reviewer: ppacent
-ms.lastreviewed: 01/22/2019
-ms.openlocfilehash: fa0292419a228fcf9bbfef2bbfc2503f4ba5a702
-ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
+ms.reviewer: thoroet
+ms.lastreviewed: 07/18/2019
+ms.openlocfilehash: 7ac25e86be91cf6a2e8384c88c79fe3022b3f00d
+ms.sourcegitcommit: 159da88a52701679571bbedde1c36b72bbfe32dd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782334"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68380472"
 ---
 # <a name="scale-unit-node-actions-in-azure-stack"></a>Acciones de los nodos de unidad de escalado en Azure Stack
 
@@ -62,7 +62,7 @@ Para ver el estado de una unidad de escalado:
 | Stopped | El nodo no está disponible. |
 | Agregando | El nodo se está agregando activamente a la unidad de escalado. |
 | Reparando | El nodo se está reparando activamente. |
-| Mantenimiento  | El nodo está en pausa y no se está ejecutando ninguna carga de trabajo de usuario activa. |
+| Mantenimiento | El nodo está en pausa y no se está ejecutando ninguna carga de trabajo de usuario activa. |
 | Requiere corrección | Se detectó un error que requiere que el nodo se repare. |
 
 ## <a name="scale-unit-node-actions"></a>Acciones de nodo de unidad de escalado
@@ -93,7 +93,7 @@ En el improbable caso de que la acción de detención no funcione, vuelva a inte
 
 Para más información, consulte [Stop-AzsScaleUnitNode](https://docs.microsoft.com/powershell/module/azs.fabric.admin/stop-azsscaleunitnode).
 
-## <a name="start"></a>Iniciar
+## <a name="start"></a>Start
 
 La acción de **inicio** activa el nodo. Es lo mismo que si se presiona el botón de encendido. 
  
@@ -137,6 +137,20 @@ Para reanudar la acción de purga, abra un símbolo de sistema de PowerShell con
 Para más información, consulte [Enable-AzsScaleUnitNode](https://docs.microsoft.com/powershell/module/azs.fabric.admin/enable-azsscaleunitnode).
 
 ## <a name="repair"></a>Reparación
+
+> [!CAUTION]  
+> La nivelación del firmware es fundamental para el éxito de la operación que se describe en este artículo. La omisión de este paso puede dar lugar a inestabilidad del sistema, disminución del rendimiento, subprocesos de seguridad o evitar que la automatización de Azure Stack implemente el sistema operativo. Vea siempre la documentación del asociado de hardware cuando reemplace este para asegurarse de que el firmware aplicado coincide con la versión de OEM que se muestra en el [portal de administración de Azure Stack](azure-stack-updates.md).<br>
+Para obtener más información y vínculos a la documentación de los asociados, vea [Sustitución de un componente de hardware](azure-stack-replace-component.md).
+
+| Asociado de hardware | Region | URL |
+|------------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Cisco | Todo | [Guía de operaciones de Cisco Integrated System for Microsoft Azure Stack](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/azure-stack/b_Azure_Stack_Operations_Guide_4-0/b_Azure_Stack_Operations_Guide_4-0_chapter_00.html#concept_wks_t1q_wbb)<br><br>[Notas de la versión de Cisco Integrated System for Microsoft Azure Stack](https://www.cisco.com/c/en/us/support/servers-unified-computing/ucs-c-series-rack-mount-ucs-managed-server-software/products-release-notes-list.html) |
+| Dell EMC | Todo | [Cloud for Microsoft Azure Stack 14G (cuenta e inicio de sesión necesarios)](https://support.emc.com/downloads/44615_Cloud-for-Microsoft-Azure-Stack-14G)<br><br>[Cloud for Microsoft Azure Stack 13G (cuenta e inicio de sesión necesarios)](https://support.emc.com/downloads/42238_Cloud-for-Microsoft-Azure-Stack-13G) |
+| Fujitsu | JAPÓN | [Departamento de soporte técnico de servicio administrado de Fujitsu (cuenta e inicio de sesión necesarios)](https://eservice.fujitsu.com/supportdesk-web/) |
+|  | EMEA | [Soporte técnico de TI de Fujitsu para productos y sistemas](https://support.ts.fujitsu.com/IndexContact.asp?lng=COM&ln=no&LC=del) |
+|  |  | [Fujitsu MySupport (cuenta e inicio de sesión necesarios)](https://support.ts.fujitsu.com/IndexMySupport.asp) |
+| HPE | Todo | [HPE ProLiant for Microsoft Azure Stack](http://www.hpe.com/info/MASupdates) |
+| Lenovo | Todo | [ThinkAgile SXM Best Recipes](https://datacentersupport.lenovo.com/us/en/solutions/ht505122) |
 
 La acción **Reparar** repara un nodo. Úsela solamente para alguno de los escenarios siguientes:
  - Al reemplazar un nodo completo (con o sin discos de datos nuevos)
