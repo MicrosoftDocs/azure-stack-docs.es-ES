@@ -4,17 +4,17 @@ description: Conectarse a Azure Stack como desarrollador mediante la extensión
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
-ms.topic: Howto
+ms.topic: conceptual
 ms.date: 06/25/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 06/25/2019
-ms.openlocfilehash: 4e7dd18267060f632e2d059b0a7b0d9158b2e260
-ms.sourcegitcommit: d1fdecdfa843dfc0629bfc226f1baf14f3ea621d
+ms.openlocfilehash: 9f45e94f26e577f1a47f60b7df24758d7bc88767
+ms.sourcegitcommit: 35b13ea6dc0221a15cd0840be796f4af5370ddaf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387750"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68603050"
 ---
 # <a name="connect-to-azure-stack-using-azure-account-extension-in-visual-studio-code"></a>Conectarse a Azure Stack mediante la extensión de la cuenta de Azure en Visual Studio Code
 
