@@ -10,17 +10,17 @@ ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: scenario
+ms.topic: conceptual
 ms.date: 01/14/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 1bbe22bdc78f28aa172c90770cd5d2857878d2c3
-ms.sourcegitcommit: 2a4cb9a21a6e0583aa8ade330dd849304df6ccb5
+ms.openlocfilehash: 64554d0bd2c9e9d8622b1fd48bb7d086cd0b4b76
+ms.sourcegitcommit: 35b13ea6dc0221a15cd0840be796f4af5370ddaf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68286912"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68603128"
 ---
 # <a name="create-cross-cloud-scaling-app-solutions-with-azure-and-azure-stack"></a>Creación de soluciones de aplicaciones escalado entre nubes con Azure y Azure Stack
 

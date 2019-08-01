@@ -6,6 +6,7 @@ documentationcenter: ''
 author: mattbriggs
 manager: femila
 editor: ''
+ms.topic: conceptual
 ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
@@ -14,12 +15,12 @@ ms.date: 06/20/2019
 ms.author: mabrigg
 ms.reviewer: anajod
 ms.lastreviewed: 06/20/2019
-ms.openlocfilehash: ca4c2480fff511ab3bad43ea82fc81522d9afba0
-ms.sourcegitcommit: 2a4cb9a21a6e0583aa8ade330dd849304df6ccb5
+ms.openlocfilehash: 859d80c9782926602769664006375cb131de8637
+ms.sourcegitcommit: 35b13ea6dc0221a15cd0840be796f4af5370ddaf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68286743"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68602936"
 ---
 # <a name="deploy-a-staged-data-analytics-solution-to-azure-stack"></a>Implementación de una solución de análisis de datos almacenados provisionalmente en Azure Stack
 

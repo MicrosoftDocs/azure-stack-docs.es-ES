@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/14/2019
+ms.date: 07/18/2019
 ms.author: justinha
 ms.reviewer: misainat
-ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: d3289ae5db5e54ee6ad5d1948653ef82946d16ff
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.lastreviewed: 07/18/2019
+ms.openlocfilehash: 6736da0f792c0e01d1a0af06e35a0984ec398158
+ms.sourcegitcommit: f6ea6daddb92cbf458f9824cd2f8e7e1bda9688e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66267459"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68493705"
 ---
 # <a name="start-and-stop-the-azure-stack-development-kit-asdk"></a>Inicio y detención del Kit de desarrollo de Azure Stack (ASDK)
 No se recomienda simplemente reiniciar el equipo que hospeda ASDK. En su lugar, siga los procedimientos que se describen en este artículo para detener y reiniciar los servicios de ASDK correctamente. 
@@ -63,7 +63,7 @@ Independientemente de cómo se detuviera ASDK, debe seguir estos pasos para veri
    ```
 6. Revise la salida para asegurarse de que los servicios de Azure Stack se han reiniciado correctamente.
 
-Para más información sobre los procedimientos recomendados para detener y reiniciar los servicios de Azure Stack correctamente, consulte [Inicio y detención de Azure Stack](../operator/azure-stack-start-and-stop.md). 
+Para más información sobre los procedimientos recomendados para detener y reiniciar los servicios de Azure Stack correctamente, consulte [Inicio y detención de Azure Stack](../operator/azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep). 
 
 ## <a name="troubleshoot-startup-and-shutdown"></a>Solución de problemas de arranque y detención 
 Si los servicios de Azure Stack no se inician correctamente en un plazo de dos horas tras el encendido del equipo que hospeda ASDK, realice estos pasos:
@@ -90,4 +90,4 @@ Si los servicios de Azure Stack no se inician correctamente en un plazo de dos h
 Si la ejecución de **Start-AzureStack** produce un error, visite el [foro de soporte técnico de Azure Stack](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurestack) para obtener ayuda de solución de problemas con ASDK. 
 
 ## <a name="next-steps"></a>Pasos siguientes 
-Para más información sobre la herramienta de diagnóstico de Azure Stack y el registro de problemas, consulte [Herramientas de diagnóstico de Azure Stack](../operator/azure-stack-diagnostics.md).
+Para más información sobre la herramienta de diagnóstico de Azure Stack y el registro de problemas, consulte [Herramientas de diagnóstico de Azure Stack](../operator/azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep).

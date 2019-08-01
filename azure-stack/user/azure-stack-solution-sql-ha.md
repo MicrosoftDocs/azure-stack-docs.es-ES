@@ -10,17 +10,17 @@ ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: solution
+ms.topic: conceptual
 ms.date: 06/20/2019
 ms.author: mabrigg
 ms.reviewer: anajod
 ms.lastreviewed: 06/20/2019
-ms.openlocfilehash: 4565615caf4e4c13bda84e6596e23d523225d888
-ms.sourcegitcommit: 2a4cb9a21a6e0583aa8ade330dd849304df6ccb5
+ms.openlocfilehash: 841b2b3d525380d927b9d4b121b7e832c99b7147
+ms.sourcegitcommit: 35b13ea6dc0221a15cd0840be796f4af5370ddaf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68286892"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68602916"
 ---
 # <a name="deploy-a-sql-server-2016-availability-group-to-azure-and-azure-stack"></a>Implementar un grupo de disponibilidad de SQL Server 2016 en Azure y Azure Stack
 

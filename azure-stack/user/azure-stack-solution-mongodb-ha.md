@@ -10,17 +10,17 @@ ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: solution
+ms.topic: conceptual
 ms.date: 06/20/2019
 ms.author: mabrigg
 ms.reviewer: anajod
 ms.lastreviewed: 06/20/2019
-ms.openlocfilehash: aa48e3b40afc841a26f15ce06870d002261c5932
-ms.sourcegitcommit: 2a4cb9a21a6e0583aa8ade330dd849304df6ccb5
+ms.openlocfilehash: 25be3914f58abad44b64870f9da94610a7498d52
+ms.sourcegitcommit: 35b13ea6dc0221a15cd0840be796f4af5370ddaf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68286851"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68603036"
 ---
 # <a name="deploy-a-highly-available-mongodb-solution-to-azure-and-azure-stack"></a>Implementar una solución MongoDB de alta disponibilidad en Azure y Azure Stack
 

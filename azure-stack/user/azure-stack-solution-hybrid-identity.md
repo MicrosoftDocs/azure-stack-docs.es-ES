@@ -10,17 +10,17 @@ ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: solution
+ms.topic: conceptual
 ms.date: 06/26/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 06/26/2019
-ms.openlocfilehash: 3ed0c109e0253fe6d710801dbc30de04c0b5a6e5
-ms.sourcegitcommit: 2a4cb9a21a6e0583aa8ade330dd849304df6ccb5
+ms.openlocfilehash: bc614cb514b9d35523749944486aa375bb8fce9c
+ms.sourcegitcommit: 35b13ea6dc0221a15cd0840be796f4af5370ddaf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68286825"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68603009"
 ---
 # <a name="configure-hybrid-cloud-identity-for-azure-and-azure-stack-applications"></a>Configuración de la identidad de nube híbrida para aplicaciones de Azure y Azure Stack
 

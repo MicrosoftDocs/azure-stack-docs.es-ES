@@ -14,12 +14,12 @@ ms.author: mabrigg
 ms.date: 06/18/2019
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
-ms.openlocfilehash: 89138601d1049f192946473d0a1fdb2c21df3e4c
-ms.sourcegitcommit: 104ccafcb72a16ae7e91b154116f3f312321cff7
+ms.openlocfilehash: 135bffd37c98ce53de4b7ec58ddca1d65f4c9495
+ms.sourcegitcommit: f6ea6daddb92cbf458f9824cd2f8e7e1bda9688e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67308714"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68493825"
 ---
 # <a name="troubleshoot-kubernetes-deployment-to-azure-stack"></a>Solución de problemas de implementación de Kubernetes en Azure Stack
 
@@ -94,7 +94,7 @@ Puede recopilar y examinar los registros de implementación de las máquinas vir
 4.  Si la máquina virtual es **correcta**, evalúe la instancia de DVM. Si la instancia de DVM tiene un mensaje de error:
 
     - Es posible que la clave pública no sea válida. Revise la clave que ha creado.  
-    - Debe ponerse en contacto con el administrador de Azure Stack para recuperar los registros de Azure Stack mediante los puntos de conexión con privilegios. Para más información, consulte [Registros de diagnóstico de Azure Stack](../operator/azure-stack-diagnostics.md).
+    - Debe ponerse en contacto con el administrador de Azure Stack para recuperar los registros de Azure Stack mediante los puntos de conexión con privilegios. Para más información, consulte [Registros de diagnóstico de Azure Stack](../operator/azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep).
 5. Si tiene preguntas acerca de la implementación, puede publicarlas o ver si alguien ya ha respondido a la pregunta en el [foro de Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack). 
 
 ## <a name="review-deployment-status"></a>Revisar el estado de implementación

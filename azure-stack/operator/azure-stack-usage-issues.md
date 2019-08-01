@@ -15,12 +15,12 @@ ms.date: 06/27/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 06/27/2019
-ms.openlocfilehash: 57c546ec3583c9e04594e4da542a3c2ce3f72c62
-ms.sourcegitcommit: bcaad8b7db2ea596018d973cb29283d8c6daebfb
+ms.openlocfilehash: 68bf47ab2a0842b0aeeae07030272e7106a63220
+ms.sourcegitcommit: f6ea6daddb92cbf458f9824cd2f8e7e1bda9688e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67419918"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68494110"
 ---
 # <a name="usage-connectivity-errors"></a>Errores de conectividad de uso
 
@@ -55,7 +55,7 @@ En esta sección se describen los códigos de errores de uso.
 | No autorizado               | Azure Bridge no puede insertar datos en el servicio de uso de Azure porque dicho servicio no puede realizar la autenticación del puente de Azure Stack. | Compruebe si se ha modificado el recurso de registro y, si es así, vuelva a registrar Azure Stack. <br><br> A veces, una vez problema de sincronización entre Azure Stack y Azure AD puede producir este error. En este caso, asegúrese de que las horas en las VM XRP en Azure Stack están sincronizadas con Azure AD. |
 |                            |                                                                                                                                                   |                                                                                                                                                                                                                                                                                                    |
 
-Además, es posible que deba proporcionar los archivos de registro de los componentes de Azure Bridge, WAS y WASPublic. Para ello, realice [estos pasos](azure-stack-diagnostics.md#log-collection-tool).
+Además, es posible que deba proporcionar los archivos de registro de los componentes de Azure Bridge, WAS y WASPublic. Para ello, realice [estos pasos](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep).
 
 ## <a name="next-steps"></a>Pasos siguientes
 
