@@ -1,6 +1,6 @@
 ---
 title: Desarrollo de aplicaciones para Azure Stack | Microsoft Docs
-description: Consideraciones a la hora de desarrollar prototipos de aplicaciones en Azure Stack
+description: Consideraciones a la hora de desarrollar prototipos de aplicaciones en Azure Stack mediante los servicios de Azure.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -16,18 +16,18 @@ ms.date: 05/21/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 05/21/2019
-ms.openlocfilehash: 4273326001dc79abb7ea522c3bd4c01e46bceb2b
-ms.sourcegitcommit: 6fcd5df8b77e782ef72f0e1419f1f75ec8c16c04
+ms.openlocfilehash: 059e7961cae5c6d6faa8d79d05dbc08a05a13893
+ms.sourcegitcommit: b3dac698f2e1834491c2f9af56a80e95654f11f3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65991288"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68658564"
 ---
 # <a name="develop-for-azure-stack"></a>Desarrollo para Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Puede empezar a desarrollar aplicaciones hoy mismo, incluso si no tiene acceso a un entorno de Azure Stack. Dado que Azure Stack proporciona los servicios de Microsoft Azure que se ejecutan en su centro de datos, puede usar herramientas y procesos similares para desarrollar en Azure Stack, tal como lo haría con Azure.
+Puede empezar a desarrollar aplicaciones hoy mismo, incluso si no tiene acceso a un entorno de Azure Stack. Azure Stack proporciona los servicios de Microsoft Azure que se ejecutan en su centro de datos, lo que significa que puede usar las mismas herramientas y procesos de Azure para desarrollar en Azure Stack.
 
 ## <a name="development-considerations"></a>Consideraciones de desarrollo
 

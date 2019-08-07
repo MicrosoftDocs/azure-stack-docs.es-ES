@@ -15,12 +15,12 @@ ms.date: 05/16/2019
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: c9e796a4ece453c3cd74bbf9a2fb6996757a0b4e
-ms.sourcegitcommit: 44f1bf6e0bfa85ee14819cad27c9b1de65d375df
+ms.openlocfilehash: 9d088cb128243b0b178e7a317ba05176a59e83c1
+ms.sourcegitcommit: f6ea6daddb92cbf458f9824cd2f8e7e1bda9688e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67596076"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68494070"
 ---
 # <a name="using-the-privileged-endpoint-in-azure-stack"></a>Uso del punto de conexión con privilegios en Azure Stack
 
@@ -30,7 +30,7 @@ Como operador de Azure Stack, debe usar las API del portal de administrador, Pow
 
 Puede usar el PEP para realizar tareas como las siguientes:
 
-- Tareas de bajo nivel, como la [recopilación de registros de diagnóstico](azure-stack-diagnostics.md#log-collection-tool).
+- Tareas de bajo nivel, como la [recopilación de registros de diagnóstico](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep).
 - Muchas tareas de integración de centros de datos posteriores a la implementación para sistemas integrados, como agregar reenviadores de Sistema de nombres de dominio (DNS) después de la implementación, configurar la integración con Microsoft Graph y con Active Directory Federation Services (AD FS), la rotación de certificados, etc.
 - Trabajar con el soporte técnico para obtener acceso temporal y de alto nivel de cara a la solución de problemas detallada de un sistema integrado.
 
@@ -154,9 +154,9 @@ Lleve a cabo los siguientes pasos para importar la sesión del PEP al equipo loc
      - **Contraseña**: escriba la misma contraseña que proporcionó durante la instalación de la cuenta del administrador de dominio de AzureStackAdmin.
 
 3. Importe la sesión PEP al equipo local.
-    ```powershell 
+     ```powershell 
         Import-PSSession $session
-    ```
+   ```
 4. Ahora, puede usar la finalización con tabulación y realizar scripting como de costumbre en la sesión de PowerShell local con todas las funciones y cmdlets del PEP sin reducir la posición de seguridad de Azure Stack. ¡Disfrute!
 
 
@@ -167,16 +167,16 @@ Lleve a cabo los siguientes pasos para importar la sesión del PEP al equipo loc
 Para cerrar la sesión del punto de conexión:
 
 1. Cree un recurso compartido de archivos externo al que se pueda acceder mediante el PEP. En un entorno de kit de desarrollo, solo puede crear un recurso compartido de archivos en el host del kit de desarrollo.
-2. Ejecute el cmdlet: 
-    ```powershell
-    Close-PrivilegedEndpoint -TranscriptsPathDestination "\\fileshareIP\SharedFolder" -Credential Get-Credential
-    ```
-donde
+2. Ejecute el siguiente cmdlet: 
+     ```powershell
+     Close-PrivilegedEndpoint -TranscriptsPathDestination "\\fileshareIP\SharedFolder" -Credential Get-Credential
+     ```
+   que usa los parámetros de la tabla siguiente.
 
-| Parámetro | DESCRIPCIÓN | type | Obligatorio |
-|---------|---------|---------|---------|
-| *TranscriptsPathDestination* | Ruta de acceso al recurso compartido de archivos externo definido como "fileshareIP\sharefoldername". | Cadena | Sí|
-| *Credential:* | Credenciales para acceder al recurso compartido de archivos. | SecureString |  Sí |
+   | Parámetro | DESCRIPCIÓN | type | Obligatorio |
+   |---------|---------|---------|---------|
+   | *TranscriptsPathDestination* | Ruta de acceso al recurso compartido de archivos externo definido como "fileshareIP\sharefoldername". | Cadena | Sí|
+   | *Credential:* | Credenciales para acceder al recurso compartido de archivos. | SecureString |   Sí |
 
 
 Una vez los archivos de registro de transcripción se transfieren correctamente al recurso compartido de archivos, se eliminan automáticamente del PEP. 
@@ -187,4 +187,4 @@ Una vez los archivos de registro de transcripción se transfieren correctamente 
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Herramientas de diagnóstico de Azure Stack](azure-stack-diagnostics.md)
+[Herramientas de diagnóstico de Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep)

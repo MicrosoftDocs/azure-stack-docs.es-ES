@@ -7,16 +7,16 @@ manager: femila
 cloud: azure-stack
 ms.service: azure-stack
 ms.topic: article
-ms.date: 02/15/2019
+ms.date: 07/31/2019
 ms.author: justinha
 ms.reviewer: hectorl
-ms.lastreviewed: 02/15/2019
-ms.openlocfilehash: 38c4de35b4d2b5eac16b8586aa6933b18c62b14a
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.lastreviewed: 07/31/2019
+ms.openlocfilehash: 3ab7dfbaef82868f45b181fb81d9b98050147191
+ms.sourcegitcommit: bf4d265a3522cbfdd9dd295a0f4ad0daf2ed5eca
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66267328"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68692116"
 ---
 # <a name="use-the-asdk-to-validate-an-azure-stack-backup"></a>Uso del ASDK para validar una copia de seguridad de Azure Stack
 Después de implementar Azure Stack y aprovisionar recursos de usuario, como ofertas, planes, cuotas y suscripciones, debe [habilitar la infraestructura de copia de seguridad de Azure Stack](../operator/azure-stack-backup-enable-backup-console.md). La programación y ejecución de copias de seguridad de infraestructura regulares asegurará que los datos de administración de infraestructura no se pierdan si se produce un error de servicio o de hardware muy grave.
@@ -58,7 +58,7 @@ Antes de iniciar una implementación de recuperación en la nube del ASDK, aseg�
 |Id. de la copia de seguridad que se va a restaurar|El identificador de copia de seguridad, en formato alfanumérico "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", que identifica la copia de seguridad que se va a restaurar durante la recuperación en la nube.|
 |Dirección IP del servidor horario|Se necesita una dirección IP de servidor horario válida, como 132.163.97.2, para la implementación de Azure Stack.|
 |Contraseña del certificado externo|La contraseña para el certificado externo que se usa en Azure Stack. La copia de seguridad de la entidad de certificación contiene los certificados externos que se deben restaurar con esta contraseña.|
-|Clave de cifrado de copia de seguridad|Necesario si ha actualizado a la versión de Azure Stack 1901 o posterior y la configuración de copia de seguridad sigue configurada con una clave de cifrado. La clave de cifrado estará en desuso a partir de la versión 1901. El instalador admitirá la clave de cifrado en el modo de compatibilidad con versiones anteriores durante al menos 3 versiones. Una vez actualizada la configuración de copia de seguridad para usar un certificado, consulte la siguiente tabla para la información necesaria.|
+|Clave de cifrado de copia de seguridad|Es obligatoria si la configuración de copia de seguridad está establecida con una clave de cifrado, que ya está en desuso. El instalador admitirá la clave de cifrado en el modo de compatibilidad con versiones anteriores durante al menos 3 versiones. Una vez actualizada la configuración de copia de seguridad para usar un certificado, consulte la siguiente tabla para la información necesaria.|
 
 |     |     | 
 
@@ -73,7 +73,7 @@ Antes de iniciar una implementación de recuperación en la nube del ASDK, aseg�
 |Dirección IP del servidor horario|Se necesita una dirección IP de servidor horario válida, como 132.163.97.2, para la implementación de Azure Stack.|
 |Contraseña del certificado externo|La contraseña para el certificado externo que se usa en Azure Stack. La copia de seguridad de la entidad de certificación contiene los certificados externos que se deben restaurar con esta contraseña.|
 |Contraseña de certificación de descifrado|Opcional. Necesario únicamente si la copia de seguridad se cifra mediante un certificado. Es la contraseña para el certificado autofirmado (.pfx) que contiene la clave privada necesaria para descifrar los datos de copia de seguridad.|
-|Clave de cifrado de copia de seguridad|Opcional. Necesario si ha actualizado a la versión de Azure Stack 1901 o posterior y la configuración de copia de seguridad sigue configurada con una clave de cifrado. El instalador admitirá la clave de cifrado en el modo de compatibilidad con versiones anteriores durante al menos 3 versiones. Una vez actualizada la configuración de copia de seguridad para usar un certificado, debe proporcionar la contraseña del certificado de descifrado.|
+|Clave de cifrado de copia de seguridad|Opcional. Es obligatoria si la configuración de copia de seguridad sigue establecida con una clave de cifrado. El instalador admitirá la clave de cifrado en el modo de compatibilidad con versiones anteriores durante al menos 3 versiones. Una vez actualizada la configuración de copia de seguridad para usar un certificado, debe proporcionar la contraseña del certificado de descifrado.|
 |     |     | 
 
 ## <a name="prepare-the-host-computer"></a>Preparación del equipo host 

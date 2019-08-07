@@ -10,12 +10,12 @@ ms.date: 07/22/2019
 ms.author: mabrigg
 ms.reviewer: wamota
 ms.lastreviewed: 07/22/2019
-ms.openlocfilehash: 85022f074dd494978780d67db8cc14e4c243a49c
-ms.sourcegitcommit: 159da88a52701679571bbedde1c36b72bbfe32dd
+ms.openlocfilehash: 6bf9f9bb66ba7e2c9722f64e7116778f17e0e4e2
+ms.sourcegitcommit: b3dac698f2e1834491c2f9af56a80e95654f11f3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68380446"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68658614"
 ---
 # <a name="azure-stack-datacenter-integration---publish-endpoints"></a>Integración del centro de datos de Azure Stack: publicar puntos de conexión
 
@@ -77,10 +77,10 @@ Azure Stack solo admite servidores proxy transparentes. En una implementación e
 |Propósito|Dirección URL de destino|Protocolo|Puertos|Red de origen|
 |---------|---------|---------|---------|---------|
 |Identidad|login.windows.net<br>login.microsoftonline.com<br>graph.windows.net<br>https:\//secure.aadcdn.microsoftonline-p.com<br>www.office.com|HTTP<br>HTTPS|80<br>443|VIP pública - /27<br>Red de la infraestructura pública|
-|Redifusión de Marketplace|https:\//management.azure.com<br>https://&#42;.blob.core.windows.net<br>https://*.azureedge.net|HTTPS|443|VIP pública - /27|
+|Redifusión de Marketplace|https:\//management.azure.com<br>https://&#42;.blob.core.windows.net<br>https://\*.azureedge.net|HTTPS|443|VIP pública - /27|
 |Revisión y actualización|https://&#42;.azureedge.net<br>https:\//aka.ms/azurestackautomaticupdate|HTTPS|443|VIP pública - /27|
 |Registro|https:\//management.azure.com|HTTPS|443|VIP pública - /27|
-|Uso|https://*.trafficmanager.net |HTTPS|443|VIP pública - /27|
+|Uso|**Las tablas de Azure**<br>- https://&#42;.trafficmanager.net<br>**Azure Government**<br>- https://&#42;.usgovtrafficmanager.net<br>**Azure en China**<br>- https://&#42;.trafficmanager.cn<br> |HTTPS|443|VIP pública - /27|
 |Windows Defender|\*.wdcp.microsoft.com<br>\*.wdcpalt.microsoft.com<br>\*.wd.microsoft.com<br>\*.update.microsoft.com<br>\*.download.microsoft.com<br>https:\//www.microsoft.com/pkiops/crl<br>https:\//www.microsoft.com/pkiops/certs<br>https:\//crl.microsoft.com/pki/crl/products<br>https:\//www.microsoft.com/pki/certs<br>https:\//secure.aadcdn.microsoftonline-p.com<br>|HTTPS|80<br>443|VIP pública - /27<br>Red de la infraestructura pública|
 |NTP|(Se proporciona la dirección IP del servidor NTP para la implementación)|UDP|123|VIP pública - /27|
 |DNS|(Se proporciona la dirección IP del servidor DNS para la implementación)|TCP<br>UDP|53|VIP pública - /27|

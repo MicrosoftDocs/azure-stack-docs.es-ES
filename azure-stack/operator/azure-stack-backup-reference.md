@@ -16,12 +16,12 @@ ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 10/25/2018
-ms.openlocfilehash: 40be490efceb6747bf848518c55cca64784492da
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: d45b11eb70533125ff8136763be24a3333c1f7dc
+ms.sourcegitcommit: f6ea6daddb92cbf458f9824cd2f8e7e1bda9688e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66268760"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68493946"
 ---
 # <a name="infrastructure-backup-service-reference"></a>Referencia del servicio Infrastructure Backup
 
@@ -84,22 +84,37 @@ Estos requisitos son:
 |-----|---------|
 | SMB | 3.x     |
 
+#### <a name="smb-encryption"></a>Cifrado de SMB
+
+**1907 y versiones posteriores**
+
+El servicio de copia de seguridad de infraestructura admite la transferencia de datos de copia de seguridad a una ubicación de almacenamiento externa con cifrado SMB habilitado en el lado servidor. Si el servidor no admite el cifrado SMB o no tiene habilitada la característica, el servicio de copia de seguridad de infraestructura revertirá a la transferencia de datos sin cifrar. Los datos de copia de seguridad que se colocan en la ubicación de almacenamiento externo siempre se cifran en reposo y no dependen del cifrado SMB. 
+
 #### <a name="storage-location-sizing"></a>Ajuste del tamaño de la ubicación de almacenamiento 
 
-Infrastructure Backup Controller realizará una copia de datos a petición. La recomendación es realizar una copia de seguridad por lo menos dos veces al día y guardar como máximo siete días de copias de seguridad. 
+La recomendación es realizar una copia de seguridad por lo menos dos veces al día y guardar como máximo siete días de copias de seguridad. Este es el comportamiento predeterminado cuando se habilitan las copias de seguridad de infraestructura en Azure Stack. 
 
-**1811 y versiones posteriores**
+**1907 y versiones posteriores**
+
+***Sistema conectado al proveedor de identidades de Azure AD***
+
+| Escala del entorno | Tamaño previsto de copia de seguridad | Cantidad total de espacio necesario |
+|-------------------|--------------------------|--------------------------------|
+| 4-16 nodos/ASDK   | 1 GB                     | 20 GB                          |
+
+***Sistema conectado al proveedor de identidades de AD corporativo a través de ADFS***
 
 | Escala del entorno | Tamaño previsto de copia de seguridad | Cantidad total de espacio necesario |
 |-------------------|--------------------------|--------------------------------|
 | 4 a 16 nodos        | 20 GB                    | 280 GB                        |
 | ASDK              | 10 GB                    | 140 GB                        |
 
-**Versiones anteriores a 1811**
+**Versiones anteriores a la 1907**
 
 | Escala del entorno | Tamaño previsto de copia de seguridad | Cantidad total de espacio necesario |
 |-------------------|--------------------------|--------------------------------|
-| 4-16 nodos, ASDK  | 10 GB                     | 140 GB                        |
+| 4 a 16 nodos        | 20 GB                    | 280 GB                        |
+| ASDK              | 10 GB                    | 140 GB                        |
 
 ### <a name="network-requirements"></a>Requisitos de red
 

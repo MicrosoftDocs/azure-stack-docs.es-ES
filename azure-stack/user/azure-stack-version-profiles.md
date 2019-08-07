@@ -10,16 +10,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/16/2019
+ms.date: 07/24/2019
 ms.author: sethm
 ms.reviewer: sijuman
-ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: 9d0597d4e2687c6563c365470be57c1603bbe616
-ms.sourcegitcommit: 72d45bb935db0db172d4d7c37d8e48e79e25af64
+ms.lastreviewed: 07/24/2019
+ms.openlocfilehash: 2d57c0ff71cd0aa4280e6a21df4727ee4bbe7fb6
+ms.sourcegitcommit: 7961fda0bfcdd3db8cf94a8c405b5c23a23643af
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68376752"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68616487"
 ---
 # <a name="manage-api-version-profiles-in-azure-stack"></a>Administre los perfiles de la versión de API en Azure Stack
 
@@ -91,6 +91,8 @@ En el SDK de Go, un perfil es una combinación de diferentes tipos de recursos c
 El SDK de Ruby para Resource Manager de Azure Stack proporciona herramientas que le ayudarán a crear y administrar su infraestructura. Proveedores de recursos en el SDK incluye Compute, Redes virtuales y opciones de almacenamiento con el lenguaje Ruby. Para obtener información, vea [Uso de los perfiles de la versión de la API con Ruby](azure-stack-version-profiles-ruby.md).
 - **Python**  
 El SDK de Python es compatible con los perfiles de la versión de la API para su uso con diferentes plataformas en la nube, como Azure Stack y Azure global. Use los perfiles de la API para crear soluciones para una nube híbrida. Para obtener información, vea [Usar perfiles de la versión de la API con Python](azure-stack-version-profiles-python.md).
+- **Node.js**  
+El SDK de Node.js para Resource Manager de Azure Stack proporciona herramientas que le ayudarán a crear y administrar su infraestructura. Para obtener más información, consulte [Uso de los perfiles de la versión de la API con Node.js](azure-stack-version-profile-nodejs.md).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

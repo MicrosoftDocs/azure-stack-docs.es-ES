@@ -1,6 +1,6 @@
 ---
-title: Acerca de VPN Gateway para Azure Stack | Microsoft Docs
-description: Obtenga información y configure las puertas de enlace VPN que se utilizan con Azure Stack.
+title: Creación de puertas de enlace VPN para Azure Stack | Microsoft Docs
+description: Creación y configuración de puertas de enlace VPN para Azure Stack
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,14 +15,14 @@ ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: sethm
 ms.lastreviewed: 05/21/2019
-ms.openlocfilehash: 0df791c6eb9a898c5263b2c628899b512d49601c
-ms.sourcegitcommit: c4507a100eadd9073aed0d537d054e394b34f530
+ms.openlocfilehash: 980d601dd5830d653787fe4cc31f57be3b3f8d00
+ms.sourcegitcommit: b3dac698f2e1834491c2f9af56a80e95654f11f3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67198660"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68658668"
 ---
-# <a name="about-vpn-gateway-for-azure-stack"></a>Acerca de VPN Gateway para Azure Stack
+# <a name="create-vpn-gateways-for-azure-stack"></a>Creación de puertas de enlace VPN para Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
@@ -32,7 +32,7 @@ Una puerta de enlace VPN es un tipo de puerta de enlace de red virtual que enví
 
 Al crear una puerta de enlace de red virtual, debe especificar el tipo de puerta de enlace que desea crear. Azure Stack admite un tipo de puerta de enlace de red virtual: **Vpn**.
 
-Cada red virtual solo puede tener dos puertas de enlace de red virtual, pero solo una de cada tipo. Según la configuración que elija, puede crear varias conexiones a una única instancia de VPN Gateway. Un ejemplo es la configuración de conexión multisitio.
+Cada red virtual solo puede tener dos puertas de enlace de red virtual, pero solo una de cada tipo. Según la configuración que elija, puede crear varias conexiones a una única instancia de VPN Gateway. Un ejemplo de esto es una configuración de conexión multisitio.
 
 Antes de crear y configurar puertas de enlace de VPN para Azure Stack, revise las [consideraciones de los servicios de red de Azure Stack](azure-stack-network-differences.md), donde encontrará información acerca de las diferencias de las configuraciones de Azure Stack y Azure.
 
@@ -75,7 +75,7 @@ Los diagramas y las descripciones de las siguientes secciones pueden ayudarle a 
 
 ### <a name="site-to-site"></a>De sitio a sitio
 
-Una conexión de puerta de enlace de VPN de *sitio a sitio* (S2S) es una conexión a través de un túnel VPN IPsec/IKE (IKEv2). Este tipo de conexión requiere un dispositivo VPN que esté ubicado en el entorno local y tenga asignada una dirección IP pública. Este dispositivo no se encuentra detrás de un NAT. Se pueden usar conexiones S2S para las configuraciones híbridas y entre locales.
+Una conexión de puerta de enlace de VPN de *sitio a sitio* (S2S) es una conexión a través de un túnel VPN IPsec/IKE (IKEv2). Este tipo de conexión requiere un dispositivo VPN que esté ubicado en el entorno local y tenga asignada una dirección IP pública. Este dispositivo no puede estar detrás de un NAT. Se pueden usar conexiones S2S para las configuraciones híbridas y entre locales.
 
 ![Ejemplo de configuración de una conexión VPN de sitio a sitio](media/azure-stack-vpn-gateway-about-vpn-gateways/vpngateway-site-to-site-connection-diagram.png)
 
@@ -123,9 +123,9 @@ En la tabla siguiente se muestran los tipos de puerta de enlace y el rendimiento
 
 **Notas de la tabla:**
 
-*Nota (1)* : El rendimiento de la VPN no está garantizado para las conexiones entre entornos locales a través de Internet. Es el valor máximo posible del rendimiento.  
+*Nota (1)* : El rendimiento de la VPN no está garantizado para las conexiones entre locales a través de Internet. Es el valor máximo posible del rendimiento.  
 *Nota (2)* : El número de túneles máximo es el total por cada implementación de Azure Stack para todas las suscripciones.  
-*Nota (3)* : El enrutamiento de BGP no es compatible con la SKU Básica.
+*Nota (3)* : el enrutamiento de BGP no es compatible con la SKU Básica.
 
 >[!NOTE]
 >Solo se puede crear una conexión VPN de sitio a sitio entre dos implementaciones de Azure Stack. Esto se debe a una limitación en la plataforma, que no permitirá más de una conexión VPN a la misma dirección IP. Dado que Azure Stack aprovecha la puerta de enlace multiinquilino que usa una sola dirección IP pública para todas las puertas de enlace de la VPN del sistema de Azure Stack, no puede haber más de una conexión VPN entre dos sistemas de Azure Stack. Esta limitación se aplica también a la existencia de más de una conexión VPN de sitio a sitio a cualquier puerta de enlace de VPN que use una única dirección IP. Azure Stack no permitirá que se cree más de un recurso de puerta de enlace de red local con la misma dirección IP.

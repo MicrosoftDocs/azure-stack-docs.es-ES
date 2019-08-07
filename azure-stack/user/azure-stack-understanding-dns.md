@@ -15,12 +15,12 @@ ms.date: 06/13/2019
 ms.author: mabrigg
 ms.reviewer: scottnap
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: e8a1e40ec5b333862eaca59d7269a46a91460237
-ms.sourcegitcommit: 72d45bb935db0db172d4d7c37d8e48e79e25af64
+ms.openlocfilehash: 6dda8562e47f17c97da5e0597a2ed88865bc6425
+ms.sourcegitcommit: 82d09bbae3e5398d2fce7e2f998dfebff018716c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68376802"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68497855"
 ---
 # <a name="use-idns-in-azure-stack"></a>Uso de iDNS en Azure Stack 
 
@@ -34,7 +34,7 @@ Con iDNS en Azure Stack, dispone de las siguientes funcionalidades sin tener que
 
 - Servicios de resolución de nombres Compartir los servicios de resolución de nombres DNS compartidos para las cargas de trabajo del inquilino.
 - Servicio DNS autoritativo para la resolución de nombres y el registro DNS en la red virtual del inquilino.
-- Servicio DNS recursivo para la resolución de los nombres de Internet de las máquinas virtuales de los inquilinos. Los inquilinos ya no necesitan especificar entradas de DNS personalizadas para resolver nombres de Internet (por ejemplo, www.bing.com).
+- Servicio DNS recursivo para la resolución de los nombres de Internet de las máquinas virtuales de los inquilinos. Los inquilinos ya no necesitan especificar entradas de DNS personalizadas para resolver nombres de Internet (por ejemplo, www\.bing.com).
 
 Si lo desea, puede traer su propio sistema DNS y utilizar servidores DNS personalizados. Pero, al usar iDNS, puede resolver nombres DNS de Internet y conectarse a otras máquinas virtuales de la misma red virtual sin necesidad de crear entradas DNS personalizadas.
 

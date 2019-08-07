@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/27/2019
+ms.date: 07/25/2019
 ms.author: sethm
 ms.reviewer: hectorl
-ms.lastreviewed: 06/27/2019
-ms.openlocfilehash: 49b4276da5c7e42728cf96261104f59c70355c20
-ms.sourcegitcommit: 159da88a52701679571bbedde1c36b72bbfe32dd
+ms.lastreviewed: 07/25/2019
+ms.openlocfilehash: 0c7840c723aedd38b51002e4a1f18f5a87d66ec4
+ms.sourcegitcommit: c2690b2dd36918ff3e47e359cac926128bb83101
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68380407"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68544079"
 ---
 # <a name="azure-stack-update-activity-checklist"></a>Lista de comprobación de actividades para la actualización de Azure Stack
 
@@ -58,8 +58,9 @@ Este artículo contiene una lista de comprobación de actividades relacionadas c
 |-----------------------|----------------------------------------------------------------------------------|
 | Aplicación de las revisiones más recientes | Instale las revisiones más recientes que sean aplicables a la versión actualizada.                          |
 | Recuperación de claves de cifrado | Recupere las claves de cifrado de los datos en reposo y almacénelas de forma segura fuera de la implementación de Azure Stack. Siga las [instrucciones para recuperar las claves](azure-stack-security-bitlocker.md). |
+| Nueva habilitación de servicios multiinquilino | En el caso de Azure Stack multiinquilino, [asegúrese de configurar todos los inquilinos del directorio de invitados](https://docs.microsoft.com/azure-stack/operator/azure-stack-enable-multitenancy#configure-guest-directory) después de una actualización correcta. |
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Revisión de la lista de problemas conocidos](azure-stack-release-notes-known-issues-1906.md)
-- [Revisión de la lista de actualizaciones de seguridad](azure-stack-release-notes-security-updates-1906.md)
+- [Revisión de la lista de problemas conocidos](azure-stack-release-notes-known-issues-1907.md)
+- [Revisión de la lista de actualizaciones de seguridad](azure-stack-release-notes-security-updates-1907.md)

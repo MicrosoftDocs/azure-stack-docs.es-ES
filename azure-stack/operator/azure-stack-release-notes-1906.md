@@ -16,12 +16,12 @@ ms.date: 07/15/2019
 ms.author: sethm
 ms.reviewer: hectorl
 ms.lastreviewed: 07/15/2019
-ms.openlocfilehash: 5330136bd1d4950ace26fa3f232be039c90ab144
-ms.sourcegitcommit: 12aef286fc14ab27ed737a17e2761c38f054b9b3
+ms.openlocfilehash: ffd6436b9e7bf27ef069ecdc44ff2d6efadfc795
+ms.sourcegitcommit: d96adbb821175167f6a4c8f3aba305981d7e7c3e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67885357"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68685557"
 ---
 # <a name="azure-stack-1906-update"></a>Actualización de Azure Stack 1906
 
@@ -109,6 +109,10 @@ El tipo de compilación de la actualización 1906 de Azure Stack es **Rápida*
 - En los portales de administradores y usuarios, se ha corregido un problema del Marketplace en que la búsqueda devolvía por error la extensión de Docker, pero no se podía realizar ninguna otra acción, porque no está disponible en Azure Stack.
 
 - Se ha corregido un problema de la interfaz de usuario de implementación de plantillas en que los parámetros no se rellenaban si el nombre de la plantilla empezada con el carácter de subrayado “_”.
+
+- Se corrigió un problema donde la experiencia de creación de conjuntos de escalado de máquinas virtuales proporciona la versión 7.2 basada en CentOS como una opción para la implementación. CentOS 7.2 no está disponible en Azure Stack. Ahora se proporciona Centos 7.5 como la opción de implementación.
+
+- Ahora puede quitar un conjunto de escalado desde la hoja **Conjuntos de escalado de máquinas virtuales**.
 
 ## <a name="security-updates"></a>Actualizaciones de seguridad
 

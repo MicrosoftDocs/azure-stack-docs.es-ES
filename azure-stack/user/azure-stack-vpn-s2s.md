@@ -1,6 +1,6 @@
 ---
-title: Configuración de conexiones VPN de sitio a sitio de Azure Stack | Microsoft Docs
-description: Obtenga información acerca de la directiva de IPsec o IKE para conexiones de red virtual a red virtual o VPN de sitio a sitio en Azure Stack
+title: Configuración de conexiones VPN de sitio a sitio de IPsec/IKE | Microsoft Docs
+description: Obtenga información acerca de la directiva de IPsec o IKE para conexiones de red virtual a red virtual o VPN de sitio a sitio en Azure Stack y configúrela.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -14,19 +14,19 @@ ms.topic: article
 ms.date: 05/07/2019
 ms.author: sethm
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: d6944fefeb55c1b2a109964271c84daafb8b8ff8
-ms.sourcegitcommit: c9d11be7d27c73797bdf279d4fcabb7a22451541
+ms.openlocfilehash: 0c9c1af77ecf2bdf1c8da23cc7ab9e8d281067ea
+ms.sourcegitcommit: b3dac698f2e1834491c2f9af56a80e95654f11f3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67397295"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68658707"
 ---
 # <a name="configure-ipsecike-policy-for-site-to-site-vpn-connections"></a>Configuración de la directiva IPsec/IKE para conexiones VPN de sitio a sitio
 
 En este artículo se describen los pasos para configurar una directiva de IPsec o IKE para conexiones VPN de sitio a sitio (S2S) en Azure Stack.
 
 >[!NOTE]
-> Debe ejecutar la compilación **1809** de Azure Stack, o posterior, para poder usar esta función.  Si actualmente ejecuta una versión anterior a 1809, actualice el sistema Azure Stack a la versión más reciente antes de intentar usar esta función o siga los pasos descritos en este artículo.
+> Debe ejecutar la compilación **1809** de Azure Stack, o posterior, para poder usar esta función.  Si actualmente ejecuta una versión anterior a 1809, actualice el sistema Azure Stack a la versión más reciente antes de seguir los pasos descritos en este artículo.
 
 ## <a name="ipsec-and-ike-policy-parameters-for-vpn-gateways"></a>Parámetros de la directiva de IPsec e IKE para puertas de enlace de VPN
 
@@ -87,16 +87,16 @@ En la tabla siguiente se enumeran los algoritmos criptográficos y los niveles d
   - Algoritmo de cifrado de IPsec (modo rápido/fase 2)
   - Algoritmo de integridad de IPsec (modo rápido/fase 2)
   - Grupo PFS (modo rápido/fase 2)
-  - Las vigencias de SA solo son especificaciones locales, no es preciso que coincidan.
+  - Las vigencias de SA solo son especificaciones locales y no es preciso que coincidan.
 
-- Si se usa GCMAES para el algoritmo de cifrado IPsec, se debe seleccionar el mismo algoritmo GCMAES y longitud de clave para la integridad de IPsec; por ejemplo, el uso de GCMAES128 para ambos.
+- Si se GCMAES para el algoritmo de cifrado IPsec, se debe seleccionar el mismo algoritmo GCMAES y longitud de clave para la integridad de IPsec; por ejemplo, el uso de GCMAES128 para ambos.
 
 - En la tabla anterior:
 
-  - IKEv2 corresponde al modo principal o fase 1
-  - IPsec corresponde al modo rápido o fase 2
-  - El Grupo DH especifica el grupo Diffie-Hellmen utilizado en el modo principal o fase 1
-  - El grupo PFS especifica el grupo Diffie-Hellmen utilizado en el modo rápido o fase 2
+  - IKEv2 corresponde al modo principal o fase 1.
+  - IPsec corresponde al modo rápido o fase 2.
+  - El Grupo DH especifica el grupo Diffie-Hellmen utilizado en el modo principal o fase 1.
+  - El grupo PFS especifica el grupo Diffie-Hellmen utilizado en el modo rápido o fase 2.
 
 - La vigencia de SA del modo principal de IKEv2 se fija en 28 800 segundos en las puertas de enlace de VPN de Azure Stack.
 
@@ -123,11 +123,11 @@ Consulte [Creación de una conexión VPN de sitio a sitio](/azure/vpn-gateway/vp
 
 ### <a name="prerequisites"></a>Requisitos previos
 
-Asegúrese de que dispone de los siguientes requisitos previos antes de empezar:
+Asegúrese de que cumple los siguientes requisitos previos antes de empezar:
 
 - Una suscripción de Azure. Si todavía no la tiene, puede activar sus [ventajas como suscriptor de MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) o registrarse para obtener una [cuenta gratuita](https://azure.microsoft.com/pricing/free-trial/).
 
-- Los cmdlets de PowerShell de Azure Resource Manager. Consulte [Instalación de PowerShell para Azure Stack](../operator/azure-stack-powershell-install.md) para más información sobre la instalación de los cmdlets de PowerShell.
+- Los cmdlets de PowerShell de Azure Resource Manager. Consulte [Instalación de PowerShell para Azure Stack](../operator/azure-stack-powershell-install.md) para obtener más información sobre la instalación de los cmdlets de PowerShell.
 
 ### <a name="step-1---create-the-virtual-network-vpn-gateway-and-local-network-gateway"></a>Paso 1: crear la red virtual, la puerta de enlace de VPN y la puerta de enlace de red local
 
@@ -173,7 +173,7 @@ New-AzureRmResourceGroup -Name $RG1 -Location $Location1
 
 #### <a name="3-create-the-virtual-network-vpn-gateway-and-local-network-gateway"></a>3. Creación de la red virtual, la puerta de enlace de VPN y la puerta de enlace de red local
 
-En el ejemplo siguiente se crea la red virtual **TestVNet1** con tres subredes y la puerta de enlace de VPN. Al reemplazar valores, es importante que siempre asigne el nombre **GatewaySubnet** a la subred de la puerta de enlace. Si usa otro, se produce un error al crear la puerta de enlace.
+En el ejemplo siguiente se crea la red virtual **TestVNet1** con tres subredes y la puerta de enlace VPN. Al reemplazar valores, es importante que siempre asigne el nombre **GatewaySubnet** a la subred de la puerta de enlace. Si usa otro, se produce un error al crear la puerta de enlace.
 
 ```powershell
 $fesub1 = New-AzureRmVirtualNetworkSubnetConfig -Name $FESubName1 -AddressPrefix $FESubPrefix1

@@ -16,12 +16,12 @@ ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 11/05/2018
-ms.openlocfilehash: d7b38d2eb0e840a35729879211934e470bec6dfe
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: b6b6796f5d47189499e01c94b9c988dbf03091bb
+ms.sourcegitcommit: f6ea6daddb92cbf458f9824cd2f8e7e1bda9688e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66268957"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68493994"
 ---
 # <a name="recover-from-catastrophic-data-loss"></a>Recuperación después de una pérdida de datos grave
 
@@ -37,7 +37,7 @@ En este escenario se aborda la recuperación de toda la instalación si se produ
 |--------------------------------------------------------------------|--------------------------------------|----------------------------------------------------------------------------|
 | Recuperación después de una pérdida de datos grave debido a un desastre o a un error en un producto | Todos los datos de infraestructura, usuario y aplicación | Los datos y la aplicación de usuario están protegidos por separado de los datos de infraestructura |
 
-## <a name="workflows"></a>Flujos de trabajo
+## <a name="workflows"></a>Workflows
 
 El proceso de proteger Azure Stack comienza con la creación de la copia de seguridad de la infraestructura y los datos de aplicación o inquilino por separado. Este documento explica cómo proteger la infraestructura. 
 
@@ -63,8 +63,8 @@ Si se produce un desastre que hace que no se pueda usar el hardware, solo es pos
 Azure Stack admite un tipo de implementación llamado modo de recuperación en la nube. Este modo se usa solo si elige recuperar Azure Stack después de que un desastre o el error en un producto haya hecho que la solución no se pueda recuperar. Este modo de implementación no recupera ninguno de los datos de usuario almacenados en la solución. El ámbito de este modo de implementación está limitado a la restauración de los datos siguientes:
 
  - Entradas de implementación
- - Sistemas de identidad internos
- - Configuración de identificación federada (implementaciones desconectadas)
+ - Datos internos del servicio de identidad (implementaciones de ADFS)
+ - Configuración de identificación federada (implementaciones de ADFS)
  - Certificados raíz usados por la entidad de certificación interna
  - Datos de usuario de la configuración de Azure Resource Manager, como suscripciones, planes, ofertas y cuotas de almacenamiento, red y recursos de proceso
  - Almacenes y secretos de KeyVault

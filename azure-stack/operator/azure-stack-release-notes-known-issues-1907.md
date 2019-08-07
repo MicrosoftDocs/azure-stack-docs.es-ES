@@ -1,6 +1,6 @@
 ---
-title: Problemas conocidos de Azure Stack 1906 | Microsoft Docs
-description: Obtenga información sobre los problemas conocidos de Azure Stack 1906.
+title: Problemas conocidos de Azure Stack 1907 | Microsoft Docs
+description: Obtenga información sobre los problemas conocidos de Azure Stack 1907.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -12,20 +12,20 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/12/2019
+ms.date: 07/25/2019
 ms.author: sethm
 ms.reviewer: hectorl
-ms.lastreviewed: 06/28/2019
-ms.openlocfilehash: cb98d587f766a3039887e0ba800ab255686121bc
+ms.lastreviewed: 07/25/2019
+ms.openlocfilehash: cf09162fb29630ed01834aa6b2b508785206a088
 ms.sourcegitcommit: d96adbb821175167f6a4c8f3aba305981d7e7c3e
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 07/31/2019
-ms.locfileid: "68685538"
+ms.locfileid: "68685565"
 ---
-# <a name="azure-stack-1906-known-issues"></a>Problemas conocidos de Azure Stack 1906
+# <a name="azure-stack-1907-known-issues"></a>Problemas conocidos de Azure Stack 1907
 
-En este artículo se enumeran los problemas conocidos de la versión 1906 de Azure Stack. La lista se actualiza conforme se identifican nuevos problemas.
+En este artículo se enumeran los problemas conocidos de la versión 1907 de Azure Stack. La lista se actualiza conforme se identifican nuevos problemas.
 
 > [!IMPORTANT]  
 > Revise esta sección antes de aplicar la actualización.
@@ -33,7 +33,7 @@ En este artículo se enumeran los problemas conocidos de la versión 1906 de Az
 ## <a name="update-process"></a>Proceso de actualización
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: Al intentar instalar la actualización 1906 de Azure Stack, es posible que se produzca un error en el estado de esa actualización y dicho estado cambie a **PreparationFailed**. La causa es que el proveedor de recursos de actualización (URP) no se puede transferir correctamente desde el contenedor de almacenamiento a un recurso compartido de infraestructura interno para su procesamiento. 
+- Causa: Al intentar instalar la actualización 1907 de Azure Stack, es posible que se produzca un error en el estado de esa actualización y dicho estado cambie a **PreparationFailed**. La causa es que el proveedor de recursos de actualización (URP) no se puede transferir correctamente desde el contenedor de almacenamiento a un recurso compartido de infraestructura interno para su procesamiento.
 - Corrección: A partir de la versión 1901 (1.1901.0.95), para solucionar este problema, puede hacer clic en **Actualizar ahora** de nuevo (en lugar de en **Reanudar**). A continuación, URP limpia los archivos del intento anterior y vuelve a iniciar la descarga. Si el problema persiste, recomendamos cargar manualmente el paquete de actualización siguiendo la sección [Importación e instalación de actualizaciones](azure-stack-apply-updates.md#import-and-install-updates).
 - Repetición: Común
 
@@ -46,11 +46,11 @@ En este artículo se enumeran los problemas conocidos de la versión 1906 de Az
 - Corrección: Si tiene recursos que se ejecutan en estas dos suscripciones, vuelva a crearlos en las suscripciones de usuario.
 - Repetición: Común
 
-### <a name="subscription-resources"></a>Recursos de suscripción
+### <a name="subscriptions-properties-blade"></a>Hoja de propiedades de suscripciones
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: La eliminación de las suscripciones del usuario da como resultado recursos huérfanos.
-- Corrección: Elimine primero los recursos del usuario o todo el grupo de recursos y, después, elimine las suscripciones del usuario.
+- Causa: en el portal de administrador, la hoja **Propiedades** de las suscripciones no se carga correctamente.
+- Corrección: puede ver estas propiedades de suscripciones en el panel **Essentials** (Información esencial) de la hoja **Introducción a las suscripciones**.
 - Repetición: Común
 
 ### <a name="subscription-permissions"></a>Permisos de suscripción
@@ -58,12 +58,6 @@ En este artículo se enumeran los problemas conocidos de la versión 1906 de Az
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: No puede ver los permisos de la suscripción mediante los portales de Azure Stack.
 - Corrección: Use [PowerShell para verificar los permisos](/powershell/module/azurerm.resources/get-azurermroleassignment).
-- Repetición: Común
-
-### <a name="subscriptions-properties-blade"></a>Hoja de propiedades de suscripciones
-- Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: En el portal de administrador, la hoja **Propiedades** de las suscripciones no se carga correctamente.
-- Corrección: Puede ver estas propiedades de suscripciones en el panel Essentials de la hoja Introducción a las suscripciones.
 - Repetición: Común
 
 ### <a name="storage-account-settings"></a>Configuración de cuentas de almacenamiento
@@ -78,13 +72,6 @@ En este artículo se enumeran los problemas conocidos de la versión 1906 de Az
 - Causa: En el portal de usuarios, al intentar cargar un blob mediante la opción **OAuth(preview)** , la tarea genera un mensaje de error.
 - Corrección: Cargue el blob mediante la opción SAS.
 - Repetición: Común
-
-### <a name="update"></a>Actualizar
-
-- Aplicable a: Este problema se aplica a la versión 1906.
-- Causa: En el portal de operador, el estado de actualización de la revisión muestra un estado incorrecto de la actualización. El estado inicial indica que no se pudo instalar la actualización, aunque todavía está en curso.
-- Corrección: Actualice el portal y el estado se actualizará a "en curso".
-- Repetición: Intermitente
 
 ## <a name="networking"></a>Redes
 
@@ -102,6 +89,13 @@ En este artículo se enumeran los problemas conocidos de la versión 1906 de Az
 - Repetición: Común
 
 ### <a name="virtual-network-gateway"></a>Puerta de enlace de red virtual
+
+#### <a name="local-network-gateway-deletion"></a>Eliminación de una puerta de enlace de red local
+
+- Aplicable a: Este problema se aplica a la versión 1906.
+- Causa: en el portal del usuario, al eliminar la **puerta de enlace de red local** aparece el mensaje de error siguiente: **No se puede eliminar una puerta de enlace de red local con una conexión activa**, incluso si no hay ninguna conexión activa.
+- Mitigación: la corrección de este problema se lanzó en la actualización 1907. Una solución alternativa para este problema es crear una puerta de enlace de red local nueva con la misma dirección IP, el mismo espacio de direcciones y los mismos detalles de configuración con otro nombre. El anterior LNG se puede eliminar una vez que el entorno se actualice a 1907.
+- Repetición: Común
 
 #### <a name="alerts"></a>Alertas
 
@@ -132,22 +126,6 @@ En este artículo se enumeran los problemas conocidos de la versión 1906 de Az
   - [Circuitos ExpressRoute](azure-stack-connect-expressroute.md)
   - [Especificación de directivas de IPsec o IKE personalizadas](../user/azure-stack-vpn-gateway-settings.md#ipsecike-parameters)
 
-### <a name="load-balancer"></a>Equilibrador de carga
-
-#### <a name="add-backend-pool"></a>Agregar grupo de back-end
-
-- Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: En el portal de usuarios, si intenta agregar un **grupo de back-end** a una **instancia de Load Balancer**, se produce un error en la operación con el mensaje **Failed to update Load Balancer...** (No se pudo actualizar Load Balancer...).
-- Corrección: Use PowerShell, la CLI o una plantilla de Resource Manager para asociar el grupo de back-end a un recurso de equilibrador de carga.
-- Repetición: Común
-
-#### <a name="create-inbound-nat"></a>Crear una NAT de entrada
-
-- Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: En el portal de usuarios, si intenta crear una **regla NAT de entrada** para una instancia de **Load Balancer**, se produce un error en la operación con el mensaje **Failed to update Load Balancer...** (No se pudo actualizar Load Balancer...).
-- Corrección: Use PowerShell, la CLI o una plantilla de Resource Manager para asociar el grupo de back-end a un recurso de equilibrador de carga.
-- Repetición: Común
-
 ## <a name="compute"></a>Proceso
 
 ### <a name="vm-boot-diagnostics"></a>Diagnósticos de arranque de VM
@@ -158,7 +136,6 @@ En este artículo se enumeran los problemas conocidos de la versión 1906 de Az
 - Repetición: Común
 
 ### <a name="virtual-machine-scale-set"></a>Conjunto de escalado de máquina virtual
-
 
 #### <a name="create-failures-during-patch-and-update-on-4-node-azure-stack-environments"></a>Crear errores durante la revisión y actualización de entornos de Azure Stack de 4 nodos
 
@@ -175,21 +152,21 @@ En este artículo se enumeran los problemas conocidos de la versión 1906 de Az
 
 ### <a name="virtual-machine-scale-set-reset-password-does-not-work"></a>La contraseña de restablecimiento del conjunto de escalado de máquinas virtuales no funciona
 
-- Aplicable a: Este problema se aplica a la versión 1906.
+- Aplicable a: Este problema se aplica a las versiones 1906 y 1907.
 - Causa: Aparece una nueva hoja para restablecer la contraseña en la interfaz de usuario del conjunto de escalado, pero Azure Stack todavía no admite el restablecimiento de contraseña en un conjunto de escalado.
 - Corrección: Ninguno.
 - Repetición: Común
 
 ### <a name="rainy-cloud-on-scale-set-diagnostics"></a>Nube con lluvia en el diagnóstico del conjunto de escalado
 
-- Aplicable a: Este problema se aplica a la versión 1906.
+- Aplicable a: Este problema se aplica a las versiones 1906 y 1907.
 - Causa: La página de información general del conjunto de escalado de máquinas virtuales muestra un gráfico vacío. Al hacer clic en el gráfico vacío, se abre una hoja de "nube de lluvia". Este es el gráfico de información de diagnóstico del conjunto de escalado, como el porcentaje de CPU, y no es una característica admitida en la compilación actual de Azure Stack.
 - Corrección: Ninguno.
 - Repetición: Común
 
 ### <a name="virtual-machine-diagnostic-settings-blade"></a>Hoja de configuración de diagnóstico de la máquina virtual
 
-- Aplicable a: Este problema se aplica a la versión 1906.
+- Aplicable a: Este problema se aplica a las versiones 1906 y 1907.    
 - Causa: La hoja de configuración de diagnóstico de la máquina virtual tiene una pestaña **Receptor**, que solicita una **Cuenta de Application Insights**. Este es el resultado de una nueva hoja y aún no se admite en Azure Stack.
 - Corrección: Ninguno.
 - Repetición: Común
@@ -204,4 +181,4 @@ En este artículo se enumeran los problemas conocidos de la versión 1906 de Az
 ## <a name="next-steps"></a>Pasos siguientes
 
 - [Revisión de la lista de comprobación de actividades de actualización](azure-stack-release-notes-checklist.md)
-- [Revisión de la lista de actualizaciones de seguridad](azure-stack-release-notes-security-updates-1906.md)
+- [Revisión de la lista de actualizaciones de seguridad](azure-stack-release-notes-security-updates-1907.md)
