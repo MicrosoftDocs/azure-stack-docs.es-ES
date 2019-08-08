@@ -16,12 +16,12 @@ ms.date: 07/25/2019
 ms.author: sethm
 ms.reviewer: hectorl
 ms.lastreviewed: 07/25/2019
-ms.openlocfilehash: cf09162fb29630ed01834aa6b2b508785206a088
-ms.sourcegitcommit: d96adbb821175167f6a4c8f3aba305981d7e7c3e
+ms.openlocfilehash: 41d07532960776cd5ed9312007877489e9ebbf20
+ms.sourcegitcommit: 83d9dbecd7334f37862e47ca028a50f8d7dafe2d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68685565"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68738335"
 ---
 # <a name="azure-stack-1907-known-issues"></a>Problemas conocidos de Azure Stack 1907
 
@@ -89,13 +89,6 @@ En este artículo se enumeran los problemas conocidos de la versión 1907 de Azu
 - Repetición: Común
 
 ### <a name="virtual-network-gateway"></a>Puerta de enlace de red virtual
-
-#### <a name="local-network-gateway-deletion"></a>Eliminación de una puerta de enlace de red local
-
-- Aplicable a: Este problema se aplica a la versión 1906.
-- Causa: en el portal del usuario, al eliminar la **puerta de enlace de red local** aparece el mensaje de error siguiente: **No se puede eliminar una puerta de enlace de red local con una conexión activa**, incluso si no hay ninguna conexión activa.
-- Mitigación: la corrección de este problema se lanzó en la actualización 1907. Una solución alternativa para este problema es crear una puerta de enlace de red local nueva con la misma dirección IP, el mismo espacio de direcciones y los mismos detalles de configuración con otro nombre. El anterior LNG se puede eliminar una vez que el entorno se actualice a 1907.
-- Repetición: Común
 
 #### <a name="alerts"></a>Alertas
 

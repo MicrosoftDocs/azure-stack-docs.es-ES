@@ -16,12 +16,12 @@ ms.date: 06/04/2019
 ms.author: mabrigg
 ms.reviewer: wamota
 ms.lastreviewed: 06/04/2019
-ms.openlocfilehash: e9c373ebaa6452c57acad866c66c8b3d5ab0c5ed
-ms.sourcegitcommit: cf9440cd2c76cc6a45b89aeead7b02a681c4628a
+ms.openlocfilehash: b2b53edaba6a6cb180ae617740fd4695b1a86187
+ms.sourcegitcommit: 637018771ac016b7d428174e88d4dcb131b54959
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66469174"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68842731"
 ---
 # <a name="network-connectivity"></a>Conectividad de red
 En este artículo se ofrece información sobre la infraestructura de red de Azure Stack que le ayudará decidir cuál es la mejor forma de integrar Azure Stack en su entorno de red existente. 
@@ -40,7 +40,7 @@ Las redes lógicas representan una abstracción de la infraestructura de red fí
 
 En la siguiente tabla se muestran las redes lógicas y los intervalos de subred IPv4 asociados para los que se debe planear:
 
-| Red lógica | DESCRIPCIÓN | Tamaño | 
+| Red lógica | DESCRIPCIÓN | Size | 
 | -------- | ------------- | ------------ | 
 | VIP pública | Azure Stack usa un total de 31 direcciones de esta red. Ocho direcciones IP públicas se utilizan para un pequeño conjunto de servicios de Azure Stack, mientras que el resto lo usan las máquinas virtuales del inquilino. Si tiene previsto usar App Service y los proveedores de recursos de SQL, se usan 7 direcciones más. Las 15 direcciones IP restantes están reservadas a los futuros servicios de Azure. | /26 (62 hosts) - /22 (1022 hosts)<br><br>Recomendado = /24 (254 hosts) | 
 | Infraestructura del conmutador | Direcciones IP de punto a punto con fines de enrutamiento, interfaces de administración de conmutador dedicado y direcciones de bucle invertido asignadas al conmutador. | /26 | 
@@ -77,28 +77,7 @@ Esta red /26 es la subred que contiene las subredes IP /30 (2 IP de host) punto 
 ### <a name="switch-management-network"></a>Red de administración de conmutadores
 Esta red /29 (6 IP de host) está dedicada a conectar los puertos de administración de los conmutadores. Permite el acceso fuera de banda para la implementación, administración y solución de problemas. Se calcula a partir de la red de infraestructura de conmutadores mencionada anteriormente.
 
-## <a name="publish-azure-stack-services"></a>Publicar servicios de Azure Stack
-Debe poner disponibles los servicios de Azure Stack para los usuarios externos de Azure Stack. Azure Stack configura varios puntos de conexión para sus roles de infraestructura. Estos puntos de conexión se asignan a VIP desde el grupo de direcciones IP públicas. Se crea una entrada DNS para cada punto de conexión de la zona DNS externa, que se ha especificado durante la implementación. Por ejemplo, el portal de usuarios se asigna a la entrada de host de DNS de portal. *&lt;region>.&lt;fqdn>* .
 
-### <a name="ports-and-urls"></a>Puertos y direcciones URL
-Para que los servicios de Azure Stack (como los portales, Azure Resource Manager, DNS, etc.) estén disponible para las redes externas, debe permitir tráfico entrante en estos puntos de conexión para las direcciones URL, puertos y protocolos específicos.
- 
-En una implementación en la que un proxy transparente establece un vínculo superior a un servidor proxy tradicional, debe permitir puertos y direcciones URL concretos para la comunicación [entrante](azure-stack-integrate-endpoints.md#ports-and-protocols-inbound) y [saliente](azure-stack-integrate-endpoints.md#ports-and-urls-outbound). Aquí se incluyen puertos y direcciones URL de identidad, productos de Marketplace, revisiones y actualizaciones y datos de uso.
-
-### <a name="mac-address-pool"></a>Grupo de direcciones MAC
-
-Azure Stack usa un grupo de direcciones MAC estáticas para generar y asignar una dirección MAC a máquinas virtuales automáticamente.
-Este grupo de direcciones MAC se generan automáticamente durante la implementación. Se usa el intervalo siguiente:
-
-- StartMacAddress: 00-1D-D8-B7-00-00
-- EndMacAddress : 00-1D-D8-F4-FF-FF
-
-> [!Note]  
-> Este grupo de direcciones MAC es el mismo en todos los sistemas de Azure Stack y no se puede configurar.
-
-En función de cómo se conectan las redes virtuales con las redes corporativas existentes, cabe esperar que haya direcciones MAC duplicadas de máquinas virtuales.
-
-Para obtener más información sobre el uso de grupos de direcciones MAC, use el cmdlet [Get AzsMacAddressPool](https://docs.microsoft.com/powershell/module/azs.fabric.admin/get-azsmacaddresspool) en el módulo de PowerShell de administrador de Azure Stack.
 
 
 ## <a name="next-steps"></a>Pasos siguientes

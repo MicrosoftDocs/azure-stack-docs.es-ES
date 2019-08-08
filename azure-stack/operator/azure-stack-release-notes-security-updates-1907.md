@@ -16,12 +16,12 @@ ms.date: 07/25/2019
 ms.author: sethm
 ms.reviewer: hectorl
 ms.lastreviewed: 06/08/2019
-ms.openlocfilehash: cba33ce477c6cfe11f7d3105cb06f07c54c0468b
-ms.sourcegitcommit: f6ea6daddb92cbf458f9824cd2f8e7e1bda9688e
+ms.openlocfilehash: 0eac6cf019696b62bd8d064588ad2c2605d5ace1
+ms.sourcegitcommit: 49cfe13427f5255915d5ccbed87b36eec2caf8ca
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68497391"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68720012"
 ---
 # <a name="azure-stack-security-updates"></a>Actualizaciones de seguridad de Azure Stack
 
@@ -137,4 +137,4 @@ Esta actualización de Azure Stack no incluye actualizaciones de seguridad para
 ## <a name="next-steps"></a>Pasos siguientes
 
 - [Revisión de la lista de comprobación de actividades de actualización](azure-stack-release-notes-checklist.md)
-- [Revisión de la lista de problemas conocidos](azure-stack-release-notes-known-issues-1906.md)
+- [Revisión de la lista de problemas conocidos](azure-stack-release-notes-known-issues-1907.md)

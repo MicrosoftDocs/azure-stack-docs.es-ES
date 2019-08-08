@@ -16,12 +16,12 @@ ms.date: 07/25/2019
 ms.author: sethm
 ms.reviewer: hectorl
 ms.lastreviewed: 07/25/2019
-ms.openlocfilehash: 0c7840c723aedd38b51002e4a1f18f5a87d66ec4
-ms.sourcegitcommit: c2690b2dd36918ff3e47e359cac926128bb83101
+ms.openlocfilehash: b789b7ba1f4c55f0ee44c214d4e214b73678b1fc
+ms.sourcegitcommit: 49cfe13427f5255915d5ccbed87b36eec2caf8ca
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544079"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68719965"
 ---
 # <a name="azure-stack-update-activity-checklist"></a>Lista de comprobación de actividades para la actualización de Azure Stack
 
@@ -31,8 +31,8 @@ Este artículo contiene una lista de comprobación de actividades relacionadas c
 
 | Actividad                     | Detalles                                                   |
 |------------------------------|-----------------------------------------------------------|
-| Revisión de problemas conocidos     | [Lista de los problemas conocidos](azure-stack-release-notes-known-issues-1906.md).                |
-| Revisión de las actualizaciones de seguridad | [Lista de actualizaciones de seguridad](azure-stack-release-notes-security-updates-1906.md).      |
+| Revisión de problemas conocidos     | [Lista de los problemas conocidos](azure-stack-release-notes-known-issues-1907.md).                |
+| Revisión de las actualizaciones de seguridad | [Lista de actualizaciones de seguridad](azure-stack-release-notes-security-updates-1907.md).      |
 | Aplicación del paquete de OEM más reciente | Póngase en contacto con el OEM para asegurarse de que el sistema cumple los requisitos mínimos del paquete de OEM para la versión de Azure Stack a la que se está actualizando el sistema. |
 | Ejecución de Test-AzureStack     | Ejecute `Test-AzureStack -Group UpdateReadiness` para identificar los problemas operativos.      |
 | Resolución de problemas          | Resuelva los problemas operativos que haya identificado **Test-AzureStack**.                |
