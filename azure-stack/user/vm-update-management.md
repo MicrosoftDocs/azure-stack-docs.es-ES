@@ -16,12 +16,12 @@ ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: rtiberiu
 ms.lastreviewed: 03/20/2019
-ms.openlocfilehash: cae4c6c5b96dd7bdbd6fcec7859309e0dd995a44
-ms.sourcegitcommit: b3dac698f2e1834491c2f9af56a80e95654f11f3
+ms.openlocfilehash: 891727c8e80af479e800feef9c292f7355fb208c
+ms.sourcegitcommit: 637018771ac016b7d428174e88d4dcb131b54959
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68658689"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68842694"
 ---
 # <a name="vm-update-and-management-automation-in-azure-stack"></a>Automatización de actualizaciones y administración de VM en Azure Stack
 Use las siguientes características de solución de Azure Automation para administrar máquinas virtuales de Windows y Linux que se implementan mediante Azure Stack:
@@ -131,6 +131,7 @@ El artículo [Uso de la asignación de Azure Monitor para VM para conocer los co
 
    ![Pestaña Asignación de las máquinas virtuales de Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/insights/media/vminsights-maps/map-multivm-azure-monitor-01.png)
 
+En caso de que [Azure Monitor para VM](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-overview) no muestre ningún dato de rendimiento, tendrá que habilitar la recopilación de datos de rendimiento para Windows y Linux en la configuración avanzada del [área de trabajo de LogAnalytics](https://docs.microsoft.com/azure/azure-monitor/platform/data-sources-performance-counters).
 
 ## <a name="enable-update-management-using-a-resource-manager-template"></a>Habilitación de Update Management con una plantilla de Resource Manager
 Si tiene un gran número de VM de Azure Stack, puede usar [esta plantilla de Azure Resource Manager](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/MicrosoftMonitoringAgent-ext-win) para implementar más fácilmente la solución en las VM. La plantilla implementa la extensión Microsoft Monitoring Agent en una VM existente y la agrega a un área de trabajo de Azure Log Analytics existente.

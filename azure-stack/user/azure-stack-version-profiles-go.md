@@ -1,6 +1,6 @@
 ---
-title: Uso de perfiles de la versión de la API con GO en Azure Stack | Microsoft Docs
-description: Información acerca de los perfiles de la versión de la API con GO en Azure Stack.
+title: Uso de perfiles de la versión de API con GO en Azure Stack | Microsoft Docs
+description: Más información sobre cómo usar los perfiles de la versión de API con GO en Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -14,12 +14,12 @@ ms.date: 05/26/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/26/2019
-ms.openlocfilehash: 6759264afaf3f44dd612662d9778d7de65a15924
-ms.sourcegitcommit: 6876ccb85c20794969264a1b27e479f4e938f990
+ms.openlocfilehash: dac2eeaf3499068812d9c9a66348b0c44ea07b7d
+ms.sourcegitcommit: 637018771ac016b7d428174e88d4dcb131b54959
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67406955"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68842713"
 ---
 # <a name="use-api-version-profiles-with-go-in-azure-stack"></a>Uso de los perfiles de la versión de la API con GO en Azure Stack
 
@@ -29,10 +29,10 @@ ms.locfileid: "67406955"
 
 Un perfil es una combinación de diferentes tipos de recursos con distintas versiones de diferentes servicios. Los perfiles le ayudan a mezclar y combinar diferentes tipos de recursos y le ofrecen las siguientes ventajas:
 
-- Estabilidad para la aplicación mediante el bloqueo de versión específicas de la API.
-- Compatibilidad para la aplicación con Azure Stack y centros de datos de Azure regionales.
+- Estabilidad para la aplicación mediante el bloqueo de versión específicas de API.
+- Compatibilidad de la aplicación con Azure Stack y centros de datos de Azure regionales.
 
-En Azure SDK para Go, los perfiles están disponibles en la ruta de acceso de profiles, con la versión en formato **AAAA-MM-DD**. En este momento, la versión más reciente del perfil de API de Azure Stack es **2019-03-01** para las versiones de marca 1904 o posteriores. Para importar un servicio determinado de un perfil, importe su módulo correspondiente del perfil. Por ejemplo, para importar el servicio **Compute** del perfil **2019-03-01**, use el siguiente código:
+En el SDK de Go, los perfiles están disponibles en la ruta de acceso de perfiles. Los números de versión se etiquetan con el formato **AAAA-MM-DD**. La versión más reciente del perfil de API de Azure Stack es **2019-03-01** para las versiones de marca 1904 o posteriores. Para importar un servicio determinado de un perfil, importe su módulo correspondiente del perfil. Por ejemplo, para importar el servicio **Compute** del perfil **2019-03-01**, use el siguiente código:
 
 ```go
 import "github.com/Azure/azure-sdk-for-go/profiles/2019-03-01/compute/mgmt/compute"
@@ -84,9 +84,9 @@ Para ejecutar un ejemplo de código de Go en Azure Stack:
    }
    ```
 
-3. Si no está disponible, cree una suscripción y guarde su identificador para usarlo más adelante. Para obtener información acerca la creación de una suscripción, consulte [Creación de suscripciones a ofertas en Azure Stack](../operator/azure-stack-subscribe-plan-provision-vm.md).
+3. Si no está disponible, cree una suscripción y guarde su identificador para usarlo más adelante. Para obtener información sobre la creación de una suscripción, consulte [Creación de suscripciones para ofertas en Azure Stack](../operator/azure-stack-subscribe-plan-provision-vm.md).
 
-4. Cree una entidad de servicio que utilice un secreto de cliente, con el ámbito **Suscripción** y el rol **Propietario**. Guarde el identificador y el secreto de la entidad de servicio. Para obtener información acerca de la creación de una entidad de servicio para Azure Stack, consulte [Uso de una identidad de aplicación para acceder a recursos](../operator/azure-stack-create-service-principals.md). El entorno de Azure Stack ya está configurado.
+4. Cree una entidad de servicio que utilice un secreto de cliente, con el ámbito **Suscripción** y el rol **Propietario**. Guarde el identificador y el secreto de la entidad de servicio. Para obtener información acerca de la creación de una entidad de servicio para Azure Stack, consulte [Uso de una identidad de aplicación para acceder a recursos](../operator/azure-stack-create-service-principals.md). <br>El entorno de Azure Stack ya está configurado.
 
 5. Importe en el código un módulo de servicio del perfil de SDK para GO. La versión actual del perfil de Azure Stack es **2019-03-01**. Por ejemplo, para importar un módulo de red del tipo de perfil **2019-03-01**, use este código:
 
@@ -95,7 +95,7 @@ Para ejecutar un ejemplo de código de Go en Azure Stack:
     import "github.com/Azure/azure-sdk-for-go/profiles/2019-03-01/network/mgmt/network"
    ```
 
-6. En la función, cree y autentique un cliente con una llamada de función de cliente **New**. Para crear un cliente de red virtual, puede usar el siguiente código:  
+6. En la función, cree y autentique un cliente con una llamada de función de cliente **New**. Para crear un cliente de red virtual, use el siguiente código:  
 
    ```go
    package main
@@ -128,7 +128,7 @@ Para ver un ejemplo completo de creación de una red virtual en Azure Stack medi
 
 ## <a name="authentication"></a>Authentication
 
-Para obtener la propiedad **Authorizer** de Azure Active Directory mediante el SDK para GO, instale los módulos de **Go-AutoRest**. Dichos módulos se deberían haber instalado con la instalación del "SDK para GO"; si no ha sido así, instale el [paquete de autenticación de GitHub](https://github.com/Azure/go-autorest/tree/master/autorest/adal).
+Para obtener la propiedad **Authorizer** de Azure Active Directory mediante el SDK para GO, instale los módulos de **Go-AutoRest**. Estos módulos deben haberse instalado ya con la instalación de "Go SDK". En caso contrario, instale el [paquete de autenticación desde GitHub](https://github.com/Azure/go-autorest/tree/master/autorest/adal).
 
 Authorizer se debe establecer como autorizador del cliente de recursos. Hay distintas formas de obtener tokens de autorizador en Azure Stack mediante credenciales de cliente:
 
@@ -175,7 +175,7 @@ Authorizer se debe establecer como autorizador del cliente de recursos. Hay dist
    ```
 
     Establezca `<activeDirectoryResourceID>` en uno de los valores de la lista "audience" de los metadatos de **ResourceManagerUrl** recuperados en la sección anterior de este artículo.
-    Establezca `<clientID>` en el identificador de la aplicación de la entidad de servicio que guardó al crear esta última en la sección anterior de este artículo.
+    Establezca `<clientID>` en el identificador de aplicación de la entidad de servicio que guardó al crear esta última en la sección anterior de este artículo.
     Establezca `<clientSecret>` en el secreto de la aplicación de la entidad de servicio que guardó al crear esta última en la sección anterior de este artículo.
 
 ## <a name="example"></a>Ejemplo
@@ -215,7 +215,7 @@ En este ejemplo se muestra un ejemplo de código de Go que crea una red virtual 
    )
    ```
 
-3. Ahora que ha definido las variables del entorno, agregue un método para crear un token de autenticación mediante el paquete **adal**. Para más información acerca de la autenticación, consulte la sección anterior.
+3. Ahora que ha definido las variables del entorno, agregue un método para crear un token de autenticación mediante el paquete **adal**. Para obtener más información acerca de la autenticación, consulte la sección anterior.
 
    ```go
    //CreateToken creates a service principal token
@@ -300,9 +300,9 @@ En este ejemplo se muestra un ejemplo de código de Go que crea una red virtual 
    }
    ```
 Algunos de los ejemplos de código disponibles para Azure Stack que usan el SDK de Go son:
-- [Crear una máquina virtual](https://github.com/Azure-Samples/Hybrid-Compute-Go-Create-VM).
-- [Almacenamiento Dataplane](https://github.com/Azure-Samples/Hybrid-Storage-Go-Dataplane).
-- [Uso de Managed Disks](https://github.com/Azure-Samples/Hybrid-Compute-Go-ManagedDisks), (ejemplo que usa el perfil 2019-03-01-orientado a las versiones más recientes de la API compatibles con Azure Stack)
+- [Creación de la máquina virtual](https://github.com/Azure-Samples/Hybrid-Compute-Go-Create-VM)
+- [Almacenamiento Dataplane](https://github.com/Azure-Samples/Hybrid-Storage-Go-Dataplane)
+- [Uso de Managed Disks](https://github.com/Azure-Samples/Hybrid-Compute-Go-ManagedDisks) (ejemplo que usa el perfil 2019-03-01-orientado a las versiones más recientes de la API compatibles con Azure Stack)
 ## <a name="next-steps"></a>Pasos siguientes
 
 - [Install PowerShell for Azure Stack](../operator/azure-stack-powershell-install.md) (Instalación de PowerShell para Azure Stack)

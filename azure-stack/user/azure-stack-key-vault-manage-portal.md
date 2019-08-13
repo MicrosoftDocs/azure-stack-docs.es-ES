@@ -1,6 +1,6 @@
 ---
-title: Administración de Key Vault en Azure Stack mediante el portal | Microsoft Docs
-description: Aprenda a administrar Key Vault en Azure Stack mediante el portal
+title: Administración de Key Vault en Azure Stack mediante el portal | Microsoft Docs
+description: Aprenda a administrar KeyValut en Azure Stack mediante el portal de Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,16 +15,16 @@ ms.topic: article
 ms.date: 06/11/2019
 ms.author: sethm
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 57a23dc63c72657c19a92fa8f69e029be7f12f60
-ms.sourcegitcommit: e51cdc84a09250e8fa701bb2cb09de38d7de2c07
+ms.openlocfilehash: 4b6d6e784a640894fb1ef304d4469586e9fc2297
+ms.sourcegitcommit: 637018771ac016b7d428174e88d4dcb131b54959
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66836845"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68842738"
 ---
 # <a name="manage-key-vault-in-azure-stack-using-the-portal"></a>Administrar Key Vault en Azure Stack mediante el portal
 
-Puede administrar KeyValut en Azure Stack mediante el portal de Azure Stack. En este artículo se describe cómo crear y administrar un almacén de claves en Azure Stack.
+En este artículo se describe cómo crear y administrar un almacén de claves en Azure Stack con Azure Portal.
 
 ## <a name="prerequisites"></a>Requisitos previos
 
@@ -50,11 +50,11 @@ Debe suscribirse a una oferta que incluya el servicio Azure Key Vault.
 
 8. Si lo desea, elija una **directiva de acceso avanzado** para habilitar el acceso a las características. Por ejemplo: máquinas virtuales (VM) para la implementación, Resource Manager para la implementación de plantillas y el acceso a Azure Disk Encryption para el cifrado de volúmenes.
 
-9. Después de realizar la configuración, seleccione **Aceptar**y, a continuación, seleccione **Crear**. Esto inicia la implementación del almacén de claves.
+9. Después de realizar la configuración, seleccione **Aceptar**y, a continuación, seleccione **Crear**. Este paso inicia la implementación del almacén de claves.
 
 ## <a name="manage-keys-and-secrets"></a>Administración de claves y secretos
 
-Después de crear un almacén de claves, siga este procedimiento para crear y administrar claves y secretos en el almacén.
+Después de crear un almacén de claves, siga este procedimiento para crear y administrar claves y secretos en el almacén:
 
 ### <a name="create-a-key"></a>Crear una clave
 

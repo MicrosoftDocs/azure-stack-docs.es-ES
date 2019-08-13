@@ -1,6 +1,6 @@
 ---
-title: Introducción al almacén de claves de Azure Stack | Microsoft Docs
-description: Aprenda cómo el almacén de claves de Azure Stack administra claves y secretos
+title: Introducción a Key Vault en Azure Stack | Microsoft Docs
+description: Aprenda cómo Key Vault administra claves y secretos en Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: sethm
 ms.lastreviewed: 05/21/2019
-ms.openlocfilehash: 0167fd89e7bc9b17ff5b950a4ed5f12c368f1f8f
-ms.sourcegitcommit: 6fcd5df8b77e782ef72f0e1419f1f75ec8c16c04
+ms.openlocfilehash: fc68f80688f6b8cbe0376d332d706c9dc7b6dd92
+ms.sourcegitcommit: 637018771ac016b7d428174e88d4dcb131b54959
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65991262"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68842892"
 ---
 # <a name="introduction-to-key-vault-in-azure-stack"></a>Introducción a Key Vault en Azure Stack
 
@@ -41,11 +41,11 @@ Key Vault en Azure Stack ayuda a proteger claves criptográficas y secretos usad
 
 Key Vault agiliza el proceso de administración de claves y le permite mantener el control de claves que obtienen acceso a sus datos y los cifran. Los desarrolladores pueden crear claves para desarrollo y prueba en minutos y, a continuación, migrarlas sin problemas a claves de producción. Los administradores de seguridad pueden conceder (y revocar) permisos a las claves según sea necesario.
 
-Cualquiera que tenga una suscripción a Azure Stack puede crear y usar los almacenes de claves. Aunque Key Vault beneficia a los desarrolladores y los administradores de seguridad, el operador que administra otros servicios de Azure Stack en una organización puede implementarlo y administrarlo. Por ejemplo, el operador de Azure Stack puede iniciar sesión con una suscripción de Azure Stack, crear un almacén para la organización en el que almacenaría las claves y asumir la responsabilidad de las tareas operativas:
+Cualquiera que tenga una suscripción a Azure Stack puede crear y usar los almacenes de claves. Aunque Key Vault beneficia a los desarrolladores y los administradores de seguridad, el operador que administra otros servicios de Azure Stack en una organización puede implementarlo y administrarlo. Por ejemplo, el operador de Azure Stack puede iniciar sesión con una suscripción de Azure Stack, crear un almacén para la organización en el que almacenaría las claves. Una vez hecho esto, puede:
 
 * Crear o importar una clave o un secreto
 * Revocar o eliminar una clave o un secreto
-* Autorice a usuarios o aplicaciones para que puedan acceder al almacén de claves para que puedan administrar o usar sus claves y secretos.
+* Autorizar a usuarios o aplicaciones para que puedan acceder al almacén de claves para que puedan administrar o usar sus claves y secretos
 * Configurar el uso de claves (por ejemplo, para firmar o cifrar)
 
 El operador puede proporcionar luego a los desarrolladores identificadores uniformes de recursos (URI) para realizar llamadas desde sus aplicaciones. Los operadores también pueden proporcionar a los administradores de seguridad información del registro de uso de claves.
@@ -56,17 +56,17 @@ Los desarrolladores también pueden administrar las claves directamente mediante
 
 En los escenarios siguientes se describe cómo Key Vault puede ayudar a satisfacer las necesidades de los desarrolladores y los administradores de seguridad.
 
-### <a name="developer-for-an-azure-stack-application"></a>Desarrollador para una aplicación de Azure Stack
+### <a name="developer-for-an-azure-stack-app"></a>Desarrollador para una aplicación de Azure Stack
 
-**Problema:** quiero escribir una aplicación para Azure Stack que use claves para el cifrado y la firma. Quiero que estas claves sean externas a mi aplicación, de forma que la solución sea adecuada para aplicaciones distribuidas geográficamente.
+**Problema:** Quiero escribir una aplicación para Azure Stack que use claves para el cifrado y la firma. Quiero que estas claves sean externas a mi aplicación, de forma que la solución sea adecuada para aplicaciones distribuidas geográficamente.
 
-**Instrucción:** las claves se almacenan en un almacén y las invoca un identificador URI cuando se necesitan.
+**Instrucción:** Las claves se almacenan en un almacén y las invoca un identificador URI cuando se necesitan.
 
 ### <a name="developer-for-software-as-a-service-saas"></a>Desarrollador para software como servicio (SaaS)
 
-**Problema:** no quiero asumir la responsabilidad, ni tampoco la posible responsabilidad legal, de las claves y los secretos de mis clientes. Quiero que los clientes posean y administren sus claves, de modo que pueda concentrarme en mi trabajo, que es proporcionar las características de software principales.
+**Problema:** no quiero asumir la responsabilidad, ni tampoco la posible responsabilidad legal, de las claves y los secretos de mis clientes. Quiero que los clientes sean propietarios y administren sus claves de modo que pueda concentrarme en mi trabajo, que es proporcionar las características de software principales.
 
-**Instrucción:** los clientes pueden importar sus propias claves en Azure Stack y administrarlas.
+**Instrucción:** Los clientes pueden importar sus propias claves a Azure Stack y administrarlas.
 
 ### <a name="chief-security-officer-cso"></a>Responsable principal de la seguridad (CSO)
 

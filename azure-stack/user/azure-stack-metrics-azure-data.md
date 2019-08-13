@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/23/2019
+ms.date: 08/02/2019
 ms.author: mabrigg
 ms.lastreviewed: 12/01/2018
-ms.openlocfilehash: aafdc25293ea3cc584d24688d071dadb2151ce22
-ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
+ms.openlocfilehash: 329ef95f7902f3fe6dfcdd71b599675fdf7c6286
+ms.sourcegitcommit: 0e0d010c4e010f2fd6799471db8bf71652d8d4e1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68418538"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68806938"
 ---
 # <a name="use-azure-monitor-on-azure-stack"></a>Uso de Azure Monitor en Azure Stack
 
@@ -121,13 +121,16 @@ Algunos métodos de visualización incluyen:
 
 ## <a name="methods-of-accessing-azure-monitor-on-azure-stack"></a>Métodos para acceder a Azure Monitor en Azure Stack
 
-En general, puede manipular el seguimiento, el enrutamiento y la recuperación de los datos mediante uno de los métodos siguientes. No todos los métodos están disponibles para todas las acciones o tipos de datos.
+Puede manipular el seguimiento, el enrutamiento y la recuperación de los datos mediante uno de los métodos siguientes. No todos los métodos están disponibles para todas las acciones o tipos de datos. 
 
  - [Portal de Azure Stack](azure-stack-use-portal.md)
  - [PowerShell](https://docs.microsoft.com/azure/monitoring-and-diagnostics/insights-powershell-samples)
  - [Interfaz de la línea de comandos (CLI) multiplataforma](https://docs.microsoft.com/azure/monitoring-and-diagnostics/insights-cli-samples)
  - [API DE REST](https://docs.microsoft.com/rest/api/monitor)
  - [SDK de .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Monitor)
+
+> [!Important]  
+> Si encuentra un error de **recurso no encontrado** al ver el gráfico de rendimiento de una máquina virtual, asegúrese de que ha registrado Microsoft.Insights en la suscripción asociada a la máquina virtual.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

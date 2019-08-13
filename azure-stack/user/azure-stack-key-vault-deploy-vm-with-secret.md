@@ -1,6 +1,6 @@
 ---
-title: Implementación de una máquina virtual con una contraseña almacenada de forma segura en Azure Stack | Microsoft Docs
-description: Aprenda a implementar una máquina virtual usando una contraseña almacenada en el almacén de claves de Azure Stack
+title: Implementación de una máquina virtual de Azure Stack mediante una contraseña almacenada en Key Vault | Microsoft Docs
+description: Aprenda a implementar una máquina virtual mediante una contraseña almacenada en un almacén de claves de Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,14 +15,14 @@ ms.date: 06/13/2019
 ms.author: mabrigg
 ms.reviewer: ppacent
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: e4163921662b88cbd62f77eedc92d3a7db4bf491
-ms.sourcegitcommit: ca46bef5d5f824d22bdbc00605eb881410b1ffd0
+ms.openlocfilehash: 480740b12796fe90e2acd6fd1eb164b4c89d5ded
+ms.sourcegitcommit: 637018771ac016b7d428174e88d4dcb131b54959
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67041974"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68842829"
 ---
-# <a name="create-a-virtual-machine-using-a-secure-password-stored-in-azure-stack-key-vault"></a>Creación de una máquina virtual mediante una contraseña segura almacenada en Key Vault de Azure Stack
+# <a name="deploy-an-azure-stack-vm-using-a-password-stored-in-key-vault"></a>Implementación de una máquina virtual de Azure Stack mediante una contraseña almacenada en Key Vault
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
@@ -44,11 +44,11 @@ Puede almacenar valores, por ejemplo, una contraseña como un secreto, en un alm
 Los pasos siguientes describen el proceso necesario para crear una máquina virtual mediante la recuperación de la contraseña almacenada en un almacén de claves:
 
 1. Cree un secreto de almacén de claves.
-2. Actualice el archivo azuredeploy.parameters.json.
+2. Actualice el archivo `azuredeploy.parameters.json`.
 3. Implemente la plantilla.
 
 > [!NOTE]  
-> Puede seguir estos pasos desde el Kit de desarrollo de Azure Stack o desde un cliente externo, si se conecta a través de VPN.
+> Puede seguir estos pasos desde el Kit de desarrollo de Azure Stack (ASDK) o desde un cliente externo, si se conecta a través de VPN.
 
 ## <a name="create-a-key-vault-secret"></a>Creación de un secreto de almacén de claves
 
@@ -80,13 +80,13 @@ Set-AzureKeyVaultSecret `
 
 ```
 
-Cuando se ejecuta el script anterior, la salida incluye el identificador URI del secreto. Anote este URI. Tendrá que hacer referencia a él durante la [implementación de máquina virtual Windows con contraseña en la plantilla de almacén de claves](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/101-vm-windows-create-passwordfromkv). Descargue la carpeta [101-vm-secure-password](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/101-vm-windows-create-passwordfromkv) en el equipo de desarrollo. Esta carpeta contiene los archivos `azuredeploy.json` y `azuredeploy.parameters.json` que necesitará en los pasos siguientes.
+Cuando se ejecuta el script anterior, la salida incluye el identificador URI (identificador uniforme de recursos) del secreto. Anote este URI. Tendrá que hacer referencia a él durante la [implementación de máquina virtual Windows con contraseña en la plantilla de almacén de claves](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/101-vm-windows-create-passwordfromkv). Descargue la carpeta [101-vm-secure-password](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/101-vm-windows-create-passwordfromkv) en el equipo de desarrollo. Esta carpeta contiene los archivos `azuredeploy.json` y `azuredeploy.parameters.json` que necesitará en los pasos siguientes.
 
-Modificar el archivo `azuredeploy.parameters.json` según los valores del entorno. Los parámetros de especial interés son el nombre del almacén, el grupo de recursos del almacén y el identificador URI del secreto (que se generó en el script anterior). El archivo siguiente es un ejemplo de un archivo de parámetros:
+Modificar el archivo `azuredeploy.parameters.json` según los valores del entorno. Los parámetros de especial interés son el nombre del almacén, el grupo de recursos del almacén y el identificador URI del secreto (que se generó en el script anterior). El archivo siguiente es un ejemplo de un archivo de parámetros.
 
 ## <a name="update-the-azuredeployparametersjson-file"></a>Actualice el archivo azuredeploy.parameters.json
 
-Actualice el archivo azuredeploy.parameters.json con los valores de KeyVault URI, secretName y adminUsername de la máquina virtual correspondientes a su entorno. El siguiente archivo JSON muestra un ejemplo del archivo de parámetros de plantilla:
+Actualice el archivo `azuredeploy.parameters.json` con los valores de KeyVault URI, secretName y adminUsername de la máquina virtual correspondientes a su entorno. El siguiente archivo JSON muestra un ejemplo del archivo de parámetros de plantilla:
 
 ```json
 {

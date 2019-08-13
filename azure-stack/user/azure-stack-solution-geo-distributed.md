@@ -15,12 +15,12 @@ ms.date: 01/14/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 7f50c1f5cf565040425e0c655585c3d65b837eb3
-ms.sourcegitcommit: 35b13ea6dc0221a15cd0840be796f4af5370ddaf
+ms.openlocfilehash: bac13382c1fe579a04b96274d8f310d5a1737be2
+ms.sourcegitcommit: a0dcb61890ad0f7b8e1f738f7186198681adcc2e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68603134"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68820777"
 ---
 # <a name="create-a-geo-distributed-app-solution-to-direct-traffic-with-azure-and-azure-stack"></a>Crear una solución de aplicación distribuida geográficamente para dirigir el tráfico con Azure y Azure Stack
 
@@ -302,7 +302,7 @@ La captura de pantalla siguiente es un ejemplo de página de registros DNS:
 
 2. Agregue un registro CNAME para asignar un subdominio al nombre de host predeterminado de la aplicación.
 
-   Para el ejemplo del dominio www.northwindcloud.com, agregue un registro CNAME que asigne el nombre a <nombreDeAplicación>.azurewebsites.net.
+   Para el ejemplo del dominio www\.northwindcloud.com, agregue un registro CNAME que asigne el nombre a <nombre\_Aplicación>.azurewebsites.net.
 
 Después de agregar el registro CNAME, la página de registros DNS es como la del ejemplo siguiente:
 

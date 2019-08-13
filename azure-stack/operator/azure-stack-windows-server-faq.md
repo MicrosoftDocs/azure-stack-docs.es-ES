@@ -15,12 +15,12 @@ ms.date: 06/22/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 11/12/2018
-ms.openlocfilehash: 0896ea921408d651a4b8e072c3d66ab4e333ebd6
-ms.sourcegitcommit: fdeb2760845c9760ea7df1414b8e140b0624a823
+ms.openlocfilehash: 177d18261d8a85807826226b0dcabdfd03e87135
+ms.sourcegitcommit: 0e0d010c4e010f2fd6799471db8bf71652d8d4e1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67334428"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68806899"
 ---
 # <a name="windows-server-in-azure-stack-marketplace-faq"></a>Preguntas frecuentes sobre Windows Server en el Marketplace de Azure Stack
 
@@ -53,11 +53,11 @@ Si descarga ambas versiones de la imagen, solo la versión más reciente es visi
 
 ### <a name="what-if-my-user-incorrectly-checked-the-i-have-a-license-box-in-previous-windows-builds-and-they-dont-have-a-license"></a>¿Qué ocurre si mi usuario marco incorrectamente el cuadro "Tengo una licencia" en compilaciones anteriores de Windows y no tiene ninguna licencia?
 
-Consulte [Conversión de nuevo de las máquinas virtuales de Windows Server con la ventaja al pago por uso](/azure/virtual-machines/windows/hybrid-use-benefit-licensing#powershell-1).
+Consulte [Conversión de las máquinas virtuales Windows Server del modelo de traiga su propia licencia al de pago por uso](/azure/virtual-machines/windows/hybrid-use-benefit-licensing#powershell-1).
 
 ### <a name="what-if-i-have-an-older-image-and-my-user-forgot-to-check-the-i-have-a-license-box-or-we-use-our-own-images-and-we-do-have-enterprise-agreement-entitlement"></a>¿Qué ocurre si tengo una imagen anterior y el usuario olvidó marcar el cuadro "Tengo una licencia"? ¿Y si usamos nuestras propias imágenes y tenemos un Contrato Enterprise?
 
-Consulte [Conversión de una máquina virtual existente con la Ventaja híbrida de Azure para Windows Server](/azure/virtual-machines/windows/hybrid-use-benefit-licensing#convert-an-existing-vm-using-azure-hybrid-benefit-for-windows-server). Tenga en cuenta que la ventaja híbrida de Azure no se aplica a Azure Stack, pero sí el efecto de esta configuración.
+Consulte [Conversión de una máquina virtual Windows Server existente al modelo de traiga su propia licencia](/azure/virtual-machines/windows/hybrid-use-benefit-licensing#convert-an-existing-vm-using-azure-hybrid-benefit-for-windows-server). Tenga en cuenta que la ventaja híbrida de Azure no se aplica a Azure Stack, pero sí el efecto de esta configuración.
 
 ### <a name="what-about-other-vms-that-use-windows-server-such-as-sql-or-machine-learning-server"></a>¿Qué ocurre con otras máquinas virtuales que usan Windows Server, como SQL o Machine Learning Server?
 

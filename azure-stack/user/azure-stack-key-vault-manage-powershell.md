@@ -1,6 +1,6 @@
 ---
-title: Administración de Key Vault en Azure Stack mediante PowerShell | Microsoft Docs
-description: Aprenda a administrar Key Vault en Azure Stack mediante PowerShell
+title: Administrar Key Vault en Azure Stack mediante PowerShell | Microsoft Docs
+description: Aprenda a administrar Key Vault en Azure Stack mediante PowerShell.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,22 +15,22 @@ ms.topic: article
 ms.date: 05/09/2019
 ms.author: sethm
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: 613fec37e1677698e72ff09d3ffdc35502a57de5
-ms.sourcegitcommit: c755c7eac0f871960f9290591421cf5990b9e734
+ms.openlocfilehash: ca303590d4dc923380e10e50fc9b8b9ce2e5aac6
+ms.sourcegitcommit: 637018771ac016b7d428174e88d4dcb131b54959
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65506091"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68842967"
 ---
 # <a name="manage-key-vault-in-azure-stack-using-powershell"></a>Administrar Key Vault en Azure Stack mediante PowerShell
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Puede administrar Key Vault en Azure Stack mediante PowerShell. Aprenda a usar los cmdlets de PowerShell en Key Vault para:
+En este artículo se describe cómo crear y administrar un almacén de claves en Azure Stack con Powershell. Aprenda a usar los cmdlets de PowerShell en Key Vault para:
 
 * Cree un almacén de claves.
 * Almacenar y administrar claves criptográficas y secretos.
-* Autorizar usuarios o aplicaciones para invocar operaciones en el almacén.
+* Autorizar a los usuarios o a las aplicaciones a invocar operaciones en el almacén.
 
 >[!NOTE]
 >Los cmdlets de PowerShell para Key Vault que se describen en este artículo se ofrecen como parte del SDK de Azure PowerShell.
@@ -51,7 +51,7 @@ Get-AzureRmResourceProvider -ProviderNamespace Microsoft.KeyVault | ft -Autosize
 
 Si la suscripción está habilitada para operaciones de almacén, la salida muestra el valor **Registrado** para **RegistrationState** para todos los tipos de recursos de un almacén de claves.
 
-![Estado de registro de almacén de claves](media/azure-stack-key-vault-manage-powershell/image1.png)
+![Estado de registro de almacén de claves en Powershell](media/azure-stack-key-vault-manage-powershell/image1.png)
 
 Si las operaciones de almacén no están habilitadas, emita el comando siguiente para registrar el servicio Key Vault en su suscripción:
 
@@ -61,7 +61,7 @@ Register-AzureRmResourceProvider -ProviderNamespace Microsoft.KeyVault
 
 Si el registro se realiza correctamente, se devuelve la siguiente salida:
 
-![Register ](media/azure-stack-key-vault-manage-powershell/image2.png)
+![Registro del almacén de claves en PowerShell correcto](media/azure-stack-key-vault-manage-powershell/image2.png)
 
 Al invocar los comandos de Key Vault, podría recibir un error, como "La suscripción no está registrada para usar el espacio de nombres Microsoft.KeyVault". Si se produce un error, confirme que tiene habilitado el proveedor de recursos de Key Vault siguiendo las instrucciones anteriores.
 
@@ -73,7 +73,7 @@ Antes de crear un almacén de claves, cree un grupo de recursos para que todos l
 New-AzureRmResourceGroup -Name "VaultRG" -Location local -verbose -Force
 ```
 
-![Nuevo grupo de recursos](media/azure-stack-key-vault-manage-powershell/image3.png)
+![Nuevo grupo de recursos generado en Powershell](media/azure-stack-key-vault-manage-powershell/image3.png)
 
 Ahora, utilice el comando **New-AzureRMKeyVault** para crear un almacén de claves en el grupo de recursos que creó anteriormente. Este comando lee tres parámetros obligatorios: el nombre del grupo de recursos, el nombre del almacén de claves y la ubicación geográfica.
 
@@ -83,13 +83,13 @@ Ejecute el siguiente comando para crear un almacén de claves:
 New-AzureRmKeyVault -VaultName "Vault01" -ResourceGroupName "VaultRG" -Location local -verbose
 ```
 
-![Almacén de claves nuevo](media/azure-stack-key-vault-manage-powershell/image4.png)
+![Nuevo almacén de claves generado en Powershell](media/azure-stack-key-vault-manage-powershell/image4.png)
 
 La salida de este comando muestra las propiedades del almacén de claves que ha creado. Cuando una aplicación accede a este almacén, debe utilizar la propiedad **Vault URI** (URI de almacén) que es `https://vault01.vault.local.azurestack.external` en este ejemplo.
 
 ### <a name="active-directory-federation-services-ad-fs-deployment"></a>Implementación de Servicios de federación de Active Directory (AD FS)
 
-En una implementación de AD FS, podría obtener esta advertencia: "Access policy is not set. No user or application has access permission to use this vault" (La directiva de acceso no está definida. Ningún usuario ni ninguna aplicación tienen permiso de acceso para utilizar este almacén). Para resolver este problema, establezca una directiva de acceso para el almacén mediante el comando [Set-AzureRmKeyVaultAccessPolicy](#authorize-an-application-to-use-a-key-or-secret):
+En una implementación de AD FS, podría obtener esta advertencia: "Access policy is not set. No user or application has access permission to use this vault" (La directiva de acceso no está definida. Ningún usuario ni ninguna aplicación tienen permiso de acceso para utilizar este almacén). Para resolver este problema, establezca una directiva de acceso para el almacén mediante el comando [Set-AzureRmKeyVaultAccessPolicy](#authorize-an-app-to-use-a-key-or-secret):
 
 ```powershell
 # Obtain the security identifier(SID) of the active directory user
@@ -114,9 +114,9 @@ Add-AzureKeyVaultKey -VaultName "Vault01" -Name "Key01" -verbose -Destination So
 
 El parámetro **Destination** (Destino) se utiliza para especificar que la clave está protegida mediante software. Cuando la clave se crea correctamente, el comando da como salida los detalles de la clave creada.
 
-![Nueva clave](media/azure-stack-key-vault-manage-powershell/image5.png)
+![Nueva clave del almacén de claves generada en Powershell](media/azure-stack-key-vault-manage-powershell/image5.png)
 
-Ahora puede hacer referencia a la clave creada utilizando su URI. Si crea o importa una clave con el mismo nombre que una clave existente, la clave original se actualiza con los valores que se especifican en la nueva clave. Puede acceder a la versión anterior utilizando el URI específico de la versión de la clave. Por ejemplo: 
+Ahora puede hacer referencia a la clave creada utilizando su URI. Si crea o importa una clave con el mismo nombre que una clave existente, la clave original se actualiza con los valores que se especifican en la nueva clave. Puede acceder a la versión anterior utilizando el URI específico de la versión de la clave. Por ejemplo:
 
 * Use `https://vault10.vault.local.azurestack.external:443/keys/key01` para obtener siempre la versión actual.
 * Use `https://vault010.vault.local.azurestack.external:443/keys/key01/d0b36ee2e3d14e9f967b8b6b1d38938a` para obtener esta versión específica.
@@ -138,7 +138,7 @@ $secretvalue = ConvertTo-SecureString "User@123" -AsPlainText -Force
 Set-AzureKeyVaultSecret -VaultName "Vault01" -Name "Secret01" -SecretValue $secretvalue
 ```
 
-![Crear un secreto](media/azure-stack-key-vault-manage-powershell/image6.png)
+![Creación de un secreto en Powershell](media/azure-stack-key-vault-manage-powershell/image6.png)
 
 ### <a name="get-a-secret"></a>Obtener un secreto
 
@@ -148,13 +148,13 @@ Use el comando **Get-AzureKeyVaultSecret** para leer un secreto en un almacén d
 Get-AzureKeyVaultSecret -VaultName "Vault01" -Name "Secret01"
 ```
 
-Después de crear claves y secretos, puede autorizar aplicaciones externas para que los usen.
+Después de crear claves y secretos, puede autorizar a aplicaciones externas para que los usen.
 
-## <a name="authorize-an-application-to-use-a-key-or-secret"></a>Autorización de una aplicación para que use una clave o un secreto
+## <a name="authorize-an-app-to-use-a-key-or-secret"></a>Autorización a una aplicación para que use una clave o un secreto
 
-Para autorizar una aplicación a acceder a una clave o a un secreto del almacén de claves, use el comando **Set-AzureRmKeyVaultAccessPolicy**.
+Para autorizar a una aplicación a acceder a una clave o a un secreto del almacén de claves, use el comando **Set-AzureRmKeyVaultAccessPolicy**.
 
-En el siguiente ejemplo, el nombre del almacén es *ContosoKeyVault* y la aplicación que desea autorizar tiene el identificador de cliente *8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed*. Ejecute el comando siguiente para autorizar la aplicación. Si lo desea, puede especificar el parámetro **PermissionsToKeys** para establecer permisos para un usuario, una aplicación o un grupo de seguridad.
+En el siguiente ejemplo, el nombre del almacén es *ContosoKeyVault* y la aplicación que desea autorizar tiene el identificador de cliente *8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed*. Ejecute el comando siguiente para autorizar a la aplicación. También puede especificar el parámetro **PermissionsToKeys** para establecer permisos para un usuario, una aplicación o un grupo de seguridad.
 
 ```powershell
 Set-AzureRmKeyVaultAccessPolicy -VaultName 'ContosoKeyVault' -ServicePrincipalName 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed -PermissionsToKeys decrypt,sign

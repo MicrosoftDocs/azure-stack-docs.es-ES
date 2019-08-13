@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/23/2019
+ms.date: 08/01/2019
 ms.author: mabrigg
 ms.reviewer: avishwan
 ms.lastreviewed: 03/04/2019
-ms.openlocfilehash: 3fd84e5c294c2cdcfa942aeaf9c2daf9f9245891
-ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
+ms.openlocfilehash: d36761cd7480d782ea01bc1b0d3606b5fa244ed3
+ms.sourcegitcommit: 49cfe13427f5255915d5ccbed87b36eec2caf8ca
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68418216"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68720028"
 ---
 # <a name="register-azure-stack-with-azure"></a>Registro de Azure Stack con Azure
 
@@ -36,11 +36,11 @@ La información de este artículo describe el registro de los sistemas integrado
 
 Necesitará lo siguiente antes de realizar el registro:
 
- - Comprobar las credenciales
- - Establecer el modo de lenguaje de PowerShell
- - Instalación de PowerShell para Azure Stack
- - Descarga de las herramientas de Azure Stack
- - Determinar el escenario de registro
+- Comprobar las credenciales
+- Establecer el modo de lenguaje de PowerShell
+- Instalación de PowerShell para Azure Stack
+- Descarga de las herramientas de Azure Stack
+- Determinar el escenario de registro
 
 ### <a name="verify-your-credentials"></a>Comprobar las credenciales
 
@@ -92,16 +92,17 @@ Para asegurarse de que usa la versión más reciente, debe eliminar las versione
 
 La implementación de Azure Stack puede ser *conectada* o *desconectada*.
 
- - **Conectada**  
+- **Conectada**  
  Que sea conectada significa que ha implementado Azure Stack para que pueda conectarse a Internet y a Azure. Puede usar Azure Active Directory (Azure AD) o Servicios de federación de Active Directory (AD FS) como almacén de identidades. Con una implementación conectada, puede elegir entre dos modelos de facturación: de pago por uso o según la capacidad.
-    - [Registro de una implementación conectada de Azure Stack en Azure mediante el modelo de facturación de **pago por uso**](#register-connected-with-pay-as-you-go-billing)
-    - [Registro de una implementación de Azure Stack conectada en Azure mediante el modelo de facturación por **capacidad**](#register-connected-with-capacity-billing)
+  - [Registro de una implementación conectada de Azure Stack en Azure mediante el modelo de facturación de **pago por uso**](#register-connected-with-pay-as-you-go-billing)
+  - [Registro de una implementación de Azure Stack conectada en Azure mediante el modelo de facturación por **capacidad**](#register-connected-with-capacity-billing)
 
- - **Desconectada**  
+- **Desconectada**  
  Con la opción de implementación sin conexión a Azure, Azure Stack se podrá implementar y usar sin conexión a Internet. Sin embargo, este tipo de implementación tiene la limitación de que solo se puede usar un almacén de identidades de AD FS y el modelo de facturación por capacidad.
-    - [Registro de una implementación de Azure Stack desconectada mediante el modelo de facturación por **capacidad**](#register-disconnected-with-capacity-billing)
+  - [Registro de una implementación de Azure Stack desconectada mediante el modelo de facturación por **capacidad**](#register-disconnected-with-capacity-billing)
 
 ### <a name="determine-a-unique-registration-name-to-use"></a>Determinar un nombre de registro único para su uso 
+
 Al registrar Azure Stack en Azure, debe proporcionar un nombre de registro único. Una manera fácil de asociar la suscripción de Azure Stack con un registro de Azure es usar el **Id. de nube** de Azure Stack. 
 
 > [!NOTE]
@@ -341,17 +342,13 @@ Puede usar el icono de **administración de regiones** para comprobar si el regi
     - **Identificador de suscripción para el registro**: identificador de suscripción de Azure registrado y asociado con Azure Stack.
     - **Grupo de recursos de registro**: grupo de recursos de Azure de la suscripción asociada que contiene los recursos de Azure Stack.
 
-4. Utilice Azure Portal para ver los registros de aplicaciones de Azure Stack. Inicie sesión en Azure Portal con una cuenta asociada a la suscripción que usó para registrar Azure Stack. Cambie al inquilino asociado con Azure Stack.
-5. Vaya a **Azure Active Directory > Registros de aplicaciones > Ver todas las aplicaciones**.
-
-    ![Registros de aplicaciones](media/azure-stack-registration/app-registrations.png)
-
-    Los registros de aplicaciones de Azure Stack tienen el prefijo **Azure Stack**.
+4. Puede usar Azure Portal para ver los recursos de registro de Azure Stack y, a continuación, comprobar que el registro se ha realizado correctamente. Inicie sesión en [Azure Portal](https://portal.azure.com) con una cuenta asociada a la suscripción que usó para registrar Azure Stack. Seleccione **Todos los recursos**, active la casilla **Mostrar tipos ocultos** y seleccione el nombre del registro.
+5. Si el registro no se realizó correctamente, debe volver a registrarlo siguiendo los [pasos](#change-the-subscription-you-use) que se indican a continuación para resolver el problema.  
 
 Como alternativa, puede comprobar si el registro es correcto mediante la característica de administración de Marketplace. Si ve una lista de elementos de marketplace en la hoja de administración de Marketplace, significa que su registro se realizó correctamente. Sin embargo, en entornos desconectados, no verá los elementos de marketplace en la característica de administración de Marketplace.
 
 > [!NOTE]
-> Una vez completado el registro, ya no aparecerá la advertencia activa para no registrar. En escenarios desconectados, verá un mensaje en la característica de administración de Marketplace que le solicita registrar y activar Azure Stack, incluso si se ha registrado correctamente.
+> Una vez completado el registro, ya no aparecerá la advertencia activa para no registrar. En versiones de Azure Stack anteriores a la 1904, en escenarios desconectados, verá un mensaje en la característica de administración de Marketplace que le solicita registrar y activar Azure Stack, incluso si se ha registrado correctamente. Este mensaje no aparece en la versión 1904 y posteriores.
 
 ## <a name="renew-or-change-registration"></a>Renovación o cambio de registro
 
@@ -451,15 +448,20 @@ En entornos de Azure Stack que usan un modelo de facturación por capacidad, des
 2. Guarde este token de registro para usarlo en la máquina conectada a Azure. El archivo o el texto se pueden copiar de $FilePathForRegistrationToken.
 
 ## <a name="move-a-registration-resource"></a>Traslado de un recurso de registro
-Se **admite** el traslado de un recurso de registro entre grupos de recursos en la misma suscripción para todos los entornos. Sin embargo, trasladar un recurso de registro entre suscripciones solo se admite para los CSP cuando ambas suscripciones se resuelven en el mismo Id. de partner. Para más información sobre cómo mover recursos a un nuevo grupo de recursos, consulte [Traslado de los recursos a un nuevo grupo de recursos o a una nueva suscripción](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-move-resources).
+
+Se **admite** el traslado de un recurso de registro entre grupos de recursos en la misma suscripción para todos los entornos. Sin embargo, trasladar un recurso de registro entre suscripciones solo se admite para los CSP cuando ambas suscripciones se resuelven en el mismo Id. de partner. Para más información sobre cómo mover recursos a un nuevo grupo de recursos, consulte [Traslado de los recursos a un nuevo grupo de recursos o a una nueva suscripción](/azure/azure-resource-manager/resource-group-move-resources).
+
+> [!IMPORTANT]
+> Para evitar la eliminación accidental de recursos de registro en el portal, el script de registro agrega automáticamente un bloqueo al recurso. Debe quitar este bloqueo antes de moverlo o eliminarlo. Se recomienda agregar un bloqueo a su recurso de registro para evitar la eliminación accidental.
 
 ## <a name="registration-reference"></a>Referencia del registro
 
 ### <a name="set-azsregistration"></a>Set-AzsRegistration
 
-Puede usar Set-AzsRegistration para registrar Azure Stack en Azure y habilitar o deshabilitar la oferta de elementos en marketplace y los informes de uso.
+Puede usar **Set-AzsRegistration** para registrar Azure Stack en Azure y habilitar o deshabilitar la oferta de elementos en Marketplace y los informes de uso.
 
 Para ejecutar el cmdlet, necesitará:
+
 - Una suscripción de Azure global de cualquier tipo.
 - También debe haberse registrado en Azure PowerShell con una cuenta que sea de un propietario o colaborador de dicha suscripción.
 

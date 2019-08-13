@@ -11,28 +11,50 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/31/2019
+ms.date: 08/05/2019
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 07/31/2019
-ms.openlocfilehash: c70334bea80a84166a4bb614f15852e44f2b99f4
-ms.sourcegitcommit: bf4d265a3522cbfdd9dd295a0f4ad0daf2ed5eca
+ms.openlocfilehash: 3d0aad849395a93b1086daf5cf2c17e198d69ed5
+ms.sourcegitcommit: 0e0d010c4e010f2fd6799471db8bf71652d8d4e1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68692131"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68806922"
 ---
 # <a name="azure-stack-marketplace-changes"></a>Cambios en Marketplace de Azure Stack
 
-En este artículo se describen las recientes incorporaciones, actualizaciones, cambios y eliminaciones de [elementos de Marketplace de Azure Stack](azure-stack-marketplace-azure-items.md). La información de esta sección se actualiza de manera periódica, por lo que debe volver a comprobar con frecuencia los cambios.
+En este artículo se describen las recientes incorporaciones, actualizaciones, cambios y eliminaciones de [elementos de Marketplace de Azure Stack](azure-stack-marketplace-azure-items.md) durante aproximadamente los tres últimos meses. La información de esta sección se actualiza de manera periódica, por lo que debe volver a comprobar con frecuencia los cambios.
 
-En este artículo se describen los cambios de Marketplace que se han producido durante los últimos 3 meses aproximadamente. El artículo [Elementos de Marketplace de Azure Stack](azure-stack-marketplace-azure-items.md) siempre incluye la lista más actual de los elementos de Marketplace de Azure Stack disponibles.
+El artículo [Elementos de Marketplace de Azure Stack](azure-stack-marketplace-azure-items.md) siempre incluye la lista más actual de los elementos de Marketplace de Azure Stack disponibles.
 
 ## <a name="new-marketplace-items"></a>Nuevos elementos de Marketplace
 
-- Veeam® Backup & Replication™: ayuda a las empresas a conseguir una protección de datos completa para TODAS las cargas de trabajo, tanto virtuales como físicas y basadas en la nube. Con una única consola, puede lograr de manera rápida, flexible y confiable la copia de seguridad, la recuperación y la replicación de todos los datos y aplicaciones. Se agregó el 14 de junio de 2019.
+- 25/1/2019: A10 vThunder: controlador de entrega de aplicaciones L4-L7, equilibrio de carga del servidor global (GSLB), SSL Insight
 
-- A10 vThunder: controlador de entrega de aplicaciones L4-L7, equilibrio de carga del servidor global (GSLB), SSL Insight. Se agregó el 25 de enero de 2019.
+- 14/6/2019: Veeam® Backup & Replication™
+
+- 05/08/2019: Drupal
+
+- 05/08/2019: etcd
+
+- 05/08/2019: Grafana
+
+- 05/08/2019: Neo4J
+
+- 05/08/2019: Parse Server
+
+- 05/08/2019: WordPress Multisite
+
+- 05/08/2019: ZooKeeper
+
+- 05/08/2019: TensorFlow Serving
+
+- 05/08/2019: NATS
+
+- 05/08/2019: Review Board
+
+- 05/08/2019: Composr
 
 ## <a name="deprecated-marketplace-items"></a>Elementos de Marketplace en desuso
 

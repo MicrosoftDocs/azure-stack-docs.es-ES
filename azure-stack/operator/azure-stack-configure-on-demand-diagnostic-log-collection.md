@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/25/2019
+ms.date: 07/31/2019
 ms.author: justinha
 ms.reviewer: prchint
-ms.lastreviewed: 07/25/2019
-ms.openlocfilehash: 25b72df875dd78e7ddea42c4505345f4225cc948
-ms.sourcegitcommit: f6ea6daddb92cbf458f9824cd2f8e7e1bda9688e
+ms.lastreviewed: 07/31/2019
+ms.openlocfilehash: 988c24f004222d80b866024c2c392473cdf73bab
+ms.sourcegitcommit: ddb625bb01de11bfb75d9f7a1cc61d5814b3bc31
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68497325"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68712953"
 ---
 # <a name="collect-azure-stack-diagnostic-logs-now-on-demand"></a>Recopilación de registros de diagnóstico de Azure Stack ahora (a petición)
 
@@ -186,28 +186,28 @@ Siga estos pasos para ejecutar `Get-AzureStackLog` en un equipo que hospede ASDK
 * La recopilación de registros de archivos de copia de seguridad está deshabilitada de forma predeterminada. Para habilitarla, utilice el parámetro de modificador **IncludeDumpFile**.
 * Actualmente, no se puede usar el parámetro **FilterByRole** para filtrar la colección de registros de los roles siguientes:
 
-  |   |   |   |    |
-  | - | - | - | -  |
-  |ACS                   |CA                             |HRP                            |OboService|
-  |ACSBlob               |CacheService                   |IBC                            |OEM|
-  |ACSDownloadService    |Proceso                        |InfraServiceController         |OnboardRP|
-  |ACSFabric             |CPI                            |KeyVaultAdminResourceProvider  |PXE|
-  |ACSFrontEnd           |CRP                            |KeyVaultControlPlane           |QueryServiceCoordinator|
-  |ACSMetrics            |DeploymentMachine              |KeyVaultDataPlane              |QueryServiceWorker|
-  |ACSMigrationService   |DiskRP                         |KeyVaultInternalControlPlane   |SeedRing|
-  |ACSMonitoringService  |Dominio                         |KeyVaultInternalDataPlane      |SeedRingServices|
-  |ACSSettingsService    |ECE                            |KeyVaultNamingService          |SLB|
-  |ACSTableMaster        |EventAdminRP                   |MDM                            |SQL|
-  |ACSTableServer        |EventRP                        |MetricsAdminRP                 |SRP   |
-  |ACSWac                |ExternalDNS                    |MetricsRP                      |Storage|
-  |ADFS                  |FabricRing                     |MetricsServer                  |StorageController   |
-  |ApplicationController |FabricRingServices             |MetricsStoreService            |URP   |
-  |ASAppGateway          |FirstTierAggregationService    |MonAdminRP                     |UsageBridge|
-  |AzureBridge           |FRP                            |MonRP                          |VirtualMachines   |
-  |AzureMonitor          |Puerta de enlace                        |NC                             |WAS|
-  |BareMetal             |HealthMonitoring               |NonPrivilegedAppGateway        |WASPUBLIC|
-  |BRP                   |HintingServiceV2               |NRP                            |   |
-  |   |   |   |    |
+  |   |   |   |    |     |
+  | - | - | - | -  |  -  |
+  |ACS                   |CA                             |HRP                            |OboService                |VirtualMachines|
+  |ACSBlob               |CacheService                   |IBC                            |OEM                       |WAS            |
+  |ACSDownloadService    |Proceso                        |InfraServiceController         |OnboardRP                 |WASPUBLIC|
+  |ACSFabric             |CPI                            |KeyVaultAdminResourceProvider  |PXE                       |         |
+  |ACSFrontEnd           |CRP                            |KeyVaultControlPlane           |QueryServiceCoordinator   |         | 
+  |ACSMetrics            |DeploymentMachine              |KeyVaultDataPlane              |QueryServiceWorker        |         |
+  |ACSMigrationService   |DiskRP                         |KeyVaultInternalControlPlane   |SeedRing                  |         |
+  |ACSMonitoringService  |Dominio                         |KeyVaultInternalDataPlane      |SeedRingServices          |         |
+  |ACSSettingsService    |ECE                            |KeyVaultNamingService          |SLB                       |         |
+  |ACSTableMaster        |EventAdminRP                   |MDM                            |SQL                       |         |
+  |ACSTableServer        |EventRP                        |MetricsAdminRP                 |SRP                       |         |
+  |ACSWac                |ExternalDNS                    |MetricsRP                      |Storage                   |         |
+  |ADFS                  |FabricRing                     |MetricsServer                  |StorageController         |         |
+  |ApplicationController |FabricRingServices             |MetricsStoreService            |URP                       |         |
+  |ASAppGateway          |FirstTierAggregationService    |MonAdminRP                     |SupportBridgeController   |         |
+  |AzureBridge           |FRP                            |MonRP                          |SupportRing               |         |
+  |AzureMonitor          |Puerta de enlace                        |NC                             |SupportRingServices       |         |
+  |BareMetal             |HealthMonitoring               |NonPrivilegedAppGateway        |SupportBridgeRP           |         |
+  |BRP                   |HintingServiceV2               |NRP                            |UsageBridge               |         |
+  |   |   |   |    |     | 
 
 ### <a name="additional-considerations"></a>Consideraciones adicionales
 

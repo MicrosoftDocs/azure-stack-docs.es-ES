@@ -1,6 +1,6 @@
 ---
 title: Instalar Visual Studio y conectarse a Azure Stack | Microsoft Docs
-description: Aprenda los pasos necesarios para instalar Visual Studio y conectarse a Azure Stack.
+description: Aprenda a instalar Visual Studio y conectarse a Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -16,12 +16,12 @@ ms.date: 04/08/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 11d389b96ed730d6395231ecf24eced6a65fbae8
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 12f0b8d13ebaa7a31153dd89f65f27fd97294700
+ms.sourcegitcommit: 637018771ac016b7d428174e88d4dcb131b54959
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64311751"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68842946"
 ---
 # <a name="install-visual-studio-and-connect-to-azure-stack"></a>Instalar Visual Studio y conectarse a Azure Stack
 
@@ -41,7 +41,7 @@ Puede usar Visual Studio para escribir e implementar [plantillas](azure-stack-ar
 
     ![Captura de pantalla de los pasos de la instalación de WebPI](./media/azure-stack-install-visual-studio/image1.png)
 
-5. [Install PowerShell for Azure Stack](../operator/azure-stack-powershell-install.md) (Instalación de PowerShell para Azure Stack)
+5. [Instale PowerShell para Azure Stack](../operator/azure-stack-powershell-install.md).
 
 6. Una vez finalizada la instalación, reinicie el sistema operativo.
 
@@ -65,9 +65,9 @@ Después de iniciar sesión, puede [implementar plantillas](azure-stack-deploy-t
 
 3. Expanda **Entorno** en el **Panel de navegación** y seleccione **Cuentas**.
 
-4. Seleccione **Agregar** y especifique el punto de conexión de usuario de Azure Resource Manager. Para el Kit de desarrollo de Azure Stack, la dirección URL es `https://management.local.azurestack/external`.  Para los sistemas integrados de Azure Stack, la dirección URL es `https://management.[Region}.[External FQDN]`.
+4. Seleccione **Agregar** y especifique el punto de conexión de usuario de Azure Resource Manager. Para el Kit de desarrollo de Azure Stack (ASDK), la dirección URL es `https://management.local.azurestack/external`.  Para los sistemas integrados de Azure Stack, la dirección URL es `https://management.[Region}.[External FQDN]`.
 
-    ![X](./media/azure-stack-install-visual-studio/image5.png)
+    ![Incorporación de nuevo punto de conexión de Azure Cloud Discovery](./media/azure-stack-install-visual-studio/image5.png)
 
 5. Seleccione **Agregar**.  
 
@@ -79,11 +79,11 @@ Después de iniciar sesión, puede [implementar plantillas](azure-stack-deploy-t
 
 7. Seleccione **Agregar cuenta** e inicie sesión con sus credenciales de AD FS.  
 
-    ![Cloud Explorer](./media/azure-stack-install-visual-studio/image7.png)
+    ![Inicie sesión en Visual Studio en Cloud Explorer](./media/azure-stack-install-visual-studio/image7.png)
 
     Cloud Explorer consulta las suscripciones disponibles. Puede seleccionar una suscripción disponible para administrar.
 
-    ![Cloud Explorer](./media/azure-stack-install-visual-studio/image8.png)
+    ![Seleccione las suscripciones que desea administrar en Cloud Explorer](./media/azure-stack-install-visual-studio/image8.png)
 
 8. Examine los recursos existentes, grupos de recursos o implemente plantillas.
 
