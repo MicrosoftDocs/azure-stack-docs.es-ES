@@ -5,22 +5,22 @@ services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: conceptual
-ms.date: 06/25/2019
+ms.date: 08/05/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 06/25/2019
-ms.openlocfilehash: 9f45e94f26e577f1a47f60b7df24758d7bc88767
-ms.sourcegitcommit: 35b13ea6dc0221a15cd0840be796f4af5370ddaf
+ms.lastreviewed: 08/05/2019
+ms.openlocfilehash: 44d35d59b2b50682dd6911f6d2b08fea8e005938
+ms.sourcegitcommit: a0dcb61890ad0f7b8e1f738f7186198681adcc2e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68603050"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68820808"
 ---
 # <a name="connect-to-azure-stack-using-azure-account-extension-in-visual-studio-code"></a>Conectarse a Azure Stack mediante la extensión de la cuenta de Azure en Visual Studio Code
 
 En este artículo, le orientaremos acerca de cómo conectarse a Azure Stack con la extensión de la cuenta de Azure. Necesitará actualizar la configuración de Visual Studio Code (VS Code).
 
-VS Code es un editor ligero para compilar y depurar aplicaciones web y en la nube. Lo usan ASP.NET Core, Python, NodeJS, Go y otros desarrolladores. Con la extensión de la cuenta de Azure, puede usar un único inicio de sesión de Azure con filtrado de suscripción para extensiones adicionales de Azure. La extensión hace que Azure Cloud Shell esté disponible en el terminal integrado de VS Code. Con la extensión, puede conectarse a la suscripción de Azure Stack con Azure AD (Azure AD) y Active Directory Federated Services (AD FS) para el administrador de identidades. Esto le permite iniciar sesión en Azure Stack, seleccionar la suscripción y abrir una nueva línea de comandos en un shell en la nube. 
+VS Code es un editor ligero para compilar y depurar aplicaciones web y en la nube. ASP.NET Core, Python, NodeJS, Go y otros desarrolladores usan VS Code. Con la extensión de la cuenta de Azure, puede usar un único inicio de sesión de Azure con filtrado de suscripción para extensiones adicionales de Azure. La extensión hace que Azure Cloud Shell esté disponible en el terminal integrado de VS Code. Con la extensión, puede conectarse a la suscripción de Azure Stack con Azure AD (Azure AD) y Active Directory Federated Services (AD FS) para el administrador de identidades. Puede iniciar sesión en Azure Stack, seleccionar la suscripción y abrir una nueva línea de comandos en un shell en la nube. 
 
 > [!Note]  
 > Puede usar los pasos de este artículo para un entorno de Active Directory Federated Services (AD FS). Use los puntos de conexión y las credenciales de AD FS.
@@ -40,19 +40,28 @@ VS Code es un editor ligero para compilar y depurar aplicaciones web y en la nub
 
     - Para el script **Identity** y sus instrucciones, consulte [AzureStack-Tools/Identity](https://github.com/Azure/AzureStack-Tools/tree/master/Identity).
 
+    - En la misma sesión, ejecute:
+
+    ```powershell  
+    Update-AzsHomeDirectoryTenant -AdminResourceManagerEndpoint $adminResourceManagerEndpoint `
+    -DirectoryTenantName $homeDirectoryTenantName -Verbose
+    Register-AzsWithMyDirectoryTenant -TenantResourceManagerEndpoint $tenantARMEndpoint `
+    -DirectoryTenantName $guestDirectoryTenantName
+    ```
+
 2. Abra VS Code.
 
 3. Seleccione **Extensiones** en la esquina izquierda.
 
-3. En el cuadro de búsqueda, escriba `Azure Account`.
+4. En el cuadro de búsqueda, escriba `Azure Account`.
 
-4. Seleccione **Cuenta de Azure** y, a continuación, **Instalar**.
+5. Seleccione **Cuenta de Azure** y, a continuación, **Instalar**.
 
       ![Visual Studio Code en Azure Stack](media/azure-stack-dev-start-vscode-azure/image1.png)
 
-5. Reinicie VS Code para cargar la extensión.
+6. Reinicie VS Code para cargar la extensión.
 
-6. Recupere los metadatos para conectarse a Azure Resource Manager desde Azure Stack. 
+7. Recupere los metadatos para conectarse a Azure Resource Manager desde Azure Stack. 
     
     Microsoft Azure Resource Manager es un marco de administración que le permite implementar, administrar y supervisar recursos de Azure.
     - La dirección URL de Resource Manager para el Kit de desarrollo de Azure Stack (ASDK) es: `https://management.local.azurestack.external/` 
@@ -63,9 +72,9 @@ VS Code es un editor ligero para compilar y depurar aplicaciones web y en la nub
 
     Anote el código JSON devuelto. Necesitará los valores para la propiedad `loginEndpoint` y `audiences`.
 
-7. Presione **Ctrl + Mayús + P** y seleccione **Preferencias: Abrir configuración de usuario (JSON)** .
+8. Presione **Ctrl + Mayús + P** y seleccione **Preferencias: Abrir configuración de usuario (JSON)** .
 
-8. En el editor de código, actualice el siguiente fragmento de código JSON con los valores para su entorno y, a continuación, péguelo en el bloque de configuración.
+9. En el editor de código, actualice el siguiente fragmento de código JSON con los valores para su entorno y, a continuación, péguelo en el bloque de configuración.
 
     - Valores:
 
@@ -88,17 +97,17 @@ VS Code es un editor ligero para compilar y depurar aplicaciones web y en la nub
       "azure.cloud": "AzurePPE"
       ```
 
-9. Guarde la configuración de usuario y use **Ctrl + Mayús + P** una vez más. Seleccione **Azure: Sign in to Azure Cloud**. Se mostrará la nueva opción, **AzurePPE**, en la lista de destinos.
+10. Guarde la configuración de usuario y use **Ctrl + Mayús + P** una vez más. Seleccione **Azure: Sign in to Azure Cloud**. Se mostrará la nueva opción, **AzurePPE**, en la lista de destinos.
 
-10. Seleccione **AzurePPE**. La página de autenticación se cargará en el explorador. Inicie sesión en el punto de conexión.
+11. Seleccione **AzurePPE**. La página de autenticación se cargará en el explorador. Inicie sesión en el punto de conexión.
 
-11. Para comprobar que ha iniciado sesión correctamente en su suscripción de Azure Stack, use **Ctrl + Mayús + P** y seleccione **Azure: Seleccionar suscripción**. A continuación, compruebe si la suscripción está disponible.
+12. Para comprobar que ha iniciado sesión correctamente en su suscripción de Azure Stack, use **Ctrl + Mayús + P** y seleccione **Azure: Seleccionar suscripción**. A continuación, compruebe si la suscripción está disponible.
 
 ## <a name="commands"></a>Comandos:
 
 | Azure: Sign In | Inicie sesión en la suscripción de Azure |
 | --- | --- |
-| Azure: Sign In with Device Code | Inicie sesión en su suscripción de Azure con un código de dispositivo. Úselo en configuraciones en que el comando Sign In no funcione. |
+| Azure: Sign In with Device Code | Inicie sesión en su suscripción de Azure con un código de dispositivo. Use un código de dispositivo en configuraciones donde el comando Sign In no funcione. |
 | Azure: Sign In to Azure Cloud | Inicie sesión en su suscripción de Azure en una de las nubes soberanas. |
 | Azure: cierre de sesión del | Cierre la sesión de su suscripción a Azure. |
 | Azure: Selección de suscripciones | Elija el conjunto de suscripciones con el que quiere trabajar. La extensión solo muestra los recursos dentro de las suscripciones filtradas. |
