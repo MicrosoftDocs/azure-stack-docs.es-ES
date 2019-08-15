@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/01/2019
+ms.date: 08/13/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 10/23/2018
-ms.openlocfilehash: d02173731f8cf7834160a0228c589b036aac7fe6
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: c00ce005ac72fcde34b58a1afe7e134c27274247
+ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64984014"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68991720"
 ---
 # <a name="azure-stack-validation-report"></a>Informe de validación de Azure Stack
 
@@ -35,7 +35,7 @@ Cuando se ejecuta la herramienta, los resultados se registran en **AzsReadinessC
 
 Ambos archivos conservan los resultados de comprobaciones de validación posterior que se ejecutan en el mismo equipo. Por ejemplo, se puede ejecutar la herramienta para validar los certificados, volver a ejecutarla para validar la identidad de Azure y validarla y luego, una tercera vez para validar el registro. Los resultados de las tres validaciones están disponibles en el informe .json resultante.  
 
-De forma predeterminada, los dos archivos se escriben en **C:\Users\<nombre de usuario>\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json**.  
+De forma predeterminada, los dos archivos se escriben en **C:\Users\nombre_de_usuario\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json**.  
 
 - Use el parámetro `-OutputPath <path>` al final del comando de ejecución para especificar otra ubicación para el informe.
 - Use el parámetro `-CleanReport` al final de la línea de comandos para borrar la información de ejecuciones anteriores de la herramienta desde **AzsReadinessCheckerReport.json**.
@@ -46,7 +46,7 @@ Para ver el informe en PowerShell, indique la ruta de acceso al informe como val
 
 Por ejemplo, para ver el informe desde un símbolo del sistema de PowerShell que está abierto en la ubicación donde se encuentra el informe, ejecute el comando siguiente:
 
-```shell
+```powershell
 Read-AzsReadinessReport -ReportPath .\AzsReadinessReport.json
 ```
 
@@ -96,7 +96,7 @@ PSBoundParameters :
 
 ## <a name="view-the-report-summary"></a>Visualización del resumen del informe
 
-Para ver un resumen del informe, puede agregar el parámetro `-summary` al final del comando de PowerShell. Por ejemplo: 
+Para ver un resumen del informe, puede agregar el parámetro `-summary` al final del comando de PowerShell. Por ejemplo:
 
 ```powershell
 Read-AzsReadinessReport -ReportPath .\Contoso-AzsReadinessReport.json -summary

@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/10/2019
+ms.date: 08/13/2019
 ms.author: sethm
 ms.lastreviewed: 05/10/2019
-ms.openlocfilehash: 792589eabf13b9aca493e230f7e3e93cfab21736
-ms.sourcegitcommit: 426380a3a27954cd609ba52d1066d9d69f5267fe
+ms.openlocfilehash: 51b61eae1f2c00a959eded275c13c5c4b8d06e4c
+ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65532365"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68991801"
 ---
 # <a name="create-subscriptions-to-offers-in-azure-stack"></a>Creación de suscripciones para ofertas en Azure Stack
 
@@ -45,7 +45,7 @@ Después de crear una suscripción para un usuario, podrá iniciar sesión en el
 2. Seleccione **Agregar**. En **Nueva suscripción de usuario**, escriba la siguiente información:  
 
    - **Nombre para mostrar**: un nombre descriptivo para identificar la suscripción que aparece como *Nombre de suscripción de usuario*.
-   - **Usuario**: especifique un usuario de un inquilino de directorio disponible para esta suscripción. El nombre de usuario se muestra como *Propietario*.  El formato del nombre de usuario depende de la solución de identidad. Por ejemplo: 
+   - **Usuario**: especifique un usuario de un inquilino de directorio disponible para esta suscripción. El nombre de usuario se muestra como *Propietario*.  El formato del nombre de usuario depende de la solución de identidad. Por ejemplo:
 
      - **Azure AD:** `<user1>@<contoso.onmicrosoft.com>`
 

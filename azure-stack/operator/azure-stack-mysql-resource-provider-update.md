@@ -15,12 +15,12 @@ ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 6513138226bf60d37f7f2f541d8d00dcf8d87073
-ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
+ms.openlocfilehash: 533a56e9dcfe4b3fbdc857a042a3e90d91d8090c
+ms.sourcegitcommit: 94669fe8a55fadd3103e80be307e9e8c823bf746
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68417440"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68940264"
 ---
 # <a name="update-the-mysql-resource-provider"></a>Actualización del proveedor de recursos de MySQL 
 
@@ -95,7 +95,7 @@ $AdminCreds = New-Object System.Management.Automation.PSCredential ($serviceAdmi
  
 # Set credentials for the new resource provider VM. 
 $vmLocalAdminPass = ConvertTo-SecureString "P@ssw0rd1" -AsPlainText -Force 
-$vmLocalAdminCreds = New-Object System.Management.Automation.PSCredential ("sqlrpadmin", $vmLocalAdminPass) 
+$vmLocalAdminCreds = New-Object System.Management.Automation.PSCredential ("mysqlrpadmin", $vmLocalAdminPass) 
  
 # And the cloudadmin credential required for privileged endpoint access. 
 $CloudAdminPass = ConvertTo-SecureString "P@ssw0rd1" -AsPlainText -Force 
@@ -106,7 +106,7 @@ $PfxPass = ConvertTo-SecureString "P@ssw0rd1" -AsPlainText -Force
  
 # Change directory to the folder where you extracted the installation files. 
 # Then adjust the endpoints. 
-$tempDir\UpdateMySQLProvider.ps1 -AzCredential $AdminCreds ` 
+.$tempDir\UpdateMySQLProvider.ps1 -AzCredential $AdminCreds ` 
 -VMLocalCredential $vmLocalAdminCreds ` 
 -CloudAdminCredential $cloudAdminCreds ` 
 -PrivilegedEndpoint $privilegedEndpoint ` 

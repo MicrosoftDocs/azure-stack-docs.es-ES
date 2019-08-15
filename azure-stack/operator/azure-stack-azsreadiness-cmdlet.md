@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/09/2019
+ms.date: 08/13/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: 1f8d7573d9d3da54ddb5fa7aae85ba15d1db4c3c
-ms.sourcegitcommit: 2b6a0b3b4dc63c26df3d0535d630d640ff232fb0
+ms.openlocfilehash: 7d0e9c6914ce8748d842c9addf040355e3dc1cb1
+ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65521248"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68991701"
 ---
 # <a name="start-azsreadinesschecker-cmdlet-reference"></a>Referencia del cmdlet Start-AzsReadinessChecker
 
@@ -302,7 +302,7 @@ Especifica el nombre de la región de la implementación de Azure Stack.
 
 |  |  |
 |----------------------------|--------------|
-|Escriba:                        |string        |
+|Escriba:                       |string        |
 |Posición:                   |con nombre         |
 |Valor predeterminado:              |None          |
 |Aceptar la entrada de la canalización:      |False         |
@@ -314,7 +314,7 @@ Especifica el FQDN externo de la implementación de Azure Stack, con los alias *
 
 |  |  |
 |----------------------------|--------------|
-|Escriba:                        |string        |
+|Escriba:                       |string        |
 |Posición:                   |con nombre         |
 |Valor predeterminado:              |ExternalFQDN, ExternalDomainName |
 |Aceptar la entrada de la canalización:      |False         |
@@ -326,10 +326,10 @@ Especifica los valores válidos del sistema de identidades de la implementación
 
 |  |  |
 |----------------------------|--------------|
-|Escriba:                        |string        |
+|Escriba:                       |string        |
 |Posición:                   |con nombre         |
 |Valor predeterminado:              |None          |
-|Valores válidos:                |"AAD", "ADFS"  |
+|Valores válidos:               |"AAD", "ADFS"  |
 |Aceptar la entrada de la canalización:      |False         |
 |Aceptar caracteres comodín: |False         |
 
@@ -339,7 +339,7 @@ Especifica la contraseña asociada a los archivos de certificado PFX.
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                        |SecureString |
+|Escriba:                       |SecureString |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |None     |
 |Aceptar la entrada de la canalización:      |False    |
@@ -351,7 +351,7 @@ Especifica la tabla hash que contiene las rutas de acceso y las contraseñas de 
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                        |Hashtable |
+|Escriba:                       |Hashtable |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |None     |
 |Aceptar la entrada de la canalización:      |False    |
@@ -363,7 +363,7 @@ Especifica el archivo de configuración JSON de datos de implementación de Azur
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                        |string   |
+|Escriba:                       |string   |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |None     |
 |Aceptar la entrada de la canalización:      |False    |
@@ -375,7 +375,7 @@ Especifica la ruta de acceso a un certificado problemático que requiere que se 
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                        |string   |
+|Escriba:                       |string   |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |None     |
 |Aceptar la entrada de la canalización:      |False    |
@@ -387,7 +387,7 @@ Especifica la ruta de acceso de destino para el archivo PFX resultante de la rut
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                        |string   |
+|Escriba:                       |string   |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |None     |
 |Aceptar la entrada de la canalización:      |False    |
@@ -399,7 +399,7 @@ Especifica un diccionario ordenado del firmante para la generación de solicitud
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                        |OrderedDictionary   |
+|Escriba:                       |OrderedDictionary   |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |None     |
 |Aceptar la entrada de la canalización:      |False    |
@@ -414,10 +414,10 @@ Especifica el tipo de SAN de la solicitud de certificado. Los valores válidos s
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                        |string   |
+|Escriba:                       |string   |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |None     |
-|Valores válidos:                |"MultipleCSR","SingleCSR" |
+|Valores válidos:               |"MultipleCSR","SingleCSR" |
 |Aceptar la entrada de la canalización:      |False    |
 |Aceptar caracteres comodín: |False    |
 
@@ -427,7 +427,7 @@ Especifica la ruta de acceso de destino para los archivos de solicitud de certif
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                        |string   |
+|Escriba:                       |string   |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |None     |
 |Aceptar la entrada de la canalización:      |False    |
@@ -439,7 +439,7 @@ Especifica el administrador de servicio de Azure Active Directory que se va a us
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                        |PSCredential   |
+|Escriba:                       |PSCredential   |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |None     |
 |Aceptar la entrada de la canalización:      |False    |
@@ -451,7 +451,7 @@ Especifica el nombre de Azure Active Directory que se va a usar para la implemen
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                        |string   |
+|Escriba:                       |string   |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |None     |
 |Aceptar la entrada de la canalización:      |False    |
@@ -463,10 +463,10 @@ Especifica la instancia de servicios de Azure que contiene las cuentas, los dire
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                        |string   |
+|Escriba:                       |string   |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |None     |
-|Valores válidos:                |'AzureCloud','AzureChinaCloud','AzureUSGovernment' |
+|Valores válidos:               |'AzureCloud','AzureChinaCloud','AzureUSGovernment' |
 |Aceptar la entrada de la canalización:      |False    |
 |Aceptar caracteres comodín: |False    |
 
@@ -476,7 +476,7 @@ Especifica la cuenta de registro que se va a usar para el registro de Azure Stac
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                        |string   |
+|Escriba:                       |string   |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |None     |
 |Aceptar la entrada de la canalización:      |False    |
@@ -488,7 +488,7 @@ Especifica el identificador de suscripción del registro que se va a usar para e
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                        |Guid     |
+|Escriba:                       |Guid     |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |None     |
 |Aceptar la entrada de la canalización:      |False    |
@@ -500,7 +500,7 @@ Especifica la ruta de acceso para el informe de preparación, tiene como valor p
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                        |string   |
+|Escriba:                       |string   |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |Todo      |
 |Aceptar la entrada de la canalización:      |False    |
@@ -522,7 +522,7 @@ ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, K
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                        |string   |
+|Escriba:                       |string   |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |.\Certificates |
 |Aceptar la entrada de la canalización:      |False    |
@@ -534,7 +534,7 @@ Especifica si se deben agregar servicios y nombres de host de PaaS a las solicit
 
 |  |  |
 |----------------------------|------------------|
-|Escriba:                        |SwitchParameter   |
+|Escriba:                       |SwitchParameter   |
 |Posición:                   |con nombre             |
 |Valor predeterminado:              |False             |
 |Aceptar la entrada de la canalización:      |False             |
@@ -546,10 +546,10 @@ Especifica si solo se mostrará el resumen del informe; omite los detalles.
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                        |string   |
+|Escriba:                       |string   |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |Todo      |
-|Valores válidos:                |"Certificate","AzureRegistration","AzureIdentity","Jobs","All" |
+|Valores válidos:               |"Certificate","AzureRegistration","AzureIdentity","Jobs","All" |
 |Aceptar la entrada de la canalización:      |False    |
 |Aceptar caracteres comodín: |False    |
 
@@ -559,7 +559,7 @@ Especifica si solo se mostrará el resumen del informe; omite los detalles.
 
 |  |  |
 |----------------------------|------------------|
-|Escriba:                        |SwitchParameter   |
+|Escriba:                       |SwitchParameter   |
 |Posición:                   |con nombre             |
 |Valor predeterminado:              |False             |
 |Aceptar la entrada de la canalización:      |False             |
@@ -571,7 +571,7 @@ Quita el historial de ejecuciones y validaciones anteriores y escribe las valida
 
 |  |  |
 |----------------------------|------------------|
-|Escriba:                        |SwitchParameter   |
+|Escriba:                       |SwitchParameter   |
 |Alias:                    |cf                |
 |Posición:                   |con nombre             |
 |Valor predeterminado:              |False             |
@@ -584,7 +584,7 @@ Especifica una ruta de acceso personalizada donde se guarda el informe JSON de p
 
 |  |  |
 |----------------------------|------------------|
-|Escriba:                        |string            |
+|Escriba:                       |string            |
 |Posición:                   |con nombre             |
 |Valor predeterminado:              |$ENV:TEMP\AzsReadinessChecker  |
 |Aceptar la entrada de la canalización:      |False             |
@@ -596,7 +596,7 @@ Solicita confirmación antes de ejecutar el cmdlet.
 
 |  |  |
 |----------------------------|------------------|
-|Escriba:                        |SwitchParameter   |
+|Escriba:                       |SwitchParameter   |
 |Alias:                    |cf                |
 |Posición:                   |con nombre             |
 |Valor predeterminado:              |False             |
@@ -609,7 +609,7 @@ Muestra lo que sucedería si se ejecutara el cmdlet. El cmdlet no se ejecuta.
 
 |  |  |
 |----------------------------|------------------|
-|Escriba:                        |SwitchParameter   |
+|Escriba:                       |SwitchParameter   |
 |Alias:                    |wi                |
 |Posición:                   |con nombre             |
 |Valor predeterminado:              |False             |

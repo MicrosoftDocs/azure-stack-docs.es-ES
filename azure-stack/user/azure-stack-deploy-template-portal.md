@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 08/13/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 8f61667351a6d22094d5f8a0ba39348cc92549a8
-ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
+ms.openlocfilehash: e6a9c9569f7a2aeff044232d15817313b43ed69f
+ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66692016"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68991854"
 ---
 # <a name="deploy-a-template-using-the-portal-in-azure-stack"></a>Implementación de una plantilla desde el portal en Azure Stack
 
