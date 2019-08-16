@@ -5,16 +5,16 @@ services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: overview
-ms.date: 04/24/2019
+ms.date: 08/09/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 04/24/2019
-ms.openlocfilehash: 14baf5d5ca411e7c32cbfcf4a6138193a2215b0a
-ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
+ms.lastreviewed: 08/09/2019
+ms.openlocfilehash: beddafb351af39f0a21a1cd0d7a7baa4ccfee28e
+ms.sourcegitcommit: 94669fe8a55fadd3103e80be307e9e8c823bf746
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65783084"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68940275"
 ---
 # <a name="deploy-a-c-aspnet-web-app-to-a-vm-in-azure-stack"></a>Implementar una aplicación web de C# ASP.NET en una VM en Azure Stack
 
@@ -61,13 +61,13 @@ En este artículo se usa una aplicación C# 6.0 que usa ASP.NET Core 2.2 y se ej
     | 443 | HTTPS | El protocolo de transferencia de hipertexto con cifrado de Capa de sockets seguros (HTTPS) es una versión segura de HTTP que requiere un certificado de seguridad y permite la transmisión cifrada de información.  |
     | 22 | SSH | Secure Shell (SSH) es un protocolo de red cifrado para proteger las comunicaciones. Usará esta conexión con un cliente SSH para configurar la máquina virtual e implementar la aplicación. |
     | 3389 | RDP | Opcional. El Protocolo de escritorio remoto permite que una conexión de escritorio remoto utilice una interfaz gráfica de usuario de su equipo.   |
-    | 8080 | Personalizado | El puerto predeterminado para el servicio de Apache Tomcat es 8080. Para un servidor de producción, querrá enrutar el tráfico a través de 80 y 443. |
+    | 8172 | Personalizado | El puerto que usa WebDeploy. |
 
     Para cada puerto:
 
     a. En **Origen**, seleccione **Cualquiera**.
 
-    b. En **Intervalo de puertos de origen**, escriba un asterisco (**\***).
+    b. En **Intervalo de puertos de origen**, escriba un asterisco ( **\*** ).
 
     c. En **Destino**, seleccione **Cualquiera**.
 
