@@ -86,6 +86,8 @@
               href: azure-stack-network.md
             - name: Conectividad de borde
               href: azure-stack-border-connectivity.md
+            - name: Configuración del conmutador
+              href: azure-stack-customer-defined.md
             - name: Integración de DNS
               href: azure-stack-integrate-dns.md
             - name: Integración de Firewall
