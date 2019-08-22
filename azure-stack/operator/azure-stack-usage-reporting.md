@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 08/12/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: c744a686be2a00418f48b769a5971997a603693f
-ms.sourcegitcommit: ccd86bd0862c45de1f6a4993f783ea2e186c187a
+ms.openlocfilehash: 3aeae5c1a0106a0c13c9b6bbe2eb4ba07de14dd4
+ms.sourcegitcommit: 58c28c0c4086b4d769e9d8c5a8249a76c0f09e57
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65172649"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959437"
 ---
 # <a name="report-azure-stack-usage-data-to-azure"></a>Notificar los datos de uso de Azure Stack a Azure
 
@@ -31,7 +31,7 @@ Los sistemas de varios nodos de Azure Stack que usan el modelo de facturación b
 > [!IMPORTANT]
 > Todas las cargas de trabajo [se deben implementar con suscripciones de inquilino](#are-users-charged-for-the-infrastructure-vms) a fin de cumplir los términos de licencia de Azure Stack.
 
-Los informes de datos de uso son obligatorios para los usuarios de varios nodos de Azure Stack con una licencia de modelo de pago por uso. Es opcional para los clientes con una licencia de modelo de capacidad (vea la página [Cómo comprar](https://azure.microsoft.com/overview/azure-stack/how-to-buy/)). Para los usuarios del Kit de desarrollo de Azure Stack, los operadores de Azure Stack pueden notificar los datos de uso y probar la característica. Sin embargo, no se cobrará a los usuarios por el uso.
+Los informes de datos de uso son obligatorios para los usuarios de varios nodos de Azure Stack con una licencia de modelo de pago por uso. Es opcional para los clientes con una licencia de modelo de capacidad (vea la página [Cómo comprar](https://azure.microsoft.com/overview/azure-stack/how-to-buy/)). Para los usuarios del Kit de desarrollo de Azure Stack (ASDK), los operadores de Azure Stack pueden notificar los datos de uso y probar la característica. Sin embargo, no se cobrará a los usuarios por el uso.
 
 ![flujo de facturación](media/azure-stack-usage-reporting/billing-flow.png)
 
@@ -52,7 +52,7 @@ Para configurar los informes de datos de uso, debe [registrar la instancia de Az
 
 - Para probar los informes de datos de uso, cree unos pocos recursos en Azure Stack. Por ejemplo, puede crear una [cuenta de almacenamiento](azure-stack-provision-storage-account.md), una [VM Windows Server](../user/azure-stack-create-vm-template.md) y una VM de Linux con SKU de nivel estándar y básico para ver cómo se informa del uso de núcleos. Los datos de uso para diferentes tipos de recursos se notifican en medidores diferentes.
 
-- Deje que los recursos se ejecuten durante horas. Información de uso se recopila aproximadamente una vez cada hora. Después de recopilarse, estos datos se transmiten a Azure y se procesan en el sistema Azure commerce. Este proceso puede tardar varias horas.
+- Deje que los recursos se ejecuten durante unas horas. Información de uso se recopila aproximadamente una vez cada hora. Después de recopilarse, estos datos se transmiten a Azure y se procesan en el sistema Azure commerce. Este proceso puede tardar varias horas.
 
 ## <a name="view-usage---csp-subscriptions"></a>Visualización del uso: suscripciones de CSP
 
@@ -70,21 +70,21 @@ Si ha registrado Azure Stack con cualquier otro tipo de suscripción, por ejemp
 
 ![flujo de facturación](media/azure-stack-usage-reporting/pricing-details.png)
 
-Para el Kit de desarrollo de Azure Stack, los recursos de Azure Stack no se cobran, por lo que el precio se muestra como 0,00 USD.
+En el caso de ASDK, los recursos de Azure Stack no se cobran, por lo que el precio se muestra como 0,00 USD.
 
 ## <a name="which-azure-stack-deployments-are-charged"></a>¿Qué implementaciones de Azure Stack se cobran?
 
-El uso de recursos es gratuito para el Kit de desarrollo de Azure Stack. Para los sistemas de varios nodos de Azure Stack, se cobran las máquinas virtuales de carga de trabajo, los servicios de almacenamiento y App Services.
+El uso de recursos es gratuito para ASDK. Para los sistemas de varios nodos de Azure Stack, se cobran las máquinas virtuales de carga de trabajo, los servicios de almacenamiento y App Services.
 
 ## <a name="are-users-charged-for-the-infrastructure-vms"></a>¿Se les cobrará a los usuarios la infraestructura de las máquinas virtuales?
 
- No. Los datos de uso de algunas máquinas virtuales del proveedor de recursos de Azure Stack se notifican a Azure, pero no se cobran las VM que se crean durante la implementación para habilitar la infraestructura de Azure Stack.  
+No. Los datos de uso de algunas máquinas virtuales del proveedor de recursos de Azure Stack se notifican a Azure, pero no se cobran las VM que se crean durante la implementación para habilitar la infraestructura de Azure Stack.  
 
 Solo se cobra a los usuarios las máquinas virtuales que se ejecuten en suscripciones de inquilinos. Todas las cargas de trabajo se deben implementar con suscripciones de inquilino a fin de cumplir los términos de licencia de Azure Stack.
 
 ## <a name="i-have-a-windows-server-license-i-want-to-use-on-azure-stack-how-do-i-do-it"></a>Tengo una licencia de Windows Server que deseo utilizar en Azure Stack, ¿cómo lo hago?
 
-El uso de las licencias existentes impide generar medidores de uso. Las licencias existentes de Windows Server pueden utilizarse en Azure Stack, tal como se describe en la sección "Uso de software existente con Azure Stack" de la [guía de licencias de Azure Stack](https://go.microsoft.com/fwlink/?LinkId=851536). Para poder usar sus licencias existentes, los clientes deben implementar sus máquinas virtuales de Windows Server como se describe en el artículo sobre la [ventaja híbrida para la licencia de Windows Server.](/azure/virtual-machines/windows/hybrid-use-benefit-licensing).
+El uso de las licencias existentes impide generar medidores de uso. Las licencias existentes de Windows Server pueden utilizarse en Azure Stack, tal como se describe en la sección "Uso de software existente con Azure Stack" de la [guía de licencias de Azure Stack](https://go.microsoft.com/fwlink/?LinkId=851536). Para poder usar sus licencias existentes, los clientes deben implementar sus máquinas virtuales de Windows Server como se describe en el artículo sobre la [ventaja híbrida para la licencia de Windows Server](/azure/virtual-machines/windows/hybrid-use-benefit-licensing).
 
 ## <a name="which-subscription-is-charged-for-the-resources-consumed"></a>¿Qué suscripción se cobra por los recursos consumidos?
 
