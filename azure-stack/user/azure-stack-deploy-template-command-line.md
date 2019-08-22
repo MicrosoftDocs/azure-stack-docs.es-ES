@@ -1,6 +1,6 @@
 ---
 title: Implementación de una plantilla con la línea de comandos en Azure Stack | Microsoft Docs
-description: Obtenga información acerca de cómo usar la interfaz de la línea de comandos (CLI) multiplataforma para implementar plantillas en Azure Stack.
+description: Obtenga información acerca de cómo usar la interfaz de la línea de comandos (CLI) multiplataforma de Azure para implementar plantillas en Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -11,22 +11,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: CLI
 ms.topic: article
-ms.date: 05/09/2019
+ms.date: 08/13/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: 92c9189f8144804f36e551ab89d8b4fc4c1f8598
-ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
+ms.openlocfilehash: da17e80c802e210d53effbad8f264b1a4019e6e0
+ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66691368"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68991842"
 ---
 # <a name="deploy-a-template-with-the-command-line-in-azure-stack"></a>Implementación de una plantilla con la línea de comandos en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Use la interfaz de la línea de comandos (CLI) de Azure para implementar plantillas de Azure Resource Manager en Azure Stack. Las plantillas de Azure Resource Manager implementan y aprovisionan recursos para su aplicación en una única operación coordinada.
+Puede usar la interfaz de la línea de comandos (CLI) de Azure para implementar plantillas de Azure Resource Manager en Azure Stack. Las plantillas de Azure Resource Manager implementan y aprovisionan recursos para su aplicación en una única operación coordinada.
 
 ## <a name="before-you-begin"></a>Antes de empezar
 
@@ -55,4 +55,4 @@ az storage account list
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Obtenga más información sobre la [implementación de plantillas con PowerShell](azure-stack-deploy-template-powershell.md).
+Obtenga información sobre cómo [implementar plantillas mediante PowerShell](azure-stack-deploy-template-powershell.md).

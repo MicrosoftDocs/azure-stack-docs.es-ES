@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 08/12/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 59e86e15289833d63b85314a84d0bb9e60dc5da8
-ms.sourcegitcommit: ccd86bd0862c45de1f6a4993f783ea2e186c187a
+ms.openlocfilehash: 24fc0f7993001ce95a21e175c84f37d755a5ce6c
+ms.sourcegitcommit: ec38ec569ad2193369c438f55e5c190aa5f0efd5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65172565"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68956599"
 ---
 # <a name="create-and-publish-a-marketplace-item"></a>Creación y publicación de un producto en Marketplace
 
@@ -47,7 +47,7 @@ ms.locfileid: "65172565"
 
 4. Pruebe la plantilla con las API de Microsoft Azure Stack para asegurarse de que el recurso puede implementarse correctamente.
 5. Si la plantilla se basa en una imagen de máquina virtual, siga las instrucciones para [agregar una imagen de máquina virtual a Azure Stack](azure-stack-add-vm-image.md).
-6. Guarde la plantilla de Azure Resource Manager en la carpeta **/Contoso.TodoList/DeploymentTemplates/**.
+6. Guarde la plantilla de Azure Resource Manager en la carpeta **/Contoso.TodoList/DeploymentTemplates/** .
 7. Elija los iconos y el texto para el elemento de Marketplace. Agregue iconos a la carpeta **Iconos** y agregue texto al archivo **recursos** de la carpeta **Cadenas**. Use la convención de nomenclatura **small**, **medium**, **large** y **wide** para los iconos. Consulte la sección [Referencia de UI del elemento de Marketplace](#reference-marketplace-item-ui) para obtener una descripción detallada de estos tamaños.
 
    > [!NOTE]
@@ -81,11 +81,11 @@ ms.locfileid: "65172565"
 12. Abra un símbolo del sistema y ejecute el siguiente comando para empaquetar las carpetas en un archivo .azpkg:
 
     ```shell
-    AzureGalleryPackager.exe package -m <path to manifest.json> -o <output location for the package>
+    AzureGalleryPackager.exe package -m <absolute path to manifest.json> -o <output location for the package>
     ```
 
     > [!NOTE]
-    > Debe existir la ruta de acceso completa para el paquete de salida. Por ejemplo, si la ruta de acceso de salida es C:\MarketPlaceItem\yourpackage.azpkg, debe existir la carpeta **C:\MarketPlaceItem**.
+    > La ruta de acceso completa al archivo manifest.json, así como el paquete de salida, debe existir. Por ejemplo, si la ruta de acceso de salida es C:\MarketPlaceItem\yourpackage.azpkg, debe existir la carpeta **C:\MarketPlaceItem**.
     >
     >
 
@@ -116,7 +116,7 @@ ms.locfileid: "65172565"
 `https://portal.[Region].[external FQDN]:30015/artifact/20161101/[Template Name]/DeploymentTemplates/Template.json`
 `https://systemgallery.blob.[Region].[external FQDN]/dev20161101-microsoft-windowsazure-gallery/[Template Name]/UiDefinition.json`
 
-6. Puede quitar un elemento de Marketplace mediante el cmdlet **Remove-AzureRMGalleryItem**. Por ejemplo: 
+6. Puede quitar un elemento de Marketplace mediante el cmdlet **Remove-AzureRMGalleryItem**. Por ejemplo:
 
    ```powershell
    Remove-AzsGalleryItem -Name Microsoft.SimpleTemplate.1.0.0  -Verbose
@@ -131,21 +131,21 @@ ms.locfileid: "65172565"
 
 ### <a name="identity-information"></a>Información de identidad
 
-| NOMBRE | Obligatorio | Type | Restricciones | DESCRIPCIÓN |
+| NOMBRE | Obligatorio | type | Restricciones | DESCRIPCIÓN |
 | --- | --- | --- | --- | --- |
-| NOMBRE |X |string |[A-Za-z0-9]+ | |
-| Publicador |X |string |[A-Za-z0-9]+ | |
-| Versión |X |string |[SemVer v2](https://semver.org/) | |
+| NOMBRE |X |Cadena |[A-Za-z0-9]+ | |
+| Publicador |X |Cadena |[A-Za-z0-9]+ | |
+| Versión |X |Cadena |[SemVer v2](https://semver.org/) | |
 
 ### <a name="metadata"></a>Metadatos
 
-| NOMBRE | Obligatorio | Type | Restricciones | DESCRIPCIÓN |
+| NOMBRE | Obligatorio | type | Restricciones | DESCRIPCIÓN |
 | --- | --- | --- | --- | --- |
-| DisplayName |X |string |Se recomiendan 80 caracteres |Es posible que el portal no muestre el nombre del elemento correctamente si tiene más de 80 caracteres. |
-| PublisherDisplayName |X |string |Se recomiendan 30 caracteres |Es posible que el portal no muestre el nombre del editor correctamente si tiene más de 30 caracteres. |
-| PublisherLegalName |X |string |256 caracteres como máximo | |
-| Resumen |X |string |entre 60 y 100 caracteres | |
-| LongSummary |X |string |entre 140 y 256 caracteres |Aún no se aplica a Azure Stack. |
+| DisplayName |X |Cadena |Se recomiendan 80 caracteres |Es posible que el portal no muestre el nombre del elemento correctamente si tiene más de 80 caracteres. |
+| PublisherDisplayName |X |Cadena |Se recomiendan 30 caracteres |Es posible que el portal no muestre el nombre del editor correctamente si tiene más de 30 caracteres. |
+| PublisherLegalName |X |Cadena |256 caracteres como máximo | |
+| Resumen |X |Cadena |entre 60 y 100 caracteres | |
+| LongSummary |X |Cadena |entre 140 y 256 caracteres |Aún no se aplica a Azure Stack. |
 | DESCRIPCIÓN |X |[HTML](https://github.com/Azure/portaldocs/blob/master/gallery-sdk/generated/index-gallery.md#gallery-item-metadata-html-sanitization) |Entre 500 y 5000 caracteres | |
 
 ### <a name="images"></a>Imágenes
@@ -158,7 +158,7 @@ Marketplace usa los siguientes iconos:
 | grande |115 px |115 px |Siempre se requiere |
 | Mediano |90 px |90 px |Siempre se requiere |
 | Pequeña |40 px |40 px |Siempre se requiere |
-| Instantánea |533 px |32 px |Opcional |
+| Instantánea |533 px |324 px |Siempre se requiere |
 
 ### <a name="categories"></a>Categorías
 
@@ -168,19 +168,19 @@ Todos los elementos de Marketplace deben etiquetarse con una categoría que iden
 
 Cada elemento de Marketplace puede incluir varios vínculos a contenido adicional. Los vínculos se especifican en forma de lista de nombres e identificadores URI:
 
-| NOMBRE | Obligatorio | Type | Restricciones | DESCRIPCIÓN |
+| NOMBRE | Obligatorio | type | Restricciones | DESCRIPCIÓN |
 | --- | --- | --- | --- | --- |
-| DisplayName |X |string |64 caracteres como máximo. | |
+| DisplayName |X |Cadena |64 caracteres como máximo. | |
 | Identificador URI |X |URI | | |
 
 ### <a name="additional-properties"></a>Propiedades adicionales
 
 Además de los metadatos anteriores, los creadores de Marketplace pueden proporcionar datos con el par clave-valor personalizado de la forma siguiente:
 
-| NOMBRE | Obligatorio | Type | Restricciones | DESCRIPCIÓN |
+| NOMBRE | Obligatorio | type | Restricciones | DESCRIPCIÓN |
 | --- | --- | --- | --- | --- |
-| DisplayName |X |string |25 caracteres como máximo. | |
-| Valor |X |string |30 caracteres como máximo. | |
+| DisplayName |X |Cadena |25 caracteres como máximo. | |
+| Valor |X |Cadena |30 caracteres como máximo. | |
 
 ### <a name="html-sanitization"></a>Comprobación del estado de HTML
 

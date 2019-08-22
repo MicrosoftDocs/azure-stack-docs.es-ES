@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 08/12/2019
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: d00f7f90f05eddaeb52555a1759187b8282aaf1a
-ms.sourcegitcommit: 593d40bccf1b2957a763017a8a2d7043f8d8315c
+ms.openlocfilehash: be62ddc3c3e5ea7180164cac95edd125030cbc6a
+ms.sourcegitcommit: 58c28c0c4086b4d769e9d8c5a8249a76c0f09e57
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67152506"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959499"
 ---
 # <a name="azure-stack-marketplace-overview"></a>Información general de Azure Stack Marketplace
 
@@ -40,7 +40,7 @@ Para abrir Marketplace, en el portal de administrador, seleccione **+ Crear un r
 
 ## <a name="marketplace-items"></a>Elementos de Marketplace
 
-Un elemento de Azure Stack Marketplace es un servicio, una aplicación o un recurso que los usuarios pueden descargar y usar. Todos los elementos de Marketplace para Azure Stack son visibles para todos los usuarios, incluidos los elementos administrativos como planes y ofertas. Estos elementos no requieren una suscripción, pero no son funcionales para los usuarios.
+Un elemento de Azure Stack Marketplace es un servicio, una aplicación o un recurso que los usuarios pueden descargar y usar. Todos los elementos de Marketplace para Azure Stack son visibles para todos los usuarios, incluidos los elementos administrativos como planes y ofertas. Estos elementos administrativos no requieren ninguna suscripción, pero no son funcionales para los usuarios.
 
 Cada elemento de Marketplace tiene:
 

@@ -12,21 +12,21 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/09/2019
+ms.date: 08/13/2019
 ms.author: sethm
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: ca303590d4dc923380e10e50fc9b8b9ce2e5aac6
-ms.sourcegitcommit: 637018771ac016b7d428174e88d4dcb131b54959
+ms.openlocfilehash: f3f2b715206c834d2c24685b57c068b53cc7020a
+ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68842967"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68991689"
 ---
 # <a name="manage-key-vault-in-azure-stack-using-powershell"></a>Administrar Key Vault en Azure Stack mediante PowerShell
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-En este artículo se describe cómo crear y administrar un almacén de claves en Azure Stack con Powershell. Aprenda a usar los cmdlets de PowerShell en Key Vault para:
+En este artículo se describe cómo crear y administrar un almacén de claves en Azure Stack con PowerShell. Aprenda a usar los cmdlets de PowerShell en Key Vault para:
 
 * Cree un almacén de claves.
 * Almacenar y administrar claves criptográficas y secretos.
@@ -43,7 +43,7 @@ En este artículo se describe cómo crear y administrar un almacén de claves en
 
 ## <a name="enable-your-tenant-subscription-for-key-vault-operations"></a>Habilitación de la suscripción de inquilino para operaciones de Key Vault
 
-Para poder emitir cualquier operación en un almacén de claves, debe asegurarse de que su suscripción de inquilino esté habilitada para operaciones de almacén. Para comprobar si están habilitadas las operaciones de almacén, ejecute el siguiente comando:
+Para poder emitir cualquier operación en un almacén de claves, debe asegurarse de que su suscripción de inquilino esté habilitada para operaciones de almacén. Para verificar si están habilitadas las operaciones de almacén de claves, ejecute el siguiente comando:
 
 ```powershell  
 Get-AzureRmResourceProvider -ProviderNamespace Microsoft.KeyVault | ft -Autosize
@@ -75,7 +75,7 @@ New-AzureRmResourceGroup -Name "VaultRG" -Location local -verbose -Force
 
 ![Nuevo grupo de recursos generado en Powershell](media/azure-stack-key-vault-manage-powershell/image3.png)
 
-Ahora, utilice el comando **New-AzureRMKeyVault** para crear un almacén de claves en el grupo de recursos que creó anteriormente. Este comando lee tres parámetros obligatorios: el nombre del grupo de recursos, el nombre del almacén de claves y la ubicación geográfica.
+Ahora, utilice el cmdlet **New-AzureRMKeyVault** para crear un almacén de claves en el grupo de recursos que creó anteriormente. Este comando lee tres parámetros obligatorios: el nombre del grupo de recursos, el nombre del almacén de claves y la ubicación geográfica.
 
 Ejecute el siguiente comando para crear un almacén de claves:
 
@@ -154,7 +154,7 @@ Después de crear claves y secretos, puede autorizar a aplicaciones externas par
 
 Para autorizar a una aplicación a acceder a una clave o a un secreto del almacén de claves, use el comando **Set-AzureRmKeyVaultAccessPolicy**.
 
-En el siguiente ejemplo, el nombre del almacén es *ContosoKeyVault* y la aplicación que desea autorizar tiene el identificador de cliente *8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed*. Ejecute el comando siguiente para autorizar a la aplicación. También puede especificar el parámetro **PermissionsToKeys** para establecer permisos para un usuario, una aplicación o un grupo de seguridad.
+En el siguiente ejemplo, el nombre del almacén es **ContosoKeyVault** y la aplicación que desea autorizar tiene el identificador de cliente **8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed**. Ejecute el comando siguiente para autorizar a la aplicación. También puede especificar el parámetro **PermissionsToKeys** para establecer permisos para un usuario, una aplicación o un grupo de seguridad.
 
 ```powershell
 Set-AzureRmKeyVaultAccessPolicy -VaultName 'ContosoKeyVault' -ServicePrincipalName 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed -PermissionsToKeys decrypt,sign

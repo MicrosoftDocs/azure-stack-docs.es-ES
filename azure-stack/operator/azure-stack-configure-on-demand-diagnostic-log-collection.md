@@ -16,12 +16,12 @@ ms.date: 07/31/2019
 ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 07/31/2019
-ms.openlocfilehash: 988c24f004222d80b866024c2c392473cdf73bab
-ms.sourcegitcommit: ddb625bb01de11bfb75d9f7a1cc61d5814b3bc31
+ms.openlocfilehash: 007703facf882eccd594dfb6f78941570c9cfb02
+ms.sourcegitcommit: 8de4c18b25bd1047fc270812a795f24e8f1e9244
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68712953"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68865897"
 ---
 # <a name="collect-azure-stack-diagnostic-logs-now-on-demand"></a>Recopilación de registros de diagnóstico de Azure Stack ahora (a petición)
 

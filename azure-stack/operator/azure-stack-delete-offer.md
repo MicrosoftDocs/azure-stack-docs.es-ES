@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/25/2019
+ms.date: 08/13/2019
 ms.author: sethm
 ms.reviewer: efemmano
 ms.lastreviewed: 04/25/2019
-ms.openlocfilehash: 2e0e4ef7abd1885d843832ed7cc9e845003d0ed7
-ms.sourcegitcommit: 593d40bccf1b2957a763017a8a2d7043f8d8315c
+ms.openlocfilehash: fca26723c062dd9f5155030fb11c8e1d695bf5f1
+ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67152541"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68991809"
 ---
 # <a name="delete-quotas-plans-offers-and-subscriptions"></a>Eliminación de cuotas, planes, ofertas y suscripciones
 
@@ -47,7 +47,7 @@ Para eliminar una oferta, vaya a **Todos los servicios** y **Ofertas** en el por
 
 ![delsub1](media/azure-stack-delete-offer/delsub1.png)
 
-Solo puede eliminar las ofertas cuando no haya ninguna suscripción que las utilice. Si existen suscripciones basadas en la oferta, la opción **Eliminar** estará atenuada. En este caso, consulte la sección [Eliminación de una suscripción](#delete-a-subscription).
+Solo puede eliminar las ofertas cuando no haya ninguna suscripción que las utilice. Si existen suscripciones basadas en la oferta, la opción **Eliminar** no estará disponible. En este caso, consulte la sección [Eliminación de una suscripción](#delete-a-subscription).
 
 ## <a name="delete-a-plan"></a>Eliminación de un plan
 
@@ -63,7 +63,7 @@ Además, no se pueden quitar de una suscripción si son el único origen de un r
 
 ## <a name="edit-and-delete-a-quota"></a>Edición y eliminación de una cuota
 
-Puede ver y editar las cuotas existentes mediante el portal del administrador: seleccione **Region Management** (Administración de regiones) y el proveedor de recursos correspondiente, y haga clic en **Cuotas**. También puede eliminar cuotas para determinados proveedores de recursos.
+Puede ver y editar las cuotas existentes mediante el portal del administrador. Para ello, seleccione **Region Management** (Administración de regiones) y el proveedor de recursos correspondiente, y haga clic en **Cuotas**. También puede eliminar cuotas para determinados proveedores de recursos.
 
 ![delsub3](media/azure-stack-delete-offer/delsub3.png)
 

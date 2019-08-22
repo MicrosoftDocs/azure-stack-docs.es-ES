@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/26/2019
+ms.date: 08/13/2019
 ms.author: sethm
 ms.lastreviewed: 03/26/2019
-ms.openlocfilehash: fdb17c1f8f7fd183b4542a1a0417b6880a8afe9b
-ms.sourcegitcommit: b36d078e699c7924624b79641dbe9021af9606ba
+ms.openlocfilehash: c0872c598cc621250c3b2c5d39aca0e392f71b29
+ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67816154"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68991614"
 ---
 # <a name="manage-azure-policy-using-the-azure-stack-policy-module"></a>Administración de la directiva de Azure con el módulo de directivas de Azure Stack
 
@@ -35,14 +35,13 @@ El módulo de directivas de Azure Stack le permite configurar una suscripción d
 3. [Configure PowerShell para utilizarlo con Azure Stack](azure-stack-powershell-configure-user.md).
 4. Importe el módulo *AzureStack.Policy.psm1*:
 
-
    ```powershell
    Import-Module .\Policy\AzureStack.Policy.psm1
    ```
 
 ## <a name="apply-policy-to-azure-subscription"></a>Aplicación de la directiva a la suscripción de Azure
 
-Puede utilizar el comando siguiente para aplicar una directiva predeterminada de Azure Stack con su suscripción de Azure. Antes de ejecutar este comando, reemplace `Azure subscription name` por el nombre de la suscripción de Azure:
+Puede utilizar los comandos siguientes para aplicar una directiva predeterminada de Azure Stack con su suscripción a Azure. Antes de ejecutar estos comandos, reemplace `Azure subscription name` por el nombre de la suscripción a Azure:
 
 ```powershell
 Add-AzureRmAccount
@@ -54,7 +53,7 @@ New-AzureRmPolicyAssignment -Name AzureStack -PolicyDefinition $policy -Scope /s
 
 ## <a name="apply-policy-to-a-resource-group"></a>Aplicación de la directiva a un grupo de recursos
 
-Quizá desee aplicar directivas más detalladas. Por ejemplo, puede tener otros recursos que se ejecuten en la misma suscripción. Puede delimitar la aplicación de directivas a un grupo de recursos específico, lo que le permite probar sus aplicaciones para Azure Stack con recursos de Azure. Antes de ejecutar el comando siguiente, reemplace `Azure subscription name` por el nombre de la suscripción de Azure:
+Quizá desee aplicar directivas más detalladas. Por ejemplo, puede tener otros recursos que se ejecuten en la misma suscripción. Puede delimitar la aplicación de directivas a un grupo de recursos específico, lo que le permite probar sus aplicaciones para Azure Stack con recursos de Azure. Antes de ejecutar los comandos siguientes, reemplace `Azure subscription name` por el nombre de la suscripción a Azure:
 
 ```powershell
 Add-AzureRmAccount

@@ -1,6 +1,6 @@
 ---
 title: Copia de seguridad de App Service en Azure Stack | Microsoft Docs
-description: Instrucciones detalladas de copia de seguridad de App Service en Azure Stack.
+description: Obtenga información sobre cómo realizar una copia de seguridad de App Services en Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: bryanla
@@ -16,12 +16,12 @@ ms.date: 04/23/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/21/2019
-ms.openlocfilehash: 8e8e866efe8de4d4c5d116339edbe81082c6545e
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: b49390434990ac2efb81692c1177c634aee4bab0
+ms.sourcegitcommit: 58c28c0c4086b4d769e9d8c5a8249a76c0f09e57
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66269272"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959532"
 ---
 # <a name="back-up-app-service-on-azure-stack"></a>Copia de seguridad de App Service en Azure Stack
 
@@ -36,10 +36,10 @@ Azure App Service en Azure Stack tiene cuatro componentes principales que hay qu
 1. La infraestructura del proveedor de recursos; los roles de servidor, los niveles de trabajo, etc. 
 2. Los secretos de App Service
 3. La instancia de SQL Server de App Service que hospeda y mide bases de datos
-4. El contenido de la carga de trabajo del usuario de App Service almacenado en el recurso compartido de archivos de App Service   
+4. El contenido de la carga de trabajo del usuario de App Service almacenado en el recurso compartido de archivos de App Service
 
 ## <a name="back-up-app-service-secrets"></a>Copia de seguridad de secretos de App Service
-Al recuperar App Service a partir de una copia de seguridad, debe proporcionar las claves de App Service usadas en la implementación inicial. Esta información se debe guardar tan pronto como App Service se haya implementado correctamente y almacenado en una ubicación segura. Se volverá a crear la configuración de infraestructura del proveedor de recursos a partir de la copia de seguridad durante la recuperación mediante los cmdlets de PowerShell para la recuperación de App Service.
+Al recuperar App Service a partir de una copia de seguridad, debe proporcionar las claves de App Service usadas en la implementación inicial. Esta información se debe guardar tan pronto como App Service se haya implementado correctamente y almacenado en una ubicación segura. La configuración de infraestructura del proveedor de recursos se vuelve a crear a partir de la copia de seguridad durante la recuperación mediante los cmdlets de PowerShell para la recuperación de App Service.
 
 Use el portal de administración para realizar una copia de seguridad de los secretos de App Service siguiendo estos pasos: 
 
@@ -49,19 +49,19 @@ Use el portal de administración para realizar una copia de seguridad de los sec
 
 3. Seleccione **Descargar secretos**.
 
-   ![Descargar secretos](./media/app-service-back-up/download-secrets.png)
+   ![Descarga de secretos en el portal de administración de Azure Stack](./media/app-service-back-up/download-secrets.png)
 
 4. Cuando los secretos estén listos para descargar, haga clic en **Guardar** y almacene el archivo de los secretos de App Service (**SystemSecrets.JSON**) en una ubicación segura. 
 
-   ![Guardar secretos](./media/app-service-back-up/save-secrets.png)
+   ![Almacenamiento de secretos en el portal de administración de Azure Stack](./media/app-service-back-up/save-secrets.png)
 
 > [!NOTE]
 > Repita estos pasos cada vez que cambien los secretos de App Service.
 
 ## <a name="back-up-the-app-service-databases"></a>Copia de seguridad de las bases de datos de App Service
-Para restaurar App Service, necesitará las copias de seguridad de las bases de datos **Appservice_hosting** y **Appservice_metering**. Le recomendamos que use los planes de mantenimiento de SQL Server o Azure Backup Server para garantizar que estas bases de datos tengan una copia de seguridad y se guarden de forma segura y periódica. Sin embargo, se puede usar cualquier método que garantice la creación de copias de seguridad periódicas de SQL.
+Para restaurar App Service, necesita las copias de seguridad de las bases de datos **Appservice_hosting** y **Appservice_metering**. Le recomendamos que use los planes de mantenimiento de SQL Server o Azure Backup Server para garantizar que estas bases de datos tengan una copia de seguridad y se guarden de forma segura y periódica. Sin embargo, se puede usar cualquier método que garantice la creación de copias de seguridad periódicas de SQL.
 
-Para realizar manualmente una copia de seguridad de estas bases de datos con la sesión iniciada en SQL Server, puede usar los siguientes comandos de PowerShell:
+Para realizar manualmente una copia de seguridad de estas bases de datos con la sesión iniciada en SQL Server, use los siguientes comandos de PowerShell:
 
   ```powershell
   $s = "<SQL Server computer name>"
@@ -77,11 +77,11 @@ Para realizar manualmente una copia de seguridad de estas bases de datos con la 
 Una vez la copia de seguridad de todas las bases de datos se haya realizado correctamente, copie los archivos .bak en una ubicación segura junto con la información de secretos de App Service.
 
 ## <a name="back-up-the-app-service-file-share"></a>Copia de seguridad del recurso compartido de archivos de App Service
-App Service almacena información de aplicaciones de inquilino en el recurso compartido de archivos. Su copia de seguridad debe realizarse periódicamente junto con las bases de datos de App Service para que la pérdida de datos sea mínima si se requiere una restauración. 
+App Service almacena información de aplicaciones de inquilino en el recurso compartido de archivos. Se debe realizar una copia de seguridad de este recurso compartido de archivos periódicamente junto con las bases de datos de App Service para que la pérdida de datos sea mínima si se requiere una restauración.
 
-Para realizar una copia de seguridad del contenido del recurso compartido de archivos de App Service, puede usar Azure Backup Server u otro método que copie periódicamente el contenido del recurso compartido de archivos en la ubicación donde guardó toda la información de recuperación anterior. 
+Para realizar una copia de seguridad del contenido del recurso compartido de archivos de App Service, use Azure Backup Server u otro método que copie periódicamente el contenido del recurso compartido de archivos en la ubicación donde guardó toda la información de recuperación anterior.
 
-Por ejemplo, puede usar estos pasos para utilizar robocopy desde una sesión de consola de Windows PowerShell (no PowerShell ISE):
+Por ejemplo, puede usar estos pasos para utilizar Robocopy desde una sesión de consola de Windows PowerShell (no PowerShell ISE):
 
 ```powershell
 $source = "<file share location>"
