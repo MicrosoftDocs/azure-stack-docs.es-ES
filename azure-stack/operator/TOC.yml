@@ -10,10 +10,6 @@
       href: compare-azure-azure-stack.md
     - name: Notas de la versión
       items:
-        - name: Directiva de actualizaciones y mantenimiento
-          href: azure-stack-servicing-policy.md
-        - name: Lista de comprobación para aplicar actualizaciones
-          href: azure-stack-release-notes-checklist.md
         - name: Actualizaciones de seguridad
           href: azure-stack-release-notes-security-updates-1907.md
         - name: Actualización 1907
@@ -171,12 +167,22 @@
           items:
             - name: Introducción a la administración de actualizaciones
               href: azure-stack-updates.md
+            - name: Directiva de actualizaciones y mantenimiento
+              href: azure-stack-servicing-policy.md
+            - name: Lista de comprobación para aplicar actualizaciones
+              href: azure-stack-release-notes-checklist.md
+            - name: Planeación de actualizaciones
+              href: azure-stack-update-plan.md
+            - name: Preparación de la actualización
+              href: azure-stack-update-prepare-package.md
             - name: Aplicar actualizaciones
-              href: azure-stack-apply-updates.md
-            - name: Aplicación de actualizaciones de OEM
-              href: azure-stack-update-oem.md
+              items:
+                - name: Aplicar actualizaciones
+                  href: azure-stack-apply-updates.md
+                - name: Aplicación de actualizaciones de OEM
+                  href: azure-stack-update-oem.md
             - name: Supervisión del estado de actualización
-              href: azure-stack-monitor-update.md
+              href: azure-stack-update-monitor.md
         - name: Supervisión de estado y alertas
           href: azure-stack-monitor-health.md
         - name: Administración de recursos de red
