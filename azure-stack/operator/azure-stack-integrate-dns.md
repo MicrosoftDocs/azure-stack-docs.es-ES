@@ -6,21 +6,21 @@ author: mattbriggs
 manager: femila
 ms.service: azure-stack
 ms.topic: article
-ms.date: 05/09/2019
+ms.date: 08/21/2019
 ms.author: mabrigg
 ms.reviewer: wfayed
-ms.lastreviewed: 05/09/2019
+ms.lastreviewed: 08/21/2019
 keywords: ''
-ms.openlocfilehash: 748da2aa4391d7f28e6d4273830d8d024021bb79
-ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
+ms.openlocfilehash: 9e60a8f9ebda573141e2f97a9182087e90741652
+ms.sourcegitcommit: 250689d6d09acc677bf59de76510d5d5f1c6190e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68417491"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896356"
 ---
 # <a name="azure-stack-datacenter-integration---dns"></a>Integración del centro de datos de Azure Stack: DNS
 
-Para tener acceso a los puntos de conexión de Azure Stack (**portal**, **adminportal**, **management**, **adminmanagement**, etc.) desde fuera de Azure Stack, debe integrar los servicios de DNS de Azure Stack con los servidores DNS que hospedan las zonas DNS que quiere usar en Azure Stack.
+Para tener acceso a los puntos de conexión de Azure Stack (como **portal**, **adminportal**, **management** y **adminmanagement**) desde fuera de Azure Stack, debe integrar los servicios de DNS de Azure Stack con los servidores DNS que hospedan las zonas DNS que quiere usar en Azure Stack.
 
 ## <a name="azure-stack-dns-namespace"></a>Espacio de nombres de DNS de Azure Stack
 
@@ -32,7 +32,7 @@ Se le solicitará que proporcione información importante relacionada con DNS cu
 |Region|Ubicación geográfica de la implementación de Azure Stack.|`east`|
 |Nombre de dominio externo|Nombre de la zona que quiere usar para la implementación de Azure Stack.|`cloud.fabrikam.com`|
 |Nombre de dominio interno|Nombre de la zona interna que se usa para servicios de infraestructura en Azure Stack.  Está integrado en Directory Service y es privado (no es accesible desde fuera de la implementación de Azure Stack).|`azurestack.local`|
-|Reenviador DNS|Servidores DNS que se usan para reenviar consultas DNS, registros y zonas DNS que se hospedan fuera de Azure Stack, ya sea en la intranet corporativa o en la red pública de Internet.|`10.57.175.34`<br>`8.8.8.8`|
+|Reenviadores de DNS|Servidores DNS que se usan para reenviar consultas DNS, registros y zonas DNS que se hospedan fuera de Azure Stack, ya sea en la intranet corporativa o en la red pública de Internet. Si reemplaza un reenviador de DNS, es necesario actualizar la dirección IP. |`10.57.175.34`<br>`8.8.8.8`|
 |Prefijo de nomenclatura (opcional)|Prefijo de nomenclatura que quiere que tengan los nombres de máquina de instancia de rol de infraestructura de Azure Stack.  Si no se proporciona, el valor predeterminado es `azs`.|`azs`|
 
 El nombre de dominio completo (FQDN) de su implementación y puntos de conexión de Azure Stack es la combinación de los parámetros de región y de nombre de dominio externo. Con los valores de los ejemplos de la tabla anterior, el FQDN para esta implementación de Azure Stack sería el siguiente:
@@ -80,7 +80,7 @@ Azure Stack incluye servidores DNS autoritativos y recursivos. Los servidores re
 
 ## <a name="resolving-external-dns-names-from-azure-stack"></a>Resolver nombres DNS externos desde Azure Stack
 
-Para resolver nombres DNS de puntos de conexión fuera de Azure Stack (por ejemplo: www\.bing.com), debe proporcionar servidores DNS que Azure Stack pueda usar para reenviar las solicitudes DNS para las que Azure Stack no es autoritativo. Para la implementación, se requieren los servidores DNS a los que Azure Stack reenvía las solicitudes en la hoja de cálculo de implementación (en el campo Reenviador DNS). Proporcione al menos dos servidores en este campo por razones de tolerancia a errores. Sin estos valores, se produce un error de implementación de Azure Stack.
+Para resolver nombres DNS de puntos de conexión fuera de Azure Stack (por ejemplo: www\.bing.com), debe proporcionar servidores DNS que Azure Stack pueda usar para reenviar las solicitudes DNS para las que Azure Stack no es autoritativo. Para la implementación, se requieren los servidores DNS a los que Azure Stack reenvía las solicitudes en la hoja de cálculo de implementación (en el campo Reenviador DNS). Proporcione al menos dos servidores en este campo por razones de tolerancia a errores. Sin estos valores, se produce un error de implementación de Azure Stack. Si se reemplazan los reenviadores de DNS, actualice las direcciones IP. 
 
 ### <a name="configure-conditional-dns-forwarding"></a>Configure el reenvío condicional de DNS
 

@@ -14,12 +14,12 @@ ms.date: 08/12/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/08/2019
-ms.openlocfilehash: 7f86ff3347d5d6f24bcd1fe450156c2557fb41e1
-ms.sourcegitcommit: 58c28c0c4086b4d769e9d8c5a8249a76c0f09e57
+ms.openlocfilehash: f7d32fde9cba051297165e2e491f5c92115a8a0d
+ms.sourcegitcommit: 4eb1766c7a9d1ccb1f1362ae1211ec748a7d708c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959400"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69579044"
 ---
 # <a name="resource-provider-api-versions-supported-by-profiles-in-azure-stack"></a>Versiones de API del proveedor de recursos compatibles con perfiles en Azure Stack
 
@@ -42,7 +42,7 @@ Para obtener una explicación de los perfiles de API y el ritmo de lanzamientos 
 |-----------------------------------------------|-----------------------------------------------------|
 | Microsoft.Compute | 2017-12-01 |
 | Microsoft.Network | 2017-10-01<br>VPN Gateway será 2017-10-01. |
-| Microsoft.Storage (plano de datos) | 2017-10-01 |
+| Microsoft.Storage (plano de datos) | 2017-11-09 |
 | Microsoft.Storage (plano de control) | 2017-10-01 |
 | Microsoft.Web | 2018-02-01 |
 | Microsoft.KeyVault | 2016-10-01 (sin cambios) |

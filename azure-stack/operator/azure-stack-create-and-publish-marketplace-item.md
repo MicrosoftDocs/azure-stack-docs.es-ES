@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/12/2019
+ms.date: 08/20/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 24fc0f7993001ce95a21e175c84f37d755a5ce6c
-ms.sourcegitcommit: ec38ec569ad2193369c438f55e5c190aa5f0efd5
+ms.openlocfilehash: b9e1e9a1cdd0afe18a5395c99fb2eef932791667
+ms.sourcegitcommit: 1a8ebd8103608b5ee9e804d7015eefe05ef55185
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68956599"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69643848"
 ---
 # <a name="create-and-publish-a-marketplace-item"></a>Creación y publicación de un producto en Marketplace
 
@@ -55,7 +55,7 @@ ms.locfileid: "68956599"
    >
    >
 
-8. En el archivo **manifest.json**, cambie **name** por el nombre de su elemento de Marketplace. Cambie también **publisher** por su nombre o al de su empresa.
+8. En el archivo **manifest.json**, cambie **name** por el nombre de su elemento de Marketplace. Cambie también **publisher** por su nombre o al de su empresa. Antes de publicar la imagen, actualice el archivo manifest.json y actualice esta línea: "name": "xxx". Asegúrese de usar un nombre diferente para cada versión de la imagen.
 9. En **artifacts**, cambie **name** y **path** por la información correcta para la plantilla de Azure Resource Manager que incluye:
 
    ```json

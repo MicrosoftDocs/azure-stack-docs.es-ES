@@ -16,12 +16,12 @@ ms.date: 07/25/2019
 ms.author: sethm
 ms.reviewer: hectorl
 ms.lastreviewed: 07/25/2019
-ms.openlocfilehash: 41d07532960776cd5ed9312007877489e9ebbf20
-ms.sourcegitcommit: 83d9dbecd7334f37862e47ca028a50f8d7dafe2d
+ms.openlocfilehash: 0b305f07344540555b444017a04c1002bb8a08a8
+ms.sourcegitcommit: 250689d6d09acc677bf59de76510d5d5f1c6190e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68738335"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896337"
 ---
 # <a name="azure-stack-1907-known-issues"></a>Problemas conocidos de Azure Stack 1907
 
@@ -107,6 +107,12 @@ En este artículo se enumeran los problemas conocidos de la versión 1907 de Azu
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: En el portal de usuarios, la hoja **Conexiones** muestra una característica denominada **Solucionador de problemas de VPN**. Esta característica no se admite actualmente en Azure Stack.
 - Repetición: Común
+
+### <a name="network-connection-type"></a>Tipo de conexión de red
+
+- Aplicable a: Este problema se aplica a cualquier entorno de 1906 o 1907. 
+- Causa: En el portal de usuarios, la hoja **AddConnection** muestra una opción para usar la opción **De red virtual a red virtual**. Esta característica no se admite actualmente en Azure Stack. 
+- Repetición: Común 
 
 #### <a name="documentation"></a>Documentación
 

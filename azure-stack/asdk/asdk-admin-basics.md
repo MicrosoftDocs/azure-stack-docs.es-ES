@@ -1,6 +1,6 @@
 ---
-title: Conceptos básicos del Kit de desarrollo de Azure Stack | Microsoft Docs
-description: Describe cómo realizar la s tareas de administración básicas del Kit de desarrollo de Azure Stack.
+title: Aspectos básicos de la administración de ASDK | Microsoft Docs
+description: Obtenga información acerca de cómo realizar las tareas de administración básicas del Kit de desarrollo de Azure Stack (ASDK).
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -16,22 +16,22 @@ ms.date: 02/19/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: a375cc83410214f56eb38f676bf45cf529641972
-ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
+ms.openlocfilehash: 2982012901b410b9e6e3830aa24fe4c62be8aa4c
+ms.sourcegitcommit: 4eb1766c7a9d1ccb1f1362ae1211ec748a7d708c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66691097"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69579061"
 ---
-# <a name="asdk-administration-basics"></a>Conceptos básicos de administración del Kit de desarrollo de Azure Stack 
-Hay varias cosas que debe saber si no está familiarizado con la administración del Kit de desarrollo de Azure Stack. Esta guía proporciona información general acerca de su rol como operador de Azure Stack en el entorno de evaluación y cómo asegurarse de que los usuarios de prueba puede ser productivos rápidamente.
+# <a name="asdk-admin-basics"></a>Aspectos básicos de administración de ASDK
+Hay varias cosas que debe saber si no está familiarizado con la administración del Kit de desarrollo de Azure Stack. En esta guía se proporciona información general acerca de su rol como operador de Azure Stack en el entorno de evaluación. Familiarizarse con esta información garantiza que los usuarios de prueba sean productivos lo antes posible.
 
 En primer lugar, debe leer el artículo [¿Qué es el Kit de desarrollo de Azure Stack?](asdk-what-is.md) para asegurarse de que conoce el propósito del Kit de desarrollo de Azure Stack y sus limitaciones. El kit de desarrollo se debe usar como un "espacio aislado" en el que puede evaluar Azure Stack para desarrollar y probar sus aplicaciones en un entorno que no es de producción. 
 
-Al igual que Azure, Azure Stack innova rápidamente, por lo que lanzaremos con regularidad nuevas compilaciones del ASDK. Sin embargo, el ASDK no se puede actualizar como las implementaciones de sistemas integrados de Azure Stack. Por tanto, si desea pasar a la compilación más reciente, debe [volver a implementar el ASDK](asdk-redeploy.md) totalmente. no puede aplicar paquetes de actualización. Este proceso lleva un tiempo, pero su ventaja es que puede probar las características más recientes en cuanto estén disponibles. 
+Al igual que Azure, Azure Stack innova rápidamente, por lo que lanzaremos con regularidad nuevas compilaciones del ASDK. Sin embargo, ASDK no se puede actualizar como las implementaciones de sistemas integrados de Azure Stack. Por tanto, si desea pasar a la compilación más reciente, debe [volver a implementar el ASDK](asdk-redeploy.md) totalmente. No puede aplicar paquetes de actualización. Este proceso lleva un tiempo, pero su ventaja es que puede probar las características más recientes en cuanto estén disponibles. 
 
 ## <a name="what-account-should-i-use"></a>¿Qué cuenta debo usar?
-Al administrar Azure Stack, debe considerar algunos aspectos con respecto a la cuenta, especialmente en las implementaciones que utilizan Servicios de federación de Active Directory (AD FS) de Windows Server como proveedor de identidades en lugar de Azure Active Directory (Azure AD). Las siguientes consideraciones sobre la cuenta se aplican a los sistemas integrados de Azure Stack y las implementaciones de ASDK:
+Al administrar Azure Stack, debe considerar algunos aspectos con respecto a la cuenta, especialmente en las implementaciones que usan los Servicios de federación de Active Directory (AD FS) de Windows Server como proveedor de identidades en lugar de Azure Active Directory (Azure AD). Las siguientes consideraciones sobre la cuenta se aplican a los sistemas integrados de Azure Stack y las implementaciones de ASDK:
 
 |Cuenta|Azure AD|AD FS|
 |-----|-----|-----|
@@ -42,30 +42,30 @@ Al administrar Azure Stack, debe considerar algunos aspectos con respecto a la c
 |
 
 ## <a name="what-tools-do-i-use-to-manage"></a>¿Qué herramientas debo usar para la administración?
-Puede usar el [Portal del administrador Portal Azure Stack ](https://adminportal.local.azurestack.external) o PowerShell para administrar Azure Stack. La manera más fácil de aprender los conceptos básicos es a través del portal. Si desea usar PowerShell, es preciso que instale [PowerShell para Azure pila](asdk-post-deploy.md#install-azure-stack-powershell) y [descargar las herramientas de Azure Stack desde GitHub](asdk-post-deploy.md#download-the-azure-stack-tools).
+Puede usar el [Portal del administración de Azure Stack ](https://adminportal.local.azurestack.external) o PowerShell para administrar Azure Stack. La manera más fácil de aprender los conceptos básicos es a través del portal. Si desea usar PowerShell, es preciso que instale [PowerShell para Azure pila](asdk-post-deploy.md#install-azure-stack-powershell) y [descargar las herramientas de Azure Stack desde GitHub](asdk-post-deploy.md#download-the-azure-stack-tools).
 
 Azure Stack usa Azure Resource Manager como mecanismo subyacente de implementación, administración y organización. Si va a administrar Azure Stack y ayudar a los usuarios de soporte, debe obtener información acerca de Azure Resource Manager. Para más información, lea el documento [Getting Started with Azure Resource Manager](https://download.microsoft.com/download/E/A/4/EA4017B5-F2ED-449A-897E-BD92E42479CE/Getting_Started_With_Azure_Resource_Manager_white_paper_EN_US.pdf) (Introducción a Azure Resource Manager).
 
 ## <a name="your-typical-responsibilities"></a>Sus responsabilidades típicas
-Los usuarios quieren usar los servicios. Desde la perspectiva de estos, su rol principal es poner estos servicios a su disposición. Con el ASDK puede saber qué servicios ofrecer y poner dichos servicios a disposición de los usuarios mediante la [creación de planes, ofertas y cuotas](../operator/azure-stack-tutorial-tenant-vm.md). También deberá agregar elementos al Marketplace, como imágenes de máquinas virtuales. La forma más fácil de hacerlo es [descargar elementos de Marketplace](../operator/azure-stack-create-and-publish-marketplace-item.md) de Azure a Azure Stack.
+Los usuarios quieren usar los servicios. Desde la perspectiva de estos, su rol principal es poner estos servicios a su disposición. Con el ASDK puede saber qué servicios ofrecer y poner dichos servicios a disposición de los usuarios mediante la [creación de planes, ofertas y cuotas](../operator/azure-stack-tutorial-tenant-vm.md). También tendrá que agregar elementos a Marketplace, como imágenes de máquinas virtuales (VM). La forma más fácil de hacerlo es [descargar elementos de Marketplace](../operator/azure-stack-create-and-publish-marketplace-item.md) de Azure a Azure Stack.
 
 > [!NOTE]
-> Si desea probar sus planes, ofertas y servicios, debe utilizar el [portal de usuario](https://portal.local.azurestack.external), no el [portal de administrador](https://adminportal.local.azurestack.external).
+> Si quiere probar sus planes, ofertas y servicios, debe usar el [portal de usuario](https://portal.local.azurestack.external), no el [portal de administración](https://adminportal.local.azurestack.external).
 
-Además de ofrecer servicios, debe realizar todas las tareas habituales de un operador de Azure Stack para mantener ASDK en funcionamiento. Dichas tareas incluyen:
-- Agregar cuentas de usuario para las implementaciones de Azure Active Directory (Azure AD) o de Servicios de federación de Active Directory (AD FS).
-- Asignar roles de control de acceso basado en rol (RBAC) (esto no se restringe a los administradores)
-- Supervisar el mantenimiento de la infraestructura
-- Administrar los recursos de la red y del almacenamiento
-- Reemplazar el hardware que no funcione del equipo host del kit de desarrollo 
+Además de ofrecer servicios, debe realizar todas las tareas habituales de un operador de Azure Stack para mantener ASDK en funcionamiento. Estas tareas incluyen lo siguiente:
+- Agregar cuentas de usuario en implementaciones de Azure AD o AD FS.
+- Asignar roles de control de acceso basado en rol (RBAC) (esto no se limita solo a los administradores).
+- Supervisar el mantenimiento de la infraestructura.
+- Administrar los recursos de red y almacenamiento.
+- Reemplazar el hardware que no funcione del equipo host del kit de desarrollo.
 
 ## <a name="where-to-get-support"></a>Dónde obtener soporte técnico
-Para el Kit de desarrollo de Azure Stack, puede dirigir las preguntas relacionadas con el soporte técnico a el [foro de MSDN de Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack). 
+Para ASDK, puede dirigir las preguntas relacionadas con el soporte técnico a los [foros de MSDN de Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack).
 
-Haga clic en **Ayuda** (signo de interrogación) en la esquina superior derecha del portal de administración y, después, haga clic en **Help and Support** (Ayuda y soporte técnico) para abrir la **información general** de la ayuda y el soporte técnico, que tiene un vínculo al foro. Los foros de MSDN se supervisan periódicamente.  
+También puede acceder a los foros haciendo clic en la **ayuda** (signo de interrogación) en la esquina superior derecha del portal de administración. A continuación, haga clic en **Help + support** (Ayuda y soporte técnico) para abrir la **información general** de esta opción, ya que tiene un vínculo al foro. Los foros de MSDN se supervisan periódicamente.  
 
 > [!IMPORTANT]
-> Como el ASDK es un entorno de evaluación, no se ofrece soporte técnico oficial a través de los servicios de soporte técnico al cliente (CSS) de Microsoft.
+> Como ASDK es un entorno de evaluación, no se ofrece soporte técnico oficial a través de los servicios de soporte técnico al cliente (CSS) de Microsoft.
 
 ## <a name="next-steps"></a>Pasos siguientes
 [Implementación del Kit de desarrollo de Azure Stack](asdk-install.md)

@@ -1,6 +1,6 @@
 ---
-title: Arquitectura del Kit de desarrollo de Azure Stack | Microsoft Docs
-description: Describe la arquitectura del Kit de desarrollo de Azure Stack (ASDK).
+title: Arquitectura de ASDK | Microsoft Docs
+description: Obtenga información acerca de la arquitectura del Kit de desarrollo de Azure Stack (ASDK).
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -16,14 +16,14 @@ ms.date: 06/28/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 06/28/2019
-ms.openlocfilehash: 4cd20ed4c76b062ea2fcfdf3d314ef2bcdecaff0
-ms.sourcegitcommit: eccbd0098ef652919f357ef6dba62b68abde1090
+ms.openlocfilehash: 5a34061b1fa6cd30f3bbf9f9780b13c01f0a4866
+ms.sourcegitcommit: 4eb1766c7a9d1ccb1f1362ae1211ec748a7d708c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67492345"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69579086"
 ---
-# <a name="microsoft-azure-stack-development-kit-architecture"></a>Arquitectura del Kit de desarrollo de Microsoft Azure Stack
+# <a name="asdk-architecture"></a>Arquitectura de ASDK
 El Kit de desarrollo de Azure Stack (ASDK) es una implementación de un único nodo de Azure Stack que se ejecuta en un único equipo host. Los componentes de enrutamiento perimetral se instalan en el equipo host para proporcionar funcionalidades NAT y VPN para Azure Stack. Los roles de infraestructura de Azure Stack se ejecutan en la capa de Hyper-V del equipo host físico.
 
 
@@ -39,7 +39,7 @@ El Kit de desarrollo de Azure Stack ofrece servicios a través de las siguientes
 | **AzS-ERCS01** | Máquina virtual de la consola de recuperación de emergencia. |
 | **AzS-GWY01** | Servicios perimetrales de puerta de enlace, como las conexiones de sitio a sitio de VPN para redes de inquilinos.|
 | **AzS-NC01** | Controladora de red, que administra los servicios de red de Azure Stack.  |
-| **AzS-SLB01** | Servicios de multiplexor del equilibrio de carga en Azure Stack para los inquilinos y los servicios de infraestructura de Azure Stack.  |
+| **AzS-SLB01** | Servicios de multiplexor de equilibrio de carga en Azure Stack para los inquilinos y los servicios de infraestructura de Azure Stack.  |
 | **AzS-SQL01** | Almacén de datos internos para los roles de infraestructura de Azure Stack.  |
 | **AzS-WAS01** | Portal de administración de Azure Stack y servicios de Azure Resource Manager.|
 | **AzS-WASP01**| Portal del usuario (inquilino) de Azure Stack y servicios de Azure Resource Manager.|

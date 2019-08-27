@@ -12,16 +12,16 @@ ms.workload: naS
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/08/2019
+ms.date: 08/21/2019
 ms.author: justinha
 ms.reviewer: hectorl
-ms.lastreviewed: 03/14/2019
-ms.openlocfilehash: eefd393fa12814260711590f028c9a787811d8af
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.lastreviewed: 08/21/2019
+ms.openlocfilehash: d3ac538109f48e38f6483cd1ecae4896f1d3e635
+ms.sourcegitcommit: 250689d6d09acc677bf59de76510d5d5f1c6190e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66269029"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896378"
 ---
 # <a name="enable-backup-for-azure-stack-from-the-administration-portal"></a>Habilitación de la copia de seguridad de Azure Stack desde el portal de administración
 Habilite el servicio Copia de seguridad de infraestructura mediante el portal de administración para que Azure Stack pueda generar copias de seguridad. El asociado de hardware puede usar estas copias de seguridad para restaurar el entorno mediante recuperación en la nube si se produce un [error catastrófico](./azure-stack-backup-recover-data.md). La finalidad de la recuperación en la nube es garantizar que los operadores y usuarios puedan volver a iniciar sesión en el portal una vez que se complete la recuperación. Los usuarios tendrán sus suscripciones restauradas, incluidos los permisos de acceso basado en rol y los roles, los planes originales, las ofertas, las cuotas de proceso, almacenamiento y red previamente definidas y los secretos de Key Vault.
@@ -53,7 +53,7 @@ Los administradores y los usuarios son los responsables de realizar copias de se
     > [!Note]  
     > Si desea archivar las copias de seguridad anteriores al período de retención, asegúrese de hacer una copia de seguridad de los archivos antes de que Scheduler las elimine. Si reduce el período de retención de copia de seguridad (por ejemplo, de 7 a 5 días), Scheduler eliminará todas las copias de seguridad anteriores al período de retención nuevo. Asegúrese de que desea que las copias de seguridad se eliminen antes de actualizar este valor. 
 
-9. En Configuración de cifrado, proporcione un certificado en el cuadro de archivo .cer de certificado. Los archivos de copia de seguridad se cifran mediante esta clave pública del certificado. Al configurar las opciones de copia de seguridad, debe proporcionar un certificado que solo contenga la parte de la clave pública. Cuando establezca este certificado por primera vez o realice la rotación del certificado en el futuro, solo podrá ver la huella digital del certificado. No puede descargar ni ver el archivo de certificado cargado. Para crear el archivo de certificado, ejecute el siguiente comando de PowerShell para crear un certificado autofirmado con las claves pública y privada y exportar un certificado con solo la parte de la clave pública.
+9. En Configuración de cifrado, proporcione un certificado en el cuadro de archivo .cer de certificado. Los archivos de copia de seguridad se cifran mediante esta clave pública del certificado. Al configurar las opciones de copia de seguridad, debe proporcionar un certificado que solo contenga la parte de la clave pública. Cuando establezca este certificado por primera vez o realice la rotación del certificado en el futuro, solo podrá ver la huella digital del certificado. No puede descargar ni ver el archivo de certificado cargado. Para crear el archivo de certificado, ejecute el siguiente comando de PowerShell para crear un certificado autofirmado con las claves pública y privada y exportar un certificado con solo la parte de la clave pública. Puede colocar el certificado en cualquier al que se pueda acceder desde el portal de administración.
 
     ```powershell
 
@@ -118,7 +118,7 @@ Las nuevas copias de seguridad empezarán a usar la clave pública en el nuevo c
 ![Azure Stack: visualización de la huella digital de certificado](media/azure-stack-backup/encryption-settings-thumbprint.png)
 
 ### <a name="backwards-compatibility-mode"></a>Modo de compatibilidad con versiones anteriores
-Si configuró la copia de seguridad antes de actualizar a la versión 1901, la configuración se traslada sin ningún cambio en el comportamiento. En este caso, la clave de cifrado se admite por la compatibilidad con versiones anteriores. Tiene la opción de actualizar la clave de cifrado o cambiar al uso de un certificado. Dispondrá de tres versiones como mínimo para seguir actualizando la clave de cifrado. Úsela esta vez para realizar la transición a un certificado. Para crear una nueva clave de cifrado, use el [cmdlet New-AzsEncryptionKeyBase64](https://docs.microsoft.com/powershell/module/azs.backup.admin/new-azsencryptionkeybase64).
+Si configuró la copia de seguridad antes de actualizar a la versión 1901, la configuración se traslada sin ningún cambio en el comportamiento. En este caso, la clave de cifrado se admite para la compatibilidad con versiones anteriores. Puede actualizar la clave de cifrado o cambiar para usar un certificado. Dispondrá de tres versiones como mínimo para seguir actualizando la clave de cifrado. Úsela esta vez para realizar la transición a un certificado. Para crear una nueva clave de cifrado, use [New-AzsEncryptionKeyBase64](https://docs.microsoft.com/powershell/module/azs.backup.admin/new-azsencryptionkeybase64).
 
 ![Azure Stack: uso de la clave de cifrado en modo de compatibilidad con versiones anteriores](media/azure-stack-backup/encryption-settings-backcompat-encryption-key.png)
 
