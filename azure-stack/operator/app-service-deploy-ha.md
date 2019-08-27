@@ -118,7 +118,7 @@ Después de instalar el proveedor de recursos de App Service, puede incluirlos e
 Para poder ejecutar el instalador de App Service, primero es necesario seguir los pasos descritos en el artículo [Antes de empezar a trabajar con App Service en Azure Stack](azure-stack-app-service-before-you-get-started.md):
 
 > [!TIP]
-> No todos los pasos descritos en dicho artículo son necesarios, ya que la implementación de la plantilla configura automáticamente las máquinas virtuales de la infraestructura.
+> No todos los pasos descritos en dicho [artículo](azure-stack-app-service-before-you-get-started.md) son necesarios, ya que la implementación de la plantilla configura automáticamente las máquinas virtuales de la infraestructura.
 
 - [Descargue los scripts de la aplicación auxiliar y el instalador de App Service](azure-stack-app-service-before-you-get-started.md#download-the-installer-and-helper-scripts).
 - [Descargue la última extensión de script personalizado en el marketplace de Azure Stack](azure-stack-app-service-before-you-get-started.md#syndicate-the-custom-script-extension-from-the-marketplace).
