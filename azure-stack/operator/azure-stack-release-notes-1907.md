@@ -16,12 +16,12 @@ ms.date: 08/16/2019
 ms.author: sethm
 ms.reviewer: hectorl
 ms.lastreviewed: 08/16/2019
-ms.openlocfilehash: 2f840fdd06caf92dcadb8e49d26d7570d9d6aa71
-ms.sourcegitcommit: 54448d4518c7d9145b8755f51b18d554b3190810
+ms.openlocfilehash: 526343889bbd5cc784ebb87c39603e2152a98f3b
+ms.sourcegitcommit: b8260ef3e43f3703dd0df16fb752610ec8a86942
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69548290"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70008764"
 ---
 # <a name="azure-stack-1907-update"></a>Actualización de Azure Stack 1907
 
@@ -143,7 +143,7 @@ Las revisiones de Azure Stack solo son aplicables a los sistemas integrados de A
 La versión 1907 de Azure Stack debe aplicarse en la versión 1906 con las revisiones siguientes:
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Azure Stack, revisión 1.1906.11.52](https://support.microsoft.com/help/4513119)
+- [Azure Stack, revisión 1.1906.12.54](https://support.microsoft.com/help/4518365)
 
 ### <a name="after-successfully-applying-the-1907-update"></a>Después de aplicar correctamente la actualización 1907
 
