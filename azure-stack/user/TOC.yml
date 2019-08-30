@@ -184,7 +184,7 @@
                   href: azure-stack-metrics-supported.md
                 - name: Consumo de datos de supervisión de Azure
                   href: azure-stack-metrics-monitor.md
-        - name: Uso de plantillas de solución
+        - name: Implementación de servicios complementarios
           items:
             - name: Implementación de Ethereum
               href: azure-stack-ethereum.md
