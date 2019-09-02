@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: ''
 ms.topic: article
-ms.date: 07/23/2019
+ms.date: 08/27/2019
 ms.author: mabrigg
 ms.lastreviewed: 03/11/2019
 ms.reviewer: jiahan
-ms.openlocfilehash: 4c57cad7a5b002e6c73c0555c450a8103eaf8aa4
-ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
+ms.openlocfilehash: c2a61e165ee64c4b0ee91fbe387973aaa5039f46
+ms.sourcegitcommit: 9cb82df1eccb0486bcabec0bd674162d4820c00c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68417997"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70060225"
 ---
 # <a name="manage-storage-infrastructure-for-azure-stack"></a>Administración de la infraestructura de almacenamiento para Azure Stack
 
@@ -83,7 +83,7 @@ Los volúmenes de Espacios de almacenamiento directo ofrecen resistencia para pr
 
 ![Infraestructura de almacenamiento de Azure Stack](media/azure-stack-storage-infrastructure-overview/image5.png)
 
-La creación de reflejo proporciona tolerancia a errores gracias al mantenimiento de varias copias de todos los datos. La manera de seccionar y colocar estos datos no es trivial (consulte este blog para obtener más información), pero es absolutamente cierto que los datos almacenados mediante la creación de reflejo se escriben, en su totalidad, varias veces. Cada copia se escribe en distinto hardware físico (unidades diferentes en distintos servidores), que se supone que generan un error de forma independiente. La creación de reflejo tridireccional puede tolerar sin ningún riesgo al menos dos de los problemas de hardware (unidad o servidor) a la vez. Por ejemplo, si se está reiniciando un servidor cuando, de repente, se produce un error en otra unidad u otro servidor, la seguridad y la accesibilidad de los datos se mantienen.
+La creación de reflejo proporciona tolerancia a errores gracias al mantenimiento de varias copias de todos los datos. La manera de seccionar y colocar estos datos no es trivial, pero es absolutamente cierto afirmar que los datos almacenados mediante la creación de reflejo se escriben varias veces en su totalidad. Cada copia se escribe en distinto hardware físico (unidades diferentes en distintos servidores), que se supone que generan un error de forma independiente. La creación de reflejo tridireccional puede tolerar sin ningún riesgo al menos dos de los problemas de hardware (unidad o servidor) a la vez. Por ejemplo, si se está reiniciando un servidor cuando, de repente, se produce un error en otra unidad u otro servidor, la seguridad y la accesibilidad de los datos se mantienen.
 
 ## <a name="volume-states"></a>Estados de volumen
 

@@ -15,12 +15,12 @@ ms.date: 08/15/2019
 ms.author: mabrigg
 ms.lastreviewed: 08/15/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 1342eb503abb81308740c0103b1d54887a46cf85
-ms.sourcegitcommit: f62d58ae724020a24fa5905b6663abb5f1d62178
+ms.openlocfilehash: 73671431c70960fa517ee83c68945f14e2621b46
+ms.sourcegitcommit: 9cb82df1eccb0486bcabec0bd674162d4820c00c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69520924"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70060185"
 ---
 # <a name="apply-azure-stack-original-equipment-manufacturer-oem-updates"></a>Aplicar actualizaciones del fabricante de equipos originales (OEM) de Azure Stack
 
@@ -44,7 +44,7 @@ En esta sección encontrará la información de contacto del OEM y vínculos a m
 
 | Asociado de hardware | Region | URL |
 |------------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Cisco | Todo | [Guía de operaciones de Cisco Integrated System for Microsoft Azure Stack](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/azure-stack/b_Azure_Stack_Operations_Guide_4-0/b_Azure_Stack_Operations_Guide_4-0_chapter_00.html#concept_wks_t1q_wbb)<br><br>[Notas de la versión de Cisco Integrated System for Microsoft Azure Stack](https://www.cisco.com/c/en/us/support/servers-unified-computing/ucs-c-series-rack-mount-ucs-managed-server-software/products-release-notes-list.html) |
+| Cisco | Todo | [Soporte técnico de Azure Stack de Cisco/actualizaciones de firmware: notificación automática (cuenta/inicio de sesión requerido)](https://software.cisco.com/download/redirect?i=!y&mdfid=283862063&softwareid=286320368&release=1.0(0)&os=)<br><br>[Notas de la versión de Cisco Integrated System for Microsoft Azure Stack](https://www.cisco.com/c/en/us/support/servers-unified-computing/ucs-c-series-rack-mount-ucs-managed-server-software/products-release-notes-list.html) |
 | Dell EMC | Todo | [Cloud for Microsoft Azure Stack 14G (cuenta e inicio de sesión necesarios)](https://support.emc.com/downloads/44615_Cloud-for-Microsoft-Azure-Stack-14G)<br><br>[Cloud for Microsoft Azure Stack 13G (cuenta e inicio de sesión necesarios)](https://support.emc.com/downloads/42238_Cloud-for-Microsoft-Azure-Stack-13G) |
 | Fujitsu | JAPÓN | [Departamento de soporte técnico de servicio administrado de Fujitsu (cuenta e inicio de sesión necesarios)](https://eservice.fujitsu.com/supportdesk-web/) |
 |  | EMEA | [Soporte técnico de TI de Fujitsu para productos y sistemas](https://support.ts.fujitsu.com/IndexContact.asp?lng=COM&ln=no&LC=del) |
@@ -60,12 +60,12 @@ Aplicar paquetes de OEM siguiendo estos pasos:
 1. Deberá ponerse en contacto con el OEM para:
       - Determinar la versión actual del paquete de OEM.  
       - Buscar el mejor método para descargar el paquete de OEM.  
-2. Prepare el paquete de OEM con los pasos que se describen en [Descarga de paquetes de actualización para sistemas integrados](azure-stack-servicing-policy.md#download-update-packages-for-integrated-systems).
+2. Prepare el paquete de OEM con los pasos que se describen en [Descarga de paquetes de actualización para sistemas integrados](azure-stack-servicing-policy.md).
 3. Aplique las actualizaciones con los pasos descritos en [Aplicar actualizaciones en Azure Stack](azure-stack-apply-updates.md).
 
 ## <a name="configure-hardware-vendor-vm"></a>Configuración de la VM del proveedor de hardware
 
-Algunos proveedores de hardware pueden necesitar una VM para proporcionarle ayuda con el proceso de actualización de OEM. El proveedor de hardware será responsable de la creación de estas VM y de la documentación necesaria si necesita `ProxyVM` o `HardwareManager` para **-VMType** al ejecutar el cmdlet **Set-OEMExternalVM**. Una vez creadas las VM, configúrelas con **Set-OEMExternalVM** desde el punto de conexión con privilegios.
+Algunos proveedores de hardware pueden necesitar una VM para proporcionarle ayuda con el proceso de actualización de OEM. El fabricante del hardware será responsable de crear estas VM y documentarlas si necesita `ProxyVM` o `HardwareManager` para **-VMType** cuando se ejecute el cmdlet **Set-OEMExternalVM**, así como de las credenciales que se deben usar para **-Credential**. Una vez creadas las VM, configúrelas con **Set-OEMExternalVM** desde el punto de conexión con privilegios.
 
 Para obtener más información sobre el punto de conexión con privilegios en Azure Stack, consulte [Uso del punto de conexión con privilegios en Azure Stack](azure-stack-privileged-endpoint.md).
 
@@ -77,14 +77,14 @@ Para obtener más información sobre el punto de conexión con privilegios en Az
     -ConfigurationName PrivilegedEndpoint -Credential $cred
     ```
 
-2. Configure la VM del proveedor de hardware mediante el cmdlet **Set-OEMExternalVM**. El cmdlet valida la dirección IP y las credenciales de **-VMType** `ProxyVM`. Para **-VMType** `HardwareManager`, el cmdlet no validará la entrada.
+2. Configure la VM del proveedor de hardware mediante el cmdlet **Set-OEMExternalVM**. El cmdlet valida la dirección IP y las credenciales de **-VMType** `ProxyVM`. Para **-VMType** `HardwareManager`, el cmdlet no validará la entrada. El parámetro **-Credential** proporcionado a **Set-OEMExternalVM** es uno que se documentará claramente con la documentación del proveedor de hardware.  NO es la credencial de CloudAdmin que se usa con el punto de conexión con privilegios o cualquier otra credencial de Azure Stack existente.
 
     ```powershell  
-    
+    $VmCred = Get-Credential
     Invoke-Command -Session $session
         { 
     Set-OEMExternalVM -VMType <Either "ProxyVM" or "HardwareManager">
-        -IPAddress <IP Address of hardware vendor VM>
+        -IPAddress <IP Address of hardware vendor VM> -Credential $using:VmCred
         }
     ```
 

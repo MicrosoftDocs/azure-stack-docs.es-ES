@@ -16,12 +16,12 @@ ms.date: 08/21/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 08/21/2019
-ms.openlocfilehash: d3ac538109f48e38f6483cd1ecae4896f1d3e635
-ms.sourcegitcommit: 250689d6d09acc677bf59de76510d5d5f1c6190e
+ms.openlocfilehash: 84dd8fdc91a796a94df71926788e62d98b5ef1ae
+ms.sourcegitcommit: 22814dd79664206a260ba0160ed3ae2612e33495
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/22/2019
-ms.locfileid: "69896378"
+ms.locfileid: "69976168"
 ---
 # <a name="enable-backup-for-azure-stack-from-the-administration-portal"></a>Habilitación de la copia de seguridad de Azure Stack desde el portal de administración
 Habilite el servicio Copia de seguridad de infraestructura mediante el portal de administración para que Azure Stack pueda generar copias de seguridad. El asociado de hardware puede usar estas copias de seguridad para restaurar el entorno mediante recuperación en la nube si se produce un [error catastrófico](./azure-stack-backup-recover-data.md). La finalidad de la recuperación en la nube es garantizar que los operadores y usuarios puedan volver a iniciar sesión en el portal una vez que se complete la recuperación. Los usuarios tendrán sus suscripciones restauradas, incluidos los permisos de acceso basado en rol y los roles, los planes originales, las ofertas, las cuotas de proceso, almacenamiento y red previamente definidas y los secretos de Key Vault.
@@ -53,7 +53,7 @@ Los administradores y los usuarios son los responsables de realizar copias de se
     > [!Note]  
     > Si desea archivar las copias de seguridad anteriores al período de retención, asegúrese de hacer una copia de seguridad de los archivos antes de que Scheduler las elimine. Si reduce el período de retención de copia de seguridad (por ejemplo, de 7 a 5 días), Scheduler eliminará todas las copias de seguridad anteriores al período de retención nuevo. Asegúrese de que desea que las copias de seguridad se eliminen antes de actualizar este valor. 
 
-9. En Configuración de cifrado, proporcione un certificado en el cuadro de archivo .cer de certificado. Los archivos de copia de seguridad se cifran mediante esta clave pública del certificado. Al configurar las opciones de copia de seguridad, debe proporcionar un certificado que solo contenga la parte de la clave pública. Cuando establezca este certificado por primera vez o realice la rotación del certificado en el futuro, solo podrá ver la huella digital del certificado. No puede descargar ni ver el archivo de certificado cargado. Para crear el archivo de certificado, ejecute el siguiente comando de PowerShell para crear un certificado autofirmado con las claves pública y privada y exportar un certificado con solo la parte de la clave pública. Puede colocar el certificado en cualquier al que se pueda acceder desde el portal de administración.
+9. En Configuración de cifrado, proporcione un certificado en el cuadro de archivo de certificado .cer. Los archivos de copia de seguridad se cifran mediante esta clave pública del certificado. Al configurar las opciones de copia de seguridad, debe proporcionar un certificado que solo contenga la parte de la clave pública. Cuando establezca este certificado por primera vez o realice la rotación del certificado en el futuro, solo podrá ver la huella digital del certificado. No puede descargar ni ver el archivo de certificado cargado. Para crear el archivo de certificado, ejecute el siguiente comando de PowerShell para crear un certificado autofirmado con las claves pública y privada y exportar un certificado con solo la parte de la clave pública. Puede guardar el certificado en cualquier sitio al que se pueda acceder desde el portal de administración.
 
     ```powershell
 

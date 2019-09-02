@@ -1,6 +1,6 @@
 ---
-title: Incorporación de usuarios a los AD FS de Azure Stack | Microsoft Docs
-description: Aprenda a agregar usuarios a las implementaciones de Azure Stack
+title: Agregar usuarios de Azure Stack a AD FS | Microsoft Docs
+description: Obtenga información sobre cómo agregar usuarios de Azure Stack para implementaciones de Servicios de federación de Active Directory (AD FS).
 services: azure-stack
 documentationcenter: ''
 author: PatAltimore
@@ -15,15 +15,15 @@ ms.date: 06/03/2019
 ms.author: patricka
 ms.reviewer: unknown
 ms.lastreviewed: 06/03/2019
-ms.openlocfilehash: d50eb52de39c789498928a7b5e2227998872b937
-ms.sourcegitcommit: 80775f5c5235147ae730dfc7e896675a9a79cdbe
+ms.openlocfilehash: 4411290b075e105a827de8fb2c8295dfd84e3b50
+ms.sourcegitcommit: e8f7fe07b32be33ef621915089344caf1fdca3fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66458973"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70118644"
 ---
 # <a name="add-azure-stack-users-in-ad-fs"></a>Incorporación de usuarios de Azure Stack a AD FS
-Puede usar el complemento **Active Directory Users and Computers** (Usuarios y equipos de Active Directory) para incorporar usuarios adicionales a un entorno de Azure Stack, usando AD FS como proveedor de identidades.
+Puede usar el complemento **Usuarios y equipos de Active Directory**  para agregar usuarios adicionales a un entorno de Azure Stack con los Servicios de federación de Active Directory (AD FS) como proveedor de identidad.
 
 ## <a name="add-windows-server-active-directory-users"></a>Incorporación de usuarios de Windows Server Active Directory
 > [!TIP]
@@ -33,9 +33,9 @@ Puede usar el complemento **Active Directory Users and Computers** (Usuarios y e
 2. Seleccione **File > Add or remove snap-in** (Archivo > Agregar o quitar complemento).
 3. Seleccione **Active Directory Users and Computers** > **AzureStack.local** > **Users** (Usuarios y equipos de Active Directory > AzureStack.local > Usuarios).
 4. Seleccione **Action** > **New** > **User** (Acción > Nuevo > Usuario).
-5. En New Object – User (Objeto nuevo – Usuario), proporcione la información del usuario. Seleccione **Next** (Siguiente).
+5. En Objeto nuevo - Usuario, proporcione detalles del usuario. Seleccione **Next** (Siguiente).
 6. Proporcione y confirme una contraseña.
-7. Seleccione **Next** (Siguiente) para finalizar los valores. Seleccione **Finish** (Finalizar) para crear el usuario.
+7. Seleccione **Siguiente** para completar los valores. Seleccione **Finish** (Finalizar) para crear el usuario.
 
 
 ## <a name="next-steps"></a>Pasos siguientes

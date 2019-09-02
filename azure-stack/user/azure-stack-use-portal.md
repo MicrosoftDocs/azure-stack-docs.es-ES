@@ -1,5 +1,5 @@
 ---
-title: Uso del portal de Azure Stack | Microsoft Docs
+title: Usar el portal de usuario de Azure Stack | Microsoft Docs
 description: Obtenga información sobre cómo acceder al portal del usuario y usar el mismo en Azure Stack.
 services: azure-stack
 documentationcenter: ''
@@ -14,14 +14,14 @@ ms.date: 06/13/2019
 ms.author: mabrigg
 ms.reviewer: efemmano
 ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: 629056556b04a7b5d19c2463b619f3da3a70f7e0
-ms.sourcegitcommit: 72d45bb935db0db172d4d7c37d8e48e79e25af64
+ms.openlocfilehash: 9f6282c9b08547c9449dc7f340f06a6280a98589
+ms.sourcegitcommit: f1a21af6517978ddb62f4cbfa1d1df8c867814d1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68376901"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70064174"
 ---
-# <a name="use-the-azure-stack-portal"></a>Uso del portal de Azure Stack
+# <a name="use-the-azure-stack-user-portal"></a>Use el portal de usuario de Azure Stack.
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 

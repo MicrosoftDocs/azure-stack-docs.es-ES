@@ -1,6 +1,6 @@
 ---
-title: Solución de problemas de Microsoft Azure Stack | Microsoft Docs
-description: Información acerca de la solución de problemas del Kit de desarrollo de Azure Stack (ASDK).
+title: Solucionar problemas con el ADSK | Microsoft Docs
+description: Obtenga información sobre cómo solucionar problemas del Kit de desarrollo de Azure Stack (ASDK).
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -16,24 +16,24 @@ ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: a84e85eacb033fc872241feea905b742eee0591b
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: 7946b8339c9ff1127c0a9d9572c49527208b38f2
+ms.sourcegitcommit: e8f7fe07b32be33ef621915089344caf1fdca3fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66267241"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70118653"
 ---
-# <a name="microsoft-azure-stack-development-kit-asdk-troubleshooting"></a>Solución de problemas del Kit de desarrollo de Microsoft Azure Stack (ASDK)
-En este artículo se proporciona información para solucionar problemas comunes de ASDK. Si tiene algún problema que no esté documentado, asegúrese de consultar el [foro MSDN de Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack) para más información y ayuda.  
+# <a name="troubleshoot-the-asdk"></a>Solucionar problemas del ASDK
+En este artículo se proporciona información sobre cómo solucionar problemas comunes para el Kit de desarrollo de Azure Stack (ASDK). Si tiene alguna incidencia que no esté documentada, asegúrese de consultar el [foro de MSDN de Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack) para obtener ayuda.  
 
 > [!IMPORTANT]
-> Como el ASDK es un entorno de evaluación, no se ofrece soporte técnico oficial a través de los servicios de soporte técnico al cliente (CSS) de Microsoft.
+> Como ASDK es un entorno de evaluación, no se ofrece soporte técnico oficial a través de los servicios de soporte técnico al cliente (CSS) de Microsoft.
 
-Las recomendaciones para solucionar los problemas que se describen en esta sección se derivan de varios orígenes y pueden resolver o no el problema en particular. Los códigos de ejemplos se proporcionan tal cual y no se pueden garantizar los resultados esperados. Esta sección está sujeta a modificaciones y actualizaciones frecuentes cuando se implementan mejoras del producto.
+Las recomendaciones para solucionar problemas que se describen en esta sección se derivan de varios orígenes y pueden resolver o no su problema particular. Los ejemplos de códigos se proporcionan tal cual y no se pueden garantizar los resultados esperados. Esta sección está sujeta a modificaciones y actualizaciones frecuentes cuando se implementan mejoras del producto.
 
 ## <a name="deployment"></a>Implementación
 ### <a name="deployment-failure"></a>Error de implementación
-Si experimenta un error durante la instalación, puede reiniciar la implementación en el paso con errores con la opción -rerun del script de implementación como se indica en el ejemplo siguiente:
+Si experimenta un error durante la instalación, puede reiniciar la implementación en el paso con errores con la opción -rerun del script de implementación. Por ejemplo:
 
   ```powershell
   cd C:\CloudDeployment\Setup
@@ -41,35 +41,35 @@ Si experimenta un error durante la instalación, puede reiniciar la implementaci
   ```
 
 ### <a name="at-the-end-of-the-deployment-the-powershell-session-is-still-open-and-doesnt-show-any-output"></a>Al final de la implementación, la sesión de PowerShell todavía está abierta y no muestra ninguna salida.
-Este comportamiento probablemente sea solo el resultado del comportamiento predeterminado de una ventana de comandos de PowerShell, cuando se ha seleccionado. La implementación del kit de desarrollo se ha realizado correctamente, pero el script se ha puesto en pausa al seleccionar la ventana. Puede comprobar que se completó la configuración buscando la palabra "select" en la barra de título de la ventana de comandos. Presione la tecla ESC para cancelar la selección; después debería mostrarse el mensaje de finalización.
+Este comportamiento probablemente sea solo el resultado del comportamiento predeterminado de cuando se selecciona una ventana Comandos de PowerShell. La implementación del ASDK se ha realizado correctamente, pero el script se ha puesto en pausa al seleccionar la ventana. Puede comprobar que se completó la configuración buscando la palabra "select" en la barra de título de la ventana de comandos. Presione la tecla ESC para cancelar la selección; después debería mostrarse el mensaje de finalización.
 
 ## <a name="virtual-machines"></a>Máquinas virtuales
 ### <a name="default-image-and-gallery-item"></a>Elemento de la galería e imagen predeterminada
 Se debe agregar un elemento de la galería y una imagen de Windows Server antes de implementar máquinas virtuales en Azure Stack.
 
-### <a name="after-restarting-my-azure-stack-host-some-vms-may-not-automatically-start"></a>Después de reiniciar el host de Azure Stack, algunas máquinas virtuales podrían no iniciarse automáticamente.
+### <a name="after-restarting-my-azure-stack-host-some-vms-dont-automatically-start"></a>Después de reiniciar el host de Azure Stack, algunas VM se no inician automáticamente.
 Después de reiniciar el host, puede observar que los servicios de Azure Stack no están disponibles de inmediato. Esto se debe a que tanto las [máquinas virtuales de infraestructura](asdk-architecture.md#virtual-machine-roles) de Azure Stack y como los RP tardan un tiempo en comprobar la coherencia, pero finalmente se iniciarán automáticamente.
 
-También puede observar que las máquinas virtuales de ese inquilino no se inician de forma automática después de reiniciar el host del Kit de desarrollo de Azure Stack. Es un problema conocido y solo requiere algunos pasos manuales para ponerlas en línea:
+También puede observar que las VM de ese inquilino no se inician de forma automática después de reiniciar el host del ASDK. Es un problema conocido y solo requiere algunos pasos manuales para ponerlas en línea:
 
-1.  En el host del Kit de desarrollo de Azure Stack, inicie el **Administrador de clústeres de conmutación por error** en el menú Inicio.
+1.  En el host del ASDK, inicie el **Administrador de clústeres de conmutación por error** en el menú Inicio.
 2.  Seleccione el clúster **Cluster.azurestack.local**.
 3.  Seleccione **Roles**.
 4.  Las máquinas virtuales del inquilino aparecen con estado *guardado*. Una vez que se ejecutan todas las máquinas virtuales de la infraestructura, haga clic en las del inquilino y seleccione **Iniciar** para reanudar la máquina virtual.
 
-### <a name="i-have-deleted-some-virtual-machines-but-still-see-the-vhd-files-on-disk-is-this-behavior-expected"></a>He eliminado algunas máquinas virtuales, pero sigo viendo los archivos del disco duro virtual en el disco. ¿Es normal este comportamiento?
-Sí, es normal. Se diseñó así porque:
+### <a name="ive-deleted-some-vms-but-still-see-the-vhd-files-on-disk-is-this-behavior-expected"></a>He eliminado algunas VM, pero sigo viendo los archivos del disco duro virtual en el disco. ¿Es normal este comportamiento?
+Sí, este es el comportamiento esperado. Está diseñado así porque:
 
-* Al eliminar una máquina virtual, no se eliminan los discos duros virtuales. Los discos son recursos independientes en el grupo de recursos.
+* Al eliminar una VM, no se eliminan los discos duros virtuales. Los discos son recursos independientes en el grupo de recursos.
 * Cuando se elimina una cuenta de almacenamiento, la eliminación es visible de inmediato a través de Azure Resource Manager, pero los discos que puede contener todavía se conservan en el almacenamiento hasta que se ejecuta la recolección de elementos no utilizados.
 
-Si ve discos duros virtuales "huérfanos", es importante saber si forman parte de la carpeta de una cuenta de almacenamiento que se eliminó. Si la cuenta de almacenamiento no se eliminó, es normal que sigan estando disponibles.
+Si ve discos duros virtuales "huérfanos", es importante saber si forman parte de la carpeta de una cuenta de almacenamiento que se eliminó. Si la cuenta de almacenamiento no se eliminó, es normal que los discos duros virtuales permanezcan.
 
 Puede leer más acerca de cómo configurar el umbral de conservación y las recuperaciones a petición en [Administración de cuentas de almacenamiento](../operator/azure-stack-manage-storage-accounts.md).
 
 ## <a name="storage"></a>Storage
 ### <a name="storage-reclamation"></a>Recuperación de almacenamiento
-La funcionalidad reclamada capacidad puede tardar hasta 14 horas en mostrarse en el portal. La recuperación de espacio depende de diversos factores, como el porcentaje de uso de archivos de contenedor internos en el almacén de blobs de bloque. Por lo tanto, en función de cuántos datos se eliminen, no hay ninguna garantía de la cantidad de espacio que se podría recuperar cuando se ejecute el recolector de elementos no utilizados.
+Puede que la capacidad recuperada tarde hasta 14 horas en mostrarse en el portal. La recuperación de espacio depende de diversos factores, como el porcentaje de uso de archivos de contenedor internos en el almacén de blobs de bloque. Por lo tanto, en función de los datos que se eliminen, no hay ninguna garantía de la cantidad de espacio que se podría recuperar cuando se ejecute el recolector de elementos no utilizados.
 
 ## <a name="next-steps"></a>Pasos siguientes
 [Visite el foro de soporte técnico de Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack)

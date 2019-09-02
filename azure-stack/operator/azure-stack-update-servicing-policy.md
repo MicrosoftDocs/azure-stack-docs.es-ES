@@ -1,27 +1,26 @@
 ---
-title: Directiva de mantenimiento de Azure Stack | Microsoft Docs
-description: Aprenda sobre la directiva de servicio de Azure Stack y cómo mantener un sistema integrado en un estado admitido.
+title: Aplicar una actualización del fabricante de equipos originales (OEM) a Azure Stack | Microsoft Docs
+description: Aprenda a aplicar una actualización del fabricante de equipos originales (OEM) a Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: sethmanheim
+author: mattbriggs
 manager: femila
 editor: ''
-ms.assetid: caac3d2f-11cc-4ff2-82d6-52b58fee4c39
 ms.service: azure-stack
 ms.workload: na
-pms.tgt_pltfrm: na
+ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/08/2019
-ms.author: sethm
-ms.reviewer: harik
-ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: c02cc78205b2622b4ef5bdd8b88070912af72b97
+ms.date: 08/15/2019
+ms.author: mabrigg
+ms.lastreviewed: 08/15/2019
+ms.reviewer: ppacent
+ms.openlocfilehash: b8031afd05ba03086cfa748614b58d9b0c5248e9
 ms.sourcegitcommit: b8260ef3e43f3703dd0df16fb752610ec8a86942
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/23/2019
-ms.locfileid: "70008592"
+ms.locfileid: "70010308"
 ---
 # <a name="azure-stack-servicing-policy"></a>Directiva de mantenimiento de Azure Stack
 
@@ -30,6 +29,8 @@ ms.locfileid: "70008592"
 En este artículo se describe la directiva de mantenimiento para sistemas integrados de Azure Stack, lo que debe hacer para mantener el sistema en un estado admitido y cómo obtener soporte técnico.
 
 ## <a name="keep-your-system-under-support"></a>Mantenimiento del sistema dentro del soporte técnico
+
+Para continuar recibiendo soporte técnico, debe mantener actualizadas las actualizaciones de Azure Stack.
 
 Para que su instancia de Azure Stack permanezca en un estado admitido, la instancia debe ejecutar la versión de actualización más reciente o cualquiera de las dos versiones de actualización anteriores.
 
@@ -43,6 +44,6 @@ Las actualizaciones de software de Microsoft no son acumulativas y necesitan la 
 
 Azure Stack sigue el mismo proceso de soporte técnico que Azure. Los clientes de empresa pueden seguir el proceso descrito en [Creación de una solicitud de soporte técnico de Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Si es cliente de un proveedor de servicios en la nube (CSP), póngase en contacto con el CSP para recibir soporte técnico. Para más información, consulte [Preguntas más frecuentes de soporte técnico de Azure](https://azure.microsoft.com/support/faq/).
 
-## <a name="next-steps"></a>Pasos siguientes
+# <a name="next-steps"></a>Pasos siguientes
 
-- [Administrar las actualizaciones en Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-updates)
+[Administrar las actualizaciones en Azure Stack](azure-stack-updates.md)

@@ -1,6 +1,6 @@
 ---
-title: Inicio y detención del Kit de desarrollo de Azure Stack (ASDK) | Microsoft Docs
-description: Aprenda a iniciar y detener el Kit de desarrollo de Azure Stack (ASDK).
+title: Iniciar y detener el ASDK | Microsoft Docs
+description: Obtenga información sobre cómo iniciar y detener el Kit de desarrollo de Azure Stack (ASDK).
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -16,21 +16,21 @@ ms.date: 07/18/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 07/18/2019
-ms.openlocfilehash: 6736da0f792c0e01d1a0af06e35a0984ec398158
-ms.sourcegitcommit: f6ea6daddb92cbf458f9824cd2f8e7e1bda9688e
+ms.openlocfilehash: 5232b1087414d6e7149157063a253b18a6b6e13a
+ms.sourcegitcommit: 7968f9f0946138867323793be9966ee2ef99dcf4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68493705"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025808"
 ---
-# <a name="start-and-stop-the-azure-stack-development-kit-asdk"></a>Inicio y detención del Kit de desarrollo de Azure Stack (ASDK)
-No se recomienda simplemente reiniciar el equipo que hospeda ASDK. En su lugar, siga los procedimientos que se describen en este artículo para detener y reiniciar los servicios de ASDK correctamente. 
+# <a name="start-and-stop-the-asdk"></a>Inicio y detención del kit de desarrollo de Azure Stack
+No se recomienda simplemente reiniciar el equipo host del ASDK. En su lugar, siga los procedimientos que se describen en este artículo para detener y reiniciar los servicios de ASDK correctamente.
 
 ## <a name="stop-azure-stack"></a>Detención de Azure Stack 
 Para detener correctamente los servicios de Azure Stack y el equipo que hospeda ASDK, use los siguientes comandos de PowerShell:
 
 1. Inicie sesión como AzureStack\AzureStackAdmin en el equipo host de ASDK.
-2. Abra PowerShell como administrador (no ISE de PowerShell).
+2. Abra PowerShell como administrador (no como PowerShell ISE).
 3. Ejecute los comandos siguientes para establecer una sesión de punto de conexión con privilegios (PEP): 
 
    ```powershell
@@ -44,13 +44,13 @@ Para detener correctamente los servicios de Azure Stack y el equipo que hospeda 
 5. Revise la salida de PowerShell para asegurarse de que todos los servicios de Azure Stack se detienen correctamente antes de apagar el equipo que hospeda ASDK. El apagado tarda varios minutos.
 
 ## <a name="start-azure-stack"></a>Inicio de Azure Stack 
-Los servicios de ASDK deben iniciarse automáticamente con el equipo que los hospeda. Sin embargo, el tiempo de arranque de los servicios de la infraestructura ASDK varía según el rendimiento de la configuración de hardware del equipo que los hospeda. En ocasiones, el reinicio correcto de todos los servicios puede tardar horas.
+Los servicios de ASDK deben iniciarse automáticamente con el equipo que los hospeda. Sin embargo, el tiempo de inicio de los servicios de infraestructura del ASDK varía según el rendimiento de la configuración de hardware del equipo host del ASDK. En ocasiones, el reinicio correcto de todos los servicios puede tardar horas.
 
 Independientemente de cómo se detuviera ASDK, debe seguir estos pasos para verificar que todos los servicios de Azure Stack están iniciados y funcionan por completo una vez encendido el equipo que los hospeda: 
 
 1. Encienda el equipo que hospeda ASDK. 
 2. Inicie sesión como AzureStack\AzureStackAdmin en el equipo host de ASDK.
-3. Abra PowerShell como administrador (no ISE de PowerShell).
+3. Abra PowerShell como administrador (no como PowerShell ISE).
 4. Ejecute los comandos siguientes para establecer una sesión de punto de conexión con privilegios (PEP):
 
    ```powershell
@@ -63,13 +63,13 @@ Independientemente de cómo se detuviera ASDK, debe seguir estos pasos para veri
    ```
 6. Revise la salida para asegurarse de que los servicios de Azure Stack se han reiniciado correctamente.
 
-Para más información sobre los procedimientos recomendados para detener y reiniciar los servicios de Azure Stack correctamente, consulte [Inicio y detención de Azure Stack](../operator/azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep). 
+Para más información sobre los procedimientos recomendados para detener y reiniciar los servicios de Azure Stack correctamente, consulte [Inicio y detención de Azure Stack](../operator/azure-stack-start-and-stop.md).
 
 ## <a name="troubleshoot-startup-and-shutdown"></a>Solución de problemas de arranque y detención 
 Si los servicios de Azure Stack no se inician correctamente en un plazo de dos horas tras el encendido del equipo que hospeda ASDK, realice estos pasos:
 
 1. Inicie sesión como AzureStack\AzureStackAdmin en el equipo host de ASDK.
-2. Abra PowerShell como administrador (no ISE de PowerShell).
+2. Abra PowerShell como administrador (no como PowerShell ISE).
 3. Ejecute los comandos siguientes para establecer una sesión de punto de conexión con privilegios (PEP):
 
    ```powershell

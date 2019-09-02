@@ -1,6 +1,6 @@
 ---
-title: Incorporación de nodos de escalado en Azure Stack | Microsoft Docs
-description: Agregue nodos a unidades de escalado en Azure Stack.
+title: Agregar nodos de la unidad de escalado en Azure Stack | Microsoft Docs
+description: Obtenga información sobre cómo agregar nodos de la unidad de escalado a unidades de escalado de Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -16,12 +16,12 @@ ms.date: 06/13/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 09/17/2018
-ms.openlocfilehash: 56dbc301c87e819b241d9dd6e801544df4afa152
-ms.sourcegitcommit: b79a6ec12641d258b9f199da0a35365898ae55ff
+ms.openlocfilehash: ab06f5d3674000733227894a5a69778d90c29d48
+ms.sourcegitcommit: e8f7fe07b32be33ef621915089344caf1fdca3fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67131197"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70118734"
 ---
 # <a name="add-additional-scale-unit-nodes-in-azure-stack"></a>Incorporación de nodos de unidad de escalado adicionales en Azure Stack
 
@@ -29,9 +29,10 @@ Los operadores de Azure Stack pueden aumentar la capacidad total de una unidad d
 
 Para agregar un nodo de unidad de escalado, debe actuar en Azure Stack y ejecutar las herramientas de su fabricante de equipos de hardware (OEM). Las herramientas de OEM se ejecutan en el host del ciclo de vida de hardware (HLH) para asegurarse de que el equipo físico nuevo coincide con el mismo nivel de firmware que los nodos existentes.
 
-En el siguiente diagrama de flujo se muestra el proceso general para agregar un nodo de unidad de escalado.
+En el siguiente diagrama de flujo se muestra el proceso general para agregar un nodo de la unidad de escalado:
 
-![Flujo de incorporación de una unidad de escalado](media/azure-stack-add-scale-node/add-node-flow.png) &#42; *Si su proveedor de hardware OEM implementa la colocación del bastidor del servidor física y las actualizaciones, el firmware varía según su contrato de soporte técnico.*
+![Flujo de cómo agregar una unidad de escalado](media/azure-stack-add-scale-node/add-node-flow.png)
+<br> *Si su proveedor de hardware de OEM implementa la colocación del bastidor del servidor físico y las actualizaciones, el firmware varía según su contrato de soporte técnico.*
 
 La operación para agregar un nuevo nodo puede tardar varias horas o días en completarse.
 
@@ -75,7 +76,7 @@ Use el cmdlet **New-AzsScaleUnitNodeObject** para agregar un nodo.
 Antes de utilizar cualquiera de los siguientes scripts de PowerShell de ejemplo, reemplace los valores de *nombres de nodo* y *direcciones IP* por los valores de su entorno de Azure Stack.
 
   > [!Note]  
-  > Al asignar nombres a un nodo, debe mantener el nombre con menos de 15 caracteres de longitud. No puede usar tampoco un nombre que contenga un espacio o alguno de los siguientes caracteres: `\`, `/`, `:`, `*`, `?`, `"`, `<`, `>`, `|`, `\`, `~`, `!`, `@`, `#`, `$`, `%`, `^`, `&`, `(`, `)`, `{`,`}`, `_`.
+  > Al asignar nombres a un nodo, debe mantener el nombre con menos de 15 caracteres de longitud. No puede usar tampoco un nombre que contenga un espacio o alguno de los siguientes caracteres: `\`, `/`, `:`, `*`, `?`, `"`, `<`, `>`, `|`, `\`, `~`, `!`, `@`, `#`, `$`, `%`, `^`, `&`, `(`, `)`, `{`,`}` y `_`.
 
 **Agregue un nodo:**
   ```powershell
@@ -86,10 +87,10 @@ Antes de utilizar cualquiera de los siguientes scripts de PowerShell de ejemplo,
   ```  
 
 ## <a name="monitor-add-node-operations"></a>Supervisión de las operaciones para agregar nodo 
-Puede usar el portal de administración o PowerShell para obtener el estado de la operación Agregar nodo. Las operaciones Agregue nodo pueden tardar de varias horas a días en completarse.
+Use el portal de administración o PowerShell para obtener el estado de la operación de Agregar nodo. Las operaciones Agregue nodo pueden tardar de varias horas a días en completarse.
 
 ### <a name="use-the-admin-portal"></a>Uso del portal de administración 
-Para supervisar la incorporación de un nuevo nodo, en el portal de administración, revise la unidad de escalado o los objetos de nodo de la unidad de escalado. Para ello, vaya a **Region management** (Administración de regiones) > **Scale units** (Unidades de escalado). A continuación, seleccione la unidad de escalado o el nodo de unidad de escalado que desea revisar. 
+Para supervisar la incorporación de un nuevo nodo, revise la unidad de escalado o los objetos de nodo de la unidad de escalado en el portal de administración. Para ello, vaya a **Region management** (Administración de regiones) > **Scale units** (Unidades de escalado). A continuación, seleccione la unidad de escalado o el nodo de unidad de escalado que desea revisar. 
 
 ### <a name="use-powershell"></a>Uso de PowerShell
 El estado de la unidad de escalado y de los nodos de unidad de escalado se puede recuperar mediante PowerShell de la siguiente manera:

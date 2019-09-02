@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/22/2019
+ms.date: 08/23/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 11/12/2018
-ms.openlocfilehash: 177d18261d8a85807826226b0dcabdfd03e87135
-ms.sourcegitcommit: 0e0d010c4e010f2fd6799471db8bf71652d8d4e1
+ms.openlocfilehash: 21364595b30c62f47c293e38bdcb9c5663c56e90
+ms.sourcegitcommit: b8260ef3e43f3703dd0df16fb752610ec8a86942
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68806899"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70008333"
 ---
 # <a name="windows-server-in-azure-stack-marketplace-faq"></a>Preguntas frecuentes sobre Windows Server en el Marketplace de Azure Stack
 
@@ -53,11 +53,29 @@ Si descarga ambas versiones de la imagen, solo la versión más reciente es visi
 
 ### <a name="what-if-my-user-incorrectly-checked-the-i-have-a-license-box-in-previous-windows-builds-and-they-dont-have-a-license"></a>¿Qué ocurre si mi usuario marco incorrectamente el cuadro "Tengo una licencia" en compilaciones anteriores de Windows y no tiene ninguna licencia?
 
-Consulte [Conversión de las máquinas virtuales Windows Server del modelo de traiga su propia licencia al de pago por uso](/azure/virtual-machines/windows/hybrid-use-benefit-licensing#powershell-1).
+Puede cambiar el atributo de modelo de licencia para cambiar de traiga su propia licencia (BYOL) al modelo de pago por uso (PAYG) mediante la ejecución del siguiente script:
+
+```powershell
+vm= Get-Azurermvm -ResourceGroup "<your RG>" -Name "<your VM>"
+$vm.LicenseType = "Windows_Server"
+Update-AzureRmVM -ResourceGroupName "<your RG>" -VM $vm
+```
+
+Puede comprobar el tipo de licencia de su VM mediante la ejecución de los siguientes comandos. Si el modelo de licencia indica **Windows_Server**, se le cobrará un importe por la licencia de Windows según el modelo PAYG:
+
+```powershell
+$vm | ft Name, VmId,LicenseType,ProvisioningState
+```
 
 ### <a name="what-if-i-have-an-older-image-and-my-user-forgot-to-check-the-i-have-a-license-box-or-we-use-our-own-images-and-we-do-have-enterprise-agreement-entitlement"></a>¿Qué ocurre si tengo una imagen anterior y el usuario olvidó marcar el cuadro "Tengo una licencia"? ¿Y si usamos nuestras propias imágenes y tenemos un Contrato Enterprise?
 
-Consulte [Conversión de una máquina virtual Windows Server existente al modelo de traiga su propia licencia](/azure/virtual-machines/windows/hybrid-use-benefit-licensing#convert-an-existing-vm-using-azure-hybrid-benefit-for-windows-server). Tenga en cuenta que la ventaja híbrida de Azure no se aplica a Azure Stack, pero sí el efecto de esta configuración.
+Puede cambiar el atributo del modelo de licencia a traiga su propio modelo de licencia. Para ello, ejecute los siguientes comandos:
+
+```powershell
+$vm= Get-Azurermvm -ResourceGroup "<your RG>" -Name "<your VM>"
+$vm.LicenseType = "None"
+Update-AzureRmVM -ResourceGroupName "<your RG>" -VM $vm
+```
 
 ### <a name="what-about-other-vms-that-use-windows-server-such-as-sql-or-machine-learning-server"></a>¿Qué ocurre con otras máquinas virtuales que usan Windows Server, como SQL o Machine Learning Server?
 
