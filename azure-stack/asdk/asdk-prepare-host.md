@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/20/2019
+ms.date: 08/28/2019
 ms.author: justinha
 ms.reviewer: misainat
-ms.lastreviewed: 08/20/2019
-ms.openlocfilehash: 23cacc7a9005e1695f7394d1e441298f3f90bca8
-ms.sourcegitcommit: 7968f9f0946138867323793be9966ee2ef99dcf4
+ms.lastreviewed: 08/28/2019
+ms.openlocfilehash: cf15aebac3ad4d099892270bb2e334d32f82f580
+ms.sourcegitcommit: 5efa09034a56eb2f3dc0c9da238fe60cff0c67ac
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025951"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70144010"
 ---
 # <a name="prepare-the-asdk-host-computer"></a>Preparación del equipo host del Kit de desarrollo de Azure Stack
 Para poder instalar el Kit de desarrollo de Azure Stack (ASDK) en el equipo host, el host del ASDK se debe preparar para su instalación. Cuando el host esté preparado, se iniciará desde el disco duro de la máquina virtual (VM) CloudBuilder.vhdx para comenzar la implementación del ASDK.
@@ -64,12 +64,17 @@ Para poder instalar el ASDK en el equipo host, se debe preparar el entorno de es
 
     También puede especificar los valores de los siguientes ajustes opcionales:
     - **Nombre del equipo**: Esta opción permite establecer el nombre para el host del ASDK. El nombre debe cumplir los requisitos de FQDN y debe tener una longitud máxima de 15 caracteres. El valor predeterminado es un nombre de equipo aleatorio generado por Windows.
-    - **Configuración de IP estática**: hace que la implementación use una dirección IP estática. En caso contrario, cuando se reinicia el instalador en cloudbuilder.vhdx, las interfaces de red se configuran con DHCP. Si decide usar una configuración de IP estática, se muestran opciones adicionales donde también debe:
-      - Seleccionar un adaptador de red. Asegúrese de que puede conectarse al adaptador antes de hacer clic en **Siguiente**.
-      - Comprobar que los valores de **Dirección IP**, **Puerta de enlace** y **DNS** que se muestran son correctos y, luego, hacer clic en **Siguiente**.
 
-   > [!TIP]
-   > Para buscar una dirección IP de servidor horario, visite [pool.ntp.org](https://www.ntppool.org/) o haga ping a time.windows.com.
+        - Seleccionar un adaptador de red. Asegúrese de que puede conectarse al adaptador antes de hacer clic en **Siguiente**.
+
+            ![Captura de pantalla de la configuración del adaptador de red](media/asdk-prepare-host/step-four-network-adapter.png)
+
+        - Asegúrese de que los valores de **Dirección IP**, **Puerta de enlace** y **DNS** que se muestran son correctos y proporcione una dirección **IP del servidor horario**. A continuación, haga clic en **Siguiente**.
+
+            >[!TIP]
+            >Para buscar una dirección IP de servidor horario, visite [pool.ntp.org](https://www.ntppool.org/) o haga ping a time.windows.com. 
+
+            ![Captura de pantalla de las opciones de configuración de IP](media/asdk-prepare-host/step-five-host-ip-config.png)
 
 7. Haga clic en **Siguiente** para iniciar el proceso de preparación.
 8. Cuando la preparación indique **Completado**, haga clic en **Siguiente**.

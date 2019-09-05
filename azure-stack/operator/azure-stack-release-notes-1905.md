@@ -16,12 +16,13 @@ ms.date: 06/14/2019
 ms.author: sethm
 ms.reviewer: hectorl
 ms.lastreviewed: 06/14/2019
-ms.openlocfilehash: 68b83ac38da20f341242618a1cfa62a9838a0ada
-ms.sourcegitcommit: c2690b2dd36918ff3e47e359cac926128bb83101
+monikerRange: azs-1905
+ms.openlocfilehash: 27a41069c3406cdb843e263ee49a63e5c5919477
+ms.sourcegitcommit: 71d7990a2b21576c44bb2aea13ae2026e9510c55
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544081"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70188323"
 ---
 # <a name="azure-stack-1905-update"></a>Actualización 1905 de Azure Stack
 
@@ -123,14 +124,14 @@ Con esta actualización, Windows Server 2019 puede activarse ahora correctamen
 
 ### <a name="security-updates"></a>Actualizaciones de seguridad
 
-Para obtener información sobre las actualizaciones de seguridad de esta actualización de Azure Stack, consulte [Actualizaciones de seguridad de Azure Stack](azure-stack-release-notes-security-updates-1905.md).
+Para obtener información sobre las actualizaciones de seguridad de esta actualización de Azure Stack, consulte [Actualizaciones de seguridad de Azure Stack](azure-stack-release-notes-security-updates.md).
 
 ## <a name="update-planning"></a>Planeación de la actualización
 
 Antes de aplicar la actualización, asegúrese de revisar la información siguiente:
 
 - [Problemas conocidos](azure-stack-release-notes-known-issues-1905.md)
-- [Actualizaciones de seguridad](azure-stack-release-notes-security-updates-1905.md)
+- [Actualizaciones de seguridad](azure-stack-release-notes-security-updates.md)
 - [Lista de comprobación de las actividades antes y después de aplicar la actualización](azure-stack-release-notes-checklist.md)
 
 ## <a name="download-the-update"></a>Descarga de la actualización
