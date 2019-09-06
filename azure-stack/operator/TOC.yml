@@ -445,7 +445,7 @@
                   href: azure-stack-configure-on-demand-diagnostic-log-collection.md
         - name: Validación de Azure Stack
           href: azure-stack-diagnostic-test.md
-        - name: Problemas conocidos
+        - name: solución de problemas
           href: azure-stack-troubleshooting.md
 - name: Referencia
   items:
