@@ -15,12 +15,12 @@ ms.date: 07/18/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 07/18/2019
-ms.openlocfilehash: 7ac25e86be91cf6a2e8384c88c79fe3022b3f00d
-ms.sourcegitcommit: 159da88a52701679571bbedde1c36b72bbfe32dd
+ms.openlocfilehash: b75d9f37e2b2deacb5935bb6cda3c2586afb8baa
+ms.sourcegitcommit: 314fd74caf356b157583d38d2b8b1dee30408b7d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68380472"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70235017"
 ---
 # <a name="scale-unit-node-actions-in-azure-stack"></a>Acciones de los nodos de unidad de escalado en Azure Stack
 
@@ -59,7 +59,7 @@ Para ver el estado de una unidad de escalado:
 | Status | DESCRIPCIÓN |
 |----------------------|-------------------------------------------------------------------|
 | En ejecución | El nodo está participando activamente en la unidad de escalado. |
-| Stopped | El nodo no está disponible. |
+| Detenido | El nodo no está disponible. |
 | Agregando | El nodo se está agregando activamente a la unidad de escalado. |
 | Reparando | El nodo se está reparando activamente. |
 | Mantenimiento | El nodo está en pausa y no se está ejecutando ninguna carga de trabajo de usuario activa. |

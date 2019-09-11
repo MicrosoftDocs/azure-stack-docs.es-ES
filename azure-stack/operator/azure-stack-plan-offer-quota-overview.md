@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 08/13/2019
+ms.date: 08/29/2019
 ms.author: sethm
 ms.reviewer: efemmano
-ms.lastreviewed: 10/12/2018
-ms.openlocfilehash: 6f417b8afdf5315f581db52dc4b850f72e02b1f0
-ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
+ms.lastreviewed: 08/29/2019
+ms.openlocfilehash: 72787bda5dd5fad372af33141e276b4852f86c39
+ms.sourcegitcommit: 701685f0b59e5a3d1a8d39fe477b8df701a51cd2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68991748"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70159512"
 ---
 # <a name="plan-offer-quota-and-subscription-overview"></a>Introducción a los planes, ofertas, cuotas y suscripciones
 
@@ -85,7 +85,7 @@ Cada combinación de un usuario con una oferta es una suscripción única. Un us
 
 ### <a name="default-provider-subscription"></a>Suscripción de proveedor predeterminada
 
-La suscripción de proveedor predeterminada se crea automáticamente al implementar el Kit de desarrollo de Azure Stack. Esta suscripción puede utilizarse para administrar Azure Stack, implementar proveedores de recursos adicionales y crear ofertas y planes para los usuarios. Por motivos de seguridad y concesión de licencias, no debe usarse para ejecutar aplicaciones y cargas de trabajo de cliente.
+La suscripción de proveedor predeterminada se crea automáticamente al implementar el Kit de desarrollo de Azure Stack. Esta suscripción puede utilizarse para administrar Azure Stack, implementar proveedores de recursos adicionales y crear ofertas y planes para los usuarios. Por motivos de seguridad y concesión de licencias, no debe usarse para ejecutar aplicaciones y cargas de trabajo de cliente. No se puede cambiar la cuota de la suscripción de proveedor predeterminada.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

@@ -143,6 +143,8 @@
       items:
         - name: Conceptos básicos de administración
           href: azure-stack-manage-basics.md
+        - name: Borrado de los datos de usuario del portal
+          href: azure-stack-portal-clear.md
         - name: Configuración de la recopilación de telemetría
           href: azure-stack-telemetry.md
         - name: Registro de Azure Stack

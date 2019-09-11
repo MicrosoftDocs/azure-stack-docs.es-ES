@@ -1,9 +1,9 @@
 ---
-title: Aplicar una actualización del fabricante de equipos originales (OEM) a Azure Stack | Microsoft Docs
-description: Aprenda a aplicar una actualización del fabricante de equipos originales (OEM) a Azure Stack.
+title: Instalación de actualizaciones de OEM en Azure Stack | Microsoft Docs
+description: Aprenda a instalar las actualizaciones de OEM en Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -11,29 +11,29 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/23/2019
-ms.author: mabrigg
-ms.lastreviewed: 08/23/2019
+ms.date: 09/03/2019
+ms.author: justinha
+ms.lastreviewed: 09/03/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 792790c2ae5c14e31914b64fc6e5d7eba11aacc0
-ms.sourcegitcommit: 7968f9f0946138867323793be9966ee2ef99dcf4
+ms.openlocfilehash: a563c3ec43950122e045b0ec3168bcb3ca11fe56
+ms.sourcegitcommit: e2f6205e6469b39c2395ee09424bb7632cb94c40
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025932"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70271790"
 ---
-# <a name="apply-updates-in-azure-stack"></a>Aplicación de actualizaciones en Azure Stack
+# <a name="install-oem-updates-in-azure-stack"></a>Instalación de actualizaciones de OEM en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack*
 
-Puede aplicar la actualización con la hoja **Actualización** en Azure Stack. Este artículo le guía por los pasos necesarios para actualizar, supervisar y solucionar problemas del proceso de actualización. Puede usar la hoja Actualización para ver la información de actualización, instalar actualizaciones, supervisar el progreso de las actualizaciones, revisar el historial de actualizaciones y ver la versión actual del paquete de OEM.
+Puede instalar las actualizaciones del fabricante de equipo original (OEM) mediante la hoja **Actualización** de Azure Stack. Este artículo le guía por los pasos necesarios para actualizar, supervisar y solucionar problemas del proceso de actualización. Use la hoja Actualización para ver la información de actualización, instalar actualizaciones, supervisar el progreso de las actualizaciones, revisar el historial de actualizaciones y ver la versión actual del paquete de OEM.
 
-Puede administrar las actualizaciones desde el portal de administrador. Puede usar las **actualizaciones** del panel para:
+Puede administrar las actualizaciones desde el portal de administración y usar la sección **Actualizaciones** del panel para:
 
--   Ver información importante, como la versión actual.
--   Instalar actualizaciones y supervisar el progreso.
--   Revisar el historial de actualización de las actualizaciones instaladas anteriormente.
--   Ver la versión actual del paquete de OEM de la nube.
+- Ver información importante, como la versión actual.
+- Instalar actualizaciones y supervisar el progreso.
+- Revisar el historial de actualización de las actualizaciones instaladas anteriormente.
+- Ver la versión actual del paquete de OEM de la nube.
 
 ## <a name="determine-the-current-version"></a>Determinar la versión actual
 
@@ -49,25 +49,25 @@ Puede ver la versión actual de Azure Stack en la hoja de **Actualización**. Pa
 
 ## <a name="install-updates-and-monitor-progress"></a>Instalar actualizaciones y supervisar el progreso
 
-1.  Abra el portal de administración de Azure Stack.
+1. Abra el portal de administración de Azure Stack.
 
-2.  Seleccione **Panel**. Seleccione **Actualizar**.
+2. Seleccione **Panel**. Seleccione **Actualizar**.
 
-3.  Seleccione la actualización disponible que quiera aplicar. Si no tiene ninguna actualización marcada como **Disponible**, tendrá que [Preparar la actualización](azure-stack-update-prepare-package.md).
+3. Seleccione la actualización disponible que quiere instalar. Si no tiene ninguna actualización marcada como **Disponible**, tendrá que [preparar la actualización](azure-stack-update-prepare-package.md).
 
-4.  Seleccione **Actualizar ahora**.
+4. Seleccione **Actualizar ahora**.
 
     ![Detalles de ejecución de la actualización de Azure Stack](./media/azure-stack-update-apply/image2.png)
 
-5.  Puede ver el estado de alto nivel a medida que el proceso de actualización itera a través de diversos subsistemas en Azure Stack. Los subsistemas de ejemplo incluyen hosts físicos, Service Fabric, máquinas virtuales de infraestructura y servicios que brindar tanto el portal de usuario como el de administrador. Durante el proceso de actualización, el proveedor de recursos de actualización proporciona detalles adicionales acerca de la actualización, como el número de pasos que se han realizado correctamente y los que están en curso.
+5. Puede ver el estado de alto nivel a medida que el proceso de actualización itera a través de diversos subsistemas en Azure Stack. Los subsistemas de ejemplo incluyen hosts físicos, Service Fabric, máquinas virtuales de infraestructura y servicios que brindan tanto el portal de usuario como el de administrador. Durante el proceso de actualización, el proveedor de recursos de actualización proporciona detalles adicionales acerca de la actualización, como el número de pasos que se han realizado correctamente y los que están en curso.
 
-6.  Seleccione **Descargar resumen** en la hoja de detalles de la ejecución de actualización para descargar los registros completos.
+6. Seleccione **Descargar resumen** en la hoja de detalles de la ejecución de actualización para descargar los registros completos.
 
-    Si se tiene algún problema mientras supervisa la actualización, puede usar el [punto de conexión con privilegios](https://docs.microsoft.com/azure-stack/operator/azure-stack-privileged-endpoint) para supervisar el progreso de la ejecución de una actualización de Azure Stack y para reanudar la ejecución de una actualización errónea desde el último paso correcto, en caso de que el portal de Azure Stack no estuviera disponible. Para obtener instrucciones, consulte [Supervisar actualizaciones en Azure Stack con PowerShell](azure-stack-update-monitor.md).
+    Si surge un problema durante la supervisión de la actualización, puede usar el [punto de conexión con privilegios](https://docs.microsoft.com/azure-stack/operator/azure-stack-privileged-endpoint) para supervisar el progreso de la ejecución de una actualización de Azure Stack. Si el portal de Azure Stack deja de estar disponible, también puede usar el punto de conexión con privilegios para reanudar la ejecución de una actualización con errores desde el último paso correcto. Para obtener instrucciones, consulte [Supervisar actualizaciones en Azure Stack con PowerShell](azure-stack-update-monitor.md).
 
     ![Detalles de ejecución de la actualización de Azure Stack](./media/azure-stack-update-apply/image3.png)
 
-7.  Una vez completado, el proveedor de recursos de actualización proporciona una confirmación que indica que la operación se ha realizado **correctamente** para mostrar que el proceso de actualización se ha completado y el tiempo que tardó. Desde ahí, con el filtro puede ver información sobre todas las actualizaciones, las actualizaciones disponibles o las actualizaciones instaladas.
+7. Una vez completada la actualización, el proveedor de recursos de actualización proporciona una confirmación de operación **correcta** para mostrar que el proceso de actualización ha finalizado e indicar el tiempo que tardó. Desde ahí, con el filtro puede ver información sobre todas las actualizaciones, las actualizaciones disponibles o las actualizaciones instaladas.
 
     ![azure-stack-update-apply](./media/azure-stack-update-apply/image4.png)
 
@@ -75,11 +75,11 @@ Puede ver la versión actual de Azure Stack en la hoja de **Actualización**. Pa
 
 ## <a name="review-update-history"></a>Revisión del historial de actualizaciones
 
-1.  Abra el portal de administración.
+1. Abra el portal de administración.
 
-2.  Seleccione **Panel**. Seleccione **Actualizar**.
+2. Seleccione **Panel**. Seleccione **Actualizar**.
 
-3.  Seleccione **Historial de actualizaciones**.
+3. Seleccione **Historial de actualizaciones**.
 
     ![Historial de actualizaciones de Azure Stack](./media/azure-stack-update-apply/image7.png)
 

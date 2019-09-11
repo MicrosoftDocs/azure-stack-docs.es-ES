@@ -12,19 +12,19 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/13/2019
+ms.date: 08/29/2019
 ms.author: mabrigg
 ms.reviewer: wamota
-ms.lastreviewed: 08/30/2018
-ms.openlocfilehash: 59858d5538552fb04ddf41de0ad59cf77dcd7783
-ms.sourcegitcommit: b79a6ec12641d258b9f199da0a35365898ae55ff
+ms.lastreviewed: 08/29/2019
+ms.openlocfilehash: a0829f2bc8cb45bdfd6f68ac15418a05adcc7afb
+ms.sourcegitcommit: 71d7990a2b21576c44bb2aea13ae2026e9510c55
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67131066"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70188342"
 ---
 # <a name="about-deployment-network-traffic"></a>Acerca del tráfico de red de implementación
-Comprender cómo fluye el tráfico de red durante la implementación de Azure Stack es fundamental para garantizar una correcta implementación. Este artículo le guía por el tráfico de red esperado durante el proceso de implementación para ayudarle a comprender lo que puede anticipar.
+Comprender cómo funciona el tráfico de red durante la implementación de Azure Stack ayuda a que esta se realice correctamente. Este artículo le guiará a través del flujo de tráfico de red durante el proceso de implementación para que sepa qué esperar.
 
 En esta ilustración se muestran todos los componentes y las conexiones que intervienen en el proceso de implementación:
 
@@ -36,8 +36,10 @@ En esta ilustración se muestran todos los componentes y las conexiones que inte
 ### <a name="the-deployment-vm"></a>La máquina virtual de implementación
 La solución de Azure Stack incluye un grupo de servidores que se usan para hospedar componentes de Azure Stack, y un servidor adicional llamado Host de ciclo de vida de hardware (HLH). Este servidor se usa para implementar y administrar el ciclo de vida de la solución y hospeda la máquina virtual de implementación (DVM) durante la implementación.
 
+Los proveedores de soluciones de Azure Stack pueden aprovisionar máquinas virtuales de administración adicionales. Confirme con el proveedor de la solución antes de realizar cambios en las máquinas virtuales de administración de un proveedor de soluciones.
+
 ## <a name="deployment-requirements"></a>Requisitos de implementación
-Antes de iniciar la implementación, hay algunos requisitos mínimos que puede validar su OEM para asegurarse de que la operación se realiza correctamente. Comprender estos requisitos le ayudará a preparar el entorno y a asegurarse de que la validación se realiza correctamente. Los requisitos son:
+Antes de iniciar la implementación, hay algunos requisitos mínimos que puede validar su OEM para asegurarse de que la operación se realiza correctamente:
 
 -   [Certificates](azure-stack-pki-certs.md)
 -   [Suscripción de Azure](https://azure.microsoft.com/free/?b=17.06)
@@ -51,13 +53,11 @@ Antes de iniciar la implementación, hay algunos requisitos mínimos que puede v
 ## <a name="deployment-network-traffic"></a>Tráfico de red de implementación
 La DVM está configurada con una dirección IP de la red BMC y requiere acceso de red a Internet. Aunque no todos los componentes de la red BMC requieren enrutamiento externo o acceso a Internet, algunos componentes específicos del OEM que usan direcciones IP de esta red podrían también necesitarlo.
 
-Durante la implementación, la DVM se autentica en Azure Active Directory (Azure AD) mediante una cuenta de Azure desde su suscripción. Para ello, la DVM necesita acceso a través de Internet a una lista de direcciones URL y puertos específicos. Puede encontrar la lista completa en la documentación [Publicación de puntos de conexión](azure-stack-integrate-endpoints.md). La DVM usará un servidor DNS para reenviar las solicitudes de DNS que realizan los componentes internos a las direcciones URL externas. El DNS interno reenvía estas solicitudes a la dirección del reenviador DNS que se proporciona al OEM antes de la implementación. Lo mismo puede decirse del servidor NTP: se necesita un servidor horario confiable para mantener la coherencia y la sincronización de la hora en todos los componentes de Azure Stack.
+Durante la implementación, la DVM se autentica en Azure Active Directory (Azure AD) mediante una cuenta de Azure desde su suscripción. Para ello, la DVM necesita acceso a través de Internet a una lista de [direcciones URL y puertos específicos](azure-stack-integrate-endpoints.md). La DVM usará un servidor DNS para reenviar las solicitudes de DNS que realizan los componentes internos a las direcciones URL externas. El DNS interno reenvía estas solicitudes a la dirección del reenviador DNS que se proporciona al OEM antes de la implementación. Lo mismo puede decirse del servidor NTP: se necesita un servidor horario confiable para mantener la coherencia y la sincronización de la hora en todos los componentes de Azure Stack.
 
 El acceso a Internet que requiere la DVM durante la implementación es solo saliente; no se realizan llamadas entrantes durante este proceso. Tenga en cuenta que esta máquina usa su IP como origen y que Azure Stack no admite configuraciones de proxy. Por lo tanto, si es necesario, debe proporcionar un proxy o NAT transparentes para el acceso a Internet. Durante la implementación, algunos componentes internos iniciarán el acceso a internet a través de la red externa mediante VIP públicas. Una vez finalizada la implementación, toda la comunicación entre Azure y Azure Stack se realiza mediante la red externa usando direcciones IP virtuales públicas.
 
 Las configuraciones de red en los modificadores de Azure Stack contienen listas de control de acceso (ACL) que restringen el tráfico entre determinados orígenes y destinos de red. La DVM es el único componente con acceso sin restricciones; incluso el HLH es muy restrictivo. Puede preguntar a los OEM sobre las opciones de personalización para facilitar la administración y el acceso desde sus redes. Debido a estas ACL, es importante evitar cambiar las direcciones de servidor DNS y NTP durante la implementación. Si lo hace, deberá volver a configurar todos los modificadores de la solución.
-
-Después de finalizar la implementación, los componentes del sistema seguirán usando directamente las direcciones de servidor DNS y NTP proporcionadas. Por ejemplo, si comprueba las solicitudes DNS una vez finalizada la implementación, el origen cambiará de la dirección IP de DVM a una dirección del intervalo de la red externa.
 
 Después de finalizar la implementación, los componentes del sistema seguirán usando las direcciones de servidor DNS y NTP proporcionadas a través de SDN mediante la red externa. Por ejemplo, si comprueba las solicitudes DNS una vez finalizada la implementación, el origen cambiará de la dirección IP de DVM a una VIP pública.
 

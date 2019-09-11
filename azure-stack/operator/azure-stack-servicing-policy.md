@@ -12,18 +12,35 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/08/2019
+ms.date: 08/01/2019
 ms.author: sethm
 ms.reviewer: harik
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: c02cc78205b2622b4ef5bdd8b88070912af72b97
-ms.sourcegitcommit: b8260ef3e43f3703dd0df16fb752610ec8a86942
+ms.openlocfilehash: 1022ab056157ea1a9bc925d3992a99bd0b395a35
+ms.sourcegitcommit: 71d7990a2b21576c44bb2aea13ae2026e9510c55
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70008592"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70188081"
 ---
-# <a name="azure-stack-servicing-policy"></a>Directiva de mantenimiento de Azure Stack
+- **Actualizaciones suministradas por el proveedor de hardware OEM**. Los asociados de hardware de Azure Stack son responsables del ciclo de vida de servicio de un extremo a otro (lo que incluye las instrucciones) de las actualizaciones de controladores y firmware relacionados con el hardware. Asimismo, poseen y mantienen las instrucciones de todo el software y el hardware del host de ciclo de vida del hardware. El proveedor de hardware OEM hospeda estas actualizaciones en su propio sitio de descarga.
+
+## <a name="update-package-release-cadence"></a>Ritmo de lanzamientos de las actualizaciones
+
+Microsoft espera lanzar actualizaciones de software a un ritmo mensual. Sin embargo, puede haber varios lanzamientos de actualizaciones en un mes, o ninguno. Los proveedores de hardware de OEM lanzan sus actualizaciones en función de la necesidad.
+
+Busque documentación sobre cómo planear y administrar actualizaciones y cómo determinar la versión actual en [Introducción a la administración de actualizaciones en Azure Stack](azure-stack-updates.md).
+
+Para obtener información sobre una actualización concreta, incluido cómo descargarla, vea las notas de versión de la actualización:
+
+- [Actualización 1908 de Azure Stack](azure-stack-release-notes-1908.md)
+- [Actualización de Azure Stack 1907](azure-stack-release-notes-1907.md)
+- [Actualización de Azure Stack 1906](azure-stack-release-notes-1906.md)
+- [Actualización 1905 de Azure Stack](azure-stack-release-notes-1905.md)
+
+## <a name="hotfixes"></a>Revisiones
+
+En ocasiones, Microsoft ofrece revisiones para Azure Stack que solucionan un determinado problema que suele ser de naturaleza preventiva o urgente.  Todas las revisiones se publican con su correspondiente artículo de Microsoft Knowledge Base que detalla el problema, la causa y la resolución.
 
 *Se aplica a: Sistemas integrados de Azure Stack*
 

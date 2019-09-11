@@ -3,7 +3,7 @@ title: Administrar las actualizaciones en Azure Stack | Microsoft Docs
 description: Aprenda a administrar las actualizaciones en Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -11,22 +11,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/23/2019
-ms.author: mabrigg
-ms.lastreviewed: 08/23/2019
+ms.date: 09/03/2019
+ms.author: justinha
+ms.lastreviewed: 09/03/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 0cd83c7a16ef56e3432de7dcba39cc11ca20a379
-ms.sourcegitcommit: b8260ef3e43f3703dd0df16fb752610ec8a86942
+ms.openlocfilehash: f34f31ac54881c5911488f5049cc75ffee85bd38
+ms.sourcegitcommit: 314fd74caf356b157583d38d2b8b1dee30408b7d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70008474"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70234923"
 ---
 # <a name="manage-updates-in-azure-stack-overview"></a>Introducción a la administración de actualizaciones en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack*
 
-Necesita mantener Azure Stack actualizado mediante la aplicación de actualizaciones completas y rápidas de Azure Stack, revisiones y actualizaciones de paquetes del fabricante de equipos originales (OEM). Si mantiene Azure Stack actualizado con las últimas actualizaciones, obtendrá los últimos parches de seguridad, actualizaciones de productos y actualizaciones de controladores y firmware en su sistema. En este artículo se proporciona una introducción sobre las diferentes actualizaciones, la cadencia de estos paquetes de versiones, dónde encontrar información sobre las versiones actuales y el proceso general de actualización.
+Azure Stack se mantiene actualizado gracias tanto a las actualizaciones, completas o rápidas, y las revisiones como a las actualizaciones de controladores y firmware del fabricante de equipo original (OEM). En este artículo se explican los diferentes tipos de actualizaciones, cuándo se espera su lanzamiento y dónde se puede encontrar más información sobre la versión actual.
 
 > [!Note]  
 > No puede aplicar actualizaciones de Azure Stack al Kit de desarrollo de Azure Stack (ASDK). Las actualizaciones están diseñadas para sistemas integrados. Para obtener información, consulte [Volver a implementar el ASDK](https://docs.microsoft.com/azure-stack/asdk/asdk-redeploy).
@@ -75,7 +75,7 @@ El aviso de actualizaciones varía en función de un par de factores, como su co
 
 ## <a name="update-processes"></a>Procesos de actualización
 
-Una vez que sepa que tiene una actualización, aplique la actualización con los siguientes pasos.
+Una vez que sepa que tiene una actualización, aplíquela con los siguientes pasos.
 
 ![Proceso de actualización de Azure Stack](./media/azure-stack-updates/azure-stack-update-process.png)
 
@@ -89,11 +89,11 @@ Una vez que sepa que tiene una actualización, aplique la actualización con los
 
     En el caso de los entornos de Azure Stack sin conexión a Internet y los entornos con conectividad a Internet débil o intermitente, los paquetes de actualización se importan al almacenamiento de Azure Stack a través del portal de administrador de Azure Stack. Para obtener más pasos para cargar y preparar la actualización, consulte [Cargar y preparar una actualización de Azure Stack](azure-stack-update-prepare-package.md).
 
-    Todas las actualizaciones de OEM se importan manualmente al entorno, independientemente de la conectividad a Internet del sistema de Azure Stack. Para obtener más pasos para importar y preparar la actualización, consulte [Cargar y preparar una actualización de Azure Stack](azure-stack-update-prepare-package.md)).
+    Todas las actualizaciones de OEM se importan manualmente al entorno, independientemente de la conectividad a Internet del sistema de Azure Stack. Para obtener más pasos para importar y preparar la actualización, consulte [Cargar y preparar una actualización de Azure Stack](azure-stack-update-prepare-package.md).
 
 3. **Aplique la actualización**.
 
-    Aplique la actualización con la hoja **Actualización** en Azure Stack. Durante la actualización, supervise el progreso de la actualización y, si es necesario, solucione los problemas del proceso de actualización. Para obtener más pasos para planificar la actualización, consulte [Aplicar una actualización de Azure Stack](azure-stack-apply-updates.md).
+    Aplique la actualización con la hoja **Actualización** en Azure Stack. Durante la actualización, supervise su progreso y solucione los posibles problemas. Para más información, consulte [Aplicación de actualizaciones en Azure Stack](azure-stack-apply-updates.md).
 
 ## <a name="the-update-resource-provider"></a>El proveedor de recursos de actualización
 

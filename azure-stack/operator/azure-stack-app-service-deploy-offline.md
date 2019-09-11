@@ -12,23 +12,23 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/28/2019
+ms.date: 08/29/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: c97598145b0d03f3b25876296cb070b0301a3742
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: a33dc4ee1d9889b1dfa817b18b2c5c97e78c8432
+ms.sourcegitcommit: 701685f0b59e5a3d1a8d39fe477b8df701a51cd2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66269232"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70159628"
 ---
 # <a name="add-an-app-service-resource-provider-to-a-disconnected-azure-stack-environment-secured-by-ad-fs"></a>Incorporación de un proveedor de recursos de App Service a un entorno de Azure Stack desconectado protegido por AD FS
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
 > [!IMPORTANT]
-> Aplique la actualización 1904 al sistema integrado de Azure Stack o implemente el kit de desarrollo de Azure Stack más reciente antes de implementar Azure App Service 1.6.
+> Aplique la actualización 1907 al sistema integrado de Azure Stack o implemente el kit de desarrollo de Azure Stack más reciente antes de implementar Azure App Service 1.7.
 
 Siguiendo las instrucciones de este artículo, puede instalar el [proveedor de recursos de App Service](azure-stack-app-service-overview.md) en un entorno de Azure Stack que:
 
@@ -36,12 +36,12 @@ Siguiendo las instrucciones de este artículo, puede instalar el [proveedor de r
 - Esté protegido por Servicios de federación de Active Directory (AD FS) 2.0.
 
 > [!IMPORTANT]
-> Antes de ejecutar el instalador del proveedor de recursos, asegúrese de haber seguido las instrucciones de [Antes de empezar a](azure-stack-app-service-before-you-get-started.md) y haber leído las [notas de la versión](azure-stack-app-service-release-notes-update-six.md) que acompañan a la versión 6, para obtener información sobre las nuevas funciones, correcciones y problemas conocidos que podrían afectar a la implementación.
+> Antes de ejecutar el instalador del proveedor de recursos, asegúrese de haber seguido las instrucciones de [Antes de empezar](azure-stack-app-service-before-you-get-started.md) y haber leído las [notas de la versión](azure-stack-app-service-release-notes-update-seven.md) que acompañan a la versión 1.7, para obtener información sobre nuevas funciones, correcciones y problemas conocidos que podrían afectar a la implementación.
 
 Para agregar el proveedor de recursos de App Service para la implementación de Azure Stack sin conexión, debe completar estas tareas de nivel superior:
 
 1. Realice los [pasos previos necesarios](azure-stack-app-service-before-you-get-started.md) (como la compra de certificados, que pueden tardar unos días en recibirse).
-2. [Descargue y extraiga los archivos de instalación y auxiliares](azure-stack-app-service-before-you-get-started.md) en una máquina conectada a Internet.
+2. [Descargue y extraiga los archivos auxiliares y de instalación](azure-stack-app-service-before-you-get-started.md) en una máquina conectada a Internet.
 3. Cree un paquete de instalación sin conexión.
 4. Ejecute el archivo del instalador appservice.exe.
 
@@ -161,7 +161,7 @@ Para implementar App Service en un entorno desconectado, primero debe crear un p
      >
      >
 
-    | Rol | Número mínimo de instancias | SKU mínima | Notas |
+    | Role | Número mínimo de instancias | SKU mínima | Notas |
     | --- | --- | --- | --- |
     | Controller | 1 | Standard_A2: (2 vCPU, 3584 MB) | Administra y mantiene el estado de la nube de App Service. |
     | Administración | 1 | Standard_A2: (2 vCPU, 3584 MB) | Administra los puntos de conexión de API y Azure Resource Manager de App Service, las extensiones de portales (portal de Functions, administración e inquilino) y el servicio de datos. Para admitir la conmutación por error, se incrementan las instancias recomendadas a 2. |
@@ -203,13 +203,13 @@ Para implementar App Service en un entorno desconectado, primero debe crear un p
 
 Si decide realizar una implementación en una red virtual existente y en una dirección IP interna para conectarse al servidor de archivos, debe agregar una regla de seguridad de salida. De ese modo, permite que exista tráfico SMB entre la subred del rol de trabajo y el servidor de archivos.  Vaya a WorkersNsg, Grupo de seguridad de red, en el Portal de administración y agregue una regla de seguridad de salida con las siguientes propiedades:
 
-- Origen: Cualquiera
+- Origen: Any
 - Intervalo de puertos de origen: *
 - Destino: Direcciones IP
 - Intervalo de direcciones IP de destino: Intervalo de direcciones IP del servidor de archivos
 - Intervalo de puertos de destino: 445
 - Protocolo: TCP
-- Acción: PERMITIR
+- Acción: Allow
 - Prioridad: 700
 - Nombre: Outbound_Allow_SMB445
 
@@ -258,15 +258,10 @@ Después de implementar y registrar el proveedor de recursos de App Service, pru
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-También puede probar otros [servicios de Plataforma como servicio (PaaS)](azure-stack-offer-services-overview.md).
+Preparar las operaciones adicionales de administrador para App Service en Azure Stack
 
-- [Proveedor de recursos de SQL Server](azure-stack-sql-resource-provider-deploy.md)
-- [Proveedor de recursos de MySQL](azure-stack-mysql-resource-provider-deploy.md)
-
-<!--Links-->
-[Azure_Stack_App_Service_preview_installer]: https://go.microsoft.com/fwlink/?LinkID=717531
-[App_Service_Deployment]: https://go.microsoft.com/fwlink/?LinkId=723982
-[AppServiceHelperScripts]: https://go.microsoft.com/fwlink/?LinkId=733525
+- [Planeamiento de capacidad](azure-stack-app-service-capacity-planning.md)
+- [Configuración de orígenes de implementación](azure-stack-app-service-configure-deployment-sources.md)
 
 <!--Image references-->
 [1]: ./media/azure-stack-app-service-deploy-offline/app-service-exe-advanced-create-package.png

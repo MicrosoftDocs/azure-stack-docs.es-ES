@@ -1,6 +1,6 @@
 ---
-title: 'Implementación de App Services: Azure Stack | Microsoft Docs'
-description: Guía detallada para implementar App Service en Azure Stack
+title: Implementación de App Service en Azure Stack | Microsoft Docs
+description: Aprenda a implementar App Service en Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -12,33 +12,33 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/28/2019
+ms.date: 08/29/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: e89e8a9d2f773c289bc279a1b4aa9f47e65e8741
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: 7088a001fab8e3e618da4be8107f5a5f5a22373f
+ms.sourcegitcommit: e2f6205e6469b39c2395ee09424bb7632cb94c40
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66269331"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70271771"
 ---
-# <a name="add-an-app-service-resource-provider-to-azure-stack"></a>Incorporación de un proveedor de recursos de App Service a Azure Stack
+# <a name="deploy-app-service-in-azure-stack"></a>Implementación de App Service en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Use las instrucciones de este artículo para implementar App Service en Azure Stack.
+En este artículo se describe cómo implementar App Service en Azure Stack.
 
 > [!IMPORTANT]
-> Aplique la actualización 1904 al sistema integrado de Azure Stack o implemente el Kit de desarrollo de Azure Stack (ASDK) más reciente antes de implementar Azure App Service 1.6.
+> Aplique la actualización 1907 al sistema integrado de Azure Stack o implemente el Kit de desarrollo de Azure Stack (ASDK) más reciente antes de implementar Azure App Service 1.7.
 
 Puede ofrecer a los usuarios la capacidad de crear aplicaciones web y API. Para permitir que los usuarios creen estas aplicaciones, deberá:
 
 - Agregue el [proveedor de recursos de App Service](azure-stack-app-service-overview.md) a la implementación de Azure Stack mediante los pasos descritos en este artículo.
-- Después de instalar el proveedor de recursos de App Service, puede incluirlos en sus planes y ofertas. Los usuarios pueden suscribirse entonces para obtener el servicio y empezar a crear aplicaciones.
+- Después de instalar el proveedor de recursos de App Service, puede incluirlos en sus planes y ofertas. A continuación, los usuarios pueden suscribirse para obtener el servicio y empezar a crear aplicaciones.
 
 > [!IMPORTANT]
-> Antes de ejecutar el instalador del proveedor de recursos, asegúrese de haber seguido las instrucciones de [Antes de empezar a](azure-stack-app-service-before-you-get-started.md) y haber leído las [notas de la versión](azure-stack-app-service-release-notes-update-six.md) que acompañan a la versión 1.6, para obtener información sobre las nuevas funciones, correcciones y problemas conocidos que podrían afectar a su implementación.
+> Antes de ejecutar el instalador del proveedor de recursos, asegúrese de haber seguido las instrucciones de [Antes de empezar](azure-stack-app-service-before-you-get-started.md) y haber leído las [notas de la versión](azure-stack-app-service-release-notes-update-seven.md) que acompañan a la versión 1.7. Este contenido le ayudará a descubrir las nuevas funciones, correcciones y problemas conocidos que podrían afectar a la implementación.
 
 ## <a name="run-the-app-service-resource-provider-installer"></a>Ejecución del instalador del proveedor de recursos de App Service
 
@@ -48,9 +48,6 @@ La instalación del proveedor de recursos de App Service tarda al menos una hora
 - Creará una zona DNS y las entradas para App Service.
 - Registrará el proveedor de recursos de App Service.
 - Registrará los elementos de la galería de App Service.
-
-  > [!IMPORTANT]
-  > Antes de implementar el proveedor de recursos, revise las notas de la versión para obtener información sobre las nuevas funciones, correcciones y problemas conocidos que podrían afectar a la implementación.
 
 Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
@@ -64,7 +61,7 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
 4. Revise y acepte los términos de licencia de terceros y seleccione **Siguiente**.
 
-5. Asegúrese de que la información de configuración de nube de App Service es correcta. Si usó la configuración predeterminada durante la implementación del Kit de desarrollo de Azure Stack (ASDK), puede aceptar los valores predeterminados. Pero, si personalizó las opciones cuando implementó el ASDK o va a realizar la implementación en un sistema integrado de Azure Stack, debe editar los valores de esta ventana para reflejar las diferencias.
+5. Asegúrese de que la información de configuración de nube de App Service es correcta. Si usó la configuración predeterminada durante la implementación del ASDK, puede aceptar los valores predeterminados. Pero, si personalizó las opciones cuando implementó el ASDK o va a realizar la implementación en un sistema integrado de Azure Stack, debe editar los valores de esta ventana para reflejar las diferencias.
 
    Por ejemplo, si se usa el sufijo de dominio mycloud.com, el punto de conexión de Azure Resource Manager del inquilino de Azure Stack debe cambiarse a management.&lt;región&gt;.mycloud.com. Revise estos valores y, a continuación, seleccione **Siguiente** para guardar la configuración.
 
@@ -82,7 +79,7 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
      > [!IMPORTANT]
      > App Service **debe** implementarse en la **suscripción de proveedor predeterminada**.
 
-   c. En **Azure Stack Locations** (Ubicaciones de Azure Stack), seleccione la ubicación que corresponda a la región en la que se va a implementar. Por ejemplo, seleccione **local** si va a implementar con el Kit de desarrollo de Azure Stack.
+   c. En **Azure Stack Locations** (Ubicaciones de Azure Stack), seleccione la ubicación que corresponda a la región en la que se va a implementar. Por ejemplo, seleccione **local** si va a realizar la implementación en el ASDK.
 
     ![Instalador de App Service][3]
 
@@ -92,14 +89,14 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
    b. O, seleccione **Usar la red virtual y las subredes existentes**. Complete las siguientes acciones:
 
-     - Seleccione el **grupo de recursos** que contiene la instancia de Virtual Network.
+     - Seleccione el **grupo de recursos** que contiene la red virtual.
      - Elija el nombre de la instancia de **Virtual Network** en la que desea realizar la implementación.
      - Seleccione los valores correctos de **subred** para cada una de las subredes de rol necesarias.
      - Seleccione **Next** (Siguiente).
 
    ![Instalador de App Service][4]
 
-8. Escriba la información para el recurso compartido de archivos y, a continuación, seleccione **Siguiente**. La dirección del recurso compartido de archivos debe usar el nombre de dominio completo (FQDN) o la dirección IP del servidor de archivos. Por ejemplo, \\\appservicefileserver.local.cloudapp.azurestack.external\websites, o \\\10.0.0.1\websites.  Si usa un servidor de archivos que está unido a un dominio, debe proporcionar el nombre de usuario completo, incluido el dominio (por ejemplo, miDominioDeServidorDeArchivo\FileShareOwner).
+8. Escriba la información para el recurso compartido de archivos y, a continuación, seleccione **Siguiente**. La dirección del recurso compartido debe usar el nombre de dominio completo (FQDN) o la dirección IP del servidor de archivos. Por ejemplo, \\\appservicefileserver.local.cloudapp.azurestack.external\websites, o \\\10.0.0.1\websites.  Si usa un servidor de archivos que está unido a un dominio, debe proporcionar el nombre de usuario completo, incluido el dominio. Por ejemplo, miDominioDeServidorDeArchivos\propietarioDeRecursoCompartido.
 
    >[!NOTE]
    >El instalador intenta comprobar la conectividad con el recurso compartido de archivos antes de continuar. Sin embargo, si implementa en una red virtual existente, puede que se produzca un error en esta prueba de conectividad. Se le envía una advertencia y un aviso para continuar. Si la información del recurso compartido de archivos es correcta, continúe con la implementación.
@@ -108,7 +105,7 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
 9. En la página siguiente del instalador de App Service, siga estos pasos:
 
-   a. En el cuadro **Identificador de la aplicación de identidad**, escriba el GUID de la aplicación que va a usar para la identidad (de Azure AD).
+   a. En el cuadro **Identificador de la aplicación de identidad**, escriba el GUID de la aplicación que va a usar para la identidad (de Azure AD).
 
    b. En el cuadro **Identity Application certificate file** (Archivo del certificado de la aplicación de identidad) escriba (o vaya a) la ubicación del archivo del certificado.
 
@@ -132,7 +129,7 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
     ![Instalador de App Service][10]
 
-11. Escriba los detalles de SQL Server para la instancia de servidor que se usa para hospedar las bases de datos del proveedor de recursos de App Service y, después, seleccione **Siguiente**. El instalador valida las propiedades de conexión de SQL.<br><br>El instalador de App Service intenta probar la conectividad con la instancia de SQL Server antes de continuar. Si realiza la implementación en una red virtual existente, puede que se produzca un error en esta prueba de conectividad. Se le envía una advertencia y un aviso para continuar. Si la información de SQL Server es correcta, continúe con la implementación.
+11. Escriba los detalles de SQL Server para la instancia de servidor que se usa para hospedar la base de datos del proveedor de recursos de App Service y, después, seleccione **Siguiente**. El instalador valida las propiedades de conexión de SQL.<br><br>El instalador de App Service intenta probar la conectividad con la instancia de SQL Server antes de continuar. Si realiza la implementación en una red virtual existente, puede que se produzca un error en esta prueba de conectividad. Se le envía una advertencia y un aviso para continuar. Si la información de SQL Server es correcta, continúe con la implementación.
 
     ![Instalador de App Service][11]
 
@@ -154,13 +151,13 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
     >[!NOTE]
     >**Windows Server 2016 Core no es una imagen de plataforma compatible para su uso con Azure App Service en Azure Stack.  No use imágenes de evaluación para las implementaciones de producción.**
 
-13. En el cuadro **Seleccionar imagen de plataforma**, elija su imagen de máquina virtual Windows Server 2016 de implementación entre las que están disponibles en el proveedor de recursos de procesos para la nube de App Service. Seleccione **Next** (Siguiente).
+13. En el cuadro **Seleccionar imagen de plataforma**, elija su imagen de máquina virtual (VM) Windows Server 2016 de implementación entre las que están disponibles en el proveedor de recursos de procesos para la nube de App Service. Seleccione **Next** (Siguiente).
 
 14. En la página siguiente del instalador de App Service, siga estos pasos:
 
-     a. Escriba el nombre de usuario y la contraseña del administrador de la máquina virtual con el rol de trabajo.
+     a. Escriba el nombre de usuario y la contraseña del administrador de máquinas virtuales con rol de trabajo.
 
-     b. Escriba el nombre de usuario y la contraseña del administrador de la máquina virtual con otros roles.
+     b. Escriba el nombre de usuario y la contraseña del administrador de máquinas virtuales con otros roles.
 
      c. Seleccione **Next** (Siguiente).
 
@@ -187,17 +184,17 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 ## <a name="post-deployment-steps"></a>Pasos posteriores a la implementación
 
 > [!IMPORTANT]
-> Si proporcionó el proveedor de recursos de App Service con una instancia de SQL Always On, DEBE [agregar las bases de datos appservice_hosting y appservice_metering a un grupo de disponibilidad](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database), así como sincronizar dichas bases de datos para evitar la pérdida de servicio en caso de producirse una conmutación por error de base de datos.
+> Si ha proporcionado el proveedor de recursos de App Service con una instancia de SQL Always On, **debe** [agregar las bases de datos appservice_hosting y appservice_metering a un grupo de disponibilidad](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database), así como sincronizar dichas bases de datos para evitar la pérdida de servicio en caso de producirse una conmutación por error de base de datos.
 
-Si va a realizar la implementación en una red virtual existente y a usar una dirección IP interna para conectarse al servidor de archivos, debe agregar una regla de seguridad de salida. Esta regla habilita el tráfico SMB entre la subred de trabajo y el servidor de archivos.  Vaya a WorkersNsg, Grupo de seguridad de red, en el Portal de administración y agregue una regla de seguridad de salida con las siguientes propiedades:
+Si va a realizar la implementación en una red virtual existente y a usar una dirección IP interna para conectarse al servidor de archivos, debe agregar una regla de seguridad de salida. Esta regla habilita el tráfico SMB entre la subred de trabajo y el servidor de archivos. En el portal de administración vaya al grupo de seguridad de red WorkersNsg y agregue una regla de seguridad de salida con las siguientes propiedades:
 
-- Origen: Cualquiera
+- Origen: Any
 - Intervalo de puertos de origen: *
 - Destino: Direcciones IP
 - Intervalo de direcciones IP de destino: Intervalo de direcciones IP del servidor de archivos
 - Intervalo de puertos de destino: 445
 - Protocolo: TCP
-- Acción: PERMITIR
+- Acción: Allow
 - Prioridad: 700
 - Nombre: Outbound_Allow_SMB445
 
@@ -214,9 +211,9 @@ Si va a realizar la implementación en una red virtual existente y a usar una di
 Después de implementar y registrar el proveedor de recursos de App Service, pruébelo para asegurarse de que los usuarios pueden implementar aplicaciones web y de API.
 
 >[!NOTE]
->Debe crear una oferta que tenga el espacio de nombres Microsoft.Web en el plan. También necesita una suscripción de inquilino que se suscriba a la oferta. Para más información, consulte [Create offer](azure-stack-create-offer.md) (Creación de una oferta) y [Create plan](azure-stack-create-plan.md) (Creación de un plan).
+>Debe crear una oferta que tenga el espacio de nombres Microsoft.Web en el plan. También necesita una suscripción de inquilino que se suscriba a la oferta. Para más información, consulte [Creación de una oferta](azure-stack-create-offer.md) y [Creación de un plan](azure-stack-create-plan.md).
 >
->Se *debe* tener una suscripción de inquilino para crear aplicaciones que usen App Service en Azure Stack. Las únicas tareas que un administrador del servicio puede completar en el portal de administración están relacionadas con la administración del proveedor de recursos de App Service. Entre estas tareas se incluyen la adición de capacidad, la configuración de orígenes de implementación y la adición de niveles de trabajo y SKU.
+>*Debe* tener una suscripción de inquilino para crear aplicaciones que usen App Service en Azure Stack. Las únicas tareas que un administrador del servicio puede completar en el portal de administración están relacionadas con la administración del proveedor de recursos de App Service. Entre estas tareas se incluyen la adición de capacidad, la configuración de orígenes de implementación y la adición de niveles de trabajo y SKU.
 >
 >Para crear aplicaciones web, de API y Azure Functions, se debe usar el portal de inquilino y tener una suscripción de inquilino.
 >
@@ -249,15 +246,10 @@ Para crear una aplicación web de prueba, siga estos pasos:
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-También puede probar otros [servicios de Plataforma como servicio (PaaS)](azure-stack-offer-services-overview.md).
+Prepárese para realizar operaciones de administración adicionales para App Service en Azure Stack:
 
-- [Proveedor de recursos de SQL Server](azure-stack-sql-resource-provider-deploy.md)
-- [Proveedor de recursos de MySQL](azure-stack-mysql-resource-provider-deploy.md)
-
-<!--Links-->
-[Azure_Stack_App_Service_preview_installer]: https://go.microsoft.com/fwlink/?LinkID=717531
-[App_Service_Deployment]: https://go.microsoft.com/fwlink/?LinkId=723982
-[AppServiceHelperScripts]: https://go.microsoft.com/fwlink/?LinkId=733525
+- [Planeamiento de capacidad](azure-stack-app-service-capacity-planning.md)
+- [Configuración de orígenes de implementación](azure-stack-app-service-configure-deployment-sources.md)
 
 <!--Image references-->
 [1]: ./media/azure-stack-app-service-deploy/app-service-installer.png

@@ -11,28 +11,28 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/28/2019
+ms.date: 08/29/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 05/28/2019
-ms.openlocfilehash: 95611e776d2517bffaa7a3693362f5d227943bd0
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: 8bc2b996892f8b19fb602fa0d91354b08dcf3cd6
+ms.sourcegitcommit: 701685f0b59e5a3d1a8d39fe477b8df701a51cd2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66269081"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70159649"
 ---
 # <a name="update-azure-app-service-on-azure-stack"></a>Actualización de Azure App Service en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
 > [!IMPORTANT]
-> Aplique la actualización 1904 al sistema integrado de Azure Stack o implemente el kit de desarrollo de Azure Stack más reciente antes de implementar Azure App Service 1.6.
+> Aplique la actualización 1904 al sistema integrado de Azure Stack o implemente el kit de desarrollo de Azure Stack más reciente antes de implementar Azure App Service 1.7.
 
 Siguiendo las instrucciones de este artículo, puede actualizar el [proveedor de recursos de App Service](azure-stack-app-service-overview.md) implementado en un entorno de Azure Stack que esté conectado a Internet.
 
 > [!IMPORTANT]
-> Antes de ejecutar la actualización, asegúrese de que se completó la [implementación de Azure App Service en el proveedor de recursos de Azure Stack](azure-stack-app-service-deploy.md) y de haber leído las [notas de la versión](azure-stack-app-service-release-notes-update-six.md), que acompañan a la versión 1.6, para obtener información sobre nuevas funciones, correcciones y problemas conocidos que podrían afectar a la implementación.
+> Antes de ejecutar la actualización, asegúrese de que se completó la [implementación de Azure App Service en el proveedor de recursos de Azure Stack](azure-stack-app-service-deploy.md) y de haber leído las [notas de la versión](azure-stack-app-service-release-notes-update-seven.md) que acompañan a la versión 1.7, para obtener información sobre nuevas funciones, correcciones y problemas conocidos que podrían afectar a la implementación.
 
 ## <a name="run-the-app-service-resource-provider-installer"></a>Ejecución del instalador del proveedor de recursos de App Service
 
@@ -52,9 +52,9 @@ Durante este proceso, la actualización hará lo siguiente:
 
 Para actualizar la implementación de App Service en Azure Stack, siga estos pasos:
 
-1. Descargue el [instalador de App Service](https://aka.ms/appsvcupdate6installer)
+1. Descargue el [instalador de App Service](https://aka.ms/appsvcupdate7installer).
 
-2. Ejecute appservice.exe como administrador
+2. Ejecute appservice.exe como administrador.
 
     ![Instalador de App Service][1]
 
@@ -102,7 +102,7 @@ Para actualizar la implementación de App Service en Azure Stack, siga estos pas
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-También puede probar otros [servicios de Plataforma como servicio (PaaS)](azure-stack-offer-services-overview.md).
+Preparar las operaciones adicionales de administrador para App Service en Azure Stack
 
-* [Proveedor de recursos de SQL Server](azure-stack-sql-resource-provider-deploy.md)
-* [Proveedor de recursos de MySQL](azure-stack-mysql-resource-provider-deploy.md)
+* [Planear la capacidad adicional](azure-stack-app-service-capacity-planning.md)
+* [Agregar capacidad adicional](azure-stack-app-service-add-worker-roles.md)

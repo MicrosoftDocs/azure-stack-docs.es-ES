@@ -1,5 +1,5 @@
 ---
-title: 'Escalado horizontal de roles de trabajo de App Services: Azure Stack | Microsoft Docs'
+title: Adición de trabajos e infraestructura en App Service en Azure Stack | Microsoft Docs
 description: Instrucciones detalladas de escalado de App Services en Azure Stack
 services: azure-stack
 documentationcenter: ''
@@ -16,31 +16,31 @@ ms.date: 05/06/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 06/08/2018
-ms.openlocfilehash: c7dcb31c74ac08f3045425d246e17376808a5b98
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: 43ee38c18e2831d1cb96958501cee6f77292edd0
+ms.sourcegitcommit: e2f6205e6469b39c2395ee09424bb7632cb94c40
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66269301"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70271683"
 ---
-# <a name="app-service-on-azure-stack-add-more-infrastructure-or-worker-roles"></a>App Service en Azure Stack: Incorporación de más infraestructura o roles de trabajo
+# <a name="add-workers-and-infrastructure-in-app-service-on-azure-stack"></a>Adición de trabajos e infraestructura en App Service en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*  
 
-Este documento proporciona instrucciones acerca de cómo escalar App Service en roles de trabajo y la infraestructura de Azure Stack. Contiene los pasos para crear roles de trabajo adicionales para admitir aplicaciones de cualquier tamaño.
+Este documento proporciona instrucciones acerca de cómo escalar la infraestructura y los roles de trabajo de App Service en Azure Stack. Se incluyen todos los pasos necesarios para crear roles de trabajo adicionales que permitan admitir aplicaciones de cualquier tamaño.
 
 > [!NOTE]
-> Si su entorno de Azure Stack no tiene más de 96 GB de RAM, puede encontrar dificultades al agregar capacidad adicional.
+> Si el entorno de Azure Stack no tiene más de 96 GB de RAM, puede encontrar dificultades al agregar capacidad adicional.
 
-App Service en Azure Stack, de forma predeterminada, es compatible con los niveles de trabajo gratuito y compartido. Para agregar otros niveles de trabajo, debe agregar más roles de trabajo.
+De forma predeterminada, App Service en Azure Stack es compatible con los niveles de trabajo gratuito y compartido. Para agregar otros niveles de trabajo, debe agregar más roles de trabajo.
 
-Si no está seguro de lo que se implementó con la instalación predeterminada de App Service en Azure Stack, en [App Service on Azure Stack overview](azure-stack-app-service-overview.md) (Introducción a App Service en Azure Stack) encontrará más detalles.
+Si no está seguro de qué se implementó con la instalación predeterminada de App Service en Azure Stack, puede revisar la información de [Introducción a App Service en Azure Stack](azure-stack-app-service-overview.md).
 
 Azure App Service en Azure Stack implementa todos los roles mediante conjuntos de escalado de máquinas virtuales y así aprovecha las ventajas de las funcionalidades de escalado de esta carga de trabajo. Por lo tanto, el escalado de los niveles de trabajo se realiza mediante el administrador de App Service.
 
 ## <a name="add-additional-workers-with-powershell"></a>Adición de roles de trabajo adicionales con PowerShell
 
-1. [Configuración del entorno de administración de Azure Stack con PowerShell](azure-stack-powershell-configure-admin.md)
+1. [Configure el entorno de administración de Azure Stack con PowerShell](azure-stack-powershell-configure-admin.md).
 
 2. Use este ejemplo para escalar horizontalmente el conjunto de escalado:
    ```powershell
@@ -73,25 +73,25 @@ Azure App Service en Azure Stack implementa todos los roles mediante conjuntos d
    >
    >
 
-3. Supervise el estado de las nuevas instancias de rol en la administración de App Service; para comprobar el estado de una instancia de rol individual, haga clic en el tipo de rol en la lista.
+3. Supervise el estado de las nuevas instancias de rol en la administración de App Service. Para comprobar el estado de una instancia de rol individual, haga clic en el tipo de rol en la lista.
 
-## <a name="add-additional-workers-using-the-administration-portal"></a>Adición de trabajos adicionales mediante el portal de administración
+## <a name="add-additional-workers-using-the-admin-portal"></a>Adición de trabajos adicionales mediante el portal de administración
 
 1. Inicie sesión en el portal de administración de Azure Stack como administrador de servicios.
 
 2. Vaya a **App Services**.
 
-    ![](media/azure-stack-app-service-add-worker-roles/image01.png)
+    ![Portal de administración de App Service en Azure Stack](media/azure-stack-app-service-add-worker-roles/image01.png)
 
 3. Haga clic en **Roles**. Aquí verá el desglose de los roles de App Service implementados.
 
 4. Haga clic con el botón derecho en la fila del tipo que desea escalar y, a continuación, haga clic en **ScaleSet**.
 
-    ![](media/azure-stack-app-service-add-worker-roles/image02.png)
+    ![ScaleSet de roles de App Service en el portal de administración de Azure Stack](media/azure-stack-app-service-add-worker-roles/image02.png)
 
 5. Haga clic en **Escalado**, seleccione el número de instancias a las que desea escalar y, a continuación, haga clic en **Guardar**.
 
-    ![](media/azure-stack-app-service-add-worker-roles/image03.png)
+    ![Establecimiento de instancias a las que escalar en los roles de App Service del portal de administración de Azure Stack](media/azure-stack-app-service-add-worker-roles/image03.png)
 
 6. App Service en Azure Stack ahora incorporará máquinas virtuales adicionales, las configurará, instalará el software necesario y las marcará como listas cuando finalice el proceso, que puede tardar unos 80 minutos.
 
@@ -99,16 +99,12 @@ Azure App Service en Azure Stack implementa todos los roles mediante conjuntos d
 
 ## <a name="result"></a>Resultado
 
-Cuando estén totalmente implementados y listos, los roles de trabajo estarán disponibles para que los usuarios implementen su carga de trabajo en ellos. A continuación se muestra un ejemplo de los distintos niveles de precios predeterminados disponibles. Si no hay ningún rol de trabajo disponible para un nivel de trabajo concreto, la opción para elegir el nivel de precios correspondiente tampoco lo estará.
+Cuando estén totalmente implementados y listos, los roles de trabajo estarán disponibles para que los usuarios implementen su carga de trabajo en ellos. La siguiente captura de pantalla muestra un ejemplo de los distintos niveles de precios predeterminados disponibles. Si no hay ningún rol de trabajo disponible para un nivel de trabajo concreto, la opción para elegir el nivel de precios correspondiente tampoco lo estará.
 
-![](media/azure-stack-app-service-add-worker-roles/image04.png)
+![Planes de tarifa para el nuevo plan de App Service en el portal de administración de Azure Stack](media/azure-stack-app-service-add-worker-roles/image04.png)
 
 >[!NOTE]
-> Para escalar horizontalmente la adición de los roles de administración, front-end o publicador, debe escalar horizontalmente el tipo de rol correspondiente. 
->
->
-
-Para escalar horizontalmente los roles de administración, front-end o publicador, siga los mismos pasos seleccionando el tipo de rol adecuado. Los controladores no se implementan como conjuntos de escalado y, por tanto, dos deben implementarse en tiempo de instalación para todas las implementaciones de producción.
+> Para escalar horizontalmente los roles de administración, front-end o publicador, siga los mismos pasos seleccionando el tipo de rol adecuado. Los controladores no se implementan como conjuntos de escalado y, por tanto, dos deben implementarse en tiempo de instalación para todas las implementaciones de producción.
 
 ### <a name="next-steps"></a>Pasos siguientes
 

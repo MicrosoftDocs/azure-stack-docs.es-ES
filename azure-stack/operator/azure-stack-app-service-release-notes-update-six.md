@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 06/24/2019
 ms.author: anwestg
 ms.reviewer: ''
-ms.openlocfilehash: db403f68879efa9103e35bb3581801240c0d64d3
-ms.sourcegitcommit: 1545e18a31cd715a12c7ddc3bcb173b41eb41730
+ms.openlocfilehash: c142ecda309f00ee94429be3d7b8f3c6e8072668
+ms.sourcegitcommit: 71d7990a2b21576c44bb2aea13ae2026e9510c55
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67348733"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70188217"
 ---
 # <a name="app-service-on-azure-stack-update-6-release-notes"></a>Notas de la versión de App Service en la actualización 6 de Azure Stack
 
@@ -89,19 +89,19 @@ La actualización 6 de Azure App Service en Azure Stack incluye las siguientes c
 - Los trabajos no pueden llegar al servidor de archivos cuando App Service está implementada en una red virtual existente y el servidor de archivos solo está disponible en la red privada, tal y como se describe en la documentación de implementación de Azure App Service en Azure Stack.
 
 Si decide realizar una implementación en una red virtual existente y en una dirección IP interna para conectarse al servidor de archivos, debe agregar una regla de seguridad de salida. De ese modo, permite que exista tráfico SMB entre la subred del rol de trabajo y el servidor de archivos. Vaya a WorkersNsg en el Portal de administración y agregue una regla de seguridad de salida con las siguientes propiedades:
- * Origen: Cualquiera
+ * Origen: Any
  * Intervalo de puertos de origen: *
  * Destino: Direcciones IP
  * Intervalo de direcciones IP de destino: Intervalo de direcciones IP del servidor de archivos
  * Intervalo de puertos de destino: 445
  * Protocolo: TCP
- * Acción: PERMITIR
+ * Acción: Allow
  * Prioridad: 700
  * Nombre: Outbound_Allow_SMB445
 
 ### <a name="known-issues-for-cloud-admins-operating-azure-app-service-on-azure-stack"></a>Problemas conocidos para los administradores en la nube que trabajan con Azure App Service en Azure Stack
 
-Consulte la documentación de las [notas de la versión de Azure Stack 1904](azure-stack-release-notes-1904.md).
+Consulte la documentación de las [notas de la versión de Azure Stack 1908](azure-stack-release-notes-1908.md).
 
 ### <a name="known-issues-for-tenants-deploying-applications-on-azure-app-service-on-azure-stack"></a>Problemas conocidos de los inquilinos que implementan aplicaciones en Azure App Service en Azure Stack
 

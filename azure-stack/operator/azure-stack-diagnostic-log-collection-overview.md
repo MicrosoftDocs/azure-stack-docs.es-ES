@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/25/2019
+ms.date: 09/04/2019
 ms.author: justinha
 ms.reviewer: prchint
-ms.lastreviewed: 07/25/2019
-ms.openlocfilehash: 17f68039382453312114dff8737072d1515a583d
-ms.sourcegitcommit: b752f4e6733d9ebe56dbd171a14528dcb9a693fd
+ms.lastreviewed: 09/04/2019
+ms.openlocfilehash: 338df8d335376ebbaf14230e62d8dee9f813994f
+ms.sourcegitcommit: e2f6205e6469b39c2395ee09424bb7632cb94c40
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68522006"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70271743"
 ---
 # <a name="overview-of-azure-stack-diagnostic-log-collection"></a>Información general sobre la recopilación de registros de diagnóstico de Azure Stack 
 
@@ -31,7 +31,7 @@ Azure Stack es una gran colección de componentes que funcionan juntos e interac
 
 Antes de la versión 1907, la experiencia de diagnóstico incluía el uso de [Test-AzureStack](azure-stack-diagnostic-test.md) para validar el estado del sistema y el uso del [punto de conexión con privilegios (PEP)](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep) para recopilar los registros para la solución de problemas. 
 
-A partir de la versión 1907, la página **Ayuda y soporte técnico** agrega una experiencia más sencilla mediante la **recopilación de registros de diagnóstico**. 
+A partir de la versión 1907, la página **Ayuda y soporte técnico** agrega una experiencia más sencilla mediante la **recopilación de registros de diagnóstico**. 
 La **recopilación de registros de diagnóstico** es parte de una inversión continuada para mejorar la experiencia del operador de Azure Stack con el proceso de solución de problemas. Con estas mejoras, los operadores pueden recopilar y compartir rápidamente los registros de diagnóstico con los servicios de soporte al cliente (CSS) de Microsoft. Los registros se pueden almacenar en un contenedor de blobs en Azure, donde el acceso se puede personalizar según sea necesario.    
    
 La **recopilación de registros de diagnóstico** puede recopilar registros de diagnóstico de dos maneras diferentes:

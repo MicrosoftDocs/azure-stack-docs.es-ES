@@ -3,7 +3,7 @@ title: Preparar un paquete de actualización de Azure Stack | Microsoft Docs
 description: Obtenga información sobre cómo preparar un paquete de actualización de Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/15/2019
-ms.author: mabrigg
-ms.lastreviewed: 08/15/2019
+ms.date: 09/03/2019
+ms.author: justinha
+ms.lastreviewed: 09/03/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: ab7b764e608ed1fb8008071296d0004f6ef65e7a
-ms.sourcegitcommit: 1c45814696e70ba987dd39ce61d93ea4ef5222ea
+ms.openlocfilehash: 9b58b4911a575ef66c95594b6cb4cd1cc9e27a43
+ms.sourcegitcommit: 314fd74caf356b157583d38d2b8b1dee30408b7d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70029483"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70235001"
 ---
 # <a name="prepare-an-azure-stack-update-package"></a>Preparar un paquete de actualización de Azure Stack
 
@@ -28,14 +28,14 @@ ms.locfileid: "70029483"
 
 Este artículo proporciona una introducción sobre cómo preparar paquetes de actualizaciones de Azure Stack para que se puedan usar para actualizar el entorno de Azure Stack. Este proceso consta de las siguientes secciones:
 
-- [Descargar el paquete de actualización](https://docs.microsoft.com/azure-stack/operator/azure-stack-update-prepare-package#download-the-update-package)
-- [Importar el paquete de actualización en el entorno de Azure Stack a través del portal de administración de Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-update-prepare-package#import-and-install-updates)
+- [Descargar el paquete de actualización](#download-the-update-package)
+- [Importar el paquete de actualización en el entorno de Azure Stack a través del portal de administración de Azure Stack](#import-and-install-updates)
 
-Este proceso se realiza automáticamente para las actualizaciones y revisiones de software de Azure Stack en sistemas con conectividad a Internet a los [puntos de conexión de actualización automática de Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-update-prepare-package#automatic-download-and-preparation-for-update-packages).
+En los sistemas que pueden conectarse a los puntos de conexión de actualización automática, las actualizaciones de software y las revisiones de Azure Stack se descargan y preparan automáticamente. En sistemas sin conectividad y para cualquier actualización del OEM, la actualización debe prepararse tal y como se explica en este tema.  
 
-En la siguiente tabla se muestra cuándo las actualizaciones requieren preparación manual y cuándo se preparan automáticamente:
+En la siguiente tabla se muestra cuándo las actualizaciones requieren preparación manual y cuándo se preparan automáticamente.
 
-| Tipo de actualización | Conectividad del entorno de Azure Stack con los [puntos de conexión de actualización automática de Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-update-prepare-package#automatic-download-and-preparation-for-update-packages) | Acción requerida |
+| Tipo de actualización | Conectividad | Acción requerida |
 | --- | --- | --- |
 | Actualizaciones de software de Azure Stack | Conectado | La actualización se descarga y prepara automáticamente cuando se aplica la actualización. |
 | Revisiones de Azure Stack | Conectado | La actualización se descarga y prepara automáticamente cuando se aplica la actualización. |
@@ -46,6 +46,9 @@ En la siguiente tabla se muestra cuándo las actualizaciones requieren preparaci
 
 ## <a name="download-the-update-package"></a>Descarga del paquete de actualización
 La actualización para las actualizaciones y revisiones de Azure Stack está disponible a través de la hoja de actualización para los sistemas conectados. Tendrá que descargar el paquete y moverlo a una ubicación a la que pueda tener acceso la instancia de Azure Stack si va a actualizar un paquete de OEM, o bien si admite un sistema desconectado. También puede que necesite descargar y después cargar el paquete en una ubicación accesible si ejecuta un sistema con una conexión intermitente.
+
+>[!NOTE]
+>La propia actualización y su contenido (como archivos binarios, scripts de PowerShell, etc.) están firmados con certificados propiedad de Microsoft. Si se manipula el paquete, la firma dejará de ser válida.
 
 Revise el contenido del paquete. Normalmente, un paquete de actualización consta de los siguientes archivos:
 

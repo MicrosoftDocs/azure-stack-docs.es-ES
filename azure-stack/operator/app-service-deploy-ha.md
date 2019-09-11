@@ -16,12 +16,12 @@ ms.date: 03/23/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: 01e359b2fc92abfe2c4903b75fd52687c2246d56
-ms.sourcegitcommit: 58c28c0c4086b4d769e9d8c5a8249a76c0f09e57
+ms.openlocfilehash: e09cc9e5c77379441d7757fa1395941712ecc5ff
+ms.sourcegitcommit: e2f6205e6469b39c2395ee09424bb7632cb94c40
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959549"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70271830"
 ---
 # <a name="deploy-app-service-in-a-highly-available-configuration"></a>Implementación de App Service en una configuración de alta disponibilidad
 
@@ -120,10 +120,10 @@ Para poder ejecutar el instalador de App Service, primero es necesario seguir lo
 > [!TIP]
 > No todos los pasos descritos en dicho [artículo](azure-stack-app-service-before-you-get-started.md) son necesarios, ya que la implementación de la plantilla configura automáticamente las máquinas virtuales de la infraestructura.
 
-- [Descargue los scripts de la aplicación auxiliar y el instalador de App Service](azure-stack-app-service-before-you-get-started.md#download-the-installer-and-helper-scripts).
+- [Descargue los scripts auxiliares y el instalador de App Service](azure-stack-app-service-before-you-get-started.md#download-the-installer-and-helper-scripts).
 - [Descargue la última extensión de script personalizado en el marketplace de Azure Stack](azure-stack-app-service-before-you-get-started.md#syndicate-the-custom-script-extension-from-the-marketplace).
 - [Genere los certificados necesarios](azure-stack-app-service-before-you-get-started.md#get-certificates).
-- Cree la aplicación de identificador según el proveedor de identidades elegido para Azure Stack. Una aplicación de identificador puede crearse para [Azure AD](azure-stack-app-service-before-you-get-started.md#create-an-azure-active-directory-application) o [Servicios de federación de Active Directory (AD FS)](azure-stack-app-service-before-you-get-started.md#create-an-active-directory-federation-services-application) y para registrar el identificador de la aplicación.
+- Cree la aplicación de identificador según el proveedor de identidades elegido para Azure Stack. Una aplicación de identificador puede crearse para [Azure AD](azure-stack-app-service-before-you-get-started.md#create-an-azure-active-directory-app) o [Servicios de federación de Active Directory (AD FS)](azure-stack-app-service-before-you-get-started.md#create-an-active-directory-federation-services-app) y para registrar el identificador de la aplicación.
 - Asegúrese de haber agregado la imagen de Windows Server 2016 Datacenter al Marketplace de Azure Stack. Esta imagen es necesaria para la instalación de App Service.
 
 ### <a name="steps-for-app-service-deployment"></a>Pasos para la implementación de App Service
