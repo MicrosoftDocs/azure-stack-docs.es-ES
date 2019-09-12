@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/15/2019
+ms.date: 09/10/2019
 ms.author: mabrigg
-ms.lastreviewed: 08/15/2019
+ms.lastreviewed: 09/10/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: b8031afd05ba03086cfa748614b58d9b0c5248e9
-ms.sourcegitcommit: b8260ef3e43f3703dd0df16fb752610ec8a86942
+ms.openlocfilehash: 70fe7c8cdb43f55c8e013dcca27dcde870b1cc9a
+ms.sourcegitcommit: dc633e862d49412a963daee481226c1543287e5e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70010308"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70862970"
 ---
 # <a name="azure-stack-servicing-policy"></a>Directiva de mantenimiento de Azure Stack
 

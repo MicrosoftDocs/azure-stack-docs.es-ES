@@ -3,7 +3,7 @@ title: Administrar las actualizaciones en Azure Stack | Microsoft Docs
 description: Aprenda a administrar las actualizaciones en Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: justinha
+author: mattbriggs
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/03/2019
-ms.author: justinha
-ms.lastreviewed: 09/03/2019
+ms.date: 09/10/2019
+ms.author: mabrigg
+ms.lastreviewed: 09/10/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: f34f31ac54881c5911488f5049cc75ffee85bd38
-ms.sourcegitcommit: 314fd74caf356b157583d38d2b8b1dee30408b7d
+ms.openlocfilehash: 2a6165d37aa813c332cd664ef905717ef7a8ffa8
+ms.sourcegitcommit: dc633e862d49412a963daee481226c1543287e5e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70234923"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70862997"
 ---
 # <a name="manage-updates-in-azure-stack-overview"></a>Introducción a la administración de actualizaciones en Azure Stack
 
@@ -67,7 +67,7 @@ El aviso de actualizaciones varía en función de un par de factores, como su co
 
     Aparecerá una alerta de actualización para las actualizaciones y revisiones de software de Microsoft en la hoja Actualización para las instancias de Azure Stack que están conectadas a Internet.
 
-    Si su instancia no está conectada y desea recibir una notificación sobre cada versión de revisión, suscríbase a la fuente [RSS](https://support.microsoft.com/app/content/api/content/feeds/sap/32d322a8-acae-202d-e9a9-7371dccf381b/rss) o [ATOM](https://support.microsoft.com/app/content/api/content/feeds/sap/32d322a8-acae-202d-e9a9-7371dccf381b/atom).
+    Si su instancia no está conectada y desea recibir una notificación sobre cada versión de revisión, suscríbase a la fuente [RSS](https://support.microsoft.com/app/content/api/content/feeds/sap/en-us/32d322a8-acae-202d-e9a9-7371dccf381b/rss) o [ATOM](https://support.microsoft.com/app/content/api/content/feeds/sap/en-us/32d322a8-acae-202d-e9a9-7371dccf381b/atom).
 
 - **Actualizaciones suministradas por el proveedor de hardware de OEM**
 

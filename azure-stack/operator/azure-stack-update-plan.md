@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/23/2019
+ms.date: 09/10/2019
 ms.author: mabrigg
 ms.lastreviewed: 08/23/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: b4f98f61068d6c428dc17c635651ad9aac54f6a8
-ms.sourcegitcommit: b8260ef3e43f3703dd0df16fb752610ec8a86942
+ms.openlocfilehash: 58bfdf49492caf7f8db7f4d2a04de97a17738eac
+ms.sourcegitcommit: dc633e862d49412a963daee481226c1543287e5e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70010326"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70863036"
 ---
 # <a name="plan-for-an-azure-stack-update"></a>Planificar una actualización de Azure Stack
 
