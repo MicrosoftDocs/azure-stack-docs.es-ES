@@ -1,24 +1,24 @@
 ---
 title: Uso de una identidad de aplicación para acceder a recursos
 description: Describe cómo administrar una entidad de servicio que puede usarse con el control de acceso basado en roles para el inicio de sesión y el acceso a los recursos.
-services: azure-resource-manager
+services: azure-stack
 documentationcenter: na
 author: BryanLa
 manager: femila
-ms.service: azure-resource-manager
+ms.service: azure-stack
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 06/25/2019
+ms.date: 09/09/2019
 ms.author: bryanla
 ms.lastreviewed: 06/20/2019
-ms.openlocfilehash: 8c27948185df5f98926a3500db0981a1ccddc321
-ms.sourcegitcommit: c9d11be7d27c73797bdf279d4fcabb7a22451541
+ms.openlocfilehash: 6855ca4d6453c152bc46584248865bb1934419ca
+ms.sourcegitcommit: 305536bfd49319455ca3ca270fe3644b1796bad1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67397310"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70876573"
 ---
 # <a name="use-an-app-identity-to-access-resources"></a>Uso de una identidad de aplicación para acceder a recursos
 
@@ -80,9 +80,9 @@ Los scripts se deben ejecutar en una consola de PowerShell con privilegios eleva
 
 Al crear un certificado para una credencial de entidad de servicio, deben cumplirse los siguientes requisitos:
 
- - El proveedor de servicios criptográficos (CSP) debe ser un proveedor de claves heredado.
+ - Para producción, el certificado se debe emitir desde una entidad de certificación interna o pública. Si se usa una entidad de certificación pública, es preciso incluirla en la imagen del sistema operativo base como parte del programa de entidades de certificación raíz de confianza de Microsoft (Microsoft Trusted Root Certificate Program). Puede ver la lista completa en el artículo [Microsoft Trusted Root Certificate Program: Participants](https://gallery.technet.microsoft.com/Trusted-Root-Certificate-123665ca) (Programa de entidades de certificación raíz de confianza de Microsoft: Participantes). Más adelante, durante la [actualización de la credencial de certificado de una entidad de servicio](#update-a-service-principals-certificate-credential), se mostrará un ejemplo de creación de un certificado de prueba autofirmado. 
+ - El proveedor de servicios criptográficos debe especificarse como un proveedor de claves del proveedor de servicios criptográficos (CSP) heredado de Microsoft.
  - El certificado debe estar en formato PFX, ya que se requieren claves públicas y privadas. Los servidores de Windows utilizan archivos .pfx que contienen el archivo de claves públicas (archivo de certificado SSL) y el archivo de claves privadas asociado.
- - Para producción, el certificado se debe emitir desde una entidad de certificación interna o pública. Si se usa una entidad de certificación pública, es preciso incluirla en la imagen del sistema operativo base como parte del programa de entidades de certificación raíz de confianza de Microsoft (Microsoft Trusted Root Certificate Program). Puede ver la lista completa en el artículo [Microsoft Trusted Root Certificate Program: Participants](https://gallery.technet.microsoft.com/Trusted-Root-Certificate-123665ca) (Programa de entidades de certificación raíz de confianza de Microsoft: Participantes).
  - La infraestructura de Azure Stack debe tener acceso de red a la ubicación de la lista de revocación de certificados (CRL) de la entidad de certificación publicada en el certificado. Esta lista de revocación de certificados debe ser un punto de conexión de HTTP.
 
 Cuando tenga un certificado, use el siguiente script de PowerShell para registrar la aplicación y crear una entidad de servicio. También debe usar la entidad de servicio para iniciar sesión en Azure. Sustituya sus propios valores por los marcadores de posición siguientes:

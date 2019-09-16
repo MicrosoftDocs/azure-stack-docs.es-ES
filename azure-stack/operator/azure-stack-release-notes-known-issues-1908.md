@@ -17,12 +17,12 @@ ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 08/30/2019
 monikerRange: azs-1908
-ms.openlocfilehash: 317f53eb5b50fc415fc7a65e044eca7948a54e58
-ms.sourcegitcommit: 314fd74caf356b157583d38d2b8b1dee30408b7d
+ms.openlocfilehash: 86d8cea0164a9181f444066181945358122c831b
+ms.sourcegitcommit: dc633e862d49412a963daee481226c1543287e5e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70234958"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70862978"
 ---
 # <a name="azure-stack-1908-known-issues"></a>Problemas conocidos de Azure Stack 1908
 
@@ -34,7 +34,7 @@ En este artículo se enumeran los problemas conocidos de la versión 1908 de Az
 ## <a name="update-process"></a>Proceso de actualización
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: Al intentar instalar la actualización 1907 de Azure Stack, es posible que se produzca un error en el estado de esa actualización y dicho estado cambie a **PreparationFailed**. La causa es que el proveedor de recursos de actualización (URP) no se puede transferir correctamente desde el contenedor de almacenamiento a un recurso compartido de infraestructura interno para su procesamiento.
+- Causa: Al intentar instalar la actualización de Azure Stack, es posible que se produzca un error en el estado de esa actualización y dicho estado cambie a **PreparationFailed**. La causa es que el proveedor de recursos de actualización (URP) no se puede transferir correctamente desde el contenedor de almacenamiento a un recurso compartido de infraestructura interno para su procesamiento.
 - Corrección: A partir de la versión 1901 (1.1901.0.95), para solucionar este problema, puede hacer clic en **Actualizar ahora** de nuevo (en lugar de en **Reanudar**). A continuación, URP limpia los archivos del intento anterior y vuelve a iniciar la descarga. Si el problema persiste, recomendamos cargar manualmente la actualización siguiendo la [sección de instalación de actualizaciones](azure-stack-apply-updates.md#install-updates-and-monitor-progress).
 - Repetición: Común
 
@@ -99,7 +99,7 @@ En este artículo se enumeran los problemas conocidos de la versión 1908 de Az
 
 #### <a name="local-network-gateway-deletion"></a>Eliminación de una puerta de enlace de red local
 
-- Aplicable a: Este problema se aplica a la versión 1906.
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: en el portal del usuario, al eliminar la **puerta de enlace de red local** aparece el mensaje de error siguiente: **No se puede eliminar una puerta de enlace de red local con una conexión activa**, incluso si no hay ninguna conexión activa.
 - Mitigación: la corrección de este problema se lanzó en la actualización 1907. Una solución alternativa para este problema es crear una puerta de enlace de red local nueva con la misma dirección IP, el mismo espacio de direcciones y los mismos detalles de configuración con otro nombre. El anterior LNG se puede eliminar una vez que el entorno se actualice a 1907.
 - Repetición: Común
@@ -159,21 +159,21 @@ En este artículo se enumeran los problemas conocidos de la versión 1908 de Az
 
 ### <a name="virtual-machine-scale-set-reset-password-does-not-work"></a>La contraseña de restablecimiento del conjunto de escalado de máquinas virtuales no funciona
 
-- Aplicable a: Este problema se aplica a las versiones 1906 y 1907.
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: Aparece una nueva hoja para restablecer la contraseña en la interfaz de usuario del conjunto de escalado, pero Azure Stack todavía no admite el restablecimiento de contraseña en un conjunto de escalado.
 - Corrección: Ninguno.
 - Repetición: Común
 
 ### <a name="rainy-cloud-on-scale-set-diagnostics"></a>Nube con lluvia en el diagnóstico del conjunto de escalado
 
-- Aplicable a: Este problema se aplica a las versiones 1906 y 1907.
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: La página de información general del conjunto de escalado de máquinas virtuales muestra un gráfico vacío. Al hacer clic en el gráfico vacío, se abre una hoja de "nube de lluvia". Este es el gráfico de información de diagnóstico del conjunto de escalado, como el porcentaje de CPU, y no es una característica admitida en la compilación actual de Azure Stack.
 - Corrección: Ninguno.
 - Repetición: Común
 
 ### <a name="virtual-machine-diagnostic-settings-blade"></a>Hoja de configuración de diagnóstico de la máquina virtual
 
-- Aplicable a: Este problema se aplica a las versiones 1906 y 1907.    
+- Aplicable a: este problema se aplica a todas las versiones admitidas.    
 - Causa: La hoja de configuración de diagnóstico de la máquina virtual tiene una pestaña **Receptor**, que solicita una **Cuenta de Application Insights**. Este es el resultado de una nueva hoja y aún no se admite en Azure Stack.
 - Corrección: Ninguno.
 - Repetición: Común

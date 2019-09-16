@@ -1,6 +1,6 @@
 ---
-title: Notas de la versión de la actualización 3 de App Service en Azure Stack | Microsoft Docs
-description: Conozca el contenido de la actualización 3 de App Service en Azure Stack, los problemas conocidos y dónde descargar la actualización.
+title: Notas de la versión de la actualización 3 de App Service en Azure Stack | Microsoft Docs
+description: Obtenga información sobre las mejoras, las correcciones y los problemas conocidos de la actualización 3 para App Service en Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: bryanla
@@ -16,33 +16,31 @@ ms.date: 03/25/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 08/20/2018
-ms.openlocfilehash: 4397fbbc570972fb7a041f583d81115e28fe70ce
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: 88255a15a204f5dcb18dd83f9763e8297a1af51c
+ms.sourcegitcommit: 7d7a4c8c46613b6104caf23763bfd2275f6a826b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66269105"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70808247"
 ---
-# <a name="app-service-on-azure-stack-update-3-release-notes"></a>Notas de la versión de la actualización 3 de App Service en Azure Stack
+# <a name="app-service-on-azure-stack-update-3-release-notes"></a>Notas de la versión de la actualización 3 de App Service en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Estas notas de la versión describen las mejoras y correcciones de la actualización 3 de Azure App Service en Azure Stack y los problemas conocidos. Los problemas conocidos se dividen en aquellos que están relacionados directamente con el proceso de actualización y aquellos que están relacionados con la compilación (posteriores a la instalación).
+Estas notas de la versión describen las mejoras, las correcciones y los problemas conocidos de la actualización 3 de Azure App Service en Azure Stack. Los problemas conocidos se dividen tres secciones: los problemas directamente relacionados con la implementación, los problemas relacionados con el proceso de actualización y los problemas relacionados con la compilación (posteriores a la instalación).
 
 > [!IMPORTANT]
 > Aplique la actualización 1807 al sistema integrado de Azure Stack o implemente el Kit de desarrollo de Azure Stack más reciente antes de implementar Azure App Service 1.3.
->
->
 
 ## <a name="build-reference"></a>Referencia de compilación
 
-El número de compilación de la actualización 3 de App Service en Azure Stack es **74.0.13698.31**
+El número de compilación de la actualización 3 de App Service en Azure Stack es **74.0.13698.31**.
 
 ### <a name="prerequisites"></a>Requisitos previos
 
-Remítase a la [documentación de introducción](azure-stack-app-service-before-you-get-started.md) antes de comenzar la implementación.
+Consulte [Requisitos previos para implementar App Service en Azure Stack](azure-stack-app-service-before-you-get-started.md) antes de comenzar la implementación.
 
-Antes de comenzar la actualización de Azure App Service en Azure Stack a la versión 1.3, asegúrese de que todos los roles están listos en la administración de Azure App Service en el Portal de administración de Azure Stack
+Antes de comenzar la actualización de Azure App Service en Azure Stack a la versión 1.3, asegúrese de que todos los roles están listos en la administración de Azure App Service en el portal de administración de Azure Stack.
 
 ![Estado de los roles de App Service](media/azure-stack-app-service-release-notes-update-three/image01.png)
 
@@ -50,11 +48,11 @@ Antes de comenzar la actualización de Azure App Service en Azure Stack a la ver
 
 La actualización 3 de Azure App Service en Azure Stack incluye las siguientes correcciones y mejoras:
 
-- Compatibilidad con el uso de SQL Server Always On para las bases de datos del proveedor de recursos de Azure App Service.
+- Compatibilidad con el uso de Always On de SQL Server para las bases de datos del proveedor de recursos de Azure App Service.
 
 - Se ha agregado un nuevo parámetro de entorno al script auxiliar Create-AADIdentityApp para ayudar a establecer como destino distintas regiones de AAD.
 
-- Actualizaciones de las **herramientas de Kudu, los portales de Functions, Admin e inquilino de App Service**. Es coherente con la versión del SDK de Azure Stack Portal.
+- Actualizaciones de las **herramientas de Kudu, los portales de Functions, Admin e inquilino de App Service**. Es coherente con la versión del SDK del portal de Azure Stack.
 
 - Actualiza el **entorno de ejecución de Azure Functions** a **v1.0.11820**.
 
@@ -80,10 +78,10 @@ La actualización 3 de Azure App Service en Azure Stack incluye las siguientes c
 
 ### <a name="post-update-steps-optional"></a>Pasos posteriores a la actualización (opcional)
 
-Para los clientes que deseen migrar a una base de datos independiente para las implementaciones de Azure App Service en Azure Stack existentes, ejecute estos pasos una vez completada la actualización 1.3 de Azure App Service en Azure Stack:
+Para los clientes que quieran migrar a una base de datos independiente para las implementaciones de Azure App Service en Azure Stack existentes, ejecute estos pasos una vez completada la actualización 1.3 de Azure App Service en Azure Stack:
 
 > [!IMPORTANT]
-> Este procedimiento tarda aproximadamente entre 5 y 10 minutos.  Este procedimiento implica la eliminación de las sesiones de inicio de sesión de base de datos existentes.  Planee el tiempo de inactividad para migrar y validar Azure App Service en Azure Stack después de la migración.
+> Este procedimiento tarda aproximadamente entre 5 y 10 minutos. Este procedimiento implica la eliminación de las sesiones de inicio de sesión de base de datos existentes. Planee el tiempo de inactividad para migrar y validar Azure App Service en Azure Stack después de la migración.
 >
 >
 
@@ -98,7 +96,7 @@ Para los clientes que deseen migrar a una base de datos independiente para las i
             GO
     ```
 
-1. Convierta una base de datos a parcialmente independiente.  Este paso incurrirá en un tiempo de inactividad, ya que se deben eliminar todas las sesiones activas.
+1. Convierta una base de datos a parcialmente independiente. Este paso incurrirá en un tiempo de inactividad, ya que se deben eliminar todas las sesiones activas.
 
     ```sql
         /******** [appservice_metering] Migration Start********/
@@ -140,7 +138,7 @@ Para los clientes que deseen migrar a una base de datos independiente para las i
             /********[appservice_hosting] Migration End********/
     '''
 
-1. Migrate Logins to Contained Database Users
+1. Migrate logins to contained database users.
 
     ```sql
         IF EXISTS(SELECT * FROM sys.databases WHERE Name=DB_NAME() AND containment = 1)
@@ -169,9 +167,9 @@ Para los clientes que deseen migrar a una base de datos independiente para las i
         GO
     ```
 
-Validación
+**Validación**
 
-1. Compruebe si SQL Server tiene la independencia habilitada.
+1. Compruebe si SQL Server tiene la independencia habilitada.
 
     ```sql
         sp_configure  @configname='contained database authentication'
@@ -184,24 +182,25 @@ Validación
 
 ### <a name="known-issues-post-installation"></a>Problemas conocidos (posteriores a la instalación)
 
-- Los trabajos no pueden llegar al servidor de archivos cuando App Service está implementada en una red virtual existente y el servidor de archivos solo está disponible en la red privada.  Esto también se indica en la documentación de implementación de Azure App Service en Azure Stack.
+- Los trabajos no pueden llegar al servidor de archivos cuando App Service está implementada en una red virtual existente y el servidor de archivos solo está disponible en la red privada. Esto también se indica en la documentación de implementación de Azure App Service en Azure Stack.
 
-Si decide realizar una implementación en una red virtual existente y en una dirección IP interna para conectarse al servidor de archivos, debe agregar una regla de seguridad de salida. De ese modo, permite que exista tráfico SMB entre la subred del rol de trabajo y el servidor de archivos. Para ello, vaya a WorkersNsg en el Portal de administración y agregue una regla de seguridad de salida con las siguientes propiedades:
- * Origen: Cualquiera
+Si decide realizar una implementación en una red virtual existente y en una dirección IP interna para conectarse al servidor de archivos, debe agregar una regla de seguridad de salida. De ese modo, permite que exista tráfico SMB entre la subred del rol de trabajo y el servidor de archivos. Vaya a WorkersNsg en el portal de administración y agregue una regla de seguridad de salida con las siguientes propiedades:
+
+ * Origen: Any
  * Intervalo de puertos de origen: *
  * Destino: Direcciones IP
  * Intervalo de direcciones IP de destino: Intervalo de direcciones IP del servidor de archivos
  * Intervalo de puertos de destino: 445
  * Protocolo: TCP
- * Acción: PERMITIR
+ * Acción: Allow
  * Prioridad: 700
  * Nombre: Outbound_Allow_SMB445
 
 ### <a name="known-issues-for-cloud-admins-operating-azure-app-service-on-azure-stack"></a>Problemas conocidos para los administradores en la nube que trabajan con Azure App Service en Azure Stack
 
-Consulte la documentación de las notas de la versión de Azure Stack 1807.
+Consulte la documentación de las notas de la versión de Azure Stack 1807.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
 - Para obtener información general de Azure App Service, consulte la [Información general de Azure App Service en Azure Stack](azure-stack-app-service-overview.md).
-- Para obtener más información acerca de cómo prepararse para implementar App Service en Azure Stack, consulte [Antes de empezar a trabajar con App Service en Azure Stack](azure-stack-app-service-before-you-get-started.md).
+- Para más información acerca de cómo prepararse para implementar App Service en Azure Stack, consulte [Requisitos previos para implementar App Service en Azure Stack](azure-stack-app-service-before-you-get-started.md).

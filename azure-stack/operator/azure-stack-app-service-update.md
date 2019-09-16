@@ -1,6 +1,6 @@
 ---
 title: Actualización de Azure App Service en Azure Stack | Microsoft Docs
-description: Guía detallada para actualizar Azure App Service en Azure Stack
+description: Obtenga información sobre cómo actualizar Azure App Service en Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: BryanLa
@@ -15,24 +15,24 @@ ms.date: 08/29/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 05/28/2019
-ms.openlocfilehash: 8bc2b996892f8b19fb602fa0d91354b08dcf3cd6
-ms.sourcegitcommit: 701685f0b59e5a3d1a8d39fe477b8df701a51cd2
+ms.openlocfilehash: 768a6270021d6a87be3d2d28508288836ffadd29
+ms.sourcegitcommit: 7d7a4c8c46613b6104caf23763bfd2275f6a826b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70159649"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70808259"
 ---
 # <a name="update-azure-app-service-on-azure-stack"></a>Actualización de Azure App Service en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
 > [!IMPORTANT]
-> Aplique la actualización 1904 al sistema integrado de Azure Stack o implemente el kit de desarrollo de Azure Stack más reciente antes de implementar Azure App Service 1.7.
+> Aplique la actualización 1904 al sistema integrado de Azure Stack o implemente el Kit de desarrollo de Azure Stack más reciente antes de implementar Azure App Service 1.7.
 
-Siguiendo las instrucciones de este artículo, puede actualizar el [proveedor de recursos de App Service](azure-stack-app-service-overview.md) implementado en un entorno de Azure Stack que esté conectado a Internet.
+En este artículo, se le mostrará cómo actualizar el [proveedor de recursos de App Service](azure-stack-app-service-overview.md) implementado en un entorno de Azure Stack conectado a Internet.
 
 > [!IMPORTANT]
-> Antes de ejecutar la actualización, asegúrese de que se completó la [implementación de Azure App Service en el proveedor de recursos de Azure Stack](azure-stack-app-service-deploy.md) y de haber leído las [notas de la versión](azure-stack-app-service-release-notes-update-seven.md) que acompañan a la versión 1.7, para obtener información sobre nuevas funciones, correcciones y problemas conocidos que podrían afectar a la implementación.
+> Antes de ejecutar la actualización, asegúrese de que ya ha completado la [implementación de Azure App Service en Azure Stack](azure-stack-app-service-deploy.md). Debe leer también las [notas de la versión](azure-stack-app-service-release-notes-update-seven.md) que acompañan a la versión 1.7 para obtener información sobre las nuevas funciones, las correcciones y los problemas conocidos que podrían afectar a la implementación.
 
 ## <a name="run-the-app-service-resource-provider-installer"></a>Ejecución del instalador del proveedor de recursos de App Service
 
@@ -46,9 +46,7 @@ Durante este proceso, la actualización hará lo siguiente:
 * Actualizar el manifiesto del proveedor de recursos de App Service
 
 > [!IMPORTANT]
-> El instalador de App Service se debe ejecutar en un equipo que pueda alcanzar el punto de conexión del administrador de Azure Resource Manager de Azure Stack.
->
->
+> El instalador de App Service se debe ejecutar en un equipo que pueda alcanzar el punto de conexión de Azure Resource Manager del administrador de Azure Stack.
 
 Para actualizar la implementación de App Service en Azure Stack, siga estos pasos:
 
@@ -64,7 +62,7 @@ Para actualizar la implementación de App Service en Azure Stack, siga estos pas
 
 5. Revise y acepte los términos de licencia de terceros y haga clic en **Siguiente**.
 
-6. Asegúrese de que la información del punto de conexión de Azure Resource Manager de Azure Stack y el inquilino de Active Directory son correctos. Si usó la configuración predeterminada durante la implementación del Kit de desarrollo de Azure Stack, puede aceptar los valores predeterminados aquí. Sin embargo, si personalizó las opciones al implementar Azure Stack, debe editar los valores en esta ventana. Por ejemplo, si se usa el sufijo de dominio *mycloud.com*, el punto de conexión de Azure Resource Manager de Azure Stack debe cambiarse a *management.region.mycloud.com*. Después de confirmar su información, haga clic en **Siguiente**.
+6. Asegúrese de que la información del punto de conexión de Azure Resource Manager de Azure Stack y del inquilino de Active Directory es correcta. Si ha usado la configuración predeterminada durante la implementación del ASDK, puede aceptar los valores predeterminados. Sin embargo, si personalizó las opciones al implementar Azure Stack, debe editar los valores en esta ventana. Por ejemplo, si se usa el sufijo de dominio *mycloud.com*, el punto de conexión de Azure Resource Manager de Azure Stack debe cambiarse a *management.region.mycloud.com*. Después de confirmar la información, haga clic en **Siguiente**.
 
     ![Información de la nube de Azure Stack][2]
 
@@ -74,8 +72,8 @@ Para actualizar la implementación de App Service en Azure Stack, siga estos pas
         * Si se usa Azure Active Directory (Azure AD), escriba la cuenta de administrador y la contraseña de Azure AD que proporcionó al implementar Azure Stack. Haga clic en **Iniciar sesión**.
         * Si se usan los Servicios de federación de Active Directory (AD FS), debe proporcionar la cuenta de administrador. Por ejemplo, *cloudadmin\@azurestack.local*. Escriba la contraseña y haga clic en **Iniciar sesión**.
    2. En el cuadro **Azure Stack Subscriptions** (Suscripciones de Azure Stack), seleccione **Default Provider Subscription** (Suscripción de proveedor predeterminada).
-   3. En el cuadro **Azure Stack Locations** (Ubicaciones de Azure Stack), seleccione la ubicación que corresponda a la región en la que se va a implementar. Por ejemplo, seleccione **local** si va a implementar con el Kit de desarrollo de Azure Stack.
-   4. Si se detecta una implementación existente de App Service, la cuenta de almacenamiento y el grupo de recursos se rellenan y quedan atenuados.
+   3. En el cuadro **Azure Stack Locations** (Ubicaciones de Azure Stack), seleccione la ubicación que corresponda a la región en la que se va a implementar. Por ejemplo, seleccione **local** si va a realizar la implementación en el ASDK.
+   4. Si se detecta una implementación existente de App Service, la cuenta de almacenamiento y el grupo de recursos se rellenan y quedan no disponibles.
    5. Haga clic en **Siguiente** para revisar el resumen de la actualización.
 
       ![Instalación de App Service detectada][3]
@@ -102,7 +100,7 @@ Para actualizar la implementación de App Service en Azure Stack, siga estos pas
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Preparar las operaciones adicionales de administrador para App Service en Azure Stack
+Prepárese para realizar operaciones de administración adicionales para App Service en Azure Stack:
 
 * [Planear la capacidad adicional](azure-stack-app-service-capacity-planning.md)
 * [Agregar capacidad adicional](azure-stack-app-service-add-worker-roles.md)

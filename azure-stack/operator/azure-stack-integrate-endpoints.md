@@ -6,16 +6,16 @@ author: mattbriggs
 manager: femila
 ms.service: azure-stack
 ms.topic: article
-ms.date: 08/30/2019
+ms.date: 09/09/2019
 ms.author: justinha
 ms.reviewer: wamota
-ms.lastreviewed: 08/30/2019
-ms.openlocfilehash: 7b8bae02fdb3f85b856f6ccdb9d90155e6bde768
-ms.sourcegitcommit: 71d7990a2b21576c44bb2aea13ae2026e9510c55
+ms.lastreviewed: 09/09/2019
+ms.openlocfilehash: 9333cfde7985977607f7108fd90b62e376fa9462
+ms.sourcegitcommit: dc633e862d49412a963daee481226c1543287e5e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70188360"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70862998"
 ---
 # <a name="azure-stack-datacenter-integration---publish-azure-stack-services"></a>Integración del centro de datos de Azure Stack: publicación de servicios de Azure Stack
 
@@ -72,7 +72,7 @@ Con la adición del [host de extensiones](azure-stack-extension-host-prepare.md)
 Azure Stack solo admite servidores proxy transparentes. En una implementación en la que un proxy transparente establece un vínculo superior a un servidor proxy tradicional, debe permitir los siguientes puertos y direcciones URL para la comunicación saliente.
 
 > [!Note]  
-> Azure Stack no admite el uso de Express Route para obtener acceso a los servicios de Azure que se muestran en esta tabla.
+> Azure Stack no admite el uso de ExpressRoute para acceder a los servicios de Azure que se enumeran en la tabla siguiente porque ExpressRoute no puede enrutar el tráfico a todos los puntos de conexión.
 
 |Propósito|Dirección URL de destino|Protocolo|Puertos|Red de origen|
 |---------|---------|---------|---------|---------|
@@ -95,7 +95,7 @@ Azure Stack solo admite servidores proxy transparentes. En una implementación e
 
 Las direcciones URL de salida tienen equilibrio de carga mediante Azure Traffic Manager para proporcionar la mejor conectividad posible basada en la ubicación geográfica. Con URL con equilibrio de carga, Microsoft puede actualizar y cambiar los puntos de conexión de back-end sin que ello afecte a los usuarios. Microsoft no comparte la lista de direcciones IP para las URL con equilibrio de carga. Debe usar un dispositivo que admita el filtrado por dirección URL, en lugar de por dirección IP.
 
-El DNS de salida se necesita en todo momento, lo que varía es el origen que consulta el DNS externo y el tipo de integración de identidad que se ha elegido. Si este es un escenario conectado, durante la implementación de DVM que se encuentra en la red BMC, necesita ese acceso de salida, pero después de la implementación el servicio DNS se mueve a un componente interno que enviará las consultas a través de una IP virtual pública. En ese momento, se puede quitar el acceso DNS de salida a través de la red BMC, pero el acceso de la IP virtual pública a ese servidor DNS debe permanecer o, de lo contrario, la autenticación producirá un error.
+El DNS de salida se necesita en todo momento, lo que varía es el origen que consulta el DNS externo y el tipo de integración de identidad que se ha elegido. Durante la implementación de un escenario conectado, el DVM que se encuentra en la red de BMC necesita acceso de salida. Pero después de la implementación, el servicio DNS se traslada a un componente interno que enviará las consultas a través de una dirección IP virtual pública. En ese momento, se puede quitar el acceso DNS de salida a través de la red BMC, pero el acceso de la IP virtual pública a ese servidor DNS debe permanecer o, de lo contrario, la autenticación producirá un error.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

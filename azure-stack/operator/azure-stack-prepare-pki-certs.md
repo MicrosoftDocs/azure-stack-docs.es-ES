@@ -3,7 +3,7 @@ title: Preparación de certificados de infraestructura de clave pública de Azur
 description: Describe cómo preparar los certificados PKI de Azure Stack para sus sistemas integrados.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/16/2019
-ms.author: mabrigg
+ms.date: 09/10/2019
+ms.author: justinha
 ms.reviewer: ppacent
-ms.lastreviewed: 01/30/2019
-ms.openlocfilehash: 682a5ce693bd9f184fd73a322ab9ed29c2d90fae
-ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
+ms.lastreviewed: 09/10/2019
+ms.openlocfilehash: 6b7d7a3e70d78b8ab943224babc515395319914e
+ms.sourcegitcommit: 38f21e0bcf7b593242ad615c9d8ef8a1ac19c734
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782499"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70902728"
 ---
 # <a name="prepare-azure-stack-pki-certificates-for-use-in-deployment-or-rotation"></a>Preparación de certificados PKI de Azure Stack para la implementación o rotación
 
@@ -28,7 +28,8 @@ Los archivos de certificado [obtenidos de la entidad de certificación que eligi
 
 ## <a name="prepare-certificates-for-deployment"></a>Preparación de los certificados para la implementación
 
-Siga estos pasos para preparar y validar los certificados PKI de Azure Stack que se usarán para implementar un nuevo entorno de Azure Stack o para rotar los secretos en un entorno existente de Azure Stack: 
+Siga estos pasos para preparar y validar los certificados PKI de Azure Stack que se usarán para implementar un nuevo entorno de Azure Stack o para rotar los secretos en un entorno existente de Azure Stack. 
+
 
 ### <a name="import-the-certificate"></a>Importación del certificado
 
@@ -51,6 +52,9 @@ Siga estos pasos para preparar y validar los certificados PKI de Azure Stack que
    ![Marcar clave como exportable](./media/prepare-pki-certs/2.png)
 
 1. Haga clic en Finalizar para completar la importación.
+
+> [!NOTE]
+> Después de importar un certificado para Azure Stack, la clave privada del certificado se almacena como un archivo PKCS 12 (.pfx) en el almacenamiento de clúster.
 
 ### <a name="export-the-certificate"></a>Exportación de certificados
 
@@ -77,7 +81,7 @@ Abra la consola MMC del administrador de certificados y conéctese al almacén d
 
 1. En la sección Formato de archivo de exportación:
     
-   - Seleccione **Incluir todos los certificados en la ruta de certificación (si es posible)**.  
+   - Seleccione **Incluir todos los certificados en la ruta de certificación (si es posible)** .  
    - Seleccione **Exportar todas las propiedades extendidas**.  
    - Seleccione **Habilitar privacidad de certificado**.  
    - Haga clic en **Next**.  

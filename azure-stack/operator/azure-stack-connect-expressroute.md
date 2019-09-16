@@ -14,12 +14,12 @@ ms.date: 06/22/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 10/22/2018
-ms.openlocfilehash: 04c793ceebf167220b74dfc40a7e4fc775723e93
-ms.sourcegitcommit: 3f52cf06fb5b3208057cfdc07616cd76f11cdb38
+ms.openlocfilehash: 2ddc95097539eb1a7b15fdfc1fd2faf2c71f9ced
+ms.sourcegitcommit: a8379358f11db1e1097709817d21ded0231503eb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67316259"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70377297"
 ---
 # <a name="connect-azure-stack-to-azure-using-azure-expressroute"></a>Conexión de Azure Stack a Azure mediante Azure ExpressRoute
 
@@ -179,7 +179,7 @@ Después de crear la puerta de enlace de red virtual, puede obtener la direcció
 1. En **Virtual network gateway** (Puerta de enlace de red virtual), seleccione **Overview** (Información general) de la lista de recursos. Como alternativa, puede seleccionar **Properties** (Propiedades).
 1. La dirección IP en que debe fijarse se muestra en **Public IP address** (Dirección IP pública). En la configuración de ejemplo, esta dirección es 192.68.102.1.
 
-#### <a name="create-a-virtual-machine"></a>de una máquina virtual
+#### <a name="create-a-virtual-machine"></a>Creación de una máquina virtual
 
 Para comprobar el tráfico de datos a través de la conexión VPN, necesita máquinas virtuales para enviar y recibir datos en la red virtual de Azure Stack. Cree una máquina virtual e impleméntela en la subred de máquina virtual de la red virtual.
 
@@ -221,22 +221,15 @@ Si va a usar el inquilino 2 como ejemplo, no olvide cambiar las direcciones IP p
 
 El Kit de desarrollo de Azure Stack está autocontenido y aislado de la red en la que se implementa el host físico. La red IP virtual a la que están conectadas las puertas de enlace no es externa, está oculta detrás de un enrutador que realiza la traducción de direcciones de red (NAT).
 
-El enrutador es una máquina virtual de Windows Server (AzS-BGPNAT01) que ejecuta el rol de enrutamiento y servicios de acceso remoto (RRAS). Para permitir la conexión VPN de sitio a sitio en ambos extremos, es necesario configurar NAT en la máquina virtual AzS-BGPNAT01.
+El enrutador es un host de ASDK que ejecuta el rol de enrutamiento y servicios de acceso remoto (RRAS). Para permitir la conexión VPN de sitio a sitio en ambos extremos, es necesario configurar NAT en el host de ASDK.
 
 #### <a name="configure-the-nat"></a>Configuración de la NAT
 
 1. Inicie sesión en el equipo host de Azure Stack con su cuenta de administrador.
-1. Copie y edite el siguiente script de PowerShell. Reemplace `your administrator password` por su contraseña de administrador y, a continuación, ejecute el script en una instancia de PowerShell ISE con privilegios elevados. Este script devuelve la **dirección de BGPNAT externa**.
+1. Ejecute el script en un ISE de PowerShell con privilegios elevados. Este script devuelve la **dirección de BGPNAT externa**.
 
    ```powershell
-   cd \AzureStack-Tools-master\connect
-   Import-Module .\AzureStack.Connect.psm1
-   $Password = ConvertTo-SecureString "your administrator password" `
-    -AsPlainText `
-    -Force
-   Get-AzureStackNatServerAddress `
-    -HostComputer "azs-bgpnat01" `
-    -Password $Password
+   Get-NetNatExternalAddress
    ```
 
 1. Para configurar NAT, copie y edite el siguiente script de PowerShell. Edite el script para reemplazar `External BGPNAT address` y `Internal IP address` por los valores de ejemplo siguientes:
@@ -251,40 +244,32 @@ El enrutador es una máquina virtual de Windows Server (AzS-BGPNAT01) que ejecut
    $IntBgpNat = 'Internal IP address'
 
    # Designate the external NAT address for the ports that use the IKE authentication.
-   Invoke-Command `
-    -ComputerName azs-bgpnat01 `
-     {Add-NetNatExternalAddress `
+   Add-NetNatExternalAddress `
       -NatName BGPNAT `
       -IPAddress $Using:ExtBgpNat `
       -PortStart 499 `
-      -PortEnd 501}
-   Invoke-Command `
-    -ComputerName azs-bgpnat01 `
-     {Add-NetNatExternalAddress `
+      -PortEnd 501
+   Add-NetNatExternalAddress `
       -NatName BGPNAT `
       -IPAddress $Using:ExtBgpNat `
       -PortStart 4499 `
-      -PortEnd 4501}
+      -PortEnd 4501
    # Create a static NAT mapping to map the external address to the Gateway public IP address to map the ISAKMP port 500 for PHASE 1 of the IPSEC tunnel.
-   Invoke-Command `
-    -ComputerName azs-bgpnat01 `
-     {Add-NetNatStaticMapping `
+   Add-NetNatStaticMapping `
       -NatName BGPNAT `
       -Protocol UDP `
       -ExternalIPAddress $Using:ExtBgpNat `
       -InternalIPAddress $Using:IntBgpNat `
       -ExternalPort 500 `
-      -InternalPort 500}
+      -InternalPort 500
    # Configure NAT traversal which uses port 4500 to  establish the complete IPSEC tunnel over NAT devices.
-   Invoke-Command `
-    -ComputerName azs-bgpnat01 `
-     {Add-NetNatStaticMapping `
+   Add-NetNatStaticMapping `
       -NatName BGPNAT `
       -Protocol UDP `
       -ExternalIPAddress $Using:ExtBgpNat `
       -InternalIPAddress $Using:IntBgpNat `
       -ExternalPort 4500 `
-      -InternalPort 4500}
+      -InternalPort 4500
    ```
 
 ## <a name="configure-azure"></a>Configuración de Azure
@@ -342,7 +327,7 @@ Empareje las redes virtuales concentrador y radio siguiendo los pasos que se ind
 * Entre el concentrador y el radio, **permita el tránsito de puerta de enlace**.
 * Desde los radios al concentrador, **use la puerta de enlace remota**.
 
-### <a name="create-a-virtual-machine"></a>de una máquina virtual
+### <a name="create-a-virtual-machine"></a>Creación de una máquina virtual
 
 Implemente las máquinas virtuales de carga de trabajo en la VNet de spoke.
 

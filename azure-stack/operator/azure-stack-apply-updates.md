@@ -1,9 +1,9 @@
 ---
-title: Instalación de actualizaciones de OEM en Azure Stack | Microsoft Docs
-description: Aprenda a instalar las actualizaciones de OEM en Azure Stack.
+title: Instalación de actualizaciones de Azure Stack | Microsoft Docs
+description: Obtenga información sobre cómo instalar actualizaciones de Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: justinha
+author: mattbriggs
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -11,22 +11,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/03/2019
-ms.author: justinha
-ms.lastreviewed: 09/03/2019
+ms.date: 09/10/2019
+ms.author: mabriggs
+ms.lastreviewed: 09/10/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: a563c3ec43950122e045b0ec3168bcb3ca11fe56
-ms.sourcegitcommit: e2f6205e6469b39c2395ee09424bb7632cb94c40
+ms.openlocfilehash: 2153a91bcf833386ef5884a9fd4e7c0fc759c01b
+ms.sourcegitcommit: dc633e862d49412a963daee481226c1543287e5e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70271790"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70863062"
 ---
-# <a name="install-oem-updates-in-azure-stack"></a>Instalación de actualizaciones de OEM en Azure Stack
+# <a name="install-azure-stack-updates"></a>Instalación de actualizaciones de Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack*
 
-Puede instalar las actualizaciones del fabricante de equipo original (OEM) mediante la hoja **Actualización** de Azure Stack. Este artículo le guía por los pasos necesarios para actualizar, supervisar y solucionar problemas del proceso de actualización. Use la hoja Actualización para ver la información de actualización, instalar actualizaciones, supervisar el progreso de las actualizaciones, revisar el historial de actualizaciones y ver la versión actual del paquete de OEM.
+Puede instalar las actualizaciones con la hoja **Update** (Actualizar) en Azure Stack. Este artículo le guía por los pasos necesarios para actualizar, supervisar y solucionar problemas del proceso de actualización. Use la hoja Update (Actualizar) para ver la información de actualización, instalar actualizaciones, supervisar el progreso de las actualizaciones, revisar el historial de actualizaciones y ver la versión actual de Azure Stack y del paquete de OEM.
 
 Puede administrar las actualizaciones desde el portal de administración y usar la sección **Actualizaciones** del panel para:
 

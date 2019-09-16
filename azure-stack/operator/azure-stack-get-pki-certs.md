@@ -3,23 +3,23 @@ title: Generación de certificados de infraestructura de clave pública de Azure
 description: Describe el proceso de implementación de certificados PKI de Azure Stack para sus sistemas integrados.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 ms.service: azure-stack
 ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/16/2019
-ms.author: mabrigg
+ms.date: 09/10/2019
+ms.author: justinha
 ms.reviewer: ppacent
-ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: 1c342b1edb86629fff95dc04735fd5b6d98fc70a
-ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
+ms.lastreviewed: 09/10/2019
+ms.openlocfilehash: c9f14e643f886fab0fae148c5af8643890866fd6
+ms.sourcegitcommit: 38f21e0bcf7b593242ad615c9d8ef8a1ac19c734
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782270"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70902680"
 ---
 # <a name="azure-stack-certificates-signing-request-generation"></a>Generación de solicitudes de firma de certificados de Azure Stack
 
@@ -39,10 +39,10 @@ El sistema debe cumplir los siguientes requisitos previos antes de generar los C
   - Nombre de la región
   - Nombres de dominio completos (FQDN) externos
   - Asunto
-- Windows 10 o Windows Server 2016
+- Windows 10 o Windows Server 2016
 
   > [!NOTE]  
-  > Cuando reciba los certificados de vuelta de la autoridad de certificados, deberá completar los pasos descritos en [Preparación de certificados PKI de Azure Stack](azure-stack-prepare-pki-certs.md) en el mismo sistema.
+  > Cuando reciba los certificados de vuelta de la entidad de certificación, deberá completar los pasos descritos en [Preparación de certificados PKI de Azure Stack](azure-stack-prepare-pki-certs.md) en el mismo sistema.
 
 ## <a name="generate-certificate-signing-requests"></a>Generación de las solicitudes de firma de certificado
 
@@ -54,7 +54,7 @@ Siga estos pasos para preparar y validar los certificados PKI de Azure Stack:
         Install-Module Microsoft.AzureStack.ReadinessChecker
     ```
 
-2. Declare el **asunto** como un diccionario ordenado. Por ejemplo: 
+2. Declare el **asunto** como un diccionario ordenado. Por ejemplo:
 
     ```powershell  
     $subjectHash = [ordered]@{"OU"="AzureStack";"O"="Microsoft";"L"="Redmond";"ST"="Washington";"C"="US"}
@@ -63,7 +63,7 @@ Siga estos pasos para preparar y validar los certificados PKI de Azure Stack:
     > [!note]  
     > Si se proporciona un nombre común (CN) esto se sobrescribirá con el primer nombre DNS de la solicitud de certificado.
 
-3. Declare un directorio de salida que ya exista. Por ejemplo: 
+3. Declare un directorio de salida que ya exista. Por ejemplo:
 
     ```powershell  
     $outputDirectory = "$ENV:USERPROFILE\Documents\AzureStackCSR"

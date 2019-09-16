@@ -3,7 +3,7 @@ title: Preparar un paquete de actualización de Azure Stack | Microsoft Docs
 description: Obtenga información sobre cómo preparar un paquete de actualización de Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: justinha
+author: mattbriggs
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/03/2019
-ms.author: justinha
-ms.lastreviewed: 09/03/2019
+ms.date: 09/10/2019
+ms.author: mabrigg
+ms.lastreviewed: 09/10/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 9b58b4911a575ef66c95594b6cb4cd1cc9e27a43
-ms.sourcegitcommit: 314fd74caf356b157583d38d2b8b1dee30408b7d
+ms.openlocfilehash: 515195e30aed9944b8e0cc0e371d08b54ea75189
+ms.sourcegitcommit: 38f21e0bcf7b593242ad615c9d8ef8a1ac19c734
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70235001"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70902666"
 ---
 # <a name="prepare-an-azure-stack-update-package"></a>Preparar un paquete de actualización de Azure Stack
 
@@ -47,9 +47,6 @@ En la siguiente tabla se muestra cuándo las actualizaciones requieren preparaci
 ## <a name="download-the-update-package"></a>Descarga del paquete de actualización
 La actualización para las actualizaciones y revisiones de Azure Stack está disponible a través de la hoja de actualización para los sistemas conectados. Tendrá que descargar el paquete y moverlo a una ubicación a la que pueda tener acceso la instancia de Azure Stack si va a actualizar un paquete de OEM, o bien si admite un sistema desconectado. También puede que necesite descargar y después cargar el paquete en una ubicación accesible si ejecuta un sistema con una conexión intermitente.
 
->[!NOTE]
->La propia actualización y su contenido (como archivos binarios, scripts de PowerShell, etc.) están firmados con certificados propiedad de Microsoft. Si se manipula el paquete, la firma dejará de ser válida.
-
 Revise el contenido del paquete. Normalmente, un paquete de actualización consta de los siguientes archivos:
 
 -   **Un archivo \<PackageName>.zip autoextraíble**. Este archivo contiene la carga útil de la actualización.
@@ -62,9 +59,13 @@ Las actualizaciones y revisiones de software de Azure Stack se preparan automát
 
 Las actualizaciones de Azure Stack para [actualizaciones completas y rápidas](https://docs.microsoft.com/azure-stack/operator/azure-stack-updates#update-package-types) se hospedan en un punto de conexión seguro de Azure. Los operadores de Azure Stack con instancias conectadas verán que las[actualizaciones de Azure Stack aparecerán automáticamente en el portal de administración](https://docs.microsoft.com/azure-stack/operator/azure-stack-update-prepare-package#automatic-download-and-preparation-for-update-packages). En el caso de los sistemas desconectados de Internet o sistemas con conectividad de Internet débil, las actualizaciones se pueden descargar con la [aplicación de descarga de actualizaciones de Azure Stack](https://aka.ms/azurestackupdatedownload). Las actualizaciones de software de Azure Stack pueden contener actualizaciones de los servicios de Azure Stack, así como actualizaciones del sistema operativo de las unidades de escalado de su instancia de Azure Stack.
 
+>[!NOTE]
+>La propia actualización y su contenido (como archivos binarios, scripts de PowerShell, etc.) están firmados con certificados propiedad de Microsoft. Si se manipula el paquete, la firma dejará de ser válida.
+
+
 ### <a name="where-to-download-azure-stack-hotfix-packages"></a>Ubicación de la descarga de las revisiones de Azure Stack
 
-El paquete para [revisiones de Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-updates#update-package-types) se hospeda en el mismo punto de conexión seguro de Azure que las actualizaciones de Azure Stack. Los operadores de Azure Stack con instancias conectadas verán que las [actualizaciones de Azure Stack aparecerán automáticamente en el portal de administración](https://docs.microsoft.com/azure-stack/operator/azure-stack-update-prepare-package#automatic-download-and-preparation-for-update-packages). Puede descargarlas mediante los vínculos insertados en cada uno de los artículos de KB de revisión respectivos; por ejemplo, [Revisión de Azure Stack 1.1906.11.52](https://support.microsoft.com/help/4515650). Puede encontrar revisiones en las notas de la versión correspondientes a la versión de Azure Stack. Las actualizaciones las proporciona el fabricante del hardware OEM.
+El paquete para [revisiones de Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-updates#update-package-types) se hospeda en el mismo punto de conexión seguro de Azure que las actualizaciones de Azure Stack. Los operadores de Azure Stack con instancias conectadas verán que las [actualizaciones de Azure Stack aparecerán automáticamente en el portal de administración](https://docs.microsoft.com/azure-stack/operator/azure-stack-update-prepare-package#automatic-download-and-preparation-for-update-packages). Puede descargarlas mediante los vínculos insertados en cada uno de los artículos de KB de revisión respectivos, como [Revisión de Azure Stack 1.1906.11.52](https://support.microsoft.com/help/4515650). Puede encontrar revisiones en las notas de la versión correspondientes a la versión de Azure Stack.
 
 ### <a name="where-to-download-oem-update-packages"></a>Ubicación de la descarga de las actualizaciones de OEM
 Su distribuidor de OEM también liberará actualizaciones, tanto de controladores como de firmware. Aunque su proveedor de hardware entrega estas actualizaciones como [actualizaciones de paquetes de OEM ](https://docs.microsoft.com/azure-stack/operator/azure-stack-updates#update-package-types) independientes, todavía se importan, instalan y administran de la misma manera que los paquetes de actualización de Microsoft. Puede encontrar una lista de vínculos de contacto del proveedor en [Aplicar actualizaciones del fabricante de equipos originales (OEM) de Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-update-oem#oem-contact-information).

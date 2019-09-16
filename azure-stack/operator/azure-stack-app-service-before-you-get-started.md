@@ -16,12 +16,12 @@ ms.date: 08/29/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/11/2019
-ms.openlocfilehash: a12aceff00cf5be2d6ab70c4957ef04ea1c135d5
-ms.sourcegitcommit: e2f6205e6469b39c2395ee09424bb7632cb94c40
+ms.openlocfilehash: 0fbb57771976b896f8f6b37b62780e34d6635d78
+ms.sourcegitcommit: e2aec63cacfdc830a20a02ee40e715e3c5dfdf22
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70271706"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386233"
 ---
 # <a name="prerequisites-for-deploying-app-service-on-azure-stack"></a>Requisitos previos para implementar App Service en Azure Stack
 
@@ -47,9 +47,12 @@ Antes de implementar Azure App Service en Azure Stack, debe completar los pasos 
    - Carpeta Modules
      - GraphAPI.psm1
 
-## <a name="syndicate-the-custom-script-extension-from-the-marketplace"></a>Distribuya la extensión de script personalizado desde Marketplace
+## <a name="download-items-from-the-azure-marketplace"></a>Descarga de elementos de Azure Marketplace
 
-Azure App Service en Azure Stack requiere la versión 1.9.1 de la extensión de script personalizada.  La extensión tiene que [distribuirse desde Marketplace](azure-stack-download-azure-marketplace-item.md) antes de iniciar la implementación o actualización de Azure App Service en Azure Stack.
+Azure App Service en Azure Stack requiere la [descarga de elementos de Azure Marketplace](azure-stack-download-azure-marketplace-item.md), de forma que estén disponibles en el Marketplace de Azure Stack. Estos elementos deben descargarse antes de iniciar la implementación o actualización de Azure App Service en Azure Stack:
+
+1. La última versión de la imagen de máquina virtual de Windows Server 2016 Datacenter.
+2. Extensión de script personalizado para v1.9.1 o superior. Esta es una extensión de máquina virtual.
 
 ## <a name="get-certificates"></a>Obtención de certificados
 

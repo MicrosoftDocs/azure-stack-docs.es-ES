@@ -16,12 +16,12 @@ ms.date: 07/31/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 07/31/2019
-ms.openlocfilehash: 111e8e6cb72baac64229e4808003818efece54cd
-ms.sourcegitcommit: 7968f9f0946138867323793be9966ee2ef99dcf4
+ms.openlocfilehash: f4fe915d07b81a6f99d9bd5a4b222590d1bb9a30
+ms.sourcegitcommit: 305536bfd49319455ca3ca270fe3644b1796bad1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025877"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70876592"
 ---
 # <a name="post-deployment-configurations-for-asdk"></a>Configuraciones posteriores a la implementación del ASDK
 
@@ -127,7 +127,7 @@ Si se produjo un error, siga los pasos de la solución de problemas para obtener
 Para las implementaciones con Azure AD, debe [habilitar los servicios multiinquilino](../operator/azure-stack-enable-multitenancy.md#enable-multi-tenancy) para la instalación de ASDK.
 
 > [!NOTE]
-> Cuando se utilizan cuentas de administrador o usuario de dominios distintos de los usados para registrarse en Azure Stack para iniciar sesión en un portal de Azure Stack, el nombre de dominio utilizado para registrar Azure Stack debe agregarse a la URL del portal. Por ejemplo, si Azure Stack se ha registrado en fabrikam.onmicrosoft.com y el registro de la cuenta de usuario es admin@contoso.com, la dirección URL que se usa para iniciar sesión en el portal de usuarios sería https://portal.local.azurestack.external/fabrikam.onmicrosoft.com.
+> Cuando se utilizan cuentas de administrador o usuario de dominios distintos de los usados para registrarse en Azure Stack para iniciar sesión en un portal de Azure Stack, el nombre de dominio utilizado para registrar Azure Stack debe agregarse a la URL del portal. Por ejemplo, si Azure Stack se ha registrado en fabrikam.onmicrosoft.com y el registro de la cuenta de usuario es admin@contoso.com, la dirección URL que se usa para iniciar sesión en el portal de usuarios sería: https:\:/portal.local.azurestack.external/fabrikam.onmicrosoft.com.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

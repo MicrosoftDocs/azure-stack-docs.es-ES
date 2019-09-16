@@ -15,12 +15,12 @@ ms.date: 03/11/2019
 ms.author: mabrigg
 ms.reviewer: anwestg
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: 4ae72e7f75147fc3891731da48ee210fc546bd97
-ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
+ms.openlocfilehash: 698d38e971d37457d50637cb2e7e2ffe88890c20
+ms.sourcegitcommit: 7d7a4c8c46613b6104caf23763bfd2275f6a826b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66692047"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70808226"
 ---
 # <a name="app-service-on-azure-stack-overview"></a>Introducción a App Service en Azure Stack
 
@@ -35,8 +35,8 @@ Azure App Service le permite automatizar procesos empresariales y hospedar las A
 Estas son algunas de las características y funcionalidades principales de App Service:
 
 - **Varios lenguajes y plataformas**: App Service es compatible con ASP.NET, Node.js, Java, PHP y Python. También puede ejecutar Windows PowerShell y otros scripts o ejecutables en máquinas virtuales de App Service.
-- **Optimización de DevOps**: configure la integración y la implementación continuas con GitHub, Git local o BitBucket. Puede promover actualizaciones mediante entornos de ensayo y pruebas, y administrar las aplicaciones en App Service mediante Azure PowerShell o la interfaz de la línea de comandos (CLI) multiplataforma.
-- **Integración con Visual Studio**: existen herramientas dedicadas en Visual Studio que permiten optimizar las tareas de creación e implementación de aplicaciones.
+- **Optimización de DevOps**: configure la integración y la implementación continuas con GitHub, Git local o BitBucket. Promueva actualizaciones mediante entornos de ensayo y pruebas, y administre las aplicaciones en App Service mediante Azure PowerShell o la interfaz de la línea de comandos (CLI) multiplataforma.
+- **Integración de Visual Studio**: existen herramientas dedicadas en Visual Studio que permiten optimizar las tareas de creación e implementación de aplicaciones.
 
 ## <a name="app-types-in-app-service"></a>Tipos de aplicaciones en App Service
 
@@ -46,9 +46,9 @@ App Service ofrece varios tipos de aplicación, cada uno pensado para hospedar u
 - [API Apps](/azure/app-service/overview) para hospedar las API REST.
 - Azure Functions para hospedar cargas de trabajo sin servidor basadas en eventos.
 
-La palabra *aplicación* hace referencia a los recursos de hospedaje dedicados a ejecutar una carga de trabajo. Si se toma *aplicación web* como ejemplo, probablemente está acostumbrado a pensar en una aplicación web como los recursos de proceso y el código de aplicación que juntos ofrecen funcionalidad a un explorador. En App Service, una aplicación web se compone de los recursos de procesos que Azure Stack proporciona para hospedar su código de aplicación.
+La palabra *aplicación* hace referencia a los recursos de hospedaje dedicados a ejecutar una carga de trabajo. Si se toma la *aplicación web* como ejemplo, probablemente está acostumbrado a pensar en una aplicación web como los recursos de proceso y el código de aplicación que juntos ofrecen funcionalidad a un explorador. En App Service, una aplicación web se compone de los recursos de procesos que Azure Stack proporciona para hospedar su código de aplicación.
 
-La aplicación puede estar compuesta de varias aplicaciones de App Service de diferentes tipos. Por ejemplo, si la aplicación se compone de un front-end web y un back-end de la API REST, se pueden realizar las operaciones siguientes:
+La aplicación puede estar compuesta de varias aplicaciones de App Service de diferentes tipos. Por ejemplo, si la aplicación se compone de un front-end web y un back-end de la API REST, se pueden realizar las operaciones siguientes:
 
 - Implementar los dos (front-end y API) en una sola aplicación web.
 - Implementar el código de front-end en una aplicación web y el código de back-end en una aplicación de API.
@@ -67,7 +67,7 @@ App Service en Azure Stack usa la misma interfaz de usuario que Azure App Servic
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Antes de empezar a trabajar con App Service en Azure Stack](azure-stack-app-service-before-you-get-started.md)
+- [Requisitos previos para implementar App Service en Azure Stack](azure-stack-app-service-before-you-get-started.md)
 - [Instale el proveedor de recursos de App Service](azure-stack-app-service-deploy.md)
 
 También puede probar otros [servicios de plataforma como servicio (PaaS)](azure-stack-offer-services-overview.md), como el [proveedor de recursos de SQL Server](azure-stack-sql-resource-provider-deploy.md) y el [proveedor de recursos de MySQL](azure-stack-mysql-resource-provider-deploy.md).

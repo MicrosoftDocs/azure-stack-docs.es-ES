@@ -12,17 +12,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/15/2019
+ms.date: 09/05/2019
 ms.author: sethm
 ms.reviewer: hectorl
 ms.lastreviewed: 07/15/2019
 monikerRange: azs-1906
-ms.openlocfilehash: bf8e32d6395b3ddfc54fe586568b51b76b71dc63
-ms.sourcegitcommit: 71d7990a2b21576c44bb2aea13ae2026e9510c55
+ms.openlocfilehash: ae447df40d29b92f06f345ba54b77ff883e6ff07
+ms.sourcegitcommit: e2aec63cacfdc830a20a02ee40e715e3c5dfdf22
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70188310"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386212"
 ---
 # <a name="azure-stack-1906-update"></a>Actualización de Azure Stack 1906
 
@@ -149,7 +149,7 @@ La versión 1906 de Azure Stack debe aplicarse en la versión 1905 con las rev
 Después de instalar esta actualización, instale todas las revisiones aplicables. Para más información, consulte nuestra [directiva de servicio](azure-stack-servicing-policy.md).
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Azure Stack, revisión 1.1906.12.54](https://support.microsoft.com/help/4518365)
+- [Azure Stack, revisión 1.1906.13.56](https://support.microsoft.com/help/4520375)
 
 ## <a name="automatic-update-notifications"></a>Notificaciones de actualización automáticas
 

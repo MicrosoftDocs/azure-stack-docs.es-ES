@@ -16,12 +16,12 @@ ms.date: 03/23/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: e09cc9e5c77379441d7757fa1395941712ecc5ff
-ms.sourcegitcommit: e2f6205e6469b39c2395ee09424bb7632cb94c40
+ms.openlocfilehash: 994291eb0a990521dc932adc63f0ad52d4430e0d
+ms.sourcegitcommit: e2aec63cacfdc830a20a02ee40e715e3c5dfdf22
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70271830"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386258"
 ---
 # <a name="deploy-app-service-in-a-highly-available-configuration"></a>Implementación de App Service en una configuración de alta disponibilidad
 
@@ -121,7 +121,7 @@ Para poder ejecutar el instalador de App Service, primero es necesario seguir lo
 > No todos los pasos descritos en dicho [artículo](azure-stack-app-service-before-you-get-started.md) son necesarios, ya que la implementación de la plantilla configura automáticamente las máquinas virtuales de la infraestructura.
 
 - [Descargue los scripts auxiliares y el instalador de App Service](azure-stack-app-service-before-you-get-started.md#download-the-installer-and-helper-scripts).
-- [Descargue la última extensión de script personalizado en el marketplace de Azure Stack](azure-stack-app-service-before-you-get-started.md#syndicate-the-custom-script-extension-from-the-marketplace).
+- [Descargue los elementos de Marketplace de Azure Stack](azure-stack-app-service-before-you-get-started.md#download-items-from-the-azure-marketplace).
 - [Genere los certificados necesarios](azure-stack-app-service-before-you-get-started.md#get-certificates).
 - Cree la aplicación de identificador según el proveedor de identidades elegido para Azure Stack. Una aplicación de identificador puede crearse para [Azure AD](azure-stack-app-service-before-you-get-started.md#create-an-azure-active-directory-app) o [Servicios de federación de Active Directory (AD FS)](azure-stack-app-service-before-you-get-started.md#create-an-active-directory-federation-services-app) y para registrar el identificador de la aplicación.
 - Asegúrese de haber agregado la imagen de Windows Server 2016 Datacenter al Marketplace de Azure Stack. Esta imagen es necesaria para la instalación de App Service.

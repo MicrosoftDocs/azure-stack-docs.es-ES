@@ -3,7 +3,7 @@ title: Uso del punto de conexión con privilegios en Azure Stack | Microsoft Doc
 description: Se muestra cómo usar el punto de conexión con privilegios (PEP) en Azure Stack (para un operador de Azure Stack).
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -11,22 +11,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/16/2019
-ms.author: mabrigg
+ms.date: 09/03/2019
+ms.author: justinha
 ms.reviewer: fiseraci
-ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: 9d088cb128243b0b178e7a317ba05176a59e83c1
-ms.sourcegitcommit: f6ea6daddb92cbf458f9824cd2f8e7e1bda9688e
+ms.lastreviewed: 09/03/2019
+ms.openlocfilehash: a278a918100619953b2b7eb9b288236625968187
+ms.sourcegitcommit: 38f21e0bcf7b593242ad615c9d8ef8a1ac19c734
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68494070"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70902624"
 ---
 # <a name="using-the-privileged-endpoint-in-azure-stack"></a>Uso del punto de conexión con privilegios en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Como operador de Azure Stack, debe usar las API del portal de administrador, PowerShell o Azure Resource Manager en la mayor parte de las tareas de administración diarias. Sin embargo, con algunas operaciones menos comunes, deberá usar el *punto de conexión con privilegios* (PEP). El PEP es una consola remota de PowerShell preconfigurada que proporciona las funcionalidades suficientes para ayudarle a realizar una tarea necesaria. El punto de conexión usa [PowerShell JEA (Just Enough Administration)](https://docs.microsoft.com/powershell/jea/overview) para exponer únicamente un conjunto restringido de cmdlets. Para acceder al PEP e invocar el conjunto restringido de cmdlets, se usa una cuenta sin privilegios. No se necesita una cuenta de administrador. Para mayor seguridad, no se permite scripting.
+Como operador de Azure Stack, debe usar las API del portal de administrador, PowerShell o Azure Resource Manager en la mayor parte de las tareas de administración diarias. Sin embargo, con algunas operaciones menos comunes, deberá usar el *punto de conexión con privilegios* (PEP). El PEP es una consola remota de PowerShell preconfigurada que proporciona las funcionalidades suficientes para ayudarle a realizar una tarea necesaria. El punto de conexión usa [PowerShell JEA (Just Enough Administration)](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/overview) para exponer únicamente un conjunto restringido de cmdlets. Para acceder al PEP e invocar el conjunto restringido de cmdlets, se usa una cuenta sin privilegios. No se necesita una cuenta de administrador. Para mayor seguridad, no se permite scripting.
 
 Puede usar el PEP para realizar tareas como las siguientes:
 
@@ -68,6 +68,10 @@ Antes de comenzar este procedimiento en un sistema integrado, asegúrese de que 
          -ConfigurationName PrivilegedEndpoint -Credential $cred
      ```
      El parámetro `ComputerName` puede ser la dirección IP o el nombre DNS de una de las máquinas virtuales que hospeda el PEP. 
+
+     >[!NOTE]
+     >Azure Stack no realiza ninguna llamada remota al validar la credencial de PEP. Se basa en una clave pública RSA almacenada localmente para hacerlo.
+     
    - Si va a ejecutar el ADSK:
      
      ```powershell
@@ -82,7 +86,7 @@ Antes de comenzar este procedimiento en un sistema integrado, asegúrese de que 
      - **Contraseña**: escriba la misma contraseña que proporcionó durante la instalación de la cuenta del administrador de dominio de AzureStackAdmin.
 
      > [!NOTE]
-     > Si no puede conectarse al punto de conexión de ERCS, repita los pasos primero y segundo con la dirección IP de una máquina virtual de ERCS a la que no haya intentado conectarse todavía.
+     > Si no puede conectarse al punto de conexión de ERCS, vuelva a intentar los pasos uno y dos con otra dirección IP de la máquina virtual de ERCS.
 
 3. Después de conectarse, el símbolo del sistema cambia a **[*dirección IP o nombre de VM de ERCS*]: PS >** o a **[azs-ercs01]: PS >** , en función del entorno. Desde aquí, ejecute `Get-Command` para ver la lista de los cmdlets disponibles.
 
@@ -109,7 +113,7 @@ Antes de comenzar este procedimiento en un sistema integrado, asegúrese de que 
 
 ## <a name="tips-for-using-the-privileged-endpoint"></a>Sugerencias para el uso del punto de conexión con privilegios 
 
-Tal y como se mencionó anteriormente, el PEP es un punto de conexión de [PowerShell JEA](https://docs.microsoft.com/powershell/jea/overview). Al proporcionar una capa de seguridad sólida, un punto de conexión de JEA reduce algunas de las funcionalidades básicas de PowerShell, como la finalización con tabulación o de scripting. Si intenta algún tipo de operación de scripts, se producirá el error **ScriptsNotAllowed**. Este es el comportamiento esperado.
+Tal y como se mencionó anteriormente, el PEP es un punto de conexión de [PowerShell JEA](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/overview). Al proporcionar una capa de seguridad sólida, un punto de conexión de JEA reduce algunas de las funcionalidades básicas de PowerShell, como la finalización con tabulación o de scripting. Si intenta algún tipo de operación de scripts, se producirá el error **ScriptsNotAllowed**. Este es el comportamiento esperado.
 
 Por lo tanto, para obtener la lista de parámetros de un cmdlet determinado, debe ejecutar el siguiente comando:
 

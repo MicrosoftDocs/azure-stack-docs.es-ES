@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/07/2019
+ms.date: 09/07/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 06/07/2019
-ms.openlocfilehash: e69000eb862411dd0c8b415ab1f0ad7c8573f046
-ms.sourcegitcommit: bcaad8b7db2ea596018d973cb29283d8c6daebfb
+ms.openlocfilehash: 9f35a2bef6e5aa3b9ae1866927be007d58532b74
+ms.sourcegitcommit: 5703255b4647ff0ebec23658a3f5c25d67f076a2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67419553"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70749962"
 ---
 # <a name="add-tenant-for-usage-and-billing-to-azure-stack"></a>Adición de inquilinos en Azure Stack para uso y facturación
 
@@ -58,7 +58,7 @@ De forma predeterminada, como CSP, no tendrá acceso a la suscripción de Azure 
 Actualice el registro con la suscripción del nuevo cliente. Azure informa acerca del uso del cliente con la identidad del cliente del Centro de partners. Este paso garantiza que se informa del uso de cada cliente de esa suscripción del CSP individual del cliente. Esto facilita el seguimiento del uso del usuario y la facturación.
 
 > [!NOTE]  
-> Para realizar este paso, debe tener [Azure Stack registrado](azure-stack-registration.md).
+> Para realizar este paso, debe [registrar primero Azure Stack](azure-stack-registration.md).
 
 1. Abra Windows PowerShell con un símbolo del sistema con privilegios elevados y ejecute:  
     `Add-AzureRmAccount`
