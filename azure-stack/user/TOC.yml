@@ -191,16 +191,39 @@
             - name: Implementación de un clúster de Service Fabric
               href: azure-stack-solution-template-service-fabric-cluster.md
             - name: Implementación de un clúster de Kubernetes
-              href: azure-stack-solution-template-kubernetes-deploy.md
               items:
-                - name: Implementación de Kubernetes mediante Azure AD
-                  href: azure-stack-solution-template-kubernetes-azuread.md
-                - name: Implementación de Kubernetes mediante AD FS
-                  href: azure-stack-solution-template-kubernetes-adfs.md
-                - name: Habilitación del panel de Kubernetes
-                  href: azure-stack-solution-template-kubernetes-dashboard.md
-                - name: Solución de problemas de clúster de Kubernetes
-                  href: azure-stack-solution-template-kubernetes-trouble.md
+                - name: Motor de AKS
+                  items:
+                    - name: Motor de AKS en Azure Stack
+                      href: azure-stack-kubernetes-aks-engine-overview.md
+                    - name: Directiva de soporte técnico
+                      href: azure-stack-kubernetes-ask-engine-support.md
+                    - name: Configuración del motor de AKS
+                      href: azure-stack-kubernetes-aks-engine-set-up.md
+                    - name: Creación del cliente de Linux
+                      href: azure-stack-kubernetes-aks-engine-deploy-linux.md
+                    - name: Creación del cliente de Linux
+                      href: azure-stack-kubernetes-aks-engine-deploy-windows.md
+                    - name: Implementación de un clúster
+                      href: azure-stack-kubernetes-aks-engine-deploy-cluster.md
+                    - name: Escalado de un clúster
+                      href: azure-stack-kubernetes-aks-engine-scale.md
+                    - name: Actualización de un clúster
+                      href: azure-stack-kubernetes-aks-engine-upgrade.md
+                    - name: Solución de problemas del motor de AKS
+                      href: azure-stack-kubernetes-aks-engine-troubleshoot.md
+                - name: Elemento de Marketplace
+                  items:
+                    - name: Implementación de un clúster de Kubernetes
+                      href: azure-stack-solution-template-kubernetes-deploy.md
+                    - name: Implementación de Kubernetes mediante Azure AD
+                      href: azure-stack-solution-template-kubernetes-azuread.md
+                    - name: Implementación de Kubernetes mediante AD FS
+                      href: azure-stack-solution-template-kubernetes-adfs.md
+                    - name: Habilitación del panel de Kubernetes
+                      href: azure-stack-solution-template-kubernetes-dashboard.md
+                    - name: Solución de problemas de clúster de Kubernetes
+                      href: azure-stack-solution-template-kubernetes-trouble.md
             - name: Implementación de Cognitive Services
               href: azure-stack-solution-template-cognitive-services.md
     - name: Implementación de aplicaciones
