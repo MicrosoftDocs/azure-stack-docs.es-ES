@@ -16,12 +16,12 @@ ms.date: 08/13/2019
 ms.author: sethm
 ms.reviewer: xiaofmao
 ms.lastreviewed: 12/07/2018
-ms.openlocfilehash: df0bee87f512f00ea57fc11492f824730dbf9b42
-ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
+ms.openlocfilehash: 48ad7808e550fb875c8ee13caa5a429e1d77aa98
+ms.sourcegitcommit: 09d14eb77a43fd585e7e6be93c32fa427770adb6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68991777"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71010798"
 ---
 # <a name="quota-types-in-azure-stack"></a>Tipos de cuota en Azure Stack
 
@@ -60,12 +60,12 @@ Las [cuotas](azure-stack-plan-offer-quota-overview.md#plans) definen los límite
 
 | **Elemento** | **Valor predeterminado** | **Descripción** |
 | --- | --- | --- |
-| Número máximo de direcciones IP públicas |50 |El número máximo de direcciones IP públicas que puede crear una suscripción en esta ubicación. |
 | Número máximo de redes virtuales |50 |El número máximo de redes virtuales que puede crear una suscripción en esta ubicación. |
 | Número máximo de puertas de enlace de red virtual |1 |El número máximo de puertas de enlace de red virtual (puertas de enlace de VPN) que puede crear una suscripción en esta ubicación. |
 | Número máximo de conexiones de red |2 |El número máximo de conexiones de red (punto a punto o sitio a sitio) que puede crear una suscripción en todas las puertas de enlace de red virtual de esta ubicación. |
-| Número máximo de equilibradores de carga |50 |El número máximo de equilibradores de carga que puede crear una suscripción en esta ubicación. |
+| Número máximo de direcciones IP públicas |50 |El número máximo de direcciones IP públicas que puede crear una suscripción en esta ubicación. |
 | Número máximo de NIC |100 |El número máximo de interfaces de red que puede crear una suscripción en esta ubicación. |
+| Número máximo de equilibradores de carga |50 |El número máximo de equilibradores de carga que puede crear una suscripción en esta ubicación. |
 | Número máximo de grupos de seguridad de red |50 |El número máximo de grupos de seguridad de red que puede crear una suscripción en esta ubicación. |
 
 ## <a name="view-an-existing-quota"></a>Visualización de una cuota existente

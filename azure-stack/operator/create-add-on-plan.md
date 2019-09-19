@@ -17,12 +17,12 @@ ms.date: 06/11/2019
 ms.author: sethm
 ms.reviewer: efemmano
 ms.lastreviewed: 06/11/2019
-ms.openlocfilehash: 54c6c44d6ab5d03819ba07ca1d34269e7a87ee77
-ms.sourcegitcommit: e51cdc84a09250e8fa701bb2cb09de38d7de2c07
+ms.openlocfilehash: 01e5bc6e91311a0c27acffd4079931c3ee000d29
+ms.sourcegitcommit: 8ddd70ba5ce05c591d3fa62597981859af107c06
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66836797"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70936129"
 ---
 # <a name="azure-stack-add-on-plans"></a>Planes complementarios de Azure Stack
 
@@ -39,6 +39,7 @@ Cuando se agrega un plan complementario a una suscripción de oferta existente, 
 
 Los planes complementarios se crean al modificar una oferta existente.
 
+::: moniker range=">=azs-1902"
 ## <a name="create-an-add-on-plan-1902-and-later"></a>Crear un plan complementario (1902 y posteriores)
 
 1. Inicie sesión en el portal de administrador de Azure Stack como administrador de nube.
@@ -58,7 +59,9 @@ Los planes complementarios se crean al modificar una oferta existente.
 6. Revise la lista de planes complementarios incluidos con la oferta para comprobar que el nuevo plan complementario aparezca en la lista.
 
     [![Crear un plan complementario](media/create-add-on-plan/add-on4.png "Create add-on plan")](media/create-add-on-plan/add-on4lg.png#lightbox)
+::: moniker-end
 
+::: moniker range="<=azs-1901"
 ## <a name="create-an-add-on-plan-1901-and-earlier"></a>Crear un plan complementario (1901 y anteriores)
 
 1. Inicie sesión en el portal de administrador de Azure Stack como administrador de nube.
@@ -78,6 +81,7 @@ Los planes complementarios se crean al modificar una oferta existente.
 6. Revise la lista de planes complementarios incluidos con la oferta para comprobar que el nuevo plan complementario aparezca en la lista.
 
     ![Creación de un plan complementario](media/create-add-on-plan/4.PNG)
+::: moniker-end
 
 ## <a name="next-steps"></a>Pasos siguientes
 

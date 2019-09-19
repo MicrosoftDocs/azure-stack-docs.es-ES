@@ -16,12 +16,12 @@ ms.date: 06/11/2019
 ms.author: sethm
 ms.reviewer: efemmano
 ms.lastreviewed: 06/11/2019
-ms.openlocfilehash: b120346d489f676919cb05863f81db9bfb102634
-ms.sourcegitcommit: e51cdc84a09250e8fa701bb2cb09de38d7de2c07
+ms.openlocfilehash: 6e127983afe023448d6caad23cf79e8a3a289c17
+ms.sourcegitcommit: 8ddd70ba5ce05c591d3fa62597981859af107c06
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66836983"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70936168"
 ---
 # <a name="create-a-plan-in-azure-stack"></a>Creación de un plan en Azure Stack
 
@@ -29,6 +29,7 @@ ms.locfileid: "66836983"
 
 Los [planes de Azure Stack](azure-stack-overview.md) son agrupaciones de uno o varios servicios y sus cuotas. Como proveedor puede crear planes y ofrecérselos a sus usuarios. A su vez, los usuarios se suscriben a las ofertas para usar los planes, los servicios y las cuotas que incluyen. Este ejemplo muestra cómo crear un plan que incluya a los proveedores de recursos de proceso, de red y de almacenamiento. Este plan ofrece a los suscriptores la capacidad de aprovisionar máquinas virtuales.
 
+::: moniker range=">=azs-1902"
 ## <a name="create-a-plan-1902-and-later"></a>Crear un plan (1902 y posteriores)
 
 1. Inicie sesión en el [Portal de administración de Azure Stack](https://adminportal.local.azurestack.external).
@@ -70,7 +71,9 @@ Los [planes de Azure Stack](azure-stack-overview.md) son agrupaciones de uno o v
 10. Cuando esté listo, seleccione **Crear** para crear el plan.
 
 11. Para ver el nuevo plan, en el lado izquierdo haga clic en **All services** (Todos los servicios), seleccione **Plans** (Planes) y, después, busque el plan y seleccione su nombre. Si la lista de recursos es larga, utilice **Buscar** para encontrar el plan por su nombre.
+::: moniker-end
 
+::: moniker range="<=azs-1901"
 ## <a name="create-a-plan-1901-and-earlier"></a>Crear un plan (1901 y anteriores)
 
 1. Inicie sesión en el [Portal de administración de Azure Stack](https://adminportal.local.azurestack.external).
@@ -114,6 +117,7 @@ Los [planes de Azure Stack](azure-stack-overview.md) son agrupaciones de uno o v
 10. Para ver el nuevo plan, seleccione **Todos los recursos** y, a continuación, busque el plan y seleccione su nombre. Si la lista de recursos es larga, utilice **Buscar** para encontrar el plan por su nombre.
 
     ![Revisar el plan](media/azure-stack-create-plan/plan-overview1901.png)
+::: moniker-end
 
 ## <a name="next-steps"></a>Pasos siguientes
 

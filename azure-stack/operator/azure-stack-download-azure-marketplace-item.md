@@ -3,7 +3,7 @@ title: Descarga de elementos de Marketplace desde Azure | Microsoft Docs
 description: El operador en la nube puede descargar elementos de Marketplace desde Azure a una implementación de Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: sethmanheim
+author: justinha
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/13/2019
-ms.author: sethm
+ms.author: justinha
 ms.reviewer: ihcherie
 ms.lastreviewed: 12/10/2018
-ms.openlocfilehash: 4c4bac9a083ca35f851acb2f2d8201742be0ed1e
-ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
+ms.openlocfilehash: 99d0c48a5e7f5fd4e58d6fdf13e0a12c4b9dfb1e
+ms.sourcegitcommit: 95f30e32e5441599790d39542ff02ba90e70f9d6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68991829"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71070268"
 ---
 # <a name="download-marketplace-items-from-azure-to-azure-stack"></a>Descarga de elementos de Marketplace desde Azure a Azure Stack
 
@@ -100,6 +100,8 @@ Este escenario tiene dos partes:
 1. En un equipo con conexión a Internet, abra una consola de PowerShell como administrador.
 
 2. Agregue la cuenta de Azure que ha usado para registrar Azure Stack. Para agregar la cuenta, en PowerShell ejecute `Add-AzureRmAccount` sin parámetros. Se le solicita que escriba las credenciales de su cuenta de Azure y puede que tenga que utilizar la autenticación en dos fases en función de la configuración de la cuenta.
+
+   [!include[Remove Account](../../includes/remove-account.md)]
 
 3. Si tiene varias suscripciones, ejecute el siguiente comando para seleccionar la que ha usado para el registro:  
 

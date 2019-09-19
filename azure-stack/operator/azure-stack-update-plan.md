@@ -15,12 +15,12 @@ ms.date: 09/10/2019
 ms.author: mabrigg
 ms.lastreviewed: 08/23/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 58bfdf49492caf7f8db7f4d2a04de97a17738eac
-ms.sourcegitcommit: dc633e862d49412a963daee481226c1543287e5e
+ms.openlocfilehash: 9582c47f37bdd6ae4c306593bea094b66652c49e
+ms.sourcegitcommit: c46d913ebfa4cb6c775c5117ac5c9e87d032a271
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70863036"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71101164"
 ---
 # <a name="plan-for-an-azure-stack-update"></a>Planificar una actualización de Azure Stack
 
@@ -36,9 +36,9 @@ Notifique a los usuarios cualquier operación de mantenimiento, y programe venta
 
 Para prepararse para la actualización, asegúrese de que ha aplicado todas las revisiones, revisiones de seguridad y actualizaciones de OEM, ha validado el estado de la instancia de Azure Stack, ha comprobado la capacidad disponible y ha revisado la actualización.
 
-1. Revise los problemas conocidos. Para obtener instrucciones, consulte [Problemas conocidos de Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-release-notes-known-issues-1907).
+1. Revise los problemas conocidos. Para obtener instrucciones, consulte [Problemas conocidos de Azure Stack](https://docs.microsoft.com/azure-stack/operator/release-notes.md).
 
-2. Revise las actualizaciones de seguridad. Para obtener una lista de actualizaciones, consulte [Actualizaciones de seguridad de Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-release-notes-security-updates-1907).
+2. Revise las actualizaciones de seguridad. Para obtener una lista de actualizaciones, consulte [Actualizaciones de seguridad de Azure Stack](https://docs.microsoft.com/azure-stack/operator/release-notes-security-updates.md).
 
 3. Antes de iniciar la instalación de esta actualización, ejecute [Test-AzureStack](https://docs.microsoft.com/azure-stack/operator/azure-stack-diagnostic-test) para validar el estado de Azure Stack y resolver todos los problemas operativos detectados, incluidas todas las advertencias y errores. Repase también las alertas activas y resuelva las que requieran alguna acción.
 

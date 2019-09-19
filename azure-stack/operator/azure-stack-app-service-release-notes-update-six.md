@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 06/24/2019
 ms.author: anwestg
 ms.reviewer: ''
-ms.openlocfilehash: c142ecda309f00ee94429be3d7b8f3c6e8072668
-ms.sourcegitcommit: 71d7990a2b21576c44bb2aea13ae2026e9510c55
+ms.openlocfilehash: 93ec7faec82fad101c7bab2d2cec2783c8a060da
+ms.sourcegitcommit: c46d913ebfa4cb6c775c5117ac5c9e87d032a271
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70188217"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71101015"
 ---
 # <a name="app-service-on-azure-stack-update-6-release-notes"></a>Notas de la versión de App Service en la actualización 6 de Azure Stack
 
@@ -101,7 +101,7 @@ Si decide realizar una implementación en una red virtual existente y en una dir
 
 ### <a name="known-issues-for-cloud-admins-operating-azure-app-service-on-azure-stack"></a>Problemas conocidos para los administradores en la nube que trabajan con Azure App Service en Azure Stack
 
-Consulte la documentación de las [notas de la versión de Azure Stack 1908](azure-stack-release-notes-1908.md).
+Consulte la documentación de las [notas de la versión de Azure Stack 1908](/azure-stack/operator/release-notes?view=azs-1908).
 
 ### <a name="known-issues-for-tenants-deploying-applications-on-azure-app-service-on-azure-stack"></a>Problemas conocidos de los inquilinos que implementan aplicaciones en Azure App Service en Azure Stack
 

@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: article
-ms.date: 07/23/2019
+ms.date: 09/18/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
-ms.lastreviewed: 01/24/2019
-ms.openlocfilehash: f0195ecf033454763b757f6b8edb03ee4e8e9e49
-ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
+ms.lastreviewed: 09/18/2019
+ms.openlocfilehash: 84799fa50411b753ae5983efbc743f07282a512b
+ms.sourcegitcommit: c46d913ebfa4cb6c775c5117ac5c9e87d032a271
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68418201"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71101147"
 ---
 # <a name="connect-to-azure-stack-with-powershell-as-an-operator"></a>Conexión a Azure Stack con PowerShell como operador
 
@@ -38,6 +38,8 @@ Implemente los siguientes requisitos previos desde el [kit de desarrollo](../asd
 ## <a name="connect-with-azure-ad"></a>Conexión con Azure AD
 
 Configuración del entorno de operador de Azure Stack con PowerShell Ejecute uno de los siguientes scripts: Reemplace los valores de tenantName de Azure Active Directory (Azure AD) y el punto de conexión de Azure Resource Manager por la configuración de su propio entorno. 
+
+[!include[Remove Account](../../includes/remove-account.md)]
 
 ```powershell  
     # Register an Azure Resource Manager environment that targets your Azure Stack instance. Get your Azure Resource Manager endpoint value from your service provider.
