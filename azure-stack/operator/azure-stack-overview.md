@@ -12,17 +12,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 03/29/2019
+ms.date: 09/16/2019
 ms.author: justinha
 ms.reviewer: unknown
 ms.custom: ''
 ms.lastreviewed: 05/14/2019
-ms.openlocfilehash: 1aa6f494320843cf1debe2c1887f353bf79a7303
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: 7c84a9cb841f06887d09a650d277566fb9ff18ed
+ms.sourcegitcommit: 95f30e32e5441599790d39542ff02ba90e70f9d6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66268354"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71070177"
 ---
 # <a name="azure-stack-overview"></a>Introducción a Azure Stack
 
@@ -30,7 +30,7 @@ Azure Stack es una extensión de Azure que ofrece una manera de ejecutar aplicac
 
 ## <a name="why-use-azure-stack"></a>¿Por qué usar Azure Stack?
 
-Azure proporciona una plataforma completa en la que los desarrolladores pueden compilar aplicaciones modernas. Sin embargo, algunas aplicaciones basadas en la nube se enfrentan a obstáculos como la latencia, una conectividad intermitente y las normativas. Azure y Azure Stack desbloquean nuevos casos de uso de nube híbrida para aplicaciones de línea de negocios que están orientadas al cliente e internas:
+Azure proporciona una plataforma completa en la que los desarrolladores pueden compilar aplicaciones modernas. Sin embargo, algunas aplicaciones basadas en la nube se enfrentan a obstáculos como la latencia, una conectividad intermitente y las normativas. Azure y Azure Stack desbloquean nuevos casos de uso de nube híbrida para aplicaciones orientadas al cliente y aplicaciones internas de línea de negocio:
 
 - **Soluciones perimetrales y desconectadas**. Para satisfacer los requisitos de latencia y conectividad, procese los datos en el entorno local en Azure Stack y agréguelos después a Azure para analizarlos, con lógica de aplicaciones común entre ambos. Incluso puede implementar Azure Stack desconectado de Internet sin conectividad a Azure. Piense, por ejemplo, en plantas de producción, cruceros o pozos mineros.
 
@@ -122,10 +122,10 @@ Si bien la infraestructura de Azure Stack ya es resistente ante errores, la tecn
 
 - **Dominios de error**. Las máquinas virtuales colocadas en conjuntos de disponibilidad se aislarán físicamente entre sí al distribuirlas de la manera más uniforme que sea posible en varios dominios de error (nodos de Azure Stack). Si se produce un error de hardware, las máquinas virtuales del dominio de error que presente el error se reiniciarán en otros dominios de error pero se mantendrán en dominios de error independientes de las otras máquinas virtuales que se encuentran en el mismo conjunto de disponibilidad, si es posible. Cuando el hardware vuelva a estar en línea, las máquinas virtuales se volverán a equilibrar para mantener la alta disponibilidad. 
  
-- **Dominios de actualización**. Los dominios de actualización son otro concepto de Azure que proporciona alta disponibilidad en los conjuntos de disponibilidad. Un dominio de actualización es un grupo lógico de hardware adyacente que puede someterse a mantenimiento al mismo tiempo. Las máquinas virtuales que se encuentran en el mismo dominio de actualización se reiniciarán en conjunto durante el mantenimiento planeado. Cuando los inquilinos crean máquinas virtuales dentro de un conjunto de disponibilidad, la plataforma de Azure las distribuye de manera automática entre estos dominios de actualización. En Azure Stack, las máquinas virtuales se migran en vivo entre los otros hosts en línea del clúster antes de que se actualice su host subyacente. Como no hay tiempo de inactividad para el inquilino durante una actualización del host, la característica de dominio de actualización de Azure Stack solo existe para compatibilidad de plantilla con Azure. 
+- **Dominios de actualización**. Los dominios de actualización son otro concepto de Azure que proporciona alta disponibilidad en los conjuntos de disponibilidad. Un dominio de actualización es un grupo lógico de hardware adyacente que puede someterse a mantenimiento al mismo tiempo. Las máquinas virtuales que se encuentran en el mismo dominio de actualización se reiniciarán en conjunto durante el mantenimiento planeado. Cuando los inquilinos crean máquinas virtuales dentro de un conjunto de disponibilidad, la plataforma de Azure las distribuye de manera automática entre estos dominios de actualización. En Azure Stack, las máquinas virtuales se migran en vivo entre los otros hosts en línea del clúster antes de que se actualice su host subyacente. Como no hay tiempo de inactividad para el inquilino durante una actualización del host, la característica de dominio de actualización de Azure Stack solo existe para compatibilidad de plantilla con Azure. Las máquinas virtuales de un conjunto de disponibilidad muestran **0** como su número de dominio de actualización en el portal. 
 
 ## <a name="role-based-access-control"></a>Control de acceso basado en rol
-El control de acceso basado en rol (RBAC) se puede usar para conceder acceso al sistema a usuarios, grupos y servicios autorizados asignándoles roles a nivel de suscripción, grupo de recursos o recurso individual. Cada rol define el nivel de acceso que un usuario, grupo o servicio tiene sobre los recursos de Microsoft Azure Stack.
+El control de acceso basado en rol (RBAC) se puede usar para conceder acceso al sistema a usuarios, grupos y servicios autorizados asignándoles roles en el nivel de suscripción, grupo de recursos o recurso individual. Cada rol define el nivel de acceso que un usuario, grupo o servicio tiene sobre los recursos de Microsoft Azure Stack.
 
 RBAC de Azure Stack cuenta con tres roles básicos que se aplican a todos los tipos de recurso: propietario, colaborador y lector. El propietario tiene acceso completo a todos los recursos y cuenta con el derecho a delegar acceso a otros. El colaborador puede crear y administrar todos los tipos de recursos de Azure, pero no puede conceder acceso a otros. El lector solo puede ver los recursos existentes. El resto de los roles RBAC permiten la administración de recursos específicos de Azure. Por ejemplo, el rol de colaborador de máquina virtual permite crear y administrar máquinas virtuales, pero no permite administrar la red virtual ni la subred a las que se conecta la máquina virtual.
 

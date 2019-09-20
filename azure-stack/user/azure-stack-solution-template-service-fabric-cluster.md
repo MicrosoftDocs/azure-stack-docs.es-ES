@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 06/13/2019
+ms.date: 09/17/2019
 ms.author: mabrigg
 ms.reviewer: shnatara
-ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: f14face1998b73ed0739db1d9ed0504eaad2799c
-ms.sourcegitcommit: ca46bef5d5f824d22bdbc00605eb881410b1ffd0
+ms.lastreviewed: 09/17/2019
+ms.openlocfilehash: e672ee6227e00ea6276c92c22d02874f7c8b5529
+ms.sourcegitcommit: c46d913ebfa4cb6c775c5117ac5c9e87d032a271
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67042049"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71101237"
 ---
 # <a name="deploy-a-service-fabric-cluster-in-azure-stack"></a>Implementación de un clúster de Service Fabric en Azure Stack
 
@@ -35,7 +35,7 @@ El clúster de Service Fabric en Azure Stack no utiliza el proveedor de recursos
 Se necesitan los siguientes requisitos para implementar el clúster de Service Fabric:
 1. **Certificado de clúster**  
    Este es el certificado de servidor X.509 que va a agregar a KeyVault al implementar Service Fabric. 
-   - El **CN** de este certificado debe coincidir con el nombre de dominio completo (FQDN) del clúster de Service Fabric que cree. 
+   - El **CN** de este certificado debe coincidir con el nombre de dominio completo (FQDN) del clúster de Service Fabric que cree. Para más información sobre FQDN, consulte [Certificados necesarios para una implementación de producción en Azure Stack de Azure App Service](../operator/azure-stack-app-service-before-you-get-started.md#certificates-required-for-azure-stack-production-deployment-of-azure-app-service).
    - El formato del certificado debe ser PFX, ya que se requieren las claves públicas y privadas. 
      Consulte los [requisitos](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-security) para crear este certificado del lado servidor.
 
@@ -128,28 +128,39 @@ Para más información, consulte [Administrar Key Vault en Azure Stack mediante 
 
    ![Seleccione el clúster de Service Fabric](./media/azure-stack-solution-template-service-fabric-cluster/image2.png)
 
-1. Para cada página como, por ejemplo, *Aspectos básicos*, rellene el formulario de implementación. Use los valores predeterminados si no está seguro de un valor. Seleccione **Aceptar** para pasar a la página siguiente:
+2. Para cada página como, por ejemplo, *Aspectos básicos*, rellene el formulario de implementación. Use los valores predeterminados si no está seguro de un valor.
+
+    En caso de implementaciones en una instancia desconectada de Azure Stack o para implementar otra versión de Service Fabric, descargue el paquete de implementación de Service Fabric y el correspondiente paquete del entorno de ejecución, y hospédelo en un blob de Azure Stack. Proporcione estos valores para los campos **Service Fabric deployment package URL** (URL del paquete de implementación de Service Fabric) y **Service Fabric runtime package URL** (URL del paquete del entorno de ejecución de Service Fabric).
+    > [!NOTE]  
+    > Hay problemas de compatibilidad entre la última versión de Service Fabric y su SDK correspondiente. Hasta que se solucione ese problema, proporcione los siguientes parámetros para la dirección URL del paquete de implementación y la del paquete del entorno de ejecución. De lo contrario, se producirá un error en las implementaciones.
+    > - Dirección URL del paquete de implementación de Service Fabric: <https://download.microsoft.com/download/8/3/6/836E3E99-A300-4714-8278-96BC3E8B5528/6.5.641.9590/Microsoft.Azure.ServiceFabric.WindowsServer.6.5.641.9590.zip>
+    > - Dirección URL del paquete del entorno de ejecución de Service Fabric: <https://download.microsoft.com/download/B/0/B/B0BCCAC5-65AA-4BE3-AB13-D5FF5890F4B5/6.5.641.9590/MicrosoftAzureServiceFabric.6.5.641.9590.cab>
+    >
+    > En el caso de las implementaciones desconectadas, descargue estos paquetes de la ubicación especificada y hospédelos localmente en un blob de Azure Stack.
 
    ![Aspectos básicos](media/azure-stack-solution-template-service-fabric-cluster/image3.png)
 
-1. En la página *Configuración de red*, puede especificar los puertos específicos que debe abrir para las aplicaciones:
+    
+3. En la página *Configuración de red*, puede especificar los puertos específicos que debe abrir para las aplicaciones:
 
    ![Configuración de red](media/azure-stack-solution-template-service-fabric-cluster/image4.png)
 
-1. En la página *Security* (Seguridad), agregue los valores que obtuvo al [crear la instancia de Azure Key Vault](#add-a-secret-to-key-vault) y cargar el secreto.
+4. En la página *Security* (Seguridad), agregue los valores que obtuvo al [crear la instancia de Azure Key Vault](#add-a-secret-to-key-vault) y cargar el secreto.
 
    En *Huella digital del certificado de cliente de administración*, especifique la huella digital del *certificado de cliente de administración*. (Consulte los [requisitos previos](#prerequisites)).
    
    - Source Key Vault (Almacén de claves de origen):  especifique toda la cadena de `keyVault id` a partir de los resultados del script. 
    - Cluster Certificate URL (URL del certificado de clúster): especifique la dirección URL completa de `Secret Id` a partir de los resultados del script. 
    - Cluster Certificate thumbprint (Huella digital del certificado de clúster): especifique la *huella digital del certificado de clúster* a partir de los resultados del script.
+   - Dirección URL de un certificado de servidor: Si desea usar un certificado independiente del certificado del clúster, cargue el certificado en un almacén de claves y proporcione la dirección URL completa al secreto. 
+   - Huella digital de certificado de servidor: Especificación de la huella digital del certificado de servidor
    - Admin Client Certificate Thumbprints (Huella digital de certificado de cliente de administración): especifique la *huella digital del certificado de cliente de administración* que ha creado en los requisitos previos. 
 
    ![Salida del script](media/azure-stack-solution-template-service-fabric-cluster/image5.png)
 
    ![Seguridad](media/azure-stack-solution-template-service-fabric-cluster/image6.png)
 
-1. Complete el asistente y, a continuación, seleccione **Crear** para implementar el clúster de Service Fabric.
+5. Complete el asistente y, a continuación, seleccione **Crear** para implementar el clúster de Service Fabric.
 
 
 
