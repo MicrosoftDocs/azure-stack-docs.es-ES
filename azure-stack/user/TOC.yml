@@ -198,7 +198,7 @@
                       href: azure-stack-kubernetes-aks-engine-overview.md
                     - name: Directiva de soporte técnico
                       href: azure-stack-kubernetes-ask-engine-support.md
-                    - name: Configuración del motor de AKS
+                    - name: Configuración de requisitos previos
                       href: azure-stack-kubernetes-aks-engine-set-up.md
                     - name: Creación del cliente de Linux
                       href: azure-stack-kubernetes-aks-engine-deploy-linux.md
