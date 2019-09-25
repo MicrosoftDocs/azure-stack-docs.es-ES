@@ -274,6 +274,8 @@
           href: azure-stack-edge-pattern-cross-cloud-scaling.md
         - name: DevOps (CI/CD híbridas)
           href: azure-stack-edge-pattern-hybrid-ci-cd.md
+        - name: Detección de afluencia de compradores
+          href: hybrid-solution-retail-footfall-detection.md
         - name: Aplicación distribuida geográficamente
           href: azure-stack-edge-pattern-geo-distribution.md
 - name: Referencia
