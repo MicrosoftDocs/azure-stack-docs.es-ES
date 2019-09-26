@@ -165,6 +165,8 @@
                   href: azure-stack-update-oem.md
             - name: Supervisión del estado de actualización
               href: azure-stack-update-monitor.md
+            - name: Solución de problemas de actualización
+              href: azure-stack-updates-troubleshoot.md
         - name: Supervisión de estado y alertas
           href: azure-stack-monitor-health.md
         - name: Administración de recursos de red
