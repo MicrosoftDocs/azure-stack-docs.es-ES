@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/07/2019
+ms.date: 09/17/2019
 ms.author: sethm
 ms.reviewer: alfredop
-ms.lastreviewed: 06/07/2019
-ms.openlocfilehash: 9f35a2bef6e5aa3b9ae1866927be007d58532b74
-ms.sourcegitcommit: 5703255b4647ff0ebec23658a3f5c25d67f076a2
+ms.lastreviewed: 09/17/2019
+ms.openlocfilehash: 97d57605ce093684fcbabe2375deecda5e35cce2
+ms.sourcegitcommit: 9f4c6e96f60b4c229316e7a4ab6e0e5ef0a9a232
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70749962"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061126"
 ---
 # <a name="add-tenant-for-usage-and-billing-to-azure-stack"></a>Adición de inquilinos en Azure Stack para uso y facturación
 
@@ -55,13 +55,17 @@ De forma predeterminada, como CSP, no tendrá acceso a la suscripción de Azure 
 
 ### <a name="update-the-registration-with-the-end-customer-subscription"></a>Actualización del registro con la suscripción del cliente final
 
-Actualice el registro con la suscripción del nuevo cliente. Azure informa acerca del uso del cliente con la identidad del cliente del Centro de partners. Este paso garantiza que se informa del uso de cada cliente de esa suscripción del CSP individual del cliente. Esto facilita el seguimiento del uso del usuario y la facturación.
-
-> [!NOTE]  
-> Para realizar este paso, debe [registrar primero Azure Stack](azure-stack-registration.md).
+Actualice el registro con la suscripción del nuevo cliente. Azure informa acerca del uso del cliente con la identidad del cliente del Centro de partners. Este paso garantiza que se informa del uso de cada cliente de esa suscripción del CSP individual del cliente. Esto facilita el seguimiento del uso y la facturación. Para realizar este paso, debe [registrar primero Azure Stack](azure-stack-registration.md).
 
 1. Abra Windows PowerShell con un símbolo del sistema con privilegios elevados y ejecute:  
-    `Add-AzureRmAccount`
+
+   ```powershell
+   Add-AzureRmAccount
+   ```
+
+   >[!Note]
+   > Si la sesión expira, la contraseña ha cambiado o simplemente desea cambiar de cuenta, ejecute el siguiente cmdlet antes de iniciar sesión con Add-AzureRmAccount: `Remove-AzureRmAccount-Scope Process`
+
 2. Escriba sus credenciales de Azure.
 3. En la sesión de PowerShell, ejecute:
 

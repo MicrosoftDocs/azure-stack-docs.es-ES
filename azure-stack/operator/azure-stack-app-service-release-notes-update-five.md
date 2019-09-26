@@ -16,12 +16,12 @@ ms.date: 03/25/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/25/2019
-ms.openlocfilehash: 1955689929ef3277096aab558cca57e719a59a87
-ms.sourcegitcommit: 7d7a4c8c46613b6104caf23763bfd2275f6a826b
+ms.openlocfilehash: 4adad49b27b1ab1d255ccc566c95b003cfd09b3b
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70808191"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70974914"
 ---
 # <a name="app-service-on-azure-stack-update-5-release-notes"></a>Notas de la versión de la actualización 5 de App Service en Azure Stack
 
@@ -185,7 +185,7 @@ Para los clientes que quieran migrar a una base de datos independiente para las 
 
 - Los trabajos no pueden llegar al servidor de archivos cuando App Service está implementada en una red virtual existente y el servidor de archivos solo está disponible en la red privada. Esto también se indica en la documentación de implementación de Azure App Service en Azure Stack.
 
-Si decide realizar una implementación en una red virtual existente y en una dirección IP interna para conectarse al servidor de archivos, debe agregar una regla de seguridad de salida. De ese modo, permite que exista tráfico SMB entre la subred del rol de trabajo y el servidor de archivos. Vaya a WorkersNsg en el portal de administración y agregue una regla de seguridad de salida con las siguientes propiedades:
+Si decide realizar una implementación en una red virtual existente y en una dirección IP interna para conectarse al servidor de archivos, debe agregar una regla de seguridad de salida. De ese modo, permite que exista tráfico SMB entre la subred del rol de trabajo y el servidor de archivos. Vaya a WorkersNsg en el portal del administrador y agregue una regla de seguridad de salida con las siguientes propiedades:
 
  * Origen: Any
  * Intervalo de puertos de origen: *

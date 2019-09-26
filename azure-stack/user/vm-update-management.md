@@ -16,12 +16,12 @@ ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: rtiberiu
 ms.lastreviewed: 03/20/2019
-ms.openlocfilehash: 891727c8e80af479e800feef9c292f7355fb208c
-ms.sourcegitcommit: 637018771ac016b7d428174e88d4dcb131b54959
+ms.openlocfilehash: 3fa6d124722d45d727525820b6a99d408f0d2350
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68842694"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70975164"
 ---
 # <a name="vm-update-and-management-automation-in-azure-stack"></a>Automatización de actualizaciones y administración de VM en Azure Stack
 Use las siguientes características de solución de Azure Automation para administrar máquinas virtuales de Windows y Linux que se implementan mediante Azure Stack:
@@ -44,7 +44,7 @@ Deben cumplirse varios requisitos previos antes de usar estas características p
 Para usar las características de Azure Monitor para VM, Inventario, Change Tracking y Update Management de Azure Automation para las VM de Azure Stack, primero deberá habilitar estas soluciones en Azure.
 
 > [!TIP]
-> Si ya habilitó estas características para VM de Azure, puede usar sus credenciales preexistentes del área de trabajo de Log Analytics. Si ya tiene un id. de área de trabajo de Log Analytics y la clave principal que quiere usar, vaya directamente a la [sección siguiente](./vm-update-management.md#in-the-azure-stack-admin-portal). De lo contrario, continúe en esta sección para crear una nueva cuenta de Automation y el área de trabajo de Log Analytics.
+> Si ya habilitó estas características para VM de Azure, puede usar sus credenciales preexistentes del área de trabajo de Log Analytics. Si ya tiene un id. de área de trabajo de Log Analytics y la clave principal que quiere usar, vaya directamente a la [sección siguiente](./vm-update-management.md#in-the-azure-stack-administrator-portal). De lo contrario, continúe en esta sección para crear una nueva cuenta de Automation y el área de trabajo de Log Analytics.
 
 El primer paso para habilitar estas soluciones es [crear un área de trabajo de Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-quick-create-workspace) en su suscripción de Azure. Un área de trabajo de Log Analytics es un entorno de registros único de Azure Monitor con un repositorio de datos, orígenes de datos y soluciones propios. Después de crear un área de trabajo, anote el identificador del área de trabajo y la clave. Para ver esta información, vaya a la hoja del área de trabajo, haga clic en **Configuración avanzada**y revise los valores **Id. del área de trabajo** y **Clave principal**. 
 
@@ -76,8 +76,8 @@ Como solución, Azure Monitor para VM permite supervisar el rendimiento y las de
 
 Una vez que se crea el área de trabajo de Log Analytics, habilite los contadores de rendimiento en el área de trabajo para la recopilación en máquinas virtuales Linux y Windows. Luego, instale y habilite las soluciones ServiceMap e InfrastructureInsights en el área de trabajo. El proceso se describe en la guía [Implementar Azure Monitor para VM](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-onboard#how-to-enable-azure-monitor-for-vms-preview).
 
-### <a name="in-the-azure-stack-admin-portal"></a>En el portal de administración de Azure Stack
-Después de habilitar las soluciones de Azure Automation en Azure Portal, debe iniciar sesión en el portal de administración de Azure Stack como administrador en la nube y descargar las extensiones **Azure Monitor, Update and Configuration Management** y **Azure Monitor, Update and Configuration Management for Linux** del Marketplace de Azure Stack.
+### <a name="in-the-azure-stack-administrator-portal"></a>En el portal de administración de Azure Stack
+Después de habilitar las soluciones de Azure Automation en Azure Portal, debe iniciar sesión en el portal de administración de Azure Stack como administrador en la nube y descargar las extensiones **Azure Monitor, Update and Configuration Management** y **Azure Monitor, Update and Configuration Management for Linux** de Marketplace de Azure Stack.
 
    ![Extensión Azure Monitor, Update and Configuration Management de Marketplace](media/vm-update-management/2.PNG) 
 

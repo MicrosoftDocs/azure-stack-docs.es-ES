@@ -16,12 +16,12 @@ ms.date: 08/29/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 7088a001fab8e3e618da4be8107f5a5f5a22373f
-ms.sourcegitcommit: e2f6205e6469b39c2395ee09424bb7632cb94c40
+ms.openlocfilehash: 219d8bcf884945353b08186324edc23feb028964
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70271771"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70974960"
 ---
 # <a name="deploy-app-service-in-azure-stack"></a>Implementación de App Service en Azure Stack
 
@@ -186,7 +186,7 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 > [!IMPORTANT]
 > Si ha proporcionado el proveedor de recursos de App Service con una instancia de SQL Always On, **debe** [agregar las bases de datos appservice_hosting y appservice_metering a un grupo de disponibilidad](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database), así como sincronizar dichas bases de datos para evitar la pérdida de servicio en caso de producirse una conmutación por error de base de datos.
 
-Si va a realizar la implementación en una red virtual existente y a usar una dirección IP interna para conectarse al servidor de archivos, debe agregar una regla de seguridad de salida. Esta regla habilita el tráfico SMB entre la subred de trabajo y el servidor de archivos. En el portal de administración vaya al grupo de seguridad de red WorkersNsg y agregue una regla de seguridad de salida con las siguientes propiedades:
+Si va a realizar la implementación en una red virtual existente y a usar una dirección IP interna para conectarse al servidor de archivos, debe agregar una regla de seguridad de salida. Esta regla habilita el tráfico SMB entre la subred de trabajo y el servidor de archivos. En el portal del administrador vaya al grupo de seguridad de red WorkersNsg y agregue una regla de seguridad de salida con las siguientes propiedades:
 
 - Origen: Any
 - Intervalo de puertos de origen: *
@@ -200,7 +200,7 @@ Si va a realizar la implementación en una red virtual existente y a usar una di
 
 ## <a name="validate-the-app-service-on-azure-stack-installation"></a>Validación de la instalación de App Service en Azure Stack
 
-1. En el Portal de administración de Azure Stack, vaya a **Administración - App Service**.
+1. En el portal de administración de Azure Stack, vaya a **Administración: App Service**.
 
 2. En la información general, debajo del estado, compruebe que en **Estado** se muestra el mensaje **Todos los roles están listos**.
 
@@ -213,7 +213,7 @@ Después de implementar y registrar el proveedor de recursos de App Service, pru
 >[!NOTE]
 >Debe crear una oferta que tenga el espacio de nombres Microsoft.Web en el plan. También necesita una suscripción de inquilino que se suscriba a la oferta. Para más información, consulte [Creación de una oferta](azure-stack-create-offer.md) y [Creación de un plan](azure-stack-create-plan.md).
 >
->*Debe* tener una suscripción de inquilino para crear aplicaciones que usen App Service en Azure Stack. Las únicas tareas que un administrador del servicio puede completar en el portal de administración están relacionadas con la administración del proveedor de recursos de App Service. Entre estas tareas se incluyen la adición de capacidad, la configuración de orígenes de implementación y la adición de niveles de trabajo y SKU.
+>*Debe* tener una suscripción de inquilino para crear aplicaciones que usen App Service en Azure Stack. Las únicas tareas que un administrador del servicio puede completar en el portal del administrador están relacionadas con la administración del proveedor de recursos de App Service. Entre estas tareas se incluyen la adición de capacidad, la configuración de orígenes de implementación y la adición de niveles de trabajo y SKU.
 >
 >Para crear aplicaciones web, de API y Azure Functions, se debe usar el portal de inquilino y tener una suscripción de inquilino.
 >

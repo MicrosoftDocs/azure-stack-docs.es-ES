@@ -1,0 +1,727 @@
+---
+title: Problemas conocidos de Azure Stack
+description: Obtenga información sobre los problemas conocidos de las versiones de Azure Stack.
+services: azure-stack
+documentationcenter: ''
+author: sethmanheim
+manager: femila
+editor: ''
+ms.assetid: ''
+ms.service: azure-stack
+ms.workload: na
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: article
+ms.date: 09/17/2019
+ms.author: sethm
+ms.reviewer: prchint
+ms.lastreviewed: 09/13/2019
+ms.openlocfilehash: 3179416a7f8dacc5c3282372038c6761009b5b76
+ms.sourcegitcommit: c46d913ebfa4cb6c775c5117ac5c9e87d032a271
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71106512"
+---
+# <a name="azure-stack-known-issues"></a>Problemas conocidos de Azure Stack
+
+En este artículo se enumeran los problemas conocidos de las versiones de Azure Stack. La lista se actualiza conforme se identifican nuevos problemas. **Para ver los problemas conocidos de una versión diferente, use el selector de versión en la parte superior izquierda.**
+
+::: moniker range=">=azs-1905"
+> [!IMPORTANT]  
+> Revise esta sección antes de aplicar la actualización.
+::: moniker-end
+::: moniker range="<azs-1905"
+> [!IMPORTANT]  
+> Si a su instancia le faltan más de dos actualizaciones de Azure Stack, se considera que no cumple los requisitos. [Para recibir soporte técnico, deberá actualizarla al menos a la versión mínima admitida.](azure-stack-servicing-policy.md#keep-your-system-under-support) 
+::: moniker-end
+
+<!---------------------------------------------------------->
+<!------------------- SUPPORTED VERSIONS ------------------->
+<!---------------------------------------------------------->
+
+::: moniker range="azs-1908"
+## <a name="1908-update-process"></a>Proceso de actualización de 1908
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Al intentar instalar la actualización de Azure Stack, es posible que se produzca un error en el estado de esa actualización y dicho estado cambie a **PreparationFailed**. La causa es que el proveedor de recursos de actualización (URP) no se puede transferir correctamente desde el contenedor de almacenamiento a un recurso compartido de infraestructura interno para su procesamiento.
+- Corrección: A partir de la versión 1901 (1.1901.0.95), para solucionar este problema, puede hacer clic en **Actualizar ahora** de nuevo (en lugar de en **Reanudar**). A continuación, URP limpia los archivos del intento anterior y vuelve a iniciar la descarga. Si el problema persiste, recomendamos cargar manualmente la actualización siguiendo la [sección de instalación de actualizaciones](azure-stack-apply-updates.md#install-updates-and-monitor-progress).
+- Repetición: Común
+
+## <a name="portal"></a>Portal
+
+### <a name="administrative-subscriptions"></a>Suscripciones administrativas
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Las dos suscripciones administrativas que se incluyeron con la versión 1804 no deberían usarse. Los tipos de suscripción son **suscripción de medición** y **suscripción de consumo**.
+- Corrección: Si tiene recursos que se ejecutan en estas dos suscripciones, vuelva a crearlos en las suscripciones de usuario.
+- Repetición: Común
+
+### <a name="subscriptions-properties-blade"></a>Hoja de propiedades de suscripciones
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: en el portal de administrador, la hoja **Propiedades** de las suscripciones no se carga correctamente.
+- Corrección: puede ver estas propiedades de suscripciones en el panel **Essentials** (Información esencial) de la hoja **Introducción a las suscripciones**.
+- Repetición: Común
+
+### <a name="subscriptions-lock-blade"></a>Hoja Bloqueo en las suscripciones
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal del administrador, la hoja **Bloqueo** para las suscripciones de usuario tiene dos botones que muestran **suscripción**.
+- Repetición: Común
+
+### <a name="subscription-permissions"></a>Permisos de suscripción
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: No puede ver los permisos de la suscripción mediante los portales de Azure Stack.
+- Corrección: Use [PowerShell para verificar los permisos](/powershell/module/azurerm.resources/get-azurermroleassignment).
+- Repetición: Común
+
+### <a name="storage-account-settings"></a>Configuración de cuentas de almacenamiento
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, la hoja **Configuración** de la cuenta de almacenamiento muestra una opción para cambiar el **tipo de transferencia de seguridad**. La característica no se admite actualmente en Azure Stack.
+- Repetición: Común
+
+### <a name="upload-blob"></a>Carga de blob
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, al intentar cargar un blob mediante la opción **OAuth(preview)** , la tarea genera un mensaje de error.
+- Corrección: Cargue el blob mediante la opción SAS.
+- Repetición: Común
+
+## <a name="networking"></a>Redes
+
+### <a name="service-endpoints"></a>Puntos de conexión de servicio
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, la hoja **Red virtual** muestra una opción para usar **puntos de conexión de servicio**. Esta característica no se admite actualmente en Azure Stack.
+- Repetición: Común
+
+### <a name="network-interface"></a>interfaz de red
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: No se puede agregar una nueva interfaz de red a una VM cuyo estado es **En ejecución**.
+- Corrección: Detenga la máquina virtual antes de agregar o quitar una interfaz de red.
+- Repetición: Común
+
+### <a name="virtual-network-gateway"></a>Puerta de enlace de red virtual
+
+#### <a name="local-network-gateway-deletion"></a>Eliminación de una puerta de enlace de red local
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: en el portal del usuario, al eliminar la **puerta de enlace de red local** aparece el mensaje de error siguiente: **No se puede eliminar una puerta de enlace de red local con una conexión activa**, incluso si no hay ninguna conexión activa.
+- Mitigación: la corrección de este problema se lanzó en la actualización 1907. Una solución alternativa para este problema es crear una puerta de enlace de red local nueva con la misma dirección IP, el mismo espacio de direcciones y los mismos detalles de configuración con otro nombre. El anterior LNG se puede eliminar una vez que el entorno se actualice a 1907.
+- Repetición: Común
+
+#### <a name="alerts"></a>Alertas
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, la hoja **Puerta de enlace de red virtual** muestra una opción para usar **alertas**. Esta característica no se admite actualmente en Azure Stack.
+- Repetición: Común
+
+#### <a name="active-active"></a>Activo-activo
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, durante la creación, y en el menú de recursos de **Puerta de enlace de red virtual**, verá una opción para habilitar la configuración **activa-activa**. Esta característica no se admite actualmente en Azure Stack.
+- Repetición: Común
+
+#### <a name="vpn-troubleshooter"></a>Solucionador de problemas de VPN
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, la hoja **Conexiones** muestra una característica denominada **Solucionador de problemas de VPN**. Esta característica no se admite actualmente en Azure Stack.
+- Repetición: Común
+
+#### <a name="documentation"></a>Documentación
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Los vínculos de la documentación de la página de información general de Puerta de enlace de red virtual enlazan a la documentación específica de Azure en lugar de a la de Azure Stack. Use los vínculos siguientes para la documentación de Azure Stack:
+
+  - [SKU de puerta de enlace](../user/azure-stack-vpn-gateway-about-vpn-gateways.md#gateway-skus)
+  - [Conexiones de alta disponibilidad](../user/azure-stack-vpn-gateway-about-vpn-gateways.md#gateway-availability)
+  - [Configuración de BGP en Azure Stack](../user/azure-stack-vpn-gateway-settings.md#gateway-requirements)
+  - [Circuitos ExpressRoute](azure-stack-connect-expressroute.md)
+  - [Especificación de directivas de IPsec o IKE personalizadas](../user/azure-stack-vpn-gateway-settings.md#ipsecike-parameters)
+
+## <a name="compute"></a>Proceso
+
+### <a name="vm-boot-diagnostics"></a>Diagnósticos de arranque de VM
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Al crear una nueva máquina virtual Windows, puede aparecer el siguiente error: **Failed to start virtual machine 'vm-name'. Error: Failed to update serial output settings for VM 'vm-name'** (No se pudo iniciar la máquina virtual "vm-name". No se pudo actualizar la configuración de salida de serie de la VM 'vm-name'). El error se produce si habilita el diagnóstico de arranque en una VM, pero elimina la cuenta de almacenamiento de diagnósticos de arranque.
+- Corrección: Vuelva a crear la cuenta de almacenamiento con el mismo nombre que usó anteriormente.
+- Repetición: Común
+
+### <a name="virtual-machine-scale-set"></a>Conjunto de escalado de máquina virtual
+
+#### <a name="create-failures-during-patch-and-update-on-4-node-azure-stack-environments"></a>Crear errores durante la revisión y actualización de entornos de Azure Stack de 4 nodos
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: La creación de VM en un conjunto de disponibilidad de 3 dominios de error y la creación de una instancia de conjunto de escalado de máquinas virtuales genera un error **FabricVmPlacementErrorUnsupportedFaultDomainSize** durante el proceso de actualización en un entorno de Azure Stack de 4 nodos.
+- Corrección: Se pueden crear VM únicas en un conjunto de disponibilidad con 2 dominios de error correctamente. Sin embargo, la creación de instancias del conjunto de escalado todavía no está disponible durante el proceso de actualización en una instancia de Azure Stack de 4 nodos.
+
+### <a name="ubuntu-ssh-access"></a>Acceso a SSH en Ubuntu
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Una VM de Ubuntu 18.04 creada con la autorización de SSH habilitada no le permite usar las claves SSH para iniciar sesión.
+- Corrección: Utilice el acceso a la VM para la extensión de Linux a fin de implementar las claves SSH después del aprovisionamiento o utilice la autenticación basada en contraseña.
+- Repetición: Común
+
+### <a name="virtual-machine-scale-set-reset-password-does-not-work"></a>La contraseña de restablecimiento del conjunto de escalado de máquinas virtuales no funciona
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Aparece una nueva hoja para restablecer la contraseña en la interfaz de usuario del conjunto de escalado, pero Azure Stack todavía no admite el restablecimiento de contraseña en un conjunto de escalado.
+- Corrección: Ninguno.
+- Repetición: Común
+
+### <a name="rainy-cloud-on-scale-set-diagnostics"></a>Nube con lluvia en el diagnóstico del conjunto de escalado
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: La página de información general del conjunto de escalado de máquinas virtuales muestra un gráfico vacío. Al hacer clic en el gráfico vacío, se abre una hoja de "nube de lluvia". Este es el gráfico de información de diagnóstico del conjunto de escalado, como el porcentaje de CPU, y no es una característica admitida en la compilación actual de Azure Stack.
+- Corrección: Ninguno.
+- Repetición: Común
+
+### <a name="virtual-machine-diagnostic-settings-blade"></a>Hoja de configuración de diagnóstico de la máquina virtual
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.    
+- Causa: La hoja de configuración de diagnóstico de la máquina virtual tiene una pestaña **Receptor**, que solicita una **Cuenta de Application Insights**. Este es el resultado de una nueva hoja y aún no se admite en Azure Stack.
+- Corrección: Ninguno.
+- Repetición: Común
+
+<!-- ## Storage -->
+<!-- ## SQL and MySQL-->
+<!-- ## App Service -->
+<!-- ## Usage -->
+<!-- ### Identity -->
+<!-- ### Marketplace -->
+::: moniker-end
+
+::: moniker range="azs-1907"
+## <a name="1907-update-process"></a>Proceso de actualización de 1907
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Al intentar instalar la actualización 1907 de Azure Stack, es posible que se produzca un error en el estado de esa actualización y dicho estado cambie a **PreparationFailed**. La causa es que el proveedor de recursos de actualización (URP) no se puede transferir correctamente desde el contenedor de almacenamiento a un recurso compartido de infraestructura interno para su procesamiento.
+- Corrección: A partir de la versión 1901 (1.1901.0.95), para solucionar este problema, puede hacer clic en **Actualizar ahora** de nuevo (en lugar de en **Reanudar**). A continuación, URP limpia los archivos del intento anterior y vuelve a iniciar la descarga. Si el problema persiste, recomendamos cargar manualmente el paquete de actualización siguiendo la sección [Importación e instalación de actualizaciones](azure-stack-apply-updates.md).
+- Repetición: Común
+
+## <a name="portal"></a>Portal
+
+### <a name="administrative-subscriptions"></a>Suscripciones administrativas
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Las dos suscripciones administrativas que se incluyeron con la versión 1804 no deberían usarse. Los tipos de suscripción son **suscripción de medición** y **suscripción de consumo**.
+- Corrección: Si tiene recursos que se ejecutan en estas dos suscripciones, vuelva a crearlos en las suscripciones de usuario.
+- Repetición: Común
+
+### <a name="subscriptions-properties-blade"></a>Hoja de propiedades de suscripciones
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: en el portal de administrador, la hoja **Propiedades** de las suscripciones no se carga correctamente.
+- Corrección: puede ver estas propiedades de suscripciones en el panel **Essentials** (Información esencial) de la hoja **Introducción a las suscripciones**.
+- Repetición: Común
+
+### <a name="subscription-permissions"></a>Permisos de suscripción
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: No puede ver los permisos de la suscripción mediante los portales de Azure Stack.
+- Corrección: Use [PowerShell para verificar los permisos](/powershell/module/azurerm.resources/get-azurermroleassignment).
+- Repetición: Común
+
+### <a name="storage-account-settings"></a>Configuración de cuentas de almacenamiento
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, la hoja **Configuración** de la cuenta de almacenamiento muestra una opción para cambiar el **tipo de transferencia de seguridad**. La característica no se admite actualmente en Azure Stack.
+- Repetición: Común
+
+### <a name="upload-blob"></a>Carga de blob
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, al intentar cargar un blob mediante la opción **OAuth(preview)** , la tarea genera un mensaje de error.
+- Corrección: Cargue el blob mediante la opción SAS.
+- Repetición: Común
+
+## <a name="networking"></a>Redes
+
+### <a name="service-endpoints"></a>Puntos de conexión de servicio
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, la hoja **Red virtual** muestra una opción para usar **puntos de conexión de servicio**. Esta característica no se admite actualmente en Azure Stack.
+- Repetición: Común
+
+### <a name="network-interface"></a>interfaz de red
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: No se puede agregar una nueva interfaz de red a una VM cuyo estado es **En ejecución**.
+- Corrección: Detenga la máquina virtual antes de agregar o quitar una interfaz de red.
+- Repetición: Común
+
+### <a name="virtual-network-gateway"></a>Puerta de enlace de red virtual
+
+#### <a name="alerts"></a>Alertas
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, la hoja **Puerta de enlace de red virtual** muestra una opción para usar **alertas**. Esta característica no se admite actualmente en Azure Stack.
+- Repetición: Común
+
+#### <a name="active-active"></a>Activo-activo
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, durante la creación, y en el menú de recursos de **Puerta de enlace de red virtual**, verá una opción para habilitar la configuración **activa-activa**. Esta característica no se admite actualmente en Azure Stack.
+- Repetición: Común
+
+#### <a name="vpn-troubleshooter"></a>Solucionador de problemas de VPN
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, la hoja **Conexiones** muestra una característica denominada **Solucionador de problemas de VPN**. Esta característica no se admite actualmente en Azure Stack.
+- Repetición: Común
+
+### <a name="network-connection-type"></a>Tipo de conexión de red
+
+- Aplicable a: Este problema se aplica a cualquier entorno de 1906 o 1907. 
+- Causa: En el portal de usuarios, la hoja **AddConnection** muestra una opción para usar la opción **De red virtual a red virtual**. Esta característica no se admite actualmente en Azure Stack. 
+- Repetición: Común 
+
+#### <a name="documentation"></a>Documentación
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Los vínculos de la documentación de la página de información general de Puerta de enlace de red virtual enlazan a la documentación específica de Azure en lugar de a la de Azure Stack. Use los vínculos siguientes para la documentación de Azure Stack:
+
+  - [SKU de puerta de enlace](../user/azure-stack-vpn-gateway-about-vpn-gateways.md#gateway-skus)
+  - [Conexiones de alta disponibilidad](../user/azure-stack-vpn-gateway-about-vpn-gateways.md#gateway-availability)
+  - [Configuración de BGP en Azure Stack](../user/azure-stack-vpn-gateway-settings.md#gateway-requirements)
+  - [Circuitos ExpressRoute](azure-stack-connect-expressroute.md)
+  - [Especificación de directivas de IPsec o IKE personalizadas](../user/azure-stack-vpn-gateway-settings.md#ipsecike-parameters)
+
+## <a name="compute"></a>Proceso
+
+### <a name="vm-boot-diagnostics"></a>Diagnósticos de arranque de VM
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Al crear una nueva máquina virtual Windows, puede aparecer el siguiente error: **Failed to start virtual machine 'vm-name'. Error: Failed to update serial output settings for VM 'vm-name'** (No se pudo iniciar la máquina virtual "vm-name". No se pudo actualizar la configuración de salida de serie de la VM 'vm-name'). El error se produce si habilita el diagnóstico de arranque en una VM, pero elimina la cuenta de almacenamiento de diagnósticos de arranque.
+- Corrección: Vuelva a crear la cuenta de almacenamiento con el mismo nombre que usó anteriormente.
+- Repetición: Común
+
+### <a name="virtual-machine-scale-set"></a>Conjunto de escalado de máquina virtual
+
+#### <a name="create-failures-during-patch-and-update-on-4-node-azure-stack-environments"></a>Crear errores durante la revisión y actualización de entornos de Azure Stack de 4 nodos
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: La creación de VM en un conjunto de disponibilidad de 3 dominios de error y la creación de una instancia de conjunto de escalado de máquinas virtuales genera un error **FabricVmPlacementErrorUnsupportedFaultDomainSize** durante el proceso de actualización en un entorno de Azure Stack de 4 nodos.
+- Corrección: Se pueden crear VM únicas en un conjunto de disponibilidad con 2 dominios de error correctamente. Sin embargo, la creación de instancias del conjunto de escalado todavía no está disponible durante el proceso de actualización en una instancia de Azure Stack de 4 nodos.
+
+### <a name="ubuntu-ssh-access"></a>Acceso a SSH en Ubuntu
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Una VM de Ubuntu 18.04 creada con la autorización de SSH habilitada no le permite usar las claves SSH para iniciar sesión.
+- Corrección: Utilice el acceso a la VM para la extensión de Linux a fin de implementar las claves SSH después del aprovisionamiento o utilice la autenticación basada en contraseña.
+- Repetición: Común
+
+### <a name="virtual-machine-scale-set-reset-password-does-not-work"></a>La contraseña de restablecimiento del conjunto de escalado de máquinas virtuales no funciona
+
+- Aplicable a: Este problema se aplica a las versiones 1906 y 1907.
+- Causa: Aparece una nueva hoja para restablecer la contraseña en la interfaz de usuario del conjunto de escalado, pero Azure Stack todavía no admite el restablecimiento de contraseña en un conjunto de escalado.
+- Corrección: Ninguno.
+- Repetición: Común
+
+### <a name="rainy-cloud-on-scale-set-diagnostics"></a>Nube con lluvia en el diagnóstico del conjunto de escalado
+
+- Aplicable a: Este problema se aplica a las versiones 1906 y 1907.
+- Causa: La página de información general del conjunto de escalado de máquinas virtuales muestra un gráfico vacío. Al hacer clic en el gráfico vacío, se abre una hoja de "nube de lluvia". Este es el gráfico de información de diagnóstico del conjunto de escalado, como el porcentaje de CPU, y no es una característica admitida en la compilación actual de Azure Stack.
+- Corrección: Ninguno.
+- Repetición: Común
+
+### <a name="virtual-machine-diagnostic-settings-blade"></a>Hoja de configuración de diagnóstico de la máquina virtual
+
+- Aplicable a: Este problema se aplica a las versiones 1906 y 1907.    
+- Causa: La hoja de configuración de diagnóstico de la máquina virtual tiene una pestaña **Receptor**, que solicita una **Cuenta de Application Insights**. Este es el resultado de una nueva hoja y aún no se admite en Azure Stack.
+- Corrección: Ninguno.
+- Repetición: Común
+
+<!-- ## Storage -->
+<!-- ## SQL and MySQL-->
+<!-- ## App Service -->
+<!-- ## Usage -->
+<!-- ### Identity -->
+<!-- ### Marketplace -->
+::: moniker-end
+
+::: moniker range="azs-1906"
+## <a name="1906-update-process"></a>Proceso de actualización de 1906
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Al intentar instalar la actualización 1906 de Azure Stack, es posible que se produzca un error en el estado de esa actualización y dicho estado cambie a **PreparationFailed**. La causa es que el proveedor de recursos de actualización (URP) no se puede transferir correctamente desde el contenedor de almacenamiento a un recurso compartido de infraestructura interno para su procesamiento. 
+- Corrección: A partir de la versión 1901 (1.1901.0.95), para solucionar este problema, puede hacer clic en **Actualizar ahora** de nuevo (en lugar de en **Reanudar**). A continuación, URP limpia los archivos del intento anterior y vuelve a iniciar la descarga. Si el problema persiste, recomendamos cargar manualmente el paquete de actualización siguiendo la sección [Importación e instalación de actualizaciones](azure-stack-apply-updates.md).
+- Repetición: Común
+
+## <a name="portal"></a>Portal
+
+### <a name="administrative-subscriptions"></a>Suscripciones administrativas
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Las dos suscripciones administrativas que se incluyeron con la versión 1804 no deberían usarse. Los tipos de suscripción son **suscripción de medición** y **suscripción de consumo**.
+- Corrección: Si tiene recursos que se ejecutan en estas dos suscripciones, vuelva a crearlos en las suscripciones de usuario.
+- Repetición: Común
+
+### <a name="subscription-resources"></a>Recursos de suscripción
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: La eliminación de las suscripciones del usuario da como resultado recursos huérfanos.
+- Corrección: Elimine primero los recursos del usuario o todo el grupo de recursos y, después, elimine las suscripciones del usuario.
+- Repetición: Común
+
+### <a name="subscription-permissions"></a>Permisos de suscripción
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: No puede ver los permisos de la suscripción mediante los portales de Azure Stack.
+- Corrección: Use [PowerShell para verificar los permisos](/powershell/module/azurerm.resources/get-azurermroleassignment).
+- Repetición: Común
+
+### <a name="subscriptions-properties-blade"></a>Hoja de propiedades de suscripciones
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de administrador, la hoja **Propiedades** de las suscripciones no se carga correctamente.
+- Corrección: Puede ver estas propiedades de suscripciones en el panel Essentials de la hoja Introducción a las suscripciones.
+- Repetición: Común
+
+### <a name="storage-account-settings"></a>Configuración de cuentas de almacenamiento
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, la hoja **Configuración** de la cuenta de almacenamiento muestra una opción para cambiar el **tipo de transferencia de seguridad**. La característica no se admite actualmente en Azure Stack.
+- Repetición: Común
+
+### <a name="upload-blob"></a>Carga de blob
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, al intentar cargar un blob mediante la opción **OAuth(preview)** , la tarea genera un mensaje de error.
+- Corrección: Cargue el blob mediante la opción SAS.
+- Repetición: Común
+
+### <a name="update"></a>Actualizar
+
+- Aplicable a: Este problema se aplica a la versión 1906.
+- Causa: En el portal de operador, el estado de actualización de la revisión muestra un estado incorrecto de la actualización. El estado inicial indica que no se pudo instalar la actualización, aunque todavía está en curso.
+- Corrección: Actualice el portal y el estado se actualizará a "en curso".
+- Repetición: Intermitente
+
+## <a name="networking"></a>Redes
+
+### <a name="service-endpoints"></a>Puntos de conexión de servicio
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, la hoja **Red virtual** muestra una opción para usar **puntos de conexión de servicio**. Esta característica no se admite actualmente en Azure Stack.
+- Repetición: Común
+
+### <a name="network-interface"></a>interfaz de red
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: No se puede agregar una nueva interfaz de red a una VM cuyo estado es **En ejecución**.
+- Corrección: Detenga la máquina virtual antes de agregar o quitar una interfaz de red.
+- Repetición: Común
+
+### <a name="virtual-network-gateway"></a>Puerta de enlace de red virtual
+
+#### <a name="alerts"></a>Alertas
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, la hoja **Puerta de enlace de red virtual** muestra una opción para usar **alertas**. Esta característica no se admite actualmente en Azure Stack.
+- Repetición: Común
+
+#### <a name="active-active"></a>Activo-activo
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, durante la creación, y en el menú de recursos de **Puerta de enlace de red virtual**, verá una opción para habilitar la configuración **activa-activa**. Esta característica no se admite actualmente en Azure Stack.
+- Repetición: Común
+
+#### <a name="vpn-troubleshooter"></a>Solucionador de problemas de VPN
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, la hoja **Conexiones** muestra una característica denominada **Solucionador de problemas de VPN**. Esta característica no se admite actualmente en Azure Stack.
+- Repetición: Común
+
+#### <a name="documentation"></a>Documentación
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Los vínculos de la documentación de la página de información general de Puerta de enlace de red virtual enlazan a la documentación específica de Azure en lugar de a la de Azure Stack. Use los vínculos siguientes para la documentación de Azure Stack:
+
+  - [SKU de puerta de enlace](../user/azure-stack-vpn-gateway-about-vpn-gateways.md#gateway-skus)
+  - [Conexiones de alta disponibilidad](../user/azure-stack-vpn-gateway-about-vpn-gateways.md#gateway-availability)
+  - [Configuración de BGP en Azure Stack](../user/azure-stack-vpn-gateway-settings.md#gateway-requirements)
+  - [Circuitos ExpressRoute](azure-stack-connect-expressroute.md)
+  - [Especificación de directivas de IPsec o IKE personalizadas](../user/azure-stack-vpn-gateway-settings.md#ipsecike-parameters)
+
+### <a name="load-balancer"></a>Equilibrador de carga
+
+#### <a name="add-backend-pool"></a>Agregar grupo de back-end
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, si intenta agregar un **grupo de back-end** a una **instancia de Load Balancer**, se produce un error en la operación con el mensaje **Failed to update Load Balancer...** (No se pudo actualizar Load Balancer...).
+- Corrección: Use PowerShell, la CLI o una plantilla de Resource Manager para asociar el grupo de back-end a un recurso de equilibrador de carga.
+- Repetición: Común
+
+#### <a name="create-inbound-nat"></a>Crear una NAT de entrada
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, si intenta crear una **regla NAT de entrada** para una instancia de **Load Balancer**, se produce un error en la operación con el mensaje **Failed to update Load Balancer...** (No se pudo actualizar Load Balancer...).
+- Corrección: Use PowerShell, la CLI o una plantilla de Resource Manager para asociar el grupo de back-end a un recurso de equilibrador de carga.
+- Repetición: Común
+
+## <a name="compute"></a>Proceso
+
+### <a name="vm-boot-diagnostics"></a>Diagnósticos de arranque de VM
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Al crear una nueva máquina virtual Windows, puede aparecer el siguiente error: **Failed to start virtual machine 'vm-name'. Error: Failed to update serial output settings for VM 'vm-name'** (No se pudo iniciar la máquina virtual "vm-name". No se pudo actualizar la configuración de salida de serie de la VM 'vm-name'). El error se produce si habilita el diagnóstico de arranque en una VM, pero elimina la cuenta de almacenamiento de diagnósticos de arranque.
+- Corrección: Vuelva a crear la cuenta de almacenamiento con el mismo nombre que usó anteriormente.
+- Repetición: Común
+
+### <a name="virtual-machine-scale-set"></a>Conjunto de escalado de máquina virtual
+
+
+#### <a name="create-failures-during-patch-and-update-on-4-node-azure-stack-environments"></a>Crear errores durante la revisión y actualización de entornos de Azure Stack de 4 nodos
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: La creación de VM en un conjunto de disponibilidad de 3 dominios de error y la creación de una instancia de conjunto de escalado de máquinas virtuales genera un error **FabricVmPlacementErrorUnsupportedFaultDomainSize** durante el proceso de actualización en un entorno de Azure Stack de 4 nodos.
+- Corrección: Se pueden crear VM únicas en un conjunto de disponibilidad con 2 dominios de error correctamente. Sin embargo, la creación de instancias del conjunto de escalado todavía no está disponible durante el proceso de actualización en una instancia de Azure Stack de 4 nodos.
+
+### <a name="ubuntu-ssh-access"></a>Acceso a SSH en Ubuntu
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Una VM de Ubuntu 18.04 creada con la autorización de SSH habilitada no le permite usar las claves SSH para iniciar sesión.
+- Corrección: Utilice el acceso a la VM para la extensión de Linux a fin de implementar las claves SSH después del aprovisionamiento o utilice la autenticación basada en contraseña.
+- Repetición: Común
+
+### <a name="virtual-machine-scale-set-reset-password-does-not-work"></a>La contraseña de restablecimiento del conjunto de escalado de máquinas virtuales no funciona
+
+- Aplicable a: Este problema se aplica a la versión 1906.
+- Causa: Aparece una nueva hoja para restablecer la contraseña en la interfaz de usuario del conjunto de escalado, pero Azure Stack todavía no admite el restablecimiento de contraseña en un conjunto de escalado.
+- Corrección: Ninguno.
+- Repetición: Común
+
+### <a name="rainy-cloud-on-scale-set-diagnostics"></a>Nube con lluvia en el diagnóstico del conjunto de escalado
+
+- Aplicable a: Este problema se aplica a la versión 1906.
+- Causa: La página de información general del conjunto de escalado de máquinas virtuales muestra un gráfico vacío. Al hacer clic en el gráfico vacío, se abre una hoja de "nube de lluvia". Este es el gráfico de información de diagnóstico del conjunto de escalado, como el porcentaje de CPU, y no es una característica admitida en la compilación actual de Azure Stack.
+- Corrección: Ninguno.
+- Repetición: Común
+
+### <a name="virtual-machine-diagnostic-settings-blade"></a>Hoja de configuración de diagnóstico de la máquina virtual
+
+- Aplicable a: Este problema se aplica a la versión 1906.
+- Causa: La hoja de configuración de diagnóstico de la máquina virtual tiene una pestaña **Receptor**, que solicita una **Cuenta de Application Insights**. Este es el resultado de una nueva hoja y aún no se admite en Azure Stack.
+- Corrección: Ninguno.
+- Repetición: Común
+
+<!-- ## Storage -->
+<!-- ## SQL and MySQL-->
+<!-- ## App Service -->
+<!-- ## Usage -->
+<!-- ### Identity -->
+<!-- ### Marketplace -->
+::: moniker-end
+
+::: moniker range="azs-1905"
+## <a name="1905-update-process"></a>Proceso de actualización de 1905
+
+### <a name="host-node-update-prerequisite-failure"></a>Error en los requisitos previos de actualización del nodo de host
+
+- Aplicable a: Este problema se aplica a la actualización de la versión 1905.
+- Causa: Al intentar instalar la actualización 1905 de Azure Stack, es posible que se produzca un error debido a un **requisito previo de la actualización del nodo de host**. Esto se debe generalmente a que un nodo de host no tiene suficiente espacio libre en el disco.
+- Corrección: Póngase en contacto con el soporte técnico de Azure Stack para recibir asistencia en el borrado de espacio en disco en el nodo de host.
+- Repetición: Poco frecuente
+
+### <a name="preparation-failed"></a>Error de preparación
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Al intentar instalar la actualización 1905 de Azure Stack, es posible que se produzca un error en el estado de esa actualización y dicho estado se cambie a **PreparationFailed**. La causa es que el proveedor de recursos de actualización (URP) no se puede transferir correctamente desde el contenedor de almacenamiento a un recurso compartido de infraestructura interno para su procesamiento. El paquete de actualización 1905 es más grande que los paquetes de actualización anteriores, lo que puede hacer que este problema sea más probable.
+- Corrección: A partir de la versión 1901 (1.1901.0.95), para solucionar este problema, puede hacer clic en **Actualizar ahora** de nuevo (en lugar de en **Reanudar**). A continuación, URP limpia los archivos del intento anterior y vuelve a iniciar la descarga. Si el problema persiste, recomendamos cargar manualmente el paquete de actualización siguiendo la sección [Importación e instalación de actualizaciones](azure-stack-apply-updates.md).
+- Repetición: Común
+
+## <a name="portal"></a>Portal
+
+### <a name="subscription-resources"></a>Recursos de suscripción
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: La eliminación de las suscripciones del usuario da como resultado recursos huérfanos.
+- Corrección: Elimine primero los recursos del usuario o todo el grupo de recursos y, después, elimine las suscripciones del usuario.
+- Repetición: Común
+
+### <a name="subscription-permissions"></a>Permisos de suscripción
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: No puede ver los permisos de la suscripción mediante los portales de Azure Stack.
+- Corrección: Use [PowerShell para verificar los permisos](/powershell/module/azurerm.resources/get-azurermroleassignment).
+- Repetición: Común
+
+### <a name="marketplace-management"></a>Administración de Marketplace
+
+- Aplicable a: Este problema se aplica a las versiones 1904 y 1905.
+- Causa: La pantalla de administración de Marketplace no se ve al iniciar sesión en el portal de administradores.
+- Corrección: Actualice el explorador o vaya a **Settings** (Configuración) y seleccione la opción **Reset to default settings** (Restablecer configuración predeterminada).
+- Repetición: Intermitente
+
+### <a name="docker-extension"></a>Extensión de Docker
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En los portales de administrador y de usuario, si se busca **Docker**, el elemento se devuelve de forma incorrecta. No está disponible en Azure Stack. Si intenta crearlo, aparece un error.
+- Corrección: Sin mitigación.
+- Repetición: Común
+
+### <a name="upload-blob"></a>Carga de blob
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, al intentar cargar un blob mediante la opción **OAuth(preview)** , la tarea genera un mensaje de error.
+- Corrección: Cargue el blob mediante la opción SAS.
+- Repetición: Común
+
+### <a name="template"></a>Plantilla
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, la interfaz de usuario de implementación de plantillas no rellena los parámetros de los nombres de plantilla que empiezan por "_" (carácter de subrayado).
+- Corrección: Quite el "_" (carácter de subrayado) del nombre de la plantilla.
+- Repetición: Común
+
+## <a name="networking"></a>Redes
+
+### <a name="load-balancer"></a>Equilibrador de carga
+
+#### <a name="add-backend-pool"></a>Agregar grupo de back-end
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, si intenta agregar un **grupo de back-end** a una **instancia de Load Balancer**, se produce un error en la operación con el mensaje **Failed to update Load Balancer...** (No se pudo actualizar Load Balancer...).
+- Corrección: Use PowerShell, la CLI o una plantilla de Resource Manager para asociar el grupo de back-end a un recurso de equilibrador de carga.
+- Repetición: Común
+
+#### <a name="create-inbound-nat"></a>Crear una NAT de entrada
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, si intenta crear una **regla NAT de entrada** para una instancia de **Load Balancer**, se produce un error en la operación con el mensaje **Failed to update Load Balancer...** (No se pudo actualizar Load Balancer...).
+- Corrección: Use PowerShell, la CLI o una plantilla de Resource Manager para asociar el grupo de back-end a un recurso de equilibrador de carga.
+- Repetición: Común
+
+#### <a name="create-load-balancer"></a>Creación de un equilibrador de carga
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, la ventana **Crear equilibrador de carga** muestra una opción para crear una SKU **estándar** del equilibrador de carga. En Azure Stack no se admite esta opción.
+- Corrección: Use las opciones del equilibrador de carga **básico** en su lugar.
+- Repetición: Común
+
+### <a name="public-ip-address"></a>Dirección IP pública
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, la ventana **Crear dirección IP pública** muestra una opción para crear una SKU **estándar**. En Azure Stack no se admite la SKU **estándar**.
+- Corrección: Utilice la SKU **básica** para la dirección IP pública.
+- Repetición: Común
+
+## <a name="compute"></a>Proceso
+
+### <a name="vm-boot-diagnostics"></a>Diagnósticos de arranque de VM
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Al crear una nueva máquina virtual Windows, puede aparecer el siguiente error: **Failed to start virtual machine 'vm-name'. Error: Failed to update serial output settings for VM 'vm-name'** (No se pudo iniciar la máquina virtual "vm-name". No se pudo actualizar la configuración de salida de serie de la VM 'vm-name').
+El error se produce si habilita el diagnóstico de arranque en una VM, pero elimina la cuenta de almacenamiento de diagnósticos de arranque.
+- Corrección: Vuelva a crear la cuenta de almacenamiento con el mismo nombre que usó anteriormente.
+- Repetición: Común
+
+### <a name="vm-resize"></a>Cambio de tamaño de la VM
+
+- Aplicable a: Este problema se aplica a la versión 1905.
+- Causa: No se puede cambiar el tamaño de una VM de disco administrado correctamente. Al intentar cambiar el tamaño de la VM, se genera un error con "code": "InternalOperationError", "message": "An internal error occurred in the operation."
+- Corrección: Estamos trabajando para corregir esto en la próxima versión. Actualmente, debe volver a crear la VM con el nuevo tamaño de VM.
+- Repetición: Común
+
+### <a name="virtual-machine-scale-set"></a>Conjunto de escalado de máquina virtual
+
+#### <a name="centos"></a>CentOS
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: La experiencia de creación de conjuntos de escalado de máquinas virtuales proporciona la versión 7.2 basada en CentOS como una opción para la implementación. CentOS 7.2 no está disponible en Azure Stack Marketplace, lo que causará errores en la implementación que indican que la imagen no se encuentra.
+- Corrección: Seleccione otro sistema operativo para la implementación o use una plantilla de Azure Resource Manager en la que se especifique otra imagen de CentOS que el operador haya descargado de Marketplace antes de la implementación.
+- Repetición: Común
+
+#### <a name="remove-scale-set"></a>Quitar el conjunto de escalado
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: No se puede quitar un conjunto de escalado desde la hoja **Conjunto de escalado de máquinas virtuales**.
+- Corrección: Seleccione el conjunto de escalado que quiere quitar y, a continuación, haga clic en el botón **Eliminar** del panel **Información general**.
+- Repetición: Común
+
+#### <a name="create-failures-during-patch-and-update-on-4-node-azure-stack-environments"></a>Crear errores durante la revisión y actualización de entornos de Azure Stack de 4 nodos
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: La creación de VM en un conjunto de disponibilidad de 3 dominios de error y la creación de una instancia de conjunto de escalado de máquinas virtuales genera un error **FabricVmPlacementErrorUnsupportedFaultDomainSize** durante el proceso de actualización en un entorno de Azure Stack de 4 nodos.
+- Corrección: Se pueden crear VM únicas en un conjunto de disponibilidad con 2 dominios de error correctamente. Sin embargo, la creación de instancias del conjunto de escalado todavía no está disponible durante el proceso de actualización en una instancia de Azure Stack de 4 nodos.
+
+#### <a name="scale-set-instance-view-blade-doesnt-load"></a>La hoja de la vista de la instancia del conjunto de escalado no se carga
+
+- Aplicable a: Este problema se aplica a las versiones 1904 y 1905.
+- Causa: La hoja de la vista de la instancia de un conjunto de escalado de máquinas virtuales que se encuentra en el portal de Azure Stack -> Panel  ->  Virtual Machine Scale Sets  -> AnyScaleSet - Instancias  ->  AnyScaleSetInstance no se puede cargar y muestra la imagen de una nube llorando.
+- Corrección: Actualmente no hay ninguna corrección y estamos trabajando en una solución. Hasta entonces, use el comando `az vmss get-instance-view` de la CLI para obtener la vista de instancia de un conjunto de escalado.
+
+### <a name="ubuntu-ssh-access"></a>Acceso a SSH en Ubuntu
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Una VM de Ubuntu 18.04 creada con la autorización de SSH habilitada no le permite usar las claves SSH para iniciar sesión.
+- Corrección: Utilice el acceso a la VM para la extensión de Linux a fin de implementar las claves SSH después del aprovisionamiento o utilice la autenticación basada en contraseña.
+- Repetición: Común
+
+<!-- ## Storage -->
+<!-- ## SQL and MySQL-->
+<!-- ## App Service -->
+<!-- ## Usage -->
+<!-- ### Identity -->
+<!-- ### Marketplace -->
+::: moniker-end
+
+::: moniker range=">=azs-1905"
+## <a name="archive"></a>Archivar
+
+Para acceder a los problemas conocidos de una versión anterior, use el selector de versión en la parte superior izquierda de la página y seleccione la versión que desea. 
+
+## <a name="next-steps"></a>Pasos siguientes
+
+- [Revisión de la lista de comprobación de actividades de actualización](release-notes-checklist.md)
+- [Revisión de la lista de actualizaciones de seguridad](release-notes-security-updates.md)
+::: moniker-end
+
+<!------------------------------------------------------------>
+<!------------------- UNSUPPORTED VERSIONS ------------------->
+<!------------------------------------------------------------>
+::: moniker range="azs-1904"
+## <a name="1904-archived-known-issues"></a>Problemas conocidos archivados de la compilación 1904
+::: moniker-end
+::: moniker range="azs-1903"
+## <a name="1903-archived-known-issues"></a>Problemas conocidos archivados de la compilación 1903
+::: moniker-end
+::: moniker range="azs-1902"
+## <a name="1902-archived-known-issues"></a>Problemas conocidos archivados de la compilación 1902
+::: moniker-end
+::: moniker range="azs-1901"
+## <a name="1901-archived-known-issues"></a>Problemas conocidos archivados de la compilación 1901
+::: moniker-end
+::: moniker range="azs-1811"
+## <a name="1811-archived-known-issues"></a>Problemas conocidos archivados de la compilación 1811
+::: moniker-end
+::: moniker range="azs-1809"
+## <a name="1809-archived-known-issues"></a>Problemas conocidos archivados de la compilación 1809
+::: moniker-end
+::: moniker range="azs-1808"
+## <a name="1808-archived-known-issues"></a>Problemas conocidos archivados de la compilación 1808
+::: moniker-end
+::: moniker range="azs-1807"
+## <a name="1807-archived-known-issues"></a>Problemas conocidos archivados de la compilación 1807
+::: moniker-end
+::: moniker range="azs-1805"
+## <a name="1805-archived-known-issues"></a>Problemas conocidos archivados de la compilación 1805
+::: moniker-end
+::: moniker range="azs-1804"
+## <a name="1804-archived-known-issues"></a>Problemas conocidos archivados de la compilación 1804
+::: moniker-end
+::: moniker range="azs-1803"
+## <a name="1803-archived-known-issues"></a>Problemas conocidos archivados de la compilación 1803
+::: moniker-end
+::: moniker range="azs-1802"
+## <a name="1802-archived-known-issues"></a>Problemas conocidos archivados de la compilación 1802
+::: moniker-end
+
+::: moniker range="<azs-1905"
+Puede consultar los [problemas conocidos de las versiones anteriores de Azure Stack en la Galería de TechNet](https://aka.ms/azsarchivedrelnotes). Estos documentos archivados se proporcionan únicamente con fines de referencia y no implican que estas versiones sean compatibles. Para obtener información sobre la compatibilidad con Azure Stack, consulte [Directiva de mantenimiento de Azure Stack](azure-stack-servicing-policy.md). Para obtener más ayuda, póngase en contacto con los servicios de asistencia al cliente de Microsoft.
+::: moniker-end

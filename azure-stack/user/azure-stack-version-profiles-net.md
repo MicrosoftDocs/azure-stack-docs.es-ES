@@ -12,64 +12,64 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/16/2019
+ms.date: 09/17/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: af1f1351a5659447fb0f9e7ac9782fb74208e038
-ms.sourcegitcommit: ebb5afb7968d3e6531ecfcde7f4bb5e4420caf02
+ms.openlocfilehash: 6bb5c0cf6b5e4f2ddf60a19734a9e7c63df5d329
+ms.sourcegitcommit: 95f30e32e5441599790d39542ff02ba90e70f9d6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70302375"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71070255"
 ---
 # <a name="use-api-version-profiles-with-net-in-azure-stack"></a>Uso de los perfiles de la versión de la API con .NET en Azure Stack
 
 *Se aplica a: sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-El SDK de .NET para Resource Manager de Azure Stack proporciona herramientas que le ayudarán a crear y administrar su infraestructura. Los proveedores de recursos del SDK incluyen los servicios Compute, Redes, Storage, App Services y [Key Vault](/azure/key-vault/key-vault-whatis). El SDK de .NET incluye 14 paquetes NuGet, Debe descargar estos paquetes en la solución cada vez que compile el proyecto. Sin embargo, puede descargar de forma específica el proveedor de recursos que utilizará para los perfiles 2019-03-01-hybrid o 2018-03-01 con el fin de optimizar la memoria para la aplicación. Cada paquete consta de un proveedor de recursos, la versión correspondiente de la API y el perfil de la API a la que pertenece. Los perfiles de API en el SDK de .NET habilitan el desarrollo en la nube híbrida ayudándole a cambiar entre los recursos de Azure globales y los recursos de Azure Stack.
+El SDK de .NET para Resource Manager de Azure Stack proporciona herramientas que le ayudarán a crear y administrar su infraestructura. Los proveedores de recursos del SDK incluyen los servicios Compute, Redes, Storage, App Services y [Key Vault](/azure/key-vault/key-vault-whatis). El SDK de .NET incluye 14 paquetes NuGet, Debe descargar estos paquetes en la solución cada vez que compile el proyecto. Sin embargo, puede descargar de forma específica el proveedor de recursos que utilizará para las versiones **2019-03-01-hybrid** o **2018-03-01-hybrid** con el fin de optimizar la memoria para la aplicación. Cada paquete consta de un proveedor de recursos, la versión correspondiente de la API y el perfil de la API a la que pertenece. Los perfiles de API en el SDK de .NET habilitan el desarrollo en la nube híbrida ayudándole a cambiar entre los recursos de Azure globales y los recursos de Azure Stack.
 
 ## <a name="net-and-api-version-profiles"></a>Perfiles de la versión de API y .NET
 
 Un perfil de API es una combinación de los proveedores de recursos y las versiones de la API. Use un perfil de API para obtener la versión más reciente y más estable de cada tipo de recurso de un paquete de proveedor de recursos.
 
--   Para usar las últimas versiones de todos los servicios, use el perfil **más reciente** de los paquetes. Este perfil es parte del paquete NuGet **Microsoft.Azure.Management**.
+- Para usar las últimas versiones de todos los servicios, use el perfil **más reciente** de los paquetes. Este perfil es parte del paquete NuGet **Microsoft.Azure.Management**.
 
--   Para usar los servicios compatibles con Azure Stack, utilice uno de los siguientes paquetes:
-    - **Microsoft.Azure.Management.Profiles.hybrid\_2019\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg** 
-    - **Microsoft.Azure.Management.Profiles.hybrid\_2018\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**
-    
-    Asegúrese de que la parte **ResourceProvider** del paquete NuGet anterior se cambia al proveedor correcto.
+- Para usar los servicios compatibles con Azure Stack, utilice uno de los siguientes paquetes:
+  - **Microsoft.Azure.Management.Profiles.hybrid\_2019\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg** 
+  - **Microsoft.Azure.Management.Profiles.hybrid\_2018\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**
 
--   Para usar la última versión de API de un servicio, utilice el perfil **más reciente** del paquete NuGet específico. Por ejemplo, si quiere usar solo la **última versión de la API** del servicio Compute, utilice el perfil **latest** del paquete **compute**. El perfil **latest** forma parte del paquete NuGet **Microsoft.Azure.Management**.
+  Asegúrese de que la parte **ResourceProvider** del paquete NuGet anterior se cambia al proveedor correcto.
 
--   Para utilizar versiones específicas de API para un tipo de recurso en un proveedor de recursos específico, utilice las versiones específicas de API definidas dentro del paquete.
+- Para usar la última versión de API de un servicio, utilice el perfil **latest** del paquete NuGet específico. Por ejemplo, si quiere usar solo la **última versión de la API** del servicio Compute, utilice el perfil **latest** del paquete **compute**. El perfil **latest** forma parte del paquete NuGet **Microsoft.Azure.Management**.
+
+- Para utilizar versiones específicas de API para un tipo de recurso en un proveedor de recursos específico, utilice las versiones específicas de API definidas dentro del paquete.
 
 Puede combinar todas las opciones en la misma aplicación.
 
 ## <a name="install-the-azure-net-sdk"></a>Instalación del SDK de .NET para Azure
 
-1.  Instale Git. Para instrucciones, consulte [Introducción: instalación de Git][].
+- Instale Git. Para instrucciones, consulte [Introducción: instalación de Git][].
 
-2.  Para instalar los paquetes NuGet correctos, consulte [Búsqueda e instalación de un paquete][].
+- Para instalar los paquetes NuGet correctos, consulte [Búsqueda e instalación de un paquete][].
 
-3.  Los paquetes que se deben instalar dependen de la versión del perfil que quiera utilizar. Los nombres de paquete para las versiones de perfiles son:
+- Los paquetes que se deben instalar dependen de la versión del perfil que quiera utilizar. Los nombres de paquete para las versiones de perfiles son:
 
-    1.  **Microsoft.Azure.Management.Profiles.hybrid\_2019\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**
+   - **Microsoft.Azure.Management.Profiles.hybrid\_2019\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**
 
-    2.  **Microsoft.Azure.Management.Profiles.hybrid\_2018\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**
+   - **Microsoft.Azure.Management.Profiles.hybrid\_2018\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**
 
-4.  Para instalar los paquetes NuGet correctos para Visual Studio Code, consulte el siguiente vínculo para descargar las [instrucciones del administrador de paquetes NuGet][].
+- Para instalar los paquetes NuGet correctos para Visual Studio Code, consulte el siguiente vínculo para descargar las [instrucciones del administrador de paquetes NuGet][].
 
-5.  Si no está disponible, cree una suscripción y guarde su identificador para usarlo más adelante. Para obtener las instrucciones para crear una suscripción, consulte [Creación de suscripciones para ofertas en Azure Stack][].
+- Si no está disponible, cree una suscripción y guarde su identificador para usarlo más adelante. Para más información acerca de la creación de una suscripción, consulte [Creación de suscripciones para ofertas en Azure Stack][].
 
-6.  Cree a una entidad de servicio y guarde el identificador de cliente y el secreto de cliente. Para obtener instrucciones sobre la creación de una entidad de servicio para Azure Stack, consulte [Proporcionar a las aplicaciones acceso a Azure Stack][]. El identificador de cliente también se conoce como el identificador de aplicación al crear una entidad de servicio.
+- Cree una entidad de servicio y guarde el identificador y el secreto de cliente. Para más información sobre la creación de una entidad de servicio para Azure Stack, consulte [Proporcionar a las aplicaciones acceso a Azure Stack][]. El identificador de cliente también se conoce como el identificador de aplicación al crear una entidad de servicio.
 
-7.  Asegúrese de que la entidad de servicio tenga rol de colaborador o propietario en la suscripción. Para obtener instrucciones sobre cómo asignar roles a la entidad de servicio, consulte [Proporcionar a las aplicaciones acceso a Azure Stack][].
+- Asegúrese de que la entidad de servicio tenga rol de colaborador o propietario en la suscripción. Para más información sobre cómo asignar roles a la entidad de servicio, consulte [Proporcionar a las aplicaciones acceso a Azure Stack][].
 
 ## <a name="prerequisites"></a>Requisitos previos
 
-Para usar el SDK de Azure de .NET con Azure Stack, debe proporcionar los siguientes valores y, a continuación, establecer valores con variables de entorno. Para establecer las variables de entorno, consulte las instrucciones bajo la tabla relativas a su sistema operativo específico.
+Para usar Azure SDK para .NET con Azure Stack, debe proporcionar los siguientes valores y, a continuación, establecer valores con variables de entorno. Para establecer las variables de entorno, consulte las instrucciones bajo la tabla relativas a su sistema operativo específico.
 
 | Valor                     | Variables de entorno   | DESCRIPCIÓN                                                                                                             |
 |---------------------------|-------------------------|-------------------------------------------------------------------------------------------------------------------------|
@@ -80,9 +80,9 @@ Para usar el SDK de Azure de .NET con Azure Stack, debe proporcionar los siguien
 | Punto de conexión de Resource Manager | `ARM_ENDPOINT`          | Consulte [*Punto de conexión de Resource Manager de Azure Stack*][].                                                                    |
 | Location                  | `RESOURCE_LOCATION`     | Ubicación de Azure Stack.
 
-Para buscar el identificador de inquilino de Azure Stack, siga las instrucciones que se encuentran [aquí](../operator/azure-stack-csp-ref-operations.md). Para establecer las variables de entorno, realice los pasos siguientes:
+Para buscar el identificador de inquilino de Azure Stack, siga las instrucciones que se encuentran [en este artículo](../operator/azure-stack-csp-ref-operations.md). Para establecer las variables de entorno, haga lo siguiente:
 
-### <a name="microsoft-windows"></a>Microsoft Windows
+### <a name="windows"></a>Windows
 
 Para establecer las variables de entorno, en el símbolo del sistema de Windows, use el siguiente formato:
 
@@ -100,58 +100,60 @@ Export Azure_Tenant_ID=Your_Tenant_ID
 
 ### <a name="the-azure-stack-resource-manager-endpoint"></a>Punto de conexión de Resource Manager de Azure Stack
 
-Microsoft Azure Resource Manager es un marco de administración que permite a sus administradores implementar, administrar y supervisar recursos de Azure. Azure Resource Manager puede controlar estas tareas como grupo, en vez de individualmente, en una sola operación.
+Azure Resource Manager es una plataforma de administración que permite a los administradores implementar, administrar y supervisar recursos de Azure. Azure Resource Manager puede controlar estas tareas como grupo, en vez de individualmente, en una sola operación.
 
 Puede obtener la información de metadatos en el punto de conexión de Resource Manager. El punto de conexión devuelve un archivo JSON con la información necesaria para ejecutar el código.
 
 Tenga en cuenta las siguientes consideraciones:
 
-- El valor de **ResourceManagerUrl** del Kit de desarrollo de Azure Stack (ASDK) es: https://management.local.azurestack.external/
+- El valor de **ResourceManagerUrl** del Kit de desarrollo de Azure Stack (ASDK) es: https://management.local.azurestack.external/.
 
-- El valor de **ResourceManagerUrl** en los sistemas integrados es: `https://management.<location>.ext-<machine-name>.masd.stbtest.microsoft.com/`. Para recuperar los metadatos necesarios: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`.
+- El valor de **ResourceManagerUrl** en los sistemas integrados es: `https://management.<location>.ext-<machine-name>.masd.stbtest.microsoft.com/`.
+Para recuperar los metadatos necesarios: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`.
 
 Archivo JSON de ejemplo:
 
 ```json
-{ 
+{
    "galleryEndpoint": "https://portal.local.azurestack.external:30015/",
    "graphEndpoint": "https://graph.windows.net/",
    "portal Endpoint": "https://portal.local.azurestack.external/",
    "authentication": 
       {
-      "loginEndpoint": "https://login.windows.net/",
-      "audiences": ["https://management.yourtenant.onmicrosoft.com/3cc5febd-e4b7-4a85-a2ed-1d730e2f5928"]
+         "loginEndpoint": "https://login.windows.net/",
+         "audiences": ["https://management.yourtenant.onmicrosoft.com/3cc5febd-e4b7-4a85-a2ed-1d730e2f5928"]
       }
 }
 ```
 
 ## <a name="existing-api-profiles"></a>Perfiles de API existentes
 
-1.  **Microsoft.Azure.Management.Profiles.hybrid\_2019\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**: último perfil creado para Azure Stack. Use este perfil de servicios para obtener una mayor compatibilidad con Azure Stack, siempre y cuando tenga una marca de versión 1904 o posterior.
+- **Microsoft.Azure.Management.Profiles.hybrid\_2019\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**: último perfil creado para Azure Stack. Use este perfil de servicios para obtener una mayor compatibilidad con Azure Stack, siempre y cuando disponga de la versión 1904 o posterior.
 
-2.  **Microsoft.Azure.Management.Profiles.hybrid\_2018\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**: Use este perfil de servicios para que sea compatible con Azure Stack para las versiones de marca 1808 o posteriores.
+- **Microsoft.Azure.Management.Profiles.hybrid\_2018\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**: Use este perfil para que los servicios sean compatibles con Azure Stack para las versiones 1808 o posteriores.
 
-3.  **Más reciente**: este perfil contiene las versiones más recientes de todos los servicios. Use las versiones más recientes de todos los servicios. Este perfil es parte del paquete NuGet **Microsoft.Azure.Management**.
+- **Más reciente**: este perfil contiene las versiones más recientes de todos los servicios. Use las versiones más recientes de todos los servicios. Este perfil es parte del paquete NuGet **Microsoft.Azure.Management**.
 
-Para obtener más información sobre los perfiles de API y Azure Stack, consulte [Resumen de perfiles de API][].
+Para más información sobre los perfiles de API y Azure Stack, consulte [Resumen de perfiles de API][].
 
 ## <a name="azure-net-sdk-api-profile-usage"></a>Uso de perfil de API del SDK de .NET de Azure
 
-Se debe usar el siguiente código para crear una instancia de un cliente de administración de recursos. Se puede usar un código similar para crear una instancia de otros clientes de proveedores de recursos (por ejemplo, Compute, Redes y Storage).
+Use el siguiente código para crear una instancia de un cliente de administración de recursos. Se puede usar un código similar para crear una instancia de otros clientes de proveedores de recursos (por ejemplo, Compute, Redes y Storage).
 
 ```csharp
 var client = new ResourceManagementClient(armEndpoint, credentials)
 {
-    SubscriptionId = subscriptionId
+    SubscriptionId = subscriptionId;
 };
 ```
 
-El parámetro `credentials` del código anterior es necesario para crear una instancia de un cliente. Mediante el código siguiente, el identificador del inquilino y la entidad de servicio generan un token de autenticación.
+El parámetro `credentials` de este código es necesario para crear una instancia de un cliente. Mediante el código siguiente, el identificador del inquilino y la entidad de servicio generan un token de autenticación:
 
 ```csharp
 var azureStackSettings = getActiveDirectoryServiceSettings(armEndpoint);
 var credentials = ApplicationTokenProvider.LoginSilentAsync(tenantId, servicePrincipalId, servicePrincipalSecret, azureStackSettings).GetAwaiter().GetResult();
 ```
+
 La llamada `getActiveDirectoryServiceSettings` en el código recupera los puntos de conexión de Azure Stack del punto de conexión de los metadatos. Indica las variables de entorno de la llamada que se realiza:
 
 ```csharp
@@ -187,18 +189,19 @@ public static ActiveDirectoryServiceSettings getActiveDirectoryServiceSettings(s
 }
 ```
 
-Estos pasos le permiten usar los paquetes NuGet de perfil de API para implementar la aplicación correctamente en Azure Stack.
+Estos pasos le permitirán usar los paquetes NuGet de perfil de API para implementar la aplicación correctamente en Azure Stack.
 
 ## <a name="samples-using-api-profiles"></a>Ejemplos donde se usan perfiles de API
 
-Use los ejemplos siguientes como referencia para crear soluciones con perfiles de API de Azure Stack y .NET.
+Puede usar los ejemplos siguientes como referencia para crear soluciones con perfiles de API de Azure Stack y .NET:
+
 - [Administración de grupos de recursos](https://github.com/Azure-Samples/hybrid-resources-dotnet-manage-resource-group)
 - [Administración de cuentas de almacenamiento](https://github.com/Azure-Samples/hybird-storage-dotnet-manage-storage-accounts)
-- [Administración de una máquina virtual](https://github.com/Azure-Samples/hybrid-compute-dotnet-manage-vm) (este ejemplo usa el perfil 2019-03-01-hybrid que es compatible con Azure Stack)
+- [Administración de una máquina virtual](https://github.com/Azure-Samples/hybrid-compute-dotnet-manage-vm): Este ejemplo usa el perfil **2019-03-01-hybrid** que es compatible con Azure Stack.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Para obtener más información sobre los perfiles de API, consulte:
+Más información acerca de los perfiles de API:
 
 - [Administración de perfiles de la versión de API en Azure Stack](azure-stack-version-profiles.md)
 - [Versiones de API del proveedor de recursos compatibles con perfiles](azure-stack-profiles-azure-resource-manager-versions.md)

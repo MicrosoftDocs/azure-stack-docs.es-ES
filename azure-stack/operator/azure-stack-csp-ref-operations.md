@@ -11,59 +11,58 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/16/2019
+ms.date: 09/17/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 01/08/2019
-ms.openlocfilehash: 688726b0e74612400f4f48d2a5b7cffa3a8d188a
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: 619bfc89e5def3406d719abfb589193c76c3db6b
+ms.sourcegitcommit: 95f30e32e5441599790d39542ff02ba90e70f9d6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66268653"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71070086"
 ---
 # <a name="manage-tenant-registration-in-azure-stack"></a>Administración del registro de inquilinos en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack*
 
 En este artículo se incluye información acerca de las operaciones de registro. Puede usar estas operaciones para:
+
 - Administrar el registro de inquilinos
 - Administrar el seguimiento del uso de inquilinos
 
-Puede encontrar más información sobre cómo agregar, enumerar o quitar asignaciones de inquilinos. Puede usar puntos de conexión de PowerShell o de Billing API para administrar el seguimiento del uso. Puede encontrar más información sobre cómo agregar, enumerar o quitar asignaciones de inquilinos. Puede usar puntos de conexión de PowerShell o de Billing API para administrar el seguimiento del uso.
-
 ## <a name="add-tenant-to-registration"></a>Adición de inquilinos al registro
 
-Utilice la operación cuando desee agregar un nuevo inquilino al registro. Se informa del uso de inquilinos en una suscripción de Azure conectada con su inquilino de Azure Active Directory (Azure AD).
+Utilice la operación cuando desee agregar un nuevo inquilino a su registro. Se informa del uso de inquilinos en una suscripción de Azure conectada con el inquilino de Azure Active Directory (Azure AD).
 
-También puede usar la operación si desea cambiar la suscripción asociada a un inquilino. Llame a PUT/New-AzureRMResource para sobrescribir la asignación anterior.
+También puede usar la operación para cambiar la suscripción asociada a un inquilino. Llame a PUT o a **New-AzureRMResource** para sobrescribir la asignación anterior.
 
 Puede asociar una sola suscripción de Azure a un inquilino. Si intenta agregar una segunda suscripción a un inquilino existente, la primera suscripción se sobrescribe.
 
 ### <a name="use-api-profiles"></a>Uso de perfiles de API
 
-Los cmdlets de registro requieren que se especifique un perfil de API cuando se ejecuta PowerShell. Los perfiles de API representan un conjunto de proveedores de recursos de Azure y sus versiones de API. Le ayudan a usar la versión correcta de la API cuando interactúa con varias nubes de Azure. Por ejemplo, cuando usa varias nubes mientras trabaja con Azure global y Azure Stack. Los perfiles requieren un nombre que coincida con su fecha de versión. Deberá usar el perfil **2017-09-03**.
+Los cmdlets de registro siguientes requieren que se especifique un perfil de API cuando se ejecuta PowerShell. Los perfiles de API representan un conjunto de proveedores de recursos de Azure y sus versiones de API. Le ayudan a usar la versión correcta de la API cuando interactúa con varias nubes de Azure. Por ejemplo, si trabaja con varias nubes al trabajar con la plataforma global de Azure y Azure Stack, los perfiles de API especifican un nombre que coincide con la fecha de la versión. Use el perfil **2017-09-03**.
 
-Para más información sobre los perfiles de la API y Azure Stack, consulte [Administración de perfiles de versión de API en Azure Stack](../user/azure-stack-version-profiles.md).
+Para más información sobre los perfiles de API y Azure Stack, consulte [Administración de perfiles de versión de API en Azure Stack](../user/azure-stack-version-profiles.md).
 
 ### <a name="parameters"></a>Parámetros
 
 | Parámetro                  | DESCRIPCIÓN |
 |---                         | --- |
 | registrationSubscriptionID | La suscripción de Azure que se ha usado para el registro inicial. |
-| customerSubscriptionID     | La suscripción de Azure (no Azure Stack) a la que pertenece el cliente que se va a registrar. Debe crearse en la oferta del proveedor de servicios en la nube (CSP) a través del Centro de partners. Si un cliente tiene más de un inquilino, cree una suscripción para que el inquilino inicie sesión en Azure Stack. |
+| customerSubscriptionID     | La suscripción de Azure (no Azure Stack) a la que pertenece el cliente que se va a registrar. Debe crearse en la oferta del proveedor de servicios en la nube (CSP) mediante del Centro de partners. Si un cliente tiene más de un inquilino, cree una suscripción para que el inquilino inicie sesión en Azure Stack. |
 | resourceGroup              | El grupo de recursos de Azure en el que se almacena el registro. |
-| registrationName           | El nombre del registro de Azure Stack. Es un objeto almacenado en Azure. El nombre suele ser azurestack-CloudID, donde CloudID es el identificador de nube de su implementación de Azure Stack. |
+| registrationName           | El nombre del registro de Azure Stack. Es un objeto almacenado en Azure. El nombre suele ser **azurestack-CloudID**, donde **CloudID** es el identificador de nube de su implementación de Azure Stack. |
 
-> [!Note]  
-> Los inquilinos se deben registrar en cada instancia de Azure Stack que utilicen. Si un inquilino usa más de una instancia de Azure Stack, hay que actualizar los registros iniciales de cada implementación con la suscripción del inquilino.
+> [!NOTE]  
+> Los inquilinos se deben registrar en cada implementación de Azure Stack que utilicen. Si un inquilino usa más de una implementación de Azure Stack, actualice los registros iniciales de cada implementación con la suscripción del inquilino.
 
 ### <a name="powershell"></a>PowerShell
 
-Use el cmdlet New-AzureRmResource para agregar un inquilino. [Conéctese a Azure Stack](azure-stack-powershell-configure-admin.md) y, después, desde un símbolo del sistema con privilegios elevados, use el siguiente cmdlet:
+Use el cmdlet **New-AzureRmResource** para agregar un inquilino. [Conéctese a Azure Stack](azure-stack-powershell-configure-admin.md) y, después, desde un símbolo del sistema con privilegios elevados, use el siguiente cmdlet:
 
 ```powershell
-  New-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01 -Properties
+New-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01 -Properties
 ```
 
 ### <a name="api-call"></a>Llamada a la API
@@ -78,7 +77,7 @@ Use el cmdlet New-AzureRmResource para agregar un inquilino. [Conéctese a Azure
 
 Obtenga una lista de todos los inquilinos que se han agregado a un registro.
 
- > [!Note]  
+ > [!NOTE]  
  > Si no hay inquilinos registrados, no recibirá respuesta.
 
 ### <a name="parameters"></a>Parámetros
@@ -87,14 +86,14 @@ Obtenga una lista de todos los inquilinos que se han agregado a un registro.
 |---                         | ---                  |
 | registrationSubscriptionId | La suscripción de Azure que se ha usado para el registro inicial.   |
 | resourceGroup              | El grupo de recursos de Azure en el que se almacena el registro.    |
-| registrationName           | El nombre del registro de Azure Stack. Es un objeto almacenado en Azure. El nombre suele ser **azurestack**-***CloudID***, donde ***CloudID*** es el identificador de nube de su implementación de Azure Stack.   |
+| registrationName           | El nombre del registro de su implementación de Azure Stack. Es un objeto almacenado en Azure. El nombre suele ser **azurestack-CloudID**, donde **CloudID** es el identificador de nube de su implementación de Azure Stack.   |
 
 ### <a name="powershell"></a>PowerShell
 
-Use el cmdlet Get-AzureRmResource para enumerar todos los inquilinos registrados. [Conéctese a Azure Stack](azure-stack-powershell-configure-admin.md) y, después, desde un símbolo del sistema con privilegios elevados, use el siguiente cmdlet:
+Use el cmdlet **Get-AzureRmResource** para enumerar todos los inquilinos registrados. [Conéctese a Azure Stack](azure-stack-powershell-configure-admin.md) y, después, desde un símbolo del sistema con privilegios elevados, ejecute el siguiente cmdlet:
 
 ```powershell
-  Get-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions" -ApiVersion 2017-06-01
+Get-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions" -ApiVersion 2017-06-01
 ```
 
 ### <a name="api-call"></a>Llamada a la API
@@ -106,9 +105,9 @@ Puede obtener una lista de todas las asignaciones de inquilinos mediante la oper
 /providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions?  
 api-version=2017-06-01 HTTP/1.1`  
 **Respuesta**: 200  
-**Cuerpo de respuesta**: 
+**Cuerpo de respuesta**:
 
-```JSON  
+```json
 {
     "value": [{
             "id": " subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{ cspSubscriptionId 1}",
@@ -142,10 +141,10 @@ Puede quitar un inquilino que se haya agregado a un registro. Si ese inquilino t
 
 ### <a name="powershell"></a>PowerShell
 
-Use el cmdlet Remove-AzureRmResource para quitar un inquilino. [Conéctese a Azure Stack](azure-stack-powershell-configure-admin.md) y, después, desde un símbolo del sistema con privilegios elevados, use el siguiente cmdlet:
+Use el cmdlet **Remove-AzureRmResource** para quitar un inquilino. [Conéctese a Azure Stack](azure-stack-powershell-configure-admin.md) y, después, desde un símbolo del sistema con privilegios elevados, ejecute el siguiente cmdlet:
 
 ```powershell
-  Remove-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01
+Remove-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01
 ```
 
 ### <a name="api-call"></a>Llamada a la API
@@ -161,4 +160,4 @@ Se pueden quitar las asignaciones de inquilinos mediante la operación DELETE.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
- - Para más información sobre cómo recuperar la información de utilización de recursos de Azure Stack, consulte [Uso y facturación en Azure Stack](azure-stack-billing-and-chargeback.md).
+- [Cómo recuperar la información de uso de los recursos de Azure Stack](azure-stack-billing-and-chargeback.md)

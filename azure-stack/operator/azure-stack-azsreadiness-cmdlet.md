@@ -16,12 +16,12 @@ ms.date: 08/13/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: 7d0e9c6914ce8748d842c9addf040355e3dc1cb1
-ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
+ms.openlocfilehash: 9e92101b6d00da397359ed25e8682f18305f5a83
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68991701"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70974748"
 ---
 # <a name="start-azsreadinesschecker-cmdlet-reference"></a>Referencia del cmdlet Start-AzsReadinessChecker
 
@@ -166,7 +166,7 @@ Start-AzsReadinessChecker
 
 ## <a name="description"></a>DESCRIPCIÓN
 
-El cmdlet **Start-AzsReadinessChecker** valida los certificados, las cuentas de Azure, las suscripciones de Azure y los directorios de Azure Active Directory. Ejecute la validación antes de implementar Azure Stack o de realizar acciones de servicio de Azure Stack como la rotación de secretos. El cmdlet también puede usarse para generar solicitudes de firma de certificado para certificados de infraestructura y, opcionalmente, para certificados de PaaS. Por último, el cmdlet puede volver a empaquetar los certificados PFX para solucionar problemas comunes de empaquetado.
+El cmdlet **Start-AzsReadinessChecker** valida los certificados, las cuentas de Azure, las suscripciones de Azure y los directorios de Azure Active Directory (AAD). Ejecute la validación antes de implementar Azure Stack o de realizar acciones de servicio de Azure Stack como la rotación de secretos. El cmdlet también puede usarse para generar solicitudes de firma de certificado para certificados de infraestructura y, opcionalmente, para certificados de PaaS. Por último, el cmdlet puede volver a empaquetar los certificados PFX para solucionar problemas comunes de empaquetado.
 
 ## <a name="examples"></a>Ejemplos
 
@@ -237,7 +237,7 @@ $serviceAdminCredential = Get-Credential -Message "Enter Credentials for Service
 Start-AzsReadinessChecker -AADServiceAdministrator $serviceAdminCredential -AzureEnvironment "<environment name>" -AzureDirectoryTenantName azurestack.contoso.com
 ```
 
-En este ejemplo, se solicitan las credenciales de cuenta de administrador del servicio por seguridad y `Start-AzsReadinessChecker` comprueba que la cuenta de Azure y Azure Active Directory son válidos para una implementación de AAD con un nombre de directorio de inquilino de **azurestack.contoso.com**.
+En este ejemplo, se solicitan las credenciales de la cuenta de administrador del servicio por seguridad y `Start-AzsReadinessChecker` comprueba que la cuenta de Azure y AAD son válidos para una implementación de AAD con un nombre de directorio de inquilino de **azurestack.contoso.com**.
 
 ### <a name="example-validate-azure-identity-with-deployment-data-deployment-support"></a>Ejemplo: Validación de la identidad de Azure con datos de implementación (compatibilidad de implementación)
 
@@ -246,7 +246,7 @@ $serviceAdminCredential = Get-Credential -Message "Enter Credentials for Service
 Start-AzsReadinessChecker -AADServiceAdministrator $serviceAdminCredential -DeploymentDataJSONPath .\contoso-deploymentdata.json
 ```
 
-En este ejemplo, se solicitan las credenciales de cuenta de administrador del servicio por seguridad y `Start-AzsReadinessChecker` comprueba que la cuenta de Azure y Azure Active Directory son válidos para una implementación de AAD donde **AzureCloud** y **TenantName** se leen del archivo JSON de datos de implementación generado para la implementación.
+En este ejemplo, se solicitan las credenciales de la cuenta de administrador del servicio por seguridad y `Start-AzsReadinessChecker` comprueba que la cuenta de Azure y AAD son válidos para una implementación de AAD donde **AzureCloud** y **TenantName** se leen del archivo JSON de datos de implementación generado para la implementación.
 
 ### <a name="example-validate-azure-registration"></a>Ejemplo: Validación del registro de Azure
 
@@ -435,7 +435,7 @@ Especifica la ruta de acceso de destino para los archivos de solicitud de certif
 
 ### <a name="-aadserviceadministrator"></a>-AADServiceAdministrator
 
-Especifica el administrador de servicio de Azure Active Directory que se va a usar para la implementación de Azure Stack.
+Especifica el administrador del servicio de AAD que se va a usar para la implementación de Azure Stack.
 
 |  |  |
 |----------------------------|---------|
@@ -447,7 +447,7 @@ Especifica el administrador de servicio de Azure Active Directory que se va a us
 
 ### <a name="-aaddirectorytenantname"></a>-AADDirectoryTenantName
 
-Especifica el nombre de Azure Active Directory que se va a usar para la implementación de Azure Stack.
+Especifica el nombre de AAD que se va a usar para la implementación de Azure Stack.
 
 |  |  |
 |----------------------------|---------|
@@ -512,13 +512,13 @@ Especifica la ruta de acceso para el informe de preparación, tiene como valor p
 
 Especifica la ruta de acceso en la que solo se encuentran las carpetas de certificados necesarias para el certificado.
 
-Las carpetas necesarias para la implementación de Azure Stack con el sistema de identidades de Azure Active Directory son las siguientes:
+Las carpetas necesarias para la implementación de Azure Stack con el sistema de identidades de AAD son las siguientes:
 
-ACSBlob, ACSQueue, ACSTable, Admin Portal, ARM Admin, ARM Public, KeyVault, KeyVaultInternal, Public Portal
+- ACSBlob, ACSQueue, ACSTable, Admin Portal, ARM Admin, ARM Public, KeyVault, KeyVaultInternal, Public Portal
 
-Las carpetas necesarias para la implementación de Azure Stack con el sistema de identidades de Servicios de federación de Active Directory (AD FS) son las siguientes:
+Las carpetas necesarias para la implementación de Azure Stack con el sistema de identidades de Servicios de federación de Active Directory (AD FS) son las siguientes:
 
-ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, KeyVault, KeyVaultInternal, Public Portal
+- ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, KeyVault, KeyVaultInternal, Public Portal
 
 |  |  |
 |----------------------------|---------|

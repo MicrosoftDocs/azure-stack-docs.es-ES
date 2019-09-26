@@ -1,5 +1,5 @@
 ---
-title: Conexión de Azure Stack a Azure mediante ExpressRoute
+title: Conexión de Azure Stack a Azure mediante ExpressRoute | Microsoft Docs
 description: Aprenda a conectar redes virtuales de Azure Stack a redes virtuales de Azure mediante ExpressRoute.
 services: azure-stack
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.date: 06/22/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 10/22/2018
-ms.openlocfilehash: 2ddc95097539eb1a7b15fdfc1fd2faf2c71f9ced
-ms.sourcegitcommit: a8379358f11db1e1097709817d21ded0231503eb
+ms.openlocfilehash: d7fa69b632ec6d205eff0ed0c388c1f9ec9b9c41
+ms.sourcegitcommit: c196463492732218d2474d3a964f88e995272c80
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70377297"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71094408"
 ---
 # <a name="connect-azure-stack-to-azure-using-azure-expressroute"></a>Conexión de Azure Stack a Azure mediante Azure ExpressRoute
 
@@ -62,7 +62,7 @@ En la figura siguiente se muestran los entornos de Azure y Azure Stack después 
 
 ![Red de ExpressRoute](media/azure-stack-connect-expressroute/Conceptual.png)
 
-En la figura siguiente se muestra cómo varios inquilinos se conectan desde la infraestructura de Azure Stack a Azure en Microsoft Edge mediante el enrutador de ExpressRoute:
+En la ilustración siguiente se muestra cómo varios inquilinos se conectan desde la infraestructura de Azure Stack a Azure en Microsoft Edge mediante el enrutador de ExpressRoute:
 
 ![Conexiones multiinquilino con ExpressRoute](media/azure-stack-connect-expressroute/Architecture.png)
 
@@ -142,7 +142,7 @@ Use los procedimientos siguientes para crear los recursos de red necesarios en A
 
 El recurso de la puerta de enlace de red local identifica la puerta de enlace remota en el otro extremo de la conexión VPN. En este ejemplo, el extremo remoto de la conexión es la subinterfaz LAN del enrutador de ExpressRoute. Para el inquilino 1 del diagrama anterior, la dirección remota es 10.60.3.255.
 
-1. Inicie sesión en el portal de usuario de Azure Stack con su cuenta de usuario y seleccione **+Crear un recurso**.
+1. Inicie sesión en el portal de usuario de Azure Stack y seleccione **+ Crear un recurso**.
 1. En **Azure Marketplace**, seleccione **Networking** (Red).
 1. Seleccione **local network gateway** (puerta de enlace de red local) en la lista de recursos de red.
 1. En el campo **Name** (Nombre), escriba **ER-Router-GW**.
@@ -179,9 +179,9 @@ Después de crear la puerta de enlace de red virtual, puede obtener la direcció
 1. En **Virtual network gateway** (Puerta de enlace de red virtual), seleccione **Overview** (Información general) de la lista de recursos. Como alternativa, puede seleccionar **Properties** (Propiedades).
 1. La dirección IP en que debe fijarse se muestra en **Public IP address** (Dirección IP pública). En la configuración de ejemplo, esta dirección es 192.68.102.1.
 
-#### <a name="create-a-virtual-machine"></a>Creación de una máquina virtual
+#### <a name="create-a-virtual-machine-vm"></a>Creación de una máquina virtual (VM)
 
-Para comprobar el tráfico de datos a través de la conexión VPN, necesita máquinas virtuales para enviar y recibir datos en la red virtual de Azure Stack. Cree una máquina virtual e impleméntela en la subred de máquina virtual de la red virtual.
+Para comprobar el tráfico de datos mediante la conexión VPN, necesita máquinas virtuales para enviar y recibir datos en la red virtual de Azure Stack. Cree una máquina virtual e impleméntela en la subred de máquina virtual de la red virtual.
 
 1. En el portal de usuario de Azure Stack, seleccione **+ Crear un recurso**.
 1. En **Azure Marketplace**, seleccione **Compute** (Proceso).
@@ -193,7 +193,7 @@ Para comprobar el tráfico de datos a través de la conexión VPN, necesita máq
 1. En **Create virtual machine** (Crear una máquina virtual), seleccione **Basics** (Aspectos básicos) y, luego, en **Name** (Nombre), escriba **VM01**.
 1. Escriba un nombre de usuario y una contraseña válidos. Usará esta cuenta para iniciar sesión en la máquina virtual una vez creada.
 1. Indique los valores de **Subscription**, **Resource group** y **Location** (Suscripción, Grupo de recursos y Ubicación). Seleccione **Aceptar**.
-1. En la sección **Choose a size** (Elegir un tamaño), seleccione un tamaño de máquina virtual para esta instancia y, a continuación, seleccione **Select** (Seleccionar).
+1. En **Elegir un tamaño**, seleccione un tamaño de máquina virtual para esta instancia y, a continuación, elija **Seleccionar**.
 1. En **Settings** (Configuración), confirme que:
 
    * La red virtual es **Tenant1VNet1**.
@@ -214,12 +214,12 @@ Para agregar más inquilinos, repita los pasos realizados en estas secciones:
 
 Si va a usar el inquilino 2 como ejemplo, no olvide cambiar las direcciones IP para evitar superposiciones.
 
-### <a name="configure-the-nat-virtual-machine-for-gateway-traversal"></a>Configuración de la máquina virtual de NAT para cada recorrido de puerta de enlace
+### <a name="configure-the-nat-vm-for-gateway-traversal"></a>Configuración de la máquina virtual de NAT para el cruce seguro de puerta de enlace
 
 > [!IMPORTANT]
-> Esta sección está dirigida únicamente a implementaciones con el Kit de desarrollo de Azure Stack (ASDK). La NAT no es necesaria para las implementaciones de varios nodos.
+> Esta sección es solo para implementaciones de ASDK. La NAT no es necesaria para las implementaciones de varios nodos.
 
-El Kit de desarrollo de Azure Stack está autocontenido y aislado de la red en la que se implementa el host físico. La red IP virtual a la que están conectadas las puertas de enlace no es externa, está oculta detrás de un enrutador que realiza la traducción de direcciones de red (NAT).
+El Kit de desarrollo de Azure Stack está autocontenido y aislado de la red en la que está implementado el host físico. La red de IP virtual a la que están conectadas las puertas de enlace no es externa, está oculta detrás de un enrutador que realiza la traducción de direcciones de red (NAT).
 
 El enrutador es un host de ASDK que ejecuta el rol de enrutamiento y servicios de acceso remoto (RRAS). Para permitir la conexión VPN de sitio a sitio en ambos extremos, es necesario configurar NAT en el host de ASDK.
 
@@ -329,7 +329,7 @@ Empareje las redes virtuales concentrador y radio siguiendo los pasos que se ind
 
 ### <a name="create-a-virtual-machine"></a>Creación de una máquina virtual
 
-Implemente las máquinas virtuales de carga de trabajo en la VNet de spoke.
+Implemente las máquinas virtuales de carga de trabajo en la red virtual de tipo spoke.
 
 Repita estos pasos para cualquier VNet de inquilino adicional que desee conectar en Azure a través de sus circuitos ExpressRoute correspondientes.
 
@@ -341,7 +341,7 @@ Puede usar el siguiente diagrama de configuración del enrutador de ExpressRoute
 
 Puede usar cualquier enrutador que admita VPN de IKEv2 y BGP para finalizar la conexión VPN de sitio a sitio desde Azure Stack. El mismo enrutador se utiliza para conectarse a Azure con un circuito ExpressRoute.
 
-El siguiente ejemplo de configuración del enrutador de los servicios de agregación de Cisco ASR 1000 Series admite la infraestructura de red que se muestra en el diagrama de *configuración del enrutador de ExpressRoute*.
+El siguiente ejemplo de configuración del enrutador de los servicios de agregación de Cisco Site Recovery 1000 Series admite la infraestructura de red que se muestra en el diagrama de *configuración del enrutador de ExpressRoute*.
 
 ```shell
 ip vrf Tenant 1
@@ -567,10 +567,10 @@ Pruebe la conexión después de establecer la conexión de sitio a sitio y el ci
 Realice las siguientes pruebas de ping:
 
 * Inicie sesión en una de las máquinas virtuales de la red virtual de Azure y haga ping a la máquina virtual que creó en Azure Stack.
-* Inicie sesión en una de las máquinas virtuales creadas en Azure Stack y haga ping a la máquina virtual que creó en la red virtual de Azure.
+* Inicie sesión en una de las máquinas virtuales que creó en Azure Stack y haga ping a la máquina virtual que creó en la red virtual de Azure.
 
 >[!NOTE]
->Para asegurarse de enviar el tráfico a través de las conexiones de sitio a sitio y ExpressRoute, debe hacer ping a la dirección IP dedicada (DIP) de la máquina virtual en ambos extremos y no a la dirección de IP virtual de la máquina virtual.
+>Para asegurarse de enviar el tráfico mediante las conexiones de sitio a sitio y ExpressRoute, debe hacer ping a la dirección IP dedicada (DIP) de la máquina virtual en ambos extremos y no a la dirección de IP virtual de la máquina virtual.
 
 ### <a name="allow-icmp-in-through-the-firewall"></a>Permitir que ICMP pase por el firewall
 
@@ -583,11 +583,11 @@ New-NetFirewallRule `
   -Protocol ICMPv4
 ```
 
-### <a name="ping-the-azure-stack-virtual-machine"></a>Hacer ping a la máquina virtual de Azure Stack
+### <a name="ping-the-azure-stack-vm"></a>Hacer ping a la máquina virtual de Azure Stack
 
-1. Inicie sesión en el portal de usuarios de Azure Stack con una cuenta de inquilino.
+1. Inicie sesión en el portal de usuarios de Azure Stack.
 
-1. Busque la máquina virtual que ha creado y selecciónela.
+1. Busque la máquina virtual que creó y selecciónela.
 
 1. Seleccione **Conectar**.
 
@@ -599,7 +599,7 @@ New-NetFirewallRule `
 
 ### <a name="view-data-transfer-statistics"></a>Visualización de estadísticas de transferencia de datos
 
-Si quiere saber la cantidad de tráfico que pasa por la conexión, puede encontrar esta información en el portal de usuario de Azure Stack. También es conveniente saber si los datos de prueba de ping pasaron por las conexiones VPN y ExpressRoute:
+Si quiere saber la cantidad de tráfico que pasa por la conexión, puede encontrar esta información en el portal de usuario de Azure Stack. La visualización de las estadísticas de transferencia de datos también es conveniente para saber si los datos de prueba de ping pasaron por las conexiones VPN y ExpressRoute:
 
 1. Inicie sesión en el portal de usuarios de Azure Stack y seleccione **All resources** (Todos los recursos).
 1. Vaya al grupo de recursos de VPN Gateway y seleccione el tipo de objeto **Connection** (Conexión).

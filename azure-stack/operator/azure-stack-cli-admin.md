@@ -1,6 +1,6 @@
 ---
 title: Habilitación de la CLI de Azure para usuarios de Azure Stack | Microsoft Docs
-description: Obtenga información sobre cómo usar la interfaz de la línea de comandos (CLI) multiplataforma para administrar e implementar recursos en Azure Stack
+description: Obtenga información sobre cómo habilitar la interfaz de la línea de comandos (CLI) multiplataforma para administrar e implementar recursos en Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -14,20 +14,20 @@ ms.topic: article
 ms.date: 05/16/2019
 ms.author: mabrigg
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: ace99053d9aac4c525e9481e5430ac1f5648f194
-ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
+ms.openlocfilehash: 6e901b2d806e85f7bc394dc9bee6412270753649
+ms.sourcegitcommit: c196463492732218d2474d3a964f88e995272c80
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782330"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71094296"
 ---
 # <a name="enable-azure-cli-for-azure-stack-users"></a>Habilitación de la CLI de Azure para usuarios de Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Puede proporcionar el certificado de CA raíz a los usuarios de Azure Stack para que puedan usar la CLI de Azure en sus equipos de desarrollo. Los usuarios necesitan el certificado para administrar recursos a través de la CLI.
+Puede proporcionar el certificado de CA raíz a los usuarios de Azure Stack para que puedan habilitar la CLI de Azure en sus máquinas de desarrollo. Los usuarios necesitan el certificado para administrar recursos a través de la CLI.
 
- - **El certificado raíz de la entidad de certificación de Azure Stack** es necesario si los usuarios usan la CLI desde una estación de trabajo fuera del Kit de desarrollo de Azure Stack.  
+ - **El certificado raíz de la entidad de certificación de Azure Stack** es necesario si los usuarios usan la CLI desde una estación de trabajo fuera del Kit de desarrollo de Azure Stack (ASDK).  
 
  - **El punto de conexión de los alias de máquina virtual** proporciona un alias, como "UbuntuLTS" o "Win2012Datacenter", que hace referencia a un publicador de imágenes, una oferta, una SKU y una versión como parámetro único al implementar máquinas virtuales.  
 
@@ -35,7 +35,7 @@ En las secciones siguientes se explica cómo obtener estos valores.
 
 ## <a name="export-the-azure-stack-ca-root-certificate"></a>Exportación del certificado raíz de CA de Azure Stack
 
-Si usa un sistema integrado, no es necesario exportar el certificado raíz de CA. Debe exportar el certificado raíz de CA en un Kit de desarrollo de Azure Stack (ASDK).
+Si usa un sistema integrado, no es necesario exportar el certificado raíz de CA. Debe exportar el certificado raíz de CA en el ASDK.
 
 Inicie sesión y ejecute el script siguiente para exportar el certificado raíz de ASDK en formato PEM:
 
@@ -56,7 +56,7 @@ Write-Host "Converting certificate to PEM format"
 certutil -encode root.cer root.pem
 ```
 
-## <a name="set-up-the-virtual-machine-aliases-endpoint"></a>Configuración del punto de conexión de alias de máquina virtual
+## <a name="set-up-the-vm-aliases-endpoint"></a>Configuración del punto de conexión de alias de máquina virtual
 
 Los operadores de Azure Stack deben configurar un punto de conexión accesible públicamente que hospede un archivo de alias de máquina virtual. El archivo de alias de máquina virtual es un archivo JSON que proporciona un nombre común para una imagen. Usará este nombre al implementar una máquina virtual como parámetro de la CLI de Azure.  
 

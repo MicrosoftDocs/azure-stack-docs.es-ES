@@ -16,12 +16,12 @@ ms.date: 03/23/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: 994291eb0a990521dc932adc63f0ad52d4430e0d
-ms.sourcegitcommit: e2aec63cacfdc830a20a02ee40e715e3c5dfdf22
+ms.openlocfilehash: 77ec512f5e2996aaec53ef77c000d0334bda456a
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70386258"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70975222"
 ---
 # <a name="deploy-app-service-in-a-highly-available-configuration"></a>Implementación de App Service en una configuración de alta disponibilidad
 
@@ -73,7 +73,7 @@ Use los pasos de esta sección para crear una implementación personalizada con 
 
     ![Creación de una implementación personalizada](media/app-service-deploy-ha/4.png)
 
-6. En el portal de administración, seleccione **Grupos de recursos** y, a continuación, el nombre del grupo de recursos que creó para la implementación personalizada (**app-service-ha** en este ejemplo). Vea el estado de la implementación para asegurarse de que todas las implementaciones se han completado correctamente.
+6. En el portal del administrador, seleccione **Grupos de recursos** y, a continuación, el nombre del grupo de recursos que creó para la implementación personalizada (**app-service-ha** en este ejemplo). Vea el estado de la implementación para asegurarse de que todas las implementaciones se han completado correctamente.
 
    > [!NOTE]
    > La implementación de la plantilla tarda una hora en completarse aproximadamente.
@@ -95,7 +95,7 @@ Siga estos pasos para detectar los valores de los resultados de la plantilla:
 
 1. [!INCLUDE [azs-admin-portal](../includes/azs-admin-portal.md)]
 
-2. En el portal de administración, seleccione **Grupos de recursos** y, a continuación, el nombre del grupo de recursos que creó para la implementación personalizada (**app-service-ha** en este ejemplo). 
+2. En el portal del administrador, seleccione **Grupos de recursos** y, a continuación, el nombre del grupo de recursos que creó para la implementación personalizada (**app-service-ha** en este ejemplo). 
 
 3. Haga clic en **Implementaciones** y seleccione **Microsoft.Template**.
 
@@ -170,7 +170,7 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
     ![Cuadro de diálogo del error esperado en App Service](media/app-service-deploy-ha/08.png)
 
-    Si opta por realizar la implementación en una red virtual existente y una dirección IP interna para conectarse al servidor de archivos, debe agregar una regla de seguridad de salida. Esta regla habilita el tráfico SMB entre la subred de trabajo y el servidor de archivos. Vaya a WorkersNsg en el portal de administración y agregue una regla de seguridad de salida con las siguientes propiedades:
+    Si opta por realizar la implementación en una red virtual existente y una dirección IP interna para conectarse al servidor de archivos, debe agregar una regla de seguridad de salida. Esta regla habilita el tráfico SMB entre la subred de trabajo y el servidor de archivos. Vaya a WorkersNsg en el portal del administrador y agregue una regla de seguridad de salida con las siguientes propiedades:
     - Origen: Any
     - Intervalo de puertos de origen: *
     - Destino: Direcciones IP

@@ -16,12 +16,12 @@ ms.date: 03/25/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 05/18/2018
-ms.openlocfilehash: c85cc176949c9f3c86cded80be14417add6c40da
-ms.sourcegitcommit: 7d7a4c8c46613b6104caf23763bfd2275f6a826b
+ms.openlocfilehash: f427a31001f8f486fd231af7e59ef2bb30592661
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70808143"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70974805"
 ---
 # <a name="app-service-on-azure-stack-update-2-release-notes"></a>Notas de la versión de la actualización 2 de App Service en Azure Stack
 
@@ -81,7 +81,7 @@ La actualización 2 de Azure App Service en Azure Stack incluye las siguientes c
 
 - Los trabajos no pueden llegar al servidor de archivos cuando App Service está implementada en una red virtual existente y el servidor de archivos solo está disponible en la red privada.
 
-Si decide realizar una implementación en una red virtual existente y en una dirección IP interna para conectarse al servidor de archivos, debe agregar una regla de seguridad de salida. De ese modo, permite que exista tráfico SMB entre la subred del rol de trabajo y el servidor de archivos. Vaya a WorkersNsg en el portal de administración y agregue una regla de seguridad de salida con las siguientes propiedades:
+Si decide realizar una implementación en una red virtual existente y en una dirección IP interna para conectarse al servidor de archivos, debe agregar una regla de seguridad de salida. De ese modo, permite que exista tráfico SMB entre la subred del rol de trabajo y el servidor de archivos. Vaya a WorkersNsg en el portal del administrador y agregue una regla de seguridad de salida con las siguientes propiedades:
 
 * Origen: Any
 * Intervalo de puertos de origen: *

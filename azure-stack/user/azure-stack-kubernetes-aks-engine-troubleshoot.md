@@ -1,0 +1,175 @@
+---
+title: Solución de problemas de AKS-Engine en Azure Stack | Microsoft Docs
+description: Este tema contiene los pasos necesarios para la solución de problemas de AKS-Engine en Azure Stack.
+services: azure-stack
+documentationcenter: ''
+author: mattbriggs
+manager: femila
+editor: ''
+ms.service: azure-stack
+ms.workload: na
+pms.tgt_pltfrm: na (Kubernetes)
+ms.devlang: nav
+ms.topic: article
+ms.date: 09/14/2019
+ms.author: mabrigg
+ms.reviewer: waltero
+ms.lastreviewed: 09/14/2019
+ms.openlocfilehash: eb8a46c5b226d1be40d922a78c6ecdcdda5e45ad
+ms.sourcegitcommit: 09d14eb77a43fd585e7e6be93c32fa427770adb6
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71019387"
+---
+# <a name="troubleshoot-the-aks-engine-on-azure-stack"></a>Solución de problemas de AKS-Engine en Azure Stack
+
+*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+
+Cuando se implementa o se trabaja con AKS-Engine en Azure Stack pueden surgir problemas. En este artículo se examinan los pasos necesarios para solucionar los problemas que puedan aparecer al implementar AKS-Engine, recopilar información acerca de AKS-Engine, recopilar registros de Kubernetes, examinar códigos de error de extensiones de scripts personalizados e instrucciones para abrir un problema de GitHub para AKS-Engine.
+
+> [!IMPORTANT]
+> AKS-Engine actualmente está en versión preliminar pública.
+> Esta versión preliminar se ofrece sin Acuerdo de Nivel de Servicio y no se recomienda para cargas de trabajo de producción. Es posible que algunas características no sean compatibles o que tengan sus funcionalidades limitadas. Para más información, consulte [Términos de uso complementarios de las Versiones Preliminares de Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
+## <a name="troubleshoot-the-aks-engine-install"></a>Solución de problemas de la instalación de AKS-Engine
+
+### <a name="try-gofish"></a>Prueba de GoFish
+
+Si se han producido errores en los pasos de la instalación, pruebe a realizar la instalación mediante el administrador de paquetes de GoFish. [GoFish](https://gofi.sh) se describe a sí mismo como un Homebrew multiplataforma.
+
+#### <a name="install-the-aks-engine-with-gofish-on-linux"></a>Instalación de AKS-Engine con GoFish en Linux
+
+Instale GoFish desde la página [Install](https://gofi.sh/#install) (Instalar).
+
+1. En una secuencia de comandos de Bash, ejecute el siguiente comando:
+
+    ```bash
+    curl -fsSL https://raw.githubusercontent.com/fishworks/gofish/master/scripts/install.sh | bash
+    ```
+
+2.  Ejecute el siguiente comando para instalar AKS-Engine con GoFish:
+
+    ```bash
+    Run "gofish install aks-engine"
+    ```
+
+#### <a name="install-the-aks-engine-with-gofish-on-windows"></a>Instalación de AKS-Engine con GoFish en Windows
+
+Instale GoFish desde la página [Install](https://gofi.sh/#install) (Instalar).
+
+1. En un símbolo de sistema de PowerShell con privilegios elevados y ejecute el siguiente comando:
+
+    ```PowerShell
+    Set-ExecutionPolicy Bypass -Scope Process -Force
+iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/fishworks/gofish/master/scripts/install.ps1'))
+    ```
+
+2.  Ejecute el siguiente comando en la misma sesión para instalar AKS-Engine con GoFish:
+
+    ```PowerShell
+    gofish install aks-engine
+    ```
+
+### <a name="checklist-for-common-deployment-issues"></a>Lista de comprobación de problemas comunes en la implementación
+
+Si aparecen errores al implementar un clúster de Kubernetes mediante AKS-Engine, puede comprobar lo siguiente:
+
+1.  ¿Usa las credenciales de entidad de servicio (SPN) correctas?
+2.  ¿Tiene el SPN tiene un rol "Colaboradores" en la suscripción a Azure Stack?
+3. ¿Tiene una cuota suficientemente grande en el plan de Azure Stack?
+4.  ¿Se está aplicando la instancia de Azure Stack que tiene una revisión o una actualización?
+
+Para más información, consulte el artículo [Solución de problemas ](https://github.com/Azure/aks-engine/blob/master/docs/howto/troubleshooting.md)en el **repositorio de GitHub** Azure/aks-engine.
+
+## <a name="collect-aks-engine-logs"></a>Recopilación de registros de AKS-Engine
+
+Puede acceder a la información de revisión que crea AKS-Engine. AKS-Engine informa acerca del estado y los errores mientras se ejecuta la aplicación. La salida se puede canalizar a un archivo de texto, o bien se puede copiar directamente desde la consola de la línea de comandos.
+
+1.  Recopile la salida estándar y los errores de la información que se muestra en la herramienta de línea de comandos de AKS-Engine.
+
+2. Obtenga los registros de un archivo local. Puede establecer el directorio de salida con el parámetro **--output-directory**.
+
+    Para establecer la ruta de acceso local para los registros:
+
+    ```bash  
+    aks-engine --output-directory <path to the directory>
+    ```
+
+## <a name="collect-kubernetes-logs"></a>Recopilación de registros de Kubernetes
+
+Además de los registros de AKS-Engine, los componentes de Kubernetes generan mensajes de estado y de error. Estos registros se pueden recopilar mediante el script de Bash, [getkuberneteslogs.sh](https://github.com/msazurestackworkloads/azurestack-gallery/releases/download/diagnosis-v0.1.0/diagnosis.zip).
+
+Este script automatiza el proceso de recopilación de los siguientes registros: 
+
+ - Registros del agente Linux de Microsoft Azure (waagent)
+ - Registros de la extensión de script personalizado
+ - Ejecución de metadatos de contenedor de kube-system
+ - Ejecución de registros de contenedor de kube-system
+ - Diario y estado del servicio Kubelet
+ - Diario y estado del servicio Etcd
+ - Registros de DVM del elemento de la galería
+ - Instantánea de kube-system
+
+Sin este script, necesitaría conectarse a todos los nodos del clúster para buscar y descargar los registros manualmente. Además, el script también puede cargar los registros recopilados en una cuenta de almacenamiento que se puede usar para compartir los registros con otros usuarios.
+
+Requisitos:
+
+ - Una máquina virtual Linux, Git Bash o Bash en Windows.
+ - La [CLI de Azure](azure-stack-version-profiles-azurecli2.md) instalada en la máquina desde donde se ejecutará el script.
+ - Identidad de la entidad de servicio que ha iniciado una sesión de la CLI de Azure en Azure Stack. Como el script tiene la funcionalidad de detectar y crear recursos ARM para realizar su trabajo, requiere la CLI de Azure y una identidad de la entidad de servicio.
+ - Una cuenta de usuario (suscripción) en la que el clúster de Kubernetes ya está seleccionado en el entorno. 
+1. Descargue la versión más reciente del archivo tar del script en la máquina virtual del cliente, una máquina que tenga acceso al clúster de Kubernetes o a la misma máquina que usó para implementar el clúster con AKS-Engine.
+
+    Ejecute los comandos siguientes:
+
+    ```bash  
+    mkdir -p $HOME/kuberneteslogs
+    cd $HOME/kuberneteslogs
+    wget https://github.com/msazurestackworkloads/azurestack-gallery/releases/download/diagnosis-v0.1.0/diagnosis.tar.gz
+    tar xvzf diagnosis.tar.gz -C ./
+    ```
+
+2. Busque los parámetros que requiere el script `getkuberneteslogs.sh`. El script usará los siguientes parámetros:
+
+    | Parámetro | DESCRIPCIÓN | Obligatorio | Ejemplo |
+    | --- | --- | --- | --- |
+    | -h, --help | Uso de comandos de impresión. | no | 
+    -u,--user | El nombre de usuario del administrador de las máquinas virtuales del clúster | Sí | azureuser<br>(valor predeterminado) |
+    | -i, --identity-file | Clave privada RSA vinculada a la clave pública usada para crear el clúster de Kubernetes (a veces se denomina "id_rsa")  | Sí | `./rsa.pem` (Putty)<br>`~/.ssh/id_rsa` (SSH) |
+    |   -g, --resource-group    | Grupo de recursos de clúster de Kubernetes | Sí | k8sresourcegroup |
+    |   -n, --user-namespace               | Recopilar registros de contenedores en los espacios de nombres especificados (los registros de kube-system siempre se recopilan) | no |   monitoring |
+    |       --api-model                    | Conserva el archivo apimodel.json en una cuenta de almacenamiento de Azure Stack. La carga del archivo apimodel.json en la cuenta de almacenamiento se produce cuando también se proporciona el parámetro--upload-logs. | no | `./apimodel.json` |
+    | --all-namespaces               | Recopile registros de los contenedores de todos los espacios de nombres. Invalida --user-namespace | no | |
+    | --upload-logs                  | Conserva los registros recuperados en una cuenta de almacenamiento de Azure Stack. Los registros se pueden encontrar en el grupo de recursos KubernetesLogs | no | |
+    --disable-host-key-checking    | Establece la opción StrictHostKeyChecking de SSH en "no" mientras se ejecuta el script. Utilícela solo en entornos seguros. | no | |
+
+3. Ejecute cualquiera de los siguientes comandos de ejemplo con su información:
+
+    ```bash
+    ./getkuberneteslogs.sh -u azureuser -i private.key.1.pem -g k8s-rg
+    ./getkuberneteslogs.sh -u azureuser -i ~/.ssh/id_rsa -g k8s-rg --disable-host-key-checking
+    ./getkuberneteslogs.sh -u azureuser -i ~/.ssh/id_rsa -g k8s-rg -n default -n monitoring
+    ./getkuberneteslogs.sh -u azureuser -i ~/.ssh/id_rsa -g k8s-rg --upload-logs --api-model clusterDefinition.json
+    ./getkuberneteslogs.sh -u azureuser -i ~/.ssh/id_rsa -g k8s-rg --upload-logs
+    ```
+
+## <a name="review-custom-script-extension-error-codes"></a>Examen de los códigos de error de extensión de script personalizado
+
+Puede consultar una lista de los códigos de error que crea la extensión de script personalizado (CSE) al ejecutar su clúster. El error de CSE puede ser útil para diagnosticar la causa principal del problema. El CSE del servidor Ubuntu que se usa en el clúster de Kubernetes admite muchas de las operaciones de AKS-Engine. Para más información sobre los códigos de salida de CSE, consulte [cse_helpers.sh](https://github.com/Azure/aks-engine/blob/master/parts/k8s/cloud-init/artifacts/cse_helpers.sh).
+
+## <a name="open-github-issues"></a>Apertura de incidencias de GitHub
+
+Si no puede resolver un error de implementación, puede abrir una incidencia de GitHub. 
+
+1. Abra una [incidencia de GitHub](https://github.com/Azure/aks-engine/issues/new) en el repositorio de AKS-Engine.
+2. Agregue un título con el siguiente formato: C`SE error: exit code <INSERT_YOUR_EXIT_CODE>`.
+3. Incluya la siguiente información en la incidencia:
+
+    - El archivo de configuración del clúster, `apimodel json`, que se usa para implementar el clúster. Quite todos los secretos y claves antes de publicarlo en GitHub.  
+     - La salida del siguiente comando **kubectl** `get nodes`.  
+     - El contenido de `/var/log/azure/cluster-provision.log` y `/var/log/cloud-init-output.log`
+
+## <a name="next-steps"></a>Pasos siguientes
+
+- Obtenga información sobre [AKS-Engine en Azure Stack](azure-stack-kubernetes-aks-engine-overview.md)

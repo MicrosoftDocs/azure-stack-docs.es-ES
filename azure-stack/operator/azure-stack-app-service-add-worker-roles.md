@@ -16,12 +16,12 @@ ms.date: 05/06/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 06/08/2018
-ms.openlocfilehash: 43ee38c18e2831d1cb96958501cee6f77292edd0
-ms.sourcegitcommit: e2f6205e6469b39c2395ee09424bb7632cb94c40
+ms.openlocfilehash: b01199bfe96c39fe79aac65eca219a065f39375c
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70271683"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70975006"
 ---
 # <a name="add-workers-and-infrastructure-in-app-service-on-azure-stack"></a>Adición de trabajos e infraestructura en App Service en Azure Stack
 
@@ -75,9 +75,9 @@ Azure App Service en Azure Stack implementa todos los roles mediante conjuntos d
 
 3. Supervise el estado de las nuevas instancias de rol en la administración de App Service. Para comprobar el estado de una instancia de rol individual, haga clic en el tipo de rol en la lista.
 
-## <a name="add-additional-workers-using-the-admin-portal"></a>Adición de trabajos adicionales mediante el portal de administración
+## <a name="add-additional-workers-using-the-administrator-portal"></a>Adición de trabajos adicionales mediante el portal del administrador
 
-1. Inicie sesión en el portal de administración de Azure Stack como administrador de servicios.
+1. Inicie sesión en el portal de administración de Azure Stack como administrador del servicio.
 
 2. Vaya a **App Services**.
 
@@ -87,11 +87,11 @@ Azure App Service en Azure Stack implementa todos los roles mediante conjuntos d
 
 4. Haga clic con el botón derecho en la fila del tipo que desea escalar y, a continuación, haga clic en **ScaleSet**.
 
-    ![ScaleSet de roles de App Service en el portal de administración de Azure Stack](media/azure-stack-app-service-add-worker-roles/image02.png)
+    ![Conjunto de escalado de roles de App Service en el portal de administración de Azure Stack](media/azure-stack-app-service-add-worker-roles/image02.png)
 
 5. Haga clic en **Escalado**, seleccione el número de instancias a las que desea escalar y, a continuación, haga clic en **Guardar**.
 
-    ![Establecimiento de instancias a las que escalar en los roles de App Service del portal de administración de Azure Stack](media/azure-stack-app-service-add-worker-roles/image03.png)
+    ![Establecimiento de instancias para escalar en los roles de App Service del portal de administración de Azure Stack](media/azure-stack-app-service-add-worker-roles/image03.png)
 
 6. App Service en Azure Stack ahora incorporará máquinas virtuales adicionales, las configurará, instalará el software necesario y las marcará como listas cuando finalice el proceso, que puede tardar unos 80 minutos.
 

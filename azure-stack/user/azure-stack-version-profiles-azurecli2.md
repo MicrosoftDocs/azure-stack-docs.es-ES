@@ -14,12 +14,12 @@ ms.date: 07/16/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/08/2019
-ms.openlocfilehash: 430df1c886a869239c040085dcea983d07b3b36d
-ms.sourcegitcommit: 637018771ac016b7d428174e88d4dcb131b54959
+ms.openlocfilehash: 18644d3d331a5c093d0a78da435d6f79e03cb531
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68842931"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70974660"
 ---
 # <a name="manage-and-deploy-resources-to-azure-stack-with-azure-cli"></a>Administración e implementación de recursos en Azure Stack con la CLI de Azure
 
@@ -44,7 +44,7 @@ Si usa un sistema integrado, no es necesario exportar el certificado raíz de CA
 Para exportar el certificado raíz del ASDK en formato PEM:
 
 1. Obtenga el nombre del certificado raíz de Azure Stack:
-    - Inicie sesión en el inquilino o en el portal de administrador de Azure Stack.
+    - Inicie sesión en el usuario de Azure Stack o portal de administración.
     - Haga clic en **Seguro** cerca de la barra de direcciones.
     - En la ventana emergente, haga clic en **Válido**.
     - En la ventana Certificado, haga clic en la pestaña **Ruta de certificación**.

@@ -15,12 +15,12 @@ ms.date: 09/10/2019
 ms.author: mabriggs
 ms.lastreviewed: 09/10/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 2153a91bcf833386ef5884a9fd4e7c0fc759c01b
-ms.sourcegitcommit: dc633e862d49412a963daee481226c1543287e5e
+ms.openlocfilehash: 3d760e981f3dd298284b10ed56c4c6ace683f49b
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70863062"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70974790"
 ---
 # <a name="install-azure-stack-updates"></a>Instalación de actualizaciones de Azure Stack
 
@@ -28,7 +28,7 @@ ms.locfileid: "70863062"
 
 Puede instalar las actualizaciones con la hoja **Update** (Actualizar) en Azure Stack. Este artículo le guía por los pasos necesarios para actualizar, supervisar y solucionar problemas del proceso de actualización. Use la hoja Update (Actualizar) para ver la información de actualización, instalar actualizaciones, supervisar el progreso de las actualizaciones, revisar el historial de actualizaciones y ver la versión actual de Azure Stack y del paquete de OEM.
 
-Puede administrar las actualizaciones desde el portal de administración y usar la sección **Actualizaciones** del panel para:
+Puede administrar las actualizaciones desde el portal del administrador y usar la sección **Actualizaciones** del panel para:
 
 - Ver información importante, como la versión actual.
 - Instalar actualizaciones y supervisar el progreso.

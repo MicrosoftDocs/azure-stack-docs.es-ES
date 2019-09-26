@@ -16,12 +16,12 @@ ms.date: 05/06/2019
 ms.author: justinha
 ms.reviewer: knithinc
 ms.lastreviewed: 10/25/2018
-ms.openlocfilehash: 3f1dd0d7efa2aa9549f65ef97ebb7a589949154b
-ms.sourcegitcommit: 4eb1766c7a9d1ccb1f1362ae1211ec748a7d708c
+ms.openlocfilehash: 8a9fae5324e20ecd808df1f73dc90555b4802da5
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69579136"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70974596"
 ---
 # <a name="connect-to-the-asdk"></a>Conectarse al ASDK
 
@@ -33,7 +33,7 @@ Para administrar recursos, primero debe conectarse al Kit de desarrollo de Azure
 <a name="connect-with-rdp"></a>
 ## <a name="connect-to-azure-stack-using-rdp"></a>Conexión a Azure Stack mediante RDP
 
-Un único usuario simultáneo puede administrar los recursos en el portal de administración de Azure Stack o en el portal de usuario directamente desde el equipo host de ASDK mediante la Conexión a Escritorio remoto.
+Un único usuario simultáneo puede administrar los recursos en el portal de administración de Azure Stack o en el portal de usuario mediante Conexión a Escritorio remoto directamente desde el equipo host de ASDK.
 
 > [!TIP]
 > Esta opción también le permite volver a usar RDP mientras tiene iniciada la sesión en el equipo host de ASDK para iniciar sesión en las máquinas virtuales (VM) creadas en el equipo host de ASDK.
@@ -42,7 +42,7 @@ Un único usuario simultáneo puede administrar los recursos en el portal de adm
 
 2. En el equipo host de ASDK, abra el Administrador del servidor (ServerManager.exe). Seleccione **Servidor local**, desactive la opción **Configuración de seguridad mejorada de IE** y cierre el Administrador del servidor.
 
-3. Inicie sesión en el portal de administración como **AzureStack\CloudAdmin** o use otras credenciales de operador de Azure Stack. La dirección del portal de administración de ASDK es [https://adminportal.local.azurestack.external](https://adminportal.local.azurestack.external).
+3. Inicie sesión en el portal de administración como **AzureStack\CloudAdmin** o use otras credenciales de operador de Azure Stack. La dirección del portal del administrador del ASDK es [https://adminportal.local.azurestack.external](https://adminportal.local.azurestack.external).
 
 4. Inicie sesión en el portal de usuario como **AzureStack\CloudAdmin** o use otras credenciales de usuario de Azure Stack. La dirección del portal de usuario del ASDK es [https://portal.local.azurestack.external](https://portal.local.azurestack.external).
 
@@ -127,7 +127,7 @@ La primera vez que se conecte, se le pedirá que instale el certificado raíz de
 
 ### <a name="test-vpn-connectivity"></a>Probar la conectividad VPN
 
-Para probar la conexión del portal, abra un explorador y vaya al portal de usuarios (https://portal.local.azurestack.external/) o al portal de administración (https://adminportal.local.azurestack.external/). 
+Para probar la conexión del portal, abra un explorador y vaya al portal de usuarios (https://portal.local.azurestack.external/) o al portal del administrador (https://adminportal.local.azurestack.external/).
 
 Inicie sesión con las credenciales de la suscripción adecuada para crear y administrar los recursos.  
 

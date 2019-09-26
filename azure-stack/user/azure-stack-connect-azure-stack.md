@@ -15,12 +15,12 @@ ms.date: 05/16/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 8b7a9e58fd4d4d8c3a05fea60c79ff47a519bf8c
-ms.sourcegitcommit: be5382f715a9c1c18c660b630d8fcd823f13aae3
+ms.openlocfilehash: 90759186b008c41bd9b3e35bf368d4f819534823
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66197367"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70975064"
 ---
 # <a name="connect-to-azure-stack"></a>Conexión a Azure Stack
 
@@ -41,7 +41,7 @@ Con una conexión a Escritorio remoto, un único usuario simultáneo puede traba
 
 ## <a name="connect-to-azure-stack-with-vpn"></a>Conexión a Azure Stack con VPN
 
-Puede establecer una conexión de red privada virtual de túnel dividido al Kit de desarrollo de Azure Stack. A través de la conexión VPN, puede tener acceso al portal de administrador, al portal de usuario y a las herramientas instaladas localmente, como Visual Studio y PowerShell, para administrar los recursos de Azure Stack. Se admite la conectividad VPN en implementaciones basadas en Azure Active Directory (AAD) y en los Servicios de federación de Active Directory (AD FS). Las conexiones VPN permiten que varios clientes puedan conectarse a Azure Stack al mismo tiempo. 
+Puede establecer una conexión de red privada virtual de túnel dividido al Kit de desarrollo de Azure Stack. Mediante la conexión VPN, puede acceder al portal de administración, al portal de usuario y a las herramientas instaladas localmente, como Visual Studio y PowerShell, para administrar los recursos de Azure Stack. Se admite la conectividad VPN en implementaciones basadas en Azure Active Directory (AAD) y en los Servicios de federación de Active Directory (AD FS). Las conexiones VPN permiten que varios clientes puedan conectarse a Azure Stack al mismo tiempo. 
 
 > [!NOTE] 
 > Esta conexión VPN no proporciona conectividad a las máquinas virtuales de infraestructura de Azure Stack. 
@@ -105,7 +105,7 @@ Conéctese a la instancia de Azure Stack mediante cualquiera de los dos métodos
 
 ### <a name="test-the-vpn-connectivity"></a>Prueba de la conectividad VPN
 
-Para probar la conexión del portal, abra un explorador y vaya hasta el portal de usuario (https://portal.local.azurestack.external/)), inicie sesión y cree recursos.  
+Para probar la conexión del portal, abra un explorador y vaya hasta el portal de usuario (https://portal.local.azurestack.external/) ), inicie sesión y cree recursos.  
 
 ## <a name="next-steps"></a>Pasos siguientes
 

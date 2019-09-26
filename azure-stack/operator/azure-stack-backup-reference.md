@@ -1,6 +1,6 @@
 ---
-title: Referencia del servicio Infrastructure Backup de Azure Stack | Microsoft Docs
-description: Este artículo contiene material de referencia para el servicio Infrastructure Backup de Azure Stack.
+title: Referencia del servicio Copia de seguridad de infraestructura | Microsoft Docs
+description: Material de referencia del servicio Copia de seguridad de infraestructura de Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -16,12 +16,12 @@ ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 10/25/2018
-ms.openlocfilehash: d45b11eb70533125ff8136763be24a3333c1f7dc
-ms.sourcegitcommit: f6ea6daddb92cbf458f9824cd2f8e7e1bda9688e
+ms.openlocfilehash: 282d6f3a501550e49424c257b928e708f63ccadc
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68493946"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70974865"
 ---
 # <a name="infrastructure-backup-service-reference"></a>Referencia del servicio Infrastructure Backup
 
@@ -29,39 +29,39 @@ ms.locfileid: "68493946"
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Azure Stack consta de muchos servicios entre los que figuran el portal, Azure Resource Manager y la experiencia de administración de la infraestructura. La experiencia de administración de Azure Stack, similar a la de un dispositivo, se centra en reducir la complejidad expuesta al operador de la solución.
+Azure Stack consta de muchos servicios entre los que figuran el portal (Azure Resource Manager) y la experiencia global de administración de la infraestructura. La experiencia de administración de Azure Stack, similar a la de una aplicación, se centra en reducir la complejidad expuesta al operador de la solución.
 
-Infrastructure Backup está diseñado para internalizar la complejidad de la copia de seguridad y la restauración de datos para los servicios de infraestructura, asegurándose de que los operadores puede centrarse en la administración de la solución y el mantenimiento del Acuerdo de Nivel de Servicio de los usuarios.
+El servicio Copia de seguridad de infraestructura está diseñado para internalizar la complejidad de la copia de seguridad y la restauración de datos de los servicios de infraestructura, garantizando que los operadores se puedan concentrar en la administración de la solución y el mantenimiento del Acuerdo de Nivel de Servicio de los usuarios.
 
-Se requiere la exportación de los datos de copia de seguridad a un recurso compartido externo para evitar el almacenamiento de copias de seguridad en el mismo sistema. La necesidad de un recurso compartido externo proporciona al administrador flexibilidad para determinar dónde se almacenarán los datos en función de las directivas existentes sobre continuidad del negocio y recuperación ante desastres de la empresa. 
+Se requiere la exportación de los datos de copia de seguridad a un recurso compartido externo para evitar el almacenamiento de copias de seguridad en el mismo sistema. La necesidad de un recurso compartido externo proporciona al administrador flexibilidad para determinar dónde se almacenarán los datos en función de las directivas existentes sobre continuidad empresarial y recuperación ante desastres de la empresa.
 
-### <a name="infrastructure-backup-components"></a>Componentes de Infrastructure Backup
+### <a name="infrastructure-backup-service-components"></a>Componentes del servicio Copia de seguridad de infraestructura
 
-Infrastructure Backup incluye los siguientes componentes:
+El servicio Copia de seguridad de infraestructura incluye los siguientes componentes:
 
  - **Infrastructure Backup Controller**  
  En cada nube de Azure Stack se genera una instancia del controlador Infrastructure Backup Controller, que además reside en ellas.
  - **Backup Resource Provider**  
- El proveedor Backup Resource Provider (Backup RP) consta de la interfaz de usuario y de las interfaces de programación de aplicaciones (API) que exponen la funcionalidad básica de copia de seguridad para la infraestructura de Azure Stack.
+ Backup Resource Provider (Backup RP) consta de la interfaz de usuario y las API que exponen la funcionalidad básica de copia de seguridad para la infraestructura de Azure Stack.
 
 #### <a name="infrastructure-backup-controller"></a>Infrastructure Backup Controller
 
-Infrastructure Backup Controller es un servicio de Service Fabric del cual se generan instancias para una nube de Azure Stack. Los recursos de copia de seguridad se crean a nivel regional y capturan datos de servicio específicos de la región de AD, CA, Azure Resource Manager, CRP, SRP, NRP, KeyVault, RBAC. 
+Infrastructure Backup Controller es un servicio de Service Fabric del cual se generan instancias para una nube de Azure Stack. Los recursos de copia de seguridad se crean en un nivel regional y capturan datos de servicio específicos de la región de AD, CA, Azure Resource Manager, CRP, SRP, NRP, KeyVault y RBAC.
 
 ### <a name="backup-resource-provider"></a>Backup Resource Provider
 
-Backup Resource Provider presenta la interfaz de usuario en el portal de Azure Stack para la configuración básica y la lista de recursos de copia de seguridad. El operador puede realizar las operaciones siguientes en la interfaz de usuario:
+Backup Resource Provider presenta una interfaz de usuario en el portal de Azure Stack para la configuración básica y la lista de recursos de copia de seguridad. Los operadores pueden realizar las siguientes acciones en la interfaz de usuario:
 
- - Habilitar la copia de seguridad por primera vez al proporcionar la ubicación de almacenamiento externa, las credenciales y la clave de cifrado
- - Ver los recursos de copia de seguridad creados y completados y los recursos de estado en creación
- - Modificar la ubicación de almacenamiento en la que Backup Controller coloca los datos de copia de seguridad
- - Modificar las credenciales que utiliza Backup Controller para tener acceso a la ubicación de almacenamiento externa
- - Modificar la clave de cifrado que utiliza Backup Controller para cifrar las copias de seguridad 
+ - Habilitar la copia de seguridad por primera vez proporcionando la ubicación de almacenamiento externa, las credenciales y la clave de cifrado.
+ - Ver los recursos de copia de seguridad creados y completados, y los recursos de estado en creación.
+ - Modificar la ubicación de almacenamiento en la que Backup Controller coloca los datos de copia de seguridad.
+ - Modificar las credenciales que utiliza Backup Controller para tener acceso a la ubicación de almacenamiento externa.
+ - Modificar la clave de cifrado que utiliza Backup Controller para cifrar las copias de seguridad.
 
 
 ## <a name="backup-controller-requirements"></a>Requisitos de Backup Controller
 
-En esta sección se describen los requisitos importantes para Infrastructure Backup. Es recomendable que revise cuidadosamente la siguiente información antes de habilitar la copia de seguridad para su instancia de Azure Stack y que luego la consulte según sea necesario durante la implementación y el funcionamiento posterior.
+En esta sección se describen los requisitos importantes del servicio Copia de seguridad de infraestructura. Es recomendable que revise cuidadosamente la siguiente información antes de habilitar la copia de seguridad para su instancia de Azure Stack y que luego la consulte según sea necesario durante la implementación y el funcionamiento posterior.
 
 Estos requisitos son:
 
@@ -74,9 +74,9 @@ Estos requisitos son:
 
 | Ubicación de almacenamiento                                                                 | Detalles                                                                                                                                                  |
 |----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Recurso compartido de archivos SMB hospedado en un dispositivo de almacenamiento dentro del entorno de red de confianza | Recurso compartido SMB en el mismo centro de datos en el que está implementado Azure Stack u otro centro de datos. Varias instancias de Azure Stack pueden usar el mismo recurso compartido de archivos. |
-| Recurso compartido de archivos SMB en Azure                                                          | No se admite actualmente.                                                                                                                                 |
-| Blob Storage en Azure                                                            | No se admite actualmente.                                                                                                                                 |
+| Recurso compartido de archivos SMB hospedado en un dispositivo de almacenamiento dentro del entorno de red de confianza. | Recurso compartido SMB en el mismo centro de datos en el que está implementado Azure Stack u otro centro de datos. Varias instancias de Azure Stack pueden usar el mismo recurso compartido de archivos. |
+| Recurso compartido de archivos SMB en Azure.                                                          | No se admite actualmente.                                                                                                                                 |
+| Blob Storage en Azure.                                                            | No se admite actualmente.                                                                                                                                 |
 
 #### <a name="supported-smb-versions"></a>Versiones de SMB admitidas
 
@@ -88,11 +88,11 @@ Estos requisitos son:
 
 **1907 y versiones posteriores**
 
-El servicio de copia de seguridad de infraestructura admite la transferencia de datos de copia de seguridad a una ubicación de almacenamiento externa con cifrado SMB habilitado en el lado servidor. Si el servidor no admite el cifrado SMB o no tiene habilitada la característica, el servicio de copia de seguridad de infraestructura revertirá a la transferencia de datos sin cifrar. Los datos de copia de seguridad que se colocan en la ubicación de almacenamiento externo siempre se cifran en reposo y no dependen del cifrado SMB. 
+El servicio Copia de seguridad de infraestructura admite la transferencia de datos de copia de seguridad a una ubicación de almacenamiento externa con cifrado SMB habilitado en el lado servidor. Si el servidor no admite el cifrado SMB o no tiene habilitada la característica, el servicio Copia de seguridad de infraestructura revertirá a la transferencia de datos sin cifrar. Los datos de copia de seguridad que se colocan en la ubicación de almacenamiento externo siempre se cifran en reposo y no dependen del cifrado SMB.
 
-#### <a name="storage-location-sizing"></a>Ajuste del tamaño de la ubicación de almacenamiento 
+#### <a name="storage-location-sizing"></a>Ajuste del tamaño de la ubicación de almacenamiento
 
-La recomendación es realizar una copia de seguridad por lo menos dos veces al día y guardar como máximo siete días de copias de seguridad. Este es el comportamiento predeterminado cuando se habilitan las copias de seguridad de infraestructura en Azure Stack. 
+Es recomendable realizar una copia de seguridad por lo menos dos veces al día y guardar como máximo siete días de copias de seguridad. Este es el comportamiento predeterminado cuando se habilitan las copias de seguridad de infraestructura en Azure Stack.
 
 **1907 y versiones posteriores**
 
@@ -120,28 +120,32 @@ La recomendación es realizar una copia de seguridad por lo menos dos veces al d
 
 | Ubicación de almacenamiento                                                                 | Detalles                                                                                                                                                                                 |
 |----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Recurso compartido de archivos SMB hospedado en un dispositivo de almacenamiento dentro del entorno de red de confianza | El puerto 445 es necesario si la instancia de Azure Stack reside en un entorno protegido por firewall. Infrastructure Backup Controller iniciará una conexión con el servidor de archivos SMB en el puerto 445. |
-| Para usar el FQDN en el servidor de archivos, el nombre debe poder resolverse desde el PEP.             |                                                                                                                                                                                         |
+| Recurso compartido de archivos SMB hospedado en un dispositivo de almacenamiento dentro del entorno de red de confianza. | El puerto 445 es necesario si la instancia de Azure Stack reside en un entorno protegido por firewall. Infrastructure Backup Controller iniciará una conexión con el servidor de archivos SMB en el puerto 445. |
+| Para usar el FQDN del servidor de archivos, el nombre debe poder resolverse desde el PEP.             |                                                                                                                                                                                         |
 
 > [!Note]  
 > Ningún puerto de entrada debe estar abierto.
 
 ### <a name="encryption-requirements"></a>Requisitos de cifrado
 
-A partir de 1901, el servicio Infrastructure Backup utilizará un certificado con una clave pública (.CER) para cifrar los datos de copia de seguridad y un certificado con la clave privada (.PFX) para descifrar los datos de copia de seguridad durante la recuperación en la nube.   
- - El certificado se usa para el traslado de claves y no para establecer una comunicación autenticada segura. Por este motivo, el certificado puede ser un certificado autofirmado. Azure Stack no requiere comprobar la raíz o confianza de este certificado, por lo que el acceso externo a internet no es necesario.
- 
-El certificado autofirmado viene en dos partes, una con la clave pública y otra con la clave privada:
- - Cifrar los datos de copia de seguridad: el certificado con la clave pública (exportada a un archivo .CER) se usa para cifrar los datos de copia de seguridad
- - Descifrar los datos de copia de seguridad: el certificado con la clave privada (exportada a un archivo .PFX) se usa para descifrar los datos de copia de seguridad
+A partir de la actualización 1901, el servicio Copia de seguridad de infraestructura utilizará un certificado con una clave pública (.CER) para cifrar los datos de copia de seguridad y un certificado con la clave privada (.PFX) para descifrar los datos de copia de seguridad durante la recuperación en la nube.
 
-El certificado con la clave pública (.CER) no lo administra la rotación interna de secretos. Para girar el certificado, deberá crear un nuevo certificado autofirmado y actualizar la configuración de copia de seguridad con el nuevo archivo (.CER).  
- - Todas las copias de seguridad existentes permanecen cifradas mediante la clave pública anterior. Las nuevas copias de seguridad usarán la nueva clave pública. 
+ - El certificado se usa para el traslado de claves y no para establecer una comunicación autenticada segura. Por este motivo, el certificado puede ser un certificado autofirmado. Azure Stack no requiere comprobar la raíz o confianza de este certificado, por lo que el acceso externo a Internet no es necesario.
+
+El certificado autofirmado viene en dos partes, una con la clave pública y otra con la clave privada:
+
+ - Cifrar los datos de copia de seguridad: el certificado con la clave pública (exportada a un archivo .CER) se usa para cifrar los datos de copia de seguridad.
+ - Descifrar los datos de copia de seguridad: el certificado con la clave privada (exportada a un archivo .PFX) se usa para descifrar los datos de copia de seguridad.
+
+El certificado con la clave pública (.CER) no lo administra la rotación interna de secretos. Para girar el certificado, deberá crear un nuevo certificado autofirmado y actualizar la configuración de copia de seguridad con el nuevo archivo (.CER). 
+ 
+ - Todas las copias de seguridad existentes permanecen cifradas mediante la clave pública anterior. Las nuevas copias de seguridad usarán la nueva clave pública.
  
 El certificado usado durante la recuperación en la nube con la clave privada (.PFX) no se conserva en Azure Stack por motivos de seguridad. Este archivo debe proporcionarse explícitamente durante la recuperación en la nube.  
 
-**Modo de compatibilidad con versiones anteriores**. A partir de 1901, la compatibilidad con las claves de cifrado está en desuso y se eliminará en las futuras versiones. Si actualiza desde 1811 con copia de seguridad ya habilitada con una clave de cifrado, Azure Stack continuará usando la clave de cifrado. El modo de compatibilidad con versiones anteriores se admitirá durante al menos 3 versiones. Después de ese momento, será necesario un certificado. 
- * La actualización de la clave de cifrado al certificado es una operación unidireccional.  
+**Modo de compatibilidad con versiones anteriores**. A partir de 1901, la compatibilidad con las claves de cifrado está en desuso y se eliminará en las futuras versiones. Si actualiza desde 1811 con copia de seguridad ya habilitada con una clave de cifrado, Azure Stack continuará usando la clave de cifrado. El modo de compatibilidad con versiones anteriores se admitirá para al menos 3 versiones. Después de ese momento, será necesario un certificado.
+
+ * La actualización de clave de cifrado al certificado es una operación unidireccional.  
  * Todas las copias de seguridad existentes permanecerán cifradas con la clave de cifrado. Las nuevas copias de seguridad usarán el certificado. 
 
 ## <a name="infrastructure-backup-limits"></a>Límites de Infrastructure Backup
@@ -153,11 +157,11 @@ Tenga en cuenta estos límites a medida que planee, implemente y maneje las inst
 | Identificador de límites                                                 | Límite        | Comentarios                                                                                                                                    |
 |------------------------------------------------------------------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------|
 | Tipo de copia de seguridad                                                      | Solo completa    | Infrastructure Backup Controller solo admite copias de seguridad completas. Las copias de seguridad incrementales no se admiten.                                          |
-| Copias de seguridad programadas                                                | Programadas y manuales  | El controlador de copia de seguridad es compatible con las copias de seguridad programadas y a petición                                                                                 |
+| Copias de seguridad programadas                                                | Programadas y manuales  | Backup Controller es compatible con las copias de seguridad programadas y a petición.                                                                                 |
 | Número máximo de trabajos de copia de seguridad simultáneos                                   | 1            | Se admite solo un trabajo de copia de seguridad activo por instancia de Backup Controller.                                                                  |
 | Configuración del conmutador de red                                     | Fuera del ámbito | El administrador debe hacer una copia de seguridad de la configuración del conmutador de red con herramientas de OEM. Consulte la documentación para Azure Stack proporcionada por cada proveedor de OEM. |
 | Host de ciclo de vida de hardware                                          | Fuera del ámbito | El administrador debe hacer una copia del host de ciclo de vida de hardware mediante herramientas de OEM. Consulte la documentación para Azure Stack proporcionada por cada proveedor de OEM.      |
-| Número máximo de recursos compartidos de archivos                                    | 1            | Solo se puede usar un recurso compartido de archivo para almacenar los datos de copia de seguridad                                                                                        |
+| Número máximo de recursos compartidos de archivos                                    | 1            | Solo se puede usar un recurso compartido de archivo para almacenar los datos de copia de seguridad.                                                                                        |
 | Backup App Services, Function, SQL, mysql, datos de proveedores de recursos | Fuera del ámbito | Consulte las orientaciones publicadas para implementar y administrar los proveedores de recursos de valor añadido creados por Microsoft.                                                  |
 | Copia de seguridad de proveedores de recursos de terceros                              | Fuera del ámbito | Consulte las orientaciones publicadas para implementar y administrar los proveedores de recursos de valor agregado creados por otros proveedores.                                          |
 

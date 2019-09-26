@@ -1,9 +1,9 @@
 ---
-title: Actualización del propietario de la suscripción de usuario de Azure Stack | Microsoft Docs
-description: Cambie el propietario de la facturación para las suscripciones de usuario de Azure Stack.
+title: Cambio del propietario de facturación de las suscripciones de usuario de Azure Stack | Microsoft Docs
+description: Aprenda cómo cambiar el propietario de facturación de las suscripciones de usuario de Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: sethmanheim
+author: justinha
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -12,20 +12,20 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: conceptual
-ms.date: 06/04/2019
-ms.author: sethm
+ms.date: 09/17/2019
+ms.author: justinha
 ms.reviewer: shnatara
 ms.lastreviewed: 10/19/2018
-ms.openlocfilehash: 99f995941c4e7b09af70dff9391aeceb9a59844d
-ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
+ms.openlocfilehash: 3c4453974092fd1873e5f77b1074c82851fc1be1
+ms.sourcegitcommit: c196463492732218d2474d3a964f88e995272c80
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66691926"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71094366"
 ---
-# <a name="change-the-owner-for-an-azure-stack-user-subscription"></a>Cambio del propietario de una suscripción de usuario de Azure Stack
+# <a name="change-the-billing-owner-for-an-azure-stack-user-subscription"></a>Cambio del propietario de facturación de las suscripciones de usuario de Azure Stack
 
-Los operadores de Azure Stack pueden usar PowerShell para cambiar el propietario de la facturación de una suscripción de usuario. Por ejemplo, una razón para cambiar el propietario es reemplazar un usuario que deja la organización.
+Los operadores de Azure Stack pueden usar PowerShell para cambiar el propietario de facturación de una suscripción de usuario. Por ejemplo, una razón para cambiar el propietario es reemplazar un usuario que deja la organización.
 
 Hay dos tipos de *propietarios* que se asignan a una suscripción:
 
@@ -66,6 +66,8 @@ $subscription = Get-AzsUserSubscription -SubscriptionId $SubscriptionId
 $Subscription.Owner = $OwnerUpn
 Set-AzsUserSubscription -InputObject $subscription
 ```
+
+[!include[Remove Account](../../includes/remove-account.md)]
 
 ## <a name="next-steps"></a>Pasos siguientes
 

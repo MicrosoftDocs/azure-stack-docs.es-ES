@@ -16,12 +16,12 @@ ms.date: 06/13/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 09/17/2018
-ms.openlocfilehash: ab06f5d3674000733227894a5a69778d90c29d48
-ms.sourcegitcommit: e8f7fe07b32be33ef621915089344caf1fdca3fd
+ms.openlocfilehash: 9b28d6b55530de6716fd7781b4c7894cbc859288
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70118734"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70974997"
 ---
 # <a name="add-additional-scale-unit-nodes-in-azure-stack"></a>Incorporación de nodos de unidad de escalado adicionales en Azure Stack
 
@@ -58,9 +58,9 @@ Los pasos siguientes son una descripción general de alto nivel de cómo agregar
 
 ## <a name="add-the-node"></a>Incorporación del nodo
 
-Puede usar el portal de administración o PowerShell para agregar nuevos nodos. La operación Agregar nodo primero agrega el nuevo nodo de unidad de escalado como capacidad de proceso disponible y luego extiende la capacidad de almacenamiento automáticamente. La capacidad se expande automáticamente porque Azure Stack es un sistema hiperconvergido donde *proceso* y *almacenamiento* escalan juntos.
+Puede usar el portal del administrador o PowerShell para agregar nuevos nodos. La operación Agregar nodo primero agrega el nuevo nodo de unidad de escalado como capacidad de proceso disponible y luego extiende la capacidad de almacenamiento automáticamente. La capacidad se expande automáticamente porque Azure Stack es un sistema hiperconvergido donde *proceso* y *almacenamiento* escalan juntos.
 
-### <a name="use-the-admin-portal"></a>Uso del portal de administración
+### <a name="use-the-administrator-portal"></a>Uso del portal de administración
 
 1. Inicie sesión en el portal de administración de Azure Stack como operador de Azure Stack.
 2. Vaya a **+ Create a resource (Crear un recurso)**  > **Capacidad** > **Nodo de la unidad de escalado**.
@@ -87,10 +87,10 @@ Antes de utilizar cualquiera de los siguientes scripts de PowerShell de ejemplo,
   ```  
 
 ## <a name="monitor-add-node-operations"></a>Supervisión de las operaciones para agregar nodo 
-Use el portal de administración o PowerShell para obtener el estado de la operación de Agregar nodo. Las operaciones Agregue nodo pueden tardar de varias horas a días en completarse.
+Use el portal del administrador o PowerShell para obtener el estado de la operación Agregar nodo. Las operaciones Agregue nodo pueden tardar de varias horas a días en completarse.
 
-### <a name="use-the-admin-portal"></a>Uso del portal de administración 
-Para supervisar la incorporación de un nuevo nodo, revise la unidad de escalado o los objetos de nodo de la unidad de escalado en el portal de administración. Para ello, vaya a **Region management** (Administración de regiones) > **Scale units** (Unidades de escalado). A continuación, seleccione la unidad de escalado o el nodo de unidad de escalado que desea revisar. 
+### <a name="use-the-administrator-portal"></a>Uso del portal de administración 
+Para supervisar la incorporación de un nuevo nodo, revise la unidad de escalado o los objetos de nodo de la unidad de escalado en el portal del administrador. Para ello, vaya a **Region management** (Administración de regiones) > **Scale units** (Unidades de escalado). A continuación, seleccione la unidad de escalado o el nodo de unidad de escalado que desea revisar. 
 
 ### <a name="use-powershell"></a>Uso de PowerShell
 El estado de la unidad de escalado y de los nodos de unidad de escalado se puede recuperar mediante PowerShell de la siguiente manera:
@@ -108,7 +108,7 @@ El estado de la unidad de escalado y de los nodos de unidad de escalado se puede
 |Status               |DESCRIPCIÓN  |
 |---------------------|---------|
 |En ejecución              |Todos los nodos están participando activamente en la unidad de escalado.|
-|Stopped              |El nodo de unidad de escalado está inactivo o es inaccesible.|
+|Detenido              |El nodo de unidad de escalado está inactivo o es inaccesible.|
 |Expandiendo            |Actualmente se están agregando uno o varios nodos de unidad de escalado como capacidad de proceso.|
 |Configuración del almacenamiento  |Se ha expandido la capacidad de proceso y la configuración de almacenamiento se está ejecutando.|
 |Requiere corrección |Se detectó un error que requiere que uno o varios nodos de unidad de escalado se reparen.|
@@ -119,7 +119,7 @@ El estado de la unidad de escalado y de los nodos de unidad de escalado se puede
 |Status                |DESCRIPCIÓN  |
 |----------------------|---------|
 |En ejecución               |El nodo está participando activamente en la unidad de escalado.|
-|Stopped               |El nodo no está disponible.|
+|Detenido               |El nodo no está disponible.|
 |Agregando                |El nodo se está agregando activamente a la unidad de escalado.|
 |Reparando             |El nodo se está reparando activamente.|
 |Mantenimiento           |El nodo está en pausa y no se está ejecutando ninguna carga de trabajo de usuario activa. |

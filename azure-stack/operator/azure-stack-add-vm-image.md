@@ -3,7 +3,7 @@ title: Adición de una imagen de máquina virtual a Azure Stack | Microsoft Docs
 description: Aprenda a agregar o quitar una imagen de máquina virtual en Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: Justinha
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -11,22 +11,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: conceptual
-ms.date: 07/23/2019
-ms.author: mabrigg
+ms.date: 09/17/2019
+ms.author: Justinha
 ms.reviewer: kivenkat
 ms.lastreviewed: 06/08/2018
-ms.openlocfilehash: 8fec1b3702aa7c8c55f1a90167b1ac13f0ac8847
-ms.sourcegitcommit: e2f6205e6469b39c2395ee09424bb7632cb94c40
+ms.openlocfilehash: fef815ec23655638bbe4df1bcdccae42aeee13e2
+ms.sourcegitcommit: 9f4c6e96f60b4c229316e7a4ab6e0e5ef0a9a232
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70271752"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061162"
 ---
 # <a name="add-a-vm-image-to-azure-stack"></a>Adición de una imagen de máquina virtual en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-En Azure Stack, puede agregar una imagen de máquina virtual (VM) al Marketplace para que esté disponible para los usuarios. Las imágenes se agregan mediante plantillas de Azure Resource Manager para Azure Stack. También puede agregar estas imágenes a la interfaz de usuario de Azure Marketplace como un elemento de Marketplace mediante el portal de administración o con Windows PowerShell. Use una imagen de Azure Marketplace global o su propia imagen de VM personalizada.
+En Azure Stack, puede agregar una imagen de máquina virtual al Marketplace para que esté disponible para los usuarios. Las imágenes se agregan mediante plantillas de Azure Resource Manager para Azure Stack. También puede agregar estas imágenes a la interfaz de usuario de Azure Marketplace como un elemento de Marketplace mediante el portal del administrador o con Windows PowerShell. Use una imagen de Azure Marketplace global o su propia imagen de VM personalizada.
 
 ## <a name="add-a-vm-image-through-the-portal"></a>Agregación de una imagen de máquina virtual a través del portal
 
@@ -66,7 +66,7 @@ Debe poderse hacer referencia a las imágenes mediante un identificador URI de B
 
 ## <a name="remove-a-vm-image-through-the-portal"></a>Eliminación de una imagen de máquina virtual a través del portal
 
-1. Abra el portal de administración en [https://adminportal.local.azurestack.external](https://adminportal.local.azurestack.external).
+1. Abra el portal del administrador en [https://adminportal.local.azurestack.external](https://adminportal.local.azurestack.external).
 
 2. Seleccione **Administración de Marketplace** y luego seleccione la máquina virtual que desea eliminar.
 
@@ -155,10 +155,13 @@ Debe poderse hacer referencia a las imágenes mediante un identificador URI de B
 5. Prepare una imagen de sistema operativo Windows o Linux en formato VHD (no VHDX), cargue la imagen en la cuenta de almacenamiento y obtenga el URI donde PowerShell puede recuperar la imagen de máquina virtual.  
 
    ```powershell
-    Add-AzureRmAccount `
-      -EnvironmentName "AzureStackAdmin" `
-      -TenantId $TenantID
+   Add-AzureRmAccount 
+   -EnvironmentName "AzureStackAdmin" 
+   -TenantId $TenantID
    ```
+  
+   >[!Note]
+   > Si la sesión expira, la contraseña ha cambiado o simplemente desea cambiar de cuenta, ejecute el siguiente cmdlet antes de iniciar sesión con Add-AzureRmAccount: `Remove-AzureRmAccount-Scope Process`
 
 6. (Opcional) Puede cargar una matriz de discos de datos como parte de la imagen de máquina virtual. Cree los discos de datos mediante el cmdlet New-DataDiskObject. Abra PowerShell con un símbolo del sistema con privilegios elevados y ejecute:
 

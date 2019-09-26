@@ -1,6 +1,6 @@
 ---
 title: Copia de seguridad de Azure Stack | Microsoft Docs
-description: Realice una copia de seguridad a petición en Azure Stack con la copia de seguridad vigente.
+description: Aprenda a realizar una copia de seguridad a petición en Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -16,18 +16,18 @@ ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 09/05/2018
-ms.openlocfilehash: a572275ff81918d1b8f739a99fbe7a57784d0651
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: 01a4ff62b7cc340a0cf0f98298ee28425d6df892
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66269012"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70974719"
 ---
 # <a name="back-up-azure-stack"></a>Copia de seguridad de Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Realice una copia de seguridad a petición en Azure Stack. Para obtener instrucciones acerca de cómo configurar el entorno de PowerShell, consulte [Instalación de PowerShell para Azure Stack](azure-stack-powershell-install.md). Para iniciar sesión en Azure Stack, consulte [Uso del portal de administración de Azure Stack](azure-stack-manage-portals.md).
+En este artículo se indica cómo realizar una copia de seguridad a petición en Azure Stack. Para obtener instrucciones acerca de cómo configurar el entorno de PowerShell, consulte [Instalación de PowerShell para Azure Stack](azure-stack-powershell-install.md). Para iniciar sesión en Azure Stack, consulte [Uso del portal de administración de Azure Stack](azure-stack-manage-portals.md).
 
 ## <a name="start-azure-stack-backup"></a>Inicio de la copia de seguridad de Azure Stack
 
@@ -42,9 +42,9 @@ Use Start-AzSBackup para iniciar una nueva copia de seguridad inmediatamente sin
 Use Start-AzSBackup para iniciar una nueva copia de seguridad con el parámetro **-AsJob** y guárdelo como una variable para realizar el seguimiento del progreso del trabajo de copia de seguridad.
 
 > [!NOTE]
-> El trabajo de copia de seguridad aparecerá como completado correctamente en el portal unos 10 o 15 minutos antes de que finalice el trabajo.
+> El trabajo de copia de seguridad aparece como completado correctamente en el portal unos 10 o 15 minutos antes de que finalice el trabajo.
 >
-> Por lo tanto, el estado real se observa mejor mediante el código siguiente.
+> El estado real se observa mejor mediante el código siguiente.
 
 > [!IMPORTANT]
 > El retraso inicial de un milisegundo se presenta porque el código es demasiado rápido para registrar correctamente el trabajo y vuelve sin ningún **PSBeginTime** y, a su vez, sin **Estado** del trabajo.
@@ -111,10 +111,10 @@ El resultado debe tener un aspecto similar a la siguiente salida:
     Tags              : {}
 ```
 
-### <a name="confirm-backup-has-completed-in-the-administration-portal"></a>Confirmación de que la copia de seguridad se ha completado en el portal de administración
+### <a name="confirm-backup-has-completed-in-the-administrator-portal"></a>Confirmación de que la copia de seguridad se ha completado en el portal del administrador
 Use el portal de administración de Azure Stack para comprobar que esa copia de seguridad se ha completado correctamente; para ello, siga estos pasos:
 
-1. Abra [el portal de administración de Azure Stack](azure-stack-manage-portals.md).
+1. Abra el [portal del administrador de Azure Stack](azure-stack-manage-portals.md).
 2. Seleccione **Todos los servicios** y, luego, en la categoría **ADMINISTRACIÓN**, seleccione > **Copia de seguridad de infraestructura**. Elija **Configuración** en la hoja **Copia de seguridad de infraestructura**.
 3. Busque el **Nombre** y la **Fecha de finalización** de la copia de seguridad en la lista **Copias de seguridad disponibles**.
 4. Compruebe que el **Estado** es **Correcto**.

@@ -1,5 +1,5 @@
 ---
-title: Administración de los recursos de red en Azure Stack | Microsoft Docs
+title: Administración de recursos de red en Azure Stack | Microsoft Docs
 description: Los administradores pueden administrar los recursos de red, incluido el grupo de direcciones MAC y el consumo de direcciones IP públicas en una región.
 services: azure-stack
 documentationcenter: ''
@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/16/2019
+ms.date: 09/17/2019
 ms.author: mabrigg
 ms.reviewer: scottnap
-ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: d056cbf73e2417bd826fba7a7de263cc8e015b7d
-ms.sourcegitcommit: 637018771ac016b7d428174e88d4dcb131b54959
+ms.lastreviewed: 09/17/2019
+ms.openlocfilehash: 6abf8480528aad0bff121d553172bdc8d0446e11
+ms.sourcegitcommit: 95f30e32e5441599790d39542ff02ba90e70f9d6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68842918"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71070182"
 ---
 # <a name="manage-network-resources"></a>Administración de recursos de red
 
@@ -61,7 +61,7 @@ Para ver el número total de direcciones IP públicas que se han consumido en un
 1. En el portal de administración de Azure Stack, seleccione **Todos los servicios**. Después, en la categoría **ADMINISTRACIÓN**, seleccione **Red**.
 1. El panel **Red** muestra el icono **Uso de grupos de IP públicas** en la sección **Información general**.
 
-![Panel Proveedor de recursos de red](media/azure-stack-viewing-public-ip-address-consumption/image01.png)
+    ![Panel Proveedor de recursos de red](media/azure-stack-viewing-public-ip-address-consumption/ip-address-consumption-01.png)
 
 El número de **Usadas** representa el número direcciones IP públicas asignadas de grupos de direcciones IP públicas. El número que aparece debajo de **Libres** representa el número de direcciones IP públicas de los grupos de direcciones IP públicas que no se ha asignado y, por consiguiente, siguen disponibles. El número que aparece al lado de **% usado** representa el número de direcciones usadas o asignadas, en forma de porcentaje del número total de direcciones IP públicas de los grupos de direcciones IP públicas que hay en la ubicación.
 
@@ -69,7 +69,7 @@ El número de **Usadas** representa el número direcciones IP públicas asignada
 
 Seleccione **Direcciones IP públicas** en **Recursos de inquilinos**. Revise la lista de direcciones IP públicas creadas explícitamente por las suscripciones de los inquilinos en una región concreta.
 
-![Direcciones IP públicas de inquilinos](media/azure-stack-viewing-public-ip-address-consumption/image02.png)
+![Direcciones IP públicas de inquilinos](media/azure-stack-viewing-public-ip-address-consumption/ip-address-consumption-02.png)
 
 Puede ver que algunas direcciones IP públicas que se han asignado dinámicamente aparecen en la lista, pero aún no tienen una dirección asociada. El recurso de red se ha creado en el proveedor de recursos de red, pero aún no en la controladora de red.
 

@@ -16,12 +16,12 @@ ms.date: 03/25/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/25/2019
-ms.openlocfilehash: b92fcd3f729bf068dd578893f24f1c7fa66bbcff
-ms.sourcegitcommit: 7d7a4c8c46613b6104caf23763bfd2275f6a826b
+ms.openlocfilehash: 9098fb61c0d4edcb534bd7b9d07b4727c953df8d
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70808134"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70974886"
 ---
 # <a name="app-service-on-azure-stack-update-4-release-notes"></a>Notas de la versión de la actualización 4 de App Service en Azure Stack
 
@@ -92,7 +92,7 @@ La actualización 4 de Azure App Service en Azure Stack incluye las siguientes c
 
 - Se ha restaurado la funcionalidad en la configuración de uso compartido de recursos entre orígenes del portal de inquilino de App Service.
 
-- Se muestra ahora un mensaje de error en el portal de administración de App Service cuando el panel de control del proveedor de recursos no puede conectarse a la instancia de SQL Server configurada.
+- Se muestra ahora un mensaje de error en el portal del administrador de App Service cuando el panel de control del proveedor de recursos no puede conectarse a la instancia de SQL Server configurada.
 
 - Se garantiza que el punto de conexión se agregue a la cadena de conexión de almacenamiento personalizada cuando se especifica en la nueva aplicación de función.
 
@@ -207,7 +207,7 @@ Para los clientes que quieran migrar a una base de datos independiente para las 
 
 - Los trabajos no pueden llegar al servidor de archivos cuando App Service está implementada en una red virtual existente y el servidor de archivos solo está disponible en la red privada. Esto también se indica en la documentación de implementación de Azure App Service en Azure Stack.
 
-Si decide realizar una implementación en una red virtual existente y en una dirección IP interna para conectarse al servidor de archivos, debe agregar una regla de seguridad de salida. De ese modo, permite que exista tráfico SMB entre la subred del rol de trabajo y el servidor de archivos. Vaya a WorkersNsg en el portal de administración y agregue una regla de seguridad de salida con las siguientes propiedades:
+Si decide realizar una implementación en una red virtual existente y en una dirección IP interna para conectarse al servidor de archivos, debe agregar una regla de seguridad de salida. De ese modo, permite que exista tráfico SMB entre la subred del rol de trabajo y el servidor de archivos. Vaya a WorkersNsg en el portal del administrador y agregue una regla de seguridad de salida con las siguientes propiedades:
 
  * Origen: Any
  * Intervalo de puertos de origen: *
