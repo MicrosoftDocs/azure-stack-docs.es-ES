@@ -17,12 +17,12 @@ ms.date: 05/06/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 02/08/2019
-ms.openlocfilehash: 5b517eec23950380bf5f0fc8febe717683960b65
-ms.sourcegitcommit: 4eb1766c7a9d1ccb1f1362ae1211ec748a7d708c
+ms.openlocfilehash: 0ba8723b9d0f03006b52ecd016c3713280b63dea
+ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69579104"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71159296"
 ---
 # <a name="deploy-asdk-from-the-command-line-using-powershell"></a>Implementación de ASDK desde la línea de comandos mediante PowerShell
 
@@ -144,7 +144,7 @@ Si su entorno no tiene DHCP habilitado, debe incluir los siguientes parámetros 
 |Parámetro|Obligatorio/opcional|DESCRIPCIÓN|
 |-----|-----|-----|
 |AdminPassword|Obligatorio|Establece la cuenta de administrador local y el resto de cuentas de usuario en todas las VM que se crean como parte de la implementación de ASDK. Esta contraseña debe coincidir con la contraseña de administrador local actual del host.|
-|InfraAzureDirectoryTenantName|Obligatorio|Establece el directorio del inquilino. Utilice este parámetro para especificar un directorio concreto en el que la cuenta de AAD tenga permisos para administrar varios directorios. Es el nombre completo de un inquilino de AAD con el formato .onmicrosoft.com, o bien un nombre de dominio personalizado de Azure AD verificado.|
+|InfraAzureDirectoryTenantName|Obligatorio|Establece el directorio del inquilino. Utilice este parámetro para especificar un directorio concreto en el que la cuenta de Azure AD tenga permisos para administrar varios directorios. Es el nombre completo de un inquilino de Azure AD con el formato .onmicrosoft.com, o bien un nombre de dominio personalizado de Azure AD verificado.|
 |TimeServer|Obligatorio|Utilice este parámetro para especificar un servidor horario específico. Este parámetro se debe proporcionar como una dirección IP válida del servidor horario. No se admiten los nombres de servidor.|
 |InfraAzureDirectoryTenantAdminCredential|Opcional|Permite establecer el nombre de usuario y la contraseña de Azure Active Directory. Estas credenciales de Azure deben ser un identificador de organización.|
 |InfraAzureEnvironment|Opcional|Seleccione el entorno de Azure con el que desea registrar esta implementación de Azure Stack. Las opciones incluyen Azure global, Azure China, Azure: US Government.|

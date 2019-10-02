@@ -16,12 +16,12 @@ ms.date: 05/06/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 02/08/2019
-ms.openlocfilehash: c616736cf9ea8cc350c2c53bb7d6994346dac990
-ms.sourcegitcommit: 7968f9f0946138867323793be9966ee2ef99dcf4
+ms.openlocfilehash: deac15b2f1e3ebd86fdd2e171f664bd4b5917e37
+ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025965"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71159435"
 ---
 # <a name="install-the-asdk"></a>Instalación del Kit de desarrollo de Azure Stack
 Después de [preparar el equipo host del ASDK](asdk-prepare-host.md), el Kit de desarrollo de Azure Stack (ASDK) se puede implementar en la imagen CloudBuilder.vhdx mediante los siguientes pasos de este artículo.
@@ -44,7 +44,7 @@ Los pasos de este artículo muestran cómo implementar ASDK mediante una interfa
   
     Si elige un proveedor de identidades de la suscripción a Azure, necesita una conexión a Internet, el nombre completo de un inquilino del directorio de Azure AD en el formato *nombreDeDominio*.onmicrosoft.com, o un nombre de dominio personalizado verificado por Azure AD. También necesita credenciales de administrador global para el directorio especificado.
 
-    Después de la implementación, no se necesita el permiso de administrador global de Azure Active Directory (AAD). Sin embargo, algunas operaciones pueden requerir la credencial de administrador global. Por ejemplo, un script del instalador del proveedor de recursos o una nueva característica que necesita la concesión de un permiso. Puede restablecer temporalmente los permisos de administrador global de la cuenta o usar una cuenta de administrador global independiente que sea propietaria de la *suscripción del proveedor predeterminada*.
+    Después de la implementación, no se necesita el permiso de administrador global de Azure Active Directory (Azure AD). Sin embargo, algunas operaciones pueden requerir la credencial de administrador global. Por ejemplo, un script del instalador del proveedor de recursos o una nueva característica que necesita la concesión de un permiso. Puede restablecer temporalmente los permisos de administrador global de la cuenta o usar una cuenta de administrador global independiente que sea propietaria de la *suscripción del proveedor predeterminada*.
 
     Al usar AD FS como proveedor de identidades, se usa el servicio de directorio con la marca predeterminado. La cuenta predeterminada con la que se inicia sesión es azurestackadmin@azurestack.local y la contraseña que se usa es la que especificó en la configuración.
 

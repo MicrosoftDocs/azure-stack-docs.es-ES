@@ -15,12 +15,12 @@ ms.date: 08/09/2019
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 07/31/2019
-ms.openlocfilehash: 123849750cbfb343fc63cb43376651a6554ab6b4
-ms.sourcegitcommit: 6239b35370d21852529978777c0e39cfba5a4552
+ms.openlocfilehash: 878e4712cf805fec188645e92784beaf6a19d591
+ms.sourcegitcommit: d967cf8cae320fa09f1e97eeb888e3db5b6e7972
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68917549"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71279117"
 ---
 # <a name="azure-stack-marketplace-changes"></a>Cambios en Marketplace de Azure Stack
 
@@ -30,33 +30,32 @@ El artículo [Elementos de Marketplace de Azure Stack](azure-stack-marketplace-a
 
 ## <a name="new-marketplace-items"></a>Nuevos elementos de Marketplace
 
-- 25/1/2019: A10 vThunder: controlador de entrega de aplicaciones L4-L7, equilibrio de carga del servidor global (GSLB), SSL Insight
+- 05/08/2019: Bitnami Drupal
 
-- 14/6/2019: Veeam® Backup & Replication™
+- 05/08/2019: Bitnami etcd
 
-- 05/08/2019: Drupal
+- 05/08/2019: Bitnami Grafana
 
-- 05/08/2019: etcd
+- 05/08/2019: Bitnami Neo4j
 
-- 05/08/2019: Grafana
+- 05/08/2019: Bitnami Parse Server
 
-- 05/08/2019: Neo4J
+- 05/08/2019: Bitnami WordPress Multisite
 
-- 05/08/2019: Parse Server
+- 05/08/2019: Bitnami ZooKeeper
 
-- 05/08/2019: WordPress Multisite
+- 05/08/2019: Bitnami TensorFlow Serving
 
-- 05/08/2019: ZooKeeper
+- 05/08/2019: Bitnami NATS
 
-- 05/08/2019: TensorFlow Serving
+- 05/08/2019: Bitnami Review Board
 
-- 05/08/2019: NATS
-
-- 05/08/2019: Review Board
-
-- 05/08/2019: Composr
+- 05/08/2019: Bitnami Composr
 
 - 09/08/2019: Oracle Linux
+
+- 19/08/2019: Iguazio Data Science Platform
+
 
 ## <a name="deprecated-marketplace-items"></a>Elementos de Marketplace en desuso
 
@@ -64,13 +63,23 @@ El artículo [Elementos de Marketplace de Azure Stack](azure-stack-marketplace-a
 - X2Engine Sales CRM
 - SugarCRM
 - Clúster de Node.js de alta disponibilidad
+- A10 vThunder: controlador de entrega de aplicaciones L4-L7, equilibrio de carga del servidor global (GSLB), SSL Insight
+- JsonADDomain Extension
 
 ## <a name="updated-marketplace-items"></a>Elementos de Marketplace actualizados
 
-- 30/07/2019: SQL Server 2016 SP1 (ediciones Express, Developer, Standard y Enterprise) 13.2.20190410
-- 30/07/2019: SQL Server 2016 SP2 (ediciones Express, Developer, Standard y Enterprise) 13.2.20190410
-- 30/07/2019: SQL Server 2017 (ediciones Express, Developer, Standard y Enterprise) 14.0.20190410
-- 30/07/2019: SQLIaaSExtension 1.3.20180
+- 30/07/2019: SQL Server 2016 SP1 (ediciones Express, Developer, Standard y Enterprise) versión 13.2.20190410
+- 30/07/2019: SQL Server 2016 SP2 (ediciones Express, Developer, Standard y Enterprise) versión 13.2.20190410
+- 30/07/2019: SQL Server 2017 (ediciones Express, Developer, Standard y Enterprise) versión 14.0.20190410
+- 30/07/2019: SQLIaaSExtension versión 1.3.20180
+- 08/08/2019: Extensión CloudLink SecureVM para Linux versión 6.8
+- 08/08/2019: Extensión CloudLink SecureVM para Windows versión 6.8
+- 30/08/2019: Clúster de Kubernetes en Azure Stack versión 0.5.1
+- 02/09/2019: Imagen base de AKS versión 2019.08.09 y versión 2019.08.21
+- 12/09/2019: Service Fabric versión 1.0.3
+- 24/09/2019: F5-Networks BIG-IP Virtual Edition-versión 14.1.200000
+- 25/09/2019: Debian 8 versión 8.0.20190806
+
 
 ## <a name="next-steps"></a>Pasos siguientes
 

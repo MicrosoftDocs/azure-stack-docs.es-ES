@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/04/2019
+ms.date: 09/23/2019
 ms.author: justinha
 ms.reviewer: prchint
-ms.lastreviewed: 09/04/2019
-ms.openlocfilehash: 338df8d335376ebbaf14230e62d8dee9f813994f
-ms.sourcegitcommit: e2f6205e6469b39c2395ee09424bb7632cb94c40
+ms.lastreviewed: 09/23/2019
+ms.openlocfilehash: ecaea28d3b753520c53710a4e888cf37bf508fe1
+ms.sourcegitcommit: 4e48f1e5af74712a104eda97757dc5f50a591936
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70271743"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71224935"
 ---
 # <a name="overview-of-azure-stack-diagnostic-log-collection"></a>Información general sobre la recopilación de registros de diagnóstico de Azure Stack 
 
@@ -34,7 +34,7 @@ Antes de la versión 1907, la experiencia de diagnóstico incluía el uso de [Te
 A partir de la versión 1907, la página **Ayuda y soporte técnico** agrega una experiencia más sencilla mediante la **recopilación de registros de diagnóstico**. 
 La **recopilación de registros de diagnóstico** es parte de una inversión continuada para mejorar la experiencia del operador de Azure Stack con el proceso de solución de problemas. Con estas mejoras, los operadores pueden recopilar y compartir rápidamente los registros de diagnóstico con los servicios de soporte al cliente (CSS) de Microsoft. Los registros se pueden almacenar en un contenedor de blobs en Azure, donde el acceso se puede personalizar según sea necesario.    
    
-La **recopilación de registros de diagnóstico** puede recopilar registros de diagnóstico de dos maneras diferentes:
+La **recopilación de registros de diagnóstico** funciona de dos maneras diferentes:
 
 - **Recopilación automática**: si está habilitada (recomendado), las alertas de estado específicas desencadenan automáticamente la recopilación de registros y se almacenan en la cuenta de almacenamiento de Azure.
 - **Recopilar registros ahora**: se trata de una opción a petición en la que puede optar por recopilar registros de una ventana deslizante de 1 a 4 hora de los últimos siete días.
@@ -46,7 +46,7 @@ Si la directiva permite compartir registros de diagnóstico con CSS, la **recopi
 
 ## <a name="automatic-diagnostic-log-collection"></a>Recopilación de registros de diagnóstico automática 
 
-La recopilación de registros de diagnóstico automática carga de forma proactiva los registros de diagnóstico de Azure Stack en un blob de almacenamiento de Azure cuando se generan ciertas alertas críticas, lo que reduce significativamente el tiempo necesario para compartir registros de diagnóstico con CSS.
+Cuando hay una [alerta de estado específica](azure-stack-configure-automatic-diagnostic-log-collection.md#automatic-diagnostic-log-collection-alerts) activa, la recopilación de registros de diagnóstico automática inicia y carga de forma proactiva los registros de diagnóstico de Azure Stack en un blob de almacenamiento de Azure, lo que reduce significativamente el tiempo necesario para compartir registros de diagnóstico con CSS. Los registros de diagnóstico solo se recopilan cuando se genera una alerta.  
 
 Para más información sobre cómo configurar la recopilación de registros automática, consulte [Configuración de la recopilación de registros de diagnóstico automática de Azure Stack](azure-stack-configure-automatic-diagnostic-log-collection.md).
 

@@ -16,12 +16,12 @@ ms.reviewer: ppacent
 ms.author: mabrigg
 ms.lastreviewed: 07/15/2019
 monikerRange: '>=azs-1803'
-ms.openlocfilehash: 5b8beccab17eaa9aedadb63327150a70a327df1f
-ms.sourcegitcommit: 71d7990a2b21576c44bb2aea13ae2026e9510c55
+ms.openlocfilehash: b79e3def3444db2228992b423ca21945d7964f26
+ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70188173"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71159618"
 ---
 # <a name="rotate-secrets-in-azure-stack"></a>Cambio de secretos en Azure Stack
 
@@ -147,7 +147,7 @@ Para cambiar los secretos externos:
 
 1. En el directorio **\Certificates\\\<IdentityProvider>** que se ha creado en los pasos previos, coloque el nuevo conjunto de certificados externos de reemplazo en la estructura de directorios según el formato descrito en la sección Certificados obligatorios de [Requisitos de certificados de infraestructura de clave pública de Azure Stack](azure-stack-pki-certs.md#mandatory-certificates).
 
-    Ejemplo de la estructura de carpetas para el proveedor de identidades de AAD:
+    Ejemplo de la estructura de carpetas para el proveedor de identidades de Azure AD:
     ```powershell
         <ShareName>
         │   │

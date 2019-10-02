@@ -15,12 +15,12 @@ ms.date: 09/14/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 09/14/2019
-ms.openlocfilehash: b7057acd34625ffdea1de9ed533bf608de3059d6
-ms.sourcegitcommit: 09d14eb77a43fd585e7e6be93c32fa427770adb6
+ms.openlocfilehash: 87cd2031c15611173308bf23e50d07690d3930e9
+ms.sourcegitcommit: 4e48f1e5af74712a104eda97757dc5f50a591936
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019411"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71224917"
 ---
 # <a name="install-the-aks-engine-on-windows-in-azure-stack"></a>Instalación de AKS-Engine en Windows para Azure Stack
 
@@ -46,11 +46,11 @@ Puede instalar la máquina virtual cliente para administrar el clúster de Kuber
 3. [Instale Chocolatey con las instrucciones de PowerShell](https://chocolatey.org/install#install-with-powershellexe). 
 
     Según el sitio web de Chocolatey: Chocolatey es un administrador de paquetes para Windows, como apt-get o yum pero para Windows. Se ha diseñado para ser una plataforma descentralizada para instalar rápidamente las aplicaciones y las herramientas necesarias. Se basa en la infraestructura de NuGet que usa actualmente PowerShell y su objetivo es entregar los paquetes de las distribuciones a su equipo.
-4. Busque la versión de AKS-Engine en la tabla [Versiones admitidas de Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). La imagen base de AKS debe estar disponible en Marketplace de Azure Stack. Al ejecutar el comando, especificará la versión, por ejemplo, `--version v0.39.0`. Si no lo hace, el comando instalará la versión más reciente, que puede no estar disponible en Marketplace.
+4. Busque la versión de AKS-Engine en la tabla [Versiones admitidas de Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). La imagen base de AKS debe estar disponible en Marketplace de Azure Stack. Al ejecutar el comando, debe especificar la versión `--version v0.41.0`. Si no lo hace, el comando instalará la versión más reciente, que podría necesitar una imagen de VHD que no está disponible en Marketplace.
 5. Ejecute el siguiente comando desde un símbolo del sistema con privilegios elevados e incluya el número de versión:
 
     ```PowerShell  
-        choco install aks-engine --version v0.0.0 -y
+        choco install aks-engine --version v0.41.0 -y
     ```
 
 > [!Note]  

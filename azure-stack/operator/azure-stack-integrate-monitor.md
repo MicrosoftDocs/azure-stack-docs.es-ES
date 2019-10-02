@@ -15,12 +15,12 @@ ms.date: 06/05/2019
 ms.author: jeffgilb
 ms.reviewer: thoroet
 ms.lastreviewed: 06/05/2019
-ms.openlocfilehash: 7b5bfb39c3ec14c23b1df54c13f2733724fcfe05
-ms.sourcegitcommit: ddb625bb01de11bfb75d9f7a1cc61d5814b3bc31
+ms.openlocfilehash: 489859720df8a2d0c20bb476b285fe9cb65b797e
+ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68712914"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71159631"
 ---
 # <a name="integrate-external-monitoring-solution-with-azure-stack"></a>Integrar una solución de supervisión externa con Azure Stack
 
@@ -75,7 +75,7 @@ Se ha desarrollado un complemento de supervisión de Nagios junto con las soluci
 
 Este complemento se escribe en Python y aprovecha la API de REST del proveedor de recursos de mantenimiento. Ofrece la funcionalidad básica para recuperar y cerrar alertas de Azure Stack. Al igual que el Módulo de administración de System Center, le permite agregar varias implementaciones de Azure Stack y enviar notificaciones.
 
-Con la versión 1.2, el complemento Nagios para Azure Stack aprovecha la biblioteca Microsoft ADAL y admite la autenticación mediante una entidad de servicio con un secreto o certificado. Además, la configuración se ha simplificado mediante el uso de un único archivo de configuración con parámetros nuevos. Ahora admite implementaciones de Azure Stack que usan AAD y ADFS como sistema de identidad.
+Con la versión 1.2, el complemento Nagios para Azure Stack aprovecha la biblioteca Microsoft ADAL y admite la autenticación mediante una entidad de servicio con un secreto o certificado. Además, la configuración se ha simplificado mediante el uso de un único archivo de configuración con parámetros nuevos. Ahora admite implementaciones de Azure Stack que usan Azure AD y AD FS como sistema de identidad.
 
 El complemento funciona con Nagios 4 x y XI. Puede descargarlas [aquí](https://exchange.nagios.org/directory/Plugins/Cloud/Monitoring-AzureStack-Alerts/details). El sitio de descarga también incluye detalles de instalación y configuración.
 

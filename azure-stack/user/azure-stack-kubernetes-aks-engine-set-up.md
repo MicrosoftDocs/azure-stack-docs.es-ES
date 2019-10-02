@@ -15,12 +15,12 @@ ms.date: 09/14/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 09/14/2019
-ms.openlocfilehash: a65449d39f114bd0ff5eb859bd49ec36d4bb4281
-ms.sourcegitcommit: 09d14eb77a43fd585e7e6be93c32fa427770adb6
+ms.openlocfilehash: cc278020bb4d2ba530e20b6f2f56bcb841207bbc
+ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019405"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71159735"
 ---
 # <a name="set-up-the-prerequisites-for-the-aks-engine-on-azure-stack"></a>Configuración de los requisitos previos para AKS-Engine en Azure Stack
 
@@ -29,6 +29,8 @@ ms.locfileid: "71019405"
 Puede instalar AKS-Engine en una máquina virtual de su entorno o en cualquier máquina cliente con acceso al punto de conexión del Administrador de recursos de Azure Stack. Necesitará lo siguiente antes de ejecutar el motor: un servidor Ubuntu de AKS Base y una extensión de script personalizado de Linux disponibles en la suscripción, una identidad de entidad de servicio que se ha asignado a un rol de colaborador y un par de claves privada y pública para el acceso SSH al servidor Ubuntu. Además, si usa el Kit de desarrollo de Azure Stack, necesitará que la máquina confíe en los certificados adecuados.
 
 Si tiene los requisitos previos, puede empezar a [definir el clúster.](azure-stack-kubernetes-aks-engine-deploy-cluster.md)
+
+Si es el operador en la nube de Azure Stack y quiere ofrecer el motor de AKS, siga las instrucciones que se indican en [Agregar el motor de AKS a Marketplace de Azure Stack](../operator/azure-stack-aks-engine.md).
 
 ## <a name="prerequisites-for-the-aks-engine"></a>Requisitos previos para AKS-Engine
 
@@ -51,7 +53,7 @@ Para usar AKS-Engine, debe tener disponibles los siguientes recursos. Tenga en c
 
 AKS-Engine usa una imagen compilada, la **imagen base de AKS**. Cualquier versión de AKS-Engine depende de una versión de imagen específica que esté disponible en Azure Stack por el operador de Azure Stack. Puede encontrar una tabla que muestre las versiones de AKS-Engine y las versiones de Kubernetes compatibles correspondientes en [Versiones admitidas de Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). Por ejemplo, la versión de AKS-Engine `v0.40.0` depende de la versión `2019.08.21` de la imagen base de AKS. Pida al operador de Azure Stack que descargue la versión de imagen específica desde Azure Marketplace en Marketplace de Azure Stack.
 
-Se desencadenará un error si la imagen no está disponible en Marketplace de Azure Stack. Por ejemplo, si actualmente utiliza AKS-Engine versión v0.39.1 y la versión de la imagen base de AKS no está disponible, verá el siguiente error al ejecutar AKS-Engine: 
+Se desencadenará un error si la imagen no está disponible en Marketplace de Azure Stack. Por ejemplo, si actualmente utiliza AKS-Engine versión v0.39.1 y la versión `2019.08.09` de la imagen base de AKS no está disponible, verá el siguiente error al ejecutar AKS-Engine: 
 
 ```Text  
 The platform image 'microsoft-aks:aks:aks-ubuntu-1604-201908:2019.08.09' is not available. 

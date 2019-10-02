@@ -16,12 +16,12 @@ ms.date: 06/23/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: ca2ea89ab73c7a8e056e4b4700e92a872e628f34
-ms.sourcegitcommit: 3f52cf06fb5b3208057cfdc07616cd76f11cdb38
+ms.openlocfilehash: 9c4ddec0606556290e55850a9081c6665f2524d1
+ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67316171"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71159582"
 ---
 # <a name="validate-azure-registration"></a>Validación del registro de Azure
 
@@ -73,7 +73,7 @@ Se necesitan los siguientes requisitos previos:
    ```
 
    > [!NOTE]
-   > Como CSP, cuando se usa una suscripción de servicios compartidos o IUR, debe proporcionar las credenciales de un usuario desde ese AAD correspondiente. Normalmente, será similar a `subscriptionowner@iurcontoso.onmicrosoft.com`. Ese usuario debe tener las credenciales adecuadas, tal como se describe en el paso anterior.
+   > Como CSP, cuando se usa una suscripción de servicios compartidos o IUR, debe proporcionar las credenciales de un usuario desde ese Azure AD correspondiente. Normalmente, será similar a `subscriptionowner@iurcontoso.onmicrosoft.com`. Ese usuario debe tener las credenciales adecuadas, tal como se describe en el paso anterior.
 
 3. Desde el símbolo del sistema de PowerShell, ejecute l siguiente para establecer `$subscriptionID` como la suscripción de Azure que se va a usar. Reemplace `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` por su propio identificador de suscripción:
 

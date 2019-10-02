@@ -15,12 +15,12 @@ ms.date: 06/20/2019
 ms.author: mabrigg
 ms.reviewer: anajod
 ms.lastreviewed: 06/20/2019
-ms.openlocfilehash: 859d80c9782926602769664006375cb131de8637
-ms.sourcegitcommit: 35b13ea6dc0221a15cd0840be796f4af5370ddaf
+ms.openlocfilehash: 37ffb494ab6ae124c6a0eb460da4569f660cd283
+ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68602936"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71159371"
 ---
 # <a name="deploy-a-staged-data-analytics-solution-to-azure-stack"></a>Implementación de una solución de análisis de datos almacenados provisionalmente en Azure Stack
 
@@ -49,7 +49,7 @@ En esta solución, creará un entorno de ejemplo para:
 ## <a name="prerequisites-for-staged-data-analytics"></a>Requisitos previos para el análisis de datos almacenados provisionalmente
 
   - Una suscripción de Azure.
-  - Una entidad de servicio de Azure Active Directory (AAD) que tenga permisos para la suscripción del inquilino en Azure y Azure Stack. Es posible que deba crear dos entidades de servicio si Azure Stack usa un inquilino de AAD diferente que su suscripción de Azure. Para obtener información sobre cómo crear una entidad de servicio para Azure Stack, visite [Creación de entidades de servicio para otorgar a las aplicaciones acceso a los recursos de Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-create-service-principals).
+  - Una entidad de servicio de Azure Active Directory (Azure AD) que tenga permisos para la suscripción del inquilino en Azure y Azure Stack. Es posible que deba crear dos entidades de servicio si Azure Stack usa un inquilino de AAD diferente que su suscripción de Azure. Para obtener información sobre cómo crear una entidad de servicio para Azure Stack, visite [Creación de entidades de servicio para otorgar a las aplicaciones acceso a los recursos de Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-create-service-principals).
       - **Tome nota del id. de aplicación, el secreto de cliente, el id. de inquilino de Azure AD y nombre de inquilino (xxxxx.onmicrosoft.com) de cada entidad de servicio.**
   - Deberá proporcionar una colección de datos para el análisis de datos. Se proporcionan datos de ejemplo.
   - [Docker para Windows](https://docs.docker.com/docker-for-windows/) instalado en la máquina local.

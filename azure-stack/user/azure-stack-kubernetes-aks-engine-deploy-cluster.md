@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na (Kubernetes)
 ms.devlang: nav
 ms.topic: article
-ms.date: 09/14/2019
+ms.date: 09/25/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 09/14/2019
-ms.openlocfilehash: 8891ac7a1fb4b5b5af110e800f49c0d8fa873f66
-ms.sourcegitcommit: 09d14eb77a43fd585e7e6be93c32fa427770adb6
+ms.lastreviewed: 09/25/2019
+ms.openlocfilehash: 957ea4bc52e6f629ffd7fbd06a14d8dc2fb85021
+ms.sourcegitcommit: d967cf8cae320fa09f1e97eeb888e3db5b6e7972
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019459"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71279172"
 ---
 # <a name="deploy-a-kubernetes-cluster-with-the-aks-engine-on-azure-stack"></a>Implementación de un clúster de Kubernetes con AKS-Engine en Azure Stack
 
@@ -108,6 +108,7 @@ Continúe con la implementación de un clúster:
     | Parámetro | Ejemplo | DESCRIPCIÓN |
     | --- | --- | --- |
     | azure-env | AzureStackCloud | Para indicar a AKS-Engine que la plataforma de destino es Azure Stack, utilice `AzureStackCloud`. |
+    | identity-system | adfs | Opcional. Especifique la solución de administración de identidad si usa los Servicios de federación de Active Directory (AD FS). |
     | location | local | El nombre de la región de la instancia de Azure Stack. Para ASDK, la región se establece en `local`. |
     | resource-group | kube-rg | Escriba el nombre del nuevo grupo de recursos o seleccione uno existente. El nombre del recurso debe ser alfanumérico y estar en minúsculas. |
     | api-model | ./kubernetes-azurestack.json | Ruta de acceso al archivo de configuración del clúster o modelo de API. |
@@ -119,15 +120,16 @@ Continúe con la implementación de un clúster:
     Este es un ejemplo:
 
     ```bash  
-    aks-engine deploy \\
-    --azure-env AzureStackCloud
-    --location <for asdk is local>\\
-    --resource-group kube-rg \\
-    --api-model ./kubernetes-azurestack.json \\
-    --output-directory kube-rg \\
-    --client-id xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \\
-    --client-secret xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \\
-    --subscription-id xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+    aks-engine deploy \
+    --azure-env AzureStackCloud \
+    --location <for asdk is local> \
+    --resource-group kube-rg \
+    --api-model ./kubernetes-azurestack.json \
+    --output-directory kube-rg \
+    --client-id xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \
+    --client-secret xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \
+    --subscription-id xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \
+    --identity-system adfs # required if using AD FS
     ```
 
 2.  Si por algún motivo se produce un error en la ejecución después de que se haya creado el directorio de salida, puede corregir el problema y volver a ejecutar el comando. Si va a volver a ejecutar la implementación y ha usado el mismo directorio de salida antes, AKS-Engine devolverá un error que indica que el directorio ya existe. Puede sobrescribir el directorio existente mediante el uso de la marca `--force-overwrite`.

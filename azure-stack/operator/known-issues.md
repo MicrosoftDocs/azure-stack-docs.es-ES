@@ -16,16 +16,18 @@ ms.date: 09/17/2019
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 09/13/2019
-ms.openlocfilehash: 3179416a7f8dacc5c3282372038c6761009b5b76
-ms.sourcegitcommit: c46d913ebfa4cb6c775c5117ac5c9e87d032a271
+ms.openlocfilehash: ba5b8358dced378f499c30f9b8d409497319fc86
+ms.sourcegitcommit: 2c37ac8e88de19430080128bac1b70e33557d354
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106512"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71164251"
 ---
 # <a name="azure-stack-known-issues"></a>Problemas conocidos de Azure Stack
 
-En este artículo se enumeran los problemas conocidos de las versiones de Azure Stack. La lista se actualiza conforme se identifican nuevos problemas. **Para ver los problemas conocidos de una versión diferente, use el selector de versión en la parte superior izquierda.**
+En este artículo se enumeran los problemas conocidos de las versiones de Azure Stack. La lista se actualiza conforme se identifican nuevos problemas.
+
+Para tener acceso a los problemas conocidos de una versión diferente, use la lista desplegable del selector de versiones encima de la tabla de contenido de la izquierda.
 
 ::: moniker range=">=azs-1905"
 > [!IMPORTANT]  
@@ -674,7 +676,7 @@ El error se produce si habilita el diagnóstico de arranque en una VM, pero elim
 ::: moniker range=">=azs-1905"
 ## <a name="archive"></a>Archivar
 
-Para acceder a los problemas conocidos de una versión anterior, use el selector de versión en la parte superior izquierda de la página y seleccione la versión que desea. 
+Para acceder a los problemas conocidos archivados de una versión anterior, use la lista desplegable del selector de versiones encima de la tabla de contenido de la izquierda y seleccione la versión que quiere ver.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

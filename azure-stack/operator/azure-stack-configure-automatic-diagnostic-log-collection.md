@@ -16,12 +16,12 @@ ms.date: 07/25/2019
 ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 07/25/2019
-ms.openlocfilehash: efab23f12086fee2e4f5c14a70f95717ac9669b9
-ms.sourcegitcommit: b752f4e6733d9ebe56dbd171a14528dcb9a693fd
+ms.openlocfilehash: 4d6bc431b292fc7a124aa2b8051d0a927d736eee
+ms.sourcegitcommit: 4e48f1e5af74712a104eda97757dc5f50a591936
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68522055"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71224956"
 ---
 # <a name="configure-automatic-azure-stack-diagnostic-log-collection"></a>Configuración de la recopilación de registros de diagnóstico automática de Azure Stack
 
@@ -44,7 +44,7 @@ Para ver procedimientos recomendados sobre cómo elegir parámetros para la cuen
 1. Inicie sesión en el [Azure Portal](https://portal.azure.com).
 1. Haga clic en **Cuentas de almacenamiento** > **Agregar**. 
 1. Cree un contenedor de blobs con esta configuración:
-   - **Suscripción**: Elija la suscripción de Azure.
+   - **Suscripción**: Elegir la suscripción de Azure
    - **Grupo de recursos**: especifique un grupo de recursos.
    - **Nombre de la cuenta de almacenamiento**: especifique un nombre de cuenta de almacenamiento único.
    - **Ubicación**: elija un centro de datos según la directiva de su compañía.
@@ -100,7 +100,6 @@ Siga estos pasos para agregar la dirección URL de SAS a la interfaz de usuario 
 >[!NOTE]
 >La recopilación de registros automática puede deshabilitarse y habilitarse de nuevo en cualquier momento. La configuración de la dirección URL de SAS no cambiará. Si se vuelve a habilitar la recopilación de registros automática, la dirección URL de SAS indicada anteriormente se someterá a las mismas comprobaciones de validación y se rechazará una dirección URL de SAS expirada. 
 
-
 ## <a name="view-log-collection"></a>Visualización de la recopilación de registros
 
 El historial de registros recopilados de Azure Stack aparece en la página **Recopilación de registros** en Ayuda y soporte técnico, con las siguientes fechas y horas:
@@ -116,6 +115,36 @@ Si se produce un error en la recopilación de registros de diagnóstico, comprue
 Los operadores también pueden comprobar la cuenta de almacenamiento para los registros recopilados de forma automática. Por ejemplo, en esta captura de pantalla se muestran recopilaciones de registros mediante la versión preliminar del Explorador de Storage de Azure Portal:
 
 ![Captura de pantalla que muestra recopilaciones de registros](media/azure-stack-automatic-log-collection/check-storage-account.png)
+
+## <a name="automatic-diagnostic-log-collection-alerts"></a>Alertas de recopilación de registros de diagnóstico automática 
+
+Si está habilitada, la recopilación automática de registros de diagnóstico solo se produce cuando es necesario. Solo las siguientes alertas desencadenan la recopilación. 
+
+|Título de la alerta  | FaultIdType|    
+|-------------|------------|
+|No se puede conectar al servicio remoto |  UsageBridge.NetworkError|
+|Error de actualización |    Urp.UpdateFailure   |          
+|Infraestructura del proveedor de recursos de almacenamiento o dependencias no disponibles |  StorageResourceProviderDependencyUnavailable     |     
+|Nodo no conectado al controlador|  ServerHostNotConnectedToController   |     
+|Error de publicación de rutas |    SlbMuxRoutePublicationFailure | 
+|Almacén de datos interno del proveedor de recursos de almacenamiento no disponible |    StorageResourceProvider. DataStoreConnectionFail     |       
+|Error del dispositivo de almacenamiento | Microsoft.Health.FaultType.VirtualDisks.Detached   |      
+|El controlador de mantenimiento no puede acceder a la cuenta de almacenamiento | Microsoft.Health.FaultType.StorageError |    
+|Se perdió la conectividad con un disco físico |    Microsoft.Health.FaultType.PhysicalDisk.LostCommunication    |    
+|Blob Service no se está ejecutando en un nodo | StorageService.The.blob.service.is.not.running.on.a.node-Critical | 
+|rol de infraestructura incorrecto |    Microsoft.Health.FaultType.GenericExceptionFault |        
+|Errores de Table service | StorageService.Table.service.errors-Critical |              
+|Un recurso compartido de archivos está por encima del 80 % de uso |    Microsoft.Health.FaultType.FileShare.Capacity.Warning.Infra |       
+|Scale unit node is offline (Nodo de la unidad de escalado desconectado) | FRP.Heartbeat.PhysicalNode |  
+|Instancia del rol de infraestructura no disponible | FRP.Heartbeat.InfraVM   |    
+|Instancia del rol de infraestructura no disponible  |    FRP.Heartbeat.NonHaVm     |        
+|El rol de infraestructura, administración de directorios, ha detectado errores de sincronización de hora |  DirectoryServiceTimeSynchronizationError |     
+|Expiración de certificado externo pendiente |  CertificateExpiration.ExternalCert.Warning |
+|Expiración de certificado externo pendiente |  CertificateExpiration.ExternalCert.Critical |
+|No se puede aprovisionar máquinas virtuales para la clase y tamaño específicos debido a la baja capacidad de memoria |  AzureStack.ComputeController.VmCreationFailure.LowMemory |
+|Node inaccessible for virtual machine placement (Nodo inaccesible para la colocación de la máquina virtual) |  AzureStack.ComputeController.HostUnresponsive | 
+|Error de la copia de seguridad  | AzureStack.BackupController.BackupFailedGeneralFault |    
+|Se omitió la copia de seguridad programada debido a un conflicto con operaciones erróneas  | AzureStack.BackupController.BackupSkippedWithFailedOperationFault |   
 
 
 ## <a name="see-also"></a>Otras referencias

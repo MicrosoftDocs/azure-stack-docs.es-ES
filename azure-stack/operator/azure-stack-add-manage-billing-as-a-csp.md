@@ -1,6 +1,6 @@
 ---
-title: Administración del uso y la facturación para Azure Stack como un proveedor de servicios en la nube | Microsoft Docs
-description: Obtenga información sobre cómo registrar Azure Stack como proveedor en la nube (CSP) y cómo agregar clientes para la facturación.
+title: Administración del uso y la facturación para Azure Stack como un proveedor de soluciones en la nube | Microsoft Docs
+description: Obtenga información sobre cómo registrar Azure Stack como proveedor de soluciones en la nube (CSP) y cómo agregar clientes para la facturación.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,14 +15,14 @@ ms.date: 05/20/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: a8ae60e9ee19f96196d1c3763a32be0842567c7a
-ms.sourcegitcommit: e8f7fe07b32be33ef621915089344caf1fdca3fd
+ms.openlocfilehash: 82aa27440a496a813e2f1fa99879005503ba8d07
+ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70118683"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71159495"
 ---
-# <a name="manage-usage-and-billing-for-azure-stack-as-a-cloud-service-provider"></a>Administración del uso y la facturación para Azure Stack como un proveedor de servicios en la nube
+# <a name="manage-usage-and-billing-for-azure-stack-as-a-cloud-solution-provider"></a>Administración del uso y la facturación de Azure Stack como proveedor de soluciones en la nube
 
 *Se aplica a: Sistemas integrados de Azure Stack*
 
@@ -32,7 +32,7 @@ Como CSP, trabaja con diversos clientes mediante su instancia de Azure Stack. Ca
 
 En la siguiente ilustración se muestran los pasos necesarios para elegir su cuenta de servicios compartidos y registrar la cuenta de Azure con la cuenta de Azure Stack. Una vez registrado, podrá incorporar los clientes finales:
 
-[![Proceso para habilitar el uso y administración como Proveedor de servicios en la nube](media/azure-stack-add-manage-billing-as-a-csp/process-add-useage-as-a-csp.png "Process for enabling usage and management as a Cloud Service Provider")](media/azure-stack-add-manage-billing-as-a-csp/process-add-useage-as-a-csp.png#lightbox)
+[![Proceso para habilitar el uso y administración como Proveedor de soluciones en la nube](media/azure-stack-add-manage-billing-as-a-csp/process-add-useage-as-a-csp.png "Process for enabling usage and management as a Cloud Service Provider")](media/azure-stack-add-manage-billing-as-a-csp/process-add-useage-as-a-csp.png#lightbox)
 
 ## <a name="create-a-csp-or-apss-subscription"></a>Creación de una suscripción de CSP o APSS
 
@@ -40,7 +40,7 @@ En la siguiente ilustración se muestran los pasos necesarios para elegir su cue
 
 Elija el tipo de cuenta de servicios compartidos que utiliza para Azure Stack. Estos son los tipos de suscripciones que se pueden usar para el registro de una instancia de Azure Stack multiinquilino:
 
-- Proveedor de servicios en la nube
+- Proveedor de soluciones en la nube
 - Suscripción de servicios compartidos de asociados
 
 #### <a name="azure-partner-shared-services"></a>Servicios compartidos para asociados de Azure

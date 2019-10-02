@@ -15,12 +15,12 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 03/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 7e5467945db4987bdd86b7265117c486fb6f7e1b
-ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
+ms.openlocfilehash: 091dc657153309298a1eda161b633a42050a0f57
+ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68418332"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71159342"
 ---
 # <a name="workflow-common-parameters-for-azure-stack-validation-as-a-service"></a>Parámetros comunes del flujo de trabajo en la validación como servicio de Azure Stack
 
@@ -62,7 +62,7 @@ Los parámetros de prueba comunes incluyen información confidencial que no se p
 Parámetro    | DESCRIPCIÓN
 -------------|-----------------
 Usuario administrador de inquilinos                            | El administrador de inquilinos de Azure Active Directory que ha aprovisionado el administrador de servicios en el directorio de AAD. Este usuario realiza acciones a nivel de inquilino, como la implementación de plantillas para configurar los recursos (VM, cuentas de almacenamiento, etc.) y la ejecución de cargas de trabajo. Para más información sobre el aprovisionamiento de cuentas de inquilino, consulte [Adición de un nuevo inquilino de Azure Stack](../operator/azure-stack-add-new-user-aad.md).
-Usuario administrador de servicios             | Administrador de Azure Active Directory del inquilino del directorio de AAD especificado durante la implementación de Azure Stack. Busque `AADTenant` en el archivo de configuración ECE y seleccione el valor en el elemento `UniqueName`.
+Usuario administrador de servicios             | Administrador de Azure Active Directory del inquilino del directorio de Azure AD especificado durante la implementación de Azure Stack. Busque `AADTenant` en el archivo de configuración ECE y seleccione el valor en el elemento `UniqueName`.
 Usuario del administrador de la nube               | Cuenta de administrador de dominio de Azure Stack (por ejemplo, `contoso\cloudadmin`). Busque `User Role="CloudAdmin"` en el archivo de configuración ECE y seleccione el valor en el elemento `UserName`.
 Cadena de conexión de diagnósticos          | Una URL de SAS a una cuenta de Azure Storage donde se copiarán los registro de diagnóstico durante la ejecución de pruebas. Para obtener instrucciones sobre la generación de la dirección URL de SAS, consulte [Generación de la cadena de conexión de diagnóstico](#generate-the-diagnostics-connection-string). |
 

@@ -16,12 +16,12 @@ ms.date: 08/13/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: 9e92101b6d00da397359ed25e8682f18305f5a83
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.openlocfilehash: f60ee96673b5574f0cd0393dc6a53a2d7937c04f
+ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70974748"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71159154"
 ---
 # <a name="start-azsreadinesschecker-cmdlet-reference"></a>Referencia del cmdlet Start-AzsReadinessChecker
 
@@ -166,7 +166,7 @@ Start-AzsReadinessChecker
 
 ## <a name="description"></a>DESCRIPCIÓN
 
-El cmdlet **Start-AzsReadinessChecker** valida los certificados, las cuentas de Azure, las suscripciones de Azure y los directorios de Azure Active Directory (AAD). Ejecute la validación antes de implementar Azure Stack o de realizar acciones de servicio de Azure Stack como la rotación de secretos. El cmdlet también puede usarse para generar solicitudes de firma de certificado para certificados de infraestructura y, opcionalmente, para certificados de PaaS. Por último, el cmdlet puede volver a empaquetar los certificados PFX para solucionar problemas comunes de empaquetado.
+El cmdlet **Start-AzsReadinessChecker** valida los certificados, las cuentas de Azure, las suscripciones de Azure y los directorios de Azure Active Directory (Azure AD). Ejecute la validación antes de implementar Azure Stack o de realizar acciones de servicio de Azure Stack como la rotación de secretos. El cmdlet también puede usarse para generar solicitudes de firma de certificado para certificados de infraestructura y, opcionalmente, para certificados de PaaS. Por último, el cmdlet puede volver a empaquetar los certificados PFX para solucionar problemas comunes de empaquetado.
 
 ## <a name="examples"></a>Ejemplos
 
@@ -188,7 +188,7 @@ $password = Read-Host -Prompt "Enter PFX Password" -AsSecureString
 Start-AzsReadinessChecker -CertificatePath .\Certificates\ -PfxPassword $password -RegionName east -FQDN azurestack.contoso.com -IdentitySystem AAD
 ```
 
-En este ejemplo, se solicita por seguridad la contraseña PFX y `Start-AzsReadinessChecker` busca en la carpeta relativa **Certificados** los certificados válidos para una implementación de AAD con un nombre de región de **east** y un FQDN externo de **azurestack.contoso.com**.
+En este ejemplo, se solicita por seguridad la contraseña PFX y `Start-AzsReadinessChecker` busca en la carpeta relativa **Certificados** los certificados válidos para una implementación de Azure AD con un nombre de región de **east** y un FQDN externo de **azurestack.contoso.com**.
 
 ### <a name="example-validate-certificates-with-deployment-data-deployment-and-support"></a>Ejemplo: Validación de certificados con datos de implementación (implementación y soporte técnico)
 
@@ -237,7 +237,7 @@ $serviceAdminCredential = Get-Credential -Message "Enter Credentials for Service
 Start-AzsReadinessChecker -AADServiceAdministrator $serviceAdminCredential -AzureEnvironment "<environment name>" -AzureDirectoryTenantName azurestack.contoso.com
 ```
 
-En este ejemplo, se solicitan las credenciales de la cuenta de administrador del servicio por seguridad y `Start-AzsReadinessChecker` comprueba que la cuenta de Azure y AAD son válidos para una implementación de AAD con un nombre de directorio de inquilino de **azurestack.contoso.com**.
+En este ejemplo, se solicitan las credenciales de la cuenta de administrador del servicio por seguridad y `Start-AzsReadinessChecker` comprueba que la cuenta de Azure y Azure AD son válidos para una implementación de Azure AD con un nombre de directorio de inquilino de **azurestack.contoso.com**.
 
 ### <a name="example-validate-azure-identity-with-deployment-data-deployment-support"></a>Ejemplo: Validación de la identidad de Azure con datos de implementación (compatibilidad de implementación)
 
@@ -246,7 +246,7 @@ $serviceAdminCredential = Get-Credential -Message "Enter Credentials for Service
 Start-AzsReadinessChecker -AADServiceAdministrator $serviceAdminCredential -DeploymentDataJSONPath .\contoso-deploymentdata.json
 ```
 
-En este ejemplo, se solicitan las credenciales de la cuenta de administrador del servicio por seguridad y `Start-AzsReadinessChecker` comprueba que la cuenta de Azure y AAD son válidos para una implementación de AAD donde **AzureCloud** y **TenantName** se leen del archivo JSON de datos de implementación generado para la implementación.
+En este ejemplo, se solicitan las credenciales de la cuenta de administrador del servicio por seguridad y `Start-AzsReadinessChecker` comprueba que Azure AD y la cuenta de Azure son válidos para una implementación de Azure AD donde **AzureCloud** y **TenantName** se leen del archivo JSON de datos de implementación generado para la implementación.
 
 ### <a name="example-validate-azure-registration"></a>Ejemplo: Validación del registro de Azure
 
@@ -435,7 +435,7 @@ Especifica la ruta de acceso de destino para los archivos de solicitud de certif
 
 ### <a name="-aadserviceadministrator"></a>-AADServiceAdministrator
 
-Especifica el administrador del servicio de AAD que se va a usar para la implementación de Azure Stack.
+Especifica el administrador del servicio de Azure AD que se va a usar para la implementación de Azure Stack.
 
 |  |  |
 |----------------------------|---------|
@@ -447,7 +447,7 @@ Especifica el administrador del servicio de AAD que se va a usar para la impleme
 
 ### <a name="-aaddirectorytenantname"></a>-AADDirectoryTenantName
 
-Especifica el nombre de AAD que se va a usar para la implementación de Azure Stack.
+Especifica el nombre de Azure AD que se va a usar para la implementación de Azure Stack.
 
 |  |  |
 |----------------------------|---------|
@@ -512,7 +512,7 @@ Especifica la ruta de acceso para el informe de preparación, tiene como valor p
 
 Especifica la ruta de acceso en la que solo se encuentran las carpetas de certificados necesarias para el certificado.
 
-Las carpetas necesarias para la implementación de Azure Stack con el sistema de identidades de AAD son las siguientes:
+Las carpetas necesarias para la implementación de Azure Stack con el sistema de identidades de Azure AD son las siguientes:
 
 - ACSBlob, ACSQueue, ACSTable, Admin Portal, ARM Admin, ARM Public, KeyVault, KeyVaultInternal, Public Portal
 

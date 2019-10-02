@@ -10,12 +10,12 @@ ms.date: 05/10/2019
 ms.author: patricka
 ms.reviewer: thoroet
 ms.lastreviewed: 05/10/2019
-ms.openlocfilehash: de2c0c2181025b7dbbc01691b72b0756fa201274
-ms.sourcegitcommit: bcaad8b7db2ea596018d973cb29283d8c6daebfb
+ms.openlocfilehash: f51b0bdd4e433dd3083701e8cc967b3105d23ed6
+ms.sourcegitcommit: 820ec8d10ddab1fee136397d3aa609e676f8b39d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67419506"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71127516"
 ---
 # <a name="azure-stack-datacenter-integration---identity"></a>Integración del centro de datos de Azure Stack: identidad
 
@@ -57,7 +57,7 @@ Se requiere la siguiente información como entrada para los parámetros de autom
 
 |Parámetro|Parámetro de hoja de cálculo de implementación|DESCRIPCIÓN|Ejemplo|
 |---------|---------|---------|---------|
-|`CustomADGlobalCatalog`|FQDN de bosque de ADFS|FQDN del bosque de Active Directory de destino<br>que desee integrar con|Contoso.com|
+|`CustomADGlobalCatalog`|FQDN del bosque de AD FS|FQDN del bosque de Active Directory de destino<br>que desee integrar con|Contoso.com|
 |`CustomADAdminCredentials`| |Un usuario con permiso de lectura de LDAP|YOURDOMAIN\graphservice|
 
 ### <a name="configure-active-directory-sites"></a>Configuración de los sitios de Active Directory
@@ -129,8 +129,8 @@ Se requiere la siguiente información como entrada para los parámetros de autom
 
 |Parámetro|Parámetro de hoja de cálculo de implementación|DESCRIPCIÓN|Ejemplo|
 |---------|---------|---------|---------|
-|CustomAdfsName|Nombre del proveedor de ADFS|Nombre del proveedor de notificaciones.<br>Aparece de este modo en la página de aterrizaje de AD FS.|Contoso|
-|CustomAD<br>FSFederationMetadataEndpointUri|URI de metadatos de ADFS|Vínculo de metadatos de federación| https:\//ad01.contoso.com/federationmetadata/2007-06/federationmetadata.xml |
+|CustomAdfsName|Nombre de proveedor de AD FS|Nombre del proveedor de notificaciones.<br>Aparece de este modo en la página de aterrizaje de AD FS.|Contoso|
+|CustomAD<br>FSFederationMetadataEndpointUri|URI de metadatos de AD FS|Vínculo de metadatos de federación| https:\//ad01.contoso.com/federationmetadata/2007-06/federationmetadata.xml |
 |SigningCertificateRevocationCheck|N/D|Parámetro opcional para omitir la comprobación de CRL|None|
 
 

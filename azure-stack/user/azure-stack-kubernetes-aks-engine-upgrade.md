@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na (Kubernetes)
 ms.devlang: nav
 ms.topic: article
-ms.date: 09/14/2019
+ms.date: 09/25/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 09/14/2019
-ms.openlocfilehash: 280c5bf6a09670479a8497ecedb0364e6e27f949
-ms.sourcegitcommit: 09d14eb77a43fd585e7e6be93c32fa427770adb6
+ms.lastreviewed: 09/25/2019
+ms.openlocfilehash: 377857019e6a4d55e6a9372296817e1776c081c9
+ms.sourcegitcommit: d967cf8cae320fa09f1e97eeb888e3db5b6e7972
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019393"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71279164"
 ---
 # <a name="upgrade-a-kubernetes-cluster-on-azure-stack"></a>Actualización de un clúster de Kubernetes en Azure Stack
 
@@ -87,7 +87,7 @@ Al actualizar un clúster de producción, tenga en cuenta lo siguiente:
     | api-model | ./kubernetes-azurestack.json | Ruta de acceso al archivo de configuración del clúster o modelo de API. |
     | client-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Escriba el GUID de la entidad de servicio. El id. de cliente identificado como identificador de la aplicación cuando el administrador de Azure Stack creó la entidad de servicio. |
     | client-secret | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Escriba el secreto de la entidad de servicio. Este es el secreto de cliente que configuró al crear el servicio. |
-
+    | identity-system | adfs | Opcional. Especifique la solución de administración de identidad si usa los Servicios de federación de Active Directory (AD FS). |
 
 4. Con los valores en su lugar, ejecute el comando siguiente:
 
@@ -100,7 +100,8 @@ Al actualizar un clúster de producción, tenga en cuenta lo siguiente:
     --api-model kube-rg/apimodel.json \
     --upgrade-version 1.13.5 \
     --client-id xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \
-    --client-secret xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+    --client-secret xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \
+    --identity-system adfs # required if using AD FS
     ```
 
 5.  Si, por cualquier motivo, la operación de actualización encuentra un error, puede volver a ejecutar el comando de actualización después de solucionar el problema. AKS-Engine reanudará la operación en la que se produjo el error la hora anterior.

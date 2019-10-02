@@ -11,20 +11,20 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/31/2019
+ms.date: 09/25/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 02/26/2019
-ms.openlocfilehash: 6a5ef529d2eabf8039be1da6c53da907c0b7aaaf
-ms.sourcegitcommit: 80775f5c5235147ae730dfc7e896675a9a79cdbe
+ms.openlocfilehash: d63d4876674c66fcccab942cd856dce958e62644
+ms.sourcegitcommit: 32609bdb04a07b063c8f20f892c30769ad6903dd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66459046"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71269480"
 ---
-# <a name="frequently-asked-questions-in-azure-stack-usage-api"></a>Preguntas frecuentes sobre la API de uso de Azure Stack
+# <a name="frequently-asked-questions-about-azure-stack-usage"></a>Preguntas frecuentes sobre el uso de Azure Stack
 
-En este artículo se responden algunas preguntas frecuentes sobre la API de uso de Azure Stack.
+En este artículo se responden algunas preguntas frecuentes sobre el uso de Azure Stack y la API de uso de Azure Stack.
 
 ## <a name="what-meter-ids-can-i-see"></a>¿Qué identificadores de medidor veo?
 
@@ -418,6 +418,16 @@ Actualmente, solo se puede consultar mediante el *tiempo notificado*.
 ## <a name="what-is-the-policy-for-charging-for-vms"></a>¿Cuál es la directiva de facturación para VM?
 
 Las VM en ejecución y detenidas generan datos de uso. La desasignación es coherente con Azure y necesaria para detener la emisión de datos de uso. En el caso de que el portal no esté disponible, pero el proveedor de recursos de proceso aún se esté ejecutando, se emitirá el uso.
+
+## <a name="how-do-i-extract-usage-data-from-the-azure-stack-usage-apis"></a>¿Cómo puedo extraer datos de uso de las API de uso de Azure Stack?
+
+La forma más fácil de extraer datos de uso de las API de uso locales en Azure Stack es mediante el [script de resumen de uso en GitHub](https://github.com/Azure/AzureStack-Tools/blob/master/Usage/Usagesummary.ps1). El script requiere las fechas de inicio y finalización como parámetros de entrada.
+
+Como alternativa, puede usar las API de REST, como se explica en los artículos [API de uso de recursos de proveedor](azure-stack-provider-resource-api.md) y [API de uso de recursos de inquilino](azure-stack-tenant-resource-usage-api.md).
+
+## <a name="how-can-i-associate-usage-extracted-from-azure-usage-apis-to-a-specific-azure-stack-user-subscription"></a>¿Cómo se puede asociar el uso extraído de las API de uso de Azure a una suscripción de usuario de Azure Stack específica?
+
+Los registros de uso incluyen un contenedor de propiedades denominado **additionalinfo** que incluye el identificador de suscripción de Azure Stack. Se trata de la suscripción de usuario que emite el registro de uso correspondiente.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

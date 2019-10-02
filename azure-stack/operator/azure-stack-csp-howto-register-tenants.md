@@ -1,6 +1,6 @@
 ---
 title: Adición de inquilinos en Azure Stack para uso y facturación | Microsoft Docs
-description: Los pasos necesarios agregan un usuario final a Azure Stack administrado por un proveedor de servicios en la nube (CSP).
+description: Obtenga información sobre cómo agregar inquilinos para uso y facturación en Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -11,31 +11,33 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/17/2019
+ms.date: 09/25/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 09/17/2019
-ms.openlocfilehash: 97d57605ce093684fcbabe2375deecda5e35cce2
-ms.sourcegitcommit: 9f4c6e96f60b4c229316e7a4ab6e0e5ef0a9a232
+ms.openlocfilehash: 76b870d795b79cf966dcf6742ad08f739d24a42a
+ms.sourcegitcommit: 32609bdb04a07b063c8f20f892c30769ad6903dd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71061126"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71269489"
 ---
 # <a name="add-tenant-for-usage-and-billing-to-azure-stack"></a>Adición de inquilinos en Azure Stack para uso y facturación
 
 *Se aplica a: Sistemas integrados de Azure Stack*
 
-En este artículo se describen los pasos necesarios para agregar un usuario final a una implementación de Azure Stack administrada por un proveedor de servicios en la nube (CSP). Cuando el nuevo inquilino utiliza recursos, Azure Stack informa del uso a su suscripción de CSP.
+En este artículo se muestra cómo agregar un inquilino a una implementación de Azure Stack administrada por un proveedor de soluciones en la nube (CSP). Cuando el nuevo inquilino utiliza recursos, Azure Stack informa del uso a su suscripción de CSP.
 
-Los CSP suelen ofrecen servicios a varios clientes finales (inquilinos) en su implementación de Azure Stack. Al agregar los inquilinos en el registro de Azure Stack se garantiza que el uso de cada inquilino se notifica y se factura a la suscripción del CSP correspondiente. Si no se completan los pasos descritos en este artículo, el uso realizado por los inquilinos se cargará en la suscripción utilizada en el registro inicial de Azure Stack. Antes de poder agregar a un cliente final a Azure Stack para el seguimiento de uso y para administrar el inquilino, debe configurar Azure Stack como un CSP. Para información sobre los pasos y recursos, consulte [Administración del uso y la facturación para Azure Stack como un proveedor de servicios en la nube](azure-stack-add-manage-billing-as-a-csp.md).
+Los CSP suelen ofrecen servicios a varios clientes finales (inquilinos) en su implementación de Azure Stack. Al agregar los inquilinos en el registro de Azure Stack se garantiza que el uso de cada inquilino se notifica y se factura a la suscripción del CSP correspondiente. Si no se completan los pasos descritos en este artículo, el uso realizado por los inquilinos se cargará en la suscripción utilizada en el registro inicial de Azure Stack. Antes de poder agregar a un cliente final a Azure Stack para el seguimiento de uso y para administrar el inquilino, debe configurar Azure Stack como un CSP. Para información sobre los pasos y recursos, consulte [Administración del uso y la facturación para Azure Stack como un proveedor de soluciones en la nube](azure-stack-add-manage-billing-as-a-csp.md).
 
-La siguiente figura muestra los pasos que necesita seguir un CSP para habilitar un cliente nuevo en Azure Stack y para configurar el seguimiento de uso del cliente. Al agregar al cliente final, también puede administrar los recursos en Azure Stack. Tiene dos opciones para administrar los recursos:
+La siguiente figura muestra los pasos que necesita seguir un CSP para habilitar un cliente final nuevo en Azure Stack y para configurar el seguimiento de uso del cliente. Al agregar al cliente final, también puede administrar los recursos en Azure Stack. Tiene dos opciones para administrar los recursos:
 
 - Puede mantener el cliente final y proporcionar las credenciales para la suscripción de Azure Stack local al cliente final.  
-- El cliente final puede trabajar con su suscripción de forma local y agregar al CSP como invitado con permisos de propietario.  
+- El cliente final puede trabajar con su suscripción de forma local y agregar al CSP como invitado con permisos de propietario.
 
 ## <a name="add-an-end-customer"></a>Agregar a un cliente final
+
+Antes de agregar un cliente final, debe habilitar la facturación de varios inquilinos en el registro. Para habilitar la facturación de varios inquilinos, envíe el identificador de la suscripción del registro, el nombre del grupo de recursos y el nombre de registro a `azstcsp@microsoft.com`. El multiinquilino tarda normalmente 1 o 2 días hábiles en habilitarse.
 
 Realice los pasos siguientes para agregar a un cliente final, como se muestra en la ilustración siguiente:
 
@@ -47,11 +49,11 @@ En el centro de partners, cree una nueva suscripción de Azure para el cliente. 
 
 ### <a name="create-an-azure-subscription-for-the-end-customer"></a>Creación de una suscripción de Azure para el cliente final
 
-Después de haber creado un registro del cliente en el centro de partners, le puede vender suscripciones a los productos del catálogo. Para obtener instrucciones, consulte [Creación, suspensión o cancelación de las suscripciones del cliente](/partner-center/create-a-new-subscription).
+Después de crear un registro del cliente en el centro de partners, le puede vender suscripciones a los productos del catálogo. Para obtener instrucciones, consulte [Creación, suspensión o cancelación de las suscripciones del cliente](/partner-center/create-a-new-subscription).
 
 ### <a name="create-a-guest-user-in-the-end-customer-directory"></a>Creación de un usuario invitado en el directorio de cliente final
 
-De forma predeterminada, como CSP, no tendrá acceso a la suscripción de Azure Stack para clientes finales. Sin embargo, si el cliente quiere que usted administre sus recursos, puede agregar su cuenta como propietario o colaborador a su suscripción a Azure Stack. Para ello, deberán agregar la cuenta como usuario invitado a su inquilino de AAD. Se aconseja que utilice una cuenta diferente de la cuenta de Azure CSP para administrar la suscripción del cliente a Azure Stack y asegurarse de que no pierda el acceso a la suscripción de Azure del cliente.
+De forma predeterminada, como CSP, no tendrá acceso a la suscripción de Azure Stack para clientes finales. Sin embargo, si el cliente quiere que usted administre sus recursos, puede agregar su cuenta como propietario o colaborador a su suscripción a Azure Stack. Para ello, deberán agregar la cuenta como usuario invitado a su inquilino de Azure AD. Se aconseja que utilice una cuenta diferente de la cuenta de Azure CSP para administrar la suscripción del cliente a Azure Stack y asegurarse de que no pierda el acceso a la suscripción de Azure del cliente.
 
 ### <a name="update-the-registration-with-the-end-customer-subscription"></a>Actualización del registro con la suscripción del cliente final
 
@@ -80,7 +82,7 @@ En la siguiente sección se describen los parámetros para el cmdlet **New-Azure
 | Parámetro | DESCRIPCIÓN |
 | --- | --- |
 |registrationSubscriptionID | La suscripción de Azure que se ha usado para el registro inicial de Azure Stack.|
-| customerSubscriptionID | La suscripción de Azure (no de Azure Stack) que pertenece al cliente que se va a registrar. Se debe crear en la oferta del CSP; en la práctica, esto significa mediante el centro de partners. Si un cliente tiene más de un inquilino de Azure Active Directory, esta suscripción debe crearse en el inquilino que se usará para iniciar sesión en Azure Stack. El id. de suscripción de clientes debe usar letras minúsculas. |
+| customerSubscriptionID | La suscripción de Azure (no de Azure Stack) que pertenece al cliente que se va a registrar. Debe crearse en la oferta de CSP. En la práctica, esto significa mediante el centro de partners. Si un cliente tiene más de un inquilino de Azure Active Directory, esta suscripción debe crearse en el inquilino que se usará para iniciar sesión en Azure Stack. El id. de suscripción de clientes debe usar letras minúsculas. |
 | resourceGroup | El grupo de recursos de Azure en el que se almacena el registro. |
 | registrationName | El nombre del registro de Azure Stack. Es un objeto almacenado en Azure. |
 | properties (Propiedades) | Especifica las propiedades del recurso. Use este parámetro para especificar los valores de las propiedades que son específicos del tipo de recurso.
@@ -94,7 +96,7 @@ Puede configurar Azure Stack para admitir usuarios de varios inquilinos de Azure
 
 ### <a name="create-a-local-resource-in-the-end-customer-tenant-in-azure-stack"></a>Creación de un recurso local en el inquilino del cliente final en Azure Stack
 
-Una vez que haya agregado al nuevo cliente a Azure Stack o el inquilino del cliente final haya habilitado su cuenta de invitado con privilegios de propietario, compruebe que puede crear un recurso en el inquilino. Por ejemplo, pueden [crear una máquina virtual Windows con el portal de Azure Stack](../user/azure-stack-quick-windows-portal.md).
+Una vez que haya agregado el nuevo cliente a Azure Stack o el inquilino del cliente final haya habilitado su cuenta de invitado con privilegios de propietario, compruebe que puede crear un recurso en el inquilino. Por ejemplo, pueden [crear una máquina virtual Windows con el portal de Azure Stack](../user/azure-stack-quick-windows-portal.md).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

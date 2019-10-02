@@ -16,17 +16,17 @@ ms.date: 06/13/2019
 ms.author: mabrigg
 ms.reviewer: wfayed
 ms.lastreviewed: 11/05/2018
-ms.openlocfilehash: d06dabc32141fcf2f487151e92c5f47aa79b6149
-ms.sourcegitcommit: c196463492732218d2474d3a964f88e995272c80
+ms.openlocfilehash: fa90091f93556cd313fa8e4e21bfe0fd24011e38
+ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71094320"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71159140"
 ---
 # <a name="azure-connected-deployment-planning-decisions-for-azure-stack-integrated-systems"></a>Decisiones sobre planeamiento de una implementación conectada a Azure de sistemas integrados de Azure Stack
 Una vez que haya decidido [cómo va a integrar Azure Stack en el entorno de nube híbrida](azure-stack-connection-models.md), puede concluir sus decisiones sobre la implementación de Azure Stack.
 
-Si implementa Azure Stack conectado a Azure, significa que puede tener Azure Active Directory (Azure AD) o Servicios de federación de Active Directory (AD FS) para el almacén de identidades. También puede elegir el modelo de facturación: pago por uso o según la capacidad. Una implementación conectada es la opción predeterminada porque permite a los clientes sacar el máximo partido de Azure Stack, especialmente en los escenarios de nube híbrida que implican tanto a Azure como a Azure Stack.
+Si implementa Azure Stack conectado a Azure, significa que puede tener Azure Active Directory (Azure AD) o Servicios de federación de Active Directory (AD FS) para el almacén de identidades. También puede elegir el modelo de facturación: pago por uso o según la capacidad. Una implementación conectada es la opción predeterminada porque permite a los clientes sacar el máximo partido de Azure Stack, especialmente en los escenarios de nube híbrida que implican tanto a Azure como a Azure Stack.
 
 ## <a name="choose-an-identity-store"></a>Elección del almacén de identidades
 Con una implementación conectada, puede elegir entre Azure AD o AD FS para el almacén de identidades. En una implementación desconectada, sin conectividad a Internet, solo puede usar AD FS.
@@ -38,9 +38,9 @@ Por ejemplo, si implementa máquinas virtuales de inquilinos de IaaS a partir de
 ### <a name="azure-ad-identity-store"></a>Almacén de identidades de Azure AD
 El uso de Azure AD para el almacén de identidades requiere dos cuentas de Azure AD: una de administrador global y otra de facturación. Estas cuentas pueden ser las mismas o diferentes. Aunque usar la misma cuenta de usuario podría ser más sencillo y útil si se tiene un número limitado de cuentas de Azure, las necesidades empresariales podrían sugerir que se empleen dos cuentas:
 
-1. **Cuenta de administrador global** (solo necesaria para las implementaciones conectadas). Se trata de una cuenta de Azure que se usa para crear aplicaciones y entidades de servicio para servicios de infraestructura de Azure Stack en AAD. Esta cuenta debe tener permisos de administrador de directorio en el directorio en que se implementará el sistema de Azure Stack. Se convertirá en el administrador global del "operador en la nube" del usuario de Azure AD y se usará para las siguientes tareas:
+1. **Cuenta de administrador global** (solo necesaria para las implementaciones conectadas). Se trata de una cuenta de Azure que se usa para crear aplicaciones y entidades de servicio para servicios de infraestructura de Azure Stack en Azure AD. Esta cuenta debe tener permisos de administrador de directorio en el directorio en que se implementará el sistema de Azure Stack. Se convertirá en el administrador global del "operador en la nube" del usuario de Azure AD y se usará para las siguientes tareas:
 
-    - Para aprovisionar y delegar aplicaciones y entidades de servicio para todos los servicios de Azure Stack que tienen que interactuar con Azure AD y Graph API.
+    - Para aprovisionar y delegar aplicaciones y entidades de servicio para todos los servicios de Azure Stack que tienen que interactuar con Azure AD y Graph API.
     - Como cuenta del administrador del servicio. Esta cuenta es la propietaria de la suscripción de proveedor predeterminada (que puede cambiar más adelante). Puede iniciar sesión en el portal de administración de Azure Stack con esta cuenta y usarla para crear ofertas y planes, establecer las cuotas y realizar otras funciones administrativas en Azure Stack.
 
 2. **Cuenta de facturación** (necesaria tanto para las implementaciones conectadas como para las desconectadas). Esta cuenta de Azure se utiliza para establecer la relación de facturación entre el sistema integrado de Azure Stack y el back-end de comercio de Azure. Se trata de la cuenta en la que se le facturará por los honorarios de Azure Stack. Esta cuenta también se usará para ofertar elementos de Marketplace y otros escenarios híbridos.

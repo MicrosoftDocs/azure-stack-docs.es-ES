@@ -12,22 +12,24 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/17/2019
+ms.date: 09/25/2019
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 08/30/2019
-ms.openlocfilehash: 0091571dca5c966cb58fc7ce1533a17850558205
-ms.sourcegitcommit: c46d913ebfa4cb6c775c5117ac5c9e87d032a271
+ms.openlocfilehash: ed613e78cb2d592d40eb762f155e9e925f68721b
+ms.sourcegitcommit: d967cf8cae320fa09f1e97eeb888e3db5b6e7972
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106536"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71279186"
 ---
-# <a name="azure-stack-updates"></a>Actualizaciones de Azure Stack
+# <a name="azure-stack-updates-release-notes"></a>Actualizaciones de Azure Stack: notas de la versión
 
 *Se aplica a: Sistemas integrados de Azure Stack*
 
-En este artículo se describe el contenido de los paquetes de actualización de Azure Stack. La actualización incluye novedades, mejoras y correcciones para esta versión de Azure Stack. **Para tener acceso a las notas de una versión diferente, use el selector de versión en la parte superior izquierda.**
+En este artículo se describe el contenido de los paquetes de actualización de Azure Stack. La actualización incluye novedades, mejoras y correcciones para esta versión de Azure Stack.
+
+Para tener acceso a las notas de la versión de una versión diferente, use la lista desplegable del selector de versiones encima de la tabla de contenido de la izquierda.
 
 ::: moniker range=">=azs-1905"
 > [!IMPORTANT]  
@@ -37,6 +39,16 @@ En este artículo se describe el contenido de los paquetes de actualización de
 > [!IMPORTANT]  
 > Si a su instancia le faltan más de dos actualizaciones de Azure Stack, se considera que no cumple los requisitos. [Para recibir soporte técnico, deberá actualizarla al menos a la versión mínima admitida.](azure-stack-servicing-policy.md#keep-your-system-under-support) 
 ::: moniker-end
+
+## <a name="update-planning"></a>Planeación de la actualización
+
+Antes de aplicar la actualización, asegúrese de revisar la información siguiente:
+
+- [Problemas conocidos](known-issues.md)
+- [Actualizaciones de seguridad](release-notes-security-updates.md)
+- [Lista de comprobación de las actividades antes y después de aplicar la actualización](release-notes-checklist.md)
+
+Para obtener ayuda con la solución de problemas de actualizaciones y el proceso de actualización, vea [Solución de problemas de actualizaciones y revisiones para Azure Stack](azure-stack-updates-troubleshoot.md).
 
 <!---------------------------------------------------------->
 <!------------------- SUPPORTED VERSIONS ------------------->
@@ -91,14 +103,6 @@ Para obtener más información sobre los tipos de compilación de actualización
 ## <a name="security-updates-1908"></a>Actualizaciones de seguridad
 
 Para obtener información sobre las actualizaciones de seguridad de esta actualización de Azure Stack, consulte [Actualizaciones de seguridad de Azure Stack](release-notes-security-updates.md).
-
-## <a name="update-planning-1908"></a>Planeación de la actualización
-
-Antes de aplicar la actualización, asegúrese de revisar la información siguiente:
-
-- [Problemas conocidos](known-issues.md)
-- [Actualizaciones de seguridad](release-notes-security-updates.md)
-- [Lista de comprobación de las actividades antes y después de aplicar la actualización](release-notes-checklist.md)
 
 ## <a name="download-the-update-1908"></a>Descarga de la actualización
 
@@ -506,7 +510,7 @@ Los sistemas que pueden acceder a Internet desde la red de infraestructura verá
 
 ## <a name="archive"></a>Archivar
 
-Para acceder a las notas archivadas de una versión anterior, use el selector de versión en la parte superior izquierda de la página y seleccione la versión que desea. 
+Para acceder a las notas de la versión archivadas de una versión anterior, use la lista desplegable del selector de versiones encima de la tabla de contenido de la izquierda y seleccione la versión que quiere ver.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

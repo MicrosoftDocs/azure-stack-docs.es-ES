@@ -16,12 +16,12 @@ ms.date: 03/25/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 08/20/2018
-ms.openlocfilehash: c80a6068aa46cd182f8ec928942e7072638b143f
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.openlocfilehash: d226be9bad3bd6ddf775d8415329ea1fa8099eb0
+ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70974842"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71159558"
 ---
 # <a name="app-service-on-azure-stack-update-3-release-notes"></a>Notas de la versión de la actualización 3 de App Service en Azure Stack
 
@@ -50,7 +50,7 @@ La actualización 3 de Azure App Service en Azure Stack incluye las siguientes c
 
 - Compatibilidad con el uso de Always On de SQL Server para las bases de datos del proveedor de recursos de Azure App Service.
 
-- Se ha agregado un nuevo parámetro de entorno al script auxiliar Create-AADIdentityApp para ayudar a establecer como destino distintas regiones de AAD.
+- Se ha agregado un nuevo parámetro de entorno al script auxiliar Create-AADIdentityApp para ayudar a establecer como destino distintas regiones de Azure AD.
 
 - Actualizaciones de las **herramientas de Kudu, los portales de Functions, Admin e inquilino de App Service**. Es coherente con la versión del SDK del portal de Azure Stack.
 

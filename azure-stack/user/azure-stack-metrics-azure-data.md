@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 08/27/2019
 ms.author: mabrigg
 ms.lastreviewed: 12/01/2018
-ms.openlocfilehash: 71855d557f26fc1eb4d86ab0d5a48bf8cf987506
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.openlocfilehash: e36f7c7f80de3cf0b822c4d145af411584ea38e4
+ms.sourcegitcommit: 4e48f1e5af74712a104eda97757dc5f50a591936
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70974671"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71224997"
 ---
 # <a name="use-azure-monitor-on-azure-stack"></a>Uso de Azure Monitor en Azure Stack
 
@@ -41,8 +41,8 @@ Azure Monitor es un servicio de plataforma que proporciona un único origen para
 Registre el proveedor de recursos **Microsoft.insights** en la configuración de los proveedores de recursos ofertados en la suscripción. Puede comprobar si el proveedor de recursos está disponible en la oferta asociada a su suscripción:
 
 1. Abra el portal de usuario de Azure Stack.
-2. Seleccione **Ofertas**.
-3. Seleccione la oferta asociada a la suscripción.
+2. Seleccione **Suscripciones**.
+3. Seleccione la suscripción que quiere registrar.
 4. En **Configuración**, seleccione **Proveedores de recursos**. 
 5. Busque **Microsoft.Insights** en la lista y compruebe que el estado es **Registrado**.
 
