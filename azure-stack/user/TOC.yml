@@ -73,16 +73,19 @@
               href: azure-stack-develop-templates.md
             - name: Desarrollo de plantillas en Azure
               href: azure-stack-developer.md
-            - name: Comprobación de plantillas
+            - name: Implementación de plantillas
               href: azure-stack-validate-templates.md
-            - name: Implementación con el portal
-              href: azure-stack-deploy-template-portal.md
-            - name: Implementación con PowerShell
-              href: azure-stack-deploy-template-powershell.md
-            - name: Implementación con la CLI
-              href: azure-stack-deploy-template-command-line.md
-            - name: Implementación con Visual Studio
-              href: azure-stack-deploy-template-visual-studio.md
+              items:
+                - name: Implementación con el portal
+                  href: azure-stack-deploy-template-portal.md
+                - name: Implementación con PowerShell
+                  href: azure-stack-deploy-template-powershell.md
+                - name: Implementación con la CLI
+                  href: azure-stack-deploy-template-command-line.md
+                - name: Implementación con Visual Studio Code
+                  href: azure-stack-resource-manager-deploy-template-vscode.md
+                - name: Implementación con Visual Studio
+                  href: azure-stack-deploy-template-visual-studio.md
         - name: Uso de perfiles de la versión de API
           items:
             - name: Información general
