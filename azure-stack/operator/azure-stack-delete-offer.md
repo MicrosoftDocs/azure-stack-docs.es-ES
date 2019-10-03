@@ -3,7 +3,7 @@ title: Eliminación de cuotas, planes, ofertas y suscripciones | Microsoft Docs
 description: Aprenda a eliminar suscripciones, planes, ofertas y cuotas de Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: sethmanheim
+author: bryanla
 manager: femila
 ms.assetid: ''
 ms.service: azure-stack
@@ -12,15 +12,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 08/13/2019
-ms.author: sethm
+ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 04/25/2019
-ms.openlocfilehash: fca26723c062dd9f5155030fb11c8e1d695bf5f1
-ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
+ms.openlocfilehash: e89fcb3c218ab8b7228b63211b9f94c7e03d9865
+ms.sourcegitcommit: 1bae55e754d7be75e03af7a4db3ec43fd7ff3e9c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68991809"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71319129"
 ---
 # <a name="delete-quotas-plans-offers-and-subscriptions"></a>Eliminación de cuotas, planes, ofertas y suscripciones
 

@@ -15,12 +15,12 @@ ms.date: 09/10/2019
 ms.author: mabrigg
 ms.lastreviewed: 08/23/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 9582c47f37bdd6ae4c306593bea094b66652c49e
-ms.sourcegitcommit: c46d913ebfa4cb6c775c5117ac5c9e87d032a271
+ms.openlocfilehash: 60515f257dc8ab04e351d1353919a749e9cf4224
+ms.sourcegitcommit: 79ead51be63c372b23b7fca6ffeaf95fd44de786
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71101164"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71687954"
 ---
 # <a name="plan-for-an-azure-stack-update"></a>Planificar una actualización de Azure Stack
 
@@ -36,9 +36,9 @@ Notifique a los usuarios cualquier operación de mantenimiento, y programe venta
 
 Para prepararse para la actualización, asegúrese de que ha aplicado todas las revisiones, revisiones de seguridad y actualizaciones de OEM, ha validado el estado de la instancia de Azure Stack, ha comprobado la capacidad disponible y ha revisado la actualización.
 
-1. Revise los problemas conocidos. Para obtener instrucciones, consulte [Problemas conocidos de Azure Stack](https://docs.microsoft.com/azure-stack/operator/release-notes.md).
+1. Revise los problemas conocidos. Para obtener instrucciones, consulte [Problemas conocidos de Azure Stack](https://docs.microsoft.com/azure-stack/operator/release-notes).
 
-2. Revise las actualizaciones de seguridad. Para obtener una lista de actualizaciones, consulte [Actualizaciones de seguridad de Azure Stack](https://docs.microsoft.com/azure-stack/operator/release-notes-security-updates.md).
+2. Revise las actualizaciones de seguridad. Para obtener una lista de actualizaciones, consulte [Actualizaciones de seguridad de Azure Stack](https://docs.microsoft.com/azure-stack/operator/release-notes-security-updates).
 
 3. Antes de iniciar la instalación de esta actualización, ejecute [Test-AzureStack](https://docs.microsoft.com/azure-stack/operator/azure-stack-diagnostic-test) para validar el estado de Azure Stack y resolver todos los problemas operativos detectados, incluidas todas las advertencias y errores. Repase también las alertas activas y resuelva las que requieran alguna acción.
 

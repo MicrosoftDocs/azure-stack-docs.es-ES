@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 05/16/2019
+ms.date: 10/02/2019
 ms.author: mabrigg
 ms.custom: mvc
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: d47e5908e674a8b57b9e6d686e4596e1002b67c9
-ms.sourcegitcommit: 2ee75ded704e8cfb900d9ac302d269c54a5dd9a3
+ms.openlocfilehash: 84689e45bff8150616f37205eaa4a9bd9b25ff04
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66394412"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71824248"
 ---
 # <a name="quickstart-create-a-linux-server-vm-by-using-the-azure-cli-in-azure-stack"></a>Inicio rápido: Creación de una VM de servidor Linux mediante la CLI de Azure en Azure Stack
 
@@ -55,7 +55,7 @@ En el ejemplo siguiente, se crea un grupo de recursos denominado myResourceGroup
 az group create --name myResourceGroup --location local
 ```
 
-## <a name="create-a-virtual-machine"></a>de una máquina virtual
+## <a name="create-a-virtual-machine"></a>Creación de una máquina virtual
 
 Cree una máquina virtual con el comando [az vm create](/cli/azure/vm#az-vm-create). En el ejemplo siguiente se crea una máquina virtual denominada myVM. En este ejemplo se usa *Demouser* como nombre de usuario administrador y *Demouser@123* como contraseña de administrador. Actualice estos valores a un valor apropiado para su entorno.
 

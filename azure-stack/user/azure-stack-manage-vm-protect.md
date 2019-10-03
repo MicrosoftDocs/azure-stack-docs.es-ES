@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/06/2019
+ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: hectorl
 ms.lastreviewed: 3/19/2018
-ms.openlocfilehash: 9f8fe959ca200b7000df65b6826a103535aac92a
-ms.sourcegitcommit: eccbd0098ef652919f357ef6dba62b68abde1090
+ms.openlocfilehash: f633f000968fcf4f373fc502898fa18084f93f80
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67492421"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71824300"
 ---
 # <a name="protect-vms-deployed-on-azure-stack"></a>Protección de máquinas virtuales implementadas en Azure Stack
 

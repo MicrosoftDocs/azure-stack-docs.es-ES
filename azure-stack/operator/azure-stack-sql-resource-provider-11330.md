@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/06/2019
+ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/09/2019
-ms.openlocfilehash: 5e5e44ed9eca3cde0844c0eafbc4188bd1449da2
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 69ea42a9efbf57cfdeb589cc221eae8a9f21913c
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618161"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71829322"
 ---
 # <a name="sql-resource-provider-11330-release-notes"></a>Notas de la versión del proveedor de recursos SQL 1.1.33.0
 

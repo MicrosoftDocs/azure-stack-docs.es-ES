@@ -5,16 +5,16 @@ services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: overview
-ms.date: 04/24/2019
+ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 04/24/2019
-ms.openlocfilehash: 28d60e8fc5b575cd2fbefee1298220418e4f59a1
-ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
+ms.lastreviewed: 10/02/2019
+ms.openlocfilehash: 2c9c43439872a19ba590fb22059969f9a7c742f0
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68418239"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71824458"
 ---
 # <a name="deploy-a-java-web-app-to-a-vm-in-azure-stack"></a>Implementación de una aplicación web de Java en una máquina virtual en Azure Stack
 

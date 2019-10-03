@@ -5,16 +5,16 @@ services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: overview
-ms.date: 04/25/2019
+ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 04/24/2019
-ms.openlocfilehash: c0b55579c5103c7bb1073546243dbfcc0b700b4a
-ms.sourcegitcommit: 05a16552569fae342896b6300514c656c1df3c4e
+ms.lastreviewed: 10/02/2019
+ms.openlocfilehash: 3d2854511415421b69a6972cd807132639300f96
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65838387"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71824503"
 ---
 # <a name="use-an-ssh-public-key"></a>Uso de una clave pública SSH
 
@@ -79,13 +79,13 @@ Antes de conectarse, necesitará:
 
     ![Panel de configuración de PuTTY](media/azure-stack-dev-start-howto-ssh-public-key/002-putty-connect.png)
 
-2. En el cuadro **Host Name (or IP address)** (Nombre de host [o dirección IP]), escriba el nombre de usuario y la dirección IP pública de la máquina (por ejemplo, **username@192.XXX.XXX.XX**). 
+2. En el cuadro **Host Name (or IP address)** (Nombre de host [o dirección IP]), escriba el nombre de usuario y la dirección IP pública de la máquina (por ejemplo, **username@192.XXX.XXX.XX** ). 
 3. Compruebe que **Port** (Puerto) es **22** y que **Connection type** (Tipo de conexión) es **SSH**.
 4. En el árbol **Category** (Categoría), expanda **SSH** y **Auth**.
 
     ![Panel de configuración de PuTTY: clave privada SSH](media/azure-stack-dev-start-howto-ssh-public-key/002-putty-set-private-key.png)
 
-5. Junto al cuadro **Private key file for authentication** (Archivo de clave privada para autenticación), seleccione **Browse** (Examinar) y, a continuación, busque el archivo de clave privada (*\<nombreArchivo>.ppk*) del par de claves pública y privada.
+5. Junto al cuadro **Private key file for authentication** (Archivo de clave privada para autenticación), seleccione **Browse** (Examinar) y, a continuación, busque el archivo de clave privada ( *\<nombreArchivo>.ppk*) del par de claves pública y privada.
 6. En el árbol **Category** (Categoría), seleccione **Session** (Sesión).
 
     ![Cuadro "Saved Sessions" (Sesiones guardadas) del panel de configuración de PuTTY](media/azure-stack-dev-start-howto-ssh-public-key/003-puTTY-save-session.png)

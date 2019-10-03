@@ -5,16 +5,16 @@ services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: overview
-ms.date: 04/24/2019
+ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 04/24/2019
-ms.openlocfilehash: f37e963ad73a361f9d4cd5a6e68ec4213d5f32fb
-ms.sourcegitcommit: 05a16552569fae342896b6300514c656c1df3c4e
+ms.lastreviewed: 10/02/2019
+ms.openlocfilehash: 9fdb5767e225f9d5d8372058984c9128609339f1
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65838326"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71824224"
 ---
 # <a name="deploy-a-python-web-app-to-a-vm-in-azure-stack"></a>Implementación de una aplicación web de Python en una máquina virtual en Azure Stack
 

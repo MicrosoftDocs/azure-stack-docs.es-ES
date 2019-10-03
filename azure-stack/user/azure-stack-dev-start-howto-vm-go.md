@@ -5,16 +5,16 @@ services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: overview
-ms.date: 04/24/2019
+ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 04/24/2019
-ms.openlocfilehash: 8b1f207929e018b27bb3f20db8d2b7d5abe46088
-ms.sourcegitcommit: 05a16552569fae342896b6300514c656c1df3c4e
+ms.lastreviewed: 10/02/2019
+ms.openlocfilehash: b3db83ca42c25503be4ddd2053a011a85ffd7034
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65838359"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71824432"
 ---
 # <a name="deploy-a-go-web-app-to-a-vm-in-azure-stack"></a>Implementación de una aplicación web de Go en una máquina virtual en Azure Stack
 

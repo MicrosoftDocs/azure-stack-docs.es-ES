@@ -5,16 +5,16 @@ services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: overview
-ms.date: 04/24/2019
+ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 04/24/2019
-ms.openlocfilehash: 4fcf76b8f4950fa7ca919d57281c5662b31e96f6
-ms.sourcegitcommit: 05a16552569fae342896b6300514c656c1df3c4e
+ms.lastreviewed: 10/02/2019
+ms.openlocfilehash: 0b145ab315e855ee08b25ea4980bdde40d0bfc1c
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65838306"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71824196"
 ---
 # <a name="deploy-a-nodejs-web-app-to-a-vm-in-azure-stack"></a>Implementación de una aplicación web de Node.js en una máquina virtual en Azure Stack
 

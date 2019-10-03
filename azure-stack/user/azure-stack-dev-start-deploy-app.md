@@ -5,16 +5,16 @@ services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: overview
-ms.date: 04/24/2019
+ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 04/24/2019
-ms.openlocfilehash: b139ad30c663d57330ab6b4f404d803c0ace1df3
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.lastreviewed: 10/02/2019
+ms.openlocfilehash: 4d8dbc22a69c204b8d6a755d2a8402ba7185d03e
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65617649"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71824737"
 ---
 # <a name="common-deployments-for-azure-stack"></a>Implementaciones comunes para Azure Stack
 

@@ -6,16 +6,16 @@ author: mattbriggs
 manager: femila
 ms.service: azure-stack
 ms.topic: conceptual
-ms.date: 05/16/2019
+ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: scottnap
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: e5e76c3edcaa93e412d2715d7dc732731ac3d2ce
-ms.sourcegitcommit: b36d078e699c7924624b79641dbe9021af9606ba
+ms.openlocfilehash: e47079b100487331434a201a05bbcae7645de4f1
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67816143"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71824159"
 ---
 # <a name="introduction-to-azure-stack-networking"></a>Introducción a los servicios de red de Azure Stack
 

@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: powershell
 ms.topic: article
-ms.date: 04/25/2019
+ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 04/24/2019
-ms.openlocfilehash: 8f5d97969c96e8f3546d37ffed28b6332d80dc05
-ms.sourcegitcommit: 2ee75ded704e8cfb900d9ac302d269c54a5dd9a3
+ms.lastreviewed: 10/02/2019
+ms.openlocfilehash: 1c2727562fe287c5450a4977803a7c6fce14f27a
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66394419"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71824282"
 ---
 # <a name="get-started-with-powershell-in-azure-stack"></a>Introducción a PowerShell en Azure Stack
 

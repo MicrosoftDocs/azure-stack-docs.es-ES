@@ -5,16 +5,16 @@ services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: overview
-ms.date: 04/24/2019
+ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 04/24/2019
-ms.openlocfilehash: 61d9f21f35edf1a0e8ebf61c81580c4d53218970
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.lastreviewed: 10/02/2019
+ms.openlocfilehash: d1fae6caf6ac37f29382f4d24ce0d8b2299aa1d7
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65617679"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71824824"
 ---
 # <a name="deploy-a-linux-vm-to-host-a-web-app-in-azure-stack"></a>Implementación de una máquina virtual Linux para hospedar una aplicación web en Azure Stack
 
@@ -52,7 +52,7 @@ Para implementar la VM, siga las instrucciones que aparecen en las secciones sig
 
 4. En el panel **Crear una máquina virtual**, en **1. Configuración básica**:
 
-     a. Escriba el **nombre de la VM**.
+    a. Escriba el **nombre de la VM**.
 
     b. Seleccione el **tipo de disco de VM**, ya sea **SSD Premium** (para discos Prémium [SSD]) o **HDD estándar** (para discos estándar [HDD]).
 
@@ -85,9 +85,9 @@ Para implementar la VM, siga las instrucciones que aparecen en las secciones sig
 
 1. En **3. Configurar características opcionales**, escriba:
 
-     a. En **Alta disponibilidad**, seleccione un conjunto de disponibilidad. Para proporcionar redundancia a la aplicación, agrupe dos máquinas virtuales o más en un conjunto de disponibilidad. Esta configuración garantiza que, durante un evento de mantenimiento planeado o no planeado, al menos una máquina virtual estará disponible y cumplirá el 99,95 % del Acuerdo de Nivel de Servicio (SLA) de Azure. No se puede cambiar el conjunto de disponibilidad de una máquina virtual después de crearlo.
+    a. En **Alta disponibilidad**, seleccione un conjunto de disponibilidad. Para proporcionar redundancia a la aplicación, agrupe dos máquinas virtuales o más en un conjunto de disponibilidad. Esta configuración garantiza que, durante un evento de mantenimiento planeado o no planeado, al menos una máquina virtual estará disponible y cumplirá el 99,95 % del Acuerdo de Nivel de Servicio (SLA) de Azure. No se puede cambiar el conjunto de disponibilidad de una máquina virtual después de crearlo.
 
-    b. En **Almacenamiento**, seleccione **Discos Premium (SSD)** o **Discos estándar (HDD)**. Los discos Premium (SSD) están respaldados por unidades de estado sólido y ofrecen coherencia y un rendimiento con baja latencia. Proporcionan el mejor equilibrio entre precio y rendimiento, y son ideales para aplicaciones intensivas de E/S y cargas de trabajo de producción. Los discos estándar están respaldados por unidades magnéticas y son preferibles para las aplicaciones en las que se accede con poca frecuencia a los datos. Los discos con redundancia de zona están respaldados por almacenamiento con redundancia de zona (ZRS), que replica los datos en varias zonas y están disponibles aunque una de las zonas está inactiva. 
+    b. En **Almacenamiento**, seleccione **Discos Premium (SSD)** o **Discos estándar (HDD)** . Los discos Premium (SSD) están respaldados por unidades de estado sólido y ofrecen coherencia y un rendimiento con baja latencia. Proporcionan el mejor equilibrio entre precio y rendimiento, y son ideales para aplicaciones intensivas de E/S y cargas de trabajo de producción. Los discos estándar están respaldados por unidades magnéticas y son preferibles para las aplicaciones en las que se accede con poca frecuencia a los datos. Los discos con redundancia de zona están respaldados por almacenamiento con redundancia de zona (ZRS), que replica los datos en varias zonas y están disponibles aunque una de las zonas está inactiva. 
 
     c. Seleccione **Usar discos administrados**. Cuando habilita esta característica, Azure administra automáticamente la disponibilidad de los discos. Disfrutará de redundancia de datos y tolerancia a errores, sin tener que crear y administrar cuentas de almacenamiento por su cuenta. Es posible que los discos administrados no estén disponibles en todas las regiones. Para más información, consulte [Introducción a Azure Managed Disks](https://docs.microsoft.com/azure/virtual-machines/windows/managed-disks-overview).
 

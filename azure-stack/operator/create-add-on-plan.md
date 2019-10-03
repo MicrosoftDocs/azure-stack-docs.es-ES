@@ -3,7 +3,7 @@ title: En este artículo, aprenderá a actualizar ofertas y planes de Azure Stac
 description: En este artículo se describe cómo ver y modificar ofertas y planes de Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: sethmanheim
+author: bryanla
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.custom: mvc
 ms.date: 06/11/2019
-ms.author: sethm
+ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 06/11/2019
-ms.openlocfilehash: 01e5bc6e91311a0c27acffd4079931c3ee000d29
-ms.sourcegitcommit: 8ddd70ba5ce05c591d3fa62597981859af107c06
+ms.openlocfilehash: d34b57a76f654e4d1825124f0f13ca26049332e5
+ms.sourcegitcommit: 1bae55e754d7be75e03af7a4db3ec43fd7ff3e9c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70936129"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71319176"
 ---
 # <a name="azure-stack-add-on-plans"></a>Planes complementarios de Azure Stack
 
