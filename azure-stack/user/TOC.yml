@@ -31,7 +31,7 @@
       items:
         - name: Suscripción a una oferta
           href: azure-stack-subscribe-services.md
-        - name: Habilitamiento de un proveedor de servicios en la nube
+        - name: Habilitación de un proveedor de soluciones en la nube
           href: azure-stack-csp-enable-billing-usage-tracking.md
         - name: Uso del portal de Azure Stack
           href: azure-stack-use-portal.md
@@ -267,6 +267,14 @@
           href: azure-stack-solution-mongodb-ha.md
         - name: Implementación de SQL Server 2016 de alta disponibilidad
           href: azure-stack-solution-sql-ha.md
+    - name: Implementación de patrones fundamentales
+      items:
+        - name: Configuración de VPN como local
+          href: azure-stack-network-howto-vnet-to-onprem.md
+        - name: Conexión de red virtual a red virtual
+          href: azure-stack-network-howto-vnet-to-vnet-stacks.md
+        - name: Emparejamiento de VNET
+          href: azure-stack-network-howto-vnet-to-vnet.md
 - name: Conceptos
   items:
     - name: Patrones de nube híbrida

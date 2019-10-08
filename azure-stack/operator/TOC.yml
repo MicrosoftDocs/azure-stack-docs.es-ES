@@ -261,6 +261,8 @@
           href: azure-stack-create-vpn-connection-one-node.md
     - name: Oferta de servicios
       href: azure-stack-offer-services-overview.md
+    - name: Oferta de soluciones de red
+      href: azure-stack-network-solutions-enable.md
     - name: Oferta de SQL como PaaS
       href: azure-stack-sql-resource-provider.md
       items:

@@ -1,6 +1,6 @@
 ---
-title: Creación de una conexión VPN de sitio a sitio entre dos redes virtuales en diferentes entornos del Kit de desarrollo de Azure Stack | Microsoft Docs
-description: Procedimiento paso a paso que permite a un administrador en la nube crear una conexión VPN de sitio a sitio entre dos entornos del Kit de desarrollo de Azure Stack de un solo nodo.
+title: Creación de una conexión VPN de sitio a sitio entre dos redes virtuales en diferentes entornos de ASDK | Microsoft Docs
+description: Tutorial para operadores en la nube sobre creación de una conexión VPN de sitio a sitio entre dos entornos del Kit de desarrollo de Azure Stack (ASDK) de un solo nodo.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -17,14 +17,14 @@ ms.author: sethm
 ms.reviewer: scottnap
 ms.lastreviewed: 09/12/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: f34ed3459ad8346860872a4b63a25e214501a2dd
-ms.sourcegitcommit: 4139b507d6da98a086929da48e3b4661b70bc4f3
+ms.openlocfilehash: 2ae267d470d9862e262f26ea11d2ba4b07bfb299
+ms.sourcegitcommit: c2ea4ffb42563c26faaf2993ba7b484bcb6d5cb7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68299464"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71342911"
 ---
-# <a name="create-a-site-to-site-vpn-connection-between-two-virtual-networks-in-different-azure-stack-development-kit-environments"></a>Creación de una conexión VPN de sitio a sitio entre dos redes virtuales en diferentes entornos del Kit de desarrollo de Azure Stack
+# <a name="create-a-site-to-site-vpn-connection-between-two-virtual-networks-in-different-asdk-environments"></a>Creación de una conexión VPN de sitio a sitio entre dos redes virtuales en diferentes entornos de ASDK
 
 ## <a name="overview"></a>Información general
 
@@ -41,7 +41,7 @@ En la ilustración siguiente se muestra el aspecto que debería tener la configu
 Para completar esta configuración de conexión, asegúrese de tener los elementos siguientes antes de empezar:
 
 * Dos servidores y otros requisitos previos que cumplen con los requisitos de hardware del ASDK, tal como se describe en [Inicio rápido: Evaluación del Kit de desarrollo de Azure Stack](../asdk/asdk-download.md).
-* Paquete de implementación del [Kit de desarrollo de Azure Stack](https://azure.microsoft.com/overview/azure-stack/try/).
+* El paquete de implementación de [ASDK](https://azure.microsoft.com/overview/azure-stack/try/).
 
 ## <a name="deploy-the-azure-stack-development-kit-environments"></a>Implementación de los entornos del Kit de desarrollo de Azure Stack
 
@@ -52,7 +52,7 @@ Para completar la configuración de conexión, debe implementar dos entornos del
 
 ## <a name="prepare-an-offer-on-poc1-and-poc2"></a>Preparación de una oferta en POC1 y POC2
 
-En POC1 y POC2, prepare una oferta para que un usuario pueda suscribirse a la oferta e implementar las máquinas virtuales. Para obtener información sobre cómo crear una oferta, consulte [Máquinas virtuales disponibles para los usuarios de Azure Stack](azure-stack-tutorial-tenant-vm.md).
+En POC1 y POC2, prepare una oferta para que un usuario pueda suscribirse a la oferta e implementar las máquinas virtuales. Para más información sobre cómo crear una oferta, consulte [Máquinas virtuales disponibles para los usuarios de Azure Stack](azure-stack-tutorial-tenant-vm.md).
 
 ## <a name="review-and-complete-the-network-configuration-table"></a>Revisión y realización de la tabla de configuración de red
 
@@ -171,9 +171,9 @@ Una manera de ver esto de forma más genérica es que el recurso de la puerta de
 9. En **Clave compartida (PSK)** , escriba **12345** y, a continuación, seleccione **Aceptar**.
 10. En la hoja **Resumen**, seleccione **Aceptar**.
 
-### <a name="create-a-vm"></a>Crear una VM
+### <a name="create-a-virtual-machine"></a>Creación de una máquina virtual
 
-Para validar los datos que pasan por la conexión VPN, debe tener las máquinas virtuales para enviar y recibir datos en cada entorno del Kit de desarrollo de Azure Stack. Ahora, cree una máquina virtual en POC1 y colóquela en la subred de máquina virtual en la red virtual:
+Para validar los datos que se desplazan a través de la conexión VPN, es necesario que las máquinas virtuales envíen y reciban datos en cada ASDK. Cree una máquina virtual en POC1 ahora y colóquela en la subred de máquina virtual en la red virtual:
 
 1. En Azure Portal, seleccione **+ Crear un recurso**.
 2. Vaya a **Marketplace** y, a continuación, seleccione **Compute**.
@@ -224,7 +224,7 @@ Un administrador de servicios puede iniciar sesión como un inquilino para proba
 5. Seleccione **Red virtual** para elegir una red virtual. A continuación, seleccione **VNET-02** en la lista.
 6. Seleccione **Dirección IP pública**. Cuando la hoja **Elegir dirección IP pública** se abra, seleccione **Crear nuevo**.
 7. En **Nombre**, escriba **GW2-PiP** y, a continuación, seleccione **Aceptar**.
-8. De forma predeterminada, para **Tipo de VPN**, está seleccionado **Basada en enrutamiento**. Mantenga el tipo de VPN **Basada en enrutamiento**.
+8. De forma predeterminada, en **Tipo de VPN** está seleccionado **Basada en rutas**. Mantenga el tipo de VPN **Basada en enrutamiento**.
 9. Compruebe que la **Suscripción** y la **Ubicación** son correctas. Puede anclar el recurso en el panel. Seleccione **Crear**.
 
 ### <a name="create-local-network-gateway-resource"></a>Creación del recurso de puerta de enlace de red local
@@ -250,9 +250,9 @@ Un administrador de servicios puede iniciar sesión como un inquilino para proba
 9. En **Clave compartida (PSK)** , escriba **12345**. Si elige un valor diferente, recuerde que tiene que coincidir con el valor de la clave compartida que creó en POC1. Seleccione **Aceptar**.
 10. Revise la hoja **Resumen** y, a continuación, seleccione **Aceptar**.
 
-## <a name="create-a-virtual-machine"></a>de una máquina virtual
+## <a name="create-a-virtual-machine"></a>Creación de una máquina virtual
 
-Ahora, cree una máquina virtual en POC2 y colóquela en la subred de máquina virtual en la red virtual:
+Cree una máquina virtual en POC2 ahora y colóquela en la subred de máquina virtual de la red virtual:
 
 1. En Azure Portal, seleccione **+ Crear un recurso**.
 2. Vaya a **Marketplace** y, a continuación, seleccione **Compute**.
@@ -264,28 +264,28 @@ Ahora, cree una máquina virtual en POC2 y colóquela en la subred de máquina v
 8. En la hoja **Configuración**, acepte los valores predeterminados. Asegúrese de que la red virtual **VNET-02** está seleccionada y compruebe que la subred está establecida en **10.0.20.0/24**. Seleccione **Aceptar**.
 9. En la hoja **Resumen**, revise la configuración y, a continuación, seleccione **Aceptar**.
 
-## <a name="configure-the-nat-virtual-machine-on-each-azure-stack-development-kit-for-gateway-traversal"></a>Configuración de la máquina virtual de NAT en cada entorno del Kit de desarrollo de Azure Stack para el cruce seguro de puerta de enlace
+## <a name="configure-the-nat-vm-on-each-asdk-for-gateway-traversal"></a>Configuración de la máquina virtual de NAT en cada ASDK para el cruce seguro de puerta de enlace
 
 Dado que el ASDK es independiente y aislado de la red en la que se implementa el host físico, la red VIP *externa* a la que están conectadas las puertas de enlace no es realmente externa. En su lugar, la red de VIP está oculta detrás de un enrutador que realiza la traducción de direcciones de red.
 
-El enrutador es una máquina virtual Windows Server llamada **AzS-bgpnat01**, que ejecuta el rol de Enrutamiento y servicios de acceso remoto (RRAS) en la infraestructura del ASDK. Tiene que configurar NAT en la máquina virtual AzS-bgpnat01 para permitir la conexión VPN de sitio a sitio en ambos extremos.
+El enrutador es una máquina virtual Windows Server llamada **AzS-bgpnat01**, que ejecuta el rol de Enrutamiento y servicios de acceso remoto (RRAS) en la infraestructura del ASDK. Tiene que configurar NAT en la máquina virtual AzS-bgpnat01 para permitir la conexión de VPN de sitio a sitio para conectarse en ambos extremos.
 
 Para configurar la conexión VPN, debe crear una ruta de asignación de NAT estática que asigne la interfaz externa en la máquina virtual BGPNAT a la dirección VIP del grupo de puerta de enlace de perímetro. Se necesita una ruta de asignación de NAT estática para cada puerto en una conexión VPN.
 
 > [!NOTE]
-> Esta configuración es necesaria solo para entornos del Kit de desarrollo de Azure Stack.
+> Esta configuración es necesaria solo para los entornos de ASDK.
 
 ### <a name="configure-the-nat"></a>Configuración de la NAT
 
 > [!IMPORTANT]
 > Debe realizar este procedimiento para ambos entornos del ASDK.
 
-1. Determine la **Dirección IP interna** a utilizar en el siguiente script de PowerShell. Abra la puerta de enlace de red virtual (GW1 y GW2) y, a continuación, en la hoja **Información general**, guarde el valor de la **Dirección IP pública** para su uso posterior.
+1. Determine la **Dirección IP interna** a utilizar en el siguiente script de PowerShell. Abra la puerta de enlace de red virtual (GW1 y GW2). En la hoja **Información general**, guarde el valor de **Dirección IP pública** para su uso posterior.
 
    ![Dirección IP interna](media/azure-stack-create-vpn-connection-one-node-tp2/InternalIP.PNG)
 
 2. Inicie sesión en la máquina física de Azure Stack para POC1.
-3. Copie y edite el siguiente script de PowerShell. Para configurar la NAT en cada Kit de desarrollo de Azure Stack, ejecute el script en un equipo con Windows PowerShell ISE con privilegios elevados. En el script, agregue valores a los marcadores de posición `External BGPNAT address` y `Internal IP address`:
+3. Copie y edite el siguiente script de PowerShell. Para configurar la NAT en cada Kit de desarrollo de Azure Stack, ejecute el script en un equipo con Windows PowerShell ISE con privilegios elevados. En el script, agregue valores a los marcadores de posición `External BGPNAT address` y `Internal IP address`:
 
    ```powershell
    # Designate the external NAT address for the ports that use the IKE authentication.
@@ -374,7 +374,7 @@ Para confirmar que el tráfico se envía a través de la conexión de sitio a si
     -Protocol ICMPv4
    ```
 
-10. Desde la máquina virtual en POC2, haga ping a la máquina virtual en POC1, a través del túnel. Para ello, haga ping a la dirección DIP que anotó de VM01. En el entorno de ejemplo la dirección es **10.0.10.4**, pero asegúrese de hacer ping a la dirección que haya anotado en su laboratorio. Debe ver un resultado similar al ejemplo siguiente:
+10. Desde la máquina virtual de POC2, haga ping a la máquina virtual de POC1 a través del túnel. Para ello, haga ping a la dirección DIP que anotó de VM01. En el entorno de ejemplo la dirección es **10.0.10.4**, pero asegúrese de hacer ping a la dirección que haya anotado en su laboratorio. Debe ver un resultado similar al ejemplo siguiente:
 
     ![Ping correcto](media/azure-stack-create-vpn-connection-one-node-tp2/image19b.png)
 11. Una respuesta de la máquina virtual remota indica que la prueba ha dado un resultado correcto. Puede cerrar la ventana de la máquina virtual. O puede intentar realizar alguna otra transferencia de datos, como una copia de archivo, para probar la conexión.

@@ -1,6 +1,6 @@
 ---
 title: Uso del punto de conexión con privilegios en Azure Stack | Microsoft Docs
-description: Se muestra cómo usar el punto de conexión con privilegios (PEP) en Azure Stack (para un operador de Azure Stack).
+description: Aprenda a usar el punto de conexión con privilegios (PEP) en Azure Stack como operador.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,24 +15,24 @@ ms.date: 09/18/2019
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 09/18/2019
-ms.openlocfilehash: cb339e4d6d368481060c673482d80244f63f9cc4
-ms.sourcegitcommit: c46d913ebfa4cb6c775c5117ac5c9e87d032a271
+ms.openlocfilehash: 3730da9d185f1c38411453a6bef965ab5df7d3ae
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71101098"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71829368"
 ---
-# <a name="using-the-privileged-endpoint-in-azure-stack"></a>Uso del punto de conexión con privilegios en Azure Stack
+# <a name="use-the-privileged-endpoint-in-azure-stack"></a>Uso del punto de conexión con privilegios en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Como operador de Azure Stack, debe usar las API del portal de administrador, PowerShell o Azure Resource Manager en la mayor parte de las tareas de administración diarias. Sin embargo, con algunas operaciones menos comunes, deberá usar el *punto de conexión con privilegios* (PEP). El PEP es una consola remota de PowerShell preconfigurada que proporciona las funcionalidades suficientes para ayudarle a realizar una tarea necesaria. El punto de conexión usa [PowerShell JEA (Just Enough Administration)](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/overview) para exponer únicamente un conjunto restringido de cmdlets. Para acceder al PEP e invocar el conjunto restringido de cmdlets, se usa una cuenta sin privilegios. No se necesita una cuenta de administrador. Para mayor seguridad, no se permite scripting.
+Como operador de Azure Stack, debe usar las API del portal de administrador, PowerShell o Azure Resource Manager en la mayor parte de las tareas de administración diarias. Sin embargo, con algunas operaciones menos comunes, deberá usar el *punto de conexión con privilegios* (PEP). El PEP es una consola remota de PowerShell preconfigurada que proporciona las funcionalidades suficientes para ayudarle a realizar una tarea necesaria. El punto de conexión usa [PowerShell JEA (Just Enough Administration)](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/overview) para exponer únicamente un conjunto restringido de cmdlets. Para acceder al PEP e invocar el conjunto restringido de cmdlets, se usa una cuenta sin privilegios. No se necesita ninguna cuenta de administrador. Para mayor seguridad, no se permite scripting.
 
-Puede usar el PEP para realizar tareas como las siguientes:
+Puede usar el PEP para realizar estas tareas:
 
-- Tareas de bajo nivel, como la [recopilación de registros de diagnóstico](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep).
-- Muchas tareas de integración de centros de datos posteriores a la implementación para sistemas integrados, como agregar reenviadores de Sistema de nombres de dominio (DNS) después de la implementación, configurar la integración con Microsoft Graph y con Active Directory Federation Services (AD FS), la rotación de certificados, etc.
-- Trabajar con el soporte técnico para obtener acceso temporal y de alto nivel de cara a la solución de problemas detallada de un sistema integrado.
+- Tareas de bajo nivel, como la [recopilación de registros de diagnóstico](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep-to-collect-diagnostic-logs).
+- Muchas tareas de integración de centros de datos posteriores a la implementación para sistemas integrados, como agregar reenviadores de Sistema de nombres de dominio (DNS) después de la implementación, configurar la integración con Microsoft Graph y con Active Directory Federation Services (AD FS), la rotación de certificados, etc.
+- Trabaje con el soporte técnico para obtener acceso temporal y de alto nivel para la solución de problemas en profundidad de un sistema integrado.
 
 El PEP registra cada acción (y su salida correspondiente) que se realiza en la sesión de PowerShell. De esta forma las operaciones se realizan con total transparencia y se pueden auditar de forma completa. Puede conservar estos archivos de registro para futuras auditorías.
 
@@ -41,13 +41,13 @@ El PEP registra cada acción (y su salida correspondiente) que se realiza en la 
 
 ## <a name="access-the-privileged-endpoint"></a>Acceso al punto de conexión con privilegios
 
-El acceso al PEP se realiza mediante una sesión remota de PowerShell en la máquina virtual que lo hospeda. En el ASDK, esta máquina virtual se denomina **AzS-ERCS01**. Si va a usar un sistema integrado, hay tres instancias del PEP, cada una de las cuales se ejecuta en una máquina virtual (*Prefix*-ERCS01, *Prefix*-ERCS02 o *Prefix*-ERCS03) en diferentes hosts para proporcionar resistencia. 
+El acceso al PEP se realiza mediante una sesión remota de PowerShell en la máquina virtual que lo hospeda. En el ASDK, esta máquina virtual se denomina **AzS-ERCS01**. Si va a usar un sistema integrado, hay tres instancias del PEP, cada una de las cuales se ejecuta en una máquina virtual (*Prefix*-ERCS01, *Prefix*-ERCS02 o *Prefix*-ERCS03) en diferentes hosts para proporcionar resistencia.
 
 Antes de comenzar este procedimiento en un sistema integrado, asegúrese de que puede acceder a un PEP bien mediante la dirección IP o a través de DNS. Después de la implementación inicial de Azure Stack, solo puede acceder al PEP mediante la dirección IP, dado que la integración de DNS no está configurada todavía. El proveedor de hardware OEM le proporcionará un archivo JSON denominado **AzureStackStampDeploymentInfo** que contiene las direcciones IP del PEP.
 
 
 > [!NOTE]
-> Por motivos de seguridad, es necesario conectarse al PEP solo desde una máquina virtual protegida que se ejecute en el host de ciclo de vida de hardware, o desde un equipo seguro dedicado, como una [estación de trabajo de acceso con privilegios](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations). No se debe modificar la configuración original del host de ciclo de vida de hardware, instalar software nuevo ni usarse para conectarse al PEP.
+> Por motivos de seguridad, es necesario conectarse al PEP solo desde una máquina virtual protegida que se ejecute en el host de ciclo de vida de hardware, o desde un equipo seguro dedicado, como una [estación de trabajo de acceso con privilegios](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations). No se debe modificar la configuración original del host de ciclo de vida de hardware, (incluida la instalación de software nuevo) ni usarse para la conexión al PEP.
 
 1. Establezca la confianza.
 
@@ -67,7 +67,7 @@ Antes de comenzar este procedimiento en un sistema integrado, asegúrese de que 
        Enter-PSSession -ComputerName <IP_address_of_ERCS> `
          -ConfigurationName PrivilegedEndpoint -Credential $cred
      ```
-     El parámetro `ComputerName` puede ser la dirección IP o el nombre DNS de una de las máquinas virtuales que hospeda el PEP. 
+     El parámetro `ComputerName` puede ser la dirección IP o el nombre DNS de una de las máquinas virtuales que hospeda el PEP.
 
      >[!NOTE]
      >Azure Stack no realiza ninguna llamada remota al validar la credencial de PEP. Se basa en una clave pública RSA almacenada localmente para hacerlo.
@@ -113,15 +113,15 @@ Antes de comenzar este procedimiento en un sistema integrado, asegúrese de que 
 
 ## <a name="tips-for-using-the-privileged-endpoint"></a>Sugerencias para el uso del punto de conexión con privilegios 
 
-Tal y como se mencionó anteriormente, el PEP es un punto de conexión de [PowerShell JEA](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/overview). Al proporcionar una capa de seguridad sólida, un punto de conexión de JEA reduce algunas de las funcionalidades básicas de PowerShell, como la finalización con tabulación o de scripting. Si intenta algún tipo de operación de scripts, se producirá el error **ScriptsNotAllowed**. Este es el comportamiento esperado.
+Tal y como se mencionó anteriormente, el PEP es un punto de conexión de [PowerShell JEA](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/overview). Al proporcionar una capa de seguridad sólida, un punto de conexión de JEA reduce algunas de las funcionalidades básicas de PowerShell, como la finalización con tabulación o de scripting. Si intenta algún tipo de operación de scripts, se producirá el error **ScriptsNotAllowed**. Este error es el comportamiento esperado.
 
-Por lo tanto, para obtener la lista de parámetros de un cmdlet determinado, debe ejecutar el siguiente comando:
+Por ejemplo, para obtener la lista de parámetros de un cmdlet determinado, debe ejecutar el siguiente comando:
 
 ```powershell
     Get-Command <cmdlet_name> -Syntax
 ```
 
-Como alternativa, puede usar el cmdlet [Import-PSSession](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Import-PSSession?view=powershell-5.1) para importar todos los cmdlets de PEP a la sesión actual en al equipo local. De esta forma, todos los cmdlets y las funciones del PEP ahora están disponibles en el equipo local, junto con la finalización con tabulación y, más en general, de scripting. 
+Como alternativa, puede usar el cmdlet [Import-PSSession](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Import-PSSession?view=powershell-5.1) para importar todos los cmdlets de PEP a la sesión actual en al equipo local. De esta forma, todos los cmdlets y las funciones del PEP ahora están disponibles en el equipo local, junto con la finalización con tabulación y, más en general, de scripting.
 
 Lleve a cabo los siguientes pasos para importar la sesión del PEP al equipo local:
 
@@ -143,7 +143,7 @@ Lleve a cabo los siguientes pasos para importar la sesión del PEP al equipo loc
        $session = New-PSSession -ComputerName <IP_address_of_ERCS> `
          -ConfigurationName PrivilegedEndpoint -Credential $cred
      ```
-     El parámetro `ComputerName` puede ser la dirección IP o el nombre DNS de una de las máquinas virtuales que hospeda el PEP. 
+     El parámetro `ComputerName` puede ser la dirección IP o el nombre DNS de una de las máquinas virtuales que hospeda el PEP.
    - Si va a ejecutar el ADSK:
      
      ```powershell
@@ -171,11 +171,11 @@ Lleve a cabo los siguientes pasos para importar la sesión del PEP al equipo loc
 Para cerrar la sesión del punto de conexión:
 
 1. Cree un recurso compartido de archivos externo al que se pueda acceder mediante el PEP. En un entorno de kit de desarrollo, solo puede crear un recurso compartido de archivos en el host del kit de desarrollo.
-2. Ejecute el siguiente cmdlet: 
+2. Ejecute el siguiente cmdlet:
      ```powershell
      Close-PrivilegedEndpoint -TranscriptsPathDestination "\\fileshareIP\SharedFolder" -Credential Get-Credential
      ```
-   que usa los parámetros de la tabla siguiente.
+   el cmdlet usa los parámetros de la tabla siguiente:
 
    | Parámetro | DESCRIPCIÓN | type | Obligatorio |
    |---------|---------|---------|---------|
@@ -191,4 +191,4 @@ Una vez los archivos de registro de transcripción se transfieren correctamente 
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Herramientas de diagnóstico de Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep)
+[Herramientas de diagnóstico de Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep-to-collect-diagnostic-logs)

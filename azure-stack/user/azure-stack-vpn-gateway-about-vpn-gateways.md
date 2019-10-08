@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/21/2019
+ms.date: 10/01/2019
 ms.author: sethm
 ms.lastreviewed: 05/21/2019
-ms.openlocfilehash: 980d601dd5830d653787fe4cc31f57be3b3f8d00
-ms.sourcegitcommit: b3dac698f2e1834491c2f9af56a80e95654f11f3
+ms.openlocfilehash: a66057ea2490f4510d28db8b07d03e4ed17ba3ad
+ms.sourcegitcommit: bbf3edbfc07603d2c23de44240933c07976ea550
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68658668"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71714758"
 ---
 # <a name="create-vpn-gateways-for-azure-stack"></a>Creación de puertas de enlace VPN para Azure Stack
 
@@ -42,7 +42,7 @@ Antes de crear y configurar puertas de enlace de VPN para Azure Stack, revise la
 > Por ejemplo:
 >
 > * En Azure, la SKU de la puerta de enlace de VPN básica puede alojar aproximadamente 100 Mbps de rendimiento agregado. Si crea dos conexiones a esa puerta de enlace de VPN y una usa 50 Mbps de ancho de banda, la otra dispone de otros 50 Mbps.
-> * En Azure Stack, **cada conexión** a la SKU de una puerta de enlace de VPN básica se le asignan 100 Mbps de rendimiento.
+> * En Azure Stack, cada conexión a la SKU de una puerta de enlace de VPN básica se le asignan 100 Mbps de rendimiento.
 
 ## <a name="configuring-a-vpn-gateway"></a>Configuración de una puerta de enlace de VPN
 
@@ -75,7 +75,7 @@ Los diagramas y las descripciones de las siguientes secciones pueden ayudarle a 
 
 ### <a name="site-to-site"></a>De sitio a sitio
 
-Una conexión de puerta de enlace de VPN de *sitio a sitio* (S2S) es una conexión a través de un túnel VPN IPsec/IKE (IKEv2). Este tipo de conexión requiere un dispositivo VPN que esté ubicado en el entorno local y tenga asignada una dirección IP pública. Este dispositivo no puede estar detrás de un NAT. Se pueden usar conexiones S2S para las configuraciones híbridas y entre locales.
+Una conexión de puerta de enlace de VPN de *sitio a sitio* (S2S) es una conexión a través de un túnel VPN IPsec/IKE (IKEv2). Este tipo de conexión requiere un dispositivo VPN que esté ubicado en el entorno local y tenga asignada una dirección IP pública. Este dispositivo no se encuentra detrás de un NAT. Se pueden usar conexiones S2S para las configuraciones híbridas y entre locales.
 
 ![Ejemplo de configuración de una conexión VPN de sitio a sitio](media/azure-stack-vpn-gateway-about-vpn-gateways/vpngateway-site-to-site-connection-diagram.png)
 
@@ -105,7 +105,7 @@ Tenga en cuenta la siguiente información cuando seleccione la SKU:
 
 ## <a name="gateway-availability"></a>Disponibilidad de la puerta de enlace
 
-Los escenarios de alta disponibilidad solo se pueden configurar en la SKU de conexión **Puerta de enlace de alto rendimiento**. A diferencia de Azure, que proporciona disponibilidad a través de las configuraciones activa/activa y activa/pasiva, Azure Stack solo admite la configuración activa/pasiva. 
+Los escenarios de alta disponibilidad solo se pueden configurar en la SKU de conexión **Puerta de enlace de alto rendimiento**. A diferencia de Azure, que proporciona disponibilidad a través de las configuraciones activa/activa y activa/pasiva, Azure Stack solo admite la configuración activa/pasiva.
 
 ### <a name="failover"></a>Conmutación por error
 
@@ -115,17 +115,17 @@ Hay 3 VM de infraestructura de puerta de enlace multiinquilino en Azure Stack. D
 
 En la tabla siguiente se muestran los tipos de puerta de enlace y el rendimiento agregado estimado por SKU de puerta de enlace:
 
-|| Rendimiento de VPN Gateway *(1)* | Túneles IPsec máx. de VPN Gateway *(2)* |
+|| Rendimiento de VPN Gateway (1) | Túneles IPsec máx. de VPN Gateway (2) |
 |-------|-------|-------|
-|**SKU Básica** ***(3)*** | 100 Mbps | 20 |
+|**SKU Básica** **(3)** | 100 Mbps | 20 |
 |**SKU estándar** | 100 Mbps | 20 |
 |**SKU de alto rendimiento** | 200 Mbps | 10 |
 
-**Notas de la tabla:**
+### <a name="table-notes"></a>Notas de la tabla
 
-*Nota (1)* : El rendimiento de la VPN no está garantizado para las conexiones entre locales a través de Internet. Es el valor máximo posible del rendimiento.  
-*Nota (2)* : El número de túneles máximo es el total por cada implementación de Azure Stack para todas las suscripciones.  
-*Nota (3)* : el enrutamiento de BGP no es compatible con la SKU Básica.
+**(1)** El rendimiento de la VPN no está garantizado para las conexiones entre locales a través de Internet. Es el valor máximo posible del rendimiento.  
+**(2)** El número de túneles máximo es el total por cada implementación de Azure Stack para todas las suscripciones.  
+**(3)** El enrutamiento de BGP no es compatible con la SKU Básica.
 
 >[!NOTE]
 >Solo se puede crear una conexión VPN de sitio a sitio entre dos implementaciones de Azure Stack. Esto se debe a una limitación en la plataforma, que no permitirá más de una conexión VPN a la misma dirección IP. Dado que Azure Stack aprovecha la puerta de enlace multiinquilino que usa una sola dirección IP pública para todas las puertas de enlace de la VPN del sistema de Azure Stack, no puede haber más de una conexión VPN entre dos sistemas de Azure Stack. Esta limitación se aplica también a la existencia de más de una conexión VPN de sitio a sitio a cualquier puerta de enlace de VPN que use una única dirección IP. Azure Stack no permitirá que se cree más de un recurso de puerta de enlace de red local con la misma dirección IP.

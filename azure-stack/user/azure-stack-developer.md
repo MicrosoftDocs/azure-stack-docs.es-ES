@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/21/2019
+ms.date: 10/01/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 05/21/2019
-ms.openlocfilehash: 059e7961cae5c6d6faa8d79d05dbc08a05a13893
-ms.sourcegitcommit: b3dac698f2e1834491c2f9af56a80e95654f11f3
+ms.openlocfilehash: 0f1450ff7ce6d7e4cffee3d31f80b046f07f9ac1
+ms.sourcegitcommit: bbf3edbfc07603d2c23de44240933c07976ea550
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68658564"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71714781"
 ---
 # <a name="develop-for-azure-stack"></a>Desarrollo para Azure Stack
 

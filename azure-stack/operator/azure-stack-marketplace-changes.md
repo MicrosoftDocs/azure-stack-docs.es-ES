@@ -15,12 +15,12 @@ ms.date: 08/09/2019
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 07/31/2019
-ms.openlocfilehash: 878e4712cf805fec188645e92784beaf6a19d591
-ms.sourcegitcommit: d967cf8cae320fa09f1e97eeb888e3db5b6e7972
+ms.openlocfilehash: c93b4535189830ee8e84acb882f85a9a51d5f443
+ms.sourcegitcommit: c2ea4ffb42563c26faaf2993ba7b484bcb6d5cb7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71279117"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71342727"
 ---
 # <a name="azure-stack-marketplace-changes"></a>Cambios en Marketplace de Azure Stack
 
@@ -29,6 +29,26 @@ En este artículo se describen las recientes incorporaciones, actualizaciones, c
 El artículo [Elementos de Marketplace de Azure Stack](azure-stack-marketplace-azure-items.md) siempre incluye la lista más actual de los elementos de Marketplace de Azure Stack disponibles.
 
 ## <a name="new-marketplace-items"></a>Nuevos elementos de Marketplace
+
+- 27/06/2019:   SIOS Datakeeper Cluster Edition
+
+- 27/06/2019:   Veeam Backup & Replication
+
+- 27/06/2019: Windows Server 2019 Datacenter Server Core con Containers en modo de pago por uso
+
+- 27/06/2019: Windows Server 2019 Datacenter Server Core con Containers en modo "traiga su propia licencia"
+
+- 27/06/2019:   Windows Server 2019 Datacenter en modalidad de pago por uso
+
+- 27/06/2019:   Windows Server 2019 Datacenter en modalidad "traiga su propia licencia"
+
+- 27/06/2019: Windows Server 2019 Datacenter Server Core en modalidad de pago por uso
+
+- 27/06/2019: Windows Server 2019 Datacenter Server Core en modalidad "traiga su propia licencia"
+
+- 27/06/2019:   Windows Server 2019 Datacenter Server Core con Containers en modo de pago por uso
+
+- 27/06/2019:   Windows Server 2019 Datacenter con Containers en modo "traiga su propia licencia"
 
 - 05/08/2019: Bitnami Drupal
 
@@ -59,15 +79,26 @@ El artículo [Elementos de Marketplace de Azure Stack](azure-stack-marketplace-a
 
 ## <a name="deprecated-marketplace-items"></a>Elementos de Marketplace en desuso
 
-- Codiad
-- X2Engine Sales CRM
-- SugarCRM
-- Clúster de Node.js de alta disponibilidad
+- BitNami Codiad
+- Bitnami X2Engine Sales CRM
+- Bitnami SugarCRM
+- Bitnami Node.js High-Availability Cluster
 - A10 vThunder: controlador de entrega de aplicaciones L4-L7, equilibrio de carga del servidor global (GSLB), SSL Insight
 - JsonADDomain Extension
 
 ## <a name="updated-marketplace-items"></a>Elementos de Marketplace actualizados
 
+- 11/07/2019:   Thales CipherTrust Cloud Key Manager, versión 1.0.7
+- 16/07/2019:   Windows Server 2016 Datacenter Server Core en modalidad "traiga su propia licencia", versión 2016.127.20190522
+- 16/07/2019:   Windows Server 2016 Datacenter Server Core en modalidad de pago por uso, versión 2016.127.20190522
+- 16/07/2019:   Windows Server 2016 Datacenter con Containers en modo "traiga su propia licencia", versión 2016.127.20190522
+- 16/07/2019:   Windows Server 2016 Datacenter con Containers en modo de pago por uso, versión 2016.127.20190522
+- 16/07/2019:   Windows Server 2016 Datacenter en modalidad "traiga su propia licencia", versión 2016.127.20190522
+- 16/07/2019:   Windows Server 2016 Datacenter en modalidad de pago por uso, versión 2016.127.20190522
+- 16/07/2019:   Windows Server 2008 R2, modalidad "traiga su propia licencia", versión 2.127.20190522
+- 16/07/2019:   Windows Server 2008 R2, modalidad de pago por uso, versión 2.127.20190522
+- 16/07/2019:   Windows Server 2012 R2 Datacenter, modalidad "traiga su propia licencia", versión 4.127.20190522
+- 16/07/2019:   Windows Server 2012 R2 Datacenter, modalidad de pago por uso, versión 4.127.20190522
 - 30/07/2019: SQL Server 2016 SP1 (ediciones Express, Developer, Standard y Enterprise) versión 13.2.20190410
 - 30/07/2019: SQL Server 2016 SP2 (ediciones Express, Developer, Standard y Enterprise) versión 13.2.20190410
 - 30/07/2019: SQL Server 2017 (ediciones Express, Developer, Standard y Enterprise) versión 14.0.20190410

@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/23/2019
+ms.date: 10/01/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 09/23/2019
-ms.openlocfilehash: e87baeba1b961c134fc5754fda8c9f1688f3fe90
-ms.sourcegitcommit: f38903cb925276e96dd62ebe8ffe92df8bf6e5c8
+ms.openlocfilehash: 32533b063d4c42b740825923e9e2b5692ec03728
+ms.sourcegitcommit: bbf3edbfc07603d2c23de44240933c07976ea550
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71256556"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71714633"
 ---
 # <a name="footfall-detection-solution"></a>Solución de detección de afluencia de compradores
 
@@ -92,6 +92,6 @@ Esta solución captura imágenes de clientes, por lo que es fundamental tener en
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Para obtener más información sobre los patrones relacionados usados por esta solución, consulte [Patrón de datos con niveles](azure-stack-solution-staged-data.md). 
-
-Para obtener más información sobre el uso de Custom Vision, consulte [Kit de desarrollo de IA de Custom Vision](https://azure.github.io/Vision-AI-DevKit-Pages/). 
+- Para obtener más información sobre los patrones relacionados usados por esta solución, consulte [Patrón de datos con niveles](azure-stack-solution-staged-data.md). 
+- Para obtener más información sobre el uso de Custom Vision, consulte [Kit de desarrollo de IA de Custom Vision](https://azure.github.io/Vision-AI-DevKit-Pages/). 
+- Descargue e implemente una [implementación de ejemplo de la solución de detección de afluencia de compradores](https://github.com/Azure-Samples/azure-intelligent-edge-patterns/tree/master/footfall-analysis). Conozca cómo generar información a partir de acciones reales, con Azure, Azure Stack y el kit de desarrollador de inteligencia artificial de Custom Vision.   

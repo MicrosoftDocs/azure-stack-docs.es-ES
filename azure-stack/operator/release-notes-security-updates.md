@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/30/2019
+ms.date: 09/27/2019
 ms.author: sethm
-ms.reviewer: hectorl
-ms.lastreviewed: 08/30/2019
-ms.openlocfilehash: 35eea5fee3e4136ba52b1a4b37cae6ec7f07ad1b
-ms.sourcegitcommit: c46d913ebfa4cb6c775c5117ac5c9e87d032a271
+ms.reviewer: fiseraci
+ms.lastreviewed: 09/27/2019
+ms.openlocfilehash: 1e3f04faf7b4528197f365b6558f1ba98ead59d2
+ms.sourcegitcommit: 036d4b22a8076ca9ba5c667a451c544d88f8bb94
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106506"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71681796"
 ---
 # <a name="azure-stack-security-updates"></a>Actualizaciones de seguridad de Azure Stack
 
@@ -30,6 +30,49 @@ En este artículo se enumeran todas las actualizaciones de seguridad de las últ
 ::: moniker range="azs-1908"
 ## <a name="1908-update"></a>Actualización 1908
 
+- [CVE-2019-1214](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1214)
+- [CVE-2019-1215](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1215)
+- [CVE-2019-1219](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1219)
+- [CVE-2019-1232](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1232)
+- [CVE-2019-1235](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1235)
+- [CVE-2019-1240](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1240)
+- [CVE-2019-1241](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1241)
+- [CVE-2019-1242](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1242)
+- [CVE-2019-1243](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1243)
+- [CVE-2019-1244](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1244)
+- [CVE-2019-1245](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1245)
+- [CVE-2019-1246](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1246)
+- [CVE-2019-1247](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1247)
+- [CVE-2019-1248](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1248)
+- [CVE-2019-1249](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1249)
+- [CVE-2019-1250](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1250)
+- [CVE-2019-1251](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1251)
+- [CVE-2019-1252](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1252)
+- [CVE-2019-1253](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1253)
+- [CVE-2019-1254](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1254)
+- [CVE-2019-1256](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1256)
+- [CVE-2019-1267](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1267)
+- [CVE-2019-1268](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1268)
+- [CVE-2019-1269](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1269)
+- [CVE-2019-1270](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1270)
+- [CVE-2019-1271](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1271)
+- [CVE-2019-1272](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1272)
+- [CVE-2019-1273](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1273)
+- [CVE-2019-1274](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1274)
+- [CVE-2019-1277](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1277)
+- [CVE-2019-1278](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1278)
+- [CVE-2019-1280](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1280)
+- [CVE-2019-1282](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1282)
+- [CVE-2019-1285](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1285)
+- [CVE-2019-1286](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1286)
+- [CVE-2019-1287](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1287)
+- [CVE-2019-1289](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1289)
+- [CVE-2019-1290](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1290)
+- [CVE-2019-1291](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1291)
+- [CVE-2019-1292](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1292)
+- [CVE-2019-1293](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1293)
+- [CVE-2019-1294](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1294)
+- [CVE-2019-1303](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1303)
 - [CVE-2019-0714](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0714)
 - [CVE-2019-0715](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0715)
 - [CVE-2019-0716](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0716)
@@ -184,8 +227,8 @@ En este artículo se enumeran todas las actualizaciones de seguridad de las últ
 - [CVE-2019-1065](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1065)
 - [CVE-2019-1069](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-1069)
 
-Debido a la naturaleza acumulativa de las actualizaciones de Windows, esta actualización también contiene las cargas útiles de seguridad de los meses anteriores. Esta lista de CVE refleja la carga útil de seguridad de junio, julio y agosto de 2019.
-Para más información sobre estas vulnerabilidades, haga clic en los vínculos anteriores o consulte el artículo de Microsoft Knowledge Base [4511553](https://support.microsoft.com/help/4511553).
+Debido a la naturaleza acumulativa de las actualizaciones de Windows, esta actualización también contiene las cargas útiles de seguridad de los meses anteriores. Esta lista de CVE refleja la carga útil de seguridad de junio, julio, agosto y septiembre de 2019.
+Para más información sobre estas vulnerabilidades, haga clic en los vínculos anteriores o consulte el artículo de Microsoft Knowledge Base [4516077](https://support.microsoft.com/help/4516077).
 ::: moniker-end
 
 ::: moniker range="azs-1907"

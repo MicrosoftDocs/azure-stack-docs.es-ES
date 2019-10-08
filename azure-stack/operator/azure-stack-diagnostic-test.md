@@ -1,6 +1,6 @@
 ---
-title: Uso de la herramienta de validación de Azure Stack | Microsoft Docs
-description: Recopilación de archivos de registro de diagnósticos en Azure Stack
+title: Uso de la herramienta de validación de Azure Stack para validar el estado del sistema | Microsoft Docs
+description: Aprenda a usar la herramienta de validación de Azure Stack para validar el estado del sistema.
 services: azure-stack
 author: justinha
 manager: femila
@@ -14,12 +14,12 @@ ms.date: 06/26/2019
 ms.author: justinha
 ms.reviewer: adshar
 ms.lastreviewed: 12/03/2018
-ms.openlocfilehash: da89c973637042b18410db9dc3dc618bfbde12d5
-ms.sourcegitcommit: d96adbb821175167f6a4c8f3aba305981d7e7c3e
+ms.openlocfilehash: 194af241480cce42273ff81d91213a63b1b9fd59
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68685518"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71829162"
 ---
 # <a name="validate-azure-stack-system-state"></a>Validación del estado del sistema de Azure Stack
 
@@ -29,18 +29,18 @@ Como operador de Azure Stack, es esencial tener la capacidad de determinar a pet
 
 ## <a name="running-the-validation-tool-and-accessing-results"></a>Ejecución de la herramienta de validación y acceso a los resultados
 
-Como se indicó anteriormente, la herramienta de validación se ejecuta a través del PEP. Cada prueba devuelve un estado **PASS/FAIL** (correcto/incorrecto) en la ventana de PowerShell. Este es un esquema del proceso de prueba de validación de un extremo a otro: 
+Como se indicó anteriormente, la herramienta de validación se ejecuta a través del PEP. Cada prueba devuelve un estado **PASS/FAIL** (correcto/incorrecto) en la ventana de PowerShell. Este es un esquema del proceso de prueba de validación de un extremo a otro:
 
-1. Acceda al punto de conexión con privilegios (PEP). Ejecute los comandos siguientes para establecer una sesión de PEP:
+1. Acceda al PEP. Ejecute los comandos siguientes para establecer una sesión de PEP:
 
    ```powershell
    Enter-PSSession -ComputerName "<ERCS VM-name/IP address>" -ConfigurationName PrivilegedEndpoint -Credential $localcred 
    ```
 
    > [!TIP]
-   > Para acceder al PEP en un equipo host del Kit de desarrollo de Azure Stack, use AzS-ERCS01 para - ComputerName.
+   > Para acceder al PEP en un equipo host del Kit de desarrollo de Azure Stack (ASDK), use AzS-ERCS01 para -ComputerName.
 
-2. Una vez que esté en el PEP, ejecute: 
+2. Una vez que esté en el PEP, ejecute:
 
    ```powershell
    Test-AzureStack
@@ -50,13 +50,13 @@ Como se indicó anteriormente, la herramienta de validación se ejecuta a travé
 
 3. Si cualquier informe de pruebas aparece como **FAIL**, ejecute `Get-AzureStackLog`. Para obtener instrucciones sobre un sistema integrado, consulte [Ejecución de Get-AzureStackLog en sistemas integrados de Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#to-run-get-azurestacklog-on-azure-stack-integrated-systems) o, en el ASDK, consulte [Ejecución de Get-AzureStackLog en un sistema Kit de desarrollo de Azure Stack (ASDK)](azure-stack-configure-on-demand-diagnostic-log-collection.md#run-get-azurestacklog-on-an-azure-stack-development-kit-asdk-system).
 
-   El cmdlet recopila registros generados por Test-AzureStack. Si las pruebas devuelven **WARN** (Advertir) no necesita recopilar registros ni ponerse en contacto con los Servicios de atención al cliente y soporte técnico de Microsoft (CSS).
+   El cmdlet recopila registros generados por Test-AzureStack. Se recomienda no recopilar registros y ponerse en contacto con CSS en su lugar si las pruebas envían una notificación **WARN**.
 
 4. Si el CSS le indicó que ejecutase la herramienta de validación, el representante del CSS le solicitará los registros que haya recopilado para continuar con la solución del problema.
 
 ## <a name="tests-available"></a>Pruebas disponibles
 
-La herramienta de validación le permite ejecutar una serie de pruebas de nivel de sistema y escenarios de nube básicos que le proporcionan una recomendación sobre el estado actual y determinan los problemas en el sistema.
+La herramienta de validación le permite ejecutar una serie de pruebas de nivel de sistema y escenarios de nube básicos que le proporcionan información sobre el estado actual y le permiten solucionar los problemas del sistema.
 
 ### <a name="cloud-infrastructure-tests"></a>Pruebas de infraestructura en la nube
 
@@ -93,26 +93,26 @@ Estas pruebas de bajo impacto trabajan a nivel de infraestructura y proporcionan
 
 ### <a name="cloud-scenario-tests"></a>Pruebas de escenario de nube
 
-Además de la infraestructura de pruebas anteriores, también tiene la capacidad de ejecutar pruebas de escenario de nube para comprobar la funcionalidad en todos los componentes de la infraestructura. Las credenciales de administrador de la nube son necesarias para ejecutar estas pruebas, ya que implican la implementación de recursos.
+Además de las pruebas de infraestructura anteriores, también puede ejecutar pruebas de escenario de nube para comprobar la funcionalidad en todos los componentes de la infraestructura. Las credenciales de administrador de la nube son necesarias para ejecutar estas pruebas, ya que implican la implementación de recursos.
 
 > [!NOTE]
-> Actualmente, no se pueden ejecutar pruebas de escenarios en la nube mediante las credenciales de los Servicios de federación de Active Directory (AD FS). 
+> Actualmente, no se pueden ejecutar pruebas de escenarios en la nube mediante las credenciales de los Servicios de federación de Active Directory (AD FS).
 
 Los siguientes escenarios de nube han sido probados por la herramienta de validación:
-- Creación de grupos de recursos   
-- Creación de planes              
-- Creación de ofertas            
-- Creación de cuentas de almacenamiento   
-- Creación de máquinas virtuales 
-- Operación de almacenamiento de blobs   
-- Operación de almacenamiento en cola  
-- Operación de almacenamiento en tabla  
+- Creación de grupos de recursos
+- Creación de planes
+- Creación de ofertas
+- Creación de cuentas de almacenamiento
+- Creación de máquinas virtuales
+- Operación de almacenamiento de blobs
+- Operación de almacenamiento en cola
+- Operación de almacenamiento en tabla
 
 ## <a name="parameter-considerations"></a>Consideraciones sobre los parámetros
 
 - El parámetro **List** puede usarse para mostrar todas las categorías de prueba disponibles.
 
-- Los parámetros **Include** e **Ignore** pueden usarse para incluir o excluir las categorías de pruebas. Consulte la sección siguiente para conocer la información que se usará con estos argumentos.
+- Los parámetros **Include** e **Ignore** pueden usarse para incluir o excluir las categorías de pruebas. Para más información sobre estos argumentos, consulte la siguiente sección.
 
   ```powershell
   Test-AzureStack -Include AzsSFRoleSummary, AzsInfraCapacity
@@ -122,7 +122,7 @@ Los siguientes escenarios de nube han sido probados por la herramienta de valida
   Test-AzureStack -Ignore AzsInfraPerformance
   ```
 
-- Se implementa una máquina virtual de inquilino como parte de una de las pruebas de escenario de nube. Puede usar **DoNotDeployTenantVm** para deshabilitar esta implementación.
+- Se implementa una máquina virtual de inquilino como parte de las pruebas de escenario de nube. Puede usar **DoNotDeployTenantVm** para deshabilitar esta implementación de máquina virtual.
 
 - Tendrá que agregar el parámetro **ServiceAdminCredential** para ejecutar las pruebas de escenario de nube, tal y como se describe en la sección [Ejemplos de caso de uso](azure-stack-diagnostic-test.md#use-case-examples).
 
@@ -160,14 +160,14 @@ Enter-PSSession -ComputerName "<ERCS VM-name/IP address>" -ConfigurationName Pri
 Test-AzureStack -ServiceAdminCredential "<Cloud administrator user name>" -Include AzsScenarios   
 ```
 
-El nombre de usuario del administrador de la nube tiene que escribirse en formato UPN: serviceadmin@contoso.onmicrosoft.com (Azure AD). Cuando se le solicite, escriba la contraseña en la cuenta de administrador en la nube.
+El nombre del usuario administrador de la nube tiene que escribirse en formato UPN: serviceadmin@contoso.onmicrosoft.com (Azure AD). Cuando se le solicite, escriba la contraseña en la cuenta de administrador de la nube.
 
 ### <a name="groups"></a>Grupos
 
-Para mejorar la experiencia del operador, se ha habilitado un parámetro **Group** para ejecutar varias categorías de pruebas al mismo tiempo. Actualmente, hay 3 grupos definidos: **Default**, **UpdateReadiness** y **SecretRotationReadiness**.
+Para mejorar la experiencia del operador, se ha habilitado un parámetro **Group** para ejecutar varias categorías de pruebas al mismo tiempo. Actualmente, hay tres grupos definidos: **Default**, **UpdateReadiness** y **SecretRotationReadiness**.
 
 - **Valor predeterminado**: Se considera una ejecución estándar de **Test-AzureStack**. Si no se selecciona ningún otro grupo, este grupo se ejecuta de forma predeterminada.
-- **UpdateReadiness**: comprobación para ver si se puede actualizar la marca. Cuando se ejecuta el grupo **UpdateReadiness**, se muestran advertencias como errores en la salida de la consola, y se deben considerar bloqueadores de la actualización. Las siguientes categorías forman parte del grupo **UpdateReadiness**:
+- **UpdateReadiness**: Una comprobación para ver si se puede actualizar la instancia de Azure Stack. Cuando se ejecuta el grupo **UpdateReadiness**, se muestran advertencias como errores en la salida de la consola, y se deben considerar bloqueadores de la actualización. Las siguientes categorías forman parte del grupo **UpdateReadiness**:
 
   - **AzsAcsSummary**
   - **AzsDefenderSummary**
@@ -178,7 +178,7 @@ Para mejorar la experiencia del operador, se ha habilitado un parámetro **Group
   - **AzsSFRoleSummary**
   - **AzsStoreSummary**
 
-- **SecretRotationReadiness**: comprobación para ver si se puede ejecutar la marca que está en una rotación de secretos. Cuando se ejecuta el grupo **SecretRotationReadiness**, se muestran advertencias como errores en la salida de la consola y se deben considerar bloqueadores de rotación de secretos. Las siguientes categorías forman parte del grupo SecretRotationReadiness:
+- **SecretRotationReadiness**: comprobación para ver si la instancia de Azure Stack está en un estado en el que se pueda ejecutar la rotación de secretos. Cuando se ejecuta el grupo **SecretRotationReadiness**, se muestran advertencias como errores en la salida de la consola y se deben considerar bloqueadores de rotación de secretos. Las siguientes categorías forman parte del grupo SecretRotationReadiness:
 
   - **AzsAcsSummary**
   - **AzsDefenderSummary**
@@ -198,7 +198,7 @@ El siguiente ejemplo ejecuta **Test-AzureStack** para probar la preparación del
 Test-AzureStack -Group UpdateReadiness
 ```
 
-Sin embargo, si Azure Stack ejecuta una versión inferior a 1811, use los siguientes comandos de PowerShell para ejecutar **Test-AzureStack**:
+Si Azure Stack ejecuta una versión anterior a 1811, use los siguientes comandos de PowerShell para ejecutar **Test-AzureStack**:
 
 ```powershell
 New-PSSession -ComputerName "<ERCS VM-name/IP address>" -ConfigurationName PrivilegedEndpoint -Credential $localcred 
@@ -207,7 +207,7 @@ Test-AzureStack -Include AzsControlPlane, AzsDefenderSummary, AzsHostingInfraSum
 
 ### <a name="run-validation-tool-to-test-infrastructure-backup-settings"></a>Ejecución de la herramienta de validación para probar la configuración de copia de seguridad de la infraestructura
 
-*Antes* de configurar la copia de seguridad de la infraestructura, puede probar la ruta de acceso y las credenciales del recurso compartido de copia de seguridad mediante la prueba **AzsBackupShareAccessibility**: 
+*Antes* de configurar la copia de seguridad de la infraestructura, puede probar la ruta de acceso y las credenciales del recurso compartido de copia de seguridad mediante la prueba **AzsBackupShareAccessibility**:
 
   ```powershell
   Enter-PSSession -ComputerName "<ERCS VM-name/IP address>" -ConfigurationName PrivilegedEndpoint -Credential $localcred 
@@ -228,20 +228,18 @@ Para probar las nuevas credenciales con el recurso compartido de la copia de seg
   Test-AzureStack -Include AzsBackupShareAccessibility -BackupShareCredential "<PSCredential for backup share>"
   ```
 
-### <a name="run-validation-tool-to-test-network-infrastructure"></a>Ejecución de la herramienta de validación para probar la infraestructura de red 
+### <a name="run-validation-tool-to-test-network-infrastructure"></a>Ejecución de la herramienta de validación para probar la infraestructura de red
 
-Esta prueba comprueba la conectividad de la infraestructura de red que omite la red definida por software (SDN) de Azure Stack. Muestra la conectividad de una VIP pública a los reenviadores DNS configurados, los servidores NTP y los puntos de conexión de autenticación. Esto incluye la conectividad a Azure cuando se usa Azure AD como proveedor de identidades o el servidor federado cuando se usa ADFS como proveedor de identidades. 
+Esta prueba comprueba la conectividad de la infraestructura de red que omite la red definida por software (SDN) de Azure Stack. Muestra la conectividad de una VIP pública a los reenviadores DNS configurados, los servidores NTP y los puntos de conexión de autenticación. Esto incluye la conectividad a Azure cuando se usa Azure AD como proveedor de identidades o el servidor federado cuando se usa AD FS como proveedor de identidades.
 
 Incluya el parámetro debug para obtener una salida detallada del comando:
 
-```powershell 
+```powershell
 Test-AzureStack -Include AzsNetworkInfra -Debug
 ```
 
-
-
 ## <a name="next-steps"></a>Pasos siguientes
 
-Para más información acerca de las herramientas de diagnóstico de Azure Stack y el registro de problemas, consulte [Herramientas de diagnóstico de Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep).
+Para más información acerca de las herramientas de diagnóstico de Azure Stack y el registro de problemas, consulte [Herramientas de diagnóstico de Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep-to-collect-diagnostic-logs).
 
 Para más información acerca de la solución de problemas, consulte [Solución de problemas de Microsoft Azure Stack](azure-stack-troubleshooting.md).

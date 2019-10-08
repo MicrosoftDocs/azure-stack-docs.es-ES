@@ -16,12 +16,12 @@ ms.date: 06/25/2019
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: a2809ed8a745f2ec4cdb31d924e964ecc28209b0
-ms.sourcegitcommit: e2f6205e6469b39c2395ee09424bb7632cb94c40
+ms.openlocfilehash: 69f427bd825bdc74501256d47e61bbae95f4d64b
+ms.sourcegitcommit: 79ead51be63c372b23b7fca6ffeaf95fd44de786
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70271730"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71687992"
 ---
 # <a name="azure-stack-managed-disks-differences-and-considerations"></a>Discos administrados de Azure Stack: diferencias y consideraciones
 
@@ -159,7 +159,7 @@ Puede usar el portal, PowerShell o la CLI para crear la imagen administrada. Sig
 
 Asegúrese de generalizar la máquina virtual correctamente antes de realizar este paso. Después de la generalización, ya no puede utilizar esta máquina virtual. La creación de una máquina virtual a partir de una imagen que no se ha generalizado correctamente provocará un error **VMProvisioningTimeout**.
 
-Siga las instrucciones de [Creación de una imagen a partir de un VHD en una cuenta de almacenamiento](/azure/virtual-machines/windows/capture-image-resource#create-an-image-from-a-vhd-in-a-storage-account) para crear una imagen administrada a partir de un VHD generalizado en una cuenta de almacenamiento. Puede usar esta imagen en el futuro para crear máquinas virtuales administradas.
+Siga las instrucciones de [Creación de una imagen a partir de una máquina virtual que usa una cuenta de almacenamiento](/azure/virtual-machines/windows/capture-image-resource#create-an-image-from-a-vm-that-uses-a-storage-account) para crear una imagen administrada a partir de un VHD generalizado en una cuenta de almacenamiento. Puede usar esta imagen en el futuro para crear máquinas virtuales administradas.
 
 #### <a name="case-2-create-managed-vm-from-managed-image-using-powershell"></a>Caso 2: Creación de una máquina virtual administrada a partir de una imagen administrada mediante Powershell
 

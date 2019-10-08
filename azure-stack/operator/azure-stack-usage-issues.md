@@ -15,16 +15,16 @@ ms.date: 06/27/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 06/27/2019
-ms.openlocfilehash: 68bf47ab2a0842b0aeeae07030272e7106a63220
-ms.sourcegitcommit: f6ea6daddb92cbf458f9824cd2f8e7e1bda9688e
+ms.openlocfilehash: 3548574ce8ece470c67101d42b115dbafe2c9a1c
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68494110"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71829214"
 ---
 # <a name="usage-connectivity-errors"></a>Errores de conectividad de uso
 
-Los datos de uso de Azure Stack se envían a Azure mediante el [componente *Azure Bridge*](azure-stack-usage-reporting.md) de Azure Stack. Si el puente en Azure Stack no puede conectarse al servicio de uso de Azure, verá el siguiente error:
+Los datos de uso de Azure Stack se envían a Azure mediante el [componente *Azure Bridge*](azure-stack-usage-reporting.md) de Azure Stack. Si el puente de Azure Stack no puede conectarse al servicio de uso de Azure, verá el siguiente error:
 
 ![error de puente de uso](media/azure-stack-usage-issues/usageerror2.png)
 
@@ -55,7 +55,7 @@ En esta sección se describen los códigos de errores de uso.
 | No autorizado               | Azure Bridge no puede insertar datos en el servicio de uso de Azure porque dicho servicio no puede realizar la autenticación del puente de Azure Stack. | Compruebe si se ha modificado el recurso de registro y, si es así, vuelva a registrar Azure Stack. <br><br> A veces, una vez problema de sincronización entre Azure Stack y Azure AD puede producir este error. En este caso, asegúrese de que las horas en las VM XRP en Azure Stack están sincronizadas con Azure AD. |
 |                            |                                                                                                                                                   |                                                                                                                                                                                                                                                                                                    |
 
-Además, es posible que deba proporcionar los archivos de registro de los componentes de Azure Bridge, WAS y WASPublic. Para ello, realice [estos pasos](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep).
+Además, es posible que deba proporcionar los archivos de registro de los componentes de Azure Bridge, WAS y WASPublic. Para ello, realice [estos pasos](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep-to-collect-diagnostic-logs).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

@@ -1,6 +1,6 @@
 ---
-title: Descarga de elementos de Marketplace desde Azure | Microsoft Docs
-description: El operador en la nube puede descargar elementos de Marketplace desde Azure a una implementación de Azure Stack.
+title: Descarga de elementos de Marketplace desde Azure y publicación en Azure Stack | Microsoft Docs
+description: Aprenda a descargar elementos de Marketplace desde Azure y a publicarlos en Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -16,14 +16,14 @@ ms.date: 08/13/2019
 ms.author: justinha
 ms.reviewer: ihcherie
 ms.lastreviewed: 12/10/2018
-ms.openlocfilehash: 99d0c48a5e7f5fd4e58d6fdf13e0a12c4b9dfb1e
-ms.sourcegitcommit: 95f30e32e5441599790d39542ff02ba90e70f9d6
+ms.openlocfilehash: f4ffb166d4ae45ca8d7ef335d81e51e2775eb985
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71070268"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71829127"
 ---
-# <a name="download-marketplace-items-from-azure-to-azure-stack"></a>Descarga de elementos de Marketplace desde Azure a Azure Stack
+# <a name="download-marketplace-items-from-azure-and-publish-to-azure-stack"></a>Descarga de elementos de Marketplace desde Azure y publicación en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
@@ -52,19 +52,19 @@ La implementación de Azure Stack debe tener conectividad a Internet y estar [re
 
     Para examinar el espacio disponible, en **Region management** (Administración de regiones), seleccione la región que desea explorar y vaya a **Resource Providers** > **Storage** (Proveedores de recursos > Almacenamiento):
 
-    ![Examinar espacio de almacenamiento](media/azure-stack-download-azure-marketplace-item/storage.png)
+    ![Revisión del espacio de almacenamiento en el portal de administración de Azure Stack](media/azure-stack-download-azure-marketplace-item/storage.png)
 
-3. Abra Azure Stack Marketplace y conéctese a Azure. Para ello, seleccione el servicio **Marketplace management** (Administración de Marketplace), elija **Elementos de Marketplace** y, por último, seleccione **Add from Azure** (Agregar desde Azure):
+3. Abra Marketplace de Azure Stack y conéctese a Azure. Para ello, seleccione el servicio **Marketplace management** (Administración de Marketplace), elija **Elementos de Marketplace** y, por último, seleccione **Add from Azure** (Agregar desde Azure):
 
-    ![Adición desde Azure](media/azure-stack-download-azure-marketplace-item/marketplace.png)
+    ![Descarga de elementos de Marketplace desde Azure](media/azure-stack-download-azure-marketplace-item/marketplace.png)
 
-    El portal muestra la lista de elementos que se pueden descargar desde Azure Marketplace. Puede filtrar los productos por nombre, publicador o tipo de producto. También puede hacer clic en cada elemento para ver su descripción, así como información adicional, incluido su tamaño de descarga:
+    El portal muestra la lista de elementos que se pueden descargar desde Azure Marketplace. Puede filtrar los productos por nombre, publicador o tipo de producto. También puede seleccionar cada elemento para ver su descripción, así como información adicional, incluido el tamaño de descarga:
 
-    ![Lista de Marketplace](media/azure-stack-download-azure-marketplace-item/image03.PNG)
+    ![Lista de elementos de Azure Marketplace ](media/azure-stack-download-azure-marketplace-item/image03.PNG)
 
 4. Seleccione el elemento que desee y, después, seleccione **Download** (Descargar). Los tiempos de descarga varían.
 
-    ![Mensaje de descarga](media/azure-stack-download-azure-marketplace-item/image04.png)
+    ![Descarga de elementos de Azure Marketplace](media/azure-stack-download-azure-marketplace-item/image04.png)
 
     Una vez finalizada la descarga, el nuevo elemento de Marketplace se puede implementar como usuario u operador de Azure Stack.
 
@@ -72,14 +72,14 @@ La implementación de Azure Stack debe tener conectividad a Internet y estar [re
 
 ## <a name="disconnected-or-a-partially-connected-scenario"></a>Escenario sin conexión o con conexión parcial
 
-Si Azure Stack está en modo sin conexión y sin conectividad a internet, use PowerShell y la *herramienta de redifusión de Marketplace* para descargar los elementos de Marketplace en un equipo con conectividad a Internet. Luego, transfiera elementos al entorno de Azure Stack. En un entorno sin conexión, no se pueden descargar elementos de Marketplace desde el portal Azure Stack.
+Si Azure Stack está en modo sin conexión, use PowerShell y la *herramienta de redifusión de Marketplace* para descargar los elementos de Marketplace en un equipo con conectividad a Internet. Luego, transfiera elementos al entorno de Azure Stack. En un entorno sin conexión, no se pueden descargar elementos de Marketplace desde el portal de Azure Stack.
 
 La herramienta de redifusión de Marketplace también se puede usar en un escenario con conexión.
 
 Este escenario tiene dos partes:
 
 - **Parte 1:** descarga desde Azure Marketplace. En el equipo con acceso a Internet, configure PowerShell, descargue la herramienta de redifusión y, después, descargue los elementos desde Azure Marketplace.  
-- **Parte 2:** carga y publicación en Azure Stack Marketplace. Mueva los archivos que ha descargado a su entorno de Azure Stack, impórtelos en Azure Stack y, después, publíquelos en Azure Stack Marketplace.  
+- **Parte 2:** carga y publicación en Marketplace de Azure Stack. Mueva los archivos que ha descargado a su entorno de Azure Stack, impórtelos en Azure Stack y, después, publíquelos en Marketplace de Azure Stack.  
 
 ### <a name="prerequisites"></a>Requisitos previos
 
@@ -128,7 +128,7 @@ Este escenario tiene dos partes:
 
    ```
 
-5. Importe el módulo de redifusión e inicie la herramienta mediante la ejecución de los comandos siguientes. Reemplace `Destination folder path` por la ubicación en la que se almacenan los archivos que descargue desde Azure Marketplace.
+5. Importe el módulo de redifusión e inicie la herramienta mediante la ejecución de los comandos siguientes. Reemplace `Destination folder path` por la ubicación en la que se almacenarán los archivos que descargue desde Azure Marketplace.
 
    ```powershell  
    Import-Module .\Syndication\AzureStack.MarketplaceSyndication.psm1
@@ -188,18 +188,18 @@ Este escenario tiene dos partes:
 
 1. Los archivos de las imágenes de máquina virtual o plantillas de solución que haya [descargado con anterioridad](#use-the-marketplace-syndication-tool-to-download-marketplace-items) deben estar disponibles localmente para su entorno de Azure Stack.  
 
-2. Use el Portal de administración para cargar el paquete de elementos de Marketplace (el archivo .azpkg) y la imagen del disco duro virtual (el archivo .vhd) en el almacenamiento de blobs de Azure Stack. La carga de los archivos del paquete y del disco hace que estén disponible para Azure Stack, con el fin de que más adelante el elemento se pueda publicar en Azure Stack Marketplace.
+2. Use el portal de administración para cargar el paquete de elementos de Marketplace (el archivo .azpkg) y la imagen del disco duro virtual (el archivo .vhd) en el almacenamiento de blobs de Azure Stack. La carga de los archivos del paquete y del disco hace que estén disponible para Azure Stack, con el fin de que más adelante el elemento se pueda publicar en Azure Stack Marketplace.
 
    Para poder realizar la carga es preciso tener una cuenta de almacenamiento con un contenedor con acceso público (consulte los requisitos previos para este escenario).  
-   1. En el Portal de administración de Azure Stack, vaya a **Todos los servicios** y en la categoría **DATOS Y ALMACENAMIENTO**, seleccione **Cuentas de almacenamiento**.  
+   1. En el portal de administración de Azure Stack, vaya a **Todos los servicios** y en la categoría **DATOS Y ALMACENAMIENTO**, seleccione **Cuentas de almacenamiento**.  
 
    2. Seleccione una cuenta de almacenamiento en la suscripción y, después, en **BLOB SERVICE**, seleccione **Contenedores**.  
-      [![Blob service](media/azure-stack-download-azure-marketplace-item/blob-service.png "Blob service")](media/azure-stack-download-azure-marketplace-item/blob-service.png#lightbox)  
+      [![Seleccionar cuenta de almacenamiento y Blob service](media/azure-stack-download-azure-marketplace-item/blob-service.png "Blob service")](media/azure-stack-download-azure-marketplace-item/blob-service.png#lightbox)  
 
    3. Seleccione el contenedor que desee usar y, después, seleccione **Cargar**, para abrir el panel **Cargar blob**.  
-      [![Contenedor](media/azure-stack-download-azure-marketplace-item/container.png "Container")](media/azure-stack-download-azure-marketplace-item/container.png#lightbox)  
+      [![Seleccionar contenedor y Cargar blob](media/azure-stack-download-azure-marketplace-item/container.png "Contenedor")](media/azure-stack-download-azure-marketplace-item/container.png#lightbox)  
 
-   4. En el panel Cargar blob, vaya a los archivos de paquete y de disco que se cargan en el almacenamiento y seleccione **Cargar**: [![Cargar](media/azure-stack-download-azure-marketplace-item/uploadsm.png "Upload")](media/azure-stack-download-azure-marketplace-item/upload.png#lightbox)  
+   4. En el panel Cargar blob, vaya a los archivos de paquete y de disco que se cargan en el almacenamiento y seleccione **Cargar**: [![Panel Cargar blob](media/azure-stack-download-azure-marketplace-item/uploadsm.png "Cargar")](media/azure-stack-download-azure-marketplace-item/upload.png#lightbox)  
 
    5. Los archivos que se cargan aparecen en el panel del contenedor. Seleccione un archivo y, después, copie la dirección URL del panel **Propiedades del blob**. Esta dirección URL la usará en el paso siguiente, cuando importe el elemento de Marketplace en Azure Stack.  En la siguiente imagen, el contenedor es **blob-test-storage** y el archivo es **Microsoft.WindowsServer2016DatacenterServerCore-ARM.1.0.801.azpkg**. La dirección URL del archivo es **https://testblobstorage1.blob.local.azurestack.external/blob-test-storage/Microsoft.WindowsServer2016DatacenterServerCore-ARM.1.0.801.azpkg** .  
       [![Propiedades de blob](media/azure-stack-download-azure-marketplace-item/blob-storagesm.png "Blob properties")](media/azure-stack-download-azure-marketplace-item/blob-storage.png#lightbox)  
@@ -222,7 +222,7 @@ Este escenario tiene dos partes:
     -OsUri "https://mystorageaccount.blob.local.azurestack.external/cont1/Microsoft.WindowsServer2016DatacenterServerCore-ARM.1.0.801.vhd"  
    ```
 
-   **Sobre las plantillas de solución:** Algunas plantillas pueden incluir un pequeño archivo VHD de 3 MB llamado **fixed3.vhd**. Dicho archivo no es preciso que se importe en Azure Stack. El archivo fixed3.vhd se incluye con algunas plantillas de solución para cumplir requisitos de publicación de Azure Marketplace.
+   **Sobre las plantillas de solución:** Algunas plantillas pueden incluir un pequeño archivo VHD de 3 MB llamado **fixed3.vhd**. Dicho archivo no es preciso que se importe en Azure Stack. El archivo Fixed3.vhd se incluye con algunas plantillas de solución para cumplir requisitos de publicación de Azure Marketplace.
 
    Revise la descripción de las plantillas y descargue e importe los requisitos adicionales, como los discos duros virtuales necesarios para trabajar con la plantilla de solución.  
 
@@ -241,10 +241,10 @@ Este escenario tiene dos partes:
      -Verbose
     ```
 
-5. Después de publicar un elemento de la galería está disponible para su uso. Para confirmar que el elemento se ha publicado, vaya a **Todos los servicios** y en la categoría **GENERAL**, seleccione **Marketplace**.  Si la descarga es una plantilla de solución, asegúrese de agregar todas las imágenes de discos duros virtuales de dicha plantilla.  
+5. Después de publicar un elemento de la galería, este ya está disponible para su uso. Para confirmar que el elemento se ha publicado, vaya a **Todos los servicios** y en la categoría **GENERAL**, seleccione **Marketplace**.  Si la descarga es una plantilla de solución, asegúrese de agregar todas las imágenes de discos duros virtuales de dicha plantilla.  
   [![Ver Marketplace](media/azure-stack-download-azure-marketplace-item/view-marketplacesm.png "View marketplace")](media/azure-stack-download-azure-marketplace-item/view-marketplace.png#lightbox)  
 
-Con el lanzamiento de Azure Stack PowerShell 1.3.0 se pueden agregar extensiones de máquina virtual. Por ejemplo:
+Con el lanzamiento de PowerShell 1.3.0 para Azure Stack se pueden agregar extensiones de máquina virtual. Por ejemplo:
 
 ```powershell
 Add-AzsVMExtension -Publisher "Microsoft" -Type "MicroExtension" -Version "0.1.0" -ComputeRole "IaaS" -SourceBlob "https://github.com/Microsoft/PowerShell-DSC-for-Linux/archive/v1.1.1-294.zip" -SupportMultipleExtensions -VmOsType "Linux"

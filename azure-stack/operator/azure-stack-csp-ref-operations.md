@@ -1,6 +1,6 @@
 ---
 title: Registro de inquilinos en Azure Stack para el seguimiento de uso | Microsoft Docs
-description: Obtenga información sobre las operaciones utilizadas para administrar los registros de inquilinos y cómo se realiza el seguimiento del uso de inquilinos en Azure Stack.
+description: Aprenda a registrar inquilinos y cómo se realiza el seguimiento del uso de estos en Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,14 +15,14 @@ ms.date: 09/17/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 01/08/2019
-ms.openlocfilehash: 619bfc89e5def3406d719abfb589193c76c3db6b
-ms.sourcegitcommit: 95f30e32e5441599790d39542ff02ba90e70f9d6
+ms.openlocfilehash: a9e0dd05195d7ece62689aa8b5971cf72a6e3713
+ms.sourcegitcommit: c2ea4ffb42563c26faaf2993ba7b484bcb6d5cb7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71070086"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71342820"
 ---
-# <a name="manage-tenant-registration-in-azure-stack"></a>Administración del registro de inquilinos en Azure Stack
+# <a name="register-tenants-for-usage-tracking-in-azure-stack"></a>Registro de inquilinos en Azure Stack para el seguimiento de uso
 
 *Se aplica a: Sistemas integrados de Azure Stack*
 
@@ -50,7 +50,7 @@ Para más información sobre los perfiles de API y Azure Stack, consulte [Admini
 | Parámetro                  | DESCRIPCIÓN |
 |---                         | --- |
 | registrationSubscriptionID | La suscripción de Azure que se ha usado para el registro inicial. |
-| customerSubscriptionID     | La suscripción de Azure (no Azure Stack) a la que pertenece el cliente que se va a registrar. Debe crearse en la oferta del proveedor de servicios en la nube (CSP) mediante del Centro de partners. Si un cliente tiene más de un inquilino, cree una suscripción para que el inquilino inicie sesión en Azure Stack. |
+| customerSubscriptionID     | La suscripción de Azure (no Azure Stack) a la que pertenece el cliente que se va a registrar. Debe crearse en la oferta del proveedor de soluciones en la nube (CSP) mediante el Centro de partners. Si un cliente tiene más de un inquilino, cree una suscripción para que el inquilino inicie sesión en Azure Stack. |
 | resourceGroup              | El grupo de recursos de Azure en el que se almacena el registro. |
 | registrationName           | El nombre del registro de Azure Stack. Es un objeto almacenado en Azure. El nombre suele ser **azurestack-CloudID**, donde **CloudID** es el identificador de nube de su implementación de Azure Stack. |
 

@@ -16,12 +16,12 @@ ms.date: 04/02/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: d054f4ad45f27994c7ef6fc5e52f07eb1fa7f761
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.openlocfilehash: eca886314388f404e7a26a22f7a3b03294ff0577
+ms.sourcegitcommit: 5e53eb5d43d28ab07b4f84891dd269bbfcf65622
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70974631"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71311305"
 ---
 # <a name="sql-server-best-practices-to-optimize-performance-in-azure-stack"></a>Prácticas recomendadas de SQL Server para optimizar el rendimiento en Azure Stack
 
@@ -98,12 +98,12 @@ Se recomienda almacenar TempDB en un disco de datos, ya que cada disco de datos 
 
 ### <a name="data-disks"></a>Discos de datos.
 
-- **Uso de discos de datos para archivos de datos y de registro.** Si no va a usar el fraccionamiento en discos, utilice dos discos de datos de una máquina virtual que admita Premium Storage, uno para los archivos de registro y el otro para los archivos de datos y TempDB. Cada disco de datos proporciona un número de IOPS y un ancho de banda (MB/s) que depende de la familia de máquinas virtuales, como se indica en [Tamaños de máquinas virtuales admitidos en Azure Stack](azure-stack-vm-sizes.md). Si usa una técnica de fragmentación de discos, como Espacios de almacenamiento, coloque todos los archivos en la misma unidad (incluido TempDB). Esta configuración le proporciona el número máximo de IOPS disponible para que los consuma SQL Server, con independencia de las necesidades de archivo en un momento dado.
+- **Uso de discos de datos para archivos de datos y de registro.** Si no va a usar el fraccionamiento en discos, utilice dos discos de datos de una máquina virtual que admita Premium Storage, uno para los archivos de registro y el otro para los archivos de datos y TempDB. Cada disco de datos proporciona un número de IOPS que depende de la familia de máquinas virtuales, como se indica en [Tamaños de máquinas virtuales admitidos en Azure Stack](azure-stack-vm-sizes.md). Si usa una técnica de fragmentación de discos, como Espacios de almacenamiento, coloque todos los archivos en la misma unidad (incluido TempDB). Esta configuración le proporciona el número máximo de IOPS disponible para que los consuma SQL Server, con independencia de las necesidades de archivo en un momento dado.
 
 > [!NOTE]  
 > Al aprovisionar una máquina virtual de SQL Server en el portal, tiene la opción de modificar la configuración de almacenamiento. Según la configuración, Azure Stack configura uno o varios discos. Varios discos se combinan en un único grupo de almacenamiento. Los archivos de datos y de registro residen juntos en esta configuración.
 
-- **Seccionamiento del disco:** Para disfrutar de un mayor rendimiento, puede agregar más discos de datos y usar el seccionamiento de discos. Para determinar el número de discos de datos, debe analizar el número de IOPS y ancho de banda necesario para los archivos de registro, así como para los datos y los archivos TempDB. Tenga en cuenta que los límites de IOPS son por disco de datos y se basan en la familia de la serie de máquinas virtuales y no en el tamaño de estas. No obstante, los límites en el ancho de banda de la red, se basan en el tamaño de la máquina virtual. Consulte las tablas de [tamaños de máquina virtual de Azure Stack](azure-stack-vm-sizes.md) para más información. Use estas directrices:
+- **Seccionamiento del disco:** Para disfrutar de un mayor rendimiento, puede agregar más discos de datos y usar el seccionamiento de discos. Para determinar el número de discos de datos, debe analizar el número de IOPS necesario para los archivos de registro, así como para los datos y los archivos TempDB. Tenga en cuenta que los límites de IOPS son por disco de datos y se basan en la familia de la serie de máquinas virtuales y no en el tamaño de estas. No obstante, los límites en el ancho de banda de la red, se basan en el tamaño de la máquina virtual. Consulte las tablas de [tamaños de máquina virtual de Azure Stack](azure-stack-vm-sizes.md) para más información. Use estas directrices:
 
   - Para Windows Server 2012 o posterior, use [Espacios de almacenamiento](https://technet.microsoft.com/library/hh831739.aspx) con las siguientes directrices:
 

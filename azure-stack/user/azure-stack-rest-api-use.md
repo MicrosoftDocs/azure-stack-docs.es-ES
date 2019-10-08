@@ -10,16 +10,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/16/2019
+ms.date: 10/01/2019
 ms.author: sethm
 ms.reviewer: thoroet
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 0be1e7832d5ac32b092e44674b78c59552af351c
-ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
+ms.openlocfilehash: 822d05c53db2d55b3cddac44fa919c72e9af2efe
+ms.sourcegitcommit: bbf3edbfc07603d2c23de44240933c07976ea550
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71159716"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71714653"
 ---
 <!--  cblackuk and charliejllewellyn. This is a community contribution by cblackuk-->
 
@@ -27,19 +27,19 @@ ms.locfileid: "71159716"
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Puede usar la interfaz de programación de aplicaciones (API) para automatizar operaciones como la incorporación de una máquina virtual (VM) a la nube de Azure Stack.
+Puede usar la API REST de Azure Stack para automatizar operaciones como la incorporación de una máquina virtual a la nube de Azure Stack.
 
-La API requiere que el cliente se autentique en el punto de conexión de inicio de sesión de Microsoft Azure. Este punto de conexión devuelve un token en el encabezado de cada solicitud enviada a la API de Azure Stack. Microsoft Azure usa Oauth 2.0.
+La API requiere que el cliente se autentique en el punto de conexión de inicio de sesión de Microsoft Azure. Este punto de conexión devuelve un token en el encabezado de cada solicitud enviada a las API de Azure Stack. Microsoft Azure usa Oauth 2.0.
 
-En este artículo se proporcionan ejemplos que usan la utilidad **cURL** para crear solicitudes de Azure Stack. cURL es una herramienta de línea de comandos con una biblioteca para transferir datos. Estos ejemplos lo guían por el proceso de recuperación de un token de acceso a la API de Azure Stack. La mayoría de los lenguajes de programación proporcionan bibliotecas Oauth 2.0, que presentan una buena administración de los tokens y controlan tareas tales como la actualización del token.
+En este artículo se proporcionan ejemplos que usan la utilidad **cURL** para crear solicitudes de Azure Stack. cURL es una herramienta de línea de comandos con una biblioteca para transferir datos. Estos ejemplos lo guían por el proceso de recuperación de un token de acceso a las API de Azure Stack. La mayoría de los lenguajes de programación proporcionan bibliotecas Oauth 2.0, que presentan una buena administración de los tokens y controlan tareas tales como la actualización del token.
 
-Examine todo el proceso de utilización de la API REST de Azure Stack con un cliente REST genérico, como **cURL**, para que le ayude a comprender las solicitudes subyacentes y lo que puede esperar de una carga de respuesta.
+Examine todo el proceso de utilización de las API REST de Azure Stack con un cliente REST genérico, como **cURL**, para que le ayude a comprender las solicitudes subyacentes y lo que puede esperar de una carga de respuesta.
 
-En este artículo no se exploran todas las opciones disponibles para recuperar tokens, como el inicio de sesión interactivo o la creación de identificadores de aplicación dedicados. Para obtener información acerca de estos temas, consulte [Referencia de API REST de Azure](https://docs.microsoft.com/rest/api/).
+En este artículo no se exploran todas las opciones disponibles para recuperar tokens, como el inicio de sesión interactivo o la creación de identificadores de aplicación dedicados. Para obtener información acerca de estos temas, consulte [Referencia de API REST de Azure](/rest/api/).
 
 ## <a name="get-a-token-from-azure"></a>Obtención de un token de Azure
 
-Cree el cuerpo de la solicitud con el formato de tipo de contenido x-www-form-urlencoded para obtener un token de acceso. Realice una solicitud POST en el punto de conexión de autenticación e inicio de sesión de REST de Azure.
+Cree el cuerpo de la solicitud con el formato de tipo de contenido `x-www-form-urlencoded` para obtener un token de acceso. Realice una solicitud POST en el punto de conexión de autenticación e inicio de sesión de REST de Azure.
 
 ### <a name="uri"></a>URI
 
@@ -49,9 +49,9 @@ POST https://login.microsoftonline.com/{tenant id}/oauth2/token
 
 El **identificador de inquilino** es:
 
- - El dominio del inquilino, como `fabrikam.onmicrosoft.com`
- - El identificador del inquilino, como `8eaed023-2b34-4da1-9baa-8bc8c9d6a491`
- - Valor predeterminado de las claves independientes del inquilino: `common`
+- El dominio del inquilino, como `fabrikam.onmicrosoft.com`
+- El identificador del inquilino, como `8eaed023-2b34-4da1-9baa-8bc8c9d6a491`
+- Valor predeterminado de las claves independientes del inquilino: `common`
 
 ### <a name="post-body"></a>Cuerpo de POST
 
@@ -72,13 +72,14 @@ Para cada valor:
 - **resource**:  
    El recurso al que accede al token. Para encontrar el recurso, consulte el punto de conexión de metadatos de administración de Azure Stack. Examine la sección **audiences**.
 
-- **Punto de conexión de administración de Azure Stack**:  
-   ```
+- **Punto de conexión de administración de Azure Stack**:
+
+   ```bash
    https://management.{region}.{Azure Stack domain}/metadata/endpoints?api-version=2015-01-01
    ```
 
   > [!NOTE]  
-  > Si es un administrador que intenta acceder a la API de inquilino, asegúrese de usar el punto de conexión del inquilino. Por ejemplo: `https://adminmanagement.{region}.{Azure Stack domain}/metadata/endpoints?api-version=2015-01-011`  
+  > Si es un administrador que intenta acceder a la API de inquilino, asegúrese de usar el punto de conexión del inquilino, por ejemplo `https://adminmanagement.{region}.{Azure Stack domain}/metadata/endpoints?api-version=2015-01-011`.
 
   Por ejemplo, con el Kit de desarrollo de Azure Stack como punto de conexión:
 
@@ -88,7 +89,7 @@ Para cada valor:
 
   Respuesta:
 
-  ```
+  ```bash
   {
   "galleryEndpoint":"https://adminportal.local.azurestack.external:30015/",
   "graphEndpoint":"https://graph.windows.net/",
@@ -102,21 +103,20 @@ Para cada valor:
 
 ### <a name="example"></a>Ejemplo
 
-  ```
+  ```bash
   https://contoso.onmicrosoft.com/4de154de-f8a8-4017-af41-df619da68155
   ```
 
-  **client_id**
+- **client_id**
 
   Este valor está codificado en un valor predeterminado:
 
-  ```
+  ```bash
   1950a258-227b-4e31-a9cf-717495945fc2
   ```
 
   Existen opciones alternativas disponibles para escenarios concretos:
 
-  
   | Application | ApplicationID |
   | --------------------------------------- |:-------------------------------------------------------------:|
   | LegacyPowerShell | 0a7bdc5c-7b57-40be-9939-d4c5fc7cd417 |
@@ -125,15 +125,15 @@ Para cada valor:
   | VisualStudio | 872cd9fa-d31f-45e0-9eab-6e460a02d1f1 |
   | AzureCLI | 04b07795-8ddb-461a-bbee-02f9e1bf7b46 |
 
-  **username**
+- **username**
 
   Por ejemplo, la cuenta de Azure AD de Azure Stack:
 
-  ```
+  ```bash
   azurestackadmin@fabrikam.onmicrosoft.com
   ```
 
-  **password**
+- **password**
 
   La contraseña de administrador de Azure AD de Azure Stack.
 
@@ -141,7 +141,7 @@ Para cada valor:
 
 Solicitud:
 
-```
+```bash
 curl -X "POST" "https://login.windows.net/fabrikam.onmicrosoft.com/oauth2/token" \
 -H "Content-Type: application/x-www-form-urlencoded" \
 --data-urlencode "client_id=1950a258-227b-4e31-a9cf-717495945fc2" \
@@ -153,7 +153,7 @@ curl -X "POST" "https://login.windows.net/fabrikam.onmicrosoft.com/oauth2/token"
 
 Respuesta:
 
-```
+```bash
 {
   "token_type": "Bearer",
   "scope": "user_impersonation",
@@ -168,7 +168,7 @@ Respuesta:
 
 ## <a name="api-queries"></a>Consultas de la API
 
-Una vez que obtenga el token de acceso, agréguelo como un encabezado a todas las solicitudes de API. Para agregarlo como un encabezado, cree un encabezado **Authorization** con el valor: `Bearer <access token>`. Por ejemplo:
+Una vez que obtenga el token de acceso, agréguelo como un encabezado a todas las solicitudes de API. Para agregarlo como un encabezado, cree un encabezado **authorization** con el valor: `Bearer <access token>`. Por ejemplo:
 
 Solicitud:
 
@@ -203,22 +203,22 @@ La cadena proporciona parámetros simples adicionales, como los criterios de sel
 
 ## <a name="azure-stack-request-uri-construct"></a>Construcción de URI de solicitud de Azure Stack
 
-```
+```bash
 {URI-scheme} :// {URI-host} / {subscription id} / {resource group} / {provider} / {resource-path} ? {OPTIONAL: filter-expression} {MANDATORY: api-version}
 ```
 
 ### <a name="uri-syntax"></a>Sintaxis de URI
 
-```
+```bash
 https://adminmanagement.local.azurestack.external/{subscription id}/resourcegroups/{resource group}/providers/{provider}/{resource-path}?{api-version}
 ```
 
 ### <a name="query-uri-example"></a>Ejemplo de consulta de URI
 
-```
+```bash
 https://adminmanagement.local.azurestack.external/subscriptions/800c4168-3eb1-406b-a4ca-919fe7ee42e8/resourcegroups/system.local/providers/microsoft.infrastructureinsights.admin/regionhealths/local/Alerts?$filter=(Properties/State eq 'Active') and (Properties/Severity eq 'Critical')&$orderby=Properties/CreatedTimestamp desc&api-version=2016-05-01"
 ```
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Para más información sobre el uso de los puntos de conexión de RESTful de Azure, consulte la [referencia de la API REST de Azure](https://docs.microsoft.com/rest/api/).
+Para más información sobre el uso de los puntos de conexión de REST de Azure, consulte la [referencia de la API REST de Azure](/rest/api/).

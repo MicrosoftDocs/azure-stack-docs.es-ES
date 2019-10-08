@@ -12,24 +12,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/12/2019
+ms.date: 09/26/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: 7946b8339c9ff1127c0a9d9572c49527208b38f2
-ms.sourcegitcommit: e8f7fe07b32be33ef621915089344caf1fdca3fd
+ms.openlocfilehash: ab43d94c2e65032e5e525ec000e38cacb01b2980
+ms.sourcegitcommit: 1bae55e754d7be75e03af7a4db3ec43fd7ff3e9c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70118653"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71319100"
 ---
 # <a name="troubleshoot-the-asdk"></a>Solucionar problemas del ASDK
-En este artículo se proporciona información sobre cómo solucionar problemas comunes para el Kit de desarrollo de Azure Stack (ASDK). Si tiene alguna incidencia que no esté documentada, asegúrese de consultar el [foro de MSDN de Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack) para obtener ayuda.  
+En este artículo se proporciona información sobre cómo solucionar problemas comunes para el Kit de desarrollo de Azure Stack (ASDK). Para obtener ayuda con los sistemas integrados de Azure Stack, consulte [Solución de problemas de Microsoft Azure Stack](../operator/azure-stack-troubleshooting.md). 
 
-> [!IMPORTANT]
-> Como ASDK es un entorno de evaluación, no se ofrece soporte técnico oficial a través de los servicios de soporte técnico al cliente (CSS) de Microsoft.
+Como ASDK es un entorno de evaluación, los servicios de soporte técnico al cliente (CSS) de Microsoft no proporcionan dicho soporte. Si tiene alguna incidencia que no esté documentada, puede obtener ayuda de expertos en el [foro de MSDN de Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack). 
 
-Las recomendaciones para solucionar problemas que se describen en esta sección se derivan de varios orígenes y pueden resolver o no su problema particular. Los ejemplos de códigos se proporcionan tal cual y no se pueden garantizar los resultados esperados. Esta sección está sujeta a modificaciones y actualizaciones frecuentes cuando se implementan mejoras del producto.
 
 ## <a name="deployment"></a>Implementación
 ### <a name="deployment-failure"></a>Error de implementación
@@ -47,18 +45,18 @@ Este comportamiento probablemente sea solo el resultado del comportamiento prede
 ### <a name="default-image-and-gallery-item"></a>Elemento de la galería e imagen predeterminada
 Se debe agregar un elemento de la galería y una imagen de Windows Server antes de implementar máquinas virtuales en Azure Stack.
 
-### <a name="after-restarting-my-azure-stack-host-some-vms-dont-automatically-start"></a>Después de reiniciar el host de Azure Stack, algunas VM se no inician automáticamente.
+### <a name="after-restarting-my-azure-stack-host-some-vms-dont-automatically-start"></a>Después de reiniciar el host de Azure Stack, algunas máquinas virtuales no se inician automáticamente.
 Después de reiniciar el host, puede observar que los servicios de Azure Stack no están disponibles de inmediato. Esto se debe a que tanto las [máquinas virtuales de infraestructura](asdk-architecture.md#virtual-machine-roles) de Azure Stack y como los RP tardan un tiempo en comprobar la coherencia, pero finalmente se iniciarán automáticamente.
 
-También puede observar que las VM de ese inquilino no se inician de forma automática después de reiniciar el host del ASDK. Es un problema conocido y solo requiere algunos pasos manuales para ponerlas en línea:
+También puede observar que las VM de ese inquilino no se inician de forma automática después de reiniciar el host del ASDK. Puede conectarlas con algunos pasos manuales:
 
 1.  En el host del ASDK, inicie el **Administrador de clústeres de conmutación por error** en el menú Inicio.
 2.  Seleccione el clúster **Cluster.azurestack.local**.
 3.  Seleccione **Roles**.
 4.  Las máquinas virtuales del inquilino aparecen con estado *guardado*. Una vez que se ejecutan todas las máquinas virtuales de la infraestructura, haga clic en las del inquilino y seleccione **Iniciar** para reanudar la máquina virtual.
 
-### <a name="ive-deleted-some-vms-but-still-see-the-vhd-files-on-disk-is-this-behavior-expected"></a>He eliminado algunas VM, pero sigo viendo los archivos del disco duro virtual en el disco. ¿Es normal este comportamiento?
-Sí, este es el comportamiento esperado. Está diseñado así porque:
+### <a name="ive-deleted-some-vms-but-still-see-the-vhd-files-on-disk"></a>He eliminado algunas máquinas virtuales, pero sigo viendo los archivos del disco duro virtual en el disco. 
+Este comportamiento es así por diseño:
 
 * Al eliminar una VM, no se eliminan los discos duros virtuales. Los discos son recursos independientes en el grupo de recursos.
 * Cuando se elimina una cuenta de almacenamiento, la eliminación es visible de inmediato a través de Azure Resource Manager, pero los discos que puede contener todavía se conservan en el almacenamiento hasta que se ejecuta la recolección de elementos no utilizados.

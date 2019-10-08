@@ -1,6 +1,6 @@
 ---
-title: Recopilación de registros de diagnóstico de Azure Stack ahora | Microsoft Docs
-description: Cómo configurar la recopilación de registros de diagnóstico a petición en Ayuda y soporte técnico de Azure Stack.
+title: Recopilación de registros de diagnóstico de Azure Stack a petición | Microsoft Docs
+description: Aprenda a recopilar registros de diagnóstico a petición en Azure Stack con ayuda y soporte técnico o un punto de conexión con privilegios (PEP).
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -16,20 +16,20 @@ ms.date: 07/31/2019
 ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 07/31/2019
-ms.openlocfilehash: 007703facf882eccd594dfb6f78941570c9cfb02
-ms.sourcegitcommit: 8de4c18b25bd1047fc270812a795f24e8f1e9244
+ms.openlocfilehash: 9d8510c121c424c3c66fd179639256e8834e932e
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68865897"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71829061"
 ---
-# <a name="collect-azure-stack-diagnostic-logs-now-on-demand"></a>Recopilación de registros de diagnóstico de Azure Stack ahora (a petición)
+# <a name="collect-azure-stack-diagnostic-logs-on-demand"></a>Recopilación de registros de diagnóstico de Azure Stack a petición
 
 *Se aplica a: Sistemas integrados de Azure Stack*
 
 Como parte de la solución de problemas, es posible que los servicios de soporte al cliente de Microsoft (CSS) necesiten analizar los registros de diagnóstico. A partir de la versión 1907, los operadores de Azure Stack pueden cargar registros de diagnóstico a petición en un contenedor de blobs de Azure mediante **Ayuda y soporte técnico**. Como alternativa si el portal no está disponible, los operadores pueden recopilar registros mediante Get-AzureStackLog a través del punto de conexión con privilegios (PEP). En este tema se tratan las dos maneras de recopilar registros de diagnóstico a petición.
 
-## <a name="using-help-and-support"></a>Uso de Ayuda y soporte técnico
+## <a name="use-help-and-support-to-collect-diagnostic-logs"></a>Uso ayuda y soporte técnico para recopilar registros de diagnóstico
 
 Para solucionar un problema, CSS podría solicitar que un operador de Azure Stack recopilara los registros de diagnóstico a petición para una ventana de tiempo específica de la semana anterior. En ese caso, CSS proporcionará al operador una dirección URL de SAS para cargar la colección. Siga los pasos que se indican a continuación para configurar la recopilación de registros a petición mediante la dirección URL de SAS de CSS:
 
@@ -43,17 +43,17 @@ Para solucionar un problema, CSS podría solicitar que un operador de Azure Stac
 >[!NOTE]
 >Si está habilitada la recopilación de registros de diagnóstico automática, **Ayuda y soporte técnico** muestra cuando la recopilación de registros está en curso. Si hace clic en **Collect logs now** (Recopilar registros ahora) para recopilar registros de una hora específica mientras la recopilación automática de registros está en curso, la recopilación a petición se inicia una vez completada la recopilación de registros automática. 
 
-## <a name="using-pep"></a>Uso de PEP
+## <a name="using-pep-to-collect-diagnostic-logs"></a>Uso de un punto de conexión con privilegios para recopilar registros de diagnóstico
 
 <!--how do you look up the PEP IP address. You look up the azurestackstampinfo.json--->
 
 Las herramientas de diagnóstico de Azure Stack ayudan a que la recopilación de registros sea fácil y eficaz. En el diagrama siguiente se muestra cómo funcionan las herramientas de diagnóstico:
 
-![Herramientas de diagnóstico de Azure Stack](media/azure-stack-diagnostics/get-azslogs.png)
+![Diagrama de flujo de trabajo de herramientas de diagnóstico de Azure Stack](media/azure-stack-diagnostics/get-azslogs.png)
 
 ### <a name="trace-collector"></a>Recopilador de seguimiento
 
-El recopilador de seguimiento está habilitado de forma predeterminada y se ejecuta continuamente en segundo plano para recopilar el todos los registros de Seguimiento de eventos para Windows (ETW) de los servicios de componentes de Azure Stack. Los registros de ETW se almacenan en un recurso compartido local común con un límite de antigüedad de cinco días. Una vez que se alcanza este límite, se eliminan los archivos más antiguos cuando se crean nuevos. El tamaño máximo predeterminado permitido para cada archivo es de 200 MB. Se realiza una comprobación de tamaño cada dos minutos y si el archivo actual es > = 200 MB, se guarda y se genera otro. También hay un límite de 8 GB en el tamaño total del archivo generado por cada sesión de eventos.
+El recopilador de seguimiento está habilitado de forma predeterminada y se ejecuta continuamente en segundo plano para recopilar el todos los registros de Seguimiento de eventos para Windows (ETW) de los servicios de componentes de Azure Stack. Los registros de ETW se almacenan en un recurso compartido local común con un límite de antigüedad de cinco días. Una vez que se alcanza este límite, se eliminan los archivos más antiguos cuando se crean nuevos. El tamaño máximo predeterminado permitido para cada archivo es de 200 MB. Se realiza una comprobación de tamaño cada dos minutos y si el archivo actual es > = 200 MB, se guarda y se genera otro. También hay un límite de 8 GB en el tamaño total del archivo generado por cada sesión de eventos.
 
 ### <a name="get-azurestacklog"></a>Get-AzureStackLog
 
@@ -148,12 +148,12 @@ Siga estos pasos para ejecutar `Get-AzureStackLog` en un equipo que hospede ASDK
 
   Para generar el token de SAS para la cuenta de almacenamiento, se requieren los permisos siguientes:
 
-  * Acceso al servicio Blob Storage
-  * Acceso al tipo de recurso del contenedor
+  * Acceso al servicio Blob Storage.
+  * Acceso al tipo de recurso del contenedor.
 
-  Para generar un valor de URI de SAS que usar para el parámetro `-OutputSasUri`, realice los pasos siguientes:
+  Para generar un valor de URI de SAS que se pueda usar para el parámetro `-OutputSasUri`, realice los pasos siguientes:
 
-  1. Para crear una cuenta de almacenamiento, siga los pasos de este [artículo](/azure/storage/common/storage-quickstart-create-account).
+  1. Para crear una cuenta de almacenamiento, siga los pasos [de este artículo](/azure/storage/common/storage-quickstart-create-account).
   2. Abra una instancia del Explorador de Azure Storage.
   3. Conéctese a la cuenta de almacenamiento creada en el paso 1.
   4. Vaya a **Blob Containers** (Contenedores de blobs) en **Servicios de almacenamiento**.
@@ -195,7 +195,7 @@ Siga estos pasos para ejecutar `Get-AzureStackLog` en un equipo que hospede ASDK
   |ACSFrontEnd           |CRP                            |KeyVaultControlPlane           |QueryServiceCoordinator   |         | 
   |ACSMetrics            |DeploymentMachine              |KeyVaultDataPlane              |QueryServiceWorker        |         |
   |ACSMigrationService   |DiskRP                         |KeyVaultInternalControlPlane   |SeedRing                  |         |
-  |ACSMonitoringService  |Dominio                         |KeyVaultInternalDataPlane      |SeedRingServices          |         |
+  |ACSMonitoringService  |Domain                         |KeyVaultInternalDataPlane      |SeedRingServices          |         |
   |ACSSettingsService    |ECE                            |KeyVaultNamingService          |SLB                       |         |
   |ACSTableMaster        |EventAdminRP                   |MDM                            |SQL                       |         |
   |ACSTableServer        |EventRP                        |MetricsAdminRP                 |SRP                       |         |
@@ -209,11 +209,11 @@ Siga estos pasos para ejecutar `Get-AzureStackLog` en un equipo que hospede ASDK
   |BRP                   |HintingServiceV2               |NRP                            |UsageBridge               |         |
   |   |   |   |    |     | 
 
-### <a name="additional-considerations"></a>Consideraciones adicionales
+### <a name="additional-considerations-on-diagnostic-logs"></a>Consideraciones adicionales sobre los registros de diagnóstico
 
 * Este comando tardará un rato en ejecutarse, en función de los roles que recopilen los registros. Entre los factores que contribuyen, se incluye la duración especificada para la colección de registros y el número de nodos en el entorno de Azure Stack.
 * Cuando se ejecuta la recopilación de registros, compruebe la nueva carpeta creada en el parámetro **OutputSharePath** especificado en el comando.
-* Cada rol tiene sus registros dentro de archivos ZIP individuales. Según el tamaño de los registros recopilados, un rol puede dividir sus registros en varios archivos ZIP. Para tal rol, si desea que todos los archivos de registro se descompriman en una sola carpeta, use una herramienta que pueda descomprimir de forma masiva. Seleccione todos los archivos comprimidos para el rol y seleccione **extraer aquí**. Así se descomprimen todos los archivos de registro para ese rol en una sola carpeta combinada.
+* Cada rol tiene sus registros dentro de archivos ZIP individuales. Según el tamaño de los registros recopilados, un rol puede dividir sus registros en varios archivos ZIP. Para ese rol, si desea que todos los archivos de registro se descompriman en una sola carpeta, use una herramienta que pueda descomprimir de forma masiva. Seleccione todos los archivos comprimidos para el rol y seleccione **extraer aquí**. Todos los archivos de registro de ese rol se descomprimirán en una sola carpeta combinada.
 * También se crea un archivo denominado **Get-AzureStackLog_Output.log** en la carpeta que contiene los archivos de registro comprimidos. Este archivo es un registro de la salida del comando, que se puede usar para solucionar problemas durante la recopilación de registros. En ocasiones, el archivo de registro incluye entradas `PS>TerminatingError` que se pueden omitir sin problema, a menos que falten los archivos de registro esperados después de ejecutar la recopilación de registros.
 * Para investigar un error específico, es posible que sean necesarios registros de más de un componente.
 
@@ -223,7 +223,7 @@ Siga estos pasos para ejecutar `Get-AzureStackLog` en un equipo que hospede ASDK
   * Los registros de ACS se recopilan en los roles **Storage** y **ACS**.
 
 > [!NOTE]
-> Se aplican límites en el tamaño y la antigüedad para los registros recopilados, ya que resulta esencial para garantizar un uso eficaz del espacio de almacenamiento y para asegurarse de que este no recibe demasiados registros. Sin embargo, cuando se diagnostica un problema, a veces se necesitan registros que podrían no existir ya debido a estos límites. Por lo tanto, le **recomendamos encarecidamente** que descargue los registros en un espacio de almacenamiento externo (una cuenta de almacenamiento de Azure, un dispositivo de almacenamiento local adicional, etc.) cada 8-12 horas y los conserve allí de 1 a 3 meses según necesite. Asegúrese también de que la ubicación de almacenamiento está cifrada.
+> Se aplican límites en el tamaño y la antigüedad de los registros recopilados, ya que es esencial garantizar un uso eficaz del espacio de almacenamiento y evitar que este reciba demasiados registros. Sin embargo, cuando se diagnostica un problema, a veces se necesitan registros que podrían no existir ya debido a estos límites. Por lo tanto, es **muy recomendable** que descargue los registros en un espacio de almacenamiento externo (una cuenta de almacenamiento de Azure, un dispositivo de almacenamiento local adicional, etc.) cada 8-12 horas y los conserve allí de 1 a 3 meses según necesite. Debe asegurarse también de que la ubicación de almacenamiento está cifrada.
 
 ### <a name="invoke-azurestackondemandlog"></a>Invoke-AzureStackOnDemandLog
 
@@ -236,7 +236,7 @@ Actualmente, no se puede usar el parámetro `-FilterByRole` para filtrar la cole
 * SLB
 * Puerta de enlace
 
-#### <a name="example-of-collecting-on-demand-logs"></a>Ejemplo de recopilación de registros a petición
+#### <a name="example-of-collecting-on-demand-diagnostic-logs"></a>Ejemplo de recopilación de registros a petición
 
 ```powershell
 $ipAddress = "<IP ADDRESS OF THE PEP VM>" # You can also use the machine name instead of IP here.

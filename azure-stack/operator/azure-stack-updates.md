@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/10/2019
+ms.date: 10/01/2019
 ms.author: mabrigg
 ms.lastreviewed: 09/10/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 64e1bd7934b1b3b8c0bc935a920a2e4e188c4bd9
-ms.sourcegitcommit: c46d913ebfa4cb6c775c5117ac5c9e87d032a271
+ms.openlocfilehash: ae603e1914b5a83f190eeafe7fa7d7e94e43a1aa
+ms.sourcegitcommit: bbf3edbfc07603d2c23de44240933c07976ea550
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71101197"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71714709"
 ---
 # <a name="manage-updates-in-azure-stack-overview"></a>Introducción a la administración de actualizaciones en Azure Stack
 
@@ -65,7 +65,7 @@ El aviso de actualizaciones varía en función de un par de factores, como su co
 
 - **Actualizaciones y revisiones de software de Microsoft** 
 
-    Aparecerá una alerta de actualización para las actualizaciones y revisiones de software de Microsoft en la hoja Actualización para las instancias de Azure Stack que están conectadas a Internet.
+    Aparecerá una alerta de actualización para las actualizaciones y revisiones de software de Microsoft en la hoja Actualización para las instancias de Azure Stack que están conectadas a Internet. Si no aparece la hoja Actualizar, reinicie la máquina virtual del controlador de administración de la infraestructura.
 
     Si su instancia no está conectada y desea recibir una notificación sobre cada versión de revisión, suscríbase a la fuente [RSS](https://support.microsoft.com/app/content/api/content/feeds/sap/en-us/32d322a8-acae-202d-e9a9-7371dccf381b/rss) o [ATOM](https://support.microsoft.com/app/content/api/content/feeds/sap/en-us/32d322a8-acae-202d-e9a9-7371dccf381b/atom).
 

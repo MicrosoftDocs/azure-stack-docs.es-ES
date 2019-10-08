@@ -11,26 +11,26 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/21/2019
+ms.date: 10/01/2019
 ms.author: sethm
 ms.lastreviewed: 01/16/2019
-ms.openlocfilehash: efa8dda8061ce81d751e9cce47c5e81a3917f2bf
-ms.sourcegitcommit: ad2f2cb4dc8d5cf0c2c37517d5125921cff44cdd
+ms.openlocfilehash: 9d86f7e68b2e96eb4a22f9896ff65a4ed6b96f92
+ms.sourcegitcommit: bbf3edbfc07603d2c23de44240933c07976ea550
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67138838"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71714748"
 ---
 # <a name="store-service-principal-credentials-in-azure-stack-key-vault"></a>Almacenar las credenciales de entidad de servicio de Key Vault en Azure Stack
 
 Desarrollar aplicaciones en Azure Stack habitualmente requiere crear una entidad de servicio y usar esas credenciales para realizar la autenticación antes de la implementación. Sin embargo, a veces se pierden las credenciales almacenadas para la entidad de servicio. En este artículo se describe cómo crear una entidad de servicio y almacenar los valores en Azure Key Vault para su posterior recuperación.
 
-Para más información sobre Key Vault, consulte [este artículo](azure-stack-key-vault-intro.md).
+Para más información acerca de Key Vault, consulte [Introducción a Key Vault en Azure Stack](azure-stack-key-vault-intro.md).
 
 ## <a name="prerequisites"></a>Requisitos previos
 
 - Una suscripción a una oferta que incluye el servicio de Azure Key Vault.
-- PowerShell está configurado para su uso con Azure Stack.
+- PowerShell está instalado y configurado para su uso con Azure Stack.
 
 ## <a name="key-vault-in-azure-stack"></a>Key Vault en Azure Stack
 
@@ -48,7 +48,7 @@ Para crear un almacén de claves, siga estos pasos:
 
 4. Elija una suscripción de la lista de suscripciones disponibles.
 
-5. Seleccione un grupo de recursos existente o cree uno nuevo.
+5. Seleccione un grupo de recursos existente, o bien cree uno.
 
 6. Seleccione el plan de tarifa.
 
@@ -96,7 +96,7 @@ Para crear un almacén de claves, siga estos pasos:
 
 8. Seleccione **Crear** para iniciar la implementación.
 
-Una vez que el secreto se ha creado correctamente, la información de la entidad de servicio se almacena ahí. Puede seleccionarla en cualquier momento en **Secretos** y ver o modificar sus propiedades. La sección de propiedades contiene el identificador del secreto, que es un identificador uniforme de recursos (URI) que las aplicaciones externas usan para acceder a este secreto.
+Una vez que el secreto se ha creado correctamente, la información de la entidad de servicio se almacena ahí. Puede seleccionarla en cualquier momento en **Secretos** y vea o modifique sus propiedades. La sección de **propiedades** contiene el identificador del secreto, que es un identificador uniforme de recursos (URI) que las aplicaciones externas usan para acceder a este secreto.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
