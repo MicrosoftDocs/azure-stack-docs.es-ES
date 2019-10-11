@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/13/2019
+ms.date: 10/02/2019
 ms.author: mabrigg
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: c8828076c74e5f12c742206e3c38c8ee44f90b4c
-ms.sourcegitcommit: 72d45bb935db0db172d4d7c37d8e48e79e25af64
+ms.openlocfilehash: dfa9666387093f60dfd41e371707dff23119dc9a
+ms.sourcegitcommit: a7207f4a4c40d4917b63e729fd6872b3dba72968
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68376863"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71909583"
 ---
 # <a name="introduction-to-azure-stack-storage"></a>Introducción a Azure Stack Storage
 

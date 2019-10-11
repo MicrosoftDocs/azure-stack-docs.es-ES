@@ -13,16 +13,16 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 06/04/2019
+ms.date: 10/03/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 11/13/2018
-ms.openlocfilehash: d82cdb1cccd52cc5e4c11571d85914be3f79a74e
-ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
+ms.openlocfilehash: 02300ae5c3a6ef7fd104dfb59e179b557e0c8778
+ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66691580"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71961706"
 ---
 # <a name="tutorial-create-a-vm-using-a-community-template"></a>Tutorial: Creación de una máquina virtual mediante una plantilla de comunidad
 
@@ -37,9 +37,9 @@ En este tutorial, aprenderá a:
 
 ## <a name="azure-stack-quickstart-templates"></a>Plantillas de inicio rápido de Azure Stack
 
-Las plantillas de inicio rápido de Azure Stack se almacenan en el [repositorio global de plantillas de inicio rápido de Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates) de GitHub. Este repositorio contiene las plantillas de implementación de Azure Resource Manager que se han probado con el Kit de desarrollo de Microsoft Azure Stack (ASDK). Puede utilizarlas para que sea más fácil evaluar Azure Stack y utilizar el entorno del Kit de desarrollo de Azure Stack.
+Las plantillas de inicio rápido de Azure Stack se almacenan en el [repositorio global de plantillas de inicio rápido de Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates) de GitHub. Este repositorio contiene las plantillas de implementación de Azure Resource Manager que se han probado con el Kit de desarrollo de Microsoft Azure Stack. Puede utilizarlas para que sea más fácil evaluar Azure Stack y utilizar el entorno del Kit de desarrollo de Azure Stack.
 
-Con el tiempo, muchos usuarios de GitHub han contribuido al repositorio, lo que ha dado como resultado una colección de más de 400 plantillas de implementación. Este repositorio es un excelente punto de partida para conocer mejor cómo se pueden puede implementar varios tipos de entornos en Azure Stack.
+Con el tiempo, muchos usuarios de GitHub han contribuido al repositorio, lo que ha dado como resultado una colección de más de 400 plantillas de implementación. Este repositorio es un buen punto de partida para conocer mejor cómo se pueden puede implementar varios tipos de entornos en Azure Stack.
 
 >[!IMPORTANT]
 > Algunas de estas plantillas las crean miembros de la comunidad y no Microsoft. Su propietario (no Microsoft) le permite usar las plantillas con arreglo a un acuerdo de licencia. Microsoft no se responsabiliza de estas plantillas en cuanto a su seguridad, compatibilidad ni rendimiento. Las plantillas de la comunidad no reciben ningún tipo de soporte en ningún servicio ni programa de soporte de Microsoft. Dichas plantillas se proporcionan TAL CUAL, sin garantía de ningún tipo.
