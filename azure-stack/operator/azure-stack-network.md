@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/04/2019
+ms.date: 10/07/2019
 ms.author: mabrigg
 ms.reviewer: wamota
 ms.lastreviewed: 06/04/2019
-ms.openlocfilehash: b2b53edaba6a6cb180ae617740fd4695b1a86187
-ms.sourcegitcommit: 637018771ac016b7d428174e88d4dcb131b54959
+ms.openlocfilehash: dca5d863a046ec225b4d34c8cf5917153a3a5785
+ms.sourcegitcommit: 12034a1190d52ca2c7d3f05c8c096416120d8392
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68842731"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72037973"
 ---
 # <a name="network-connectivity"></a>Conectividad de red
 En este artículo se ofrece información sobre la infraestructura de red de Azure Stack que le ayudará decidir cuál es la mejor forma de integrar Azure Stack en su entorno de red existente. 
@@ -55,7 +55,7 @@ La infraestructura de red de Azure Stack consta de varias redes lógicas que est
 ![Conexiones del conmutador y diagrama de red lógica](media/azure-stack-network/NetworkDiagram.png)
 
 ### <a name="bmc-network"></a>Red de BMC
-Esta red está dedicada a conectar todos los controladores de administración de la placa base (también conocidos como procesadores de servicio, por ejemplo, iDRAC, iLO, iBMC, etc.) a la red de administración. Si está presente, el host del ciclo de vida del hardware (HLH) se ubica en esta red y puede proporcionar software específico del OEM para el mantenimiento o la supervisión del hardware. 
+Esta red está dedicada a conectar todos los controladores de administración de la placa base (también conocidos como procesadores de servicio, por ejemplo, iDRAC, iLO, iBMC, etc.) a la red de administración. Solo se usa una cuenta de BMC para comunicarse con cualquier nodo de BMC. Si está presente, el host del ciclo de vida del hardware (HLH) se ubica en esta red y puede proporcionar software específico del OEM para el mantenimiento o la supervisión del hardware. 
 
 El HLH también hospeda la máquina virtual de implementación (DVM). La DVM se utiliza durante la implementación de Azure Stack y se quita cuando esta finaliza. La DVM requiere acceso a Internet en escenarios de implementación conectados para probar, validar y obtener acceso a varios componentes. Estos componentes pueden estar dentro y fuera de la red corporativa; por ejemplo, NTP, DNS y Azure. Para obtener más información acerca de los requisitos de conectividad, consulte la [sección de NAT en la integración con el firewall de Azure Stack](azure-stack-firewall.md#network-address-translation). 
 

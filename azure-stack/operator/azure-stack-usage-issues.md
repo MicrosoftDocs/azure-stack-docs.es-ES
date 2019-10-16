@@ -11,20 +11,20 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/27/2019
+ms.date: 10/04/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 06/27/2019
-ms.openlocfilehash: 3548574ce8ece470c67101d42b115dbafe2c9a1c
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: 265645b69e909c7c9762cd03e4f49035baa2872b
+ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71829214"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72019432"
 ---
 # <a name="usage-connectivity-errors"></a>Errores de conectividad de uso
 
-Los datos de uso de Azure Stack se envían a Azure mediante el [componente *Azure Bridge*](azure-stack-usage-reporting.md) de Azure Stack. Si el puente de Azure Stack no puede conectarse al servicio de uso de Azure, verá el siguiente error:
+Los datos de uso de Azure Stack se envían a Azure mediante el [componente *Azure Bridge*](azure-stack-usage-reporting.md) de Azure Stack. Si el puente de Azure Stack no puede conectarse al servicio de uso de Azure, aparece el siguiente error:
 
 ![error de puente de uso](media/azure-stack-usage-issues/usageerror2.png)
 
@@ -61,4 +61,4 @@ Además, es posible que deba proporcionar los archivos de registro de los compon
 
 - Obtenga más información sobre la [creación de informes de datos de uso de Azure Stack en Azure](azure-stack-usage-reporting.md).
 - Para revisar los mensajes de error que se desencadenen en el proceso de registro, consulte [Mensajes de error del registro de inquilinos](azure-stack-registration-errors.md).
-- Obtenga más información sobre la [Infraestructura de informes de uso para proveedores de servicios en la nube](azure-stack-csp-ref-infrastructure.md).
+- Obtenga más información sobre la [Infraestructura de informes de uso para proveedores de soluciones en la nube](azure-stack-csp-ref-infrastructure.md).

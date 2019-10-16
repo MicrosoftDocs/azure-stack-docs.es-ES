@@ -12,22 +12,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/23/2019
+ms.date: 10/03/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: 9c4ddec0606556290e55850a9081c6665f2524d1
-ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
+ms.openlocfilehash: c959a2553d6b298ef4a815890de6f717838361de
+ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71159582"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71961857"
 ---
 # <a name="validate-azure-registration"></a>Validación del registro de Azure
 
-Use la herramienta Azure Stack Readiness Checker (**AzsReadinessChecker**) para validar que su suscripción de Azure está lista para usarse con Azure Stack. Valide el registro antes de empezar la implementación de Azure Stack. La herramienta Readiness Checker valida que:
+Use la herramienta Azure Stack Readiness Checker (**AzsReadinessChecker**) para validar que su suscripción de Azure está lista para usarse con Azure Stack antes de comenzar la implementación correspondiente. La herramienta Readiness Checker valida que:
 
-- La suscripción de Azure que usa es de tipo compatible. Las suscripciones deben ser un proveedor de servicios en la nube (CSP) o el contrato Enterprise (EA).
+- La suscripción de Azure que usa es de tipo compatible. Las suscripciones deben ser un proveedor de soluciones en la nube (CSP) o el contrato Enterprise (EA).
 - La cuenta que se usa para registrar la suscripción en Azure puede iniciar sesión en Azure y es propietaria de una suscripción.
 
 Para obtener más información sobre el registro de Azure Stack, vea [Registro de Azure Stack en Azure](azure-stack-registration.md).
@@ -50,7 +50,7 @@ Se necesitan los siguientes requisitos previos:
   ```
 
 - [PowerShell configurado para Azure Stack](azure-stack-powershell-install.md).
-- Versión más reciente de [Microsoft Azure Stack Readiness Checker](https://aka.ms/AzsReadinessChecker).  
+- La versión más reciente de la herramienta [Microsoft Azure Stack Readiness Checker](https://aka.ms/AzsReadinessChecker).  
 
 ### <a name="azure-active-directory-environment"></a>Entorno de Azure Active Directory
 
@@ -58,7 +58,7 @@ Se necesitan los siguientes requisitos previos:
 - Indique el identificador de suscripción de la suscripción de Azure que va a usar.
 - Identifique la clase **AzureEnvironment** que va a usar. Los valores admitidos para el parámetro de nombre de entorno son **AzureCloud**, **AzureChinaCloud** o **AzureUSGovernment**, dependiendo de la suscripción a Azure que esté utilizando.
 
-## <a name="steps-to-validate-azure-registration"></a>Pasos para validar el registro de Azure
+## <a name="steps-to-validate-the-azure-registration"></a>Pasos para validar el registro de Azure
 
 1. En un equipo que cumpla los requisitos previos, abra un símbolo del sistema de PowerShell con privilegios elevados y ejecute el siguiente comando para instalar **AzsReadinessChecker**:
 
@@ -86,9 +86,9 @@ Se necesitan los siguientes requisitos previos:
    - Especifique el valor de `AzureEnvironment` como **AzureCloud**, **AzureGermanCloud** o **AzureChinaCloud**.  
    - Indique el administrador de Azure Active Directory y el nombre del inquilino de Azure Active Directory.
 
-   ```powershell
-   Invoke-AzsRegistrationValidation -RegistrationAccount $registrationCredential -AzureEnvironment AzureCloud -RegistrationSubscriptionID $subscriptionID
-   ```
+      ```powershell
+      Invoke-AzsRegistrationValidation -RegistrationAccount $registrationCredential -AzureEnvironment AzureCloud -RegistrationSubscriptionID $subscriptionID
+      ```
 
 5. Después de ejecutar la herramienta, revise el resultado. Confirme que el estado del inicio de sesión y los requisitos de instalación es correcto. Una salida de validación correcta tiene un aspecto similar al del siguiente ejemplo:
 
@@ -108,8 +108,8 @@ Estos archivos pueden ayudar a compartir el estado de validación antes de imple
 
 De forma predeterminada, los dos archivos se escriben en **C:\Users\nombre_de_usuario\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json**.  
 
-- Use el parámetro **-OutputPath** ***&lt;ruta de acceso&gt;***  al final de la línea de comandos de ejecución para especificar otra ubicación para el informe.
-- Use el parámetro **-CleanReport** al final del comando de ejecución para borrar la información de ejecuciones anteriores de la herramienta desde **AzsReadinessCheckerReport.json**.
+- Use el parámetro `-OutputPath <path>` al final de la línea de comandos de ejecución para especificar otra ubicación para el informe.
+- Use el parámetro `-CleanReport` al final del comando de ejecución para borrar la información de ejecuciones anteriores de la herramienta desde **AzsReadinessCheckerReport.json**.
 
 Para obtener más información, consulte el artículo [Informe de validación de Azure Stack](azure-stack-validation-report.md).
 
@@ -117,7 +117,7 @@ Para obtener más información, consulte el artículo [Informe de validación de
 
 Si se producen errores en una comprobación de validación, los detalles sobre los errores se muestran en la ventana de PowerShell. La herramienta también registra información en el archivo **AzsReadinessChecker.log**.
 
-Los ejemplos siguientes ofrecen instrucciones sobre errores de validación comunes:
+Los ejemplos siguientes ofrecen más información sobre los errores de validación comunes:
 
 ### <a name="user-must-be-an-owner-of-the-subscription"></a>El usuario que llama debe ser propietario de la suscripción.
 

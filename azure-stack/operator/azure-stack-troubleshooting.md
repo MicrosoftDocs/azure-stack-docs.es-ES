@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/30/2019
+ms.date: 10/08/2019
 ms.author: justinha
 ms.reviewer: prchint
-ms.lastreviewed: 09/30/2019
-ms.openlocfilehash: 0fb46cd1b92c1b811ba1c72a91188201a7d2af96
-ms.sourcegitcommit: 79ead51be63c372b23b7fca6ffeaf95fd44de786
+ms.lastreviewed: 10/08/2019
+ms.openlocfilehash: b3540727b1868c700e43e2865848a71635e8003d
+ms.sourcegitcommit: 534117888d9b7d6d363ebe906a10dcf0acf8b685
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71687969"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72173119"
 ---
 # <a name="microsoft-azure-stack-troubleshooting"></a>Solución de problemas de Microsoft Azure Stack
 
@@ -82,9 +82,20 @@ Si los roles integrados para los recursos de Azure no cumplen las necesidades es
 
 Elija el tipo de cuenta de servicios compartidos que utiliza para Azure Stack. Estos son los tipos de suscripciones que se pueden usar para el registro de una instancia de Azure Stack multiinquilino:
 
-* Proveedor de servicios en la nube
+* Proveedor de soluciones en la nube
 * Suscripción de servicios compartidos de asociados
 
+## <a name="get-scale-unit-metrics"></a>Obtención de métricas de unidad de escalado
+
+Puede usar PowerShell para obtener información sobre el uso de la marca sin ayuda de CSS. Para obtener el uso de la marca: 
+
+1. Cree una sesión PEP.
+2. Ejecute test-azurestack.
+3. Salga de la sesión PEP.
+4. Ejecute get-azurestacklog -filterbyrole seedring mediante una llamada a invoke-command
+5. Extraiga el archivo seedring.zip y podrá obtener el informe de validación de la carpeta ERCS donde ejecutó test-azurestack.
+
+Para más información, consulte [Diagnósticos de Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#to-run-get-azurestacklog-on-azure-stack-integrated-systems).
 
 ## <a name="troubleshoot-deployment"></a>Solución de problemas de implementación 
 ### <a name="general-deployment-failure"></a>Error de implementación general

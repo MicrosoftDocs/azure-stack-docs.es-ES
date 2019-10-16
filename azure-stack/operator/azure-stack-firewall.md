@@ -1,6 +1,6 @@
 ---
-title: Planeamiento del firewall de Azure Stack para sistemas integrados de Azure Stack | Microsoft Docs
-description: Describe las consideraciones del firewall de Azure Stack para implementaciones de varios nodos con conexión a Azure en Azure Stack.
+title: Integración del firewall de Azure Stack para los sistemas integrados de Azure Stack | Microsoft Docs
+description: Más información sobre la integración del firewall de Azure Stack para sistemas integrados de Azure Stack
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -12,23 +12,23 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/13/2019
+ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: wfayed
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: abca6560e8644b201483001258542121fefb6b08
-ms.sourcegitcommit: b79a6ec12641d258b9f199da0a35365898ae55ff
+ms.openlocfilehash: e50f2cf722dc4a5b66dbc68c769127e346386134
+ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67131533"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72019298"
 ---
 # <a name="azure-stack-firewall-integration"></a>Integración del firewall de Azure Stack
 Se recomienda que use un dispositivo de firewall para ayudar a proteger Azure Stack. Los firewalls pueden ayudarle a defenderse contra ataques por denegación de servicio distribuido (DDOS), a detectar intrusos y a inspeccionar el contenido que reciba. Sin embargo, también pueden convertirse en un cuello de botella en el rendimiento de los servicios de Azure Storage como blobs, tablas y colas.
 
  Si se usa un modo de implementación desconectada, debe publicar el punto de conexión de AD FS. Para obtener más información, consulte el [artículo sobre la identidad de integración del centro de datos](azure-stack-integrate-identity.md).
 
-Los puntos de conexión de Azure Resource Manager (administrador), el portal de administrador y el almacén de claves (administrador) no requieren necesariamente publicación externa. Por ejemplo, como proveedor de servicios, podría interesarle limitar la superficie expuesta a ataques y administrar Azure Stack solo desde la red y no desde Internet.
+Los puntos de conexión de Azure Resource Manager (administrador), el portal de administración y el almacén de claves (administrador) no requieren necesariamente publicación externa. Por ejemplo, como proveedor de servicios, podría interesarle limitar la superficie expuesta a ataques y administrar Azure Stack solo desde la red y no desde Internet.
 
 Para organizaciones empresariales, la red externa puede ser la red corporativa existente. En este caso, debe publicar esos puntos de conexión para trabajar con Azure Stack desde la red corporativa.
 

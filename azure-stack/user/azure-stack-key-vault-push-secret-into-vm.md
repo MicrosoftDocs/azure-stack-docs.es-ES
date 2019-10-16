@@ -12,21 +12,21 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/11/2019
+ms.date: 10/03/2019
 ms.author: sethm
 ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: 9403931d91756e744dcdb6c34adb26e8281f6d28
-ms.sourcegitcommit: eccbd0098ef652919f357ef6dba62b68abde1090
+ms.openlocfilehash: 8741d63dbbcefde950fc10c0917d87bc4e9718f7
+ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67492384"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71961519"
 ---
 # <a name="deploy-a-vm-with-a-securely-stored-certificate-on-azure-stack"></a>Implementación de una VM con un certificado almacenado de forma segura en Azure Stack 
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-En este artículo se describe cómo implementar una máquina virtual (VM) de Azure Stack con un certificado de almacén de claves instalado.
+En este artículo se describe cómo implementar una máquina virtual (VM) de Azure Stack con un certificado de Key Vault instalado.
 
 ## <a name="overview"></a>Información general
 
@@ -119,7 +119,7 @@ Set-AzureKeyVaultSecret `
    -SecretValue $secret
 ```
 
-Cuando ejecuta este script, la salida incluye el identificador URI del secreto. Tome nota de este URI, ya que tendrá que hacer referencia a él al [insertar un certificado en la plantilla del Administrador de recursos de Windows](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/201-vm-windows-pushcertificate). Descargue la carpeta de la plantilla [vm-push-certificate-windows](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/201-vm-windows-pushcertificate) en el equipo de desarrollo. Esta carpeta contiene los archivos **azuredeploy.json** y **azuredeploy.parameters.json**, que necesitará para los pasos siguientes.
+Cuando ejecuta este script, la salida incluye el identificador URI del secreto. Tome nota de este identificador URI, ya que tendrá que hacer referencia a él para la [Inserción de un certificado en la plantilla del Administrador de recursos de Windows](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/201-vm-windows-pushcertificate). Descargue la carpeta de la plantilla [vm-push-certificate-windows](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/201-vm-windows-pushcertificate) en el equipo de desarrollo. Esta carpeta contiene los archivos **azuredeploy.json** y **azuredeploy.parameters.json**, que necesitará para los pasos siguientes.
 
 Modifique el archivo **azuredeploy.parameters.json** según los valores del entorno. Los parámetros importantes son el nombre del almacén, el grupo de recursos del almacén y el identificador URI del secreto (que se generó en el script anterior). En la sección siguiente se ofrece un ejemplo de un archivo de parámetros.
 
@@ -165,7 +165,7 @@ Actualice el archivo **azuredeploy.parameters.json** con los valor de `vaultName
 Implemente la plantilla con el siguiente script de PowerShell:
 
 ```powershell
-# Deploy a Resource Manager template to create a VM and push the secret onto it
+# Deploy a Resource Manager template to create a VM and push the secret to it
 New-AzureRmResourceGroupDeployment `
   -Name KVDeployment `
   -ResourceGroupName $resourceGroup `
@@ -173,7 +173,7 @@ New-AzureRmResourceGroupDeployment `
   -TemplateParameterFile "<Fully qualified path to the azuredeploy.parameters.json file>"
 ```
 
-Cuando la plantilla se ha implementado correctamente, se producen en la siguiente salida:
+Cuando la plantilla se ha implementado correctamente, muestra la siguiente salida:
 
 ![Resultados de la implementación de plantilla](media/azure-stack-key-vault-push-secret-into-vm/deployment-output.png)
 

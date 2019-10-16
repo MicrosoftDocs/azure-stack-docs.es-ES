@@ -12,24 +12,27 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/31/2019
+ms.date: 10/08/2019
 ms.author: justinha
 ms.reviewer: prchint
-ms.lastreviewed: 07/31/2019
-ms.openlocfilehash: 9d8510c121c424c3c66fd179639256e8834e932e
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.lastreviewed: 10/08/2019
+ms.openlocfilehash: fd56e7aa7805614829985a2e083d228d1960b402
+ms.sourcegitcommit: 534117888d9b7d6d363ebe906a10dcf0acf8b685
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71829061"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72173064"
 ---
 # <a name="collect-azure-stack-diagnostic-logs-on-demand"></a>Recopilación de registros de diagnóstico de Azure Stack a petición
 
 *Se aplica a: Sistemas integrados de Azure Stack*
 
-Como parte de la solución de problemas, es posible que los servicios de soporte al cliente de Microsoft (CSS) necesiten analizar los registros de diagnóstico. A partir de la versión 1907, los operadores de Azure Stack pueden cargar registros de diagnóstico a petición en un contenedor de blobs de Azure mediante **Ayuda y soporte técnico**. Como alternativa si el portal no está disponible, los operadores pueden recopilar registros mediante Get-AzureStackLog a través del punto de conexión con privilegios (PEP). En este tema se tratan las dos maneras de recopilar registros de diagnóstico a petición.
+Como parte de la solución de problemas, es posible que los servicios de soporte al cliente de Microsoft (CSS) necesiten analizar los registros de diagnóstico. A partir de la versión 1907, los operadores de Azure Stack pueden cargar registros de diagnóstico a petición en un contenedor de blobs de Azure mediante **Ayuda y soporte técnico**. Si el portal no está disponible, los operadores pueden recopilar registros mediante Get-AzureStackLog a través del punto de conexión con privilegios (PEP). En este tema se tratan las dos maneras de recopilar registros de diagnóstico a petición.
 
-## <a name="use-help-and-support-to-collect-diagnostic-logs"></a>Uso ayuda y soporte técnico para recopilar registros de diagnóstico
+>[!Note]
+>Como alternativa a la recopilación de registros a petición, puede simplificar el proceso de solución de problemas si habilita la [recopilación de registros de diagnóstico automático](azure-stack-configure-automatic-diagnostic-log-collection.md). En caso de que deban investigarse las condiciones de mantenimiento del sistema, los servicios de soporte al cliente (CSS) de Microsoft pueden cargar los registros automáticamente para su análisis. 
+
+## <a name="use-help-and-support-to-collect-diagnostic-logs-on-demand"></a>Uso de la ayuda y soporte técnico para recopilar registros de diagnóstico a petición
 
 Para solucionar un problema, CSS podría solicitar que un operador de Azure Stack recopilara los registros de diagnóstico a petición para una ventana de tiempo específica de la semana anterior. En ese caso, CSS proporcionará al operador una dirección URL de SAS para cargar la colección. Siga los pasos que se indican a continuación para configurar la recopilación de registros a petición mediante la dirección URL de SAS de CSS:
 

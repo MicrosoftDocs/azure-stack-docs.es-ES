@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/25/2019
+ms.date: 10/04/2019
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: 69f427bd825bdc74501256d47e61bbae95f4d64b
-ms.sourcegitcommit: 79ead51be63c372b23b7fca6ffeaf95fd44de786
+ms.openlocfilehash: 97684f2a0ef9960854b192ca15f972bc15ff5b62
+ms.sourcegitcommit: f91979c1613ea1aa0e223c818fc208d902b81299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71687992"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71974060"
 ---
 # <a name="azure-stack-managed-disks-differences-and-considerations"></a>Discos administrados de Azure Stack: diferencias y consideraciones
 
@@ -30,24 +30,24 @@ En este artículo se resumen las diferencias entre los [discos administrados de 
 Los discos administrados simplifican la administración de discos para las máquinas virtuales (VM) de IaaS, ya que administran las [cuentas de almacenamiento](../operator/azure-stack-manage-storage-accounts.md) asociadas a los discos de las máquinas virtuales.
 
 > [!NOTE]  
-> Los discos administrados en Azure Stack están disponibles a partir de la actualización 1808. A partir de la actualización 1811, esta opción está habilitada de forma predeterminada al crear máquinas virtuales mediante el portal de Azure Stack.
+> Los discos administrados en Azure Stack están disponibles a partir de la actualización 1808. A partir de la actualización 1811, la característica está habilitada de forma predeterminada al crear máquinas virtuales mediante el portal de Azure Stack.
   
 ## <a name="cheat-sheet-managed-disk-differences"></a>Hoja de referencia rápida: diferencias entre los discos administrados
 
 | Característica | Azure (global) | Azure Stack |
 | --- | --- | --- |
-|Cifrado de datos en reposo |Storage Service Encryption (SSE) de Azure, Azure Disk Encryption (ADE)     |Cifrado AES de 128 bits de BitLocker      |
+|Cifrado de datos en reposo |Azure Storage Service Encryption (SSE), Azure Disk Encryption (ADE).     |Cifrado AES de 128 bits de BitLocker      |
 |Imagen          | Imagen personalizada administrada |Compatible|
 |Opciones de copia de seguridad | Servicio Azure Backup |Todavía no se admite |
 |Opciones de recuperación ante desastres | Azure Site Recovery |Todavía no se admite|
-|Tipos de disco     |SSD Premium, SSD estándar y HDD estándar |SSD Premium, HDD estándar |
-|Discos premium  |Totalmente compatible |Se pueden aprovisionar, pero no hay límite de rendimiento o garantía  |
-|E/S por segundo de discos premium  |Depende del tamaño del disco  |2300 E/S por segundo por disco |
-|Rendimiento de discos premium |Depende del tamaño del disco |145 MB/segundo por disco |
+|Tipos de disco     |SSD Premium, SSD estándar y HDD estándar. |SSD Premium, HDD estándar |
+|Discos premium  |Totalmente compatible. |Se pueden aprovisionar, pero no hay límite de rendimiento o garantía  |
+|E/S por segundo de discos premium  |Depende del tamaño del disco.  |2300 E/S por segundo por disco |
+|Rendimiento de discos premium |Depende del tamaño del disco. |145 MB/segundo por disco |
 |Tamaño del disco  |Disco Premium de Azure: P4 (32 GiB) a P80 (32 TiB)<br>Disco SSD estándar de Azure: E10 (128 GiB) a E80 (32 TiB)<br>Disco HDD estándar de Azure: S4 (32 GiB) a S80 (32 TiB) |M4: 32 GiB<br>M6: 64 GiB<br>M10: 128 GB<br>M15: 256 GiB<br>M20: 512 GB<br>M30: 1023 GiB |
-|Copia de instantáneas de discos|Discos administrados de Azure de instantáneas conectados a una máquina virtual en ejecución compatible|Todavía no se admite |
-|Análisis de rendimiento de discos |Compatibilidad con métricas agregadas y por disco |Todavía no se admite |
-|Migración      |Proporciona herramientas para migrar desde máquinas virtuales de Azure Resource Manager no administradas existentes sin necesidad de volver a crear la máquina virtual  |Todavía no se admite |
+|Copia de instantáneas de discos|Discos administrados de Azure de instantáneas conectados a una máquina virtual en ejecución compatible.|Todavía no se admite |
+|Análisis de rendimiento de discos |Compatibilidad con métricas agregadas y por disco. |Todavía no se admite |
+|Migración      |Proporciona herramientas para migrar desde máquinas virtuales de Azure Resource Manager no administradas existentes sin necesidad de volver a crear la máquina virtual.  |Todavía no se admite |
 
 > [!NOTE]  
 > Las E/S por segundo y el rendimiento de los discos administrados en Azure Stack son números extremos, en lugar de un número aprovisionado, que pueden resultar afectados por el hardware y las cargas de trabajo que se ejecutan en Azure Stack.
@@ -56,7 +56,7 @@ Los discos administrados simplifican la administración de discos para las máqu
 
 También hay diferencias en las métricas de almacenamiento:
 
-- Con Azure Stack, los datos de transacción de las métricas de almacenamiento no distinguen el ancho de banda de red interna o externa.
+- Con Azure Stack, los datos de transacción de las métricas de almacenamiento no distinguen el ancho de banda de red interna ni externa.
 - Los datos de transacción de Azure Stack en las métricas de almacenamiento no incluyen el acceso de la máquina virtual a los discos montados.
 
 ## <a name="api-versions"></a>Versiones de API
@@ -228,7 +228,7 @@ Después de aplicar la actualización 1808 o posterior, debe realizar el siguien
 - Si una suscripción se ha creado antes de la actualización 1808, siga estos pasos para actualizar la suscripción. En caso contrario, la implementación de máquinas virtuales en esta suscripción podría producir un error con un mensaje del tipo "Error interno en el administrador de discos".
    1. En el portal de usuarios de Azure Stack, vaya a **Suscripciones** y busque la suscripción. Haga clic en **Proveedores de recursos**, después en **Microsoft.Compute** y luego en **Volver a registrar**.
    2. En la misma suscripción vaya a **Control de acceso (IAM)** y compruebe que **Azure Stack – Managed Disk** (Azure Stack - Disco administrado) aparece en la lista.
-- Si usa un entorno de varios inquilinos, pida a su operador de nube (puede ser de su propia organización o del proveedor de servicios) que vuelva a configurar cada uno de los directorios de invitado siguiendo los pasos que se indican en [este artículo](../operator/azure-stack-enable-multitenancy.md#registering-azure-stack-with-the-guest-directory). En caso contrario, la implementación de VM en una suscripción asociada con ese directorio de invitado podría producir un error con un mensaje de error "Error interno en el administrador de discos".
+- Si usa un entorno de varios inquilinos, pida a su operador de nube (puede ser de su propia organización o del proveedor de servicios) que vuelva a configurar cada uno de los directorios de invitado siguiendo los pasos que se indican en [este artículo](../operator/azure-stack-enable-multitenancy.md#registering-azure-stack-with-the-guest-directory). En caso contrario, la implementación de máquinas virtuales en una suscripción asociada con ese directorio de invitado podría producir un error con el mensaje "Error interno en el administrador de discos".
 
 ## <a name="next-steps"></a>Pasos siguientes
 

@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/25/2019
+ms.date: 10/08/2019
 ms.author: justinha
 ms.reviewer: prchint
-ms.lastreviewed: 07/25/2019
-ms.openlocfilehash: 4d6bc431b292fc7a124aa2b8051d0a927d736eee
-ms.sourcegitcommit: 4e48f1e5af74712a104eda97757dc5f50a591936
+ms.lastreviewed: 10/08/2019
+ms.openlocfilehash: e9ee5d3b8ad67c7955fa4da7b64d2c0962f21a15
+ms.sourcegitcommit: 534117888d9b7d6d363ebe906a10dcf0acf8b685
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71224956"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72173073"
 ---
 # <a name="configure-automatic-azure-stack-diagnostic-log-collection"></a>Configuración de la recopilación de registros de diagnóstico automática de Azure Stack
 
@@ -118,7 +118,9 @@ Los operadores también pueden comprobar la cuenta de almacenamiento para los re
 
 ## <a name="automatic-diagnostic-log-collection-alerts"></a>Alertas de recopilación de registros de diagnóstico automática 
 
-Si está habilitada, la recopilación automática de registros de diagnóstico solo se produce cuando es necesario. Solo las siguientes alertas desencadenan la recopilación. 
+Si está habilitada, la recopilación automática de registros de diagnóstico solo se produce cuando es necesario. Solo las alertas de la tabla siguiente desencadenan la recopilación. 
+
+Por ejemplo, **Error de actualización** es una alerta que desencadena la recopilación de registros de diagnóstico automática. Si la recopilación automática está habilitada, los registros de diagnóstico se capturarán de forma proactiva durante un error de actualización para ayudar a CSS a solucionar el problema. Los registros de diagnóstico solo se recopilan cuando se produce la alerta **Error de actualización**. 
 
 |Título de la alerta  | FaultIdType|    
 |-------------|------------|

@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/20/2019
+ms.date: 10/02/2019
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 01/18/2019
-ms.openlocfilehash: 8b4d48b55cfe21cf7de09119b9069ae4056d3efd
-ms.sourcegitcommit: eccbd0098ef652919f357ef6dba62b68abde1090
+ms.openlocfilehash: af110f6b4140a69e01dadcd38a32843866744abf
+ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67492425"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71961595"
 ---
 # <a name="create-vm-disk-storage-in-azure-stack"></a>Creación del almacenamiento en disco de VM en Azure Stack
 
@@ -50,7 +50,7 @@ En la tabla siguiente se resume cómo agregar discos desde el portal y desde Pow
 
 | Método | Opciones
 |-|-|
-|Portal de usuarios|- Agregue discos de datos nuevos a una máquina virtual existente. Azure Stack crea nuevos discos. </br> </br>- Agregue un archivo (.vhd) de un disco existente a una máquina virtual creada anteriormente. Para ello, primero debe preparar el archivo .vhd y, después, cargarlo en Azure Stack. |
+|Portal de usuarios|- Agregue discos de datos nuevos a una máquina virtual existente. Azure Stack crea nuevos discos. </br> </br> - Agregue un archivo (.vhd) de un disco existente a una máquina virtual creada anteriormente. Para ello, primero debe preparar el archivo .vhd y, después, cargarlo en Azure Stack. |
 |[PowerShell](#use-powershell-to-add-multiple-unmanaged-disks-to-a-vm) | -Crear una nueva máquina virtual con un disco del sistema operativo y, al mismo tiempo, agregar uno o más discos de datos a esa máquina virtual. |
 
 ## <a name="use-the-portal-to-add-disks-to-a-vm"></a>Uso del portal para agregar discos a una máquina virtual
@@ -129,7 +129,7 @@ Para más información acerca de cómo trabajar con cuentas de almacenamiento en
 
 ## <a name="attach-an-existing-data-disk-to-a-vm"></a>Incorporación de un disco de datos existente a una VM
 
-1. [Prepare un archivo .vhd](https://docs.microsoft.com/azure/virtual-machines/windows/classic/createupload-vhd) para usarlo como disco de datos de una máquina virtual. Cargue dicho archivo .vhd en una cuenta de almacenamiento que use con la máquina virtual a la que desee asociarlo.
+1. [Prepare un archivo .vhd](/azure/virtual-machines/windows/classic/createupload-vhd) para usarlo como disco de datos de una máquina virtual. Cargue dicho archivo .vhd en una cuenta de almacenamiento que use con la máquina virtual a la que desee asociarlo.
 
     Considere usar un contenedor diferente para el archivo .vhd en lugar del que alberga el disco del sistema operativo.
     ![Ejemplo: carga de un archivo VHD](media/azure-stack-manage-vm-disks/upload-vhd.png)
@@ -163,7 +163,7 @@ Para más información acerca de cómo trabajar con cuentas de almacenamiento en
 
 ## <a name="use-powershell-to-add-multiple-unmanaged-disks-to-a-vm"></a>Uso de PowerShell para agregar varios discos no administrados a una máquina virtual
 
-Puede usar PowerShell para aprovisionar una máquina virtual y agregar un disco de datos nuevo, o bien asociar un archivo **.vhd** existente como disco de datos.
+Puede usar PowerShell para aprovisionar una máquina virtual y agregar un disco de datos nuevo o bien asociar un archivo .vhd existente como disco de datos.
 
 El cmdlet **Add-AzureRmVMDataDisk** agrega un disco de datos a una VM. Puede agregar un disco de datos al crear una VM o lo puede agregar a una VM existente. Especifique el parámetro **VhdUri** para distribuir los discos a distintos contenedores.
 
@@ -215,10 +215,10 @@ $VirtualMachine = Add-AzureRmVMDataDisk -VM $VirtualMachine -Name 'DataDisk3' `
 Use los siguientes comandos de PowerShell para agregar la configuración de red y del disco del sistema operativo a la máquina virtual y, después, inicie la nueva máquina virtual:
 
 ```powershell
-#set variables
+# Set variables
 $rgName = "myResourceGroup"
 $location = "local"
-#Set OS Disk
+# Set OS Disk
 $osDiskUri = "https://contoso.blob.local.azurestack.external/vhds/osDisk.vhd"
 $osDiskName = "osDisk"
 

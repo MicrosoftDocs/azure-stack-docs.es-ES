@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/13/2019
+ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: 4f2e7a77af14c71c2b3231436d723c6e721ceca9
-ms.sourcegitcommit: 104ccafcb72a16ae7e91b154116f3f312321cff7
+ms.openlocfilehash: 6a933f812edeede1802c35e3d25915ce09b6f01b
+ms.sourcegitcommit: a7207f4a4c40d4917b63e729fd6872b3dba72968
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67308620"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71909210"
 ---
 # <a name="create-mysql-databases"></a>Creación de bases de datos MySQL
 Un usuario de Azure Stack, suscrito a una oferta que incluye el servicio de base de datos de MySQL, puede crear y administrar el autoservicio de bases de datos de MySQL en el portal de usuarios.

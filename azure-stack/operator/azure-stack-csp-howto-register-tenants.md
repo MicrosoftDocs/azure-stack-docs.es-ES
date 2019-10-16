@@ -15,12 +15,12 @@ ms.date: 09/25/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 09/17/2019
-ms.openlocfilehash: 76b870d795b79cf966dcf6742ad08f739d24a42a
-ms.sourcegitcommit: 32609bdb04a07b063c8f20f892c30769ad6903dd
+ms.openlocfilehash: 3b728bb08d41c234ccffb94005be740bea0766b6
+ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71269489"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72019288"
 ---
 # <a name="add-tenant-for-usage-and-billing-to-azure-stack"></a>Adición de inquilinos en Azure Stack para uso y facturación
 
@@ -41,7 +41,7 @@ Antes de agregar un cliente final, debe habilitar la facturación de varios inqu
 
 Realice los pasos siguientes para agregar a un cliente final, como se muestra en la ilustración siguiente:
 
-![Configuración del proveedor de servicios en la nube para el seguimiento de uso y la administración de la cuenta del cliente final](media/azure-stack-csp-enable-billing-usage-tracking/process-csp-enable-billing.png)
+![Configuración del proveedor de soluciones en la nube para el seguimiento de uso y la administración de la cuenta del cliente final](media/azure-stack-csp-enable-billing-usage-tracking/process-csp-enable-billing.png)
 
 ### <a name="create-a-new-customer-in-partner-center"></a>Creación de un nuevo cliente en el centro de partners
 
@@ -102,4 +102,4 @@ Una vez que haya agregado el nuevo cliente a Azure Stack o el inquilino del clie
 
 - Para revisar los mensajes de error que se desencadenen en el proceso de registro, consulte [Mensajes de error del registro de inquilinos](azure-stack-registration-errors.md).
 - Para más información sobre cómo recuperar la información de utilización de recursos de Azure Stack, consulte [Uso y facturación en Azure Stack](azure-stack-billing-and-chargeback.md).
-- Para revisar cómo un cliente final puede agregarle, en calidad de CSP, como el administrador de su inquilino de Azure Stack, consulte [Habilitación de un proveedor de servicios en la nube para administrar la suscripción de Azure Stack](../user/azure-stack-csp-enable-billing-usage-tracking.md).
+- Para ver cómo puede agregarle un cliente final, en calidad de CSP, como administrador de su inquilino de Azure Stack, consulte [Habilitación de un proveedor de soluciones en la nube para administrar la suscripción de Azure Stack](../user/azure-stack-csp-enable-billing-usage-tracking.md).

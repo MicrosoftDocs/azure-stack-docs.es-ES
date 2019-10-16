@@ -10,16 +10,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/22/2019
+ms.date: 10/03/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 10/22/2018
-ms.openlocfilehash: d7fa69b632ec6d205eff0ed0c388c1f9ec9b9c41
-ms.sourcegitcommit: c196463492732218d2474d3a964f88e995272c80
+ms.openlocfilehash: 4d9331f5167a0ce9d305a76225987d8b1d3f3dcc
+ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71094408"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71961555"
 ---
 # <a name="connect-azure-stack-to-azure-using-azure-expressroute"></a>Conexión de Azure Stack a Azure mediante Azure ExpressRoute
 
@@ -62,7 +62,7 @@ En la figura siguiente se muestran los entornos de Azure y Azure Stack después 
 
 ![Red de ExpressRoute](media/azure-stack-connect-expressroute/Conceptual.png)
 
-En la ilustración siguiente se muestra cómo varios inquilinos se conectan desde la infraestructura de Azure Stack a Azure en Microsoft Edge mediante el enrutador de ExpressRoute:
+En la figura siguiente se muestra cómo varios inquilinos se conectan desde la infraestructura de Azure Stack a Azure en Microsoft Edge mediante el enrutador de ExpressRoute:
 
 ![Conexiones multiinquilino con ExpressRoute](media/azure-stack-connect-expressroute/Architecture.png)
 
@@ -219,7 +219,7 @@ Si va a usar el inquilino 2 como ejemplo, no olvide cambiar las direcciones IP p
 > [!IMPORTANT]
 > Esta sección es solo para implementaciones de ASDK. La NAT no es necesaria para las implementaciones de varios nodos.
 
-El Kit de desarrollo de Azure Stack está autocontenido y aislado de la red en la que está implementado el host físico. La red de IP virtual a la que están conectadas las puertas de enlace no es externa, está oculta detrás de un enrutador que realiza la traducción de direcciones de red (NAT).
+El Kit de desarrollo de Azure Stack está autocontenido y aislado de la red en la que está implementado el host físico. La red IP virtual a la que están conectadas las puertas de enlace no es externa, está oculta detrás de un enrutador que realiza la traducción de direcciones de red (NAT).
 
 El enrutador es un host de ASDK que ejecuta el rol de enrutamiento y servicios de acceso remoto (RRAS). Para permitir la conexión VPN de sitio a sitio en ambos extremos, es necesario configurar NAT en el host de ASDK.
 

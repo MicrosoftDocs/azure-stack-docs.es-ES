@@ -12,22 +12,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/21/2019
+ms.date: 10/04/2019
 ms.author: sethm
 ms.reviewer: scottnap
 ms.lastreviewed: 10/24/2018
-ms.openlocfilehash: a0e1312beac5f0591658295ac3e48f122aceec4b
-ms.sourcegitcommit: 3f52cf06fb5b3208057cfdc07616cd76f11cdb38
+ms.openlocfilehash: 844162e4f31a6f543a9fe774aa40bd606dad85b9
+ms.sourcegitcommit: f91979c1613ea1aa0e223c818fc208d902b81299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67316283"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71974103"
 ---
 # <a name="connect-azure-stack-to-azure-using-vpn"></a>Conectar Azure Stack a Azure mediante VPN
 
 *Se aplica a: Sistemas integrados de Azure Stack*
 
-Este artículo muestra cómo crear una VPN de sitio a sitio para conectar una red virtual en Azure Stack a una red virtual en Azure.
+Este artículo describe cómo crear una VPN de sitio a sitio para conectar una red virtual en Azure Stack a una red virtual en Azure.
 
 ## <a name="before-you-begin"></a>Antes de empezar
 

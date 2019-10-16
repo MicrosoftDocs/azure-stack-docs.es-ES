@@ -6,16 +6,16 @@ author: sethmanheim
 manager: femila
 ms.service: azure-stack
 ms.topic: conceptual
-ms.date: 05/20/2019
+ms.date: 10/02/2019
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 01/05/2019
-ms.openlocfilehash: f5086dcae534656cea4ef1addacae3f5acdcb2d6
-ms.sourcegitcommit: be5382f715a9c1c18c660b630d8fcd823f13aae3
+ms.openlocfilehash: de96b74351fa3becd0b066da4430e42cb2a9cea7
+ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66197385"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71961675"
 ---
 # <a name="introduction-to-azure-stack-vms"></a>Introducción a las máquinas virtuales de Azure Stack
 
@@ -23,7 +23,7 @@ ms.locfileid: "66197385"
 
 Azure Stack le ofrece máquinas virtuales como un tipo de recurso informático escalable y a petición. Puede elegir una máquina virtual cuando necesite más control sobre el entorno informático. En este artículo se proporcionan detalles antes de crear la primera máquina virtual.
 
-Una máquina virtual de Azure Stack le da la flexibilidad de virtualización sin necesidad de administrar clústeres o máquinas individuales. Sin embargo, la máquina virtual sigue necesitando mantenimiento con tareas como configurar, aplicar revisiones e instalar el software que se ejecuta en ella.
+Una máquina virtual de Azure Stack le da la flexibilidad de virtualización sin necesidad de administrar clústeres o máquinas individuales. Sin embargo, la máquina virtual sigue necesitando mantenimiento con tareas como configurar, aplicar revisiones o actualizaciones e instalar el software que se ejecuta en ella.
 
 Las máquinas virtuales de Azure Stack pueden usarse de diversas maneras. Por ejemplo:
 
@@ -89,9 +89,9 @@ Pueden llevarse a cabo estas tareas comunes mediante las extensiones:
 
 Los recursos de la tabla siguiente se usan en la máquina virtual y deben ya existir o crearse al tiempo que esta:
 
-|Recurso|Obligatorio|DESCRIPCIÓN|
+|Resource|Obligatorio|DESCRIPCIÓN|
 |---------|---------|---------|
-|Grupos de recursos|Sí|La máquina virtual debe encontrarse en un grupo de recursos.|
+|Resource group|Sí|La máquina virtual debe encontrarse en un grupo de recursos.|
 |Cuenta de almacenamiento|Sin|La máquina virtual no necesita la cuenta de Storage para almacenar sus discos duros virtuales si usa discos administrados. <br>La máquina virtual necesita la cuenta de Storage almacene sus discos duros virtuales si usa discos sin administrar.|
 |Virtual network|Sí|La máquina virtual debe ser miembro de una red virtual.|
 |Dirección IP pública|Sin|La máquina virtual puede tener una dirección IP pública asignada para acceder remotamente a ella.|

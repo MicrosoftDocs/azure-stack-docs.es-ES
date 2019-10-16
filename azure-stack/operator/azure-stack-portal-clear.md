@@ -17,12 +17,12 @@ ms.author: sethm
 ms.reviewer: troettinger
 ms.lastreviewed: 09/10/2019
 monikerRange: azs-1802
-ms.openlocfilehash: a341ff38b0a2540fbf8e1070d9c98bdd9ec4df5f
-ms.sourcegitcommit: 305536bfd49319455ca3ca270fe3644b1796bad1
+ms.openlocfilehash: 2dd88656491a474e4082ff4e8321af836776b1f0
+ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70878786"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72019120"
 ---
 # <a name="clear-portal-user-data-from-azure-stack"></a>Eliminación de los datos de usuario del portal de Azure Stack
 
@@ -86,7 +86,7 @@ Para este procedimiento, use un equipo que pueda comunicarse con el punto de con
 
 ## <a name="clear-portal-user-data-in-guest-directory"></a>Eliminación de los datos de usuario del portal en el directorio invitado
 
-En este escenario, el operador de Azure Stack no tiene acceso al directorio invitado en el que reside el usuario. Este es un escenario común cuando se trata de un proveedor de servicios en la nube (CSP).
+En este escenario, el operador de Azure Stack no tiene acceso al directorio invitado en el que reside el usuario. Este es un escenario común cuando se trata de un proveedor de soluciones en la nube (CSP).
 
 Para que un operador de Azure Stack quite los datos de usuario del portal, se requiere como mínimo el identificador de objeto de usuario.
 

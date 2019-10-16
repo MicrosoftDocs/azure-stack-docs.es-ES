@@ -11,22 +11,22 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/31/2019
+ms.date: 10/03/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: 1a3c59ab7650c9cd2337e8256556f8a449feacec
-ms.sourcegitcommit: c2ea4ffb42563c26faaf2993ba7b484bcb6d5cb7
+ms.openlocfilehash: c170e450739609e0ef0be353f2354a17e39a28b1
+ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71342813"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71961854"
 ---
 # <a name="usage-reporting-infrastructure-for-cloud-solution-providers"></a>Infraestructura de informes de uso para proveedores de soluciones en la nube
 
 Azure Stack incluye la infraestructura necesaria para realizar el seguimiento del uso cuando se produce y lo desvía a Azure. En Azure, Azure Commerce procesa los datos de uso y cobra el uso a las suscripciones apropiadas de Azure. Este proceso funciona de la misma manera que el seguimiento del uso que tiene lugar en la nube global de Azure.
 
-Hay determinados conceptos que son coherentes entre Azure global y Azure Stack. Azure Stack tiene suscripciones locales, que cumplen un rol similar al de una suscripción de Azure. Las suscripciones locales solo son válidas localmente. Las suscripciones locales se asignan a las suscripciones de Azure cuando uso se desvía a Azure.
+Hay algunos conceptos que coinciden en el entorno global de Azure y Azure Stack. Azure Stack tiene suscripciones locales, que cumplen un rol similar al de una suscripción de Azure. Las suscripciones locales solo son válidas localmente. Las suscripciones locales se asignan a las suscripciones de Azure cuando uso se desvía a Azure.
 
 Azure Stack tiene medidores de uso local. El uso local se asigna a los medidores utilizados en Azure Commerce. Sin embargo, los identificadores de los medidores son diferentes. Hay más medidores disponibles de forma local que el que usa Microsoft para facturación.
 
@@ -45,7 +45,7 @@ Los siguientes términos y conceptos se usan para el uso y la facturación en Az
 
 | Término | Definición |
 | --- | --- |
-| Asociado de CSP directo | Un asociado del proveedor de soluciones en la nube (CSP) directo recibe una factura directamente de Microsoft por el uso de Azure y de Azure Stack, y factura directamente a los clientes. |
+| Asociado de CSP directo | Un asociado de CSP directo recibe una factura directamente de Microsoft por el uso de Azure y de Azure Stack, y factura directamente a los clientes. |
 | CSP indirecto | Los revendedores indirectos trabajan con un proveedor indirecto (también conocido como distribuidor). Los revendedores reclutan clientes finales; el proveedor indirecto mantiene la relación de facturación con Microsoft, administra la facturación de clientes y proporciona servicios adicionales como soporte técnico de productos. |
 | Cliente final | Los clientes finales son las empresas y los organismos gubernamentales que poseen las aplicaciones y otras cargas de trabajo que se ejecutan en Azure Stack. |
 

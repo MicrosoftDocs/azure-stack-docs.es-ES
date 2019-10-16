@@ -11,22 +11,22 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/20/2019
+ms.date: 10/02/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: 82aa27440a496a813e2f1fa99879005503ba8d07
-ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
+ms.openlocfilehash: e14c57cb5d0444c68619e6be5db688d7b1542e93
+ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71159495"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71961886"
 ---
 # <a name="manage-usage-and-billing-for-azure-stack-as-a-cloud-solution-provider"></a>Administración del uso y la facturación de Azure Stack como proveedor de soluciones en la nube
 
 *Se aplica a: Sistemas integrados de Azure Stack*
 
-En este artículo se describe cómo registrar Azure Stack como proveedor de servicios en la nube (CSP) y cómo agregar a clientes.
+En este artículo se describe cómo registrar Azure Stack como proveedor de soluciones en la nube (CSP) y cómo agregar a clientes.
 
 Como CSP, trabaja con diversos clientes mediante su instancia de Azure Stack. Cada cliente tiene una suscripción de CSP en Azure. Tendrá que dirigir el uso de su recurso Azure Stack a cada suscripción de usuario.
 
@@ -61,7 +61,7 @@ Use la suscripción a APSS creada con la información de la sección anterior pa
 
 ## <a name="add-end-customer"></a>Adición a un cliente final
 
-Para configurar Azure Stack de modo que cuando un nuevo inquilino utilice recursos su uso se notifique a su suscripción de CSP, consulte [Adición de inquilinos en Azure Stack para uso y facturación](azure-stack-csp-howto-register-tenants.md).
+Para configurar Azure Stack de modo que se notifique un nuevo uso de recursos del inquilino a su suscripción de CSP, consulte [Adición de inquilinos en Azure Stack para uso y facturación](azure-stack-csp-howto-register-tenants.md).
 
 ## <a name="charge-the-right-subscriptions"></a>Carga de las suscripciones correctas
 
@@ -72,13 +72,13 @@ Mediante el uso del registro Azure Stack puede:
 - Desviar los datos de uso de Azure Stack a Azure Commerce y facture una suscripción a Azure.
 - Notificar el uso de cada cliente en una suscripción diferente con una implementación multiinquilino de Azure Stack. La arquitectura multiinquilino permite que Azure Stack admita distintas organizaciones en la misma instancia de Azure Stack.
 
-Para cada instancia de Azure Stack, hay una suscripción predeterminada y varias suscripciones de inquilinos. La suscripción predeterminada es una suscripción a Azure que se cobra si no hay ninguna suscripción específica de inquilino. Debe ser la primera suscripción que se registre. Para que los informes de uso multiinquilinos funcionen, la suscripción debe ser un plan CSP o APSS.
+Para cada instancia de Azure Stack, hay una suscripción predeterminada y varias suscripciones de inquilinos. La suscripción predeterminada es una suscripción de Azure que se cobra si no hay una suscripción específica de inquilino. Debe ser la primera suscripción que se registre. Para que los informes de uso multiinquilinos funcionen, la suscripción debe ser un plan CSP o APSS.
 
 Después, el registro se actualiza con una suscripción de Azure para cada inquilino que use Azure Stack. Las suscripciones de inquilinos deben ser de tipo CSP y deben trasferirse al asociado que posee la suscripción predeterminada. No puede registrar los clientes de otra persona.
 
-Cuando Azure Stack reenvía información de uso a Azure global, un servicio de Azure consulta el registro y asigna el uso de cada inquilino a la suscripción del inquilino correspondiente. Si no se ha registrado ningún inquilino, ese uso se transfiere a la suscripción predeterminada para la instancia de Azure Stack de la que se originó.
+Cuando Azure Stack reenvía información de uso a Azure global, un servicio de Azure consulta el registro y asigna el uso de cada inquilino a la suscripción del inquilino correspondiente. Si no se ha registrado un inquilino, ese uso se transfiere a la suscripción predeterminada para la instancia Azure Stack de la que se originó.
 
-Dado que las suscripciones de inquilinos son suscripciones a CSP, se enviará la factura al asociado de CSP y la información de uso no será visible para el cliente final.
+Como las suscripciones de inquilinos son suscripciones a CSP, se enviará la factura al asociado de CSP y la información de uso no será visible para el cliente final.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

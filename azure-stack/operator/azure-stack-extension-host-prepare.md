@@ -1,26 +1,26 @@
 ---
 title: Preparación de un host de extensiones de Azure Stack | Microsoft Docs
-description: Obtenga información sobre cómo preparar un host de extensiones, que se habilite automáticamente con una actualización futura de Azure Stack.
+description: Aprenda a preparar el host de extensiones en Azure Stack, que se habilita automáticamente mediante un paquete de actualización de Azure Stack posterior a la versión 1808.
 services: azure-stack
 keywords: ''
 author: mattbriggs
 ms.author: mabrigg
-ms.date: 06/13/2019
+ms.date: 10/02/2019
 ms.topic: article
 ms.service: azure-stack
 ms.reviewer: thoroet
 manager: femila
 ms.lastreviewed: 03/07/2019
-ms.openlocfilehash: ab508956ddcc57baa04c74710ea485c07cc20416
-ms.sourcegitcommit: b79a6ec12641d258b9f199da0a35365898ae55ff
+ms.openlocfilehash: 75070550f1863457c3a2aaf9ab5915536372d55b
+ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67131158"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72019278"
 ---
-# <a name="prepare-for-extension-host-for-azure-stack"></a>Preparación de un host de extensiones de Azure Stack
+# <a name="prepare-for-extension-host-in-azure-stack"></a>Preparación de un host de extensiones de Azure Stack
 
-El host de extensiones protege a Azure Stack reduciendo el número de puertos TCP/IP necesarios. En este artículo, se explica cómo preparar Azure Stack para el host de extensiones, que se habilita automáticamente mediante una actualización de Azure Stack posterior a la actualización 1808. Este artículo se aplica a las actualizaciones 1808, 1809 y 1811 de Azure Stack.
+El host de extensiones protege a Azure Stack al reducir el número de puertos TCP/IP necesarios. En este artículo, se explica cómo preparar Azure Stack para el host de extensiones, que se habilita automáticamente mediante una actualización de Azure Stack posterior a la actualización 1808. Este artículo se aplica a las actualizaciones 1808, 1809 y 1811 de Azure Stack.
 
 ## <a name="certificate-requirements"></a>Requisitos de certificados
 
@@ -28,16 +28,16 @@ El host de extensiones implementa dos nuevos espacios de nombres de dominio que 
 
 En la tabla, se muestran los nuevos espacios de nombres y los certificados asociados:
 
-| Carpeta de implementación | Nombres alternativos del firmante (SAN) y firmante del certificado requeridos | Ámbito (por región) | Nombre del subdominio |
+| Carpeta de implementación | Nombres alternativos del firmante (SAN) y firmante del certificado requeridos | Ámbito (por región) | Espacio de nombres del subdominio |
 |-----------------------|------------------------------------------------------------------|-----------------------|------------------------------|
 | Administración del host de extensiones | *.adminhosting.\<region>.\<fqdn> (certificados SSL comodín) | Administración del host de extensiones | adminhosting.\<region>.\<fqdn> |
 | Host de extensiones público | *.hosting.\<region>.\<fqdn> (certificados SSL comodín) | Host de extensiones público | hosting.\<region>.\<fqdn> |
 
-Los requisitos detallados de los certificados pueden consultarse en el artículo [Requisitos de certificados de infraestructura de clave pública de Azure Stack](azure-stack-pki-certs.md).
+Para consultar los requisitos detallados de los certificados, consulte [Requisitos de certificados de infraestructura de clave pública de Azure Stack](azure-stack-pki-certs.md).
 
 ## <a name="create-certificate-signing-request"></a>Creación de una solicitud de firma de certificados
 
-La herramienta Readiness Checker de Azure Stack permite crear una solicitud de firma de certificados para los dos nuevos certificados SSL obligatorios. Siga los pasos del artículo [Generación de solicitudes de firma de certificados de Azure Stack](azure-stack-get-pki-certs.md).
+La herramienta Readiness Checker de Azure Stack permite crear una solicitud de firma de certificado para los dos nuevos certificados SSL obligatorios. Siga los pasos del artículo [Generación de solicitudes de firma de certificados de Azure Stack](azure-stack-get-pki-certs.md).
 
 > [!Note]  
 > En función de cómo se hayan solicitado los certificados SSL, es posible que pueda omitir este paso.
@@ -45,7 +45,7 @@ La herramienta Readiness Checker de Azure Stack permite crear una solicitud de f
 ## <a name="validate-new-certificates"></a>Validación de nuevos certificados
 
 1. Abra PowerShell con permisos elevados en el host de ciclo de vida de hardware o en la estación de trabajo de administración de Azure Stack.
-2. Ejecute el siguiente cmdlet para instalar la herramienta Readiness Checker de Azure Stack.
+2. Ejecute el siguiente cmdlet para instalar la herramienta Readiness Checker de Azure Stack:
 
     ```powershell  
     Install-Module -Name Microsoft.AzureStack.ReadinessChecker
@@ -148,7 +148,7 @@ winrm s winrm/config/client '@{TrustedHosts= "<IpOfERCSMachine>"}'
 $PEPCreds = Get-Credential
 $PEPSession = New-PSSession -ComputerName <IpOfERCSMachine> -Credential $PEPCreds -ConfigurationName "PrivilegedEndpoint"
 
-# Obtain DNS Servers and Extension Host information from Azure Stack Stamp Information and find the IPs for the Host Extension Endpoints
+# Obtain DNS Servers and extension host information from Azure Stack Stamp Information and find the IPs for the Host Extension Endpoints
 $StampInformation = Invoke-Command $PEPSession {Get-AzureStackStampInformation} | Select-Object -Property ExternalDNSIPAddress01, ExternalDNSIPAddress02, @{n="TenantHosting";e={($_.TenantExternalEndpoints.TenantHosting) -replace "https://*.","testdnsentry"-replace "/"}},  @{n="AdminHosting";e={($_.AdminExternalEndpoints.AdminHosting)-replace "https://*.","testdnsentry"-replace "/"}},@{n="TenantHostingDNS";e={($_.TenantExternalEndpoints.TenantHosting) -replace "https://",""-replace "/"}},  @{n="AdminHostingDNS";e={($_.AdminExternalEndpoints.AdminHosting)-replace "https://",""-replace "/"}}
 If (Resolve-DnsName -Server $StampInformation.ExternalDNSIPAddress01 -Name $StampInformation.TenantHosting -ErrorAction SilentlyContinue) {
     Write-Host "Can access AZS DNS" -ForegroundColor Green
@@ -192,7 +192,7 @@ The Record to be added in the DNS zone: Type A, Name: *.hosting.\<region>.\<fqdn
 ### <a name="update-existing-publishing-rules-post-enablement-of-extension-host"></a>Actualización de las reglas de publicación existentes (tras las habilitación de del host de extensiones)
 
 > [!Note]  
-> El paquete de actualización de Azure Stack 1808 **no** habilita todavía el host de extensiones. No obstante, permite prepararse para el host de extensiones importando los certificados necesarios. No cierre ningún puerto antes de que el host de extensiones se habilite automáticamente con un paquete de actualización de Azure Stack Update posterior al 1808.
+> El paquete de actualización de Azure Stack 1808 **no** habilita todavía el host de extensiones. Permite prepararse para el host de extensiones al importar los certificados necesarios. No cierre ningún puerto antes de que el host de extensiones se habilite automáticamente con un paquete de actualización de Azure Stack posterior a la versión 1808.
 
 Los siguientes puertos de punto de conexión existentes deben cerrarse en las reglas del firewall existentes.
 
@@ -209,4 +209,4 @@ Los siguientes puertos de punto de conexión existentes deben cerrarse en las re
 ## <a name="next-steps"></a>Pasos siguientes
 
 - Más información acerca de la [integración del firewall](azure-stack-firewall.md).
-- Más información acerca de la [generación de solicitudes de firma de certificados de Azure Stack](azure-stack-get-pki-certs.md)
+- Más información acerca de la [generación de solicitudes de firma de certificado de Azure Stack](azure-stack-get-pki-certs.md).

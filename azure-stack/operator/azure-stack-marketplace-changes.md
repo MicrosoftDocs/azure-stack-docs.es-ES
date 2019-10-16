@@ -15,12 +15,12 @@ ms.date: 08/09/2019
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 07/31/2019
-ms.openlocfilehash: c93b4535189830ee8e84acb882f85a9a51d5f443
-ms.sourcegitcommit: c2ea4ffb42563c26faaf2993ba7b484bcb6d5cb7
+ms.openlocfilehash: c5b0472921c25379f894be5e0b799b7abcb8a43b
+ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71342727"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71961814"
 ---
 # <a name="azure-stack-marketplace-changes"></a>Cambios en Marketplace de Azure Stack
 
@@ -84,7 +84,7 @@ El artículo [Elementos de Marketplace de Azure Stack](azure-stack-marketplace-a
 - Bitnami SugarCRM
 - Bitnami Node.js High-Availability Cluster
 - A10 vThunder: controlador de entrega de aplicaciones L4-L7, equilibrio de carga del servidor global (GSLB), SSL Insight
-- JsonADDomain Extension
+
 
 ## <a name="updated-marketplace-items"></a>Elementos de Marketplace actualizados
 
@@ -110,6 +110,7 @@ El artículo [Elementos de Marketplace de Azure Stack](azure-stack-marketplace-a
 - 12/09/2019: Service Fabric versión 1.0.3
 - 24/09/2019: F5-Networks BIG-IP Virtual Edition-versión 14.1.200000
 - 25/09/2019: Debian 8 versión 8.0.20190806
+- 10/1/2019:  Extensión de Microsoft JsonADDomain, versión 1.3.4
 
 
 ## <a name="next-steps"></a>Pasos siguientes

@@ -15,12 +15,12 @@ ms.date: 09/25/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 02/26/2019
-ms.openlocfilehash: d63d4876674c66fcccab942cd856dce958e62644
-ms.sourcegitcommit: 32609bdb04a07b063c8f20f892c30769ad6903dd
+ms.openlocfilehash: b4780077f015c060c63abc3abd33bd3e71c63e15
+ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71269480"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72019326"
 ---
 # <a name="frequently-asked-questions-about-azure-stack-usage"></a>Preguntas frecuentes sobre el uso de Azure Stack
 
@@ -322,7 +322,7 @@ Se informa del uso para los siguientes proveedores de recursos:
 **Id. de medidor**: 190C935E-9ADA-48FF-9AB8-56EA1CF9ADAA  
 **Nombre de medidor:** : App Service  
 **Unidad**: Total de núcleos virtuales  
-**Notas**: Número de núcleos virtuales usados para ejecutar App Service Nota: Microsoft usa este medidor para realizar los cargos por App Service en Azure Stack. Los proveedores de servicios en la nube pueden usar los otros medidores de App Service (abajo) para calcular el uso en sus inquilinos.  
+**Notas**: Número de núcleos virtuales usados para ejecutar App Service Nota: Microsoft usa este medidor para realizar los cargos por App Service en Azure Stack. Los proveedores de soluciones en la nube pueden usar los otros medidores de App Service (abajo) para calcular el uso en sus inquilinos.  
   
 **Id. de medidor**: 67CC4AFC-0691-48E1-A4B8-D744D1FEDBDE  
 **Nombre de medidor:** : Solicitudes de funciones  

@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/21/2019
+ms.date: 10/04/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 03/21/2019
-ms.openlocfilehash: bcdf43f7be95c76cfd4fc454d85e08ad197551a6
-ms.sourcegitcommit: c196463492732218d2474d3a964f88e995272c80
+ms.openlocfilehash: d3eacfa8ab4b071d44ebd3bd2ad52351b72e7f00
+ms.sourcegitcommit: f91979c1613ea1aa0e223c818fc208d902b81299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71094335"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71974036"
 ---
 # <a name="usage-and-billing-in-azure-stack"></a>Utilización y facturación en Azure Stack
 
@@ -44,14 +44,14 @@ La siguiente imagen muestra los principales componentes de la canalización de u
 
 Los proveedores de recursos de Azure Stack como, por ejemplo, Compute, Storage y Network, generan datos de utilización a intervalos de horas para cada suscripción. Los datos de uso contienen información sobre los recursos consumidos, como el nombre del recurso, la suscripción y la cantidad utilizadas. Para información sobre los recursos de identificador de los medidores, consulte las [preguntas frecuentes de API de uso](azure-stack-usage-related-faq.md).
 
-Después de que se hayan recopilado los datos de utilización, se [notifican a Azure](azure-stack-usage-reporting.md) para que genere una factura, que se puede ver en el portal de facturación de Azure.
+Después de que se hayan recopilado los datos de utilización, se [notifican a Azure](azure-stack-usage-reporting.md) para que genere una factura, que se puede ver en el Portal de facturación de Azure.
 
 > [!NOTE]  
 > El informe de datos de uso no es necesario para el Kit de desarrollo de Azure Stack (ASDK) ni para los usuarios del sistema integrado de Azure Stack cuya licencia esté dentro del modelo de capacidad. Para más información sobre las licencias de Azure Stack, consulte la [hoja de datos de paquetes y precios](https://azure.microsoft.com/mediahandler/files/resourcefiles/5bc3f30c-cd57-4513-989e-056325eb95e1/Azure-Stack-packaging-and-pricing-datasheet.pdf).
 
 El Portal de facturación de Azure muestra los datos de uso de los recursos facturables. Además de los recursos facturables, Azure Stack captura los datos de utilización de un conjunto más amplio de recursos, a los que se pueden obtener acceso en el entorno de Azure Stack a través de las API REST o cmdlets de PowerShell. Los operadores de Azure Stack pueden obtener los datos de uso de todas las suscripciones de usuario. Los usuarios individuales solo pueden obtener sus propios detalles de uso.
 
-## <a name="usage-reporting-for-multi-tenant-cloud-service-providers"></a>Informes de uso de proveedores de servicios en la nube multiinquilino
+## <a name="usage-reporting-for-multi-tenant-cloud-solution-providers"></a>Informes de uso de proveedores de soluciones en la nube multiinquilino
 
 Un proveedor de soluciones en la nube (CSP) multiinquilino que use Azure Stack podría querer notificar el uso de cada cliente por separado, para poder cargar el uso a distintas suscripciones de Azure.
 

@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/11/2019
+ms.date: 10/03/2019
 ms.author: sethm
 ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: 9fa12d91e9f2ec738c68f4a04438a93415bd36fb
-ms.sourcegitcommit: 5efa09034a56eb2f3dc0c9da238fe60cff0c67ac
+ms.openlocfilehash: 650257a0bfe94741d00345f98b40fddd8d00cb44
+ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70144026"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71961459"
 ---
 # <a name="configure-vpn-gateway-settings-for-azure-stack"></a>Configuración de VPN Gateway para Azure Stack
 
@@ -48,7 +48,7 @@ New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
 
 Al crear una puerta de enlace de red virtual, debe especificar la SKU de la puerta de enlace que desea usar. Seleccione las SKU que cumplan sus requisitos en función de los tipos de cargas de trabajo, rendimientos, características y Acuerdos de Nivel de Servicio.
 
-Azure Stack ofrece las SKU de VPN Gateway que aparecen en la siguiente tabla.
+Azure Stack ofrece las SKU de VPN Gateway que aparecen en la siguiente tabla:
 
 | | Rendimiento de VPN Gateway |Túneles IPsec máximos de VPN Gateway |
 |-------|-------|-------|
@@ -60,7 +60,7 @@ Azure Stack ofrece las SKU de VPN Gateway que aparecen en la siguiente tabla.
 
 Azure Stack no admite un cambio de tamaño de las SKU entre las SKU heredadas admitidas.
 
-De igual modo, Azure Stack no admite un cambio de tamaño de una SKU heredada compatible (**Básico**, **Estándar** y **Alto rendimiento**) a una SKU más reciente compatible con Azure (**VpnGw1**, **VpnGw2** y **VpnGw3**).
+De igual modo, Azure Stack no admite un cambio de tamaño de una SKU heredada compatible (**Básica**, **Estándar** y **HighPerformance**), a una SKU más reciente compatible con Azure (**VpnGw1**, **VpnGw2** y **VpnGw3**).
 
 ### <a name="configure-the-gateway-sku"></a>Configuración de la SKU de puerta de enlace
 
@@ -70,7 +70,7 @@ Si usa el portal de Azure Stack para crear una puerta de enlace de red virtual d
 
 #### <a name="powershell"></a>PowerShell
 
-En el siguiente ejemplo de PowerShell se especifica `-GatewaySku` como **Standard**:
+En el siguiente ejemplo de PowerShell se especifica el parámetro `-GatewaySku` como **Standard**:
 
 ```powershell
 New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
@@ -95,9 +95,9 @@ New-AzureRmVirtualNetworkGatewayConnection -Name localtovon -ResourceGroupName t
 Al crear la puerta de enlace de red virtual para una configuración de puerta de enlace de VPN, debe especificar un tipo de VPN. El tipo de VPN que elija dependerá de la topología de conexión que desee crear. Un tipo de VPN también puede depender del hardware que se esté usando. Las configuraciones de S2S requieren un dispositivo VPN. Algunos dispositivos VPN solo serán compatibles con un determinado tipo de VPN.
 
 > [!IMPORTANT]  
-> En la actualidad, Azure Stack solo admite el tipo de VPN basado en ruta. Si el dispositivo solo admite VPN basadas en directiva, no se admiten conexiones a dichos dispositivos desde Azure Stack.  
+> En la actualidad, Azure Stack solo admite el tipo de VPN basado en ruta. Si el dispositivo solo admite VPN basadas en directivas, no se admiten conexiones a dichos dispositivos desde Azure Stack.  
 >
-> Además, Azure Stack no admite el uso de selectores de tráfico basados en directivas para puertas de enlace basadas en rutas en este momento, ya que las configuraciones de directivas personalizadas de IPSec/IKE no se admiten.
+> Además, Azure Stack no admite el uso de selectores de tráfico basados en directivas para puertas de enlace basadas en rutas en este momento, ya que las configuraciones de directivas personalizadas de IPSec/IKE no se admiten todavía.
 
 * **PolicyBased**: las VPN basadas en directivas cifran y dirigen los paquetes a través de túneles de IPsec basados en las directivas de IPsec configuradas con las combinaciones de prefijos de dirección entre su red local y la red virtual de Azure Stack. La directiva (o el selector de tráfico) suele ser una lista de acceso en la configuración del dispositivo VPN.
 
@@ -162,9 +162,9 @@ A veces es necesario modificar la configuración de la puerta de enlace de red l
 
 ## <a name="ipsecike-parameters"></a>Parámetros de IPsec/IKE
 
-Cuando se configura una conexión VPN en Azure Stack, es preciso configurar la conexión en ambos extremos. Si va a configurar una conexión VPN entre Azure Stack y un dispositivo de hardware, como un conmutador o un enrutador que actúa como VPN Gateway, dicho dispositivo puede pedirle más valores.
+Cuando se configura una conexión VPN en Azure Stack, es preciso configurar la conexión en ambos extremos. Si va a configurar una conexión VPN entre Azure Stack y un dispositivo de hardware, como un conmutador o un enrutador que actúa como una puerta de enlace de VPN, dicho dispositivo puede pedirle más valores.
 
-A diferencia de Azure, que admite varias ofertas como iniciador y respondedor, Azure Stack admite solo una de forma predeterminada.  Si tiene que usar distintas configuraciones IPSec/IKE para trabajar con el dispositivo VPN, hay más opciones de parámetros disponibles para configurar la conexión manualmente.  Para obtener más información, consulte [Configuración de la directiva IPsec/IKE para conexiones VPN de sitio a sitio](azure-stack-vpn-s2s.md).
+A diferencia de Azure, que admite varias ofertas como iniciador y respondedor, Azure Stack admite solo una de forma predeterminada. Si tiene que usar distintas configuraciones IPSec/IKE para trabajar con el dispositivo VPN, hay más opciones de parámetros disponibles para configurar la conexión manualmente. Para más información, consulte [Configuración de la directiva IPsec/IKE para conexiones VPN de sitio a sitio](azure-stack-vpn-s2s.md).
 
 ### <a name="ike-phase-1-main-mode-parameters"></a>Parámetros de la fase 1 de IKE (Modo principal)
 
@@ -185,10 +185,10 @@ A diferencia de Azure, que admite varias ofertas como iniciador y respondedor, A
 |Cifrados y algoritmos hash (autenticación) | GCMAES256|
 |Vigencia de SA (tiempo)  | 27 000 segundos  |
 |Vigencia de SA (Kilobytes) | 33 553 408     |
-|Confidencialidad directa perfecta (PFS) |Ninguno (consulte la Nota 1) |
+|Confidencialidad directa perfecta (PFS) |Ninguno (consulte la **Nota 1**) |
 |Detección de cuellos del mismo nivel | Compatible|  
 
-* *Nota 1*:  Antes de la versión 1807, Azure Stack usaba un valor de PFS2048 para la confidencialidad directa perfecta (PFS).
+**Nota 1**: Antes de la versión 1807, Azure Stack usaba un valor de PFS2048 para la confidencialidad directa perfecta (PFS).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

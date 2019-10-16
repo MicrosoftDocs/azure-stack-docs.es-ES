@@ -7,16 +7,16 @@ manager: femila
 editor: ''
 ms.service: azure-stack
 ms.topic: article
-ms.date: 06/04/2019
+ms.date: 10/04/2019
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 10/22/2018
-ms.openlocfilehash: cd32288f6541dc4ba1ed16a24ff5fa802066af30
-ms.sourcegitcommit: c196463492732218d2474d3a964f88e995272c80
+ms.openlocfilehash: ed73441f1a8d3c1c722ce35d5deda9ab7387283b
+ms.sourcegitcommit: f91979c1613ea1aa0e223c818fc208d902b81299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71094426"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71974088"
 ---
 # <a name="make-virtual-machine-scale-sets-available-in-azure-stack"></a>Proporcionar conjuntos de escalado de máquinas virtuales en Azure Stack
 
@@ -41,7 +41,7 @@ En Azure Stack, los conjuntos de escalado de máquinas virtuales no admiten el e
 ## <a name="use-the-azure-stack-portal"></a>Uso del portal de Azure Stack
 
 >[!IMPORTANT]  
-> La información de esta sección se aplica cuando se usa la versión 1808 de Azure Stack o una posterior. Si tiene la versión 1807 o una anterior, consulte [Adición del conjunto de escalado de máquinas virtuales (anterior a la compilación 1808)](#add-the-virtual-machine-scale-set-prior-to-version-1808).
+> La información de esta sección se aplica cuando se usa la versión 1808 de Azure Stack o una posterior. Si tiene la versión 1807 o una anterior, consulte [Adición del conjunto de escalado de máquinas virtuales (anterior a la compilación 1808)](#add-the-virtual-machine-scale-set-prior-to-version-1808).
 
 1. Inicie sesión en el portal de Azure Stack. Después vaya a **Todos los servicios**, luego **Conjuntos de escalado de máquinas virtuales** y, en **COMPUTE**, seleccione **Conjuntos de escalado de máquinas virtuales**.
    ![Selección de conjuntos de escalado de máquinas virtuales](media/azure-stack-compute-add-scalesets/all-services.png)

@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/27/2019
+ms.date: 10/03/2019
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 08/30/2019
-ms.openlocfilehash: 62440c61ee637a0092b1e956b08ba0a9c94d8bab
-ms.sourcegitcommit: c2ea4ffb42563c26faaf2993ba7b484bcb6d5cb7
+ms.openlocfilehash: 6e7f4785603dc6a0523186ee31af5ef9b51bec46
+ms.sourcegitcommit: a7207f4a4c40d4917b63e729fd6872b3dba72968
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71342924"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71909522"
 ---
 # <a name="azure-stack-updates-release-notes"></a>Actualizaciones de Azure Stack: notas de la versión
 
@@ -243,7 +243,7 @@ Las revisiones de Azure Stack solo son aplicables a los sistemas integrados de A
 La versión 1907 de Azure Stack debe aplicarse en la versión 1906 con las revisiones siguientes:
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Azure Stack, revisión 1.1906.13.56](https://support.microsoft.com/help/4520375)
+- [Azure Stack, revisión 1.1906.15.60](https://support.microsoft.com/help/4524559)
 
 ### <a name="after-successfully-applying-the-1907-update"></a>Después de aplicar correctamente la actualización 1907
 
@@ -370,7 +370,7 @@ La versión 1906 de Azure Stack debe aplicarse en la versión 1905 con las rev
 Después de instalar esta actualización, instale todas las revisiones aplicables. Para más información, consulte nuestra [directiva de servicio](azure-stack-servicing-policy.md).
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Azure Stack, revisión 1.1906.13.56](https://support.microsoft.com/help/4520375)
+- [Azure Stack, revisión 1.1906.15.60](https://support.microsoft.com/help/4524559)
 ::: moniker-end
 
 ::: moniker range="azs-1905"

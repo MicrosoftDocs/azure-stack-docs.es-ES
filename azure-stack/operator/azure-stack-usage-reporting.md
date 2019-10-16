@@ -15,12 +15,12 @@ ms.date: 08/12/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 3aeae5c1a0106a0c13c9b6bbe2eb4ba07de14dd4
-ms.sourcegitcommit: 58c28c0c4086b4d769e9d8c5a8249a76c0f09e57
+ms.openlocfilehash: 5fecdbe7bcc85ea01e1502afcfc1c67d3b830c3e
+ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959437"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72019395"
 ---
 # <a name="report-azure-stack-usage-data-to-azure"></a>Notificar los datos de uso de Azure Stack a Azure
 
@@ -96,7 +96,7 @@ En Azure Stack de varios nodos, se admiten suscripciones de Contrato Enterprise 
 
 ## <a name="does-usage-data-reporting-work-in-sovereign-clouds"></a>¿El informe de datos de uso funciona en las nubes soberanas?
 
-En el Kit de desarrollo de Azure Stack, los informes de datos de uso requieren suscripciones creadas en el sistema global de Azure. No se pueden registrar suscripciones creadas en una de las nubes soberanas (nubes de Azure Government, Azure Germany y Azure China) con Azure, por lo que no admiten informes de datos de uso.
+En el Kit de desarrollo de Azure Stack, los informes de datos de uso requieren suscripciones creadas en el sistema global de Azure. No se pueden registrar suscripciones creadas en una de las nubes soberanas (nubes de Azure Government, Azure Germany y Azure China 21Vianet) con Azure, por lo que no admiten informes de datos de uso.
 
 ## <a name="why-doesnt-the-usage-reported-in-azure-stack-match-the-report-generated-from-azure-account-center"></a>¿Por qué el uso notificado en Azure Stack no coincide con el informe generado en el Centro de cuentas de Azure?
 
@@ -107,4 +107,4 @@ Siempre hay un retraso entre los datos de uso notificados por las API de uso de 
 - [API de uso de proveedor](azure-stack-provider-resource-api.md)  
 - [API de uso de inquilino](azure-stack-tenant-resource-usage-api.md)
 - [Preguntas más frecuentes sobre uso](azure-stack-usage-related-faq.md)
-- [Administración del uso y la facturación como un proveedor de servicios en la nube](azure-stack-add-manage-billing-as-a-csp.md)
+- [Administración del uso y la facturación como un proveedor de soluciones en la nube](azure-stack-add-manage-billing-as-a-csp.md)
