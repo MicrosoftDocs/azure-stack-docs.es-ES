@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/18/2019
+ms.date: 10/10/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
-ms.openlocfilehash: 16bbd9b7554eb9e42bac2b0f5694f148589b94ed
-ms.sourcegitcommit: 104ccafcb72a16ae7e91b154116f3f312321cff7
+ms.openlocfilehash: 74cad0b1f41c5c764bef361f3f521162eec59198
+ms.sourcegitcommit: a6d47164c13f651c54ea0986d825e637e1f77018
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67308697"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72277644"
 ---
 # <a name="deploy-kubernetes-to-use-containers-with-azure-stack"></a>Implementación de Kubernetes para usar contenedores con Azure Stack
 

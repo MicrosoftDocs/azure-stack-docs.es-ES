@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/18/2019
+ms.date: 10/10/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
-ms.openlocfilehash: ecd0d3c79edc2359cf82aa9c52fb9021d7fc7a6f
-ms.sourcegitcommit: 104ccafcb72a16ae7e91b154116f3f312321cff7
+ms.openlocfilehash: 2c1a762f002e5058e11857117b4210ad0b59e564
+ms.sourcegitcommit: a6d47164c13f651c54ea0986d825e637e1f77018
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67308685"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72277552"
 ---
 # <a name="access-the-kubernetes-dashboard-in-azure-stack"></a>Acceso al panel de Kubernetes en Azure Stack 
 
