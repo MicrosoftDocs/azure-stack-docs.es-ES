@@ -277,35 +277,53 @@
           href: azure-stack-quota-types.md
     - name: Oferta de soluciones de red
       href: azure-stack-network-solutions-enable.md
-    - name: Oferta de SQL como PaaS
+    - name: Administración de proveedores de recursos de servicios de complementos
       items:
-        - name: Oferta de instancias de SQL Database en Azure Stack
+        - name: App Service en Azure Stack
           items:
             - name: Información general
-              href: azure-stack-sql-resource-provider.md
-            - name: Implementar un proveedor de recursos de SQL Server
-              href: azure-stack-sql-resource-provider-deploy.md
-            - name: Adición de servidores de hospedaje SQL
-              href: azure-stack-sql-resource-provider-hosting-servers.md
-            - name: Creación de bases de datos SQL
-              href: azure-stack-sql-resource-provider-databases.md
-        - name: Oferta de bases de datos SQL de alta disponibilidad
-          href: azure-stack-tutorial-sql.md
-        - name: Actualización de un proveedor de recursos de SQL Server
-          href: azure-stack-sql-resource-provider-update.md
-        - name: Mantenimiento de un proveedor de recursos de SQL Server
-          href: azure-stack-sql-resource-provider-maintain.md
-        - name: Eliminación de un proveedor de recursos de SQL Server
-          href: azure-stack-sql-resource-provider-remove.md
-        - name: Notas de la versión del proveedor de recursos de SQL
-          items:
-            - name: Notas de la versión del proveedor de recursos SQL 1.1.30.0
-              href: azure-stack-sql-resource-provider-11300.md
-            - name: Notas de la versión del proveedor de recursos SQL 1.1.33.0
-              href: azure-stack-sql-resource-provider-11330.md
-    - name: Oferta de MySQL como PaaS
-      items:
-        - name: Oferta de bases de datos de MySQL en Azure Stack
+              href: azure-stack-app-service-overview.md
+            - name: Planeamiento de la capacidad de App Service
+              href: azure-stack-app-service-capacity-planning.md
+            - name: Antes de comenzar
+              href: azure-stack-app-service-before-you-get-started.md
+            - name: Implementación de App Service
+              href: azure-stack-app-service-deploy.md
+            - name: Implementación de App Service para lograr alta disponibilidad
+              href: app-service-deploy-ha.md
+            - name: Implementación de App Service sin conexión
+              href: azure-stack-app-service-deploy-offline.md
+            - name: Actualización de App Service
+              href: azure-stack-app-service-update.md
+            - name: Actualización de App Service sin conexión
+              href: azure-stack-app-service-update-offline.md
+            - name: Adición de roles de infraestructura de App Service
+              href: azure-stack-app-service-add-worker-roles.md
+            - name: Configuración de orígenes de implementación
+              href: azure-stack-app-service-configure-deployment-sources.md
+            - name: Copia de seguridad de App Service
+              href: app-service-back-up.md
+            - name: Recuperación de App Service
+              href: app-service-recover.md
+            - name: Preguntas frecuentes acerca de la facturación de App Service
+              href: app-service-billing-faq.md
+            - name: Notas de la versión de App Service en Azure Stack
+              items:
+                - name: Notas de la versión de App Service en la actualización 1 de Azure Stack
+                  href: azure-stack-app-service-release-notes-update-one.md
+                - name: Notas de la versión de App Service en la actualización 2 de Azure Stack
+                  href: azure-stack-app-service-release-notes-update-two.md
+                - name: Notas de la versión de la actualización 3 de App Service en Azure Stack
+                  href: azure-stack-app-service-release-notes-update-three.md
+                - name: Notas de la versión de la actualización 4 de App Service en Azure Stack
+                  href: azure-stack-app-service-release-notes-update-four.md
+                - name: Notas de la versión de App Service en la actualización 5 de Azure Stack
+                  href: azure-stack-app-service-release-notes-update-five.md
+                - name: Notas de la versión de App Service en la actualización 6 de Azure Stack
+                  href: azure-stack-app-service-release-notes-update-six.md
+                - name: Notas de la versión de App Service en la actualización 7 de Azure Stack
+                  href: azure-stack-app-service-release-notes-update-seven.md
+        - name: MySQL en Azure Stack
           items:
             - name: Información general
               href: azure-stack-mysql-resource-provider.md
@@ -315,63 +333,44 @@
               href: azure-stack-mysql-resource-provider-hosting-servers.md
             - name: Creación de base de datos MySQL
               href: azure-stack-mysql-resource-provider-databases.md
-        - name: Oferta de bases de datos MySQL de alta disponibilidad
-          href: azure-stack-tutorial-mysql.md
-        - name: Actualización del proveedor de recursos de MySQL Server
-          href: azure-stack-mysql-resource-provider-update.md
-        - name: Mantenimiento del proveedor de recursos de MySQL Server
-          href: azure-stack-mysql-resource-provider-maintain.md
-        - name: Eliminación del proveedor de recursos de MySQL Server
-          href: azure-stack-mysql-resource-provider-remove.md
-        - name: Notas de la versión del proveedor de recursos de MySQL
+            - name: Implementación de bases de datos MySQL de alta disponibilidad
+              href: azure-stack-tutorial-mysql.md
+            - name: Actualización del proveedor de recursos de MySQL Server
+              href: azure-stack-mysql-resource-provider-update.md
+            - name: Mantenimiento del proveedor de recursos de MySQL Server
+              href: azure-stack-mysql-resource-provider-maintain.md
+            - name: Eliminación del proveedor de recursos de MySQL Server
+              href: azure-stack-mysql-resource-provider-remove.md
+            - name: Notas de la versión del proveedor de recursos de MySQL
+              items:
+                - name: Notas de la versión del proveedor de recursos de MySQL 1.1.30.0
+                  href: azure-stack-mysql-resource-provider-11300.md
+                - name: Notas de la versión del proveedor de recursos de MySQL 1.1.33.0
+                  href: azure-stack-mysql-resource-provider-11330.md
+        - name: SQL en Azure Stack
           items:
-            - name: Notas de la versión del proveedor de recursos de MySQL 1.1.30.0
-              href: azure-stack-mysql-resource-provider-11300.md
-            - name: Notas de la versión del proveedor de recursos de MySQL 1.1.33.0
-              href: azure-stack-mysql-resource-provider-11330.md
-    - name: Oferta de App Service como PaaS
-      href: azure-stack-app-service-overview.md
-      items:
-        - name: Planeamiento de la capacidad de App Service
-          href: azure-stack-app-service-capacity-planning.md
-        - name: Preguntas frecuentes acerca de la facturación de App Service
-          href: app-service-billing-faq.md
-        - name: Antes de comenzar
-          href: azure-stack-app-service-before-you-get-started.md
-        - name: Implementación de App Service
-          href: azure-stack-app-service-deploy.md
-        - name: Implementación de App Service para lograr alta disponibilidad
-          href: app-service-deploy-ha.md
-        - name: Implementación de App Service sin conexión
-          href: azure-stack-app-service-deploy-offline.md
-        - name: Actualización de App Service
-          href: azure-stack-app-service-update.md
-        - name: Actualización de App Service sin conexión
-          href: azure-stack-app-service-update-offline.md
-        - name: Adición de roles de infraestructura de App Service
-          href: azure-stack-app-service-add-worker-roles.md
-        - name: Configuración de orígenes de implementación
-          href: azure-stack-app-service-configure-deployment-sources.md
-        - name: Copia de seguridad de App Service
-          href: app-service-back-up.md
-        - name: Recuperación de App Service
-          href: app-service-recover.md
-        - name: Notas de la versión de App Service en Azure Stack
-          items:
-            - name: Notas de la versión de App Service en la actualización 1 de Azure Stack
-              href: azure-stack-app-service-release-notes-update-one.md
-            - name: Notas de la versión de App Service en la actualización 2 de Azure Stack
-              href: azure-stack-app-service-release-notes-update-two.md
-            - name: Notas de la versión de la actualización 3 de App Service en Azure Stack
-              href: azure-stack-app-service-release-notes-update-three.md
-            - name: Notas de la versión de la actualización 4 de App Service en Azure Stack
-              href: azure-stack-app-service-release-notes-update-four.md
-            - name: Notas de la versión de App Service en la actualización 5 de Azure Stack
-              href: azure-stack-app-service-release-notes-update-five.md
-            - name: Notas de la versión de App Service en la actualización 6 de Azure Stack
-              href: azure-stack-app-service-release-notes-update-six.md
-            - name: Notas de la versión de App Service en la actualización 7 de Azure Stack
-              href: azure-stack-app-service-release-notes-update-seven.md
+            - name: Información general
+              href: azure-stack-sql-resource-provider.md
+            - name: Implementar un proveedor de recursos de SQL Server
+              href: azure-stack-sql-resource-provider-deploy.md
+            - name: Adición de servidores de hospedaje SQL
+              href: azure-stack-sql-resource-provider-hosting-servers.md
+            - name: Creación de bases de datos SQL
+              href: azure-stack-sql-resource-provider-databases.md
+            - name: Implementación de bases de datos SQL de alta disponibilidad
+              href: azure-stack-tutorial-sql.md
+            - name: Actualización de un proveedor de recursos de SQL Server
+              href: azure-stack-sql-resource-provider-update.md
+            - name: Mantenimiento de un proveedor de recursos de SQL Server
+              href: azure-stack-sql-resource-provider-maintain.md
+            - name: Eliminación de un proveedor de recursos de SQL Server
+              href: azure-stack-sql-resource-provider-remove.md
+            - name: Notas de la versión del proveedor de recursos de SQL
+              items:
+                - name: Notas de la versión del proveedor de recursos SQL 1.1.30.0
+                  href: azure-stack-sql-resource-provider-11300.md
+                - name: Notas de la versión del proveedor de recursos SQL 1.1.33.0
+                  href: azure-stack-sql-resource-provider-11330.md
     - name: Uso y facturación
       href: azure-stack-billing-and-chargeback.md
       items:
