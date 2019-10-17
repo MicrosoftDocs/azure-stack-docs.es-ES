@@ -10,16 +10,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/10/2019
+ms.date: 10/10/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: 9360e8e5f4db14fbebba2642ed11ca2e3830bdf1
-ms.sourcegitcommit: af63214919e798901399fdffef09650de4176956
+ms.openlocfilehash: d42b1f161d1b74633c4e9924e45677a57b3493e1
+ms.sourcegitcommit: a6d47164c13f651c54ea0986d825e637e1f77018
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66828402"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72277825"
 ---
 # <a name="release-notes-for-validation-as-a-service"></a>Notas de la versión para la validación como servicio
 

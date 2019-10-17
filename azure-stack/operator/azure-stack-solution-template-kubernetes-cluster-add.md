@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/18/2019
+ms.date: 10/10/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
-ms.openlocfilehash: 501040273eca6ce80972ae2a69eca2018f9f8d2d
-ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
+ms.openlocfilehash: 4fcfb0c8ef509ab827c15321cff5fc945230d69e
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71159594"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72283437"
 ---
 # <a name="add-kubernetes-to-the-azure-stack-marketplace"></a>Adición de Kubernetes a Marketplace de Azure Stack
 
@@ -154,4 +154,4 @@ Para quitar el elemento de Kubernetes:
 
 [Implementación de un clúster de Kubernetes en Azure Stack](../user/azure-stack-solution-template-kubernetes-deploy.md)
 
-[Introducción a la oferta de servicios en Azure Stack](azure-stack-offer-services-overview.md)
+[Introducción a la oferta de servicios en Azure Stack](service-plan-offer-subscription-overview.md)

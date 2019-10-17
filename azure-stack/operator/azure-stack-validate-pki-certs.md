@@ -15,12 +15,12 @@ ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: ppacent
 ms.lastreviewed: 01/08/2019
-ms.openlocfilehash: 8d929a3b1fd67f3ec73137b2e1a87f594ea5b544
-ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
+ms.openlocfilehash: 3823aa73d58af48c662690aa0d8e8a21180b4ed6
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68417834"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72283235"
 ---
 # <a name="validate-azure-stack-pki-certificates"></a>Validación de certificados PKI de Azure Stack
 
@@ -272,7 +272,7 @@ Una vez que AzsReadinessChecker valide los certificados, podrá utilizarlos en l
 
  - En el caso de la implementación, transfiera de forma segura los certificados al ingeniero de implementación para que pueda copiarlos en el host de la implementación tal y como se especifica en la [documentación de los requisitos de infraestructura de clave pública (PKI) de Azure Stack](azure-stack-pki-certs.md).
  - En caso de rotación de secretos, puede usar los certificados para actualizar los certificados antiguos de los puntos de conexión de la infraestructura pública del entorno de Azure Stack, tal y como se indica en la [documentación de rotación de secretos de Azure Stack](azure-stack-rotate-secrets.md).
- - Para los servicios de PaaS, puede utilizar los certificados para instalar Proveedores de recursos de SQL, MySQL y App Services en Azure Stack siguiendo la documentación de [Introducción a la oferta de servicios en Azure Stack](azure-stack-offer-services-overview.md).
+ - Para los servicios de PaaS, puede utilizar los certificados para instalar Proveedores de recursos de SQL, MySQL y App Services en Azure Stack siguiendo la documentación de [Introducción a la oferta de servicios en Azure Stack](service-plan-offer-subscription-overview.md).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

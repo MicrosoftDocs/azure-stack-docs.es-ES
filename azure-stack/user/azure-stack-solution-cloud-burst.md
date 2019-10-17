@@ -15,12 +15,12 @@ ms.date: 01/14/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 64554d0bd2c9e9d8622b1fd48bb7d086cd0b4b76
-ms.sourcegitcommit: 35b13ea6dc0221a15cd0840be796f4af5370ddaf
+ms.openlocfilehash: ca313e2e936f7bb006fdc1c15c49d271b1059a16
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68603128"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72283302"
 ---
 # <a name="create-cross-cloud-scaling-app-solutions-with-azure-and-azure-stack"></a>Creación de soluciones de aplicaciones escalado entre nubes con Azure y Azure Stack
 
@@ -56,7 +56,7 @@ En esta solución, creará un entorno de ejemplo para:
 
 -   Implemente servicios PaaS de [App Service](../operator/azure-stack-app-service-deploy.md) para Azure Stack.
 
--   Cree [planes u ofertas](../operator/azure-stack-plan-offer-quota-overview.md) dentro del entorno de Azure Stack.
+-   Cree [planes u ofertas](../operator/service-plan-offer-subscription-overview.md) dentro del entorno de Azure Stack.
 
 -   [Cree una suscripción de inquilino](../operator/azure-stack-subscribe-plan-provision-vm.md) dentro del entorno de Azure Stack.
 
@@ -66,7 +66,7 @@ En esta solución, creará un entorno de ejemplo para:
 
 -   Se requiere una máquina virtual Windows Server 2016 con .NET 3.5. Esta máquina virtual se compilará en la suscripción del inquilino en Azure Stack como el agente de compilación privado.
 
--   [Windows Server 2016 con la imagen de máquina virtual de SQL 2017](../operator/azure-stack-add-vm-image.md#add-a-vm-image-through-the-portal) está disponible en el Marketplace de Azure Stack. Si esta imagen no está disponible, trabaje junto con un operador de Azure Stack para garantizar que se agrega al entorno.
+-   [Windows Server 2016 con la imagen de máquina virtual de SQL 2017](../operator/azure-stack-add-vm-image.md#add-a-vm-image-as-an-azure-stack-operator-using-the-portal) está disponible en el Marketplace de Azure Stack. Si esta imagen no está disponible, trabaje junto con un operador de Azure Stack para garantizar que se agrega al entorno.
 
 ## <a name="issues-and-considerations"></a>Problemas y consideraciones
 

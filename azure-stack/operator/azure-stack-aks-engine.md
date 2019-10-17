@@ -15,12 +15,12 @@ ms.date: 10/09/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 10/09/2019
-ms.openlocfilehash: 6695af1e27a2182321a468b853a4650f42146a15
-ms.sourcegitcommit: 12034a1190d52ca2c7d3f05c8c096416120d8392
+ms.openlocfilehash: 1e1e72cea27bf036f662cfaa64a84a57fe9bc964
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72037908"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72283062"
 ---
 # <a name="add-the-azure-kubernetes-services-aks-engine-prerequisites-to-the-azure-stack-marketplace"></a>Agregar los requisitos previos del motor de Azure Kubernetes Service (AKS) al Marketplace de Azure Stack
 
@@ -38,7 +38,7 @@ Puede permitir que los usuarios configuren el motor de Azure Kubernetes Services
 
 Será necesario que los usuarios tengan un plan, una oferta y una suscripción a Azure Stack con espacio suficiente. Con frecuencia, los usuarios querrán implementar clústeres de hasta seis máquinas virtuales, formados por tres maestros y tres nodos de trabajo. Posiblemente quiera asegurarse de que tienen una cuota lo suficientemente grande.
 
-Si necesita más información sobre la planeación y configuración de una oferta de servicio, consulte [Introducción a la oferta de servicios en Azure Stack](azure-stack-offer-services-overview.md)
+Si necesita más información sobre la planeación y configuración de una oferta de servicio, consulte [Introducción a la oferta de servicios en Azure Stack](service-plan-offer-subscription-overview.md)
 
 ## <a name="create-a-service-principal-and-credentials"></a>Creación de una entidad de seguridad de servicio y sus credenciales
 
@@ -101,4 +101,4 @@ Puede agregar el script personalizado a Marketplace obteniendo el elemento de Az
 
 [Descripción del motor de AKS en Azure Stack](../user/azure-stack-kubernetes-aks-engine-overview.md)
 
-[Introducción a la oferta de servicios en Azure Stack](azure-stack-offer-services-overview.md)
+[Introducción a la oferta de servicios en Azure Stack](service-plan-offer-subscription-overview.md)

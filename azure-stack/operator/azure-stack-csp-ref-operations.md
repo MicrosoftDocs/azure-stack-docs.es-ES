@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/17/2019
+ms.date: 10/14/2019
 ms.author: sethm
 ms.reviewer: alfredop
-ms.lastreviewed: 01/08/2019
-ms.openlocfilehash: a9e0dd05195d7ece62689aa8b5971cf72a6e3713
-ms.sourcegitcommit: c2ea4ffb42563c26faaf2993ba7b484bcb6d5cb7
+ms.lastreviewed: 10/14/2019
+ms.openlocfilehash: 72310e813d0dd0a64575f1b2452bf4a5191638ef
+ms.sourcegitcommit: 97d41b3ebed07aa85a50087b6076671fd37e08c5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71342820"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72350175"
 ---
 # <a name="register-tenants-for-usage-tracking-in-azure-stack"></a>Registro de inquilinos en Azure Stack para el seguimiento de uso
 
@@ -61,15 +61,14 @@ Para más información sobre los perfiles de API y Azure Stack, consulte [Admini
 
 Use el cmdlet **New-AzureRmResource** para agregar un inquilino. [Conéctese a Azure Stack](azure-stack-powershell-configure-admin.md) y, después, desde un símbolo del sistema con privilegios elevados, use el siguiente cmdlet:
 
-```powershell
-New-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01 -Properties
+```powershell  
+New-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01
 ```
 
 ### <a name="api-call"></a>Llamada a la API
 
 **Operation**: PUT  
-**URI de solicitud**: `subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}  /providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/  
-{customerSubscriptionId}?api-version=2017-06-01 HTTP/1.1`  
+**URI de solicitud**: `subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}?api-version=2017-06-01 HTTP/1.1`  
 **Respuesta**: 201 Creado  
 **Cuerpo de respuesta**: Vacío  
 
@@ -101,9 +100,7 @@ Get-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/reso
 Puede obtener una lista de todas las asignaciones de inquilinos mediante la operación GET.
 
 **Operation**: GET  
-**URI de solicitud**: `subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}  
-/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions?  
-api-version=2017-06-01 HTTP/1.1`  
+**URI de solicitud**: `subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions?api-version=2017-06-01 HTTP/1.1`  
 **Respuesta**: 200  
 **Cuerpo de respuesta**:
 
@@ -152,9 +149,7 @@ Remove-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/r
 Se pueden quitar las asignaciones de inquilinos mediante la operación DELETE.
 
 **Operation**: DELETE  
-**URI de solicitud**: `subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}  
-/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/  
-{customerSubscriptionId}?api-version=2017-06-01 HTTP/1.1`  
+**URI de solicitud**: `subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}?api-version=2017-06-01 HTTP/1.1`  
 **Respuesta**: 204 No Content  
 **Cuerpo de respuesta**: Vacío
 

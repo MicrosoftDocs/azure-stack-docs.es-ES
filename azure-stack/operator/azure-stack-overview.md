@@ -17,12 +17,12 @@ ms.author: justinha
 ms.reviewer: unknown
 ms.custom: ''
 ms.lastreviewed: 05/14/2019
-ms.openlocfilehash: 7c84a9cb841f06887d09a650d277566fb9ff18ed
-ms.sourcegitcommit: 95f30e32e5441599790d39542ff02ba90e70f9d6
+ms.openlocfilehash: 060258b07e3eef385298600794a6dd8154a461fc
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71070177"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72283424"
 ---
 # <a name="azure-stack-overview"></a>Introducción a Azure Stack
 
@@ -92,7 +92,7 @@ Puede administrar Azure Stack con el portal de administración, el portal de usu
 
 Como operador de Azure Stack, puede ofrecer una amplia variedad de servicios y aplicaciones, como [máquinas virtuales](azure-stack-tutorial-tenant-vm.md), [aplicaciones web](azure-stack-app-service-overview.md), [SQL Server](azure-stack-tutorial-sql.md) de alta disponibilidad y bases de datos de [MySQL Server](azure-stack-tutorial-mysql.md). También puede usar [plantillas de Azure Resource Manager de inicio rápido de Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates) para implementar SharePoint, Exchange y mucho más. 
 
-Mediante el portal de administración, puede [configurar Azure Stack para prestar servicios](azure-stack-plan-offer-quota-overview.md) a inquilinos mediante planes, ofertas, cuotas y suscripciones. Los usuarios inquilinos pueden suscribirse a varias ofertas. Las ofertas pueden tener uno o varios planes, y los planes pueden tener uno o varios servicios. Los operadores también administran la capacidad y responden a las alertas. 
+Mediante el portal de administración, puede [configurar Azure Stack para prestar servicios](service-plan-offer-subscription-overview.md) a inquilinos mediante planes, ofertas, cuotas y suscripciones. Los usuarios inquilinos pueden suscribirse a varias ofertas. Las ofertas pueden tener uno o varios planes, y los planes pueden tener uno o varios servicios. Los operadores también administran la capacidad y responden a las alertas. 
 
 Si Azure Stack está configurado, un **usuario de Azure Stack** (también llamado inquilino) consume los servicios que el operador ofrece. Los inquilinos pueden aprovisionar, supervisar y administrar los servicios a los que se han suscrito, como Web Apps, Storage y Virtual Machines.
 

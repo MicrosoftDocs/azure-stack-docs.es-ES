@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: powershell
 ms.topic: article
-ms.date: 07/09/2019
+ms.date: 10/10/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 07/09/2019
-ms.openlocfilehash: 27f2b4c1817c28cf5d345f5aa9387a26cd18316b
-ms.sourcegitcommit: d2df594e8346a875967e3cfb04c23562a1bd2e3c
+ms.openlocfilehash: 118f29c46a1b11c07c62407f19b86aa28ada3bd1
+ms.sourcegitcommit: a6d47164c13f651c54ea0986d825e637e1f77018
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67725753"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72277789"
 ---
 # <a name="use-docker-to-run-powershell-in-azure-stack"></a>Uso de Docker para ejecutar PowerShell en Azure Stack
 

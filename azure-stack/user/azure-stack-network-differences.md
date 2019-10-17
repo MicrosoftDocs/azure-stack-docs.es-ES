@@ -5,18 +5,18 @@ services: azure-stack
 keywords: ''
 author: mattbriggs
 manager: femila
-ms.date: 07/10/2019
+ms.date: 10/10/2019
 ms.topic: article
 ms.service: azure-stack
 ms.author: mabrigg
 ms.reviewer: wamota
 ms.lastreviewed: 07/10/2019
-ms.openlocfilehash: 7e0f533c10e8dae0566284ffb09cfa7281213002
-ms.sourcegitcommit: ca7e6b7b9b27d0d93ee4d5d1eeaf3113bbcea4da
+ms.openlocfilehash: 79ec0994ecd99a5279fc0b3b032ef6872f921f38
+ms.sourcegitcommit: a6d47164c13f651c54ea0986d825e637e1f77018
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68229433"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72277797"
 ---
 # <a name="differences-and-considerations-for-azure-stack-networking"></a>Diferencias y consideraciones para las redes de Azure Stack
 

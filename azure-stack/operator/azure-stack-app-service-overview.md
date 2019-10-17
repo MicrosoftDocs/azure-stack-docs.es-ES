@@ -12,15 +12,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/11/2019
-ms.author: mabrigg
+ms.author: BryanLa
 ms.reviewer: anwestg
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: 698d38e971d37457d50637cb2e7e2ffe88890c20
-ms.sourcegitcommit: 7d7a4c8c46613b6104caf23763bfd2275f6a826b
+ms.openlocfilehash: 14c37e894d87d7a19ff6edc91b9c827ce53c08e8
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70808226"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282641"
 ---
 # <a name="app-service-on-azure-stack-overview"></a>Introducción a App Service en Azure Stack
 
@@ -70,4 +70,4 @@ App Service en Azure Stack usa la misma interfaz de usuario que Azure App Servic
 - [Requisitos previos para implementar App Service en Azure Stack](azure-stack-app-service-before-you-get-started.md)
 - [Instale el proveedor de recursos de App Service](azure-stack-app-service-deploy.md)
 
-También puede probar otros [servicios de plataforma como servicio (PaaS)](azure-stack-offer-services-overview.md), como el [proveedor de recursos de SQL Server](azure-stack-sql-resource-provider-deploy.md) y el [proveedor de recursos de MySQL](azure-stack-mysql-resource-provider-deploy.md).
+También puede probar otros [servicios de plataforma como servicio (PaaS)](service-plan-offer-subscription-overview.md), como el [proveedor de recursos de SQL Server](azure-stack-sql-resource-provider-deploy.md) y el [proveedor de recursos de MySQL](azure-stack-mysql-resource-provider-deploy.md).

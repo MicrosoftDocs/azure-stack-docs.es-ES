@@ -16,12 +16,12 @@ ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: 36c4dae72f7fcf91438880f07231c94c8d286253
-ms.sourcegitcommit: 4eb1766c7a9d1ccb1f1362ae1211ec748a7d708c
+ms.openlocfilehash: a47bae619b2525534797158cf2660d5bc77192c9
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69579076"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282613"
 ---
 # <a name="advanced-asdk-evaluation-tasks"></a>Tareas de evaluación avanzadas de ASDK
 Una vez que se haya familiarizado con las características y funcionalidades básicas del Kit de desarrollo de Azure Stack (ASDK), puede ampliar sus conocimientos acerca de Azure Stack mediante el examen de escenarios más avanzados. Estas tareas de evaluación más avanzadas se documentan de forma muy completa en la documentación del operador de Azure Stack.
@@ -46,4 +46,4 @@ Implemente el proveedor de recursos de App Service para que tanto las [aplicacio
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Más información acerca de la oferta de servicios con los sistemas integrados de Azure Stack](../operator/azure-stack-offer-services-overview.md)
+[Más información acerca de la oferta de servicios con los sistemas integrados de Azure Stack](../operator/service-plan-offer-subscription-overview.md)

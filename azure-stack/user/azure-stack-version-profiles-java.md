@@ -16,12 +16,12 @@ ms.date: 10/01/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: f5cbf333494eb8d04ccbc974f95cda8be5d62284
-ms.sourcegitcommit: 3d14ae30ce3ee44729e5419728cce14b3000e968
+ms.openlocfilehash: 7d2a98656671a5e6f59d46054e074e45bb9d3c89
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71814492"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282897"
 ---
 # <a name="use-api-version-profiles-with-java-in-azure-stack"></a>Uso de los perfiles de la versión de la API con Java en Azure Stack
 
@@ -97,7 +97,7 @@ Para usar el SDK de Azure de Java con Azure Stack, debe proporcionar los siguien
 | ------------------------- | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Id. de inquilino                 | `AZURE_TENANT_ID`            | El [identificador de inquilino](../operator/azure-stack-identity-overview.md) de su instancia de Azure Stack.                                                          |
 | Id. de cliente                 | `AZURE_CLIENT_ID`             | El identificador de aplicación de la entidad de servicio que guardó al crear esta última en la sección anterior.                                                                                              |
-| Id. de suscripción           | `AZURE_SUBSCRIPTION_ID`      | Puede usar el [identificador de suscripción](../operator/azure-stack-plan-offer-quota-overview.md#subscriptions) para acceder a las ofertas de Azure Stack.                |
+| Id. de suscripción           | `AZURE_SUBSCRIPTION_ID`      | Puede usar el [identificador de suscripción](../operator/service-plan-offer-subscription-overview.md#subscriptions) para acceder a las ofertas de Azure Stack.                |
 | Secreto del cliente             | `AZURE_CLIENT_SECRET`        | El secreto de aplicación de la entidad de servicio que guardó al crear esta última.                                                                                                                                   |
 | Punto de conexión de Resource Manager | `ARM_ENDPOINT`              | Consulte el artículo [Punto de conexión de Resource Manager de Azure Stack](../user/azure-stack-version-profiles-ruby.md#the-azure-stack-resource-manager-endpoint). |
 | Location                  | `RESOURCE_LOCATION`    | **Local** para Azure Stack.                                                                                                                                                                                                |

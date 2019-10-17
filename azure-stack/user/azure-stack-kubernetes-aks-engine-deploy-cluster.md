@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na (Kubernetes)
 ms.devlang: nav
 ms.topic: article
-ms.date: 09/27/2019
+ms.date: 10/10/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 09/27/2019
-ms.openlocfilehash: 0cccd93ca24f2e93717bfbbd6ec05137d91f5bd0
-ms.sourcegitcommit: 036d4b22a8076ca9ba5c667a451c544d88f8bb94
+ms.lastreviewed: 10/10/2019
+ms.openlocfilehash: 7ca248ace5020546fe9d25b9e1e731f7e70275d6
+ms.sourcegitcommit: 70147e858956443bc66b3541ec278c102bb45c07
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71681825"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72381390"
 ---
 # <a name="deploy-a-kubernetes-cluster-with-the-aks-engine-on-azure-stack"></a>Implementación de un clúster de Kubernetes con AKS-Engine en Azure Stack
 
@@ -170,19 +170,14 @@ Compruebe el clúster mediante la implementación de MySQL con Helm.
 
     ```bash
     sudo snap install helm –classic
+    kubectl -n kube-system create serviceaccount tiller
+    kubectl create clusterrolebinding tiller --clusterrole cluster-admin --serviceaccount=kube-system:tiller
+    helm init --service-account=tiller
     helm repo update
     helm install stable/mysql
     ```
 
-5. Si después de intentar ejecutar `install stable/mysql`, obtiene un error como `Error: incompatible versions client[v2.XX.X] server[v2.YY.Y]`. Ejecute los comandos siguientes:
-
-    ```bash 
-    helm init --force-upgrade
-    and retry:
-    helm install stable/mysql
-    ```
-
-6.  Para limpiar la prueba, busque el nombre usado para la implementación de MySQL. En el ejemplo siguiente, el nombre es `wintering-rodent`. Después, elimínela. 
+5.  Para limpiar la prueba, busque el nombre usado para la implementación de MySQL. En el ejemplo siguiente, el nombre es `wintering-rodent`. Después, elimínela. 
 
     Ejecute los comandos siguientes:
 

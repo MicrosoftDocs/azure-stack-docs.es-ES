@@ -3,7 +3,7 @@ title: Desarrollo de plantillas para Azure Stack | Microsoft Docs
 description: Aprenda a desarrollar plantillas de Azure Resource Manager para realizar la portabilidad de aplicaciones entre Azure y Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: sethmanheim
+author: mattbriggs
 manager: femila
 editor: ''
 ms.assetid: 8a5bc713-6f51-49c8-aeed-6ced0145e07b
@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 10/01/2019
-ms.author: sethm
+ms.author: mabrigg
 ms.reviewer: unknown
 ms.lastreviewed: 05/21/2019
-ms.openlocfilehash: 5cd8e87613d1d4aa4adc8dedac7dcac4fa57eae2
-ms.sourcegitcommit: bbf3edbfc07603d2c23de44240933c07976ea550
+ms.openlocfilehash: 96e43607809c192b9498c092b4a2584cec40a515
+ms.sourcegitcommit: 7226979ece29d9619c959b11352be601562b41d3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71714728"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72304105"
 ---
 # <a name="develop-templates-for-azure-stack-with-azure-resource-manager"></a>Desarrollo de plantillas para Azure Stack con Azure Resource Manager
 
