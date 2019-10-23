@@ -15,12 +15,12 @@ ms.date: 06/11/2019
 ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 06/11/2019
-ms.openlocfilehash: 14f2300be0309cbd47b1481a4a52b02331f120a4
-ms.sourcegitcommit: 1bae55e754d7be75e03af7a4db3ec43fd7ff3e9c
+ms.openlocfilehash: 6ada971c092acbc1ebe8e83a784a5d1e392c4dea
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71319196"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72283584"
 ---
 # <a name="create-an-offer-in-azure-stack"></a>Creación de una oferta en Azure Stack
 
@@ -43,7 +43,7 @@ Las [ofertas](azure-stack-overview.md) son grupos de uno o varios planes que los
 
    ![Seleccionar el plan que quiere incluir en la oferta de Azure Stack](media/azure-stack-create-offer/select-plan.png)
 
-4. En este momento puede crear un plan complementario para modificar el plan base, pero es un paso opcional. En el siguiente artículo, [Planes complementarios de Azure Stack](create-add-on-plan.md), crearemos un plan complementario.
+4. En este momento puede crear un plan complementario para modificar el plan base, pero es un paso opcional. Tiene la oportunidad de crear un plan complementario en el siguiente artículo, [Planes complementarios de Azure Stack](create-add-on-plan.md).
 
 5. Seleccione la pestaña **Revisar y crear**. Revise el resumen de la oferta para asegurarse de que todos los valores son correctos. La interfaz le permite expandir las cuotas de los planes elegidos, de una en una, para ver los detalles de cada cuota en un plan. También puede volver atrás para realizar las modificaciones necesarias.
 
@@ -111,5 +111,5 @@ Hay dos formas de cambiar el estado de una oferta:
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Creación de suscripciones](azure-stack-subscribe-plan-provision-vm.md)
-- [Aprovisionamiento de una máquina virtual](../user/azure-stack-create-vm-template.md)
+- Para más información sobre cómo modificar una oferta y proporcionar a los usuarios un plan complementario, continúe con [Create un plan complementario ](create-add-on-plan.md) (opcional).
+- En caso contrario, vaya a [Suscribirse a una oferta](azure-stack-subscribe-plan-provision-vm.md).

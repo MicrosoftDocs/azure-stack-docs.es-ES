@@ -14,12 +14,12 @@ ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 03/14/2019
-ms.openlocfilehash: ebee962bbf53cad48df11bd21653830410f04d9d
-ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
+ms.openlocfilehash: 454fe5b07dc5576cecdb11b59e5424e3c5ccbb72
+ms.sourcegitcommit: df20662e77a6ed0a7eba03f79eb53e8cd4471206
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68417552"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72445380"
 ---
 # <a name="connect-storage-explorer-to-an-azure-stack-subscription-or-a-storage-account"></a>Conexión del Explorador de Storage a una suscripción de Azure Stack o una cuenta de almacenamiento
 
@@ -38,14 +38,14 @@ Después de conectarse a una suscripción de Azure Stack o a una cuenta de almac
 
 Necesita acceso directo a Azure Stack o una conexión VPN para que el Explorador de Storage pueda acceder a la suscripción de Azure Stack. Para más información sobre cómo configurar una conexión VPN a Azure Stack, consulte [Conexión a Azure Stack con VPN](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn).
 
-Para el Kit de desarrollo de Azure Stack, debe exportar el certificado raíz de la entidad de certificación de Azure Stack.
-
 > [!Note]  
 > En el caso de ASDK, si se va a conectar ASDK mediante VPN, no utilice el certificado raíz (CA.cer) que se creó en el proceso de configuración de la VPN.  Este certificado tiene codificación DER y no permitirá que el Explorador de Storage recupere las suscripciones de Azure Stack. Siga estos pasos para exportar un certificado codificado en base 64 para usarlo con el Explorador de Storage.
 
+En el caso de los sistemas integrados que están desconectados y para ASDK, se recomienda usar una entidad de certificación empresarial interna para exportar el certificado raíz en un formato de base 64 y, a continuación, importarlo en el Explorador de Azure Storage.  
+
 ### <a name="export-and-then-import-the-azure-stack-certificate"></a>Exportación y posterior importación del certificado de Azure Stack
 
-Exporte y después importe el certificado de Azure Stack para ASDK. En el caso de los sistemas integrados, el certificado está firmado públicamente y este paso no es necesario.
+Exporte y, después, importe el certificado de Azure Stack para los sistemas integrados desconectados y para ASDK. En el caso de los sistemas integrados, el certificado está firmado públicamente y este paso no es necesario.
 
 1. Abra `mmc.exe` en una máquina host de Azure Stack o una máquina local con una conexión VPN a Azure Stack. 
 

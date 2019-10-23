@@ -14,12 +14,12 @@ ms.date: 10/03/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 10/22/2018
-ms.openlocfilehash: 4d9331f5167a0ce9d305a76225987d8b1d3f3dcc
-ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
+ms.openlocfilehash: 2fee81a79b58294a9c43f8d550f139157cb64a9b
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71961555"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72283571"
 ---
 # <a name="connect-azure-stack-to-azure-using-azure-expressroute"></a>Conexión de Azure Stack a Azure mediante Azure ExpressRoute
 
@@ -84,7 +84,7 @@ Para configurar el entorno de Azure Stack para el primer inquilino, use los paso
 Antes de empezar a configurar Azure Stack, necesita:
 
 * Una implementación del sistema integrado de Azure Stack o una implementación del Kit de desarrollo de Azure Stack (ASDK). Para información sobre cómo implementar el ASDK, consulte el [inicio rápido de implementación del Kit de desarrollo de Azure Stack](../asdk/asdk-download.md).
-* Una oferta de Azure Stack a la que los usuarios puedan suscribirse. Para más información, consulte [Planes, ofertas y suscripciones](azure-stack-plan-offer-quota-overview.md).
+* Una oferta de Azure Stack a la que los usuarios puedan suscribirse. Para más información, consulte [Introducción a los servicios, planes, ofertas y suscripciones](service-plan-offer-subscription-overview.md).
 
 ### <a name="create-network-resources-in-azure-stack"></a>Creación de recursos de red en Azure Stack
 
@@ -341,7 +341,7 @@ Puede usar el siguiente diagrama de configuración del enrutador de ExpressRoute
 
 Puede usar cualquier enrutador que admita VPN de IKEv2 y BGP para finalizar la conexión VPN de sitio a sitio desde Azure Stack. El mismo enrutador se utiliza para conectarse a Azure con un circuito ExpressRoute.
 
-El siguiente ejemplo de configuración del enrutador de los servicios de agregación de Cisco Site Recovery 1000 Series admite la infraestructura de red que se muestra en el diagrama de *configuración del enrutador de ExpressRoute*.
+El siguiente ejemplo de configuración del enrutador de los servicios de agregación de Cisco ASR 1000 Series admite la infraestructura de red que se muestra en el diagrama de *configuración del enrutador de ExpressRoute*.
 
 ```shell
 ip vrf Tenant 1

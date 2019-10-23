@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/08/2019
+ms.date: 10/16/2019
 ms.author: justinha
 ms.reviewer: prchint
-ms.lastreviewed: 10/08/2019
-ms.openlocfilehash: b3540727b1868c700e43e2865848a71635e8003d
-ms.sourcegitcommit: 534117888d9b7d6d363ebe906a10dcf0acf8b685
+ms.lastreviewed: 10/16/2019
+ms.openlocfilehash: 3c0b1ce32399b4739796b2718e97c69d96291dc6
+ms.sourcegitcommit: df20662e77a6ed0a7eba03f79eb53e8cd4471206
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72173119"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72445284"
 ---
 # <a name="microsoft-azure-stack-troubleshooting"></a>Solución de problemas de Microsoft Azure Stack
 
@@ -85,7 +85,7 @@ Elija el tipo de cuenta de servicios compartidos que utiliza para Azure Stack. E
 * Proveedor de soluciones en la nube
 * Suscripción de servicios compartidos de asociados
 
-## <a name="get-scale-unit-metrics"></a>Obtención de métricas de unidad de escalado
+### <a name="get-scale-unit-metrics"></a>Obtención de métricas de unidad de escalado
 
 Puede usar PowerShell para obtener información sobre el uso de la marca sin ayuda de CSS. Para obtener el uso de la marca: 
 
@@ -151,6 +151,11 @@ Puede leer más acerca de cómo configurar el umbral de conservación y las recu
 ## <a name="troubleshoot-storage"></a>Solución de problemas de almacenamiento
 ### <a name="storage-reclamation"></a>Recuperación de almacenamiento
 La funcionalidad reclamada capacidad puede tardar hasta 14 horas en mostrarse en el portal. La recuperación de espacio depende de diversos factores, como el porcentaje de uso de archivos de contenedor internos en el almacén de blobs de bloque. Por lo tanto, en función de cuántos datos se eliminen, no hay ninguna garantía de la cantidad de espacio que se podría recuperar cuando se ejecute el recolector de elementos no utilizados.
+
+### <a name="azure-storage-explorer-not-working-with-azure-stack"></a>El Explorador de Azure Storage no funciona con Azure Stack 
+ 
+Si usa un sistema integrado en un escenario sin conexión, se recomienda usar una entidad de certificación (CA) empresarial. Exporte el certificado raíz en un formato de base 64 y, a continuación, impórtelo en el Explorador de Azure Storage. Asegúrese de quitar la barra diagonal final ("/") del punto de conexión de ARM. Para más información, consulte [Prepárese para conectarse a Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-storage-connect-se#prepare-for-connecting-to-azure-stack).
+ 
 
 ## <a name="troubleshooting-app-service"></a>Solución de problemas de App Service
 ### <a name="create-aadidentityappps1-script-fails"></a>Error al ejecutar el script Create-AADIdentityApp.ps1

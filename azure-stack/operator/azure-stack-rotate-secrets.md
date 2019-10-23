@@ -11,44 +11,59 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/15/2019
+ms.date: 10/15/2019
 ms.reviewer: ppacent
 ms.author: mabrigg
-ms.lastreviewed: 07/15/2019
+ms.lastreviewed: 09/30/2019
 monikerRange: '>=azs-1803'
-ms.openlocfilehash: b79e3def3444db2228992b423ca21945d7964f26
-ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
+ms.openlocfilehash: f32a25997e4336a24dfb9b673202882cff1845e9
+ms.sourcegitcommit: 70147e858956443bc66b3541ec278c102bb45c07
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71159618"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72381453"
 ---
 # <a name="rotate-secrets-in-azure-stack"></a>Cambio de secretos en Azure Stack
 
 *Estas instrucciones se aplican solo a sistemas integrados de Azure Stack (versión 1803 y posteriores). No intente el cambio de secretos en versiones de Azure Stack anteriores a la 1802*
 
+Los secretos ayudan a proteger la comunicación entre los servicios y los recursos de infraestructura de Azure Stack.
+
+## <a name="overview-to-rotate-secrets"></a>Introducción a la rotación de secretos
+
+1. Prepare los certificados que se usarán para la rotación de secretos.
+2. Revise los [requisitos de certificados de infraestructura de clave pública de Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-pki-certs).
+3. [Use el punto de conexión con privilegios](azure-stack-privileged-endpoint.md) y ejecute **Test-azurestack** para confirmar que todo está bien.  
+4. Si lo necesita, puede consultar más información acerca de los [pasos previos a la rotación de secretos](#pre-steps-for-secret-rotation).
+5. [Valide los certificados PKI de Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-validate-pki-certs). Asegúrese de que no hay ningún carácter especial en la contraseña como `*` o `)`.
+6. Asegúrese de que el cifrado PFX es **TripleDES-SHA1**. Si surge un problema, consulte [Solución de problemas comunes de los certificados PKI de Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-remediate-certs#pfx-encryption).
+7. Prepare la estructura de carpetas.  Encontrará un ejemplo en la sección [Rotación de secretos externos](https://docs.microsoft.com/azure-stack/operator/azure-stack-rotate-secrets#rotating-external-secrets).
+8. [Inicie la rotación de secretos](#use-powershell-to-rotate-secrets).
+
+## <a name="rotate-secrets"></a>Girar secretos
+
 Azure Stack usa varios secretos para proteger las comunicaciones entre los recursos y servicios de la infraestructura de Azure Stack.
 
 - **Secretos internos**
 
-Todos los certificados, contraseñas, cadenas seguras y claves que usa la infraestructura de Azure Stack sin la intervención del operador de este.
+    Todos los certificados, contraseñas, cadenas seguras y claves que usa la infraestructura de Azure Stack sin la intervención del operador de este.
 
 - **Secretos externos**
 
-Certificados de servicio de infraestructura para servicios de uso externo que proporciona el operador de Azure Stack. Los secretos externos incluyen los certificados de los siguientes servicios:
+    Certificados de servicio de infraestructura para servicios de uso externo que proporciona el operador de Azure Stack. Los secretos externos incluyen los certificados de los siguientes servicios:
 
-- Administrator Portal
-- Public Portal
-- Administrator Azure Resource Manager
-- Global Azure Resource Manager
-- Administrator KeyVault
-- KeyVault
-- Host de extensiones de administración
-- ACS (incluido Blob Storage, Table Storage y Queue Storage)
-- ADFS *
-- Graph *
-
-\* Solo es aplicable si el proveedor de identidades del entorno es los Servicios de federación de Active Directory (AD FS).
+    - Administrator Portal
+    - Public Portal
+    - Administrator Azure Resource Manager
+    - Global Azure Resource Manager
+    - Administrator KeyVault
+    - KeyVault
+    - Host de extensiones de administración
+    - ACS (incluido Blob Storage, Table Storage y Queue Storage)
+    - ADFS *
+    - Graph *
+    
+    \* Solo es aplicable si el proveedor de identidades del entorno es los Servicios de federación de Active Directory (AD FS).
 
 > [!Note]
 > Todas las demás claves y cadenas seguras, incluyendo BMC, las contraseñas de cambio y las contraseñas de cuentas de usuario y administrador aún las actualiza manualmente el administrador.
@@ -58,7 +73,7 @@ Certificados de servicio de infraestructura para servicios de uso externo que pr
 
 Para mantener la integridad de la infraestructura de Azure Stack, los operadores necesitan la capacidad de poder cambiar periódicamente los secretos de la infraestructura con una frecuencia que sea coherente con los requisitos de seguridad de su organización.
 
-### <a name="rotating-secrets-with-external-certificates-from-a-new-certificate-authority"></a>Cambio de secretos con certificados externos desde una nueva entidad de certificación
+### <a name="rotating-secrets-with-external-certificates-from-a-new-certificate-authority"></a>Rotación de secretos con certificados externos desde una nueva entidad de certificación
 
 Azure Stack admite el cambio de secretos con certificados externos desde una nueva entidad de certificación (CA) en los contextos siguientes:
 
@@ -217,7 +232,7 @@ Para cambiar los secretos externos:
 
 6. Después de la finalización correcta del cambio de secretos, quite los certificados del recurso compartido creado en el paso anterior y almacénelos en la ubicación segura de copia de seguridad.
 
-## <a name="walkthrough-of-secret-rotation"></a>Guía detallada sobre cambio de secretos
+## <a name="use-powershell-to-rotate-secrets"></a>Uso de PowerShell para la rotación de secretos
 
 El siguiente ejemplo de PowerShell muestra los cmdlets y parámetros que debe ejecutar para cambiar los secretos.
 
@@ -368,13 +383,12 @@ Este comando cambia todos los secretos de la infraestructura expuestos a la red 
 
 ## <a name="update-the-baseboard-management-controller-bmc-credential"></a>Actualización de la credencial del controlador de administración de placa base (BMC)
 
-El controlador de administración de placa base (BMC) supervisa el estado físico de sus servidores. Las especificaciones e instrucciones para actualizar el nombre de la cuenta de usuario y contraseña de BMC varían según el proveedor de hardware del fabricante de equipos originales (OEM). Debe actualizar regularmente las contraseñas de los componentes de Azure Stack.
+El controlador de administración de placa base (BMC) supervisa el estado físico de sus servidores. Consulte con el proveedor de hardware del fabricante de equipos originales (OEM) para obtener instrucciones sobre cómo actualizar el nombre y la contraseña de la cuenta de usuario del BMC. 
+
+>[!NOTE]
+> El OEM puede proporcionar aplicaciones de administración adicionales. La actualización del nombre de usuario o la contraseña para otras aplicaciones de administración no tiene ningún efecto en el nombre de usuario o la contraseña del BMC.   
 
 1. Actualice el BMC en los servidores físicos de Azure Stack con las instrucciones del OEM. El nombre de usuario y la contraseña para cada BMC de su entorno deben ser los mismos. Los nombres de usuario de BMC no pueden superar los 16 caracteres.
-
-    > [!Note]  
-    > En primer lugar, actualice las credenciales de BMC en el controlador de administración de la placa base del servidor físico; de lo contrario, se producirá un error en el comando de Azure Stack durante la validación.
-
 2. Abra un punto de conexión con privilegios en sesiones de Azure Stack. Para obtener instrucciones, consulte [Uso del punto de conexión con privilegios en Azure Stack](azure-stack-privileged-endpoint.md).
 3. Cuando el símbolo del sistema de PowerShell cambie a **[IP address or ERCS VM name]: PS >** o a **[azs-ercs01]: PS >** , en función del entorno, ejecute `Set-BmcCredential` mediante `Invoke-Command`. Pase la variable de sesión del punto de conexión con privilegios como parámetro. Por ejemplo:
 

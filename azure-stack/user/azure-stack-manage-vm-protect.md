@@ -16,12 +16,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: hectorl
 ms.lastreviewed: 3/19/2018
-ms.openlocfilehash: f633f000968fcf4f373fc502898fa18084f93f80
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: b9a7416bc73c0e36ab9986b1a280597c2d6d93a9
+ms.sourcegitcommit: 0866555e0ed240a65595052899ef1b836dd07fbc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71824300"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72257769"
 ---
 # <a name="protect-vms-deployed-on-azure-stack"></a>Protección de máquinas virtuales implementadas en Azure Stack
 
@@ -162,8 +162,16 @@ Consideraciones importantes para la implementación de Azure Stack:
 
 En este artículo se proporcionan instrucciones generales para proteger las máquinas virtuales de usuario implementadas en Azure Stack. Para obtener información sobre el uso de los servicios de Azure para proteger las máquinas virtuales de usuario, consulte:
 
+- [Consideraciones sobre continuidad empresarial y recuperación ante desastres](http://aka.ms/azurestackbcdrconsiderationswp)
+
+### <a name="azure-backup-server"></a>Servidor de Azure Backup
  - [Uso de Azure Backup para realizar copias de seguridad de archivos y aplicaciones en Azure Stack](https://docs.microsoft.com/azure/backup/backup-mabs-files-applications-azure-stack)
  - [Compatibilidad de Azure Backup Server con Azure Stack](https://docs.microsoft.com/azure/backup/ ) 
+ 
+ ### <a name="azure-site-recovery"></a>Azure Site Recovery
  - [Compatibilidad de Azure Site Recovery con Azure Stack](https://docs.microsoft.com/azure/site-recovery/)  
+ 
+ ### <a name="partner-products"></a>Productos de asociado
+ - [Hoja de datos del Ecosistema de asociados de integración de centros de datos de Azure Stack](http://aka.ms/azurestackbcdrpartners)
 
 Para más información sobre los productos de asociados que ofrecen protección de máquina virtual en Azure Stack, consulte [Protecting apps and data on Azure Stack](https://azure.microsoft.com/blog/protecting-applications-and-data-on-azure-stack/) (Protección de aplicaciones y datos en Azure Stack).

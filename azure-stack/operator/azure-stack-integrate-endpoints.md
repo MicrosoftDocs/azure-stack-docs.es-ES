@@ -1,6 +1,6 @@
 ---
-title: 'Integración del centro de datos de Azure Stack: publicación de puntos de conexión | Microsoft Docs'
-description: Obtenga información sobre cómo publicar puntos de conexión de Azure Stack en su centro de datos.
+title: Publicación de servicios de Azure Stack en el centro de recursos | Microsoft Docs
+description: Obtenga información sobre cómo publicar los servicios de Azure Stack en su centro de datos.
 services: azure-stack
 author: mattbriggs
 manager: femila
@@ -10,23 +10,23 @@ ms.date: 09/09/2019
 ms.author: justinha
 ms.reviewer: wamota
 ms.lastreviewed: 09/09/2019
-ms.openlocfilehash: 9333cfde7985977607f7108fd90b62e376fa9462
-ms.sourcegitcommit: dc633e862d49412a963daee481226c1543287e5e
+ms.openlocfilehash: cfd9434bc52684f89617eff3b62a7bf51fc68bcd
+ms.sourcegitcommit: a6d47164c13f651c54ea0986d825e637e1f77018
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70862998"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72277434"
 ---
-# <a name="azure-stack-datacenter-integration---publish-azure-stack-services"></a>Integración del centro de datos de Azure Stack: publicación de servicios de Azure Stack
+# <a name="publish-azure-stack-services-in-your-datacenter"></a>Publicación de servicios de Azure Stack en el centro de datos 
 
 Azure Stack configura direcciones IP virtuales (VIP) para sus roles de infraestructura. Estas VIP se asignan desde el grupo de direcciones IP públicas. Cada VIP está protegida con una lista de control de acceso (ACL) en el nivel de red definido por software. Las ACL también se usan en los conmutadores físicos (Tor y BMC) para proteger aún más la solución. Se crea una entrada DNS para cada punto de conexión de la zona DNS externa que se haya especificado durante la implementación. Por ejemplo, el portal de usuarios se asigna a la entrada de host de DNS de portal. *&lt;region>.&lt;fqdn>* .
 
 En el siguiente diagrama de arquitectura se muestran los diferentes niveles de red y ACL:
 
-![Imagen estructural](media/azure-stack-integrate-endpoints/Integrate-Endpoints-01.png)
+![Diagrama que muestra diferentes capas de red y ACL](media/azure-stack-integrate-endpoints/Integrate-Endpoints-01.png)
 
 ### <a name="ports-and-urls"></a>Puertos y direcciones URL
-Para que los servicios de Azure Stack (como los portales, Azure Resource Manager, DNS, etc.) estén disponible para las redes externas, debe permitir tráfico entrante en estos puntos de conexión para las direcciones URL, puertos y protocolos específicos.
+Para que los servicios de Azure Stack (como los portales, Azure Resource Manager, DNS, entre otros) estén disponible para las redes externas, debe permitir tráfico entrante en estos puntos de conexión para las direcciones URL, puertos y protocolos específicos.
  
 En una implementación en la que un proxy transparente establece un vínculo superior a un servidor proxy tradicional o un firewall protege la solución, debe permitir puertos y direcciones URL concretos para la comunicación [entrante](azure-stack-integrate-endpoints.md#ports-and-protocols-inbound) y [saliente](azure-stack-integrate-endpoints.md#ports-and-urls-outbound). Aquí se incluyen puertos y direcciones URL de identidad, productos de Marketplace, revisiones y actualizaciones y datos de uso.
 
@@ -93,7 +93,7 @@ Azure Stack solo admite servidores proxy transparentes. En una implementación e
 |Servicio de recopilación de registros de diagnóstico|Dirección URL de SAS de blob proporcionada por Azure Storage|HTTPS|443|VIP pública - /27|
 |     |     |     |     |     |
 
-Las direcciones URL de salida tienen equilibrio de carga mediante Azure Traffic Manager para proporcionar la mejor conectividad posible basada en la ubicación geográfica. Con URL con equilibrio de carga, Microsoft puede actualizar y cambiar los puntos de conexión de back-end sin que ello afecte a los usuarios. Microsoft no comparte la lista de direcciones IP para las URL con equilibrio de carga. Debe usar un dispositivo que admita el filtrado por dirección URL, en lugar de por dirección IP.
+Las direcciones URL de salida tienen equilibrio de carga mediante Azure Traffic Manager para proporcionar la mejor conectividad posible basada en la ubicación geográfica. Con las direcciones URL con equilibrio de carga, Microsoft puede actualizar y cambiar los puntos de conexión de back-end sin que ello afecte a los usuarios. Microsoft no comparte la lista de direcciones IP para las direcciones URL con equilibrio de carga. Debe usar un dispositivo que admita el filtrado por dirección URL, en lugar de por dirección IP.
 
 El DNS de salida se necesita en todo momento, lo que varía es el origen que consulta el DNS externo y el tipo de integración de identidad que se ha elegido. Durante la implementación de un escenario conectado, el DVM que se encuentra en la red de BMC necesita acceso de salida. Pero después de la implementación, el servicio DNS se traslada a un componente interno que enviará las consultas a través de una dirección IP virtual pública. En ese momento, se puede quitar el acceso DNS de salida a través de la red BMC, pero el acceso de la IP virtual pública a ese servidor DNS debe permanecer o, de lo contrario, la autenticación producirá un error.
 

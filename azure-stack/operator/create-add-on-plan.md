@@ -13,20 +13,20 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.custom: mvc
-ms.date: 06/11/2019
+ms.date: 10/05/2019
 ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 06/11/2019
-ms.openlocfilehash: d34b57a76f654e4d1825124f0f13ca26049332e5
-ms.sourcegitcommit: 1bae55e754d7be75e03af7a4db3ec43fd7ff3e9c
+ms.openlocfilehash: 4b3fed8ee02739cf82b1446cc8c0a9b807763d49
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71319176"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72283278"
 ---
 # <a name="azure-stack-add-on-plans"></a>Planes complementarios de Azure Stack
 
-Como operador de Azure Stack, puede crear planes complementarios para modificar un [plan base](azure-stack-create-plan.md) cuando desee ofrecer servicios adicionales o ampliar las cuotas de *equipo*, *almacenamiento* o *red* más allá de la oferta inicial de los planes base. Los planes complementarios modifican el plan base y son extensiones opcionales a las que los usuarios pueden elegir suscribirse.
+Como operador de Azure Stack, puede crear planes complementarios para modificar un [plan base](azure-stack-create-plan.md) cuando desee ofrecer servicios adicionales o ampliar las cuotas de *equipo*, *almacenamiento* o *red* más allá de la oferta inicial de los planes base. Los planes complementarios modifican el plan base y son extensiones opcionales que los usuarios pueden elegir habilitar en su suscripción.
 
 Hay ocasiones en las que combinar todo en un único plan es la solución óptima. En otras ocasiones puede interesarle más tener un plan base y ofrecer los servicios adicionales utilizando planes complementarios. Por ejemplo, podría decidir ofrecer servicios IaaS como parte de un plan base, con todos los servicios PaaS tratados como planes complementarios.
 
@@ -35,9 +35,7 @@ Otra razón para usar los planes complementarios es ayudar a supervisar el uso d
 > [!NOTE]
 > Cuando no desee usar un plan complementario para ampliar una cuota, también puede elegir [editar la configuración original de la cuota](azure-stack-quota-types.md#edit-a-quota).
 
-Cuando se agrega un plan complementario a una suscripción de oferta existente, los recursos adicionales pueden tardar hasta una hora en aparecer.
-
-Los planes complementarios se crean al modificar una oferta existente.
+Los planes complementarios se [crean de la misma manera](azure-stack-create-plan.md) que un plan base. La diferencia entre ambos se determina cuando se agrega el plan a una oferta. Se designa como plan base o plan complementario. Al agregar un plan complementario a una oferta existente, los recursos adicionales pueden tardar hasta una hora en aparecer en la suscripción.
 
 ::: moniker range=">=azs-1902"
 ## <a name="create-an-add-on-plan-1902-and-later"></a>Crear un plan complementario (1902 y posteriores)

@@ -1,5 +1,5 @@
 ---
-title: Reenvío de syslog de Azure Stack
+title: Integración de Azure Stack con soluciones de supervisión mediante el reenvío de syslog | Microsoft Docs
 description: Aprenda a integrar Azure Stack con soluciones de supervisión mediante el reenvío de syslog
 services: azure-stack
 author: PatAltimore
@@ -11,21 +11,21 @@ ms.author: patricka
 ms.reviewer: fiseraci
 ms.lastreviewed: 04/23/2019
 keywords: ''
-ms.openlocfilehash: a045ed6b64b80c521e6930b651635591ec0e50d4
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: bb5ece23c0e484dbc2fec7881ce3ef2e29ed2d4a
+ms.sourcegitcommit: 70147e858956443bc66b3541ec278c102bb45c07
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985307"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72381417"
 ---
-# <a name="azure-stack-datacenter-integration---syslog-forwarding"></a>Integración del centro de datos de Azure Stack: reenvío de syslog
+# <a name="integrate-azure-stack-with-monitoring-solutions-using-syslog-forwarding"></a>Integración de Azure Stack con soluciones de supervisión mediante el reenvío de syslog
 
-Este artículo muestra cómo usar syslog para integrar la infraestructura de Azure Stack con soluciones de seguridad externas ya implementadas en su centro de datos. Por ejemplo, un sistema de administración de eventos de información de seguridad (SIEM). El canal de syslog expone las auditorías, alertas y registros de seguridad de todos los componentes de la infraestructura de Azure Stack. Use el reenvío de syslog para integrar con soluciones de supervisión de seguridad o para recuperar todas las auditorías, alertas y registros de seguridad a fin de almacenarlos para conservarlos.
+Este artículo muestra cómo usar syslog para integrar la infraestructura de Azure Stack con soluciones de seguridad externas ya implementadas en su centro de datos. Por ejemplo, un sistema de administración de eventos de información de seguridad (SIEM). El canal de syslog expone las auditorías, alertas y registros de seguridad de todos los componentes de la infraestructura de Azure Stack. Use el reenvío de syslog para realizar la integración con soluciones de supervisión de seguridad o para recuperar todos los registros de auditoría, alertas y registros de seguridad a fin de almacenarlos para conservarlos.
 
 A partir de la actualización 1809, Azure Stack tiene un cliente de syslog integrado que, una vez configurado, emite mensajes de syslog con la carga de Common Event Format (CEF).
 
 En el diagrama siguiente, se describe la integración de Azure Stack con un sistema de SIEM externo. Hay dos patrones de integración que deben tenerse en cuenta: el primero (de color azul) es la infraestructura de Azure Stack que abarca los nodos de Hyper-V y las máquinas virtuales de la infraestructura. Todas las auditorías, los registros de seguridad y las alertas de los componentes se recopilan y exponen de forma centralizada mediante syslog con la carga de CEF. Este patrón de integración se describe en esta página del documento.
-El segundo patrón de integración es el que aparece representado en color naranja y engloba a los controladores de administración de placa base (BMC), al host de ciclo de vida de hardware (HLH), a las máquinas virtuales o dispositivos virtuales que ejecutan el software de administración y supervisión de asociados de hardware y a los conmutadores de la parte superior del bastidor (TOR). Como estos componentes son específicos de los asociados del hardware, póngase en contacto con ellos para obtener documentación acerca de cómo integrarlos con un sistema de SIEM externo.
+El segundo patrón de integración es el que aparece representado en color naranja y engloba a los controladores de administración de placa base (BMC), el host de ciclo de vida de hardware (HLH), las máquinas virtuales o dispositivos virtuales que ejecutan el software de administración y supervisión de asociados de hardware, y los conmutadores de la parte superior del bastidor (TOR). Como estos componentes son específicos de los asociados del hardware, póngase en contacto con ellos para obtener documentación acerca de cómo integrarlos con un sistema de SIEM externo.
 
 ![Diagrama de reenvío de syslog](media/azure-stack-integrate-security/syslog-forwarding.png)
 
@@ -37,9 +37,9 @@ El cliente de syslog en Azure Stack admite las siguientes configuraciones:
 
 2. **Syslog a través de TCP, con autenticación de servidor y cifrado TLS 1.2:** en esta configuración, el cliente de syslog puede comprobar la identidad del servidor de syslog mediante un certificado. Los mensajes se envían a través de un canal cifrado TLS 1.2.
 
-3. **Syslog a través de TCP, sin cifrado:** en esta configuración, el cliente de syslog y las identidades de servidor de syslog no se comprueban. Los mensajes se envían en texto sin cifrar a través de TCP.
+3. **Syslog a través de TCP, sin cifrado:** En esta configuración, no se comprueban las identidades del cliente y el servidor de los registros del sistema. Los mensajes se envían en texto sin cifrar a través de TCP.
 
-4. **Syslog a través de UDP, sin cifrado:** en esta configuración, el cliente de syslog y las identidades de servidor de syslog no se comprueban. Los mensajes se envían en texto sin cifrar a través de UDP.
+4. **Syslog a través de UDP, sin cifrado:** En esta configuración, no se comprueban las identidades del cliente y el servidor de los registros del sistema. Los mensajes se envían en texto sin cifrar a través de UDP.
 
 > [!IMPORTANT]
 > Microsoft recomienda encarecidamente utilizar TCP con autenticación y cifrado (configuración n.º 1 o, como mínimo, la n.º 2) en entornos de producción a fin de proteger contra ataques de tipo "Man-in-the-middle" y de la interceptación de mensajes.
@@ -61,27 +61,27 @@ Set-SyslogClient [-pfxBinary <Byte[]>] [-CertPassword <SecureString>] [-RemoveCe
 
 Parámetros del cmdlet *Set-SyslogServer*:
 
-| Parámetro | DESCRIPCIÓN | Type | Obligatorio |
+| Parámetro | DESCRIPCIÓN | type | Obligatorio |
 |---------|---------|---------|---------|
-|*ServerName* | Dirección IP o FQDN del servidor de syslog | string | Sí|
-|*ServerPort* | Número de puerto de escucha del servidor de syslog | string | Sí|
-|*NoEncryption*| Obliga al cliente a enviar los mensajes de syslog como texto sin cifrar | Marca | no|
-|*SkipCertificateCheck*| Se omite la validación del certificado proporcionado por el servidor de syslog durante el protocolo de enlace TLS inicial | Marca | no|
-|*SkipCNCheck*| Se omite la validación del valor de Nombre común del certificado proporcionado por el servidor de syslog durante el protocolo de enlace TLS inicial | Marca | no|
-|*UseUDP*| Se usa syslog con UDP como protocolo de transporte |Marca | no|
-|*Remove*| Se quita la configuración del servidor desde el cliente y se detiene el reenvío de syslog| Marca | no|
+|*ServerName* | Dirección IP o FQDN del servidor de syslog. | Cadena | Sí|
+|*ServerPort* | Número de puerto de escucha del servidor de syslog. | Cadena | Sí|
+|*NoEncryption*| Obliga al cliente a enviar los mensajes de syslog como texto sin cifrar. | Marca | no|
+|*SkipCertificateCheck*| Se omite la validación del certificado proporcionado por el servidor de syslog durante el protocolo de enlace TLS inicial. | Marca | no|
+|*SkipCNCheck*| Se omite la validación del valor de Nombre común del certificado proporcionado por el servidor de syslog durante el protocolo de enlace TLS inicial. | Marca | no|
+|*UseUDP*| Se usa syslog con UDP como protocolo de transporte. |Marca | no|
+|*Remove*| Se quita la configuración del servidor desde el cliente y se detiene el reenvío de syslog.| Marca | no|
 
 Parámetros del cmdlet *Set-SyslogClient*:
 
-| Parámetro | DESCRIPCIÓN | Type |
+| Parámetro | DESCRIPCIÓN | type |
 |---------|---------| ---------|
-| *pfxBinary* | Archivo PFX que contiene el certificado que usará el cliente como identidad para autenticarse en el servidor de syslog  | Byte[] |
-| *CertPassword* |  Contraseña para importar la clave privada que está asociada con el archivo PFX | SecureString |
-|*RemoveCertificate* | Se quita el certificado del cliente | Marca|
-| *OutputSeverity* | Nivel de registro de salida. Los valores son **Default** o **Verbose**. El valor Default incluye los niveles de seguridad advertencia, crítico o error. El valor Verbose incluye todos los niveles de gravedad: detallado, información, advertencia, crítico o error.  | string |
+| *pfxBinary* | Archivo PFX que contiene el certificado que usará el cliente como identidad para autenticarse en el servidor de syslog.  | Byte[] |
+| *CertPassword* |  Contraseña para importar la clave privada que está asociada con el archivo PFX. | SecureString |
+|*RemoveCertificate* | Se quita el certificado del cliente. | Marca|
+| *OutputSeverity* | Nivel de registro de salida. Los valores son **Default** o **Verbose**. El valor Default incluye los niveles de seguridad advertencia, crítico o error. El valor Verbose incluye todos los niveles de gravedad: detallado, información, advertencia, crítico o error.  | Cadena |
 ### <a name="configuring-syslog-forwarding-with-tcp-mutual-authentication-and-tls-12-encryption"></a>Configuración del reenvío de syslog con TCP, autenticación mutua y cifrado TLS 1.2
 
-En esta configuración, el cliente de syslog en Azure Stack reenvía los mensajes al servidor de syslog a través de TCP, con el cifrado TLS 1.2. Durante el protocolo de enlace inicial, el cliente comprueba que el servidor proporciona un certificado válido y de confianza; de forma similar, el cliente también proporciona un certificado al servidor como prueba de su identidad. Esta configuración es la más segura, ya que proporciona una validación completa de la identidad tanto del cliente como del servidor y envía los mensajes a través de un canal cifrado. 
+En esta configuración, el cliente de syslog en Azure Stack reenvía los mensajes al servidor de syslog a través de TCP, con el cifrado TLS 1.2. Durante el protocolo de enlace inicial, el cliente comprueba que el servidor proporciona un certificado válido y de confianza. El cliente también proporciona un certificado al servidor como prueba de su identidad. Esta configuración es la más segura, ya que proporciona una validación completa de la identidad tanto del cliente como del servidor y envía los mensajes a través de un canal cifrado.
 
 > [!IMPORTANT]
 > Microsoft recomienda encarecidamente usar esta configuración para entornos de producción. 
@@ -131,14 +131,14 @@ Invoke-Command @params -ScriptBlock {
 
 ### <a name="configuring-syslog-forwarding-with-tcp-server-authentication-and-tls-12-encryption"></a>Configuración del reenvío de syslog con TCP, autenticación de servidor y cifrado TLS 1.2
 
-En esta configuración, el cliente de syslog en Azure Stack reenvía los mensajes al servidor de syslog a través de TCP, con el cifrado TLS 1.2. Durante el protocolo de enlace inicial, el cliente también comprueba que el servidor proporciona un certificado válido y de confianza. Con esta configuración se evita que el cliente envíe mensajes a destinos que no sean de confianza.
-TCP con autenticación y cifrado es la configuración predeterminada, y representa el nivel mínimo de seguridad que Microsoft recomienda para un entorno de producción. 
+En esta configuración, el cliente de syslog en Azure Stack reenvía los mensajes al servidor de syslog a través de TCP, con el cifrado TLS 1.2. Durante el protocolo de enlace inicial, el cliente también comprueba que el servidor proporciona un certificado válido y de confianza. Esta configuración impide que el cliente envíe mensajes a destinos que no son de confianza.
+TCP con autenticación y cifrado es la configuración predeterminada, y representa el nivel mínimo de seguridad que Microsoft recomienda para un entorno de producción.
 
 ```powershell
 Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -ServerPort <Port number on which the syslog server is listening on>
 ```
 
-En caso de que desee probar la integración del servidor de syslog con el cliente de Azure Stack mediante el uso de un certificado autofirmado o que no sea de confianza, puede usar estas marcas para omitir la validación del servidor realizada por el cliente durante el protocolo de enlace inicial.
+Si se desea probar la integración del servidor de syslog con el cliente de Azure Stack mediante el uso de un certificado autofirmado o que no sea de confianza, puede usar estas marcas para omitir la validación del servidor realizada por el cliente durante el protocolo de enlace inicial.
 
 ```powershell
  #Skip validation of the Common Name value in the server certificate. Use this flag if you provide an IP address for your syslog server
@@ -155,28 +155,28 @@ En caso de que desee probar la integración del servidor de syslog con el client
 
 ### <a name="configuring-syslog-forwarding-with-tcp-and-no-encryption"></a>Configuración del reenvío de syslog con TCP y sin cifrado
 
-En esta configuración, el cliente de syslog en Azure Stack reenvía los mensajes al servidor de syslog a través de TCP, sin cifrado. El cliente no comprueba la identidad del servidor ni proporciona su propia identidad en el servidor para la comprobación. 
+En esta configuración, el cliente de syslog en Azure Stack reenvía los mensajes al servidor de syslog a través de TCP, sin cifrado. El cliente no comprueba la identidad del servidor ni proporciona su propia identidad en el servidor para la comprobación.
 
 ```powershell
 Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -ServerPort <Port number on which the syslog server is listening on> -NoEncryption
 ```
 
 > [!IMPORTANT]
-> Microsoft recomienda no usar esta configuración para entornos de producción. 
+> Microsoft recomienda no usar esta configuración para entornos de producción.
 
 
 ### <a name="configuring-syslog-forwarding-with-udp-and-no-encryption"></a>Configuración del reenvío de syslog con UDP y sin cifrado
 
-En esta configuración, el cliente de syslog en Azure Stack reenvía los mensajes al servidor de syslog a través de UDP, sin cifrado. El cliente no comprueba la identidad del servidor ni proporciona su propia identidad en el servidor para la comprobación. 
+En esta configuración, el cliente de syslog en Azure Stack reenvía los mensajes al servidor de syslog a través de UDP, sin cifrado. El cliente no comprueba la identidad del servidor ni proporciona su propia identidad en el servidor para la comprobación.
 
 ```powershell
 Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -ServerPort <Port number on which the syslog server is listening on> -UseUDP
 ```
 
-Aunque UDP sin cifrado es la configuración más fácil, no proporciona ninguna protección frente a ataques de tipo "Man-in-the-middle" ni frente a la interceptación de los mensajes. 
+Aunque UDP sin cifrado es la configuración más fácil, no proporciona ninguna protección frente a ataques de tipo "Man-in-the-middle" ni frente a la interceptación de los mensajes.
 
 > [!IMPORTANT]
-> Microsoft recomienda no usar esta configuración para entornos de producción. 
+> Microsoft recomienda no usar esta configuración para entornos de producción.
 
 
 ## <a name="removing-syslog-forwarding-configuration"></a>Eliminación de la configuración del reenvío de syslog
@@ -214,7 +214,7 @@ Get-SyslogClient
 ## <a name="syslog-message-schema"></a>Esquema de los mensajes de Syslog
 
 El reenvío de syslog de la infraestructura de Azure Stack envía los mensajes con el formato Common Event Format (CEF).
-Cada mensaje de syslog se estructura según este esquema: 
+Cada mensaje de syslog se estructura según este esquema:
 
 ```Syslog
 <Time> <Host> <CEF payload>
@@ -242,7 +242,7 @@ Prefix fields
 
 Tabla de eventos para el punto de conexión con privilegios:
 
-| Evento | Id. del evento de PEP | Nombre de tarea de PEP | Gravedad |
+| Evento | Id. del evento de PEP | Nombre de tarea de PEP | severity |
 |-------|--------------| --------------|----------|
 |PrivilegedEndpointAccessed|1000|PrivilegedEndpointAccessedEvent|5|
 |SupportSessionTokenRequested |1001|SupportSessionTokenRequestedEvent|5|
@@ -255,16 +255,17 @@ Tabla de eventos para el punto de conexión con privilegios:
 |SetCloudAdminUserPassword |1008|SetCloudAdminUserPasswordEvent|5|
 |GetCloudAdminPasswordRecoveryToken |1009|GetCloudAdminPasswordRecoveryTokenEvent|10|
 |ResetCloudAdminPassword |1010|ResetCloudAdminPasswordEvent|10|
+|PrivilegedEndpointSessionTimedOut |1017|PrivilegedEndpointSessionTimedOutEvent|5|
 
 Tabla de gravedad de PEP:
 
-| Gravedad | Nivel | Valor numérico |
+| severity | Nivel | Valor numérico |
 |----------|-------| ----------------|
 |0|Undefined|Valor: 0. Indica los registros en todos los niveles|
 |10|Crítico|Valor: 1. Indica los registros de una alerta crítica|
 |8|Error| Valor: 2. Indica los registros de error|
 |5|Advertencia|Valor: 3. Indica los registros de advertencia|
-|2|Información|Valor: 4. Indica los registros de un mensaje informativo|
+|2|Information|Valor: 4. Indica los registros de un mensaje informativo|
 |0|Detallado|Valor: 5. Indica los registros en todos los niveles|
 
 ### <a name="cef-mapping-for-recovery-endpoint-events"></a>Asignación de CEF para eventos de punto de conexión de recuperación
@@ -278,7 +279,7 @@ Prefix fields
 
 Tabla de eventos del punto de conexión de recuperación:
 
-| Evento | Id. del evento de REP | Nombre de tarea de REP | Gravedad |
+| Evento | Id. del evento de REP | Nombre de tarea de REP | severity |
 |-------|--------------| --------------|----------|
 |RecoveryEndpointAccessed |1011|RecoveryEndpointAccessedEvent|5|
 |RecoverySessionTokenRequested |1012|RecoverySessionTokenRequestedEvent |5|
@@ -289,13 +290,13 @@ Tabla de eventos del punto de conexión de recuperación:
 
 Tabla de gravedad de REP:
 
-| Gravedad | Nivel | Valor numérico |
+| severity | Nivel | Valor numérico |
 |----------|-------| ----------------|
 |0|Undefined|Valor: 0. Indica los registros en todos los niveles|
 |10|Crítico|Valor: 1. Indica los registros de una alerta crítica|
 |8|Error| Valor: 2. Indica los registros de error|
 |5|Advertencia|Valor: 3. Indica los registros de advertencia|
-|2|Información|Valor: 4. Indica los registros de un mensaje informativo|
+|2|Information|Valor: 4. Indica los registros de un mensaje informativo|
 |0|Detallado|Valor: 5. Indica los registros en todos los niveles|
 
 ### <a name="cef-mapping-for-windows-events"></a>Asignación de CEF para los eventos de Windows
@@ -315,7 +316,7 @@ Tabla de gravedad para los eventos de Windows:
 |10|Crítico|Valor: 1. Indica los registros de una alerta crítica|
 |8|Error| Valor: 2. Indica los registros de error|
 |5|Advertencia|Valor: 3. Indica los registros de advertencia|
-|2|Información|Valor: 4. Indica los registros de un mensaje informativo|
+|2|Information|Valor: 4. Indica los registros de un mensaje informativo|
 |0|Detallado|Valor: 5. Indica los registros en todos los niveles|
 
 Tabla de extensión personalizada para los eventos de Windows creados en Azure Stack:
@@ -357,7 +358,7 @@ Tabla de extensión personalizada para los eventos de Windows creados en Azure S
 
 Tabla de gravedad de alertas:
 
-| Gravedad | Nivel |
+| severity | Nivel |
 |----------|-------|
 |0|Undefined|
 |10|Crítico|
@@ -367,7 +368,7 @@ Tabla de extensión personalizada para las alertas creadas en Azure Stack:
 
 | Nombre de la extensión personalizada | Ejemplo | 
 |-----------------------|---------|
-|MasEventDescription|DESCRIPCIÓN: una cuenta de usuario \<TestUser\> se creó para \<TestDomain\>. Es un riesgo potencial de seguridad. -- CORRECCIÓN: Póngase en contacto con el servicio de soporte técnico. Se requiere el servicio de asistencia al cliente se para resolver este problema. No intente resolver este problema sin su ayuda. Antes de abrir una solicitud de soporte técnico, inicie el proceso de recopilación de archivos de registro siguiendo las instrucciones de https://aka.ms/azurestacklogfiles |
+|MasEventDescription|DESCRIPCIÓN: una cuenta de usuario \<TestUser\> se creó para \<TestDomain\>. Es un riesgo potencial de seguridad. -- CORRECCIÓN: Póngase en contacto con el servicio de soporte técnico. Se requiere el servicio de asistencia al cliente se para resolver este problema. No intente resolver este problema sin su ayuda. Antes de abrir una solicitud de soporte técnico, inicie el proceso de recopilación de archivos de registro siguiendo las instrucciones de https://aka.ms/azurestacklogfiles.
 
 ### <a name="cef-mapping-for-alerts-closed"></a>Asignación de CEF para las alertas cerradas
 

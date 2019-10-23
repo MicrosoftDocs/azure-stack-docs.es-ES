@@ -10,17 +10,17 @@ ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 07/23/2019
+ms.date: 10/07/2019
 ms.topic: conceptual
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/07/2018
-ms.openlocfilehash: 5357fcf548971e0962bec41ad9238bf88290531c
-ms.sourcegitcommit: 35b13ea6dc0221a15cd0840be796f4af5370ddaf
+ms.openlocfilehash: c821f35928df5da4c34455a0b541699b0a84d490
+ms.sourcegitcommit: 5eae057cb815f151e6b8af07e3ccaca4d8e4490e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68603102"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72310662"
 ---
 # <a name="deploy-apps-to-azure-and-azure-stack"></a>Implementación de aplicaciones en Azure y Azure Stack
 
@@ -97,7 +97,7 @@ La continuidad, la seguridad y la confiabilidad de la implementación de aplicac
      
   1. Implemente servicios PaaS de [Azure App Service](../operator/azure-stack-app-service-deploy.md) en Azure Stack.
      
-  1. Cree [un plan y una oferta](../operator/azure-stack-plan-offer-quota-overview.md) en Azure Stack.
+  1. Cree [un plan y una oferta](../operator/service-plan-offer-subscription-overview.md) en Azure Stack.
      
   1. Cree una [suscripción de inquilino](../operator/azure-stack-subscribe-plan-provision-vm.md) a la oferta de Azure Stack. 
      
@@ -342,20 +342,62 @@ La canalización de CI/CD híbrida se puede aplicar al código de aplicación y 
 1. En el explorador web, abra la organización y el proyecto de Azure DevOps.
    
 1. Seleccione **Canalizaciones** > **Compilaciones** en el panel de navegación izquierdo y luego **Nueva canalización**. 
+
+1. Seleccione el repositorio de código. Azure Pipelines analiza e identifica el proyecto como ASP.NET Core y abre la plantilla de compilación predeterminada *azure-pipelines.yml*  de ASP.NET Core. 
    
-1. En **Seleccionar una plantilla**, seleccione la plantilla **ASP.NET Core** y luego **Aplicar**. 
+   ![Archivo azure-pipelines.yml de ASP.NET Core](media/azure-stack-solution-pipeline/buildargument.png)
    
-1. En la página de configuración, seleccione **Publicar** en el panel izquierdo.
+1. Puede editar el código de canalización directamente o seleccionar **Mostrar el asistente** para abrir un panel de **tareas** que le ayude a agregar tareas y pasos. 
    
-1. En el panel derecho, en **Argumentos**, agregue `-r win10-x64` a la configuración. 
+   Si selecciona **Mostrar el asistente**, seleccione **.NET Core** en el panel **Tareas**. En el formulario de **.NET Core**:
+   - En **Comando**, seleccione **publicar**. 
+   - En **Argumentos**, escriba *-r win10-x64*.
+   - Asegúrese de que **Publicar proyectos web** está seleccionado.
+   - Seleccione **Agregar**.
    
-   ![Adición del argumento de canalización de compilación](media/azure-stack-solution-pipeline/buildargument.png)
+   En lugar de usar el asistente, puede editar y agregar el código siguiente directamente al archivo *azure-pipelines.yml*:
    
-1. En la parte superior de la página, seleccione **Guardar y poner en cola**.
+   - En `pool`, cambie `vmImage` de `ubuntu-latest` a `vs2017-win2016`.
+     
+   - En `steps`, agregue la tarea [DotNetCoreCLI](/azure/devops/pipelines/tasks/build/dotnet-core-cli), el comando y los argumentos: 
+     
+     ```yaml
+     - task: DotNetCoreCLI@2
+       inputs:
+         command: 'publish'
+         publishWebProjects: true
+         arguments: '-r win10-x64'
+     ```
+   El archivo *azure-pipelines.yml* debería tener ahora el siguiente código: 
    
-1. En el cuadro de diálogo **Ejecutar canalización**, seleccione **Guardar y ejecutar**. 
+   ```yaml
+   # ASP.NET Core
+   # Build and test ASP.NET Core projects targeting .NET Core.
+   # Add steps that run tests, create a NuGet package, deploy, and more:
+   # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
    
-La [compilación de implementación autocontenida](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd) publica los artefactos que se pueden ejecutar en Azure y Azure Stack.
+   trigger:
+   - master
+   
+   pool:
+     vmImage: 'vs2017-win2016'
+   
+   variables:
+     buildConfiguration: 'Release'
+
+   steps:
+   - script: dotnet build --configuration $(buildConfiguration)
+     displayName: 'dotnet build $(buildConfiguration)'
+   
+   - task: DotNetCoreCLI@2
+     inputs:
+       command: 'publish'
+       publishWebProjects: true
+       arguments: '-r win10-x64'
+   ```
+1. Seleccione **Guardar y ejecutar**, agregue un mensaje de confirmación y una descripción opcional, y seleccione **Guardar y ejecutar** de nuevo. 
+   
+La [compilación de implementación autocontenida](/dotnet/core/deploying/#self-contained-deployments-scd) publica los artefactos que se pueden ejecutar en Azure y Azure Stack.
 
 ### <a name="create-a-release-pipeline"></a>Creación de una canalización de versión
 
@@ -381,25 +423,25 @@ La creación de una canalización de versión es el último paso del proceso de 
    
    ![Selección de la suscripción y especificación del nombre de App Service](media/azure-stack-solution-pipeline/stage1.png)
    
-1. En el panel izquierdo, seleccione **Ejecutar en el agente**. En el panel derecho, seleccione **Hosted VS2017** en la lista desplegable **Grupo de agentes** si aún no está seleccionado.
+1. En el panel izquierdo, seleccione **Ejecutar en el agente**. En el panel derecho, seleccione **Azure Pipelines** en la lista desplegable **Grupo de agentes** y después seleccione **vs2017-win2016** de la lista desplegable **Agent Specification** (Especificación de agente).
    
    ![Selección del agente hospedado](media/azure-stack-solution-pipeline/agentjob.png)
    
-1. En el panel izquierdo, seleccione **Implementación de Azure App Service** y, en el panel derecho, vaya al **Paquete o carpeta** de la compilación de la aplicación web de Azure.
+1. En el panel izquierdo, seleccione **Deploy Azure App Service** (Implementar Azure App Service). En el panel derecho, desplácese hacia abajo y seleccione el botón de puntos suspensivos **...** junto a **Paquete o carpeta**.
    
    ![Selección del paquete o la carpeta](media/azure-stack-solution-pipeline/packageorfolder.png)
    
-1. En el cuadro de diálogo **Seleccione un archivo o carpeta**, seleccione **Aceptar**.
+1. En el cuadro de diálogo **Seleccione un archivo o carpeta**, vaya a la ubicación de la compilación de la aplicación web de Azure y, después, seleccione **Aceptar**.
    
-1. Seleccione **Guardar** en la parte superior derecha de la página **Nueva canalización de versión**.
+1. En la página **Nueva canalización de versión**, seleccione **Guardar** en la parte superior derecha. 
    
-   ![Guardar cambios](media/azure-stack-solution-pipeline/save-devops-icon.png)
+1. En la pestaña **Canalización**, seleccione **Agregar un artefacto**. Seleccione el proyecto y después la compilación de Azure Stack en el menú desplegable **Origen (canalización de compilación)** . Seleccione **Agregar**. 
    
-1. En la pestaña **Canalización**, seleccione **Agregar un artefacto**. Seleccione el proyecto y luego la compilación de Azure Stack en el menú desplegable **Origen (canalización de compilación)** . Seleccione **Agregar**. 
+1. En **Fases**, mantenga el puntero sobre la fase de **Azure** hasta que aparezca **+** y, después, seleccione **Agregar**.
    
-1. En la pestaña **Canalización**, en **Fases**, seleccione **Agregar**.
+1. En **Plantilla**, seleccione **Fase vacía**. 
    
-1. En la nueva fase, seleccione el hipervínculo para **Ver tareas de la fase**. Escriba *Azure Stack* como nombre de la fase. 
+1. En el cuadro de diálogo **Fase**, escriba *Azure Stack* como nombre de la fase. 
    
    ![Visualización de nueva fase](media/azure-stack-solution-pipeline/newstage.png)
    
@@ -430,7 +472,7 @@ La creación de una canalización de versión es el último paso del proceso de 
 
 Ahora que tiene una canalización de versión, puede usarla para crear una versión e implementar la aplicación. 
 
-Dado que el desencadenador de implementación continua se establece en la canalización de versión, al modificar el código fuente se inicia una nueva compilación y se crea una nueva versión automáticamente. Pero va a crear y ejecutar esta nueva versión de forma manual.
+Dado que el desencadenador de implementación continua se establece en la canalización de versión, al modificar el código fuente se inicia una nueva compilación y se crea una nueva versión automáticamente. Sin embargo, esta vez va a crear y ejecutar esta nueva versión de forma manual.
 
 Para crear e implementar una versión:
 

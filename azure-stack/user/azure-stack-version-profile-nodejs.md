@@ -14,12 +14,12 @@ ms.date: 07/30/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 07/30/2019
-ms.openlocfilehash: 35093371ede6e3f5f776b981eaaf8463df9e7f36
-ms.sourcegitcommit: 7961fda0bfcdd3db8cf94a8c405b5c23a23643af
+ms.openlocfilehash: 7e2753ebb5bebad4f1ac2a7bbc17a27ccd87cbe9
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68616841"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72283046"
 ---
 # <a name="use-api-version-profiles-with-nodejs-software-development-kit-sdk-in-azure-stack"></a>Uso de perfiles de la versión de API con el kit de desarrollo de software (SDK) de Node.js en Azure Stack
 
@@ -60,7 +60,7 @@ Puede encontrar los siguientes paquetes:
 | [Recursos](https://www.npmjs.com/package/@azure/arm-resources-profile-hybrid-2019-03-01) | @azure/arm-resources-profile-hybrid-2019-03-01 |
  | [KeyVault](https://www.npmjs.com/package/@azure/arm-keyvault-profile-2019-03-01-hybrid) | @azure/arm-keyvault-profile-2019-03-01-hybrid |
 
-Para usar la versión más reciente de la API de un servicio, utilice el perfil **Más reciente** de la biblioteca cliente específica. Por ejemplo, si desea usar solo la última versión de API del servicio de recursos, utilice el perfil `azure-arm-resource` del paquete de la **biblioteca cliente de Resource Management**.  
+Para usar la versión más reciente de la API de un servicio, utilice el perfil **Más reciente** de la biblioteca cliente específica. Por ejemplo, si desea usar solo la última versión de API del servicio de recursos, utilice el perfil `azure-arm-resource` del paquete de la **biblioteca cliente de Resource Management**. paquete.
 
 Utilice las versiones específicas de API definidas dentro del paquete para usar las versiones de API de un proveedor de recursos.
 
@@ -95,7 +95,7 @@ Para usar el SDK de Azure de Node.js con Azure Stack, debe proporcionar los sigu
 | --- | --- | --- |
 | Id. de inquilino | TENANT\_ID | El valor de su [identificador de inquilino](https://docs.microsoft.com/azure/azure-stack/azure-stack-identity-overview) de Azure Stack. |
 | Id. de cliente | CLIENT\_ID | El identificador de aplicación de la entidad de servicio que guardó al crear esta última en la sección anterior de este documento.  |
-| Id. de suscripción | AZURE\_SUBSCRIPTION\_ID   El [identificador de suscripción](https://docs.microsoft.com/azure/azure-stack/azure-stack-plan-offer-quota-overview#subscriptions) es la forma en que accede a las ofertas de Azure Stack.  |
+| Id. de suscripción | AZURE\_SUBSCRIPTION\_ID   El [identificador de suscripción](https://docs.microsoft.com/azure/azure-stack/service-plan-offer-subscription-overview#subscriptions) es la forma en que accede a las ofertas de Azure Stack.  |
 | Secreto del cliente | APPLICATION\_SECRET | El secreto de aplicación de la entidad de servicio que guardó al crear esta última. |
 | Punto de conexión de Resource Manager | ARM\_ENDPOINT | Consulte el [punto de conexión de Resource Manager de Azure Stack](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-version-profiles-ruby#the-azure-stack-resource-manager-endpoint). |
 

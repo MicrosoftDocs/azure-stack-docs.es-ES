@@ -1,26 +1,21 @@
 ---
-title: Suscripción a una oferta en Azure Stack | Microsoft Docs
+title: Suscripción a una oferta en Azure Stack
 description: Creación de suscripciones para ofertas en Azure Stack
 services: azure-stack
 documentationcenter: ''
 author: bryanla
 manager: femila
-editor: ''
-ms.assetid: 7f3f8683-ef09-4838-92ed-41f2fddbbbed
 ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 08/13/2019
+ms.date: 10/05/2019
 ms.author: bryanla
 ms.lastreviewed: 05/10/2019
-ms.openlocfilehash: a35f8fe34cedbeb1a2ef068c666bc6a75effe111
-ms.sourcegitcommit: 1bae55e754d7be75e03af7a4db3ec43fd7ff3e9c
+ms.openlocfilehash: c69c8a4be93cc392ca1eaf4edb70fb7fb4fc8676
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71319147"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72283373"
 ---
 # <a name="create-subscriptions-to-offers-in-azure-stack"></a>Creación de suscripciones para ofertas en Azure Stack
 
@@ -33,7 +28,7 @@ Después de [crear una oferta](azure-stack-create-offer.md), los usuarios necesi
 
 ## <a name="create-a-subscription-as-a-cloud-operator"></a>Creación de una suscripción como operador de nube
 
-Los operadores de nube pueden usar el portal de administración para crear una suscripción a una oferta para un usuario. Puede crear suscripciones para miembros de su propio inquilino de directorio. Cuando los [servicios multiinquilino](azure-stack-enable-multitenancy.md) están habilitados, también puede crear suscripciones para usuarios de inquilinos de directorio adicionales.
+Los operadores de nube usan el portal del administrador para crear una suscripción a una oferta para un usuario. Se pueden crear suscripciones para los miembros de su propio inquilino de directorio. Cuando los [servicios multiinquilino](azure-stack-enable-multitenancy.md) están habilitados, también puede crear suscripciones para usuarios de inquilinos de directorio adicionales.
 
 Si no desea que los inquilinos creen sus propias suscripciones, haga las ofertas privadas y, después, cree suscripciones para los inquilinos. Esta estrategia es habitual cuando se integra Azure Stack con sistemas de catálogo de servicios o de facturación externa.
 
@@ -88,11 +83,11 @@ Como usuario, puede iniciar sesión en el portal de usuarios para buscar y suscr
 
 4. Para ver la suscripción que ha creado, seleccione **Todos los servicios** y, después, en la categoría **GENERAL** seleccione **Suscripciones**. Seleccione la suscripción para ver sus detalles.  
 
-### <a name="to-subscribe-to-an-add-on-plan"></a>Para suscribirse a un plan complementario
+### <a name="to-enable-an-add-on-plan-in-your-subscription"></a>Para habilitar un plan complementario en su suscripción
 
-Si la oferta tiene un plan complementario, puede añadirlo a su suscripción en cualquier momento.  
+Si la oferta a la que se suscribe tiene un plan complementario, puede agregarlo a la suscripción en cualquier momento.  
 
-1. En el portal de usuarios, seleccione **todos los servicios**. A continuación, en la categoría **GENERAL** seleccione **Suscripciones** y, después, seleccione la suscripción que desea cambiar. Si hay planes complementarios disponibles, la opción **+ Agregar plan** está activa y hay un icono para **Planes complementarios**.
+1. En el portal de usuarios, seleccione **todos los servicios**. A continuación, en la categoría **GENERAL** seleccione **Suscripciones** y, después, seleccione la suscripción que desea cambiar. Si hay planes complementarios disponibles, la opción **+Agregar plan** está activa y muestra un icono para los **Planes complementarios**.
 
    Si **+ Agregar plan** no está activo, no hay ningún plan complementario para la oferta asociado a esa suscripción.
 
@@ -100,4 +95,6 @@ Si la oferta tiene un plan complementario, puede añadirlo a su suscripción en 
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Aprovisionamiento de una máquina virtual](../user/azure-stack-create-vm-template.md)
+Obtenga más información sobre cómo un usuario puede implementar recursos en su suscripción: 
+  - [Varios inicios rápidos](../user/azure-stack-quick-windows-portal.md) muestran cómo aprovisionar máquinas virtuales Windows y Linux con PowerShell, la CLI de Azure y el portal de usuarios. 
+  - [Un tutorial que usa una plantilla de Azure Resource Manager](../user/azure-stack-create-vm-template.md) muestra cómo implementar una máquina virtual de Ubuntu 16.04 que ejecute Minikube para administrar un clúster de Kubernetes. 

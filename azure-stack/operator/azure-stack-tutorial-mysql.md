@@ -1,33 +1,28 @@
 ---
-title: Oferta de bases de datos MySQL de alta disponibilidad en Azure Stack | Microsoft Docs
+title: Oferta de bases de datos MySQL de alta disponibilidad en Azure Stack
 description: Obtenga información sobre cómo crear un equipo host de proveedor de recursos de MySQL Server y bases de datos de alta disponibilidad MySQL con Azure Stack.
 services: azure-stack
-documentationcenter: ''
-author: justinha
+author: BryanLa
 manager: femila
 editor: ''
-ms.assetid: ''
 ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: tutorial
-ms.date: 02/12/2019
-ms.author: justinha
+ms.topic: article
+ms.date: 10/07/2019
+ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/23/2018
-ms.openlocfilehash: e62e78705d6ca1ec8fa7d839b70eda3f147f82ab
-ms.sourcegitcommit: 3f52cf06fb5b3208057cfdc07616cd76f11cdb38
+ms.openlocfilehash: a03fbf9170e6cc1840bea62efeb33b960a25f99c
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67316302"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72283410"
 ---
-# <a name="tutorial-offer-highly-available-mysql-databases"></a>Tutorial: Oferta de bases de datos MySQL de alta disponibilidad
+# <a name="offer-highly-available-mysql-databases"></a>Oferta de bases de datos MySQL de alta disponibilidad
 
 Como operador de Azure Stack, puede configurar máquinas virtuales de servidor para hospedar bases de datos de MySQL Server. Una vez que se haya creado correctamente un clúster de MySQL y se administre por parte de Azure Stack, los usuarios suscritos a servicios de SQL pueden crear fácilmente bases de datos MySQL de alta disponibilidad.
 
-Este tutorial muestra cómo utilizar elementos de Marketplace de Azure Stack para crear un clúster de [MySQL con replicación](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/bitnami.mysql-cluster). Esta solución usa varias máquinas virtuales para replicar las bases de datos desde el nodo maestro a un número configurable de réplicas. Una vez creado, el clúster se puede agregar como un servidor de hospedaje de MySQL de Azure Stack y, a continuación, los usuarios podrán crear bases de datos MySQL de alta disponibilidad.
+En este artículo se muestra cómo usar los elementos de Marketplace para Azure Stack para crear una [base de datos MySQL con clúster de replicación](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/bitnami.mysql-cluster). Esta solución usa varias máquinas virtuales para replicar las bases de datos desde el nodo maestro a un número configurable de réplicas. Una vez creado, el clúster se puede agregar como un servidor de hospedaje de MySQL de Azure Stack y, a continuación, los usuarios podrán crear bases de datos MySQL de alta disponibilidad.
 
 > [!IMPORTANT]
 > El elemento de Markeplace de Azure Stack **MySQL con replicación** podría no estar disponible para todos los entornos de suscripción en la nube de Azure. Compruebe que el elemento de Marketplace está disponible en su suscripción antes de intentar seguir el resto de este tutorial.
@@ -37,11 +32,11 @@ Lo qué aprenderá:
 > [!div class="checklist"]
 > * Crear un clúster de MySQL Server desde elementos de Marketplace
 > * Crear un servidor de hospedaje MySQL de Azure Stack
-> * Crear una base de datos MySQL de alta disponibilidad
+> * Creación de una base de datos MySQL de alta disponibilidad
 
-En este tutorial, creará un clúster de MySQL Server para tres máquinas virtuales, que se configurará con los elementos disponibles de Marketplace para Azure Stack. 
+Se creará y configurará un clúster de MySQL Server de máquinas virtuales con los elementos de Marketplace para Azure Stack disponibles. 
 
-Antes de comenzar los pasos descritos en este tutorial, asegúrese de que el [proveedor de recursos de MySQL Server](azure-stack-mysql-resource-provider-deploy.md) ha instalado correctamente y ha puesto a disposición de los usuarios los siguientes elementos en el Marketplace para Azure Stack:
+Antes de comenzar, asegúrese de que el [proveedor de recursos de servidor de MySQL](azure-stack-mysql-resource-provider-deploy.md) esté instalado correctamente y de que los siguientes elementos estén disponibles en Marketplace para Azure Stack:
 
 > [!IMPORTANT]
 > Todos los elementos siguientes son necesarios para crear el clúster de MySQL.
@@ -154,7 +149,7 @@ Asegúrese de usar la dirección IP pública o el nombre de dominio completo par
 
 Con la información de inicio de sesión de autenticación de MySQL y la dirección IP pública del clúster de MySQL, el operador de Azure Stack ahora puede [crear un servidor de hospedaje de MySQL con el nuevo clúster de MySQL](azure-stack-mysql-resource-provider-hosting-servers.md#connect-to-a-mysql-hosting-server). 
 
-Asegúrese también de que se han creado planes y ofertas para que la creación de la base de datos de MySQL esté disponible para los usuarios. El operador deberá agregar el servicio **Microsoft.MySqlAdapter** a un plan y crear una nueva cuota específicamente para las bases de datos de alta disponibilidad. Para obtener más información acerca de la creación de planes, consulte [Introducción a los planes, ofertas, cuotas y suscripciones](azure-stack-plan-offer-quota-overview.md).
+Asegúrese también de que se han creado planes y ofertas para que la creación de la base de datos de MySQL esté disponible para los usuarios. El operador deberá agregar el servicio **Microsoft.MySqlAdapter** a un plan y crear una nueva cuota específicamente para las bases de datos de alta disponibilidad. Para más información sobre la creación de planes, consulte [Introducción a los servicios, planes, ofertas y suscripciones](service-plan-offer-subscription-overview.md).
 
 > [!TIP]
 > El servicio **Microsoft.MySqlAdapter** no estará disponible para agregarlo a planes hasta que [se haya implementado el proveedor de recursos de MySQL Server](azure-stack-mysql-resource-provider-deploy.md).
@@ -188,13 +183,4 @@ Una vez que el clúster de MySQL se ha creado, configurado y agregado como servi
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-En este tutorial, ha aprendido cómo:
-
-> [!div class="checklist"]
-> * Crear un clúster de MySQL Server desde elementos de Marketplace
-> * Crear un servidor de hospedaje MySQL de Azure Stack
-> * Creación de una base de datos MySQL de alta disponibilidad
-
-Prosiga con el siguiente tutorial para aprender a:
-> [!div class="nextstepaction"]
-> [Oferta de aplicaciones web](azure-stack-tutorial-app-service.md)
+[Actualización del proveedor de recursos de MySQL](azure-stack-mysql-resource-provider-update.md)

@@ -1,33 +1,28 @@
 ---
-title: Oferta de bases de datos SQL de alta disponibilidad en Azure Stack | Microsoft Docs
+title: Oferta de bases de datos SQL de alta disponibilidad en Azure Stack
 description: Obtenga información sobre cómo crear un equipo host proveedor de recursos de SQL Server y bases de datos AlwaysOn SQL de alta disponibilidad con Azure Stack.
 services: azure-stack
-documentationcenter: ''
-author: justinha
+author: BryanLa
 manager: femila
 editor: ''
-ms.assetid: ''
 ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: tutorial
-ms.date: 02/25/2019
-ms.author: justinha
+ms.topic: article
+ms.date: 10/07/2019
+ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/23/2018
-ms.openlocfilehash: fa9577bf0a620f8911ee6cf5238b55f460076883
-ms.sourcegitcommit: 3f52cf06fb5b3208057cfdc07616cd76f11cdb38
+ms.openlocfilehash: e5866a80367a826dd58aa39109ebbbbd9f2edce6
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67316322"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72283313"
 ---
-# <a name="tutorial-offer-highly-available-sql-databases"></a>Tutorial: Oferta de bases de datos SQL de alta disponibilidad
+# <a name="offer-highly-available-sql-databases"></a>Oferta de bases de datos SQL de alta disponibilidad
 
 Como operador de Azure Stack, puede configurar máquinas virtuales de servidor para hospedar bases de datos de SQL Server. Una vez que se haya creado correctamente un servidor de hospedaje de SQL y Azure Stack lo administre, los usuarios suscritos a servicios de SQL pueden crear fácilmente bases de datos SQL.
 
-Este tutorial muestra cómo usar una plantilla de inicio rápido de Azure Stack para crear un [grupo de disponibilidad AlwaysOn de SQL Server](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-2017), agregarlo como servidor de hospedaje SQL de Azure Stack y, a continuación, crear una base de datos SQL de alta disponibilidad.
+En este artículo se muestra cómo usar una plantilla de inicio rápido de Azure Stack para crear un [grupo de disponibilidad AlwaysOn de SQL Server](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-2017), agregarlo como servidor de hospedaje SQL de Azure Stack y, a continuación, crear una base de datos SQL de alta disponibilidad.
 
 Lo qué aprenderá:
 
@@ -36,15 +31,15 @@ Lo qué aprenderá:
 > * Creación de un servidor de hospedaje SQL de Azure Stack
 > * Creación de una base de datos SQL de alta disponibilidad
 
-En este tutorial, utilizará los elementos disponibles de Marketplace para Azure Stack para crear y configurar un grupo de disponibilidad AlwaysOn de SQL Server para dos máquinas virtuales. 
+Se usarán los elementos disponibles de Marketplace para Azure Stack para crear y configurar un grupo de disponibilidad AlwaysOn de SQL Server para dos máquinas virtuales. 
 
-Antes de comenzar los pasos descritos en este tutorial, asegúrese de que el [proveedor de recursos de SQL Server](azure-stack-sql-resource-provider-deploy.md) ha instalado correctamente y ha puesto a disposición de los usuarios los siguientes elementos en el Marketplace para Azure Stack:
+Antes de comenzar, asegúrese de que el [proveedor de recursos de servidor de SQL Server](azure-stack-sql-resource-provider-deploy.md) esté instalado correctamente y de que los siguientes elementos estén disponibles en Marketplace para Azure Stack:
 
 > [!IMPORTANT]
 > Todos los elementos siguientes son necesarios para utilizar la plantilla de inicio rápido de Azure Stack.
 
 - Imagen de Marketplace de [Windows Server 2016 Datacenter](https://azuremarketplace.microsoft.com/marketplace/apps/MicrosoftWindowsServer.WindowsServer).
-- SQL Server 2016 SP1 o SP2 (Developer, Standard o Enterprise) en la imagen del servidor de Windows Server 2016. Este tutorial se usa la imagen de Marketplace [SQL Server 2016 SP2 Enterprise en Windows Server 2016](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoftsqlserver.sql2016sp2-ws2016).
+- SQL Server 2016 SP1 o SP2 (Developer, Standard o Enterprise) en la imagen del servidor de Windows Server 2016. En este artículo se usa la imagen de Marketplace [SQL Server 2016 SP2 Enterprise en Windows Server 2016](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoftsqlserver.sql2016sp2-ws2016).
 - [Extensión IaaS de SQL Server](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-agent-extension), versión 1.2.30 o superior. La extensión IaaS de SQL instala los componentes que son necesarios para los elementos de Marketplace de SQL Server para todas las versiones de Windows. Permite que los parámetros específicos de SQL se configuren en máquinas virtuales de SQL. Si la extensión no está instalada en el Marketplace local, el aprovisionamiento de SQL generará un error.
 - [Extensión de script personalizada para Windows](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.CustomScriptExtension), versión 1.9.1 o superior. La extensión de script personalizada es una herramienta que puede usarse para iniciar automáticamente las tareas de personalización de la máquina virtual posteriores a la implementación.
 - [Extensión DSC (configuración de estado deseado) de PowerShell](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.DSC-arm), versión 2.76.0.0 o superior. DSC es una plataforma de administración de Windows PowerShell que permite implementar y administrar datos de configuración de servicios de software y administrar el entorno en el que se ejecutan estos servicios.
@@ -144,7 +139,7 @@ Asegúrese de utilizar la dirección IP pública o el nombre de dominio completo
 
 Con la información de inicio de sesión de autenticación de SQL y la dirección IP pública del agente de escucha del equilibrador de carga del grupo de disponibilidad AlwaysOn de SQL, un operador de Azure Stack ahora puede [crear un servidor de hospedaje de SQL mediante el grupo de disponibilidad AlwaysOn de SQL](azure-stack-sql-resource-provider-hosting-servers.md#provide-high-availability-using-sql-always-on-availability-groups). 
 
-Asegúrese también de que ha creado planes y ofertas para que la creación de la base de datos AlwaysOn de SQL esté disponible para los usuarios. El operador deberá agregar el servicio **Microsoft.SqlAdapter** a un plan y crear una nueva cuota específicamente para las bases de datos de alta disponibilidad. Para obtener más información acerca de la creación de planes, consulte [Introducción a los planes, ofertas, cuotas y suscripciones](azure-stack-plan-offer-quota-overview.md).
+Asegúrese también de que ha creado planes y ofertas para que la creación de la base de datos AlwaysOn de SQL esté disponible para los usuarios. El operador deberá agregar el servicio **Microsoft.SqlAdapter** a un plan y crear una nueva cuota específicamente para las bases de datos de alta disponibilidad. Para más información sobre la creación de planes, consulte [Introducción a los servicios, planes, ofertas y suscripciones](service-plan-offer-subscription-overview.md).
 
 > [!TIP]
 > El servicio **Microsoft.SqlAdapter** no estará disponible para agregarlo a planes hasta que [se haya implementado el proveedor de recursos de SQL Server](azure-stack-sql-resource-provider-deploy.md).
@@ -179,13 +174,4 @@ Una vez que el grupo de disponibilidad AlwaysOn de SQL se ha creado, configurado
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-En este tutorial, ha aprendido cómo:
-
-> [!div class="checklist"]
-> * Creación de un grupos de disponibilidad AlwaysOn de SQL Server a partir de una plantilla
-> * Creación de un servidor de hospedaje SQL de Azure Stack
-> * Creación de una base de datos SQL de alta disponibilidad
-
-Prosiga con el siguiente tutorial para aprender a:
-> [!div class="nextstepaction"]
-> [Creación de bases de datos MySQL de alta disponibilidad](azure-stack-tutorial-mysql.md)
+[Actualización del proveedor de recursos de SQL](azure-stack-sql-resource-provider-update.md)
