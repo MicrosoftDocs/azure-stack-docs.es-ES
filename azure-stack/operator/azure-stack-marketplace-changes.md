@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/09/2019
+ms.date: 10/01/2019
 ms.author: sethm
 ms.reviewer: ihcherie
-ms.lastreviewed: 07/31/2019
-ms.openlocfilehash: c5b0472921c25379f894be5e0b799b7abcb8a43b
-ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
+ms.lastreviewed: 10/01/2019
+ms.openlocfilehash: 49b3ac4123a385b468d5eb995ac00bb768347d5d
+ms.sourcegitcommit: b5eb024d170f12e51cc852aa2c72eabf26792d8d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71961814"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72534076"
 ---
 # <a name="azure-stack-marketplace-changes"></a>Cambios en Marketplace de Azure Stack
 

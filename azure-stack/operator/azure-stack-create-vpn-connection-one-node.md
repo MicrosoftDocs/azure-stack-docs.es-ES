@@ -3,7 +3,7 @@ title: Creación de una conexión VPN de sitio a sitio entre dos redes virtuales
 description: Tutorial para operadores en la nube sobre creación de una conexión VPN de sitio a sitio entre dos entornos del Kit de desarrollo de Azure Stack (ASDK) de un solo nodo.
 services: azure-stack
 documentationcenter: ''
-author: sethmanheim
+author: justinha
 manager: femila
 editor: ''
 ms.assetid: 3f1b4e02-dbab-46a3-8e11-a777722120ec
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/16/2019
-ms.author: sethm
-ms.reviewer: scottnap
+ms.author: justinha
+ms.reviewer: tbd
 ms.lastreviewed: 09/12/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: 2ae267d470d9862e262f26ea11d2ba4b07bfb299
-ms.sourcegitcommit: c2ea4ffb42563c26faaf2993ba7b484bcb6d5cb7
+ms.openlocfilehash: ef0fd3aef095dc0ee2865e7f1fb2a8821d378e70
+ms.sourcegitcommit: 4a2318ad395b2a931833ccba4430d8d04cdd8819
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71342911"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72780521"
 ---
 # <a name="create-a-site-to-site-vpn-connection-between-two-virtual-networks-in-different-asdk-environments"></a>Creación de una conexión VPN de sitio a sitio entre dos redes virtuales en diferentes entornos de ASDK
 
