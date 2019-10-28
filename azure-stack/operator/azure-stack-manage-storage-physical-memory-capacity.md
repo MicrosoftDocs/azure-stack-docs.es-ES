@@ -1,6 +1,6 @@
 ---
-title: Administración de la capacidad de memoria física para Azure Stack | Microsoft Docs
-description: Supervise y administre el espacio de almacenamiento disponible para Azure Stack.
+title: Administración de la capacidad de memoria física en Azure Stack | Microsoft Docs
+description: Obtenga información acerca de cómo supervisar y administrar la memoria física y la capacidad en Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -16,28 +16,28 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 147bfb6ba35115f44fe24f388f36814db766c7f2
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: f72ad1b86bf8ef84e64f79603c27d14571b00838
+ms.sourcegitcommit: b5eb024d170f12e51cc852aa2c72eabf26792d8d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71829457"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72534154"
 ---
-# <a name="manage-physical-memory-capacity-for-azure-stack"></a>Administración de la capacidad de memoria física para Azure Stack
+# <a name="manage-physical-memory-capacity-in-azure-stack"></a>Administración de la capacidad de memoria física en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack*
 
-Para aumentar la capacidad de memoria total disponible para Azure Stack, puede agregar más memoria. En Azure Stack, al servidor físico también se le conoce como un *nodo de unidad de escalado*. Todos los nodos de unidad de escalado que sean miembros de una sola unidad de escalado deben tener la misma cantidad de memoria.
+Para aumentar la capacidad de memoria total disponible en Azure Stack, puede agregar más memoria. En Azure Stack, al servidor físico también se le conoce como un *nodo de unidad de escalado*. Todos los nodos de unidad de escalado que sean miembros de una sola unidad de escalado deben tener la misma cantidad de memoria.
 
 > [!note]  
 > Antes de continuar, consulte la documentación del fabricante de hardware para ver si se admite la actualización de una memoria física. El contrato de soporte técnico del proveedor de hardware de OEM puede requerir que el proveedor realice la colocación del bastidor del servidor físico y la actualización de firmware del dispositivo.
 
 En el siguiente diagrama de flujo se muestra el proceso general para agregar memoria a cada nodo de la unidad de escalado.
 
-![Agregar memoria a cada nodo de la unidad de escalado](media/azure-stack-manage-storage-physical-capacity/process-to-add-memory-to-scale-unit.png)
+![Proceso para agregar memoria a cada nodo de la unidad de escalado](media/azure-stack-manage-storage-physical-capacity/process-to-add-memory-to-scale-unit.png)
 
 ## <a name="add-memory-to-an-existing-node"></a>Adición de memoria a un nodo existente
-Los pasos siguientes proporcionan una información general de alto nivel sobre el proceso de adición de memoria. 
+Los pasos siguientes proporcionan información general de alto nivel sobre el proceso de adición de memoria.
 
 > [!Warning]
 > No siga estos pasos sin consultar la documentación proporcionada por su OEM.
@@ -51,5 +51,5 @@ Los pasos siguientes proporcionan una información general de alto nivel sobre e
 
 ## <a name="next-steps"></a>Pasos siguientes
 
- - Para aprender a administrar cuentas de almacenamiento en Azure Stack para buscar, recuperar y reclamar capacidad de almacenamiento según las necesidades empresariales, consulte [Administración de cuentas de almacenamiento en Azure Stack](azure-stack-manage-storage-accounts.md).
- - Para aprender cómo el operador en la nube de Azure Stack supervisa y administra la capacidad de almacenamiento de su implementación de Azure Stack, consulte [Administración de la capacidad de almacenamiento para Azure Stack](azure-stack-manage-storage-shares.md). 
+ - Para obtener información sobre cómo administrar cuentas de almacenamiento en Azure Stack, consulte [Administración de cuentas de almacenamiento en Azure Stack](azure-stack-manage-storage-accounts.md).
+ - Para obtener información sobre cómo supervisar y administrar la capacidad de almacenamiento de su implementación de Azure Stack, consulte [Administración de la capacidad de almacenamiento para Azure Stack](azure-stack-manage-storage-shares.md).

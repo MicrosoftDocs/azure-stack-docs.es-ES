@@ -1,5 +1,5 @@
 ---
-title: Mantenimiento de un proveedor de recursos de MySQL en Azure Stack | Microsoft Docs
+title: Operaciones de mantenimiento de un proveedor de recursos MySQL en Azure Stack | Microsoft Docs
 description: Aprenda cómo puede mantener el servicio de proveedor de recursos MySQL en Azure Stack.
 services: azure-stack
 documentationCenter: ''
@@ -15,27 +15,27 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 6667fd3db21cd6138e756c16eb8e68b8ecd1b3e9
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: 9dc2de86828e188aa82b44d376e693be887717d8
+ms.sourcegitcommit: a23b80b57668615c341c370b70d0a106a37a02da
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71829429"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72682191"
 ---
-# <a name="mysql-resource-provider-maintenance-operations"></a>Operaciones de mantenimiento del proveedor de recursos de MySQL
+# <a name="mysql-resource-provider-maintenance-operations-in-azure-stack"></a>Operaciones de mantenimiento de un proveedor de recursos MySQL en Azure Stack
 
-El proveedor de recursos de MySQL se ejecuta en una máquina virtual bloqueada. Para habilitar las operaciones de mantenimiento, debe actualizar la seguridad de la máquina virtual. Para hacerlo con el principio de privilegio mínimo, puede usar el punto de conexión de JEA (Just Enough Administration) de PowerShell DBAdapterMaintenance. El paquete de instalación del proveedor de recursos incluye un script para esta operación.
+El proveedor de recursos MySQL se ejecuta en una máquina virtual (VM) bloqueada. Para habilitar las operaciones de mantenimiento, debe actualizar la seguridad de la VM. Para hacerlo con el principio de privilegio mínimo (POLP), puede usar el punto de conexión de JEA (Just Enough Administration) de PowerShell DBAdapterMaintenance. El paquete de instalación del proveedor de recursos incluye un script para esta operación.
 
-## <a name="update-the-virtual-machine-operating-system"></a>Actualización del sistema operativo de la máquina virtual
+## <a name="update-the-vm-operating-system"></a>Actualización del sistema operativo de la VM
 
-Dado que el proveedor de recursos se ejecuta en la máquina virtual de un *usuario*, debe aplicar las revisiones y actualizaciones necesarias cuando se publiquen. Puede usar los paquetes de actualización de Windows que se proporcionan como parte del ciclo de revisión y actualización para aplicar actualizaciones a la máquina virtual.
+Dado que el proveedor de recursos se ejecuta en la VM de un *usuario*, debe aplicar las revisiones y actualizaciones necesarias cuando se publiquen. Puede usar los paquetes de actualización de Windows que se proporcionan como parte del ciclo de revisión y actualización para aplicar actualizaciones a la máquina virtual.
 
-Actualización de la máquina virtual del proveedor mediante uno de los métodos siguientes:
+Actualice la VM del proveedor mediante uno de los métodos siguientes:
 
 - Instalación del paquete más reciente del proveedor de recursos mediante una imagen de Windows Server 2016 Core actualmente revisada.
 - Instalación de un paquete de Windows Update durante la instalación o actualización del proveedor de recursos.
 
-## <a name="update-the-virtual-machine-windows-defender-definitions"></a>Actualización de las definiciones de Windows Defender de máquina virtual
+## <a name="update-the-vm-windows-defender-definitions"></a>Actualización de las definiciones de Windows Defender de la VM
 
 Siga estos pasos para actualizar las definiciones de Defender:
 
@@ -45,7 +45,7 @@ Siga estos pasos para actualizar las definiciones de Defender:
 
     De forma alternativa, use [este vínculo directo](https://go.microsoft.com/fwlink/?LinkID=121721&arch=x64) para descargar o ejecutar el archivo fpam-fe.exe.
 
-2. Abra una sesión de PowerShell en el punto de conexión de mantenimiento de la máquina virtual del adaptador del proveedor de recursos MySQL.
+2. Abra una sesión de PowerShell en el punto de conexión de mantenimiento de la VM del adaptador del proveedor de recursos MySQL.
 
 3. Copie el archivo de actualización de definiciones en la máquina virtual del adaptador del proveedor de recursos mediante la sesión del punto de conexión de mantenimiento.
 
@@ -76,7 +76,7 @@ Invoke-WebRequest -Uri 'https://go.microsoft.com/fwlink/?LinkID=121721&arch=x64'
 $session = New-PSSession -ComputerName $databaseRPMachine `
     -Credential $vmLocalAdminCreds -ConfigurationName DBAdapterMaintenance
 
-# Copy the defender update file to the adapter virtual machine.
+# Copy the defender update file to the adapter VM.
 Copy-Item -ToSession $session -Path $localPathToDefenderUpdate `
      -Destination "User:\"
 
@@ -95,7 +95,7 @@ $session | Remove-PSSession
 
 *Estas instrucciones se aplican solo a sistemas integrados de Azure Stack.*
 
-Al usar los proveedores de recursos de SQL y MySQL con los sistemas integrados de Azure Stack, el operador de Azure Stack se encarga de rotar los siguientes secretos de infraestructura del proveedor de recursos para asegurarse de que no caduquen:
+Al usar los proveedores de recursos SQL y MySQL con los sistemas integrados de Azure Stack, el operador de Azure Stack se encarga de girar los siguientes secretos de infraestructura del proveedor de recursos para asegurarse de que no caduquen:
 
 - Certificado SSL externo [proporcionado durante la implementación](azure-stack-pki-certs.md).
 - La contraseña de la cuenta de administrador local de la máquina virtual del proveedor de recursos proporcionada durante la implementación.
@@ -103,7 +103,7 @@ Al usar los proveedores de recursos de SQL y MySQL con los sistemas integrados d
 
 ### <a name="powershell-examples-for-rotating-secrets"></a>Ejemplos de PowerShell de cambio de secretos
 
-**Cambio de todos los secretos al mismo tiempo.**
+**Cambio de todos los secretos al mismo tiempo:**
 
 ```powershell
 .\SecretRotationMySQLProvider.ps1 `
@@ -117,7 +117,7 @@ Al usar los proveedores de recursos de SQL y MySQL con los sistemas integrados d
 
 ```
 
-**Cambio de la contraseña de usuario de diagnóstico.**
+**Cambio de la contraseña de usuario de diagnóstico:**
 
 ```powershell
 .\SecretRotationMySQLProvider.ps1 `
@@ -128,7 +128,7 @@ Al usar los proveedores de recursos de SQL y MySQL con los sistemas integrados d
 
 ```
 
-**Cambio de la contraseña de la cuenta de administrador local de la máquina virtual.**
+**Cambio de la contraseña de la cuenta de administrador local de la VM:**
 
 ```powershell
 .\SecretRotationMySQLProvider.ps1 `
@@ -139,7 +139,7 @@ Al usar los proveedores de recursos de SQL y MySQL con los sistemas integrados d
 
 ```
 
-**Cambio de la contraseña del certificado SSL.**
+**Cambio de la contraseña del certificado SSL:**
 
 ```powershell
 .\SecretRotationMySQLProvider.ps1 `
@@ -159,7 +159,7 @@ Al usar los proveedores de recursos de SQL y MySQL con los sistemas integrados d
 |CloudAdminCredential|Credencial de cuenta de dominio de administración en la nube de Azure Stack.|
 |PrivilegedEndpoint|Punto de conexión con privilegios para acceder a Get-AzureStackStampInformation.|
 |DiagnosticsUserPassword|Contraseña de la cuenta de usuario de diagnóstico.|
-|VMLocalCredential|La cuenta de administrador local de la máquina virtual MySQLAdapter.|
+|VMLocalCredential|Cuenta de administrador local en la VM MySQLAdapter.|
 |DefaultSSLCertificatePassword|Contraseña del certificado SSL predeterminado (*.pfx).|
 |DependencyFilesLocalPath|Ruta de acceso local de los archivos de dependencia.|
 |     |     |
@@ -174,7 +174,7 @@ Utilice el cmdlet Get-AzsDBAdapterLogs para recopilar todos los registros del pr
 
 ## <a name="collect-diagnostic-logs"></a>Recopilación de registros de diagnóstico
 
-Para recopilar registros de la máquina virtual bloqueada, se puede usar el punto de conexión DBAdapterDiagnostics de JEA (Just Enough Administration) de PowerShell. Este punto de conexión proporciona los comandos siguientes:
+Para recopilar registros de la VM bloqueada, se puede usar el punto de conexión DBAdapterDiagnostics de JEA (Just Enough Administration) de PowerShell. Este punto de conexión proporciona los comandos siguientes:
 
 - **Get-AzsDBAdapterLog**. Este comando crea un paquete ZIP con los registros de diagnóstico del proveedor de recursos y guarda el archivo en la unidad del usuario de la sesión. Este comando se puede ejecutar sin ningún parámetro y se recopilan los registros de las últimas cuatro horas.
 
@@ -185,16 +185,16 @@ Para recopilar registros de la máquina virtual bloqueada, se puede usar el punt
 Cuando se instala o actualiza un proveedor de recursos, se crea la cuenta de usuario dbadapterdiag. Esta cuenta se usará para recopilar registros de diagnóstico.
 
 >[!NOTE]
->La contraseña de la cuenta dbadapterdiag es la misma que se usa para el administrador local en la máquina virtual creada durante la implementación o actualización de un proveedor.
+>La contraseña de la cuenta dbadapterdiag es la misma que se usa para el administrador local en la VM creada durante la implementación o actualización de un proveedor.
 
-Para usar los comandos _DBAdapterDiagnostics_, cree una sesión remota de PowerShell para la máquina virtual del proveedor de recursos y ejecute el comando **Get-AzsDBAdapterLog**.
+Para usar los comandos _DBAdapterDiagnostics_, cree una sesión remota de PowerShell para la VM del proveedor de recursos y ejecute el comando **Get-AzsDBAdapterLog**.
 
 Establezca el intervalo de tiempo para la recopilación de registros mediante los parámetros **FromDate** y **ToDate**. Si no se especifica uno de estos parámetros (o ambos), se utilizan los valores predeterminados siguientes:
 
 * FromDate es cuatro horas antes de la hora actual.
 * ToDate es la hora actual.
 
-**Ejemplo de script de PowerShell para recopilar registros.**
+**Ejemplo de script de PowerShell para recopilar registros:**
 
 El siguiente script muestra cómo recopilar registros de diagnóstico de la máquina virtual del proveedor de recursos.
 

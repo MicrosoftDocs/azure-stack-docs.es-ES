@@ -1,6 +1,6 @@
 ---
-title: Eliminación del proveedor de recursos de MySQL en Azure Stack | Microsoft Docs
-description: Obtenga información sobre cómo puede quitar el proveedor de recursos de MySQL de la implementación de Azure Stack.
+title: Eliminación del proveedor de recursos MySQL en Azure Stack | Microsoft Docs
+description: Obtenga información sobre cómo quitar el proveedor de recursos MySQL de la implementación de Azure Stack.
 services: azure-stack
 documentationCenter: ''
 author: mattbriggs
@@ -15,21 +15,21 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/20/2018
-ms.openlocfilehash: 3a48ded6a9a21650bae488e0a858086a3575235e
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: a2b55707bc05aecf8681cb866c58b0ed34fb87cd
+ms.sourcegitcommit: a23b80b57668615c341c370b70d0a106a37a02da
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71829400"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72682172"
 ---
-# <a name="remove-the-mysql-resource-provider"></a>Eliminación del proveedor de recursos de MySQL
+# <a name="remove-the-mysql-resource-provider-in-azure-stack"></a>Eliminación del proveedor de recursos MySQL en Azure Stack
 
 Antes de quitar el proveedor de recursos de MySQL, debe quitar todas las dependencias del proveedor. También necesitará una copia del paquete de implementación que se utilizó para instalar el proveedor de recursos.
 
 > [!NOTE]
 > Puede encontrar los vínculos de descarga para los instaladores del proveedor de recursos en [Requisitos previos de Implementación del proveedor de recursos](./azure-stack-mysql-resource-provider-deploy.md#prerequisites).
 
-Quitar el proveedor de recursos MySQL no elimina las bases de datos de inquilino de los servidores de hospedaje.
+Al quitar el proveedor de recursos MySQL no se eliminan las bases de datos de inquilino de los servidores de hospedaje.
 
 ## <a name="dependency-cleanup"></a>Limpieza de dependencias
 
@@ -50,7 +50,7 @@ El operador de Azure Stack es responsable de las siguientes tareas de limpieza:
 2. Obtenga una copia del paquete de instalación del proveedor de recursos de MySQL y ejecute el extractor automático para extraer el contenido en un directorio temporal.
 3. Abra una nueva ventana de consola de PowerShell con privilegios elevados y cambie al directorio en el que extrajo los archivos de instalación del proveedor de recursos de MySQL.
 4. Ejecute el script DeployMySqlProvider.ps1 con los siguientes parámetros:
-    - **Desinstalación**. Quita el proveedor de recursos y todos los recursos asociados.
+    - **Uninstall**. Quita el proveedor de recursos y todos los recursos asociados.
     - **PrivilegedEndpoint**. Dirección IP o nombre DNS del punto de conexión con privilegios.
     - **AzureEnvironment**. El entorno de Azure usado para implementar Azure Stack. Requerido solo para implementaciones de Azure AD.
     - **CloudAdminCredential**. Credencial del administrador de la nube, necesaria para el acceso al punto de conexión con privilegios.

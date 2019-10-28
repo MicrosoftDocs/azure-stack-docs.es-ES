@@ -15,12 +15,12 @@ ms.date: 09/25/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 09/25/2019
-ms.openlocfilehash: 70adb6abaefc81faf487bbae5c560cc67f705341
-ms.sourcegitcommit: d967cf8cae320fa09f1e97eeb888e3db5b6e7972
+ms.openlocfilehash: b7d20327410ace5b5ad12d34a24ff474c1a384b0
+ms.sourcegitcommit: 4a2318ad395b2a931833ccba4430d8d04cdd8819
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71279205"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72780468"
 ---
 # <a name="scale-a-kubernetes-cluster-on-azure-stack"></a>Escalado de un clúster de Kubernetes en Azure Stack
 
@@ -49,7 +49,7 @@ El comando scale usa los siguientes parámetros para buscar el archivo de defini
 | -master-FQDN |  | FQDN maestro. Es necesario para reducir verticalmente. |
 | identity-system | adfs | Opcional. Especifique la solución de administración de identidad si usa los Servicios de federación de Active Directory (AD FS). |
 
-Debe especificar el parámetro **–azure-env** cuando escale un clúster en Azure Stack. Para más información sobre los parámetros y sus valores utilizados en el comando **scale** para el motor de AKS, consulte [Scale: Parámetros](https://github.com/Azure/aks-engine/blob/master/docs/topics/scale.md#parameters).
+Debe especificar el parámetro **--azure-env** cuando escale un clúster en Azure Stack. Para más información sobre los parámetros y sus valores utilizados en el comando **scale** para el motor de AKS, consulte [Scale: Parámetros](https://github.com/Azure/aks-engine/blob/master/docs/topics/scale.md#parameters).
 
 ### <a name="command-to-scale-your-cluster"></a>Comando para escalar el clúster
 

@@ -16,12 +16,12 @@ ms.date: 06/03/2019
 ms.author: patricka
 ms.reviewer: fiseraci
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 8b05b2cc9fdde7987efd78c5beb0123b035e03ea
-ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
+ms.openlocfilehash: 94a7dc11c4711bcdf39215ccaab69e95ea5c57f3
+ms.sourcegitcommit: b72729305234e13c65de3771cb08678d46ba1348
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72019355"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72543849"
 ---
 # <a name="overview-of-identity-providers-for-azure-stack"></a>Introducción a los proveedores de identidades en Azure Stack
 
@@ -175,7 +175,7 @@ El token debe pasar entonces el encabezado de una solicitud a Azure Resource Man
 - Valida que el token JWT esté firmado con un certificado que se haya configurado mediante OpenID y que sea conocido para Azure Resource Manager.
 - Revisa las notificaciones *issued at* (iat) y *expiry* (exp) para confirmar que el token está activo y se puede aceptar.
 
-Una vez realizadas todas las validaciones, Azure Resource Manager usa las notificaciones *objected* (oid) y *groups* para realizar una lista de los recursos a los que puede acceder la entidad de seguridad.
+Una vez realizadas todas las validaciones, Azure Resource Manager usa las notificaciones *object id* (oid) y *groups* para crear una lista de los recursos a los que puede acceder la entidad de seguridad.
 
 ![Diagrama del protocolo de intercambio de tokens](media/azure-stack-identity-overview/token-exchange.png)
 

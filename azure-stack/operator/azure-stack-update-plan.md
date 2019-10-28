@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/10/2019
+ms.date: 10/17/2019
 ms.author: mabrigg
 ms.lastreviewed: 08/23/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 60515f257dc8ab04e351d1353919a749e9cf4224
-ms.sourcegitcommit: 79ead51be63c372b23b7fca6ffeaf95fd44de786
+ms.openlocfilehash: 44eca76e3b9e969681f4540093088785ad06f97c
+ms.sourcegitcommit: b5eb024d170f12e51cc852aa2c72eabf26792d8d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71687954"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72534008"
 ---
 # <a name="plan-for-an-azure-stack-update"></a>Planificar una actualización de Azure Stack
 
@@ -55,6 +55,8 @@ Para prepararse para la actualización, asegúrese de que ha aplicado todas las 
 6. Asegúrese de que su paquete de OEM sea compatible con la versión de Azure Stack a la que está actualizando. Si su paquete de OEM no es compatible con la versión de Azure Stack a la que está actualizando, deberá realizar una actualización del paquete de OEM antes de ejecutar una actualización de Azure Stack. Para obtener instrucciones, consulte "Aplicar actualizaciones del fabricante de equipos originales (OEM) de Azure Stack". Repita los pasos 3 y 4 después de aplicar la actualización del paquete de OEM.
 
 7. Ejecute la herramienta de planeamiento de capacidad. Para obtener una introducción e instrucciones sobre el uso de la herramienta, consulte [Introducción al planeamiento de capacidad de Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-capacity-planning-overview).
+
+8. De manera opcional, puede [habilitar la recopilación de registros de diagnóstico automática](azure-stack-configure-automatic-diagnostic-log-collection.md) para recopilar de forma proactiva registros del análisis de atención al cliente si ve una alerta como **Error de actualización**. 
 
 8. Revise el paquete de actualización. Al planear su ventana de mantenimiento, es importante revisar el tipo específico de actualización que ha publicado Microsoft como se indica en las notas de la versión.
 

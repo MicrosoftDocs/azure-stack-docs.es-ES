@@ -15,12 +15,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 03/19/2019
-ms.openlocfilehash: a7bd45b8eefe201a8c3767f31f7de138e37bb01d
-ms.sourcegitcommit: a7207f4a4c40d4917b63e729fd6872b3dba72968
+ms.openlocfilehash: 9af79442a0fb56e4d6a9cef99741b0180e84304c
+ms.sourcegitcommit: b5eb024d170f12e51cc852aa2c72eabf26792d8d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71909268"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72534188"
 ---
 # <a name="manage-azure-stack-storage-accounts"></a>Administración de cuentas de almacenamiento de Azure Stack
 
@@ -28,7 +28,7 @@ Aprenda a administrar las cuentas de almacenamiento de Azure Stack. Busque, recu
 
 ## <a name="find-a-storage-account"></a>Búsqueda de una cuenta de almacenamiento
 
-La lista de cuentas de almacenamiento de la región se puede ver en Azure Stack de las maneras siguientes:
+La lista de cuentas de almacenamiento de la región se puede ver en Azure Stack siguiendo estos pasos:
 
 1. Inicie sesión en el [portal de administración](https://adminportal.local.azurestack.external).
 
@@ -42,55 +42,55 @@ OR
 
 Si está interesado en una cuenta de almacenamiento determinada, puede **filtrar y capturar solo las cuentas correspondientes**.
 
-
 **Para filtrar las cuentas:**
 
 1. Seleccione **Filtrar** en la parte superior del panel.
 2. En el panel Filtro, puede especificar el **nombre de cuenta**, el **identificador de suscripción** o el **estado** para ajustar la lista de cuentas de almacenamiento que se mostrará. Use esta información de la manera adecuada.
-3. A medida que escriba, la lista aplicará automáticamente el filtro.  .
-   
+3. A medida que escriba, la lista aplicará automáticamente el filtro.
+
     ![Filtrar las cuentas de almacenamiento de Azure Stack](media/azure-stack-manage-storage-accounts/image5.png)
 
 4. Para restablecer el filtro: seleccione **Filtro**, borre las selecciones y actualice.
 
-El cuadro de texto de búsqueda (de la parte superior del panel de lista de cuentas de almacenamiento) permite resaltar el texto seleccionado en la lista de cuentas. Puede utilizar esto cuando el nombre completo o el identificador no están fácilmente disponibles.
+El cuadro de texto de búsqueda (de la parte superior del panel de lista de cuentas de almacenamiento) permite resaltar el texto seleccionado en la lista de cuentas. Se puede utilizar cuando el nombre completo o el identificador no están disponibles fácilmente.
 
-Aquí puede usar texto sin formato para ayudar a encontrar la cuenta que le interese.
+Aquí puede usar texto sin formato para facilitar la búsqueda de la cuenta que le interesa.
 
 ![Buscar las cuentas de almacenamiento de Azure Stack](media/azure-stack-manage-storage-accounts/image6.png)
 
 ## <a name="look-at-account-details"></a>Examen de los detalles de la cuenta
-Cuando haya encontrado las cuentas que le interese ver, puede seleccionar una en particular para ver determinados detalles. Se abre un nuevo panel con los detalles de la cuenta, como el tipo de cuenta, la hora de creación, la ubicación, etc.
+Cuando haya encontrado las cuentas que le interesa ver, puede seleccionar una en particular para ver determinados detalles. Se abre un nuevo panel con los detalles de la cuenta. Estos detalles incluyen el tipo de cuenta, la hora de creación, la ubicación, etc.
 
-![](media/azure-stack-manage-storage-accounts/image7.png)
+![Detalles de la cuenta de almacenamiento](media/azure-stack-manage-storage-accounts/image7.png)
 
 ## <a name="recover-a-deleted-account"></a>Recuperación de una cuenta eliminada
 Puede que se encuentre en una situación en que deba recuperar una cuenta eliminada.
 
 En Azure Stack, existe una manera sencilla de hacerlo:
 
-1. Vaya a la lista de cuentas de almacenamiento. Vea Búsqueda de una cuenta de almacenamiento en este artículo para más información.
+1. Vaya a la lista de cuentas de almacenamiento. Para más información, vea [Búsqueda de una cuenta de almacenamiento](azure-stack-manage-storage-accounts.md) al principio de este artículo.
 2. Busque esa cuenta en particular en la lista. Puede que deba filtrar.
 3. Compruebe el *estado* de la cuenta. Debe indicar **Eliminada**.
 4. Seleccione la cuenta para abrir el panel de detalles de la cuenta.
 5. En la parte superior de este panel, busque el botón **Recuperar** y selecciónelo.
 6. Seleccione **Sí** para confirmar la acción.
-   
-   ![](media/azure-stack-manage-storage-accounts/image8.png)
-7. La recuperación está ahora en *proceso...espere* para indicar que se ha realizado correctamente.
-   También puede seleccionar el icono de "campana" en la parte superior del portal para ver las indicaciones de progreso.
-   
-   ![](media/azure-stack-manage-storage-accounts/image9.png)
-   
+
+   ![Confirmación de recuperación de una cuenta de almacenamiento](media/azure-stack-manage-storage-accounts/image8.png)
+
+7. La recuperación está en curso. Espere una indicación de que se ha realizado correctamente. También puede seleccionar el icono de "campana" en la parte superior del portal para ver las indicaciones de progreso.
+
+   ![Recuperación de la cuenta de almacenamiento correcta](media/azure-stack-manage-storage-accounts/image9.png)
+
    Una vez que la cuenta recuperada se ha sincronizado correctamente, se puede volver a usar.
 
 ### <a name="some-gotchas"></a>Algunos gotchas
 * La cuenta eliminada muestra un estado **fuera de retención**.
   
   Fuera de retención significa que la cuenta eliminada ha superado el período de retención y puede que no sea posible recuperarla.
+
 * La cuenta eliminada no se muestra en la lista de cuentas.
   
-  Su cuenta podría no aparecer en la lista de cuentas si la cuenta eliminada ya ha pasado la recolección de elementos no utilizados. En este caso no se puede recuperar. Vea [Reclamación de capacidad](#reclaim) en este artículo.
+  Su cuenta podría no aparecer en la lista de cuentas si la cuenta eliminada ya ha pasado la recolección de elementos no utilizados. En este caso no se puede recuperar. Para más información, consulte [Reclamación de capacidad](#reclaim) en este artículo.
 
 ## <a name="set-the-retention-period"></a>Establecimiento del período de retención
 La configuración del período de retención permite a un operador de nube especificar un período de tiempo en días (entre 0 y 9999 días) durante el cual existe la posibilidad de que cualquier cuenta eliminada se pueda recuperar. El período de retención predeterminado se establece en 0 días. Un valor configurado de "0" significa que una cuenta eliminada está inmediatamente fuera de retención y marcada para la recolección periódica de elementos no utilizados.
@@ -103,10 +103,10 @@ La configuración del período de retención permite a un operador de nube espec
 4. Seleccione **Configuración** y, luego, edite el valor del período de retención.
 
    Establezca el número de días y, a continuación, guárdelo.
-   
+
    Este valor se hace efectivo inmediatamente y se aplica a toda la región.
 
-   ![](media/azure-stack-manage-storage-accounts/image10.png)
+   ![Edición del período de retención en el portal de administración](media/azure-stack-manage-storage-accounts/image10.png)
 
 ## <a name="reclaim"></a>Reclamación de capacidad
 Uno de los efectos secundarios de tener un período de retención es que una cuenta eliminada sigue consumiendo su capacidad hasta que está fuera del período de retención. Como operador de nube, puede que necesite una manera de reclamar el espacio de la cuenta eliminada incluso aunque el periodo de retención no haya expirado aún.
@@ -118,15 +118,17 @@ Para ello, puede usar el portal o PowerShell.
 2. Seleccione **Recuperar espacio** en la parte superior del panel.
 3. Lea el mensaje y, a continuación, seleccione **Aceptar**.
 
-    ![](media/azure-stack-manage-storage-accounts/image11.png)
-4. Espere a la notificación de operación realizada correctamente. Puede ver el icono de campana en el portal.
+    ![Reclamación de espacio en las cuentas de almacenamiento](media/azure-stack-manage-storage-accounts/image11.png)
 
-    ![](media/azure-stack-manage-storage-accounts/image12.png)
+4. Espere la notificación de operación correcta. Observe el icono de campana en el portal.
+
+    ![Espacio recuperado correctamente](media/azure-stack-manage-storage-accounts/image12.png)
+
 5. Actualice la página de cuentas de almacenamiento. Las cuentas eliminadas ya no se muestran en la lista porque se han purgado.
 
 También puede usar PowerShell para reemplazar explícitamente el período de retención y reclamar inmediatamente la capacidad.
 
-**Para reclamar la capacidad mediante PowerShell:**   
+**Para reclamar la capacidad mediante PowerShell:**
 
 1. Confirme que ha instalado y configurado Azure PowerShell. Si no es así, use las siguientes instrucciones: 
    * Para instalar la versión más reciente de Azure PowerShell y asociarla a su suscripción de Azure, consulte [Instalación y configuración de Azure PowerShell](https://azure.microsoft.com/documentation/articles/powershell-install-configure/).
@@ -134,7 +136,7 @@ También puede usar PowerShell para reemplazar explícitamente el período de re
 2. Ejecute los siguientes cmdlets:
 
 > [!NOTE]  
-> Si ejecuta estos cmdlets, eliminará permanentemente la cuenta y su contenido. No se podrá volver a recuperar. Así que úselo con precaución.
+> Si ejecuta estos cmdlets, eliminará permanentemente la cuenta y su contenido. No se puede recuperar. Así que úselo con precaución.
 
 ```powershell  
     $farm_name = (Get-AzsStorageFarm)[0].name
@@ -146,5 +148,5 @@ Para más información, consulte la [documentación de PowerShell de Azure Stack
 
 ## <a name="next-steps"></a>Pasos siguientes
 
- - Para obtener información sobre cómo administrar permisos, vea [Administrar el control de acceso basado en roles](azure-stack-manage-permissions.md).
+ - Para obtener información sobre cómo administrar permisos, vea [Establecimiento de permisos de acceso mediante el control de acceso basado en rol](azure-stack-manage-permissions.md).
  - Para obtener información sobre cómo administrar la capacidad de almacenamiento para Azure Stack, vea [Administración de la capacidad de almacenamiento para Azure Stack](azure-stack-manage-storage-shares.md).

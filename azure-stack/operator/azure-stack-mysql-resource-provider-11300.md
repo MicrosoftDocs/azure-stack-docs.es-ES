@@ -1,6 +1,6 @@
 ---
 title: Notas de la versión del proveedor de recursos MySQL de Azure Stack 1.1.30.0 | Microsoft Docs
-description: Obtenga información sobre las novedades de la actualización del proveedor de recursos MySQL de Azure Stack más reciente, incluidos los problemas conocidos y dónde descargarla.
+description: Consulte las notas de la versión para ver las novedades de la actualización de 1.1.30.0 del proveedor de recursos MySQL de Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -16,14 +16,14 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 12/10/2018
-ms.openlocfilehash: 7679589090022f6f07c5e1fddb9c768716628865
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: fa21bb641589bb6da143696e0c925a0bfe51c1d0
+ms.sourcegitcommit: a23b80b57668615c341c370b70d0a106a37a02da
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71829434"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72682200"
 ---
-# <a name="mysql-resource-provider-11300--release-notes"></a>Notas de la versión del proveedor de recursos MySQL 1.1.30.0
+# <a name="mysql-resource-provider-11300-release-notes"></a>Notas de la versión del proveedor de recursos de MySQL 1.1.30.0
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
@@ -53,17 +53,17 @@ Esta versión del proveedor de recursos MySQL de Azure Stack incluye las siguien
 
 - **Hoja de cambio de contraseña de inicio de sesión MySQL**. Se ha corregido un problema que impedía cambiar la contraseña en la hoja de cambio de contraseña. Se han quitado los vínculos de las notificaciones de cambio de contraseña.
 
-## <a name="known-issues"></a>Problemas conocidos 
+## <a name="known-issues"></a>Problemas conocidos
 
-- **Las SKU de MySQL pueden tardar hasta una hora en estar visibles en el portal**. Las SKU recién creadas pueden tardar hasta una hora en estar visible para su uso al crear nuevas bases de datos MySQL. 
+- **Las SKU de MySQL pueden tardar hasta una hora en estar visibles en el portal**. Las SKU recién creadas pueden tardar hasta una hora en estar visible para su uso al crear nuevas bases de datos MySQL.
 
     **Solución alternativa**: Ninguno.
 
-- **Inicios de sesión MySQL reutilizados**. Al intentar crear un nuevo inicio de sesión MySQL con el mismo nombre de usuario que un inicio de sesión existente en la misma suscripción, se reutilizará el mismo inicio de sesión y la contraseña existente. 
+- **Inicios de sesión MySQL reutilizados**. Al intentar crear un nuevo inicio de sesión MySQL con el mismo nombre de usuario que un inicio de sesión existente en la misma suscripción, se reutilizará el mismo inicio de sesión y la contraseña existente.
 
     **Solución alternativa**: use diferentes nombres de usuario al crear nuevos inicios de sesión en la misma suscripción o crear inicios de sesión con el mismo nombre de usuario en diferentes suscripciones.
 
-- **Requisito de compatibilidad con TLS 1.2**. Si intenta implementar o actualizar el proveedor de recursos de MySQL desde un equipo donde TLS 1.2 no esté habilitada, se puede producir un error en la operación. Ejecute el siguiente comando de PowerShell en el equipo que se usa para implementar o actualizar el proveedor de recursos a fin de comprobar que TLS 1.2 se devuelve como compatible:
+- **Requisito de compatibilidad con TLS 1.2**. Si intenta implementar o actualizar el proveedor de recursos MySQL desde un equipo donde TLS 1.2 no está habilitado, se puede producir un error en la operación. Ejecute el siguiente comando de PowerShell en el equipo que se usa para implementar o actualizar el proveedor de recursos a fin de comprobar que TLS 1.2 se devuelve como compatible:
 
   ```powershell
   [System.Net.ServicePointManager]::SecurityProtocol

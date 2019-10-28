@@ -1,6 +1,6 @@
 ---
-title: Servidores de hospedaje MySQL en Azure Stack | Microsoft Docs
-description: Procedimientos para agregar instancias MySQL para el aprovisionamiento mediante el proveedor de recursos de adaptador de MySQL.
+title: Adición de servidores de hospedaje de MySQL en Azure Stack | Microsoft Docs
+description: Descubra cómo agregar servidores de hospedaje de MySQL para el aprovisionamiento mediante el proveedor de recursos de adaptador de MySQL.
 services: azure-stack
 documentationCenter: ''
 author: mattbriggs
@@ -15,14 +15,14 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 02/28/2019
-ms.openlocfilehash: 8c774d78cd03efeee830b1cbc5e726c7c53e3c57
-ms.sourcegitcommit: a7207f4a4c40d4917b63e729fd6872b3dba72968
+ms.openlocfilehash: 632528519bbca9286ab72fb806ee756ccdb6a166
+ms.sourcegitcommit: a23b80b57668615c341c370b70d0a106a37a02da
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71909052"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72682213"
 ---
-# <a name="add-hosting-servers-for-the-mysql-resource-provider"></a>Incorporación de servidores de hospedaje para el proveedor de recursos MySQL
+# <a name="add-mysql-hosting-servers-in-azure-stack"></a>Adición de servidores de hospedaje de MySQL en Azure Stack
 
 Puede hospedar una instancia del servidor host de MySQL en una máquina virtual en [Azure Stack](azure-stack-overview.md), o en una máquina virtual fuera de su entorno de Azure Stack, siempre y cuando el proveedor de recursos de MySQL pueda conectarse a la instancia.
 
@@ -35,17 +35,17 @@ Para los servidores de hospedaje, se pueden usar las versiones de MySQL 5.6, 5.7
 
 Asegúrese de que tiene las credenciales de una cuenta con privilegios de administrador del sistema. Para agregar un servidor de hospedaje, siga estos pasos:
 
-1. Inicie sesión en el portal del operador de Azure Stack como administrador de servicios.
+1. Inicie sesión en el portal de administración de Azure Stack como administrador de servicios.
 2. Seleccione **Todos los servicios**.
-3. Bajo la categoría **RECURSOS ADMINISTRATIVOS**, seleccione **MySQL Hosting Servers** (Servidores de hospedaje de MySQL) >  **+ Add** (Agregar). Esta acción abre el cuadro de diálogo **Add a MySQL Hosting Server** (Agregar un servidor de hospedaje MySQL), que se muestra en la siguiente captura de pantalla.
+3. Bajo la categoría **RECURSOS ADMINISTRATIVOS**, seleccione **MySQL Hosting Servers** (Servidores de hospedaje de MySQL) >  **+ Add** (Agregar). Esta acción abre el cuadro de diálogo **Add a MySQL Hosting Server** (Agregar un servidor de hospedaje de MySQL), que se muestra en la siguiente captura de pantalla.
 
-   ![Configurar un servidor host](./media/azure-stack-mysql-rp-deploy/mysql-add-hosting-server-2.png)
+   ![Configuración de un servidor de hospedaje de MySQL](./media/azure-stack-mysql-rp-deploy/mysql-add-hosting-server-2.png)
 
 4. Proporcione los detalles de conexión de la instancia del servidor MySQL.
 
    * En el caso de **MySQL Hosting Server Name** (Nombre del servidor de hospedaje MySQL), proporcione el nombre de dominio completo (FQDN) o una dirección IPv4 válida. No use el nombre corto de la máquina virtual.
-   * El administrador predeterminado **Nombre de usuario** de las imágenes MySQL de Bitnami disponibles en Marketplace de Azure Stack es *raíz*. 
-   * Si no conoce la **Contraseña** raíz, consulte la [documentación de Bitnami](https://docs.bitnami.com/azure/faq/#how-to-find-application-credentials) para averiguar cómo obtenerla. 
+   * El administrador predeterminado **Nombre de usuario** de las imágenes MySQL de Bitnami disponibles en Azure Stack Marketplace es *raíz*.
+   * Si no conoce la **Contraseña** raíz, consulte la [documentación de Bitnami](https://docs.bitnami.com/azure/faq/#how-to-find-application-credentials) para averiguar cómo obtenerla.
    * No se ha proporcionado ninguna instancia de MySQL, por lo que debe especificar el valor de **Size of Hosting Server in GB** (Tamaño del servidor de hospedaje en GB). Debe ser similar a la capacidad del servidor de bases de datos.
    * Mantenga la configuración predeterminada para **Subscrición**.
    * En el caso de **Grupo de recursos**, cree uno o use un grupo ya existente.

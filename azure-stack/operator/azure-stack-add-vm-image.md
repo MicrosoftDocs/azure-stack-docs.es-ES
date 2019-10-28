@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: conceptual
-ms.date: 10/10/2019
+ms.date: 10/16/2019
 ms.author: Justinha
 ms.reviewer: kivenkat
 ms.lastreviewed: 06/08/2018
-ms.openlocfilehash: 9dc5039a2c8b74b14da59573758a4cf8d1a3657a
-ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
+ms.openlocfilehash: 91fdd5c0068638f3e597f72ce5aee50fe04b324c
+ms.sourcegitcommit: b5eb024d170f12e51cc852aa2c72eabf26792d8d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282657"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72534041"
 ---
 # <a name="add-a-custom-vm-to-azure-stack"></a>Adición de una máquina virtual personalizada a Azure Stack
 
@@ -57,6 +57,8 @@ Si el disco duro virtual es de Azure, siga estas instrucciones para generalizar 
    ```
 
 2. Apague la máquina virtual y descargue el disco duro virtual. Si va a llevar el disco duro virtual de Azure, puede hacerlo mediante la exportación de discos, como se muestra en [Descargar un VHD de Windows desde Azure ](/azure/virtual-machines/windows/download-vhd).
+
+Tenga en cuenta las versiones del agente Linux de Azure que funcionan con Azure Stack [como se documenta aquí](azure-stack-linux.md#azure-linux-agent). Asegúrese de que la imagen preparada con Sysprep tenga una versión del agente Linux de Azure compatible con Azure Stack.
 
 ### <a name="common-steps-for-both-windows-and-linux"></a>Pasos comunes para Windows y Linux
 

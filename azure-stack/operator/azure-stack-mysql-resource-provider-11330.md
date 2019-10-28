@@ -1,6 +1,6 @@
 ---
-title: Notas de la versión del proveedor de recursos MySQL de Azure Stack 1.1.30.0 | Microsoft Docs
-description: Obtenga información sobre las novedades de la actualización del proveedor de recursos MySQL de Azure Stack más reciente, incluidos los problemas conocidos y dónde descargarla.
+title: Notas de la versión del proveedor de recursos MySQL de Azure Stack 1.1.33.0 | Microsoft Docs
+description: Consulte las notas de la versión para ver las novedades de la actualización de 1.1.33.0 del proveedor de recursos MySQL de Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -16,12 +16,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/09/2019
-ms.openlocfilehash: fdac6c099980a1c2cedb3271123908539d18169d
-ms.sourcegitcommit: a7207f4a4c40d4917b63e729fd6872b3dba72968
+ms.openlocfilehash: 0ff97155d1ad27c36e86e142aa000c4987c5c8fd
+ms.sourcegitcommit: a23b80b57668615c341c370b70d0a106a37a02da
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71909162"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72682151"
 ---
 # <a name="mysql-resource-provider-11330--release-notes"></a>Notas de la versión del proveedor de recursos de MySQL 1.1.33.0
 
@@ -44,21 +44,22 @@ Descargue el archivo binario del proveedor de recursos MySQL y ejecute el extrac
 Esta versión del proveedor de recursos MySQL de Azure Stack incluye las siguientes mejoras y correcciones:
 
 ### <a name="fixes"></a>Correcciones
-- **La extensión del portal del proveedor de recursos de MySQL puede elegir la suscripción incorrecta**. El proveedor de recursos de MySQL utiliza las llamadas de Azure Resource Manager para determinar la primera suscripción de administrador de servicio que se va a utilizar, que podría no ser la *suscripción de proveedor predeterminado*. Si esto sucede, el proveedor de recursos de MySQL no funciona con normalidad. 
+
+- **La extensión del portal del proveedor de recursos de MySQL puede elegir la suscripción incorrecta**. El proveedor de recursos de MySQL utiliza las llamadas de Azure Resource Manager para determinar la primera suscripción de administrador de servicio que se va a utilizar, que podría no ser la *suscripción de proveedor predeterminado*. Si esto sucede, el proveedor de recursos MySQL no funciona con normalidad.
 
 - **El servidor de hospedaje de MySQL no muestra las bases de datos hospedadas.** Es posible que las bases de datos creadas por el usuario no aparezcan en la lista cuando se visualizan los recursos de los inquilinos para servidores de hospedaje de MySQL.
 
-- **La anterior implementación del proveedor de recursos de MySQL (1.1.30.0) podría producir un error si TLS 1.2 no está habilitado**. Se ha actualizado el proveedor de recursos de MySQL 1.1.33.0 para habilitar TLS 1.2 al implementar el proveedor de recursos, actualizar el proveedor de recursos o cambiar los secretos. 
+- **La implementación anterior del proveedor de recursos de MySQL (1.1.30.0) podría producir un error si TLS 1.2 no está habilitado**. Se ha actualizado el proveedor de recursos de MySQL 1.1.33.0 para habilitar TLS 1.2 al implementar el proveedor de recursos, actualizar el proveedor de recursos o cambiar los secretos.
 
 - **Se produce un error al cambiar los secretos del proveedor de recursos de MySQL**. Se ha corregido un error que daba como resultado el siguiente código de error al cambiar los secretos: `New-AzureRmResourceGroupDeployment - Error: Code=InvalidDeploymentParameterValue; Message=The value of deployment parameter 'StorageAccountBlobUri' is null.`
 
-## <a name="known-issues"></a>Problemas conocidos 
+## <a name="known-issues"></a>Problemas conocidos
 
 - **Las SKU de MySQL pueden tardar hasta una hora en estar visibles en el portal**. Las SKU recién creadas pueden tardar hasta una hora en estar visible para su uso al crear nuevas bases de datos MySQL. 
 
     **Solución alternativa**: Ninguno.
 
-- **Inicios de sesión MySQL reutilizados**. Al intentar crear un nuevo inicio de sesión MySQL con el mismo nombre de usuario que un inicio de sesión existente en la misma suscripción, se reutilizará el mismo inicio de sesión y la contraseña existente. 
+- **Inicios de sesión MySQL reutilizados**. Al intentar crear un nuevo inicio de sesión MySQL con el mismo nombre de usuario que un inicio de sesión existente en la misma suscripción, se reutilizará el mismo inicio de sesión y la contraseña existente.
 
     **Solución alternativa**: use diferentes nombres de usuario al crear nuevos inicios de sesión en la misma suscripción o crear inicios de sesión con el mismo nombre de usuario en diferentes suscripciones.
 

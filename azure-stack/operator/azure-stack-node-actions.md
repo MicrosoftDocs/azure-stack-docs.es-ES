@@ -1,6 +1,6 @@
 ---
 title: Acciones de los nodos de unidad de escalado en Azure Stack | Microsoft Docs
-description: Aprenda a ver el estado de los nodos y a usar las acciones de nodo para conectar, desconectar, deshabilitar y reanudar en un sistema integrado de Azure Stack.
+description: Obtenga información sobre las acciones de los nodos de la unidad de escalado, incluidas las de conectar, desconectar, deshabilitar y reanudar, así como visualizar el estado de los nodos en los sistemas integrados de Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,12 +15,12 @@ ms.date: 07/18/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 07/18/2019
-ms.openlocfilehash: b75d9f37e2b2deacb5935bb6cda3c2586afb8baa
-ms.sourcegitcommit: 314fd74caf356b157583d38d2b8b1dee30408b7d
+ms.openlocfilehash: 18d76db779db5914663f551154fc8c795753503c
+ms.sourcegitcommit: acebda8a42ac8ecdeba490fc1738e9041479dab0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70235017"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72814050"
 ---
 # <a name="scale-unit-node-actions-in-azure-stack"></a>Acciones de los nodos de unidad de escalado en Azure Stack
 
@@ -44,13 +44,13 @@ Para ver el estado de una unidad de escalado:
 
    Vea la siguiente información:
 
-   - La lista de nodos individuales
-   - El estado operativo (consulte la lista siguiente)
-   - El estado de encendido (p. ej., en funcionamiento o detenido)
-   - Modelo de servidor
-   - dirección IP del controlador de administración de placa base (BMC)
-   - Número total de núcleos
-   - Cantidad total de memoria
+   - La lista de nodos individuales.
+   - El estado operativo (consulte la lista siguiente).
+   - El estado de encendido (p. ej., en funcionamiento o detenido).
+   - El modelo de servidor.
+   - La dirección IP del controlador de administración de placa base (BMC).
+   - El número total de núcleos.
+   - La cantidad total de memoria.
 
 ![estado de una unidad de escalado](media/azure-stack-node-actions/multinodeactions.png)
 
@@ -68,10 +68,11 @@ Para ver el estado de una unidad de escalado:
 ## <a name="scale-unit-node-actions"></a>Acciones de nodo de unidad de escalado
 
 Al ver la información sobre un nodo de la unidad de escalado, también puede realizar acciones de nodo como:
- - Iniciar y detener (según el estado actual de energía)
- - Deshabilitar y reanudar (según el estado de las operaciones)
- - Reparación
- - Shutdown
+
+ - Iniciar y detener (según el estado actual de energía).
+ - Deshabilitar y reanudar (según el estado de las operaciones).
+ - Reparar.
+ - Apagar.
 
 El estado operativo del nodo determina qué opciones están disponibles.
 
@@ -79,7 +80,7 @@ Debe instalar los módulos de PowerShell de Azure Stack. Estos cmdlets están en
 
 ## <a name="stop"></a>Stop
 
-La acción **Detener** desactiva el nodo. Es lo mismo que si se presiona el botón de encendido. No envía una señal de apagado al sistema operativo. Para las operaciones de detención planeadas, intente siempre llevar a cabo la operación de apagado primero. 
+La acción **Detener** desactiva el nodo. Equivale a presionar el botón de encendido. No envía una señal de apagado al sistema operativo. Para las operaciones de detención planeadas, intente siempre llevar a cabo la operación de apagado primero.
 
 Esta acción se utiliza normalmente cuando un nodo está en un estado bloqueado y ya no responde a las solicitudes.
 
@@ -95,15 +96,15 @@ Para más información, consulte [Stop-AzsScaleUnitNode](https://docs.microsoft.
 
 ## <a name="start"></a>Start
 
-La acción de **inicio** activa el nodo. Es lo mismo que si se presiona el botón de encendido. 
- 
+La acción de **inicio** activa el nodo. Es lo mismo que si se presiona el botón de encendido.
+
 Para ejecutar la acción de inicio, abra un símbolo de sistema de PowerShell con privilegios elevados y ejecute el siguiente cmdlet:
 
 ```powershell  
   Start-AzsScaleUnitNode -Location <RegionName> -Name <NodeName>
 ```
 
-En el improbable caso de que la acción de inicio no funcione, vuelva a intentar la operación y, si produce un error una segunda vez, use la interfaz web de BMC en su lugar.
+En el caso improbable de que la acción de inicio no funcione, vuelva a intentar la operación. Si se produce un error por segunda vez, utilice la interfaz web de BMC en su lugar.
 
 Para más información, consulte [Start-AzsScaleUnitNode](https://docs.microsoft.com/powershell/module/azs.fabric.admin/start-azsscaleunitnode).
 
@@ -111,7 +112,7 @@ Para más información, consulte [Start-AzsScaleUnitNode](https://docs.microsoft
 
 La acción de **purga** mueve todas las cargas de trabajo activas a los nodos restantes de esa unidad de escalado concreta.
 
-Esta acción se suele utilizar durante el reemplazo de diversos componentes, por ejemplo de un nodo completo.
+Esta acción se suele utilizar durante el reemplazo de componentes, por ejemplo de un nodo completo.
 
 > [!Important]
 > Asegúrese de que la operación de purga se realiza en un nodo durante un período de mantenimiento planeado del cual se haya notificado a los usuarios. En determinadas condiciones, las cargas de trabajo activas pueden experimentar interrupciones.
@@ -139,8 +140,8 @@ Para más información, consulte [Enable-AzsScaleUnitNode](https://docs.microsof
 ## <a name="repair"></a>Reparación
 
 > [!CAUTION]  
-> La nivelación del firmware es fundamental para el éxito de la operación que se describe en este artículo. La omisión de este paso puede dar lugar a inestabilidad del sistema, disminución del rendimiento, subprocesos de seguridad o evitar que la automatización de Azure Stack implemente el sistema operativo. Vea siempre la documentación del asociado de hardware cuando reemplace este para asegurarse de que el firmware aplicado coincide con la versión de OEM que se muestra en el [portal de administración de Azure Stack](azure-stack-updates.md).<br>
-Para obtener más información y vínculos a la documentación de los asociados, vea [Sustitución de un componente de hardware](azure-stack-replace-component.md).
+> La nivelación del firmware es fundamental para el éxito de la operación que se describe en este artículo. La omisión de este paso puede dar lugar a inestabilidad del sistema, disminución del rendimiento, subprocesos de seguridad o error cuando la automatización de Azure Stack implemente el sistema operativo. Vea siempre la documentación del asociado de hardware cuando reemplace hardware para asegurarse de que el firmware aplicado coincide con la versión de OEM que se muestra en el [portal de administración de Azure Stack](azure-stack-updates.md).<br><br>
+Para obtener más información y vínculos a la documentación del asociado, vea [Sustitución de un componente de hardware](azure-stack-replace-component.md).
 
 | Asociado de hardware | Region | URL |
 |------------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -153,13 +154,14 @@ Para obtener más información y vínculos a la documentación de los asociados,
 | Lenovo | Todo | [ThinkAgile SXM Best Recipes](https://datacentersupport.lenovo.com/us/en/solutions/ht505122) |
 
 La acción **Reparar** repara un nodo. Úsela solamente para alguno de los escenarios siguientes:
- - Al reemplazar un nodo completo (con o sin discos de datos nuevos)
- - Después del error de un componente de hardware y de su reemplazo (si se recomienda en la documentación de la unidad reemplazable de campo [FRU]).
+
+- Al reemplazar un nodo completo (con o sin discos de datos nuevos).
+- Después del error de un componente de hardware y de su reemplazo (si se recomienda en la documentación de la unidad reemplazable de campo [FRU]).
 
 > [!Important]  
-> Consulte la documentación de la FRU de su proveedor de hardware OEM para conocer los pasos exactos cuando necesite reemplazar un nodo o componentes de hardware individuales. La documentación de la FRU especificará si tiene que ejecutar la acción de reparación después de reemplazar un componente de hardware. 
+> Consulte la documentación de la FRU de su proveedor de hardware OEM para conocer los pasos exactos cuando necesite reemplazar un nodo o componentes de hardware individuales. La documentación de la FRU especificará si tiene que ejecutar la acción de reparación después de reemplazar un componente de hardware.
 
-Al ejecutar la acción de reparación, debe especificar la dirección IP de BMC. 
+Al ejecutar la acción de reparación, debe especificar la dirección IP de BMC.
 
 Para reanudar la acción de reparación, abra un símbolo de sistema de PowerShell con privilegios elevados y ejecute el siguiente cmdlet:
 
@@ -181,8 +183,6 @@ Para ejecutar la acción de apagado, abra un símbolo de sistema de PowerShell c
   Stop-AzsScaleUnitNode -Location <RegionName> -Name <NodeName> -Shutdown
   ```
 
-
-
 ## <a name="next-steps"></a>Pasos siguientes
 
-Para más información sobre el módulo de administrador Fabric de Azure Stack, consulte [Azs.Fabric.Admin](https://docs.microsoft.com/powershell/module/azs.fabric.admin/?view=azurestackps-1.6.0).
+[Obtenga información sobre el módulo del operador de tejido de Azure Stack](https://docs.microsoft.com/powershell/module/azs.fabric.admin/?view=azurestackps-1.6.0).

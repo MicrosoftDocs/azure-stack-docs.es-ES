@@ -9,12 +9,12 @@ ms.date: 10/03/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: 722cd99a53a0c08e7b981a571726b378e54cd288
-ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
+ms.openlocfilehash: c11d5ad563ff673cfaf9e28cea7373bbc6e551aa
+ms.sourcegitcommit: b72729305234e13c65de3771cb08678d46ba1348
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71962679"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72543807"
 ---
 # <a name="setup-vpn-gateway-for-azure-stack-using-fortigate-nva"></a>Configuración de una puerta de enlace de VPN para Azure Stack con la NVA FortiGate
 
@@ -221,7 +221,7 @@ El dispositivo VPN local se debe configurar para crear el túnel VPN IPSec. En l
 | Versión de IKE | 1 |
 | Modo de IKE | Principal (protección de identificador) |
 | Algoritmos de propuesta de la fase 1 | AES128-SHA256, AES256-SHA256, AES128-SHA1, AES256-SHA1 |
-| Grupos Diffe-Hellman | 14, 5 |
+| Grupos Diffie-Hellman | 14, 5 |
 
 ## <a name="create-the-vpn-tunnel"></a>Creación del túnel VPN
 

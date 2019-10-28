@@ -1,6 +1,6 @@
 ---
-title: Introducción a los servicios, planes, ofertas y suscripciones de Azure Stack
-description: Como operador de nube, es importante que comprenda los servicios, planes, ofertas y suscripciones de Azure Stack.
+title: Introducción a los servicios, planes, ofertas y suscripciones de Azure Stack | Microsoft Docs
+description: Introducción a los servicios, planes, ofertas y suscripciones de Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: BryanLa
@@ -12,36 +12,38 @@ ms.date: 08/29/2019
 ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 10/01/2019
-ms.openlocfilehash: 3559dd6bb684ef3a1ab1c90efcc3dfc814c811f3
-ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
+ms.openlocfilehash: 2242da61eaa457a8cc234fb3310787eb26b9148e
+ms.sourcegitcommit: acebda8a42ac8ecdeba490fc1738e9041479dab0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72287279"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72814060"
 ---
-# <a name="service-plan-offer-subscription-overview"></a>Introducción a los servicios, planes y suscripciones
+# <a name="azure-stack-services-plans-offers-subscriptions-overview"></a>Introducción a los servicios, planes, ofertas y suscripciones de Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-[Microsoft Azure Stack](azure-stack-overview.md) es una nueva plataforma en la nube híbrida que le permite proporcionar servicios desde el centro de datos. Servicios como máquinas virtuales, bases de datos de SQL Server, SharePoint, Exchange e incluso [elementos de Azure Marketplace](azure-stack-marketplace-azure-items.md). Como proveedor de servicios, puede ofrecer servicios a los inquilinos. Dentro de una empresa u organismo gubernamental, puede ofrecer servicios locales a los empleados.
+[Microsoft Azure Stack](azure-stack-overview.md) es una nueva plataforma en la nube híbrida que le permite proporcionar servicios desde el centro de datos. Los servicios incluyen máquinas virtuales (VM), bases de datos de SQL Server, SharePoint, Exchange e incluso [elementos de Azure Marketplace](azure-stack-marketplace-azure-items.md). Como proveedor de servicios, puede ofrecer servicios a los inquilinos. Dentro de una empresa u organismo gubernamental, puede ofrecer servicios locales a los empleados.
 
 ## <a name="overview"></a>Información general
 
-Como operador de Azure Stack, debe configurar y entregar esos servicios por medio de ofertas, planes y suscripciones. Las ofertas contienen uno o varios planes y cada plan incluye uno o varios servicios, cada uno configurado con cuotas. Al crear planes y combinarlos en diferentes ofertas, los usuarios pueden suscribirse a sus ofertas e implementar recursos. Esto le permite administrar:
+Como operador de Azure Stack, debe configurar y entregar esos servicios por medio de ofertas, planes y suscripciones. Las ofertas contienen uno o varios planes y cada plan incluye uno o varios servicios, cada uno configurado con cuotas. Al crear planes y combinarlos en diferentes ofertas, los usuarios pueden suscribirse a sus ofertas e implementar recursos. Esta estructura le permite administrar:
 
 - Los servicios y los recursos a los que pueden acceder los usuarios.
 - La cantidad de recursos que los usuarios pueden consumir.
 - Qué regiones tienen acceso a los recursos.
 
-Para prestar un servicio, siga estos pasos generales:
+Para ofrecer un servicio, siga estos pasos de alto nivel:
 
 1. Planee la oferta de servicio mediante lo siguiente:
-   - Servicios fundamentales, como proceso, almacenamiento, redes o almacén de claves.
-   - Servicios complementarios como App Service, SQL Server o MySQL Server.
-2. Cree un plan compuesto por uno o más servicios. Al crear un plan, seleccione o cree cuotas que definan los límites de recursos de cada servicio en el plan.
-3. Cree una oferta que contenga uno o varios planes. La oferta puede incluir planes base y planes complementarios opcionales.
 
-Después de crear la oferta, los usuarios pueden suscribirse a ella para acceder a los servicios que la oferta proporciona e implementar los recursos. Los usuarios pueden suscribirse a todas las ofertas que quieran. En la siguiente ilustración se muestra un ejemplo sencillo de un usuario que se ha suscrito a dos ofertas. Cada oferta tiene uno o dos planes, y cada plan les da acceso a servicios específicos.
+   - Servicios fundamentales, como los de proceso, almacenamiento, redes o Key Vault.
+   - Servicios complementarios como los de App Service, SQL Server o MySQL Server.
+
+2. Cree un plan compuesto por uno o más servicios. Al crear un plan, seleccione o cree cuotas que definan los límites de recursos de cada servicio en el plan.
+3. Cree una oferta que tenga uno o varios planes. La oferta puede incluir planes base y planes complementarios opcionales.
+
+Después de crear la oferta, los usuarios pueden suscribirse a ella para acceder a los servicios e implementar los recursos. Los usuarios pueden suscribirse a todas las ofertas que quieran. En la siguiente ilustración se muestra un ejemplo sencillo de un usuario que se ha suscrito a dos ofertas. Cada oferta tiene uno o dos planes, y cada plan les da acceso a servicios específicos.
 
 ![Suscripción de inquilinos con ofertas y planes](media/azure-stack-key-features/image4.png)
 
@@ -67,7 +69,7 @@ Para ayudarle a administrar la capacidad de la nube, puede usar *cuotas* configu
 Puede configurar cuotas por región. Por ejemplo, un plan que proporciona servicios de proceso para la región A puede tener una cuota de dos máquinas virtuales.
 
 >[!NOTE]
->En el Kit de desarrollo de Azure Stack, solo hay una región (denominada *local*) disponible.
+>En el Kit de desarrollo de Azure Stack (ASDK), solo hay una región (denominada *local*) disponible.
 
 Obtenga más información sobre los [tipos de cuota en Azure Stack](azure-stack-quota-types.md).
 
@@ -85,7 +87,7 @@ Los planes complementarios son planes opcionales que puede agregar a una oferta.
 
 ## <a name="offers"></a>Ofertas
 
-Las ofertas son grupos de uno o varios planes que se crean para que los usuarios puedan suscribirse a ellas. Por ejemplo, la Oferta Alfa puede incluir el Plan A, que proporciona un conjunto de servicios Compute y el Plan B, que contiene un conjunto de servicios Storage y Network.
+Las ofertas son grupos de uno o varios planes que se crean para que los usuarios puedan suscribirse a ellas. Por ejemplo:  La Oferta Alfa puede incluir el Plan A, que proporciona un conjunto de servicios Compute, y el Plan B, que ofrece un conjunto de servicios de red y almacenamiento.
 
 Cuando se [crea una oferta](azure-stack-create-offer.md), debe incluir al menos un plan base, pero también puede crear planes complementarios que los usuarios pueden agregar a su suscripción.
 
@@ -99,13 +101,13 @@ Cuando planifique las ofertas, tenga en cuenta los puntos siguientes:
 
 ## <a name="subscriptions"></a>Suscripciones
 
-Las suscripciones permiten a los usuarios tener acceso a sus ofertas. Si es un operador de Azure Stack de un proveedor de servicios, los usuarios (inquilinos) le compran sus servicios mediante la suscripción a sus ofertas. Si es un operador de Azure Stack de una organización, los usuarios (empleados) pueden suscribirse a los servicios que les ofrece sin pagar. 
+Las suscripciones permiten a los usuarios acceder a sus ofertas. Si es un operador de Azure Stack de un proveedor de servicios, los usuarios (inquilinos) le compran sus servicios mediante la suscripción a sus ofertas. Si es un operador de Azure Stack de una organización, los usuarios (empleados) pueden suscribirse a los servicios que les ofrece sin pagar.
 
 Los usuarios crean nuevas suscripciones y obtienen acceso a las suscripciones existentes cuando inician sesión en Azure Stack. Cada suscripción representa una asociación con una única oferta. La oferta (y sus planes y cuotas) asignada a una suscripción no se puede compartir con otras suscripciones. Cada recurso que crea un usuario está asociado a una suscripción.
 
 ### <a name="default-provider-subscription"></a>Suscripción de proveedor predeterminada
 
-La suscripción de proveedor predeterminada se crea automáticamente al implementar el Kit de desarrollo de Azure Stack. Esta suscripción puede utilizarse para administrar Azure Stack, implementar proveedores de recursos adicionales y crear ofertas y planes para los usuarios. Por motivos de seguridad y concesión de licencias, no debe usarse para ejecutar aplicaciones y cargas de trabajo de cliente. No se puede cambiar la cuota de la suscripción de proveedor predeterminada.
+La suscripción de proveedor predeterminada se crea automáticamente al implementar el ASDK. Esta suscripción puede utilizarse para administrar Azure Stack, implementar proveedores de recursos adicionales y crear ofertas y planes para los usuarios. Por motivos de seguridad y concesión de licencias, no debe usarse para ejecutar aplicaciones y cargas de trabajo de cliente. No se puede cambiar la cuota de la suscripción de proveedor predeterminada.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
