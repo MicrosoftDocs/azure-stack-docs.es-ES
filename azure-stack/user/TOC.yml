@@ -200,7 +200,7 @@
                     - name: Motor de AKS en Azure Stack
                       href: azure-stack-kubernetes-aks-engine-overview.md
                     - name: Directiva de soporte técnico
-                      href: azure-stack-kubernetes-ask-engine-support.md
+                      href: azure-stack-kubernetes-aks-engine-support.md
                     - name: Configuración de requisitos previos
                       href: azure-stack-kubernetes-aks-engine-set-up.md
                     - name: Creación del cliente de Linux
@@ -275,6 +275,8 @@
           href: azure-stack-network-howto-vnet-to-vnet-stacks.md
         - name: Emparejamiento de VNET
           href: azure-stack-network-howto-vnet-to-vnet.md
+        - name: Conexión al almacenamiento iSCSI
+          href: azure-stack-network-howto-iscsi-storage.md
 - name: Conceptos
   items:
     - name: Patrones de nube híbrida
