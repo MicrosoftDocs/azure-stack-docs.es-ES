@@ -215,6 +215,8 @@
                       href: azure-stack-kubernetes-aks-engine-upgrade.md
                     - name: Solución de problemas del motor de AKS
                       href: azure-stack-kubernetes-aks-engine-troubleshoot.md
+                    - name: Traslado del motor de AKS desde el elemento de Marketplace
+                      href: azure-stack-kubernetes-aks-engine-dvm.md
                 - name: Elemento de Marketplace
                   items:
                     - name: Implementación de un clúster de Kubernetes
@@ -275,8 +277,8 @@
           href: azure-stack-network-howto-vnet-to-vnet-stacks.md
         - name: Emparejamiento de VNET
           href: azure-stack-network-howto-vnet-to-vnet.md
-        - name: Conexión al almacenamiento iSCSI
-          href: azure-stack-network-howto-iscsi-storage.md
+        - name: Copia de recursos de suscripción
+          href: azure-stack-network-howto-backup-replicator.md
 - name: Conceptos
   items:
     - name: Patrones de nube híbrida
