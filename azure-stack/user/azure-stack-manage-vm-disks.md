@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/02/2019
+ms.date: 10/24/2019
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 01/18/2019
-ms.openlocfilehash: af110f6b4140a69e01dadcd38a32843866744abf
-ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
+ms.openlocfilehash: b42f21a3225194cfe50b5ae7d39d8d1a7cffb6d0
+ms.sourcegitcommit: e6a738f674634e1d5dd4eb23b6c44b660ea2fe84
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71961595"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72891259"
 ---
 # <a name="create-vm-disk-storage-in-azure-stack"></a>Creación del almacenamiento en disco de VM en Azure Stack
 
@@ -131,8 +131,13 @@ Para más información acerca de cómo trabajar con cuentas de almacenamiento en
 
 1. [Prepare un archivo .vhd](/azure/virtual-machines/windows/classic/createupload-vhd) para usarlo como disco de datos de una máquina virtual. Cargue dicho archivo .vhd en una cuenta de almacenamiento que use con la máquina virtual a la que desee asociarlo.
 
-    Considere usar un contenedor diferente para el archivo .vhd en lugar del que alberga el disco del sistema operativo.
-    ![Ejemplo: carga de un archivo VHD](media/azure-stack-manage-vm-disks/upload-vhd.png)
+    - Considere usar un contenedor diferente para el archivo .vhd en lugar del que alberga el disco del sistema operativo.  
+    - Antes de cargar los VHD en Azure, debe consultar [Preparación de un VHD o un VHDX de Windows antes de cargarlo en Azure](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+    - Revise [Plan for the migration to Managed Disks](https://docs.microsoft.com/azure/virtual-machines/windows/on-prem-to-azure#plan-for-the-migration-to-managed-disks) (Planeación de la migración a Managed Disks) antes de comenzar la migración a [Managed Disks](https://docs.microsoft.com/azure/virtual-machines/windows/managed-disks-overview).
+    
+    ![Ejemplo: Carga de un archivo VHD](media/azure-stack-manage-vm-disks/upload-vhd.png)
+
+
 
 2. Una vez cargado el archivo .vhd, está listo para asociar el disco duro virtual a una VM. En el menú de la izquierda, haga clic en **Máquinas virtuales**.  
  ![Ejemplo: Selección de una máquina virtual en el panel](media/azure-stack-manage-vm-disks/vm-dashboard.png)

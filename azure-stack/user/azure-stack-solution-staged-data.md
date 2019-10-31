@@ -11,16 +11,16 @@ ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 10/10/2019
+ms.date: 10/24/2019
 ms.author: mabrigg
 ms.reviewer: anajod
 ms.lastreviewed: 06/20/2019
-ms.openlocfilehash: 187fe88ad304804462cc4461b24eb10a7af7a299
-ms.sourcegitcommit: a6d47164c13f651c54ea0986d825e637e1f77018
+ms.openlocfilehash: 4d93e16a46efad33c4392e40ca3a79e89a14795b
+ms.sourcegitcommit: e6a738f674634e1d5dd4eb23b6c44b660ea2fe84
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72277739"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72891275"
 ---
 # <a name="deploy-a-staged-data-analytics-solution-to-azure-stack"></a>Implementación de una solución de análisis de datos almacenados provisionalmente en Azure Stack
 
@@ -83,12 +83,12 @@ Las imágenes de Docker para cada implementación eliminan los problemas de depe
       ```powershell
       .\DeploySolution-Azure-AzureStack.ps1 `
       -AzureApplicationId "applicationIDforAzureServicePrincipal" `
-      -AzureApplicationSercet "clientSecretforServicePrincipal" `
+      -AzureApplicationSecret "clientSecretforServicePrincipal" `
       -AzureTenantId "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" `
       -AzureStackAADTenantName "azurestacktenant.onmicrosoft.com" `
       -AzureStackTenantARMEndpoint "https://management.haazurestack.com" `
       -AzureStackApplicationId "applicationIDforStackServicePrincipal" `
-      -AzureStackApplicationSercet "ClientSecretforStackServicePrincipal" `
+      -AzureStackApplicationSecret "ClientSecretforStackServicePrincipal" `
       -AzureStackTenantId "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" `
       -ResourcePrefix "aPrefixForResources"
       ```

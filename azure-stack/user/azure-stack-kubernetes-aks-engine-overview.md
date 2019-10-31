@@ -15,12 +15,12 @@ ms.date: 09/14/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 09/14/2019
-ms.openlocfilehash: 0b1c28369fb1865778c68040894d100af9ea7fd6
-ms.sourcegitcommit: 09d14eb77a43fd585e7e6be93c32fa427770adb6
+ms.openlocfilehash: 93a835b6d3eff233ccbd421930f9618325126ea4
+ms.sourcegitcommit: 58e1911a54ba249a82fa048c7798dadedb95462b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019381"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73057769"
 ---
 # <a name="what-is-the-aks-engine-on-azure-stack"></a>Descripción del motor de AKS en Azure Stack
 
@@ -50,7 +50,7 @@ El equipo de soporte técnico de Azure Stack admite los siguientes escenarios:
 2.  AKS-Engine implementa el clúster en una red virtual existente. Para más información, consulte [Uso de una red virtual personalizada con AKS-Engine](https://github.com/Azure/aks-engine/blob/master/docs/tutorials/custom-vnet.md).
 3.  [Actualice](azure-stack-kubernetes-aks-engine-upgrade.md) y [escale](azure-stack-kubernetes-aks-engine-scale.md) operaciones.
 
-Para más información sobre AKS-Engine y Azure Stack, consulte [Directivas de compatibilidad para AKS-Engine en Azure Stack](azure-stack-kubernetes-ask-engine-support.md).
+Para más información sobre AKS-Engine y Azure Stack, consulte [Directivas de compatibilidad para AKS-Engine en Azure Stack](azure-stack-kubernetes-aks-engine-support.md).
 
 ## <a name="install-the-aks-engine-and-deploy-a-kubernetes-cluster"></a>Instalación de AKS-Engine e implementación de un clúster de Kubernetes
 
