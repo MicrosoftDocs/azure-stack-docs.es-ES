@@ -215,8 +215,6 @@
                       href: azure-stack-kubernetes-aks-engine-upgrade.md
                     - name: Solución de problemas del motor de AKS
                       href: azure-stack-kubernetes-aks-engine-troubleshoot.md
-                    - name: Traslado del motor de AKS desde el elemento de Marketplace
-                      href: azure-stack-kubernetes-aks-engine-dvm.md
                 - name: Elemento de Marketplace
                   items:
                     - name: Implementación de un clúster de Kubernetes
@@ -227,6 +225,8 @@
                       href: azure-stack-solution-template-kubernetes-adfs.md
                     - name: Habilitación del panel de Kubernetes
                       href: azure-stack-solution-template-kubernetes-dashboard.md
+                    - name: Traslado del motor de AKS desde el elemento de Marketplace
+                      href: azure-stack-kubernetes-aks-engine-dvm.md
                     - name: Solución de problemas de clúster de Kubernetes
                       href: azure-stack-solution-template-kubernetes-trouble.md
             - name: Implementación de Cognitive Services
@@ -271,14 +271,36 @@
           href: azure-stack-solution-sql-ha.md
     - name: Implementación de patrones fundamentales
       items:
+        - name: Emparejamiento de VNET
+          items:
+            - name: Emparejamiento de VNet con FortiGate
+              href: azure-stack-network-howto-vnet-to-vnet.md
+            - name: Emparejamiento de VNet con máquinas virtuales
+              href: azure-stack-network-howto-vnet-peering.md
         - name: Configuración de VPN como local
           href: azure-stack-network-howto-vnet-to-onprem.md
         - name: Conexión de red virtual a red virtual
           href: azure-stack-network-howto-vnet-to-vnet-stacks.md
-        - name: Emparejamiento de VNET
-          href: azure-stack-network-howto-vnet-to-vnet.md
-        - name: Copia de recursos de suscripción
-          href: azure-stack-network-howto-backup-replicator.md
+        - name: Ampliación del centro de datos
+          href: azure-stack-network-howto-extend-datacenter.md
+        - name: Conexión al almacenamiento iSCSI
+          href: azure-stack-network-howto-iscsi-storage.md
+        - name: Configuración de túneles
+          items:
+            - name: Configuración de una VPN de sitio a sitio múltiple
+              href: network-howto-vpn-tunnel.md
+            - name: Creación de un túnel VPN (GRE)
+              href: network-howto-vpn-tunnel-gre.md
+            - name: Creación de un túnel VPN (IPSEC)
+              href: network-howto-vpn-tunnel-ipsec.md
+        - name: Copia de seguridad y restauración
+          items:
+            - name: Copia de seguridad de una máquina virtual en Azure Stack con Commvault
+              href: azure-stack-network-howto-backup-commvault.md
+            - name: Copia de seguridad de las cuentas de almacenamiento en Azure Stack
+              href: azure-stack-network-howto-backup-storage.md
+            - name: Copia de recursos de suscripción
+              href: azure-stack-network-howto-backup-replicator.md
 - name: Conceptos
   items:
     - name: Patrones de nube híbrida
