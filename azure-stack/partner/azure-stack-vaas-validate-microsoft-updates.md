@@ -10,17 +10,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 07/23/2019
+ms.date: 10/29/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.lastreviewed: 03/11/2019
+ms.lastreviewed: 10/29/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 0a507b7488a34715e528b6bbf291fec9832ef027
-ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
+ms.openlocfilehash: 6fe2f8e7ab435cae3517890f79c26611a80c8a60
+ms.sourcegitcommit: cc3534e09ad916bb693215d21ac13aed1d8a0dde
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68418285"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73167151"
 ---
 # <a name="validate-software-updates-from-microsoft"></a>Validación de las actualizaciones de software de Microsoft
 
@@ -39,22 +39,16 @@ Antes de ejecutar el proceso de actualización mensual en VaaS, debe estar famil
 
 ## <a name="required-tests"></a>Pruebas necesarias
 
-Las siguientes pruebas para la validación mensual de software se deben ejecutar en el orden siguiente:
+Para la validación mensual del software se deben ejecutar las siguientes pruebas en el orden siguiente:
 
-1. Monthly Azure Stack Update Verification
-2. Cloud Simulation Engine
+- Paso 1: Comprobación de la actualización mensual de AzureStack
+- Paso 2: Comprobación del paquete de extensión de OEM
+- Paso 3: OEM: motor de la simulación de la nube
 
 ## <a name="validating-software-updates"></a>Validación de actualizaciones de software
 
 1. Cree un nuevo flujo de trabajo **Package Validation** (Validación del paquete).
 1. Para las pruebas necesarias anteriores, siga las instrucciones de [Ejecución de pruebas de validación de paquetes](azure-stack-vaas-validate-oem-package.md#run-package-validation-tests). Consulte la sección siguiente para obtener instrucciones adicionales sobre la prueba de **verificación de la actualización mensual de Azure Stack**.
-
-### <a name="apply-the-monthly-update"></a>Aplicación de la actualización mensual
-
-1. Seleccione un agente con el que ejecutar las pruebas.
-1. Programe la **verificación mensual de las actualizaciones de Azure Stack**.
-1. Proporcione la ubicación para el paquete de extensión de OEM implementado actualmente en la marca y la ubicación del paquete de extensión de OEM que se aplicará durante la actualización. Para configurar las direcciones URL de estos paquetes, consulte la [administración de paquetes para la validación](azure-stack-vaas-validate-oem-package.md#managing-packages-for-validation).
-1. Siga los pasos descritos en la interfaz de usuario desde el agente seleccionado.
 
 Si tiene alguna pregunta o problema, póngase en contacto con el [servicio de ayuda de VaaS](mailto:vaashelp@microsoft.com).
 

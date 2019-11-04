@@ -15,12 +15,12 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 03/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: b1a658b428d13cdd12c16b767430f87a80e89fdc
-ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
+ms.openlocfilehash: cc2299f32f02c4a825424309943d3f27d0fab6fb
+ms.sourcegitcommit: cc3534e09ad916bb693215d21ac13aed1d8a0dde
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68418372"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73167188"
 ---
 # <a name="deploy-the-local-agent"></a>Implementación del agente local
 
@@ -33,8 +33,8 @@ Aprenda a usar el agente local de validación como servicio (VaaS) para ejecutar
 
 Para implementar el agente local:
 
-1. Instale el agente local.
-2. Realice las comprobaciones de integridad.
+1. Descargue e instale el agente local.
+2. Realice las comprobaciones de integridad antes de iniciar las pruebas.
 3. Ejecute el agente local.
 
 ## <a name="download-and-start-the-local-agent"></a>Descarga e inicio del agente local
@@ -52,46 +52,53 @@ Compruebe que el equipo cumple los criterios siguientes:
 - Espacio en disco mínimo de 200 GB
 - Conectividad de red estable a Internet
 
-### <a name="download-and-install-the-agent"></a>Descarga e instalación del agente
+### <a name="download-and-install-the-local-agent"></a>Descarga e instalación del agente local
 
 1. Abra Windows PowerShell en un símbolo del sistema con privilegios elevados en el equipo que se usará para ejecutar las pruebas.
-2. Ejecute el comando siguiente para descargar el agente local:
+2. Ejecute el siguiente comando para descargar e instalar las dependencias del agente local y copiar las imágenes del repositorio de imágenes públicas (PIR) (disco duro virtual del sistema operativo) en el entorno de Azure Stack.
 
     ```powershell
-    Invoke-WebRequest -Uri "https://storage.azurestackvalidation.com/packages/Microsoft.VaaSOnPrem.TaskEngineHost.latest.nupkg" -outfile "OnPremAgent.zip"
-    Expand-Archive -Path ".\OnPremAgent.zip" -DestinationPath VaaSOnPremAgent -Force
-    Set-Location VaaSOnPremAgent\lib\net46
-    ```
+    # Review and update the following five parameters
+    $RootFolder = "c:\VaaS"
+    $CloudAdmindUserName = "<Cloud admin user name>"
+    $CloudAdminPassword = "<Cloud admin password>"
+    $AadServiceAdminUserName = "<AAD service admin user name>"
+    $AadServiceAdminPassword = "<AAD service admin password>"
 
-3. Ejecute el siguiente comando para instalar las dependencias del agente local:
+    if (-not(Test-Path($RootFolder))) {
+        mkdir $RootFolder
+    }
+    Set-Location $RootFolder
+    Invoke-WebRequest -Uri "https://storage.azurestackvalidation.com/packages/Microsoft.VaaSOnPrem.TaskEngineHost.latest.nupkg" -outfile "$rootFolder\OnPremAgent.zip"
+    Expand-Archive -Path "$rootFolder\OnPremAgent.zip" -DestinationPath "$rootFolder\VaaSOnPremAgent" -Force
+    Set-Location "$rootFolder\VaaSOnPremAgent\lib\net46"
 
-    ```powershell
-    $ServiceAdminCreds = New-Object System.Management.Automation.PSCredential "<aadServiceAdminUser>", (ConvertTo-SecureString "<aadServiceAdminPassword>" -AsPlainText -Force)
+    $cloudAdminCredential = New-Object System.Management.Automation.PSCredential($cloudAdmindUserName, (ConvertTo-SecureString $cloudAdminPassword -AsPlainText -Force))
+    $getStampInfoUri = "https://ASAppGateway:4443/ServiceTypeId/4dde37cc-6ee0-4d75-9444-7061e156507f/CloudDefinition/GetStampInformation" 
+    $stampInfo = Invoke-RestMethod -Method Get -Uri $getStampInfoUri -Credential $cloudAdminCredential -ErrorAction Stop
+    $serviceAdminCreds = New-Object System.Management.Automation.PSCredential $aadServiceAdminUserName, (ConvertTo-SecureString $aadServiceAdminPassword -AsPlainText -Force)
     Import-Module .\VaaSPreReqs.psm1 -Force
-    Install-VaaSPrerequisites -AadTenantId $AadTenantId `
-                              -ServiceAdminCreds $ServiceAdminCreds `
-                              -ArmEndpoint https://adminmanagement.$ExternalFqdn `
-                              -Region $Region
+    Install-VaaSPrerequisites -AadTenantId $stampInfo.AADTenantID `
+                            -ServiceAdminCreds $serviceAdminCreds `
+                            -ArmEndpoint $stampInfo.AdminExternalEndpoints.AdminResourceManager `
+                            -Region $stampInfo.RegionName
     ```
 
-    **Parámetros**
+> [!Note]  
+> El cmdlet Install-VaaSPrerequisites descarga archivos de imagen de máquina virtual grandes. Si la red funciona con lentitud, puede descargar archivos en el servidor de archivos local y agregar manualmente las imágenes de las máquinas virtuales a su entorno de pruebas. Para más información, consulte [Control de situaciones de conectividad de red lenta](azure-stack-vaas-troubleshoot.md#handle-slow-network-connectivity).
 
-    | Parámetro | DESCRIPCIÓN |
-    | --- | --- |
-    | aadServiceAdminUser | Usuario administrador global del inquilino de Azure AD. Por ejemplo, puede ser vaasadmin@contoso.onmicrosoft.com. |
-    | aadServiceAdminPassword | Contraseña del usuario administrador global. |
-    | AadTenantId | Identificador del inquilino de Azure AD para la cuenta de Azure registrada en la validación como servicio. |
-    | ExternalFqdn | Puede obtener el nombre de dominio completo en el archivo de configuración. Para obtener instrucciones, consulte [Parámetros comunes del flujo de trabajo en la validación de Azure Stack como servicio](azure-stack-vaas-parameters.md). |
-    | Region | Región del inquilino de Azure AD. |
+**Parámetros**
 
-El comando descarga una imagen (VHD del sistema operativo) del repositorio de imágenes públicas (PIR) y la copia desde Azure Blob Storage al almacenamiento de Azure Stack.
+| Parámetro | DESCRIPCIÓN |
+| --- | --- |
+| AadServiceAdminUser | Usuario administrador global del inquilino de Azure AD. Por ejemplo, puede ser vaasadmin@contoso.onmicrosoft.com. |
+| AadServiceAdminPassword | Contraseña del usuario administrador global. |
+| CloudAdminUserName | El usuario administrador de la nube puede acceder a comandos permitidos, y ejecutarlos, en el punto de conexión con privilegios. Por ejemplo, puede ser AzusreStack\CloudAdmin. Obtenga más información [aquí](azure-stack-vaas-parameters.md). |
+| CloudAdminPassword | La contraseña de la cuenta de administrador de la nube.|
 
-![Requisitos previos para la descarga](media/installingprereqs.png)
+![Requisitos previos para la descarga](media/installing-prereqs.png)
 
-> [!Note]
-> Si tiene baja velocidad de red al descargar estas imágenes, puede descargarlas por separado en un recurso compartido local y especificar el parámetro **-LocalPackagePath** *recurso_compartido_o_ruta_de_acceso_local*. Encontrará más información acerca de la descarga de PIR en la sección [Control de situaciones de conectividad de red lenta](azure-stack-vaas-troubleshoot.md#handle-slow-network-connectivity) del artículo [Solución de problemas de validación como servicio](azure-stack-vaas-troubleshoot.md).
-
-## <a name="checks-before-starting-the-tests"></a>Comprobaciones antes de iniciar las pruebas
+## <a name="perform-sanity-checks-before-starting-the-tests"></a>Realice las comprobaciones de integridad antes de iniciar las pruebas
 
 Las pruebas ejecutan operaciones remotas. La máquina que ejecuta las pruebas debe tener acceso a los puntos de conexión de Azure Stack, si no, las pruebas no funcionarán. Si usa el agente local de VaaS, utilice la máquina donde se va a ejecutar este. Puede comprobar que la máquina tiene acceso a los puntos de conexión de Azure Stack mediante la ejecución de las siguientes comprobaciones:
 
@@ -107,20 +114,30 @@ Las pruebas ejecutan operaciones remotas. La máquina que ejecuta las pruebas de
 
 4. Para comprobar el mantenimiento del sistema, ejecute el cmdlet **Test-AzureStack** de PowerShell como se describe en [Ejecución de una prueba de validación para Azure Stack](../operator/azure-stack-diagnostic-test.md). Corrija los errores y las advertencias antes de iniciar las pruebas.
 
-## <a name="run-the-agent"></a>Ejecución del agente
+## <a name="run-the-local-agent"></a>Ejecución del agente local
 
 1. Abra Windows PowerShell en un símbolo del sistema con privilegios elevados.
 
 2. Ejecute el siguiente comando:
 
     ```powershell
-    .\Microsoft.VaaSOnPrem.TaskEngineHost.exe -u <VaaSUserId> -t <VaaSTenantId>
+   # Review and update the following five parameters
+    $RootFolder = "c:\VAAS"
+    $CloudAdmindUserName = "<Cloud admin user name>"
+    $CloudAdminPassword = "<Cloud admin password>"
+    $VaaSUserId = "<VaaS user ID>"
+    $VaaSTenantId = "<VaaS tenant ID>"
+
+    Set-Location "$rootFolder\VaaSOnPremAgent\lib\net46"
+    .\Microsoft.VaaSOnPrem.TaskEngineHost.exe -u $VaaSUserId -t $VaaSTenantId -x $CloudAdmindUserName -y $CloudAdminPassword
     ```
 
       **Parámetros**  
 
     | Parámetro | DESCRIPCIÓN |
     | --- | --- |
+    | CloudAdminUserName | El usuario administrador de la nube puede acceder a comandos permitidos, y ejecutarlos, en el punto de conexión con privilegios. Por ejemplo, puede ser AzusreStack\CloudAdmin. Obtenga más información [aquí](azure-stack-vaas-parameters.md). |
+    | CloudAdminPassword | La contraseña de la cuenta de administrador de la nube.|
     | VaaSUserId | Identificador de usuario utilizado para iniciar sesión en el portal de VaaS (por ejemplo, NombreUsuario\@Contoso.com) |
     | VaaSTenantId | Identificador del inquilino de Azure AD para la cuenta de Azure registrada en la validación como servicio. |
 
@@ -129,9 +146,9 @@ Las pruebas ejecutan operaciones remotas. La máquina que ejecuta las pruebas de
 
 Si no ve notificado ningún error, la ejecución del agente local se realizó correctamente. El texto de ejemplo siguiente aparece en la ventana de la consola.
 
-`Heartbeat Callback at 11/8/2016 4:45:38 PM`
+`Heartbeat was sent successfully.`
 
-![Agente iniciado](media/startedagent.png)
+![Agente iniciado](media/started-agent.png)
 
 Un agente se identifica de forma única por su nombre. De forma predeterminada, usa el nombre de dominio completo (FQDN) de la máquina donde se inició. Se debe minimizar la ventana para evitar cualquier selección accidental en ella ya que, al cambiar el foco, se detienen todas las demás acciones.
 
