@@ -1,8 +1,8 @@
-- name: Documentación del operador de Azure Stack
+- name: Documentación del operador de Azure Stack Hub
   href: index.yml
 - name: Información general
   items:
-    - name: ¿Qué es Azure Stack?
+    - name: ¿Qué es Azure Stack Hub?
       href: azure-stack-overview.md
     - name: ¿Qué es Azure Stack HCI?
       href: azure-stack-hci-overview.md
@@ -448,7 +448,7 @@
       href: /powershell/azure/azure-stack/overview
 - name: Temas relacionados
   items:
-    - name: Documentación de usuario de Azure Stack
+    - name: Documentación de usuario de Azure Stack Hub
       href: /azure-stack/user/
     - name: Documentación de ASDK
       href: /azure-stack/asdk/

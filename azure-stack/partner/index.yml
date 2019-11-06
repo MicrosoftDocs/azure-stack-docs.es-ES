@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Documentación de asociado de Azure Stack
+title: Documentación para asociados de Azure Stack Hub
 metadata:
   document_id: null
-  title: 'Documentación de asociado de Azure Stack: tutoriales y referencia de API'
-  description: Aprenda a validar el hardware para hospedar Azure Stack. La validación como servicio es un servicio nativo de Azure diseñado para su uso por los asociados de la solución que diseñan de forma conjunta ofertas de Azure Stack con Microsoft.
+  title: 'D\Documentación para asociados de Azure Stack Hub: tutoriales y R\referencia de API'
+  description: Aprenda a validar el hardware para hospedar Azure Stack. La validación como servicio es un servicio nativo de Azure diseñado para su uso por los asociados de la solución que diseñan de forma conjunta ofertas de Azure Stack Hub con Microsoft.
   services: azure-stack
   author: mattbriggs
   manager: femila
@@ -16,7 +16,7 @@ metadata:
   ms.author: mabrigg
   ms.reviewer: johnhas
 abstract:
-  description: Puede utilizar la validación como servicio para comprobar su hardware para su uso con Azure Stack. El servicio es un servicio nativo de Azure diseñado para su uso por los asociados de la solución que diseñan de forma conjunta ofertas de Azure Stack con Microsoft.
+  description: Puede utilizar la validación como servicio para comprobar su hardware para su uso con Azure Stack. El servicio es un servicio nativo de Azure diseñado para su uso por los asociados de la solución que diseñan de forma conjunta ofertas de Azure Stack Hub con Microsoft.
 sections:
   - title: Inicio rápido en 5 minutos
     items:
@@ -32,10 +32,10 @@ sections:
   - title: Tutoriales detallados
     items:
       - type: paragraph
-        text: Aprenda a validar el hardware de Azure Stack.
+        text: Aprenda a validar el hardware de Azure Stack Hub.
       - type: list
         style: unordered
         items:
-          - html: <a href="/azure-stack/partner/azure-stack-vaas-validate-solution-new">Validación de una nueva solución de Azure Stack</a>
+          - html: <a href="/azure-stack/partner/azure-stack-vaas-validate-solution-new">Validación de una nueva solución de Azure Stack Hub</a>
           - html: <a href="/azure-stack/partner/azure-stack-vaas-validate-oem-package">Validación de paquetes de OEM</a>
           - html: <a href="/azure-stack/partner/azure-stack-vaas-validate-microsoft-updates">Validación de las actualizaciones de software de Microsoft</a>
