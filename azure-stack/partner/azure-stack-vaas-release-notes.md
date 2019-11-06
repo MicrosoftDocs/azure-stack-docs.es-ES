@@ -10,16 +10,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/10/2019
+ms.date: 10/28/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: d42b1f161d1b74633c4e9924e45677a57b3493e1
-ms.sourcegitcommit: a6d47164c13f651c54ea0986d825e637e1f77018
+ms.lastreviewed: 10/28/2019
+ms.openlocfilehash: 0ac21cc388b55be6548f9fdba6c8985dd2316c4e
+ms.sourcegitcommit: cc3534e09ad916bb693215d21ac13aed1d8a0dde
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72277825"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73167138"
 ---
 # <a name="release-notes-for-validation-as-a-service"></a>Notas de la versión para la validación como servicio
 
@@ -66,7 +66,7 @@ Si ejecuta el flujo de trabajo de verificación de actualización mensual de Azu
 
 - Requisitos previos de VaaS
 
-    `Install-VaaSPrerequisites` ya no requiere credenciales de administrador en la nube. Si ejecuta la versión más reciente de este cmdlet, consulte [Download and install the agent](azure-stack-vaas-local-agent.md#download-and-install-the-agent) (Descarga e instalación del agente) para los comandos revisados para instalar los requisitos previos. Estos son los comandos:
+    `Install-VaaSPrerequisites` ya no requiere credenciales de administrador en la nube. Si ejecuta la versión más reciente de este cmdlet, consulte [Descarga e instalación del agente local](azure-stack-vaas-local-agent.md#download-and-install-the-local-agent), ya que ahí encontrará los comandos revisados para instalar los requisitos previos. Estos son los comandos:
 
     ```powershell
     $ServiceAdminCreds = New-Object System.Management.Automation.PSCredential "<aadServiceAdminUser>", (ConvertTo-SecureString "<aadServiceAdminPassword>" -AsPlainText -Force)
@@ -83,7 +83,7 @@ Si ejecuta el flujo de trabajo de verificación de actualización mensual de Azu
 
 - Requisitos previos de VaaS y actualizaciones de VHD
 
-    `Install-VaaSPrerequisites` ahora requiere credenciales de administrador en la nube para solucionar un problema durante la validación del paquete. La documentación en [Download and install the agent](azure-stack-vaas-local-agent.md#download-and-install-the-agent) (Descarga e instalación del agente) se ha actualizado con lo siguiente:
+    `Install-VaaSPrerequisites` ahora requiere credenciales de administrador en la nube para solucionar un problema durante la validación del paquete. La documentación de [Descarga e instalación del agente local](azure-stack-vaas-local-agent.md#download-and-install-the-local-agent) se ha actualizado con lo siguiente:
 
     ```powershell
     $ServiceAdminCreds = New-Object System.Management.Automation.PSCredential "<aadServiceAdminUser>", (ConvertTo-SecureString "<aadServiceAdminPassword>" -AsPlainText -Force)
@@ -100,7 +100,7 @@ Si ejecuta el flujo de trabajo de verificación de actualización mensual de Azu
 
 - Actualización del agente local
 
-    La versión anterior del agente local no es compatible con la versión actual 4.0.0 del servicio. Todos los usuarios deben actualizar sus agentes locales. Consulte [Download and install the agent](azure-stack-vaas-local-agent.md#download-and-install-the-agent) (Descarga e instalación del agente) para obtener instrucciones sobre cómo instalar el agente más reciente.
+    La versión anterior del agente local no es compatible con la versión actual 4.0.0 del servicio. Todos los usuarios deben actualizar sus agentes locales. Consulte [Descarga e instalación del agente local](azure-stack-vaas-local-agent.md#download-and-install-the-local-agent) para obtener instrucciones acerca de la instalación del agente más reciente.
 
 - Actualización de automatización de PowerShell
 

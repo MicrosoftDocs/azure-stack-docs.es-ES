@@ -16,12 +16,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: wamota
 ms.lastreviewed: 08/30/2018
-ms.openlocfilehash: 583b23f8b70856e39f5d6f53204fd3234cb92a4e
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: d6e4aa25b558d12cfb437155c453d3d093ea7e00
+ms.sourcegitcommit: ef7efcde76d1d7875ca1c882afebfd6a27f1c686
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71829120"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72888057"
 ---
 # <a name="border-connectivity"></a>Conectividad de borde 
 El planeamiento de la integración de red es un requisito previo importante para la correcta implementación, operación y administración de sistemas integrados de Azure Stack. El planeamiento de la conectividad de borde comienza con la elección de si se debe usar el enrutamiento dinámico con el protocolo de puerta de enlace de borde (BGP). Esto requiere la asignación de un número de sistema autónomo de BGP de 16 bits (público o privado) o el uso del enrutamiento estático, en el cual se asigna una ruta estática predeterminada a los dispositivos de borde.
@@ -45,9 +45,9 @@ El enrutamiento estático requiere una configuración adicional para los disposi
 
 Para integrar Azure Stack en su entorno de red con enrutamiento estático, los cuatro vínculos físicos entre el borde y el dispositivo de Tor deben estar conectados. No se puede garantizar la alta disponibilidad debido a cómo funciona el enrutamiento estático.
 
-El dispositivo de borde debe configurarse con rutas estáticas que apunten a los dispositivos P2P de Tor para el tráfico destinado a direcciones VIP públicas y de red *externa* y la red de la *infraestructura*. Requerirá rutas estáticas a la *BMC* y redes *externas* para la implementación. Los operadores pueden decidir dejar rutas estáticas en el borde para acceder a recursos de administración que residan en la red *BMC*. Es opcional agregar rutas estáticas a la red de *infraestructura de conmutadores* y de *administración de conmutadores*.
+El dispositivo del borde debe configurarse con rutas estáticas que señalen a cada una de las cuatro direcciones IP P2P establecidas entre el TOR y el borde para el tráfico destinado a cualquier red de Azure Stack, pero para que funcione, solo se necesitan la red de VIP pública o *externa*. Para la implementación inicial, se necesitan rutas estáticas a las redes *BMC* y *externa*. Los operadores pueden elegir dejar rutas estáticas en el borde para acceder a los recursos de administración que residan en la red *BMC* y de *infraestructura*. Es opcional agregar rutas estáticas a la red de *infraestructura de conmutadores* y de *administración de conmutadores*.
 
-Los dispositivos de Tor vienen configurados con una ruta estática predeterminada que envía todo el tráfico a los dispositivos de borde. La única excepción de tráfico a la regla predeterminada se da en el espacio privado, que se bloquea con una lista de control de acceso aplicada en la conexión de Tor a borde.
+Los dispositivos de Tor están configurados con una ruta estática predeterminada que envía todo el tráfico a los dispositivos de borde. La única excepción de tráfico a la regla predeterminada se da en el espacio privado, que se bloquea con una lista de control de acceso aplicada en la conexión de Tor a borde.
 
 El enrutamiento estático solo se aplica a los vínculos superiores entre los conmutadores de Tor y de borde. El enrutamiento dinámico BGP se usa en el bastidor porque es una herramienta esencial para SLB y otros componentes, y no se puede deshabilitar ni quitar.
 

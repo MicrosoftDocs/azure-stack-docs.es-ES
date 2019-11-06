@@ -16,12 +16,12 @@ ms.date: 10/07/2019
 ms.author: mabrigg
 ms.reviewer: wamota
 ms.lastreviewed: 06/04/2019
-ms.openlocfilehash: 39937882f8bf43b076a231d76440d401495daca1
-ms.sourcegitcommit: acebda8a42ac8ecdeba490fc1738e9041479dab0
+ms.openlocfilehash: 4894fb7184944095d968d08e2d668912a78119d4
+ms.sourcegitcommit: ef7efcde76d1d7875ca1c882afebfd6a27f1c686
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72814085"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72888048"
 ---
 # <a name="network-integration-planning-for-azure-stack"></a>Planeamiento de la capacidad de red de Azure Stack
 
@@ -72,8 +72,7 @@ Esta red /24 (254 direcciones IP de host) es privada de la región de Azure Stac
 - **Red IP virtual interna**. Una red /25 dedicada únicamente a una red IP virtual de uso interno para el equilibrador de carga de software.
 
 ### <a name="azure-stack-infrastructure-network"></a>Red de la infraestructura de Azure Stack
-
-Esta red /24 está dedicada a los componentes internos de Azure Stack para que puedan comunicarse e intercambiar datos entre ellos. Esta subred requiere direcciones IP enrutables pero se mantiene privada para la solución mediante el uso de listas de control de acceso (ACL). No se espera que se enrute más allá de los conmutadores de borde, excepto por un intervalo pequeño de tamaño equivalente a una red /27 que usan algunos de estos servicios cuando necesitan acceso a recursos externos o a Internet.
+Esta red /24 está dedicada a los componentes internos de Azure Stack para que puedan comunicarse e intercambiar datos entre ellos. Esta subred se puede enrutar fuera de la solución Azure Stack a su centro de datos, no se recomienda usar direcciones IP enrutables públicas o de Internet en esta subred. Esta red se anuncia en el borde, pero la mayoría de sus direcciones IP están protegidas por listas de control de acceso (ACL). Las direcciones IP permitidas para el acceso se encuentran dentro de un pequeño intervalo equivalente de tamaño a una red de /27 y hospedan servicios como el [punto de conexión con privilegios (PEP)](azure-stack-privileged-endpoint.md) y [Azure Stack Backup](azure-stack-backup-reference.md).
 
 ### <a name="public-vip-network"></a>Red IP virtual pública
 

@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na (Kubernetes)
 ms.devlang: nav
 ms.topic: article
-ms.date: 09/25/2019
+ms.date: 10/16/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 09/25/2019
-ms.openlocfilehash: 377857019e6a4d55e6a9372296817e1776c081c9
-ms.sourcegitcommit: d967cf8cae320fa09f1e97eeb888e3db5b6e7972
+ms.lastreviewed: 10/16/2019
+ms.openlocfilehash: 3720781dc2545fefaff0b2cd703d7c3880c4b97b
+ms.sourcegitcommit: 83cef2c4ec6e1b2fd3f997c91675c1058a850e2f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71279164"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "72999896"
 ---
 # <a name="upgrade-a-kubernetes-cluster-on-azure-stack"></a>Actualización de un clúster de Kubernetes en Azure Stack
 
@@ -30,7 +30,9 @@ ms.locfileid: "71279164"
 
 AKS-Engine permite actualizar el clúster que se implementó originalmente mediante la herramienta. Puede mantener los clústeres mediante AKS-Engine. Las tareas de mantenimiento son similares a cualquier sistema IaaS. Debe tener en cuenta la disponibilidad de nuevas actualizaciones y usar AKS-Engine para aplicarlas.
 
-Microsoft no administra el clúster.
+El comando de actualización actualiza la versión de Kubernetes y la imagen de sistema operativo base. Cada vez que se ejecuta el comando de actualización, para cada nodo del clúster, el motor de AKS crea una nueva máquina virtual con la imagen base de AKS asociada a la versión de **aks-engine**. Puede usar el comando `aks-engine upgrade` para mantener la actualización de cada nodo principal y de agente del clúster. 
+
+Microsoft no administra el clúster. Sin embargo, Microsoft proporciona la herramienta y la imagen de máquina virtual que puede usar para administrar el clúster. 
 
 Para una cobertura de actualizaciones de clúster implementada:
 
@@ -48,10 +50,14 @@ Al actualizar un clúster de producción, tenga en cuenta lo siguiente:
 -   No se prevén actualizaciones del sistema ni tareas programadas.
 -   Configure una actualización por fases en un clúster que esté configurado exactamente como el clúster de producción y pruebe la actualización allí antes de hacerlo en el clúster de producción.
 
-## <a name="steps-to-upgrade"></a>Pasos para actualizar
+## <a name="steps-to-upgrade-to-a-newer-kubernetes-version"></a>Pasos para actualizar a una versión más reciente de Kubernetes
 
-1. Siga las instrucciones del artículo [Actualización de clústeres de Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/upgrade.md). 
-2. Primero debe determinar las versiones a las que puede dirigirse para la actualización. Esta versión depende de la versión que tiene actualmente y, después, utilice ese valor de versión para realizar la actualización.
+> [!Note]  
+> La imagen de base de AKS también se actualiza si usa una versión más reciente de aks-engine y la imagen está disponible en Marketplace.
+
+Las instrucciones siguientes usan los pasos mínimos para realizar la actualización. Si desea más detalles, consulte el artículo [Actualización de clústeres de Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/upgrade.md).
+
+1. Primero debe determinar las versiones a las que puede dirigirse para la actualización. Esta versión depende de la versión que tiene actualmente y, después, utilice ese valor de versión para realizar la actualización.
 
     Ejecute los comandos siguientes:
 
@@ -76,7 +82,7 @@ Al actualizar un clúster de producción, tenga en cuenta lo siguiente:
 
     Por ejemplo, según la salida del comando `get-versions`, si la versión actual de Kubernetes es "1.13.5", puede actualizar a "1.13.7, 1.14.1, 1.14.3".
 
-3. Recopile la información que va a necesitar para ejecutar el comando `upgrade`. La actualización usa los parámetros siguientes:
+2. Recopile la información que va a necesitar para ejecutar el comando `upgrade`. La actualización usa los parámetros siguientes:
 
     | Parámetro | Ejemplo | DESCRIPCIÓN |
     | --- | --- | --- |
@@ -89,7 +95,7 @@ Al actualizar un clúster de producción, tenga en cuenta lo siguiente:
     | client-secret | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Escriba el secreto de la entidad de servicio. Este es el secreto de cliente que configuró al crear el servicio. |
     | identity-system | adfs | Opcional. Especifique la solución de administración de identidad si usa los Servicios de federación de Active Directory (AD FS). |
 
-4. Con los valores en su lugar, ejecute el comando siguiente:
+3. Con los valores en su lugar, ejecute el comando siguiente:
 
     ```bash  
     aks-engine upgrade \
@@ -104,24 +110,32 @@ Al actualizar un clúster de producción, tenga en cuenta lo siguiente:
     --identity-system adfs # required if using AD FS
     ```
 
-5.  Si, por cualquier motivo, la operación de actualización encuentra un error, puede volver a ejecutar el comando de actualización después de solucionar el problema. AKS-Engine reanudará la operación en la que se produjo el error la hora anterior.
+4.  Si, por cualquier motivo, la operación de actualización encuentra un error, puede volver a ejecutar el comando de actualización después de solucionar el problema. AKS-Engine reanudará la operación en la que se produjo el error la hora anterior.
+
+## <a name="steps-to-only-upgrade-the-os-image"></a>Pasos para actualizar únicamente la imagen del sistema operativo
+
+1. Revise [la tabla supported-kubernetes-versions](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions) y determine si tiene la versión de aks-engine y la imagen base de AKS que planea para su actualización. Para ver la versión de aks-engine, ejecute: `aks-engine version`.
+2. Actualice el motor de AKS según corresponda, en la máquina en la que ha instalado aks-engine ejecute `./get-akse.sh --version vx.xx.x` y reemplace **x.xx.x** por la versión de destino.
+3. Pida a su operador de Azure Stack que agregue la versión de la imagen base de AKS que necesita en Marketplace de Azure Stack.
+4. Ejecute el comando `aks-engine upgrade` con la misma versión de Kubernetes que ya está usando, pero agregue `--force`. Puede ver un ejemplo en [Forzado de una actualización](#forcing-an-upgrade).
+
 
 ## <a name="forcing-an-upgrade"></a>Forzado de una actualización
 
 Puede haber situaciones en las que desee forzar una actualización del clúster. Por ejemplo, el primer día se implementa un clúster en un entorno desconectado mediante la última versión de Kubernetes. El siguiente día Ubuntu publica una revisión para una vulnerabilidad para la que Microsoft genera una instancia de la **imagen base de AKS**. Puede aplicar la nueva imagen mediante el forzado de una actualización con la misma versión de Kubernetes que ya ha implementado.
 
-    ```bash  
-    aks-engine upgrade \
-    --azure-env AzureStackCloud   
-    --location <for an ASDK is local> \
-    --resource-group kube-rg \
-    --subscription-id xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \
-    --api-model kube-rg/apimodel.json \
-    --upgrade-version 1.13.5 \
-    --client-id xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \
-    --client-secret xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-    --force
-    ```
+```bash  
+aks-engine upgrade \
+--azure-env AzureStackCloud   
+--location <for an ASDK is local> \
+--resource-group kube-rg \
+--subscription-id xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \
+--api-model kube-rg/apimodel.json \
+--upgrade-version 1.13.5 \
+--client-id xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \
+--client-secret xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \
+--force
+```
 
 Para obtener instrucciones, consulte [Forzado de actualización](https://github.com/Azure/aks-engine/blob/master/docs/topics/upgrade.md#force-upgrade).
 

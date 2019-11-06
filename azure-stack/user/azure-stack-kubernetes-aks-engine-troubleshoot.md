@@ -1,26 +1,26 @@
 ---
 title: Solución de problemas de AKS-Engine en Azure Stack | Microsoft Docs
-description: Este tema contiene los pasos necesarios para la solución de problemas de AKS-Engine en Azure Stack.
+description: Este artículo contiene los pasos necesarios para la solución de problemas del motor de AKS en Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
-manager: femila
+manager: femilav
 editor: ''
 ms.service: azure-stack
 ms.workload: na
 pms.tgt_pltfrm: na (Kubernetes)
 ms.devlang: nav
 ms.topic: article
-ms.date: 09/14/2019
+ms.date: 10/28/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 09/14/2019
-ms.openlocfilehash: eb8a46c5b226d1be40d922a78c6ecdcdda5e45ad
-ms.sourcegitcommit: 09d14eb77a43fd585e7e6be93c32fa427770adb6
+ms.lastreviewed: 10/28/2019
+ms.openlocfilehash: 49684cb1821a5014e984a8e177f881be13123829
+ms.sourcegitcommit: 0d27456332031ab98ba2277117395ae5ffcbb79f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019387"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73047141"
 ---
 # <a name="troubleshoot-the-aks-engine-on-azure-stack"></a>Solución de problemas de AKS-Engine en Azure Stack
 
@@ -84,7 +84,7 @@ Para más información, consulte el artículo [Solución de problemas ](https://
 
 ## <a name="collect-aks-engine-logs"></a>Recopilación de registros de AKS-Engine
 
-Puede acceder a la información de revisión que crea AKS-Engine. AKS-Engine informa acerca del estado y los errores mientras se ejecuta la aplicación. La salida se puede canalizar a un archivo de texto, o bien se puede copiar directamente desde la consola de la línea de comandos.
+Puede acceder a la información de revisión que crea AKS-Engine. AKS-Engine informa acerca del estado y los errores mientras se ejecuta la aplicación. La salida se puede canalizar a un archivo de texto, o bien se puede copiar directamente desde la consola de la línea de comandos. Consulte una lista de códigos de error desencadenados por el motor AKS en [Examen de los códigos de error de extensión de script personalizado](#review-custom-script-extension-error-codes).
 
 1.  Recopile la salida estándar y los errores de la información que se muestra en la herramienta de línea de comandos de AKS-Engine.
 
@@ -158,6 +158,18 @@ Requisitos:
 
 Puede consultar una lista de los códigos de error que crea la extensión de script personalizado (CSE) al ejecutar su clúster. El error de CSE puede ser útil para diagnosticar la causa principal del problema. El CSE del servidor Ubuntu que se usa en el clúster de Kubernetes admite muchas de las operaciones de AKS-Engine. Para más información sobre los códigos de salida de CSE, consulte [cse_helpers.sh](https://github.com/Azure/aks-engine/blob/master/parts/k8s/cloud-init/artifacts/cse_helpers.sh).
 
+### <a name="providing-kubernetes-logs-to-a-microsoft-support-engineer"></a>Entrega de registros de Kubernetes a un ingeniero del servicio de soporte técnico de Microsoft
+
+Si después de recopilar y examinar los registros sigue sin poder resolver el problema, puede que desee iniciar el proceso de creación de una incidencia de soporte técnico y proporcionar los registros recopilados mediante la ejecución de `getkuberneteslogs.sh` con el conjunto de parámetros `--upload-logs`. 
+
+Póngase en contacto con el operador de Azure Stack. El operador usa la información de los registros para crear el caso de soporte técnico.
+
+Durante el proceso de solucionar los problemas de soporte técnico, un ingeniero del servicio de soporte técnico de Microsoft puede solicitar que el operador recopile los registros del sistema Azure Stack. Es posible que tenga que proporcionar a su operador la información de la cuenta de almacenamiento donde cargó los registros de Kubernetes mediante la ejecución de `getkuberneteslogs.sh`.
+
+El operador puede ejecutar el cmdlet de PowerShell en **Get-AzureStackLog**. Este comando usa un parámetro (`-InputSaSUri`) que especifica la cuenta de almacenamiento donde almacenó los registros de Kubernetes.
+
+El operador puede combinar los registros que ha creado junto con cualquier otro registro del sistema que el servicio de soporte técnico de Microsoft pueda necesitar y ponerlos a disposición de Microsoft.
+
 ## <a name="open-github-issues"></a>Apertura de incidencias de GitHub
 
 Si no puede resolver un error de implementación, puede abrir una incidencia de GitHub. 
@@ -172,4 +184,4 @@ Si no puede resolver un error de implementación, puede abrir una incidencia de 
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Obtenga información sobre [AKS-Engine en Azure Stack](azure-stack-kubernetes-aks-engine-overview.md)
+- Obtenga información sobre [AKS-Engine en Azure Stack](azure-stack-kubernetes-aks-engine-overview.md).

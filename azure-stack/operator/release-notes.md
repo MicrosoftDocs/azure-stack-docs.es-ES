@@ -16,12 +16,12 @@ ms.date: 10/21/2019
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 08/30/2019
-ms.openlocfilehash: 34422c5d868b26be599065c33ef0cfe20d790a2f
-ms.sourcegitcommit: a23b80b57668615c341c370b70d0a106a37a02da
+ms.openlocfilehash: 1e15358f88e7aece62425042536d775b707f567f
+ms.sourcegitcommit: 0d27456332031ab98ba2277117395ae5ffcbb79f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72682135"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73047124"
 ---
 # <a name="azure-stack-updates-release-notes"></a>Actualizaciones de Azure Stack: notas de la versión
 
@@ -119,7 +119,7 @@ Las revisiones de Azure Stack solo son aplicables a los sistemas integrados de A
 La versión 1908 de Azure Stack debe aplicarse en la versión 1907 con las revisiones siguientes:
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Azure Stack, revisión 1.1907.17.54](https://support.microsoft.com/help/4523826)
+- [Azure Stack, revisión 1.1907.18.56](https://support.microsoft.com/help/4528552)
 
 La actualización Azure Stack 1908 requiere la **versión de OEM 2.1 o posterior para Azure Stack** del proveedor de hardware del sistema. Las actualizaciones de OEM incluyen actualizaciones de controladores y firmware en el hardware del sistema Azure Stack. Para más información sobre la aplicación de actualizaciones de OEM, consulte [Aplicar actualizaciones del fabricante de equipos originales (OEM) de Azure Stack](azure-stack-update-oem.md).
 
@@ -128,7 +128,7 @@ La actualización Azure Stack 1908 requiere la **versión de OEM 2.1 o posteri
 Después de instalar esta actualización, instale todas las revisiones aplicables. Para más información, consulte nuestra [directiva de servicio](azure-stack-servicing-policy.md).
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Azure Stack, revisión 1.1908.6.37](https://support.microsoft.com/help/4527372)
+- [Azure Stack, revisión 1.1908.8.41](https://support.microsoft.com/help/4528074)
 ::: moniker-end
 
 ::: moniker range="azs-1907"
@@ -250,7 +250,7 @@ La versión 1907 de Azure Stack debe aplicarse en la versión 1906 con las rev
 Después de instalar esta actualización, instale todas las revisiones aplicables. Para más información, consulte nuestra [directiva de servicio](azure-stack-servicing-policy.md).
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Azure Stack, revisión 1.1907.17.54](https://support.microsoft.com/help/4523826)
+- [Azure Stack, revisión 1.1907.18.56](https://support.microsoft.com/help/4528552)
 ::: moniker-end
 
 ::: moniker range="azs-1906"
