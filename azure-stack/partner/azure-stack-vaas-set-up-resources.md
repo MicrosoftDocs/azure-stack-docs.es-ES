@@ -15,12 +15,12 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/26/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: 33ead43fd8dbe77feae12db58ca7c689030c6f98
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: e36235af4dea72ae6d8016085ee18aec819ae4dd
+ms.sourcegitcommit: 20d1c0ab3892e9c4c71d5b039457f1e15b1c84c7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71829097"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73618238"
 ---
 # <a name="tutorial-set-up-resources-for-validation-as-a-service"></a>Tutorial: Configuración de recursos para la validación como servicio
 
@@ -100,7 +100,7 @@ La cuenta de almacenamiento de Azure se hospeda en la nube pública de Azure, no
 
 3. En **Grupo de recursos**, seleccione **Crear nuevo**. Escriba un nombre para el nuevo grupo de recursos.
 
-4. Revise las [convenciones de nomenclatura](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions#storage) para las cuentas Azure Storage. Escriba un nombre para la cuenta de almacenamiento.
+4. Revise las [convenciones de nomenclatura](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging#storage) para las cuentas Azure Storage. Escriba un nombre para la cuenta de almacenamiento.
 
 5. Seleccione la región **Oeste de EE. UU.** para la cuenta de almacenamiento.
 
