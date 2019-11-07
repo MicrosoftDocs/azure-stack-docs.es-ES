@@ -6,10 +6,13 @@
       tocHref: /azure-stack/
       topicHref: /azure-stack/
       items:
-        - name: ASDK
+        - name: Kit de desarrollo de Azure Stack Hub
           tocHref: /azure-stack/asdk/
           topicHref: /azure-stack/asdk/index
-        - name: Operador
+        - name: Híbrido
+          tocHref: /azure-stack/hybrid/
+          topicHref: /azure-stack/hybrid/index
+        - name: Operador de Hub
           tocHref: /azure-stack/operator/
           topicHref: /azure-stack/operator/index
           items:
@@ -23,9 +26,9 @@
                 - name: Replicación de máquinas virtuales de Azure Stack en Azure
                   tocHref: /azure/site-recovery/azure-stack-site-recovery
                   topicHref: /azure/site-recovery/azure-stack-site-recovery
-        - name: Asociado
+        - name: Asociado de Hub
           tocHref: /azure-stack/partner/
           topicHref: /azure-stack/partner/index
-        - name: Usuario
+        - name: Usuario de Hub
           tocHref: /azure-stack/user/
           topicHref: /azure-stack/user/index
