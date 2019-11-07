@@ -10,16 +10,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/23/2019
+ms.date: 11/06/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
-ms.lastreviewed: 12/03/2018
-ms.openlocfilehash: 87e9021c6d2b085c95e186e410b009ae89753311
-ms.sourcegitcommit: 09d14eb77a43fd585e7e6be93c32fa427770adb6
+ms.lastreviewed: 11/06/2019
+ms.openlocfilehash: e9b474a47c0ab80d34330aff463bcd9d8ada5ab8
+ms.sourcegitcommit: 8203490cf3ab8a8e6d39b137c8c31e3baec52298
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71010809"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73712748"
 ---
 # <a name="use-data-transfer-tools-in-azure-stack-storage"></a>Uso de herramientas de transferencia de datos en Azure Stack Storage
 
@@ -157,9 +157,6 @@ Import-Module .\Connect\AzureStack.Connect.psm1
 # Configure the PowerShell environment
 # Register an AzureRM environment that targets your Azure Stack instance
 Add-AzureRmEnvironment -Name $ARMEvnName -ARMEndpoint $ARMEndPoint 
-
-# Set the GraphEndpointResourceId value
-Set-AzureRmEnvironment -Name $ARMEvnName -GraphEndpoint $GraphAudience
 
 # Login
 $TenantID = Get-AzsDirectoryTenantId -AADTenantName $AADTenantName -EnvironmentName $ARMEvnName

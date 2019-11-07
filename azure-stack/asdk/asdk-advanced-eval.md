@@ -16,18 +16,18 @@ ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: a47bae619b2525534797158cf2660d5bc77192c9
-ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
+ms.openlocfilehash: 2390f2c21325a059ea6f651e7fcd944d890bf307
+ms.sourcegitcommit: 5ef433aa6b75cdfb557fab0ef9308ff2118e66e5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282613"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73594771"
 ---
 # <a name="advanced-asdk-evaluation-tasks"></a>Tareas de evaluación avanzadas de ASDK
 Una vez que se haya familiarizado con las características y funcionalidades básicas del Kit de desarrollo de Azure Stack (ASDK), puede ampliar sus conocimientos acerca de Azure Stack mediante el examen de escenarios más avanzados. Estas tareas de evaluación más avanzadas se documentan de forma muy completa en la documentación del operador de Azure Stack.
 
 > [!NOTE]
-> Aunque muchas de las tareas del operador se admiten en las implementaciones de ASDK, de producción y multinodo de Azure Stack, no todos los escenarios de uso son compatibles con las implementaciones de ASDK. Para obtener más información, consulte [El ASDK y las diferencias con Azure Stack multinodo](asdk-what-is.md#asdk-and-multi-node-azure-stack-differences).
+> Aunque muchas de las tareas del operador se admiten en las implementaciones de ASDK, de producción y multinodo de Azure Stack, no todos los escenarios de uso son compatibles con las implementaciones de ASDK. Para obtener más información, consulte [El ASDK y las diferencias con Azure Stack multinodo](asdk-what-is.md#asdk-and-multi-node-azure-stack-hub-differences).
 
 ## <a name="delegate-offers-in-azure-stack"></a>Delegación de ofertas en Azure Stack
 Como operador de Azure Stack, es posible que a menudo desee delegar en otras personas las tareas de creación de ofertas y registro de usuarios. Por ejemplo, si es un proveedor de servicios puede desear que los distribuidores registren a los clientes y los administren en su nombre. Si forma parte de un grupo central de TI en una empresa, puede que quiera que las subsidiarias registren usuarios sin su intervención.

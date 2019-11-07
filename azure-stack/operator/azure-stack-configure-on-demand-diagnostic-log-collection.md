@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/22/2019
+ms.date: 10/30/2019
 ms.author: justinha
 ms.reviewer: shisab
-ms.lastreviewed: 10/08/2019
-ms.openlocfilehash: c37da77ea5965bfaae3d9970fa47959ec42305b8
-ms.sourcegitcommit: 4a2318ad395b2a931833ccba4430d8d04cdd8819
+ms.lastreviewed: 10/30/2019
+ms.openlocfilehash: 830693989f213f509152499cc16fff086b90afaa
+ms.sourcegitcommit: cc5c965b13bc3dae9a4f46a899e602f41dc66f78
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72780502"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73236229"
 ---
 # <a name="collect-azure-stack-diagnostic-logs-on-demand"></a>Recopilación de registros de diagnóstico de Azure Stack a petición
 
@@ -137,13 +137,13 @@ Siga estos pasos para ejecutar `Get-AzureStackLog` en un equipo que hospede ASDK
 * Recopilación de registros de implementaciones de inquilino que ejecutan Azure Kubernetes Services (AKS) autoadministrado en Azure Stack. Los registros de AKS deben almacenarse en una cuenta de almacenamiento de inquilino en un formato que permita que el intervalo de tiempo de recopilación se aplique también a estos. 
 
   ```powershell
-  Get-AzureStackLog -OutputPath <<Kubernetes Log Location>> -InputSasUri "<<SasURI>>" -FromDate "<<beginning of the time range>>" -ToDate "<<end of the time range>>" 
+  Get-AzureStackLog -OutputPath <Path> -InputSasUri "<Blob Service Sas URI>" -FromDate "<Beginning of the time range>" -ToDate "<End of the time range>"
   ```
 
   Por ejemplo:
 
   ```powershell
-  Get-AzureStackLog -OutputPath C:\KubernetesLogs -InputSasUri "https://diagnostics.blob.redmond.ext-n26r1102.masd.stbtest.microsoft.com/kuberneteslogs?sv=2017-04-17=sco&sp=rl&se=2019-09-30T02:06:54Z&st=2019-08-22T18:06:54Z&spr=https&sig=EtmCy8Got4Ro8ZNCSKLuf4tgBcC%2BOYSDwNdfa8czhlE%3D" -FromDate "8/22/2019 06:00:00" -ToDate "8/22/2019 08:00:00" 
+  Get-AzureStackLog -OutputPath C:\KubernetesLogs -InputSasUri "https://<storageAccountName>.blob.core.windows.net/<ContainerName><SAS token>" -FromDate (Get-Date).AddHours(-8) -ToDate (Get-Date).AddHours(-2) 
   ```
 
 * Recopilar registros y almacenarlos en el contenedor de blobs de Azure Storage especificado. La sintaxis general para esta operación es como sigue:

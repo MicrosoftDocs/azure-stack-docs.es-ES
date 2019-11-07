@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/26/2019
+ms.date: 11/05/2019
 ms.author: justinha
 ms.reviewer: misainat
-ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: ab43d94c2e65032e5e525ec000e38cacb01b2980
-ms.sourcegitcommit: 1bae55e754d7be75e03af7a4db3ec43fd7ff3e9c
+ms.lastreviewed: 11/05/2019
+ms.openlocfilehash: c8db19ff7bf8d7ccdb406617cbcf75dce3770522
+ms.sourcegitcommit: c583f19d15d81baa25dd49738d53d8fc01463bef
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71319100"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73659223"
 ---
 # <a name="troubleshoot-the-asdk"></a>Solucionar problemas del ASDK
 En este artículo se proporciona información sobre cómo solucionar problemas comunes para el Kit de desarrollo de Azure Stack (ASDK). Para obtener ayuda con los sistemas integrados de Azure Stack, consulte [Solución de problemas de Microsoft Azure Stack](../operator/azure-stack-troubleshooting.md). 
@@ -40,6 +40,39 @@ Si experimenta un error durante la instalación, puede reiniciar la implementaci
 
 ### <a name="at-the-end-of-the-deployment-the-powershell-session-is-still-open-and-doesnt-show-any-output"></a>Al final de la implementación, la sesión de PowerShell todavía está abierta y no muestra ninguna salida.
 Este comportamiento probablemente sea solo el resultado del comportamiento predeterminado de cuando se selecciona una ventana Comandos de PowerShell. La implementación del ASDK se ha realizado correctamente, pero el script se ha puesto en pausa al seleccionar la ventana. Puede comprobar que se completó la configuración buscando la palabra "select" en la barra de título de la ventana de comandos. Presione la tecla ESC para cancelar la selección; después debería mostrarse el mensaje de finalización.
+
+### <a name="template-validation-error-parameter-osprofile-is-not-allowed"></a>No se permite el parámetro osProfile de error de validación de plantillas
+
+Si recibe un mensaje de error durante la validación de la plantilla que indica que el parámetro "osProfile" no está permitido, asegúrese de que está usando las versiones correctas de las API para estos componentes:
+
+- [Proceso](https://docs.microsoft.com/azure-stack/user/azure-stack-profiles-azure-resource-manager-versions#microsoftcompute)
+- [Red](https://docs.microsoft.com/azure-stack/user/azure-stack-profiles-azure-resource-manager-versions#microsoftnetwork)
+
+Para copiar un disco duro virtual de Azure a Azure Stack, use [AzCopy 7.3.0](https://docs.microsoft.com/azure-stack/user/azure-stack-storage-transfer#download-and-install-azcopy). Trabaje con su proveedor para resolver los problemas con la propia imagen. Para más información sobre los requisitos de WALinuxAgent para Azure Stack, consulte [Agente Linux de Azure](../operator/azure-stack-linux.md#azure-linux-agent).
+
+### <a name="deployment-fails-due-to-lack-of-external-access"></a>La implementación produce un error debido a la falta de acceso externo
+Cuando se produce un error en la implementación durante las etapas en las que se requiere de acceso externo, se devuelve una excepción similar al ejemplo siguiente:
+
+```
+An error occurred while trying to test identity provider endpoints: System.Net.WebException: The operation has timed out.
+   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.GetResponse(WebRequest request)
+   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.ProcessRecord()at, <No file>: line 48 - 8/12/2018 2:40:08 AM
+```
+Si se produce este error, asegúrese de que la [documentación del tráfico de red de implementación](../operator/deployment-networking.md) cumple todos los requisitos de red mínimos. También está disponible una herramienta de comprobación de redes para partners como parte del Kit de herramientas de partners.
+
+Otros errores de implementación suelen deberse a problemas para conectarse a recursos de Internet.
+
+Para comprobar la conectividad a los recursos de Internet, puede realizar los pasos siguientes:
+
+1. Abra PowerShell.
+2. Escriba -PSSession para WAS01 o cualquiera de las máquinas virtuales de ERCS.
+3. Ejecute el siguiente cmdlet: 
+   ```powershell
+   Test-NetConnection login.windows.net -port 443
+   ```
+
+Si se produce un error en este comando, compruebe que el conmutador TOR y otros dispositivos de red están configurados para [permitir el tráfico de red](../operator/azure-stack-network.md).
+
 
 ## <a name="virtual-machines"></a>Máquinas virtuales
 ### <a name="default-image-and-gallery-item"></a>Elemento de la galería e imagen predeterminada

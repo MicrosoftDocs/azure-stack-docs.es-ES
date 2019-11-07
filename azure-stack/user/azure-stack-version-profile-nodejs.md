@@ -14,12 +14,12 @@ ms.date: 07/30/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 07/30/2019
-ms.openlocfilehash: 7e2753ebb5bebad4f1ac2a7bbc17a27ccd87cbe9
-ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
+ms.openlocfilehash: 65ea0b4f6f7f7cb3769e83bf9052ac2953668e48
+ms.sourcegitcommit: 20d1c0ab3892e9c4c71d5b039457f1e15b1c84c7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72283046"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73618225"
 ---
 # <a name="use-api-version-profiles-with-nodejs-software-development-kit-sdk-in-azure-stack"></a>Uso de perfiles de la versión de API con el kit de desarrollo de software (SDK) de Node.js en Azure Stack
 
@@ -73,7 +73,7 @@ Utilice las versiones específicas de API definidas dentro del paquete para usar
 
 2. Instale o actualice a la versión actual de [Node.js](https://nodejs.org/en/download/). Node.js también incluye el administrador de paquetes [npm](https://www.npmjs.com/) de JavaScript.
 
-3. Instale o actualice [Visual Studio Code](https://code.visualstudio.com/) e instale la [extensión de Node.js](https://code.visualstudio.com/docs/Node.js/nodejs-debugging) para Visual Studio Code.
+3. Instale o actualice [Visual Studio Code](https://code.visualstudio.com/) e instale la [extensión de Node.js](https://code.visualstudio.com/docs/nodejs/nodejs-debugging) para Visual Studio Code.
 
 2.  Instale los paquetes de cliente para Resource Manager de Azure Stack. Para obtener más información, consulte el artículo de [instalación de las bibliotecas cliente](https://www.npmjs.com/package/@azure/arm-keyvault-profile-2019-03-01-hybrid).
 
@@ -95,7 +95,7 @@ Para usar el SDK de Azure de Node.js con Azure Stack, debe proporcionar los sigu
 | --- | --- | --- |
 | Id. de inquilino | TENANT\_ID | El valor de su [identificador de inquilino](https://docs.microsoft.com/azure/azure-stack/azure-stack-identity-overview) de Azure Stack. |
 | Id. de cliente | CLIENT\_ID | El identificador de aplicación de la entidad de servicio que guardó al crear esta última en la sección anterior de este documento.  |
-| Id. de suscripción | AZURE\_SUBSCRIPTION\_ID   El [identificador de suscripción](https://docs.microsoft.com/azure/azure-stack/service-plan-offer-subscription-overview#subscriptions) es la forma en que accede a las ofertas de Azure Stack.  |
+| Id. de suscripción | AZURE\_SUBSCRIPTION\_ID   El [identificador de suscripción](/azure-stack/operator/service-plan-offer-subscription-overview#subscriptions) es la forma en que accede a las ofertas de Azure Stack.  |
 | Secreto del cliente | APPLICATION\_SECRET | El secreto de aplicación de la entidad de servicio que guardó al crear esta última. |
 | Punto de conexión de Resource Manager | ARM\_ENDPOINT | Consulte el [punto de conexión de Resource Manager de Azure Stack](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-version-profiles-ruby#the-azure-stack-resource-manager-endpoint). |
 

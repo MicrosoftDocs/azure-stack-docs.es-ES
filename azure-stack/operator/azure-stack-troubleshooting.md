@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/16/2019
+ms.date: 11/05/2019
 ms.author: justinha
 ms.reviewer: prchint
-ms.lastreviewed: 10/16/2019
-ms.openlocfilehash: 3c0b1ce32399b4739796b2718e97c69d96291dc6
-ms.sourcegitcommit: df20662e77a6ed0a7eba03f79eb53e8cd4471206
+ms.lastreviewed: 11/05/2019
+ms.openlocfilehash: 4c04eafab93da233859b5b67571b70899b081b95
+ms.sourcegitcommit: c583f19d15d81baa25dd49738d53d8fc01463bef
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72445284"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73659235"
 ---
 # <a name="microsoft-azure-stack-troubleshooting"></a>Solución de problemas de Microsoft Azure Stack
 
@@ -96,42 +96,6 @@ Puede usar PowerShell para obtener información sobre el uso de la marca sin ayu
 5. Extraiga el archivo seedring.zip y podrá obtener el informe de validación de la carpeta ERCS donde ejecutó test-azurestack.
 
 Para más información, consulte [Diagnósticos de Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#to-run-get-azurestacklog-on-azure-stack-integrated-systems).
-
-## <a name="troubleshoot-deployment"></a>Solución de problemas de implementación 
-### <a name="general-deployment-failure"></a>Error de implementación general
-Si experimenta un error durante la instalación, puede reiniciar la implementación en el paso con errores con la opción -rerun del script de implementación.  
-
-### <a name="template-validation-error-parameter-osprofile-is-not-allowed"></a>No se permite el parámetro osProfile de error de validación de plantillas
-
-Si recibe un mensaje de error durante la validación de la plantilla que indica que el parámetro "osProfile" no está permitido, asegúrese de que está usando las versiones correctas de las API para estos componentes:
-
-- [Proceso](https://docs.microsoft.com/azure-stack/user/azure-stack-profiles-azure-resource-manager-versions#microsoftcompute)
-- [Red](https://docs.microsoft.com/azure-stack/user/azure-stack-profiles-azure-resource-manager-versions#microsoftnetwork)
-
-Para copiar un disco duro virtual de Azure a Azure Stack, use [AzCopy 7.3.0](https://docs.microsoft.com/azure-stack/user/azure-stack-storage-transfer#download-and-install-azcopy). Trabaje con su proveedor para resolver los problemas con la propia imagen. Para más información sobre los requisitos de WALinuxAgent para Azure Stack, consulte [Agente Linux de Azure](azure-stack-linux.md#azure-linux-agent).
-
-### <a name="deployment-fails-due-to-lack-of-external-access"></a>La implementación produce un error debido a la falta de acceso externo
-Cuando se produce un error en la implementación durante las etapas en las que se requiere de acceso externo, se devuelve una excepción similar al ejemplo siguiente:
-
-```
-An error occurred while trying to test identity provider endpoints: System.Net.WebException: The operation has timed out.
-   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.GetResponse(WebRequest request)
-   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.ProcessRecord()at, <No file>: line 48 - 8/12/2018 2:40:08 AM
-```
-Si se produce este error, asegúrese de que la [documentación del tráfico de red de implementación](deployment-networking.md) cumple todos los requisitos de red mínimos. También está disponible una herramienta de comprobación de redes para partners como parte del Kit de herramientas de partners.
-
-Otros errores de implementación suelen deberse a problemas para conectarse a recursos de Internet.
-
-Para comprobar la conectividad a los recursos de Internet, puede realizar los pasos siguientes:
-
-1. Abra PowerShell.
-2. Escriba -PSSession para WAS01 o cualquiera de las máquinas virtuales de ERCS.
-3. Ejecute el siguiente cmdlet: 
-   ```powershell
-   Test-NetConnection login.windows.net -port 443
-   ```
-
-Si se produce un error en este comando, compruebe que el conmutador TOR y otros dispositivos de red están configurados para [permitir el tráfico de red](azure-stack-network.md).
 
 ## <a name="troubleshoot-virtual-machines"></a>Solución de problemas de máquinas virtuales
 ### <a name="default-image-and-gallery-item"></a>Elemento de la galería e imagen predeterminada
