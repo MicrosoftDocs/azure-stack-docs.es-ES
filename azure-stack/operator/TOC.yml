@@ -40,7 +40,6 @@
         - name: Herramienta de planeamiento de capacidad de Azure Stack
           href: azure-stack-capacity-planner.md
     - name: Integración del centro de datos
-      href: azure-stack-customer-journey.md
       items:
         - name: Tutorial
           href: azure-stack-customer-journey.md
@@ -151,8 +150,6 @@
               href: azure-stack-servicing-policy.md
             - name: Lista de comprobación para aplicar actualizaciones
               href: release-notes-checklist.md
-            - name: Planeación de actualizaciones
-              href: azure-stack-update-plan.md
             - name: Preparación de la actualización
               href: azure-stack-update-prepare-package.md
             - name: Aplicar actualizaciones
