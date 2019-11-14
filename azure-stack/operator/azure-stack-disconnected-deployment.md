@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/02/2019
+ms.date: 11/01/2019
 ms.author: mabrigg
 ms.reviewer: wfayed
-ms.lastreviewed: 12/11/2018
-ms.openlocfilehash: 61d938ef1a3039c4b685c4df8f09577d9c7d3f50
-ms.sourcegitcommit: a7207f4a4c40d4917b63e729fd6872b3dba72968
+ms.lastreviewed: 11/01/2019
+ms.openlocfilehash: 183abaa85607f0ad0c1bb9f82901b86176ae5c65
+ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71909283"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73955217"
 ---
 # <a name="azure-disconnected-deployment-planning-decisions-for-azure-stack-integrated-systems"></a>Decisiones de planeamiento de implementación desconectada de Azure en sistemas integrados de Azure Stack
 Una vez que haya decidido [cómo va a integrar Azure Stack en el entorno de nube híbrida](azure-stack-connection-models.md), puede concluir sus decisiones sobre la implementación de Azure Stack.

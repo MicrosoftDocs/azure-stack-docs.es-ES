@@ -10,16 +10,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/23/2019
+ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.lastreviewed: 03/11/2019
-ms.openlocfilehash: bf377234b71683e6c56bef030cd5de5b4a06a743
-ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
+ms.lastreviewed: 11/11/2019
+ms.openlocfilehash: 8843b6791876b4e0362d7aee3aa738453a8c3b88
+ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68418388"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73955921"
 ---
 # <a name="scheduling-a-test"></a>Programación de una prueba
 

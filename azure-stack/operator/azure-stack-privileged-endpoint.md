@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/18/2019
+ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: fiseraci
-ms.lastreviewed: 09/18/2019
-ms.openlocfilehash: 3730da9d185f1c38411453a6bef965ab5df7d3ae
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.lastreviewed: 11/11/2019
+ms.openlocfilehash: 52f61321980503667119c5cc45863e51fa0639ac
+ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71829368"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73955256"
 ---
 # <a name="use-the-privileged-endpoint-in-azure-stack"></a>Uso del punto de conexión con privilegios en Azure Stack
 

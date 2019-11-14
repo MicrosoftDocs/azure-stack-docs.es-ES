@@ -5,16 +5,16 @@ services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: overview
-ms.date: 08/09/2019
+ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 08/09/2019
-ms.openlocfilehash: cd7ca2e1a198cb66c5d7627029215b55af0de975
-ms.sourcegitcommit: ae79b8bea670ea854ed00e9998d45f6b47fc8347
+ms.lastreviewed: 11/11/2019
+ms.openlocfilehash: 2b2d1bccbe41e57b81492e0ba0b201fe03df2d7d
+ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71142575"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73955772"
 ---
 # <a name="deploy-a-c-aspnet-web-app-to-a-vm-in-azure-stack"></a>Implementar una aplicación web de C# ASP.NET en una VM en Azure Stack
 

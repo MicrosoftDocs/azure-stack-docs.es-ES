@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 07/23/2019
+ms.date: 11/11/2019
 ms.author: mabrigg
 ms.custom: mvc
-ms.lastreviewed: 12/03/2018
-ms.openlocfilehash: 7cb5d7b90359b73292d9e8209d4237e9d8914302
-ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
+ms.lastreviewed: 11/11/2019
+ms.openlocfilehash: 9d1c9f963433e0a41218bb1984d07f0b47d032eb
+ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68418530"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73955706"
 ---
 # <a name="quickstart-create-a-linux-server-vm-by-using-powershell-in-azure-stack"></a>Inicio rápido: Creación de una VM de servidor Linux mediante PowerShell en Azure Stack
 

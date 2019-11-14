@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/23/2019
+ms.date: 11/11/2019
 ms.author: mabrigg
-ms.lastreviewed: 12/06/2018
-ms.openlocfilehash: a66b6fce646a591efac17a5b6e4ed804dba211e7
-ms.sourcegitcommit: bf4d265a3522cbfdd9dd295a0f4ad0daf2ed5eca
+ms.lastreviewed: 11/11/2019
+ms.openlocfilehash: c3824b80ddd6d980b408bfdb2a2c4a55f599e6d0
+ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68692156"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73955694"
 ---
 # <a name="supported-metrics-for-azure-monitor-on-azure-stack"></a>Métricas de Azure Stack compatibles con Azure Monitor
 

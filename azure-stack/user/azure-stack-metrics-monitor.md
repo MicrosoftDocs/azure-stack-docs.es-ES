@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/23/2019
+ms.date: 11/11/2019
 ms.author: mabrigg
-ms.lastreviewed: 12/01/2018
-ms.openlocfilehash: 64935022f8ace33bd4350ab4ef5421636ff3991e
-ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
+ms.lastreviewed: 11/11/2019
+ms.openlocfilehash: 20e4f71480aa377e56115c499f96492e768010c3
+ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68418514"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73955735"
 ---
 # <a name="how-to-consume-monitoring-data-from-azure-stack"></a>Consumo de datos de supervisión de Azure Stack
 
@@ -29,7 +29,7 @@ Con la canalización de Azure Monitor, los datos de supervisión se encuentran e
  
 ## <a name="options-for-data-consumption"></a>Opciones para el consumo de datos
 
-| Tipo de datos | Categoría | Servicios admitidos | Métodos de acceso |
+| Tipo de datos | Category | Servicios admitidos | Métodos de acceso |
 |-------------------------------------------------------------|----------|------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
 | Métricas en el nivel de plataforma de Azure Monitor | Métricas | [Métricas de Azure Stack compatibles con Azure Monitor](azure-stack-metrics-supported.md) | API DE REST |
 | Cálculo de métricas del sistema operativo invitado (por ejemplo, el recuento de rendimiento) | Métricas | Máquinas virtuales Windows y Linux | Tabla o blob de almacenamiento:<br>Azure Diagnostics para Windows o Linux <br>Centro de eventos:<br>Windows Azure Diagnostics |

@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/18/2019
+ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
-ms.lastreviewed: 07/18/2019
-ms.openlocfilehash: 35f350628a5c13e26bf6f3d1c931aa78a05bfb53
-ms.sourcegitcommit: 159da88a52701679571bbedde1c36b72bbfe32dd
+ms.lastreviewed: 11/11/2019
+ms.openlocfilehash: 0ac0a75e0986642020567ea554a4500cc051fd01
+ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68380483"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73955319"
 ---
 # <a name="replace-a-scale-unit-node-on-an-azure-stack-integrated-system"></a>Reemplazar un nodo de la unidad de escalado en un sistema integrado de Azure Stack
 

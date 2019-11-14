@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/09/2019
+ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: wamota
-ms.lastreviewed: 08/09/2019
-ms.openlocfilehash: 8ed7b3c71c1a9a2098fa125caeb03c949a332f50
-ms.sourcegitcommit: 54448d4518c7d9145b8755f51b18d554b3190810
+ms.lastreviewed: 11/11/2019
+ms.openlocfilehash: 1bd138be243c2803b5a280de2a3a8625e84db998
+ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69559673"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73955329"
 ---
 #  <a name="modify-specific-settings-on-your-azure-stack-switch-configuration"></a>Modificar la configuración específica de la configuración del conmutador de Azure Stack
 

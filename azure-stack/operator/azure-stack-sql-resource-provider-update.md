@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/23/2019
+ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
-ms.lastreviewed: 03/11/2019
-ms.openlocfilehash: 6554a18ee881f053eebc2fc3df8d846cd8d9d12e
-ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
+ms.lastreviewed: 11/11/2019
+ms.openlocfilehash: b37e4c9f5e7b1aaa1a476b0665a9558e8e86365f
+ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68417958"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73955414"
 ---
 # <a name="update-the-sql-resource-provider"></a>Actualización del proveedor de recursos de SQL
 

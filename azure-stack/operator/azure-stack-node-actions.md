@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: article
-ms.date: 07/18/2019
+ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
-ms.lastreviewed: 07/18/2019
-ms.openlocfilehash: 18d76db779db5914663f551154fc8c795753503c
-ms.sourcegitcommit: acebda8a42ac8ecdeba490fc1738e9041479dab0
+ms.lastreviewed: 11/11/2019
+ms.openlocfilehash: 5bc65418c1dd098dc8784cb9bf306676a1cd79ed
+ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72814050"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73955283"
 ---
 # <a name="scale-unit-node-actions-in-azure-stack"></a>Acciones de los nodos de unidad de escalado en Azure Stack
 
@@ -145,13 +145,13 @@ Para obtener más información y vínculos a la documentación del asociado, vea
 
 | Asociado de hardware | Region | URL |
 |------------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Cisco | Todo | [Guía de operaciones de Cisco Integrated System for Microsoft Azure Stack](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/azure-stack/b_Azure_Stack_Operations_Guide_4-0/b_Azure_Stack_Operations_Guide_4-0_chapter_00.html#concept_wks_t1q_wbb)<br><br>[Notas de la versión de Cisco Integrated System for Microsoft Azure Stack](https://www.cisco.com/c/en/us/support/servers-unified-computing/ucs-c-series-rack-mount-ucs-managed-server-software/products-release-notes-list.html) |
-| Dell EMC | Todo | [Cloud for Microsoft Azure Stack 14G (cuenta e inicio de sesión necesarios)](https://support.emc.com/downloads/44615_Cloud-for-Microsoft-Azure-Stack-14G)<br><br>[Cloud for Microsoft Azure Stack 13G (cuenta e inicio de sesión necesarios)](https://support.emc.com/downloads/42238_Cloud-for-Microsoft-Azure-Stack-13G) |
+| Cisco | All | [Guía de operaciones de Cisco Integrated System for Microsoft Azure Stack](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/azure-stack/b_Azure_Stack_Operations_Guide_4-0/b_Azure_Stack_Operations_Guide_4-0_chapter_00.html#concept_wks_t1q_wbb)<br><br>[Notas de la versión de Cisco Integrated System for Microsoft Azure Stack](https://www.cisco.com/c/en/us/support/servers-unified-computing/ucs-c-series-rack-mount-ucs-managed-server-software/products-release-notes-list.html) |
+| Dell EMC | All | [Cloud for Microsoft Azure Stack 14G (cuenta e inicio de sesión necesarios)](https://support.emc.com/downloads/44615_Cloud-for-Microsoft-Azure-Stack-14G)<br><br>[Cloud for Microsoft Azure Stack 13G (cuenta e inicio de sesión necesarios)](https://support.emc.com/downloads/42238_Cloud-for-Microsoft-Azure-Stack-13G) |
 | Fujitsu | JAPÓN | [Departamento de soporte técnico de servicio administrado de Fujitsu (cuenta e inicio de sesión necesarios)](https://eservice.fujitsu.com/supportdesk-web/) |
 |  | EMEA | [Soporte técnico de TI de Fujitsu para productos y sistemas](https://support.ts.fujitsu.com/IndexContact.asp?lng=COM&ln=no&LC=del) |
 |  |  | [Fujitsu MySupport (cuenta e inicio de sesión necesarios)](https://support.ts.fujitsu.com/IndexMySupport.asp) |
-| HPE | Todo | [HPE ProLiant for Microsoft Azure Stack](http://www.hpe.com/info/MASupdates) |
-| Lenovo | Todo | [ThinkAgile SXM Best Recipes](https://datacentersupport.lenovo.com/us/en/solutions/ht505122) |
+| HPE | All | [HPE ProLiant for Microsoft Azure Stack](http://www.hpe.com/info/MASupdates) |
+| Lenovo | All | [ThinkAgile SXM Best Recipes](https://datacentersupport.lenovo.com/us/en/solutions/ht505122) |
 
 La acción **Reparar** repara un nodo. Úsela solamente para alguno de los escenarios siguientes:
 

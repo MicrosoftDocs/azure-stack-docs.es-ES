@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/23/2019
+ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: guanghu
-ms.lastreviewed: 12/11/2018
-ms.openlocfilehash: 9098be09e8b5bd20660f12789159a41d5a330408
-ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
+ms.lastreviewed: 11/11/2019
+ms.openlocfilehash: 4323993c76019ffa2b3084679b2587e300094e38
+ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68417310"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73955628"
 ---
 # <a name="deploy-azure-cognitive-services-to-azure-stack"></a>Implementación de Azure Cognitive Services en Azure Stack
 
