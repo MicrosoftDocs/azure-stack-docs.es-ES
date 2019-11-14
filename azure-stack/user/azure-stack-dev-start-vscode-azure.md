@@ -5,16 +5,16 @@ services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: conceptual
-ms.date: 08/05/2019
+ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 08/05/2019
-ms.openlocfilehash: 44d35d59b2b50682dd6911f6d2b08fea8e005938
-ms.sourcegitcommit: a0dcb61890ad0f7b8e1f738f7186198681adcc2e
+ms.lastreviewed: 11/11/2019
+ms.openlocfilehash: 58fecc801312d9da1a2311e4a51114cfbf245e9d
+ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68820808"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73955747"
 ---
 # <a name="connect-to-azure-stack-using-azure-account-extension-in-visual-studio-code"></a>Conectarse a Azure Stack mediante la extensión de la cuenta de Azure en Visual Studio Code
 
