@@ -1,6 +1,6 @@
 ---
 title: Implementación de un clúster de Kubernetes con AKS-Engine en Azure Stack | Microsoft Docs
-description: Cómo implementar un clúster de Kubernetes en Azure Stack desde una máquina virtual de cliente que ejecute AKS-Engine.
+description: Implementación de un clúster de Kubernetes en Azure Stack desde una máquina virtual de cliente que ejecute el motor de AKS.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,28 +15,28 @@ ms.date: 10/10/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 10/10/2019
-ms.openlocfilehash: 933a2a0bc37be4c5a1b5c92fd334917668761879
-ms.sourcegitcommit: 4a2318ad395b2a931833ccba4430d8d04cdd8819
+ms.openlocfilehash: e4f10cb3e5d96942e5fe32b0d8fe3a04cf921521
+ms.sourcegitcommit: 5ef433aa6b75cdfb557fab0ef9308ff2118e66e5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72780453"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73595198"
 ---
 # <a name="deploy-a-kubernetes-cluster-with-the-aks-engine-on-azure-stack"></a>Implementación de un clúster de Kubernetes con AKS-Engine en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Puede implementar un clúster de Kubernetes en Azure Stack desde una máquina virtual de cliente que ejecute AKS-Engine. En este artículo, vamos a escribir una especificación de clúster, implementar un clúster con el archivo `apimodel.json` y comprobar el clúster mediante la implementación de MySQL con Helm.
+Puede implementar un clúster de Kubernetes en Azure Stack desde una máquina virtual de cliente que ejecute el motor de AKS. En este artículo, vamos a escribir una especificación de clúster, implementar un clúster con el archivo `apimodel.json` y comprobar el clúster mediante la implementación de MySQL con Helm.
 
 ## <a name="define-a-cluster-specification"></a>Definición de una especificación de clúster
 
-Puede indicar una especificación de clúster en un archivo de documento mediante el formato JSON denominado [modelo de API](https://github.com/Azure/aks-engine/blob/master/docs/topics/architecture.md#architecture-diagram). AKS-Engine usa una especificación de clúster en el modelo de API para crear el clúster. 
+Puede indicar una especificación de clúster en un archivo de documento mediante el formato JSON denominado [modelo de API](https://github.com/Azure/aks-engine/blob/master/docs/topics/architecture.md#architecture-diagram). El motor de AKS usa una especificación de clúster en el modelo de API para crear el clúster. 
 
 ### <a name="update-the-api-model"></a>Actualización del modelo de API
 
 En esta sección se examina la creación de un modelo de API para el clúster.
 
-1.  Empiece a usar un archivo del modelo de API de [ejemplo](https://github.com/Azure/aks-engine/tree/master/examples/azure-stack) de Azure Stack y realice una copia local para su implementación. En la máquina donde ha instalado AKS-Engine, ejecute:
+1.  Empiece a usar un archivo del modelo de API de [ejemplo](https://github.com/Azure/aks-engine/tree/master/examples/azure-stack) de Azure Stack y realice una copia local para su implementación. En la máquina donde ha instalado el motor de AKS, ejecute:
 
     ```bash
     curl -o kubernetes-azurestack.json https://raw.githubusercontent.com/Azure/aks-engine/master/examples/azure-stack/kubernetes-azurestack.json
@@ -54,7 +54,7 @@ En esta sección se examina la creación de un modelo de API para el clúster.
     > [!Note]  
     > Si no tiene nano instalado, puede instalar nano en Ubuntu: `sudo apt-get install nano`.
 
-3.  En el archivo kubernetes-azurestack.json, busque `orchestratorRelease`. Seleccione una de las versiones admitidas de Kubernetes. Por ejemplo, 1.11, 1.12, 1.13, 1.14. Las versiones se suelen actualizar. Especifique la versión como x.xx en lugar de x.xx.x. Para obtener una lista de las versiones actuales, consulte [Versiones admitidas de Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). Puede averiguar la versión compatible mediante la ejecución del siguiente comando de AKS-Engine:
+3.  En el archivo kubernetes-azurestack.json, busque `orchestratorRelease`. Seleccione una de las versiones admitidas de Kubernetes. Por ejemplo, 1.14, 1.15. Las versiones se suelen actualizar. Especifique la versión como x.xx en lugar de x.xx.x. Para obtener una lista de las versiones actuales, consulte [Versiones admitidas de Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). Puede averiguar la versión compatible mediante la ejecución del siguiente comando del motor de AKS:
 
     ```bash
     aks-engine get-versions
@@ -117,11 +117,11 @@ Solicite al operador de Azure Stack que:
 
 Continúe con la implementación de un clúster:
 
-1.  Revise los parámetros disponibles para AKS-Engine en las [marcas de la CLI](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#cli-flags) de Azure Stack.
+1.  Revise los parámetros disponibles para el motor de AKS en las [marcas de la CLI](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#cli-flags) de Azure Stack.
 
     | Parámetro | Ejemplo | DESCRIPCIÓN |
     | --- | --- | --- |
-    | azure-env | AzureStackCloud | Para indicar a AKS-Engine que la plataforma de destino es Azure Stack, utilice `AzureStackCloud`. |
+    | azure-env | AzureStackCloud | Para indicar al motor de AKS que la plataforma de destino es Azure Stack, utilice `AzureStackCloud`. |
     | identity-system | adfs | Opcional. Especifique la solución de administración de identidad si usa los Servicios de federación de Active Directory (AD FS). |
     | location | local | El nombre de la región de la instancia de Azure Stack. Para ASDK, la región se establece en `local`. |
     | resource-group | kube-rg | Escriba el nombre del nuevo grupo de recursos o seleccione uno existente. El nombre del recurso debe ser alfanumérico y estar en minúsculas. |
@@ -146,13 +146,13 @@ Continúe con la implementación de un clúster:
     --identity-system adfs # required if using AD FS
     ```
 
-2.  Si por algún motivo se produce un error en la ejecución después de que se haya creado el directorio de salida, puede corregir el problema y volver a ejecutar el comando. Si va a volver a ejecutar la implementación y ha usado el mismo directorio de salida antes, AKS-Engine devolverá un error que indica que el directorio ya existe. Puede sobrescribir el directorio existente mediante el uso de la marca `--force-overwrite`.
+2.  Si por algún motivo se produce un error en la ejecución después de que se haya creado el directorio de salida, puede corregir el problema y volver a ejecutar el comando. Si va a volver a ejecutar la implementación y ha usado el mismo directorio de salida antes, el motor de AKS devolverá un error que indica que el directorio ya existe. Puede sobrescribir el directorio existente mediante el uso de la marca `--force-overwrite`.
 
-3.  Guarde la configuración de clúster de AKS-Engine en una ubicación segura y cifrada.
+3.  Guarde la configuración de clúster del motor de AKS en una ubicación segura y cifrada.
 
-    Busque el archivo `apimodel.json`. Cópielo en una ubicación segura. Este archivo se usará como entrada en todas las demás operaciones de AKS-Engine.
+    Busque el archivo `apimodel.json`. Cópielo en una ubicación segura. Este archivo se usará como entrada en todas las demás operaciones del motor de AKS.
 
-    El objeto `apimodel.json` generado contiene la entidad de seguridad de servicio, el secreto y la clave pública SSH que se usa en el modelo de API de entrada. También tiene todos los demás metadatos necesarios para que AKS-Engine realice todas las demás operaciones. Si lo pierde, AKS-Engine no podrá configurar el clúster.
+    El objeto `apimodel.json` generado contiene la entidad de seguridad de servicio, el secreto y la clave pública SSH que se usa en el modelo de API de entrada. También tiene todos los demás metadatos necesarios para que el motor de AKS realice todas las demás operaciones. Si lo pierde, el motor de AKS no podrá configurar el clúster.
 
     Los secretos están **sin cifrar**. Mantenga el archivo en un lugar seguro y cifrado. 
 
@@ -196,4 +196,4 @@ Compruebe el clúster mediante la implementación de MySQL con Helm.
 ## <a name="next-steps"></a>Pasos siguientes
 
 > [!div class="nextstepaction"]
-> [Solución de problemas de AKS-Engine en Azure Stack](azure-stack-kubernetes-aks-engine-troubleshoot.md)
+> [Solución de problemas del motor de AKS en Azure Stack](azure-stack-kubernetes-aks-engine-troubleshoot.md)

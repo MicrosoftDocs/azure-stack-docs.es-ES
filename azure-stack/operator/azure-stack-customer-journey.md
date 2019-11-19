@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/02/2019
+ms.date: 06/13/2019
 ms.author: mabrigg
 ms.reviewer: asganesh
 ms.lastreviewed: 12/10/2018
-ms.openlocfilehash: fdb0f9a34fe40b3d3fef6abf96b9e1a6927b04e6
-ms.sourcegitcommit: a7207f4a4c40d4917b63e729fd6872b3dba72968
+ms.openlocfilehash: 6ea5248881e10ca9e96ba423ecb4ea5569f00211
+ms.sourcegitcommit: 20d1c0ab3892e9c4c71d5b039457f1e15b1c84c7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71909301"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73618252"
 ---
 # <a name="azure-stack-datacenter-integration-walkthrough"></a>Tutorial acerca de la integración del centro de datos de Azure Stack
 
@@ -29,12 +29,49 @@ En este artículo se describe la experiencia completa del cliente de Azure Stack
 
 Asimismo, como cliente de Azure Stack, encontrará las siguientes fases:
 
-|     |Fase de planeación|Proceso de pedido|Anterior a la implementación|Proceso de fábrica|Entrega de hardware|Implementación in situ|
-|-----|-----|-----|-----|-----|-----|-----|
-|**Microsoft**|Colabora con el asociado para ofrecer soporte técnico preventa.|Prepara las licencias de software y los contratos según sea necesario.|Proporciona las herramientas necesarias para recopilar los requisitos de integración del centro de datos y la documentación para el cliente.|Proporciona las compilaciones de referencia más recientes y las actualizaciones de la cadena de herramientas con una frecuencia mensual.|N/D|Microsoft proporciona soporte técnico a los ingenieros ante cualquier problema con la implementación.|
-|**Asociado**|Recomienda opciones de solución según los requisitos del cliente.<br><br>Propone una prueba de concepto (POC) si es necesario.<br><br>Establece la relación comercial.<br><br>Decide el nivel de soporte técnico.|Prepara los contratos necesarios con el cliente.<br><br>Crea el pedido de compra del cliente.<br><br>Decide la escala de tiempo de entrega.<br><br>Pone en contacto al cliente con Microsoft si es necesario.|Proporciona al cliente la formación necesaria para que pueda comprender todos los requisitos previos de implementación y las opciones de integración del centro de datos.<br><br>Ayuda al cliente con la validación de los datos recopilados para garantizar la integridad y la precisión.|Aplica la última compilación de referencia validada.<br><br>Aplica la versión necesaria de Microsoft Deployment Toolkit.|Envía el hardware a la ubicación del cliente.|La implementación la controla un ingeniero in situ.<br><br>Bastidor y pila.<br><br>Implementación del host de ciclo de vida de hardware (HLH).<br><br>Implementación de Azure Stack.<br><br>Entrega al cliente.|
-|**Cliente**|Describe los casos de uso previstos y especifica los requisitos.|Determina el modelo de facturación que desea usar y revisa y aprueba los contratos.|Rellene la [hoja de cálculo de implementación](azure-stack-deployment-worksheet.md) y asegúrese de que se cumplen todos los requisitos previos y de que está listo para la implementación.|N/D|Prepara el centro de datos asegurándose de que todo lo relacionado con la alimentación y la refrigeración, la conectividad de borde y el resto de requisitos de integración del centro de datos está en vigor.|Está disponible durante la implementación para proporcionar credenciales de suscripción y ayuda en caso de que surjan preguntas sobre los datos proporcionados.|
-| | | | | | | |
+# <a name="customertabcustomer"></a>[Cliente](#tab/customer)
+
+1. Describe los casos de uso previstos y especifica los requisitos.
+2. Determina el modelo de facturación que desea usar y revisa y aprueba los contratos.
+3. Rellene la [hoja de cálculo de implementación](azure-stack-deployment-worksheet.md) y asegúrese de que se cumplen todos los requisitos previos y de que está listo para la implementación.
+4. Prepara el centro de datos asegurándose de que todo lo relacionado con la alimentación y la refrigeración, la conectividad de borde y el resto de requisitos de integración del centro de datos está en vigor.
+5. Está disponible durante la implementación para proporcionar credenciales de suscripción y ayuda en caso de que surjan preguntas sobre los datos proporcionados.
+
+# <a name="partnertabpartner"></a>[Asociado](#tab/partner)
+
+1. Fase de planeación:
+   - Recomienda opciones de solución según los requisitos del cliente.
+   - Propone una prueba de concepto (POC) si es necesario.
+   - Establece la relación comercial.
+   - Decide el nivel de soporte técnico.
+2. Proceso de pedido:
+   - Prepara los contratos necesarios con el cliente.
+   - Crea el pedido de compra del cliente.
+   - Decide la escala de tiempo de entrega.
+   - Pone en contacto al cliente con Microsoft si es necesario.
+3. Anterior a la implementación
+   - Proporciona al cliente la formación necesaria para que pueda comprender todos los requisitos previos de implementación y las opciones de integración del centro de datos.
+   - Ayuda al cliente con la validación de los datos recopilados para garantizar la integridad y la precisión.
+4. Proceso de fábrica
+   - Aplica la última compilación de referencia validada.
+   - Aplica la versión necesaria de Microsoft Deployment Toolkit.
+5. Entrega de hardware:
+   - Envía el hardware a la ubicación del cliente.
+6. Implementación in situ
+   - La implementación la controla un ingeniero in situ.
+   - Bastidor y pila.
+   - Implementación del host de ciclo de vida de hardware (HLH).
+   - Implementación de Azure Stack.
+   - Entrega al cliente.
+
+# <a name="microsofttabmicro"></a>[Microsoft](#tab/micro)
+
+1. Colabora con el asociado para ofrecer soporte técnico preventa.
+2. Prepara las licencias de software y los contratos según sea necesario.
+3. Proporciona las herramientas necesarias para recopilar los requisitos de integración del centro de datos y la documentación para el cliente.
+4. Proporciona las compilaciones de referencia más recientes y las actualizaciones de la cadena de herramientas con una frecuencia mensual.
+5. Microsoft proporciona soporte técnico a los ingenieros ante cualquier problema con la implementación.
+
 
 
 ## <a name="planning-phase"></a>Fase de planeación

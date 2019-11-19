@@ -16,12 +16,12 @@ ms.date: 10/10/2019
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 12/10/2018
-ms.openlocfilehash: 91314fcd33d3b4171dc7e9a3e2d78cdf07e2f50e
-ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
+ms.openlocfilehash: 095744322937a34dffd680b886fd4b06ca65d7d6
+ms.sourcegitcommit: 20d1c0ab3892e9c4c71d5b039457f1e15b1c84c7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72283557"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73618274"
 ---
 # <a name="download-existing-marketplace-items-from-azure-and-publish-to-azure-stack"></a>Descarga de elementos de Marketplace existentes desde Azure y publicación en Azure Stack
 
@@ -101,7 +101,7 @@ Este escenario tiene dos partes:
 
 Una vez registrado, puede omitir el mensaje siguiente que aparece en la hoja de administración de Marketplace, ya que no es aplicable en un caso de uso sin conexión:
 
-[![Mensaje no registrado](media/azure-stack-download-azure-marketplace-item/toolsmsgsm.png "Not registered message")](media/azure-stack-download-azure-marketplace-item/toolsmsg.png#lightbox)
+[![Mensaje no registrado](media/azure-stack-download-azure-marketplace-item/toolsmsgsm.png "Mensaje no registrado")](media/azure-stack-download-azure-marketplace-item/toolsmsg.png#lightbox)
 
 ### <a name="use-the-marketplace-syndication-tool-to-download-marketplace-items"></a>Uso de la herramienta de redifusión de Marketplace para descargar elementos de Marketplace
 
@@ -150,9 +150,9 @@ Una vez registrado, puede omitir el mensaje siguiente que aparece en la hoja de 
 
 6. Cuando la herramienta se ejecuta, verá una pantalla similar a la de la siguiente imagen, con la lista de elementos disponibles en Azure Marketplace:
 
-   [![Elementos emergentes de Azure Marketplace](media/azure-stack-download-azure-marketplace-item/image05.png "Azure Marketplace items")](media/azure-stack-download-azure-marketplace-item/image05.png#lightbox)
+   [![Elementos emergentes de Azure Marketplace](media/azure-stack-download-azure-marketplace-item/image05.png "Elementos de Azure Marketplace")](media/azure-stack-download-azure-marketplace-item/image05.png#lightbox)
 
-7. Si no ha instalado las herramientas de Azure Storage, obtendrá el siguiente mensaje. Para instalar estas herramientas, descargue [AzCopy](/azure/storage/common/storage-use-azcopy#download-and-install-azcopy-on-windows):
+7. Si no ha instalado las herramientas de Azure Storage, obtendrá el siguiente mensaje. Para instalar estas herramientas, descargue [AzCopy](/azure/storage/common/storage-use-azcopy#download-azcopy):
 
    ![Herramientas de Azure Storage](media/azure-stack-download-azure-marketplace-item/vmnew1.png)
 
@@ -178,7 +178,7 @@ Una vez registrado, puede omitir el mensaje siguiente que aparece en la hoja de 
 
    En la siguiente imagen muestra un ejemplo de estructura de carpeta. `D:\downloadfolder` contiene todos los elementos de Marketplace descargados. Cada subcarpeta es un elemento de Marketplace (por ejemplo, `microsoft.custom-script-linux-arm-2.0.3`) y tienen como nombre el identificador del producto. Dentro de cada subcarpeta se encuentra el contenido descargado del elemento de Marketplace.
 
-   [![Estructura de directorio de descarga de Marketplace](media/azure-stack-download-azure-marketplace-item/mp1sm.png "Marketplace download directory structure")](media/azure-stack-download-azure-marketplace-item/mp1.png#lightbox)
+   [![Estructura de directorios de descarga de Marketplace](media/azure-stack-download-azure-marketplace-item/mp1sm.png "Estructura de directorios de descarga de Marketplace")](media/azure-stack-download-azure-marketplace-item/mp1.png#lightbox)
 
 2. Siga las instrucciones de [este artículo](azure-stack-powershell-configure-admin.md) para configurar la sesión de PowerShell para un operador de Azure Stack.
 

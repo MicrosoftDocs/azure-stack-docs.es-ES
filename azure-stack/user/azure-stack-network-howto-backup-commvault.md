@@ -5,16 +5,16 @@ services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: how-to
-ms.date: 10/19/2019
+ms.date: 10/30/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 10/19/2019
-ms.openlocfilehash: 553b6af0e61067b4223baee100bd1a9b3079d1f1
-ms.sourcegitcommit: cc3534e09ad916bb693215d21ac13aed1d8a0dde
+ms.lastreviewed: 10/30/2019
+ms.openlocfilehash: 4294f7f1d53f77c55532645de428678cf42be531
+ms.sourcegitcommit: 20d1c0ab3892e9c4c71d5b039457f1e15b1c84c7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73168532"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73618298"
 ---
 # <a name="back-up-your-vm-on-azure-stack-with-commvault"></a>Copia de seguridad de una máquina virtual en Azure Stack con Commvault
 
@@ -149,7 +149,7 @@ Tendrá que saber si el administrador de identidades es Azure AD o AD DFS. En 
 
 9. Escriba la información de acceso de la cuenta de almacenamiento. Puede encontrar aquí instrucciones sobre la configuración de una cuenta de Azure Storage. Información de acceso:
 
-    -  **Host de servicio**: obtenga el nombre de la dirección URL de las propiedades del contenedor de blobs en el recurso. Por ejemplo, la dirección URL era https://backuptest.blob.westus.stackpoc.com/mybackups y se ha usado blob.westus.stackpoc.com en el host de servicio.
+    -  **Host de servicio**: obtenga el nombre de la dirección URL de las propiedades del contenedor de blobs en el recurso. Por ejemplo, mi dirección URL era https:\//backuptest.blob.westus.stackpoc.com/mybackups y usé blob.westus.stackpoc.com en el host de servicio.
     
     -   **Nombre de cuenta**: use el nombre de la cuenta de almacenamiento. Puede encontrarlo en la hoja Access Keys (Claves de acceso) del recurso de almacenamiento.
     

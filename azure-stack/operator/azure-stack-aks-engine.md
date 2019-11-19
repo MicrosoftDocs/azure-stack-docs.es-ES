@@ -1,6 +1,6 @@
 ---
-title: Agregar los requisitos previos del motor de Azure Kubernetes Service (AKS) al Marketplace de Azure Stack | Microsoft Docs
-description: Aprenda a agregar los requisitos previos del motor de AKS a Marketplace de Azure Stack.
+title: Incorporación de requisitos previos del motor de Azure Kubernetes Service (AKS) al Marketplace de Azure Stack | Microsoft Docs
+description: Aprenda a agregar los requisitos previos del motor de AKS al Marketplace de Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -11,27 +11,27 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/09/2019
+ms.date: 11/05/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 10/09/2019
-ms.openlocfilehash: 1e1e72cea27bf036f662cfaa64a84a57fe9bc964
-ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
+ms.lastreviewed: 11/05/2019
+ms.openlocfilehash: c21223ca8926a1e2b3ca1b06752a79a14adaeda1
+ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72283062"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73636875"
 ---
-# <a name="add-the-azure-kubernetes-services-aks-engine-prerequisites-to-the-azure-stack-marketplace"></a>Agregar los requisitos previos del motor de Azure Kubernetes Service (AKS) al Marketplace de Azure Stack
+# <a name="add-the-azure-kubernetes-services-aks-engine-prerequisites-to-the-azure-stack-marketplace"></a>Incorporación de requisitos previos del motor de Azure Kubernetes Service (AKS) al Marketplace de Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
 Puede permitir que los usuarios configuren el motor de Azure Kubernetes Services (AKS) agregando los elementos que se describen en este artículo a Azure Stack. Después, los usuarios pueden implementar un clúster de Kubernetes en una sola operación coordinada. Este artículo le guía por los pasos necesarios para hacer que el motor de AKS esté disponible para los usuarios, tanto en entornos conectados como desconectados. El motor de AKS depende de una identidad de entidad de servicio y, en Marketplace, una extensión de script personalizado y la imagen base de AKS.
 
-[AKS-Engine](https://github.com/Azure/aks-engine) usa una imagen compilada, la imagen base de AKS. Cualquier versión del motor de AKS depende de una versión de imagen específica que puede poner a disposición en Azure Stack. Vea la tabla que muestre las versiones de AKS-Engine y las versiones de Kubernetes correspondientes en [Versiones admitidas de Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions).
+El [motor de AKS](https://github.com/Azure/aks-engine) usa una imagen compilada, la imagen base de AKS. Cualquier versión del motor de AKS depende de una versión de imagen específica que puede poner a disposición en Azure Stack. Vea la tabla que muestre las versiones del motor de AKS y las versiones de Kubernetes correspondientes en [Versiones admitidas de Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions).
 
 > [!IMPORTANT]
-> AKS-Engine actualmente está en versión preliminar pública.
+> El motor de AKS actualmente está en versión preliminar pública.
 > Esta versión preliminar se ofrece sin Acuerdo de Nivel de Servicio y no se recomienda para cargas de trabajo de producción. Es posible que algunas características no sean compatibles o que tengan sus funcionalidades limitadas. Para más información, consulte [Términos de uso complementarios de las Versiones Preliminares de Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="check-your-users-service-offering"></a>Comprobar la oferta de servicio del usuario
@@ -64,14 +64,14 @@ Agregue el siguiente elemento a Marketplace:
 
 1. Seleccione **+ Add from Azure** (+ Agregar desde Azure).
 
-1. Escriba `AKS Base Image`.
+1. Escriba `AKS Base`.
 
 1. Seleccione la versión de la imagen que coincida con la versión del motor de AKS. Puede encontrar una lista de la imagen base de AKS con la versión del motor de AKS en [Versiones de Kubernetes admitidas](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). 
 
     En la lista, seleccione:
     - **Publicador**: Azure Kubernetes Service
     - **Oferta**: AKS
-    - **Versión**: Distribución de imágenes 16.04-LTS de la imagen base de AKS, septiembre de 2019 (2019.09.19 o versión que se asigna al motor de AKS)
+    - **Versión**: Distribución de imágenes 16.04-LTS de la imagen base de AKS, octubre de 2019 (2019.10.24 o versión que se asigna al motor de AKS)
 
 1. Seleccione **Descargar**.
 

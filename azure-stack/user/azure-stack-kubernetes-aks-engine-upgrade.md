@@ -15,12 +15,12 @@ ms.date: 10/16/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 10/16/2019
-ms.openlocfilehash: 3720781dc2545fefaff0b2cd703d7c3880c4b97b
-ms.sourcegitcommit: 83cef2c4ec6e1b2fd3f997c91675c1058a850e2f
+ms.openlocfilehash: 39eebfbc4d60d4cd68bb33d6efcf35cc12ffe313
+ms.sourcegitcommit: 5ef433aa6b75cdfb557fab0ef9308ff2118e66e5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "72999896"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73594889"
 ---
 # <a name="upgrade-a-kubernetes-cluster-on-azure-stack"></a>Actualización de un clúster de Kubernetes en Azure Stack
 
@@ -28,7 +28,7 @@ ms.locfileid: "72999896"
 
 ## <a name="upgrade-a-cluster"></a>Actualización de un clúster
 
-AKS-Engine permite actualizar el clúster que se implementó originalmente mediante la herramienta. Puede mantener los clústeres mediante AKS-Engine. Las tareas de mantenimiento son similares a cualquier sistema IaaS. Debe tener en cuenta la disponibilidad de nuevas actualizaciones y usar AKS-Engine para aplicarlas.
+El motor de AKS permite actualizar el clúster que se implementó originalmente mediante la herramienta. Puede mantener los clústeres mediante el motor de AKS. Las tareas de mantenimiento son similares a cualquier sistema IaaS. Debe tener en cuenta la disponibilidad de nuevas actualizaciones y usar el motor de AKS para aplicarlas.
 
 El comando de actualización actualiza la versión de Kubernetes y la imagen de sistema operativo base. Cada vez que se ejecuta el comando de actualización, para cada nodo del clúster, el motor de AKS crea una nueva máquina virtual con la imagen base de AKS asociada a la versión de **aks-engine**. Puede usar el comando `aks-engine upgrade` para mantener la actualización de cada nodo principal y de agente del clúster. 
 
@@ -43,7 +43,7 @@ Para una cobertura de actualizaciones de clúster implementada:
 Al actualizar un clúster de producción, tenga en cuenta lo siguiente:
 
 -   ¿Está usando la especificación de clúster correcta (`apimodel.json`) y el grupo de recursos para el clúster de destino?
--   ¿Está usando una máquina confiable para que la máquina cliente ejecute AKS-Engine y desde el que realiza las operaciones de actualización?
+-   ¿Está usando una máquina confiable para que la máquina cliente ejecute el motor de AKS y desde el que realiza las operaciones de actualización?
 -   Asegúrese de que tiene un clúster de copia de seguridad y que está operativo.
 -   Si es posible, ejecute el comando desde una máquina virtual en el entorno de Azure Stack para disminuir los saltos de red y los posibles errores de conectividad.
 -   Asegúrese de que la suscripción tiene espacio suficiente para todo el proceso. El proceso asigna nuevas máquinas virtuales durante el proceso.
@@ -86,7 +86,7 @@ Las instrucciones siguientes usan los pasos mínimos para realizar la actualizac
 
     | Parámetro | Ejemplo | DESCRIPCIÓN |
     | --- | --- | --- |
-    | azure-env | AzureStackCloud | Para indicar a AKS-Engine que la plataforma de destino es Azure Stack, utilice `AzureStackCloud`. |
+    | azure-env | AzureStackCloud | Para indicar al motor de AKS que la plataforma de destino es Azure Stack, utilice `AzureStackCloud`. |
     | location | local | El nombre de la región de la instancia de Azure Stack. Para ASDK, la región se establece en `local`. |
     | resource-group | kube-rg | Escriba el nombre del nuevo grupo de recursos o seleccione uno existente. El nombre del recurso debe ser alfanumérico y estar en minúsculas. |
     | subscription-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | escriba el identificador de la suscripción. Para más información, consulte [Suscripción a una oferta](https://docs.microsoft.com/azure-stack/user/azure-stack-subscribe-services#subscribe-to-an-offer). |
@@ -110,7 +110,7 @@ Las instrucciones siguientes usan los pasos mínimos para realizar la actualizac
     --identity-system adfs # required if using AD FS
     ```
 
-4.  Si, por cualquier motivo, la operación de actualización encuentra un error, puede volver a ejecutar el comando de actualización después de solucionar el problema. AKS-Engine reanudará la operación en la que se produjo el error la hora anterior.
+4.  Si, por cualquier motivo, la operación de actualización encuentra un error, puede volver a ejecutar el comando de actualización después de solucionar el problema. El motor de AKS reanudará la operación en la que se produjo el error la hora anterior.
 
 ## <a name="steps-to-only-upgrade-the-os-image"></a>Pasos para actualizar únicamente la imagen del sistema operativo
 
@@ -141,5 +141,5 @@ Para obtener instrucciones, consulte [Forzado de actualización](https://github.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Obtenga información sobre [AKS-Engine en Azure Stack](azure-stack-kubernetes-aks-engine-overview.md).
+- Obtenga información sobre [el motor de AKS en Azure Stack](azure-stack-kubernetes-aks-engine-overview.md).
 - [Escalado de un clúster de Kubernetes en Azure Stack](azure-stack-kubernetes-aks-engine-scale.md)

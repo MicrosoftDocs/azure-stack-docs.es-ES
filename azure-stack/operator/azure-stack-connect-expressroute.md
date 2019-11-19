@@ -14,12 +14,12 @@ ms.date: 10/03/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 10/22/2018
-ms.openlocfilehash: 2fee81a79b58294a9c43f8d550f139157cb64a9b
-ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
+ms.openlocfilehash: efea925c421a031206ac33b49a13bd486bab1eea
+ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72283571"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73636884"
 ---
 # <a name="connect-azure-stack-to-azure-using-azure-expressroute"></a>Conexión de Azure Stack a Azure mediante Azure ExpressRoute
 
@@ -62,7 +62,7 @@ En la figura siguiente se muestran los entornos de Azure y Azure Stack después 
 
 ![Red de ExpressRoute](media/azure-stack-connect-expressroute/Conceptual.png)
 
-En la figura siguiente se muestra cómo varios inquilinos se conectan desde la infraestructura de Azure Stack a Azure en Microsoft Edge mediante el enrutador de ExpressRoute:
+En la ilustración siguiente se muestra cómo varios inquilinos se conectan desde la infraestructura de Azure Stack a Azure mediante el enrutador de ExpressRoute:
 
 ![Conexiones multiinquilino con ExpressRoute](media/azure-stack-connect-expressroute/Architecture.png)
 
@@ -610,4 +610,4 @@ Si quiere saber la cantidad de tráfico que pasa por la conexión, puede encontr
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Implementar aplicaciones en Azure y Azure Stack](../user/azure-stack-solution-pipeline.md )
+[Implementar aplicaciones en Azure y Azure Stack](../user/azure-stack-solution-pipeline.md)

@@ -1,6 +1,6 @@
 ---
-title: Implementación de AKS-Engine en Windows para Azure Stack | Microsoft Docs
-description: Aprenda a usar una máquina Windows en Azure Stack para hospedar AKS-Engine con el fin de implementar y administrar un clúster de Kubernetes.
+title: Implementación del motor de AKS en Windows para Azure Stack | Microsoft Docs
+description: Aprenda a usar una máquina Windows en Azure Stack para hospedar el motor de AKS con el fin de implementar y administrar un clúster de Kubernetes.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,22 +15,22 @@ ms.date: 10/30/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 10/30/2019
-ms.openlocfilehash: c646f8229b5360aed12c9cd8070a00bf38ca3e01
-ms.sourcegitcommit: cc3534e09ad916bb693215d21ac13aed1d8a0dde
+ms.openlocfilehash: b9dd45b6ea7fdfaab1b1e7418800dcd2031dc151
+ms.sourcegitcommit: 5ef433aa6b75cdfb557fab0ef9308ff2118e66e5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73167311"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73595184"
 ---
-# <a name="install-the-aks-engine-on-windows-in-azure-stack"></a>Instalación de AKS-Engine en Windows para Azure Stack
+# <a name="install-the-aks-engine-on-windows-in-azure-stack"></a>Instalación del motor de AKS en Windows para Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Puede usar una máquina Windows en Azure Stack para hospedar AKS-Engine con el fin de implementar y administrar un clúster de Kubernetes. En este artículo, se examina la preparación de la máquina virtual cliente para administrar su clúster para instancias de Azure Stack conectadas y desconectadas, se comprueba la instalación y se configura la máquina virtual cliente en el ASDK.
+Puede usar una máquina Windows en Azure Stack para hospedar el motor de AKS con el fin de implementar y administrar un clúster de Kubernetes. En este artículo, se examina la preparación de la máquina virtual cliente para administrar su clúster para instancias de Azure Stack conectadas y desconectadas, se comprueba la instalación y se configura la máquina virtual cliente en el ASDK.
 
 ## <a name="prepare-the-client-vm"></a>Preparación de la máquina virtual cliente
 
-AKS-Engine es una herramienta de línea de comandos que se usa para implementar y administrar el clúster de Kubernetes. El motor se puede ejecutar en una máquina de Azure Stack. Desde esta máquina, ejecutará AKS-Engine para implementar los recursos y el software de IaaS necesarios para ejecutar el clúster. Después, puede usar la máquina que ejecuta el motor para realizar tareas de administración en el clúster.
+El motor de AKS es una herramienta de línea de comandos que se usa para implementar y administrar el clúster de Kubernetes. El motor se puede ejecutar en una máquina de Azure Stack. Desde esta máquina, ejecutará el motor de AKS para implementar los recursos y el software de IaaS necesarios para ejecutar el clúster. Después, puede usar la máquina que ejecuta el motor para realizar tareas de administración en el clúster.
 
 Al elegir la máquina cliente, tenga en cuenta lo siguiente:
 
@@ -46,11 +46,11 @@ Puede instalar la máquina virtual cliente para administrar el clúster de Kuber
 3. [Instale Chocolatey con las instrucciones de PowerShell](https://chocolatey.org/install#install-with-powershellexe). 
 
     Según el sitio web de Chocolatey: Chocolatey es un administrador de paquetes para Windows, como apt-get o yum pero para Windows. Se ha diseñado para ser una plataforma descentralizada para instalar rápidamente las aplicaciones y las herramientas necesarias. Se basa en la infraestructura de NuGet que usa actualmente PowerShell y su objetivo es entregar los paquetes de las distribuciones a su equipo.
-4. Busque la versión de AKS-Engine en la tabla [Versiones admitidas de Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). La imagen base de AKS debe estar disponible en Marketplace de Azure Stack. Al ejecutar el comando, debe especificar la versión `--version v0.41.2`. Si no lo hace, el comando instalará la versión más reciente, que podría necesitar una imagen de VHD que no está disponible en Marketplace.
+4. Busque la versión del motor de AKS en la tabla [Versiones admitidas de Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). La imagen base de AKS debe estar disponible en Marketplace de Azure Stack. Al ejecutar el comando, debe especificar la versión `--version v0.43.0`. Si no lo hace, el comando instalará la versión más reciente, que podría necesitar una imagen de VHD que no está disponible en Marketplace.
 5. Ejecute el siguiente comando desde un símbolo del sistema con privilegios elevados e incluya el número de versión:
 
     ```PowerShell  
-        choco install aks-engine --version 0.41.2 -y
+        choco install aks-engine --version 0.43.0 -y
     ```
 
 > [!Note]  
@@ -62,7 +62,7 @@ Puede instalar la máquina virtual cliente para administrar el clúster de Kuber
 
 1.  Desde una máquina con acceso a Internet, vaya a GitHub [Azure/aks-engine](https://github.com/Azure/aks-engine/releases/latest). Descargue un archivo (*.tar.gz) para una máquina Windows, por ejemplo, `aks-engine-v0.38.8-windows-amd64.tar.gz`.
 
-2.  Cree una cuenta de almacenamiento en la instancia de Azure Stack para cargar el archivo de almacenamiento (*.tar.gz) con el archivo binario de AKS-Engine. Para obtener instrucciones sobre el uso del Explorador de Azure Storage, consulte [Explorador de Azure Storage con Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-storage-connect-se).
+2.  Cree una cuenta de almacenamiento en la instancia de Azure Stack para cargar el archivo de almacenamiento (*.tar.gz) con el archivo binario del motor de AKS. Para obtener instrucciones sobre el uso del Explorador de Azure Storage, consulte [Explorador de Azure Storage con Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-storage-connect-se).
 
 3. Cree una máquina virtual Windows en Azure Stack. Para obtener instrucciones, consulte [Inicio rápido: Creación de una máquina virtual Windows Server con el portal de Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-quick-windows-portal)
 
@@ -75,7 +75,7 @@ Puede instalar la máquina virtual cliente para administrar el clúster de Kuber
 7.  Ejecute el siguiente comando en un símbolo del sistema con privilegios elevados. Incluya el número de versión correcto:
 
     ```PowerShell  
-        choco install aks-engine --version v0.41.2 -y
+        choco install aks-engine --version 0.43.0 -y
     ```
 
 ## <a name="verify-the-installation"></a>Comprobación de la instalación
@@ -89,7 +89,7 @@ Una vez configurada la máquina virtual de cliente, compruebe que ha instalado A
     aks-engine version
     ```
 
-Si no puede comprobar que ha instalado AKS-Engine en la máquina virtual cliente, consulte [Solución de problemas de instalación de AKS-Engine](azure-stack-kubernetes-aks-engine-troubleshoot.md).
+Si no puede comprobar que ha instalado el motor de AKS en la máquina virtual cliente, consulte [Solución de problemas de instalación del motor de AKS](azure-stack-kubernetes-aks-engine-troubleshoot.md).
 
 
 ## <a name="asdk-installation"></a>Instalación de ASDK

@@ -1,28 +1,28 @@
 ---
-title: Copias de seguridad de recursos mediante el replicador de suscripciones de Azure Stack | Microsoft Docs
-description: Aprenda a hacer copias de seguridad de recursos mediante el replicador de suscripciones de Azure Stack.
+title: Replicación de recursos entre varias suscripciones de Azure Stack | Microsoft Docs
+description: Obtenga información sobre cómo replicar recursos con el conjunto de scripts del replicador de suscripciones de Azure Stack.
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: how-to
-ms.date: 10/29/2019
+ms.date: 10/30/2019
 ms.author: mabrigg
 ms.reviewer: rtiberiu
-ms.lastreviewed: 10/29/2019
-ms.openlocfilehash: 97d8b417869faa84423df78bde4029b8d18f0741
-ms.sourcegitcommit: cc3534e09ad916bb693215d21ac13aed1d8a0dde
+ms.lastreviewed: 10/30/2019
+ms.openlocfilehash: f468d28ae1642235735f4e1472a8aa84859dc6e6
+ms.sourcegitcommit: 8a74a5572e24bfc42f71e18e181318c82c8b4f24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73168226"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567779"
 ---
-# <a name="how-to-back-up-resources-using-the-azure-stack-subscription-replicator"></a>Copias de seguridad de recursos mediante el replicador de suscripciones de Azure Stack
+# <a name="how-to-replicate-resources-using-the-azure-stack-subscription-replicator"></a>Replicación de recursos mediante el replicador de suscripciones de Azure Stack
 
-Puede usar el script de PowerShell del replicador de suscripciones de Azure Stack para copiar los recursos entre las suscripciones de Azure Stack. El script del replicador lee y vuelve a generar los recursos de Azure Resource Manager de distintas suscripciones de Azure y Azure Stack. En este artículo se describe cómo funciona el script y cómo se puede usar, y se proporciona una referencia para las operaciones del script.
+Puede usar el script de PowerShell del replicador de suscripciones de Azure Stack para copiar los recursos entre suscripciones de Azure Stack, entre marcas de Azure Stack o entre Azure Stack y Azure. El script del replicador lee y vuelve a generar los recursos de Azure Resource Manager de distintas suscripciones de Azure y Azure Stack. En este artículo se describe cómo funciona el script y cómo se puede usar, y se proporciona una referencia para las operaciones del script.
 
 ## <a name="subscription-replicator-overview"></a>Introducción al replicador de suscripciones
 
-El replicador de suscripciones de Azure (v3) se diseñó para ser modular. Esta herramienta usa un procesador principal que organiza la replicación de recursos. Además, la herramienta admite procesadores personalizables que actúan como plantillas para copiar distintos tipos de recursos. 
+El replicador de suscripciones de Azure se diseñó para ser modular. Esta herramienta usa un procesador principal que organiza la replicación de recursos. Además, la herramienta admite procesadores personalizables que actúan como plantillas para copiar distintos tipos de recursos. 
 
 El procesador principal se compone de los tres scripts siguientes:
 
@@ -70,11 +70,11 @@ Sin embargo, existe la posibilidad de que la versión de la API del proveedor de
 
 La herramienta requiere un parámetro denominado **parallel**. Este parámetro toma un valor booleano que especifica si los recursos recuperados se deben implementar en paralelo o no. Si el valor se establece en **true**, cada llamada a **New-AzureRmResourceGroupDeployment** tendrá la marca **-asJob** y se agregarán bloques de código para esperar a que finalicen los trabajos paralelos en los conjuntos de implementaciones de recursos basados en los tipos de recursos. Garantiza que todos los recursos de un tipo se hayan implementado antes de implementar el siguiente tipo de recurso. Si el valor del parámetro **parallel** se establece en **false**, todos los recursos se implementarán en serie.
 
-## <a name="adding-additional-resource-types"></a>Adición de tipos de recursos adicionales
+## <a name="add-additional-resource-types"></a>Incorporación de tipos de recursos adicionales
 
 Agregar nuevos tipos de recursos es sencillo. El desarrollador debe crear un procesador personalizado y una plantilla de Azure Resource Manager o un generador de plantillas de Azure Resource Manager. Cuando haya finalizado, el desarrollador debe agregar el tipo de recurso a ValidateSet para el parámetro **$resourceType** y la matriz **$resourceTypes** en resource_retriever.ps1. Al agregar el tipo de recurso a la matriz **$resourceTypes**, debe hacerse en el orden correcto. El orden de la matriz determina el orden en que se implementarán los recursos, por lo que debe tener en cuenta las dependencias. Por último, si el procesador personalizado emplea un generador de plantillas de Azure Resource Manager, debe agregar el nombre del tipo de recurso a la matriz **$customTypes** en **post_process.ps1**.
 
-## <a name="running-azure-subscription-replicator"></a>Ejecución del replicador de suscripciones de Azure
+## <a name="run-azure-subscription-replicator"></a>Ejecución del replicador de suscripciones de Azure
 
 Para ejecutar la herramienta del replicador de suscripciones de Azure (v3), deberá iniciar el script resource_retriever.ps1 y proporcionar todos los parámetros. En el parámetro **resourceType**, hay una opción para elegir **todos** en lugar de un tipo de recurso. Si se selecciona **All** (Todos), el script resource_retriever.ps1 procesará todos los recursos en un orden determinado de forma que, cuando se ejecute la implementación, los recursos dependientes se implementen en primer lugar. Por ejemplo, las redes virtuales se implementan antes que las máquinas virtuales, ya que las máquinas virtuales requieren una red virtual para que se implementen correctamente.
 
@@ -89,37 +89,20 @@ Deployment_Files contendrá dos archivos **DeployResourceGroups.ps1** y **Deploy
 
 1.  Ejecute el script.
 
-    ![](./media/azure-stack-network-howto-backup-replicator/image2.png)
+    ![Ejecute el script](./media/azure-stack-network-howto-backup-replicator/image2.png)
 
-1.  Espere a que se ejecute el script.
+    > [!Note]  
+    > No olvide configurar el entorno de origen y el contexto de la suscripción para la instancia de PS. 
 
-    ![](./media/azure-stack-network-howto-backup-replicator/image3.png)
+2.  Revise las carpetas recién creadas:
 
-1.  Revise las carpetas recién creadas:
+    ![Revisión de las carpetas](./media/azure-stack-network-howto-backup-replicator/image4.png)
 
-    ![](./media/azure-stack-network-howto-backup-replicator/image4.png)
+3.  Establezca el contexto en la suscripción de destino, cambie la carpeta a **Deployment_Files**, implemente los grupos de recursos e inicie la implementación de los recursos.
 
-    ![](./media/azure-stack-network-howto-backup-replicator/image5.png)
+    ![Configuración e inicio de la implementación](./media/azure-stack-network-howto-backup-replicator/image6.png)
 
-1.  Establezca el contexto en la suscripción de destino.
-
-    ![](./media/azure-stack-network-howto-backup-replicator/image6.png)
-
-1.  Escriba `cd` para cambiar a la carpeta **Deployment_Files**.
-
-    ![](./media/azure-stack-network-howto-backup-replicator/image7.png)
-
-1.  Ejecute `DeployResourceGroups.ps1` para implementar los grupos de recursos.
-
-    ![](./media/azure-stack-network-howto-backup-replicator/image8.png)
-
-1.  Ejecute `DeployResources.ps1` para implementar los recursos.
-
-    ![](./media/azure-stack-network-howto-backup-replicator/image9.png)
-
-1.  Ejecute `Get-Job` para comprobar el estado. Get-Job | Receive-Job devolverá los resultados.
-
-    ![](./media/azure-stack-network-howto-backup-replicator/image10.png)
+4.  Ejecute `Get-Job` para comprobar el estado. Get-Job | Receive-Job devolverá los resultados.
 
 ## <a name="clean-up"></a>Limpieza
 
@@ -187,8 +170,8 @@ Al ejecutar la herramienta con **All** (Todos) como tipo de recurso, se seguirá
             - Configuración de grupos de seguridad de red  
             - Configuración del conjunto de disponibilidad  
 
-            > ![Note]  
-            > Only creates managed disks for OS disk and data disks, no support for using storage accounts currently
+> [!Note]  
+> Solo crea discos administrados para discos del sistema operativo y discos de datos. Actualmente, no se admite el uso de cuentas de almacenamiento. 
 
 ### <a name="limitations"></a>Limitaciones
 
@@ -197,6 +180,8 @@ La herramienta puede replicar recursos de una suscripción a otra siempre que lo
 Para asegurarse de que la replicación se realiza correctamente, asegúrese de que las versiones del proveedor de recursos de la suscripción de destino coinciden con las de la suscripción de origen.
 
 Al replicar desde un servicio de Azure comercial a otro o de una suscripción en Azure Stack a otra en la misma instancia de Azure Stack, habrá problemas al replicar las cuentas de almacenamiento. Esto se debe a que el requisito de nomenclatura de la cuenta de almacenamiento es que todos los nombres de las cuentas de almacenamiento sean únicos en todos los servicios de Azure comercial o en todas las suscripciones de una región o instancia de Azure Stack. La replicación de las cuentas de almacenamiento en distintas instancias de Azure Stack se realizará correctamente, ya que las instancias son regiones o instancias independientes.
+
+
 
 ## <a name="next-steps"></a>Pasos siguientes
 

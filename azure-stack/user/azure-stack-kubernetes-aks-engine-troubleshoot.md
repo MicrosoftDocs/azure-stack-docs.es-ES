@@ -1,5 +1,5 @@
 ---
-title: Solución de problemas de AKS-Engine en Azure Stack | Microsoft Docs
+title: Solución de problemas del motor de AKS en Azure Stack | Microsoft Docs
 description: Este artículo contiene los pasos necesarios para la solución de problemas del motor de AKS en Azure Stack.
 services: azure-stack
 documentationcenter: ''
@@ -15,30 +15,30 @@ ms.date: 10/28/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 10/28/2019
-ms.openlocfilehash: 49684cb1821a5014e984a8e177f881be13123829
-ms.sourcegitcommit: 0d27456332031ab98ba2277117395ae5ffcbb79f
+ms.openlocfilehash: 7c2dfd33db3847f386136922716b0ee35c61ce75
+ms.sourcegitcommit: 5ef433aa6b75cdfb557fab0ef9308ff2118e66e5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73047141"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73595284"
 ---
-# <a name="troubleshoot-the-aks-engine-on-azure-stack"></a>Solución de problemas de AKS-Engine en Azure Stack
+# <a name="troubleshoot-the-aks-engine-on-azure-stack"></a>Solución de problemas del motor de AKS en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Cuando se implementa o se trabaja con AKS-Engine en Azure Stack pueden surgir problemas. En este artículo se examinan los pasos necesarios para solucionar los problemas que puedan aparecer al implementar AKS-Engine, recopilar información acerca de AKS-Engine, recopilar registros de Kubernetes, examinar códigos de error de extensiones de scripts personalizados e instrucciones para abrir un problema de GitHub para AKS-Engine.
+Cuando se implementa o se trabaja con el motor de AKS en Azure Stack pueden surgir problemas. En este artículo se examinan los pasos necesarios para solucionar los problemas que puedan aparecer al implementar el motor de AKS, recopilar información acerca del motor de AKS, recopilar registros de Kubernetes, examinar códigos de error de extensiones de scripts personalizados e instrucciones para abrir un problema de GitHub para el motor de AKS.
 
 > [!IMPORTANT]
-> AKS-Engine actualmente está en versión preliminar pública.
+> El motor de AKS actualmente está en versión preliminar pública.
 > Esta versión preliminar se ofrece sin Acuerdo de Nivel de Servicio y no se recomienda para cargas de trabajo de producción. Es posible que algunas características no sean compatibles o que tengan sus funcionalidades limitadas. Para más información, consulte [Términos de uso complementarios de las Versiones Preliminares de Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="troubleshoot-the-aks-engine-install"></a>Solución de problemas de la instalación de AKS-Engine
+## <a name="troubleshoot-the-aks-engine-install"></a>Solución de problemas de la instalación del motor de AKS
 
 ### <a name="try-gofish"></a>Prueba de GoFish
 
-Si se han producido errores en los pasos de la instalación, pruebe a realizar la instalación mediante el administrador de paquetes de GoFish. [GoFish](https://gofi.sh) se describe a sí mismo como un Homebrew multiplataforma.
+Si se produjeron errores en los pasos de instalación anteriores, puede instalar el motor de AKS mediante el administrador de paquetes de GoFish. [GoFish](https://gofi.sh) se describe a sí mismo como un Homebrew multiplataforma.
 
-#### <a name="install-the-aks-engine-with-gofish-on-linux"></a>Instalación de AKS-Engine con GoFish en Linux
+#### <a name="install-the-aks-engine-with-gofish-on-linux"></a>Instalación del motor de AKS con GoFish en Linux
 
 Instale GoFish desde la página [Install](https://gofi.sh/#install) (Instalar).
 
@@ -48,13 +48,13 @@ Instale GoFish desde la página [Install](https://gofi.sh/#install) (Instalar).
     curl -fsSL https://raw.githubusercontent.com/fishworks/gofish/master/scripts/install.sh | bash
     ```
 
-2.  Ejecute el siguiente comando para instalar AKS-Engine con GoFish:
+2.  Ejecute el siguiente comando para instalar el motor de AKS con GoFish:
 
     ```bash
     Run "gofish install aks-engine"
     ```
 
-#### <a name="install-the-aks-engine-with-gofish-on-windows"></a>Instalación de AKS-Engine con GoFish en Windows
+#### <a name="install-the-aks-engine-with-gofish-on-windows"></a>Instalación del motor de AKS con GoFish en Windows
 
 Instale GoFish desde la página [Install](https://gofi.sh/#install) (Instalar).
 
@@ -62,10 +62,10 @@ Instale GoFish desde la página [Install](https://gofi.sh/#install) (Instalar).
 
     ```PowerShell
     Set-ExecutionPolicy Bypass -Scope Process -Force
-iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/fishworks/gofish/master/scripts/install.ps1'))
+    iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/fishworks/gofish/master/scripts/install.ps1'))
     ```
 
-2.  Ejecute el siguiente comando en la misma sesión para instalar AKS-Engine con GoFish:
+2.  Ejecute el siguiente comando en la misma sesión para instalar el motor de AKS con GoFish:
 
     ```PowerShell
     gofish install aks-engine
@@ -73,7 +73,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 
 ### <a name="checklist-for-common-deployment-issues"></a>Lista de comprobación de problemas comunes en la implementación
 
-Si aparecen errores al implementar un clúster de Kubernetes mediante AKS-Engine, puede comprobar lo siguiente:
+Si aparecen errores al implementar un clúster de Kubernetes mediante el motor de AKS, puede comprobar lo siguiente:
 
 1.  ¿Usa las credenciales de entidad de servicio (SPN) correctas?
 2.  ¿Tiene el SPN tiene un rol "Colaboradores" en la suscripción a Azure Stack?
@@ -82,11 +82,11 @@ Si aparecen errores al implementar un clúster de Kubernetes mediante AKS-Engine
 
 Para más información, consulte el artículo [Solución de problemas ](https://github.com/Azure/aks-engine/blob/master/docs/howto/troubleshooting.md)en el **repositorio de GitHub** Azure/aks-engine.
 
-## <a name="collect-aks-engine-logs"></a>Recopilación de registros de AKS-Engine
+## <a name="collect-aks-engine-logs"></a>Recopilación de registros del motor de AKS
 
-Puede acceder a la información de revisión que crea AKS-Engine. AKS-Engine informa acerca del estado y los errores mientras se ejecuta la aplicación. La salida se puede canalizar a un archivo de texto, o bien se puede copiar directamente desde la consola de la línea de comandos. Consulte una lista de códigos de error desencadenados por el motor AKS en [Examen de los códigos de error de extensión de script personalizado](#review-custom-script-extension-error-codes).
+Puede acceder a la información de revisión que crea AKS-Engine. El motor de AKS informa acerca del estado y los errores mientras se ejecuta la aplicación. La salida se puede canalizar a un archivo de texto, o bien se puede copiar directamente desde la consola de la línea de comandos. Consulte una lista de códigos de error desencadenados por el motor de AKS en [Examen de los códigos de error de extensión de script personalizado](#review-custom-script-extension-error-codes).
 
-1.  Recopile la salida estándar y los errores de la información que se muestra en la herramienta de línea de comandos de AKS-Engine.
+1.  Recopile la salida estándar y los errores de la información que se muestra en la herramienta de línea de comandos del motor de AKS.
 
 2. Obtenga los registros de un archivo local. Puede establecer el directorio de salida con el parámetro **--output-directory**.
 
@@ -98,7 +98,7 @@ Puede acceder a la información de revisión que crea AKS-Engine. AKS-Engine inf
 
 ## <a name="collect-kubernetes-logs"></a>Recopilación de registros de Kubernetes
 
-Además de los registros de AKS-Engine, los componentes de Kubernetes generan mensajes de estado y de error. Estos registros se pueden recopilar mediante el script de Bash, [getkuberneteslogs.sh](https://github.com/msazurestackworkloads/azurestack-gallery/releases/download/diagnosis-v0.1.0/diagnosis.zip).
+Además de los registros del motor de AKS, los componentes de Kubernetes generan mensajes de estado y de error. Estos registros se pueden recopilar mediante el script de Bash, [getkuberneteslogs.sh](https://github.com/msazurestackworkloads/azurestack-gallery/releases/download/diagnosis-v0.1.0/diagnosis.zip).
 
 Este script automatiza el proceso de recopilación de los siguientes registros: 
 
@@ -126,8 +126,8 @@ Requisitos:
     ```bash  
     mkdir -p $HOME/kuberneteslogs
     cd $HOME/kuberneteslogs
-    wget https://github.com/msazurestackworkloads/azurestack-gallery/releases/download/diagnosis-v0.1.0/diagnosis.tar.gz
-    tar xvzf diagnosis.tar.gz -C ./
+    wget https://github.com/msazurestackworkloads/azurestack-gallery/releases/download/diagnosis-v0.1.1/diagnosis-v0.1.1.tar.gz
+    tar xvf diagnosis-v0.1.1.tar.gz -C ./
     ```
 
 2. Busque los parámetros que requiere el script `getkuberneteslogs.sh`. El script usará los siguientes parámetros:
@@ -156,7 +156,7 @@ Requisitos:
 
 ## <a name="review-custom-script-extension-error-codes"></a>Examen de los códigos de error de extensión de script personalizado
 
-Puede consultar una lista de los códigos de error que crea la extensión de script personalizado (CSE) al ejecutar su clúster. El error de CSE puede ser útil para diagnosticar la causa principal del problema. El CSE del servidor Ubuntu que se usa en el clúster de Kubernetes admite muchas de las operaciones de AKS-Engine. Para más información sobre los códigos de salida de CSE, consulte [cse_helpers.sh](https://github.com/Azure/aks-engine/blob/master/parts/k8s/cloud-init/artifacts/cse_helpers.sh).
+Puede consultar una lista de los códigos de error que crea la extensión de script personalizado (CSE) al ejecutar su clúster. El error de CSE puede ser útil para diagnosticar la causa principal del problema. El CSE del servidor Ubuntu que se usa en el clúster de Kubernetes admite muchas de las operaciones del motor de AKS. Para más información sobre los códigos de salida de CSE, consulte [cse_helpers.sh](https://github.com/Azure/aks-engine/blob/master/parts/k8s/cloud-init/artifacts/cse_helpers.sh).
 
 ### <a name="providing-kubernetes-logs-to-a-microsoft-support-engineer"></a>Entrega de registros de Kubernetes a un ingeniero del servicio de soporte técnico de Microsoft
 
@@ -174,7 +174,7 @@ El operador puede combinar los registros que ha creado junto con cualquier otro 
 
 Si no puede resolver un error de implementación, puede abrir una incidencia de GitHub. 
 
-1. Abra una [incidencia de GitHub](https://github.com/Azure/aks-engine/issues/new) en el repositorio de AKS-Engine.
+1. Abra una [incidencia de GitHub](https://github.com/Azure/aks-engine/issues/new) en el repositorio del motor de AKS.
 2. Agregue un título con el siguiente formato: C`SE error: exit code <INSERT_YOUR_EXIT_CODE>`.
 3. Incluya la siguiente información en la incidencia:
 
@@ -184,4 +184,4 @@ Si no puede resolver un error de implementación, puede abrir una incidencia de 
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Obtenga información sobre [AKS-Engine en Azure Stack](azure-stack-kubernetes-aks-engine-overview.md).
+- Obtenga información sobre [el motor de AKS en Azure Stack](azure-stack-kubernetes-aks-engine-overview.md).

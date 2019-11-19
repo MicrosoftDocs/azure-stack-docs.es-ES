@@ -1,6 +1,6 @@
 ---
-title: Instalación de AKS-Engine en Linux para Azure Stack | Microsoft Docs
-description: Aprenda a usar una máquina Linux en Azure Stack para hospedar AKS-Engine con el fin de implementar y administrar un clúster de Kubernetes.
+title: Instalación del motor de AKS en Linux para Azure Stack | Microsoft Docs
+description: Aprenda a usar una máquina Linux en Azure Stack para hospedar el motor de AKS con el fin de implementar y administrar un clúster de Kubernetes.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,22 +15,22 @@ ms.date: 10/09/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 10/09/2019
-ms.openlocfilehash: 3debcd152a54fd3a0b940ad3dd4d379c6688faec
-ms.sourcegitcommit: 12034a1190d52ca2c7d3f05c8c096416120d8392
+ms.openlocfilehash: 3979dfdf6a229f1d81b6c5cc017d4d3f75a62e1a
+ms.sourcegitcommit: 5ef433aa6b75cdfb557fab0ef9308ff2118e66e5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72037951"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73595350"
 ---
-# <a name="install-the-aks-engine-on-linux-in-azure-stack"></a>Instalación de AKS-Engine en Linux para Azure Stack
+# <a name="install-the-aks-engine-on-linux-in-azure-stack"></a>Instalación del motor de AKS en Linux para Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-Puede usar una máquina Linux en Azure Stack para hospedar AKS-Engine con el fin de implementar y administrar un clúster de Kubernetes. En este artículo, se examina la preparación de la máquina virtual cliente para administrar su clúster para instancias de Azure Stack conectadas y desconectadas, se comprueba la instalación y se configura la máquina virtual cliente en el ASDK.
+Puede usar una máquina Linux en Azure Stack para hospedar el motor de AKS con el fin de implementar y administrar un clúster de Kubernetes. En este artículo, se examina la preparación de la máquina virtual cliente para administrar su clúster para instancias de Azure Stack conectadas y desconectadas, se comprueba la instalación y se configura la máquina virtual cliente en el ASDK.
 
 ## <a name="prepare-the-client-vm"></a>Preparación de la máquina virtual cliente
 
-AKS-Engine es una herramienta de línea de comandos que se usa para implementar y administrar el clúster de Kubernetes. El motor se puede ejecutar en una máquina de Azure Stack. Desde esta máquina, ejecutará AKS-Engine para implementar los recursos y el software de IaaS necesarios para ejecutar el clúster. Después, puede usar la máquina que ejecuta el motor para realizar tareas de administración en el clúster.
+El motor de AKS es una herramienta de línea de comandos que se usa para implementar y administrar el clúster de Kubernetes. El motor se puede ejecutar en una máquina de Azure Stack. Desde esta máquina, ejecutará el motor de AKS para implementar los recursos y el software de IaaS necesarios para ejecutar el clúster. Después, puede usar la máquina que ejecuta el motor para realizar tareas de administración en el clúster.
 
 Al elegir la máquina cliente, tenga en cuenta lo siguiente:
 
@@ -43,13 +43,13 @@ Puede instalar la máquina virtual cliente para administrar el clúster de Kuber
 
 1. Cree una máquina virtual Linux en Azure Stack. Para obtener instrucciones, consulte [Inicio rápido: Creación de una máquina virtual de servidor Linux mediante el portal de Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-quick-linux-portal).
 2. Conéctese a la máquina virtual.
-3. Busque la versión de AKS-Engine en la tabla [Versiones admitidas de Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). La imagen base de AKS debe estar disponible en Marketplace de Azure Stack. Al ejecutar el comando, debe especificar la versión `--version v0.41.2`. Si no lo hace, el comando instalará la versión más reciente, que podría necesitar una imagen de VHD que no está disponible en Marketplace.
+3. Busque la versión del motor de AKS en la tabla [Versiones admitidas de Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). La imagen base de AKS debe estar disponible en Marketplace de Azure Stack. Al ejecutar el comando, debe especificar la versión `--version v0.43.0`. Si no lo hace, el comando instalará la versión más reciente, que podría necesitar una imagen de VHD que no está disponible en Marketplace.
 4. Ejecute el siguiente comando:
 
     ```bash  
         curl -o get-akse.sh https://raw.githubusercontent.com/Azure/aks-engine/master/scripts/get-akse.sh
         chmod 700 get-akse.sh
-        ./get-akse.sh --version v0.41.2
+        ./get-akse.sh --version v0.43.0
     ```
 
     > [!Note]  
@@ -61,7 +61,7 @@ Puede instalar la máquina virtual cliente para administrar el clúster de Kuber
 
 1.  Desde una máquina con acceso a Internet, vaya a GitHub [Azure/aks-engine](https://github.com/Azure/aks-engine/releases/latest). Descargue un archivo (*.tar.gz) para una máquina Linux, por ejemplo, `aks-engine-v0.xx.x-linux-amd64.tar.gz`.
 
-2.  Cree una cuenta de almacenamiento en la instancia de Azure Stack para cargar el archivo de almacenamiento (*.tar.gz) con el archivo binario de AKS-Engine. Para obtener instrucciones sobre el uso del Explorador de Azure Storage, consulte [Explorador de Azure Storage con Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-storage-connect-se).
+2.  Cree una cuenta de almacenamiento en la instancia de Azure Stack para cargar el archivo de almacenamiento (*.tar.gz) con el archivo binario del motor de AKS. Para obtener instrucciones sobre el uso del Explorador de Azure Storage, consulte [Explorador de Azure Storage con Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-storage-connect-se).
 
 3. Cree una máquina virtual Linux en Azure Stack. Para obtener instrucciones, consulte [Inicio rápido: Creación de una máquina virtual de servidor Linux mediante el portal de Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-quick-linux-portal).
 
@@ -87,7 +87,7 @@ Una vez configurada la máquina virtual de cliente, compruebe que ha instalado A
     aks-engine version
     ```
 
-Si no puede comprobar que ha instalado AKS-Engine en la máquina virtual cliente, consulte [Solución de problemas de instalación de AKS-Engine](azure-stack-kubernetes-aks-engine-troubleshoot.md).
+Si no puede comprobar que ha instalado el motor de AKS en la máquina virtual cliente, consulte [Solución de problemas de instalación del motor de AKS](azure-stack-kubernetes-aks-engine-troubleshoot.md).
 
 
 ## <a name="asdk-installation"></a>Instalación de ASDK
