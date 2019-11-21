@@ -16,12 +16,12 @@ ms.date: 08/14/2019
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 06/06/2019
-ms.openlocfilehash: 98baf8217bc245f7aa6ac7bc0e2b8f8a5284c6d6
-ms.sourcegitcommit: 86e2b776383a9f761072199ec6b6b8a7d2e6b798
+ms.openlocfilehash: 25a32b1d73818e988a8bdf7fb565d06b06d53d68
+ms.sourcegitcommit: bb2bbfad8061f7677954f6ce5a435b4e6f9299b6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69021843"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74100021"
 ---
 # <a name="guest-operating-systems-supported-on-azure-stack"></a>Sistemas operativos invitados compatibles con Azure Stack
 
@@ -64,7 +64,7 @@ Las distribuciones Linux indicadas como disponibles en Marketplace incluyen el a
 | Basado en CentOS 7.5 | 64 bits | Rogue Wave | Sí |
 | Basado en CentOS 7.3 | 64 bits | Rogue Wave | Sí |
 | ClearLinux | 64 bits | ClearLinux.org | Sí |
-| Container Linux |  64 bits | CoreOS | Stable |
+| CoreOS Linux (estable) |  64 bits | CoreOS | Sí |
 | Debian 8 "Jessie" | 64 bits | credativ |  Sí |
 | Debian 9 "Stretch" | 64 bits | credativ | Sí |
 | Oracle Linux | 64 bits | Oracle | Sí |

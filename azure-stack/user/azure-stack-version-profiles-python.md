@@ -14,13 +14,12 @@ ms.date: 10/01/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-<!-- dev: viananth -->
-ms.openlocfilehash: d0bec72b86fc2cfc729514343a3749a7907ae04c
-ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
+ms.openlocfilehash: b54a4440adcc4f683ca27c42d637efa807e9ac75
+ms.sourcegitcommit: ac7d98a2b58442e82798022d69ebfae6616a225f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282831"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74239349"
 ---
 # <a name="use-api-version-profiles-with-python-in-azure-stack"></a>Usar perfiles de la versión de la API con Python en Azure Stack
 
