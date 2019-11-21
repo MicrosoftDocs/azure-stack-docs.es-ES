@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/30/2019
+ms.date: 11/07/2019
 ms.author: sethm
-ms.reviewer: hectorl
-ms.lastreviewed: 08/30/2019
-ms.openlocfilehash: 63b695b58a4c55f71714a5faa76d62e53f4d691e
-ms.sourcegitcommit: c46d913ebfa4cb6c775c5117ac5c9e87d032a271
+ms.reviewer: ppacent
+ms.lastreviewed: 11/07/2019
+ms.openlocfilehash: d654608ca4f46e5947cacc55349f8be0a41548b1
+ms.sourcegitcommit: ed44d477b9fd11573d1e0d1ed3a3c0ef4512df53
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106524"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73845853"
 ---
 # <a name="azure-stack-update-activity-checklist"></a>Lista de comprobación de actividades para la actualización de Azure Stack
 
@@ -35,12 +35,13 @@ Revise esta lista de comprobación para prepararse para obtener una actualizaci�
 |------------------------------|-----------------------------------------------------------|
 | Revisión de problemas conocidos     | [Lista de los problemas conocidos](known-issues.md).                |
 | Revisión de las actualizaciones de seguridad | [Lista de actualizaciones de seguridad](release-notes-security-updates.md).      |
-| Aplicación del paquete de OEM más reciente | Póngase en contacto con el OEM para asegurarse de que el sistema cumple los requisitos mínimos del paquete de OEM para la versión de Azure Stack a la que se está actualizando el sistema. |
-| Ejecución de Test-AzureStack | Ejecute `Test-AzureStack -Group UpdateReadiness` para identificar los problemas operativos. |
-| Resolución de problemas | Resuelva cualquier problema operativo identificado por `Test-AzureStack`. |
-| Aplicación de las revisiones más recientes | Aplique las revisiones más recientes que sean aplicables a la versión instalada actualmente. |
+| Aplicación del paquete de OEM más reciente | Póngase en contacto con el OEM para asegurarse de que el sistema cumple los requisitos mínimos del paquete de OEM para la versión de Azure Stack a la que se está actualizando el sistema. Asegúrese de que su paquete de OEM sea compatible con la versión de Azure Stack a la que está actualizando. Si su paquete de OEM no es compatible con la versión de Azure Stack a la que está actualizando, deberá realizar una actualización del paquete de OEM antes de ejecutar una actualización de Azure Stack. Para obtener instrucciones, consulte "Aplicar actualizaciones del fabricante de equipos originales (OEM) de Azure Stack". |
+| Aplicación de las revisiones más recientes | Aplique las revisiones más recientes que sean aplicables a la versión instalada actualmente. Para obtener una lista de las últimas revisiones, consulte la sección Revisión de las notas de la versión. |
 | Ejecutar la herramienta Capacity Planner | Asegúrese de que usa la versión más reciente de la [herramienta Azure Stack Capacity Planner](azure-stack-capacity-planning-overview.md) para realizar el planeamiento y el ajuste de tamaño de la carga de trabajo. La última versión contiene correcciones de errores y proporciona nuevas características que se publican con cada actualización de Azure Stack. |
+| Ejecución de Test-AzureStack | Ejecute `Test-AzureStack -Group UpdateReadiness` para identificar los problemas operativos. El cmdlet es accesible a través de la sesión de punto de conexión con privilegios (PEP). Para más información, consulte [Validación del estado del sistema de Azure Stack](azure-stack-diagnostic-test.md). |
+| Resolución de problemas | Resuelva cualquier problema operativo identificado por `Test-AzureStack`. |
 | Actualización disponible | Únicamente en los escenarios en los que estén conectadas, las implementaciones de Azure Stack comprueban periódicamente un punto de conexión seguro y le notifican automáticamente si una actualización está disponible para la nube. Los clientes que estén desconectados pueden descargar e importar nuevos paquetes. Para ello, deben seguir el [proceso descrito aquí ](azure-stack-apply-updates.md). |
+| Notificación a los usuarios | Notifique a los usuarios cualquier operación de mantenimiento, y programe ventanas de mantenimiento normales durante el horario no laborable si es posible. Las operaciones de mantenimiento pueden afectar tanto a las cargas de trabajo de inquilino como a las operaciones del portal. |
 
 ## <a name="during-azure-stack-update"></a>Durante la actualización de Azure Stack
 

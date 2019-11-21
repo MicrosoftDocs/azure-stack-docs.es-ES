@@ -1,28 +1,22 @@
 ---
-title: Uso de una identidad de aplicación para acceder a recursos | Microsoft Docs
-description: Obtenga información sobre cómo administrar una entidad de servicio que puede usarse con el control de acceso basado en roles para el inicio de sesión y el acceso a los recursos.
-services: azure-stack
-documentationcenter: na
+title: Uso de una identidad de aplicación para acceder a recursos
+description: Aprenda a administrar una entidad de servicio de Azure Stack Hub. Una entidad de servicio puede usarse junto con el control de acceso basado en rol para iniciar sesión y acceder a los recursos.
 author: BryanLa
-manager: femila
-ms.service: azure-stack
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 11/06/2019
 ms.author: bryanla
-ms.lastreviewed: 11/06/2019
-ms.openlocfilehash: 7110febfa58fb1d31cde5f0ae1b4df659f567956
-ms.sourcegitcommit: 8203490cf3ab8a8e6d39b137c8c31e3baec52298
+ms.service: azure-stack
+ms.topic: how-to
+ms.date: 11/11/2019
+ms.lastreviewed: 11/11/2019
+ms.openlocfilehash: ff36a5c280df7ecb68d0d181438489ce696ed4fc
+ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73712738"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73955379"
 ---
-# <a name="use-an-app-identity-to-access-resources"></a>Uso de una identidad de aplicación para acceder a recursos
+# <a name="use-an-app-identity-to-access-azure-stack-hub-resources"></a>Uso de una identidad de aplicación para acceder a recursos de Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack (ASDK)*
+*Se aplica a: Sistemas integrados de Azure Stack Hub y el kit de desarrollo de Azure Stack Hub (ASDK)*
 
 Una aplicación que necesita implementar o configurar recursos a través de Azure Resource Manager, debe estar representada por una entidad de servicio. Igual que un usuario está representado por una entidad de seguridad de usuario, una entidad de servicio es un tipo de entidad de seguridad que representa una aplicación. La entidad de servicio proporciona una identidad para la aplicación, lo que le permite delegar únicamente los permisos necesarios a esa entidad de servicio.  
 
@@ -41,16 +35,16 @@ Ejecutar una aplicación con la identidad de una entidad de servicio es preferib
  - Se pueden asignar **permisos más restrictivos** a una entidad de servicio. Normalmente, estos permisos están restringidos solo a aquello que la aplicación debe hacer, lo que se conoce como *principio de privilegio mínimo*.
  - Las **credenciales y los permisos de la entidad de servicio no cambian con tanta frecuencia** como las credenciales de usuario. Por ejemplo, cuando las responsabilidades del usuario cambian, los requisitos de contraseña dictan un cambio o un usuario abandona la empresa.
 
-Primero debe crear un nuevo registro de aplicación en su directorio, que crea un [objeto de entidad de servicio](/azure/active-directory/develop/developer-glossary#service-principal-object) asociado para representar la identidad de la aplicación en el directorio. Este documento describe el proceso de creación y administración de una entidad de servicio, según el directorio que eligió para su instancia de Azure Stack:
+Primero debe crear un nuevo registro de aplicación en su directorio, que crea un [objeto de entidad de servicio](/azure/active-directory/develop/developer-glossary#service-principal-object) asociado para representar la identidad de la aplicación en el directorio. Este documento describe el proceso de creación y administración de una entidad de servicio, según el directorio que eligió para su instancia de Azure Stack Hub:
 
-- Azure Active Directory (Azure AD). Azure AD es un directorio multiinquilino, basado en la nube y un servicio de administración de identidades. Puede usar Azure AD con una instancia de Azure Stack conectada.
-- Servicios de federación de Active Directory (AD FS). AD FS proporciona funcionalidades de una federación de identidades simplificada y protegida, así como de inicio de sesión único (SSO) web. Puede usar AD FS con instancias de Azure Stack tanto conectadas como desconectadas.
+- Azure Active Directory (Azure AD). Azure AD es un directorio multiinquilino, basado en la nube y un servicio de administración de identidades. Puede usar Azure AD con una instancia de Azure Stack Hub conectada.
+- Servicios de federación de Active Directory (AD FS). AD FS proporciona funcionalidades de una federación de identidades simplificada y protegida, así como de inicio de sesión único (SSO) web. Puede usar AD FS con instancias de Azure Stack Hub tanto conectadas como desconectadas.
 
 En primer lugar, debe aprender a administrar a una entidad de servicio y, después, cómo asignarla a un rol y limitar así el acceso a su recurso.
 
 ## <a name="manage-an-azure-ad-service-principal"></a>Administración de una entidad de servicio de Azure AD
 
-Si implementó Azure Stack con Azure AD como servicio de administración de identidades, puede crear entidades de servicio igual que haría para Azure. En este tema se muestra cómo realizar estos pasos a través de Azure Portal. Compruebe que tiene los [permisos de Azure AD necesarios](/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions) antes de comenzar.
+Si implementó Azure Stack Hub con Azure AD como servicio de administración de identidades, puede crear entidades de servicio igual que haría para Azure. En este tema se muestra cómo realizar estos pasos a través de Azure Portal. Compruebe que tiene los [permisos de Azure AD necesarios](/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions) antes de comenzar.
 
 ### <a name="create-a-service-principal-that-uses-a-client-secret-credential"></a>Creación de una entidad de servicio mediante un secreto de cliente
 
@@ -72,9 +66,9 @@ En esta sección, debe registrar la aplicación mediante Azure Portal, que crea 
 
 ## <a name="manage-an-ad-fs-service-principal"></a>Administración de una entidad de servicio de AD FS
 
-Si ha implementado Azure Stack con AD FS como servicio de administración de identidades, debe usar PowerShell para administrar la entidad de servicio. A continuación, se proporcionan ejemplos de administración de credenciales de entidad de servicio, que muestran ambas opciones de certificado X509 y de secreto de cliente.
+Si ha implementado Azure Stack Hub con AD FS como servicio de administración de identidades, debe usar PowerShell para administrar la entidad de servicio. A continuación, se proporcionan ejemplos de administración de credenciales de entidad de servicio, que muestran ambas opciones de certificado X509 y de secreto de cliente.
 
-Los scripts se deben ejecutar en una consola de PowerShell con privilegios elevados ("Ejecutar como administrador"), que abre otra sesión en una VM que hospeda un punto de conexión con privilegios para la instancia de Azure Stack. Una vez establecida la sesión de conexión con privilegios, cmdlets adicionales ejecutarán y administrarán la entidad de servicio. Para más información sobre el punto de conexión con privilegios, consulte [Uso del punto de conexión con privilegios en Azure Stack](azure-stack-privileged-endpoint.md).
+Los scripts se deben ejecutar en una consola de PowerShell con privilegios elevados ("Ejecutar como administrador"), que abre otra sesión en una VM que hospeda un punto de conexión con privilegios para la instancia de Azure Stack Hub. Una vez establecida la sesión de conexión con privilegios, cmdlets adicionales ejecutarán y administrarán la entidad de servicio. Para más información sobre el punto de conexión con privilegios, consulte [Uso del punto de conexión con privilegios en Azure Stack Hub](azure-stack-privileged-endpoint.md).
 
 ### <a name="create-a-service-principal-that-uses-a-certificate-credential"></a>Creación de una entidad de servicio que utiliza una credencial de certificado
 
@@ -83,13 +77,13 @@ Al crear un certificado para una credencial de entidad de servicio, deben cumpli
  - Para producción, el certificado se debe emitir desde una entidad de certificación interna o pública. Si se usa una entidad de certificación pública, es preciso incluirla en la imagen del sistema operativo base como parte del programa de entidades de certificación raíz de confianza de Microsoft (Microsoft Trusted Root Certificate Program). Puede ver la lista completa en el artículo [Microsoft Trusted Root Certificate Program: Participants](https://gallery.technet.microsoft.com/Trusted-Root-Certificate-123665ca) (Programa de entidades de certificación raíz de confianza de Microsoft: Participantes). Más adelante, durante la [actualización de la credencial de certificado de una entidad de servicio](#update-a-service-principals-certificate-credential), se mostrará un ejemplo de creación de un certificado de prueba autofirmado. 
  - El proveedor de servicios criptográficos debe especificarse como un proveedor de claves del proveedor de servicios criptográficos (CSP) heredado de Microsoft.
  - El certificado debe estar en formato PFX, ya que se requieren claves públicas y privadas. Los servidores de Windows utilizan archivos .pfx que contienen el archivo de claves públicas (archivo de certificado SSL) y el archivo de claves privadas asociado.
- - La infraestructura de Azure Stack debe tener acceso de red a la ubicación de la lista de revocación de certificados (CRL) de la entidad de certificación publicada en el certificado. Esta lista de revocación de certificados debe ser un punto de conexión de HTTP.
+ - La infraestructura de Azure Stack Hub debe tener acceso de red a la ubicación de la lista de revocación de certificados (CRL) de la entidad de certificación publicada en el certificado. Esta lista de revocación de certificados debe ser un punto de conexión de HTTP.
 
 Cuando tenga un certificado, use el siguiente script de PowerShell para registrar la aplicación y crear una entidad de servicio. También debe usar la entidad de servicio para iniciar sesión en Azure. Sustituya sus propios valores por los marcadores de posición siguientes:
 
 | Marcador de posición | DESCRIPCIÓN | Ejemplo |
 | ----------- | ----------- | ------- |
-| \<PepVM\> | Nombre de la VM del extremo de conexión con privilegios en la instancia de Azure Stack. | "AzS-ERCS01" |
+| \<PepVM\> | Nombre de la VM del extremo de conexión con privilegios en la instancia de Azure Stack Hub. | "AzS-ERCS01" |
 | \<YourCertificateLocation\> | Ubicación de su certificado X509 en el almacén de certificados local. | "Cert:\CurrentUser\My\AB5A8A3533CC7AA2025BF05120117E06DE407B34" |
 | \<YourAppName\> | Nombre descriptivo del registro de la nueva aplicación. | "Mi herramienta de administración" |
 
@@ -112,7 +106,7 @@ Cuando tenga un certificado, use el siguiente script de PowerShell para registra
     $AzureStackInfo = Invoke-Command -Session $Session -ScriptBlock {Get-AzureStackStampInformation}
     $Session | Remove-PSSession
 
-    # Using the stamp info for your Azure Stack instance, populate the following variables:
+    # Using the stamp info for your Azure Stack Hub instance, populate the following variables:
     # - AzureRM endpoint used for Azure Resource Manager operations 
     # - Audience for acquiring an OAuth token used to access Graph API 
     # - GUID of the directory tenant
@@ -120,7 +114,7 @@ Cuando tenga un certificado, use el siguiente script de PowerShell para registra
     $GraphAudience = "https://graph." + $AzureStackInfo.ExternalDomainFQDN + "/"
     $TenantID = $AzureStackInfo.AADTenantID
 
-    # Register and set an AzureRM environment that targets your Azure Stack instance
+    # Register and set an AzureRM environment that targets your Azure Stack Hub instance
     Add-AzureRMEnvironment -Name "AzureStackUser" -ArmEndpoint $ArmEndpoint
 
     # Sign in using the new service principal identity
@@ -160,7 +154,7 @@ Actualice la credencial de certificado con PowerShell y sustituya sus propios va
 
 | Marcador de posición | DESCRIPCIÓN | Ejemplo |
 | ----------- | ----------- | ------- |
-| \<PepVM\> | Nombre de la VM del extremo de conexión con privilegios en la instancia de Azure Stack. | "AzS-ERCS01" |
+| \<PepVM\> | Nombre de la VM del extremo de conexión con privilegios en la instancia de Azure Stack Hub. | "AzS-ERCS01" |
 | \<YourAppName\> | Nombre descriptivo del registro de la nueva aplicación. | "Mi herramienta de administración" |
 | \<YourCertificateLocation\> | Ubicación de su certificado X509 en el almacén de certificados local. | "Cert:\CurrentUser\My\AB5A8A3533CC7AA2025BF05120117E06DE407B34" |
 | \<AppIdentifier\> | Identificador asignado al registro de la aplicación. | "S-1-5-21-1512385356-3796245103-1243299919-1356" |
@@ -205,7 +199,7 @@ Ahora cree otro registro de aplicación, pero esta vez especifique una credencia
 
 | Marcador de posición | DESCRIPCIÓN | Ejemplo |
 | ----------- | ----------- | ------- |
-| \<PepVM\> | Nombre de la VM del extremo de conexión con privilegios en la instancia de Azure Stack. | "AzS-ERCS01" |
+| \<PepVM\> | Nombre de la VM del extremo de conexión con privilegios en la instancia de Azure Stack Hub. | "AzS-ERCS01" |
 | \<YourAppName\> | Nombre descriptivo del registro de la nueva aplicación. | "Mi herramienta de administración" |
 
 1. Abra una sesión de Windows PowerShell con privilegios elevados y ejecute los siguientes cmdlets:
@@ -222,7 +216,7 @@ Ahora cree otro registro de aplicación, pero esta vez especifique una credencia
      $AzureStackInfo = Invoke-Command -Session $Session -ScriptBlock {Get-AzureStackStampInformation}
      $Session | Remove-PSSession
 
-     # Using the stamp info for your Azure Stack instance, populate the following variables:
+     # Using the stamp info for your Azure Stack Hub instance, populate the following variables:
      # - AzureRM endpoint used for Azure Resource Manager operations 
      # - Audience for acquiring an OAuth token used to access Graph API 
      # - GUID of the directory tenant
@@ -230,7 +224,7 @@ Ahora cree otro registro de aplicación, pero esta vez especifique una credencia
      $GraphAudience = "https://graph." + $AzureStackInfo.ExternalDomainFQDN + "/"
      $TenantID = $AzureStackInfo.AADTenantID
 
-     # Register and set an AzureRM environment that targets your Azure Stack instance
+     # Register and set an AzureRM environment that targets your Azure Stack Hub instance
      Add-AzureRMEnvironment -Name "AzureStackUser" -ArmEndpoint $ArmEndpoint
 
      # Sign in using the new service principal identity
@@ -262,7 +256,7 @@ Actualice la credencial de secreto de cliente con PowerShell, mediante el parám
 
 | Marcador de posición | DESCRIPCIÓN | Ejemplo |
 | ----------- | ----------- | ------- |
-| \<PepVM\> | Nombre de la VM del extremo de conexión con privilegios en la instancia de Azure Stack. | "AzS-ERCS01" |
+| \<PepVM\> | Nombre de la VM del extremo de conexión con privilegios en la instancia de Azure Stack Hub. | "AzS-ERCS01" |
 | \<AppIdentifier\> | Identificador asignado al registro de la aplicación. | "S-1-5-21-1634563105-1224503876-2692824315-2623" |
 
 1. Con la sesión de Windows PowerShell con privilegios elevados, ejecute los siguientes cmdlets:
@@ -299,7 +293,7 @@ Sustituya sus propios valores por los marcadores de posición siguientes:
 
 | Marcador de posición | DESCRIPCIÓN | Ejemplo |
 | ----------- | ----------- | ------- |
-| \<PepVM\> | Nombre de la VM del extremo de conexión con privilegios en la instancia de Azure Stack. | "AzS-ERCS01" |
+| \<PepVM\> | Nombre de la VM del extremo de conexión con privilegios en la instancia de Azure Stack Hub. | "AzS-ERCS01" |
 | \<AppIdentifier\> | Identificador asignado al registro de la aplicación. | "S-1-5-21-1634563105-1224503876-2692824315-2623" |
 
 ```powershell  
@@ -331,7 +325,7 @@ El acceso a los recursos de Azure para usuarios y aplicaciones se autoriza a tra
 
 El tipo de recurso elegido también establece el *ámbito de acceso* de la entidad de servicio. Puede establecer el ámbito de acceso en el nivel de la suscripción, el grupo de recursos o el recurso. Los permisos se heredan en los niveles inferiores del ámbito. Por ejemplo, el hecho de agregar una aplicación al rol "Lector" para un grupo de recursos significa que esta puede leer el grupo de recursos y los recursos que contiene.
 
-1. Inicie sesión en el portal adecuado, según el directorio especificado durante la instalación de Azure Stack (Azure Portal de Azure AD o portal de usuarios de Azure Stack de AD FS, por ejemplo). En este ejemplo, se muestra un usuario que ha iniciado sesión en el portal de usuarios de Azure Stack.
+1. Inicie sesión en el portal adecuado, según el directorio especificado durante la instalación de Azure Stack Hub (Azure Portal de Azure AD o portal de usuarios de Azure Stack Hub de AD FS, por ejemplo). En este ejemplo, se muestra un usuario que ha iniciado sesión en el portal de usuarios de Azure Stack Hub.
 
    > [!NOTE]
    > Para agregar asignaciones de rol para un recurso determinado, su cuenta de usuario debe pertenecer a un rol que declare el permiso `Microsoft.Authorization/roleAssignments/write`. Por ejemplo, los roles integrados [Propietario](/azure/role-based-access-control/built-in-roles#owner) o [Administrador de acceso de usuario](/azure/role-based-access-control/built-in-roles#user-access-administrator).  
@@ -352,7 +346,7 @@ El tipo de recurso elegido también establece el *ámbito de acceso* de la entid
 
      [![Rol asignado](media/azure-stack-create-service-principal/assigned-role.png)](media/azure-stack-create-service-principal/assigned-role.png#lightbox)
 
-Ahora que ha creado una entidad de servicio y le ha asignado un rol, puede empezar a usarla dentro de la aplicación para tener acceso a los recursos de Azure Stack.  
+Ahora que ha creado una entidad de servicio y le ha asignado un rol, puede empezar a usarla dentro de la aplicación para acceder a los recursos de Azure Stack Hub.  
 
 ## <a name="next-steps"></a>Pasos siguientes
 

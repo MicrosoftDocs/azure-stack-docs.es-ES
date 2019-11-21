@@ -1,28 +1,36 @@
 ---
-title: Ampliación del centro de datos en Azure Stack | Microsoft Docs
+title: Ampliación del centro de datos en Azure Stack Hub | Microsoft Docs
 description: Aprenda a ampliar el centro de datos en Azure Stack.
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: how-to
-ms.date: 10/19/2019
+ms.date: 11/07/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 10/19/2019
-ms.openlocfilehash: 94a9398a68be06d4735e2c082e8dc0a02281b6eb
-ms.sourcegitcommit: 58e1911a54ba249a82fa048c7798dadedb95462b
+ms.lastreviewed: 11/07/2019
+ms.openlocfilehash: 92e82f549cddf51b1cbd6764cc122acc3ca8fdfc
+ms.sourcegitcommit: ed44d477b9fd11573d1e0d1ed3a3c0ef4512df53
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73064970"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73845973"
 ---
-# <a name="how-to-extend-the-data-center-on-azure-stack"></a>Ampliación del centro de datos en Azure Stack
+# <a name="how-to-extend-the-data-center-on--azure-stack-hub"></a>Ampliación del centro de datos en Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+*Se aplica a: Sistemas integrados de Azure Stack Hub y al kit de desarrollo de Azure Stack Hub*
 
-En este artículo se ofrece información sobre la infraestructura de almacenamiento de Azure Stack, lo que le ayudará a decidir cómo integrar Azure Stack en un entorno de red existente. En Azure Stack, el espacio de almacenamiento es limitado. El almacenamiento se puede integrar con otro almacenamiento fuera de Azure Stack y en su centro de datos local. Después de explicar de forma general la ampliación del centro de datos, el artículo presenta dos escenarios diferentes. Puede conectarse a un servidor de almacenamiento de archivos de Windows. También puede conectarse a un servidor iSCSI de Windows.
+En este artículo se ofrece información sobre la infraestructura de almacenamiento de Azure Stack Hub que le ayudará a decidir cómo integrar Azure Stack en un entorno de red existente. Después de explicar de forma general la ampliación del centro de datos, el artículo presenta dos escenarios diferentes. Puede conectarse a un servidor de almacenamiento de archivos de Windows. También puede conectarse a un servidor iSCSI de Windows.
 
-## <a name="overview-of-extending-storage-to-azure-stack"></a>Introducción a la ampliación del almacenamiento a Azure Stack
+## <a name="overview-of-extending-storage-to-azure-stack-hub"></a>Introducción a la ampliación del almacenamiento en Azure Stack Hub
+
+Hay escenarios en los que colocar los datos en la nube pública no es suficiente. Puede que tenga una carga de trabajo de una base de datos virtualizada de proceso intensivo que es sensible a las latencias y el tiempo de ida y vuelta a la nube pública podría afectar al rendimiento de dicha carga de trabajo. Es posible que haya datos locales, que se mantienen en un servidor de archivos, un NAS o una matriz de almacenamiento de iSCSI, a los que las cargas de trabajo locales deban acceder y que tengan que residir en el entorno local para cumplir objetivos normativos o de cumplimiento.  Hay solo dos escenarios en los que el hecho de que los datos residan en el entorno local sigue siendo importante para muchas organizaciones.
+
+Por lo tanto, ¿por qué no hospedar simplemente los datos en cuentas de almacenamiento en Azure Stack o en servidores de archivos virtualizados que se ejecutan en el sistema de Azure Stack? Bueno, a diferencia de Azure, el almacenamiento de Azure Stack es limitado. La capacidad que tiene disponible depende por completo de la capacidad por nodo que haya adquirido y del número de nodos del que disponga. Y como Azure Stack es una solución hiperconvergente, si desea aumentar la capacidad de almacenamiento para satisfacer las demandas de uso, deberá aumentar también la superficie de proceso mediante la adición de nodos.  El costo de esto podría ser exorbitante, especialmente si tenemos en cuenta que la necesidad de capacidad adicional sería para almacenamiento en frío y archivado, y dicha capacidad se podría lograr a un precio barato fuera del sistema de Azure Stack.
+
+Lo cual le lleva al escenario del que se va a tratar a continuación. ¿Cómo se pueden conectar sistemas de Azure Stack y cargas de trabajo virtualizadas que se ejecutan en ese sistema de forma sencilla y eficaz con sistemas de almacenamiento fuera de Azure Stack, accesibles a través de la red?
+
+## <a name="design-for-extending-storage"></a>Diseño para extender el almacenamiento
 
 En el diagrama se muestra un escenario en el que una sola máquina virtual, en la que se ejecuta una carga de trabajo, se conecta a un espacio de almacenamiento externo (a la máquina virtual y al propio Azure Stack) y lo utiliza para fines de lectura y escritura de datos, etc. Este artículo se centrará en la recuperación simple de archivos, pero este ejemplo se puede ampliar a escenarios más complejos, como el almacenamiento remoto de archivos de base de datos.
 
@@ -82,7 +90,7 @@ En este escenario, implemente y configure una máquina virtual de Windows Serve
     
     ![](./media/azure-stack-network-howto-extend-datacenter/image4.png)
 
-13. En DNS name (Nombre de DNS), seleccione **Configure** (Configurar) y especifique la etiqueta de un nombre de DNS, **vm001**, y seleccione **Save** (Guardar) y, después, seleccione **VM001** en la ruta de navegación para volver a la hoja *Overview* (Información general).
+13. En DNS name (Nombre de DNS), seleccione **Configure** (Configurar) y especifique la etiqueta de un nombre de DNS, **vm001, y seleccione **Save** (Guardar) y, después, seleccione **VM001** en la ruta de navegación para volver a la hoja *Overview* (Información general).
 
 14. En el lado derecho de la hoja de información general, seleccione **storagetesting-vnet/default** en el texto de Virtual network/subnet (Red virtual/subred).
 
@@ -144,7 +152,7 @@ Tras la actualización y reinicialización puede configurar este servidor como s
 
 3)  Seleccione **Next** (Siguiente), seleccione **Role-based or feature-based installation** (Instalación basada en características o en roles) y recorra las selecciones hasta que llegue a la página **Select server roles** (Seleccionar roles de servidor).
 
-4)  Expanda **File and Storage Services** (Servicios de archivos y de almacenamiento), expanda **File & iSCSI Services** (Servicios de archivos y de iSCSI) y seleccione el cuadro **File Server** (Servidor de archivos). Al finalizar, cierre el **Administrador del servidor**.
+4)  Expanda **File and Storage Services** (Servicios de archivos y de almacenamiento), expanda **File & iSCSI Services** (Servicios de archivos y de iSCSI) y seleccione **File Server** (Servidor de archivos). Al finalizar, cierre el **Administrador del servidor**.
 
 5)  Abra el **Administrador del servidor** y seleccione **File and Storage Services** (Servicios de archivos y almacenamiento).
 
@@ -162,7 +170,7 @@ Ya ha creado un recurso compartido de archivos en el servidor de archivos.
 
 ### <a name="testing-file-storage-performance-and-connectivity"></a>Prueba del rendimiento y la conectividad del almacenamiento de archivos
 
-Para comprobar la comunicación y ejecutar varias pruebas rudimentarias, vuelva a registrarse en el portal de usuarios del sistema de **Azure Stack** y vaya a la hoja de **información general** de **VM001**.
+Para comprobar la comunicación y ejecutar varias pruebas rudimentarias, inicie sesión en el portal de usuarios del sistema de **Azure Stack** y vaya a la hoja de **información general** de **VM001**.
 
 1)  Seleccione **Connect** (Conectar) para establecer una conexión RDP en VM001.
 
@@ -202,6 +210,196 @@ En el caso de su destino iSCSI, podría ser Windows Server 2016 o 2019, físi
 Actualice el servidor de archivos con las actualizaciones acumulativas y correcciones más recientes, y reinicie el equipo antes de continuar con la configuración del servidor de destino iSCSI.
 
 Tras la actualización y reinicialización puede configurar este servidor como servidor de destino iSCSI.
+
+1. Abra **Administrador del servidor** > **Administrar** > **Agregar roles y características**.
+
+2. Una vez abierto, seleccione **Siguiente**, seleccione **Instalación basada en características o en roles** y recorra las selecciones hasta que llegue a la página **Seleccionar roles de servidor**.
+
+3. Expanda **Servicios de archivos y almacenamiento**, expanda **File & iSCSI Services** (Servicios de archivos y de iSCSI) y seleccione el **Servidor del destino iSCSI**. Después, acepte las solicitudes para agregar nuevas características y continúe hasta terminar.
+
+    ![](./media/azure-stack-network-howto-extend-datacenter/image8.png)
+    
+    Al finalizar, cierre el **Administrador del servidor**.
+
+4. Abra **Explorador de archivos**, vaya hasta `C:\\` y **cree una carpeta** denominada `iSCSI`.
+
+5. Vuelva a abrir **Administrador del servidor** > **Servicios de archivos y almacenamiento** en el menú de la izquierda.
+
+6. Seleccione **iSCSI** y seleccione la opción **Para crear un disco virtual iSCSI, inicie el Asistente para nuevo disco virtual**.
+
+7. En la página **Seleccionar ubicación de disco virtual iSCSI**, seleccione **Type a custom path** (Escribir una ruta personalizada) y vaya a `C:\\iSCSI`. Seleccione **Next** (Siguiente).
+
+8. Asigne al disco virtual de iSCSI el nombre de `iSCSIdisk1`, una descripción (opcional) y, a continuación, seleccione **Siguiente**.
+
+9. Establezca el tamaño del disco virtual en `10GB`, seleccione **Tamaño fijo** y **Siguiente**.
+
+    ![](./media/azure-stack-network-howto-extend-datacenter/image9.png)
+
+10. Dado que se trata de un nuevo destino, seleccione **New iSCSI target** (Nuevo destino iSCSI) y seleccione **Siguiente**.
+
+11. En la página **Especificar nombre de destino**, escriba **TARGET1** y seleccione **Siguiente**.
+
+12. En la página **Especificar servidores de acceso**, seleccione **Agregar**. Se abre un cuadro de diálogo para especificar los **iniciadores** específicos que estarán autorizados a conectarse al destino iSCSI.
+
+13. Seleccione **Enter a value for the selected type** (Escribir un valor para el tipo seleccionado) en la **ventana Agregar id. de iniciador** y, en **Tipo** asegúrese de que se ha seleccionado IQN en el menú desplegable. Escriba `iqn.1991-05.com.microsoft:<computername>` donde `<computername>` es el **nombre del equipo** de **VM001**. Seleccione **Next** (Siguiente).
+
+    ![](./media/azure-stack-network-howto-extend-datacenter/image10.png)
+
+14. En la página **Habilitar autenticación**, deje los cuadros en blanco y, a continuación, seleccione **Siguiente**.
+
+15. Confirme las selecciones, elija **Crear** y, después, cierre.
+
+    ![](./media/azure-stack-network-howto-extend-datacenter/image11.png)
+
+El disco virtual iSCSI se debería haber creado en Administrador del servidor.
+
+### <a name="configure-the-windows-server-2019-iscsi-initiator-and-mpio"></a>Configuración del iniciador iSCSI y E/S de múltiples rutas de Windows Server 2019
+
+Para configurar el iniciador iSCSI, inicie sesión en el **portal de usuario** del sistema de **Azure Stack**, vaya a la hoja de **información general** y busque **VM001**.
+
+1.  Establezca una conexión RDP a VM001. Una vez conectado, abra **Administrador del servidor**.
+
+2.  Seleccione **Agregar roles y características** y acepte los valores predeterminados hasta llegar a la página **Características**.
+
+3.  En la página **Características**, agregue **E/S de múltiples rutas** y seleccione **Siguiente**.
+
+    ![](./media/azure-stack-network-howto-extend-datacenter/image12.png)
+
+4.  Marque la casilla **Restart the destination server automatically if necessary** (Reiniciar el servidor de destino automáticamente si es necesario), seleccione **Instalar** y, a continuación, seleccione **Cerrar**. Lo más probable es que se necesite reiniciar, por lo que una vez que se haya completado, vuelva a conectarse a VM001.
+
+5.  De nuevo en **Administrador del servidor**, espere a que se **complete la instalación de E/S de múltiples rutas**, seleccione **Cerrar**, **Herramientas** y seleccione **MPIO**.
+
+6.  Seleccione la pestaña **Detectar múltiples rutas**, seleccione la casilla **Agregar compatibilidad con dispositivos iSCSI** > **Agregar** y, finalmente, **Sí** para **reiniciar** VM001. Seleccione **Aceptar** y, a continuación, reinicie manualmente.
+
+    ![](./media/azure-stack-network-howto-extend-datacenter/image13.png)
+
+1.  Una vez que se haya reiniciado, establezca una **nueva conexión RDP a VM001**.
+
+2.  Una vez conectado, abra **Administrador del servidor**, seleccione **Herramientas** > **Iniciador iSCSI**.
+
+3.  Seleccione **Sí** cuando se abra el iniciador iSCSI de Microsoft para permitir que el servicio iSCSI se ejecute de forma predeterminada.
+
+    ![](./media/azure-stack-network-howto-extend-datacenter/image17.png)
+
+4.  Seleccione la pestaña **Detección**.
+
+5.  Seleccione el botón **Discover Portal** (Detectar portal). Ahora agregará dos destinos.
+
+6.  Escriba la primera dirección IP del servidor de destino iSCSI y seleccione **Opciones avanzadas**.
+
+    ![](./media/azure-stack-network-howto-extend-datacenter/image15.png)
+
+7. Seleccione las siguientes **opciones avanzadas**:
+
+    - Adaptador local: Iniciador iSCSI de Microsoft
+
+    - Dirección IP del iniciador: 10.10.10.4
+
+    - Una vez establecida, seleccione **Aceptar**.
+
+8.  Seleccione **Aceptar** en **Detectar portal de destino**.
+
+9.  Repita el proceso con la siguiente información:
+
+    - Dirección IP: La segunda dirección IP de destino iSCSI
+
+    - Adaptador local: Iniciador iSCSI de Microsoft
+
+    - Dirección IP del iniciador: 10.10.11.4
+
+10. Los portales de destino deben tener el siguiente aspecto, con sus propias direcciones IP de destinos iSCSI en la columna **Dirección**.
+
+    ![](./media/azure-stack-network-howto-extend-datacenter/image16.png)
+
+11. Seleccione la pestaña **Destinos** y, a continuación, seleccione el destino iSCSI. Seleccione **Conectar**.
+
+12. Seleccione **Habilitar múltiples rutas** en **Conectarse al destino** y **Opciones avanzadas**.
+
+    ![](./media/azure-stack-network-howto-extend-datacenter/image17.png)
+
+13. En **Conectarse al destino**, escriba la siguiente información:
+
+    - Adaptador local: Iniciador iSCSI de Microsoft
+
+    - Dirección IP del iniciador: 10.10.10.4
+
+    - Dirección IP del portal de destino: \<la primera dirección IP de destino iSCSI / 3260>
+
+    - Seleccione **Aceptar**.
+
+    ![](./media/azure-stack-network-howto-extend-datacenter/image18.png)
+
+1.  Repita el proceso con la segunda combinación de iniciador y destino.
+
+    - Adaptador local: Iniciador iSCSI de Microsoft
+
+    - Dirección IP del iniciador: 10.10.11.4
+
+    - Dirección IP del portal de destino: \<la segunda dirección IP de destino iSCSI / 3260>
+
+    ![](./media/azure-stack-network-howto-extend-datacenter/image19.png)
+
+1.  Seleccione la pestaña **Volúmenes y dispositivos** y después **Autoconfigurar**. Ahora, debería aparecer la presentación de un volumen de E/S de múltiples rutas:
+
+    ![](./media/azure-stack-network-howto-extend-datacenter/image20.png)
+
+2.  De nuevo en la pestaña **Destinos**, seleccione **Dispositivos** y deberían aparecer las dos conexiones al disco duro virtual sencillo de iSCSI que creó anteriormente.
+
+    ![](./media/azure-stack-network-howto-extend-datacenter/image20.png)
+
+3.  Seleccione el **botón MPIO** para ver más información sobre la directiva de equilibrio de carga y las rutas de acceso.
+
+    ![](./media/azure-stack-network-howto-extend-datacenter/image21.png)
+
+4.  Seleccione **Aceptar** tres veces para salir de las ventanas y del iniciador iSCSI.
+
+5.  Abra Administración de discos (diskmgmt.msc) y aparecerá un mensaje con un menú emergente **Inicializar disco**.
+
+    ![](./media/azure-stack-network-howto-extend-datacenter/image22.png)
+
+6.  Seleccione **Aceptar** para aceptar los valores predeterminados, desplácese hacia abajo hasta el nuevo disco, haga clic con el botón derecho y seleccione **New Simple Volume** (Nuevo volumen sencillo).
+
+7.  Siga el asistente aceptando los valores predeterminados. Cambie la etiqueta de volumen a **iSCSIdisk1** y, a continuación, seleccione **Finalizar**.
+
+    ![](./media/azure-stack-network-howto-extend-datacenter/image23.png)
+
+8.  A continuación, se da formato a la unidad y se presenta con una letra de unidad.
+
+9.  Abra **Explorador de archivos** > **Este equipo** para ver la nueva unidad conectada a VM001.
+
+### <a name="test-external-storage-connectivity"></a>Pruebas de conectividad con el almacenamiento externo
+
+Para comprobar la comunicación y ejecutar una prueba de copia de archivos rudimentaria, inicie sesión en el **portal de usuarios** del sistema de **Azure Stack** y vaya a la hoja de **información general** de **VM001**.
+
+1. Seleccione **Conectar** para establecer una conexión RDP con **VM001**.
+
+2. Abra **Administrador de tareas** y, a continuación, seleccione **Rendimiento**. Ajuste la ventana en el lado derecho de la sesión de RDP.
+
+3. Abra **Windows PowerShell ISE** como administrador y ajústelo en el lado izquierdo de la sesión de RDP. En el lado derecho del ISE, cierre el panel **Comandos** y seleccione el botón **Script** para expandir el panel de scripts en blanco en la parte superior de la ventana de ISE.
+
+4. En esta máquina virtual no hay módulos nativos de PowerShell para crear un archivo VHD que se pueda usar como archivo grande para probar la transferencia de archivos al destino iSCSI. En este caso, ejecutará DiskPart para crear un archivo VHD. En el ISE, ejecute lo siguiente:
+
+    1. `Start-Process Diskpart`
+
+    2. Se abre un nuevo símbolo del sistema. Escriba el siguiente comando:<br>`Create vdisk file="c:\\test.vhd" type=fixed maximum=5120`
+
+    ![](./media/azure-stack-network-howto-extend-datacenter/image24.png)
+
+    Tardará unos minutos en crearse. Una vez creado, para validar la creación, abra **Explorador de archivos** y vaya a C:\\. Ahora, aparecerá el nuevo archivo test.vhd que tiene un tamaño de 5 GB.
+
+    ![](./media/azure-stack-network-howto-extend-datacenter/image25.png)
+
+    Cierre el símbolo del sistema. Vuelva al ISE y escriba el siguiente comando. Sustituya F:\\ por la letra de la unidad de destino iSCSI que se aplicó anteriormente.
+
+    1. `Copy-Item "C:\\test.vhd" -Destination "F:\\"`
+
+    2. Seleccione la línea en el ISE. Presione **F8** en el teclado.
+
+    3. Mientras se ejecuta el comando, vea los dos adaptadores de red y consulte la transferencia de datos que se está llevando a cabo en ambos adaptadores de red en VM001. También debe tener en cuenta que cada adaptador de red debe compartir la carga uniformemente.
+
+        ![](./media/azure-stack-network-howto-extend-datacenter/image26.png)
+
+Este escenario se diseñó para resaltar la conectividad entre una carga de trabajo en ejecución en Azure Stack y una matriz de almacenamiento externo, en este caso, un destino iSCSI basado en Windows Server. No se ha diseñado para ser una prueba de rendimiento, ni para reflejar los pasos que tendría que realizar si usara un dispositivo basado en iSCSI alternativo, pero resalta algunos de los aspectos principales que tendría que realizar al implementar cargas de trabajo en Azure Stack y conectarlas a sistemas de almacenamiento fuera del entorno de Azure Stack.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/23/2019
+ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: rtiberiu
-ms.lastreviewed: 03/20/2019
-ms.openlocfilehash: 3fa6d124722d45d727525820b6a99d408f0d2350
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.lastreviewed: 11/11/2019
+ms.openlocfilehash: 87549d27418f787b0e173cfda1ca835dc1c181e4
+ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70975164"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73955943"
 ---
 # <a name="vm-update-and-management-automation-in-azure-stack"></a>Automatización de actualizaciones y administración de VM en Azure Stack
 Use las siguientes características de solución de Azure Automation para administrar máquinas virtuales de Windows y Linux que se implementan mediante Azure Stack:
@@ -60,7 +60,7 @@ Luego, debe [crear una cuenta de Automation](https://docs.microsoft.com/azure/au
 
 5. Repita los pasos del 2 al 4 para habilitar las tres soluciones. 
 
-   [![](media/vm-update-management/1-sm.PNG "Habilitación de las características de una cuenta de Azure Automation")](media/vm-update-management/1-lg.PNG#lightbox)
+   [![](media/vm-update-management/1-sm.PNG "Enable Azure Automation account features")](media/vm-update-management/1-lg.PNG#lightbox)
 
 ### <a name="enable-azure-monitor-for-vms"></a>Habilitar Azure Monitor para VM
 
@@ -92,15 +92,15 @@ Siga estos pasos para habilitar Update Management para máquinas virtuales de Az
 
 2. En el portal de usuarios de Azure Stack, vaya a la hoja Extensiones de las máquinas virtuales para las que quiere habilitar estas soluciones, haga clic en **+ Agregar**, seleccione la extensión **Azure Update and Configuration Management** y haga clic en **Crear**:
 
-   [![](media/vm-update-management/3-sm.PNG "Hoja de la extensión de máquina virtual")](media/vm-update-management/3-lg.PNG#lightbox)
+   [![](media/vm-update-management/3-sm.PNG "VM extension blade")](media/vm-update-management/3-lg.PNG#lightbox)
 
 3. Proporcione el id. del área de trabajo y la clave principal creados anteriormente para vincular el agente con el área de trabajo de Log Analytics. Luego, haga clic en **Aceptar** para implementar la extensión.
 
-   [![](media/vm-update-management/4-sm.PNG "Introducción del id. del área de trabajo y la clave")](media/vm-update-management/4-lg.PNG#lightbox) 
+   [![](media/vm-update-management/4-sm.PNG "Providing the WorkspaceID and Key")](media/vm-update-management/4-lg.PNG#lightbox) 
 
 4. Tal como se describe en la [documentación de Update Management](https://docs.microsoft.com/azure/automation/automation-update-management), deberá habilitar la solución Update Management para cada VM que quiera administrar. Para habilitar la solución para todas las VM que informan al área de trabajo, seleccione **Update Management**, haga clic en **Administrar las máquinas** y, luego, seleccione la opción **Habilitar en todas las máquinas disponibles y futuras**.
 
-   [![](media/vm-update-management/5-sm.PNG "Habilitación de la solución Update Management en todas las máquinas")](media/vm-update-management/5-lg.PNG#lightbox) 
+   [![](media/vm-update-management/5-sm.PNG "Enable Update Management solution on all machines")](media/vm-update-management/5-lg.PNG#lightbox) 
 
    > [!TIP]
    > Repita este paso para habilitar cada solución para las VM de Azure Stack que informan al área de trabajo. 
@@ -109,7 +109,7 @@ Después de habilitar la extensión Azure Update and Configuration Management, s
 
 Después de que se analizan las VM, aparecerán en la cuenta de Azure Automation en la solución Update Management: 
 
-   [![](media/vm-update-management/6-sm.PNG "Cuenta de Azure Automation en Update Management")](media/vm-update-management/6-lg.PNG#lightbox) 
+   [![](media/vm-update-management/6-sm.PNG "Azure Automation account in Update Management")](media/vm-update-management/6-lg.PNG#lightbox) 
 
 > [!IMPORTANT]
 > Puede que transcurran entre 30 minutos y 6 horas antes de que se muestren los datos actualizados de los equipos administrados.

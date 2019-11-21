@@ -14,18 +14,63 @@ ms.date: 10/28/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 10/28/2019
-ms.openlocfilehash: 0ac21cc388b55be6548f9fdba6c8985dd2316c4e
-ms.sourcegitcommit: cc3534e09ad916bb693215d21ac13aed1d8a0dde
+ms.openlocfilehash: aa85310314a09db47f10424e84fe40e355bacb25
+ms.sourcegitcommit: ed44d477b9fd11573d1e0d1ed3a3c0ef4512df53
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73167138"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73846240"
 ---
 # <a name="release-notes-for-validation-as-a-service"></a>Notas de la versión para la validación como servicio
 
 [!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 
 En este artículo se incluyen las notas de la versión para la validación como servicio de Azure Stack.
+
+## <a name="version-4353"></a>Versión 4.3.5.3
+
+7 de noviembre de 2019
+
+- Prueba de las actualizaciones de contenido
+  - Comprobación mensual de actualizaciones de Azure Stack (versiones 5.1.46.0 -> 5.1.49.0)
+  - Comprobación del paquete de extensión de OEM (versiones 5.1.46.0 -> 5.1.49.0)
+  - Se han conservado los resultados de 5.1.46.0. Si se ha ejecutado correctamente en 5.1.46.0, envíe una notificación a vaashelp@microsoft.com al enviar resultados.
+
+- Corrección de errores
+  - Se corrigió un problema por el que no se podía ejecutar la comprobación mensual de actualizaciones de Azure Stack si el archivo .zip de la actualización contenía caracteres especiales.
+
+- Problemas conocidos
+  - Las pruebas de VaaS producirán un error si no se encuentra el archivo mstest.exe. Solución alternativa:
+    1. Presione CTRL + C en el agente en la ventana de PowerShell.
+    1. Escriba mstest.exe para comprobar que es un programa reconocido.
+    1. Si no se reconoce mstest.exe, cierre la ventana actual de PowerShell.
+    1. Haga clic en Inicio (no en PowerShell en la barra de tareas), busque PowerShell y ábralo como administrador.
+    1. Escriba mstest.exe y compruebe si está disponible como comando.
+    1. Reinicie el agente y vuelva a ejecutar la prueba.
+  - En ocasiones, Cloud Simulation Engine informará de errores en las pruebas de \*máquinas virtuales. Póngase en contacto con vaashelp@microsoft.com antes de intentar una nueva ejecución. 
+
+
+29 de octubre de 2019
+
+- Se ha actualizado la documentación en línea para el flujo de trabajo mensual de actualización de Azure Stack y el flujo de trabajo de validación de paquetes de OEM.
+
+    Revise la documentación actualizada aquí en "Validación de paquetes de OEM" y en "Validación de las actualizaciones de software de Microsoft"
+- Actualización del flujo de trabajo de VaaS: Actualización mensual de Azure Stack (versiones 5.1.30.0 -> 5.1.46.0): se ha actualizado el flujo de trabajo mensual de prueba de comprobación de actualizaciones de Azure Stack.
+
+    El flujo de trabajo ya no requiere ninguna intervención manual y se puede programar para que se ejecute sin problemas.
+- Actualización del flujo de trabajo de VaaS: Validación de paquetes de OEM (versiones 5.1.30.0 -> 5.1.46.0): se ha actualizado el flujo de trabajo de validación de paquetes de OEM.
+
+    El flujo de trabajo ya no requiere ninguna intervención manual y se puede programar para que se ejecute sin problemas.
+- Se ha actualizado Cloud Simulation Engine en el flujo de trabajo de validación de paquetes de OEM (versiones 5.1.30.0 -> 5.1.46.0) para acelerar el tiempo de validación: El tiempo de ejecución se ha reducido a 1 hora.
+- Cloud Simulation Engine en el flujo de trabajo de validación de paquetes de OEM y el flujo de trabajo de actualización de Azure Stack (versiones 5.1.30.0 -> 5.1.46.0) requiere que las actualizaciones se validen en dos carpetas primarias distintas sin que haya otras actualizaciones en las carpetas secundarias.
+- Cloud Simulation Engine en el flujo de trabajo de validación de paquetes de OEM y el flujo de trabajo de actualización de Azure Stack (versiones 5.1.30.0 -> 5.1.46.0) requiere que las pruebas se programen en el siguiente orden: prueba de comprobación mensual de actualizaciones de Azure Stack, prueba de comprobación de paquetes de extensión de OEM y finalmente Cloud Simulation Engine.
+- Actualización del agente de VaaS: El agente de VaaS actualizado usa ahora las credenciales de administrador de la nube de Azure Stack para consultar la marca y obtener la información de esta para rellenar automáticamente los flujos de trabajo. 
+
+    Esta actualización requiere que todos los agentes se actualicen y se reinicien. Consulte estas instrucciones sobre cómo actualizar el agente de VaaS: https://docs.microsoft.com/en-us/azure-stack/partner/azure-stack-vaas-local-agent
+- Actualización de la interfaz de usuario del portal de VaaS: Se ha trasladado la tabla de selección de agente por encima del panel de programación de pruebas para facilitar las pruebas.
+
+    Al programar un trabajo, ya no es necesario escribir la información de la marca si los agentes de VaaS se han actualizado correctamente.
+
 
 ## <a name="version-405"></a>Versión 4.0.5
 

@@ -1,5 +1,6 @@
 ---
 title: Tipos de cuota en Azure Stack | Microsoft Docs
+titleSuffix: Azure Stack
 description: Vea y edite los diferentes tipos de cuota disponibles para los servicios y recursos de Azure Stack.
 services: azure-stack
 documentationcenter: ''
@@ -16,12 +17,12 @@ ms.date: 08/13/2019
 ms.author: sethm
 ms.reviewer: xiaofmao
 ms.lastreviewed: 12/07/2018
-ms.openlocfilehash: e3e7ae6cc29756486ae5c292de6fea7e5259ecc1
-ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
+ms.openlocfilehash: 29a154c5c446019e762b1312b9ef2f8a23cc4790
+ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72283459"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73955299"
 ---
 # <a name="quota-types-in-azure-stack"></a>Tipos de cuota en Azure Stack
 
@@ -37,24 +38,24 @@ Las [cuotas](service-plan-offer-subscription-overview.md#plans) definen los lím
 | **Tipo** | **Valor predeterminado** | **Descripción** |
 | --- | --- | --- |
 | Número máximo de máquinas virtuales | 50 | El número máximo de máquinas virtuales que puede crear una suscripción en esta ubicación. |
-| Número máximo de núcleos de máquina virtual | 100 | El número máximo de núcleos que puede crear una suscripción en esta ubicación (por ejemplo, una máquina virtual A3 tiene cuatro núcleos). |
+| Número máximo de núcleos de máquinas virtuales | 100 | El número máximo de núcleos que puede crear una suscripción en esta ubicación (por ejemplo, una máquina virtual A3 tiene cuatro núcleos). |
 | Número máximo de conjuntos de disponibilidad | 10 | El número máximo de conjuntos de disponibilidad que se pueden crear en esta ubicación. |
-| Número máximo de conjuntos de escalado de máquinas virtuales | 100 | El número máximo de conjuntos de escalado de máquinas virtuales que se pueden crear en esta ubicación. |
-| Capacidad máxima (en GB) de disco administrado estándar | 2048 | La capacidad máxima de los discos administrados estándar que se pueden crear en esta ubicación. |
-| Capacidad máxima (en GB) de disco administrado premium | 2048 | La capacidad máxima de discos administrados premium que se pueden crear en esta ubicación. |
+| Número máximo de conjuntos de escalado de máquinas virtuales | 100 | El número máximo de conjuntos de escalado que se pueden crear en esta ubicación. |
+| Capacidad máxima (en GB) de disco administrado estándar | 2048 | La capacidad máxima de los discos administrados estándar que se pueden crear en esta ubicación. Este valor es un total del tamaño de asignación de todos los discos administrados estándar y el tamaño usado de todas las instantáneas estándar. |
+| Capacidad máxima (en GB) de disco administrado premium | 2048 | La capacidad máxima de discos administrados premium que se pueden crear en esta ubicación. Este valor es un total del tamaño de asignación de todos los discos administrados premium y el tamaño usado de todas las instantáneas premium. |
 
-> [!NOTE]  
-> La capacidad máxima de discos no administrados (blobs en páginas) es independiente de la cuota de disco administrado. Puede establecer este valor en **Storage quotas** (Cuotas de almacenamiento).
+> [!NOTE]
+> La capacidad máxima de discos no administrados (blobs en páginas) es independiente de la cuota de disco administrado. Puede establecer este valor en **Capacidad máxima (GB)** en **Cuotas de almacenamiento**.
 
 ## <a name="storage-quota-types"></a>Tipos de cuotas de almacenamiento
 
 | **Elemento** | **Valor predeterminado** | **Descripción** |
 | --- | --- | --- |
-| Capacidad máxima (GB) |2048 |Capacidad de almacenamiento total (incluidos los blobs y todas las instantáneas, tablas y colas asociadas) que puede consumir una suscripción en esta ubicación. |
+| Capacidad máxima (GB) |2048 |Capacidad de almacenamiento total que puede consumir una suscripción en esta ubicación. Este valor es un total del tamaño usado de todos los blobs (incluidos los discos no administrados) y todas las instantáneas, tablas y colas asociadas. |
 | Número total de cuentas de almacenamiento |20 |El número máximo de cuentas de almacenamiento que puede crear una suscripción en esta ubicación. |
 
-> [!NOTE]  
-> La capacidad máxima de los discos administrados es independiente de la cuota de almacenamiento total. Puede establecer este valor en **Compute quotas** (Cuotas de proceso).
+> [!NOTE]
+> Si se supera la **capacidad máxima (GB)** en una suscripción, no se podrá crear un nuevo recurso de almacenamiento en esta suscripción. Sin embargo, puede seguir usando los discos no administrados que se crearon en esta suscripción en máquinas virtuales, lo cual podría hacer que la capacidad total utilizada superara el límite de cuota.<br>La capacidad máxima de los discos administrados es independiente de la cuota de almacenamiento total. Puede establecer este valor en **Compute quotas** (Cuotas de proceso).
 
 ## <a name="network-quota-types"></a>Tipos de cuota de red
 
@@ -75,15 +76,15 @@ Hay dos maneras diferentes de ver una cuota existente:
 ### <a name="plans"></a>Planes
 
 1. En el panel de navegación izquierdo del portal de administración, seleccione **Plans** (Planes).
-2. Haga clic en el nombre del plan cuyos detalles desea ver para seleccionarlo.
+2. Para seleccionar el plan cuyos detalles desea ver haga clic en su nombre.
 3. En la hoja que se abre, seleccione **Services and quotas** (Servicios y cuotas).
-4. Haga clic en la columna **Name** (Nombre) para seleccionar la columna que quiere ver.
+4. Para seleccionar la cuota que desea ver, haga clic en la columna **Nombre**.
 
-    [![Cuotas](media/azure-stack-quota-types/quotas1sm.png "Ver cuotas")](media/azure-stack-quota-types/quotas1.png#lightbox)
+    [![Cuotas en el portal de administración de Azure Stack](media/azure-stack-quota-types/quotas1sm.png "Ver cuotas en el portal de administración")](media/azure-stack-quota-types/quotas1.png#lightbox)
 
 ### <a name="resource-providers"></a>Proveedores de recursos
 
-1. En el panel predeterminado del portal de administración, busque el icono **Proveedores de recursos**.
+1. En el panel predeterminado del portal de administración, busque el icono **Resource providers** (Proveedores de recursos).
 2. Seleccione el servicio con la cuota que quiere ver, como **Compute**, **Network** o **Storage**.
 3. Seleccione **Cuotas** y luego seleccione la cuota que desea ver.
 
@@ -96,11 +97,13 @@ Hay dos maneras diferentes de editar una cuota:
 1. En el panel de navegación izquierdo del portal de administración, seleccione **Plans** (Planes).
 2. Haga clic en el nombre del plan cuya cuota quiere editar para seleccionarlo.
 3. En la hoja que se abre, seleccione **Services and quotas** (Servicios y cuotas).
-4. Haga clic en la columna **Name** (Nombre) para seleccionar la cuota que quiere editar.
-    [![Cuotas](media/azure-stack-quota-types/quotas1sm.png "Ver cuotas")](media/azure-stack-quota-types/quotas1.png#lightbox)
+4. Para seleccionar la cuota que desea editar, haga clic en la columna **Nombre**.
+
+    [![Cuotas en el portal de administración de Azure Stack](media/azure-stack-quota-types/quotas1sm.png "Ver cuotas en el portal de administración")](media/azure-stack-quota-types/quotas1.png#lightbox)
 
 5. En la hoja que se abre, seleccione **Edit in Compute** (Editar en Compute), **Edit in Network** (Editar en Network) o **Edit in Storage** (Editar en Storage).
-    ![Cuotas](media/azure-stack-quota-types/quotas3.png "Ver cuotas")
+
+    ![Editar un plan en el portal de administración de Azure Stack](media/azure-stack-quota-types/quotas3.png "Editar un plan en el portal de administración de Azure Stack")
 
 Como alternativa, puede seguir este procedimiento para editar una cuota:
 

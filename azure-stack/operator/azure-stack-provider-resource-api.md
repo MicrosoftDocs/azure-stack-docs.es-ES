@@ -1,6 +1,7 @@
 ---
 title: API de uso de recursos de proveedor | Microsoft Docs
-description: Referencia de la API de uso de recursos, que recupera información de uso de Azure Stack
+titleSuffix: Azure Stack
+description: Referencia de la API de uso de recursos, que recupera información de uso de Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,12 +16,12 @@ ms.date: 07/16/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 01/25/2018
-ms.openlocfilehash: 631d6764ca7947ddafd70ec57b607df1ea5a4ab5
-ms.sourcegitcommit: 2a4cb9a21a6e0583aa8ade330dd849304df6ccb5
+ms.openlocfilehash: 75a4adca6d9265314c74cdebe642d43b8c2f11ef
+ms.sourcegitcommit: ca358ea5c91a0441e1d33f540f6dbb5b4d3c92c5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68286686"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73802400"
 ---
 # <a name="provider-resource-usage-api"></a>API de uso de recursos de proveedor
 
@@ -44,9 +45,9 @@ Esta API de uso es una API de proveedor, por lo que se debe asignar al autor de 
 
 | Argumento | DESCRIPCIÓN |
 | --- | --- |
-| `armendpoint` |Punto de conexión de Azure Resource Manager del entorno de Azure Stack. La convención de Azure Stack es que el nombre del punto de conexión de Azure Resource Manager esté en el formato `https://adminmanagement.{domain-name}`. Por ejemplo, si en el kit de desarrollo el nombre de dominio es *local.azurestack.external*, el punto de conexión de Resource Manager será `https://adminmanagement.local.azurestack.external`. |
+| `armendpoint` |Punto de conexión de Azure Resource Manager del entorno de Azure Stack. La convención de Azure Stack es que el nombre del punto de conexión de Azure Resource Manager esté en el formato `https://adminmanagement.{domain-name}`. Por ejemplo, si en el Kit de desarrollo de Azure Stack (ASDK) el nombre de dominio es *local.azurestack.external*, el punto de conexión de Resource Manager será `https://adminmanagement.local.azurestack.external`. |
 | `subId` |Identificador de suscripción del usuario que realiza la llamada. |
-| `reportedStartTime` |Hora de inicio de la consulta. El valor de `DateTime` debe estar en formato Hora universal coordinada (UTC) y al principio de la hora, por ejemplo, 13:00. Para la agregación diaria, establezca este valor en la medianoche de la hora UTC. El formato es caracteres de escape ISO 8601; por ejemplo, `2015-06-16T18%3a53%3a11%2b00%3a00Z`, donde los dos puntos se cambian por `%3a` y el signo más se cambia por `%2b` para que sea un URI descriptivo. |
+| `reportedStartTime` |Hora de inicio de la consulta. El valor de `DateTime` debe estar en formato Hora universal coordinada (UTC) y al principio de la hora, por ejemplo, 13:00. Para la agregación diaria, establezca este valor en la medianoche de la hora UTC. El formato se cambia a ISO 8601; por ejemplo, `2015-06-16T18%3a53%3a11%2b00%3a00Z`, donde los dos puntos se cambian por `%3a` y el signo más se cambia por `%2b` para que sea un URI descriptivo. |
 | `reportedEndTime` |Hora de finalización de la consulta. Las restricciones que se aplican a `reportedStartTime` también se aplican a este argumento. El valor de `reportedEndTime` no puede ser una fecha futura ni la actual. Si es así, el resultado se establece en "el procesamiento no está completo". |
 | `aggregationGranularity` |Parámetro opcional que tiene dos valores discretos posibles: **a diario** y **cada hora**. Como sugieren los valores, uno devuelve los datos con una especificidad diaria y el otro es una resolución por horas. La opción **diaria** es el valor predeterminado. |
 | `subscriberId` |Id. de suscripción. Para obtener los datos filtrados, es necesario el identificador de suscripción de un inquilino directo del proveedor. Si no se especifica ningún parámetro de identificador de suscripción, la llamada devuelve los datos de uso para todos los inquilinos directos del proveedor. |
@@ -104,7 +105,7 @@ meterID1",
 
 ### <a name="powershell"></a>PowerShell
 
-Para generar los datos de uso, es preciso tener recursos en ejecución y que utilicen activamente el sistema; por ejemplo, una máquina virtual activa o una cuenta de almacenamiento que contiene algunos datos. Si no está seguro de si tiene algún recurso que se ejecute en Marketplace de Azure Stack, implemente una máquina virtual (VM) y compruebe la hoja de supervisión de la VM para asegurarse de que se está ejecutando. Use los siguientes cmdlets de PowerShell para ver los datos de utilización:
+Para generar los datos de uso, es preciso tener recursos en ejecución y que utilicen activamente el sistema; por ejemplo, una máquina virtual activa o una cuenta de almacenamiento que contiene algunos datos. Si no está seguro de si tiene algún recurso que se ejecute en Marketplace de Azure Stack, implemente una máquina virtual y compruebe la hoja de supervisión de la VM para asegurarse de que se está ejecutando. Use los siguientes cmdlets de PowerShell para ver los datos de utilización:
 
 1. [Instale PowerShell para Azure Stack](azure-stack-powershell-install.md).
 2. [Configure el entorno de PowerShell del usuario de Azure Stack](../user/azure-stack-powershell-configure-user.md) o del [operador de Azure Stack](azure-stack-powershell-configure-admin.md).

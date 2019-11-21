@@ -9,12 +9,12 @@ ms.date: 10/03/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: 91a90146f1f62ebea980a785d8a8e347f04fe137
-ms.sourcegitcommit: 58e1911a54ba249a82fa048c7798dadedb95462b
+ms.openlocfilehash: 9eb4780a80e5cedd595950813d5cb5029e1b1857
+ms.sourcegitcommit: ed44d477b9fd11573d1e0d1ed3a3c0ef4512df53
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73064928"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73845836"
 ---
 # <a name="vnet-peering-in-azure-stack-with-vms"></a>Emparejamiento de VNET en Azure Stack con máquinas virtuales
 
@@ -24,7 +24,7 @@ Puede conectar dos redes virtuales de Azure Stack entre sí en el mismo entorno 
 
 Este patrón de implementación es la base que permitirá crear túneles de VPN no solo dentro de la instancia de Azure Stack, sino también entre instancias de Azure Stack y otros recursos, como las redes locales con el uso de túneles de VPN de sitio a sitio de RRAS de Windows. 
 
-Las plantillas se pueden encontrar en la bifurcación **lucidqdreams** del repositorio de GitHub [Azure Intelligent Edge Patterns](https://github.com/lucidqdreams/azure-intelligent-edge-patterns
+Puede encontrar las plantillas en el repositorio de GitHub [Azure Intelligent Edge Patterns](https://github.com/Azure-Samples/azure-intelligent-edge-patterns
 ). La plantilla se encuentra en la carpeta **S2SVPNTunnel**.
 
 ![texto alternativo](./media/azure-stack-network-howto-vnet-peering/overview.png)
