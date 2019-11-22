@@ -61,6 +61,8 @@
               href: azure-stack-customer-defined.md
             - name: Integración de DNS
               href: azure-stack-integrate-dns.md
+            - name: Configuración de reenviador de DNS
+              href: azure-stack-configure-dns.md
             - name: Configuración de servidor de tiempo
               href: azure-stack-configure-time.md
             - name: Integración de Firewall
@@ -164,6 +166,8 @@
               href: azure-stack-updates-troubleshoot.md
         - name: Supervisión de estado y alertas
           href: azure-stack-monitor-health.md
+        - name: Supervisión de componentes de hardware
+          href: azure-stack-hardware-monitoring.md
         - name: Administración de recursos de red
           href: azure-stack-viewing-public-ip-address-consumption.md
         - name: Cambio de propietario de la suscripción del usuario
