@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/02/2019
+ms.date: 11/15/2019
 ms.author: mabrigg
-ms.reviewer: wfayed
-ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: e50f2cf722dc4a5b66dbc68c769127e346386134
-ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
+ms.reviewer: thoroet
+ms.lastreviewed: 11/15/2019
+ms.openlocfilehash: c2b6144311ce8f4309fdb968a500f6850080f309
+ms.sourcegitcommit: f2a059f1be36f82adea8877f3f6e90d41ef3b161
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72019298"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74162965"
 ---
 # <a name="azure-stack-firewall-integration"></a>Integración del firewall de Azure Stack
 Se recomienda que use un dispositivo de firewall para ayudar a proteger Azure Stack. Los firewalls pueden ayudarle a defenderse contra ataques por denegación de servicio distribuido (DDOS), a detectar intrusos y a inspeccionar el contenido que reciba. Sin embargo, también pueden convertirse en un cuello de botella en el rendimiento de los servicios de Azure Storage como blobs, tablas y colas.
@@ -42,8 +42,8 @@ Algunas de las desventajas del uso de NAT para una VIP pública son:
 - Aunque el uso de NAT limita la experiencia del usuario, ofrece un control total al operador de las solicitudes de publicación.
 - En el caso de escenarios de nube híbrida con Azure, debe tener en cuenta que Azure no admite la configuración de un túnel VPN a un punto de conexión con NAT.
 
-### <a name="ssl-decryption"></a>Descifrado SSL
-Actualmente, se recomienda deshabilitar el descifrado SSL en todo el tráfico de Azure Stack. En caso de que se admita en actualizaciones futuras, se proporcionarán instrucciones acerca de cómo habilitarlo en Azure Stack.
+### <a name="ssl-interception"></a>Interceptación de SSL
+En la actualidad, se recomienda deshabilitar cualquier interceptación de SSL (por ejemplo, la descarga de descifrado) en todo el tráfico de Azure Stack. En caso de que se admita en actualizaciones futuras, se proporcionarán instrucciones acerca de cómo habilitar la interceptación de SSL en Azure Stack.
 
 ## <a name="edge-firewall-scenario"></a>Escenario de firewall perimetral
 En una implementación perimetral, Azure Stack se implementa directamente detrás del firewall o el enrutador perimetral. En estos casos, se admite que el firewall se encuentre por encima del borde (Escenario 1) donde se admiten configuraciones de firewall activa/activa y activa/pasiva, o que actúe como dispositivo de borde (Escenario 2) donde solo se admite la configuración de firewall activa/activa basada en varias rutas de acceso de igual costo (ECMP) con enrutamiento estático o BGP para la conmutación por error.

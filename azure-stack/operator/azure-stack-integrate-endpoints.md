@@ -6,16 +6,16 @@ author: mattbriggs
 manager: femila
 ms.service: azure-stack
 ms.topic: article
-ms.date: 09/09/2019
+ms.date: 11/15/2019
 ms.author: justinha
 ms.reviewer: wamota
-ms.lastreviewed: 09/09/2019
-ms.openlocfilehash: cfd9434bc52684f89617eff3b62a7bf51fc68bcd
-ms.sourcegitcommit: a6d47164c13f651c54ea0986d825e637e1f77018
+ms.lastreviewed: 11/15/2019
+ms.openlocfilehash: d165b2c2ae2293f8549cf1c0d2f482801f645312
+ms.sourcegitcommit: f2a059f1be36f82adea8877f3f6e90d41ef3b161
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72277434"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74162897"
 ---
 # <a name="publish-azure-stack-services-in-your-datacenter"></a>Publicación de servicios de Azure Stack en el centro de datos 
 
@@ -26,9 +26,12 @@ En el siguiente diagrama de arquitectura se muestran los diferentes niveles de r
 ![Diagrama que muestra diferentes capas de red y ACL](media/azure-stack-integrate-endpoints/Integrate-Endpoints-01.png)
 
 ### <a name="ports-and-urls"></a>Puertos y direcciones URL
+
 Para que los servicios de Azure Stack (como los portales, Azure Resource Manager, DNS, entre otros) estén disponible para las redes externas, debe permitir tráfico entrante en estos puntos de conexión para las direcciones URL, puertos y protocolos específicos.
  
 En una implementación en la que un proxy transparente establece un vínculo superior a un servidor proxy tradicional o un firewall protege la solución, debe permitir puertos y direcciones URL concretos para la comunicación [entrante](azure-stack-integrate-endpoints.md#ports-and-protocols-inbound) y [saliente](azure-stack-integrate-endpoints.md#ports-and-urls-outbound). Aquí se incluyen puertos y direcciones URL de identidad, productos de Marketplace, revisiones y actualizaciones y datos de uso.
+
+[No se admite](azure-stack-firewall.md#ssl-interception) la interceptación de tráfico SSL y puede provocar errores de servicio cuando se accede a los puntos de conexión. 
 
 ## <a name="ports-and-protocols-inbound"></a>Puertos y protocolos (de entrada)
 
@@ -70,6 +73,8 @@ Con la adición del [host de extensiones](azure-stack-extension-host-prepare.md)
 ## <a name="ports-and-urls-outbound"></a>Puertos y direcciones URL (de salida)
 
 Azure Stack solo admite servidores proxy transparentes. En una implementación en la que un proxy transparente establece un vínculo superior a un servidor proxy tradicional, debe permitir los siguientes puertos y direcciones URL para la comunicación saliente.
+
+[No se admite](azure-stack-firewall.md#ssl-interception) la interceptación de tráfico SSL y puede provocar errores de servicio cuando se accede a los puntos de conexión. El tiempo de expiración máximo admitido para comunicarse con los puntos de conexión necesarios para la identidad es de 60 s.
 
 > [!Note]  
 > Azure Stack no admite el uso de ExpressRoute para acceder a los servicios de Azure que se enumeran en la tabla siguiente porque ExpressRoute no puede enrutar el tráfico a todos los puntos de conexión.

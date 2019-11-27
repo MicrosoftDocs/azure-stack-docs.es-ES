@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 10/03/2019
 ms.author: sethm
 ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: 650257a0bfe94741d00345f98b40fddd8d00cb44
-ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
+ms.openlocfilehash: e6d7f2d46a578bbbc8527a5e69f441ec12f38b01
+ms.sourcegitcommit: ac7d98a2b58442e82798022d69ebfae6616a225f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71961459"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74239321"
 ---
 # <a name="configure-vpn-gateway-settings-for-azure-stack"></a>Configuración de VPN Gateway para Azure Stack
 
@@ -171,9 +171,9 @@ A diferencia de Azure, que admite varias ofertas como iniciador y respondedor, A
 | Propiedad              | Valor|
 |-|-|
 | Versión de IKE           | IKEv2 |
-|Grupo Diffie-Hellman   | Grupo 2 (1024 bits) |
+|Grupo Diffie-Hellman   | ECP384 |
 | Método de autenticación | Clave previamente compartida |
-|Algoritmos de cifrado y hash | AES256, SHA256 |
+|Algoritmos de cifrado y hash | AES256, SHA384 |
 |Vigencia de SA (tiempo)     | 28.800 segundos|
 
 ### <a name="ike-phase-2-quick-mode-parameters"></a>Parámetros de la fase 2 de IKE (modo rápido)
@@ -185,10 +185,8 @@ A diferencia de Azure, que admite varias ofertas como iniciador y respondedor, A
 |Cifrados y algoritmos hash (autenticación) | GCMAES256|
 |Vigencia de SA (tiempo)  | 27 000 segundos  |
 |Vigencia de SA (Kilobytes) | 33 553 408     |
-|Confidencialidad directa perfecta (PFS) |Ninguno (consulte la **Nota 1**) |
+|Confidencialidad directa perfecta (PFS) | ECP384 |
 |Detección de cuellos del mismo nivel | Compatible|  
-
-**Nota 1**: Antes de la versión 1807, Azure Stack usaba un valor de PFS2048 para la confidencialidad directa perfecta (PFS).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

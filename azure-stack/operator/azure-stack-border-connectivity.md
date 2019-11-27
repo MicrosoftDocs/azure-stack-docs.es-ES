@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/02/2019
+ms.date: 11/15/2019
 ms.author: mabrigg
 ms.reviewer: wamota
-ms.lastreviewed: 08/30/2018
-ms.openlocfilehash: d6e4aa25b558d12cfb437155c453d3d093ea7e00
-ms.sourcegitcommit: ef7efcde76d1d7875ca1c882afebfd6a27f1c686
+ms.lastreviewed: 11/15/2019
+ms.openlocfilehash: 20291fb211ebd19f36b6af03d85fa2017d85820c
+ms.sourcegitcommit: f2a059f1be36f82adea8877f3f6e90d41ef3b161
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72888057"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74162915"
 ---
 # <a name="border-connectivity"></a>Conectividad de borde 
 El planeamiento de la integración de red es un requisito previo importante para la correcta implementación, operación y administración de sistemas integrados de Azure Stack. El planeamiento de la conectividad de borde comienza con la elección de si se debe usar el enrutamiento dinámico con el protocolo de puerta de enlace de borde (BGP). Esto requiere la asignación de un número de sistema autónomo de BGP de 16 bits (público o privado) o el uso del enrutamiento estático, en el cual se asigna una ruta estática predeterminada a los dispositivos de borde.
@@ -68,6 +68,8 @@ Si el centro de datos requiere que todo el tráfico utilice un proxy, debe confi
 Un proxy transparente (también conocido como proxy interceptor, alineado o forzado) intercepta la comunicación normal en la capa de red sin requerir ninguna configuración especial del cliente. Los clientes no necesitan estar enterados de la existencia del proxy.
 
 ![Proxy transparente](media/azure-stack-border-connectivity/transparent-proxy.png)
+
+[No se admite](azure-stack-firewall.md#ssl-interception) la interceptación de tráfico SSL y puede provocar errores de servicio cuando se accede a los puntos de conexión. El tiempo de expiración máximo admitido para comunicarse con los puntos de conexión necesarios para la identidad es de 60 s con 3 reintentos.
 
 ## <a name="next-steps"></a>Pasos siguientes
 [Integración de DNS](azure-stack-integrate-dns.md)

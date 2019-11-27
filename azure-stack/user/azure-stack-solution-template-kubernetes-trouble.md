@@ -11,22 +11,22 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.author: mabrigg
-ms.date: 10/10/2019
+ms.date: 11/14/2019
 ms.reviewer: waltero
-ms.lastreviewed: 06/18/2019
-ms.openlocfilehash: 1070608db881426d6cb7ca78d0b19444bdba77ce
-ms.sourcegitcommit: 0d27456332031ab98ba2277117395ae5ffcbb79f
+ms.lastreviewed: 11/14/2019
+ms.openlocfilehash: 89ed4549dc44eb433f8061aba9bcff9405d80699
+ms.sourcegitcommit: f2a059f1be36f82adea8877f3f6e90d41ef3b161
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73047219"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74162974"
 ---
 # <a name="troubleshoot-kubernetes-deployment-to-azure-stack"></a>Solución de problemas de implementación de Kubernetes en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
 > [!Note]  
-> Use únicamente el elemento Kubernetes de Marketplace de Azure Stack para implementar clústeres como prueba de concepto. Para los clústeres de Kubernetes admitidos en Azure Stack, utilice el  [motor de AKS](azure-stack-kubernetes-aks-engine-overview.md).
+> Use únicamente el elemento Kubernetes de Marketplace de Azure Stack para implementar clústeres como prueba de concepto. Para los clústeres de Kubernetes admitidos en Azure Stack, utilice el [motor de AKS](azure-stack-kubernetes-aks-engine-overview.md).
 
 En este artículo se indica cómo solucionar los problemas de cualquier clúster de Kubernetes. Para empezar a solucionar problemas, examine los elementos necesarios para la implementación. Puede que deba recopilar los registros de implementación de Azure Stack o las máquinas virtuales Linux que hospedan Kubernetes. Para recuperar los registros de un punto de conexión administrativo, póngase en contacto con el administrador de Azure Stack.
 
@@ -85,17 +85,18 @@ En el siguiente diagrama se muestra el proceso general para implementar el clús
 
 Puede recopilar y examinar los registros de implementación de las máquinas virtuales que admiten el clúster de Kubernetes. Hable con el administrador de Azure Stack para comprobar la versión de Azure Stack que debe usar y obtener los registros de Azure Stack relacionados con su implementación.
 
-1. Revise el [estado de implementación](#review-deployment-status) y recupere los registros del nodo maestro en el clúster de Kubernetes.
-2. Asegúrese de que usa la versión más reciente de Azure Stack. Si no está seguro de qué versión usa, póngase en contacto con el administrador de Azure Stack.
-3.  Revise los archivos de creación de la máquina virtual. Puede que haya tenido los siguientes problemas:  
+1. Revise el código de error devuelto por la implementación de ARM en el panel **Implementaciones** en el grupo de recursos en el que implementó el clúster. Las descripciones de los códigos de error se encuentran en el artículo sobre [solución de problemas](https://github.com/msazurestackworkloads/azurestack-gallery/blob/master/kubernetes/docs/troubleshooting.md) del repositorio de GitHub del motor de AKS. Si no puede resolver el problema con la descripción del error, continúe con estos pasos.
+2. Revise el [estado de implementación](#review-deployment-status) y recupere los registros del nodo maestro en el clúster de Kubernetes.
+3. Compruebe que utiliza la versión más reciente de Azure Stack. Si no está seguro de qué versión usa, póngase en contacto con el administrador de Azure Stack.
+4. Revise los archivos de creación de la máquina virtual. Puede que haya tenido los siguientes problemas:  
     - Es posible que la clave pública no sea válida. Revise la clave que ha creado.  
     - Puede que la creación de máquinas virtuales haya desencadenado un error interno o un error de creación. Los errores pueden deberse a diversos factores, como las limitaciones de capacidad de la suscripción de Azure Stack.
     - Asegúrese de que el nombre de dominio completo (FQDN) de la máquina virtual comienza con un prefijo duplicado.
-4.  Si la máquina virtual es **correcta**, evalúe la instancia de DVM. Si la instancia de DVM tiene un mensaje de error:
+5.  Si la máquina virtual es **correcta**, evalúe la instancia de DVM. Si la instancia de DVM tiene un mensaje de error:
 
     - Es posible que la clave pública no sea válida. Revise la clave que ha creado.  
     - Debe ponerse en contacto con el administrador de Azure Stack para recuperar los registros de Azure Stack mediante los puntos de conexión con privilegios. Para más información, consulte [Registros de diagnóstico de Azure Stack](../operator/azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep-to-collect-diagnostic-logs).
-5. Si tiene preguntas acerca de la implementación, puede publicarlas o ver si alguien ya ha respondido a la pregunta en el [foro de Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack). 
+6. Si tiene preguntas acerca de la implementación, puede publicarlas o ver si alguien ya ha respondido a la pregunta en el [foro de Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack). 
 
 ## <a name="review-deployment-status"></a>Revisar el estado de implementación
 

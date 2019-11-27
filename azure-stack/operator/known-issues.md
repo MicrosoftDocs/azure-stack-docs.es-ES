@@ -16,12 +16,12 @@ ms.date: 09/17/2019
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 09/13/2019
-ms.openlocfilehash: ba5b8358dced378f499c30f9b8d409497319fc86
-ms.sourcegitcommit: 2c37ac8e88de19430080128bac1b70e33557d354
+ms.openlocfilehash: 367a2cb5a07c0db2b272b8ffc951f51e5ed9cc0e
+ms.sourcegitcommit: bb2bbfad8061f7677954f6ce5a435b4e6f9299b6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71164251"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74100037"
 ---
 # <a name="azure-stack-known-issues"></a>Problemas conocidos de Azure Stack
 
@@ -94,6 +94,11 @@ Para tener acceso a los problemas conocidos de una versión diferente, use la li
 
 ## <a name="networking"></a>Redes
 
+### <a name="network-security-groups"></a>Grupos de seguridad de red
+- Aplicable a: este problema se aplica a todas las versiones admitidas. 
+- Causa: No se puede crear una regla **DenyAllOutbound** explícita en un grupo de seguridad de red, ya que esto impedirá todas las comunicaciones internas con la infraestructura necesarias para que se complete la implementación de la máquina virtual.
+- Repetición: Común
+
 ### <a name="service-endpoints"></a>Puntos de conexión de servicio
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
@@ -105,6 +110,10 @@ Para tener acceso a los problemas conocidos de una versión diferente, use la li
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: No se puede agregar una nueva interfaz de red a una VM cuyo estado es **En ejecución**.
 - Corrección: Detenga la máquina virtual antes de agregar o quitar una interfaz de red.
+- Repetición: Común
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: No se puede cambiar la NIC principal de una máquina virtual. La eliminación o desasociación de la NIC principal generará problemas al iniciar la máquina virtual.
 - Repetición: Común
 
 ### <a name="virtual-network-gateway"></a>Puerta de enlace de red virtual
