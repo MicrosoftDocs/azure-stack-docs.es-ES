@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na (Kubernetes)
 ms.devlang: nav
 ms.topic: article
-ms.date: 10/09/2019
+ms.date: 11/21/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 10/09/2019
-ms.openlocfilehash: 3979dfdf6a229f1d81b6c5cc017d4d3f75a62e1a
-ms.sourcegitcommit: 5ef433aa6b75cdfb557fab0ef9308ff2118e66e5
+ms.lastreviewed: 11/21/2019
+ms.openlocfilehash: 3095ede91ce8ac98f1571307c61b28e80aa90fba
+ms.sourcegitcommit: 0b783e262ac87ae67929dbd4c366b19bf36740f0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73595350"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74310272"
 ---
 # <a name="install-the-aks-engine-on-linux-in-azure-stack"></a>Instalación del motor de AKS en Linux para Azure Stack
 

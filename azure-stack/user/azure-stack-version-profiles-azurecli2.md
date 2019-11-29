@@ -10,16 +10,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/02/2019
+ms.date: 11/22/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: a0218652e2dace72356a32fe99ac5f6ac450cc94
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.lastreviewed: 11/22/2019
+ms.openlocfilehash: a5a6cf3ef5c2c03992647c207422eb266f171ac4
+ms.sourcegitcommit: 284f5316677c9a7f4c300177d0e2a905df8cb478
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71824792"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74465493"
 ---
 # <a name="manage-and-deploy-resources-to-azure-stack-with-azure-cli"></a>Administración e implementación de recursos en Azure Stack con la CLI de Azure
 
@@ -163,13 +163,6 @@ Para confiar en el certificado raíz de CA de Azure Stack, debe anexarlo al alm
 
 1. Registre el entorno de Azure Stack. Para ello, ejecute el comando `az cloud register`.
 
-    En algunos escenarios, la conectividad directa a internet saliente se enruta mediante un servidor proxy o firewall, que exige la intercepción de SSL. En estos casos, el comando `az cloud register` puede producir un error del tipo "Unable to get endpoints from the cloud" (No se pueden obtener los puntos de conexión de la nube). Para solucionar este error, puede establecer las siguientes variables de entorno:
-
-    ```shell  
-    set AZURE_CLI_DISABLE_CONNECTION_VERIFICATION=1 
-    set ADAL_PYTHON_SSL_NO_VERIFY=1
-    ```
-
 2. Registre su entorno. Utilice los siguientes parámetros cuando ejecute `az cloud register`:
 
     | Valor | Ejemplo | DESCRIPCIÓN |
@@ -282,13 +275,6 @@ Si usa el ASDK, deberá confiar en el certificado raíz de CA en la máquina rem
 ### <a name="connect-to-azure-stack"></a>Conexión a Azure Stack
 
 1. Registre el entorno de Azure Stack. Para ello, ejecute el comando `az cloud register`.
-
-    En algunos escenarios, la conectividad directa a internet saliente se enruta mediante un servidor proxy o firewall, que exige la intercepción de SSL. En estos casos, el comando `az cloud register` puede producir un error del tipo "Unable to get endpoints from the cloud" (No se pueden obtener los puntos de conexión de la nube). Para solucionar este error, puede establecer las siguientes variables de entorno:
-
-    ```shell  
-    set AZURE_CLI_DISABLE_CONNECTION_VERIFICATION=1 
-    set ADAL_PYTHON_SSL_NO_VERIFY=1
-    ```
 
 2. Registre su entorno. Utilice los siguientes parámetros cuando ejecute `az cloud register`:
 

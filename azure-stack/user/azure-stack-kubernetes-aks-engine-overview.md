@@ -11,26 +11,22 @@ ms.workload: na
 pms.tgt_pltfrm: na (Kubernetes)
 ms.devlang: nav
 ms.topic: article
-ms.date: 09/14/2019
+ms.date: 11/21/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 09/14/2019
-ms.openlocfilehash: 22779072b2dfed018a2ff6d5eac5bf2c294ccd31
-ms.sourcegitcommit: 5ef433aa6b75cdfb557fab0ef9308ff2118e66e5
+ms.lastreviewed: 11/21/2019
+ms.openlocfilehash: cb531570191216ea13a0b1a7a6d36738c0765cd3
+ms.sourcegitcommit: 0b783e262ac87ae67929dbd4c366b19bf36740f0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73595126"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74310252"
 ---
 # <a name="what-is-the-aks-engine-on-azure-stack"></a>Descripción del motor de AKS en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
 Puede usar la herramienta de línea de comandos del motor de AKS para implementar y administrar un clúster de Kubernetes en Azure y Azure Stack. Use el motor de AKS para crear, actualizar y escalar clústeres nativos de Azure Resource Manager. Puede usar el motor para implementar un clúster en entornos conectados y desconectados. En este artículo se proporciona información general sobre el motor de AKS, escenarios admitidos para usar el motor con Azure Stack y una introducción a las operaciones como la implementación, la actualización y la escala.
-
-> [!IMPORTANT]
-> El motor de AKS actualmente está en versión preliminar pública.
-> Esta versión preliminar se ofrece sin Acuerdo de Nivel de Servicio y no se recomienda para cargas de trabajo de producción. Es posible que algunas características no sean compatibles o que tengan sus funcionalidades limitadas. Para más información, consulte [Términos de uso complementarios de las Versiones Preliminares de Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="overview-of-the-aks-engine"></a>Introducción al motor de AKS
 

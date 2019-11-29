@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: article
-ms.date: 09/18/2019
+ms.date: 09/19/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
-ms.lastreviewed: 09/18/2019
-ms.openlocfilehash: da07fc0fe67c00f017a547a861d8ea4eb856864b
-ms.sourcegitcommit: acebda8a42ac8ecdeba490fc1738e9041479dab0
+ms.lastreviewed: 09/19/2019
+ms.openlocfilehash: 988d2e75dfecd499293576bff3d9722e7ff2c96f
+ms.sourcegitcommit: cefba8d6a93efaedff303d3c605b02bd28996c5d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72814030"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74298864"
 ---
 # <a name="connect-to-azure-stack-with-powershell"></a>Conexión a Azure Stack con PowerShell
 

@@ -15,12 +15,12 @@ ms.date: 09/25/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 09/17/2019
-ms.openlocfilehash: 3b728bb08d41c234ccffb94005be740bea0766b6
-ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
+ms.openlocfilehash: a146a99476912e97c72e7a37ffc5224158feaffc
+ms.sourcegitcommit: 0b783e262ac87ae67929dbd4c366b19bf36740f0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72019288"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74310147"
 ---
 # <a name="add-tenant-for-usage-and-billing-to-azure-stack"></a>Adición de inquilinos en Azure Stack para uso y facturación
 
@@ -72,7 +72,7 @@ Actualice el registro con la suscripción del nuevo cliente. Azure informa acerc
 3. En la sesión de PowerShell, ejecute:
 
    ```powershell
-   New-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01 -Properties <PSObject>
+   New-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01
    ```
 
 ### <a name="new-azurermresource-powershell-parameters"></a>Parámetros del comando de PowerShell New-AzureRmResource
@@ -84,8 +84,7 @@ En la siguiente sección se describen los parámetros para el cmdlet **New-Azure
 |registrationSubscriptionID | La suscripción de Azure que se ha usado para el registro inicial de Azure Stack.|
 | customerSubscriptionID | La suscripción de Azure (no de Azure Stack) que pertenece al cliente que se va a registrar. Debe crearse en la oferta de CSP. En la práctica, esto significa mediante el centro de partners. Si un cliente tiene más de un inquilino de Azure Active Directory, esta suscripción debe crearse en el inquilino que se usará para iniciar sesión en Azure Stack. El id. de suscripción de clientes debe usar letras minúsculas. |
 | resourceGroup | El grupo de recursos de Azure en el que se almacena el registro. |
-| registrationName | El nombre del registro de Azure Stack. Es un objeto almacenado en Azure. |
-| properties (Propiedades) | Especifica las propiedades del recurso. Use este parámetro para especificar los valores de las propiedades que son específicos del tipo de recurso.
+| registrationName | El nombre del registro de Azure Stack. Es un objeto almacenado en Azure. 
 
 > [!NOTE]  
 > Los inquilinos se deben registrar en cada instancia de Azure Stack que utilicen. Si tiene dos implementaciones de Azure Stack y un inquilino utiliza ambas, debe actualizar los registros iniciales de cada implementación con la suscripción del inquilino.

@@ -346,10 +346,10 @@
               href: azure-stack-mysql-resource-provider-remove.md
             - name: Notas de la versión del proveedor de recursos de MySQL
               items:
-                - name: Notas de la versión del proveedor de recursos de MySQL 1.1.30.0
-                  href: azure-stack-mysql-resource-provider-11300.md
                 - name: Notas de la versión del proveedor de recursos de MySQL 1.1.33.0
                   href: azure-stack-mysql-resource-provider-11330.md
+                - name: Notas de la versión del proveedor de recursos de MySQL 1.1.30.0
+                  href: azure-stack-mysql-resource-provider-11300.md
         - name: SQL en Azure Stack
           items:
             - name: Información general
@@ -370,10 +370,10 @@
               href: azure-stack-sql-resource-provider-remove.md
             - name: Notas de la versión del proveedor de recursos de SQL
               items:
-                - name: Notas de la versión del proveedor de recursos SQL 1.1.30.0
-                  href: azure-stack-sql-resource-provider-11300.md
                 - name: Notas de la versión del proveedor de recursos SQL 1.1.33.0
                   href: azure-stack-sql-resource-provider-11330.md
+                - name: Notas de la versión del proveedor de recursos SQL 1.1.30.0
+                  href: azure-stack-sql-resource-provider-11300.md
     - name: Uso y facturación
       href: azure-stack-billing-and-chargeback.md
       items:

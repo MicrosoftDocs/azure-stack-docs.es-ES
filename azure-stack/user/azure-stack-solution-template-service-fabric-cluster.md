@@ -14,13 +14,13 @@ ms.topic: tutorial
 ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: shnatara
-ms.lastreviewed: 09/17/2019
-ms.openlocfilehash: 8a323bf5d767db288cd2d876f38119b61f577afa
-ms.sourcegitcommit: a7207f4a4c40d4917b63e729fd6872b3dba72968
+ms.lastreviewed: 09/25/2019
+ms.openlocfilehash: 1b6975490a876c0ff0b51fdf9f21ba010e14622d
+ms.sourcegitcommit: cefba8d6a93efaedff303d3c605b02bd28996c5d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71909669"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74299098"
 ---
 # <a name="deploy-a-service-fabric-cluster-in-azure-stack"></a>Implementación de un clúster de Service Fabric en Azure Stack
 
@@ -35,7 +35,7 @@ El clúster de Service Fabric en Azure Stack no utiliza el proveedor de recursos
 Se necesitan los siguientes requisitos para implementar el clúster de Service Fabric:
 1. **Certificado de clúster**  
    Este es el certificado de servidor X.509 que va a agregar a KeyVault al implementar Service Fabric. 
-   - El **CN** de este certificado debe coincidir con el nombre de dominio completo (FQDN) del clúster de Service Fabric que cree. Para más información sobre FQDN, consulte [Certificados necesarios para una implementación de producción en Azure Stack de Azure App Service](../operator/azure-stack-app-service-before-you-get-started.md#certificates-required-for-azure-stack-production-deployment-of-azure-app-service).
+   - El **CN** de este certificado debe coincidir con el nombre de dominio completo (FQDN) del clúster de Service Fabric que cree. 
    - El formato del certificado debe ser PFX, ya que se requieren las claves públicas y privadas. 
      Consulte los [requisitos](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-security) para crear este certificado del lado servidor.
 

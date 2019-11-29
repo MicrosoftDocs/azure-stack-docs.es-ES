@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na (Kubernetes)
 ms.devlang: nav
 ms.topic: article
-ms.date: 10/16/2019
+ms.date: 11/21/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 10/16/2019
-ms.openlocfilehash: 39eebfbc4d60d4cd68bb33d6efcf35cc12ffe313
-ms.sourcegitcommit: 5ef433aa6b75cdfb557fab0ef9308ff2118e66e5
+ms.lastreviewed: 11/21/2019
+ms.openlocfilehash: c7db293cb1a24079f66dcf0b047cf66218857003
+ms.sourcegitcommit: 0b783e262ac87ae67929dbd4c366b19bf36740f0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73594889"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74310141"
 ---
 # <a name="upgrade-a-kubernetes-cluster-on-azure-stack"></a>Actualización de un clúster de Kubernetes en Azure Stack
 

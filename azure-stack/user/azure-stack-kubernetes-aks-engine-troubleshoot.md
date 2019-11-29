@@ -11,26 +11,22 @@ ms.workload: na
 pms.tgt_pltfrm: na (Kubernetes)
 ms.devlang: nav
 ms.topic: article
-ms.date: 11/14/2019
+ms.date: 11/21/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 11/14/2019
-ms.openlocfilehash: a847f04e3766e943aba78b567b0f21a99d0da860
-ms.sourcegitcommit: f2a059f1be36f82adea8877f3f6e90d41ef3b161
+ms.lastreviewed: 11/21/2019
+ms.openlocfilehash: aed53295b7c1748abd8ab3bd2862043d7d69e4b8
+ms.sourcegitcommit: 0b783e262ac87ae67929dbd4c366b19bf36740f0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74162943"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74310337"
 ---
 # <a name="troubleshoot-the-aks-engine-on-azure-stack"></a>Solución de problemas del motor de AKS en Azure Stack
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
 Cuando se implementa o se trabaja con el motor de AKS en Azure Stack pueden surgir problemas. En este artículo se examinan los pasos necesarios para solucionar los problemas que puedan aparecer al implementar el motor de AKS, recopilar información acerca del motor de AKS, recopilar registros de Kubernetes, examinar códigos de error de extensiones de scripts personalizados e instrucciones para abrir un problema de GitHub para el motor de AKS.
-
-> [!IMPORTANT]
-> El motor de AKS actualmente está en versión preliminar pública.
-> Esta versión preliminar se ofrece sin Acuerdo de Nivel de Servicio y no se recomienda para cargas de trabajo de producción. Es posible que algunas características no sean compatibles o que tengan sus funcionalidades limitadas. Para más información, consulte [Términos de uso complementarios de las Versiones Preliminares de Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="troubleshoot-the-aks-engine-install"></a>Solución de problemas de la instalación del motor de AKS
 

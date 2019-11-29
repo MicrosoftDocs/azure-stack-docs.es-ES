@@ -16,12 +16,12 @@ ms.date: 07/16/2019
 ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 06/13/2019
-ms.openlocfilehash: 17136cbe86029f0ea776d8dc8860ff96c82c756e
-ms.sourcegitcommit: ae79b8bea670ea854ed00e9998d45f6b47fc8347
+ms.openlocfilehash: dac0360bba7c24c85d1f30efbfb7fad30eb97028
+ms.sourcegitcommit: cefba8d6a93efaedff303d3c605b02bd28996c5d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71142588"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74299158"
 ---
 # <a name="azure-stack-compute"></a>Proceso de Azure Stack
 
@@ -111,7 +111,7 @@ El valor V, la máquina virtual más grande de la unidad de escalado, se basa di
 
 **P.** : ¿En qué estado tienen que estar las máquinas virtuales de los inquilinos para consumir memoria?
 
-v: Además de ejecutar VM, las VM que llegan al tejido también consumen memoria. Esto significa que las máquinas virtuales que se encuentran en estado "Creando", "Con error" o las que se apaguen desde el invitado, en lugar de detenerse la desasignación desde el Portal o PowerShell o la cli, consumirán memoria.
+**R.** : Además de ejecutar VM, las VM que llegan al tejido también consumen memoria. Esto significa que las máquinas virtuales que se encuentran en estado "Creando", "Con error" o las que se apaguen desde el invitado, en lugar de detenerse la desasignación desde el Portal o PowerShell o la cli, consumirán memoria.
 
 **P.** : Tengo una instancia de Azure Stack de cuatro hosts. Mi inquilino tiene tres máquinas virtuales que consumen 56 GB de RAM (D5_v2) cada una. Una de las máquinas virtuales cambia de tamaño a 112 GB de RAM (D14_v2) y los informes de memoria disponibles en el panel dieron como resultado un aumento de 168 GB de uso en la hoja de capacidad. El cambio de tamaño posterior de las otras dos máquinas virtuales de D5_v2 a D14_v2 ha dado como resultado un aumento de solo 56 GB de RAM cada una. ¿Por qué ocurre esto?
 

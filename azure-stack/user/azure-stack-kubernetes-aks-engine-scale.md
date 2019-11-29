@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na (Kubernetes)
 ms.devlang: nav
 ms.topic: article
-ms.date: 09/25/2019
+ms.date: 11/21/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 09/25/2019
-ms.openlocfilehash: 39c651649aea60ab12aae9daf35b0d07615bf697
-ms.sourcegitcommit: 5ef433aa6b75cdfb557fab0ef9308ff2118e66e5
+ms.lastreviewed: 11/21/2019
+ms.openlocfilehash: 078cacad88a0a7d055baef799c5785d5a06ce922
+ms.sourcegitcommit: 0b783e262ac87ae67929dbd4c366b19bf36740f0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73595295"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74310094"
 ---
 # <a name="scale-a-kubernetes-cluster-on-azure-stack"></a>Escalado de un clúster de Kubernetes en Azure Stack
 
