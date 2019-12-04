@@ -16,12 +16,12 @@ ms.date: 08/14/2019
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 06/06/2019
-ms.openlocfilehash: 25a32b1d73818e988a8bdf7fb565d06b06d53d68
-ms.sourcegitcommit: bb2bbfad8061f7677954f6ce5a435b4e6f9299b6
+ms.openlocfilehash: fc3eecb8f4e06ce02737e513c48d946f2a667c21
+ms.sourcegitcommit: cefba8d6a93efaedff303d3c605b02bd28996c5d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74100021"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74298767"
 ---
 # <a name="guest-operating-systems-supported-on-azure-stack"></a>Sistemas operativos invitados compatibles con Azure Stack
 
@@ -54,9 +54,9 @@ Las ediciones de Datacenter están disponibles en Marketplace para su descarga; 
 Las distribuciones Linux indicadas como disponibles en Marketplace incluyen el agente Linux de Microsoft Azure (WALA) necesario. Si trae su propia imagen para Azure Stack, siga las instrucciones de [Agregar imágenes de Linux a Azure Stack](azure-stack-linux.md).
 
 > [!NOTE]
-> Las imágenes personalizadas se deben compilar con la última versión pública de WALA (en la compilación de Azure Stack 1903 o superior, o con la revisión 1901/1902) o con la versión 2.2.20. Es posible que las versiones anteriores a 2.2.20 y las comprendidas entre 2.2.20 y 2.2.35 (no inclusive) no funcionen correctamente en Azure Stack.
+> Las imágenes personalizadas se deben compilar con la última versión pública de WALA (en la compilación de Azure Stack 1903 o superior, o con la revisión 1901/1902) o con la versión 2.2.20. Es posible que las versiones anteriores a 2.2.20 y las comprendidas entre 2.2.21 y 2.2.34 (ambas incluidas) no funcionen correctamente en Azure Stack. En la versión 1910 de Azure Stack y posteriores, todas las versiones del agente WALA de Azure funcionarán con Azure Stack.
 >
-> No se admite [cloud-init](https://cloud-init.io/) en Azure Stack en este momento.
+> [Cloud-init](https://cloud-init.io/) es compatible con la versión 1910 de Azure Stack y posteriores en este momento.
 
 | Distribución | DESCRIPCIÓN | Publicador | Marketplace |
 | --- | --- | --- | --- |

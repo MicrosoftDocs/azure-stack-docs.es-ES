@@ -1,6 +1,7 @@
 ---
-title: Corrección de problemas de certificados en Azure Stack | Microsoft Docs
-description: Use Azure Stack Readiness Checker para revisar y corregir problemas de certificados.
+title: Solución de problemas comunes con los certificados PKI
+titleSuffix: Azure Stack
+description: Corrija problemas comunes con los certificados PKI de Azure Stack mediante Azure Stack Readiness Checker.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -16,91 +17,91 @@ ms.date: 10/03/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 11/19/2018
-ms.openlocfilehash: 6e8adbc0d84c7816a081e751473764aab79cfcf2
-ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
+ms.openlocfilehash: 3cff638fa242e4d70230062e7d54eef0c9c66802
+ms.sourcegitcommit: 284f5316677c9a7f4c300177d0e2a905df8cb478
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71961910"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74465398"
 ---
-# <a name="remediate-common-issues-for-azure-stack-pki-certificates"></a>Corrección de problemas comunes con certificados de PKI en Azure Stack
+# <a name="fix-common-issues-with-azure-stack-pki-certificates"></a>Solución de problemas comunes con los certificados PKI de Azure Stack
 
-La información de este artículo puede ayudarle a reconocer y resolver problemas comunes con los certificados PKI de Azure Stack. Puede detectar problemas cuando usa la herramienta Azure Stack Readiness Checker para [validar certificados de PKI en Azure Stack](azure-stack-validate-pki-certs.md). La herramienta realiza las comprobaciones necesarias para cumplir los requisitos de una implementación de Azure Stack y una rotación de secretos de Azure Stack, y registra los resultados en un archivo [report.json](azure-stack-validation-report.md).  
+La información de este artículo le ayudará a reconocer y resolver problemas comunes con los certificados PKI de Azure Stack. Puede detectar problemas cuando usa la herramienta Azure Stack Readiness Checker para [validar certificados de PKI en Azure Stack](azure-stack-validate-pki-certs.md). La herramienta comprueba si los certificados cumplen los requisitos de PKI de una implementación de Azure Stack y una rotación de secretos de Azure Stack, y después registra los resultados en un [archivo report.json](azure-stack-validation-report.md).  
 
 ## <a name="pfx-encryption"></a>Cifrado de PFX
 
-**Error**: el cifrado PFX no es TripleDES-SHA1.
+**Problema**: el cifrado PFX no es TripleDES-SHA1.
 
-**Corrección**: exportar archivos PFX con cifrado **TripleDES SHA1**. Esta es la opción predeterminada para todos los clientes Windows 10 al exportar desde un complemento de certificado o usar `Export-PFXCertificate`.
+**Corrección**: exporte los archivos PFX con cifrado **TripleDES-SHA1**. Este es el cifrado predeterminado para todos los clientes Windows 10 cuando se exporta desde un complemento de certificado o se usa `Export-PFXCertificate`.
 
 ## <a name="read-pfx"></a>Lectura de PFX
 
 **Advertencia**: la contraseña sólo protege la información privada del certificado.  
 
-**Corrección**: exporte archivos PFX con la configuración opcional de **Habilitar privacidad de certificado**.  
+**Corrección**: exporte los archivos PFX con la configuración opcional de **Habilitar privacidad de certificado**.  
 
-**Error**archivo PFX no válido.  
+**Problema**: el archivo PFX no es válido.  
 
 **Corrección**: vuelva a exportar el certificado mediante los pasos descritos en [Preparación de certificados PKI de Azure Stack para la implementación](azure-stack-prepare-pki-certs.md).
 
 ## <a name="signature-algorithm"></a>Algoritmo de firma
 
-**Error**: el algoritmo de firma es SHA1.
+**Problema**: el algoritmo de firma es SHA1.
 
-**Corrección**: siga los pasos de generación de solicitudes de firma de certificados de Azure Stack para volver a generar la solicitud de firma de certificados (CSR) con el algoritmo de firma SHA256. Luego, reenvíe la CSR a la entidad de certificación para que vuelva a emitir el certificado.
+**Corrección**: siga los pasos de Generación de solicitudes de firma de certificado para Azure Stack para volver a generar la solicitud de firma de certificado (CSR) con el algoritmo de firma SHA256. Luego, reenvíe la CSR a la entidad de certificación para que vuelva a emitir el certificado.
 
 ## <a name="private-key"></a>Clave privada
 
-**Error**: la clave privada falta o no contiene el atributo de máquina local.  
+**Problema**: falta la clave privada o no contiene el atributo de máquina local.  
 
-**Corrección**: desde el equipo que generó el CSR, vuelva a exportar el certificado mediante los pasos descritos en [Preparación de certificados PKI de Azure Stack para la implementación](azure-stack-prepare-pki-certs.md#prepare-certificates-for-deployment). Estos pasos incluyen la exportación desde el almacén de certificados de la máquina local.
+**Corrección**: desde el equipo que generó la solicitud de firma de certificado, vuelva a exportar el certificado mediante los pasos descritos en [Preparación de certificados PKI de Azure Stack para la implementación](azure-stack-prepare-pki-certs.md#prepare-certificates-for-deployment). Estos pasos incluyen la exportación desde el almacén de certificados de la máquina local.
 
 ## <a name="certificate-chain"></a>Cadena de certificados
 
-**Error**: la cadena de certificados no está completa.  
+**Problema**: la cadena de certificados no está completa.  
 
-**Corrección**: los -certificados deben contener una cadena de certificados completa. Vuelva a exportar el certificado, para lo que seguirá los pasos descritos en [Preparación de certificados PKI de Azure Stack para la implementación](azure-stack-prepare-pki-certs.md#prepare-certificates-for-deployment) y seleccione la opción **Include all certificates in the certification path if possible** [Incluir todos los certificados en la ruta de certificación (si es posible)].
+**Corrección**: los certificados deben contener una cadena de certificados completa. Vuelva a exportar el certificado, para lo que seguirá los pasos descritos en [Preparación de certificados PKI de Azure Stack para la implementación](azure-stack-prepare-pki-certs.md#prepare-certificates-for-deployment) y seleccione la opción **Include all certificates in the certification path if possible** [Incluir todos los certificados en la ruta de certificación (si es posible)].
 
 ## <a name="dns-names"></a>Nombres DNS
 
-**Error**: el objeto **DNSNameList** del certificado no contiene el nombre del punto de conexión de servicio de Azure Stack ni una coincidencia válida de caracteres comodín. Las coincidencias de caracteres comodín solo son válidas para el espacio de nombres del extremo izquierdo del nombre DNS. Por ejemplo, `*.region.domain.com` es válida para `portal.region.domain.com`, pero no para `*.table.region.domain.com`.
+**Problema**: el elemento **DNSNameList** del certificado no contiene el nombre del punto de conexión de servicio de Azure Stack ni una coincidencia válida de caracteres comodín. Las coincidencias de caracteres comodín solo son válidas para el espacio de nombres del extremo izquierdo del nombre DNS. Por ejemplo, `*.region.domain.com` es válida para `portal.region.domain.com`, pero no para `*.table.region.domain.com`.
 
-**Corrección**: siga los pasos de Generación de solicitudes de firma de certificados de Azure Stack para volver a generar la CSR con los nombres DNS correctos para admitir puntos de conexión de Azure Stack. Vuelva a enviar la CSR a una entidad de certificación y siga los pasos de [Preparación de certificados PKI de Azure Stack para la implementación](azure-stack-prepare-pki-certs.md#prepare-certificates-for-deployment) para exportar el certificado de la máquina que generó la CSR.  
+**Corrección**: siga los pasos de Generación de solicitudes de firma de certificado para Azure Stack para volver a generar la solicitud de firma de certificado con los nombres DNS correctos que admitan los puntos de conexión de Azure Stack. Vuelva a enviar la solicitud de firma de certificado a una entidad de certificación. Después, siga los pasos de [Preparación de certificados PKI de Azure Stack para la implementación](azure-stack-prepare-pki-certs.md#prepare-certificates-for-deployment) para exportar el certificado desde la máquina que generó la solicitud.  
 
 ## <a name="key-usage"></a>Uso de las claves
 
-**Error**: falta el uso de claves en la firma digital o el cifrado de clave, o falta el uso mejorado de clave en la autenticación de servidor o la autenticación de cliente.  
+**Problema**: en el uso de las claves falta la firma digital o el cifrado de clave, o en el uso mejorado de las claves falta la autenticación de servidor o la autenticación de cliente.  
 
-**Corrección**: siga los pasos de [Generación de solicitudes de firma de certificados de Azure Stack](azure-stack-get-pki-certs.md) para volver a generar la CSR con los atributos de uso de clave correctos. Vuelva a enviar la CSR a la entidad de certificación y confirme que ninguna plantilla de certificado sobrescribe el uso de clave en la solicitud.
+**Corrección**: siga los pasos de [Generación de solicitudes de firma de certificado para Azure Stack](azure-stack-get-pki-certs.md) para volver a generar la solicitud de firma de certificado con los atributos de uso de clave correctos. Vuelva a enviar la solicitud de firma de certificado a la entidad de certificación y confirme que ninguna plantilla de certificado sobrescribe el uso de clave en la solicitud.
 
 ## <a name="key-size"></a>Tamaño de clave
 
-**Error**: el tamaño de clave es inferior a 2048.
+**Problema**: el tamaño de la clave es inferior a 2048.
 
-**Corrección**: siga los pasos de [Generación de solicitudes de firma de certificados de Azure Stack](azure-stack-get-pki-certs.md) para volver a generar la CSR con la longitud de clave correcta (2048) y, después,. reenvíe la CSR a la autoridad de certificación.
+**Corrección**: siga los pasos de [Generación de solicitudes de firma de certificado para Azure Stack](azure-stack-get-pki-certs.md) para volver a generar la solicitud de firma de certificado con la longitud de clave correcta (2048) y, después, reenvíe la solicitud a la autoridad de certificación.
 
 ## <a name="chain-order"></a>Orden de la cadena
 
-**Error**: el orden de la cadena de certificados es incorrecto.  
+**Problema**: el orden de la cadena de certificados es incorrecto.  
 
-**Corrección**: vuelva a exportar el certificado mediante los pasos descritos en [Preparación de certificados PKI de Azure Stack para la implementación](azure-stack-prepare-pki-certs.md#prepare-certificates-for-deployment) y seleccione la opción **Include all certificates in the certification path if possible** [Incluir todos los certificados en la ruta de certificación (si es posible)]. Asegúrese de que solo se selecciona el certificado de hoja para la exportación.
+**Corrección**: vuelva a exportar el certificado siguiendo los pasos descritos en [Preparación de certificados PKI de Azure Stack para la implementación](azure-stack-prepare-pki-certs.md#prepare-certificates-for-deployment) y seleccione la opción **Incluir todos los certificados en la ruta de certificación (si es posible)** . Asegúrese de que solo se selecciona el certificado de hoja para la exportación.
 
 ## <a name="other-certificates"></a>Otros certificados
 
-**Error**: el paquete PFX contiene certificados que no son el certificado de hoja ni parte de la cadena de certificados.  
+**Problema**: el paquete PFX contiene certificados que no son el certificado de hoja ni parte de la cadena de certificados.  
 
-**Corrección**: vuelva a exportar el certificado mediante los pasos descritos en [Preparación de certificados PKI de Azure Stack para la implementación](azure-stack-prepare-pki-certs.md#prepare-certificates-for-deployment) y seleccione la opción **Include all certificates in the certification path if possible** [Incluir todos los certificados en la ruta de certificación (si es posible)]. Asegúrese de que solo se selecciona el certificado de hoja para la exportación.
+**Corrección**: vuelva a exportar el certificado siguiendo los pasos descritos en [Preparación de certificados PKI de Azure Stack para la implementación](azure-stack-prepare-pki-certs.md#prepare-certificates-for-deployment) y seleccione la opción **Incluir todos los certificados en la ruta de certificación (si es posible)** . Asegúrese de que solo se selecciona el certificado de hoja para la exportación.
 
 ## <a name="fix-common-packaging-issues"></a>Solución de problemas comunes de empaquetado
 
 La herramienta **AzsReadinessChecker** contiene un cmdlet asistente denominado **Repair-AzsPfxCertificate** que puede importar y luego exportar un archivo PFX para solucionar problemas comunes de empaquetado, por ejemplo:
 
-- El **cifrado PFX**  no es TripleDES-SHA1.
+- El **cifrado PFX** no es TripleDES-SHA1.
 - Falta la **clave privada** en el atributo de la máquina Local.
 - La **cadena de certificados** es incorrecta o está incompleta. La máquina local debe contener la cadena de certificados si no lo hace el paquete PFX.
 - **Otros certificados**
 
-**Repair-AzsPfxCertificate** no sirve de ayuda si hay que generar una nueva CSR y volver a emitir un certificado.
+**Repair-AzsPfxCertificate** no sirve de ayuda si hay que generar una nueva solicitud de firma de certificado y volver a emitir un certificado.
 
 ### <a name="prerequisites"></a>Requisitos previos
 

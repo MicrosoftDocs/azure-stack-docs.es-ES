@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/07/2019
+ms.date: 10/23/2019
 ms.author: mabrigg
 ms.reviewer: wamota
 ms.lastreviewed: 06/04/2019
-ms.openlocfilehash: 4894fb7184944095d968d08e2d668912a78119d4
-ms.sourcegitcommit: ef7efcde76d1d7875ca1c882afebfd6a27f1c686
+ms.openlocfilehash: 76bc9b83bf97c7817ff5c9cbf8bc0a3275a04d72
+ms.sourcegitcommit: cefba8d6a93efaedff303d3c605b02bd28996c5d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72888048"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74298854"
 ---
 # <a name="network-integration-planning-for-azure-stack"></a>Planeamiento de la capacidad de red de Azure Stack
 
@@ -48,9 +48,12 @@ En la siguiente tabla se muestran las redes lógicas y los intervalos de subred 
 | VIP pública | Azure Stack usa un total de 31 direcciones de esta red. Ocho direcciones IP públicas se utilizan para un pequeño conjunto de servicios de Azure Stack, mientras que el resto lo usan las VM del inquilino. Si tiene previsto usar App Service y los proveedores de recursos de SQL, se usan 7 direcciones más. Las 15 direcciones IP restantes están reservadas a los futuros servicios de Azure. | /26 (62 hosts) - /22 (1022 hosts)<br><br>Recomendado = /24 (254 hosts) | 
 | Infraestructura del conmutador | Direcciones IP de punto a punto con fines de enrutamiento, interfaces de administración de conmutador dedicado y direcciones de bucle invertido asignadas al conmutador. | /26 | 
 | Infraestructura | Se utiliza para que los componentes internos de Azure Stack se comuniquen. | /24 |
-| Privada | Se utiliza para la red de almacenamiento y las VIP privadas. | /24 | 
+| Privada | Se usa para la red de almacenamiento, direcciones IP virtuales privadas, contenedores de infraestructura y otras funciones internas. A partir de 1910, el tamaño de esta subred cambia a /20. Para más información, consulte la sección [Red privada](#private-network) de este artículo. | /20 | 
 | BMC | Se utiliza para comunicarse con los BMC en los hosts físicos. | /26 | 
 | | | |
+
+> [!NOTE]
+> Cuando el sistema se actualice a la versión 1910, una alerta en el portal recordará al operador que ejecute el nuevo cmdlet PEP **Set-AzsPrivateNetwork** para agregar un nuevo espacio de direcciones IP privadas /20. Consulte las [notas de la versión 1910](release-notes.md) para obtener instrucciones sobre cómo ejecutar el cmdlet. Para más información e instrucciones sobre cómo seleccionar el espacio de direcciones IP privadas /20, consulte la sección [Red privada](#private-network) de este artículo.
 
 ## <a name="network-infrastructure"></a>Infraestructura de red
 
@@ -66,13 +69,21 @@ El HLH también hospeda la máquina virtual de implementación (DVM). La DVM se 
 
 ### <a name="private-network"></a>Red privada
 
-Esta red /24 (254 direcciones IP de host) es privada de la región de Azure Stack (no se expande más allá de los dispositivos de conmutación de borde de la región de Azure Stack) y se divide en dos subredes:
+Esta red /20 (4096 direcciones IP) es privada para la región de Azure Stack (no se enruta más allá de los dispositivos de conmutación de borde del sistema de Azure Stack) y se divide en varias subredes. Estos son algunos ejemplos:
 
-- **Red de almacenamiento**. Una red /25 (126 direcciones IP de host) que se utiliza para admitir el uso del tráfico de almacenamiento de espacios directo y el bloque de mensajes del servidor (SMB) y la migración en vivo de VM.
+- **Red de almacenamiento**. Una red /25 (128 direcciones IP) que se utiliza para admitir el uso del tráfico de almacenamiento de espacios directo y el bloque de mensajes del servidor (SMB), y la migración en vivo de máquinas virtuales.
 - **Red IP virtual interna**. Una red /25 dedicada únicamente a una red IP virtual de uso interno para el equilibrador de carga de software.
+- **Red de contenedor**: Una red /23 (512 IP) dedicada al tráfico solo interno entre contenedores que ejecutan servicios de infraestructura.
+
+A partir de 1910, el tamaño de la red privada cambiará a /20 (4096 direcciones IP) del espacio de direcciones IP privadas. Esta red será privada para el sistema de Azure Stack (no se enruta más allá de los dispositivos de conmutación de borde del sistema de Azure Stack) y se puede reutilizar en varios sistemas de Azure Stack dentro del centro de recursos. Aunque la red es privada para Azure Stack, no debe superponerse a otras redes del centro de recursos. Para obtener instrucciones sobre el espacio de direcciones IP privadas, se recomienda seguir las [RFC 1918](https://tools.ietf.org/html/rfc1918).
+
+Este espacio de direcciones IP privadas /20 se dividirá en varias redes que permitirán ejecutar la infraestructura interna del sistema de Azure Stack en contenedores en futuras versiones. Para más información, consulte las [notas de la versión 1910](release-notes.md). Además, este nuevo espacio de direcciones IP privadas contribuye a realizar unos esfuerzos continuos para reducir el espacio de direcciones IP enrutables necesario antes de la implementación.
+
+En el caso de los sistemas implementados antes de 1910, esta subred /20 será una red adicional que se debe especificar en los sistemas tras actualizarse a 1910. Se deberá proporcionar la red adicional al sistema mediante el cmdlet PEP **Set-AzsPrivateNetwork**. Para obtener instrucciones sobre este cmdlet, consulte las [notas de la versión 1910](release-notes.md).
 
 ### <a name="azure-stack-infrastructure-network"></a>Red de la infraestructura de Azure Stack
-Esta red /24 está dedicada a los componentes internos de Azure Stack para que puedan comunicarse e intercambiar datos entre ellos. Esta subred se puede enrutar fuera de la solución Azure Stack a su centro de datos, no se recomienda usar direcciones IP enrutables públicas o de Internet en esta subred. Esta red se anuncia en el borde, pero la mayoría de sus direcciones IP están protegidas por listas de control de acceso (ACL). Las direcciones IP permitidas para el acceso se encuentran dentro de un pequeño intervalo equivalente de tamaño a una red de /27 y hospedan servicios como el [punto de conexión con privilegios (PEP)](azure-stack-privileged-endpoint.md) y [Azure Stack Backup](azure-stack-backup-reference.md).
+
+Esta red /24 está dedicada a los componentes internos de Azure Stack para que puedan comunicarse e intercambiar datos entre ellos. Esta subred se puede enrutar externamente para la solución Azure Stack al centro de recursos. No se recomienda utilizar direcciones IP enrutables públicas o de Internet en esta subred. Esta red se anuncia en el borde, pero la mayoría de sus direcciones IP están protegidas por listas de control de acceso (ACL). Las direcciones IP permitidas para el acceso se encuentran dentro de un pequeño intervalo de tamaño equivalente a una red de /27 y hospedan servicios como el [punto de conexión con privilegios (PEP)](azure-stack-privileged-endpoint.md) y [Azure Stack Backup](azure-stack-backup-reference.md).
 
 ### <a name="public-vip-network"></a>Red IP virtual pública
 
@@ -85,6 +96,10 @@ Esta red /26 es la subred que contiene las subredes IP /30 (dos IP de host) punt
 ### <a name="switch-management-network"></a>Red de administración de conmutadores
 
 Esta red /29 (seis IP de host) está dedicada a conectar los puertos de administración de los conmutadores. Permite el acceso fuera de banda para la implementación, administración y solución de problemas. Se calcula a partir de la red de infraestructura de conmutadores mencionada anteriormente.
+
+## <a name="permitted-networks"></a>Redes permitidas
+
+A partir de 1910, la hoja de cálculo de implementación tendrá un nuevo campo que permitirá al operador cambiar algunas listas de control de acceso (ACL) para proporcionar acceso a las interfaces de administración de dispositivos de red y al host de ciclo de vida de hardware (HLH) desde un intervalo de red del centro de datos de confianza. Con el cambio de la lista de control de acceso, el operador puede permitir que sus máquinas virtuales de jumpbox de administración de un intervalo de red específico obtengan acceso a la interfaz de administración de conmutadores, al sistema operativo HLH y al BMC HLH. El operador puede proporcionar una o varias subredes a esta lista; si se deja en blanco, se denegará el acceso de forma predeterminada. Esta nueva funcionalidad reemplaza la necesidad de una intervención manual posterior a la implementación, tal como se solía describir en [Modificar la configuración específica de la configuración del conmutador de Azure Stack](azure-stack-customer-defined.md#access-control-list-updates).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

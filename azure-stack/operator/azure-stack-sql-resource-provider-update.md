@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/11/2019
 ms.author: mabrigg
-ms.reviewer: jiahan
+ms.reviewer: xiaofmao
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: b37e4c9f5e7b1aaa1a476b0665a9558e8e86365f
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.openlocfilehash: 26ce99f87f1b0e1e379bad6276c88a8e6772c035
+ms.sourcegitcommit: 284f5316677c9a7f4c300177d0e2a905df8cb478
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955414"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74465355"
 ---
 # <a name="update-the-sql-resource-provider"></a>Actualización del proveedor de recursos de SQL
 
@@ -67,10 +67,10 @@ Puede especificar los siguientes parámetros desde la línea de comandos al ejec
 | **DebugMode** | Impide la limpieza automática en caso de error. | Sin |
 
 ## <a name="update-script-powershell-example"></a>Ejemplo de actualización del script de PowerShell
-El siguiente es un ejemplo del uso del script *UpdateSQLProvider.ps1* que puede ejecutar desde una consola elevada de PowerShell. Asegúrese de cambiar la información de la variable y las contraseñas según sea necesario:  
-
 > [!NOTE]
 > Este proceso de actualización solo se aplica a sistemas integrados de Azure Stack.
+
+Si va a actualizar a la versión 1.1.33.0 del proveedor de recursos de SQL o versiones anteriores, debe instalar versiones específicas de los módulos AzureRm.BootStrapper y Azure Stack en PowerShell. Si va a actualizar a la versión 1.1.47.0 del proveedor de recursos de SQL, este paso se puede omitir.
 
 ```powershell
 # Install the AzureRM.Bootstrapper module, set the profile and install the AzureStack module
@@ -78,7 +78,11 @@ El siguiente es un ejemplo del uso del script *UpdateSQLProvider.ps1* que puede 
 Install-Module -Name AzureRm.BootStrapper -Force
 Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 Install-Module -Name AzureStack -RequiredVersion 1.6.0
+```
 
+El siguiente es un ejemplo del uso del script *UpdateSQLProvider.ps1* que puede ejecutar desde una consola elevada de PowerShell. Asegúrese de cambiar la información de la variable y las contraseñas según sea necesario:  
+
+```powershell
 # Use the NetBIOS name for the Azure Stack domain. On the Azure Stack SDK, the default is AzureStack but this might have been changed at installation.
 $domain = "AzureStack"
 

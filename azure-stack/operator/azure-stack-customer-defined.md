@@ -15,12 +15,12 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: wamota
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 1bd138be243c2803b5a280de2a3a8625e84db998
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.openlocfilehash: 99d52dc7165fdd37a614c1396d7e5c1f0165e235
+ms.sourcegitcommit: cefba8d6a93efaedff303d3c605b02bd28996c5d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955329"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74299121"
 ---
 #  <a name="modify-specific-settings-on-your-azure-stack-switch-configuration"></a>Modificar la configuración específica de la configuración del conmutador de Azure Stack
 
@@ -53,7 +53,10 @@ El operador puede configurar los elementos RADIUS o TACACS para administrar la a
 
 ## <a name="access-control-list-updates"></a>Actualizaciones de la lista de control de acceso
 
-El operador puede cambiar la lista de control de acceso (ACL) para permitir el acceso a las interfaces de administración de dispositivos de red y al host de ciclo de vida de hardware (HLH) desde un intervalo de red del centro de datos de confianza. El operador puede elegir qué componente será accesible y desde dónde se podrá obtener acceso al mismo. Con la lista de control de acceso, el operador puede permitir que sus VM de jumpbox de administración de un intervalo de red específico obtengan acceso a la interfaz de administración de conmutadores, al sistema operativo HLH y al BMC HLH.
+> [!NOTE]
+> A partir de 1910, la hoja de cálculo de implementación tendrá un nuevo campo para **Redes permitidas** que reemplaza los pasos manuales requeridos para proporcionar acceso a las interfaces de administración de dispositivos de red y al host de ciclo de vida de hardware (HLH) desde un intervalo de red del centro de datos de confianza. Para más información acerca de esta nueva característica, consulte [Planeamiento de la capacidad de red de Azure Stack](azure-stack-network.md#permitted-networks).
+
+El operador puede cambiar la lista de control de acceso (ACL) para permitir el acceso a las interfaces de administración de dispositivos de red y al host de ciclo de vida de hardware (HLH) desde un intervalo de red del centro de datos de confianza. Con la lista de control de acceso, el operador puede permitir que sus máquinas virtuales de jumpbox de administración de un intervalo de red específico obtengan acceso a la interfaz de administración de conmutadores, al sistema operativo HLH y al BMC HLH.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

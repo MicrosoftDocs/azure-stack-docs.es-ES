@@ -15,12 +15,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 03/19/2019
-ms.openlocfilehash: 73c4594672dea4a8bb8030a35c79f3d7e7cca04c
-ms.sourcegitcommit: b5eb024d170f12e51cc852aa2c72eabf26792d8d
+ms.openlocfilehash: f569d5dbffaec772657a6fc67b82c9be78f35800
+ms.sourcegitcommit: 55ec59f831a98c42a4e9ff0dd954bf10adb98ff1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72534180"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74540312"
 ---
 # <a name="manage-storage-capacity-for-azure-stack"></a>Administración de la capacidad de almacenamiento para Azure Stack
 
@@ -28,7 +28,7 @@ ms.locfileid: "72534180"
 
 La información en este artículo ayuda al operador en la nube de Azure Stack a supervisar y administrar la capacidad de almacenamiento de su implementación de Azure Stack. La infraestructura de almacenamiento de Azure Stack asigna un subconjunto de la capacidad total de almacenamiento de la implementación de Azure Stack para usarlo en los **servicios de almacenamiento**. Los servicios de almacenamiento contienen los datos del inquilino en recursos compartidos de volúmenes que corresponden a los nodos de la implementación.
 
-Como operador en la nube, dispone de una cantidad limitada de almacenamiento con la que trabajar. La cantidad de almacenamiento se define por la solución que se implementa. La solución la proporciona el proveedor OEM cuando se usa una solución de varios nodos, o el hardware en el que se instala el Kit de desarrollo de Azure Stack (ASKD).
+Como operador en la nube, dispone de una cantidad limitada de almacenamiento con la que trabajar. La cantidad de almacenamiento se define por la solución que se implementa. La solución la proporciona el proveedor OEM cuando se usa una solución de varios nodos, o el hardware en el que se instala el Kit de desarrollo de Azure Stack (ASDK).
 
 Dado que Azure Stack no admite la expansión de la capacidad de almacenamiento, es importante [supervisar](#monitor-shares) el almacenamiento disponible para garantizar que se mantiene la eficiencia de las operaciones.
 

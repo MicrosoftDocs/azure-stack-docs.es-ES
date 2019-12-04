@@ -14,13 +14,13 @@ ms.topic: article
 ms.date: 10/02/2019
 ms.lastreviewed: 03/18/2019
 ms.author: mabrigg
-ms.reviewer: jiahan
-ms.openlocfilehash: fb2e5d33baf2dfd4a6cafd2567c2650e89ac8c38
-ms.sourcegitcommit: a7207f4a4c40d4917b63e729fd6872b3dba72968
+ms.reviewer: xiaofmao
+ms.openlocfilehash: 4eb2936afc271016974440f77690c804f0cbcb09
+ms.sourcegitcommit: 284f5316677c9a7f4c300177d0e2a905df8cb478
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71909398"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74465311"
 ---
 # <a name="deploy-the-sql-server-resource-provider-on-azure-stack"></a>Implementación del proveedor de recursos de SQL Server en Azure Stack
 
@@ -40,10 +40,14 @@ Hay varios requisitos previos que se deben cumplir antes de implementar el prove
 
   |Versión mínima de Azure Stack|Versión de SQL RP|
   |-----|-----|
+  |Versión 1910 (1.1910.0.58)|[SQL RP, versión 1.1.47.0](https://aka.ms/azurestacksqlrp11470)| 
   |Versión 1808 (1.1808.0.97)|[SQL RP, versión 1.1.33.0](https://aka.ms/azurestacksqlrp11330)|  
   |Versión 1808 (1.1808.0.97)|[SQL RP, versión 1.1.30.0](https://aka.ms/azurestacksqlrp11300)|  
   |Versión 1804 (1.0.180513.1)|[SQL RP, versión 1.1.24.0](https://aka.ms/azurestacksqlrp11240)  
   |     |     |
+
+> [!IMPORTANT]
+> Antes de implementar la versión 1.1.47.0 del proveedor de recursos de SQL, debe pasar el sistema Azure Stack a la actualización 1910 o versiones posteriores. La versión 1.1.47.0 del proveedor de recursos de SQL no funciona en versiones anteriores de Azure Stack no compatibles.
 
 - Asegúrese de que se cumplen los requisitos previos de la integración del centro de datos:
 
@@ -99,10 +103,7 @@ Puede especificar los parámetros siguientes en la línea de comandos. Si no lo 
 
 ## <a name="deploy-the-sql-resource-provider-using-a-custom-script"></a>Implementar el proveedor de recursos SQL con un script personalizado
 
-Para eliminar cualquier configuración manual al implementar el proveedor de recursos, puede personalizar el script siguiente.  
-
-Cambie la información de cuenta predeterminada y las contraseñas según sea necesario para su implementación de Azure Stack.
-
+Si va a implementar la versión 1.1.33.0 del proveedor de recursos de SQL o versiones anteriores, debe instalar versiones específicas de los módulos AzureRm.BootStrapper y Azure Stack en PowerShell. Si va a implementar la versión 1.1.47.0 del proveedor de recursos de SQL, este paso se puede omitir.
 
 ```powershell
 # Install the AzureRM.Bootstrapper module, set the profile and install the AzureStack module
@@ -110,7 +111,13 @@ Cambie la información de cuenta predeterminada y las contraseñas según sea ne
 Install-Module -Name AzureRm.BootStrapper -RequiredVersion 0.5.0 -Force
 Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 Install-Module -Name AzureStack -RequiredVersion 1.6.0
+```
 
+Para eliminar cualquier configuración manual al implementar el proveedor de recursos, puede personalizar el script siguiente.  
+
+Cambie la información de cuenta predeterminada y las contraseñas según sea necesario para su implementación de Azure Stack.
+
+```powershell
 # Use the NetBIOS name for the Azure Stack domain. On the Azure Stack SDK, the default is AzureStack but could have been changed at install time.
 $domain = "AzureStack"
 

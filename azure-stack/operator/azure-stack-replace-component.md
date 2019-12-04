@@ -1,5 +1,6 @@
 ---
-title: Sustitución de un componente de hardware en un nodo de unidad de escalado de Azure Stack | Microsoft Docs
+title: Sustitución de un componente de hardware en un nodo de unidad de escalado de Azure Stack
+titleSuffix: Azure Stack
 description: Obtenga información sobre cómo reemplazar un componente de hardware en un sistema integrado de Azure Stack.
 services: azure-stack
 documentationcenter: ''
@@ -14,12 +15,12 @@ ms.topic: article
 ms.date: 07/18/2019
 ms.author: thoroet
 ms.lastreviewed: 07/18/2019
-ms.openlocfilehash: 4cb8da451743bc6a8e15c57aacf28f0aa83258c9
-ms.sourcegitcommit: 4f3e161e7632c8a6e3d41946b09f22b5bdb08d36
+ms.openlocfilehash: ff78409ecdbdec8b7a6860db18244a4835351ed8
+ms.sourcegitcommit: 284f5316677c9a7f4c300177d0e2a905df8cb478
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68413149"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74465293"
 ---
 # <a name="replace-a-hardware-component-on-an-azure-stack-scale-unit-node"></a>Sustitución de un componente de hardware en un nodo de unidad de escalado de Azure Stack
 
@@ -28,20 +29,20 @@ ms.locfileid: "68413149"
 En este artículo se describe el proceso general para reemplazar los componentes de hardware que se pueden intercambiar directamente. Los verdaderos pasos para reemplazar varían en función del fabricante del hardware OEM. Consulte la documentación de Field Replaceable Unit (FRU) del proveedor para obtener los pasos detallados específicos para el sistema integrado de Azure Stack.
 
 > [!CAUTION]  
-> La nivelación del firmware es fundamental para el éxito de la operación que se describe en este artículo. La omisión de este paso puede dar lugar a inestabilidad del sistema, disminución del rendimiento, subprocesos de seguridad o evitar que la automatización de Azure Stack implemente el sistema operativo. Vea siempre la documentación del asociado de hardware cuando reemplace este para asegurarse de que el firmware aplicado coincide con la versión de OEM que se muestra en el [portal de administración de Azure Stack](azure-stack-updates.md).
+> La nivelación del firmware es fundamental para el éxito de la operación que se describe en este artículo. La omisión de este paso puede dar lugar a inestabilidad del sistema, disminución del rendimiento, subprocesos de seguridad o impedir que la automatización de Azure Stack implemente el sistema operativo. Vea siempre la documentación del asociado de hardware cuando reemplace hardware para asegurarse de que el firmware aplicado coincide con la versión de OEM que se muestra en el [portal de administración de Azure Stack](azure-stack-updates.md).
 
 | Asociado de hardware | Region | URL |
 |------------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Cisco | Todo | [Guía de operaciones de Cisco Integrated System for Microsoft Azure Stack](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/azure-stack/b_Azure_Stack_Operations_Guide_4-0/b_Azure_Stack_Operations_Guide_4-0_chapter_00.html#concept_wks_t1q_wbb)<br><br>[Notas de la versión de Cisco Integrated System for Microsoft Azure Stack](https://www.cisco.com/c/en/us/support/servers-unified-computing/ucs-c-series-rack-mount-ucs-managed-server-software/products-release-notes-list.html) |
-| Dell EMC | Todo | [Cloud for Microsoft Azure Stack 14G (cuenta e inicio de sesión necesarios)](https://support.emc.com/downloads/44615_Cloud-for-Microsoft-Azure-Stack-14G)<br><br>[Cloud for Microsoft Azure Stack 13G (cuenta e inicio de sesión necesarios)](https://support.emc.com/downloads/42238_Cloud-for-Microsoft-Azure-Stack-13G) |
-| Fujitsu | JAPÓN | [Departamento de soporte técnico de servicio administrado de Fujitsu (cuenta e inicio de sesión necesarios)](https://eservice.fujitsu.com/supportdesk-web/) |
+| Cisco | All | [Guía de operaciones de Cisco Integrated System for Microsoft Azure Stack](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/azure-stack/b_Azure_Stack_Operations_Guide_4-0/b_Azure_Stack_Operations_Guide_4-0_chapter_00.html#concept_wks_t1q_wbb)<br><br>[Notas de la versión de Cisco Integrated System for Microsoft Azure Stack](https://www.cisco.com/c/en/us/support/servers-unified-computing/ucs-c-series-rack-mount-ucs-managed-server-software/products-release-notes-list.html) |
+| Dell EMC | All | [Cloud for Microsoft Azure Stack 14G (cuenta e información de inicio de sesión necesarias)](https://support.emc.com/downloads/44615_Cloud-for-Microsoft-Azure-Stack-14G)<br><br>[Cloud for Microsoft Azure Stack 13G (cuenta e información de inicio de sesión necesarias)](https://support.emc.com/downloads/42238_Cloud-for-Microsoft-Azure-Stack-13G) |
+| Fujitsu | JAPÓN | [Departamento de soporte técnico de servicio administrado de Fujitsu (cuenta e información de inicio de sesión necesarias)](https://eservice.fujitsu.com/supportdesk-web/) |
 |  | EMEA | [Soporte técnico de TI de Fujitsu para productos y sistemas](https://support.ts.fujitsu.com/IndexContact.asp?lng=COM&ln=no&LC=del) |
-|  | EU | [Fujitsu MySupport (cuenta e inicio de sesión necesarios)](https://support.ts.fujitsu.com/IndexMySupport.asp) |
-| HPE | Todo | [HPE ProLiant for Microsoft Azure Stack](http://www.hpe.com/info/MASupdates) |
-| Lenovo | Todo | [ThinkAgile SXM Best Recipes](https://datacentersupport.lenovo.com/us/en/solutions/ht505122)
+|  | EU | [Fujitsu MySupport (cuenta e información de inicio de sesión necesarias)](https://support.ts.fujitsu.com/IndexMySupport.asp) |
+| HPE | All | [HPE ProLiant for Microsoft Azure Stack](http://www.hpe.com/info/MASupdates) |
+| Lenovo | All | [ThinkAgile SXM Best Recipes](https://datacentersupport.lenovo.com/us/en/solutions/ht505122)
 | Wortmann |  | [Paquete de firmware/OEM](https://drive.terracloud.de/dl/fiTdTb66mwDAJWgUXUW8KNsd/OEM)<br>[Documentación de terra Azure Stack (incluye FRU)](https://drive.terracloud.de/dl/fiWGZwCySZSQyNdykXCFiVCR/TerraAzSDokumentation)
 
-Los componentes que no se pueden intercambiar directamente incluyen:
+Los componentes que no se pueden intercambiar directamente incluyen los siguientes elementos:
 
 - CPU*
 - Memoria*
@@ -81,8 +82,8 @@ Los pasos siguientes proporcionan una información general de alto nivel del pro
    > [!NOTE]  
    > En el caso improbable de que la acción de apagado no funcione, use en su lugar la interfaz web del controlador de administración de placa base (BMC).
 
-4. Reemplace el componente de hardware dañado. Si el fabricante del hardware OEM realiza el reemplazo de componente podría variar en función del contrato de soporte técnico.  
-5. Actualice el firmware. Siga el proceso de actualización del firmware específico del proveedor con el host de ciclo de vida de hardware para asegurarse de que el componente de hardware de reemplazo tiene aplicado el nivel de firmware aprobado. Si el fabricante del hardware OEM realiza este paso podría variar en función del contrato de soporte técnico.  
+4. Reemplace el componente de hardware dañado. El fabricante del hardware OEM puede o no realizar el reemplazo de componente, en función del contrato de soporte técnico.  
+5. Actualice el firmware. Siga el proceso de actualización del firmware específico del proveedor con el host de ciclo de vida de hardware para asegurarse de que el componente de hardware de reemplazo tiene aplicado el nivel de firmware aprobado. El fabricante del hardware OEM puede realizar o no este paso, en función del contrato de soporte técnico.  
 6. Use la acción de [reparación](azure-stack-node-actions.md#scale-unit-node-actions) para devolver el nodo de la unidad de escalado a la unidad de escalado.
 7. Use el punto de conexión con privilegios para [comprobar el estado de la reparación del disco virtual](azure-stack-replace-disk.md#check-the-status-of-virtual-disk-repair-using-the-privileged-endpoint). Con las nuevas unidades de datos, un trabajo de reparación del almacenamiento completo puede tardar varias horas, según la carga del sistema y el espacio consumido.
 8. Una vez finalizada la acción de reparación, confirme que todas las alertas activas se cerraron automáticamente.

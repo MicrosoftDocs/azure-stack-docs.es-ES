@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/06/2019
+ms.date: 10/30/2019
 ms.author: sethm
 ms.reviewer: harik
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 083d30e07d924e38f682785866b0739e4cdb36e6
-ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
+ms.openlocfilehash: 28eb11be532608648761f5dcfe2d2d7f2337b80e
+ms.sourcegitcommit: cefba8d6a93efaedff303d3c605b02bd28996c5d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72019471"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74298800"
 ---
 # <a name="azure-stack-servicing-policy"></a>Directiva de mantenimiento de Azure Stack
 
@@ -53,10 +53,10 @@ Busque documentación sobre cómo planear y administrar actualizaciones y cómo 
 
 Para obtener información sobre una actualización concreta, incluido cómo descargarla, vea las notas de versión de la actualización:
 
+- [Actualización 1910 de Azure Stack](/azure-stack/operator/release-notes?view=azs-1910)
 - [Actualización 1908 de Azure Stack](/azure-stack/operator/release-notes?view=azs-1908)
 - [Actualización de Azure Stack 1907](/azure-stack/operator/release-notes?view=azs-1907)
 - [Actualización de Azure Stack 1906](/azure-stack/operator/release-notes?view=azs-1906)
-- [Actualización 1905 de Azure Stack](/azure-stack/operator/release-notes?view=azs-1905)
 
 ## <a name="hotfixes"></a>Revisiones
 
@@ -68,10 +68,10 @@ Las revisiones se descargan e instalan del mismo modo que las actualizaciones co
 
 Para más información acerca de las revisiones disponibles actualmente, consulte las notas de la versión de la actualización:
 
-- [Revisión 1908 de Azure Stack](/azure-stack/operator/release-notes?view=azs-1908#hotfixes-1908)
-- [Revisión 1907 de Azure Stack](/azure-stack/operator/release-notes?view=azs-1907#hotfixes-1907)
-- [Revisión 1906 de Azure Stack](/azure-stack/operator/release-notes?view=azs-1906#hotfixes-1906)
-- [Revisión 1905 de Azure Stack](/azure-stack/operator/release-notes?view=azs-1905#hotfixes-1905)
+- [Revisión 1910 de Azure Stack](/azure-stack/operator/release-notes?view=azs-1910#hotfixes)
+- [Revisión 1908 de Azure Stack](/azure-stack/operator/release-notes?view=azs-1908#hotfixes)
+- [Revisión 1907 de Azure Stack](/azure-stack/operator/release-notes?view=azs-1907#hotfixes)
+- [Revisión 1906 de Azure Stack](/azure-stack/operator/release-notes?view=azs-1906#hotfixes)
 
 ## <a name="keep-your-system-under-support"></a>Mantenimiento del sistema dentro del soporte técnico
 

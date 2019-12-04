@@ -15,12 +15,12 @@ ms.date: 10/01/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 11/16/2018
-ms.openlocfilehash: d7723dcdd755a926990ee52e96c3b75694651520
-ms.sourcegitcommit: a6d47164c13f651c54ea0986d825e637e1f77018
+ms.openlocfilehash: 208e632634c59be0338c70020e7fc0fdae846797
+ms.sourcegitcommit: cefba8d6a93efaedff303d3c605b02bd28996c5d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72277209"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74299003"
 ---
 # <a name="add-linux-images-to-azure-stack-marketplace"></a>Adición de imágenes de Linux a Marketplace de Azure Stack.
 
@@ -40,7 +40,7 @@ Siempre que sea posible, descargue las imágenes disponibles a través de Market
 
 ### <a name="azure-linux-agent"></a>Agente Linux de Azure
 
-El agente Linux de Azure (que suele llamarse **WALinuxAgent** o **walinuxagent**) es obligatorio, pero no todas las versiones del agente funcionan en Azure Stack. No se admiten las versiones entre 2.2.20 y 2.2.35 en Azure Stack. Para usar las versiones del agente más recientes, superiores a la 2.2.35, aplique las revisiones 1901 o 1902, o actualice Azure Stack a la versión 1903 (o cualquier versión superior). Tenga en cuenta que no se admite [cloud-init](https://cloud-init.io/) en Azure Stack en este momento.
+El agente Linux de Azure (que suele llamarse **WALinuxAgent** o **walinuxagent**) es obligatorio, pero no todas las versiones del agente funcionan en Azure Stack. No se admiten las versiones entre 2.2.21 y 2.2.34 (ambas inclusive) en Azure Stack. Para usar las versiones del agente más recientes, superiores a la 2.2.35, aplique las revisiones 1901 o 1902, o actualice Azure Stack a la versión 1903 (o cualquier versión superior). Tenga en cuenta que [cloud-init](https://cloud-init.io/) se admite en versiones de Azure Stack posteriores a la versión 1910.
 
 | Compilación de Azure Stack | Compilación del agente Linux de Azure |
 | ------------- | ------------- |
@@ -51,6 +51,7 @@ El agente Linux de Azure (que suele llamarse **WALinuxAgent** o **walinuxagent**
 | 1.1903.0.35  | 2.2.35 o más reciente |
 | Compilaciones posteriores a 1903 | 2.2.35 o más reciente |
 | No compatible | 2.2.21-2.2.34 |
+| Compilaciones posteriores a 1910 | Todas las versiones del agente WALA de Azure|
 
 Puede preparar su propia imagen de Linux mediante las siguientes instrucciones:
 
@@ -59,6 +60,70 @@ Puede preparar su propia imagen de Linux mediante las siguientes instrucciones:
 * [Red Hat Enterprise Linux](azure-stack-redhat-create-upload-vhd.md)
 * [SLES y openSUSE](/azure/virtual-machines/linux/suse-create-upload-vhd?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Ubuntu Server](/azure/virtual-machines/linux/create-upload-ubuntu?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+
+## <a name="cloud-init"></a>Cloud-Init
+
+[Cloud-init](https://cloud-init.io/) se admite en versiones de Azure Stack posteriores a la versión 1910. Para usar cloud-init en la personalización de la máquina virtual Linux, puede utilizar las siguientes instrucciones de PowerShell: 
+
+### <a name="step-1-create-a-cloud-inittxt-file-with-your-cloud-config"></a>Paso 1: Creación de un archivo cloud-init.txt con la configuración de la nube
+
+Cree un archivo denominado cloud-init.txt y pegue la siguiente configuración de la nube:
+
+```yaml
+#cloud-config
+package_upgrade: true
+packages:
+  - nginx
+  - nodejs
+  - npm
+write_files:
+  - owner: www-data:www-data
+    path: /etc/nginx/sites-available/default
+    content: |
+      server {
+        listen 80;
+        location / {
+          proxy_pass http://localhost:3000;
+          proxy_http_version 1.1;
+          proxy_set_header Upgrade $http_upgrade;
+          proxy_set_header Connection keep-alive;
+          proxy_set_header Host $host;
+          proxy_cache_bypass $http_upgrade;
+        }
+      }
+  - owner: azureuser:azureuser
+    path: /home/azureuser/myapp/index.js
+    content: |
+      var express = require('express')
+      var app = express()
+      var os = require('os');
+      app.get('/', function (req, res) {
+        res.send('Hello World from host ' + os.hostname() + '!')
+      })
+      app.listen(3000, function () {
+        console.log('Hello world app listening on port 3000!')
+      })
+runcmd:
+  - service nginx restart
+  - cd "/home/azureuser/myapp"
+  - npm init
+  - npm install express -y
+  - nodejs index.js
+  ```
+  
+### <a name="step-2-reference-the-cloud-inittxt-during-the-linux-vm-deployment"></a>Paso 2: Referencia a cloud-init.txt durante la implementación de máquinas virtuales Linux
+
+Cargue el archivo en una cuenta de almacenamiento de Azure, en una cuenta de almacenamiento de Azure Stack o en un repositorio de GitHub al que pueda acceder la máquina virtual Linux con Azure Stack.
+Actualmente, el uso de cloud-init para la implementación de máquinas virtuales solo se admite en REST, PowerShell y la CLI, y no tiene una interfaz de usuario de portal asociada en Azure Stack.
+
+Puede seguir [estas](../user/azure-stack-quick-create-vm-linux-powershell.md) instrucciones para crear la máquina virtual Linux con PowerShell, pero asegúrese de hacer referencia a cloud-init.txt como parte de la marca `-CustomData`:
+
+```powershell
+$VirtualMachine =Set-AzureRmVMOperatingSystem -VM $VirtualMachine `
+  -Linux `
+  -ComputerName "MainComputer" `
+  -Credential $cred -CustomData "#include https://cloudinitstrg.blob.core.windows.net/strg/cloud-init.txt"
+```
 
 ## <a name="add-your-image-to-marketplace"></a>Adición de la imagen a Marketplace
 

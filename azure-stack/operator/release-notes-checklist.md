@@ -16,12 +16,12 @@ ms.date: 11/07/2019
 ms.author: sethm
 ms.reviewer: ppacent
 ms.lastreviewed: 11/07/2019
-ms.openlocfilehash: d654608ca4f46e5947cacc55349f8be0a41548b1
-ms.sourcegitcommit: ed44d477b9fd11573d1e0d1ed3a3c0ef4512df53
+ms.openlocfilehash: 077d50da935a3ee8de0967c51920ede69125c816
+ms.sourcegitcommit: cefba8d6a93efaedff303d3c605b02bd28996c5d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73845853"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74299027"
 ---
 # <a name="azure-stack-update-activity-checklist"></a>Lista de comprobación de actividades para la actualización de Azure Stack
 
@@ -53,7 +53,7 @@ Revise esta lista de comprobación para prepararse para obtener una actualizaci�
 |  |  |
 | Reanudar las actualizaciones | Después de corregir una actualización errónea, [reanude las actualizaciones de Azure Stack mediante el uso de un punto de conexión con privilegios](azure-stack-monitor-update.md). |
 
-> [!Important]  
+> [!IMPORTANT]  
 > No ejecute **Test-AzureStack** durante una actualización, ya que esto hará que la actualización se detenga.
 
 ## <a name="after-azure-stack-update"></a>Después de la actualización de Azure Stack
