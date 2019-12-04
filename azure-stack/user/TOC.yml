@@ -71,8 +71,9 @@
               href: azure-stack-develop-templates.md
             - name: Desarrollo de plantillas en Azure
               href: azure-stack-developer.md
-            - name: Implementación de plantillas
+            - name: Comprobación de plantillas
               href: azure-stack-validate-templates.md
+            - name: Implementación de plantillas
               items:
                 - name: Implementación con el portal
                   href: azure-stack-deploy-template-portal.md
