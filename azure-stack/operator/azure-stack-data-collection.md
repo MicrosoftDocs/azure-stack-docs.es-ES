@@ -16,12 +16,12 @@ ms.date: 06/10/2019
 ms.author: patricka
 ms.reviewer: chengwei
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: 31fa9bcdf60b27b2eb2e8396be1d2a0e89f31b70
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: ff633133b7d0fd0489b3e81295ea53351968ac8f
+ms.sourcegitcommit: 7817d61fa34ac4f6410ce6f8ac11d292e1ad807c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71829184"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74690191"
 ---
 # <a name="azure-stack-log-and-customer-data-handling"></a>Control de datos de clientes y registro de Azure Stack 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*  
@@ -31,7 +31,7 @@ En la medida en que Microsoft es un procesador o un subprocesador de datos perso
 - La disposición "Procesamiento de los datos personales, RGPD" de la sección "Términos de protección de los datos" de los [Términos de los servicios en línea](http://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31).
 - Los términos del Reglamento general de protección de datos de la Unión Europea en el apartado 4 de los [Términos de los servicios en línea](http://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31).
 
-Como Azure Stack reside en los centros de datos del cliente, Microsoft es controlador únicamente de los datos que se comparten con Microsoft a través de [diagnósticos](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep-to-collect-diagnostic-logs), [telemetría](azure-stack-telemetry.md) y [facturación](azure-stack-usage-reporting.md).  
+Como Azure Stack reside en los centros de datos del cliente, Microsoft es controlador únicamente de los datos que se comparten con Microsoft a través de [diagnósticos](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs), [telemetría](azure-stack-telemetry.md) y [facturación](azure-stack-usage-reporting.md).  
 
 ## <a name="data-access-controls"></a>Controles de acceso de datos 
 Los empleados de Microsoft, que se asignan para investigar un caso de soporte técnico específico, recibirán acceso de solo lectura a los datos cifrados. Los empleados de Microsoft también tienen acceso a las herramientas que se usan para eliminar los datos si es necesario. Todo el acceso a los datos de los clientes se audita y se registra.  
@@ -51,7 +51,7 @@ En el caso de la acción de eliminación automática de datos (90 días después
 Para la acción de eliminación de datos a petición, los ingenieros de soporte técnico de Microsoft tienen acceso a la herramienta que les permite eliminar los datos a petición. Pueden proporcionar una confirmación en el teléfono del cliente cuando la acción haya terminado.
 
 ## <a name="diagnostic-data"></a>Datos de diagnóstico
-Como parte del proceso de soporte técnico, los operadores de Azure Stack pueden [compartir los registros de diagnóstico](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep-to-collect-diagnostic-logs) con los equipos de soporte técnico e ingeniería de Azure Stack para ayudar a la solución de problemas.
+Como parte del proceso de soporte técnico, los operadores de Azure Stack pueden [compartir los registros de diagnóstico](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs) con los equipos de soporte técnico e ingeniería de Azure Stack para ayudar a la solución de problemas.
 
 Microsoft proporciona una herramienta y un script para que los clientes recopilen y carguen los archivos de registro de diagnóstico solicitados. Una vez recopilados, los archivos de registro se transfieren a través de una conexión cifrada protegida por HTTPS a Microsoft. Como HTTPS proporciona el cifrado a través de la conexión, no se necesita ninguna contraseña para el cifrado en tránsito. Una vez que se reciben, los registros se cifran y se almacenan hasta que se eliminen automáticamente 90 días después de cerrar el caso de soporte técnico.
 

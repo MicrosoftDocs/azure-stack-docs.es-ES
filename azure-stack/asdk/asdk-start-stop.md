@@ -16,12 +16,12 @@ ms.date: 07/18/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 07/18/2019
-ms.openlocfilehash: b33ae5ce88cf05fb73e2519f7f697fca90f7f8bc
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: e32fc6c58232e21eb6e7c087c2d95623209bc28d
+ms.sourcegitcommit: 7817d61fa34ac4f6410ce6f8ac11d292e1ad807c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71824750"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74689853"
 ---
 # <a name="start-and-stop-the-asdk"></a>Inicio y detención del kit de desarrollo de Azure Stack
 No se recomienda simplemente reiniciar el equipo host del ASDK. En su lugar, siga los procedimientos que se describen en este artículo para detener y reiniciar los servicios de ASDK correctamente.
@@ -90,4 +90,4 @@ Si los servicios de Azure Stack no se inician correctamente en un plazo de dos h
 Si la ejecución de **Start-AzureStack** produce un error, visite el [foro de soporte técnico de Azure Stack](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurestack) para obtener ayuda de solución de problemas con ASDK. 
 
 ## <a name="next-steps"></a>Pasos siguientes 
-Para más información sobre la herramienta de diagnóstico de Azure Stack y el registro de problemas, consulte [Herramientas de diagnóstico de Azure Stack](../operator/azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep-to-collect-diagnostic-logs).
+Para más información sobre la herramienta de diagnóstico de Azure Stack y el registro de problemas, consulte [Herramientas de diagnóstico de Azure Stack](../operator/azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs).

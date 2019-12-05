@@ -14,12 +14,12 @@ ms.author: mabrigg
 ms.date: 11/14/2019
 ms.reviewer: waltero
 ms.lastreviewed: 11/14/2019
-ms.openlocfilehash: 89ed4549dc44eb433f8061aba9bcff9405d80699
-ms.sourcegitcommit: f2a059f1be36f82adea8877f3f6e90d41ef3b161
+ms.openlocfilehash: 900ff88136d75759fdc3bc05bf351968f9c13654
+ms.sourcegitcommit: 7817d61fa34ac4f6410ce6f8ac11d292e1ad807c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74162974"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74689934"
 ---
 # <a name="troubleshoot-kubernetes-deployment-to-azure-stack"></a>Solución de problemas de implementación de Kubernetes en Azure Stack
 
@@ -93,10 +93,10 @@ Puede recopilar y examinar los registros de implementación de las máquinas vir
     - Puede que la creación de máquinas virtuales haya desencadenado un error interno o un error de creación. Los errores pueden deberse a diversos factores, como las limitaciones de capacidad de la suscripción de Azure Stack.
     - Asegúrese de que el nombre de dominio completo (FQDN) de la máquina virtual comienza con un prefijo duplicado.
 5.  Si la máquina virtual es **correcta**, evalúe la instancia de DVM. Si la instancia de DVM tiene un mensaje de error:
-
     - Es posible que la clave pública no sea válida. Revise la clave que ha creado.  
-    - Debe ponerse en contacto con el administrador de Azure Stack para recuperar los registros de Azure Stack mediante los puntos de conexión con privilegios. Para más información, consulte [Registros de diagnóstico de Azure Stack](../operator/azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep-to-collect-diagnostic-logs).
-6. Si tiene preguntas acerca de la implementación, puede publicarlas o ver si alguien ya ha respondido a la pregunta en el [foro de Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack). 
+    - Debe ponerse en contacto con el administrador de Azure Stack para recuperar los registros de Azure Stack mediante los puntos de conexión con privilegios. Para más información, consulte [Registros de diagnóstico de Azure Stack](../operator/azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs).
+5. Si tiene preguntas acerca de la implementación, puede publicarlas o ver si alguien ya ha respondido a la pregunta en el [foro de Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack). 
+
 
 ## <a name="review-deployment-status"></a>Revisar el estado de implementación
 
@@ -113,7 +113,7 @@ Al implementar el clúster de Kubernetes, puede revisar el estado de implementac
     | Propiedad | DESCRIPCIÓN |
     | ----     | ----        |
     | Resource | Nombre del recurso. |
-    | type | Proveedor de recursos y tipo de recurso. |
+    | Tipo | Proveedor de recursos y tipo de recurso. |
     | Status | Estado del elemento. |
     | TimeStamp | Marca de tiempo UTC de la hora. |
     | Detalles de la operación | Detalles de la operación, como el proveedor de recursos implicado en la operación, el punto de conexión del recurso y el nombre del recurso. |

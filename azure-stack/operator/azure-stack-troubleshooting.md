@@ -16,12 +16,12 @@ ms.date: 11/05/2019
 ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 4c04eafab93da233859b5b67571b70899b081b95
-ms.sourcegitcommit: c583f19d15d81baa25dd49738d53d8fc01463bef
+ms.openlocfilehash: 28e067abef24fbc60cff629e5112ffacdf14b1ec
+ms.sourcegitcommit: 7817d61fa34ac4f6410ce6f8ac11d292e1ad807c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73659235"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74689954"
 ---
 # <a name="microsoft-azure-stack-troubleshooting"></a>Solución de problemas de Microsoft Azure Stack
 
@@ -95,7 +95,7 @@ Puede usar PowerShell para obtener información sobre el uso de la marca sin ayu
 4. Ejecute get-azurestacklog -filterbyrole seedring mediante una llamada a invoke-command
 5. Extraiga el archivo seedring.zip y podrá obtener el informe de validación de la carpeta ERCS donde ejecutó test-azurestack.
 
-Para más información, consulte [Diagnósticos de Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#to-run-get-azurestacklog-on-azure-stack-integrated-systems).
+Para más información, consulte [Diagnósticos de Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs).
 
 ## <a name="troubleshoot-virtual-machines"></a>Solución de problemas de máquinas virtuales
 ### <a name="default-image-and-gallery-item"></a>Elemento de la galería e imagen predeterminada

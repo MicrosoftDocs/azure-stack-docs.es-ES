@@ -17,12 +17,12 @@ ms.date: 10/14/2019
 ms.author: mabrigg
 ms.reviewer: avishwan
 ms.lastreviewed: 03/04/2019
-ms.openlocfilehash: d777827e6c700167dff6f203045277353837beef
-ms.sourcegitcommit: 284f5316677c9a7f4c300177d0e2a905df8cb478
+ms.openlocfilehash: 1ab0e33d894b1856e1769a0f6780f5d0b9df3474
+ms.sourcegitcommit: 62283e9826ea78b218f5d2c6c555cc44196b085d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74465435"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74780769"
 ---
 # <a name="register-azure-stack-with-azure"></a>Registro de Azure Stack con Azure
 
@@ -272,11 +272,11 @@ Necesita el token de registro y un nombre de token único.
 
 2. Ejecute después los siguientes cmdlets de PowerShell:  
 
-  ```powershell  
-  $RegistrationToken = "<Your Registration Token>"
-  $RegistrationName = "<unique-registration-name>"
-  Register-AzsEnvironment -RegistrationToken $RegistrationToken -RegistrationName $RegistrationName
-  ```
+    ```powershell  
+    $RegistrationToken = "<Your Registration Token>"
+    $RegistrationName = "<unique-registration-name>"
+    Register-AzsEnvironment -RegistrationToken $RegistrationToken -RegistrationName $RegistrationName
+    ```
 
 Si lo desea, puede usar el cmdlet Get-Content para señalar a un archivo que contenga el token de registro.
 
@@ -284,16 +284,16 @@ Necesita el token de registro y un nombre de token único.
 
 1. Inicie PowerShell ISE como administrador y vaya a la carpeta **Registration**del directorio **AzureStack-Tools-master** que creó cuando descargó las herramientas de Azure Stack. Importe el módulo **RegisterWithAzure.psm1**:  
 
-  ```powershell  
-  Import-Module .\RegisterWithAzure.psm1
-  ```
+    ```powershell  
+    Import-Module .\RegisterWithAzure.psm1
+    ```
 
 2. Ejecute después los siguientes cmdlets de PowerShell:  
 
-  ```powershell  
-  $RegistrationToken = Get-Content -Path '<Path>\<Registration Token File>'
-  Register-AzsEnvironment -RegistrationToken $RegistrationToken -RegistrationName $RegistrationName
-  ```
+    ```powershell  
+    $RegistrationToken = Get-Content -Path '<Path>\<Registration Token File>'
+    Register-AzsEnvironment -RegistrationToken $RegistrationToken -RegistrationName $RegistrationName
+    ```
 
   > [!Note]  
   > Guarde el nombre de recurso de registro y el token de registro para futuras referencias.
@@ -477,7 +477,7 @@ Set-AzsRegistration [-PrivilegedEndpointCredential] <PSCredential> [-PrivilegedE
     <String>] [<CommonParameters>]
 ```
 
-| Parámetro | type | DESCRIPCIÓN |
+| Parámetro | Tipo | DESCRIPCIÓN |
 |-------------------------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | PrivilegedEndpointCredential | PSCredential | Las credenciales que se utilizan para [acceder al punto de conexión con privilegios](azure-stack-privileged-endpoint.md#access-the-privileged-endpoint). El nombre de usuario tiene el formato **dominioDeAzureStack\AdminNube**. |
 | PrivilegedEndpoint | Cadena | Es una consola remota de PowerShell previamente configurada que proporciona funcionalidades tales como la recopilación de registros y otras tareas posteriores a la implementación. Para más información, consulte el artículo acerca del [uso del punto de conexión con privilegios](azure-stack-privileged-endpoint.md#access-the-privileged-endpoint). |
@@ -499,7 +499,7 @@ Get-AzsRegistrationToken [-PrivilegedEndpointCredential] <PSCredential> [-Privil
     [-BillingModel] <String> [[-TokenOutputFilePath] <String>] [-UsageReportingEnabled] [[-AgreementNumber] <String>]
     [<CommonParameters>]
 ```
-| Parámetro | type | DESCRIPCIÓN |
+| Parámetro | Tipo | DESCRIPCIÓN |
 |-------------------------------|--------------|-------------|
 | PrivilegedEndpointCredential | PSCredential | Las credenciales que se utilizan para [acceder al punto de conexión con privilegios](azure-stack-privileged-endpoint.md#access-the-privileged-endpoint). El nombre de usuario tiene el formato **dominioDeAzureStack\AdminNube**. |
 | PrivilegedEndpoint | Cadena |  Es una consola remota de PowerShell previamente configurada que proporciona funcionalidades tales como la recopilación de registros y otras tareas posteriores a la implementación. Para más información, consulte el artículo acerca del [uso del punto de conexión con privilegios](azure-stack-privileged-endpoint.md#access-the-privileged-endpoint). |

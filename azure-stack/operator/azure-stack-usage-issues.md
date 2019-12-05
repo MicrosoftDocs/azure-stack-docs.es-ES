@@ -15,12 +15,12 @@ ms.date: 10/04/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 06/27/2019
-ms.openlocfilehash: 265645b69e909c7c9762cd03e4f49035baa2872b
-ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
+ms.openlocfilehash: 3c7b3dcd304b684170cec8974910a42f7f86e84f
+ms.sourcegitcommit: 7817d61fa34ac4f6410ce6f8ac11d292e1ad807c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72019432"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74690084"
 ---
 # <a name="usage-connectivity-errors"></a>Errores de conectividad de uso
 
@@ -55,7 +55,7 @@ En esta sección se describen los códigos de errores de uso.
 | No autorizado               | Azure Bridge no puede insertar datos en el servicio de uso de Azure porque dicho servicio no puede realizar la autenticación del puente de Azure Stack. | Compruebe si se ha modificado el recurso de registro y, si es así, vuelva a registrar Azure Stack. <br><br> A veces, una vez problema de sincronización entre Azure Stack y Azure AD puede producir este error. En este caso, asegúrese de que las horas en las VM XRP en Azure Stack están sincronizadas con Azure AD. |
 |                            |                                                                                                                                                   |                                                                                                                                                                                                                                                                                                    |
 
-Además, es posible que deba proporcionar los archivos de registro de los componentes de Azure Bridge, WAS y WASPublic. Para ello, realice [estos pasos](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep-to-collect-diagnostic-logs).
+Además, es posible que deba proporcionar los archivos de registro de los componentes de Azure Bridge, WAS y WASPublic. Para ello, realice [estos pasos](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs).
 
 ## <a name="next-steps"></a>Pasos siguientes
 
