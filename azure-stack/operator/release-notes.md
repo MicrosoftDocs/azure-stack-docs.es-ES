@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/25/2019
+ms.date: 12/04/2019
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 11/22/2019
-ms.openlocfilehash: 75f1c4cae33987a7a2c662ced7806ed094c6ca82
-ms.sourcegitcommit: 3a8e116fd0b16e1201e55e2088dde2e581004045
+ms.openlocfilehash: db050565b7ef2b1b22192e7f39366ac1e341cd0f
+ms.sourcegitcommit: 53f7daf295783a30feb284d4c48c30c6936557c5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74557700"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74830969"
 ---
 # <a name="azure-stack-updates-release-notes"></a>Actualizaciones de Azure Stack: notas de la versión
 
@@ -109,6 +109,12 @@ Para obtener más información sobre los tipos de compilación de actualización
 
 <!-- Changes and product improvements with tangible customer-facing value. -->
 
+- Azure Stack ha mejorado la capacidad de corregir de forma automática algunos problemas de revisión y actualización que antes causaban errores de actualización o impedían que los operadores iniciaran una actualización de Azure Stack. Como resultado, se incluyen menos pruebas en el grupo **Test-AzureStack -UpdateReadiness**. Para más información, consulte [Validación del estado del sistema de Azure Stack](azure-stack-diagnostic-test.md#groups). Las tres pruebas siguientes aún se mantienen en el grupo **UpdateReadiness**:
+
+  - **AzSInfraFileValidation**
+  - **AzSActionPlanStatus**
+  - **AzsStampBMCSummary**
+
 - Se ha agregado una regla de auditoría para notificar cuando se monta un dispositivo externo (por ejemplo, una llave USB) en un nodo de la infraestructura de Azure Stack. El registro de auditoría se emite a través de Syslog y aparece como **Microsoft-Windows-Security-Auditing: 6416|Plug and Play Events** (Eventos Plug and Play). Para más información sobre cómo configurar el cliente de Syslog, consulte [Reenvío de Syslog](azure-stack-integrate-security.md).
 
 - Azure Stack cambia a las claves RSA de 4096 bits para los certificados internos. La ejecución de la rotación interna de secretos reemplazará los antiguos certificados de 2048 bits por certificados largos de 4096 bits. Para más información sobre la rotación de secretos en Azure Stack, consulte [Cambio de secretos en Azure Stack](azure-stack-rotate-secrets.md).
@@ -147,11 +153,11 @@ Para obtener más información sobre los tipos de compilación de actualización
 
 - Al descargar elementos de Marketplace de Azure en Azure Stack, hay una nueva interfaz de usuario que permite especificar una versión del elemento, en caso de que existan varias versiones. La nueva interfaz de usuario está disponible tanto en escenarios conectados como desconectados. Para más información, consulte [Descarga de elementos de Marketplace existentes desde Azure en Azure Stack](azure-stack-download-azure-marketplace-item.md).  
 
-- A partir de la versión 1910, el sistema Azure Stack requiere un espacio IP interno privado adicional /20. Esta red es privada para el sistema Azure Stack y se puede reutilizar en varios sistemas Azure Stack de su centro de datos. Aunque la red es privada de Azure Stack, no debe superponerse con un red del centro de datos. El espacio IP privado /20 se divide en varias redes que permiten ejecutar la infraestructura de Azure Stack en contenedores (como se mencionó anteriormente en las [notas de la versión 1905](release-notes.md?view=azs-1905)). Al ejecutar la infraestructura de Azure Stack en contenedores se pretende optimizar el uso y mejorar el rendimiento. Además, el espacio IP privado /20 también se usa para permitir esfuerzos continuos que reducirán el espacio IP enrutable necesario antes de la implementación.
+- A partir de la versión 1910, el sistema Azure Stack **requiere** un espacio de direcciones IP internas privadas adicional /20. Esta red es privada para el sistema Azure Stack y se puede reutilizar en varios sistemas Azure Stack de su centro de datos. Aunque la red es privada de Azure Stack, no debe superponerse con un red del centro de datos. El espacio IP privado /20 se divide en varias redes que permiten ejecutar la infraestructura de Azure Stack en contenedores (como se mencionó anteriormente en las [notas de la versión 1905](release-notes.md?view=azs-1905)). Al ejecutar la infraestructura de Azure Stack en contenedores se pretende optimizar el uso y mejorar el rendimiento. Además, el espacio IP privado /20 también se usa para permitir esfuerzos continuos que reducirán el espacio IP enrutable necesario antes de la implementación.
 
   - Tenga en cuenta que la entrada /20 actuará como requisito previo en la actualización de Azure Stack posterior a la 1910. Cuando se publique la siguiente actualización de Azure Stack después de la versión 1910 y se intente realizar su instalación, se producirá un error en el proceso si no se ha completado la entrada /20 tal como se describe a continuación en los pasos de corrección. Se mostrará una alerta en el portal de administración hasta que se hayan completado los pasos de corrección indicados. Consulte el artículo [Integración de la red del centro de datos](azure-stack-network.md#private-network) para comprender cómo se consumirá este nuevo espacio privado. 
 
-  - Pasos de corrección: Para llevar a cabo la corrección, siga las instrucciones para [abrir una sesión de PEP](azure-stack-privileged-endpoint.md#access-the-privileged-endpoint). Prepare un [intervalo IP interno privado](azure-stack-network.md#logical-networks) de tamaño /20 y ejecute el siguiente cmdlet (solo disponible a partir de la versión 1910) en la sesión PEP con el formato: `Set-AzsPrivateNetwork -UserSubnet 100.87.0.0/20`. Si la operación se realiza correctamente, recibirá el mensaje **Azs Internal Network range added to the config** (Intervalo de red interno de Azs agregado a la configuración). Además, la alerta se cerrará en el portal de administración. El sistema Azure Stack ya se podrá actualizar a la versión siguiente.
+  - Pasos de corrección: Para llevar a cabo la corrección, siga las instrucciones para [abrir una sesión de PEP](azure-stack-privileged-endpoint.md#access-the-privileged-endpoint). Prepare un [intervalo de direcciones IP internas privadas](azure-stack-network.md#logical-networks) de tamaño /20 y ejecute el siguiente cmdlet (solo disponible a partir de la versión 1910) en la sesión PEP; para ello, use el siguiente ejemplo: `Set-AzsPrivateNetwork -UserSubnet 100.87.0.0/20`. Si la operación se realiza correctamente, recibirá el mensaje **Azs Internal Network range added to the config** (Intervalo de red interno de Azs agregado a la configuración). Además, la alerta se cerrará en el portal de administración. El sistema Azure Stack ya se podrá actualizar a la versión siguiente.
   
 - El servicio de copia de seguridad de la infraestructura elimina los datos de copias de seguridad cargadas parcialmente si la ubicación de almacenamiento externo se queda sin capacidad durante el procedimiento de carga.  
 

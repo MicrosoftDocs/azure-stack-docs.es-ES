@@ -16,12 +16,12 @@ ms.date: 11/21/2019
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 0621ca19f96e1c33a85ea5308346fafa2e4545f8
-ms.sourcegitcommit: 284f5316677c9a7f4c300177d0e2a905df8cb478
+ms.openlocfilehash: 4b27d5195159b809c3ad439054c88d675ab99164
+ms.sourcegitcommit: 11e0c2d9abbc0a2506f992976b3c9f8ca4e746b9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74465371"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74810229"
 ---
 # <a name="azure-stack-known-issues"></a>Problemas conocidos de Azure Stack
 
@@ -146,6 +146,12 @@ Para tener acceso a los problemas conocidos de una versión diferente, use la li
 - Causa: la versión actual del proveedor de recursos de SQL no es compatible con algunos de los cambios más recientes del portal en la actualización 1910.
 - Corrección: siga el proceso de actualización del proveedor de recursos para aplicar la revisión 1.1.47.0 del proveedor de recursos de SQL después de cambiar Azure Stack a la actualización 1910 ([versión 1.1.47.0 del proveedor de recursos de SQL](https://aka.ms/azurestacksqlrp11470)). Para el proveedor de recursos de MySQL, también se recomienda aplicar la revisión 1.1.47.0 del proveedor de recursos de MySQL después de cambiar Azure Stack a la actualización 1910 ([versión 1.1.47.0 del proveedor de recursos de MySQL](https://aka.ms/azurestackmysqlrp11470)).
 - Repetición: Común
+
+### <a name="access-control-iam"></a>Control de acceso (IAM)
+
+- Aplicable a: este problema se aplica a la versión 1903 y posteriores.
+- Causa: La extensión IAM no está actualizada. Ibiza se incluyó con Azure Stack e introdujo un nuevo comportamiento que hace que la extensión RBAC deje de funcionar si el usuario abre la extensión RBAC desde una suscripción que no está seleccionada en el selector de suscripciones globales.
+- Corrección: Asegúrese de que la suscripción esté activada en el selector de suscripciones globales. 
 
 ## <a name="networking"></a>Redes
 

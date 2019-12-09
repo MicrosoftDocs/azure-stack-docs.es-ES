@@ -9,23 +9,23 @@ ms.service: azure-stack
 ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 11/11/2019
+ms.topic: reference
+ms.date: 12/3/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
-ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 3e91b4baae4dc844cedebb22ca323005ea0e76fa
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.lastreviewed: 12/3/2019
+ms.openlocfilehash: d38168fee437b27dfde8d5381c960b8e2a237487
+ms.sourcegitcommit: 757f612663059f1af8c535d8b37f63a8cf4a5e7d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955664"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74784079"
 ---
 # <a name="vm-sizes-supported-in-azure-stack"></a>Tamaños de máquinas virtuales admitidos en Azure Stack
 
 *Se aplica a: sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
-En este artículo se incluyen los tamaños de máquinas virtuales que están disponibles en Azure Stack.
+En este artículo se incluyen los tamaños de máquinas virtuales que están disponibles en Azure Stack. Puede usar este artículo como ayuda para seleccionar una máquina virtual que admita su solución de Azure Stack.
 
 IOPS (operaciones de entrada y salida por segundo) de disco en Azure Stack es una función del tamaño de máquina virtual en lugar del tipo de disco. Esto significa que para una VM de la serie Standard_Fs, independientemente de si elige SSD o HDD para el tipo de disco, el límite de IOPS de un único disco de datos adicional es de solo 2300 IOPS. Los límites de IOPS impuestos (máximo posible) sirven para evitar vecinos ruidosos. IOPS no es una garantía de que obtendrá un tamaño específico de la máquina virtual.
 

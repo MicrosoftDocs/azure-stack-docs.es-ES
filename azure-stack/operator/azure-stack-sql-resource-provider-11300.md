@@ -1,6 +1,7 @@
 ---
-title: Notas de la versión del proveedor de recursos SQL de Azure Stack 1.1.30.0 | Microsoft Docs
-description: Obtenga información sobre las novedades de la actualización del proveedor de recursos SQL de Azure Stack más reciente, incluidos los problemas conocidos y dónde descargarla.
+title: Notas de la versión del proveedor de recursos de SQL 1.1.30.0 de Azure Stack
+titleSuffix: Azure Stack
+description: Vea las notas de la versión del proveedor de recursos de SQL 1.1.30.0 de Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -16,12 +17,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/09/2019
-ms.openlocfilehash: f17c2ba41097d5b9bda903ae5d95c62e0ac9f53a
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: c1c2b824b8cf44a983c851f20337658d020de4c8
+ms.sourcegitcommit: 62283e9826ea78b218f5d2c6c555cc44196b085d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71829354"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74780633"
 ---
 # <a name="sql-resource-provider-11300-release-notes"></a>Notas de la versión del proveedor de recursos SQL 1.1.30.0
 
@@ -55,13 +56,13 @@ Esta versión del proveedor de recursos SQL de Azure Stack incluye las siguiente
 
 - **Actualización de la hoja de configuración del servidor de hospedaje SQL**. Se ha corregido un problema en que la hoja de configuración estaba titulada incorrectamente como "Password".
 
-## <a name="known-issues"></a>Problemas conocidos 
+## <a name="known-issues"></a>Problemas conocidos
 
-- **Las SKU de SQL pueden tardar hasta una hora en estar visibles en el portal**. Las SKU recién creadas pueden tardar hasta una hora en estar visible para su uso al crear nuevas bases de datos SQL. 
+- **Las SKU de SQL pueden tardar hasta una hora en estar visibles en el portal**. Las SKU recién creadas pueden tardar hasta una hora en estar visible para su uso al crear nuevas bases de datos SQL.
 
     **Solución alternativa**: Ninguno.
 
-- **Inicios de sesión SQL reutilizados**. Al intentar crear un nuevo inicio de sesión SQL con el mismo nombre de usuario que un inicio de sesión existente en la misma suscripción, se reutilizará el mismo inicio de sesión y la contraseña existente. 
+- **Inicios de sesión SQL reutilizados**. Al intentar crear un nuevo inicio de sesión SQL con el mismo nombre de usuario que un inicio de sesión existente en la misma suscripción, se reutilizará el mismo inicio de sesión y la contraseña existente.
 
     **Solución alternativa**: use diferentes nombres de usuario al crear nuevos inicios de sesión en la misma suscripción o crear inicios de sesión con el mismo nombre de usuario en diferentes suscripciones.
 
@@ -69,7 +70,7 @@ Esta versión del proveedor de recursos SQL de Azure Stack incluye las siguiente
 
     **Solución alternativa**: use siempre inicios de sesión diferentes para distintas bases de datos en la misma suscripción.
 
-- **Requisito de compatibilidad con TLS 1.2**. Si intenta implementar o actualizar el proveedor de recursos de SQL desde un equipo donde TLS 1.2 no esté habilitada, se puede producir un error en la operación. Ejecute el siguiente comando de PowerShell en el equipo que se usa para implementar o actualizar el proveedor de recursos a fin de comprobar que TLS 1.2 se devuelve como compatible:
+- **Requisito de compatibilidad con TLS 1.2**. Si intenta implementar o actualizar el proveedor de recursos de SQL desde un equipo donde TLS 1.2 no está habilitado, se puede producir un error en la operación. Ejecute el siguiente comando de PowerShell en el equipo que se usa para implementar o actualizar el proveedor de recursos a fin de comprobar que TLS 1.2 se devuelve como compatible:
 
   ```powershell
   [System.Net.ServicePointManager]::SecurityProtocol
@@ -82,10 +83,11 @@ Esta versión del proveedor de recursos SQL de Azure Stack incluye las siguiente
     ```powershell
     [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
     ```
-- **El proveedor de recursos SQL no puede agregar el agente de escucha de SQL Server Always On**. Cuando se utiliza la dirección IP del agente de escucha de SQL Server Always On, la VM del proveedor de recursos de SQL no puede resolver el nombre de host del agente de escucha.
+
+- **El proveedor de recursos SQL no puede agregar el agente de escucha de SQL Server Always On**. Cuando se utiliza la dirección IP del agente de escucha de SQL Server Always On, la máquina virtual del proveedor de recursos de SQL no puede resolver el nombre de host del agente de escucha.
 
     **Solución alternativa**: Asegúrese de que DNS funciona correctamente para resolver la dirección IP del agente de escucha en su nombre de host.
-    
+
 ### <a name="known-issues-for-cloud-admins-operating-azure-stack"></a>Problemas conocidos para los administradores en la nube que trabajan con Azure Stack
 Consulte la documentación de las [notas de la versión de Azure Stack](azure-stack-servicing-policy.md).
 
@@ -94,4 +96,4 @@ Consulte la documentación de las [notas de la versión de Azure Stack](azure-st
 
 [Preparar la implementación del proveedor de recursos SQL](azure-stack-sql-resource-provider-deploy.md#prerequisites).
 
-[Actualizar el proveedor de recursos SQL desde una versión anterior](azure-stack-sql-resource-provider-update.md). 
+[Actualizar el proveedor de recursos SQL desde una versión anterior](azure-stack-sql-resource-provider-update.md).

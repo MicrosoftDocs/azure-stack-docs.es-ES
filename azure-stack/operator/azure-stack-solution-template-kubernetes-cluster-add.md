@@ -1,6 +1,7 @@
 ---
-title: Adición de Kubernetes a Marketplace de Azure Stack | Microsoft Docs
-description: Obtenga información sobre cómo agregar Kubernetes a Marketplace de Azure Stack.
+title: Adición de Kubernetes a Azure Stack Marketplace
+titleSuffix: Azure Stack
+description: Obtenga información sobre cómo agregar Kubernetes a Azure Stack Marketplace.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,29 +16,29 @@ ms.date: 10/28/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 10/28/2019
-ms.openlocfilehash: fc83c8c68402622d721864f24a3ef9c5bab10479
-ms.sourcegitcommit: 0d27456332031ab98ba2277117395ae5ffcbb79f
+ms.openlocfilehash: 985d0e33fd5a15329a1a47bd2d6b11e50cd82a1c
+ms.sourcegitcommit: 62283e9826ea78b218f5d2c6c555cc44196b085d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73047179"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74780820"
 ---
-# <a name="add-kubernetes-to-the-azure-stack-marketplace"></a>Adición de Kubernetes a Marketplace de Azure Stack
+# <a name="add-kubernetes-to-azure-stack-marketplace"></a>Adición de Kubernetes a Azure Stack Marketplace
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
 > [!note]  
 > Use únicamente el elemento Kubernetes de Marketplace de Azure Stack para implementar clústeres como prueba de concepto. Para los clústeres de Kubernetes admitidos en Azure Stack, utilice el [motor de AKS](azure-stack-aks-engine.md).
 
-Puede ofrecer Kubernetes como un elemento de Marketplace a los usuarios. A continuación, los usuarios pueden implementar Kubernetes en una sola operación coordinada.
+Puede ofrecer Kubernetes como un artículo de Marketplace a los usuarios. Así, los usuarios pueden implementar Kubernetes en una sola operación coordinada.
 
-En el artículo siguiente explica cómo usar una plantilla de Azure Resource Manager para implementar y aprovisionar los recursos para un clúster de Kubernetes independiente. Antes de empezar, compruebe Azure Stack y la configuración de inquilino de Azure global. Recopile la información necesaria sobre su entorno de Azure Stack. Agregue los recursos necesarios a su inquilino y a Marketplace de Azure Stack. El clúster depende de que los elementos de Marketplace del clúster de Kubernetes, un servidor de Ubuntu y un script personalizado se encuentren en Marketplace.
+En este artículo se explica cómo usar una plantilla de Azure Resource Manager para implementar y aprovisionar los recursos para un clúster de Kubernetes independiente. Antes de empezar, compruebe Azure Stack y la configuración de inquilino de Azure global. Recopile la información necesaria sobre su entorno de Azure Stack. Agregue los recursos necesarios a su inquilino y a Azure Stack Marketplace. El clúster depende de que haya un servidor de Ubuntu, un script personalizado y el elemento de clúster de Kubernetes en Azure Stack Marketplace.
 
 ## <a name="create-a-plan-an-offer-and-a-subscription"></a>Crear un plan, una oferta y una suscripción
 
-Cree un plan, una oferta y una suscripción para el elemento de Marketplace de Kubernetes. También puede usar un plan y una oferta existentes.
+Cree un plan, una oferta y una suscripción para el elemento de Kubernetes de Marketplace. También puede usar un plan y una oferta existentes.
 
-1. Inicie sesión en el [portal de administración](https://adminportal.local.azurestack.external).
+1. Inicie sesión en el [portal de administrador](https://adminportal.local.azurestack.external).
 
 1. Cree un plan como plan base. Para obtener instrucciones, vea [Creación de un plan en Azure Stack](azure-stack-create-plan.md).
 
@@ -63,11 +64,11 @@ Cree un plan, una oferta y una suscripción para el elemento de Marketplace de K
 
 ## <a name="create-a-service-principal-and-credentials-in-ad-fs"></a>Creación de una entidad de servicio y las credenciales de AD FS
 
-Si usa Active Directory Federated Services (AD FS) para el servicio de administración de identidades, deberá crear una entidad de servicio para que los usuarios implementen un clúster de Kubernetes. Cree una entidad de servicio mediante un secreto de cliente. Para obtener instrucciones, consulte [Creación de una entidad de servicio mediante un secreto de cliente](azure-stack-create-service-principals.md#create-a-service-principal-that-uses-client-secret-credentials).
+Si usa Servicios de federación de Active Directory (AD FS) para el servicio de administración de identidades, deberá crear una entidad de servicio para que los usuarios implementen un clúster de Kubernetes. Cree una entidad de servicio mediante un secreto de cliente. Para obtener instrucciones, consulte [Creación de una entidad de servicio mediante un secreto de cliente](azure-stack-create-service-principals.md#create-a-service-principal-that-uses-client-secret-credentials).
 
 ## <a name="add-an-ubuntu-server-image"></a>Agregar una imagen de Ubuntu Server
 
-Agregue la siguiente imagen de Ubuntu Server en Marketplace:
+Agregue la siguiente imagen de servidor Ubuntu a Azure Stack Marketplace:
 
 1. Inicie sesión en el [portal de administración](https://adminportal.local.azurestack.external).
 
@@ -87,9 +88,9 @@ Agregue la siguiente imagen de Ubuntu Server en Marketplace:
 
 ## <a name="add-a-custom-script-for-linux"></a>Agregar un script personalizado para Linux
 
-Agregue Kubernetes desde Marketplace:
+Agregue Kubernetes desde Azure Stack Marketplace:
 
-1. Abra el [portal de administración](https://adminportal.local.azurestack.external).
+1. Abra el [portal de administrador](https://adminportal.local.azurestack.external).
 
 1. Seleccione **Todos los servicios** y, a continuación, en la categoría **Administración**, seleccione **Marketplace management** (Administración de Marketplace).
 
@@ -107,10 +108,9 @@ Agregue Kubernetes desde Marketplace:
 
 1. Seleccione **Descargar**.
 
-
 ## <a name="add-kubernetes-to-the-marketplace"></a>Adición de Kubernetes a Marketplace
 
-1. Abra el [portal de administración](https://adminportal.local.azurestack.external).
+1. Abra el [portal de administrador](https://adminportal.local.azurestack.external).
 
 1. Seleccione **Todos los servicios** y, luego, en la categoría **ADMINISTRACIÓN**, seleccione **Administración de Marketplace**.
 
@@ -123,13 +123,13 @@ Agregue Kubernetes desde Marketplace:
 1. Seleccione **Descargar**.
 
     > [!note]  
-    > El elemento podría tardar cinco minutos en aparecer en Marketplace.
+    > El elemento podría tardar cinco minutos en aparecer en Azure Stack Marketplace.
 
-    ![kubernetes](../user/media/azure-stack-solution-template-kubernetes-deploy/marketplaceitem.png)
+    ![Elemento de Kubernetes en Azure Stack Marketplace](../user/media/azure-stack-solution-template-kubernetes-deploy/marketplaceitem.png)
 
-## <a name="update-or-remove-the-kubernetes"></a>Actualización o eliminación de Kubernetes 
+## <a name="update-or-remove-the-kubernetes"></a>Actualización o eliminación de Kubernetes
 
-Al actualizar el elemento de Kubernetes, eliminará el elemento que se encontraba en Marketplace. Siga las instrucciones de este artículo para agregar la actualización de Kubernetes a Marketplace.
+Al actualizar el elemento de Kubernetes, eliminará el elemento que se encontraba en Azure Stack Marketplace. Siga estas instrucciones para agregar la actualización de Kubernetes a Azure Stack Marketplace.
 
 Para quitar el elemento de Kubernetes:
 

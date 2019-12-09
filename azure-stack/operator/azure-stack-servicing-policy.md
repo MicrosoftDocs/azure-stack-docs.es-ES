@@ -1,6 +1,7 @@
 ---
-title: Directiva de mantenimiento de Azure Stack | Microsoft Docs
-description: Aprenda sobre la directiva de servicio de Azure Stack y cómo mantener un sistema integrado en un estado admitido.
+title: Directiva de mantenimiento de Azure Stack
+titleSuffix: Azure Stack
+description: Conozca la directiva de mantenimiento de Azure Stack y cómo mantener un sistema integrado.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -16,16 +17,16 @@ ms.date: 10/30/2019
 ms.author: sethm
 ms.reviewer: harik
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 28eb11be532608648761f5dcfe2d2d7f2337b80e
-ms.sourcegitcommit: cefba8d6a93efaedff303d3c605b02bd28996c5d
+ms.openlocfilehash: b874e81afc37684e15dd9cfe79adbf123f126f89
+ms.sourcegitcommit: 62283e9826ea78b218f5d2c6c555cc44196b085d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74298800"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74780667"
 ---
 # <a name="azure-stack-servicing-policy"></a>Directiva de mantenimiento de Azure Stack
 
-En este artículo se describe la directiva de mantenimiento para sistemas integrados de Azure Stack y lo que debe hacer para mantener el sistema en un estado admitido.
+En este artículo se describe la directiva de mantenimiento para sistemas integrados de Azure Stack y lo que debe hacer para mantener el sistema.
 
 ## <a name="download-update-packages-for-integrated-systems"></a>Descarga de actualizaciones para sistemas integrados
 
@@ -35,7 +36,7 @@ Las actualizaciones mensuales se hospedan en un punto de conexión seguro de Azu
 
 Las actualizaciones de revisiones se hospedan en el mismo punto de conexión seguro de Azure. Puede descargarlas mediante los vínculos insertados en cada uno de los artículos correspondientes de Knowledge Base de revisiones; por ejemplo, [Revisión de Azure Stack 1.1809.12.114](https://support.microsoft.com/help/4481548/azure-stack-hotfix-1-1809-12-114). Al igual que con las actualizaciones mensuales completas, los operadores de Azure Stack pueden descargar archivos .xml, .bin y .exe e importarlos mediante el procedimiento descrito en [Aplicación de actualizaciones en Azure Stack](azure-stack-apply-updates.md). Los operadores de Azure Stack con unidades de escalado conectadas verán que las revisiones aparecen automáticamente en el portal del administrador con el mensaje **Actualización disponible**.
 
-Si la unidad de escalado no está conectada y le gustaría recibir notificaciones acerca de cada versión de revisión, suscríbase a las fuentes [RSS](https://support.microsoft.com/app/content/api/content/feeds/sap/en-us/32d322a8-acae-202d-e9a9-7371dccf381b/rss) o [ATOM](https://support.microsoft.com/app/content/api/content/feeds/sap/en-us/32d322a8-acae-202d-e9a9-7371dccf381b/atom) indicadas en cada versión.
+Si la unidad de escalado no está conectada y quiere recibir notificaciones acerca de la versión de cada revisión, suscríbase a las fuentes [RSS](https://support.microsoft.com/app/content/api/content/feeds/sap/en-us/32d322a8-acae-202d-e9a9-7371dccf381b/rss) o [ATOM](https://support.microsoft.com/app/content/api/content/feeds/sap/en-us/32d322a8-acae-202d-e9a9-7371dccf381b/atom) indicadas en cada versión.
 
 ## <a name="update-package-types"></a>Tipos de actualizaciones
 
@@ -62,7 +63,7 @@ Para obtener información sobre una actualización concreta, incluido cómo desc
 
 *Se aplica a: Sistemas integrados de Azure Stack*
 
-En ocasiones, Microsoft ofrece revisiones para Azure Stack que solucionan un determinado problema que suele ser de naturaleza preventiva o urgente.  Todas las revisiones se publican con su correspondiente artículo de Microsoft Knowledge Base que detalla el problema, la causa y la resolución.
+En ocasiones, Microsoft ofrece revisiones para Azure Stack que solucionan un determinado problema que suele ser de naturaleza preventiva o urgente. Todas las revisiones se publican con su correspondiente artículo de Microsoft Knowledge Base que detalla el problema, la causa y la resolución.
 
 Las revisiones se descargan e instalan del mismo modo que las actualizaciones completas normales de Azure Stack. Pero, a diferencia de una actualización completa, las revisiones pueden instalarse en minutos. Se recomienda que los operadores de Azure Stack establezcan ventanas de mantenimiento al instalar las revisiones. Las revisiones actualizan la versión de la nube de Azure Stack para se que pueda determinar fácilmente si la revisión se ha aplicado. Se ofrece una revisión independiente para cada versión de Azure Stack siga dentro del soporte técnico. Cada revisión para una iteración concreta es acumulativa e incluye las actualizaciones anteriores de esa misma versión. Puede obtener más información sobre la aplicabilidad de una revisión determinada en el correspondiente artículo de Knowledge Base. Consulte los vínculos de notas de la versión en la sección anterior.
 

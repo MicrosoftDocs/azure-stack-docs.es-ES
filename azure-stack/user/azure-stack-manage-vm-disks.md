@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/24/2019
+ms.date: 12/03/2019
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 01/18/2019
-ms.openlocfilehash: b42f21a3225194cfe50b5ae7d39d8d1a7cffb6d0
-ms.sourcegitcommit: e6a738f674634e1d5dd4eb23b6c44b660ea2fe84
+ms.openlocfilehash: 049698c1b4e19dc3567c07bb8a433c0fcf9208d8
+ms.sourcegitcommit: 62283e9826ea78b218f5d2c6c555cc44196b085d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72891259"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74780786"
 ---
 # <a name="create-vm-disk-storage-in-azure-stack"></a>Creación del almacenamiento en disco de VM en Azure Stack
 
@@ -36,15 +36,17 @@ Los [discos administrados](/azure/virtual-machines/windows/managed-disks-overvie
 
 Los discos no administrados no requieren la creación de una cuenta de almacenamiento para almacenarlos. Los discos creados se conocen como discos de máquina virtual y se almacenan en los contenedores de la cuenta de almacenamiento.
 
-### <a name="best-practice-guidelines"></a>Guías de procedimientos recomendados
+## <a name="best-practice-guidelines"></a>Guías de procedimientos recomendados
 
-Para mejorar el rendimiento y reducir el costo total, es recomendable colocar cada disco de máquina virtual en un contenedor independiente. Un contenedor debe albergar un disco del sistema operativo o un disco de datos, pero no ambos al mismo tiempo. Sin embargo, también puede colocar ambos tipos de disco en el mismo contenedor.
+Se recomienda usar discos administrados para la máquina virtual para facilitar la administración y el equilibrio de la capacidad. No tiene que preparar contenedores ni una cuenta de almacenamiento antes de usar discos administrados. Al crear varios discos administrados, estos se distribuyen en varios volúmenes para equilibrar su capacidad.  
+
+En el caso de los discos no administrados, para mejorar el rendimiento y reducir el costo total, es recomendable poner cada disco no administrado en un contenedor independiente. Aunque puede poner los discos de sistema operativo y los discos de datos en el mismo contenedor, es recomendable que un contenedor contenga el disco de sistema operativo o el disco de datos, pero no ambos al mismo tiempo.
 
 Si agrega uno o más discos de datos a una máquina virtual, use contenedores adicionales como ubicación para almacenar esos discos. Los discos del sistema operativo de máquinas virtuales adicionales también deben estar en sus propios contenedores.
 
 Al crear máquinas virtuales, puede volver a usar la misma cuenta de almacenamiento con cada nueva máquina virtual. Solo los contenedores que cree deben ser únicos.
 
-### <a name="adding-new-disks"></a>Adición de nuevos discos
+## <a name="adding-new-disks"></a>Adición de nuevos discos
 
 En la tabla siguiente se resume cómo agregar discos desde el portal y desde PowerShell:
 

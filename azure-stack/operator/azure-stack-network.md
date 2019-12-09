@@ -16,12 +16,12 @@ ms.date: 10/23/2019
 ms.author: mabrigg
 ms.reviewer: wamota
 ms.lastreviewed: 06/04/2019
-ms.openlocfilehash: 76bc9b83bf97c7817ff5c9cbf8bc0a3275a04d72
-ms.sourcegitcommit: cefba8d6a93efaedff303d3c605b02bd28996c5d
+ms.openlocfilehash: 87afcdb3508f66c69477f0109c2c86d03a6b04e0
+ms.sourcegitcommit: 11e0c2d9abbc0a2506f992976b3c9f8ca4e746b9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74298854"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74810168"
 ---
 # <a name="network-integration-planning-for-azure-stack"></a>Planeamiento de la capacidad de red de Azure Stack
 
@@ -75,7 +75,7 @@ Esta red /20 (4096 direcciones IP) es privada para la región de Azure Stack (no
 - **Red IP virtual interna**. Una red /25 dedicada únicamente a una red IP virtual de uso interno para el equilibrador de carga de software.
 - **Red de contenedor**: Una red /23 (512 IP) dedicada al tráfico solo interno entre contenedores que ejecutan servicios de infraestructura.
 
-A partir de 1910, el tamaño de la red privada cambiará a /20 (4096 direcciones IP) del espacio de direcciones IP privadas. Esta red será privada para el sistema de Azure Stack (no se enruta más allá de los dispositivos de conmutación de borde del sistema de Azure Stack) y se puede reutilizar en varios sistemas de Azure Stack dentro del centro de recursos. Aunque la red es privada para Azure Stack, no debe superponerse a otras redes del centro de recursos. Para obtener instrucciones sobre el espacio de direcciones IP privadas, se recomienda seguir las [RFC 1918](https://tools.ietf.org/html/rfc1918).
+A partir de 1910, el tamaño de la red privada cambiará a /20 (4096 direcciones IP) del espacio de direcciones IP privadas. Esta red será privada para el sistema de Azure Stack (no se enruta más allá de los dispositivos de conmutación de borde del sistema de Azure Stack) y se puede reutilizar en varios sistemas de Azure Stack dentro del centro de recursos. Aunque la red es privada para Azure Stack, no debe superponerse a otras redes del centro de recursos. Si se produce una superposición, es posible que Azure Stack no enrute el tráfico de red corporativo externamente. Para obtener instrucciones sobre el espacio de direcciones IP privadas, se recomienda seguir las [RFC 1918](https://tools.ietf.org/html/rfc1918).
 
 Este espacio de direcciones IP privadas /20 se dividirá en varias redes que permitirán ejecutar la infraestructura interna del sistema de Azure Stack en contenedores en futuras versiones. Para más información, consulte las [notas de la versión 1910](release-notes.md). Además, este nuevo espacio de direcciones IP privadas contribuye a realizar unos esfuerzos continuos para reducir el espacio de direcciones IP enrutables necesario antes de la implementación.
 

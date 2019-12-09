@@ -5,16 +5,16 @@ services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: how-to
-ms.date: 11/01/2019
+ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: f3c16e202b43f9d672d9f3e385c3f14cf30935e7
-ms.sourcegitcommit: 8a74a5572e24bfc42f71e18e181318c82c8b4f24
+ms.openlocfilehash: 5f9d8de7c08e8cfa0ad2af9bcb8f898fc32848a3
+ms.sourcegitcommit: 7817d61fa34ac4f6410ce6f8ac11d292e1ad807c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73569316"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74690223"
 ---
 # <a name="run-a-windows-virtual-machine-on-azure-stack"></a>Ejecución de una máquina virtual Windows en Azure Stack
 
@@ -68,7 +68,14 @@ Todos los NSG contienen un conjunto de [reglas predeterminadas](https://docs.mic
 
 **Diagnóstico**. Habilite la supervisión y el diagnóstico, como las métricas básicas de estado, los registros de infraestructura de diagnóstico y los [diagnósticos de arranque](https://azure.microsoft.com/blog/boot-diagnostics-for-virtual-machines-v2/). Los diagnósticos de arranque pueden ayudarle a diagnosticar errores de arranque si la máquina virtual entra en un estado de imposibilidad de arranque. Cree una cuenta de Azure Storage para almacenar los registros. Una cuenta de almacenamiento con redundancia local (LRS) estándar es suficiente para este tipo de registros. Para más información, consulte [Habilitación de supervisión y diagnóstico](https://docs.microsoft.com/azure-stack/user/azure-stack-metrics-azure-data).
 
-**Disponibilidad**. Es posible que la máquina virtual esté sujeta a un reinicio debido a un mantenimiento planeado según lo programado por el operador de Azure Stack. Para aumentar la disponibilidad, implemente varias máquinas virtuales en un [conjunto de disponibilidad](https://docs.microsoft.com/azure-stack/operator/azure-stack-overview#providing-high-availability).
+**Disponibilidad**. Es posible que la máquina virtual esté sujeta a un reinicio debido a un mantenimiento planeado según lo programado por el operador de Azure Stack. Para conseguir alta disponibilidad en un sistema de producción con varias máquinas virtuales en Azure, las máquinas virtuales se colocan en un [conjunto de disponibilidad](https://docs.microsoft.com/azure/virtual-machines/windows/manage-availability#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy) que las distribuye entre varios dominios de error y dominios de actualización. En la escala más pequeña de Azure Stack Hub, un dominio de error en un conjunto de disponibilidad se define como un único nodo en la unidad de escalado.  
+
+Aunque la infraestructura de Azure Stack Hub ya es resistente a errores, la tecnología subyacente (los clústeres de conmutación por error) puede experimentar un cierto tiempo de inactividad de las máquinas virtuales ubicadas en un servidor físico en caso de error de hardware. Azure Stack Hub admite un conjunto de disponibilidad con un máximo de tres dominios de error para ser coherente con Azure.
+
+|                   |             |
+|-------------------|-------------|
+| **Dominios de error** | Las máquinas virtuales colocadas en conjuntos de disponibilidad se aislarán físicamente entre sí al distribuirlas de la manera más uniforme que sea posible en varios dominios de error (nodos de Azure Stack Hub). Si se produce un error de hardware, las máquinas virtuales del dominio de error se reiniciarán en otros dominios de error. Se mantendrán en dominios de error independientes de las otras máquinas virtuales, pero en el mismo conjunto de disponibilidad, si es posible. Cuando el hardware vuelva a estar en línea, las máquinas virtuales se volverán a equilibrar para mantener la alta disponibilidad. |
+| **Dominios de actualización**| Los dominios de actualización son otra manera que tiene Azure de proporcionar alta disponibilidad en los conjuntos de disponibilidad. Un dominio de actualización es un grupo lógico de hardware adyacente que puede someterse a mantenimiento al mismo tiempo. Las máquinas virtuales que se encuentran en el mismo dominio de actualización se reiniciarán en conjunto durante el mantenimiento planeado. Cuando los inquilinos crean máquinas virtuales dentro de un conjunto de disponibilidad, la plataforma de Azure las distribuye de manera automática entre estos dominios de actualización. <br>En Azure Stack Hub, las máquinas virtuales se migran en vivo entre los otros hosts en línea del clúster antes de que se actualice su host subyacente. Como no hay tiempo de inactividad para el inquilino durante una actualización del host, la característica de actualización de dominio de Azure Stack Hub solo existe por motivos de compatibilidad de la plantilla con Azure. Las máquinas virtuales de un conjunto de disponibilidad muestran 0 como número de dominio de actualización en el portal. |
 
 **Copias de seguridad** Para recomendaciones sobre cómo proteger las máquinas virtuales de IaaS de Azure Stack, consulte este artículo.
 
@@ -91,7 +98,7 @@ Incorpore sus máquinas virtuales a [Azure Security Center](https://docs.microso
 
 **Registros de auditoría**. Use los [registros de actividad](https://docs.microsoft.com/azure-stack/user/azure-stack-metrics-azure-data?#activity-log) para ver las acciones de aprovisionamiento y otros eventos de la máquina virtual.
 
-**Cifrado de datos**. Azure Stack protege los datos de infraestructura y de usuario en el nivel del subsistema de almacenamiento mediante cifrado en reposo. El subsistema de almacenamiento de Azure Stack se cifra mediante BitLocker con un cifrado AES de 128 bits. Consulte [este](https://docs.microsoft.com/azure-stack/operator/azure-stack-security-bitlocker) artículo para más detalles.
+**Cifrado de datos**. Azure Stack usa el cifrado AES de 128 bits de BitLocker para proteger los datos de la infraestructura y del usuario en reposo en el subsistema de almacenamiento. Para más información, consulte [Cifrado de datos en reposo en Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-security-bitlocker).
 
 
 ## <a name="next-steps"></a>Pasos siguientes
