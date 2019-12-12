@@ -15,12 +15,12 @@ ms.date: 11/21/2019
 ms.author: sethm
 ms.reviewer: misainat
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: f5955751df89262441b7afc2381d34b6cc74691c
-ms.sourcegitcommit: cefba8d6a93efaedff303d3c605b02bd28996c5d
+ms.openlocfilehash: 2323f13029d4d356ce54b825bab69da5ca21d6ab
+ms.sourcegitcommit: d619612f54eeba3231ed73ed149ff894f9bf838a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74298741"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74993569"
 ---
 # <a name="asdk-release-notes"></a>Notas de la versión del Kit de desarrollo de Azure Stack
 
@@ -54,13 +54,13 @@ Para estar al día de las novedades del ASDK, suscríbase a la [![RSS](./media/a
 
 ### <a name="new-features"></a>Nuevas características
 
-- Para obtener una lista de las nuevas características de esta versión, consulte [esta sección](/azure-stack/operator/release-notes?view=azs-1908#whats-new-1908) de las notas de la versión de Azure Stack.
+- Para obtener una lista de las nuevas características de esta versión, consulte [esta sección](/azure-stack/operator/release-notes?view=azs-1908#whats-new-1) de las notas de la versión de Azure Stack.
 
 <!-- ### Changes -->
 
 ### <a name="fixed-and-known-issues"></a>Problemas conocidos y resueltos
 
-<!-- - For a list of Azure Stack issues fixed in this release, see [this section](/azure-stack/operator/release-notes?view=azs-1908#fixes-1908) of the Azure Stack release notes. -->
+<!-- - For a list of Azure Stack issues fixed in this release, see [this section](/azure-stack/operator/release-notes?view=azs-1908#fixes-1) of the Azure Stack release notes. -->
 - Para ver una lista de problemas conocidos, consulte [este artículo](/azure-stack/operator/known-issues?view=azs-1908).
 - Tenga en cuenta que las revisiones disponibles de Azure Stack no son aplicables al ASDK.
 ::: moniker-end
@@ -70,16 +70,16 @@ Para estar al día de las novedades del ASDK, suscríbase a la [![RSS](./media/a
 
 ### <a name="new-features"></a>Nuevas características
 
-- Para obtener una lista de las nuevas características de esta versión, consulte [esta sección](/azure-stack/operator/release-notes?view=azs-1907#whats-in-this-update-1907) de las notas de la versión de Azure Stack.
+- Para obtener una lista de las nuevas características de esta versión, consulte [esta sección](/azure-stack/operator/release-notes?view=azs-1907#whats-in-this-update) de las notas de la versión de Azure Stack.
 
 <!-- ### Changes -->
 
 ### <a name="fixed-and-known-issues"></a>Problemas conocidos y resueltos
 
 - Al crear recursos de VM con algunas imágenes de Marketplace, es posible que no pueda completar la implementación. Como solución alternativa, puede hacer clic en el enlace **Descargar plantilla y parámetros** en la página **Resumen** y haga clic en el botón **Implementar** de la hoja **Plantilla**.
-- Para ver una lista de los problemas de Azure Stack resueltos en esta versión, consulte [esta sección](/azure-stack/operator/release-notes?view=azs-1907#fixes-1907) de las notas de la versión de Azure Stack.
+- Para ver una lista de los problemas de Azure Stack resueltos en esta versión, consulte [esta sección](/azure-stack/operator/release-notes?view=azs-1907#fixes-2) de las notas de la versión de Azure Stack.
 - Para ver una lista de problemas conocidos, consulte [este artículo](/azure-stack/operator/known-issues?view=azs-1907).
-- Tenga en cuenta que [las revisiones disponibles de Azure Stack](/azure-stack/operator/release-notes?view=azs-1907#hotfixes-1907) no son aplicables a Azure Stack ASDK.
+- Tenga en cuenta que [las revisiones disponibles de Azure Stack](/azure-stack/operator/release-notes?view=azs-1907#hotfixes-2) no son aplicables a Azure Stack ASDK.
 ::: moniker-end
 
 ::: moniker range="azs-1906"
@@ -87,7 +87,7 @@ Para estar al día de las novedades del ASDK, suscríbase a la [![RSS](./media/a
 
 ### <a name="new-features"></a>Nuevas características
 
-- Para obtener una lista de las nuevas características de esta versión, consulte [esta sección](/azure-stack/operator/release-notes?view=azs-1906#whats-in-this-update-1906) de las notas de la versión de Azure Stack.
+- Para obtener una lista de las nuevas características de esta versión, consulte [esta sección](/azure-stack/operator/release-notes?view=azs-1906#whats-in-this-update-1) de las notas de la versión de Azure Stack.
 
 ### <a name="changes"></a>Cambios
 
@@ -96,7 +96,7 @@ Para estar al día de las novedades del ASDK, suscríbase a la [![RSS](./media/a
 ### <a name="fixed-and-known-issues"></a>Problemas conocidos y resueltos
 
 - Al crear recursos de VM con algunas imágenes de Marketplace, es posible que no pueda completar la implementación. Como solución alternativa, puede hacer clic en el enlace **Descargar plantilla y parámetros** en la página **Resumen** y haga clic en el botón **Implementar** de la hoja **Plantilla**.
-- Para ver una lista de los problemas de Azure Stack resueltos en esta versión, consulte [esta sección](/azure-stack/operator/release-notes?view=azs-1906#fixes-1906) de las notas de la versión de Azure Stack.
+- Para ver una lista de los problemas de Azure Stack resueltos en esta versión, consulte [esta sección](/azure-stack/operator/release-notes?view=azs-1906#fixes-3) de las notas de la versión de Azure Stack.
 - Para ver una lista de problemas conocidos, consulte [este artículo](/azure-stack/operator/known-issues?view=azs-1906).
-- Tenga en cuenta que [las revisiones disponibles de Azure Stack](/azure-stack/operator/release-notes?view=azs-1906#hotfixes-1906) no son aplicables a Azure Stack ASDK.
+- Tenga en cuenta que [las revisiones disponibles de Azure Stack](/azure-stack/operator/release-notes?view=azs-1906#hotfixes-3) no son aplicables a Azure Stack ASDK.
 ::: moniker-end

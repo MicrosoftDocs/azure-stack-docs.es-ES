@@ -15,12 +15,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: shnatara
 ms.lastreviewed: 09/25/2019
-ms.openlocfilehash: 1b6975490a876c0ff0b51fdf9f21ba010e14622d
-ms.sourcegitcommit: cefba8d6a93efaedff303d3c605b02bd28996c5d
+ms.openlocfilehash: e8b7809908bf09cdc60017c8944e26461aa6f07d
+ms.sourcegitcommit: d619612f54eeba3231ed73ed149ff894f9bf838a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74299098"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74993844"
 ---
 # <a name="deploy-a-service-fabric-cluster-in-azure-stack"></a>Implementación de un clúster de Service Fabric en Azure Stack
 
@@ -28,7 +28,7 @@ Use el elemento **Clúster de Service Fabric** en Azure Marketplace para impleme
 
 Para más información sobre cómo trabajar con Service Fabric, consulte [Información general de Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview) y [Escenarios de seguridad de los clústeres de Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-security) en la documentación de Azure.
 
-El clúster de Service Fabric en Azure Stack no utiliza el proveedor de recursos Microsoft.ServiceFabric. En su lugar, en Azure Stack, el clúster de Service Fabric es un conjunto de escalado de máquinas virtuales con un conjunto de software preinstalado con [Desired State Configuration (DSC)](https://docs.microsoft.com/powershell/dsc/overview/overview).
+El clúster de Service Fabric en Azure Stack no utiliza el proveedor de recursos Microsoft.ServiceFabric. En su lugar, en Azure Stack, el clúster de Service Fabric es un conjunto de escalado de máquinas virtuales con un conjunto de software preinstalado con [Desired State Configuration (DSC)](https://docs.microsoft.com/powershell/scripting/dsc/overview/overview).
 
 ## <a name="prerequisites"></a>Requisitos previos
 
