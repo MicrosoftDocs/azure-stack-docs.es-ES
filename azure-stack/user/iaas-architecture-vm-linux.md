@@ -9,12 +9,12 @@ ms.date: 11/01/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: e51f1bd10ad53671d4e3b60e448141207bf2f6e0
-ms.sourcegitcommit: 8a74a5572e24bfc42f71e18e181318c82c8b4f24
+ms.openlocfilehash: 6797f95b672b12bfe08fd4070bef2501367fc389
+ms.sourcegitcommit: d619612f54eeba3231ed73ed149ff894f9bf838a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73569322"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74993808"
 ---
 # <a name="run-a-linux-virtual-machine-on-azure-stack"></a>Ejecución de una máquina virtual Linux en Azure Stack
 
@@ -84,7 +84,7 @@ Todos los NSG contienen un conjunto de [reglas predeterminadas](https://docs.mic
 
 **Diagnóstico**. Habilite la supervisión y el diagnóstico, como las métricas básicas de estado, los registros de infraestructura de diagnóstico y los [diagnósticos de arranque](https://azure.microsoft.com/blog/boot-diagnostics-for-virtual-machines-v2/). Los diagnósticos de arranque pueden ayudarle a diagnosticar errores de arranque si la máquina virtual entra en un estado de imposibilidad de arranque. Cree una cuenta de Azure Storage para almacenar los registros. Una cuenta de almacenamiento con redundancia local (LRS) estándar es suficiente para este tipo de registros. Para más información, consulte [Habilitación de supervisión y diagnóstico](https://docs.microsoft.com/azure-stack/user/azure-stack-metrics-azure-data).
 
-**Disponibilidad**. Es posible que la máquina virtual esté sujeta a un reinicio debido a un mantenimiento planeado según lo programado por el operador de Azure Stack. Para aumentar la disponibilidad, implemente varias máquinas virtuales en un [conjunto de disponibilidad](https://docs.microsoft.com/azure-stack/operator/azure-stack-overview#providing-high-availability).
+**Disponibilidad**. Es posible que la máquina virtual esté sujeta a un reinicio debido a un mantenimiento planeado según lo programado por el operador de Azure Stack. Para aumentar la disponibilidad, implemente varias máquinas virtuales en un [conjunto de disponibilidad](https://docs.microsoft.com/azure-stack/operator/app-service-deploy-ha).
 
 **Copias de seguridad** Para recomendaciones sobre cómo proteger las máquinas virtuales de IaaS de Azure Stack, consulte [este](https://docs.microsoft.com/azure-stack/user/azure-stack-manage-vm-protect) artículo.
 

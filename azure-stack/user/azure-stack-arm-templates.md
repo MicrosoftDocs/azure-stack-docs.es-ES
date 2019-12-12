@@ -16,12 +16,12 @@ ms.date: 10/07/2019
 ms.author: mabrigg
 ms.reviewer: justini
 ms.lastreviewed: 11/14/2018
-ms.openlocfilehash: e2daa9416c966966b3c7cff240ddeb72ac227a8c
-ms.sourcegitcommit: 7226979ece29d9619c959b11352be601562b41d3
+ms.openlocfilehash: df7a6e7c42a8863117faaccfd4108c4ffd806a5a
+ms.sourcegitcommit: d619612f54eeba3231ed73ed149ff894f9bf838a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72304062"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74993770"
 ---
 # <a name="use-azure-resource-manager-templates-in-azure-stack"></a>Uso de plantillas de Administrador de recursos de Azure en Azure Stack
 
@@ -35,7 +35,7 @@ Las siguientes plantillas de inicio rápido están disponibles en [GitHub](https
 
 ## <a name="deploy-sharepoint-server-non-high-availability-deployment"></a>Implementación de SharePoint Server(sin implementación de alta disponibilidad)
 
-Use la extensión DSC ([Desired State Configuration](/powershell/dsc/overview/overview)) de PowerShell para [crear una granja de SharePoint Server 2013](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/sharepoint-2013-non-ha) que incluya los recursos siguientes:
+Use la extensión DSC ([Desired State Configuration](/powershell/scripting/dsc/overview/overview)) de PowerShell para [crear una granja de SharePoint Server 2013](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/sharepoint-2013-non-ha) que incluya los recursos siguientes:
 
 * Una red virtual
 * Tres cuentas de almacenamiento
@@ -77,7 +77,7 @@ Utilice la extensión de DSC de PowerShell para configurar Administrador de conf
 
 ## <a name="cancel-a-running-template-deployment"></a>Cancelación de una implementación de la plantilla en ejecución
 
-Para cancelar la implementación de una plantilla en ejecución, use el [cmdlet](/powershell/module/azurerm.resources/stop-azurermresourcegroupdeployment) de PowerShell [Stop-AzureRmResourceGroupDeployment de PowerShell](/powershell/developer/cmdlet/cmdlet-overview).
+Para cancelar la implementación de una plantilla en ejecución, use el [cmdlet](/powershell/module/azurerm.resources/stop-azurermresourcegroupdeployment) de PowerShell [Stop-AzureRmResourceGroupDeployment de PowerShell](/powershell/scripting/developer/cmdlet/cmdlet-overview).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

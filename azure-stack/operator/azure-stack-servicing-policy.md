@@ -17,12 +17,12 @@ ms.date: 10/30/2019
 ms.author: sethm
 ms.reviewer: harik
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: b874e81afc37684e15dd9cfe79adbf123f126f89
-ms.sourcegitcommit: 62283e9826ea78b218f5d2c6c555cc44196b085d
+ms.openlocfilehash: c9f9558d1885de28b1bf685d370e67951542a6ac
+ms.sourcegitcommit: d619612f54eeba3231ed73ed149ff894f9bf838a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74780667"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74993803"
 ---
 # <a name="azure-stack-servicing-policy"></a>Directiva de mantenimiento de Azure Stack
 
@@ -70,9 +70,9 @@ Las revisiones se descargan e instalan del mismo modo que las actualizaciones co
 Para más información acerca de las revisiones disponibles actualmente, consulte las notas de la versión de la actualización:
 
 - [Revisión 1910 de Azure Stack](/azure-stack/operator/release-notes?view=azs-1910#hotfixes)
-- [Revisión 1908 de Azure Stack](/azure-stack/operator/release-notes?view=azs-1908#hotfixes)
-- [Revisión 1907 de Azure Stack](/azure-stack/operator/release-notes?view=azs-1907#hotfixes)
-- [Revisión 1906 de Azure Stack](/azure-stack/operator/release-notes?view=azs-1906#hotfixes)
+- [Revisión 1908 de Azure Stack](/azure-stack/operator/release-notes?view=azs-1908#hotfixes-1)
+- [Revisión 1907 de Azure Stack](/azure-stack/operator/release-notes?view=azs-1907#hotfixes-2)
+- [Revisión 1906 de Azure Stack](/azure-stack/operator/release-notes?view=azs-1906#hotfixes-3)
 
 ## <a name="keep-your-system-under-support"></a>Mantenimiento del sistema dentro del soporte técnico
 

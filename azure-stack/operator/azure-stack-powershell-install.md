@@ -15,12 +15,12 @@ ms.date: 09/19/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 09/19/2019
-ms.openlocfilehash: ce827f900c6522d720f493c60495bd830cf328f4
-ms.sourcegitcommit: 55ec59f831a98c42a4e9ff0dd954bf10adb98ff1
+ms.openlocfilehash: e20012ce8ca397a9e74b97e380753b8f3ad33e45
+ms.sourcegitcommit: d619612f54eeba3231ed73ed149ff894f9bf838a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74540294"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74993837"
 ---
 # <a name="install-powershell-for-azure-stack"></a>Instalación de PowerShell para Azure Stack
 
@@ -39,7 +39,7 @@ Puede instalar los módulos de PowerShell compatibles con Azure Stack en un esce
 Antes de empezar con Azure Stack y PowerShell, debe cumplir estos requisitos previos:
 
 - **PowerShell versión 5.0** <br>
-Para comprobar la versión, ejecute **$PSVersionTable.PSVersion** y compare la versión **principal**. Si no tiene PowerShell 5.0, siga las instrucciones sobre cómo [instalar Windows PowerShell](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
+Para comprobar la versión, ejecute **$PSVersionTable.PSVersion** y compare la versión **principal**. Si no tiene PowerShell 5.0, siga las instrucciones sobre cómo [instalar Windows PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell).
 
   > [!Note]
   > PowerShell 5.0 requiere una máquina Windows.
@@ -126,7 +126,7 @@ Ejecute el siguiente script de PowerShell para instalar estos módulos en la est
     ```
 
     > [!Note]  
-    > - La versión 1.8.0 del módulo de Azure Stack presenta cambios importantes. Consulte las [notas de la versión](release-notes.md#changes) para obtener más información.
+    > - La versión 1.8.0 del módulo de Azure Stack presenta cambios importantes. Consulte las [notas de la versión](release-notes.md) para obtener más información.
     > - La versión 1.7.2 del módulo de Azure Stack presenta cambios importantes. Para migrar de Azure Stack 1.6.0, consulte la [guía de migración](https://aka.ms/azspshmigration171).
     > - La versión 2.4.0 del módulo de AzureRM incluye un cambio importante en el cmdlet Remove-AzureRmStorageAccount. Este cmdlet espera que el parámetro `-Force` esté especificado para quitar la cuenta de almacenamiento sin pedir confirmación.
     > - No es necesario instalar **AzureRM.Bootstrapper** para instalar los módulos de Azure Stack 1901 o posterior.
@@ -193,7 +193,7 @@ La instalación consta de cuatro pasos:
     ```
 
     > [!Note]  
-    > - La versión 1.8.0 del módulo de Azure Stack presenta cambios importantes. Consulte las [notas de la versión](release-notes.md#changes) para obtener más información.
+    > - La versión 1.8.0 del módulo de Azure Stack presenta cambios importantes. Consulte las [notas de la versión](release-notes.md) para obtener más información.
     > La versión del módulo de Azure Stack 1.7.1 es un cambio importante. Para migrar de Azure Stack 1.6.0, consulte la [Guía de migración](https://github.com/Azure/azure-powershell/tree/AzureRM/documentation/migration-guides/Stack).
 
     > [!NOTE]
@@ -208,7 +208,7 @@ La instalación consta de cuatro pasos:
 
 2. Inicie sesión en la estación de trabajo desconectada y copie los paquetes desde el dispositivo USB en una ubicación en dicha estación de trabajo.
 
-3. Realice manualmente el arranque del proveedor de NuGet en su estación de trabajo desconectada. Para obtener instrucciones, consulte [Arranque manual del proveedor de NuGet en una máquina no conectada a Internet](https://docs.microsoft.com/powershell/gallery/how-to/getting-support/bootstrapping-nuget#manually-bootstrapping-the-nuget-provider-on-a-machine-that-is-not-connected-to-the-internet).
+3. Realice manualmente el arranque del proveedor de NuGet en su estación de trabajo desconectada. Para obtener instrucciones, consulte [Arranque manual del proveedor de NuGet en una máquina no conectada a Internet](https://docs.microsoft.com/powershell/scripting/gallery/how-to/getting-support/bootstrapping-nuget#manually-bootstrapping-the-nuget-provider-on-a-machine-that-is-not-connected-to-the-internet).
 
 4. Registre esta ubicación como el repositorio predeterminado e instale los módulos AzureRM y `AzureStack` desde este repositorio:
 

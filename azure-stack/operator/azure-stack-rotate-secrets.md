@@ -17,12 +17,12 @@ ms.reviewer: ppacent
 ms.author: mabrigg
 ms.lastreviewed: 09/30/2019
 monikerRange: '>=azs-1802'
-ms.openlocfilehash: d00cbc5eaacd80ba67b339e11562dc516fcd0991
-ms.sourcegitcommit: 284f5316677c9a7f4c300177d0e2a905df8cb478
+ms.openlocfilehash: 14c1d6ba96cd8c9671b28f435db90b7b3ce3ad34
+ms.sourcegitcommit: ae9d29c6a158948a7dbc4fd53082984eba890c59
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74465374"
+ms.lasthandoff: 12/12/2019
+ms.locfileid: "75007986"
 ---
 # <a name="rotate-secrets-in-azure-stack"></a>Cambio de secretos en Azure Stack
 
@@ -163,40 +163,40 @@ Para cambiar los secretos externos:
     ```powershell
         <ShareName>
         │   │
-        │   ├───Certificates
-        │   └───AAD
-        │       ├───ACSBlob
-        │       │       <CertName>.pfx
-        │       │
-        │       ├───ACSQueue
-        │       │       <CertName>.pfx
-        │       │
-        │       ├───ACSTable
-        │       │       <CertName>.pfx
-        │       │
-        │       ├───Admin Extension Host
-        │       │       <CertName>.pfx
-        │       │
-        │       ├───Admin Portal
-        │       │       <CertName>.pfx
-        │       │
-        │       ├───ARM Admin
-        │       │       <CertName>.pfx
-        │       │
-        │       ├───ARM Public
-        │       │       <CertName>.pfx
-        │       │
-        │       ├───KeyVault
-        │       │       <CertName>.pfx
-        │       │
-        │       ├───KeyVaultInternal
-        │       │       <CertName>.pfx
-        │       │
-        │       ├───Public Extension Host
-        │       │       <CertName>.pfx
-        │       │
-        │       └───Public Portal
-        │               <CertName>.pfx
+        │   └───Certificates
+        │         └───AAD
+        │             ├───ACSBlob
+        │             │       <CertName>.pfx
+        │             │
+        │             ├───ACSQueue
+        │             │       <CertName>.pfx
+        │             │
+        │             ├───ACSTable
+        │             │       <CertName>.pfx
+        │             │
+        │             ├───Admin Extension Host
+        │             │       <CertName>.pfx
+        │             │
+        │             ├───Admin Portal
+        │             │       <CertName>.pfx
+        │             │
+        │             ├───ARM Admin
+        │             │       <CertName>.pfx
+        │             │
+        │             ├───ARM Public
+        │             │       <CertName>.pfx
+        │             │
+        │             ├───KeyVault
+        │             │       <CertName>.pfx
+        │             │
+        │             ├───KeyVaultInternal
+        │             │       <CertName>.pfx
+        │             │
+        │             ├───Public Extension Host
+        │             │       <CertName>.pfx
+        │             │
+        │             └───Public Portal
+        │                     <CertName>.pfx
 
     ```
 
@@ -309,7 +309,7 @@ El cmdlet **Start-SecretRotation** permite cambiar los secretos de la infraestru
 
 ### <a name="parameters"></a>Parámetros
 
-| Parámetro | type | Obligatorio | Posición | Valor predeterminado | DESCRIPCIÓN |
+| Parámetro | Tipo | Obligatorio | Posición | Valor predeterminado | DESCRIPCIÓN |
 | -- | -- | -- | -- | -- | -- |
 | `PfxFilesPath` | Cadena  | False  | con nombre  | None  | La ruta de acceso del recurso compartido de archivos al directorio **\Certificates** que contiene todos los certificados del punto de conexión de la red externa. Solo se necesita al rotar secretos externos. El directorio final debe ser **\Certificates**. |
 | `CertificatePassword` | SecureString | False  | con nombre  | None  | La contraseña de todos los certificados que se proporcionan en -PfXFilesPath. Valor obligatorio si se proporciona PfxFilesPath al cambiar secretos externos. |

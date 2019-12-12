@@ -10,16 +10,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/22/2019
+ms.date: 12/10/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 11/22/2019
-ms.openlocfilehash: a5a6cf3ef5c2c03992647c207422eb266f171ac4
-ms.sourcegitcommit: 284f5316677c9a7f4c300177d0e2a905df8cb478
+ms.lastreviewed: 12/10/2019
+ms.openlocfilehash: f8acc74aed978b3672dacd65524a8f1dbb5e6909
+ms.sourcegitcommit: 3c40e6df2447531a69e33b2fd0f2365b7dcf8892
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74465493"
+ms.lasthandoff: 12/11/2019
+ms.locfileid: "75005373"
 ---
 # <a name="manage-and-deploy-resources-to-azure-stack-with-azure-cli"></a>Administración e implementación de recursos en Azure Stack con la CLI de Azure
 
@@ -362,7 +362,7 @@ Para confiar en el certificado raíz de CA de Azure Stack, anéxelo al certifica
 1. Busque la ubicación del certificado en la máquina. La ubicación puede variar dependiendo de dónde haya instalado Python. Debe tener PIP y el módulo certifi instalado. Use el siguiente comando de Python desde el símbolo del sistema de bash:
 
     ```bash  
-    python3 -c "import certifi; print(certifi.where())"
+    az --version
     ```
 
     Tome nota de la ubicación del certificado. Por ejemplo, `~/lib/python3.5/site-packages/certifi/cacert.pem`. La ruta de acceso específica depende del sistema operativo y la versión de Python que haya instalado.
@@ -385,12 +385,7 @@ Para confiar en el certificado raíz de CA de Azure Stack, anéxelo al certifica
 
 Use los pasos siguientes para conectarse a Azure Stack:
 
-1. Registre el entorno de Azure Stack. Para ello, ejecute el comando `az cloud register`. En algunos escenarios, la conectividad directa a internet saliente se enruta mediante un servidor proxy o firewall, que exige la intercepción de SSL. En estos casos, el comando `az cloud register` puede producir un error del tipo "Unable to get endpoints from the cloud" (No se pueden obtener los puntos de conexión de la nube). Para solucionar este error, puede establecer las siguientes variables de entorno:
-
-   ```shell
-   export AZURE_CLI_DISABLE_CONNECTION_VERIFICATION=1
-   export ADAL_PYTHON_SSL_NO_VERIFY=1
-   ```
+1. Registre el entorno de Azure Stack. Para ello, ejecute el comando `az cloud register`.
 
 2. Registre su entorno. Utilice los siguientes parámetros cuando ejecute `az cloud register`:
 
@@ -473,7 +468,7 @@ Para confiar en el certificado raíz de CA de Azure Stack, anéxelo al certifica
 1. Busque la ubicación del certificado en la máquina. La ubicación puede variar dependiendo de dónde haya instalado Python. Debe tener PIP y el módulo certifi instalado. Use el siguiente comando de Python desde el símbolo del sistema de bash:
 
     ```bash  
-    python3 -c "import certifi; print(certifi.where())"
+    az --version 
     ```
 
     Tome nota de la ubicación del certificado. Por ejemplo, `~/lib/python3.5/site-packages/certifi/cacert.pem`. La ruta de acceso específica depende del sistema operativo y la versión de Python que haya instalado.
@@ -496,12 +491,7 @@ Para confiar en el certificado raíz de CA de Azure Stack, anéxelo al certifica
 
 Use los pasos siguientes para conectarse a Azure Stack:
 
-1. Registre el entorno de Azure Stack. Para ello, ejecute el comando `az cloud register`. En algunos escenarios, la conectividad directa a internet saliente se enruta mediante un servidor proxy o firewall, que exige la intercepción de SSL. En estos casos, el comando `az cloud register` puede producir un error del tipo "Unable to get endpoints from the cloud" (No se pueden obtener los puntos de conexión de la nube). Para solucionar este error, puede establecer las siguientes variables de entorno:
-
-   ```shell
-   export AZURE_CLI_DISABLE_CONNECTION_VERIFICATION=1
-   export ADAL_PYTHON_SSL_NO_VERIFY=1
-   ```
+1. Registre el entorno de Azure Stack. Para ello, ejecute el comando `az cloud register`.
 
 2. Registre su entorno. Utilice los siguientes parámetros cuando ejecute `az cloud register`.
 
