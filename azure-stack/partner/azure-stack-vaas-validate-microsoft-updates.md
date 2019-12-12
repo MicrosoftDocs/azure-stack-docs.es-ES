@@ -15,12 +15,12 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 10/29/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 6fe2f8e7ab435cae3517890f79c26611a80c8a60
-ms.sourcegitcommit: cc3534e09ad916bb693215d21ac13aed1d8a0dde
+ms.openlocfilehash: 3399288b801114f076afe3b68d3f9790bfe2af29
+ms.sourcegitcommit: 08d2938006b743b76fba42778db79202d7c3e1c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73167151"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74954492"
 ---
 # <a name="validate-software-updates-from-microsoft"></a>Validación de las actualizaciones de software de Microsoft
 
@@ -35,15 +35,12 @@ Las actualizaciones de software de Microsoft en Azure Stack se designan utilizan
 Antes de ejecutar el proceso de actualización mensual en VaaS, debe estar familiarizado con los siguientes elementos:
 
 - [Validation as a Service key concepts](azure-stack-vaas-key-concepts.md) (Conceptos clave de la validación como servicio)
-- [Pruebas de comprobación de características interactivas](azure-stack-vaas-interactive-feature-verification.md)
 
 ## <a name="required-tests"></a>Pruebas necesarias
 
 Para la validación mensual del software se deben ejecutar las siguientes pruebas en el orden siguiente:
 
-- Paso 1: Comprobación de la actualización mensual de AzureStack
-- Paso 2: Comprobación del paquete de extensión de OEM
-- Paso 3: OEM: motor de la simulación de la nube
+- Flujo de trabajo de validación de OEM
 
 ## <a name="validating-software-updates"></a>Validación de actualizaciones de software
 

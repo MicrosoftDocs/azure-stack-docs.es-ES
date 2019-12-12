@@ -15,12 +15,12 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: dcfd50c533558bff0bdac75dfa3231d5196039cc
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.openlocfilehash: 774778e382526cffb30e2a69d16c32cc1e548225
+ms.sourcegitcommit: 08d2938006b743b76fba42778db79202d7c3e1c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955821"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74954560"
 ---
 # <a name="validate-oem-packages"></a>Validación de paquetes de OEM
 
@@ -148,30 +148,30 @@ Use esta opción si es aceptable permitir el acceso de clientes no autenticados 
 
 5. Escriba la dirección URL del blob de Azure Storage para el paquete de OEM firmado de prueba que requiera una firma de Microsoft. Para instrucciones, consulte [Generación de la dirección URL del blob del paquete para VaaS](#generate-package-blob-url-for-vaas).
 
-6. Copie la carpeta del paquete de actualización de AzureStack a un directorio local del DVM. Escriba la ruta de acceso del directorio primario en "ruta de acceso de la carpeta de la actualización de AzureStack"
+6. Copie la carpeta del paquete de actualización de AzureStack a un directorio local del DVM. Escriba la ruta de acceso a la **carpeta que contiene el archivo zip del paquete y el archivo de metadatos** para la "ruta de acceso a la carpeta del paquete de actualizaciones de AzureStack"
 
-7. Copie la carpeta del paquete de OEM creado anteriormente a un directorio local del DVM. Escriba la ruta de acceso del directorio primario en "ruta de acceso de la carpeta de la actualización de OEM"
+7. Copie la carpeta del paquete de OEM creado anteriormente a un directorio local del DVM. Escriba la ruta de acceso a la **carpeta que contiene el archivo zip del paquete y el archivo de metadatos** para la "ruta de acceso a la carpeta del paquete de actualizaciones de OEM"
 
     > [!NOTE]
-    > Copie la actualización de AzureStack y la actualización de OEM en **2** directorios principales independientes.
+    > Copie la actualización de AzureStack y la actualización de OEM en **2 directorios independientes**.
 
-8. [!INCLUDE [azure-stack-vaas-workflow-step_test-params](includes/azure-stack-vaas-workflow-step_test-params.md)]
+8. "RequireDigitalSignature": proporcione **true** si necesita que el paquete esté firmado por Microsoft (mediante la ejecución del flujo de trabajo de validación de OEM). Si va a validar un paquete firmado por Microsoft en la actualización más reciente de AzureStack, proporcione este valor como false (mediante la ejecución de la comprobación mensual de actualizaciones de AzureStack).
+
+9. [!INCLUDE [azure-stack-vaas-workflow-step_test-params](includes/azure-stack-vaas-workflow-step_test-params.md)]
 
     > [!NOTE]
     > No se pueden modificar los parámetros de entorno después de crear un flujo de trabajo.
 
-9. [!INCLUDE [azure-stack-vaas-workflow-step_tags](includes/azure-stack-vaas-workflow-step_tags.md)]
+10. [!INCLUDE [azure-stack-vaas-workflow-step_tags](includes/azure-stack-vaas-workflow-step_tags.md)]
 
-10. [!INCLUDE [azure-stack-vaas-workflow-step_submit](includes/azure-stack-vaas-workflow-step_submit.md)]
+11. [!INCLUDE [azure-stack-vaas-workflow-step_submit](includes/azure-stack-vaas-workflow-step_submit.md)]
     Se le redirigirá a la página de resumen de las pruebas.
 
 ## <a name="required-tests"></a>Pruebas necesarias
 
-Es preciso realizar las siguientes pruebas, en el orden especificado, para la validación del paquete de OEM:
+Es necesario ejecutar las pruebas siguientes para la validación de paquetes de OEM:
 
-- Paso 1: Comprobación de la actualización mensual de AzureStack
-- Paso 2: Comprobación del paquete de extensión de OEM
-- Paso 3: OEM: motor de la simulación de la nube
+- Flujo de trabajo de validación de OEM
 
 ## <a name="run-package-validation-tests"></a>Ejecución de pruebas de Package Validation
 
@@ -183,20 +183,13 @@ Es preciso realizar las siguientes pruebas, en el orden especificado, para la va
     > La programación a través de una prueba de validación a través de una instancia existente creará una nueva instancia en el lugar de la anterior en el portal. Los registros de la instancia anterior se conservarán, pero no se podrá acceder a ellos desde el portal.  
     > Una vez finalizada una prueba correctamente, la acción **Schedule** (Programar) pasará a estar deshabilitada.
 
-2. Para la validación del paquete, ejecutará las **pruebas necesarias** en el orden que se muestra.
+2. Seleccione el agente que ejecutará la prueba. Para más información acerca de cómo agregar agentes de ejecución de prueba, consulte [Implementación del agente local](azure-stack-vaas-local-agent.md).
 
-    > [!CAUTION]
-    > VaaS ejecutará las pruebas en el orden en que se programaron. Es necesario programar las pruebas en el orden especificado.
+3. Para programar la ejecución serie de pruebas, seleccione **Schedule** (Programar) en el menú contextual para abrir un símbolo del sistema para programar la instancia de prueba.
 
-3. Seleccione el agente que ejecutará la prueba. Para más información acerca de cómo agregar agentes de ejecución de prueba, consulte [Implementación del agente local](azure-stack-vaas-local-agent.md).
+4. Examine los parámetros de prueba y seleccione **Submit** (Enviar) para programar la prueba.
 
-4. Para programar la ejecución serie de pruebas, seleccione **Schedule** (Programar) en el menú contextual para abrir un símbolo del sistema para programar la instancia de prueba.
-
-5. Examine los parámetros de prueba y seleccione **Submit** (Enviar) para programar la prueba.
-
-6. No es necesario esperar a que la prueba se complete para programar la siguiente. Programe todas las pruebas **necesarias** en el orden especificado arriba.
-
-7. Revise los resultados de las pruebas **necesarias**.
+5. Revise los resultados de las pruebas **necesarias**.
 
 Para enviar un solicitud de firma del paquete, envíe a [vaashelp@microsoft.com](mailto:vaashelp@microsoft.com) el nombre de la solución y el nombre de la validación del paquete asociado con esta ejecución.
 
