@@ -2,7 +2,6 @@
 documentType: LandingData
 title: Documentación para asociados de Azure Stack Hub
 metadata:
-  document_id: null
   title: 'D\Documentación para asociados de Azure Stack Hub: tutoriales y R\referencia de API'
   description: Aprenda a validar el hardware para hospedar Azure Stack. La validación como servicio es un servicio nativo de Azure diseñado para su uso por los asociados de la solución que diseñan de forma conjunta ofertas de Azure Stack Hub con Microsoft.
   services: azure-stack
