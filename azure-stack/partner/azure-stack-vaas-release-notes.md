@@ -14,18 +14,33 @@ ms.date: 10/28/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 10/28/2019
-ms.openlocfilehash: aa85310314a09db47f10424e84fe40e355bacb25
-ms.sourcegitcommit: ed44d477b9fd11573d1e0d1ed3a3c0ef4512df53
+ms.openlocfilehash: 963944f2ade4db168c1b7f9070e72fe503bdfcf9
+ms.sourcegitcommit: 08d2938006b743b76fba42778db79202d7c3e1c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73846240"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74954475"
 ---
 # <a name="release-notes-for-validation-as-a-service"></a>Notas de la versión para la validación como servicio
 
 [!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 
 En este artículo se incluyen las notas de la versión para la validación como servicio de Azure Stack.
+
+## <a name="version-4421"></a>Versión 4.4.2.1
+
+3 de diciembre de 2019
+
+- Prueba de las actualizaciones de contenido
+  - Se ha actualizado la documentación en línea para el flujo de trabajo mensual de actualización de Azure Stack y el flujo de trabajo de validación de paquetes de OEM. Revise la documentación actualizada aquí en "Validación de paquetes de OEM" y en "Validación de las actualizaciones de software de Microsoft"
+  - Actualización del flujo de trabajo de validación de paquetes de VaaS: El flujo de trabajo de validación de OEM es la única prueba necesaria para la comprobación de actualizaciones mensual de Azure Stack y la validación de paquetes OEM. La prueba actualiza la marca con los paquetes de AzureStack y OEM proporcionados, y ejecuta las pruebas de comprobación de Cloud Simulation Engine.
+  - Actualización de la extensión de PowerShell de VaaS: Ahora se admite la automatización del flujo de trabajo de validación de paquetes. Consulte la automatización de VaaS de Azure Stack con PowerShell para más información sobre la ubicación y las instrucciones paso a paso para usar esta extensión.
+
+- Problemas conocidos
+  - Póngase en contacto con vaashelp@microsoft.com si los siguientes casos de prueba no se pueden ejecutar durante el flujo de trabajo de validación de OEM:
+    - Test101LinuxEmptyAttachedDiskManagedDisk
+    - Test101WindowsEmptyAttachedDiskManagedDisk
+
 
 ## <a name="version-4353"></a>Versión 4.3.5.3
 
@@ -66,7 +81,7 @@ En este artículo se incluyen las notas de la versión para la validación como 
 - Cloud Simulation Engine en el flujo de trabajo de validación de paquetes de OEM y el flujo de trabajo de actualización de Azure Stack (versiones 5.1.30.0 -> 5.1.46.0) requiere que las pruebas se programen en el siguiente orden: prueba de comprobación mensual de actualizaciones de Azure Stack, prueba de comprobación de paquetes de extensión de OEM y finalmente Cloud Simulation Engine.
 - Actualización del agente de VaaS: El agente de VaaS actualizado usa ahora las credenciales de administrador de la nube de Azure Stack para consultar la marca y obtener la información de esta para rellenar automáticamente los flujos de trabajo. 
 
-    Esta actualización requiere que todos los agentes se actualicen y se reinicien. Consulte estas instrucciones sobre cómo actualizar el agente de VaaS: https://docs.microsoft.com/en-us/azure-stack/partner/azure-stack-vaas-local-agent
+    Esta actualización requiere que todos los agentes se actualicen y se reinicien. Consulte estas instrucciones sobre cómo actualizar el agente de VaaS: https://docs.microsoft.com/azure-stack/partner/azure-stack-vaas-local-agent
 - Actualización de la interfaz de usuario del portal de VaaS: Se ha trasladado la tabla de selección de agente por encima del panel de programación de pruebas para facilitar las pruebas.
 
     Al programar un trabajo, ya no es necesario escribir la información de la marca si los agentes de VaaS se han actualizado correctamente.
@@ -149,7 +164,7 @@ Si ejecuta el flujo de trabajo de verificación de actualización mensual de Azu
 
 - Actualización de automatización de PowerShell
 
-    Se realizaron cambios en scripts `LaunchVaaSTests` de PowerShell que requieren la versión más reciente de los paquetes de scripting. Consulte [Inicio del flujo de trabajo de la ejecución de la prueba](azure-stack-vaas-automate-with-powershell.md#launch-the-test-pass-workflow) para obtener instrucciones sobre cómo instalar la versión más reciente del paquete de scripting.
+    Se realizaron cambios en scripts `LaunchVaaSTests` de PowerShell que requieren la versión más reciente de los paquetes de scripting. Consulte [Inicio del flujo de trabajo de la ejecución de la prueba](azure-stack-vaas-automate-with-powershell.md) para obtener instrucciones sobre cómo instalar la versión más reciente del paquete de scripting.
 
 - Portal de validación como servicio
 

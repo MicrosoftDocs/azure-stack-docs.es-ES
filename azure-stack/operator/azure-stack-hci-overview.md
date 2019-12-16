@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.date: 11/04/2019
-ms.openlocfilehash: f3e3e79f5c570127f1f7f39613cafca1bd869f36
-ms.sourcegitcommit: 5ef433aa6b75cdfb557fab0ef9308ff2118e66e5
+ms.openlocfilehash: 2179ce6c52ce121b6cbb0307f5fbae73126650bb
+ms.sourcegitcommit: 8e5a4659d8669ccfe6cd75d03200ae09a16b5f8a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73595454"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74898589"
 ---
 # <a name="azure-stack-hci-overview"></a>Introducción a Azure Stack HCI
 
@@ -43,7 +43,7 @@ Azure Stack HCI es la solución hiperconvergida de Microsoft disponible en una 
 
 ## <a name="the-azure-stack-family"></a>La familia Azure Stack
 
-Azure Stack HCI forma parte de Azure y la familia de Azure Stack, ya que usa los mismos procesos definidos por software, almacenamiento y software de red que Azure Stack. A continuación se muestra un resumen rápido de las distintas soluciones (para más información, consulte [Diferencias entre Azure global, Azure Stack y Azure Stack HCI](compare-azure-azure-stack.md)):
+Azure Stack HCI forma parte de Azure y la familia de Azure Stack, ya que usa los mismos procesos definidos por software, almacenamiento y software de red que Azure Stack Hub. A continuación se muestra un resumen rápido de las distintas soluciones (para más información, consulte [Diferencias entre Azure global, Azure Stack y Azure Stack HCI](compare-azure-azure-stack.md)):
 
 - [Azure](https://azure.microsoft.com): use los servicios en la nube pública para que los recursos informáticos a petición y de autoservicio migren y modernicen las aplicaciones existentes y compilen nuevas aplicaciones nativas en la nube.
 - [Azure Stack Edge](https://docs.microsoft.com/azure/databox-online/data-box-edge-overview): acelere las cargas de trabajo de aprendizaje automático y ejecute aplicaciones en contenedores o cargas de trabajo virtualizadas en el entorno local, en un dispositivo administrado en la nube.
@@ -87,7 +87,7 @@ Para obtener más información, consulte [Connecting Windows Server to Azure hyb
 
 ## <a name="management-tools-and-system-center"></a>Herramientas de administración y System Center
 
-Azure Stack HCI usa la misma virtualización, almacenamiento definido por software y software de red que Azure Stack. Sin embargo, con Azure Stack HCI, tiene derechos administrativos completos en el clúster y puede administrar cualquiera de sus tecnologías directamente:
+Azure Stack HCI usa la misma virtualización, almacenamiento definido por software y software de red que Azure Stack Hub. Sin embargo, con Azure Stack HCI, tiene derechos administrativos completos en el clúster y puede administrar cualquiera de sus tecnologías directamente:
 
 - [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server)
 - [Espacios de almacenamiento directo](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
@@ -112,7 +112,7 @@ Visite el [sitio web de Azure Stack HCI](https://azure.microsoft.com/overview/a
 
 ## <a name="faq"></a>Preguntas más frecuentes
 
-### <a name="what-do-azure-stack-and-azure-stack-hci-solutions-have-in-common"></a>¿Qué tienen en común las soluciones de Azure Stack y Azure Stack HCI?
+### <a name="what-do-azure-stack-hub-and-azure-stack-hci-solutions-have-in-common"></a>¿Qué tienen en común las soluciones de Azure Stack Hub y Azure Stack HCI?
 
 Las soluciones de Azure Stack HCI presentan las mismas tecnologías de proceso, almacenamiento y red definidas por software y basadas en Hyper-V que Azure Stack Hub. Ambas ofertas cumplen rigurosos criterios de prueba y validación para garantizar la confiabilidad y la compatibilidad con la plataforma de hardware subyacente.
 
@@ -146,7 +146,7 @@ Para una lista actualizada de los servicios de Azure a los que puede conectar Az
 
 ### <a name="how-does-the-cost-of-azure-stack-hci-compare-to-azure-stack-hub"></a>¿Cuál es la diferencia entre Azure Stack HCI y Azure Stack Hub en relación con el costo? 
 
-Azure Stack Hub se vende como sistema completamente integrado que incluye servicios y soporte técnico. Se puede comprar Azure Stack como un sistema administrado por usted o como un servicio completamente administrado en nuestros asociados. Además del sistema base, los servicios de Azure que se ejecutan en Azure Stack o Azure se venden conforme al principio del pago por uso.
+Azure Stack Hub se vende como sistema completamente integrado que incluye servicios y soporte técnico. Se puede comprar Azure Stack Hub como un sistema administrado por usted o como un servicio completamente administrado en nuestros asociados. Además del sistema base, los servicios de Azure que se ejecutan en Azure Stack Hub o Azure se venden conforme al principio del pago por uso.
 
 Las soluciones de Azure Stack HCI siguen el modelo de compra tradicional. Puede comprar hardware validado en asociados de Azure Stack HCI y software (edición Windows Server 2019 Datacenter con funcionalidades del centro de datos definidas por software y Windows Admin Center) en diversos canales existentes. En los servicios de Azure que puede usar con Windows Admin Center, paga con una suscripción a Azure.
 

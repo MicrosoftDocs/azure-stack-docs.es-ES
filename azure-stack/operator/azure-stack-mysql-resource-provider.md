@@ -15,21 +15,28 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/25/2018
-ms.openlocfilehash: 8f498896489a0c217b1f7c51ec4dda6b493ddda7
-ms.sourcegitcommit: b5eb024d170f12e51cc852aa2c72eabf26792d8d
+ms.openlocfilehash: b66a72ce872d64f8fde3cb80ced5e6ad33d80b4d
+ms.sourcegitcommit: d619612f54eeba3231ed73ed149ff894f9bf838a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72534018"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74993781"
 ---
 # <a name="use-mysql-databases-on-microsoft-azure-stack"></a>Usar bases de datos MySQL en Microsoft Azure Stack
 
 Las bases de datos de MySQL se usan normalmente en los sitios web y admiten muchas plataformas de sitio web. Por ejemplo, puede crear sitios web de WordPress con el complemento del proveedor de recursos (PaaS) de App Services.
 
-Después de implementar el proveedor de recursos, puede hacer lo siguiente:
+Después de implementar el proveedor de recursos y conectarlo a una o varias instancias de servidor MySQL, puede:
 
-* Crear servidores MySQL y bases de datos mediante las plantillas de implementación de Azure Resource Manager.
+* Crear bases de datos de MySQL mediante las plantillas de implementación de Azure Resource Manager.
 * Proporcionar bases de datos MySQL como servicio.  
+
+Hay varias limitaciones a tener en cuenta antes de instalar el proveedor de recursos de MySQL:
+
+- Los usuarios solo pueden crear y administrar bases de datos individuales. La instancia del servidor de base de datos no es accesible para los usuarios finales. Esto puede limitar la compatibilidad con las aplicaciones de base de datos locales que necesitan acceder a bases de datos maestras, temporales o administradas dinámicamente.
+- El operador de Azure Stack es responsable de la implementación, actualización, protección, configuración y mantenimiento de los hosts y servidores de bases de datos de MySQL. El servicio Proveedor de recursos no proporciona ninguna funcionalidad de administración de instancias de servidor de bases de datos y hosts. 
+- Las bases de datos de diferentes usuarios de distintas suscripciones se pueden colocar en la misma instancia del servidor de bases de datos. El proveedor de recursos no proporciona ningún mecanismo para aislar las bases de datos en diferentes hosts o instancias del servidor de bases de datos.
+- El proveedor de recursos no proporciona ningún informe sobre el uso de los inquilinos de las bases de datos.
 
 ## <a name="mysql-resource-provider-adapter-architecture"></a>Arquitectura del adaptador del proveedor de recursos de MySQL
 

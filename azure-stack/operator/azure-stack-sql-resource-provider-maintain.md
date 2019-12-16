@@ -1,6 +1,7 @@
 ---
-title: Mantenimiento de un proveedor de recursos de SQL en Azure Stack |Microsoft Docs
-description: Aprenda cómo puede mantener el servicio de proveedor de recursos SQL en Azure Stack.
+title: Operaciones de mantenimiento del proveedor de recursos de SQL
+titleSuffix: Azure Stack
+description: Más información sobre las operaciones de mantenimiento de un proveedor de recursos de SQL en Azure Stack.
 services: azure-stack
 documentationCenter: ''
 author: mattbriggs
@@ -15,24 +16,24 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: bf5bd23fc9d497034dfb51c76f28e5b17fbd8e33
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: 8d8464c35b2aaa48c5611f7eac84ed6f9d80e866
+ms.sourcegitcommit: 08d2938006b743b76fba42778db79202d7c3e1c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71829302"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74954509"
 ---
 # <a name="sql-resource-provider-maintenance-operations"></a>Operaciones de mantenimiento del proveedor de recursos de SQL
 
-El proveedor de recursos de SQL se ejecuta en una máquina virtual bloqueada. Para habilitar las operaciones de mantenimiento, debe actualizar la seguridad de la máquina virtual. Para hacerlo con el principio de privilegio mínimo, puede usar el punto de conexión [JEA (Just Enough Administration) de PowerShell](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/overview) *DBAdapterMaintenance*. El paquete de instalación del proveedor de recursos incluye un script para esta operación.
+El proveedor de recursos de SQL se ejecuta en una máquina virtual bloqueada. Para habilitar las operaciones de mantenimiento, debe actualizar la seguridad de la VM. Para hacerlo con el principio de privilegio mínimo, use el punto de conexión [Just Enough Administration (JEA) de PowerShell](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/overview) *DBAdapterMaintenance*. El paquete de instalación del proveedor de recursos incluye un script para esta acción.
 
 ## <a name="patching-and-updating"></a>Revisiones y actualizaciones
 
 El proveedor de recursos de SQL no se suministra como parte de Azure Stack porque es un componente complementario. Microsoft proporciona las actualizaciones para el proveedor de recursos de SQL según sea necesario. Cuando se publica un adaptador de SQL actualizado, se proporciona un script para aplicar la actualización. Este script crea una nueva VM de proveedor de recursos, que migra el estado de la VM del proveedor antigua a la VM nueva. Para más información, consulte [Actualización del proveedor de recursos de SQL](azure-stack-sql-resource-provider-update.md).
 
-### <a name="provider-virtual-machine"></a>Máquina virtual del proveedor
+### <a name="provider-vm"></a>Máquina virtual de proveedor
 
-Dado que el proveedor de recursos se ejecuta en la máquina virtual de un *usuario*, debe aplicar las revisiones y actualizaciones necesarias cuando se publiquen. Puede usar los paquetes de actualización de Windows que se proporcionan como parte del ciclo de revisión y actualización para aplicar actualizaciones a la máquina virtual.
+Dado que el proveedor de recursos se ejecuta en la VM de un *usuario*, debe aplicar las revisiones y actualizaciones necesarias cuando se publiquen. Use los paquetes de actualización de Windows que se proporcionan como parte del ciclo de revisión y actualización para aplicar actualizaciones a la máquina virtual.
 
 ## <a name="updating-sql-credentials"></a>Actualización de las credenciales de SQL
 
@@ -40,13 +41,13 @@ Es responsable de crear y mantener cuentas sysadmin en los servidores SQL Server
 
 Para modificar la configuración, seleccione **Examinar** &gt; **RECURSOS ADMINISTRATIVOS** &gt; **Servidores de hospedaje SQL** &gt; **Inicios de sesión SQL** y seleccione un nombre de usuario. El cambio se debe efectuar en la instancia de SQL en primer lugar (y en cualquier réplica, si es necesario). En **Configuración**, seleccione **Contraseña**.
 
-![Actualización de la contraseña de administrador](./media/azure-stack-sql-rp-deploy/sqlrp-update-password.PNG)
+![Actualización de la contraseña de administrador de SQL](./media/azure-stack-sql-rp-deploy/sqlrp-update-password.PNG)
 
 ## <a name="secrets-rotation"></a>Cambio de secretos
 
 *Estas instrucciones se aplican solo a sistemas integrados de Azure Stack.*
 
-Al usar los proveedores de recursos de SQL y MySQL con los sistemas integrados de Azure Stack, el operador de Azure Stack se encarga de rotar los siguientes secretos de infraestructura del proveedor de recursos para asegurarse de que no caduquen:
+Al usar los proveedores de recursos SQL y MySQL con los sistemas integrados de Azure Stack, el operador de Azure Stack se encarga de girar los siguientes secretos de infraestructura del proveedor de recursos para asegurarse de que no caduquen:
 
 - Certificado SSL externo [proporcionado durante la implementación](azure-stack-pki-certs.md).
 - La contraseña de la cuenta de administrador local de la máquina virtual del proveedor de recursos proporcionada durante la implementación.
@@ -77,7 +78,7 @@ Al usar los proveedores de recursos de SQL y MySQL con los sistemas integrados d
     -DiagnosticsUserPassword  $passwd
 ```
 
-**Cambio de la contraseña de la cuenta de administrador local de la máquina virtual.**
+**Cambio de la contraseña de la cuenta de administrador local de la VM.**
 
 ```powershell
 .\SecretRotationSQLProvider.ps1 `
@@ -106,37 +107,37 @@ Al usar los proveedores de recursos de SQL y MySQL con los sistemas integrados d
 |CloudAdminCredential|Credencial de cuenta de dominio de administración en la nube de Azure Stack.|
 |PrivilegedEndpoint|Punto de conexión con privilegios para acceder a Get-AzureStackStampInformation.|
 |DiagnosticsUserPassword|Contraseña de la cuenta de usuario de diagnóstico.|
-|VMLocalCredential|Cuenta de administrador local de la máquina virtual MySQLAdapter.|
+|VMLocalCredential|Cuenta de administrador local en la máquina virtual MySQLAdapter.|
 |DefaultSSLCertificatePassword|Contraseña del certificado SSL predeterminado (*.pfx).|
 |DependencyFilesLocalPath|Ruta de acceso local de los archivos de dependencia.|
 |     |     |
 
 ### <a name="known-issues"></a>Problemas conocidos
 
-**Problema**: Registros de cambio de secretos.<br>
-Los registros para el cambio de secretos no se recopilan automáticamente si el script personalizado de cambio de secretos produce un error cuando se ejecuta.
+**Problema**:<br>
+Registros de cambio de secretos. Los registros para el cambio de secretos no se recopilan automáticamente si se produce un error en el script personalizado de cambio de secretos cuando se ejecuta.
 
 **Solución alternativa**:<br>
 Utilice el cmdlet Get-AzsDBAdapterLogs para recopilar todos los registros del proveedor de recursos, incluido AzureStack.DatabaseAdapter.SecretRotation.ps1_*.log, guardado en C:\Logs.
 
-## <a name="update-the-virtual-machine-operating-system"></a>Actualización del sistema operativo de la máquina virtual
+## <a name="update-the-vm-operating-system"></a>Actualización del sistema operativo de la VM
 
 Use uno de los métodos siguientes para actualizar el sistema operativo de la máquina virtual.
 
-- Instalar el paquete más reciente del proveedor de recursos mediante una imagen de Windows Server 2016 Core actualmente revisada.
+- Instalación del paquete más reciente del proveedor de recursos mediante una imagen de Windows Server 2016 Core actualmente revisada.
 - Instalar un paquete de Windows Update durante la instalación o actualización del proveedor de recursos.
 
-## <a name="update-the-virtual-machine-windows-defender-definitions"></a>Actualización de las definiciones de Windows Defender de máquina virtual
+## <a name="update-the-vm-windows-defender-definitions"></a>Actualización de las definiciones de Windows Defender de la VM
 
 Para actualizar las definiciones de Windows Defender:
 
-1. Descargue la actualización de las definiciones de Windows Defender desde [esta página](https://www.microsoft.com/en-us/wdsi/definitions).
+1. Descargue la actualización de definiciones de Windows Defender desde [Actualizaciones de inteligencia de seguridad para Windows Defender](https://www.microsoft.com/wdsi/definitions).
 
-   En la página de actualización de definiciones, desplácese a "Manually download and install the definitions" (Descargar e instalar manualmente las definiciones). Descargue el archivo "Windows Defender Antivirus for Windows 10 and Windows 8.1" de 64 bits.
+   En la página de actualización de definiciones, desplácese a la sección "Descarga manual de la actualización". Descargue el archivo "Windows Defender Antivirus for Windows 10 and Windows 8.1" de 64 bits.
 
-   De forma alternativa, use [este vínculo directo](https://go.microsoft.com/fwlink/?LinkID=121721&arch=x64) para descargar o ejecutar el archivo fpam-fe.exe.
+   También puede usar [este vínculo directo](https://go.microsoft.com/fwlink/?LinkID=121721&arch=x64) para descargar o ejecutar el archivo fpam-fe.exe.
 
-2. Cree una sesión de PowerShell en el punto de conexión de mantenimiento de la máquina virtual del adaptador del proveedor de recursos SQL.
+2. Cree una sesión de PowerShell en el punto de conexión de mantenimiento de la VM del adaptador del proveedor de recursos de SQL.
 
 3. Copie el archivo de actualización de definiciones en la máquina virtual mediante la sesión del punto de conexión de mantenimiento.
 
@@ -144,7 +145,7 @@ Para actualizar las definiciones de Windows Defender:
 
 5. Después de instalar las definiciones, se recomienda eliminar el archivo de actualización de definiciones mediante el comando *Remove-ItemOnUserDrive*.
 
-**Ejemplo de script de PowerShell para actualizar definiciones.**
+**Ejemplo de script de PowerShell para actualizar definiciones**
 
 Para actualizar las definiciones de Defender se puede editar y ejecutar el script siguiente. Reemplace los valores del script por los de su entorno.
 
@@ -159,14 +160,14 @@ $vmLocalAdminCreds = New-Object System.Management.Automation.PSCredential `
 $databaseRPMachine  = "<RP VM IP address>"
 $localPathToDefenderUpdate = "C:\DefenderUpdates\mpam-fe.exe"
 
-# Download the Windows Defender update definitions file from https://www.microsoft.com/en-us/wdsi/definitions.
+# Download the Windows Defender update definitions file from https://www.microsoft.com/wdsi/definitions.
 Invoke-WebRequest -Uri 'https://go.microsoft.com/fwlink/?LinkID=121721&arch=x64' `
     -Outfile $localPathToDefenderUpdate
 
 # Create a session to the maintenance endpoint.
 $session = New-PSSession -ComputerName $databaseRPMachine `
     -Credential $vmLocalAdminCreds -ConfigurationName DBAdapterMaintenance
-# Copy the defender update file to the adapter virtual machine.
+# Copy the defender update file to the adapter VM.
 Copy-Item -ToSession $session -Path $localPathToDefenderUpdate `
      -Destination "User:\"
 # Install the update definitions.
@@ -180,7 +181,7 @@ $session | Remove-PSSession
 
 ## <a name="collect-diagnostic-logs"></a>Recopilación de registros de diagnóstico
 
-Para recopilar registros de la máquina virtual bloqueada, se puede usar el punto de conexión *DBAdapterDiagnostics* de JEA (Just Enough Administration) de PowerShell. Este punto de conexión proporciona los comandos siguientes:
+Para recopilar registros de la VM bloqueada, se puede usar el punto de conexión *DBAdapterDiagnostics* de Just Enough Administration (JEA) de PowerShell. Este punto de conexión proporciona los comandos siguientes:
 
 - **Get-AzsDBAdapterLog**. Este comando crea un paquete ZIP con los registros de diagnóstico del proveedor de recursos y guarda el archivo en la unidad del usuario de la sesión. Este comando se puede ejecutar sin ningún parámetro y se recopilan los registros de las últimas cuatro horas.
 - **Remove-AzsDBAdapterLog**. Este comando quita los paquetes de registros existentes en la máquina virtual del proveedor de recursos.
@@ -190,16 +191,16 @@ Para recopilar registros de la máquina virtual bloqueada, se puede usar el punt
 Cuando se instala o actualiza un proveedor de recursos, se crea la cuenta de usuario **dbadapterdiag**. Esta cuenta se usará para recopilar registros de diagnóstico.
 
 >[!NOTE]
->La contraseña de la cuenta dbadapterdiag es la misma que se usa para el administrador local en la máquina virtual creada durante la implementación o actualización de un proveedor.
+>La contraseña de la cuenta dbadapterdiag es la misma que se usa para el administrador local en la VM creada durante la implementación o actualización de un proveedor.
 
-Para usar los comandos *DBAdapterDiagnostics*, cree una sesión remota de PowerShell para la máquina virtual del proveedor de recursos y ejecute el comando **Get-AzsDBAdapterLog**.
+Para usar los comandos *DBAdapterDiagnostics*, cree una sesión remota de PowerShell para la VM del proveedor de recursos y ejecute el comando **Get-AzsDBAdapterLog**.
 
 Establezca el intervalo de tiempo para la recopilación de registros mediante los parámetros **FromDate** y **ToDate**. Si no se especifica uno de estos parámetros (o ambos), se utilizan los valores predeterminados siguientes:
 
 - FromDate es cuatro horas antes de la hora actual.
 - ToDate es la hora actual.
 
-**Ejemplo de script de PowerShell para recopilar registros.**
+**Ejemplo de script de PowerShell para recopilar registros**
 
 El siguiente script muestra cómo recopilar registros de diagnóstico de la máquina virtual del proveedor de recursos.
 

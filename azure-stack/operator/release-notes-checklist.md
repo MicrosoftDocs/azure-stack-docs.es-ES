@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/07/2019
+ms.date: 12/10/2019
 ms.author: sethm
 ms.reviewer: ppacent
-ms.lastreviewed: 11/07/2019
-ms.openlocfilehash: 077d50da935a3ee8de0967c51920ede69125c816
-ms.sourcegitcommit: cefba8d6a93efaedff303d3c605b02bd28996c5d
+ms.lastreviewed: 12/10/2019
+ms.openlocfilehash: a560b37051cf3b8b54e3cfec69dc6a9b28cc1cfb
+ms.sourcegitcommit: d9430072dd96ae305101da6d8a47d6c23a0a64c2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74299027"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74995576"
 ---
 # <a name="azure-stack-update-activity-checklist"></a>Lista de comprobación de actividades para la actualización de Azure Stack
 
@@ -36,6 +36,7 @@ Revise esta lista de comprobación para prepararse para obtener una actualizaci�
 | Revisión de problemas conocidos     | [Lista de los problemas conocidos](known-issues.md).                |
 | Revisión de las actualizaciones de seguridad | [Lista de actualizaciones de seguridad](release-notes-security-updates.md).      |
 | Aplicación del paquete de OEM más reciente | Póngase en contacto con el OEM para asegurarse de que el sistema cumple los requisitos mínimos del paquete de OEM para la versión de Azure Stack a la que se está actualizando el sistema. Asegúrese de que su paquete de OEM sea compatible con la versión de Azure Stack a la que está actualizando. Si su paquete de OEM no es compatible con la versión de Azure Stack a la que está actualizando, deberá realizar una actualización del paquete de OEM antes de ejecutar una actualización de Azure Stack. Para obtener instrucciones, consulte "Aplicar actualizaciones del fabricante de equipos originales (OEM) de Azure Stack". |
+| Opcional: Configuración de la recopilación de registros automática | Se recomienda configurar la recopilación de registros automática en el entorno de Azure Stack Hub para simplificar el proceso de recopilación de registros del sistema en caso de que sea necesario abrir una incidencia de soporte técnico. Para configurar la recopilación de registros automática, consulte las instrucciones de [Configuración de la recopilación de registros de diagnóstico automática de Azure Stack](azure-stack-configure-automatic-diagnostic-log-collection.md). |
 | Aplicación de las revisiones más recientes | Aplique las revisiones más recientes que sean aplicables a la versión instalada actualmente. Para obtener una lista de las últimas revisiones, consulte la sección Revisión de las notas de la versión. |
 | Ejecutar la herramienta Capacity Planner | Asegúrese de que usa la versión más reciente de la [herramienta Azure Stack Capacity Planner](azure-stack-capacity-planning-overview.md) para realizar el planeamiento y el ajuste de tamaño de la carga de trabajo. La última versión contiene correcciones de errores y proporciona nuevas características que se publican con cada actualización de Azure Stack. |
 | Ejecución de Test-AzureStack | Ejecute `Test-AzureStack -Group UpdateReadiness` para identificar los problemas operativos. El cmdlet es accesible a través de la sesión de punto de conexión con privilegios (PEP). Para más información, consulte [Validación del estado del sistema de Azure Stack](azure-stack-diagnostic-test.md). |

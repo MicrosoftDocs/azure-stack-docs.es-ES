@@ -1,5 +1,6 @@
 ---
-title: Eliminación del proveedor de recursos de SQL en Azure Stack | Microsoft Docs
+title: Eliminación del proveedor de recursos de SQL
+titleSuffix: Azure Stack
 description: Obtenga información sobre cómo quitar el proveedor de recursos de SQL de la implementación de Azure Stack.
 services: azure-stack
 documentationCenter: ''
@@ -15,12 +16,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/20/2018
-ms.openlocfilehash: 3a1b3dc51bbbd48ebe27ce9cafd9617ba7a1d07a
-ms.sourcegitcommit: a7207f4a4c40d4917b63e729fd6872b3dba72968
+ms.openlocfilehash: a172b56c43dafd637a66fa8354c2e06e06a67b98
+ms.sourcegitcommit: 08d2938006b743b76fba42778db79202d7c3e1c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71909483"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74954458"
 ---
 # <a name="remove-the-sql-resource-provider"></a>Eliminación del proveedor de recursos de SQL
 
@@ -29,7 +30,7 @@ Antes de quitar el proveedor de recursos de SQL, debe quitar todas las dependenc
 > [!NOTE]
 > Puede encontrar los vínculos de descarga para los instaladores del proveedor de recursos en [Requisitos previos de Implementación del proveedor de recursos](./azure-stack-sql-resource-provider-deploy.md#prerequisites).
 
-Quitar el proveedor de recursos SQL no elimina las bases de datos de inquilino de los servidores de hospedaje.
+Al quitar el proveedor de recursos de SQL no se eliminan las bases de datos de inquilino de los servidores de hospedaje.
 
 ## <a name="dependency-cleanup"></a>Limpieza de dependencias
 
@@ -53,7 +54,7 @@ El operador de Azure Stack es responsable de las siguientes tareas de limpieza:
 
 4. Ejecute el script DeploySqlProvider.ps1 con los siguientes parámetros:
 
-    * **Desinstalación**. Quita el proveedor de recursos y todos los recursos asociados.
+    * **Uninstall**. Quita el proveedor de recursos y todos los recursos asociados.
     * **PrivilegedEndpoint**. Dirección IP o nombre DNS del punto de conexión con privilegios.
     * **AzureEnvironment**. El entorno de Azure usado para implementar Azure Stack. Requerido solo para implementaciones de Azure AD.
     * **CloudAdminCredential**. Credencial del administrador de la nube, necesaria para el acceso al punto de conexión con privilegios.

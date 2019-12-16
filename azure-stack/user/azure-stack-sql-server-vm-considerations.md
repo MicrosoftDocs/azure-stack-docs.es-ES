@@ -16,21 +16,21 @@ ms.date: 04/02/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: eca886314388f404e7a26a22f7a3b03294ff0577
-ms.sourcegitcommit: 5e53eb5d43d28ab07b4f84891dd269bbfcf65622
+ms.openlocfilehash: 96dbca8c3b834565d2fafb73aa02b870cb2bc9a6
+ms.sourcegitcommit: 6bb20ed3dcbd64231331a8e807ba69eff8b7439b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71311305"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74946825"
 ---
 # <a name="sql-server-best-practices-to-optimize-performance-in-azure-stack"></a>Prácticas recomendadas de SQL Server para optimizar el rendimiento en Azure Stack
 
 Este artículo proporciona procedimientos recomendados de SQL Server para optimizar SQL Server y mejorar el rendimiento de las máquinas virtuales de Microsoft Azure Stack. Mientras se ejecuta SQL Server en máquinas virtuales de Azure Stack, use las mismas opciones de ajuste de rendimiento de base de datos que son aplicables a SQL Server en el entorno de servidor local. El rendimiento de una base de datos relacional en una nube de Azure Stack depende de muchos factores, entre los que se incluyen el tamaño de la familia de una máquina virtual y la configuración de los discos de datos.
 
-Al crear imágenes de SQL Server, [considere la posibilidad de aprovisionar las máquinas virtuales en el portal de Azure Stack](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision). Descargue la extensión IaaS de SQL de Administración de Marketplace en el portal de administración de Azure Stack y descargue los discos duros virtuales de la máquina virtual SQL de su elección. Estos incluyen SQL2014SP2, SQL2016SP1 y SQL2017.
+Al crear imágenes de SQL Server, [considere la posibilidad de aprovisionar las máquinas virtuales en el portal de Azure Stack](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision). Descargue la extensión IaaS de SQL de Administración de Marketplace en el portal de administración de Azure Stack y descargue las imágenes de VM con SQL Server de su elección. Entre ellas se incluyen SQL Server 2016 SP1, SQL Server 2016 SP2 y SQL Server 2017.
 
 > [!NOTE]  
-> Si bien en el artículo se describe cómo aprovisionar una máquina virtual de SQL Server mediante Azure Portal global, las instrucciones se aplican también a Azure Stack con las siguientes diferencias: SSD no está disponible para el disco del sistema operativo, los discos administrados no están disponibles y hay pequeñas diferencias en la configuración del almacenamiento.
+> Si bien en el artículo se describe cómo aprovisionar una máquina virtual de SQL Server mediante Azure Portal global, las instrucciones se aplican también a Azure Stack con las siguientes diferencias: SSD no está disponible para el disco del sistema operativo y hay pequeñas diferencias en la configuración del almacenamiento.
 
 Obtener el *mejor* rendimiento de SQL Server en máquinas virtuales de Azure Stack es el objetivo central de este artículo. Si su carga de trabajo es menos exigente, podría no necesitar todas las optimizaciones recomendadas. Tenga en cuenta sus necesidades de rendimiento y patrones de carga de trabajo a medida que evalúe estas recomendaciones.
 

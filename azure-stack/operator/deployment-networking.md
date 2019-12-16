@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/29/2019
+ms.date: 12/05/2019
 ms.author: mabrigg
 ms.reviewer: wamota
-ms.lastreviewed: 08/29/2019
-ms.openlocfilehash: a0829f2bc8cb45bdfd6f68ac15418a05adcc7afb
-ms.sourcegitcommit: 71d7990a2b21576c44bb2aea13ae2026e9510c55
+ms.lastreviewed: 12/05/2019
+ms.openlocfilehash: 3dc764bd94712dd95ae76358148a4cb0a533fb48
+ms.sourcegitcommit: 8e5a4659d8669ccfe6cd75d03200ae09a16b5f8a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70188342"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74898554"
 ---
 # <a name="about-deployment-network-traffic"></a>Acerca del tráfico de red de implementación
 Comprender cómo funciona el tráfico de red durante la implementación de Azure Stack ayuda a que esta se realice correctamente. Este artículo le guiará a través del flujo de tráfico de red durante el proceso de implementación para que sepa qué esperar.
@@ -42,7 +42,7 @@ Los proveedores de soluciones de Azure Stack pueden aprovisionar máquinas virtu
 Antes de iniciar la implementación, hay algunos requisitos mínimos que puede validar su OEM para asegurarse de que la operación se realiza correctamente:
 
 -   [Certificates](azure-stack-pki-certs.md)
--   [Suscripción de Azure](https://azure.microsoft.com/free/?b=17.06)
+-   [Suscripción de Azure](azure-stack-validate-registration.md). Puede que tenga que comprobar la suscripción.
 -   Acceso a Internet
 -   DNS
 -   NTP
@@ -57,7 +57,7 @@ Durante la implementación, la DVM se autentica en Azure Active Directory (Azure
 
 El acceso a Internet que requiere la DVM durante la implementación es solo saliente; no se realizan llamadas entrantes durante este proceso. Tenga en cuenta que esta máquina usa su IP como origen y que Azure Stack no admite configuraciones de proxy. Por lo tanto, si es necesario, debe proporcionar un proxy o NAT transparentes para el acceso a Internet. Durante la implementación, algunos componentes internos iniciarán el acceso a internet a través de la red externa mediante VIP públicas. Una vez finalizada la implementación, toda la comunicación entre Azure y Azure Stack se realiza mediante la red externa usando direcciones IP virtuales públicas.
 
-Las configuraciones de red en los modificadores de Azure Stack contienen listas de control de acceso (ACL) que restringen el tráfico entre determinados orígenes y destinos de red. La DVM es el único componente con acceso sin restricciones; incluso el HLH es muy restrictivo. Puede preguntar a los OEM sobre las opciones de personalización para facilitar la administración y el acceso desde sus redes. Debido a estas ACL, es importante evitar cambiar las direcciones de servidor DNS y NTP durante la implementación. Si lo hace, deberá volver a configurar todos los modificadores de la solución.
+Las configuraciones de red en los modificadores de Azure Stack contienen listas de control de acceso (ACL) que restringen el tráfico entre determinados orígenes y destinos de red. La DVM es el único componente con acceso sin restricciones; incluso el HLH está restringido. Puede preguntar a los OEM sobre las opciones de personalización para facilitar la administración y el acceso desde sus redes. Debido a estas ACL, es importante evitar cambiar las direcciones de servidor DNS y NTP durante la implementación. Si lo hace, deberá volver a configurar todos los modificadores de la solución.
 
 Después de finalizar la implementación, los componentes del sistema seguirán usando las direcciones de servidor DNS y NTP proporcionadas a través de SDN mediante la red externa. Por ejemplo, si comprueba las solicitudes DNS una vez finalizada la implementación, el origen cambiará de la dirección IP de DVM a una VIP pública.
 
