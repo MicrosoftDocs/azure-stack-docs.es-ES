@@ -346,6 +346,8 @@
               href: azure-stack-mysql-resource-provider-remove.md
             - name: Notas de la versión del proveedor de recursos de MySQL
               items:
+                - name: Notas de la versión del proveedor de recursos de MySQL 1.1.47.0
+                  href: azure-stack-mysql-resource-provider-11470.md
                 - name: Notas de la versión del proveedor de recursos de MySQL 1.1.33.0
                   href: azure-stack-mysql-resource-provider-11330.md
                 - name: Notas de la versión del proveedor de recursos de MySQL 1.1.30.0
@@ -370,6 +372,8 @@
               href: azure-stack-sql-resource-provider-remove.md
             - name: Notas de la versión del proveedor de recursos de SQL
               items:
+                - name: Notas de la versión del proveedor de recursos de SQL 1.1.47.0
+                  href: azure-stack-sql-resource-provider-11470.md
                 - name: Notas de la versión del proveedor de recursos SQL 1.1.33.0
                   href: azure-stack-sql-resource-provider-11330.md
                 - name: Notas de la versión del proveedor de recursos SQL 1.1.30.0
@@ -403,7 +407,6 @@
                 - name: Códigos de error de registro de uso
                   href: azure-stack-registration-errors.md
     - name: Copia de seguridad de Azure Stack
-      href: azure-stack-backup-infrastructure-backup.md
       items:
         - name: Habilitar la copia de seguridad de Azure Stack desde la consola de administración
           href: azure-stack-backup-enable-backup-console.md
@@ -411,6 +414,8 @@
           href: azure-stack-backup-enable-backup-powershell.md
         - name: Copia de seguridad de Azure Stack
           href: azure-stack-backup-back-up-azure-stack.md
+        - name: Recuperación de datos con el servicio de copia de seguridad
+          href: azure-stack-backup-infrastructure-backup.md
         - name: Copia de seguridad de archivos y aplicaciones en Azure Stack
           href: /azure/backup/backup-mabs-files-applications-azure-stack?toc=/azure-stack/operator/toc.json&bc=/azure-stack/breadcrumb/toc.json
         - name: Replicación de máquinas virtuales de Azure Stack en Azure
