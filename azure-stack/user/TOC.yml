@@ -254,30 +254,35 @@
               href: azure-stack-dev-start-howto-vm-nodejs.md
     - name: Implementación de patrones fundamentales
       items:
-        - name: Emparejamiento de VNET
+        - name: Patrones de redes
           items:
-            - name: Emparejamiento de VNet con FortiGate
-              href: azure-stack-network-howto-vnet-to-vnet.md
             - name: Emparejamiento de VNet con máquinas virtuales
               href: azure-stack-network-howto-vnet-peering.md
-        - name: Configuración de VPN como local
-          href: azure-stack-network-howto-vnet-to-onprem.md
-        - name: Conexión de red virtual a red virtual
-          href: azure-stack-network-howto-vnet-to-vnet-stacks.md
-        - name: Ampliación del centro de datos
-          href: azure-stack-network-howto-extend-datacenter.md
+            - name: Uso de NVA de terceros (NVA de Fortinet FortiGate)
+              items:
+                - name: Emparejamiento de VNet con FortiGate
+                  href: azure-stack-network-howto-vnet-to-vnet.md
+                - name: Configuración de VPN como local
+                  href: azure-stack-network-howto-vnet-to-onprem.md
+                - name: Conexión de red virtual a red virtual
+                  href: azure-stack-network-howto-vnet-to-vnet-stacks.md
+            - name: Uso de RRAS
+              items:
+                - name: Configuración de una VPN de sitio a sitio múltiple
+                  href: network-howto-vpn-tunnel.md
+                - name: Creación de un túnel VPN (GRE)
+                  href: network-howto-vpn-tunnel-gre.md
+                - name: Creación de un túnel VPN (IPSEC)
+                  href: network-howto-vpn-tunnel-ipsec.md
         - name: Equilibrador de carga F5
           href: network-howto-f5.md
-        - name: Conexión al almacenamiento iSCSI
-          href: azure-stack-network-howto-iscsi-storage.md
-        - name: Configuración de túneles
+        - name: Conexión a almacenamiento externo
           items:
-            - name: Configuración de una VPN de sitio a sitio múltiple
-              href: network-howto-vpn-tunnel.md
-            - name: Creación de un túnel VPN (GRE)
-              href: network-howto-vpn-tunnel-gre.md
-            - name: Creación de un túnel VPN (IPSEC)
-              href: network-howto-vpn-tunnel-ipsec.md
+            - name: Conexión al almacenamiento iSCSI
+              href: azure-stack-network-howto-iscsi-storage.md
+            - name: Ampliación del centro de datos
+              href: azure-stack-network-howto-extend-datacenter.md
+        - name: Emparejamiento de VNET
         - name: Copia de seguridad y restauración
           items:
             - name: Copia de seguridad de una máquina virtual en Azure Stack con Commvault
