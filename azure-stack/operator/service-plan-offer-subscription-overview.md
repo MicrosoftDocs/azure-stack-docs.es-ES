@@ -8,16 +8,16 @@ manager: femila
 editor: ''
 ms.service: azure-stack
 ms.topic: conceptual
-ms.date: 08/29/2019
+ms.date: 12/18/2019
 ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 10/01/2019
-ms.openlocfilehash: 2242da61eaa457a8cc234fb3310787eb26b9148e
-ms.sourcegitcommit: acebda8a42ac8ecdeba490fc1738e9041479dab0
+ms.openlocfilehash: a228e20de1786529374e5e2431ca7bb79a9c14bf
+ms.sourcegitcommit: f3d40c9fe73cf0a32fc643832085de887edf7cf3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72814060"
+ms.lasthandoff: 12/18/2019
+ms.locfileid: "75187272"
 ---
 # <a name="azure-stack-services-plans-offers-subscriptions-overview"></a>Introducción a los servicios, planes, ofertas y suscripciones de Azure Stack
 
@@ -47,7 +47,7 @@ Después de crear la oferta, los usuarios pueden suscribirse a ella para acceder
 
 ![Suscripción de inquilinos con ofertas y planes](media/azure-stack-key-features/image4.png)
 
-## <a name="services"></a>Services
+## <a name="services"></a>Servicios
 
 Puede ofrecer servicios de [Infraestructura como servicio](https://azure.microsoft.com/overview/what-is-iaas/) (IaaS) que permiten a los usuarios crear una infraestructura informática a petición, aprovisionada y administrada desde el portal de usuarios de Azure Stack.
 
