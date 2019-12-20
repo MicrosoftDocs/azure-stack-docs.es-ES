@@ -16,12 +16,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 8d8464c35b2aaa48c5611f7eac84ed6f9d80e866
-ms.sourcegitcommit: 08d2938006b743b76fba42778db79202d7c3e1c4
+ms.openlocfilehash: 5841509f9c5c9aef20dd2687adb0e54856fa5d3e
+ms.sourcegitcommit: de577d821d3b93ab524fee9e7a18a07c0ecc243c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74954509"
+ms.lasthandoff: 12/17/2019
+ms.locfileid: "75183548"
 ---
 # <a name="sql-resource-provider-maintenance-operations"></a>Operaciones de mantenimiento del proveedor de recursos de SQL
 
@@ -231,6 +231,27 @@ $cleanup = Invoke-Command -Session $session -ScriptBlock {Remove-AzsDBAdapterLog
 # Close the session.
 $session | Remove-PSSession
 ```
+## <a name="configure-azure-diagnostics-extension-for-sql-resource-provider"></a>Configure la extensión Azure Diagnostics para un proveedor de recursos de SQL
+La extensión Azure Diagnostics está instalada de manera predeterminada en la máquina virtual del adaptador del proveedor de recursos de SQL. Los siguientes pasos muestran cómo personalizar la extensión para recopilar los registros de eventos de operaciones del proveedor de recursos de SQL y los registros de IIS, con el fin de solucionar problemas o realizar auditorías.
+
+1. Inicie sesión en el Portal de administración de Azure Stack Hub.
+
+2. Select **Máquinas virtuales** en el panel de la izquierda, busque la máquina virtual del adaptador del proveedor de recursos de SQL y selecciónela.
+
+3. En **Configuración de diagnóstico** de la máquina virtual, vaya a la pestaña **Registros** y elija **Personalizado** para personalizar los registros de eventos que se recopilan.
+![Vaya a Configuración de diagnóstico](media/azure-stack-sql-resource-provider-maintain/sqlrp-diagnostics-settings.png)
+
+4. Agregue **Microsoft-AzureStack-DatabaseAdapter/Operational!\*** para recopilar los registros de eventos operativos del proveedor de recursos de SQL.
+![Agregar registros de eventos](media/azure-stack-sql-resource-provider-maintain/sqlrp-event-logs.png)
+
+5. Para habilitar la colección de registros de IIS, marque **Registros de IIS** y **Error en registros de solicitudes**.
+![Agregar registros de IIS](media/azure-stack-sql-resource-provider-maintain/sqlrp-iis-logs.png)
+
+6. Por último, seleccione **Guardar** para guardar la configuración de diagnóstico.
+
+Una vez que la colección de registros de eventos y registros de IIS está configurada para el proveedor de recursos de SQL, los registros se pueden encontrar en una cuenta de almacenamiento del sistema denominada **sqladapterdiagaccount**.
+
+Para más información acerca de la extensión Azure Diagnostics, consulte [Qué es la extensión Azure Diagnostics](/azure-monitor/platform/diagnostics-extension-overview).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

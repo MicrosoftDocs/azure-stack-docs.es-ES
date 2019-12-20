@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/21/2019
+ms.date: 12/13/2019
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 684f6925c32eabca51fa89776ec95b57a852a987
-ms.sourcegitcommit: d9430072dd96ae305101da6d8a47d6c23a0a64c2
+ms.openlocfilehash: 755bd556d9e4643ff5e17d900cdf7e5245f1894e
+ms.sourcegitcommit: 7dd9d7bc2b86cca3be5118da149c1d422b2fb09d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74995593"
+ms.lasthandoff: 12/16/2019
+ms.locfileid: "75033952"
 ---
 # <a name="azure-stack-known-issues"></a>Problemas conocidos de Azure Stack
 
@@ -46,7 +46,6 @@ Para tener acceso a los problemas conocidos de una versión diferente, use la li
 ## <a name="update"></a>Actualizar
 
 Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, consulte [Solución de problemas de actualizaciones en Azure Stack Hub](azure-stack-updates-troubleshoot.md).
-
 
 ## <a name="portal"></a>Portal
 
@@ -154,9 +153,9 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 
 ### <a name="access-control-iam"></a>Control de acceso (IAM)
 
-- Aplicable a: este problema se aplica a la versión 1903 y posteriores.
-- Causa: La extensión IAM no está actualizada. Ibiza se incluyó con Azure Stack e introdujo un nuevo comportamiento que hace que la extensión RBAC deje de funcionar si el usuario abre la extensión RBAC desde una suscripción que no está seleccionada en el selector de suscripciones globales.
-- Corrección: Asegúrese de que la suscripción esté activada en el selector de suscripciones globales. 
+- Aplicable a: este problema se da en stamps (conjuntos de servidores) que se implementaron con una imagen de base de la versión 1903 o anteriores.
+- Causa: La extensión IAM está obsoleta. El portal de Ibiza que se incluye con Azure Stack introduce un nuevo comportamiento que hace que se produzca un error en la extensión RBAC si el usuario está abriendo la hoja **Access Control (IAM)** de una suscripción que no está seleccionada en el selector de suscripción global (**directorio + suscripción** en el portal de usuarios). La hoja muestra el mensaje **Cargando** en bucle y el usuario no puede agregar nuevos roles a la suscripción. La hoja **Agregar** también muestra el mensaje **Cargando** en bucle.
+- Corrección: Asegúrese de que la suscripción esté marcada en el menú **Directorio + suscripción**. A este menú se puede acceder desde la parte superior del portal, cerca del botón **Notificaciones**, o bien mediante el acceso directo de la hoja **Todos los recursos** que muestra el mensaje **Don't see a subscription? (¿No ve una suscripción?) Abra la configuración de Directorio + suscripción**. La suscripción se debe seleccionar en este menú.
 
 ## <a name="networking"></a>Redes
 
@@ -236,8 +235,15 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 ### <a name="consumed-compute-quota"></a>Cuota de proceso consumida
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Al crear una nueva máquina virtual, es posible que reciba un error como, por ejemplo, **Esta suscripción tiene una capacidad de vCPU regionales totales en esta ubicación y está usando todas las disponibles 50 vCPU regionales totales**. Esto indica que se ha alcanzado la cuota de núcleos totales que tiene disponibles.
+- Causa: Al crear una nueva máquina virtual, es posible que reciba un error como, por ejemplo, **Esta suscripción tiene una capacidad de vCPU regionales totales en esta ubicación y está usando todas las disponibles 50 vCPU regionales totales**. Esto indica que se ha alcanzado la cuota de núcleos totales que tiene disponibles.
 - Corrección: pida a su operador un plan complementario con una cuota adicional. La edición de la cuota del plan actual no funcionará ni reflejará la cuota incrementada.
+- Repetición: poco frecuente
+
+### <a name="privileged-endpoint"></a>Punto de conexión con privilegios
+
+- Aplicable a: este problema se aplica a la versión 1910 y a las anteriores.
+- Causa: no es posible conectar con el punto de conexión con privilegios (máquinas virtuales ERC) desde un equipo cuya versión de Windows no esté en inglés.
+- Corrección: este es un problema conocido que se ha solucionado en las versiones posteriores a la 1910. Una posible solución es ejecutar los cmdlets de PowerShell **New-PSSession** y **Enter-PSSession** mediante la referencia cultural **en-US**; para ver distintos ejemplos, establezca la cultura mediante este script: https://resources.oreilly.com/examples/9780596528492/blob/master/Use-Culture.ps1.
 - Repetición: poco frecuente
 
 ### <a name="virtual-machine-scale-set"></a>Conjunto de escalado de máquina virtual
