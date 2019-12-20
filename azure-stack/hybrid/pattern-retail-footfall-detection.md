@@ -8,12 +8,12 @@ ms.date: 10/31/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 10/31/2019
-ms.openlocfilehash: a7a7563db3c315c4913287e8f286f07abd633602
-ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
+ms.openlocfilehash: d165381b6f8f3138d434b8d62376feb8879a21b3
+ms.sourcegitcommit: f3d40c9fe73cf0a32fc643832085de887edf7cf3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73640002"
+ms.lasthandoff: 12/18/2019
+ms.locfileid: "75187286"
 ---
 # <a name="footfall-detection-pattern"></a>Patrón de detección de afluencia de compradores
 
@@ -37,8 +37,8 @@ A continuación se muestra un resumen de cómo funciona la solución:
 2. Si el modelo ve una persona, le hace una foto y la carga en el almacenamiento de blobs de Azure Stack Hub. 
 3. Blob service desencadena una función de Azure en Azure Stack Hub. 
 4. Azure Functions llama a un contenedor con la Face API para obtener datos demográficos y de emociones de la imagen.
-5. Los datos se anonimizan y se envían a un centro de eventos de Azure.
-6. El centro de eventos envía los datos a Stream Analytics.
+5. Los datos se anonimizan y se envían a un clúster de Azure Event Hubs.
+6. Este, a su vez, los envía Stream Analytics.
 7. Stream Analytics agrega los datos y los envía a Power BI.
 
 ## <a name="components"></a>Componentes
@@ -55,7 +55,7 @@ Esta solución usa los siguientes componentes:
 | | Clúster del [motor de](https://github.com/Azure/aks-engine) Azure Kubernetes Service (AKS) | El RP de AKS con el clúster de AKS-Engine implementado en Azure Stack Hub proporciona un motor escalable y resistente para ejecutar el contenedor de Face API. |
 | | [Contenedores de Face API](/azure/cognitive-services/face/face-how-to-install-containers) de Azure Cognitive Services| El RP de Azure Cognitive Services con contenedores de Face API proporciona detección de visitantes exclusivos, de emociones y demográfica en la red privada de Contoso. |
 | | Blob Storage | Las imágenes capturadas con el kit de desarrollo de IA se cargan en el almacenamiento de blobs de Azure Stack Hub. |
-| | Azure Functions | Una función de Azure que se ejecuta en Azure Stack Hub recibe la entrada del almacenamiento de blobs y administra las interacciones con Face API. Emite datos anonimizados a un centro de eventos ubicado en Azure.<br><br>|
+| | Azure Functions | Una función de Azure que se ejecuta en Azure Stack Hub recibe la entrada del almacenamiento de blobs y administra las interacciones con Face API. Emite datos anonimizados a un clúster de Event Hubs ubicado en Azure.<br><br>|
 
 ## <a name="issues-and-considerations"></a>Problemas y consideraciones
 
@@ -67,7 +67,7 @@ Para permitir que esta solución se escale entre varias cámaras y ubicaciones, 
 
 - Aumentar el número de unidades de streaming de Stream Analytics
 - Escalar horizontalmente la implementación de Face API
-- Aumentar el rendimiento de Event Hubs
+- Aumentar el rendimiento de los clústeres de Event Hubs
 - En casos extremos, puede que sea necesario migrar desde Azure Functions a una máquina virtual.
 
 ### <a name="availability"></a>Disponibilidad

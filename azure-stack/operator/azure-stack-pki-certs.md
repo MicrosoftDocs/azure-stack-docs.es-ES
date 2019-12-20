@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/10/2019
+ms.date: 12/16/2019
 ms.author: justinha
 ms.reviewer: ppacent
-ms.lastreviewed: 09/10/2019
-ms.openlocfilehash: f306391451c4d04af3b5a37645f145fb732714f0
-ms.sourcegitcommit: acebda8a42ac8ecdeba490fc1738e9041479dab0
+ms.lastreviewed: 12/16/2019
+ms.openlocfilehash: e9276d67c767ec6a08549be830c52bbbe03230ec
+ms.sourcegitcommit: 50b7974454e008724817cbb4416ce40368b31ef4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72814001"
+ms.lasthandoff: 12/16/2019
+ms.locfileid: "75035513"
 ---
 # <a name="azure-stack-public-key-infrastructure-certificate-requirements"></a>Requisitos de certificados de infraestructura de clave pública de Azure Stack
 
@@ -56,7 +56,8 @@ En la lista siguiente se describen los requisitos de certificados que son necesa
 - Asegúrese de que los nombres de los firmantes y los nombres alternativos de los firmantes de la extensión de nombre alternativo del firmante (x509v3_config) coinciden. El campo del nombre alternativo del firmante permite especificar nombres de host adicionales (sitios web, direcciones IP y nombres comunes) que estén protegidos por un certificado SSL individual.
 
 > [!NOTE]  
-> No se admiten certificados autofirmados.
+> No se admiten certificados autofirmados.  
+> Al implementar Azure Stack Hub en modo sin conexión, se recomienda usar los certificados emitidos por una entidad de certificación de empresa. Esto es importante porque los clientes que acceden a los puntos de conexión de Azure Stack deben poder ponerse en contacto con la lista de revocación de certificados (CRL).
 
 > [!NOTE]  
 > *Se admite* la presencia de entidades de certificación intermediarias en una cadena de relaciones de confianza del certificado.

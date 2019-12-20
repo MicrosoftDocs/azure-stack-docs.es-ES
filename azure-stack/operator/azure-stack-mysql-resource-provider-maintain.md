@@ -15,12 +15,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 9dc2de86828e188aa82b44d376e693be887717d8
-ms.sourcegitcommit: a23b80b57668615c341c370b70d0a106a37a02da
+ms.openlocfilehash: 75135801bf5762f597ae70d980588dedadf31b36
+ms.sourcegitcommit: de577d821d3b93ab524fee9e7a18a07c0ecc243c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72682191"
+ms.lasthandoff: 12/17/2019
+ms.locfileid: "75183471"
 ---
 # <a name="mysql-resource-provider-maintenance-operations-in-azure-stack"></a>Operaciones de mantenimiento de un proveedor de recursos MySQL en Azure Stack
 
@@ -225,6 +225,32 @@ $cleanup = Invoke-Command -Session $session -ScriptBlock {Remove-AzsDBAdapterLog
 $session | Remove-PSSession
 
 ```
+
+## <a name="configure-azure-diagnostics-extension-for-mysql-resource-provider"></a>Configure la extensión Azure Diagnostics para un proveedor de recursos de MySQL
+
+La extensión Azure Diagnostics está instalada de manera predeterminada en la máquina virtual del adaptador del proveedor de recursos de MySQL. Los siguientes pasos muestran cómo personalizar la extensión para recopilar los registros de eventos de operaciones del proveedor de recursos de MySQL y los registros de IIS, con el fin de solucionar problemas o realizar auditorías.
+
+1. Inicie sesión en el Portal de administración de Azure Stack Hub.
+
+2. Select **Máquinas virtuales** en el panel de la izquierda, busque la máquina virtual del adaptador del proveedor de recursos de MySQL y selecciónela.
+
+3. En **Configuración de diagnóstico** de la máquina virtual, vaya a la pestaña **Registros** y elija **Personalizado** para personalizar los registros de eventos que se recopilan.
+   
+   ![Vaya a Configuración de diagnóstico](media/azure-stack-mysql-resource-provider-maintain/mysqlrp-diagnostics-settings.png)
+
+4. Agregue **Microsoft-AzureStack-DatabaseAdapter/Operational!\*** para recopilar los registros de eventos operativos del proveedor de recursos de MySQL.
+
+   ![Agregar registros de eventos](media/azure-stack-mysql-resource-provider-maintain/mysqlrp-event-logs.png)
+
+5. Para habilitar la colección de registros de IIS, marque **Registros de IIS** y **Error en registros de solicitudes**.
+
+   ![Agregar registros de IIS](media/azure-stack-mysql-resource-provider-maintain/mysqlrp-iis-logs.png)
+
+6. Por último, seleccione **Guardar** para guardar la configuración de diagnóstico.
+
+Una vez que la colección de registros de eventos y registros de IIS está configurada para el proveedor de recursos de MySQL, los registros se pueden encontrar en una cuenta de almacenamiento del sistema denominada **mysqladapterdiagaccount**.
+
+Para más información acerca de la extensión Azure Diagnostics, consulte [Qué es la extensión Azure Diagnostics](/azure-monitor/platform/diagnostics-extension-overview).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

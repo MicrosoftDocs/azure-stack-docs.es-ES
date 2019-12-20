@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/04/2019
+ms.date: 12/18/2019
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 11/22/2019
-ms.openlocfilehash: db050565b7ef2b1b22192e7f39366ac1e341cd0f
-ms.sourcegitcommit: 53f7daf295783a30feb284d4c48c30c6936557c5
+ms.openlocfilehash: 8c124f44ed938108a4b23cea44642b7e275eb04d
+ms.sourcegitcommit: c0fe1ac8c38d0475621ad8022db96983f9e5ae79
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74830969"
+ms.lasthandoff: 12/18/2019
+ms.locfileid: "75188385"
 ---
 # <a name="azure-stack-updates-release-notes"></a>Actualizaciones de Azure Stack: notas de la versión
 
@@ -211,14 +211,14 @@ Las revisiones de Azure Stack solo son aplicables a los sistemas integrados de A
 La versión 1910 de Azure Stack debe aplicarse en la versión 1908 con las revisiones siguientes:
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Azure Stack, revisión 1.1908.9.43](https://support.microsoft.com/help/4531007)
+- [Azure Stack, revisión 1.1908.11.47](https://support.microsoft.com/help/4535000)
 
 ### <a name="after-successfully-applying-the-1910-update"></a>Después de aplicar correctamente la actualización 1910
 
 Después de instalar esta actualización, instale todas las revisiones aplicables. Para más información, consulte nuestra [directiva de servicio](azure-stack-servicing-policy.md).
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- No hay ninguna revisión disponible para la versión 1910.
+- [Azure Stack, revisión 1.1910.8.76](https://support.microsoft.com/help/4534999)
 ::: moniker-end
 
 ::: moniker range="azs-1908"
@@ -295,7 +295,7 @@ La actualización Azure Stack 1908 requiere la **versión de OEM 2.1 o posteri
 Después de instalar esta actualización, instale todas las revisiones aplicables. Para más información, consulte nuestra [directiva de servicio](azure-stack-servicing-policy.md).
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Azure Stack, revisión 1.1908.9.43](https://support.microsoft.com/help/4531007)
+- [Azure Stack, revisión 1.1908.11.47](https://support.microsoft.com/help/4535000)
 ::: moniker-end
 
 ::: moniker range="azs-1907"

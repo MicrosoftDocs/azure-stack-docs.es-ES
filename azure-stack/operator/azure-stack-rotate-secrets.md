@@ -12,17 +12,17 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/30/2019
+ms.date: 12/13/2019
 ms.reviewer: ppacent
 ms.author: mabrigg
-ms.lastreviewed: 09/30/2019
+ms.lastreviewed: 12/13/2019
 monikerRange: '>=azs-1802'
-ms.openlocfilehash: 14c1d6ba96cd8c9671b28f435db90b7b3ce3ad34
-ms.sourcegitcommit: ae9d29c6a158948a7dbc4fd53082984eba890c59
+ms.openlocfilehash: 2d6329a150e4ab1a81e9c9d092101a085d00afd0
+ms.sourcegitcommit: 7dd9d7bc2b86cca3be5118da149c1d422b2fb09d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2019
-ms.locfileid: "75007986"
+ms.lasthandoff: 12/16/2019
+ms.locfileid: "75033969"
 ---
 # <a name="rotate-secrets-in-azure-stack"></a>Cambio de secretos en Azure Stack
 
@@ -386,6 +386,10 @@ El controlador de administración de placa base (BMC) supervisa el estado físic
 1. **Versiones anteriores a 1910**: Actualice el BMC en los servidores físicos de Azure Stack con las instrucciones del OEM. El nombre de usuario y la contraseña para cada BMC de su entorno deben ser los mismos. Los nombres de usuario de BMC no pueden superar los 16 caracteres.
 
    **Versión 1910 y posteriores**: Ya no es necesario que actualice primero las credenciales del BMC en los servidores físicos de Azure Stack siguiendo las instrucciones del OEM. El nombre de usuario y la contraseña para cada BMC de su entorno deben ser los mismos. Los nombres de usuario de BMC no pueden superar los 16 caracteres.
+
+    | Parámetro | DESCRIPCIÓN | State |
+    | --- | --- | --- |
+    | BypassBMCUpdate | Cuando se usa el parámetro, las credenciales del BMC no se actualizan. Solo se actualiza el almacén de datos interno de Azure Stack. | Opcional |
 
 2. Abra un punto de conexión con privilegios en sesiones de Azure Stack. Para obtener instrucciones, consulte [Uso del punto de conexión con privilegios en Azure Stack](azure-stack-privileged-endpoint.md).
 
