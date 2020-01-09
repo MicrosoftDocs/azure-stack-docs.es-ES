@@ -116,7 +116,7 @@
               href: azure-stack-integrate-security.md
             - name: Auditoría de dispositivo
               href: azure-stack-integrate-physical-device-auditing.md
-- name: Guías de procedimientos
+- name: Guías paso a paso
   items:
     - name: Administración de Azure Stack
       items:
@@ -154,9 +154,9 @@
               href: release-notes-checklist.md
             - name: Preparación de la actualización
               href: azure-stack-update-prepare-package.md
-            - name: Aplicar actualizaciones
+            - name: Aplicación de actualizaciones
               items:
-                - name: Aplicar actualizaciones
+                - name: Aplicación de actualizaciones
                   href: azure-stack-apply-updates.md
                 - name: Aplicación de actualizaciones de OEM
                   href: azure-stack-update-oem.md
@@ -280,7 +280,7 @@
           href: azure-stack-quota-types.md
     - name: Oferta de soluciones de red
       href: azure-stack-network-solutions-enable.md
-    - name: Administración de proveedores de recursos de servicios de complementos
+    - name: Administración de proveedores de recursos de valor agregado
       items:
         - name: App Service en Azure Stack
           items:
@@ -446,7 +446,7 @@
                   href: azure-stack-configure-on-demand-diagnostic-log-collection.md
         - name: Validación de Azure Stack
           href: azure-stack-diagnostic-test.md
-        - name: solución de problemas
+        - name: Solución de problemas
           href: azure-stack-troubleshooting.md
 - name: Referencia
   items:
