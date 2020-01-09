@@ -16,12 +16,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: hectorl
 ms.lastreviewed: 3/19/2018
-ms.openlocfilehash: b9a7416bc73c0e36ab9986b1a280597c2d6d93a9
-ms.sourcegitcommit: 0866555e0ed240a65595052899ef1b836dd07fbc
+ms.openlocfilehash: cb08b9c2480ab3858147669a1208ca54bc43343f
+ms.sourcegitcommit: 4789cd5d6f1e35774a17a1ddfcdf3f548b18965c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72257769"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "75329915"
 ---
 # <a name="protect-vms-deployed-on-azure-stack"></a>Protección de máquinas virtuales implementadas en Azure Stack
 
@@ -134,7 +134,7 @@ En primer lugar, debe asegurarse de que las VM de la aplicación se implementen 
 Tenga en cuenta que cada nube de Azure Stack es independiente entre sí, por lo que las nubes siempre se consideran activas desde una perspectiva de infraestructura. En este caso, se implementan varias instancias activas de la aplicación en una o más nubes activas.
 
  - RTO: sin tiempo de inactividad
- - RPO: Sin pérdida de datos
+ - RPO: No se produce pérdida de datos
  - Topología de implementación: activa/activa
 
 ### <a name="no-recovery"></a>Sin recuperación
@@ -162,7 +162,7 @@ Consideraciones importantes para la implementación de Azure Stack:
 
 En este artículo se proporcionan instrucciones generales para proteger las máquinas virtuales de usuario implementadas en Azure Stack. Para obtener información sobre el uso de los servicios de Azure para proteger las máquinas virtuales de usuario, consulte:
 
-- [Consideraciones sobre continuidad empresarial y recuperación ante desastres](http://aka.ms/azurestackbcdrconsiderationswp)
+- [Consideraciones sobre continuidad empresarial y recuperación ante desastres](https://aka.ms/azurestackbcdrconsiderationswp)
 
 ### <a name="azure-backup-server"></a>Servidor de Azure Backup
  - [Uso de Azure Backup para realizar copias de seguridad de archivos y aplicaciones en Azure Stack](https://docs.microsoft.com/azure/backup/backup-mabs-files-applications-azure-stack)
@@ -172,6 +172,6 @@ En este artículo se proporcionan instrucciones generales para proteger las máq
  - [Compatibilidad de Azure Site Recovery con Azure Stack](https://docs.microsoft.com/azure/site-recovery/)  
  
  ### <a name="partner-products"></a>Productos de asociado
- - [Hoja de datos del Ecosistema de asociados de integración de centros de datos de Azure Stack](http://aka.ms/azurestackbcdrpartners)
+ - [Hoja de datos del Ecosistema de asociados de integración de centros de datos de Azure Stack](https://aka.ms/azurestackbcdrpartners)
 
 Para más información sobre los productos de asociados que ofrecen protección de máquina virtual en Azure Stack, consulte [Protecting apps and data on Azure Stack](https://azure.microsoft.com/blog/protecting-applications-and-data-on-azure-stack/) (Protección de aplicaciones y datos en Azure Stack).

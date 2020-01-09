@@ -15,12 +15,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 03/18/2019
-ms.openlocfilehash: aa76766ad6528148cc8662780c4bc4dd593b366a
-ms.sourcegitcommit: 3a8e116fd0b16e1201e55e2088dde2e581004045
+ms.openlocfilehash: 4b2cbde2222e13b148072149d461ff4636b77d59
+ms.sourcegitcommit: 4cd33bcb1bb761a424afd51f511b093543786d76
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74557587"
+ms.lasthandoff: 12/21/2019
+ms.locfileid: "75325117"
 ---
 # <a name="deploy-the-mysql-resource-provider-on-azure-stack"></a>Implementación del proveedor de recursos MySQL en Azure Stack
 
@@ -29,7 +29,7 @@ Use el proveedor de recursos MySQL Server de Azure Stack para exponer las bases 
 > [!IMPORTANT]
 > Solo el proveedor de recursos puede crear elementos en servidores que hospedan SQL o MySQL. Los elementos creados en un servidor host que no se crean con el proveedor de recursos podrían dar lugar a un error de coincidencia de estado.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 Hay varios requisitos previos que se deben cumplir antes de implementar el proveedor de recursos MySQL en Azure Stack. Para cumplir estos requisitos, realice los pasos de este artículo en un equipo que pueda acceder a la máquina virtual de punto de conexión con privilegios.
 
@@ -93,7 +93,7 @@ Ejecute el script **DeployMySqlProvider.ps1**, que realiza las tareas siguientes
 
 Puede especificar estos parámetros en la línea de comandos. Si no lo hace, o se produce un error en la validación de algún parámetro, se le pedirá que proporcione los parámetros necesarios.
 
-| Nombre de parámetro | DESCRIPCIÓN | Comentario o valor predeterminado |
+| Nombre de parámetro | Descripción | Comentario o valor predeterminado |
 | --- | --- | --- |
 | **CloudAdminCredential** | Credencial del administrador de la nube, necesaria para el acceso al punto de conexión con privilegios. | _Obligatorio_ |
 | **AzCredential** | Credenciales de la cuenta de administrador de servicio de Azure Stack. Use las mismas credenciales que para la implementación de Azure Stack. | _Obligatorio_ |
@@ -104,8 +104,8 @@ Puede especificar estos parámetros en la línea de comandos. Si no lo hace, o s
 | **DefaultSSLCertificatePassword** | Contraseña para el certificado .pfx. | _Obligatorio_ |
 | **MaxRetryCount** | El número de veces que quiere volver a intentar cada operación si se produce un error.| 2 |
 | **RetryDuration** | Intervalo de tiempo de expiración entre reintentos, en segundos. | 120 |
-| **Desinstalación** | Se quita el proveedor de recursos y todos los recursos asociados (vea las notas siguientes). | Sin |
-| **DebugMode** | Impide la limpieza automática en caso de error. | Sin |
+| **Desinstalación** | Se quita el proveedor de recursos y todos los recursos asociados (vea las notas siguientes). | No |
+| **DebugMode** | Impide la limpieza automática en caso de error. | No |
 | **AcceptLicense** | Omite el aviso para aceptar la licencia GPL.  <https://www.gnu.org/licenses/old-licenses/gpl-2.0.html> | |
 
 ## <a name="deploy-the-mysql-resource-provider-using-a-custom-script"></a>Implementación del proveedor de recursos MySQL con un script personalizado
@@ -147,10 +147,6 @@ $vmLocalAdminCreds = New-Object System.Management.Automation.PSCredential ("mysq
 # And the cloudadmin credential required for privileged endpoint access.
 $CloudAdminPass = ConvertTo-SecureString "P@ssw0rd1" -AsPlainText -Force
 $CloudAdminCreds = New-Object System.Management.Automation.PSCredential ("$domain\cloudadmin", $CloudAdminPass)
-
-# Clear the existing login information from the Azure PowerShell context.
-Clear-AzureRMContext -Scope CurrentUser -Force
-Clear-AzureRMContext -Scope Process -Force
 
 # Change the following as appropriate.
 $PfxPass = ConvertTo-SecureString "P@ssw0rd1" -AsPlainText -Force

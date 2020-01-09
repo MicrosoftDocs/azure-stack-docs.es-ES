@@ -9,18 +9,18 @@ ms.date: 11/01/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: ced042ac48017a8191d02e48de12e107677051fc
-ms.sourcegitcommit: 8a74a5572e24bfc42f71e18e181318c82c8b4f24
+ms.openlocfilehash: 65ec9942b765eddcfda42056b47da60481d38ff4
+ms.sourcegitcommit: b2418661bfa3a791e65b9b487e20982dba3e4c41
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73569304"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75756991"
 ---
 # <a name="windows-n-tier-application-on-azure-stack-with-sql-server"></a>Aplicación Windows de n niveles en Azure Stack con SQL Server
 
 Esta arquitectura de referencia muestra cómo implementar máquinas virtuales (VM) y una red virtual configurada para una aplicación de [n niveles](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/n-tier), con SQL Server en Windows para la capa de datos. 
 
-## <a name="architecture"></a>Arquitectura
+## <a name="architecture"></a>Architecture
 
 La arquitectura tiene los siguientes componentes.
 
@@ -34,7 +34,7 @@ La arquitectura tiene los siguientes componentes.
 
 ## <a name="networking-and-load-balancing"></a>Redes y equilibrio de carga
 
--   **Red virtual y subredes**. Todas las máquinas virtuales de Azure se implementan en una red virtual que se puede segmentar en subredes. Cree una subred independiente para cada nivel.
+-   **Red virtual y subredes**. Todas las máquinas virtuales se implementan en una red virtual que se puede dividir en subredes. Cree una subred independiente para cada nivel.
 
 -   **Equilibrador de carga de capa 7.** Como Application Gateway todavía no está disponible en Azure Stack, existen alternativas disponibles en [Azure Stack Marketplace](https://docs.microsoft.com/azure-stack/operator/azure-stack-marketplace-azure-items?view=azs-1908) como: [KEMP LoadMaster Load Balancer ADC Content Switch](https://azuremarketplace.microsoft.com/marketplace/apps/kemptech.vlm-azure)/ [f5 Big-IP Virtual Edition](https://azuremarketplace.microsoft.com/marketplace/apps/f5-networks.f5-big-ip-best) o [A10 vThunder ADC](https://azuremarketplace.microsoft.com/marketplace/apps/a10networks.vthunder-414-gr1)
 
@@ -82,7 +82,7 @@ Diseñe subredes teniendo en cuenta los requisitos de funcionalidad y seguridad.
 
 No exponga las máquinas virtuales directamente a Internet; en su lugar, asigne una dirección IP privada a cada una. Los clientes se conectan mediante la dirección IP pública asociada con el equilibrador de carga de capa 7.
 
-Defina reglas del equilibrador de carga para dirigir el tráfico de red a las máquinas virtuales. Por ejemplo, para habilitar el tráfico HTTP, asigne el puerto 80 de la configuración de front-end al puerto 80 del grupo de direcciones de back-end. Cuando un cliente envía una solicitud HTTP al puerto 80, el equilibrador de carga selecciona una dirección IP de back-end mediante un [algoritmo hash](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview#fundamental-load-balancer-features) que incluye la dirección IP de origen. Las solicitudes del cliente se distribuyen entre todas las máquinas virtuales del grupo de direcciones de back-end.
+Defina reglas del equilibrador de carga para dirigir el tráfico de red a las máquinas virtuales. Por ejemplo, para habilitar el tráfico HTTP, asigne el puerto 80 de la configuración de front-end al puerto 80 del grupo de direcciones de back-end. Cuando un cliente envía una solicitud HTTP al puerto 80, el equilibrador de carga selecciona una dirección IP de back-end mediante un [algoritmo hash](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview#load-balancer-concepts) que incluye la dirección IP de origen. Las solicitudes del cliente se distribuyen entre todas las máquinas virtuales del grupo de direcciones de back-end.
 
 ### <a name="network-security-groups"></a>Grupos de seguridad de red
 

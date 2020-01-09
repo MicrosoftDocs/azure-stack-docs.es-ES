@@ -16,12 +16,12 @@ ms.date: 06/10/2019
 ms.author: patricka
 ms.reviewer: jerskine
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: dcc473d270d0a72b2ebf5f31c67fffa6827c9ecc
-ms.sourcegitcommit: af63214919e798901399fdffef09650de4176956
+ms.openlocfilehash: 9945113e778f69000a720d5f5045f691f439d076
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66828420"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718545"
 ---
 # <a name="validate-ad-fs-integration-for-azure-stack"></a>Validar la integración de AD FS para Azure Stack
 
@@ -39,7 +39,7 @@ Para obtener más información acerca de los requisitos de la integración del c
 
 Descargue la versión más reciente de Azure Stack Readiness Checker (AzsReadinessChecker) desde [Galería de PowerShell](https://aka.ms/AzsReadinessChecker).  
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 Deben cumplirse los siguientes requisitos previos.
 
@@ -81,7 +81,7 @@ Necesita al menos uno de los siguientes formatos de metadatos:
             Test Certificate Expiry:               OK
 
     Details:
-    [-] In standalone mode, some tests should not be considered fully indicative of connectivity or readiness the Azure Stack Stamp requires prior to Data Center Integration.
+    [-] In standalone mode, some tests should not be considered fully indicative of connectivity or readiness the Azure Stack Stamp requires prior to Datacenter Integration.
     Additional help URL: https://aka.ms/AzsADFSIntegration
 
     Log location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessChecker.log
@@ -117,7 +117,7 @@ Los ejemplos siguientes ofrecen instrucciones sobre errores de validación comun
 
 **Causa**: PowerShell Autoload no se pudo cargar correctamente en el módulo de Readiness Checker.
 
-**Resolución**: importe el módulo de Readiness Checker de forma explícita. Copie y pegue el código siguiente en PowerShell y actualice la \<versión\> con el número correspondiente a la versión instalada actualmente.
+**Solución:** importe el módulo de Readiness Checker de forma explícita. Copie y pegue el código siguiente en PowerShell y actualice la \<versión\> con el número correspondiente a la versión instalada actualmente.
 
 `Import-Module "c:\Program Files\WindowsPowerShell\Modules\Microsoft.AzureStack.ReadinessChecker\<version>\Microsoft.AzureStack.ReadinessChecker.psd1" -Force`
 

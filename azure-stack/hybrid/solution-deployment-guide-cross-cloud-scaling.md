@@ -8,16 +8,16 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 54d79742ab39a2732a774401a1765b7a264e1fab
-ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
+ms.openlocfilehash: d6adbc374cbd2472ceed1895fe7efb34ab5b9d64
+ms.sourcegitcommit: a6c02421069ab9e72728aa9b915a52ab1dd1dbe2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73640056"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75654923"
 ---
 # <a name="deploy-an-app-that-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Implementación de una aplicación que se escala en toda la nube con Azure y Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack Hub y el kit de desarrollo de Azure Stack Hub*
+*Se aplica a: Sistemas integrados de Azure Stack Hub y al kit de desarrollo de Azure Stack Hub*
 
 Aprenda a crear una solución en toda la nube que proporcione un proceso desencadenado manualmente para cambiar de una aplicación web hospedada en Azure Stack Hub a una aplicación web hospedada en Azure con escalabilidad automática mediante Traffic Manager. Este proceso garantiza la utilidad en la nube flexible y escalable con carga.
 
@@ -38,7 +38,7 @@ En esta solución, creará un entorno de ejemplo para:
 > 
 > En el artículo [Consideraciones de diseño para aplicaciones híbridas](overview-app-design-considerations.md) se examinan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 -   Suscripción de Azure. Si es necesario, cree una [cuenta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de comenzar.
 
@@ -59,7 +59,7 @@ En esta solución, creará un entorno de ejemplo para:
 
 -   Se requiere una máquina virtual Windows Server 2016 con .NET 3.5. Esta máquina virtual se compilará en la suscripción del inquilino en Azure Stack Hub como agente de compilación privado.
 
--   [Windows Server 2016 con la imagen de máquina virtual de SQL 2017](../operator/azure-stack-add-vm-image.md#add-a-vm-image-as-an-azure-stack-operator-using-the-portal) está disponible en Marketplace de Azure Stack Hub. Si esta imagen no está disponible, trabaje con un operador de Azure Stack Hub para garantizar que se agrega al entorno.
+-   [Windows Server 2016 con la imagen de máquina virtual de SQL 2017](../operator/azure-stack-add-vm-image.md) está disponible en Marketplace de Azure Stack Hub. Si esta imagen no está disponible, trabaje con un operador de Azure Stack Hub para garantizar que se agrega al entorno.
 
 ## <a name="issues-and-considerations"></a>Problemas y consideraciones
 
@@ -71,7 +71,7 @@ El componente clave del escalado de toda la nube es la posibilidad de proporcion
 
 Asegúrese de que las aplicaciones implementadas localmente están configuradas para una alta disponibilidad mediante la configuración del hardware local y la implementación de software.
 
-### <a name="manageability"></a>Manejabilidad
+### <a name="manageability"></a>Facilidad de uso
 
 La solución para toda la nube garantiza una administración sin problemas y una interfaz familiar entre entornos. Se recomienda usar PowerShell para la administración multiplataforma.
 
@@ -178,7 +178,7 @@ Azure Pipelines y Azure DevOps Services proporcionan una canalización con una g
 
 10. Agregue un nuevo artefacto mediante la selección de la compilación para la aplicación de Azure Stack Hub.
     
-    ![Adición de un nuevo artefacto para la aplicación de Azure Stack Hub](media/solution-deployment-guide-cross-cloud-scaling/image15.png)
+    ![Agregar nuevo artefacto para la aplicación de Azure Stack Hub](media/solution-deployment-guide-cross-cloud-scaling/image15.png)
 
 
 11. Agregue un entorno más; para ello, aplique Implementación de Azure App Service.

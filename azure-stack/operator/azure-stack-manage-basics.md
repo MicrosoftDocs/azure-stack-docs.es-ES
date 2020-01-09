@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 05/29/2019
 ms.author: justinha
 ms.lastreviewed: 05/29/2019
-ms.openlocfilehash: f9b9d6d1474c22c8e31d24ae08faf1aac6d5e9c1
-ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
+ms.openlocfilehash: 32f82a832b150c4512c854d2ddbfc24941bf7228
+ms.sourcegitcommit: 7626143e5d2a5e32a43162692f59306182fec854
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72283490"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75333044"
 ---
 # <a name="azure-stack-administration-basics"></a>Aspectos básicos de administración de Azure Stack
 
@@ -68,8 +68,8 @@ Estos servicios requieren una configuración adicional para que pueda ponerlos a
 Azure Stack continuará agregando compatibilidad con los servicios de Azure. Para información sobre el mapa de ruta previsto, consulte las notas del producto [Azure Stack: una extensión de Azure](https://go.microsoft.com/fwlink/?LinkId=842846&clcid=0x409). También puede supervisar las [publicaciones de blog de Azure Stack](https://azure.microsoft.com/blog/tag/azure-stack-technical-preview) para conocer los nuevos anuncios.
 
 ## <a name="what-account-should-i-use"></a>¿Qué cuenta debo usar?
-Al administrar Azure Stack, es preciso tener en cuenta varios aspectos con respecto a la cuenta. especialmente en las implementaciones que utilizan Servicios de federación de Active Directory (AD FS) de Windows Server como proveedor de identidades en lugar de Azure Active Directory (Azure AD). Las siguientes consideraciones sobre la cuenta se aplican a los sistemas integrados de Azure Stack y las implementaciones de ASDK:
 
+Al administrar Azure Stack, es preciso tener en cuenta varios aspectos con respecto a la cuenta. especialmente en las implementaciones que utilizan Servicios de federación de Active Directory (AD FS) de Windows Server como proveedor de identidades en lugar de Azure Active Directory (Azure AD). Las siguientes consideraciones sobre la cuenta se aplican a los sistemas integrados de Azure Stack y las implementaciones de ASDK:
 
 |Cuenta|Azure AD|AD FS|
 |-----|-----|-----|
@@ -104,7 +104,7 @@ Además de ofrecer servicios, debe realizar las tareas habituales de un operador
 
 ## <a name="what-to-tell-your-users"></a>Qué decirles a los usuarios
 
-Deberá informar a los usuarios cómo trabajar con los servicios en Azure Stack, conectarse con el entorno y suscribirse a las ofertas. Además de toda la documentación personalizada que puede proporcionar a los usuarios, puede enviar a los usuarios a la [documentación de usuarios de Azure Stack](https://docs.microsoft.com/en-us/azure-stack/user/).
+Deberá informar a los usuarios cómo trabajar con los servicios en Azure Stack, conectarse con el entorno y suscribirse a las ofertas. Además de toda la documentación personalizada que puede proporcionar a los usuarios, puede enviar a los usuarios a la [documentación de usuarios de Azure Stack](/azure-stack/user/).
 
 **Información sobre cómo trabajar con servicios en Azure Stack**
 

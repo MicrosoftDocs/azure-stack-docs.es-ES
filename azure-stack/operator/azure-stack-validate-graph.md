@@ -16,12 +16,12 @@ ms.date: 06/10/2019
 ms.author: patricka
 ms.reviewer: jerskine
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: 75943b3259db736a3dfcd4b30b76f434eaf19111
-ms.sourcegitcommit: af63214919e798901399fdffef09650de4176956
+ms.openlocfilehash: ba5a70b1a13e232619a2a47d1192782cc35b10c6
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66828432"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718528"
 ---
 # <a name="validate-graph-integration-for-azure-stack"></a>Validar la integración de Graph para Azure Stack
 
@@ -40,7 +40,7 @@ Para obtener más información acerca de los requisitos de la integración del c
 
 Descargue la versión más reciente de Azure Stack Readiness Checker (AzsReadinessChecker) desde [Galería de PowerShell](https://aka.ms/AzsReadinessChecker).
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 Deben cumplirse los siguientes requisitos previos.
 
@@ -84,7 +84,7 @@ Deben cumplirse los siguientes requisitos previos.
 
     Details:
 
-    [-] In standalone mode, some tests should not be considered fully indicative of connectivity or readiness the Azure Stack Stamp requires prior to Data Center Integration.
+    [-] In standalone mode, some tests should not be considered fully indicative of connectivity or readiness the Azure Stack Stamp requires prior to Datacenter Integration.
 
     Additional help URL: https://aka.ms/AzsGraphIntegration
 

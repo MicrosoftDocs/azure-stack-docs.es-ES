@@ -15,12 +15,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 75135801bf5762f597ae70d980588dedadf31b36
-ms.sourcegitcommit: de577d821d3b93ab524fee9e7a18a07c0ecc243c
+ms.openlocfilehash: fea4d8abcb0b8bb4f541105d782d2adbdc1f0f4c
+ms.sourcegitcommit: b2418661bfa3a791e65b9b487e20982dba3e4c41
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2019
-ms.locfileid: "75183471"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75756872"
 ---
 # <a name="mysql-resource-provider-maintenance-operations-in-azure-stack"></a>Operaciones de mantenimiento de un proveedor de recursos MySQL en Azure Stack
 
@@ -153,7 +153,7 @@ Al usar los proveedores de recursos SQL y MySQL con los sistemas integrados de A
 
 ### <a name="secretrotationmysqlproviderps1-parameters"></a>Parámetros de SecretRotationMySQLProvider.ps1
 
-|Parámetro|DESCRIPCIÓN|
+|Parámetro|Descripción|
 |-----|-----|
 |AzCredential|Credencial de la cuenta de administrador de servicio de Azure Stack.|
 |CloudAdminCredential|Credencial de cuenta de dominio de administración en la nube de Azure Stack.|
@@ -169,7 +169,7 @@ Al usar los proveedores de recursos SQL y MySQL con los sistemas integrados de A
 **Problema:**<br>
 Los registros para el cambio de secretos no se recopilan automáticamente si el script de cambio de secretos produce un error cuando se ejecuta.
 
-**Solución alternativa**:<br>
+**Solución alternativa:**<br>
 Utilice el cmdlet Get-AzsDBAdapterLogs para recopilar todos los registros del proveedor de recursos, incluido AzureStack.DatabaseAdapter.SecretRotation.ps1_*.log, guardado en C:\Logs.
 
 ## <a name="collect-diagnostic-logs"></a>Recopilación de registros de diagnóstico
@@ -250,7 +250,7 @@ La extensión Azure Diagnostics está instalada de manera predeterminada en la m
 
 Una vez que la colección de registros de eventos y registros de IIS está configurada para el proveedor de recursos de MySQL, los registros se pueden encontrar en una cuenta de almacenamiento del sistema denominada **mysqladapterdiagaccount**.
 
-Para más información acerca de la extensión Azure Diagnostics, consulte [Qué es la extensión Azure Diagnostics](/azure-monitor/platform/diagnostics-extension-overview).
+Para más información acerca de la extensión Azure Diagnostics, consulte [Qué es la extensión Azure Diagnostics](/azure/azure-monitor/platform/diagnostics-extension-overview).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

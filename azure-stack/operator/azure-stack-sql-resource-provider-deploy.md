@@ -16,12 +16,12 @@ ms.date: 10/02/2019
 ms.lastreviewed: 03/18/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
-ms.openlocfilehash: ae2e5ec161be9dace70746c5b5460964d2348272
-ms.sourcegitcommit: 08d2938006b743b76fba42778db79202d7c3e1c4
+ms.openlocfilehash: d486eaef122e1a66cca3725743d7772107e55107
+ms.sourcegitcommit: 4cd33bcb1bb761a424afd51f511b093543786d76
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74954577"
+ms.lasthandoff: 12/21/2019
+ms.locfileid: "75325134"
 ---
 # <a name="deploy-the-sql-server-resource-provider-on-azure-stack"></a>Implementación del proveedor de recursos de SQL Server en Azure Stack
 
@@ -30,7 +30,7 @@ Use el proveedor de recursos de SQL Server de Azure Stack para exponer las bases
 > [!IMPORTANT]
 > Solo el proveedor de recursos puede crear elementos en servidores que hospedan SQL o MySQL. Los elementos creados en un servidor host que no se crean con el proveedor de recursos podrían dar lugar a un error de coincidencia de estado.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 Hay varios requisitos previos que se deben cumplir antes de implementar el proveedor de recursos SQL de Azure Stack. Para cumplir estos requisitos, realice los pasos siguientes en un equipo que pueda acceder a la máquina virtual de punto de conexión con privilegios:
 
@@ -45,7 +45,7 @@ Hay varios requisitos previos que se deben cumplir antes de implementar el prove
   |Versión mínima de Azure Stack|Versión de SQL RP|
   |-----|-----|
   |Versión 1910 (1.1910.0.58)|[SQL RP, versión 1.1.47.0](https://aka.ms/azurestacksqlrp11470)|
-  |Versión 1808 (1.1808.0.97)|[SQL RP, versión 1.1.33.0](https://aka.ms/azurestacksqlrp11330)|  
+  |Versión 1808 (1.1808.0.97)|[SQL RP versión 1.1.33.0](https://aka.ms/azurestacksqlrp11330)|  
   |Versión 1808 (1.1808.0.97)|[SQL RP, versión 1.1.30.0](https://aka.ms/azurestacksqlrp11300)|  
   |Versión 1804 (1.0.180513.1)|[SQL RP, versión 1.1.24.0](https://aka.ms/azurestacksqlrp11240)  
   |     |     |
@@ -91,7 +91,7 @@ Ejecute el script DeploySqlProvider.ps1, que realiza las tareas siguientes:
 
 Puede especificar los parámetros siguientes en la línea de comandos. Si no lo hace, o se produce un error en la validación de algún parámetro, se le pedirá que proporcione los parámetros necesarios.
 
-| Nombre de parámetro | DESCRIPCIÓN | Comentario o valor predeterminado |
+| Nombre de parámetro | Descripción | Comentario o valor predeterminado |
 | --- | --- | --- |
 | **CloudAdminCredential** | Credencial del administrador de la nube necesaria para el acceso al punto de conexión con privilegios. | _Obligatorio_ |
 | **AzCredential** | Credenciales de la cuenta de administrador de servicio de Azure Stack. Use las mismas credenciales que para la implementación de Azure Stack. | _Obligatorio_ |
@@ -102,8 +102,8 @@ Puede especificar los parámetros siguientes en la línea de comandos. Si no lo 
 | **DefaultSSLCertificatePassword** | Contraseña para el certificado .pfx. | _Obligatorio_ |
 | **MaxRetryCount** | El número de veces que quiere volver a intentar cada operación si se produce un error.| 2 |
 | **RetryDuration** | Intervalo de tiempo de expiración entre reintentos, en segundos. | 120 |
-| **Desinstalación** | Se quita el proveedor de recursos y todos los recursos asociados (vea las notas siguientes). | Sin |
-| **DebugMode** | Impide la limpieza automática en caso de error. | Sin |
+| **Desinstalación** | Se quita el proveedor de recursos y todos los recursos asociados (vea las notas siguientes). | No |
+| **DebugMode** | Impide la limpieza automática en caso de error. | No |
 
 ## <a name="deploy-the-sql-resource-provider-using-a-custom-script"></a>Implementar el proveedor de recursos SQL con un script personalizado
 
@@ -149,10 +149,6 @@ $CloudAdminCreds = New-Object System.Management.Automation.PSCredential ("$domai
 
 # Change the following as appropriate.
 $PfxPass = ConvertTo-SecureString "P@ssw0rd1" -AsPlainText -Force
-
-# Clear the existing login information from the Azure PowerShell context.
-Clear-AzureRMContext -Scope CurrentUser -Force
-Clear-AzureRMContext -Scope Process -Force
 
 # Change to the directory folder where you extracted the installation files. Don't provide a certificate on ASDK!
 . $tempDir\DeploySQLProvider.ps1 `
