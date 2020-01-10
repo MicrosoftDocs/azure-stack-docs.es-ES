@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 10/16/2019
 ms.reviewer: shriramnat
 ms.lastreviewed: 10/16/2019
-ms.openlocfilehash: 87542483f2a35fba315258e9ba66b1792739033b
-ms.sourcegitcommit: df20662e77a6ed0a7eba03f79eb53e8cd4471206
+ms.openlocfilehash: 03be52d653fe6340a88a9c466fef8c9b1ccc9256
+ms.sourcegitcommit: b9d520f3b7bc441d43d489e3e32f9b89601051e6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72445339"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75727435"
 ---
 # <a name="tutorial-offer-a-service-to-users"></a>Tutorial: Oferta de un servicio a los usuarios
 
@@ -37,7 +37,7 @@ Una oferta consta de uno o varios planes. Un plan otorga el derecho de acceso a 
 
 Un proveedor de recursos admite la creación, implementación y administración de sus recursos como servicios. Un ejemplo común es el proveedor de recursos Microsoft. compute, que ofrece la posibilidad de crear e implementar máquinas virtuales (VM). Para ver una introducción sobre Azure Resource Manager, consulte [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview).
 
-En Azure Stack, hay dos categorías generales de proveedores de recursos: las que implementan recursos como servicios fundamentales y las que se implementan como servicios complementarios.
+En Azure Stack, hay dos categorías generales de proveedores de recursos: las que implementan recursos como servicios fundamentales y las que se implementan como servicios de valor agregado.
 
 ### <a name="foundational-services"></a>Servicios fundamentales
 
@@ -53,12 +53,12 @@ Los siguientes proveedores de recursos son compatibles con los servicios fundame
 | Microsoft.Network | Redes virtuales, direcciones IP públicas, equilibradores de carga |
 | Microsoft.Storage | Cuentas de almacenamiento, blobs, colas, tablas |
 
-### <a name="add-on-services"></a>Servicios complementarios
+### <a name="value-add-services"></a>Servicios de valor agregado
 
 >[!NOTE]
-> Para ofrecer un servicio complementario, primero se debe instalar el proveedor de recursos correspondiente en Marketplace de Azure Stack. Una vez instalados, sus recursos se ofrecen a los usuarios de la misma manera que los servicios fundamentales. Consulte la sección de **guías paso a paso** de la tabla de contenido, para ver el conjunto actual de proveedores de recursos que admiten ofertas de servicios complementarios.
+> Para ofrecer un servicio de valor agregado, primero se debe instalar el proveedor de recursos correspondiente en Marketplace de Azure Stack. Una vez instalados, sus recursos se ofrecen a los usuarios de la misma manera que los servicios fundamentales. Consulte la sección de **guías paso a paso** de la tabla de contenido, para ver el conjunto actual de proveedores de recursos que admiten ofertas de servicios de valor agregado.
 
-Los proveedores de recursos que se instalan después de que se ha implementado Azure Stack admiten los servicios complementarios. Algunos ejemplos son:
+Los proveedores de recursos que se instalan después de que se ha implementado Azure Stack admiten los servicios de valor agregado. Algunos ejemplos son:
 
 | Proveedor de recursos | Recursos de ejemplo |
 | ----------------- | ------------------------- |
@@ -76,7 +76,7 @@ Durante el proceso de creación de la oferta, creará una oferta y un plan. El p
    - En un sistema integrado, la dirección URL varía en función de la región y el nombre de dominio externo del operador y tendrá el formato https://adminportal.&lt;*región*&gt;.&lt;*FQDN*&gt;.
    - Si usa el Kit de desarrollo de Azure Stack, la dirección URL es https://adminportal.local.azurestack.external.
 
-   Seleccione **+ Create a resource (+ Crear un recurso)** >**Offers + Plans (Ofertas + Planes)** >**Offer (Oferta)** .
+   Seleccione **+ Crear un recurso** > **Ofertas y planes** > **Oferta**.
 
    ![Nueva oferta](media/tutorial-offer-services/1-create-resource-offer.png)
 
@@ -132,7 +132,7 @@ Durante el proceso de creación de la oferta, creará una oferta y un plan. El p
    - En un sistema integrado, la dirección URL varía en función de la región y el nombre de dominio externo del operador y tendrá el formato https://adminportal.&lt;*región*&gt;.&lt;*FQDN*&gt;.
    - Si usa el Kit de desarrollo de Azure Stack, la dirección URL es https://adminportal.local.azurestack.external.
    
-   Seleccione **+ Create a resource (+ Crear un recurso)** >**Offers + Plans (Ofertas + Planes)** >**Offer (Oferta)** .
+   Seleccione **+ Crear un recurso** > **Ofertas y planes** > **Oferta**.
 
    ![Nueva oferta](media/tutorial-offer-services/image01.png)
 

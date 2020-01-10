@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 10/13/2019
 ms.reviewer: shriramnat
 ms.lastreviewed: 10/06/2019
-ms.openlocfilehash: 63c8e37c19b46f5cabe197dd55875e9bcbd5cb12
-ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
+ms.openlocfilehash: 9e41cae53612cdf412840eb63d648a9c73260fa6
+ms.sourcegitcommit: b9d520f3b7bc441d43d489e3e32f9b89601051e6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72286827"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75727469"
 ---
 # <a name="tutorial-test-a-service-offering"></a>Tutorial: Prueba de una oferta de un servicio
 
@@ -25,7 +25,7 @@ En este tutorial, aprenderá a:
 > * una suscripción
 > * Creación e implementación de recursos
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 Antes de comenzar con este tutorial, debe completar los siguientes requisitos previos:
 
@@ -60,7 +60,7 @@ En el portal de usuarios, debe aprovisionar una cuenta de almacenamiento mediant
 
 1. Inicie sesión en el portal de usuario con una cuenta de usuario.
 
-1. Seleccione **+Create a resource (+Crear un recurso)** >**Data + Storage (Datos y almacenamiento)** >**Storage account - blob, file, table, queue** (Cuenta de almacenamiento: blob, archivo, tabla, cola).
+1. Seleccione **+Crear un recurso** > **Datos y almacenamiento** > **Cuenta de almacenamiento: blob, archivo, tabla, cola**.
 
 1. En **Create storage account** (Crear cuenta de almacenamiento), proporcione la siguiente información:
   
@@ -77,8 +77,8 @@ En el portal de usuarios, debe aprovisionar una máquina virtual mediante la sus
 
 1. Inicie sesión en el portal de usuario con una cuenta de usuario.
 
-1. Seleccione **+Create a resource (+Crear un recurso)** > **Compute (Procesar)** > **\<image-name\>** , donde "nombre-imagen" es el nombre de la máquina virtual que descargó en los requisitos previos.
-1. En **Create virtual machine (Crear máquina virtual)** / **Basics (Datos básicos)** , proporcione la siguiente información:
+1. Seleccione **+Crear un recurso** > **Procesar** > **\<image-name\>** , donde "image-name" es el nombre de la máquina virtual que descargó en los requisitos previos.
+1. En **Crear máquina virtual** / **Datos básicos**, proporcione la siguiente información:
   
    - Escriba un **nombre** para la VM.
    - Escriba un **nombre de usuario** para la cuenta de administrador.
@@ -106,7 +106,7 @@ Desde el portal de usuarios puede aprovisionar una máquina virtual mediante la 
 
 1. Inicie sesión en el portal de usuario con una cuenta de usuario.
 
-1. En el panel, seleccione **+Create a resource (+Crear un recurso)** > **Compute (Proceso)** > **Windows Server 2016 Datacenter Eval** y, luego, seleccione **Create** (Crear).
+1. En el panel, seleccione **+Crear un recurso** > **Procesar**>**Windows Server 2016 Datacenter Eval** y, luego, seleccione **Crear**.
 
 1. En **Datos básicos**, proporcione la siguiente información:
   
@@ -139,7 +139,7 @@ En este tutorial, ha aprendido cómo:
 > * una suscripción
 > * Creación e implementación de recursos 
 
-A continuación, obtenga información sobre la implementación de proveedores de recursos para servicios complementarios. Estos le permitirán ofrecer incluso más servicios a los usuarios de los planes:
+A continuación, obtenga información sobre la implementación de proveedores de recursos para servicios de valor agregado. Estos le permitirán ofrecer incluso más servicios a los usuarios de los planes:
 
 - [Ofrecer SQL en Azure Stack](azure-stack-sql-resource-provider.md)
 - [Ofrecer MySQL en Azure Stack](azure-stack-mysql-resource-provider.md)

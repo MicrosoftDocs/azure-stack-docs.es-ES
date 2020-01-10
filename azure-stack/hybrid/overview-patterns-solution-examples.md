@@ -8,12 +8,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 134171c85f91801f83965d376f79d09f6e8e3ac8
-ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
+ms.openlocfilehash: 82f933babd0be4c001bd3001a631a4345bd0e488
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73640842"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718069"
 ---
 # <a name="hybrid-patterns-and-solution-examples-for-azure-and-azure-stack"></a>Ejemplos de soluciones y patrones híbridos de Azure y Azure Stack
 
@@ -47,7 +47,7 @@ Las guías de implementación paso a paso ayudan en la implementación de una so
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Consulte la información relativa a la [familia de productos y soluciones de Azure Stack](/azure-stack) para conocer más detalles sobre toda la gama de productos y soluciones.
+- Consulte la información relativa a la [familia de productos y soluciones de Azure Stack](/azure-stack) para más información sobre toda la gama de productos y soluciones.
 - Explore las secciones sobre patrones y guías de implementación de soluciones de la tabla de contenido para más información sobre cada una de ellas.
 - Lea el artículo sobre [Consideraciones de diseño para aplicaciones híbridas](overview-app-design-considerations.md) para revisar los pilares de la calidad del software para diseñar, implementar y usar aplicaciones híbridas.
 - [Configure un entorno de desarrollo en Azure Stack](../user/azure-stack-dev-start.md) e [implemente su primera aplicación](../user/azure-stack-dev-start-deploy-app.md) en Azure Stack.

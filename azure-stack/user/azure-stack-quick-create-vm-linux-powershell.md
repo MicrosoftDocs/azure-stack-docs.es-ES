@@ -15,12 +15,12 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.custom: mvc
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 9d1c9f963433e0a41218bb1984d07f0b47d032eb
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.openlocfilehash: 2bd72ad2de570eeb3089645c5ee7c9dd3784e83c
+ms.sourcegitcommit: bbe1048682c7dccc6cebde542462c14ee1f3d0d1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955706"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75677678"
 ---
 # <a name="quickstart-create-a-linux-server-vm-by-using-powershell-in-azure-stack"></a>Inicio rápido: Creación de una VM de servidor Linux mediante PowerShell en Azure Stack
 
@@ -32,7 +32,7 @@ Puede crear una máquina virtual en un servidor Ubuntu Server 16.04 LTS mediante
 * Instalar un servidor web NGINX y ver la página principal predeterminada.
 * Borrar los recursos que no use.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 * Una imagen de Linux en el Marketplace de Azure Stack. Azure Stack Marketplace no tiene la imagen de Linux de forma predeterminada. Solicite al operador de Azure Stack que le proporcione la imagen de Ubuntu Server 16.04 LTS que necesita. El operador puede seguir las instrucciones del artículo [Descarga de elementos de Marketplace desde Azure a Azure Stack](../operator/azure-stack-download-azure-marketplace-item.md).
 
@@ -61,7 +61,7 @@ New-AzureRmResourceGroup `
 
 ## <a name="create-storage-resources"></a>Creación de recursos de almacenamiento
 
-Cree una cuenta de almacenamiento y, a continuación, cree un contenedor de almacenamiento para la imagen de Ubuntu Server 16.04 LTS.
+Cree una cuenta de almacenamiento que se usará para almacenar la salida de diagnóstico del arranque.
 
 ```powershell  
 # Create variables to store the storage account name and the storage account SKU information
@@ -388,7 +388,7 @@ ssh <Public IP Address>
 
 Cuando se le solicite, inicie sesión como **azureuser**. Si usó una frase de contraseña al crear las claves SSH, tendrá que proporcionar la frase de contraseña.
 
-## <a name="install-the-nginx-web-server"></a>Instalar el servidor web NGINX
+## <a name="install-the-nginx-web-server"></a>Instalación del servidor web NGINX
 
 Ejecute el siguiente script para actualizar los recursos del paquete e instalar el paquete NGINX más reciente:
 
