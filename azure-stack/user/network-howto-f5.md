@@ -9,12 +9,12 @@ ms.date: 11/06/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 11/06/2019
-ms.openlocfilehash: c1166b1755b33687757b4587942c5472413e2b3e
-ms.sourcegitcommit: 62283e9826ea78b218f5d2c6c555cc44196b085d
+ms.openlocfilehash: 60e6330aa492539a3b4e89a390ddcad5650cac92
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74780888"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718426"
 ---
 # <a name="how-to-deploy-f5-across-two-azure-stack-hub-instances"></a>Implementación de F5 en dos instancias de Azure Stack Hub
 
@@ -140,9 +140,9 @@ Después de la instalación, tendrá que configurar los grupos de seguridad de r
 
     ![](./media/network-howto-f5/image11.png)
     
-    | Clave | Valor |
+    | Clave | Value |
     | --- | --- |
-    | NOMBRE | NGINX_Pool |
+    | Nombre | NGINX_Pool |
     | Health Monitor | HTTPS |
     | Nombre del nodo | NGINX |
     | Dirección | \<la dirección IP privada de NGINX> |
@@ -160,9 +160,9 @@ Después de la instalación, tendrá que configurar los grupos de seguridad de r
 
 13. Para crear un servidor virtual, vaya a **Local Traffic** > **Virtual Servers** > **Virtual Server List** (Tráfico local > Servidores virtuales > Lista de servidores virtuales) y seleccione **+** . Configure el grupo con los valores de la tabla. Deje todos los demás campos con sus valores predeterminados.
 
-    | Clave | Valor |
+    | Clave | Value |
     | --- | --- |
-    |NOMBRE | NGINX |
+    |Nombre | NGINX |
     |Dirección de destino | \<dirección IP propia de BIG-IP> |
     |Puerto de servicio | 443 |
     |Perfil SSL (cliente) | clientssl |

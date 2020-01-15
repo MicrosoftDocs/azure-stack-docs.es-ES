@@ -1,5 +1,5 @@
 ---
-title: Informe de validación para Azure Stack | Microsoft Docs
+title: Informe de validación para Azure Stack Hub | Microsoft Docs
 description: Use el informe de Azure Stack Readiness Checker para revisar los resultados de validación.
 services: azure-stack
 documentationcenter: ''
@@ -12,20 +12,20 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 08/13/2019
+ms.date: 01/07/2020
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 10/23/2018
-ms.openlocfilehash: c00ce005ac72fcde34b58a1afe7e134c27274247
-ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
+ms.openlocfilehash: e699ab75225e0590d287ddadd8b35b67bfac8479
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68991720"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718392"
 ---
-# <a name="azure-stack-validation-report"></a>Informe de validación de Azure Stack
+# <a name="azure-stack-hub-validation-report"></a>Informe de validación de Azure Stack Hub
 
-Use la herramienta *Azure Stack Readiness Checker* para ejecutar validaciones que admitan la implementación y el mantenimiento de un entorno de Azure Stack. La herramienta escribe los resultados en un archivo de informe .json. El informe muestra los datos resumidos y detallados sobre el estado de los requisitos previos para la implementación de Azure Stack. El informe también muestra información acerca de la rotación de secretos para las implementaciones de Azure Stack existentes.  
+Use la herramienta *Azure Stack Hub Readiness Checker* para ejecutar validaciones que admitan la implementación y el mantenimiento de un entorno de Azure Stack Hub. La herramienta escribe los resultados en un archivo de informe .json. El informe muestra los datos resumidos y detallados sobre el estado de los requisitos previos para la implementación de Azure Stack Hub. El informe también muestra información acerca de la rotación de secretos para las implementaciones de Azure Stack Hub existentes.  
 
 ## <a name="where-to-find-the-report"></a>Lugar donde se puede encontrar el informe
 
@@ -132,13 +132,13 @@ Azure Stack ADFS Validation results not available.
 
 Para ver un informe que se filtra con un único tipo de validación, use el parámetro **-ReportSections** con uno de los valores siguientes:
 
-- Certificate
+- Certificado
 - AzureRegistration
 - AzureIdentity
 - Grafo
 - ADFS
 - Trabajos
-- Todo  
+- All  
 
 Por ejemplo, para ver solo el informe resumen de certificados, utilice la siguiente línea de comandos de PowerShell:
 

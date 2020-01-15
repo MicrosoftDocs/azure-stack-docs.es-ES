@@ -8,12 +8,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: ddc8218aadbf3940ea18ce80012441c5e43c7472
-ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
+ms.openlocfilehash: 3bd29e8625fac818d05954720d84d572b684c92e
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73640242"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718018"
 ---
 # <a name="cross-cloud-scaling-pattern"></a>Patrón de escalado de toda la nube
 
@@ -88,7 +88,7 @@ El componente clave del escalado entre nubes es la capacidad de ofrecer escalado
 
 Asegúrese de que las aplicaciones implementadas localmente están configuradas para una alta disponibilidad mediante la configuración del hardware local y la implementación de software.
 
-### <a name="manageability"></a>Manejabilidad
+### <a name="manageability"></a>Facilidad de uso
 
 El patrón de toda la nube garantiza una administración sin problemas y una interfaz familiar entre entornos.
 
@@ -108,9 +108,9 @@ No se recomienda este patrón si:
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Para obtener más información sobre los temas presentados en este artículo:
-- Consulte la [información general sobre Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview) para obtener más información sobre cómo funciona este equilibrador de carga de tráfico basado en DNS.
-- Consulte [consideraciones sobre el diseño de aplicaciones híbridas](overview-app-design-considerations.md) para obtener más información sobre los procedimientos recomendados y responder a preguntas adicionales.
-- Consulte la información relativa a la [familia de productos y soluciones de Azure Stack](/azure-stack) para conocer más detalles sobre toda la gama de productos y soluciones.
+Para más información sobre los temas presentados en este artículo:
+- Consulte la [información general sobre Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview) para más información sobre cómo funciona este equilibrador de carga de tráfico basado en DNS.
+- Consulte [Consideraciones sobre el diseño de aplicaciones híbridas](overview-app-design-considerations.md) para más información sobre los procedimientos recomendados y responder a preguntas adicionales.
+- Consulte la información relativa a la [familia de productos y soluciones de Azure Stack](/azure-stack) para más información sobre toda la gama de productos y soluciones.
 
 Cuando esté listo para probar la solución de ejemplo, continúe con la [guía de implementación de soluciones de escalado entre nubes](solution-deployment-guide-cross-cloud-scaling.md). La guía de implementación proporciona instrucciones paso a paso para implementar y probar sus componentes. Aprenderá a crear una solución entre nubes que proporcione un proceso desencadenado manualmente para cambiar de una aplicación web hospedada en Azure Stack Hub a una aplicación web hospedada en Azure. También aprenderá a usar el escalado automático a través de Traffic Manager, garantizando una utilidad en la nube flexible y escalable bajo carga.

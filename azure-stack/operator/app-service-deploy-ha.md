@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/07/2019
+ms.date: 01/02/2020
 ms.author: anwestg
 ms.reviewer: anwestg
-ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: 0bf89b0f80557f99c83fb5ad6afd0c4a5dcd3849
-ms.sourcegitcommit: dfaf0126bc9975ca1643d55f06c71df9e32ea976
+ms.lastreviewed: 01/02/2020
+ms.openlocfilehash: 9e5b99a5787e6472b2e9d25a509f615a1b02a732
+ms.sourcegitcommit: a6c02421069ab9e72728aa9b915a52ab1dd1dbe2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72165021"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75655065"
 ---
 # <a name="deploy-app-service-in-a-highly-available-configuration"></a>Implementación de App Service en una configuración de alta disponibilidad
 
@@ -78,7 +78,7 @@ Use los pasos de esta sección para crear una implementación personalizada con 
    > [!NOTE]
    > La implementación de la plantilla tarda una hora en completarse aproximadamente.
 
-   [![](media/app-service-deploy-ha/5-sm.png "Revisión del estado de implementación de la plantilla")](media/app-service-deploy-ha/5-lg.png#lightbox)
+   [![](media/app-service-deploy-ha/5-sm.png "Review template deployment status")](media/app-service-deploy-ha/5-lg.png#lightbox)
 
 
 ### <a name="record-template-outputs"></a>Registro de los resultados de la plantilla
@@ -114,7 +114,7 @@ Después de instalar el proveedor de recursos de App Service, puede incluirlos e
 > [!IMPORTANT]
 > Antes de ejecutar el instalador del proveedor de recursos, asegúrese de haber leído las notas de la versión que acompañan a cada versión de App Service, para obtener información sobre las nuevas funcionalidades, correcciones y problemas conocidos que podrían afectar a su implementación.
 
-### <a name="prerequisites"></a>Requisitos previos
+### <a name="prerequisites"></a>Prerequisites
 Para poder ejecutar el instalador de App Service, primero es necesario seguir los pasos descritos en el artículo [Antes de empezar a trabajar con App Service en Azure Stack](azure-stack-app-service-before-you-get-started.md):
 
 > [!TIP]
@@ -210,13 +210,13 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
     |Rol de administración|1|3|
     |Rol de publicador|1|3|
     |Rol de FrontEnd|1|3|
-    |Rol de trabajo compartido|1|10|
+    |Rol de trabajo compartido|1|2|
     |     |     |     |
 
     ![Valores de la instancia de rol de la infraestructura en App Service](media/app-service-deploy-ha/12.png)
 
     > [!NOTE]
-    > Modificar los valores predeterminados por los recomendados en este tutorial aumenta los requisitos de hardware para la instalación de App Service. Se necesitan un total de 26 núcleos y 46 592 MB de RAM para admitir las 21 máquinas virtuales recomendadas en lugar de los 18 núcleos y los 32 256 MB de RAM predeterminados para 15 máquinas virtuales.
+    > Modificar los valores predeterminados por los recomendados en este tutorial aumenta los requisitos de hardware para la instalación de App Service. Se necesitan un total de 18 núcleos y 32 256 MB de RAM para admitir las 13 máquinas virtuales recomendadas en lugar de los 9 núcleos y los 16 128 MB de RAM predeterminados para 6 máquinas virtuales.
 
 15. Seleccione la imagen de la plataforma que va a usar para instalar las máquinas virtuales de la infraestructura de App Service y haga clic en **Siguiente**:
 

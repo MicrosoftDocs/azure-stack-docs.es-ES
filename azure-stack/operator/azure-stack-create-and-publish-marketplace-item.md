@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/25/2019
+ms.date: 01/03/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: d03049fd6dea5f5d7a10a61a25639cb1de3d67ad
-ms.sourcegitcommit: 58e1911a54ba249a82fa048c7798dadedb95462b
+ms.openlocfilehash: 5740ff6bc550aa27f15761e6be2c69247eecaf03
+ms.sourcegitcommit: a6c02421069ab9e72728aa9b915a52ab1dd1dbe2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73057778"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75654889"
 ---
 # <a name="create-and-publish-a-custom-azure-stack-marketplace-item"></a>Creación y publicación de un elemento de Azure Stack personalizado en Marketplace
 
@@ -35,11 +35,11 @@ En los ejemplos de este artículo se muestra cómo crear una oferta de Marketpla
 ## <a name="create-a-marketplace-item"></a>Creación de un elemento para Marketplace
 
 > [!IMPORTANT]
-> Antes de crear el elemento de máquina virtual de Marketplace, cargue la imagen de máquina virtual personalizada en el portal de Azure Stack, siguiendo las instrucciones de [Adición de una imagen de máquina virtual en Azure Stack](azure-stack-add-vm-image.md#add-a-vm-image-as-an-azure-stack-operator-using-the-portal). Después, siga las instrucciones de este artículo para empaquetar la imagen (crear un archivo .azpkg) y cárguela en el Marketplace de Azure Stack.
+> Antes de crear el elemento de máquina virtual de Marketplace, cargue la imagen de máquina virtual personalizada en el portal de Azure Stack, siguiendo las instrucciones de [Adición de una imagen de máquina virtual en Azure Stack](azure-stack-add-vm-image.md). Después, siga las instrucciones de este artículo para empaquetar la imagen (crear un archivo .azpkg) y cárguela en el Marketplace de Azure Stack.
 
 Para crear un elemento de Marketplace personalizado, haga lo siguiente:
 
-1. Descargue la herramienta [Azure Gallery Packager](https://aka.ms/azsmarketplaceitem) y el paquete de galería de Azure Stack de ejemplo. Esta descarga incluye plantillas de máquina virtual personalizadas. Extraiga el archivo .zip y cambie el nombre de la carpeta **SimpleVMTemplate** por el nombre del elemento que se mostrará en el portal de Azure Stack.
+1. Descargue la herramienta [Azure Gallery Packager](https://aka.ms/azsmarketplaceitem) y el paquete de galería de Azure Stack de ejemplo. Esta descarga incluye plantillas de máquina virtual personalizadas. Extraiga el archivo .zip y, en la carpeta **Custom VMs** (Máquinas virtuales personalizadas) podrá usar las plantillas de Windows o Linux que estén disponibles. Puede decidir volver a usar las plantillas predefinidas y modificar los parámetros correspondientes con los detalles del producto del elemento que se mostrará en el portal de Azure Stack. O bien, simplemente puede volver a usar el archivo .azpkg disponible y omitir los pasos siguientes para personalizar su propio paquete de la galería.
 
 2. Cree una plantilla de Azure Resource Manager o use nuestras plantillas de ejemplo para Windows o Linux. Estas plantillas de ejemplo se proporcionan en el archivo .zip de la Packager que descargó en el paso 1. Puede usar la plantilla y cambiar los campos de texto, o puede descargar una plantilla preconfigurada de GitHub. Para más información sobre las plantillas de Azure Resource Manager, consulte [Plantillas de Azure Resource Manager](/azure/azure-resource-manager/resource-group-authoring-templates).
 
@@ -51,7 +51,7 @@ Para crear un elemento de Marketplace personalizado, haga lo siguiente:
 
    ![Captura de pantalla de la estructura de las plantillas de implementación](media/azure-stack-create-and-publish-marketplace-item/gallerypkg2.png)
 
-4. Reemplace los siguientes valores resaltados (con números) en la plantilla Manifest.json por el valor que proporcionó al [cargar la imagen personalizada](azure-stack-add-vm-image.md#add-a-vm-image-as-an-azure-stack-operator-using-the-portal).
+4. Reemplace los siguientes valores resaltados (con números) en la plantilla Manifest.json por el valor que proporcionó al [cargar la imagen personalizada](azure-stack-add-vm-image.md).
 
    > [!NOTE]  
    > Nunca codifique de forma rígida los secretos, como las claves de producto, contraseñas o cualquier información de identificación del cliente, en la plantilla de Azure Resource Manager. Los archivos de plantilla de JSON son accesibles sin necesidad de autenticación una vez publicados en la galería. Almacene todos los secretos en [Key Vault](/azure/azure-resource-manager/resource-manager-keyvault-parameter) y llámelos desde dentro de la plantilla.
@@ -216,32 +216,32 @@ Para crear un elemento de Marketplace personalizado, haga lo siguiente:
 
 ### <a name="identity-information"></a>Información de identidad
 
-| NOMBRE | Obligatorio | type | Restricciones | DESCRIPCIÓN |
+| Nombre | Obligatorio | Tipo | Restricciones | Descripción |
 | --- | --- | --- | --- | --- |
-| NOMBRE |X |Cadena |[A-Za-z0-9]+ | |
-| Publicador |X |Cadena |[A-Za-z0-9]+ | |
-| Versión |X |Cadena |[SemVer v2](https://semver.org/) | |
+| Nombre |X |String |[A-Za-z0-9]+ | |
+| Publicador |X |String |[A-Za-z0-9]+ | |
+| Versión |X |String |[SemVer v2](https://semver.org/) | |
 
 ### <a name="metadata"></a>Metadatos
 
-| NOMBRE | Obligatorio | type | Restricciones | DESCRIPCIÓN |
+| Nombre | Obligatorio | Tipo | Restricciones | Descripción |
 | --- | --- | --- | --- | --- |
-| DisplayName |X |Cadena |Se recomiendan 80 caracteres |Es posible que el portal no muestre el nombre del elemento correctamente si tiene más de 80 caracteres. |
-| PublisherDisplayName |X |Cadena |Se recomiendan 30 caracteres |Es posible que el portal no muestre el nombre del editor correctamente si tiene más de 30 caracteres. |
-| PublisherLegalName |X |Cadena |256 caracteres como máximo | |
-| Resumen |X |Cadena |entre 60 y 100 caracteres | |
-| LongSummary |X |Cadena |entre 140 y 256 caracteres |Aún no se aplica a Azure Stack. |
-| DESCRIPCIÓN |X |[HTML](https://github.com/Azure/portaldocs/blob/master/gallery-sdk/generated/index-gallery.md#gallery-item-metadata-html-sanitization) |Entre 500 y 5000 caracteres | |
+| DisplayName |X |String |Se recomiendan 80 caracteres |Es posible que el portal no muestre el nombre del elemento correctamente si tiene más de 80 caracteres. |
+| PublisherDisplayName |X |String |Se recomiendan 30 caracteres |Es posible que el portal no muestre el nombre del editor correctamente si tiene más de 30 caracteres. |
+| PublisherLegalName |X |String |256 caracteres como máximo | |
+| Resumen |X |String |entre 60 y 100 caracteres | |
+| LongSummary |X |String |entre 140 y 256 caracteres |Aún no se aplica a Azure Stack. |
+| Descripción |X |[HTML](https://github.com/Azure/portaldocs/blob/master/gallery-sdk/generated/index-gallery.md#gallery-item-metadata-html-sanitization) |Entre 500 y 5000 caracteres | |
 
 ### <a name="images"></a>Imágenes
 
 Marketplace usa los siguientes iconos:
 
-| NOMBRE | Ancho | Alto | Notas |
+| Nombre | Ancho | Alto | Notas |
 | --- | --- | --- | --- |
 | Ancho |255 px |115 px |Siempre se requiere |
 | grande |115 px |115 px |Siempre se requiere |
-| Mediano |90 px |90 px |Siempre se requiere |
+| Media |90 px |90 px |Siempre se requiere |
 | Pequeña |40 px |40 px |Siempre se requiere |
 | Instantánea |533 px |324 px |Siempre se requiere |
 
@@ -253,19 +253,19 @@ Todos los elementos de Marketplace deben etiquetarse con una categoría que iden
 
 Cada elemento de Marketplace puede incluir varios vínculos a contenido adicional. Los vínculos se especifican en forma de lista de nombres e identificadores URI:
 
-| NOMBRE | Obligatorio | type | Restricciones | DESCRIPCIÓN |
+| Nombre | Obligatorio | Tipo | Restricciones | Descripción |
 | --- | --- | --- | --- | --- |
-| DisplayName |X |Cadena |64 caracteres como máximo. | |
+| DisplayName |X |String |64 caracteres como máximo. | |
 | Identificador URI |X |URI | | |
 
 ### <a name="additional-properties"></a>Propiedades adicionales
 
 Además de los metadatos anteriores, los creadores de Marketplace pueden proporcionar datos con el par clave-valor personalizado de la forma siguiente:
 
-| NOMBRE | Obligatorio | type | Restricciones | DESCRIPCIÓN |
+| Nombre | Obligatorio | Tipo | Restricciones | Descripción |
 | --- | --- | --- | --- | --- |
-| DisplayName |X |Cadena |25 caracteres como máximo. | |
-| Valor |X |Cadena |30 caracteres como máximo. | |
+| DisplayName |X |String |25 caracteres como máximo. | |
+| Value |X |String |30 caracteres como máximo. | |
 
 ### <a name="html-sanitization"></a>Comprobación del estado de HTML
 

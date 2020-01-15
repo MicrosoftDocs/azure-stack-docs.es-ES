@@ -15,27 +15,27 @@ ms.date: 10/01/2019
 ms.author: mabrigg
 ms.lastreviewed: 09/10/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 31436cbe92550044efe8b28a5063da61508e7304
-ms.sourcegitcommit: ed44d477b9fd11573d1e0d1ed3a3c0ef4512df53
+ms.openlocfilehash: f84a781979deaa8f3879abc2d964599e6f1087ae
+ms.sourcegitcommit: b2418661bfa3a791e65b9b487e20982dba3e4c41
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73845777"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75756855"
 ---
-# <a name="manage-updates-in-azure-stack-overview"></a>Introducción a la administración de actualizaciones en Azure Stack
+# <a name="manage-updates-in-azure-stack-hub-overview"></a>Introducción a la administración de actualizaciones en Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack*
+*Se aplica a: Sistemas integrados de Azure Stack Hub*
 
-Azure Stack se mantiene actualizado gracias tanto a las actualizaciones, completas o rápidas, y las revisiones como a las actualizaciones de controladores y firmware del fabricante de equipo original (OEM). En este artículo se explican los diferentes tipos de actualizaciones, cuándo se espera su lanzamiento y dónde se puede encontrar más información sobre la versión actual.
+Azure Stack Hub se mantiene actualizado gracias tanto a las actualizaciones, completas o rápidas, y las revisiones, como a las actualizaciones de controladores y firmware del fabricante de equipo original (OEM). En este artículo se explican los diferentes tipos de actualizaciones, cuándo se espera su lanzamiento y dónde se puede encontrar más información sobre la versión actual.
 
 > [!Note]  
-> No puede aplicar actualizaciones de Azure Stack al Kit de desarrollo de Azure Stack (ASDK). Las actualizaciones están diseñadas para sistemas integrados. Para obtener información, consulte [Volver a implementar el ASDK](https://docs.microsoft.com/azure-stack/asdk/asdk-redeploy).
+> No puede aplicar actualizaciones de Azure Stack Hub al kit de desarrollo de Azure Stack (ASDK). Las actualizaciones están diseñadas para sistemas integrados. Para obtener información, consulte [Volver a implementar el ASDK](https://docs.microsoft.com/azure-stack/asdk/asdk-redeploy).
 
 ## <a name="update-package-types"></a>Tipos de actualizaciones
 
 Hay tres tipos de actualizaciones para los sistemas integrados:
 
--   **Actualizaciones de software de Azure Stack**. Microsoft es responsable del ciclo de vida de servicio de un extremo a otro de las actualizaciones de software de Microsoft. Estas actualizaciones pueden incluir las últimas actualizaciones de seguridad de Windows Server, las actualizaciones que no son de seguridad y las actualizaciones de características de Azure Stack. Descargue estas actualizaciones directamente desde Microsoft.
+-   **Actualizaciones de software de Azure Stack Hub**. Microsoft es responsable del ciclo de vida de servicio de un extremo a otro de las actualizaciones de software de Microsoft. Estas actualizaciones pueden incluir las últimas actualizaciones de seguridad de Windows Server, las actualizaciones que no son de seguridad y las actualizaciones de características de Azure Stack. Descargue estas actualizaciones directamente desde Microsoft.
 
     Cada actualización tiene un tipo correspondiente, **Completo** o **Rápido**. 
  
@@ -43,21 +43,21 @@ Hay tres tipos de actualizaciones para los sistemas integrados:
 
     Las actualizaciones **rápidas** están limitadas y no actualizan los sistemas operativos subyacentes del host físico.
 
--   **Revisiones de Azure Stack**. Microsoft ofrece revisiones para Azure Stack que solucionan un determinado problema que suele ser de naturaleza preventiva o urgente. Todas las revisiones se publican con su correspondiente artículo de Microsoft Knowledge Base que detalla el problema, la causa y la resolución. Descargue e instale revisiones como las actualizaciones completas normales para Azure Stack. Las revisiones son acumulativas y pueden instalarse en cuestión de minutos.
+-   **Revisiones de Azure Stack Hub**. Microsoft ofrece revisiones para Azure Stack que solucionan un determinado problema que suele ser de naturaleza preventiva o urgente. Todas las revisiones se publican con su correspondiente artículo de Microsoft Knowledge Base que detalla el problema, la causa y la resolución. Descargue e instale revisiones como las actualizaciones completas normales para Azure Stack. Las revisiones son acumulativas y pueden instalarse en cuestión de minutos.
 
--   **Actualizaciones suministradas por el proveedor de hardware de OEM**. Los asociados de hardware de Azure Stack son responsables del ciclo de vida de servicio de un extremo a otro (lo que incluye las instrucciones) de las actualizaciones de controladores y firmware relacionados con el hardware. Asimismo, poseen y mantienen las instrucciones de todo el software y el hardware del host de ciclo de vida del hardware. El proveedor de hardware OEM hospeda estas actualizaciones en su propio sitio de descarga.
+-   **Actualizaciones suministradas por el proveedor de hardware de OEM**. Los asociados de hardware de Azure Stack Hub son responsables del ciclo de vida de servicio de un extremo a otro (lo que incluye las instrucciones) de las actualizaciones de controladores y firmware relacionados con el hardware. Asimismo, poseen y mantienen las instrucciones de todo el software y el hardware del host de ciclo de vida del hardware. El proveedor de hardware OEM hospeda estas actualizaciones en su propio sitio de descarga.
 
 ## <a name="when-to-update"></a>Cuándo debe realizar la actualización
 
 Los tres tipos de actualizaciones se lanzan con la siguiente cadencia:
 
--   **Actualizaciones de software de Azure Stack**. Microsoft suele lanzar paquetes de actualización de software cada mes.
+-   **Actualizaciones de software de Azure Stack Hub**. Microsoft suele lanzar paquetes de actualización de software cada mes.
 
--   **Revisiones de Azure Stack**. Las revisiones son versiones sujetas a una limitación temporal que se pueden publicar en cualquier momento.
+-   **Revisiones de Azure Stack Hub**. Las revisiones son versiones sujetas a una limitación temporal que se pueden publicar en cualquier momento.
 
 -   **Actualizaciones suministradas por el proveedor de hardware OEM**. Los proveedores de hardware de OEM lanzan sus actualizaciones en función de la necesidad.
 
-Para seguir recibiendo soporte técnico, debe mantener su entorno de Azure Stack con una versión de software de Azure Stack compatible. Para más información, consulte la [Directiva de mantenimiento de Azure Stack](azure-stack-update-servicing-policy.md).
+Para seguir recibiendo soporte técnico, debe mantener su entorno de Azure Stack con una versión de software de Azure Stack Hub compatible. Para más información, consulte la [Directiva de mantenimiento de Azure Stack Hub](azure-stack-update-servicing-policy.md).
 
 ## <a name="where-to-get-notice-of-an-update"></a>Dónde recibirá el aviso de una actualización
 
@@ -77,32 +77,32 @@ El aviso de actualizaciones varía en función de un par de factores, como su co
 
 Una vez que sepa que tiene una actualización, aplíquela con los siguientes pasos.
 
-![Proceso de actualización de Azure Stack](./media/azure-stack-updates/azure-stack-update-process.png)
+![Proceso de actualización de Azure Stack Hub](./media/azure-stack-updates/azure-stack-update-process.png)
 
 1. **Planee la actualización**.
 
-    Prepare Azure Stack para que el proceso de actualización se realice de la forma más fluida posible a fin de que tenga un impacto mínimo para sus usuarios. Notifique a los usuarios cualquier posible interrupción del servicio y, luego, siga los pasos para preparar la instancia para la actualización. Para obtener más pasos para planear la actualización, consulte [Lista de comprobación de actividades para la actualización de Azure Stack](release-notes-checklist.md).
+    Prepare Azure Stack Hub para que el proceso de actualización se realice de la forma más fluida posible a fin de que tenga un impacto mínimo para sus usuarios. Notifique a los usuarios cualquier posible interrupción del servicio y, luego, siga los pasos para preparar la instancia para la actualización. Para obtener más pasos para planear la actualización, consulte [Lista de comprobación de actividades para la actualización de Azure Stack Hub](release-notes-checklist.md).
 
 2. **Cargue y prepare la actualización**.
 
-    Para los entornos de Azure Stack conectados a Internet, las actualizaciones y revisiones de software de Azure Stack se importan automáticamente al sistema y se preparan para la actualización.
+    Para los entornos de Azure Stack Hub conectados a Internet, las actualizaciones y revisiones de software de Azure Stack Hub se importan automáticamente al sistema y se preparan para la actualización.
 
-    En el caso de los entornos de Azure Stack sin conexión a Internet y los entornos con conectividad a Internet débil o intermitente, los paquetes de actualización se importan al almacenamiento de Azure Stack a través del portal de administrador de Azure Stack. Para obtener más pasos para cargar y preparar la actualización, consulte [Cargar y preparar una actualización de Azure Stack](azure-stack-update-prepare-package.md).
+    En el caso de los entornos de Azure Stack Hub sin conexión a Internet y los entornos con conectividad a Internet débil o intermitente, los paquetes de actualización se importan al almacenamiento de Azure Stack Hub a través del portal de administrador de Azure Stack. Para obtener más pasos para cargar y preparar la actualización, consulte [Cargar y preparar una actualización de Azure Stack Hub](azure-stack-update-prepare-package.md).
 
-    Todas las actualizaciones de OEM se importan manualmente al entorno, independientemente de la conectividad a Internet del sistema de Azure Stack. Para obtener más pasos para importar y preparar la actualización, consulte [Cargar y preparar una actualización de Azure Stack](azure-stack-update-prepare-package.md).
+    Todas las actualizaciones de OEM se importan manualmente al entorno, independientemente de la conectividad a Internet del sistema de Azure Stack Hub. Para obtener más pasos para importar y preparar la actualización, consulte [Cargar y preparar una actualización de Azure Stack Hub](azure-stack-update-prepare-package.md).
 
 3. **Aplique la actualización**.
 
-    Aplique la actualización con la hoja **Actualización** en Azure Stack. Durante la actualización, supervise su progreso y solucione los posibles problemas. Para más información, consulte [Aplicación de actualizaciones en Azure Stack](azure-stack-apply-updates.md).
+    Aplique la actualización con la hoja **Actualización** en Azure Stack Hub. Durante la actualización, supervise su progreso y solucione los posibles problemas. Para más información, consulte [Aplicación de actualizaciones en Azure Stack Hub](azure-stack-apply-updates.md).
 
 ## <a name="the-update-resource-provider"></a>El proveedor de recursos de actualización
 
-Azure Stack incluye un proveedor de recursos de actualización que controla la aplicación de las actualizaciones de software de Microsoft. Este proveedor comprueba que las actualizaciones se apliquen en todos los hosts físicos, entornos en tiempo de ejecución y aplicaciones de Service Fabric, y en todas las máquinas virtuales de la infraestructura y sus servicios asociados.
+Azure Stack Hub incluye un proveedor de recursos de actualización que controla la aplicación de las actualizaciones de software de Microsoft. Este proveedor comprueba que las actualizaciones se apliquen en todos los hosts físicos, entornos en tiempo de ejecución y aplicaciones de Service Fabric, y en todas las máquinas virtuales de la infraestructura y sus servicios asociados.
 
 Cuando se instalan las actualizaciones, puede ver el estado general a medida que el proceso de actualización alcanza los diversos subsistemas de Azure Stack (por ejemplo, hosts físicos y máquinas virtuales de la infraestructura).
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Para comenzar el proceso de actualización, siga los pasos que se indican en [Lista de comprobación de actividades para la actualización de Azure Stack](release-notes-checklist.md).
-- Para saber qué versiones de Azure Stack son compatibles, consulte [Directivas de servicio de Azure Stack](azure-stack-servicing-policy.md).  
-- Para obtener más información sobre las actualizaciones actuales y recientes, consulte las [Notas de la versión de Azure Stack](release-notes.md).
+- Para comenzar el proceso de actualización, siga los pasos que se indican en [Lista de comprobación de actividades para la actualización de Azure Stack Hub](release-notes-checklist.md).
+- Para saber qué versiones de Azure Stack tienen soporte técnico, consulte [Directivas de mantenimiento de Azure Stack Hub](azure-stack-servicing-policy.md).  
+- Para más información sobre las actualizaciones actuales y recientes, consulte las [Notas de la versión de Azure Stack Hub](release-notes.md).

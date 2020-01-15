@@ -10,16 +10,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/24/2019
+ms.date: 01/06/2020
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 07/24/2019
-ms.openlocfilehash: 2d57c0ff71cd0aa4280e6a21df4727ee4bbe7fb6
-ms.sourcegitcommit: 7961fda0bfcdd3db8cf94a8c405b5c23a23643af
+ms.openlocfilehash: 49cc9447ee077b49dc08bee1497497ef94a9e109
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68616487"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718375"
 ---
 # <a name="manage-api-version-profiles-in-azure-stack"></a>Administre los perfiles de la versión de API en Azure Stack
 
@@ -31,9 +31,9 @@ Puede crear una aplicación para trabajar con los proveedores de recursos de Azu
 
 Este tema le ayudará a:
 
- - Comprender los perfiles de API para Azure Stack.
- - Aprender a utilizar los perfiles de la API para desarrollar soluciones.
- - Ver dónde obtener guías específicas del código.
+- Comprender los perfiles de API para Azure Stack.
+- Aprender a utilizar los perfiles de la API para desarrollar soluciones.
+- Ver dónde obtener guías específicas del código.
 
 ## <a name="summary-of-api-profiles"></a>Resumen de perfiles de API
 
@@ -41,11 +41,11 @@ Este tema le ayudará a:
 - Los perfiles de API se crearon para que pueda crear plantillas por varias nubes de Azure. Los perfiles proporcionan una interfaz compatible y estable.
 - Los perfiles se publican cuatro veces al año.
 - Se utilizan tres perfiles de convenciones de nomenclatura:
-    - **más reciente**  
+  - **más reciente**  
         Contiene las versiones más recientes de la API publicadas en la versión global de Azure.
-    - **yyyy-mm-dd-hybrid**  
+  - **yyyy-mm-dd-hybrid**  
     Esta versión de publicación semestral se centra en la estabilidad y coherencia entre varias nubes. Este perfil tiene como objetivo la compatibilidad óptima de Azure Stack.
-    - **yyyy-mm-dd-profile** <br>
+  - **yyyy-mm-dd-profile** <br>
     Equilibra la estabilidad óptima y las últimas características.
 
 ## <a name="azure-api-profiles-and-azure-stack-compatibility"></a>Compatibilidad con perfiles de la API de Azure y Azure Stack
@@ -53,17 +53,17 @@ Este tema le ayudará a:
 Los perfiles de la API de Azure más recientes no son compatibles con Azure Stack. Use las siguientes convenciones de nomenclatura para identificar los perfiles que va a usar para las soluciones de Azure Stack:
 
 **Más reciente**  
-Este perfil tiene las versiones de la API más actualizadas detectadas en Azure global, que no funcionan en Azure Stack. **Más reciente** tiene el mayor número de cambios importantes. Asimismo, deja de lado la estabilidad y la compatibilidad con otras nubes. Si intenta usar las versiones de API más actualizadas, **Latest** es el perfil que debe usar.
+Este perfil tiene la versión de API más actualizada que se encuentra en todo Azure, pero no funciona en Azure Stack. **Más reciente** tiene el mayor número de cambios importantes. Asimismo, deja de lado la estabilidad y la compatibilidad con otras nubes. Si intenta usar las versiones de API más actualizadas, **Latest** es el perfil que debe usar.
 
 **Yyyy-mm-dd-hybrid**  
-Este perfil se publica en marzo y septiembre de cada año. Asimismo, tiene una estabilidad y compatibilidad óptimas con varias nubes. **Yyyy-mm-dd-hybrid** está diseñado para funcionar tanto en la versión global de Azure como en Azure Stack. Las versiones de la API de Azure enumeradas en este perfil son las mismas que las que aparecen en Azure Stack. Use este perfil para desarrollar código para soluciones de nube híbrida.
+Este perfil se publica en marzo y septiembre de cada año. Tiene una estabilidad y compatibilidad óptimas con varias nubes y está diseñado para tener como destino Azure y Azure Stack. Las versiones de la API de Azure enumeradas en este perfil son las mismas que las que aparecen en Azure Stack. Use este perfil para desarrollar código para soluciones de nube híbrida.
 
 **yyyy-mm-dd-profile**  
 Este perfil se publica para la versión global de Azure en junio y diciembre. No funciona con Azure Stack y, normalmente, incorpora muchos cambios importantes. Si bien equilibra estabilidad óptima y últimas características, la diferencia entre **Más reciente** y este perfil es que **Más reciente** siempre consta de las últimas versiones de la API, independientemente de cuándo se haya lanzado esta. Por ejemplo, si se crea una nueva versión de API para Compute API mañana, esa versión de API se mostrará en **Más reciente**, pero no en **yyyy-mm-dd-profile**, dado que este perfil ya existe. **yyyy-mm-dd-profile** cubre las versiones más actualizadas lanzadas antes de junio o diciembre.
 
 ## <a name="azure-resource-manager-api-profiles"></a>Perfiles de la API de Azure Resource Manager
 
-Azure Stack no usa la última versión de las versiones de la API detectadas en Azure global. Al crear una solución, debe encontrar la versión de API para cada proveedor de recursos en Azure que sea compatible con Azure Stack.
+Azure Stack no utiliza la última versión de las versiones de API que se encuentran en la versión global de Azure. Al crear una solución, debe encontrar la versión de API para cada proveedor de recursos en Azure que sea compatible con Azure Stack.
 
 En lugar de investigar cada proveedor de recursos y la versión específica admitida por Azure Stack, puede usar un perfil de API. El perfil especifica un conjunto de proveedores de recursos y las versiones de API. El SDK o una herramienta integrada con el SDK, devolverá el valor de `api-version` de destino especificada en el perfil. Con los perfiles de la API, puede especificar una versión de perfil que se aplique a toda una plantilla. Azure Resource Manager selecciona la versión correcta del recurso en tiempo de ejecución.
 
@@ -96,6 +96,6 @@ El SDK de Node.js para Resource Manager de Azure Stack proporciona herramientas 
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-* [Install PowerShell for Azure Stack](../operator/azure-stack-powershell-install.md) (Instalación de PowerShell para Azure Stack)
-* [Configuración del entorno de PowerShell del usuario de Azure Stack](azure-stack-powershell-configure-user.md)
-* [Revise los detalles sobre las versiones de API del proveedor de recursos admitidas por los perfiles](azure-stack-profiles-azure-resource-manager-versions.md).
+- [Install PowerShell for Azure Stack](../operator/azure-stack-powershell-install.md) (Instalación de PowerShell para Azure Stack)
+- [Configuración del entorno de PowerShell del usuario de Azure Stack](azure-stack-powershell-configure-user.md)
+- [Revise los detalles sobre las versiones de API del proveedor de recursos admitidas por los perfiles](azure-stack-profiles-azure-resource-manager-versions.md).

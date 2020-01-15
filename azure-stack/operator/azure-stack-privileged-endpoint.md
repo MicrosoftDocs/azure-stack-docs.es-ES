@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/11/2019
+ms.date: 1/8/2020
 ms.author: mabrigg
 ms.reviewer: fiseraci
-ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: f77a497960b49e3a212ea5cc2b63c18d8382a99c
-ms.sourcegitcommit: 7817d61fa34ac4f6410ce6f8ac11d292e1ad807c
+ms.lastreviewed: 1/8/2020
+ms.openlocfilehash: 19783172dd402d7ea80dcbfc226aefb44846182f
+ms.sourcegitcommit: b9d520f3b7bc441d43d489e3e32f9b89601051e6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74689984"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75727095"
 ---
 # <a name="use-the-privileged-endpoint-in-azure-stack"></a>Uso del punto de conexión con privilegios en Azure Stack
 
@@ -45,48 +45,56 @@ El acceso al PEP se realiza mediante una sesión remota de PowerShell en la máq
 
 Antes de comenzar este procedimiento en un sistema integrado, asegúrese de que puede acceder a un PEP bien mediante la dirección IP o a través de DNS. Después de la implementación inicial de Azure Stack, solo puede acceder al PEP mediante la dirección IP, dado que la integración de DNS no está configurada todavía. El proveedor de hardware OEM le proporcionará un archivo JSON denominado **AzureStackStampDeploymentInfo** que contiene las direcciones IP del PEP.
 
+También puede encontrar la dirección IP en el portal de administración de Azure Stack Hub. Abra el portal, por ejemplo, `https://adminportal.local.azurestack.external`. Seleccione **Region Management (Administración de regiones)**  > **Properties (Propiedades)** .
+
+Tendrá que establecer la configuración de la referencia cultural actual en `en-US` al ejecutar el punto de conexión con privilegios; de lo contrario, los cmdlets como Test-AzureStack o Get-AzureStackLog no funcionarán según lo esperado.
 
 > [!NOTE]
 > Por motivos de seguridad, es necesario conectarse al PEP solo desde una máquina virtual protegida que se ejecute en el host de ciclo de vida de hardware, o desde un equipo seguro dedicado, como una [estación de trabajo de acceso con privilegios](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations). No se debe modificar la configuración original del host de ciclo de vida de hardware, (incluida la instalación de software nuevo) ni usarse para la conexión al PEP.
 
 1. Establezca la confianza.
 
-    - En un sistema integrado, ejecute el siguiente comando desde una sesión de Windows PowerShell con privilegios elevados para agregar el PEP como host de confianza a la máquina virtual protegida que se ejecuta en el host de ciclo de vida de hardware o en la estación de trabajo de acceso con privilegios.
+      - En un sistema integrado, ejecute el siguiente comando desde una sesión de Windows PowerShell con privilegios elevados para agregar el PEP como host de confianza a la máquina virtual protegida que se ejecuta en el host de ciclo de vida de hardware o en la estación de trabajo de acceso con privilegios.
 
-      ```powershell
+      ```powershell  
         winrm s winrm/config/client '@{TrustedHosts="<IP Address of Privileged Endpoint>"}'
       ```
-    - Si va a ejecutar el ADSK, inicie sesión en el host del kit de desarrollo.
+
+      - Si va a ejecutar el ADSK, inicie sesión en el host del kit de desarrollo.
 
 2. En la máquina virtual protegida que se ejecuta en el host de ciclo de vida de hardware o en la estación de trabajo de acceso con privilegios, abra una sesión de Windows PowerShell. Ejecute los comandos siguientes para establecer una sesión remota en la máquina virtual que hospeda el PEP:
  
-   - En un sistema integrado:
-     ```powershell
-       $cred = Get-Credential
+  - En un sistema integrado:
 
-       Enter-PSSession -ComputerName <IP_address_of_ERCS> `
-         -ConfigurationName PrivilegedEndpoint -Credential $cred
-     ```
-     El parámetro `ComputerName` puede ser la dirección IP o el nombre DNS de una de las máquinas virtuales que hospeda el PEP.
+    ```powershell  
+    $cred = Get-Credential
 
-     >[!NOTE]
-     >Azure Stack no realiza ninguna llamada remota al validar la credencial de PEP. Se basa en una clave pública RSA almacenada localmente para hacerlo.
-     
+    $pep = New-PSSession -ComputerName <IP_address_of_ERCS> -ConfigurationName PrivilegedEndpoint -Credential $cred -SessionOption (New-PSSessionOption -Culture en-US -UICulture en-US)
+    Enter-PSSession $pep
+    ```
+    
+    El parámetro `ComputerName` puede ser la dirección IP o el nombre DNS de una de las máquinas virtuales que hospeda el PEP.
+
+    > [!NOTE]  
+    >Azure Stack no realiza ninguna llamada remota al validar la credencial de PEP. Se basa en una clave pública RSA almacenada localmente para hacerlo.
+
    - Si va a ejecutar el ADSK:
-     
-     ```powershell
-       $cred = Get-Credential
 
-       Enter-PSSession -ComputerName azs-ercs01 `
-         -ConfigurationName PrivilegedEndpoint -Credential $cred
-     ``` 
-     Cuando se le pida, utilice las siguientes credenciales:
+     ```powershell  
+      $cred = Get-Credential
+    
+      $pep = New-PSSession -ComputerName azs-ercs01 -ConfigurationName PrivilegedEndpoint -Credential $cred -SessionOption (New-PSSessionOption -Culture en-US -UICulture en-US)
+      Enter-PSSession $pep
+     ```
+    
+   - Cuando se le pida, utilice las siguientes credenciales:
+   
+       - **Nombre de usuario**: especifique la cuenta CloudAdmin con el formato **&lt;*dominio de Azure Stack*&gt;\cloudadmin**. (Para ASDK, el nombre de usuario es **azurestack\cloudadmin**).
+  
+        - **Contraseña**: escriba la misma contraseña que proporcionó durante la instalación de la cuenta del administrador de dominio de AzureStackAdmin.
 
-     - **Nombre de usuario**: especifique la cuenta CloudAdmin con el formato **&lt;*dominio de Azure Stack*&gt;\cloudadmin**. (Para ASDK, el nombre de usuario es **azurestack\cloudadmin**).
-     - **Contraseña**: escriba la misma contraseña que proporcionó durante la instalación de la cuenta del administrador de dominio de AzureStackAdmin.
-
-     > [!NOTE]
-     > Si no puede conectarse al punto de conexión de ERCS, vuelva a intentar los pasos uno y dos con otra dirección IP de la máquina virtual de ERCS.
+      > [!NOTE]
+      > Si no puede conectarse al punto de conexión de ERCS, vuelva a intentar los pasos uno y dos con otra dirección IP de la máquina virtual de ERCS.
 
 3. Después de conectarse, el símbolo del sistema cambia a **[*dirección IP o nombre de VM de ERCS*]: PS >** o a **[azs-ercs01]: PS >** , en función del entorno. Desde aquí, ejecute `Get-Command` para ver la lista de los cmdlets disponibles.
 
@@ -127,42 +135,48 @@ Lleve a cabo los siguientes pasos para importar la sesión del PEP al equipo loc
 
 1. Establezca la confianza.
 
-    En un sistema integrado, ejecute el siguiente comando desde una sesión de Windows PowerShell con privilegios elevados para agregar el PEP como host de confianza a la máquina virtual protegida que se ejecuta en el host de ciclo de vida de hardware o en la estación de trabajo de acceso con privilegios.
+    - En un sistema integrado, ejecute el siguiente comando desde una sesión de Windows PowerShell con privilegios elevados para agregar el PEP como host de confianza a la máquina virtual protegida que se ejecuta en el host de ciclo de vida de hardware o en la estación de trabajo de acceso con privilegios.
 
-      ```powershell
-        winrm s winrm/config/client '@{TrustedHosts="<IP Address of Privileged Endpoint>"}'
-      ```
+    ```powershell
+    winrm s winrm/config/client '@{TrustedHosts="<IP Address of Privileged Endpoint>"}'
+    ```
+
     - Si va a ejecutar el ADSK, inicie sesión en el host del kit de desarrollo.
 
 2. En la máquina virtual protegida que se ejecuta en el host de ciclo de vida de hardware o en la estación de trabajo de acceso con privilegios, abra una sesión de Windows PowerShell. Ejecute los comandos siguientes para establecer una sesión remota en la máquina virtual que hospeda el PEP:
- 
-   - En un sistema integrado:
-     ```powershell
-       $cred = Get-Credential
 
-       $session = New-PSSession -ComputerName <IP_address_of_ERCS> `
-         -ConfigurationName PrivilegedEndpoint -Credential $cred
-     ```
-     El parámetro `ComputerName` puede ser la dirección IP o el nombre DNS de una de las máquinas virtuales que hospeda el PEP.
-   - Si va a ejecutar el ADSK:
+    - En un sistema integrado:
+    
+      ```powershell  
+        $cred = Get-Credential
+      
+        $session = New-PSSession -ComputerName <IP_address_of_ERCS> `
+          -ConfigurationName PrivilegedEndpoint -Credential $cred
+      ```
+    
+      El parámetro `ComputerName` puede ser la dirección IP o el nombre DNS de una de las máquinas virtuales que hospeda el PEP.
+
+    - Si va a ejecutar el ADSK:
      
-     ```powershell
-      $cred = Get-Credential
+        ```powershell  
+          $cred = Get-Credential
+    
+          $session = New-PSSession -ComputerName azs-ercs01 `
+             -ConfigurationName PrivilegedEndpoint -Credential $cred
+        ```
 
-      $session = New-PSSession -ComputerName azs-ercs01 `
-         -ConfigurationName PrivilegedEndpoint -Credential $cred
-     ``` 
      Cuando se le pida, utilice las siguientes credenciales:
 
      - **Nombre de usuario**: especifique la cuenta CloudAdmin con el formato **&lt;*dominio de Azure Stack*&gt;\cloudadmin**. (Para ASDK, el nombre de usuario es **azurestack\cloudadmin**).
      - **Contraseña**: escriba la misma contraseña que proporcionó durante la instalación de la cuenta del administrador de dominio de AzureStackAdmin.
 
-3. Importe la sesión PEP al equipo local.
-     ```powershell 
-        Import-PSSession $session
-   ```
-4. Ahora, puede usar la finalización con tabulación y realizar scripting como de costumbre en la sesión de PowerShell local con todas las funciones y cmdlets del PEP sin reducir la posición de seguridad de Azure Stack. ¡Disfrute!
+3. Importe la sesión PEP a la máquina local:
 
+    ```powershell 
+      Import-PSSession $session
+    ```
+
+4. Ahora, puede usar la finalización con tabulación y realizar scripting como de costumbre en la sesión de PowerShell local con todas las funciones y cmdlets del PEP sin reducir la posición de seguridad de Azure Stack. ¡Disfrute!
 
 ## <a name="close-the-privileged-endpoint-session"></a>Cierre de la sesión del punto de conexión con privilegios
 
@@ -172,14 +186,16 @@ Para cerrar la sesión del punto de conexión:
 
 1. Cree un recurso compartido de archivos externo al que se pueda acceder mediante el PEP. En un entorno de kit de desarrollo, solo puede crear un recurso compartido de archivos en el host del kit de desarrollo.
 2. Ejecute el siguiente cmdlet:
-     ```powershell
+
+  ```powershell  
      Close-PrivilegedEndpoint -TranscriptsPathDestination "\\fileshareIP\SharedFolder" -Credential Get-Credential
-     ```
+  ```
+
    el cmdlet usa los parámetros de la tabla siguiente:
 
-   | Parámetro | DESCRIPCIÓN | Tipo | Obligatorio |
+   | Parámetro | Descripción | Tipo | Obligatorio |
    |---------|---------|---------|---------|
-   | *TranscriptsPathDestination* | Ruta de acceso al recurso compartido de archivos externo definido como "fileshareIP\sharefoldername". | Cadena | Sí|
+   | *TranscriptsPathDestination* | Ruta de acceso al recurso compartido de archivos externo definido como "fileshareIP\sharefoldername". | String | Sí|
    | *Credential:* | Credenciales para acceder al recurso compartido de archivos. | SecureString |   Sí |
 
 

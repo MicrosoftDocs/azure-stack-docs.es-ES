@@ -16,12 +16,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: wfayed
 ms.lastreviewed: 09/12/2018
-ms.openlocfilehash: f3bd1fc6d1f53ee56a8b1ff1741861a7f505b5b6
-ms.sourcegitcommit: a7207f4a4c40d4917b63e729fd6872b3dba72968
+ms.openlocfilehash: 4ad58f0cce253aebb7e506f3bf0907b0bc170055
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71909378"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718409"
 ---
 # <a name="datacenter-integration-planning-considerations-for-azure-stack-integrated-systems"></a>Consideraciones sobre la planeación de la integración del centro de datos para sistemas integrados de Azure Stack
 
@@ -85,7 +85,7 @@ Debe pensar en cómo desea planear el espacio de nombres de Azure Stack, especia
 
 En la tabla siguiente se resumen estas decisiones de nomenclatura de dominio.
 
-| NOMBRE | DESCRIPCIÓN | 
+| Nombre | Descripción | 
 | -------- | ------------- | 
 |Nombre de la región | Nombre de su primera región de Azure Stack. Este nombre se usa como parte del FQDN para las direcciones IP virtuales (VIP) públicas que administra Azure Stack. Normalmente, el nombre de la región sería un identificador de ubicación física, como una ubicación de centro de datos.<br><br>El nombre de la región debe consistir solo en letras y números entre 0 y 9. No se permiten caracteres especiales, como `-`, `#`, etc.| 
 | Nombre de dominio externo | Nombre de la zona de Sistema de nombres de dominio (DNS) para los puntos de conexión con direcciones VIP de uso externo. Se utiliza en el FQDN para estas VIP públicas. | 
@@ -160,7 +160,7 @@ Incluido con la solución de Azure Stack, el host de ciclo de vida de hardware e
 
 En la tabla siguiente se resume la lista de opciones disponibles actualmente.
 
-| Ámbito | Solución de supervisión externa |
+| Área | Solución de supervisión externa |
 | -- | -- |
 | Software de Azure Stack | [Módulo de administración de Azure Stack para Operations Manager](https://azure.microsoft.com/blog/management-pack-for-microsoft-azure-stack-now-available/)<br>[Complemento de Nagios](https://exchange.nagios.org/directory/Plugins/Cloud/Monitoring-AzureStack-Alerts/details)<br>Llamadas API basadas en REST | 
 | Servidores físicos (BMC a través de IPMI) | Hardware OEM: módulo de administración del distribuidor de Operations Manager<br>Solución suministrada por el distribuidor de hardware OEM<br>Complementos de Nagios del proveedor de hardware.<br>Solución de supervisión admitida por el asociado de OEM (incluido) | 

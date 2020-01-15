@@ -8,12 +8,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 75a72deac409013b3fcd77693c3a7ceb2d2497cc
-ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
+ms.openlocfilehash: fbf25d49539ebe244b44681ca3207badf744b99b
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73640182"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718290"
 ---
 # <a name="cross-cloud-scaling-on-premises-data-pattern"></a>Patrón de escalado entre nubes (datos locales)
 
@@ -35,7 +35,7 @@ La guía de implementación de soluciones permite implementar una aplicación we
 
 Esta solución usa los siguientes componentes:
 
-| Nivel | Componente | DESCRIPCIÓN |
+| Nivel | Componente | Descripción |
 |----------|-----------|-------------|
 | Azure | Azure App Service | [Azure App Service](/azure/app-service/) permite compilar y hospedar aplicaciones web, aplicaciones de API de RESTful y Azure Functions. Todo en el lenguaje de programación de su elección, sin administrar infraestructura alguna. |
 | | Azure Virtual Network| [Azure Virtual Network (VNet)](/azure/virtual-network/virtual-networks-overview) es el bloque de creación fundamental de redes privadas en Azure. VNet permite varios tipos de recursos de Azure, como Virtual Machines (VM), para comunicarse de forma segura entre usuarios, con Internet y con las redes locales. La solución también muestra el uso de componentes de red adicionales:<br>- subredes de puerta de enlace y aplicación<br>- una puerta de enlace de red local<br>- una puerta de enlace de red virtual, que actúa como conexión de puerta de enlace de VPN de sitio a sitio<br>- una dirección IP pública<br>- una conexión VPN de punto a sitio<br>- Azure DNS para hospedar dominios DNS y proporcionar la resolución de nombres |
@@ -82,7 +82,7 @@ El escalado entre nubes se puede usar para respaldar las cargas de procesamiento
 
 La implementación global tiene sus propios desafíos, como la conectividad de variable y la diferencia de las regulaciones gubernamentales por región. Los desarrolladores pueden desarrollar solo una aplicación y, a continuación, implementarla por diferentes motivos con diversos requisitos.  Implemente su aplicación en la nube pública de Azure y, a continuación, implemente instancias o componentes adicionales localmente. Puede administrar el tráfico entre todas las instancias mediante Azure.
 
-### <a name="manageability"></a>Manejabilidad
+### <a name="manageability"></a>Facilidad de uso
 
 **Un enfoque de desarrollo único y coherente**
 
@@ -132,9 +132,9 @@ Para obtener más información sobre la creación de la entidad de servicio y el
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Para obtener más información sobre los temas presentados en este artículo:
+Para más información sobre los temas presentados en este artículo:
 - Vea [Dynamically scale apps between data centers and public cloud](https://www.youtube.com/watch?v=2lw8zOpJTn0) para obtener información general de cómo se usa este patrón.
-- Consulte [consideraciones sobre el diseño de aplicaciones híbridas](overview-app-design-considerations.md) para obtener más información sobre los procedimientos recomendados y responder a preguntas adicionales.
-- Este patrón usa la familia de productos de Azure Stack, incluido Azure Stack Hub. Consulte la información relativa a la [familia de productos y soluciones de Azure Stack](/azure-stack) para conocer más detalles sobre toda la gama de productos y soluciones.
+- Consulte [Consideraciones sobre el diseño de aplicaciones híbridas](overview-app-design-considerations.md) para más información sobre los procedimientos recomendados y responder a preguntas adicionales.
+- Este patrón usa la familia de productos de Azure Stack, incluido Azure Stack Hub. Consulte la información relativa a la [familia de productos y soluciones de Azure Stack](/azure-stack) para más información sobre toda la gama de productos y soluciones.
 
 Cuando esté listo para probar la solución de ejemplo, continúe con la [guía de implementación de soluciones de escalado entre nubes (datos locales)](solution-deployment-guide-cross-cloud-scaling-onprem-data.md). La guía de implementación proporciona instrucciones paso a paso para implementar y probar sus componentes.

@@ -8,12 +8,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: f845aee01e4c87bc877eb77fb793b32472f9f222
-ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
+ms.openlocfilehash: 3f16b543751ac4bee94cc05045c03de7230f9a3c
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73640470"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75717984"
 ---
 # <a name="train-machine-learning-ml-model-at-the-edge-pattern"></a>Entrenamiento del modelo de Machine Learning (ML) en el patrón perimetral
 
@@ -21,7 +21,7 @@ Genere modelos de ML portátiles a partir de datos que solo existen en el entorn
 
 ## <a name="context-and-problem"></a>Contexto y problema
 
-Muchas organizaciones desean desbloquear información de sus datos locales o heredados mediante herramientas que entienden sus científicos de datos. [Azure Machine Learning Service](/azure/machine-learning/) proporciona herramientas nativas de la nube para entrenar, ajustar e implementar modelos de ML y aprendizaje profundo.  
+Muchas organizaciones desean desbloquear información de sus datos locales o heredados mediante herramientas que entienden sus científicos de datos. [Azure Machine Learning](/azure/machine-learning/) proporciona herramientas nativas de la nube para entrenar, ajustar e implementar modelos de ML y aprendizaje profundo.  
 
 Sin embargo, algunos datos son demasiado grandes para enviarlos a la nube, o bien esto no es posible por razones normativas. Con este patrón, los científicos de datos pueden usar Azure Machine Learning para entrenar modelos mediante datos locales y proceso. 
 
@@ -44,7 +44,7 @@ Así es como funciona la solución:
 
 Esta solución usa los siguientes componentes:
 
-| Nivel | Componente | DESCRIPCIÓN |
+| Nivel | Componente | Descripción |
 |----------|-----------|-------------|
 | Azure | Azure Machine Learning | [Azure Machine Learning](/azure/machine-learning/) orquesta el entrenamiento del modelo de ML. |
 | | Azure Container Registry | Azure ML empaqueta el modelo en un contenedor y lo almacena en una instancia de [Azure Container Registry](/azure/container-registry/) para su implementación.|
@@ -64,7 +64,7 @@ A fin de habilitar esta solución para escalarla, tendrá que crear una máquina
 
 Asegúrese de que los scripts de entrenamiento y la máquina virtual de Azure Stack Hub tienen acceso a los datos locales usados para el entrenamiento.
 
-### <a name="manageability"></a>Manejabilidad
+### <a name="manageability"></a>Facilidad de uso
 
 Asegúrese de que los modelos y experimentos se registran y etiquetan, y de que se crean versiones de los mismos, a fin de evitar confusiones durante la implementación de modelo. 
 
@@ -79,6 +79,6 @@ Para más información sobre los temas presentados en este artículo:
 - Consulte [Azure Container Registry](/azure/container-registry/) para obtener información sobre cómo compilar, almacenar y administrar imágenes para implementaciones de contenedores.
 - Consulte [App Service en Azure Stack Hub](/azure-stack/operator/azure-stack-app-service-overview) para obtener más información sobre el proveedor de recursos y cómo realizar la implementación.
 - Consulte [Consideraciones sobre el diseño de aplicaciones híbridas](overview-app-design-considerations.md) para más información sobre los procedimientos recomendados y responder a preguntas adicionales.
-- Consulte la información relativa a la [familia de productos y soluciones de Azure Stack](/azure-stack) para conocer más detalles sobre toda la gama de productos y soluciones.
+- Consulte la información relativa a la [familia de productos y soluciones de Azure Stack](/azure-stack) para más información sobre toda la gama de productos y soluciones.
 
 Cuando esté listo para probar la solución de ejemplo, continúe con la [guía de implementación Entrenamiento del modelo de aprendizaje automático en el perímetro](https://aka.ms/edgetrainingdeploy). La guía de implementación proporciona instrucciones paso a paso para implementar y probar sus componentes.

@@ -16,12 +16,12 @@ ms.date: 07/16/2019
 ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 06/13/2019
-ms.openlocfilehash: dac0360bba7c24c85d1f30efbfb7fad30eb97028
-ms.sourcegitcommit: cefba8d6a93efaedff303d3c605b02bd28996c5d
+ms.openlocfilehash: 02cd98891f825714e63b29502f46e9847548d3a3
+ms.sourcegitcommit: b9d520f3b7bc441d43d489e3e32f9b89601051e6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74299158"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75727401"
 ---
 # <a name="azure-stack-compute"></a>Proceso de Azure Stack
 
@@ -74,7 +74,7 @@ La memoria usada está formada por varios componentes. Los componentes siguiente
  - Servicios de infraestructura: se trata de las VM de infraestructura que forman Azure Stack. A partir de la versión de lanzamiento 1904 de Azure Stack, esto implica aproximadamente 31 máquinas virtuales que ocupan 242 GB + (4 GB x número de nodos) de memoria. La utilización de la memoria del componente de servicios de infraestructura puede cambiar a medida que trabajamos para que los servicios de infraestructura sean más escalables y resistentes.
  - Reserva de resistencia: Azure Stack reserva una parte de la memoria para permitir la disponibilidad del inquilino durante un error de host único, así como durante la revisión y actualización para permitir la correcta migración en vivo de VM.
  - VM de inquilino: son VM de inquilino que crean los usuarios de Azure Stack. Además de ejecutar VM, las VM que llegan al tejido también consumen memoria. Esto significa que las máquinas virtuales con el estado "Creando" o "Error", o las máquinas virtuales apagadas desde el invitado, consumirán memoria. Sin embargo, las máquinas virtuales que se han desasignado mediante la opción de detención de desasignación del Portal, PowerShell o la CLI no consumirán memoria de Azure Stack.
- - Proveedores de recursos de complementos: las máquinas virtuales implementadas para los proveedores de recursos de complementos, como SQL, MySQL, App Service etc.
+ - Proveedores de recursos de valor agregado (RPs): máquinas virtuales implementadas para los proveedores de recursos de valor agregado como SQL, MySQL, App Service, etc.
 
 
 La mejor manera de comprender el consumo de memoria en el portal es usar [Capacity Planner de Azure Stack](https://aka.ms/azstackcapacityplanner) para ver el impacto de diversas cargas de trabajo. El siguiente cálculo es el mismo que usa la herramienta de planeación.
@@ -99,7 +99,7 @@ Este cálculo devuelve la memoria disponible total que se puede usar para la sel
 
 El valor V, la máquina virtual más grande de la unidad de escalado, se basa dinámicamente en el tamaño más grande de memoria de la máquina virtual del inquilino. Por ejemplo, el valor de la máquina virtual más grande podría ser 7 GB o 112 GB, así como cualquier otro tamaño de memoria de la máquina virtual admitido en la solución Azure Stack. Cambiar la mayor VM del tejido de Azure Stack provocará un aumento en la reserva de resistencia, además del aumento de memoria de la propia VM. 
 
-## <a name="frequently-asked-questions"></a>Preguntas frecuentes
+## <a name="frequently-asked-questions"></a>Preguntas más frecuentes
 
 **P.** : Mi inquilino ha implementado una nueva máquina virtual, ¿cuánto tiempo tardará el gráfico de capacidad del portal de administración en mostrar la capacidad restante?
 

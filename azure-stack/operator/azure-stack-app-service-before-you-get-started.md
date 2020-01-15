@@ -15,13 +15,13 @@ ms.topic: article
 ms.date: 08/29/2019
 ms.author: anwestg
 ms.reviewer: anwestg
-ms.lastreviewed: 03/11/2019
-ms.openlocfilehash: 0fbb57771976b896f8f6b37b62780e34d6635d78
-ms.sourcegitcommit: e2aec63cacfdc830a20a02ee40e715e3c5dfdf22
+ms.lastreviewed: 01/08/2020
+ms.openlocfilehash: 759e25155abcc65bd2d671b310d6b93900b832db
+ms.sourcegitcommit: b2418661bfa3a791e65b9b487e20982dba3e4c41
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70386233"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75756974"
 ---
 # <a name="prerequisites-for-deploying-app-service-on-azure-stack"></a>Requisitos previos para implementar App Service en Azure Stack
 
@@ -70,7 +70,7 @@ Al ejecutar el siguiente comando de PowerShell, tiene que proporcionar el punto 
 
 #### <a name="get-azurestackrootcertps1-script-parameters"></a>Parámetros de script Get-AzureStackRootCert.ps1
 
-| Parámetro | Obligatorio u opcional | Valor predeterminado | DESCRIPCIÓN |
+| Parámetro | Obligatorio u opcional | Valor predeterminado | Descripción |
 | --- | --- | --- | --- |
 | PrivilegedEndpoint | Obligatorio | AzS-ERCS01 | Punto de conexión con privilegios |
 | CloudAdminCredential | Obligatorio | AzureStack\CloudAdmin | Credenciales de cuenta de dominio para administradores de nube de Azure Stack |
@@ -95,7 +95,7 @@ Para crear los certificados, siga estos pasos:
 
 #### <a name="create-appservicecertsps1-script-parameters"></a>Parámetros de script Create-AppServiceCerts.ps1
 
-| Parámetro | Obligatorio u opcional | Valor predeterminado | DESCRIPCIÓN |
+| Parámetro | Obligatorio u opcional | Valor predeterminado | Descripción |
 | --- | --- | --- | --- |
 | pfxPassword | Obligatorio | Null | Contraseña que ayuda a proteger la clave privada del certificado |
 | DomainName | Obligatorio | local.azurestack.external | Región y sufijo de dominio de Azure Stack |
@@ -152,7 +152,7 @@ El certificado de identidad debe contener un firmante que coincida con el siguie
 
 ### <a name="validate-certificates"></a>Validación de certificados
 
-Antes de implementar el proveedor de recursos de App Service, debe [validar los certificados que se usarán](azure-stack-validate-pki-certs.md#perform-platform-as-a-service-certificate-validation) mediante la herramienta Azure Stack Readiness Checker disponible en la [Galería de PowerShell](https://aka.ms/AzsReadinessChecker). La herramienta Azure Stack Readiness Checker comprueba que los certificados PKI generados son adecuados para la implementación de App Service.
+Antes de implementar el proveedor de recursos de App Service, debe [validar los certificados que se usarán](azure-stack-validate-pki-certs.md#using-validated-certificates) mediante la herramienta Azure Stack Readiness Checker disponible en la [Galería de PowerShell](https://aka.ms/AzsReadinessChecker). La herramienta Azure Stack Readiness Checker comprueba que los certificados PKI generados son adecuados para la implementación de App Service.
 
 Se recomienda que, al trabajar con cualquiera de los [certificados PKI de Azure Stack](azure-stack-pki-certs.md) necesarios, se incluya en el planeamiento tiempo suficiente para probar y volver a emitir certificados si fuese necesario.
 
@@ -333,7 +333,7 @@ GO
 
 ## <a name="create-an-azure-active-directory-app"></a>Creación de una aplicación de Azure Active Directory
 
-Configuración de una entidad de servicio de Azure AD para admitir las siguientes operaciones:
+Configuración de una entidad de servicio de Azure AD para que admita las siguientes operaciones:
 
 - Integración del conjunto de escalado de máquinas virtuales en los niveles de trabajo.
 - Inicio de sesión único para las herramientas avanzadas del desarrollador y el portal de Azure Functions.
@@ -345,7 +345,7 @@ Los administradores deben configurar el inicio de sesión único para:
 - Habilitar las herramientas avanzadas de desarrollador en App Service (Kudu).
 - Habilitar el uso de la experiencia del portal de Azure Functions.
 
-Siga estos pasos:
+Siga estos pasos para crear la entidad de servicio en el inquilino de Azure AD:
 
 1. Abra una instancia de PowerShell como azurestack\AzureStackAdmin.
 2. Vaya a la ubicación de los scripts descargados y extraídos en el [paso de requisitos previos](azure-stack-app-service-before-you-get-started.md).
@@ -353,20 +353,20 @@ Siga estos pasos:
 4. Ejecute el script **Create-AADIdentityApp.ps1**. Cuando se le pida, escriba el identificador del inquilino de Azure AD que esté usando para la implementación de Azure Stack. Por ejemplo, escriba **myazurestack.onmicrosoft.com**.
 5. En la ventana **Credencial**, escriba la cuenta y la contraseña de administrador del servicio de Azure AD. Seleccione **Aceptar**.
 6. Escriba la contraseña y la ruta de acceso del archivo del [certificado creado anteriormente](azure-stack-app-service-before-you-get-started.md). El certificado creado para este paso de forma predeterminada es **sso.appservice.local.azurestack.external.pfx**.
-7. El script crea una nueva aplicación en la instancia de Azure AD del inquilino. Tome nota del identificador de la aplicación que se devuelve en la salida de PowerShell. Necesitará esta información durante la instalación.
+7. Tome nota del identificador de la aplicación que se devuelve en la salida de PowerShell. Use el identificador en los pasos siguientes para dar su consentimiento a los permisos de la aplicación y durante la instalación. 
 8. Abra una nueva ventana del explorador e inicie sesión en [Azure Portal](https://portal.azure.com) como administrador del servicio Azure Active Directory.
-9. Abra el proveedor de recursos de Azure AD.
-10. Seleccione **Registros de aplicaciones**.
-11. Busque el identificador de la aplicación devuelto como parte del paso 7. Se muestra una aplicación de App Service.
-12. Seleccione **Aplicación** en la lista.
-13. Seleccione **Configuración**.
-14. Seleccione **Permisos necesarios** > **Conceder permisos** > **Sí**.
+9. Abra el servicio Azure Active Directory.
+10. En el panel izquierdo, seleccione **Registros de aplicaciones**.
+11. Busque el identificador de la aplicación que anotó en el paso 7. 
+12. Seleccione el registro de aplicaciones de App Service de la lista.
+13. Seleccione **Permisos de API** en el panel izquierdo.
+14. Seleccione **Conceder consentimiento de administrador para \<tenant\>** , donde \<tenant\> es el nombre de su inquilino de Azure AD. Para confirmar el consentimiento seleccione **Sí**.
 
 ```powershell
     Create-AADIdentityApp.ps1
 ```
 
-| Parámetro | Obligatorio u opcional | Valor predeterminado | DESCRIPCIÓN |
+| Parámetro | Obligatorio u opcional | Valor predeterminado | Descripción |
 | --- | --- | --- | --- |
 | DirectoryTenantName | Obligatorio | Null | Identificador de inquilino de Azure AD. Proporcione el GUID o una cadena. Un ejemplo es myazureaaddirectory.onmicrosoft.com. |
 | AdminArmEndpoint | Obligatorio | Null | Punto de conexión de Azure Resource Manager del administrador. Por ejemplo, adminmanagement.local.azurestack.external. |
@@ -402,7 +402,7 @@ Siga estos pasos:
     Create-ADFSIdentityApp.ps1
 ```
 
-| Parámetro | Obligatorio u opcional | Valor predeterminado | DESCRIPCIÓN |
+| Parámetro | Obligatorio u opcional | Valor predeterminado | Descripción |
 | --- | --- | --- | --- |
 | AdminArmEndpoint | Obligatorio | Null | Punto de conexión de Azure Resource Manager del administrador. Por ejemplo, adminmanagement.local.azurestack.external. |
 | PrivilegedEndpoint | Obligatorio | Null | Punto de conexión de acceso con privilegios. Por ejemplo, AzS-ERCS01. |

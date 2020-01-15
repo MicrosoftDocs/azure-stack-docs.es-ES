@@ -16,16 +16,16 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 5841509f9c5c9aef20dd2687adb0e54856fa5d3e
-ms.sourcegitcommit: de577d821d3b93ab524fee9e7a18a07c0ecc243c
+ms.openlocfilehash: d5467974a6b9164d92a2281fd94973835bc21993
+ms.sourcegitcommit: b2418661bfa3a791e65b9b487e20982dba3e4c41
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2019
-ms.locfileid: "75183548"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75756889"
 ---
 # <a name="sql-resource-provider-maintenance-operations"></a>Operaciones de mantenimiento del proveedor de recursos de SQL
 
-El proveedor de recursos de SQL se ejecuta en una máquina virtual bloqueada. Para habilitar las operaciones de mantenimiento, debe actualizar la seguridad de la VM. Para hacerlo con el principio de privilegio mínimo, use el punto de conexión [Just Enough Administration (JEA) de PowerShell](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/overview) *DBAdapterMaintenance*. El paquete de instalación del proveedor de recursos incluye un script para esta acción.
+El proveedor de recursos de SQL se ejecuta en una máquina virtual bloqueada. Para habilitar las operaciones de mantenimiento, debe actualizar la seguridad de la VM. Para hacerlo con el principio de privilegio mínimo, use el punto de conexión [Just Enough Administration (JEA) de PowerShell](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/overview)*DBAdapterMaintenance*. El paquete de instalación del proveedor de recursos incluye un script para esta acción.
 
 ## <a name="patching-and-updating"></a>Revisiones y actualizaciones
 
@@ -37,7 +37,7 @@ Dado que el proveedor de recursos se ejecuta en la VM de un *usuario*, debe apli
 
 ## <a name="updating-sql-credentials"></a>Actualización de las credenciales de SQL
 
-Es responsable de crear y mantener cuentas sysadmin en los servidores SQL Server. El proveedor de recursos necesita una cuenta con estos privilegios para administrar las bases de datos para los usuarios, pero no necesita acceso a los datos de los usuarios. Si tiene que actualizar las contraseñas de sysadmin en los servidores SQL Server, puede utilizar la interfaz del administrador del proveedor de recursos para cambiar una contraseña almacenada. Estas contraseñas se almacenan en un almacén de claves en la instancia de Azure Stack.
+Es responsable de crear y mantener cuentas sysadmin en los servidores SQL Server. El proveedor de recursosnecesita una cuenta con estos privilegios para administrar las bases de datos para los usuarios, pero no necesita acceso a los datos de los usuarios. Si tiene que actualizar las contraseñas de sysadmin en los servidores SQL Server, puede utilizar la interfaz del administrador del proveedor de recursos para cambiar una contraseña almacenada. Estas contraseñas se almacenan en un almacén de claves en la instancia de Azure Stack.
 
 Para modificar la configuración, seleccione **Examinar** &gt; **RECURSOS ADMINISTRATIVOS** &gt; **Servidores de hospedaje SQL** &gt; **Inicios de sesión SQL** y seleccione un nombre de usuario. El cambio se debe efectuar en la instancia de SQL en primer lugar (y en cualquier réplica, si es necesario). En **Configuración**, seleccione **Contraseña**.
 
@@ -101,7 +101,7 @@ Al usar los proveedores de recursos SQL y MySQL con los sistemas integrados de A
 
 ### <a name="secretrotationsqlproviderps1-parameters"></a>Parámetros de SecretRotationSQLProvider.ps1
 
-|Parámetro|DESCRIPCIÓN|
+|Parámetro|Descripción|
 |-----|-----|
 |AzCredential|Credencial de la cuenta de administrador de servicio de Azure Stack.|
 |CloudAdminCredential|Credencial de cuenta de dominio de administración en la nube de Azure Stack.|
@@ -114,7 +114,7 @@ Al usar los proveedores de recursos SQL y MySQL con los sistemas integrados de A
 
 ### <a name="known-issues"></a>Problemas conocidos
 
-**Problema**:<br>
+**Problema:**<br>
 Registros de cambio de secretos. Los registros para el cambio de secretos no se recopilan automáticamente si se produce un error en el script personalizado de cambio de secretos cuando se ejecuta.
 
 **Solución alternativa**:<br>
@@ -251,7 +251,7 @@ La extensión Azure Diagnostics está instalada de manera predeterminada en la m
 
 Una vez que la colección de registros de eventos y registros de IIS está configurada para el proveedor de recursos de SQL, los registros se pueden encontrar en una cuenta de almacenamiento del sistema denominada **sqladapterdiagaccount**.
 
-Para más información acerca de la extensión Azure Diagnostics, consulte [Qué es la extensión Azure Diagnostics](/azure-monitor/platform/diagnostics-extension-overview).
+Para más información acerca de la extensión Azure Diagnostics, consulte [Qué es la extensión Azure Diagnostics](/azure/azure-monitor/platform/diagnostics-extension-overview).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

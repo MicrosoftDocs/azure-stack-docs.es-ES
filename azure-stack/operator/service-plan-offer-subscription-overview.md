@@ -12,12 +12,12 @@ ms.date: 12/18/2019
 ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 10/01/2019
-ms.openlocfilehash: a228e20de1786529374e5e2431ca7bb79a9c14bf
-ms.sourcegitcommit: f3d40c9fe73cf0a32fc643832085de887edf7cf3
+ms.openlocfilehash: c1311836487dc11e1e95307181cb02fafa511a6b
+ms.sourcegitcommit: b9d520f3b7bc441d43d489e3e32f9b89601051e6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/18/2019
-ms.locfileid: "75187272"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75727418"
 ---
 # <a name="azure-stack-services-plans-offers-subscriptions-overview"></a>Introducción a los servicios, planes, ofertas y suscripciones de Azure Stack
 
@@ -38,7 +38,7 @@ Para ofrecer un servicio, siga estos pasos de alto nivel:
 1. Planee la oferta de servicio mediante lo siguiente:
 
    - Servicios fundamentales, como los de proceso, almacenamiento, redes o Key Vault.
-   - Servicios complementarios como los de App Service, SQL Server o MySQL Server.
+   - Servicios de valor agregado como App Service, SQL Server o MySQL Server.
 
 2. Cree un plan compuesto por uno o más servicios. Al crear un plan, seleccione o cree cuotas que definan los límites de recursos de cada servicio en el plan.
 3. Cree una oferta que tenga uno o varios planes. La oferta puede incluir planes base y planes complementarios opcionales.
@@ -87,7 +87,7 @@ Los planes complementarios son planes opcionales que puede agregar a una oferta.
 
 ## <a name="offers"></a>Ofertas
 
-Las ofertas son grupos de uno o varios planes que se crean para que los usuarios puedan suscribirse a ellas. Por ejemplo:  La Oferta Alfa puede incluir el Plan A, que proporciona un conjunto de servicios Compute, y el Plan B, que ofrece un conjunto de servicios de red y almacenamiento.
+Las ofertas son grupos de uno o varios planes que se crean para que los usuarios puedan suscribirse a ellas. Por ejemplo: La Oferta Alfa puede incluir el Plan A, que proporciona un conjunto de servicios Compute, y el Plan B, que ofrece un conjunto de servicios de red y almacenamiento.
 
 Cuando se [crea una oferta](azure-stack-create-offer.md), debe incluir al menos un plan base, pero también puede crear planes complementarios que los usuarios pueden agregar a su suscripción.
 

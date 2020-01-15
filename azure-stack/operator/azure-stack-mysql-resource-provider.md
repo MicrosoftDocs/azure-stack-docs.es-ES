@@ -15,18 +15,16 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/25/2018
-ms.openlocfilehash: b66a72ce872d64f8fde3cb80ced5e6ad33d80b4d
-ms.sourcegitcommit: d619612f54eeba3231ed73ed149ff894f9bf838a
+ms.openlocfilehash: ceda705c4a06ac9465c3f017a87986ba6e20e4b3
+ms.sourcegitcommit: e57a53caac50d1f8762307e065fe886fcda7eadf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74993781"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75190869"
 ---
 # <a name="use-mysql-databases-on-microsoft-azure-stack"></a>Usar bases de datos MySQL en Microsoft Azure Stack
 
-Las bases de datos de MySQL se usan normalmente en los sitios web y admiten muchas plataformas de sitio web. Por ejemplo, puede crear sitios web de WordPress con el complemento del proveedor de recursos (PaaS) de App Services.
-
-Después de implementar el proveedor de recursos y conectarlo a una o varias instancias de servidor MySQL, puede:
+Use el proveedor de recursos de MySQL para ofrecer el servicio de bases de datos de MySQL como un servicio en [Azure Stack](azure-stack-overview.md). Después de implementar el proveedor de recursos y conectarlo a una o varias instancias de servidor MySQL, puede:
 
 * Crear bases de datos de MySQL mediante las plantillas de implementación de Azure Resource Manager.
 * Proporcionar bases de datos MySQL como servicio.  

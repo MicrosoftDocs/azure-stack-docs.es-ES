@@ -1,6 +1,6 @@
 ---
-title: 'Notas de la versión de Azure Stack: actualizaciones de seguridad para la versión 1910 | Microsoft Docs'
-description: Obtenga información sobre las actualizaciones de seguridad para la versión 1909 de Azure Stack.
+title: 'Notas de la versión de Azure Stack Hub: actualizaciones de seguridad para la versión 1910 | Microsoft Docs'
+description: Obtenga información sobre las actualizaciones de seguridad para la versión 1910 de Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -16,21 +16,21 @@ ms.date: 11/21/2019
 ms.author: sethm
 ms.reviewer: fiseraci
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 9294e0fad863345758527fb622fd5f3e753a29d1
-ms.sourcegitcommit: cefba8d6a93efaedff303d3c605b02bd28996c5d
+ms.openlocfilehash: 9766c1fb0c5186f33038716f0d56d1ccac9d90cb
+ms.sourcegitcommit: c3be6b2e962c5905eb3c54f9555e13095f6b4d40
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74299087"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75303675"
 ---
-# <a name="azure-stack-security-updates"></a>Actualizaciones de seguridad de Azure Stack
+# <a name="azure-stack-hub-security-updates"></a>Actualizaciones de seguridad de Azure Stack Hub
 
-En este artículo se enumeran todas las actualizaciones de seguridad de las últimas cuatro actualizaciones de Azure Stack. Esta información se proporciona únicamente con fines de referencia.
+En este artículo se enumeran todas las actualizaciones de seguridad de las últimas cuatro actualizaciones de Azure Stack Hub. Esta información se proporciona únicamente con fines de referencia.
 
 ::: moniker range="azs-1910"
 ## <a name="1910-update"></a>Actualización 1910
 
-Esta actualización de Azure Stack no incluye actualizaciones de seguridad para el sistema operativo subyacente que hospeda Azure Stack. Esta versión contiene una actualización de seguridad para un componente de la infraestructura de Azure Stack:
+Esta actualización de Azure Stack Hub no incluye actualizaciones de seguridad para el sistema operativo subyacente que hospeda Azure Stack Hub. Esta versión contiene una actualización de seguridad para un componente de la infraestructura de Azure Stack Hub:
 
 - [CVE-2019-1234](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2019-1234)
 

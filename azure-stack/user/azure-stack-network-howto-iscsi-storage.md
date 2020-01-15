@@ -9,12 +9,12 @@ ms.date: 10/28/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/28/2019
-ms.openlocfilehash: bed928bdd8ed7c521bd95ec005baafd42eb93047
-ms.sourcegitcommit: 58e1911a54ba249a82fa048c7798dadedb95462b
+ms.openlocfilehash: 0fe542cf17ce5b47436c8838c8d7c61b22e2fda8
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73064976"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718460"
 ---
 # <a name="how-to-connect-to-iscsi-storage-with-azure-stack"></a>Conexión al almacenamiento de iSCSI con Azure Stack
 
@@ -76,7 +76,7 @@ La plantilla del grupo de recursos genera una salida pensada para que sea la ent
 
 ### <a name="inputs-for-azuredeployjson"></a>Entradas de azuredeploy.json
 
-|**Parámetros**|**valor predeterminado**|**descripción**|
+|**Parámetros**|**valor predeterminado**|**description**|
 |------------------|---------------|------------------------------|
 |WindowsImageSKU         |2019-Datacenter   |Seleccione la imagen de máquina virtual Windows base
 |VMSize                  |Standard_D2_v2    |Especifique el tamaño de la máquina virtual
@@ -118,7 +118,7 @@ Es importante reiniciar el sistema después de instalar estos requisitos previos
 
 El script `Create-iSCSITarget.ps1 `se debe ejecutar en el sistema que presta servicio al almacenamiento. Puede crear varios discos y destinos, y la única restricción la establecen los iniciadores. Este script se puede ejecutar varias veces para crear muchos discos virtuales que se pueden conectar a diferentes destinos. Puede conectar varios discos a un solo destino. 
 
-|**Entrada**|**valor predeterminado**|**descripción**|
+|**Entrada**|**valor predeterminado**|**description**|
 |------------------|---------------|------------------------------|
 |RemoteServer         |FileServer               |El nombre del servidor que se conecta al destino iSCSI
 |RemoteServerIPs      |1.1.1.1                  |La dirección IP desde la que provendrá el tráfico iSCSI
@@ -133,7 +133,7 @@ El script `Create-iSCSITarget.ps1 `se debe ejecutar en el sistema que presta ser
 
 `Connect-toiSCSITarget.ps1` es el script final, que se ejecuta en el cliente iSCSI y monta el disco presentado por el destino iSCSI en el cliente iSCSI.
 
-|**Entrada**|**valor predeterminado**|**descripción**|
+|**Entrada**|**valor predeterminado**|**description**|
 |------------------|---------------|------------------------------|
 |TargetiSCSIAddresses   |"2.2.2.2","2.2.2.3"    |Las direcciones IP del destino iSCSI
 |LocalIPAddresses       |"10.10.1.4"            |Esta es la dirección IP interna desde la que provendrá el tráfico iSCSI

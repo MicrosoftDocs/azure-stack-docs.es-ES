@@ -1,6 +1,6 @@
 ---
 title: Referencia del cmdlet Start-AzsReadinessChecker | Microsoft Docs
-description: Ayuda del cmdlet de PowerShell para el módulo Azure Stack Readiness Checker.
+description: Ayuda del cmdlet de PowerShell para el módulo Azure Stack Hub Readiness Checker.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -12,22 +12,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 08/13/2019
+ms.date: 01/07/2020
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: f60ee96673b5574f0cd0393dc6a53a2d7937c04f
-ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
+ms.openlocfilehash: d6b7525657696792bd72d968e8888bd8f7bc62fb
+ms.sourcegitcommit: b9d520f3b7bc441d43d489e3e32f9b89601051e6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71159154"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75727452"
 ---
 # <a name="start-azsreadinesschecker-cmdlet-reference"></a>Referencia del cmdlet Start-AzsReadinessChecker
 
 Módulo: **Microsoft.AzureStack.ReadinessChecker**
 
-Este módulo solo contiene un único cmdlet. El cmdlet realiza una o más funciones anteriores a la implementación o al mantenimiento en Azure Stack.
+Este módulo solo contiene un único cmdlet. El cmdlet realiza una o más funciones anteriores a la implementación o al mantenimiento en Azure Stack Hub.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -164,9 +164,9 @@ Start-AzsReadinessChecker
        [<CommonParameters>]
 ```
 
-## <a name="description"></a>DESCRIPCIÓN
+## <a name="description"></a>Descripción
 
-El cmdlet **Start-AzsReadinessChecker** valida los certificados, las cuentas de Azure, las suscripciones de Azure y los directorios de Azure Active Directory (Azure AD). Ejecute la validación antes de implementar Azure Stack o de realizar acciones de servicio de Azure Stack como la rotación de secretos. El cmdlet también puede usarse para generar solicitudes de firma de certificado para certificados de infraestructura y, opcionalmente, para certificados de PaaS. Por último, el cmdlet puede volver a empaquetar los certificados PFX para solucionar problemas comunes de empaquetado.
+El cmdlet **Start-AzsReadinessChecker** valida los certificados, las cuentas de Azure, las suscripciones de Azure y los directorios de Azure Active Directory (Azure AD). Ejecute la validación antes de implementar Azure Stack Hub o de realizar acciones de servicio de Azure Stack Hub como la rotación de secretos. El cmdlet también puede usarse para generar solicitudes de firma de certificado para certificados de infraestructura y, opcionalmente, para certificados de PaaS. Por último, el cmdlet puede volver a empaquetar los certificados PFX para solucionar problemas comunes de empaquetado.
 
 ## <a name="examples"></a>Ejemplos
 
@@ -179,7 +179,7 @@ $subjectHash = [ordered]@{"OU"="AzureStack";"O"="Microsoft";"L"="Redmond";"ST"="
 Start-AzsReadinessChecker -regionName $regionName -externalFQDN $externalFQDN -subject $subjectHash -IdentitySystem ADFS -requestType MultipleCSR
 ```
 
-En este ejemplo, `Start-AzsReadinessChecker` genera varias solicitudes de firma de certificados (CSR) para los certificados adecuados para la implementación de Azure Stack AD FS con un nombre de región de **east** y un FQDN externo de **azurestack.contoso.com**.
+En este ejemplo, `Start-AzsReadinessChecker` genera varias solicitudes de firma de certificados (CSR) para los certificados adecuados para la implementación de Azure Stack Hub en AD FS con un nombre de región **east** y un FQDN externo **azurestack.contoso.com**.
 
 ### <a name="example-validate-certificates"></a>Ejemplo: Validación de certificados
 
@@ -257,7 +257,7 @@ $subscriptionID = "<subscription ID"
 Start-AzsReadinessChecker -RegistrationAccount $registrationCredential -RegistrationSubscriptionID $subscriptionID -AzureEnvironment "<environment name>"
 ```
 
-En este ejemplo, las credenciales del propietario de la suscripción se solicitan por seguridad y `Start-AzsReadinessChecker` realiza la validación en la cuenta y suscripción indicadas para garantizar que se puede utilizar para el registro de Azure Stack.
+En este ejemplo, las credenciales del propietario de la suscripción se solicitan por seguridad y `Start-AzsReadinessChecker` realiza la validación en la cuenta y suscripción indicadas para garantizar que se puede utilizar para el registro de Azure Stack Hub.
 
 ### <a name="example-validate-azure-registration-with-deployment-data-deployment-team"></a>Ejemplo: Validación del registro de Azure con datos de implementación (equipo de implementación)
 
@@ -267,7 +267,7 @@ $subscriptionID = "<subscription ID>"
 Start-AzsReadinessChecker -RegistrationAccount $registrationCredential -RegistrationSubscriptionID $subscriptionID -DeploymentDataJSONPath .\contoso-deploymentdata.json
 ```
 
-En este ejemplo, las credenciales del propietario de la suscripción se solicitan por seguridad y `Start-AzsReadinessChecker` realiza la validación en la cuenta y suscripción indicadas para garantizar que puede usarse para el registro de Azure Stack donde los detalles adicionales se leen del archivo JSON de datos de implementación generado para la implementación.
+En este ejemplo, las credenciales del propietario de la suscripción se solicitan por seguridad y `Start-AzsReadinessChecker` realiza la validación en la cuenta y suscripción indicadas para garantizar que puede usarse para el registro de Azure Stack Hub donde los detalles adicionales se leen del archivo JSON de datos de implementación generado para la implementación.
 
 ### <a name="example-importexport-pfx-package"></a>Ejemplo: Paquete PFX de importación y exportación
 
@@ -298,11 +298,11 @@ En este ejemplo, el equipo de implementación o de soporte técnico reciben el i
 
 ### <a name="-regionname"></a>-RegionName
 
-Especifica el nombre de la región de la implementación de Azure Stack.
+Especifica el nombre de la región de la implementación de Azure Stack Hub.
 
 |  |  |
 |----------------------------|--------------|
-|Escriba:                       |string        |
+|Escriba:                       |String        |
 |Posición:                   |con nombre         |
 |Valor predeterminado:              |None          |
 |Aceptar la entrada de la canalización:      |False         |
@@ -310,11 +310,11 @@ Especifica el nombre de la región de la implementación de Azure Stack.
 
 ### <a name="-fqdn"></a>-FQDN
 
-Especifica el FQDN externo de la implementación de Azure Stack, con los alias **ExternalFQDN** y **ExternalDomainName**.
+Especifica el FQDN externo de la implementación de Azure Stack Hub, con los alias **ExternalFQDN** y **ExternalDomainName**.
 
 |  |  |
 |----------------------------|--------------|
-|Escriba:                       |string        |
+|Escriba:                       |String        |
 |Posición:                   |con nombre         |
 |Valor predeterminado:              |ExternalFQDN, ExternalDomainName |
 |Aceptar la entrada de la canalización:      |False         |
@@ -322,11 +322,11 @@ Especifica el FQDN externo de la implementación de Azure Stack, con los alias *
 
 ### <a name="-identitysystem"></a>-IdentitySystem
 
-Especifica los valores válidos del sistema de identidades de la implementación de Azure Stack, AAD o ADFS, para Azure Active Directory y Servicios de federación de Active Directory (AD FS), respectivamente.
+Especifica los valores válidos del sistema de identidades de la implementación de Azure Stack Hub, AAD o ADFS, para Azure Active Directory y Servicios de federación de Active Directory (AD FS), respectivamente.
 
 |  |  |
 |----------------------------|--------------|
-|Escriba:                       |string        |
+|Escriba:                       |String        |
 |Posición:                   |con nombre         |
 |Valor predeterminado:              |None          |
 |Valores válidos:               |"AAD", "ADFS"  |
@@ -359,11 +359,11 @@ Especifica la tabla hash que contiene las rutas de acceso y las contraseñas de 
 
 ### <a name="-deploymentdatajsonpath"></a>-DeploymentDataJSONPath
 
-Especifica el archivo de configuración JSON de datos de implementación de Azure Stack. Este archivo se genera para la implementación.
+Especifica el archivo de configuración JSON de datos de implementación de Azure Stack Hub. Este archivo se genera para la implementación.
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                       |string   |
+|Escriba:                       |String   |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |None     |
 |Aceptar la entrada de la canalización:      |False    |
@@ -375,7 +375,7 @@ Especifica la ruta de acceso a un certificado problemático que requiere que se 
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                       |string   |
+|Escriba:                       |String   |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |None     |
 |Aceptar la entrada de la canalización:      |False    |
@@ -387,7 +387,7 @@ Especifica la ruta de acceso de destino para el archivo PFX resultante de la rut
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                       |string   |
+|Escriba:                       |String   |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |None     |
 |Aceptar la entrada de la canalización:      |False    |
@@ -414,7 +414,7 @@ Especifica el tipo de SAN de la solicitud de certificado. Los valores válidos s
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                       |string   |
+|Escriba:                       |String   |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |None     |
 |Valores válidos:               |"MultipleCSR","SingleCSR" |
@@ -427,7 +427,7 @@ Especifica la ruta de acceso de destino para los archivos de solicitud de certif
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                       |string   |
+|Escriba:                       |String   |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |None     |
 |Aceptar la entrada de la canalización:      |False    |
@@ -435,7 +435,7 @@ Especifica la ruta de acceso de destino para los archivos de solicitud de certif
 
 ### <a name="-aadserviceadministrator"></a>-AADServiceAdministrator
 
-Especifica el administrador del servicio de Azure AD que se va a usar para la implementación de Azure Stack.
+Especifica el administrador del servicio de Azure AD que se va a usar para la implementación de Azure Stack Hub.
 
 |  |  |
 |----------------------------|---------|
@@ -447,11 +447,11 @@ Especifica el administrador del servicio de Azure AD que se va a usar para la im
 
 ### <a name="-aaddirectorytenantname"></a>-AADDirectoryTenantName
 
-Especifica el nombre de Azure AD que se va a usar para la implementación de Azure Stack.
+Especifica el nombre de Azure AD que se va a usar para la implementación de Azure Stack Hub.
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                       |string   |
+|Escriba:                       |String   |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |None     |
 |Aceptar la entrada de la canalización:      |False    |
@@ -459,11 +459,11 @@ Especifica el nombre de Azure AD que se va a usar para la implementación de Azu
 
 ### <a name="-azureenvironment"></a>-AzureEnvironment
 
-Especifica la instancia de servicios de Azure que contiene las cuentas, los directorios y las suscripciones que se van a usar para la implementación y el registro de Azure Stack.
+Especifica la instancia de servicios de Azure que contiene las cuentas, los directorios y las suscripciones que se van a usar para la implementación y el registro de Azure Stack Hub.
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                       |string   |
+|Escriba:                       |String   |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |None     |
 |Valores válidos:               |'AzureCloud','AzureChinaCloud','AzureUSGovernment' |
@@ -472,11 +472,11 @@ Especifica la instancia de servicios de Azure que contiene las cuentas, los dire
 
 ### <a name="-registrationaccount"></a>-RegistrationAccount
 
-Especifica la cuenta de registro que se va a usar para el registro de Azure Stack.
+Especifica la cuenta de registro que se va a usar para el registro de Azure Stack Hub.
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                       |string   |
+|Escriba:                       |String   |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |None     |
 |Aceptar la entrada de la canalización:      |False    |
@@ -484,7 +484,7 @@ Especifica la cuenta de registro que se va a usar para el registro de Azure Stac
 
 ### <a name="-registrationsubscriptionid"></a>-RegistrationSubscriptionID
 
-Especifica el identificador de suscripción del registro que se va a usar para el registro de Azure Stack.
+Especifica el identificador de suscripción del registro que se va a usar para el registro de Azure Stack Hub.
 
 |  |  |
 |----------------------------|---------|
@@ -500,9 +500,9 @@ Especifica la ruta de acceso para el informe de preparación, tiene como valor p
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                       |string   |
+|Escriba:                       |String   |
 |Posición:                   |con nombre    |
-|Valor predeterminado:              |Todo      |
+|Valor predeterminado:              |All      |
 |Aceptar la entrada de la canalización:      |False    |
 |Aceptar caracteres comodín: |False    |
 
@@ -512,17 +512,17 @@ Especifica la ruta de acceso para el informe de preparación, tiene como valor p
 
 Especifica la ruta de acceso en la que solo se encuentran las carpetas de certificados necesarias para el certificado.
 
-Las carpetas necesarias para la implementación de Azure Stack con el sistema de identidades de Azure AD son las siguientes:
+Las carpetas necesarias para la implementación de Azure Stack Hub con el sistema de identidades de Azure AD son las siguientes:
 
 - ACSBlob, ACSQueue, ACSTable, Admin Portal, ARM Admin, ARM Public, KeyVault, KeyVaultInternal, Public Portal
 
-Las carpetas necesarias para la implementación de Azure Stack con el sistema de identidades de Servicios de federación de Active Directory (AD FS) son las siguientes:
+Las carpetas necesarias para la implementación de Azure Stack Hub con el sistema de identidades de Servicios de federación de Active Directory (AD FS) son las siguientes:
 
 - ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, KeyVault, KeyVaultInternal, Public Portal
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                       |string   |
+|Escriba:                       |String   |
 |Posición:                   |con nombre    |
 |Valor predeterminado:              |.\Certificates |
 |Aceptar la entrada de la canalización:      |False    |
@@ -546,9 +546,9 @@ Especifica si solo se mostrará el resumen del informe; omite los detalles.
 
 |  |  |
 |----------------------------|---------|
-|Escriba:                       |string   |
+|Escriba:                       |String   |
 |Posición:                   |con nombre    |
-|Valor predeterminado:              |Todo      |
+|Valor predeterminado:              |All      |
 |Valores válidos:               |"Certificate","AzureRegistration","AzureIdentity","Jobs","All" |
 |Aceptar la entrada de la canalización:      |False    |
 |Aceptar caracteres comodín: |False    |
@@ -584,7 +584,7 @@ Especifica una ruta de acceso personalizada donde se guarda el informe JSON de p
 
 |  |  |
 |----------------------------|------------------|
-|Escriba:                       |string            |
+|Escriba:                       |String            |
 |Posición:                   |con nombre             |
 |Valor predeterminado:              |$ENV:TEMP\AzsReadinessChecker  |
 |Aceptar la entrada de la canalización:      |False             |

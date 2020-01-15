@@ -1,6 +1,6 @@
 ---
-title: Instalar Visual Studio y conectarse a Azure Stack | Microsoft Docs
-description: Aprenda a instalar Visual Studio y conectarse a Azure Stack.
+title: Instalación de Visual Studio y conexión a Azure Stack Hub | Microsoft Docs
+description: Aprenda a instalar Visual Studio y conectarse a Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -12,22 +12,22 @@ ms.workload: azure-vs
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/13/2019
+ms.date: 01/07/2020
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 19d532cd85244f69d1a969e92ca302822abf0133
-ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
+ms.openlocfilehash: e7254f5fb6a44a268c73ea988d2ba9ecd236d7f0
+ms.sourcegitcommit: b9d520f3b7bc441d43d489e3e32f9b89601051e6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68991676"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75727588"
 ---
-# <a name="install-visual-studio-and-connect-to-azure-stack"></a>Instalar Visual Studio y conectarse a Azure Stack
+# <a name="install-visual-studio-and-connect-to-azure-stack-hub"></a>Instalación de Visual Studio y conexión a Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+*Se aplica a: Sistemas integrados de Azure Stack Hub y al kit de desarrollo de Azure Stack*
 
-Puede usar Visual Studio para escribir e implementar [plantillas](azure-stack-arm-templates.md) de Azure Resource Manager en Azure Stack. Los pasos de este artículo describen cómo instalar Visual Studio en [Azure Stack](../asdk/asdk-connect.md#connect-to-azure-stack-using-rdp) o en un equipo externo si planea usar Azure Stack a través de [VPN](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn).
+Puede usar Visual Studio para escribir e implementar [plantillas](azure-stack-arm-templates.md) de Azure Resource Manager en Azure Stack Hub. Los pasos de este artículo describen cómo instalar Visual Studio en [Azure Stack Hub](../asdk/asdk-connect.md#connect-to-azure-stack-using-rdp) o en un equipo externo si planea usar Azure Stack Hub a través de [VPN](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn).
 
 ## <a name="install-visual-studio"></a>Instalación de Visual Studio
 
@@ -41,11 +41,11 @@ Puede usar Visual Studio para escribir e implementar [plantillas](azure-stack-ar
 
     ![Captura de pantalla de los pasos de la instalación de WebPI](./media/azure-stack-install-visual-studio/image1.png)
 
-5. [Instale PowerShell para Azure Stack](../operator/azure-stack-powershell-install.md).
+5. [Instale PowerShell para Azure Stack Hub](../operator/azure-stack-powershell-install.md).
 
 6. Una vez finalizada la instalación, reinicie el sistema operativo.
 
-## <a name="connect-to-azure-stack-with-azure-ad"></a>Conexión a Azure Stack con Azure AD
+## <a name="connect-to-azure-stack-hub-with-azure-ad"></a>Conexión a Azure Stack Hub con Azure AD
 
 1. Inicie Visual Studio.
 
@@ -53,11 +53,11 @@ Puede usar Visual Studio para escribir e implementar [plantillas](azure-stack-ar
 
 3. En el nuevo panel, seleccione **Agregar cuenta** e inicie sesión con sus credenciales de Azure Active Directory (Azure AD).  
 
-    ![Captura de pantalla de Cloud Explorer después de iniciar sesión en Azure Stack y conectarse](./media/azure-stack-install-visual-studio/image2.png)
+    ![Captura de pantalla de Cloud Explorer después de iniciar sesión en Azure Stack Hub y conectarse](./media/azure-stack-install-visual-studio/image2.png)
 
 Después de iniciar sesión, puede [implementar plantillas](azure-stack-deploy-template-visual-studio.md) o examinar los tipos y los grupos de recursos disponibles para crear sus propias plantillas.  
 
-## <a name="connect-to-azure-stack-with-ad-fs"></a>Conexión a Azure Stack con AD FS
+## <a name="connect-to-azure-stack-hub-with-ad-fs"></a>Conexión a Azure Stack Hub con AD FS
 
 1. Inicie Visual Studio.
 
@@ -65,7 +65,7 @@ Después de iniciar sesión, puede [implementar plantillas](azure-stack-deploy-t
 
 3. Expanda **Entorno** en el **Panel de navegación** y seleccione **Cuentas**.
 
-4. Seleccione **Agregar** y especifique el punto de conexión de usuario de Azure Resource Manager. Para el Kit de desarrollo de Azure Stack (ASDK), la dirección URL es `https://management.local.azurestack/external`.  Para los sistemas integrados de Azure Stack, la dirección URL es `https://management.[Region}.[External FQDN]`.
+4. Seleccione **Agregar** y especifique el punto de conexión de usuario de Azure Resource Manager. Para el Kit de desarrollo de Azure Stack (ASDK), la dirección URL es `https://management.local.azurestack/external`.  Para los sistemas integrados de Azure Stack Hub, la dirección URL es `https://management.[Region}.[External FQDN]`.
 
     ![Incorporación de nuevo punto de conexión de Azure Cloud Discovery](./media/azure-stack-install-visual-studio/image5.png)
 
@@ -73,7 +73,7 @@ Después de iniciar sesión, puede [implementar plantillas](azure-stack-deploy-t
 
     Visual Studio llama a Azure Resource Manager y descubre los puntos de conexión, incluido el punto de conexión de autenticación para Azure Directory Federated Services (AD FS).
 
-    ![Captura de pantalla de Cloud Explorer después de iniciar sesión en Azure Stack y conectarse](./media/azure-stack-install-visual-studio/image6.png)
+    ![Captura de pantalla de Cloud Explorer después de iniciar sesión en Azure Stack Hub y conectarse](./media/azure-stack-install-visual-studio/image6.png)
 
 6. Seleccione **Cloud Explorer** en el menú **Ver**.
 
@@ -90,4 +90,4 @@ Después de iniciar sesión, puede [implementar plantillas](azure-stack-deploy-t
 ## <a name="next-steps"></a>Pasos siguientes
 
 - Obtenga más información sobre la [coexistencia](/visualstudio/install/install-visual-studio-versions-side-by-side) de Visual Studio con otras versiones de Visual Studio.
-- [Desarrollo de plantillas para Azure Stack](azure-stack-develop-templates.md).
+- [Desarrollo de plantillas para Azure Stack Hub](azure-stack-develop-templates.md).

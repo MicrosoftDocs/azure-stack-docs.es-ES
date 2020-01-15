@@ -15,12 +15,12 @@ ms.date: 11/06/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/06/2019
-ms.openlocfilehash: 509f6509b00a3bccd005fd93b69006ebbfd2f2f0
-ms.sourcegitcommit: 8203490cf3ab8a8e6d39b137c8c31e3baec52298
+ms.openlocfilehash: 897cb42ad2a84f3802f4d35e97a03d4976800121
+ms.sourcegitcommit: bbe1048682c7dccc6cebde542462c14ee1f3d0d1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73712718"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75677882"
 ---
 # <a name="add-mysql-hosting-servers-in-azure-stack"></a>Adición de servidores de hospedaje de MySQL en Azure Stack
 
@@ -33,7 +33,12 @@ Para los servidores de hospedaje, se pueden usar las versiones de MySQL 5.6, 5.7
 
 ## <a name="connect-to-a-mysql-hosting-server"></a>Conexión a un servidor de hospedaje MySQL
 
-Asegúrese de que tiene las credenciales de una cuenta con privilegios de administrador del sistema. Para agregar un servidor de hospedaje, siga estos pasos:
+Asegúrese de que tiene las credenciales de una cuenta con privilegios de administrador del sistema.
+
+> [!NOTE]
+> En el caso de MySQL 8.0 y versiones posteriores, el acceso remoto no está habilitado de forma predeterminada. Debe crear una nueva cuenta de usuario y conceder el privilegio de acceso remoto a esta cuenta de usuario antes de agregarla como servidor de hospedaje.
+
+Para agregar un servidor de hospedaje, siga estos pasos:
 
 1. Inicie sesión en el portal de administración de Azure Stack como administrador de servicios.
 2. Seleccione **Todos los servicios**.

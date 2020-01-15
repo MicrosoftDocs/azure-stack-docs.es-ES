@@ -1,7 +1,6 @@
 ---
-title: Tipos de cuota en Azure Stack | Microsoft Docs
-titleSuffix: Azure Stack
-description: Vea y edite los diferentes tipos de cuota disponibles para los servicios y recursos de Azure Stack.
+title: Tipos de cuota en Azure Stack Hub | Microsoft Docs
+description: Vea y edite los diferentes tipos de cuota disponibles para los servicios y recursos de Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -13,18 +12,18 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 08/13/2019
+ms.date: 01/07/2020
 ms.author: sethm
 ms.reviewer: xiaofmao
 ms.lastreviewed: 12/07/2018
-ms.openlocfilehash: 049e4577541dea4f41a8ad18fc7f61875109153e
-ms.sourcegitcommit: 3a8e116fd0b16e1201e55e2088dde2e581004045
+ms.openlocfilehash: d6068ef98d4fe2d575f5501ad6760d4b408385cd
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74557543"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718103"
 ---
-# <a name="quota-types-in-azure-stack"></a>Tipos de cuota en Azure Stack
+# <a name="quota-types-in-azure-stack-hub"></a>Tipos de cuota en Azure Stack Hub
 
 *Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
@@ -80,7 +79,7 @@ Hay dos maneras diferentes de ver una cuota existente:
 3. En la hoja que se abre, seleccione **Services and quotas** (Servicios y cuotas).
 4. Para seleccionar la cuota que desea ver, haga clic en la columna **Nombre**.
 
-    [![Cuotas en el portal de administración de Azure Stack](media/azure-stack-quota-types/quotas1sm.png "Ver cuotas en el portal de administración")](media/azure-stack-quota-types/quotas1.png#lightbox)
+    [![Cuotas en el portal de administración de Azure Stack Hub](media/azure-stack-quota-types/quotas1sm.png "Ver cuotas en el portal de administración")](media/azure-stack-quota-types/quotas1.png#lightbox)
 
 ### <a name="resource-providers"></a>Proveedores de recursos
 
@@ -99,11 +98,11 @@ Hay dos maneras diferentes de editar una cuota:
 3. En la hoja que se abre, seleccione **Services and quotas** (Servicios y cuotas).
 4. Para seleccionar la cuota que desea editar, haga clic en la columna **Nombre**.
 
-    [![Cuotas en el portal de administración de Azure Stack](media/azure-stack-quota-types/quotas1sm.png "Ver cuotas en el portal de administración")](media/azure-stack-quota-types/quotas1.png#lightbox)
+    [![Cuotas en el portal de administración de Azure Stack Hub](media/azure-stack-quota-types/quotas1sm.png "Ver cuotas en el portal de administración")](media/azure-stack-quota-types/quotas1.png#lightbox)
 
 5. En la hoja que se abre, seleccione **Edit in Compute** (Editar en Compute), **Edit in Network** (Editar en Network) o **Edit in Storage** (Editar en Storage).
 
-    ![Editar un plan en el portal de administración de Azure Stack](media/azure-stack-quota-types/quotas3.png "Editar un plan en el portal de administración de Azure Stack")
+    ![Edición de un plan en el portal de administración de Azure Stack Hub](media/azure-stack-quota-types/quotas3.png "Edición de un plan en el portal de administración de Azure Stack Hub")
 
 Como alternativa, puede seguir este procedimiento para editar una cuota:
 

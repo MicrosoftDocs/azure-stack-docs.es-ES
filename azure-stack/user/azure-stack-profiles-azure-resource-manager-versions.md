@@ -1,6 +1,6 @@
 ---
-title: Versiones de API del proveedor de recursos compatibles con perfiles en Azure Stack | Microsoft Docs
-description: Obtenga información sobre las versiones de la API de Azure Resource Manager compatibles con perfiles en Azure Stack.
+title: Versiones de API del proveedor de recursos compatibles con perfiles de Azure Stack Hub | Microsoft Docs
+description: Obtenga información sobre las versiones de la API de Azure Resource Manager compatibles con perfiles de Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -10,20 +10,20 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/12/2019
+ms.date: 01/07/2020
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/08/2019
-ms.openlocfilehash: f7d32fde9cba051297165e2e491f5c92115a8a0d
-ms.sourcegitcommit: 4eb1766c7a9d1ccb1f1362ae1211ec748a7d708c
+ms.openlocfilehash: ca8b1dc5fd3b8f7f029498145a692b7a8414c053
+ms.sourcegitcommit: b9d520f3b7bc441d43d489e3e32f9b89601051e6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69579044"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75727503"
 ---
-# <a name="resource-provider-api-versions-supported-by-profiles-in-azure-stack"></a>Versiones de API del proveedor de recursos compatibles con perfiles en Azure Stack
+# <a name="resource-provider-api-versions-supported-by-profiles-in-azure-stack-hub"></a>Versiones de la API del proveedor de recursos compatibles con perfiles de Azure Stack Hub
 
-Puede encontrar el proveedor de recursos y los números de versión para cada perfil de API usado por Azure Stack en este artículo. En las tablas de este artículo se enumeran las versiones compatibles con cada proveedor de recursos y las versiones de API de los perfiles. Cada proveedor de recursos contiene un conjunto de tipos de recursos y números de versión específicos.
+Puede encontrar el proveedor de recursos y los números de versión de cada perfil de API que utiliza Azure Stack Hub en este artículo. En las tablas de este artículo se enumeran las versiones compatibles con cada proveedor de recursos y las versiones de API de los perfiles. Cada proveedor de recursos contiene un conjunto de tipos de recursos y números de versión específicos.
 
 El perfil de API usa tres convenciones de nomenclatura:
 
@@ -31,7 +31,7 @@ El perfil de API usa tres convenciones de nomenclatura:
 - **yyyy-mm-dd-hybrid**
 - **yyyy-mm-dd-profile**
 
-Para obtener una explicación de los perfiles de API y el ritmo de lanzamientos de versiones para Azure Stack, consulte [Administración de perfiles de la versión de API en Azure Stack](azure-stack-version-profiles.md).
+Para obtener una explicación de los perfiles de API y el ritmo de lanzamientos de versiones de Azure Stack Hub, consulte [Administración de perfiles de la versión de API en Azure Stack Hub](azure-stack-version-profiles.md).
 
 > [!NOTE]
 > El perfil de API **más reciente** contiene la versión de API del proveedor de recursos más reciente y no se enumera en este artículo.
@@ -199,5 +199,5 @@ El proveedor de recursos de almacenamiento (SRP) le permite administrar mediante
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Install PowerShell for Azure Stack](../operator/azure-stack-powershell-install.md) (Instalación de PowerShell para Azure Stack)
-- [Configuración del entorno de PowerShell del usuario de Azure Stack](azure-stack-powershell-configure-user.md)  
+- [Instalación de PowerShell para Azure Stack Hub](../operator/azure-stack-powershell-install.md)
+- [Configuración del entorno de PowerShell de Azure Stack Hub](azure-stack-powershell-configure-user.md)  

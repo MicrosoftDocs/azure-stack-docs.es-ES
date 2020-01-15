@@ -3,7 +3,7 @@ title: Establecimiento de permisos de acceso mediante el control de acceso basad
 description: Obtenga información sobre cómo establecer los permisos de acceso mediante el control de acceso basado en rol (RBAC) en Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: PatAltimore
+author: justinha
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/16/2019
-ms.author: patricka
+ms.date: 12/23/2019
+ms.author: justinha
 ms.reviewer: thoroet
-ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: fa4e836a2c7cd5b59a6234a05efcc1cface12620
-ms.sourcegitcommit: a6d47164c13f651c54ea0986d825e637e1f77018
+ms.lastreviewed: 12/23/2019
+ms.openlocfilehash: ae5b167ca807fc1e28c13c553e13ea89c7e6fe49
+ms.sourcegitcommit: dc3d0b77ee77742525fa0cd72d8547d25393022f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72277054"
+ms.lasthandoff: 12/26/2019
+ms.locfileid: "75492783"
 ---
 # <a name="set-access-permissions-using-role-based-access-control"></a>Establecimiento de permisos de acceso mediante el control de acceso basado en rol
 
@@ -31,6 +31,9 @@ En Azure Stack, un usuario puede ser un lector, propietario o colaborador de cad
  - Lector: El usuario puede ver todo, pero no puede hacer cambios.
  - Colaborador: El usuario puede administrar todo, excepto el acceso a los recursos.
  - Propietario: El usuario puede administrar todo, incluido el acceso a los recursos.
+ - Personalizado: El usuario tiene acceso limitado y específico a los recursos.
+
+ Para más información sobre la creación de un rol personalizado, consulte [Roles personalizados en los recursos de Azure](https://docs.microsoft.com/azure/role-based-access-control/custom-roles).
 
 ## <a name="set-access-permissions-for-a-user"></a>Establecimiento de los permisos de acceso de un usuario
 

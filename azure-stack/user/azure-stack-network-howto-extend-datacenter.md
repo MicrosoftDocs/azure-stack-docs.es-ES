@@ -9,12 +9,12 @@ ms.date: 12/13/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/13/2019
-ms.openlocfilehash: 949736f091b02ce3118725b9fd3cf6f34c1fc402
-ms.sourcegitcommit: 708c2eb0af3779517cebe8e3b1dc533c5d26561a
+ms.openlocfilehash: b0c676033a5690025fb2d8f5c3aa203766ae67fd
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2019
-ms.locfileid: "75184384"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718477"
 ---
 # <a name="extending-storage-to-azure-stack"></a>Ampliación del almacenamiento a Azure Stack
 
@@ -60,7 +60,7 @@ En este escenario, implementaremos y configuraremos una máquina virtual con Win
 
 5.  En la hoja **Basics** (Datos básicos), complete la información como se indica a continuación:
 
-    a.  **Nombre**: VM001
+    a.  **Name**: VM001
 
     b.  **Username** (Nombre de usuario): localadmin
 

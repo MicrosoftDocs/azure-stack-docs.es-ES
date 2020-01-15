@@ -15,22 +15,22 @@ ms.date: 08/23/2019
 ms.author: mabrigg
 ms.lastreviewed: 08/23/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: a724320bd066e6d46e33e6bdc9c80687cfb97736
-ms.sourcegitcommit: 55ec59f831a98c42a4e9ff0dd954bf10adb98ff1
+ms.openlocfilehash: f14b4180e567df13e576b520cdac01a676c101ea
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74540279"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75717950"
 ---
-# <a name="monitor-updates-in-azure-stack-using-powershell"></a>Supervisar actualizaciones en Azure Stack con PowerShell
+# <a name="monitor-updates-in-azure-stack-hub-using-powershell"></a>Supervisar actualizaciones en Azure Stack Hub con PowerShell
 
-*Se aplica a: Sistemas integrados de Azure Stack*
+*Se aplica a: Sistemas integrados de Azure Stack Hub*
 
-Puede usar los puntos de conexión administrativos de Azure Stack para supervisar y administrar las actualizaciones. Son accesibles con PowerShell. Para obtener instrucciones sobre cómo configurar PowerShell en Azure Stack, consulte [Instalación de PowerShell para Azure Stack](azure-stack-powershell-install.md).
+Puede usar los puntos de conexión administrativos de Azure Stack Hub para supervisar y administrar las actualizaciones. Son accesibles con PowerShell. Para obtener instrucciones sobre cómo configurar PowerShell en Azure Stack Hub, consulte [Instalación de PowerShell para Azure Stack Hub](azure-stack-powershell-install.md).
 
 Puede usar el siguiente cmdlet de PowerShell para administrar las actualizaciones:
 
-| Cmdlet | DESCRIPCIÓN |
+| Cmdlet | Descripción |
 |------------------------------------------------------|-------------|
 | [Get-AzsUpdate](https://docs.microsoft.com/powershell/module/azs.update.admin/Get-AzsUpdate?view=azurestackps-1.8.0) | Obtiene la lista de actualizaciones disponibles. |
 | [Get-AzsUpdateLocation](https://docs.microsoft.com/powershell/module/azs.update.admin/Get-AzsUpdateLocation?view=azurestackps-1.8.0)| Obtiene la lista de ubicaciones de actualización. |

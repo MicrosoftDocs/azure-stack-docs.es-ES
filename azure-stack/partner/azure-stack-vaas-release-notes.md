@@ -14,12 +14,12 @@ ms.date: 10/28/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 10/28/2019
-ms.openlocfilehash: 963944f2ade4db168c1b7f9070e72fe503bdfcf9
-ms.sourcegitcommit: 08d2938006b743b76fba42778db79202d7c3e1c4
+ms.openlocfilehash: eb676d914a345c5fe36e063ee08ea226cd1e3209
+ms.sourcegitcommit: 1cb84d8417367b553194614d53a477a94a8e9be9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74954475"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75755175"
 ---
 # <a name="release-notes-for-validation-as-a-service"></a>Notas de la versión para la validación como servicio
 
@@ -28,6 +28,17 @@ ms.locfileid: "74954475"
 En este artículo se incluyen las notas de la versión para la validación como servicio de Azure Stack.
 
 ## <a name="version-4421"></a>Versión 4.4.2.1
+
+9 de enero de 2020
+
+- Prueba de las actualizaciones de contenido
+  - Flujo de trabajo de validación de OEM (Versión 5.1.52.0 -> 5.1.53.0): Se ha reducido el número de parámetros necesarios del panel de programación de pruebas. 
+  - Corrección para la prueba de Compute: TestVMOperations
+    
+- Problemas conocidos
+  - Póngase en contacto con vaashelp@microsoft.com si los siguientes casos de prueba no se pueden ejecutar durante el flujo de trabajo de validación de OEM:
+    - Test101LinuxEmptyAttachedDiskManagedDisk
+    - Test101WindowsEmptyAttachedDiskManagedDisk
 
 3 de diciembre de 2019
 

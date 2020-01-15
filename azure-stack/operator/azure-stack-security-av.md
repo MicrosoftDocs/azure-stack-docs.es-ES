@@ -11,12 +11,12 @@ ms.date: 12/04/2019
 ms.author: justinha
 ms.reviewer: fiseraci
 ms.lastreviewed: 12/04/2019
-ms.openlocfilehash: 97a9fe73eb83df07a9b24dc130c8295218cda7ad
-ms.sourcegitcommit: 53f7daf295783a30feb284d4c48c30c6936557c5
+ms.openlocfilehash: fb6271114f27b16b9cb7a660deb7d6bcee197ca2
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74830983"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718137"
 ---
 # <a name="update-windows-defender-antivirus-on-azure-stack-hub"></a>Actualización de Antivirus de Windows Defender en Azure Stack Hub
 

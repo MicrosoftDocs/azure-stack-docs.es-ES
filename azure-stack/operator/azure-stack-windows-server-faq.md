@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/29/2019
+ms.date: 12/27/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 08/29/2019
-ms.openlocfilehash: b71065d4a5af880fe5fb9a48d78a0e2821822b56
-ms.sourcegitcommit: 5efa09034a56eb2f3dc0c9da238fe60cff0c67ac
+ms.openlocfilehash: 8110f48ef9e42ef2ee89b4766164b5005c7d51fa
+ms.sourcegitcommit: df8de80b8c295495edc091e0a12012ccc7a96594
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70143978"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75503613"
 ---
 # <a name="windows-server-in-azure-stack-marketplace-faq"></a>Preguntas frecuentes sobre Windows Server en el Marketplace de Azure Stack
 
@@ -32,7 +32,7 @@ En este artículo se responden algunas preguntas frecuentes sobre las imágenes 
 
 En primer lugar, determine si las plantillas de Azure Resource Manager hacen referencia a alguna versión específica. Si es así, actualice las plantillas o mantenga versiones de imágenes antiguas. Es mejor usar **version: latest**.
 
-A continuación, si las instancias de Virtual Machine Scale Sets hacen referencia a una versión específica, debería pensar si será necesario escalarlas más tarde y decidir si conservar las versiones anteriores. Si ninguna de estas condiciones es aplicable, elimine las imágenes antiguas de Marketplace antes de descargar las más recientes. Puede usar Administración de Marketplace para eliminarlas si es así cómo se descargó el original. A continuación, descargue la versión más reciente.
+A continuación, si los conjuntos de escalado de máquinas virtuales hacen referencia a una versión específica, debería pensar si será necesario escalarlas más tarde y decidir si conservar las versiones anteriores. Si ninguna de estas condiciones es aplicable, elimine las imágenes antiguas de Marketplace antes de descargar las más recientes. Puede usar Administración de Marketplace para eliminarlas si es así cómo se descargó el original. A continuación, descargue la versión más reciente.
 
 ### <a name="what-are-the-licensing-options-for-windows-server-marketplace-images-on-azure-stack"></a>¿Qué opciones hay para obtener licencias de imágenes de Windows Server en el Marketplace de Azure Stack?
 
@@ -56,7 +56,7 @@ Si descarga ambas versiones de la imagen, solo la versión más reciente es visi
 Puede cambiar el atributo de modelo de licencia para cambiar de traiga su propia licencia (BYOL) al modelo de pago por uso (PAYG) mediante la ejecución del siguiente script:
 
 ```powershell
-vm= Get-Azurermvm -ResourceGroup "<your RG>" -Name "<your VM>"
+$vm= Get-Azurermvm -ResourceGroup "<your RG>" -Name "<your VM>"
 $vm.LicenseType = "None"
 Update-AzureRmVM -ResourceGroupName "<your RG>" -VM $vm
 ```
@@ -80,6 +80,8 @@ Update-AzureRmVM -ResourceGroupName "<your RG>" -VM $vm
 ### <a name="what-about-other-vms-that-use-windows-server-such-as-sql-or-machine-learning-server"></a>¿Qué ocurre con otras máquinas virtuales que usan Windows Server, como SQL o Machine Learning Server?
 
 Estas imágenes se aplican al parámetro **licenseType**, por lo que se pagan en función de su uso. Puede establecer este parámetro (consulte la pregunta anterior). Esto solo se aplica al software de Windows Server, y no a productos en capas, como SQL, que tienen que aportar su propia licencia. Las licencias de pago por uso no se aplican a productos de software en capas.
+
+Tenga en cuenta que solo puede cambiar la propiedad **licenseType** para imágenes de SQL Server de Marketplace si la versión es XX.X.20190410 o superior. Si está ejecutando una versión anterior de las imágenes de SQL Server de Marketplace, no puede cambiar el atributo **licenseType** y debe volver a implementarlo con las imágenes de SQL Server más recientes de Marketplace.
 
 ### <a name="i-have-an-enterprise-agreement-ea-and-will-be-using-my-ea-windows-server-license-how-do-i-make-sure-images-are-billed-correctly"></a>Tengo un contrato Enterprise (EA) y usaré mi licencia EA Windows Server, ¿cómo puedo asegurarme de que las imágenes se facturarán correctamente?
 

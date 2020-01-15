@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/17/2019
+ms.date: 01/02/2020
 ms.author: sethm
 ms.reviewer: ihcherie
-ms.lastreviewed: 10/17/2019
-ms.openlocfilehash: 7d884919b19901512661f005b9128715b6e6ede1
-ms.sourcegitcommit: d619612f54eeba3231ed73ed149ff894f9bf838a
+ms.lastreviewed: 01/02/2020
+ms.openlocfilehash: a84844d398d8e0b6b076c762ebdc0112713f19cc
+ms.sourcegitcommit: b2418661bfa3a791e65b9b487e20982dba3e4c41
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74993940"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75757025"
 ---
 # <a name="azure-marketplace-items-available-for-azure-stack"></a>Elementos de Azure Marketplace disponibles para Azure Stack
 
@@ -31,7 +31,7 @@ ms.locfileid: "74993940"
 
 Cada vez que haya actualizaciones de las extensiones de la máquina virtual que utiliza, debe descargarlas. Las extensiones que se distribuyen con el producto no se actualizarán durante el proceso normal de revisión y actualización; por tanto, compruebe con frecuencia las actualizaciones que pueda haber. Otras extensiones solo están disponibles a través de la administración de Marketplace.
 
-|  | Nombre del elemento | DESCRIPCIÓN | Publicador | OS Type (Tipo de SO) |
+|  | Nombre del elemento | Descripción | Publicador | Tipo de SO |
 | --- | --- | --- | --- | --- |
 |![Extensión IaaS de SQL (SqlIaasExtension)](media/azure-stack-marketplace-azure-items/cse.png) | [Extensión IaaS de SQL (SqlIaasExtension)](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-agent-extension)| **Descargue esta extensión para implementar cualquier servidor de SQL Server en el elemento de Marketplace (esta extensión es obligatoria).** | Microsoft | Windows |
 |![Custom Script Extension](media/azure-stack-marketplace-azure-items/cse.png) | [Extensión Custom Script](https://docs.microsoft.com/azure/virtual-machines/windows/extensions-customscript)| **Descargar esta actualización a la versión incluida en la extensión de script personalizado de Windows.** | Microsoft | Windows |
@@ -52,7 +52,7 @@ Cada vez que haya actualizaciones de las extensiones de la máquina virtual que 
 
 Microsoft Azure Stack es compatible con las siguientes plantillas de soluciones y VM de Azure Marketplace. Descargue las dependencias por separado, tal como se indica. Debe tener las licencias adecuadas para aplicaciones como SQL Server y Machine Learning Server, excepto cuando sean versiones gratuitas o de prueba.
 
-|  | Nombre del elemento | DESCRIPCIÓN | Publicador |
+|  | Nombre del elemento | Descripción | Publicador |
 | --- | --- | --- | --- |
 | ![Windows Server](media/azure-stack-marketplace-azure-items/windowsserver.png) | [Windows Server](https://azuremarketplace.microsoft.com/marketplace/apps/MicrosoftWindowsServer.WindowsServer) | Soluciones de clase empresarial que son fáciles de implementar, rentables, centradas en la aplicación y centradas en el usuario. Estas imágenes se actualizan periódicamente con las revisiones más recientes. **Información importante: las imágenes descargadas antes del 18 de enero de 2018 deben eliminarse y sustituirse por las de las versiones más recientes.** | Microsoft |
 | ![SharePoint Server 2013 Trial](media/azure-stack-marketplace-azure-items/sharepoint.png) | [Versión de evaluación de SharePoint Server 2013](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftsharepoint.microsoftsharepointserver) | Versión de evaluación de Microsoft SharePoint Server 2013 en Windows Server 2012 Datacenter y Visual Studio 2019 Community Edition. | Microsoft |
@@ -82,7 +82,7 @@ Microsoft Azure Stack es compatible con las siguientes plantillas de soluciones 
 
 ## <a name="linux-distributions"></a>Distribuciones de Linux
 
-|  | Nombre del elemento | DESCRIPCIÓN | Publicador |
+|  | Nombre del elemento | Descripción | Publicador |
 | --- | --- | --- | --- |
 | ![Sistema operativo Clear Linux](media/azure-stack-marketplace-azure-items/clearlinux.png) | [Sistema operativo Clear Linux](https://azuremarketplace.microsoft.com/marketplace/apps/clear-linux-project.clear-linux-os) | Una distribución Linux de referencia optimizada para la arquitectura Intel. | Proyecto Clear Linux |
 | ![CoreOS Linux (estable)](media/azure-stack-marketplace-azure-items/coreos.png) | [CoreOS Linux (estable)](https://azuremarketplace.microsoft.com/marketplace/apps/CoreOS.CoreOS) | CoreOS es un sistema de distribución moderno y mínimo de Linux que ofrece una forma fácil de ejecutar contenedores, administrar clústeres y actualizar los servidores sin problemas: todos los componentes que habilitan el proceso a escala de almacén. | CoreOS |
@@ -100,15 +100,15 @@ Microsoft Azure Stack es compatible con las siguientes plantillas de soluciones 
 
 ## <a name="third-party-byol-free-trial-images-and-solution-templates"></a>BYOL de terceros, imágenes de las versiones gratuita y de prueba y plantillas de soluciones
 
-|  | Nombre del elemento | DESCRIPCIÓN | Publicador |
+|  | Nombre del elemento | Descripción | Publicador |
 | --- | --- | --- | --- |
 | ![A10 vThunder ADC](media/azure-stack-marketplace-azure-items/a10.png) | [A10 vThunder ADC](https://azuremarketplace.microsoft.com/marketplace/apps/a10networks.vthunder-414-gr1) | El controlador de entrega de aplicaciones A10 Networks vThunder ADC para Microsoft Azure está especialmente diseñado ofrecer un alto rendimiento, flexibilidad y entrega de aplicaciones y equilibrio de cargas de servidor fáciles de implementar. Además, está optimizado para ejecutarse de forma nativa en Azure Cloud. | A10 Networks |
 | ![Arista vEOS Router](media/azure-stack-marketplace-azure-items/arista.png) | [Arista vEOS Router](https://azuremarketplace.microsoft.com/marketplace/apps/arista-networks.veos-router) | Arista vEOS Router es un completo enrutador virtual multinube y multihipervisor que permite a las empresas y los proveedores de nube compilar redes híbridas coherentes, muy seguras y escalables. | Arista Networks |
 | ![Centro de control de seguridad de aplicaciones de Barracuda](media/azure-stack-marketplace-azure-items/barracuda.png) | [Centro de control de seguridad de aplicaciones de Barracuda](https://azuremarketplace.microsoft.com/marketplace/apps/barracudanetworks.barracuda-app-sec-control-center) | Administre de forma centralizada varios firewall de aplicaciones web (WAF) de Barracuda. | Barracuda Networks, Inc. |
 | ![Puerta de enlace de seguridad de correo electrónico de Barracuda](media/azure-stack-marketplace-azure-items/barracuda.png) | [Puerta de enlace de seguridad de correo electrónico de Barracuda](https://azuremarketplace.microsoft.com/marketplace/apps/barracudanetworks.barracuda-email-security-gateway) | Puerta de enlace de seguridad de correo electrónico para protegerse frente a amenazas entrantes procedentes de correo electrónico. | Barracuda Networks, Inc. |
 | ![Firewall de aplicaciones web (WAF) de Barracuda](media/azure-stack-marketplace-azure-items/barracuda.png) | [Firewall de aplicaciones web (WAF) de Barracuda](https://azuremarketplace.microsoft.com/marketplace/apps/barracudanetworks.waf) | Seguridad y protección contra DDoS frente a ataques automatizados y selectivos. | Barracuda Networks, Inc. |
-| ![Barracuda CloudGen Firewall Control Center](media/azure-stack-marketplace-azure-items/barracuda.png) | [Barracuda CloudGen Firewall Control Center](https://azuremarketplace.microsoft.com/marketplace/apps/barracudanetworks.barracuda-ng-cc) | Administre cientos de firewalls de Barracuda CloudGen de forma centralizada independientemente de su ubicación y su factor de forma. | Barracuda Networks, Inc. |
-| ![Barracuda CloudGen Firewall para Azure](media/azure-stack-marketplace-azure-items/barracuda.png) | [Barracuda CloudGen Firewall para Azure](https://azuremarketplace.microsoft.com/marketplace/apps/barracudanetworks.barracuda-ng-firewall) | Proporciona protección de firewall allá donde residen la aplicación y los datos, en lugar de hacerlo únicamente donde finaliza la conexión. | Barracuda Networks, Inc. |
+| ![Barracuda CloudGen Firewall Control Center](media/azure-stack-marketplace-azure-items/barracuda.png) | [Barracuda CloudGen Firewall Control Center](https://azuremarketplace.microsoft.com/marketplace/apps/barracudanetworks.barracuda-cc) | Administre cientos de firewalls de Barracuda CloudGen de forma centralizada independientemente de su ubicación y su factor de forma. | Barracuda Networks, Inc. |
+| ![Barracuda CloudGen Firewall para Azure](media/azure-stack-marketplace-azure-items/barracuda.png) | [Barracuda CloudGen Firewall para Azure](https://azuremarketplace.microsoft.com/marketplace/apps/barracudanetworks.barracuda-ngf) | Proporciona protección de firewall allá donde residen la aplicación y los datos, en lugar de hacerlo únicamente donde finaliza la conexión. | Barracuda Networks, Inc. |
 | ![AbanteCart](media/azure-stack-marketplace-azure-items/abantecart.png) | [AbanteCart](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.abantecart) | Carro de la compra de comercio electrónico de código abierto. | Bitnami |
 | ![ActiveMQ](media/azure-stack-marketplace-azure-items/activemq.png) | [ActiveMQ](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.activemq) | Agente de mensajes de código abierto en Java. | Bitnami |
 | ![Akeneo](media/azure-stack-marketplace-azure-items/akeneo.png) | [Akeneo](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.akeneo) | PIM eficaz diseñado para simplificar los procesos de administración. | Bitnami |
@@ -237,7 +237,9 @@ Microsoft Azure Stack es compatible con las siguientes plantillas de soluciones 
 | ![Xoops](media/azure-stack-marketplace-azure-items/xoops.png) | [Xoops](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.xoops) | CMS y portal web que crea sitios web dinámicos. | Bitnami |
 | ![Zurmo](media/azure-stack-marketplace-azure-items/zurmo.png) | [Zurmo](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.zurmo) | Sistema de CRM de código abierto: móvil, social y gamificado. | Bitnami |
 | ![ZooKeeper](media/azure-stack-marketplace-azure-items/zookeeper.png) | [ZooKeeper](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.zookeeper) | ZooKeeper proporciona un registro confiable y centralizado de los servicios y datos de configuración para aplicaciones distribuidas. | Bitnami |
-| ![Administración de seguridad de Check Point vSEC](media/azure-stack-marketplace-azure-items/checkpoint.png) | [Administración de seguridad de Check Point vSEC](https://azuremarketplace.microsoft.com/marketplace/apps/checkpoint.vsec) | Check Point vSEC ofrece una avanzada prevención de amenazas de varias capas para proteger los recursos de los clientes en Azure contra el malware y amenazas sofisticadas. **Descargue ambos elementos de Check Point vSEC en Marketplace.** | Punto de comprobación |
+| ![Check Point CloudGuard IaaS High Availability](media/azure-stack-marketplace-azure-items/checkpoint.png) | [CloudGuard IaaS High Availability](https://azuremarketplace.microsoft.com/marketplace/apps/checkpoint.vsec) | Esta solución permite implementar un clúster de IaaS de Check Point CloudGuard con 2 miembros. Cada miembro tiene 2 interfaces de red. | Punto de comprobación |
+| ![Check Point CloudGuard IaaS Security Management](media/azure-stack-marketplace-azure-items/checkpoint.png) | [Check Point CloudGuard IaaS Security Management](https://azuremarketplace.microsoft.com/marketplace/apps/checkpoint.vsec) | Esta solución permite implementar un único servidor de administración de seguridad de Check Point con una única interfaz de red. | Punto de comprobación |
+| ![Check Point CloudGuard IaaS Single Gateway](media/azure-stack-marketplace-azure-items/checkpoint.png) | [Check Point CloudGuard IaaS Single Gateway](https://azuremarketplace.microsoft.com/marketplace/apps/checkpoint.vsec) | Esta solución permite implementar una única puerta de enlace de seguridad de Check Point CloudGuard IaaS con dos interfaces de red. Después de la implementación, debe configurar rutas definidas por el usuario para enrutar el tráfico a través de la puerta de enlace. | Punto de comprobación |
 | ![Chef Automate](media/azure-stack-marketplace-azure-items/chefautomate.png) | [Chef Automate](https://azuremarketplace.microsoft.com/marketplace/apps/chef-software.chef-automate) | Compile, implemente y administre con Chef Automate, la plataforma de automatización continua. **Descargue ambos elementos de Chef en Marketplace**. | Chef Software, Inc |
 | ![Commvault](media/azure-stack-marketplace-azure-items/commvault.png) | [Commvault](https://azuremarketplace.microsoft.com/marketplace/apps/commvault.commvault) | Una solución completa para la copia de seguridad, recuperación, aplicación y migración de VM a Azure Stack, así como recuperación ante desastres para los entornos de Azure Stack en una sola solución. | Commvault |
 | ![CloudLink SecureVM](media/azure-stack-marketplace-azure-items/cloudlink.png) | [CloudLink SecureVM](https://azuremarketplace.microsoft.com/marketplace/apps/cloudlink.cloudlink-securevm)  | Controle, supervise y cifre máquinas virtuales con facilidad y confianza. **Descargue todos los elementos de CloudLink SecureVM.** | Dell EMC |
@@ -248,7 +250,7 @@ Microsoft Azure Stack es compatible con las siguientes plantillas de soluciones 
 | ![Espacio aislado de Hortonworks Data Platform (HDP)](media/azure-stack-marketplace-azure-items/hortonworks.png) | [Espacio aislado de Hortonworks Data Platform (HDP)](https://azuremarketplace.microsoft.com/marketplace/apps/hortonworks.hortonworks-sandbox) | Con tecnología de HDP 2.5, una plataforma 100 % de código abierto de Hadoop, Spark, Storm, HBase, Kafka, Hive y Ambari. | Hortonworks |
 | ![Kaspersky](media/azure-stack-marketplace-azure-items/kaspersky.png) | [Kaspersky Hybrid Cloud Security](https://azuremarketplace.microsoft.com/marketplace/apps/kaspersky_lab.kaspersky_hybrid_cloud_security?tab=Overview) | Kaspersky Hybrid Cloud Security habilita un ecosistema de ciberseguridad adaptable y organizado sin problemas. | Kaspersky Lab |
 | ![Conmutador de contenido de ADC de equilibrador de carga KEMP LoadMaster](media/azure-stack-marketplace-azure-items/kemp.png) | [Conmutador de contenido de ADC de equilibrador de carga KEMP LoadMaster](https://azuremarketplace.microsoft.com/marketplace/apps/kemptech.vlm-azure) | Equilibrador de carga de controlador de entrega de aplicaciones (ADC) de capa 4-7, conmutador de contenido y administrador de tráfico. | KEMP Technologies Inc. |
-| ![kubernetes](media/azure-stack-marketplace-azure-items/kubernetes.png) | [Kubernetes](azure-stack-solution-template-kubernetes-cluster-add.md) | Esta solución implementa un clúster de Kubernetes que se ejecuta como un clúster independiente con plantillas generadas con AKS-Engine.<br>**Esta plantilla de solución también requiere Ubuntu Server 16.04 LTS y Custom Script for Linux 2.0.**| Microsoft |
+| ![Kubernetes](media/azure-stack-marketplace-azure-items/kubernetes.png) | [Kubernetes](azure-stack-aks-engine.md) | Esta solución implementa un clúster de Kubernetes que se ejecuta como un clúster independiente con plantillas generadas con AKS-Engine.<br>**Esta plantilla de solución también requiere Ubuntu Server 16.04 LTS y Custom Script for Linux 2.0.**| Microsoft |
 | ![Clúster de Service Fabric](media/azure-stack-marketplace-azure-items/servicefrabric.png) | [Clúster de Service Fabric](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.ServiceFabricCluster?tab=Overview) | Esta solución implementa un clúster de Service Fabric que se ejecuta como un clúster independiente en un conjunto de escalado de máquinas virtuales. <br>**Esta plantilla de solución también exige descargar Windows Server 2016 Datacenter**| Microsoft |
 | ![NRI mPLAT Suite - Multi-Cloud Conductor](media/azure-stack-marketplace-azure-items/nri.png) | [mPLAT Suite - Multi-Cloud Conductor](https://azuremarketplace.microsoft.com/marketplace/apps/nri.mplatmc2018-vm) | Un único panel integrado para supervisar, configurar, aprovisionar, automatizar y controlar cualquier carga de trabajo o nube. | NRI |
 | ![Compatible con NooBaa Hybrid AWS S3: Community Edition](media/azure-stack-marketplace-azure-items/noobaa.png) | [Compatible con NooBaa Hybrid AWS S3: Community Edition](https://www.noobaa.io/hybrid-cloud) | Servicio de almacenamiento compatible con S3 que abarca recursos de capacidades locales y públicos. | NooBaa |
