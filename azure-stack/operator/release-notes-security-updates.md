@@ -16,12 +16,12 @@ ms.date: 11/21/2019
 ms.author: sethm
 ms.reviewer: fiseraci
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 9766c1fb0c5186f33038716f0d56d1ccac9d90cb
-ms.sourcegitcommit: c3be6b2e962c5905eb3c54f9555e13095f6b4d40
+ms.openlocfilehash: 6487f3380f39d6e321771a23714e99d8f65dd836
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75303675"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821025"
 ---
 # <a name="azure-stack-hub-security-updates"></a>Actualizaciones de seguridad de Azure Stack Hub
 
@@ -243,13 +243,13 @@ Para más información sobre estas vulnerabilidades, haga clic en los vínculos 
 ::: moniker range="azs-1907"
 ## <a name="1907-update"></a>Actualización 1907
 
-Esta actualización de Azure Stack no incluye actualizaciones de seguridad para el sistema operativo subyacente que hospeda Azure Stack.
+Esta actualización de Azure Stack Hub no incluye actualizaciones de seguridad para el sistema operativo subyacente que hospeda Azure Stack Hub.
 ::: moniker-end
 
 ::: moniker range="azs-1906"
 ## <a name="1906-update"></a>Actualización 1906
 
-Esta actualización de Azure Stack no incluye actualizaciones de seguridad para el sistema operativo subyacente que hospeda Azure Stack.
+Esta actualización de Azure Stack Hub no incluye actualizaciones de seguridad para el sistema operativo subyacente que hospeda Azure Stack Hub.
 ::: moniker-end
 
 ## <a name="next-steps"></a>Pasos siguientes

@@ -8,16 +8,14 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: a38a7541d4184e89cb0a821db04a2fcb8c267a31
-ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
+ms.openlocfilehash: 813dbe66b2b2c1850430dbe167f0a14227856aee
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73639972"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75881491"
 ---
 # <a name="configure-hybrid-cloud-identity-for-azure-and-azure-stack-hub-applications"></a>Configuración de la identidad de nube híbrida para aplicaciones de Azure y Azure Stack Hub
-
-*Se aplica a: Sistemas integrados de Azure Stack Hub y Kit de desarrollo de Azure Stack Hub*
 
 Aprenda a configurar la identidad de nube híbrida para sus aplicaciones de Azure y Azure Stack Hub.
 
@@ -59,7 +57,7 @@ La solución [API de Azure Stack Hub](../user/azure-stack-rest-api-use.md) le gu
 
 La guía de inicio rápido para [empezar a trabajar con PowerShell en Azure Stack Hub](../operator/azure-stack-powershell-install.md) le guía por los pasos necesarios para instalar Azure PowerShell y conectarse a su instalación de Azure Stack Hub.
 
-### <a name="prerequisites"></a>Requisitos previos
+### <a name="prerequisites"></a>Prerequisites
 
 Necesita una instalación de Azure Stack Hub conectada a Azure Active Directory con una suscripción a la que puede acceder. Si no tiene una instalación de Azure Stack Hub, puede usar estas instrucciones para configurar un [Kit de desarrollo de Azure Stack Hub](../asdk/asdk-install.md).
 

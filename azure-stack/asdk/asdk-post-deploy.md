@@ -16,12 +16,12 @@ ms.date: 07/31/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 07/31/2019
-ms.openlocfilehash: 88b92ce80475ba48b2570dc58082fa75983fdd9b
-ms.sourcegitcommit: 55ec59f831a98c42a4e9ff0dd954bf10adb98ff1
+ms.openlocfilehash: 9408fb5ba7ffa181acc28e78576c9eda2262dc81
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74540270"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75804561"
 ---
 # <a name="post-deployment-configurations-for-asdk"></a>Configuraciones posteriores a la implementación del ASDK
 
@@ -42,7 +42,7 @@ Use perfiles de la versión de la API para especificar los módulos de AzureRM c
 El módulo de Azure Stack PowerShell más reciente se puede instalar con o sin conectividad a internet en el equipo host de ASDK:
 
 > [!IMPORTANT]
-> Antes de instalar la versión requerida, asegúrese de [desinstalar los módulos de Azure PowerShell existentes](../operator/azure-stack-powershell-install.md#3-uninstall-existing-versions-of-the-azure-stack-powershell-modules).
+> Antes de instalar la versión requerida, asegúrese de [desinstalar los módulos de Azure PowerShell existentes](../operator/azure-stack-powershell-install.md#3-uninstall-existing-versions-of-the-azure-stack-hub-powershell-modules).
 
 - **Con conexión a Internet** desde el equipo host del ASDK: Ejecute el siguiente script de PowerShell para instalar estos módulos en la instalación del ASDK:
 
@@ -113,8 +113,8 @@ Para asegurarse de que el ASDK se ha implementado correctamente, siga estos paso
 
 1. Inicie sesión como AzureStack\AzureStackAdmin en el equipo host de ASDK.
 2. Abra PowerShell como administrador (no como PowerShell ISE).
-3. Ejecute: `Enter-PSSession -ComputerName AzS-ERCS01 -ConfigurationName PrivilegedEndpoint`
-4. Ejecute: `Test-AzureStack`
+3. Ejecute `Enter-PSSession -ComputerName AzS-ERCS01 -ConfigurationName PrivilegedEndpoint`.
+4. Ejecute `Test-AzureStack`.
 
 Las pruebas tardarán algunos minutos en completarse. Si la instalación no se realizó correctamente, el resultado sería similar a este:
 

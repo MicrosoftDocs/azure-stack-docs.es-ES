@@ -16,16 +16,14 @@ ms.date: 01/07/2020
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: e7254f5fb6a44a268c73ea988d2ba9ecd236d7f0
-ms.sourcegitcommit: b9d520f3b7bc441d43d489e3e32f9b89601051e6
+ms.openlocfilehash: 62b3091ec0ebd2415b7de2be8c04af82d27ccd8d
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75727588"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75879145"
 ---
 # <a name="install-visual-studio-and-connect-to-azure-stack-hub"></a>Instalación de Visual Studio y conexión a Azure Stack Hub
-
-*Se aplica a: Sistemas integrados de Azure Stack Hub y al kit de desarrollo de Azure Stack*
 
 Puede usar Visual Studio para escribir e implementar [plantillas](azure-stack-arm-templates.md) de Azure Resource Manager en Azure Stack Hub. Los pasos de este artículo describen cómo instalar Visual Studio en [Azure Stack Hub](../asdk/asdk-connect.md#connect-to-azure-stack-using-rdp) o en un equipo externo si planea usar Azure Stack Hub a través de [VPN](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn).
 

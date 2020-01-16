@@ -8,16 +8,14 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 41166490ef2a79bc61375479d8c83e0205ab44a6
-ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
+ms.openlocfilehash: c2e043630e601098e0b2abbb1bacbffe44808495
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73639990"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75881457"
 ---
 # <a name="deploy-an-ai-based-footfall-detection-solution-using-azure-and-azure-stack-hub"></a>Implementación de una solución de detección de afluencia de público basada en IA con Azure y Azure Stack Hub
-
-*Se aplica a: Sistemas integrados de Azure Stack Hub y kit de desarrollo de Azure Stack Hub*
 
 En este artículo se describe cómo implementar una solución que genere conclusiones a partir de acciones reales, mediante Azure, Azure Stack Hub y el kit de desarrollo de IA de Custom Vision.
 
@@ -34,7 +32,7 @@ En esta solución, aprenderá cómo:
 > 
 > En el artículo [Consideraciones de diseño para aplicaciones híbridas](overview-app-design-considerations.md) se examinan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
 
-## <a name="prerequisites"></a>Requisitos previos 
+## <a name="prerequisites"></a>Prerequisites 
 
 Antes de empezar a usar esta guía de implementación, asegúrese de:
 

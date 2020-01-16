@@ -8,16 +8,14 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 88355951ea5cffc147ef9644a6e35b78bb80a02c
-ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
+ms.openlocfilehash: 26895aeaf55c466d5800e52c7c482d4516f3f244
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73640050"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75881644"
 ---
 # <a name="configure-hybrid-cloud-connectivity-using-azure-and-azure-stack-hub"></a>Configuración de la conectividad de nube híbrida con Azure y Azure Stack Hub
-
-*Se aplica a: Sistemas integrados de Azure Stack Hub y el kit de desarrollo de Azure Stack Hub*
 
 Puede acceder a recursos con seguridad en Azure global y Azure Stack Hub mediante el patrón de conectividad híbrida.
 
@@ -34,7 +32,7 @@ En esta solución, creará un entorno de ejemplo para:
 > En el artículo [Consideraciones de diseño para aplicaciones híbridas](overview-app-design-considerations.md) se examinan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
 
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 Se requieren algunos componentes para crear una implementación de conectividad híbrida. Algunos de estos componentes tardarán en prepararse, por lo que tendrá que planear en consecuencia.
 
@@ -90,7 +88,7 @@ Especificaciones de conexión:
 
 Direcciones IP de red y subred:
 
-| Conexión de Azure o Azure Stack Hub | NOMBRE | Subred | Dirección IP |
+| Conexión de Azure o Azure Stack Hub | Nombre | Subnet | Dirección IP |
 |-------------------------------------|---------------------------------------------|---------------------------------------|-----------------------------|
 | Red virtual de Azure | ApplicationvNet<br>10.100.102.9/23 | ApplicationSubnet<br>10.100.102.0/24 |  |
 |  |  | GatewaySubnet<br>10.100.103.0/24 |  |

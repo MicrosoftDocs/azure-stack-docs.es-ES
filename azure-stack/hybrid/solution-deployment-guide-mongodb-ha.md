@@ -8,16 +8,14 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 627e6a6092a93161b2d6b216178b84ce056e36e4
-ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
+ms.openlocfilehash: e850cde0196d496d6d854822ee0cd1a679bccca0
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73640410"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75881508"
 ---
 # <a name="deploy-a-highly-available-mongodb-solution-to-azure-and-azure-stack-hub"></a>Implementar una solución MongoDB de alta disponibilidad en Azure y Azure Stack Hub
-
-*Se aplica a: Sistemas integrados de Azure Stack Hub*
 
 Este artículo le guiará a lo largo de una implementación automatizada de un clúster de MongoDB de alta disponibilidad (HA) básico con un sitio de recuperación ante desastres (DR) entre dos entornos de Azure Stack Hub. Para obtener más información acerca de MongoDB y la alta disponibilidad, consulte [Replica Set Members](https://docs.mongodb.com/manual/core/replica-set-members/) (Miembros del conjunto de réplicas).
 
@@ -46,7 +44,7 @@ En esta solución, creará un entorno de ejemplo para:
   - Dos sistemas integrados de Azure Stack Hub conectados (Azure Stack Hub): esta implementación no funciona en los Kits de desarrollo de Azure Stack Hub (ASDK). Para obtener más información sobre Azure Stack Hub, consulte [¿Qué es Azure Stack Hub?](https://azure.microsoft.com/overview/azure-stack/)
       - Una suscripción de inquilino en cada instancia de Azure Stack Hub.    
       - **Tome nota de cada identificador de suscripción y del punto de conexión de Azure Resource Manager para cada instancia de Azure Stack Hub.**
-  - Una entidad de servicio de Azure Active Directory (Azure AD) que tenga permisos para la suscripción del inquilino en Azure Stack Hub. Es posible que deba crear dos entidades de servicio si las instancias de Azure Stack Hub se implementan en diferentes inquilinos de Azure AD. Para obtener información sobre cómo crear una entidad de servicio para Azure Stack Hub, consulte [Creación de entidades de servicio para otorgar a las aplicaciones acceso a los recursos de Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-create-service-principals).    
+  - Una entidad de servicio de Azure Active Directory (Azure AD) que tenga permisos para la suscripción del inquilino en cada instancia de Azure Stack Hub. Es posible que deba crear dos entidades de servicio si las instancias de Azure Stack Hub se implementan en diferentes inquilinos de Azure AD. Para obtener información sobre cómo crear una entidad de servicio para Azure Stack Hub, consulte [Creación de entidades de servicio para otorgar a las aplicaciones acceso a los recursos de Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-create-service-principals).    
       - **Tome nota del id. de aplicación, el secreto de cliente y el nombre de inquilino (xxxxx.onmicrosoft.com) de cada entidad de servicio.**
   - Ubuntu 16.04 sindicado en el Marketplace de cada instancia de Azure Stack Hub. Para obtener más información acerca de la redifusión de Marketplace, consulte [Descarga de elementos de Marketplace desde Azure a Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-download-azure-marketplace-item).
   - [Docker para Windows](https://docs.docker.com/docker-for-windows/) instalado en la máquina local.

@@ -8,16 +8,14 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: d74d2f70ec172ecc2dc640958cb01143ec80af31
-ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
+ms.openlocfilehash: 1b21766561c39cf795665e8229eb1763acb89465
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73640506"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75881797"
 ---
 # <a name="deploy-an-app-that-uses-on-premises-data-and-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Implementación de una aplicación que usa datos locales y se escala en toda la nube con Azure y Azure Stack Hub
-
-*Se aplica a: Sistemas integrados de Azure Stack Hub y el kit de desarrollo de Azure Stack Hub*
 
 En esta guía de soluciones se muestra cómo implementar una aplicación híbrida que abarca tanto Azure como Azure Stack Hub y que usa un solo origen de datos local.
 
@@ -54,7 +52,7 @@ En este tutorial se da por supuesto que tiene conocimientos básicos de Azure gl
 
 En este tutorial también se supone que tiene una suscripción de Azure. Si no tiene una suscripción, puede [crear una cuenta gratuita](https://azure.microsoft.com/free/) antes de empezar.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 Antes de comenzar esta solución, asegúrese de que cumple los requisitos siguientes:
 

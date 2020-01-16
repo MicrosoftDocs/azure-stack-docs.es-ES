@@ -8,16 +8,14 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 11da2f86bcfce1473e5fabe3712281fa3e9e68b2
-ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
+ms.openlocfilehash: c18e510d32773905b59cd756ed49daf59a0d03e9
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73640428"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75881865"
 ---
 # <a name="create-a-geo-distributed-app-solution-to-direct-traffic-with-azure-and-azure-stack-hub"></a>Crear una solución de aplicación distribuida geográficamente para dirigir el tráfico con Azure y Azure Stack Hub
-
-*Se aplica a: Sistemas integrados de Azure Stack Hub y Kit de desarrollo de Azure Stack Hub*
 
 Aprenda a dirigir el tráfico a puntos de conexión específicos en función de varias métricas con el patrón de aplicaciones distribuidas geográficamente. La creación de un perfil de Traffic Manager con la configuración de puntos de conexión y enrutamiento geográfico garantiza que la información se enruta a puntos de conexión en función de los requisitos regionales, la legislación internacional y corporativa, y su necesidad en cuanto a los datos.
 
@@ -69,7 +67,7 @@ Antes de crear el entorno de una aplicación distribuida, resulta útil conocer 
 > 
 > En el artículo [Consideraciones de diseño para aplicaciones híbridas](overview-app-design-considerations.md) se examinan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
 
-## <a name="part-1-create-a-geo-distributed-app"></a>Parte 1: Crear una aplicación distribuida geográficamente
+## <a name="part-1-create-a-geo-distributed-app"></a>Parte 1: Crear una aplicación distribuida geográficamente
 
 En esta parte, creará una aplicación web.
 
@@ -79,7 +77,7 @@ En esta parte, creará una aplicación web.
 > - Dirigir la compilación de la aplicación a varios destinos en la nube.
 > - Administración y configuración del proceso de CD.
 
-### <a name="prerequisites"></a>Requisitos previos
+### <a name="prerequisites"></a>Prerequisites
 
 Se requieren una suscripción de Azure y la instalación de Azure Stack Hub.
 
@@ -100,7 +98,7 @@ Actualice el archivo de zona DNS para el dominio. Azure AD puede entonces compro
 Configure la canalización de integración y entrega continuas (CI/CD) híbrida para implementar la aplicación web en Azure y Azure Stack Hub e insertar automáticamente los cambios en ambas nubes.
 
 > [!Note]  
-> Se requieren Azure Stack Hub con las imágenes adecuadas sindicadas para ejecutarse (Windows Server y SQL) y la implementación de App Service. Para obtener más información, consulte [Antes de empezar a trabajar con App Service en Azure Stack Hub](../operator/azure-stack-app-service-before-you-get-started.md) en la documentación del operador de Azure Stack Hub.
+> Se requiere Azure Stack Hub con las imágenes adecuadas sindicadas para ejecutarse (Windows Server y SQL) y la implementación de App Service. Para obtener más información, consulte [Antes de empezar a trabajar con App Service en Azure Stack Hub](../operator/azure-stack-app-service-before-you-get-started.md) en la documentación del operador de Azure Stack Hub.
 
 #### <a name="add-code-to-azure-repos"></a>Adición de código a Azure Repos
 
@@ -234,7 +232,7 @@ Azure DevOps Services proporcionan una canalización con una gran capacidad de c
 > [!Note]  
 > Algunos valores de configuración de las tareas se han definido automáticamente como [variables de entorno](https://docs.microsoft.com/azure/devops/pipelines/release/variables?view=vsts&tabs=batch#custom-variables) cuando se creó una definición de versión desde una plantilla. Estos valores de configuración no se pueden modificar en la configuración de tareas; para hacerlo, debe seleccionar el elemento del entorno principal.
 
-## <a name="part-2-update-web-app-options"></a>Parte 2: Actualizar las opciones de la aplicación web
+## <a name="part-2-update-web-app-options"></a>Parte 2: Actualizar las opciones de la aplicación web
 
 [Azure App Service](https://docs.microsoft.com/azure/app-service/overview) proporciona un servicio de hospedaje web muy escalable y con aplicación de revisiones de un modo automático. 
 
@@ -251,7 +249,7 @@ Azure DevOps Services proporcionan una canalización con una gran capacidad de c
 
 Para migrar un sitio en vivo y su nombre de dominio DNS a App Service, consulte [Migración de un nombre DNS activo a Azure App Service](https://docs.microsoft.com/azure/app-service/manage-custom-dns-migrate-domain).
 
-### <a name="prerequisites"></a>Requisitos previos
+### <a name="prerequisites"></a>Prerequisites
 
 Para realizar esta solución:
 
@@ -319,7 +317,7 @@ Después de agregar el registro CNAME, la página de registros DNS es como la de
 
 8. Si se indica, agregue más registros de otros tipos (`A` o `TXT`) a los registros DNS de los registradores de nombres de dominio. Azure proporcionará los valores y los tipos de estos registros:
 
-   a.  Un registro **A** que se asigna a la dirección IP de la aplicación.
+   a.  Un registro **D** que se asigna a la dirección IP de la aplicación.
 
    b.  Un registro **TXT** que se asigna al nombre de host predeterminado de la aplicación <app_name>.azurewebsites.net. App Service usa este registro solo durante la configuración para confirmar la propiedad del dominio personalizado. Después de la confirmación, elimine el registro TXT.
 
@@ -350,7 +348,7 @@ Después de agregar el registro CNAME, la página de registros DNS es como la de
 
 Vaya a los nombres DNS que configuró anteriormente (por ejemplo, `northwindcloud.com` o www.northwindcloud.com).
 
-## <a name="part-3-bind-a-custom-ssl-cert"></a>Parte 3: Enlazar un certificado SSL personalizado
+## <a name="part-3-bind-a-custom-ssl-cert"></a>Parte 3: Enlazar un certificado SSL personalizado
 
 En esta parte, seguiremos estos pasos:
 
@@ -362,7 +360,7 @@ En esta parte, seguiremos estos pasos:
 > [!Note]  
 > Si es necesario, se obtendrá un certificado SSL de cliente en Azure Portal y se enlazará a la aplicación web. Para obtener más información, consulte el [tutorial sobre App Service Certificates](https://docs.microsoft.com/azure/app-service/web-sites-purchase-ssl-web-site).
 
-### <a name="prerequisites"></a>Requisitos previos
+### <a name="prerequisites"></a>Prerequisites
 
 Para realizar esta solución:
 

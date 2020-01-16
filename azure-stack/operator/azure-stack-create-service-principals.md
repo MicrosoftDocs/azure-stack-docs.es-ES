@@ -7,16 +7,14 @@ ms.service: azure-stack
 ms.topic: how-to
 ms.date: 11/11/2019
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: ff36a5c280df7ecb68d0d181438489ce696ed4fc
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.openlocfilehash: 73eec3724aa37976809af6d1a4aa1b4b4c7baef5
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955379"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883106"
 ---
 # <a name="use-an-app-identity-to-access-azure-stack-hub-resources"></a>Uso de una identidad de aplicación para acceder a recursos de Azure Stack Hub
-
-*Se aplica a: Sistemas integrados de Azure Stack Hub y el kit de desarrollo de Azure Stack Hub (ASDK)*
 
 Una aplicación que necesita implementar o configurar recursos a través de Azure Resource Manager, debe estar representada por una entidad de servicio. Igual que un usuario está representado por una entidad de seguridad de usuario, una entidad de servicio es un tipo de entidad de seguridad que representa una aplicación. La entidad de servicio proporciona una identidad para la aplicación, lo que le permite delegar únicamente los permisos necesarios a esa entidad de servicio.  
 
@@ -81,7 +79,7 @@ Al crear un certificado para una credencial de entidad de servicio, deben cumpli
 
 Cuando tenga un certificado, use el siguiente script de PowerShell para registrar la aplicación y crear una entidad de servicio. También debe usar la entidad de servicio para iniciar sesión en Azure. Sustituya sus propios valores por los marcadores de posición siguientes:
 
-| Marcador de posición | DESCRIPCIÓN | Ejemplo |
+| Marcador de posición | Descripción | Ejemplo |
 | ----------- | ----------- | ------- |
 | \<PepVM\> | Nombre de la VM del extremo de conexión con privilegios en la instancia de Azure Stack Hub. | "AzS-ERCS01" |
 | \<YourCertificateLocation\> | Ubicación de su certificado X509 en el almacén de certificados local. | "Cert:\CurrentUser\My\AB5A8A3533CC7AA2025BF05120117E06DE407B34" |
@@ -152,7 +150,7 @@ Ahora que ha creado una entidad de servicio, esta sección le mostrará cómo re
 
 Actualice la credencial de certificado con PowerShell y sustituya sus propios valores para los marcadores de posición siguientes:
 
-| Marcador de posición | DESCRIPCIÓN | Ejemplo |
+| Marcador de posición | Descripción | Ejemplo |
 | ----------- | ----------- | ------- |
 | \<PepVM\> | Nombre de la VM del extremo de conexión con privilegios en la instancia de Azure Stack Hub. | "AzS-ERCS01" |
 | \<YourAppName\> | Nombre descriptivo del registro de la nueva aplicación. | "Mi herramienta de administración" |
@@ -197,7 +195,7 @@ Actualice la credencial de certificado con PowerShell y sustituya sus propios va
 
 Ahora cree otro registro de aplicación, pero esta vez especifique una credencial de secreto de cliente. A diferencia de una credencial de certificado, el directorio tiene la capacidad de generar una credencial de secreto de cliente. En lugar de especificar el secreto de cliente, use el conmutador `-GenerateClientSecret` para solicitar que se genere. Sustituya sus propios valores por los marcadores de posición siguientes:
 
-| Marcador de posición | DESCRIPCIÓN | Ejemplo |
+| Marcador de posición | Descripción | Ejemplo |
 | ----------- | ----------- | ------- |
 | \<PepVM\> | Nombre de la VM del extremo de conexión con privilegios en la instancia de Azure Stack Hub. | "AzS-ERCS01" |
 | \<YourAppName\> | Nombre descriptivo del registro de la nueva aplicación. | "Mi herramienta de administración" |
@@ -254,7 +252,7 @@ Mantenga la sesión de la consola de PowerShell abierta, ya que la usará con el
 
 Actualice la credencial de secreto de cliente con PowerShell, mediante el parámetro **ResetClientSecret**, que cambia inmediatamente el secreto de cliente. Sustituya sus propios valores por los marcadores de posición siguientes:
 
-| Marcador de posición | DESCRIPCIÓN | Ejemplo |
+| Marcador de posición | Descripción | Ejemplo |
 | ----------- | ----------- | ------- |
 | \<PepVM\> | Nombre de la VM del extremo de conexión con privilegios en la instancia de Azure Stack Hub. | "AzS-ERCS01" |
 | \<AppIdentifier\> | Identificador asignado al registro de la aplicación. | "S-1-5-21-1634563105-1224503876-2692824315-2623" |
@@ -291,7 +289,7 @@ Ahora verá cómo quitar o eliminar un registro de aplicación del directorio, a
 
 Sustituya sus propios valores por los marcadores de posición siguientes:
 
-| Marcador de posición | DESCRIPCIÓN | Ejemplo |
+| Marcador de posición | Descripción | Ejemplo |
 | ----------- | ----------- | ------- |
 | \<PepVM\> | Nombre de la VM del extremo de conexión con privilegios en la instancia de Azure Stack Hub. | "AzS-ERCS01" |
 | \<AppIdentifier\> | Identificador asignado al registro de la aplicación. | "S-1-5-21-1634563105-1224503876-2692824315-2623" |
