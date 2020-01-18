@@ -21,14 +21,14 @@
       href: azure-stack-quick-create-vm-linux-cli.md
 - name: Tutoriales
   items:
+    - name: Suscripción a una oferta
+      href: azure-stack-subscribe-services.md
     - name: Creación de una máquina virtual a partir de una plantilla
       href: azure-stack-create-vm-template.md
 - name: Guías paso a paso
   items:
     - name: Comience a crear soluciones para la nube híbrida
       items:
-        - name: Suscripción a una oferta
-          href: azure-stack-subscribe-services.md
         - name: Habilitación de un proveedor de soluciones en la nube
           href: azure-stack-csp-enable-billing-usage-tracking.md
         - name: "Uso del portal de Azure\_Stack Hub"
