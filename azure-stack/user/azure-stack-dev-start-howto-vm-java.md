@@ -1,6 +1,6 @@
 ---
-title: Implementación de un archivo WAR de Java en una máquina virtual en Azure Stack | Microsoft Docs
-description: Implemente un archivo WAR de Java en una máquina virtual en Azure Stack.
+title: Implementación de un archivo WAR de Java en una máquina virtual en Azure Stack Hub | Microsoft Docs
+description: Implemente un archivo WAR de Java en una máquina virtual en Azure Stack Hub.
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
@@ -9,24 +9,24 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: 2c9c43439872a19ba590fb22059969f9a7c742f0
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: 75633b7e695db3c6b1e48b7e5f98e9145b6b1fc9
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71824458"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820634"
 ---
-# <a name="deploy-a-java-web-app-to-a-vm-in-azure-stack"></a>Implementación de una aplicación web de Java en una máquina virtual en Azure Stack
+# <a name="deploy-a-java-web-app-to-a-vm-in-azure-stack-hub"></a>Implementación de una aplicación web de Java en una máquina virtual en Azure Stack Hub
 
-Puede crear una máquina virtual para hospedar la aplicación web de Python en Azure Stack. En este artículo, va a instalar y configurar un servidor Apache Tomcat en una máquina virtual Linux en Azure Stack. Después, va a cargar un archivo de recursos de aplicación web de Java (WAR) en el servidor. Un archivo WAR se utiliza para distribuir una colección de archivos Java (JAR), archivos comprimidos que contienen recursos Java como clases, texto, imágenes, XML y HTML, y otros recursos que se utilizan para entregar una aplicación web.
+Puede crear una máquina virtual para hospedar la aplicación web de Python en Azure Stack Hub. En este artículo, va a instalar y configurar un servidor Apache Tomcat en una máquina virtual Linux en Azure Stack Hub. Después, va a cargar un archivo de recursos de aplicación web de Java (WAR) en el servidor. Un archivo WAR se utiliza para distribuir una colección de archivos Java (JAR), archivos comprimidos que contienen recursos de Java como clases, texto, imágenes, XML y HTML, y otros recursos que se utilizan para entregar una aplicación web.
 
 ## <a name="create-a-vm"></a>Crear una VM
 
-1. Configure la máquina virtual en Azure Stack mediante las instrucciones de [Implementación de una máquina virtual Linux para hospedar una aplicación web en Azure Stack](azure-stack-dev-start-howto-deploy-linux.md).
+1. Configure la máquina virtual en Azure Stack Hub mediante las instrucciones de [Implementación de una máquina virtual Linux para hospedar una aplicación web en Azure Stack Hub](azure-stack-dev-start-howto-deploy-linux.md).
 
 2. En el panel de red de la máquina virtual, asegúrese de que los siguientes puertos sean accesibles:
 
-    | Port | Protocolo | DESCRIPCIÓN |
+    | Port | Protocolo | Descripción |
     | --- | --- | --- |
     | 80 | HTTP | El protocolo de transferencia de hipertexto (HTTP) es el protocolo que se utiliza para entregar páginas web desde los servidores. Los clientes se conectan mediante HTTP con un nombre DNS o dirección IP. |
     | 443 | HTTPS | El protocolo de transferencia de hipertexto con cifrado de Capa de sockets seguros (HTTPS) es una versión segura de HTTP que requiere un certificado de seguridad y permite la transmisión cifrada de información. |
@@ -56,7 +56,7 @@ Puede crear una máquina virtual para hospedar la aplicación web de Python en A
 
 1. Cree un usuario de Tomcat haciendo lo siguiente:
 
-    a. Cree un nuevo grupo de Tomcat mediante la ejecución del comando siguiente:
+    a. Cree un nuevo grupo de Tomcat mediante el comando siguiente:
 
     ```bash  
         sudo groupadd tomcat
@@ -87,7 +87,7 @@ Puede crear una máquina virtual para hospedar la aplicación web de Python en A
         sudo chown -R tomcat webapps/ work/ temp/ logs/
     ```
 
-1. Actualice los permisos de Tomcat mediante la ejecución de los comandos siguientes:
+1. Actualice los permisos de Tomcat mediante los comandos siguientes:
 
     ```bash  
         sudo chgrp -R tomcat /opt/tomcat
@@ -95,7 +95,7 @@ Puede crear una máquina virtual para hospedar la aplicación web de Python en A
         sudo chmod g+x conf
     ```
 
-1. Cree un archivo de servicio *systemd*, para que pueda ejecutar Tomcat como un servicio.
+1. Cree un archivo de servicio *systemd*, para poder ejecutar Tomcat como un servicio.
 
    a. Tomcat debe saber dónde está instalado Java. Esta ruta de acceso se conoce comúnmente como *JAVA_HOME*. Busque la ubicación mediante la ejecución de:
 
@@ -110,7 +110,7 @@ Puede crear una máquina virtual para hospedar la aplicación web de Python en A
         java-1.8.0-openjdk-amd64       1081       /usr/lib/jvm/java-1.8.0-openjdk-amd64
     ```
 
-    Para construir la variable *JAVA_HOME*, tome la ruta de acceso de la salida y agregue */jre*. Por ejemplo, con ejemplo anterior, */usr/lib/jvm/java-1.8.0-openjdk-amd64/jre*.
+    Para construir la variable *JAVA_HOME*, tome la ruta de acceso de la salida y agregue */jre*. Por ejemplo, con el ejemplo anterior, */usr/lib/jvm/java-1.8.0-openjdk-amd64/jre*.
 
     b. Utilice el valor del servidor para crear el archivo de servicio systemd:
 
@@ -118,7 +118,7 @@ Puede crear una máquina virtual para hospedar la aplicación web de Python en A
         sudo nano /etc/systemd/system/tomcat.service
     ```
 
-    c. Pegue el siguiente contenido en el archivo de servicio. Modifique el valor de *JAVA_HOME* si es necesario para que coincida con el valor que encuentra en el sistema. También puede modificar la configuración de asignación de memoria que se especifica en CATALINA_OPTS:
+    c. Pegue el siguiente contenido en el archivo de servicio. Modifique el valor de *JAVA_HOME* si es necesario para que coincida con el valor que encontró en el sistema. También puede modificar la configuración de asignación de memoria que se especifica en CATALINA_OPTS:
 
     ```Text  
         [Unit]
@@ -174,11 +174,11 @@ Puede crear una máquina virtual para hospedar la aplicación web de Python en A
         sudo ufw allow 8080
     ```
 
-    Si no ha agregado las *reglas del puerto de entrada* para la máquina virtual de Azure Stack, hágalo ahora. Para obtener más información, consulte [Create a VM](#create-a-vm) (Creación de una VM).
+    Si no ha agregado las *reglas del puerto de entrada* para la máquina virtual de Azure Stack Hub, hágalo ahora. Para obtener más información, consulte [Create a VM](#create-a-vm) (Creación de una VM).
 
-1. Abra un explorador en la misma red que Azure Stack y, después, abra el servidor, *suMáquina.local.cloudapp.azurestack.external:8080*.
+1. Abra un explorador en la misma red que Azure Stack Hub y abra el servidor *suMáquina.local.cloudapp.azurestack.external:8080*.
 
-    ![Apache Tomcat en una máquina virtual de Azure Stack](media/azure-stack-dev-start-howto-vm-java/apache-tomcat.png)
+    ![Apache Tomcat en una máquina virtual de Azure Stack Hub](media/azure-stack-dev-start-howto-vm-java/apache-tomcat.png)
 
     Se carga la página de Apache Tomcat en el servidor. A continuación, configura el servidor para tener acceso al estado del servidor y las aplicaciones Manager y Host Manager.
 
@@ -217,7 +217,7 @@ Puede crear una máquina virtual para hospedar la aplicación web de Python en A
 
     c. Guarde y cierre el archivo.
 
-1. Tomcat restringe el acceso a las aplicaciones *Manager* y *Host Manager* a las conexiones que proceden del servidor. Como está instalando Tomcat en una máquina virtual en Azure Stack, querrá quitar esta restricción. Cambie las restricciones de las direcciones IP en estas aplicaciones mediante la modificación de los archivos *context.xml* adecuados.
+1. Tomcat restringe el acceso a las aplicaciones *Manager* y *Host Manager* a las conexiones que proceden del servidor. Como está instalando Tomcat en una máquina virtual en Azure Stack Hub, querrá quitar esta restricción. Cambie las restricciones de las direcciones IP en estas aplicaciones mediante la modificación de los archivos *context.xml* adecuados.
 
     a. Actualice *context.xml* en la aplicación Manager:
 
@@ -225,7 +225,7 @@ Puede crear una máquina virtual para hospedar la aplicación web de Python en A
         sudo nano /opt/tomcat/webapps/manager/META-INF/context.xml
     ```
 
-    b. Convierta en comentario la restricción de la dirección IP para permitir conexiones desde cualquier lugar, o agregue la dirección IP de la máquina que está utilizando para conectarse a Tomcat.
+    b. Convierta en comentario la restricción de la dirección IP para permitir conexiones desde cualquier lugar o agregue la dirección IP de la máquina que está utilizando para conectarse a Tomcat.
 
     ```XML  
     <Context antiResourceLocking="false" privileged="true" >
@@ -250,13 +250,13 @@ Puede crear una máquina virtual para hospedar la aplicación web de Python en A
         sudo systemctl restart tomcat
     ```
 
-1. Abra un explorador en la misma red que Azure Stack y abra el servidor: *suMáquina.local.cloudapp.azurestack.external:8080*.
+1. Abra un explorador en la misma red que Azure Stack Hub y abra el servidor *suMáquina.local.cloudapp.azurestack.external:8080*.
 
     a. Para examinar el estado del servidor de Tomcat y comprobar que tiene acceso, seleccione **Server Status** (Estado del servidor).
 
     b. Inicie sesión con las credenciales de Tomcat.
 
-    ![Apache Tomcat en una máquina virtual de Azure Stack](media/azure-stack-dev-start-howto-vm-java/apache-tomcat-management-app.png)
+    ![Apache Tomcat en una máquina virtual de Azure Stack Hub](media/azure-stack-dev-start-howto-vm-java/apache-tomcat-management-app.png)
 
 ## <a name="create-an-app"></a>Creación de una aplicación
 
@@ -274,7 +274,7 @@ Para obtener instrucciones sobre cómo desarrollar aplicaciones de Java en Azure
         sudo systemctl stop tomcat
     ```
 
-1. Para que pueda escribir en la carpeta de aplicaciones web, agregue su usuario FTP al grupo de Tomcat. El usuario FTP es el usuario que define al crear la máquina virtual en Azure Stack.
+1. Para poder escribir en la carpeta de aplicaciones web, agregue su usuario FTP al grupo de Tomcat. El usuario FTP es el usuario que define al crear la máquina virtual en Azure Stack Hub.
 
     ```bash  
         sudo usermod -a -G tomcat <VM-user>
@@ -294,6 +294,6 @@ Para obtener instrucciones sobre cómo desarrollar aplicaciones de Java en Azure
     
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Obtenga más información sobre cómo [desarrollar para Azure Stack](azure-stack-dev-start.md).
-- Obtenga información sobre las [implementaciones comunes para Azure Stack como IaaS](azure-stack-dev-start-deploy-app.md).
+- Obtenga más información sobre cómo [desarrollar para Azure Stack Hub](azure-stack-dev-start.md).
+- Obtenga información sobre las [implementaciones comunes para Azure Stack Hub como IaaS](azure-stack-dev-start-deploy-app.md).
 - Para conocer el lenguaje de programación de Java y consultar recursos adicionales para Java, consulte [Java.com](https://www.java.com).

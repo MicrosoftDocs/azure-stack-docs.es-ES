@@ -1,6 +1,6 @@
 ---
-title: Creación de una VM Linux mediante PowerShell en Azure Stack | Microsoft Docs
-description: Creación de una VM Linux mediante PowerShell en Azure Stack
+title: Creación de una VM Linux mediante PowerShell en Azure Stack Hub | Microsoft Docs
+description: Cree una máquina virtual Linux mediante PowerShell en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,18 +15,16 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.custom: mvc
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 2bd72ad2de570eeb3089645c5ee7c9dd3784e83c
-ms.sourcegitcommit: bbe1048682c7dccc6cebde542462c14ee1f3d0d1
+ms.openlocfilehash: 7a7d47eaf8bf415f61b9d2b78087204027404270
+ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75677678"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76023107"
 ---
-# <a name="quickstart-create-a-linux-server-vm-by-using-powershell-in-azure-stack"></a>Inicio rápido: Creación de una VM de servidor Linux mediante PowerShell en Azure Stack
+# <a name="quickstart-create-a-linux-server-vm-by-using-powershell-in-azure-stack-hub"></a>Inicio rápido: Creación de una máquina virtual de servidor Linux mediante PowerShell en Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
-
-Puede crear una máquina virtual en un servidor Ubuntu Server 16.04 LTS mediante PowerShell para Azure Stack. Siga los pasos que se describen en este artículo para crear y usar una máquina virtual. En este artículo también se muestra cómo:
+Puede crear una máquina virtual en un servidor Ubuntu Server 16.04 LTS mediante PowerShell para Azure Stack Hub. Siga los pasos que se describen en este artículo para crear y usar una máquina virtual. En este artículo también se muestra cómo:
 
 * Conectarse a la máquina virtual con un cliente remoto.
 * Instalar un servidor web NGINX y ver la página principal predeterminada.
@@ -34,17 +32,17 @@ Puede crear una máquina virtual en un servidor Ubuntu Server 16.04 LTS mediante
 
 ## <a name="prerequisites"></a>Prerequisites
 
-* Una imagen de Linux en el Marketplace de Azure Stack. Azure Stack Marketplace no tiene la imagen de Linux de forma predeterminada. Solicite al operador de Azure Stack que le proporcione la imagen de Ubuntu Server 16.04 LTS que necesita. El operador puede seguir las instrucciones del artículo [Descarga de elementos de Marketplace desde Azure a Azure Stack](../operator/azure-stack-download-azure-marketplace-item.md).
+* Una imagen de Linux en el Marketplace de Azure Stack Hub. El Marketplace de Azure Stack Hub no tiene una imagen de Linux de forma predeterminada. Solicite al operador de Azure Stack Hub que le proporcione la imagen de Ubuntu Server 16.04 LTS que necesita. El operador puede seguir las instrucciones del artículo [Descarga de elementos de Marketplace desde Azure a Azure Stack Hub](../operator/azure-stack-download-azure-marketplace-item.md).
 
-* Azure Stack requiere una versión específica de la CLI de Azure para crear y administrar sus recursos. 
-  * Si no tiene PowerShell configurado para Azure Stack, consulte [Instalación de PowerShell para Azure Stack](../operator/azure-stack-powershell-install.md). 
-  * Una vez configurado PowerShell para Azure Stack, se conectará con el entorno de Azure Stack. Para obtener instrucciones, consulte [Conexión a Azure Stack con PowerShell como usuario](azure-stack-powershell-configure-user.md).
+* Azure Stack Hub requiere una versión específica de la CLI de Azure para crear y administrar sus recursos. 
+  * Si no tiene PowerShell configurado para Azure Stack Hub, consulte [Instalación de PowerShell para Azure Stack Hub](../operator/azure-stack-powershell-install.md). 
+  * Una vez configurado PowerShell para Azure Stack Hub, se conectará con el entorno de Azure Stack Hub. Para obtener instrucciones, consulte [Conexión a Azure Stack Hub con PowerShell como usuario](azure-stack-powershell-configure-user.md).
 
 * Se guardó una clave pública de Secure Shell (SSH) denominada *id_rsa.pub* en el directorio *.ssh* del perfil de usuario de Windows. Para obtener más información sobre la creación de claves SSH, consulte [Uso de una clave pública SSH](azure-stack-dev-start-howto-ssh-public-key.md).
 
 ## <a name="create-a-resource-group"></a>Crear un grupo de recursos
 
-Un grupo de recursos es un contenedor lógico en el que puede implementar y administrar recursos de Azure Stack. Para crear un grupo de recursos, desde el Kit de desarrollo de Azure Stack (ASDK) o el sistema integrado de Azure Stack, ejecute el siguiente bloque de código: 
+Un grupo de recursos es un contenedor lógico en el que puede implementar y administrar recursos de Azure Stack Hub. Ejecute el bloque de código siguiente para crear un grupo de recursos: 
 
 > [!NOTE]
 > En los siguientes ejemplos de código, hemos asignado valores para todas las variables. Sin embargo, puede asignar sus propios valores.
@@ -212,7 +210,7 @@ New-AzureRmVM `
 ## Create a resource group
 
 <#
-A resource group is a logical container where you can deploy and manage Azure Stack resources. From your development kit or the Azure Stack integrated system, run the following code block to create a resource group. Though we've assigned values for all the variables in this article, you can use these values or assign new ones.
+A resource group is a logical container where you can deploy and manage Azure Stack Hub resources. From your development kit or the Azure Stack Hub integrated system, run the following code block to create a resource group. Though we've assigned values for all the variables in this article, you can use these values or assign new ones.
 #>
 
 # Edit your variables, if required
@@ -418,4 +416,4 @@ Remove-AzureRmResourceGroup -Name myResourceGroup
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-En esta guía de inicio rápido implementó una máquina virtual básica en un servidor Linux. Para obtener más información sobre las VM de Azure Stack, vaya a [Consideraciones para VM en Azure Stack](azure-stack-vm-considerations.md).
+En esta guía de inicio rápido implementó una máquina virtual básica en un servidor Linux. Para más información sobre las máquinas virtuales de Azure Stack Hub, vaya a [Consideraciones sobre máquinas virtuales en Azure Stack Hub](azure-stack-vm-considerations.md).

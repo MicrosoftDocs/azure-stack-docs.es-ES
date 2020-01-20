@@ -1,6 +1,6 @@
 ---
-title: Implementación de una aplicación web de Go en una máquina virtual en Azure Stack | Microsoft Docs
-description: Implementación de una aplicación web de Go en una máquina virtual en Azure Stack
+title: Implementación de una aplicación web de Go en una máquina virtual en Azure Stack Hub | Microsoft Docs
+description: Implementación de una aplicación web de Go en una máquina virtual en Azure Stack Hub
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
@@ -9,24 +9,24 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: b3db83ca42c25503be4ddd2053a011a85ffd7034
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: 1f05b147af4ddd72e9d70eab69150ce442b7b458
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71824432"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820651"
 ---
-# <a name="deploy-a-go-web-app-to-a-vm-in-azure-stack"></a>Implementación de una aplicación web de Go en una máquina virtual en Azure Stack
+# <a name="deploy-a-go-web-app-to-a-vm-in-azure-stack-hub"></a>Implementación de una aplicación web de Go en una máquina virtual en Azure Stack Hub
 
-Puede crear una máquina virtual para hospedar una aplicación web de Go en Azure Stack. En este artículo, va a configurar un servidor, va a configurar el servidor para hospedar la aplicación web de Go y, después, implementar la aplicación en Azure Stack.
+Puede crear una máquina virtual para hospedar una aplicación web de Go en Azure Stack Hub. En este artículo, va a configurar un servidor, a configurar este para que hospede la aplicación web de Go y, después, a implementar la aplicación en Azure Stack Hub.
 
 ## <a name="create-a-vm"></a>Crear una VM
 
-1. Configure la máquina virtual en Azure Stack mediante las instrucciones de [Implementación de una máquina virtual Linux para hospedar una aplicación web en Azure Stack](azure-stack-dev-start-howto-deploy-linux.md).
+1. Configure la máquina virtual en Azure Stack Hub mediante las instrucciones de [Implementación de una máquina virtual Linux para hospedar una aplicación web en Azure Stack Hub](azure-stack-dev-start-howto-deploy-linux.md).
 
 2. En el panel de red de la máquina virtual, asegúrese de que los siguientes puertos sean accesibles:
 
-    | Port | Protocolo | DESCRIPCIÓN |
+    | Port | Protocolo | Descripción |
     | --- | --- | --- |
     | 80 | HTTP | El protocolo de transferencia de hipertexto (HTTP) es el protocolo que se utiliza para entregar páginas web desde los servidores. Los clientes se conectan mediante HTTP con un nombre DNS o dirección IP. |
     | 443 | HTTPS | El protocolo de transferencia de hipertexto con cifrado de Capa de sockets seguros (HTTPS) es una versión segura de HTTP que requiere un certificado de seguridad y permite la transmisión cifrada de información. |
@@ -93,6 +93,6 @@ Puede crear una máquina virtual para hospedar una aplicación web de Go en Azur
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Obtenga más información sobre cómo [desarrollar para Azure Stack](azure-stack-dev-start.md).
-- Obtenga información sobre las [implementaciones comunes para Azure Stack como IaaS](azure-stack-dev-start-deploy-app.md).
+- Obtenga más información sobre cómo [desarrollar para Azure Stack Hub](azure-stack-dev-start.md).
+- Obtenga información sobre las [implementaciones comunes para Azure Stack Hub como IaaS](azure-stack-dev-start-deploy-app.md).
 - Para conocer el lenguaje de programación de Go y consultar recursos adicionales para Go, consulte [Golang.org](https://golang.org).

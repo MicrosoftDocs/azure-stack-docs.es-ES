@@ -1,6 +1,6 @@
 ---
-title: Creación de una máquina virtual con Windows Server mediante PowerShell en Azure Stack | Microsoft Docs
-description: Cree una máquina virtual con Windows Server mediante PowerShell en Azure Stack.
+title: Creación de una máquina virtual con Windows Server mediante PowerShell en Azure Stack Hub | Microsoft Docs
+description: Cree una máquina virtual con Windows Server mediante PowerShell en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -16,18 +16,16 @@ ms.author: mabrigg
 ms.custom: mvc
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: e31edd266c16fa51855efa3259c86ecf9b53660b
-ms.sourcegitcommit: bbe1048682c7dccc6cebde542462c14ee1f3d0d1
+ms.openlocfilehash: a6b051245821f3def20c20af41301d584b10eb0d
+ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75677695"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76023179"
 ---
-# <a name="quickstart-create-a-windows-server-vm-by-using-powershell-in-azure-stack"></a>Inicio rápido: Creación de una máquina virtual con Windows Server mediante PowerShell en Azure Stack
+# <a name="quickstart-create-a-windows-server-vm-by-using-powershell-in-azure-stack-hub"></a>Inicio rápido: Creación de una máquina virtual con Windows Server mediante PowerShell en Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
-
-Puede crear una máquina virtual Windows Server 2016 mediante el uso de PowerShell de Azure Stack. Siga los pasos descritos en este artículo para crear y usar una máquina virtual. En este artículo también se proporcionan los pasos para:
+Puede crear una máquina virtual Windows Server 2016 mediante el uso de PowerShell de Azure Stack Hub. Siga los pasos descritos en este artículo para crear y usar una máquina virtual. En este artículo también se proporcionan los pasos para:
 
 * Conectarse a la máquina virtual con un cliente remoto.
 * Instalar al servidor web IIS y ver la página principal predeterminada.
@@ -38,15 +36,15 @@ Puede crear una máquina virtual Windows Server 2016 mediante el uso de PowerShe
 
 ## <a name="prerequisites-for-windows-server-vm"></a>Requisitos previos para la máquina virtual de Windows Server
 
-* Asegúrese de que el operador de Azure Stack haya agregado la imagen **Windows Server 2016** a Marketplace de Azure Stack.
+* Asegúrese de que el operador de Azure Stack Hub haya agregado la imagen **Windows Server 2016** a Marketplace de Azure Stack Hub.
 
-* Azure Stack necesita una versión específica de Azure PowerShell para crear y administrar los recursos. Si no tiene PowerShell configurado para Azure Stack, siga estos pasos para [instalar](../operator/azure-stack-powershell-install.md) PowerShell.
+* Azure Stack Hub necesita una versión específica de Azure PowerShell para crear y administrar los recursos. Si no tiene PowerShell configurado para Azure Stack Hub, siga estos pasos para [instalar](../operator/azure-stack-powershell-install.md) PowerShell.
 
-* Con Azure Stack PowerShell configurado, debe conectarse al entorno de Azure Stack. Para instrucciones, consulte [Configuración del entorno de PowerShell del usuario de Azure Stack](azure-stack-powershell-configure-user.md).
+* Con PowerShell configurado para Azure Stack Hub, debe conectarse al entorno de Azure Stack Hub. Para obtener instrucciones, consulte [Configuración del entorno de PowerShell del usuario de Azure Stack Hub](azure-stack-powershell-configure-user.md).
 
 ## <a name="create-a-resource-group"></a>Crear un grupo de recursos
 
-Un grupo de recursos es un contenedor lógico en el que se implementan y se administran los recursos de Azure Stack. Desde el kit de desarrollo o el sistema integrado de Azure Stack, ejecute el siguiente bloque de código para crear un grupo de recursos. 
+Un grupo de recursos es un contenedor lógico en el que se implementan y se administran los recursos de Azure Stack Hub. Desde el kit de desarrollo o el sistema integrado de Azure Stack Hub, ejecute el siguiente bloque de código para crear un grupo de recursos. 
 
 > [!NOTE]
 > Se asignan valores para todas las variables en los ejemplos de código. Sin embargo, puede asignar nuevos valores si lo desea.
@@ -248,4 +246,4 @@ Remove-AzureRmResourceGroup `
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-En esta guía de inicio rápido, ha implementado una máquina virtual Windows sencilla. Para más información acerca de las máquinas virtuales de Azure Stack, vaya a [Características de la máquina virtual de Azure Stack](azure-stack-vm-considerations.md).
+En esta guía de inicio rápido, ha implementado una máquina virtual Windows sencilla. Para más información acerca de las máquinas virtuales de Azure Stack Hub, vaya a [Características de la máquina virtual de Azure Stack Hub](azure-stack-vm-considerations.md).

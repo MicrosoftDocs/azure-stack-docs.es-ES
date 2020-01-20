@@ -161,7 +161,11 @@
                 - name: Aplicación de actualizaciones de OEM
                   href: azure-stack-update-oem.md
             - name: Supervisión del estado de actualización
-              href: azure-stack-update-monitor.md
+              items:
+                - name: Uso de PowerShell
+                  href: azure-stack-update-monitor.md
+                - name: Uso de punto de conexión con privilegios
+                  href: azure-stack-monitor-update.md
             - name: Solución de problemas de actualización
               href: azure-stack-updates-troubleshoot.md
         - name: Supervisión de estado y alertas

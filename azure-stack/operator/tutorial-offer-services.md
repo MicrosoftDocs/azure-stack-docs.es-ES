@@ -1,5 +1,5 @@
 ---
-title: Ofrecer servicios de Azure Stack para la suscripción.
+title: Ofrecer servicios de Azure Stack Hub para la suscripción.
 description: Aprenda a crear una oferta de servicio mediante ofertas, planes y servicios.
 author: BryanLa
 ms.author: bryanla
@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 10/16/2019
 ms.reviewer: shriramnat
 ms.lastreviewed: 10/16/2019
-ms.openlocfilehash: 03be52d653fe6340a88a9c466fef8c9b1ccc9256
-ms.sourcegitcommit: b9d520f3b7bc441d43d489e3e32f9b89601051e6
+ms.openlocfilehash: 331d76a61ec67165473702d47f35c02533dcd0b8
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75727435"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816571"
 ---
 # <a name="tutorial-offer-a-service-to-users"></a>Tutorial: Oferta de un servicio a los usuarios
 
@@ -37,14 +37,14 @@ Una oferta consta de uno o varios planes. Un plan otorga el derecho de acceso a 
 
 Un proveedor de recursos admite la creación, implementación y administración de sus recursos como servicios. Un ejemplo común es el proveedor de recursos Microsoft. compute, que ofrece la posibilidad de crear e implementar máquinas virtuales (VM). Para ver una introducción sobre Azure Resource Manager, consulte [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview).
 
-En Azure Stack, hay dos categorías generales de proveedores de recursos: las que implementan recursos como servicios fundamentales y las que se implementan como servicios de valor agregado.
+En Azure Stack Hub, hay dos categorías generales de proveedores de recursos: los que implementan recursos como servicios fundamentales y los que los implementan como servicios de valor agregado.
 
 ### <a name="foundational-services"></a>Servicios fundamentales
 
 >[!NOTE]
 > En este tutorial, aprenderá a crear una oferta basada en servicios fundamentales. 
 
-Los siguientes proveedores de recursos son compatibles con los servicios fundamentales, que están disponibles de forma nativa con cada instalación de Azure Stack:
+Los siguientes proveedores de recursos admiten los siguientes servicios fundamentales, los cuales están disponibles de forma nativa con cada instalación de Azure Stack Hub:
 
 | Proveedor de recursos | Recursos de ejemplo |
 | ----------------- | ------------------|
@@ -56,9 +56,9 @@ Los siguientes proveedores de recursos son compatibles con los servicios fundame
 ### <a name="value-add-services"></a>Servicios de valor agregado
 
 >[!NOTE]
-> Para ofrecer un servicio de valor agregado, primero se debe instalar el proveedor de recursos correspondiente en Marketplace de Azure Stack. Una vez instalados, sus recursos se ofrecen a los usuarios de la misma manera que los servicios fundamentales. Consulte la sección de **guías paso a paso** de la tabla de contenido, para ver el conjunto actual de proveedores de recursos que admiten ofertas de servicios de valor agregado.
+> Para ofrecer un servicio de valor agregado, primero se debe instalar el proveedor de recursos correspondiente en Marketplace de Azure Stack Hub. Una vez instalados, sus recursos se ofrecen a los usuarios de la misma manera que los servicios fundamentales. Consulte la sección de **guías paso a paso** de la tabla de contenido, para ver el conjunto actual de proveedores de recursos que admiten ofertas de servicios de valor agregado.
 
-Los proveedores de recursos que se instalan después de que se ha implementado Azure Stack admiten los servicios de valor agregado. Algunos ejemplos son:
+Los proveedores de recursos que se instalan después de que se ha implementado Azure Stack Hub admiten los servicios de valor agregado. Algunos ejemplos son:
 
 | Proveedor de recursos | Recursos de ejemplo |
 | ----------------- | ------------------------- |

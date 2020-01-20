@@ -1,5 +1,5 @@
 ---
-title: Pruebe una oferta de servicios de Azure Stack.
+title: Pruebe una oferta de servicios de Azure Stack Hub.
 description: Obtenga información sobre cómo probar una oferta de servicio mediante la creación de una suscripción y la implementación de recursos.
 author: BryanLa
 ms.author: bryanla
@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 10/13/2019
 ms.reviewer: shriramnat
 ms.lastreviewed: 10/06/2019
-ms.openlocfilehash: 9e41cae53612cdf412840eb63d648a9c73260fa6
-ms.sourcegitcommit: b9d520f3b7bc441d43d489e3e32f9b89601051e6
+ms.openlocfilehash: fd14a6099c9906a0b37c8227164b213235dcfee3
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75727469"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820940"
 ---
 # <a name="tutorial-test-a-service-offering"></a>Tutorial: Prueba de una oferta de un servicio
 
@@ -31,7 +31,7 @@ Antes de comenzar con este tutorial, debe completar los siguientes requisitos pr
 
 - Complete el tutorial [Ofrecer un servicio a los usuarios](tutorial-offer-services.md). En él aprenderá a crear la oferta que se usa en este tutorial.
 
-- Asimismo, la oferta a la que se suscribe en este tutorial permite la implementación de un recurso de máquina virtual (VM). Si quiere probar la implementación de la VM, primero debe hacer que una imagen de VM esté disponible en Marketplace de Azure Stack. Para ello, descárguelo de Azure Marketplace. Consulte [Descarga de elementos de Marketplace desde Azure a Azure Stack](azure-stack-download-azure-marketplace-item.md) para obtener más información. 
+- Asimismo, la oferta a la que se suscribe en este tutorial permite la implementación de un recurso de máquina virtual (VM). Si quiere probar la implementación de la máquina virtual, primero debe hacer que una imagen de una máquina virtual esté disponible en Marketplace de Azure Stack Hub. Para ello, descárguela de Azure Marketplace. Consulte [Descarga de elementos de Marketplace desde Azure a Azure Stack Hub](azure-stack-download-azure-marketplace-item.md) para más información. 
 
 ## <a name="subscribe-to-the-offer"></a>Suscripción a la oferta
 
@@ -141,6 +141,6 @@ En este tutorial, ha aprendido cómo:
 
 A continuación, obtenga información sobre la implementación de proveedores de recursos para servicios de valor agregado. Estos le permitirán ofrecer incluso más servicios a los usuarios de los planes:
 
-- [Ofrecer SQL en Azure Stack](azure-stack-sql-resource-provider.md)
-- [Ofrecer MySQL en Azure Stack](azure-stack-mysql-resource-provider.md)
-- [Ofrecer App Service en Azure Stack](azure-stack-app-service-overview.md)
+- [Ofrecer SQL en Azure Stack Hub](azure-stack-sql-resource-provider.md)
+- [Ofrecer MySQL en Azure Stack Hub](azure-stack-mysql-resource-provider.md)
+- [Ofrecer App Service en Azure Stack Hub](azure-stack-app-service-overview.md)

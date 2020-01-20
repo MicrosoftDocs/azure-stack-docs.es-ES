@@ -1,6 +1,6 @@
 ---
-title: Implementación de una aplicación en Azure Stack| Microsoft Docs
-description: Implementación de una aplicación en Azure Stack.
+title: Implementación de una aplicación en Azure Stack Hub | Microsoft Docs
+description: Implemente una aplicación en Azure Stack Hub.
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
@@ -9,24 +9,24 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: 4d8dbc22a69c204b8d6a755d2a8402ba7185d03e
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: 5f29fd7a0d2ab8df9d713927b7e9bada38d0e249
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71824737"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820685"
 ---
-# <a name="common-deployments-for-azure-stack"></a>Implementaciones comunes para Azure Stack
+# <a name="common-deployments-for-azure-stack-hub"></a>Implementaciones comunes para Azure Stack Hub
 
-Azure Stack admite ambas implementaciones de infraestructura como servicio (IaaS) y plataforma como servicio (PaaS). En este artículo se enumeran los recursos para configurar una máquina virtual (VM) y, a continuación, implementarla en Azure Stack.
+Azure Stack Hub admite ambas implementaciones de infraestructura como servicio (IaaS) y plataforma como servicio (PaaS). En este artículo se enumeran los recursos para configurar una máquina virtual y, a continuación, implementarla en Azure Stack Hub.
 
 ## <a name="before-you-begin"></a>Antes de empezar
 
-Antes de empezar a implementar una aplicación en Azure Stack, configure la máquina de desarrollo. Para obtener instrucciones sobre cómo prepararse para trabajar con Azure Stack como desarrollador, consulte [Configurar un entorno de desarrollo en Azure Stack](azure-stack-dev-start.md).
+Antes de empezar a implementar una aplicación en Azure Stack Hub, configure la máquina de desarrollo. Para obtener instrucciones sobre cómo prepararse para trabajar con Azure Stack Hub como desarrollador, consulte [Configurar un entorno de desarrollo en Azure Stack Hub](azure-stack-dev-start.md).
 
 ## <a name="deploy-an-app-to-a-vm"></a>Implementación de una aplicación en una máquina virtual
 
-Los siguientes artículos sobre procedimientos le guiarán a través de la configuración de una máquina virtual (VM) en Azure Stack y la implementación de la aplicación desde la estación de trabajo de desarrollo en Azure Stack.
+Los siguientes artículos sobre procedimientos le guiarán a través de la configuración de una máquina virtual en Azure Stack Hub y la implementación de la aplicación desde la estación de trabajo de desarrollo en Azure Stack Hub.
 
 - [.NET Core (C#)](azure-stack-dev-start-howto-vm-dotnet.md)
 - [Java](azure-stack-dev-start-howto-vm-java.md)
@@ -37,5 +37,5 @@ Los siguientes artículos sobre procedimientos le guiarán a través de la confi
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Configure un [entorno de desarrollo en Azure Stack](azure-stack-dev-start.md).
-- Configure una [canalización de integración continua/entrega continua (CI/CD) en Azure Stack](azure-stack-solution-pipeline.md).
+- Configuración de un [entorno de desarrollo en Azure Stack Hub](azure-stack-dev-start.md).
+- Configure una [canalización de integración continua/entrega continua (CI/CD) en Azure Stack Hub](azure-stack-solution-pipeline.md).

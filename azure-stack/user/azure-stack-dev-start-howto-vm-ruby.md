@@ -1,6 +1,6 @@
 ---
-title: Implementación de una aplicación de Ruby en una máquina virtual en Azure Stack | Microsoft Docs
-description: Implemente una aplicación de Ruby en una máquina virtual en Azure Stack.
+title: Implementación de una aplicación de Ruby en una máquina virtual en Azure Stack Hub | Microsoft Docs
+description: Implemente una aplicación de Ruby en una máquina virtual en Azure Stack Hub.
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
@@ -9,26 +9,26 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: e54fc1cd1e8fe8588a9498b5af8476437880e988
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: 1490a571078556d5fd958ecf9717a21f5607ab79
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71824182"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820549"
 ---
-# <a name="deploy-a-ruby-web-app-to-a-vm-in-azure-stack"></a>Implementación de una aplicación web de Ruby en una máquina virtual en Azure Stack
+# <a name="deploy-a-ruby-web-app-to-a-vm-in-azure-stack-hub"></a>Implementación de una aplicación web de Ruby en una máquina virtual en Azure Stack Hub
 
-Puede crear una máquina virtual para hospedar la aplicación web de Ruby en Azure Stack. En este artículo, va a configurar un servidor, va a configurar el servidor para hospedar la aplicación web de Ruby y, después, implementar la aplicación en Azure Stack.
+Puede crear una máquina virtual para hospedar la aplicación web de Ruby en Azure Stack Hub. En este artículo, va a configurar un servidor, a configurar este para que hospede la aplicación web de Ruby y, después, a implementar la aplicación en Azure Stack Hub.
 
 En este artículo se usa Ruby y la plataforma web Ruby on Rails.
 
 ## <a name="create-a-vm"></a>Crear una VM
 
-1. Configure la máquina virtual en Azure Stack. Para obtener instrucciones, consulte [Implementación de una máquina virtual Linux para hospedar una aplicación web en Azure Stack](azure-stack-dev-start-howto-deploy-linux.md).
+1. Configure la máquina virtual en Azure Stack Hub. Para obtener instrucciones, consulte [Implementación de una máquina virtual Linux para hospedar una aplicación web en Azure Stack Hub](azure-stack-dev-start-howto-deploy-linux.md).
 
 2. En el panel de red de la máquina virtual, asegúrese de que los siguientes puertos sean accesibles:
 
-    | Port | Protocolo | DESCRIPCIÓN |
+    | Port | Protocolo | Descripción |
     | --- | --- | --- |
     | 80 | HTTP | El protocolo de transferencia de hipertexto (HTTP) es el protocolo que se utiliza para entregar páginas web desde los servidores. Los clientes se conectan mediante HTTP con un nombre DNS o dirección IP. |
     | 443 | HTTPS | El protocolo de transferencia de hipertexto con cifrado de Capa de sockets seguros (HTTPS) es una versión segura de HTTP que requiere un certificado de seguridad y permite la transmisión cifrada de información. |
@@ -100,6 +100,6 @@ En este artículo se usa Ruby y la plataforma web Ruby on Rails.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Obtenga más información sobre cómo [desarrollar para Azure Stack](azure-stack-dev-start.md).
-- Obtenga información sobre las [implementaciones comunes para Azure Stack como IaaS](azure-stack-dev-start-deploy-app.md).
+- Obtenga más información sobre cómo [desarrollar para Azure Stack Hub](azure-stack-dev-start.md).
+- Obtenga información sobre las [implementaciones comunes para Azure Stack Hub como IaaS](azure-stack-dev-start-deploy-app.md).
 - Para conocer el lenguaje de programación de Ruby y consultar recursos adicionales para Ruby, consulte [Ruby-lang.org](https://www.ruby-lang.org).

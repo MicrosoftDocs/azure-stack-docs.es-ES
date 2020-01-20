@@ -17,12 +17,12 @@ ms.author: justinha
 ms.reviewer: unknown
 ms.custom: ''
 ms.lastreviewed: 11/08/2019
-ms.openlocfilehash: dee0d3164f0c521b657f9b8f26377e062ee1e536
-ms.sourcegitcommit: 7817d61fa34ac4f6410ce6f8ac11d292e1ad807c
+ms.openlocfilehash: 1d4b3a3dc094adaac0bc7cfc48d3a7aa54166dc6
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74690025"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882154"
 ---
 # <a name="azure-stack-hub-overview"></a>Introducción a Azure Stack Hub
 
@@ -50,13 +50,11 @@ La arquitectura de Azure Stack Hub le permite proporcionar servicios de Azure en
 
 ## <a name="deployment-options"></a>Opciones de implementación
 
-<!---At deployment, move out asdk, break into connected/disc…then explain  roles operator vs user < replace how is azure stack managed with role description, rbac, reporting, high availability take out.--->
-
 Los sistemas integrados de Azure Stack Hub se ofrecen gracias a una asociación entre Microsoft y sus asociados de hardware, que permite crear una solución que ofrece innovación dirigida a la nube y sencillez en la administración de la computación. Como Azure Stack Hub se ofrece como un sistema en el que el software y el hardware están perfectamente integrados, tendrá la flexibilidad y el control que necesita, así como la capacidad de innovar desde la nube. 
 
 Un sistema integrado de Azure Stack Hub puede estar compuesto de 4 a 16 servidores y se le denomina una *unidad de escalado*. Microsoft y el asociado de hardware admiten de forma conjunta los sistemas integrados. El diagrama siguiente muestra un ejemplo de una unidad de escalado. 
 
-![Diagrama que muestra un sistema integrado de Azure Stack](./media/azure-stack-overview/azure-stack-integrated-system.png). 
+![Diagrama que muestra un sistema integrado de Azure Stack Hub](./media/azure-stack-overview/azure-stack-integrated-system.png). 
 
 <!---add info and image on regions, etc--->
 
@@ -75,9 +73,9 @@ Para las implementaciones desconectadas de Azure Stack Hub, tendrá que usar AD�
 
 ## <a name="how-is-azure-stack-hub-managed"></a>¿Cómo se administra Azure Stack Hub?
 
-Azure Stack usa el mismo modelo de operaciones que Azure. Un operador de Azure Stack Hub puede proporcionar diversos servicios y aplicaciones a los usuarios inquilinos, al igual que hace Microsoft con los servicios de Azure. 
+Azure Stack Hub usa el mismo modelo de operaciones que Azure. Un operador de Azure Stack Hub puede proporcionar diversos servicios y aplicaciones a los usuarios inquilinos, al igual que hace Microsoft con los servicios de Azure. 
 
-![Diagrama que muestra los roles de trabajo de Azure Stack](./media/azure-stack-overview/azure-stack-job-roles.png)
+![Diagrama que muestra los roles de trabajo de Azure Stack Hub](./media/azure-stack-overview/azure-stack-job-roles.png)
 
 Puede administrar Azure Stack Hub con el portal de administración, el portal de usuarios o [PowerShell](https://docs.microsoft.com/powershell/azure/azure-stack/overview?view=azurestackps-1.7.1). Cada uno de los portales de Azure Stack Hub cuenta con el respaldo de instancias independientes de Azure Resource Manager. Un **operador de Azure Stack Hub** usa el portal de administración para administrar Azure Stack Hub y para hacer tareas como crear ofertas para inquilinos y mantener y supervisar el estado del sistema integrado. El portal de usuarios proporciona una experiencia de autoservicio para el consumo de recursos de nube, como máquinas virtuales, cuentas de almacenamiento y aplicaciones web.
 
@@ -113,7 +111,7 @@ Hay tres proveedores de recursos de PaaS opcionales que puede implementar y usar
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Comparación de la cartera de Azure Stack](compare-azure-azure-stack.md)
+[Comparación de la cartera de Azure Stack Hub](compare-azure-azure-stack.md)
 
 [Conceptos básicos de administración](azure-stack-manage-basics.md)
 

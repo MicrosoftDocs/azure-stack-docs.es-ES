@@ -1,6 +1,6 @@
 ---
-title: Implementación de un clúster protegido de Service Fabric en Azure Stack | Microsoft Docs
-description: Aprenda a implementar un clúster protegido de Service Fabric en Azure Stack
+title: Implementación de un clúster protegido de Service Fabric en Azure Stack Hub | Microsoft Docs
+description: Aprenda a implementar un clúster protegido de Service Fabric en Azure Stack Hub
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,22 +15,22 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: shnatara
 ms.lastreviewed: 09/25/2019
-ms.openlocfilehash: e8b7809908bf09cdc60017c8944e26461aa6f07d
-ms.sourcegitcommit: d619612f54eeba3231ed73ed149ff894f9bf838a
+ms.openlocfilehash: bb0e9fdb3e1ce1c3778d1167ca76cddae3d67aa7
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74993844"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819206"
 ---
-# <a name="deploy-a-service-fabric-cluster-in-azure-stack"></a>Implementación de un clúster de Service Fabric en Azure Stack
+# <a name="deploy-a-service-fabric-cluster-in-azure-stack-hub"></a>Implementación de un clúster de Service Fabric en Azure Stack Hub
 
-Use el elemento **Clúster de Service Fabric** en Azure Marketplace para implementar un clúster protegido de Service Fabric en Azure Stack. 
+Use el elemento **Clúster de Service Fabric** en Azure Marketplace para implementar un clúster protegido de Service Fabric en Azure Stack Hub. 
 
 Para más información sobre cómo trabajar con Service Fabric, consulte [Información general de Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview) y [Escenarios de seguridad de los clústeres de Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-security) en la documentación de Azure.
 
-El clúster de Service Fabric en Azure Stack no utiliza el proveedor de recursos Microsoft.ServiceFabric. En su lugar, en Azure Stack, el clúster de Service Fabric es un conjunto de escalado de máquinas virtuales con un conjunto de software preinstalado con [Desired State Configuration (DSC)](https://docs.microsoft.com/powershell/scripting/dsc/overview/overview).
+El clúster de Service Fabric en Azure Stack Hub no utiliza el proveedor de recursos Microsoft.ServiceFabric. En su lugar, en Azure Stack Hub, el clúster de Service Fabric es un conjunto de escalado de máquinas virtuales con un conjunto de software preinstalado con [Desired State Configuration (DSC)](https://docs.microsoft.com/powershell/scripting/dsc/overview/overview).
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 Se necesitan los siguientes requisitos para implementar el clúster de Service Fabric:
 1. **Certificado de clúster**  
@@ -45,7 +45,7 @@ Se necesitan los siguientes requisitos para implementar el clúster de Service F
 1. **Certificado de cliente de administración**  
    Este es el certificado que usa el cliente para autenticarse en el clúster de Service Fabric. Puede ser autofirmado. Consulte los [requisitos](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-security) para crear este certificado de cliente.
 
-1. **Los siguientes elementos deben estar disponibles en Marketplace de Azure Stack:**
+1. **Los siguientes elementos deben estar disponibles en Marketplace de Azure Stack Hub:**
     - **Windows Server 2016**: la plantilla usa la imagen de Windows Server 2016 para crear el clúster.  
     - **Extensión de script personalizada**: extensión de máquina virtual de Microsoft.  
     - **Configuración de estado deseado de PowerShell**: extensión de máquina virtual de Microsoft.
@@ -120,7 +120,7 @@ Use el siguiente script para crear el identificador de Key Vault y agregar el *c
    ``` 
 
 
-Para más información, consulte [Administrar Key Vault en Azure Stack mediante PowerShell](azure-stack-key-vault-manage-powershell.md).
+Para más información, consulte [Administrar Key Vault en Azure Stack Hub mediante PowerShell](azure-stack-key-vault-manage-powershell.md).
 
 ## <a name="deploy-the-marketplace-item"></a>Implementación de un elemento de Marketplace
 
@@ -130,13 +130,13 @@ Para más información, consulte [Administrar Key Vault en Azure Stack mediante 
 
 2. Para cada página como, por ejemplo, *Aspectos básicos*, rellene el formulario de implementación. Use los valores predeterminados si no está seguro de un valor.
 
-    En caso de implementaciones en una instancia desconectada de Azure Stack o para implementar otra versión de Service Fabric, descargue el paquete de implementación de Service Fabric y el correspondiente paquete del entorno de ejecución, y hospédelo en un blob de Azure Stack. Proporcione estos valores para los campos **Service Fabric deployment package URL** (URL del paquete de implementación de Service Fabric) y **Service Fabric runtime package URL** (URL del paquete del entorno de ejecución de Service Fabric).
+    En caso de implementaciones en una instancia desconectada de Azure Stack Hub o para implementar otra versión de Service Fabric, descargue el paquete de implementación de Service Fabric y el correspondiente paquete del entorno de ejecución, y hospédelo en un blob de Azure Stack Hub. Proporcione estos valores para los campos **Service Fabric deployment package URL** (URL del paquete de implementación de Service Fabric) y **Service Fabric runtime package URL** (URL del paquete del entorno de ejecución de Service Fabric).
     > [!NOTE]  
     > Hay problemas de compatibilidad entre la última versión de Service Fabric y su SDK correspondiente. Hasta que se solucione ese problema, proporcione los siguientes parámetros para la dirección URL del paquete de implementación y la del paquete del entorno de ejecución. De lo contrario, se producirá un error en las implementaciones.
     > - Dirección URL del paquete de implementación de Service Fabric: <https://download.microsoft.com/download/8/3/6/836E3E99-A300-4714-8278-96BC3E8B5528/6.5.641.9590/Microsoft.Azure.ServiceFabric.WindowsServer.6.5.641.9590.zip>
     > - Dirección URL del paquete del entorno de ejecución de Service Fabric: <https://download.microsoft.com/download/B/0/B/B0BCCAC5-65AA-4BE3-AB13-D5FF5890F4B5/6.5.641.9590/MicrosoftAzureServiceFabric.6.5.641.9590.cab>
     >
-    > En el caso de las implementaciones desconectadas, descargue estos paquetes de la ubicación especificada y hospédelos localmente en un blob de Azure Stack.
+    > En el caso de las implementaciones desconectadas, descargue estos paquetes de la ubicación especificada y hospédelos localmente en un blob de Azure Stack Hub.
 
    ![Aspectos básicos](media/azure-stack-solution-template-service-fabric-cluster/image3.png)
 
@@ -201,7 +201,7 @@ Puede acceder al clúster de Service Fabric mediante el uso de Service Fabric Ex
 
 1. Para autenticar el sitio debe seleccionar el certificado que va a usar. Seleccione **Más opciones**, seleccione el certificado adecuado y, finalmente, haga clic en **Aceptar** para conectarse a Service Fabric Explorer. 
 
-   ![Autenticar](media/azure-stack-solution-template-service-fabric-cluster/image14.png)
+   ![Authenticate](media/azure-stack-solution-template-service-fabric-cluster/image14.png)
 
 
 
@@ -241,4 +241,4 @@ Puede acceder al clúster de Service Fabric mediante el uso de Service Fabric Ex
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Implementación de Kubernetes en Azure Stack](azure-stack-solution-template-kubernetes-deploy.md).
+[Implementación de Kubernetes en Azure Stack Hub](azure-stack-solution-template-kubernetes-deploy.md)

@@ -1,6 +1,6 @@
 ---
-title: Implementación de una máquina virtual Linux en Azure Stack | Microsoft Docs
-description: Implementación de una aplicación en Azure Stack.
+title: Implementación de una máquina virtual Linux en Azure Stack Hub | Microsoft Docs
+description: Implemente una aplicación en Azure Stack Hub.
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
@@ -9,14 +9,14 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: d1fae6caf6ac37f29382f4d24ce0d8b2299aa1d7
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: f87c25cd1955f3d0122ea716b2a7a1084af443c7
+ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71824824"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76023294"
 ---
-# <a name="deploy-a-linux-vm-to-host-a-web-app-in-azure-stack"></a>Implementación de una máquina virtual Linux para hospedar una aplicación web en Azure Stack
+# <a name="deploy-a-linux-vm-to-host-a-web-app-in-azure-stack-hub"></a>Implementación de una máquina virtual Linux para hospedar una aplicación web en Azure Stack Hub
 
 Puede crear e implementar una máquina virtual (VM) Linux básica utilizando la imagen de Ubuntu de Azure Marketplace para hospedar una aplicación web que ha creado con un marco web. 
 
@@ -27,17 +27,17 @@ Esta VM puede hospedar aplicaciones web mediante:
 - **Ruby**: configure Ruby on Rails como un marco para distribuir sus aplicaciones web de Ruby. 
 - **Java**: use Java para desarrollar aplicaciones web publicadas en un servidor de Apache Tomcat. Puede instalar Tomcat en Linux y, a continuación, implementar los archivos WAR de Java directamente en el servidor. 
 
-Use las instrucciones de este artículo para empezar a trabajar con cualquier aplicación web, marco y tecnología de back-end que use el sistema operativo Linux. A continuación, puede usar Azure Stack para administrar la infraestructura y las herramientas de administración de su tecnología para ocuparse de las tareas de mantenimiento de la aplicación.
+Use las instrucciones de este artículo para empezar a trabajar con cualquier aplicación web, marco y tecnología de back-end que use el sistema operativo Linux. A continuación, puede usar Azure Stack Hub para administrar la infraestructura y las herramientas de administración de su tecnología para ocuparse de las tareas de mantenimiento de la aplicación.
 
 ## <a name="deploy-a-linux-vm-for-a-web-app"></a>Implementación de una máquina virtual Linux para una aplicación web
 
-En este proceso, debe crear la clave secreta, usar la imagen base de la VM Linux, especificar los atributos particulares de la VM y, a continuación, crear la VM. Después de crear la VM, debe abrir los puertos necesarios para trabajar con la VM y para que la VM pueda hospedar la aplicación. A continuación, debe crear el nombre DNS. Por último, debe conectarse a la VM y actualizarla mediante la utilidad apt-get. Después de completar el proceso, tendrá una VM en su instancia de Azure Stack lista para hospedar su aplicación web.
+En este proceso, debe crear la clave secreta, usar la imagen base de la VM Linux, especificar los atributos particulares de la VM y, a continuación, crear la VM. Después de crear la VM, debe abrir los puertos necesarios para trabajar con la VM y para que la VM pueda hospedar la aplicación. A continuación, debe crear el nombre DNS. Por último, debe conectarse a la VM y actualizarla mediante la utilidad apt-get. Después de completar el proceso, tendrá una máquina virtual en su instancia de Azure Stack Hub lista para hospedar su aplicación web.
 
 Antes de comenzar, asegúrese de que tiene todo lo que necesita preparado.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
-- Una suscripción a Azure Stack, con acceso a la imagen de Ubuntu Server 16.04 LTS. Puede usar una versión posterior de la imagen, pero estas instrucciones se han escrito específicamente para 16.04 LTS. Si no tiene esta imagen, póngase en contacto con su operador de nube para obtener la imagen en Marketplace de Azure Stack.
+- Una suscripción a Azure Stack Hub, con acceso a la imagen de Ubuntu Server 16.04 LTS. Puede usar una versión posterior de la imagen, pero estas instrucciones se han escrito específicamente para 16.04 LTS. Si no tiene esta imagen, póngase en contacto con su operador de nube para obtener la imagen en Marketplace de Azure Stack Hub.
 
 ## <a name="deploy-the-vm-by-using-the-portal"></a>Implementación de la VM mediante el portal
 
@@ -46,9 +46,9 @@ Para implementar la VM, siga las instrucciones que aparecen en las secciones sig
 ### <a name="create-your-vm"></a>Creación de su máquina virtual
 
 1. Cree una clave pública Secure Shell (SSH) para el servidor. Para obtener más información, consulte [How to use an SSH public key](azure-stack-dev-start-howto-ssh-public-key.md) (Uso de una clave pública SSH).
-1. En el portal de Azure Stack, seleccione **Crear un recurso** > **Proceso** > **Ubuntu Server 16.04 LTS**.
+1. En el portal de Azure Stack Hub, seleccione **Crear un recurso** > **Proceso** > **Ubuntu Server 16.04 LTS**.
 
-    ![Implementación de una aplicación web en una máquina virtual de Azure Stack](media/azure-stack-dev-start-howto-deploy-linux/001-portal-compute.png)
+    ![Implementación de una aplicación web en una máquina virtual de Azure Stack Hub](media/azure-stack-dev-start-howto-deploy-linux/001-portal-compute.png)
 
 4. En el panel **Crear una máquina virtual**, en **1. Configuración básica**:
 
@@ -69,13 +69,13 @@ Para implementar la VM, siga las instrucciones que aparecen en las secciones sig
     ---- END SSH2 PUBLIC KEY ----
     ```
 
-    f. Seleccione la suscripción para la instancia de Azure Stack.
+    f. Seleccione la suscripción para la instancia de Azure Stack Hub.
 
     g. Cree un nuevo grupo de recursos o use uno existente, dependiendo de cómo quiera organizar los recursos de la aplicación.
 
-    h. Seleccione su ubicación. El Kit de desarrollo de Azure Stack (ASDK) suele estar en una región *local*. La ubicación depende de su instancia de Azure Stack.
+    h. Seleccione su ubicación. El Kit de desarrollo de Azure Stack (ASDK) suele estar en una región *local*. La ubicación depende de su instancia de Azure Stack Hub.
 1. En **2. Tamaño**, escriba:
-    - Seleccione el tamaño de los datos y la RAM de la VM disponible en su instancia de Azure Stack.
+    - Seleccione el tamaño de los datos y la RAM de la máquina virtual disponible en su instancia de Azure Stack Hub.
     - Puede examinar la lista o filtrar por el tamaño de la VM mediante **Tipo de proceso**, **CPU** y **Espacio de almacenamiento**.
     
     > [!NOTE]
@@ -123,7 +123,7 @@ Para que la aplicación web sea accesible para los usuarios de su red, abra los 
 
 Puede modificar el proveedor de destino y el intervalo de puertos para un servicio predefinido, como RDP o SSH, o bien proporcionar un intervalo de puertos personalizado. Por ejemplo, puede trabajar con el intervalo de puertos de su marco web. Go, por ejemplo, se comunica en el puerto 3000.
 
-1. Abra el portal de Azure Stack de su inquilino.
+1. Abra el portal de Azure Stack Hub de su inquilino.
 
 1. Busque su VM. Es posible que haya anclado la VM al panel; si no, puede buscarla en el cuadro **Buscar recursos**.
 
@@ -151,7 +151,7 @@ Puede modificar el proveedor de destino y el intervalo de puertos para un servic
 
 Además, puede crear un nombre DNS para el servidor, de modo que los usuarios puedan conectarse a su sitio web mediante una dirección URL.
 
-1. Abra el portal de Azure Stack de su inquilino.
+1. Abra el portal de Azure Stack Hub de su inquilino.
 
 1. Busque su VM. Es posible que haya anclado la VM al panel; si no, puede buscarla en el cuadro **Buscar recursos**.
 
@@ -165,7 +165,7 @@ Además, puede crear un nombre DNS para el servidor, de modo que los usuarios pu
 
 ### <a name="connect-via-ssh-to-update-your-vm"></a>Conectarse a través de SSH para actualizar la VM
 
-1. En la misma red que su instancia de Azure Stack, abra el cliente SSH. Para obtener más información, consulte [Uso de una clave pública SSH](azure-stack-dev-start-howto-ssh-public-key.md).
+1. En la misma red que su instancia de Azure Stack Hub, abra el cliente SSH. Para obtener más información, consulte [Uso de una clave pública SSH](azure-stack-dev-start-howto-ssh-public-key.md).
 
 1. Escriba los siguientes comandos:
 
@@ -176,4 +176,4 @@ Además, puede crear un nombre DNS para el servidor, de modo que los usuarios pu
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Consulte [Configurar un entorno de desarrollo en Azure Stack](azure-stack-dev-start.md) para conocer el procedimiento.
+Consulte [Configurar un entorno de desarrollo en Azure Stack Hub](azure-stack-dev-start.md) para conocer el procedimiento.

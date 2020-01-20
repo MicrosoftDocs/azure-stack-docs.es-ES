@@ -1,6 +1,6 @@
 ---
-title: Implementación de una aplicación web de C# ASP.NET en una máquina virtual en Azure Stack | Microsoft Docs
-description: Implemente una aplicación web de C# ASP.NET en una VM en Azure Stack.
+title: Implementación de una aplicación web de C# ASP.NET en una máquina virtual en Azure Stack Hub | Microsoft Docs
+description: Implemente una aplicación web de C# ASP.NET en una máquina virtual en Azure Stack Hub.
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
@@ -9,16 +9,16 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 2b2d1bccbe41e57b81492e0ba0b201fe03df2d7d
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.openlocfilehash: 070a168b28296e03dfa5e559eb68c40d84afb939
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955772"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816146"
 ---
-# <a name="deploy-a-c-aspnet-web-app-to-a-vm-in-azure-stack"></a>Implementar una aplicación web de C# ASP.NET en una VM en Azure Stack
+# <a name="deploy-a-c-aspnet-web-app-to-a-vm-in-azure-stack-hub"></a>Implementación de una aplicación web de C# ASP.NET en una máquina virtual en Azure Stack Hub
 
-Puede crear una máquina virtual (VM) para hospedar la aplicación web de C# ASP.NET en Azure Stack. En este artículo se indican las instrucciones que deben seguirse al instalar el servidor, configurarlo para hospedar su aplicación web de C# ASP.NET y, a continuación, implementar la aplicación directamente desde Visual Studio.
+Puede crear una máquina virtual para hospedar la aplicación web de C# ASP.NET en Azure Stack Hub. En este artículo se indican las instrucciones que deben seguirse al instalar el servidor, configurarlo para hospedar su aplicación web de C# ASP.NET y, a continuación, implementar la aplicación directamente desde Visual Studio.
 
 En este artículo se usa una aplicación C# 6.0 que usa ASP.NET Core 2.2 y se ejecuta en un servidor Windows Server 2016.
 
@@ -43,9 +43,9 @@ En este artículo se usa una aplicación C# 6.0 que usa ASP.NET Core 2.2 y se ej
 
 1. Instale el conjunto de hospedaje de .NET Core  2.2 en el servidor. Para obtener instrucciones, consulte la página del [instalador de .NET Core](https://dotnet.microsoft.com/download/dotnet-core/2.2). Asegúrese de que está utilizando la misma versión de .NET Core en la máquina de desarrollo y el servidor de destino.
 
-1. Vuelva al portal de Azure Stack y abra los puertos que se indican en la configuración de red para la VM.
+1. Vuelva al portal de Azure Stack Hub y abra los puertos que se indican en la configuración de red para la máquina virtual.
 
-    a. Abra el portal de Azure Stack de su inquilino.
+    a. Abra el portal de Azure Stack Hub de su inquilino.
 
     b. Busque su VM. Es posible que haya anclado la VM al panel; si no, puede buscarla en el cuadro **Buscar recursos**.
 
@@ -55,7 +55,7 @@ En este artículo se usa una aplicación C# 6.0 que usa ASP.NET Core 2.2 y se ej
 
     e. Agregue una regla de seguridad de entrada para los puertos siguientes:
 
-    | Port | Protocolo | DESCRIPCIÓN |
+    | Port | Protocolo | Descripción |
     | --- | --- | --- |
     | 80 | HTTP | El protocolo de transferencia de hipertexto (HTTP) es el protocolo que se utiliza para entregar páginas web desde los servidores. Los clientes se conectan mediante HTTP con un nombre DNS o dirección IP. |
     | 443 | HTTPS | El protocolo de transferencia de hipertexto con cifrado de Capa de sockets seguros (HTTPS) es una versión segura de HTTP que requiere un certificado de seguridad y permite la transmisión cifrada de información.  |
@@ -83,9 +83,9 @@ En este artículo se usa una aplicación C# 6.0 que usa ASP.NET Core 2.2 y se ej
 
     i. Seleccione **Agregar**.
 
-1.  En la configuración de **Redes** para su máquina virtual en Azure Stack, cree un nombre DNS para el servidor. Los usuarios pueden conectarse a su sitio web mediante la dirección URL.
+1.  En la configuración de **Redes** para su máquina virtual en Azure Stack Hub, cree un nombre DNS para el servidor. Los usuarios pueden conectarse a su sitio web mediante la dirección URL.
 
-    a. Abra el portal de Azure Stack de su inquilino.
+    a. Abra el portal de Azure Stack Hub de su inquilino.
 
     b. Busque su VM. Es posible que haya anclado la VM al panel; si no, puede buscarla en el cuadro **Buscar recursos**.
 
@@ -100,15 +100,15 @@ En este artículo se usa una aplicación C# 6.0 que usa ASP.NET Core 2.2 y se ej
 ## <a name="create-an-app"></a>Creación de una aplicación 
 
 Puede usar su propia aplicación web, o bien el ejemplo de [Publicar una aplicación de ASP.NET Core en Azure con Visual Studio](https://docs.microsoft.com/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-2.2&tabs=visual-studio
-). En este artículo se describe cómo crear y publicar una aplicación web de ASP.NET en una máquina virtual de Azure mediante la característica de publicación Azure Virtual Machines en Visual Studio 2017. Una vez que haya instalado su aplicación y se haya asegurado de que se ejecuta localmente, actualizará su destino de publicación a la VM Windows en su instancia de Azure Stack.
+). En este artículo se describe cómo crear y publicar una aplicación web de ASP.NET en una máquina virtual de Azure mediante la característica de publicación Azure Virtual Machines en Visual Studio 2017. Una vez que haya instalado su aplicación y se haya asegurado de que se ejecuta localmente, actualizará su destino de publicación para la máquina virtual Windows de su instancia de Azure Stack Hub.
 
 ## <a name="deploy-and-run-the-app"></a>Implementación y ejecución de la aplicación
 
-Cree un destino de publicación a la máquina virtual en Azure Stack.
+Cree un destino de publicación para la máquina virtual en Azure Stack Hub.
 
 1. En el **Explorador de soluciones**, haga clic con el botón derecho en el proyecto y seleccione **Publicar**.
 
-    ![Implementación y publicación de una aplicación web de ASP.NET en Azure Stack](media/azure-stack-dev-start-howto-vm-dotnet/deploy-app-to-azure-stack.png)
+    ![Implementación y publicación de una aplicación web de ASP.NET en Azure Stack Hub](media/azure-stack-dev-start-howto-vm-dotnet/deploy-app-to-azure-stack.png)
 
 1. En la ventana **Publicar**, seleccione **Nuevo perfil**.
 1. Seleccione **IIS, FTP, etc**.
@@ -136,6 +136,6 @@ Cree un destino de publicación a la máquina virtual en Azure Stack.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Consulte [Configurar un entorno de desarrollo en Azure Stack](azure-stack-dev-start.md) para conocer el procedimiento.
-- Obtenga información sobre las [implementaciones comunes para Azure Stack como IaaS](azure-stack-dev-start-deploy-app.md).
+- Consulte [Configurar un entorno de desarrollo en Azure Stack Hub](azure-stack-dev-start.md) para conocer el procedimiento.
+- Obtenga información sobre las [implementaciones comunes para Azure Stack Hub como IaaS](azure-stack-dev-start-deploy-app.md).
 - Para conocer el lenguaje de programación de C# y consultar recursos adicionales, consulte [la guía de C#](https://docs.microsoft.com/dotnet/csharp/).

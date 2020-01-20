@@ -1,42 +1,40 @@
 ---
-title: Creación de una máquina virtual Linux mediante Azure Stack | Microsoft Docs
-description: Creación de una VM de servidor Linux mediante Azure Stack
+title: Creación de una máquina virtual Linux mediante Azure Stack Hub | Microsoft Docs
+description: Cree una máquina virtual de servidor Linux mediante Azure Stack Hub.
 services: azure-stack
 cloud: azure-stack
 author: mattbriggs
 manager: femila
 ms.service: azure-stack
 ms.topic: quickstart
-ms.date: 10/02/2019
+ms.date: 1/10/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.custom: mvc
-ms.lastreviewed: 12/03/2018
-ms.openlocfilehash: 5c3b8d85f5dca0eeb439ca475d4396848d316366
-ms.sourcegitcommit: 0d27456332031ab98ba2277117395ae5ffcbb79f
+ms.lastreviewed: 1/10/2020
+ms.openlocfilehash: ff42069837e13a1d4065a5b3f8d829f70ae09725
+ms.sourcegitcommit: c4368652f0dd68c432aa1dabddbabf161a4a6399
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73047267"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75915023"
 ---
-# <a name="quickstart-create-a-linux-server-vm-by-using-the-azure-stack-portal"></a>Inicio rápido: Creación de una VM de servidor Linux mediante el portal de Azure Stack
+# <a name="quickstart-create-a-linux-server-vm-by-using-the-azure-stack-hub-portal"></a>Inicio rápido: Creación de una máquina virtual de servidor Linux mediante el portal de Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
-
-Puede crear una máquina virtual en Ubuntu Server 16.04 LTS mediante el portal de Azure Stack. Siga los pasos que se describen en este artículo para crear y usar una máquina virtual. En este artículo también se muestra cómo:
+Puede crear una máquina virtual en Ubuntu Server 16.04 LTS mediante el portal de Azure Stack Hub. Siga los pasos que se describen en este artículo para crear y usar una máquina virtual. En este artículo también se muestra cómo:
 
 * Conectarse a la máquina virtual con un cliente remoto.
 * Instalar a un servidor web NGINX.
 * Realizar la limpieza de los recursos.
 
 > [!NOTE]  
-> Las imágenes de este artículo se han actualizado para reflejar los cambios introducidos en la versión 1808 de Azure Stack. La versión 1808 presenta compatibilidad con los *discos administrados*, además de los no administrados. Si usa una versión anterior, las imágenes para algunas tareas, como la selección de disco, diferirán de lo que se muestra en la interfaz de usuario.  
+> Las imágenes de este artículo se han actualizado para reflejar los cambios introducidos en la versión 1808 de Azure Stack Hub. La versión 1808 presenta compatibilidad con los *discos administrados*, además de los no administrados. Si usa una versión anterior, las imágenes para algunas tareas, como la selección de disco, diferirán de lo que se muestra en la interfaz de usuario.  
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
-* Una imagen de Linux en el Marketplace de Azure Stack
+* Una imagen de Linux en el Marketplace de Azure Stack Hub
 
-   De forma predeterminada, el Marketplace de Azure Stack no tiene ninguna imagen de Linux. Solicite al operador de Azure Stack que le proporcione la imagen de Ubuntu Server 16.04 LTS que necesita. El operador puede seguir las instrucciones del artículo [Descarga de elementos de Marketplace desde Azure a Azure Stack](../operator/azure-stack-download-azure-marketplace-item.md).
+   De forma predeterminada, el Marketplace de Azure Stack Hub no tiene ninguna imagen de Linux. Solicite al operador de Azure Stack Hub que le proporcione la imagen de Ubuntu Server 16.04 LTS que necesita. El operador puede seguir las instrucciones del artículo [Descarga de elementos de Marketplace desde Azure a Azure Stack Hub](../operator/azure-stack-download-azure-marketplace-item.md).
 
 * Acceso a un cliente SSH
 
@@ -56,7 +54,7 @@ Para crear un par de claves SSH:
 
 1. En la ventana de **Putty Key Generator**, defina **Type of key to generate**(Tipo de clave que se va a generar) como **RSA** y **Number of bits in a generated key** (Número de bits de una clave generada), como **2048**.
 
-   ![Configuración del generador de claves de PuTTY](media/azure-stack-quick-linux-portal/Putty01.PNG)
+   ![Configuración del generador de claves de PuTTY](media/azure-stack-quick-linux-portal/Putty01a.png)
 
 1. Seleccione **Generar**.
 
@@ -64,48 +62,44 @@ Para crear un par de claves SSH:
 
 1. Una vez finalizada la generación de claves, seleccione **Save public key** (Guardar clave pública) y, a continuación, seleccione **Save private key** (Guardar clave privada) para guardar las claves en archivos.
 
-   ![Resultados del generador de claves de PuTTY](media/azure-stack-quick-linux-portal/Putty02.PNG)
+   ![Resultados del generador de claves de PuTTY](media/azure-stack-quick-linux-portal/Putty02a.png)
 
-## <a name="sign-in-to-the-azure-stack-portal"></a>Inicio de sesión en el portal de Azure Stack
+## <a name="sign-in-to-the-azure-stack-hub-portal"></a>Inicio de sesión en el portal de Azure Stack Hub
 
-La dirección del portal de Azure Stack depende del producto de Azure Stack al que se vaya a conectar:
+La dirección del portal de Azure Stack Hub depende del producto de Azure Stack al que se vaya a conectar:
 
 * Para el ASDK, vaya a https://portal.local.azurestack.external.
 
-* Para un sistema integrado de Azure Stack, vaya a la dirección URL que proporciona su operador de Azure Stack.
+* Para un sistema integrado de Azure Stack Hub, vaya a la dirección URL que proporciona su operador de Azure Stack Hub.
 
 ## <a name="create-the-vm"></a>Creación de la máquina virtual
 
-1. En la esquina superior izquierda del portal de Azure Stack, seleccione **Crear un recurso**.
+1. Seleccione **Crear un recurso** > **Proceso**. Busque `Ubuntu Server 16.04 LTS`. Seleccione el nombre.
 
-1. Seleccione **Compute**y, después, seleccione **Ubuntu Server 16.04 LTS**.
-   
-   ![Selección del servidor Linux](media/azure-stack-quick-linux-portal/select.png)
+   ![Crear servidor Linux](media/azure-stack-quick-linux-portal/image1.png)
 
 1. Seleccione **Crear**.
 
-1. Escriba la información de la máquina virtual. En **Tipo de autenticación**, seleccione **Clave pública SSH**, pegue la clave pública SSH que ha guardado y, a continuación, seleccione **Aceptar**.
+   ![Crear servidor Linux: Crear](media/azure-stack-quick-linux-portal/image2.png)
 
-   > [!NOTE]
-   > Asegúrese de eliminar los espacios en blanco iniciales y finales de la clave.
+1. Escriba la información de la máquina virtual. En Tipo de autenticación, seleccione **Clave pública SSH**, pegue la clave pública SSH que ha guardado y, a continuación, seleccione **Aceptar**.
 
-   ![Panel de conceptos básicos: Configuración de una máquina virtual](media/azure-stack-quick-linux-portal/linux-01.PNG)
+    > [!Note]  
+    > Asegúrese de eliminar los espacios en blanco iniciales y finales de la clave.
 
-1. Seleccione **D1** para la máquina virtual.
+   ![Authentication](media/azure-stack-quick-linux-portal/image3.png)
 
-   ![Tamaño del panel: Elección de un tamaño de VM](media/azure-stack-quick-linux-portal/linux-02.PNG)
+1. Seleccione **D1_v2** como tamaño de la máquina virtual.
 
-1. En la página **Configuración**, realice los cambios necesarios en los valores predeterminados.
-   
-   A partir de la versión 1808 de Azure Stack, puede configurar **Almacenamiento** y elegir el uso de *discos administrados*. En las versiones anteriores a la versión 1808, solo se podían usar discos no administrados.
+   ![Crear servidor Linux: Tamaño](media/azure-stack-quick-linux-portal/image4.png)
 
-   ![Configuración del almacenamiento para discos administrados](media/azure-stack-quick-linux-portal/linux-03.PNG)
-    
-   Cuando las configuraciones estén preparadas, seleccione **Aceptar** para continuar.
+1. Especifique los cambios en los valores predeterminados en la hoja **Configuración**. Use discos administrados. Si tiene que permitir el acceso de SSH, seleccione **SSH (22)** para abrir el puerto. Cuando las configuraciones estén preparadas, seleccione **Aceptar**.
 
-1. En la página **Resumen**, seleccione **Aceptar** para iniciar la implementación de la VM.  
+   ![Crear servidor Linux: Configuración](media/azure-stack-quick-linux-portal/image5.png)
 
-   ![Implementación](media/azure-stack-quick-linux-portal/deploy.png)
+1. Seleccione **Aceptar** en Resumen para iniciar la implementación de la máquina virtual. Seleccione **Virtual Machines** para ver la nueva máquina virtual, busque el nombre de esta y, finalmente, seleccione la máquina virtual en los resultados de la búsqueda.
+
+![Crear servidor Linux: Resumen](media/azure-stack-quick-linux-portal/image5.png)
 
 ## <a name="connect-to-the-vm"></a>Conexión a la máquina virtual
 
@@ -113,17 +107,17 @@ La dirección del portal de Azure Stack depende del producto de Azure Stack al q
 
 1. En la página **PuTTY Configuration** (Configuración de PuTTY), en el panel **Category** (Categoría), desplácese hacia abajo y expanda **SSH**. A continuación, seleccione **Auth** (Autenticación). 
 
-   ![Conexión de la VM](media/azure-stack-quick-linux-portal/putty03.PNG)
+   ![Conexión de la VM](media/azure-stack-quick-linux-portal/putty03a.png)
 
 1. Seleccione **Browse** (Examinar) y, a continuación, seleccione el archivo de clave privada que guardó.
 
 1. En el panel **Category** (Categoría), desplácese hacia arriba y seleccione **Session** (Sesión).
 
-1. En el cuadro **Host Name (Nombre de host) o IP address (Dirección IP)** , pegue la cadena de conexión que se muestra en el portal de Azure Stack. En este ejemplo, la cadena es *asadmin@192.168.102.34* .
+1. En el cuadro **Host Name (Nombre de host) o IP address (Dirección IP)** , pegue la cadena de conexión que se muestra en el portal de Azure Stack Hub. En este ejemplo, la cadena es *asadmin@192.168.102.34* .
 
 1. Seleccione **Open** (Abrir) para abrir una sesión para la VM.
 
-   ![Sesión de Linux](media/azure-stack-quick-linux-portal/Putty05.PNG)
+   ![Sesión de Linux](media/azure-stack-quick-linux-portal/Putty05a.png)
 
 ## <a name="install-the-nginx-web-server"></a>Instalación del servidor web NGINX
 
@@ -139,11 +133,11 @@ sudo apt-get -y update
 sudo apt-get -y install nginx
 ```
 
-Cuando haya finalizado la instalación de NGINX, cierre la sesión SSH y abra la página **Información general** de la VM en el portal de Azure Stack.
+Cuando haya finalizado la instalación de NGINX, cierre la sesión SSH y abra la página **Información general** de la máquina virtual en el portal de Azure Stack Hub.
 
 ## <a name="open-port-80-for-web-traffic"></a>Apertura del puerto 80 para el tráfico web
 
-Los grupos de seguridad de red (NSG) protegen el tráfico entrante y saliente. Cuando se crea una máquina virtual en el portal de Azure Stack, se crea una regla de entrada en el puerto 22 para las conexiones SSH. Dado que esta máquina virtual hospeda un servidor web, es preciso crear una regla de NSG para permitir el tráfico web en el puerto 80.
+Los grupos de seguridad de red (NSG) protegen el tráfico entrante y saliente. Cuando se crea una máquina virtual en el portal de Azure Stack Hub, se crea una regla de entrada en el puerto 22 para las conexiones SSH. Dado que esta máquina virtual hospeda un servidor web, es preciso crear una regla de NSG para permitir el tráfico web en el puerto 80.
 
 1. En la página **Información general** de la VM, seleccione el nombre del **Grupo de recursos**.
 
@@ -165,7 +159,7 @@ Con NGINX instalado y el puerto 80 abierto en la VM, puede acceder al servidor w
 
 Abra un explorador web y vaya a *http://\<dirección IP pública>* .
 
-![Página principal del servidor web NGINX](media/azure-stack-quick-linux-portal/linux-05.PNG)
+![Página principal del servidor web NGINX](media/azure-stack-quick-linux-portal/linux-05a.png)
 
 ## <a name="clean-up-resources"></a>Limpieza de recursos
 
@@ -173,4 +167,4 @@ Borre los recursos que ya no necesite. Para eliminar la VM y sus recursos, selec
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-En esta guía de inicio rápido ha implementado una máquina virtual básica en un servidor Linux con un servidor web. Para más información sobre las máquinas virtuales de Azure Stack, continúe con el artículo [Considerations for Virtual Machines in Azure Stack](azure-stack-vm-considerations.md) (Consideraciones acerca de máquinas virtuales de Azure Stack).
+En esta guía de inicio rápido ha implementado una máquina virtual básica en un servidor Linux con un servidor web. Para más información sobre las máquinas virtuales de Azure Stack Hub, continúe con el artículo [Consideraciones sobre máquinas virtuales en Azure Stack Hub](azure-stack-vm-considerations.md).

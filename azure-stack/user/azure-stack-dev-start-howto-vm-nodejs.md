@@ -1,6 +1,6 @@
 ---
-title: Implementación de una aplicación de Node.js en una máquina virtual en Azure Stack | Microsoft Docs
-description: Implementación de una aplicación de Node.js en Azure Stack.
+title: Implementación de una aplicación de Node.js en una máquina virtual en Azure Stack Hub | Microsoft Docs
+description: Implementación de una aplicación de Node.js en Azure Stack Hub.
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
@@ -9,24 +9,24 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: 0b145ab315e855ee08b25ea4980bdde40d0bfc1c
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: b848678eab2b913331208e13882c3b8b125c51a8
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71824196"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820600"
 ---
-# <a name="deploy-a-nodejs-web-app-to-a-vm-in-azure-stack"></a>Implementación de una aplicación web de Node.js en una máquina virtual en Azure Stack
+# <a name="deploy-a-nodejs-web-app-to-a-vm-in-azure-stack-hub"></a>Implementación de una aplicación web de Node.js en una máquina virtual en Azure Stack Hub
 
-Puede crear una máquina virtual para hospedar una aplicación web de Node.js en Azure Stack. En este artículo, va a configurar un servidor, va a configurar el servidor para hospedar la aplicación web de Node.js y, después, implementar la aplicación en Azure Stack.
+Puede crear una máquina virtual para hospedar una aplicación web de Node.js en Azure Stack Hub. En este artículo, va a configurar un servidor, va a configurar el servidor para hospedar la aplicación web de Node.js y, después, implementar la aplicación en Azure Stack Hub.
 
 ## <a name="create-a-vm"></a>Crear una VM
 
-1. Configure la máquina virtual en Azure Stack mediante las instrucciones de [Implementación de una máquina virtual Linux para hospedar una aplicación web en Azure Stack](azure-stack-dev-start-howto-deploy-linux.md).
+1. Configure la máquina virtual en Azure Stack Hub mediante las instrucciones de [Implementación de una máquina virtual Linux para hospedar una aplicación web en Azure Stack Hub](azure-stack-dev-start-howto-deploy-linux.md).
 
 2. En el panel de red de la máquina virtual, asegúrese de que los siguientes puertos sean accesibles:
 
-    | Port | Protocolo | DESCRIPCIÓN |
+    | Port | Protocolo | Descripción |
     | --- | --- | --- |
     | 80 | HTTP | El protocolo de transferencia de hipertexto (HTTP) es el protocolo que se utiliza para entregar páginas web desde los servidores. Los clientes se conectan mediante HTTP con un nombre DNS o dirección IP. |
     | 443 | HTTPS | El protocolo de transferencia de hipertexto con cifrado de Capa de sockets seguros (HTTPS) es una versión segura de HTTP que requiere un certificado de seguridad y permite la transmisión cifrada de información. |
@@ -87,6 +87,6 @@ Puede crear una máquina virtual para hospedar una aplicación web de Node.js en
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Obtenga más información sobre cómo [desarrollar para Azure Stack](azure-stack-dev-start.md).
-- Obtenga información sobre las [implementaciones comunes para Azure Stack como IaaS](azure-stack-dev-start-deploy-app.md).
+- Obtenga más información sobre cómo [desarrollar para Azure Stack Hub](azure-stack-dev-start.md).
+- Obtenga información sobre las [implementaciones comunes para Azure Stack Hub como IaaS](azure-stack-dev-start-deploy-app.md).
 - Para conocer el lenguaje de programación de Node.js y consultar recursos adicionales para Node.js, consulte [Nodejs.org](https://nodejs.org).

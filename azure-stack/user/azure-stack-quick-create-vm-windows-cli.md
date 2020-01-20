@@ -1,6 +1,6 @@
 ---
-title: Creación de una máquina virtual Windows en Azure Stack con la CLI de Azure | Microsoft Docs
-description: Creación de una máquina virtual Windows en Azure Stack con la CLI de Azure
+title: Creación de una máquina virtual Windows en Azure Stack Hub con la CLI de Azure | Microsoft Docs
+description: Creación de una máquina virtual Windows en Azure Stack Hub con la CLI de Azure
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,16 +15,14 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.custom: mvc
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: b88d65806abfe83dfff59307d3bdcd4e99adf96d
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: 6a5a389082fa89162023205a2784457b15ccca6b
+ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71824260"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76023092"
 ---
-# <a name="quickstart-create-a-windows-server-virtual-machine-using-azure-cli-in-azure-stack"></a>Inicio rápido: Creación de una máquina virtual Windows Server con la CLI de Azure en Azure Stack
-
-‎*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+# <a name="quickstart-create-a-windows-server-virtual-machine-using-azure-cli-in-azure-stack-hub"></a>Inicio rápido: Creación de una máquina virtual Windows Server con la CLI de Azure en Azure Stack Hub
 
 Puede crear una máquina virtual Windows Server 2016 mediante la CLI de Azure. Siga los pasos descritos en este artículo para crear y usar una máquina virtual. Este artículo también proporciona los siguientes pasos:
 
@@ -32,15 +30,15 @@ Puede crear una máquina virtual Windows Server 2016 mediante la CLI de Azure. S
 * Instalar al servidor web IIS y ver la página principal predeterminada.
 * Realizar la limpieza de los recursos.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
-* Asegúrese de que el operador de Azure Stack haya agregado la imagen **Windows Server 2016** a Marketplace de Azure Stack.
+* Asegúrese de que el operador de Azure Stack Hub haya agregado la imagen **Windows Server 2016** a Marketplace de Azure Stack Hub.
 
-* Azure Stack requiere una versión específica de la CLI de Azure para crear y administrar los recursos. Si no tiene la CLI de Azure configurada para Azure Stack, siga los pasos que se indican para [instalarla y configurarla](azure-stack-version-profiles-azurecli2.md).
+* Azure Stack Hub requiere una versión específica de la CLI de Azure para crear y administrar los recursos. Si no tiene la CLI de Azure configurada para Azure Stack Hub, siga los pasos que se indican para [instalarla y configurarla](azure-stack-version-profiles-azurecli2.md).
 
 ## <a name="create-a-resource-group"></a>Crear un grupo de recursos
 
-Un grupo de recursos es un contenedor lógico en el que puede implementar y administrar recursos de Azure Stack. En el entorno de Azure Stack, ejecute el comando [az group create](/cli/azure/group#az-group-create) para crear un grupo de recursos.
+Un grupo de recursos es un contenedor lógico en el que puede implementar y administrar recursos de Azure Stack Hub. En el entorno de Azure Stack Hub, ejecute el comando [az group create](/cli/azure/group#az-group-create) para crear un grupo de recursos.
 
 > [!NOTE]
 >  Se asignan valores para todas las variables en los ejemplos de código. Sin embargo, puede asignar nuevos valores si lo desea.
@@ -109,4 +107,4 @@ az group delete --name myResourceGroup
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-En esta guía de inicio rápido ha implementado una máquina virtual básica con Windows Server. Para aprender más sobre las máquina virtuales de Azure Stack, continúe con el artículo [Considerations for Virtual Machines in Azure Stack](azure-stack-vm-considerations.md) (Consideraciones acerca de máquinas virtuales de Azure Stack).
+En esta guía de inicio rápido ha implementado una máquina virtual básica con Windows Server. Para aprender más sobre las máquinas virtuales de Azure Stack Hub, continúe con el artículo [Consideraciones acerca de máquinas virtuales de Azure Stack Hub](azure-stack-vm-considerations.md).

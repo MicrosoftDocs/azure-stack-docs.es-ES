@@ -1,5 +1,5 @@
 ---
-title: Uso de una clave pública SSH con Azure Stack | Microsoft Docs
+title: Uso de una clave pública SSH con Azure Stack Hub | Microsoft Docs
 description: Uso de una clave pública SSH
 services: azure-stack
 author: mattbriggs
@@ -9,22 +9,22 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: 3d2854511415421b69a6972cd807132639300f96
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: b40fb92eefa696369ed57aabefb4e8298dad3eea
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71824503"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820702"
 ---
 # <a name="use-an-ssh-public-key"></a>Uso de una clave pública SSH
 
-Para usar una conexión SSH abierta desde la máquina de desarrollo a la máquina virtual del servidor en la instancia de Azure Stack que hospeda la aplicación web, es posible que deba crear un par de claves, pública y privada, de Secure Shell (SSH). 
+Para usar una conexión SSH abierta desde la máquina de desarrollo a la máquina virtual del servidor en la instancia de Azure Stack Hub que hospeda la aplicación web, es posible que deba crear un par de claves, pública y privada, de Secure Shell (SSH). 
 
 En este artículo, va a crear las claves y, después, las va a utilizar para conectarse al servidor. Puede usar un cliente SSH para obtener un símbolo del sistema de bash en el servidor Linux o utilice un cliente SFTP seguro (SFTP) para mover archivos desde y hacia el servidor.
 
 ## <a name="create-an-ssh-public-key-on-windows"></a>Creación de una clave pública SSH en Windows
 
-En esta sección, va a usar PuTTY Key Generator para crear una clave pública de SSH y un par de claves privadas para usar al crear una conexión segura a máquinas Linux en la instancia de Azure Stack. PuTTTY es un emulador de terminal gratuito que le permite conectarse a un servidor a través de SSH y Telnet.
+En esta sección, va a usar PuTTY Key Generator para crear una clave pública de SSH y un par de claves privadas para usar al crear una conexión segura a máquinas Linux en la instancia de Azure Stack Hub. PuTTTY es un emulador de terminal gratuito que le permite conectarse a un servidor a través de SSH y Telnet.
 
 1. [Descargue e instale PuTTY para su equipo](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 
@@ -66,14 +66,14 @@ Cuando una aplicación solicita la clave, se copia y pega todo el contenido del 
 
 ## <a name="connect-with-ssh-by-using-putty"></a>Conexión con SSH mediante PuTTY
 
-Al instalar PuTTY, tendrá PuTTY Key Generator y un cliente SSH. En esta sección, va a abrir el cliente SSH, PuTTY y va a configurar los valores de conexión y la clave SSH. Si está en la misma red que la instancia de Azure Stack, se conecta a la máquina virtual.
+Al instalar PuTTY, tendrá PuTTY Key Generator y un cliente SSH. En esta sección, va a abrir el cliente SSH, PuTTY y va a configurar los valores de conexión y la clave SSH. Si está en la misma red que la instancia de Azure Stack Hub, se conecta a la máquina virtual.
 
 Antes de conectarse, necesitará:
 - PuTTY
-- La dirección IP y el nombre de usuario de la máquina Linux en la instancia de Azure Stack que usa una clave pública SSH como tipo de autenticación.
+- La dirección IP y el nombre de usuario de la máquina Linux en la instancia de Azure Stack Hub que usa una clave pública SSH como tipo de autenticación.
 - El puerto 22 que se va a abrir para la máquina.
 - La clave SSH pública que usó al crear la máquina.
-- La máquina cliente que ejecuta PuTTY estará en la misma red que la instancia de Azure Stack.
+- La máquina cliente que ejecuta PuTTY estará en la misma red que la instancia de Azure Stack Hub.
 
 1. Abra PuTTY.
 
@@ -127,4 +127,4 @@ Para mover los archivos hacia y desde su máquina Linux, puede usar Filezilla co
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Consulte [Configurar un entorno de desarrollo en Azure Stack](azure-stack-dev-start.md) para conocer el procedimiento.
+Consulte [Configurar un entorno de desarrollo en Azure Stack Hub](azure-stack-dev-start.md) para conocer el procedimiento.

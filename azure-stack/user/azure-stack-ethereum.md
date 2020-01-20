@@ -1,6 +1,6 @@
 ---
-title: Implementación de una red de la cadena de bloques de Ethereum en Azure Stack | Microsoft Docs
-description: Tutorial en el que se usan plantillas de soluciones personalizadas para implementar y configurar una red de la cadena de bloques de Ethereum del consorcio en Azure Stack.
+title: Implementación de una red de la cadena de bloques de Ethereum en Azure Stack Hub | Microsoft Docs
+description: Tutorial en el que se usan plantillas de soluciones personalizadas para implementar y configurar una red de la cadena de bloques de Ethereum del consorcio en Azure Stack Hub.
 services: azure-stack
 keywords: ''
 author: PatAltimore
@@ -12,18 +12,18 @@ ms.reviewer: seyadava
 ms.custom: mvc
 manager: femila
 ms.lastreviewed: 06/03/2019
-ms.openlocfilehash: b68a6df35b5345d3e1f00be126cdae24e87d3d0b
-ms.sourcegitcommit: 637018771ac016b7d428174e88d4dcb131b54959
+ms.openlocfilehash: 86e9f6fb78275678f8072573f83696d3ea79184f
+ms.sourcegitcommit: ce01b2cd114ca8ab5b70c6311b66c58ceb054469
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68842975"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75924147"
 ---
-# <a name="deploy-an-ethereum-blockchain-network-on-azure-stack"></a>Implementación de una red de la cadena de bloques Ethereum en Azure Stack
+# <a name="deploy-an-ethereum-blockchain-network-on-azure-stack-hub"></a>Implementación de una red de la cadena de bloques Ethereum en Azure Stack Hub
 
 La plantilla de la solución Ethereum está diseñada para facilitar y agilizar la implementación y configuración de una red de cadena de bloques del consorcio Ethereum con unos conocimientos mínimos de Azure y Ethereum.
 
-Con un conjunto de entradas de usuario y una implementación con un solo clic a través del portal de inquilino Azure Stack, cada miembro puede aprovisionar su consumo de red. La superficie de la red de cada miembro consta de tres cosas:
+Con un conjunto de entradas de usuario y una implementación con un solo clic a través del portal de inquilino Azure Stack Hub, cada miembro puede aprovisionar su consumo de red. La superficie de la red de cada miembro consta de tres cosas:
 
 1. Un conjunto de nodos de transacción de carga equilibrada con los que una aplicación o un usuario pueden interactuar para enviar transacciones.
 2. Un conjunto de nodos de minería para registrar transacciones.
@@ -36,7 +36,7 @@ Para realizar la configuración:
 - Elija una arquitectura de implementación.
 - Implemente una red independiente de miembros del consorcio o de coordinadores del consorcio.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 Descargue los últimos elementos de [Marketplace](../operator/azure-stack-download-azure-marketplace-item.md):
 
@@ -55,15 +55,15 @@ Esta plantilla de solución puede implementar una red del consorcio Ethereum con
 
 La plantilla puede implementar el consorcio Ethereum para coordinador y miembro de varias formas. Estos son los que hemos probado:
 
-- En una instancia de Azure Stack de varios nodos, con Azure AD o AD FS, implemente los clientes potenciales y los miembros mediante la misma suscripción o con suscripciones diferentes.
-- En una instancia de Azure Stack de un solo nodo (con Azure AD), implemente los clientes potenciales y los miembros mediante la misma suscripción.
+- En una instancia de Azure Stack Hub de varios nodos, con Azure AD o AD FS, implemente los clientes potenciales y los miembros mediante la misma suscripción o con suscripciones diferentes.
+- En una instancia de Azure Stack Hub de un solo nodo (con Azure AD), implemente los clientes potenciales y los miembros mediante la misma suscripción.
 
 ### <a name="standalone-and-consortium-leader-deployment"></a>Implementación de clientes potenciales independientes y del consorcio
 
 La plantilla de cliente potencial del consorcio configura la huella del primer miembro en la red. 
 
-1. Descargue la [plantilla de coordinador de GitHub](https://raw.githubusercontent.com/Azure/AzureStack-QuickStart-Templates/master/ethereum-consortium-blockchain/marketplace/ConsortiumLeader/mainTemplate.json).
-2. En el portal de inquilinos de Azure Stack, seleccione **+ Crear un recurso > Template Deployment** (Implementación de plantillas) para realizar la implementación desde una plantilla personalizada.
+1. Descargue la [plantilla de coordinador de GitHub](https://aka.ms/aa6z619).
+2. En el portal de inquilinos de Azure Stack Hub, seleccione **+ Crear un recurso > Implementación de plantillas** para realizar la implementación desde una plantilla personalizada.
 3. Seleccione **Editar plantilla** para editar la nueva plantilla personalizada.
 4. En el panel de edición de la derecha, copie y pegue el JSON de la plantilla de cliente potencial que descargó anteriormente.
     
@@ -74,7 +74,7 @@ La plantilla de cliente potencial del consorcio configura la huella del primer m
     
     ![Editar los parámetros de la plantilla de cliente potencial](./media/azure-stack-ethereum/edit-leader-parameters.png)
 
-    Nombre de parámetro | DESCRIPCIÓN | Valores permitidos | Valor de ejemplo
+    Nombre de parámetro | Descripción | Valores permitidos | Valor de ejemplo
     ---------------|-------------|----------------|-------------
     NAMEPREFIX | Cadena que se usa como base para asignar nombres a los recursos implementados. | Caracteres alfanuméricos con una longitud de 1 a 6. | eth
     AUTHTYPE. | El método de autenticación en la máquina virtual. | Contraseña o clave pública SSH. | Contraseña
@@ -99,7 +99,7 @@ La plantilla de cliente potencial del consorcio configura la huella del primer m
     
     ![Parámetros de implementación de cliente potencial](./media/azure-stack-ethereum/leader-deployment-parameters.png)
 
-    Nombre de parámetro | DESCRIPCIÓN | Valores permitidos | Valor de ejemplo
+    Nombre de parámetro | Descripción | Valores permitidos | Valor de ejemplo
     ---------------|-------------|----------------|-------------
     Subscription | La suscripción en la que se implementa la red del consorcio. | | Suscripción de consumo
     Grupo de recursos | El grupo de recursos en el que se va a implementar la red del consorcio. | | EthereumResources
@@ -117,17 +117,17 @@ Para comprobar la implementación del coordinador, vaya al sitio de administraci
 
 ### <a name="joining-consortium-member-deployment"></a>Combinación de la implementación de los miembros del consorcio
 
-1. Descargue el [plantilla de miembro del consorcio de GitHub](https://raw.githubusercontent.com/Azure/AzureStack-QuickStart-Templates/master/ethereum-consortium-blockchain/marketplace/JoiningMember/mainTemplate.json).
-2. En el portal de inquilinos de Azure Stack, seleccione **+ Crear un recurso > Template Deployment** (Implementación de plantillas) para realizar la implementación desde una plantilla personalizada.
+1. Descargue el [plantilla de miembro del consorcio de GitHub](https://aka.ms/aa6zkua).
+2. En el portal de inquilinos de Azure Stack Hub, seleccione **+ Crear un recurso > Implementación de plantillas** para realizar la implementación desde una plantilla personalizada.
 3. Seleccione **Editar plantilla** para editar la nueva plantilla personalizada.
 4. En el panel de edición de la derecha, copie y pegue el JSON de la plantilla del cliente potencial que descargó anteriormente.
 5. Seleccione **Guardar**.
 6. Seleccione **Editar parámetros** y complete los parámetros de la plantilla de su implementación.
 
-    Nombre de parámetro | DESCRIPCIÓN | Valores permitidos | Valor de ejemplo
+    Nombre de parámetro | Descripción | Valores permitidos | Valor de ejemplo
     ---------------|-------------|----------------|-------------
     NAMEPREFIX | Cadena que se usa como base para asignar nombres a los recursos implementados. | Caracteres alfanuméricos con una longitud de 1 a 6. | eth
-    AUTHTYPE | El método de autenticación en la máquina virtual. | Contraseña o clave pública SSH. | Contraseña
+    AUTHTYPE. | El método de autenticación en la máquina virtual. | Contraseña o clave pública SSH. | Contraseña
     ADMINUSERNAME | Nombre de usuario del administrador de cada una de las máquinas virtuales que implementadas. | Entre 1 y 64 caracteres. | gethadmin
     ADMINPASSWORD (tipo de autenticación = contraseña)| La contraseña de la cuenta de administrador de cada una de las máquinas virtuales implementadas. La contraseña debe cumplir 3 de los siguientes requisitos: 1 letra mayúscula, 1 letra minúscula, 1 número y 1 carácter especial. <br />Aunque todas las máquinas virtuales tienen inicialmente la misma contraseña, puede cambiarla después del aprovisionamiento.|Entre 12 y 72 caracteres. |
     ADMINSSHKEY (tipo de autenticación = sshPublicKey) | La clave de shell seguro que se usa para el inicio de sesión remoto. | |
@@ -147,7 +147,7 @@ Para comprobar la implementación del coordinador, vaya al sitio de administraci
 7. Seleccione **Aceptar**.
 8. En **Implementación personalizada**, especifique **Suscripción**, **Grupo de recursos** y **Ubicación del grupo de recursos**.
 
-    Nombre de parámetro | DESCRIPCIÓN | Valores permitidos | Valor de ejemplo
+    Nombre de parámetro | Descripción | Valores permitidos | Valor de ejemplo
     ---------------|-------------|----------------|-------------
     Subscription | La suscripción en la que se implementa la red del consorcio. | | Suscripción de consumo
     Grupo de recursos | El grupo de recursos en el que se va a implementar la red del consorcio. | | MemberResources
@@ -169,8 +169,8 @@ Como se muestra en la imagen, el estado de los nodos del miembro es **Not runnin
 
 Esta plantilla crea una conexión desde el cliente potencial a un miembro remoto. 
 
-1. Descargue la [plantilla de coordinador y miembro de la conexión de GitHub](https://raw.githubusercontent.com/Azure/AzureStack-QuickStart-Templates/master/ethereum-consortium-blockchain/marketplace/Connection/mainTemplate.json).
-2. En el portal de inquilinos de Azure Stack, seleccione **+ Crear un recurso > Template Deployment** (Implementación de plantillas) para realizar la implementación desde una plantilla personalizada.
+1. Descargue la [plantilla de coordinador y miembro de la conexión de GitHub](https://aka.ms/aa6zdyt).
+2. En el portal de inquilinos de Azure Stack Hub, seleccione **+ Crear un recurso > Implementación de plantillas** para realizar la implementación desde una plantilla personalizada.
 3. Seleccione **Editar plantilla** para editar la nueva plantilla personalizada.
 4. En el panel de edición de la derecha, copie y pegue el JSON de la plantilla del cliente potencial que descargó anteriormente.
     
@@ -181,7 +181,7 @@ Esta plantilla crea una conexión desde el cliente potencial a un miembro remoto
     
     ![Editar parámetros de la plantilla de conexión](./media/azure-stack-ethereum/edit-connect-parameters.png)
 
-    Nombre de parámetro | DESCRIPCIÓN | Valores permitidos | Valor de ejemplo
+    Nombre de parámetro | Descripción | Valores permitidos | Valor de ejemplo
     ---------------|-------------|----------------|-------------
     MEMBERNAMEPREFIX | Prefijo del nombre del cliente potencial. Este valor se puede encontrar en la salida de la implementación del cliente potencial.  | Caracteres alfanuméricos con una longitud de 1 a 6. | |
     MEMBERROUTETABLENAME | Nombre de tabla de rutas del cliente potencial. Este valor se puede encontrar en la salida de la implementación del cliente potencial. |  | 
@@ -189,7 +189,7 @@ Esta plantilla crea una conexión desde el cliente potencial a un miembro remoto
     CONNECTIONSHAREDKEY | Un secreto establecido previamente entre los miembros de la red del consorcio que establecen una conexión.  | |
     REMOTEMEMBERNVAPUBLICIP | La dirección IP NVA del miembro. Este valor se puede encontrar en la salida de la implementación del miembro. | |
     MEMBERNVAPRIVATEIP | Dirección IP NVA privada del cliente potencial. Este valor se puede encontrar en la salida de la implementación del cliente potencial. | |
-    LOCATION | Ubicación del entorno de Azure Stack. | | local
+    LOCATION | Ubicación del entorno de Azure Stack Hub. | | local
     BASEURL | Dirección URL base de la plantilla. | Use el valor predeterminado, salvo que desee personalizar las plantillas de implementación. | 
 
 7. Seleccione **Aceptar**.
@@ -197,7 +197,7 @@ Esta plantilla crea una conexión desde el cliente potencial a un miembro remoto
     
     ![Parámetros de implementación de conexión](./media/azure-stack-ethereum/connect-deployment-parameters.png)
 
-    Nombre de parámetro | DESCRIPCIÓN | Valores permitidos | Valor de ejemplo
+    Nombre de parámetro | Descripción | Valores permitidos | Valor de ejemplo
     ---------------|-------------|----------------|-------------
     Subscription | Suscripción del cliente potencial. | | Suscripción de consumo
     Grupo de recursos | Grupo de recursos del cliente potencial. | | EthereumResources
