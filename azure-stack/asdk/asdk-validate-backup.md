@@ -11,12 +11,12 @@ ms.date: 07/31/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 07/31/2019
-ms.openlocfilehash: 685f2d868314610ea7c19443fe47f29182561a51
-ms.sourcegitcommit: 4e48f1e5af74712a104eda97757dc5f50a591936
+ms.openlocfilehash: 603a0bc79af764d2b76d05f01ac0dc6b07b4f864
+ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71225022"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76534097"
 ---
 # <a name="use-the-asdk-to-validate-an-azure-stack-backup"></a>Uso del ASDK para validar una copia de seguridad de Azure Stack
 Después de implementar Azure Stack y aprovisionar recursos de usuario, como ofertas, planes, cuotas y suscripciones, debe [habilitar la copia de seguridad de infraestructura de Azure Stack](../operator/azure-stack-backup-enable-backup-console.md). La programación y ejecución de copias de seguridad de infraestructura normales garantizará que los datos de administración de infraestructura no se pierdan si se produce un error muy grave en el servicio o el hardware.
@@ -52,7 +52,7 @@ Antes de iniciar una implementación de recuperación en la nube del ASDK, aseg�
 
 *El instalador de la interfaz de usuario actual solo admite claves de cifrado*
 
-|Requisito previo|DESCRIPCIÓN|
+|Requisito previo|Descripción|
 |-----|-----|
 |Ruta de acceso del recurso compartido de copia de seguridad|La ruta de acceso del recurso compartido de archivos UNC de la copia de seguridad de Azure Stack más reciente que se va a usar para recuperar información de la infraestructura de Azure Stack. Este recurso compartido local se creará durante el proceso de implementación de recuperación en la nube.|
 |Id. de la copia de seguridad que se va a restaurar|El identificador de copia de seguridad, en formato alfanumérico "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", que identifica la copia de seguridad que se va a restaurar durante la recuperación en la nube.|
@@ -65,7 +65,7 @@ Antes de iniciar una implementación de recuperación en la nube del ASDK, aseg�
 
 *El instalador de PowerShell actual es compatible con el certificado de descifrado o la clave de cifrado*
 
-|Requisito previo|DESCRIPCIÓN|
+|Requisito previo|Descripción|
 |-----|-----|
 |Ruta de acceso del recurso compartido de copia de seguridad|La ruta de acceso del recurso compartido de archivos UNC de la copia de seguridad de Azure Stack más reciente que se va a usar para recuperar información de la infraestructura de Azure Stack. Este recurso compartido local se creará durante el proceso de implementación de recuperación en la nube.|
 |Id. de la copia de seguridad que se va a restaurar|El identificador de copia de seguridad, en formato alfanumérico "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", que identifica la copia de seguridad que se va a restaurar durante la recuperación en la nube.|

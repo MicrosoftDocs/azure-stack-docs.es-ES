@@ -10,17 +10,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 10/02/2019
+ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/26/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: e36235af4dea72ae6d8016085ee18aec819ae4dd
-ms.sourcegitcommit: 20d1c0ab3892e9c4c71d5b039457f1e15b1c84c7
+ms.openlocfilehash: b187194dd63e95fa922000b68dbb701914d10465
+ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73618238"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76535916"
 ---
 # <a name="tutorial-set-up-resources-for-validation-as-a-service"></a>Tutorial: Configuración de recursos para la validación como servicio
 
@@ -48,7 +48,7 @@ Cree un inquilino para que la organización lo use para acceder a los servicios 
 
     Autorice a los usuarios de su inquilino para ejecutar acciones en VaaS mediante la asignación de uno de los roles siguientes:
 
-    | Nombre de rol | DESCRIPCIÓN |
+    | Nombre de rol | Descripción |
     |---------------------|------------------------------------------|
     | Propietario | Tiene acceso total a todos los recursos. |
     | Lector | Puede ver todos los recursos, pero no crearlos ni administrarlos. |
@@ -56,7 +56,7 @@ Cree un inquilino para que la organización lo use para acceder a los servicios 
 
     Para asignar roles en la aplicación **Azure Stack Validation Service**:
 
-   1. Inicie sesión en el [Azure Portal](https://portal.azure.com).
+   1. Inicie sesión en [Azure Portal](https://portal.azure.com).
    2. Seleccione **Todos los servicios** > **Azure Active Directory** en la sección **Identidad**.
    3. Seleccione la aplicación **Aplicaciones empresariales** > **Azure Stack Validation Service**.
    4. Seleccione **Usuarios y grupos**. En la hoja **Azure Stack Validation Service: Usuarios y grupos** se enumeran los usuarios con permiso para usar la aplicación.
@@ -70,7 +70,7 @@ Este proceso le otorga al inquilino autorización para la aplicación **Azure St
 
 1. Envíe la siguiente información acerca del inquilino a Microsoft, a la dirección de correo electrónico [vaashelp@microsoft.com](mailto:vaashelp@microsoft.com).
 
-    | Datos | DESCRIPCIÓN |
+    | data | Descripción |
     |--------------------------------|---------------------------------------------------------------------------------------------|
     | Nombre de la organización | Nombre oficial de la organización. |
     | Nombre del directorio del inquilino de Azure AD | Nombre del directorio de inquilino de Azure AD que se registra. |

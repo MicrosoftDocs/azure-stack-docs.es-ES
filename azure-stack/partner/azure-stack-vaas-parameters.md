@@ -10,17 +10,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/11/2019
+ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: e7df32ea390c236e10d64e7575dcfdd45f01ea3a
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.openlocfilehash: 567b6a98c6ee407871b53fe6ecb8ddb3762c2119
+ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955874"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76535859"
 ---
 # <a name="workflow-common-parameters-for-azure-stack-validation-as-a-service"></a>Parámetros comunes del flujo de trabajo en la validación como servicio de Azure Stack
 
@@ -59,7 +59,7 @@ También se pueden encontrar manualmente los valores de parámetros de entorno e
 
 Los parámetros de prueba comunes incluyen información confidencial que no se puede almacenar en archivos de configuración. Estos se deben proporcionar manualmente.
 
-Parámetro    | DESCRIPCIÓN
+Parámetro    | Descripción
 -------------|-----------------
 Usuario administrador de inquilinos                            | El administrador de inquilinos de Azure Active Directory que ha aprovisionado el administrador de servicios en el directorio de AAD. Este usuario realiza acciones a nivel de inquilino, como la implementación de plantillas para configurar los recursos (VM, cuentas de almacenamiento, etc.) y la ejecución de cargas de trabajo. Para más información sobre el aprovisionamiento de cuentas de inquilino, consulte [Adición de un nuevo inquilino de Azure Stack](../operator/azure-stack-add-new-user-aad.md).
 Usuario administrador de servicios             | Administrador de Azure Active Directory del inquilino del directorio de Azure AD especificado durante la implementación de Azure Stack. Busque `AADTenant` en el archivo de configuración ECE y seleccione el valor en el elemento `UniqueName`.
