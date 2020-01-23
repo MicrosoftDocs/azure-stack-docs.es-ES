@@ -1,6 +1,6 @@
 ---
-title: Administración de Azure Stack con la CLI de Azure | Microsoft Docs
-description: Obtenga información sobre cómo usar la interfaz de la línea de comandos (CLI) multiplataforma para administrar e implementar recursos en Azure Stack.
+title: Administración de Azure Stack Hub con la CLI de Azure | Microsoft Docs
+description: Obtenga información sobre cómo usar la interfaz de la línea de comandos (CLI) multiplataforma para administrar e implementar recursos en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -14,50 +14,48 @@ ms.date: 12/10/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/10/2019
-ms.openlocfilehash: f8acc74aed978b3672dacd65524a8f1dbb5e6909
-ms.sourcegitcommit: 3c40e6df2447531a69e33b2fd0f2365b7dcf8892
+ms.openlocfilehash: d35e254a17c1b79347e7d13f866e1163bf049a08
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/11/2019
-ms.locfileid: "75005373"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883378"
 ---
-# <a name="manage-and-deploy-resources-to-azure-stack-with-azure-cli"></a>Administración e implementación de recursos en Azure Stack con la CLI de Azure
-
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+# <a name="manage-and-deploy-resources-to-azure-stack-hub-with-azure-cli"></a>Administración e implementación de recursos en Azure Stack Hub con la CLI de Azure
 
 Siga los pasos de este artículo para configurar la Interfaz de la línea de comandos (CLI) de Azure a fin de administrar los recursos del Kit de desarrollo de Azure Stack (ASKD) de las plataformas de cliente de Linux, Mac y Windows.
 
 ## <a name="prepare-for-azure-cli"></a>Preparativos para la CLI de Azure
 
-Si está usando el ASDK, necesitará el certificado raíz de CA de Azure Stack para usar la CLI de Azure en la máquina de desarrollo. El certificado se usa para administrar recursos a través de la CLI.
+Si está usando el ASDK, necesitará el certificado raíz de CA de Azure Stack Hub para usar la CLI de Azure en la máquina de desarrollo. El certificado se usa para administrar recursos a través de la CLI.
 
- - **El certificado raíz de la CA de Azure Stack** es necesario si usa la CLI desde una estación de trabajo fuera del ASDK.  
+ - **El certificado raíz de la entidad de certificación de Azure Stack Hub** es necesario si usa la CLI desde una estación de trabajo fuera del ASDK.  
 
  - **El punto de conexión de alias de máquina virtual** proporciona un alias, como "UbuntuLTS" o "Win2012Datacenter". Este alias hace referencia a un editor de imagen, una oferta, una SKU y una versión como un solo parámetro al implementar máquinas virtuales.  
 
 En las secciones siguientes se explica cómo obtener estos valores.
 
-### <a name="export-the-azure-stack-ca-root-certificate"></a>Exportación del certificado raíz de CA de Azure Stack
+### <a name="export-the-azure-stack-hub-ca-root-certificate"></a>Exportación del certificado de raíz de la entidad de certificación de Azure Stack Hub
 
 Si usa un sistema integrado, no es necesario exportar el certificado raíz de CA. Si está usando el ASDK, exporte el certificado raíz de CA en un ASDK.
 
 Para exportar el certificado raíz del ASDK en formato PEM:
 
-1. Obtenga el nombre del certificado raíz de Azure Stack:
-    - Inicie sesión en el usuario de Azure Stack o portal de administración.
+1. Obtenga el nombre del certificado raíz de Azure Stack Hub:
+    - Inicie sesión en el portal de usuarios o del administrador de Azure Stack Hub.
     - Haga clic en **Seguro** cerca de la barra de direcciones.
     - En la ventana emergente, haga clic en **Válido**.
     - En la ventana Certificado, haga clic en la pestaña **Ruta de certificación**.
-    - Anote el nombre del certificado raíz de Azure Stack.
+    - Anote el nombre del certificado raíz de Azure Stack Hub.
 
-    ![Certificado raíz de Azure Stack](media/azure-stack-version-profiles-azurecli2/root-cert-name.png)
+    ![Certificado raíz de Azure Stack Hub](media/azure-stack-version-profiles-azurecli2/root-cert-name.png)
 
-2. [Cree una VM Windows en Azure Stack](azure-stack-quick-windows-portal.md).
+2. [Cree una máquina virtual Windows en Azure Stack Hub](azure-stack-quick-windows-portal.md).
 
 3. Inicie sesión en la máquina virtual, abra un símbolo del sistema de PowerShell con privilegios elevados y, luego, ejecute el siguiente script:
 
     ```powershell  
-      $label = "<the name of your azure stack root cert from Step 1>"
+      $label = "<the name of your Azure Stack Hub root cert from Step 1>"
       Write-Host "Getting certificate from the current user trusted store with subject CN=$label"
       $root = Get-ChildItem Cert:\CurrentUser\Root | Where-Object Subject -eq "CN=$label" | select -First 1
       if (-not $root)
@@ -84,13 +82,13 @@ Puede configurar un punto de conexión accesible públicamente que hospede un ar
 
 2. Descargue el [archivo de ejemplo](https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json) de GitHub.
 
-3. Cree una cuenta de almacenamiento en Azure Stack. Cuando haya terminado, cree un contenedor de blobs. Establezca la directiva de acceso en "público".  
+3. Cree una cuenta de almacenamiento en Azure Stack Hub. Cuando haya terminado, cree un contenedor de blobs. Establezca la directiva de acceso en "público".  
 
 4. Cargue el archivo JSON en el nuevo contenedor. Cuando esté listo, puede ver la dirección URL del blob. Seleccione el nombre del blob y, a continuación, seleccione la dirección URL desde las propiedades del blob.
 
 ### <a name="install-or-upgrade-cli"></a>Instalación o actualización de la CLI
 
-Inicie sesión en la estación de trabajo de desarrollo e instale la CLI. Azure Stack requiere la versión 2.0 o superior de la CLI de Azure. La versión más reciente de los perfiles de API requiere una versión actual de la CLI. Instale la CLI mediante los pasos descritos en el artículo [Instalación de la CLI de Azure](https://docs.microsoft.com/cli/azure/install-azure-cli). 
+Inicie sesión en la estación de trabajo de desarrollo e instale la CLI. Azure Stack Hub requiere la versión 2.0 o superior de la CLI de Azure. La versión más reciente de los perfiles de API requiere una versión actual de la CLI. Instale la CLI mediante los pasos descritos en el artículo [Instalación de la CLI de Azure](https://docs.microsoft.com/cli/azure/install-azure-cli). 
 
 1. Para comprobar si la instalación se realizó correctamente, abra un terminal o una ventana del símbolo del sistema y ejecute el siguiente comando:
 
@@ -100,7 +98,7 @@ Inicie sesión en la estación de trabajo de desarrollo e instale la CLI. Azure 
 
     Debería ver la versión de la CLI de Azure y otras bibliotecas dependientes instaladas en su equipo.
 
-    ![CLI de Azure en la ubicación de Python de Azure Stack](media/azure-stack-version-profiles-azurecli2/cli-python-location.png)
+    ![CLI de Azure en la ubicación de Python de Azure Stack Hub](media/azure-stack-version-profiles-azurecli2/cli-python-location.png)
 
 2. Tome nota de la ubicación de Python de la CLI. Si está ejecutando el ASDK, necesitará usar esta ubicación para agregar el certificado.
 
@@ -109,11 +107,11 @@ Inicie sesión en la estación de trabajo de desarrollo e instale la CLI. Azure 
 
 Esta sección le guiará a través de la configuración de la CLI si usa Azure AD como servicio de administración de identidades y utiliza la CLI en una máquina Windows.
 
-### <a name="trust-the-azure-stack-ca-root-certificate"></a>Confiar en el certificado de raíz de CA de Azure Stack
+### <a name="trust-the-azure-stack-hub-ca-root-certificate"></a>Confianza en el certificado raíz de la entidad de certificación de Azure Stack Hub
 
 Si usa el ASDK, deberá confiar en el certificado raíz de CA en la máquina remota. Este paso no es necesario en los sistemas integrados.
 
-Para confiar en el certificado raíz de CA de Azure Stack, debe anexarlo al almacén de certificados existente de Python correspondiente a la versión de Python instalada con la CLI de Azure. Puede que esté ejecutando su propia instancia de Python. La CLI de Azure incluye su propia versión de Python.
+Para confiar en el certificado raíz de la entidad de certificación de Azure Stack Hub, debe anexarlo al almacén de certificados existente de Python correspondiente a la versión de Python instalada con la CLI de Azure. Puede que esté ejecutando su propia instancia de Python. La CLI de Azure incluye su propia versión de Python.
 
 1. Busque la ubicación del almacén de certificados en la máquina.  Para encontrar la ubicación, puede ejecutar el comando `az --version`.
 
@@ -128,7 +126,7 @@ Para confiar en el certificado raíz de CA de Azure Stack, debe anexarlo al alm
 
     Tome nota de la ubicación del certificado. Por ejemplo, `C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\lib\site-packages\certifi\cacert.pem`. La ruta de acceso específica dependerá de su sistema operativo y de la instalación de la CLI.
 
-2. Para confiar en el certificado raíz de CA de Azure Stack, anéxelo al certificado existente de Python.
+2. Para confiar en el certificado raíz de la entidad de certificación de Azure Stack Hub, anéxelo al certificado existente de Python.
 
     ```powershell
     $pemFile = "<Fully qualified path to the PEM certificate Ex: C:\Users\user1\Downloads\root.pem>"
@@ -156,16 +154,16 @@ Para confiar en el certificado raíz de CA de Azure Stack, debe anexarlo al alm
     Write-Host "Adding the certificate content to Python Cert store"
     Add-Content "${env:ProgramFiles(x86)}\Microsoft SDKs\Azure\CLI2\Lib\site-packages\certifi\cacert.pem" $rootCertEntry
 
-    Write-Host "Python Cert store was updated to allow the Azure Stack CA root certificate"
+    Write-Host "Python Cert store was updated to allow the Azure Stack Hub CA root certificate"
     ```
 
-### <a name="connect-to-azure-stack"></a>Conexión a Azure Stack
+### <a name="connect-to-azure-stack-hub"></a>Conexión a Azure Stack Hub
 
-1. Registre el entorno de Azure Stack. Para ello, ejecute el comando `az cloud register`.
+1. Registre el entorno de Azure Stack Hub. Para ello, ejecute el comando `az cloud register`.
 
 2. Registre su entorno. Utilice los siguientes parámetros cuando ejecute `az cloud register`:
 
-    | Valor | Ejemplo | DESCRIPCIÓN |
+    | Value | Ejemplo | Descripción |
     | --- | --- | --- |
     | Nombre del entorno | AzureStackUser | Use `AzureStackUser` para el entorno de usuario. Si es operador, especifique `AzureStackAdmin`. |
     | Punto de conexión de Resource Manager | https://management.local.azurestack.external | El valor de **ResourceManagerUrl** del ASDK es el siguiente: `https://management.local.azurestack.external/` El valor de **ResourceManagerUrl** en los sistemas integrados es: `https://management.<region>.<fqdn>/` Si tiene alguna pregunta sobre el punto de conexión del sistema integrado, póngase en contacto con su operador de nube. |
@@ -183,16 +181,16 @@ Para confiar en el certificado raíz de CA de Azure Stack, debe anexarlo al alm
       az cloud set -n <environmentname>
       ```
 
-1. Actualice la configuración del entorno para usar el perfil de la versión de API específico de Azure Stack. Para actualizar la configuración, ejecute el comando siguiente:
+1. Actualice la configuración del entorno para usar el perfil de la versión de API específico de Azure Stack Hub. Para actualizar la configuración, ejecute el comando siguiente:
 
     ```azurecli
     az cloud update --profile 2019-03-01-hybrid
    ```
 
     >[!NOTE]  
-    >Si ejecuta una versión de Azure Stack anterior a la compilación 1808, debe usar el perfil de la versión de API **2017-03-09-profile** en lugar de **2019-03-01-hybrid**. Deberá usar una versión reciente de la CLI de Azure.
+    >Si ejecuta una versión de Azure Stack Hub anterior a la compilación 1808, debe usar el perfil de la versión de API **2017-03-09-profile** en lugar de **2019-03-01-hybrid**. Deberá usar una versión reciente de la CLI de Azure.
  
-1. Inicie sesión en el entorno de Azure Stack. Para ello, use el comando `az login`. Inicie sesión en el entorno de Azure Stack como un usuario o una [entidad de servicio](/azure/active-directory/develop/app-objects-and-service-principals). 
+1. Inicie sesión en el entorno de Azure Stack Hub. Para ello, use el comando `az login`. Inicie sesión en el entorno de Azure Stack Hub como un usuario o una [entidad de servicio](/azure/active-directory/develop/app-objects-and-service-principals). 
 
    - Iniciar sesión como *usuario*: 
 
@@ -215,7 +213,7 @@ Para confiar en el certificado raíz de CA de Azure Stack, debe anexarlo al alm
 
 ### <a name="test-the-connectivity"></a>Prueba de la conectividad
 
-Con todo configurado, vamos a usar la CLI para crear recursos en Azure Stack. Por ejemplo, puede crear un grupo de recursos para una aplicación y agregar una máquina virtual. Use el comando siguiente para crear un grupo de recursos denominado "MyResourceGroup":
+Con todo configurado, vamos a usar la CLI para crear recursos en Azure Stack Hub. Por ejemplo, puede crear un grupo de recursos para una aplicación y agregar una máquina virtual. Use el comando siguiente para crear un grupo de recursos denominado "MyResourceGroup":
 
 ```azurecli
 az group create -n MyResourceGroup -l local
@@ -229,7 +227,7 @@ Si el grupo de recursos se crea correctamente, el comando anterior da como resul
 
 Esta sección le guiará a través de la configuración de la CLI si usa los Servicios de federación de Active Directory (AD FS) como servicio de administración de identidades y utiliza la CLI en una máquina Windows.
 
-### <a name="trust-the-azure-stack-ca-root-certificate"></a>Confiar en el certificado de raíz de CA de Azure Stack
+### <a name="trust-the-azure-stack-hub-ca-root-certificate"></a>Confianza en el certificado raíz de la entidad de certificación de Azure Stack Hub
 
 Si usa el ASDK, deberá confiar en el certificado raíz de CA en la máquina remota. Este paso no es necesario en los sistemas integrados.
 
@@ -241,7 +239,7 @@ Si usa el ASDK, deberá confiar en el certificado raíz de CA en la máquina rem
 
     Tome nota de la ubicación del certificado. Por ejemplo, `~/lib/python3.5/site-packages/certifi/cacert.pem`. La ruta de acceso particular dependerá del sistema operativo y de la versión de Python que esté instalada.
 
-2. Para confiar en el certificado raíz de CA de Azure Stack, anéxelo al certificado existente de Python.
+2. Para confiar en el certificado raíz de la entidad de certificación de Azure Stack Hub, anéxelo al certificado existente de Python.
 
     ```powershell
     $pemFile = "<Fully qualified path to the PEM certificate Ex: C:\Users\user1\Downloads\root.pem>"
@@ -269,16 +267,16 @@ Si usa el ASDK, deberá confiar en el certificado raíz de CA en la máquina rem
     Write-Host "Adding the certificate content to Python Cert store"
     Add-Content "${env:ProgramFiles(x86)}\Microsoft SDKs\Azure\CLI2\Lib\site-packages\certifi\cacert.pem" $rootCertEntry
 
-    Write-Host "Python Cert store was updated to allow the Azure Stack CA root certificate"
+    Write-Host "Python Cert store was updated to allow the Azure Stack Hub CA root certificate"
     ```
 
-### <a name="connect-to-azure-stack"></a>Conexión a Azure Stack
+### <a name="connect-to-azure-stack-hub"></a>Conexión a Azure Stack Hub
 
-1. Registre el entorno de Azure Stack. Para ello, ejecute el comando `az cloud register`.
+1. Registre el entorno de Azure Stack Hub. Para ello, ejecute el comando `az cloud register`.
 
 2. Registre su entorno. Utilice los siguientes parámetros cuando ejecute `az cloud register`:
 
-    | Valor | Ejemplo | DESCRIPCIÓN |
+    | Value | Ejemplo | Descripción |
     | --- | --- | --- |
     | Nombre del entorno | AzureStackUser | Use `AzureStackUser` para el entorno de usuario. Si es operador, especifique `AzureStackAdmin`. |
     | Punto de conexión de Resource Manager | https://management.local.azurestack.external | El valor de **ResourceManagerUrl** del ASDK es el siguiente: `https://management.local.azurestack.external/` El valor de **ResourceManagerUrl** en los sistemas integrados es: `https://management.<region>.<fqdn>/` Si tiene alguna pregunta sobre el punto de conexión del sistema integrado, póngase en contacto con su operador de nube. |
@@ -296,16 +294,16 @@ Si usa el ASDK, deberá confiar en el certificado raíz de CA en la máquina rem
       az cloud set -n <environmentname>
       ```
 
-1. Actualice la configuración del entorno para usar el perfil de la versión de API específico de Azure Stack. Para actualizar la configuración, ejecute el comando siguiente:
+1. Actualice la configuración del entorno para usar el perfil de la versión de API específico de Azure Stack Hub. Para actualizar la configuración, ejecute el comando siguiente:
 
     ```azurecli
     az cloud update --profile 2019-03-01-hybrid
    ```
 
     >[!NOTE]  
-    >Si ejecuta una versión de Azure Stack anterior a la compilación 1808, debe usar el perfil de la versión de API **2017-03-09-profile** en lugar de **2019-03-01-hybrid**. Deberá usar una versión reciente de la CLI de Azure.
+    >Si ejecuta una versión de Azure Stack Hub anterior a la compilación 1808, debe usar el perfil de la versión de API **2017-03-09-profile** en lugar de **2019-03-01-hybrid**. Deberá usar una versión reciente de la CLI de Azure.
 
-1. Inicie sesión en el entorno de Azure Stack. Para ello, use el comando `az login`. Puede iniciar sesión en el entorno de Azure Stack como un usuario o una [entidad de servicio](/azure/active-directory/develop/app-objects-and-service-principals). 
+1. Inicie sesión en el entorno de Azure Stack Hub. Para ello, use el comando `az login`. Puede iniciar sesión en el entorno de Azure Stack Hub como un usuario o una [entidad de servicio](/azure/active-directory/develop/app-objects-and-service-principals). 
 
    - Iniciar sesión como *usuario*:
 
@@ -338,7 +336,7 @@ Si usa el ASDK, deberá confiar en el certificado raíz de CA en la máquina rem
 
 ### <a name="test-the-connectivity"></a>Prueba de la conectividad
 
-Con todo configurado, vamos a usar la CLI para crear recursos en Azure Stack. Por ejemplo, puede crear un grupo de recursos para una aplicación y agregar una máquina virtual. Use el comando siguiente para crear un grupo de recursos denominado "MyResourceGroup":
+Con todo configurado, vamos a usar la CLI para crear recursos en Azure Stack Hub. Por ejemplo, puede crear un grupo de recursos para una aplicación y agregar una máquina virtual. Use el comando siguiente para crear un grupo de recursos denominado "MyResourceGroup":
 
 ```azurecli
 az group create -n MyResourceGroup -l local
@@ -353,11 +351,11 @@ Si el grupo de recursos se crea correctamente, el comando anterior da como resul
 
 Esta sección le guiará a través de la configuración de la CLI si usa Azure AD como servicio de administración de identidades y utiliza la CLI en una máquina Linux.
 
-### <a name="trust-the-azure-stack-ca-root-certificate"></a>Confiar en el certificado de raíz de CA de Azure Stack
+### <a name="trust-the-azure-stack-hub-ca-root-certificate"></a>Confianza en el certificado raíz de la entidad de certificación de Azure Stack Hub
 
 Si usa el ASDK, deberá confiar en el certificado raíz de CA en la máquina remota. Este paso no es necesario en los sistemas integrados.
 
-Para confiar en el certificado raíz de CA de Azure Stack, anéxelo al certificado existente de Python.
+Para confiar en el certificado raíz de la entidad de certificación de Azure Stack Hub, anéxelo al certificado existente de Python.
 
 1. Busque la ubicación del certificado en la máquina. La ubicación puede variar dependiendo de dónde haya instalado Python. Debe tener PIP y el módulo certifi instalado. Use el siguiente comando de Python desde el símbolo del sistema de bash:
 
@@ -375,21 +373,21 @@ Para confiar en el certificado raíz de CA de Azure Stack, anéxelo al certifica
      sudo cat PATH_TO_PEM_FILE >> ~/<yourpath>/cacert.pem
      ```
 
-   - Para una máquina Linux en el entorno de Azure Stack:
+   - Para una máquina Linux en el entorno de Azure Stack Hub:
 
      ```bash  
      sudo cat /var/lib/waagent/Certificates.pem >> ~/<yourpath>/cacert.pem
      ```
 
-### <a name="connect-to-azure-stack"></a>Conexión a Azure Stack
+### <a name="connect-to-azure-stack-hub"></a>Conexión a Azure Stack Hub
 
-Use los pasos siguientes para conectarse a Azure Stack:
+Use los pasos siguientes para conectarse a Azure Stack Hub:
 
-1. Registre el entorno de Azure Stack. Para ello, ejecute el comando `az cloud register`.
+1. Registre el entorno de Azure Stack Hub. Para ello, ejecute el comando `az cloud register`.
 
 2. Registre su entorno. Utilice los siguientes parámetros cuando ejecute `az cloud register`:
 
-    | Valor | Ejemplo | DESCRIPCIÓN |
+    | Value | Ejemplo | Descripción |
     | --- | --- | --- |
     | Nombre del entorno | AzureStackUser | Use `AzureStackUser` para el entorno de usuario. Si es operador, especifique `AzureStackAdmin`. |
     | Punto de conexión de Resource Manager | https://management.local.azurestack.external | El valor de **ResourceManagerUrl** del ASDK es el siguiente: `https://management.local.azurestack.external/` El valor de **ResourceManagerUrl** en los sistemas integrados es: `https://management.<region>.<fqdn>/` Si tiene alguna pregunta sobre el punto de conexión del sistema integrado, póngase en contacto con su operador de nube. |
@@ -407,16 +405,16 @@ Use los pasos siguientes para conectarse a Azure Stack:
         az cloud set -n <environmentname>
       ```
 
-4. Actualice la configuración del entorno para usar el perfil de la versión de API específico de Azure Stack. Para actualizar la configuración, ejecute el comando siguiente:
+4. Actualice la configuración del entorno para usar el perfil de la versión de API específico de Azure Stack Hub. Para actualizar la configuración, ejecute el comando siguiente:
 
     ```azurecli
       az cloud update --profile 2019-03-01-hybrid
    ```
 
     >[!NOTE]  
-    >Si ejecuta una versión de Azure Stack anterior a la compilación 1808, debe usar el perfil de la versión de API **2017-03-09-profile** en lugar de **2019-03-01-hybrid**. Deberá usar una versión reciente de la CLI de Azure.
+    >Si ejecuta una versión de Azure Stack Hub anterior a la compilación 1808, debe usar el perfil de la versión de API **2017-03-09-profile** en lugar de **2019-03-01-hybrid**. Deberá usar una versión reciente de la CLI de Azure.
 
-5. Inicie sesión en el entorno de Azure Stack. Para ello, use el comando `az login`. Puede iniciar sesión en el entorno de Azure Stack como un usuario o una [entidad de servicio](/azure/active-directory/develop/app-objects-and-service-principals). 
+5. Inicie sesión en el entorno de Azure Stack Hub. Para ello, use el comando `az login`. Puede iniciar sesión en el entorno de Azure Stack Hub como un usuario o una [entidad de servicio](/azure/active-directory/develop/app-objects-and-service-principals). 
 
    * Iniciar sesión como *usuario*:
 
@@ -445,7 +443,7 @@ Use los pasos siguientes para conectarse a Azure Stack:
 
 ### <a name="test-the-connectivity"></a>Prueba de la conectividad
 
-Con todo configurado, vamos a usar la CLI para crear recursos en Azure Stack. Por ejemplo, puede crear un grupo de recursos para una aplicación y agregar una máquina virtual. Use el comando siguiente para crear un grupo de recursos denominado "MyResourceGroup":
+Con todo configurado, vamos a usar la CLI para crear recursos en Azure Stack Hub. Por ejemplo, puede crear un grupo de recursos para una aplicación y agregar una máquina virtual. Use el comando siguiente para crear un grupo de recursos denominado "MyResourceGroup":
 
 ```azurecli
     az group create -n MyResourceGroup -l local
@@ -459,11 +457,11 @@ Si el grupo de recursos se crea correctamente, el comando anterior da como resul
 
 Esta sección le guiará a través de la configuración de la CLI si usa los Servicios de federación de Active Directory (AD FS) como servicio de administración y utiliza la CLI en una máquina Linux.
 
-### <a name="trust-the-azure-stack-ca-root-certificate"></a>Confiar en el certificado de raíz de CA de Azure Stack
+### <a name="trust-the-azure-stack-hub-ca-root-certificate"></a>Confianza en el certificado raíz de la entidad de certificación de Azure Stack Hub
 
 Si usa el ASDK, deberá confiar en el certificado raíz de CA en la máquina remota. Este paso no es necesario en los sistemas integrados.
 
-Para confiar en el certificado raíz de CA de Azure Stack, anéxelo al certificado existente de Python.
+Para confiar en el certificado raíz de la entidad de certificación de Azure Stack Hub, anéxelo al certificado existente de Python.
 
 1. Busque la ubicación del certificado en la máquina. La ubicación puede variar dependiendo de dónde haya instalado Python. Debe tener PIP y el módulo certifi instalado. Use el siguiente comando de Python desde el símbolo del sistema de bash:
 
@@ -481,21 +479,21 @@ Para confiar en el certificado raíz de CA de Azure Stack, anéxelo al certifica
      sudo cat PATH_TO_PEM_FILE >> ~/<yourpath>/cacert.pem
      ```
 
-   - Para una máquina Linux en el entorno de Azure Stack:
+   - Para una máquina Linux en el entorno de Azure Stack Hub:
 
      ```bash  
      sudo cat /var/lib/waagent/Certificates.pem >> ~/<yourpath>/cacert.pem
      ```
 
-### <a name="connect-to-azure-stack"></a>Conexión a Azure Stack
+### <a name="connect-to-azure-stack-hub"></a>Conexión a Azure Stack Hub
 
-Use los pasos siguientes para conectarse a Azure Stack:
+Use los pasos siguientes para conectarse a Azure Stack Hub:
 
-1. Registre el entorno de Azure Stack. Para ello, ejecute el comando `az cloud register`.
+1. Registre el entorno de Azure Stack Hub. Para ello, ejecute el comando `az cloud register`.
 
 2. Registre su entorno. Utilice los siguientes parámetros cuando ejecute `az cloud register`.
 
-    | Valor | Ejemplo | DESCRIPCIÓN |
+    | Value | Ejemplo | Descripción |
     | --- | --- | --- |
     | Nombre del entorno | AzureStackUser | Use `AzureStackUser` para el entorno de usuario. Si es operador, especifique `AzureStackAdmin`. |
     | Punto de conexión de Resource Manager | https://management.local.azurestack.external | El valor de **ResourceManagerUrl** del ASDK es el siguiente: `https://management.local.azurestack.external/` El valor de **ResourceManagerUrl** en los sistemas integrados es: `https://management.<region>.<fqdn>/` Si tiene alguna pregunta sobre el punto de conexión del sistema integrado, póngase en contacto con su operador de nube. |
@@ -513,16 +511,16 @@ Use los pasos siguientes para conectarse a Azure Stack:
         az cloud set -n <environmentname>
       ```
 
-4. Actualice la configuración del entorno para usar el perfil de la versión de API específico de Azure Stack. Para actualizar la configuración, ejecute el comando siguiente:
+4. Actualice la configuración del entorno para usar el perfil de la versión de API específico de Azure Stack Hub. Para actualizar la configuración, ejecute el comando siguiente:
 
     ```azurecli
       az cloud update --profile 2019-03-01-hybrid
    ```
 
     >[!NOTE]  
-    >Si ejecuta una versión de Azure Stack anterior a la compilación 1808, debe usar el perfil de la versión de API **2017-03-09-profile** en lugar de **2019-03-01-hybrid**. Deberá usar una versión reciente de la CLI de Azure.
+    >Si ejecuta una versión de Azure Stack Hub anterior a la compilación 1808, debe usar el perfil de la versión de API **2017-03-09-profile** en lugar de **2019-03-01-hybrid**. Deberá usar una versión reciente de la CLI de Azure.
 
-5. Inicie sesión en el entorno de Azure Stack. Para ello, use el comando `az login`. Puede iniciar sesión en el entorno de Azure Stack como un usuario o una [entidad de servicio](/azure/active-directory/develop/app-objects-and-service-principals). 
+5. Inicie sesión en el entorno de Azure Stack Hub. Para ello, use el comando `az login`. Puede iniciar sesión en el entorno de Azure Stack Hub como un usuario o una [entidad de servicio](/azure/active-directory/develop/app-objects-and-service-principals). 
 
 6. Inicie sesión: 
 
@@ -555,7 +553,7 @@ Use los pasos siguientes para conectarse a Azure Stack:
 
 ### <a name="test-the-connectivity"></a>Prueba de la conectividad
 
-Con todo configurado, vamos a usar la CLI para crear recursos en Azure Stack. Por ejemplo, puede crear un grupo de recursos para una aplicación y agregar una máquina virtual. Use el comando siguiente para crear un grupo de recursos denominado "MyResourceGroup":
+Con todo configurado, vamos a usar la CLI para crear recursos en Azure Stack Hub. Por ejemplo, puede crear un grupo de recursos para una aplicación y agregar una máquina virtual. Use el comando siguiente para crear un grupo de recursos denominado "MyResourceGroup":
 
 ```azurecli
   az group create -n MyResourceGroup -l local
@@ -567,14 +565,14 @@ Si el grupo de recursos se crea correctamente, el comando anterior da como resul
 
 ## <a name="known-issues"></a>Problemas conocidos
 
-Existen problemas conocidos cuando se usa la CLI en Azure Stack:
+Existen problemas conocidos cuando se usa la CLI en Azure Stack Hub:
 
- - El modo interactivo de la CLI. Por ejemplo, el comando `az interactive` no se admite todavía en Azure Stack.
- - Para obtener la lista de imágenes de máquinas virtuales disponibles en Azure Stack, use el comando `az vm image list --all` en lugar del comando `az vm image list`. Al especificar la opción `--all`, se asegura de que la respuesta devuelve únicamente las imágenes que estén disponibles en el entorno de Azure Stack.
- - Los alias de las imágenes de máquinas virtuales que están disponibles en Azure pueden no ser aplicables a Azure Stack. Al utilizar imágenes de máquinas virtuales, debe utilizar todo el parámetro URN (Canonical:UbuntuServer:14.04.3-LTS:1.0.0) en lugar del alias de la imagen. Este URN debe coincidir con las especificaciones de la imagen como se derivan del comando `az vm images list`.
+ - El modo interactivo de la CLI. Por ejemplo, el comando `az interactive` no se admite todavía en Azure Stack Hub.
+ - Para obtener la lista de imágenes de máquinas virtuales disponibles en Azure Stack Hub, use el comando `az vm image list --all` en lugar del comando `az vm image list`. Al especificar la opción `--all`, se asegura de que la respuesta devuelve únicamente las imágenes que estén disponibles en el entorno de Azure Stack Hub.
+ - Los alias de las imágenes de máquinas virtuales que están disponibles en Azure pueden no ser aplicables a Azure Stack Hub. Al utilizar imágenes de máquinas virtuales, debe utilizar todo el parámetro URN (Canonical:UbuntuServer:14.04.3-LTS:1.0.0) en lugar del alias de la imagen. Este URN debe coincidir con las especificaciones de la imagen como se derivan del comando `az vm images list`.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
 - [Implementación de plantillas con la CLI de Azure](azure-stack-deploy-template-command-line.md)
-- [Habilitación de la CLI de Azure para usuarios de Azure Stack (operador)](../operator/azure-stack-cli-admin.md)
+- [Habilitación de la CLI de Azure para usuarios de Azure Stack Hub (operador)](../operator/azure-stack-cli-admin.md)
 - [Administración de permisos de usuario](azure-stack-manage-permissions.md) 

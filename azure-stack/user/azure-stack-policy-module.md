@@ -1,6 +1,6 @@
 ---
 title: Uso del módulo de directivas de Azure Stack Hub | Microsoft Docs
-description: Aprenda a restringir una suscripción de Azure para que se comporte como una suscripción de Azure Stack
+description: Aprenda a restringir una suscripción de Azure para que se comporte como una suscripción de Azure Stack Hub
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -14,16 +14,14 @@ ms.topic: article
 ms.date: 01/07/2020
 ms.author: sethm
 ms.lastreviewed: 03/26/2019
-ms.openlocfilehash: 1df2cf3eb403aabf320a226b5c184654b0b6169a
-ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
+ms.openlocfilehash: aedc2915f3e2be473b74766c4274197112ecf6fe
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75718443"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75878754"
 ---
 # <a name="manage-azure-policy-using-the-azure-stack-hub-policy-module"></a>Administración de la directiva de Azure con el módulo de directivas de Azure Stack Hub
-
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
 El módulo de directivas de Azure Stack Hub le permite configurar una suscripción de Azure con la misma disponibilidad de servicios y control de versiones que Azure Stack Hub. El módulo utiliza el cmdlet de PowerShell [**New-AzureRmPolicyDefinition**](/powershell/module/azurerm.resources/new-azurermpolicydefinition) para crear una directiva de Azure. Esta directiva limita los tipos de recursos y los servicios que están disponibles en una suscripción. Después, puede crear una asignación de la directiva dentro del ámbito que corresponda utilizando el cmdlet [**New-AzureRmPolicyAssignment**](/powershell/module/azurerm.resources/new-azurermpolicyassignment). Después de configurar la directiva, puede usar su suscripción de Azure para desarrollar aplicaciones destinadas a Azure Stack Hub.
 

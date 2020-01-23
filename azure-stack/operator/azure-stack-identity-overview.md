@@ -1,6 +1,6 @@
 ---
-title: Introducción a los proveedores de identidades en Azure Stack | Microsoft Docs
-description: Conozca los proveedores de identidades que se pueden usar con Azure Stack.
+title: Introducción a los proveedores de identidades en Azure Stack Hub| Microsoft Docs
+description: Conozca los proveedores de identidades que se pueden usar con Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: PatAltimore
@@ -16,30 +16,30 @@ ms.date: 06/03/2019
 ms.author: patricka
 ms.reviewer: fiseraci
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 94a7dc11c4711bcdf39215ccaab69e95ea5c57f3
-ms.sourcegitcommit: b72729305234e13c65de3771cb08678d46ba1348
+ms.openlocfilehash: f8c5fdaa638c7ab5fa0669ffee57611e89c192ff
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72543849"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882562"
 ---
-# <a name="overview-of-identity-providers-for-azure-stack"></a>Introducción a los proveedores de identidades en Azure Stack
+# <a name="overview-of-identity-providers-for-azure-stack-hub"></a>Introducción a los proveedores de identidades en Azure Stack Hub
 
-Azure Stack requiere un proveedor de identidades como Azure Active Directory (Azure AD) o Servicios de federación de Active Directory (AD FS) respaldados por Active Directory (AD). La elección de un proveedor es una decisión puntual que solo se toma la primera vez que implementa Azure Stack. Los conceptos y la información detallada sobre la autorización que encontrará en este artículo pueden ayudarle a realizar su elección entre los proveedores de identidades.
+Azure Stack Hub requiere un proveedor de identidades como Azure Active Directory (Azure AD) o Servicios de federación de Active Directory (AD FS) respaldados por Active Directory (AD). La elección de un proveedor es una decisión puntual que solo se toma la primera vez que implementa Azure Stack Hub. Los conceptos y la información detallada sobre la autorización que encontrará en este artículo pueden ayudarle a realizar su elección entre los proveedores de identidades.
 
-La decisión entre Azure AD y AD FS se determina por el modo en el que se implementa Azure Stack:
+La decisión entre Azure AD o AD FS viene determinada por el modo en el que se implementa Azure Stack Hub:
 
 - Cuando se implementa en modo conectado, puede usar Azure AD o AD FS.
 - Cuando se implementa en modo desconectado, sin una conexión a Internet, solo se admite AD FS.
 
-Para más información sobre estas opciones, que dependen de su entorno de Azure Stack, consulte los siguientes artículos:
+Para más información sobre estas opciones, que dependen de su entorno de Azure Stack Hub, consulte los siguientes artículos:
 
-- Kit de implementación de Azure Stack: [Consideraciones de identidad](azure-stack-datacenter-integration.md#identity-considerations).
-- Sistemas integrados de Azure Stack: [Decisiones del planeamiento de la implementación en sistemas integrados de Azure Stack](azure-stack-connection-models.md).
+- Kit de implementación de Azure Stack Hub: [Consideraciones de identidad](azure-stack-datacenter-integration.md#identity-considerations).
+- Sistemas integrados de Azure Stack Hub: [decisiones sobre el planeamiento de una implementación en sistemas integrados de Azure Stack Hub](azure-stack-connection-models.md).
 
 ## <a name="common-concepts-for-identity-providers"></a>Conceptos comunes sobre los proveedores de identidades
 
-En las secciones siguientes se tratan conceptos comunes sobre proveedores de identidades y su uso en Azure Stack.
+En las secciones siguientes se tratan conceptos comunes sobre proveedores de identidades y su uso en Azure Stack Hub.
 
 ![Terminología de proveedores de identidades](media/azure-stack-identity-overview/terminology.png)
 
@@ -58,14 +58,14 @@ Las cuentas de usuario (identidades) son cuentas estándar que autentican a los 
 
 El modo en que cree y administre usuarios y grupos depende de la solución de identidad que use.
 
-En Azure Stack, las cuentas de usuario:
+En Azure Stack Hub, las cuentas de usuario:
 
 - Se crean con el formato *nombre de usuario\@dominio*. Aunque AD FS asigna las cuentas de usuario a una instancia de Active Directory, AD FS no admite el uso del formato *\\\<dominio>\\\<alias>* .
 - Se pueden configurar para usar autenticación multifactor.
 - Están restringidas al directorio donde primero se registran, que es el directorio de la organización.
 - Se pueden importar desde los directorios locales. Para más información, consulte [Integración de los directorios locales con Azure Active Directory](/azure/active-directory/connect/active-directory-aadconnect).
 
-Al iniciar sesión en el portal del inquilino de su organización, use la dirección URL *https:\//portal.local.azurestack.external*. Al iniciar sesión en el portal de Azure Stack desde dominios que no sean el utilizado para registrar Azure Stack, el nombre de dominio usado para registrar Azure Stack se deben anexar a la dirección URL del portal. Por ejemplo, si Azure Stack se ha registrado en fabrikam.onmicrosoft.com y el registro de la cuenta de usuario es admin@contoso.com, la dirección URL que se usa para iniciar sesión en el portal de usuarios sería: https:\//portal.local.azurestack.external/fabrikam.onmicrosoft.com.
+Al iniciar sesión en el portal de usuarios de su organización, use la dirección URL *https:\//portal.local.azurestack.external*. Al iniciar sesión en el portal de Azure Stack Hub desde dominios que no sean el utilizado para registrar Azure Stack Hub, el nombre de dominio usado para registrar Azure Stack Hub se debe anexar a la dirección URL del portal. Por ejemplo, si Azure Stack Hub se ha registrado en fabrikam.onmicrosoft.com y el registro de la cuenta de usuario es admin@contoso.com, la dirección URL que se usa para iniciar sesión en el portal de usuarios sería: https:\//portal.local.azurestack.external/fabrikam.onmicrosoft.com.
 
 ### <a name="guest-users"></a>Usuarios invitados
 
@@ -107,7 +107,7 @@ Para más información sobre los objetos de aplicación y de entidad de servicio
 
 ### <a name="service-principals"></a>Entidades de servicio
 
-Una entidad de servicio es un conjunto de *credenciales* para una aplicación o servicio que conceden acceso a los recursos de Azure Stack. El uso de una entidad de servicio separa los permisos de aplicación de los permisos del usuario de la aplicación.
+Una entidad de servicio es un conjunto de *credenciales* para una aplicación o servicio que conceden acceso a los recursos de Azure Stack Hub. El uso de una entidad de servicio separa los permisos de aplicación de los permisos del usuario de la aplicación.
 
 Una entidad de servicio se crea en cada inquilino donde se usa la aplicación. La entidad de servicio establece una identidad para el inicio de sesión y el acceso a los recursos (por ejemplo, los usuarios) que están protegidos por ese inquilino.
 
@@ -117,21 +117,21 @@ Una entidad de servicio se crea en cada inquilino donde se usa la aplicación. L
 Las credenciales de las entidades de servicio pueden ser una clave generada mediante Azure Portal o un certificado. El uso de un certificado es adecuado para la automatización porque los certificados se consideran más seguros que las claves.
 
 > [!NOTE]
-> Cuando se usa AD FS con Azure Stack, solo el administrador puede crear entidades de servicio. Con AD FS, las entidades de servicio requieren certificados y se crean mediante el punto de conexión con privilegios (PEP). Para más información, consulte [Uso de una identidad de aplicación para acceder a recursos](azure-stack-create-service-principals.md).
+> Cuando se usa AD FS con Azure Stack Hub, solo el administrador puede crear entidades de servicio. Con AD FS, las entidades de servicio requieren certificados y se crean mediante el punto de conexión con privilegios (PEP). Para más información, consulte [Uso de una identidad de aplicación para acceder a recursos](azure-stack-create-service-principals.md).
 
-Para más información sobre las entidades de servicio para Azure Stack, consulte [Creación de entidades de servicio](azure-stack-create-service-principals.md).
+Para más información sobre las entidades de servicio de Azure Stack Hub, consulte [Creación de entidades de servicio](azure-stack-create-service-principals.md).
 
-### <a name="services"></a>Services
+### <a name="services"></a>Servicios
 
-Los servicios de Azure Stack que interactúan con el proveedor de identidades se registran con él como aplicaciones. Al igual que las aplicaciones, el registro permite que un servicio se autentique con el sistema de identidad.
+Los servicios de Azure Stack Hub que interactúan con el proveedor de identidades se registran en él como aplicaciones. Al igual que las aplicaciones, el registro permite que un servicio se autentique con el sistema de identidad.
 
 Todos los servicios de Azure usan protocolos [OpenID Connect](/azure/active-directory/develop/active-directory-protocols-openid-connect-code) y tokens [JSON Web Tokens](/azure/active-directory/develop/active-directory-token-and-claims) (JWT) para establecer su identidad. Debido a que Azure AD y AD FS usan los protocolos de forma coherente, puede usar la [Biblioteca de autenticación de Active Directory](/azure/active-directory/develop/active-directory-authentication-libraries) (ADAL) de Azure para autenticarse en el entorno local o en Azure (en un escenario conectado). ADAL también permite el uso de herramientas como Azure PowerShell y la CLI de Azure para la administración de recursos locales y entre nubes.
 
 ### <a name="identities-and-your-identity-system"></a>Identidades y el sistema de identidad
 
-Las identidades de Azure Stack incluyen cuentas de usuario, grupos y entidades de servicio.
+Las identidades de Azure Stack Hub incluyen cuentas de usuario, grupos y entidades de servicio.
 
-Cuando se instala Azure Stack, varias aplicaciones y servicios integrados se registran automáticamente con el proveedor de identidades en el inquilino de directorio. Algunos servicios que se registran se usan para la administración. Otros servicios están disponibles para los usuarios. Los registros predeterminados proporcionan identidades de servicio básicas que pueden interactuar unas con otras, y con identidades que se agreguen posteriormente.
+Cuando se instala Azure Stack Hub, varias aplicaciones y servicios integrados se registran automáticamente en el proveedor de identidades del inquilino de directorio. Algunos servicios que se registran se usan para la administración. Otros servicios están disponibles para los usuarios. Los registros predeterminados proporcionan identidades de servicio básicas que pueden interactuar unas con otras, y con identidades que se agreguen posteriormente.
 
 Si configura Azure AD con servicios multiinquilino, algunas aplicaciones se propagan a los nuevos directorios.
 
@@ -139,16 +139,16 @@ Si configura Azure AD con servicios multiinquilino, algunas aplicaciones se pro
 
 ### <a name="authentication-by-apps-and-users"></a>Autenticación de usuarios y aplicaciones
 
-![Identidad entre capas de Azure Stack](media/azure-stack-identity-overview/identity-layers.png)
+![Identidad entre capas de Azure Stack Hub](media/azure-stack-identity-overview/identity-layers.png)
 
-Para aplicaciones y usuarios, la arquitectura de Azure Stack se define en cuatro capas. Las interacciones entre cada una de estas capas pueden usar diferentes tipos de autenticación.
+En el caso de aplicaciones y usuarios, la arquitectura de Azure Stack Hub se define en cuatro capas. Las interacciones entre cada una de estas capas pueden usar diferentes tipos de autenticación.
 
 |Nivel    |Autenticación entre capas  |
 |---------|---------|
-|Herramientas y clientes, como el portal de administración     | Para obtener acceso a un recurso de Azure Stack o modificarlo, las herramientas y los clientes utilizan un token [JWT](/azure/active-directory/develop/active-directory-token-and-claims) para realizar una llamada a Azure Resource Manager. <br>Azure Resource Manager valida el token JWT e inspecciona las *notificaciones* en el token emitido para estimar el nivel de autorización que el usuario o la entidad de servicio tienen en Azure Stack. |
+|Herramientas y clientes, como el portal de administración     | Para acceder a un recurso de Azure Stack Hub o modificarlo, las herramientas y los clientes usan un [token web JSON](/azure/active-directory/develop/active-directory-token-and-claims) para realizar una llamada a Azure Resource Manager. <br>Azure Resource Manager valida el token web JSON e inspecciona las *notificaciones* del token emitido para estimar el nivel de autorización que el usuario o la entidad de servicio tienen en Azure Stack Hub. |
 |Azure Resource Manager y sus servicios principales     |Azure Resource Manager se comunica con los proveedores de recursos para transferir la comunicación de los usuarios. <br> Las transferencias usan llamadas *imperativas directas* o llamadas *declarativas* mediante [plantillas de Azure Resource Manager](/azure-stack/user/azure-stack-arm-templates).|
 |Proveedores de recursos     |Las llamadas pasadas a los proveedores de recursos están protegidas con autenticación basada en certificados. <br>Azure Resource Manager y el proveedor de recursos permanecen en comunicación mediante una API. El proveedor de recursos utiliza ese certificado para validar cada llamada recibida que se recibe de Azure Resource Manager.|
-|Infraestructura y lógica de negocios     |Los proveedores de recursos se comunican con la lógica de negocios y la infraestructura mediante el modo de autenticación de su elección. Los proveedores de recursos predeterminados que se envían con Azure Stack usan la autenticación de Windows para proteger esta comunicación.|
+|Infraestructura y lógica de negocios     |Los proveedores de recursos se comunican con la lógica de negocios y la infraestructura mediante el modo de autenticación de su elección. Los proveedores de recursos predeterminados que se envían con Azure Stack Hub usan la autenticación de Windows para proteger esta comunicación.|
 
 ![Información necesaria para la autenticación](media/azure-stack-identity-overview/authentication.png)
 
@@ -157,7 +157,7 @@ Para aplicaciones y usuarios, la arquitectura de Azure Stack se define en cuatro
 Para autenticarse con el proveedor de identidades y recibir un token JWT, debe tener la siguiente información:
 
 1. **Dirección URL del sistema de identidad (autoridad)** : dirección URL a través de la que se puede acceder al proveedor de identidades. Por ejemplo, *https:\//login.windows.net*.
-2. **Identificador URI del identificador de aplicación de Azure Resource Manager**: el identificador único de Azure Resource Manager que se registra en el proveedor de identidades. También es único para cada instalación de Azure Stack.
+2. **Identificador URI del identificador de aplicación de Azure Resource Manager**: el identificador único de Azure Resource Manager que se registra en el proveedor de identidades. También es único para cada instalación de Azure Stack Hub.
 3. **Credenciales**: la credencial que se usa para autenticarse con el proveedor de identidades.
 4. **Dirección URL de Azure Resource Manager**: la dirección URL es la ubicación del servicio Azure Resource Manager. Por ejemplo, *https:\//management.azure.com* o *https:\//management.local.azurestack.external*.
 
@@ -184,20 +184,20 @@ Una vez realizadas todas las validaciones, Azure Resource Manager usa las notifi
 
 ### <a name="use-role-based-access-control"></a>Uso del control de acceso basado en rol
 
-El control de acceso basado en roles (RBAC) de Azure Stack es coherente con la implementación de Microsoft Azure. Puede administrar el acceso a los recursos mediante la asignación del rol de RBAC adecuado a los usuarios, los grupos y las aplicaciones. Para más información sobre cómo usar RBAC con Azure Stack, consulte los artículos siguientes:
+El control de acceso basado en rol (RBAC) de Azure Stack Hub es coherente con la implementación de Microsoft Azure. Puede administrar el acceso a los recursos mediante la asignación del rol de RBAC adecuado a los usuarios, los grupos y las aplicaciones. Para más información sobre cómo usar RBAC con Azure Stack Hub, consulte los artículos siguientes:
 
 - [Introducción al control de acceso basado en roles en Azure Portal](/azure/role-based-access-control/overview)
 - [Uso del control de acceso basado en rol para administrar el acceso a los recursos de la suscripción de Azure](/azure/role-based-access-control/role-assignments-portal)
 - [Creación de roles personalizados para el control de acceso basado en roles de Azure](/azure/role-based-access-control/custom-roles)
-- [Administrar el control de acceso basado en roles](azure-stack-manage-permissions.md) en Azure Stack
+- [Administración del control de acceso basado en rol](azure-stack-manage-permissions.md) en Azure Stack Hub.
 
 ### <a name="authenticate-with-azure-powershell"></a>Autenticación con Azure PowerShell
 
-Se puede encontrar más información sobre el uso de Azure PowerShell para autenticarse con Azure Stack en [Configuración del entorno de PowerShell del usuario de Azure Stack](../user/azure-stack-powershell-configure-user.md).
+Para más información sobre el uso de Azure PowerShell para autenticarse con Azure Stack Hub, consulte [Configuración del entorno de PowerShell del usuario de Azure Stack Hub](../user/azure-stack-powershell-configure-user.md).
 
 ### <a name="authenticate-with-azure-cli"></a>Autenticación con la CLI de Azure
 
-Encontrará más información sobre cómo usar Azure PowerShell para autenticarse con Azure Stack en [Instalar y configurar la CLI de Azure para su uso con Azure Stack](/azure-stack/user/azure-stack-version-profiles-azurecli2).
+Para más información sobre cómo usar Azure PowerShell para autenticarse con Azure Stack Hub, consulte [Instalación y configuración de la CLI de Azure para su uso con Azure Stack Hub](/azure-stack/user/azure-stack-version-profiles-azurecli2).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

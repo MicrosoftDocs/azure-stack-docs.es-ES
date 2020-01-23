@@ -1,6 +1,6 @@
 ---
-title: Supervisión de las actualizaciones en Azure Stack mediante el uso del punto de conexión con privilegios | Microsoft Docs
-description: Obtenga información sobre cómo usar el punto de conexión con privilegios para supervisar el estado de actualización de los sistemas integrados de Azure Stack.
+title: Supervisión de Azure Stack Hub mediante el punto de conexión con privilegios | Microsoft Docs
+description: Aprenda a utilizar el punto de conexión con privilegios para supervisar el estado de las actualizaciones de los sistemas integrados de Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -14,40 +14,38 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 11/05/2018
-ms.openlocfilehash: d99a49676f9ab684c5b83e8e68cf58f86efc948f
-ms.sourcegitcommit: b5eb024d170f12e51cc852aa2c72eabf26792d8d
+ms.openlocfilehash: b2faf490b54fc7096c43b58864009bdee6117fe6
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72534062"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882273"
 ---
-# <a name="monitor-updates-in-azure-stack-using-the-privileged-endpoint"></a>Supervisión de las actualizaciones en Azure Stack mediante el uso del punto de conexión con privilegios
+# <a name="monitor-updates-in-azure-stack-hub-using-the-privileged-endpoint"></a>Supervisión de las actualizaciones de Azure Stack Hub mediante el punto de conexión con privilegios
 
-*Se aplica a: Sistemas integrados de Azure Stack*
+Puede utilizar el [punto de conexión con privilegios](azure-stack-privileged-endpoint.md) para supervisar el progreso de la ejecución de las actualizaciones de Azure Stack Hub. Si el portal de Azure Stack Hub deja de estar disponible, también puede usar el punto de conexión con privilegios para reanudar la ejecución de una actualización con errores desde el último paso correcto. El método recomendado para administrar las actualizaciones de Azure Stack es utilizar el portal de Azure Stack Hub.
 
-Puede usar el [punto de conexión con privilegios](azure-stack-privileged-endpoint.md) para supervisar el progreso de la ejecución de una actualización de Azure Stack. Si el portal de Azure Stack deja de estar disponible, también puede usar el punto de conexión con privilegios para reanudar la ejecución de una actualización con errores desde el último paso correcto. Usar el portal de Azure Stack es el método recomendado para administrar las actualizaciones de Azure Stack.
+Los nuevos cmdlets de PowerShell para la administración de actualizaciones que se indican a continuación están incluidos en la actualización 1710 de los sistemas integrados de Azure Stack Hub.
 
-Los siguientes cmdlets nuevos de PowerShell para la administración de actualizaciones están incluidos en la actualización 1710 para sistemas integrados de Azure Stack.
-
-| Cmdlet  | DESCRIPCIÓN  |
+| Cmdlet  | Descripción  |
 |---------|---------|
 | `Get-AzureStackUpdateStatus` | Devuelve el estado de la actualización actualmente en ejecución, completada o con errores. Proporciona el estado de alto nivel de la operación de actualización y un documento XML que describe el paso actual y el estado correspondiente. |
 | `Resume-AzureStackUpdate` | Reanuda una actualización con errores en el punto en el que se produjo un error. En determinados escenarios, es posible que tenga que realizar una serie de pasos de mitigación antes de reanudar la actualización.         |
 | | |
 
 ## <a name="verify-the-cmdlets-are-available"></a>Comprobación de la disponibilidad de los cmdlets
-Dado que los cmdlets son nuevos en el paquete de actualización 1710 para Azure Stack, el proceso de actualización 1710 necesita llegar hasta cierto punto para que la capacidad de supervisión esté disponible. Normalmente, los cmdlets están disponibles si el estado en el portal de administrador indica que la actualización 1710 ha llegado al paso **Restart Storage Hosts** (Reiniciar hosts de almacenamiento). En concreto, la actualización del cmdlet se produce durante el **Paso: Ejecución del paso 2.6: actualización de la lista de permitidos PrivilegedEndpoint**.
+Como los cmdlets son nuevos en el paquete de actualización 1710 de Azure Stack Hub, es necesario que el proceso de la actualización 1710 avance hasta cierto punto para que la funcionalidad de supervisión esté disponible. Normalmente, los cmdlets están disponibles si el estado en el portal de administrador indica que la actualización 1710 ha llegado al paso **Restart Storage Hosts** (Reiniciar hosts de almacenamiento). En concreto, la actualización del cmdlet se produce durante el **Paso: Ejecución del paso 2.6: actualización de la lista de permitidos PrivilegedEndpoint**.
 
 También puede determinar si los cmdlets están disponibles mediante programación al consultar la lista de comandos desde el punto de conexión con privilegios. Para realizar la consulta, ejecute los comandos siguientes desde el host de ciclo de vida de hardware o desde una estación de trabajo de acceso con privilegios. Además, asegúrese de que el punto de conexión con privilegios es un host de confianza. Para obtener más información, vea el paso 1 de [Acceso al punto de conexión con privilegios](azure-stack-privileged-endpoint.md#access-the-privileged-endpoint).
 
-1. Cree una sesión de PowerShell en cualquiera de las máquinas virtuales (VM) ERCS en su entorno de Azure Stack (*Prefix*-ERCS01, *Prefix*-ERCS02 o *Prefix*-ERCS03). Reemplace *Prefix* por la cadena de prefijo de la VM que es específica de su entorno.
+1. Cree una sesión de PowerShell en cualquiera de las máquinas virtuales de ERCS del entorno de Azure Stack Hub (*Prefijo*-ERCS01, *Prefijo*-ERCS02 o *Prefijo*-ERCS03). Reemplace *Prefix* por la cadena de prefijo de la VM que es específica de su entorno.
 
    ```powershell
    $cred = Get-Credential
 
    $pepSession = New-PSSession -ComputerName <Prefix>-ercs01 -Credential $cred -ConfigurationName PrivilegedEndpoint 
    ```
-   Cuando se le pidan credenciales, use la cuenta &lt;*dominio de Azure Stack*&gt;\cloudadmin o una cuenta que sea miembro del grupo CloudAdmins. Para la cuenta CloudAdmin, escriba la misma contraseña que proporcionó durante la instalación de la cuenta del administrador de dominio de AzureStackAdmin.
+   Cuando le pidan las credenciales, use la cuenta &lt;*dominio de Azure Stack Hub*&gt;\cloudadmin o una cuenta que sea miembro del grupo CloudAdmins. Para la cuenta CloudAdmin, escriba la misma contraseña que proporcionó durante la instalación de la cuenta del administrador de dominio de AzureStackAdmin.
 
 2. Obtenga la lista completa de comandos que están disponibles en el punto de conexión con privilegios.
 
@@ -87,14 +85,14 @@ También puede determinar si los cmdlets están disponibles mediante programaci�
 
 ### <a name="connect-to-the-privileged-endpoint-and-assign-session-variable"></a>Conexión con el punto de conexión con privilegios y asignación de la variable de sesión
 
-Ejecute los comandos siguientes para crear una sesión de PowerShell en cualquiera de las VM ERCS en su entorno de Azure Stack (*Prefix*-ERCS01, *Prefix*-ERCS02 o *Prefix*-ERCS03) y para asignar una variable de sesión.
+Ejecute los comandos siguientes para crear una sesión de PowerShell en cualquiera de las máquinas virtuales de ERCS del entorno de Azure Stack Hub (*Prefijo*-ERCS01, *Prefijo*-ERCS02 o *Prefijo*-ERCS03) y para asignar una variable de sesión.
 
 ```powershell
 $cred = Get-Credential
 
 $pepSession = New-PSSession -ComputerName <Prefix>-ercs01 -Credential $cred -ConfigurationName PrivilegedEndpoint 
 ```
- Cuando se le pidan credenciales, use la cuenta &lt;*dominio de Azure Stack*&gt;\cloudadmin o una cuenta que sea miembro del grupo CloudAdmins. Para la cuenta CloudAdmin, escriba la misma contraseña que proporcionó durante la instalación de la cuenta del administrador de dominio de AzureStackAdmin.
+ Cuando le pidan las credenciales, use la cuenta &lt;*dominio de Azure Stack Hub*&gt;\cloudadmin o una cuenta que sea miembro del grupo CloudAdmins. Para la cuenta CloudAdmin, escriba la misma contraseña que proporcionó durante la instalación de la cuenta del administrador de dominio de AzureStackAdmin.
 
 ### <a name="get-high-level-status-of-the-current-update-run"></a>Obtención del estado de alto nivel de la ejecución de la actualización actual
 
@@ -168,10 +166,10 @@ Invoke-Command -Session $pepSession -ScriptBlock { Resume-AzureStackUpdate }
 
 ## <a name="troubleshoot"></a>Solución de problemas
 
-El punto de conexión con privilegios está disponible en todas las VM ERCS en el entorno de Azure Stack. Dado que la conexión no se realiza a un punto de conexión de alta disponibilidad, puede experimentar algunas interrupciones, advertencias o mensajes de error. Estos mensajes podrían indicar que la sesión se ha desconectado o que se ha producido un error al comunicarse con el servicio ECE. Este comportamiento es normal. Puede volver a intentar la operación al cabo de unos minutos o crear una sesión de punto de conexión con privilegios en una de las otras VM ERCS.
+El punto de conexión con privilegios está disponible en todas las máquinas virtuales de ERCS del entorno de Azure Stack Hub. Dado que la conexión no se realiza a un punto de conexión de alta disponibilidad, puede experimentar algunas interrupciones, advertencias o mensajes de error. Estos mensajes podrían indicar que la sesión se ha desconectado o que se ha producido un error al comunicarse con el servicio ECE. Este comportamiento es normal. Puede volver a intentar la operación al cabo de unos minutos o crear una sesión de punto de conexión con privilegios en una de las otras VM ERCS.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Administración de las actualizaciones en Azure Stack](azure-stack-updates.md)
+- [Introducción a la administración de actualizaciones en Azure Stack Hub](azure-stack-updates.md)
 
 

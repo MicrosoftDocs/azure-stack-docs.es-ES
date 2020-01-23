@@ -15,12 +15,12 @@ ms.date: 06/14/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 06/14/2019
-ms.openlocfilehash: 2dea14ab5d43aab8deab2632b07277d7094e33c4
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.openlocfilehash: c12882ea5f26589c18abaf016ba09b17d02bdcab
+ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70974623"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022941"
 ---
 # <a name="register-the-asdk-with-azure"></a>Registro del Kit de desarrollo de Azure Stack en Azure
 
@@ -28,7 +28,7 @@ La instalación del Kit de desarrollo de Azure Stack se puede registrar en Azure
 
 Si no registra su ASDK, puede que vea la alerta de advertencia **Activación necesaria** que le informa que debe registrar el ASDK. Este comportamiento es normal.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 Antes de usar estas instrucciones para registrar el ASDK en Azure, asegúrese de que ha instalado PowerShell para Azure Stack y ha descargado las herramientas de Azure Stack como se describe en el artículo de [configuración posterior a la implementación](asdk-post-deploy.md).
 
@@ -215,15 +215,15 @@ Cuando se complete la activación, debería ver un mensaje similar a: **El entor
 
 ## <a name="verify-the-registration-was-successful"></a>Comprobación de que el registro fue correcto
 
-Puede usar el icono de **administración de regiones** para comprobar que el registro de Azure Stack se realizó correctamente. Este icono está disponible en el panel predeterminado del portal del administrador.
+Puede usar el icono de **administración de regiones** para comprobar si el registro de Azure Stack se realizó correctamente. Este icono está disponible en el panel predeterminado del portal del administrador.
 
 1. Inicie sesión en el [Portal de administración de Azure Stack](https://adminportal.local.azurestack.external).
 
 2. En el panel, seleccione **Region management** (Administración de regiones).
 
-    [![Icono de administración de región en el portal de administración de Azure Stack ](media/asdk-register/admin1sm.png "Icono de administración de región")](media/asdk-register/admin1.png#lightbox)
+    [![Icono de administración de regiones en el portal de administración de Azure Stack](media/asdk-register/admin1sm.png "Icono de administración de regiones")](media/asdk-register/admin1.png#lightbox)
 
-3. Seleccione **Propiedades**. Esta hoja muestra el estado y los detalles de su entorno. El estado puede ser **Registrado** o **No registrado**. Si el estado está registrado, también se muestra el id. de la suscripción de Azure que usó para registrar Azure Stack, junto con el grupo de recursos de registro y el nombre.
+3. Seleccione **Propiedades**. Esta hoja muestra el estado y los detalles de su entorno. El estado puede ser **Registrado** o **No registrado**. Si el estado es registrado, también muestra el identificador de la suscripción de Azure que usó para registrar Azure Stack, junto con el grupo de recursos de registro y el nombre.
 
 ## <a name="move-a-registration-resource"></a>Traslado de un recurso de registro
 Se **admite** el traslado de un recurso de registro entre grupos de recursos en la misma suscripción. Para más información sobre cómo mover recursos a un nuevo grupo de recursos, consulte [Traslado de los recursos a un nuevo grupo de recursos o a una nueva suscripción](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-move-resources).
@@ -231,4 +231,4 @@ Se **admite** el traslado de un recurso de registro entre grupos de recursos en 
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Incorporación de un elemento de Marketplace de Azure Stack](../operator/azure-stack-marketplace.md)
+- [Introducción al Marketplace de Azure Stack Hub](../operator/azure-stack-marketplace.md)

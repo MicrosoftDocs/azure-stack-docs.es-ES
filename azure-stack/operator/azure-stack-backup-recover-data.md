@@ -1,6 +1,6 @@
 ---
-title: Recuperación ante una pérdida de datos grave en Azure Stack | Microsoft Docs
-description: Aprenda cómo recuperar y restaurar los datos de infraestructura en Azure Stack después de una pérdida de datos grave.
+title: Recuperación ante una pérdida de datos grave en Azure Stack Hub | Microsoft Docs
+description: Aprenda cómo recuperar y restaurar los datos de infraestructura en Azure Stack Hub después de una pérdida de datos grave.
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -16,20 +16,18 @@ ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 11/05/2018
-ms.openlocfilehash: fd7c1ede611f9505ed48c8efc3caa5311c285cd3
-ms.sourcegitcommit: c2ea4ffb42563c26faaf2993ba7b484bcb6d5cb7
+ms.openlocfilehash: 84ec5659bef23012a8d9ba48879b4b3ebafe29c2
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71342866"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882970"
 ---
 # <a name="recover-from-catastrophic-data-loss"></a>Recuperación después de una pérdida de datos grave
 
-*Se aplica a: Sistemas integrados de Azure Stack.*
+Azure Stack Hub ejecuta servicios de Azure en su centro de datos y puede ejecutarse incluso en entornos de cuatro nodos instalados en un único bastidor. En cambio, Azure se ejecuta en más de 40 regiones en varios centros de datos y distintas zonas en cada región. Los recursos de usuario pueden abarcar varios servidores, bastidores, centros de datos y regiones. Con Azure Stack Hub, actualmente solo tiene la opción de implementar toda la nube en un único bastidor. Esta limitación hace que la nube quede expuesta al riesgo de que se produzcan errores graves en el centro de datos, o bien fallos debido a errores importantes en productos. Cuando se produce un desastre, la instancia de Azure Stack Hub queda sin conexión. Todos los datos son potencialmente irrecuperables.
 
-Azure Stack ejecuta servicios de Azure en su centro de datos y puede ejecutarse incluso en entornos de cuatro nodos instalados en un único bastidor. En cambio, Azure se ejecuta en más de 40 regiones en varios centros de datos y distintas zonas en cada región. Los recursos de usuario pueden abarcar varios servidores, bastidores, centros de datos y regiones. Con Azure Stack, actualmente solo tiene la opción de implementar toda la nube en un único bastidor. Esta limitación hace que la nube quede expuesta al riesgo de que se produzcan errores graves en el centro de datos, o bien fallos debido a errores importantes en productos. Cuando se produce un desastre, la instancia de Azure Stack queda sin conexión. Todos los datos son potencialmente irrecuperables.
-
-En función de la causa principal de la pérdida de datos, puede que tenga que reparar un solo servicio de infraestructura o que restaurar toda la instancia de Azure Stack. Incluso puede que tenga que restauran en un hardware distinto en la misma ubicación o en una ubicación diferente.
+En función de la causa principal de la pérdida de datos, puede que tenga que reparar un solo servicio de infraestructura o que restaurar toda la instancia de Azure Stack Hub. Incluso puede que tenga que restauran en un hardware distinto en la misma ubicación o en una ubicación diferente.
 
 En este escenario se aborda la recuperación de toda la instalación si se produce un error, y la reimplementación de la nube privada.
 
@@ -41,26 +39,26 @@ En este escenario se aborda la recuperación de toda la instalación si se produ
 
 El proceso de proteger Azure Stack comienza con la creación de la copia de seguridad de la infraestructura y los datos de aplicación o inquilino por separado. Este documento explica cómo proteger la infraestructura. 
 
-![Flujo de trabajo de recuperación de datos de Azure Stack: implementación](media/azure-stack-backup/azure-stack-backup-workflow1.png)
+![Flujo de trabajo de recuperación de datos de Azure Stack Hub: implementación](media/azure-stack-backup/azure-stack-backup-workflow1.png)
 
-En los peores escenarios, en los que se pierden todos los datos, la recuperación de Azure Stack es el proceso de restaura los datos de infraestructura que son únicos para esa implementación de Azure Stack y todos los datos de usuario. 
+En los peores escenarios, en los que se pierden todos los datos, la recuperación de Azure Stack Hub es el proceso de restaurar los datos de infraestructura que son únicos para esa implementación de Azure Stack Hub y todos los datos de usuario. 
 
-![Flujo de trabajo de recuperación de datos de Azure Stack: reimplementación](media/azure-stack-backup/azure-stack-backup-workflow2.png)
+![Flujo de trabajo de recuperación de datos de Azure Stack Hub: reimplementación](media/azure-stack-backup/azure-stack-backup-workflow2.png)
 
 ## <a name="restore"></a>Restauración
 
-Si hay una pérdida de datos grave, pero todavía es posible usar el hardware, es necesario reimplementar Azure Stack. Durante la implementación, puede especificar la ubicación de almacenamiento y las credenciales que se requieren para acceder a las copias de seguridad. En este modo, no es necesario especificar los servicios que se deben restaurar. Infrastructure Backup Controller inserta el estado del plano de control como parte del flujo de trabajo de la implementación.
+Si hay una pérdida de datos grave, pero todavía es posible usar el hardware, es necesario reimplementar Azure Stack Hub. Durante la implementación, puede especificar la ubicación de almacenamiento y las credenciales que se requieren para acceder a las copias de seguridad. En este modo, no es necesario especificar los servicios que se deben restaurar. Infrastructure Backup Controller inserta el estado del plano de control como parte del flujo de trabajo de la implementación.
 
 Si se produce un desastre que hace que no se pueda usar el hardware, solo es posible realizar la reimplementación en hardware nuevo. La reimplementación puede tardar varias semanas desde que se pide el hardware de reemplazo y este llega al centro de datos. Restaurar los datos del plano de control se puede hacer en cualquier momento. Sin embargo, no se admite la restauración si la versión de la instancia reimplementada es más de una versión mayor que la versión que se usó en la última copia de seguridad.
 
 | Modo de implementación | Punto de partida | Punto de conexión                                                                                                                                                                                                     |
 |-----------------|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Instalación limpia   | Compilación de línea de base | OEM implementa Azure Stack y se actualiza a la versión compatible más reciente.                                                                                                                                          |
-| Modo Recuperación   | Compilación de línea de base | OEM implementa Azure Stack en el modo de recuperación y controla que la versión coincida con los requisitos en función de la copia de seguridad más reciente disponible. OEM completa la implementación al actualizar a la versión compatible más reciente. |
+| Instalación limpia   | Compilación de línea de base | OEM implementa Azure Stack Hub y se actualiza a la versión compatible más reciente.                                                                                                                                          |
+| Modo Recuperación   | Compilación de línea de base | OEM implementa Azure Stack Hub en el modo de recuperación y controla que la versión coincida con los requisitos en función de la copia de seguridad más reciente disponible. OEM completa la implementación al actualizar a la versión compatible más reciente. |
 
 ## <a name="data-in-backups"></a>Datos en las copias de seguridad
 
-Azure Stack admite un tipo de implementación llamado modo de recuperación en la nube. Este modo se usa solo si elige recuperar Azure Stack después de que un desastre o el error en un producto haya hecho que la solución no se pueda recuperar. Este modo de implementación no recupera ninguno de los datos de usuario almacenados en la solución. El ámbito de este modo de implementación está limitado a la restauración de los datos siguientes:
+Azure Stack Hub admite un tipo de implementación llamado modo de recuperación en la nube. Este modo se usa solo si elige recuperar Azure Stack Hub después de que un desastre o error en un producto hayan hecho que la solución no se pueda recuperar. Este modo de implementación no recupera ninguno de los datos de usuario almacenados en la solución. El ámbito de este modo de implementación está limitado a la restauración de los datos siguientes:
 
  - Entradas de implementación
  - Datos internos del servicio de identidad (implementaciones de ADFS).

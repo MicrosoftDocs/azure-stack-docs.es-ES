@@ -1,6 +1,6 @@
 ---
-title: Implementación de un clúster de Kubernetes con AKS-Engine en Azure Stack | Microsoft Docs
-description: Implementación de un clúster de Kubernetes en Azure Stack desde una máquina virtual de cliente que ejecute el motor de AKS.
+title: Implementación de un clúster de Kubernetes con el motor de AKS en Azure Stack Hub | Microsoft Docs
+description: Implementación de un clúster de Kubernetes en Azure Stack Hub desde una máquina virtual de cliente que ejecute el motor de AKS.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -11,22 +11,20 @@ ms.workload: na
 pms.tgt_pltfrm: na (Kubernetes)
 ms.devlang: nav
 ms.topic: article
-ms.date: 11/21/2019
+ms.date: 01/10/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 8018b4637dadfbca948b2caa0528b113755dc6dd
-ms.sourcegitcommit: 0b783e262ac87ae67929dbd4c366b19bf36740f0
+ms.openlocfilehash: 34fc30c13cf365560fbd30234a60af4cc4f9a594
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74310301"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883580"
 ---
-# <a name="deploy-a-kubernetes-cluster-with-the-aks-engine-on-azure-stack"></a>Implementación de un clúster de Kubernetes con AKS-Engine en Azure Stack
+# <a name="deploy-a-kubernetes-cluster-with-the-aks-engine-on-azure-stack-hub"></a>Implementación de un clúster de Kubernetes con el motor de AKS en Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
-
-Puede implementar un clúster de Kubernetes en Azure Stack desde una máquina virtual de cliente que ejecute el motor de AKS. En este artículo, vamos a escribir una especificación de clúster, implementar un clúster con el archivo `apimodel.json` y comprobar el clúster mediante la implementación de MySQL con Helm.
+Puede implementar un clúster de Kubernetes en Azure Stack Hub desde una máquina virtual de cliente que ejecute el motor de AKS. En este artículo, vamos a escribir una especificación de clúster, implementar un clúster con el archivo `apimodel.json` y comprobar el clúster mediante la implementación de MySQL con Helm.
 
 ## <a name="define-a-cluster-specification"></a>Definición de una especificación de clúster
 
@@ -36,7 +34,7 @@ Puede indicar una especificación de clúster en un archivo de documento mediant
 
 En esta sección se examina la creación de un modelo de API para el clúster.
 
-1.  Empiece a usar un archivo del modelo de API de [ejemplo](https://github.com/Azure/aks-engine/tree/master/examples/azure-stack) de Azure Stack y realice una copia local para su implementación. En la máquina donde ha instalado el motor de AKS, ejecute:
+1.  Empiece a usar un archivo del modelo de API de [ejemplo](https://github.com/Azure/aks-engine/tree/master/examples/azure-stack) de Azure Stack Hub y realice una copia local para su implementación. En la máquina donde ha instalado el motor de AKS, ejecute:
 
     ```bash
     curl -o kubernetes-azurestack.json https://raw.githubusercontent.com/Azure/aks-engine/master/examples/azure-stack/kubernetes-azurestack.json
@@ -78,38 +76,40 @@ En esta sección se examina la creación de un modelo de API para el clúster.
 
 7.  En la matriz `masterProfile`, establezca los campos siguientes:
 
-    | Campo | DESCRIPCIÓN |
+    | Campo | Descripción |
     | --- | --- |
     | dnsPrefix | Escriba una cadena única que sirva para identificar el nombre de host de las máquinas virtuales. Por ejemplo, un nombre basado en el nombre del grupo de recursos. |
     | count |  Escriba el número de maestros que desea para la implementación. El mínimo para una implementación de alta disponibilidad es tres, pero se permite uno para implementaciones que no son de alta disponibilidad. |
-    | vmSize |  Escriba [un tamaño admitido por Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-vm-sizes), ejemplo `Standard_D2_v2`. |
+    | vmSize |  Escriba [un tamaño admitido por Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-vm-sizes), ejemplo `Standard_D2_v2`. |
     | Distribuciones | Escriba `aks-ubuntu-16.04`. |
 
 8.  En la matriz `agentPoolProfiles`, actualice:
 
-    | Campo | DESCRIPCIÓN |
+    | Campo | Descripción |
     | --- | --- |
     | count | Escriba el número de agentes que desea para la implementación. |
-    | vmSize | Escriba [un tamaño admitido por Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-vm-sizes), ejemplo `Standard_D2_v2`. |
+    | vmSize | Escriba [un tamaño admitido por Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-vm-sizes), ejemplo `Standard_D2_v2`. |
     | Distribuciones | Escriba `aks-ubuntu-16.04`. |
 
 9.  En la matriz `linuxProfile`, actualice:
 
-    | Campo | DESCRIPCIÓN |
+    | Campo | Descripción |
     | --- | --- |
     | adminUsername | Escriba el nombre de usuario administrador para la máquina virtual. |
-    | ssh | Escriba la clave pública que se usará para la autenticación SSH con máquinas virtuales. |
+    | ssh | Escriba la clave pública que se usará para la autenticación SSH con máquinas virtuales. Si usa Putty, abra el generador de claves de PuTTy para cargar la clave privada y la clave pública que comienza con ssh-rsa, como en el ejemplo siguiente. Puede usar la clave generada al crear el cliente de Linux, pero **necesita copiar la clave pública para que sea un texto de una sola línea, tal como se muestra en el ejemplo**.|
+
+    ![Generador de claves de PuTTY](media/azure-stack-kubernetes-aks-engine-deploy-cluster/putty-key-generator.png)
 
 ### <a name="more-information-about-the-api-model"></a>Más información sobre el modelo de API
 
 - Para obtener una referencia completa de todas las opciones disponibles en el modelo de API, consulte [Definiciones de clúster](https://github.com/Azure/aks-engine/blob/master/docs/topics/clusterdefinitions.md).  
-- Para obtener información destacada sobre opciones específicas para Azure Stack, consulte los [detalles específicos de la definición de clúster de Azure Stack](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#cluster-definition-aka-api-model).  
+- Para obtener información destacada sobre opciones específicas para Azure Stack Hub, consulte los [detalles específicos de la definición de clúster de Azure Stack Hub](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#cluster-definition-aka-api-model).  
 
 ## <a name="deploy-a-kubernetes-cluster"></a>Implementación de un clúster de Kubernetes
 
 Cuando haya recopilado todos los valores necesarios en el modelo de API, puede crear el clúster. En este momento, debe tener:
 
-Solicite al operador de Azure Stack que:
+Solicite al operador de Azure Stack Hub que:
 
 - Compruebe el estado del sistema, sugiera la ejecución de `Test-AzureStack` y la herramienta de supervisión de hardware del proveedor de OEM.
 - Compruebe la capacidad del sistema, incluidos los recursos como la memoria, el almacenamiento y las direcciones IP públicas.
@@ -117,17 +117,17 @@ Solicite al operador de Azure Stack que:
 
 Continúe con la implementación de un clúster:
 
-1.  Revise los parámetros disponibles para el motor de AKS en las [marcas de la CLI](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#cli-flags) de Azure Stack.
+1.  Revise los parámetros disponibles para el motor de AKS en las [marcas de la CLI](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#cli-flags) de Azure Stack Hub.
 
-    | Parámetro | Ejemplo | DESCRIPCIÓN |
+    | Parámetro | Ejemplo | Descripción |
     | --- | --- | --- |
-    | azure-env | AzureStackCloud | Para indicar al motor de AKS que la plataforma de destino es Azure Stack, utilice `AzureStackCloud`. |
+    | azure-env | AzureStackCloud | Para indicar al motor de AKS que la plataforma de destino es Azure Stack Hub, utilice `AzureStackCloud`. |
     | identity-system | adfs | Opcional. Especifique la solución de administración de identidad si usa los Servicios de federación de Active Directory (AD FS). |
-    | location | local | El nombre de la región de la instancia de Azure Stack. Para ASDK, la región se establece en `local`. |
+    | ubicación | local | El nombre de la región de la instancia de Azure Stack Hub. Para ASDK, la región se establece en `local`. |
     | resource-group | kube-rg | Escriba el nombre del nuevo grupo de recursos o seleccione uno existente. El nombre del recurso debe ser alfanumérico y estar en minúsculas. |
     | api-model | ./kubernetes-azurestack.json | Ruta de acceso al archivo de configuración del clúster o modelo de API. |
     | output-directory | kube-rg | Escriba el nombre del directorio que va a contener el archivo de salida `apimodel.json`, así como otros archivos generados. |
-    | client-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Escriba el GUID de la entidad de servicio. El id. de cliente identificado como identificador de la aplicación cuando el administrador de Azure Stack creó la entidad de servicio. |
+    | client-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Escriba el GUID de la entidad de servicio. El identificador de cliente indicado como identificador de la aplicación cuando el administrador de Azure Stack Hub creó la entidad de servicio. |
     | client-secret | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Escriba el secreto de la entidad de servicio. Este es el secreto de cliente que configuró al crear el servicio. |
     | subscription-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | escriba el identificador de la suscripción. Para más información, consulte [Suscripción a una oferta](https://docs.microsoft.com/azure-stack/user/azure-stack-subscribe-services#subscribe-to-an-offer). |
 
@@ -160,9 +160,9 @@ Continúe con la implementación de un clúster:
 
 Compruebe el clúster mediante la implementación de MySQL con Helm.
 
-1. Obtenga la dirección IP pública de uno de los nodos maestros con el portal de Azure Stack.
+1. Obtenga la dirección IP pública de uno de los nodos maestros con el portal de Azure Stack Hub.
 
-2. Desde una máquina con acceso a la instancia de Azure Stack, conéctese mediante SSH al nuevo nodo maestro mediante un cliente como PuTTY o MobaXterm. 
+2. Desde una máquina con acceso a la instancia de Azure Stack Hub, conéctese mediante SSH al nuevo nodo maestro mediante un cliente como PuTTY o MobaXterm. 
 
 3. Para el nombre de usuario de SSH, use "azureuser" y el archivo de clave privada del par de claves que proporcionó para la implementación del clúster.
 
@@ -196,4 +196,4 @@ Compruebe el clúster mediante la implementación de MySQL con Helm.
 ## <a name="next-steps"></a>Pasos siguientes
 
 > [!div class="nextstepaction"]
-> [Solución de problemas del motor de AKS en Azure Stack](azure-stack-kubernetes-aks-engine-troubleshoot.md)
+> [Solución de problemas del motor de AKS en Azure Stack Hub](azure-stack-kubernetes-aks-engine-troubleshoot.md)

@@ -1,7 +1,7 @@
 ---
 title: Reemplazo de un disco físico
-titleSuffix: Azure Stack
-description: Aprenda a reemplazar un disco físico en Azure Stack.
+titleSuffix: Azure Stack Hub
+description: Aprenda a reemplazar un disco físico en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -17,32 +17,30 @@ ms.date: 12/02/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 12/02/2019
-ms.openlocfilehash: 3c7808374621d3b60b1884df8ad44e27c244bfc5
-ms.sourcegitcommit: 62283e9826ea78b218f5d2c6c555cc44196b085d
+ms.openlocfilehash: ca16ffe2f3a72cbdd9a3cc22ee9b5f3acdf2c119
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74780854"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882001"
 ---
-# <a name="replace-a-physical-disk-in-azure-stack"></a>Reemplazar un disco físico en Azure Stack
+# <a name="replace-a-physical-disk-in-azure-stack-hub"></a>Reemplazo de un disco físico en Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
-
-En este artículo se describe el proceso general para reemplazar un disco físico en Azure Stack. Si se produce un error en un disco físico, deberá reemplazarlo tan pronto como sea posible.
+En este artículo se describe el proceso general para reemplazar un disco físico en Azure Stack Hub. Si se produce un error en un disco físico, deberá reemplazarlo tan pronto como sea posible.
 
 > [!Note]  
-> Reemplazar una unidad de datos física **no** requiere que el nodo de la unidad de escalado se ponga en modo de mantenimiento (purga) por adelantado. Además, una vez reemplazada la unidad física, no es necesario reparar el nodo de la unidad de escalado mediante el portal de administrador de Azure Stack Hub. En el siguiente artículo se ofrece más información en caso de que sea necesaria una reparación: [Sustitución de un componente de hardware en un nodo de unidad de escalado de Azure Stack](azure-stack-replace-component.md).
+> Reemplazar una unidad de datos física **no** requiere que el nodo de la unidad de escalado se ponga en modo de mantenimiento (purga) por adelantado. Además, una vez reemplazada la unidad física, no es necesario reparar el nodo de la unidad de escalado mediante el portal de administrador de Azure Stack Hub. En el artículo sobre [cómo reemplazar un componente de hardware en un nodo de unidad de escalado de Azure Stack Hub](azure-stack-replace-component.md) se proporciona más información en caso de ser necesaria una reparación.
 
-Puede usar este procedimiento para sistemas integrados y para implementaciones del Kit de desarrollo de Azure Stack (ASDK) que tienen discos de intercambio directo.
+Puede usar este procedimiento para implementaciones que tengan discos intercambiables en caliente.
 
 Los pasos para reemplazar el disco varían en función del fabricante del hardware del fabricante de equipos originales (OEM). Consulte la documentación de Field Replaceable Unit (FRU) del proveedor para obtener pasos detallados específicos para su sistema.
 
 ## <a name="review-disk-alert-information"></a>Revisar la información de las alertas de disco
 Cuando se produce un error en un disco, recibirá una alerta que indica que se perdió la conectividad a un disco físico.
 
-![Alerta que muestra la conectividad perdida al disco físico en la administración de Azure Stack](media/azure-stack-replace-disk/DiskAlert.png)
+![Alerta que muestra la pérdida de conectividad al disco físico en la administración de Azure Stack Hub](media/azure-stack-replace-disk/DiskAlert.png)
 
-Si abre la alerta, la descripción de la misma contiene el nodo de la unidad de escalado y la ubicación exacta del espacio físico del disco que debe reemplazar. Azure Stack también le ayuda a identificar el disco erróneo utilizando las funcionalidades del indicador LED.
+Si abre la alerta, la descripción de la misma contiene el nodo de la unidad de escalado y la ubicación exacta del espacio físico del disco que debe reemplazar. Azure Stack Hub también le ayuda a identificar el disco erróneo utilizando las funcionalidades del indicador LED.
 
 ## <a name="replace-the-physical-disk"></a>Reemplazo del disco físico
 
@@ -53,14 +51,14 @@ Siga las instrucciones de FRU del fabricante de hardware del OEM para reemplazar
 
 Para evitar el uso de un disco no compatible en un sistema integrado, el sistema bloquea los discos que no son compatibles con el proveedor. Si intenta usar un disco no compatible, una nueva alerta le indica que un disco se ha puesto en cuarentena debido a un modelo o un firmware no admitidos.
 
-Después de reemplazar el disco, Azure Stack descubre automáticamente el nuevo disco e inicia el proceso de reparación del disco virtual.
+Después de reemplazar el disco, Azure Stack Hub detecta automáticamente el nuevo disco e inicia el proceso de reparación del disco virtual.
 
-## <a name="check-the-status-of-virtual-disk-repair-using-azure-stack-powershell"></a>Comprobar el estado de reparación del disco virtual mediante PowerShell de Azure Stack
+## <a name="check-the-status-of-virtual-disk-repair-using-azure-stack-hub-powershell"></a>Comprobación del estado de reparación del disco virtual mediante PowerShell de Azure Stack Hub
 
-Después de reemplazar el disco, puede supervisar el estado de mantenimiento del disco virtual y el progreso del trabajo de reparación mediante PowerShell de Azure Stack.
+Después de reemplazar el disco, puede supervisar el estado de mantenimiento del disco virtual y el progreso del trabajo de reparación mediante PowerShell de Azure Stack Hub.
 
-1. Asegúrese de que tiene instalado PowerShell de Azure Stack. Para más información, consulte [Instalación de PowerShell de Azure Stack](azure-stack-powershell-install.md).
-2. Conéctese a Azure Stack con PowerShell como operador. Para obtener más información, vea [Configuración del entorno de PowerShell de Azure Stack](azure-stack-powershell-configure-admin.md).
+1. Asegúrese de tener instalado PowerShell de Azure Stack Hub. Para más información, consulte [Instalación de PowerShell para Azure Stack Hub](azure-stack-powershell-install.md).
+2. Conexión a Azure Stack Hub como operador con PowerShell Para más información, consulte [Conexión a Azure Stack Hub como operador con PowerShell](azure-stack-powershell-configure-admin.md).
 3. Ejecute los siguientes cmdlets para comprobar el estado del disco virtual y el estado de reparación:
 
     ```powershell  
@@ -69,9 +67,9 @@ Después de reemplazar el disco, puede supervisar el estado de mantenimiento del
     Get-AzsVolume -StorageSubSystem $StorageSubSystem.Name -ScaleUnit $scaleunit.name | Select-Object VolumeLabel, OperationalStatus, RepairStatus
     ```
 
-    ![Estado de los volúmenes de Azure Stack en PowerShell](media/azure-stack-replace-disk/get-azure-stack-volumes-health.png)
+    ![Mantenimiento de los volúmenes de Azure Stack Hub en PowerShell](media/azure-stack-replace-disk/get-azure-stack-volumes-health.png)
 
-4. Valide el estado del sistema de Azure Stack. Para obtener instrucciones, consulte [Validación del estado del sistema de Azure Stack](azure-stack-diagnostic-test.md).
+4. Valide el estado del sistema de Azure Stack Hub. Si necesita instrucciones, consulte [Validación del estado del sistema de Azure Stack Hub](azure-stack-diagnostic-test.md).
 5. Si quiere, puede ejecutar el siguiente comando para comprobar el estado del disco físico reemplazado.
 
     ```powershell  
@@ -81,7 +79,7 @@ Después de reemplazar el disco, puede supervisar el estado de mantenimiento del
     Get-AzsDrive -StorageSubSystem $StorageSubSystem.Name -ScaleUnit $scaleunit.name | Sort-Object StorageNode,MediaType,PhysicalLocation | Format-Table Storagenode, Healthstatus, PhysicalLocation, Model, MediaType,  CapacityGB, CanPool, CannotPoolReason
     ```
 
-    ![Discos físicos reemplazados en Azure Stack con PowerShell](media/azure-stack-replace-disk/check-replaced-physical-disks-azure-stack.png)
+    ![Discos físicos reemplazados en Azure Stack Hub con PowerShell](media/azure-stack-replace-disk/check-replaced-physical-disks-azure-stack.png)
 
 ## <a name="check-the-status-of-virtual-disk-repair-using-the-privileged-endpoint"></a>Comprobar el estado de la reparación del disco virtual mediante el punto de conexión con privilegios
 
@@ -111,7 +109,7 @@ Después de reemplazar el disco, puede supervisar el estado de mantenimiento del
 
     ![Salida de PowerShell del comando Get-StorageJob](media/azure-stack-replace-disk/GetStorageJobOutput.png)
 
-4. Valide el estado del sistema de Azure Stack. Para obtener instrucciones, consulte [Validación del estado del sistema de Azure Stack](azure-stack-diagnostic-test.md).
+4. Valide el estado del sistema de Azure Stack Hub. Si necesita instrucciones, consulte [Validación del estado del sistema de Azure Stack Hub](azure-stack-diagnostic-test.md).
 
 ## <a name="troubleshoot-virtual-disk-repair-using-the-privileged-endpoint"></a>Solucionar problemas de reparación del disco virtual mediante el punto de conexión con privilegios
 

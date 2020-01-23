@@ -1,6 +1,6 @@
 ---
-title: Aplicación Windows de n niveles en Azure Stack con SQL Server | Microsoft Docs
-description: Obtenga información sobre cómo ejecutar una aplicación Windows de n niveles en Azure Stack con SQL Server.
+title: Aplicación Windows de n niveles en Azure Stack Hub con SQL Server | Microsoft Docs
+description: Obtenga información sobre cómo ejecutar una aplicación Windows de n niveles en Azure Stack Hub con SQL Server.
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
@@ -9,14 +9,14 @@ ms.date: 11/01/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: 65ec9942b765eddcfda42056b47da60481d38ff4
-ms.sourcegitcommit: b2418661bfa3a791e65b9b487e20982dba3e4c41
+ms.openlocfilehash: 2c8eb46ecf53ba0bcab5d38ebe6a7e9aac79708e
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75756991"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75815449"
 ---
-# <a name="windows-n-tier-application-on-azure-stack-with-sql-server"></a>Aplicación Windows de n niveles en Azure Stack con SQL Server
+# <a name="windows-n-tier-application-on-azure-stack-hub-with-sql-server"></a>Aplicación Windows de n niveles en Azure Stack Hub con SQL Server
 
 Esta arquitectura de referencia muestra cómo implementar máquinas virtuales (VM) y una red virtual configurada para una aplicación de [n niveles](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/n-tier), con SQL Server en Windows para la capa de datos. 
 
@@ -30,19 +30,19 @@ La arquitectura tiene los siguientes componentes.
 
 -   **Grupo de recursos**. Los [grupos de recursos](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) se utilizan para agrupar los recursos de Azure con el fin de que puedan administrarse según su duración, su propietario u otros criterios.
 
--   **Conjunto de disponibilidad.** Un conjunto de disponibilidad es otra configuración de centro de datos para proporcionar redundancia y disponibilidad de máquina virtual. Esta configuración dentro de una marca de Azure Stack garantiza que, durante un evento de mantenimiento planeado o no planeado, hay al menos una máquina virtual disponible. Las máquinas virtuales se colocan en un conjunto de disponibilidad que las distribuye entre varios dominios de error (hosts de Azure Stack).
+-   **Conjunto de disponibilidad.** Un conjunto de disponibilidad es otra configuración de centro de datos para proporcionar redundancia y disponibilidad de máquina virtual. Esta configuración dentro de una marca de Azure Stack Hub garantiza que, durante un evento de mantenimiento planeado o no planeado, hay al menos una máquina virtual disponible. Las máquinas virtuales se colocan en un conjunto de disponibilidad que las distribuye entre varios dominios de error (hosts de Azure Stack Hub).
 
 ## <a name="networking-and-load-balancing"></a>Redes y equilibrio de carga
 
 -   **Red virtual y subredes**. Todas las máquinas virtuales se implementan en una red virtual que se puede dividir en subredes. Cree una subred independiente para cada nivel.
 
--   **Equilibrador de carga de capa 7.** Como Application Gateway todavía no está disponible en Azure Stack, existen alternativas disponibles en [Azure Stack Marketplace](https://docs.microsoft.com/azure-stack/operator/azure-stack-marketplace-azure-items?view=azs-1908) como: [KEMP LoadMaster Load Balancer ADC Content Switch](https://azuremarketplace.microsoft.com/marketplace/apps/kemptech.vlm-azure)/ [f5 Big-IP Virtual Edition](https://azuremarketplace.microsoft.com/marketplace/apps/f5-networks.f5-big-ip-best) o [A10 vThunder ADC](https://azuremarketplace.microsoft.com/marketplace/apps/a10networks.vthunder-414-gr1)
+-   **Equilibrador de carga de capa 7.** Como Application Gateway todavía no está disponible en Azure Stack Hub, existen alternativas disponibles en el [Marketplace de Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-marketplace-azure-items?view=azs-1908) como: [KEMP LoadMaster Load Balancer ADC Content Switch](https://azuremarketplace.microsoft.com/marketplace/apps/kemptech.vlm-azure)/ [f5 Big-IP Virtual Edition](https://azuremarketplace.microsoft.com/marketplace/apps/f5-networks.f5-big-ip-best) o [A10 vThunder ADC](https://azuremarketplace.microsoft.com/marketplace/apps/a10networks.vthunder-414-gr1)
 
 -   **Equilibradores de carga.** Use [Azure Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview) para distribuir el tráfico de red desde el nivel web al nivel de empresa y desde el nivel de empresa a SQL Server.
 
 -   **Grupos de seguridad de red** (NSG). Use NSG para restringir el tráfico de red dentro de la red virtual. Por ejemplo, en la arquitectura de tres niveles que se muestra aquí, el nivel de base de datos no acepta el tráfico procedente del front-end web, solo el procedente del nivel de empresa y la subred de administración.
 
--   **DNS**. Azure Stack no proporciona su propio servicio de hospedaje de DNS, por lo que debe usar el servidor DNS en su ADDS.
+-   **DNS**. Azure Stack Hub no proporciona su propio servicio de hospedaje de DNS, por lo que debe usar el servidor DNS en su ADDS.
 
 **Máquinas virtuales**
 
@@ -50,14 +50,14 @@ La arquitectura tiene los siguientes componentes.
 
 -   **Servidores de Active Directory Domain Services (AD DS)** . Los objetos de equipo del clúster de conmutación por error y sus roles en clúster asociados se crean en Active Directory Domain Services (AD DS). La configuración de servidores de AD DS en máquinas virtuales en la misma red virtual es el método preferido para unir otras máquinas virtuales a AD DS. También puede unir las máquinas virtuales a una instancia de AD DS empresarial existente conectando la red virtual a la red empresarial con la conexión VPN. Con ambos enfoques, debe cambiar el DNS de la red virtual al servidor DNS de AD DS (en la red virtual o la red empresarial existente) para resolver el FQDN del dominio de AD DS.
 
--   **Testigo en la nube**. Un clúster de conmutación por error requiere que más de la mitad de sus nodos se estén ejecutando, lo que se conoce como tener cuórum. Si el clúster tiene solo dos nodos, una partición de la red podría provocar que cada uno de ellos creyera que es el principal. En ese caso, se necesita un *testigo* que sea quien dilucide cuál es el principal y establezca el cuórum. Un testigo es un recurso, como por ejemplo un disco compartido, que puede actuar como dilucidador para establecer el cuórum. Un testigo en la nube es un tipo de testigo que usa Azure Blob Storage. Para más información acerca del concepto de quórum, consulte [Understanding cluster and pool quorum](https://docs.microsoft.com/windows-server/storage/storage-spaces/understand-quorum) (Descripción del cuórum de clúster y de grupo). Para más información acerca del testigo en la nube, consulte [Implementación de un testigo en la nube en un clúster de conmutación por error](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness). En Azure Stack, el punto de conexión del testigo en la nube es distinto de Azure global. 
+-   **Testigo en la nube**. Un clúster de conmutación por error requiere que más de la mitad de sus nodos se estén ejecutando, lo que se conoce como tener cuórum. Si el clúster tiene solo dos nodos, una partición de la red podría provocar que cada uno de ellos creyera que es el principal. En ese caso, se necesita un *testigo* que sea quien dilucide cuál es el principal y establezca el cuórum. Un testigo es un recurso, como por ejemplo un disco compartido, que puede actuar como dilucidador para establecer el cuórum. Un testigo en la nube es un tipo de testigo que usa Azure Blob Storage. Para más información acerca del concepto de quórum, consulte [Understanding cluster and pool quorum](https://docs.microsoft.com/windows-server/storage/storage-spaces/understand-quorum) (Descripción del cuórum de clúster y de grupo). Para más información acerca del testigo en la nube, consulte [Implementación de un testigo en la nube en un clúster de conmutación por error](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness). En Azure Stack Hub, el punto de conexión del testigo en la nube es distinto de Azure global. 
 
 Puede tener el aspecto siguiente:
 
 - Para Azure global:  
   `https://mywitness.blob.core.windows.net/`
 
-- Para Azure Stack:  
+- Para Azure Stack Hub:  
   `https://mywitness.blob.<region>.<FQDN>`
 
 -   **JumpBox**. También se denomina [host bastión](https://en.wikipedia.org/wiki/Bastion_host). Se trata de una máquina virtual segura en la red que usan los administradores para conectarse al resto de máquinas virtuales. El JumpBox tiene un NSG que solo permite el tráfico remoto que procede de direcciones IP públicas de una lista segura. El NSG debe permitir el tráfico de escritorio remoto (RDP).
@@ -68,7 +68,7 @@ Los requisitos pueden diferir de los de la arquitectura que se describe aquí. U
 
 ### <a name="virtual-machines"></a>Máquinas virtuales
 
-Para recomendaciones sobre cómo configurar las máquinas virtuales, consulte [Ejecución de una máquina virtual Windows en Azure Stack](iaas-architecture-vm-windows.md).
+Para recomendaciones sobre cómo configurar las máquinas virtuales, consulte [Ejecución de una máquina virtual Windows en Azure Stack Hub](iaas-architecture-vm-windows.md).
 
 ### <a name="virtual-network"></a>Virtual network
 
@@ -127,7 +127,7 @@ Si la aplicación realiza más lecturas que escrituras, puede descargar algunas 
 
 Para probar la implementación, [fuerce una conmutación por error manual](https://msdn.microsoft.com/library/ff877957.aspx) del grupo de disponibilidad.
 
-Si necesita optimizar el rendimiento de SQL, consulte también el artículo [Procedimientos recomendados de SQL Server para optimizar el rendimiento en Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-sql-server-vm-considerations).
+Si necesita optimizar el rendimiento de SQL, consulte también el artículo [Procedimientos recomendados de SQL Server para optimizar el rendimiento en Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-sql-server-vm-considerations).
 
 **Jumpbox**
 
@@ -149,19 +149,19 @@ Hay dos maneras básicas de configurar máquinas virtuales implementadas en un c
 
 -   Implemente un [disco administrado](https://docs.microsoft.com/azure-stack/user/azure-stack-managed-disk-considerations) con una imagen de disco personalizada. Esta opción puede ser más rápida de implementar. Sin embargo, requiere que la imagen esté actualizada.
 
-Para más información, consulte [Consideraciones de diseño para conjuntos de escalado](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-design-overview). Esta consideración de diseño se cumple principalmente para Azure Stack, aunque hay algunos puntos en los que debe poner atención:
+Para más información, consulte [Consideraciones de diseño para conjuntos de escalado](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-design-overview). Esta consideración de diseño se cumple principalmente para Azure Stack Hub, aunque hay algunos puntos en los que debe poner atención:
 
--   Los conjuntos de escalado de máquinas virtuales de Azure Stack no admiten el sobreaprovisionamiento ni las actualizaciones graduales.
+-   Los conjuntos de escalado de máquinas virtuales de Azure Stack Hub no admiten el sobreaprovisionamiento ni las actualizaciones graduales.
 
--   No es posible escalar automáticamente los conjuntos de escalado de máquinas virtuales en Azure Stack.
+-   No es posible escalar automáticamente los conjuntos de escalado de máquinas virtuales en Azure Stack Hub.
 
--   Se recomienda usar discos administrados en Azure Stack en lugar de discos no administrados para el conjunto de escalado de máquinas virtuales.
+-   Se recomienda usar discos administrados en Azure Stack Hub en lugar de discos no administrados para el conjunto de escalado de máquinas virtuales.
 
--   Actualmente, hay un límite de 700 máquinas virtuales en Azure Stack, que representa todas las máquinas virtuales de la infraestructura de Azure Stack, las máquinas virtuales individuales y las instancias de conjunto de escalado.
+-   Actualmente, hay un límite de 700 máquinas virtuales en Azure Stack Hub, que representa todas las máquinas virtuales de la infraestructura de Azure Stack Hub, las máquinas virtuales individuales y las instancias de conjunto de escalado.
 
 ## <a name="subscription-limits"></a>Límites de suscripción
 
-Cada suscripción de inquilino de Azure Stack tiene límites predeterminados, incluido un número máximo de máquinas virtuales por región que configura el operador de Azure Stack. Para más información, consulte [Introducción a los servicios, planes, ofertas y suscripciones de Azure Stack](https://docs.microsoft.com/azure-stack/operator/service-plan-offer-subscription-overview). Consulte también [Tipos de cuota en Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-quota-types).
+Cada suscripción de inquilino de Azure Stack Hub tiene límites predeterminados, incluido un número máximo de máquinas virtuales por región que configura el operador de Azure Stack Hub. Para más información, consulte [Introducción a los servicios, planes, ofertas y suscripciones de Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/service-plan-offer-subscription-overview). Consulte también [Tipos de cuota en Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-quota-types).
 
 ## <a name="security-considerations"></a>Consideraciones sobre la seguridad
 
@@ -171,7 +171,7 @@ Las redes virtuales son un límite de aislamiento del tráfico de Azure. De mane
 
 **DMZ**. Considere la posibilidad de agregar una aplicación virtual de red (NVA) para crear una red perimetral entre la red de Internet y la red virtual de Azure. NVA es un término genérico para una aplicación virtual que puede realizar tareas relacionadas con la red, como firewall, inspección de paquetes, auditoría y enrutamiento personalizado.
 
-**Cifrado**. Cifre información confidencial en reposo y use [Key Vault en Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-key-vault-manage-portal) para administrar las claves de cifrado de la base de datos. Para más información, consulte [Configuración de la integración de Azure Key Vault para SQL Server en máquinas virtuales de Azure](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-ps-sql-keyvault). También se recomienda almacenar los secretos de aplicación como, por ejemplo, las cadenas de conexión de base de datos, en Key Vault.
+**Cifrado**. Cifre datos confidenciales en reposo y use [Key Vault en Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-key-vault-manage-portal) para administrar las claves de cifrado de la base de datos. Para más información, consulte [Configuración de la integración de Azure Key Vault para SQL Server en máquinas virtuales de Azure](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-ps-sql-keyvault). También se recomienda almacenar los secretos de aplicación como, por ejemplo, las cadenas de conexión de base de datos, en Key Vault.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

@@ -1,6 +1,6 @@
 ---
-title: Configuración de los servicios multiinquilino en Azure Stack | Microsoft Docs
-description: Aprenda a habilitar y deshabilitar los servicios multiinquilino de Azure Active Directory en Azure Stack.
+title: Configuración de los servicios multiinquilino en Azure Stack Hub | Microsoft Docs
+description: Aprenda a habilitar y deshabilitar varios inquilinos de Azure Active Directory en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: PatAltimore
@@ -15,43 +15,41 @@ ms.date: 06/10/2019
 ms.author: patricka
 ms.reviewer: bryanr
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: 168565a47a7c3511111fbae565e80dbfe0e3c606
-ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
+ms.openlocfilehash: 09265b0b84a18d6df5f03127489a4d38f46a216e
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72019378"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882460"
 ---
-# <a name="configure-multi-tenancy-in-azure-stack"></a>Habilitación de los servicios multiinquilino en Azure Stack
+# <a name="configure-multi-tenancy-in-azure-stack-hub"></a>Configuración de los servicios multiinquilino en Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+Puede configurar Azure Stack Hub para admitir usuarios de varios inquilinos de Azure Active Directory (Azure AD) y permitirles usar servicios de Azure Stack Hub. Por ejemplo, tenga en cuenta el siguiente caso:
 
-Puede configurar Azure Stack para admitir usuarios de varios inquilinos de Azure Active Directory (Azure AD) para usar los servicios en Azure Stack. Por ejemplo, tenga en cuenta el siguiente caso:
-
-- Usted es el administrador de servicios de contoso.onmicrosoft.com, donde está instalado Azure Stack.
+- Es el administrador de servicios de contoso.onmicrosoft.com, donde está instalado Azure Stack Hub.
 - Mary es la administradora de directorios de fabrikam.onmicrosoft.com, donde se encuentran los usuarios invitados.
-- La empresa de Mary recibe servicios IaaS y PaaS de su empresa y debe permitir que los usuarios del directorio de invitados (fabrikam.onmicrosoft.com) inicien sesión y usen los recursos de Azure Stack en contoso.onmicrosoft.com.
+- La empresa de Mary recibe servicios IaaS y PaaS de la suya y debe permitir que los usuarios del directorio invitado (fabrikam.onmicrosoft.com) inicien sesión y usen los recursos de Azure Stack Hub en contoso.onmicrosoft.com.
 
-En esta guía encontrará los pasos necesarios, en el contexto de este escenario, para configurar los servicios multiinquilino en Azure Stack. En este escenario, usted y Mary deben completar los pasos para permitir que los usuarios de Fabrikam inicien sesión y consuman servicios de la implementación de Azure Stack en Contoso.
+En esta guía encontrará los pasos necesarios, en el contexto de este escenario, para configurar los servicios multiinquilino en Azure Stack Hub. En este escenario, usted y Mary deben realizar los pasos para permitir que los usuarios de Fabrikam inicien sesión y consuman servicios de la implementación de Azure Stack Hub en Contoso.
 
 ## <a name="enable-multi-tenancy"></a>Habilitación de servicios multiinquilino
 
-Hay algunos requisitos previos que debe tener en cuenta antes de configurar los servicios multiinquilino en Azure Stack:
+Hay algunos requisitos previos que se deben tener en cuenta antes de configurar los servicios multiinquilino en Azure Stack Hub:
   
- - Usted y Mary deben coordinar los procedimientos administrativos tanto en el directorio donde está instalado Azure Stack (Contoso) como en el directorio de invitados (Fabrikam).
- - Asegúrese de que ha [instalado](azure-stack-powershell-install.md) y [configurado](azure-stack-powershell-configure-admin.md) PowerShell para Azure Stack.
- - [Descargue Azure Stack Tools](azure-stack-powershell-download.md) e importe los módulos Connect e Identity:
+ - Usted y Mary deben coordinar los procedimientos administrativos tanto en el directorio donde está instalado Azure Stack Hub (Contoso) como en el directorio de invitados (Fabrikam).
+ - Asegúrese de que ha [instalado](azure-stack-powershell-install.md) y [configurado](azure-stack-powershell-configure-admin.md) PowerShell para Azure Stack Hub.
+ - [Descargue Azure Stack Hub Tools](azure-stack-powershell-download.md) e importe los módulos Connect e Identity:
 
     ```powershell
     Import-Module .\Connect\AzureStack.Connect.psm1
     Import-Module .\Identity\AzureStack.Identity.psm1
     ```
 
-### <a name="configure-azure-stack-directory"></a>Configurar el directorio de Azure Stack
+### <a name="configure-azure-stack-hub-directory"></a>Configuración del directorio de Azure Stack Hub
 
-En esta sección, configurará Azure Stack para permitir inicios de sesión de inquilinos del directorio de Azure AD de Fabrikam.
+En esta sección, configurará Azure Stack Hub para permitir inicios de sesión de los inquilinos del directorio de Azure AD de Fabrikam.
 
-Incorpore el inquilino de directorio invitado (Fabrikam) a Azure Stack y configure Azure Resource Manager para aceptar usuarios y entidades de servicio de dicho inquilino.
+Incorpore el inquilino del directorio invitado (Fabrikam) a Azure Stack Hub y configure Azure Resource Manager para aceptar usuarios y entidades de servicio de dicho inquilino.
 
 El administrador de servicios de contoso.onmicrosoft.com ejecuta los comandos siguientes:
 
@@ -59,7 +57,7 @@ El administrador de servicios de contoso.onmicrosoft.com ejecuta los comandos si
 ## The following Azure Resource Manager endpoint is for the ASDK. If you're in a multinode environment, contact your operator or service provider to get the endpoint.
 $adminARMEndpoint = "https://adminmanagement.local.azurestack.external"
 
-## Replace the value below with the Azure Stack directory
+## Replace the value below with the Azure Stack Hub directory
 $azureStackDirectoryTenant = "contoso.onmicrosoft.com"
 
 ## Replace the value below with the guest tenant directory. 
@@ -84,9 +82,9 @@ Register-AzSGuestDirectoryTenant -AdminResourceManagerEndpoint $adminARMEndpoint
 
 ### <a name="configure-guest-directory"></a>Configurar el directorio de invitados
 
-Cuando el operador de Azure Stack ha habilitado el directorio de Fabrikam para su uso con Azure Stack, Mary debe registrar Azure Stack con el inquilino del directorio de Fabrikam.
+Cuando el operador de Azure Stack Hub haya habilitado el directorio de Fabrikam que se usará con Azure Stack Hub, Mary debe registrar Azure Stack Hub en el inquilino del directorio de Fabrikam.
 
-#### <a name="registering-azure-stack-with-the-guest-directory"></a>Registrar Azure Stack en el directorio de invitados
+#### <a name="registering-azure-stack-hub-with-the-guest-directory"></a>Registro de Azure Stack Hub en el directorio invitado
 
 Mary (administradora del directorio de Fabrikam) ejecuta los comandos siguientes en el fabrikam.onmicrosoft.com del directorio invitado:
 
@@ -104,9 +102,9 @@ Register-AzSWithMyDirectoryTenant `
 ```
 
 > [!IMPORTANT]
-> Si el administrador de Azure Stack instala nuevos servicios o las actualizaciones en el futuro, puede que tenga que volver a ejecutar este script.
+> Si el administrador de Azure Stack Hub instala nuevos servicios o actualizaciones en el futuro, puede que tenga que volver a ejecutar este script.
 >
-> Ejecute este script de nuevo en cualquier momento para comprobar el estado de las aplicaciones de Azure Stack en su directorio.
+> Ejecute este script de nuevo en cualquier momento para comprobar el estado de las aplicaciones de Azure Stack Hub en su directorio.
 >
 > Si ha tenido problemas al crear máquinas virtuales en discos administrados (característica incorporada en la actualización 1808), es que se ha agregado un nuevo **proveedor de recursos de disco** que exige que este script se vuelva a ejecutar.
 
@@ -118,9 +116,9 @@ Mary indica a todas las [entidades de seguridad externas](/azure/role-based-acce
 
 ## <a name="disable-multi-tenancy"></a>Deshabilitación del servicio multiinquilino
 
-Si ya no desea varios inquilinos en Azure Stack, puede deshabilitar el servicio multiinquilino siguiendo estos pasos en orden:
+Si ya no desea varios inquilinos en Azure Stack Hub, puede deshabilitar el servicio multiinquilino siguiendo estos pasos en orden:
 
-1. Como administrador del directorio invitado (Mary en este escenario), ejecute *Unregister-AzsWithMyDirectoryTenant*. El cmdlet desinstala todas las aplicaciones de Azure Stack del nuevo directorio.
+1. Como administrador del directorio invitado (Mary en este escenario), ejecute *Unregister-AzsWithMyDirectoryTenant*. El cmdlet desinstala todas las aplicaciones de Azure Stack Hub del nuevo directorio.
 
     ``` PowerShell
     ## The following Azure Resource Manager endpoint is for the ASDK. If you're in a multinode environment, contact your operator or service provider to get the endpoint.
@@ -135,13 +133,13 @@ Si ya no desea varios inquilinos en Azure Stack, puede deshabilitar el servicio 
      -Verbose 
     ```
 
-2. Como administrador de servicios de Azure Stack (usted en este escenario), ejecute *Unregister-AzSGuestDirectoryTenant*.
+2. Como administrador de servicios de Azure Stack Hub (usted en este escenario), ejecute *Unregister-AzSGuestDirectoryTenant*.
 
     ``` PowerShell
     ## The following Azure Resource Manager endpoint is for the ASDK. If you're in a multinode environment, contact your operator or service provider to get the endpoint.
     $adminARMEndpoint = "https://adminmanagement.local.azurestack.external"
     
-    ## Replace the value below with the Azure Stack directory
+    ## Replace the value below with the Azure Stack Hub directory
     $azureStackDirectoryTenant = "contoso.onmicrosoft.com"
     
     ## Replace the value below with the guest tenant directory. 
@@ -162,6 +160,6 @@ Si ya no desea varios inquilinos en Azure Stack, puede deshabilitar el servicio 
 ## <a name="next-steps"></a>Pasos siguientes
 
 - [Administrar proveedores delegados](azure-stack-delegated-provider.md)
-- [Conceptos clave de Azure Stack](azure-stack-overview.md)
-- [Administración del uso y la facturación de Azure Stack como proveedor de soluciones en la nube](azure-stack-add-manage-billing-as-a-csp.md)
-- [Adición de inquilinos para uso y facturación en Azure Stack](azure-stack-csp-howto-register-tenants.md)
+- [Conceptos clave de Azure Stack Hub](azure-stack-overview.md)
+- [Administración del uso y la facturación de Azure Stack Hub como proveedor de soluciones en la nube](azure-stack-add-manage-billing-as-a-csp.md)
+- [Adición de inquilinos a Azure Stack Hub para uso y facturación](azure-stack-csp-howto-register-tenants.md)

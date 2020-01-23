@@ -1,6 +1,6 @@
 ---
-title: Copia de seguridad de Azure Stack | Microsoft Docs
-description: Aprenda a realizar una copia de seguridad a petición en Azure Stack.
+title: Copia de seguridad de Azure Stack Hub | Microsoft Docs
+description: Aprenda a realizar una copia de seguridad a petición en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -16,20 +16,18 @@ ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 09/05/2018
-ms.openlocfilehash: 01a4ff62b7cc340a0cf0f98298ee28425d6df892
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.openlocfilehash: 04f07af2860518174bf1f2e65ed17e85c34b4692
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70974719"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882681"
 ---
-# <a name="back-up-azure-stack"></a>Copia de seguridad de Azure Stack
+# <a name="back-up-azure-stack-hub"></a>Copia de seguridad de Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+En este artículo, se explica cómo realizar una copia de seguridad a petición en Azure Stack Hub. Si necesita instrucciones para configurar el entorno de PowerShell, consulte esta artículo sobre la [instalación de PowerShell para Azure Stack Hub](azure-stack-powershell-install.md). Para iniciar sesión en Azure Stack Hub, consulte [Uso del portal del administrador de Azure Stack Hub](azure-stack-manage-portals.md).
 
-En este artículo se indica cómo realizar una copia de seguridad a petición en Azure Stack. Para obtener instrucciones acerca de cómo configurar el entorno de PowerShell, consulte [Instalación de PowerShell para Azure Stack](azure-stack-powershell-install.md). Para iniciar sesión en Azure Stack, consulte [Uso del portal de administración de Azure Stack](azure-stack-manage-portals.md).
-
-## <a name="start-azure-stack-backup"></a>Inicio de la copia de seguridad de Azure Stack
+## <a name="start-azure-stack-hub-backup"></a>Inicio de la copia de seguridad de Azure Stack Hub
 
 ### <a name="start-a-new-backup-without-job-progress-tracking"></a>Inicio de una nueva copia de seguridad sin seguimiento del progreso de trabajo
 Use Start-AzSBackup para iniciar una nueva copia de seguridad inmediatamente sin seguir el progreso de trabajo.
@@ -38,7 +36,7 @@ Use Start-AzSBackup para iniciar una nueva copia de seguridad inmediatamente sin
    Start-AzsBackup -Force
 ```
 
-### <a name="start-azure-stack-backup-with-job-progress-tracking"></a>Inicio de una copia de seguridad de Azure Stack con seguimiento del progreso de trabajo
+### <a name="start-azure-stack-hub-backup-with-job-progress-tracking"></a>Inicio de una copia de seguridad de Azure Stack Hub con seguimiento del progreso del trabajo
 Use Start-AzSBackup para iniciar una nueva copia de seguridad con el parámetro **-AsJob** y guárdelo como una variable para realizar el seguimiento del progreso del trabajo de copia de seguridad.
 
 > [!NOTE]
@@ -112,9 +110,9 @@ El resultado debe tener un aspecto similar a la siguiente salida:
 ```
 
 ### <a name="confirm-backup-has-completed-in-the-administrator-portal"></a>Confirmación de que la copia de seguridad se ha completado en el portal del administrador
-Use el portal de administración de Azure Stack para comprobar que esa copia de seguridad se ha completado correctamente; para ello, siga estos pasos:
+Use el portal del administrador de Azure Stack Hub para verificar si esa copia de seguridad se ha completado correctamente; para ello, siga estos pasos:
 
-1. Abra el [portal del administrador de Azure Stack](azure-stack-manage-portals.md).
+1. Abra el [portal del administrador de Azure Stack Hub](azure-stack-manage-portals.md).
 2. Seleccione **Todos los servicios** y, luego, en la categoría **ADMINISTRACIÓN**, seleccione > **Copia de seguridad de infraestructura**. Elija **Configuración** en la hoja **Copia de seguridad de infraestructura**.
 3. Busque el **Nombre** y la **Fecha de finalización** de la copia de seguridad en la lista **Copias de seguridad disponibles**.
 4. Compruebe que el **Estado** es **Correcto**.

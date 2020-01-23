@@ -1,7 +1,7 @@
 ---
-title: Preparación de certificados PKI de Azure Stack para la implementación o rotación | Microsoft Docs
-titleSuffix: Azure Stack
-description: Aprenda a preparar certificados PKI para la implementación de sistemas integrados de Azure Stack o para rotar secretos en un entorno de Azure Stack existente.
+title: Preparación de certificados PKI de Azure Stack Hub para implementación o rotación | Microsoft Docs
+titleSuffix: Azure Stack Hub
+description: Aprenda a preparar certificados PKI para la implementación de sistemas integrados de Azure Stack Hub o para rotar secretos de un entorno de Azure Stack Hub existente.
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -16,20 +16,20 @@ ms.date: 09/16/2019
 ms.author: justinha
 ms.reviewer: ppacent
 ms.lastreviewed: 09/16/2019
-ms.openlocfilehash: a63e0e3a2246cc3c3c659f9671afdf4be0cc93cd
-ms.sourcegitcommit: ca358ea5c91a0441e1d33f540f6dbb5b4d3c92c5
+ms.openlocfilehash: 9031f81909a5bfe44882aabce47488ba6ca40edf
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73802373"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75810357"
 ---
-# <a name="prepare-azure-stack-pki-certificates-for-deployment-or-rotation"></a>Preparación de certificados PKI de Azure Stack para la implementación o rotación
+# <a name="prepare-azure-stack-hub-pki-certificates-for-deployment-or-rotation"></a>Preparación de certificados PKI de Azure Stack Hub para implementación o rotación
 
-Los archivos de certificado [obtenidos de la entidad de certificación de su elección](azure-stack-get-pki-certs.md) deben importarse y exportarse con propiedades que coincidan con los requisitos de certificado de Azure Stack.
+Los archivos de certificado [obtenidos de la entidad de certificación (CA) de su elección](azure-stack-get-pki-certs.md) deben importarse y exportarse de forma que las propiedades coincidan con los requisitos de certificado de Azure Stack Hub.
 
 ## <a name="prepare-certificates-for-deployment"></a>Preparación de los certificados para la implementación
 
-Siga estos pasos para preparar y validar los certificados PKI de Azure Stack que se usarán para implementar un nuevo entorno de Azure Stack o para rotar los secretos en un entorno existente de Azure Stack.
+Siga estos pasos para preparar y validar los certificados PKI de Azure Stack Hub que se usarán para implementar un nuevo entorno de Azure Stack Hub o para rotar los secretos de un entorno existente de Azure Stack Hub.
 
 ### <a name="import-the-certificate"></a>Importación del certificado
 
@@ -54,7 +54,7 @@ Siga estos pasos para preparar y validar los certificados PKI de Azure Stack que
 1. Seleccione **Finalizar** para completar la importación.
 
 > [!NOTE]
-> Después de importar un certificado para Azure Stack, la clave privada del certificado se almacena como un archivo PKCS 12 (PFX) en el almacenamiento de clúster.
+> Después de importar un certificado para Azure Stack Hub, la clave privada del certificado se almacena como un archivo PKCS 12 (PFX) en el almacenamiento en clúster.
 
 ### <a name="export-the-certificate"></a>Exportación de certificados
 
@@ -75,7 +75,7 @@ Abra la consola MMC del administrador de certificados y conéctese al almacén d
 5. En la barra de tareas de la consola del administrador de certificados, seleccione **Acciones** > **Todas las tareas** > **Exportar**. Seleccione **Next** (Siguiente).
 
    > [!NOTE]
-   > Dependiendo del número de certificados de Azure Stack que tenga, es posible que necesite completar este proceso más de una vez.
+   > Dependiendo del número de certificados de Azure Stack Hub que tenga, puede que necesite completar este proceso más de una vez.
 
 6. Seleccione **Exportar la clave privada** y, después, haga clic en **Siguiente**.
 

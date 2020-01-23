@@ -1,6 +1,6 @@
 ---
-title: Implementación de Kubernetes para usar contenedores de Azure Stack | Microsoft Docs
-description: Aprenda a implementar Kubernetes para usar contenedores con Azure Stack.
+title: Implementación de Kubernetes para usar contenedores de Azure Stack Hub | Microsoft Docs
+description: Aprenda a implementar Kubernetes para usar contenedores con Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,25 +15,23 @@ ms.date: 10/10/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
-ms.openlocfilehash: 0fc45ae0413fb7e269d8d7347e2279895c234950
-ms.sourcegitcommit: 0d27456332031ab98ba2277117395ae5ffcbb79f
+ms.openlocfilehash: c19cf8a97fa92e0084a5b494fe79a7e45a519cad
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73047160"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75878397"
 ---
-# <a name="deploy-kubernetes-to-use-containers-with-azure-stack"></a>Implementación de Kubernetes para usar contenedores con Azure Stack
-
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+# <a name="deploy-kubernetes-to-use-containers-with-azure-stack-hub"></a>Implementación de Kubernetes para usar contenedores con Azure Stack Hub
 
 > [!Note]  
 > Use únicamente el elemento Kubernetes de Marketplace de Azure Stack para implementar clústeres como prueba de concepto. Para los clústeres de Kubernetes admitidos en Azure Stack, utilice el  [motor de AKS](azure-stack-kubernetes-aks-engine-overview.md).
 
-Puede seguir los pasos descritos en este artículo para implementar y configurar los recursos de Kubernetes en una operación única y coordinada. Los siguientes pasos usan una plantilla de solución de Azure Resource Manager. Tendrá que recopilar la información necesaria sobre la instalación de Azure Stack, generar la plantilla y, a continuación, implementarla en la nube. La plantilla de Azure Stack no usa el mismo servicio AKS administrado que se ofrece en Azure en general.
+Puede seguir los pasos descritos en este artículo para implementar y configurar los recursos de Kubernetes en una operación única y coordinada. Los siguientes pasos usan una plantilla de solución de Azure Resource Manager. Tendrá que recopilar la información necesaria sobre la instalación de Azure Stack Hub, generar la plantilla y, a continuación, implementarla en la nube. La plantilla de Azure Stack Hub no usa el mismo servicio AKS administrado que se ofrece en Azure global.
 
 ## <a name="kubernetes-and-containers"></a>Kubernetes y contenedores
 
-Puede instalar Kubernetes mediante las plantillas de Azure Resource Manager que genera el motor de AKS en Azure Stack. [Kubernetes](https://kubernetes.io) es un sistema de código abierto para automatizar la implementación, el escalado y la administración de aplicaciones en contenedores. Un [contenedor](https://www.docker.com/what-container) está en una imagen. La imagen de contenedor es parecida a una máquina virtual aunque, a diferencia de esta, el contenedor tan solo incluye los recursos necesarios para ejecutar una aplicación, como el código, el tiempo de ejecución para ejecutar el código, bibliotecas específicas y la configuración.
+Puede instalar Kubernetes mediante las plantillas de Azure Resource Manager que genera el motor de AKS en Azure Stack Hub. [Kubernetes](https://kubernetes.io) es un sistema de código abierto para automatizar la implementación, el escalado y la administración de aplicaciones en contenedores. Un [contenedor](https://www.docker.com/what-container) está en una imagen. La imagen de contenedor es parecida a una máquina virtual aunque, a diferencia de esta, el contenedor tan solo incluye los recursos necesarios para ejecutar una aplicación, como el código, el tiempo de ejecución para ejecutar el código, bibliotecas específicas y la configuración.
 
 Puede utilizar Kubernetes para:
 
@@ -41,17 +39,17 @@ Puede utilizar Kubernetes para:
 - Simplificar el diseño de la aplicación y mejorar la fiabilidad mediante distintas aplicaciones de Helm. [Helm](https://github.com/kubernetes/helm) es una herramienta de empaquetado de código abierto que ayuda a instalar y administrar el ciclo de vida de las aplicaciones de Kubernetes.
 - Supervisar y diagnosticar fácilmente el estado de las aplicaciones.
 
-Solo se le cobrará por el uso de proceso requerido por los nodos que forman el clúster. Para más información, consulte [Uso y facturación en Azure Stack](../operator/azure-stack-billing-and-chargeback.md).
+Solo se le cobrará por el uso de proceso requerido por los nodos que forman el clúster. Para más información, consulte [Uso y facturación en Azure Stack Hub](../operator/azure-stack-billing-and-chargeback.md).
 
 ## <a name="deploy-kubernetes-to-use-containers"></a>Implementación de Kubernetes para usar contenedores
 
-Los pasos para implementar un clúster de Kubernetes en Azure Stack dependerán de su servicio de administración de identidad. Compruebe la solución de administración de identidades utilizada por la instalación de Azure Stack. Póngase en contacto con el administrador de Azure Stack para comprobar el servicio de administración de identidad.
+Los pasos para implementar un clúster de Kubernetes en Azure Stack Hub dependerán de su servicio de administración de identidad. Compruebe la solución de administración de identidades utilizada por la instalación de Azure Stack Hub. Póngase en contacto con el administrador de Azure Stack Hub para comprobar el servicio de administración de identidad.
 
 - **Azure Active Directory (Azure AD)**  
-Para obtener instrucciones acerca de cómo instalar el clúster al usar Azure AD, consulte [Implementación de Kubernetes en Azure Stack con Azure Active Directory (Azure AD)](azure-stack-solution-template-kubernetes-azuread.md).
+Para obtener instrucciones acerca de cómo instalar el clúster al usar Azure AD, consulte [Implementación de Kubernetes en Azure Stack Hub con Azure Active Directory (Azure AD)](azure-stack-solution-template-kubernetes-azuread.md).
 
 - **Servicios de federación de Active Directory (AD FS)** .  
-Para obtener instrucciones acerca de cómo instalar el clúster al usar AD FS, consulte [Deploy Kubernetes to Azure Stack using Active Directory Federated Services (AD FS)](azure-stack-solution-template-kubernetes-adfs.md) [Implementación de Kubernetes en Azure Stack con los Servicios de federación de Active Directory (Azure AD)].
+Para obtener instrucciones acerca de cómo instalar el clúster al usar AD FS, consulte [Implementación de Kubernetes en Azure Stack Hub con los Servicios de federación de Active Directory (Azure AD)](azure-stack-solution-template-kubernetes-adfs.md).
 
 ## <a name="connect-to-your-cluster"></a>Conexión al clúster
 
@@ -63,10 +61,10 @@ Puede que también le resulte útil el administrador de paquetes **Helm** para i
 
 [Habilitación del panel de Kubernetes](azure-stack-solution-template-kubernetes-dashboard.md)
 
-[Agregar un clúster de Kubernetes a Marketplace (para el operador de Azure Stack)](../operator/azure-stack-solution-template-kubernetes-cluster-add.md)
+[Adición un clúster de Kubernetes a Marketplace (para el operador de Azure Stack Hub)](../operator/azure-stack-solution-template-kubernetes-cluster-add.md)
 
-[Implementación de Kubernetes en Azure Stack con Azure Active Directory (Azure AD)](azure-stack-solution-template-kubernetes-azuread.md)
+[Implementación de Kubernetes en Azure Stack Hub con Azure Active Directory (Azure AD)](azure-stack-solution-template-kubernetes-azuread.md)
 
-[Deploy Kubernetes to Azure Stack using Active Directory Federated Services (AD FS)](azure-stack-solution-template-kubernetes-adfs.md) [Implementación de Kubernetes en Azure Stack con los Servicios de federación de Active Directory (AD FS)]
+[Implementación de Kubernetes en Azure Stack Hub con los Servicios de federación de Active Directory (AD FS)](azure-stack-solution-template-kubernetes-adfs.md)
 
 [Kubernetes en Azure](https://docs.microsoft.com/azure/container-service/kubernetes/container-service-kubernetes-walkthrough)

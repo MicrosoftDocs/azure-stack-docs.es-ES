@@ -1,6 +1,6 @@
 ---
-title: Solución de problemas del motor de AKS en Azure Stack | Microsoft Docs
-description: Este artículo contiene los pasos necesarios para la solución de problemas del motor de AKS en Azure Stack.
+title: Solución de problemas del motor de AKS en Azure Stack Hub | Microsoft Docs
+description: Este artículo contiene los pasos necesarios para la solución de problemas del motor de AKS en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,18 +15,16 @@ ms.date: 11/21/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: aed53295b7c1748abd8ab3bd2862043d7d69e4b8
-ms.sourcegitcommit: 0b783e262ac87ae67929dbd4c366b19bf36740f0
+ms.openlocfilehash: 3b87f5cf7273afdabd6ee7da672d06712607e126
+ms.sourcegitcommit: ce01b2cd114ca8ab5b70c6311b66c58ceb054469
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74310337"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75923937"
 ---
-# <a name="troubleshoot-the-aks-engine-on-azure-stack"></a>Solución de problemas del motor de AKS en Azure Stack
+# <a name="troubleshoot-the-aks-engine-on-azure-stack-hub"></a>Solución de problemas del motor de AKS en Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
-
-Cuando se implementa o se trabaja con el motor de AKS en Azure Stack pueden surgir problemas. En este artículo se examinan los pasos necesarios para solucionar los problemas que puedan aparecer al implementar el motor de AKS, recopilar información acerca del motor de AKS, recopilar registros de Kubernetes, examinar códigos de error de extensiones de scripts personalizados e instrucciones para abrir un problema de GitHub para el motor de AKS.
+Cuando se implementa o se trabaja con el motor de AKS en Azure Stack Hub pueden surgir problemas. En este artículo se examinan los pasos necesarios para solucionar los problemas que puedan aparecer al implementar el motor de AKS, recopilar información acerca del motor de AKS, recopilar registros de Kubernetes, examinar códigos de error de extensiones de scripts personalizados e instrucciones para abrir un problema de GitHub para el motor de AKS.
 
 ## <a name="troubleshoot-the-aks-engine-install"></a>Solución de problemas de la instalación del motor de AKS
 
@@ -72,9 +70,9 @@ Instale GoFish desde la página [Install](https://gofi.sh/#install) (Instalar).
 Si aparecen errores al implementar un clúster de Kubernetes mediante el motor de AKS, puede comprobar lo siguiente:
 
 1.  ¿Usa las credenciales de entidad de servicio (SPN) correctas?
-2.  ¿Tiene el SPN tiene un rol "Colaboradores" en la suscripción a Azure Stack?
-3. ¿Tiene una cuota suficientemente grande en el plan de Azure Stack?
-4.  ¿Se está aplicando la instancia de Azure Stack que tiene una revisión o una actualización?
+2.  ¿Tiene el SPN tiene un rol "Colaboradores" en la suscripción a Azure Stack Hub?
+3. ¿Tiene una cuota suficientemente grande en el plan de Azure Stack Hub?
+4.  ¿Se aplica la instancia de Azure Stack Hub que tiene una revisión o una actualización?
 
 Para más información, consulte el artículo [Solución de problemas ](https://github.com/Azure/aks-engine/blob/master/docs/howto/troubleshooting.md)en el **repositorio de GitHub** Azure/aks-engine.
 
@@ -94,7 +92,7 @@ Puede acceder a la información de revisión que crea AKS-Engine. El motor de AK
 
 ## <a name="collect-kubernetes-logs"></a>Recopilación de registros de Kubernetes
 
-Además de los registros del motor de AKS, los componentes de Kubernetes generan mensajes de estado y de error. Estos registros se pueden recopilar mediante el script de Bash, [getkuberneteslogs.sh](https://github.com/msazurestackworkloads/azurestack-gallery/releases/download/diagnosis-v0.1.0/diagnosis.zip).
+Además de los registros del motor de AKS, los componentes de Kubernetes generan mensajes de estado y de error. Estos registros se pueden recopilar mediante el script de Bash, [getkuberneteslogs.sh](https://aka.ms/aa6z613).
 
 Este script automatiza el proceso de recopilación de los siguientes registros: 
 
@@ -113,7 +111,7 @@ Requisitos:
 
  - Una máquina virtual Linux, Git Bash o Bash en Windows.
  - La [CLI de Azure](azure-stack-version-profiles-azurecli2.md) instalada en la máquina desde donde se ejecutará el script.
- - Identidad de la entidad de servicio que ha iniciado una sesión de la CLI de Azure en Azure Stack. Como el script tiene la funcionalidad de detectar y crear recursos ARM para realizar su trabajo, requiere la CLI de Azure y una identidad de la entidad de servicio.
+ - Identidad de la entidad de servicio que ha iniciado una sesión de la CLI de Azure en Azure Stack Hub. Como el script tiene la funcionalidad de detectar y crear recursos ARM para realizar su trabajo, requiere la CLI de Azure y una identidad de la entidad de servicio.
  - Una cuenta de usuario (suscripción) en la que el clúster de Kubernetes ya está seleccionado en el entorno. 
 1. Descargue la versión más reciente del archivo tar del script en la máquina virtual del cliente, una máquina que tenga acceso al clúster de Kubernetes o a la misma máquina que usó para implementar el clúster con AKS-Engine.
 
@@ -128,16 +126,16 @@ Requisitos:
 
 2. Busque los parámetros que requiere el script `getkuberneteslogs.sh`. El script usará los siguientes parámetros:
 
-    | Parámetro | DESCRIPCIÓN | Obligatorio | Ejemplo |
+    | Parámetro | Descripción | Obligatorio | Ejemplo |
     | --- | --- | --- | --- |
     | -h, --help | Uso de comandos de impresión. | no | 
-    -u,--user | El nombre de usuario del administrador de las máquinas virtuales del clúster | Sí | azureuser<br>(valor predeterminado) |
-    | -i, --identity-file | Clave privada RSA vinculada a la clave pública usada para crear el clúster de Kubernetes (a veces se denomina "id_rsa")  | Sí | `./rsa.pem` (Putty)<br>`~/.ssh/id_rsa` (SSH) |
-    |   -g, --resource-group    | Grupo de recursos de clúster de Kubernetes | Sí | k8sresourcegroup |
+    -u,--user | El nombre de usuario del administrador de las máquinas virtuales del clúster | sí | azureuser<br>(valor predeterminado) |
+    | -i, --identity-file | Clave privada RSA vinculada a la clave pública usada para crear el clúster de Kubernetes (a veces se denomina "id_rsa")  | sí | `./rsa.pem` (Putty)<br>`~/.ssh/id_rsa` (SSH) |
+    |   -g, --resource-group    | Grupo de recursos de clúster de Kubernetes | sí | k8sresourcegroup |
     |   -n, --user-namespace               | Recopilar registros de contenedores en los espacios de nombres especificados (los registros de kube-system siempre se recopilan) | no |   monitoring |
-    |       --api-model                    | Conserva el archivo apimodel.json en una cuenta de almacenamiento de Azure Stack. La carga del archivo apimodel.json en la cuenta de almacenamiento se produce cuando también se proporciona el parámetro--upload-logs. | no | `./apimodel.json` |
+    |       --api-model                    | Conserva el archivo apimodel.json en una cuenta de Azure Stack Hub Storage. La carga del archivo apimodel.json en la cuenta de almacenamiento se produce cuando también se proporciona el parámetro--upload-logs. | no | `./apimodel.json` |
     | --all-namespaces               | Recopile registros de los contenedores de todos los espacios de nombres. Invalida --user-namespace | no | |
-    | --upload-logs                  | Conserva los registros recuperados en una cuenta de almacenamiento de Azure Stack. Los registros se pueden encontrar en el grupo de recursos KubernetesLogs | no | |
+    | --upload-logs                  | Conserva los registros recuperados en una cuenta de Azure Stack Hub Storage. Los registros se pueden encontrar en el grupo de recursos KubernetesLogs | no | |
     --disable-host-key-checking    | Establece la opción StrictHostKeyChecking de SSH en "no" mientras se ejecuta el script. Utilícela solo en entornos seguros. | no | |
 
 3. Ejecute cualquiera de los siguientes comandos de ejemplo con su información:
@@ -158,9 +156,9 @@ Puede consultar una lista de los códigos de error que crea la extensión de scr
 
 Si después de recopilar y examinar los registros sigue sin poder resolver el problema, puede que desee iniciar el proceso de creación de una incidencia de soporte técnico y proporcionar los registros recopilados mediante la ejecución de `getkuberneteslogs.sh` con el conjunto de parámetros `--upload-logs`. 
 
-Póngase en contacto con el operador de Azure Stack. El operador usa la información de los registros para crear el caso de soporte técnico.
+Póngase en contacto con un operador de Azure Stack Hub. El operador usa la información de los registros para crear el caso de soporte técnico.
 
-Durante el proceso de solucionar los problemas de soporte técnico, un ingeniero del servicio de soporte técnico de Microsoft puede solicitar que el operador recopile los registros del sistema Azure Stack. Es posible que tenga que proporcionar a su operador la información de la cuenta de almacenamiento donde cargó los registros de Kubernetes mediante la ejecución de `getkuberneteslogs.sh`.
+Durante el proceso de solución de problemas de soporte técnico, un ingeniero de soporte técnico de Microsoft puede solicitar que el operador recopile los registros del sistema de Azure Stack Hub. Es posible que tenga que proporcionar a su operador la información de la cuenta de almacenamiento donde cargó los registros de Kubernetes mediante la ejecución de `getkuberneteslogs.sh`.
 
 El operador puede ejecutar el cmdlet de PowerShell en **Get-AzureStackLog**. Este comando usa un parámetro (`-InputSaSUri`) que especifica la cuenta de almacenamiento donde almacenó los registros de Kubernetes.
 
@@ -180,4 +178,4 @@ Si no puede resolver un error de implementación, puede abrir una incidencia de 
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Obtenga información sobre [el motor de AKS en Azure Stack](azure-stack-kubernetes-aks-engine-overview.md).
+- Obtenga información sobre [el motor de AKS en Azure Stack Hub](azure-stack-kubernetes-aks-engine-overview.md).

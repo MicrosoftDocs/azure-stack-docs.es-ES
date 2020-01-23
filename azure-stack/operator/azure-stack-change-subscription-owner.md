@@ -1,6 +1,6 @@
 ---
-title: Cambio del propietario de facturación de las suscripciones de usuario de Azure Stack | Microsoft Docs
-description: Aprenda cómo cambiar el propietario de facturación de las suscripciones de usuario de Azure Stack.
+title: Cambio del propietario de facturación de las suscripciones de usuario de Azure Stack Hub | Microsoft Docs
+description: Aprenda a cambiar el propietario de facturación de las suscripciones de usuario de Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -16,16 +16,16 @@ ms.date: 09/17/2019
 ms.author: justinha
 ms.reviewer: shnatara
 ms.lastreviewed: 10/19/2018
-ms.openlocfilehash: 3c4453974092fd1873e5f77b1074c82851fc1be1
-ms.sourcegitcommit: c196463492732218d2474d3a964f88e995272c80
+ms.openlocfilehash: 65a47ac3fa9c146060dc05962c84ca60a17f898e
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71094366"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75804595"
 ---
-# <a name="change-the-billing-owner-for-an-azure-stack-user-subscription"></a>Cambio del propietario de facturación de las suscripciones de usuario de Azure Stack
+# <a name="change-the-billing-owner-for-an-azure-stack-hub-user-subscription"></a>Cambio del propietario de facturación de las suscripciones de usuario de Azure Stack Hub
 
-Los operadores de Azure Stack pueden usar PowerShell para cambiar el propietario de facturación de una suscripción de usuario. Por ejemplo, una razón para cambiar el propietario es reemplazar un usuario que deja la organización.
+Los operadores de Azure Stack Hub pueden usar PowerShell para cambiar el propietario de facturación de una suscripción de usuario. Por ejemplo, una razón para cambiar el propietario es reemplazar un usuario que deja la organización.
 
 Hay dos tipos de *propietarios* que se asignan a una suscripción:
 
@@ -39,10 +39,10 @@ Hay dos tipos de *propietarios* que se asignan a una suscripción:
 
 ## <a name="change-the-billing-owner"></a>Cambio del propietario de la facturación
 
-Ejecute el script siguiente para cambiar el propietario de la facturación de una suscripción de usuario. El equipo que se usa para ejecutar el script debe conectarse a Azure Stack y ejecutar el módulo de Azure Stack PowerShell 1.3.0 o posterior. Para más información, consulte [Instalación de Azure Stack PowerShell](azure-stack-powershell-install.md).
+Ejecute el script siguiente para cambiar el propietario de la facturación de una suscripción de usuario. El equipo que se usa para ejecutar el script debe conectarse a Azure Stack Hub y ejecutar el módulo de Azure Stack PowerShell 1.3.0 u otro posterior. Para más información, consulte [Instalación de Azure Stack Hub PowerShell](azure-stack-powershell-install.md).
 
 >[!NOTE]
->En una instancia de Azure Stack multiinquilino, el nuevo propietario debe estar en el mismo directorio que el actual. Para poder proporcionar la propiedad de la suscripción a un usuario que se encuentre en otro directorio, primero debe [invitar a ese usuario como invitado en su directorio](/azure/active-directory/b2b/add-users-administrator).
+>En una instancia multiinquilino de Azure Stack Hub, el nuevo propietario debe estar en el mismo directorio que el actual. Para poder proporcionar la propiedad de la suscripción a un usuario que se encuentre en otro directorio, primero debe [invitar a ese usuario como invitado en su directorio](/azure/active-directory/b2b/add-users-administrator).
 
 Reemplace los valores siguientes en el script antes de que se ejecute:
 
@@ -52,7 +52,7 @@ Reemplace los valores siguientes en el script antes de que se ejecute:
 - **$OwnerUpn**: una cuenta como **alguien\@example.com** para agregar como el nuevo propietario de la facturación.
 
 ```powershell
-# Set up Azure Stack admin environment
+# Set up Azure Stack Hub admin environment
 Add-AzureRmEnvironment -ARMEndpoint $ArmEndpoint -Name AzureStack-admin
 Add-AzureRmAccount -Environment AzureStack-admin -TenantId $TenantId
 

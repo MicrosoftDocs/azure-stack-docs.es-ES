@@ -1,6 +1,6 @@
 ---
-title: Ejecución de una aplicación de n niveles en varias regiones de Azure Stack para lograr alta disponibilidad | Microsoft Docs
-description: Obtenga información sobre cómo ejecutar una aplicación de niveles en varias regiones de Azure Stack para lograr alta disponibilidad.
+title: Ejecución de una aplicación de n niveles en varias regiones de Azure Stack Hub para lograr alta disponibilidad | Microsoft Docs
+description: Obtenga información sobre cómo ejecutar una aplicación de niveles en varias regiones de Azure Stack Hub para lograr alta disponibilidad.
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
@@ -9,21 +9,21 @@ ms.date: 11/01/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: acfeebe626d7745fe200724c8c53c632bada1466
-ms.sourcegitcommit: 8a74a5572e24bfc42f71e18e181318c82c8b4f24
+ms.openlocfilehash: fc3b9d3e620bfd017f7d5870a8e334c1d9ace579
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73569328"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818509"
 ---
-# <a name="run-an-n-tier-application-in-multiple-azure-stack-regions-for-high-availability"></a>Ejecución de una aplicación de n niveles en varias regiones de Azure Stack para lograr alta disponibilidad
+# <a name="run-an-n-tier-application-in-multiple-azure-stack-hub-regions-for-high-availability"></a>Ejecución de una aplicación de n niveles en varias regiones de Azure Stack Hub para lograr alta disponibilidad
 
-Esta arquitectura de referencia muestra un conjunto de procedimientos de demostrada eficacia para la ejecución de una aplicación de n niveles en varias regiones de Azure Stack, con la finalidad de conseguir disponibilidad y una sólida estructura de recuperación ante desastres. En este documento, Traffic Manager se usa para lograr alta disponibilidad. Sin embargo, si Traffic Manager no es una opción preferida en el entorno, también podría usarse un par de equilibradores de carga de alta disponibilidad.
+Esta arquitectura de referencia muestra un conjunto de procedimientos de demostrada eficacia para la ejecución de una aplicación de n niveles en varias regiones de Azure Stack Hub, con la finalidad de conseguir disponibilidad y una sólida estructura de recuperación ante desastres. En este documento, Traffic Manager se usa para lograr alta disponibilidad. Sin embargo, si Traffic Manager no es una opción preferida en el entorno, también podría usarse un par de equilibradores de carga de alta disponibilidad.
 
 > [!Note]  
 > Tenga en cuenta que la instancia de Traffic Manager que se usa en la arquitectura siguiente se debe configurar en Azure y los puntos de conexión usados para configurar el perfil de Traffic Manager deben ser direcciones IP enrutables públicamente.
 
-## <a name="architecture"></a>Arquitectura
+## <a name="architecture"></a>Architecture
 
 Esta arquitectura se basa en la que se muestra en [Aplicación de n niveles con SQL Server](iaas-architecture-windows-sql-n-tier.md).
 
@@ -39,7 +39,7 @@ Esta arquitectura se basa en la que se muestra en [Aplicación de n niveles con 
 
 -   **Grupo de disponibilidad AlwaysOn de SQL Server** Si usa SQL Server, se recomiendan los [grupos de disponibilidad AlwaysOn de SQL](https://msdn.microsoft.com/library/hh510230.aspx) para conseguir alta disponibilidad. Cree un único grupo de disponibilidad que incluya las instancias de SQL Server en ambas regiones.
 
--   **Conexión VPN de red virtual a red virtual**. Como Emparejamiento de VNET todavía no está disponible en Azure Stack, use la conexión VPN de red virtual a red virtual para conectar las dos redes virtuales. Consulte [Red virtual a red virtual en Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-network-howto-vnet-to-vnet?view=azs-1908) para más información.
+-   **Conexión VPN de red virtual a red virtual**. Como Emparejamiento de VNET todavía no está disponible en Azure Stack Hub, use la conexión VPN de red virtual a red virtual para conectar las dos redes virtuales. Consulte [Red virtual a red virtual en Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-network-howto-vnet-to-vnet?view=azs-1908) para más información.
 
 ## <a name="recommendations"></a>Recomendaciones
 
@@ -132,7 +132,7 @@ Para configurar el grupo de disponibilidad:
 
 Con una aplicación de N niveles compleja, no es necesario replicar toda la aplicación en la región secundaria. En su lugar, puede replicar simplemente un subsistema crítico que sea necesario para permitir la continuidad empresarial.
 
-Traffic Manager es un posible punto de error en el sistema. Si se produce un error en Traffic Manager, los clientes no podrán acceder a la aplicación durante el tiempo de inactividad. Revise el [Acuerdo de Nivel de Servicio de Traffic Manager](https://azure.microsoft.com/support/legal/sla/traffic-manager) y determine si el uso de Traffic Manager por sí solo cumple sus requisitos empresariales de alta disponibilidad. Si no es así, considere la posibilidad de agregar otra solución de administración de tráfico como conmutación por recuperación. Si el servicio Azure Traffic Manager no funciona, cambie los registros CNAME en DNS para que apunten a otro servicio de administración del tráfico. (Este paso debe realizarse manualmente, y la aplicación dejará de estar disponible hasta que se propaguen los cambios de DNS).
+Traffic Manager es un posible punto de error en el sistema. Si se produce un error en Traffic Manager, los clientes no podrán acceder a la aplicación durante el tiempo de inactividad. Revise el [Acuerdo de Nivel de Servicio de Traffic Manager](https://azure.microsoft.com/support/legal/sla/traffic-manager) y determine si el uso de Traffic Manager por sí solo cumple sus requisitos empresariales de alta disponibilidad. Si no es así, considere la posibilidad de agregar otra solución de administración de tráfico como conmutación por recuperación. Si el servicio Azure Traffic Manager no funciona, cambie los registros CNAME de DNS para que apunten a otro servicio de administración del tráfico. (Este paso debe realizarse manualmente, y la aplicación dejará de estar disponible hasta que se propaguen los cambios de DNS).
 
 Para el clúster de SQL Server, hay dos escenarios de conmutación por error que se deben tener en cuenta:
 

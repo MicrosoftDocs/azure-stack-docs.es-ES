@@ -1,6 +1,6 @@
 ---
-title: Descarga de elementos de Marketplace desde Azure y publicación en Azure Stack | Microsoft Docs
-description: Aprenda a descargar elementos de Marketplace desde Azure y a publicarlos en Azure Stack.
+title: Descarga de elementos de Marketplace desde Azure y publicación en Azure Stack Hub | Microsoft Docs
+description: Aprenda a descargar elementos de Marketplace desde Azure y a publicarlos en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,23 +15,23 @@ ms.date: 12/23/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 12/23/2018
-ms.openlocfilehash: 4072330d48c63d72fb0d2504d84a67f06b1cebea
-ms.sourcegitcommit: b2418661bfa3a791e65b9b487e20982dba3e4c41
+ms.openlocfilehash: 80cf9d192be07f951ee959c7a83419bb16bd2bbb
+ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75757008"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022953"
 ---
 # <a name="download-marketplace-items-to-azure-stack-hub"></a>Descarga de elementos de Marketplace en Azure Stack Hub 
 
-Los operadores en la nube pueden descargar elementos de Marketplace en Azure Stack Hub y hacer que estén disponibles para todos los usuarios mediante el entorno de Azure Stack Hub. Dichos elementos se pueden elegir en una lista de elementos de Azure Marketplace que se han probados con anterioridad y se sabe que son compatibles con Azure Stack. Con frecuencia se agregan nuevos elementos a esta lista, así que es aconsejable consultar periódicamente si tiene contenido nuevo.
+Los operadores en la nube pueden descargar elementos de Marketplace en Azure Stack Hub y hacer que estén disponibles para todos los usuarios mediante el entorno de Azure Stack Hub. Dichos elementos se pueden elegir de una lista de elementos de Azure Marketplace que se han probados con anterioridad y se sabe que son compatibles con Azure Stack Hub. Con frecuencia se agregan nuevos elementos a esta lista, así que es aconsejable consultar periódicamente si tiene contenido nuevo.
 
 Existen dos escenarios para descargar productos de Marketplace:
 
 - **Escenario conectado**: requiere que el entorno de Azure Stack Hub esté conectado a Internet. El portal de administración de Azure Stack Hub se usa para buscar y descargar elementos.
-- **Escenario sin conexión o con conexión parcial**: requiere que se acceda a Internet mediante la herramienta de redifusión de Marketplace para descargar los elementos de este. Después, los elementos descargados se transfieren a la instalación desconectada de Azure Stack. Este escenario usa PowerShell.
+- **Escenario sin conexión o con conexión parcial**: requiere que se acceda a Internet mediante la herramienta de redifusión de Marketplace para descargar los elementos de este. Después, los elementos descargados se transfieren a la instalación desconectada de Azure Stack Hub. Este escenario usa PowerShell.
 
-Consulte [Elementos de Azure Marketplace disponibles para Azure Stack](azure-stack-marketplace-azure-items.md) para encontrar una lista completa de los elementos de Marketplace que se pueden descargar. Consulte el artículo [Cambios en Marketplace de Azure Stack](azure-stack-marketplace-changes.md) para obtener una lista de adiciones, eliminaciones y actualizaciones recientes en Marketplace de Azure Stack.
+Consulte [Elementos de Azure Marketplace disponibles para Azure Stack Hub](azure-stack-marketplace-azure-items.md) para encontrar una lista completa de los elementos de Marketplace que se pueden descargar. Consulte el artículo [Cambios en Marketplace de Azure Stack Hub](azure-stack-marketplace-changes.md) para ver una lista de adiciones, eliminaciones y actualizaciones recientes en Marketplace de Azure Stack Hub.
 
 > [!NOTE]
 > El catálogo será diferente en función de la nube a la que esté conectado el sistema de Azure Stack Hub. El entorno de nube viene determinado por la suscripción de Azure que se usa para registrar la instancia de Azure Stack Hub.
@@ -52,7 +52,7 @@ La implementación de Azure Stack Hub debe tener conectividad a Internet y estar
 
    Para examinar el espacio disponible, en **Region management** (Administración de regiones), seleccione la región que desea explorar y vaya a **Resource Providers** > **Storage** (Proveedores de recursos > Almacenamiento):
 
-   ![Revisión del espacio de almacenamiento en el portal de administración de Azure Stack](media/azure-stack-download-azure-marketplace-item/storage.png)
+   ![Revisión del espacio de almacenamiento en el portal del administrador de Azure Stack Hub](media/azure-stack-download-azure-marketplace-item/storage.png)
 
 3. Abra Marketplace de Azure Stack Hub y conéctese a Azure. Para ello, seleccione el servicio **Marketplace management** (Administración de Marketplace), elija **Elementos de Marketplace** y, por último, seleccione **Add from Azure** (Agregar desde Azure):
 
@@ -66,7 +66,7 @@ La implementación de Azure Stack Hub debe tener conectividad a Internet y estar
 
    ![Adición desde Azure](media/azure-stack-download-azure-marketplace-item/add-from-azure3.png)
 
-6. Seleccione el elemento que desee y, después, seleccione **Descargar**. Los tiempos de descarga varían y dependen de la conectividad de red. Una vez finalizada la descarga, el nuevo elemento de Marketplace se puede implementar como usuario u operador de Azure Stack.
+6. Seleccione el elemento que desee y, después, seleccione **Descargar**. Los tiempos de descarga varían y dependen de la conectividad de red. Una vez finalizada la descarga, el nuevo elemento de Marketplace se puede implementar como usuario u operador de Azure Stack Hub.
 
 7. Para implementar el elemento descargado, seleccione **+Crear un recurso** y busque el nuevo elemento de Marketplace entre las distintas categorías. Luego, seleccione el elemento para comenzar el proceso de implementación. El proceso no es el mismo para todos los artículos de Marketplace.
 
@@ -79,7 +79,7 @@ La herramienta de redifusión de Marketplace también se puede usar en un escena
 Este escenario tiene dos partes:
 
 - **Parte 1**: descarga de elementos de Marketplace. En el equipo con acceso a Internet, configure PowerShell, descargue la herramienta de redifusión y, después, descargue los elementos desde Azure Marketplace.
-- **Parte 2**: carga y publicación en Marketplace de Azure Stack Hub. Mueva los archivos que ha descargado a su entorno de Azure Stack Hub, impórtelos en Azure Stack y, después, publíquelos en Marketplace de Azure Stack.
+- **Parte 2**: carga y publicación en Marketplace de Azure Stack Hub. Mueva los archivos que ha descargado a su entorno de Azure Stack Hub, impórtelos en Azure Stack Hub y, después, publíquelos en Marketplace de Azure Stack Hub.
 
 ### <a name="prerequisites"></a>Prerequisites
 
@@ -89,15 +89,15 @@ Este escenario tiene dos partes:
 
 - Un entorno de Azure Stack Hub desconectado con los siguientes requisitos previos:
 
-  - La implementación de Azure Stack se debe registrar en Azure.
+  - La implementación de Azure Stack Hub se debe registrar en Azure.
 
-  - El equipo que tenga conectividad a Internet debe tener la **versión 1.2.11 del paquete Azure Stack PowerShell Module** , o cualquier versión posterior. Si no están, [instale los módulos de PowerShell específicos de Azure Stack](azure-stack-powershell-install.md).
+  - El equipo que tenga conectividad a Internet debe tener la **versión 1.2.11 del módulo de PowerShell de Azure Stack Hub** , o cualquier versión posterior. Si no están, [instale los módulos de PowerShell específicos de Azure Stack Hub](azure-stack-powershell-install.md).
 
-  - Para habilitar la importación de un elemento de Marketplace descargado, debe estar configurado el [entorno de PowerShell para el operador de Azure Stack](azure-stack-powershell-configure-admin.md) .
+  - Para habilitar la importación de un elemento de Marketplace descargado, debe estar configurado el  [entorno de PowerShell para el operador de Azure Stack Hub](azure-stack-powershell-configure-admin.md) .
 
-  - Clone el repositorio de [herramientas de Azure Stack](https://github.com/Azure/AzureStack-Tools) de GitHub.
+  - Clone el repositorio de [herramientas de Azure Stack Hub](https://github.com/Azure/AzureStack-Tools) de GitHub.
 
-- Debe tener una [cuenta de almacenamiento](azure-stack-manage-storage-accounts.md) en Azure Stack que tenga un contenedor al que se pueda acceder de forma pública (que es un blob de almacenamiento). Utilice el contenedor como almacenamiento temporal para los archivos de la galería de elementos de Marketplace. Si no está familiarizado con las cuentas de almacenamiento y los contenedores, consulte [Carga, descarga y enumeración de blobs mediante Azure Portal](/azure/storage/blobs/storage-quickstart-blobs-portal) en la documentación de Azure.
+- Debe tener una [cuenta de almacenamiento](azure-stack-manage-storage-accounts.md) en Azure Stack Hub que tenga un contenedor al que se pueda acceder de forma pública (que es un blob de almacenamiento). Utilice el contenedor como almacenamiento temporal para los archivos de la galería de elementos de Marketplace. Si no está familiarizado con las cuentas de almacenamiento y los contenedores, consulte [Carga, descarga y enumeración de blobs mediante Azure Portal](/azure/storage/blobs/storage-quickstart-blobs-portal) en la documentación de Azure.
 
 - La herramienta de redifusión de Marketplace se descarga en el primer procedimiento.
 
@@ -114,7 +114,7 @@ Una vez registrado, puede omitir el mensaje siguiente que aparece en la hoja de 
 
 1. En un equipo con conexión a Internet, abra una consola de PowerShell como administrador.
 
-2. Agregue la cuenta de Azure que ha usado para registrar Azure Stack. Para agregar la cuenta, en PowerShell ejecute **Add-AzureRmAccount** sin parámetros. Se le solicita que escriba las credenciales de su cuenta de Azure y puede que tenga que utilizar la autenticación en dos fases en función de la configuración de la cuenta.
+2. Agregue la cuenta de Azure que ha usado para registrar Azure Stack Hub. Para agregar la cuenta, en PowerShell ejecute **Add-AzureRmAccount** sin parámetros. Se le solicita que escriba las credenciales de su cuenta de Azure y puede que tenga que utilizar la autenticación en dos fases en función de la configuración de la cuenta.
 
    > [!NOTE]
    > Si la sesión expira, la contraseña ha cambiado o simplemente desea cambiar de cuenta, ejecute el siguiente cmdlet antes de iniciar sesión con **Add-AzureRmAccount**: **Remove-AzureRmAccount-Scope Process**.
@@ -195,20 +195,20 @@ Una vez registrado, puede omitir el mensaje siguiente que aparece en la hoja de 
 
    Antes de volver a intentarlo, quite la carpeta de producto en la que se produjo el error de descarga. Por ejemplo, si se produce un error en el script de descarga al descargar en **D:\downloadFolder\microsoft.customscriptextension-arm-1.9.1**, quite la carpeta **D:\downloadFolder\microsoft.customscriptextension-arm-1.9.1**  y, a continuación, vuelva a ejecutar el cmdlet.
 
-### <a name="import-the-download-and-publish-to-azure-stack-marketplace-using-powershell"></a>Importación de la descarga y publicación en Marketplace para Azure Stack con PowerShell
+### <a name="import-the-download-and-publish-to-azure-stack-hub-marketplace-using-powershell"></a>Importación de la descarga y publicación en Marketplace de Azure Stack Hub con PowerShell
 
-1. Debe mover los archivos que [descargó anteriormente](#use-the-marketplace-syndication-tool-to-download-marketplace-items) de forma local para que estén disponibles en su entorno de Azure Stack. La herramienta de redifusión de Marketplace debe estar disponible también en su entorno de Azure Stack, ya que necesita utilizar la herramienta para realizar la operación de importación.
+1. Debe mover los archivos que [descargó anteriormente](#use-the-marketplace-syndication-tool-to-download-marketplace-items) de forma local para que estén disponibles en su entorno de Azure Stack Hub. La herramienta de redifusión de Marketplace debe estar disponible también en su entorno de Azure Stack Hub, ya que necesita usarla para realizar la operación de importación.
 
    En la siguiente imagen se muestra un ejemplo de estructura de carpetas. **D:\downloadfolder** contiene todos los elementos de Marketplace descargados. Cada subcarpeta es un elemento de Marketplace (por ejemplo,  **microsoft.custom-script-linux-arm-2.0.3**) y tienen como nombre el identificador del producto. Dentro de cada subcarpeta se encuentra el contenido descargado del elemento de Marketplace.
 
    ![Estructura de directorios de descarga de Marketplace](media/azure-stack-download-azure-marketplace-item/mp1.png)
 
-2. Siga las instrucciones de [este artículo](azure-stack-powershell-configure-admin.md) para configurar la sesión de PowerShell para un operador de Azure Stack.
+2. Siga las instrucciones de [este artículo](azure-stack-powershell-configure-admin.md) para configurar la sesión de PowerShell para un operador de Azure Stack Hub.
 
 3. Importe el módulo de redifusión e inicie la herramienta de redifusión de Marketplace mediante la ejecución del script siguiente:
 
    ```powershell
-   $credential = Get-Credential -Message "Enter the azure stack operator credential:"
+   $credential = Get-Credential -Message "Enter the Azure Stack Hub operator credential:"
    Import-AzSOfflineMarketplaceItem -origin "marketplace content folder" -AzsCredential $credential
    ```
 
@@ -217,6 +217,6 @@ Una vez registrado, puede omitir el mensaje siguiente que aparece en la hoja de 
    El parámetro `-AzsCredential` es opcional. Sirve para renovar el token de acceso, si ha expirado. Si el parámetro `-AzsCredential` no se especifica y el token expira, se le pedirá que escriba las credenciales del operador.
 
    > [!NOTE]
-   > AD FS solo admite la autenticación interactiva con identidades de usuario. Si se requiere un objeto de credencial, debe usar una entidad de servicio (SPN). Para más información acerca de cómo configurar una entidad de servicio con Azure Stack y AD FS como servicio de administración de identidades, consulte [Administración de una entidad de servicio de AD FS](azure-stack-create-service-principals.md#manage-an-ad-fs-service-principal).
+   > AD FS solo admite la autenticación interactiva con identidades de usuario. Si se requiere un objeto de credencial, debe usar una entidad de servicio (SPN). Para más información sobre cómo configurar una entidad de servicio con Azure Stack Hub y AD FS como servicio de administración de identidades, consulte [Administración de una entidad de servicio de AD FS](azure-stack-create-service-principals.md#manage-an-ad-fs-service-principal).
 
-4. Después de que el script se complete correctamente, el elemento debe estar disponible en Azure Stack Marketplace.
+4. Después de que el script se complete correctamente, el elemento debe estar disponible en Marketplace de Azure Stack Hub.

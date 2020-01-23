@@ -1,7 +1,7 @@
 ---
-title: Reemplazar un nodo de la unidad de escalado en un sistema integrado de Azure Stack
-titleSuffix: Azure Stack
-description: Obtenga información acerca de cómo reemplazar un nodo físico de la unidad de escalado en un sistema integrado de Azure Stack.
+title: Reemplazo de un nodo de la unidad de escalado en un sistema integrado de Azure Stack Hub
+titleSuffix: Azure Stack Hub
+description: Aprenda a reemplazar un nodo físico de la unidad de escalado físico en un sistema integrado de Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -16,21 +16,19 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 255802151183cc2b832aaa64f2110b9c9052a0ba
-ms.sourcegitcommit: 284f5316677c9a7f4c300177d0e2a905df8cb478
+ms.openlocfilehash: 9e289420d10cace3c466c0b1ff18c4d84cf97800
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74465463"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75881984"
 ---
-# <a name="replace-a-scale-unit-node-on-an-azure-stack-integrated-system"></a>Reemplazar un nodo de la unidad de escalado en un sistema integrado de Azure Stack
+# <a name="replace-a-scale-unit-node-on-an-azure-stack-hub-integrated-system"></a>Reemplazo de un nodo de la unidad de escalado en un sistema integrado de Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack*
-
-En este artículo se describe el proceso general para reemplazar un equipo físico (también denominado un nodo de la unidad de escalado) en un sistema integrado de Azure Stack. Los pasos para reemplazar el nodo de la unidad de escalado actual varían en función del proveedor de hardware del fabricante de equipos originales (OEM). Consulte la documentación de Field Replaceable Unit (FRU) del proveedor para obtener pasos detallados específicos para su sistema.
+En este artículo se describe el proceso general para reemplazar un equipo físico (también denominado un nodo de la unidad de escalado) en un sistema integrado de Azure Stack Hub. Los pasos para reemplazar el nodo de la unidad de escalado actual varían en función del proveedor de hardware del fabricante de equipos originales (OEM). Consulte la documentación de Field Replaceable Unit (FRU) del proveedor para obtener pasos detallados específicos para su sistema.
 
 > [!CAUTION]  
-> La nivelación del firmware es fundamental para el éxito de la operación que se describe en este artículo. La omisión de este paso puede dar lugar a inestabilidad del sistema, disminución del rendimiento, subprocesos de seguridad o impedir que la automatización de Azure Stack implemente el sistema operativo. Vea siempre la documentación del asociado de hardware cuando reemplace hardware para asegurarse de que el firmware aplicado coincide con la versión de OEM que se muestra en el [portal de administración de Azure Stack](azure-stack-updates.md). Para obtener más información y vínculos a la documentación del asociado, vea [Sustitución de un componente de hardware](azure-stack-replace-component.md).
+> La nivelación del firmware es fundamental para el éxito de la operación que se describe en este artículo. La omisión de este paso puede dar lugar a inestabilidad del sistema, disminución del rendimiento, amenazas de seguridad o impedir que la automatización de Azure Stack Hub implemente el sistema operativo. Consulte siempre la documentación del asociado de hardware cuando reemplace hardware para asegurarse de que el firmware aplicado coincide con la versión de OEM que se muestra en el [portal del administrador de Azure Stack Hub](azure-stack-updates.md). Para obtener más información y vínculos a la documentación del asociado, vea [Sustitución de un componente de hardware](azure-stack-replace-component.md).
 
 En el siguiente diagrama de flujo se muestra el proceso general de FRU para reemplazar un nodo completo de la unidad de escalado.
 
@@ -39,7 +37,7 @@ En el siguiente diagrama de flujo se muestra el proceso general de FRU para reem
 *Es posible que esta acción no sea necesaria en función de la condición física del hardware.
 
 > [!Note]  
-> Si se produce un error en la operación de apagado, se recomienda usar la operación de purga seguida de la operación de detención. Para obtener más información, vea [Acciones de los nodos de unidad de escalado en Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-node-actions).
+> Si se produce un error en la operación de apagado, se recomienda usar la operación de purga seguida de la operación de detención. Para más información, consulte el artículo sobre las [acciones de los nodos de unidad de escalado en Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-node-actions).
 
 ## <a name="review-alert-information"></a>Revisión de la información de las alertas
 
@@ -73,7 +71,7 @@ Los pasos siguientes se proporcionan como una descripción general del proceso d
 
 4. Reemplace el equipo físico. Normalmente, este reemplazo lo realiza el proveedor de hardware de OEM.
 5. Use la acción [Reparar](azure-stack-node-actions.md#repair) para agregar el nuevo equipo físico a la unidad de escalado.
-6. Use el punto de conexión privilegiado para [comprobar el estado de la reparación del disco virtual](azure-stack-replace-disk.md#check-the-status-of-virtual-disk-repair-using-the-privileged-endpoint). Con las nuevas unidades de datos, un trabajo de reparación del almacenamiento completo puede tardar varias horas, según la carga del sistema y el espacio consumido.
+6. Use el punto de conexión con privilegios para [comprobar el estado de la reparación del disco virtual](azure-stack-replace-disk.md#check-the-status-of-virtual-disk-repair-using-the-privileged-endpoint). Con las nuevas unidades de datos, un trabajo de reparación del almacenamiento completo puede tardar varias horas, según la carga del sistema y el espacio consumido.
 7. Una vez finalizada la acción de reparación, confirme que todas las alertas activas se cerraron automáticamente.
 
 ## <a name="next-steps"></a>Pasos siguientes

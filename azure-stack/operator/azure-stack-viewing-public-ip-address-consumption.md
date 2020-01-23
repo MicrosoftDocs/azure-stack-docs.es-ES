@@ -1,5 +1,5 @@
 ---
-title: Administración de recursos de red en Azure Stack | Microsoft Docs
+title: Administración de recursos de red en Azure Stack Hub | Microsoft Docs
 description: Los administradores pueden administrar los recursos de red, incluido el grupo de direcciones MAC y el consumo de direcciones IP públicas en una región.
 services: azure-stack
 documentationcenter: ''
@@ -15,33 +15,31 @@ ms.date: 09/17/2019
 ms.author: mabrigg
 ms.reviewer: scottnap
 ms.lastreviewed: 09/17/2019
-ms.openlocfilehash: 6abf8480528aad0bff121d553172bdc8d0446e11
-ms.sourcegitcommit: 95f30e32e5441599790d39542ff02ba90e70f9d6
+ms.openlocfilehash: d651405fad55501bf655b8b38970a882a8e5dc91
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71070182"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75881678"
 ---
 # <a name="manage-network-resources"></a>Administración de recursos de red
 
 ## <a name="mac-address-pool"></a>Grupo de direcciones MAC
 
-Azure Stack usa un grupo de direcciones MAC estáticas para generar y asignar una dirección MAC a máquinas virtuales automáticamente.
+Azure Stack Hub usa un grupo de direcciones MAC estáticas para generar y asignar una dirección MAC a máquinas virtuales automáticamente.
 Este grupo de direcciones MAC se generan automáticamente durante la implementación. Se usa el intervalo siguiente:
 
 - StartMacAddress: 00-1D-D8-B7-00-00
 - EndMacAddress : 00-1D-D8-F4-FF-FF
 
 > [!Note]  
-> Este grupo de direcciones MAC es el mismo en todos los sistemas de Azure Stack y no se puede configurar.
+> Este grupo de direcciones MAC es el mismo en todos los sistemas de Azure Stack Hub y no se puede configurar.
 
 En función de cómo se conectan las redes virtuales con las redes corporativas existentes, cabe esperar que haya direcciones MAC duplicadas de máquinas virtuales.
 
-Para obtener más información sobre el uso de grupos de direcciones MAC, use el cmdlet [Get AzsMacAddressPool](https://docs.microsoft.com/powershell/module/azs.fabric.admin/get-azsmacaddresspool) en el módulo de PowerShell de administrador de Azure Stack.
+Para más información sobre el uso de grupos de direcciones MAC, use el cmdlet [Get AzsMacAddressPool](https://docs.microsoft.com/powershell/module/azs.fabric.admin/get-azsmacaddresspool) en el módulo de PowerShell de administrador de Azure Stack Hub.
 
-## <a name="view-public-ip-address-consumption-in-azure-stack"></a>Visualización del consumo de direcciones IP públicas en Azure Stack
-
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+## <a name="view-public-ip-address-consumption-in-azure-stack-hub"></a>Visualización del consumo de direcciones IP públicas en Azure Stack Hub
 
 Los administradores de la nube pueden ver:
  - El número de direcciones IP públicas que se han asignado a los inquilinos.
@@ -50,7 +48,7 @@ Los administradores de la nube pueden ver:
 
 El icono **Public IP pools usage** (Uso de grupos de IP públicas) muestra el número de direcciones IP públicas que se han consumido en los grupos de direcciones IP públicas. En cada dirección IP, el icono muestra el uso de instancias de VM IaaS de inquilino, los servicios de la infraestructura del generador y los recursos de las direcciones IP públicas que los usuarios crearon explícitamente.
 
-El propósito del icono es que los operadores de Azure Stack sepan el número de direcciones IP públicas que se usan en esta ubicación. Este número ayuda a los administradores a determinar si se están quedando sin algún recurso.
+El propósito del icono es que los operadores de Azure Stack Hub sepan el número de direcciones IP públicas que se usan en esta ubicación. Este número ayuda a los administradores a determinar si se están quedando sin algún recurso.
 
 El elemento de menú **Direcciones IP públicas** de **Recursos de inquilinos** enumera solo las direcciones IP públicas que los *inquilinos han creado de manera explícita*. El elemento de menú se puede encontrar en el panel **Proveedores de recursos**, **Red**. El número de direcciones IP públicas **usadas** del icono **Uso de grupos de IP públicas** nunca coincide (es mayor) con el número del icono **Direcciones IP públicas** de **Recursos de inquilinos**.
 
@@ -58,7 +56,7 @@ El elemento de menú **Direcciones IP públicas** de **Recursos de inquilinos** 
 
 Para ver el número total de direcciones IP públicas que se han consumido en una región:
 
-1. En el portal de administración de Azure Stack, seleccione **Todos los servicios**. Después, en la categoría **ADMINISTRACIÓN**, seleccione **Red**.
+1. En el portal del administrador de Azure Stack Hub, seleccione **All services** (Todos los servicios). Después, en la categoría **ADMINISTRACIÓN**, seleccione **Red**.
 1. El panel **Red** muestra el icono **Uso de grupos de IP públicas** en la sección **Información general**.
 
     ![Panel Proveedor de recursos de red](media/azure-stack-viewing-public-ip-address-consumption/ip-address-consumption-01.png)
@@ -81,12 +79,12 @@ En varios casos, se asignan direcciones IP públicas que determinan si la direcc
 
 | **Caso de asignación de dirección IP pública** | **Aparece en resumen de uso** | **Aparece en lista de direcciones IP públicas de inquilinos** |
 | --- | --- | --- |
-| La dirección IP pública dinámica aún no está asignada a un NIC o equilibrador de carga (temporal). |Sin |Sí |
+| La dirección IP pública dinámica aún no está asignada a un NIC o equilibrador de carga (temporal). |No |Sí |
 | La dirección IP pública dinámica está asignada a un NIC o equilibrador de carga. |Sí |Sí |
 | La dirección IP pública estática está asignada a un NIC o equilibrador de carga del inquilino. |Sí |Sí |
-| La dirección IP pública estática está asignada a un punto de conexión del servicio de la infraestructura del tejido. |Sí |Sin |
-| Dirección IP pública creada de manera implícita para instancias de VM de IaaS y usada para NAT saliente en la red virtual. Se crean en segundo plano cada vez que un inquilino crea una instancia de máquina virtual para que las máquinas virtuales pueden enviar información a Internet. |Sí |Sin |
+| La dirección IP pública estática está asignada a un punto de conexión del servicio de la infraestructura del tejido. |Sí |No |
+| Dirección IP pública creada de manera implícita para instancias de VM de IaaS y usada para NAT saliente en la red virtual. Se crean en segundo plano cada vez que un inquilino crea una instancia de máquina virtual para que las máquinas virtuales pueden enviar información a Internet. |Sí |No |
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Administración de cuentas de almacenamiento en Azure Stack](azure-stack-manage-storage-accounts.md)
+[Administración de cuentas de almacenamiento en Azure Stack Hub](azure-stack-manage-storage-accounts.md)

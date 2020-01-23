@@ -1,6 +1,6 @@
 ---
-title: Introducción y preguntas frecuentes sobre la facturación de Azure App Service en Azure Stack | Microsoft Docs
-description: Más información sobre cómo se calculan los gastos de Azure App Service en Azure Stack y cómo se facturan.
+title: Introducción a la facturación de Azure App Service en Azure Stack Hub y preguntas frecuentes | Microsoft Docs
+description: Más información sobre cómo se calculan los gastos de Azure App Service en Azure Stack Hub y cómo se facturan.
 services: azure-stack
 documentationcenter: ''
 author: apwestgarth
@@ -16,22 +16,20 @@ ms.date: 06/10/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: 8b17020419183067793309055a6487f31da51246
-ms.sourcegitcommit: d67ae2877e3b049bf70b2567b917e55394fb8984
+ms.openlocfilehash: 6c409577c73389bb53008ae03cbaf938c61d363f
+ms.sourcegitcommit: ce01b2cd114ca8ab5b70c6311b66c58ceb054469
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67712675"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75924130"
 ---
-# <a name="azure-app-service-on-azure-stack-billing-overview-and-faq"></a>Introducción y preguntas frecuentes sobre la facturación de Azure App Service en Azure Stack
+# <a name="azure-app-service-on-azure-stack-hub-billing-overview-and-faq"></a>Introducción a la facturación de Azure App Service en Azure Stack Hub y preguntas frecuentes
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
-
-En este artículo se muestra cómo se factura a los operadores en la nube la oferta de Azure App Service en Azure Stack y cómo estos operadores pueden facturar a sus inquilinos por el uso del servicio.
+En este artículo se muestra cómo se factura a los operadores de la nube la oferta de Azure App Service en Azure Stack Hub y cómo estos operadores pueden facturar a sus inquilinos por el uso del servicio.
 
 ## <a name="billing-overview"></a>Introducción a la facturación
 
-Los operadores en la nube de Azure Stack pueden elegir si desean implementar Azure App Service en la marca de Azure Stack para ofrecer funcionalidades de inquilino de Azure App Service y Azure Functions a sus clientes. El proveedor de recursos de Azure App Service consta de varios tipos de roles que se pueden dividir entre los niveles de trabajo y de infraestructura.
+Los operadores de la nube de Azure Stack Hub pueden elegir implementar Azure App Service en su sello de Azure Stack Hub para ofrecer las funcionalidades de inquilino de Azure App Service y Azure Functions a sus clientes. El proveedor de recursos de Azure App Service consta de varios tipos de roles que se pueden dividir entre los niveles de trabajo y de infraestructura.
 
 Los roles de infraestructura no se facturan ya que son necesarios para el funcionamiento básico del servicio. Los roles de infraestructura se pueden escalar horizontalmente según sea necesario para satisfacer las demandas de los inquilinos del operador de nube. Los roles de infraestructura son los siguientes:
 
@@ -59,23 +57,23 @@ Este modelo de facturación permite a los operadores en la nube aprovisionar un 
 
 Por ejemplo, supongamos que tiene 20 trabajos en el nivel de trabajo pequeño. Entonces, si tiene cinco clientes que crean dos planes S1 de App Service, y cada uno de ellos escala el plan de App Service hasta dos instancias, no tiene ningún trabajo disponible. Como resultado, no tiene capacidad para que los clientes (nuevos o existentes) puedan escalar horizontalmente o crear nuevos planes de App Service. 
 
-Los operadores de nube pueden ver el número actual de trabajos disponibles por cada nivel echando un vistazo a los niveles de trabajo de la configuración de Azure App Service en la administración de Azure Stack.
+Para ver el número actual de trabajos disponibles por nivel de trabajo, los operadores en la nube pueden examinar los niveles de trabajo de la configuración de Azure App Service en la administración de Azure Stack Hub.
 
 ![Pantalla App Service: Niveles de trabajo][1]
 
-## <a name="see-customer-usage-by-using-the-azure-stack-usage-service"></a>Consultar el uso del cliente mediante el servicio de uso de Azure Stack
+## <a name="see-customer-usage-by-using-the-azure-stack-hub-usage-service"></a>Consulta del uso del cliente mediante el servicio de uso de Azure Stack Hub
 
-Los operadores en la nube pueden consultar la [API de uso de recursos de inquilino de Azure Stack](azure-stack-tenant-resource-usage-api.md) para recuperar información de uso de los clientes. Puede encontrar todos los medidores individuales que App Service emite para describir el uso de los inquilinos en la sección de [preguntas más frecuentes de uso](azure-stack-usage-related-faq.md). Estos medidores se utilizan para calcular el uso por suscripción de cliente y esto, a su vez, se utiliza para calcular los cargos.
+Los operadores en la nube pueden consultar la [API de uso de recursos de inquilino de Azure Stack Hub](azure-stack-tenant-resource-usage-api.md) para recuperar información de uso de los clientes. Puede encontrar todos los medidores individuales que App Service emite para describir el uso de los inquilinos en la sección de [preguntas más frecuentes de uso](azure-stack-usage-related-faq.md). Estos medidores se utilizan para calcular el uso por suscripción de cliente y esto, a su vez, se utiliza para calcular los cargos.
 
 ## <a name="frequently-asked-questions"></a>Preguntas más frecuentes
 
 ### <a name="how-do-i-license-the-sql-server-and-file-server-infrastructure-required-in-the-prerequisites"></a>¿Cómo puedo activar las licencias de la infraestructura de SQL Server y del servidor de archivos que se indica en la sección de requisitos previos?
 
-La activación de las licencias de la infraestructura de SQL Server y del servidor de archivos que requiere el proveedor de recursos de Azure App Service se describe en el artículo sobre Azure App Service en Azure Stack denominado [Antes de comenzar](azure-stack-app-service-before-you-get-started.md#licensing-concerns-for-required-file-server-and-sql-server).
+La concesión de licencias para la infraestructura de SQL Server y del servidor de archivos que requiere el proveedor de recursos de Azure App Service se describe en el artículo sobre Azure App Service en Azure Stack Hub denominado [Antes de comenzar](azure-stack-app-service-before-you-get-started.md#licensing-concerns-for-required-file-server-and-sql-server).
 
 ### <a name="the-usage-faq-lists-the-tenant-meters-but-not-the-prices-for-those-meters-where-can-i-find-them"></a>En la sección de preguntas más frecuentes sobre el uso se enumeran los medidores de los inquilinos, pero no se mencionan los precios para tales medidores. ¿Dónde puedo encontrarlos?
 
-Como operador en la nube, tiene la libertad de aplicar su propio modelo de precios a los clientes. El servicio de uso proporciona la medición del uso. Por tanto, puede usar la cantidad de medidor que va a cobrar a los clientes según el modelo de precios que usted determine. La posibilidad de establecer los precios permite a los operadores diferenciarse de otros operadores de Azure Stack.
+Como operador en la nube, tiene la libertad de aplicar su propio modelo de precios a los clientes. El servicio de uso proporciona la medición del uso. Por tanto, puede usar la cantidad de medidor que va a cobrar a los clientes según el modelo de precios que usted determine. La posibilidad de establecer los precios permite a los operadores diferenciarse de otros operadores de Azure Stack Hub.
 
 ### <a name="as-a-csp-how-can-i-offer-free-and-shared-skus-for-customers-to-try-out-the-service"></a>Como CSP, ¿cómo puedo ofrecer SKU gratis y compartidas para que los clientes prueben el servicio?
 
@@ -87,17 +85,17 @@ Por tanto, puede optar por crear una cuota, para usarla en un plan, que solo ofr
 
 ## <a name="sample-scripts-to-assist-with-billing"></a>Scripts de ejemplo para ayudar con la facturación
 
-El equipo de Azure App Service creó scripts de PowerShell de ejemplo para ayudar a consultar el servicio de uso de Azure Stack. Los operadores en la nube pueden usar estos scripts de ejemplo para preparar su propia facturación para los inquilinos. Los scripts de ejemplo se encuentran en el [repositorio de herramientas de Azure Stack](https://github.com/Azure/AzureStack-tools) en GitHub. Los scripts de App Service se encuentran en la [carpeta AppService, en Usage (Uso)](https://github.com/Azure/AzureStack-Tools/tree/master/Usage/AppService).
+El equipo de Azure App Service creó scripts de PowerShell de ejemplo para ayudar a consultar el servicio de uso de Azure Stack Hub. Los operadores en la nube pueden usar estos scripts de ejemplo para preparar su propia facturación para los inquilinos. Los scripts de ejemplo se encuentran en el [repositorio de herramientas de Azure Stack Hub](https://github.com/Azure/AzureStack-tools) en GitHub. Los scripts de App Service se encuentran en la [carpeta AppService, en Usage (Uso)](https://aka.ms/aa6zku8).
 
 Los scripts de ejemplo disponibles son los siguientes:
 
-- [Get-AppServiceBillingRecords](https://github.com/Azure/AzureStack-Tools/blob/master/Usage/AppService/Get-AppServiceBillingRecords.ps1): en este ejemplo se recuperan los cambios Azure App Service en los registros de facturación de Azure Stack desde la API de uso de Azure Stack.
-- [Get-AppServiceSubscriptionUsage](https://github.com/Azure/AzureStack-Tools/blob/master/Usage/AppService/Get-AppServiceSubscriptionUsage.ps1): en este ejemplo se calculan las cantidades de uso de Azure App Service en Azure Stack por suscripción. Este script calcula las cantidades de uso tanto en función de los datos de la API de uso como de los precios por medidor proporcionados por el operador en la nube.
-- [Suspend-UserSubscriptions](https://github.com/Azure/AzureStack-Tools/blob/master/Usage/AppService/Suspend-UserSubscriptions.ps1): en este ejemplo se suspenden o se habilitan las suscripciones según los límites de uso especificados por el operador en la nube.
+- [Get-AppServiceBillingRecords](https://aka.ms/aa6zku2): en este ejemplo se obtienen los registros de facturación de Azure App Service en Azure Stack Hub de la API de uso de Azure Stack Hub.
+- [Get-AppServiceSubscriptionUsage](https://aka.ms/aa6zku6): en este ejemplo se calculan las cantidades de uso de Azure App Service en Azure Stack Hub por suscripción. Este script calcula las cantidades de uso tanto en función de los datos de la API de uso como de los precios por medidor proporcionados por el operador en la nube.
+- [Suspend-UserSubscriptions](https://aka.ms/aa6zku7): en este ejemplo se suspenden o se habilitan las suscripciones según los límites de uso especificados por el operador en la nube.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [API de uso de recursos de inquilino de Azure Stack](azure-stack-tenant-resource-usage-api.md)
+- [API de uso de recursos de inquilino de Azure Stack Hub](azure-stack-tenant-resource-usage-api.md)
 
 <!--Image references-->
 [1]: ./media/app-service-billing-faq/app-service-worker-tiers.png

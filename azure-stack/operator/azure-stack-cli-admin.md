@@ -1,6 +1,6 @@
 ---
-title: Habilitación de la CLI de Azure para usuarios de Azure Stack | Microsoft Docs
-description: Obtenga información sobre cómo habilitar la interfaz de la línea de comandos (CLI) multiplataforma para administrar e implementar recursos en Azure Stack.
+title: Habilitación de la CLI de Azure para usuarios de Azure Stack Hub | Microsoft Docs
+description: Obtenga información sobre cómo habilitar la interfaz de la línea de comandos (CLI) multiplataforma para administrar e implementar recursos en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -14,26 +14,24 @@ ms.topic: article
 ms.date: 10/02/2019
 ms.author: mabrigg
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: eed0626458d6186b651801d5bda29c4cf77cef9a
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: c4bec9ed2984154d2dde6880f0bf56629aff3070
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71829053"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883004"
 ---
-# <a name="enable-azure-cli-for-azure-stack-users"></a>Habilitación de la CLI de Azure para usuarios de Azure Stack
+# <a name="enable-azure-cli-for-azure-stack-hub-users"></a>Habilitación de la CLI de Azure para usuarios de Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+Puede proporcionar el certificado de CA raíz a los usuarios de Azure Stack Hub para que puedan habilitar la CLI de Azure en sus máquinas de desarrollo. Los usuarios necesitan el certificado para administrar recursos a través de la CLI.
 
-Puede proporcionar el certificado de CA raíz a los usuarios de Azure Stack para que puedan habilitar la CLI de Azure en sus máquinas de desarrollo. Los usuarios necesitan el certificado para administrar recursos a través de la CLI.
-
- - **El certificado raíz de la entidad de certificación de Azure Stack** es necesario si los usuarios usan la CLI desde una estación de trabajo fuera del Kit de desarrollo de Azure Stack (ASDK).  
+ - **El certificado raíz de la entidad de certificación de Azure Stack Hub** es necesario si los usuarios usan la CLI desde una estación de trabajo fuera del Kit de desarrollo de Azure Stack (ASDK).  
 
  - **El punto de conexión de los alias de máquina virtual** proporciona un alias, como "UbuntuLTS" o "Win2012Datacenter", que hace referencia a un publicador de imágenes, una oferta, una SKU y una versión como parámetro único al implementar máquinas virtuales.  
 
 En las secciones siguientes se explica cómo obtener estos valores.
 
-## <a name="export-the-azure-stack-ca-root-certificate"></a>Exportación del certificado raíz de CA de Azure Stack
+## <a name="export-the-azure-stack-hub-ca-root-certificate"></a>Exportación del certificado de raíz de la entidad de certificación de Azure Stack Hub
 
 Si usa un sistema integrado, no es necesario exportar el certificado raíz de CA. Debe exportar el certificado raíz de CA en el ASDK.
 
@@ -58,14 +56,14 @@ certutil -encode root.cer root.pem
 
 ## <a name="set-up-the-vm-aliases-endpoint"></a>Configuración del punto de conexión de alias de máquina virtual
 
-Los operadores de Azure Stack deben configurar un punto de conexión accesible públicamente que hospede un archivo de alias de máquina virtual. El archivo de alias de máquina virtual es un archivo JSON que proporciona un nombre común para una imagen. Usará este nombre al implementar una máquina virtual como parámetro de la CLI de Azure.  
+Los operadores de Azure Stack Hub deben configurar un punto de conexión accesible públicamente que hospede un archivo de alias de máquina virtual. El archivo de alias de máquina virtual es un archivo JSON que proporciona un nombre común para una imagen. Usará este nombre al implementar una máquina virtual como parámetro de la CLI de Azure.  
 
 Antes de agregar una entrada a un archivo de alias, asegúrese de [descargar las imágenes de Azure Marketplace](azure-stack-download-azure-marketplace-item.md) o de que ha [publicado su propia imagen personalizada](azure-stack-add-vm-image.md). Si publica una imagen personalizada, anote la información del publicador, la oferta, la SKU y la versión que especificó en la publicación. Si es una imagen de Marketplace, la información se puede ver mediante el cmdlet `Get-AzureVMImage`.  
 
 Hay un [archivo de alias de ejemplo](https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json) con muchos alias de imágenes comunes disponible, puede usarlo como punto de partida. Hospede este archivo en un espacio al que puedan acceder los clientes de la CLI. Una forma de hacerlo es hospedar el archivo en una cuenta de Blob Storage y compartir la dirección URL con los usuarios:
 
 1. Descargue el [archivo de ejemplo](https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json) de GitHub.
-2. Cree una cuenta de almacenamiento en Azure Stack. Cuando haya terminado, cree un contenedor de blobs. Establezca la directiva de acceso en "público".  
+2. Cree una cuenta de almacenamiento en Azure Stack Hub. Cuando haya terminado, cree un contenedor de blobs. Establezca la directiva de acceso en "público".  
 3. Cargue el archivo JSON en el nuevo contenedor. Cuando esté listo, puede ver la dirección URL del blob. Seleccione el nombre del blob y, a continuación, seleccione la dirección URL desde las propiedades del blob.
 
 ## <a name="next-steps"></a>Pasos siguientes

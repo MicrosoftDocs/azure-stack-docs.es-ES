@@ -1,6 +1,6 @@
 ---
-title: Notas de la versión de la actualización 4 de App Service en Azure Stack | Microsoft Docs
-description: Obtenga información sobre las mejoras, las correcciones y los problemas conocidos de la actualización 4 para App Service en Azure Stack.
+title: Notas de la versión de la actualización 4 de App Service en Azure Stack Hub | Microsoft Docs
+description: Conozca las mejoras, las correcciones y los problemas conocidos de la actualización 4 para App Service en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: bryanla
@@ -16,33 +16,31 @@ ms.date: 03/25/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/25/2019
-ms.openlocfilehash: e42ad185373eeb59b6fdfa5d1c769a5843774537
-ms.sourcegitcommit: 64c18637cafcc38044d139bf35b16422ada8160c
+ms.openlocfilehash: 761d9ca8268664786fadc8c47c7269a346954d8f
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72889866"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75880471"
 ---
-# <a name="app-service-on-azure-stack-update-4-release-notes"></a>Notas de la versión de la actualización 4 de App Service en Azure Stack
+# <a name="app-service-on-azure-stack-hub-update-4-release-notes"></a>Notas de la versión de la actualización 4 de App Service en Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
-
-Estas notas de la versión describen las mejoras, las correcciones y los problemas conocidos de la actualización 4 de Azure App Service en Azure Stack. Los problemas conocidos se dividen tres secciones: los problemas directamente relacionados con la implementación, los problemas relacionados con el proceso de actualización y los problemas relacionados con la compilación (posteriores a la instalación).
+En estas notas de la versión se describen las mejoras, las correcciones y los problemas conocidos de la actualización 4 de Azure App Service en Azure Stack Hub. Los problemas conocidos se dividen tres secciones: los problemas directamente relacionados con la implementación, los problemas relacionados con el proceso de actualización y los problemas relacionados con la compilación (posteriores a la instalación).
 
 > [!IMPORTANT]
-> Aplique la actualización 1809 al sistema integrado de Azure Stack o implemente el Kit de desarrollo de Azure Stack (ASDK) más reciente antes de implementar Azure App Service 1.4.
+> Aplique la actualización 1809 al sistema integrado de Azure Stack Hub o implemente el Kit de desarrollo de Azure Stack (ASDK) más reciente antes de implementar Azure App Service 1.4.
 
 ## <a name="build-reference"></a>Referencia de compilación
 
-El número de compilación de la actualización 4 de App Service en Azure Stack es **78.0.13698.5**
+El número de compilación de la actualización 4 de App Service en Azure Stack Hub es **78.0.13698.5**.
 
-### <a name="prerequisites"></a>Requisitos previos
+### <a name="prerequisites"></a>Prerequisites
 
-Consulte [Requisitos previos para implementar App Service en Azure Stack](azure-stack-app-service-before-you-get-started.md) antes de comenzar la implementación.
+Consulte [Requisitos previos para implementar App Service en Azure Stack Hub](azure-stack-app-service-before-you-get-started.md) antes de comenzar la implementación.
 
-Antes de comenzar la actualización de Azure App Service en Azure Stack a la versión 1.4:
+Antes de comenzar la actualización de Azure App Service en Azure Stack Hub a la versión 1.4:
 
-- Asegúrese de que todos los roles están listos en la administración de Azure App Service desde el portal de administración de Azure Stack.
+- Asegúrese de que todos los roles están listos en la administración de Azure App Service del portal del administrador de Azure Stack Hub.
 
 - Realice una copia de seguridad de App Service y de las bases de datos maestras:
   - AppService_Hosting;
@@ -55,13 +53,13 @@ Antes de comenzar la actualización de Azure App Service en Azure Stack a la ver
 
 ### <a name="new-features-and-fixes"></a>Nuevas características y correcciones
 
-La actualización 4 de Azure App Service en Azure Stack incluye las siguientes correcciones y mejoras:
+La actualización 4 de Azure App Service en Azure Stack Hub incluye las siguientes correcciones y mejoras:
 
 - Resolución de la vulnerabilidad de scripts entre sitios (XSS) [CVE 2018 8600](https://aka.ms/CVE20188600).
 
 - Se ha agregado compatibilidad para la versión de API 2018-02-01 de App Service.
 
-- Actualizaciones de las **herramientas de Kudu, los portales de Functions, Admin e inquilino de App Service**. Es coherente con la versión del SDK del portal de Azure Stack.
+- Actualizaciones de las **herramientas de Kudu, los portales de Functions, Admin e inquilino de App Service**. Es coherente con la versión del SDK del portal de Azure Stack Hub.
 
 - Actualiza el **entorno de ejecución de Azure Functions** a **v1.0.11959**.
 
@@ -88,9 +86,9 @@ La actualización 4 de Azure App Service en Azure Stack incluye las siguientes c
 
 - Se ha resuelto el problema de validación de plantilla durante la implementación de elementos de la galería en los CMS de Wordpress, DNN y Orchard.
 
-- Se ha resuelto el problema de configuración cuando Azure Stack rota el certificado de cliente de Azure Resource Manager.
+- Se ha resuelto el problema de configuración cuando Azure Stack Hub rota el certificado de cliente de Azure Resource Manager.
 
-- Se ha restaurado la funcionalidad en la configuración de uso compartido de recursos entre orígenes del portal de inquilino de App Service.
+- Se ha restaurado la funcionalidad en la configuración de uso compartido de recursos entre orígenes del portal de usuarios de App Service.
 
 - Se muestra ahora un mensaje de error en el portal del administrador de App Service cuando el panel de control del proveedor de recursos no puede conectarse a la instancia de SQL Server configurada.
 
@@ -99,14 +97,14 @@ La actualización 4 de Azure App Service en Azure Stack incluye las siguientes c
 ### <a name="post-deployment-steps"></a>Pasos posteriores a la implementación
 
 > [!IMPORTANT]  
-> Si ha proporcionado el proveedor de recursos de App Service con una instancia de SQL Always On, *debe* [agregar las bases de datos appservice_hosting y appservice_metering a un grupo de disponibilidad](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database), así como sincronizar dichas bases de datos para evitar la pérdida de servicio en caso de producirse una conmutación por error de base de datos.
+> Si ha proporcionado al proveedor de recursos de App Service una instancia de SQL Always On, *debe* [agregar las bases de datos appservice_hosting y appservice_metering a un grupo de disponibilidad](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database) y sincronizarlas para evitar la pérdida de servicio en caso de producirse una conmutación por error de la base de datos.
 
 ### <a name="post-update-steps-optional"></a>Pasos posteriores a la actualización (opcional)
 
-Para los clientes que quieran migrar a una base de datos independiente para las implementaciones de Azure App Service en Azure Stack existentes, ejecute estos pasos una vez completada la actualización 1.4 de Azure App Service en Azure Stack:
+En el caso de clientes que quieran migrar a una base de datos independiente en las implementaciones de Azure App Service en Azure Stack Hub existentes, ejecute estos pasos una vez completada la actualización 1.4 de Azure App Service en Azure Stack Hub:
 
 > [!IMPORTANT]
-> Este procedimiento de migración tarda aproximadamente entre 5 y 10 minutos. El procedimiento implica la eliminación de las sesiones de inicio de sesión de base de datos existentes. Planee el tiempo de inactividad para migrar y validar Azure App Service en Azure Stack después de la migración. Si ha completado estos pasos después de actualizar a Azure App Service en Azure Stack 1.3, no es necesario que los realice.
+> Este procedimiento de migración tarda aproximadamente entre 5 y 10 minutos. El procedimiento implica la eliminación de las sesiones de inicio de sesión de base de datos existentes. Planee el tiempo de inactividad para migrar y validar Azure App Service en Azure Stack Hub después de la migración. Si ha completado estos pasos después de actualizar a Azure App Service en Azure Stack Hub 1.3, no es necesario que los realice.
 
 1. Agregue las [bases de datos de AppService (appservice_hosting y appservice_metering) al grupo de disponibilidad](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database).
 
@@ -205,7 +203,7 @@ Para los clientes que quieran migrar a una base de datos independiente para las 
 
 ### <a name="known-issues-post-installation"></a>Problemas conocidos (posteriores a la instalación)
 
-- Los trabajos no pueden llegar al servidor de archivos cuando App Service está implementada en una red virtual existente y el servidor de archivos solo está disponible en la red privada. Esto también se indica en la documentación de implementación de Azure App Service en Azure Stack.
+- Los trabajos no pueden llegar al servidor de archivos cuando App Service está implementada en una red virtual existente y el servidor de archivos solo está disponible en la red privada. Este problema también se indica en la documentación de implementación de Azure App Service en Azure Stack Hub.
 
 Si decide realizar una implementación en una red virtual existente y en una dirección IP interna para conectarse al servidor de archivos, debe agregar una regla de seguridad de salida. De ese modo, permite que exista tráfico SMB entre la subred del rol de trabajo y el servidor de archivos. Vaya a WorkersNsg en el portal del administrador y agregue una regla de seguridad de salida con las siguientes propiedades:
 
@@ -219,11 +217,11 @@ Si decide realizar una implementación en una red virtual existente y en una dir
  * Prioridad: 700
  * Nombre: Outbound_Allow_SMB445
 
-### <a name="known-issues-for-cloud-admins-operating-azure-app-service-on-azure-stack"></a>Problemas conocidos para los administradores en la nube que trabajan con Azure App Service en Azure Stack
+### <a name="known-issues-for-cloud-admins-operating-azure-app-service-on-azure-stack-hub"></a>Problemas conocidos para los administradores de la nube que usan Azure App Service en Azure Stack Hub
 
-Consulte la documentación de las [notas de la versión de Azure Stack 1809](azure-stack-update-1903.md)
+Consulte la documentación de las [notas de la versión 1809 de Azure Stack Hub](azure-stack-update-1903.md).
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Para obtener información general de Azure App Service, consulte la [Información general de Azure App Service en Azure Stack](azure-stack-app-service-overview.md).
-- Para más información acerca de cómo prepararse para implementar App Service en Azure Stack, consulte [Requisitos previos para implementar App Service en Azure Stack](azure-stack-app-service-before-you-get-started.md).
+- Para información general sobre Azure App Service, consulte [Introducción a Azure App Service en Azure Stack Hub](azure-stack-app-service-overview.md).
+- Para más información sobre cómo prepararse para implementar App Service en Azure Stack Hub, consulte [Requisitos previos para implementar App Service en Azure Stack Hub](azure-stack-app-service-before-you-get-started.md).

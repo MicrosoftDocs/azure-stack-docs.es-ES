@@ -1,6 +1,6 @@
 ---
-title: Solución de problemas de implementación de Kubernetes en Azure Stack | Microsoft Docs
-description: Aprenda a solucionar problemas de la implementación de Kubernetes en Azure Stack.
+title: Solución de problemas de implementación de Kubernetes en Azure Stack Hub | Microsoft Docs
+description: Aprenda a solucionar problemas de implementación de Kubernetes en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -14,25 +14,23 @@ ms.author: mabrigg
 ms.date: 11/14/2019
 ms.reviewer: waltero
 ms.lastreviewed: 11/14/2019
-ms.openlocfilehash: 900ff88136d75759fdc3bc05bf351968f9c13654
-ms.sourcegitcommit: 7817d61fa34ac4f6410ce6f8ac11d292e1ad807c
+ms.openlocfilehash: 93c7972cef394ad86f2619f1ac06781c2dedb3e0
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74689934"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883344"
 ---
-# <a name="troubleshoot-kubernetes-deployment-to-azure-stack"></a>Solución de problemas de implementación de Kubernetes en Azure Stack
-
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+# <a name="troubleshoot-kubernetes-deployment-to-azure-stack-hub"></a>Solución de problemas de implementación de Kubernetes en Azure Stack Hub
 
 > [!Note]  
-> Use únicamente el elemento Kubernetes de Marketplace de Azure Stack para implementar clústeres como prueba de concepto. Para los clústeres de Kubernetes admitidos en Azure Stack, utilice el [motor de AKS](azure-stack-kubernetes-aks-engine-overview.md).
+> Use únicamente el elemento Kubernetes de Marketplace de Azure Stack Hub para implementar clústeres como prueba de concepto. Para los clústeres de Kubernetes admitidos en Azure Stack Hub, utilice el [motor de AKS](azure-stack-kubernetes-aks-engine-overview.md).
 
-En este artículo se indica cómo solucionar los problemas de cualquier clúster de Kubernetes. Para empezar a solucionar problemas, examine los elementos necesarios para la implementación. Puede que deba recopilar los registros de implementación de Azure Stack o las máquinas virtuales Linux que hospedan Kubernetes. Para recuperar los registros de un punto de conexión administrativo, póngase en contacto con el administrador de Azure Stack.
+En este artículo se indica cómo solucionar los problemas de cualquier clúster de Kubernetes. Para empezar a solucionar problemas, examine los elementos necesarios para la implementación. Es posible que necesite recopilar los registros de implementación de Azure Stack Hub o de las máquinas virtuales Linux que hospedan Kubernetes. Para recuperar los registros de un punto de conexión administrativo, póngase en contacto con el administrador de Azure Stack Hub.
 
 ## <a name="overview-of-kubernetes-deployment"></a>Información general de la implementación de Kubernetes
 
-Antes de solucionar los problemas del clúster, repase el proceso de implementación del clúster de Kubernetes en Azure Stack. La implementación usa una plantilla de soluciones de Azure Resource Manager para crear las máquinas virtuales e instalar el motor de AKS para el clúster.
+Antes de solucionar los problemas del clúster, repase el proceso de implementación de clústeres de Kubernetes en Azure Stack Hub. La implementación usa una plantilla de soluciones de Azure Resource Manager para crear las máquinas virtuales e instalar el motor de AKS para el clúster.
 
 ### <a name="kubernetes-deployment-workflow"></a>Flujo de trabajo de implementación de Kubernetes
 
@@ -57,7 +55,7 @@ En el siguiente diagrama se muestra el proceso general para implementar el clús
         1. Obtiene el punto de conexión de la galería del punto de conexión de los metadatos de Azure Resource Manager.
         2. Obtiene el identificador de recurso del directorio activo del punto de conexión de los metadatos de Azure Resource Manager.
         3. Carga el modelo de API para el motor de AKS.
-        4. Implementa el motor de AKS en el clúster de Kubernetes y guarda el perfil de la nube de Azure Stack en `/etc/kubernetes/azurestackcloud.json`.
+        4. Implementa el motor de AKS en el clúster de Kubernetes y guarda el perfil de la nube de Azure Stack Hub en `/etc/kubernetes/azurestackcloud.json`.
 3. Cree las máquinas virtuales maestras.
 
 4. Descargue y ejecute las extensiones de script de cliente.
@@ -83,26 +81,26 @@ En el siguiente diagrama se muestra el proceso general para implementar el clús
 
 ## <a name="steps-to-troubleshoot-kubernetes"></a>Pasos para la solución de problemas de Kubernetes
 
-Puede recopilar y examinar los registros de implementación de las máquinas virtuales que admiten el clúster de Kubernetes. Hable con el administrador de Azure Stack para comprobar la versión de Azure Stack que debe usar y obtener los registros de Azure Stack relacionados con su implementación.
+Puede recopilar y examinar los registros de implementación de las máquinas virtuales que admiten el clúster de Kubernetes. Hable con el administrador de Azure Stack Hub para comprobar la versión de Azure Stack Hub que debe usar y obtener los registros de Azure Stack Hub relacionados con su implementación.
 
 1. Revise el código de error devuelto por la implementación de ARM en el panel **Implementaciones** en el grupo de recursos en el que implementó el clúster. Las descripciones de los códigos de error se encuentran en el artículo sobre [solución de problemas](https://github.com/msazurestackworkloads/azurestack-gallery/blob/master/kubernetes/docs/troubleshooting.md) del repositorio de GitHub del motor de AKS. Si no puede resolver el problema con la descripción del error, continúe con estos pasos.
 2. Revise el [estado de implementación](#review-deployment-status) y recupere los registros del nodo maestro en el clúster de Kubernetes.
-3. Compruebe que utiliza la versión más reciente de Azure Stack. Si no está seguro de qué versión usa, póngase en contacto con el administrador de Azure Stack.
+3. Compruebe que utiliza la versión más reciente de Azure Stack Hub. Si no está seguro de qué versión usa, póngase en contacto con el administrador de Azure Stack Hub.
 4. Revise los archivos de creación de la máquina virtual. Puede que haya tenido los siguientes problemas:  
     - Es posible que la clave pública no sea válida. Revise la clave que ha creado.  
-    - Puede que la creación de máquinas virtuales haya desencadenado un error interno o un error de creación. Los errores pueden deberse a diversos factores, como las limitaciones de capacidad de la suscripción de Azure Stack.
+    - Puede que la creación de máquinas virtuales haya desencadenado un error interno o un error de creación. Los errores pueden deberse a diversos factores, como las limitaciones de capacidad de la suscripción de Azure Stack Hub.
     - Asegúrese de que el nombre de dominio completo (FQDN) de la máquina virtual comienza con un prefijo duplicado.
 5.  Si la máquina virtual es **correcta**, evalúe la instancia de DVM. Si la instancia de DVM tiene un mensaje de error:
     - Es posible que la clave pública no sea válida. Revise la clave que ha creado.  
-    - Debe ponerse en contacto con el administrador de Azure Stack para recuperar los registros de Azure Stack mediante los puntos de conexión con privilegios. Para más información, consulte [Registros de diagnóstico de Azure Stack](../operator/azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs).
-5. Si tiene preguntas acerca de la implementación, puede publicarlas o ver si alguien ya ha respondido a la pregunta en el [foro de Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack). 
+    - Póngase en contacto con el administrador de Azure Stack Hub para recuperar los registros de Azure Stack Hub mediante los puntos de conexión con privilegios. Para más información, consulte [Herramientas de diagnóstico de Azure Stack Hub](../operator/azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs).
+5. Si tiene preguntas acerca de la implementación, puede publicarlas o ver si alguien ya ha respondido a la pregunta en el [foro de Azure Stack Hub](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack). 
 
 
 ## <a name="review-deployment-status"></a>Revisar el estado de implementación
 
 Al implementar el clúster de Kubernetes, puede revisar el estado de implementación para comprobar si hay problemas.
 
-1. Abra el [portal de Azure Stack](https://portal.local.azurestack.external).
+1. Abra el [portal de Azure Stack Hub](https://portal.local.azurestack.external).
 2. Seleccione **Grupos de recursos** y, después, seleccione el nombre del grupo de recursos que usó al implementar el clúster de Kubernetes.
 3. Seleccione **Implementaciones** y, después, el **nombre de la implementación**.
 
@@ -110,7 +108,7 @@ Al implementar el clúster de Kubernetes, puede revisar el estado de implementac
 
 4.  Consulte la ventana de solución de problemas. Cada uno de los recursos implementados ofrece la siguiente información:
     
-    | Propiedad | DESCRIPCIÓN |
+    | Propiedad | Descripción |
     | ----     | ----        |
     | Resource | Nombre del recurso. |
     | Tipo | Proveedor de recursos y tipo de recurso. |
@@ -122,11 +120,11 @@ Al implementar el clúster de Kubernetes, puede revisar el estado de implementac
 
 ## <a name="review-deployment-logs"></a>Revisión de los registros de implementación
 
-Si el portal de Azure Stack no proporciona suficiente información para solucionar un error de implementación, el siguiente paso es profundizar en los registros del clúster. Para recuperar manualmente los registros de implementación, normalmente deberá conectarse a una de las máquinas virtuales principales del clúster. Una alternativa más sencilla sería descargar y ejecutar el siguiente [script de Bash](https://aka.ms/AzsK8sLogCollectorScript) proporcionado por el equipo de Azure Stack. Este script se conecta a la instancia de DVM y a las máquinas del clúster, recopila los registros pertinentes del sistema y del clúster y los descarga en la estación de trabajo.
+Si el portal de Azure Stack Hub no proporciona suficiente información para solucionar algún error de implementación, el siguiente paso es profundizar en los registros del clúster. Para recuperar manualmente los registros de implementación, normalmente deberá conectarse a una de las máquinas virtuales principales del clúster. Una alternativa más sencilla sería descargar y ejecutar el siguiente [script de Bash](https://aka.ms/AzsK8sLogCollectorScript) proporcionado por el equipo de Azure Stack Hub. Este script se conecta a la instancia de DVM y a las máquinas del clúster, recopila los registros pertinentes del sistema y del clúster y los descarga en la estación de trabajo.
 
-### <a name="prerequisites"></a>Requisitos previos
+### <a name="prerequisites"></a>Prerequisites
 
-Necesita un símbolo del sistema de Bash en la máquina que usa para administrar Azure Stack. En un equipo Windows, puede obtener un símbolo del sistema de Bash mediante la instalación de [GIT para Windows](https://git-scm.com/downloads). Una vez instalado, busque _Git Bash_ en el menú Inicio.
+Necesita un símbolo del sistema de Bash en la máquina que usa para administrar Azure Stack Hub. En un equipo Windows, puede obtener un símbolo del sistema de Bash mediante la instalación de [GIT para Windows](https://git-scm.com/downloads). Una vez instalado, busque _Git Bash_ en el menú Inicio.
 
 ### <a name="retrieving-the-logs"></a>Recuperación de los registros
 
@@ -145,7 +143,7 @@ Siga estos pasos para recopilar y descargar los registros del clúster:
 
 3. Busque la información requerida por el script y ejecútelo:
 
-    | Parámetro           | DESCRIPCIÓN                                                                                                      | Ejemplo                                                                       |
+    | Parámetro           | Descripción                                                                                                      | Ejemplo                                                                       |
     |---------------------|------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
     | -d, --vmd-host      | La dirección IP pública o el nombre de dominio completo (FQDN) de la instancia de DVM. El nombre de la VM comienza por `vmd-`. | IP: 192.168.102.38<br>DNS: vmd-myk8s.local.cloudapp.azurestack.external |
     | -h, --help  | Uso de comandos de impresión. | |
@@ -169,8 +167,8 @@ Siga estos pasos para recopilar y descargar los registros del clúster:
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Implementación de Kubernetes en Azure Stack](azure-stack-solution-template-kubernetes-deploy.md).
+[Implementación de Kubernetes en Azure Stack Hub](azure-stack-solution-template-kubernetes-deploy.md)
 
-[Agregar un clúster de Kubernetes a Marketplace (para el operador de Azure Stack)](../operator/azure-stack-solution-template-kubernetes-cluster-add.md)
+[Adición de un clúster de Kubernetes a Marketplace (para el operador de Azure Stack Hub)](../operator/azure-stack-solution-template-kubernetes-cluster-add.md)
 
 [Kubernetes en Azure](https://docs.microsoft.com/azure/container-service/kubernetes/container-service-kubernetes-walkthrough)

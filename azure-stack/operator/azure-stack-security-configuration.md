@@ -1,6 +1,6 @@
 ---
-title: Configuración de los controles de seguridad de Azure Stack
-description: Aprenda a configurar los controles de seguridad en Azure Stack
+title: Configuración de los controles de seguridad de Azure Stack Hub
+description: Aprenda a configurar los controles de seguridad de Azure Stack Hub
 services: azure-stack
 author: PatAltimore
 ms.service: azure-stack
@@ -9,33 +9,31 @@ ms.date: 06/17/2019
 ms.author: patricka
 ms.reviewer: fiseraci
 ms.lastreviewed: 06/17/2019
-ms.openlocfilehash: b36a6d826dc7249f10b4785b27511096e45923a9
-ms.sourcegitcommit: 7348876a97e8bed504b5f5d90690ec8d1d9472b0
+ms.openlocfilehash: 8fe0019dfee098a7ed022ecb20b6443a4be43f53
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67557863"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75881967"
 ---
-# <a name="configure-azure-stack-security-controls"></a>Configuración de los controles de seguridad de Azure Stack
+# <a name="configure-azure-stack-hub-security-controls"></a>Configuración de los controles de seguridad de Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack*
+En este artículo se explican los controles de seguridad que se pueden cambiar en Azure Stack Hub y se resaltan los inconvenientes cuando procede.
 
-En este artículo se explican los controles de seguridad que se pueden cambiar en Azure Stack y se resaltan los inconvenientes cuando procede.
-
-La arquitectura de Azure Stack se basa en dos pilares de principios de seguridad: supuesto de infracción y brecha y protección predeterminada. Para más información sobre la seguridad de Azure Stack, consulte [Posición de seguridad de la infraestructura de Azure Stack](azure-stack-security-foundations.md). Aunque la posición de seguridad predeterminada de Azure Stack está preparada para producción, hay algunos escenarios de implementación que requieren protección adicional.
+La arquitectura de Azure Stack Hub se basa en dos pilares de principios de seguridad: supuesto de infracción y brecha y protección predeterminada. Para más información sobre la seguridad de Azure Stack Hub, consulte la [posición de seguridad de la infraestructura de Azure Stack Hub](azure-stack-security-foundations.md). Aunque la posición de seguridad predeterminada de Azure Stack Hub está preparada para producción, hay algunos escenarios de implementación que requieren protección adicional.
 
 ## <a name="tls-version-policy"></a>Directiva de versión TLS
 
-El protocolo de Seguridad de la capa de transporte (TLS) es un protocolo criptográfico ampliamente adoptado para establecer una comunicación cifrada a través de la red. TLS ha evolucionado con el tiempo y se han publicado varias versiones. La infraestructura de Azure Stack usa TLS 1.2 exclusivamente para todas sus comunicaciones. Para las interfaces externas, Azure Stack usa TLS 1.2 de forma predeterminada actualmente. Sin embargo, para la compatibilidad con versiones anteriores, también admite hasta las versiones TLS 1.1 y 1.0. Cuando un cliente de TLS solicita comunicarse a través de TLS 1.1 o TLS 1.0, Azure Stack respeta la solicitud y admite una versión anterior de TLS. Si el cliente solicita TLS 1.2, Azure Stack se establecerá una conexión TLS con TLS 1.2.
+El protocolo de Seguridad de la capa de transporte (TLS) es un protocolo criptográfico ampliamente adoptado para establecer una comunicación cifrada a través de la red. TLS ha evolucionado con el tiempo y se han publicado varias versiones. La infraestructura de Azure Stack Hub usa TLS 1.2 exclusivamente para todas sus comunicaciones. En el caso de interfaces externas, Azure Stack Hub usa actualmente TLS 1.2 de forma predeterminada. Sin embargo, para la compatibilidad con versiones anteriores, también admite hasta las versiones TLS 1.1 y 1.0. Cuando un cliente de TLS solicita comunicarse a través de TLS 1.1 o TLS 1.0, Azure Stack Hub respeta la solicitud y admite una versión anterior de TLS. Si el cliente solicita TLS 1.2, Azure Stack Hub establecerá una conexión TLS mediante TLS 1.2.
 
-Dado que las versiones TLS 1.0 y 1.1 están cada vez más en desuso o prohibidas por las organizaciones y las normas de cumplimiento, a partir de la actualización 1906 puede configurar la directiva TLS en Azure Stack. Puede aplicar una directiva TLS 1.2 exclusivamente donde cualquier intento de establecer una sesión TLS con una versión anterior a 1.2 no se permita y se rechace.
+Dado que las versiones TLS 1.0 y 1.1 están cada vez más en desuso o prohibidas por las organizaciones y las normas de cumplimiento, a partir de la actualización 1906 puede configurar la directiva TLS en Azure Stack Hub. Puede aplicar una directiva TLS 1.2 exclusivamente donde cualquier intento de establecer una sesión TLS con una versión anterior a 1.2 no se permita y se rechace.
 
 > [!IMPORTANT]
-> Microsoft recomienda usar la directiva TLS 1.2 exclusivamente para entornos de producción de Azure Stack.
+> Microsoft recomienda usar la directiva TLS 1.2 exclusivamente para entornos de producción de Azure Stack Hub.
 
 ## <a name="get-tls-policy"></a>Obtener la directiva TLS
 
-Use el [punto de conexión con privilegios (PEP)](azure-stack-privileged-endpoint.md) para ver la directiva TLS de todos los puntos de conexión de Azure Stack:
+Use el [punto de conexión con privilegios (PEP)](azure-stack-privileged-endpoint.md) para ver la directiva TLS de todos los puntos de conexión de Azure Stack Hub:
 
 ```powershell
 Get-TLSPolicy
@@ -47,7 +45,7 @@ Salida de ejemplo:
 
 ## <a name="set-tls-policy"></a>Establecer la directiva TLS
 
-Use el [punto de conexión con privilegios (PEP)](azure-stack-privileged-endpoint.md) para establecer la directiva TLS de todos los puntos de conexión de Azure Stack:
+Use el [punto de conexión con privilegios (PEP)](azure-stack-privileged-endpoint.md) para establecer la directiva TLS de todos los puntos de conexión de Azure Stack Hub:
 
 ```powershell
 Set-TLSPolicy -Version <String>
@@ -55,16 +53,16 @@ Set-TLSPolicy -Version <String>
 
 Parámetros del cmdlet *Set-TLSPolicy*:
 
-| Parámetro | DESCRIPCIÓN | type | Obligatorio |
+| Parámetro | Descripción | Tipo | Obligatorio |
 |---------|---------|---------|---------|
-| *Versión* | Versiones de TLS permitidas en Azure Stack | Cadena | Sí|
+| *Versión* | Versiones de TLS permitidas en Azure Stack Hub | String | sí|
 
-Para configurar las versiones de TLS permitidas para todos los puntos de conexión de Azure Stack, use uno de los valores siguientes:
+Para configurar las versiones de TLS permitidas para todos los puntos de conexión de Azure Stack Hub, use uno de los valores siguientes:
 
-| Valor de la versión | DESCRIPCIÓN |
+| Valor de la versión | Descripción |
 |---------|---------|
-| *TLS_All* | Los puntos de conexión de TLS de Azure Stack admiten TLS 1.2, pero se admiten las versiones anteriores TLS 1.1 y TLS 1.0. |
-| *TLS_1.2* | Los puntos de conexión de TLS de Azure Stack solo admiten TLS 1.2. | 
+| *TLS_All* | Los puntos de conexión de TLS de Azure Stack Hub admiten TLS 1.2, pero se admiten las versiones anteriores TLS 1.1 y TLS 1.0. |
+| *TLS_1.2* | Los puntos de conexión de TLS de Azure Stack Hub solo admiten TLS 1.2. | 
 
 La actualización de la directiva TLS tarda unos minutos en completarse.
 
@@ -120,6 +118,6 @@ Salida de ejemplo:
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Información sobre la posición de seguridad de la infraestructura de Azure Stack](azure-stack-security-foundations.md)
-- [Aprenda a cambiar los secretos en Azure Stack](azure-stack-rotate-secrets.md)
-- [Actualización de Antivirus de Windows Defender en Azure Stack](azure-stack-security-av.md)
+- [Aprenda sobre la posición de seguridad de la infraestructura de Azure Stack Hub](azure-stack-security-foundations.md)
+- [Aprenda a cambiar los secretos en Azure Stack Hub](azure-stack-rotate-secrets.md)
+- [Actualización de Antivirus de Windows Defender en Azure Stack Hub](azure-stack-security-av.md)

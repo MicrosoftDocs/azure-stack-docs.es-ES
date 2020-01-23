@@ -1,6 +1,6 @@
 ---
 title: Establecimiento de permisos de acceso mediante el control de acceso basado en rol | Microsoft Docs
-description: Obtenga información sobre cómo establecer los permisos de acceso mediante el control de acceso basado en rol (RBAC) en Azure Stack.
+description: Obtenga información sobre cómo establecer los permisos de acceso mediante el control de acceso basado en rol (RBAC) en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -15,18 +15,16 @@ ms.date: 12/23/2019
 ms.author: justinha
 ms.reviewer: thoroet
 ms.lastreviewed: 12/23/2019
-ms.openlocfilehash: ae5b167ca807fc1e28c13c553e13ea89c7e6fe49
-ms.sourcegitcommit: dc3d0b77ee77742525fa0cd72d8547d25393022f
+ms.openlocfilehash: 7630579591b7d6e4c4179964d522dceb1023f55e
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/26/2019
-ms.locfileid: "75492783"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882375"
 ---
 # <a name="set-access-permissions-using-role-based-access-control"></a>Establecimiento de permisos de acceso mediante el control de acceso basado en rol
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
-
-En Azure Stack, un usuario puede ser un lector, propietario o colaborador de cada una de las instancias de una suscripción, grupo de recursos o servicio. Por ejemplo, el Usuario A puede tener permisos de lector en la Suscripción 1, pero tener permisos de propietario en la Máquina virtual 7.
+En Azure Stack Hub, un usuario puede ser un lector, propietario o colaborador de cada una de las instancias de una suscripción, grupo de recursos o servicio. Por ejemplo, el Usuario A puede tener permisos de lector en la Suscripción 1, pero tener permisos de propietario en la Máquina virtual 7.
 
  - Lector: El usuario puede ver todo, pero no puede hacer cambios.
  - Colaborador: El usuario puede administrar todo, excepto el acceso a los recursos.
@@ -54,4 +52,4 @@ En Azure Stack, un usuario puede ser un lector, propietario o colaborador de cad
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Adición de una nueva cuenta de inquilino de Azure Stack en Azure Active Directory](azure-stack-add-new-user-aad.md)
+[Adición de un inquilino de Azure Stack Hub](azure-stack-add-new-user-aad.md)

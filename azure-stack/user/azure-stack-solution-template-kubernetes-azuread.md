@@ -1,6 +1,6 @@
 ---
-title: Implementación de Kubernetes en Azure Stack con Azure Active Directory (Azure AD) | Microsoft Docs
-description: Obtenga información sobre cómo implementar Kubernetes en Azure Stack con Azure Active Directory (Azure AD).
+title: Implementación de Kubernetes en Azure Stack Hub con Azure Active Directory (Azure AD) | Microsoft Docs
+description: Obtenga información sobre cómo implementar Kubernetes en Azure Stack Hub con Azure Active Directory (Azure AD).
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,47 +15,45 @@ ms.date: 10/10/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
-ms.openlocfilehash: 902645ffcb6fda4afad76a1a258b55f0ace2b189
-ms.sourcegitcommit: 0d27456332031ab98ba2277117395ae5ffcbb79f
+ms.openlocfilehash: 52b94a95c525ac4a327282380c241229e8bd7117
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73047240"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75878482"
 ---
-# <a name="deploy-kubernetes-to-azure-stack-using-azure-active-directory"></a>Implementación de Kubernetes en Azure Stack con Azure Active Directory
-
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+# <a name="deploy-kubernetes-to-azure-stack-hub-using-azure-active-directory"></a>Implementación de Kubernetes en Azure Stack Hub con Azure Active Directory
 
 > [!Note]  
 > Use únicamente el elemento Kubernetes de Marketplace de Azure Stack para implementar clústeres como prueba de concepto. Para los clústeres de Kubernetes admitidos en Azure Stack, utilice el  [motor de AKS](azure-stack-kubernetes-aks-engine-overview.md).
 
 Puede seguir los pasos descritos en este artículo para implementar y configurar los recursos de Kubernetes cuando use Azure Active Directory (Azure AD) como servicio de administración de identidad en una sola operación coordinada.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
-Para empezar, asegúrese de tener los permisos adecuados y de que la instancia de Azure Stack está lista.
+Para empezar, asegúrese de tener los permisos adecuados y de que la instancia de Azure Stack Hub está lista.
 
 1. Compruebe que puede crear aplicaciones en el inquilino de Azure Active Directory (Azure AD). Necesitará estos permisos para la implementación de Kubernetes.
 
     Para obtener instrucciones sobre cómo comprobar sus permisos, consulte [Comprobación de los permisos de Azure Active Directory](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal).
 
-1. Genere un par de claves SSH pública y privada para iniciar sesión en la máquina virtual de Linux en Azure Stack. Necesitará la clave pública al crear el clúster.
+1. Genere un par de claves SSH pública y privada para iniciar sesión en la máquina virtual de Linux en Azure Stack Hub. Necesitará la clave pública al crear el clúster.
 
     Para obtener instrucciones sobre cómo generar una clave, consulte [SSH Key Generation](azure-stack-dev-start-howto-ssh-public-key.md) (Generación de claves SSH).
 
-1. Compruebe que tiene una suscripción válida en el portal del inquilino de Azure Stack y que tiene suficientes direcciones IP públicas disponibles para agregar nuevas aplicaciones.
+1. Compruebe que tiene una suscripción válida en el portal del inquilino de Azure Stack Hub y que tiene suficientes direcciones IP públicas disponibles para agregar nuevas aplicaciones.
 
-    No se puede implementar el clúster en una suscripción de **administrador** de Azure Stack. Debe usar una suscripción de **Usuario**. 
+    No se puede implementar el clúster en una suscripción de **Administrador** de Azure Stack Hub. Debe usar una suscripción de **Usuario**. 
 
-1. Si no tiene un clúster de Kubernetes en Marketplace, póngase en contacto con su administrador de Azure Stack.
+1. Si no tiene un clúster de Kubernetes en Marketplace, póngase en contacto con su administrador de Azure Stack Hub.
 
 ## <a name="create-a-service-principal"></a>Creación de una entidad de servicio
 
-Cree una entidad de servicio en Azure. La entidad de servicio permite que la aplicación acceda a los recursos de Azure Stack.
+Cree una entidad de servicio en Azure. La entidad de servicio permite que la aplicación acceda a los recursos de Azure Stack Hub.
 
 1. Inicie sesión en [Azure Portal](https://portal.azure.com) global.
 
-1. Compruebe que inició sesión con el inquilino de Azure AD asociado con la instancia de Azure Stack. Para cambiar el inicio de sesión, haga clic en el icono de filtro de la barra de herramientas de Azure.
+1. Compruebe que inició sesión con el inquilino de Azure AD asociado con la instancia de Azure Stack Hub. Para cambiar el inicio de sesión, haga clic en el icono de filtro de la barra de herramientas de Azure.
 
     ![Seleccionar el inquilino de AD](media/azure-stack-solution-template-kubernetes-deploy/tenantselector.png)
 
@@ -81,7 +79,7 @@ Cree una entidad de servicio en Azure. La entidad de servicio permite que la apl
 
 Dé a la entidad de servicio acceso a su suscripción para que la entidad pueda crear recursos.
 
-1.  Inicie sesión en el [portal de Azure Stack](https://portal.local.azurestack.external/).
+1.  Inicie sesión en el portal de [Azure Stack Hub](https://portal.local.azurestack.external/).
 
 1. Seleccione **Todos los servicios**  > **Suscripciones**.
 
@@ -97,9 +95,9 @@ Dé a la entidad de servicio acceso a su suscripción para que la entidad pueda 
 
 ## <a name="deploy-kubernetes"></a>Implementación de Kubernetes
 
-1. Abra el [portal de Azure Stack](https://portal.local.azurestack.external).
+1. Abra el [portal de Azure Stack Hub](https://portal.local.azurestack.external).
 
-1. Seleccione **+ Crear un recurso** > **Proceso** > **Clúster de Kubernetes**. Haga clic en **Create**(Crear).
+1. Seleccione **+ Crear un recurso** > **Proceso** > **Clúster de Kubernetes**. Haga clic en **Crear**.
 
     ![Implementar plantilla de solución](media/azure-stack-solution-template-kubernetes-deploy/01_kub_market_item.png)
 
@@ -113,7 +111,7 @@ Dé a la entidad de servicio acceso a su suscripción para que la entidad pueda 
 
 1. Escriba el nombre del nuevo grupo de recursos o seleccione uno existente. El nombre del recurso debe ser alfanumérico y estar en minúsculas.
 
-1. Seleccione la **ubicación** del grupo de recursos. Esta es la región que elige para la instalación de Azure Stack.
+1. Seleccione la **ubicación** del grupo de recursos. Esta es la región que ha elegido para la instalación de Azure Stack Hub.
 
 ### <a name="2-kubernetes-cluster-settings"></a>2. Configuración de un clúster de Kubernetes
 
@@ -138,13 +136,13 @@ Dé a la entidad de servicio acceso a su suscripción para que la entidad pueda 
 
 1. Seleccione **The VMSize of the Kubernetes node VMs** (VMSize de las VM del nodo de Kubernetes). Así se especifica el tamaño de máquina virtual de las máquinas virtuales del nodo de Kubernetes. 
 
-1. Seleccione **Azure AD** como **sistema de identidad de Azure Stack** para la instalación de Azure Stack.
+1. Seleccione **Azure AD** como **sistema de identidad de Azure Stack Hub** para la instalación de Azure Stack.
 
-1. Escriba el **id. de cliente de la entidad de servicio**. El proveedor de nube de Azure Kubernetes usa este identificador. El id. de cliente identificado como identificador de la aplicación cuando el administrador de Azure Stack creó la entidad de servicio.
+1. Escriba el **id. de cliente de la entidad de servicio**. El proveedor de nube de Azure Kubernetes usa este identificador. El identificador de cliente indicado como identificador de la aplicación cuando el administrador de Azure Stack Hub creó la entidad de servicio.
 
 1. Escriba el **Secreto de cliente de la entidad de servicio**. Este es el secreto de cliente que configuró al crear el servicio.
 
-1. Escriba la **Versión de Kubernetes**. Esta es la versión para el proveedor de Kubernetes Azure. Azure Stack publica una compilación de Kubernetes personalizada para cada versión de Azure Stack.
+1. Escriba la **Versión de Kubernetes**. Esta es la versión para el proveedor de Kubernetes Azure. Azure Stack Hub publica una compilación de Kubernetes personalizada para cada versión de Azure Stack Hub.
 
 ### <a name="3-summary"></a>3. Resumen
 
@@ -157,7 +155,7 @@ Dé a la entidad de servicio acceso a su suscripción para que la entidad pueda 
 3. Seleccione **Ok** (Aceptar) para implementar el clúster.
 
 > [!TIP]  
->  Si tiene preguntas acerca de la implementación, puede publicarlas o ver si alguien ya ha respondido a las mismas preguntas en el [foro de Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack).
+>  Si tiene preguntas acerca de la implementación, puede publicarlas o ver si alguien ya ha respondido a las mismas preguntas en el [foro de Azure Stack Hub](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack).
 
 
 ## <a name="next-steps"></a>Pasos siguientes

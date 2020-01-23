@@ -1,7 +1,7 @@
 ---
-title: Creación de un rol personalizado para el registro de Azure Stack
-titleSuffix: Azure Stack
-description: Aprenda a crear un rol personalizado para evitar el uso de un administrador global para el registro de Azure Stack.
+title: Creación de un rol personalizado para el registro de Azure Stack Hub
+titleSuffix: Azure Stack Hub
+description: Aprenda a crear un rol personalizado para evitar el uso de un administrador global para el registro de Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: PatAltimore
@@ -16,43 +16,41 @@ ms.date: 06/10/2019
 ms.author: patricka
 ms.reviewer: rtiberiu
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: 0cfbec17b2aef1f6a14615d4b69d8a5e9347e913
-ms.sourcegitcommit: 284f5316677c9a7f4c300177d0e2a905df8cb478
+ms.openlocfilehash: dff7f2dd043a7df3749ec3cdc4b7560e6cd7bd06
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74465419"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882035"
 ---
-# <a name="create-a-custom-role-for-azure-stack-registration"></a>Creación de un rol personalizado para el registro de Azure Stack
-
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+# <a name="create-a-custom-role-for-azure-stack-hub-registration"></a>Creación de un rol personalizado para el registro de Azure Stack Hub
 
 > [!WARNING]
 > Esto no es una característica de la posición de seguridad. Úsela en escenarios donde quiera que las restricciones eviten cambios accidentales en la suscripción a Azure. Cuando un usuario tiene derechos delegados a este rol personalizado, también tendrá derechos para modificar los permisos y elevar derechos. Solo asigne usuarios en los que confía al rol personalizado.
 
-Durante el registro de Azure Stack, debe iniciar sesión con una cuenta de Azure Active Directory (Azure AD). La cuenta requiere los siguientes permisos de Azure AD y los permisos de suscripción a Azure:
+Durante el registro de Azure Stack Hub, debe iniciar sesión con una cuenta de Azure Active Directory (Azure AD). La cuenta requiere los siguientes permisos de Azure AD y los permisos de suscripción a Azure:
 
 * **Permisos de registro de aplicaciones en el inquilino de Azure AD:** Los administradores tienen los permisos del registro de aplicaciones. El permiso para los usuarios es una configuración global para todos los usuarios en el inquilino. Para ver o cambiar esta opción de configuración, consulte [Creación de una aplicación de Azure AD y una entidad de servicio con acceso a los recursos](/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions).
 
-    La opción de configuración *Los usuarios pueden registrar aplicaciones* debe establecerse en **Sí** para habilitar una cuenta de usuario para registrar Azure Stack. Si la opción de configuración del registro de la aplicación se establece en **No**, no puede usar una cuenta de usuario para registrar Azure Stack, sino que debe utilizar una cuenta de administrador global.
+    La opción de configuración *Los usuarios pueden registrar aplicaciones* debe establecerse en **Sí** para habilitar una cuenta de usuario para registrar Azure Stack Hub. Si la opción de configuración del registro de la aplicación se establece en **No**, no puede usar una cuenta de usuario para registrar Azure Stack Hub, sino que debe utilizar una cuenta de administrador global.
 
 * **Conjunto de permisos suficientes de suscripción a Azure:** Los usuarios que pertenecen al rol de propietario tienen permisos suficientes. Para otras cuentas, puede asignar el conjunto de permisos mediante la asignación de un rol personalizado tal como se describe en las secciones siguientes.
 
-En lugar de usar una cuenta que tenga permisos de propietario en la suscripción de Azure, puede crear un rol personalizado para asignar permisos a una cuenta de usuario menos privilegiada. Esta cuenta se puede utilizar entonces para registrar la instancia de Azure Stack.
+En lugar de usar una cuenta que tenga permisos de propietario en la suscripción de Azure, puede crear un rol personalizado para asignar permisos a una cuenta de usuario menos privilegiada. Esta cuenta se puede utilizar entonces para registrar la instancia de Azure Stack Hub.
 
 ## <a name="create-a-custom-role-using-powershell"></a>Creación de un rol personalizado con PowerShell
 
-Para crear un rol personalizado, debe tener el permiso `Microsoft.Authorization/roleDefinitions/write` en todos los `AssignableScopes`, como [Propietario](/azure/role-based-access-control/built-in-roles#owner) o [Administrador de acceso de usuario](/azure/role-based-access-control/built-in-roles#user-access-administrator). Use la siguiente plantilla JSON para simplificar la creación del rol personalizado. La plantilla crea un rol personalizado que permite el acceso de lectura y escritura necesarios para el registro de Azure Stack.
+Para crear un rol personalizado, debe tener el permiso `Microsoft.Authorization/roleDefinitions/write` en todos los `AssignableScopes`, como [Propietario](/azure/role-based-access-control/built-in-roles#owner) o [Administrador de acceso de usuario](/azure/role-based-access-control/built-in-roles#user-access-administrator). Use la siguiente plantilla JSON para simplificar la creación del rol personalizado. La plantilla crea un rol personalizado que permite el acceso de lectura y escritura necesarios para el registro de Azure Stack Hub.
 
 1. Cree un archivo JSON. Por ejemplo, `C:\CustomRoles\registrationrole.json`.
 2. Agregue el siguiente JSON al archivo. Reemplace `<SubscriptionID>` con la identificación de su suscripción de Azure.
 
     ```json
     {
-      "Name": "Azure Stack registration role",
+      "Name": "Azure Stack Hub registration role",
       "Id": null,
       "IsCustom": true,
-      "Description": "Allows access to register Azure Stack",
+      "Description": "Allows access to register Azure Stack Hub",
       "Actions": [
         "Microsoft.Resources/subscriptions/resourceGroups/write",
         "Microsoft.Resources/subscriptions/resourceGroups/read",
@@ -85,11 +83,11 @@ Para crear un rol personalizado, debe tener el permiso `Microsoft.Authorization/
 
 ## <a name="assign-a-user-to-registration-role"></a>Asignación de un usuario al rol de registro
 
-Después de crear el rol personalizado de registro, asigne el rol a la cuenta de usuario que se usará para registrar Azure Stack.
+Después de crear el rol personalizado de registro, asigne el rol a la cuenta de usuario que se usará para registrar Azure Stack Hub.
 
 1. Inicie sesión con la cuenta con permisos suficientes en la suscripción a Azure para delegar derechos, como [Propietario](/azure/role-based-access-control/built-in-roles#owner) o [Administrador de acceso de usuario](/azure/role-based-access-control/built-in-roles#user-access-administrator).
 2. En **Suscripciones**, seleccione **Control de acceso (IAM) > Agregar asignación de roles**.
-3. En **Rol**, elija el rol personalizado que ha creado: *Azure Stack registration role* (Rol de registro de Azure Stack).
+3. En **Rol**, elija el rol personalizado que ha creado: *Rol de registro de Azure Stack Hub*.
 4. Seleccione los usuarios que quiere asignar al rol.
 5. Seleccione **Guardar** para asignar los usuarios seleccionados al rol.
 
@@ -99,4 +97,4 @@ Para saber más sobre los roles personalizados, vea [Administración del acceso 
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Registro de Azure Stack en Azure](azure-stack-registration.md)
+[Registro de Azure Stack Hub en Azure](azure-stack-registration.md)

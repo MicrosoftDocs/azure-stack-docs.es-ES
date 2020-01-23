@@ -1,7 +1,7 @@
 ---
-title: Sustitución de un componente de hardware en un nodo de unidad de escalado de Azure Stack
-titleSuffix: Azure Stack
-description: Obtenga información sobre cómo reemplazar un componente de hardware en un sistema integrado de Azure Stack.
+title: Sustitución de un componente de hardware en un nodo de la unidad de escalado de Azure Stack Hub
+titleSuffix: Azure Stack Hub
+description: Obtenga información sobre cómo reemplazar un componente de hardware en un sistema integrado de Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,32 +15,30 @@ ms.topic: article
 ms.date: 07/18/2019
 ms.author: thoroet
 ms.lastreviewed: 07/18/2019
-ms.openlocfilehash: ff78409ecdbdec8b7a6860db18244a4835351ed8
-ms.sourcegitcommit: 284f5316677c9a7f4c300177d0e2a905df8cb478
+ms.openlocfilehash: 715bd2b3bb5797ff43272a7b721edd03bb2c1b4c
+ms.sourcegitcommit: ce01b2cd114ca8ab5b70c6311b66c58ceb054469
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74465293"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75924389"
 ---
-# <a name="replace-a-hardware-component-on-an-azure-stack-scale-unit-node"></a>Sustitución de un componente de hardware en un nodo de unidad de escalado de Azure Stack
+# <a name="replace-a-hardware-component-on-an-azure-stack-hub-scale-unit-node"></a>Sustitución de un componente de hardware en un nodo de la unidad de escalado de Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack*
-
-En este artículo se describe el proceso general para reemplazar los componentes de hardware que se pueden intercambiar directamente. Los verdaderos pasos para reemplazar varían en función del fabricante del hardware OEM. Consulte la documentación de Field Replaceable Unit (FRU) del proveedor para obtener los pasos detallados específicos para el sistema integrado de Azure Stack.
+En este artículo se describe el proceso general para reemplazar los componentes de hardware que se pueden intercambiar directamente. Los verdaderos pasos para reemplazar varían en función del fabricante del hardware OEM. Consulte la documentación de Field Replaceable Unit (FRU) del proveedor para obtener los pasos detallados específicos para el sistema integrado de Azure Stack Hub.
 
 > [!CAUTION]  
-> La nivelación del firmware es fundamental para el éxito de la operación que se describe en este artículo. La omisión de este paso puede dar lugar a inestabilidad del sistema, disminución del rendimiento, subprocesos de seguridad o impedir que la automatización de Azure Stack implemente el sistema operativo. Vea siempre la documentación del asociado de hardware cuando reemplace hardware para asegurarse de que el firmware aplicado coincide con la versión de OEM que se muestra en el [portal de administración de Azure Stack](azure-stack-updates.md).
+> La nivelación del firmware es fundamental para el éxito de la operación que se describe en este artículo. La omisión de este paso puede dar lugar a inestabilidad del sistema, disminución del rendimiento, amenazas de seguridad o impedir que la automatización de Azure Stack Hub implemente el sistema operativo. Consulte siempre la documentación del asociado de hardware cuando reemplace hardware para asegurarse de que el firmware aplicado coincide con la versión de OEM que se muestra en el [portal del administrador de Azure Stack Hub](azure-stack-updates.md).
 
 | Asociado de hardware | Region | URL |
 |------------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Cisco | All | [Guía de operaciones de Cisco Integrated System for Microsoft Azure Stack](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/azure-stack/b_Azure_Stack_Operations_Guide_4-0/b_Azure_Stack_Operations_Guide_4-0_chapter_00.html#concept_wks_t1q_wbb)<br><br>[Notas de la versión de Cisco Integrated System for Microsoft Azure Stack](https://www.cisco.com/c/en/us/support/servers-unified-computing/ucs-c-series-rack-mount-ucs-managed-server-software/products-release-notes-list.html) |
-| Dell EMC | All | [Cloud for Microsoft Azure Stack 14G (cuenta e información de inicio de sesión necesarias)](https://support.emc.com/downloads/44615_Cloud-for-Microsoft-Azure-Stack-14G)<br><br>[Cloud for Microsoft Azure Stack 13G (cuenta e información de inicio de sesión necesarias)](https://support.emc.com/downloads/42238_Cloud-for-Microsoft-Azure-Stack-13G) |
+| Cisco | All | [Guía de operaciones de Cisco Integrated System para Microsoft Azure Stack Hub](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/azure-stack/b_Azure_Stack_Operations_Guide_4-0/b_Azure_Stack_Operations_Guide_4-0_chapter_00.html#concept_wks_t1q_wbb)<br><br>[Notas de la versión de Cisco Integrated System para Microsoft Azure Stack Hub](https://www.cisco.com/c/en/us/support/servers-unified-computing/ucs-c-series-rack-mount-ucs-managed-server-software/products-release-notes-list.html) |
+| Dell EMC | All | [Nube para Microsoft Azure Stack Hub 14G (cuenta e información de inicio de sesión necesarias)](https://support.emc.com/downloads/44615_Cloud-for-Microsoft-Azure-Stack-14G)<br><br>[Nube para Microsoft Azure Stack Hub 13G (cuenta e información de inicio de sesión necesarias)](https://support.emc.com/downloads/42238_Cloud-for-Microsoft-Azure-Stack-13G) |
 | Fujitsu | JAPÓN | [Departamento de soporte técnico de servicio administrado de Fujitsu (cuenta e información de inicio de sesión necesarias)](https://eservice.fujitsu.com/supportdesk-web/) |
 |  | EMEA | [Soporte técnico de TI de Fujitsu para productos y sistemas](https://support.ts.fujitsu.com/IndexContact.asp?lng=COM&ln=no&LC=del) |
 |  | EU | [Fujitsu MySupport (cuenta e información de inicio de sesión necesarias)](https://support.ts.fujitsu.com/IndexMySupport.asp) |
-| HPE | All | [HPE ProLiant for Microsoft Azure Stack](http://www.hpe.com/info/MASupdates) |
+| HPE | All | [HPE ProLiant para Microsoft Azure Stack Hub](http://www.hpe.com/info/MASupdates) |
 | Lenovo | All | [ThinkAgile SXM Best Recipes](https://datacentersupport.lenovo.com/us/en/solutions/ht505122)
-| Wortmann |  | [Paquete de firmware/OEM](https://drive.terracloud.de/dl/fiTdTb66mwDAJWgUXUW8KNsd/OEM)<br>[Documentación de terra Azure Stack (incluye FRU)](https://drive.terracloud.de/dl/fiWGZwCySZSQyNdykXCFiVCR/TerraAzSDokumentation)
+| Wortmann |  | [Paquete de firmware/OEM](https://aka.ms/AA6z600)<br>[Documentación de terra de Azure Stack Hub (incluye FRU)](https://aka.ms/aa6zktc)
 
 Los componentes que no se pueden intercambiar directamente incluyen los siguientes elementos:
 
@@ -64,7 +62,7 @@ En el diagrama de flujo siguiente se muestra el proceso general de FRU para reem
 
 ## <a name="review-alert-information"></a>Revisión de la información de las alertas
 
-El sistema de mantenimiento y supervisión de Azure Stack rastrea el estado de los adaptadores de red y las unidades de datos que Espacios de almacenamiento directo controla. No rastrea otros componentes de hardware. Para todos los demás componentes de hardware, se generan alertas en la solución de supervisión de hardware específica del proveedor que se ejecuta en el host de ciclo de vida de hardware.  
+El sistema de mantenimiento y supervisión de Azure Stack Hub realiza un seguimiento del estado de los adaptadores de red y las unidades de datos controladas por Espacios de almacenamiento directo. No rastrea otros componentes de hardware. Para todos los demás componentes de hardware, se generan alertas en la solución de supervisión de hardware específica del proveedor que se ejecuta en el host de ciclo de vida de hardware.  
 
 ## <a name="component-replacement-process"></a>Proceso de reemplazo de los componentes
 

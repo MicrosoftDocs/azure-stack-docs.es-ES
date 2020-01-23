@@ -1,6 +1,6 @@
 ---
-title: Copia de seguridad de App Service en Azure Stack | Microsoft Docs
-description: Obtenga información sobre cómo realizar una copia de seguridad de App Services en Azure Stack.
+title: Copia de seguridad de App Service en Azure Stack Hub | Microsoft Docs
+description: Aprenda cómo hacer una copia de seguridad de App Services en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: bryanla
@@ -16,23 +16,21 @@ ms.date: 04/23/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/21/2019
-ms.openlocfilehash: a41943a598545b1a4c5dbe6325307a8fa3594cd5
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.openlocfilehash: ba9bff9b63454be8e9f1222d8b63425ad3192724
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70975036"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75881372"
 ---
-# <a name="back-up-app-service-on-azure-stack"></a>Copia de seguridad de App Service en Azure Stack
+# <a name="back-up-app-service-on-azure-stack-hub"></a>Copia de seguridad de App Service en Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*  
-
-Este documento proporciona instrucciones acerca de cómo realizar una copia de seguridad de App Service en Azure Stack.
+En este documento se proporcionan instrucciones sobre cómo realizar una copia de seguridad de App Service en Azure Stack Hub.
 
 > [!IMPORTANT]
-> La copia de seguridad de App Service en Azure Stack no se realiza como parte de la [copia de seguridad de infraestructura de Azure Stack](azure-stack-backup-infrastructure-backup.md). Como operador de Azure Stack, primero debe realizar los pasos para asegurarse de que App Service se puede recuperar correctamente si es necesario.
+> La copia de seguridad de App Service en Azure Stack Hub no se realiza como parte de la [copia de seguridad de la infraestructura de Azure Stack Hub](azure-stack-backup-infrastructure-backup.md). Como operador de Azure Stack Hub, primero debe realizar los pasos necesarios para asegurarse de que App Service se puede recuperar correctamente si es necesario.
 
-Azure App Service en Azure Stack tiene cuatro componentes principales que hay que tener en cuenta al planear la recuperación ante desastres:
+Azure App Service en Azure Stack Hub tiene cuatro componentes principales que hay que tener en cuenta al planear la recuperación ante desastres:
 1. La infraestructura del proveedor de recursos; los roles de servidor, los niveles de trabajo, etc. 
 2. Los secretos de App Service
 3. La instancia de SQL Server de App Service que hospeda y mide bases de datos
@@ -43,17 +41,17 @@ Al recuperar App Service a partir de una copia de seguridad, debe proporcionar l
 
 Use el portal de administración para realizar una copia de seguridad de los secretos de App Service siguiendo estos pasos: 
 
-1. Inicie sesión en el portal de administración de Azure Stack como administrador del servicio.
+1. Inicie sesión en el portal del administrador de Azure Stack Hub como administrador del servicio.
 
 2. Vaya a **App Service** -> **Secretos**. 
 
 3. Seleccione **Descargar secretos**.
 
-   ![Descarga de secretos en el portal de administración de Azure Stack](./media/app-service-back-up/download-secrets.png)
+   ![Descarga de secretos en el portal del administrador de Azure Stack Hub](./media/app-service-back-up/download-secrets.png)
 
 4. Cuando los secretos estén listos para descargar, haga clic en **Guardar** y almacene el archivo de los secretos de App Service (**SystemSecrets.JSON**) en una ubicación segura. 
 
-   ![Guardado de secretos en el portal de administración de Azure Stack](./media/app-service-back-up/save-secrets.png)
+   ![Guardado de secretos en el portal del administrador de Azure Stack Hub](./media/app-service-back-up/save-secrets.png)
 
 > [!NOTE]
 > Repita estos pasos cada vez que cambien los secretos de App Service.
@@ -92,4 +90,4 @@ net use $destination /delete
 ```
 
 ## <a name="next-steps"></a>Pasos siguientes
-[Restaurar App Service en Azure Stack](app-service-recover.md)
+[Recuperación de App Service en Azure Stack Hub](app-service-recover.md)

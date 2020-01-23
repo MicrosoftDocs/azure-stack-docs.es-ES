@@ -17,18 +17,18 @@ ms.author: justinha
 ms.reviewer: tbd
 ms.lastreviewed: 09/12/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: ef0fd3aef095dc0ee2865e7f1fb2a8821d378e70
-ms.sourcegitcommit: 4a2318ad395b2a931833ccba4430d8d04cdd8819
+ms.openlocfilehash: 81e6e51c602909421e40b4c1e1d5e6ec796f7839
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72780521"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75817914"
 ---
 # <a name="create-a-site-to-site-vpn-connection-between-two-virtual-networks-in-different-asdk-environments"></a>Creación de una conexión VPN de sitio a sitio entre dos redes virtuales en diferentes entornos de ASDK
 
 ## <a name="overview"></a>Información general
 
-En este artículo se describe cómo crear una conexión VPN de sitio a sitio entre dos redes virtuales en dos entornos independientes del Kit de desarrollo de Azure Stack (ASDK). Al configurar las conexiones, obtendrá información sobre cómo funcionan las puertas de enlace de VPN en Azure Stack.
+En este artículo se describe cómo crear una conexión VPN de sitio a sitio entre dos redes virtuales en dos entornos independientes del Kit de desarrollo de Azure Stack (ASDK). Al configurar las conexiones, aprenderá cómo funcionan las puertas de enlace de VPN en Azure Stack Hub.
 
 ### <a name="connection"></a>Conexión
 
@@ -52,7 +52,7 @@ Para completar la configuración de conexión, debe implementar dos entornos del
 
 ## <a name="prepare-an-offer-on-poc1-and-poc2"></a>Preparación de una oferta en POC1 y POC2
 
-En POC1 y POC2, prepare una oferta para que un usuario pueda suscribirse a la oferta e implementar las máquinas virtuales. Para más información sobre cómo crear una oferta, consulte [Máquinas virtuales disponibles para los usuarios de Azure Stack](azure-stack-tutorial-tenant-vm.md).
+En POC1 y POC2, prepare una oferta para que un usuario pueda suscribirse a la oferta e implementar las máquinas virtuales. Para más información sobre cómo crear una oferta, consulte [Máquinas virtuales disponibles para los usuarios de Azure Stack Hub](azure-stack-tutorial-tenant-vm.md).
 
 ## <a name="review-and-complete-the-network-configuration-table"></a>Revisión y realización de la tabla de configuración de red
 
@@ -74,7 +74,7 @@ En la tabla siguiente se resume la configuración de red para ambos entornos de 
 
 ### <a name="get-the-ip-address-of-the-external-adapter-of-the-nat-vm"></a>Obtención de la dirección IP del adaptador externo de la máquina virtual de NAT
 
-1. Inicie sesión en la máquina física de Azure Stack para POC1.
+1. Inicie sesión en la máquina física de Azure Stack Hub para POC1.
 2. Edite el código de PowerShell siguiente para agregar la contraseña de administrador y, a continuación, ejecute el código en el host de POC:
 
    ```powershell
@@ -94,7 +94,7 @@ En la tabla siguiente se resume la configuración de red para ambos entornos de 
 
 ## <a name="create-the-network-resources-in-poc1"></a>Creación de los recursos de red en POC1
 
-Ahora puede crear los recursos de red de POC1 que se necesitan para configurar las puertas de enlace. Las instrucciones siguientes describen cómo crear los recursos mediante el portal del usuario de Azure Stack. También puede usar código de PowerShell para crear los recursos.
+Ahora puede crear los recursos de red de POC1 que se necesitan para configurar las puertas de enlace. Las instrucciones siguientes describen cómo crear los recursos mediante el portal de usuarios de Azure Stack Hub. También puede usar código de PowerShell para crear los recursos.
 
 ![Flujo de trabajo para crear recursos](media/azure-stack-create-vpn-connection-one-node-tp2/image2.png)
 
@@ -141,15 +141,15 @@ Un administrador de servicios puede iniciar sesión como un inquilino para proba
 
 ### <a name="create-the-local-network-gateway"></a>Creación de la puerta de enlace de red local
 
-La implementación de una *puerta de enlace de red local* en esta implementación de evaluación de Azure Stack es ligeramente diferente a la de una implementación real de Azure.
+La implementación de una *puerta de enlace de red local* en esta implementación de evaluación de Azure Stack Hub es ligeramente diferente de la de una implementación real de Azure.
 
-En una implementación de Azure, una puerta de enlace de red local representa un dispositivo físico local (en el inquilino) que se usa para conectar a una puerta de enlace de red virtual en Azure. En esta implementación de evaluación de Azure Stack, ambos extremos de la conexión son puertas de enlace de red virtual.
+En una implementación de Azure, una puerta de enlace de red local representa un dispositivo físico local (en el inquilino) que se usa para conectar a una puerta de enlace de red virtual en Azure. En esta implementación de evaluación de Azure Stack Hub, ambos extremos de la conexión son puertas de enlace de red virtual.
 
 Una manera de ver esto de forma más genérica es que el recurso de la puerta de enlace de red local siempre indica la puerta de enlace remota en el otro extremo de la conexión. Debido al modo en que se diseñó el Kit de desarrollo de Azure Stack, debe proporcionar la dirección IP del adaptador de red externo en la máquina virtual de traducción de direcciones de red (NAT) del otro entorno del ASDK como la dirección IP pública de la puerta de enlace de red local. A continuación, cree asignaciones de NAT en la máquina virtual de NAT para asegurarse de que ambos extremos están conectados correctamente.
 
 ### <a name="create-the-local-network-gateway-resource"></a>Creación del recurso de puerta de enlace de red local
 
-1. Inicie sesión en la máquina física de Azure Stack para POC1.
+1. Inicie sesión en la máquina física de Azure Stack Hub para POC1.
 2. En el portal de usuario, seleccione **+ Crear un recurso**.
 3. Vaya a **Marketplace** y, a continuación, seleccione **Redes**.
 4. En la lista de recursos, seleccione **Puerta de enlace de red local**.
@@ -182,7 +182,7 @@ Para validar los datos que se desplazan a través de la conexión VPN, es necesa
 5. Escriba un nombre de usuario válido y una contraseña. Usará esta cuenta para iniciar sesión en la máquina virtual una vez creada.
 6. Proporcione una **Suscripción**, **Grupo de recursos** y **Ubicación** y, a continuación, seleccione **Aceptar**.
 7. En la hoja **Tamaño**, para esta instancia, seleccione un tamaño de máquina virtual y, a continuación, seleccione **Seleccionar**.
-8. En la hoja **Configuración**, acepte los valores predeterminados. Asegúrese de que la red virtual **VNET-01** está seleccionada. Compruebe que la subred está establecida en **10.0.10.0/24**. Después seleccione **Aceptar**.
+8. En la hoja **Configuración**, acepte los valores predeterminados. Asegúrese de que la red virtual **VNET-01** está seleccionada. Compruebe que la subred está establecida en **10.0.10.0/24**. Después, seleccione **Aceptar**.
 9. En la hoja **Resumen**, revise la configuración y, a continuación, seleccione **Aceptar**.
 
 ## <a name="create-the-network-resources-in-poc2"></a>Creación de los recursos de red en POC2
@@ -284,7 +284,7 @@ Para configurar la conexión VPN, debe crear una ruta de asignación de NAT est�
 
    ![Dirección IP interna](media/azure-stack-create-vpn-connection-one-node-tp2/InternalIP.PNG)
 
-2. Inicie sesión en la máquina física de Azure Stack para POC1.
+2. Inicie sesión en la máquina física de Azure Stack Hub para POC1.
 3. Copie y edite el siguiente script de PowerShell. Para configurar la NAT en cada Kit de desarrollo de Azure Stack, ejecute el script en un equipo con Windows PowerShell ISE con privilegios elevados. En el script, agregue valores a los marcadores de posición `External BGPNAT address` y `Internal IP address`:
 
    ```powershell
@@ -337,7 +337,7 @@ Para confirmar que el tráfico se envía a través de la conexión de sitio a si
 
 ### <a name="sign-in-to-the-tenant-vm-in-poc1"></a>Inicio de sesión en la máquina virtual del inquilino en POC1
 
-1. Inicie sesión en la máquina física de Azure Stack para POC1 e inicie sesión en el portal de usuario con una cuenta de inquilino.
+1. Inicie sesión en la máquina física de Azure Stack Hub para POC1 e inicie sesión en el portal de usuarios con una cuenta de inquilino.
 2. En la barra de navegación de la izquierda, seleccione **Compute**.
 3. Encuentre la máquina **VM01** que creó anteriormente en la lista de máquinas virtuales y selecciónela.
 4. En la hoja de la máquina virtual, haga clic en **Conectar** y, a continuación, abra el archivo VM01.rdp.
@@ -358,7 +358,7 @@ Para confirmar que el tráfico se envía a través de la conexión de sitio a si
 
 ### <a name="sign-in-to-the-tenant-vm-in-poc2"></a>Inicio de sesión en la máquina virtual del inquilino en POC2
 
-1. Inicie sesión en la máquina física de Azure Stack para POC2 e inicie sesión en el portal de usuario con una cuenta de inquilino.
+1. Inicie sesión en la máquina física de Azure Stack Hub para POC2 e inicie sesión en el portal de usuarios con una cuenta de inquilino.
 2. En la barra de navegación de la izquierda, haga clic en **Compute**.
 3. Encuentre la máquina **VM02** que creó anteriormente en la lista de máquinas virtuales y selecciónela.
 4. En la hoja de la máquina virtual, haga clic en **Conectar**.

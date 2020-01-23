@@ -1,7 +1,7 @@
 ---
-title: Directiva de mantenimiento de Azure Stack
-titleSuffix: Azure Stack
-description: Conozca la directiva de mantenimiento de Azure Stack y cómo mantener un sistema integrado.
+title: Directiva de servicio de Azure Stack Hub
+titleSuffix: Azure Stack Hub
+description: Conozca la directiva de servicio de Azure Stack Hub y cómo mantener un sistema integrado en un estado admitido.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -17,24 +17,24 @@ ms.date: 10/30/2019
 ms.author: sethm
 ms.reviewer: harik
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: c9f9558d1885de28b1bf685d370e67951542a6ac
-ms.sourcegitcommit: d619612f54eeba3231ed73ed149ff894f9bf838a
+ms.openlocfilehash: d27dcc7314b89ed5d5a88eafac125cb72e33e170
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74993803"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75881933"
 ---
-# <a name="azure-stack-servicing-policy"></a>Directiva de mantenimiento de Azure Stack
+# <a name="azure-stack-hub-servicing-policy"></a>Directiva de servicio de Azure Stack Hub
 
-En este artículo se describe la directiva de mantenimiento para sistemas integrados de Azure Stack y lo que debe hacer para mantener el sistema.
+En este artículo se describe la directiva de servicio para sistemas integrados de Azure Stack Hub y lo que debe hacer para mantener el sistema en un estado admitido.
 
 ## <a name="download-update-packages-for-integrated-systems"></a>Descarga de actualizaciones para sistemas integrados
 
 Microsoft publica actualizaciones mensuales completas, así como revisiones, para tratar problemas específicos.
 
-Las actualizaciones mensuales se hospedan en un punto de conexión seguro de Azure. Puede descargarlas manualmente mediante la [herramienta de descarga de actualizaciones de Azure Stack](https://aka.ms/azurestackupdatedownload). Si la unidad de escalado está conectada, la actualización aparece automáticamente en el portal del administrador como **Actualización disponible**. Las actualizaciones mensuales completas están bien documentadas en cada versión. Para más información acerca de cada versión, puede hacer clic en cualquier versión de la sección [Ritmo de lanzamiento de las actualizaciones](#update-package-release-cadence) de este artículo.
+Las actualizaciones mensuales se hospedan en un punto de conexión seguro de Azure. Puede descargarlas manualmente mediante la [herramienta de descarga de actualizaciones de Azure Stack Hub](https://aka.ms/azurestackupdatedownload). Si la unidad de escalado está conectada, la actualización aparece automáticamente en el portal del administrador como **Actualización disponible**. Las actualizaciones mensuales completas están bien documentadas en cada versión. Para más información acerca de cada versión, puede hacer clic en cualquier versión de la sección [Ritmo de lanzamiento de las actualizaciones](#update-package-release-cadence) de este artículo.
 
-Las actualizaciones de revisiones se hospedan en el mismo punto de conexión seguro de Azure. Puede descargarlas mediante los vínculos insertados en cada uno de los artículos correspondientes de Knowledge Base de revisiones; por ejemplo, [Revisión de Azure Stack 1.1809.12.114](https://support.microsoft.com/help/4481548/azure-stack-hotfix-1-1809-12-114). Al igual que con las actualizaciones mensuales completas, los operadores de Azure Stack pueden descargar archivos .xml, .bin y .exe e importarlos mediante el procedimiento descrito en [Aplicación de actualizaciones en Azure Stack](azure-stack-apply-updates.md). Los operadores de Azure Stack con unidades de escalado conectadas verán que las revisiones aparecen automáticamente en el portal del administrador con el mensaje **Actualización disponible**.
+Las actualizaciones de revisiones se hospedan en el mismo punto de conexión seguro de Azure. Puede descargarlas mediante los vínculos insertados en cada uno de los artículos de KB de revisión respectivos; por ejemplo, [Revisión de Azure Stack Hub 1.1809.12.114](https://support.microsoft.com/help/4481548/azure-stack-hotfix-1-1809-12-114). Al igual que con los paquetes de actualización mensuales completos, los operadores de Azure Stack Hub pueden descargar los archivos .xml, .bin y .exe e importarlos mediante el procedimiento descrito en [Aplicación de actualizaciones en Azure Stack Hub](azure-stack-apply-updates.md). Los operadores de Azure Stack Hub con unidades de escalado conectadas verán que las revisiones aparecen automáticamente en el portal del administrador con el mensaje **Actualización disponible**.
 
 Si la unidad de escalado no está conectada y quiere recibir notificaciones acerca de la versión de cada revisión, suscríbase a las fuentes [RSS](https://support.microsoft.com/app/content/api/content/feeds/sap/en-us/32d322a8-acae-202d-e9a9-7371dccf381b/rss) o [ATOM](https://support.microsoft.com/app/content/api/content/feeds/sap/en-us/32d322a8-acae-202d-e9a9-7371dccf381b/atom) indicadas en cada versión.
 
@@ -42,9 +42,9 @@ Si la unidad de escalado no está conectada y quiere recibir notificaciones acer
 
 Hay dos tipos de actualizaciones para los sistemas integrados:
 
-- **Actualizaciones de software de Microsoft**. Microsoft es responsable del ciclo de vida de servicio de un extremo a otro de las actualizaciones de software de Microsoft. Estas actualizaciones pueden incluir las últimas actualizaciones de seguridad de Windows Server, las actualizaciones que no son de seguridad y las actualizaciones de características de Azure Stack. Puede descargar estas actualizaciones directamente de Microsoft.
+- **Actualizaciones de software de Microsoft**. Microsoft es responsable del ciclo de vida de servicio de un extremo a otro de las actualizaciones de software de Microsoft. Estos paquetes pueden incluir las últimas actualizaciones de seguridad de Windows Server, actualizaciones que no son de seguridad y actualizaciones de características de Azure Stack Hub. Puede descargar estas actualizaciones directamente de Microsoft.
 
-- **Actualizaciones suministradas por el proveedor de hardware OEM**. Los asociados de hardware de Azure Stack son responsables del ciclo de vida de servicio de un extremo a otro (lo que incluye las instrucciones) de las actualizaciones de controladores y firmware relacionados con el hardware. Asimismo, poseen y mantienen las instrucciones de todo el software y el hardware del host de ciclo de vida del hardware. El proveedor de hardware OEM hospeda estas actualizaciones en su propio sitio de descarga.
+- **Actualizaciones suministradas por el proveedor de hardware OEM**. Los asociados de hardware de Azure Stack Hub son responsables del ciclo de vida de servicio de un extremo a otro (lo que incluye las instrucciones) de las actualizaciones de controladores y firmware relacionados con el hardware. Asimismo, poseen y mantienen las instrucciones de todo el software y el hardware del host de ciclo de vida del hardware. El proveedor de hardware OEM hospeda estas actualizaciones en su propio sitio de descarga.
 
 ## <a name="update-package-release-cadence"></a>Ritmo de lanzamientos de las actualizaciones
 
@@ -54,31 +54,29 @@ Busque documentación sobre cómo planear y administrar actualizaciones y cómo 
 
 Para obtener información sobre una actualización concreta, incluido cómo descargarla, vea las notas de versión de la actualización:
 
-- [Actualización 1910 de Azure Stack](/azure-stack/operator/release-notes?view=azs-1910)
-- [Actualización 1908 de Azure Stack](/azure-stack/operator/release-notes?view=azs-1908)
-- [Actualización de Azure Stack 1907](/azure-stack/operator/release-notes?view=azs-1907)
-- [Actualización de Azure Stack 1906](/azure-stack/operator/release-notes?view=azs-1906)
+- [Actualización de Azure Stack Hub 1910](/azure-stack/operator/release-notes?view=azs-1910)
+- [Actualización de Azure Stack Hub 1908](/azure-stack/operator/release-notes?view=azs-1908)
+- [Actualización de Azure Stack Hub 1907](/azure-stack/operator/release-notes?view=azs-1907)
+- [Actualización de Azure Stack Hub 1906](/azure-stack/operator/release-notes?view=azs-1906)
 
 ## <a name="hotfixes"></a>Revisiones
 
-*Se aplica a: Sistemas integrados de Azure Stack*
+En ocasiones, Microsoft ofrece revisiones para Azure Stack Hub que solucionan un determinado problema que suele ser de naturaleza preventiva o urgente. Todas las revisiones se publican con su correspondiente artículo de Microsoft Knowledge Base que detalla el problema, la causa y la resolución.
 
-En ocasiones, Microsoft ofrece revisiones para Azure Stack que solucionan un determinado problema que suele ser de naturaleza preventiva o urgente. Todas las revisiones se publican con su correspondiente artículo de Microsoft Knowledge Base que detalla el problema, la causa y la resolución.
-
-Las revisiones se descargan e instalan del mismo modo que las actualizaciones completas normales de Azure Stack. Pero, a diferencia de una actualización completa, las revisiones pueden instalarse en minutos. Se recomienda que los operadores de Azure Stack establezcan ventanas de mantenimiento al instalar las revisiones. Las revisiones actualizan la versión de la nube de Azure Stack para se que pueda determinar fácilmente si la revisión se ha aplicado. Se ofrece una revisión independiente para cada versión de Azure Stack siga dentro del soporte técnico. Cada revisión para una iteración concreta es acumulativa e incluye las actualizaciones anteriores de esa misma versión. Puede obtener más información sobre la aplicabilidad de una revisión determinada en el correspondiente artículo de Knowledge Base. Consulte los vínculos de notas de la versión en la sección anterior.
+Las revisiones se descargan e instalan del mismo modo que los paquetes de actualización completos normales de Azure Stack Hub. Pero, a diferencia de una actualización completa, las revisiones pueden instalarse en minutos. Se recomienda que los operadores de Azure Stack Hub establezcan ventanas de mantenimiento al instalar revisiones. Las revisiones actualizan la versión de la nube de Azure Stack Hub para que se pueda determinar fácilmente si se han aplicado. Se ofrece una revisión distinta para cada versión de Azure Stack Hub que aún reciba soporte técnico. Cada revisión para una iteración concreta es acumulativa e incluye las actualizaciones anteriores de esa misma versión. Puede obtener más información sobre la aplicabilidad de una revisión determinada en el correspondiente artículo de Knowledge Base. Consulte los vínculos de notas de la versión en la sección anterior.
 
 Para más información acerca de las revisiones disponibles actualmente, consulte las notas de la versión de la actualización:
 
-- [Revisión 1910 de Azure Stack](/azure-stack/operator/release-notes?view=azs-1910#hotfixes)
-- [Revisión 1908 de Azure Stack](/azure-stack/operator/release-notes?view=azs-1908#hotfixes-1)
-- [Revisión 1907 de Azure Stack](/azure-stack/operator/release-notes?view=azs-1907#hotfixes-2)
-- [Revisión 1906 de Azure Stack](/azure-stack/operator/release-notes?view=azs-1906#hotfixes-3)
+- [Revisión de Azure Stack Hub 1910](/azure-stack/operator/release-notes?view=azs-1910#hotfixes)
+- [Revisión de Azure Stack Hub 1908](/azure-stack/operator/release-notes?view=azs-1908#hotfixes-1)
+- [Revisión de Azure Stack Hub 1907](/azure-stack/operator/release-notes?view=azs-1907#hotfixes-2)
+- [Revisión de Azure Stack Hub 1906](/azure-stack/operator/release-notes?view=azs-1906#hotfixes-3)
 
 ## <a name="keep-your-system-under-support"></a>Mantenimiento del sistema dentro del soporte técnico
 
-Para que su instancia de Azure Stack permanezca en un estado admitido, la instancia debe ejecutar la versión de actualización más reciente o cualquiera de las dos versiones de actualización anteriores.
+Para que su instancia de Azure Stack Hub permanezca en un estado admitido, la instancia debe ejecutar la versión de actualización más reciente o cualquiera de las dos versiones de actualización anteriores.
 
-Las revisiones no se consideran versiones de actualización importantes. Si a su instancia le faltan *más de dos actualizaciones* de Azure Stack, se considera que no cumple los requisitos. Para recibir soporte técnico, deberá actualizarla al menos a la versión mínima admitida.
+Las revisiones no se consideran versiones de actualización importantes. Si a su instancia le faltan *más de dos actualizaciones* de Azure Stack Hub, se considera que no cumple los requisitos. Para recibir soporte técnico, deberá actualizarla al menos a la versión mínima admitida.
 
 Por ejemplo, si la versión de actualización disponible más reciente es la 1904 y las dos actualizaciones anteriores eran las versiones 1903 y 1902, estas dos últimas versiones siguen optando a recibir soporte técnico. Sin embargo, la versión 1901 queda fuera del soporte técnico. La directiva es válida cuando no hay ninguna versión durante uno o dos meses. Por ejemplo, si la versión actual es la 1807 y no hubo ninguna versión 1806, las dos actualizaciones anteriores, 1805 y 1804, permanecen dentro del soporte técnico.
 
@@ -86,8 +84,8 @@ Las actualizaciones de software de Microsoft no son acumulativas y necesitan la 
 
 ## <a name="get-support"></a>Obtención de soporte técnico
 
-Azure Stack sigue el mismo proceso de soporte técnico que Azure. Los clientes de empresa pueden seguir el proceso descrito en [Creación de una solicitud de soporte técnico de Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Si es cliente de un proveedor de soluciones en la nube (CSP), póngase en contacto con el CSP para recibir soporte técnico. Para más información, consulte [Preguntas más frecuentes de soporte técnico de Azure](https://azure.microsoft.com/support/faq/).
+Azure Stack Hub sigue el mismo proceso de soporte técnico que Azure. Los clientes de empresa pueden seguir el proceso descrito en [Creación de una solicitud de soporte técnico de Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Si es cliente de un proveedor de soluciones en la nube (CSP), póngase en contacto con el CSP para recibir soporte técnico. Para más información, consulte [Preguntas más frecuentes de soporte técnico de Azure](https://azure.microsoft.com/support/faq/).
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Administrar las actualizaciones en Azure Stack](azure-stack-updates.md)
+- [Administrar las actualizaciones en Azure Stack Hub](azure-stack-updates.md)

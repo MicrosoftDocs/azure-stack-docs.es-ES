@@ -1,7 +1,7 @@
 ---
-title: Notas de la versión del proveedor de recursos de SQL 1.1.33.0 de Azure Stack
-titleSuffix: Azure Stack
-description: Vea las notas de la versión del proveedor de recursos de SQL 1.1.33.0 de Azure Stack.
+title: Notas de la versión del proveedor de recursos de SQL 1.1.33.0 de Azure Stack Hub
+titleSuffix: Azure Stack Hub
+description: Consulte las notas de la versión del proveedor de recursos de SQL 1.1.33.0 de Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -17,32 +17,30 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/09/2019
-ms.openlocfilehash: 03a2ec5a0485f184e34c2837d8bc55edaed39f1d
-ms.sourcegitcommit: 62283e9826ea78b218f5d2c6c555cc44196b085d
+ms.openlocfilehash: 2ef79d69c12a846e017f064463dc933b86dc8b72
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74780701"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75881899"
 ---
 # <a name="sql-resource-provider-11330-release-notes"></a>Notas de la versión del proveedor de recursos SQL 1.1.33.0
-
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
 Estas notas de la versión describen las mejoras y los problemas conocidos de la versión del proveedor de recursos SQL 1.1.33.0.
 
 ## <a name="build-reference"></a>Referencia de compilación
-Descargue el archivo binario del proveedor de recursos SQL y ejecute el extractor automático para extraer el contenido en un directorio temporal. El proveedor de recursos tiene una compilación mínima correspondiente de Azure Stack. La versión mínima de Azure Stack necesaria para instalar esta versión del proveedor de recursos SQL se muestra a continuación:
+Descargue el archivo binario del proveedor de recursos SQL y ejecute el extractor automático para extraer el contenido en un directorio temporal. El proveedor de recursos tiene una compilación mínima correspondiente de Azure Stack Hub. La versión mínima de Azure Stack Hub necesaria para instalar esta versión del proveedor de recursos SQL se muestra a continuación:
 
-> |Versión mínima de Azure Stack|Versión del proveedor de recursos SQL|
+> |Versión mínima de Azure Stack Hub|Versión del proveedor de recursos SQL|
 > |-----|-----|
 > |Versión 1808 (1.1808.0.97)|[SQL RP versión 1.1.33.0](https://aka.ms/azurestacksqlrp11330)|  
 > |     |     |
 
 > [!IMPORTANT]
-> Aplique la actualización de Azure Stack compatible mínima para el sistema integrado de Azure Stack o implemente el kit de desarrollo de Azure Stack (ASDK) más reciente antes de implementar la versión más reciente del proveedor de recursos SQL.
+> Aplique la actualización mínima admitida de Azure Stack Hub al sistema integrado de Azure Stack Hub antes de implementar la versión más reciente del proveedor de recursos SQL.
 
 ## <a name="new-features-and-fixes"></a>Nuevas características y correcciones
-Esta versión del proveedor de recursos SQL de Azure Stack incluye las siguientes mejoras y correcciones:
+Esta versión del proveedor de recursos SQL de Azure Stack Hub incluye las siguientes mejoras y correcciones:
 
 ### <a name="fixes"></a>Correcciones
 
@@ -72,8 +70,8 @@ Esta versión del proveedor de recursos SQL de Azure Stack incluye las siguiente
 
     **Solución alternativa**: Asegúrese de que DNS funciona correctamente para resolver la dirección IP del agente de escucha en su nombre de host.
 
-### <a name="known-issues-for-cloud-admins-operating-azure-stack"></a>Problemas conocidos para los administradores en la nube que trabajan con Azure Stack
-Consulte la documentación de las [notas de la versión de Azure Stack](azure-stack-servicing-policy.md).
+### <a name="known-issues-for-cloud-admins-operating-azure-stack-hub"></a>Problemas conocidos para los administradores de la nube que trabajan con Azure Stack Hub
+Consulte la documentación de las [notas de la versión de Azure Stack Hub](azure-stack-servicing-policy.md).
 
 ## <a name="next-steps"></a>Pasos siguientes
 [Obtener más información sobre el proveedor de recursos SQL](azure-stack-sql-resource-provider.md).

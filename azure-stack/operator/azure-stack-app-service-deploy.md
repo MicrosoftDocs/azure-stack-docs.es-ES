@@ -1,6 +1,6 @@
 ---
-title: Implementación de App Service en Azure Stack | Microsoft Docs
-description: Aprenda a implementar App Service en Azure Stack.
+title: Implementación de App Service en Azure Stack Hub | Microsoft Docs
+description: Aprenda a implementar App Service en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -12,46 +12,46 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/29/2019
+ms.date: 01/13/2020
 ms.author: anwestg
 ms.reviewer: anwestg
-ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 219d8bcf884945353b08186324edc23feb028964
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.lastreviewed: 01/13/2020
+ms.openlocfilehash: eb38d3f237b872e552bd135cbe6b93c905115e30
+ms.sourcegitcommit: ce01b2cd114ca8ab5b70c6311b66c58ceb054469
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70974960"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75924251"
 ---
-# <a name="deploy-app-service-in-azure-stack"></a>Implementación de App Service en Azure Stack
+# <a name="deploy-app-service-in-azure-stack-hub"></a>Implementación de App Service en Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+*Se aplica a: Sistemas integrados de Azure Stack Hub y al kit de desarrollo de Azure Stack Hub*
 
-En este artículo se describe cómo implementar App Service en Azure Stack.
+En este artículo se describe cómo implementar App Service en Azure Stack Hub.
 
 > [!IMPORTANT]
-> Aplique la actualización 1907 al sistema integrado de Azure Stack o implemente el Kit de desarrollo de Azure Stack (ASDK) más reciente antes de implementar Azure App Service 1.7.
+> Aplique la actualización 1910 al sistema integrado de Azure Stack Hub o implemente el kit de desarrollo de Azure Stack Hub (ASDK) más reciente antes de implementar Azure App Service 1.8.
 
 Puede ofrecer a los usuarios la capacidad de crear aplicaciones web y API. Para permitir que los usuarios creen estas aplicaciones, deberá:
 
-- Agregue el [proveedor de recursos de App Service](azure-stack-app-service-overview.md) a la implementación de Azure Stack mediante los pasos descritos en este artículo.
+- Agregue el [proveedor de recursos de App Service](azure-stack-app-service-overview.md) a la implementación de Azure Stack Hub mediante los pasos descritos en este artículo.
 - Después de instalar el proveedor de recursos de App Service, puede incluirlos en sus planes y ofertas. A continuación, los usuarios pueden suscribirse para obtener el servicio y empezar a crear aplicaciones.
 
 > [!IMPORTANT]
-> Antes de ejecutar el instalador del proveedor de recursos, asegúrese de haber seguido las instrucciones de [Antes de empezar](azure-stack-app-service-before-you-get-started.md) y haber leído las [notas de la versión](azure-stack-app-service-release-notes-update-seven.md) que acompañan a la versión 1.7. Este contenido le ayudará a descubrir las nuevas funciones, correcciones y problemas conocidos que podrían afectar a la implementación.
+> Antes de ejecutar el instalador del proveedor de recursos, asegúrese de haber seguido las instrucciones de [Antes de empezar](azure-stack-app-service-before-you-get-started.md) y haber leído las [notas de la versión](azure-stack-app-service-release-notes-update-eight.md) que acompañan a la versión 1.8. Este contenido le ayudará a descubrir las nuevas funciones, correcciones y problemas conocidos que podrían afectar a la implementación.
 
 ## <a name="run-the-app-service-resource-provider-installer"></a>Ejecución del instalador del proveedor de recursos de App Service
 
 La instalación del proveedor de recursos de App Service tarda al menos una hora. El período de tiempo necesario depende del número de instancias de rol que vaya a implementar. Durante la implementación, el instalador ejecuta las siguientes tareas:
 
-- Creerá un contenedor de blobs en la cuenta de almacenamiento de Azure Stack especificada.
+- Creará un contenedor de blobs en la cuenta de almacenamiento de Azure Stack Hub especificada.
 - Creará una zona DNS y las entradas para App Service.
 - Registrará el proveedor de recursos de App Service.
 - Registrará los elementos de la galería de App Service.
 
 Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
-1. Ejecute appservice.exe como administrador desde un equipo que pueda acceder al punto de conexión de administración de recursos de Azure del administrador de Azure Stack.
+1. Ejecute appservice.exe como administrador desde un equipo que pueda acceder al punto de conexión de administración de recursos de Azure del administrador de Azure Stack Hub.
 
 2. Seleccione **Implementar App Service o actualizar a la última versión**.
 
@@ -61,25 +61,27 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
 4. Revise y acepte los términos de licencia de terceros y seleccione **Siguiente**.
 
-5. Asegúrese de que la información de configuración de nube de App Service es correcta. Si usó la configuración predeterminada durante la implementación del ASDK, puede aceptar los valores predeterminados. Pero, si personalizó las opciones cuando implementó el ASDK o va a realizar la implementación en un sistema integrado de Azure Stack, debe editar los valores de esta ventana para reflejar las diferencias.
+5. Asegúrese de que la información de configuración de nube de App Service es correcta. Si usó la configuración predeterminada durante la implementación del ASDK, puede aceptar los valores predeterminados. Sin embargo, si personalizó las opciones cuando implementó el ASDK o va a realizar la implementación en un sistema integrado de Azure Stack Hub, debe editar los valores de esta ventana para reflejar las diferencias.
 
-   Por ejemplo, si se usa el sufijo de dominio mycloud.com, el punto de conexión de Azure Resource Manager del inquilino de Azure Stack debe cambiarse a management.&lt;región&gt;.mycloud.com. Revise estos valores y, a continuación, seleccione **Siguiente** para guardar la configuración.
+   Por ejemplo, si se usa el sufijo de dominio mycloud.com, el punto de conexión de Azure Resource Manager del inquilino de Azure Stack Hub debe cambiarse a management.&lt;región&gt;.mycloud.com. Revise estos valores y, a continuación, seleccione **Siguiente** para guardar la configuración.
 
    ![Instalador de App Service][2]
 
-6. En la página siguiente del instalador de App Service, siga estos pasos:
+6. En la siguiente página del instalador de App Service, se conectará a su instancia de Azure Stack Hub:
 
-    a. Seleccione **Conectar** situado junto al cuadro de **suscripciones de Azure Stack**.
+    1. Seleccione el método de conexión que quiera usar: **Credencial** o **Entidad de servicio**
+ 
+        - **Credential:**
+            - Si usa Azure Active Directory (Azure AD), escriba la cuenta de administrador y la contraseña de Azure AD que proporcionó al implementar Azure Stack Hub. Seleccione **Conectar**.
+            - Si se usan los Servicios de federación de Active Directory (AD FS), debe proporcionar la cuenta de administrador. Por ejemplo, cloudadmin@azurestack.local. Escriba la contraseña y, a continuación, seleccione **Conectar**.
 
-   - Si se usa Azure Active Directory (Azure AD), escriba la cuenta de administrador y la contraseña de Azure AD que proporcionó al implementar Azure Stack. Seleccione **Iniciar sesión**.
-   - Si se usan los Servicios de federación de Active Directory (AD FS), debe proporcionar la cuenta de administrador. Por ejemplo, cloudadmin@azurestack.local. Escriba la contraseña y seleccione **Iniciar sesión**.
+        - **Entidad de seguridad de servicio**
+            - La entidad de servicio que utilice **debe** tener derechos de **Propietario** en la **suscripción de proveedor predeterminada**.
+            - Proporcione el **identificador de entidad de servicio**, el **archivo de certificado** y la **contraseña** y seleccione **Conectar**.
 
-   b. En el cuadro de **suscripciones de Azure Stack**, seleccione **Default Provider Subscription** (Suscripción de proveedor predeterminada).
+    1. En **Suscripciones de Azure Stack Hub**, seleccione la **suscripción de proveedor predeterminada**.  Azure App Service en Azure Stack Hub **debe** implementarse en la **suscripción de proveedor predeterminada**.
 
-     > [!IMPORTANT]
-     > App Service **debe** implementarse en la **suscripción de proveedor predeterminada**.
-
-   c. En **Azure Stack Locations** (Ubicaciones de Azure Stack), seleccione la ubicación que corresponda a la región en la que se va a implementar. Por ejemplo, seleccione **local** si va a realizar la implementación en el ASDK.
+    1. En **Ubicaciones de Azure Stack Hub**, seleccione la ubicación que corresponda a la región en la que se va a implementar. Por ejemplo, seleccione **local** si va a realizar la implementación en el ASDK.
 
     ![Instalador de App Service][3]
 
@@ -136,9 +138,9 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 12. Revise las opciones de SKU y la instancia de rol. Los valores predeterminados se rellenan con el número mínimo de instancias y la SKU mínima de cada rol en una implementación de ASDK. Se proporciona un resumen de los requisitos de memoria y vCPU para ayudar a planear la implementación. Después de realizar las selecciones, elija **Siguiente**.
 
     >[!NOTE]
-    >Para las implementaciones de producción, siga las instrucciones que encontrará en [Planeamiento de la capacidad de los roles de servidor de Azure App Service en Azure Stack](azure-stack-app-service-capacity-planning.md).
+    >Para las implementaciones de producción, siga las instrucciones que encontrará en [Planeamiento de la capacidad de los roles de servidor de Azure App Service en Azure Stack Hub](azure-stack-app-service-capacity-planning.md).
 
-    | Rol | Número mínimo de instancias | SKU mínima | Notas |
+    | Role | Número mínimo de instancias | SKU mínima | Notas |
     | --- | --- | --- | --- |
     | Controller | 1 | Standard_A2: (2 vCPU, 3584 MB) | Administra y mantiene el estado de la nube de App Service. |
     | Administración | 1 | Standard_A2: (2 vCPU, 3584 MB) | Administra los puntos de conexión de API y Azure Resource Manager de App Service, las extensiones de portales (portal de Functions, administración e inquilino) y el servicio de datos. Para admitir la conmutación por error, se incrementan las instancias recomendadas a 2. |
@@ -149,7 +151,7 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
     ![Instalador de App Service][13]
 
     >[!NOTE]
-    >**Windows Server 2016 Core no es una imagen de plataforma compatible para su uso con Azure App Service en Azure Stack.  No use imágenes de evaluación para las implementaciones de producción.**
+    >**Windows Server 2016 Core no es una imagen de plataforma compatible para su uso con Azure App Service en Azure Stack Hub.  No use imágenes de evaluación para las implementaciones de producción.**
 
 13. En el cuadro **Seleccionar imagen de plataforma**, elija su imagen de máquina virtual (VM) Windows Server 2016 de implementación entre las que están disponibles en el proveedor de recursos de procesos para la nube de App Service. Seleccione **Next** (Siguiente).
 
@@ -175,7 +177,7 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
 16. En la página siguiente del instalador de App Service, siga estos pasos:
 
-    a. Realice un seguimiento del progreso de la instalación. App Service en Azure Stack tarda aproximadamente 60 minutos en realizar la implementación según las selecciones predeterminadas.
+    a. Realice un seguimiento del progreso de la instalación. La implementación de App Service en Azure Stack Hub puede tardar hasta 240 minutos según las opciones predeterminadas y la antigüedad de la imagen base de Windows 2016 Datacenter.
 
     b. Después de que el instalador finalice correctamente, seleccione **Salir**.
 
@@ -198,29 +200,29 @@ Si va a realizar la implementación en una red virtual existente y a usar una di
 - Prioridad: 700
 - Nombre: Outbound_Allow_SMB445
 
-## <a name="validate-the-app-service-on-azure-stack-installation"></a>Validación de la instalación de App Service en Azure Stack
+## <a name="validate-the-app-service-on-azure-stack-hub-installation"></a>Validación de la instalación de App Service en Azure Stack Hub
 
-1. En el portal de administración de Azure Stack, vaya a **Administración: App Service**.
+1. En el portal del administrador de Azure Stack Hub, vaya a **Administration - App Service** (Administración: App Service).
 
 2. En la información general, debajo del estado, compruebe que en **Estado** se muestra el mensaje **Todos los roles están listos**.
 
     ![Administración de App Service](media/azure-stack-app-service-deploy/image12.png)
 
-## <a name="test-drive-app-service-on-azure-stack"></a>Prueba de App Service en Azure Stack
+## <a name="test-drive-app-service-on-azure-stack-hub"></a>Prueba de App Service en Azure Stack Hub
 
 Después de implementar y registrar el proveedor de recursos de App Service, pruébelo para asegurarse de que los usuarios pueden implementar aplicaciones web y de API.
 
 >[!NOTE]
 >Debe crear una oferta que tenga el espacio de nombres Microsoft.Web en el plan. También necesita una suscripción de inquilino que se suscriba a la oferta. Para más información, consulte [Creación de una oferta](azure-stack-create-offer.md) y [Creación de un plan](azure-stack-create-plan.md).
 >
->*Debe* tener una suscripción de inquilino para crear aplicaciones que usen App Service en Azure Stack. Las únicas tareas que un administrador del servicio puede completar en el portal del administrador están relacionadas con la administración del proveedor de recursos de App Service. Entre estas tareas se incluyen la adición de capacidad, la configuración de orígenes de implementación y la adición de niveles de trabajo y SKU.
+>*Debe* tener una suscripción de inquilino para crear aplicaciones que usen App Service en Azure Stack Hub. Las únicas tareas que un administrador del servicio puede completar en el portal del administrador están relacionadas con la administración del proveedor de recursos de App Service. Entre estas tareas se incluyen la adición de capacidad, la configuración de orígenes de implementación y la adición de niveles de trabajo y SKU.
 >
->Para crear aplicaciones web, de API y Azure Functions, se debe usar el portal de inquilino y tener una suscripción de inquilino.
+>Para crear aplicaciones web, de API y Azure Functions, se debe usar el portal de usuarios y tener una suscripción de inquilino.
 >
 
 Para crear una aplicación web de prueba, siga estos pasos:
 
-1. En el portal de usuario de Azure Stack, seleccione **+ Crear un recurso** > **Web y móvil** > **Aplicación web**.
+1. En el portal de usuarios de Azure Stack Hub, seleccione **+ Crear un recurso** > **Web y móvil** > **Aplicación web**.
 
 2. En **Aplicación web**, escriba un nombre en **Aplicación web**.
 
@@ -238,7 +240,7 @@ Para crear una aplicación web de prueba, siga estos pasos:
 
 ## <a name="deploy-a-wordpress-dnn-or-django-website-optional"></a>Implementación de un sitio web de WordPress, DNN o Django (opcional)
 
-1. En el portal del inquilino de Azure Stack, seleccione **+** , vaya a Azure Marketplace, implemente un sitio web de Django y, a continuación, espere a que finalice la implementación. La plataforma web de Django usa una base de datos basada en el sistema de archivos. No se necesita ningún proveedor de recursos adicional, como SQL o MySQL.
+1. En el portal de usuarios de Azure Stack Hub, seleccione **+** , vaya a Azure Marketplace, implemente un sitio web de Django y, a continuación, espere a que finalice la implementación. La plataforma web de Django usa una base de datos basada en el sistema de archivos. No se necesita ningún proveedor de recursos adicional, como SQL o MySQL.
 
 2. Si también implementó un proveedor de recursos de MySQL, puede implementar un sitio web de WordPress en Marketplace. Cuando se le pidan los parámetros de la base de datos, escriba el nombre de usuario, como *Usario1\@Servidor1*, con el nombre de usuario y el nombre del servidor de su elección.
 
@@ -246,7 +248,7 @@ Para crear una aplicación web de prueba, siga estos pasos:
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Prepárese para realizar operaciones de administración adicionales para App Service en Azure Stack:
+Prepárese para realizar operaciones de administración adicionales para App Service en Azure Stack Hub:
 
 - [Planeamiento de capacidad](azure-stack-app-service-capacity-planning.md)
 - [Configuración de orígenes de implementación](azure-stack-app-service-configure-deployment-sources.md)

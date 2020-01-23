@@ -1,6 +1,6 @@
 ---
-title: Publicación de servicios de Azure Stack en el centro de recursos | Microsoft Docs
-description: Obtenga información sobre cómo publicar los servicios de Azure Stack en su centro de datos.
+title: Publicación de servicios de Azure Stack Hub en el centro de datos | Microsoft Docs
+description: Aprenda a publicar servicios de Azure Stack Hub en el centro de datos.
 services: azure-stack
 author: mattbriggs
 manager: femila
@@ -10,16 +10,16 @@ ms.date: 12/11/2019
 ms.author: justinha
 ms.reviewer: wamota
 ms.lastreviewed: 12/11/2019
-ms.openlocfilehash: 2da6bb4fb70a3d8e816870c8569f8f3e3aa7d678
-ms.sourcegitcommit: ae9d29c6a158948a7dbc4fd53082984eba890c59
+ms.openlocfilehash: 5ed74e225df2e2667acc536e0b8dbd901a086b9a
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2019
-ms.locfileid: "75008003"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818016"
 ---
-# <a name="publish-azure-stack-services-in-your-datacenter"></a>Publicación de servicios de Azure Stack en el centro de datos 
+# <a name="publish-azure-stack-hub-services-in-your-datacenter"></a>Publicación de servicios de Azure Stack Hub en el centro de datos 
 
-Azure Stack configura direcciones IP virtuales (VIP) para sus roles de infraestructura. Estas VIP se asignan desde el grupo de direcciones IP públicas. Cada VIP está protegida con una lista de control de acceso (ACL) en el nivel de red definido por software. Las ACL también se usan en los conmutadores físicos (Tor y BMC) para proteger aún más la solución. Se crea una entrada DNS para cada punto de conexión de la zona DNS externa que se haya especificado durante la implementación. Por ejemplo, el portal de usuarios se asigna a la entrada de host de DNS de portal. *&lt;region>.&lt;fqdn>* .
+Azure Stack Hub configura direcciones IP virtuales (VIP) para sus roles de infraestructura. Estas VIP se asignan desde el grupo de direcciones IP públicas. Cada VIP está protegida con una lista de control de acceso (ACL) en el nivel de red definido por software. Las ACL también se usan en los conmutadores físicos (Tor y BMC) para proteger aún más la solución. Se crea una entrada DNS para cada punto de conexión de la zona DNS externa que se haya especificado durante la implementación. Por ejemplo, el portal de usuarios se asigna a la entrada de host de DNS de portal. *&lt;region>.&lt;fqdn>* .
 
 En el siguiente diagrama de arquitectura se muestran los diferentes niveles de red y ACL:
 
@@ -27,7 +27,7 @@ En el siguiente diagrama de arquitectura se muestran los diferentes niveles de r
 
 ### <a name="ports-and-urls"></a>Puertos y direcciones URL
 
-Para que los servicios de Azure Stack (como los portales, Azure Resource Manager, DNS, entre otros) estén disponible para las redes externas, debe permitir tráfico entrante en estos puntos de conexión para las direcciones URL, puertos y protocolos específicos.
+Para que los servicios de Azure Stack Hub (como los portales, Azure Resource Manager, DNS, etc.) estén disponible para las redes externas, debe permitir el tráfico entrante en estos puntos de conexión procedente de direcciones URL, puertos y protocolos específicos.
  
 En una implementación en la que un proxy transparente establece un vínculo superior a un servidor proxy tradicional o un firewall protege la solución, debe permitir puertos y direcciones URL concretos para la comunicación [entrante](azure-stack-integrate-endpoints.md#ports-and-protocols-inbound) y [saliente](azure-stack-integrate-endpoints.md#ports-and-urls-outbound). Aquí se incluyen puertos y direcciones URL de identidad, productos de Marketplace, revisiones y actualizaciones y datos de uso.
 
@@ -35,9 +35,9 @@ En una implementación en la que un proxy transparente establece un vínculo sup
 
 ## <a name="ports-and-protocols-inbound"></a>Puertos y protocolos (de entrada)
 
-Se requiere un conjunto de direcciones IP virtuales de infraestructura para publicar los puntos de conexión de Azure Stack en redes externas. La tabla *Punto de conexión (VIP)* se muestra cada punto de conexión, el puerto requerido y el protocolo. Consulte la documentación de implementación de proveedor de recursos específica para los puntos de conexión que requieren proveedores de recursos adicionales, como el proveedor de recursos de SQL.
+Se requiere un conjunto de direcciones IP virtuales de infraestructura para publicar puntos de conexión de Azure Stack Hub en redes externas. La tabla *Punto de conexión (VIP)* se muestra cada punto de conexión, el puerto requerido y el protocolo. Consulte la documentación de implementación de proveedor de recursos específica para los puntos de conexión que requieren proveedores de recursos adicionales, como el proveedor de recursos de SQL.
 
-Las VIP de infraestructura interna no se indican porque no son necesarias para la publicación de Azure Stack. Las VIP de usuario son dinámicas y están definidas por los propios usuarios, sin ningún control por parte del operador de Azure Stack.
+Las direcciones IP virtuales de infraestructura interna no se indican porque no son necesarias para la publicación de Azure Stack Hub. Las direcciones IP virtuales de usuario son dinámicas y están definidas por los propios usuarios, sin ningún control por parte del operador de Azure Stack Hub.
 
 > [!Note]  
 > VPN IKEv2 es una solución de VPN con IPsec basada en estándares que utiliza los puertos UDP 500 y 4500 y el puerto TCP 50. Los firewalls no siempre abren estos puertos, por lo que es posible que VPN IKEv2 no pueda atravesar servidores proxy y firewalls.
@@ -72,20 +72,20 @@ Con la adición del [host de extensiones](azure-stack-extension-host-prepare.md)
 
 ## <a name="ports-and-urls-outbound"></a>Puertos y direcciones URL (de salida)
 
-Azure Stack solo admite servidores proxy transparentes. En una implementación en la que un proxy transparente establece un vínculo superior a un servidor proxy tradicional, debe permitir los siguientes puertos y direcciones URL para la comunicación saliente.
+Azure Stack Hub solo admite servidores proxy transparentes. En una implementación en la que un proxy transparente establece un vínculo superior a un servidor proxy tradicional, debe permitir los siguientes puertos y direcciones URL para la comunicación saliente.
 
 [No se admite](azure-stack-firewall.md#ssl-interception) la interceptación de tráfico SSL y puede provocar errores de servicio cuando se accede a los puntos de conexión. El tiempo de expiración máximo admitido para comunicarse con los puntos de conexión necesarios para la identidad es de 60 s.
 
 > [!Note]  
-> Azure Stack no admite el uso de ExpressRoute para acceder a los servicios de Azure que se enumeran en la tabla siguiente porque ExpressRoute no puede enrutar el tráfico a todos los puntos de conexión.
+> Azure Stack Hub no admite el uso de ExpressRoute para acceder a los servicios de Azure que se enumeran en la tabla siguiente porque ExpressRoute no puede enrutar el tráfico a todos los puntos de conexión.
 
 |Propósito|Dirección URL de destino|Protocolo|Puertos|Red de origen|
 |---------|---------|---------|---------|---------|
-|Identidad|**Las tablas de Azure**<br>login.windows.net<br>login.microsoftonline.com<br>graph.windows.net<br>https:\//secure.aadcdn.microsoftonline-p.com<br>www.office.com<br>ManagementServiceUri = https:\//management.core.windows.net<br>ARMUri = https:\//management.azure.com<br>https:\//\*.msftauth.net<br>https:\//\*.msauth.net<br>https:\//\*.msocdn.com<br>**Azure Government**<br>https:\//login.microsoftonline.us/<br>https:\//graph.windows.net/<br>**Azure China 21Vianet**<br>https:\//login.chinacloudapi.cn/<br>https:\//graph.chinacloudapi.cn/<br>**Azure Alemania**<br>https:\//login.microsoftonline.de/<br>https:\//graph.cloudapi.de/|HTTP<br>HTTPS|80<br>443|VIP pública - /27<br>Red de la infraestructura pública|
-|Redifusión de Marketplace|**Las tablas de Azure**<br>https:\//management.azure.com<br>https://&#42;.blob.core.windows.net<br>https://&#42;.azureedge.net<br>**Azure Government**<br>https:\//management.usgovcloudapi.net/<br>https://&#42;.blob.core.usgovcloudapi.net/<br>**Azure China 21Vianet**<br>https:\//management.chinacloudapi.cn/<br>http://&#42;.blob.core.chinacloudapi.cn|HTTPS|443|VIP pública - /27|
+|Identidad|**Azure**<br>login.windows.net<br>login.microsoftonline.com<br>graph.windows.net<br>https:\//secure.aadcdn.microsoftonline-p.com<br>www.office.com<br>ManagementServiceUri = https:\//management.core.windows.net<br>ARMUri = https:\//management.azure.com<br>https:\//\*.msftauth.net<br>https:\//\*.msauth.net<br>https:\//\*.msocdn.com<br>**Azure Government**<br>https:\//login.microsoftonline.us/<br>https:\//graph.windows.net/<br>**Azure China 21Vianet**<br>https:\//login.chinacloudapi.cn/<br>https:\//graph.chinacloudapi.cn/<br>**Azure Alemania**<br>https:\//login.microsoftonline.de/<br>https:\//graph.cloudapi.de/|HTTP<br>HTTPS|80<br>443|VIP pública - /27<br>Red de la infraestructura pública|
+|Redifusión de Marketplace|**Azure**<br>https:\//management.azure.com<br>https://&#42;.blob.core.windows.net<br>https://&#42;.azureedge.net<br>**Azure Government**<br>https:\//management.usgovcloudapi.net/<br>https://&#42;.blob.core.usgovcloudapi.net/<br>**Azure China 21Vianet**<br>https:\//management.chinacloudapi.cn/<br>http://&#42;.blob.core.chinacloudapi.cn|HTTPS|443|VIP pública - /27|
 |Revisión y actualización|https://&#42;.azureedge.net<br>https:\//aka.ms/azurestackautomaticupdate|HTTPS|443|VIP pública - /27|
-|Registro|**Las tablas de Azure**<br>https:\//management.azure.com<br>**Azure Government**<br>https:\//management.usgovcloudapi.net/<br>**Azure China 21Vianet**<br>https:\//management.chinacloudapi.cn|HTTPS|443|VIP pública - /27|
-|Uso|**Las tablas de Azure**<br>https://&#42;.trafficmanager.net<br>**Azure Government**<br>https://&#42;.usgovtrafficmanager.net<br>**Azure China 21Vianet**<br>https://&#42;.trafficmanager.cn|HTTPS|443|VIP pública - /27|
+|Registro|**Azure**<br>https:\//management.azure.com<br>**Azure Government**<br>https:\//management.usgovcloudapi.net/<br>**Azure China 21Vianet**<br>https:\//management.chinacloudapi.cn|HTTPS|443|VIP pública - /27|
+|Uso|**Azure**<br>https://&#42;.trafficmanager.net<br>**Azure Government**<br>https://&#42;.usgovtrafficmanager.net<br>**Azure China 21Vianet**<br>https://&#42;.trafficmanager.cn|HTTPS|443|VIP pública - /27|
 |Windows Defender|&#42;.wdcp.microsoft.com<br>&#42;.wdcpalt.microsoft.com<br>&#42;.wd.microsoft.com<br>&#42;.update.microsoft.com<br>&#42;.download.microsoft.com<br>https:\//www.microsoft.com/pkiops/crl<br>https:\//www.microsoft.com/pkiops/certs<br>https:\//crl.microsoft.com/pki/crl/products<br>https:\//www.microsoft.com/pki/certs<br>https:\//secure.aadcdn.microsoftonline-p.com<br>|HTTPS|80<br>443|VIP pública - /27<br>Red de la infraestructura pública|
 |NTP|(Se proporciona la dirección IP del servidor NTP para la implementación)|UDP|123|VIP pública - /27|
 |DNS|(Se proporciona la dirección IP del servidor DNS para la implementación)|TCP<br>UDP|53|VIP pública - /27|
@@ -104,4 +104,4 @@ El DNS de salida se necesita en todo momento, lo que varía es el origen que con
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Requisitos de PKI de Azure Stack](azure-stack-pki-certs.md)
+[Requisitos de PKI de Azure Stack Hub](azure-stack-pki-certs.md)

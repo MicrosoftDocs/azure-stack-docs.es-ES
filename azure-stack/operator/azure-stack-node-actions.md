@@ -1,6 +1,6 @@
 ---
-title: Acciones de los nodos de unidad de escalado en Azure Stack | Microsoft Docs
-description: Obtenga información sobre las acciones de los nodos de la unidad de escalado, incluidas las de conectar, desconectar, deshabilitar y reanudar, así como visualizar el estado de los nodos en los sistemas integrados de Azure Stack.
+title: Acciones de los nodos de la unidad de escalado en Azure Stack Hub | Microsoft Docs
+description: Obtenga información sobre las acciones de los nodos de la unidad de escalado, incluidas las de conectar, desconectar, deshabilitar y reanudar, así como visualizar el estado de los nodos en los sistemas integrados de Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,16 +15,14 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 5bc65418c1dd098dc8784cb9bf306676a1cd79ed
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.openlocfilehash: de0ec0d68b3d63cc0661fe7c4684304d83878a45
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955283"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882358"
 ---
-# <a name="scale-unit-node-actions-in-azure-stack"></a>Acciones de los nodos de unidad de escalado en Azure Stack
-
-*Se aplica a: Sistemas integrados de Azure Stack*
+# <a name="scale-unit-node-actions-in-azure-stack-hub"></a>Acciones de los nodos de la unidad de escalado en Azure Stack Hub
 
 En este artículo se describe cómo ver el estado de una unidad de escalado. Puede ver los nodos de la unidad. Puede ejecutar acciones de nodo, como son conectar, desconectar, apagar, purgar, reanudar y reparar. Normalmente, estas acciones de nodo se utilizan durante el reemplazo de componentes o para ayudar a recuperar un nodo.
 
@@ -56,7 +54,7 @@ Para ver el estado de una unidad de escalado:
 
 ### <a name="node-operational-states"></a>Estados operativos de nodo
 
-| Status | DESCRIPCIÓN |
+| Status | Descripción |
 |----------------------|-------------------------------------------------------------------|
 | En ejecución | El nodo está participando activamente en la unidad de escalado. |
 | Detenido | El nodo no está disponible. |
@@ -76,7 +74,7 @@ Al ver la información sobre un nodo de la unidad de escalado, también puede re
 
 El estado operativo del nodo determina qué opciones están disponibles.
 
-Debe instalar los módulos de PowerShell de Azure Stack. Estos cmdlets están en el módulo **Azs.Fabric.Admin**. Para instalar o comprobar la instalación de PowerShell para Azure Stack, consulte [Instalación de PowerShell para Azure Stack](azure-stack-powershell-install.md).
+Debe instalar los módulos de PowerShell de Azure Stack Hub. Estos cmdlets están en el módulo **Azs.Fabric.Admin**. Para instalar o comprobar la instalación de PowerShell para Azure Stack Hub, consulte [Instalación de PowerShell para Azure Stack Hub](azure-stack-powershell-install.md).
 
 ## <a name="stop"></a>Stop
 
@@ -140,17 +138,17 @@ Para más información, consulte [Enable-AzsScaleUnitNode](https://docs.microsof
 ## <a name="repair"></a>Reparación
 
 > [!CAUTION]  
-> La nivelación del firmware es fundamental para el éxito de la operación que se describe en este artículo. La omisión de este paso puede dar lugar a inestabilidad del sistema, disminución del rendimiento, subprocesos de seguridad o error cuando la automatización de Azure Stack implemente el sistema operativo. Vea siempre la documentación del asociado de hardware cuando reemplace hardware para asegurarse de que el firmware aplicado coincide con la versión de OEM que se muestra en el [portal de administración de Azure Stack](azure-stack-updates.md).<br><br>
+> La nivelación del firmware es fundamental para el éxito de la operación que se describe en este artículo. La omisión de este paso puede dar lugar a inestabilidad del sistema, disminución del rendimiento, amenazas de seguridad o error cuando la automatización de Azure Stack Hub implementa el sistema operativo. Consulte siempre la documentación del asociado de hardware cuando reemplace hardware para asegurarse de que el firmware aplicado coincide con la versión de OEM que se muestra en el [portal del administrador de Azure Stack Hub](azure-stack-updates.md).<br><br>
 Para obtener más información y vínculos a la documentación del asociado, vea [Sustitución de un componente de hardware](azure-stack-replace-component.md).
 
 | Asociado de hardware | Region | URL |
 |------------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Cisco | All | [Guía de operaciones de Cisco Integrated System for Microsoft Azure Stack](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/azure-stack/b_Azure_Stack_Operations_Guide_4-0/b_Azure_Stack_Operations_Guide_4-0_chapter_00.html#concept_wks_t1q_wbb)<br><br>[Notas de la versión de Cisco Integrated System for Microsoft Azure Stack](https://www.cisco.com/c/en/us/support/servers-unified-computing/ucs-c-series-rack-mount-ucs-managed-server-software/products-release-notes-list.html) |
-| Dell EMC | All | [Cloud for Microsoft Azure Stack 14G (cuenta e inicio de sesión necesarios)](https://support.emc.com/downloads/44615_Cloud-for-Microsoft-Azure-Stack-14G)<br><br>[Cloud for Microsoft Azure Stack 13G (cuenta e inicio de sesión necesarios)](https://support.emc.com/downloads/42238_Cloud-for-Microsoft-Azure-Stack-13G) |
+| Cisco | All | [Guía de operaciones de Cisco Integrated System para Microsoft Azure Stack Hub](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/azure-stack/b_Azure_Stack_Operations_Guide_4-0/b_Azure_Stack_Operations_Guide_4-0_chapter_00.html#concept_wks_t1q_wbb)<br><br>[Notas de la versión de Cisco Integrated System para Microsoft Azure Stack Hub](https://www.cisco.com/c/en/us/support/servers-unified-computing/ucs-c-series-rack-mount-ucs-managed-server-software/products-release-notes-list.html) |
+| Dell EMC | All | [Nube para Microsoft Azure Stack Hub 14G (cuenta e inicio de sesión necesarios)](https://support.emc.com/downloads/44615_Cloud-for-Microsoft-Azure-Stack-14G)<br><br>[Nube para Microsoft Azure Stack Hub 13G (cuenta e inicio de sesión necesarios)](https://support.emc.com/downloads/42238_Cloud-for-Microsoft-Azure-Stack-13G) |
 | Fujitsu | JAPÓN | [Departamento de soporte técnico de servicio administrado de Fujitsu (cuenta e inicio de sesión necesarios)](https://eservice.fujitsu.com/supportdesk-web/) |
 |  | EMEA | [Soporte técnico de TI de Fujitsu para productos y sistemas](https://support.ts.fujitsu.com/IndexContact.asp?lng=COM&ln=no&LC=del) |
 |  |  | [Fujitsu MySupport (cuenta e inicio de sesión necesarios)](https://support.ts.fujitsu.com/IndexMySupport.asp) |
-| HPE | All | [HPE ProLiant for Microsoft Azure Stack](http://www.hpe.com/info/MASupdates) |
+| HPE | All | [HPE ProLiant para Microsoft Azure Stack Hub](http://www.hpe.com/info/MASupdates) |
 | Lenovo | All | [ThinkAgile SXM Best Recipes](https://datacentersupport.lenovo.com/us/en/solutions/ht505122) |
 
 La acción **Reparar** repara un nodo. Úsela solamente para alguno de los escenarios siguientes:
@@ -185,4 +183,4 @@ Para ejecutar la acción de apagado, abra un símbolo de sistema de PowerShell c
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Obtenga información sobre el módulo del operador de tejido de Azure Stack](https://docs.microsoft.com/powershell/module/azs.fabric.admin/?view=azurestackps-1.6.0).
+[Obtenga información sobre el módulo del operador de tejido de Azure Stack Hub](https://docs.microsoft.com/powershell/module/azs.fabric.admin/?view=azurestackps-1.6.0).

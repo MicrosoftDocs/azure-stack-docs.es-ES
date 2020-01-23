@@ -1,6 +1,6 @@
 ---
-title: Hoja de cálculo de implementación para sistemas integrados de Azure Stack | Microsoft Docs
-description: Obtenga información sobre cómo instalar y usar la herramienta de hoja de cálculo de implementación para implementar Azure Stack.
+title: Hoja de cálculo de implementación para sistemas integrados de Azure Stack Hub | Microsoft Docs
+description: Aprenda a instalar y usar la herramienta de hoja de cálculo de implementación para implementar Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: wamota
@@ -15,25 +15,25 @@ ms.date: 04/19/2019
 ms.author: wamota
 ms.reviewer: wamota
 ms.lastreviewed: 04/19/2019
-ms.openlocfilehash: d75915f110b6316f4621f66b1f91b010f735d165
-ms.sourcegitcommit: ccd86bd0862c45de1f6a4993f783ea2e186c187a
+ms.openlocfilehash: 0ec6f85e0df5bcc818f57410a442d532d024fc02
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65172665"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75804917"
 ---
-# <a name="deployment-worksheet-for-azure-stack-integrated-systems"></a>Hoja de cálculo de implementación para sistemas integrados de Azure Stack
+# <a name="deployment-worksheet-for-azure-stack-hub-integrated-systems"></a>Hoja de cálculo de implementación para los sistemas integrados de Azure Stack Hub
 
-La hoja de cálculo de implementación de Azure Stack es una aplicación de Windows Forms que agrega todas las decisiones y toda la información de implementación necesarias en un solo lugar. Puede rellenar la hoja de cálculo de implementación durante el proceso de planeamiento y revisarla antes de iniciar la implementación.
+La hoja de cálculo de implementación de Azure Stack Hub es una aplicación de Windows Forms que agrega toda la información y todas las decisiones de implementación necesarias en un solo lugar. Puede rellenar la hoja de cálculo de implementación durante el proceso de planeamiento y revisarla antes de iniciar la implementación.
 
 La información necesaria para la hoja de cálculo es de redes, seguridad e identidad. Requiere decisiones importantes que pueden exigir conocimientos en muchas áreas distintas; por lo tanto, es posible que quiera ponerse en contacto con los equipos que poseen experiencia en estas áreas para rellenar la hoja de cálculo.
 
-Al rellenar la hoja de cálculo, es posible que tenga que realizar algunos cambios en la configuración previa a la implementación en su entorno de red. Esto podría incluir la reserva de espacios de direcciones IP para la solución Azure Stack, y la configuración de enrutadores, conmutadores y firewalls para prepararlos para la conectividad con la nueva solución Azure Stack.
+Al rellenar la hoja de cálculo, es posible que tenga que realizar algunos cambios en la configuración previa a la implementación en su entorno de red. Esto podría incluir la reserva de espacios de direcciones IP para la solución Azure Stack Hub y la configuración de enrutadores, conmutadores y firewalls para prepararlos para la conectividad con la nueva solución Azure Stack Hub.
 
 > [!NOTE]
-> Para obtener más información sobre cómo utilizar la herramienta de implementación de la hoja de cálculo, consulte [este artículo en la documentación de Azure Stack](azure-stack-datacenter-integration.md).
+> Para más información acerca de cómo completar la herramienta de hoja de cálculo de implementación, consulte [este artículo en la documentación de Azure Stack Hub](azure-stack-datacenter-integration.md).
 
-[![Hoja de cálculo de implementación](media/azure-stack-deployment-worksheet/depworksheet.png "Deployment Worksheet")](media/azure-stack-deployment-worksheet/depworksheet.png)
+[![Hoja de cálculo de implementación](media/azure-stack-deployment-worksheet/depworksheet.png "Hoja de cálculo de implementación")](media/azure-stack-deployment-worksheet/depworksheet.png)
 
 ## <a name="installing-the-windows-powershell-module"></a>Instalación del módulo de Windows PowerShell
 
@@ -72,9 +72,9 @@ Para iniciar y usar la hoja de cálculo de implementación en un equipo en el qu
 
 La hoja de cálculo de implementación consta de pestañas independientes para recopilar la configuración del entorno, como **Customer Settings** (Configuración de cliente), **Network Settings** (Configuración de red) y **Scale Unit #** (N.º de unidad de escalado). Debe proporcionar todos los valores (excepto los marcados como **Opcional**) en todas las pestañas para poder generar cualquier archivo de datos de configuración. Una vez introducidos todos los valores necesarios en la herramienta, puede usar el menú **Acción** para ejecutar las opciones **Importar**, **Exportar** y **Generar**. Los archivos JSON necesarios para la implementación son los siguientes:
 
-**Importar**: le permite importar un archivo de datos de configuración de Azure Stack (ConfigurationData.json) generado con esta herramienta, o bien los creados con cualquier versión anterior de la hoja de cálculo de implementación. Al realizar una importación se restablecen los formularios y se elimina cualquier dato generado u opción de configuración introducida previamente.
+**Import**: le permite importar un archivo de datos de configuración de Azure Stack Hub (ConfigurationData.json) generado con esta herramienta o los archivos creados con cualquier versión anterior de la hoja de cálculo de implementación. Al realizar una importación se restablecen los formularios y se elimina cualquier dato generado u opción de configuración introducida previamente.
 
-**Exportar**: valida los datos introducidos actualmente en los formularios, genera las subredes IP y las asignaciones y, a continuación, guarda el contenido como archivos de configuración con formato JSON. Posteriormente, puede utilizar estos archivos para generar la configuración de red e instalar Azure Stack.
+**Export**: valida los datos introducidos actualmente en los formularios, genera las subredes IP y las asignaciones y, a continuación, guarda el contenido como archivos de configuración con formato JSON. Posteriormente, puede utilizar estos archivos para generar la configuración de red e instalar Azure Stack Hub.
 
 **Generar**: valida los datos introducidos actualmente y genera el mapa de red sin necesidad de exportar los archivos JSON de implementación. Se crean dos nuevas pestañas si **Generar** se ejecuta correctamente: **Subnet Summary** (Resumen de subred) y **IP Assignments** (Asignaciones de IP). Puede analizar los datos en estas pestañas para asegurarse de que las asignaciones de red sean las previstas.
 
@@ -94,4 +94,4 @@ Puede encontrar el registro guardado en el directorio **Temp** del usuario actua
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-* [Modelos de conexión de la implementación de Azure Stack](azure-stack-connection-models.md)
+* [Modelos de conexión de la implementación de Azure Stack Hub](azure-stack-connection-models.md)

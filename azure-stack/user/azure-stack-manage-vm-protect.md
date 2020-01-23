@@ -1,6 +1,6 @@
 ---
-title: Protección de máquinas virtuales implementadas en Azure Stack | Microsoft Docs
-description: Obtenga información sobre cómo crear un plan de recuperación para proteger las VM implementadas en Azure Stack de la pérdida de datos y el tiempo de inactividad no planeado.
+title: Protección de las máquinas virtuales implementadas en Azure Stack Hub | Microsoft Docs
+description: Aprenda a crear un plan de recuperación para proteger las máquinas virtuales implementadas en Azure Stack Hub de la pérdida de datos y el tiempo de inactividad no planeado.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -16,47 +16,47 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: hectorl
 ms.lastreviewed: 3/19/2018
-ms.openlocfilehash: cb08b9c2480ab3858147669a1208ca54bc43343f
-ms.sourcegitcommit: 4789cd5d6f1e35774a17a1ddfcdf3f548b18965c
+ms.openlocfilehash: 88562c93344f139f3f167da0ddb3e072fde231fa
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "75329915"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819937"
 ---
-# <a name="protect-vms-deployed-on-azure-stack"></a>Protección de máquinas virtuales implementadas en Azure Stack
+# <a name="protect-vms-deployed-on-azure-stack-hub"></a>Protección de las máquinas virtuales implementadas en Azure Stack Hub
 
-Use este artículo como guía para desarrollar un plan de protección de máquinas virtuales (VM) que los usuarios implementan en Azure Stack.
+Use este artículo como guía para desarrollar un plan de protección de las máquinas virtuales que los usuarios implementan en Azure Stack Hub.
 
 
-Para protegerse frente a la pérdida de datos y los tiempos de inactividad no planeados, debe implementar un plan de recuperación y copia de seguridad, o de recuperación ante desastres para las aplicaciones de usuario y los datos. Este plan es único para cada aplicación, pero sigue un marco establecido por la estrategia completa de continuidad empresarial y recuperación ante desastres (BC/DR) de su organización. Un buen punto de partida es [Azure Stack: Considerations for business continuity and disaster recovery](https://aka.ms/azurestackbcdrconsiderationswp) (Azure Stack: Consideraciones sobre continuidad empresarial y recuperación ante desastres).
+Para protegerse frente a la pérdida de datos y los tiempos de inactividad no planeados, debe implementar un plan de recuperación y copia de seguridad, o de recuperación ante desastres para las aplicaciones de usuario y los datos. Este plan es único para cada aplicación, pero sigue un marco establecido por la estrategia completa de continuidad empresarial y recuperación ante desastres (BC/DR) de su organización. Un buen punto de partida es [Azure Stack Hub: Considerations for business continuity and disaster recovery](https://aka.ms/azurestackbcdrconsiderationswp) (Azure Stack: Consideraciones sobre continuidad empresarial y recuperación ante desastres).
 
-## <a name="azure-stack-infrastructure-recovery"></a>Recuperación de la infraestructura de Azure Stack
+## <a name="azure-stack-hub-infrastructure-recovery"></a>Recuperación de la infraestructura de Azure Stack Hub
 
-Los usuarios son responsables de la protección de sus máquinas virtuales de forma independiente de los servicios de infraestructura de Azure Stack.
+Los usuarios son los responsables de la protección de sus máquinas virtuales de forma independiente de los servicios de infraestructura de Azure Stack Hub.
 
-El plan de recuperación de los servicios de infraestructura de Azure Stack **no** incluye la recuperación de máquinas virtuales, cuentas de almacenamiento o bases de datos del usuario. Como propietario de la aplicación, es el responsable de implementar un plan de recuperación de las aplicaciones y los datos.
+El plan de recuperación de los servicios de infraestructura de Azure Stack Hub **no** incluye la recuperación de máquinas virtuales, cuentas de almacenamiento o bases de datos del usuario. Como propietario de la aplicación, es el responsable de implementar un plan de recuperación de las aplicaciones y los datos.
 
-Si la nube de Azure Stack está desconectada durante un largo período de tiempo o queda irrecuperable permanentemente, necesita disponer de un plan de recuperación que:
+Si la nube de Azure Stack Hub está sin conexión durante un largo período de tiempo o queda irrecuperable permanentemente, es preciso disponer de un plan de recuperación que:
 
 * Garantice el tiempo de inactividad mínimo.
 * Mantenga en ejecución las VM críticas, como los servidores de base de datos.
 * Permita a las aplicaciones seguir atendiendo las solicitudes de usuario.
 
-El operador de la nube de Azure Stack es responsable de la creación de un plan de recuperación de la infraestructura y los servicios subyacentes de Azure Stack. Para obtener más información, consulte [Recuperación después de una pérdida de datos grave](../operator/azure-stack-backup-recover-data.md).
+El operador de la nube de Azure Stack Hub es responsable de la creación de un plan de recuperación de la infraestructura y los servicios subyacentes de Azure Stack Hub. Para obtener más información, consulte [Recuperación después de una pérdida de datos grave](../operator/azure-stack-backup-recover-data.md).
 
 ## <a name="considerations-for-iaas-vms"></a>Consideraciones para máquinas virtuales IaaS
-El sistema operativo instalado en la VM IaaS limita los productos que puede usar para proteger los datos que esta contiene. Para máquinas virtuales basadas en Windows, puede usar los productos de Microsoft y de asociados para proteger los datos. Para máquinas virtuales IaaS basadas en Linux, la única opción es usar productos de asociados. Consulte [esta hoja de datos para todos los asociados de continuidad empresarial y recuperación ante desastres con los productos validados para Azure Stack](https://aka.ms/azurestackbcdrpartners).
+El sistema operativo instalado en la VM IaaS limita los productos que puede usar para proteger los datos que esta contiene. Para máquinas virtuales basadas en Windows, puede usar los productos de Microsoft y de asociados para proteger los datos. Para máquinas virtuales IaaS basadas en Linux, la única opción es usar productos de asociados. Consulte en [esta hoja de datos todos los asociados de BC/DR con productos validados para Azure Stack Hub](https://aka.ms/azurestackbcdrpartners).
 
 ## <a name="sourcetarget-combinations"></a>Combinaciones de origen y destino
 
-Cada nube de Azure Stack se implementa en un centro de datos. Se necesita un entorno independiente para recuperar las aplicaciones. El entorno de recuperación puede ser otra nube de Azure Stack en otro centro de datos o en la nube pública de Azure. Los requisitos de soberanía y privacidad de los datos determinan el entorno de recuperación de la aplicación. Cuando habilita la protección de cada aplicación, puede elegir una opción de recuperación específica para cada una. Puede hacer que las aplicaciones de una suscripción realicen una copia de seguridad de los datos en otro centro de datos. En otra suscripción, puede replicar los datos en la nube pública de Azure.
+Cada nube de Azure Stack Hub se implementa en un centro de datos. Se necesita un entorno independiente para recuperar las aplicaciones. El entorno de recuperación puede ser otra nube de Azure Stack Hub que se encuentre en otro centro de datos o en la nube pública de Azure. Los requisitos de soberanía y privacidad de los datos determinan el entorno de recuperación de la aplicación. Cuando habilita la protección de cada aplicación, puede elegir una opción de recuperación específica para cada una. Puede hacer que las aplicaciones de una suscripción realicen una copia de seguridad de los datos en otro centro de datos. En otra suscripción, puede replicar los datos en la nube pública de Azure.
 
 Planee la estrategia de copia de seguridad y recuperación, y la de recuperación ante desastres de cada aplicación para determinar el destino de cada aplicación. Un plan de recuperación ayuda a su organización a estimar correctamente la capacidad de almacenamiento necesaria en los dispositivos locales y el consumo de los proyectos en la nube pública.
 
-|  | Azure global | Azure Stack implementado en un centro de datos de CSP operado por este | Azure Stack implementado en un centro de datos de cliente y operado por este |
+|  | Azure global | Azure Stack Hub implementado en un centro de datos de CSP y operado por este | Azure Stack Hub implementado en un centro de datos de cliente y operado por este |
 |------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
-| **Azure Stack implementado en un centro de datos de CSP operado por este** | Las máquinas virtuales del usuario se implementan en una instancia de Azure Stack controlada por CSP.<br><br>Las máquinas virtuales de usuario se restauran a partir de una copia de seguridad o se conmutan por error directamente en Azure. | CSP opera con la instancia principal y secundaria de Azure Stack en sus propios centros de datos.<br><br>Las máquinas virtuales de usuario se restauran o conmutan por error entre las dos instancias de Azure Stack. | CSP controla Azure Stack en el sitio principal.<br><br>El centro de datos del cliente es el destino de restauración o de conmutación por error. |
-| **Azure Stack implementado en un centro de datos de cliente y operado por este** | Las VM del usuario se implementan en la instancia de Azure Stack controlada por el cliente.<br><br>Las máquinas virtuales de usuario se restauran a partir de una copia de seguridad o se conmutan por error directamente en Azure. | El cliente controla Azure Stack en el sitio principal.<br><br>El centro de datos del CSP es el destino de restauración o de conmutación por error. | El cliente opera con la instancia principal y secundaria de Azure Stack en sus propios centros de datos.<br><br>Las máquinas virtuales de usuario se restauran o conmutan por error entre las dos instancias de Azure Stack. |
+| **Azure Stack Hub implementado en un centro de datos de CSP y operado por este** | Las máquinas virtuales de usuario se implementan en una instancia de Azure Stack Hub controlada por CSP.<br><br>Las máquinas virtuales de usuario se restauran a partir de una copia de seguridad o se conmutan por error directamente en Azure. | CSP opera las instancias principal y secundaria de Azure Stack Hub en sus propios centros de datos.<br><br>Las máquinas virtuales de usuario se restauran o se conmutan por error entre las dos instancias de Azure Stack Hub. | CSP opera Azure Stack Hub en el sitio principal.<br><br>El centro de datos del cliente es el destino de restauración o de conmutación por error. |
+| **Azure Stack Hub implementado en un centro de datos de cliente y operado por este** | Las máquinas virtuales del usuario se implementan en la instancia de Azure Stack Hub controlada por el cliente.<br><br>Las máquinas virtuales de usuario se restauran a partir de una copia de seguridad o se conmutan por error directamente en Azure. | El cliente controla Azure Stack Hub en el sitio principal.<br><br>El centro de datos del CSP es el destino de restauración o de conmutación por error. | El cliente controla las instancias principal y secundaria de Azure Stack Hub en su propio centros de datos.<br><br>Las máquinas virtuales de usuario se restauran o se conmutan por error entre las dos instancias de Azure Stack Hub. |
 
 ![Combinaciones de origen y destino](media/azure-stack-manage-vm-backup/vm_backupdataflow_01.png)
 
@@ -75,7 +75,7 @@ Otra métrica es el **tiempo medio para recuperación** (MTTR), que es el tiempo
 
 ### <a name="backup-restore"></a>Copia de seguridad y restauración
 
-El esquema de protección más habitual para aplicaciones basadas en VM consiste en utilizar software de copia de seguridad. Realizar una copia de seguridad de una VM normalmente incluye la configuración del sistema operativo, los binarios de aplicación y los datos de aplicación. Las copias de seguridad se crean tomando una instantánea de los volúmenes y los discos o de toda la máquina virtual. Con Azure Stack, tiene la posibilidad de realizar la copia de seguridad desde dentro del contexto del SO invitado o desde las API de almacenamiento y proceso de Azure Stack. Azure Stack no admite la realización de copias de seguridad en el nivel de hipervisor.
+El esquema de protección más habitual para aplicaciones basadas en VM consiste en utilizar software de copia de seguridad. Realizar una copia de seguridad de una VM normalmente incluye la configuración del sistema operativo, los binarios de aplicación y los datos de aplicación. Las copias de seguridad se crean tomando una instantánea de los volúmenes y los discos o de toda la máquina virtual. Con Azure Stack Hub, tiene la flexibilidad de poder realizar copias de seguridad desde dentro del contexto del SO invitado o desde las API de almacenamiento y proceso de Azure Stack Hub. Azure Stack Hub no admite la realización de copias de seguridad en el nivel de hipervisor.
  
 ![Copia de seguridad y restauración](media/azure-stack-manage-vm-backup/vm_backupdataflow_03.png)
 
@@ -87,9 +87,9 @@ La recuperación de la aplicación requiere la restauración de una o más VM en
 
 #### <a name="planning-your-backup-strategy"></a>Planeamiento de la estrategia de copia de seguridad
 
-El planeamiento de la estrategia de copia de seguridad y la definición de los requisitos de escalado empieza por la cuantificación del número de instancias de máquina virtual que se deben proteger. La copia de seguridad de todas las máquinas virtuales de todos los servidores de un entorno es una estrategia común. Sin embargo, con Azure Stack, hay algunas máquinas virtuales a las que se debe realizar una copia de seguridad. Por ejemplo, las máquinas virtuales de un conjunto de escalado se consideran recursos efímeros que vienen y van, a veces sin previo aviso. Todos los datos duraderos que necesitan protección se almacenan en un repositorio independiente, como una base de datos o un almacén de objetos.
+El planeamiento de la estrategia de copia de seguridad y la definición de los requisitos de escalado empieza por la cuantificación del número de instancias de máquina virtual que se deben proteger. La copia de seguridad de todas las máquinas virtuales de todos los servidores de un entorno es una estrategia común. Sin embargo, con Azure Stack Hub, hay algunas máquinas virtuales de las que se debe realizar una copia de seguridad. Por ejemplo, las máquinas virtuales de un conjunto de escalado se consideran recursos efímeros que vienen y van, a veces sin previo aviso. Todos los datos duraderos que necesitan protección se almacenan en un repositorio independiente, como una base de datos o un almacén de objetos.
 
-Consideraciones importantes sobre la copia de seguridad de máquinas virtuales en Azure Stack:
+Consideraciones importantes a la hora de realizar copias de seguridad de máquinas virtuales en Azure Stack Hub:
 
  - **Categorización**
     - Considere un modelo en el que los usuarios pueden participar en la copia de seguridad de la máquina virtual.
@@ -115,7 +115,7 @@ Con este enfoque, la aplicación se implementa en una nube y su VM se replica en
  
 ### <a name="high-availabilityautomatic-failover"></a>Alta disponibilidad o conmutación por error automática
 
-Para aquellas aplicaciones para las que su empresa solo puede tolerar unos pocos segundos o minutos de tiempo de inactividad y una pérdida de datos mínima, considere la posibilidad de una configuración de alta disponibilidad. Las aplicaciones de alta disponibilidad están diseñadas para recuperarse de forma rápida y automática de los errores. En el caso de errores de hardware local, la infraestructura de Azure Stack implementa alta disponibilidad en la red física mediante los dos principales conmutadores del bastidor. En el caso de errores en el nivel de proceso, Azure Stack usa varios nodos en una unidad de escalado. En el nivel de la VM, puede utilizar conjuntos de escalado en combinación con dominios de error para asegurarse de que los errores de los nodos no desactivan la aplicación.
+Para aquellas aplicaciones para las que su empresa solo puede tolerar unos pocos segundos o minutos de tiempo de inactividad y una pérdida de datos mínima, considere la posibilidad de una configuración de alta disponibilidad. Las aplicaciones de alta disponibilidad están diseñadas para recuperarse de forma rápida y automática de los errores. En el caso de errores del hardware local, la infraestructura de Azure Stack Hub implementa alta disponibilidad en la red física mediante los dos principales conmutadores del bastidor. En el caso de errores en el nivel de proceso, Azure Stack Hub usa varios nodos en una unidad de escalado. En el nivel de la VM, puede utilizar conjuntos de escalado en combinación con dominios de error para asegurarse de que los errores de los nodos no desactivan la aplicación.
 
 Además de los conjuntos de escalado, es necesario que la aplicación admita la alta disponibilidad de forma nativa o admita el uso de software de agrupación en clústeres. Por ejemplo, Microsoft SQL Server admite alta disponibilidad de forma nativa para bases de datos mediante el modo de confirmación sincrónica. Sin embargo, si solo puede admitir la replicación asincrónica, se producirá alguna pérdida de datos. Las aplicaciones también se pueden implementar en un clúster de conmutación por error en el que el software de agrupación en clústeres controla la conmutación automática por error de la aplicación.
 
@@ -127,11 +127,11 @@ Con este enfoque, la aplicación solo está activa en una nube, pero el software
 
 ### <a name="fault-tolerance"></a>Tolerancia a errores
 
-La redundancia física de Azure Stack y la disponibilidad del servicio de infraestructura solo protegen frente a errores en el nivel del hardware como, por ejemplo, un disco, la fuente de alimentación, un puerto de red o un nodo. No obstante, si la aplicación debe estar siempre disponible y nunca puede perder ningún dato, debe implementar la tolerancia a errores de forma nativa en la aplicación o usar software adicional para habilitar la tolerancia a errores.
+La redundancia física y la disponibilidad del servicio de infraestructura de Azure Stack Hub solo protegen contra errores en el nivel del hardware como, por ejemplo, un disco, la fuente de alimentación, un puerto de red o un nodo. No obstante, si la aplicación debe estar siempre disponible y nunca puede perder ningún dato, debe implementar la tolerancia a errores de forma nativa en la aplicación o usar software adicional para habilitar la tolerancia a errores.
 
 En primer lugar, debe asegurarse de que las VM de la aplicación se implementen mediante conjuntos de escalado para protegerlas ante errores en el nivel de nodo. Para protegerla en caso de que la nube se quede sin conexión, la misma aplicación ya debe estar implementada en una nube diferente, de forma que pueda continuar atendiendo solicitudes sin interrupción. A este modelo normalmente se le conoce como una implementación activa-activa.
 
-Tenga en cuenta que cada nube de Azure Stack es independiente entre sí, por lo que las nubes siempre se consideran activas desde una perspectiva de infraestructura. En este caso, se implementan varias instancias activas de la aplicación en una o más nubes activas.
+Tenga en cuenta que cada nube de Azure Stack Hub es independiente, por lo que las nubes siempre se consideran activas desde una perspectiva de infraestructura. En este caso, se implementan varias instancias activas de la aplicación en una o más nubes activas.
 
  - RTO: sin tiempo de inactividad
  - RPO: No se produce pérdida de datos
@@ -139,39 +139,39 @@ Tenga en cuenta que cada nube de Azure Stack es independiente entre sí, por lo 
 
 ### <a name="no-recovery"></a>Sin recuperación
 
-Puede que algunas aplicaciones del entorno no necesiten protección frente a tiempos de inactividad o pérdidas de datos no planeados. Por ejemplo, no suele ser necesario recuperar las VM que se utilizan para desarrollo y pruebas. Es su decisión hacerlo sin la protección de una aplicación o una VM específica. Azure Stack no proporciona copia de seguridad ni replicación de las VM de la infraestructura subyacente. Al igual que con Azure, debe participar en la protección de cada VM en cada una de las suscripciones.
+Puede que algunas aplicaciones del entorno no necesiten protección frente a tiempos de inactividad o pérdidas de datos no planeados. Por ejemplo, no suele ser necesario recuperar las VM que se utilizan para desarrollo y pruebas. Es su decisión hacerlo sin la protección de una aplicación o una VM específica. Azure Stack Hub no proporciona copia de seguridad ni replicación de las máquinas virtuales desde la infraestructura subyacente. Al igual que con Azure, debe participar en la protección de cada VM en cada una de las suscripciones.
 
  - RTO: irrecuperable
  - RPO: pérdida de datos completa
 
 ## <a name="recommended-topologies"></a>Topologías recomendadas
 
-Consideraciones importantes para la implementación de Azure Stack:
+Consideraciones importantes para la implementación de Azure Stack Hub:
 
 |     | Recomendación | Comentarios |
 |-------------------------------------------------------------------------------------------------|-----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Copia de seguridad o restauración de máquinas virtuales en un destino de copia de seguridad externo ya implementado en el centro de datos | Recomendado | Saque partido a la infraestructura de copia de seguridad y a las capacidades operativas existentes. Asegúrese de cambiar el tamaño de la infraestructura de copia de seguridad para que esté lista para proteger las instancias de VM adicionales. Asegúrese de que la infraestructura de copia de seguridad no está cerca del origen. Puede restaurar las máquinas virtuales en la instancia de origen de Azure Stack, en una instancia secundaria de Azure Stack o en Azure. |
-| Copia de seguridad o restauración de máquinas virtuales en un destino de copia de seguridad externo dedicado a Azure Stack | Recomendado | Puede comprar nueva infraestructura de copia de seguridad o aprovisionar infraestructuras de copia de seguridad dedicadas para Azure Stack. Asegúrese de que la infraestructura de copia de seguridad no está cerca del origen. Puede restaurar las máquinas virtuales en la instancia de origen de Azure Stack, en una instancia secundaria de Azure Stack o en Azure. |
-| Copia de seguridad o restauración de máquinas virtuales directamente en Azure global o en un proveedor de servicios de confianza | Recomendado | Siempre que cumpla los requisitos de privacidad de los datos y los requisitos reglamentarios, puede almacenar las copias de seguridad en Azure global o en un proveedor de servicios de confianza. Lo ideal es que el proveedor de servicios también ejecute Azure Stack para conseguir una mayor coherencia en la experiencia operativa cuando haga la restauración. |
-| Replicación o conmutación por error de máquinas virtuales en una instancia independiente de Azure Stack | Recomendado | En el caso de la conmutación por error, debe tener una segunda nube de Azure Stack totalmente operativa para evitar un tiempo de inactividad prolongado de la aplicación. |
-| Replicación o conmutación por error de máquinas virtuales directamente en Azure o en un proveedor de servicios de confianza | Recomendado | Siempre que cumpla los requisitos de privacidad de los datos y los requisitos reglamentarios, puede replicar los datos en Azure global o en un proveedor de servicios de confianza. Lo ideal es que el proveedor de servicios también ejecute Azure Stack para conseguir una mayor coherencia en la experiencia operativa después de la conmutación por error. |
-| Implementación del destino de copia de seguridad en la misma nube de Azure Stack con los datos de la aplicación | No recomendado | No guarde las copias de seguridad en la misma nube de Azure Stack. Un tiempo de inactividad imprevisto de la nube puede apartarle de los datos principales y de los datos de copia de seguridad. Si decide implementar un destino de copia de seguridad como una aplicación virtual (para los fines de optimización de copia de seguridad y restauración), debe asegurarse de que todos los datos se copian continuamente en una ubicación de copia de seguridad externa. |
-| Implementación del dispositivo físico de copia de seguridad en el mismo bastidor en el que está instalada la solución Azure Stack | No compatible | Actualmente, no puede conectar ningún otro dispositivo en los conmutadores de la parte superior del rack que no forme parte de la solución original. |
+| Copia de seguridad o restauración de máquinas virtuales en un destino de copia de seguridad externo ya implementado en el centro de datos | Recomendado | Saque partido a la infraestructura de copia de seguridad y a las capacidades operativas existentes. Asegúrese de cambiar el tamaño de la infraestructura de copia de seguridad para que esté lista para proteger las instancias de VM adicionales. Asegúrese de que la infraestructura de copia de seguridad no está cerca del origen. Puede restaurar las máquinas virtuales en la instancia de origen de Azure Stack Hub, en una instancia secundaria de Azure Stack Hub o en Azure. |
+| Copia de seguridad o restauración de máquinas virtuales en un destino de copia de seguridad externo dedicado a Azure Stack Hub | Recomendado | Puede comprar una nueva infraestructura de copia de seguridad o aprovisionar una infraestructura de copia de seguridad dedicada para Azure Stack Hub. Asegúrese de que la infraestructura de copia de seguridad no está cerca del origen. Puede restaurar las máquinas virtuales en la instancia de origen de Azure Stack Hub, en una instancia secundaria de Azure Stack Hub o en Azure. |
+| Copia de seguridad o restauración de máquinas virtuales directamente en Azure global o en un proveedor de servicios de confianza | Recomendado | Siempre que cumpla los requisitos de privacidad de los datos y los requisitos reglamentarios, puede almacenar las copias de seguridad en Azure global o en un proveedor de servicios de confianza. Lo ideal es que el proveedor de servicios también ejecute Azure Stack Hub, ya que así se conseguirá una mayor coherencia en la experiencia operativa al hacer la restauración. |
+| Replicación o conmutación por error de máquinas virtuales en una instancia independiente de Azure Stack Hub | Recomendado | En el caso de la conmutación por error, es preciso tener una segunda nube de Azure Stack Hub totalmente operativa para evitar que el tiempo de inactividad de la aplicación sea excesivo. |
+| Replicación o conmutación por error de máquinas virtuales directamente en Azure o en un proveedor de servicios de confianza | Recomendado | Siempre que cumpla los requisitos de privacidad de los datos y los requisitos reglamentarios, puede replicar los datos en Azure global o en un proveedor de servicios de confianza. Lo ideal es que el proveedor de servicios también ejecute Azure Stack Hub, ya que así se consigue una mayor coherencia en la experiencia operativa después de la conmutación por error. |
+| Implementación del destino de copia de seguridad en la misma nube de Azure Stack Hub con los datos de la aplicación | No recomendado | No guarde las copias de seguridad en la misma nube de Azure Stack Hub. Un tiempo de inactividad imprevisto de la nube puede apartarle de los datos principales y de los datos de copia de seguridad. Si decide implementar un destino de copia de seguridad como una aplicación virtual (para los fines de optimización de copia de seguridad y restauración), debe asegurarse de que todos los datos se copian continuamente en una ubicación de copia de seguridad externa. |
+| Implementación de un dispositivo físico de copia de seguridad en el mismo bastidor en que está instalada la solución Azure Stack Hub | No compatible | Actualmente, no puede conectar ningún otro dispositivo en los conmutadores de la parte superior del rack que no forme parte de la solución original. |
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-En este artículo se proporcionan instrucciones generales para proteger las máquinas virtuales de usuario implementadas en Azure Stack. Para obtener información sobre el uso de los servicios de Azure para proteger las máquinas virtuales de usuario, consulte:
+En este artículo se proporcionan directrices generales para proteger las máquinas virtuales de usuario implementadas en Azure Stack Hub. Para obtener información sobre el uso de los servicios de Azure para proteger las máquinas virtuales de usuario, consulte:
 
 - [Consideraciones sobre continuidad empresarial y recuperación ante desastres](https://aka.ms/azurestackbcdrconsiderationswp)
 
 ### <a name="azure-backup-server"></a>Servidor de Azure Backup
- - [Uso de Azure Backup para realizar copias de seguridad de archivos y aplicaciones en Azure Stack](https://docs.microsoft.com/azure/backup/backup-mabs-files-applications-azure-stack)
- - [Compatibilidad de Azure Backup Server con Azure Stack](https://docs.microsoft.com/azure/backup/ ) 
+ - [Uso de Azure Backup para realizar copias de seguridad de archivos y aplicaciones en Azure Stack Hub](https://docs.microsoft.com/azure/backup/backup-mabs-files-applications-azure-stack)
+ - [Compatibilidad de Azure Backup Server con Azure Stack Hub](https://docs.microsoft.com/azure/backup/ ) 
  
  ### <a name="azure-site-recovery"></a>Azure Site Recovery
- - [Compatibilidad de Azure Site Recovery con Azure Stack](https://docs.microsoft.com/azure/site-recovery/)  
+ - [Compatibilidad de Azure Site Recovery con Azure Stack Hub](https://docs.microsoft.com/azure/site-recovery/)  
  
  ### <a name="partner-products"></a>Productos de asociado
- - [Hoja de datos del Ecosistema de asociados de integración de centros de datos de Azure Stack](https://aka.ms/azurestackbcdrpartners)
+ - [Hoja de datos del Ecosistema de asociados de integración de centros de datos de Azure Stack Hub](https://aka.ms/azurestackbcdrpartners)
 
-Para más información sobre los productos de asociados que ofrecen protección de máquina virtual en Azure Stack, consulte [Protecting apps and data on Azure Stack](https://azure.microsoft.com/blog/protecting-applications-and-data-on-azure-stack/) (Protección de aplicaciones y datos en Azure Stack).
+Para más información sobre los productos de asociados que ofrecen protección a las máquinas virtuales en Azure Stack Hub, consulte [Protección de aplicaciones y datos en Azure Stack Hub](https://azure.microsoft.com/blog/protecting-applications-and-data-on-azure-stack/).

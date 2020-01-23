@@ -1,6 +1,6 @@
 ---
-title: Conectarse a Azure Stack con la extensión de la cuenta de Azure de Visual Studio Code | Microsoft Docs
-description: Conectarse a Azure Stack como desarrollador mediante la extensión de la cuenta de Azure en Visual Studio Code
+title: Conexión a Azure Stack Hub mediante la extensión de la cuenta de Azure en Visual Studio Code | Microsoft Docs
+description: Conectarse a Azure Stack Hub como desarrollador mediante la extensión de la cuenta de Azure en Visual Studio Code
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
@@ -9,36 +9,36 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 58fecc801312d9da1a2311e4a51114cfbf245e9d
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.openlocfilehash: 1898b4415519dd8b1e6bf901c69cf67d6a607308
+ms.sourcegitcommit: ce01b2cd114ca8ab5b70c6311b66c58ceb054469
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955747"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75923855"
 ---
-# <a name="connect-to-azure-stack-using-azure-account-extension-in-visual-studio-code"></a>Conectarse a Azure Stack mediante la extensión de la cuenta de Azure en Visual Studio Code
+# <a name="connect-to-azure-stack-hub-using-azure-account-extension-in-visual-studio-code"></a>Conexión a Azure Stack Hub mediante la extensión de la cuenta de Azure en Visual Studio Code
 
-En este artículo, le orientaremos acerca de cómo conectarse a Azure Stack con la extensión de la cuenta de Azure. Necesitará actualizar la configuración de Visual Studio Code (VS Code).
+En este artículo, le orientaremos acerca de cómo conectarse a Azure Stack Hub mediante la extensión de la cuenta de Azure. Necesitará actualizar la configuración de Visual Studio Code (VS Code).
 
-VS Code es un editor ligero para compilar y depurar aplicaciones web y en la nube. ASP.NET Core, Python, NodeJS, Go y otros desarrolladores usan VS Code. Con la extensión de la cuenta de Azure, puede usar un único inicio de sesión de Azure con filtrado de suscripción para extensiones adicionales de Azure. La extensión hace que Azure Cloud Shell esté disponible en el terminal integrado de VS Code. Con la extensión, puede conectarse a la suscripción de Azure Stack con Azure AD (Azure AD) y Active Directory Federated Services (AD FS) para el administrador de identidades. Puede iniciar sesión en Azure Stack, seleccionar la suscripción y abrir una nueva línea de comandos en un shell en la nube. 
+VS Code es un editor ligero para compilar y depurar aplicaciones web y en la nube. ASP.NET Core, Python, NodeJS, Go y otros desarrolladores usan VS Code. Con la extensión de la cuenta de Azure, puede usar un único inicio de sesión de Azure con filtrado de suscripción para extensiones adicionales de Azure. La extensión hace que Azure Cloud Shell esté disponible en el terminal integrado de VS Code. Mediante la extensión, puede conectarse a una suscripción de Azure Stack Hub mediante Azure AD (Azure AD) y Active Directory Federated Services (AD FS) para el administrador de identidades. Puede iniciar sesión en Azure Stack Hub, seleccionar la suscripción y abrir una nueva línea de comandos en un shell en la nube. 
 
 > [!Note]  
 > Puede usar los pasos de este artículo para un entorno de Active Directory Federated Services (AD FS). Use los puntos de conexión y las credenciales de AD FS.
 
 ## <a name="pre-requisites-for-the-azure-account-extension"></a>Requisitos previos para la extensión de la cuenta de Azure
 
-1. Compilación 1904 o posterior del entorno de Azure Stack
+1. Compilación 1904 o posterior del entorno de Azure Stack Hub
 2. [Visual Studio Code](https://code.visualstudio.com/)
 3. [Extensión de la cuenta de Azure](https://github.com/Microsoft/vscode-azure-account)
-4. [Una suscripción a Azure Stack](https://azure.microsoft.com/overview/azure-stack/)
+4. [Una suscripción a Azure Stack Hub](https://azure.microsoft.com/overview/azure-stack/)
 
-## <a name="steps-to-connect-to-azure-stack"></a>Pasos para conectar con Azure Stack
+## <a name="steps-to-connect-to-azure-stack-hub"></a>Pasos para establecer una conexión con Azure Stack Hub
 
-1. Ejecute el script **Identity** desde las herramientas de Azure Stack en GitHub.
+1. Ejecute el script **Identity** desde las herramientas de Azure Stack Hub en GitHub.
 
-    - Antes de ejecutar el script, deberá tener PowerShell instalado y configurado para su entorno. Para obtener instrucciones, consulte [Instalación de PowerShell para Azure Stack](../operator/azure-stack-powershell-install.md).
+    - Antes de ejecutar el script, deberá tener PowerShell instalado y configurado para su entorno. Para obtener instrucciones, consulte [Instalación de PowerShell para Azure Stack Hub](../operator/azure-stack-powershell-install.md).
 
-    - Para el script **Identity** y sus instrucciones, consulte [AzureStack-Tools/Identity](https://github.com/Azure/AzureStack-Tools/tree/master/Identity).
+    - Para el script **Identity** y sus instrucciones, consulte [AzureStack-Tools/Identity](https://aka.ms/aa6z611).
 
     - En la misma sesión, ejecute:
 
@@ -57,11 +57,11 @@ VS Code es un editor ligero para compilar y depurar aplicaciones web y en la nub
 
 5. Seleccione **Cuenta de Azure** y, a continuación, **Instalar**.
 
-      ![Visual Studio Code en Azure Stack](media/azure-stack-dev-start-vscode-azure/image1.png)
+      ![Visual Studio Code en Azure Stack Hub](media/azure-stack-dev-start-vscode-azure/image1.png)
 
 6. Reinicie VS Code para cargar la extensión.
 
-7. Recupere los metadatos para conectarse a Azure Resource Manager desde Azure Stack. 
+7. Recupere los metadatos para conectarse a Azure Resource Manager en su instancia de Azure Stack Hub. 
     
     Microsoft Azure Resource Manager es un marco de administración que le permite implementar, administrar y supervisar recursos de Azure.
     - La dirección URL de Resource Manager para el Kit de desarrollo de Azure Stack (ASDK) es: `https://management.local.azurestack.external/` 
@@ -78,12 +78,12 @@ VS Code es un editor ligero para compilar y depurar aplicaciones web y en la nub
 
     - Valores:
 
-        | Parámetro | DESCRIPCIÓN |
+        | Parámetro | Descripción |
         | --- | --- |
-        | `tenant-ID` | El valor de su [identificador de inquilino](../operator/azure-stack-identity-overview.md) de Azure Stack. |
+        | `tenant-ID` | El valor de su [identificador de inquilino](../operator/azure-stack-identity-overview.md) de Azure Stack Hub. |
         | `activeDirectoryEndpointUrl` | Esta es la dirección URL de la propiedad loginEndpoint. |
         | `activeDirectoryResourceId` | Se trata de la dirección URL de la propiedad Audiences.
-        | `resourceManagerEndpointUrl` | Se trata de la dirección URL raíz de Azure Resource Manager para Azure Stack. | 
+        | `resourceManagerEndpointUrl` | Se trata de la dirección URL raíz de Azure Resource Manager para Azure Stack Hub. | 
 
     - Fragmento de código JSON:
 
@@ -101,7 +101,7 @@ VS Code es un editor ligero para compilar y depurar aplicaciones web y en la nub
 
 11. Seleccione **AzurePPE**. La página de autenticación se cargará en el explorador. Inicie sesión en el punto de conexión.
 
-12. Para comprobar que ha iniciado sesión correctamente en su suscripción de Azure Stack, use **Ctrl + Mayús + P** y seleccione **Azure: Seleccionar suscripción**. A continuación, compruebe si la suscripción está disponible.
+12. Para comprobar que ha iniciado sesión correctamente en su suscripción de Azure Stack Hub, use **Ctrl + Mayús + P** y seleccione **Azure: Seleccionar suscripción**. A continuación, compruebe si la suscripción está disponible.
 
 ## <a name="commands"></a>Comandos:
 
@@ -118,4 +118,4 @@ VS Code es un editor ligero para compilar y depurar aplicaciones web y en la nub
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Configurar un entorno de desarrollo en Azure Stack ](azure-stack-dev-start.md)
+[Configuración de un entorno de desarrollo en Azure Stack Hub](azure-stack-dev-start.md)

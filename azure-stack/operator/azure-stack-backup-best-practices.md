@@ -1,6 +1,6 @@
 ---
-title: Procedimientos recomendados del servicio Infrastructure Backup para Azure Stack | Microsoft Docs
-description: Siga estos procedimientos recomendados al implementar y administrar Azure Stack para ayudar a mitigar la pérdida de datos en caso de error grave.
+title: Procedimientos recomendados del servicio Copia de seguridad de infraestructura para Azure Stack Hub | Microsoft Docs
+description: Siga estos procedimientos recomendados al implementar y administrar Azure Stack Hub para ayudar a mitigar la pérdida de datos en caso de error grave.
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -16,18 +16,16 @@ ms.date: 02/08/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 02/08/2019
-ms.openlocfilehash: 0b843018a90e0a07a1d1135099275288d4a4ce62
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.openlocfilehash: 4f25f1a2d78be5aafdfb6ef379353b148cf3b418
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70974758"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882919"
 ---
 # <a name="infrastructure-backup-service-best-practices"></a>Procedimientos recomendados del servicio Infrastructure Backup
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
-
-Siga estos procedimientos recomendados al implementar y administrar Azure Stack para ayudar a mitigar la pérdida de datos en caso de error grave.
+Siga estos procedimientos recomendados al implementar y administrar Azure Stack Hub para ayudar a mitigar la pérdida de datos en caso de error grave.
 
 Revise periódicamente los procedimientos recomendados para comprobar que la instalación cumple aún las normas cuando se realicen cambios en el flujo de la operación. Si surgen problemas al implementar estos procedimientos recomendados, póngase en contacto con el soporte técnico de Microsoft para obtener ayuda.
 
@@ -35,7 +33,7 @@ Revise periódicamente los procedimientos recomendados para comprobar que la ins
 
 ### <a name="deployment"></a>Implementación
 
-Habilite Infrastructure Backup después de la implementación en cada nube de Azure Stack. Con las herramientas de PowerShell para Azure Stack, puede programar copias de seguridad desde cualquier cliente o servidor con acceso al punto de conexión de la API de administración del operador.
+Habilite Copia de seguridad de infraestructura después de la implementación en cada nube de Azure Stack Hub. Con las herramientas de PowerShell para Azure Stack Hub, puede programar copias de seguridad desde cualquier cliente o servidor con acceso al punto de conexión de la API de administración del operador.
 
 ### <a name="networking"></a>Redes
 
@@ -47,15 +45,15 @@ La cadena de convención de nomenclatura universal (UNC) para la ruta de acceso 
 
 El certificado de cifrado se utiliza para cifrar los datos de copia de seguridad que se exportan a un almacenamiento externo. El certificado puede ser un certificado autofirmado, ya que el certificado se usa solo para transportar claves. Para más información sobre cómo crear un certificado, consulte New-SelfSignedCertificate.
   
-La clave debe almacenarse en una ubicación segura (por ejemplo, un certificado de Azure Key Vault global). Este formato CER del certificado se usa para cifrar los datos. El formato PFX debe usarse durante la implementación de recuperación en la nube de Azure Stack para descifrar los datos de copia de seguridad.
+La clave debe almacenarse en una ubicación segura (por ejemplo, un certificado de Azure Key Vault global). Este formato CER del certificado se usa para cifrar los datos. El formato PFX debe usarse durante la implementación de recuperación en la nube de Azure Stack Hub para descifrar los datos de copia de seguridad.
 
 ![Almacene el certificado en una ubicación segura.](media/azure-stack-backup/azure-stack-backup-encryption-store-cert.png)
 
 #### <a name="1811-and-older"></a>1811 y anteriores
 
-La clave de cifrado se utiliza para cifrar los datos de copia de seguridad que se exportan a un almacenamiento externo. La clave se genera como parte de la [habilitación de la copia de seguridad de Azure Stack con PowerShell](azure-stack-backup-enable-backup-powershell.md).
+La clave de cifrado se utiliza para cifrar los datos de copia de seguridad que se exportan a un almacenamiento externo. La clave se genera como parte de la [habilitación de la copia de seguridad de Azure Stack Hub con PowerShell](azure-stack-backup-enable-backup-powershell.md).
 
-La clave debe almacenarse en una ubicación segura (por ejemplo, un secreto de Azure Key Vault global). Esta clave se debe utilizar durante la reimplementación de Azure Stack.
+La clave debe almacenarse en una ubicación segura (por ejemplo, un secreto de Azure Key Vault global). Esta clave se debe utilizar durante la reimplementación de Azure Stack Hub.
 
 ![Almacenamiento de la clave en una ubicación segura.](media/azure-stack-backup/azure-stack-backup-encryption2.png)
 
@@ -64,14 +62,14 @@ La clave debe almacenarse en una ubicación segura (por ejemplo, un secreto de A
 ### <a name="backups"></a>Copias de seguridad
 
  - Los trabajos de copia de seguridad se ejecutan mientras se está ejecutando el sistema, de modo que no hay ningún tiempo de inactividad en las aplicaciones de usuario o las experiencias de administración. Los trabajos de copia de seguridad tardan entre 20 y 40 minutos para una solución que está bajo una carga razonable.
- - Utilizando las instrucciones proporcionadas por el OEM, el host de ciclo de vida de hardware y los conmutadores de red de copia de seguridad manuales deben almacenarse en el recurso compartido de copia de seguridad en el que el controlador de Copia de seguridad de infraestructura almacena los datos de copia de seguridad del plano de control. Considere la posibilidad de almacenar las configuraciones del host de ciclo de vida de hardware y el conmutador en la carpeta de la región. Si tiene varias instancias de la Azure Stack en la misma región, puede usar un identificador para cada configuración que pertenezca a una unidad de escala.
+ - Utilizando las instrucciones proporcionadas por el OEM, el host de ciclo de vida de hardware y los conmutadores de red de copia de seguridad manuales deben almacenarse en el recurso compartido de copia de seguridad en el que el controlador de Copia de seguridad de infraestructura almacena los datos de copia de seguridad del plano de control. Considere la posibilidad de almacenar las configuraciones del host de ciclo de vida de hardware y el conmutador en la carpeta de la región. Si tiene varias instancias de la Azure Stack Hub en la misma región, puede usar un identificador para cada configuración que pertenezca a una unidad de escala.
 
 ### <a name="folder-names"></a>Nombres de carpetas
 
- - La infraestructura crea la carpeta MASBACKUP automáticamente. Se trata de un recurso compartido administrado por Microsoft. Puede crear recursos compartidos en el mismo nivel que MASBACKUP. No se recomienda crear carpetas o almacenar datos dentro de una carpeta MASBACKUP que no haya creado Azure Stack.
- -  Use el nombre de dominio completo y la región en el nombre de la carpeta para diferenciar los datos de copia de seguridad de nubes diferentes. El nombre de dominio completo (FQDN) de su implementación y puntos de conexión de Azure Stack es la combinación de los parámetros de región y de nombre de dominio externo. Para más información, vea [Integración del centro de datos de Azure Stack: DNS](azure-stack-integrate-dns.md).
+ - La infraestructura crea la carpeta MASBACKUP automáticamente. Se trata de un recurso compartido administrado por Microsoft. Puede crear recursos compartidos en el mismo nivel que MASBACKUP. No se recomienda crear carpetas o almacenar datos dentro de una carpeta MASBACKUP que no haya creado Azure Stack Hub.
+ -  Use el nombre de dominio completo y la región en el nombre de la carpeta para diferenciar los datos de copia de seguridad de nubes diferentes. El nombre de dominio completo (FQDN) de su implementación y puntos de conexión de Azure Stack Hub es la combinación de los parámetros de región y de nombre de dominio externo. Para más información, consulte [Integración de Azure Stack Hub en el centro de datos: DNS](azure-stack-integrate-dns.md).
 
-Por ejemplo, el recurso compartido de copia de seguridad es AzSBackups, hospedado en fileserver01.contoso.com. En ese recurso compartido de archivos puede haber una carpeta para cada implementación de Azure Stack que use el nombre de dominio externo y una subcarpeta que use el nombre de región.
+Por ejemplo, el recurso compartido de copia de seguridad es AzSBackups, hospedado en fileserver01.contoso.com. En ese recurso compartido de archivos puede haber una carpeta para cada implementación de Azure Stack Hub que use el nombre de dominio externo y una subcarpeta que use el nombre de región.
 
 FQDN: contoso.com  
 Región: nyc
@@ -82,7 +80,7 @@ Región: nyc
     \\fileserver01.contoso.com\AzSBackups\contoso.com\nyc
     \\fileserver01.contoso.com\AzSBackups\contoso.com\nyc\MASBackup
 
-La carpeta MASBackup es donde Azure Stack almacena sus datos de copia de seguridad. No use esta carpeta para almacenar sus propios datos. Los OEM no deben usar tampoco esta carpeta para almacenar los datos de copia de seguridad.
+La carpeta MASBackup es donde Azure Stack Hub almacena sus datos de copia de seguridad. No use esta carpeta para almacenar sus propios datos. Los OEM no deben usar tampoco esta carpeta para almacenar los datos de copia de seguridad.
 
 Se recomienda a los OEM que almacenen los datos de copia de seguridad de sus componentes en la carpeta de la región. Cada conmutador de red, host de ciclo de vida de hardware, etc., puede almacenarse en su propia subcarpeta. Por ejemplo:
 
@@ -95,10 +93,10 @@ Se recomienda a los OEM que almacenen los datos de copia de seguridad de sus com
 
 El sistema prevé las siguientes alertas:
 
-| Alerta                                                   | DESCRIPCIÓN                                                                                     | Corrección                                                                                                                                |
+| Alerta                                                   | Descripción                                                                                     | Corrección                                                                                                                                |
 |---------------------------------------------------------|-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
 | Se ha producido un error de copia de seguridad porque el recurso compartido de archivos ha llegado al límite de su capacidad. | El recurso compartido de archivos ha llegado al límite de su capacidad y el controlador de copia de seguridad no puede exportar archivos de copia de seguridad a la ubicación. | Agregue más capacidad de almacenamiento e intente realizar la copia de seguridad de nuevo. Elimine copias de seguridad existentes (de la más antigua a la primera) para liberar espacio.                    |
-| Error de copia de seguridad debido a problemas de conectividad.             | La red entre Azure Stack y el recurso compartido de archivos está experimentando problemas.                          | Solucione el problema de red e intente realizar la copia de seguridad de nuevo.                                                                                            |
+| Error de copia de seguridad debido a problemas de conectividad.             | La red entre Azure Stack Hub y el recurso compartido de archivos está experimentando problemas.                          | Solucione el problema de red e intente realizar la copia de seguridad de nuevo.                                                                                            |
 | Se ha producido un error de copia de seguridad debido a un error en la ruta de acceso.                | No se puede resolver la ruta de acceso del recurso compartido de archivos.                                                          | Asigne el recurso compartido desde otro equipo para asegurarse de que es posible acceder a él. Es posible que tenga que actualizar la ruta de acceso si ya no es válida.       |
 | Se ha producido un error de copia de seguridad debido a un problema de autenticación               | Puede haber un problema con las credenciales o un problema de red que afecta a la autenticación.    | Asigne el recurso compartido desde otro equipo para asegurarse de que es posible acceder a él. Es posible que tenga que actualizar las credenciales si ya no son válidas. |
 | Se ha producido un error de copia de seguridad debido a un error general.                    | La solicitud con error podría deberse a un problema intermitente. Intente realizar la copia de seguridad de nuevo.                    | Llame al soporte técnico.                                                                                                                               |

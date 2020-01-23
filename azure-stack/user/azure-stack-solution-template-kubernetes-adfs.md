@@ -1,6 +1,6 @@
 ---
-title: Implementación de Kubernetes en Azure Stack con los Servicios de federación de Active Directory (AD FS) | Microsoft Docs
-description: Obtenga información sobre cómo implementar Kubernetes en Azure Stack con los Servicios de federación de Active Directory (AD FS).
+title: Implementación de Kubernetes en Azure Stack Hub con los Servicios de federación de Active Directory (AD FS) | Microsoft Docs
+description: Obtenga información sobre cómo implementar Kubernetes en Azure Stack Hub con los Servicios de federación de Active Directory (AD FS).
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,41 +15,39 @@ ms.date: 10/10/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
-ms.openlocfilehash: a57d1d1520eb09e52e651d65c92314723c3aee4f
-ms.sourcegitcommit: 0d27456332031ab98ba2277117395ae5ffcbb79f
+ms.openlocfilehash: 5bef03b0cb89a44cf6453bea9dbe4deeeb771430
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73047236"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883310"
 ---
-# <a name="deploy-kubernetes-to-azure-stack-using-active-directory-federated-services"></a>Implementación de Kubernetes en Azure Stack con los Servicios de federación de Active Directory
-
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+# <a name="deploy-kubernetes-to-azure-stack-hub-using-active-directory-federated-services"></a>Implementación de Kubernetes en Azure Stack Hub con los Servicios de federación de Active Directory
 
 > [!Note]  
 > Use únicamente el elemento Kubernetes de Marketplace de Azure Stack para implementar clústeres como prueba de concepto. Para los clústeres de Kubernetes admitidos en Azure Stack, utilice el  [motor de AKS](azure-stack-kubernetes-aks-engine-overview.md).
 
 Puede seguir los pasos descritos en este artículo para implementar y configurar los recursos de Kubernetes. Siga estos pasos cuando los Servicios de federación de Active Directory (AD FS) sean su servicio de administración de identidad.
 
-## <a name="prerequisites"></a>Requisitos previos 
+## <a name="prerequisites"></a>Prerequisites 
 
-Para empezar, asegúrese de tener los permisos adecuados y de que la instancia de Azure Stack está lista.
+Para empezar, asegúrese de tener los permisos adecuados y de que la instancia de Azure Stack Hub está lista.
 
-1. Genere un par de claves SSH pública y privada para iniciar sesión en la máquina virtual de Linux en Azure Stack. Necesita la clave pública al crear el clúster.
+1. Genere un par de claves SSH pública y privada para iniciar sesión en la máquina virtual de Linux en Azure Stack Hub. Necesita la clave pública al crear el clúster.
 
     Para obtener instrucciones sobre cómo generar una clave, consulte [SSH Key Generation](azure-stack-dev-start-howto-ssh-public-key.md) (Generación de claves SSH).
 
-1. Compruebe que tiene una suscripción válida en el portal del inquilino de Azure Stack y que tiene suficientes direcciones IP públicas disponibles para agregar nuevas aplicaciones.
+1. Compruebe que tiene una suscripción válida en el portal del inquilino de Azure Stack Hub y que tiene suficientes direcciones IP públicas disponibles para agregar nuevas aplicaciones.
 
-    No se puede implementar el clúster en una suscripción de **administrador** de Azure Stack. Debe usar una suscripción de **Usuario**. 
+    No se puede implementar el clúster en una suscripción de **Administrador** de Azure Stack Hub. Debe usar una suscripción de **Usuario**. 
 
-1. Si no tiene un clúster de Kubernetes en Marketplace, póngase en contacto con su administrador de Azure Stack.
+1. Si no tiene un clúster de Kubernetes en Marketplace, póngase en contacto con su administrador de Azure Stack Hub.
 
 ## <a name="create-a-service-principal"></a>Creación de una entidad de servicio
 
-Deberá trabajar con el administrador de Azure Stack para que configure la entidad de servicio cuando se use AD FS como solución de identidad. La entidad de servicio permite que la aplicación acceda a los recursos de Azure Stack.
+Deberá trabajar con el administrador de Azure Stack Hub para que configure la entidad de servicio cuando se use AD FS como solución de identidad. La entidad de servicio permite que la aplicación acceda a los recursos de Azure Stack Hub.
 
-1. El administrador de Azure Stack le proporciona información de la entidad de servicio. La información de la entidad de servicio debe ser similar a esto:
+1. El administrador de Azure Stack Hub le proporciona información de la entidad de servicio. La información de la entidad de servicio debe ser similar a esto:
 
      ```Text  
        ApplicationIdentifier : S-1-5-21-1512385356-3796245103-1243299919-1356
@@ -65,7 +63,7 @@ Deberá trabajar con el administrador de Azure Stack para que configure la entid
 
 ## <a name="deploy-kubernetes"></a>Implementación de Kubernetes
 
-1. Abra el [portal de Azure Stack](https://portal.local.azurestack.external).
+1. Abra el [portal de Azure Stack Hub](https://portal.local.azurestack.external).
 
 1. Seleccione **+ Crear un recurso** > **Proceso** > **Clúster de Kubernetes**. Seleccione **Crear**.
 
@@ -81,7 +79,7 @@ Deberá trabajar con el administrador de Azure Stack para que configure la entid
 
 1. Escriba el nombre del nuevo grupo de recursos o seleccione uno existente. El nombre del recurso debe ser alfanumérico y estar en minúsculas.
 
-1. Seleccione la **ubicación** del grupo de recursos. Esta es la región que elige para la instalación de Azure Stack.
+1. Seleccione la **ubicación** del grupo de recursos. Esta es la región que ha elegido para la instalación de Azure Stack Hub.
 
 ### <a name="2-kubernetes-cluster-settings"></a>2. Configuración de un clúster de Kubernetes
 
@@ -106,13 +104,13 @@ Deberá trabajar con el administrador de Azure Stack para que configure la entid
 
 1. Seleccione **The VMSize of the Kubernetes node VMs** (VMSize de las VM del nodo de Kubernetes). Así se especifica el tamaño de máquina virtual de las máquinas virtuales del nodo de Kubernetes. 
 
-1. Seleccione **ADFS** como **sistema de identidad de Azure Stack** para la instalación de Azure Stack.
+1. Seleccione **ADFS** como **sistema de identidad de Azure Stack Hub** para la instalación de Azure Stack Hub.
 
-1. Escriba el **id. de cliente de la entidad de servicio**. El proveedor de nube de Azure Kubernetes usa este identificador. El id. de cliente identificado como identificador de la aplicación cuando el administrador de Azure Stack creó la entidad de servicio.
+1. Escriba el **id. de cliente de la entidad de servicio**. El proveedor de nube de Azure Kubernetes usa este identificador. El identificador de cliente indicado como identificador de la aplicación cuando el administrador de Azure Stack Hub creó la entidad de servicio.
 
-1. Escriba el **Secreto de cliente de la entidad de servicio**. Este es el secreto de cliente que se le proporcionó para la entidad de servicio de AD FS desde el Administrador de Azure Stack.
+1. Escriba el **Secreto de cliente de la entidad de servicio**. Este es el secreto de cliente que se le proporcionó para la entidad de servicio de AD FS desde el Administrador de Azure Stack Hub.
 
-1. Escriba la **Versión de Kubernetes**. Esta es la versión para el proveedor de Kubernetes Azure. Azure Stack publica una compilación de Kubernetes personalizada para cada versión de Azure Stack.
+1. Escriba la **Versión de Kubernetes**. Esta es la versión para el proveedor de Kubernetes Azure. Azure Stack Hub publica una compilación de Kubernetes personalizada para cada versión de Azure Stack Hub.
 
 ### <a name="3-summary"></a>3. Resumen
 
@@ -125,7 +123,7 @@ Deberá trabajar con el administrador de Azure Stack para que configure la entid
 3. Seleccione **Ok** (Aceptar) para implementar el clúster.
 
 > [!TIP]  
->  Si tiene preguntas acerca de la implementación, puede publicarlas o ver si alguien ya ha respondido a las mismas preguntas en el [foro de Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack). 
+>  Si tiene preguntas acerca de la implementación, puede publicarlas o ver si alguien ya ha respondido a las mismas preguntas en el [foro de Azure Stack Hub](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack). 
 
 ## <a name="next-steps"></a>Pasos siguientes
 

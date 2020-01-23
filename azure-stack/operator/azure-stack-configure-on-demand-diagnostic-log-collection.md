@@ -1,6 +1,6 @@
 ---
-title: Recopilación de registros de diagnóstico de Azure Stack a petición | Microsoft Docs
-description: Aprenda a recopilar registros de diagnóstico a petición en Azure Stack con ayuda y soporte técnico o un punto de conexión con privilegios (PEP).
+title: Recopilación de registros de diagnóstico de Azure Stack Hub a petición | Microsoft Docs
+description: Aprenda a recopilar registros de diagnóstico a petición en Azure Stack Hub con ayuda y soporte técnico o un punto de conexión con privilegios (PEP).
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -16,25 +16,23 @@ ms.date: 11/07/2019
 ms.author: justinha
 ms.reviewer: shisab
 ms.lastreviewed: 11/07/2019
-ms.openlocfilehash: ccc552e6daee4f1492d1070a08f5be19e41217dd
-ms.sourcegitcommit: 7817d61fa34ac4f6410ce6f8ac11d292e1ad807c
+ms.openlocfilehash: f30791ec7514a68a6137d2b5d2db3441cf217f58
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74690012"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883089"
 ---
-# <a name="collect-azure-stack-diagnostic-logs-on-demand"></a>Recopilación de registros de diagnóstico de Azure Stack a petición
+# <a name="collect-azure-stack-hub-diagnostic-logs-on-demand"></a>Recopilación de registros de diagnóstico de Azure Stack Hub a petición
 
-*Se aplica a: Sistemas integrados de Azure Stack*
-
-Como parte de la solución de problemas, es posible que los servicios de soporte al cliente de Microsoft (CSS) necesiten analizar los registros de diagnóstico. A partir de la versión 1907, los operadores de Azure Stack pueden usar **Ayuda y soporte técnico** para cargar registros de diagnóstico en un contenedor de blobs de Azure. Se recomienda usar **Ayuda y soporte técnico** en lugar de PowerShell porque es más sencillo. Pero, si el portal no está disponible, los operadores pueden seguir recopilando registros mediante **Get-AzureStackLog** a través del punto de conexión con privilegios (PEP), igual que en las versiones anteriores. En este tema se tratan las dos maneras de recopilar registros de diagnóstico a petición.
+Como parte de la solución de problemas, es posible que los servicios de soporte al cliente de Microsoft (CSS) necesiten analizar los registros de diagnóstico. A partir de la versión 1907, los operadores de Azure Stack Hub pueden usar **Ayuda y soporte técnico** para cargar registros de diagnóstico en un contenedor de blobs de Azure. Se recomienda usar **Ayuda y soporte técnico** en lugar de PowerShell porque es más sencillo. Pero, si el portal no está disponible, los operadores pueden seguir recopilando registros mediante **Get-AzureStackLog** a través del punto de conexión con privilegios (PEP), igual que en las versiones anteriores. En este tema se tratan las dos maneras de recopilar registros de diagnóstico a petición.
 
 >[!Note]
 >Como alternativa a la recopilación de registros a petición, puede simplificar el proceso de solución de problemas si habilita la [recopilación de registros de diagnóstico automático](azure-stack-configure-automatic-diagnostic-log-collection.md). En caso de que deban investigarse las condiciones de mantenimiento del sistema, los servicios de soporte al cliente (CSS) de Microsoft pueden cargar los registros automáticamente para su análisis. 
 
 ## <a name="use-help-and-support-to-collect-diagnostic-logs-on-demand"></a>Uso de la ayuda y soporte técnico para recopilar registros de diagnóstico a petición
 
-Para solucionar un problema, CSS podría solicitar que un operador de Azure Stack recopilara los registros de diagnóstico a petición para una ventana de tiempo específica de la semana anterior. En ese caso, CSS proporcionará al operador una dirección URL de SAS para cargar la colección. Siga los pasos que se indican a continuación para configurar la recopilación de registros a petición mediante la dirección URL de SAS de CSS:
+Para solucionar un problema, CSS podría solicitar que un operador de Azure Stack Hub recopilara los registros de diagnóstico a petición para una ventana de tiempo específica de la semana anterior. En ese caso, CSS proporcionará al operador una dirección URL de SAS para cargar la colección. Siga los pasos que se indican a continuación para configurar la recopilación de registros a petición mediante la dirección URL de SAS de CSS:
 
 1. Abra **Help and Support Overview** (Información general de ayuda y soporte técnico) y haga clic en **Collect logs now** (Recopilar registros ahora). 
 1. Puede elegir una ventana deslizante de entre 1 y 4 horas de los últimos siete días. 
@@ -52,7 +50,7 @@ Para solucionar un problema, CSS podría solicitar que un operador de Azure Stac
 
 
 
-### <a name="run-get-azurestacklog-on-azure-stack-integrated-systems"></a>Ejecución de Get-AzureStackLog en sistemas integrados de Azure Stack
+### <a name="run-get-azurestacklog-on-azure-stack-hub-integrated-systems"></a>Ejecución de Get-AzureStackLog en sistemas integrados de Azure Stack Hub
 
 Para ejecutar Get-AzureStackLog en un sistema integrado, debe tener acceso al punto de conexión con privilegios (PEP). Este es un script de ejemplo que se puede ejecutar mediante el PEP para recopilar registros en un sistema integrado:
 
@@ -110,7 +108,7 @@ Siga estos pasos para ejecutar `Get-AzureStackLog` en un equipo que hospede ASDK
   Get-AzureStackLog -OutputSharePath "<path>" -OutputShareCredential $cred -FilterByRole VirtualMachines,BareMetal -FromDate (Get-Date).AddHours(-8) -ToDate (Get-Date).AddHours(-2)
   ```
 
-* Recopilación de registros de implementaciones de inquilino que ejecutan Azure Kubernetes Services (AKS) autoadministrado en Azure Stack. Los registros de AKS deben almacenarse en una cuenta de almacenamiento de inquilino en un formato que permita que el intervalo de tiempo de recopilación se aplique también a estos. 
+* Recopilación de registros de implementaciones de inquilino que ejecutan Azure Kubernetes Services (AKS) autoadministrado en Azure Stack Hub. Los registros de AKS deben almacenarse en una cuenta de almacenamiento de inquilino en un formato que permita que el intervalo de tiempo de recopilación se aplique también a estos. 
 
   ```powershell
   Get-AzureStackLog -OutputPath <Path> -InputSasUri "<Blob Service Sas URI>" -FromDate "<Beginning of the time range>" -ToDate "<End of the time range>"
@@ -135,7 +133,7 @@ Siga estos pasos para ejecutar `Get-AzureStackLog` en un equipo que hospede ASDK
   ```
 
   > [!NOTE]
-  > Este procedimiento es útil para cargar registros. Aunque no tenga ningún recurso compartido de SMB al que se pueda acceder o acceso a Internet, puede crear una cuenta de almacenamiento de blobs en Azure Stack para transferir los registros y, después, usar el cliente para recuperarlos.  
+  > Este procedimiento es útil para cargar registros. Aunque no tenga ningún recurso compartido de SMB al que se pueda acceder o acceso a Internet, puede crear una cuenta de almacenamiento de blobs en Azure Stack Hub para transferir los registros y, después, usar el cliente para recuperarlos.  
 
   Para generar el token de SAS para la cuenta de almacenamiento, se requieren los permisos siguientes:
 
@@ -202,7 +200,7 @@ Siga estos pasos para ejecutar `Get-AzureStackLog` en un equipo que hospede ASDK
 
 ### <a name="additional-considerations-on-diagnostic-logs"></a>Consideraciones adicionales sobre los registros de diagnóstico
 
-* Este comando tardará un rato en ejecutarse, en función de los roles que recopilen los registros. Entre los factores que contribuyen, se incluye la duración especificada para la colección de registros y el número de nodos en el entorno de Azure Stack.
+* Este comando tardará un rato en ejecutarse, en función de los roles que recopilen los registros. Entre los factores que contribuyen, se incluye la duración especificada para la recopilación de registros y el número de nodos en el entorno de Azure Stack Hub.
 * Cuando se ejecuta la recopilación de registros, compruebe la nueva carpeta creada en el parámetro **OutputSharePath** especificado en el comando.
 * Cada rol tiene sus registros dentro de archivos ZIP individuales. Según el tamaño de los registros recopilados, un rol puede dividir sus registros en varios archivos ZIP. Para ese rol, si desea que todos los archivos de registro se descompriman en una sola carpeta, use una herramienta que pueda descomprimir de forma masiva. Seleccione todos los archivos comprimidos para el rol y seleccione **extraer aquí**. Todos los archivos de registro de ese rol se descomprimirán en una sola carpeta combinada.
 * También se crea un archivo denominado **Get-AzureStackLog_Output.log** en la carpeta que contiene los archivos de registro comprimidos. Este archivo es un registro de la salida del comando, que se puede usar para solucionar problemas durante la recopilación de registros. En ocasiones, el archivo de registro incluye entradas `PS>TerminatingError` que se pueden omitir sin problema, a menos que falten los archivos de registro esperados después de ejecutar la recopilación de registros.
@@ -254,25 +252,25 @@ if ($session) {
 
 ### <a name="how-diagnostic-log-collection-using-the-pep-works"></a>Cómo funciona la recopilación de registros de diagnóstico con PEP
 
-Las herramientas de diagnóstico de Azure Stack ayudan a que la recopilación de registros sea fácil y eficaz. En el diagrama siguiente se muestra cómo funcionan las herramientas de diagnóstico:
+Las herramientas de diagnóstico de Azure Stack Hub ayudan a que la recopilación de registros sea fácil y eficaz. En el diagrama siguiente se muestra cómo funcionan las herramientas de diagnóstico:
 
-![Diagrama de flujo de trabajo de herramientas de diagnóstico de Azure Stack](media/azure-stack-diagnostics/get-azslogs.png)
+![Diagrama de flujo de trabajo de las herramientas de diagnóstico de Azure Stack Hub](media/azure-stack-diagnostics/get-azslogs.png)
 
 
 #### <a name="trace-collector"></a>Recopilador de seguimiento
 
-El recopilador de seguimiento está habilitado de forma predeterminada y se ejecuta continuamente en segundo plano para recopilar el todos los registros de Seguimiento de eventos para Windows (ETW) de los servicios de componentes de Azure Stack. Los registros de ETW se almacenan en un recurso compartido local común con un límite de antigüedad de cinco días. Una vez que se alcanza este límite, se eliminan los archivos más antiguos cuando se crean nuevos. El tamaño máximo predeterminado permitido para cada archivo es de 200 MB. Se realiza una comprobación de tamaño cada dos minutos y si el archivo actual es > = 200 MB, se guarda y se genera otro. También hay un límite de 8 GB en el tamaño total del archivo generado por cada sesión de eventos.
+El recopilador de seguimiento está habilitado de forma predeterminada y se ejecuta continuamente en segundo plano para recopilar todos los registros de Seguimiento de eventos para Windows (ETW) de los servicios de componentes de Azure Stack Hub. Los registros de ETW se almacenan en un recurso compartido local común con un límite de antigüedad de cinco días. Una vez que se alcanza este límite, se eliminan los archivos más antiguos cuando se crean nuevos. El tamaño máximo predeterminado permitido para cada archivo es de 200 MB. Se realiza una comprobación de tamaño cada dos minutos y si el archivo actual es > = 200 MB, se guarda y se genera otro. También hay un límite de 8 GB en el tamaño total del archivo generado por cada sesión de eventos.
 
 #### <a name="get-azurestacklog"></a>Get-AzureStackLog
 
-El cmdlet de PowerShell Get-AzureStackLog se puede utilizar para recopilar registros de todos los componentes en un entorno de Azure Stack. Los guarda en archivos ZIP en una ubicación definida por el usuario. Si el equipo de soporte técnico de Azure Stack necesita los registros para ayudarle a solucionar un problema, puede que le pidan que ejecute Get-AzureStackLog.
+El cmdlet de PowerShell Get-AzureStackLog se puede utilizar para recopilar registros de todos los componentes en un entorno de Azure Stack Hub. Los guarda en archivos ZIP en una ubicación definida por el usuario. Si el equipo de soporte técnico de Azure Stack Hub necesita los registros para ayudarle a solucionar un problema, puede que le pidan que ejecute Get-AzureStackLog.
 
 > [!CAUTION]
 > Estos archivos de registro pueden contener información de identificación personal (PII). Tenga esto en cuenta antes de publicar los archivos de registro.
 
 Estos son algunos ejemplos de tipos de registro que se recopilan:
 
-* **Registros de implementación de Azure Stack**
+* **Registros de implementación de Azure Stack Hub**
 * **Registros de eventos de Windows**
 * **Registros de Panther**
 * **Registros de clúster**

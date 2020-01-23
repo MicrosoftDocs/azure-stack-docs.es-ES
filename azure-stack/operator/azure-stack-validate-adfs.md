@@ -1,6 +1,6 @@
 ---
-title: Validar la integración de AD FS para Azure Stack
-description: Use Azure Stack Readiness Checker para validar la integración de AD FS para Azure Stack.
+title: Validación de la integración de AD FS para Azure Stack Hub
+description: Use Azure Stack Hub Readiness Checker para validar la integración de AD FS con Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: PatAltimore
@@ -16,28 +16,28 @@ ms.date: 06/10/2019
 ms.author: patricka
 ms.reviewer: jerskine
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: 9945113e778f69000a720d5f5045f691f439d076
-ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
+ms.openlocfilehash: 311e676785461eee27bd82911cf9fef3bc408c4b
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75718545"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75812967"
 ---
-# <a name="validate-ad-fs-integration-for-azure-stack"></a>Validar la integración de AD FS para Azure Stack
+# <a name="validate-ad-fs-integration-for-azure-stack-hub"></a>Validación de la integración de AD FS para Azure Stack Hub
 
-Use la herramienta Azure Stack Readiness Checker (AzsReadinessChecker) para confirmar que su entorno esté listo para la integración de Active Directory Federation Services (AD FS) con Azure Stack. Valide la integración de AD FS antes de comenzar la integración del centro de datos o antes de una implementación de Azure Stack.
+Use la herramienta Azure Stack Hub Readiness Checker (AzsReadinessChecker) para validar que su entorno está listo para la integración de Active Directory Federation Services (AD FS) con Azure Stack Hub. Valide la integración de AD FS antes de iniciarla en el centro de datos o antes de una implementación de Azure Stack Hub.
 
 La herramienta Readiness Checker valida:
 
 * Los *metadatos de federación* contienen los elementos XML válidos para la federación.
-* El *certificado SSL de AD FS* se puede recuperar y se puede compilar una cadena de confianza. En la marca de AD FS, debe confiar en la cadena de certificados SSL. Es necesario que el certificado lo firme la misma *autoridad de certificación* que se usó para firmar los certificados de implementación de Azure Stack o un asociado de confianza de la autoridad raíz. Para ver la lista completa de asociados de la autoridad raíz de confianza, consulte: [TechNet](https://gallery.technet.microsoft.com/Trusted-Root-Certificate-123665ca).
+* El *certificado SSL de AD FS* se puede recuperar y se puede compilar una cadena de confianza. En la marca de AD FS, debe confiar en la cadena de certificados SSL. Es necesario que el certificado lo firme la misma *autoridad de certificación* que se usó para firmar los certificados de implementación de Azure Stack Hub o un asociado de confianza de la autoridad raíz. Para ver la lista completa de asociados de la autoridad raíz de confianza, consulte: [TechNet](https://gallery.technet.microsoft.com/Trusted-Root-Certificate-123665ca).
 * *El certificado de firma de AD FS* es de confianza y no expirará en breve.
 
-Para obtener más información acerca de los requisitos de la integración del centro de datos de Azure Stack, consulte [Integración del centro de datos de Azure Stack: identidad](azure-stack-integrate-identity.md).
+Para más información sobre los requisitos de la integración de Azure Stack Hub en el centro de datos, consulte [Integración de Azure Stack Hub en el centro de datos: identidad](azure-stack-integrate-identity.md).
 
 ## <a name="get-the-readiness-checker-tool"></a>Obtención de la herramienta Readiness Checker
 
-Descargue la versión más reciente de Azure Stack Readiness Checker (AzsReadinessChecker) desde [Galería de PowerShell](https://aka.ms/AzsReadinessChecker).  
+Descargue la versión más reciente de la herramienta Azure Stack Hub Readiness Checker (AzsReadinessChecker) desde la [Galería de PowerShell](https://aka.ms/AzsReadinessChecker).  
 
 ## <a name="prerequisites"></a>Prerequisites
 
@@ -48,7 +48,7 @@ Deben cumplirse los siguientes requisitos previos.
 * Windows 10 o Windows Server 2016, con conectividad de dominio.
 * Azure PowerShell 5.1 o posterior. Para comprobar la versión, ejecute el siguiente comando de PowerShell y luego revise la versión *principal* y las versiones *secundarias*:  
    > `$PSVersionTable.PSVersion`
-* La versión más reciente de la herramienta [Microsoft Azure Stack Readiness Checker](https://aka.ms/AzsReadinessChecker).
+* La versión más reciente de la herramienta [Microsoft Azure Stack Hub Readiness Checker](https://aka.ms/AzsReadinessChecker).
 
 **Entorno de los Servicios de federación de Active Directory:**
 
@@ -81,7 +81,7 @@ Necesita al menos uno de los siguientes formatos de metadatos:
             Test Certificate Expiry:               OK
 
     Details:
-    [-] In standalone mode, some tests should not be considered fully indicative of connectivity or readiness the Azure Stack Stamp requires prior to Datacenter Integration.
+    [-] In standalone mode, some tests should not be considered fully indicative of connectivity or readiness the Azure Stack Hub Stamp requires prior to Datacenter Integration.
     Additional help URL: https://aka.ms/AzsADFSIntegration
 
     Log location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessChecker.log
@@ -90,20 +90,20 @@ Necesita al menos uno de los siguientes formatos de metadatos:
     Invoke-AzsADFSValidation Completed
     ```
 
-En entornos de producción, el proceso de prueba de cadenas de certificados de confianza que se realiza desde una estación de trabajo de operadores no es totalmente indicativo de la postura de confianza de PKI en la infraestructura de Azure Stack. La red VIP pública de la marca de Azure Stack necesita tener conectividad a la CRL en la infraestructura PKI.
+En entornos de producción, el proceso de prueba de cadenas de certificados de confianza que se realiza desde una estación de trabajo de operadores no es totalmente indicativo de la postura de confianza de PKI en la infraestructura de Azure Stack Hub. La red VIP pública de la marca de Azure Stack Hub necesita tener conectividad a la CRL en la infraestructura PKI.
 
 ## <a name="report-and-log-file"></a>Informe y archivo de registro
 
 Cada vez que se ejecuta la validación, los resultados se registran en **AzsReadinessChecker.log** y **AzsReadinessCheckerReport.json**. La ubicación de estos archivos aparece con los resultados de validación de PowerShell.
 
-Estos archivos de validación pueden ayudarle a compartir el estado antes de implementar Azure Stack o investigar problemas de validación. Ambos archivos conservan los resultados de cada comprobación de validación posterior. El informe ofrece la confirmación del equipo de implementación de la configuración de identidad. El archivo de registro puede ayudar al equipo de implementación o de soporte técnico a investigar los problemas de validación.
+Los archivos de validación pueden ayudarle a compartir el estado antes de implementar Azure Stack Hub o investigar problemas de validación. Ambos archivos conservan los resultados de cada comprobación de validación posterior. El informe ofrece la confirmación del equipo de implementación de la configuración de identidad. El archivo de registro puede ayudar al equipo de implementación o de soporte técnico a investigar los problemas de validación.
 
 De forma predeterminada, ambos archivos se escriben en `C:\Users\<username>\AppData\Local\Temp\AzsReadinessChecker\`.
 
 Uso:
 
 * **-OutputPath**: el parámetro de *ruta de acceso* al final del comando de ejecución para especificar otra ubicación para el informe.
-* **-CleanReport**: el parámetro al final del comando de ejecución para borrar AzsReadinessCheckerReport.json de la información del informe previo. Para obtener más información, consulte el artículo [Informe de validación de Azure Stack](azure-stack-validation-report.md).
+* **-CleanReport**: el parámetro al final del comando de ejecución para borrar AzsReadinessCheckerReport.json de la información del informe previo. Para más información, consulte [Informe de validación para Azure Stack Hub](azure-stack-validation-report.md).
 
 ## <a name="validation-failures"></a>Errores de validación
 
@@ -124,4 +124,4 @@ Los ejemplos siguientes ofrecen instrucciones sobre errores de validación comun
 ## <a name="next-steps"></a>Pasos siguientes
 
 [Vista del informe de preparación](azure-stack-validation-report.md)  
-[Consideraciones generales sobre la integración de Azure Stack](azure-stack-datacenter-integration.md)  
+[Consideraciones generales sobre la integración de Azure Stack Hub](azure-stack-datacenter-integration.md)  

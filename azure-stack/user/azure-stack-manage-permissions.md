@@ -1,6 +1,6 @@
 ---
-title: Administración del acceso a los recursos de Azure Stack con control de acceso basado en rol | Microsoft Docs
-description: Obtenga información para administrar los permisos de control de acceso basado en rol (RBAC) como administrador o inquilino de Azure Stack.
+title: Administración del acceso a los recursos de Azure Stack Hub con control de acceso basado en rol | Microsoft Docs
+description: Aprenda a administrar los permisos de control de acceso basado en rol (RBAC) como administrador o inquilino de Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: bryanla
@@ -16,29 +16,27 @@ ms.date: 09/13/2019
 ms.author: bryanla
 ms.reviewer: fiseraci
 ms.lastreviewed: 03/11/2019
-ms.openlocfilehash: a784da0d16f6ec92a105d9360430f4e8da2817ef
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.openlocfilehash: e242900d3604369306717a3d4cc2c5e3aae7932c
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70974931"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75879588"
 ---
-# <a name="manage-access-to-resources-in-azure-stack-with-role-based-access-control"></a>Administración del acceso a los recursos de Azure Stack con control de acceso basado en rol
+# <a name="manage-access-to-resources-in-azure-stack-hub-with-role-based-access-control"></a>Administración del acceso a los recursos de Azure Stack Hub con control de acceso basado en rol
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
-
-Azure Stack admite el control de acceso basado en rol (RBAC), que es el mismo [modelo de seguridad para la administración de acceso](/azure/role-based-access-control/overview) que usa Microsoft Azure. Puede usar RBAC para administrar el acceso de usuarios, grupos o aplicaciones a las suscripciones, los recursos y los servicios.
+Azure Stack Hub admite el control de acceso basado en rol (RBAC), que es el mismo [modelo de seguridad para la administración de acceso](/azure/role-based-access-control/overview) que usa Microsoft Azure. Puede usar RBAC para administrar el acceso de usuarios, grupos o aplicaciones a las suscripciones, los recursos y los servicios.
 
 ## <a name="basics-of-access-management"></a>Aspectos básicos de la administración de acceso
 
 El control de acceso basado en rol proporciona control de acceso muy detallado que puede usar para proteger su entorno. Se conceden a los usuarios los permisos exactos que necesitan mediante la asignación de un rol RBAC en un ámbito determinado. El ámbito de la asignación de roles puede ser una suscripción, un grupo de recursos o un único recurso. Consulte el artículo [Control de acceso basado en rol en Azure Portal](/azure/role-based-access-control/overview) para obtener información más detallada sobre la administración del acceso.
 
 > [!NOTE]
-> Cuando Azure Stack se implementa mediante Servicios de federación de Active Directory (AD FS) como proveedor de identidades, solo se admiten grupos universales para escenarios de RBAC.
+> Si Azure Stack Hub se implementa mediante Servicios de federación de Active Directory (AD FS) como proveedor de identidades, solo se admiten grupos universales en los escenarios de RBAC.
 
 ### <a name="built-in-roles"></a>Roles integrados
 
-Azure Stack cuenta con tres roles básicos que puede aplicar a todos los tipos de recurso:
+Azure Stack Hub cuenta con tres roles básicos que se pueden aplicar a todos los tipos de recursos:
 
 * **Propietario**: puede administrar todo, incluido el acceso a los recursos.
 * **Colaborador**: puede administrar todo, excepto el acceso a los recursos.
@@ -46,7 +44,7 @@ Azure Stack cuenta con tres roles básicos que puede aplicar a todos los tipos d
 
 ### <a name="resource-hierarchy-and-inheritance"></a>Jerarquía y herencia de recursos
 
-Azure Stack tiene la siguiente jerarquía de recursos:
+Azure Stack Hub tiene la siguiente jerarquía de recursos:
 
 * Cada suscripción pertenece a un directorio.
 * Cada grupo de recursos pertenece a una suscripción.

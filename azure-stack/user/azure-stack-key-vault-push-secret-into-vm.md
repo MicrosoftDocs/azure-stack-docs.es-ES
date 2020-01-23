@@ -1,6 +1,6 @@
 ---
-title: Implementación de una VM con un certificado almacenado de forma segura en Azure Stack | Microsoft Docs
-description: Aprenda a implementar una máquina virtual e inserte en ella un certificado utilizando un almacén de claves en Azure Stack
+title: Implementación de una máquina virtual con un certificado almacenado de forma segura en Azure Stack Hub | Microsoft Docs
+description: Aprenda a implementar una máquina virtual e inserte en ella un certificado mediante un almacén de claves en Azure Stack Hub
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,22 +15,20 @@ ms.topic: conceptual
 ms.date: 10/03/2019
 ms.author: sethm
 ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: 8741d63dbbcefde950fc10c0917d87bc4e9718f7
-ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
+ms.openlocfilehash: a65615e03e6e7fcda84ec16c6323e9fa2c2f6221
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71961519"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75879094"
 ---
-# <a name="deploy-a-vm-with-a-securely-stored-certificate-on-azure-stack"></a>Implementación de una VM con un certificado almacenado de forma segura en Azure Stack 
+# <a name="deploy-a-vm-with-a-securely-stored-certificate-on-azure-stack-hub"></a>Implementación de una máquina virtual con un certificado almacenado de forma segura en Azure Stack Hub 
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
-
-En este artículo se describe cómo implementar una máquina virtual (VM) de Azure Stack con un certificado de Key Vault instalado.
+En este artículo se describe cómo implementar una máquina virtual de Azure Stack Hub con un certificado de Key Vault instalado.
 
 ## <a name="overview"></a>Información general
 
-Los certificados se usan en muchos escenarios, como la autenticación en Active Directory o el cifrado del tráfico web. Puede almacenar certificados como secretos de forma segura en un almacén de claves de Azure Stack. Las ventajas de usar Key Vault de Azure Stack son:
+Los certificados se usan en muchos escenarios, como la autenticación en Active Directory o el cifrado del tráfico web. Puede almacenar certificados como secretos de forma segura en un almacén de claves de Azure Stack Hub. Las ventajas de usar Key Vault de Azure Stack Hub son:
 
 * Los certificados no se exponen en un script, un historial de línea de comandos o una plantilla.
 * El proceso de administración de certificados es más sencillo.
@@ -47,11 +45,11 @@ Los pasos siguientes describen el proceso necesario para insertar un certificado
 > [!NOTE]
 > Puede seguir estos pasos desde el Kit de desarrollo de Azure Stack (ASDK) o desde un cliente externo, si se conecta a través de VPN.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 * Debe suscribirse a una oferta que incluya el servicio Key Vault.
-* [Instale PowerShell para Azure Stack](../operator/azure-stack-powershell-install.md).
-* [Configure el entorno de PowerShell del usuario de Azure Stack](azure-stack-powershell-configure-user.md).
+* [Instale PowerShell para Azure Stack Hub](../operator/azure-stack-powershell-install.md).
+* [Configure el entorno de PowerShell del usuario de Azure Stack Hub](azure-stack-powershell-configure-user.md).
 
 ## <a name="create-a-key-vault-secret"></a>Creación de un secreto de almacén de claves
 
@@ -177,7 +175,7 @@ Cuando la plantilla se ha implementado correctamente, muestra la siguiente salid
 
 ![Resultados de la implementación de plantilla](media/azure-stack-key-vault-push-secret-into-vm/deployment-output.png)
 
-Azure Stack inserta el certificado en la VM durante la implementación. La ubicación del certificado depende del sistema operativo de la VM:
+Azure Stack Hub inserta el certificado en la máquina virtual durante la implementación. La ubicación del certificado depende del sistema operativo de la VM:
 
 * En Windows, el certificado se agrega a la ubicación de certificados **LocalMachine**, con el almacén de certificados que el usuario proporcionó.
 * En Linux, el certificado se coloca en el directorio **/var/lib/waagent**, con el nombre de archivo **UppercaseThumbprint.crt** para el archivo de certificado X509 y **UppercaseThumbprint.prv** para la clave privada.

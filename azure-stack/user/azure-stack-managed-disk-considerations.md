@@ -1,6 +1,6 @@
 ---
-title: 'Discos administrados de Azure Stack: diferencias y consideraciones | Microsoft Docs'
-description: Obtenga información sobre las diferencias y consideraciones al trabajar con discos administrados en Azure Stack.
+title: 'Discos administrados de Azure Stack Hub: Diferencias y consideraciones | Microsoft Docs'
+description: Obtenga información sobre las diferencias y consideraciones a la hora de trabajar con discos administrados en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -16,25 +16,25 @@ ms.date: 10/04/2019
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: 97684f2a0ef9960854b192ca15f972bc15ff5b62
-ms.sourcegitcommit: f91979c1613ea1aa0e223c818fc208d902b81299
+ms.openlocfilehash: 2e09f10fc61454cf1b32797e75b5a57fc3f90f8f
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71974060"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819886"
 ---
-# <a name="azure-stack-managed-disks-differences-and-considerations"></a>Discos administrados de Azure Stack: diferencias y consideraciones
+# <a name="azure-stack-hub-managed-disks-differences-and-considerations"></a>Discos administrados de Azure Stack Hub: Diferencias y consideraciones
 
-En este artículo se resumen las diferencias entre los [discos administrados de Azure Stack](azure-stack-manage-vm-disks.md) y los [discos administrados de Azure](/azure/virtual-machines/windows/managed-disks-overview). Para obtener información acerca de las diferencias de alto nivel entre Azure y Azure Stack, consulte el artículo [Key considerations](azure-stack-considerations.md) (Consideraciones clave).
+En este artículo se resumen las diferencias entre los [discos administrados de Azure Stack Hub](azure-stack-manage-vm-disks.md) y los [discos administrados de Azure](/azure/virtual-machines/windows/managed-disks-overview). Para más información acerca de las diferencias de alto nivel entre Azure Stack Hub y Azure, consulte el artículo [Consideraciones clave](azure-stack-considerations.md).
 
 Los discos administrados simplifican la administración de discos para las máquinas virtuales (VM) de IaaS, ya que administran las [cuentas de almacenamiento](../operator/azure-stack-manage-storage-accounts.md) asociadas a los discos de las máquinas virtuales.
 
 > [!NOTE]  
-> Los discos administrados en Azure Stack están disponibles a partir de la actualización 1808. A partir de la actualización 1811, la característica está habilitada de forma predeterminada al crear máquinas virtuales mediante el portal de Azure Stack.
+> Los discos administrados en Azure Stack Hub están disponibles a partir de la actualización 1808. A partir de la actualización 1811, la característica está habilitada de forma predeterminada al crear máquinas virtuales mediante el portal de Azure Stack Hub.
   
 ## <a name="cheat-sheet-managed-disk-differences"></a>Hoja de referencia rápida: diferencias entre los discos administrados
 
-| Característica | Azure (global) | Azure Stack |
+| Característica | Azure (global) | Azure Stack Hub |
 | --- | --- | --- |
 |Cifrado de datos en reposo |Azure Storage Service Encryption (SSE), Azure Disk Encryption (ADE).     |Cifrado AES de 128 bits de BitLocker      |
 |Imagen          | Imagen personalizada administrada |Compatible|
@@ -50,18 +50,18 @@ Los discos administrados simplifican la administración de discos para las máqu
 |Migración      |Proporciona herramientas para migrar desde máquinas virtuales de Azure Resource Manager no administradas existentes sin necesidad de volver a crear la máquina virtual.  |Todavía no se admite |
 
 > [!NOTE]  
-> Las E/S por segundo y el rendimiento de los discos administrados en Azure Stack son números extremos, en lugar de un número aprovisionado, que pueden resultar afectados por el hardware y las cargas de trabajo que se ejecutan en Azure Stack.
+> Las E/S por segundo y el rendimiento de los discos administrados en Azure Stack Hub son números extremos, en lugar de un número aprovisionado, que pueden resultar afectados por el hardware y las cargas de trabajo que se ejecutan en Azure Stack Hub.
 
 ## <a name="metrics"></a>Métricas
 
 También hay diferencias en las métricas de almacenamiento:
 
-- Con Azure Stack, los datos de transacción de las métricas de almacenamiento no distinguen el ancho de banda de red interna ni externa.
-- Los datos de transacción de Azure Stack en las métricas de almacenamiento no incluyen el acceso de la máquina virtual a los discos montados.
+- Con Azure Stack Hub, los datos de transacción de las métricas de almacenamiento no distinguen el ancho de banda de red interna ni externa.
+- Los datos de transacción de Azure Stack Hub en las métricas de almacenamiento no incluyen el acceso de la máquina virtual a los discos montados.
 
 ## <a name="api-versions"></a>Versiones de API
 
-Los discos administrados de Azure Stack admiten las versiones de API siguientes:
+Los discos administrados de Azure Stack Hub admiten las versiones de API siguientes:
 
 - 2017-03-30
 - 2017-12-01
@@ -69,7 +69,7 @@ Los discos administrados de Azure Stack admiten las versiones de API siguientes:
 ## <a name="convert-to-managed-disks"></a>Conversión en discos administrados
 
 > [!NOTE]  
-> El cmdlet de Azure PowerShell **ConvertTo-AzureRmVMManagedDisk** no se puede usar para convertir un disco no administrado en un disco administrado en Azure Stack. Actualmente, Azure Stack no admite este cmdlet.
+> El cmdlet de Azure PowerShell **ConvertTo-AzureRmVMManagedDisk** no se puede usar para convertir un disco no administrado en un disco administrado en Azure Stack Hub. Actualmente, Azure Stack Hub no admite este cmdlet.
 
 Puede usar el script siguiente para convertir una VM aprovisionada actualmente de discos no administrados a administrados. Reemplace los marcadores de posición por sus propios valores:
 
@@ -92,7 +92,7 @@ $VhdUri = "https://rgmgddisks347.blob.local.azurestack.external/vhds/unmngdvm201
 # The storage type for the managed disk: PremiumLRS or StandardLRS.
 $AccountType = "StandardLRS"
 
-# The Azure Stack location where the managed disk will be located.
+# The Azure Stack Hub location where the managed disk will be located.
 # The location should be the same as the location of the storage account in which VHD file is stored.
 # Configure the new managed VM point to the old unmanaged VM configuration (network config, VM name, location).
 $Location = "local"
@@ -137,7 +137,7 @@ New-AzureRmVM -VM $VirtualMachine -ResourceGroupName $ResourceGroupName -Locatio
 
 ## <a name="managed-images"></a>Imágenes administradas
 
-Azure Stack admite las *imágenes administradas*, que le permiten crear un objeto de imagen administrada en una VM generalizada (tanto administrada como no administrada) que, de aquí en adelante, solo puede crear VM de discos administrados. Las imágenes administradas permiten los dos escenarios siguientes:
+Azure Stack Hub admite *imágenes administradas* que le permiten crear un objeto de imagen administrada en una máquina virtual generalizada (tanto administrada como no administrada) que, de aquí en adelante, solo puede crear máquinas virtuales de discos administrados. Las imágenes administradas permiten los dos escenarios siguientes:
 
 - Tiene VM no administradas generalizadas y quiere usar discos administrados a partir de ahora.
 - Tiene una VM administrada generalizada y quiere crear varias VM administradas similares.
@@ -165,9 +165,9 @@ Siga las instrucciones de [Creación de una imagen a partir de una máquina virt
 
 Después de crear una imagen a partir de una máquina virtual de disco administrado existente mediante el script de [Creación de una imagen a partir de un disco administrado mediante PowerShell](/azure/virtual-machines/windows/capture-image-resource#create-an-image-from-a-managed-disk-using-powershell), el siguiente script de ejemplo crea una máquina virtual Linux similar a partir de un objeto de imagen existente.
 
-Módulo de PowerShell de Azure Stack versión 1.7.0 o posterior: Siga las instrucciones de [Creación de una máquina virtual a partir de una imagen administrada](/azure/virtual-machines/windows/create-vm-generalized-managed).
+Módulo de PowerShell de Azure Stack Hub versión 1.7.0 o posterior: Siga las instrucciones de [Creación de una máquina virtual a partir de una imagen administrada](/azure/virtual-machines/windows/create-vm-generalized-managed).
 
-Módulo de PowerShell de Azure Stack versión 1.6.0 o anterior:
+Módulo de PowerShell de Azure Stack Hub versión 1.6.0 o anterior:
 
 ```powershell
 # Variables for common values
@@ -226,10 +226,10 @@ También puede usar el portal para crear una máquina virtual desde una imagen a
 Después de aplicar la actualización 1808 o posterior, debe realizar el siguiente cambio en la configuración antes de usar los discos administrados:
 
 - Si una suscripción se ha creado antes de la actualización 1808, siga estos pasos para actualizar la suscripción. En caso contrario, la implementación de máquinas virtuales en esta suscripción podría producir un error con un mensaje del tipo "Error interno en el administrador de discos".
-   1. En el portal de usuarios de Azure Stack, vaya a **Suscripciones** y busque la suscripción. Haga clic en **Proveedores de recursos**, después en **Microsoft.Compute** y luego en **Volver a registrar**.
-   2. En la misma suscripción vaya a **Control de acceso (IAM)** y compruebe que **Azure Stack – Managed Disk** (Azure Stack - Disco administrado) aparece en la lista.
-- Si usa un entorno de varios inquilinos, pida a su operador de nube (puede ser de su propia organización o del proveedor de servicios) que vuelva a configurar cada uno de los directorios de invitado siguiendo los pasos que se indican en [este artículo](../operator/azure-stack-enable-multitenancy.md#registering-azure-stack-with-the-guest-directory). En caso contrario, la implementación de máquinas virtuales en una suscripción asociada con ese directorio de invitado podría producir un error con el mensaje "Error interno en el administrador de discos".
+   1. En el portal de usuarios de Azure Stack Hub, vaya a **Suscripciones** y busque la suscripción. Haga clic en **Proveedores de recursos**, después en **Microsoft.Compute** y luego en **Volver a registrar**.
+   2. En la misma suscripción, vaya a **Control de acceso (IAM)** y compruebe que **Azure Stack Hub – Managed Disk** (Azure Stack Hub - Disco administrado) aparece en la lista.
+- Si usa un entorno de varios inquilinos, pida a su operador de nube (puede ser de su propia organización o del proveedor de servicios) que vuelva a configurar cada uno de los directorios de invitado siguiendo los pasos que se indican en [este artículo](../operator/azure-stack-enable-multitenancy.md#registering-azure-stack-hub-with-the-guest-directory). En caso contrario, la implementación de máquinas virtuales en una suscripción asociada con ese directorio de invitado podría producir un error con el mensaje "Error interno en el administrador de discos".
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Más información sobre máquinas virtuales de Azure Stack](azure-stack-compute-overview.md)
+- [Más información sobre máquinas virtuales de Azure Stack Hub](azure-stack-compute-overview.md)

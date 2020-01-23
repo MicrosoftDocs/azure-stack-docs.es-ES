@@ -9,16 +9,16 @@ ms.date: 12/13/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/13/2019
-ms.openlocfilehash: 624f0fb87b84ee06284185a521a68bebeb695362
-ms.sourcegitcommit: 7dd9d7bc2b86cca3be5118da149c1d422b2fb09d
+ms.openlocfilehash: d10fbc7ad009456459a8719fbc6e6c8ce51529f1
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/16/2019
-ms.locfileid: "75034010"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816486"
 ---
 # <a name="how-to-get-authentication-information-for-azure-stack-hub"></a>Obtención de información de autenticación para Azure Stack Hub
 
-Para autenticarse en Azure Stack Hub es preciso especificar el identificador de la suscripción, el identificador del inquilino y la ubicación, y el punto de conexión de Resource Manager de Azure Stack Hub. Estos valores se pueden obtener en el [punto de conexión de Resource Manager de Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-version-profiles-ruby?view=azs-1910#the-azure-stack-resource-manager-endpoint) para Azure Stack Hub. También se puede obtener mediante los pasos que se describen en este artículo.
+Para autenticarse en Azure Stack Hub es preciso especificar el identificador de la suscripción, el identificador del inquilino y la ubicación, y el punto de conexión de Resource Manager de Azure Stack Hub. Estos valores se pueden obtener en el [punto de conexión de Resource Manager de Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-version-profiles-ruby?view=azs-1910#the-azure-stack-hub-resource-manager-endpoint) para Azure Stack Hub. También se puede obtener mediante los pasos que se describen en este artículo.
 
 ## <a name="values-needed-to-authenticate"></a>Valores necesarios para la autenticación
 
@@ -26,7 +26,7 @@ Necesita la siguiente información:
 
 -   **Subscription ID**  
 
-    Puede usar el identificador de suscripción para acceder a las ofertas de Azure Stack.
+    Puede usar el identificador de suscripción para acceder a las ofertas de Azure Stack Hub.
 
 -   **Id. de inquilino**
 
@@ -76,4 +76,4 @@ Para obtener el punto de conexión de metadatos que apunta a propiedades como el
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Más información sobre el uso de [Resource Manager de Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-version-profiles?view=azs-1910) con Azure Stack Hub.
+Más información sobre el uso de [Resource Manager de Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-version-profiles?view=azs-1910) con Azure Stack Hub.

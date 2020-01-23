@@ -1,7 +1,7 @@
 ---
-title: Actualización del proveedor de recursos de SQL de Azure Stack
-titleSuffix: Azure Stack
-description: Aprenda a actualizar el proveedor de recursos de SQL de Azure Stack.
+title: Actualización del proveedor de recursos de SQL de Azure Stack Hub
+titleSuffix: Azure Stack Hub
+description: Aprenda a actualizar el proveedor de recursos de SQL de Azure Stack Hub.
 services: azure-stack
 documentationCenter: ''
 author: mattbriggs
@@ -16,20 +16,18 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 2669ed87e46307bb84aa9639d42b100cdc0cfd46
-ms.sourcegitcommit: 08d2938006b743b76fba42778db79202d7c3e1c4
+ms.openlocfilehash: 5ae8a125521689a1e07e1207e03df4d981b74704
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74954441"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75881814"
 ---
 # <a name="update-the-sql-resource-provider"></a>Actualización del proveedor de recursos de SQL
 
-*Se aplica a: Sistemas integrados de Azure Stack.*
+Es posible que cuando Azure Stack Hub se actualice a una nueva compilación, se lance un nuevo proveedor de recursos de SQL. Aunque el proveedor de recursos existente continúa funcionando, se recomienda actualizar a la compilación más reciente lo antes posible.
 
-Es posible que cuando Azure Stack se actualice a una nueva compilación, se lance un nuevo proveedor de recursos de SQL. Aunque el proveedor de recursos existente continúa funcionando, se recomienda actualizar a la compilación más reciente lo antes posible.
-
-A partir de la versión 1.1.33.0 del proveedor de recursos de SQL, las actualizaciones son acumulativas y no es necesario instalarlas en el orden en el que se han publicado, siempre y cuando empiece desde la versión 1.1.24.0 o posterior. Por ejemplo, si está ejecutando la versión 1.1.24.0 del proveedor de recursos de SQL, puede actualizar a la versión 1.1.33.0 o posterior sin necesidad de instalar primero la versión 1.1.30.0. Para revisar las versiones disponibles del proveedor de recursos y la versión de Azure Stack compatible, consulte la lista de versiones en [Requisitos previos para implementar el proveedor de recursos](./azure-stack-sql-resource-provider-deploy.md#prerequisites).
+A partir de la versión 1.1.33.0 del proveedor de recursos de SQL, las actualizaciones son acumulativas y no es necesario instalarlas en el orden en el que se han publicado, siempre y cuando empiece desde la versión 1.1.24.0 o posterior. Por ejemplo, si está ejecutando la versión 1.1.24.0 del proveedor de recursos de SQL, puede actualizar a la versión 1.1.33.0 o posterior sin necesidad de instalar primero la versión 1.1.30.0. Para revisar las versiones disponibles del proveedor de recursos y la versión de Azure Stack Hub compatible, consulte la lista de versiones en la sección Requisitos previos de [Implementación del proveedor de recursos de SQL Server en Azure Stack Hub](./azure-stack-sql-resource-provider-deploy.md#prerequisites).
 
 Para actualizar el proveedor de recursos, use el script *UpdateSQLProvider.ps1*. El script se incluye con la descarga del nuevo proveedor de recursos de SQL. El proceso de actualización es similar al proceso usado para [implementar el proveedor de recursos](./azure-stack-sql-resource-provider-deploy.md). El script de actualización usa los mismos argumentos que el script DeploySqlProvider.ps1, y se deberá proporcionar información del certificado.
 
@@ -53,44 +51,47 @@ Después de que el script *UpdateSQLProvider.ps1* crea una nueva máquina virtua
 
 Puede especificar los siguientes parámetros desde la línea de comandos al ejecutar el script **UpdateSQLProvider.ps1** de PowerShell. Si no lo hace, o se produce un error en la validación de algún parámetro, se le pedirá que proporcione los parámetros necesarios.
 
-| Nombre de parámetro | DESCRIPCIÓN | Comentario o valor predeterminado |
+| Nombre de parámetro | Descripción | Comentario o valor predeterminado |
 | --- | --- | --- |
 | **CloudAdminCredential** | Credencial del administrador de la nube necesaria para el acceso al punto de conexión con privilegios. | _Obligatorio_ |
-| **AzCredential** | Credenciales de la cuenta de administrador de servicio de Azure Stack. Use las mismas credenciales que para la implementación de Azure Stack. | _Obligatorio_ |
+| **AzCredential** | Credenciales de la cuenta de administrador de servicios de Azure Stack Hub. Use las mismas credenciales que para la implementación de Azure Stack Hub. | _Obligatorio_ |
 | **VMLocalCredential** | Credenciales de la cuenta de administrador local de la VM del proveedor de recursos SQL. | _Obligatorio_ |
 | **PrivilegedEndpoint** | Dirección IP o nombre DNS del punto de conexión con privilegios. |  _Obligatorio_ |
-| **AzureEnvironment** | El entorno de Azure de la cuenta de administrador de servicio que ha usado para la implementación de Azure Stack. Requerido solo para implementaciones de Azure AD. Los nombres de entorno que se admiten son **AzureCloud**, **AzureUSGovernment** o, si usa una instancia de Azure AD de China, **AzureChinaCloud**. | AzureCloud |
+| **AzureEnvironment** | El entorno de Azure de la cuenta de administrador de servicios que ha usado para la implementación de Azure Stack Hub. Requerido solo para implementaciones de Azure AD. Los nombres de entorno que se admiten son **AzureCloud**, **AzureUSGovernment** o, si usa una instancia de Azure AD de China, **AzureChinaCloud**. | AzureCloud |
 | **DependencyFilesLocalPath** | También debe incluir el archivo .pfx del certificado en este directorio. | _Opcional para un único nodo, pero obligatorio para varios nodos_ |
 | **DefaultSSLCertificatePassword** | Contraseña para el certificado .pfx. | _Obligatorio_ |
 | **MaxRetryCount** | El número de veces que quiere volver a intentar cada operación si se produce un error.| 2 |
 | **RetryDuration** |Intervalo de tiempo de expiración entre reintentos, en segundos. | 120 |
-| **Desinstalación** | Quita el proveedor de recursos y todos los recursos asociados. | Sin |
-| **DebugMode** | Impide la limpieza automática en caso de error. | Sin |
+| **Desinstalación** | Quita el proveedor de recursos y todos los recursos asociados. | No |
+| **DebugMode** | Impide la limpieza automática en caso de error. | No |
 
 ## <a name="update-script-powershell-example"></a>Ejemplo de actualización del script de PowerShell
 > [!NOTE]
-> Este proceso de actualización solo se aplica a sistemas integrados de Azure Stack.
+> Este proceso de actualización solo se aplica a sistemas integrados de Azure Stack Hub.
 
-Si va a actualizar a la versión 1.1.33.0 del proveedor de recursos de SQL o versiones anteriores, debe instalar versiones específicas de los módulos AzureRm.BootStrapper y Azure Stack en PowerShell. Si va a actualizar a la versión 1.1.47.0 del proveedor de recursos de SQL, este paso se puede omitir.
+Si va a actualizar a la versión 1.1.33.0 del proveedor de recursos de SQL o versiones anteriores, debe instalar versiones específicas de los módulos AzureRm.BootStrapper y Azure Stack Hub en PowerShell. Si va a actualizar a la versión 1.1.47.0 del proveedor de recursos de SQL, el script de implementación descargará e instalará automáticamente los módulos de PowerShell necesarios en la ruta de acceso C:\Archivos de programa\SqlMySqlPsh.
 
 ```powershell
 # Install the AzureRM.Bootstrapper module, set the profile, and install the AzureStack module.
-# Note that this might not be the most currently available version of Azure Stack PowerShell.
+# Note that this might not be the most currently available version of Azure Stack Hub PowerShell.
 Install-Module -Name AzureRm.BootStrapper -Force
 Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 Install-Module -Name AzureStack -RequiredVersion 1.6.0
 ```
 
+> [!NOTE]
+> Si trabaja en un escenario desconectado, deberá descargar los módulos de PowerShell necesarios y registrar el repositorio manualmente como requisito previo. Puede obtener más información en [Implementación del proveedor de recursos de SQL Server en Azure Stack Hub](azure-stack-sql-resource-provider-deploy.md).
+
 El siguiente es un ejemplo del uso del script *UpdateSQLProvider.ps1* que puede ejecutar desde una consola elevada de PowerShell. Asegúrese de cambiar la información de la variable y las contraseñas según sea necesario:  
 
 ```powershell
-# Use the NetBIOS name for the Azure Stack domain. On the Azure Stack SDK, the default is AzureStack but this might have been changed at installation.
+# Use the NetBIOS name for the Azure Stack Hub domain. On the Azure Stack Hub SDK, the default is AzureStack but this might have been changed at installation.
 $domain = "AzureStack"
 
 # For integrated systems, use the IP address of one of the ERCS VMs.
 $privilegedEndpoint = "AzS-ERCS01"
 
-# Provide the Azure environment used for deploying Azure Stack. Required only for Azure AD deployments. Supported values for the <environment name> parameter are AzureCloud, AzureChinaCloud, or AzureUSGovernment depending which Azure subscription you're using.
+# Provide the Azure environment used for deploying Azure Stack Hub. Required only for Azure AD deployments. Supported values for the <environment name> parameter are AzureCloud, AzureChinaCloud, or AzureUSGovernment depending which Azure subscription you're using.
 $AzureEnvironment = "<EnvironmentName>"
 
 # Point to the directory where the resource provider installation files were extracted.
@@ -112,6 +113,11 @@ $CloudAdminCreds = New-Object System.Management.Automation.PSCredential ("$domai
 # Change the following as appropriate.
 $PfxPass = ConvertTo-SecureString "P@ssw0rd1" -AsPlainText -Force
 
+# For version 1.1.47.0, the PowerShell modules used by the RP deployment are placed in C:\Program Files\SqlMySqlPsh
+# The deployment script adds this path to the system $env:PSModulePath to ensure correct modules are used.
+$rpModulePath = Join-Path -Path $env:ProgramFiles -ChildPath 'SqlMySqlPsh'
+$env:PSModulePath = $env:PSModulePath + ";" + $rpModulePath
+
 # Change directory to the folder where you extracted the installation files.
 # Then adjust the endpoints.
 . $tempDir\UpdateSQLProvider.ps1 -AzCredential $AdminCreds `
@@ -123,6 +129,8 @@ $PfxPass = ConvertTo-SecureString "P@ssw0rd1" -AsPlainText -Force
   -DependencyFilesLocalPath $tempDir\cert
 
  ```
+
+Cuando finalice el script de actualización del proveedor de recursos, cierre la sesión actual de PowerShell.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

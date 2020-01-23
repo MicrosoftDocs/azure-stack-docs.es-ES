@@ -1,6 +1,6 @@
 ---
-title: Administración de Key Vault en Azure Stack mediante el portal | Microsoft Docs
-description: Aprenda a administrar KeyValut en Azure Stack mediante el portal de Azure Stack.
+title: Administración de Key Vault en Azure Stack Hub mediante el portal | Microsoft Docs
+description: Aprenda a administrar KeyValut en Azure Stack Hub mediante el portal de Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -12,21 +12,21 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/03/2019
+ms.date: 01/10/2020
 ms.author: sethm
-ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: fc0907ffb905012043a3e446fcc29cc9e06f6932
-ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
+ms.lastreviewed: 1/10/2020
+ms.openlocfilehash: 1ba2be2d37cfa0b0d850f67124440fb9de13a23f
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71961502"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75879162"
 ---
-# <a name="manage-key-vault-in-azure-stack-using-the-portal"></a>Administrar Key Vault en Azure Stack mediante el portal
+# <a name="manage-key-vault-in-azure-stack-hub-using-the-portal"></a>Administración de Key Vault en Azure Stack Hub mediante el portal
 
-En este artículo se describe cómo crear y administrar un almacén de claves en Azure Stack con Azure Portal.
+En este artículo se describe cómo crear y administrar un almacén de claves en Azure Stack Hub mediante el portal de Azure Stack Hub.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 Debe suscribirse a una oferta que incluya el servicio Azure Key Vault.
 
@@ -58,11 +58,11 @@ Después de crear un almacén de claves, siga este procedimiento para crear y ad
 
 ### <a name="create-a-key"></a>Crear una clave
 
-1. Inicie sesión en el [portal de usuario](https://portal.local.azurestack.external).
+1. Inicie sesión en el [portal de usuarios](https://portal.local.azurestack.external) de Azure Stack Hub.
 
 2. En el panel, Seleccione **Todos los recursos**, seleccione el almacén de claves que creó anteriormente y, a continuación, haga clic en el icono **Claves**.
 
-3. En el panel **Claves**, seleccione **Agregar**.
+3. En el panel **Claves**, seleccione **Generar o importar**.
 
 4. En el panel **Crear una clave**, forme la lista de **Opciones** y elija el método que quiera usar para crear una clave. También puede **generar** una nueva clave, **cargar** una clave existente, o usar **Restaurar copia de seguridad** para seleccionar una copia de seguridad de una clave.
 

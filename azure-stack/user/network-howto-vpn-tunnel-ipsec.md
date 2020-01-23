@@ -1,6 +1,6 @@
 ---
-title: Creación de un túnel de VPN con IPSEC en Azure Stack | Microsoft Docs
-description: Aprenda a crear un túnel de VPN con IPSEC en Azure Stack.
+title: Creación de un túnel de VPN con IPSEC en Azure Stack Hub | Microsoft Docs
+description: Aprenda a crear un túnel de VPN con IPSEC en Azure Stack Hub.
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
@@ -9,20 +9,18 @@ ms.date: 09/19/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 09/19/2019
-ms.openlocfilehash: 762d3f631823d1acb8445148a164a18605fa3762
-ms.sourcegitcommit: cc3534e09ad916bb693215d21ac13aed1d8a0dde
+ms.openlocfilehash: a0716d4997a49c2146d64c23defdd6b2f36c0b95
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73168232"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75878465"
 ---
-# <a name="how-to-create-a-vpn-tunnel-using-ipsec--in-azure-stack"></a>Creación de un túnel de VPN con IPSEC en Azure Stack
+# <a name="how-to-create-a-vpn-tunnel-using-ipsec--in-azure-stack-hub"></a>Creación de un túnel de VPN con IPSEC en Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+Puede usar la plantilla de Resource Manager de Azure Stack Hub en esta solución para conectar dos redes virtuales de Azure Stack Hub en el mismo entorno. [No puede conectar redes virtuales de Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-network-differences) con la puerta de enlace de red virtual integrada. Por ahora, debe usar aplicaciones virtuales de red (NVA) para crear un túnel de VPN entre dos redes virtuales de Azure Stack Hub. La plantilla de la solución implementa dos máquinas virtuales Windows Server 2016 con RRAS instalado. La solución configura los dos servidores RRAS para usar un túnel IKEv2 de S2SVPN entre las dos redes virtuales. Se crean las reglas adecuadas de grupo de seguridad de red y de UDR para permitir el enrutamiento entre las subredes de cada red virtual designada como **interna**. 
 
-Puede usar la plantilla de Resource Manager de Azure Stack en esta solución para conectar dos redes virtuales de Azure Stack en el mismo entorno. [No puede conectar redes virtuales de Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-network-differences) con la puerta de enlace de red virtual integrada. Por ahora, debe usar aplicaciones virtuales de red (NVA) para crear un túnel de VPN entre dos redes virtuales de Azure Stack. La plantilla de la solución implementa dos máquinas virtuales Windows Server 2016 con RRAS instalado. La solución configura los dos servidores RRAS para usar un túnel IKEv2 de S2SVPN entre las dos redes virtuales. Se crean las reglas adecuadas de grupo de seguridad de red y de UDR para permitir el enrutamiento entre las subredes de cada red virtual designada como **interna**. 
-
-Esta solución es la base que le permitirá crear túneles de VPN no solo dentro de la instancia de Azure Stack, sino también entre instancias de Azure Stack y otros recursos, como las redes locales con el uso de túneles de VPN de sitio a sitio de RRAS de Windows.
+Esta solución es la base que le permitirá crear túneles de VPN no solo dentro de la instancia de Azure Stack Hub, sino también entre instancias de Azure Stack Hub y otros recursos, como las redes locales con el uso de túneles de VPN de sitio a sitio de RRAS de Windows.
 
 Puede encontrar las plantillas en el repositorio de GitHub [Azure Intelligent Edge Patterns](https://github.com/Azure-Samples/azure-intelligent-edge-patterns). La plantilla se encuentra en la carpeta **rras-gre-vnet-vnet**. 
 
@@ -30,8 +28,8 @@ Puede encontrar las plantillas en el repositorio de GitHub [Azure Intelligent Ed
 
 ## <a name="requirements"></a>Requisitos
 
-- ASDK o el sistema integrado de Azure Stack con las últimas actualizaciones aplicadas. 
-- Elementos de Marketplace requeridos para Azure Stack:
+- Un sistema implementado con las últimas actualizaciones aplicadas. 
+- Elementos de Marketplace requeridos para Azure Stack Hub:
     -  Windows Server 2016 Datacenter o Windows Server 2019 Datacenter (se recomienda la última compilación)
     -  Custom Script Extension
 
@@ -40,7 +38,7 @@ Puede encontrar las plantillas en el repositorio de GitHub [Azure Intelligent Ed
 - Se aplica un grupo de seguridad de red a la subred del túnel de la plantilla.  Se recomienda proteger la subred interna en cada red virtual con un grupo de seguridad de red adicional.
 - Se aplica una regla de denegación de RDP al grupo de seguridad de red del túnel y debe establecerse en permitir si tiene previsto acceder a las máquinas virtuales mediante la dirección IP pública.
 - Esta solución no tiene en cuenta la resolución de DNS.
-- La combinación de nombre de la red virtual y el nombre de la máquina virtual debe tener menos de 15 caracteres.
+- La combinación de nombre de red virtual y nombre de máquina virtual debe tener menos de 15 caracteres.
 - Esta plantilla está diseñada para tener los nombres de red virtual personalizados para VNet1 y VNet2.
 - Esta plantilla usa BYOL de Windows.
 - Al eliminar el grupo de recursos, actualmente en (1907), tiene que separar manualmente el grupo de seguridad de red de la subred del túnel para asegurarse de que se completa el grupo de recursos de eliminación.
@@ -58,6 +56,6 @@ Esta plantilla proporciona valores predeterminados para la nomenclatura de redes
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Diferencias y consideraciones para las redes de Azure Stack](azure-stack-network-differences.md)  
+[Diferencias y consideraciones para las redes de Azure Stack Hub](azure-stack-network-differences.md)  
 [Configuración de un túnel de VPN de sitio a sitio múltiple](network-howto-vpn-tunnel.md)  
 [Creación de un túnel de VPN mediante GRE](network-howto-vpn-tunnel-gre.md)

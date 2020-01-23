@@ -1,6 +1,6 @@
 ---
-title: Validación del registro de Azure en Azure Stack | Microsoft Docs
-description: Use Azure Stack Readiness Checker para validar el registro de Azure.
+title: Validación del registro de Azure en Azure Stack Hub | Microsoft Docs
+description: Use Azure Stack Hub Readiness Checker para validar el registro de Azure.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -16,27 +16,27 @@ ms.date: 10/03/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: c959a2553d6b298ef4a815890de6f717838361de
-ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
+ms.openlocfilehash: a1ac34b39bc1628314c1ba2f05202c4a1454c189
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71961857"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75812848"
 ---
 # <a name="validate-azure-registration"></a>Validación del registro de Azure
 
-Use la herramienta Azure Stack Readiness Checker (**AzsReadinessChecker**) para validar que su suscripción de Azure está lista para usarse con Azure Stack antes de comenzar la implementación correspondiente. La herramienta Readiness Checker valida que:
+Use la herramienta Azure Stack Hub Readiness Checker (**AzsReadinessChecker**) para validar que su suscripción de Azure está lista para usarse con Azure Stack Hub antes de comenzar la implementación correspondiente. La herramienta Readiness Checker valida que:
 
 - La suscripción de Azure que usa es de tipo compatible. Las suscripciones deben ser un proveedor de soluciones en la nube (CSP) o el contrato Enterprise (EA).
 - La cuenta que se usa para registrar la suscripción en Azure puede iniciar sesión en Azure y es propietaria de una suscripción.
 
-Para obtener más información sobre el registro de Azure Stack, vea [Registro de Azure Stack en Azure](azure-stack-registration.md).
+Para más información sobre el registro de Azure Stack Hub, consulte [Registro de Azure Stack Hub en Azure](azure-stack-registration.md).
 
 ## <a name="get-the-readiness-checker-tool"></a>Obtención de la herramienta Readiness Checker
 
 Descargue la versión más reciente de **AzsReadinessChecker** desde [Galería de PowerShell](https://aka.ms/AzsReadinessChecker).  
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 Se necesitan los siguientes requisitos previos:
 
@@ -49,12 +49,12 @@ Se necesitan los siguientes requisitos previos:
   $PSVersionTable.PSVersion
   ```
 
-- [PowerShell configurado para Azure Stack](azure-stack-powershell-install.md).
-- La versión más reciente de la herramienta [Microsoft Azure Stack Readiness Checker](https://aka.ms/AzsReadinessChecker).  
+- [PowerShell configurado para Azure Stack Hub](azure-stack-powershell-install.md).
+- La versión más reciente de la herramienta [Microsoft Azure Stack Hub Readiness Checker](https://aka.ms/AzsReadinessChecker).  
 
 ### <a name="azure-active-directory-environment"></a>Entorno de Azure Active Directory
 
-- Identifique el nombre de usuario y la contraseña de una cuenta que sea propietario de la suscripción de Azure que va a usar con Azure Stack.  
+- Identifique el nombre de usuario y la contraseña de una cuenta con el rol de propietario de la suscripción de Azure que va a usar con Azure Stack Hub.  
 - Indique el identificador de suscripción de la suscripción de Azure que va a usar.
 - Identifique la clase **AzureEnvironment** que va a usar. Los valores admitidos para el parámetro de nombre de entorno son **AzureCloud**, **AzureChinaCloud** o **AzureUSGovernment**, dependiendo de la suscripción a Azure que esté utilizando.
 
@@ -104,14 +104,14 @@ Se necesitan los siguientes requisitos previos:
 
 Cada vez que se ejecuta la validación, los resultados se registran en **AzsReadinessChecker.log** y **AzsReadinessCheckerReport.json**. La ubicación de estos archivos se muestra con los resultados de validación de PowerShell.
 
-Estos archivos pueden ayudar a compartir el estado de validación antes de implementar Azure Stack o investigar problemas de validación. Ambos archivos conservan los resultados de cada comprobación de validación posterior. El informe ofrece la confirmación del equipo de implementación de la configuración de identidad. El archivo de registro puede ayudar al equipo de implementación o de soporte técnico a investigar los problemas de validación.
+Estos archivos pueden ayudarle a compartir el estado de validación antes de implementar Azure Stack Hub o de investigar problemas de validación. Ambos archivos conservan los resultados de cada comprobación de validación posterior. El informe ofrece la confirmación del equipo de implementación de la configuración de identidad. El archivo de registro puede ayudar al equipo de implementación o de soporte técnico a investigar los problemas de validación.
 
 De forma predeterminada, los dos archivos se escriben en **C:\Users\nombre_de_usuario\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json**.  
 
 - Use el parámetro `-OutputPath <path>` al final de la línea de comandos de ejecución para especificar otra ubicación para el informe.
 - Use el parámetro `-CleanReport` al final del comando de ejecución para borrar la información de ejecuciones anteriores de la herramienta desde **AzsReadinessCheckerReport.json**.
 
-Para obtener más información, consulte el artículo [Informe de validación de Azure Stack](azure-stack-validation-report.md).
+Para más información, consulte [Informe de validación para Azure Stack Hub](azure-stack-validation-report.md).
 
 ## <a name="validation-failures"></a>Errores de validación
 
@@ -135,7 +135,7 @@ Invoke-AzsRegistrationValidation Completed
 
 **Causa**: la cuenta no es un administrador de la suscripción de Azure.
 
-**Resolución**: use una cuenta que sea de administrador de la suscripción de Azure que se facture por uso de la implementación de Azure Stack.
+**Resolución**: use una cuenta que tenga un rol de administrador de la suscripción de Azure en la que el uso se facturará a partir de la implementación de Azure Stack Hub.
 
 ### <a name="expired-or-temporary-password"></a>Contraseña temporal o expirada
 
@@ -188,4 +188,4 @@ Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 - [Validación de la identidad de Azure](azure-stack-validate-identity.md)
 - [Vista del informe de preparación](azure-stack-validation-report.md)
-- [Consideraciones generales sobre la integración de Azure Stack](azure-stack-datacenter-integration.md)
+- [Consideraciones generales sobre la integración de Azure Stack Hub](azure-stack-datacenter-integration.md)

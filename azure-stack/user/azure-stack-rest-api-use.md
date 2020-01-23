@@ -1,6 +1,6 @@
 ---
-title: Realizar solicitudes de API a Azure Stack | Microsoft Docs
-description: Aprenda a recuperar una autenticación de Azure para realizar solicitudes de API a Azure Stack.
+title: Realización de solicitudes de API a Azure Stack Hub | Microsoft Docs
+description: Aprenda a recuperar una autenticación de Azure para realizar solicitudes de API a Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -14,26 +14,24 @@ ms.date: 10/01/2019
 ms.author: sethm
 ms.reviewer: thoroet
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 822d05c53db2d55b3cddac44fa919c72e9af2efe
-ms.sourcegitcommit: bbf3edbfc07603d2c23de44240933c07976ea550
+ms.openlocfilehash: 3defbf731a2b4b89fce8f9815513456104f80ea6
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71714653"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883276"
 ---
 <!--  cblackuk and charliejllewellyn. This is a community contribution by cblackuk-->
 
-# <a name="make-api-requests-to-azure-stack"></a>Realizar solicitudes de API a Azure Stack
+# <a name="make-api-requests-to-azure-stack-hub"></a>Realización de solicitudes de API a Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+Puede usar la API REST de Azure Stack Hub para automatizar operaciones como la incorporación de una máquina virtual a la nube de Azure Stack.
 
-Puede usar la API REST de Azure Stack para automatizar operaciones como la incorporación de una máquina virtual a la nube de Azure Stack.
+La API requiere que el cliente se autentique en el punto de conexión de inicio de sesión de Microsoft Azure. Este punto de conexión devuelve un token en el encabezado de cada solicitud enviada a las API de Azure Stack Hub. Microsoft Azure usa Oauth 2.0.
 
-La API requiere que el cliente se autentique en el punto de conexión de inicio de sesión de Microsoft Azure. Este punto de conexión devuelve un token en el encabezado de cada solicitud enviada a las API de Azure Stack. Microsoft Azure usa Oauth 2.0.
+En este artículo se proporcionan ejemplos que usan la utilidad **cURL** para crear solicitudes de Azure Stack Hub. cURL es una herramienta de línea de comandos con una biblioteca para transferir datos. Estos ejemplos lo guían por el proceso de recuperación de un token de acceso a las API de Azure Stack Hub. La mayoría de los lenguajes de programación proporcionan bibliotecas Oauth 2.0, que presentan una buena administración de los tokens y controlan tareas tales como la actualización del token.
 
-En este artículo se proporcionan ejemplos que usan la utilidad **cURL** para crear solicitudes de Azure Stack. cURL es una herramienta de línea de comandos con una biblioteca para transferir datos. Estos ejemplos lo guían por el proceso de recuperación de un token de acceso a las API de Azure Stack. La mayoría de los lenguajes de programación proporcionan bibliotecas Oauth 2.0, que presentan una buena administración de los tokens y controlan tareas tales como la actualización del token.
-
-Examine todo el proceso de utilización de las API REST de Azure Stack con un cliente REST genérico, como **cURL**, para que le ayude a comprender las solicitudes subyacentes y lo que puede esperar de una carga de respuesta.
+Examine todo el proceso de utilización de las API REST de Azure Stack Hub con un cliente REST genérico, como **cURL**, para que le ayude a comprender las solicitudes subyacentes y lo que puede esperar de una carga de respuesta.
 
 En este artículo no se exploran todas las opciones disponibles para recuperar tokens, como el inicio de sesión interactivo o la creación de identificadores de aplicación dedicados. Para obtener información acerca de estos temas, consulte [Referencia de API REST de Azure](/rest/api/).
 
@@ -70,16 +68,16 @@ Para cada valor:
    El tipo de esquema de autenticación que se va a usar. En este ejemplo, el valor es `password`.
 
 - **resource**:  
-   El recurso al que accede al token. Para encontrar el recurso, consulte el punto de conexión de metadatos de administración de Azure Stack. Examine la sección **audiences**.
+   El recurso al que accede al token. Para encontrar el recurso, consulte el punto de conexión de metadatos de administración de Azure Stack Hub. Examine la sección **audiences**.
 
-- **Punto de conexión de administración de Azure Stack**:
+- **Punto de conexión de administración de Azure Stack Hub**:
 
    ```bash
-   https://management.{region}.{Azure Stack domain}/metadata/endpoints?api-version=2015-01-01
+   https://management.{region}.{Azure Stack Hub domain}/metadata/endpoints?api-version=2015-01-01
    ```
 
   > [!NOTE]  
-  > Si es un administrador que intenta acceder a la API de inquilino, asegúrese de usar el punto de conexión del inquilino, por ejemplo `https://adminmanagement.{region}.{Azure Stack domain}/metadata/endpoints?api-version=2015-01-011`.
+  > Si es un administrador que intenta acceder a la API de inquilino, asegúrese de usar el punto de conexión del inquilino, por ejemplo `https://adminmanagement.{region}.{Azure Stack Hub domain}/metadata/endpoints?api-version=2015-01-011`.
 
   Por ejemplo, con el Kit de desarrollo de Azure Stack como punto de conexión:
 
@@ -127,7 +125,7 @@ Para cada valor:
 
 - **username**
 
-  Por ejemplo, la cuenta de Azure AD de Azure Stack:
+  Por ejemplo, la cuenta de Azure AD de Azure Stack Hub:
 
   ```bash
   azurestackadmin@fabrikam.onmicrosoft.com
@@ -135,7 +133,7 @@ Para cada valor:
 
 - **password**
 
-  La contraseña de administrador de Azure AD de Azure Stack.
+  La contraseña de administrador de Azure AD de Azure Stack Hub.
 
 ### <a name="example"></a>Ejemplo
 
@@ -201,7 +199,7 @@ La ruta de acceso especifica el recurso o la colección de recursos, que pueden 
 - **Cadena de consulta**:  
 La cadena proporciona parámetros simples adicionales, como los criterios de selección de versión o recurso de API.
 
-## <a name="azure-stack-request-uri-construct"></a>Construcción de URI de solicitud de Azure Stack
+## <a name="azure-stack-hub-request-uri-construct"></a>Construcción de URI de solicitud de Azure Stack Hub
 
 ```bash
 {URI-scheme} :// {URI-host} / {subscription id} / {resource group} / {provider} / {resource-path} ? {OPTIONAL: filter-expression} {MANDATORY: api-version}

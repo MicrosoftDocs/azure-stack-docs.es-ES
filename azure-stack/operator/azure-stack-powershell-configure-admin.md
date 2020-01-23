@@ -1,6 +1,6 @@
 ---
-title: Conexión a Azure Stack con PowerShell | Microsoft Docs
-description: Aprenda a conectarse a Azure Stack con PowerShell.
+title: Conexión a Azure Stack Hub con PowerShell | Microsoft Docs
+description: Aprenda a conectarse a Azure Stack Hub con PowerShell.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,34 +15,32 @@ ms.date: 09/19/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 09/19/2019
-ms.openlocfilehash: 988d2e75dfecd499293576bff3d9722e7ff2c96f
-ms.sourcegitcommit: cefba8d6a93efaedff303d3c605b02bd28996c5d
+ms.openlocfilehash: 8d01649635c8e769d6ad394a6703af1d850f2c55
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74298864"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882120"
 ---
-# <a name="connect-to-azure-stack-with-powershell"></a>Conexión a Azure Stack con PowerShell
+# <a name="connect-to-azure-stack-hub-with-powershell"></a>Conexión a Azure Stack Hub con PowerShell
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+Puede configurar Azure Stack Hub para usar PowerShell para administrar recursos, como la creación de ofertas, planes, cuotas y alertas. Este tema le ayuda a configurar el entorno de operador.
 
-Puede configurar Azure Stack para usar PowerShell para tareas de administración de recursos como la creación de ofertas, planes, cuotas y alertas. Este tema le ayuda a configurar el entorno de operador.
-
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 Implemente los siguientes requisitos previos desde el [Kit de desarrollo de Azure Stack (ASDK)](../asdk/asdk-connect.md#connect-with-rdp) o desde un cliente externo basado en Windows si está [conectado al ASDK por VPN](../asdk/asdk-connect.md#connect-with-vpn).
 
-- Instale los [módulos de Azure PowerShell compatibles con Azure Stack](azure-stack-powershell-install.md).  
-- Descargue las [herramientas necesarias para trabajar con Azure Stack](azure-stack-powershell-download.md).  
+- Instale los [módulos de Azure PowerShell compatibles con Azure Stack Hub](azure-stack-powershell-install.md).  
+- Descargue las [herramientas necesarias para trabajar con Azure Stack Hub](azure-stack-powershell-download.md).  
 
 ## <a name="connect-with-azure-ad"></a>Conexión con Azure AD
 
-Para configurar el entorno de operador de Azure Stack con PowerShell, ejecute uno de los scripts siguientes. Reemplace los valores de tenantName de Azure Active Directory (Azure AD) y el punto de conexión de Azure Resource Manager por la configuración de su propio entorno.
+Para configurar el entorno de operador de Azure Stack Hub con PowerShell, ejecute uno de los scripts siguientes. Reemplace los valores de tenantName de Azure Active Directory (Azure AD) y el punto de conexión de Azure Resource Manager por la configuración de su propio entorno.
 
 [!include[Remove Account](../../includes/remove-account.md)]
 
 ```powershell  
-    # Register an Azure Resource Manager environment that targets your Azure Stack instance. Get your Azure Resource Manager endpoint value from your service provider.
+    # Register an Azure Resource Manager environment that targets your Azure Stack Hub instance. Get your Azure Resource Manager endpoint value from your service provider.
     Add-AzureRMEnvironment -Name "AzureStackAdmin" -ArmEndpoint "https://adminmanagement.local.azurestack.external" `
       -AzureKeyVaultDnsSuffix adminvault.local.azurestack.external `
       -AzureKeyVaultServiceEndpointResourceId https://adminvault.local.azurestack.external
@@ -52,17 +50,17 @@ Para configurar el entorno de operador de Azure Stack con PowerShell, ejecute un
     $AADTenantName = "<myDirectoryTenantName>.onmicrosoft.com"
     $TenantId = (invoke-restmethod "$($AuthEndpoint)/$($AADTenantName)/.well-known/openid-configuration").issuer.TrimEnd('/').Split('/')[-1]
 
-    # After signing in to your environment, Azure Stack cmdlets
-    # can be easily targeted at your Azure Stack instance.
+    # After signing in to your environment, Azure Stack Hub cmdlets
+    # can be easily targeted at your Azure Stack Hub instance.
     Add-AzureRmAccount -EnvironmentName "AzureStackAdmin" -TenantId $TenantId
 ```
 
 ## <a name="connect-with-ad-fs"></a>Conexión con AD FS
 
-Conéctese al entorno de operador de Azure Stack con PowerShell con Azure Active Directory Federated Services (Azure AD FS). Para el ASDK, este punto de conexión de Azure Resource Manager se establece en `https://adminmanagement.local.azurestack.external`. Para obtener el punto de conexión de Azure Resource Manager para los sistemas integrados de Azure Stack, póngase en contacto con su proveedor de servicios.
+Conéctese al entorno de operador de Azure Stack Hub con PowerShell con Azure Active Directory Federated Services (Azure AD FS). Para el ASDK, este punto de conexión de Azure Resource Manager se establece en `https://adminmanagement.local.azurestack.external`. Para obtener el punto de conexión de Azure Resource Manager para los sistemas integrados de Azure Stack Hub, póngase en contacto con su proveedor de servicios.
 
   ```powershell  
-  # Register an Azure Resource Manager environment that targets your Azure Stack instance. Get your Azure Resource Manager endpoint value from your service provider.
+  # Register an Azure Resource Manager environment that targets your Azure Stack Hub instance. Get your Azure Resource Manager endpoint value from your service provider.
     Add-AzureRMEnvironment -Name "AzureStackAdmin" -ArmEndpoint "https://adminmanagement.local.azurestack.external" `
       -AzureKeyVaultDnsSuffix adminvault.local.azurestack.external `
       -AzureKeyVaultServiceEndpointResourceId https://adminvault.local.azurestack.external
@@ -72,11 +70,11 @@ Conéctese al entorno de operador de Azure Stack con PowerShell con Azure Active
   ```
 
 > [!Note]  
-> AD FS solo admite la autenticación interactiva con identidades de usuario. Si se requiere un objeto de credencial, debe usar una entidad de servicio (SPN). Para más información acerca de cómo configurar una entidad de servicio con Azure Stack y AD FS como servicio de administración de identidades, consulte [Administración de una entidad de servicio de AD FS](azure-stack-create-service-principals.md#manage-an-ad-fs-service-principal).
+> AD FS solo admite la autenticación interactiva con identidades de usuario. Si se requiere un objeto de credencial, debe usar una entidad de servicio (SPN). Para más información sobre cómo configurar una entidad de servicio con Azure Stack Hub y AD FS como servicio de administración de identidades, consulte [Administración de una entidad de servicio de AD FS](azure-stack-create-service-principals.md#manage-an-ad-fs-service-principal).
 
 ## <a name="test-the-connectivity"></a>Prueba de la conectividad
 
-Ahora que todo está configurado, use PowerShell para crear recursos en Azure Stack. Por ejemplo, puede crear un grupo de recursos para una aplicación y agregar una máquina virtual. Use el comando siguiente para crear un grupo de recursos denominado **MyResourceGroup**.
+Ahora que todo está configurado, use PowerShell para crear recursos en Azure Stack Hub. Por ejemplo, puede crear un grupo de recursos para una aplicación y agregar una máquina virtual. Use el comando siguiente para crear un grupo de recursos denominado **MyResourceGroup**.
 
 ```powershell  
 New-AzureRmResourceGroup -Name "MyResourceGroup" -Location "Local"
@@ -84,6 +82,6 @@ New-AzureRmResourceGroup -Name "MyResourceGroup" -Location "Local"
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Desarrollo de plantillas para Azure Stack](../user/azure-stack-develop-templates.md).
+- [Desarrollo de plantillas para Azure Stack Hub](../user/azure-stack-develop-templates.md).
 - [Implementación de plantillas con PowerShell](../user/azure-stack-deploy-template-powershell.md).
-  - [Referencia sobre el módulo Azure Stack](https://docs.microsoft.com/powershell/azure/azure-stack/overview).
+  - [Referencia sobre el módulo de Azure Stack Hub](https://docs.microsoft.com/powershell/azure/azure-stack/overview).

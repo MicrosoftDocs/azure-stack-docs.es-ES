@@ -1,6 +1,6 @@
 ---
-title: Acceso al panel de Kubernetes en Azure Stack | Microsoft Docs
-description: Obtenga información sobre cómo acceder al panel de Kubernetes en Azure Stack.
+title: Acceso al panel de Kubernetes en Azure Stack Hub | Microsoft Docs
+description: Obtenga información sobre cómo acceder al panel de Kubernetes en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,26 +15,25 @@ ms.date: 10/10/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
-ms.openlocfilehash: fdda72e215590c7bbd7d739e2eb46b085fc55405
-ms.sourcegitcommit: 0d27456332031ab98ba2277117395ae5ffcbb79f
+ms.openlocfilehash: 3a872a60f32b46540f6b55f65555ca9958e67c38
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73047189"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883293"
 ---
-# <a name="access-the-kubernetes-dashboard-in-azure-stack"></a>Acceso al panel de Kubernetes en Azure Stack 
+# <a name="access-the-kubernetes-dashboard-in-azure-stack-hub"></a>Acceso al panel de Kubernetes en Azure Stack Hub 
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack* 
 > [!Note]   
 > Use únicamente el elemento Kubernetes de Marketplace de Azure Stack para implementar clústeres como prueba de concepto. Para los clústeres de Kubernetes admitidos en Azure Stack, utilice el  [motor de AKS](azure-stack-kubernetes-aks-engine-overview.md).
 
-Kubernetes incluye un panel web que se puede usar para operaciones básicas de administración. Este panel le permite ver el estado de mantenimiento básico y las métricas para sus aplicaciones, crear e implementar servicios, y modificar las aplicaciones existentes. En este artículo se explica cómo configurar el panel de Kubernetes en Azure Stack.
+Kubernetes incluye un panel web que se puede usar para operaciones básicas de administración. Este panel le permite ver el estado de mantenimiento básico y las métricas para sus aplicaciones, crear e implementar servicios, y modificar las aplicaciones existentes. En este artículo se explica cómo configurar el panel de Kubernetes en Azure Stack Hub.
 
 ## <a name="prerequisites-for-kubernetes-dashboard"></a>Requisitos previos para el panel de Kubernetes
 
-* Clúster de Kubernetes en Azure Stack
+* Clúster de Kubernetes en Azure Stack Hub
 
-    Debe haber implementado un clúster de Kubernetes en Azure Stack. Para más información, vea [Implementación de Kubernetes](azure-stack-solution-template-kubernetes-deploy.md).
+    Debe haber implementado un clúster de Kubernetes en Azure Stack Hub. Para más información, vea [Implementación de Kubernetes](azure-stack-solution-template-kubernetes-deploy.md).
 
 * Cliente SSH
 
@@ -42,21 +41,21 @@ Kubernetes incluye un panel web que se puede usar para operaciones básicas de a
 
 * FTP (PSCP)
 
-    Puede que también necesite un cliente FTP que sea compatible con el protocolo de transferencia de archivos SSH y SSH para transferir los certificados desde el nodo principal a su equipo de administración de Azure Stack. Puede usar [FileZilla](https://filezilla-project.org/download.php?type=client). Necesitará la clave privada utilizada cuando implementó el clúster de Kubernetes.
+    Puede que también necesite un cliente FTP que sea compatible con el protocolo de transferencia de archivos SSH y SSH para transferir los certificados desde el nodo principal a su equipo de administración de Azure Stack Hub. Puede usar [FileZilla](https://filezilla-project.org/download.php?type=client). Necesitará la clave privada utilizada cuando implementó el clúster de Kubernetes.
 
 ## <a name="overview-of-steps-to-enable-dashboard"></a>Información general de los pasos para habilitar el panel
 
 1.  Exporte los certificados de Kubernetes del nodo principal del clúster. 
-2.  Importe los certificados en la máquina de administración de Azure Stack.
+2.  Importe los certificados en la máquina de administración de Azure Stack Hub.
 2.  Abra el panel web de Kubernetes. 
 
 ## <a name="export-certificate-from-the-master"></a>Exportación del certificado desde el nodo principal 
 
 Puede recuperar la dirección URL para el panel desde el nodo principal del clúster.
 
-1. Obtenga la dirección IP pública y el nombre de usuario para el nodo principal del clúster desde el panel de Azure Stack. Para obtener esta información:
+1. Obtenga la dirección IP pública y el nombre de usuario para el nodo principal del clúster desde el panel de Azure Stack Hub. Para obtener esta información:
 
-    - Inicie sesión en el [portal de Azure Stack](https://portal.local.azurestack.external/).
+    - Inicie sesión en el [portal de Azure Stack Hub](https://portal.local.azurestack.external/).
     - Seleccione **Todos los servicios** > **Todos los recursos**. Busque el nodo principal en el grupo de recursos de clúster. El nodo principal se denomina `k8s-master-<sequence-of-numbers>`. 
 
 2. Abra el nodo principal en el portal. Copie la dirección **IP pública**. Haga clic en **Conectar** para obtener el nombre de usuario en el cuadro **Iniciar sesión con la cuenta local de VM**. Este es el mismo nombre de usuario que se establece al crear el clúster. Utilice la dirección IP pública en lugar de la dirección IP privada que se muestra en la hoja de conexión.
@@ -102,7 +101,7 @@ Puede recuperar la dirección URL para el panel desde el nodo principal del clú
     - el secreto privado
     - Usar el **protocolo de transferencia de archivos SFTP - SSH**
 
-2. Copie `/etc/kubernetes/certs/client.pfx` y `/etc/kubernetes/certs/ca.crt` en el equipo de administración de Azure Stack.
+2. Copie `/etc/kubernetes/certs/client.pfx` y `/etc/kubernetes/certs/ca.crt` en el equipo de administración de Azure Stack Hub.
 
 3. Tome nota de las ubicaciones del archivo. Actualice el script con las ubicaciones y, a continuación, abra PowerShell mediante un símbolo del sistema con privilegios elevados. Ejecute el script actualizado:  
 
@@ -129,12 +128,12 @@ Puede recuperar la dirección URL para el panel desde el nodo principal del clú
 
 Puede usar el panel. Para más información sobre el panel de Kubernetes, vea la información sobre el [panel de la interfaz de usuario web de Kubernetes](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/). 
 
-![Panel de Kubernetes en Azure Stack](media/azure-stack-solution-template-kubernetes-dashboard/azure-stack-kub-dashboard.png)
+![Panel de Kubernetes en Azure Stack Hub](media/azure-stack-solution-template-kubernetes-dashboard/azure-stack-kub-dashboard.png)
 
 ## <a name="next-steps"></a>Pasos siguientes 
 
-[Implementación de Kubernetes en Azure Stack](azure-stack-solution-template-kubernetes-deploy.md).  
+[Implementación de Kubernetes en Azure Stack Hub](azure-stack-solution-template-kubernetes-deploy.md)  
 
-[Agregar un clúster de Kubernetes a Marketplace (para el operador de Azure Stack)](../operator/azure-stack-solution-template-kubernetes-cluster-add.md)  
+[Adición de un clúster de Kubernetes a Marketplace (para el operador de Azure Stack Hub)](../operator/azure-stack-solution-template-kubernetes-cluster-add.md)  
 
 [Kubernetes en Azure](https://docs.microsoft.com/azure/container-service/kubernetes/container-service-kubernetes-walkthrough)  

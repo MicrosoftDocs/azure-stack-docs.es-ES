@@ -1,6 +1,6 @@
 ---
-title: Permitir a las aplicaciones acceder a los secretos de Key Vault de Azure Stack | Microsoft Docs
-description: Aprenda a ejecutar una aplicación de ejemplo que recupere las claves y los secretos de un almacén de claves en Azure Stack.
+title: Concesión de permiso a las aplicaciones para acceder a los secretos de Key Vault de Azure Stack Hub | Microsoft Docs
+description: Aprenda a ejecutar una aplicación de ejemplo que recupere las claves y los secretos de un almacén de claves en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,31 +15,29 @@ ms.topic: conceptual
 ms.date: 01/06/2020
 ms.author: sethm
 ms.lastreviewed: 04/08/2019
-ms.openlocfilehash: 97299ec47908325f7d3eddb7cf57ca891e145a8d
-ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
+ms.openlocfilehash: f73af34f3069b0fe550c8266253dce32efcb6b90
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75718494"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883633"
 ---
-# <a name="allow-apps-to-access-azure-stack-key-vault-secrets"></a>Permitir a las aplicaciones acceder a los secretos de Key Vault de Azure Stack
+# <a name="allow-apps-to-access-azure-stack-hub-key-vault-secrets"></a>Concesión de permiso a las aplicaciones para acceder a los secretos de Key Vault de Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
-
-Siga los pasos de este artículo para ejecutar la aplicación de ejemplo **HelloKeyVault** que recupera las claves y los secretos de un almacén de claves en Azure Stack.
+Siga los pasos de este artículo para ejecutar la aplicación de ejemplo **HelloKeyVault** que recupera las claves y los secretos de un almacén de claves en Azure Stack Hub.
 
 ## <a name="prerequisites"></a>Prerequisites
 
 Puede instalar los siguientes requisitos previos con el [Kit de desarrollo de Azure Stack](../asdk/asdk-connect.md#connect-to-azure-stack-using-rdp), o con un cliente externo basado en Windows si está [conectado a través de VPN](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn):
 
-* Instale los [módulos de Azure PowerShell compatibles con Azure Stack](../operator/azure-stack-powershell-install.md).
-* Descargue las [herramientas necesarias para trabajar con Azure Stack](../operator/azure-stack-powershell-download.md).
+* Instale los [módulos de Azure PowerShell compatibles con Azure Stack Hub](../operator/azure-stack-powershell-install.md).
+* Descargue las [herramientas necesarias para trabajar con Azure Stack Hub](../operator/azure-stack-powershell-download.md).
 
 ## <a name="create-a-key-vault-and-register-an-app"></a>Creación de un almacén de claves y registro de una aplicación
 
 Para preparar la aplicación de ejemplo:
 
-* Cree un almacén de claves en Azure Stack.
+* Cree un almacén de claves en Azure Stack Hub.
 * Registre una aplicación en Azure Active Directory (Azure AD).
 
 Use Azure Portal o PowerShell para los preparativos para la aplicación de ejemplo.
@@ -67,12 +65,12 @@ Function GenerateSymmetricKey()
     return [System.Convert]::ToBase64String($key)
 }
 
-Write-Host 'Please log into your Azure Stack user environment' -foregroundcolor Green
+Write-Host 'Please log into your Azure Stack Hub user environment' -foregroundcolor Green
 
 $tenantARM = "https://management.local.azurestack.external"
 $aadTenantName = "FILL THIS IN WITH YOUR AAD TENANT NAME. FOR EXAMPLE: myazurestack.onmicrosoft.com"
 
-# Configure the Azure Stack operator's PowerShell environment.
+# Configure the Azure Stack Hub operator's PowerShell environment.
 Add-AzureRMEnvironment `
   -Name "AzureStackUser" `
   -ArmEndpoint $tenantARM
@@ -161,7 +159,7 @@ En Visual Studio:
 
 ## <a name="run-the-app"></a>Ejecución la aplicación
 
-Al ejecutar **HelloKeyVault**, la aplicación inicia sesión en Azure AD y, a continuación, usa el token de `AuthClientSecret` para autenticarse en el almacén de claves de Azure Stack.
+Al ejecutar **HelloKeyVault**, la aplicación inicia sesión en Azure AD y, a continuación, usa el token de `AuthClientSecret` para autenticarse en el almacén de claves de Azure Stack Hub.
 
 Puede usar el ejemplo **HelloKeyVault** para:
 

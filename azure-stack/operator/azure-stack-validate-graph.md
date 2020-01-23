@@ -1,6 +1,6 @@
 ---
-title: Validar la integración de Azure Graph para Azure Stack
-description: Use Azure Stack Readiness Checker para validar la integración de Graph para Azure Stack.
+title: Validación de la integración de Azure Graph con Azure Stack Hub
+description: Use Azure Stack Hub Readiness Checker para validar la integración de Graph con Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: PatAltimore
@@ -16,16 +16,16 @@ ms.date: 06/10/2019
 ms.author: patricka
 ms.reviewer: jerskine
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: ba5a70b1a13e232619a2a47d1192782cc35b10c6
-ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
+ms.openlocfilehash: b12cf8b12b0765b150a119483125ffcfecb6fc69
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75718528"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75812933"
 ---
-# <a name="validate-graph-integration-for-azure-stack"></a>Validar la integración de Graph para Azure Stack
+# <a name="validate-graph-integration-for-azure-stack-hub"></a>Validación de la integración de Graph con Azure Stack Hub
 
-Use la herramienta Azure Stack Readiness Checker (AzsReadinessChecker) para validar que su entorno está listo para la integración de Graph con Azure Stack. Valide la integración de Graph antes de comenzar la integración del centro de datos o antes de una implementación de Azure Stack.
+Use la herramienta Azure Stack Hub Readiness Checker (AzsReadinessChecker) para validar que su entorno está listo para la integración de Graph con Azure Stack Hub. Valide la integración de Graph antes de comenzar la integración en el centro de datos o antes de una implementación de Azure Stack Hub.
 
 La herramienta Readiness Checker valida:
 
@@ -34,11 +34,11 @@ La herramienta Readiness Checker valida:
 * KDC se puede resolver y está disponible.
 * La conectividad de red necesaria está preparada.
 
-Para obtener más información acerca de los requisitos de la integración del centro de datos de Azure Stack, consulte [Integración del centro de datos de Azure Stack: identidad](azure-stack-integrate-identity.md).
+Para más información sobre los requisitos de la integración de Azure Stack Hub en el centro de datos, consulte [Integración de Azure Stack Hub en el centro de datos: identidad](azure-stack-integrate-identity.md).
 
 ## <a name="get-the-readiness-checker-tool"></a>Obtención de la herramienta Readiness Checker
 
-Descargue la versión más reciente de Azure Stack Readiness Checker (AzsReadinessChecker) desde [Galería de PowerShell](https://aka.ms/AzsReadinessChecker).
+Descargue la versión más reciente de la herramienta Azure Stack Hub Readiness Checker (AzsReadinessChecker) desde la [Galería de PowerShell](https://aka.ms/AzsReadinessChecker).
 
 ## <a name="prerequisites"></a>Prerequisites
 
@@ -50,7 +50,7 @@ Deben cumplirse los siguientes requisitos previos.
 * Azure PowerShell 5.1 o posterior. Para comprobar la versión, ejecute el siguiente comando de PowerShell y luego revise la versión *principal* y las versiones *secundarias*:  
    > `$PSVersionTable.PSVersion`
 * Módulo PowerShell de Active Directory.
-* La versión más reciente de la herramienta [Microsoft Azure Stack Readiness Checker](https://aka.ms/AzsReadinessChecker).
+* La versión más reciente de la herramienta [Microsoft Azure Stack Hub Readiness Checker](https://aka.ms/AzsReadinessChecker).
 
 **Entorno de Active Directory:**
 
@@ -84,7 +84,7 @@ Deben cumplirse los siguientes requisitos previos.
 
     Details:
 
-    [-] In standalone mode, some tests should not be considered fully indicative of connectivity or readiness the Azure Stack Stamp requires prior to Datacenter Integration.
+    [-] In standalone mode, some tests should not be considered fully indicative of connectivity or readiness the Azure Stack Hub Stamp requires prior to Datacenter Integration.
 
     Additional help URL: https://aka.ms/AzsGraphIntegration
 
@@ -95,20 +95,20 @@ Deben cumplirse los siguientes requisitos previos.
     Invoke-AzsGraphValidation Completed
     ```
 
-En entornos de producción, la prueba de conectividad de red desde una estación de trabajo de un operador no es totalmente indicativa de la conectividad disponible para Azure Stack. La red pública VIP de la marca de Azure Stack necesitará la conectividad del tráfico LDAP para realizar la integración de identidad.
+En entornos de producción, la prueba de la conectividad de red desde la estación de trabajo de un operador no es totalmente indicativa de la conectividad disponible para Azure Stack Hub. La red pública VIP del sello de Azure Stack Hub necesita la conectividad del tráfico LDAP para realizar la integración de identidades.
 
 ## <a name="report-and-log-file"></a>Informe y archivo de registro
 
 Cada vez que se ejecuta la validación, los resultados se registran en **AzsReadinessChecker.log** y **AzsReadinessCheckerReport.json**. La ubicación de estos archivos aparece con los resultados de validación de PowerShell.
 
-Estos archivos de validación pueden ayudarle a compartir el estado antes de implementar Azure Stack o investigar problemas de validación. Ambos archivos conservan los resultados de cada comprobación de validación posterior. El informe ofrece la confirmación del equipo de implementación de la configuración de identidad. El archivo de registro puede ayudar al equipo de implementación o de soporte técnico a investigar los problemas de validación.
+Los archivos de validación pueden ayudarle a compartir el estado antes de implementar Azure Stack Hub o investigar problemas de validación. Ambos archivos conservan los resultados de cada comprobación de validación posterior. El informe ofrece la confirmación del equipo de implementación de la configuración de identidad. El archivo de registro puede ayudar al equipo de implementación o de soporte técnico a investigar los problemas de validación.
 
 De forma predeterminada, ambos archivos se escriben en `C:\Users\<username>\AppData\Local\Temp\AzsReadinessChecker\`.
 
 Uso:
 
 * **-OutputPath**: el parámetro de *ruta de acceso* al final del comando de ejecución para especificar otra ubicación para el informe.
-* **-CleanReport**: el parámetro al final del comando de ejecución para borrar *AzsReadinessCheckerReport.json* de la información del informe previo. Para obtener más información, consulte el artículo [Informe de validación de Azure Stack](azure-stack-validation-report.md).
+* **-CleanReport**: el parámetro al final del comando de ejecución para borrar *AzsReadinessCheckerReport.json* de la información del informe previo. Para más información, consulte [Informe de validación para Azure Stack Hub](azure-stack-validation-report.md).
 
 ## <a name="validation-failures"></a>Errores de validación
 
@@ -117,4 +117,4 @@ Si se producen errores en una comprobación de validación, los detalles sobre l
 ## <a name="next-steps"></a>Pasos siguientes
 
 [Vista del informe de preparación](azure-stack-validation-report.md)  
-[Consideraciones generales sobre la integración de Azure Stack](azure-stack-datacenter-integration.md)  
+[Consideraciones generales sobre la integración de Azure Stack Hub](azure-stack-datacenter-integration.md)  

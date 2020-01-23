@@ -1,6 +1,6 @@
 ---
-title: Planeamiento de la capacidad de los roles de servidor de App Service en Azure Stack | Microsoft Docs
-description: Obtenga información sobre el planeamiento de la capacidad de los roles de servidor de App Service en Azure Stack.
+title: Planeamiento de la capacidad de los roles de servidor de App Service en Azure Stack Hub | Microsoft Docs
+description: Obtenga información sobre el planeamiento de la capacidad de los roles de servidor de App Service en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: BryanLa
@@ -16,18 +16,16 @@ ms.date: 03/13/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/13/2019
-ms.openlocfilehash: 80dc7bae2371025fba82531b08216606580176e1
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.openlocfilehash: d0273a1d8bca100f09254804919ba0061b6c7bd3
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70975197"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75880692"
 ---
-# <a name="capacity-planning-for-app-service-server-roles-in-azure-stack"></a>Planeamiento de la capacidad de los roles de servidor de App Service en Azure Stack
+# <a name="capacity-planning-for-app-service-server-roles-in-azure-stack-hub"></a>Planeamiento de la capacidad de los roles de servidor de App Service en Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
-
-Para configurar una implementación lista para producción de Azure App Service en Azure Stack, debe planear la capacidad que espera que el sistema admita.  
+Para configurar una implementación lista para producción de Azure App Service en Azure Stack Hub, debe planear la capacidad que espera que el sistema admita.  
 
 En este artículo se ofrece una guía del número mínimo de instancias de proceso y SKU de proceso que debe usar para una implementación de producción.
 
@@ -82,7 +80,7 @@ Para proporcionar Azure Functions a los usuarios en el modelo de plan de consumo
 Cuando decida el número de roles de trabajo web compartidos que utilizará, revise estas consideraciones:
 
 - **Memoria**: es el recurso más crítico para un rol de trabajo web. Si no hay memoria suficiente, afecta al rendimiento del sitio web cuando se intercambia memoria virtual del disco. Cada servidor necesita aproximadamente 1,2 GB de RAM para el sistema operativo. La RAM por encima de este umbral puede utilizarse para ejecutar sitios web.
-- **Porcentaje de sitios web activos**: por lo general, aproximadamente el cinco por ciento de las aplicaciones en una implementación de Azure App Service en Azure Stack están activas. Sin embargo, el porcentaje de aplicaciones que están activas en un momento dado puede ser superior o inferior. Con una tasa de aplicaciones activas del cinco por ciento, el número máximo de aplicaciones que se pueden incluir en una instancia de Azure App Service en la implementación de Azure Stack debe ser menor que el número de sitios activos multiplicado por 20 (5 x 20 = 100).
+- **Porcentaje de sitios web activos**: por lo general, aproximadamente el cinco por ciento de las aplicaciones en una implementación de Azure App Service en Azure Stack Hub están activas. Sin embargo, el porcentaje de aplicaciones que están activas en un momento dado puede ser superior o inferior. Con una tasa de aplicaciones activas del cinco por ciento, el número máximo de aplicaciones que se pueden incluir en una instancia de Azure App Service en la implementación de Azure Stack Hub debe ser menor que el número de sitios activos multiplicado por 20 (5 x 20 = 100).
 - **Superficie de memoria promedio**: la superficie de memoria promedio en las aplicaciones observada en entornos de producción es de aproximadamente 70 MB. Con esta cantidad, la memoria asignada en todas las máquinas virtuales o los equipos con el rol de trabajo web se puede calcular de la siguiente manera:
 
    `Number of provisioned applications * 70 MB * 5% - (number of web worker roles * 1044 MB)`
@@ -95,11 +93,11 @@ Cuando decida el número de roles de trabajo web compartidos que utilizará, rev
 
 ### <a name="additional-considerations-for-dedicated-workers-during-upgrade-and-maintenance"></a>Consideraciones adicionales para los trabajadores dedicados durante la actualización y el mantenimiento
 
-Durante la actualización y mantenimiento de los trabajos, Azure App Service en Azure Stack llevará a cabo mantenimiento en un 20 % de cada nivel de trabajo en cualquier momento.  Por lo tanto, los administradores de la nube siempre deben mantener un grupo del 20 % de los roles de trabajo sin asignar por nivel de trabajo a fin de garantizar que sus inquilinos no experimentan ninguna pérdida de servicio durante la actualización y el mantenimiento.  Por ejemplo, si tiene diez roles de trabajo en un nivel de trabajo, debe asegurarse de que dos se dejan sin asignar, para permitir la actualización y el mantenimiento. Si los diez roles de trabajo quedan asignados, debe ampliar el nivel de trabajo para mantener un grupo de roles de trabajo sin asignar. 
+Durante la actualización y mantenimiento de los trabajos, Azure App Service en Azure Stack Hub llevará a cabo mantenimiento en un 20 % de cada nivel de trabajo en cualquier momento.  Por lo tanto, los administradores de la nube siempre deben mantener un grupo del 20 % de los roles de trabajo sin asignar por nivel de trabajo a fin de garantizar que sus inquilinos no experimentan ninguna pérdida de servicio durante la actualización y el mantenimiento.  Por ejemplo, si tiene diez roles de trabajo en un nivel de trabajo, debe asegurarse de que dos se dejan sin asignar, para permitir la actualización y el mantenimiento. Si los diez roles de trabajo quedan asignados, debe ampliar el nivel de trabajo para mantener un grupo de roles de trabajo sin asignar. 
 
 Durante la actualización y el mantenimiento, Azure App Service moverá las cargas de trabajo a los roles de trabajo sin asignar para garantizar que las cargas siguen funcionando. Si no hay ningún rol de trabajo sin asignar disponible durante la actualización, es posible que se produzca un tiempo de inactividad en la carga de trabajo del inquilino. En lo que respecta a los nodos de trabajo compartidos, los clientes no tienen que aprovisionar más, ya que el servicio asignará automáticamente las aplicaciones de inquilino a los nodos de trabajo disponibles. Para lograr una alta disponibilidad, hay un requisito mínimo de dos roles de trabajo en este nivel.
 
-Los administradores de la nube pueden supervisar su asignación de nivel de trabajo en el área de administración de App Service del portal de administración de Azure Stack. Vaya a App Service y, a continuación, seleccione Niveles de trabajo en el panel izquierdo. En la tabla Niveles de trabajo se muestran el nombre del nivel de trabajo, el tamaño, la imagen utilizada, el número de trabajos disponibles (no asignados), el número total de trabajos en cada nivel y el estado general del nivel de trabajo.
+Los administradores de la nube pueden supervisar su asignación de nivel de trabajo en el área de administración de App Service del portal del administrador de Azure Stack Hub. Vaya a App Service y, a continuación, seleccione Niveles de trabajo en el panel izquierdo. En la tabla Niveles de trabajo se muestran el nombre del nivel de trabajo, el tamaño, la imagen utilizada, el número de trabajos disponibles (no asignados), el número total de trabajos en cada nivel y el estado general del nivel de trabajo.
 
 ![Administración de App Service: niveles de trabajo][1]
 
@@ -119,7 +117,7 @@ Para obtener más información, consulte [Aprovisionamiento de un servidor de ar
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Requisitos previos para implementar App Service en Azure Stack](azure-stack-app-service-before-you-get-started.md)
+[Requisitos previos para implementar App Service en Azure Stack Hub](azure-stack-app-service-before-you-get-started.md)
 
 <!--Image references-->
 [1]: ./media/azure-stack-app-service-capacity-planning/worker-tier-allocation.png

@@ -1,6 +1,6 @@
 ---
-title: Replicación de recursos entre varias suscripciones de Azure Stack | Microsoft Docs
-description: Obtenga información sobre cómo replicar recursos con el conjunto de scripts del replicador de suscripciones de Azure Stack.
+title: Replicación de recursos entre varias suscripciones de Azure Stack Hub | Microsoft Docs
+description: Aprenda a replicar recursos mediante el conjunto de scripts del replicador de suscripciones de Azure Stack Hub.
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
@@ -9,16 +9,16 @@ ms.date: 11/07/2019
 ms.author: mabrigg
 ms.reviewer: rtiberiu
 ms.lastreviewed: 11/07/2019
-ms.openlocfilehash: 03388b08e6cc258437656f2e580b75de14b8cee5
-ms.sourcegitcommit: 3a8e116fd0b16e1201e55e2088dde2e581004045
+ms.openlocfilehash: ef492c0e5bf63e73e3b8f59befa642d6d6b854bf
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74557680"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816129"
 ---
-# <a name="how-to-replicate-resources-using-the-azure-stack-subscription-replicator"></a>Replicación de recursos mediante el replicador de suscripciones de Azure Stack
+# <a name="how-to-replicate-resources-using-the-azure-stack-hub-subscription-replicator"></a>Replicación de recursos mediante el replicador de suscripciones de Azure Stack Hub
 
-Puede usar el script de PowerShell del replicador de suscripciones de Azure Stack para copiar los recursos entre suscripciones de Azure Stack, entre marcas de Azure Stack o entre Azure Stack y Azure. El script del replicador lee y vuelve a generar los recursos de Azure Resource Manager de distintas suscripciones de Azure y Azure Stack. En este artículo se describe cómo funciona el script y cómo se puede usar, y se proporciona una referencia para las operaciones del script.
+Puede usar el script de PowerShell del replicador de suscripciones de Azure Stack Hub para copiar recursos entre suscripciones de Azure Stack Hub, entre marcas de Azure Stack Hub o entre Azure Stack Hub y Azure. El script del replicador lee y vuelve a generar los recursos de Azure Resource Manager de distintas suscripciones de Azure y Azure Stack Hub. En este artículo se describe cómo funciona el script y cómo se puede usar, y se proporciona una referencia para las operaciones del script.
 
 Puede encontrar los scripts que se usaron en este artículo en el repositorio de GitHub [Azure Intelligent Edge Patterns](https://github.com/Azure-Samples/azure-intelligent-edge-patterns). Los scripts se encuentran en la carpeta del [replicador de suscripciones](https://github.com/Azure-Samples/azure-intelligent-edge-patterns/tree/master/subscription%20replicator).
 
@@ -83,7 +83,7 @@ Para ejecutar la herramienta del replicador de suscripciones de Azure (v3), debe
 Cuando el script termine de ejecutarse, habrá tres nuevas carpetas, **Deployment_Files**, **Parameter_Files** y **Custom_ARM_Templates**.
 
  > [!Note]  
- > Antes de ejecutar cualquiera de los scripts generados, debe establecer el entorno correcto e iniciar sesión en la suscripción de destino (en la nueva instancia de Azure Stack, por ejemplo) y establecer el directorio de trabajo en la carpeta **Deployment_Files**.
+ > Antes de ejecutar cualquiera de los scripts generados debe establecer el entorno correcto e iniciar sesión en la suscripción de destino (en la nueva instancia de Azure Stack Hub, por ejemplo) y establecer el directorio de trabajo en la carpeta **Deployment_Files**.
 
 Deployment_Files contendrá dos archivos **DeployResourceGroups.ps1** y **DeployResources.ps1**. Al ejecutar DeployResourceGroups.ps1, se implementarán los grupos de recursos. Al ejecutar DeployResources.ps1, se implementarán todos los recursos que se procesaron. En el caso de que la herramienta se ejecute con **All** (Todos) o **Microsoft.Compute/virtualMachines** como tipo de recurso, DeployResources.ps1 solicitará al usuario que escriba una contraseña de administrador de máquina virtual que se usará para crear todas las máquinas virtuales.
 
@@ -91,7 +91,7 @@ Deployment_Files contendrá dos archivos **DeployResourceGroups.ps1** y **Deploy
 
 1.  Ejecute el script.
 
-    ![Ejecute el script](./media/azure-stack-network-howto-backup-replicator/image2.png)
+    ![Ejecute el script.](./media/azure-stack-network-howto-backup-replicator/image2.png)
 
     > [!Note]  
     > No olvide configurar el entorno de origen y el contexto de la suscripción para la instancia de PS. 
@@ -181,10 +181,10 @@ La herramienta puede replicar recursos de una suscripción a otra siempre que lo
 
 Para asegurarse de que la replicación se realiza correctamente, asegúrese de que las versiones del proveedor de recursos de la suscripción de destino coinciden con las de la suscripción de origen.
 
-Al replicar desde un servicio de Azure comercial a otro o de una suscripción en Azure Stack a otra en la misma instancia de Azure Stack, habrá problemas al replicar las cuentas de almacenamiento. Esto se debe a que el requisito de nomenclatura de la cuenta de almacenamiento es que todos los nombres de las cuentas de almacenamiento sean únicos en todos los servicios de Azure comercial o en todas las suscripciones de una región o instancia de Azure Stack. La replicación de las cuentas de almacenamiento en distintas instancias de Azure Stack se realizará correctamente, ya que las instancias son regiones o instancias independientes.
+Al replicar desde un servicio de Azure comercial a otro o desde una suscripción de Azure Stack Hub a otra en la misma instancia de Azure Stack Hub, habrá problemas al replicar cuentas de almacenamiento. Esto se debe a que el requisito de nomenclatura de la cuenta de almacenamiento es que todos los nombres de las cuentas de almacenamiento sean únicos en todos los servicios de Azure comerciales o en todas las suscripciones de una región o instancia de Azure Stack Hub. La replicación de las cuentas de almacenamiento en distintas instancias de Azure Stack Hub se realizará correctamente, ya que las pilas son regiones o instancias independientes.
 
 
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Diferencias y consideraciones para las redes de Azure Stack](azure-stack-network-differences.md)  
+[Diferencias y consideraciones para las redes de Azure Stack Hub](azure-stack-network-differences.md)  

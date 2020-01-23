@@ -1,6 +1,6 @@
 ---
-title: Modificar la configuración específica de la configuración del conmutador de Azure Stack | Microsoft Docs
-description: Obtenga información sobre lo que puede personalizar en la configuración del conmutador de Azure Stack. Después de que el fabricante de equipos originales (OEM) cree la configuración, no la modifique sin el consentimiento de ese OEM o del equipo de ingeniería de Microsoft Azure Stack.
+title: Modificación de la configuración específica de la configuración del conmutador de Azure Stack Hub | Microsoft Docs
+description: Aprenda lo que puede personalizar en la configuración del conmutador de Azure Stack Hub. Después de que el fabricante de equipos originales (OEM) cree la configuración, no la modifique sin su consentimiento o el del equipo de ingeniería de Microsoft Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,29 +15,29 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: wamota
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 99d52dc7165fdd37a614c1396d7e5c1f0165e235
-ms.sourcegitcommit: cefba8d6a93efaedff303d3c605b02bd28996c5d
+ms.openlocfilehash: 730abce4712530c257ebde332ce220fe14cea772
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74299121"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75811930"
 ---
-#  <a name="modify-specific-settings-on-your-azure-stack-switch-configuration"></a>Modificar la configuración específica de la configuración del conmutador de Azure Stack
+#  <a name="modify-specific-settings-on-your-azure-stack-hub-switch-configuration"></a>Modificación de la configuración específica de la configuración del conmutador de Azure Stack Hub
 
-Puede modificar algunas opciones de configuración del entorno en la configuración del conmutador Azure Stack. Puede identificar qué opciones de configuración se pueden cambiar en la plantilla que creó el fabricante de equipos originales (OEM). En este artículo se explica cada una de esas opciones de configuración personalizables y de qué manera afectan los cambios a Azure Stack. Estas opciones de configuración incluyen la actualización de contraseña, el servidor syslog, la supervisión de SNMP, la autenticación y la lista de control de acceso. 
+Puede modificar algunas opciones de configuración del entorno en la configuración del conmutador Azure Stack Hub. Puede identificar qué opciones de configuración se pueden cambiar en la plantilla que creó el fabricante de equipos originales (OEM). En este artículo se explica cada una de esas opciones de configuración personalizables y de qué manera afectan los cambios a Azure Stack Hub. Estas opciones de configuración incluyen la actualización de contraseña, el servidor syslog, la supervisión de SNMP, la autenticación y la lista de control de acceso. 
 
-Durante la implementación de la solución de Azure Stack, el fabricante de equipos originales (OEM) crea y aplica la configuración del conmutador para TOR y BMC. A continuación, el OEM usa la herramienta de automatización de Azure Stack para confirmar que las opciones necesarias estén configuradas correctamente en los dispositivos. La configuración se basa en la información de la [hoja de cálculo de implementación](azure-stack-deployment-worksheet.md) de Azure Stack. Después de que el OEM cree la configuración, **no** la modifique sin el consentimiento del OEM o del equipo de ingeniería de Microsoft Azure Stack. Recuerde que un cambio en la configuración del dispositivo de red puede afectar significativamente a la operación o a la resolución de problemas de red en su instancia de Azure Stack.
+Durante la implementación de la solución de Azure Stack Hub, el fabricante de equipos originales (OEM) crea y aplica la configuración del conmutador para TOR y BMC. A continuación, el OEM usa la herramienta de automatización de Azure Stack Hub para confirmar que las opciones necesarias estén configuradas correctamente en los dispositivos. La configuración se basa en la información de la [hoja de cálculo de implementación](azure-stack-deployment-worksheet.md) de Azure Stack Hub. Después de que el OEM cree la configuración, **no** la modifique sin el consentimiento del OEM o del equipo de ingeniería de Microsoft Azure Stack Hub. Recuerde que un cambio en la configuración del dispositivo de red puede afectar significativamente a la operación o a la resolución de problemas de red en su instancia de Azure Stack Hub.
 
 Sin embargo, hay algunos valores que se pueden agregar, quitar o cambiar en la configuración de los conmutadores de red.
 
 >[!Warning]  
-> **No** modifique la configuración sin el consentimiento del OEM o del equipo de ingeniería de Microsoft Azure Stack. Recuerde que un cambio en la configuración del dispositivo de red puede afectar significativamente a la operación o a la resolución de problemas de red en su instancia de Azure Stack.
+> **No** modifique la configuración sin el consentimiento del OEM o del equipo de ingeniería de Microsoft Azure Stack Hub. Recuerde que un cambio en la configuración del dispositivo de red puede afectar significativamente a la operación o a la resolución de problemas de red en su instancia de Azure Stack Hub.
 >
-> Para obtener más información acerca de estas funciones en el dispositivo de red o cómo realizar estos cambios, póngase en contacto con el proveedor de hardware del OEM o con el Soporte técnico de Microsoft. El OEM tiene el archivo de configuración que se creó con la herramienta de automatización en función de la hoja de cálculo de implementación de Azure Stack. 
+> Para obtener más información acerca de estas funciones en el dispositivo de red o cómo realizar estos cambios, póngase en contacto con el proveedor de hardware del OEM o con el Soporte técnico de Microsoft. El OEM tiene el archivo de configuración que se creó con la herramienta de automatización en función de la hoja de cálculo de implementación de Azure Stack Hub. 
 
 ## <a name="password-update"></a>Actualización de contraseñas
 
-El operador puede actualizar en cualquier momento la contraseña de cualquier usuario en los conmutadores de red. No es necesario cambiar ninguna información en el sistema de Azure Stack ni usar los pasos para el [Cambio de secretos en Azure Stack](azure-stack-rotate-secrets.md).
+El operador puede actualizar en cualquier momento la contraseña de cualquier usuario en los conmutadores de red. No es necesario cambiar ninguna información en el sistema de Azure Stack Hub ni usar los pasos de [Cambio de secretos en Azure Stack](azure-stack-rotate-secrets.md).
 
 ## <a name="syslog-server"></a>Servidor de Syslog
 
@@ -54,10 +54,10 @@ El operador puede configurar los elementos RADIUS o TACACS para administrar la a
 ## <a name="access-control-list-updates"></a>Actualizaciones de la lista de control de acceso
 
 > [!NOTE]
-> A partir de 1910, la hoja de cálculo de implementación tendrá un nuevo campo para **Redes permitidas** que reemplaza los pasos manuales requeridos para proporcionar acceso a las interfaces de administración de dispositivos de red y al host de ciclo de vida de hardware (HLH) desde un intervalo de red del centro de datos de confianza. Para más información acerca de esta nueva característica, consulte [Planeamiento de la capacidad de red de Azure Stack](azure-stack-network.md#permitted-networks).
+> A partir de 1910, la hoja de cálculo de implementación tendrá un nuevo campo para **Redes permitidas** que reemplaza los pasos manuales requeridos para proporcionar acceso a las interfaces de administración de dispositivos de red y al host de ciclo de vida de hardware (HLH) desde un intervalo de red del centro de datos de confianza. Para más información acerca de esta nueva característica, consulte [Planeamiento de la capacidad de red de Azure Stack Hub](azure-stack-network.md#permitted-networks).
 
 El operador puede cambiar la lista de control de acceso (ACL) para permitir el acceso a las interfaces de administración de dispositivos de red y al host de ciclo de vida de hardware (HLH) desde un intervalo de red del centro de datos de confianza. Con la lista de control de acceso, el operador puede permitir que sus máquinas virtuales de jumpbox de administración de un intervalo de red específico obtengan acceso a la interfaz de administración de conmutadores, al sistema operativo HLH y al BMC HLH.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Integración del centro de datos de Azure Stack: DNS](azure-stack-integrate-dns.md)
+[Integración de Azure Stack Hub en el centro de datos: DNS](azure-stack-integrate-dns.md)

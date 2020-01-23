@@ -1,6 +1,6 @@
 ---
-title: Introducción a Azure Stack Storage | Microsoft Docs
-description: Obtenga información sobre los servicios de Azure Stack Storage.
+title: Introducción a Azure Stack Hub Storage | Microsoft Docs
+description: Obtenga información sobre los servicios de Azure Stack Hub Storage.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -14,24 +14,22 @@ ms.topic: conceptual
 ms.date: 10/02/2019
 ms.author: mabrigg
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: dfa9666387093f60dfd41e371707dff23119dc9a
-ms.sourcegitcommit: a7207f4a4c40d4917b63e729fd6872b3dba72968
+ms.openlocfilehash: 50ca47c66e31417378e5088bf6c0c9f7cb406cc1
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71909583"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75878330"
 ---
-# <a name="introduction-to-azure-stack-storage"></a>Introducción a Azure Stack Storage
-
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+# <a name="introduction-to-azure-stack-hub-storage"></a>Introducción a Azure Stack Hub Storage
 
 ## <a name="overview"></a>Información general
 
-Azure Stack Storage es un conjunto de servicios de almacenamiento en la nube coherente con los servicios proporcionados por Azure Storage. Estos servicios incluyen blobs, tablas y colas.
+Azure Stack Hub Storage es un conjunto de servicios de almacenamiento en la nube coherente con los servicios proporcionados por Azure Storage. Estos servicios incluyen blobs, tablas y colas.
 
-## <a name="azure-stack-storage-services"></a>Servicios de Azure Stack Storage
+## <a name="azure-stack-hub-storage-services"></a>Servicios de Azure Stack Hub Storage
 
-Azure Stack Storage proporciona los tres servicios siguientes:
+Azure Stack Hub Storage proporciona los tres servicios siguientes:
 
 - **Blob Storage**
 
@@ -45,9 +43,9 @@ Azure Stack Storage proporciona los tres servicios siguientes:
 
     El almacenamiento de colas ofrece una solución de mensajería confiable para el procesamiento de flujos de trabajo y para la comunicación entre los componentes de los servicios en la nube.
 
-Una cuenta de Azure Stack Storage es una cuenta segura que proporciona acceso a los servicios de Azure Stack Storage. La cuenta de almacenamiento ofrece el espacio de nombres exclusivo para los recursos de almacenamiento. El siguiente diagrama muestra las relaciones entre los recursos de Azure Stack Storage de una cuenta de almacenamiento:
+Una cuenta de Azure Stack Hub Storage es una cuenta segura que proporciona acceso a los servicios de Azure Stack Hub Storage. La cuenta de almacenamiento ofrece el espacio de nombres exclusivo para los recursos de almacenamiento. El siguiente diagrama muestra las relaciones entre los recursos de Azure Stack Hub Storage en una cuenta de almacenamiento:
 
-![Introducción a Azure Stack Storage](media/azure-stack-storage-overview/AzureStackStorageOverview.png)
+![Introducción a Azure Stack Hub Storage](media/azure-stack-storage-overview/AzureStackStorageOverview.png)
 
 ### <a name="blob-storage"></a>Almacenamiento de blobs
 
@@ -74,7 +72,7 @@ Blob Storage ofrece tres tipos de blobs:
 
 - **Blobs en páginas**
 
-    Los blobs en páginas están optimizados para representar discos IaaS y admitir escrituras aleatorias de hasta 1 TB. Un disco IaaS asociado a una máquina virtual de Azure Stack es un VHD almacenado como blob en páginas.
+    Los blobs en páginas están optimizados para representar discos IaaS y admitir escrituras aleatorias de hasta 1 TB. Un disco IaaS conectado a una máquina virtual de Azure Stack Hub es un disco duro virtual almacenado como blob en páginas.
 
 ### <a name="table-storage"></a>Almacenamiento de tablas
 

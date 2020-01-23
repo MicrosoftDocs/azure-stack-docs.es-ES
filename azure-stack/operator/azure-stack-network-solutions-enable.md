@@ -1,6 +1,6 @@
 ---
-title: Oferta de una solución de red en Azure Stack con FortiGate de Fortinet | Microsoft Docs
-description: Más información sobre cómo habilitar una solución de red en Azure Stack con FortiGate de Fortinet
+title: Oferta de una solución de red en Azure Stack Hub con FortiGate de Fortinet | Microsoft Docs
+description: Aprenda a habilitar una solución de red en Azure Stack Hub con FortiGate de Fortinet.
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
@@ -9,22 +9,22 @@ ms.date: 09/30/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 09/30/2019
-ms.openlocfilehash: 27012c491054043f45004d76787538091864577c
-ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
+ms.openlocfilehash: 356c6825da9ef60737371c90700b79a8a8a201ea
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71962715"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75810793"
 ---
-# <a name="offer-a-network-solution-in-azure-stack-with-fortinet-fortigate"></a>Oferta de una solución de red en Azure Stack con FortiGate de Fortinet
+# <a name="offer-a-network-solution-in-azure-stack-hub-with-fortinet-fortigate"></a>Oferta de una solución de red en Azure Stack Hub con FortiGate de Fortinet
 
-Puede agregar el Firewall de próxima generación de FortiGate al Marketplace de Azure Stack. FortiGate permite a los usuarios crear soluciones de red, como una red privada virtual (VPN), para el emparejamiento de red virtual y Azure Stack. Una aplicación virtual de red (NVA) controla el flujo del tráfico de red desde una red perimetral a otras redes o subredes. 
+Puede agregar el Firewall de próxima generación de FortiGate a Marketplace de Azure Stack Hub. FortiGate permite a los usuarios crear soluciones de red, como una red privada virtual (VPN), para el emparejamiento de red virtual y Azure Stack Hub. Una aplicación virtual de red (NVA) controla el flujo del tráfico de red desde una red perimetral a otras redes o subredes. 
 
 Para más información sobre FortiGate en Azure Marketplace, consulte el artículo sobre la [solución una sola máquina virtual del firewall de próxima generación de FortiGate de Fortinet](https://azuremarketplace.microsoft.com/marketplace/apps/fortinet.fortinet-FortiGate-singlevm).
 
-## <a name="download-the-required-azure-stack-marketplace-items"></a>Descarga de los elementos requeridos del Marketplace de Azure Stack
+## <a name="download-the-required-azure-stack-hub-marketplace-items"></a>Descarga de los elementos de Marketplace de Azure Stack Hub necesarios
 
-1.  Abra el portal de administración de Azure Stack.
+1.  Abra el portal del administrador de Azure Stack Hub.
 
 2.  Seleccione **Administración de Marketplace** y seleccione **Agregar desde Azure**.
 
@@ -32,14 +32,14 @@ Para más información sobre FortiGate en Azure Marketplace, consulte el artícu
     - FortiGate-VM de Fortinet para BYOL de Azure
     - FortiGate NGFW: implementación de una sola máquina virtual (BYOL)
 
-    ![Azure Stack FortiGate Fortinet](./media/azure-stack-network-solutions-enable/azure-stack-marketplace-FortiGate-fortinet.png)
+    ![FortiGate de Fortinet para Azure Stack Hub](./media/azure-stack-network-solutions-enable/azure-stack-marketplace-FortiGate-fortinet.png)
 
 2.  Espere hasta que los elementos del Marketplace tengan el estado **Descargado**. Estos elementos puede tardar varios minutos en descargarse.
 
-    ![Azure Stack FortiGate Fortinet](./media/azure-stack-network-solutions-enable/image4.png)
+    ![FortiGate de Fortinet para Azure Stack Hub](./media/azure-stack-network-solutions-enable/image4.png)
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Configuración de una VPN para Azure Stack con la NVA FortiGate](../user/azure-stack-network-howto-vnet-to-onprem.md)  
+[Configuración de una VPN para Azure Stack Hub con FortiGate NVA](../user/azure-stack-network-howto-vnet-to-onprem.md)  
 [Conexión de dos redes virtuales mediante el emparejamiento](../user/azure-stack-network-howto-vnet-to-vnet.md)  
 [Establecimiento de una conexión de red virtual a red virtual con la NVA FortiGate de Fortinet](../user/azure-stack-network-howto-vnet-to-vnet-stacks.md)  

@@ -1,6 +1,6 @@
 ---
-title: Administración de la capacidad de almacenamiento en Azure Stack | Microsoft Docs
-description: Obtenga información acerca de cómo supervisar y administrar la capacidad de almacenamiento y la disponibilidad en Azure Stack.
+title: Administración de la capacidad de almacenamiento en Azure Stack Hub | Microsoft Docs
+description: Obtenga información acerca de cómo supervisar y administrar la capacidad de almacenamiento y la disponibilidad en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,22 +15,20 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 03/19/2019
-ms.openlocfilehash: f569d5dbffaec772657a6fc67b82c9be78f35800
-ms.sourcegitcommit: 55ec59f831a98c42a4e9ff0dd954bf10adb98ff1
+ms.openlocfilehash: 612a49649b66b6f7324ea3973a4ec3b02adf2ddb
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74540312"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882324"
 ---
-# <a name="manage-storage-capacity-for-azure-stack"></a>Administración de la capacidad de almacenamiento para Azure Stack
+# <a name="manage-storage-capacity-for-azure-stack-hub"></a>Administración de la capacidad de almacenamiento en Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
-
-La información en este artículo ayuda al operador en la nube de Azure Stack a supervisar y administrar la capacidad de almacenamiento de su implementación de Azure Stack. La infraestructura de almacenamiento de Azure Stack asigna un subconjunto de la capacidad total de almacenamiento de la implementación de Azure Stack para usarlo en los **servicios de almacenamiento**. Los servicios de almacenamiento contienen los datos del inquilino en recursos compartidos de volúmenes que corresponden a los nodos de la implementación.
+La información de este artículo ayuda al operador en la nube de Azure Stack Hub a supervisar y administrar la capacidad de almacenamiento de su implementación de Azure Stack Hub. La infraestructura de Azure Stack Hub Storage asigna un subconjunto de la capacidad total de almacenamiento de la implementación de Azure Stack Hub para usarlo en los **servicios de almacenamiento**. Los servicios de almacenamiento contienen los datos del inquilino en recursos compartidos de volúmenes que corresponden a los nodos de la implementación.
 
 Como operador en la nube, dispone de una cantidad limitada de almacenamiento con la que trabajar. La cantidad de almacenamiento se define por la solución que se implementa. La solución la proporciona el proveedor OEM cuando se usa una solución de varios nodos, o el hardware en el que se instala el Kit de desarrollo de Azure Stack (ASDK).
 
-Dado que Azure Stack no admite la expansión de la capacidad de almacenamiento, es importante [supervisar](#monitor-shares) el almacenamiento disponible para garantizar que se mantiene la eficiencia de las operaciones.
+Dado que Azure Stack Hub no admite la expansión de la capacidad de almacenamiento, es importante [supervisar](#monitor-shares) el almacenamiento disponible para garantizar que se mantiene la eficiencia de las operaciones.
 
 Cuando la capacidad libre restante de un recurso compartido está limitada, planee [ administrar el espacio](#manage-available-space) para evitar que los recursos compartidos se queden sin capacidad.
 
@@ -42,7 +40,7 @@ Cuando se utiliza un recurso compartido al 100 %, el servicio de almacenamiento
 
 ## <a name="understand-volumes-and-shares-containers-and-disks"></a>Conocimiento de los volúmenes y recursos compartidos, contenedores y discos
 ### <a name="volumes-and-shares"></a>Volúmenes y recursos compartidos
-El *servicio de almacenamiento* crea particiones del almacenamiento disponible en volúmenes separados e iguales que se asignan para almacenar los datos del inquilino. El número de volúmenes es igual al número de los nodos en la implementación de Azure Stack:
+El *servicio de almacenamiento* crea particiones del almacenamiento disponible en volúmenes separados e iguales que se asignan para almacenar los datos del inquilino. El número de volúmenes es igual al número de nodos en la implementación de Azure Stack Hub:
 
 - En una implementación de cuatro nodos, hay cuatro volúmenes. Cada volumen tiene un único recurso compartido. En una implementación de varios nodos, el número de recursos compartidos no se reduce si un nodo se quita o no funciona correctamente.
 - Si usa el ASDK, hay un único volumen con un solo recurso compartido.
@@ -51,9 +49,9 @@ Debido a que los recursos compartidos de los servicios de almacenamiento son par
 
 Los recursos compartidos en los volúmenes contienen datos de inquilino. Los datos de inquilino incluyen blobs en páginas, blobs en bloques, blobs en anexos, tablas, colas, bases de datos y almacenes de metadatos relacionados. Debido a que los objetos de almacenamiento (por ejemplo, blobs) se encuentran contenidos individualmente en un solo recurso compartido, el tamaño máximo de cada objeto no puede exceder el tamaño de un recurso compartido. El tamaño máximo de los nuevos objetos depende de la capacidad que queda en un recurso compartido, como el espacio no utilizado cuando se crea ese nuevo objeto.
 
-Cuando un recurso compartido tiene poco espacio libre y las acciones para [reclamar](#reclaim-capacity) el espacio no son correctas o no están disponibles, el operador en la nube de Azure Stack puede migrar los contenedores de blobs de un recurso compartido a otro.
+Cuando un recurso compartido tiene poco espacio libre y las acciones para [reclamar](#reclaim-capacity) el espacio no son correctas o no están disponibles, el operador en la nube de Azure Stack Hub puede migrar los contenedores de blobs de un recurso compartido a otro.
 
-- Para obtener información acerca de cómo trabajan los usuarios del inquilino con el almacenamiento de blobs en Azure Stack, consulte los [servicios de almacenamiento de Azure Stack](/azure-stack/user/azure-stack-storage-overview#azure-stack-storage-services).
+- Para obtener información acerca de cómo trabajan los usuarios del inquilino con el almacenamiento de blobs en Azure Stack Hub, consulte los [servicios de Azure Stack Hub Storage](/azure-stack/user/azure-stack-storage-overview#azure-stack-storage-services).
 
 
 ### <a name="containers"></a>Contenedores
@@ -63,7 +61,7 @@ Después de que el blob se coloca en un contenedor, ese blob puede aumentar para
 
 Los contenedores no se limitan a un único recurso compartido. Cuando los datos de blobs combinados en un contenedor aumentan hasta usar un 80 % o más de espacio disponible, el contenedor entra en modo de *desbordamiento*. Cuando se encuentra en modo de desbordamiento, los nuevos blobs que se crean en dicho contenedor se asignan a otro volumen que tenga espacio suficiente. Con el tiempo, un contenedor en modo de desbordamiento puede tener blobs que se distribuyen entre varios volúmenes.
 
-Cuando se utiliza el 80 % (y después el 90 %) del espacio disponible en un volumen, el sistema genera alertas en el portal de administración de Azure Stack. Los operadores en la nube deben revisar la capacidad de almacenamiento disponible y planear el reequilibrio del contenido. El servicio de almacenamiento deja de funcionar cuando se utiliza un disco al 100 % y no se generan alertas adicionales.
+Cuando se utiliza el 80 % (y después el 90 %) del espacio disponible en un volumen, el sistema genera alertas en el portal del administrador de Azure Stack Hub. Los operadores en la nube deben revisar la capacidad de almacenamiento disponible y planear el reequilibrio del contenido. El servicio de almacenamiento deja de funcionar cuando se utiliza un disco al 100 % y no se generan alertas adicionales.
 
 ### <a name="disks"></a>Discos
 Los inquilinos agregan discos de máquinas virtuales a los contenedores e incluyen un disco del sistema operativo. Las máquinas virtuales también pueden tener uno o más discos de datos. Ambos tipos de discos se almacenan como blobs en páginas. La guía para los inquilinos consiste en colocar cada disco en un contenedor independiente para mejorar el rendimiento de la máquina virtual.
@@ -93,7 +91,7 @@ Como operador en la nube, puede utilizar el portal de administración para ver l
 1. Inicie sesión en el [portal de administración](https://adminportal.local.azurestack.external).
 2. Seleccione **Todos los servicios** > **Almacenamiento** > **Recursos compartido de archivos** para abrir la lista de recursos compartidos de archivos donde puede ver la información de uso.
 
-    ![Ejemplo: Recursos compartidos de almacenamiento en el portal de administración de Azure Stack](media/azure-stack-manage-storage-shares/storage-file-shares.png)
+    ![Ejemplo: Recursos compartidos de almacenamiento en el portal del administrador de Azure Stack Hub](media/azure-stack-manage-storage-shares/storage-file-shares.png)
 
    - **TOTAL** es el espacio total en bytes que está disponible en el recurso compartido. Este espacio se utiliza para los datos y metadatos que se mantienen en los servicios de almacenamiento.
    - **USADO** es la cantidad de datos en bytes que utilizan todas las extensiones de los archivos que almacenan los datos del inquilino y los metadatos asociados.
@@ -106,13 +104,13 @@ Cuando utiliza el portal de administración, recibe alertas sobre los recursos c
 
 **Advertencia**: cuando la utilización de un recurso compartido de archivos supera el 80 %, recibe una alerta de tipo *Advertencia* en el portal de administración:
 
-![Ejemplo: Alerta de tipo Advertencia en el portal de administración de Azure Stack](media/azure-stack-manage-storage-shares/alert-warning.png)
+![Ejemplo: Alerta de advertencia en el portal del administrador de Azure Stack Hub](media/azure-stack-manage-storage-shares/alert-warning.png)
 
 **Crítico**: cuando la utilización de un recurso compartido de archivos supera el 90 %, recibe una alerta de tipo *Crítica* en el portal de administración:
 
-![Ejemplo: Alerta de tipo Crítica en el portal de administración de Azure Stack](media/azure-stack-manage-storage-shares/alert-critical.png)
+![Ejemplo: Alerta crítica en el portal del administrador de Azure Stack Hub](media/azure-stack-manage-storage-shares/alert-critical.png)
 
-**Ver detalles**: en el portal de administración, puede abrir los detalles de una alerta ver las opciones de mitigación: ![Ejemplo: Ver detalles de alerta en el portal de administración de Azure Stack](media/azure-stack-manage-storage-shares/alert-details.png)
+**Ver detalles**: en el portal de administración, puede abrir los detalles de una alerta ver las opciones de mitigación: ![Ejemplo: Ver detalles de la alerta en el portal del administrador de Azure Stack Hub](media/azure-stack-manage-storage-shares/alert-details.png)
 
 ## <a name="manage-available-space"></a>Administración del espacio disponible
 Cuando sea necesario liberar espacio en un recurso compartido, primero utilice los métodos menos invasivos. Por ejemplo, intente recuperar espacio antes de elegir migrar un contenedor.  
@@ -125,7 +123,7 @@ Puede reclamar la capacidad que utilizan las cuentas de inquilinos que se han el
 Para más información, consulte [Reclamación de capacidad](azure-stack-manage-storage-accounts.md#reclaim) en Administración de recursos de almacenamiento.
 
 ### <a name="migrate-a-container-between-volumes"></a>Migración de un contenedor entre volúmenes
-*Esta opción solo se aplica a sistemas integrados de Azure Stack.*
+*Esta opción solo se aplica a sistemas integrados de Azure Stack Hub.*
 
 Debido a los patrones de uso de inquilinos, algunos recursos compartidos de inquilino usan más espacio que otros. El resultado puede ser un recurso compartido que se quede sin espacio antes de otros recursos compartidos que están relativamente sin usar.
 
@@ -140,7 +138,7 @@ La migración consolida todos los blobs de contenedores en el nuevo recurso comp
 - Si carece de permisos para un grupo de recursos y no puede utilizar PowerShell para consultar los volúmenes adicionales de datos de desbordamiento, trabaje con el propietario de esos grupos de recursos y contenedores para comprender el tamaño total de los datos que se van a migrar antes de realizar la migración.  
 
 > [!IMPORTANT]
-> La migración de blobs para un contenedor es una operación sin conexión que requiere el uso de PowerShell. Hasta que se complete la migración, todos los blobs del contenedor que está migrando permanecen sin conexión y no se pueden utilizar. También debe evitar la actualización de Azure Stack hasta que se completen todas las migraciones en curso.
+> La migración de blobs para un contenedor es una operación sin conexión que requiere el uso de PowerShell. Hasta que se complete la migración, todos los blobs del contenedor que está migrando permanecen sin conexión y no se pueden utilizar. También debe evitar la actualización de Azure Stack Hub hasta que se completen todas las migraciones en curso.
 
 #### <a name="to-migrate-containers-using-powershell"></a>Para migrar contenedores mediante PowerShell
 1. Confirme que ha [instalado y configurado Azure PowerShell](https://azure.microsoft.com/documentation/articles/powershell-install-configure/). Para obtener más información, vea [Uso de Azure PowerShell con el Administrador de recursos de Azure](https://go.microsoft.com/fwlink/?LinkId=394767).
@@ -207,7 +205,7 @@ La migración consolida todos los blobs de contenedores en el nuevo recurso comp
     ![Ejemplo: Estado cancelado](media/azure-stack-manage-storage-shares/cancelled.png)
 
 ### <a name="move-vm-disks"></a>Traslado de discos de máquinas virtuales
-*Esta opción solo se aplica a sistemas integrados de Azure Stack.*
+*Esta opción solo se aplica a sistemas integrados de Azure Stack Hub.*
 
 El método más extremo para administrar el espacio implica el traslado de discos de VM. Como mover un contenedor asociado (uno que contiene un disco de máquina virtual) es complejo, póngase en contacto con el soporte técnico de Microsoft para realizar esta acción.
 

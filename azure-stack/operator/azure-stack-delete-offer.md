@@ -1,6 +1,6 @@
 ---
 title: Eliminación de cuotas, planes, ofertas y suscripciones | Microsoft Docs
-description: Aprenda a eliminar suscripciones, planes, ofertas y cuotas de Azure Stack.
+description: Aprenda a eliminar suscripciones, planes, ofertas y cuotas de Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: bryanla
@@ -15,16 +15,14 @@ ms.date: 08/13/2019
 ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 04/25/2019
-ms.openlocfilehash: e89fcb3c218ab8b7228b63211b9f94c7e03d9865
-ms.sourcegitcommit: 1bae55e754d7be75e03af7a4db3ec43fd7ff3e9c
+ms.openlocfilehash: 7184972e6b486ee696b4edb621046d1b41f677a9
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71319129"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882545"
 ---
 # <a name="delete-quotas-plans-offers-and-subscriptions"></a>Eliminación de cuotas, planes, ofertas y suscripciones
-
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
 En este artículo se describe cómo eliminar las cuotas, los planes, las ofertas y las suscripciones que ya no necesite. Como norma general, solo puede eliminar lo que no esté en uso. Por ejemplo, solo se puede eliminar una oferta si no hay suscripciones que pertenezcan a ella.
 
@@ -70,7 +68,7 @@ Puede ver y editar las cuotas existentes mediante el portal del administrador. P
 Como alternativa, puede eliminar algunas cuotas con estas API REST:
 
 - [Proceso](/rest/api/azurestack/quotas%20(compute)/delete)
-- [Red](/rest/api/azurestack/quotas%20(network)/delete)
+- [Network](/rest/api/azurestack/quotas%20(network)/delete)
 - [Storage](/rest/api/azurestack/storagequotas/delete)
 
 > [!NOTE]

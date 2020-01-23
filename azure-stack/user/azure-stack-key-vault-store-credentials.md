@@ -1,6 +1,6 @@
 ---
-title: Almacenar las credenciales de entidad de servicio en Key Vault en Azure Stack | Microsoft Docs
-description: Obtenga información sobre cómo Key Vault almacena las credenciales de entidad de servicio en Azure Stack
+title: Almacenamiento de las credenciales de una entidad de servicio de Key Vault en Azure Stack Hub | Microsoft Docs
+description: Obtenga información sobre la forma en que Key Vault almacena las credenciales de una entidad de servicio en Azure Stack Hub
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -14,31 +14,31 @@ ms.topic: article
 ms.date: 10/01/2019
 ms.author: sethm
 ms.lastreviewed: 01/16/2019
-ms.openlocfilehash: 9d86f7e68b2e96eb4a22f9896ff65a4ed6b96f92
-ms.sourcegitcommit: bbf3edbfc07603d2c23de44240933c07976ea550
+ms.openlocfilehash: a953666396b89706b935b73abea0b4d42c1dcc1a
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71714748"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820277"
 ---
-# <a name="store-service-principal-credentials-in-azure-stack-key-vault"></a>Almacenar las credenciales de entidad de servicio de Key Vault en Azure Stack
+# <a name="store-service-principal-credentials-in-azure-stack-hub-key-vault"></a>Almacenamiento de las credenciales de las entidades de servicio de Key Vault en Azure Stack Hub
 
-Desarrollar aplicaciones en Azure Stack habitualmente requiere crear una entidad de servicio y usar esas credenciales para realizar la autenticación antes de la implementación. Sin embargo, a veces se pierden las credenciales almacenadas para la entidad de servicio. En este artículo se describe cómo crear una entidad de servicio y almacenar los valores en Azure Key Vault para su posterior recuperación.
+El desarrollo de aplicaciones en Azure Stack Hub habitualmente requiere crear una entidad de servicio y usar esas credenciales para realizar la autenticación antes de la implementación. Sin embargo, a veces se pierden las credenciales almacenadas para la entidad de servicio. En este artículo se describe cómo crear una entidad de servicio y almacenar los valores en Azure Key Vault para su posterior recuperación.
 
-Para más información acerca de Key Vault, consulte [Introducción a Key Vault en Azure Stack](azure-stack-key-vault-intro.md).
+Para más información acerca de Key Vault, consulte [Introducción a Key Vault en Azure Stack Hub](azure-stack-key-vault-intro.md).
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 - Una suscripción a una oferta que incluye el servicio de Azure Key Vault.
-- PowerShell está instalado y configurado para su uso con Azure Stack.
+- PowerShell está instalado y configurado para su uso con Azure Stack Hub.
 
-## <a name="key-vault-in-azure-stack"></a>Key Vault en Azure Stack
+## <a name="key-vault-in-azure-stack-hub"></a>Key Vault en Azure Stack Hub
 
-Key Vault en Azure Stack ayuda a proteger claves criptográficas y secretos usados por servicios y aplicaciones en la nube. Con Key Vault, puede cifrar claves y secretos.
+Key Vault en Azure Stack Hub ayuda a proteger claves criptográficas y secretos usados por servicios y aplicaciones en la nube. Con Key Vault, puede cifrar claves y secretos.
 
 Para crear un almacén de claves, siga estos pasos:
 
-1. Inicie sesión en el portal de Azure Stack.
+1. Inicie sesión en el portal de Azure Stack Hub.
 
 2. En el panel, seleccione **+ Crear un recurso**, **Seguridad e identidad** y, luego, **Key Vault**.
 
@@ -80,7 +80,7 @@ Para crear un almacén de claves, siga estos pasos:
 
 ## <a name="store-the-service-principal-inside-key-vault"></a>Almacenamiento de la entidad de servicio dentro de Key Vault
 
-1. Inicie sesión en el portal de usuario de Azure Stack, seleccione el almacén de claves que creó anteriormente y, luego, el icono **Secreto**.
+1. Inicie sesión en el portal de usuarios de Azure Stack Hub, seleccione el almacén de claves que creó anteriormente y, luego, el icono **Secreto**.
 
 2. En el panel **Secreto**, seleccione **Generar o importar**.
 
@@ -101,5 +101,5 @@ Una vez que el secreto se ha creado correctamente, la información de la entidad
 ## <a name="next-steps"></a>Pasos siguientes
 
 - [Usar entidades de servicio](azure-stack-create-service-principals.md)
-- [Administrar Key Vault en Azure Stack mediante el portal](azure-stack-key-vault-manage-portal.md)  
-- [Administrar Key Vault en Azure Stack mediante PowerShell](azure-stack-key-vault-manage-powershell.md)
+- [Administración de Key Vault en Azure Stack Hub mediante el portal](azure-stack-key-vault-manage-portal.md)  
+- [Administración de Key Vault en Azure Stack Hub mediante PowerShell](azure-stack-key-vault-manage-powershell.md)

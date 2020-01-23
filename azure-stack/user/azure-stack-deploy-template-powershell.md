@@ -1,6 +1,6 @@
 ---
-title: Implementación de una plantilla mediante PowerShell en Azure Stack | Microsoft Docs
-description: Implemente una plantilla mediante PowerShell en Azure Stack.
+title: Implementación de una plantilla mediante PowerShell en Azure Stack Hub | Microsoft Docs
+description: Implemente una plantilla mediante PowerShell en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,25 +15,23 @@ ms.date: 10/07/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 09/23/2019
-ms.openlocfilehash: 38c3c428443afa251c8a6185929bfe0b80680b86
-ms.sourcegitcommit: 7226979ece29d9619c959b11352be601562b41d3
+ms.openlocfilehash: 8e5521755bdfc7a85c876c3b8df3e2a0acad9901
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72304064"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883701"
 ---
-# <a name="deploy-a-template-using-powershell-in-azure-stack"></a>Implementación de una plantilla mediante PowerShell en Azure Stack
+# <a name="deploy-a-template-using-powershell-in-azure-stack-hub"></a>Implementación de una plantilla mediante PowerShell en Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
-
-Puede usar PowerShell para implementar plantillas de Azure Resource Manager en Azure Stack. En este artículo, se describe cómo usar PowerShell para implementar una plantilla.
+Puede usar PowerShell para implementar plantillas de Azure Resource Manager en Azure Stack Hub. En este artículo, se describe cómo usar PowerShell para implementar una plantilla.
 
 ## <a name="run-azurerm-powershell-cmdlets"></a>Ejecución de cmdlets de AzureRM PowerShell
 
 En este ejemplo, se utilizan cmdlets de **AzureRM PowerShell** y una plantilla almacenada en GitHub. La plantilla crea una máquina virtual del centro de datos para Windows Server 2012 R2.
 
 >[!NOTE]
-> Antes de probar este ejemplo, asegúrese de que se haya [configurado PowerShell](azure-stack-powershell-configure-user.md) para un usuario de Azure Stack.
+> Antes de probar este ejemplo, asegúrese de que se haya [configurado PowerShell](azure-stack-powershell-configure-user.md) para un usuario de Azure Stack Hub.
 
 1. Examine el [repositorio AzureStack-QuickStart-Templates](https://aka.ms/AzureStackGitHub) y busque la plantilla **101-simple-windows-vm**. Guarde la plantilla en esta ubicación: `C:\templates\azuredeploy-101-simple-windows-vm.json`.
 2. Abra un símbolo del sistema de PowerShell con privilegios elevados.
@@ -60,7 +58,7 @@ En este ejemplo, se utilizan cmdlets de **AzureRM PowerShell** y una plantilla a
     >[!IMPORTANT]
     > Incremente el valor del parámetro `$myNum` cada vez que ejecute este script para evitar sobrescribir la implementación.
 
-4. Abra el portal de Azure Stack, seleccione **Examinar**, luego seleccione **Máquinas virtuales** y busque su nueva máquina virtual (**myDeployment001**).
+4. Abra el portal de Azure Stack Hub, seleccione **Examinar**, luego seleccione **Máquinas virtuales** y busque su nueva máquina virtual (**myDeployment001**).
 
 ## <a name="cancel-a-running-template-deployment"></a>Cancelación de una implementación de la plantilla en ejecución
 

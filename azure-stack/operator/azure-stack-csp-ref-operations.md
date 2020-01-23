@@ -1,6 +1,6 @@
 ---
-title: Registro de inquilinos en Azure Stack para el seguimiento de uso | Microsoft Docs
-description: Aprenda a registrar inquilinos y cómo se realiza el seguimiento del uso de estos en Azure Stack.
+title: Registro de inquilinos en Azure Stack Hub para el seguimiento de uso | Microsoft Docs
+description: Aprenda a registrar inquilinos y cómo se realiza el seguimiento del uso de estos en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,16 +15,14 @@ ms.date: 10/14/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 10/14/2019
-ms.openlocfilehash: 72310e813d0dd0a64575f1b2452bf4a5191638ef
-ms.sourcegitcommit: 97d41b3ebed07aa85a50087b6076671fd37e08c5
+ms.openlocfilehash: 981a80692e087cfcb733e73ec43d70fe67516e69
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72350175"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882579"
 ---
-# <a name="register-tenants-for-usage-tracking-in-azure-stack"></a>Registro de inquilinos en Azure Stack para el seguimiento de uso
-
-*Se aplica a: Sistemas integrados de Azure Stack*
+# <a name="register-tenants-for-usage-tracking-in-azure-stack-hub"></a>Registro de inquilinos en Azure Stack Hub para el seguimiento de uso
 
 En este artículo se incluye información acerca de las operaciones de registro. Puede usar estas operaciones para:
 
@@ -41,25 +39,25 @@ Puede asociar una sola suscripción de Azure a un inquilino. Si intenta agregar 
 
 ### <a name="use-api-profiles"></a>Uso de perfiles de API
 
-Los cmdlets de registro siguientes requieren que se especifique un perfil de API cuando se ejecuta PowerShell. Los perfiles de API representan un conjunto de proveedores de recursos de Azure y sus versiones de API. Le ayudan a usar la versión correcta de la API cuando interactúa con varias nubes de Azure. Por ejemplo, si trabaja con varias nubes al trabajar con la plataforma global de Azure y Azure Stack, los perfiles de API especifican un nombre que coincide con la fecha de la versión. Use el perfil **2017-09-03**.
+Los cmdlets de registro siguientes requieren que se especifique un perfil de API cuando se ejecuta PowerShell. Los perfiles de API representan un conjunto de proveedores de recursos de Azure y sus versiones de API. Le ayudan a usar la versión correcta de la API cuando interactúa con varias nubes de Azure. Por ejemplo, si trabaja con varias nubes al trabajar con la plataforma global de Azure y Azure Stack Hub, los perfiles de API especifican un nombre que coincide con la fecha de la versión. Use el perfil **2017-09-03**.
 
-Para más información sobre los perfiles de API y Azure Stack, consulte [Administración de perfiles de versión de API en Azure Stack](../user/azure-stack-version-profiles.md).
+Para más información sobre los perfiles de API y Azure Stack Hub, consulte [Administración de perfiles de versión de API en Azure Stack Hub](../user/azure-stack-version-profiles.md).
 
 ### <a name="parameters"></a>Parámetros
 
-| Parámetro                  | DESCRIPCIÓN |
+| Parámetro                  | Descripción |
 |---                         | --- |
 | registrationSubscriptionID | La suscripción de Azure que se ha usado para el registro inicial. |
-| customerSubscriptionID     | La suscripción de Azure (no Azure Stack) a la que pertenece el cliente que se va a registrar. Debe crearse en la oferta del proveedor de soluciones en la nube (CSP) mediante el Centro de partners. Si un cliente tiene más de un inquilino, cree una suscripción para que el inquilino inicie sesión en Azure Stack. |
+| customerSubscriptionID     | La suscripción de Azure (no Azure Stack Hub) a la que pertenece el cliente que se va a registrar. Debe crearse en la oferta del proveedor de soluciones en la nube (CSP) mediante el Centro de partners. Si un cliente tiene más de un inquilino, cree una suscripción para que el inquilino inicie sesión en Azure Stack Hub. |
 | resourceGroup              | El grupo de recursos de Azure en el que se almacena el registro. |
-| registrationName           | El nombre del registro de Azure Stack. Es un objeto almacenado en Azure. El nombre suele ser **azurestack-CloudID**, donde **CloudID** es el identificador de nube de su implementación de Azure Stack. |
+| registrationName           | El nombre del registro de Azure Stack Hub. Es un objeto almacenado en Azure. El nombre suele ser **azurestack-CloudID**, donde **CloudID** es el identificador de nube de su implementación de Azure Stack Hub. |
 
 > [!NOTE]  
-> Los inquilinos se deben registrar en cada implementación de Azure Stack que utilicen. Si un inquilino usa más de una implementación de Azure Stack, actualice los registros iniciales de cada implementación con la suscripción del inquilino.
+> Los inquilinos se deben registrar en cada implementación de Azure Stack Hub que utilicen. Si un inquilino usa más de una implementación de Azure Stack Hub, actualice los registros iniciales de cada implementación con la suscripción del inquilino.
 
 ### <a name="powershell"></a>PowerShell
 
-Use el cmdlet **New-AzureRmResource** para agregar un inquilino. [Conéctese a Azure Stack](azure-stack-powershell-configure-admin.md) y, después, desde un símbolo del sistema con privilegios elevados, use el siguiente cmdlet:
+Use el cmdlet **New-AzureRmResource** para agregar un inquilino. [Conéctese a Azure Stack Hub](azure-stack-powershell-configure-admin.md) y, después, desde un símbolo del sistema con privilegios elevados, use el siguiente cmdlet:
 
 ```powershell  
 New-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01
@@ -81,15 +79,15 @@ Obtenga una lista de todos los inquilinos que se han agregado a un registro.
 
 ### <a name="parameters"></a>Parámetros
 
-| Parámetro                  | DESCRIPCIÓN          |
+| Parámetro                  | Descripción          |
 |---                         | ---                  |
 | registrationSubscriptionId | La suscripción de Azure que se ha usado para el registro inicial.   |
 | resourceGroup              | El grupo de recursos de Azure en el que se almacena el registro.    |
-| registrationName           | El nombre del registro de su implementación de Azure Stack. Es un objeto almacenado en Azure. El nombre suele ser **azurestack-CloudID**, donde **CloudID** es el identificador de nube de su implementación de Azure Stack.   |
+| registrationName           | El nombre del registro de su implementación de Azure Stack Hub. Es un objeto almacenado en Azure. El nombre suele ser **azurestack-CloudID**, donde **CloudID** es el identificador de nube de su implementación de Azure Stack Hub.   |
 
 ### <a name="powershell"></a>PowerShell
 
-Use el cmdlet **Get-AzureRmResource** para enumerar todos los inquilinos registrados. [Conéctese a Azure Stack](azure-stack-powershell-configure-admin.md) y, después, desde un símbolo del sistema con privilegios elevados, ejecute el siguiente cmdlet:
+Use el cmdlet **Get-AzureRmResource** para enumerar todos los inquilinos registrados. [Conéctese a Azure Stack Hub](azure-stack-powershell-configure-admin.md) y, después, desde un símbolo del sistema con privilegios elevados, ejecute el siguiente cmdlet:
 
 ```powershell
 Get-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions" -ApiVersion 2017-06-01
@@ -125,11 +123,11 @@ Puede obtener una lista de todas las asignaciones de inquilinos mediante la oper
 
 ## <a name="remove-a-tenant-mapping"></a>Eliminación de una asignación de inquilinos
 
-Puede quitar un inquilino que se haya agregado a un registro. Si ese inquilino todavía está usando recursos en Azure Stack, su uso se cobra a la suscripción utilizada en el registro inicial de Azure Stack.
+Puede quitar un inquilino que se haya agregado a un registro. Si ese inquilino todavía está usando recursos en Azure Stack Hub, su uso se cobra a la suscripción utilizada en el registro inicial de Azure Stack Hub.
 
 ### <a name="parameters"></a>Parámetros
 
-| Parámetro                  | DESCRIPCIÓN          |
+| Parámetro                  | Descripción          |
 |---                         | ---                  |
 | registrationSubscriptionId | Identificador de suscripción para el registro.   |
 | resourceGroup              | El grupo de recursos para el registro.   |
@@ -138,7 +136,7 @@ Puede quitar un inquilino que se haya agregado a un registro. Si ese inquilino t
 
 ### <a name="powershell"></a>PowerShell
 
-Use el cmdlet **Remove-AzureRmResource** para quitar un inquilino. [Conéctese a Azure Stack](azure-stack-powershell-configure-admin.md) y, después, desde un símbolo del sistema con privilegios elevados, ejecute el siguiente cmdlet:
+Use el cmdlet **Remove-AzureRmResource** para quitar un inquilino. [Conéctese a Azure Stack Hub](azure-stack-powershell-configure-admin.md) y, después, desde un símbolo del sistema con privilegios elevados, ejecute el siguiente cmdlet:
 
 ```powershell
 Remove-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01
@@ -148,11 +146,11 @@ Remove-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/r
 
 Se pueden quitar las asignaciones de inquilinos mediante la operación DELETE.
 
-**Operation**: DELETE  
+**Operation**: Delete  
 **URI de solicitud**: `subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}?api-version=2017-06-01 HTTP/1.1`  
 **Respuesta**: 204 No Content  
 **Cuerpo de respuesta**: Vacío
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Cómo recuperar la información de uso de los recursos de Azure Stack](azure-stack-billing-and-chargeback.md)
+- [Recuperación de la información de uso de los recursos de Azure Stack Hub](azure-stack-billing-and-chargeback.md)

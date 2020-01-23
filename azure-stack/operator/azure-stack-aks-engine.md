@@ -1,6 +1,6 @@
 ---
-title: Incorporación de requisitos previos del motor de Azure Kubernetes Service (AKS) al Marketplace de Azure Stack | Microsoft Docs
-description: Aprenda a agregar los requisitos previos del motor de AKS al Marketplace de Azure Stack.
+title: Incorporación de requisitos previos del motor de Azure Kubernetes Service (AKS) al Marketplace de Azure Stack Hub | Microsoft Docs
+description: Aprenda a agregar los requisitos previos del motor de AKS al Marketplace de Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,28 +15,26 @@ ms.date: 11/21/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: ee19c6ee32960c52bcf7a4918c3d1e48406129c3
-ms.sourcegitcommit: 31e04af4d405215ef200aba0b40d601fc5ca7662
+ms.openlocfilehash: f03f87286d2bacf3eaf220850d46cd5497b81bc5
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74391539"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75880726"
 ---
-# <a name="add-the-azure-kubernetes-services-aks-engine-prerequisites-to-the-azure-stack-marketplace"></a>Incorporación de requisitos previos del motor de Azure Kubernetes Service (AKS) al Marketplace de Azure Stack
+# <a name="add-the-azure-kubernetes-services-aks-engine-prerequisites-to-the-azure-stack-hub-marketplace"></a>Incorporación de requisitos previos del motor de Azure Kubernetes Service (AKS) al Marketplace de Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
-
-Puede permitir que los usuarios configuren el motor de Azure Kubernetes Services (AKS) agregando los elementos que se describen en este artículo a Azure Stack. Después, los usuarios pueden implementar un clúster de Kubernetes en una sola operación coordinada. Este artículo le guía por los pasos necesarios para hacer que el motor de AKS esté disponible para los usuarios, tanto en entornos conectados como desconectados. El motor de AKS depende de una identidad de entidad de servicio y, en Marketplace, una extensión de script personalizado y la imagen base de AKS.
+Puede permitir que los usuarios configuren el motor de Azure Kubernetes Services (AKS) agregando los elementos que se describen en este artículo a Azure Stack Hub. Después, los usuarios pueden implementar un clúster de Kubernetes en una sola operación coordinada. Este artículo le guía por los pasos necesarios para hacer que el motor de AKS esté disponible para los usuarios, tanto en entornos conectados como desconectados. El motor de AKS depende de una identidad de entidad de servicio y, en Marketplace, una extensión de script personalizado y la imagen base de AKS.
 
 ## <a name="check-your-users-service-offering"></a>Comprobar la oferta de servicio del usuario
 
-Será necesario que los usuarios tengan un plan, una oferta y una suscripción a Azure Stack con espacio suficiente. Con frecuencia, los usuarios querrán implementar clústeres de hasta seis máquinas virtuales, formados por tres maestros y tres nodos de trabajo. Posiblemente quiera asegurarse de que tienen una cuota lo suficientemente grande.
+Será necesario que los usuarios tengan un plan, una oferta y una suscripción a Azure Stack Hub con espacio suficiente. Con frecuencia, los usuarios querrán implementar clústeres de hasta seis máquinas virtuales, formados por tres maestros y tres nodos de trabajo. Posiblemente quiera asegurarse de que tienen una cuota lo suficientemente grande.
 
-Si necesita más información sobre la planeación y configuración de una oferta de servicio, consulte [Introducción a la oferta de servicios en Azure Stack](service-plan-offer-subscription-overview.md)
+Si necesita más información sobre el planeamiento y configuración de una oferta de servicio, consulte [Introducción a la oferta de servicios en Azure Stack Hub](service-plan-offer-subscription-overview.md)
 
 ## <a name="create-a-service-principal-and-credentials"></a>Creación de una entidad de seguridad de servicio y sus credenciales
 
-El clúster de Kubernetes necesitará permisos de entidad de seguridad de servicio (SPN) y basados en roles en Azure Stack.
+El clúster de Kubernetes necesitará permisos de entidad de seguridad de servicio (SPN) y basados en roles en Azure Stack Hub.
 
 ### <a name="create-an-spn-in-azure-ad"></a>Crear un SPN en Azure AD
 
@@ -48,7 +46,7 @@ Si usa Active Directory Federated Services (AD FS) para el servicio de administ
 
 ## <a name="add-the-aks-base-image"></a>Agregar la imagen base de AKS
 
-Puede agregar la imagen base de AKS a Marketplace obteniendo el elemento de Azure. Pero si Azure Stack está desconectado, siga las instrucciones de [Descarga de elementos de Marketplace desde Azure a Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-download-azure-marketplace-item?view=azs-1908#disconnected-or-a-partially-connected-scenario) para agregar el elemento. Agregue el elemento especificado en el paso cinco.
+Puede agregar la imagen base de AKS a Marketplace obteniendo el elemento de Azure. Pero si Azure Stack Hub está desconectado, siga estas instrucciones de [Descarga de elementos de Marketplace desde Azure](https://docs.microsoft.com/azure-stack/operator/azure-stack-download-azure-marketplace-item?view=azs-1908#disconnected-or-a-partially-connected-scenario) para agregar el elemento. Agregue el elemento especificado en el paso cinco.
 
 Agregue el siguiente elemento a Marketplace:
 
@@ -71,7 +69,7 @@ Agregue el siguiente elemento a Marketplace:
 
 ## <a name="add-a-custom-script-extension"></a>Agregar una extensión Custom Script para Linux
 
-Puede agregar el script personalizado a Marketplace obteniendo el elemento de Azure. Pero si Azure Stack está desconectado, siga las instrucciones de [Descarga de elementos de Marketplace desde Azure a Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-download-azure-marketplace-item?view=azs-1908#disconnected-or-a-partially-connected-scenario) para agregar el elemento.  Agregue el elemento especificado en el paso cinco.
+Puede agregar el script personalizado a Marketplace obteniendo el elemento de Azure. Pero si Azure Stack Hub está desconectado, siga las instrucciones de [Descarga de elementos de Marketplace desde Azure](https://docs.microsoft.com/azure-stack/operator/azure-stack-download-azure-marketplace-item?view=azs-1908#disconnected-or-a-partially-connected-scenario) para agregar el elemento.  Agregue el elemento especificado en el paso cinco.
 
 1. Abra el [portal de administración](https://adminportal.local.azurestack.external).
 
@@ -93,6 +91,6 @@ Puede agregar el script personalizado a Marketplace obteniendo el elemento de Az
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Descripción del motor de AKS en Azure Stack](../user/azure-stack-kubernetes-aks-engine-overview.md)
+[Descripción del motor de AKS en Azure Stack Hub](../user/azure-stack-kubernetes-aks-engine-overview.md)
 
-[Introducción a la oferta de servicios en Azure Stack](service-plan-offer-subscription-overview.md)
+[Introducción a la oferta de servicios en Azure Stack Hub](service-plan-offer-subscription-overview.md)

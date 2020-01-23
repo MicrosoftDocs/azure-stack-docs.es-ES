@@ -1,6 +1,6 @@
 ---
-title: Cómo establecer una conexión de red virtual a red virtual en Azure Stack con la NVA FortiGate de Fortinet | Microsoft Docs
-description: Obtenga información sobre cómo establecer una conexión de red virtual a red virtual en Azure Stack con la NVA FortiGate de Fortinet
+title: Establecimiento de una conexión entre redes virtuales en Azure Stack Hub con la NVA FortiGate de Fortinet | Microsoft Docs
+description: Aprenda a establecer una conexión entre redes virtuales en Azure Stack Hub con la NVA FortiGate de Fortinet
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
@@ -9,33 +9,31 @@ ms.date: 10/03/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: cf9239f57423b54f6cd7f093779f5c7afa7745b1
-ms.sourcegitcommit: cc3534e09ad916bb693215d21ac13aed1d8a0dde
+ms.openlocfilehash: 27feb4689380d0e1c70f66e38d144056d4c72d13
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73167243"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883429"
 ---
-# <a name="how-to-establish-a-vnet-to-vnet-connection-in-azure-stack-with-fortinet-fortigate-nva"></a>Cómo establecer una conexión de red virtual a red virtual en Azure Stack con la NVA FortiGate de Fortinet
+# <a name="how-to-establish-a-vnet-to-vnet-connection-in-azure-stack-hub-with-fortinet-fortigate-nva"></a>Establecimiento de una conexión entre redes virtuales en Azure Stack Hub con la NVA FortiGate de Fortinet
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+En este artículo, conectará una red virtual de un entorno de Azure Stack Hub a una red virtual de otro entorno de Azure Stack Hub mediante la NVA FortiGate de Fortinet, una aplicación virtual de red.
 
-En este artículo, conectará una red virtual en un entorno de Azure Stack a una red virtual en otro entorno de Azure Stack mediante la NVA FortiGate de Fortinet, una aplicación virtual de red.
+En este artículo se trata la limitación actual de Azure Stack Hub, que permite a los inquilinos configurar solo una conexión VPN entre dos entornos. Los usuarios aprenderán a configurar una puerta de enlace personalizada en una máquina virtual Linux que permitirá varias conexiones VPN entre diferentes entornos de Azure Stack Hub. En el procedimiento de este artículo se implementan dos redes virtuales con una aplicación virtual de red FortiGate en cada una de ellas: una implementación por cada entorno de Azure Stack Hub. También se detallan los cambios necesarios para configurar una VPN IPSec entre las dos redes virtuales. Los pasos que se describen en este artículo se deben repetir en todas las redes virtuales de todas las instancias de Azure Stack Hub. 
 
-En este artículo se trata la limitación actual de Azure Stack, que permite a los inquilinos configurar solo una conexión VPN entre dos entornos. Los usuarios aprenderán a configurar una puerta de enlace personalizada en una máquina virtual Linux que permitirá varias conexiones VPN entre diferentes entornos de Azure Stack. En el procedimiento de este artículo se implementan dos redes virtuales con una aplicación virtual de red FortiGate en cada red virtual: una implementación por cada entorno de Azure Stack. También se detallan los cambios necesarios para configurar una VPN IPSec entre las dos redes virtuales. Los pasos descritos en este artículo se deben repetir para cada red virtual en cada entorno de Azure Stack. 
+## <a name="prerequisites"></a>Prerequisites
 
-## <a name="prerequisites"></a>Requisitos previos
-
--  Acceso a un sistema integrado de Azure Stack con capacidad disponible para implementar los requisitos de proceso, red y recursos necesarios para esta solución. 
+-  Acceso a un sistema integrado de Azure Stack Hub con capacidad disponible para implementar los requisitos de proceso, red y recursos necesarios para esta solución. 
 
     > [!Note]  
     > Estas instrucciones **no** funcionan con un Kit de desarrollo de Azure Stack (ASDK) debido a las limitaciones de red en ASDK. Para más información, consulte [Requisitos y consideraciones de ASDK](https://docs.microsoft.com/azure-stack/asdk/asdk-deploy-considerations).
 
--  Una solución de aplicación virtual de red (NVA) descargada y publicada en Marketplace de Azure Stack. Una NVA controla el flujo del tráfico de red desde una red perimetral a otras redes o subredes. En este procedimiento se usa la [Solución de máquina virtual única del firewall de próxima generación FortiGate de Fortinet](https://azuremarketplace.microsoft.com/marketplace/apps/fortinet.fortinet-FortiGate-singlevm).
+-  Una solución de aplicación virtual de red (NVA) descargada y publicada en Marketplace de Azure Stack Hub. Una NVA controla el flujo del tráfico de red desde una red perimetral a otras redes o subredes. En este procedimiento se usa la [Solución de máquina virtual única del firewall de próxima generación FortiGate de Fortinet](https://azuremarketplace.microsoft.com/marketplace/apps/fortinet.fortinet-FortiGate-singlevm).
 
 -  Al menos dos archivos de licencia de FortiGate disponibles para activar la aplicación virtual de red FortiGate. Para obtener información sobre cómo obtener estas licencias, consulte el artículo de la biblioteca de documentos de Fortinet [Registro y descarga de la licencia](https://docs2.fortinet.com/vm/azure/FortiGate/6.2/azure-cookbook/6.2.0/19071/registering-and-downloading-your-license).
 
-    En este procedimiento se usa la [implementación de máquina virtual única de FortiGate](ttps://docs2.fortinet.com/vm/azure/FortiGate/6.2/azure-cookbook/6.2.0/632940/single-FortiGate-vm-deployment). Puede encontrar pasos sobre cómo conectar la aplicación virtual de red FortiGate de la red virtual de Azure Stack a la red local.
+    En este procedimiento se usa la [implementación de máquina virtual única de FortiGate](ttps://docs2.fortinet.com/vm/azure/FortiGate/6.2/azure-cookbook/6.2.0/632940/single-FortiGate-vm-deployment). Puede encontrar pasos sobre cómo conectar la aplicación virtual de red FortiGate de la red virtual de Azure Stack Hub a la red local.
 
     Para más información sobre cómo implementar la solución FortiGate en una configuración activo-pasivo (HA), consulte el artículo de la biblioteca de documentos de Fortinet [Alta disponibilidad para máquina virtual de FortiGate en Azure](https://docs2.fortinet.com/vm/azure/FortiGate/6.2/azure-cookbook/6.2.0/983245/ha-for-FortiGate-vm-on-azure).
 
@@ -78,13 +76,13 @@ En la tabla siguiente se resumen los parámetros que se usan en estas implementa
 | Tipo de dirección IP pública | estática |
 
 > [!Note]
-> \* Elija otro conjunto de espacios de direcciones y prefijos de subred si el anterior se superpone de cualquier manera con el entorno de la red local, incluido el grupo de VIP de cualquiera de los entornos de Azure Stack. Asegúrese también de que los intervalos de direcciones no se superponen entre sí.**
+> \* Elija otro conjunto de espacios de direcciones y prefijos de subred si el anterior se superpone de cualquier manera con el entorno de la red local, incluido el grupo de VIP de cualquiera de los entornos de Azure Stack Hub. Asegúrese también de que los intervalos de direcciones no se superponen entre sí.**
 
 ## <a name="deploy-the-fortigate-ngfw-marketplace-items"></a>Implementación de los elementos de Marketplace de FortiGate NGFW
 
-Repita estos pasos para ambos entornos de Azure Stack. 
+Repita estos pasos en los dos entornos de Azure Stack Hub. 
 
-1. Abra el portal de usuario de Azure Stack. Asegúrese de usar credenciales que tengan al menos derechos de Colaborador en una suscripción.
+1. Abra el portal de usuarios de Azure Stack Hub. Asegúrese de usar credenciales que tengan al menos derechos de Colaborador en una suscripción.
 
     ![](./media/azure-stack-network-howto-vnet-to-vnet-stacks/image5.png)
 
@@ -104,7 +102,7 @@ Repita estos pasos para ambos entornos de Azure Stack.
 
 5. Proporcione la red virtual, las subredes y los detalles del tamaño de máquina virtual según los [Parámetros de implementación](#deployment-parameters).
 
-    Si desea usar distintos nombres e intervalos, tenga cuidado de no usar parámetros que entren en conflicto con los demás recursos de la red virtual y FortiGate en el otro entorno de Azure Stack. Esto es especialmente cierto cuando se establece el intervalo de direcciones IP de la red virtual y los intervalos de subred dentro de la red virtual. Compruebe que no se superponen con los intervalos IP de la otra red virtual que cree.
+    Si desea usar distintos nombres e intervalos, tenga cuidado de no usar parámetros que entren en conflicto con los recursos de la red virtual y FortiGate en el otro entorno de Azure Stack Hub. Esto es especialmente cierto cuando se establece el intervalo de direcciones IP de la red virtual y los intervalos de subred dentro de la red virtual. Compruebe que no se superponen con los intervalos IP de la otra red virtual que cree.
 
 6. Seleccione **Aceptar**.
 
@@ -116,13 +114,13 @@ Repita estos pasos para ambos entornos de Azure Stack.
 
 9. Seleccione **Crear**.
 
-La implementación tardará unos 10 minutos. Ahora puede repetir los pasos para crear la otra implementación de la aplicación virtual de red FortiGate y de la red virtual en el otro entorno de Azure Stack.
+La implementación tardará unos 10 minutos. Ahora puede repetir los pasos necesarios para crear la otra implementación de la aplicación virtual de red FortiGate y de la red virtual en el otro entorno de Azure Stack Hub.
 
 ## <a name="configure-routes-udrs-for-each-vnet"></a>Configuración de rutas (UDR) para cada red virtual
 
 Realice estos pasos para ambas implementaciones, forti1-rg1 y forti2-rg1.
 
-1. Vaya al grupo de recursos forti1-rg1 en el portal de Azure Stack.
+1. Vaya al grupo de recursos forti1-rg1 en el portal de Azure Stack Hub.
 
     ![](./media/azure-stack-network-howto-vnet-to-vnet-stacks/image9.png)
 
@@ -140,7 +138,7 @@ Realice estos pasos para ambas implementaciones, forti1-rg1 y forti2-rg1.
 
 6. Seleccione **Agregar**.
 
-7. Asigne a la **Ruta** el nombre `to-forti1` o `to-forti2`. Utilice su intervalo de direcciones IP si usa un intervalo IP diferente.
+7. En **Ruta**, asigne los nombres `to-forti1` o `to-forti2`. Utilice su intervalo de direcciones IP si usa un intervalo IP diferente.
 
 8. Especifique:
     - forti1: `172.17.0.0/16`  
@@ -261,9 +259,9 @@ Una vez que se haya completado lo anterior para **ambas** NVA:
 
 ## <a name="test-and-validate-connectivity"></a>Prueba y validación de la conectividad
 
-Ahora debería poder enrutar la comunicación entre cada red virtual a través de las NVA FortiGate. Para validar la conexión, cree una máquina virtual de Azure Stack en la subred InsideSubnet de cada red virtual. La creación de una máquina virtual de Azure Stack se puede realizar mediante el portal, la CLI o PowerShell. Al crear las máquinas virtuales:
+Ahora debería poder enrutar la comunicación entre cada red virtual a través de las NVA FortiGate. Para validar la conexión, cree una máquina virtual de Azure Stack Hub en la subred InsideSubnet de cada red virtual. La creación de una máquina virtual de Azure Stack Hub se puede realizar mediante el portal, la CLI o PowerShell. Al crear las máquinas virtuales:
 
--   Las máquinas virtuales de Azure Stack se colocan en la subred **InsideSubnet** de cada red virtual.
+-   Las máquinas virtuales de Azure Stack Hub se colocan en la subred **InsideSubnet** de cada red virtual.
 
 -   **No** aplique ningún grupo de seguridad de red a la máquina virtual en el momento de la creación (es decir, elimine el grupo de seguridad de red que se agrega de forma predeterminada si se crea la máquina virtual desde el portal).
 
@@ -271,5 +269,5 @@ Ahora debería poder enrutar la comunicación entre cada red virtual a través d
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Diferencias y consideraciones para las redes de Azure Stack](azure-stack-network-differences.md)  
-[Oferta de una solución de red en Azure Stack con FortiGate de Fortinet](../operator/azure-stack-network-solutions-enable.md)  
+[Diferencias y consideraciones para las redes de Azure Stack Hub](azure-stack-network-differences.md)  
+[Oferta de una solución de red en Azure Stack Hub con FortiGate de Fortinet](../operator/azure-stack-network-solutions-enable.md)  

@@ -1,41 +1,31 @@
 ---
-title: Incorporación de una nueva cuenta de inquilino de Azure Stack en Azure Active Directory | Microsoft Docs
-description: Obtenga información sobre cómo crear una cuenta de inquilino en el ASDK para poder explorar el portal del inquilino.
-services: azure-stack
-documentationcenter: ''
+title: Adición de una nueva cuenta de usuario de Azure Stack Hub en Azure Active Directory
+description: Obtenga información sobre cómo crear una cuenta de usuario en Azure Active Directory, de modo que pueda explorar el portal de usuarios.
 author: PatAltimore
 manager: femila
-editor: ''
-ms.assetid: a75d5c88-5b9e-4e9a-a6e3-48bbfa7069a7
 ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 05/20/2019
 ms.author: patricka
 ms.reviewer: thoroet
 ms.lastreviewed: 09/17/2018
-ms.openlocfilehash: b9b18b62786c0720b531d0f74ed68c629034b8d7
-ms.sourcegitcommit: 5efa09034a56eb2f3dc0c9da238fe60cff0c67ac
+ms.openlocfilehash: 3f0ef1b6a61d271541ee894f854639b13e24d699
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70144006"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75880998"
 ---
-# <a name="add-a-new-azure-stack-tenant-account-in-azure-active-directory"></a>Adición de una nueva cuenta de inquilino de Azure Stack en Azure Active Directory
+# <a name="add-a-new-azure-stack-hub-user-account-in-azure-active-directory-azure-ad"></a>Adición de una nueva cuenta de usuario de Azure Stack Hub en Azure Active Directory (Azure AD)
 
+Para poder probar ofertas y planes y crear recursos, necesitará una cuenta de usuario. Puede crear una cuenta de usuario en el inquilino de Azure AD mediante Azure Portal o PowerShell.
 
-Después de [implementar el Kit de desarrollo de Azure Stack](../asdk/asdk-install.md), necesitará una cuenta de usuario inquilino para explorar el portal del inquilino y probar las ofertas y los planes. Puede crear una cuenta de inquilino con Azure Portal o con PowerShell.
-
-
-
-## <a name="create-an-azure-stack-tenant-account-by-using-the-azure-portal"></a>Crear una cuenta de inquilino de Azure Stack con Azure Portal
+## <a name="create-user-account-using-the-azure-portal"></a>Creación de una cuenta de usuario mediante Azure Portal
 
 Debe tener una suscripción de Azure para usar el Portal de Azure.
 
 1. Inicie sesión en [Azure](https://portal.azure.com).
-2. En la barra de navegación izquierda, seleccione **Active Directory** y cambie al directorio que quiere usar para Azure Stack o cree uno nuevo.
+2. En la barra de navegación izquierda, seleccione **Active Directory** y cambie al directorio que quiere usar para Azure Stack Hub o cree uno nuevo.
 3. Seleccione **Azure Active Directory** > **Usuarios** > **Nuevo usuario**.
 
     ![Página Users - All users (Usuarios: Todos los usuarios) con Nuevo usuario resaltado](media/azure-stack-add-new-user-aad/new-user-all-users.png)
@@ -57,9 +47,9 @@ Debe tener una suscripción de Azure para usar el Portal de Azure.
     El usuario se crea y se agrega al inquilino de Azure AD.
 
 7. Inicie sesión en Microsoft Azure Portal con la nueva cuenta. Cambie la contraseña cuando se le solicite.
-8. Inicie sesión en `https://portal.local.azurestack.external` con la nueva cuenta para ver el portal del inquilino.
+8. Inicie sesión en `https://portal.local.azurestack.external` con la nueva cuenta para ver el portal de usuarios.
 
-## <a name="create-an-azure-stack-user-account-using-powershell"></a>Crear una cuenta de usuario de Azure Stack con PowerShell
+## <a name="create-a-user-account-using-powershell"></a>Creación de una cuenta de usuario con PowerShell
 
 Si no tiene una suscripción de Azure, no puede usar Azure Portal para agregar una cuenta de usuario de inquilino. En este caso, puede usar el módulo de Azure AD para Windows PowerShell.
 
@@ -82,7 +72,7 @@ Si no tiene una suscripción de Azure, no puede usar Azure Portal para agregar u
 
             $msolcred = get-credential
 
-    # Add a tenant account "Tenant Admin <username>@<yourdomainname>" with the initial password "<password>".
+    # Add a user account "Tenant Admin <username>@<yourdomainname>" with the initial password "<password>".
 
             connect-msolservice -credential $msolcred
             $user = new-msoluser -DisplayName "Tenant Admin" -UserPrincipalName <username>@<yourdomainname> -Password <password>
@@ -91,8 +81,8 @@ Si no tiene una suscripción de Azure, no puede usar Azure Portal para agregar u
     ```
 
 1. Inicie sesión en Azure con la nueva cuenta. Cambie la contraseña cuando se le solicite.
-2. Inicie sesión en `https://portal.local.azurestack.external` con la nueva cuenta para ver el portal del inquilino.
+2. Inicie sesión en `https://portal.local.azurestack.external` con la nueva cuenta para ver el portal de usuarios.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Agregar usuarios de Azure Stack a AD FS](azure-stack-add-users-adfs.md)
+[Adición de usuarios de Azure Stack Hub a AD FS](azure-stack-add-users-adfs.md)

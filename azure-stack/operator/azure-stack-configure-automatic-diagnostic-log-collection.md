@@ -1,6 +1,6 @@
 ---
-title: Configuración de la recopilación de registros automática de Azure Stack | Microsoft Docs
-description: Cómo configurar la recopilación de registros automática en Ayuda y soporte técnico de Azure Stack.
+title: Configuración de la recopilación de registros automática de Azure Stack Hub | Microsoft Docs
+description: Cómo configurar la recopilación de registros automática en Ayuda y soporte técnico de Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -16,32 +16,30 @@ ms.date: 10/08/2019
 ms.author: justinha
 ms.reviewer: shisab
 ms.lastreviewed: 10/08/2019
-ms.openlocfilehash: 087698b4f12c646422fda05cc4c707ad135b150a
-ms.sourcegitcommit: 5eae057cb815f151e6b8af07e3ccaca4d8e4490e
+ms.openlocfilehash: 63ee429c37d5ec7bf9258e3e940d9dbfa3786907
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72310603"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882596"
 ---
-# <a name="configure-automatic-azure-stack-diagnostic-log-collection"></a>Configuración de la recopilación de registros de diagnóstico automática de Azure Stack
-
-*Se aplica a: Sistemas integrados de Azure Stack*
+# <a name="configure-automatic-azure-stack-hub-diagnostic-log-collection"></a>Configuración de la recopilación de registros de diagnóstico automática de Azure Stack Hub
 
 Recomendamos configurar la característica de recopilación de registros de diagnóstico automática para optimizar su experiencia de asistencia al cliente y recopilación de registros. En caso de que deban investigarse las condiciones de mantenimiento del sistema, los servicios de soporte al cliente (CSS) de Microsoft pueden cargar los registros automáticamente para su análisis. 
 
 ## <a name="create-an-azure-blob-container-sas-url"></a>Creación de una dirección URL de SAS de contenedor de blobs de Azure 
 
-Para poder configurar la recopilación de registros automática, deberá obtener una firma de acceso compartido (SAS) para un contenedor de blobs. Una SAS le permite conceder acceso a los recursos de su cuenta de almacenamiento sin compartir las claves de cuenta. Puede guardar los archivos de registro de Azure Stack en un contenedor de blobs en Azure y, a continuación, proporcionar la dirección URL de SAS donde CSS puede recopilar los registros. 
+Para poder configurar la recopilación de registros automática, deberá obtener una firma de acceso compartido (SAS) para un contenedor de blobs. Una SAS le permite conceder acceso a los recursos de su cuenta de almacenamiento sin compartir las claves de cuenta. Puede guardar los archivos de registro de Azure Stack Hub en un contenedor de blobs en Azure y, a continuación, proporcionar la dirección URL de SAS donde CSS puede recopilar los registros. 
 
-### <a name="prerequisites"></a>Requisitos previos
+### <a name="prerequisites"></a>Prerequisites
 
 Puede usar un contenedor de blobs nuevo o existente en Azure. Para crear un contenedor de blobs en Azure, necesita al menos el [rol de colaborador de Storage Blob](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor) o el [permiso específico](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). Los administradores globales también tienen el permiso necesario. 
 
-Para ver procedimientos recomendados sobre cómo elegir parámetros para la cuenta de almacenamiento de recopilación de datos automática, consulte [Procedimientos recomendados para la recopilación de registros automática de Azure Stack](azure-stack-best-practices-automatic-diagnostic-log-collection.md). Para obtener más información sobre los tipos de cuentas de almacenamiento, consulte [Introducción a las cuentas de Azure Storage](https://docs.microsoft.com/azure/storage/common/storage-account-overview).
+Para ver procedimientos recomendados sobre cómo elegir parámetros para la cuenta de almacenamiento de recopilación de registros automática, consulte [Procedimientos recomendados para la recopilación de registros automática de Azure Stack Hub](azure-stack-best-practices-automatic-diagnostic-log-collection.md). Para obtener más información sobre los tipos de cuentas de almacenamiento, consulte [Introducción a las cuentas de Azure Storage](https://docs.microsoft.com/azure/storage/common/storage-account-overview).
 
 ### <a name="create-a-blob-storage-account"></a>Creación de una cuenta de almacenamiento de blobs
  
-1. Inicie sesión en el [Azure Portal](https://portal.azure.com).
+1. Inicie sesión en [Azure Portal](https://portal.azure.com).
 1. Haga clic en **Cuentas de almacenamiento** > **Agregar**. 
 1. Cree un contenedor de blobs con esta configuración:
    - **Suscripción**: Elegir la suscripción de Azure
@@ -77,7 +75,7 @@ Para ver procedimientos recomendados sobre cómo elegir parámetros para la cuen
 
    ![Captura de pantalla que muestra las propiedades de firma de acceso compartido](media/azure-stack-automatic-log-collection/sas-properties.png) 
 
-1. Haga clic en **Create**(Crear).  
+1. Haga clic en **Crear**.  
 
 Copie la dirección URL y escríbala al [configurar la recopilación de registros automática](azure-stack-configure-automatic-diagnostic-log-collection.md). Para obtener más información sobre las direcciones URL de SAS, consulte [Uso de firmas de acceso compartido (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1). 
 
@@ -86,7 +84,7 @@ Copie la dirección URL y escríbala al [configurar la recopilación de registro
 
 Siga estos pasos para agregar la dirección URL de SAS a la interfaz de usuario de recopilación de registros: 
 
-1. Inicie sesión en el Portal de administración de Azure Stack.
+1. Inicie sesión en el Portal de administración de Azure Stack Hub.
 1. Abra la **información general de la ayuda y el soporte técnico**.
 1. Haga clic en **Automatic collection settings** (Configuración de la recopilación automática).
 
@@ -102,7 +100,7 @@ Siga estos pasos para agregar la dirección URL de SAS a la interfaz de usuario 
 
 ## <a name="view-log-collection"></a>Visualización de la recopilación de registros
 
-El historial de registros recopilados de Azure Stack aparece en la página **Recopilación de registros** en Ayuda y soporte técnico, con las siguientes fechas y horas:
+El historial de registros recopilados de Azure Stack Hub aparece en la página **Recopilación de registros** en Ayuda y soporte técnico, con las siguientes fechas y horas:
 
 - **Hora de la recopilación**: cuándo se inició la operación de recopilación de registros 
 - **Desde fecha**: inicio del período de tiempo durante el cual desea llevar a cabo la recopilación
@@ -149,13 +147,13 @@ Por ejemplo, **Error de actualización** es una alerta que desencadena la recopi
 |Se omitió la copia de seguridad programada debido a un conflicto con operaciones erróneas  | AzureStack.BackupController.BackupSkippedWithFailedOperationFault |   
 
 
-## <a name="see-also"></a>Otras referencias
+## <a name="see-also"></a>Consulte también
 
-[Control de datos de clientes y registro de Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-data-collection)
+[Control de datos de clientes y registro de Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-data-collection)
 
 [Uso de Firmas de acceso compartido (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1)
 
-[Procedimientos recomendados para la recopilación de registros automática de Azure Stack](azure-stack-best-practices-automatic-diagnostic-log-collection.md)
+[Procedimientos recomendados para la recopilación automática de registros de Azure Stack Hub](azure-stack-best-practices-automatic-diagnostic-log-collection.md)
 
 
 

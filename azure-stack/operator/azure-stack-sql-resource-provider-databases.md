@@ -1,6 +1,6 @@
 ---
 title: Creación de bases de datos SQL
-titleSuffix: Azure Stack
+titleSuffix: Azure Stack Hub
 description: Aprenda a crear y administrar las bases de datos SQL aprovisionadas con el adaptador del proveedor de recursos de SQL.
 services: azure-stack
 documentationCenter: ''
@@ -16,20 +16,20 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: 97d53772127cbae66e95159617cb9e50e21176ac
-ms.sourcegitcommit: 08d2938006b743b76fba42778db79202d7c3e1c4
+ms.openlocfilehash: f6c030767ba64aa3c8acd47d5b358a4b385785ac
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74954543"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75814548"
 ---
 # <a name="create-sql-databases"></a>Creación de bases de datos SQL
 
-Puede crear y administrar bases de datos de autoservicio en el portal de usuarios. Un usuario de Azure Stack necesita una suscripción con una oferta que incluya el servicio de SQL Database.
+Puede crear y administrar bases de datos de autoservicio en el portal de usuarios. Un usuario de Azure Stack Hub necesita una suscripción con una oferta que incluya el servicio SQL Database.
 
-1. Inicie sesión en el portal de usuarios de [Azure Stack](azure-stack-overview.md).
+1. Inicie sesión en el portal de usuarios de [Azure Stack Hub](azure-stack-overview.md).
 
-2. Seleccione **+ New** (+ Nuevo) &gt;**Data + Storage** (Datos y almacenamiento) &gt; **SQL Server Database** &gt; (Base de datos SQL Server) **Add** (Agregar).
+2. Select **+ Nuevo** &gt; **Datos y almacenamiento** &gt; **Base de datos de SQL Server** &gt; **Agregar**.
 
 3. En **Create Database** (Crear base de datos), escriba la información necesaria, como **Database Name** (Nombre de la base de datos) y **Max Size in MB** (Tamaño máximo en MB).
 
@@ -40,10 +40,10 @@ Puede crear y administrar bases de datos de autoservicio en el portal de usuario
 
 4. En **Create Database** (Crear base de datos), seleccione **SKU**. En **Select a SKU** (Seleccionar una SKU), seleccione la SKU correspondiente a su base de datos.
 
-   ![Crear una base de datos en el portal de usuarios de Azure Stack.](./media/azure-stack-sql-rp-deploy/newsqldb.png)
+   ![Cree una base de datos en el portal de usuarios de Azure Stack Hub.](./media/azure-stack-sql-rp-deploy/newsqldb.png)
 
    >[!NOTE]
-   >A medida que se agregan servidores de hospedaje a Azure Stack, se les asigna una SKU. Las bases de datos se crean en el grupo de servidores de hospedaje de una SKU.
+   >A medida que se agregan servidores de hospedaje a Azure Stack Hub, se les asigna una SKU. Las bases de datos se crean en el grupo de servidores de hospedaje de una SKU.
 
 5. Seleccione **Login** (Iniciar sesión).
 
@@ -54,7 +54,7 @@ Puede crear y administrar bases de datos de autoservicio en el portal de usuario
    >[!NOTE]
    >Esta configuración es la credencial de autenticación de SQL que se crea solo para el acceso a esta base de datos. El nombre de usuario de inicio de sesión debe ser único globalmente. Puede volver a usar la configuración de inicio de sesión con otras bases de datos que usan la misma SKU.
 
-   ![Crear un nuevo inicio de sesión de base de datos en el portal de usuarios de Azure Stack](./media/azure-stack-sql-rp-deploy/create-new-login.png)
+   ![Creación de un inicio de sesión de base de datos en el portal de usuarios de Azure Stack Hub](./media/azure-stack-sql-rp-deploy/create-new-login.png)
 
 8. Seleccione **OK** (Aceptar) para terminar de implementar la base de datos.
 

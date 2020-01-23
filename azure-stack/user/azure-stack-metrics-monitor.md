@@ -1,6 +1,6 @@
 ---
-title: Consumo de datos de supervisión de Azure Stack | Microsoft Docs
-description: Obtenga más información sobre las opciones para consumir datos de supervisión de Azure Stack.
+title: Consumo de datos de supervisión de Azure Stack Hub | Microsoft Docs
+description: Obtenga más información sobre las opciones para consumir datos de supervisión de Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -14,24 +14,22 @@ ms.topic: article
 ms.date: 11/11/2019
 ms.author: mabrigg
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 20e4f71480aa377e56115c499f96492e768010c3
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.openlocfilehash: 066a179df94d9a61b89e5f6679968db7e4dea314
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955735"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883548"
 ---
-# <a name="how-to-consume-monitoring-data-from-azure-stack"></a>Consumo de datos de supervisión de Azure Stack
+# <a name="how-to-consume-monitoring-data-from-azure-stack-hub"></a>Consumo de datos de supervisión de Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack*
-
-Con la canalización de Azure Monitor, los datos de supervisión se encuentran en una única ubicación, al igual que ocurre con Azure Monitor en Azure global. Sin embargo, no todos los datos de supervisión de Azure global están disponibles en Azure Stack. En este artículo, se proporciona un resumen de las distintas formas de utilizar los datos de supervisión en Azure Stack.
+Con la canalización de Azure Monitor, los datos de supervisión se encuentran en una única ubicación, al igual que ocurre con Azure Monitor en Azure global. Sin embargo, no todos los datos de supervisión de Azure global están disponibles en Azure Stack Hub. En este artículo, se proporciona un resumen de las distintas formas de utilizar los datos de supervisión en Azure Stack Hub.
  
 ## <a name="options-for-data-consumption"></a>Opciones para el consumo de datos
 
 | Tipo de datos | Category | Servicios admitidos | Métodos de acceso |
 |-------------------------------------------------------------|----------|------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
-| Métricas en el nivel de plataforma de Azure Monitor | Métricas | [Métricas de Azure Stack compatibles con Azure Monitor](azure-stack-metrics-supported.md) | API DE REST |
+| Métricas en el nivel de plataforma de Azure Monitor | Métricas | [Métricas de Azure Stack Hub compatibles con Azure Monitor](azure-stack-metrics-supported.md) | API DE REST |
 | Cálculo de métricas del sistema operativo invitado (por ejemplo, el recuento de rendimiento) | Métricas | Máquinas virtuales Windows y Linux | Tabla o blob de almacenamiento:<br>Azure Diagnostics para Windows o Linux <br>Centro de eventos:<br>Windows Azure Diagnostics |
 | Métricas de almacenamiento | Métricas | Azure Storage | Tabla de almacenamiento:<br>Storage Analytics |
 | Registro de actividades | Eventos | Todos los servicios de Azure | API REST:<br>Azure Monitor Event API |
@@ -40,4 +38,4 @@ Con la canalización de Azure Monitor, los datos de supervisión se encuentran e
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Obtenga más información sobre [Azure Monitor en Azure Stack](azure-stack-metrics-azure-data.md).
+Obtenga más información sobre [Azure Monitor en Azure Stack Hub](azure-stack-metrics-azure-data.md).

@@ -1,37 +1,34 @@
 ---
-title: Agregar usuarios de Azure Stack a AD FS | Microsoft Docs
-description: Obtenga información sobre cómo agregar usuarios de Azure Stack para implementaciones de Servicios de federación de Active Directory (AD FS).
-services: azure-stack
-documentationcenter: ''
+title: Adición de usuarios de Azure Stack Hub a AD FS
+description: Obtenga información sobre cómo agregar usuarios de Azure Stack Hub para implementaciones de Servicios de federación de Active Directory (AD FS).
 author: PatAltimore
 manager: femila
-editor: ''
 ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 06/03/2019
 ms.author: patricka
 ms.reviewer: unknown
 ms.lastreviewed: 06/03/2019
-ms.openlocfilehash: 4411290b075e105a827de8fb2c8295dfd84e3b50
-ms.sourcegitcommit: e8f7fe07b32be33ef621915089344caf1fdca3fd
+ms.openlocfilehash: 2c81d8ccceb4fa2f1e05b006232e3b6513ace469
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70118644"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75880964"
 ---
-# <a name="add-azure-stack-users-in-ad-fs"></a>Incorporación de usuarios de Azure Stack a AD FS
-Puede usar el complemento **Usuarios y equipos de Active Directory**  para agregar usuarios adicionales a un entorno de Azure Stack con los Servicios de federación de Active Directory (AD FS) como proveedor de identidad.
+# <a name="add-a-new-azure-stack-hub-user-account-in-active-directory-federation-services-ad-fs"></a>Adición de una nueva cuenta de usuario de Azure Stack Hub en los Servicios de federación de Active Directory (AD FS)
+
+Puede usar el complemento **Active Directory Users and Computers** (Usuarios y equipos de Active Directory) para incorporar usuarios adicionales a un entorno de Azure Stack Hub, usando AD FS como proveedor de identidades.
 
 ## <a name="add-windows-server-active-directory-users"></a>Incorporación de usuarios de Windows Server Active Directory
-> [!TIP]
-> En este ejemplo se utiliza el ASDK Active Directory azurestack.local predeterminado. 
 
 1. Inicie sesión en un equipo con una cuenta que proporcione acceso a las herramientas administrativas de Windows y abra una nueva consola de Microsoft Management Console (MMC).
 2. Seleccione **File > Add or remove snap-in** (Archivo > Agregar o quitar complemento).
-3. Seleccione **Active Directory Users and Computers** > **AzureStack.local** > **Users** (Usuarios y equipos de Active Directory > AzureStack.local > Usuarios).
+
+   > [!TIP]
+   > Reemplace *directory-domain* por el dominio que coincida con el directorio. 
+
+3. Seleccione **Usuarios y equipos de Active Directory** > *directory-domain* > **Usuarios**.
 4. Seleccione **Action** > **New** > **User** (Acción > Nuevo > Usuario).
 5. En Objeto nuevo - Usuario, proporcione detalles del usuario. Seleccione **Next** (Siguiente).
 6. Proporcione y confirme una contraseña.
@@ -39,4 +36,5 @@ Puede usar el complemento **Usuarios y equipos de Active Directory**  para agreg
 
 
 ## <a name="next-steps"></a>Pasos siguientes
-[Creación de entidades de servicio](azure-stack-create-service-principals.md)
+
+[Creación de una identidad de aplicación para acceder a recursos de Azure Stack Hub](azure-stack-create-service-principals.md)

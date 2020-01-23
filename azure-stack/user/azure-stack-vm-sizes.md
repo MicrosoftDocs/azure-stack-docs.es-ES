@@ -1,6 +1,6 @@
 ---
-title: Tamaños de máquinas virtuales admitidos en Azure Stack | Microsoft Docs
-description: Referencia para los tamaños de máquinas virtuales admitidos en Azure Stack.
+title: Tamaños de máquinas virtuales admitidos en Azure Stack Hub | Microsoft Docs
+description: Referencia para los tamaños de máquinas virtuales admitidos en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -14,20 +14,18 @@ ms.date: 12/3/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 12/3/2019
-ms.openlocfilehash: d38168fee437b27dfde8d5381c960b8e2a237487
-ms.sourcegitcommit: 757f612663059f1af8c535d8b37f63a8cf4a5e7d
+ms.openlocfilehash: c7f09296b68df31892952675bac8086c8b483f6d
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74784079"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883157"
 ---
-# <a name="vm-sizes-supported-in-azure-stack"></a>Tamaños de máquinas virtuales admitidos en Azure Stack
+# <a name="vm-sizes-supported-in-azure-stack-hub"></a>Tamaños de máquina virtual admitidos en Azure Stack Hub
 
-*Se aplica a: sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+En este artículo se incluyen los tamaños de máquinas virtuales que están disponibles en Azure Stack Hub. Puede usar este artículo como ayuda para seleccionar una máquina virtual que admita su solución de Azure Stack Hub.
 
-En este artículo se incluyen los tamaños de máquinas virtuales que están disponibles en Azure Stack. Puede usar este artículo como ayuda para seleccionar una máquina virtual que admita su solución de Azure Stack.
-
-IOPS (operaciones de entrada y salida por segundo) de disco en Azure Stack es una función del tamaño de máquina virtual en lugar del tipo de disco. Esto significa que para una VM de la serie Standard_Fs, independientemente de si elige SSD o HDD para el tipo de disco, el límite de IOPS de un único disco de datos adicional es de solo 2300 IOPS. Los límites de IOPS impuestos (máximo posible) sirven para evitar vecinos ruidosos. IOPS no es una garantía de que obtendrá un tamaño específico de la máquina virtual.
+IOPS (operaciones de entrada y salida por segundo) de disco en Azure Stack Hub es una función del tamaño de máquina virtual, en lugar del tipo de disco. Esto significa que para una VM de la serie Standard_Fs, independientemente de si elige SSD o HDD para el tipo de disco, el límite de IOPS de un único disco de datos adicional es de solo 2300 IOPS. Los límites de IOPS impuestos (máximo posible) sirven para evitar vecinos ruidosos. IOPS no es una garantía de que obtendrá un tamaño específico de la máquina virtual.
 
 ## <a name="vm-general-purpose"></a>Máquina virtual de uso general
 
@@ -59,7 +57,7 @@ Los tamaños de máquina virtual de uso general proporcionan una relación equil
 |**Standard_A7** |8 |56    |605 |500 |500 |16x500 |4 |
 
 ### <a name="av2-series"></a>Serie Av2
-*Requiere la versión de Azure Stack 1804 o posterior*
+*Requiere la versión 1804 de Azure Stack Hub o versiones posteriores*
 
 |Size     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
 |-----------------|----|----|-----|-----|------|--------------|---------|
@@ -109,7 +107,7 @@ Los tamaños de máquina virtual de uso general proporcionan una relación equil
 
 ## <a name="compute-optimized"></a>Proceso optimizado
 ### <a name="f-series"></a>Serie F
-*Requiere la versión de Azure Stack 1804 o posterior*
+*Requiere la versión 1804 de Azure Stack Hub o versiones posteriores*
 
 |Size     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
 |-----------------|----|----|-----|----|------|------------|---------|
@@ -121,7 +119,7 @@ Los tamaños de máquina virtual de uso general proporcionan una relación equil
 
 
 ### <a name="fs-series"></a>Serie Fs
-*Requiere la versión de Azure Stack 1804 o posterior*  
+*Requiere la versión 1804 de Azure Stack Hub o versiones posteriores*  
 
 |Size     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
 |------------------|----|----|----|-----|------|-------------|---------|
@@ -133,7 +131,7 @@ Los tamaños de máquina virtual de uso general proporcionan una relación equil
 
 
 ### <a name="fsv2-series"></a>Serie Fsv2
-*Requiere la versión de Azure Stack 1804 o posterior* 
+*Requiere la versión 1804 de Azure Stack Hub o versiones posteriores* 
 
 |Size     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
 |---------------------|----|----|-----|-----|-------|--------------|---------|
@@ -185,4 +183,4 @@ Los tamaños de las máquinas virtuales optimizadas para memoria ofrecen una rel
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Características de las máquinas virtuales de Azure Stack](azure-stack-vm-considerations.md)
+[Características de las máquinas virtuales de Azure Stack Hub](azure-stack-vm-considerations.md)

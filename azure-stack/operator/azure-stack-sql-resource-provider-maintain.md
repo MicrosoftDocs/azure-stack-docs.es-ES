@@ -1,7 +1,7 @@
 ---
 title: Operaciones de mantenimiento del proveedor de recursos de SQL
-titleSuffix: Azure Stack
-description: Más información sobre las operaciones de mantenimiento de un proveedor de recursos de SQL en Azure Stack.
+titleSuffix: Azure Stack Hub
+description: Más información sobre las operaciones de mantenimiento de un proveedor de recursos de SQL en Azure Stack Hub.
 services: azure-stack
 documentationCenter: ''
 author: mattbriggs
@@ -16,12 +16,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: d5467974a6b9164d92a2281fd94973835bc21993
-ms.sourcegitcommit: b2418661bfa3a791e65b9b487e20982dba3e4c41
+ms.openlocfilehash: 609d0d77af4f11630616567d36fd5ffc35a24a8d
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75756889"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75814480"
 ---
 # <a name="sql-resource-provider-maintenance-operations"></a>Operaciones de mantenimiento del proveedor de recursos de SQL
 
@@ -29,7 +29,7 @@ El proveedor de recursos de SQL se ejecuta en una máquina virtual bloqueada. Pa
 
 ## <a name="patching-and-updating"></a>Revisiones y actualizaciones
 
-El proveedor de recursos de SQL no se suministra como parte de Azure Stack porque es un componente complementario. Microsoft proporciona las actualizaciones para el proveedor de recursos de SQL según sea necesario. Cuando se publica un adaptador de SQL actualizado, se proporciona un script para aplicar la actualización. Este script crea una nueva VM de proveedor de recursos, que migra el estado de la VM del proveedor antigua a la VM nueva. Para más información, consulte [Actualización del proveedor de recursos de SQL](azure-stack-sql-resource-provider-update.md).
+El proveedor de recursos de SQL no se suministra como parte de Azure Stack Hub porque es un componente complementario. Microsoft proporciona las actualizaciones para el proveedor de recursos de SQL según sea necesario. Cuando se publica un adaptador de SQL actualizado, se proporciona un script para aplicar la actualización. Este script crea una nueva VM de proveedor de recursos, que migra el estado de la VM del proveedor antigua a la VM nueva. Para más información, consulte [Actualización del proveedor de recursos de SQL](azure-stack-sql-resource-provider-update.md).
 
 ### <a name="provider-vm"></a>Máquina virtual de proveedor
 
@@ -37,7 +37,7 @@ Dado que el proveedor de recursos se ejecuta en la VM de un *usuario*, debe apli
 
 ## <a name="updating-sql-credentials"></a>Actualización de las credenciales de SQL
 
-Es responsable de crear y mantener cuentas sysadmin en los servidores SQL Server. El proveedor de recursosnecesita una cuenta con estos privilegios para administrar las bases de datos para los usuarios, pero no necesita acceso a los datos de los usuarios. Si tiene que actualizar las contraseñas de sysadmin en los servidores SQL Server, puede utilizar la interfaz del administrador del proveedor de recursos para cambiar una contraseña almacenada. Estas contraseñas se almacenan en un almacén de claves en la instancia de Azure Stack.
+Es responsable de crear y mantener cuentas sysadmin en los servidores SQL Server. El proveedor de recursosnecesita una cuenta con estos privilegios para administrar las bases de datos para los usuarios, pero no necesita acceso a los datos de los usuarios. Si tiene que actualizar las contraseñas de sysadmin en los servidores SQL Server, puede utilizar la interfaz del administrador del proveedor de recursos para cambiar una contraseña almacenada. Estas contraseñas se almacenan en un almacén de claves en la instancia de Azure Stack Hub.
 
 Para modificar la configuración, seleccione **Examinar** &gt; **RECURSOS ADMINISTRATIVOS** &gt; **Servidores de hospedaje SQL** &gt; **Inicios de sesión SQL** y seleccione un nombre de usuario. El cambio se debe efectuar en la instancia de SQL en primer lugar (y en cualquier réplica, si es necesario). En **Configuración**, seleccione **Contraseña**.
 
@@ -45,9 +45,9 @@ Para modificar la configuración, seleccione **Examinar** &gt; **RECURSOS ADMINI
 
 ## <a name="secrets-rotation"></a>Cambio de secretos
 
-*Estas instrucciones se aplican solo a sistemas integrados de Azure Stack.*
+*Estas instrucciones se aplican solo a sistemas integrados de Azure Stack Hub.*
 
-Al usar los proveedores de recursos SQL y MySQL con los sistemas integrados de Azure Stack, el operador de Azure Stack se encarga de girar los siguientes secretos de infraestructura del proveedor de recursos para asegurarse de que no caduquen:
+Al usar los proveedores de recursos SQL y MySQL con sistemas integrados de Azure Stack Hub, el operador de Azure Stack Hub se encarga de rotar los siguientes secretos de la infraestructura del proveedor de recursos para asegurarse de que no caduquen:
 
 - Certificado SSL externo [proporcionado durante la implementación](azure-stack-pki-certs.md).
 - La contraseña de la cuenta de administrador local de la máquina virtual del proveedor de recursos proporcionada durante la implementación.
@@ -103,8 +103,8 @@ Al usar los proveedores de recursos SQL y MySQL con los sistemas integrados de A
 
 |Parámetro|Descripción|
 |-----|-----|
-|AzCredential|Credencial de la cuenta de administrador de servicio de Azure Stack.|
-|CloudAdminCredential|Credencial de cuenta de dominio de administración en la nube de Azure Stack.|
+|AzCredential|Credencial de la cuenta de administrador de servicios de Azure Stack Hub.|
+|CloudAdminCredential|Credencial de la cuenta de dominio de administración en la nube de Azure Stack Hub.|
 |PrivilegedEndpoint|Punto de conexión con privilegios para acceder a Get-AzureStackStampInformation.|
 |DiagnosticsUserPassword|Contraseña de la cuenta de usuario de diagnóstico.|
 |VMLocalCredential|Cuenta de administrador local en la máquina virtual MySQLAdapter.|

@@ -1,6 +1,6 @@
 ---
-title: Administración de cuentas de almacenamiento de Azure Stack | Microsoft Docs
-description: Aprenda a buscar, administrar, recuperar y reclamar cuentas de almacenamiento de Azure Stack.
+title: Administración de cuentas de almacenamiento de Azure Stack Hub | Microsoft Docs
+description: Aprenda a buscar, administrar, recuperar y reclamar cuentas de almacenamiento de Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,30 +15,30 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 03/19/2019
-ms.openlocfilehash: 9af79442a0fb56e4d6a9cef99741b0180e84304c
-ms.sourcegitcommit: b5eb024d170f12e51cc852aa2c72eabf26792d8d
+ms.openlocfilehash: 888d34441af672dfcfa27e8f48237c41105ce629
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72534188"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75817132"
 ---
-# <a name="manage-azure-stack-storage-accounts"></a>Administración de cuentas de almacenamiento de Azure Stack
+# <a name="manage-azure-stack-hub-storage-accounts"></a>Administración de cuentas de almacenamiento de Azure Stack Hub
 
-Aprenda a administrar las cuentas de almacenamiento de Azure Stack. Busque, recupere y reclame la capacidad de almacenamiento según sus necesidades empresariales.
+Aprenda a administrar cuentas de almacenamiento de Azure Stack Hub. Busque, recupere y reclame la capacidad de almacenamiento según sus necesidades empresariales.
 
 ## <a name="find-a-storage-account"></a>Búsqueda de una cuenta de almacenamiento
 
-La lista de cuentas de almacenamiento de la región se puede ver en Azure Stack siguiendo estos pasos:
+La lista de cuentas de almacenamiento de la región se puede ver en Azure Stack Hub mediante estos pasos:
 
 1. Inicie sesión en el [portal de administración](https://adminportal.local.azurestack.external).
 
 2. Seleccione **Todos los servicios** > **Almacenamiento** > **Cuentas de almacenamiento**.
 
-   ![Cuentas de almacenamiento de Azure Stack](media/azure-stack-manage-storage-accounts/image4.png)
+   ![Cuentas de almacenamiento de Azure Stack Hub](media/azure-stack-manage-storage-accounts/image4.png)
 
 De forma predeterminada, se muestran las 10 primeras cuentas. Puede hacer clic en el vínculo **Cargar más** de la parte inferior de la lista para capturar más.
 
-OR
+O BIEN
 
 Si está interesado en una cuenta de almacenamiento determinada, puede **filtrar y capturar solo las cuentas correspondientes**.
 
@@ -48,7 +48,7 @@ Si está interesado en una cuenta de almacenamiento determinada, puede **filtrar
 2. En el panel Filtro, puede especificar el **nombre de cuenta**, el **identificador de suscripción** o el **estado** para ajustar la lista de cuentas de almacenamiento que se mostrará. Use esta información de la manera adecuada.
 3. A medida que escriba, la lista aplicará automáticamente el filtro.
 
-    ![Filtrar las cuentas de almacenamiento de Azure Stack](media/azure-stack-manage-storage-accounts/image5.png)
+    ![Filtrado de las cuentas de almacenamiento de Azure Stack Hub](media/azure-stack-manage-storage-accounts/image5.png)
 
 4. Para restablecer el filtro: seleccione **Filtro**, borre las selecciones y actualice.
 
@@ -56,7 +56,7 @@ El cuadro de texto de búsqueda (de la parte superior del panel de lista de cuen
 
 Aquí puede usar texto sin formato para facilitar la búsqueda de la cuenta que le interesa.
 
-![Buscar las cuentas de almacenamiento de Azure Stack](media/azure-stack-manage-storage-accounts/image6.png)
+![Búsqueda de las cuentas de almacenamiento de Azure Stack Hub](media/azure-stack-manage-storage-accounts/image6.png)
 
 ## <a name="look-at-account-details"></a>Examen de los detalles de la cuenta
 Cuando haya encontrado las cuentas que le interesa ver, puede seleccionar una en particular para ver determinados detalles. Se abre un nuevo panel con los detalles de la cuenta. Estos detalles incluyen el tipo de cuenta, la hora de creación, la ubicación, etc.
@@ -66,7 +66,7 @@ Cuando haya encontrado las cuentas que le interesa ver, puede seleccionar una en
 ## <a name="recover-a-deleted-account"></a>Recuperación de una cuenta eliminada
 Puede que se encuentre en una situación en que deba recuperar una cuenta eliminada.
 
-En Azure Stack, existe una manera sencilla de hacerlo:
+En Azure Stack Hub, hay una manera sencilla de hacerlo:
 
 1. Vaya a la lista de cuentas de almacenamiento. Para más información, vea [Búsqueda de una cuenta de almacenamiento](azure-stack-manage-storage-accounts.md) al principio de este artículo.
 2. Busque esa cuenta en particular en la lista. Puede que deba filtrar.
@@ -143,10 +143,10 @@ También puede usar PowerShell para reemplazar explícitamente el período de re
     Start-AzsReclaimStorageCapacity -FarmName $farm_name
 ```
 
-Para más información, consulte la [documentación de PowerShell de Azure Stack](https://docs.microsoft.com/powershell/azure/azure-stack/overview).
+Para más información, consulte la [documentación de PowerShell de Azure Stack Hub](https://docs.microsoft.com/powershell/azure/azure-stack/overview).
  
 
 ## <a name="next-steps"></a>Pasos siguientes
 
  - Para obtener información sobre cómo administrar permisos, vea [Establecimiento de permisos de acceso mediante el control de acceso basado en rol](azure-stack-manage-permissions.md).
- - Para obtener información sobre cómo administrar la capacidad de almacenamiento para Azure Stack, vea [Administración de la capacidad de almacenamiento para Azure Stack](azure-stack-manage-storage-shares.md).
+ - Para información sobre cómo administrar la capacidad de almacenamiento de Azure Stack Hub, consulte [Administración de la capacidad de almacenamiento para Azure Stack Hub](azure-stack-manage-storage-shares.md).

@@ -1,6 +1,6 @@
 ---
-title: Notas de la versión de la actualización 2 de App Service en Azure Stack | Microsoft Docs
-description: Obtenga información acerca de las mejoras, las correcciones y los problemas conocidos de la actualización 2 para App Service en Azure Stack.
+title: Notas de la versión de la actualización 2 de App Service en Azure Stack Hub | Microsoft Docs
+description: Aprenda sobre las mejoras, las correcciones y los problemas conocidos de la actualización 2 para App Service en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: bryanla
@@ -16,38 +16,36 @@ ms.date: 03/25/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 05/18/2018
-ms.openlocfilehash: f427a31001f8f486fd231af7e59ef2bb30592661
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.openlocfilehash: b21ff443ff9f5cea95ea772e201f1e9804798024
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70974805"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75880046"
 ---
-# <a name="app-service-on-azure-stack-update-2-release-notes"></a>Notas de la versión de la actualización 2 de App Service en Azure Stack
+# <a name="app-service-on-azure-stack-hub-update-2-release-notes"></a>Notas de la versión de la actualización 2 de App Service en Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
-
-Estas notas de la versión describen las mejoras, las correcciones y los problemas conocidos de la actualización 2 de Azure App Service en Azure Stack. Los problemas conocidos se dividen tres secciones: los problemas directamente relacionados con la implementación, los problemas relacionados con el proceso de actualización y los problemas relacionados con la compilación (posteriores a la instalación).
+En estas notas de la versión se describen las mejoras, las correcciones y los problemas conocidos de la actualización 2 de Azure App Service en Azure Stack Hub. Los problemas conocidos se dividen tres secciones: los problemas directamente relacionados con la implementación, los problemas relacionados con el proceso de actualización y los problemas relacionados con la compilación (posteriores a la instalación).
 
 > [!IMPORTANT]
-> Aplique la actualización 1804 al sistema integrado de Azure Stack o implemente el Kit de desarrollo de Azure Stack (ASDK) más reciente antes de implementar Azure App Service 1.2.
+> Aplique la actualización 1804 al sistema integrado de Azure Stack Hub o implemente el Kit de desarrollo de Azure Stack (ASDK) más reciente antes de implementar la versión 1.2 Azure App Service.
 
 ## <a name="build-reference"></a>Referencia de compilación
 
-El número de compilación de la actualización 2 de App Service en Azure Stack es **72.0.13698.10**.
+El número de compilación de la actualización 2 de App Service en Azure Stack Hub es **72.0.13698.10**.
 
-### <a name="prerequisites"></a>Requisitos previos
+### <a name="prerequisites"></a>Prerequisites
 
 > [!IMPORTANT]
-> Las nuevas implementaciones de Azure App Service en Azure Stack requieren ahora un [certificado comodín con tres firmantes](azure-stack-app-service-before-you-get-started.md#get-certificates) debido a las mejoras en la forma en que se trata el inicio de sesión único para Kudu en Azure App Service. El nuevo firmante es **\*.sso.appservice.\<región\>.\<nombreDominio\>.\<extensión\>**
+> Las nuevas implementaciones de Azure App Service en Azure Stack Hub requieren ahora un [certificado comodín con tres firmantes](azure-stack-app-service-before-you-get-started.md#get-certificates) debido a las mejoras en la forma en que se trata el inicio de sesión único para Kudu en Azure App Service. El nuevo firmante es **\*.sso.appservice.\<región\>.\<nombreDominio\>.\<extensión\>**
 
-Consulte [Requisitos previos para implementar App Service en Azure Stack](azure-stack-app-service-before-you-get-started.md) antes de comenzar la implementación.
+Consulte [Requisitos previos para implementar App Service en Azure Stack Hub](azure-stack-app-service-before-you-get-started.md) antes de comenzar la implementación.
 
 ### <a name="new-features-and-fixes"></a>Nuevas características y correcciones
 
-La actualización 2 de Azure App Service en Azure Stack incluye las siguientes correcciones y mejoras:
+La actualización 2 de Azure App Service en Azure Stack Hub incluye las siguientes correcciones y mejoras:
 
-- Actualizaciones de las **herramientas de Kudu, los portales de Functions, Admin e inquilino de App Service**. Es coherente con la versión del SDK del portal de Azure Stack.
+- Actualizaciones de las **herramientas de Kudu, los portales de Functions, Admin e inquilino de App Service**. Es coherente con la versión del SDK del portal de Azure Stack Hub.
 
 - Actualiza el **entorno de ejecución de Azure Functions** a **v1.0.11612**.
 
@@ -93,11 +91,11 @@ Si decide realizar una implementación en una red virtual existente y en una dir
 * Prioridad: 700
 * Nombre: Outbound_Allow_SMB445
 
-### <a name="known-issues-for-cloud-admins-operating-azure-app-service-on-azure-stack"></a>Problemas conocidos para los administradores en la nube que trabajan con Azure App Service en Azure Stack
+### <a name="known-issues-for-cloud-admins-operating-azure-app-service-on-azure-stack-hub"></a>Problemas conocidos para los administradores de la nube que usan Azure App Service en Azure Stack Hub
 
-Consulte la documentación de las [notas de la versión de Azure Stack 1804](azure-stack-update-1903.md)
+Consulte la documentación en las [notas de la versión 1804 de Azure Stack Hub](azure-stack-update-1903.md).
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Para obtener información general de Azure App Service, consulte la [Información general de Azure App Service en Azure Stack](azure-stack-app-service-overview.md).
-- Para más información acerca de cómo prepararse para implementar App Service en Azure Stack, consulte [Requisitos previos para implementar App Service en Azure Stack](azure-stack-app-service-before-you-get-started.md).
+- Para información general sobre Azure App Service, consulte [Introducción a Azure App Service en Azure Stack Hub](azure-stack-app-service-overview.md).
+- Para más información sobre cómo prepararse para implementar App Service en Azure Stack Hub, consulte [Requisitos previos para implementar App Service en Azure Stack Hub](azure-stack-app-service-before-you-get-started.md).

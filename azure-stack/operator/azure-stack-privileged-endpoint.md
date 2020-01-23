@@ -1,6 +1,6 @@
 ---
-title: Uso del punto de conexión con privilegios en Azure Stack | Microsoft Docs
-description: Aprenda a usar el punto de conexión con privilegios (PEP) en Azure Stack como operador.
+title: Uso del punto de conexión con privilegios en Azure Stack Hub | Microsoft Docs
+description: Aprenda a usar el punto de conexión con privilegios (PEP) en Azure Stack Hub como operador.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,18 +15,16 @@ ms.date: 1/8/2020
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 1/8/2020
-ms.openlocfilehash: 19783172dd402d7ea80dcbfc226aefb44846182f
-ms.sourcegitcommit: b9d520f3b7bc441d43d489e3e32f9b89601051e6
+ms.openlocfilehash: 665e0a32abfbdce3953423135600eed98cbc2eef
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75727095"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882137"
 ---
-# <a name="use-the-privileged-endpoint-in-azure-stack"></a>Uso del punto de conexión con privilegios en Azure Stack
+# <a name="use-the-privileged-endpoint-in-azure-stack-hub"></a>Uso del punto de conexión con privilegios en Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
-
-Como operador de Azure Stack, debe usar las API del portal de administrador, PowerShell o Azure Resource Manager en la mayor parte de las tareas de administración diarias. Sin embargo, con algunas operaciones menos comunes, deberá usar el *punto de conexión con privilegios* (PEP). El PEP es una consola remota de PowerShell preconfigurada que proporciona las funcionalidades suficientes para ayudarle a realizar una tarea necesaria. El punto de conexión usa [PowerShell JEA (Just Enough Administration)](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/overview) para exponer únicamente un conjunto restringido de cmdlets. Para acceder al PEP e invocar el conjunto restringido de cmdlets, se usa una cuenta sin privilegios. No se necesita ninguna cuenta de administrador. Para mayor seguridad, no se permite scripting.
+Como operador de Azure Stack Hub, debe usar el portal del administrador, PowerShell o las API de Azure Resource Manager en la mayor parte de las tareas de administración diarias. Sin embargo, con algunas operaciones menos comunes, deberá usar el *punto de conexión con privilegios* (PEP). El PEP es una consola remota de PowerShell preconfigurada que proporciona las funcionalidades suficientes para ayudarle a realizar una tarea necesaria. El punto de conexión usa [PowerShell JEA (Just Enough Administration)](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/overview) para exponer únicamente un conjunto restringido de cmdlets. Para acceder al PEP e invocar el conjunto restringido de cmdlets, se usa una cuenta sin privilegios. No se necesita ninguna cuenta de administrador. Para mayor seguridad, no se permite scripting.
 
 Puede usar el PEP para realizar estas tareas:
 
@@ -43,7 +41,7 @@ El PEP registra cada acción (y su salida correspondiente) que se realiza en la 
 
 El acceso al PEP se realiza mediante una sesión remota de PowerShell en la máquina virtual que lo hospeda. En el ASDK, esta máquina virtual se denomina **AzS-ERCS01**. Si va a usar un sistema integrado, hay tres instancias del PEP, cada una de las cuales se ejecuta en una máquina virtual (*Prefix*-ERCS01, *Prefix*-ERCS02 o *Prefix*-ERCS03) en diferentes hosts para proporcionar resistencia.
 
-Antes de comenzar este procedimiento en un sistema integrado, asegúrese de que puede acceder a un PEP bien mediante la dirección IP o a través de DNS. Después de la implementación inicial de Azure Stack, solo puede acceder al PEP mediante la dirección IP, dado que la integración de DNS no está configurada todavía. El proveedor de hardware OEM le proporcionará un archivo JSON denominado **AzureStackStampDeploymentInfo** que contiene las direcciones IP del PEP.
+Antes de comenzar este procedimiento en un sistema integrado, asegúrese de que puede acceder a un PEP bien mediante la dirección IP o a través de DNS. Después de la implementación inicial de Azure Stack Hub, solo puede acceder al PEP mediante la dirección IP, dado que la integración de DNS no está configurada aún. El proveedor de hardware OEM le proporcionará un archivo JSON denominado **AzureStackStampDeploymentInfo** que contiene las direcciones IP del PEP.
 
 También puede encontrar la dirección IP en el portal de administración de Azure Stack Hub. Abra el portal, por ejemplo, `https://adminportal.local.azurestack.external`. Seleccione **Region Management (Administración de regiones)**  > **Properties (Propiedades)** .
 
@@ -76,7 +74,7 @@ Tendrá que establecer la configuración de la referencia cultural actual en `en
     El parámetro `ComputerName` puede ser la dirección IP o el nombre DNS de una de las máquinas virtuales que hospeda el PEP.
 
     > [!NOTE]  
-    >Azure Stack no realiza ninguna llamada remota al validar la credencial de PEP. Se basa en una clave pública RSA almacenada localmente para hacerlo.
+    >Azure Stack Hub no realiza ninguna llamada remota al validar la credencial del PEP. Se basa en una clave pública RSA almacenada localmente para hacerlo.
 
    - Si va a ejecutar el ADSK:
 
@@ -89,7 +87,7 @@ Tendrá que establecer la configuración de la referencia cultural actual en `en
     
    - Cuando se le pida, utilice las siguientes credenciales:
    
-       - **Nombre de usuario**: especifique la cuenta CloudAdmin con el formato **&lt;*dominio de Azure Stack*&gt;\cloudadmin**. (Para ASDK, el nombre de usuario es **azurestack\cloudadmin**).
+       - **Nombre de usuario**: especifique la cuenta CloudAdmin con el formato **&lt;*dominio de Azure Stack Hub*&gt;\cloudadmin**. (Para ASDK, el nombre de usuario es **azurestack\cloudadmin**).
   
         - **Contraseña**: escriba la misma contraseña que proporcionó durante la instalación de la cuenta del administrador de dominio de AzureStackAdmin.
 
@@ -167,7 +165,7 @@ Lleve a cabo los siguientes pasos para importar la sesión del PEP al equipo loc
 
      Cuando se le pida, utilice las siguientes credenciales:
 
-     - **Nombre de usuario**: especifique la cuenta CloudAdmin con el formato **&lt;*dominio de Azure Stack*&gt;\cloudadmin**. (Para ASDK, el nombre de usuario es **azurestack\cloudadmin**).
+     - **Nombre de usuario**: especifique la cuenta CloudAdmin con el formato **&lt;*dominio de Azure Stack Hub*&gt;\cloudadmin**. (Para ASDK, el nombre de usuario es **azurestack\cloudadmin**).
      - **Contraseña**: escriba la misma contraseña que proporcionó durante la instalación de la cuenta del administrador de dominio de AzureStackAdmin.
 
 3. Importe la sesión PEP a la máquina local:
@@ -176,7 +174,7 @@ Lleve a cabo los siguientes pasos para importar la sesión del PEP al equipo loc
       Import-PSSession $session
     ```
 
-4. Ahora, puede usar la finalización con tabulación y realizar scripting como de costumbre en la sesión de PowerShell local con todas las funciones y cmdlets del PEP sin reducir la posición de seguridad de Azure Stack. ¡Disfrute!
+4. Ahora, puede usar la finalización con tabulación y realizar scripting como de costumbre en la sesión de PowerShell local con todas las funciones y cmdlets del PEP sin reducir la posición de seguridad de Azure Stack Hub. ¡Disfrute!
 
 ## <a name="close-the-privileged-endpoint-session"></a>Cierre de la sesión del punto de conexión con privilegios
 
@@ -207,4 +205,4 @@ Una vez los archivos de registro de transcripción se transfieren correctamente 
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Herramientas de diagnóstico de Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs)
+[Herramientas de diagnóstico de Azure Stack Hub](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs)

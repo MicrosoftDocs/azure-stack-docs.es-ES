@@ -1,6 +1,6 @@
 ---
 title: Preguntas más frecuentes relacionadas con el uso de API | Microsoft Docs
-description: Lista de medidores de Azure Stack, en comparación con los códigos de error, el tiempo notificado y el tiempo de uso y la API de uso de Azure.
+description: Lista de medidores de Azure Stack Hub, en comparación con los códigos de error, el tiempo notificado y el tiempo de uso y la API de uso de Azure.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,16 +15,16 @@ ms.date: 09/25/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 02/26/2019
-ms.openlocfilehash: b4780077f015c060c63abc3abd33bd3e71c63e15
-ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
+ms.openlocfilehash: dea410ab514f095f7ed68a0617b2dd7816544f80
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72019326"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75813069"
 ---
-# <a name="frequently-asked-questions-about-azure-stack-usage"></a>Preguntas frecuentes sobre el uso de Azure Stack
+# <a name="frequently-asked-questions-about-azure-stack-hub-usage"></a>Preguntas frecuentes sobre el uso de Azure Stack Hub
 
-En este artículo se responden algunas preguntas frecuentes sobre el uso de Azure Stack y la API de uso de Azure Stack.
+En este artículo se responden algunas preguntas frecuentes sobre el uso de Azure Stack Hub y la API de uso de Azure Stack Hub.
 
 ## <a name="what-meter-ids-can-i-see"></a>¿Qué identificadores de medidor veo?
 
@@ -322,7 +322,7 @@ Se informa del uso para los siguientes proveedores de recursos:
 **Id. de medidor**: 190C935E-9ADA-48FF-9AB8-56EA1CF9ADAA  
 **Nombre de medidor:** : App Service  
 **Unidad**: Total de núcleos virtuales  
-**Notas**: Número de núcleos virtuales usados para ejecutar App Service Nota: Microsoft usa este medidor para realizar los cargos por App Service en Azure Stack. Los proveedores de soluciones en la nube pueden usar los otros medidores de App Service (abajo) para calcular el uso en sus inquilinos.  
+**Notas**: Número de núcleos virtuales usados para ejecutar App Service Nota: Microsoft usa este medidor para realizar los cargos por App Service en Azure Stack Hub. Los proveedores de soluciones en la nube pueden usar los otros medidores de App Service (abajo) para calcular el uso en sus inquilinos.  
   
 **Id. de medidor**: 67CC4AFC-0691-48E1-A4B8-D744D1FEDBDE  
 **Nombre de medidor:** : Solicitudes de funciones  
@@ -386,18 +386,18 @@ Se informa del uso para los siguientes proveedores de recursos:
 **Unidad**: GB  
 **Notas**: Bytes de respuesta de solicitud de entrada total + bytes de solicitud de salida total + bytes de respuesta de solicitud FTP de entrada total + bytes de respuesta de solicitud de implementación web de entrada total.  
   
-## <a name="how-do-the-azure-stack-usage-apis-compare-to-the-azure-usage-apihttpsdocsmicrosoftcomazurebillingbilling-usage-rate-card-overviewazure-resource-usage-api-preview-currently-in-public-preview"></a>¿Cómo se comparan las API de uso de Azure Stack con la [API de uso de Azure](https://docs.microsoft.com/azure/billing/billing-usage-rate-card-overview#azure-resource-usage-api-preview) (actualmente en versión preliminar pública)?
+## <a name="how-do-the-azure-stack-hub-usage-apis-compare-to-the-azure-usage-apihttpsdocsmicrosoftcomazurebillingbilling-usage-rate-card-overviewazure-resource-usage-api-preview-currently-in-public-preview"></a>¿Cómo se comparan las API de uso de Azure Stack Hub con la [API de uso de Azure](https://docs.microsoft.com/azure/billing/billing-usage-rate-card-overview#azure-resource-usage-api-preview) (actualmente en versión preliminar pública)?
 
-* La API de uso de inquilinos es coherente con la API de Azure, con una excepción: actualmente, la marca *showDetails* no se admite en Azure Stack.
-* La API de uso del proveedor solo se aplica a Azure Stack.
-* Actualmente, la [API RateCard](/azure/billing/billing-usage-rate-card-overview#azure-resource-ratecard-api-preview) disponible en Azure no se encuentra disponible en Azure Stack.
+* La API de uso de inquilinos es coherente con la API de Azure, con una excepción: actualmente, la marca *showDetails* no se admite en Azure Stack Hub.
+* La API de uso del proveedor solo se aplica a Azure Stack Hub.
+* Actualmente, la [API RateCard](/azure/billing/billing-usage-rate-card-overview#azure-resource-ratecard-api-preview) disponible en Azure no se encuentra disponible en Azure Stack Hub.
 
 ## <a name="what-is-the-difference-between-usage-time-and-reported-time"></a>¿Cuál es la diferencia entre el tiempo notificado y el tiempo de uso?
 
 Los informes de datos de uso tienen dos valores de tiempo principales:
 
 * **Hora de notificación**. La hora cuando el evento de uso entró en el sistema de uso
-* **Tiempo de uso**. El tiempo durante el que se ha usado el recurso de Azure Stack
+* **Tiempo de uso**. El tiempo durante el que se ha usado el recurso de Azure Stack Hub
 
 Puede que vea una discrepancia en los valores de tiempo de uso y tiempo notificado para un evento de uso específico. El retraso puede ser de hasta varias horas en cualquier entorno.
 
@@ -419,18 +419,18 @@ Actualmente, solo se puede consultar mediante el *tiempo notificado*.
 
 Las VM en ejecución y detenidas generan datos de uso. La desasignación es coherente con Azure y necesaria para detener la emisión de datos de uso. En el caso de que el portal no esté disponible, pero el proveedor de recursos de proceso aún se esté ejecutando, se emitirá el uso.
 
-## <a name="how-do-i-extract-usage-data-from-the-azure-stack-usage-apis"></a>¿Cómo puedo extraer datos de uso de las API de uso de Azure Stack?
+## <a name="how-do-i-extract-usage-data-from-the-azure-stack-hub-usage-apis"></a>¿Cómo puedo extraer datos de uso de las API de uso de Azure Stack Hub?
 
-La forma más fácil de extraer datos de uso de las API de uso locales en Azure Stack es mediante el [script de resumen de uso en GitHub](https://github.com/Azure/AzureStack-Tools/blob/master/Usage/Usagesummary.ps1). El script requiere las fechas de inicio y finalización como parámetros de entrada.
+La forma más fácil de extraer datos de uso de las API de uso locales en Azure Stack Hub es mediante el [script de resumen de uso en GitHub](https://github.com/Azure/AzureStack-Tools/blob/master/Usage/Usagesummary.ps1). El script requiere las fechas de inicio y finalización como parámetros de entrada.
 
 Como alternativa, puede usar las API de REST, como se explica en los artículos [API de uso de recursos de proveedor](azure-stack-provider-resource-api.md) y [API de uso de recursos de inquilino](azure-stack-tenant-resource-usage-api.md).
 
-## <a name="how-can-i-associate-usage-extracted-from-azure-usage-apis-to-a-specific-azure-stack-user-subscription"></a>¿Cómo se puede asociar el uso extraído de las API de uso de Azure a una suscripción de usuario de Azure Stack específica?
+## <a name="how-can-i-associate-usage-extracted-from-azure-usage-apis-to-a-specific-azure-stack-hub-user-subscription"></a>¿Cómo se puede asociar el uso extraído de las API de uso de Azure a una suscripción de usuario de Azure Stack Hub específica?
 
-Los registros de uso incluyen un contenedor de propiedades denominado **additionalinfo** que incluye el identificador de suscripción de Azure Stack. Se trata de la suscripción de usuario que emite el registro de uso correspondiente.
+Los registros de uso incluyen un contenedor de propiedades denominado **additionalinfo** que incluye el identificador de suscripción de Azure Stack Hub. Se trata de la suscripción de usuario que emite el registro de uso correspondiente.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-* [Facturación y contracargo del cliente en Azure Stack](azure-stack-billing-and-chargeback.md)
-* [API de uso de recursos del proveedor](azure-stack-provider-resource-api.md)
+* [Facturación y contracargo del cliente en Azure Stack Hub](azure-stack-billing-and-chargeback.md)
+* [Provider Resource Usage API](azure-stack-provider-resource-api.md) (API de utilización de recursos de proveedor)
 * [API de uso de recursos del inquilino](azure-stack-tenant-resource-usage-api.md)

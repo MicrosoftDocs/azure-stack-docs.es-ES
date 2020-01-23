@@ -1,6 +1,6 @@
 ---
-title: Validación de certificados de infraestructura de clave pública de Azure Stack para la implementación de sistemas integrados de Azure Stack | Microsoft Docs
-description: Describe cómo validar certificados PKI de Azure Stack para sistemas integrados de Azure Stack. Incluye el uso de la herramienta Azure Stack Certificate Checker.
+title: Validación de certificados de infraestructura de clave pública de Azure Stack Hub para la implementación de sistemas integrados de Azure Stack Hub | Microsoft Docs
+description: Describe cómo validar certificados PKI de Azure Stack Hub para sistemas integrados de Azure Stack Hub. Incluye el uso de la herramienta Azure Stack Hub Certificate Checker.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,16 +15,16 @@ ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: ppacent
 ms.lastreviewed: 01/08/2019
-ms.openlocfilehash: 61e79fb581b18825d2bde1e2838d8b653ad00da6
-ms.sourcegitcommit: b9d520f3b7bc441d43d489e3e32f9b89601051e6
+ms.openlocfilehash: 23225b21d1dc3074c69cefa2af23a99b634a7a73
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75727537"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75812865"
 ---
-# <a name="validate-azure-stack-pki-certificates"></a>Validación de certificados PKI de Azure Stack
+# <a name="validate-azure-stack-hub-pki-certificates"></a>Preparación de certificados PKI de Azure Stack Hub
 
-La herramienta Azure Stack Readiness Checker que se describe en este artículo está disponible [en la Galería de PowerShell](https://aka.ms/AzsReadinessChecker). Puede usar esta herramienta para comprobar si los [certificados PKI generados](azure-stack-get-pki-certs.md) son válidos para la implementación previa. Cuando valide los certificados, deje tiempo suficiente para que se prueben los certificados y, en caso necesario, vuelvan a emitirse.
+La herramienta Azure Stack Hub Readiness Checker que se describe en este artículo está disponible [en la Galería de PowerShell](https://aka.ms/AzsReadinessChecker). Puede usar esta herramienta para comprobar si los [certificados PKI generados](azure-stack-get-pki-certs.md) son válidos para la implementación previa. Cuando valide los certificados, deje tiempo suficiente para que se prueben los certificados y, en caso necesario, vuelvan a emitirse.
 
 La herramienta Readiness Checker realiza las siguientes validaciones de certificados:
 
@@ -54,16 +54,16 @@ La herramienta Readiness Checker realiza las siguientes validaciones de certific
 
 ## <a name="prerequisites"></a>Prerequisites
 
-El sistema debe cumplir los siguientes requisitos previos para poder validar los certificados PKI de una implementación de Azure Stack:
+El sistema debe cumplir los siguientes requisitos previos para poder validar los certificados PKI de una implementación de Azure Stack Hub:
 
-- Microsoft Azure Stack Readiness Checker
+- Microsoft Azure Stack Hub Readiness Checker
 - Certificados SSL exportados siguiendo las [instrucciones de preparación](azure-stack-prepare-pki-certs.md)
 - DeploymentData.json
 - Windows 10 o Windows Server 2016
 
 ## <a name="perform-core-services-certificate-validation"></a>Ejecución de la validación de certificados de servicios principales
 
-Siga estos pasos para preparar y validar los certificados PKI de Azure Stack para implementación y rotación de secretos:
+Siga estos pasos para preparar y validar los certificados PKI de Azure Stack Hub para implementación y rotación de secretos:
 
 1. Instale **AzsReadinessChecker** desde un símbolo del sistema de PowerShell (5.1 o superior) mediante la ejecución del siguiente cmdlet:
 
@@ -94,7 +94,7 @@ Siga estos pasos para preparar y validar los certificados PKI de Azure Stack par
         - `C:\Certificates\Deployment\Admin Portal\CustomerCertificate.pfx`
         - `C:\Certificates\Deployment\ARM Admin\CustomerCertificate.pfx`
 
-3. En la ventana de PowerShell, cambie los valores de **RegionName** y **FQDN** apropiados para el entorno de Azure Stack y ejecute lo siguiente:
+3. En la ventana de PowerShell, cambie los valores de **RegionName** y **FQDN** apropiados para el entorno de Azure Stack Hub y ejecute lo siguiente:
 
     ```powershell  
     $pfxPassword = Read-Host -Prompt "Enter PFX Password" -AsSecureString 
@@ -148,7 +148,7 @@ Siga estos pasos para preparar y validar los certificados PKI de Azure Stack par
     Invoke-AzsCertificateValidation Completed
     ```
 
-    Para validar certificados de otros servicios de Azure Stack cambie el valor de ```-CertificateType```. Por ejemplo:
+    Para validar certificados de otros servicios de Azure Stack Hub cambie el valor de ```-CertificateType```. Por ejemplo:
 
     ```powershell  
     # App Services
@@ -257,11 +257,11 @@ Cada carpeta debe contener un único archivo PFX para el tipo de certificado. Si
 
 ## <a name="using-validated-certificates"></a>Uso de certificados validados
 
-Una vez que AzsReadinessChecker valide los certificados, podrá utilizarlos en la implementación de Azure Stack o en la rotación de secretos de Azure Stack. 
+Una vez que AzsReadinessChecker valide los certificados, podrá utilizarlos en la implementación de Azure Stack Hub o en la rotación de secretos de Azure Stack Hub. 
 
- - En el caso de la implementación, transfiera de forma segura los certificados al ingeniero de implementación para que pueda copiarlos en el host de la implementación tal y como se especifica en la [documentación de los requisitos de infraestructura de clave pública (PKI) de Azure Stack](azure-stack-pki-certs.md).
- - En caso de rotación de secretos, puede usar los certificados para actualizar los certificados antiguos de los puntos de conexión de la infraestructura pública del entorno de Azure Stack, tal y como se indica en la [documentación de rotación de secretos de Azure Stack](azure-stack-rotate-secrets.md).
- - Para los servicios de PaaS, puede utilizar los certificados para instalar Proveedores de recursos de SQL, MySQL y App Services en Azure Stack siguiendo la documentación de [Introducción a la oferta de servicios en Azure Stack](service-plan-offer-subscription-overview.md).
+ - En el caso de la implementación, transfiera de forma segura los certificados al ingeniero de implementación para que pueda copiarlos en el host de la implementación tal y como se especifica en la [documentación de los requisitos de infraestructura de clave pública (PKI) de Azure Stack Hub](azure-stack-pki-certs.md).
+ - En el caso de la rotación de secretos, puede usar los certificados para actualizar los certificados antiguos de los puntos de conexión de la infraestructura pública del entorno de Azure Stack Hub, tal y como se indica en la [documentación de rotación de secretos de Azure Stack Hub](azure-stack-rotate-secrets.md).
+ - En el caso de los servicios de PaaS, puede utilizar los certificados para instalar proveedores de recursos de SQL, MySQL y App Services en Azure Stack Hub siguiendo la [documentación de introducción a la oferta de servicios en Azure Stack Hub](service-plan-offer-subscription-overview.md).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

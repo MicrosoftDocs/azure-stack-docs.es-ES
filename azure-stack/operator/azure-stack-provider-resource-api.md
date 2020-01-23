@@ -15,12 +15,12 @@ ms.date: 01/07/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 01/25/2018
-ms.openlocfilehash: 914f363efa5800c331239a547ee3edd577806188
-ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
+ms.openlocfilehash: e1d2e350079ab3d58802c8490da30a4c9555885d
+ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75718120"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76023261"
 ---
 # <a name="provider-resource-usage-api"></a>API de uso de recursos de proveedor
 
@@ -44,7 +44,7 @@ Esta API de uso es una API de proveedor, por lo que se debe asignar al autor de 
 
 | Argumento | Descripción |
 | --- | --- |
-| `armendpoint` |Punto de conexión de Azure Resource Manager del entorno de Azure Stack. La norma en Azure Stack Hub es que el nombre del punto de conexión de Azure Resource Manager esté en el formato `https://adminmanagement.{domain-name}`. Por ejemplo, si en el Kit de desarrollo de Azure Stack (ASDK) el nombre de dominio es *local.azurestack.external*, el punto de conexión de Resource Manager será `https://adminmanagement.local.azurestack.external`. |
+| `armendpoint` |Punto de conexión de Azure Resource Manager del entorno de Azure Stack Hub. La norma en Azure Stack Hub es que el nombre del punto de conexión de Azure Resource Manager esté en el formato `https://adminmanagement.{domain-name}`. Por ejemplo, si en el Kit de desarrollo de Azure Stack (ASDK) el nombre de dominio es *local.azurestack.external*, el punto de conexión de Resource Manager será `https://adminmanagement.local.azurestack.external`. |
 | `subId` |Identificador de suscripción del usuario que realiza la llamada. |
 | `reportedStartTime` |Hora de inicio de la consulta. El valor de `DateTime` debe estar en formato Hora universal coordinada (UTC) y al principio de la hora, por ejemplo, 13:00. Para la agregación diaria, establezca este valor en la medianoche de la hora UTC. El formato se cambia a ISO 8601; por ejemplo, `2015-06-16T18%3a53%3a11%2b00%3a00Z`, donde los dos puntos se cambian por `%3a` y el signo más se cambia por `%2b` para que sea un URI descriptivo. |
 | `reportedEndTime` |Hora de finalización de la consulta. Las restricciones que se aplican a `reportedStartTime` también se aplican a este argumento. El valor de `reportedEndTime` no puede ser una fecha futura ni la actual. Si es así, el resultado se establece en "el procesamiento no está completo". |

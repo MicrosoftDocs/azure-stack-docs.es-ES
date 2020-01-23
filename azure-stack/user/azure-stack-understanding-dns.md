@@ -1,6 +1,6 @@
 ---
-title: Uso de iDNS en Azure Stack | Microsoft Docs
-description: Obtenga información para usar las características y capacidades de iDNS en Azure Stack.
+title: Uso de iDNS en Azure Stack Hub | Microsoft Docs
+description: Aprenda a usar las características y funcionalidades de iDNS en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: Justinha
@@ -15,22 +15,20 @@ ms.date: 09/16/2019
 ms.author: Justinha
 ms.reviewer: scottnap
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 24dc5fc3ea57e1a849442fb02c118615bc8b60fa
-ms.sourcegitcommit: ca5025fb04250271fe0b2b2df8ad0b3b9ed3e604
+ms.openlocfilehash: 8bdadb4e0cd36c6e650b001585aa3519293a9247
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71020832"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883259"
 ---
-# <a name="use-idns-in-azure-stack"></a>Uso de iDNS en Azure Stack 
+# <a name="use-idns-in-azure-stack-hub"></a>Uso de iDNS en Azure Stack Hub 
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
-
-iDNS es una característica de redes de Azure Stack que permite resolver nombres DNS externos (por ejemplo, https:\//www.bing.com). También permite registrar los nombres de redes virtuales internas. Así, puede resolver las máquinas virtuales (VM) de la misma red virtual por nombre en lugar de por dirección IP. Este enfoque elimina la necesidad de proporcionar las entradas de servidor DNS personalizadas. Para más información acerca de DNS, consulte la [Introducción a Azure DNS](https://docs.microsoft.com/azure/dns/dns-overview).
+iDNS es una característica de redes de Azure Stack Hub que permite resolver nombres DNS externos (por ejemplo, https:\//www.bing.com). También permite registrar los nombres de redes virtuales internas. Así, puede resolver las máquinas virtuales (VM) de la misma red virtual por nombre en lugar de por dirección IP. Este enfoque elimina la necesidad de proporcionar las entradas de servidor DNS personalizadas. Para más información acerca de DNS, consulte la [Introducción a Azure DNS](https://docs.microsoft.com/azure/dns/dns-overview).
 
 ## <a name="what-does-idns-do"></a>¿Para qué sirve iDNS?
 
-Con iDNS en Azure Stack, dispone de las siguientes funcionalidades sin tener que especificar entradas del servidor DNS personalizadas:
+Con iDNS en Azure Stack Hub, dispone de las siguientes funcionalidades sin tener que especificar entradas del servidor DNS personalizadas:
 
 - Servicios de resolución de nombres Compartir los servicios de resolución de nombres DNS compartidos para las cargas de trabajo del inquilino.
 - Servicio DNS autoritativo para la resolución de nombres y el registro DNS en la red virtual del inquilino.
@@ -48,7 +46,7 @@ En Azure, tiene la opción de especificar una etiqueta de nombre DNS que se pued
 
 Como muestra la imagen anterior, Azure creará un registro "A" en DNS para la etiqueta de nombre DNS especificada en la zona **westus.cloudapp.azure.com**. El prefijo y el sufijo se combinan para crear un [nombre de dominio completo](https://en.wikipedia.org/wiki/Fully_qualified_domain_name) (FQDN) que se puede resolver desde cualquier lugar de Internet público.
 
-Azure Stack solo admite iDNS para el registro de nombres interno, por lo que no puede hacer lo siguiente:
+Azure Stack Hub solo admite iDNS para el registro de nombres interno, por lo que no puede realizar las siguientes operaciones:
 
 - Crear un registro DNS en una zona DNS hospedada existente (por ejemplo, local.azurestack.external).
 - Crear una zona DNS (como Contoso.com).
@@ -192,4 +190,4 @@ Como puede ver en los resultados del laboratorio, tiene control sobre la direcci
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Uso de DNS en Azure Stack](azure-stack-dns.md)
+[Uso de DNS en Azure Stack Hub](azure-stack-dns.md)

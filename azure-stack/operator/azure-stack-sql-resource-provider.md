@@ -1,7 +1,7 @@
 ---
 title: Uso de bases de datos SQL
-titleSuffix: Azure Stack
-description: Vea cómo usar el proveedor de recursos de SQL Server para ofrecer bases de datos SQL como servicio en Azure Stack.
+titleSuffix: Azure Stack Hub
+description: Aprenda a usar el proveedor de recursos de SQL Server para ofrecer bases de datos SQL como servicio en Azure Stack Hub.
 services: azure-stack
 documentationCenter: ''
 author: mattbriggs
@@ -16,16 +16,16 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/25/2018
-ms.openlocfilehash: 9e7800c018816155205569397520271fb86c4c12
-ms.sourcegitcommit: dc3d0b77ee77742525fa0cd72d8547d25393022f
+ms.openlocfilehash: 58aa2bc05625c031fe78c3b4e5aeeec8d6001c8a
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/26/2019
-ms.locfileid: "75492762"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75881780"
 ---
-# <a name="use-sql-databases-on-azure-stack"></a>Uso de bases de datos SQL en Azure Stack
+# <a name="use-sql-databases-on-azure-stack-hub"></a>Uso de bases de datos SQL en Azure Stack Hub
 
-Use el proveedor de recursos de SQL para ofrecer bases de datos SQL como servicio en [Azure Stack](azure-stack-overview.md). Después de instalar el proveedor de recursos y conectarse a una o varias instancias de SQL Server, usted y sus usuarios pueden crear:
+Use el proveedor de recursos SQL para ofrecer bases de datos SQL como servicio en [Azure Stack Hub](azure-stack-overview.md). Después de instalar el proveedor de recursos y conectarse a una o varias instancias de SQL Server, usted y sus usuarios pueden crear:
 
 - Bases de datos para las aplicaciones nativas de la nube.
 - Sitios web que usan SQL.
@@ -34,7 +34,7 @@ Use el proveedor de recursos de SQL para ofrecer bases de datos SQL como servici
 Hay varias limitaciones a tener en cuenta antes de instalar el proveedor de recursos de SQL:
 
 - Los usuarios solo pueden crear y administrar bases de datos individuales. La instancia del servidor de base de datos no es accesible para los usuarios finales. Esto puede limitar la compatibilidad con las aplicaciones de base de datos locales que necesitan acceder a bases de datos maestras, temporales o administradas dinámicamente.
-- El operador de Azure Stack es responsable de la implementación, actualización, protección, configuración y mantenimiento de los hosts y servidores de bases de datos de MySQL. El servicio Proveedor de recursos no proporciona ninguna funcionalidad de administración de instancias de servidor de bases de datos y hosts. 
+- El operador de Azure Stack Hub es responsable de implementar, actualizar, proteger, configurar y mantener los hosts y servidores de bases de datos de SQL. El servicio Proveedor de recursos no proporciona ninguna funcionalidad de administración de instancias de servidor de bases de datos y hosts. 
 - Las bases de datos de diferentes usuarios de distintas suscripciones se pueden colocar en la misma instancia del servidor de bases de datos. El proveedor de recursos no proporciona ningún mecanismo para aislar las bases de datos en diferentes hosts o instancias del servidor de bases de datos.
 - El proveedor de recursos no proporciona ningún informe sobre el uso de los inquilinos de las bases de datos.
 
@@ -49,7 +49,7 @@ El proveedor de recursos consta de los componentes siguientes:
 Debe crear como mínimo una instancia de SQL Server o proporcionar acceso a instancias externas de SQL Server.
 
 > [!NOTE]
-> Los servidores de hospedaje que se instalan en sistemas integrados de Azure Stack se deben crear mediante una suscripción de inquilino. No se pueden crear a partir de la suscripción de proveedor predeterminada. Se deben crear desde el portal de inquilino o mediante PowerShell con el inicio de sesión adecuado. Todos los servidores de hospedaje son máquinas virtuales facturables y deben tener las licencias. El administrador del servicio puede ser el propietario de la suscripción del inquilino.
+> Los servidores de hospedaje que se instalan en sistemas integrados de Azure Stack Hub se deben crear a partir de una suscripción de inquilino. No se pueden crear a partir de la suscripción de proveedor predeterminada. Se deben crear en el portal de usuarios o con PowerShell con el inicio de sesión adecuado. Todos los servidores de hospedaje son máquinas virtuales facturables y deben tener las licencias. El administrador del servicio puede ser el propietario de la suscripción del inquilino.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

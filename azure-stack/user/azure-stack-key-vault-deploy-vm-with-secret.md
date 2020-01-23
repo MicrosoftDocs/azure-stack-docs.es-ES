@@ -1,6 +1,6 @@
 ---
-title: Implementación de una máquina virtual de Azure Stack mediante una contraseña almacenada en Key Vault | Microsoft Docs
-description: Aprenda a implementar una máquina virtual mediante una contraseña almacenada en un almacén de claves de Azure Stack.
+title: Implementación de una máquina virtual de Azure Stack Hub mediante una contraseña almacenada en Key Vault | Microsoft Docs
+description: Aprenda a implementar una máquina virtual mediante una contraseña almacenada en un almacén de claves de Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,30 +15,28 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: ppacent
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 2a75ee1794e9ebfeb995ea03137d12c6c50cce4f
-ms.sourcegitcommit: a7207f4a4c40d4917b63e729fd6872b3dba72968
+ms.openlocfilehash: 01bee6f4f82938c078e22d0587b3f34c2e9f76c7
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71909505"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883667"
 ---
-# <a name="deploy-an-azure-stack-vm-using-a-password-stored-in-key-vault"></a>Implementación de una máquina virtual de Azure Stack mediante una contraseña almacenada en Key Vault
+# <a name="deploy-an-azure-stack-hub-vm-using-a-password-stored-in-key-vault"></a>Implementación de una máquina virtual de Azure Stack Hub mediante una contraseña almacenada en Key Vault
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
-
-Los pasos de este artículo describen la implementación de una máquina virtual de Windows Server con una contraseña almacenada en Key Vault de Azure Stack. El uso de una contraseña de almacén de claves es más seguro que pasar una contraseña de texto sin formato.
+Los pasos de este artículo describen la implementación de una máquina virtual de Windows Server mediante una contraseña almacenada en Key Vault de Azure Stack Hub. El uso de una contraseña de almacén de claves es más seguro que pasar una contraseña de texto sin formato.
 
 ## <a name="overview"></a>Información general
 
-Puede almacenar valores, por ejemplo, una contraseña como un secreto, en un almacén de claves de Azure Stack. Después de crear un secreto, puede hacer referencia a él en las plantillas de Azure Resource Manager. El uso de secretos con Resource Manager proporciona las siguientes ventajas:
+Puede almacenar valores, por ejemplo, una contraseña como un secreto, en un almacén de claves de Azure Stack Hub. Después de crear un secreto, puede hacer referencia a él en las plantillas de Azure Resource Manager. El uso de secretos con Resource Manager proporciona las siguientes ventajas:
 
 * No tiene que escribir manualmente el secreto cada vez que implemente un recurso.
 * Puede especificar qué usuarios o entidades de servicio pueden acceder a un secreto.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 * Debe suscribirse a una oferta que incluya el servicio Key Vault.
-* [Instale PowerShell para Azure Stack.](../operator/azure-stack-powershell-install.md)
+* [Instale PowerShell para Azure Stack Hub](../operator/azure-stack-powershell-install.md).
 * [Configure el entorno de PowerShell.](azure-stack-powershell-configure-user.md)
 
 Los pasos siguientes describen el proceso necesario para crear una máquina virtual mediante la recuperación de la contraseña almacenada en un almacén de claves:

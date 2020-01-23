@@ -1,6 +1,7 @@
 ---
-title: Sistemas operativos invitados compatibles con Azure Stack Hub | Microsoft Docs
-description: Estos sistemas operativos invitados pueden usarse en Azure Stack Hub.
+title: Sistemas operativos invitados compatibles con Azure Stack Hub
+titleSuffix: Azure Stack
+description: Aprenda qué sistemas operativos invitados pueden usarse en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,22 +16,20 @@ ms.date: 01/07/2020
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 06/06/2019
-ms.openlocfilehash: 431af9688eb4f97e3c5400e9fe2b00c0ff18ec11
-ms.sourcegitcommit: b9d520f3b7bc441d43d489e3e32f9b89601051e6
+ms.openlocfilehash: 8d437425db15fa078c00c973fe50824d0ada58bd
+ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75727520"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76023302"
 ---
 # <a name="guest-operating-systems-supported-on-azure-stack-hub"></a>Sistemas operativos invitados compatibles con Azure Stack Hub
-
-*Se aplica a: Sistemas integrados de Azure Stack Hub y al kit de desarrollo de Azure Stack*
 
 ## <a name="windows"></a>Windows
 
 Azure Stack Hub admite los sistemas operativos invitados Windows que se indican en la siguiente tabla:
 
-| Sistema operativo | Descripción | Disponible en Marketplace |
+| Sistema operativo | Descripción | Disponible en Marketplace de Azure Stack Hub |
 | --- | --- | --- |
 | Windows Server, versión 1709 | 64 bits | Core con Containers |
 | Windows Server 2019 | 64 bits |  Datacenter, Datacenter Core, Datacenter con Containers |
@@ -42,22 +41,22 @@ Azure Stack Hub admite los sistemas operativos invitados Windows que se indican 
 | Windows 10 *(vea la nota 1)* | 64 bits, Pro y Enterprise | Traiga su propia imagen |
 
 > [!NOTE]
-> Para implementar sistemas operativos cliente Windows 10 en Azure Stack Hub, debe tener una [licencia por usuario de Windows](https://www.microsoft.com/licensing/product-licensing/windows10.aspx) o adquirir una a través de un proveedor de servicios de hosting cualificado multiinquilino ([QMTH](https://www.microsoft.com/en-us/CloudandHosting/licensing_sca.aspx)).
+> Para implementar sistemas operativos cliente Windows 10 en Azure Stack Hub, debe tener una [licencia por usuario de Windows](https://www.microsoft.com/licensing/product-licensing/windows10.aspx) o adquirir una a través de un proveedor de servicios de hosting cualificado multiinquilino ([QMTH](https://www.microsoft.com/CloudandHosting/licensing_sca.aspx)).
 
 Las imágenes de Marketplace están disponibles para licencias de pago por uso o BYOL (EA/SPLA). No se admite el uso de ambas en una sola instancia de Azure Stack Hub. Durante la implementación, Azure Stack Hub inserta una versión adecuada del agente invitado en la imagen.
 
-Las ediciones de Datacenter están disponibles en Marketplace para su descarga; los clientes pueden traer sus propias imágenes de servidor, incluidas otras ediciones. Las imágenes del cliente Windows no están disponibles en Marketplace.
+Las ediciones Datacenter se pueden descargar en Marketplace de Azure Stack Hub; los clientes pueden traer sus propias imágenes de servidor, incluidas otras ediciones. Las imágenes del cliente Windows no están disponibles en Marketplace de Azure Stack Hub.
 
 ## <a name="linux"></a>Linux
 
-Las distribuciones Linux indicadas como disponibles en Marketplace incluyen el agente Linux de Microsoft Azure (WALA) necesario. Si trae su propia imagen para Azure Stack Hub, siga las instrucciones de [Agregar imágenes de Linux a Azure Stack Hub](azure-stack-linux.md).
+Las distribuciones Linux indicadas como disponibles en el Marketplace de Azure Stack Hub incluyen el agente Linux de Microsoft Azure (WALA) necesario. Si trae su propia imagen para Azure Stack, siga las instrucciones de [Agregar imágenes de Linux a Azure Stack](azure-stack-linux.md).
 
 > [!NOTE]
-> Las imágenes personalizadas se deben compilar con la última versión pública de WALA (en la compilación de Azure Stack Hub 1903 o superior, o con la revisión 1901/1902) o con la versión 2.2.20. Es posible que las versiones anteriores a 2.2.20 y las comprendidas entre 2.2.21 y 2.2.34 (ambas incluidas) no funcionen correctamente en Azure Stack Hub. En la versión 1910 de Azure Stack Hub y posteriores, todas las versiones del agente WALA de Azure funcionan con Azure Stack.
+> Las imágenes personalizadas se deben compilar con la última versión pública de WALA (en la compilación de Azure Stack Hub 1903 o superior, o con la revisión 1901/1902) o con la versión 2.2.20. Es posible que las versiones anteriores a 2.2.20 y las comprendidas entre 2.2.21 y 2.2.34 (ambas incluidas) no funcionen correctamente en Azure Stack Hub. En la versión 1910 de Azure Stack Hub y posteriores, todas las versiones del agente WALA de Azure funcionan con Azure Stack Hub.
 >
-> [Cloud-init](https://cloud-init.io/) se admite en la versión 1910 de Azure Stack y versiones posteriores.
+> [cloud-init](https://cloud-init.io/) se admite en la versión 1910 y posterior de Azure Stack Hub.
 
-| Distribución | Descripción | Publicador | Marketplace |
+| Distribución | Descripción | Publicador | Marketplace de Azure Stack Hub |
 | --- | --- | --- | --- |
 | Basado en CentOS 6.9 | 64 bits | Rogue Wave | Sí |
 | Basado en CentOS 7.5 | 64 bits | Rogue Wave | Sí |
@@ -74,7 +73,7 @@ Las distribuciones Linux indicadas como disponibles en Marketplace incluyen el a
 | Ubuntu 16.04 LTS | 64 bits | Canonical | Sí |
 | Ubuntu 18.04-LTS | 64 bits | Canonical | Sí |
 
-Para obtener información de soporte técnico de Red Hat Enterprise Linux, consulte [Red Hat and Azure Stack: Frequently Asked Questions](https://access.redhat.com/articles/3413531) (Red Hat y Azure Stack: preguntas más frecuentes).
+Para información de soporte técnico de Red Hat Enterprise Linux, consulte [Red Hat y Azure Stack Hub: Frequently Asked Questions](https://access.redhat.com/articles/3413531) (Red Hat y Azure Stack: preguntas más frecuentes).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

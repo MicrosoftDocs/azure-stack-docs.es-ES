@@ -1,6 +1,6 @@
 ---
-title: Creación de bases de datos MySQL en Azure Stack | Microsoft Docs
-description: Obtenga información sobre cómo crear y administrar bases de datos MySQL aprovisionadas con el proveedor de recursos del adaptador de MySQL en Azure Stack.
+title: Creación de bases de datos MySQL en Azure Stack Hub | Microsoft Docs
+description: Aprenda a crear y administrar bases de datos MySQL aprovisionadas con el proveedor de recursos del adaptador de MySQL en Azure Stack Hub.
 services: azure-stack
 documentationCenter: ''
 author: mattbriggs
@@ -15,19 +15,19 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: 9daaea395ee28da79da1d6fd553d2e0b30e28156
-ms.sourcegitcommit: a23b80b57668615c341c370b70d0a106a37a02da
+ms.openlocfilehash: 4bdbc8007be3aae0ec6313b02138eb043b5d393c
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72682231"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75811386"
 ---
-# <a name="create-mysql-databases-in-azure-stack"></a>Creación de bases de datos MySQL en Azure Stack
-Un usuario de Azure Stack que esté suscrito a una oferta que incluya el servicio de base de datos MySQL puede crear y administrar bases de datos MySQL de autoservicio en el portal de usuarios.
+# <a name="create-mysql-databases-in-azure-stack-hub"></a>Creación de bases de datos MySQL en Azure Stack Hub
+Un usuario de Azure Stack Hub que esté suscrito a una oferta que incluya el servicio de base de datos MySQL puede crear y administrar bases de datos MySQL de autoservicio en el portal de usuarios.
 
 ## <a name="create-a-mysql-database"></a>Creación de una base de datos MySQL
 
-1. Inicie sesión en el portal de usuarios de Azure Stack.
+1. Inicie sesión en el portal de usuarios de Azure Stack Hub.
 2. Seleccione **+ Crear un recurso** > **Datos y almacenamiento** > **Base de datos MySQL** > **Agregar**.
 3. En **Create MySQL Database** (Crear base de datos MySQL), escriba el nombre de la base de datos y configure los valores necesarios para su entorno.
 
@@ -38,7 +38,7 @@ Un usuario de Azure Stack que esté suscrito a una oferta que incluya el servici
     ![Selección de una SKU de MySQL](./media/azure-stack-mysql-rp-deploy/mysql-select-sku.png)
 
     >[!Note]
-    >A medida que se agregan servidores de hospedaje a Azure Stack, se les asigna una SKU. Las bases de datos se crean en el grupo de servidores de hospedaje de una SKU.
+    >A medida que se agregan servidores de hospedaje a Azure Stack Hub, se les asigna una SKU. Las bases de datos se crean en el grupo de servidores de hospedaje de una SKU.
 
 5. En **Login** (inicio de sesión), seleccione ***Configure required settings*** (Configurar valores necesarios).
 6. En **Select a Login** (Seleccionar un inicio de sesión), puede elegir uno ya existente o seleccionar **+ Create a new login** (+ Crear un inicio de sesión) para configurar uno nuevo.  Escriba un nombre de **inicio de sesión de base de datos** y una **contraseña** y, luego, seleccione **OK** (Aceptar).
@@ -59,7 +59,7 @@ Una vez implementada la base de datos, anote la **cadena de conexión** que apar
 Puede modificar la contraseña cambiándola la primera vez en la instancia del servidor MySQL.
 
 1. Seleccione **RECURSOS ADMINISTRATIVOS** > **MySQL Hosting Servers** (Servidores de hospedaje MySQL). Seleccione el servidor de hospedaje.
-2. En **Settings** (Configuración), seleccione **Password** (Contraseña).
+2. En **Configuración**, seleccione **Contraseña**.
 3. En **Password** (Contraseña), escriba la nueva contraseña y seleccione **Save** (Guardar).
 
 ![Actualización de la contraseña de administrador](./media/azure-stack-mysql-rp-deploy/mysql-update-password.png)

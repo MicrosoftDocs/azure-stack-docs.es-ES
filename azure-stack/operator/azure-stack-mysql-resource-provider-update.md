@@ -1,6 +1,6 @@
 ---
-title: Actualización del proveedor de recursos MySQL en Azure Stack | Microsoft Docs
-description: Aprenda cómo actualizar el proveedor de recursos MySQL en Azure Stack.
+title: Actualización del proveedor de recursos MySQL en Azure Stack Hub | Microsoft Docs
+description: Aprenda cómo actualizar el proveedor de recursos MySQL de Azure Stack Hub en Azure Stack Hub.
 services: azure-stack
 documentationCenter: ''
 author: mattbriggs
@@ -15,20 +15,18 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 2fd85cb897f1d5e457183ffeeffc5340cbb48696
-ms.sourcegitcommit: 3a8e116fd0b16e1201e55e2088dde2e581004045
+ms.openlocfilehash: 3c184b581233e8bdb9ccade4af73401fe1907527
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74557565"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882205"
 ---
-# <a name="update-the-mysql-resource-provider-in-azure-stack"></a>Actualización del proveedor de recursos MySQL en Azure Stack
+# <a name="update-the-mysql-resource-provider-in-azure-stack-hub"></a>Actualización del proveedor de recursos MySQL en Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack.*
+Cuando las compilaciones de Azure Stack Hub se actualicen, podría lanzarse un nuevo adaptador del proveedor de recursos de MySQL. Aunque el adaptador existente continúa funcionando, se recomienda actualizar a la compilación más reciente lo antes posible.
 
-Cuando las compilaciones de Azure Stack se actualicen, podría lanzarse un nuevo adaptador del proveedor de recursos de MySQL. Aunque el adaptador existente continúa funcionando, se recomienda actualizar a la compilación más reciente lo antes posible.
-
-A partir de la versión 1.1.33.0 del proveedor de recursos MySQL, las actualizaciones son acumulativas y no es necesario instalarlas en el orden en el que se han publicado, siempre y cuando empiece desde la versión 1.1.24.0 o posterior. Por ejemplo, si está ejecutando la versión 1.1.24.0 del proveedor de recursos MySQL, puede actualizar a la versión 1.1.33.0 o posterior sin necesidad de instalar primero la versión 1.1.30.0. Para revisar las versiones del proveedor de recursos disponibles y la versión de Azure Stack compatible, consulte la lista de versiones en [Requisitos previos para implementar el proveedor de recursos](./azure-stack-mysql-resource-provider-deploy.md#prerequisites).
+A partir de la versión 1.1.33.0 del proveedor de recursos MySQL, las actualizaciones son acumulativas y no es necesario instalarlas en el orden en el que se han publicado, siempre y cuando empiece desde la versión 1.1.24.0 o posterior. Por ejemplo, si está ejecutando la versión 1.1.24.0 del proveedor de recursos MySQL, puede actualizar a la versión 1.1.33.0 o posterior sin necesidad de instalar primero la versión 1.1.30.0. Para revisar las versiones del proveedor de recursos disponibles y la versión de Azure Stack Hub compatible, consulte la lista de versiones en [Requisitos previos para implementar el proveedor de recursos](./azure-stack-mysql-resource-provider-deploy.md#prerequisites).
 
 Para actualizar el proveedor de recursos, use el script **UpdateMySQLProvider.ps1**. El procedimiento es similar al usado para instalar un proveedor de recursos, como se describe en la sección Implementar el proveedor de recursos de este artículo. El script se incluye con la descarga del proveedor de recursos. 
 
@@ -48,19 +46,19 @@ El script requiere el uso de los mismos argumentos que se describen para el scri
 ## <a name="update-script-parameters"></a>Actualización de los parámetros de script 
 Puede especificar los siguientes parámetros desde la línea de comandos al ejecutar el script **UpdateMySQLProvider.ps1** de PowerShell. Si no lo hace, o se produce un error en la validación de algún parámetro, se le pedirá que proporcione los parámetros necesarios.
 
-| Nombre de parámetro | DESCRIPCIÓN | Comentario o valor predeterminado | 
+| Nombre de parámetro | Descripción | Comentario o valor predeterminado | 
 | --- | --- | --- | 
 | **CloudAdminCredential** | Credencial del administrador de la nube necesaria para el acceso al punto de conexión con privilegios. | _Obligatorio_ | 
-| **AzCredential** | Credenciales de la cuenta de administrador de servicio de Azure Stack. Use las mismas credenciales que para la implementación de Azure Stack. | _Obligatorio_ | 
+| **AzCredential** | Credenciales de la cuenta de administrador de servicios de Azure Stack Hub. Use las mismas credenciales que para la implementación de Azure Stack Hub. | _Obligatorio_ | 
 | **VMLocalCredential** |Credenciales de la cuenta de administrador local de la VM del proveedor de recursos SQL. | _Obligatorio_ | 
 | **PrivilegedEndpoint** | Dirección IP o nombre DNS del punto de conexión con privilegios. |  _Obligatorio_ | 
-| **AzureEnvironment** | Entorno de Azure de la cuenta de administrador de servicios que se usó para la implementación de Azure Stack. Requerido solo para implementaciones de Azure AD. Los nombres de entorno que se admiten son **AzureCloud**, **AzureUSGovernment** o, si usa una instancia de Azure AD de China, **AzureChinaCloud**. | AzureCloud |
+| **AzureEnvironment** | Entorno de Azure de la cuenta de administrador de servicios que se usó para la implementación de Azure Stack Hub. Requerido solo para implementaciones de Azure AD. Los nombres de entorno que se admiten son **AzureCloud**, **AzureUSGovernment** o, si usa una instancia de Azure AD de China, **AzureChinaCloud**. | AzureCloud |
 | **DependencyFilesLocalPath** | El archivo .pfx de certificados se debe colocar también en este directorio. | _Opcional_ (_obligatorio_ para varios nodos) | 
 | **DefaultSSLCertificatePassword** | Contraseña para el certificado .pfx. | _Obligatorio_ | 
 | **MaxRetryCount** | El número de veces que quiere volver a intentar cada operación si se produce un error.| 2 | 
 | **RetryDuration** | Intervalo de tiempo de expiración entre reintentos, en segundos. | 120 | 
-| **Desinstalación** | Se quita el proveedor de recursos y todos los recursos asociados (vea las notas siguientes). | Sin | 
-| **DebugMode** | Impide la limpieza automática en caso de error. | Sin | 
+| **Desinstalación** | Se quita el proveedor de recursos y todos los recursos asociados (vea las notas siguientes). | No | 
+| **DebugMode** | Impide la limpieza automática en caso de error. | No | 
 | **AcceptLicense** | Omite el aviso para aceptar la licencia GPL.  (https://www.gnu.org/licenses/old-licenses/gpl-2.0.html) | | 
 
 ## <a name="update-script-example"></a>Ejemplo de actualización del script
@@ -68,26 +66,29 @@ Puede especificar los siguientes parámetros desde la línea de comandos al ejec
 > [!NOTE] 
 > El proceso de actualización solo se aplica a sistemas integrados.
 
-Si va a actualizar a la versión 1.1.33.0 del proveedor de recursos de MySQL o versiones anteriores, debe instalar versiones específicas de los módulos AzureRm.BootStrapper y Azure Stack en PowerShell. Si va a actualizar a la versión 1.1.47.0 del proveedor de recursos de MySQL, este paso se puede omitir.
+Si va a actualizar el proveedor de recursos MySQL a la versión 1.1.33.0 o versiones anteriores, debe instalar versiones específicas de los módulos AzureRm.BootStrapper y Azure Stack Hub en PowerShell. Si va a actualizar el proveedor de recursos MySQL a la versión 1.1.47.0, el script de implementación descargará e instalará automáticamente los módulos de PowerShell necesarios en la ruta de acceso C:\Archivos de programa\SqlMySqlPsh.
 
 ```powershell 
 # Install the AzureRM.Bootstrapper module, set the profile and install the AzureStack module
-# Note that this might not be the most currently available version of Azure Stack PowerShell.
+# Note that this might not be the most currently available version of Azure Stack Hub PowerShell.
 Install-Module -Name AzureRm.BootStrapper -Force
 Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 Install-Module -Name AzureStack -RequiredVersion 1.6.0
 ```
 
+> [!NOTE]
+> Si trabaja en un escenario desconectado, deberá descargar los módulos de PowerShell necesarios y registrar el repositorio manualmente como requisito previo. Puede obtener más información en [Implementación del proveedor de recursos MySQL](azure-stack-mysql-resource-provider-deploy.md).
+
 El siguiente es un ejemplo que muestra el script *UpdateMySQLProvider.ps1* que puede ejecutar desde una consola elevada de PowerShell. Asegúrese de cambiar la información de la variable y las contraseñas según sea necesario:
 
 ```powershell 
-# Use the NetBIOS name for the Azure Stack domain. On the Azure Stack SDK, the default is AzureStack but could have been changed at install time.
+# Use the NetBIOS name for the Azure Stack Hub domain. On the Azure Stack Hub SDK, the default is AzureStack but could have been changed at install time.
 $domain = "AzureStack" 
 
 # For integrated systems, use the IP address of one of the ERCS VMs.
 $privilegedEndpoint = "AzS-ERCS01" 
 
-# Provide the Azure environment used for deploying Azure Stack. Required only for Azure AD deployments. Supported environment names are AzureCloud, AzureUSGovernment, or AzureChinaCloud. 
+# Provide the Azure environment used for deploying Azure Stack Hub. Required only for Azure AD deployments. Supported environment names are AzureCloud, AzureUSGovernment, or AzureChinaCloud. 
 $AzureEnvironment = "<EnvironmentName>"
 
 # Point to the directory where the resource provider installation files were extracted. 
@@ -108,7 +109,12 @@ $CloudAdminCreds = New-Object System.Management.Automation.PSCredential ("$domai
 
 # Change the following as appropriate.
 $PfxPass = ConvertTo-SecureString "P@ssw0rd1" -AsPlainText -Force 
- 
+
+# For version 1.1.47.0, the PowerShell modules used by the RP deployment are placed in C:\Program Files\SqlMySqlPsh
+# The deployment script adds this path to the system $env:PSModulePath to ensure correct modules are used.
+$rpModulePath = Join-Path -Path $env:ProgramFiles -ChildPath 'SqlMySqlPsh'
+$env:PSModulePath = $env:PSModulePath + ";" + $rpModulePath 
+
 # Change directory to the folder where you extracted the installation files.
 # Then adjust the endpoints.
 .$tempDir\UpdateMySQLProvider.ps1 -AzCredential $AdminCreds ` 
@@ -120,6 +126,8 @@ $PfxPass = ConvertTo-SecureString "P@ssw0rd1" -AsPlainText -Force
 -DependencyFilesLocalPath $tempDir\cert ` 
 -AcceptLicense 
 ```  
+
+Cuando finalice el script de actualización del proveedor de recursos, cierre la sesión actual de PowerShell.
 
 ## <a name="next-steps"></a>Pasos siguientes
 [Mantenimiento del proveedor de recursos de MySQL](azure-stack-mysql-resource-provider-maintain.md)

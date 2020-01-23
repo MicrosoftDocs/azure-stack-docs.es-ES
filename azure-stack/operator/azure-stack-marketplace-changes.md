@@ -1,6 +1,6 @@
 ---
-title: Novedades de Marketplace de Azure Stack | Microsoft Docs
-description: Cambios y actualizaciones en Marketplace de Azure Stack.
+title: Novedades de Marketplace de Azure Stack Hub | Microsoft Docs
+description: Cambios y actualizaciones en Marketplace de Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,18 +15,18 @@ ms.date: 10/01/2019
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 10/01/2019
-ms.openlocfilehash: 49b3ac4123a385b468d5eb995ac00bb768347d5d
-ms.sourcegitcommit: b5eb024d170f12e51cc852aa2c72eabf26792d8d
+ms.openlocfilehash: 3dbd177f080067283ba22d661e08d54c23e642ff
+ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72534076"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022788"
 ---
-# <a name="azure-stack-marketplace-changes"></a>Cambios en Marketplace de Azure Stack
+# <a name="azure-stack-hub-marketplace-changes"></a>Cambios en Marketplace de Azure Stack Hub
 
-En este artículo se describen las recientes incorporaciones, actualizaciones, cambios y eliminaciones de [elementos de Marketplace de Azure Stack](azure-stack-marketplace-azure-items.md) durante aproximadamente los tres últimos meses. La información de esta sección se actualiza de manera periódica, por lo que debe volver a comprobar con frecuencia los cambios.
+En este artículo se describen las recientes incorporaciones, actualizaciones, cambios y eliminaciones de [elementos de Marketplace de Azure Stack Hub](azure-stack-marketplace-azure-items.md) durante aproximadamente los tres últimos meses. La información de esta sección se actualiza de manera periódica, por lo que debe volver a comprobar con frecuencia los cambios.
 
-El artículo [Elementos de Marketplace de Azure Stack](azure-stack-marketplace-azure-items.md) siempre incluye la lista más actual de los elementos de Marketplace de Azure Stack disponibles.
+El artículo [Elementos de Azure Marketplace disponibles para Azure Stack Hub](azure-stack-marketplace-azure-items.md) siempre incluye la lista más actual de los elementos de Marketplace de Azure Stack Hub disponibles.
 
 ## <a name="new-marketplace-items"></a>Nuevos elementos de Marketplace
 
@@ -105,7 +105,7 @@ El artículo [Elementos de Marketplace de Azure Stack](azure-stack-marketplace-a
 - 30/07/2019: SQLIaaSExtension versión 1.3.20180
 - 08/08/2019: Extensión CloudLink SecureVM para Linux versión 6.8
 - 08/08/2019: Extensión CloudLink SecureVM para Windows versión 6.8
-- 30/08/2019: Clúster de Kubernetes en Azure Stack versión 0.5.1
+- 30/08/2019: Clúster de Kubernetes en Azure Stack Hub versión 0.5.1
 - 02/09/2019: Imagen base de AKS versión 2019.08.09 y versión 2019.08.21
 - 12/09/2019: Service Fabric versión 1.0.3
 - 24/09/2019: F5-Networks BIG-IP Virtual Edition-versión 14.1.200000
@@ -115,8 +115,8 @@ El artículo [Elementos de Marketplace de Azure Stack](azure-stack-marketplace-a
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Para obtener más información sobre Azure Stack Marketplace, vea los siguientes artículos:
+Para más información sobre Marketplace de Azure Stack Hub, consulte los siguientes artículos:
 
 - [Introducción a Azure Marketplace](azure-stack-marketplace.md)
-- [Elementos de Azure Marketplace disponibles para Azure Stack](azure-stack-marketplace-azure-items.md)
-- [Creación y publicación de un elemento de Marketplace de Azure Stack](azure-stack-create-and-publish-marketplace-item.md)
+- [Elementos de Azure Marketplace disponibles para Azure Stack Hub](azure-stack-marketplace-azure-items.md)
+- [Creación y publicación de un elemento de Azure Stack Hub personalizado en Marketplace](azure-stack-create-and-publish-marketplace-item.md)

@@ -1,6 +1,7 @@
 ---
-title: API de uso de recursos de inquilino| Microsoft Docs
-description: Referencia de las API de uso de recursos, que recuperan información de uso de Azure Stack.
+title: Referencia de las API de uso de recursos de inquilino
+titleSuffix: Azure Stack
+description: Referencia de las API de uso de recursos, que recuperan información de uso de Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,18 +16,18 @@ ms.date: 09/17/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 85bb518335c473a70ff97473d1b8b61654372cb8
-ms.sourcegitcommit: 95f30e32e5441599790d39542ff02ba90e70f9d6
+ms.openlocfilehash: 5e6fd1042edcf59955a6e766d2ffb215c49c2949
+ms.sourcegitcommit: c4368652f0dd68c432aa1dabddbabf161a4a6399
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71070108"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75914714"
 ---
-# <a name="tenant-resource-usage-api"></a>API de uso de recursos de inquilino
+# <a name="tenant-resource-usage-api-reference"></a>Referencia de API de uso de recursos de inquilino
 
 Un inquilino puede usar las API de inquilino para ver los datos propios de uso de recursos del inquilino. Estas API son coherentes con las API de uso de Azure.
 
-Puede usar el cmdlet de Windows PowerShell [Get-UsageAggregates](/powershell/module/azurerm.usageaggregates/get-usageaggregates) para obtener datos de uso, de forma similar a Azure.
+Puede usar el cmdlet de Windows PowerShell [Get-UsageAggregates](/powershell/module/azurerm.usageaggregates/get-usageaggregates) para obtener datos de uso como en Azure.
 
 ## <a name="api-call"></a>Llamada a la API
 
@@ -42,7 +43,7 @@ La solicitud obtiene detalles de consumo para las suscripciones y el período de
 
 | **Parámetro** | **Descripción** |
 | --- | --- |
-| Armendpoint |Punto de conexión de Azure Resource Manager del entorno de Azure Stack. La convención de Azure Stack es que el nombre del punto de conexión de Azure Resource Manager esté en el formato `https://management.{domain-name}`. Por ejemplo, si en el kit de desarrollo el nombre de dominio es local.azurestack.external, el punto de conexión de Resource Manager será `https://management.local.azurestack.external`. |
+| Armendpoint |Punto de conexión de Azure Resource Manager del entorno de Azure Stack Hub. La norma en Azure Stack Hub es que el nombre del punto de conexión de Azure Resource Manager esté en el formato `https://management.{domain-name}`. Por ejemplo, si en el kit de desarrollo el nombre de dominio es local.azurestack.external, el punto de conexión de Resource Manager será `https://management.local.azurestack.external`. |
 | subId |Identificador de suscripción del usuario que realiza la llamada. Puede usar esta API solo para consultar el uso de una única suscripción. Los proveedores pueden usar la API de uso de recursos de proveedor para consultar el uso de todos los inquilinos. |
 | reportedStartTime |Hora de inicio de la consulta. El valor de *DateTime* debe estar en formato UTC y al principio de la hora, por ejemplo, 13:00. Para la agregación diaria, establezca este valor en la medianoche de la hora UTC. El formato es caracteres de escape ISO 8601, por ejemplo, **2015-06-16T18%3a53%3a11%2b00%3a00Z**, donde los dos puntos se cambian por %3a y el signo más se cambia por %2b para que sea un URI descriptivo. |
 | reportedEndTime |Hora de finalización de la consulta. Las restricciones que se aplican a **reportedStartTime** también se aplican a este parámetro. El valor de **reportedEndTime** no puede ser un tiempo futuro. |
@@ -86,12 +87,12 @@ GET
 | **Parámetro** | **Descripción** |
 | --- | --- |
 | id |Identificador único del agregado de uso. |
-| Nombre |Nombre del agregado de uso. |
-| Tipo |Definición de recursos. |
+| name |Nombre del agregado de uso. |
+| type |Definición de recursos. |
 | subscriptionId |Identificador de la suscripción del usuario de Azure. |
 | usageStartTime |Hora de inicio UTC del depósito de uso al que pertenece este agregado de uso. |
 | usageEndTime |Hora de finalización UTC del depósito de uso al que pertenece este agregado de uso. |
-| instanceData |Pares de clave y valor de los detalles de la instancia (con un formato nuevo):<br>  *resourceUri*: Identificador de recurso completo, incluidos los grupos de recursos y el nombre de instancia. <br>  *location*: región en la que se ejecutó este servicio. <br>  *tags*: Etiquetas del recurso especificadas por el usuario. <br>  *additionalInfo*: Más detalles sobre el recurso que se consumió, por ejemplo, tipo de imagen o versión de sistema operativo. |
+| instanceData |Pares de clave y valor de los detalles de la instancia (con un formato nuevo):<br>  *resourceUri*: Identificador de recurso completo, incluidos los grupos de recursos y el nombre de instancia. <br>  *location*: región en la que se ejecutó este servicio. <br>  *tags*: Etiquetas del recurso especificadas por el usuario. <br>  *additionalInfo*: más detalles sobre el recurso consumido. Por ejemplo, la versión del sistema operativo o el tipo de imagen. |
 | quantity |Cantidad de consumo de recursos que se produjo en este período de tiempo. |
 | meterId |Identificador único del recurso que se consumió (también denominado **ResourceID**). |
 

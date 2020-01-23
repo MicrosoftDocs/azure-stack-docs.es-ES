@@ -1,6 +1,6 @@
 ---
-title: Introducción a los servicios de red de Azure Stack | Microsoft Docs
-description: Más información sobre servicios de red de Azure Stack
+title: Introducción a las redes de Azure Stack Hub | Microsoft Docs
+description: Más información sobre las redes de Azure Stack Hub
 services: azure-stack
 author: mattbriggs
 manager: femila
@@ -10,37 +10,35 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: scottnap
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: e47079b100487331434a201a05bbcae7645de4f1
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: 0682a698dadf79feb2e22eaa683b723e7ae23717
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71824159"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883361"
 ---
-# <a name="introduction-to-azure-stack-networking"></a>Introducción a los servicios de red de Azure Stack
+# <a name="introduction-to-azure-stack-hub-networking"></a>Introducción a las redes de Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+Azure Stack Hub proporciona diferentes tipos de funcionalidades de red que se pueden usarse conjuntamente o por separado:
 
-Azure Stack proporciona diferentes tipos de funcionalidades de red que se pueden usarse conjuntamente o por separado:
-
-- **Conectividad entre recursos de Azure Stack**  
+- **Conectividad entre recursos de Azure Stack Hub**  
     Conecte juntos los recursos de Azure en una red virtual privada y segura en la nube.
 - **Conectividad de Internet**  
-    Comunique a y desde los recursos de Azure Stack a través de Internet.
+    Comunique a y desde los recursos de Azure Stack Hub a través de Internet.
 - **Conectividad local**  
-    Conecte una red local a los recursos de Azure Stack a través de una red privada virtual (VPN), a través de Internet o a través de una conexión dedicada a Azure Stack.
+    Conecte una red local a los recursos de Azure Stack Hub a través de una red privada virtual (VPN), a través de Internet o a través de una conexión dedicada a Azure Stack Hub.
 - **Equilibrio de carga y dirección del tráfico**  
     Equilibre la carga del tráfico en los servidores de la misma ubicación y dirija el tráfico a los servidores de ubicaciones diferentes.
 - **Seguridad**  
     Filtre el tráfico de red entre subredes de la red o máquinas virtuales individuales.
 - **Enrutamiento**  
-    Utilice el enrutamiento predeterminado o controle completamente el enrutamiento entre los recursos locales y de Azure Stack.
-- **Manejabilidad**  
-    Supervise y administre los recursos de red de Azure Stack.
+    Utilice el enrutamiento predeterminado o controle completamente el enrutamiento entre los recursos locales y su instancia de Azure Stack Hub.
+- **Facilidad de uso**  
+    Supervise y administre los recursos de red de Azure Stack Hub.
 - **Herramientas de implementación y configuración**  
     Utilice un portal basado en web o herramientas de línea de comandos multiplataforma para implementar y configurar recursos de red.
 
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-* [Considerations for Azure Stack networking](azure-stack-network-differences.md) (Consideraciones para los servicios de red de Azure Stack)
+* [Consideraciones sobre las redes de Azure Stack Hub](azure-stack-network-differences.md)

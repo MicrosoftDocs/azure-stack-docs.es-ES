@@ -1,6 +1,6 @@
 ---
-title: Notas de la versión del proveedor de recursos MySQL de Azure Stack 1.1.33.0 | Microsoft Docs
-description: Consulte las notas de la versión para ver las novedades de la actualización de 1.1.33.0 del proveedor de recursos MySQL de Azure Stack.
+title: Notas de la versión del proveedor de recursos MySQL de Azure Stack Hub 1.1.33.0 | Microsoft Docs
+description: Consulte las notas de la versión para ver las novedades de la actualización 1.1.33.0 del proveedor de recursos MySQL de Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -16,32 +16,30 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/09/2019
-ms.openlocfilehash: 0ff97155d1ad27c36e86e142aa000c4987c5c8fd
-ms.sourcegitcommit: a23b80b57668615c341c370b70d0a106a37a02da
+ms.openlocfilehash: 4067068090a4ae243b40af4f382a80c8bfc14455
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72682151"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882239"
 ---
 # <a name="mysql-resource-provider-11330--release-notes"></a>Notas de la versión del proveedor de recursos de MySQL 1.1.33.0
-
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
 Estas notas de la versión describen las mejoras y los problemas conocidos de la versión del proveedor de recursos de MySQL 1.1.33.0.
 
 ## <a name="build-reference"></a>Referencia de compilación
-Descargue el archivo binario del proveedor de recursos MySQL y ejecute el extractor automático para extraer el contenido en un directorio temporal. El proveedor de recursos tiene una compilación mínima correspondiente de Azure Stack. La versión mínima de Azure Stack necesaria para instalar esta versión del proveedor de recursos MySQL se muestra a continuación:
+Descargue el archivo binario del proveedor de recursos MySQL y ejecute el extractor automático para extraer el contenido en un directorio temporal. El proveedor de recursos tiene una compilación mínima correspondiente de Azure Stack Hub. La versión mínima de Azure Stack Hub necesaria para instalar esta versión del proveedor de recursos MySQL se muestra a continuación:
 
-> |Versión mínima de Azure Stack|Versión del proveedor de recursos MySQL|
+> |Versión mínima de Azure Stack Hub|Versión del proveedor de recursos MySQL|
 > |-----|-----|
 > |Versión 1808 (1.1808.0.97)|[MySQL RP, versión 1.1.33.0](https://aka.ms/azurestackmysqlrp11330)|  
 > |     |     |
 
 > [!IMPORTANT]
-> Aplique la actualización de Azure Stack compatible mínima para el sistema integrado de Azure Stack o implemente el kit de desarrollo de Azure Stack (ASDK) más reciente antes de implementar la versión más reciente del proveedor de recursos MySQL.
+> Aplique la actualización mínima admitida de Azure Stack Hub al sistema integrado de Azure Stack Hub o implemente el Kit de desarrollo de Azure Stack (ASDK) más reciente antes de implementar la versión más reciente del proveedor de recursos MySQL.
 
 ## <a name="new-features-and-fixes"></a>Nuevas características y correcciones
-Esta versión del proveedor de recursos MySQL de Azure Stack incluye las siguientes mejoras y correcciones:
+Esta versión del proveedor de recursos MySQL de Azure Stack Hub incluye las siguientes mejoras y correcciones:
 
 ### <a name="fixes"></a>Correcciones
 
@@ -68,8 +66,8 @@ Esta versión del proveedor de recursos MySQL de Azure Stack incluye las siguien
     **Solución alternativa**: use siempre inicios de sesión diferentes para distintas bases de datos en la misma suscripción.
 
 
-### <a name="known-issues-for-cloud-admins-operating-azure-stack"></a>Problemas conocidos para los administradores en la nube que trabajan con Azure Stack
-Consulte la documentación de las [notas de la versión de Azure Stack](azure-stack-servicing-policy.md).
+### <a name="known-issues-for-cloud-admins-operating-azure-stack-hub"></a>Problemas conocidos para los administradores de la nube que trabajan con Azure Stack Hub
+Consulte la documentación de las [Notas de la versión de Azure Stack Hub](azure-stack-servicing-policy.md).
 
 ## <a name="next-steps"></a>Pasos siguientes
 [Obtener más información sobre el proveedor de recursos MySQL](azure-stack-mysql-resource-provider.md).

@@ -1,6 +1,6 @@
 ---
-title: Implementación de un clúster de Kubernetes en Azure Stack | Microsoft Docs
-description: Aprenda a actualizar un clúster de Kubernetes en Azure Stack.
+title: Actualización de un clúster de Kubernetes en Azure Stack Hub | Microsoft Docs
+description: Aprenda a actualizar un clúster de Kubernetes en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,16 +15,14 @@ ms.date: 01/02/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 01/02/2020
-ms.openlocfilehash: fb51e49f449896fde6262790972c958b230d3175
-ms.sourcegitcommit: a37d3d78ed683e783681c567c989cb2b9ad0de0c
+ms.openlocfilehash: de2774a9cdbdbc8461b05db5dbf1f80b0854fbc7
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75605881"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883616"
 ---
-# <a name="upgrade-a-kubernetes-cluster-on-azure-stack"></a>Actualización de un clúster de Kubernetes en Azure Stack
-
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+# <a name="upgrade-a-kubernetes-cluster-on-azure-stack-hub"></a>Actualización de un clúster de Kubernetes en Azure Stack Hub
 
 ## <a name="upgrade-a-cluster"></a>Actualizar un clúster
 
@@ -37,7 +35,7 @@ Microsoft no administra el clúster. Sin embargo, Microsoft proporciona la herra
 Para una cobertura de actualizaciones de clúster implementada:
 
 -   Kubernetes
--   Proveedor de Kubernetes en Azure Stack
+-   Proveedor de Kubernetes en Azure Stack Hub
 -   Sistema operativo base
 
 Al actualizar un clúster de producción, tenga en cuenta lo siguiente:
@@ -45,7 +43,7 @@ Al actualizar un clúster de producción, tenga en cuenta lo siguiente:
 -   ¿Está usando la especificación de clúster correcta (`apimodel.json`) y el grupo de recursos para el clúster de destino?
 -   ¿Está usando una máquina confiable para que la máquina cliente ejecute el motor de AKS y desde el que realiza las operaciones de actualización?
 -   Asegúrese de que tiene un clúster de copia de seguridad y que está operativo.
--   Si es posible, ejecute el comando desde una máquina virtual en el entorno de Azure Stack para disminuir los saltos de red y los posibles errores de conectividad.
+-   Si es posible, ejecute el comando desde una máquina virtual en el entorno de Azure Stack Hub para disminuir los saltos de red y los posibles errores de conectividad.
 -   Asegúrese de que la suscripción tiene espacio suficiente para todo el proceso. El proceso asigna nuevas máquinas virtuales durante el proceso.
 -   No se prevén actualizaciones del sistema ni tareas programadas.
 -   Configure una actualización por fases en un clúster que esté configurado exactamente como el clúster de producción y pruebe la actualización allí antes de hacerlo en el clúster de producción.
@@ -86,12 +84,12 @@ Las instrucciones siguientes usan los pasos mínimos para realizar la actualizac
 
     | Parámetro | Ejemplo | Descripción |
     | --- | --- | --- |
-    | azure-env | AzureStackCloud | Para indicar al motor de AKS que la plataforma de destino es Azure Stack, utilice `AzureStackCloud`. |
-    | ubicación | local | El nombre de la región de la instancia de Azure Stack. Para ASDK, la región se establece en `local`. |
+    | azure-env | AzureStackCloud | Para indicar al motor de AKS que la plataforma de destino es Azure Stack Hub, utilice `AzureStackCloud`. |
+    | ubicación | local | El nombre de la región de la instancia de Azure Stack Hub. Para ASDK, la región se establece en `local`. |
     | resource-group | kube-rg | Escriba el nombre del nuevo grupo de recursos o seleccione uno existente. El nombre del recurso debe ser alfanumérico y estar en minúsculas. |
     | subscription-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | escriba el identificador de la suscripción. Para más información, consulte [Suscripción a una oferta](https://docs.microsoft.com/azure-stack/user/azure-stack-subscribe-services#subscribe-to-an-offer). |
     | api-model | ./kubernetes-azurestack.json | Ruta de acceso al archivo de configuración del clúster o modelo de API. |
-    | client-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Escriba el GUID de la entidad de servicio. El id. de cliente identificado como identificador de la aplicación cuando el administrador de Azure Stack creó la entidad de servicio. |
+    | client-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Escriba el GUID de la entidad de servicio. El identificador de cliente indicado como identificador de la aplicación cuando el administrador de Azure Stack Hub creó la entidad de servicio. |
     | client-secret | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Escriba el secreto de la entidad de servicio. Este es el secreto de cliente que configuró al crear el servicio. |
     | identity-system | adfs | Opcional. Especifique la solución de administración de identidad si usa los Servicios de federación de Active Directory (AD FS). |
 
@@ -116,7 +114,7 @@ Las instrucciones siguientes usan los pasos mínimos para realizar la actualizac
 
 1. Revise [la tabla supported-kubernetes-versions](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions) y determine si tiene la versión de aks-engine y la imagen base de AKS que planea para su actualización. Para ver la versión de aks-engine, ejecute: `aks-engine version`.
 2. Actualice el motor de AKS según corresponda, en la máquina en la que ha instalado aks-engine ejecute `./get-akse.sh --version vx.xx.x` y reemplace **x.xx.x** por la versión de destino.
-3. Pida a su operador de Azure Stack que agregue la versión de la imagen base de AKS que necesita en Marketplace de Azure Stack.
+3. Pida a su operador de Azure Stack Hub que agregue la versión de la imagen base de AKS que necesita en Marketplace de Azure Stack Hub.
 4. Ejecute el comando `aks-engine upgrade` con la misma versión de Kubernetes que ya está usando, pero agregue `--force`. Puede ver un ejemplo en [Forzado de una actualización](#forcing-an-upgrade).
 
 
@@ -141,5 +139,5 @@ Para obtener instrucciones, consulte [Forzado de actualización](https://github.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Obtenga información sobre [el motor de AKS en Azure Stack](azure-stack-kubernetes-aks-engine-overview.md).
-- [Escalado de un clúster de Kubernetes en Azure Stack](azure-stack-kubernetes-aks-engine-scale.md)
+- Obtenga información sobre [el motor de AKS en Azure Stack Hub](azure-stack-kubernetes-aks-engine-overview.md).
+- [Escalado de un clúster de Kubernetes en Azure Stack Hub](azure-stack-kubernetes-aks-engine-scale.md)

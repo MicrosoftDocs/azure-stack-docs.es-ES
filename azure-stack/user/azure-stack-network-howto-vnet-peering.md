@@ -1,6 +1,6 @@
 ---
-title: Conexión de dos entornos de Azure Stack mediante el emparejamiento de VNET | Microsoft Docs
-description: Aprenda a conectar dos entornos de Azure Stack mediante el emparejamiento de VNET.
+title: Conexión de dos entornos de Azure Stack Hub mediante el emparejamiento de VNET | Microsoft Docs
+description: Aprenda a conectar dos entornos de Azure Stack Hub mediante el emparejamiento de VNET.
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
@@ -9,20 +9,18 @@ ms.date: 10/03/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: 9eb4780a80e5cedd595950813d5cb5029e1b1857
-ms.sourcegitcommit: ed44d477b9fd11573d1e0d1ed3a3c0ef4512df53
+ms.openlocfilehash: f2d737f9048760b9c2b1561ba44f36379bfd3f00
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73845836"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883412"
 ---
-# <a name="vnet-peering-in-azure-stack-with-vms"></a>Emparejamiento de VNET en Azure Stack con máquinas virtuales
+# <a name="vnet-peering-in-azure-stack-hub-with-vms"></a>Emparejamiento de VNET en Azure Stack Hub con máquinas virtuales
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+Puede conectar dos redes virtuales de Azure Stack Hub entre sí en el mismo entorno de Azure Stack Hub. Actualmente no es posible conectar redes virtuales de Azure Stack Hub mediante la [puerta de enlace de red virtual](https://docs.microsoft.com/azure-stack/user/azure-stack-network-differences)integrada. Debe usar aplicaciones NVA para crear un túnel de VPN entre dos redes virtuales de Azure Stack Hub. En las referencias de las plantillas de este artículo, se implementan dos máquinas virtuales con Windows Server 2016 con RRAS instalado. Se configuran los dos servidores RRAS para implementar un túnel IKEv2 de S2SVPN entre dos redes virtuales. Se crean las reglas de NSG y UDR para que pueda realizarse el enrutamiento entre las subredes de las redes virtuales designadas como **internas**. 
 
-Puede conectar dos redes virtuales de Azure Stack entre sí en el mismo entorno de Azure Stack. Actualmente no es posible conectar redes virtuales de Azure Stack mediante la [puerta de enlace de red virtual](https://docs.microsoft.com/azure-stack/user/azure-stack-network-differences)integrada. Debe usar aplicaciones NVA para crear un túnel de VPN entre dos redes virtuales de Azure Stack. En las referencias de las plantillas de este artículo, se implementan dos máquinas virtuales con Windows Server 2016 con RRAS instalado. Se configuran los dos servidores RRAS para implementar un túnel IKEv2 de S2SVPN entre dos redes virtuales. Se crean las reglas de NSG y UDR para que pueda realizarse el enrutamiento entre las subredes de las redes virtuales designadas como **internas**. 
-
-Este patrón de implementación es la base que permitirá crear túneles de VPN no solo dentro de la instancia de Azure Stack, sino también entre instancias de Azure Stack y otros recursos, como las redes locales con el uso de túneles de VPN de sitio a sitio de RRAS de Windows. 
+Este patrón de implementación es la base que permitirá crear túneles de VPN no solo en una instancia de Azure Stack Hub, sino también entre instancias de Azure Stack Hub y otros recursos, como las redes locales con el uso de túneles de VPN de sitio a sitio de RRAS de Windows. 
 
 Puede encontrar las plantillas en el repositorio de GitHub [Azure Intelligent Edge Patterns](https://github.com/Azure-Samples/azure-intelligent-edge-patterns
 ). La plantilla se encuentra en la carpeta **S2SVPNTunnel**.
@@ -31,8 +29,8 @@ Puede encontrar las plantillas en el repositorio de GitHub [Azure Intelligent Ed
 
 ## <a name="requirements"></a>Requisitos
 
-- ASDK o el sistema integrado de Azure Stack con las últimas actualizaciones aplicadas. 
-- Elementos de Marketplace requeridos para Azure Stack:
+- Una implementación en la que se han aplicado las actualizaciones más recientes. 
+- Elementos de Marketplace requeridos para Azure Stack Hub:
     -  Windows Server 2016 Datacenter (se recomienda la última compilación)
     -  Custom Script Extension
 
@@ -59,4 +57,4 @@ La plantilla proporciona valores predeterminados para la nomenclatura de redes v
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Diferencias y consideraciones para las redes de Azure Stack](azure-stack-network-differences.md)  
+[Diferencias y consideraciones para las redes de Azure Stack Hub](azure-stack-network-differences.md)  

@@ -1,6 +1,6 @@
 ---
-title: Uso de plantillas de Azure Resource Manager en Azure Stack | Microsoft Docs
-description: Obtenga información sobre cómo usar plantillas de Azure Resource Manager en Azure Stack para aprovisionar recursos.
+title: Uso de plantillas de Azure Resource Manager en Azure Stack Hub | Microsoft Docs
+description: Aprenda a usar plantillas de Azure Resource Manager en Azure Stack Hub para aprovisionar recursos.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -16,20 +16,18 @@ ms.date: 10/07/2019
 ms.author: mabrigg
 ms.reviewer: justini
 ms.lastreviewed: 11/14/2018
-ms.openlocfilehash: df7a6e7c42a8863117faaccfd4108c4ffd806a5a
-ms.sourcegitcommit: d619612f54eeba3231ed73ed149ff894f9bf838a
+ms.openlocfilehash: 130a4f31f608368df99ec3f98fc2e2763a0fbd1a
+ms.sourcegitcommit: ce01b2cd114ca8ab5b70c6311b66c58ceb054469
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74993770"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75924001"
 ---
-# <a name="use-azure-resource-manager-templates-in-azure-stack"></a>Uso de plantillas de Administrador de recursos de Azure en Azure Stack
-
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+# <a name="use-azure-resource-manager-templates-in-azure-stack-hub"></a>Uso de plantillas de Administrador de recursos de Azure en Azure Stack Hub
 
 Puede utilizar las plantillas de Azure Resource Manager para implementar y aprovisionar todos los recursos para su aplicación en una única operación coordinada. También se pueden volver a implementar plantillas para realizar cambios en los recursos de un grupo de recursos.
 
-Estas plantillas se pueden implementar con el portal de Microsoft Azure Stack, PowerShell, con la línea de comandos y Visual Studio.
+Estas plantillas se pueden implementar con el portal de Microsoft Azure Stack Hub, PowerShell, la línea de comandos y Visual Studio.
 
 Las siguientes plantillas de inicio rápido están disponibles en [GitHub](https://aka.ms/azurestackgithub):
 
@@ -73,7 +71,7 @@ Utilice la extensión de DSC de PowerShell para configurar Administrador de conf
 
 ## <a name="basic-virtual-machine"></a>Máquina virtual básica
 
-[Implemente una máquina virtual Windows](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/101-simple-windows-vm) que incluya una red virtual (con DNS), una dirección IP pública y una interfaz de red.
+[Implemente una máquina virtual Windows](https://aka.ms/aa6zdzx) que incluya una red virtual (con DNS), una dirección IP pública y una interfaz de red.
 
 ## <a name="cancel-a-running-template-deployment"></a>Cancelación de una implementación de la plantilla en ejecución
 

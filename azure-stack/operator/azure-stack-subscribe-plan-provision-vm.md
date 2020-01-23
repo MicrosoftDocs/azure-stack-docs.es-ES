@@ -1,6 +1,7 @@
 ---
-title: Suscripción a una oferta en Azure Stack
-description: Creación de suscripciones para ofertas en Azure Stack
+title: Creación de suscripciones para ofertas en Azure Stack Hub.
+titleSuffix: Azure Stack
+description: Aprenda a crear suscripciones para ofertas en Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: bryanla
@@ -10,16 +11,14 @@ ms.topic: conceptual
 ms.date: 10/05/2019
 ms.author: bryanla
 ms.lastreviewed: 05/10/2019
-ms.openlocfilehash: c69c8a4be93cc392ca1eaf4edb70fb7fb4fc8676
-ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
+ms.openlocfilehash: 357b44e5a9860f8626c7b17e215ee773e4e4ebca
+ms.sourcegitcommit: c4368652f0dd68c432aa1dabddbabf161a4a6399
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72283373"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75914790"
 ---
-# <a name="create-subscriptions-to-offers-in-azure-stack"></a>Creación de suscripciones para ofertas en Azure Stack
-
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+# <a name="create-subscriptions-to-offers-in-azure-stack-hub"></a>Creación de suscripciones para ofertas en Azure Stack Hub
 
 Después de [crear una oferta](azure-stack-create-offer.md), los usuarios necesitan una suscripción a dicha oferta antes de que puedan utilizarla. Hay dos formas en las que los usuarios pueden suscribirse a una oferta:
 
@@ -30,21 +29,21 @@ Después de [crear una oferta](azure-stack-create-offer.md), los usuarios necesi
 
 Los operadores de nube usan el portal del administrador para crear una suscripción a una oferta para un usuario. Se pueden crear suscripciones para los miembros de su propio inquilino de directorio. Cuando los [servicios multiinquilino](azure-stack-enable-multitenancy.md) están habilitados, también puede crear suscripciones para usuarios de inquilinos de directorio adicionales.
 
-Si no desea que los inquilinos creen sus propias suscripciones, haga las ofertas privadas y, después, cree suscripciones para los inquilinos. Esta estrategia es habitual cuando se integra Azure Stack con sistemas de catálogo de servicios o de facturación externa.
+Si no desea que los inquilinos creen sus propias suscripciones, haga ofertas privadas y, después, cree suscripciones para los inquilinos. Esta estrategia es habitual cuando se integra Azure Stack Hub con sistemas de catálogo de servicios o de facturación externa.
 
 Después de crear una suscripción para un usuario, podrá iniciar sesión en el portal de usuarios y ver que está suscrito a la oferta.  
 
 ### <a name="to-create-a-subscription-for-a-user"></a>Para crear una suscripción para un usuario
 
-1. En el portal de administración, vaya a **Suscripciones de usuario**.
+1. En el portal del administrador, vaya a **User subscriptions** (Suscripciones de usuario).
 2. Seleccione **Agregar**. En **Nueva suscripción de usuario**, escriba la siguiente información:  
 
    - **Nombre para mostrar**: un nombre descriptivo para identificar la suscripción que aparece como *Nombre de suscripción de usuario*.
    - **Usuario**: especifique un usuario de un inquilino de directorio disponible para esta suscripción. El nombre de usuario se muestra como *Propietario*.  El formato del nombre de usuario depende de la solución de identidad. Por ejemplo:
 
-     - **Azure AD:** `<user1>@<contoso.onmicrosoft.com>`
+     - **Azure AD:** `<user1>@<contoso.onmicrosoft.com>`
 
-     - **AD FS:** `<user1>@<azurestack.local>`
+     - **AD FS:** `<user1>@<azurestack.local>`
 
    - **Inquilino de directorio**: seleccione el inquilino de directorio al que pertenece la cuenta de usuario. Si no ha habilitado los servicios multiinquilino, solo estará disponible el inquilino de directorio local.
 
@@ -56,7 +55,7 @@ Después de crear una suscripción para un usuario, podrá iniciar sesión en el
 
 Un operador en la nube puede agregar un plan a una suscripción creada anteriormente en cualquier momento:
 
-1. En el portal de administración, seleccione **Todos los servicios** y, después, en la categoría **RECURSOS ADMINISTRATIVOS**, seleccione **Suscripciones de usuario**. Seleccione la suscripción que desea cambiar.
+1. En el portal del administrador, seleccione **All Services** y, después, en la categoría **ADMINISTRATIVE RESOURCES**, seleccione **User subscriptions** (Todos los servicios > Recursos administrativos > Suscripciones de usuario). Seleccione la suscripción que desea cambiar.
 
 2. Seleccione **Complementos** y, después, seleccione **+Agregar**.  
 
@@ -67,17 +66,17 @@ Un operador en la nube puede agregar un plan a una suscripción creada anteriorm
 Como usuario, puede iniciar sesión en el portal de usuarios para buscar y suscribirse a ofertas públicas y planes complementarios para su inquilino de directorio (organización).
 
 >[!NOTE]
->Cuando el entorno de Azure Stack admite [servicios multiinquilino](azure-stack-enable-multitenancy.md), también puede suscribirse a ofertas de un inquilino de directorio remoto.
+>Cuando el entorno de Azure Stack Hub admite [servicios multiinquilino](azure-stack-enable-multitenancy.md), también puede suscribirse a ofertas de un inquilino de directorio remoto.
 
 ### <a name="to-subscribe-to-an-offer"></a>Para suscribirse a una oferta
 
-1. [Inicie sesión](../asdk/asdk-connect.md) en el [portal de usuarios de Azure Stack](https://portal.local.azurestack.external) y seleccione **Obtener una suscripción**.
+1. Inicie sesión en el portal de usuarios de Azure Stack Hub y seleccione **Obtener una suscripción**.
 
-   ![Obtener una suscripción](media/azure-stack-subscribe-plan-provision-vm/image01.png)
+   ![Obtención de una suscripción en el portal de usuarios de Azure Stack Hub](media/azure-stack-subscribe-plan-provision-vm/image01.png)
   
 2. En **Obtener una suscripción**, escriba el nombre descriptivo de la suscripción en **Nombre para mostrar**. Seleccione **Oferta** y en **Elegir una oferta**, elija una. Seleccione **Crear** para crear la suscripción.
 
-   ![Creación de una oferta](media/azure-stack-subscribe-plan-provision-vm/image02.png)
+   ![Selección de una oferta en el portal de usuarios de Azure Stack Hub](media/azure-stack-subscribe-plan-provision-vm/image02.png)
   
 3. Después de suscribirse a una oferta, actualice el portal para ver los servicios que forman parte de la nueva suscripción.
 
@@ -95,6 +94,7 @@ Si la oferta a la que se suscribe tiene un plan complementario, puede agregarlo 
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Obtenga más información sobre cómo un usuario puede implementar recursos en su suscripción: 
-  - [Varios inicios rápidos](../user/azure-stack-quick-windows-portal.md) muestran cómo aprovisionar máquinas virtuales Windows y Linux con PowerShell, la CLI de Azure y el portal de usuarios. 
-  - [Un tutorial que usa una plantilla de Azure Resource Manager](../user/azure-stack-create-vm-template.md) muestra cómo implementar una máquina virtual de Ubuntu 16.04 que ejecute Minikube para administrar un clúster de Kubernetes. 
+Obtenga más información sobre cómo un usuario puede implementar recursos en su suscripción:
+
+- [Varios inicios rápidos](../user/azure-stack-quick-windows-portal.md) muestran cómo aprovisionar máquinas virtuales Windows y Linux con PowerShell, la CLI de Azure y el portal de usuarios.
+- [Un tutorial que usa una plantilla de Azure Resource Manager](../user/azure-stack-create-vm-template.md) muestra cómo implementar una máquina virtual de Ubuntu 16.04 que ejecute Minikube para administrar un clúster de Kubernetes.

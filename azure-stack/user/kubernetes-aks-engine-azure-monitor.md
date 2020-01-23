@@ -15,16 +15,14 @@ ms.date: 11/15/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 11/15/2019
-ms.openlocfilehash: a3941a3ada52a8588b504884a2d03cb00dd2c850
-ms.sourcegitcommit: 0b783e262ac87ae67929dbd4c366b19bf36740f0
+ms.openlocfilehash: 4fa741970a2fb8c82bab3c9f7eb16a3aefd31ecd
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74310325"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883123"
 ---
 # <a name="use-azure-monitor-for-containers-on-azure-stack-hub"></a>Uso de Azure Monitor para contenedores en Azure Stack Hub
-
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
 Puede usar [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/) para contenedores para supervisar los contenedores en un clúster de Kubernetes implementado en un motor de AKS en Azure Stack Hub. 
 
@@ -36,7 +34,7 @@ Puede revisar el rendimiento del contenedor con Azure Monitor mediante la recopi
 
 Hay dos maneras de habilitar Azure Monitor en el clúster. Ambos métodos requieren la configuración de un área de trabajo de Azure Monitor Log Analytics en Azure.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 Ambos métodos requieren los [requisitos previos](https://github.com/Helm/charts/tree/master/incubator/azuremonitor-containers#pre-requisites) que se indican en [Azure Monitor: Contenedores](https://github.com/Helm/charts/tree/master/incubator/azuremonitor-containers).
 
@@ -68,5 +66,5 @@ Las definiciones de API admitidas para el clúster de Azure Stack Hub se pueden 
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Obtenga información sobre [el motor de AKS en Azure Stack](azure-stack-kubernetes-aks-engine-overview.md).  
+- Obtenga información sobre [el motor de AKS en Azure Stack Hub](azure-stack-kubernetes-aks-engine-overview.md).  
 - Consulte [Introducción a Azure Monitor para contenedores](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-overview).

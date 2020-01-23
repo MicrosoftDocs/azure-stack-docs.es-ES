@@ -16,12 +16,12 @@ ms.date: 12/27/2019
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 11dcd7288f629282c1f69d12c33e9bd1a8e440b6
-ms.sourcegitcommit: df8de80b8c295495edc091e0a12012ccc7a96594
+ms.openlocfilehash: 0b150f97adf3e456b41dc3af9ac92e0a281b793a
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75503630"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75812406"
 ---
 # <a name="azure-stack-hub-known-issues"></a>Problemas conocidos de Azure Stack Hub
 
@@ -278,7 +278,7 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 ## <a name="1908-update-process"></a>Proceso de actualización de 1908
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: Al intentar instalar la actualización de Azure Stack, es posible que se produzca un error en el estado de esa actualización y dicho estado cambie a **PreparationFailed**. La causa es que el proveedor de recursos de actualización (URP) no se puede transferir correctamente desde el contenedor de almacenamiento a un recurso compartido de infraestructura interno para su procesamiento.
+- Causa: Al intentar instalar la actualización de Azure Stack Hub, es posible que se produzca un error en el estado de esa actualización y dicho estado cambie a **PreparationFailed**. La causa es que el proveedor de recursos de actualización (URP) no se puede transferir correctamente desde el contenedor de almacenamiento a un recurso compartido de infraestructura interno para su procesamiento.
 - Corrección: A partir de la versión 1901 (1.1901.0.95), para solucionar este problema, puede hacer clic en **Actualizar ahora** de nuevo (en lugar de en **Reanudar**). A continuación, URP limpia los archivos del intento anterior y vuelve a iniciar la descarga. Si el problema persiste, recomendamos cargar manualmente la actualización siguiendo la [sección de instalación de actualizaciones](azure-stack-apply-updates.md#install-updates-and-monitor-progress).
 - Repetición: Comunes
 
@@ -307,14 +307,14 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 ### <a name="subscription-permissions"></a>Permisos de suscripción
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: No puede ver los permisos de la suscripción mediante los portales de Azure Stack.
+- Causa: No puede ver los permisos de la suscripción mediante los portales de Azure Stack Hub.
 - Corrección: Use [PowerShell para verificar los permisos](/powershell/module/azurerm.resources/get-azurermroleassignment).
 - Repetición: Comunes
 
 ### <a name="storage-account-settings"></a>Configuración de cuentas de almacenamiento
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: En el portal de usuarios, la hoja **Configuración** de la cuenta de almacenamiento muestra una opción para cambiar el **tipo de transferencia de seguridad**. La característica no se admite actualmente en Azure Stack.
+- Causa: En el portal de usuarios, la hoja **Configuración** de la cuenta de almacenamiento muestra una opción para cambiar el **tipo de transferencia de seguridad**. La característica no se admite actualmente en Azure Stack Hub.
 - Repetición: Comunes
 
 ### <a name="upload-blob"></a>Carga de blob
@@ -347,7 +347,7 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 ### <a name="service-endpoints"></a>Puntos de conexión del servicio
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: En el portal de usuarios, la hoja **Red virtual** muestra una opción para usar **puntos de conexión de servicio**. Esta característica no se admite actualmente en Azure Stack.
+- Causa: En el portal de usuarios, la hoja **Red virtual** muestra una opción para usar **puntos de conexión de servicio**. Esta característica no se admite actualmente en Azure Stack Hub.
 - Repetición: Comunes
 
 ### <a name="network-interface"></a>interfaz de red
@@ -371,29 +371,29 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 #### <a name="alerts"></a>Alertas
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: En el portal de usuarios, la hoja **Puerta de enlace de red virtual** muestra una opción para usar **alertas**. Esta característica no se admite actualmente en Azure Stack.
+- Causa: En el portal de usuarios, la hoja **Puerta de enlace de red virtual** muestra una opción para usar **alertas**. Esta característica no se admite actualmente en Azure Stack Hub.
 - Repetición: Comunes
 
 #### <a name="active-active"></a>Activo-activo
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: En el portal de usuarios, durante la creación, y en el menú de recursos de **Puerta de enlace de red virtual**, verá una opción para habilitar la configuración **activa-activa**. Esta característica no se admite actualmente en Azure Stack.
+- Causa: En el portal de usuarios, durante la creación, y en el menú de recursos de **Puerta de enlace de red virtual**, verá una opción para habilitar la configuración **activa-activa**. Esta característica no se admite actualmente en Azure Stack Hub.
 - Repetición: Comunes
 
 #### <a name="vpn-troubleshooter"></a>Solucionador de problemas de VPN
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: En el portal de usuarios, la hoja **Conexiones** muestra una característica denominada **Solucionador de problemas de VPN**. Esta característica no se admite actualmente en Azure Stack.
+- Causa: En el portal de usuarios, la hoja **Conexiones** muestra una característica denominada **Solucionador de problemas de VPN**. Esta característica no se admite actualmente en Azure Stack Hub.
 - Repetición: Comunes
 
 #### <a name="documentation"></a>Documentación
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: Los vínculos de la documentación de la página de información general de Puerta de enlace de red virtual enlazan a la documentación específica de Azure en lugar de a la de Azure Stack. Use los vínculos siguientes para la documentación de Azure Stack:
+- Causa: Los vínculos de documentación de la página de introducción a la Puerta de enlace de red virtual enlazan a la documentación específica de Azure en lugar de a la de Azure Stack Hub. Use los vínculos siguientes para consultar la documentación de Azure Stack Hub:
 
   - [SKU de puerta de enlace](../user/azure-stack-vpn-gateway-about-vpn-gateways.md#gateway-skus)
   - [Conexiones de alta disponibilidad](../user/azure-stack-vpn-gateway-about-vpn-gateways.md#gateway-availability)
-  - [Configuración de BGP en Azure Stack](../user/azure-stack-vpn-gateway-settings.md#gateway-requirements)
+  - [Configuración de BGP en Azure Stack Hub](../user/azure-stack-vpn-gateway-settings.md#gateway-requirements)
   - [Circuitos ExpressRoute](azure-stack-connect-expressroute.md)
   - [Especificación de directivas de IPsec o IKE personalizadas](../user/azure-stack-vpn-gateway-settings.md#ipsecike-parameters)
 
@@ -408,11 +408,11 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 
 ### <a name="virtual-machine-scale-set"></a>Conjunto de escalado de máquina virtual
 
-#### <a name="create-failures-during-patch-and-update-on-4-node-azure-stack-environments"></a>Crear errores durante la revisión y actualización de entornos de Azure Stack de 4 nodos
+#### <a name="create-failures-during-patch-and-update-on-4-node-azure-stack-hub-environments"></a>Creación de errores durante la revisión y actualización de entornos de Azure Stack Hub de 4 nodos
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: La creación de VM en un conjunto de disponibilidad de 3 dominios de error y la creación de una instancia de conjunto de escalado de máquinas virtuales genera un error **FabricVmPlacementErrorUnsupportedFaultDomainSize** durante el proceso de actualización en un entorno de Azure Stack de 4 nodos.
-- Corrección: Se pueden crear VM únicas en un conjunto de disponibilidad con 2 dominios de error correctamente. Sin embargo, la creación de instancias del conjunto de escalado todavía no está disponible durante el proceso de actualización en una instancia de Azure Stack de 4 nodos.
+- Causa: La creación de máquinas virtuales en un conjunto de disponibilidad de 3 dominios de error y la creación de una instancia de conjunto de escalado de máquinas virtuales genera un error **FabricVmPlacementErrorUnsupportedFaultDomainSize** durante el proceso de actualización en un entorno de Azure Stack Hub de 4 nodos.
+- Corrección: Se pueden crear VM únicas en un conjunto de disponibilidad con 2 dominios de error correctamente. Sin embargo, la creación de instancias del conjunto de escalado todavía no está disponible durante el proceso de actualización en una instancia de Azure Stack Hub de 4 nodos.
 
 ### <a name="ubuntu-ssh-access"></a>Acceso a SSH en Ubuntu
 
@@ -424,21 +424,21 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 ### <a name="virtual-machine-scale-set-reset-password-does-not-work"></a>La contraseña de restablecimiento del conjunto de escalado de máquinas virtuales no funciona
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: Aparece una nueva hoja para restablecer la contraseña en la interfaz de usuario del conjunto de escalado, pero Azure Stack todavía no admite el restablecimiento de contraseña en un conjunto de escalado.
+- Causa: Aparece una nueva hoja para restablecer la contraseña en la interfaz de usuario del conjunto de escalado, pero Azure Stack Hub todavía no admite el restablecimiento de contraseña en un conjunto de escalado.
 - Corrección: Ninguno.
 - Repetición: Comunes
 
 ### <a name="rainy-cloud-on-scale-set-diagnostics"></a>Nube con lluvia en el diagnóstico del conjunto de escalado
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: La página de información general del conjunto de escalado de máquinas virtuales muestra un gráfico vacío. Al hacer clic en el gráfico vacío, se abre una hoja de "nube de lluvia". Este es el gráfico de información de diagnóstico del conjunto de escalado, como el porcentaje de CPU, y no es una característica admitida en la compilación actual de Azure Stack.
+- Causa: La página de información general del conjunto de escalado de máquinas virtuales muestra un gráfico vacío. Al hacer clic en el gráfico vacío, se abre una hoja de "nube de lluvia". Este es el gráfico de información de diagnóstico del conjunto de escalado, como el porcentaje de CPU, y no es una característica admitida en la compilación actual de Azure Stack Hub.
 - Corrección: Ninguno.
 - Repetición: Comunes
 
 ### <a name="virtual-machine-diagnostic-settings-blade"></a>Hoja de configuración de diagnóstico de la máquina virtual
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.    
-- Causa: La hoja de configuración de diagnóstico de la máquina virtual tiene una pestaña **Receptor**, que solicita una **Cuenta de Application Insights**. Este es el resultado de una nueva hoja y aún no se admite en Azure Stack.
+- Causa: La hoja de configuración de diagnóstico de la máquina virtual tiene una pestaña **Receptor**, que solicita una **Cuenta de Application Insights**. Este es el resultado de una nueva hoja y aún no se admite en Azure Stack Hub.
 - Corrección: Ninguno.
 - Repetición: Comunes
 
@@ -454,7 +454,7 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 ## <a name="1907-update-process"></a>Proceso de actualización de 1907
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: Al intentar instalar la actualización 1907 de Azure Stack, es posible que se produzca un error en el estado de esa actualización y dicho estado cambie a **PreparationFailed**. La causa es que el proveedor de recursos de actualización (URP) no se puede transferir correctamente desde el contenedor de almacenamiento a un recurso compartido de infraestructura interno para su procesamiento.
+- Causa: Al intentar instalar la actualización 1907 de Azure Stack Hub, es posible que se produzca un error en el estado de esa actualización y dicho estado cambie a **PreparationFailed**. La causa es que el proveedor de recursos de actualización (URP) no se puede transferir correctamente desde el contenedor de almacenamiento a un recurso compartido de infraestructura interno para su procesamiento.
 - Corrección: A partir de la versión 1901 (1.1901.0.95), para solucionar este problema, puede hacer clic en **Actualizar ahora** de nuevo (en lugar de en **Reanudar**). A continuación, URP limpia los archivos del intento anterior y vuelve a iniciar la descarga. Si el problema persiste, recomendamos cargar manualmente el paquete de actualización siguiendo la sección [Importación e instalación de actualizaciones](azure-stack-apply-updates.md).
 - Repetición: Comunes
 
@@ -477,14 +477,14 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 ### <a name="subscription-permissions"></a>Permisos de suscripción
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: No puede ver los permisos de la suscripción mediante los portales de Azure Stack.
+- Causa: No puede ver los permisos de la suscripción mediante los portales de Azure Stack Hub.
 - Corrección: Use [PowerShell para verificar los permisos](/powershell/module/azurerm.resources/get-azurermroleassignment).
 - Repetición: Comunes
 
 ### <a name="storage-account-settings"></a>Configuración de cuentas de almacenamiento
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: En el portal de usuarios, la hoja **Configuración** de la cuenta de almacenamiento muestra una opción para cambiar el **tipo de transferencia de seguridad**. La característica no se admite actualmente en Azure Stack.
+- Causa: En el portal de usuarios, la hoja **Configuración** de la cuenta de almacenamiento muestra una opción para cambiar el **tipo de transferencia de seguridad**. La característica no se admite actualmente en Azure Stack Hub.
 - Repetición: Comunes
 
 ### <a name="upload-blob"></a>Carga de blob
@@ -511,7 +511,7 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 ### <a name="service-endpoints"></a>Puntos de conexión del servicio
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: En el portal de usuarios, la hoja **Red virtual** muestra una opción para usar **puntos de conexión de servicio**. Esta característica no se admite actualmente en Azure Stack.
+- Causa: En el portal de usuarios, la hoja **Red virtual** muestra una opción para usar **puntos de conexión de servicio**. Esta característica no se admite actualmente en Azure Stack Hub.
 - Repetición: Comunes
 
 ### <a name="network-interface"></a>interfaz de red
@@ -535,35 +535,35 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 #### <a name="alerts"></a>Alertas
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: En el portal de usuarios, la hoja **Puerta de enlace de red virtual** muestra una opción para usar **alertas**. Esta característica no se admite actualmente en Azure Stack.
+- Causa: En el portal de usuarios, la hoja **Puerta de enlace de red virtual** muestra una opción para usar **alertas**. Esta característica no se admite actualmente en Azure Stack Hub.
 - Repetición: Comunes
 
 #### <a name="active-active"></a>Activo-activo
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: En el portal de usuarios, durante la creación, y en el menú de recursos de **Puerta de enlace de red virtual**, verá una opción para habilitar la configuración **activa-activa**. Esta característica no se admite actualmente en Azure Stack.
+- Causa: En el portal de usuarios, durante la creación, y en el menú de recursos de **Puerta de enlace de red virtual**, verá una opción para habilitar la configuración **activa-activa**. Esta característica no se admite actualmente en Azure Stack Hub.
 - Repetición: Comunes
 
 #### <a name="vpn-troubleshooter"></a>Solucionador de problemas de VPN
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: En el portal de usuarios, la hoja **Conexiones** muestra una característica denominada **Solucionador de problemas de VPN**. Esta característica no se admite actualmente en Azure Stack.
+- Causa: En el portal de usuarios, la hoja **Conexiones** muestra una característica denominada **Solucionador de problemas de VPN**. Esta característica no se admite actualmente en Azure Stack Hub.
 - Repetición: Comunes
 
 ### <a name="network-connection-type"></a>Tipo de conexión de red
 
 - Aplicable a: Este problema se aplica a cualquier entorno de 1906 o 1907. 
-- Causa: En el portal de usuarios, la hoja **AddConnection** muestra una opción para usar la opción **De red virtual a red virtual**. Esta característica no se admite actualmente en Azure Stack. 
+- Causa: En el portal de usuarios, la hoja **AddConnection** muestra una opción para usar la opción **De red virtual a red virtual**. Esta característica no se admite actualmente en Azure Stack Hub. 
 - Repetición: Comunes 
 
 #### <a name="documentation"></a>Documentación
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: Los vínculos de la documentación de la página de información general de Puerta de enlace de red virtual enlazan a la documentación específica de Azure en lugar de a la de Azure Stack. Use los vínculos siguientes para la documentación de Azure Stack:
+- Causa: Los vínculos de documentación de la página de introducción a la Puerta de enlace de red virtual enlazan a la documentación específica de Azure en lugar de a la de Azure Stack Hub. Use los vínculos siguientes para consultar la documentación de Azure Stack Hub:
 
   - [SKU de puerta de enlace](../user/azure-stack-vpn-gateway-about-vpn-gateways.md#gateway-skus)
   - [Conexiones de alta disponibilidad](../user/azure-stack-vpn-gateway-about-vpn-gateways.md#gateway-availability)
-  - [Configuración de BGP en Azure Stack](../user/azure-stack-vpn-gateway-settings.md#gateway-requirements)
+  - [Configuración de BGP en Azure Stack Hub](../user/azure-stack-vpn-gateway-settings.md#gateway-requirements)
   - [Circuitos ExpressRoute](azure-stack-connect-expressroute.md)
   - [Especificación de directivas de IPsec o IKE personalizadas](../user/azure-stack-vpn-gateway-settings.md#ipsecike-parameters)
 
@@ -578,11 +578,11 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 
 ### <a name="virtual-machine-scale-set"></a>Conjunto de escalado de máquina virtual
 
-#### <a name="create-failures-during-patch-and-update-on-4-node-azure-stack-environments"></a>Crear errores durante la revisión y actualización de entornos de Azure Stack de 4 nodos
+#### <a name="create-failures-during-patch-and-update-on-4-node-azure-stack-hub-environments"></a>Creación de errores durante la revisión y actualización de entornos de Azure Stack Hub de 4 nodos
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: La creación de VM en un conjunto de disponibilidad de 3 dominios de error y la creación de una instancia de conjunto de escalado de máquinas virtuales genera un error **FabricVmPlacementErrorUnsupportedFaultDomainSize** durante el proceso de actualización en un entorno de Azure Stack de 4 nodos.
-- Corrección: Se pueden crear VM únicas en un conjunto de disponibilidad con 2 dominios de error correctamente. Sin embargo, la creación de instancias del conjunto de escalado todavía no está disponible durante el proceso de actualización en una instancia de Azure Stack de 4 nodos.
+- Causa: La creación de máquinas virtuales en un conjunto de disponibilidad de 3 dominios de error y la creación de una instancia de conjunto de escalado de máquinas virtuales genera un error **FabricVmPlacementErrorUnsupportedFaultDomainSize** durante el proceso de actualización en un entorno de Azure Stack Hub de 4 nodos.
+- Corrección: Se pueden crear VM únicas en un conjunto de disponibilidad con 2 dominios de error correctamente. Sin embargo, la creación de instancias del conjunto de escalado todavía no está disponible durante el proceso de actualización en una instancia de Azure Stack Hub de 4 nodos.
 
 ### <a name="ubuntu-ssh-access"></a>Acceso a SSH en Ubuntu
 
@@ -594,21 +594,21 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 ### <a name="virtual-machine-scale-set-reset-password-does-not-work"></a>La contraseña de restablecimiento del conjunto de escalado de máquinas virtuales no funciona
 
 - Aplicable a: Este problema se aplica a las versiones 1906 y 1907.
-- Causa: Aparece una nueva hoja para restablecer la contraseña en la interfaz de usuario del conjunto de escalado, pero Azure Stack todavía no admite el restablecimiento de contraseña en un conjunto de escalado.
+- Causa: Aparece una nueva hoja para restablecer la contraseña en la interfaz de usuario del conjunto de escalado, pero Azure Stack Hub todavía no admite el restablecimiento de contraseña en un conjunto de escalado.
 - Corrección: Ninguno.
 - Repetición: Comunes
 
 ### <a name="rainy-cloud-on-scale-set-diagnostics"></a>Nube con lluvia en el diagnóstico del conjunto de escalado
 
 - Aplicable a: Este problema se aplica a las versiones 1906 y 1907.
-- Causa: La página de información general del conjunto de escalado de máquinas virtuales muestra un gráfico vacío. Al hacer clic en el gráfico vacío, se abre una hoja de "nube de lluvia". Este es el gráfico de información de diagnóstico del conjunto de escalado, como el porcentaje de CPU, y no es una característica admitida en la compilación actual de Azure Stack.
+- Causa: La página de información general del conjunto de escalado de máquinas virtuales muestra un gráfico vacío. Al hacer clic en el gráfico vacío, se abre una hoja de "nube de lluvia". Este es el gráfico de información de diagnóstico del conjunto de escalado, como el porcentaje de CPU, y no es una característica admitida en la compilación actual de Azure Stack Hub.
 - Corrección: Ninguno.
 - Repetición: Comunes
 
 ### <a name="virtual-machine-diagnostic-settings-blade"></a>Hoja de configuración de diagnóstico de la máquina virtual
 
 - Aplicable a: Este problema se aplica a las versiones 1906 y 1907.    
-- Causa: La hoja de configuración de diagnóstico de la máquina virtual tiene una pestaña **Receptor**, que solicita una **Cuenta de Application Insights**. Este es el resultado de una nueva hoja y aún no se admite en Azure Stack.
+- Causa: La hoja de configuración de diagnóstico de la máquina virtual tiene una pestaña **Receptor**, que solicita una **Cuenta de Application Insights**. Este es el resultado de una nueva hoja y aún no se admite en Azure Stack Hub.
 - Corrección: Ninguno.
 - Repetición: Comunes
 
@@ -624,7 +624,7 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 ## <a name="1906-update-process"></a>Proceso de actualización de 1906
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: Al intentar instalar la actualización 1906 de Azure Stack, es posible que se produzca un error en el estado de esa actualización y dicho estado cambie a **PreparationFailed**. La causa es que el proveedor de recursos de actualización (URP) no se puede transferir correctamente desde el contenedor de almacenamiento a un recurso compartido de infraestructura interno para su procesamiento. 
+- Causa: Al intentar instalar la actualización 1906 de Azure Stack Hub, es posible que se produzca un error en el estado de esa actualización y dicho estado cambie a **PreparationFailed**. La causa es que el proveedor de recursos de actualización (URP) no se puede transferir correctamente desde el contenedor de almacenamiento a un recurso compartido de infraestructura interno para su procesamiento. 
 - Corrección: A partir de la versión 1901 (1.1901.0.95), para solucionar este problema, puede hacer clic en **Actualizar ahora** de nuevo (en lugar de en **Reanudar**). A continuación, URP limpia los archivos del intento anterior y vuelve a iniciar la descarga. Si el problema persiste, recomendamos cargar manualmente el paquete de actualización siguiendo la sección [Importación e instalación de actualizaciones](azure-stack-apply-updates.md).
 - Repetición: Comunes
 
@@ -647,7 +647,7 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 ### <a name="subscription-permissions"></a>Permisos de suscripción
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: No puede ver los permisos de la suscripción mediante los portales de Azure Stack.
+- Causa: No puede ver los permisos de la suscripción mediante los portales de Azure Stack Hub.
 - Corrección: Use [PowerShell para verificar los permisos](/powershell/module/azurerm.resources/get-azurermroleassignment).
 - Repetición: Comunes
 
@@ -660,7 +660,7 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 ### <a name="storage-account-settings"></a>Configuración de cuentas de almacenamiento
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: En el portal de usuarios, la hoja **Configuración** de la cuenta de almacenamiento muestra una opción para cambiar el **tipo de transferencia de seguridad**. La característica no se admite actualmente en Azure Stack.
+- Causa: En el portal de usuarios, la hoja **Configuración** de la cuenta de almacenamiento muestra una opción para cambiar el **tipo de transferencia de seguridad**. La característica no se admite actualmente en Azure Stack Hub.
 - Repetición: Comunes
 
 ### <a name="upload-blob"></a>Carga de blob
@@ -682,7 +682,7 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 ### <a name="service-endpoints"></a>Puntos de conexión del servicio
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: En el portal de usuarios, la hoja **Red virtual** muestra una opción para usar **puntos de conexión de servicio**. Esta característica no se admite actualmente en Azure Stack.
+- Causa: En el portal de usuarios, la hoja **Red virtual** muestra una opción para usar **puntos de conexión de servicio**. Esta característica no se admite actualmente en Azure Stack Hub.
 - Repetición: Comunes
 
 ### <a name="network-interface"></a>interfaz de red
@@ -697,29 +697,29 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 #### <a name="alerts"></a>Alertas
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: En el portal de usuarios, la hoja **Puerta de enlace de red virtual** muestra una opción para usar **alertas**. Esta característica no se admite actualmente en Azure Stack.
+- Causa: En el portal de usuarios, la hoja **Puerta de enlace de red virtual** muestra una opción para usar **alertas**. Esta característica no se admite actualmente en Azure Stack Hub.
 - Repetición: Comunes
 
 #### <a name="active-active"></a>Activo-activo
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: En el portal de usuarios, durante la creación, y en el menú de recursos de **Puerta de enlace de red virtual**, verá una opción para habilitar la configuración **activa-activa**. Esta característica no se admite actualmente en Azure Stack.
+- Causa: En el portal de usuarios, durante la creación, y en el menú de recursos de **Puerta de enlace de red virtual**, verá una opción para habilitar la configuración **activa-activa**. Esta característica no se admite actualmente en Azure Stack Hub.
 - Repetición: Comunes
 
 #### <a name="vpn-troubleshooter"></a>Solucionador de problemas de VPN
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: En el portal de usuarios, la hoja **Conexiones** muestra una característica denominada **Solucionador de problemas de VPN**. Esta característica no se admite actualmente en Azure Stack.
+- Causa: En el portal de usuarios, la hoja **Conexiones** muestra una característica denominada **Solucionador de problemas de VPN**. Esta característica no se admite actualmente en Azure Stack Hub.
 - Repetición: Comunes
 
 #### <a name="documentation"></a>Documentación
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: Los vínculos de la documentación de la página de información general de Puerta de enlace de red virtual enlazan a la documentación específica de Azure en lugar de a la de Azure Stack. Use los vínculos siguientes para la documentación de Azure Stack:
+- Causa: Los vínculos de documentación de la página de introducción a la Puerta de enlace de red virtual enlazan a la documentación específica de Azure en lugar de a la de Azure Stack Hub. Use los vínculos siguientes para consultar la documentación de Azure Stack Hub:
 
   - [SKU de puerta de enlace](../user/azure-stack-vpn-gateway-about-vpn-gateways.md#gateway-skus)
   - [Conexiones de alta disponibilidad](../user/azure-stack-vpn-gateway-about-vpn-gateways.md#gateway-availability)
-  - [Configuración de BGP en Azure Stack](../user/azure-stack-vpn-gateway-settings.md#gateway-requirements)
+  - [Configuración de BGP en Azure Stack Hub](../user/azure-stack-vpn-gateway-settings.md#gateway-requirements)
   - [Circuitos ExpressRoute](azure-stack-connect-expressroute.md)
   - [Especificación de directivas de IPsec o IKE personalizadas](../user/azure-stack-vpn-gateway-settings.md#ipsecike-parameters)
 
@@ -751,11 +751,11 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 ### <a name="virtual-machine-scale-set"></a>Conjunto de escalado de máquina virtual
 
 
-#### <a name="create-failures-during-patch-and-update-on-4-node-azure-stack-environments"></a>Crear errores durante la revisión y actualización de entornos de Azure Stack de 4 nodos
+#### <a name="create-failures-during-patch-and-update-on-4-node-azure-stack-hub-environments"></a>Creación de errores durante la revisión y actualización de entornos de Azure Stack Hub de 4 nodos
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: La creación de VM en un conjunto de disponibilidad de 3 dominios de error y la creación de una instancia de conjunto de escalado de máquinas virtuales genera un error **FabricVmPlacementErrorUnsupportedFaultDomainSize** durante el proceso de actualización en un entorno de Azure Stack de 4 nodos.
-- Corrección: Se pueden crear VM únicas en un conjunto de disponibilidad con 2 dominios de error correctamente. Sin embargo, la creación de instancias del conjunto de escalado todavía no está disponible durante el proceso de actualización en una instancia de Azure Stack de 4 nodos.
+- Causa: La creación de máquinas virtuales en un conjunto de disponibilidad de 3 dominios de error y la creación de una instancia de conjunto de escalado de máquinas virtuales genera un error **FabricVmPlacementErrorUnsupportedFaultDomainSize** durante el proceso de actualización en un entorno de Azure Stack Hub de 4 nodos.
+- Corrección: Se pueden crear VM únicas en un conjunto de disponibilidad con 2 dominios de error correctamente. Sin embargo, la creación de instancias del conjunto de escalado todavía no está disponible durante el proceso de actualización en una instancia de Azure Stack Hub de 4 nodos.
 
 ### <a name="ubuntu-ssh-access"></a>Acceso a SSH en Ubuntu
 
@@ -767,21 +767,21 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 ### <a name="virtual-machine-scale-set-reset-password-does-not-work"></a>La contraseña de restablecimiento del conjunto de escalado de máquinas virtuales no funciona
 
 - Aplicable a: Este problema se aplica a la versión 1906.
-- Causa: Aparece una nueva hoja para restablecer la contraseña en la interfaz de usuario del conjunto de escalado, pero Azure Stack todavía no admite el restablecimiento de contraseña en un conjunto de escalado.
+- Causa: Aparece una nueva hoja para restablecer la contraseña en la interfaz de usuario del conjunto de escalado, pero Azure Stack Hub todavía no admite el restablecimiento de contraseña en un conjunto de escalado.
 - Corrección: Ninguno.
 - Repetición: Comunes
 
 ### <a name="rainy-cloud-on-scale-set-diagnostics"></a>Nube con lluvia en el diagnóstico del conjunto de escalado
 
 - Aplicable a: Este problema se aplica a la versión 1906.
-- Causa: La página de información general del conjunto de escalado de máquinas virtuales muestra un gráfico vacío. Al hacer clic en el gráfico vacío, se abre una hoja de "nube de lluvia". Este es el gráfico de información de diagnóstico del conjunto de escalado, como el porcentaje de CPU, y no es una característica admitida en la compilación actual de Azure Stack.
+- Causa: La página de información general del conjunto de escalado de máquinas virtuales muestra un gráfico vacío. Al hacer clic en el gráfico vacío, se abre una hoja de "nube de lluvia". Este es el gráfico de información de diagnóstico del conjunto de escalado, como el porcentaje de CPU, y no es una característica admitida en la compilación actual de Azure Stack Hub.
 - Corrección: Ninguno.
 - Repetición: Comunes
 
 ### <a name="virtual-machine-diagnostic-settings-blade"></a>Hoja de configuración de diagnóstico de la máquina virtual
 
 - Aplicable a: Este problema se aplica a la versión 1906.
-- Causa: La hoja de configuración de diagnóstico de la máquina virtual tiene una pestaña **Receptor**, que solicita una **Cuenta de Application Insights**. Este es el resultado de una nueva hoja y aún no se admite en Azure Stack.
+- Causa: La hoja de configuración de diagnóstico de la máquina virtual tiene una pestaña **Receptor**, que solicita una **Cuenta de Application Insights**. Este es el resultado de una nueva hoja y aún no se admite en Azure Stack Hub.
 - Corrección: Ninguno.
 - Repetición: Comunes
 
@@ -848,5 +848,5 @@ Para acceder a los problemas conocidos archivados de una versión anterior, use 
 ::: moniker-end
 
 ::: moniker range="<azs-1906"
-Puede consultar los [problemas conocidos de las versiones anteriores de Azure Stack en la Galería de TechNet](https://aka.ms/azsarchivedrelnotes). Estos documentos archivados se proporcionan únicamente con fines de referencia y no implican que estas versiones sean compatibles. Para obtener información sobre la compatibilidad con Azure Stack, consulte [Directiva de mantenimiento de Azure Stack](azure-stack-servicing-policy.md). Para obtener más ayuda, póngase en contacto con los servicios de asistencia al cliente de Microsoft.
+Puede consultar los [problemas conocidos de las versiones anteriores de Azure Stack Hub en la Galería de TechNet](https://aka.ms/azsarchivedrelnotes). Estos documentos archivados se proporcionan únicamente con fines de referencia y no implican que estas versiones sean compatibles. Para obtener información sobre el soporte técnico de Azure Stack Hub, consulte [Directiva de mantenimiento de Azure Stack Hub](azure-stack-servicing-policy.md). Para obtener más ayuda, póngase en contacto con los servicios de asistencia al cliente de Microsoft.
 ::: moniker-end

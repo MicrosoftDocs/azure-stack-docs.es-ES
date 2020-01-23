@@ -1,6 +1,6 @@
 ---
-title: Configuración de una puerta de enlace de VPN para Azure Stack | Microsoft Docs
-description: Obtenga información sobre cómo configurar una puerta de enlace de VPN para Azure Stack.
+title: Configuración de una puerta de enlace de VPN para Azure Stack Hub | Microsoft Docs
+description: Aprenda a configurar una puerta de enlace de VPN para Azure Stack Hub.
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
@@ -9,36 +9,34 @@ ms.date: 10/03/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: 340f9d868c854560019899f9a4d38a484c973f7f
-ms.sourcegitcommit: cc3534e09ad916bb693215d21ac13aed1d8a0dde
+ms.openlocfilehash: e970dc46a4afdcc67e16c0239dc712da111c47a6
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73167296"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75879128"
 ---
-# <a name="setup-vpn-gateway-for-azure-stack-using-fortigate-nva"></a>Configuración de una puerta de enlace de VPN para Azure Stack con la NVA FortiGate
+# <a name="setup-vpn-gateway-for-azure-stack-hub-using-fortigate-nva"></a>Configuración de una puerta de enlace de VPN para Azure Stack Hub mediante la aplicación virtual de red FortiGate
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+En este artículo se describe cómo crear una conexión VPN con su instancia de Azure Stack Hub. Una puerta de enlace de VPN es un tipo de puerta de enlace de red virtual que envía tráfico cifrado entre una red virtual de Azure Stack Hub y una puerta de enlace de VPN remota. El siguiente procedimiento implementa una red virtual con una NVA FortiGate, una aplicación virtual de red, dentro de un grupo de recursos. También se proporcionan los pasos para configurar una VPN IPSec en la NVA FortiGate.
 
-En este artículo se describe cómo crear una conexión VPN a su entorno de Azure Stack. Una puerta de enlace de VPN es un tipo de puerta de enlace de red virtual que envía tráfico cifrado entre una red virtual de Azure Stack y una puerta de enlace de VPN remota. El siguiente procedimiento implementa una red virtual con una NVA FortiGate, una aplicación virtual de red, dentro de un grupo de recursos. También se proporcionan los pasos para configurar una VPN IPSec en la NVA FortiGate.
+## <a name="prerequisites"></a>Prerequisites
 
-## <a name="prerequisites"></a>Requisitos previos
-
--  Acceso a un sistema integrado de Azure Stack con capacidad disponible para implementar los requisitos de proceso, red y recursos necesarios para esta solución. 
+-  Acceso a un sistema integrado de Azure Stack Hub con capacidad disponible para implementar los requisitos de proceso, red y recursos necesarios para esta solución. 
 
     > [!Note]  
     > Estas instrucciones **no** funcionan con un Kit de desarrollo de Azure Stack (ASDK) debido a las limitaciones de red en ASDK. Para más información, consulte [Requisitos y consideraciones de ASDK](https://docs.microsoft.com/azure-stack/asdk/asdk-deploy-considerations).
 
--  Acceso a un dispositivo VPN en la red local que hospeda el sistema integrado de Azure Stack. El dispositivo debe crear un túnel IPSec que cumpla los parámetros descritos en [Parámetros de implementación](#deployment-parameters).
+-  Acceso a un dispositivo VPN en la red local que hospeda el sistema integrado de Azure Stack Hub. El dispositivo debe crear un túnel IPSec que cumpla los parámetros descritos en [Parámetros de implementación](#deployment-parameters).
 
--  Una solución de aplicación virtual de red (NVA) disponible en Marketplace de Azure Stack. Una NVA controla el flujo del tráfico de red desde una red perimetral a otras redes o subredes. En este procedimiento se usa la [Solución de máquina virtual única del firewall de próxima generación FortiGate de Fortinet](https://azuremarketplace.microsoft.com/marketplace/apps/fortinet.fortinet-FortiGate-singlevm).
+-  Una solución de aplicación virtual de red (NVA) disponible en Marketplace de Azure Stack Hub. Una NVA controla el flujo del tráfico de red desde una red perimetral a otras redes o subredes. En este procedimiento se usa la [Solución de máquina virtual única del firewall de próxima generación FortiGate de Fortinet](https://azuremarketplace.microsoft.com/marketplace/apps/fortinet.fortinet-FortiGate-singlevm).
 
     > [!Note]  
-    > Si no tiene **Fortinet FortiGate-VM For Azure BYOL** y **FortiGate NGFW - Single VM Deployment (BYOL)** disponibles en Marketplace de Azure Stack, póngase en contacto con su operador de la nube.
+    > Si **Fortinet FortiGate-VM For Azure BYOL** y **FortiGate NGFW - Single VM Deployment (BYOL)** no están disponibles en Marketplace de Azure Stack Hub, póngase en contacto con su operador de la nube.
 
 -  Necesitará al menos dos archivos de licencia de FortiGate disponibles para activar la aplicación virtual de red FortiGate. Para obtener información sobre cómo adquirir estas licencias, consulte el artículo de la biblioteca de documentos de Fortinet [Registro y descarga de la licencia](https://docs2.fortinet.com/vm/azure/FortiGate/6.2/azure-cookbook/6.2.0/19071/registering-and-downloading-your-license).
 
-    En este procedimiento se usa la [implementación de máquina virtual única de FortiGate](ttps://docs2.fortinet.com/vm/azure/FortiGate/6.2/azure-cookbook/6.2.0/632940/single-FortiGate-vm-deployment). Puede encontrar pasos sobre cómo conectar la aplicación virtual de red FortiGate de la red virtual de Azure Stack a la red local.
+    En este procedimiento se usa la [implementación de máquina virtual única de FortiGate](ttps://docs2.fortinet.com/vm/azure/FortiGate/6.2/azure-cookbook/6.2.0/632940/single-FortiGate-vm-deployment). Puede encontrar pasos sobre cómo conectar la aplicación virtual de red FortiGate de la red virtual de Azure Stack Hub a la red local.
 
     Para más información sobre cómo implementar la solución FortiGate en una configuración activo-pasivo (alta disponibilidad), consulte los detalles en el artículo de la biblioteca de documentos de Fortinet [Alta disponibilidad para máquina virtual de FortiGate en Azure](https://docs2.fortinet.com/vm/azure/FortiGate/6.2/azure-cookbook/6.2.0/983245/ha-for-FortiGate-vm-on-azure).
 
@@ -46,7 +44,7 @@ En este artículo se describe cómo crear una conexión VPN a su entorno de Azur
 
 En la tabla siguiente se resumen los parámetros que se usan en estas implementaciones como referencia.
 
-| Parámetro | Valor |
+| Parámetro | Value |
 |-----------------------------------|---------------------------|
 | Nombre de la instancia de FortiGate | forti1 |
 | Licencia/versión de BYOL | 6.0.3 |
@@ -63,11 +61,11 @@ En la tabla siguiente se resumen los parámetros que se usan en estas implementa
 | Tipo de dirección IP pública | estática |
 
 > [!Note]
-> \* Elija un espacio de direcciones y prefijos de subred diferentes si `172.16.0.0/16` se superpone con la red local o el grupo de VIP de Azure Stack.
+> \* Elija un espacio de direcciones y prefijos de subred diferentes si `172.16.0.0/16` se superpone con la red local o el grupo de VIP de Azure Stack Hub.
 
 ## <a name="deploy-the-fortigate-ngfw-marketplace-items"></a>Implementación de los elementos de Marketplace de FortiGate NGFW
 
-1. Abra el portal de usuario de Azure Stack.
+1. Abra el portal de usuarios de Azure Stack Hub.
 
     ![](./media/azure-stack-network-howto-vnet-to-onprem/image5.png)
 
@@ -102,7 +100,7 @@ En la tabla siguiente se resumen los parámetros que se usan en estas implementa
 
 ## <a name="configure-routes-udr-for-the-vnet"></a>Configuración de rutas (UDR) para la red virtual
 
-1. Abra el portal de usuario de Azure Stack.
+1. Abra el portal de usuarios de Azure Stack Hub.
 
 2. Seleccione Resource groups (Grupos de recursos). Escriba `forti1-rg1` en el filtro y haga doble clic en el grupo de recursos forti1-rg1.
 
@@ -140,7 +138,7 @@ Necesitará un archivo de licencia válido de Fortinet para activar cada NVA For
 
 Una vez que haya activado las NVA, cree un túnel VPN IPSec en la NVA.
 
-1. Abra el portal de usuario de Azure Stack.
+1. Abra el portal de usuarios de Azure Stack Hub.
 
 2. Seleccione Resource groups (Grupos de recursos). Escriba `forti1` en el filtro y haga doble clic en el grupo de recursos forti1.
 
@@ -215,7 +213,7 @@ Una vez que haya activado las NVA, cree un túnel VPN IPSec en la NVA.
 
 El dispositivo VPN local se debe configurar para crear el túnel VPN IPSec. En la tabla siguiente se proporcionan los parámetros necesarios para configurar el dispositivo VPN local. Para obtener información sobre cómo configurar el dispositivo VPN local, consulte la documentación del dispositivo.
 
-| Parámetro | Valor |
+| Parámetro | Value |
 | --- | --- |
 | Dirección IP de la puerta de enlace remota | Dirección IP pública asignada a forti1: consulte [Activación de la NVA FortiGate](#activate-the-fortigate-nva). |
 | Red IP remota | 172.16.0.0/16 (si usa el intervalo de direcciones IP de estas instrucciones para la red virtual). |
@@ -245,19 +243,19 @@ Puede enrutar entre la red de la red virtual y la red local mediante el disposit
 
 Para validar la conexión:
 
-1. Cree una máquina virtual en las redes virtuales de Azure Stack y un sistema en la red local. Puede seguir las instrucciones para crear una máquina virtual en [Guía de inicio rápido: Creación de una máquina virtual Windows Server con el portal de Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-quick-windows-portal).
+1. Cree una máquina virtual en las redes virtuales de Azure Stack Hub y un sistema en la red local. Puede seguir las instrucciones para crear una máquina virtual en [Guía de inicio rápido: Creación de una máquina virtual Windows Server con el portal de Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-quick-windows-portal).
 
-2. Al crear la máquina virtual de Azure Stack y preparar el sistema local, compruebe lo siguiente:
+2. Al crear la máquina virtual de Azure Stack Hub y preparar el sistema local, compruebe lo siguiente:
 
--  La máquina virtual de Azure Stack se coloca en la subred **InsideSubnet** de la red virtual.
+-  La máquina virtual de Azure Stack Hub se coloca en la subred **InsideSubnet** de la red virtual.
 
--  El sistema local se coloca en la red local dentro del intervalo de direcciones IP definido, tal y como se define en la configuración de IPSec. Asegúrese también de que la dirección IP de la interfaz local del dispositivo VPN local se proporciona al sistema local como una ruta que puede acceder a la red de la red virtual de Azure Stack, por ejemplo, `172.16.0.0/16`.
+-  El sistema local se coloca en la red local dentro del intervalo de direcciones IP definido, tal y como se define en la configuración de IPSec. Asegúrese también de que la dirección IP de la interfaz local del dispositivo VPN local se proporciona al sistema local como una ruta que puede acceder a la red de la red virtual de Azure Stack Hub, por ejemplo, `172.16.0.0/16`.
 
--  **No** aplique ningún NSG a la máquina virtual de Azure Stack en el momento de la creación. Es posible que tenga que eliminar el NSG que se agrega de forma predeterminada si se crea la máquina virtual desde el portal.
+-  **No** aplique ningún grupo de seguridad de red a la máquina virtual de Azure Stack Hub en el momento de la creación. Es posible que tenga que eliminar el NSG que se agrega de forma predeterminada si se crea la máquina virtual desde el portal.
 
--  Asegúrese de que el sistema operativo del sistema local y el sistema operativo de la máquina virtual de Azure Stack no tienen reglas de firewall de sistema operativo que prohíban la comunicación que se va a usar para probar la conectividad. Con fines de prueba, se recomienda deshabilitar el firewall completamente dentro del sistema operativo de ambos sistemas.
+-  Asegúrese de que el sistema operativo del sistema local y el sistema operativo de la máquina virtual de Azure Stack Hub no tienen reglas de firewall de sistema operativo que prohíban la comunicación que va a usar para probar la conectividad. Con fines de prueba, se recomienda deshabilitar el firewall completamente dentro del sistema operativo de ambos sistemas.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Diferencias y consideraciones para las redes de Azure Stack](azure-stack-network-differences.md)  
-[Oferta de una solución de red en Azure Stack con FortiGate de Fortinet](../operator/azure-stack-network-solutions-enable.md)  
+[Diferencias y consideraciones para las redes de Azure Stack Hub](azure-stack-network-differences.md)  
+[Oferta de una solución de red en Azure Stack Hub con FortiGate de Fortinet](../operator/azure-stack-network-solutions-enable.md)  

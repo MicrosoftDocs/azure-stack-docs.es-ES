@@ -1,7 +1,7 @@
 ---
 title: Eliminación del proveedor de recursos de SQL
-titleSuffix: Azure Stack
-description: Obtenga información sobre cómo quitar el proveedor de recursos de SQL de la implementación de Azure Stack.
+titleSuffix: Azure Stack Hub
+description: Obtenga información sobre cómo quitar el proveedor de recursos de SQL de la implementación de Azure Stack Hub.
 services: azure-stack
 documentationCenter: ''
 author: mattbriggs
@@ -16,12 +16,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/20/2018
-ms.openlocfilehash: a172b56c43dafd637a66fa8354c2e06e06a67b98
-ms.sourcegitcommit: 08d2938006b743b76fba42778db79202d7c3e1c4
+ms.openlocfilehash: 15178627cbc58cd466a09f7ef534e7ec115d9c1a
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74954458"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75814412"
 ---
 # <a name="remove-the-sql-resource-provider"></a>Eliminación del proveedor de recursos de SQL
 
@@ -36,7 +36,7 @@ Al quitar el proveedor de recursos de SQL no se eliminan las bases de datos de i
 
 Hay varias tareas de limpieza que debe realizar antes de ejecutar el script DeploySqlProvider.ps1 para quitar el proveedor de recursos.
 
-El operador de Azure Stack es responsable de las siguientes tareas de limpieza:
+El operador de Azure Stack Hub es responsable de las siguientes tareas de limpieza:
 
 * Elimine los planes que hacen referencia al adaptador de SQL.
 * Elimine toda cuota asociada al adaptador de SQL.
@@ -56,9 +56,9 @@ El operador de Azure Stack es responsable de las siguientes tareas de limpieza:
 
     * **Uninstall**. Quita el proveedor de recursos y todos los recursos asociados.
     * **PrivilegedEndpoint**. Dirección IP o nombre DNS del punto de conexión con privilegios.
-    * **AzureEnvironment**. El entorno de Azure usado para implementar Azure Stack. Requerido solo para implementaciones de Azure AD.
+    * **AzureEnvironment**. El entorno de Azure usado para implementar Azure Stack Hub. Requerido solo para implementaciones de Azure AD.
     * **CloudAdminCredential**. Credencial del administrador de la nube, necesaria para el acceso al punto de conexión con privilegios.
-    * **AzCredential**. Credencial de la cuenta de administrador de servicio de Azure Stack. Use las mismas credenciales que para la implementación de Azure Stack.
+    * **AzCredential**. Credencial de la cuenta de administrador de servicio de Azure Stack Hub. Use las mismas credenciales que para la implementación de Azure Stack Hub.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

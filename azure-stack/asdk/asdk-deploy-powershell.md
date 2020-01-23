@@ -17,18 +17,18 @@ ms.date: 05/06/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 02/08/2019
-ms.openlocfilehash: 0ba8723b9d0f03006b52ecd016c3713280b63dea
-ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
+ms.openlocfilehash: 0bced4d75b70b05eea42de763066f1d5b05e1976
+ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71159296"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022919"
 ---
 # <a name="deploy-asdk-from-the-command-line-using-powershell"></a>Implementación de ASDK desde la línea de comandos mediante PowerShell
 
 El Kit de desarrollo de Azure Stack (ASDK) es un entorno de desarrollo y pruebas que se puede implementar para evaluar y demostrar las características y servicios de Azure Stack. Para que funcione correctamente, debe preparar el hardware del entorno y ejecutar algunos scripts. Tenga en cuenta que los scripts tardan varias horas en ejecutarse. Una vez finalizado, puede iniciar sesión en los portales del administrador y de usuarios para comenzar a usar Azure Stack.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 Prepare el equipo host de ASDK. Planee el hardware, software y red. El equipo que hospeda ASDK debe cumplir los requisitos de hardware, software y red. También debe elegir entre el uso de Azure Active Directory (Azure AD) o los Servicios de federación de Active Directory (AD FS). Asegúrese de cumplir estos requisitos previos antes de comenzar la implementación para que el proceso de instalación se ejecute sin problemas.
 
@@ -70,7 +70,7 @@ Para configurar el equipo host del Kit de desarrollo de Azure Stack para arranca
 Después de que el equipo host de ASDK se arranque correctamente en la imagen de CloudBuilder.vhdx, inicie sesión con las mismas credenciales de administrador local que usó para iniciar sesión en el equipo host de ASDK. Estas son las mismas credenciales que proporcionó como parte del proceso de finalización del programa de instalación de Windows Server cuando el equipo host se arrancó desde VHD.
 
 > [!NOTE]
-> Si lo desea, también puede configurar [los valores de telemetría de Azure Stack](asdk-telemetry.md#set-telemetry-level-in-the-windows-registry) *antes* de instalar el Kit de desarrollo de Azure Stack.
+> Si lo desea, también puede configurar los [valores de telemetría de Azure Stack](asdk-telemetry.md#set-telemetry-level-in-the-windows-registry) *antes* de instalar el Kit de desarrollo de ASDK.
 
 Abra una consola de PowerShell con privilegios elevados y ejecute los comandos de esta sección para implementar ASDK en el host de ASDK.
 
@@ -141,7 +141,7 @@ Si su entorno no tiene DHCP habilitado, debe incluir los siguientes parámetros 
 
 ### <a name="asdk-installazurestackpocps1-optional-parameters"></a>Parámetros opcionales InstallAzureStackPOC.ps1 de ASDK
 
-|Parámetro|Obligatorio/opcional|DESCRIPCIÓN|
+|Parámetro|Obligatorio/opcional|Descripción|
 |-----|-----|-----|
 |AdminPassword|Obligatorio|Establece la cuenta de administrador local y el resto de cuentas de usuario en todas las VM que se crean como parte de la implementación de ASDK. Esta contraseña debe coincidir con la contraseña de administrador local actual del host.|
 |InfraAzureDirectoryTenantName|Obligatorio|Establece el directorio del inquilino. Utilice este parámetro para especificar un directorio concreto en el que la cuenta de Azure AD tenga permisos para administrar varios directorios. Es el nombre completo de un inquilino de Azure AD con el formato .onmicrosoft.com, o bien un nombre de dominio personalizado de Azure AD verificado.|
@@ -158,7 +158,7 @@ Después de instalar el Kit de desarrollo de Azure Stack, se recomiendan algunas
 Es recomendable restablecer la directiva de expiración de contraseñas para asegurarse de que la contraseña del host de ASDK no expire antes de que termine el período de evaluación.
 
 > [!NOTE]
-> Si lo desea, también puede configurar los [valores de telemetría de Azure Stack](asdk-telemetry.md#enable-or-disable-telemetry-after-deployment) *después* de instalar el Kit de desarrollo de Azure Stack.
+> Si lo desea, también puede configurar los [valores de telemetría de Azure Stack](asdk-telemetry.md#enable-or-disable-telemetry-after-deployment) *después* de instalar el Kit de desarrollo de ASDK.
 
 **[Tareas de implementación posteriores al Kit de desarrollo de Azure Stack](asdk-post-deploy.md)**
 

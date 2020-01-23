@@ -1,6 +1,6 @@
 ---
-title: Aplicar una actualización del fabricante de equipos originales (OEM) a Azure Stack | Microsoft Docs
-description: Aprenda a aplicar una actualización del fabricante de equipos originales (OEM) a Azure Stack.
+title: Aplicación de la actualización de un fabricante de equipos originales (OEM) a Azure Stack Hub | Microsoft Docs
+description: Aprenda a aplicar la actualización de un fabricante de equipos originales (OEM) a Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,22 +15,20 @@ ms.date: 09/10/2019
 ms.author: mabrigg
 ms.lastreviewed: 09/10/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 8065b2905adb5298c23cd7c924ccff28fb778efe
-ms.sourcegitcommit: b2418661bfa3a791e65b9b487e20982dba3e4c41
+ms.openlocfilehash: 889c26089ed6d26adccec200b19191e8ab13c5a7
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75756828"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882630"
 ---
 # <a name="azure-stack-hub-servicing-policy"></a>Directiva de servicio de Azure Stack Hub
-
-*Se aplica a: Sistemas integrados de Azure Stack Hub*
 
 En este artículo se describe la directiva de mantenimiento para sistemas integrados de Azure Stack Hub, es decir, lo que debe hacer para mantener el sistema en un estado admitido, y cómo obtener soporte técnico.
 
 ## <a name="keep-your-system-under-support"></a>Mantenimiento del sistema dentro del soporte técnico
 
-Para continuar recibiendo soporte técnico, debe mantener actualizadas las actualizaciones de Azure Stack.
+Para continuar recibiendo soporte técnico, debe mantener actualizadas las actualizaciones de Azure Stack Hub.
 
 Para que el sistema de Azure Stack Hub permanezca en un estado admitido, la instancia debe ejecutar la versión de actualización más reciente o cualquiera de las dos versiones de actualización anteriores.
 

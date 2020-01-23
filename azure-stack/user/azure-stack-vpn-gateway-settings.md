@@ -1,6 +1,6 @@
 ---
-title: Configuración de VPN Gateway para Azure Stack | Microsoft Docs
-description: Obtenga información y configure las instancias de VPN Gateway para Azure Stack.
+title: Configuración de una puerta de enlace de VPN para Azure Stack Hub | Microsoft Docs
+description: Aprenda a configurar las instancias de VPN Gateway para Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,26 +15,24 @@ ms.topic: conceptual
 ms.date: 10/03/2019
 ms.author: sethm
 ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: e6d7f2d46a578bbbc8527a5e69f441ec12f38b01
-ms.sourcegitcommit: ac7d98a2b58442e82798022d69ebfae6616a225f
+ms.openlocfilehash: ff7667c94b345cbb666232e869ab8871bd081f5c
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74239321"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883140"
 ---
-# <a name="configure-vpn-gateway-settings-for-azure-stack"></a>Configuración de VPN Gateway para Azure Stack
+# <a name="configure-vpn-gateway-settings-for-azure-stack-hub"></a>Configuración de una puerta de enlace de VPN para Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+Una puerta de enlace de VPN es un tipo de puerta de enlace de red virtual que envía tráfico cifrado entre una red virtual de Azure Stack Hub y una puerta de enlace de VPN remota. La puerta de enlace de VPN remota puede estar en Azure, un dispositivo del centro de datos o un dispositivo de otro sitio. Si hay conectividad de red entre los dos puntos de conexión, puede establecer una conexión VPN de sitio a sitio (S2S) segura entre las dos redes.
 
-Una puerta de enlace de VPN es un tipo de puerta de enlace de red virtual que envía tráfico cifrado entre una red virtual de Azure Stack y una puerta de enlace de VPN remota. La puerta de enlace de VPN remota puede estar en Azure, un dispositivo del centro de datos o un dispositivo de otro sitio. Si hay conectividad de red entre los dos puntos de conexión, puede establecer una conexión VPN de sitio a sitio (S2S) segura entre las dos redes.
-
-Una conexión de puerta de enlace de VPN se basa en la configuración de varios recursos, cada uno de los cuales contiene valores configurables. En este artículo se describen los recursos y la configuración relacionados con VPN Gateway para una red virtual que se crea en el modelo de implementación de Resource Manager. Puede encontrar las descripciones y los diagramas de topología de cada solución de conexión en el artículo [About VPN gateway for Azure Stack](azure-stack-vpn-gateway-about-vpn-gateways.md) (Acerca VPN Gateway para Azure Stack).
+Una conexión de puerta de enlace de VPN se basa en la configuración de varios recursos, cada uno de los cuales contiene valores configurables. En este artículo se describen los recursos y la configuración relacionados con VPN Gateway para una red virtual que se crea en el modelo de implementación de Resource Manager. Puede encontrar las descripciones y los diagramas de topología de cada solución de conexión en el artículo [Acerca VPN Gateway para Azure Stack Hub](azure-stack-vpn-gateway-about-vpn-gateways.md).
 
 ## <a name="vpn-gateway-settings"></a>Configuración de VPN Gateway
 
 ### <a name="gateway-types"></a>Tipos de puerta de enlace
 
-Cada red virtual de Azure Stack es compatible con una puerta de enlace de red virtual individual, que debe ser del tipo **Vpn**.  Esta compatibilidad difiere de la de Azure, que admite tipos adicionales.
+Cada red virtual de Azure Stack Hub es compatible con una puerta de enlace de red virtual individual, que debe ser del tipo **Vpn**.  Esta compatibilidad difiere de la de Azure, que admite tipos adicionales.
 
 Al crear una puerta de enlace de red virtual, debe asegurarse de que el tipo de puerta de enlace es el correcto para su configuración. Una puerta de enlace de VPN requiere la marca `-GatewayType Vpn`, por ejemplo:
 
@@ -48,7 +46,7 @@ New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
 
 Al crear una puerta de enlace de red virtual, debe especificar la SKU de la puerta de enlace que desea usar. Seleccione las SKU que cumplan sus requisitos en función de los tipos de cargas de trabajo, rendimientos, características y Acuerdos de Nivel de Servicio.
 
-Azure Stack ofrece las SKU de VPN Gateway que aparecen en la siguiente tabla:
+Azure Stack Hub ofrece las SKU de VPN Gateway que se muestran en la siguiente tabla:
 
 | | Rendimiento de VPN Gateway |Túneles IPsec máximos de VPN Gateway |
 |-------|-------|-------|
@@ -58,15 +56,15 @@ Azure Stack ofrece las SKU de VPN Gateway que aparecen en la siguiente tabla:
 
 ### <a name="resizing-gateway-skus"></a>Cambio de tamaño de las SKU de puerta de enlace
 
-Azure Stack no admite un cambio de tamaño de las SKU entre las SKU heredadas admitidas.
+Azure Stack Hub no admite un cambio de tamaño de las SKU entre las SKU heredadas compatibles.
 
-De igual modo, Azure Stack no admite un cambio de tamaño de una SKU heredada compatible (**Básica**, **Estándar** y **HighPerformance**), a una SKU más reciente compatible con Azure (**VpnGw1**, **VpnGw2** y **VpnGw3**).
+De igual modo, Azure Stack Hub no admite un cambio de tamaño de una SKU heredada compatible (**Básica**, **Estándar** y **HighPerformance**), a una SKU más reciente compatible con Azure (**VpnGw1**, **VpnGw2** y **VpnGw3**).
 
 ### <a name="configure-the-gateway-sku"></a>Configuración de la SKU de puerta de enlace
 
-#### <a name="azure-stack-portal"></a>Portal de Azure Stack
+#### <a name="azure-stack-hub-portal"></a>Portal de Azure Stack Hub
 
-Si usa el portal de Azure Stack para crear una puerta de enlace de red virtual de Resource Manager, puede seleccionar la SKU de la puerta de enlace mediante la lista desplegable. Las opciones corresponden con el tipo de puerta de enlace y tipo de VPN que seleccione.
+Si usa el portal de Azure Stack Hub para crear una puerta de enlace de red virtual de Resource Manager, puede seleccionar la SKU de la puerta de enlace mediante la lista desplegable. Las opciones corresponden con el tipo de puerta de enlace y tipo de VPN que seleccione.
 
 #### <a name="powershell"></a>PowerShell
 
@@ -95,14 +93,14 @@ New-AzureRmVirtualNetworkGatewayConnection -Name localtovon -ResourceGroupName t
 Al crear la puerta de enlace de red virtual para una configuración de puerta de enlace de VPN, debe especificar un tipo de VPN. El tipo de VPN que elija dependerá de la topología de conexión que desee crear. Un tipo de VPN también puede depender del hardware que se esté usando. Las configuraciones de S2S requieren un dispositivo VPN. Algunos dispositivos VPN solo serán compatibles con un determinado tipo de VPN.
 
 > [!IMPORTANT]  
-> En la actualidad, Azure Stack solo admite el tipo de VPN basado en ruta. Si el dispositivo solo admite VPN basadas en directivas, no se admiten conexiones a dichos dispositivos desde Azure Stack.  
+> En la actualidad, Azure Stack Hub solo admite el tipo de VPN basado en ruta. Si el dispositivo solo admite VPN basadas en directivas, no se admiten conexiones a dichos dispositivos desde Azure Stack Hub.  
 >
-> Además, Azure Stack no admite el uso de selectores de tráfico basados en directivas para puertas de enlace basadas en rutas en este momento, ya que las configuraciones de directivas personalizadas de IPSec/IKE no se admiten todavía.
+> Además, Azure Stack Hub no admite el uso de selectores de tráfico basados en directivas para puertas de enlace basadas en rutas en este momento, ya que las configuraciones de directivas personalizadas de IPSec/IKE no se admiten.
 
-* **PolicyBased**: las VPN basadas en directivas cifran y dirigen los paquetes a través de túneles de IPsec basados en las directivas de IPsec configuradas con las combinaciones de prefijos de dirección entre su red local y la red virtual de Azure Stack. La directiva (o el selector de tráfico) suele ser una lista de acceso en la configuración del dispositivo VPN.
+* **PolicyBased**: las VPN basadas en directivas cifran y dirigen los paquetes a través de túneles de IPsec basados en las directivas de IPsec configuradas con las combinaciones de prefijos de dirección entre su red local y la red virtual de Azure Stack Hub. La directiva (o el selector de tráfico) suele ser una lista de acceso en la configuración del dispositivo VPN.
 
   >[!NOTE]
-  >**PolicyBased** es compatible con Azure, pero no con Azure Stack.
+  >**PolicyBased** es compatible con Azure, pero no con Azure Stack Hub.
 
 * **RouteBased**: las VPN basadas en rutas utilizan rutas que se configuran en la dirección IP de reenvío o en la tabla de enrutamiento para dirigir los paquetes a sus correspondientes interfaces de túnel. A continuación, las interfaces de túnel cifran o descifran los paquetes dentro y fuera de los túneles. La directiva o el selector de tráfico para las VPN **RouteBased** se configuran como una conectividad universal (también se pueden usar caracteres comodín). De forma predeterminada, no se puede cambiar. El valor de un tipo de VPN **basada en ruta** es **RouteBased**.
 
@@ -130,7 +128,7 @@ La tabla siguiente enumera los requisitos de las puertas de enlace VPN.
 Antes de crear una puerta de enlace de VPN, debe crear una subred de puerta de enlace. La subred de puerta de enlace contiene las direcciones IP que usan los servicios y las máquinas virtuales de la puerta de enlace de red virtual. Al crear la puerta de enlace de red virtual, las máquinas virtuales de puerta de enlace se implementan en la subred de puerta de enlace, y se configuran con las opciones de puerta de enlace de VPN necesarias. No implemente nada más (por ejemplo, máquinas virtuales adicionales) en la subred de puerta de enlace.
 
 >[!IMPORTANT]
->Para que la subred de puerta de enlace funcione correctamente, su nombre tiene que ser **GatewaySubnet** . Azure Stack usa este nombre para identificar la subred en la que se van a implementar las VM de la puerta de enlace de red y los servicios.
+>Para que la subred de puerta de enlace funcione correctamente, su nombre tiene que ser **GatewaySubnet** . Azure Stack Hub usa este nombre para identificar la subred en la que se van a implementar las VM de la puerta de enlace de red y los servicios.
 
 Al crear la subred de puerta de enlace, especifique el número de direcciones IP que contiene la subred. Las direcciones IP de la subred de puerta de enlace se asignan a las máquinas virtuales y los servicios de puerta de enlace. Algunas configuraciones requieren más direcciones IP que otras. Consulte los requisitos de configuración que desea crear y compruebe que la subred de puerta de enlace que desea crear los cumple.
 
@@ -147,7 +145,7 @@ Add-AzureRmVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -AddressPrefix 10.0.
 
 ### <a name="local-network-gateways"></a>Puertas de enlace de red local
 
-Al crear una configuración de puerta de enlace de VPN en Azure, la puerta de enlace de red local a menudo representa la ubicación local. En Azure Stack representa cualquier dispositivo VPN remoto que se encuentra fuera de Azure Stack. Este podría ser un dispositivo VPN de su centro de datos (o un centro de datos remoto) o VPN Gateway en Azure.
+Al crear una configuración de puerta de enlace de VPN en Azure, la puerta de enlace de red local a menudo representa la ubicación local. En Azure Stack Hub representa cualquier dispositivo VPN remoto que se encuentre fuera de Azure Stack Hub. Este podría ser un dispositivo VPN de su centro de datos (o un centro de datos remoto) o VPN Gateway en Azure.
 
 Asigne un nombre a la puerta de enlace de red local, así como la dirección IP pública del dispositivo VPN y especificar los prefijos de dirección que se encuentran en la ubicación local. Azure examina los prefijos de dirección de destino para el tráfico de red, consulta la configuración que especificó para la puerta de enlace de red local y enruta los paquetes según corresponda.
 
@@ -162,13 +160,13 @@ A veces es necesario modificar la configuración de la puerta de enlace de red l
 
 ## <a name="ipsecike-parameters"></a>Parámetros de IPsec/IKE
 
-Cuando se configura una conexión VPN en Azure Stack, es preciso configurar la conexión en ambos extremos. Si va a configurar una conexión VPN entre Azure Stack y un dispositivo de hardware, como un conmutador o un enrutador que actúa como una puerta de enlace de VPN, dicho dispositivo puede pedirle más valores.
+Cuando se configura una conexión VPN en Azure Stack Hub, es preciso configurar la conexión en ambos extremos. Si va a configurar una conexión VPN entre Azure Stack Hub y un dispositivo de hardware, como un conmutador o un enrutador que actúa como puerta de enlace de VPN, dicho dispositivo puede pedirle más valores.
 
-A diferencia de Azure, que admite varias ofertas como iniciador y respondedor, Azure Stack admite solo una de forma predeterminada. Si tiene que usar distintas configuraciones IPSec/IKE para trabajar con el dispositivo VPN, hay más opciones de parámetros disponibles para configurar la conexión manualmente. Para más información, consulte [Configuración de la directiva IPsec/IKE para conexiones VPN de sitio a sitio](azure-stack-vpn-s2s.md).
+A diferencia de Azure, que admite varias ofertas como iniciador y respondedor, Azure Stack Hub admite solo una de forma predeterminada. Si tiene que usar distintas configuraciones IPSec/IKE para trabajar con el dispositivo VPN, hay más opciones de parámetros disponibles para configurar la conexión manualmente. Para más información, consulte [Configuración de la directiva IPsec/IKE para conexiones VPN de sitio a sitio](azure-stack-vpn-s2s.md).
 
 ### <a name="ike-phase-1-main-mode-parameters"></a>Parámetros de la fase 1 de IKE (Modo principal)
 
-| Propiedad              | Valor|
+| Propiedad              | Value|
 |-|-|
 | Versión de IKE           | IKEv2 |
 |Grupo Diffie-Hellman   | ECP384 |
@@ -178,7 +176,7 @@ A diferencia de Azure, que admite varias ofertas como iniciador y respondedor, A
 
 ### <a name="ike-phase-2-quick-mode-parameters"></a>Parámetros de la fase 2 de IKE (modo rápido)
 
-| Propiedad| Valor|
+| Propiedad| Value|
 |-|-|
 |Versión de IKE |IKEv2 |
 |Cifrados y algoritmos hash (cifrado)     | GCMAES256|

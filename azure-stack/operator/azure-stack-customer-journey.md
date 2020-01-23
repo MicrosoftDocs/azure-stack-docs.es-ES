@@ -1,6 +1,6 @@
 ---
-title: Tutorial acerca de la integración del centro de datos de Azure Stack | Microsoft Docs
-description: Más información acerca de lo que cabe esperar después de una implementación correcta in situ de Azure Stack en el centro de datos, desde la planeación a la etapa posterior a la implementación.
+title: Tutorial acerca de la integración de Azure Stack Hub en el centro de datos | Microsoft Docs
+description: Aprenda qué cabe esperar para realizar una implementación correcta in situ de Azure Stack Hub en el centro de datos, desde el planeamiento a la etapa posterior a la implementación.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -16,16 +16,16 @@ ms.date: 11/07/2019
 ms.author: mabrigg
 ms.reviewer: asganesh
 ms.lastreviewed: 11/07/2019
-ms.openlocfilehash: 6bcdbcb03cdd4151978e9eeee645a0d4ab488fe3
-ms.sourcegitcommit: ed44d477b9fd11573d1e0d1ed3a3c0ef4512df53
+ms.openlocfilehash: e5175c11887d3a9afec2c7887f56b605b159f84f
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73845767"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818441"
 ---
-# <a name="azure-stack-datacenter-integration-walkthrough"></a>Tutorial acerca de la integración del centro de datos de Azure Stack
+# <a name="azure-stack-hub-datacenter-integration-walkthrough"></a>Tutorial acerca de la integración de Azure Stack Hub en el centro de datos
 
-En este artículo se describe el proceso completo para la integración de centros de datos de Azure Stack, desde la compra hasta el soporte técnico posterior a la implementación. La integración es un proyecto colaborativo entre el cliente, un proveedor de soluciones y Microsoft. Haga clic en las siguientes pestañas para ver los pasos específicos que debe dar cada miembro del proyecto y consulte las secciones siguientes para obtener un resumen de las distintas fases de la escala de tiempo del proyecto. 
+En este artículo se describe el proceso completo para la integración de Azure Stack Hub en el centro de datos, desde la compra hasta el soporte técnico posterior a la implementación. La integración es un proyecto colaborativo entre el cliente, un proveedor de soluciones y Microsoft. Haga clic en las siguientes pestañas para ver los pasos específicos que debe dar cada miembro del proyecto y consulte las secciones siguientes para obtener un resumen de las distintas fases de la escala de tiempo del proyecto. 
 
 # <a name="customertabcustomer"></a>[Cliente](#tab/customer)
 
@@ -54,7 +54,7 @@ En este artículo se describe el proceso completo para la integración de centro
 1. Proporcionar ingeniería in situ
 1. Bastidor y pila
 1. Implementar el host de ciclo de vida de hardware (HLH) 
-1. Implementación de Azure Stack
+1. Implementar Azure Stack Hub
 1. Entregar al cliente
 
 # <a name="microsofttabmicro"></a>[Microsoft](#tab/micro)
@@ -68,20 +68,20 @@ En este artículo se describe el proceso completo para la integración de centro
 ---
 
 ## <a name="planning"></a>Planificación
-Microsoft o un asociado de soluciones de Azure Stack ayudará a evaluar sus objetivos. Ellos le ayudarán a responder a las siguientes preguntas:
+Microsoft o un asociado de soluciones de Azure Stack Hub ayudará a evaluar sus objetivos. Ellos le ayudarán a responder a las siguientes preguntas:
 
--   ¿Es Azure Stack la solución adecuada para su organización?
+-   ¿Es Azure Stack Hub la solución adecuada para su organización?
 -   ¿Qué tipo de modelo de facturación y licencias será adecuado para su organización?
 -   ¿Qué tamaño de solución necesitará?
 -   ¿Cuáles son los requisitos de alimentación y refrigeración?
 
-Use [Azure Stack Capacity Planner](https://gallery.technet.microsoft.com/Azure-Stack-Capacity-24ccd822) para investigar y analizar la mejor capacidad y configuración del hardware para sus necesidades. 
+Use [Azure Stack Hub Capacity Planner](https://gallery.technet.microsoft.com/Azure-Stack-Capacity-24ccd822) para investigar y analizar la mejor capacidad y configuración del hardware para sus necesidades. 
 
 ## <a name="ordering"></a>Pedido
-La organización se compromete a comprar Azure Stack, firma los contratos y pedidos de compra, y proporciona los datos de los requisitos de integración al proveedor de soluciones.
+La organización se compromete a comprar Azure Stack Hub, firma los contratos y pedidos de compra, y proporciona los datos de los requisitos de integración al proveedor de soluciones.
 
 ## <a name="pre-deployment"></a>Anterior a la implementación
-Puede decidir cómo integrar Azure Stack en su centro de datos. Microsoft ha colaborado con proveedores de soluciones para publicar una [hoja de cálculo de implementación](azure-stack-deployment-worksheet.md) para ayudarle a recopilar la información necesaria.
+Puede decidir cómo integrar Azure Stack Hub en el centro de datos. Microsoft ha colaborado con proveedores de soluciones para publicar una [hoja de cálculo de implementación](azure-stack-deployment-worksheet.md) para ayudarle a recopilar la información necesaria.
 El artículo sobre [consideraciones generales de integración del centro de datos](azure-stack-datacenter-integration.md) proporciona información que le ayudará a completar esta plantilla, conocida como hoja de cálculo de implementación.
 
 > [!IMPORTANT]
@@ -89,23 +89,23 @@ El artículo sobre [consideraciones generales de integración del centro de dato
 
 Debe elegir los siguientes elementos:
 
-- **El modelo de conexión y el proveedor de identidades de Azure Stack**. Puede implementar Azure Stack, ya sea [con conexión a Internet (y a Azure) o sin conexión](azure-stack-connection-models.md). Para sacar el máximo partido a Azure Stack, incluidos los escenarios híbridos, es posible que quiera implementar la opción con conexión a Azure. La elección de Servicios de federación de Active Directory (AD FS) o de Azure Active Directory (Azure AD) es una decisión que se toma una sola vez y se realiza en el momento de la implementación. **Para cambiar el proveedor de identidades posteriormente es preciso volver a implementar todo el sistema**.
+- **El modelo de conexión y el proveedor de identidades de Azure Stack Hub**. Puede implementar Azure Stack Hub, ya sea [conectado a Internet (y a Azure) o desconectado](azure-stack-connection-models.md). Para sacar el máximo partido a Azure Stack Hub, incluidos los escenarios híbridos, es posible que quiera implementar la opción con conexión a Azure. La elección de Servicios de federación de Active Directory (AD FS) o de Azure Active Directory (Azure AD) es una decisión que se toma una sola vez y se realiza en el momento de la implementación. **Para cambiar el proveedor de identidades posteriormente es preciso volver a implementar todo el sistema**.
 
 - **Modelo de licencia**. Las opciones de modelos de licencia entre los que puede elegir dependen del tipo de implementación que tenga. Su elección del proveedor de identidades no repercute en las máquinas virtuales del inquilino, en el sistema de identidades ni en las cuentas que utilizan.
     - Los clientes que optan por una[implementación sin conexión](azure-stack-disconnected-deployment.md) solo tienen una opción: la facturación basada en la capacidad.
 
     - Los clientes que optan por una [implementación con conexión](azure-stack-connected-deployment.md) pueden elegir entre la facturación basada en la capacidad o el pago por uso. La facturación basada en capacidad requiere una suscripción de Azure con Contrato Enterprise (EA) para el registro. Esto es necesario para el registro, el cual proporciona la disponibilidad de los elementos en Azure Marketplace mediante una suscripción de Azure.
 
-- **Integración de red**. La [integración de red](azure-stack-network.md) es fundamental para la implementación, funcionamiento y administración de los sistemas de Azure Stack. Hay varias consideraciones que debe tener en cuenta para garantizar que la solución Azure Stack es resistente y tiene una infraestructura física de alta disponibilidad compatible con sus operaciones.
+- **Integración de red**. La [integración de red](azure-stack-network.md) es fundamental para la implementación, funcionamiento y administración de los sistemas de Azure Stack Hub. Hay varias consideraciones que debe tener en cuenta para garantizar que la solución Azure Stack Hub es resistente y tiene una infraestructura física de alta disponibilidad compatible con sus operaciones.
 
-- **Integración de firewall**. Se recomienda que [use un firewall](azure-stack-firewall.md) para ayudar a proteger Azure Stack. Los firewalls ayudan a evitar ataques de DDOS, detectar intrusiones e inspeccionar contenidos. Sin embargo, debe tener en cuenta que se puede convertir en un cuello de botella de rendimiento para los servicios de almacenamiento de Azure.
+- **Integración de firewall**. Se recomienda que [use un firewall](azure-stack-firewall.md) para ayudar a proteger Azure Stack Hub. Los firewalls ayudan a evitar ataques de DDOS, detectar intrusiones e inspeccionar contenidos. Sin embargo, debe tener en cuenta que se puede convertir en un cuello de botella de rendimiento para los servicios de almacenamiento de Azure.
 
 - **Requisitos de certificados**. Es fundamental que todos los [certificados necesarios](azure-stack-pki-certs.md) estén disponibles *antes* de que un ingeniero llegue in situ al centro de datos para la implementación.
 
-Una vez recopilada toda la información sobre los requisitos previos mediante la hoja de cálculo de implementación, el proveedor de soluciones comenzará el proceso de fábrica según los datos recopilados para garantizar una correcta integración de Azure Stack en su centro de datos.
+Una vez recopilada toda la información sobre los requisitos previos mediante la hoja de cálculo de implementación, el proveedor de soluciones comenzará el proceso de fábrica según los datos recopilados para garantizar una correcta integración de Azure Stack Hub en el centro de datos.
 
 ## <a name="hardware-delivery"></a>Entrega de hardware 
-El proveedor de soluciones colaborará con usted a la hora de programar la llegada de la solución a sus instalaciones. Una vez recibida y colocada, deberá programar una hora con el proveedor de soluciones para que un ingeniero se desplace in situ para llevar a cabo la implementación de Azure Stack.
+El proveedor de soluciones colaborará con usted a la hora de programar la llegada de la solución a sus instalaciones. Una vez recibida y colocada, deberá programar una hora con el proveedor de soluciones para que un ingeniero se desplace in situ para llevar a cabo la implementación de Azure Stack Hub.
 
 Es **fundamental** que todos los datos sobre requisitos previos estén bloqueados y disponibles *antes de que llegue el ingeniero in situ para implementar la solución*.
 
@@ -119,7 +119,7 @@ Es **fundamental** que todos los datos sobre requisitos previos estén bloqueado
 > Si algo de esta información ha cambiado, asegúrese de comunicar el cambio al proveedor de soluciones antes de programar la implementación real.
 
 ## <a name="onsite-deployment"></a>Implementación in situ 
-Para implementar Azure Stack debe estar presente in situ un ingeniero de parte de su proveedor de soluciones de hardware para iniciar la implementación. Para garantizar una implementación correcta, asegúrese de que la información que proporcionó mediante la hoja de cálculo de implementación no ha cambiado.
+Para implementar Azure Stack Hub debe estar presente in situ un ingeniero de parte de su proveedor de soluciones de hardware para iniciar la implementación. Para garantizar una implementación correcta, asegúrese de que la información que proporcionó mediante la hoja de cálculo de implementación no ha cambiado.
 
 Estas comprobaciones son las que debe esperar del ingeniero que se ha desplazado al lugar durante el proceso de implementación:
 
@@ -153,7 +153,7 @@ Las acciones que debe realizar el asociado de OEM son:
 
 Hay varios pasos que son obligatorios u opcionales según el tipo de instalación.
 
-- Si la implementación se ha completado mediante [AD FS](azure-stack-integrate-identity.md), la marca de Azure Stack se deberá integrar con la propia instancia de AD FS del cliente.
+- Si la implementación se ha completado mediante [AD FS](azure-stack-integrate-identity.md), la marca de Azure Stack Hub se deberá integrar con la propia marca de AD FS del cliente.
 
   > [!NOTE]
   > Este paso es responsabilidad del cliente, aunque el asociado puede ofrecer sus servicios para hacerlo.
@@ -164,14 +164,14 @@ Hay varios pasos que son obligatorios u opcionales según el tipo de instalació
 
   -   [Integración de Nagios](azure-stack-integrate-monitor.md#integrate-with-nagios).
 
-## <a name="schedule"></a>Schedule
+## <a name="schedule"></a>Programación
 
-![Escala de tiempo general para la implementación in situ de Azure Stack](./media/azure-stack-datacenter-integration-walkthrough/image1.png)
+![Escala de tiempo general para la implementación in situ de Azure Stack Hub](./media/azure-stack-datacenter-integration-walkthrough/image1.png)
 
 ## <a name="support"></a>Soporte técnico
-Azure Stack ofrece una experiencia de soporte técnico integrado y coherente que cubre todo el ciclo de vida del sistema. Para recibir soporte técnico para los sistemas integrados de Azure Stack, los clientes necesitan dos contratos: uno con Microsoft (o con el proveedor de la solución en la nube) en el caso del soporte técnico para los servicios de Azure, y otro con el proveedor del hardware para el soporte técnico del sistema. La experiencia de soporte técnico integrado proporciona un escalado y resolución coordinados que hace que los clientes obtengan una experiencia de soporte coherente sin importar a quién llaman primero. Para los clientes que ya disponen de soporte Premier, Azure Estándar/ProDirect o Partner con Microsoft, se incluye el soporte técnico del software de Azure Stack.
+Azure Stack Hub ofrece una experiencia de soporte técnico integrado y coherente con Azure que cubre todo el ciclo de vida del sistema. Para recibir soporte técnico para los sistemas integrados de Azure Stack Hub, los clientes necesitan dos contratos: uno con Microsoft (o con el proveedor de la solución en la nube) en el caso del soporte técnico para los servicios de Azure, y otro con el proveedor del hardware para el soporte técnico del sistema. La experiencia de soporte técnico integrado proporciona un escalado y resolución coordinados que hace que los clientes obtengan una experiencia de soporte coherente sin importar a quién llaman primero. Para los clientes que ya disponen de soporte Premier, Azure Estándar/ProDirect o Partner con Microsoft, se incluye el soporte técnico del software de Azure Stack Hub.
 
-La experiencia de soporte técnico integrado hace uso de un mecanismo de intercambio de casos para realizar una transferencia bidireccional de casos de soporte técnico y actualizaciones de casos entre Microsoft y el asociado de hardware. Microsoft Azure Stack sigue la [directiva de ciclo de vida actual](https://support.microsoft.com/help/30881).
+La experiencia de soporte técnico integrado hace uso de un mecanismo de intercambio de casos para realizar una transferencia bidireccional de casos de soporte técnico y actualizaciones de casos entre Microsoft y el asociado de hardware. Microsoft Azure Stack Hub sigue la [directiva de ciclo de vida actual](https://support.microsoft.com/help/30881).
 
 ## <a name="next-steps"></a>Pasos siguientes
 Obtenga más información sobre las [consideraciones generales de integración del centro de datos](azure-stack-datacenter-integration.md).

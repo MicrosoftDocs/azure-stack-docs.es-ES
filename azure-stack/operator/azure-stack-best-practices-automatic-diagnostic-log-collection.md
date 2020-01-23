@@ -1,6 +1,6 @@
 ---
-title: Procedimientos recomendados para la recopilación de registros automática de Azure Stack | Microsoft Docs
-description: Procedimientos recomendados para la recopilación de registros automática en Ayuda y soporte técnico de Azure Stack
+title: Procedimientos recomendados para la recopilación automática de registros de Azure Stack Hub | Microsoft Docs
+description: Procedimientos recomendados para la recopilación automática de registros en Ayuda y soporte técnico de Azure Stack Hub
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -16,23 +16,20 @@ ms.date: 07/25/2019
 ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 07/25/2019
-ms.openlocfilehash: 03fb0550bfaa41a3336ff17dd1c44e03bcea1402
-ms.sourcegitcommit: b752f4e6733d9ebe56dbd171a14528dcb9a693fd
+ms.openlocfilehash: 7baa7440fec1c29ee43c5d3f80282bd6a58a3242
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68522043"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883038"
 ---
-# <a name="best-practices-for-automatic-azure-stack-log-collection"></a>Procedimientos recomendados para la recopilación de registros automática de Azure Stack 
+# <a name="best-practices-for-automatic-azure-stack-hub-log-collection"></a>Procedimientos recomendados para la recopilación automática de registros de Azure Stack Hub 
 
-*Se aplica a: Sistemas integrados de Azure Stack*
+En este tema se explican los procedimientos recomendados para administrar la recopilación automática de registros de diagnóstico en Azure Stack Hub. 
 
+## <a name="collecting-logs-from-multiple-azure-stack-hub-systems"></a>Recopilación de registros de varios sistemas de Azure Stack Hub
 
-En este tema se explican los procedimientos recomendados para administrar la recopilación de registros de diagnóstico automática de Azure Stack. 
-
-## <a name="collecting-logs-from-multiple-azure-stack-systems"></a>Recopilación de registros de varios sistemas de Azure Stack
-
-Configure un contenedor de blobs para todas las unidades de escalado de Azure Stack desde las que desee recopilar los registros. Para obtener más información sobre cómo configurar el contenedor de blobs, consulte [Configuración de la recopilación de registros de diagnóstico automática de Azure Stack](azure-stack-configure-automatic-diagnostic-log-collection.md). Como procedimiento recomendado, guarde solo los registros de diagnóstico de la misma unidad de escalado de Azure Stack en un solo contenedor de blobs. 
+Configure un contenedor de blobs para todas las unidades de escalado de Azure Stack Hub de las que quiera recopilar registros. Para más información sobre cómo configurar el contenedor de blobs, consulte [Configuración de la recopilación de registros de diagnóstico automática de Azure Stack Hub](azure-stack-configure-automatic-diagnostic-log-collection.md). Como procedimiento recomendado, guarde solo los registros de diagnóstico de la misma unidad de escalado de Azure Stack Hub en un solo contenedor de blobs. 
 
 ## <a name="retention-policy"></a>Directiva de retención
 
@@ -63,18 +60,18 @@ La siguiente tabla puede ayudar a los entornos con conexiones limitadas a Azure 
 
 | Conexión de red | Impacto |
 |--------------------|--------|
-| Conexión de alta latencia o ancho de banda bajo | La carga de registros se completará durante un tiempo ampliado | 
+| Conexión de alta latencia o ancho de banda bajo | La carga de registros tardará una cantidad de tiempo ampliada en completarse | 
 | Conexión compartida | La carga solo puede afectar a otras aplicaciones o usuarios que comparten la conexión de red |
-| Conexión limitada | Puede haber un cargo adicional de su ISP para el uso de la red adicional |
+| Conexión de uso medido | Puede haber un cargo adicional de su ISP por el uso adicional de la red |
 
 
 ## <a name="managing-costs"></a>Administración de los costos
 
 Los [cargos de Azure Blob](https://azure.microsoft.com/pricing/details/storage/blobs/) Storage dependen de cuántos datos se guardan cada mes y de otros factores como la redundancia de datos. Si no tiene una cuenta de almacenamiento existente, puede iniciar sesión en Azure Portal, hacer clic en **Cuentas de almacenamiento** y seguir los pasos para [crear una dirección URL de SAS del contenedor de blobs de Azure](azure-stack-configure-automatic-diagnostic-log-collection.md).
 
-Como procedimiento recomendado, cree una [directiva de administración del ciclo de vida](https://docs.microsoft.com/azure/storage/blobs/storage-lifecycle-management-concepts) de Azure Blob Storage para minimizar los costos de almacenamiento en curso. Para obtener más información sobre cómo configurar la cuenta de almacenamiento, consulte [Configuración de la recopilación de registros de diagnóstico automática de Azure Stack](azure-stack-configure-automatic-diagnostic-log-collection.md)
+Como procedimiento recomendado, cree una [directiva de administración del ciclo de vida](https://docs.microsoft.com/azure/storage/blobs/storage-lifecycle-management-concepts) de Azure Blob Storage para minimizar los costos de almacenamiento en curso. Para más información sobre cómo configurar la cuenta de almacenamiento, consulte [Configuración de la recopilación de registros de diagnóstico automática de Azure Stack Hub](azure-stack-configure-automatic-diagnostic-log-collection.md).
 
-## <a name="see-also"></a>Otras referencias
+## <a name="see-also"></a>Consulte también
 
-[Configuración de la recopilación de registros automática de Azure Stack](azure-stack-best-practices-automatic-diagnostic-log-collection.md)
+[Configuración de la recopilación de registros de diagnóstico automática de Azure Stack Hub](azure-stack-best-practices-automatic-diagnostic-log-collection.md)
 

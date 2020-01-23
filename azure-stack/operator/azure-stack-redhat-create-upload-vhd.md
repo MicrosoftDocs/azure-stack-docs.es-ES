@@ -1,6 +1,6 @@
 ---
-title: Preparación de una máquina virtual basada en Red Hat para Azure Stack | Microsoft Docs
-titleSuffix: Azure Stack
+title: Preparación de una máquina virtual basada en Red Hat para Azure Stack Hub | Microsoft Docs
+titleSuffix: Azure Stack Hub
 description: Aprenda a crear y cargar un disco duro virtual (VHD) de Azure que contiene un sistema operativo Red Hat Linux.
 services: azure-stack
 documentationcenter: ''
@@ -18,18 +18,18 @@ ms.date: 12/11/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 12/11/2019
-ms.openlocfilehash: be51964d4416e632f5ef3462c3c42861a82e47d5
-ms.sourcegitcommit: a6c02421069ab9e72728aa9b915a52ab1dd1dbe2
+ms.openlocfilehash: 381cc82bcade8196f6e65a9c82bfef9b9093724d
+ms.sourcegitcommit: ce01b2cd114ca8ab5b70c6311b66c58ceb054469
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75654906"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75924414"
 ---
-# <a name="prepare-a-red-hat-based-virtual-machine-for-azure-stack"></a>Preparación de una máquina virtual basada en Red Hat para Azure Stack
+# <a name="prepare-a-red-hat-based-virtual-machine-for-azure-stack-hub"></a>Preparación de una máquina virtual basada en Red Hat para Azure Stack Hub
 
-En este artículo, aprenderá a preparar una máquina virtual de Red Hat Enterprise Linux (RHEL) para usarla en Azure Stack. Las versiones de RHEL que se tratan en este artículo son 7.1+. Los hipervisores de preparación que se tratan en este artículo son Hyper-V, máquina virtual basada en kernel (KVM) y VMware.
+En este artículo, aprenderá a preparar una máquina virtual de Red Hat Enterprise Linux (RHEL) para usarla en Azure Stack Hub. Las versiones de RHEL que se tratan en este artículo son 7.1+. Los hipervisores de preparación que se tratan en este artículo son Hyper-V, máquina virtual basada en kernel (KVM) y VMware.
 
-Para obtener información de soporte técnico de Red Hat Enterprise Linux, consulte [Red Hat and Azure Stack: Frequently Asked Questions](https://access.redhat.com/articles/3413531) (Red Hat y Azure Stack: preguntas más frecuentes).
+Para información de soporte técnico de Red Hat Enterprise Linux, consulte [Red Hat y Azure Stack Hub: Frequently Asked Questions](https://access.redhat.com/articles/3413531) (Red Hat y Azure Stack: preguntas más frecuentes).
 
 ## <a name="prepare-a-red-hat-based-vm-from-hyper-v-manager"></a>Preparación de una máquina virtual basada en Red Hat desde el Administrador de Hyper-V
 
@@ -37,14 +37,14 @@ En esta sección se supone que ya tiene un archivo ISO en el sitio web de Red Ha
 
 ### <a name="rhel-installation-notes"></a>Notas de instalación de RHEL
 
-* Azure Stack no admite el formato VHDX. Azure solo admite VHD fijo. Puede usar el Administrador de Hyper-V para convertir el disco al formato VHD, o puede usar el cmdlet convert-vhd. Si usa VirtualBox, seleccione **Tamaño fijo** a diferencia de la opción predeterminada asignada dinámicamente al crear el disco.
-* Azure Stack solo admite máquinas virtuales de la generación 1. Puede convertir una máquina virtual de generación 1 de VHDX al formato de archivo VHD y de un disco de expansión dinámica a otro de tamaño fijo. No puede cambiar la generación de una máquina virtual. Para más información, consulte [¿Debería crear una máquina virtual de generación 1 o 2 en Hyper-V?](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v)
+* Azure Stack Hub no admite el formato VHDX. Azure solo admite VHD fijo. Puede usar el Administrador de Hyper-V para convertir el disco al formato VHD, o puede usar el cmdlet convert-vhd. Si usa VirtualBox, seleccione **Tamaño fijo** a diferencia de la opción predeterminada asignada dinámicamente al crear el disco.
+* Azure Stack Hub solo admite máquinas virtuales de la generación 1. Puede convertir una máquina virtual de generación 1 de VHDX al formato de archivo VHD y de un disco de expansión dinámica a otro de tamaño fijo. No puede cambiar la generación de una máquina virtual. Para más información, consulte [¿Debería crear una máquina virtual de generación 1 o 2 en Hyper-V?](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v)
 * El tamaño máximo permitido para los discos duros virtuales es de 1023 GB.
 * Al instalar el sistema operativo Linux se recomienda usar las particiones estándar en lugar de Logical Volume Manager (LVM) que a menudo viene de forma predeterminada en muchas instalaciones. Esta práctica evita los conflictos de nombres LVM con máquinas virtuales clonadas, especialmente si alguna vez necesita conectar un disco de sistema operativo a otra máquina virtual idéntica para solucionar el problema.
 * Se requiere la compatibilidad de kernel para el montaje de sistemas de archivos de formato de disco universal (UDF). En el primer arranque, los medios con formato UDF conectados al invitado pasan la configuración de aprovisionamiento a la máquina virtual Linux. El agente Linux de Azure debe montar el sistema de archivos UDF para leer su configuración y aprovisionar la máquina virtual.
 * No configure una partición de intercambio en el disco del sistema operativo. El agente de Linux se puede configurar para crear un archivo de intercambio en el disco de recursos temporal. Puede encontrar más información al respecto en los pasos siguientes.
 * En Azure, todos los discos duros virtuales deben tener un tamaño virtual alineado con 1 MB. Al convertir un disco sin formato en un disco duro virtual, tiene que asegurarse de que su tamaño es un múltiplo de 1 MB antes de la conversión. Se puede encontrar más información en los siguientes pasos.
-* Azure Stack admite cloud-init. [cloud-init](https://docs.microsoft.com/azure/virtual-machines/linux/using-cloud-init) es un enfoque ampliamente usado para personalizar una máquina virtual Linux la primera vez que se arranca. Puede usar cloud-init para instalar paquetes y escribir archivos o para configurar los usuarios y la seguridad. Dado que se llama a cloud-init durante el proceso de arranque inicial, no se necesitan pasos adicionales ni agentes para aplicar la configuración. Para obtener instrucciones sobre cómo agregar cloud-init a la imagen, consulte [Preparación de la imagen de máquina virtual Linux en Azure para usarse con cloud-init](https://docs.microsoft.com/azure/virtual-machines/linux/cloudinit-prepare-custom-image).
+* Azure Stack Hub admite cloud-init. [cloud-init](https://docs.microsoft.com/azure/virtual-machines/linux/using-cloud-init) es un enfoque ampliamente usado para personalizar una máquina virtual Linux la primera vez que se arranca. Puede usar cloud-init para instalar paquetes y escribir archivos o para configurar los usuarios y la seguridad. Dado que se llama a cloud-init durante el proceso de arranque inicial, no se necesitan pasos adicionales ni agentes para aplicar la configuración. Para obtener instrucciones sobre cómo agregar cloud-init a la imagen, consulte [Preparación de la imagen de máquina virtual Linux en Azure para usarse con cloud-init](https://docs.microsoft.com/azure/virtual-machines/linux/cloudinit-prepare-custom-image).
 
 ### <a name="prepare-an-rhel-7-vm-from-hyper-v-manager"></a>Preparación de una máquina virtual de RHEL 7 desde el Administrador de Hyper-V
 
@@ -117,7 +117,7 @@ En esta sección se supone que ya tiene un archivo ISO en el sitio web de Red Ha
     ClientAliveInterval 180
     ```
 
-1. Al crear un disco duro virtual personalizado para Azure Stack, tenga en cuenta que las versiones de WALinuxAgent entre 2.2.20 y 2.2.35 (ambas no inclusive) no funcionan en los entornos de Azure Stack anteriores a la versión 1910. Puede usar las versiones 2.2.20/2.2.35 para preparar su imagen. Para usar versiones posteriores a 2.2.35 para preparar la imagen personalizada, actualice Azure Stack a la versión 1903 y posteriores, o aplique la revisión 1901/1902.
+1. Al crear un disco duro virtual personalizado para Azure Stack Hub, tenga en cuenta que las versiones de WALinuxAgent entre 2.2.20 y 2.2.35 (ambas no inclusive) no funcionan en los entornos de Azure Stack Hub anteriores a la versión 1910. Puede usar las versiones 2.2.20/2.2.35 para preparar su imagen. Para usar versiones posteriores a 2.2.35 para preparar la imagen personalizada, actualice Azure Stack Hub a la versión 1903 y posteriores, o aplique la revisión 1901/1902.
 
     [Antes de la versión 1910] Siga estas instrucciones para descargar un WALinuxAgent compatible:
 
@@ -189,7 +189,7 @@ En esta sección se supone que ya tiene un archivo ISO en el sitio web de Red Ha
     sudo subscription-manager unregister
     ```
 
-1. Si usa un sistema que se implementó con una entidad de certificación empresarial, la máquina virtual de RHEL no confiará en el certificado raíz de Azure Stack. Se debe colocar en el almacén raíz de confianza. Para más información, consulte el artículo sobre cómo [agregar certificados raíz de confianza al servidor](https://manuals.gfi.com/en/kerio/connect/content/server-configuration/ssl-certificates/adding-trusted-root-certificates-to-the-server-1605.html).
+1. Si usa un sistema que se implementó con una entidad de certificación empresarial, la máquina virtual de RHEL no confiará en el certificado raíz de Azure Stack Hub. Se debe colocar en el almacén raíz de confianza. Para más información, consulte el artículo sobre cómo [agregar certificados raíz de confianza al servidor](https://manuals.gfi.com/en/kerio/connect/content/server-configuration/ssl-certificates/adding-trusted-root-certificates-to-the-server-1605.html).
 
 1. Ejecute los comandos siguientes para desaprovisionar la máquina virtual y prepararla para el aprovisionamiento en Azure:
 
@@ -316,7 +316,7 @@ En esta sección se supone que ya tiene un archivo ISO en el sitio web de Red Ha
     ClientAliveInterval 180
     ```
 
-1. Al crear un disco duro virtual personalizado para Azure Stack, tenga en cuenta que las versiones de WALinuxAgent entre 2.2.20 y 2.2.35 (ambas no inclusive) no funcionan en los entornos de Azure Stack anteriores a la versión 1910. Puede usar las versiones 2.2.20/2.2.35 para preparar su imagen. Para usar versiones posteriores a 2.2.35 para preparar la imagen personalizada, actualice Azure Stack a la versión 1903 y posteriores, o aplique la revisión 1901/1902.
+1. Al crear un disco duro virtual personalizado para Azure Stack Hub, tenga en cuenta que las versiones de WALinuxAgent entre 2.2.20 y 2.2.35 (ambas no inclusive) no funcionan en los entornos de Azure Stack Hub anteriores a la versión 1910. Puede usar las versiones 2.2.20/2.2.35 para preparar su imagen. Para usar versiones posteriores a 2.2.35 para preparar la imagen personalizada, actualice Azure Stack Hub a la versión 1903 y posteriores, o aplique la revisión 1901/1902.
 
     [Antes de la versión 1910] Siga estas instrucciones para descargar un WALinuxAgent compatible:
 
@@ -387,7 +387,7 @@ En esta sección se supone que ya tiene un archivo ISO en el sitio web de Red Ha
     subscription-manager unregister
     ```
 
-1. Si usa un sistema que se implementó con una entidad de certificación empresarial, la máquina virtual de RHEL no confiará en el certificado raíz de Azure Stack. Se debe colocar en el almacén raíz de confianza. Para más información, consulte el artículo sobre cómo [agregar certificados raíz de confianza al servidor](https://manuals.gfi.com/en/kerio/connect/content/server-configuration/ssl-certificates/adding-trusted-root-certificates-to-the-server-1605.html).
+1. Si usa un sistema que se implementó con una entidad de certificación empresarial, la máquina virtual de RHEL no confiará en el certificado raíz de Azure Stack Hub. Se debe colocar en el almacén raíz de confianza. Para más información, consulte el artículo sobre cómo [agregar certificados raíz de confianza al servidor](https://manuals.gfi.com/en/kerio/connect/content/server-configuration/ssl-certificates/adding-trusted-root-certificates-to-the-server-1605.html).
 
 1. Ejecute los comandos siguientes para desaprovisionar la máquina virtual y prepararla para el aprovisionamiento en Azure:
 
@@ -434,7 +434,7 @@ En esta sección se supone que ya tiene un archivo ISO en el sitio web de Red Ha
 
 ## <a name="prepare-a-red-hat-based-vm-from-vmware"></a>Preparación de una máquina virtual basada en Red Hat desde VMware
 
-En esta sección se supone que ya instaló una máquina virtual RHEL en VMware. Para más información acerca de cómo instalar un sistema operativo en VMware, consulte [VMware Guest Operating System Installation Guide](https://partnerweb.vmware.com/GOSIG/home.html)(Guía de instalación de sistema operativo invitado de VMware).
+En esta sección se supone que ya instaló una máquina virtual RHEL en VMware. Para más información acerca de cómo instalar un sistema operativo en VMware, consulte [VMware Guest Operating System Installation Guide](https://aka.ms/aa6z600)(Guía de instalación de sistema operativo invitado de VMware).
 
 * Al instalar el sistema Linux se recomienda usar las particiones estándar en lugar de un LVM, que a menudo viene de forma predeterminada en muchas instalaciones. Este método impide que el nombre del LVM entre en conflicto con las máquinas virtuales clonadas, especialmente si en algún momento hace falta adjuntar un disco de sistema operativo a otra máquina virtual para solucionar problemas. Para los discos de datos se puede utilizar LVM o RAID si así se prefiere.
 * No configure una partición de intercambio en el disco del sistema operativo. Es posible configurar el agente de Linux para crear un archivo de intercambio en el disco de recursos temporal. Puede encontrar más información sobre esta configuración en los pasos siguientes.
@@ -521,7 +521,7 @@ En esta sección se supone que ya instaló una máquina virtual RHEL en VMware. 
     ClientAliveInterval 180
     ```
 
-1. Al crear un disco duro virtual personalizado para Azure Stack, tenga en cuenta que las versiones de WALinuxAgent entre 2.2.20 y 2.2.35 (ambas no inclusive) no funcionan en los entornos de Azure Stack anteriores a la versión 1910. Puede usar las versiones 2.2.20/2.2.35 para preparar su imagen. Para usar versiones posteriores a 2.2.35 para preparar la imagen personalizada, actualice Azure Stack a la versión 1903 y posteriores, o aplique la revisión 1901/1902.
+1. Al crear un disco duro virtual personalizado para Azure Stack Hub, tenga en cuenta que las versiones de WALinuxAgent entre 2.2.20 y 2.2.35 (ambas no inclusive) no funcionan en los entornos de Azure Stack Hub anteriores a la versión 1910. Puede usar las versiones 2.2.20/2.2.35 para preparar su imagen. Para usar versiones posteriores a 2.2.35 para preparar la imagen personalizada, actualice Azure Stack Hub a la versión 1903 y posteriores, o aplique la revisión 1901/1902.
 
     [Antes de la versión 1910] Siga estas instrucciones para descargar un WALinuxAgent compatible:
 
@@ -592,7 +592,7 @@ En esta sección se supone que ya instaló una máquina virtual RHEL en VMware. 
     sudo subscription-manager unregister
     ```
 
-1. Si usa un sistema que se implementó con una entidad de certificación empresarial, la máquina virtual de RHEL no confiará en el certificado raíz de Azure Stack. Se debe colocar en el almacén raíz de confianza. Para más información, consulte el artículo sobre cómo [agregar certificados raíz de confianza al servidor](https://manuals.gfi.com/en/kerio/connect/content/server-configuration/ssl-certificates/adding-trusted-root-certificates-to-the-server-1605.html).
+1. Si usa un sistema que se implementó con una entidad de certificación empresarial, la máquina virtual de RHEL no confiará en el certificado raíz de Azure Stack Hub. Se debe colocar en el almacén raíz de confianza. Para más información, consulte el artículo sobre cómo [agregar certificados raíz de confianza al servidor](https://manuals.gfi.com/en/kerio/connect/content/server-configuration/ssl-certificates/adding-trusted-root-certificates-to-the-server-1605.html).
 
 1. Ejecute los comandos siguientes para desaprovisionar la máquina virtual y prepararla para el aprovisionamiento en Azure:
 
@@ -637,7 +637,7 @@ En esta sección se supone que ya instaló una máquina virtual RHEL en VMware. 
 
 ## <a name="prepare-a-red-hat-based-vm-from-an-iso-by-using-a-kickstart-file-automatically"></a>Preparación de una máquina virtual basada en Red Hat desde una imagen ISO con un archivo kickstart automáticamente
 
-1. Cree un archivo kickstart que incluye el contenido siguiente y guarde el archivo. La detención y desinstalación de cloud-init es opcional (cloud-init se admite en las versiones de Azure Stack posteriores a la 1910). Instale el agente desde el repositorio de RedHat solo después de la versión 1910. Antes de esa versión, use el repositorio de Azure como se ha hecho en la sección anterior. Para obtener información más detallada sobre la instalación de Kickstart, consulte la [guía de instalación de Kickstart](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-kickstart-installations.html).
+1. Cree un archivo kickstart que incluye el contenido siguiente y guarde el archivo. La detención y desinstalación de cloud-init es opcional (cloud-init se admite en las versiones de Azure Stack Hub posteriores a la 1910). Instale el agente desde el repositorio de RedHat solo después de la versión 1910. Antes de esa versión, use el repositorio de Azure como se ha hecho en la sección anterior. Para obtener información más detallada sobre la instalación de Kickstart, consulte la [guía de instalación de Kickstart](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-kickstart-installations.html).
 
     ```sh
     Kickstart for provisioning a RHEL 7 Azure VM
@@ -808,6 +808,6 @@ Para más información, consulte la información sobre cómo [recompilar initram
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Ya está listo para usar el disco duro virtual de Red Hat Enterprise Linux para crear máquinas virtuales de Azure Stack. Si es la primera vez que carga el archivo VHD en Azure Stack, consulte [Creación y publicación de un producto en Marketplace](azure-stack-create-and-publish-marketplace-item.md).
+Ya está listo para usar el disco duro virtual de Red Hat Enterprise Linux para crear máquinas virtuales de Azure Stack Hub. Si es la primera vez que carga el archivo VHD en Azure Stack Hub, consulte [Creación y publicación de un producto en Marketplace](azure-stack-create-and-publish-marketplace-item.md).
 
 Para más información sobre los hipervisores certificados para ejecutar Red Hat Enterprise Linux, visite el [sitio web de Red Hat](https://access.redhat.com/certified-hypervisors).

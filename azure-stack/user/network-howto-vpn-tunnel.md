@@ -1,6 +1,6 @@
 ---
-title: Configuración de un túnel de VPN de sitio a sitio en Azure Stack | Microsoft Docs
-description: Aprenda a configurar un túnel de VPN de sitio a sitio en Azure Stack.
+title: Configuración de un túnel de VPN de sitio a sitio en Azure Stack Hub | Microsoft Docs
+description: Aprenda a configurar un túnel de VPN de sitio a sitio en Azure Stack Hub.
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
@@ -9,18 +9,16 @@ ms.date: 09/19/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 09/19/2019
-ms.openlocfilehash: d85de1892e2e6620249ff3a95ee2debb01b81981
-ms.sourcegitcommit: cc3534e09ad916bb693215d21ac13aed1d8a0dde
+ms.openlocfilehash: 4593898a1ea70b2001c252f885b12db2f16e922e
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73168286"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883055"
 ---
-# <a name="how-to-set-up-a-multiple-site-to-site-vpn-tunnel-in-azure-stack"></a>Configuración de un túnel de VPN de sitio a sitio en Azure Stack
+# <a name="how-to-set-up-a-multiple-site-to-site-vpn-tunnel-in-azure-stack-hub"></a>Configuración de un túnel de VPN de sitio a sitio en Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
-
-En este artículo se muestra cómo utilizar una plantilla de Resource Manager en Azure Stack para implementar la solución. La solución crea varios grupos de recursos con redes virtuales asociadas y conecta estos sistemas.
+En este artículo se muestra cómo utilizar una plantilla de Resource Manager en Azure Stack Hub para implementar la solución. La solución crea varios grupos de recursos con redes virtuales asociadas y conecta estos sistemas.
 
 Puede encontrar las plantillas en el repositorio de GitHub [Azure Intelligent Edge Patterns](https://github.com/Azure-Samples/azure-intelligent-edge-patterns). La plantilla se encuentra en la carpeta **rras-gre-vnet-vnet**. 
 
@@ -34,7 +32,7 @@ Puede encontrar las plantillas en el repositorio de GitHub [Azure Intelligent Ed
 
 -  Implemente una aplicación de tres niveles: web, aplicación y base de datos.
 
--  Implemente las dos primeras plantillas en instancias de Azure Stack independientes.
+-  Implemente las dos primeras plantillas en instancias de Azure Stack Hub independientes.
 
 -  **WebTier** se implementará en PPE1 y **AppTier** en PPE2.
 
@@ -44,15 +42,15 @@ Puede encontrar las plantillas en el repositorio de GitHub [Azure Intelligent Ed
 
 ## <a name="steps-to-deploy-multiple-vpns"></a>Pasos para implementar varias VPN
 
-Este proceso tiene varios pasos. Para esta solución usará el portal de Azure Stack. Sin embargo, puede usar PowerShell, la CLI de Azure u otras cadenas de herramientas de infraestructura como código para capturar las salidas y usarlas como entradas.
+Este proceso tiene varios pasos. Para esta solución usará el portal de Azure Stack Hub. Sin embargo, puede usar PowerShell, la CLI de Azure u otras cadenas de herramientas de infraestructura como código para capturar las salidas y usarlas como entradas.
 
 ![texto alternativo](./media/azure-stack-network-howto-vpn-tunnel/image2.png)
 
 ## <a name="walkthrough"></a>Tutorial
 
-### <a name="deploy-web-tier-to-azure-stack-instances-ppe1"></a>Implementación del nivel web en instancias de Azure Stack PPE1
+### <a name="deploy-web-tier-to-azure-stack-hub-instances-ppe1"></a>Implementación del nivel web en instancias de Azure Stack Hub PPE1
 
-1.  Abra el portal de usuarios de Azure Stack y seleccione **Create a resource** (Crear un recurso).
+1.  Abra el portal de usuarios de Azure Stack Hub y seleccione **Crear un recurso**.
 
 2.  Seleccione **Template Deployment** (Implementación de plantillas).
 
@@ -69,7 +67,7 @@ Este proceso tiene varios pasos. Para esta solución usará el portal de Azure S
 
     ![](./media/azure-stack-network-howto-vpn-tunnel/image5.png)
 
-### <a name="deploy-app-tier-to-the-second-azure-stack-instances"></a>Implementación de la capa de aplicación en la segunda instancia de Azure Stack
+### <a name="deploy-app-tier-to-the-second-azure-stack-hub-instances"></a>Implementación de la capa de aplicación en la segunda instancia de Azure Stack Hub
 
 Puede usar el mismo proceso que **WebTier** pero parámetros diferentes, como se muestra aquí:
 
@@ -96,7 +94,7 @@ Puede usar el mismo proceso que **WebTier** pero parámetros diferentes, como se
 
 ### <a name="create-tunnel-from-web-tier-to-app-tier"></a>Creación de un túnel desde el nivel de web al nivel de aplicación
 
-1.  Abra el portal de usuarios de Azure Stack y seleccione **Create a resource** (Crear un recurso).
+1.  Abra el portal de usuarios de Azure Stack Hub y seleccione **Crear un recurso**.
 
 2.  Seleccione **template deployment** (implementación de plantillas).
 
@@ -108,7 +106,7 @@ Puede usar el mismo proceso que **WebTier** pero parámetros diferentes, como se
 
 ### <a name="create-tunnel-from-app-tier-to-web-tier"></a>Creación de un túnel desde el nivel de aplicación al nivel de web
 
-1.  Abra el portal de usuarios de Azure Stack y seleccione **Create a resource** (Crear un recurso).
+1.  Abra el portal de usuarios de Azure Stack Hub y seleccione **Crear un recurso**.
 
 2.  Seleccione **Implementación de plantillas**.
 
@@ -163,7 +161,7 @@ Si ve la salida de la extensión del script personalizado, puede ver el túnel q
 
 ### <a name="configure-app-tier-to-db-tier"></a>Configuración del nivel de aplicación en el nivel de base de datos
 
-1.  Abra el portal de usuarios de Azure Stack y seleccione **Create a resource** (Crear un recurso).
+1.  Abra el portal de usuarios de Azure Stack Hub y seleccione **Crear un recurso**.
 
 2.  Seleccione **Implementación de plantillas**.
 
@@ -201,7 +199,7 @@ Si ve la salida de la extensión del script personalizado, puede ver el túnel q
     > Se puede probar RDP tanto desde una máquina hasta la segunda como desde la segunda hasta la primera.
 
     > [!Note]  
-    > Para implementar esta solución en un entorno local, necesitará implementar rutas de la red remota de Azure Stack en la infraestructura que cambia o, como mínimo, en máquinas virtuales concretas
+    > Para implementar esta solución en un entorno local, necesitará implementar rutas de la red remota de Azure Stack Hub en la infraestructura que cambia o, como mínimo, en máquinas virtuales concretas.
 
 ### <a name="deploying-a-gre-tunnel"></a>Implementación de un túnel GRE
 
@@ -213,6 +211,6 @@ El proceso es casi idéntico. Sin embargo, cuando implemente la plantilla de tú
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Diferencias y consideraciones para las redes de Azure Stack](azure-stack-network-differences.md)  
+[Diferencias y consideraciones para las redes de Azure Stack Hub](azure-stack-network-differences.md)  
 [Creación de un túnel de VPN mediante GRE](network-howto-vpn-tunnel-gre.md)  
 [Creación de un túnel de VPN mediante IPSEC](network-howto-vpn-tunnel-ipsec.md)

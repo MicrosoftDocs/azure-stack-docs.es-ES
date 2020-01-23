@@ -1,6 +1,6 @@
 ---
-title: Notas de la versión del proveedor de recursos MySQL de Azure Stack 1.1.30.0 | Microsoft Docs
-description: Consulte las notas de la versión para ver las novedades de la actualización de 1.1.30.0 del proveedor de recursos MySQL de Azure Stack.
+title: Notas de la versión del proveedor de recursos MySQL de Azure Stack Hub 1.1.30.0 | Microsoft Docs
+description: Consulte las notas de la versión para ver las novedades de la actualización 1.1.30.0 del proveedor de recursos MySQL de Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -16,40 +16,38 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 12/10/2018
-ms.openlocfilehash: fa21bb641589bb6da143696e0c925a0bfe51c1d0
-ms.sourcegitcommit: a23b80b57668615c341c370b70d0a106a37a02da
+ms.openlocfilehash: 59a998fbbd209402f03a532f3ce421ed3df53408
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72682200"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882443"
 ---
 # <a name="mysql-resource-provider-11300-release-notes"></a>Notas de la versión del proveedor de recursos de MySQL 1.1.30.0
-
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
 
 Estas notas de la versión describen las mejoras y los problemas conocidos de la versión del proveedor de recursos MySQL 1.1.30.0.
 
 ## <a name="build-reference"></a>Referencia de compilación
-Descargue el archivo binario del proveedor de recursos MySQL y ejecute el extractor automático para extraer el contenido en un directorio temporal. El proveedor de recursos tiene una compilación mínima correspondiente de Azure Stack. La versión mínima de Azure Stack necesaria para instalar esta versión del proveedor de recursos MySQL se muestra a continuación:
+Descargue el archivo binario del proveedor de recursos MySQL y ejecute el extractor automático para extraer el contenido en un directorio temporal. El proveedor de recursos tiene una compilación mínima correspondiente de Azure Stack Hub. La versión mínima de Azure Stack Hub necesaria para instalar esta versión del proveedor de recursos MySQL se muestra a continuación:
 
-> |Versión mínima de Azure Stack|Versión del proveedor de recursos MySQL|
+> |Versión mínima de Azure Stack Hub|Versión del proveedor de recursos MySQL|
 > |-----|-----|
-> |Actualización de Azure Stack 1808 (1.1808.0.97)|[1.1.30.0](https://aka.ms/azurestackmysqlrp11300)|
+> |Actualización de Azure Stack Hub 1808 (1.1808.0.97)|[1.1.30.0](https://aka.ms/azurestackmysqlrp11300)|
 > |     |     |
 
 > [!IMPORTANT]
-> Aplique la actualización de Azure Stack compatible mínima para el sistema integrado de Azure Stack o implemente el kit de desarrollo de Azure Stack (ASDK) más reciente antes de implementar la versión más reciente del proveedor de recursos MySQL.
+> Aplique la actualización mínima admitida de Azure Stack Hub al sistema integrado de Azure Stack Hub o implemente el Kit de desarrollo de Azure Stack (ASDK) más reciente antes de implementar la versión más reciente del proveedor de recursos MySQL.
 
 ## <a name="new-features-and-fixes"></a>Nuevas características y correcciones
-Esta versión del proveedor de recursos MySQL de Azure Stack incluye las siguientes mejoras y correcciones:
+Esta versión del proveedor de recursos MySQL de Azure Stack Hub incluye las siguientes mejoras y correcciones:
 
 - **Telemetría habilitada para las implementaciones del proveedor de recursos MySQL**. La colección de telemetría se ha habilitado para las implementaciones del proveedor de recursos MySQL. La telemetría recopilada incluye la implementación del proveedor de recursos, las horas de inicio y fin, el estado de salida, los mensajes de salida y los detalles del error (si procede).
 
-- **Actualización de cifrado TLS 1.2**. Se ha habilitado la compatibilidad solo de TLS 1.2 para la comunicación del proveedor de recursos con los componentes internos de Azure Stack. 
+- **Actualización de cifrado TLS 1.2**. Se ha habilitado la compatibilidad solo de TLS 1.2 para la comunicación del proveedor de recursos con los componentes internos de Azure Stack Hub. 
 
 ### <a name="fixes"></a>Correcciones
 
-- **Compatibilidad del proveedor de recursos MySQL con PowerShell de Azure Stack**. El proveedor de recursos MySQL se ha actualizado para funcionar con el perfil de PowerShell de Azure Stack 2018-03-01-hybrid y para proporcionar compatibilidad con AzureRM 1.3.0 y versiones posteriores.
+- **Compatibilidad del proveedor de recursos MySQL con PowerShell de Azure Stack Hub**. El proveedor de recursos MySQL se ha actualizado para funcionar con el perfil de PowerShell de Azure Stack Hub 2018-03-01-hybrid y para proporcionar compatibilidad con AzureRM 1.3.0 y versiones posteriores.
 
 - **Hoja de cambio de contraseña de inicio de sesión MySQL**. Se ha corregido un problema que impedía cambiar la contraseña en la hoja de cambio de contraseña. Se han quitado los vínculos de las notificaciones de cambio de contraseña.
 
@@ -77,8 +75,8 @@ Esta versión del proveedor de recursos MySQL de Azure Stack incluye las siguien
     [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
     ```
  
-### <a name="known-issues-for-cloud-admins-operating-azure-stack"></a>Problemas conocidos para los administradores en la nube que trabajan con Azure Stack
-Consulte la documentación de las [notas de la versión de Azure Stack](azure-stack-servicing-policy.md).
+### <a name="known-issues-for-cloud-admins-operating-azure-stack-hub"></a>Problemas conocidos para los administradores de la nube que trabajan con Azure Stack Hub
+Consulte la documentación de las [Notas de la versión de Azure Stack Hub](azure-stack-servicing-policy.md).
 
 ## <a name="next-steps"></a>Pasos siguientes
 [Obtener más información sobre el proveedor de recursos MySQL](azure-stack-mysql-resource-provider.md).

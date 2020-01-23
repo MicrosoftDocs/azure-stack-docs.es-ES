@@ -1,6 +1,6 @@
 ---
-title: Instalación del motor de AKS en Linux para Azure Stack | Microsoft Docs
-description: Aprenda a usar una máquina Linux en Azure Stack para hospedar el motor de AKS con el fin de implementar y administrar un clúster de Kubernetes.
+title: Instalación del motor de AKS en Linux para Azure Stack Hub | Microsoft Docs
+description: Aprenda a usar una máquina Linux en Azure Stack Hub para hospedar el motor de AKS con el fin de implementar y administrar un clúster de Kubernetes.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -11,26 +11,24 @@ ms.workload: na
 pms.tgt_pltfrm: na (Kubernetes)
 ms.devlang: nav
 ms.topic: article
-ms.date: 11/21/2019
+ms.date: 01/10/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 3095ede91ce8ac98f1571307c61b28e80aa90fba
-ms.sourcegitcommit: 0b783e262ac87ae67929dbd4c366b19bf36740f0
+ms.openlocfilehash: d9f56d8d40d4f4420e073516678017c4904dd7d1
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74310272"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75878958"
 ---
-# <a name="install-the-aks-engine-on-linux-in-azure-stack"></a>Instalación del motor de AKS en Linux para Azure Stack
+# <a name="install-the-aks-engine-on-linux-in-azure-stack-hub"></a>Instalación del motor de AKS en Linux para Azure Stack Hub
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
-
-Puede usar una máquina Linux en Azure Stack para hospedar el motor de AKS con el fin de implementar y administrar un clúster de Kubernetes. En este artículo, se examina la preparación de la máquina virtual cliente para administrar su clúster para instancias de Azure Stack conectadas y desconectadas, se comprueba la instalación y se configura la máquina virtual cliente en el ASDK.
+Puede usar una máquina Linux en Azure Stack Hub para hospedar el motor de AKS con el fin de implementar y administrar un clúster de Kubernetes. En este artículo, se examina la preparación de la máquina virtual cliente para administrar su clúster para instancias de Azure Stack Hub conectadas y desconectadas, se comprueba la instalación y se configura la máquina virtual cliente en ASDK.
 
 ## <a name="prepare-the-client-vm"></a>Preparación de la máquina virtual cliente
 
-El motor de AKS es una herramienta de línea de comandos que se usa para implementar y administrar el clúster de Kubernetes. El motor se puede ejecutar en una máquina de Azure Stack. Desde esta máquina, ejecutará el motor de AKS para implementar los recursos y el software de IaaS necesarios para ejecutar el clúster. Después, puede usar la máquina que ejecuta el motor para realizar tareas de administración en el clúster.
+El motor de AKS es una herramienta de línea de comandos que se usa para implementar y administrar el clúster de Kubernetes. El motor se puede ejecutar en una máquina de Azure Stack Hub. Desde esta máquina, ejecutará el motor de AKS para implementar los recursos y el software de IaaS necesarios para ejecutar el clúster. Después, puede usar la máquina que ejecuta el motor para realizar tareas de administración en el clúster.
 
 Al elegir la máquina cliente, tenga en cuenta lo siguiente:
 
@@ -39,11 +37,11 @@ Al elegir la máquina cliente, tenga en cuenta lo siguiente:
 
 ## <a name="install-in-a-connected-environment"></a>Instalación en un entorno conectado
 
-Puede instalar la máquina virtual cliente para administrar el clúster de Kubernetes en una instancia de Azure Stack conectada a Internet.
+Puede instalar la máquina virtual cliente para administrar el clúster de Kubernetes en una instancia de Azure Stack Hub conectada a Internet.
 
-1. Cree una máquina virtual Linux en Azure Stack. Para obtener instrucciones, consulte [Inicio rápido: Creación de una máquina virtual de servidor Linux mediante el portal de Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-quick-linux-portal).
+1. Cree una máquina virtual Linux en Azure Stack Hub. Para obtener instrucciones, consulte [Inicio rápido: Creación de una máquina virtual de servidor Linux mediante el portal de Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-quick-linux-portal).
 2. Conéctese a la máquina virtual.
-3. Busque la versión del motor de AKS en la tabla [Versiones admitidas de Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). La imagen base de AKS debe estar disponible en Marketplace de Azure Stack. Al ejecutar el comando, debe especificar la versión `--version v0.43.0`. Si no lo hace, el comando instalará la versión más reciente, que podría necesitar una imagen de VHD que no está disponible en Marketplace.
+3. Busque la versión del motor de AKS en la tabla [Versiones admitidas de Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). La imagen base de AKS debe estar disponible en Marketplace de Azure Stack Hub. Al ejecutar el comando, debe especificar la versión `--version v0.43.0`. Si no lo hace, el comando instalará la versión más reciente, que podría necesitar una imagen de VHD que no está disponible en Marketplace.
 4. Ejecute el siguiente comando:
 
     ```bash  
@@ -57,15 +55,15 @@ Puede instalar la máquina virtual cliente para administrar el clúster de Kuber
 
 ## <a name="install-in-a-disconnected-environment"></a>Instalación en un entorno desconectado
 
-Puede instalar la máquina virtual cliente para administrar el clúster de Kubernetes en una instancia de Azure Stack desconectada de Internet.
+Puede instalar la máquina virtual cliente para administrar el clúster de Kubernetes en una instancia de Azure Stack Hub desconectada de Internet.
 
 1.  Desde una máquina con acceso a Internet, vaya a GitHub [Azure/aks-engine](https://github.com/Azure/aks-engine/releases/latest). Descargue un archivo (*.tar.gz) para una máquina Linux, por ejemplo, `aks-engine-v0.xx.x-linux-amd64.tar.gz`.
 
-2.  Cree una cuenta de almacenamiento en la instancia de Azure Stack para cargar el archivo de almacenamiento (*.tar.gz) con el archivo binario del motor de AKS. Para obtener instrucciones sobre el uso del Explorador de Azure Storage, consulte [Explorador de Azure Storage con Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-storage-connect-se).
+2.  Cree una cuenta de almacenamiento en la instancia de Azure Stack Hub para cargar el archivo de almacenamiento (*.tar.gz) con el archivo binario del motor de AKS. Para obtener instrucciones sobre el uso del Explorador de Azure Storage, consulte [Explorador de Azure Storage con Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-storage-connect-se).
 
-3. Cree una máquina virtual Linux en Azure Stack. Para obtener instrucciones, consulte [Inicio rápido: Creación de una máquina virtual de servidor Linux mediante el portal de Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-quick-linux-portal).
+3. Cree una máquina virtual Linux en Azure Stack Hub. Para obtener instrucciones, consulte [Inicio rápido: Creación de una máquina virtual de servidor Linux mediante el portal de Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-quick-linux-portal).
 
-3.  Descargue el archivo en la máquina virtual de administración de la dirección URL del blob de la cuenta de almacenamiento de Azure Stack donde cargó el archivo de almacenamiento (*.tar.gz). Extraiga el archivo en el directorio `/usr/local/bin`.
+3.  Descargue el archivo en la máquina virtual de administración de la dirección URL del blob de la cuenta de Azure Stack Hub Storage donde cargó el archivo de almacenamiento (*.tar.gz). Extraiga el archivo en el directorio `/usr/local/bin`.
 
 4. Conéctese a la máquina virtual.
 
@@ -83,9 +81,16 @@ Una vez configurada la máquina virtual de cliente, compruebe que ha instalado A
 1. Conéctese a su máquina virtual cliente.
 2. Ejecute el siguiente comando:
 
-    ```bash  
-    aks-engine version
-    ```
+   ```bash  
+   aks-engine version
+   ```
+
+3. Si el punto de conexión de Azure Resource Manager utiliza un certificado autofirmado, debe agregar explícitamente el certificado raíz al almacén de certificados de confianza de la máquina. Puede encontrar el certificado raíz de la máquina virtual en este directorio: /var/lib/waagent/Certificates.pem. Copie el archivo de certificado con el siguiente comando: 
+
+   ```bash
+   sudo cp /var/lib/waagent/Certificates.pem /usr/local/share/ca-certificates/azurestackca.crt 
+   sudo update-ca-certificates
+   ```
 
 Si no puede comprobar que ha instalado el motor de AKS en la máquina virtual cliente, consulte [Solución de problemas de instalación del motor de AKS](azure-stack-kubernetes-aks-engine-troubleshoot.md).
 
@@ -107,4 +112,4 @@ sudo update-ca-certificates
 ## <a name="next-steps"></a>Pasos siguientes
 
 > [!div class="nextstepaction"]
-> [Implementación de un clúster de Kubernetes con AKS-Engine en Azure Stack](azure-stack-kubernetes-aks-engine-deploy-cluster.md)
+> [Implementación de un clúster de Kubernetes con el motor de AKS en Azure Stack Hub](azure-stack-kubernetes-aks-engine-deploy-cluster.md)

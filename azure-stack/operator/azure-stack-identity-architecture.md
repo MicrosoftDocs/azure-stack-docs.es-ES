@@ -1,6 +1,6 @@
 ---
-title: Arquitectura de identidad para Azure Stack | Microsoft Docs
-description: Obtenga información sobre la arquitectura de identidad para Azure Stack y las diferencias entre Azure AD y AD FS.
+title: Arquitectura de identidad para Azure Stack Hub | Microsoft Docs
+description: Obtenga información sobre la arquitectura de identidad para Azure Stack Hub y las diferencias entre Azure AD y AD FS.
 services: azure-stack
 documentationcenter: ''
 author: PatAltimore
@@ -16,16 +16,16 @@ ms.date: 05/09/2019
 ms.author: patricka
 ms.reviewer: fiseraci
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: 364028183445df7e74828605439bfd7b3784f01f
-ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
+ms.openlocfilehash: 952dd9d6333b917a986ce444355f3b9b694976ef
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72019409"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818084"
 ---
-# <a name="identity-architecture-for-azure-stack"></a>Arquitectura de identidad para Azure Stack
+# <a name="identity-architecture-for-azure-stack-hub"></a>Arquitectura de identidad para Azure Stack Hub
 
-Al elegir un proveedor de identidades para usarlo con Azure Stack, debe conocer las diferencias importantes entre las opciones de Azure Active Directory (Azure AD) y Servicios de federación de Active Directory (AD FS).
+Al elegir un proveedor de identidades para usarlo con Azure Stack Hub, debe conocer las importantes diferencias entre las opciones de Azure Active Directory (Azure AD) y Servicios de federación de Active Directory (AD FS).
 
 ## <a name="capabilities-and-limitations"></a>Funcionalidades y limitaciones
 
@@ -34,14 +34,14 @@ El proveedor de identidad que elija puede limitar las opciones, incluida la comp
 |Funcionalidad o escenario        |Azure AD  |AD FS  |
 |------------------------------|----------|-------|
 |Conectado a Internet     |Sí       |Opcional|
-|Compatibilidad con arquitectura multiinquilino     |Sí       |Sin      |
+|Compatibilidad con arquitectura multiinquilino     |Sí       |No      |
 |Ofrecer elementos en Marketplace |Sí       |Sí (requiere el uso de la herramienta [Marketplace Syndication sin conexión](azure-stack-download-azure-marketplace-item.md#disconnected-or-a-partially-connected-scenario))|
 |Compatibilidad con la biblioteca de autenticación de Active Directory (ADAL) |Sí |Sí|
 |Compatibilidad con herramientas como la CLI de Azure, Visual Studio y PowerShell  |Sí |Sí|
-|Creación de entidades de servicio mediante Azure Portal     |Sí |Sin|
+|Creación de entidades de servicio mediante Azure Portal     |Sí |No|
 |Creación de entidades de servicio con certificados      |Sí |Sí|
 |Creación de entidades de servicio con secretos (claves)    |Sí |Sí|
-|Las aplicaciones pueden usar el servicio Graph           |Sí |Sin|
+|Las aplicaciones pueden usar el servicio Graph           |Sí |No|
 |Las aplicaciones pueden utilizar el proveedor de identidades para iniciar sesión |Sí |Sí (requiere que las aplicaciones se federen con instancias de AD FS locales) |
 
 ## <a name="topologies"></a>Topologías
@@ -50,30 +50,30 @@ En las siguientes secciones se explican las diferentes topologías de identidad 
 
 ### <a name="azure-ad-single-tenant-topology"></a>Azure AD: topología de inquilino único
 
-De forma predeterminada, si instala Azure Stack y usa Azure AD, Azure Stack usa una topología de un único inquilino.
+De forma predeterminada, si instala Azure Stack Hub y usa Azure AD, Azure Stack Hub usa una topología de inquilino único.
 
 Una topología de inquilino único resulta útil cuando:
 - Todos los usuarios forman parte del mismo inquilino.
-- Un proveedor de servicios hospeda una instancia de Azure Stack para una organización.
+- Un proveedor de servicios hospeda una instancia de Azure Stack Hub para una organización.
 
-![Topología de Azure Stack con un solo inquilino y Azure AD](media/azure-stack-identity-architecture/single-tenant.png)
+![Topología de inquilino único de Azure Stack Hub y Azure AD](media/azure-stack-identity-architecture/single-tenant.png)
 
 Esta topología presenta las siguientes características:
 
-- Azure Stack registra todas las aplicaciones y servicios en el mismo directorio del inquilino de Azure AD.
-- Azure Stack autentica solo los usuarios y las aplicaciones desde ese directorio, incluidos los tokens.
+- Azure Stack Hub registra todas las aplicaciones y servicios en el mismo directorio del inquilino de Azure AD.
+- Azure Stack Hub autentica solo los usuarios y las aplicaciones desde ese directorio, incluidos los tokens.
 - Las identidades de los administradores (operadores en la nube) y los usuarios del inquilino están en el mismo inquilino de directorio.
-- Para permitir que un usuario de otro directorio acceda e este entorno de Azure Stack, debe [invitar al usuario como invitado](azure-stack-identity-overview.md#guest-users) al directorio de inquilino.
+- Para permitir que un usuario de otro directorio acceda e este entorno de Azure Stack Hub, debe [invitar al usuario como invitado](azure-stack-identity-overview.md#guest-users) al directorio de inquilino.
 
 ### <a name="azure-ad-multi-tenant-topology"></a>Azure AD: topología multiinquilino
 
-Los operadores de la nube pueden configurar Azure Stack para permitir el acceso a las aplicaciones por parte de inquilinos de una o varias organizaciones. Los usuarios acceden a las aplicaciones mediante el portal de usuarios de Azure Stack. En esta configuración, el portal de administración (usado por el operador en la nube) se limita a los usuarios desde un único directorio.
+Los operadores de la nube pueden configurar Azure Stack Hub para permitir el acceso a las aplicaciones por parte de inquilinos de una o varias organizaciones. Los usuarios acceden a las aplicaciones mediante el portal de usuarios de Azure Stack Hub. En esta configuración, el portal de administración (usado por el operador en la nube) se limita a los usuarios desde un único directorio.
 
 Una topología mutiinquilino resulta útil cuando:
 
-- Un proveedor de servicios desea permitir a los usuarios de varias organizaciones tener acceso a Azure Stack.
+- Un proveedor de servicios desea permitir que los usuarios de varias organizaciones accedan a Azure Stack Hub.
 
-![Topología multiinquilino de Azure Stack con Azure AD](media/azure-stack-identity-architecture/multi-tenant.png)
+![Topología multiinquilino de Azure Stack Hub con Azure AD](media/azure-stack-identity-architecture/multi-tenant.png)
 
 Esta topología presenta las siguientes características:
 
@@ -85,15 +85,15 @@ Esta topología presenta las siguientes características:
 
 La topología de AD FS es obligatoria cuando alguna de las siguientes condiciones es verdadera:
 
-- Azure Stack no se conecta a Internet.
-- Azure Stack puede conectarse a Internet, pero se decide usar AD FS para el proveedor de identidad.
+- Azure Stack Hub no se conecta a Internet.
+- Azure Stack Hub puede conectarse a Internet, pero se decide usar AD FS para el proveedor de identidades.
   
-![Topología de Azure Stack con AD FS](media/azure-stack-identity-architecture/adfs.png)
+![Topología de Azure Stack Hub con AD FS](media/azure-stack-identity-architecture/adfs.png)
 
 Esta topología presenta las siguientes características:
 
-- Para admitir el uso de esta topología en un entorno de producción, es necesario integrar la instancia de AD FS de Azure Stack integrada con una instancia existente de AD FS respaldada por Active Directory (AD), mediante una confianza de federación.
-- También puede integrar el servicio Graph en Azure Stack con la instancia de Active Directory existente. Igualmente, puede usar el servicio Graph API basado en OData que admite API coherentes con Graph API de Azure AD.
+- Para admitir el uso de esta topología en un entorno de producción, es necesario integrar la instancia de AD FS de Azure Stack Hub integrada con una instancia existente de AD FS respaldada por Active Directory, mediante una confianza de federación.
+- También puede integrar el servicio Graph en Azure Stack Hub con la instancia de Active Directory existente. Igualmente, puede usar el servicio Graph API basado en OData que admite API coherentes con Graph API de Azure AD.
 
   Para interactuar con la instancia de Active Directory, Graph API requiere credenciales de usuario de su instancia de Active Directory que tengan permiso de solo lectura.
   - La instancia de AD FS integrada se basa en Windows Server 2016.

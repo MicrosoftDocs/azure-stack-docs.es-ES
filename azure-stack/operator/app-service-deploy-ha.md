@@ -1,6 +1,6 @@
 ---
-title: Implementación de App Service en Azure Stack mediante una configuración de alta disponibilidad | Microsoft Docs
-description: Obtenga información sobre cómo implementar App Service en Azure Stack mediante una configuración de alta disponibilidad.
+title: Implementación de App Service en Azure Stack Hub mediante una configuración de alta disponibilidad | Microsoft Docs
+description: Aprenda a implementar App Service en Azure Stack Hub mediante una configuración de alta disponibilidad.
 services: azure-stack
 documentationcenter: ''
 author: BryanLa
@@ -16,21 +16,21 @@ ms.date: 01/02/2020
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 01/02/2020
-ms.openlocfilehash: 9e5b99a5787e6472b2e9d25a509f615a1b02a732
-ms.sourcegitcommit: a6c02421069ab9e72728aa9b915a52ab1dd1dbe2
+ms.openlocfilehash: 0d1912a753ae29eb7a4c0ee8b583c34821962f60
+ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75655065"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76023037"
 ---
 # <a name="deploy-app-service-in-a-highly-available-configuration"></a>Implementación de App Service en una configuración de alta disponibilidad
 
-En este artículo se explica cómo utilizar elementos de Marketplace de Azure Stack para implementar App Service en Azure Stack mediante una configuración de alta disponibilidad. Además de los elementos de marketplace disponibles, esta solución también utiliza la plantilla de inicio rápido de Azure Stack [appservice-fileshare-sqlserver-ha](https://github.com/Azure/azurestack-quickstart-templates/tree/master/appservice-fileserver-sqlserver-ha). Esta plantilla automatiza la creación de una infraestructura de alta disponibilidad para hospedar el proveedor de recursos de App Service. App Service se instala después en esta infraestructura de máquina virtual de alta disponibilidad. 
+En este artículo se explica cómo usar elementos de Marketplace de Azure Stack Hub para implementar App Service en Azure Stack Hub en una configuración de alta disponibilidad. Además de los elementos de Marketplace disponibles, esta solución también usa la plantilla de inicio rápido [appservice-fileshare-sqlserver-ha](https://github.com/Azure/azurestack-quickstart-templates/tree/master/appservice-fileserver-sqlserver-ha) de Azure Stack Hub. Esta plantilla automatiza la creación de una infraestructura de alta disponibilidad para hospedar el proveedor de recursos de App Service. App Service se instala después en esta infraestructura de máquina virtual de alta disponibilidad. 
 
 ## <a name="deploy-the-highly-available-app-service-infrastructure-vms"></a>Implementación de máquinas virtuales en la infraestructura de App Service de alta disponibilidad
-La plantilla de inicio rápido de Azure Stack [appservice-fileshare-sqlserver-ha](https://github.com/Azure/azurestack-quickstart-templates/tree/master/appservice-fileserver-sqlserver-ha) simplifica la implementación de App Service en una configuración de alta disponibilidad. Debe implementarse en la suscripción de proveedor predeterminada. 
+La plantilla de inicio rápido [appservice-fileshare-sqlserver-ha](https://github.com/Azure/azurestack-quickstart-templates/tree/master/appservice-fileserver-sqlserver-ha) de Azure Stack Hub simplifica la implementación de App Service en una configuración de alta disponibilidad. Debe implementarse en la suscripción de proveedor predeterminada. 
 
-Cuando se usa para crear un recurso personalizado en Azure Stack, la plantilla crea:
+Cuando se usa para crear un recurso personalizado en Azure Stack Hub, la plantilla crea:
 - Una red virtual y las subredes necesarias
 - Grupos de seguridad de red para el servidor de archivos, SQL Server y las subredes de Active Directory Domain Services (AD DS)
 - Cuentas de almacenamiento para discos de máquina virtual y el testigo en la nube del clúster
@@ -40,8 +40,8 @@ Cuando se usa para crear un recurso personalizado en Azure Stack, la plantilla c
 - Clúster de servidores de archivos de dos nodos
 - Dos controladores de dominio
 
-### <a name="required-azure-stack-marketplace-items"></a>Elementos de marketplace requeridos para Azure Stack
-Antes de usar esta plantilla, asegúrese de que los siguientes [elementos de marketplace de Azure Stack](azure-stack-marketplace-azure-items.md) están disponibles en la instancia de Azure Stack:
+### <a name="required-azure-stack-hub-marketplace-items"></a>Elementos de Marketplace de Azure Stack Hub necesarios:
+Antes de usar esta plantilla, asegúrese de que los siguientes [elementos de Marketplace de Azure Stack Hub](azure-stack-marketplace-azure-items.md) están disponibles en la instancia de Azure Stack Hub:
 
 - Imagen de Windows Server 2016 Datacenter Core (para máquinas virtuales de servidor de archivos y AD DS)
 - SQL Server 2016 SP2 en Windows Server 2016 (Enterprise)
@@ -52,7 +52,7 @@ Antes de usar esta plantilla, asegúrese de que los siguientes [elementos de mar
 > Revise [el archivo Léame de la plantilla](https://github.com/Azure/azurestack-quickstart-templates/tree/master/appservice-fileserver-sqlserver-ha) en GitHub para obtener más detalles sobre los requisitos de la plantilla y los valores predeterminados. 
 
 ### <a name="deploy-the-app-service-infrastructure"></a>Implementación de la infraestructura de App Service
-Use los pasos de esta sección para crear una implementación personalizada con la plantilla de inicio rápido de Azure Stack **appservice-fileshare-sqlserver-ha**.
+Use los pasos de esta sección para crear una implementación personalizada con la plantilla de inicio rápido **appservice-fileshare-sqlserver-ha** de Azure Stack Hub.
 
 1. [!INCLUDE [azs-admin-portal](../includes/azs-admin-portal.md)]
 
@@ -107,7 +107,7 @@ Siga estos pasos para detectar los valores de los resultados de la plantilla:
 
 
 ## <a name="deploy-app-service-in-a-highly-available-configuration"></a>Implementación de App Service en una configuración de alta disponibilidad
-Siga los pasos descritos en esta sección para implementar App Service en Azure Stack mediante una configuración de alta disponibilidad basada en la plantilla de inicio rápido de Azure Stack [appservice-fileshare-sqlserver-ha](https://github.com/Azure/azurestack-quickstart-templates/tree/master/appservice-fileserver-sqlserver-ha). 
+Siga los pasos descritos en esta sección para implementar App Service en Azure Stack Hub en una configuración de alta disponibilidad basada en la plantilla de inicio rápido [appservice-fileshare-sqlserver-ha](https://github.com/Azure/azurestack-quickstart-templates/tree/master/appservice-fileserver-sqlserver-ha) de Azure Stack Hub. 
 
 Después de instalar el proveedor de recursos de App Service, puede incluirlos en sus planes y ofertas. A continuación, los usuarios pueden suscribirse para obtener el servicio y empezar a crear aplicaciones.
 
@@ -115,28 +115,28 @@ Después de instalar el proveedor de recursos de App Service, puede incluirlos e
 > Antes de ejecutar el instalador del proveedor de recursos, asegúrese de haber leído las notas de la versión que acompañan a cada versión de App Service, para obtener información sobre las nuevas funcionalidades, correcciones y problemas conocidos que podrían afectar a su implementación.
 
 ### <a name="prerequisites"></a>Prerequisites
-Para poder ejecutar el instalador de App Service, primero es necesario seguir los pasos descritos en el artículo [Antes de empezar a trabajar con App Service en Azure Stack](azure-stack-app-service-before-you-get-started.md):
+Para poder ejecutar el instalador de App Service, necesario seguir varios pasos que se describen en el artículo [Requisitos previos para implementar App Service en Azure Stack](azure-stack-app-service-before-you-get-started.md):
 
 > [!TIP]
 > No todos los pasos descritos en dicho [artículo](azure-stack-app-service-before-you-get-started.md) son necesarios, ya que la implementación de la plantilla configura automáticamente las máquinas virtuales de la infraestructura.
 
 - [Descargue los scripts auxiliares y el instalador de App Service](azure-stack-app-service-before-you-get-started.md#download-the-installer-and-helper-scripts).
-- [Descargue los elementos de Marketplace de Azure Stack](azure-stack-app-service-before-you-get-started.md#download-items-from-the-azure-marketplace).
+- [Descargue los elementos de Marketplace de Azure Stack Hub](azure-stack-app-service-before-you-get-started.md#download-items-from-the-azure-marketplace).
 - [Genere los certificados necesarios](azure-stack-app-service-before-you-get-started.md#get-certificates).
-- Cree la aplicación de identificador según el proveedor de identidades elegido para Azure Stack. Una aplicación de identificador puede crearse para [Azure AD](azure-stack-app-service-before-you-get-started.md#create-an-azure-active-directory-app) o [Servicios de federación de Active Directory (AD FS)](azure-stack-app-service-before-you-get-started.md#create-an-active-directory-federation-services-app) y para registrar el identificador de la aplicación.
-- Asegúrese de haber agregado la imagen de Windows Server 2016 Datacenter al Marketplace de Azure Stack. Esta imagen es necesaria para la instalación de App Service.
+- Cree la aplicación de identificador según el proveedor de identidades elegido para Azure Stack Hub. Una aplicación de identificador puede crearse para [Azure AD](azure-stack-app-service-before-you-get-started.md#create-an-azure-active-directory-app) o [Servicios de federación de Active Directory (AD FS)](azure-stack-app-service-before-you-get-started.md#create-an-active-directory-federation-services-app) y para registrar el identificador de la aplicación.
+- Asegúrese de haber agregado la imagen de Windows Server 2016 Datacenter a Marketplace de Azure Stack Hub. Esta imagen es necesaria para la instalación de App Service.
 
 ### <a name="steps-for-app-service-deployment"></a>Pasos para la implementación de App Service
 La instalación del proveedor de recursos de App Service tarda al menos una hora. El período de tiempo necesario depende del número de instancias de rol que vaya a implementar. Durante la implementación, el instalador ejecuta las siguientes tareas:
 
-- Creerá un contenedor de blobs en la cuenta de almacenamiento de Azure Stack especificada.
+- Creará un contenedor de blobs en la cuenta de almacenamiento de Azure Stack Hub especificada.
 - Creará una zona DNS y las entradas para App Service.
 - Registrará el proveedor de recursos de App Service.
 - Registrará los elementos de la galería de App Service.
 
 Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
-1. Ejecute el instalador de App Service descargado anteriormente (**appservice.exe**) como administrador desde un equipo que pueda acceder al punto de conexión de administración de recursos de Azure del administrador de Azure Stack.
+1. Ejecute el instalador de App Service descargado anteriormente (**appservice.exe**) como administrador desde un equipo que pueda acceder al punto de conexión de administración de recursos de Azure del administrador de Azure Stack Hub.
 
 2. Seleccione **Implementar App Service o actualizar a la última versión**.
 
@@ -150,13 +150,13 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
     ![Términos de licencia que no son de Microsoft en App Service](media/app-service-deploy-ha/03.png)
 
-5. Proporcione la configuración del punto de conexión en la nube de App Service para el entorno de Azure Stack.
+5. Proporcione la configuración del punto de conexión en la nube de App Service para el entorno de Azure Stack Hub.
 
     ![Configuración del punto de conexión en la nube de App Service en App Service](media/app-service-deploy-ha/04.png)
 
-6. **Conéctese** a la suscripción de Azure Stack que se usará para la instalación y elija la ubicación. 
+6. **Conéctese** a la suscripción de Azure Stack Hub que se usará para la instalación y elija la ubicación. 
 
-    ![Conexión a la suscripción a Azure Stack en App Service](media/app-service-deploy-ha/05.png)
+    ![Conexión a la suscripción a Azure Stack Hub en App Service](media/app-service-deploy-ha/05.png)
 
 7. Seleccione **Usar la red virtual y las subredes existentes** y **Nombre del grupo de recursos** para el grupo de recursos que se usa para implementar la plantilla de alta disponibilidad.<br><br>A continuación, seleccione la red virtual creada como parte de la implementación de la plantilla y, después, seleccione las subredes de rol adecuadas en las opciones de la lista desplegable. 
 
@@ -188,7 +188,7 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
     ![Certificado de la aplicación de identificador y certificado raíz en App Service](media/app-service-deploy-ha/008.png)
 
 11. A continuación, proporcione la información restante necesaria para los certificados siguientes y haga clic en **Siguiente**:
-    - Certificado SSL de Azure Stack predeterminado (con el formato de **_.appservice.local.azurestack.external.pfx**)
+    - Certificado SSL de Azure Stack Hub predeterminado (con el formato de **_.appservice.local.azurestack.external.pfx**)
     - Certificado SSL de la API (con el formato de **api.appservice.local.azurestack.external.pfx**)
     - Certificado del publicador (con el formato de **ftp.appservice.local.azurestack.external.pfx**) 
 
@@ -238,7 +238,7 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
 [Agregue las bases de datos appservice_hosting y appservice_metering a un grupo de disponibilidad](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database) si ha proporcionado al proveedor de recursos de App Service una instancia de SQL Always On. Sincronice las bases de datos para evitar cualquier pérdida de servicio en caso de una conmutación por error de la base de datos. También puede ejecutar un [script](https://blog.sqlauthority.com/2017/11/30/sql-server-alwayson-availability-groups-script-sync-logins-replicas/) para importar los inicios de sesión de AppServices desde el servidor principal original a un servidor de conmutación por error.
 
-[Escalar horizontalmente App Service](azure-stack-app-service-add-worker-roles.md). Puede que necesite agregar trabajos de rol de la infraestructura de App Service adicionales para satisfacer la demanda esperada de la aplicación en el entorno. De forma predeterminada, App Service en Azure Stack es compatible con los niveles de trabajo gratuito y compartido. Para agregar otros niveles de trabajo, debe agregar más roles de trabajo.
+[Escalar horizontalmente App Service](azure-stack-app-service-add-worker-roles.md). Puede que necesite agregar trabajos de rol de la infraestructura de App Service adicionales para satisfacer la demanda esperada de la aplicación en el entorno. De forma predeterminada, App Service en Azure Stack Hub es compatible con los niveles de trabajo gratuito y compartido. Para agregar otros niveles de trabajo, debe agregar más roles de trabajo.
 
 [Configuración de orígenes de implementación](azure-stack-app-service-configure-deployment-sources.md). Se requiere una configuración adicional para admitir la implementación a petición de varios proveedores de control de código fuente como GitHub, BitBucket, OneDrive y DropBox.
 

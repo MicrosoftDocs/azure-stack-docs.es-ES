@@ -1,6 +1,6 @@
 ---
-title: Introducción a las herramientas de desarrollo de almacenamiento de Azure Stack | Microsoft Docs
-description: Guía de introducción a las herramientas de desarrollo de almacenamiento de Azure Stack
+title: Introducción a las herramientas de desarrollo de Azure Stack Hub Storage | Microsoft Docs
+description: Guía de introducción a las herramientas de desarrollo de Azure Stack Hub Storage
 services: azure-stack
 author: mattbriggs
 ms.author: mabrigg
@@ -10,32 +10,30 @@ ms.service: azure-stack
 manager: femila
 ms.reviewer: xiaofmao
 ms.lastreviewed: 02/27/2019
-ms.openlocfilehash: 407d8167fcc359531496397dda00e51d59f49d7c
-ms.sourcegitcommit: a7207f4a4c40d4917b63e729fd6872b3dba72968
+ms.openlocfilehash: 80dbb848eb764f2c0c71e3987c291f9eb505cf91
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71909606"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883327"
 ---
-# <a name="get-started-with-azure-stack-storage-development-tools"></a>Introducción a las herramientas de desarrollo de almacenamiento de Azure Stack
+# <a name="get-started-with-azure-stack-hub-storage-development-tools"></a>Introducción a las herramientas de desarrollo de Azure Stack Hub Storage
 
-*Se aplica a: Sistemas integrados de Azure Stack y Kit de desarrollo de Azure Stack*
+Microsoft Azure Stack Hub proporciona un conjunto de servicios de almacenamiento que incluye almacenamiento de blobs, tablas y colas.
 
-Microsoft Azure Stack proporciona un conjunto de servicios de almacenamiento que incluye almacenamiento de blobs, tablas y colas.
-
-Utilice este artículo como guía de introducción a las herramientas de desarrollo de almacenamiento de Azure Stack. Puede encontrar información más detallada y código de ejemplo en los tutoriales correspondientes de Azure Storage.
+Utilice este artículo como guía de introducción a las herramientas de desarrollo de Azure Stack Hub Storage. Puede encontrar información más detallada y código de ejemplo en los tutoriales correspondientes de Azure Storage.
 
 > [!NOTE]  
-> Hay diferencias entre Azure Storage y almacenamiento de Azure Stack, incluidos los requisitos específicos de cada plataforma. Por ejemplo, hay bibliotecas cliente y requisitos de sufijos de puntos de conexión que son específicos de Azure Stack. Para más información, consulte [Azure Stack Storage: Diferencias y consideraciones](azure-stack-acs-differences.md).
+> Hay diferencias entre Azure Stack Hub Storage y el almacenamiento de Azure, incluidos los requisitos específicos de cada plataforma. Por ejemplo, hay bibliotecas cliente y requisitos de sufijos de puntos de conexión que son específicos de Azure Stack Hub. Para más información, consulte [Azure Stack Hub Storage: diferencias y consideraciones](azure-stack-acs-differences.md).
 
 ## <a name="azure-client-libraries"></a>Bibliotecas de clientes de Azure
 
-En lo que respecta a las bibliotecas de cliente de almacenamiento, debe conocer cuál es la versión compatible con la API REST. También debe especificar el punto de conexión de Azure Stack en el código.
+En lo que respecta a las bibliotecas de cliente de almacenamiento, debe conocer cuál es la versión compatible con la API REST. También debe especificar el punto de conexión de Azure Stack Hub en el código.
 
 ::: moniker range=">=azs-1811"
 ### <a name="1811-update-or-newer-versions"></a>Actualización 1811 o versiones más recientes
 
-| Biblioteca de cliente | Versión compatible de Azure Stack | Vínculo | Especificación de punto de conexión |
+| Biblioteca de cliente | Versión compatible de Azure Stack Hub | Vínculo | Especificación de punto de conexión |
 |----------------|-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------|
 | .NET | 9.2.0 | Paquete NuGet:<br><https://www.nuget.org/packages/WindowsAzure.Storage/9.2.0><br> <br>Versión de GitHub:<br><https://github.com/Azure/azure-storage-net/releases/tag/v9.2.0> | archivo app.config |
 | Java | 7.0.0 | Paquete Maven:<br><https://mvnrepository.com/artifact/com.microsoft.azure/azure-storage/7.0.0><br> <br>Versión de GitHub:<br><https://github.com/Azure/azure-storage-java/releases/tag/v7.0.0> | Configuración de la cadena de conexión |
@@ -66,7 +64,7 @@ Para instalar a través de Composer: (usaremos el blob como ejemplo).
 ::: moniker range=">=azs-1802 <=azs-1809"
 ### <a name="previous-versions-1802-to-1809-update"></a>Versiones anteriores (actualización de 1802 a 1809)
 
-| Biblioteca de cliente | Versión compatible de Azure Stack | Vínculo | Especificación de punto de conexión |
+| Biblioteca de cliente | Versión compatible de Azure Stack Hub | Vínculo | Especificación de punto de conexión |
 |----------------|-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------|
 | .NET | 8.7.0 | Paquete NuGet:<br><https://www.nuget.org/packages/WindowsAzure.Storage/8.7.0><br> <br>Versión de GitHub:<br><https://github.com/Azure/azure-storage-net/releases/tag/v8.7.0> | archivo app.config |
 | Java | 6.1.0 | Paquete Maven:<br><https://mvnrepository.com/artifact/com.microsoft.azure/azure-storage/6.1.0><br> <br>Versión de GitHub:<br><https://github.com/Azure/azure-storage-java/releases/tag/v6.1.0> | Configuración de la cadena de conexión |
@@ -96,7 +94,7 @@ Para instalar a través de compositor: (usaremos blob como ejemplo).
 
 ## <a name="endpoint-declaration"></a>Declaración de punto de conexión
 
-Un punto de conexión de Azure Stack incluye dos partes: el nombre de una región y el dominio de Azure Stack.
+Un punto de conexión de Azure Stack Hub incluye dos partes: el nombre de una región y el dominio de Azure Stack Hub.
 En el Kit de desarrollo de Azure Stack, el punto de conexión predeterminado es **local.azurestack.external**.
 Si no está seguro de cuál es su punto de conexión, póngase en contacto con el administrador de la nube.
 
@@ -104,7 +102,7 @@ Si no está seguro de cuál es su punto de conexión, póngase en contacto con e
 
 ### <a name="net"></a>.NET
 
-Para Azure Stack, el sufijo del punto de conexión se especifica en el archivo app.config:
+Para Azure Stack Hub, el sufijo del punto de conexión se especifica en el archivo app.config:
 
 ```xml
 <add key="StorageConnectionString"
@@ -114,7 +112,7 @@ EndpointSuffix=local.azurestack.external;" />
 
 ### <a name="java"></a>Java
 
-Para Azure Stack, el sufijo del punto de conexión se especifica en la configuración de la cadena de conexión:
+Para Azure Stack Hub, el sufijo del punto de conexión se especifica en la configuración de la cadena de conexión:
 
 ```java
 public static final String storageConnectionString =
@@ -126,7 +124,7 @@ public static final String storageConnectionString =
 
 ### <a name="nodejs"></a>Node.js
 
-Para Azure Stack, el sufijo del punto de conexión se especifica en la instancia de la declaración:
+Para Azure Stack Hub, el sufijo del punto de conexión se especifica en la instancia de la declaración:
 
 ```nodejs
 var blobSvc = azure.createBlobService('myaccount', 'mykey',
@@ -135,7 +133,7 @@ var blobSvc = azure.createBlobService('myaccount', 'mykey',
 
 ### <a name="c"></a>C++
 
-Para Azure Stack, el sufijo del punto de conexión se especifica en la configuración de la cadena de conexión:
+Para Azure Stack Hub, el sufijo del punto de conexión se especifica en la configuración de la cadena de conexión:
 
 ```cpp
 const utility::string_t storage_connection_string(U("DefaultEndpointsProtocol=https;
@@ -146,7 +144,7 @@ EndpointSuffix=local.azurestack.external"));
 
 ### <a name="php"></a>PHP
 
-Para Azure Stack, el sufijo del punto de conexión se especifica en la configuración de la cadena de conexión:
+Para Azure Stack Hub, el sufijo del punto de conexión se especifica en la configuración de la cadena de conexión:
 
 ```php
 $connectionString = 'BlobEndpoint=https://<storage account name>.blob.local.azurestack.external/;
@@ -157,7 +155,7 @@ AccountName=<storage account name>;AccountKey=<storage account key>'
 
 ### <a name="python"></a>Python
 
-Para Azure Stack, el sufijo del punto de conexión se especifica en la instancia de la declaración:
+Para Azure Stack Hub, el sufijo del punto de conexión se especifica en la instancia de la declaración:
 
 ```python
 block_blob_service = BlockBlobService(account_name='myaccount',
@@ -167,7 +165,7 @@ endpoint_suffix='local.azurestack.external')
 
 ### <a name="ruby"></a>Ruby
 
-Para Azure Stack, el sufijo del punto de conexión se especifica en la configuración de la cadena de conexión:
+Para Azure Stack Hub, el sufijo del punto de conexión se especifica en la configuración de la cadena de conexión:
 
 ```ruby
 set
@@ -179,7 +177,7 @@ EndpointSuffix=local.azurestack.external
 
 ## <a name="blob-storage"></a>Almacenamiento de blobs
 
-Los siguientes tutoriales de Azure Blob Storage son aplicables a Azure Stack. Tenga en cuenta los requisitos específicos de los sufijos de punto de conexión de Azure Stack que se describen en la sección de [ejemplos](#examples) anterior.
+Los siguientes tutoriales de Azure Blob Storage son aplicables a Azure Stack Hub. Tenga en cuenta los requisitos específicos de los sufijos de punto de conexión de Azure Stack Hub que se describen en la sección de [ejemplos](#examples) anterior.
 
 * [Introducción al Almacenamiento de blobs de Azure mediante .NET](/azure/storage/blobs/storage-dotnet-how-to-use-blobs)
 * [Uso de Blob Storage en Java](/azure/storage/blobs/storage-java-how-to-use-blob-storage)
@@ -191,7 +189,7 @@ Los siguientes tutoriales de Azure Blob Storage son aplicables a Azure Stack. Te
 
 ## <a name="queue-storage"></a>Queue Storage
 
-Los siguientes tutoriales de Azure Queue Storage son aplicables a Azure Stack. Tenga en cuenta los requisitos específicos de los sufijos de punto de conexión de Azure Stack que se describen en la sección de [ejemplos](#examples) anterior.
+Los siguientes tutoriales de Azure Queue Storage son aplicables a Azure Stack Hub. Tenga en cuenta los requisitos específicos de los sufijos de punto de conexión de Azure Stack Hub que se describen en la sección de [ejemplos](#examples) anterior.
 
 * [Introducción al Almacenamiento en cola de Azure mediante .NET](/azure/storage/queues/storage-dotnet-how-to-use-queues)
 * [Uso del almacenamiento de colas de Java](/azure/storage/queues/storage-java-how-to-use-queue-storage)
@@ -203,7 +201,7 @@ Los siguientes tutoriales de Azure Queue Storage son aplicables a Azure Stack. T
 
 ## <a name="table-storage"></a>Almacenamiento de tablas
 
-Los siguientes tutoriales de Azure Table Storage son aplicables a Azure Stack. Tenga en cuenta los requisitos específicos de los sufijos de punto de conexión de Azure Stack que se describen en la sección de [ejemplos](#examples) anterior.
+Los siguientes tutoriales de Azure Table Storage son aplicables a Azure Stack Hub. Tenga en cuenta los requisitos específicos de los sufijos de punto de conexión de Azure Stack Hub que se describen en la sección de [ejemplos](#examples) anterior.
 
 * [Introducción al Almacenamiento de tablas de Azure mediante .NET](/azure/cosmos-db/table-storage-how-to-use-dotnet)
 * [Uso de Table Storage en Java](/azure/cosmos-db/table-storage-how-to-use-java)

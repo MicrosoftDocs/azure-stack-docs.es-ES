@@ -1,7 +1,7 @@
 ---
 title: Inicio y detención
-titleSuffix: Azure Stack
-description: Aprenda a iniciar y detener Azure Stack.
+titleSuffix: Azure Stack Hub
+description: Aprenda a iniciar y detener Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -17,24 +17,24 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: misainat
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: dbd85b4d7b63edb89cc327fd5b1f5592c24db508
-ms.sourcegitcommit: 08d2938006b743b76fba42778db79202d7c3e1c4
+ms.openlocfilehash: b78b87065977b3517e91fd27ba5208333de2a77a
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74954390"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75814276"
 ---
-# <a name="start-and-stop-azure-stack"></a>Inicio y detención de Azure Stack
+# <a name="start-and-stop-azure-stack-hub"></a>Inicio y detención de Azure Stack Hub
 
-Siga los procedimientos que se describen en este artículo para apagar y reiniciar los servicios de Azure Stack correctamente. La *detención* apagará físicamente la totalidad del entorno de Azure Stack. El *inicio* activa todos los roles de infraestructura y devuelve los recursos del inquilino al estado de encendido en el que se encontraban antes del apagado.
+Siga los procedimientos que se describen en este artículo para apagar y reiniciar los servicios de Azure Stack Hub correctamente. La *detención* apagará físicamente la totalidad del entorno de Azure Stack Hub. El *inicio* activa todos los roles de infraestructura y devuelve los recursos del inquilino al estado de encendido en el que se encontraban antes del apagado.
 
-## <a name="stop-azure-stack"></a>Detención de Azure Stack
+## <a name="stop-azure-stack-hub"></a>Detención de Azure Stack Hub
 
-Realice los pasos siguientes para detener o apagar Azure Stack:
+Realice los pasos siguientes para detener o apagar Azure Stack Hub:
 
-1. Prepare todas las cargas de trabajo que se ejecutan en los recursos de inquilino del entorno de Azure Stack para el próximo apagado.
+1. Prepare todas las cargas de trabajo que se ejecutan en los recursos de inquilino del entorno de Azure Stack Hub para el próximo apagado.
 
-2. Abra una sesión de punto de conexión con privilegios (PEP) desde una máquina con acceso de red a las máquinas virtuales de Azure Stack ERCS. Para obtener instrucciones, consulte [Uso del punto de conexión con privilegios en Azure Stack](azure-stack-privileged-endpoint.md).
+2. Abra una sesión de punto de conexión con privilegios (PEP) desde una máquina con acceso de red a las máquinas virtuales de Azure Stack Hub ERCS. Para obtener instrucciones, consulte [Uso del punto de conexión con privilegios en Azure Stack Hub](azure-stack-privileged-endpoint.md).
 
 3. Desde el PEP, ejecute lo siguiente:
 
@@ -42,26 +42,26 @@ Realice los pasos siguientes para detener o apagar Azure Stack:
       Stop-AzureStack
     ```
 
-4. Espere a que todos los nodos físicos de Azure Stack se apaguen.
+4. Espere a que todos los nodos físicos de Azure Stack Hub se apaguen.
 
 > [!Note]
-> Para comprobar el estado de encendido de un nodo físico siga las instrucciones del fabricante de equipos originales (OEM) que le proporcionó el hardware de Azure Stack.
+> Para comprobar el estado de encendido de un nodo físico siga las instrucciones del fabricante de equipos originales (OEM) que le proporcionó el hardware de Azure Stack Hub.
 
-## <a name="start-azure-stack"></a>Inicio de Azure Stack
+## <a name="start-azure-stack-hub"></a>Inicio de Azure Stack Hub
 
-Realice los pasos siguientes para iniciar Azure Stack. Siga los pasos que se indican a continuación independientemente del modo en que se detuvo Azure Stack.
+Realice los pasos siguientes para iniciar Azure Stack Hub. Siga los pasos que se indican a continuación independientemente del modo en que se detuvo Azure Stack Hub.
 
-1. Encienda cada uno de los nodos físicos de su entorno de Azure Stack. Consulte las instrucciones de los nodos físicos. Para ello, siga las instrucciones del fabricante de equipos originales (OEM) que le proporcionó el hardware de Azure Stack.
+1. Encienda cada uno de los nodos físicos de su entorno de Azure Stack Hub. Consulte las instrucciones de encendido de los nodos físicos. Para ello, siga las instrucciones del fabricante de equipos originales (OEM) que le proporcionó el hardware de Azure Stack Hub.
 
-2. Espere hasta que se inicien los servicios de infraestructura de Azure Stack. El proceso de inicio de los servicios de infraestructura de Azure Stack puede tardar hasta dos horas en completarse. Puede comprobar el estado de inicio de Azure Stack con el cmdlet [**Get-ActionStatus**](#get-the-startup-status-for-azure-stack).
+2. Espere hasta que se inicien los servicios de infraestructura de Azure Stack Hub. El proceso de inicio de los servicios de infraestructura de Azure Stack Hub puede tardar hasta dos horas en completarse. Puede comprobar el estado de inicio de Azure Stack Hub con el [cmdlet **Get-ActionStatus**](#get-the-startup-status-for-azure-stack-hub).
 
 3. Asegúrese de que todos los recursos de inquilino han vuelto al estado en el que se encontraban antes del apagado. Es posible que el administrador de las cargas de trabajo tenga que volver a configurar las que se ejecutan en los recursos del inquilino después del inicio.
 
-## <a name="get-the-startup-status-for-azure-stack"></a>Consulta del estado de inicio de Azure Stack
+## <a name="get-the-startup-status-for-azure-stack-hub"></a>Consulta del estado de inicio de Azure Stack Hub
 
-Realice los pasos siguientes para obtener la rutina de inicio de Azure Stack:
+Realice los pasos siguientes para obtener el estado de la rutina de inicio de Azure Stack Hub:
 
-1. Abra una sesión de punto de conexión con privilegios desde una máquina con acceso de red a las máquinas virtuales de Azure Stack ERCS.
+1. Abra una sesión de punto de conexión con privilegios desde una máquina con acceso de red a las máquinas virtuales de Azure Stack Hub ERCS.
 
 2. Desde el PEP, ejecute lo siguiente:
 
@@ -69,11 +69,11 @@ Realice los pasos siguientes para obtener la rutina de inicio de Azure Stack:
       Get-ActionStatus Start-AzureStack
     ```
 
-## <a name="troubleshoot-startup-and-shutdown-of-azure-stack"></a>Solución de problemas de inicio y apagado de Azure Stack
+## <a name="troubleshoot-startup-and-shutdown-of-azure-stack-hub"></a>Solución de problemas de inicio y apagado de Azure Stack Hub
 
-Realice los pasos que se indican a continuación en caso de que los servicios de infraestructura e inquilinos no se inicien a las 2 horas de haber encendido el entorno de Azure Stack.
+Realice los pasos que se indican a continuación en caso de que los servicios de infraestructura e inquilinos no se inicien a las 2 horas de haber encendido el entorno de Azure Stack Hub.
 
-1. Abra una sesión de punto de conexión con privilegios desde una máquina con acceso de red a las máquinas virtuales de Azure Stack ERCS.
+1. Abra una sesión de punto de conexión con privilegios desde una máquina con acceso de red a las máquinas virtuales de Azure Stack Hub ERCS.
 
 2. Ejecutar:
 
@@ -81,7 +81,7 @@ Realice los pasos que se indican a continuación en caso de que los servicios de
       Test-AzureStack
       ```
 
-3. Revise el resultado y resuelva los errores de estado. Para obtener más información, consulte [Run a validation test of Azure Stack](azure-stack-diagnostic-test.md) (Ejecutar una prueba de validación de Azure Stack).
+3. Revise el resultado y resuelva los errores de estado. Para más información, consulte [Validación del estado del sistema de Azure Stack Hub](azure-stack-diagnostic-test.md).
 
 4. Ejecutar:
 
@@ -93,4 +93,4 @@ Realice los pasos que se indican a continuación en caso de que los servicios de
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Más información sobre las [herramientas de diagnóstico de Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs)
+Más información sobre las [herramientas de diagnóstico de Azure Stack Hub](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs)
