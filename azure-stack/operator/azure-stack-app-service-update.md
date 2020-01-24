@@ -15,16 +15,14 @@ ms.date: 01/13/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 01/13/2019
-ms.openlocfilehash: cf161a3c756042d60a112a7ca2c794e3bb72b297
-ms.sourcegitcommit: ce01b2cd114ca8ab5b70c6311b66c58ceb054469
+ms.openlocfilehash: 4289009ee20f5e031ae1104b0507faa189e4d1aa
+ms.sourcegitcommit: e47dc5fe9e59010ea3dbb9cb31abe15cfb821262
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75924340"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76124810"
 ---
 # <a name="update-azure-app-service-on-azure-stack-hub"></a>Actualización de Azure App Service en Azure Stack Hub
-
-*Se aplica a: sistemas integrados de Azure Stack y al kit de desarrollo de Azure Stack Hub*
 
 > [!IMPORTANT]
 > Aplique la actualización 1910 al sistema integrado de Azure Stack Hub o implemente el kit de desarrollo de Azure Stack Hub (ASDK) más reciente antes de implementar Azure App Service 1.8.
@@ -70,7 +68,7 @@ Para actualizar la implementación de Azure App Service en Azure Stack Hub, siga
 
     1. Seleccione el método de conexión que quiera usar: **Credencial** o **Entidad de servicio**
         - **Credential:**
-            - Si usa Azure Active Directory (Azure AD), escriba la cuenta de administrador y la contraseña de Azure AD que proporcionó al implementar Azure Stack Hub. Seleccione **Conectar**.
+            - Si usa Azure Active Directory (Azure AD), escriba la cuenta de administrador y la contraseña de Azure AD que proporcionó al implementar Azure Stack Hub. Seleccione **Conectar**.
             - Si se usan los Servicios de federación de Active Directory (AD FS), debe proporcionar la cuenta de administrador. Por ejemplo, cloudadmin@azurestack.local. Escriba la contraseña y, a continuación, seleccione **Conectar**.
         - **Entidad de seguridad de servicio**
             - La entidad de servicio que utilice **debe** tener derechos de **Propietario** en la **suscripción de proveedor predeterminada**.

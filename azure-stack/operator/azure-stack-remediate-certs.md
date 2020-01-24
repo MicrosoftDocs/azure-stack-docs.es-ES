@@ -1,7 +1,7 @@
 ---
 title: Solución de problemas comunes con los certificados PKI
-titleSuffix: Azure Stack
-description: Corrija problemas comunes con los certificados PKI de Azure Stack mediante Azure Stack Readiness Checker.
+titleSuffix: Azure Stack Hub
+description: Corrija problemas comunes con los certificados PKI de Azure Stack Hub mediante Azure Stack Hub Readiness Checker.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -17,16 +17,16 @@ ms.date: 10/03/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 11/19/2018
-ms.openlocfilehash: 449a734f2b98328d0a5ed046f0c387e6cfdf8a97
-ms.sourcegitcommit: 62283e9826ea78b218f5d2c6c555cc44196b085d
+ms.openlocfilehash: bc0ad732005db5571d81d71536edf2384cd80537
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74780871"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75808386"
 ---
-# <a name="fix-common-issues-with-azure-stack-pki-certificates"></a>Solución de problemas comunes con los certificados PKI de Azure Stack
+# <a name="fix-common-issues-with-azure-stack-hub-pki-certificates"></a>Solución de problemas comunes con los certificados PKI de Azure Stack Hub
 
-La información de este artículo le ayudará a reconocer y resolver problemas comunes con los certificados PKI de Azure Stack. Puede detectar problemas cuando usa la herramienta Azure Stack Readiness Checker para [validar certificados de PKI en Azure Stack](azure-stack-validate-pki-certs.md). La herramienta comprueba si los certificados cumplen los requisitos de PKI de una implementación de Azure Stack y una rotación de secretos de Azure Stack, y después registra los resultados en un [archivo report.json](azure-stack-validation-report.md).  
+La información de este artículo le ayudará a reconocer y resolver problemas comunes con los certificados PKI de Azure Stack Hub. Puede detectar problemas cuando usa la herramienta Azure Stack Hub Readiness Checker para [validar certificados de PKI en Azure Stack Hub](azure-stack-validate-pki-certs.md). La herramienta comprueba si los certificados cumplen los requisitos de PKI de una implementación de Azure Stack Hub y una rotación de secretos de Azure Stack Hub, y después registra los resultados en un [archivo report.json](azure-stack-validation-report.md).  
 
 ## <a name="pfx-encryption"></a>Cifrado de PFX
 
@@ -42,55 +42,55 @@ La información de este artículo le ayudará a reconocer y resolver problemas c
 
 **Problema**: el archivo PFX no es válido.  
 
-**Corrección**: vuelva a exportar el certificado mediante los pasos descritos en [Preparación de certificados PKI de Azure Stack para la implementación](azure-stack-prepare-pki-certs.md).
+**Corrección**: vuelva a exportar el certificado mediante los pasos descritos en [Preparación de certificados PKI de Azure Stack Hub para la implementación](azure-stack-prepare-pki-certs.md).
 
 ## <a name="signature-algorithm"></a>Algoritmo de firma
 
 **Problema**: el algoritmo de firma es SHA1.
 
-**Corrección**: siga los pasos de Generación de solicitudes de firma de certificado para Azure Stack para volver a generar la solicitud de firma de certificado (CSR) con el algoritmo de firma SHA256. Luego, reenvíe la CSR a la entidad de certificación para que vuelva a emitir el certificado.
+**Corrección**: siga los pasos de Generación de solicitudes de firma de certificado para Azure Stack Hub para volver a generar la solicitud de firma de certificado (CSR) con el algoritmo de firma SHA256. Luego, reenvíe la CSR a la entidad de certificación para que vuelva a emitir el certificado.
 
 ## <a name="private-key"></a>Clave privada
 
 **Problema**: falta la clave privada o no contiene el atributo de máquina local.  
 
-**Corrección**: desde el equipo que generó la solicitud de firma de certificado, vuelva a exportar el certificado mediante los pasos descritos en [Preparación de certificados PKI de Azure Stack para la implementación](azure-stack-prepare-pki-certs.md#prepare-certificates-for-deployment). Estos pasos incluyen la exportación desde el almacén de certificados de la máquina local.
+**Corrección**: desde el equipo que generó la solicitud de firma de certificado, vuelva a exportar el certificado mediante los pasos descritos en [Preparación de certificados PKI de Azure Stack Hub para la implementación](azure-stack-prepare-pki-certs.md#prepare-certificates-for-deployment). Estos pasos incluyen la exportación desde el almacén de certificados de la máquina local.
 
 ## <a name="certificate-chain"></a>Cadena de certificados
 
 **Problema**: la cadena de certificados no está completa.  
 
-**Corrección**: los certificados deben contener una cadena de certificados completa. Vuelva a exportar el certificado, para lo que seguirá los pasos descritos en [Preparación de certificados PKI de Azure Stack para la implementación](azure-stack-prepare-pki-certs.md#prepare-certificates-for-deployment) y seleccione la opción **Include all certificates in the certification path if possible** [Incluir todos los certificados en la ruta de certificación (si es posible)].
+**Corrección**: los certificados deben contener una cadena de certificados completa. Vuelva a exportar el certificado siguiendo los pasos descritos en [Preparación de certificados PKI de Azure Stack Hub para la implementación](azure-stack-prepare-pki-certs.md#prepare-certificates-for-deployment), y seleccione la opción **Incluir todos los certificados en la ruta de certificación si es posible**.
 
 ## <a name="dns-names"></a>Nombres DNS
 
-**Problema**: el elemento **DNSNameList** del certificado no contiene el nombre del punto de conexión de servicio de Azure Stack ni una coincidencia válida de caracteres comodín. Las coincidencias de caracteres comodín solo son válidas para el espacio de nombres del extremo izquierdo del nombre DNS. Por ejemplo, `*.region.domain.com` es válida para `portal.region.domain.com`, pero no para `*.table.region.domain.com`.
+**Problema**: el elemento **DNSNameList** del certificado no contiene el nombre del punto de conexión de servicio de Azure Stack Hub ni una coincidencia válida de caracteres comodín. Las coincidencias de caracteres comodín solo son válidas para el espacio de nombres del extremo izquierdo del nombre DNS. Por ejemplo, `*.region.domain.com` es válida para `portal.region.domain.com`, pero no para `*.table.region.domain.com`.
 
-**Corrección**: siga los pasos de Generación de solicitudes de firma de certificado para Azure Stack para volver a generar la solicitud de firma de certificado con los nombres DNS correctos que admitan los puntos de conexión de Azure Stack. Vuelva a enviar la solicitud de firma de certificado a una entidad de certificación. Después, siga los pasos de [Preparación de certificados PKI de Azure Stack para la implementación](azure-stack-prepare-pki-certs.md#prepare-certificates-for-deployment) para exportar el certificado desde la máquina que generó la solicitud.  
+**Corrección**: siga los pasos de generación de solicitudes de firma de certificado para Azure Stack Hub para volver a generar la solicitud de firma de certificado con los nombres DNS correctos que admitan los puntos de conexión de Azure Stack Hub. Vuelva a enviar la solicitud de firma de certificado a una entidad de certificación. Después, siga los pasos de [Preparación de certificados PKI de Azure Stack Hub para la implementación](azure-stack-prepare-pki-certs.md#prepare-certificates-for-deployment) para exportar el certificado desde la máquina que generó la solicitud.  
 
 ## <a name="key-usage"></a>Uso de las claves
 
 **Problema**: en el uso de las claves falta la firma digital o el cifrado de clave, o en el uso mejorado de las claves falta la autenticación de servidor o la autenticación de cliente.  
 
-**Corrección**: siga los pasos de [Generación de solicitudes de firma de certificado para Azure Stack](azure-stack-get-pki-certs.md) para volver a generar la solicitud de firma de certificado con los atributos de uso de clave correctos. Vuelva a enviar la solicitud de firma de certificado a la entidad de certificación y confirme que ninguna plantilla de certificado sobrescribe el uso de clave en la solicitud.
+**Corrección**: siga los pasos de [Generación de solicitudes de firma de certificado para Azure Stack Hub](azure-stack-get-pki-certs.md) para volver a generar la solicitud de firma de certificado con los atributos de uso de clave correctos. Vuelva a enviar la solicitud de firma de certificado a la entidad de certificación y confirme que ninguna plantilla de certificado sobrescribe el uso de clave en la solicitud.
 
 ## <a name="key-size"></a>Tamaño de clave
 
 **Problema**: el tamaño de la clave es inferior a 2048.
 
-**Corrección**: siga los pasos de [Generación de solicitudes de firma de certificado para Azure Stack](azure-stack-get-pki-certs.md) para volver a generar la solicitud de firma de certificado con la longitud de clave correcta (2048) y, después, reenvíe la solicitud a la autoridad de certificación.
+**Corrección**: siga los pasos de [Generación de solicitudes de firma de certificado para Azure Stack Hub](azure-stack-get-pki-certs.md) para volver a generar la solicitud de firma de certificado con la longitud de clave correcta (2048) y, después, reenvíe la solicitud a la autoridad de certificación.
 
 ## <a name="chain-order"></a>Orden de la cadena
 
 **Problema**: el orden de la cadena de certificados es incorrecto.  
 
-**Corrección**: vuelva a exportar el certificado siguiendo los pasos descritos en [Preparación de certificados PKI de Azure Stack para la implementación](azure-stack-prepare-pki-certs.md#prepare-certificates-for-deployment) y seleccione la opción **Incluir todos los certificados en la ruta de certificación (si es posible)** . Asegúrese de que solo se selecciona el certificado de hoja para la exportación.
+**Corrección**: vuelva a exportar el certificado siguiendo los pasos descritos en [Preparación de certificados PKI de Azure Stack Hub para la implementación](azure-stack-prepare-pki-certs.md#prepare-certificates-for-deployment), y seleccione la opción **Incluir todos los certificados en la ruta de certificación si es posible**. Asegúrese de que solo se selecciona el certificado de hoja para la exportación.
 
 ## <a name="other-certificates"></a>Otros certificados
 
 **Problema**: el paquete PFX contiene certificados que no son el certificado de hoja ni parte de la cadena de certificados.  
 
-**Corrección**: vuelva a exportar el certificado siguiendo los pasos descritos en [Preparación de certificados PKI de Azure Stack para la implementación](azure-stack-prepare-pki-certs.md#prepare-certificates-for-deployment) y seleccione la opción **Incluir todos los certificados en la ruta de certificación (si es posible)** . Asegúrese de que solo se selecciona el certificado de hoja para la exportación.
+**Corrección**: vuelva a exportar el certificado siguiendo los pasos descritos en [Preparación de certificados PKI de Azure Stack Hub para la implementación](azure-stack-prepare-pki-certs.md#prepare-certificates-for-deployment), y seleccione la opción **Incluir todos los certificados en la ruta de certificación si es posible**. Asegúrese de que solo se selecciona el certificado de hoja para la exportación.
 
 ## <a name="fix-common-packaging-issues"></a>Solución de problemas comunes de empaquetado
 
@@ -103,7 +103,7 @@ La herramienta **AzsReadinessChecker** contiene un cmdlet asistente denominado *
 
 **Repair-AzsPfxCertificate** no sirve de ayuda si hay que generar una nueva solicitud de firma de certificado y volver a emitir un certificado.
 
-### <a name="prerequisites"></a>Requisitos previos
+### <a name="prerequisites"></a>Prerequisites
 
 Deben cumplirse los siguientes requisitos previos en el equipo donde se ejecuta la herramienta:
 
@@ -114,12 +114,12 @@ Deben cumplirse los siguientes requisitos previos en el equipo donde se ejecuta 
    $PSVersionTable.PSVersion
    ```
 
-- Configure [PowerShell para Azure Stack](azure-stack-powershell-install.md).
-- Descargue la versión más reciente de la herramienta [Azure Stack Readiness Checker](https://aka.ms/AzsReadinessChecker).
+- Configure [PowerShell para Azure Stack Hub](azure-stack-powershell-install.md).
+- Descargue la versión más reciente de la herramienta [Azure Stack Hub Readiness Checker](https://aka.ms/AzsReadinessChecker).
 
 ### <a name="import-and-export-an-existing-pfx-file"></a>Importación y exportación de una archivo PFX existente
 
-1. En un equipo que cumpla los requisitos previos, abra un símbolo del sistema de PowerShell con privilegios elevados y ejecute el siguiente comando para instalar Azure Stack Readiness Checker:
+1. En un equipo que cumpla los requisitos previos, abra un símbolo del sistema de PowerShell con privilegios elevados y ejecute el siguiente comando para instalar Azure Stack Hub Readiness Checker:
 
    ```powershell
    Install-Module Microsoft.AzureStack.ReadinessChecker -Force
@@ -144,7 +144,7 @@ Deben cumplirse los siguientes requisitos previos en el equipo donde se ejecuta 
 
    ```shell
    Repair-AzsPfxCertificate v1.1809.1005.1 started.
-   Starting Azure Stack Certificate Import/Export
+   Starting Azure Stack Hub Certificate Import/Export
    Importing PFX .\certificates\ssl.pfx into Local Machine Store
    Exporting certificate to .\certificates\ssl_new.pfx
    Export complete. Removing certificate from the local machine store.

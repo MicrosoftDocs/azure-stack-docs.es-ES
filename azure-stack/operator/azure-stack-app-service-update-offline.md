@@ -15,16 +15,14 @@ ms.topic: article
 ms.date: 01/13/2020
 ms.author: anwestg
 ms.reviewer: anwestg
-ms.openlocfilehash: e36e9d7504f956475c1cf1e66daac0d2d4c4bcb3
-ms.sourcegitcommit: ce01b2cd114ca8ab5b70c6311b66c58ceb054469
+ms.openlocfilehash: d0cfc906030355dac78da3561da2b746a9a0dc92
+ms.sourcegitcommit: e47dc5fe9e59010ea3dbb9cb31abe15cfb821262
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75924288"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76124827"
 ---
 # <a name="offline-update-of-azure-app-service-on-azure-stack-hub"></a>Actualización sin conexión de Azure App Service en Azure Stack Hub
-
-*Se aplica a: Sistemas integrados de Azure Stack Hub y al kit de desarrollo de Azure Stack Hub*
 
 > [!IMPORTANT]
 > Aplique la actualización 1910 o posterior al sistema integrado de Azure Stack Hub o implemente el kit de desarrollo de Azure Stack Hub más reciente antes de implementar Azure App Service 1.8.
@@ -96,11 +94,11 @@ Para actualizar App Service en un entorno desconectado, primero debe crear un pa
 
    1. Seleccione el método de conexión que quiera usar: **Credencial** o **Entidad de servicio**
         - **Credential:**
-            - Si usa Azure Active Directory (Azure AD), escriba la cuenta de administrador y la contraseña de Azure AD que proporcionó al implementar Azure Stack Hub. Seleccione **Conectar**.
+            - Si usa Azure Active Directory (Azure AD), escriba la cuenta de administrador y la contraseña de Azure AD que proporcionó al implementar Azure Stack Hub. Seleccione **Conectar**.
             - Si se usan los Servicios de federación de Active Directory (AD FS), debe proporcionar la cuenta de administrador. Por ejemplo, cloudadmin@azurestack.local. Escriba la contraseña y, a continuación, seleccione **Conectar**.
         - **Entidad de seguridad de servicio**
             - La entidad de servicio que utilice **debe** tener derechos de **Propietario** en la **suscripción de proveedor predeterminada**.
-            - Proporcione el **Identificador de entidad de servicio**, el **Archivo de certificado** y la **Contraseña** y seleccione **Conectar**.
+            - Proporcione el **identificador de entidad de servicio**, el **archivo de certificado** y la **contraseña** y seleccione **Conectar**.
 
    1. En **Suscripciones de Azure Stack Hub**, seleccione la **suscripción de proveedor predeterminada**.  Azure App Service en Azure Stack Hub **debe** implementarse en la **suscripción de proveedor predeterminada**.
 

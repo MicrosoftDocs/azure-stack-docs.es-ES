@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/07/2019
+ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: justini
 ms.lastreviewed: 11/14/2018
-ms.openlocfilehash: 130a4f31f608368df99ec3f98fc2e2763a0fbd1a
-ms.sourcegitcommit: ce01b2cd114ca8ab5b70c6311b66c58ceb054469
+ms.openlocfilehash: 86981e41495e628571977c3b438a3b57eb0b3c2c
+ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75924001"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76535882"
 ---
 # <a name="use-azure-resource-manager-templates-in-azure-stack-hub"></a>Uso de plantillas de Administrador de recursos de Azure en Azure Stack Hub
 
