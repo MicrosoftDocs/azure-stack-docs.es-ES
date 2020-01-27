@@ -15,13 +15,13 @@ ms.topic: article
 ms.date: 06/10/2019
 ms.author: justinha
 ms.reviewer: fiseraci
-ms.lastreviewed: 12/29/2019
-ms.openlocfilehash: 0d136fdb1a72a6c52a3e441470713b77974d1fa3
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.lastreviewed: 1/16/2020
+ms.openlocfilehash: f61e7340c766f50f71bc41db7afa5bc079c53c7d
+ms.sourcegitcommit: 320eddb281a36d066ec80d67b103efad7d4f33c8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75882885"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76145808"
 ---
 # <a name="azure-stack-hub-infrastructure-security-controls"></a>Controles de seguridad de la infraestructura de Azure Stack Hub
 
@@ -105,7 +105,7 @@ Las ACL de red se exigen en tres capas:
 
 ## <a name="regulatory-compliance"></a>Cumplimiento de normativas
 
-Azure Stack Hub ha pasado por una evaluación formal realizada por una auditora independiente. Como resultado, hay disponible documentación donde se explica que la infraestructura de Azure Stack Hub cumple los controles aplicables de varios estándares de cumplimiento importantes. La documentación no es una certificación de Azure Stack Hub porque los estándares incluyen varios controles relacionados con el personal y con el proceso. Pero los clientes pueden usar esta documentación para impulsar su proceso de certificación.
+Azure Stack Hub ha pasado por una evaluación formal de la funcionalidad realizada por una auditora independiente. Como resultado, hay disponible documentación donde se explica que la infraestructura de Azure Stack Hub cumple los controles aplicables de varios estándares de cumplimiento importantes. La documentación no es una certificación de Azure Stack Hub porque los estándares incluyen varios controles relacionados con el personal y con el proceso. Pero los clientes pueden usar esta documentación para impulsar su proceso de certificación.
 
 Las evaluaciones incluyen estos estándares:
 

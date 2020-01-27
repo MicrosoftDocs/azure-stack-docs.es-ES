@@ -16,12 +16,12 @@ ms.date: 12/27/2019
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 0b150f97adf3e456b41dc3af9ac92e0a281b793a
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 951840c6382506404e514bfd27d69af399b5a120
+ms.sourcegitcommit: 10520f4481c0e3891c9dcd46fb21249ad2a33717
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75812406"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76516749"
 ---
 # <a name="azure-stack-hub-known-issues"></a>Problemas conocidos de Azure Stack Hub
 
@@ -776,6 +776,13 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 - Aplicable a: Este problema se aplica a la versión 1906.
 - Causa: La página de información general del conjunto de escalado de máquinas virtuales muestra un gráfico vacío. Al hacer clic en el gráfico vacío, se abre una hoja de "nube de lluvia". Este es el gráfico de información de diagnóstico del conjunto de escalado, como el porcentaje de CPU, y no es una característica admitida en la compilación actual de Azure Stack Hub.
 - Corrección: Ninguno.
+- Repetición: Comunes
+
+### <a name="issues-creating-resources"></a>Problemas en la creación de recursos
+
+- Aplicable a: Este problema se aplica a la versión 1906.
+- Causa: Hay un problema conocido en la versión 1906 con los roles personalizados y la asignación de permisos para la creación de recursos. Puede que experimente problemas al crear los recursos aunque tenga los permisos correctos.
+- Corrección: Actualice a la compilación 1907 para solucionar este problema.
 - Repetición: Comunes
 
 ### <a name="virtual-machine-diagnostic-settings-blade"></a>Hoja de configuración de diagnóstico de la máquina virtual

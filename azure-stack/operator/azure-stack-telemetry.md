@@ -13,16 +13,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/02/2019
+ms.date: 1/16/2020
 ms.author: mabrigg
 ms.reviewer: comartin
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: f83380b7eb3f35c5887911f40336bf4286759f53
-ms.sourcegitcommit: c4368652f0dd68c432aa1dabddbabf161a4a6399
+ms.openlocfilehash: c16987ac19b47eb4d0fedb147522703b98c8792e
+ms.sourcegitcommit: ba2fd47e74adebe1fcbb489d059a2c27d59b179c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75914762"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256366"
 ---
 # <a name="configure-azure-stack-hub-telemetry"></a>Configuración de la telemetría de Azure Stack Hub
 
@@ -36,7 +36,7 @@ Para un operador de Azure Stack Hub, la telemetría puede proporcionar informaci
 La telemetría de Azure Stack Hub se basa en la Experiencia del usuario conectado y el componente de telemetría de Windows Server 2016. Este componente usa la tecnología [Seguimiento de eventos para Windows (ETW)](https://msdn.microsoft.com/library/dn904632(v=vs.85).aspx) para recopilar y almacenar eventos y datos. Los componentes de Azure Stack usan la misma tecnología para publicar eventos y datos que se recopilan mediante las API de seguimiento y registro de eventos del sistema operativo. Entre los ejemplos de estos componentes de Azure Stack Hub se incluyen los siguientes proveedores: Recursos de red, recursos de almacenamiento, recursos de supervisión y recursos de actualización. El componente Experiencia del usuario y telemetría asociadas cifra los datos mediante SSL y usa la asignación de certificados para transmitir datos al servicio Microsoft Data Management a través de HTTPS.
 
 > [!IMPORTANT]
-> Para habilitar el flujo de datos de telemetría, el puerto 443 (HTTPS) debe estar abierto en la red. El componente Experiencia del usuario y telemetría asociadas se conecta al servicio Microsoft Data Management en https://v10.vortex-win.data.microsoft.com. El componente Experiencia del usuario y telemetría asociadas también se conecta a https://settings-win.data.microsoft.com para descargar la información de la configuración.
+> Para habilitar el flujo de datos de telemetría, el puerto 443 (HTTPS) debe estar abierto en la red. El componente Experiencia del usuario y telemetría asociadas se conecta al servicio Microsoft Data Management en `https://v10.events.data.microsoft.com`. El componente Experiencia del usuario y telemetría asociadas también se conecta a `https://settings-win.data.microsoft.com` para descargar la información de la configuración. Otros servicios de datos de diagnóstico se conectan a `https://watson.telemetry.microsoft.com` para la notificación de errores.
 
 ## <a name="privacy-considerations"></a>Consideraciones sobre privacidad
 

@@ -12,17 +12,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/16/2019
+ms.date: 01/22/2020
 ms.author: justinha
-ms.reviewer: tbd
-ms.lastreviewed: 09/12/2018
+ms.reviewer: misainat
+ms.lastreviewed: 01/22/2020
 ROBOTS: NOINDEX
-ms.openlocfilehash: 81e6e51c602909421e40b4c1e1d5e6ec796f7839
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 0dc4786e575fac736ec4664d2b8fdd3dcc467466
+ms.sourcegitcommit: 10520f4481c0e3891c9dcd46fb21249ad2a33717
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75817914"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76516732"
 ---
 # <a name="create-a-site-to-site-vpn-connection-between-two-virtual-networks-in-different-asdk-environments"></a>Creación de una conexión VPN de sitio a sitio entre dos redes virtuales en diferentes entornos de ASDK
 
@@ -75,21 +75,13 @@ En la tabla siguiente se resume la configuración de red para ambos entornos de 
 ### <a name="get-the-ip-address-of-the-external-adapter-of-the-nat-vm"></a>Obtención de la dirección IP del adaptador externo de la máquina virtual de NAT
 
 1. Inicie sesión en la máquina física de Azure Stack Hub para POC1.
-2. Edite el código de PowerShell siguiente para agregar la contraseña de administrador y, a continuación, ejecute el código en el host de POC:
+2. Abra PowerShell como administrador y ejecute el siguiente cmdlet:
 
    ```powershell
-   cd \AzureStack-Tools-master\connect
-   Import-Module .\AzureStack.Connect.psm1
-   $Password = ConvertTo-SecureString "<your administrator password>" `
-    -AsPlainText `
-    -Force
-   Get-AzureStackNatServerAddress `
-    -HostComputer "AzS-bgpnat01" `
-    -Password $Password
+   Get-NetNatExternalAddress
    ```
 
 3. Agregue la dirección IP a la tabla de configuración de red que aparece en la sección anterior.
-
 4. Repita este procedimiento en POC2.
 
 ## <a name="create-the-network-resources-in-poc1"></a>Creación de los recursos de red en POC1

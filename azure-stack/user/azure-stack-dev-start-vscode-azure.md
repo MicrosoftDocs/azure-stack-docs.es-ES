@@ -9,12 +9,12 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 1898b4415519dd8b1e6bf901c69cf67d6a607308
-ms.sourcegitcommit: ce01b2cd114ca8ab5b70c6311b66c58ceb054469
+ms.openlocfilehash: 5ef1fe95f91c0ceb343bb796c4c31cdefad65e36
+ms.sourcegitcommit: ba2fd47e74adebe1fcbb489d059a2c27d59b179c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75923855"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256230"
 ---
 # <a name="connect-to-azure-stack-hub-using-azure-account-extension-in-visual-studio-code"></a>Conexión a Azure Stack Hub mediante la extensión de la cuenta de Azure en Visual Studio Code
 
@@ -65,7 +65,7 @@ VS Code es un editor ligero para compilar y depurar aplicaciones web y en la nub
     
     Microsoft Azure Resource Manager es un marco de administración que le permite implementar, administrar y supervisar recursos de Azure.
     - La dirección URL de Resource Manager para el Kit de desarrollo de Azure Stack (ASDK) es: `https://management.local.azurestack.external/` 
-    - La dirección URL de Resource Manager para un sistema integrado es: `https://management.<location>.ext-<machine-name>.masd.stbtest.microsoft.com/`
+    - La dirección URL de Resource Manager para un sistema integrado es: `https://management.region.<fqdn>/`, donde `<fqdn>` es el nombre de dominio completo.
     - Agregue el texto siguiente a la URL para acceder a los metadatos: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`
 
     Por ejemplo, la dirección URL para recuperar los metadatos para el punto de conexión de Azure Resource Manager puede tener un aspecto similar a este: `https://management.local.azurestack.external/metadata/endpoints?api-version=1.0`

@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/02/2019
+ms.date: 1/16/2020
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 09/17/2018
-ms.openlocfilehash: 7f9ab8b1ee8988689d2ac52dc355b85bfe9bfae6
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 50ff1bf63cbd7aaa36bb16e84f4c57db9c5a607d
+ms.sourcegitcommit: ba2fd47e74adebe1fcbb489d059a2c27d59b179c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75805071"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256383"
 ---
 # <a name="add-additional-scale-unit-nodes-in-azure-stack-hub"></a>Incorporación de nodos de la unidad de escalado adicionales en Azure Stack Hub
 
@@ -34,7 +34,7 @@ En el siguiente diagrama de flujo se muestra el proceso general para agregar un 
 ![Flujo de cómo agregar una unidad de escalado](media/azure-stack-add-scale-node/add-node-flow.png)
 <br> *Si su proveedor de hardware de OEM implementa la colocación del bastidor del servidor físico y las actualizaciones, el firmware varía según su contrato de soporte técnico.*
 
-La operación para agregar un nuevo nodo puede tardar varias horas o días en completarse.
+La operación para agregar un nuevo nodo puede tardar varias horas o días en completarse. No se producirá ningún impacto en las cargas de trabajo en ejecución en el sistema durante la incorporación de un nodo adicional de unidad de escalado.
 
 > [!Note]  
 > No intente ninguna de las siguientes operaciones mientras ya esté en curso una operación de nodo para agregar una unidad de escalado:
