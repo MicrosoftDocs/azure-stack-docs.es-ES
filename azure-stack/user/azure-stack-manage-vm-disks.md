@@ -1,26 +1,18 @@
 ---
-title: Creación del almacenamiento en disco de máquinas virtuales en Azure Stack Hub | Microsoft Docs
+title: Creación del almacenamiento en disco de máquinas virtuales en Azure Stack Hub
 description: Creación de discos de máquina virtual en Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 12/03/2019
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 01/18/2019
-ms.openlocfilehash: 66147be9158726ab9ba01d011ba0fa2fd8f141bc
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: a6f728e69eacab25941ef0640a35243d390fa4c7
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75883514"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883481"
 ---
 # <a name="create-vm-disk-storage-in-azure-stack-hub"></a>Creación del almacenamiento en disco de máquinas virtuales en Azure Stack Hub
 

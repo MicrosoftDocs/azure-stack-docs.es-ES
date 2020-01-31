@@ -1,27 +1,18 @@
 ---
-title: Tipos de cuota en Azure Stack Hub | Microsoft Docs
+title: Tipos de cuota en Azure Stack Hub
 description: Vea y edite los diferentes tipos de cuota disponibles para los servicios y recursos de Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/07/2020
 ms.author: sethm
 ms.reviewer: xiaofmao
 ms.lastreviewed: 12/07/2018
-ms.openlocfilehash: 5f4d29a95ab56ee4728109f5b74494c39d8b1c98
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 1994f35a2865de75655c3b82d9ec1ee1618b7cee
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75882069"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76881493"
 ---
 # <a name="quota-types-in-azure-stack-hub"></a>Tipos de cuota en Azure Stack Hub
 
