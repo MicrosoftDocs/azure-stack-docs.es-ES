@@ -1,27 +1,18 @@
 ---
-title: Uso de perfiles de la versión de API con .NET en Azure Stack Hub | Microsoft Docs
+title: Uso de los perfiles de la versión de API con .NET en Azure Stack Hub
 description: Más información sobre cómo usar los perfiles de la versión de API con .NET en Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 09/17/2019
+ms.date: 01/27/2020
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: 3af8a06f10322df67d80c489e1d19a7805dd8b2c
-ms.sourcegitcommit: ba2fd47e74adebe1fcbb489d059a2c27d59b179c
+ms.openlocfilehash: 6f8220f9a8683569c23460acf2890c9aa8407f30
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256400"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883086"
 ---
 # <a name="use-api-version-profiles-with-net-in-azure-stack-hub"></a>Uso de los perfiles de la versión de API con .NET en Azure Stack Hub
 
@@ -34,7 +25,7 @@ Un perfil de API es una combinación de los proveedores de recursos y las versio
 - Para usar las últimas versiones de todos los servicios, use el perfil **más reciente** de los paquetes. Este perfil es parte del paquete NuGet **Microsoft.Azure.Management**.
 
 - Para usar los servicios compatibles con Azure Stack Hub, utilice uno de los siguientes paquetes:
-  - **Microsoft.Azure.Management.Profiles.hybrid\_2019\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg** 
+  - **Microsoft.Azure.Management.Profiles.hybrid\_2019\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**
   - **Microsoft.Azure.Management.Profiles.hybrid\_2018\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**
 
   Asegúrese de que la parte **ResourceProvider** del paquete NuGet anterior se cambia al proveedor correcto.
@@ -53,9 +44,9 @@ Puede combinar todas las opciones en la misma aplicación.
 
 - Los paquetes que se deben instalar dependen de la versión del perfil que quiera utilizar. Los nombres de paquete para las versiones de perfiles son:
 
-   - **Microsoft.Azure.Management.Profiles.hybrid\_2019\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**
+  - **Microsoft.Azure.Management.Profiles.hybrid\_2019\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**
 
-   - **Microsoft.Azure.Management.Profiles.hybrid\_2018\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**
+  - **Microsoft.Azure.Management.Profiles.hybrid\_2018\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**
 
 - Para instalar los paquetes NuGet correctos para Visual Studio Code, consulte el siguiente vínculo para descargar las [instrucciones del administrador de paquetes NuGet][].
 
@@ -85,7 +76,7 @@ Para buscar el identificador de inquilino de Azure Stack Hub, siga las instrucci
 Para establecer las variables de entorno, en el símbolo del sistema de Windows, use el siguiente formato:
 
 ```shell
-Set Azure_Tenant_ID=Your_Tenant_ID
+set Azure_Tenant_ID=Your_Tenant_ID
 ```
 
 ### <a name="macos-linux-and-unix-based-systems"></a>Sistemas basados en MacOS, Linux y Unix
@@ -93,7 +84,7 @@ Set Azure_Tenant_ID=Your_Tenant_ID
 En los sistemas basados en Unix, use el comando siguiente:
 
 ```shell
-Export Azure_Tenant_ID=Your_Tenant_ID
+export Azure_Tenant_ID=Your_Tenant_ID
 ```
 
 ### <a name="the-azure-stack-hub-resource-manager-endpoint"></a>Punto de conexión de Resource Manager de Azure Stack Hub

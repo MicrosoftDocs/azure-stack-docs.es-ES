@@ -2,26 +2,18 @@
 title: Controles de seguridad de Azure Stack Hub
 titleSuffix: Azure Stack Hub
 description: Conozca la posición y los controles de seguridad aplicados a Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: JustinHall
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 06/10/2019
 ms.author: justinha
 ms.reviewer: fiseraci
 ms.lastreviewed: 1/16/2020
-ms.openlocfilehash: f61e7340c766f50f71bc41db7afa5bc079c53c7d
-ms.sourcegitcommit: 320eddb281a36d066ec80d67b103efad7d4f33c8
+ms.openlocfilehash: 396db14d269ee9443d38f8220e5dd0384d04a479
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76145808"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76881304"
 ---
 # <a name="azure-stack-hub-infrastructure-security-controls"></a>Controles de seguridad de la infraestructura de Azure Stack Hub
 

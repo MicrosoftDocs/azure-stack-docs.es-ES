@@ -2,18 +2,17 @@
 title: Patrón de DevOps para la inteligencia perimetral mediante Azure y Azure Stack Hub
 description: Conozca el patrón de DevOps para la inteligencia perimetral mediante Azure y Azure Stack Hub.
 author: BryanLa
-ms.service: azure-stack
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: f774fb0382409d5674c622f289767ca8ae81effb
-ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
+ms.openlocfilehash: bf1ae2d8c404f8cc52ab32b22c883ee15934c3b1
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73640176"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76877483"
 ---
 # <a name="devops-pattern"></a>Patrón DevOps
 
@@ -68,7 +67,7 @@ En la práctica, las métricas RTO y el RPO implican redundancia y copia de segu
 
 Otro factor importante a tener en cuenta a la hora de diseñar el sistema que se usa para la automatización de la implementación es el control de acceso y la administración adecuada de los derechos necesarios para implementar servicios en entornos de nube. ¿Qué derechos son necesarios para crear, eliminar o modificar implementaciones? Por ejemplo, normalmente se necesita un conjunto de derechos para crear un grupo de recursos en Azure y otro para implementar servicios en el grupo de recursos.
 
-### <a name="manageability"></a>Manejabilidad
+### <a name="manageability"></a>Facilidad de uso
 
 El diseño de cualquier sistema basado en el patrón DevOps debe tener en cuenta la automatización, el registro y las alertas de cada servicio de la cartera. Use servicios compartidos, un equipo de aplicaciones o ambos, y realice un seguimiento de las directivas de seguridad y de la gobernanza.
 

@@ -1,27 +1,18 @@
 ---
-title: Tareas de evaluación avanzadas de ASDK | Microsoft Docs
+title: Tareas de evaluación avanzadas de ASDK
 description: Obtenga información sobre las tareas de evaluación avanzadas del Kit de desarrollo de Azure Stack (ASDK).
-services: azure-stack
-documentationcenter: ''
 author: justinha
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: 2390f2c21325a059ea6f651e7fcd944d890bf307
-ms.sourcegitcommit: 5ef433aa6b75cdfb557fab0ef9308ff2118e66e5
+ms.openlocfilehash: 5ad405deed93155871afb4793a1d800268ae7d22
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73594771"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76874168"
 ---
 # <a name="advanced-asdk-evaluation-tasks"></a>Tareas de evaluación avanzadas de ASDK
 Una vez que se haya familiarizado con las características y funcionalidades básicas del Kit de desarrollo de Azure Stack (ASDK), puede ampliar sus conocimientos acerca de Azure Stack mediante el examen de escenarios más avanzados. Estas tareas de evaluación más avanzadas se documentan de forma muy completa en la documentación del operador de Azure Stack.

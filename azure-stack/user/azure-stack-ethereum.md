@@ -1,23 +1,18 @@
 ---
-title: Implementación de una red de la cadena de bloques de Ethereum en Azure Stack Hub | Microsoft Docs
+title: Implementación de una red de la cadena de bloques Ethereum en Azure Stack Hub
 description: Tutorial en el que se usan plantillas de soluciones personalizadas para implementar y configurar una red de la cadena de bloques de Ethereum del consorcio en Azure Stack Hub.
-services: azure-stack
-keywords: ''
 author: PatAltimore
 ms.author: patricka
 ms.date: 06/03/2019
 ms.topic: tutorial
-ms.service: azure-stack
 ms.reviewer: seyadava
-ms.custom: mvc
-manager: femila
 ms.lastreviewed: 06/03/2019
-ms.openlocfilehash: 86e9f6fb78275678f8072573f83696d3ea79184f
-ms.sourcegitcommit: ce01b2cd114ca8ab5b70c6311b66c58ceb054469
+ms.openlocfilehash: c981fb453389c4e088db94474dd757f7881dfc6b
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75924147"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883702"
 ---
 # <a name="deploy-an-ethereum-blockchain-network-on-azure-stack-hub"></a>Implementación de una red de la cadena de bloques Ethereum en Azure Stack Hub
 

@@ -1,26 +1,18 @@
 ---
-title: Registro del Kit de desarrollo de Azure Stack en Azure | Microsoft Docs
+title: Registro del Kit de desarrollo de Azure Stack en Azure
 description: Obtenga información sobre cómo registrar el Kit de desarrollo de Azure Stack (ASDK) con Azure para habilitar la redifusión del Marketplace y los informes de uso.
-services: azure-stack
-documentationcenter: ''
 author: justinha
-manager: femila
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 06/14/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 06/14/2019
-ms.openlocfilehash: c12882ea5f26589c18abaf016ba09b17d02bdcab
-ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
+ms.openlocfilehash: 66fb60c8fbb19bf125ff143393308b9f755119b6
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022941"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76873556"
 ---
 # <a name="register-the-asdk-with-azure"></a>Registro del Kit de desarrollo de Azure Stack en Azure
 

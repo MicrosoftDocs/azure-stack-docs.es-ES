@@ -1,20 +1,18 @@
 ---
-title: Ejecución de una máquina virtual Windows en Azure Stack Hub | Microsoft Docs
+title: Ejecución de una máquina virtual Windows en Azure Stack Hub
 description: Aprenda a ejecutar una máquina virtual Windows en Azure Stack Hub.
-services: azure-stack
 author: mattbriggs
-ms.service: azure-stack
 ms.topic: how-to
 ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: 20e855655edfdbf2c67c130b88cfa2af10338986
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 2aaa7ccf995ac9cc4f5cfc012441ca2317af3504
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75818458"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76885298"
 ---
 # <a name="run-a-windows-virtual-machine-on-azure-stack-hub"></a>Ejecución de una máquina virtual Windows en Azure Stack Hub
 

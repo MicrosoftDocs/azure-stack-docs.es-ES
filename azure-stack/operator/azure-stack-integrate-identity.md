@@ -1,21 +1,18 @@
 ---
-title: Integración de la identidad de AD FS con Azure Stack Hub en el centro de datos | Microsoft Docs
+title: Integración de la identidad de AD FS con Azure Stack Hub en el centro de datos
 description: Aprenda a integrar el proveedor de identidades de AD FS de Azure Stack Hub con AD FS del centro de datos.
-services: azure-stack
-author: PatAltimore
-manager: femila
-ms.service: azure-stack
+author: ihenkel
 ms.topic: article
 ms.date: 05/10/2019
-ms.author: patricka
+ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 05/10/2019
-ms.openlocfilehash: 4d1ca3a04e838743983a7ed9d68fde5b1b189ff6
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 1e55ae573d67775389e1e8e8ebac1b9ba094e5a7
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75817387"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76882134"
 ---
 # <a name="integrate-ad-fs-identity-with-your-azure-stack-hub-datacenter"></a>Integración de la identidad de AD FS con Azure Stack Hub en el centro de datos
 

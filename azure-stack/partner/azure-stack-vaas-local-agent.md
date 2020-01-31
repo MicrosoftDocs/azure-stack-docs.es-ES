@@ -1,26 +1,19 @@
 ---
-title: Implementación del agente local | Microsoft Docs
+title: Implementación del agente local
 description: Implemente al agente local para la validación como servicio de Azure Stack.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: quickstart
 ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 9cd13f16df804c674c2901ae0e167e47294f176a
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.openlocfilehash: a84f2495b0e2195ac143dc8fd9ac4ea4668392b4
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955897"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884094"
 ---
 # <a name="deploy-the-local-agent"></a>Implementación del agente local
 
@@ -89,11 +82,11 @@ Compruebe que el equipo cumple los criterios siguientes:
 
 **Parámetros**
 
-| Parámetro | DESCRIPCIÓN |
+| Parámetro | Descripción |
 | --- | --- |
 | AadServiceAdminUser | Usuario administrador global del inquilino de Azure AD. Por ejemplo, puede ser vaasadmin@contoso.onmicrosoft.com. |
 | AadServiceAdminPassword | Contraseña del usuario administrador global. |
-| CloudAdminUserName | El usuario administrador de la nube puede acceder a comandos permitidos, y ejecutarlos, en el punto de conexión con privilegios. Por ejemplo, puede ser AzusreStack\CloudAdmin. Obtenga más información [aquí](azure-stack-vaas-parameters.md). |
+| CloudAdminUserName | El usuario administrador de la nube puede acceder a comandos permitidos, y ejecutarlos, en el punto de conexión con privilegios. Por ejemplo, puede ser AzusreStack\CloudAdmin. Vea [aquí](azure-stack-vaas-parameters.md) para obtener más información. |
 | CloudAdminPassword | La contraseña de la cuenta de administrador de la nube.|
 
 ![Requisitos previos para la descarga](media/installing-prereqs.png)
@@ -134,9 +127,9 @@ Las pruebas ejecutan operaciones remotas. La máquina que ejecuta las pruebas de
 
       **Parámetros**  
 
-    | Parámetro | DESCRIPCIÓN |
+    | Parámetro | Descripción |
     | --- | --- |
-    | CloudAdminUserName | El usuario administrador de la nube puede acceder a comandos permitidos, y ejecutarlos, en el punto de conexión con privilegios. Por ejemplo, puede ser AzusreStack\CloudAdmin. Obtenga más información [aquí](azure-stack-vaas-parameters.md). |
+    | CloudAdminUserName | El usuario administrador de la nube puede acceder a comandos permitidos, y ejecutarlos, en el punto de conexión con privilegios. Por ejemplo, puede ser AzusreStack\CloudAdmin. Vea [aquí](azure-stack-vaas-parameters.md) para obtener más información. |
     | CloudAdminPassword | La contraseña de la cuenta de administrador de la nube.|
     | VaaSUserId | Identificador de usuario utilizado para iniciar sesión en el portal de VaaS (por ejemplo, NombreUsuario\@Contoso.com) |
     | VaaSTenantId | Identificador del inquilino de Azure AD para la cuenta de Azure registrada en la validación como servicio. |

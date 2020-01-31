@@ -1,26 +1,17 @@
 ---
-title: Diferencias entre Azure Stack Hub y Azure al usar servicios y compilar aplicaciones | Microsoft Docs
+title: Diferencias entre Azure Stack Hub y Azure al usar servicios y compilar aplicaciones
 description: Descripción de las diferencias entre Azure y Azure Stack Hub al usar servicios y compilar aplicaciones.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.assetid: c81f551d-c13e-47d9-a5c2-eb1ea4806228
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: overview
 ms.date: 01/06/2020
 ms.author: sethm
 ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: 82b1826831ffd9c5d28f56dab25c6f02b49edca8
-ms.sourcegitcommit: ce01b2cd114ca8ab5b70c6311b66c58ceb054469
+ms.openlocfilehash: 74e2e6986f3fac7ee6503c1b7417dffea44842b5
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75924020"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883876"
 ---
 # <a name="differences-between-azure-stack-hub-and-azure-when-using-services-and-building-apps"></a>Diferencias entre Azure Stack Hub y Azure al usar servicios y compilar aplicaciones
 

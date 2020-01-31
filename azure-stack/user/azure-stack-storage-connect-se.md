@@ -1,25 +1,18 @@
 ---
-title: Conexión del Explorador de Storage a una suscripción de Azure Stack Hub o una cuenta de almacenamiento | Microsoft Docs
+title: Conexión del Explorador de Storage a una suscripción de Azure Stack Hub o una cuenta de almacenamiento
 description: Aprenda a conectar el Explorador de Storage a una suscripción de Azure Stack Hub
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 7c01e509dc77e2a036ad640ee5376ffda37f903f
-ms.sourcegitcommit: 7dd685fddf2f5d7a0c0a20fb8830ca5a061ed031
+ms.openlocfilehash: 2776443fac5e30b14154e96618a49bd89d16a7c0
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259841"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884400"
 ---
 # <a name="connect-storage-explorer-to-an-azure-stack-hub-subscription-or-a-storage-account"></a>Conexión del Explorador de Storage a una suscripción de Azure Stack Hub o una cuenta de almacenamiento
 
@@ -82,7 +75,7 @@ Siga estos pasos para conectar el Explorador de Storage a una suscripción de Az
 
     ![Adición de una cuenta de Azure Stack Hub](./media/azure-stack-storage-connect-se/add-azure-stack-account.png)
 
-3. En el cuadro de diálogo Conectar a Azure Storage, en **Entorno de Azure**, seleccione **Azure**, **Azure China 21Vianet**, **Azure Alemania**, **Azure Gobierno de EE. UU.** o **Agregar nuevo entorno** en función de la cuenta de Azure Stack Hub que vaya a usar. Seleccione **Sign in** (Iniciar sesión) para iniciar sesión con la cuenta de Azure Stack Hub que está asociada a una suscripción de Azure Stack Hub activa por lo menos.
+3. En el cuadro de diálogo Conectar a Azure Storage, en **Entorno de Azure**, seleccione **Azure**, **Azure China 21Vianet**, **Azure Alemania**, **Azure US Gov** o **Agregar nuevo entorno** en función de la cuenta de Azure Stack Hub que vaya a usar. Seleccione **Sign in** (Iniciar sesión) para iniciar sesión con la cuenta de Azure Stack Hub que está asociada a una suscripción de Azure Stack Hub activa por lo menos.
 
     ![Conectar a Azure Storage](./media/azure-stack-storage-connect-se/azure-stack-connect-to-storage.png)
 

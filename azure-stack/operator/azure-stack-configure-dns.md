@@ -1,25 +1,18 @@
 ---
-title: Actualización del reenviador DNS en Azure Stack Hub | Microsoft Docs
+title: Actualización del reenviador DNS en Azure Stack Hub
 description: Aprenda a actualizar el reenviador DNS en Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
-author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
+author: ihenkel
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.author: sethm
+ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: b16eade221c51664205e865d1680e7f048fbfc7a
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: e0220a9ce7a16e5aa49f336e52d2abef535e71cf
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75817591"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76879183"
 ---
 # <a name="update-the-dns-forwarder-in-azure-stack-hub"></a>Actualización del reenviador DNS en Azure Stack Hub
 

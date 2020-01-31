@@ -1,28 +1,18 @@
 ---
-title: Volver a implementar el ASDK | Microsoft Docs
+title: Reimplementación del Kit de desarrollo de Azure Stack
 description: Obtenga información sobre cómo implementar el Kit de desarrollo de Azure Stack (ASDK).
-services: azure-stack
-documentationcenter: ''
 author: justinha
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.custom: ''
 ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 11/05/2018
-ms.openlocfilehash: 5ff77bbe915a506803a1c06f68579c199439ea73
-ms.sourcegitcommit: 7968f9f0946138867323793be9966ee2ef99dcf4
+ms.openlocfilehash: d0fc4539b581474c9db2a2dbb05495c9b1bce695
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025890"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76873522"
 ---
 # <a name="redeploy-the-asdk"></a>Reimplementación del Kit de desarrollo de Azure Stack
 En este artículo, aprenderá a volver a implementar el Kit de desarrollo de Azure Stack (ASDK) en un entorno que no sea de producción. Dado que la actualización del Kit de desarrollo de Azure Stack, debe volver a implementarla completamente para pasar a una versión más reciente. También puede volver a implementar el ASDK cuando quiera comenzar desde cero.
@@ -61,7 +51,7 @@ Para quitar el recurso de registro, utilice el cmdlet **Remove-AzsRegistration**
 3. Se le pedirá que inicie sesión tanto en su suscripción a Azure como en la instalación local del ASDK cuando se ejecute el script.
 4. Cuando el script se complete, debería ver mensajes similares a los siguientes ejemplos:
 
-    `De-Activating Azure Stack (this may take up to 10 minutes to complete).``Your environment is now unable to syndicate items and is no longer reporting usage data.`
+    `De-Activating Azure Stack (this may take up to 10 minutes to complete).` `Your environment is now unable to syndicate items and is no longer reporting usage data.`
     `Remove registration resource from Azure...`
     `"Deleting the resource..." on target "/subscriptions/<subscription information>"`
     `********** End Log: Remove-AzsRegistration *********`

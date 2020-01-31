@@ -1,27 +1,18 @@
 ---
-title: Implementación de una plantilla desde el portal en Azure Stack Hub | Microsoft Docs
+title: Implementación de una plantilla desde el portal en Azure Stack Hub
 description: Aprenda a usar el portal de Azure Stack Hub para implementar plantillas.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.assetid: eafa60f2-16c9-4ef1-b724-47709e9ea29e
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 6feca120c01704aaf999899c660c64ecfecd3d97
-ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
+ms.openlocfilehash: 904a15c59cf2e9418d3615d25c11303fede04762
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76536392"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76885026"
 ---
 # <a name="deploy-a-template-using-the-portal-in-azure-stack-hub"></a>Implementación de una plantilla desde el portal en Azure Stack Hub
 

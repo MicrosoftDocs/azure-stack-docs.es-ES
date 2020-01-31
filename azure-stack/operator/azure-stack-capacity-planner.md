@@ -1,27 +1,18 @@
 ---
-title: Capacity Planner de Azure Stack Hub | Microsoft Docs
+title: Azure Stack Hub Capacity Planner
 description: Obtenga información sobre el planeamiento de capacidad para las implementaciones de Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
-author: prchint
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
+author: ihenkel
 ms.topic: article
 ms.date: 05/31/2019
-ms.author: justinha
+ms.author: inhenkel
 ms.reviewer: prchint
 ms.lastreviewed: 05/31/2019
-ms.openlocfilehash: deff6d15374105b56e504da4edf89eecc8f6a640
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 6c5625c3161650d1e764df315b7b2390cd84f3f1
+ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75816860"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76889786"
 ---
 # <a name="azure-stack-hub-capacity-planner"></a>Azure Stack Hub Capacity Planner
 

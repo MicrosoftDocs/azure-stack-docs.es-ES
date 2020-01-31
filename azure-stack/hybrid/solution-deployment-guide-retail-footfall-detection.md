@@ -2,18 +2,17 @@
 title: Implementación de una solución de detección de afluencia de público basada en IA con Azure y Azure Stack Hub
 description: Aprenda a implementar una solución de detección de afluencia de público basada en IA con Azure y Azure Stack Hub. Esta solución es útil para analizar el tráfico de visitantes en tiendas de venta al por menor.
 author: BryanLa
-ms.service: azure-stack
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: c2e043630e601098e0b2abbb1bacbffe44808495
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: d81fdf315e9bc834c46161d901d6ac10d736f7ab
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75881457"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76875307"
 ---
 # <a name="deploy-an-ai-based-footfall-detection-solution-using-azure-and-azure-stack-hub"></a>Implementación de una solución de detección de afluencia de público basada en IA con Azure y Azure Stack Hub
 
