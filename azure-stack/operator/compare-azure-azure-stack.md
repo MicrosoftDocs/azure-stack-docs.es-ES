@@ -1,28 +1,18 @@
 ---
-title: Comparación de Azure Stack Hub y Azure global | Microsoft Docs
+title: Comparación entre Azure Stack Hub y Azure global
 description: Información acerca de cómo Microsoft proporciona Azure y la familia de servicios de Azure Stack Hub en un ecosistema de Azure
-services: azure-stack
-documentationcenter: ''
 author: justinha
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: overview
 ms.date: 05/03/2019
 ms.author: justinha
 ms.reviewer: unknown
-ms.custom: ''
 ms.lastreviewed: 03/29/2019
-ms.openlocfilehash: 2d350bedd88ba5c3d04b29f833a17bdd19705f05
-ms.sourcegitcommit: 320eddb281a36d066ec80d67b103efad7d4f33c8
+ms.openlocfilehash: 3ddcedc92265147cd4e87ebabf2ad48986b9ad8d
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76145859"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76880033"
 ---
 # <a name="differences-between-global-azure-azure-stack-hub-and-azure-stack-hci"></a>Diferencias entre Azure global, Azure Stack Hub y Azure Stack HCI
 

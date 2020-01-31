@@ -1,20 +1,18 @@
 ---
-title: Uso de una clave pública SSH con Azure Stack Hub | Microsoft Docs
+title: Uso de una clave pública SSH con Azure Stack Hub
 description: Uso de una clave pública SSH
-services: azure-stack
 author: mattbriggs
-ms.service: azure-stack
 ms.topic: overview
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: 160427b6cdef6bcb5927aad4999ed4c213fc3be3
-ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
+ms.openlocfilehash: c9a37dab12f3a96e2f44aa9ccb92eaea295a0d0b
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76536341"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883807"
 ---
 # <a name="use-an-ssh-public-key"></a>Uso de una clave pública SSH
 

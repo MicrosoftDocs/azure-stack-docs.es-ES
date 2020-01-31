@@ -1,20 +1,18 @@
 ---
-title: Implementación de un archivo WAR de Java en una máquina virtual en Azure Stack Hub | Microsoft Docs
+title: Implementación de un archivo WAR de Java en una máquina virtual en Azure Stack Hub
 description: Implemente un archivo WAR de Java en una máquina virtual en Azure Stack Hub.
-services: azure-stack
 author: mattbriggs
-ms.service: azure-stack
 ms.topic: overview
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: 7d5ed74f3b62f3cdb926fcf321a7502840e5f453
-ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
+ms.openlocfilehash: 6a696417b296da978b2d077c6f2c01b94a106d2e
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76536256"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884909"
 ---
 # <a name="deploy-a-java-web-app-to-a-vm-in-azure-stack-hub"></a>Implementación de una aplicación web de Java en una máquina virtual en Azure Stack Hub
 

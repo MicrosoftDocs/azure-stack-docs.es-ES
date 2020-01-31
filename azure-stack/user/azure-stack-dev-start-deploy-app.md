@@ -1,20 +1,18 @@
 ---
-title: Implementación de una aplicación en Azure Stack Hub | Microsoft Docs
+title: Implementación de una aplicación en Azure Stack Hub
 description: Implemente una aplicación en Azure Stack Hub.
-services: azure-stack
 author: mattbriggs
-ms.service: azure-stack
 ms.topic: overview
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: 07a6e2c3b7f7dd4a3a0102d320d9564e7479b5b3
-ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
+ms.openlocfilehash: 4b305b56c9da4a5511a98397df66cc0fa6be34a9
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76536273"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883792"
 ---
 # <a name="common-deployments-for-azure-stack-hub"></a>Implementaciones comunes para Azure Stack Hub
 

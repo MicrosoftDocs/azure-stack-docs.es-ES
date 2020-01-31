@@ -1,26 +1,19 @@
 ---
-title: Supervisión y administración de pruebas en el portal de VaaS de Azure Stack | Microsoft Docs
+title: Supervisión y administración de pruebas en el portal de VaaS de Azure Stack
 description: Supervisión y administración de pruebas en el portal de VaaS de Azure Stack.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 87ba89298c0a5a134cb0b3b1a2b7e771151e46d9
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.openlocfilehash: b2a6f2b1e40ddfad9edbf64c92f29e93786fc6f9
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955908"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76885084"
 ---
 # <a name="monitor-and-manage-tests-in-the-vaas-portal"></a>Supervisión y administración de pruebas en el portal de VaaS
 
@@ -66,12 +59,12 @@ Para las ejecuciones oficiales (es decir, las de los flujos de trabajo de **vali
 
 Cada instancia de prueba programada muestra la siguiente información:
 
-| Columna | DESCRIPCIÓN |
+| Columna | Descripción |
 | --- | --- |
 | Nombre de la prueba | El nombre y versión de la prueba. |
 | Category | Propósito de la prueba. |
 | Creado | La hora en la que estaba programada la prueba. |
-| Started | La hora a la que empezó a ejecutarse la prueba. |
+| Iniciado | La hora a la que empezó a ejecutarse la prueba. |
 | Duration | La duración de la ejecución de la prueba. |
 | Status | El estado o resultado de la prueba. Los estados previos a la ejecución o los de prueba en curso son: `Pending`, `Running`. Los estados de finalización son: `Cancelled`, `Failed`, `Aborted`, `Succeeded`. |
 | Nombre del agente | El nombre del agente que ejecutó la prueba. |
@@ -87,14 +80,14 @@ Cada instancia de prueba muestra las acciones disponibles que puede realizar al 
 
 Seleccione **Ver información** en el menú contextual para ver información general acerca de la definición de la prueba. Esta es una información que comparten cada instancia de la prueba con el mismo nombre y versión.
 
-| Propiedad de la prueba | DESCRIPCIÓN |
+| Propiedad de la prueba | Descripción |
 | -- | -- |
 | Nombre de la prueba | Nombre de la prueba. |
 | Versión de la prueba | La versión de la prueba. |
 | Publicador | El publicador de la prueba. |
 | Category |  Propósito de la prueba. |
 | Servicios de destino | Los servicios de Azure Stack que se están probando. |
-| DESCRIPCIÓN | Descripción de la prueba. |
+| Descripción | Descripción de la prueba. |
 | Duración estimada (minutos) | El tiempo de ejecución esperado de la prueba. |
 | Vínculos | Cualquier información pertinente acerca de la prueba o los puntos de contacto. |
 
@@ -104,7 +97,7 @@ Seleccione **Ver parámetros** en el menú contextual para ver los parámetros p
 
 Esta ventana incluye los siguientes metadatos para todas las instancias de prueba:
 
-| Propiedad de la instancia de prueba | DESCRIPCIÓN |
+| Propiedad de la instancia de prueba | Descripción |
 | -- | -- |
 | Nombre de la prueba | Nombre de la prueba. |
 | Versión de la prueba | La versión de la prueba. |

@@ -1,30 +1,20 @@
 ---
-title: ¿Qué es el Kit de desarrollo de Azure Stack Hub (ASDK)? | Microsoft Docs
-description: Más información sobre el Kit de desarrollo de Azure Stack Hub (ASDK) y cómo se usa para evaluar Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
+title: ¿Qué es el Kit de desarrollo de Azure Stack? | Microsoft Docs
+description: Más información sobre el Kit de desarrollo de Azure Stack y cómo se usa para evaluar Azure Stack Hub.
 author: justinha
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: overview
-ms.custom: mvc
 ms.date: 11/27/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 11/27/2019
-ms.openlocfilehash: fb9dab302e20d436be7f3cf9a76de913bbfe22e3
-ms.sourcegitcommit: 7817d61fa34ac4f6410ce6f8ac11d292e1ad807c
+ms.openlocfilehash: 7d3b4115ea34a185c5535c77cecdddf060ed84eb
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74689822"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76873301"
 ---
-# <a name="what-is-the-azure-stack-hub-development-kit-asdk"></a>¿Qué es el Kit de desarrollo de Azure Stack Hub (ASDK)?
+# <a name="what-is-the-azure-stack-development-kit-asdk"></a>¿Qué es el Kit de desarrollo de Azure Stack?
 El tamaño de los [sistemas integrados de Microsoft Azure Stack Hub](../operator/azure-stack-overview.md) va de los 4 a los 16 nodos y recibe soporte técnico conjunto de un asociado de hardware y Microsoft. Use los sistemas integrados de Azure Stack Hub para habilitar nuevos escenarios para las cargas de trabajo de producción. Si es un operador de Azure Stack Hub que administra la infraestructura de sistemas integrados y ofrece servicios, consulte la [documentación para operadores](/azure-stack/operator).
 
 El ASDK es una implementación de un único nodo de Azure Stack Hub que puede descargar y usar de forma **gratuita**. Todos los componentes de ASDK se instalan en máquinas virtuales que se ejecutan en un equipo de un solo host, que debe cumplir o superar los [requisitos mínimos de hardware](asdk-deploy-considerations.md#hardware). El ASDK está pensado para proporcionar un entorno en el que pueda evaluar Azure Stack Hub y desarrollar aplicaciones actuales con API y herramientas coherentes con Azure en un entorno *que no sea de producción*. 
@@ -46,7 +36,7 @@ Vea este breve vídeo para obtener más información sobre el ASDK:
 ## <a name="asdk-and-multi-node-azure-stack-hub-differences"></a>Diferencias entre el ASDK y Azure Stack Hub multinodo
 Las implementaciones del ASDK de un solo nodo difieren de las implementaciones de Azure Stack Hub multinodo en algunos aspectos importantes:
 
-|DESCRIPCIÓN|ASDK|Azure Stack Hub multinodo|
+|Descripción|ASDK|Azure Stack Hub multinodo|
 |-----|-----|-----|
 |**Escala**|Todos los componentes se instalan en un equipo servidor de un solo nodo.|Puede oscilar entre 4 y 16 nodos.|
 |**Resistencia**|La configuración de un solo nodo no proporciona alta disponibilidad|Se admiten funcionalidades de alta disponibilidad.|

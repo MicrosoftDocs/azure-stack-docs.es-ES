@@ -1,26 +1,19 @@
 ---
-title: 'Tutorial: Configuración de recursos para la validación como servicio | Microsoft Docs'
+title: 'Tutorial: Configuración de recursos para la validación como servicio'
 description: En este tutorial, aprenderá a configurar recursos para la validación como servicio.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/26/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: b187194dd63e95fa922000b68dbb701914d10465
-ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
+ms.openlocfilehash: e04a4fa7384d56a88938e87a83a33bb86829eca3
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76535916"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884061"
 ---
 # <a name="tutorial-set-up-resources-for-validation-as-a-service"></a>Tutorial: Configuración de recursos para la validación como servicio
 
