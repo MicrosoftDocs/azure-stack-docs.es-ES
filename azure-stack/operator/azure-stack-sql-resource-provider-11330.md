@@ -2,27 +2,18 @@
 title: Notas de la versión del proveedor de recursos de SQL 1.1.33.0 de Azure Stack Hub
 titleSuffix: Azure Stack Hub
 description: Consulte las notas de la versión del proveedor de recursos de SQL 1.1.33.0 de Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/09/2019
-ms.openlocfilehash: 27ead61bb1fbb5bdebab439a1deecf3d6f70d861
-ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
+ms.openlocfilehash: 024632c7dd80a7c028271ded7aea6a2b4ef46be0
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76535780"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76882890"
 ---
 # <a name="sql-resource-provider-11330-release-notes"></a>Notas de la versión del proveedor de recursos SQL 1.1.33.0
 

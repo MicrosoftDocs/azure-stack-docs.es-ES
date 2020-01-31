@@ -1,27 +1,18 @@
 ---
-title: Procedimientos recomendados de SQL Server para optimizar el rendimiento en Azure Stack Hub. | Microsoft Docs
+title: Procedimientos recomendados de SQL Server para optimizar el rendimiento en Azure Stack Hub.
 description: Este artículo proporciona procedimientos recomendados de SQL server para ayudar a aumentar el rendimiento y optimizar SQL Server en máquinas virtuales de Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: bryanla
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 04/02/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 63fbc121aea2fe83b2ffda860f505fe069a4a5f1
-ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
+ms.openlocfilehash: b764054e08af89ce20c123c7d3dd9659560e1297
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76023066"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884364"
 ---
 # <a name="sql-server-best-practices-to-optimize-performance-in-azure-stack-hub"></a>Procedimientos recomendados de SQL Server para optimizar el rendimiento en Azure Stack Hub.
 

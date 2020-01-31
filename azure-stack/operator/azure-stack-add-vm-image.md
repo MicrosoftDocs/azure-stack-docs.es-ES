@@ -1,26 +1,18 @@
 ---
-title: Adición de una imagen de máquina virtual personalizada a Azure Stack Hub | Microsoft Docs
+title: Adición de una imagen de máquina virtual personalizada a Azure Stack Hub
 description: Aprenda a agregar o quitar una imagen de máquina virtual personalizada en Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
-author: Justinha
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: PowerShell
+author: sethmanheim
 ms.topic: conceptual
 ms.date: 10/16/2019
-ms.author: Justinha
+ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 06/08/2018
-ms.openlocfilehash: f0d0b268445d3de95e8f4dcaa0d44cb8d553111c
-ms.sourcegitcommit: 7dd685fddf2f5d7a0c0a20fb8830ca5a061ed031
+ms.openlocfilehash: 359adfbe9083bd21368934426a54c887af2f9f2a
+ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259824"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76889973"
 ---
 # <a name="add-a-custom-vm-image-to-azure-stack-hub"></a>Adición de una imagen de máquina virtual personalizada a Azure Stack Hub
 

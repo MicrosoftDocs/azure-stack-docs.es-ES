@@ -1,26 +1,18 @@
 ---
-title: Administración de cuentas de almacenamiento de Azure Stack Hub | Microsoft Docs
+title: Administración de cuentas de almacenamiento de Azure Stack Hub
 description: Aprenda a buscar, administrar, recuperar y reclamar cuentas de almacenamiento de Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: PowerShell
 ms.topic: conceptual
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 03/19/2019
-ms.openlocfilehash: 69b02e95e7819ed6caea19721cbd8b09da1a802d
-ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
+ms.openlocfilehash: e3817639d379811b79387cb46064fbaff02b2f33
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76535304"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76882036"
 ---
 # <a name="manage-azure-stack-hub-storage-accounts"></a>Administración de cuentas de almacenamiento de Azure Stack Hub
 

@@ -1,26 +1,17 @@
 ---
-title: Creación de puertas de enlace VPN para Azure Stack Hub | Microsoft Docs
+title: Creación de puertas de enlace VPN para Azure Stack Hub
 description: Creación y configuración de puertas de enlace VPN para Azure Stack Hub
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.assetid: 0e30522f-20d6-4da7-87d3-28ca3567a890
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/01/2019
+ms.date: 01/24/2020
 ms.author: sethm
 ms.lastreviewed: 05/21/2019
-ms.openlocfilehash: 9bb66da69f76cd7cc1c64eb7ac3894ebd1d71c9d
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 11f27fd12b546a217cd65e65ce21dacc78abbb70
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75878601"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883056"
 ---
 # <a name="create-vpn-gateways-for-azure-stack-hub"></a>Creación de puertas de enlace VPN para Azure Stack Hub
 

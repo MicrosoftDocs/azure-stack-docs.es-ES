@@ -1,25 +1,18 @@
 ---
-title: Uso de perfiles de la versión de la API con Python en Azure Stack Hub | Microsoft Docs
+title: Uso de perfiles de la versión de la API con Python en Azure Stack Hub
 description: Aprenda a usar los perfiles de la versión de la API con Python en Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 10/01/2019
+ms.date: 01/23/2020
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: 556933545af27b1fc22241ced3c83389072b3c8f
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 48df6dab5d93e4e9875dc422f90f3f823a4b2ee9
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75883208"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884231"
 ---
 # <a name="use-api-version-profiles-with-python-in-azure-stack-hub"></a>Uso de perfiles de la versión de la API con Python en Azure Stack Hub
 
@@ -56,7 +49,7 @@ Para usar el SDK de Azure para Python con Azure Stack Hub, debe proporcionar los
 
 | Value | Variables de entorno | Descripción |
 |---------------------------|-----------------------|-------------------------------------------------------------------------------------------------------------------------|
-| Id. de inquilino | `AZURE_TENANT_ID` | El identificador de inquilino de su instancia de [Azure Stack Hub](../operator/azure-stack-identity-overview.md). |
+| Id. de inquilino | `AZURE_TENANT_ID` | [Identificador de inquilino](../operator/azure-stack-identity-overview.md)de su instancia de Azure Stack Hub. |
 | Id. de cliente | `AZURE_CLIENT_ID` | Id. de la aplicación de la entidad de servicio que guardó al crear dicha entidad de servicio en la sección anterior de este artículo. |
 | Id. de suscripción | `AZURE_SUBSCRIPTION_ID` | Use el [identificador de suscripción](../operator/service-plan-offer-subscription-overview.md#subscriptions) para acceder a las ofertas de Azure Stack Hub. |
 | Secreto del cliente | `AZURE_CLIENT_SECRET` | Secreto de aplicación de la entidad de servicio que guardó al crear dicha entidad de servicio. |

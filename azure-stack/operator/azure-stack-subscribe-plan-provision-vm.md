@@ -2,21 +2,17 @@
 title: Creación de suscripciones para ofertas en Azure Stack Hub.
 titleSuffix: Azure Stack
 description: Aprenda a crear suscripciones para ofertas en Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: bryanla
-manager: femila
-ms.service: azure-stack
 ms.topic: conceptual
 ms.date: 10/05/2019
 ms.author: bryanla
 ms.lastreviewed: 05/10/2019
-ms.openlocfilehash: 357b44e5a9860f8626c7b17e215ee773e4e4ebca
-ms.sourcegitcommit: c4368652f0dd68c432aa1dabddbabf161a4a6399
+ms.openlocfilehash: 2b4c90edbb4c53caf358d936873196f1a8c6ef9c
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75914790"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76881218"
 ---
 # <a name="create-subscriptions-to-offers-in-azure-stack-hub"></a>Creación de suscripciones para ofertas en Azure Stack Hub
 

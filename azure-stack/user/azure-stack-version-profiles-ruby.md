@@ -1,27 +1,18 @@
 ---
-title: Uso de perfiles de la versión de API con Ruby en Azure Stack Hub | Microsoft Docs
+title: Uso de los perfiles de la versión de API con Ruby en Azure Stack Hub
 description: Obtenga información sobre cómo usar los perfiles de la versión de API con Ruby en Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.assetid: B82E4979-FB78-4522-B9A1-84222D4F854B
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 10/01/2019
+ms.date: 01/23/2020
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: ec8c03536cb005de84f35ae7dc534d33f7223354
-ms.sourcegitcommit: ba2fd47e74adebe1fcbb489d059a2c27d59b179c
+ms.openlocfilehash: 1236e501ce09b5e81124f8bc87821d1b5f11cfaa
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256298"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883109"
 ---
 # <a name="use-api-version-profiles-with-ruby-in-azure-stack-hub"></a>Uso de los perfiles de la versión de API con Ruby en Azure Stack Hub
 
