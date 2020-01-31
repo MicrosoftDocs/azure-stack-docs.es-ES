@@ -2,27 +2,19 @@
 title: Girar secretos
 titleSuffix: Azure Stack Hub
 description: Aprenda a cambiar los secretos en Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
-author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
+author: ihenkel
 ms.topic: article
 ms.date: 12/13/2019
 ms.reviewer: ppacent
-ms.author: mabrigg
+ms.author: inhenkel
 ms.lastreviewed: 12/13/2019
 monikerRange: '>=azs-1802'
-ms.openlocfilehash: da9ed84f325612aa9b6261daed63a3eba7684f73
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 38e517aef0dcdd60e691d655004a9a807c2789d3
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75815109"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76881340"
 ---
 # <a name="rotate-secrets-in-azure-stack-hub"></a>Cambio de secretos en Azure Stack Hub
 

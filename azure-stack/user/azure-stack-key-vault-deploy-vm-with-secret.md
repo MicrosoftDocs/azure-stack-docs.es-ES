@@ -1,26 +1,18 @@
 ---
-title: Implementación de una máquina virtual de Azure Stack Hub mediante una contraseña almacenada en Key Vault | Microsoft Docs
+title: Implementación de una máquina virtual de Azure Stack Hub mediante una contraseña almacenada en Key Vault
 description: Aprenda a implementar una máquina virtual mediante una contraseña almacenada en un almacén de claves de Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: ppacent
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 866862f237490a9d59211ed6a87fc1cff2fe7c11
-ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
+ms.openlocfilehash: e94ef7ef30b95319ef8974cbce41692e53cf641d
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76536154"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883653"
 ---
 # <a name="deploy-an-azure-stack-hub-vm-using-a-password-stored-in-key-vault"></a>Implementación de una máquina virtual de Azure Stack Hub mediante una contraseña almacenada en Key Vault
 

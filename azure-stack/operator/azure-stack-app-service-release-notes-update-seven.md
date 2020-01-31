@@ -1,26 +1,18 @@
 ---
-title: Notas de la versión de la actualización 7 de App Service en Azure Stack Hub | Microsoft Docs
+title: Notas de la versión de la actualización 7 de App Service en Azure Stack Hub
 description: Conozca el contenido de la actualización 7 de App Service en Azure Stack Hub, los problemas conocidos y la ubicación dónde debe descargarse.
-services: azure-stack
-documentationcenter: ''
 author: apwestgarth
 manager: stefsch
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 10/11/2019
 ms.author: anwestg
 ms.reviewer: ''
-ms.openlocfilehash: 87a2fae4c2020b9c37a2907b42299871b0c85095
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: d4ddc7d0b6190c7f855b222079f8d13cb5d6e14e
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75880267"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76874372"
 ---
 # <a name="app-service-on-azure-stack-hub-update-7-release-notes"></a>Notas de la versión de la actualización 7 de App Service en Azure Stack Hub
 

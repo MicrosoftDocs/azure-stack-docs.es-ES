@@ -2,18 +2,17 @@
 title: Configuración de la conectividad de nube híbrida con Azure y Azure Stack Hub
 description: Aprenda a configurar la conectividad de nube híbrida con Azure y Azure Stack Hub.
 author: BryanLa
-ms.service: azure-stack
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 26895aeaf55c466d5800e52c7c482d4516f3f244
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 4b65ce6d03ee345b308cd5c5dd594e4dcf56cfec
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75881644"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76875511"
 ---
 # <a name="configure-hybrid-cloud-connectivity-using-azure-and-azure-stack-hub"></a>Configuración de la conectividad de nube híbrida con Azure y Azure Stack Hub
 

@@ -1,27 +1,19 @@
 ---
-title: Notas de la versión de la actualización 2 de App Service en Azure Stack Hub | Microsoft Docs
+title: Notas de la versión de la actualización 2 de App Service en Azure Stack Hub
 description: Aprenda sobre las mejoras, las correcciones y los problemas conocidos de la actualización 2 para App Service en Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: bryanla
 manager: stefsch
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 03/25/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 05/18/2018
-ms.openlocfilehash: b21ff443ff9f5cea95ea772e201f1e9804798024
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 029601b9bac3bc3b14d2ab4202df072b6d9063de
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75880046"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76875800"
 ---
 # <a name="app-service-on-azure-stack-hub-update-2-release-notes"></a>Notas de la versión de la actualización 2 de App Service en Azure Stack Hub
 

@@ -1,26 +1,18 @@
 ---
-title: Notas de la versión de la actualización 8 de App Service en Azure Stack Hub | Microsoft Docs
+title: Notas de la versión de la actualización 8 de App Service en Azure Stack Hub
 description: Conozca el contenido de la actualización 8 de App Service en Azure Stack Hub, los problemas conocidos y la ubicación dónde debe descargarse.
-services: azure-stack
-documentationcenter: ''
 author: apwestgarth
 manager: stefsch
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/13/2020
 ms.author: anwestg
 ms.reviewer: ''
-ms.openlocfilehash: 5da3ec3d838deabebbe70b04ad66d58241a42b5d
-ms.sourcegitcommit: e47dc5fe9e59010ea3dbb9cb31abe15cfb821262
+ms.openlocfilehash: 639c9267a9d42b20a15bc30ab6b72706816bf7ee
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76124708"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76874491"
 ---
 # <a name="app-service-on-azure-stack-hub-update-8-release-notes"></a>Notas de la versión de la actualización 8 de App Service en Azure Stack Hub
 

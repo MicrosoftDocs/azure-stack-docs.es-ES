@@ -2,18 +2,17 @@
 title: Patrón para entrenar un modelo de Machine Learning (ML) en el perímetro, mediante Azure y Azure Stack Hub.
 description: Aprenda a usar servicios de Azure y Azure Stack Hub para realizar el entrenamiento del modelo de ML en el perímetro.
 author: BryanLa
-ms.service: azure-stack
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 3f16b543751ac4bee94cc05045c03de7230f9a3c
-ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
+ms.openlocfilehash: a95102bcdc57bcad7116803768830f317ea48c4c
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75717984"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76877301"
 ---
 # <a name="train-machine-learning-ml-model-at-the-edge-pattern"></a>Entrenamiento del modelo de Machine Learning (ML) en el patrón perimetral
 

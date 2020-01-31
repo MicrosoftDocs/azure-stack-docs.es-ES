@@ -1,27 +1,18 @@
 ---
-title: Recuperación de App Service en Azure Stack Hub | Microsoft Docs
+title: Recuperación de App Service en Azure Stack Hub
 description: Aprenda sobre la recuperación ante desastres de App Service en Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: bryanla
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: app-service
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 03/21/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/21/2019
-ms.openlocfilehash: c814f19c6f9d5df5b81aedb551c5d2cf31b26bff
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 7d8d994b7ca134d13c08a987e622027b5f4b7732
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75881202"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76875188"
 ---
 # <a name="app-service-recovery-on-azure-stack-hub"></a>Recuperación de App Service en Azure Stack Hub
 

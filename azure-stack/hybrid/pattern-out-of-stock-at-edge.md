@@ -2,18 +2,17 @@
 title: Patrón para implementar la detección de existencias agotadas en el perímetro con Azure y Azure Stack Edge
 description: Aprenda a usar los servicios de Azure y Azure Stack Edge para implementar la detección de existencias agotadas.
 author: BryanLa
-ms.service: azure-stack
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: fb4eb410eefb8a34bd869543a191a1b044a42f72
-ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
+ms.openlocfilehash: 2fac02fc6bae0d8bfedebcbb059e376d616a5b87
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73640098"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76875545"
 ---
 # <a name="out-of-stock-detection-at-the-edge-pattern"></a>Patrón de detección de existencias agotadas en el perímetro
 
@@ -44,7 +43,7 @@ Así es como funciona la solución:
 
 Esta solución usa los siguientes componentes:
 
-| Nivel | Componente | DESCRIPCIÓN |
+| Nivel | Componente | Descripción |
 |----------|-----------|-------------|
 | Hardware local | Cámara de red | Se requiere una cámara de red, con una fuente HTTP o RTSP para proporcionar inferencia a las imágenes. |
 | Azure | Azure IoT Hub | [Azure IoT Hub](/azure/iot-hub/) administra el aprovisionamiento de dispositivos y la mensajería de los dispositivos perimetrales. |
@@ -65,7 +64,7 @@ La mayoría de los modelos de aprendizaje automático solo se pueden ejecutar co
 
 Es importante tener en cuenta lo que podría suceder si el dispositivo perimetral perdiera la conectividad. Considere qué datos pueden perderse del panel de Time Series Insights y Power BI. La solución de ejemplo proporcionada no está diseñada para una alta disponibilidad.
 
-### <a name="manageability"></a>Manejabilidad
+### <a name="manageability"></a>Facilidad de uso
 
 Esta solución puede abarcar muchos dispositivos y ubicaciones, lo que podría resultar complicado. Los servicios de IoT de Azure pueden poner en línea automáticamente nuevas ubicaciones y dispositivos y mantenerlos actualizados. También se deben seguir los procedimientos de gobierno de datos adecuados.
 

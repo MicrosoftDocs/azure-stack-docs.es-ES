@@ -2,18 +2,17 @@
 title: Patrón híbrido para implementar la detección de afluencia de compradores basada en IA con Azure y Azure Stack Hub
 description: Aprenda a usar los servicios de Azure y Azure Stack Hub para implementar una solución de afluencia de compradores basada en IA para analizar el tráfico de las tiendas.
 author: BryanLa
-ms.service: azure-stack
 ms.topic: article
 ms.date: 10/31/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 10/31/2019
-ms.openlocfilehash: d165381b6f8f3138d434b8d62376feb8879a21b3
-ms.sourcegitcommit: f3d40c9fe73cf0a32fc643832085de887edf7cf3
+ms.openlocfilehash: 27fb31a29313543c3eec2b973cdf8e8ce32940fd
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/18/2019
-ms.locfileid: "75187286"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76877330"
 ---
 # <a name="footfall-detection-pattern"></a>Patrón de detección de afluencia de compradores
 
@@ -45,7 +44,7 @@ A continuación se muestra un resumen de cómo funciona la solución:
 
 Esta solución usa los siguientes componentes:
 
-| Nivel | Componente | DESCRIPCIÓN |
+| Nivel | Componente | Descripción |
 |----------|-----------|-------------|
 | Hardware en la tienda | [Kit de desarrollo de IA de Custom Vision](https://azure.github.io/Vision-AI-DevKit-Pages/) | Proporciona filtrado en la tienda mediante un modelo de ML local que solo captura imágenes de personas para su análisis. Aprovisionado y actualizado de forma segura a través de IoT Hub.<br><br>|
 | Azure | [Azure Event Hubs](/azure/event-hubs/) | Azure Event Hubs proporciona una plataforma escalable para la ingesta de datos anonimizados que se integra perfectamente con Azure Stream Analytics. |
@@ -74,7 +73,7 @@ Para permitir que esta solución se escale entre varias cámaras y ubicaciones, 
 
 Dado que esta solución está en capas, es importante pensar en cómo tratar los errores de red o de alimentación. En función de las necesidades empresariales, podría ser adecuado implementar un mecanismo para almacenar localmente en caché las imágenes y, después, reenviarlas a Azure Stack Hub cuando vuelva a tener conectividad. Si la ubicación es lo suficientemente grande, podría ser una opción mejor implementar una instancia de Data Box Edge con el contenedor de Face API en esa ubicación.
 
-### <a name="manageability"></a>Manejabilidad
+### <a name="manageability"></a>Facilidad de uso
 
 Esta solución puede abarcar muchos dispositivos y ubicaciones, lo que podría resultar complicado. [Los servicios de IoT de Azure](/azure/iot-fundamentals/) se pueden usar para poner en línea automáticamente nuevas ubicaciones y dispositivos y mantenerlos actualizados. 
 

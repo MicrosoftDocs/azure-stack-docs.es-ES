@@ -2,18 +2,17 @@
 title: Tráfico directo con una solución de aplicación distribuida geográficamente con Azure y Azure Stack Hub
 description: Aprenda a crear una solución de aplicación distribuida geográficamente con Azure y Azure Stack Hub, que dirige el tráfico a puntos de conexión específicos.
 author: BryanLa
-ms.service: azure-stack
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: c18e510d32773905b59cd756ed49daf59a0d03e9
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 3353977eb36701575a725f2e74f2275dac73bddd
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75881865"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76877653"
 ---
 # <a name="create-a-geo-distributed-app-solution-to-direct-traffic-with-azure-and-azure-stack-hub"></a>Crear una solución de aplicación distribuida geográficamente para dirigir el tráfico con Azure y Azure Stack Hub
 
@@ -55,7 +54,7 @@ Antes de crear el entorno de una aplicación distribuida, resulta útil conocer 
 
 -   **Dominio de Traffic Manager:** se elige nombre de dominio al crear un [perfil de Azure Traffic Manager](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-manage-profiles). Este nombre se combina con el sufijo *trafficmanager.net* para registrar una entrada de dominio que administra Traffic Manager. Para la aplicación de ejemplo, el nombre elegido es *scalable-ase-demo*. Como resultado, el nombre de dominio completo administrado por Traffic Manager es *scalable-ase-demo.trafficmanager.net*.
 
--   **Estrategia para escalar la superficie de la aplicación:** Decida si la superficie de la aplicación se va a distribuir en varias instancias de App Service Environment de una sola región, de varias regiones o de una opción combinada. La decisión debería basarse en las expectativas de dónde se vaya a originar el tráfico del cliente y de la escalabilidad del resto de la infraestructura de back-end complementaria de una aplicación. Por ejemplo, con una aplicación totalmente sin estado, se puede escalar una aplicación de forma masiva mediante una combinación de varias instancias de App Service Environment por región de Azure, multiplicadas por más instancias de App Service Environment implementadas en varias regiones de Azure. Con más de 15 regiones de Azure globales entre las que elegir, los clientes pueden realmente crear una superficie de aplicación de gran escala en todo el mundo. Para la aplicación de ejemplo que se usa aquí, se crearon tres instancias de App Service Environment en una sola región de Azure (Centro y Sur de EE. UU.).
+-   **Estrategia para escalar la superficie de la aplicación:** Decida si la superficie de la aplicación se va a distribuir en varias instancias de App Service Environment de una sola región, de varias regiones o de una opción combinada. La decisión debería basarse en las expectativas de dónde se vaya a originar el tráfico del cliente y de la escalabilidad del resto de la infraestructura de back-end complementaria de una aplicación. Por ejemplo, con una aplicación totalmente sin estado, se puede escalar una aplicación de forma masiva mediante una combinación de varias instancias de App Service Environment por región de Azure, multiplicadas por más instancias de App Service Environment implementadas en varias regiones de Azure. Con más de 15 regiones de Azure globales entre las que elegir, los clientes pueden realmente crear una superficie de aplicación de gran escala en todo el mundo. Para la aplicación de ejemplo que se usa aquí, se crearon tres instancias de App Service Environment en una sola región de Azure (Centro-sur de EE. UU.).
 
 -   **Convención de nomenclatura para las instancias de App Service Environment:** cada instancia de App Service Environment requiere un nombre único. Si existen más de uno o dos entornos de App Service Environment, resulta útil disponer de una convención de nomenclatura que ayude a identificarlos. Para la aplicación de ejemplo que se usa aquí, se usó una convención de nomenclatura sencilla. Los nombres de las tres instancias de App Service Environment son *fe1ase*, *fe2ase* y *fe3ase*.
 

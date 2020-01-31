@@ -1,27 +1,18 @@
 ---
-title: Iniciar y detener el ASDK | Microsoft Docs
+title: Inicio y detención del kit de desarrollo de Azure Stack
 description: Obtenga información sobre cómo iniciar y detener el Kit de desarrollo de Azure Stack (ASDK).
-services: azure-stack
-documentationcenter: ''
 author: justinha
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/18/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 07/18/2019
-ms.openlocfilehash: e32fc6c58232e21eb6e7c087c2d95623209bc28d
-ms.sourcegitcommit: 7817d61fa34ac4f6410ce6f8ac11d292e1ad807c
+ms.openlocfilehash: 68523f429fb49bfc28151f3d92f3bb3cd64a0b71
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74689853"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76873471"
 ---
 # <a name="start-and-stop-the-asdk"></a>Inicio y detención del kit de desarrollo de Azure Stack
 No se recomienda simplemente reiniciar el equipo host del ASDK. En su lugar, siga los procedimientos que se describen en este artículo para detener y reiniciar los servicios de ASDK correctamente.

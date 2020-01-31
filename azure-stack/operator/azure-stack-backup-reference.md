@@ -1,27 +1,18 @@
 ---
-title: Referencia del servicio Copia de seguridad de infraestructura | Microsoft Docs
+title: Referencia del servicio Infrastructure Backup
 description: Material de referencia del servicio Copia de seguridad de infraestructura de Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: justinha
-manager: femila
-editor: ''
-ms.assetid: D6EC0224-97EA-446C-BC95-A3D32F668E2C
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 10/25/2018
-ms.openlocfilehash: 8e54ae96cec4fff9a50c541bab4ea8e60323ca22
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: ee18141d01805b498a5f9fa1856d226b6738691c
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75882936"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76878333"
 ---
 # <a name="infrastructure-backup-service-reference"></a>Referencia del servicio Infrastructure Backup
 

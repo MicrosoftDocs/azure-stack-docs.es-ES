@@ -1,28 +1,18 @@
 ---
-title: Implementación de ASDK desde la línea de comandos mediante PowerShell | Microsoft Docs
+title: Implementación de ASDK desde la línea de comandos mediante PowerShell
 description: En este artículo aprenderá a implementar ASDK desde la línea de comandos mediante PowerShell.
-services: azure-stack
-documentationcenter: ''
 author: justinha
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.custom: ''
 ms.date: 05/06/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 02/08/2019
-ms.openlocfilehash: 0bced4d75b70b05eea42de763066f1d5b05e1976
-ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
+ms.openlocfilehash: b31792ce210cfc7fc5c2d1ee4ba1b496b2d340f6
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022919"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76873811"
 ---
 # <a name="deploy-asdk-from-the-command-line-using-powershell"></a>Implementación de ASDK desde la línea de comandos mediante PowerShell
 

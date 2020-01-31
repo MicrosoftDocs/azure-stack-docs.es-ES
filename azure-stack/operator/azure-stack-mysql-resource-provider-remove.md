@@ -1,26 +1,18 @@
 ---
-title: Eliminación del proveedor de recursos MySQL en Azure Stack Hub | Microsoft Docs
+title: Eliminación del proveedor de recursos MySQL en Azure Stack Hub
 description: Obtenga información sobre cómo quitar el proveedor de recursos MySQL de la implementación de Azure Stack Hub.
-services: azure-stack
-documentationCenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/20/2018
-ms.openlocfilehash: 0f616bced206bf32da0ace8c1f3cb836c66962e6
-ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
+ms.openlocfilehash: 89d0a55797b6182b7490778db10914a09977e105
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76534743"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76881782"
 ---
 # <a name="remove-the-mysql-resource-provider-in-azure-stack-hub"></a>Eliminación del proveedor de recursos MySQL en Azure Stack Hub
 

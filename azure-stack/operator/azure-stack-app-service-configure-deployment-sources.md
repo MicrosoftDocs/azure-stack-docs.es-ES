@@ -1,27 +1,18 @@
 ---
-title: Configuración de orígenes de implementación para App Services en Azure Stack Hub | Microsoft Docs
+title: Configuración de orígenes de implementación para App Services en Azure Stack Hub
 description: Aprenda a configurar orígenes de implementación (Git, GitHub, BitBucket, DropBox y OneDrive) para App Services en Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: bryanla
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: app-service
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 03/11/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: 0115e726e8922b94eae437cb76e23f4e77199d97
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 30e7ced54a4c2bc69cb5249b58b4844cd9a0b332
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75880913"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76874780"
 ---
 # <a name="configure-deployment-sources-for-app-services-on-azure-stack-hub"></a>Configuración de orígenes de implementación para App Services en Azure Stack Hub
 

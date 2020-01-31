@@ -2,18 +2,17 @@
 title: Patrón de aplicación distribuida geográficamente para la inteligencia perimetral con Azure y Azure Stack Hub
 description: Conozca el patrón de aplicación distribuida geográficamente para la inteligencia perimetral mediante Azure y Azure Stack Hub.
 author: BryanLa
-ms.service: azure-stack
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 46044559e400e77098bdae038c87df88f1866127
-ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
+ms.openlocfilehash: 37d4b517eec69ebab72aa3d82733829466b44fda
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75718001"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76875681"
 ---
 # <a name="geo-distributed-pattern"></a>Patrón distribuido geográficamente
 

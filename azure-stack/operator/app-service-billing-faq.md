@@ -1,27 +1,19 @@
 ---
-title: Introducción a la facturación de Azure App Service en Azure Stack Hub y preguntas frecuentes | Microsoft Docs
+title: Introducción a la facturación de Azure App Service en Azure Stack Hub y preguntas frecuentes
 description: Más información sobre cómo se calculan los gastos de Azure App Service en Azure Stack Hub y cómo se facturan.
-services: azure-stack
-documentationcenter: ''
 author: apwestgarth
 manager: stefsch
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: app-service
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 06/10/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: f45cda455f0c13fd2e6c5cb431fb3c60d54dce03
-ms.sourcegitcommit: ba2fd47e74adebe1fcbb489d059a2c27d59b179c
+ms.openlocfilehash: c22bb6c29082449d7590ad67e0f51c8a7c1b7aca
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256332"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76875290"
 ---
 # <a name="azure-app-service-on-azure-stack-hub-billing-overview-and-faq"></a>Introducción a la facturación de Azure App Service en Azure Stack Hub y preguntas frecuentes
 
