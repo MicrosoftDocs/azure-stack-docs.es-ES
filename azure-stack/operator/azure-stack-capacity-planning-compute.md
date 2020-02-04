@@ -1,27 +1,18 @@
 ---
-title: Proceso de planeamiento de capacidad de Azure Stack Hub | Microsoft Docs
+title: Proceso de planeamiento de la capacidad de Azure Stack Hub
 description: Obtenga información sobre el planeamiento de capacidad para las implementaciones de Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
-author: prchint
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
+author: ihenkel
 ms.topic: article
 ms.date: 07/16/2019
-ms.author: justinha
+ms.author: inhenkel
 ms.reviewer: prchint
 ms.lastreviewed: 06/13/2019
-ms.openlocfilehash: 7b91a03f54ed63c49ff18664818133c24c005557
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: fc4fa70b21f3af47ba2a23894d8bc2b4e2233b17
+ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75815126"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76890058"
 ---
 # <a name="azure-stack-hub-compute"></a>Proceso de Azure Stack Hub
 

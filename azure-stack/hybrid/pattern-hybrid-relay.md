@@ -2,18 +2,17 @@
 title: Patrón para implementar una solución de retransmisión híbrida con Azure y Azure Stack Hub
 description: Aprenda a usar los servicios de Azure y Azure Stack Hub para conectarse a recursos perimetrales o a dispositivos protegidos por firewalls.
 author: BryanLa
-ms.service: azure-stack
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 9b9defd4a6aec6dab3511425089e7395649d8087
-ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
+ms.openlocfilehash: 7315013253c04ebbb231a0915dba610e459848e7
+ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73640128"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76890075"
 ---
 # <a name="hybrid-relay-pattern"></a>Patrón de retransmisión híbrida
 
@@ -40,12 +39,12 @@ Así es como funciona la solución:
 
 Esta solución usa los siguientes componentes:
 
-| Nivel | Componente | DESCRIPCIÓN |
+| Nivel | Componente | Descripción |
 |----------|-----------|-------------|
 | Azure | Azure VM | Una máquina virtual de Azure proporciona un punto de conexión accesible públicamente para el recurso local. |
 | | Azure Service Bus Relay | Una [instancia de Azure Service Bus Relay](/azure/service-bus-relay/) proporciona la infraestructura para mantener el túnel y la conexión entre la máquina virtual de Azure y la máquina virtual de Azure Stack Hub.|
 | Azure Stack Hub | Proceso | Una máquina virtual de Azure Stack Hub proporciona el lado servidor del túnel de retransmisión híbrida. |
-| | Storage | El clúster de AKS-Engine implementado en Azure Stack Hub proporciona un motor escalable y resistente para ejecutar el contenedor de Face API.|
+| | Storage | El clúster del motor de AKS implementado en Azure Stack Hub proporciona un motor escalable y resistente para ejecutar el contenedor de Face API.|
 
 ## <a name="issues-and-considerations"></a>Problemas y consideraciones
 
@@ -59,7 +58,7 @@ Este patrón solo permite asignaciones de puerto 1:1 en el cliente y el servidor
 
 Estos túneles y conexiones no son redundantes. Para garantizar alta disponibilidad, podría interesarle implementar el código de comprobación de errores. Otra opción es tener un grupo de máquinas virtuales conectadas con Service Bus Relay detrás de un equilibrador de carga.
 
-### <a name="manageability"></a>Manejabilidad
+### <a name="manageability"></a>Facilidad de uso
 
 Esta solución puede abarcar muchos dispositivos y ubicaciones, lo que podría resultar complicado. Los servicios de IoT de Azure pueden poner en línea automáticamente nuevas ubicaciones y dispositivos y mantenerlos actualizados.
 

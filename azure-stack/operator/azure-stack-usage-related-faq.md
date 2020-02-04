@@ -1,26 +1,18 @@
 ---
-title: Preguntas más frecuentes relacionadas con el uso de API | Microsoft Docs
+title: Preguntas más frecuentes relacionadas con las API de uso
 description: Lista de medidores de Azure Stack Hub, en comparación con los códigos de error, el tiempo notificado y el tiempo de uso y la API de uso de Azure.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 09/25/2019
+ms.date: 01/27/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 02/26/2019
-ms.openlocfilehash: dea410ab514f095f7ed68a0617b2dd7816544f80
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 18539c666683c6e35c8736616405f961b63adf40
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75813069"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76880657"
 ---
 # <a name="frequently-asked-questions-about-azure-stack-hub-usage"></a>Preguntas frecuentes sobre el uso de Azure Stack Hub
 
@@ -396,12 +388,12 @@ Se informa del uso para los siguientes proveedores de recursos:
 
 Los informes de datos de uso tienen dos valores de tiempo principales:
 
-* **Hora de notificación**. La hora cuando el evento de uso entró en el sistema de uso
-* **Tiempo de uso**. El tiempo durante el que se ha usado el recurso de Azure Stack Hub
+* **Hora de notificación**. La hora cuando el evento de uso entró en el sistema de uso.
+* **Tiempo de uso**. El tiempo durante el que se ha usado el recurso de Azure Stack Hub.
 
 Puede que vea una discrepancia en los valores de tiempo de uso y tiempo notificado para un evento de uso específico. El retraso puede ser de hasta varias horas en cualquier entorno.
 
-Actualmente, solo se puede consultar mediante el *tiempo notificado*.
+Actualmente, solo se puede consultar mediante el **tiempo notificado**.
 
 ## <a name="what-do-these-usage-api-error-codes-mean"></a>¿Qué significan estos códigos de error de la API de uso?
 

@@ -1,25 +1,18 @@
 ---
-title: Conexión de Azure Stack Hub con Azure mediante ExpressRoute | Microsoft Docs
+title: Conexión de Azure Stack Hub a Azure mediante ExpressRoute
 description: Aprenda a conectar redes virtuales de Azure Stack Hub con redes virtuales de Azure mediante ExpressRoute.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/03/2019
+ms.date: 01/23/2020
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 10/22/2018
-ms.openlocfilehash: 014ff5a0b4791ac7b939ac3e61a79c89f531aa8d
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: f857fc92c5fec814ebd44aeb8bb12449f777586f
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75877564"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76879438"
 ---
 # <a name="connect-azure-stack-hub-to-azure-using-azure-expressroute"></a>Conexión de Azure Stack Hub con Azure mediante Azure ExpressRoute
 
@@ -81,7 +74,7 @@ Si desea configurar el entorno de Azure Stack Hub del primer inquilino, use los 
 
 Antes de empezar a configurar Azure Stack Hub, necesita:
 
-* Una implementación de Azure Stack Hub. 
+* Una implementación de Azure Stack Hub.
 * Una oferta de Azure Stack Hub a la que los usuarios puedan suscribirse. Para más información, consulte [Introducción a los servicios, planes, ofertas y suscripciones](service-plan-offer-subscription-overview.md).
 
 ### <a name="create-network-resources-in-azure-stack-hub"></a>Creación de recursos de red en Azure Stack Hub

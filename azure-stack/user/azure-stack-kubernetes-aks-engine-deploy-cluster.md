@@ -1,26 +1,18 @@
 ---
-title: Implementación de un clúster de Kubernetes con el motor de AKS en Azure Stack Hub | Microsoft Docs
+title: Implementación de un clúster de Kubernetes con el motor de AKS en Azure Stack Hub
 description: Implementación de un clúster de Kubernetes en Azure Stack Hub desde una máquina virtual de cliente que ejecute el motor de AKS.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na (Kubernetes)
-ms.devlang: nav
 ms.topic: article
 ms.date: 01/10/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 34fc30c13cf365560fbd30234a60af4cc4f9a594
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: bc56a45bc1312488d00570e4a44436bcdfe14834
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75883580"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884804"
 ---
 # <a name="deploy-a-kubernetes-cluster-with-the-aks-engine-on-azure-stack-hub"></a>Implementación de un clúster de Kubernetes con el motor de AKS en Azure Stack Hub
 
@@ -166,31 +158,71 @@ Compruebe el clúster mediante la implementación de MySQL con Helm.
 
 3. Para el nombre de usuario de SSH, use "azureuser" y el archivo de clave privada del par de claves que proporcionó para la implementación del clúster.
 
-4.  Ejecute los comandos siguientes:
+4. Ejecute los siguientes comandos para crear una implementación de ejemplo de un nodo maestro de Redis (solo para marcas conectadas):
+
+   ```bash
+   kubectl apply -f https://k8s.io/examples/application/guestbook/redis-master-deployment.yaml
+   ```
+
+    1. Consulte la lista de pods:
+
+       ```bash
+       kubectl get pods
+       ```
+
+    2. La respuesta debe ser similar a la siguiente:
+
+       ```shell
+       NAME                            READY     STATUS    RESTARTS   AGE
+       redis-master-1068406935-3lswp   1/1       Running   0          28s
+       ```
+
+    3. Vea los registros de implementación:
+
+       ```shell
+       kubectl logs -f <pod name>
+       ```
+
+    Para una implementación completa de una aplicación PHP de ejemplo que incluya el nodo maestro de Redis, siga [las instrucciones que se indican aquí](https://kubernetes.io/docs/tutorials/stateless-application/guestbook/).
+
+5. En el caso de una marca desconectada, los siguientes comandos deben ser suficientes:
+
+    1. En primer lugar, compruebe que los puntos de conexión del clúster se están ejecutando:
+
+       ```bash
+       kubectl cluster-info
+       ```
+
+       La salida debe tener una apariencia similar a la siguiente:
+
+       ```shell
+       Kubernetes master is running at https://democluster01.location.domain.com
+       CoreDNS is running at https://democluster01.location.domain.com/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+       kubernetes-dashboard is running at https://democluster01.location.domain.com/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy
+       Metrics-server is running at https://democluster01.location.domain.com/api/v1/namespaces/kube-system/services/https:metrics-server:/proxy
+       ```
+
+    2. A continuación, revise los estados del nodo:
+
+       ```bash
+       kubectl get nodes
+       ```
+
+       La salida debe ser similar a la siguiente:
+
+       ```shell
+       k8s-linuxpool-29969128-0   Ready      agent    9d    v1.15.5
+       k8s-linuxpool-29969128-1   Ready      agent    9d    v1.15.5
+       k8s-linuxpool-29969128-2   Ready      agent    9d    v1.15.5
+       k8s-master-29969128-0      Ready      master   9d    v1.15.5
+       k8s-master-29969128-1      Ready      master   9d    v1.15.5
+       k8s-master-29969128-2      Ready      master   9d    v1.15.5
+       ```
+
+6. Para eliminar la implementación del POD de Redis del paso anterior, ejecute el siguiente comando:
 
     ```bash
-    sudo snap install helm --classic
-    kubectl -n kube-system create serviceaccount tiller
-    kubectl create clusterrolebinding tiller --clusterrole cluster-admin --serviceaccount=kube-system:tiller
-    helm init --service-account=tiller
-    helm repo update
-    helm install stable/mysql
-    ```
-
-5.  Para limpiar la prueba, busque el nombre usado para la implementación de MySQL. En el ejemplo siguiente, el nombre es `wintering-rodent`. Después, elimínela. 
-
-    Ejecute los comandos siguientes:
-
-    ```bash
-    helm ls
-    NAME REVISION UPDATED STATUS CHART APP VERSION NAMESPACE
-    wintering-rodent 1 Thu Oct 18 15:06:58 2018 DEPLOYED mysql-0.10.1 5.7.14 default
-    helm delete wintering-rodent
-    ```
-
-    La CLI mostrará:
-    ```bash
-    release "wintering-rodent" deleted
+    kubectl delete deployment -l app=redis
     ```
 
 ## <a name="next-steps"></a>Pasos siguientes

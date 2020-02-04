@@ -1,26 +1,18 @@
 ---
-title: Implementación del motor de AKS en Windows para Azure Stack Hub | Microsoft Docs
+title: Implementación del motor de AKS en Windows para Azure Stack Hub
 description: Aprenda a usar una máquina Windows en Azure Stack Hub para hospedar el motor de AKS con el fin de implementar y administrar un clúster de Kubernetes.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na (Kubernetes)
-ms.devlang: nav
 ms.topic: article
 ms.date: 11/21/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 280ecbe7c02d3eb9bdc14ba29cfb0b6642a7144c
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 52ecd6131e28c588c14fa923f1c931caae9411ac
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75883531"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884791"
 ---
 # <a name="install-the-aks-engine-on-windows-in-azure-stack-hub"></a>Instalación del motor de AKS en Windows para Azure Stack Hub
 

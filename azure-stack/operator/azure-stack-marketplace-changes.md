@@ -1,26 +1,18 @@
 ---
-title: Novedades de Marketplace de Azure Stack Hub | Microsoft Docs
+title: Novedades de Marketplace de Azure Stack Hub
 description: Cambios y actualizaciones en Marketplace de Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 10/01/2019
+ms.date: 01/22/2020
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 10/01/2019
-ms.openlocfilehash: 3dbd177f080067283ba22d661e08d54c23e642ff
-ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
+ms.openlocfilehash: b398c1dde1f9d7b6033ab4aed115ae45546190c1
+ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022788"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76890177"
 ---
 # <a name="azure-stack-hub-marketplace-changes"></a>Cambios en Marketplace de Azure Stack Hub
 
@@ -30,52 +22,34 @@ El artículo [Elementos de Azure Marketplace disponibles para Azure Stack Hub](a
 
 ## <a name="new-marketplace-items"></a>Nuevos elementos de Marketplace
 
-- 27/06/2019:   SIOS Datakeeper Cluster Edition
-
-- 27/06/2019:   Veeam Backup & Replication
-
+- 27/06/2019: SIOS Datakeeper Cluster Edition
+- 27/06/2019: Veeam Backup & Replication
 - 27/06/2019: Windows Server 2019 Datacenter Server Core con Containers en modo de pago por uso
-
 - 27/06/2019: Windows Server 2019 Datacenter Server Core con Containers en modo "traiga su propia licencia"
-
-- 27/06/2019:   Windows Server 2019 Datacenter en modalidad de pago por uso
-
-- 27/06/2019:   Windows Server 2019 Datacenter en modalidad "traiga su propia licencia"
-
+- 27/06/2019: Windows Server 2019 Datacenter en modalidad de pago por uso
+- 27/06/2019: Windows Server 2019 Datacenter en modalidad "traiga su propia licencia"
 - 27/06/2019: Windows Server 2019 Datacenter Server Core en modalidad de pago por uso
-
 - 27/06/2019: Windows Server 2019 Datacenter Server Core en modalidad "traiga su propia licencia"
-
-- 27/06/2019:   Windows Server 2019 Datacenter Server Core con Containers en modo de pago por uso
-
-- 27/06/2019:   Windows Server 2019 Datacenter con Containers en modo "traiga su propia licencia"
-
+- 27/06/2019: Windows Server 2019 Datacenter Server Core con Containers en modo de pago por uso
+- 27/06/2019: Windows Server 2019 Datacenter con Containers en modo "traiga su propia licencia"
 - 05/08/2019: Bitnami Drupal
-
 - 05/08/2019: Bitnami etcd
-
 - 05/08/2019: Bitnami Grafana
-
 - 05/08/2019: Bitnami Neo4j
-
 - 05/08/2019: Bitnami Parse Server
-
 - 05/08/2019: Bitnami WordPress Multisite
-
 - 05/08/2019: Bitnami ZooKeeper
-
 - 05/08/2019: Bitnami TensorFlow Serving
-
 - 05/08/2019: Bitnami NATS
-
 - 05/08/2019: Bitnami Review Board
-
 - 05/08/2019: Bitnami Composr
-
 - 09/08/2019: Oracle Linux
-
 - 19/08/2019: Iguazio Data Science Platform
-
+- 16/10/2019: SIOS Datakeeper Cluster Edition
+- 26/12/2019: CloudGuard IaaS High Availability
+- 26/12/2019: Check Point CloudGuard IaaS Security Management
+- 26/12/2019: Check Point CloudGuard IaaS Single Gateway
+- 21/01/2020: Teradici Cloud Access Software
 
 ## <a name="deprecated-marketplace-items"></a>Elementos de Marketplace en desuso
 
@@ -84,7 +58,7 @@ El artículo [Elementos de Azure Marketplace disponibles para Azure Stack Hub](a
 - Bitnami SugarCRM
 - Bitnami Node.js High-Availability Cluster
 - A10 vThunder: controlador de entrega de aplicaciones L4-L7, equilibrio de carga del servidor global (GSLB), SSL Insight
-
+- Administración de seguridad de Check Point vSEC
 
 ## <a name="updated-marketplace-items"></a>Elementos de Marketplace actualizados
 

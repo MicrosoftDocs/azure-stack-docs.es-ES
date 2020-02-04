@@ -1,31 +1,22 @@
 ---
-title: 'Discos administrados de Azure Stack Hub: Diferencias y consideraciones | Microsoft Docs'
+title: 'Discos administrados de Azure Stack Hub: Diferencias y consideraciones'
 description: Obtenga información sobre las diferencias y consideraciones a la hora de trabajar con discos administrados en Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 10/04/2019
+ms.date: 01/22/2020
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: 2e09f10fc61454cf1b32797e75b5a57fc3f90f8f
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: c1369ada357e8439e39fed4642996af86925522c
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75819886"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883442"
 ---
 # <a name="azure-stack-hub-managed-disks-differences-and-considerations"></a>Discos administrados de Azure Stack Hub: Diferencias y consideraciones
 
-En este artículo se resumen las diferencias entre los [discos administrados de Azure Stack Hub](azure-stack-manage-vm-disks.md) y los [discos administrados de Azure](/azure/virtual-machines/windows/managed-disks-overview). Para más información acerca de las diferencias de alto nivel entre Azure Stack Hub y Azure, consulte el artículo [Consideraciones clave](azure-stack-considerations.md).
+En este artículo se resumen las diferencias entre los [*discos administrados* de Azure Stack Hub](azure-stack-manage-vm-disks.md) y los [discos administrados de Azure](/azure/virtual-machines/windows/managed-disks-overview). Para más información acerca de las diferencias de alto nivel entre Azure Stack Hub y Azure, consulte el artículo [Consideraciones clave](azure-stack-considerations.md).
 
 Los discos administrados simplifican la administración de discos para las máquinas virtuales (VM) de IaaS, ya que administran las [cuentas de almacenamiento](../operator/azure-stack-manage-storage-accounts.md) asociadas a los discos de las máquinas virtuales.
 
@@ -147,7 +138,7 @@ Azure Stack Hub admite *imágenes administradas* que le permiten crear un objeto
 Para Windows, siga la sección [Generalización de VM con Windows mediante Sysprep](/azure/virtual-machines/windows/capture-image-resource#generalize-the-windows-vm-using-sysprep). Para Linux, siga el paso 1 [aquí](/azure/virtual-machines/linux/capture-image#step-1-deprovision-the-vm).
 
 > [!NOTE]
-> Asegúrese de generalizar la máquina virtual. La creación de una máquina virtual a partir de una imagen que no se ha generalizado correctamente provocará un error **VMProvisioningTimeout**.
+> Asegúrese de generalizar la máquina virtual. La creación de una máquina virtual a partir de una imagen que no se ha generalizado correctamente puede producir un error **VMProvisioningTimeout**.
 
 ### <a name="step-2-create-the-managed-image"></a>Paso 2: Creación de la imagen administrada
 
@@ -232,4 +223,4 @@ Después de aplicar la actualización 1808 o posterior, debe realizar el siguien
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Más información sobre máquinas virtuales de Azure Stack Hub](azure-stack-compute-overview.md)
+- [Más información sobre máquinas virtuales de Azure Stack Hub](azure-stack-compute-overview.md).

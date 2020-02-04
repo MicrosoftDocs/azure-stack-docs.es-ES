@@ -1,26 +1,18 @@
 ---
-title: Implementación de Kubernetes para usar contenedores de Azure Stack Hub | Microsoft Docs
+title: Implementación de Kubernetes para usar contenedores de Azure Stack Hub
 description: Aprenda a implementar Kubernetes para usar contenedores con Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
-ms.openlocfilehash: 17d9c16a6ee95672450dcfed1dee66e21390e022
-ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
+ms.openlocfilehash: fd1975beaf58c83c8655a46d9727a8701d710852
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76536443"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883169"
 ---
 # <a name="deploy-kubernetes-to-use-containers-with-azure-stack-hub"></a>Implementación de Kubernetes para usar contenedores con Azure Stack Hub
 

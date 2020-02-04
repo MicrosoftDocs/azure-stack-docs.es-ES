@@ -2,41 +2,34 @@
 title: Uso de bases de datos SQL
 titleSuffix: Azure Stack Hub
 description: Aprenda a usar el proveedor de recursos de SQL Server para ofrecer bases de datos SQL como servicio en Azure Stack Hub.
-services: azure-stack
-documentationCenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/25/2018
-ms.openlocfilehash: 58aa2bc05625c031fe78c3b4e5aeeec8d6001c8a
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 30ca5673bb337342eba57d127acf2f3e657bb8df
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75881780"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76882782"
 ---
 # <a name="use-sql-databases-on-azure-stack-hub"></a>Uso de bases de datos SQL en Azure Stack Hub
 
-Use el proveedor de recursos SQL para ofrecer bases de datos SQL como servicio en [Azure Stack Hub](azure-stack-overview.md). Después de instalar el proveedor de recursos y conectarse a una o varias instancias de SQL Server, usted y sus usuarios pueden crear:
+Use el proveedor de recursos SQL para ofrecer bases de datos SQL en [Azure Stack Hub](azure-stack-overview.md). Después de instalar el proveedor de recursos y conectarse a una o varias instancias de SQL Server, usted y sus usuarios pueden crear:
 
-- Bases de datos para las aplicaciones nativas de la nube.
-- Sitios web que usan SQL.
-- Cargas de trabajo que usan SQL.
+- Bases de datos SQL para aplicaciones nativas de la nube.
+- Bases de datos SQL para aplicaciones web.
 
-Hay varias limitaciones a tener en cuenta antes de instalar el proveedor de recursos de SQL:
+Limitaciones a tener en cuenta antes de instalar el proveedor de recursos de SQL:
 
-- Los usuarios solo pueden crear y administrar bases de datos individuales. La instancia del servidor de base de datos no es accesible para los usuarios finales. Esto puede limitar la compatibilidad con las aplicaciones de base de datos locales que necesitan acceder a bases de datos maestras, temporales o administradas dinámicamente.
-- El operador de Azure Stack Hub es responsable de implementar, actualizar, proteger, configurar y mantener los hosts y servidores de bases de datos de SQL. El servicio Proveedor de recursos no proporciona ninguna funcionalidad de administración de instancias de servidor de bases de datos y hosts. 
+- Los usuarios solo pueden crear y administrar bases de datos individuales. La instancia del servidor de base de datos no es accesible para los usuarios finales. Esto puede limitar la compatibilidad con las aplicaciones de bases de datos locales que necesitan acceder a bases de datos maestras, temporales o administradas dinámicamente.
+- El operador de Azure Stack Hub es responsable de implementar, actualizar, proteger, configurar y mantener los hosts y servidores de bases de datos de SQL. El servicio Proveedor de recursos no proporciona ninguna funcionalidad de administración de instancias de servidor de bases de datos y hosts.
 - Las bases de datos de diferentes usuarios de distintas suscripciones se pueden colocar en la misma instancia del servidor de bases de datos. El proveedor de recursos no proporciona ningún mecanismo para aislar las bases de datos en diferentes hosts o instancias del servidor de bases de datos.
 - El proveedor de recursos no proporciona ningún informe sobre el uso de los inquilinos de las bases de datos.
+
+En el caso de las cargas de trabajo tradicionales locales de SQL Server, se recomienda la máquina virtual de SQL Server en Azure Stack Hub.
 
 ## <a name="sql-resource-provider-adapter-architecture"></a>Arquitectura del adaptador del proveedor de recursos de SQL
 

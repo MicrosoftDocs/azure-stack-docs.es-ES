@@ -1,33 +1,25 @@
 ---
-title: Uso de bases de datos MySQL como PaaS en Azure Stack Hub | Microsoft Docs
+title: Uso de bases de datos MySQL como PaaS en Azure Stack Hub
 description: Aprenda cómo implementar el proveedor de recursos MySQL y proporcionar bases de datos MySQL como servicio en Azure Stack Hub.
-services: azure-stack
-documentationCenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/25/2018
-ms.openlocfilehash: 9351ce5b2dde1fc7e2dfeddc2d3520a4f5d1fe2b
-ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
+ms.openlocfilehash: f7ff0e3b3ea21dc6545a6c69b1a9cdbf8dbed607
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76534624"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76881746"
 ---
 # <a name="use-mysql-databases-on-microsoft-azure-stack-hub"></a>Uso de bases de datos MySQL en Microsoft Azure Stack Hub
 
-Use el proveedor de recursos MySQL para ofrecer el servicio de bases de datos MySQL en [Azure Stack Hub](azure-stack-overview.md). Después de implementar el proveedor de recursos y conectarlo a una o varias instancias de servidor MySQL, puede:
+Use el proveedor de recursos MySQL para ofrecer bases de datos MySQL en [Azure Stack Hub](azure-stack-overview.md). Después de implementar el proveedor de recursos y conectarlo a una o varias instancias de servidor MySQL, puede crear:
 
-* Crear bases de datos de MySQL mediante las plantillas de implementación de Azure Resource Manager.
-* Proporcionar bases de datos MySQL como servicio.  
+* Bases de datos MySQL para aplicaciones nativas de la nube.
+* Bases de datos MySQL para aplicaciones web.  
 
 Hay varias limitaciones a tener en cuenta antes de instalar el proveedor de recursos de MySQL:
 

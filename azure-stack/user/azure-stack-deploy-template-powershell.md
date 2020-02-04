@@ -1,26 +1,18 @@
 ---
-title: Implementación de una plantilla mediante PowerShell en Azure Stack Hub | Microsoft Docs
+title: Implementación de una plantilla mediante PowerShell en Azure Stack Hub
 description: Implemente una plantilla mediante PowerShell en Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 09/23/2019
-ms.openlocfilehash: 010d6a31ec9bd618ea9b4394b505649f2146a80d
-ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
+ms.openlocfilehash: e0398eb36834676fec53103bb07dbe24bdc57c5d
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76536324"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883818"
 ---
 # <a name="deploy-a-template-using-powershell-in-azure-stack-hub"></a>Implementación de una plantilla mediante PowerShell en Azure Stack Hub
 

@@ -1,27 +1,18 @@
 ---
-title: Planeamiento de capacidad de almacenamiento de Azure Stack Hub | Microsoft Docs
+title: Almacenamiento del planeamiento de capacidad de Azure Stack Hub
 description: Obtenga información sobre el planeamiento de capacidad para las implementaciones de Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
-author: prchint
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
+author: ihenkel
 ms.topic: article
 ms.date: 05/31/2019
-ms.author: justinha
+ms.author: inhenkel
 ms.reviewer: prchint
 ms.lastreviewed: 05/31/2019
-ms.openlocfilehash: 79cb1de207d4d2722000273814d0cd39a3ea8820
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: db54510b118c688bf74ce5ba69355359d1c0cc85
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75817506"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76878928"
 ---
 # <a name="azure-stack-hub-storage"></a>Almacenamiento de Azure Stack Hub
 

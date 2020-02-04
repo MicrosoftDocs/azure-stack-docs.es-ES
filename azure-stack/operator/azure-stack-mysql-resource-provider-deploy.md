@@ -1,26 +1,18 @@
 ---
-title: Implementación del proveedor de recursos MySQL en Azure Stack Hub | Microsoft Docs
+title: Implementación del proveedor de recursos MySQL en Azure Stack Hub
 description: Aprenda a implementar el adaptador del proveedor de recursos MySQL y las bases de datos MySQL como servicio en Azure Stack Hub.
-services: azure-stack
-documentationCenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 03/18/2019
-ms.openlocfilehash: aecc96bc9e96c39ad1df1111b57bf17ca0d9b59a
-ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
+ms.openlocfilehash: 52ee1953098f861cca572e08269dff56da31f3aa
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76534964"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76881831"
 ---
 # <a name="deploy-the-mysql-resource-provider-on-azure-stack-hub"></a>Implementación del proveedor de recursos MySQL en Azure Stack Hub
 
@@ -104,7 +96,7 @@ _Solo para las instalaciones de sistemas integrados_. Debe proporcionar el certi
 
 ## <a name="deploy-the-resource-provider"></a>Implementar el proveedor de recursos
 
-Una vez instalados todos los requisitos previos, ejecute el script **DeployMySqlProvider.ps1** para implementar el proveedor de recursos de MySQL. El script DeployMySqlProvider.ps1 se extrae como parte de los archivos de instalación del proveedor de recursos MySQL descargado para su versión de Azure Stack Hub.
+Una vez que haya instalado todos los requisitos previos, ejecute el script **DeployMySqlProvider.ps1** desde un equipo que pueda acceder al punto de conexión de administración de recursos de Azure del administrador de Azure Stack Hub y al punto de conexión con privilegios para implementar el proveedor de recursos de MySQL. El script DeployMySqlProvider.ps1 se extrae como parte de los archivos de instalación del proveedor de recursos MySQL descargado para su versión de Azure Stack Hub.
 
  > [!IMPORTANT]
  > Antes de implementar el proveedor de recursos, revise las notas de la versión para obtener información sobre las nuevas funciones, correcciones y problemas conocidos que podrían afectar a la implementación.
@@ -121,7 +113,7 @@ Ejecute el script **DeployMySqlProvider.ps1**, que realiza las tareas siguientes
 * Registra el proveedor de recursos en la instancia local de Azure Resource Manager para las cuentas de operador.
 
 > [!NOTE]
-> Cuando se inicia la implementación del proveedor de recursos MySQL, se crea el grupo de recursos **system.local.mysqladapter**. Las implementaciones necesarias de este grupo de recursos pueden tardar hasta 75 minutos en finalizar.
+> Cuando se inicia la implementación del proveedor de recursos MySQL, se crea el grupo de recursos **system.local.mysqladapter**. Las implementaciones necesarias de este grupo de recursos pueden tardar hasta 75 minutos en finalizar. No debe colocar ningún otro recurso en el grupo de recursos **system.local.mysqladapter**.
 
 ### <a name="deploymysqlproviderps1-parameters"></a>Parámetros de DeployMySqlProvider.ps1
 

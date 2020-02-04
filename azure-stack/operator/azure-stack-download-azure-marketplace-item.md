@@ -1,26 +1,18 @@
 ---
-title: Descarga de elementos de Marketplace desde Azure y publicación en Azure Stack Hub | Microsoft Docs
+title: Descarga de elementos de Marketplace desde Azure y publicación en Azure Stack Hub
 description: Aprenda a descargar elementos de Marketplace desde Azure y a publicarlos en Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 12/23/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 12/23/2018
-ms.openlocfilehash: 80cf9d192be07f951ee959c7a83419bb16bd2bbb
-ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
+ms.openlocfilehash: 0df8b4e85aea2a194061da523e66385389b38bb1
+ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022953"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76890330"
 ---
 # <a name="download-marketplace-items-to-azure-stack-hub"></a>Descarga de elementos de Marketplace en Azure Stack Hub 
 

@@ -1,27 +1,18 @@
 ---
-title: Introducción a la recopilación de registros de diagnóstico de Azure Stack Hub | Microsoft Docs
+title: Introducción a la recopilación de registros de diagnóstico de Azure Stack Hub
 description: Explica la recopilación de registros de diagnóstico en Ayuda y soporte técnico de Azure Stack Hub, incluida la recopilación de registros a petición y automática.
-services: azure-stack
-documentationcenter: ''
 author: justinha
-manager: femila
-editor: ''
-ms.assetid: a20bea32-3705-45e8-9168-f198cfac51af
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/07/2019
 ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 11/07/2019
-ms.openlocfilehash: cd74be55195975238e9c8454badeab26593811b5
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: facbff4bdddc284c4f547c4bf5941678d2c8bcd7
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75882477"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76882371"
 ---
 # <a name="overview-of-azure-stack-hub-diagnostic-log-collection"></a>Introducción a la recopilación de registros de diagnóstico de Azure Stack Hub 
 

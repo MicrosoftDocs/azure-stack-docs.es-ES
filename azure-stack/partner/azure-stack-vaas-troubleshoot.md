@@ -1,26 +1,19 @@
 ---
-title: Solución de problemas de validación como servicio de Azure Stack | Microsoft Docs
+title: Solución de problemas de validación como servicio de Azure Stack
 description: Solucione problemas de validación como servicio para Azure Stack.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 2dfa55af61627a82f869c7e222dc29997b07a6e3
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.openlocfilehash: 1525ed6ce9005fd8a64acefb44c730e2f172bcdc
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955835"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884970"
 ---
 # <a name="troubleshoot-validation-as-a-service"></a>Solución de problemas de la validación como servicio
 
@@ -103,11 +96,11 @@ Si el entorno está en buen estado, cargue manualmente las 5 imágenes de VM nec
     > [!IMPORTANT]
     > No todos los valores predeterminados son correctos para el elemento de Marketplace existente.
 
-    | Campo  | Valor  |
+    | Campo  | Value  |
     |---------|---------|
     | Publicador | Microsoft Windows Server |
     | Oferta | Windows Server |
-    | OS Type (Tipo de SO) | Windows |
+    | Tipo de SO | Windows |
     | SKU | Centro de datos de 2012-R2 |
     | Versión | 1.0.0 |
     | URI del blob de disco de sistema operativo | https://azurestacktemplate.blob.core.windows.net/azurestacktemplate-public-container/WindowsServer2012R2DatacenterBYOL.vhd |
@@ -117,7 +110,7 @@ Si el entorno está en buen estado, cargue manualmente las 5 imágenes de VM nec
 
 Las propiedades de las 5 imágenes de VM son las siguientes:
 
-| Publicador  | Oferta  | OS Type (Tipo de SO) | SKU | Versión | URI del blob de disco de sistema operativo |
+| Publicador  | Oferta  | Tipo de SO | SKU | Versión | URI del blob de disco de sistema operativo |
 |---------|---------|---------|---------|---------|---------|
 | Microsoft Windows Server| Windows Server | Windows | Centro de datos de 2012-R2 | 1.0.0 | https://azurestacktemplate.blob.core.windows.net/azurestacktemplate-public-container/WindowsServer2012R2DatacenterBYOL.vhd |
 | Microsoft Windows Server | Windows Server | Windows | 2016-Datacenter | 1.0.0 | https://azurestacktemplate.blob.core.windows.net/azurestacktemplate-public-container/Server2016DatacenterFullBYOL.vhd |

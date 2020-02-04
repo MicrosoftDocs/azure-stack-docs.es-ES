@@ -1,26 +1,18 @@
 ---
-title: Introducción a Azure App Service en Azure Stack | Microsoft Docs
+title: Introducción a Azure App Service en Azure Stack
 description: Introducción a Azure App Service y Azure Functions en Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: BryanLa
-manager: femila
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: app-service
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/13/2020
 ms.author: BryanLa
 ms.reviewer: anwestg
 ms.lastreviewed: 01/13/2020
-ms.openlocfilehash: 2b39b4e7bf8f4b7d3e24d2547e187b7e5d81c728
-ms.sourcegitcommit: e47dc5fe9e59010ea3dbb9cb31abe15cfb821262
+ms.openlocfilehash: 76acf85ac6bdfa1576416a9fc583463a71ad95d8
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76124759"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76876123"
 ---
 # <a name="azure-app-service-and-azure-functions-on-azure-stack-hub-overview"></a>Introducción a Azure App Service y Azure Functions en Azure Stack Hub
 

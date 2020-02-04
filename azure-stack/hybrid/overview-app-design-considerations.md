@@ -2,18 +2,17 @@
 title: Consideraciones sobre el diseño de aplicaciones híbridas al compilar en Azure y Azure Stack
 description: Consideraciones al compilar una aplicación híbrida para la nube y el perímetro inteligentes.
 author: BryanLa
-ms.service: azure-stack
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: a5d282a45f340461b62acb3462cfb84822e0c2be
-ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
+ms.openlocfilehash: 10035700de713910d33114e06fab11321e96e5b1
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73640248"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76877449"
 ---
 # <a name="hybrid-application-design-considerations"></a>Consideraciones sobre el diseño de aplicaciones híbridas 
 
@@ -59,7 +58,7 @@ Los componentes comunes de aplicación que se van a incluir en el inventario se 
 | Conexiones de cliente | La aplicación (en cualquier dispositivo) puede acceder a los usuarios de varias maneras, desde un punto de entrada único, incluidas las siguientes:<br>- Un modelo cliente-servidor que requiere que el usuario tenga instalado un cliente para trabajar con la aplicación. Una aplicación basada en servidor a la que se accede desde un explorador web.<br>- Las conexiones de cliente pueden incluir notificaciones cuando se interrumpe la conexión o alertas cuando se pueden aplicar cargos de itinerancia. |
 | Authentication  | La autenticación puede ser necesaria para un usuario que se conecta a la aplicación o desde un componente que se conecta a otro. |
 | API existentes  | Puede proporcionar a los desarrolladores acceso mediante programación a la aplicación con bibliotecas de clases y conjuntos de API y ofrecer una interfaz de conexión basada en estándares de Internet. También puede usar API para descomponer una aplicación en unidades lógicas que operan de forma independiente. |
-| Services  | Puede emplear servicios breves para proporcionar las características de una aplicación. Un servicio puede ser el motor en el que se ejecuta la aplicación. |
+| Servicios  | Puede emplear servicios breves para proporcionar las características de una aplicación. Un servicio puede ser el motor en el que se ejecuta la aplicación. |
 | Colas | Puede usar colas para organizar el estado de los ciclos de vida y los estados de los componentes de la aplicación. Estas colas pueden proporcionar capacidades de mensajería, notificaciones y almacenamiento en búfer a las partes suscritas. |
 | Almacenamiento de datos | Una aplicación puede ser con o sin estado. Las aplicaciones con estado necesitan almacenamiento de datos que diversos formatos y volúmenes puedan proporcionar. |
 | Almacenamiento en caché de datos  | Un componente de almacenamiento en caché de datos del diseño puede abordar de forma estratégica problemas de latencia y desempeñar un rol en la activación de la ampliación en la nube. |
@@ -78,7 +77,7 @@ Evalúe las características de cada componente con respecto a cada fundamento. 
 | Escalabilidad  | La capacidad de un sistema para controlar el aumento de la carga. |
 | Disponibilidad  | Proporción de tiempo que una aplicación híbrida es funcional y está en funcionamiento. |
 | Resistencia | Capacidad de recuperación de una aplicación híbrida. |
-| Manejabilidad | Procesos de operaciones que mantienen un sistema ejecutándose en producción. |
+| Facilidad de uso | Procesos de operaciones que mantienen un sistema ejecutándose en producción. |
 | Seguridad | Protección de las aplicaciones híbridas y los datos frente a amenazas. |
 
 ## <a name="placement"></a>Ubicación
@@ -183,7 +182,7 @@ Para obtener la explicación básica de este fundamento, vea [*Resistencia*](htt
 
 **Documentar los procedimientos de solución de problemas.** Defina los procedimientos de solución de problemas para volver a implementar los recursos y los componentes de la aplicación.
 
-## <a name="manageability"></a>Manejabilidad
+## <a name="manageability"></a>Facilidad de uso
 
 Las consideraciones sobre cómo administrar las aplicaciones híbridas son fundamentales a la hora de diseñar la arquitectura. Una aplicación híbrida bien administrada proporciona una infraestructura como código que permite la integración de código de aplicación coherente en una canalización de desarrollo común. Mediante la implementación de pruebas coherentes de todo el sistema e individuales de los cambios en la infraestructura, puede garantizar una implementación integrada si los cambios pasan las pruebas, lo que permite que se combinen en el código fuente.
 

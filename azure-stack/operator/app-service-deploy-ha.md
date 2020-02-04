@@ -1,27 +1,18 @@
 ---
-title: Implementación de App Service en Azure Stack Hub mediante una configuración de alta disponibilidad | Microsoft Docs
+title: Implementación de App Service en Azure Stack Hub mediante una configuración de alta disponibilidad
 description: Aprenda a implementar App Service en Azure Stack Hub mediante una configuración de alta disponibilidad.
-services: azure-stack
-documentationcenter: ''
 author: BryanLa
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/02/2020
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 01/02/2020
-ms.openlocfilehash: 0d1912a753ae29eb7a4c0ee8b583c34821962f60
-ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
+ms.openlocfilehash: 1b72a2d71c2ff5e467486fa9672607cca78a38e9
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76023037"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76876919"
 ---
 # <a name="deploy-app-service-in-a-highly-available-configuration"></a>Implementación de App Service en una configuración de alta disponibilidad
 

@@ -1,20 +1,18 @@
 ---
-title: Creación de un túnel de VPN mediante GRE en Azure Stack Hub | Microsoft Docs
+title: Creación de un túnel de VPN mediante GRE en Azure Stack Hub
 description: Aprenda a crear un túnel de VPN mediante GRE en Azure Stack Hub.
-services: azure-stack
 author: mattbriggs
-ms.service: azure-stack
 ms.topic: how-to
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 09/19/2019
-ms.openlocfilehash: 88f3d1ab53ace7a666aab8dcae640f2cef3b77fa
-ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
+ms.openlocfilehash: 623d2825c74d486b0500d5aa17e98d28234f0086
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76536562"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76882982"
 ---
 # <a name="how-to-create-a-vpn-tunnel-using-gre-in-azure-stack-hub"></a>Creación de un túnel de VPN mediante GRE en Azure Stack Hub
 

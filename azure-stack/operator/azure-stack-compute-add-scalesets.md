@@ -1,26 +1,21 @@
 ---
-title: Disponibilidad de los conjuntos de escalado de máquinas virtuales en Azure Stack Hub | Microsoft Docs
+title: Disponibilidad de los conjuntos de escalado de máquinas virtuales en Azure Stack Hub
 description: Conozca cómo un operador de la nube puede agregar conjuntos de escalado de máquinas virtuales a Marketplace de Azure Stack Hub.
-services: azure-stack
 author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
 ms.topic: article
-ms.date: 10/04/2019
+ms.date: 01/22/2020
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 10/22/2018
-ms.openlocfilehash: 4794704678d5b344ea9d0bae9bf89f134e6bff52
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 7474b18a1d50c6ab8ed91be64f8f943a215ff7fd
+ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75883021"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76889752"
 ---
 # <a name="make-virtual-machine-scale-sets-available-in-azure-stack-hub"></a>Disponibilidad de los conjuntos de escalado de máquinas virtuales en Azure Stack Hub
 
- 
 Los conjuntos de escalado de máquinas virtuales son un recurso de proceso de Azure Stack Hub. Puede utilizarlos para implementar y administrar un conjunto de máquinas virtuales idénticas. Si todas las máquinas virtuales tienen la misma configuración, los conjuntos de escalado no requieren un aprovisionamiento previo de las máquinas virtuales. Esto facilita la creación de servicios a gran escala cuyo objetivo son las cargas de trabajo en contenedores, de macroproceso y macrodatos.
 
 Este artículo le guía por el proceso de permitir la disponibilidad de los conjuntos de escalado de Marketplace de Azure Stack Hub. Después de completar este procedimiento, los usuarios pueden agregar conjuntos de escalado de máquinas virtuales a sus suscripciones.
@@ -40,7 +35,7 @@ En Azure Stack Hub, los conjuntos de escalado de máquinas virtuales no admiten 
 ## <a name="use-the-azure-stack-hub-portal"></a>Uso del portal de Azure Stack Hub
 
 >[!IMPORTANT]  
-> La información de esta sección se aplica cuando se usa la versión 1808 de Azure Stack Hub o una posterior. 
+> La información de esta sección se aplica cuando se usa la versión 1808 de Azure Stack Hub o una posterior.
 
 1. Inicie sesión en el portal de Azure Stack Hub. Después vaya a **Todos los servicios**, luego **Conjuntos de escalado de máquinas virtuales** y, en **COMPUTE**, seleccione **Conjuntos de escalado de máquinas virtuales**.
    ![Selección de conjuntos de escalado de máquinas virtuales](media/azure-stack-compute-add-scalesets/all-services.png)

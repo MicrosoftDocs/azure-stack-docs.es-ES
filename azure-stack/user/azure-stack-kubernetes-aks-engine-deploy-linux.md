@@ -1,26 +1,18 @@
 ---
-title: Instalación del motor de AKS en Linux para Azure Stack Hub | Microsoft Docs
+title: Instalación del motor de AKS en Linux para Azure Stack Hub
 description: Aprenda a usar una máquina Linux en Azure Stack Hub para hospedar el motor de AKS con el fin de implementar y administrar un clúster de Kubernetes.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na (Kubernetes)
-ms.devlang: nav
 ms.topic: article
-ms.date: 01/10/2020
+ms.date: 01/28/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: d9f56d8d40d4f4420e073516678017c4904dd7d1
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.lastreviewed: 01/28/2020
+ms.openlocfilehash: 66e340df1d687e9a0c19f43c05c4fcb92e6940c2
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75878958"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883549"
 ---
 # <a name="install-the-aks-engine-on-linux-in-azure-stack-hub"></a>Instalación del motor de AKS en Linux para Azure Stack Hub
 
@@ -41,7 +33,7 @@ Puede instalar la máquina virtual cliente para administrar el clúster de Kuber
 
 1. Cree una máquina virtual Linux en Azure Stack Hub. Para obtener instrucciones, consulte [Inicio rápido: Creación de una máquina virtual de servidor Linux mediante el portal de Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-quick-linux-portal).
 2. Conéctese a la máquina virtual.
-3. Busque la versión del motor de AKS en la tabla [Versiones admitidas de Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). La imagen base de AKS debe estar disponible en Marketplace de Azure Stack Hub. Al ejecutar el comando, debe especificar la versión `--version v0.43.0`. Si no lo hace, el comando instalará la versión más reciente, que podría necesitar una imagen de VHD que no está disponible en Marketplace.
+3. Busque la versión del motor de AKS en la tabla [Versiones admitidas de Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). La imagen base de AKS debe estar disponible en el Marketplace de Azure Stack Hub. Al ejecutar el comando, debe especificar la versión `--version v0.43.0`. Si no lo hace, el comando instalará la versión más reciente, que podría necesitar una imagen de VHD que no está disponible en Marketplace.
 4. Ejecute el siguiente comando:
 
     ```bash  

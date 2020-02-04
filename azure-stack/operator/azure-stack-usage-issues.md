@@ -1,30 +1,22 @@
 ---
-title: Problemas de conectividad de uso y errores de Azure Stack Hub | Microsoft Docs
+title: Problemas de conectividad de uso y errores de Azure Stack Hub
 description: Solución de errores y problemas de uso de Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 10/04/2019
+ms.date: 01/22/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 06/27/2019
-ms.openlocfilehash: 5ad2f6b3b66e2c01cbae91a42a2b2a1bb0b59a26
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 4a4b34c6aeaac3bd484c0a954af0f3a456cbfe85
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75813018"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76882673"
 ---
 # <a name="usage-connectivity-errors"></a>Errores de conectividad de uso
 
-Los datos de uso de Azure Stack Hub se envían a Azure mediante el [componente *Azure Bridge*](azure-stack-usage-reporting.md) de Azure Stack Hub. Si el componente Bridge de Azure Stack Hub no puede conectarse al servicio de uso de Azure, aparece el siguiente error:
+Los datos de uso de Azure Stack Hub se envían a Azure mediante el componente [*Azure Bridge*](azure-stack-usage-reporting.md) de Azure Stack Hub. Si el componente Bridge de Azure Stack Hub no puede conectarse al servicio de uso de Azure, aparece el siguiente error:
 
 ![error de puente de uso](media/azure-stack-usage-issues/usageerror2.png)
 

@@ -1,26 +1,18 @@
 ---
-title: Aspectos básicos de la administración de ASDK | Microsoft Docs
+title: Aspectos básicos de administración de ASDK
 description: Obtenga información acerca de cómo realizar las tareas de administración básicas del Kit de desarrollo de Azure Stack (ASDK).
-services: azure-stack
-documentationcenter: ''
 author: justinha
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 02/19/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: 785b787702f173fe3f30b53f29f8770f9f039b1b
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 772fef1539eccfb69fd7d240314ff8f80af1965c
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75881627"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76874185"
 ---
 # <a name="asdk-admin-basics"></a>Aspectos básicos de administración de ASDK
 Hay varias cosas que debe saber si no está familiarizado con la administración del Kit de desarrollo de Azure Stack. En esta guía se proporciona información general acerca de su rol como operador de Azure Stack en el entorno de evaluación. Familiarizarse con esta información garantiza que los usuarios de prueba sean productivos lo antes posible.

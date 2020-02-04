@@ -1,26 +1,18 @@
 ---
-title: Administración de la capacidad de almacenamiento en Azure Stack Hub | Microsoft Docs
+title: Administración de la capacidad de almacenamiento en Azure Stack Hub
 description: Obtenga información acerca de cómo supervisar y administrar la capacidad de almacenamiento y la disponibilidad en Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: PowerShell
 ms.topic: conceptual
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 03/19/2019
-ms.openlocfilehash: 56c6ee17ed569689267bffc79aadece0e451897c
-ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
+ms.openlocfilehash: 2d7db8ade21580af67c0a1b3f3783f694544f5e0
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76535253"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76882001"
 ---
 # <a name="manage-storage-capacity-for-azure-stack-hub"></a>Administración de la capacidad de almacenamiento en Azure Stack Hub
 

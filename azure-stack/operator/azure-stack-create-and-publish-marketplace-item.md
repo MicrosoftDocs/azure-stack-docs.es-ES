@@ -1,26 +1,18 @@
 ---
-title: Creación y publicación de un elemento de Marketplace en Azure Stack Hub | Microsoft Docs
+title: Creación y publicación de un elemento de Marketplace en Azure Stack Hub
 description: Aprenda a crear y publicar un elemento de Marketplace de Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/03/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: aa308690caa875d2ab22ca0b987634c2d29795fa
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: fdb31f29faa5fa1890be0fa12050a1cd8b1c56a8
+ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75882766"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76890126"
 ---
 # <a name="create-and-publish-a-custom-azure-stack-hub-marketplace-item"></a>Creación y publicación de un elemento personalizado de Marketplace de Azure Stack Hub
 

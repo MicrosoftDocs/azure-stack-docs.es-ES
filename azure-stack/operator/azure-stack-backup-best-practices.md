@@ -1,27 +1,18 @@
 ---
-title: Procedimientos recomendados del servicio Copia de seguridad de infraestructura para Azure Stack Hub | Microsoft Docs
+title: Procedimientos recomendados del servicio Copia de seguridad de infraestructura para Azure Stack Hub
 description: Siga estos procedimientos recomendados al implementar y administrar Azure Stack Hub para ayudar a mitigar la pérdida de datos en caso de error grave.
-services: azure-stack
-documentationcenter: ''
 author: justinha
-manager: femila
-editor: ''
-ms.assetid: 221FDE40-3EF8-4F54-A075-0C4D66EECE1A
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 02/08/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 02/08/2019
-ms.openlocfilehash: 4f25f1a2d78be5aafdfb6ef379353b148cf3b418
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 880c5dfb72d0f70cc8748f2528a3c36562bebe93
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75882919"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76878061"
 ---
 # <a name="infrastructure-backup-service-best-practices"></a>Procedimientos recomendados del servicio Infrastructure Backup
 

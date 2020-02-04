@@ -1,27 +1,18 @@
 ---
-title: Recopilación de registros de diagnóstico de Azure Stack Hub a petición | Microsoft Docs
+title: Recopilación de registros de diagnóstico de Azure Stack Hub a petición
 description: Aprenda a recopilar registros de diagnóstico a petición en Azure Stack Hub con ayuda y soporte técnico o un punto de conexión con privilegios (PEP).
-services: azure-stack
-documentationcenter: ''
 author: justinha
-manager: femila
-editor: ''
-ms.assetid: a20bea32-3705-45e8-9168-f198cfac51af
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/16/2020
 ms.author: justinha
 ms.reviewer: shisab
 ms.lastreviewed: 01/16/2020
-ms.openlocfilehash: bb7fc0488ea264a83cc93e071b044e6443e97630
-ms.sourcegitcommit: ba2fd47e74adebe1fcbb489d059a2c27d59b179c
+ms.openlocfilehash: 759edb6cf4f106e59a1b847cb4dcafd4450665da
+ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256349"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76890092"
 ---
 # <a name="collect-azure-stack-hub-diagnostic-logs-on-demand"></a>Recopilación de registros de diagnóstico de Azure Stack Hub a petición
 
@@ -108,7 +99,7 @@ Siga estos pasos para ejecutar `Get-AzureStackLog` en un equipo que hospede ASDK
   Get-AzureStackLog -OutputSharePath "<path>" -OutputShareCredential $cred -FilterByRole VirtualMachines,BareMetal -FromDate (Get-Date).AddHours(-8) -ToDate (Get-Date).AddHours(-2)
   ```
 
-* Recopilar registros de implementaciones de inquilino que ejecutan clústeres de Kubernetes autoadministrados (Motor de AKS) en Azure Stack. Los registros de Kubernetes deben almacenarse en una cuenta de almacenamiento del inquilino en un formato que permita que el intervalo de tiempo de recopilación se aplique también a estos. 
+* Recopilar registros de implementaciones de inquilino que ejecutan clústeres de Kubernetes autoadministrados (motor de AKS) en Azure Stack. Los registros de Kubernetes deben almacenarse en una cuenta de almacenamiento del inquilino en un formato que permita que el intervalo de tiempo de recopilación se aplique también a estos. 
 
   ```powershell
   Get-AzureStackLog -OutputPath <Path> -InputSasUri "<Blob Service Sas URI>" -FromDate "<Beginning of the time range>" -ToDate "<End of the time range>"

@@ -1,26 +1,18 @@
 ---
-title: Registro de inquilinos en Azure Stack Hub para el seguimiento de uso | Microsoft Docs
+title: Registro de inquilinos en Azure Stack Hub para el seguimiento de uso
 description: Aprenda a registrar inquilinos y cómo se realiza el seguimiento del uso de estos en Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 10/14/2019
+ms.date: 01/22/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 10/14/2019
-ms.openlocfilehash: 981a80692e087cfcb733e73ec43d70fe67516e69
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 1f5f3011c1546970a1b94773b171e6419757c461
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75882579"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76882495"
 ---
 # <a name="register-tenants-for-usage-tracking-in-azure-stack-hub"></a>Registro de inquilinos en Azure Stack Hub para el seguimiento de uso
 
@@ -33,7 +25,7 @@ En este artículo se incluye información acerca de las operaciones de registro.
 
 Utilice la operación cuando desee agregar un nuevo inquilino a su registro. Se informa del uso de inquilinos en una suscripción de Azure conectada con el inquilino de Azure Active Directory (Azure AD).
 
-También puede usar la operación para cambiar la suscripción asociada a un inquilino. Llame a PUT o a **New-AzureRMResource** para sobrescribir la asignación anterior.
+También puede usar la operación para cambiar la suscripción asociada a un inquilino. Llame a PUT o al cmdlet **New-AzureRMResource** de PowerShell para sobrescribir la asignación anterior.
 
 Puede asociar una sola suscripción de Azure a un inquilino. Si intenta agregar una segunda suscripción a un inquilino existente, la primera suscripción se sobrescribe.
 

@@ -2,26 +2,18 @@
 title: Implementación de un proveedor de recursos de SQL Server
 titleSuffix: Azure Stack Hub
 description: Aprenda a implementar el proveedor de recursos de SQL Server en Azure Stack Hub.
-services: azure-stack
-documentationCenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 10/02/2019
 ms.lastreviewed: 03/18/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
-ms.openlocfilehash: a8978c5ceb9e54577ff2347671568122751f4715
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: f365886119e343fd550e00e606840172fed7fa21
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75881848"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76881236"
 ---
 # <a name="deploy-the-sql-server-resource-provider-on-azure-stack-hub"></a>Implementación del proveedor de recursos de SQL Server en Azure Stack Hub
 
@@ -100,7 +92,7 @@ _Solo para las instalaciones de sistemas integrados_. Debe proporcionar el certi
 
 ## <a name="deploy-the-sql-resource-provider"></a>Implementar el proveedor de recursos SQL
 
-Una vez instalados todos los requisitos previos, ejecute el script **DeploySqlProvider.ps1** para implementar el proveedor de recursos de SQL. El script DeploySqlProvider.ps1 se extrae como parte del archivo binario del proveedor de recursos de SQL descargado para su versión de Azure Stack Hub.
+Una vez que haya instalado todos los requisitos previos, ejecute el script **DeploySqlProvider.ps1** desde un equipo que pueda acceder al punto de conexión de administración de recursos de Azure del administrador de Azure Stack Hub y al punto de conexión con privilegios para implementar el proveedor de recursos de SQL. El script DeploySqlProvider.ps1 se extrae como parte del archivo binario del proveedor de recursos de SQL descargado para su versión de Azure Stack Hub.
 
  > [!IMPORTANT]
  > Antes de implementar el proveedor de recursos, revise las notas de la versión para obtener información sobre las nuevas funciones, correcciones y problemas conocidos que podrían afectar a la implementación.
@@ -117,7 +109,7 @@ Ejecute el script DeploySqlProvider.ps1, que realiza las tareas siguientes:
 - Registra el proveedor de recursos en la instancia local de Azure Resource Manager para las cuentas de operador.
 
 > [!NOTE]
-> Cuando se inicia la implementación del proveedor de recursos de SQL, se crea el grupo de recursos **system.local.sqladapter**. Las implementaciones necesarias para este grupo de recursos pueden tardar hasta 75 minutos en completarse.
+> Cuando se inicia la implementación del proveedor de recursos de SQL, se crea el grupo de recursos **system.local.sqladapter**. Las implementaciones necesarias para este grupo de recursos pueden tardar hasta 75 minutos en completarse. No debe colocar ningún otro recurso en el grupo de recursos **system.local.sqladapter**.
 
 ### <a name="deploysqlproviderps1-parameters"></a>Parámetros de DeploySqlProvider.ps1
 

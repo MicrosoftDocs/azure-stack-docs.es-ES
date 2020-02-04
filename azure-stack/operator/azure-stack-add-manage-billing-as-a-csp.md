@@ -1,26 +1,18 @@
 ---
-title: Administración del uso y la facturación para Azure Stack Hub como un proveedor de soluciones en la nube | Microsoft Docs
+title: Administración del uso y la facturación de Azure Stack Hub como proveedor de soluciones en la nube
 description: Obtenga información sobre cómo registrar Azure Stack Hub como proveedor de soluciones en la nube (CSP) y cómo agregar clientes para la facturación.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 10/02/2019
+ms.date: 01/22/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: 7fcd34efefa9c82085274837829f989908f751ba
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 131a3e0cacc1d08df6f2f925845d8dbf21386162
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75881100"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76876565"
 ---
 # <a name="manage-usage-and-billing-for-azure-stack-hub-as-a-cloud-solution-provider"></a>Administración del uso y la facturación de Azure Stack Hub como proveedor de soluciones en la nube
 
@@ -55,7 +47,7 @@ Las suscripciones a CSP son la opción preferida para el registro cuando un reve
 
 ## <a name="register-azure-stack-hub"></a>Registro de Azure Stack Hub
 
-Use la suscripción a APSS creada con la información de la sección anterior para registrar Azure Stack Hub con Azure. Para más información, consulte [Registro de Azure Stack Hub con una suscripción a Azure](azure-stack-registration.md).
+Use la suscripción de APSS creada con la información de la sección anterior para registrar Azure Stack Hub con Azure. Para más información, consulte [Registro de Azure Stack Hub con una suscripción de Azure](azure-stack-registration.md).
 
 ## <a name="add-end-customer"></a>Adición a un cliente final
 
@@ -67,7 +59,7 @@ Azure Stack Hub utiliza una característica denominada *registro*. Un registro e
 
 Mediante el uso del registro Azure Stack Hub puede:
 
-- Desviar los datos de uso de Azure Stack Hub a Azure Commerce y facturar una suscripción a Azure.
+- Desviar los [datos de uso de Azure Stack Hub](azure-stack-billing-and-chargeback.md) a Azure Commerce y facturar una suscripción a Azure.
 - Notificar el uso de cada cliente en una suscripción diferente con una implementación multiinquilino de Azure Stack Hub. La arquitectura multiinquilino permite que Azure Stack Hub admita distintas organizaciones en la misma instancia de Azure Stack Hub.
 
 Para cada instancia de Azure Stack Hub, hay una suscripción predeterminada y varias suscripciones de inquilinos. La suscripción predeterminada es una suscripción de Azure que se cobra si no hay una suscripción específica de inquilino. Debe ser la primera suscripción que se registre. Para que los informes de uso multiinquilinos funcionen, la suscripción debe ser un plan CSP o APSS.

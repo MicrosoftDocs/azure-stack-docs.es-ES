@@ -1,25 +1,18 @@
 ---
-title: Uso del portal de validación como servicio de Azure Stack para programar la primera prueba | Microsoft Docs
+title: Uso del portal de validación como servicio de Azure Stack para programar la primera prueba
 description: Use el portal de validación como servicio de Azure Stack para programar la primera prueba.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 8843b6791876b4e0362d7aee3aa738453a8c3b88
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.openlocfilehash: 166a75da9f6571e80cdfe213fe0ea32c58279dac
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955921"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76885131"
 ---
 # <a name="scheduling-a-test"></a>Programación de una prueba
 
@@ -31,7 +24,7 @@ Para comprobar la solución, cree el flujo de trabajo para una prueba. Un flujo 
 
 Aunque el flujo de trabajo de prueba superada se puede usar para ejecutar cualquier prueba proporcionada por VaaS, incluidas las pruebas de los flujos de trabajo de validación, los resultados del flujo de trabajo de pruebas superadas no se consideran *oficiales*. Para obtener información acerca de los flujos de trabajo de validación oficiales, consulte [Flujos de trabajo](azure-stack-vaas-key-concepts.md#workflows).
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 Antes de seguir este tutorial de inicio rápido, debe finalizar los siguientes elementos:
 
@@ -49,7 +42,7 @@ Inicie sesión en el portal, seleccione o cree una solución y, luego, seleccion
 2. Escriba el nombre de una solución existente o seleccione **Nueva solución** para crear una solución. Para obtener instrucciones, consulte [Creación de una solución en el portal de VaaS](azure-stack-vaas-key-concepts.md#create-a-solution-in-the-vaas-portal).
 3. Seleccione **Iniciar** en el icono **Pruebas superadas**.
 
-## <a name="specify-parameters"></a>Especificación de parámetros
+## <a name="specify-parameters"></a>Especificar parámetros
 
 ![Texto alternativo](media/vaas_test_pass_parameters.png)
 

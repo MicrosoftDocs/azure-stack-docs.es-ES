@@ -1,25 +1,17 @@
 ---
-title: Configuración de conexiones VPN de sitio a sitio de IPsec/IKE | Microsoft Docs
+title: Configuración de conexiones VPN de sitio a sitio de IPsec/IKE
 description: Obtenga información acerca de la directiva de IPsec o IKE para conexiones de red virtual a red virtual o VPN de sitio a sitio en Azure Stack Hub y configúrela.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/07/2020
 ms.author: sethm
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: b4d99d44fa1cd5b2c6232bf0d2938f37a4bf662c
-ms.sourcegitcommit: b9d520f3b7bc441d43d489e3e32f9b89601051e6
+ms.openlocfilehash: 262d0714c8a0d5979a1313dcff48947f676109ce
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75727554"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76882994"
 ---
 # <a name="configure-ipsecike-policy-for-site-to-site-vpn-connections"></a>Configuración de la directiva IPsec/IKE para conexiones VPN de sitio a sitio
 

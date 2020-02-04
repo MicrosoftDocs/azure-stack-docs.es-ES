@@ -1,26 +1,18 @@
 ---
-title: Validación de certificados de infraestructura de clave pública de Azure Stack Hub para la implementación de sistemas integrados de Azure Stack Hub | Microsoft Docs
+title: Validación de certificados de infraestructura de clave pública de Azure Stack Hub para la implementación de sistemas integrados de Azure Stack Hub
 description: Describe cómo validar certificados PKI de Azure Stack Hub para sistemas integrados de Azure Stack Hub. Incluye el uso de la herramienta Azure Stack Hub Certificate Checker.
-services: azure-stack
-documentationcenter: ''
-author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
+author: ihenkel
 ms.topic: article
 ms.date: 07/23/2019
-ms.author: mabrigg
+ms.author: inhenkel
 ms.reviewer: ppacent
 ms.lastreviewed: 01/08/2019
-ms.openlocfilehash: 94acfbeb0c08bc79ad6d9bfa0282313a39c0eae6
-ms.sourcegitcommit: e47dc5fe9e59010ea3dbb9cb31abe15cfb821262
+ms.openlocfilehash: 8ade18f01f9d0636e3a5903307ee9513c44470f7
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76124725"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76882600"
 ---
 # <a name="validate-azure-stack-hub-pki-certificates"></a>Preparación de certificados PKI de Azure Stack Hub
 

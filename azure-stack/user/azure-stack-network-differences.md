@@ -1,22 +1,18 @@
 ---
-title: Diferencias entre las redes de Azure Stack Hub | Microsoft Docs
+title: Diferencias entre los servicios de red de Azure Stack Hub
 description: Conozca las diferencias y consideraciones al trabajar con redes en Azure Stack Hub.
-services: azure-stack
-keywords: ''
 author: mattbriggs
-manager: femila
 ms.date: 1/22/2020
 ms.topic: article
-ms.service: azure-stack
 ms.author: mabrigg
 ms.reviewer: wamota
 ms.lastreviewed: 07/10/2019
-ms.openlocfilehash: 2d40e774ce3ef57694ae765e0774d6fc6610d553
-ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
+ms.openlocfilehash: 4cb075b429fa2a52d6bf0b12216716dd451fe444
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76536069"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883412"
 ---
 # <a name="differences-and-considerations-for-azure-stack-hub-networking"></a>Diferencias y consideraciones para las redes de Azure Stack Hub
 

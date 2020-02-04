@@ -1,30 +1,22 @@
 ---
-title: Infraestructura de informes de uso para proveedores de soluciones en la nube para Azure Stack Hub | Microsoft Docs
+title: Infraestructura de informes de uso para proveedores de soluciones en la nube para Azure Stack Hub
 description: Más información sobre la infraestructura de informes de uso que se utiliza para realizar un seguimiento de los inquilinos que atiende un proveedor de soluciones en la nube (CSP).
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 10/03/2019
+ms.date: 01/22/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: 574d6bcd7b86f026a6c7f078e06fa92a3e0d4581
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: fdd08b3b689c069b4bc8c842e252c3b0c51c5580
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75809719"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76882544"
 ---
 # <a name="usage-reporting-infrastructure-for-cloud-solution-providers"></a>Infraestructura de informes de uso para proveedores de soluciones en la nube
 
-Azure Stack Hub incluye la infraestructura necesaria para realizar el seguimiento del uso cuando se produce y lo desvía a Azure. En Azure, Azure Commerce procesa los datos de uso y cobra el uso a las suscripciones apropiadas de Azure. Este proceso funciona de la misma manera que el seguimiento del uso que tiene lugar en la nube global de Azure.
+Azure Stack Hub incluye la infraestructura necesaria para realizar el seguimiento del uso cuando se produce y lo desvía a Azure. En Azure, Azure Commerce procesa los [datos de uso y cobra el uso](azure-stack-billing-and-chargeback.md) a las suscripciones apropiadas de Azure. Este proceso funciona de la misma manera que el seguimiento del uso que tiene lugar en la nube global de Azure.
 
 Hay algunos conceptos que coinciden en el entorno global de Azure y Azure Stack Hub. Azure Stack Hub tiene suscripciones locales, que cumplen un rol similar al de una suscripción de Azure. Las suscripciones locales solo son válidas localmente. Las suscripciones locales se asignan a las suscripciones de Azure cuando uso se desvía a Azure.
 

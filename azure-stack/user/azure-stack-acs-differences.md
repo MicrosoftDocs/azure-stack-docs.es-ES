@@ -1,26 +1,18 @@
 ---
-title: Azure Stack Hub Storage, diferencias y consideraciones | Microsoft Docs
+title: 'Azure Stack Hub Storage: diferencias y consideraciones'
 description: Conozca las diferencias entre Azure Stack Hub Storage y Azure Storage, junto con las consideraciones de implementación de Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviwer: xiaofmao
 ms.lastreviewed: 01/30/2019
-ms.openlocfilehash: dc50320941ab12fbd3f8b6b43f44e5ef9ddc7c45
-ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
+ms.openlocfilehash: 6e5171c105bd806895a04880e0bec0af5fab8855
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76535814"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883968"
 ---
 # <a name="azure-stack-hub-storage-differences-and-considerations"></a>Azure Stack Hub Storage: Diferencias y consideraciones
 
