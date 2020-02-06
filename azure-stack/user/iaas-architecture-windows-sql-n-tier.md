@@ -7,12 +7,12 @@ ms.date: 11/01/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: f2a981b3eb7b9d233d656daea4d0bcb4bbd21039
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: b866b99cca9e4db7fa522bd605512f0aeea632db
+ms.sourcegitcommit: 74ce7c12a93d47315d70427b02bcacbd3b44f854
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76885279"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77037240"
 ---
 # <a name="windows-n-tier-application-on-azure-stack-hub-with-sql-server"></a>Aplicación Windows de n niveles en Azure Stack Hub con SQL Server
 
@@ -80,7 +80,7 @@ Diseñe subredes teniendo en cuenta los requisitos de funcionalidad y seguridad.
 
 No exponga las máquinas virtuales directamente a Internet; en su lugar, asigne una dirección IP privada a cada una. Los clientes se conectan mediante la dirección IP pública asociada con el equilibrador de carga de capa 7.
 
-Defina reglas del equilibrador de carga para dirigir el tráfico de red a las máquinas virtuales. Por ejemplo, para habilitar el tráfico HTTP, asigne el puerto 80 de la configuración de front-end al puerto 80 del grupo de direcciones de back-end. Cuando un cliente envía una solicitud HTTP al puerto 80, el equilibrador de carga selecciona una dirección IP de back-end mediante un [algoritmo hash](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview#load-balancer-concepts) que incluye la dirección IP de origen. Las solicitudes del cliente se distribuyen entre todas las máquinas virtuales del grupo de direcciones de back-end.
+Defina reglas del equilibrador de carga para dirigir el tráfico de red a las máquinas virtuales. Por ejemplo, para habilitar el tráfico HTTP, asigne el puerto 80 de la configuración de front-end al puerto 80 del grupo de direcciones de back-end. Cuando un cliente envía una solicitud HTTP al puerto 80, el equilibrador de carga selecciona una dirección IP de back-end mediante un [algoritmo hash](/azure/load-balancer/concepts-limitations#load-balancer-concepts) que incluye la dirección IP de origen. Las solicitudes del cliente se distribuyen entre todas las máquinas virtuales del grupo de direcciones de back-end.
 
 ### <a name="network-security-groups"></a>Grupos de seguridad de red
 

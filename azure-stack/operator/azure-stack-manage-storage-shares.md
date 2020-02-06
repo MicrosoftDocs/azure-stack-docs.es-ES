@@ -7,12 +7,12 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 03/19/2019
-ms.openlocfilehash: 2d7db8ade21580af67c0a1b3f3783f694544f5e0
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 7453e8e454d6af39d86be0eaff49bef6e4538fac
+ms.sourcegitcommit: 74ce7c12a93d47315d70427b02bcacbd3b44f854
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882001"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77037291"
 ---
 # <a name="manage-storage-capacity-for-azure-stack-hub"></a>Administración de la capacidad de almacenamiento en Azure Stack Hub
 
@@ -43,7 +43,7 @@ Los recursos compartidos en los volúmenes contienen datos de inquilino. Los dat
 
 Cuando un recurso compartido tiene poco espacio libre y las acciones para [reclamar](#reclaim-capacity) el espacio no son correctas o no están disponibles, el operador en la nube de Azure Stack Hub puede migrar los contenedores de blobs de un recurso compartido a otro.
 
-- Para obtener información acerca de cómo trabajan los usuarios del inquilino con el almacenamiento de blobs en Azure Stack Hub, consulte los [servicios de Azure Stack Hub Storage](/azure-stack/user/azure-stack-storage-overview#azure-stack-storage-services).
+- Para obtener información acerca de cómo trabajan los usuarios del inquilino con el almacenamiento de blobs en Azure Stack Hub, consulte los [servicios de Azure Stack Hub Storage](/azure-stack/user/azure-stack-storage-overview).
 
 
 ### <a name="containers"></a>Contenedores

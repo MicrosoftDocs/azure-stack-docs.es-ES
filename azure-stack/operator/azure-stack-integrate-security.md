@@ -7,12 +7,12 @@ ms.date: 01/10/2020
 ms.author: inhenkel
 ms.reviewer: fiseraci
 ms.lastreviewed: 01/10/2020
-ms.openlocfilehash: 2b8a6b06b0eca680a42d7c15bfe7fbb43afec29a
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 43398b4ef745c9ad0d72274a9a3ef400c4669053
+ms.sourcegitcommit: 3974fc544986a5eccfac0ba7c4441b05279ae226
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882089"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001628"
 ---
 # <a name="integrate-azure-stack-hub-with-monitoring-solutions-using-syslog-forwarding"></a>Integración de Azure Stack Hub con soluciones de supervisión mediante el reenvío de syslog
 
@@ -23,7 +23,7 @@ A partir de la actualización 1809, Azure Stack Hub tiene un cliente de syslog 
 En el diagrama siguiente se describe la integración de Azure Stack Hub con un sistema de SIEM externo. Hay dos patrones de integración que deben tenerse en cuenta: el primero (de color azul) es la infraestructura de Azure Stack Hub que abarca los nodos de Hyper-V y las máquinas virtuales de la infraestructura. Todas las auditorías, los registros de seguridad y las alertas de los componentes se recopilan y exponen de forma centralizada mediante syslog con la carga de CEF. Este patrón de integración se describe en esta página del documento.
 El segundo patrón de integración es el que aparece representado en color naranja y engloba a los controladores de administración de placa base (BMC), el host de ciclo de vida de hardware (HLH), las máquinas virtuales o dispositivos virtuales que ejecutan el software de administración y supervisión de asociados de hardware, y los conmutadores de la parte superior del bastidor (TOR). Como estos componentes son específicos de los asociados del hardware, póngase en contacto con ellos para obtener documentación acerca de cómo integrarlos con un sistema de SIEM externo.
 
-![Diagrama de reenvío de syslog](media/azure-stack-integrate-security/syslog-forwarding.png)
+![Diagrama de reenvío de syslog](media/azure-stack-integrate-security/azure-stack-hub-syslog-forwarding-diagram_bg.svg)
 
 ## <a name="configuring-syslog-forwarding"></a>Configuración del reenvío de syslog
 

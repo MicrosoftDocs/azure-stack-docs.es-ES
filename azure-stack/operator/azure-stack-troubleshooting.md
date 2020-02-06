@@ -8,12 +8,12 @@ ms.date: 11/05/2019
 ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: bacffec0b3bda76eab27097c2d090df371d51fcf
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: f5c223e08207518bde315725fd69ddb3fb97a578
+ms.sourcegitcommit: 74ce7c12a93d47315d70427b02bcacbd3b44f854
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76880848"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77037274"
 ---
 # <a name="troubleshoot-issues-in-azure-stack-hub"></a>Solución de problemas de Azure Stack Hub
 
@@ -114,7 +114,7 @@ La funcionalidad reclamada capacidad puede tardar hasta 14 horas en mostrarse en
 
 ### <a name="azure-storage-explorer-not-working-with-azure-stack-hub"></a>El Explorador de Azure Storage no funciona con Azure Stack Hub
 
-Si usa un sistema integrado en un escenario sin conexión, es conveniente que utilice una entidad de certificación (CA) empresarial. Exporte el certificado raíz en un formato de base 64 y, a continuación, impórtelo en el Explorador de Azure Storage. No olvide quitar la barra diagonal final (`/`) del punto de conexión de Resource Manager. Para más información, consulte [Prepárese para conectarse a Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-storage-connect-se#prepare-for-connecting-to-azure-stack).
+Si usa un sistema integrado en un escenario sin conexión, es conveniente que utilice una entidad de certificación (CA) empresarial. Exporte el certificado raíz en un formato de base 64 y, a continuación, impórtelo en el Explorador de Azure Storage. No olvide quitar la barra diagonal final (`/`) del punto de conexión de Resource Manager. Para más información, consulte [Prepárese para conectarse a Azure Stack Hub](/azure-stack/user/azure-stack-storage-connect-se).
 
 ## <a name="troubleshooting-app-service"></a>Solución de problemas de App Service
 
