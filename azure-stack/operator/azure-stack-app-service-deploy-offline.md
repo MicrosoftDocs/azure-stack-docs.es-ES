@@ -7,12 +7,12 @@ ms.date: 01/13/2020
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 01/13/2020
-ms.openlocfilehash: fe20a682041e3e23e2a67957ecdce85f922fbf20
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: bf9ce157e927b2fc43b64746d53d74e8cb82524c
+ms.sourcegitcommit: b5541815abfab3f8750fa419fdd1f93a8844731a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76876378"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77012893"
 ---
 # <a name="deploy-azure-app-service-in-an-offline-environment-in-azure-stack-hub"></a>Implementación de Azure App Service en un entorno sin conexión en Azure Stack Hub
 
@@ -37,9 +37,9 @@ Para agregar el proveedor de recursos de Azure App Service a la implementación 
 
 Para implementar Azure App Service en un entorno sin conexión, primero debe crear un paquete de instalación sin conexión en una máquina que esté conectada a Internet.
 
-1. Ejecute el instalador AppService.exe en una máquina que esté conectada a Internet.
+1. Ejecute el instalador AppService.exe en una máquina que esté conectada a Internet. 
 
-2. Seleccione **Opciones avanzadas** > **Crear paquete de instalación sin conexión**.
+2. Seleccione **Opciones avanzadas** > **Crear paquete de instalación sin conexión**. Este paso tardará varios minutos en completarse.
 
     ![Creación de un paquete sin conexión en el instalador de Azure App Service][1]
 
@@ -158,10 +158,17 @@ Para implementar Azure App Service en un entorno sin conexión, primero debe cre
 
     ![Establecimiento de los niveles de rol y las opciones de SKU en el instalador de Azure App Service][14]
 
+1. En el cuadro **Seleccionar imagen de plataforma**, elija su imagen de implementación de máquina virtual Windows Server 2016 entre las que están disponibles en el proveedor de recursos de proceso para la nube de Azure App Service. Seleccione **Next** (Siguiente).
+
     > [!NOTE]
     > Windows Server 2016 Core *no* es una imagen de plataforma compatible para su uso con Azure App Service en Azure Stack Hub.  No use imágenes de evaluación para las implementaciones de producción. Azure App Service en Azure Stack Hub requiere que Microsoft.Net 3.5.1 SP1 se active en la imagen utilizada para la implementación. Las imágenes de Windows Server 2016 distribuidas en Marketplace no tienen habilitada esta característica. Por lo tanto, debe crear y usar una imagen de Windows Server 2016 con esta característica habilitada previamente.
-
-1. En el cuadro **Seleccionar imagen de plataforma**, elija su imagen de implementación de máquina virtual Windows Server 2016 entre las que están disponibles en el proveedor de recursos de proceso para la nube de Azure App Service. Seleccione **Next** (Siguiente).
+    >
+    > Consulte [Adición de una imagen de máquina virtual personalizada a Azure Stack Hub](azure-stack-add-vm-image.md) para más información sobre cómo crear una imagen personalizada y agregarla a Marketplace. Asegúrese de especificar lo siguiente al agregar la imagen a Marketplace:
+    >
+    >- Publicador = MicrosoftWindowsServer
+    >- Oferta = WindowsServer
+    >- SKU = 2016-Datacenter
+    >- Versión = especifique la versión más "reciente"
 
 1. En la página siguiente:
      1. Escriba el nombre de usuario y la contraseña del administrador de máquinas virtuales con rol de trabajo.

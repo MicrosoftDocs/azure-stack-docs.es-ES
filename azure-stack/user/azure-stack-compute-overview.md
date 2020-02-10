@@ -3,16 +3,16 @@ title: Introducción a las máquinas virtuales de Azure Stack Hub
 description: Más información acerca de las máquinas virtuales de Azure Stack Hub.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 01/22/2020
+ms.date: 02/03/2020
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 01/05/2019
-ms.openlocfilehash: c961716a64d3ccc4efcbf2eb36091e611db39be9
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: abb5e6d50b9ec99366578fd84e2d720fb52722a3
+ms.sourcegitcommit: 4178443d84cf6d3fbaba11425beff703568c1a2c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883932"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977910"
 ---
 # <a name="introduction-to-azure-stack-hub-vms"></a>Introducción a las máquinas virtuales de Azure Stack Hub
 
@@ -57,7 +57,7 @@ Su suscripción tiene límites de cuota predeterminados que pueden afectar a la 
 
 ### <a name="operating-system-disks-and-images"></a>Imágenes y discos del sistema operativo
 
-Las máquinas virtuales usan discos duros virtuales (VHD) para almacenar el sistema operativo y los datos. Estos discos también se usan para las imágenes entre las que se puede elegir para instalar un sistema operativo. Azure Stack Hub proporciona un Marketplace para usar con diversas versiones y tipos de sistemas operativos. Las imágenes de Marketplace se identifican mediante el publicador de la imagen, la oferta, la SKU y la versión (normalmente, la última versión se especifica como **la más reciente**).
+Las máquinas virtuales de Azure Stack Hub se limitan al formato de disco duro virtual de la generación 1 (VHD/VHDX). Los discos duros virtuales se pueden usar para almacenar el sistema operativo de la máquina y los datos. Estos discos también se usan para las imágenes entre las que se puede elegir para instalar un sistema operativo. Azure Stack Hub proporciona un Marketplace para usar con diversas versiones y tipos de sistemas operativos. Las imágenes de Marketplace se identifican mediante el publicador de la imagen, la oferta, la SKU y la versión (normalmente, la última versión se especifica como **la más reciente**).
 
 En la tabla siguiente se muestra como encontrar la información sobre una imagen:
 

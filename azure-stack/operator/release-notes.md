@@ -3,16 +3,16 @@ title: Notas de la versión de Azure Stack Hub
 description: Notas de la versión para los sistemas integrados de Azure Stack Hub, incluidas las actualizaciones y correcciones de errores.
 author: sethmanheim
 ms.topic: article
-ms.date: 01/16/2020
+ms.date: 02/03/2020
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 11/22/2019
-ms.openlocfilehash: 9f2dee0503f5b3210fa8bb8e81f23c326b3b360b
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 40c727c97035b0f843ce84b0eafad47c77560938
+ms.sourcegitcommit: 3974fc544986a5eccfac0ba7c4441b05279ae226
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76885149"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001648"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Notas de la versión de Azure Stack Hub
 
@@ -200,7 +200,7 @@ Las revisiones de Azure Stack Hub solo son aplicables a los sistemas integrados 
 La versión 1910 de Azure Stack Hub debe aplicarse en la versión 1908 con las revisiones siguientes:
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Revisión 1.1908.11.47 de Azure Stack Hub](https://support.microsoft.com/help/4535000)
+- [Revisión 1.1908.14.53 de Azure Stack Hub](https://support.microsoft.com/help/4537661)
 
 ### <a name="after-successfully-applying-the-1910-update"></a>Después de aplicar correctamente la actualización 1910
 
@@ -284,7 +284,7 @@ La actualización 1908 de Azure Stack Hub requiere la **versión de OEM 2.1 o p
 Después de instalar esta actualización, instale todas las revisiones aplicables. Para más información, consulte nuestra [directiva de servicio](azure-stack-servicing-policy.md).
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Revisión 1.1908.11.47 de Azure Stack Hub](https://support.microsoft.com/help/4535000)
+- [Revisión 1.1908.14.53 de Azure Stack Hub](https://support.microsoft.com/help/4537661)
 ::: moniker-end
 
 ::: moniker range="azs-1907"

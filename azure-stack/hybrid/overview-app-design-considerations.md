@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 10035700de713910d33114e06fab11321e96e5b1
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 72a0fd215363911457271f65d636be37e3388c83
+ms.sourcegitcommit: 74ce7c12a93d47315d70427b02bcacbd3b44f854
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76877449"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77037172"
 ---
 # <a name="hybrid-application-design-considerations"></a>Consideraciones sobre el diseño de aplicaciones híbridas 
 
@@ -142,7 +142,7 @@ se pueden agregar recursos adicionales de otra ubicación para distribuir la car
 
 La disponibilidad es el tiempo que un sistema es funcional y está en funcionamiento. La disponibilidad se mide como porcentaje del tiempo de actividad. Los errores de aplicación, los problemas de infraestructura y la carga del sistema pueden reducir la disponibilidad.
 
-Para obtener la explicación básica de este fundamento, vea [*Disponibilidad*](https://docs.microsoft.com/azure/architecture/guide/pillars#availability) en Fundamentos de calidad del software.
+Para obtener la explicación básica de este fundamento, vea [*Disponibilidad*](/azure/architecture/framework/) en Fundamentos de calidad del software.
 
 ### <a name="availability-checklist"></a>Lista de comprobación de disponibilidad
 
@@ -186,7 +186,7 @@ Para obtener la explicación básica de este fundamento, vea [*Resistencia*](htt
 
 Las consideraciones sobre cómo administrar las aplicaciones híbridas son fundamentales a la hora de diseñar la arquitectura. Una aplicación híbrida bien administrada proporciona una infraestructura como código que permite la integración de código de aplicación coherente en una canalización de desarrollo común. Mediante la implementación de pruebas coherentes de todo el sistema e individuales de los cambios en la infraestructura, puede garantizar una implementación integrada si los cambios pasan las pruebas, lo que permite que se combinen en el código fuente.
 
-Para obtener la explicación básica de este fundamento, vea [*DevOps y administración*](https://docs.microsoft.com/azure/architecture/guide/pillars#management-and-devops) en Fundamentos de calidad del software.
+Para obtener la explicación básica de este fundamento, consulte [*DevOps*](/azure/architecture/framework/#devops) en Fundamentos de calidad del software.
 
 ### <a name="manageability-checklist"></a>Lista de comprobación de manejabilidad
 

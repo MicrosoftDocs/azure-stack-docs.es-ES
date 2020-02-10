@@ -1,18 +1,19 @@
 ---
-title: Validación del registro de Azure en Azure Stack Hub
-description: Use Azure Stack Hub Readiness Checker para validar el registro de Azure.
+title: Validación del registro de Azure
+titleSuffix: Azure Stack Hub
+description: Aprenda a validar el registro de Azure con la herramienta Azure Stack Hub Readiness Checker.
 author: ihenkel
 ms.topic: conceptual
 ms.date: 10/03/2019
 ms.author: inhenkel
 ms.reviewer: unknown
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: f9d5ff2a4ef02bb8d8b738cf20de2dae3bfafd02
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 58f65be2ac4ba352b17b9b0bba079b286a9609fa
+ms.sourcegitcommit: 5f53810d3c5917a3a7b816bffd1729a1c6b16d7f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882582"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76972562"
 ---
 # <a name="validate-azure-registration"></a>Validación del registro de Azure
 
@@ -35,18 +36,16 @@ Se necesitan los siguientes requisitos previos:
 
 - Windows 10 o Windows Server 2016, con conectividad a internet.
 - Azure PowerShell 5.1 o posterior. Para comprobar la versión, ejecute el siguiente cmdlet de PowerShell y luego revise la versión **principal** y las versiones **secundarias**:  
-
   ```powershell
   $PSVersionTable.PSVersion
   ```
-
 - [PowerShell configurado para Azure Stack Hub](azure-stack-powershell-install.md).
 - La versión más reciente de la herramienta [Microsoft Azure Stack Hub Readiness Checker](https://aka.ms/AzsReadinessChecker).  
 
-### <a name="azure-active-directory-environment"></a>Entorno de Azure Active Directory
+### <a name="azure-active-directory-aad-environment"></a>Entorno de Azure Active Directory (AAD)
 
 - Identifique el nombre de usuario y la contraseña de una cuenta con el rol de propietario de la suscripción de Azure que va a usar con Azure Stack Hub.  
-- Indique el identificador de suscripción de la suscripción de Azure que va a usar.
+- Indique el identificador de la suscripción de Azure que va a usar.
 - Identifique la clase **AzureEnvironment** que va a usar. Los valores admitidos para el parámetro de nombre de entorno son **AzureCloud**, **AzureChinaCloud** o **AzureUSGovernment**, dependiendo de la suscripción a Azure que esté utilizando.
 
 ## <a name="steps-to-validate-the-azure-registration"></a>Pasos para validar el registro de Azure
@@ -66,7 +65,7 @@ Se necesitan los siguientes requisitos previos:
    > [!NOTE]
    > Como CSP, cuando se usa una suscripción de servicios compartidos o IUR, debe proporcionar las credenciales de un usuario desde ese Azure AD correspondiente. Normalmente, será similar a `subscriptionowner@iurcontoso.onmicrosoft.com`. Ese usuario debe tener las credenciales adecuadas, tal como se describe en el paso anterior.
 
-3. Desde el símbolo del sistema de PowerShell, ejecute l siguiente para establecer `$subscriptionID` como la suscripción de Azure que se va a usar. Reemplace `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` por su propio identificador de suscripción:
+3. Desde el símbolo del sistema de PowerShell, ejecute el siguiente comando para establecer `$subscriptionID` como la suscripción de Azure que se va a usar. Reemplace `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` por su propio identificador de suscripción:
 
    ```powershell
    $subscriptionID = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
@@ -75,8 +74,7 @@ Se necesitan los siguientes requisitos previos:
 4. Desde el símbolo del sistema de PowerShell, ejecute el siguiente comando para iniciar la validación de la suscripción:
 
    - Especifique el valor de `AzureEnvironment` como **AzureCloud**, **AzureGermanCloud** o **AzureChinaCloud**.  
-   - Indique el administrador de Azure Active Directory y el nombre del inquilino de Azure Active Directory.
-
+   - Proporcione el administrador de Azure AD y el nombre del inquilino de Azure AD.
       ```powershell
       Invoke-AzsRegistrationValidation -RegistrationAccount $registrationCredential -AzureEnvironment AzureCloud -RegistrationSubscriptionID $subscriptionID
       ```
@@ -97,7 +95,7 @@ Cada vez que se ejecuta la validación, los resultados se registran en **AzsRead
 
 Estos archivos pueden ayudarle a compartir el estado de validación antes de implementar Azure Stack Hub o de investigar problemas de validación. Ambos archivos conservan los resultados de cada comprobación de validación posterior. El informe ofrece la confirmación del equipo de implementación de la configuración de identidad. El archivo de registro puede ayudar al equipo de implementación o de soporte técnico a investigar los problemas de validación.
 
-De forma predeterminada, los dos archivos se escriben en **C:\Users\nombre_de_usuario\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json**.  
+De forma predeterminada, ambos archivos se escriben en `C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json`.  
 
 - Use el parámetro `-OutputPath <path>` al final de la línea de comandos de ejecución para especificar otra ubicación para el informe.
 - Use el parámetro `-CleanReport` al final del comando de ejecución para borrar la información de ejecuciones anteriores de la herramienta desde **AzsReadinessCheckerReport.json**.
@@ -152,7 +150,7 @@ Invoke-AzsRegistrationValidation Completed
 Login-AzureRMAccount
 ```
 
-O bien, inicie sesión en [Azure Portal](https://portal.azure.com) con el propietario de la cuenta y el usuario se verá obligado a cambiar la contraseña.
+O bien, inicie sesión en [Azure Portal](https://portal.azure.com) como propietario de la cuenta y el usuario se verá obligado a cambiar la contraseña.
 
 ### <a name="unknown-user-type"></a>Tipo de usuario desconocido  
 
@@ -167,7 +165,7 @@ Report location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadines
 Invoke-AzsRegistrationValidation Completed
 ```
 
-**Causa**: la cuenta no puede iniciar sesión en el entorno de Azure Active Directory especificado. En este ejemplo, **AzureChinaCloud** se especifica como valor de **AzureEnvironment**.  
+**Causa**: la cuenta no puede iniciar sesión en el entorno de Azure AD especificado. En este ejemplo, **AzureChinaCloud** se especifica como valor de **AzureEnvironment**.  
 
 **Resolución**: confirme que la cuenta es válida para el entorno de Azure especificado. En PowerShell, ejecute el siguiente comando para comprobar que la cuenta es válida para un entorno concreto:
 

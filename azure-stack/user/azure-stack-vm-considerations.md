@@ -3,16 +3,16 @@ title: Características de las máquinas virtuales de Azure Stack Hub
 description: Obtenga información acerca de las diferentes características y consideraciones que deben tenerse en cuenta a la hora de trabajar con máquinas virtuales en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 1/22/2020
+ms.date: 2/3/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 10/09/2019
-ms.openlocfilehash: 94889f2d5d1223d1f5c1da1eaf5289f968cc5efa
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 76ecac957ab7680032c31cd46db4b717a2f029e5
+ms.sourcegitcommit: 4178443d84cf6d3fbaba11425beff703568c1a2c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883036"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977893"
 ---
 # <a name="azure-stack-hub-vm-features"></a>Características de las máquinas virtuales de Azure Stack Hub
 
@@ -23,6 +23,7 @@ Las máquinas virtuales de Azure Stack Hub proporcionan recursos informáticos e
 | Característica | Azure (global) | Azure Stack Hub |
 | --- | --- | --- |
 | Imágenes de máquinas virtuales | Azure Marketplace tiene imágenes que puede usar para crear una máquina virtual. Consulte la página de [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/category/compute?subcategories=virtual-machine-images&page=1) para ver la lista de imágenes que están disponibles en Azure Marketplace. | De forma predeterminada, no hay ninguna imagen disponible en Marketplace de Azure Stack Hub. El administrador de la nube de Azure Stack Hub debe publicar o descargar imágenes en el Marketplace de Azure Stack Hub para que los usuarios puedan usarlas. |
+| Generación de VHD | Las máquinas virtuales de generación 2 admiten características clave que no se admiten en las máquinas virtuales de generación 1. Estas características incluyen una memoria mayor, Intel Software Guard Extensions (SGX Intel) y memoria persistente virtualizada (vPMEM). Las máquinas virtuales de generación 2 que se ejecutan en el entorno local también tienen algunas características que aún no se admiten en Azure. Para más información, consulte [Compatibilidad para máquinas virtuales de generación 2 en Azure](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2).  | Azure Stack Hub solo admite máquinas virtuales de la generación 1. Puede convertir una máquina virtual de generación 1 de VHDX al formato de archivo VHD y de un disco de expansión dinámica a otro de tamaño fijo. No puede cambiar la generación de una máquina virtual. Para más información, consulte [Compatibilidad para máquinas virtuales de generación 2 en Azure](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2). |
 | Tamaños de máquina virtual | Azure admite una amplia variedad de tamaños de máquinas virtuales. Para aprender más acerca de las opciones y los tamaños disponibles, consulte los temas [Tamaños de máquinas virtuales Windows](/azure/virtual-machines/virtual-machines-windows-sizes) y [Tamaños de máquina virtual Linux](/azure/virtual-machines/linux/sizes). | Azure Stack Hub admite un subconjunto de los tamaños de máquina virtual que están disponibles en Azure. Para ver la lista de tamaños admitidos, consulte la sección [Tamaños de máquina virtual](#vm-sizes) de este artículo. |
 | Cuotas de máquinas virtuales | Los [límites de cuota](/azure/azure-subscription-service-limits#service-specific-limits) los establece Microsoft. | El administrador de la nube de Azure Stack Hub debe asignar cuotas antes de ofrecer máquinas virtuales a los usuarios. |
 | Extensiones de máquina virtual |Azure admite una amplia variedad de extensiones de máquinas virtuales. Para aprender acerca de las extensiones disponibles, consulte el artículo [Extensiones y características de las máquinas virtuales](/azure/virtual-machines/windows/extensions-features).| Azure Stack Hub admite un subconjunto de extensiones que están disponibles en Azure y cada una de ellas tiene una versión específica. El administrador de la nube de Azure Stack Hub puede elegir las extensiones que están a disposición de sus usuarios. Para ver la lista de extensiones admitidas, consulte la sección [Extensiones de máquina virtual](#vm-extensions) de este artículo. |

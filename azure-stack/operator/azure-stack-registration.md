@@ -4,16 +4,16 @@ titleSuffix: Azure Stack Hub
 description: Aprenda a registrar los sistemas integrados de Azure Stack Hub en Azure de forma que pueda descargar elementos de Azure Marketplace y configurar informes de datos.
 author: mattbriggs
 ms.topic: article
-ms.date: 1/22/2020
+ms.date: 2/02/2020
 ms.author: mabrigg
 ms.reviewer: avishwan
 ms.lastreviewed: 03/04/2019
-ms.openlocfilehash: 81b899104b162e92f74204f9b70c67fc280d7c31
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 568bcc7b04da397dff343662a8e80b86e27d2618
+ms.sourcegitcommit: 5f53810d3c5917a3a7b816bffd1729a1c6b16d7f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76881412"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76972585"
 ---
 # <a name="register-azure-stack-hub-with-azure"></a>Registro de Azure Stack Hub en Azure
 
@@ -478,7 +478,7 @@ Set-AzsRegistration [-PrivilegedEndpointCredential] <PSCredential> [-PrivilegedE
 | BillingModel | String | Es el modelo de facturación que usa la suscripción. Los valores permitidos para este parámetro son: Capacity, PayAsYouUse y Development. |
 | MarketplaceSyndicationEnabled | True/False | Determina si la característica de administración de Marketplace está disponible en el portal. Se establece en true si se registra con conectividad a Internet. Se establece en false si se registra en entornos sin conexión. Para los registros sin conexión, puede usar la [herramienta de redifusión sin conexión](azure-stack-download-azure-marketplace-item.md#disconnected-or-a-partially-connected-scenario) para descargar elementos de Marketplace. |
 | UsageReportingEnabled | True/False | Azure Stack Hub informa de las métricas de uso de forma predeterminada. Los operadores que tienen usos de capacidad o que admiten un entorno desconectado deben desactivar los informes de uso. Los valores permitidos para este parámetro son: True, False. |
-| AgreementNumber | String |  |
+| AgreementNumber | String | Número del contrato Enterprise en el que se ha pedido la SKU de capacidad de este Azure Stack. |
 | RegistrationName | String | Establezca un nombre único para el registro si ejecuta el script de registro en más de una instancia de Azure Stack Hub mediante el mismo identificador de suscripción de Azure. El valor predeterminado del parámetro es **AzureStackRegistration**. Sin embargo, si usa el mismo nombre en más de una instancia de Azure Stack Hub, el script no se ejecuta correctamente. |
 
 ### <a name="get-azsregistrationtoken"></a>Get-AzsRegistrationToken

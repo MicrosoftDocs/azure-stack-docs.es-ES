@@ -1,18 +1,21 @@
 ---
-title: Validación de la integración de AD FS para Azure Stack Hub
-description: Use Azure Stack Hub Readiness Checker para validar la integración de AD FS con Azure Stack Hub.
+title: Validación de la integración de AD FS
+titleSuffix: Azure Stack Hub
+description: Aprenda a usar Azure Stack Hub Readiness Checker para validar la integración de AD FS con Azure Stack Hub.
+services: azure-stack
+documentationcenter: ''
 author: ihenkel
 ms.topic: article
 ms.date: 06/10/2019
 ms.author: inhenkel
 ms.reviewer: jerskine
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: a98a5384b8590f494e6e9d6acdeb05e90fce3a20
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 786ee290aba91c855211d3f470f439c3e9b2c01a
+ms.sourcegitcommit: 5f53810d3c5917a3a7b816bffd1729a1c6b16d7f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76880633"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76972592"
 ---
 # <a name="validate-ad-fs-integration-for-azure-stack-hub"></a>Validación de la integración de AD FS para Azure Stack Hub
 
@@ -21,7 +24,7 @@ Use la herramienta Azure Stack Hub Readiness Checker (AzsReadinessChecker) para 
 La herramienta Readiness Checker valida:
 
 * Los *metadatos de federación* contienen los elementos XML válidos para la federación.
-* El *certificado SSL de AD FS* se puede recuperar y se puede compilar una cadena de confianza. En la marca de AD FS, debe confiar en la cadena de certificados SSL. Es necesario que el certificado lo firme la misma *autoridad de certificación* que se usó para firmar los certificados de implementación de Azure Stack Hub o un asociado de confianza de la autoridad raíz. Para ver la lista completa de asociados de la autoridad raíz de confianza, consulte: [TechNet](https://gallery.technet.microsoft.com/Trusted-Root-Certificate-123665ca).
+* El *certificado SSL de AD FS* se puede recuperar y se puede compilar una cadena de confianza. En la marca, AD FS debe confiar en la cadena de certificados SSL. Es necesario que el certificado lo firme la misma *autoridad de certificación* que se usó para firmar los certificados de implementación de Azure Stack Hub o un asociado de confianza de la autoridad raíz. Para ver la lista completa de asociados de la autoridad raíz de confianza, consulte: [TechNet](https://gallery.technet.microsoft.com/Trusted-Root-Certificate-123665ca).
 * *El certificado de firma de AD FS* es de confianza y no expirará en breve.
 
 Para más información sobre los requisitos de la integración de Azure Stack Hub en el centro de datos, consulte [Integración de Azure Stack Hub en el centro de datos: identidad](azure-stack-integrate-identity.md).
@@ -36,31 +39,37 @@ Deben cumplirse los siguientes requisitos previos.
 
 **Equipo donde se ejecuta la herramienta:**
 
-* Windows 10 o Windows Server 2016, con conectividad de dominio.
+* Windows 10 o Windows Server 2016 con conectividad de dominio.
 * Azure PowerShell 5.1 o posterior. Para comprobar la versión, ejecute el siguiente comando de PowerShell y luego revise la versión *principal* y las versiones *secundarias*:  
-   > `$PSVersionTable.PSVersion`
+    ```powershell
+    $PSVersionTable.PSVersion
+    ```
 * La versión más reciente de la herramienta [Microsoft Azure Stack Hub Readiness Checker](https://aka.ms/AzsReadinessChecker).
 
 **Entorno de los Servicios de federación de Active Directory:**
 
 Necesita al menos uno de los siguientes formatos de metadatos:
 
-* La dirección URL de los metadatos de la federación de AD FS. Un ejemplo es `https://adfs.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml`.
-* Archivo XML de metadatos de federación. Por ejemplo, FederationMetadata.xml.
+- La dirección URL de los metadatos de la federación de AD FS. Por ejemplo: `https://adfs.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml`.
+* Archivo XML de metadatos de federación. Por ejemplo: FederationMetadata.xml.
 
 ## <a name="validate-ad-fs-integration"></a>Validación de la integración de AD FS
 
 1. En un equipo que cumpla los requisitos previos, abra un símbolo del sistema administrativo de PowerShell y ejecute el siguiente comando para instalar AzsReadinessChecker:
 
-     `Install-Module Microsoft.AzureStack.ReadinessChecker -Force`
+    ```powershell
+    Install-Module Microsoft.AzureStack.ReadinessChecker -Force
+    ```
 
 1. Desde el símbolo del sistema de PowerShell, ejecute el comando siguiente para iniciar la validación. Especifique el valor de **-CustomADFSFederationMetadataEndpointUri** como el URI para los metadatos de federación.
 
-     `Invoke-AzsADFSValidation -CustomADFSFederationMetadataEndpointUri https://adfs.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml`
+     ```powershell
+     Invoke-AzsADFSValidation -CustomADFSFederationMetadataEndpointUri https://adfs.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml
+     ```
 
 1. Después de ejecutar la herramienta, revise el resultado. Confirme que el estado es correcto para los requisitos de integración de AD FS. Una validación correcta tiene un aspecto similar al del siguiente ejemplo:
 
-    ```
+    ```powershell
     Invoke-AzsADFSValidation v1.1809.1001.1 started.
 
     Testing ADFS Endpoint https://sts.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml
@@ -93,8 +102,8 @@ De forma predeterminada, ambos archivos se escriben en `C:\Users\<username>\AppD
 
 Uso:
 
-* **-OutputPath**: el parámetro de *ruta de acceso* al final del comando de ejecución para especificar otra ubicación para el informe.
-* **-CleanReport**: el parámetro al final del comando de ejecución para borrar AzsReadinessCheckerReport.json de la información del informe previo. Para más información, consulte [Informe de validación para Azure Stack Hub](azure-stack-validation-report.md).
+* `-OutputPath`: el parámetro de *ruta de acceso* al final del comando de ejecución para especificar otra ubicación para el informe.
+* `-CleanReport`: el parámetro al final del comando de ejecución para borrar AzsReadinessCheckerReport.json de la información del informe previo. Para más información, consulte [Informe de validación para Azure Stack Hub](azure-stack-validation-report.md).
 
 ## <a name="validation-failures"></a>Errores de validación
 
@@ -104,13 +113,17 @@ Los ejemplos siguientes ofrecen instrucciones sobre errores de validación comun
 
 ### <a name="command-not-found"></a>No se encontró el comando
 
-`Invoke-AzsADFSValidation : The term 'Invoke-AzsADFSValidation' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.`
+```powershell
+Invoke-AzsADFSValidation : The term 'Invoke-AzsADFSValidation' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+```
 
 **Causa**: PowerShell Autoload no se pudo cargar correctamente en el módulo de Readiness Checker.
 
-**Solución:** importe el módulo de Readiness Checker de forma explícita. Copie y pegue el código siguiente en PowerShell y actualice la \<versión\> con el número correspondiente a la versión instalada actualmente.
+**Solución:** importe el módulo de Readiness Checker de forma explícita. Copie y pegue el código siguiente en PowerShell y actualice `<version>` con el número correspondiente a la versión instalada actualmente.
 
-`Import-Module "c:\Program Files\WindowsPowerShell\Modules\Microsoft.AzureStack.ReadinessChecker\<version>\Microsoft.AzureStack.ReadinessChecker.psd1" -Force`
+```powershell
+Import-Module "c:\Program Files\WindowsPowerShell\Modules\Microsoft.AzureStack.ReadinessChecker\<version>\Microsoft.AzureStack.ReadinessChecker.psd1" -Force
+```
 
 ## <a name="next-steps"></a>Pasos siguientes
 
