@@ -50,11 +50,11 @@
       href: /azure/active-directory/
 - name: Recursos
   items:
-    - name: Mapa de ruta de Azure Stack
+    - name: Guía básica de Azure Stack Hub
       href: 'https://azure.microsoft.com/roadmap/?tag=azure-stack'
-    - name: Foro de MSDN de Azure Stack
+    - name: Foro de MSDN de Azure Stack Hub
       href: 'https://social.msdn.microsoft.com/Forums/home?forum=AzureStack'
-    - name: Comentarios sobre la documentación de Azure Stack
+    - name: Comentarios sobre la documentación de Azure Stack Hub
       href: 'https://feedback.azure.com/forums/344565-azure-stack?category_id=160275'
     - name: Información de precios
       href: 'https://azure.microsoft.com/overview/azure-stack/how-to-buy/'
