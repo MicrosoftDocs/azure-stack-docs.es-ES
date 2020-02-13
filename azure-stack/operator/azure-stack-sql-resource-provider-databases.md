@@ -8,12 +8,12 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: 4269cce339ee606fd8efb4cb08677079c0f2e477
-ms.sourcegitcommit: 5f53810d3c5917a3a7b816bffd1729a1c6b16d7f
+ms.openlocfilehash: b0ea11c3245d8a3ddbf9eeaf85481f830c67dc7f
+ms.sourcegitcommit: b7b86e875cf04cb0fd9d48a2b830588d3ff99b6d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76972665"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125629"
 ---
 # <a name="create-sql-databases"></a>Creación de bases de datos SQL
 
@@ -32,7 +32,7 @@ Puede crear y administrar bases de datos de autoservicio en el portal de usuario
 
 4. En **Create Database** (Crear base de datos), seleccione **SKU**. En **Select a SKU** (Seleccionar una SKU), seleccione la SKU correspondiente a su base de datos.
 
-   ![Cree una base de datos en el portal de usuarios de Azure Stack Hub.](./media/azure-stack-sql-rp-deploy/newsqldb.png)
+   ![Cree una base de datos en el portal de usuarios de Azure Stack Hub.](./media/azure-stack-sql-rp-deploy/newsqldba.png)
 
    >[!NOTE]
    >A medida que se agregan servidores de hospedaje a Azure Stack Hub, se les asigna una SKU. Las bases de datos se crean en el grupo de servidores de hospedaje de una SKU.
@@ -46,13 +46,13 @@ Puede crear y administrar bases de datos de autoservicio en el portal de usuario
    >[!NOTE]
    >Esta configuración es la credencial de autenticación de SQL que se crea solo para el acceso a esta base de datos. El nombre de usuario de inicio de sesión debe ser único globalmente. Puede volver a usar la configuración de inicio de sesión con otras bases de datos que usan la misma SKU.
 
-   ![Creación de un inicio de sesión de base de datos en el portal de usuarios de Azure Stack Hub](./media/azure-stack-sql-rp-deploy/create-new-login.png)
+   ![Creación de un inicio de sesión de base de datos en el portal de usuarios de Azure Stack Hub](./media/azure-stack-sql-rp-deploy/create-new-login-a.png)
 
 8. Seleccione **OK** (Aceptar) para terminar de implementar la base de datos.
 
 En **Essentials** (Información esencial), que se muestra después de implementar la base de datos, anote la **cadena de conexión**. Puede usar esta cadena en cualquier aplicación que necesite acceder a la base de datos de SQL Server.
 
-![Recuperar la cadena de conexión de la base de datos de SQL Server](./media/azure-stack-sql-rp-deploy/sql-db-settings.png)
+![Recuperar la cadena de conexión de la base de datos de SQL Server](./media/azure-stack-sql-rp-deploy/sql-db-settings-a.png)
 
 ## <a name="sql-always-on-databases"></a>Bases de datos de SQL AlwaysOn
 
@@ -62,7 +62,7 @@ Por naturaleza, las bases de datos AlwaysOn se controlan de forma diferente que 
 
 En la captura de pantalla siguiente se muestra cómo puede usar SQL Server Management Studio para examinar el estado de una base de datos en SQL AlwaysOn.
 
-![Estado de la base de datos AlwaysOn en SQL Server Management Studio](./media/azure-stack-sql-rp-deploy/verifyalwayson.png)
+![Estado de la base de datos AlwaysOn en SQL Server Management Studio](./media/azure-stack-sql-rp-deploy/verify-always-on.png)
 
 Las bases de datos AlwaysOn se muestran ahora como **sincronizadas** y disponibles en todas las instancias de SQL y aparecen en **grupos de disponibilidad**. En la captura de pantalla anterior, el ejemplo de base de datos es newdb1 y su estado es **newdb1 (sincronizado)** .
 

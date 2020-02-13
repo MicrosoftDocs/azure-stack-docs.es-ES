@@ -8,12 +8,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: c7b3d1ef979e69a72904e03b49cb5ee4b75c182e
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: d46837540e8b4bd22fb114062266a5be86862921
+ms.sourcegitcommit: b7b86e875cf04cb0fd9d48a2b830588d3ff99b6d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882823"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125733"
 ---
 # <a name="add-hosting-servers-for-the-sql-resource-provider"></a>Incorporación de servidores de hospedaje para el proveedor de recursos SQL
 
@@ -84,11 +84,11 @@ Para agregar un servidor de hospedaje independiente que ya se haya configurado, 
 
    En **SQL Hosting Servers** (Servidores de hospedaje SQL), puede conectar el proveedor de recursos de SQL a instancias de SQL Server que actuarán como back-end del proveedor de recursos.
 
-   ![Panel del adaptador de SQL en el portal del administrador de Azure Stack Hub](./media/azure-stack-sql-rp-deploy/sqlrp-hostingserver.png)
+   ![Panel del adaptador de SQL en el portal del administrador de Azure Stack Hub](./media/azure-stack-sql-rp-deploy/sql-rp-hosting-server.png)
 
 3. En **Agregar**, proporcione los detalles de conexión para la instancia de SQL Server en la hoja **Add a SQL Hosting Server** (Agregar un servidor de hospedaje SQL).
 
-   ![Adición de un servidor de hospedaje de SQL en el portal del administrador de Azure Stack Hub](./media/azure-stack-sql-rp-deploy/sqlrp-newhostingserver.png)
+   ![Adición de un servidor de hospedaje de SQL en el portal del administrador de Azure Stack Hub](./media/azure-stack-sql-rp-deploy/sql-rp-new-hosting-server.png)
 
     Tiene la opción de incluir un nombre de instancia y un número de puerto si la instancia no está asignada al puerto predeterminado 1433.
 
@@ -100,7 +100,7 @@ Para agregar un servidor de hospedaje independiente que ya se haya configurado, 
    * Para usar una SKU existente, elija una SKU disponible y, a continuación, seleccione **Crear**.
    * Para crear una SKU, seleccione **+ Create new SKU** (Crear nueva SKU). En **Create SKU** (Crear SKU), introduzca la información necesaria y seleccione **Aceptar**.
 
-     ![Creación de una SKU en el portal del administrador de Azure Stack Hub](./media/azure-stack-sql-rp-deploy/sqlrp-newsku.png)
+     ![Creación de una SKU en el portal del administrador de Azure Stack Hub](./media/azure-stack-sql-rp-deploy/sqlrp-new-sku.png)
 
 ## <a name="provide-high-availability-using-sql-always-on-availability-groups"></a>Alta disponibilidad mediante grupos de disponibilidad SQL Always On
 
