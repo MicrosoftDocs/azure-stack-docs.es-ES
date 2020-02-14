@@ -1,6 +1,7 @@
 ---
 title: Automatización de la validación de Azure Stack con PowerShell
-description: Puede automatizar la validación de Azure Stack con PowerShell.
+titleSuffix: Azure Stack Hub
+description: Aprenda a automatizar la validación de Azure Stack con PowerShell.
 author: mattbriggs
 ms.topic: tutorial
 ms.date: 11/26/2019
@@ -8,14 +9,14 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/26/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: d37c1f9027017446c31b0877496c28928d22f92a
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: a85f43096cffa900bfefb801bdd28b26358e6219
+ms.sourcegitcommit: 0a3c8b0bf9c116a5caaeca453a2bbc6e7f7cbfb9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76884990"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77147760"
 ---
-# <a name="automate-azure-stack-validation-with-powershell"></a>Automatización de la validación de Azure Stack con PowerShell
+# <a name="automate-azure-stack-hub-validation-with-powershell"></a>Automatización de la validación de Azure Stack Hub con PowerShell
 
 La validación como servicio (VaaS) permite automatizar el inicio de las pruebas con el script **RunVaaSAutomation.ps1**.
 
@@ -29,7 +30,7 @@ Este script se puede utilizar para:
 
 Los vínculos siguientes contienen información sobre cómo ejecutar pruebas mediante el portal de VaaS. Antes de usar el script, debe obtener información sobre los parámetros necesarios y sus valores:
 
-* Flujo de trabajo SolutionValidation: [Validación de una nueva solución de Azure Stack](azure-stack-vaas-validate-solution-new.md)
+* Flujo de trabajo SolutionValidation: [Validación de una nueva solución de Azure Stack Hub](azure-stack-vaas-validate-solution-new.md)
 * Flujo de trabajo PackageValidation: [Validación de paquetes de OEM](azure-stack-vaas-validate-oem-package.md)
 * Flujo de trabajo TestPass: [Programación de una prueba](azure-stack-vaas-schedule-test-pass.md)
 
@@ -258,8 +259,8 @@ Para más información, consulte [Parámetros comunes de flujo de trabajo](azure
 | VaaSAccountUserName | Su nombre de usuario para el portal de VaaS. |
 | VaaSAccountPassword | Su contraseña para el portal de VaaS. |
 | VaaSAccountTenantId | El GUID del inquilino de VaaS. |
-| ServiceAdminUserName | Cuenta de administrador del servicio de Azure Stack.  |
-| ServiceAdminPassword | Contraseña del servicio de Azure Stack.  |
+| ServiceAdminUserName | Cuenta de administrador del servicio de Azure Stack Hub.  |
+| ServiceAdminPassword | Contraseña del servicio de Azure Stack Hub.  |
 | TenantAdminUserName | Administrador del inquilino principal.  |
 | TenantAdminPassword | Contraseña del inquilino principal.  |
 | CloudAdminUserName | El nombre de usuario del administrador de la nube.  |
@@ -276,6 +277,6 @@ Para otras opciones, consulte [Supervisión y administración de pruebas en el p
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Para más información sobre PowerShell en Azure Stack, revise los módulos más recientes.
+Para más información sobre PowerShell en Azure Stack Hub, revise los módulos más recientes.
 
-- [Módulo Azure Stack](/powershell/azure/azure-stack/overview?view=azurestackps-1.6.0)
+- [Módulo de Azure Stack Hub](/powershell/azure/azure-stack/overview?view=azurestackps-1.6.0)

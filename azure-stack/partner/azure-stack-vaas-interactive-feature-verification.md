@@ -1,6 +1,6 @@
 ---
-title: Pruebas de comprobación de características interactivas en Azure Stack con validación como servicio
-description: Aprenda a crear pruebas de comprobación de características interactiva para Azure Stack con validación como servicio.
+title: Pruebas de comprobación de características interactivas en Azure Stack Hub con validación como servicio
+description: Aprenda a crear pruebas de comprobación de características interactivas para Azure Stack Hub con validación como servicio.
 author: mattbriggs
 ms.topic: tutorial
 ms.date: 10/28/2019
@@ -8,12 +8,12 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 10/28/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: c957d076fb4d90dc9a19d5b8fbaaddbdb55c789d
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 15cd1b2adb4ef1b0e5738b89078beb57d6b7b346
+ms.sourcegitcommit: a76301a8bb54c7f00b8981ec3b8ff0182dc606d7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76884141"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77143835"
 ---
 # <a name="interactive-feature-verification-testing"></a>Pruebas de comprobación de características interactivas  
 
@@ -21,7 +21,7 @@ ms.locfileid: "76884141"
 
 Puede usar el marco de pruebas de comprobación de características interactiva para solicitar la realización de en su sistema. Cuando se solicita una prueba, Microsoft utiliza el marco para preparar las pruebas que requieren pasos manuales interactivos. Microsoft puede usar el marco de trabajo para encadenar varias pruebas automatizadas independientes.
 
-En este artículo se describe un escenario manual simple. La prueba comprueba la sustitución de un disco en Azure Stack. El marco recopila registros de diagnóstico en cada paso. Los problemas se pueden depurar a medida que se detectan. El marco también permite el uso compartido de registros que generan otras herramientas o procesos, así como proporcionar comentarios acerca del escenario.
+En este artículo se describe un escenario manual simple. La prueba permite comprobar la sustitución de un disco en Azure Stack Hub. El marco recopila registros de diagnóstico en cada paso. Los problemas se pueden depurar a medida que se detectan. El marco también permite el uso compartido de registros que generan otras herramientas o procesos, así como proporcionar comentarios acerca del escenario.
 
 > [!Important]  
 > En este artículo se hace referencia a los pasos para realizar la identificación del disco. Esto es simplemente una demostración, ya que los resultados recopilados desde el flujo de trabajo Test Pass (Paso de prueba) no pueden usarse para la verificación de la nueva solución.

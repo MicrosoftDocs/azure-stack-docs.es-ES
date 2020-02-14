@@ -1,5 +1,5 @@
 ---
-title: Verificación de los paquetes del fabricante de equipos originales (OEM) en la validación como servicio de Azure Stack
+title: Verificación de los paquetes del fabricante de equipos originales (OEM) en la validación como servicio de Azure Stack Hub
 description: Aprenda a verificar los paquetes del fabricante de equipos originales (OEM) con la validación como servicio.
 author: mattbriggs
 ms.topic: tutorial
@@ -8,12 +8,12 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: ed6d3055e3e5cab0def090d31f907e0fd1deea50
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 8bb39f3aae4031402e38023f92ebdb91feb9bf92
+ms.sourcegitcommit: a76301a8bb54c7f00b8981ec3b8ff0182dc606d7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76885105"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77143737"
 ---
 # <a name="validate-oem-packages"></a>Validación de paquetes de OEM
 
@@ -55,7 +55,7 @@ Cree un contenedor en la cuenta de almacenamiento para los blobs de paquetes. Es
 
 ### <a name="generate-package-blob-url-for-vaas"></a>Generación de la dirección URL del blob del paquete para VaaS
 
-Al crear un flujo de trabajo de **Package Validation** (Validación del paquete) en el portal de VaaS, deberá proporcionar una dirección URL a la instancia de Azure Storage Blob que contiene el paquete. Algunas pruebas *interactivas*, incluidas **Monthly AzureStack Update Verification** (Comprobación de actualización mensual de AzureStack) y **OEM Extension Package Verification** (Comprobación del paquete de extensión de OEM), también requieren una dirección URL para los blobs del paquete.
+Al crear un flujo de trabajo de **Package Validation** (Validación del paquete) en el portal de VaaS, deberá proporcionar una dirección URL a la instancia de Azure Storage Blob que contiene el paquete. Algunas pruebas *interactivas*, incluidas la **comprobación mensual de actualizaciones de Azure Stack Hub** y la **comprobación del paquete de extensión de OEM**, también requieren una dirección URL para los blobs del paquete.
 
 #### <a name="handling-container-access-level"></a>Control del nivel de acceso de un contenedor
 
@@ -141,14 +141,14 @@ Use esta opción si es aceptable permitir el acceso de clientes no autenticados 
 
 5. Escriba la dirección URL del blob de Azure Storage para el paquete de OEM firmado de prueba que requiera una firma de Microsoft. Para instrucciones, consulte [Generación de la dirección URL del blob del paquete para VaaS](#generate-package-blob-url-for-vaas).
 
-6. Copie la carpeta del paquete de actualización de AzureStack a un directorio local del DVM. Escriba la ruta de acceso a la **carpeta que contiene el archivo zip del paquete y el archivo de metadatos** para la "ruta de acceso a la carpeta del paquete de actualizaciones de AzureStack"
+6. Copie la carpeta del paquete de actualización de Azure Stack Hub a un directorio local del DVM. Escriba la ruta de acceso a la **carpeta que contiene el archivo zip del paquete y el archivo de metadatos** para la "ruta de acceso a la carpeta del paquete de actualizaciones de AzureStack"
 
 7. Copie la carpeta del paquete de OEM creado anteriormente a un directorio local del DVM. Escriba la ruta de acceso a la **carpeta que contiene el archivo zip del paquete y el archivo de metadatos** para la "ruta de acceso a la carpeta del paquete de actualizaciones de OEM"
 
     > [!NOTE]
-    > Copie la actualización de AzureStack y la actualización de OEM en **2 directorios independientes**.
+    > Copie la actualización de Azure Stack Hub y la actualización de OEM en **2 directorios independientes**.
 
-8. "RequireDigitalSignature": proporcione **true** si necesita que el paquete esté firmado por Microsoft (mediante la ejecución del flujo de trabajo de validación de OEM). Si va a validar un paquete firmado por Microsoft en la actualización más reciente de AzureStack, proporcione este valor como false (mediante la ejecución de la comprobación mensual de actualizaciones de AzureStack).
+8. "RequireDigitalSignature": proporcione **true** si necesita que el paquete esté firmado por Microsoft (mediante la ejecución del flujo de trabajo de validación de OEM). Si va a validar un paquete firmado por Microsoft en la actualización más reciente de Azure Stack Hub, proporcione este valor como false (mediante la ejecución de la comprobación mensual de actualizaciones de Azure Stack Hub).
 
 9. [!INCLUDE [azure-stack-vaas-workflow-step_test-params](includes/azure-stack-vaas-workflow-step_test-params.md)]
 
@@ -170,7 +170,7 @@ Es necesario ejecutar las pruebas siguientes para la validación de paquetes de 
 
 1. En la página **Package Validation tests summary** (Resumen de las pruebas de validación del paquete), se ejecutará un subconjunto de las pruebas enumeradas apropiadas para su escenario.
 
-    En los flujos de trabajo de validación, para **programar** una prueba se usan los parámetros comunes de nivel de flujo de trabajo que especificó durante la creación del flujo de trabajo (consulte [Parámetros comunes del flujo de trabajo en la validación de Azure Stack como servicio](azure-stack-vaas-parameters.md)). Si alguno de los valores de parámetro de prueba deja de ser válido, debe volver a suministrarlo como se indica en [Modify workflow parameters](azure-stack-vaas-monitor-test.md#change-workflow-parameters) (Modificación de los parámetros de flujo de trabajo).
+    En los flujos de trabajo de validación, para **programar** una prueba se usan los parámetros comunes de nivel de flujo de trabajo que especificó durante la creación del flujo de trabajo (consulte [Parámetros comunes del flujo de trabajo en la validación de Azure Stack Hub como servicio](azure-stack-vaas-parameters.md)). Si alguno de los valores de parámetro de prueba deja de ser válido, debe volver a suministrarlo como se indica en [Modify workflow parameters](azure-stack-vaas-monitor-test.md#change-workflow-parameters) (Modificación de los parámetros de flujo de trabajo).
 
     > [!NOTE]
     > La programación a través de una prueba de validación a través de una instancia existente creará una nueva instancia en el lugar de la anterior en el portal. Los registros de la instancia anterior se conservarán, pero no se podrá acceder a ellos desde el portal.  

@@ -1,6 +1,6 @@
 ---
-title: Supervisión y administración de pruebas en el portal de VaaS de Azure Stack
-description: Supervisión y administración de pruebas en el portal de VaaS de Azure Stack.
+title: Supervisión y administración de pruebas en el portal de VaaS de Azure Stack Hub
+description: Supervise y administre pruebas en el portal de VaaS de Azure Stack Hub.
 author: mattbriggs
 ms.topic: tutorial
 ms.date: 11/11/2019
@@ -8,18 +8,18 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: b2a6f2b1e40ddfad9edbf64c92f29e93786fc6f9
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 494fffff04cd092afc4a4df3fbf0be59ca894278
+ms.sourcegitcommit: a76301a8bb54c7f00b8981ec3b8ff0182dc606d7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76885084"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77143814"
 ---
 # <a name="monitor-and-manage-tests-in-the-vaas-portal"></a>Supervisión y administración de pruebas en el portal de VaaS
 
 [!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 
-Después de programar las pruebas en la solución Azure Stack, la validación como servicio (VaaS) comenzará a informar del estado de ejecución de estas. Esta información está disponible en el portal de VaaS junto con otras acciones como reprogramar y cancelar pruebas.
+Después de programar las pruebas en la solución Azure Stack Hub, la validación como servicio (VaaS) comenzará a informar del estado de ejecución de estas. Esta información está disponible en el portal de VaaS junto con otras acciones como reprogramar y cancelar pruebas.
 
 ## <a name="navigate-to-the-workflow-tests-summary-page"></a>Ir a la página de resumen de las pruebas de flujo de trabajo
 
@@ -37,7 +37,7 @@ Puede editar los [parámetros de prueba](azure-stack-vaas-parameters.md#test-par
 
 1. En la página de resumen de las pruebas, seleccione el botón **Editar**.
 
-1. Proporcione nuevos valores según se indica en [Parámetros comunes del flujo de trabajo en la validación como servicio de Azure Stack](azure-stack-vaas-parameters.md).
+1. Proporcione nuevos valores según se indica en [Parámetros comunes del flujo de trabajo en la validación como servicio de Azure Stack Hub](azure-stack-vaas-parameters.md).
 
 1. Seleccione **Enviar** para guardar los valores.
 
@@ -53,9 +53,9 @@ En los flujos de trabajo de **Pruebas superadas**, los botones **Agregar pruebas
 
 ## <a name="managing-test-instances"></a>Administración de instancias de prueba
 
-Para las ejecuciones no oficiales (es decir, las del flujo de trabajo de **Pruebas superadas**), la página de resumen de las pruebas muestra las pruebas programadas en la solución Azure Stack.
+Para las ejecuciones no oficiales (es decir, las del flujo de trabajo de **Pruebas superadas**), la página de resumen de las pruebas muestra las pruebas programadas en la solución Azure Stack Hub.
 
-Para las ejecuciones oficiales (es decir, las de los flujos de trabajo de **validación**), la página de resumen de las pruebas muestra las pruebas necesarias para completar la validación en la solución Azure Stack. Las pruebas de validación se programan desde esta página.
+Para las ejecuciones oficiales (es decir, las de los flujos de trabajo de **validación**), la página de resumen de las pruebas muestra las pruebas necesarias para completar la validación en la solución Azure Stack Hub. Las pruebas de validación se programan desde esta página.
 
 Cada instancia de prueba programada muestra la siguiente información:
 
@@ -86,7 +86,7 @@ Seleccione **Ver información** en el menú contextual para ver información gen
 | Versión de la prueba | La versión de la prueba. |
 | Publicador | El publicador de la prueba. |
 | Category |  Propósito de la prueba. |
-| Servicios de destino | Los servicios de Azure Stack que se están probando. |
+| Servicios de destino | Los servicios de Azure Stack Hub que se están probando. |
 | Descripción | Descripción de la prueba. |
 | Duración estimada (minutos) | El tiempo de ejecución esperado de la prueba. |
 | Vínculos | Cualquier información pertinente acerca de la prueba o los puntos de contacto. |

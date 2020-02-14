@@ -1,6 +1,6 @@
 ---
 title: Implementación del agente local
-description: Implemente al agente local para la validación como servicio de Azure Stack.
+description: Implemente al agente local para la validación como servicio de Azure Stack Hub.
 author: mattbriggs
 ms.topic: quickstart
 ms.date: 11/11/2019
@@ -8,12 +8,12 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: a84f2495b0e2195ac143dc8fd9ac4ea4668392b4
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: a5090b60c5aa3c947fbbf1fc887b4fb25900ae98
+ms.sourcegitcommit: a76301a8bb54c7f00b8981ec3b8ff0182dc606d7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76884094"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77143974"
 ---
 # <a name="deploy-the-local-agent"></a>Implementación del agente local
 
@@ -32,13 +32,13 @@ Para implementar el agente local:
 
 ## <a name="download-and-start-the-local-agent"></a>Descarga e inicio del agente local
 
-Descargue el agente en una máquina que cumpla los requisitos previos del centro de datos y que tenga acceso a todos los puntos de conexión de Azure Stack. La máquina no debe formar parte del sistema de Azure Stack ni estar hospedada en la nube de Azure Stack.
+Descargue el agente en una máquina que cumpla los requisitos previos del centro de datos y que tenga acceso a todos los puntos de conexión de Azure Stack Hub. La máquina no debe formar parte del sistema de Azure Stack Hub ni estar hospedada en la nube de Azure Stack Hub.
 
 ### <a name="machine-prerequisites"></a>Requisitos previos del equipo
 
 Compruebe que el equipo cumple los criterios siguientes:
 
-- Acceso a todos los puntos de conexión de Azure Stack
+- Acceso a todos los puntos de conexión de Azure Stack Hub
 - .NET 4.6 y PowerShell 5.0 instalados
 - Al menos 8 GB de RAM
 - Procesadores de 8 núcleos como mínimo
@@ -48,7 +48,7 @@ Compruebe que el equipo cumple los criterios siguientes:
 ### <a name="download-and-install-the-local-agent"></a>Descarga e instalación del agente local
 
 1. Abra Windows PowerShell en un símbolo del sistema con privilegios elevados en el equipo que se usará para ejecutar las pruebas.
-2. Ejecute el siguiente comando para descargar e instalar las dependencias del agente local y copiar las imágenes del repositorio de imágenes públicas (PIR) (disco duro virtual del sistema operativo) en el entorno de Azure Stack.
+2. Ejecute el siguiente comando para descargar e instalar las dependencias del agente local y copiar las imágenes del repositorio de imágenes públicas (PIR) (disco duro virtual del sistema operativo) en el entorno de Azure Stack Hub.
 
     ```powershell
     # Review and update the following five parameters
@@ -93,7 +93,7 @@ Compruebe que el equipo cumple los criterios siguientes:
 
 ## <a name="perform-sanity-checks-before-starting-the-tests"></a>Realice las comprobaciones de integridad antes de iniciar las pruebas
 
-Las pruebas ejecutan operaciones remotas. La máquina que ejecuta las pruebas debe tener acceso a los puntos de conexión de Azure Stack, si no, las pruebas no funcionarán. Si usa el agente local de VaaS, utilice la máquina donde se va a ejecutar este. Puede comprobar que la máquina tiene acceso a los puntos de conexión de Azure Stack mediante la ejecución de las siguientes comprobaciones:
+Las pruebas ejecutan operaciones remotas. La máquina que ejecuta las pruebas debe tener acceso a los puntos de conexión de Azure Stack Hub, si no, las pruebas no funcionarán. Si usa el agente local de VaaS, utilice la máquina donde se va a ejecutar este. Puede comprobar que la máquina tiene acceso a los puntos de conexión de Azure Stack Hub mediante la ejecución de las siguientes comprobaciones:
 
 1. Compruebe que es posible acceder al URI base. Abra un símbolo del sistema o shell de Bash y ejecute el siguiente comando, donde `<EXTERNALFQDN>` se reemplaza por el FQDN externo de su entorno:
 
@@ -105,7 +105,7 @@ Las pruebas ejecutan operaciones remotas. La máquina que ejecuta las pruebas de
 
 3. Inicie sesión con los valores de nombre y contraseña del administrador de servicios de Azure AD proporcionados al crear la prueba superada.
 
-4. Para comprobar el mantenimiento del sistema, ejecute el cmdlet **Test-AzureStack** de PowerShell como se describe en [Ejecución de una prueba de validación para Azure Stack](../operator/azure-stack-diagnostic-test.md). Corrija los errores y las advertencias antes de iniciar las pruebas.
+4. Para comprobar el mantenimiento del sistema, ejecute el cmdlet **Test-AzureStack** de PowerShell como se describe en [Ejecución de una prueba de validación para Azure Stack Hub](../operator/azure-stack-diagnostic-test.md). Corrija los errores y las advertencias antes de iniciar las pruebas.
 
 ## <a name="run-the-local-agent"></a>Ejecución del agente local
 
