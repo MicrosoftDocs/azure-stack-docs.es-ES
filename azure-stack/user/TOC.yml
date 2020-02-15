@@ -253,6 +253,7 @@
             - name: Implementación de una aplicación web de NodeJS
               href: azure-stack-dev-start-howto-vm-nodejs.md
     - name: Implementación de patrones fundamentales
+      href: deploy-foundational-patterns.md
       items:
         - name: Patrones de redes
           items:
@@ -282,7 +283,6 @@
               href: azure-stack-network-howto-iscsi-storage.md
             - name: Ampliación del centro de datos
               href: azure-stack-network-howto-extend-datacenter.md
-        - name: Emparejamiento de VNET
         - name: Copia de seguridad y restauración
           items:
             - name: Copia de seguridad de una máquina virtual en Azure Stack Hub con Commvault
