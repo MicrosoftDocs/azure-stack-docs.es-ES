@@ -8,12 +8,12 @@ ms.date: 10/07/2019
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/23/2018
-ms.openlocfilehash: b8ad46128d3b0228fdc2e6ecc0c3ca507b4ec697
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 0a15f4256349b9080f73d976f4e4a9782fd5b665
+ms.sourcegitcommit: 0a3c8b0bf9c116a5caaeca453a2bbc6e7f7cbfb9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882736"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77147891"
 ---
 # <a name="create-highly-available-mysql-databases"></a>Creación de bases de datos MySQL de alta disponibilidad
 
@@ -78,7 +78,7 @@ Siga los pasos de esta sección para implementar el clúster de MySQL Server con
    - Seleccione el grupo de recursos o cree uno nuevo.
    - Seleccione la ubicación (el valor predeterminado es local para el Kit de desarrollo de Azure Stack).
 
-   ![Aspectos básicos de la implementación: creación de MySQL con replicación](media/azure-stack-tutorial-mysqlrp/2-sm.PNG)](media/azure-stack-tutorial-mysqlrp/2-lg.PNG#lightbox)
+   [![Aspectos básicos de la implementación: Creación de MySQL con replicación](media/azure-stack-tutorial-mysqlrp/2-sm.PNG)](media/azure-stack-tutorial-mysqlrp/2-lg.PNG#lightbox)
 
 4. En la página de **configuración del entorno**, proporcione la información siguiente y, después, seleccione **Aceptar**:
 
@@ -86,11 +86,11 @@ Siga los pasos de esta sección para implementar el clúster de MySQL Server con
    - Tamaño de máquina virtual (el valor predeterminado es VM Standard D1 v2).
    - Tamaño del disco de datos en GB
 
-   ![Configuración del entorno: Creación de MySQL con replicación](media/azure-stack-tutorial-mysqlrp/3-sm.PNG)](media/azure-stack-tutorial-mysqlrp/3-lg.PNG#lightbox)
+   [![Configuración del entorno: Creación de MySQL con replicación](media/azure-stack-tutorial-mysqlrp/3-sm.PNG)](media/azure-stack-tutorial-mysqlrp/3-lg.PNG#lightbox)
 
 5. Revise el **resumen** de la implementación. Si lo desea, puede descargar la plantilla personalizada y los parámetros; después, seleccione **Aceptar**.
 
-   ![Resumen: Creación de MySQL con replicación](media/azure-stack-tutorial-mysqlrp/4-sm.PNG)](media/azure-stack-tutorial-mysqlrp/4-lg.PNG#lightbox)
+   [![Resumen: Creación de MySQL con replicación](media/azure-stack-tutorial-mysqlrp/4-sm.PNG)](media/azure-stack-tutorial-mysqlrp/4-lg.PNG#lightbox)
 
 6. Seleccione **Crear** en la página **Comprar** para iniciar la implementación.
 
