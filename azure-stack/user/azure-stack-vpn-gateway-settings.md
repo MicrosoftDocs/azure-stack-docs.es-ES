@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: sethm
 ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: b230c78811e79e7a04114b77a2fcacd1b2a2fc9c
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 2f0b520b4c615e56fea7575422b306c226188eb0
+ms.sourcegitcommit: 23861d659c89c2d36390085fe9532b2bcba2100d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76884125"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77075223"
 ---
 # <a name="configure-vpn-gateway-settings-for-azure-stack-hub"></a>Configuración de una puerta de enlace de VPN para Azure Stack Hub
 
@@ -160,9 +160,9 @@ A diferencia de Azure, que admite varias ofertas como iniciador y respondedor, A
 | Propiedad              | Value|
 |-|-|
 | Versión de IKE           | IKEv2 |
-|Grupo Diffie-Hellman   | ECP384 |
+|Grupo Diffie-Hellman*   | ECP384 |
 | Método de autenticación | Clave previamente compartida |
-|Algoritmos de cifrado y hash | AES256, SHA384 |
+|Algoritmos de cifrado y hash* | AES256, SHA384 |
 |Vigencia de SA (tiempo)     | 28.800 segundos|
 
 ### <a name="ike-phase-2-quick-mode-parameters"></a>Parámetros de la fase 2 de IKE (modo rápido)
@@ -174,8 +174,19 @@ A diferencia de Azure, que admite varias ofertas como iniciador y respondedor, A
 |Cifrados y algoritmos hash (autenticación) | GCMAES256|
 |Vigencia de SA (tiempo)  | 27 000 segundos  |
 |Vigencia de SA (Kilobytes) | 33 553 408     |
-|Confidencialidad directa perfecta (PFS) | ECP384 |
-|Detección de cuellos del mismo nivel | Compatible|  
+|Confidencialidad directa perfecta (PFS)* | ECP384 |
+|Detección de cuellos del mismo nivel | Compatible| 
+
+>[!NOTE]
+>Se han cambiado los valores predeterminados del grupo Diffie-Hellman, algoritmo hash y confidencialidad directa perfecta para las compilaciones 1910 y posteriores. Si la versión de compilación de Azure Stack Hub es inferior a 1910, use los siguientes valores para los parámetros anteriores:
+
+>| Propiedad| Value|
+>|-|-|
+>|Grupo Diffie-Hellman   | DHGroup2 |
+>|Algoritmos de hash | SHA256 |
+>|Confidencialidad directa perfecta (PFS) | None |
+
+\* Parámetro nuevo o modificado.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

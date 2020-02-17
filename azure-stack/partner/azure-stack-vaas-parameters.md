@@ -1,6 +1,6 @@
 ---
-title: Parámetros comunes del flujo de trabajo en la validación como servicio de Azure Stack
-description: Parámetros comunes del flujo de trabajo en la validación como servicio de Azure Stack
+title: Parámetros comunes del flujo de trabajo en la validación como servicio de Azure Stack Hub
+description: Parámetros comunes del flujo de trabajo en la validación como servicio de Azure Stack Hub
 author: mattbriggs
 ms.topic: article
 ms.date: 1/22/2020
@@ -8,14 +8,14 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: ee72aca1cbba27c75d2811dac96d4b0a78a87617
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: cc237792576ffa3a5bb3ad0a003da4284c9cc56f
+ms.sourcegitcommit: a76301a8bb54c7f00b8981ec3b8ff0182dc606d7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76885044"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77143689"
 ---
-# <a name="workflow-common-parameters-for-azure-stack-validation-as-a-service"></a>Parámetros comunes del flujo de trabajo en la validación como servicio de Azure Stack
+# <a name="workflow-common-parameters-for-azure-stack-hub-validation-as-a-service"></a>Parámetros comunes del flujo de trabajo en la validación como servicio de Azure Stack Hub
 
 [!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 
@@ -26,14 +26,14 @@ Los parámetros comunes incluyen valores como variables de entorno y las credenc
 
 ## <a name="environment-parameters"></a>Parámetros del entorno
 
-Los parámetros del entorno describen el entorno de Azure Stack sometido a prueba. Estos valores deben proporcionarse mediante la generación y carga de un archivo de información de marca de Azure Stack para la instancia que se está probando.
+Los parámetros del entorno describen el entorno de Azure Stack Hub sometido a prueba. Estos valores deben proporcionarse mediante la generación y carga de un archivo de información de marca de Azure Stack Hub para la instancia que se está probando.
 
 > [!NOTE]
 > En los flujos de trabajo de validación oficial, no se pueden modificar los parámetros del entorno después de la creación del flujo de trabajo.
 
 ### <a name="generate-the-stamp-information-file"></a>Generación del archivo de información de marca
 
-1. Inicie sesión en DVM o en cualquier máquina que tenga acceso al entorno de Azure Stack.
+1. Inicie sesión en DVM o en cualquier máquina que tenga acceso al entorno de Azure Stack Hub.
 2. Ejecute los siguientes comandos en una ventana de PowerShell con privilegios elevados:
 
     ```powershell  
@@ -54,9 +54,9 @@ Los parámetros de prueba comunes incluyen información confidencial que no se p
 
 Parámetro    | Descripción
 -------------|-----------------
-Usuario administrador de inquilinos                            | El administrador de inquilinos de Azure Active Directory que ha aprovisionado el administrador de servicios en el directorio de AAD. Este usuario realiza acciones a nivel de inquilino, como la implementación de plantillas para configurar los recursos (VM, cuentas de almacenamiento, etc.) y la ejecución de cargas de trabajo. Para más información sobre el aprovisionamiento de cuentas de inquilino, consulte [Adición de un nuevo inquilino de Azure Stack](../operator/azure-stack-add-new-user-aad.md).
-Usuario administrador de servicios             | Administrador de Azure Active Directory del inquilino del directorio de Azure AD especificado durante la implementación de Azure Stack. Busque `AADTenant` en el archivo de configuración ECE y seleccione el valor en el elemento `UniqueName`.
-Usuario del administrador de la nube               | Cuenta de administrador de dominio de Azure Stack (por ejemplo, `contoso\cloudadmin`). Busque `User Role="CloudAdmin"` en el archivo de configuración ECE y seleccione el valor en el elemento `UserName`.
+Usuario administrador de inquilinos                            | El administrador de inquilinos de Azure Active Directory que ha aprovisionado el administrador de servicios en el directorio de AAD. Este usuario realiza acciones a nivel de inquilino, como la implementación de plantillas para configurar los recursos (VM, cuentas de almacenamiento, etc.) y la ejecución de cargas de trabajo. Para más información sobre el aprovisionamiento de cuentas de inquilino, consulte [Adición de un nuevo inquilino de Azure Stack Hub](../operator/azure-stack-add-new-user-aad.md).
+Usuario administrador de servicios             | Administrador de Azure Active Directory del inquilino del directorio de Azure AD especificado durante la implementación de Azure Stack Hub. Busque `AADTenant` en el archivo de configuración ECE y seleccione el valor en el elemento `UniqueName`.
+Usuario del administrador de la nube               | Cuenta de administrador de dominio de Azure Stack Hub (por ejemplo, `contoso\cloudadmin`). Busque `User Role="CloudAdmin"` en el archivo de configuración ECE y seleccione el valor en el elemento `UserName`.
 Cadena de conexión de diagnósticos          | Una URL de SAS a una cuenta de Azure Storage donde se copiarán los registro de diagnóstico durante la ejecución de pruebas. Para obtener instrucciones sobre la generación de la dirección URL de SAS, consulte [Generación de la cadena de conexión de diagnóstico](#generate-the-diagnostics-connection-string). |
 
 > [!IMPORTANT]

@@ -3,16 +3,16 @@ title: Adición de una imagen de máquina virtual personalizada a Azure Stack Hu
 description: Aprenda a agregar o quitar una imagen de máquina virtual personalizada en Azure Stack Hub.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 10/16/2019
+ms.date: 02/07/2020
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 06/08/2018
-ms.openlocfilehash: 359adfbe9083bd21368934426a54c887af2f9f2a
-ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
+ms.openlocfilehash: ae446d053c008fc2433f44ba8e7ffa7324972362
+ms.sourcegitcommit: 2377c6947cf846fd2a4a0274c41326293a2a239c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76889973"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77075979"
 ---
 # <a name="add-a-custom-vm-image-to-azure-stack-hub"></a>Adición de una imagen de máquina virtual personalizada a Azure Stack Hub
 
@@ -22,18 +22,20 @@ En Azure Stack Hub, puede agregar una imagen de máquina virtual personalizada a
 
 ### <a name="windows"></a>Windows
 
-Cree un disco duro virtual generalizado personalizado. 
+Cree un disco duro virtual generalizado personalizado.
 
 **Si el disco duro virtual está fuera de Azure**, siga los pasos descritos en [Carga de un VHD generalizado y su uso para crear máquinas virtuales nuevas en Azure](/azure/virtual-machines/windows/upload-generalized-managed) para utilizar **Sysprep** correctamente en el disco duro virtual en el sistema y convertirlo en generalizado.
 
 **Si el disco duro virtual es de Azure**, antes de generalizar la máquina virtual, asegúrese de lo siguiente:
-1) Al aprovisionar la máquina virtual en Azure, use PowerShell y aprovisiónela sin la marca `-ProvisionVMAgent` 
-2) Elimine todas las extensiones de la máquina virtual mediante el cmdlet **Remove-AzureRmVMExtension** de la máquina virtual antes de generalizarla en Azure. Para saber qué extensiones de máquina virtual se instalan, vaya a Windows (C:) > WindowsAzure > Registros > Complementos.
 
-```Powershell
+- Al aprovisionar la máquina virtual en Azure, use PowerShell y aprovisiónela sin la marca `-ProvisionVMAgent`.
+- Elimine todas las extensiones de la máquina virtual mediante el cmdlet **Remove-AzureRmVMExtension** de la máquina virtual antes de generalizarla en Azure. Para saber qué extensiones de máquina virtual se instalan, vaya a `Windows (C:) > WindowsAzure > Logs > Plugins`.
+
+```powershell
 Remove-AzureRmVMExtension -ResourceGroupName winvmrg1 -VMName windowsvm -Name "CustomScriptExtension"
-```                       
-Después de lo anterior, siga las instrucciones de [este documento](/azure/virtual-machines/windows/download-vhd) para generalizar y descargar correctamente el disco duro virtual antes de migrarlo a Azure Stack Hub.
+```
+
+Siga las instrucciones de [este documento](/azure/virtual-machines/windows/download-vhd) para generalizar y descargar correctamente el disco duro virtual antes de migrarlo a Azure Stack Hub.
 
 ### <a name="linux"></a>Linux
 
@@ -72,7 +74,7 @@ Después de lo anterior, siga las instrucciones de [este documento](/azure/virtu
    1. Seleccione **Generar dirección URL**.
 
    1. Genere la dirección URL.
-   
+
    1. En la dirección URL generada, seleccione **Descargar el archivo VHD**.
 
    1. Es posible que tenga que seleccionar **Guardar** en el explorador para iniciar la descarga. El nombre predeterminado del archivo de VHD es _abcd_.
@@ -83,7 +85,7 @@ Antes de cargar la imagen, es importante tener en cuenta lo siguiente:
 
 - Azure Stack Hub solo admite máquinas virtuales de primera generación (1) en el formato de disco duro virtual de disco fijo. El formato fijo estructura el disco lógico linealmente dentro del archivo, de manera que el desplazamiento del disco *X* se almacena en el desplazamiento del blob *X*. Un breve pie de página al final del blob describe las propiedades del disco duro virtual. Para confirmar que el disco está fijado, use el cmdlet **Get-VHD** de PowerShell.
 
-- Azure Stack Hub no admite discos duros virtuales dinámicos. 
+- Azure Stack Hub no admite discos duros virtuales dinámicos.
 
 ## <a name="step-2-upload-the-vm-image-to-a-storage-account"></a>Paso 2: Carga de la imagen de máquina virtual en una cuenta de almacenamiento
 
@@ -100,19 +102,18 @@ Antes de cargar la imagen, es importante tener en cuenta lo siguiente:
      Una de estas herramientas que se usa en este ejemplo es el comando Add-AzureRmVHD para cargar un disco duro virtual en una cuenta de almacenamiento en el portal de administración de Azure Stack Hub.  
 
      ```powershell
-     Add-AzureRmVhd -Destination "https://bash.blob.redmond.azurestack.com/sample/vhdtestingmgd.vhd" -LocalFilePath "C:\vhd\vhdtestingmgd.vhd" 
+     Add-AzureRmVhd -Destination "https://bash.blob.redmond.azurestack.com/sample/vhdtestingmgd.vhd" -LocalFilePath "C:\vhd\vhdtestingmgd.vhd"
      ```
 
-3. Anote el identificador URI donde cargará la imagen de Blob Storage. El identificador URI de Blob Storage tiene el siguiente formato: *&lt;storageAccount&gt;/&lt;blobContainer&gt;/&lt;targetVHDName&gt;* .vhd.
+4. Anote el identificador URI donde cargará la imagen de Blob Storage. El identificador URI de Blob Storage tiene el siguiente formato: *&lt;storageAccount&gt;/&lt;blobContainer&gt;/&lt;targetVHDName&gt;* .vhd.
 
-4. Para que sea posible acceder al blob de manera anónima, vaya al contenedor de blobs de la cuenta de almacenamiento donde se cargó el disco duro virtual de la imagen de máquina virtual. Seleccione **Blob** y, a continuación, seleccione **Directiva de acceso**. Opcionalmente, puede generar una firma de acceso compartido para el contenedor e incluirla como parte del identificador URI del blob. Este paso garantiza que el blob está disponible para su uso. Si no se puede acceder al blob de forma anónima, la imagen de la máquina virtual se creará con estado de error.
+5. Para que sea posible acceder al blob de manera anónima, vaya al contenedor de blobs de la cuenta de almacenamiento donde se cargó el disco duro virtual de la imagen de máquina virtual. Seleccione **Blob** y, a continuación, seleccione **Directiva de acceso**. Opcionalmente, puede generar una firma de acceso compartido para el contenedor e incluirla como parte del identificador URI del blob. Este paso garantiza que el blob está disponible para su uso. Si no se puede acceder al blob de forma anónima, la imagen de la máquina virtual se creará con estado de error.
 
    ![Vaya a los blobs de la cuenta de almacenamiento.](./media/azure-stack-add-vm-image/tca1.png)
 
    ![Establecimiento del acceso del blob en público](./media/azure-stack-add-vm-image/tca2.png)
 
    ![Establecimiento del acceso del blob en público](./media/azure-stack-add-vm-image/tca3.png)
-   
 
 ## <a name="step-3-option-1-add-the-vm-image-as-an-azure-stack-hub-operator-using-the-portal"></a>Paso 3, opción 1: Incorporación de la imagen de máquina virtual como un operador de Azure Stack Hub mediante el portal
 
@@ -121,11 +122,11 @@ Antes de cargar la imagen, es importante tener en cuenta lo siguiente:
    ![Interfaz de usuario de la instalación de prueba de la imagen personalizada](./media/azure-stack-add-vm-image/tca4.png)
 
 2. En **Crear imagen**, escriba el publicador, la oferta, la SKU, la versión y el identificador URI del blob de disco del sistema operativo. A continuación, seleccione **Crear** para empezar a crear la imagen de máquina virtual.
-   
+
    ![Interfaz de usuario de la instalación de prueba de la imagen personalizada](./media/azure-stack-add-vm-image/tca5.png)
 
    Cuando la imagen se crea correctamente, el estado de la imagen de máquina virtual cambia a **Correcto**.
-   
+
 3. Cuando agregue una imagen, solo estará disponible para las plantillas basadas en Azure Resource Manager y las implementaciones de PowerShell. Para poner una imagen a disposición de los usuarios como elemento de Marketplace, publique el elemento de Marketplace siguiendo los pasos del artículo [Creación y publicación de un elemento de Marketplace](azure-stack-create-and-publish-marketplace-item.md). Asegúrese de que toma nota de los valores del **publicador**, **oferta**, **SKU** y **versión**. Los necesitará cuando modifique la plantilla de Resource Manager y de manifest.json en el archivo .azpkg personalizado.
 
 ## <a name="step-3-option-2-add-a-vm-image-as-an-azure-stack-hub-operator-using-powershell"></a>Paso 3, opción 2: Adición de una imagen de máquina virtual como un operador de Azure Stack Hub mediante PowerShell
@@ -166,7 +167,7 @@ Antes de cargar la imagen, es importante tener en cuenta lo siguiente:
      Puede especificar un URI de Blob Storage para `osDisk`.  
 
      Para más información, consulte la referencia de PowerShell para el cmdlet [Add-AzsPlatformimage](/powershell/module/azs.compute.admin/add-azsplatformimage).
-     
+
 4. Cuando agregue una imagen, solo estará disponible para las plantillas basadas en Azure Resource Manager y las implementaciones de PowerShell. Para poner una imagen a disposición de los usuarios como elemento de Marketplace, publique el elemento de Marketplace siguiendo los pasos del artículo [Creación y publicación de un elemento de Marketplace](azure-stack-create-and-publish-marketplace-item.md). Asegúrese de que toma nota de los valores del **publicador**, **oferta**, **SKU** y **versión**. Los necesitará cuando modifique la plantilla de Resource Manager y de manifest.json en el archivo .azpkg personalizado.
 
 ## <a name="remove-the-vm-image-as-an-azure-stack-hub-operator-using-the-portal"></a>Eliminación de la imagen de máquina virtual como un operador de Azure Stack Hub mediante el portal

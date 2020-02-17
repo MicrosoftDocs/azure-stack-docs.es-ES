@@ -1,6 +1,6 @@
 ---
-title: Procedimientos recomendados para la validación de Azure Stack.
-description: En este artículo se incluyen procedimientos recomendados para la validación como servicio.
+title: Procedimientos recomendados para la validación de Azure Stack
+description: Más información sobre los procedimientos recomendados de la validación como servicio.
 author: mattbriggs
 ms.topic: article
 ms.date: 10/28/2019
@@ -8,14 +8,14 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 10/28/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: cdd5d8a2b1933559c204e479f0215e63b6100b33
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 87dbfa83fa29c0c2870bd9944ddbf97e3cca0578
+ms.sourcegitcommit: 0a3c8b0bf9c116a5caaeca453a2bbc6e7f7cbfb9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76884101"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77147647"
 ---
-# <a name="best-practices-for-validation-as-a-service"></a>Procedimientos recomendados de la validación como servicio
+# <a name="azure-stack-validation-best-practices"></a>Procedimientos recomendados para la validación de Azure Stack
 
 [!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 

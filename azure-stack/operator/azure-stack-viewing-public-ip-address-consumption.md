@@ -1,35 +1,35 @@
 ---
-title: Administración de recursos de red en Azure Stack Hub
-description: Los administradores pueden administrar los recursos de red, incluido el grupo de direcciones MAC y el consumo de direcciones IP públicas en una región.
+title: Administración de recursos de red
+titleSuffix: Azure Stack Hub
+description: Aprenda a administrar los recursos de red, incluido el grupo de direcciones MAC y el consumo de direcciones IP públicas en una región.
 author: mattbriggs
 ms.topic: conceptual
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: scottnap
 ms.lastreviewed: 09/17/2019
-ms.openlocfilehash: 949c00edfbe7e5daff8c1cd17c20681c3a7d9265
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 3542706d71ed6800cd246cbc0d59a5443ed3edbc
+ms.sourcegitcommit: 0a3c8b0bf9c116a5caaeca453a2bbc6e7f7cbfb9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76880220"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77147824"
 ---
-# <a name="manage-network-resources"></a>Administración de recursos de red
+# <a name="manage-network-resources-in-azure-stack-hub"></a>Administración de recursos de red en Azure Stack Hub
 
 ## <a name="mac-address-pool"></a>Grupo de direcciones MAC
 
-Azure Stack Hub usa un grupo de direcciones MAC estáticas para generar y asignar una dirección MAC a máquinas virtuales automáticamente.
-Este grupo de direcciones MAC se generan automáticamente durante la implementación. Se usa el intervalo siguiente:
+Azure Stack Hub usa un grupo de direcciones MAC estáticas para generar y asignar automáticamente una dirección MAC a máquinas virtuales. Este grupo de direcciones MAC se generan automáticamente durante la implementación. Se usa el intervalo siguiente:
 
 - StartMacAddress: 00-1D-D8-B7-00-00
-- EndMacAddress : 00-1D-D8-F4-FF-FF
+- EndMacAddress: 00-1D-D8-F4-FF-FF
 
 > [!Note]  
 > Este grupo de direcciones MAC es el mismo en todos los sistemas de Azure Stack Hub y no se puede configurar.
 
 En función de cómo se conectan las redes virtuales con las redes corporativas existentes, cabe esperar que haya direcciones MAC duplicadas de máquinas virtuales.
 
-Para más información sobre el uso de grupos de direcciones MAC, use el cmdlet [Get AzsMacAddressPool](https://docs.microsoft.com/powershell/module/azs.fabric.admin/get-azsmacaddresspool) en el módulo de PowerShell de administrador de Azure Stack Hub.
+Para más información sobre el uso de grupos de direcciones MAC, use el cmdlet [Get-AzsMacAddressPool](https://docs.microsoft.com/powershell/module/azs.fabric.admin/get-azsmacaddresspool) en el módulo de PowerShell del administrador de Azure Stack Hub.
 
 ## <a name="view-public-ip-address-consumption-in-azure-stack-hub"></a>Visualización del consumo de direcciones IP públicas en Azure Stack Hub
 
@@ -40,9 +40,9 @@ Los administradores de la nube pueden ver:
 
 El icono **Public IP pools usage** (Uso de grupos de IP públicas) muestra el número de direcciones IP públicas que se han consumido en los grupos de direcciones IP públicas. En cada dirección IP, el icono muestra el uso de instancias de VM IaaS de inquilino, los servicios de la infraestructura del generador y los recursos de las direcciones IP públicas que los usuarios crearon explícitamente.
 
-El propósito del icono es que los operadores de Azure Stack Hub sepan el número de direcciones IP públicas que se usan en esta ubicación. Este número ayuda a los administradores a determinar si se están quedando sin algún recurso.
+El propósito del icono es que los operadores de Azure Stack Hub sepan el número de direcciones IP públicas que se usan en esta ubicación. Este número ayuda a los administradores a determinar si se están quedando sin este recurso.
 
-El elemento de menú **Direcciones IP públicas** de **Recursos de inquilinos** enumera solo las direcciones IP públicas que los *inquilinos han creado de manera explícita*. El elemento de menú se puede encontrar en el panel **Proveedores de recursos**, **Red**. El número de direcciones IP públicas **usadas** del icono **Uso de grupos de IP públicas** nunca coincide (es mayor) con el número del icono **Direcciones IP públicas** de **Recursos de inquilinos**.
+El elemento de menú **Direcciones IP públicas** de **Recursos de inquilinos** enumera solo las direcciones IP públicas que los *inquilinos han creado de manera explícita*. El elemento de menú se puede encontrar en el panel **Proveedores de recursos** -> **Red**. El número de direcciones IP públicas **usadas** del icono **Uso de grupos de IP públicas** nunca coincide (es mayor) con el número del icono **Direcciones IP públicas** de **Recursos de inquilinos**.
 
 ### <a name="view-the-public-ip-address-usage-information"></a>Visualización de la información de uso de direcciones IP públicas
 
@@ -51,7 +51,7 @@ Para ver el número total de direcciones IP públicas que se han consumido en un
 1. En el portal del administrador de Azure Stack Hub, seleccione **All services** (Todos los servicios). Después, en la categoría **ADMINISTRACIÓN**, seleccione **Red**.
 1. El panel **Red** muestra el icono **Uso de grupos de IP públicas** en la sección **Información general**.
 
-    ![Panel Proveedor de recursos de red](media/azure-stack-viewing-public-ip-address-consumption/ip-address-consumption-01.png)
+    ![Panel Proveedor de recursos en el portal de administración de Azure Stack Hub](media/azure-stack-viewing-public-ip-address-consumption/ip-address-consumption-01.png)
 
 El número de **Usadas** representa el número direcciones IP públicas asignadas de grupos de direcciones IP públicas. El número que aparece debajo de **Libres** representa el número de direcciones IP públicas de los grupos de direcciones IP públicas que no se ha asignado y, por consiguiente, siguen disponibles. El número que aparece al lado de **% usado** representa el número de direcciones usadas o asignadas, en forma de porcentaje del número total de direcciones IP públicas de los grupos de direcciones IP públicas que hay en la ubicación.
 
@@ -59,7 +59,7 @@ El número de **Usadas** representa el número direcciones IP públicas asignada
 
 Seleccione **Direcciones IP públicas** en **Recursos de inquilinos**. Revise la lista de direcciones IP públicas creadas explícitamente por las suscripciones de los inquilinos en una región concreta.
 
-![Direcciones IP públicas de inquilinos](media/azure-stack-viewing-public-ip-address-consumption/ip-address-consumption-02.png)
+![Direcciones IP públicas de inquilino en el portal de administración de Azure Stack Hub](media/azure-stack-viewing-public-ip-address-consumption/ip-address-consumption-02.png)
 
 Puede ver que algunas direcciones IP públicas que se han asignado dinámicamente aparecen en la lista, pero aún no tienen una dirección asociada. El recurso de red se ha creado en el proveedor de recursos de red, pero aún no en la controladora de red.
 

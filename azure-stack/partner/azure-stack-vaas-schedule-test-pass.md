@@ -1,30 +1,30 @@
 ---
-title: Uso del portal de validación como servicio de Azure Stack para programar la primera prueba
-description: Use el portal de validación como servicio de Azure Stack para programar la primera prueba.
+title: Uso del portal de validación como servicio de Azure Stack Hub para programar la primera prueba
+description: Use el portal de validación como servicio de Azure Stack Hub para programar la primera prueba.
 author: mattbriggs
 ms.topic: conceptual
 ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 166a75da9f6571e80cdfe213fe0ea32c58279dac
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: f69629fea796d43e756ccf5436635d282a07b17e
+ms.sourcegitcommit: a76301a8bb54c7f00b8981ec3b8ff0182dc606d7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76885131"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77143723"
 ---
 # <a name="scheduling-a-test"></a>Programación de una prueba
 
 [!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 
-Programe una prueba en el portal de validación como servicio (VaaS) para su solución de Azure Stack. Una solución VaaS representa una solución de Azure Stack con una lista de materiales de hardware en particular. Puede programar una prueba para comprobar que el hardware puede ejecutar Azure Stack.
+Programe una prueba en el portal de validación como servicio (VaaS) para su solución de Azure Stack Hub. Una solución VaaS representa una solución de Azure Stack Hub con una lista de materiales de hardware en particular. Puede programar una prueba para comprobar que el hardware puede ejecutar Azure Stack Hub.
 
-Para comprobar la solución, cree el flujo de trabajo para una prueba. Un flujo de trabajo VaaS funciona dentro del contexto de una solución VaaS. Representa una serie de conjuntos de pruebas que actúan sobre la funcionalidad de implementación de Azure Stack en su hardware. Agregue los parámetros del entorno de su solución y seleccione una o varias pruebas para que se ejecuten en su solución.
+Para comprobar la solución, cree el flujo de trabajo para una prueba. Un flujo de trabajo VaaS funciona dentro del contexto de una solución VaaS. Representa una serie de conjuntos de pruebas que actúan sobre la funcionalidad de implementación de Azure Stack Hub en su hardware. Agregue los parámetros del entorno de su solución y seleccione una o varias pruebas para que se ejecuten en su solución.
 
 Aunque el flujo de trabajo de prueba superada se puede usar para ejecutar cualquier prueba proporcionada por VaaS, incluidas las pruebas de los flujos de trabajo de validación, los resultados del flujo de trabajo de pruebas superadas no se consideran *oficiales*. Para obtener información acerca de los flujos de trabajo de validación oficiales, consulte [Flujos de trabajo](azure-stack-vaas-key-concepts.md#workflows).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerrequisitos
 
 Antes de seguir este tutorial de inicio rápido, debe finalizar los siguientes elementos:
 

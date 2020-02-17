@@ -1,24 +1,24 @@
 ---
-title: Notas de la versión de validación como servicio de Azure Stack
-description: Notas de la versión de validación como servicio de Azure Stack.
+title: Notas de la versión de validación como servicio de Azure Stack Hub
+description: Notas de la versión de validación como servicio de Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
 ms.date: 10/28/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 10/28/2019
-ms.openlocfilehash: 63602a3bd4f53eada398dc6959a59202e0614708
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 4995dfae7a4a505fd260978c25c2fd401768cf63
+ms.sourcegitcommit: a76301a8bb54c7f00b8981ec3b8ff0182dc606d7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76884041"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77143949"
 ---
 # <a name="release-notes-for-validation-as-a-service"></a>Notas de la versión para la validación como servicio
 
 [!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 
-En este artículo se incluyen las notas de la versión para la validación como servicio de Azure Stack.
+En este artículo se incluyen las notas de la versión para la validación como servicio de Azure Stack Hub.
 
 ## <a name="version-4421"></a>Versión 4.4.2.1
 
@@ -36,9 +36,9 @@ En este artículo se incluyen las notas de la versión para la validación como 
 3 de diciembre de 2019
 
 - Prueba de las actualizaciones de contenido
-  - Se ha actualizado la documentación en línea para el flujo de trabajo mensual de actualización de Azure Stack y el flujo de trabajo de validación de paquetes de OEM. Revise la documentación actualizada aquí en "Validación de paquetes de OEM" y en "Validación de las actualizaciones de software de Microsoft"
-  - Actualización del flujo de trabajo de validación de paquetes de VaaS: El flujo de trabajo de validación de OEM es la única prueba necesaria para la comprobación de actualizaciones mensual de Azure Stack y la validación de paquetes OEM. La prueba actualiza la marca con los paquetes de AzureStack y OEM proporcionados, y ejecuta las pruebas de comprobación de Cloud Simulation Engine.
-  - Actualización de la extensión de PowerShell de VaaS: Ahora se admite la automatización del flujo de trabajo de validación de paquetes. Consulte la automatización de VaaS de Azure Stack con PowerShell para más información sobre la ubicación y las instrucciones paso a paso para usar esta extensión.
+  - Se ha actualizado la documentación en línea para el flujo de trabajo mensual de actualización de Azure Stack Hub y el flujo de trabajo de validación de paquetes de OEM. Revise la documentación actualizada aquí en "Validación de paquetes de OEM" y en "Validación de las actualizaciones de software de Microsoft"
+  - Actualización del flujo de trabajo de validación de paquetes de VaaS: El flujo de trabajo de validación de OEM es la única prueba necesaria para la comprobación de actualizaciones mensual de Azure Stack Hub y la validación de paquetes OEM. La prueba actualiza la marca con los paquetes de AzureStack y OEM proporcionados, y ejecuta las pruebas de comprobación de Cloud Simulation Engine.
+  - Actualización de la extensión de PowerShell de VaaS: Ahora se admite la automatización del flujo de trabajo de validación de paquetes. Consulte la automatización de VaaS de Azure Stack Hub con PowerShell para más información sobre la ubicación y las instrucciones paso a paso para usar esta extensión.
 
 - Problemas conocidos
   - Póngase en contacto con vaashelp@microsoft.com si los siguientes casos de prueba no se pueden ejecutar durante el flujo de trabajo de validación de OEM:
@@ -51,12 +51,12 @@ En este artículo se incluyen las notas de la versión para la validación como 
 7 de noviembre de 2019
 
 - Prueba de las actualizaciones de contenido
-  - Comprobación mensual de actualizaciones de Azure Stack (versiones 5.1.46.0 -> 5.1.49.0)
+  - Comprobación de la actualización mensual de Azure Stack Hub (Versiones 5.1.46.0 -> 5.1.49.0)
   - Comprobación del paquete de extensión de OEM (versiones 5.1.46.0 -> 5.1.49.0)
   - Se han conservado los resultados de 5.1.46.0. Si se ha ejecutado correctamente en 5.1.46.0, envíe una notificación a vaashelp@microsoft.com al enviar resultados.
 
 - Corrección de errores
-  - Se corrigió un problema por el que no se podía ejecutar la comprobación mensual de actualizaciones de Azure Stack si el archivo .zip de la actualización contenía caracteres especiales.
+  - Se corrigió un problema por el que no se podía ejecutar la comprobación mensual de actualizaciones de Azure Stack Hub si el archivo .zip de la actualización contenía caracteres especiales.
 
 - Problemas conocidos
   - Las pruebas de VaaS producirán un error si no se encuentra el archivo mstest.exe. Solución alternativa:
@@ -71,19 +71,19 @@ En este artículo se incluyen las notas de la versión para la validación como 
 
 29 de octubre de 2019
 
-- Se ha actualizado la documentación en línea para el flujo de trabajo mensual de actualización de Azure Stack y el flujo de trabajo de validación de paquetes de OEM.
+- Se ha actualizado la documentación en línea para el flujo de trabajo mensual de actualización de Azure Stack Hub y el flujo de trabajo de validación de paquetes de OEM.
 
     Revise la documentación actualizada aquí en "Validación de paquetes de OEM" y en "Validación de las actualizaciones de software de Microsoft"
-- Actualización del flujo de trabajo de VaaS: Actualización mensual de Azure Stack (versiones 5.1.30.0 -> 5.1.46.0): se ha actualizado el flujo de trabajo mensual de prueba de comprobación de actualizaciones de Azure Stack.
+- Actualización del flujo de trabajo de VaaS: Actualización mensual de Azure Stack Hub (versiones 5.1.30.0 -> 5.1.46.0): se ha actualizado el flujo de trabajo mensual de prueba de comprobación de actualizaciones de Azure Stack Hub.
 
     El flujo de trabajo ya no requiere ninguna intervención manual y se puede programar para que se ejecute sin problemas.
 - Actualización del flujo de trabajo de VaaS: Validación de paquetes de OEM (versiones 5.1.30.0 -> 5.1.46.0): se ha actualizado el flujo de trabajo de validación de paquetes de OEM.
 
     El flujo de trabajo ya no requiere ninguna intervención manual y se puede programar para que se ejecute sin problemas.
 - Se ha actualizado Cloud Simulation Engine en el flujo de trabajo de validación de paquetes de OEM (versiones 5.1.30.0 -> 5.1.46.0) para acelerar el tiempo de validación: El tiempo de ejecución se ha reducido a 1 hora.
-- Cloud Simulation Engine en el flujo de trabajo de validación de paquetes de OEM y el flujo de trabajo de actualización de Azure Stack (versiones 5.1.30.0 -> 5.1.46.0) requiere que las actualizaciones se validen en dos carpetas primarias distintas sin que haya otras actualizaciones en las carpetas secundarias.
-- Cloud Simulation Engine en el flujo de trabajo de validación de paquetes de OEM y el flujo de trabajo de actualización de Azure Stack (versiones 5.1.30.0 -> 5.1.46.0) requiere que las pruebas se programen en el siguiente orden: prueba de comprobación mensual de actualizaciones de Azure Stack, prueba de comprobación de paquetes de extensión de OEM y finalmente Cloud Simulation Engine.
-- Actualización del agente de VaaS: El agente de VaaS actualizado usa ahora las credenciales de administrador de la nube de Azure Stack para consultar la marca y obtener la información de esta para rellenar automáticamente los flujos de trabajo. 
+- Cloud Simulation Engine en el flujo de trabajo de validación de paquetes de OEM y el flujo de trabajo de actualización de Azure Stack Hub (versiones 5.1.30.0 -> 5.1.46.0) requiere que las actualizaciones se validen en dos carpetas primarias distintas sin que haya otras actualizaciones en las carpetas secundarias.
+- Cloud Simulation Engine en el flujo de trabajo de validación de paquetes de OEM y el flujo de trabajo de actualización de Azure Stack Hub (versiones 5.1.30.0 -> 5.1.46.0) requiere que las pruebas se programen en el siguiente orden: prueba de comprobación mensual de actualizaciones de Azure Stack Hub, prueba de comprobación de paquetes de extensión de OEM y finalmente Cloud Simulation Engine.
+- Actualización del agente de VaaS: El agente de VaaS actualizado usa ahora las credenciales de administrador de la nube de Azure Stack Hub para consultar la marca y obtener la información de esta para rellenar automáticamente los flujos de trabajo. 
 
     Esta actualización requiere que todos los agentes se actualicen y se reinicien. Consulte estas instrucciones sobre cómo actualizar el agente de VaaS: https://docs.microsoft.com/azure-stack/partner/azure-stack-vaas-local-agent
 - Actualización de la interfaz de usuario del portal de VaaS: Se ha trasladado la tabla de selección de agente por encima del panel de programación de pruebas para facilitar las pruebas.
@@ -103,15 +103,15 @@ En este artículo se incluyen las notas de la versión para la validación como 
 17 de enero de 2019
 
 - Prueba de identificación de disco actualizada para abordar las incoherencias de bloque de almacenamiento. Versión: 5.1.14.0 -> 5.1.15.0
-- Comprobación de actualización mensual de Azure Stack actualizada para abordar las incoherencias de validación de contenido y software aprobados. Versión: 5.1.14.0 -> 5.1.17.0
-- Comprobación del paquete de extensión de OEM actualizado para llevar a cabo las comprobaciones necesarias antes del paso de actualización de Azure Stack. Versión: 5.1.14.0 -> 5.1.16.0
+- Comprobación de actualización mensual de Azure Stack Hub actualizada para abordar las incoherencias de validación de contenido y software aprobados. Versión: 5.1.14.0 -> 5.1.17.0
+- Comprobación del paquete de extensión de OEM actualizado para llevar a cabo las comprobaciones necesarias antes del paso de actualización de Azure Stack Hub. Versión: 5.1.14.0 -> 5.1.16.0
 - Correcciones de errores internos
 
 ## <a name="version-402"></a>Versión 4.0.2
 
 7 de enero de 2019
 
-Si ejecuta el flujo de trabajo de verificación de actualización mensual de Azure Stack, y la versión para el paquete de actualización de OEM no es 1810 o posterior, recibirá un error cuando se encuentre en el paso de actualización de OEM. Este es un error. Se está desarrollando una corrección. Los pasos de navegación son los siguientes:
+Si ejecuta el flujo de trabajo de verificación de actualización mensual de Azure Stack Hub, y la versión para el paquete de actualización de OEM no es 1810 o posterior, recibirá un error cuando se encuentre en el paso de actualización de OEM. Este es un error. Se está desarrollando una corrección. Los pasos de navegación son los siguientes:
 
 1. Ejecute la actualización de OEM con normalidad.
 2. Ejecute Test-AzureStack después de la aplicación correcta del paquete y guarde el resultado.
@@ -160,7 +160,7 @@ Si ejecuta el flujo de trabajo de verificación de actualización mensual de Azu
                               -CloudAdminCredentials $CloudAdminCreds
     ```
     > [!NOTE]
-    > Los valores de `$CloudAdminCreds` que requiere el script corresponden a la instancia de Azure Stack que se está validando. No son las credenciales de Azure Active Directory usadas por el inquilino de VaaS.
+    > Los valores de `$CloudAdminCreds` que requiere el script corresponden a la instancia de Azure Stack Hub que se está validando. No son las credenciales de Azure Active Directory usadas por el inquilino de VaaS.
 
 - Actualización del agente local
 
@@ -178,11 +178,11 @@ Si ejecuta el flujo de trabajo de verificación de actualización mensual de Azu
 
   - Categoría de prueba interactiva
 
-    Se ha agregado la categoría de prueba **interactiva**. Estas pruebas usan escenarios de Azure Stack interactivos, no automatizados.
+    Se ha agregado la categoría de prueba **interactiva**. Estas pruebas usan escenarios de Azure Stack Hub interactivos, no automatizados.
 
   - Comprobación de características interactivas
 
-    La capacidad para proporcionar comentarios enfocados para determinadas características ahora está disponible en el flujo de trabajo de pruebas superadas. La prueba `OEM Update on Azure Stack 1806 RC Validation 5.1.4.0` comprueba si actualizaciones específicas se aplicaron correctamente y, a continuación, recopila comentarios.
+    La capacidad para proporcionar comentarios enfocados para determinadas características ahora está disponible en el flujo de trabajo de pruebas superadas. La prueba `OEM Update on Azure Stack Hub 1806 RC Validation 5.1.4.0` comprueba si actualizaciones específicas se aplicaron correctamente y, a continuación, recopila comentarios.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

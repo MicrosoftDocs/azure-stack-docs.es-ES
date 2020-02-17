@@ -1,20 +1,21 @@
 ---
-title: En este artículo, aprenderá a actualizar ofertas y planes de Azure Stack Hub
-description: En este artículo se describe cómo ver y modificar ofertas y planes de Azure Stack Hub.
+title: Creación de planes complementarios
+titleSuffix: Azure Stack Hub
+description: Aprenda a crear planes complementarios en Azure Stack Hub.
 author: bryanla
 ms.topic: conceptual
 ms.date: 10/05/2019
 ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 06/11/2019
-ms.openlocfilehash: c4c01db560bbcd0f8312d205ad4643d4af48fed5
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 134e5def9de8adfe7f6146f6355d67d6a775afaf
+ms.sourcegitcommit: 0a3c8b0bf9c116a5caaeca453a2bbc6e7f7cbfb9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76880016"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77147802"
 ---
-# <a name="azure-stack-hub-add-on-plans"></a>Planes complementarios de Azure Stack Hub
+# <a name="create-add-on-plans-in-azure-stack-hub"></a>Creación de planes complementarios en Azure Stack Hub
 
 Como operador de Azure Stack Hub, puede crear planes complementarios para modificar un [plan base](azure-stack-create-plan.md) cuando quiera ofrecer servicios adicionales o ampliar las cuotas de *equipo*, *almacenamiento* o *red* más allá de la oferta inicial del plan base. Los planes complementarios modifican el plan base y son extensiones opcionales que los usuarios pueden elegir habilitar en su suscripción.
 
@@ -32,43 +33,45 @@ Los planes complementarios se [crean de la misma manera](azure-stack-create-plan
 
 1. Inicie sesión en el portal del administrador de Azure Stack Hub como administrador de nube.
 2. Siga los mismos pasos utilizados para [crear un plan base](azure-stack-create-plan.md) para crear un nuevo plan que ofrezca servicios que no se ofrecían anteriormente.
-3. En el portal de administrador, haga clic en **Ofertas** y, a continuación, seleccione la oferta que desea actualizar con un plan complementario.
+3. En el portal de administración, seleccione **Ofertas** y, a continuación, seleccione la oferta que desea actualizar con un plan complementario.
 
-   ![Creación de un plan complementario](media/create-add-on-plan/add-on1.png)
+   ![Selección de la oferta que quiere actualizar con el plan complementario en el portal de administración de Azure Stack](media/create-add-on-plan/add-on1.png)
 
-4. En la parte inferior de las propiedades de la oferta seleccione **Add-on plans** (Planes complementarios). Haga clic en **Agregar**.
+4. En la parte inferior de las propiedades de la oferta seleccione **Add-on plans** (Planes complementarios). Seleccione **Agregar**.
 
-    ![Creación de un plan complementario](media/create-add-on-plan/add-on2.png)
+    ![Selección de planes complementarios en el portal de administración de Azure Stack](media/create-add-on-plan/add-on2.png)
 
 5. Seleccione el plan que se va a agregar. En este ejemplo, el plan se denomina **20-storageaccounts**. Después de seleccionar el plan, haga clic en **Seleccionar** para agregar el plan a la oferta. Debería recibir una notificación de que el plan se agregó correctamente a la oferta.
 
-    ![Creación de un plan complementario](media/create-add-on-plan/add-on3.png)
+    ![Selección del plan complementario que desea agregar en el portal de administración de Azure Stack](media/create-add-on-plan/add-on3.png)
 
 6. Revise la lista de planes complementarios incluidos con la oferta para comprobar que el nuevo plan complementario aparezca en la lista.
 
-    [![Creación de un plan complementario](media/create-add-on-plan/add-on4.png "Creación de un plan complementario")](media/create-add-on-plan/add-on4lg.png#lightbox)
+    ![Revisión de la lista de planes complementarios en el portal de administración de Azure Stack](media/create-add-on-plan/add-on4.png "Creación de un plan complementario")](media/create-add-on-plan/add-on4lg.png#lightbox)
 ::: moniker-end
 
 ::: moniker range="<=azs-1901"
+
 ## <a name="create-an-add-on-plan-1901-and-earlier"></a>Crear un plan complementario (1901 y anteriores)
 
 1. Inicie sesión en el portal del administrador de Azure Stack Hub como administrador de nube.
 2. Siga los mismos pasos utilizados para [crear un plan base](azure-stack-create-plan.md) para crear un nuevo plan que ofrezca servicios que no se ofrecían anteriormente. En este ejemplo, los servicios de Key Vault (**Microsoft.KeyVault**) se incluirán en el nuevo plan.
-3. En el portal de administrador, haga clic en **Ofertas** y, a continuación, seleccione la oferta que desea actualizar con un plan complementario.
+3. En el portal de administración, seleccione **Ofertas** y, a continuación, seleccione la oferta que desea actualizar con un plan complementario.
 
-   ![Creación de un plan complementario](media/create-add-on-plan/1.PNG)
+   ![Selección de la oferta que quiere actualizar con el plan complementario en el portal de administración de Azure Stack](media/create-add-on-plan/1.PNG)
 
-4. Desplácese hasta el final de las propiedades de la oferta y seleccione **Planes complementarios**. Haga clic en **Agregar**.
+4. Desplácese hasta el final de las propiedades de la oferta y seleccione **Planes complementarios**. Seleccione **Agregar**.
 
-    ![Creación de un plan complementario](media/create-add-on-plan/2.PNG)
+    ![Selección de planes complementarios en el portal de administración de Azure Stack](media/create-add-on-plan/2.PNG)
 
 5. Seleccione el plan que se va a agregar. En este ejemplo, el plan se denomina **Key vault plan** (Plan de almacén de claves). Después de seleccionar el plan, haga clic en **Seleccionar** para agregar el plan a la oferta. Debería recibir una notificación de que el plan se agregó correctamente a la oferta.
 
-    ![Creación de un plan complementario](media/create-add-on-plan/3.PNG)
+    ![Selección del plan complementario que desea agregar en el portal de administración de Azure Stack](media/create-add-on-plan/3.PNG)
 
 6. Revise la lista de planes complementarios incluidos con la oferta para comprobar que el nuevo plan complementario aparezca en la lista.
 
-    ![Creación de un plan complementario](media/create-add-on-plan/4.PNG)
+    ![Revisión de la lista de planes complementarios en el portal de administración de Azure Stack](media/create-add-on-plan/4.PNG)
+
 ::: moniker-end
 
 ## <a name="next-steps"></a>Pasos siguientes

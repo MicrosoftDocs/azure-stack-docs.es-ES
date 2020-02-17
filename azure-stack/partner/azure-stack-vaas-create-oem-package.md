@@ -1,5 +1,5 @@
 ---
-title: Procedimientos recomendados para la validación de Azure Stack
+title: Procedimientos recomendados para la validación de Azure Stack Hub
 description: En este artículo se describen las prácticas recomendadas para usar la validación como servicio.
 author: mattbriggs
 ms.topic: article
@@ -8,18 +8,18 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 10/28/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 19446113fc2e167d83b578fbad15964b21001ef4
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 647e724b179d994819032859c325bf711cb9d2ee
+ms.sourcegitcommit: a76301a8bb54c7f00b8981ec3b8ff0182dc606d7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76885051"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77143826"
 ---
 # <a name="create-an-oem-package"></a>Creación de un paquete de OEM
 
 [!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 
-El paquete de extensión de OEM de Azure Stack es el mecanismo por el cual se agrega contenido específico del OEM a la infraestructura de Azure Stack, para su uso en la implementación, así como en los procesos operativos, como actualización, expansión y reemplazo en el campo.
+El paquete de extensión de OEM de Azure Stack Hub es el mecanismo por el cual se agrega contenido específico del OEM a la infraestructura de Azure Stack Hub, para su uso en la implementación, así como en los procesos operativos, como actualización, expansión y reemplazo en el campo.
 
 ## <a name="creating-the-package"></a>Creación del paquete
 

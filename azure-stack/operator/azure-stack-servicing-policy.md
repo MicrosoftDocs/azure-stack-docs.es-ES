@@ -4,16 +4,16 @@ titleSuffix: Azure Stack Hub
 description: Conozca la directiva de servicio de Azure Stack Hub y cómo mantener un sistema integrado en un estado admitido.
 author: sethmanheim
 ms.topic: article
-ms.date: 10/30/2019
+ms.date: 02/07/2020
 ms.author: sethm
 ms.reviewer: harik
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 280509c989a10b11884e93947d20569b3c128426
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: be2da63bcb2eb986a14ebae417810ee4b585714d
+ms.sourcegitcommit: 2377c6947cf846fd2a4a0274c41326293a2a239c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882925"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77075962"
 ---
 # <a name="azure-stack-hub-servicing-policy"></a>Directiva de servicio de Azure Stack Hub
 
@@ -77,6 +77,9 @@ Las actualizaciones de software de Microsoft no son acumulativas y necesitan la 
 
 Azure Stack Hub sigue el mismo proceso de soporte técnico que Azure. Los clientes de empresa pueden seguir el proceso descrito en [Creación de una solicitud de soporte técnico de Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Si es cliente de un proveedor de soluciones en la nube (CSP), póngase en contacto con el CSP para recibir soporte técnico. Para más información, consulte [Preguntas más frecuentes de soporte técnico de Azure](https://azure.microsoft.com/support/faq/).
 
+Para más información sobre la solución de problemas de actualización, consulte [Procedimientos recomendados para la solución de problemas de revisión y actualización de Azure Stack Hub](azure-stack-updates-troubleshoot.md).
+
 ## <a name="next-steps"></a>Pasos siguientes
 
 - [Administrar las actualizaciones en Azure Stack Hub](azure-stack-updates.md)
+- [Procedimientos recomendados para la solución de problemas de revisión y actualización de Azure Stack Hub](azure-stack-updates-troubleshoot.md)

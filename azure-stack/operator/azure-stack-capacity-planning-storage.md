@@ -1,40 +1,42 @@
 ---
-title: Almacenamiento del planeamiento de capacidad de Azure Stack Hub
-description: Obtenga información sobre el planeamiento de capacidad para las implementaciones de Azure Stack Hub.
+title: Planeamiento de la capacidad de almacenamiento de Azure Stack Hub
+description: Obtenga más información sobre el planeamiento de la capacidad de almacenamiento para las implementaciones de Azure Stack Hub.
 author: ihenkel
 ms.topic: article
 ms.date: 05/31/2019
 ms.author: inhenkel
 ms.reviewer: prchint
 ms.lastreviewed: 05/31/2019
-ms.openlocfilehash: db54510b118c688bf74ce5ba69355359d1c0cc85
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 8aa3bbb2c3b859ff98c8dd68fe4d24036ec18a4a
+ms.sourcegitcommit: 0a3c8b0bf9c116a5caaeca453a2bbc6e7f7cbfb9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76878928"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77147667"
 ---
-# <a name="azure-stack-hub-storage"></a>Almacenamiento de Azure Stack Hub
+# <a name="azure-stack-hub-storage-capacity-planning"></a>Planeamiento de la capacidad de almacenamiento de Azure Stack Hub
 
 En las secciones siguientes se proporciona información acerca del planeamiento de la capacidad de almacenamiento de Azure Stack Hub para ayudarle con el planeamiento según las necesidades de almacenamiento de la solución.
 
 ## <a name="uses-and-organization-of-storage-capacity"></a>Usos y organización de la capacidad de almacenamiento
-La configuración hiperconvergida de Azure Stack Hub permite el uso compartido de dispositivos de almacenamiento físico. Existen tres divisiones principales del almacenamiento disponible que se pueden compartir: la infraestructura, el almacenamiento temporal de las máquinas virtuales de inquilino y el almacenamiento de respaldo de los blobs, las tablas y las colas de los servicios de almacenamiento compatible con Azure (ACS).
+
+La configuración hiperconvergida de Azure Stack Hub permite el uso compartido de dispositivos de almacenamiento físico. Existen tres divisiones principales del almacenamiento disponible que se pueden compartir: infraestructura, almacenamiento temporal de las máquinas virtuales de inquilino y almacenamiento de respaldo de los blobs, tablas y colas de los servicios de almacenamiento compatible con Azure (ACS).
 
 ## <a name="storage-spaces-direct-cache-and-capacity-tiers"></a>Niveles de capacidad y memoria caché de Espacios de almacenamiento directo
+
 La capacidad de almacenamiento se puede utilizar para el sistema operativo, el registro local, el volcado y otro tipo de necesidades de almacenamiento de infraestructura temporal. Esta capacidad de almacenamiento local es independiente (dispositivos y capacidad) de los dispositivos de almacenamiento que se encuentran bajo la administración de la configuración de Espacios de almacenamiento directo. El resto de dispositivos de almacenamiento se coloca en un único grupo de capacidad de almacenamiento, independientemente del número de servidores de la unidad de escalado.
 
 Estos dispositivos son de dos tipos: memoria caché y capacidad. Espacios de almacenamiento directo usa estos dispositivos para el almacenamiento en caché con reescritura y lectura. Las capacidades de estos dispositivos de memoria caché, mientras estén en uso, no se dedican a la capacidad "visible" y con formato de los discos virtuales con formato. Por el contrario, Espacios de almacenamiento directo usa dispositivos de capacidad para este propósito, y proporciona así la "ubicación principal" de los datos administrados.
 
-La infraestructura de Azure Stack Hub asigna y administra directamente toda la capacidad de almacenamiento. El operador no tiene que tomar decisiones sobre la configuración, la asignación o la expansión de la capacidad. Azure Stack Hub automatiza estas decisiones de diseño para adaptarse a los requisitos de la solución, ya sea durante la instalación e implementación iniciales, o durante la expansión de la capacidad. Como parte del diseño, Azure Stack Hub tiene en cuenta, entre otros, los detalles acerca de la resistencia y la capacidad reservada para las recopilaciones. 
+La infraestructura de Azure Stack Hub asigna y administra directamente toda la capacidad de almacenamiento. El operador no tiene que tomar decisiones sobre la configuración, la asignación o la expansión de la capacidad. Azure Stack Hub automatiza estas decisiones de diseño para adaptarse a los requisitos de la solución, ya sea durante la instalación e implementación iniciales, o durante la expansión de la capacidad. Como parte del diseño, Azure Stack Hub tiene en cuenta, entre otros, los detalles acerca de la resistencia y la capacidad reservada para las recopilaciones.
 
 Los operadores pueden elegir entre una configuración de almacenamiento *completamente de flash* o *híbrido*:
 
 ![Diagrama de planeamiento de la capacidad de almacenamiento de Azure](media/azure-stack-capacity-planning/storage.png)
 
-En la configuración completamente de flash, la configuración puede ser de uno o dos niveles. Si la configuración es de un nivel, todos los dispositivos de capacidad son del mismo tipo (por ejemplo, NVMe o SATA/SAS SSD) y no se usan dispositivos de memoria caché. En una configuración completamente de flash de dos niveles, lo habitual son dispositivos de caché NVMe y, luego, dispositivos de capacidad SATA o SAS SSD.
+En la configuración completamente de flash, la configuración puede ser de uno o dos niveles. Si la configuración es de un nivel, todos los dispositivos de capacidad son del mismo tipo (por ejemplo, *NVMe* o *SATA SSD* o *SAS SSD*) y no se usan dispositivos de memoria caché. En una configuración completamente de flash de dos niveles, lo habitual son dispositivos de caché NVMe y, luego, dispositivos de capacidad SATA o SAS SSD.
 
-En una configuración híbrida de dos niveles, la caché es una elección entre NVMe o SATA/SAS SSD y la capacidad es la unidad de disco duro. 
+En una configuración híbrida de dos niveles, la caché es una elección entre NVMe o SATA/SAS SSD y la capacidad es la unidad de disco duro.
 
 A continuación, se incluye un breve resumen de la configuración de almacenamiento de Azure Stack Hub y Espacios de almacenamiento directo:
 - Un grupo de Espacios de almacenamiento directo por unidad de escalado (todos los dispositivos de almacenamiento se configuran dentro de un único grupo).
@@ -68,6 +70,6 @@ Los discos virtuales se crean automáticamente y sus capacidades se indican a co
 
 <sup>3</sup> Los discos virtuales creados para el uso con ACS son una división simple de la capacidad restante. Como se indicó anteriormente, todos los discos virtuales son un reflejo a tres bandas y el valor de una unidad de capacidad de la capacidad de cada servidor está sin asignar. Los diversos discos virtuales enumerados anteriormente se asignan en primer lugar y, a continuación, se usa la capacidad restante para los discos virtuales de ACS.
 
-
 ## <a name="next-steps"></a>Pasos siguientes
+
 Obtenga más información acerca de [Capacity Planner de Azure Stack Hub](azure-stack-capacity-planner.md).

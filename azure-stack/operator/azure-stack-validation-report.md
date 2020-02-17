@@ -1,32 +1,33 @@
 ---
 title: Informe de validación de Azure Stack Hub
-description: Use el informe de Azure Stack Hub Readiness Checker para revisar los resultados de validación.
+titleSuffix: Azure Stack Hub
+description: Use la herramienta Azure Stack Hub Readiness Checker para generar un informe de validación.
 author: ihenkel
 ms.topic: conceptual
 ms.date: 01/07/2020
 ms.author: inhenkel
 ms.reviewer: unknown
 ms.lastreviewed: 10/23/2018
-ms.openlocfilehash: 21c19a368b62a35e3b2daeef2a0e36f84eb4e527
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: a2264608c295a29fecc5335ce4970499dd10c895
+ms.sourcegitcommit: 0a3c8b0bf9c116a5caaeca453a2bbc6e7f7cbfb9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76880567"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77147726"
 ---
 # <a name="azure-stack-hub-validation-report"></a>Informe de validación de Azure Stack Hub
 
-Use la herramienta *Azure Stack Hub Readiness Checker* para ejecutar validaciones que admitan la implementación y el mantenimiento de un entorno de Azure Stack Hub. La herramienta escribe los resultados en un archivo de informe .json. El informe muestra los datos resumidos y detallados sobre el estado de los requisitos previos para la implementación de Azure Stack Hub. El informe también muestra información acerca de la rotación de secretos para las implementaciones de Azure Stack Hub existentes.  
+Use la herramienta [Azure Stack Hub Readiness Checker](https://www.powershellgallery.com/packages/Microsoft.AzureStack.ReadinessChecker/1.2002.1111.69) para ejecutar validaciones que admitan la implementación y el mantenimiento de un entorno de Azure Stack Hub. La herramienta escribe los resultados en un archivo de informe .json. El informe muestra los datos resumidos y detallados sobre el estado de los requisitos previos para la implementación de Azure Stack Hub. El informe también muestra información acerca de la rotación de secretos para las implementaciones de Azure Stack Hub existentes.  
 
 ## <a name="where-to-find-the-report"></a>Lugar donde se puede encontrar el informe
 
 Cuando se ejecuta la herramienta, los resultados se registran en **AzsReadinessCheckerReport.json**. La herramienta crea también un registro llamado **AzsReadinessChecker.log**. La ubicación de estos archivos se muestra con los resultados de validación de PowerShell:
 
-![ejecución de la validación](./media/azure-stack-validation-report/validation.png)
+![Resultados de la validación para Azure Stack Hub Readiness Checker](./media/azure-stack-validation-report/validation.png)
 
 Ambos archivos conservan los resultados de comprobaciones de validación posterior que se ejecutan en el mismo equipo. Por ejemplo, se puede ejecutar la herramienta para validar los certificados, volver a ejecutarla para validar la identidad de Azure y validarla y luego, una tercera vez para validar el registro. Los resultados de las tres validaciones están disponibles en el informe .json resultante.  
 
-De forma predeterminada, los dos archivos se escriben en **C:\Users\nombre_de_usuario\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json**.  
+De forma predeterminada, ambos archivos se escriben en `C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json`.  
 
 - Use el parámetro `-OutputPath <path>` al final del comando de ejecución para especificar otra ubicación para el informe.
 - Use el parámetro `-CleanReport` al final de la línea de comandos para borrar la información de ejecuciones anteriores de la herramienta desde **AzsReadinessCheckerReport.json**.
@@ -35,7 +36,7 @@ De forma predeterminada, los dos archivos se escriben en **C:\Users\nombre_de_us
 
 Para ver el informe en PowerShell, indique la ruta de acceso al informe como valor de `-ReportPath`. Este comando muestra el contenido del informe e identifica las validaciones que aún no tienen resultados.
 
-Por ejemplo, para ver el informe desde un símbolo del sistema de PowerShell que está abierto en la ubicación donde se encuentra el informe, ejecute el comando siguiente:
+Por ejemplo, para ver el informe desde un símbolo del sistema de PowerShell abierto en la ubicación donde se encuentra el informe, ejecute el comando siguiente:
 
 ```powershell
 Read-AzsReadinessReport -ReportPath .\AzsReadinessReport.json
@@ -121,7 +122,7 @@ Azure Stack Hub ADFS Validation results not available.
 
 ## <a name="view-a-filtered-report"></a>Vista de un informe filtrado
 
-Para ver un informe que se filtra con un único tipo de validación, use el parámetro **-ReportSections** con uno de los valores siguientes:
+Para ver un informe que se filtra con un único tipo de validación, use el parámetro `-ReportSections` con uno de los valores siguientes:
 
 - Certificado
 - AzureRegistration
