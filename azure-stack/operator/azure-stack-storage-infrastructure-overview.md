@@ -2,18 +2,18 @@
 title: Administración de la infraestructura de almacenamiento para Azure Stack Hub
 titleSuffix: Azure Stack
 description: Aprenda a administrar la infraestructura de almacenamiento para Azure Stack Hub.
-author: mattbriggs
+author: ihenkel
 ms.topic: article
 ms.date: 1/22/2020
-ms.author: mabrigg
+ms.author: inhenkel
 ms.lastreviewed: 03/11/2019
 ms.reviewer: jiahan
-ms.openlocfilehash: 045bab05645c5186069d787645efe56ea5b4effa
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 47233e29ef5921fbf8feb7b31f9160a8f67ff71b
+ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882767"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77491720"
 ---
 # <a name="manage-storage-infrastructure-for-azure-stack-hub"></a>Administración de la infraestructura de almacenamiento para Azure Stack Hub
 

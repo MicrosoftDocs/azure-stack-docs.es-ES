@@ -1,18 +1,18 @@
 ---
 title: Administración de actualizaciones
 description: Aprenda a administrar las actualizaciones en Azure Stack Hub
-author: mattbriggs
+author: ihenkel
 ms.topic: article
 ms.date: 10/01/2019
-ms.author: mabrigg
+ms.author: inhenkel
 ms.lastreviewed: 09/10/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 7894d59d3129b151f6110cbac4606cbfecad8889
-ms.sourcegitcommit: 74ce7c12a93d47315d70427b02bcacbd3b44f854
+ms.openlocfilehash: 3bbe40c0965027556c1ab00e9b26137e4b956955
+ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77037257"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77490938"
 ---
 # <a name="manage-updates-in-azure-stack-hub"></a>Administración de actualizaciones en Azure Stack Hub
 

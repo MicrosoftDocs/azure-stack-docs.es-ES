@@ -2,18 +2,18 @@
 title: Implementación de un proveedor de recursos de SQL Server
 titleSuffix: Azure Stack Hub
 description: Aprenda a implementar el proveedor de recursos de SQL Server en Azure Stack Hub.
-author: mattbriggs
+author: bryanla
 ms.topic: article
 ms.date: 10/02/2019
 ms.lastreviewed: 03/18/2019
-ms.author: mabrigg
+ms.author: bryanla
 ms.reviewer: xiaofmao
-ms.openlocfilehash: f365886119e343fd550e00e606840172fed7fa21
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 2faeb2c714099a3b055343445dc94a57879d2cd6
+ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76881236"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77491839"
 ---
 # <a name="deploy-the-sql-server-resource-provider-on-azure-stack-hub"></a>Implementación del proveedor de recursos de SQL Server en Azure Stack Hub
 
@@ -22,7 +22,7 @@ Use el proveedor de recursos de SQL Server de Azure Stack Hub para exponer las 
 > [!IMPORTANT]
 > Solo el proveedor de recursos puede crear elementos en servidores que hospedan SQL o MySQL. Los elementos creados en un servidor host que no se crean con el proveedor de recursos podrían dar lugar a un error de coincidencia de estado.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerrequisitos
 
 Hay varios requisitos previos que se deben cumplir antes de implementar el proveedor de recursos SQL de Azure Stack Hub. Para cumplir estos requisitos, realice los pasos siguientes en un equipo que pueda acceder a la máquina virtual de punto de conexión con privilegios:
 
@@ -126,8 +126,8 @@ Puede especificar los parámetros siguientes en la línea de comandos. Si no lo 
 | **DefaultSSLCertificatePassword** | Contraseña para el certificado .pfx. | _Obligatorio_ |
 | **MaxRetryCount** | El número de veces que quiere volver a intentar cada operación si se produce un error.| 2 |
 | **RetryDuration** | Intervalo de tiempo de expiración entre reintentos, en segundos. | 120 |
-| **Desinstalación** | Se quita el proveedor de recursos y todos los recursos asociados (vea las notas siguientes). | No |
-| **DebugMode** | Impide la limpieza automática en caso de error. | No |
+| **Desinstalación** | Se quita el proveedor de recursos y todos los recursos asociados (vea las notas siguientes). | Sin |
+| **DebugMode** | Impide la limpieza automática en caso de error. | Sin |
 
 ## <a name="deploy-the-sql-resource-provider-using-a-custom-script"></a>Implementar el proveedor de recursos SQL con un script personalizado
 

@@ -2,18 +2,18 @@
 title: Actualización del proveedor de recursos de SQL de Azure Stack Hub
 titleSuffix: Azure Stack Hub
 description: Aprenda a actualizar el proveedor de recursos de SQL de Azure Stack Hub.
-author: mattbriggs
+author: bryanla
 ms.topic: article
 ms.date: 11/11/2019
-ms.author: mabrigg
+ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 07f372f1974780d2310b12cc8d874808e010ac3c
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 09a9b190594eb4d737b54c971fc2e3dbd03cd5f9
+ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76881269"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77491754"
 ---
 # <a name="update-the-sql-resource-provider"></a>Actualización del proveedor de recursos de SQL
 
@@ -54,8 +54,8 @@ Puede especificar los siguientes parámetros desde la línea de comandos al ejec
 | **DefaultSSLCertificatePassword** | Contraseña para el certificado .pfx. | _Obligatorio_ |
 | **MaxRetryCount** | El número de veces que quiere volver a intentar cada operación si se produce un error.| 2 |
 | **RetryDuration** |Intervalo de tiempo de expiración entre reintentos, en segundos. | 120 |
-| **Desinstalación** | Quita el proveedor de recursos y todos los recursos asociados. | No |
-| **DebugMode** | Impide la limpieza automática en caso de error. | No |
+| **Desinstalación** | Quita el proveedor de recursos y todos los recursos asociados. | Sin |
+| **DebugMode** | Impide la limpieza automática en caso de error. | Sin |
 
 ## <a name="update-script-powershell-example"></a>Ejemplo de actualización del script de PowerShell
 > [!NOTE]

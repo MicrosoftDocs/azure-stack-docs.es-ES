@@ -2,18 +2,18 @@
 title: Administración de recursos de red
 titleSuffix: Azure Stack Hub
 description: Aprenda a administrar los recursos de red, incluido el grupo de direcciones MAC y el consumo de direcciones IP públicas en una región.
-author: mattbriggs
+author: ihenkel
 ms.topic: conceptual
 ms.date: 1/22/2020
-ms.author: mabrigg
+ms.author: inhenkel
 ms.reviewer: scottnap
 ms.lastreviewed: 09/17/2019
-ms.openlocfilehash: 3542706d71ed6800cd246cbc0d59a5443ed3edbc
-ms.sourcegitcommit: 0a3c8b0bf9c116a5caaeca453a2bbc6e7f7cbfb9
+ms.openlocfilehash: 10f949791a38a7c4c9e21fa910df166b56cc1330
+ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77147824"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77490955"
 ---
 # <a name="manage-network-resources-in-azure-stack-hub"></a>Administración de recursos de red en Azure Stack Hub
 
@@ -71,11 +71,11 @@ En varios casos, se asignan direcciones IP públicas que determinan si la direcc
 
 | **Caso de asignación de dirección IP pública** | **Aparece en resumen de uso** | **Aparece en lista de direcciones IP públicas de inquilinos** |
 | --- | --- | --- |
-| La dirección IP pública dinámica aún no está asignada a un NIC o equilibrador de carga (temporal). |No |Sí |
+| La dirección IP pública dinámica aún no está asignada a un NIC o equilibrador de carga (temporal). |Sin |Sí |
 | La dirección IP pública dinámica está asignada a un NIC o equilibrador de carga. |Sí |Sí |
 | La dirección IP pública estática está asignada a un NIC o equilibrador de carga del inquilino. |Sí |Sí |
-| La dirección IP pública estática está asignada a un punto de conexión del servicio de la infraestructura del tejido. |Sí |No |
-| Dirección IP pública creada de manera implícita para instancias de VM de IaaS y usada para NAT saliente en la red virtual. Se crean en segundo plano cada vez que un inquilino crea una instancia de máquina virtual para que las máquinas virtuales pueden enviar información a Internet. |Sí |No |
+| La dirección IP pública estática está asignada a un punto de conexión del servicio de la infraestructura del tejido. |Sí |Sin |
+| Dirección IP pública creada de manera implícita para instancias de VM de IaaS y usada para NAT saliente en la red virtual. Se crean en segundo plano cada vez que un inquilino crea una instancia de máquina virtual para que las máquinas virtuales pueden enviar información a Internet. |Sí |Sin |
 
 ## <a name="next-steps"></a>Pasos siguientes
 

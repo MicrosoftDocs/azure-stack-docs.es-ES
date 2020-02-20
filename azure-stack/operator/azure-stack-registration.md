@@ -2,18 +2,18 @@
 title: Registro de Azure Stack Hub en Azure
 titleSuffix: Azure Stack Hub
 description: Aprenda a registrar los sistemas integrados de Azure Stack Hub en Azure de forma que pueda descargar elementos de Azure Marketplace y configurar informes de datos.
-author: mattbriggs
+author: ihenkel
 ms.topic: article
 ms.date: 2/02/2020
-ms.author: mabrigg
+ms.author: inhenkel
 ms.reviewer: avishwan
 ms.lastreviewed: 03/04/2019
-ms.openlocfilehash: 568bcc7b04da397dff343662a8e80b86e27d2618
-ms.sourcegitcommit: 5f53810d3c5917a3a7b816bffd1729a1c6b16d7f
+ms.openlocfilehash: 6a56c6381cc1a88729b31c5d020460100d29ca39
+ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76972585"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77491924"
 ---
 # <a name="register-azure-stack-hub-with-azure"></a>Registro de Azure Stack Hub en Azure
 
@@ -24,7 +24,7 @@ La información de este artículo describe el registro de los sistemas integrado
 > [!IMPORTANT]  
 > Es necesario que el registro admita todas funcionalidades de Azure Stack Hub, incluida los artículos en oferta de Marketplace. Si no se registra al usar el modelo de facturación de pago por uso, infringirá los términos de licencia de Azure Stack Hub. Para más información sobre los modelos de licencia de Azure Stack Hub, consulte la [página de compra](https://azure.microsoft.com/overview/azure-stack/how-to-buy/).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerrequisitos
 
 Necesitará lo siguiente antes de realizar el registro:
 

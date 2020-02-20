@@ -2,18 +2,18 @@
 title: Aprendizaje y certificación
 titleSuffix: Azure Stack
 description: Información acerca de las oportunidades de aprendizaje y certificación de Azure Stack Hub.
-author: mattbriggs
+author: ihenkel
 ms.topic: article
 ms.date: 11/11/2019
-ms.author: mabrigg
+ms.author: inhenkel
 ms.lastreviewed: 11/11/2019
 ms.reviewer: efemmano
-ms.openlocfilehash: c3b028477cac6c39eec157a69b56ade9ea59f63b
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 276ff2d2f2db70684fb2dee0ebe63aaec69e92cc
+ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882743"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77491414"
 ---
 # <a name="azure-stack-hub-training-and-certification"></a>Cursos y certificaciones de Azure Stack Hub
 

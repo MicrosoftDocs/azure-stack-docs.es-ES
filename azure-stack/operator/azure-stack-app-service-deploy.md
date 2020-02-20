@@ -1,18 +1,18 @@
 ---
 title: Implementación de App Service en Azure Stack Hub
 description: Aprenda a implementar App Service en Azure Stack Hub.
-author: mattbriggs
+author: bryanla
 ms.topic: article
 ms.date: 01/13/2020
-ms.author: anwestg
+ms.author: bryanla
 ms.reviewer: anwestg
 ms.lastreviewed: 01/13/2020
-ms.openlocfilehash: 55d42471f56b17fe2016c7a7ac05f0b688773128
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 1d11e9572decd7bd135fe62806c284e43657febf
+ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76874865"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77491176"
 ---
 # <a name="deploy-app-service-in-azure-stack-hub"></a>Implementación de App Service en Azure Stack Hub
 
