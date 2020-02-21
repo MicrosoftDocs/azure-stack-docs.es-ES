@@ -1,18 +1,18 @@
 ---
 title: Eliminación del proveedor de recursos MySQL en Azure Stack Hub
 description: Obtenga información sobre cómo quitar el proveedor de recursos MySQL de la implementación de Azure Stack Hub.
-author: mattbriggs
+author: bryanla
 ms.topic: article
 ms.date: 1/22/2020
-ms.author: mabrigg
+ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/20/2018
-ms.openlocfilehash: 89d0a55797b6182b7490778db10914a09977e105
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: e432e0a37dbcea7bf441594ba6669ee15578b3e4
+ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76881782"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77492060"
 ---
 # <a name="remove-the-mysql-resource-provider-in-azure-stack-hub"></a>Eliminación del proveedor de recursos MySQL en Azure Stack Hub
 
@@ -21,16 +21,7 @@ Antes de quitar el proveedor de recursos de MySQL, debe quitar todas las depende
 > [!NOTE]
 > Puede encontrar los vínculos de descarga para los instaladores del proveedor de recursos en [Requisitos previos de Implementación del proveedor de recursos](./azure-stack-mysql-resource-provider-deploy.md#prerequisites).
 
-Al quitar el proveedor de recursos MySQL no se eliminan las bases de datos de inquilino de los servidores de hospedaje.
-
-## <a name="dependency-cleanup"></a>Limpieza de dependencias
-
-Hay varias tareas de limpieza que debe realizar antes de ejecutar el script DeployMySqlProvider.ps1 para quitar el proveedor de recursos.
-
-El operador de Azure Stack Hub es responsable de las siguientes tareas de limpieza:
-
-* Elimine los planes que hacen referencia al adaptador de MySQL.
-* Elimine toda cuota asociada al adaptador de MySQL.
+Al eliminar el proveedor de recursos de MySQL se eliminarán los planes y cuotas asociados administrados por el operador. Pero no se eliminarán las bases de datos de inquilino de los servidores host.
 
 ## <a name="to-remove-the-mysql-resource-provider"></a>Para quitar el proveedor de recursos de MySQL
 

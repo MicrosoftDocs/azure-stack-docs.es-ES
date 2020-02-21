@@ -8,12 +8,12 @@ ms.date: 10/07/2019
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/23/2018
-ms.openlocfilehash: 0a15f4256349b9080f73d976f4e4a9782fd5b665
-ms.sourcegitcommit: 0a3c8b0bf9c116a5caaeca453a2bbc6e7f7cbfb9
+ms.openlocfilehash: 7201ad85961ecf08d1162d97aa684625e0782d35
+ms.sourcegitcommit: 381e4e47851dd2526bbf04d6b06af90fb1fb6a49
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77147891"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77363022"
 ---
 # <a name="create-highly-available-mysql-databases"></a>Creación de bases de datos MySQL de alta disponibilidad
 
@@ -60,13 +60,15 @@ Siga los pasos de esta sección para implementar el clúster de MySQL Server con
 - Tres VM de Linux para hospedar el clúster de MySQL
 
 1. 
-   [!INCLUDE [azs-admin-portal](../includes/azs-admin-portal.md)]
+   [!INCLUDE [azs-admin-portal](../includes/azs-user-portal.md)]
 
-2. Seleccione **\+** **Crear un recurso** > **Proceso** y, a continuación, **MySQL con replicación**.
+2. Si no se asignó ninguna suscripción aún, seleccione **Get a Subscription** (Obtener una suscripción) en el panel. En la hoja, escriba un nombre para la suscripción y, a continuación, seleccione una oferta. Se recomienda mantener la implementación del clúster de MySQL en su propia suscripción para evitar la eliminación accidental.
 
-   ![Implementación de plantillas personalizadas en Azure Stack Hub](media/azure-stack-tutorial-mysqlrp/1.png)
+3. Seleccione **\+** **Crear un recurso** > **Proceso** y, a continuación, **MySQL con replicación**.
 
-3. Proporcione información básica sobre la implementación en la página **Aspectos básicos**. Revise los valores predeterminados, haga los cambios pertinentes y seleccione **Aceptar**.
+   ![Implementación de plantillas personalizadas en Azure Stack Hub](media/azure-stack-tutorial-mysqlrp/img1.png)
+
+4. Proporcione información básica sobre la implementación en la página **Aspectos básicos**. Revise los valores predeterminados, haga los cambios pertinentes y seleccione **Aceptar**.
 
     Como mínimo, proporcione la siguiente información:
 
@@ -78,28 +80,28 @@ Siga los pasos de esta sección para implementar el clúster de MySQL Server con
    - Seleccione el grupo de recursos o cree uno nuevo.
    - Seleccione la ubicación (el valor predeterminado es local para el Kit de desarrollo de Azure Stack).
 
-   [![Aspectos básicos de la implementación: Creación de MySQL con replicación](media/azure-stack-tutorial-mysqlrp/2-sm.PNG)](media/azure-stack-tutorial-mysqlrp/2-lg.PNG#lightbox)
+     ![Aspectos básicos de la implementación: creación de MySQL con replicación](media/azure-stack-tutorial-mysqlrp/img2.png)
 
-4. En la página de **configuración del entorno**, proporcione la información siguiente y, después, seleccione **Aceptar**:
+5. En la página de **configuración del entorno**, proporcione la información siguiente y, después, seleccione **Aceptar**:
 
    - Contraseña o SSH de clave pública que se usará para la autenticación de Secure Shell (SSH). Si usa una contraseña, debe contener letras y números, y **puede** contener caracteres especiales.
    - Tamaño de máquina virtual (el valor predeterminado es VM Standard D1 v2).
    - Tamaño del disco de datos en GB
 
-   [![Configuración del entorno: Creación de MySQL con replicación](media/azure-stack-tutorial-mysqlrp/3-sm.PNG)](media/azure-stack-tutorial-mysqlrp/3-lg.PNG#lightbox)
+     ![Configuración del entorno: Creación de MySQL con replicación](media/azure-stack-tutorial-mysqlrp/img3.png)
 
-5. Revise el **resumen** de la implementación. Si lo desea, puede descargar la plantilla personalizada y los parámetros; después, seleccione **Aceptar**.
+6. Revise el **resumen** de la implementación. Si lo desea, puede descargar la plantilla personalizada y los parámetros; después, seleccione **Aceptar**.
 
-   [![Resumen: Creación de MySQL con replicación](media/azure-stack-tutorial-mysqlrp/4-sm.PNG)](media/azure-stack-tutorial-mysqlrp/4-lg.PNG#lightbox)
+   ![Resumen: Creación de MySQL con replicación](media/azure-stack-tutorial-mysqlrp/img4.png)
 
-6. Seleccione **Crear** en la página **Comprar** para iniciar la implementación.
+7. Seleccione **Crear** en la página **Comprar** para iniciar la implementación.
 
-   ![Página de compra: Creación de MySQL con replicación](media/azure-stack-tutorial-mysqlrp/5.png)
+   ![Página de compra: Creación de MySQL con replicación](media/azure-stack-tutorial-mysqlrp/img5.png)
 
     > [!NOTE]
     > La implementación tardará aproximadamente una hora. Asegúrese de que ha terminado la implementación y el clúster de MySQL se ha configurado completamente antes de continuar.
 
-7. Una vez que todas las implementaciones se hayan completado correctamente, revise los elementos del grupo de recursos y seleccione el elemento **mysqlip** de la dirección IP pública. Anote la dirección IP pública y el nombre de dominio completo de la dirección IP pública del clúster.
+8. Una vez que todas las implementaciones se hayan completado correctamente, revise los elementos del grupo de recursos y seleccione el elemento **mysqlip** de la dirección IP pública. Anote la dirección IP pública y el nombre de dominio completo de la dirección IP pública del clúster.
 
     Deberá proporcionar esta dirección IP al operador de Azure Stack Hub para que pueda crear un servidor de hospedaje MySQL aprovechando este clúster de MySQL.
 
@@ -109,13 +111,13 @@ De forma predeterminada, no hay ningún acceso público configurado para MySQL e
 
 1. En el portal de administración, vaya al grupo de recursos que creó al implementar el clúster de MySQL y seleccione el grupo de seguridad de red (**default-subnet-sg**):
 
-   ![Selección del grupo de seguridad de red en el portal de administración de Azure Stack Hub](media/azure-stack-tutorial-mysqlrp/6.png)
+   ![Selección del grupo de seguridad de red en el portal de administración de Azure Stack Hub](media/azure-stack-tutorial-mysqlrp/img6.png)
 
 2. Seleccione **Reglas de seguridad de entrada** y luego **Agregar**.
 
     Escriba **3306** en el **Intervalo de puertos de destino** y, opcionalmente, proporcione una descripción en los campos **Nombre** y **Descripción**.
 
-   ![abierto](media/azure-stack-tutorial-mysqlrp/7.png)
+   ![abierto](media/azure-stack-tutorial-mysqlrp/img7.png)
 
 3. Seleccione **Agregar** para cerrar el cuadro de diálogo de regla de seguridad de entrada.
 

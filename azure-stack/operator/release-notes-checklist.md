@@ -3,16 +3,16 @@ title: Lista de comprobación de la actividad de actualización de Azure Stack H
 description: Lista de comprobación para preparar el sistema para la actualización más reciente de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 01/14/2020
+ms.date: 02/20/2020
 ms.author: sethm
 ms.reviewer: ppacent
 ms.lastreviewed: 01/14/2020
-ms.openlocfilehash: 7ee8a4bc80b211b8e6aa8fd77d29ae5cf4c524e1
-ms.sourcegitcommit: 74ce7c12a93d47315d70427b02bcacbd3b44f854
+ms.openlocfilehash: e1260cec62c2b1906f76004f04010e0f0857664e
+ms.sourcegitcommit: b501f9dc931bb0a1648b768f7ea47116b4dfda33
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77037189"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77213670"
 ---
 # <a name="azure-stack-hub-update-activity-checklist"></a>Lista de comprobación de la actividad de actualización de Azure Stack Hub
 
@@ -31,7 +31,7 @@ Revise esta lista de comprobación para prepararse para obtener una actualizaci�
 | Ejecute **Test-AzureStack**. | Ejecute `Test-AzureStack -Group UpdateReadiness` para identificar los problemas operativos. El cmdlet es accesible a través de la sesión de punto de conexión con privilegios (PEP). Para más información, consulte [Validación del estado del sistema de Azure Stack Hub](azure-stack-diagnostic-test.md). |
 | Resolución de problemas | Resuelva cualquier problema operativo identificado por `Test-AzureStack`. |
 | Actualización disponible | Únicamente en los escenarios en los que estén conectadas, las implementaciones de Azure Stack Hub comprueban periódicamente un punto de conexión seguro y le notifican automáticamente si una actualización está disponible para la nube. Los clientes que estén desconectados pueden descargar e importar nuevos paquetes. Para ello, deben seguir el [proceso descrito aquí ](azure-stack-apply-updates.md). |
-| Programación de un período de inactividad por mantenimiento y notificación a los usuarios | Notifique a los usuarios cualquier operación de mantenimiento, y programe ventanas de mantenimiento normales durante el horario no laborable si es posible. Las operaciones de mantenimiento pueden afectar a las cargas de trabajo de inquilinos existentes y provocar errores en las operaciones de nuevos inquilinos (por ejemplo, crear, reconfigurar o eliminar máquinas virtuales), tanto si la operación se ha iniciado desde el portal o mediante programación desde la API de Azure Resource Manager. Para las actualizaciones rápidas y completas de Azure Stack Hub, puede consultar las [notas de la versión](release-notes.md) para obtener una previsión de cuánto tiempo se espera que tarde la actualización para la versión que se está aplicando. |
+| Programación de un período de inactividad por mantenimiento y notificación a los usuarios | Notifique a los usuarios cualquier operación de mantenimiento, y programe ventanas de mantenimiento normales durante el horario no laborable si es posible. Las operaciones de mantenimiento pueden afectar a las cargas de trabajo de inquilinos existentes y provocar errores en las operaciones de nuevos inquilinos (por ejemplo, crear, reconfigurar o eliminar máquinas virtuales), tanto si la operación se ha iniciado desde el portal o mediante programación desde la API de Azure Resource Manager. Puede que otras operaciones, como la copia de seguridad, no estén disponibles hasta que finalice la actualización. Para las actualizaciones rápidas y completas de Azure Stack Hub, puede consultar las [notas de la versión](release-notes.md) para obtener una previsión de cuánto tiempo se espera que tarde la actualización para la versión que se está aplicando. |
 
 ## <a name="during-azure-stack-hub-update"></a>Durante la actualización de Azure Stack Hub
 

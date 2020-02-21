@@ -3,21 +3,21 @@ title: Concesión de permiso a las aplicaciones para acceder a los secretos de K
 description: Aprenda a ejecutar una aplicación de ejemplo que recupere las claves y los secretos de un almacén de claves en Azure Stack Hub.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 01/06/2020
+ms.date: 02/19/2020
 ms.author: sethm
 ms.lastreviewed: 04/08/2019
-ms.openlocfilehash: 11b26d5e079ce16c7450bea0424aa4902c0ff8b3
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 4db38de1586096cfeeb2e7f2b806430d0ca1344f
+ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883574"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77492315"
 ---
 # <a name="allow-apps-to-access-azure-stack-hub-key-vault-secrets"></a>Concesión de permiso a las aplicaciones para acceder a los secretos de Key Vault de Azure Stack Hub
 
 Siga los pasos de este artículo para ejecutar la aplicación de ejemplo **HelloKeyVault** que recupera las claves y los secretos de un almacén de claves en Azure Stack Hub.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerrequisitos
 
 Puede instalar los siguientes requisitos previos con el [Kit de desarrollo de Azure Stack](../asdk/asdk-connect.md#connect-to-azure-stack-using-rdp), o con un cliente externo basado en Windows si está [conectado a través de VPN](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn):
 
@@ -142,9 +142,17 @@ Para cargar el ejemplo **HelloKeyVault**:
 En Visual Studio:
 
 1. Abra el archivo HelloKeyVault\App.config y busque el elemento `<appSettings>`.
-2. Actualice las claves **VaultUrl**, **AuthClientId** y **AuthClientSecret** con los valores devueltos al crear el almacén de claves. De forma predeterminada, el archivo App.config tiene un marcador de posición para `AuthCertThumbprint`. Reemplace este marcador de posición por `AuthClientSecret`.
+2. Actualice las claves **VaultUrl**, **AuthClientId** y **AuthCertThumbprint** con los valores devueltos al crear el almacén de claves. De forma predeterminada, el archivo App.config tiene un marcador de posición para `AuthCertThumbprint`. Reemplace este marcador de posición por `AuthClientSecret`.
 
-   ![Configuración de la aplicación](media/azure-stack-key-vault-sample-app/appconfig.png)
+   ```xml
+   <appSettings>
+    <!-- Update these settings for your test environment -->
+    <add key="VaultUrl" value="URL to your Vault" />
+    <add key="AuthClientId" value="Client Id of your Service Principal" />
+    <add key="AuthCertThumbprint" value="Thumbprint of the certificate used for authentication" />
+    <add key="TracingEnabled" value="false" />
+   </appSettings>
+   ```
 
 3. Recompile la solución.
 

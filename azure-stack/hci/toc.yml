@@ -1,0 +1,28 @@
+- name: Documentación de Azure Stack HCI
+  href: overview.md
+- name: Información general
+  items:
+    - name: ¿Qué es Azure Stack HCI?
+      href: overview.md
+- name: Referencia
+  items:
+    - name: Comandos de PowerShell de Hyper-V
+      href: /powershell/module/hyper-v
+    - name: Comandos de PowerShell de Storage
+      href: /powershell/module/storage
+- name: Temas relacionados
+  items:
+    - name: "Familia Azure\_Stack"
+      href: ../index.yml
+    - name: Windows Admin Center
+      href: /windows-server/manage/windows-admin-center/understand/windows-admin-center
+    - name: Servicios híbridos de Azure
+      href: /windows-server/manage/windows-admin-center/azure
+    - name: Espacios de almacenamiento directo
+      href: /windows-server/storage/storage-spaces/storage-spaces-direct-overview
+    - name: Clústeres de conmutación por error
+      href: /windows-server/failover-clustering/failover-clustering-overview
+    - name: Hyper-V
+      href: /windows-server/virtualization/hyper-v/hyper-v-on-windows-server
+    - name: Red definida por software
+      href: /windows-server/networking/sdn

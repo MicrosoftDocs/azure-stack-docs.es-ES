@@ -2,18 +2,18 @@
 title: Eliminación del proveedor de recursos de SQL
 titleSuffix: Azure Stack Hub
 description: Obtenga información sobre cómo quitar el proveedor de recursos de SQL de la implementación de Azure Stack Hub.
-author: mattbriggs
+author: bryanla
 ms.topic: article
 ms.date: 10/02/2019
-ms.author: mabrigg
+ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/20/2018
-ms.openlocfilehash: 5d8335e69c35c209e444d88f41ce76a3fae94bb0
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: f8b9ed17aa19a2d0ed9403ace3876f4c8f3a25bf
+ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882796"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77491788"
 ---
 # <a name="remove-the-sql-resource-provider"></a>Eliminación del proveedor de recursos de SQL
 
@@ -22,16 +22,7 @@ Antes de quitar el proveedor de recursos de SQL, debe quitar todas las dependenc
 > [!NOTE]
 > Puede encontrar los vínculos de descarga para los instaladores del proveedor de recursos en [Requisitos previos de Implementación del proveedor de recursos](./azure-stack-sql-resource-provider-deploy.md#prerequisites).
 
-Al quitar el proveedor de recursos de SQL no se eliminan las bases de datos de inquilino de los servidores de hospedaje.
-
-## <a name="dependency-cleanup"></a>Limpieza de dependencias
-
-Hay varias tareas de limpieza que debe realizar antes de ejecutar el script DeploySqlProvider.ps1 para quitar el proveedor de recursos.
-
-El operador de Azure Stack Hub es responsable de las siguientes tareas de limpieza:
-
-* Elimine los planes que hacen referencia al adaptador de SQL.
-* Elimine toda cuota asociada al adaptador de SQL.
+Si quita el proveedor de recursos de SQL, se eliminarán los planes y cuotas asociados administrados por el operador. Pero no se eliminarán las bases de datos de inquilino de los servidores host.
 
 ## <a name="to-remove-the-sql-resource-provider"></a>Proceso para quitar el proveedor de recursos de SQL
 
