@@ -2,18 +2,18 @@
 title: Validación de la integración de Azure Graph
 titleSuffix: Azure Stack Hub
 description: Use Azure Stack Hub Readiness Checker para validar la integración de Graph con Azure Stack Hub.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 06/10/2019
 ms.author: inhenkel
 ms.reviewer: jerskine
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: ff9763edbd96dda39f3de8e8a764ce4f4acd7200
-ms.sourcegitcommit: 5f53810d3c5917a3a7b816bffd1729a1c6b16d7f
+ms.openlocfilehash: 54435c9e3bb4a7fa6604c8108497acc569da2d71
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76972501"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77508742"
 ---
 # <a name="validate-graph-integration-for-azure-stack-hub"></a>Validación de la integración de Graph con Azure Stack Hub
 
@@ -32,7 +32,7 @@ Para más información sobre los requisitos de la integración de Azure Stack Hu
 
 Descargue la versión más reciente de la herramienta Azure Stack Hub Readiness Checker (AzsReadinessChecker) desde la [Galería de PowerShell](https://aka.ms/AzsReadinessChecker).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerrequisitos
 
 Deben cumplirse los siguientes requisitos previos.
 
@@ -108,7 +108,7 @@ De forma predeterminada, ambos archivos se escriben en `C:\Users\<username>\AppD
 Uso:
 
 * `-OutputPath`: el parámetro de *ruta de acceso* al final del comando de ejecución para especificar otra ubicación para el informe.
-* `-CleanReport`: el parámetro al final del comando de ejecución para borrar *AzsReadinessCheckerReport.json* de la información del informe previo. Para más información, consulte [Informe de validación para Azure Stack Hub](azure-stack-validation-report.md).
+* `-CleanReport`: el parámetro al final del comando de ejecución para borrar*AzsReadinessCheckerReport.json de la información del informe previo. Para más información, consulte [Informe de validación para Azure Stack Hub](azure-stack-validation-report.md).
 
 ## <a name="validation-failures"></a>Errores de validación
 
