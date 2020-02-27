@@ -8,12 +8,12 @@ ms.date: 05/03/2019
 ms.author: justinha
 ms.reviewer: unknown
 ms.lastreviewed: 03/29/2019
-ms.openlocfilehash: 94553618afdfdbc2c1be84556d630ae89b63bd3d
-ms.sourcegitcommit: 0a3c8b0bf9c116a5caaeca453a2bbc6e7f7cbfb9
+ms.openlocfilehash: c5e780206f86c2b08298fe267916c67f0108ce4e
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77147708"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77508045"
 ---
 # <a name="differences-between-global-azure-azure-stack-hub-and-azure-stack-hci"></a>Diferencias entre Azure global, Azure Stack Hub y Azure Stack HCI
 
@@ -68,7 +68,7 @@ Para más información sobre Azure Stack Hub, consulte [¿Qué es Azure Stack Hu
 
 ## <a name="azure-stack-hci"></a>Azure Stack HCI
 
-Las soluciones de [Azure Stack HCI](azure-stack-hci-overview.md) le permiten ejecutar las máquinas virtuales localmente y conectarse fácilmente a Azure con una solución de infraestructura hiperconvergida (HCI). Compile y ejecute aplicaciones en la nube mediante servicios de Azure coherentes locales para cumplir los requisitos reglamentarios o técnicos. Además de ejecutar aplicaciones virtualizadas locales, Azure Stack HCI permite reemplazar y consolidar la infraestructura de servidor con caducidad y conectarse a los servicios en la nube de Azure mediante el Centro de administración de Windows.
+Las soluciones de [Azure Stack HCI](../hci/overview.md) le permiten ejecutar las máquinas virtuales localmente y conectarse fácilmente a Azure con una solución de infraestructura hiperconvergida (HCI). Compile y ejecute aplicaciones en la nube mediante servicios de Azure coherentes locales para cumplir los requisitos reglamentarios o técnicos. Además de ejecutar aplicaciones virtualizadas locales, Azure Stack HCI permite reemplazar y consolidar la infraestructura de servidor con caducidad y conectarse a los servicios en la nube de Azure mediante el Centro de administración de Windows.
 
 Azure Stack HCI proporciona soluciones de HCI validadas con Hyper-V y espacios de almacenamiento directo y el centro de datos definido por software de Windows Server 2019 (SDDC). El Centro de administración de Windows se usa para la administración y el acceso integrado a servicios de Azure como:
 
