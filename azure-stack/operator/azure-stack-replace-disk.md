@@ -2,18 +2,18 @@
 title: Reemplazo de un disco físico
 titleSuffix: Azure Stack Hub
 description: Aprenda a reemplazar un disco físico en Azure Stack Hub.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 12/02/2019
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 12/02/2019
-ms.openlocfilehash: 9b94a094440b6c84d95500b23074a5fec12727e5
-ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
+ms.openlocfilehash: 107b171dbe3fd55e61748dcde6fe6bcfc90ea16e
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 02/20/2020
-ms.locfileid: "77491941"
+ms.locfileid: "77509626"
 ---
 # <a name="replace-a-physical-disk-in-azure-stack-hub"></a>Reemplazo de un disco físico en Azure Stack Hub
 

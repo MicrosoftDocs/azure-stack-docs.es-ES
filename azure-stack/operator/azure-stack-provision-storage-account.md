@@ -2,17 +2,17 @@
 title: Creación de cuentas de almacenamiento en Azure Stack Hub
 titleSuffix: Azure Stack Hub
 description: Aprenda a crear cuentas de almacenamiento en Azure Stack Hub.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: conceptual
 ms.date: 1/22/2020
 ms.author: inhenkel
 ms.lastreviewed: 01/18/2019
-ms.openlocfilehash: 87e58fc05794363e630a2b8a474f3a0bdb174bb4
-ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
+ms.openlocfilehash: bc638be874518bec2e7b8a6db9935f93aa33e30f
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 02/20/2020
-ms.locfileid: "77491958"
+ms.locfileid: "77509694"
 ---
 # <a name="create-storage-accounts-in-azure-stack-hub"></a>Creación de cuentas de almacenamiento en Azure Stack Hub
 

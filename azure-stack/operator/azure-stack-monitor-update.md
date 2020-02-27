@@ -1,18 +1,18 @@
 ---
 title: Supervisión de las actualizaciones de Azure Stack Hub mediante el punto de conexión con privilegios
 description: Aprenda a utilizar el punto de conexión con privilegios para supervisar el estado de las actualizaciones de los sistemas integrados de Azure Stack Hub.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 1/22/2020
 ms.author: inhenkel
 ms.reviewer: fiseraci
 ms.lastreviewed: 11/05/2018
-ms.openlocfilehash: f320973cfd5b7e9117eeeeb1463ee9b45cb5448f
-ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
+ms.openlocfilehash: 170bb21a8facd66fc5f581729a19f436fbd16fc1
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 02/20/2020
-ms.locfileid: "77492179"
+ms.locfileid: "77508011"
 ---
 # <a name="monitor-updates-in-azure-stack-hub-using-the-privileged-endpoint"></a>Supervisión de las actualizaciones de Azure Stack Hub mediante el punto de conexión con privilegios
 

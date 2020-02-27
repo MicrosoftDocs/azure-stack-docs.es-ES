@@ -1,18 +1,18 @@
 ---
 title: Integración de Azure Stack Hub con soluciones de supervisión mediante el reenvío de syslog
 description: Aprenda a integrar Azure Stack Hub con soluciones de supervisión mediante el reenvío de syslog.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 01/10/2020
 ms.author: inhenkel
 ms.reviewer: fiseraci
 ms.lastreviewed: 01/10/2020
-ms.openlocfilehash: 43398b4ef745c9ad0d72274a9a3ef400c4669053
-ms.sourcegitcommit: 3974fc544986a5eccfac0ba7c4441b05279ae226
+ms.openlocfilehash: 21a4d50c4ebb191e32c8c5a853359880bcdb1392
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001628"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77509796"
 ---
 # <a name="integrate-azure-stack-hub-with-monitoring-solutions-using-syslog-forwarding"></a>Integración de Azure Stack Hub con soluciones de supervisión mediante el reenvío de syslog
 

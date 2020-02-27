@@ -1,18 +1,18 @@
 ---
 title: Capacidad de proceso de Azure Stack Hub
 description: Obtenga más información sobre el planeamiento de la capacidad de proceso para las implementaciones de Azure Stack Hub.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 07/16/2019
 ms.author: inhenkel
 ms.reviewer: prchint
 ms.lastreviewed: 06/13/2019
-ms.openlocfilehash: c2745aba7d58ec6afda404307e8d3dbd47b62846
-ms.sourcegitcommit: 0a3c8b0bf9c116a5caaeca453a2bbc6e7f7cbfb9
+ms.openlocfilehash: 0b0c1db89dba68b818d13056c141ae22db342000
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77147855"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77509422"
 ---
 # <a name="azure-stack-hub-compute-capacity"></a>Capacidad de proceso de Azure Stack Hub
 

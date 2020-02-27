@@ -2,18 +2,18 @@
 title: Informe de validación de Azure Stack Hub
 titleSuffix: Azure Stack Hub
 description: Use la herramienta Azure Stack Hub Readiness Checker para generar un informe de validación.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: conceptual
 ms.date: 01/07/2020
 ms.author: inhenkel
 ms.reviewer: unknown
 ms.lastreviewed: 10/23/2018
-ms.openlocfilehash: a2264608c295a29fecc5335ce4970499dd10c895
-ms.sourcegitcommit: 0a3c8b0bf9c116a5caaeca453a2bbc6e7f7cbfb9
+ms.openlocfilehash: c64c9b4b5a6f73f5dd8f5e323ff16a44589173cc
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77147726"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77508163"
 ---
 # <a name="azure-stack-hub-validation-report"></a>Informe de validación de Azure Stack Hub
 

@@ -1,18 +1,18 @@
 ---
 title: Instalación de actualizaciones de Azure Stack Hub
 description: Aprenda a instalar actualizaciones de Azure Stack Hub.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 1/22/2020
 ms.author: inhenkel
 ms.lastreviewed: 09/10/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: bf65ebb1e0d9969062e63cb7e95920c89ece6437
-ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
+ms.openlocfilehash: 61f4e147d587a50793169575eac8abc6d33fce28
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 02/20/2020
-ms.locfileid: "77492247"
+ms.locfileid: "77509456"
 ---
 # <a name="install-azure-stack-hub-updates"></a>Instalación de actualizaciones de Azure Stack Hub
 

@@ -4,18 +4,18 @@ titleSuffix: Azure Stack Hub
 description: Aprenda a validar certificados PKI de Azure Stack Hub para sistemas integrados mediante la herramienta Azure Stack Hub Readiness Checker.
 services: azure-stack
 documentationcenter: ''
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 07/23/2019
 ms.author: inhenkel
 ms.reviewer: ppacent
 ms.lastreviewed: 01/08/2019
-ms.openlocfilehash: 4ec3732df372e0b768b3f52c082cae5db932a36c
-ms.sourcegitcommit: 5f53810d3c5917a3a7b816bffd1729a1c6b16d7f
+ms.openlocfilehash: 40539890c6adc431ffba95358855db0e7d9f17d8
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76972537"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77508096"
 ---
 # <a name="validate-azure-stack-hub-pki-certificates"></a>Preparación de certificados PKI de Azure Stack Hub
 
@@ -47,7 +47,7 @@ La herramienta Readiness Checker realiza las siguientes validaciones de certific
 > [!IMPORTANT]  
 > El certificado PKI es un archivo PFX y una contraseña que deben tratarse como información confidencial.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerrequisitos
 
 El sistema debe cumplir los siguientes requisitos previos para poder validar los certificados PKI de una implementación de Azure Stack Hub:
 
@@ -93,7 +93,7 @@ Siga estos pasos para preparar y validar los certificados PKI de Azure Stack Hub
 
     ```powershell  
     $pfxPassword = Read-Host -Prompt "Enter PFX Password" -AsSecureString 
-    Invoke-AzsCertificateValidation -CertificateType Deployment -CertificatePath C:\Certificates\Deployment -pfxPassword $pfxPassword -RegionName east -FQDN azurestack.contoso.com -IdentitySystem AAD  
+    Invoke-AzsCertificateValidation -CertificateType Deployment -CertificatePath C:\Certificates\Deployment -pfxPassword $pfxPassword -RegionName east -FQDN azurestack.contoso.com  
     ```
 
 4. Compruebe la salida y asegúrese de que todos los certificados pasen todas las pruebas. Por ejemplo:
@@ -238,7 +238,7 @@ Siga estos pasos para preparar y validar los certificados PKI de Azure Stack Hub
 
 | Directorio | Certificado |
 | ---    | ----        |
-| acsBlob | `wildcard_blob_<region>_<externalFQDN>` |
+| ACSBlob | `wildcard_blob_<region>_<externalFQDN>` |
 | ACSQueue  |  `wildcard_queue_<region>_<externalFQDN>` |
 | ACSTable  |  `wildcard_table_<region>_<externalFQDN>` |
 | Host de extensiones de administración  |  `wildcard_adminhosting_<region>_<externalFQDN>` |

@@ -1,18 +1,18 @@
 ---
 title: Preparación de un paquete de actualización de Azure Stack Hub
 description: Aprenda a preparar un paquete de actualización de Azure Stack Hub.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 1/22/2020
 ms.author: inhenkel
 ms.lastreviewed: 09/10/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: d0ad0cb344b509b5f2b6a5b959a9fdf01bf75c4e
-ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
+ms.openlocfilehash: 5532345fe383b19bb96ea2f240634e15004a22b4
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 02/20/2020
-ms.locfileid: "77491244"
+ms.locfileid: "77509031"
 ---
 # <a name="prepare-an-azure-stack-hub-update-package"></a>Preparación de un paquete de actualización de Azure Stack Hub
 

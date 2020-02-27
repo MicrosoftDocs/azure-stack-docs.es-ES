@@ -4,18 +4,18 @@ titleSuffix: Azure Stack Hub
 description: Aprenda a usar Azure Stack Hub Readiness Checker para validar la integración de AD FS con Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 06/10/2019
 ms.author: inhenkel
 ms.reviewer: jerskine
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: 786ee290aba91c855211d3f470f439c3e9b2c01a
-ms.sourcegitcommit: 5f53810d3c5917a3a7b816bffd1729a1c6b16d7f
+ms.openlocfilehash: 1aec8cbf3502321766b79a110b48e1c4cc0cedf1
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76972592"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77508708"
 ---
 # <a name="validate-ad-fs-integration-for-azure-stack-hub"></a>Validación de la integración de AD FS para Azure Stack Hub
 
@@ -33,7 +33,7 @@ Para más información sobre los requisitos de la integración de Azure Stack Hu
 
 Descargue la versión más reciente de la herramienta Azure Stack Hub Readiness Checker (AzsReadinessChecker) desde la [Galería de PowerShell](https://aka.ms/AzsReadinessChecker).  
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerrequisitos
 
 Deben cumplirse los siguientes requisitos previos.
 

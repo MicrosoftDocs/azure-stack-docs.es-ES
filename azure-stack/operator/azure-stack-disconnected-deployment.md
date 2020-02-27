@@ -1,18 +1,18 @@
 ---
 title: Decisiones de implementación desconectada de Azure en sistemas integrados de Azure Stack Hub
 description: Información acerca de la implementación desconectada en Azure de los sistemas integrados de Azure Stack Hub y las decisiones de planeamiento que se deben tener en cuenta.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 11/01/2019
 ms.author: inhenkel
 ms.reviewer: wfayed
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: aa310ffa3896e5468529e8e579328c52a9afa9c8
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: b03d00d4f90a16bbb1a299902097e23607e488b8
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882320"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77510017"
 ---
 # <a name="azure-disconnected-deployment-planning-decisions-for-azure-stack-hub-integrated-systems"></a>Decisiones de planeamiento de implementación desconectada de Azure en sistemas integrados de Azure Stack Hub
 Una vez que haya decidido [cómo va a integrar Azure Stack Hub en el entorno de nube híbrida](azure-stack-connection-models.md), puede concluir sus decisiones sobre la implementación de Azure Stack Hub.

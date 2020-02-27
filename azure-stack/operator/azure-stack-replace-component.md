@@ -2,18 +2,18 @@
 title: Sustitución de un componente de hardware en un nodo de la unidad de escalado de Azure Stack Hub
 titleSuffix: Azure Stack Hub
 description: Obtenga información sobre cómo reemplazar un componente de hardware en un sistema integrado de Azure Stack Hub.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 07/18/2019
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 07/18/2019
-ms.openlocfilehash: 8b17807e5d05f84d53158f71cc6cc345dbc70904
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 0f0838d64dd205d56b0a82d487176296805f4ff3
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76881374"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77509609"
 ---
 # <a name="replace-a-hardware-component-on-an-azure-stack-hub-scale-unit-node"></a>Sustitución de un componente de hardware en un nodo de la unidad de escalado de Azure Stack Hub
 

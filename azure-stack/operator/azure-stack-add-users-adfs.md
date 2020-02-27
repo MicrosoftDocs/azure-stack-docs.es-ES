@@ -1,18 +1,18 @@
 ---
 title: Adición de usuarios de Azure Stack Hub a AD FS
 description: Obtenga información sobre cómo agregar usuarios de Azure Stack Hub para implementaciones de Servicios de federación de Active Directory (AD FS).
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 06/03/2019
 ms.author: inhenkel
 ms.reviewer: unknown
 ms.lastreviewed: 06/03/2019
-ms.openlocfilehash: 7d11ae849a5ecc51c1506e8d978510884b752a9a
-ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
+ms.openlocfilehash: fc60c23f47ea5e1afd68c6e4f6299d0bf83b4a24
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76890381"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77509405"
 ---
 # <a name="add-a-new-azure-stack-hub-user-account-in-active-directory-federation-services-ad-fs"></a>Adición de una nueva cuenta de usuario de Azure Stack Hub en los Servicios de federación de Active Directory (AD FS)
 

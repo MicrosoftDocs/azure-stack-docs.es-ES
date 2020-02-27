@@ -1,18 +1,18 @@
 ---
 title: Configuración del servidor de hora para Azure Stack Hub
 description: Obtenga información acerca de cómo configurar el servidor de hora para Azure Stack Hub.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 2/19/2020
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 10/10/2019
-ms.openlocfilehash: 891e034f691f5e8e1e087015aff36107c649198c
-ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
+ms.openlocfilehash: 74781cf3e58b5ba3f2c1bb090dd15bb5aad7ca2a
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 02/20/2020
-ms.locfileid: "77492196"
+ms.locfileid: "77508980"
 ---
 # <a name="configure-the-time-server-for-azure-stack-hub"></a>Configuración del servidor de hora para Azure Stack Hub
 

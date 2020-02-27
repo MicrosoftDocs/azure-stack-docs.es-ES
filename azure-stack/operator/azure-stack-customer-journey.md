@@ -1,24 +1,24 @@
 ---
 title: Tutorial acerca de la integración de Azure Stack Hub en el centro de datos
 description: Aprenda qué cabe esperar para realizar una implementación correcta in situ de Azure Stack Hub en el centro de datos, desde el planeamiento a la etapa posterior a la implementación.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 11/07/2019
 ms.author: inhenkel
 ms.reviewer: asganesh
 ms.lastreviewed: 11/07/2019
-ms.openlocfilehash: 6711483384ba9985ced7396d19e025e0ed3240c6
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: ba68a3045876e8dd6e23f430cd23edc429cb4e31
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882510"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77510068"
 ---
 # <a name="azure-stack-hub-datacenter-integration-walkthrough"></a>Tutorial acerca de la integración de Azure Stack Hub en el centro de datos
 
 En este artículo se describe el proceso completo para la integración de Azure Stack Hub en el centro de datos, desde la compra hasta el soporte técnico posterior a la implementación. La integración es un proyecto colaborativo entre el cliente, un proveedor de soluciones y Microsoft. Haga clic en las siguientes pestañas para ver los pasos específicos que debe dar cada miembro del proyecto y consulte las secciones siguientes para obtener un resumen de las distintas fases de la escala de tiempo del proyecto. 
 
-# <a name="customertabcustomer"></a>[Cliente](#tab/customer)
+# <a name="customer"></a>[Cliente](#tab/customer)
 
 1. Describir los requisitos y casos de uso
 1. Determinar el modelo de facturación
@@ -29,7 +29,7 @@ En este artículo se describe el proceso completo para la integración de Azure 
 1. Proporcionar información de suscripción durante la implementación
 1. Resolver cualquier pregunta sobre los datos proporcionados
 
-# <a name="partnertabpartner"></a>[Asociado](#tab/partner)
+# <a name="partner"></a>[Asociado](#tab/partner)
 
 1. Recomendar soluciones opcionales según los requisitos del cliente
 1. Proponer una prueba de concepto (POC) 
@@ -48,7 +48,7 @@ En este artículo se describe el proceso completo para la integración de Azure 
 1. Implementar Azure Stack Hub
 1. Entregar al cliente
 
-# <a name="microsofttabmicro"></a>[Microsoft](#tab/micro)
+# <a name="microsoft"></a>[Microsoft](#tab/micro)
 
 1. Colaborar con el asociado en el soporte técnico preventa
 2. Preparar las licencias de software y los contratos según sea necesario

@@ -1,18 +1,18 @@
 ---
 title: Configuración de los controles de seguridad de Azure Stack Hub
 description: Aprenda a configurar los controles de seguridad de Azure Stack Hub
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 06/17/2019
 ms.author: inhenkel
 ms.reviewer: fiseraci
 ms.lastreviewed: 06/17/2019
-ms.openlocfilehash: dae9f8822924f37ae9a46d2be71b7525d8bf3982
-ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
+ms.openlocfilehash: cd63908eceffb5072a41ae200ca2a544728b5971
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76890194"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77509524"
 ---
 # <a name="configure-azure-stack-hub-security-controls"></a>Configuración de los controles de seguridad de Azure Stack Hub
 

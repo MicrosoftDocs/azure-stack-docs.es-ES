@@ -2,18 +2,18 @@
 title: Solución de problemas comunes con los certificados PKI
 titleSuffix: Azure Stack Hub
 description: Corrija problemas comunes con los certificados PKI de Azure Stack Hub mediante Azure Stack Hub Readiness Checker.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: conceptual
 ms.date: 10/03/2019
 ms.author: inhenkel
 ms.reviewer: unknown
 ms.lastreviewed: 11/19/2018
-ms.openlocfilehash: 942a5f4145fbee0d7a012350d88601554b44834c
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 1adf2bdef69549393717fd5705858376447cd710
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76881380"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77509643"
 ---
 # <a name="fix-common-issues-with-azure-stack-hub-pki-certificates"></a>Solución de problemas comunes con los certificados PKI de Azure Stack Hub
 
@@ -94,7 +94,7 @@ La herramienta **AzsReadinessChecker** contiene un cmdlet asistente denominado *
 
 **Repair-AzsPfxCertificate** no sirve de ayuda si hay que generar una nueva solicitud de firma de certificado y volver a emitir un certificado.
 
-### <a name="prerequisites"></a>Prerequisites
+### <a name="prerequisites"></a>Prerrequisitos
 
 Deben cumplirse los siguientes requisitos previos en el equipo donde se ejecuta la herramienta:
 

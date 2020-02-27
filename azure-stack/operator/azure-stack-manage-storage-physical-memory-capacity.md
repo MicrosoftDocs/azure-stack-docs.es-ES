@@ -1,18 +1,18 @@
 ---
 title: Administración de la capacidad de memoria física en Azure Stack Hub
 description: Aprenda a supervisar y administrar la memoria física y la capacidad en Azure Stack Hub.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: conceptual
 ms.date: 1/22/2020
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 87c6bcc7e82ebc7d0f5a017200cccc2e702d6aa7
-ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
+ms.openlocfilehash: 15800fa8476640b95f08848c9ffc63ff89df6d0a
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 02/20/2020
-ms.locfileid: "77492213"
+ms.locfileid: "77509762"
 ---
 # <a name="manage-physical-memory-capacity-in-azure-stack-hub"></a>Administración de la capacidad de memoria física en Azure Stack Hub
 

@@ -1,18 +1,18 @@
 ---
 title: Consideraciones sobre el planeamiento de la integración del centro de datos con los sistemas integrados de Azure Stack Hub
 description: Aprenda a planear y preparar la integración del centro de datos con los sistemas integrados de Azure Stack Hub.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 1/22/2020
 ms.author: inhenkel
 ms.reviewer: wfayed
 ms.lastreviewed: 09/12/2018
-ms.openlocfilehash: b4809454f6bec18fbfd2ffdc3f1aa866786199c5
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 5c91ddd19ad384cc2a029dfac21d482470d37bc8
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882467"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77510051"
 ---
 # <a name="datacenter-integration-planning-considerations-for-azure-stack-hub-integrated-systems"></a>Consideraciones sobre el planeamiento de la integración del centro de datos con los sistemas integrados de Azure Stack Hub
 

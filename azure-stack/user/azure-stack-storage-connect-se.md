@@ -7,12 +7,12 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 2776443fac5e30b14154e96618a49bd89d16a7c0
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: c9940e110d86ca1ebeb4739a6beb375381786be2
+ms.sourcegitcommit: a7db4594de43c31fe0c51e60e84fdaf4d41ef1bb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76884400"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77568729"
 ---
 # <a name="connect-storage-explorer-to-an-azure-stack-hub-subscription-or-a-storage-account"></a>Conexión del Explorador de Storage a una suscripción de Azure Stack Hub o una cuenta de almacenamiento
 
@@ -62,7 +62,7 @@ Exporte y, después, importe el certificado de Azure Stack Hub para los sistemas
 
 8. Después de que se reinicie el Explorador de Storage, seleccione el menú **Edit** (Editar) y compruebe si está seleccionada la opción **Target Azure Stack Hub APIs** (API de Azure Stack Hub de destino). Si no lo está, seleccione **Target Azure Stack Hub** (Azure Stack Hub de destino) y reinicie el Explorador de Storage para que el cambio surta efecto. Esta configuración es necesaria para obtener compatibilidad con el entorno de Azure Stack Hub.
 
-    ![Comprobación de que Azure Stack Hub de destino está activada](./media/azure-stack-storage-connect-se/target-azure-stack.png)
+    ![Comprobación de que Azure Stack Hub de destino está activada](./media/azure-stack-storage-connect-se/target-azure-stack-new.png)
 
 ## <a name="connect-to-an-azure-stack-hub-subscription-with-azure-ad"></a>Conexión a una suscripción de Azure Stack Hub con Azure AD
 

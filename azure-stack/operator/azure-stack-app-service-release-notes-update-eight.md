@@ -4,15 +4,15 @@ description: Conozca el contenido de la actualización 8 de App Service en Azur
 author: apwestgarth
 manager: stefsch
 ms.topic: article
-ms.date: 02/10/2020
+ms.date: 02/25/2020
 ms.author: anwestg
 ms.reviewer: ''
-ms.openlocfilehash: daa4cb85ca58a6e638d6d8a1f14ad5e9232f3d72
-ms.sourcegitcommit: a76301a8bb54c7f00b8981ec3b8ff0182dc606d7
+ms.openlocfilehash: b8f6e8868723685eb00d6cfa8424905642697c5a
+ms.sourcegitcommit: 7f185ce838756c879b28e380875be97c62b9a707
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77143667"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77600301"
 ---
 # <a name="app-service-on-azure-stack-hub-update-8-release-notes"></a>Notas de la versión de la actualización 8 de App Service en Azure Stack Hub
 
@@ -232,7 +232,7 @@ Debido a una regresión en esta versión, las bases de datos de App Service (app
     $builder = New-Object System.Data.SqlClient.SqlConnectionStringBuilder -ArgumentList (Get-AppServiceConnectionString -Type Hosting)
     $conn = New-Object System.Data.SqlClient.SqlConnection -ArgumentList $builder.ToString()
 
-    $siteManager.Workers | ForEach-Object {
+    $siteManager.RoleServers | Where-Object {$_.IsWorker} | ForEach-Object {
         $worker = $_
         $dbUserName = "WebWorker_" + $worker.Name
 

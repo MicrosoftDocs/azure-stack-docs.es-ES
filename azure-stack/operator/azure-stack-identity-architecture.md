@@ -1,18 +1,18 @@
 ---
 title: Arquitectura de identidad para Azure Stack Hub
 description: Obtenga información sobre la arquitectura de identidad para Azure Stack Hub y las diferencias entre Azure AD y AD FS.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: conceptual
 ms.date: 05/09/2019
 ms.author: inhenkel
 ms.reviewer: fiseraci
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: a3846deb266b610a1f09b32df549e49c88f19b76
-ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
+ms.openlocfilehash: 528e008c5c3c166979ba4c3d4fa15d6a94cc0f87
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76890313"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77509932"
 ---
 # <a name="identity-architecture-for-azure-stack-hub"></a>Arquitectura de identidad para Azure Stack Hub
 
@@ -25,14 +25,14 @@ El proveedor de identidad que elija puede limitar las opciones, incluida la comp
 |Funcionalidad o escenario        |Azure AD  |AD FS  |
 |------------------------------|----------|-------|
 |Conectado a Internet     |Sí       |Opcional|
-|Compatibilidad con arquitectura multiinquilino     |Sí       |No      |
+|Compatibilidad con arquitectura multiinquilino     |Sí       |Sin      |
 |Ofrecer elementos en Marketplace |Sí       |Sí (requiere el uso de la herramienta [Marketplace Syndication sin conexión](azure-stack-download-azure-marketplace-item.md#disconnected-or-a-partially-connected-scenario))|
 |Compatibilidad con la biblioteca de autenticación de Active Directory (ADAL) |Sí |Sí|
 |Compatibilidad con herramientas como la CLI de Azure, Visual Studio y PowerShell  |Sí |Sí|
-|Creación de entidades de servicio mediante Azure Portal     |Sí |No|
+|Creación de entidades de servicio mediante Azure Portal     |Sí |Sin|
 |Creación de entidades de servicio con certificados      |Sí |Sí|
 |Creación de entidades de servicio con secretos (claves)    |Sí |Sí|
-|Las aplicaciones pueden usar el servicio Graph           |Sí |No|
+|Las aplicaciones pueden usar el servicio Graph           |Sí |Sin|
 |Las aplicaciones pueden utilizar el proveedor de identidades para iniciar sesión |Sí |Sí (requiere que las aplicaciones se federen con instancias de AD FS locales) |
 
 ## <a name="topologies"></a>Topologías
