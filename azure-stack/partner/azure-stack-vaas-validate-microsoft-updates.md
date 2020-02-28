@@ -1,6 +1,7 @@
 ---
-title: Validación de las actualizaciones de software de Microsoft en la validación como servicio de Azure Stack Hub
-description: Aprenda a validar las actualizaciones de software de Microsoft con la validación como servicio.
+title: Validación de las actualizaciones de software de Microsoft
+titleSuffix: Azure Stack Hub
+description: Aprenda a validar las actualizaciones de software de Microsoft con la validación como servicio de Azure Stack Hub.
 author: mattbriggs
 ms.topic: tutorial
 ms.date: 10/29/2019
@@ -8,12 +9,12 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 10/29/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 8e09160245551ee83f631360931c8e70bac4318e
-ms.sourcegitcommit: a76301a8bb54c7f00b8981ec3b8ff0182dc606d7
+ms.openlocfilehash: a8e0b3ee678fc56a94a947ab6d390d9e99296977
+ms.sourcegitcommit: 4e1c948ae4a498bd730543b0704bbc2b0d88e1ec
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77143917"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625363"
 ---
 # <a name="validate-software-updates-from-microsoft"></a>Validación de las actualizaciones de software de Microsoft
 
@@ -21,13 +22,13 @@ ms.locfileid: "77143917"
 
 Microsoft lanzará periódicamente actualizaciones del software de Azure Stack Hub. Estas actualizaciones se proporcionan para los asociados de ingeniería conjunta de Azure Stack Hub. Las actualizaciones se proporcionan antes de que estén públicamente disponibles. Puede comprobar las actualizaciones en función de su solución y proporcionar comentarios a Microsoft.
 
-Las actualizaciones de software de Microsoft en Azure Stack Hub se designan utilizando una convención de nomenclatura, por ejemplo, 1803 indica la actualización de marzo de 2018. Para obtener información acerca de la directiva de actualización de Azure Stack Hub, la cadencia y las notas de la versión disponibles, consulte [Directiva de mantenimiento de Azure Stack Hub](../operator/azure-stack-servicing-policy.md).
+Las actualizaciones de software de Microsoft en Azure Stack Hub se designan mediante una convención de nomenclatura. Por ejemplo, el nombre 1803 indica que la actualización es de marzo de 2018. Para más información acerca de la directiva de mantenimiento de Azure Stack Hub y las notas de la versión, consulte [Directiva de mantenimiento de Azure Stack Hub](../operator/azure-stack-servicing-policy.md).
 
 ## <a name="prerequisites"></a>Prerrequisitos
 
-Antes de ejecutar el proceso de actualización mensual en VaaS, debe estar familiarizado con los siguientes elementos:
+Antes de ejecutar el proceso de actualización mensual en la validación como servicio, debe estar familiarizado con los siguientes elementos:
 
-- [Validation as a Service key concepts](azure-stack-vaas-key-concepts.md) (Conceptos clave de la validación como servicio)
+- [Conceptos clave de la validación como servicio](azure-stack-vaas-key-concepts.md)
 
 ## <a name="required-tests"></a>Pruebas necesarias
 

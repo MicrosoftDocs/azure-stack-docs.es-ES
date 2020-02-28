@@ -1,6 +1,7 @@
 ---
 title: Implementación del agente local
-description: Implemente al agente local para la validación como servicio de Azure Stack Hub.
+titleSuffix: Azure Stack Hub
+description: Aprenda a implementar el agente local para la validación como servicio de Azure Stack Hub.
 author: mattbriggs
 ms.topic: quickstart
 ms.date: 11/11/2019
@@ -8,12 +9,12 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: a5090b60c5aa3c947fbbf1fc887b4fb25900ae98
-ms.sourcegitcommit: a76301a8bb54c7f00b8981ec3b8ff0182dc606d7
+ms.openlocfilehash: 83ecc620238593f8d01cdc9855305a86b34990a8
+ms.sourcegitcommit: 4e1c948ae4a498bd730543b0704bbc2b0d88e1ec
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77143974"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625278"
 ---
 # <a name="deploy-the-local-agent"></a>Implementación del agente local
 
@@ -38,16 +39,16 @@ Descargue el agente en una máquina que cumpla los requisitos previos del centro
 
 Compruebe que el equipo cumple los criterios siguientes:
 
-- Acceso a todos los puntos de conexión de Azure Stack Hub
-- .NET 4.6 y PowerShell 5.0 instalados
-- Al menos 8 GB de RAM
-- Procesadores de 8 núcleos como mínimo
-- Espacio en disco mínimo de 200 GB
-- Conectividad de red estable a Internet
+- Acceso a todos los puntos de conexión de Azure Stack Hub.
+- .NET 4.6 y PowerShell 5.0 instalados.
+- Al menos 8 GB de RAM.
+- Procesadores de 8 núcleos como mínimo.
+- Espacio en disco mínimo de 200 GB.
+- Conectividad de red estable a Internet.
 
 ### <a name="download-and-install-the-local-agent"></a>Descarga e instalación del agente local
 
-1. Abra Windows PowerShell en un símbolo del sistema con privilegios elevados en el equipo que se usará para ejecutar las pruebas.
+1. Abra Windows PowerShell en un símbolo del sistema con privilegios elevados en la máquina que se usará para ejecutar las pruebas.
 2. Ejecute el siguiente comando para descargar e instalar las dependencias del agente local y copiar las imágenes del repositorio de imágenes públicas (PIR) (disco duro virtual del sistema operativo) en el entorno de Azure Stack Hub.
 
     ```powershell
@@ -78,30 +79,30 @@ Compruebe que el equipo cumple los criterios siguientes:
     ```
 
 > [!Note]  
-> El cmdlet Install-VaaSPrerequisites descarga archivos de imagen de máquina virtual grandes. Si la red funciona con lentitud, puede descargar archivos en el servidor de archivos local y agregar manualmente las imágenes de las máquinas virtuales a su entorno de pruebas. Para más información, consulte [Control de situaciones de conectividad de red lenta](azure-stack-vaas-troubleshoot.md#handle-slow-network-connectivity).
+> El cmdlet `Install-VaaSPrerequisites` descarga archivos de imagen de máquina virtual de gran tamaño. Si la red funciona con lentitud, puede descargar archivos en el servidor de archivos local y agregar manualmente las imágenes de las máquinas virtuales a su entorno de pruebas. Para más información, consulte [Control de situaciones de conectividad de red lenta](azure-stack-vaas-troubleshoot.md#handle-slow-network-connectivity).
 
 **Parámetros**
 
 | Parámetro | Descripción |
 | --- | --- |
-| AadServiceAdminUser | Usuario administrador global del inquilino de Azure AD. Por ejemplo, puede ser vaasadmin@contoso.onmicrosoft.com. |
-| AadServiceAdminPassword | Contraseña del usuario administrador global. |
-| CloudAdminUserName | El usuario administrador de la nube puede acceder a comandos permitidos, y ejecutarlos, en el punto de conexión con privilegios. Por ejemplo, puede ser AzusreStack\CloudAdmin. Vea [aquí](azure-stack-vaas-parameters.md) para obtener más información. |
-| CloudAdminPassword | La contraseña de la cuenta de administrador de la nube.|
+| `AadServiceAdminUser` | Usuario administrador global del inquilino de Azure AD. Por ejemplo: vaasadmin@contoso.onmicrosoft.com. |
+| `AadServiceAdminPassword` | Contraseña del usuario administrador global. |
+| `CloudAdminUserName` | El usuario administrador de la nube puede acceder a comandos permitidos, y ejecutarlos, en el punto de conexión con privilegios. Por ejemplo: AzusreStack\CloudAdmin. Para más información, consulte [Parámetros comunes de flujo de trabajo para VaaS](azure-stack-vaas-parameters.md). |
+| `CloudAdminPassword` | La contraseña de la cuenta de administrador de la nube.|
 
-![Requisitos previos para la descarga](media/installing-prereqs.png)
+![Descarga de los requisitos previos del agente local](media/installing-prereqs.png)
 
 ## <a name="perform-sanity-checks-before-starting-the-tests"></a>Realice las comprobaciones de integridad antes de iniciar las pruebas
 
-Las pruebas ejecutan operaciones remotas. La máquina que ejecuta las pruebas debe tener acceso a los puntos de conexión de Azure Stack Hub, si no, las pruebas no funcionarán. Si usa el agente local de VaaS, utilice la máquina donde se va a ejecutar este. Puede comprobar que la máquina tiene acceso a los puntos de conexión de Azure Stack Hub mediante la ejecución de las siguientes comprobaciones:
+Las pruebas ejecutan operaciones remotas. La máquina que ejecuta las pruebas debe tener acceso a los puntos de conexión de Azure Stack Hub ya que, en caso contrario, las pruebas no funcionarán. Si usa el agente local de VaaS, utilice la máquina donde se va a ejecutar este. Puede comprobar que la máquina tiene acceso a los puntos de conexión de Azure Stack Hub mediante la ejecución de las siguientes comprobaciones:
 
-1. Compruebe que es posible acceder al URI base. Abra un símbolo del sistema o shell de Bash y ejecute el siguiente comando, donde `<EXTERNALFQDN>` se reemplaza por el FQDN externo de su entorno:
+1. Compruebe que es posible acceder al URI base. Abra un símbolo del sistema o shell de Bash y ejecute el siguiente comando, donde `<EXTERNALFQDN>` se reemplaza por el nombre de dominio completo externo de su entorno:
 
     ```bash
     nslookup adminmanagement.<EXTERNALFQDN>
     ```
 
-2. Abra un explorador web y vaya a `https://adminportal.<EXTERNALFQDN>` para comprobar que se puede acceder al portal de MAS.
+2. Abra un explorador y vaya a `https://adminportal.<EXTERNALFQDN>` para comprobar que se puede acceder al portal de MAS.
 
 3. Inicie sesión con los valores de nombre y contraseña del administrador de servicios de Azure AD proporcionados al crear la prueba superada.
 
@@ -129,10 +130,10 @@ Las pruebas ejecutan operaciones remotas. La máquina que ejecuta las pruebas de
 
     | Parámetro | Descripción |
     | --- | --- |
-    | CloudAdminUserName | El usuario administrador de la nube puede acceder a comandos permitidos, y ejecutarlos, en el punto de conexión con privilegios. Por ejemplo, puede ser AzusreStack\CloudAdmin. Vea [aquí](azure-stack-vaas-parameters.md) para obtener más información. |
-    | CloudAdminPassword | La contraseña de la cuenta de administrador de la nube.|
-    | VaaSUserId | Identificador de usuario utilizado para iniciar sesión en el portal de VaaS (por ejemplo, NombreUsuario\@Contoso.com) |
-    | VaaSTenantId | Identificador del inquilino de Azure AD para la cuenta de Azure registrada en la validación como servicio. |
+    | `CloudAdminUserName` | El usuario administrador de la nube puede acceder a comandos permitidos, y ejecutarlos, en el punto de conexión con privilegios. Por ejemplo: AzusreStack\CloudAdmin. Para más información, consulte [Parámetros comunes de flujo de trabajo para VaaS](azure-stack-vaas-parameters.md). |
+    | `CloudAdminPassword` | La contraseña de la cuenta de administrador de la nube.|
+    | `VaaSUserId` | El identificador de usuario se utilizó para iniciar sesión en el portal de Azure Stack Hub Validation. Por ejemplo: UserName\@Contoso.com). |
+    | `VaaSTenantId` | Identificador del inquilino de Azure AD para la cuenta de Azure registrada en la validación como servicio. |
 
     > [!Note]  
     > Cuando se ejecuta el agente, el directorio de trabajo actual debe ser la ubicación del archivo ejecutable del host del motor de tareas **Microsoft.VaaSOnPrem.TaskEngineHost.exe**.
@@ -143,10 +144,10 @@ Si no ve notificado ningún error, la ejecución del agente local se realizó co
 
 ![Agente iniciado](media/started-agent.png)
 
-Un agente se identifica de forma única por su nombre. De forma predeterminada, usa el nombre de dominio completo (FQDN) de la máquina donde se inició. Se debe minimizar la ventana para evitar cualquier selección accidental en ella ya que, al cambiar el foco, se detienen todas las demás acciones.
+Un agente se identifica de forma única por su nombre. De forma predeterminada, usa el nombre de dominio completo de la máquina donde se inició. Se debe minimizar la ventana para evitar cualquier selección accidental en ella ya que, al cambiar el foco, se detienen todas las demás acciones.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
 - [Solución de problemas de la validación como servicio](azure-stack-vaas-troubleshoot.md)
 - [Validation as a Service key concepts](azure-stack-vaas-key-concepts.md) (Conceptos clave de la validación como servicio)
-- [Inicio rápido: Uso del portal de validación como servicio para programar la primera prueba](azure-stack-vaas-schedule-test-pass.md)
+- [Inicio rápido: Uso del portal de Azure Stack Hub Validation para programar la primera prueba](azure-stack-vaas-schedule-test-pass.md)

@@ -1,5 +1,6 @@
 ---
-title: Pruebas de comprobación de características interactivas en Azure Stack Hub con validación como servicio
+title: Pruebas de comprobación de características interactivas
+titleSuffix: Azure Stack Hub
 description: Aprenda a crear pruebas de comprobación de características interactivas para Azure Stack Hub con validación como servicio.
 author: mattbriggs
 ms.topic: tutorial
@@ -8,12 +9,12 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 10/28/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 15cd1b2adb4ef1b0e5738b89078beb57d6b7b346
-ms.sourcegitcommit: a76301a8bb54c7f00b8981ec3b8ff0182dc606d7
+ms.openlocfilehash: ea2193b29dce09db47d87444400f0d6c5b22dbae
+ms.sourcegitcommit: 4e1c948ae4a498bd730543b0704bbc2b0d88e1ec
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77143835"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625346"
 ---
 # <a name="interactive-feature-verification-testing"></a>Pruebas de comprobación de características interactivas  
 
@@ -24,7 +25,7 @@ Puede usar el marco de pruebas de comprobación de características interactiva 
 En este artículo se describe un escenario manual simple. La prueba permite comprobar la sustitución de un disco en Azure Stack Hub. El marco recopila registros de diagnóstico en cada paso. Los problemas se pueden depurar a medida que se detectan. El marco también permite el uso compartido de registros que generan otras herramientas o procesos, así como proporcionar comentarios acerca del escenario.
 
 > [!Important]  
-> En este artículo se hace referencia a los pasos para realizar la identificación del disco. Esto es simplemente una demostración, ya que los resultados recopilados desde el flujo de trabajo Test Pass (Paso de prueba) no pueden usarse para la verificación de la nueva solución.
+> En este artículo se hace referencia a los pasos para realizar una prueba de identificación del disco. Esto es simplemente una demostración y los resultados recopilados desde el flujo de trabajo de Prueba superada no pueden usarse para la comprobación de la nueva solución.
 
 ## <a name="overview-of-interactive-testing"></a>Introducción a las pruebas interactivas
 
@@ -38,7 +39,7 @@ La realización de una prueba antes de sustituir un disco es un escenario común
 
 ## <a name="create-a-new-test-pass"></a>Creación de una prueba
 
-Si no tiene un paso de prueba disponible, siga las instrucciones para [programar una prueba](azure-stack-vaas-schedule-test-pass.md).
+Si no tiene un flujo de trabajo de Prueba superada disponible, siga las instrucciones para [programar una prueba](azure-stack-vaas-schedule-test-pass.md).
 
 ## <a name="schedule-the-test"></a>Programación de la prueba
 
@@ -47,64 +48,64 @@ Si no tiene un paso de prueba disponible, siga las instrucciones para [programar
     > [!Note]  
     > La versión de la prueba aumentará a medida que se realicen mejoras en la documentación y el material adjunto. Siempre se debe usar la versión más alta, salvo que Microsoft indique lo contrario.
 
-    ![Texto alternativo](media/azure-stack-vaas-interactive-feature-verification/image4.png)
+    ![Prueba de identificación de disco: pruebas interactivas en Azure Stack Hub](media/azure-stack-vaas-interactive-feature-verification/image4.png)
 
-1. Para especificar la contraseña y el nombre de usuario administrador de dominio, seleccione **Edit** (Editar).
+2. Seleccione **Editar** y proporcione la contraseña y el nombre del usuario administrador del dominio.
 
-1. Seleccione el agente de ejecución de pruebas o DVM apropiados en el que ejecutar la prueba.
+3. Seleccione el agente de ejecución de pruebas o DVM apropiados en el que ejecutar la prueba.
 
-    ![Texto alternativo](media/azure-stack-vaas-interactive-feature-verification/image5.png)
+    ![Seleccionar un agente de ejecución de pruebas: pruebas interactivas en Azure Stack Hub](media/azure-stack-vaas-interactive-feature-verification/image5.png)
 
-1. Seleccione **Submit** (Enviar) para iniciar la prueba.
+4. Seleccione **Submit** (Enviar) para iniciar la prueba.
 
-    ![Texto alternativo](media/azure-stack-vaas-interactive-feature-verification/image6.png)
+    ![Revisar y enviar prueba: pruebas interactivas en Azure Stack Hub](media/azure-stack-vaas-interactive-feature-verification/image6.png)
 
-1. Acceda la interfaz de usuario para la prueba interactiva desde el agente seleccionado en el paso anterior.
+5. Acceda la interfaz de usuario para la prueba interactiva desde el agente seleccionado en el paso anterior.
 
-    ![Texto alternativo](media/azure-stack-vaas-interactive-feature-verification/image8.png)
+    ![Prueba de identificación de disco: pruebas interactivas en Azure Stack Hub](media/azure-stack-vaas-interactive-feature-verification/image8.png)
 
-1. En los vínculos **Documentation**(Documentación) y **Validation** (Validación) encontrará instrucciones de Microsoft para actuar en este escenario.
+6. En los vínculos **Documentation**(Documentación) y **Validation** (Validación) encontrará instrucciones de Microsoft para actuar en este escenario.
 
-    ![Texto alternativo](media/azure-stack-vaas-interactive-feature-verification/image9.png)
+    ![Vínculos de Documentación y Validación en Prueba de identificación de disco](media/azure-stack-vaas-interactive-feature-verification/image9.png)
 
-1. Seleccione **Next** (Siguiente).
+7. Seleccione **Next** (Siguiente).
 
-    ![Texto alternativo](media/azure-stack-vaas-interactive-feature-verification/image10.png)
+    ![Seleccionar Siguiente: pruebas interactivas en Azure Stack Hub](media/azure-stack-vaas-interactive-feature-verification/image10.png)
 
-1. Siga las instrucciones para ejecutar el script de comprobaciones previas.
+8. Siga las instrucciones para ejecutar el script de comprobaciones previas.
 
-    ![Texto alternativo](media/azure-stack-vaas-interactive-feature-verification/image11.png)
+    ![Ejecutar el script de comprobaciones previas: pruebas interactivas en Azure Stack Hub](media/azure-stack-vaas-interactive-feature-verification/image11.png)
 
-1. Una vez que dicho script se haya completado correctamente, ejecute el escenario manual (sustitución del disco) tal como se indica en los vínculos **Documentation** (Documentación) y **Validation** (Validación) de la pestaña **Information** (Información).
+9. Una vez que este script se haya completado correctamente, ejecute el escenario manual (sustitución del disco) tal como se indica en los vínculos **Documentación** y **Validación** de la pestaña **Información**.
 
-    ![Texto alternativo](media/azure-stack-vaas-interactive-feature-verification/image12.png)
+    ![Ejecutar el escenario manual: pruebas interactivas en Azure Stack Hub](media/azure-stack-vaas-interactive-feature-verification/image12.png)
 
     > [!Important]  
-    > No cierre el cuadro de diálogo mientras actúa en el escenario manual.
+    > No cierre el cuadro de diálogo mientras ejecuta el escenario manual.
 
-1. Cuando haya terminado, siga las instrucciones para ejecutar el script de comprobaciones posteriores.
+10. Cuando haya terminado, siga las instrucciones para ejecutar el script de comprobaciones posteriores.
 
-    ![Texto alternativo](media/azure-stack-vaas-interactive-feature-verification/image13.png)
+    ![Ejecutar el script de comprobaciones posteriores: pruebas interactivas en Azure Stack Hub](media/azure-stack-vaas-interactive-feature-verification/image13.png)
 
-1. Cuando el escenario manual se haya completado correctamente (sustitución del disco), seleccione **Next** (Siguiente).
+11. Cuando el escenario manual se haya completado correctamente (sustitución del disco), seleccione **Enviar**.
 
-    ![Texto alternativo](media/azure-stack-vaas-interactive-feature-verification/image14.png)
+    ![Enviar la prueba de identificación de disco: pruebas interactivas en Azure Stack Hub](media/azure-stack-vaas-interactive-feature-verification/image14.png)
 
     > [!Important]  
     > Si cierra la ventana, la prueba se detendrá antes de haber acabado.
 
-1. Proporcione comentarios sobre la experiencia de las pruebas. Estas preguntas ayudarán a Microsoft a evaluar la tasa de éxito y la calidad de la versión del escenario.
+12. Proporcione comentarios sobre la experiencia de las pruebas. Estas preguntas ayudarán a Microsoft a evaluar la tasa de éxito y la calidad de la versión del escenario.
 
-    ![Texto alternativo](media/azure-stack-vaas-interactive-feature-verification/image15.png)
+    ![Proporcionar comentarios sobre la experiencia de prueba interactiva en Azure Stack Hub](media/azure-stack-vaas-interactive-feature-verification/image15.png)
 
-1. Adjunte los archivos de registro que desee enviar a Microsoft.
+13. Adjunte los archivos de registro que desee enviar a Microsoft.
 
-    ![Texto alternativo](media/azure-stack-vaas-interactive-feature-verification/image16.png)
+    ![Adjuntar archivos de registro: pruebas interactivas en Azure Stack Hub](media/azure-stack-vaas-interactive-feature-verification/image16.png)
 
-1. Acepte el CLUF del envío de comentarios.
+14. Acepte el CLUF del envío de comentarios.
 
-1. Seleccione **Submit** (Enviar) para enviar los resultados a Microsoft.
+15. Seleccione **Submit** (Enviar) para enviar los resultados a Microsoft.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Supervisión y administración de pruebas en el portal de VaaS](azure-stack-vaas-monitor-test.md)
+- [Supervisión y administración de pruebas en el portal de Azure Stack Hub Validation](azure-stack-vaas-monitor-test.md)

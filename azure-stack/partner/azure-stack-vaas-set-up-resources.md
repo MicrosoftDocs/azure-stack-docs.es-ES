@@ -1,6 +1,7 @@
 ---
-title: 'Tutorial: Configuración de recursos para la validación como servicio'
-description: En este tutorial, aprenderá a configurar recursos para la validación como servicio.
+title: Configuración de Azure AD y recursos de almacenamiento para VaaS
+titleSuffix: Azure Stack Hub
+description: Aprenda a configurar Azure AD y los recursos de almacenamiento para la validación como servicio de Azure Stack Hub.
 author: mattbriggs
 ms.topic: tutorial
 ms.date: 1/22/2020
@@ -8,18 +9,18 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/26/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: 7c47c6810802cce31793aae3be3a1502acb5f102
-ms.sourcegitcommit: a76301a8bb54c7f00b8981ec3b8ff0182dc606d7
+ms.openlocfilehash: 3dc72eb4dfac10e6e199b2cbfe9668666f83e122
+ms.sourcegitcommit: 4e1c948ae4a498bd730543b0704bbc2b0d88e1ec
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77143929"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625312"
 ---
-# <a name="tutorial-set-up-resources-for-validation-as-a-service"></a>Tutorial: Configuración de recursos para la validación como servicio
+# <a name="set-up-azure-ad-and-storage-resources-for-validation-as-a-service"></a>Configuración de Azure AD y los recursos de almacenamiento para la validación como servicio
 
 [!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 
-Validation as a Service (VaaS) es un servicio de Azure que sirve para validar y admitir soluciones de Azure Stack Hub en el mercado. Siga este artículo antes de usar el servicio para validar la solución.
+Validación como servicio (VaaS) es un servicio de Azure que sirve para validar y proporcionar respaldo a soluciones de Azure Stack Hub en el mercado. Siga este artículo antes de usar el servicio para validar la solución.
 
 En este tutorial, aprenderá a:
 
@@ -55,7 +56,7 @@ Cree un inquilino para que la organización lo use para acceder a los servicios 
    4. Seleccione **Usuarios y grupos**. En la hoja **Azure Stack Hub Validation Service: Usuarios y grupos** se enumeran los usuarios con permiso para usar la aplicación.
    5. Seleccione **+ Agregar usuario** para agregar un usuario del inquilino y asignar un rol.
 
-      Si quiere aislar recursos y acciones de VaaS entre diferentes grupos dentro de una organización, puede crear varios directorios de inquilino de Azure AD.
+      Si quiere aislar recursos y acciones de la validación como servicio entre diferentes grupos dentro de una organización, puede crear varios directorios de inquilino de Azure AD.
 
 ### <a name="register-your-tenant"></a>Registro del inquilino
 
@@ -69,17 +70,17 @@ Este proceso le otorga al inquilino autorización para la aplicación **Azure St
     | Nombre del directorio del inquilino de Azure AD | Nombre del directorio de inquilino de Azure AD que se registra. |
     | Identificador del directorio de inquilino de Azure AD | GUID del directorio de inquilino de Azure AD asociado con el directorio. Para obtener información acerca de cómo encontrar el identificador del directorio de inquilino de Azure AD, consulte [Get tenant ID](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#get-values-for-signing-in) (Obtención del identificador de inquilino). |
 
-2. Espere la confirmación del equipo de Azure Stack Hub Validation para comprobar que el inquilino puede usar el portal de VaaS.
+2. Espere la confirmación del equipo de Azure Stack Hub Validation para comprobar que el inquilino puede usar el portal de este servicio.
 
-### <a name="consent-to-the-vaas-application"></a>Consentimiento a la aplicación VaaS
+### <a name="consent-to-the-vaas-app"></a>Consentimiento a la aplicación de validación como servicio
 
 Como administrador de Azure AD, proporcione a la aplicación VaaS de Azure AD los permisos necesarios en nombre de su inquilino:
 
-1. Use las credenciales de administrador global del inquilino para iniciar sesión en el [portal de VaaS](https://azurestackvalidation.com/). 
+1. Use las credenciales de administrador global del inquilino para iniciar sesión en el [portal de Azure Stack Hub Validation](https://azurestackvalidation.com/).
 
 2. Seleccione **Mi cuenta**.
 
-Cuando se le pida que conceda a VaaS los permisos de Azure AD enumerados, acepte los términos.
+3 Cuando se le pida que conceda a VaaS los permisos de Azure AD enumerados, acepte los términos.
 
 ## <a name="create-an-azure-storage-account"></a>Creación de una cuenta de Azure Storage
 
@@ -97,7 +98,7 @@ La cuenta de almacenamiento de Azure se hospeda en la nube pública de Azure, no
 
 5. Seleccione la región **Oeste de EE. UU.** para la cuenta de almacenamiento.
 
-    Para asegurarse de no incurrir en cargos de red por el almacenamiento de registros, la cuenta de Azure Storage se puede configurar para usar únicamente la región **Oeste de EE. UU**. Las características de replicación de datos y nivel de acceso frecuente no son necesarias para estos datos. La habilitación de cualquiera de estas características aumentará los costos considerablemente.
+    Para asegurarse de no incurrir en cargos de red por el almacenamiento de registros, la cuenta de Azure Storage se puede configurar para que use únicamente la región **Oeste de EE. UU**. Las características de replicación de datos y nivel de acceso frecuente no son necesarias para estos datos. La habilitación de cualquiera de estas características aumentará los costos considerablemente.
 
 6. Deje la configuración en los valores predeterminados, excepto **Tipo de cuenta**:
 

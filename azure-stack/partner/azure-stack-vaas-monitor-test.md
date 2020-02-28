@@ -1,6 +1,7 @@
 ---
-title: Supervisión y administración de pruebas en el portal de VaaS de Azure Stack Hub
-description: Supervise y administre pruebas en el portal de VaaS de Azure Stack Hub.
+title: Administración de pruebas en el portal de Azure Stack Hub Validation
+titleSuffix: Azure Stack Hub
+description: Aprenda a administrar pruebas en el portal de Azure Stack Hub Validation.
 author: mattbriggs
 ms.topic: tutorial
 ms.date: 11/11/2019
@@ -8,24 +9,24 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 494fffff04cd092afc4a4df3fbf0be59ca894278
-ms.sourcegitcommit: a76301a8bb54c7f00b8981ec3b8ff0182dc606d7
+ms.openlocfilehash: 697aabcb1b52bc52083b635e67058f1b08451a38
+ms.sourcegitcommit: 4e1c948ae4a498bd730543b0704bbc2b0d88e1ec
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77143814"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625446"
 ---
-# <a name="monitor-and-manage-tests-in-the-vaas-portal"></a>Supervisión y administración de pruebas en el portal de VaaS
+# <a name="manage-tests-in-the-azure-stack-hub-validation-portal"></a>Administración de pruebas en el portal de Azure Stack Hub Validation
 
 [!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 
-Después de programar las pruebas en la solución Azure Stack Hub, la validación como servicio (VaaS) comenzará a informar del estado de ejecución de estas. Esta información está disponible en el portal de VaaS junto con otras acciones como reprogramar y cancelar pruebas.
+Después de programar las pruebas en la solución Azure Stack Hub, la validación como servicio comenzará a informar del estado de ejecución de estas. Esta información está disponible en el portal de Azure Stack Hub Validation junto con otras acciones como reprogramar y cancelar pruebas.
 
 ## <a name="navigate-to-the-workflow-tests-summary-page"></a>Ir a la página de resumen de las pruebas de flujo de trabajo
 
 1. En el panel de soluciones, seleccione una solución existente que tenga al menos un flujo de trabajo.
 
-    ![Iconos de flujo de trabajo](media/tile_all-workflows.png)
+    ![Iconos de flujo de trabajo en el panel de soluciones](media/tile_all-workflows.png)
 
 1. Seleccione **Administrar** en el icono de flujo de trabajo. La página siguiente muestra los flujos de trabajo creados para la solución seleccionada.
 
@@ -35,7 +36,7 @@ Después de programar las pruebas en la solución Azure Stack Hub, la validació
 
 Puede editar los [parámetros de prueba](azure-stack-vaas-parameters.md#test-parameters) especificados durante la creación del flujo de trabajo para cualquier tipo de flujo de trabajo.
 
-1. En la página de resumen de las pruebas, seleccione el botón **Editar**.
+1. En la página de resumen de las pruebas, seleccione **Editar**.
 
 1. Proporcione nuevos valores según se indica en [Parámetros comunes del flujo de trabajo en la validación como servicio de Azure Stack Hub](azure-stack-vaas-parameters.md).
 
@@ -49,11 +50,11 @@ Puede editar los [parámetros de prueba](azure-stack-vaas-parameters.md#test-par
 En los flujos de trabajo de **Pruebas superadas**, los botones **Agregar pruebas** y **Editar** le permiten programar nuevas pruebas en el flujo de trabajo.
 
 > [!TIP]
-> Seleccione **Agregar pruebas** si solo desea programar nuevas pruebas y no es necesario editar los parámetros de un flujo de trabajo de **Pruebas superadas**.
+> Seleccione **Agregar pruebas** si desea programar nuevas pruebas y no es necesario editar los parámetros de un flujo de trabajo de **Pruebas superadas**.
 
-## <a name="managing-test-instances"></a>Administración de instancias de prueba
+## <a name="manage-test-instances"></a>Administración de instancias de prueba
 
-Para las ejecuciones no oficiales (es decir, las del flujo de trabajo de **Pruebas superadas**), la página de resumen de las pruebas muestra las pruebas programadas en la solución Azure Stack Hub.
+Para las ejecuciones no oficiales (las del flujo de trabajo **Prueba superada**), la página de resumen de las pruebas muestra las pruebas programadas en la solución Azure Stack Hub.
 
 Para las ejecuciones oficiales (es decir, las de los flujos de trabajo de **validación**), la página de resumen de las pruebas muestra las pruebas necesarias para completar la validación en la solución Azure Stack Hub. Las pruebas de validación se programan desde esta página.
 
@@ -93,7 +94,7 @@ Seleccione **Ver información** en el menú contextual para ver información gen
 
 #### <a name="view-test-instance-parameters"></a>Ver parámetros de la instancia de prueba
 
-Seleccione **Ver parámetros** en el menú contextual para ver los parámetros proporcionados para la instancia de la prueba durante la programación. No se muestran las cadenas confidenciales como las contraseñas. Esta acción solo está disponible para las pruebas que se han programado.
+Seleccione **Ver parámetros** en el menú contextual para ver los parámetros proporcionados para la instancia de la prueba durante la programación. No se muestran las cadenas confidenciales como, por ejemplo, las contraseñas. Esta acción solo está disponible para las pruebas que se han programado.
 
 Esta ventana incluye los siguientes metadatos para todas las instancias de prueba:
 
@@ -111,7 +112,7 @@ Seleccione **Ver operaciones** en el menú contextual para ver un estado detalla
 
 #### <a name="download-logs-for-a-completed-test-instance"></a>Descarga de registros de una instancia de prueba completada
 
-Seleccione **Descargar registros** en el menú contextual para descargar un archivo `.zip` de los registros generados durante la ejecución de la prueba. Esta acción solo está disponible para pruebas que se han completado, es decir, una prueba con un estado `Cancelled`, `Failed`, `Aborted` o `Succeeded`.
+Seleccione **Descargar registros** en el menú contextual para descargar un archivo `.zip` de los registros generados durante la ejecución de la prueba. Esta acción solo está disponible para pruebas que se han completado, es decir, que tienen un estado `Cancelled`, `Failed`, `Aborted` o `Succeeded`.
 
 #### <a name="reschedule-a-test-instance-or-schedule-a-test"></a>Reprogramación de una instancia de prueba o programación de una prueba
 
@@ -119,7 +120,7 @@ La programación de pruebas desde la página de administración depende del tipo
 
 ##### <a name="test-pass-workflow"></a>Flujo de trabajo de Prueba superada
 
-En el flujo de trabajo de Prueba superada, si **reprograma** una instancia de prueba se reutilizará el mismo conjunto de parámetros que la instancia de prueba original y se *reemplazará* el resultado original, incluidos sus registros. Tendrá que volver a especificar cadenas confidenciales como contraseñas cuando reprograme.
+En el flujo de trabajo de Prueba superada, si **reprograma** una instancia de prueba se reutilizará el mismo conjunto de parámetros que la instancia de prueba original y se *reemplazará* el resultado original, incluidos sus registros. Tendrá que volver a especificar cadenas confidenciales como, por ejemplo las contraseñas, cuando reprograme.
 
 1. Seleccione **Reprogramar** en el menú contextual para abrir un símbolo del sistema y reprogramar la instancia de prueba.
 
