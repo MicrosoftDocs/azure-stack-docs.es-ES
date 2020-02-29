@@ -2,18 +2,18 @@
 title: Registro de Azure Stack Hub en Azure
 titleSuffix: Azure Stack Hub
 description: Aprenda a registrar los sistemas integrados de Azure Stack Hub en Azure de forma que pueda descargar elementos de Azure Marketplace y configurar informes de datos.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
-ms.date: 2/02/2020
+ms.date: 02/25/2020
 ms.author: inhenkel
 ms.reviewer: avishwan
 ms.lastreviewed: 03/04/2019
-ms.openlocfilehash: 6a56c6381cc1a88729b31c5d020460100d29ca39
-ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
+ms.openlocfilehash: 3f8570f765b87736975a15c49b1a2a5ff4bdf55d
+ms.sourcegitcommit: 4e1c948ae4a498bd730543b0704bbc2b0d88e1ec
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77491924"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625329"
 ---
 # <a name="register-azure-stack-hub-with-azure"></a>Registro de Azure Stack Hub en Azure
 
@@ -506,17 +506,23 @@ Get-AzsRegistrationToken [-PrivilegedEndpointCredential] <PSCredential> [-Privil
 
 Es posible que vea uno de los errores siguientes al intentar registrar Azure Stack Hub:
 
-- No se pudo recuperar la información de hardware obligatoria para $hostName. Compruebe la conectividad y el host físico y, a continuación, intente volver a ejecutar el registro.
+- No se pudo recuperar la información de hardware obligatoria para `$hostName`. Compruebe la conectividad y el host físico y, a continuación, intente volver a ejecutar el registro.
 
-- No se puede conectar a $hostName para obtener la información de hardware. Compruebe la conectividad y el host físico y, a continuación, intente volver a ejecutar el registro.
+- No se puede conectar a `$hostName` para obtener la información del hardware. Compruebe la conectividad y el host físico y, a continuación, intente volver a ejecutar el registro.
 
-> Causa: suele deberse al intento de obtener los detalles de hardware, como el UUID, el BIOS y la CPU de los hosts, para intentar realizar la activación, que no fue posible debido a la incapacidad de establecer conexión con el host físico.
+   Causa: suele deberse al intento de obtener los detalles de hardware, como el UUID, el BIOS y la CPU de los hosts, para intentar realizar la activación, que no fue posible debido a la incapacidad de establecer conexión con el host físico.
 
-Al intentar acceder a la administración de Marketplace, se produce un error cuando se intenta distribuir productos. 
-> Causa: suele ocurrir cuando Azure Stack Hub no puede acceder al recurso de registro. Un motivo común es que, cuando cambia el inquilino de directorio de una suscripción a Azure, se restablece el registro. No puede acceder a Marketplace de Azure Stack Hub ni notificar el uso si cambió el inquilino de directorio de la suscripción. Debe volver a realizar el registro para corregir este problema.
+- El identificador de nube [`GUID`] ya está registrado. La reutilización de identificadores de nube no está permitida.
 
-La administración de Marketplace todavía le pide que registre y active Azure Stack Hub, aunque ya ha registrado su sello mediante el proceso sin conexión.
-> Causa: se trata de un problema conocido para entornos desconectados. Puede comprobar su estado de registro siguiendo [estos pasos](azure-stack-registration.md#verify-azure-stack-hub-registration). Para poder usar la administración de Marketplace, debe usar [la herramienta sin conexión](azure-stack-download-azure-marketplace-item.md#disconnected-or-a-partially-connected-scenario).
+   Causa: esto sucede si el entorno de Azure Stack ya está registrado. Si desea volver a registrar el entorno con una suscripción o modelo de facturación diferentes, [consulte estas instrucciones](#change-the-subscription-you-use).
+
+- Al intentar acceder a la administración de Marketplace, se produce un error cuando se intenta distribuir productos.
+
+   Causa: suele ocurrir cuando Azure Stack Hub no puede acceder al recurso de registro. Un motivo común es que, cuando cambia el inquilino de directorio de una suscripción a Azure, se restablece el registro. No puede acceder a Marketplace de Azure Stack Hub ni notificar el uso si cambió el inquilino de directorio de la suscripción. Debe volver a realizar el registro para corregir este problema.
+
+- La administración de Marketplace todavía le pide que registre y active Azure Stack Hub, aunque ya ha registrado su sello mediante el proceso sin conexión.
+
+   Causa: se trata de un problema conocido para entornos desconectados. Puede comprobar su estado de registro siguiendo [estos pasos](azure-stack-registration.md#verify-azure-stack-hub-registration). Para poder usar la administración de Marketplace, utilice [la herramienta sin conexión](azure-stack-download-azure-marketplace-item.md#disconnected-or-a-partially-connected-scenario).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

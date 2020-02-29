@@ -6,17 +6,17 @@ ms.topic: article
 ms.date: 01/13/2020
 ms.author: anwestg
 ms.reviewer: anwestg
-ms.openlocfilehash: a617483b849b02576f1349e3b79620c47c7a5705
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: c259504e1c4b70ccc5e6be6fc9b88f5e683bc5c9
+ms.sourcegitcommit: a7db4594de43c31fe0c51e60e84fdaf4d41ef1bb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76874442"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77568561"
 ---
 # <a name="offline-update-of-azure-app-service-on-azure-stack-hub"></a>Actualización sin conexión de Azure App Service en Azure Stack Hub
 
 > [!IMPORTANT]
-> Aplique la actualización 1910 o posterior al sistema integrado de Azure Stack Hub o implemente el kit de desarrollo de Azure Stack Hub más reciente antes de implementar Azure App Service 1.8.
+> Aplique la actualización 1910 o posterior al sistema integrado de Azure Stack Hub o implemente el Kit de desarrollo de Azure Stack más reciente antes de implementar Azure App Service 1.8.
 
 Siguiendo las instrucciones de este artículo, puede actualizar el [proveedor de recursos de Azure App Service](azure-stack-app-service-overview.md) implementado en un entorno de Azure Stack Hub que:
 
@@ -77,7 +77,7 @@ Para actualizar App Service en un entorno desconectado, primero debe crear un pa
 
 5. Revise y acepte los términos de licencia de terceros y haga clic en **Siguiente**.
 
-6. Asegúrese de que la información del punto de conexión de Azure Resource Manager de Azure Stack Hub y el inquilino de Active Directory son correctos. Si usó la configuración predeterminada durante la implementación del Kit de desarrollo de Azure Stack Hub, puede aceptar los valores predeterminados aquí. Sin embargo, si personalizó las opciones al implementar Azure Stack Hub, debe editar los valores en esta ventana. Por ejemplo, si se usa el sufijo de dominio *mycloud.com*, el punto de conexión de Azure Resource Manager de Azure Stack Hub se debe cambiar a *management.region.mycloud.com*. Después de confirmar su información, haga clic en **Siguiente**.
+6. Asegúrese de que la información del punto de conexión de Azure Resource Manager de Azure Stack Hub y el inquilino de Active Directory son correctos. Si usó la configuración predeterminada durante la implementación del Kit de desarrollo de Azure Stack, puede aceptar los valores predeterminados aquí. Sin embargo, si personalizó las opciones al implementar Azure Stack Hub, debe editar los valores en esta ventana. Por ejemplo, si se usa el sufijo de dominio *mycloud.com*, el punto de conexión de Azure Resource Manager de Azure Stack Hub se debe cambiar a *management.region.mycloud.com*. Después de confirmar su información, haga clic en **Siguiente**.
 
     ![Información de la nube de Azure Stack Hub][3]
 

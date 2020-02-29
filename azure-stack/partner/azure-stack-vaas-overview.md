@@ -1,5 +1,6 @@
 ---
-title: Introducción a la validación como servicio de Azure Stack Hub
+title: Introducción a la validación como servicio
+titleSuffix: Azure Stack Hub
 description: Una introducción a la validación como servicio de Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
@@ -8,14 +9,14 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 95cee26239a4549b87360e62c61a34449f6a0774
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 31d47f947c4c71847156ca4e49c4b370c872e920
+ms.sourcegitcommit: 4e1c948ae4a498bd730543b0704bbc2b0d88e1ec
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76884069"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625295"
 ---
-# <a name="what-is-validation-as-a-service-for-azure-stack-hub"></a>¿Qué es la validación como servicio de Azure Stack Hub?
+# <a name="validation-as-a-service-for-azure-stack-hub"></a>Validación como servicio para Azure Stack Hub
 
 [!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 
@@ -23,10 +24,10 @@ La validación como servicio (VaaS) es un servicio nativo de Azure diseñado par
 
 Los usos principales de VaaS son:
 
-- Validar nuevas soluciones de Azure Stack Hub
-- Validar cambios en el software de Azure Stack Hub
-- Firmar digitalmente los paquetes de asociados de soluciones usados durante la implementación
-- Obtener una vista previa de la documentación y el material adjunto de pruebas de VaaS
+- Validar nuevas soluciones de Azure Stack Hub.
+- Validar cambios en el software de Azure Stack Hub.
+- Firmar digitalmente los paquetes de asociados de soluciones usados durante la implementación.
+- Obtener una vista previa de la documentación y el material adjunto de pruebas de VaaS.
 
 ## <a name="validate-a-new-azure-stack-hub-solution"></a>Validación de una nueva solución de Azure Stack Hub
 
@@ -42,7 +43,7 @@ Para más información, consulte [Validación de las actualizaciones de software
 
 ## <a name="get-digitally-signed-solution-partner-packages"></a>Obtención de paquetes de asociados de soluciones con firma digital
 
-Además de validar las actualizaciones de Azure Stack Hub, puede usar el flujo de trabajo de **validación de paquetes** para validar las actualizaciones de paquetes de personalización de OEM, que incluyen controladores específicos del asociado de Azure Stack Hub, así como firmware y otro software que se usa durante la implementación del software de Azure Stack Hub. Implemente el paquete que está validando para ver si tiene la versión actual del software de Azure Stack Hub con al menos la solución de tamaño mínimo que se admitirá. El paquete se envía a VaaS antes de ejecutar las pruebas. Si se superan las pruebas, indique a [vaashelp@microsoft.com](mailto:vaashelp@microsoft.com) que el paquete ha completado las pruebas y que se deber firmar digitalmente con la firma digital de Azure Stack Hub. Microsoft firma el paquete y notifica al asociado de Azure Stack Hub que el paquete está disponible para descarga en el portal de VaaS.
+Además de validar las actualizaciones de Azure Stack Hub, los asociados usan el flujo de trabajo de **validación de paquetes** para validar las actualizaciones de los paquetes de personalización de OEM. Estas actualizaciones incluyen controladores específicos para el asociado, firmware y otros programas de software de Azure Stack Hub que se usan durante la implementación de este. Implemente el paquete que está validando para ver si tiene la versión actual del software de Azure Stack Hub con al menos la solución de tamaño mínimo que se admitirá. El paquete se envía a VaaS antes de ejecutar las pruebas. Si se superan las pruebas, indique a [vaashelp@microsoft.com](mailto:vaashelp@microsoft.com) que el paquete ha completado las pruebas y que se deber firmar digitalmente con la firma digital de Azure Stack Hub. Microsoft firma el paquete y notifica al asociado de Azure Stack Hub que el paquete está disponible para descarga en el portal de Azure Stack Hub Validation.
 
 Para más información, consulte [Validación de paquetes de OEM](azure-stack-vaas-validate-oem-package.md).
 
@@ -50,7 +51,7 @@ Para más información, consulte [Validación de paquetes de OEM](azure-stack-va
 
 Microsoft presenta periódicamente nuevas características en Azure Stack Hub. Como parte del proceso de desarrollo para comercializar estas características, se presenta nueva documentación y material adjunto de pruebas en el flujo de trabajo de **pruebas superadas**. El flujo de trabajo de pruebas superadas incluye documentación y material adjunto de pruebas de otros flujos de trabajo para permitir la ejecución de pruebas no oficiales. No use el flujo de trabajo de pruebas superadas para enviar resultados para su aprobación. Use el flujo de trabajo de validación de soluciones y de validaciones de paquetes para obtener la aprobación oficial de su solución.
 
-Para más información, consulte [Inicio rápido: Use el portal de validación como servicio para programar la primera prueba](azure-stack-vaas-schedule-test-pass.md).
+Para más información, consulte [Inicio rápido: Uso del portal de Azure Stack Hub Validation para programar la primera prueba](azure-stack-vaas-schedule-test-pass.md).
 
 ## <a name="validation-workflow-tests-summary"></a>Resumen de las pruebas del flujo de trabajo de validación
 

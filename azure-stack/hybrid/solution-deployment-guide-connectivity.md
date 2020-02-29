@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 4b65ce6d03ee345b308cd5c5dd594e4dcf56cfec
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 5ed6869b4c03c9e360cd12a98e206941a3842bfc
+ms.sourcegitcommit: a7db4594de43c31fe0c51e60e84fdaf4d41ef1bb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76875511"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77568493"
 ---
 # <a name="configure-hybrid-cloud-connectivity-using-azure-and-azure-stack-hub"></a>Configuración de la conectividad de nube híbrida con Azure y Azure Stack Hub
 
@@ -31,13 +31,13 @@ En esta solución, creará un entorno de ejemplo para:
 > En el artículo [Consideraciones de diseño para aplicaciones híbridas](overview-app-design-considerations.md) se examinan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
 
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerrequisitos
 
 Se requieren algunos componentes para crear una implementación de conectividad híbrida. Algunos de estos componentes tardarán en prepararse, por lo que tendrá que planear en consecuencia.
 
 **Azure Stack Hub**
 
-Un asociado de hardware u OEM de Azure puede implementar una instancia de Azure Stack Hub de producción y todos los usuarios pueden implementar un kit de desarrollo de Azure Stack Hub (ASDK).
+Un asociado de hardware u OEM de Azure puede implementar una instancia de Azure Stack Hub de producción y todos los usuarios pueden implementar un Kit de desarrollo de Azure Stack (ASDK).
 
 **Componentes de Azure Stack Hub**
 
@@ -55,7 +55,7 @@ En esta solución de ejemplo se da por supuesto que tiene algunos conocimientos 
 
 ### <a name="azure-stack-hub"></a>Azure Stack Hub
 
- - Use su instancia de Azure Stack Hub de producción o implemente el kit de desarrollo de Azure Stack Hub desde https://github.com/mattmcspirit/azurestack/blob/master/deployment/ConfigASDK.ps1.
+ - Use su instancia de Azure Stack Hub de producción o implemente el Kit de desarrollo de Azure Stack desde https://github.com/mattmcspirit/azurestack/blob/master/deployment/ConfigASDK.ps1.
    >[!Note]
    >La implementación del ASDK puede tardar hasta 7 horas, así que planéela en consecuencia.
 

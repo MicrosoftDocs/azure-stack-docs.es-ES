@@ -7,17 +7,17 @@ ms.date: 01/13/2020
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 01/13/2020
-ms.openlocfilehash: bf9ce157e927b2fc43b64746d53d74e8cb82524c
-ms.sourcegitcommit: b5541815abfab3f8750fa419fdd1f93a8844731a
+ms.openlocfilehash: 7fa4ac0f63b3f5243a6473c921012614bb01bfb2
+ms.sourcegitcommit: a7db4594de43c31fe0c51e60e84fdaf4d41ef1bb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77012893"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77568629"
 ---
 # <a name="deploy-azure-app-service-in-an-offline-environment-in-azure-stack-hub"></a>Implementación de Azure App Service en un entorno sin conexión en Azure Stack Hub
 
 > [!IMPORTANT]
-> Aplique la actualización 1910 al sistema integrado de Azure Stack Hub o implemente el kit de desarrollo de Azure Stack Hub (ASDK) más reciente antes de implementar Azure App Service 1.8.
+> Aplique la actualización 1910 al sistema integrado de Azure Stack Hub o implemente el Kit de desarrollo de Azure Stack (ASDK) más reciente antes de implementar Azure App Service 1.8.
 
 Siguiendo las instrucciones de este artículo, puede instalar el [proveedor de recursos de Azure App Service](azure-stack-app-service-overview.md) en un entorno de Azure Stack Hub que:
 - No esté conectado a Internet.

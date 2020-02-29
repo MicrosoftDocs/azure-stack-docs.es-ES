@@ -1,5 +1,6 @@
 ---
-title: Solución de problemas de validación como servicio de Azure Stack Hub
+title: Solución de problemas de la validación como un servicio
+titleSuffix: Azure Stack Hub
 description: Solucione problemas de validación como servicio de Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
@@ -8,14 +9,14 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 1adadf1df42873d37e45a9c25a4876ee79612cf6
-ms.sourcegitcommit: a76301a8bb54c7f00b8981ec3b8ff0182dc606d7
+ms.openlocfilehash: 6c25ceebdf82c7fe0e32259346d3d59558fdabc7
+ms.sourcegitcommit: 4e1c948ae4a498bd730543b0704bbc2b0d88e1ec
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77143624"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625380"
 ---
-# <a name="troubleshoot-validation-as-a-service"></a>Solución de problemas de la validación como servicio
+# <a name="troubleshoot-validation-as-a-service"></a>Solución de problemas de la validación como un servicio
 
 [!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 
@@ -25,14 +26,14 @@ Los siguientes son problemas comunes no relacionados con las versiones de softwa
 
 ### <a name="the-portal-shows-local-agent-in-debug-mode"></a>El portal muestra el agente local en modo de depuración
 
-Esto probablemente se deba a que el agente no puede enviar latidos al servicio debido a una conexión de red inestable. Se envía un latido cada cinco minutos. Si el servicio no recibe un latido durante 15 minutos, considera que el agente está inactivo y ya no se programarán pruebas en él. Compruebe el mensaje de error en el archivo *Agenthost.log* ubicado en el directorio donde se inició el agente.
+Este problema se debe posiblemente a que el agente no puede enviar latidos al servicio debido a una conexión de red inestable. Se envía un latido cada cinco minutos. Si el servicio no recibe un latido durante 15 minutos, considera que el agente está inactivo y ya no se programarán pruebas en él. Compruebe el mensaje de error en el archivo *Agenthost.log* ubicado en el directorio donde se inició el agente.
 
 > [!Note]
 > Las pruebas que ya estén en ejecución en el agente seguirán ejecutándose, pero si el latido no se restaura antes de que finalice la prueba, el agente no podrá actualizar el estado de prueba ni cargar registros. La prueba siempre se mostrará como **en ejecución** y debe cancelarse.
 
 ### <a name="agent-process-on-machine-was-shut-down-while-executing-test-what-to-expect"></a>El proceso del agente en el equipo se cerró mientras se ejecutaba la prueba. Qué cabe esperar
 
-Si el proceso del agente se cierre de manera brusca, por ejemplo, se reinicia el equipo, se finaliza el proceso (CTRL+C en la ventana del agente se considera un apagado estable), la prueba que se ejecutaba en él se seguirá mostrando como **en ejecución**. Si se reinicia el agente, este actualizará el estado de la prueba a **cancelado**. Si no se reinicia el agente, la prueba aparece como **en ejecución** y debe cancelarla manualmente.
+Si el proceso del agente se cierra de forma incorrecta, la prueba que se estaba ejecutando en él seguirá apareciendo como **En ejecución**. En un ejemplo de apagado incorrecto, la máquina se reinicia y el proceso se termina (CTRL+C en la ventana del agente se considera un apagado correcto). Si se reinicia el agente, este actualizará el estado de la prueba a **cancelado**. Si no se reinicia el agente, la prueba aparece como **en ejecución** y debe cancelarla manualmente.
 
 > [!Note]
 > Las pruebas dentro de un flujo de trabajo están programadas para ejecutarse de forma secuencial. Las pruebas **pendientes** no se ejecutarán hasta que no se completen las pruebas en estado **en ejecución** en el mismo flujo de trabajo.
@@ -49,7 +50,7 @@ Puede descargar la imagen del PIR en un recurso compartido en el centro de datos
 
 1. Descargue AzCopy desde: [vaasexternaldependencies(AzCopy)](https://vaasexternaldependencies.blob.core.windows.net/prereqcomponents/AzCopy.zip).
 
-2. Extraiga AzCopy.zip y cambie al directorio que contiene AzCopy.exe.
+2. Extraiga AzCopy.zip y cambie al directorio que contiene `AzCopy.exe`.
 
 3. Abra Windows PowerShell con un símbolo del sistema con privilegios elevados. Ejecute los comandos siguientes:
 
@@ -80,14 +81,14 @@ Puede usar el cmdlet **Get-HashFile** para obtener el valor hash para los archiv
 | OpenLogic-CentOS-69-20180105.vhd | C8B874FE042E33B488110D9311AF1A5C7DC3B08E6796610BF18FDD6728C7913C |
 | Debian8_latest.vhd | 06F8C11531E195D0C90FC01DFF5DC396BB1DD73A54F8252291ED366CACD996C1 |
 
-### <a name="failure-occurs-when-uploading-vm-image-in-the-vaasprereq-script"></a>Se produce un error al cargar la imagen de VM en el script `VaaSPreReq`
+### <a name="failure-happens-when-uploading-vm-image-in-the-vaasprereq-script"></a>Se produce un error al cargar la imagen de la máquina virtual en el script `VaaSPreReq`
 
 En primer lugar, compruebe que el entorno está en buen estado:
 
 1. Desde la DVM/jumpbox, compruebe que puede iniciar sesión correctamente en el portal de administración mediante las credenciales de administrador.
 1. Confirme que no haya ninguna alerta ni advertencia.
 
-Si el entorno está en buen estado, cargue manualmente las 5 imágenes de VM necesarias para las series de pruebas de VaaS:
+Si el entorno está en buen estado, cargue manualmente las cinco imágenes de máquina virtual necesarias para las series de pruebas de VaaS:
 
 1. Inicie sesión en el portal de administración como administrador de servicios. Puede encontrar la dirección URL del portal de administración en el almacén ECE o el archivo de información de marca. Para obtener instrucciones, consulte [Parámetros del entorno](azure-stack-vaas-parameters.md#environment-parameters).
 1. Seleccione **Más servicios** > **Proveedores de recursos** > **Proceso** > **Imágenes de VM**.
@@ -108,7 +109,7 @@ Si el entorno está en buen estado, cargue manualmente las 5 imágenes de VM nec
 1. Seleccione el botón **Crear**.
 1. Repita para las imágenes de VM restantes.
 
-Las propiedades de las 5 imágenes de VM son las siguientes:
+Las propiedades de las cinco imágenes de máquina virtual son las siguientes:
 
 | Publicador  | Oferta  | Tipo de SO | SKU | Versión | URI del blob de disco de sistema operativo |
 |---------|---------|---------|---------|---------|---------|

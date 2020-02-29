@@ -1,6 +1,7 @@
 ---
-title: Parámetros comunes del flujo de trabajo en la validación como servicio de Azure Stack Hub
-description: Parámetros comunes del flujo de trabajo en la validación como servicio de Azure Stack Hub
+title: Parámetros habituales de flujos de trabajos en VaaS
+titleSuffix: Azure Stack Hub
+description: Más información sobre los parámetros habituales de flujos de trabajo en la validación como servicio de Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
 ms.date: 1/22/2020
@@ -8,14 +9,14 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: cc237792576ffa3a5bb3ad0a003da4284c9cc56f
-ms.sourcegitcommit: a76301a8bb54c7f00b8981ec3b8ff0182dc606d7
+ms.openlocfilehash: 9a53f489ac1fdf92afdf8ba841b1cbb4a030680b
+ms.sourcegitcommit: 4e1c948ae4a498bd730543b0704bbc2b0d88e1ec
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77143689"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625397"
 ---
-# <a name="workflow-common-parameters-for-azure-stack-hub-validation-as-a-service"></a>Parámetros comunes del flujo de trabajo en la validación como servicio de Azure Stack Hub
+# <a name="common-workflow-parameters-in-validation-as-a-service"></a>Parámetros habituales de flujos de trabajo en la validación como servicio
 
 [!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 
@@ -50,12 +51,12 @@ También se pueden encontrar manualmente los valores de parámetros de entorno e
 
 ## <a name="test-parameters"></a>Parámetros de prueba
 
-Los parámetros de prueba comunes incluyen información confidencial que no se puede almacenar en archivos de configuración. Estos se deben proporcionar manualmente.
+Los parámetros de prueba comunes incluyen información confidencial que no se puede almacenar en archivos de configuración. Estos parámetros se deben proporcionar manualmente.
 
 Parámetro    | Descripción
 -------------|-----------------
-Usuario administrador de inquilinos                            | El administrador de inquilinos de Azure Active Directory que ha aprovisionado el administrador de servicios en el directorio de AAD. Este usuario realiza acciones a nivel de inquilino, como la implementación de plantillas para configurar los recursos (VM, cuentas de almacenamiento, etc.) y la ejecución de cargas de trabajo. Para más información sobre el aprovisionamiento de cuentas de inquilino, consulte [Adición de un nuevo inquilino de Azure Stack Hub](../operator/azure-stack-add-new-user-aad.md).
-Usuario administrador de servicios             | Administrador de Azure Active Directory del inquilino del directorio de Azure AD especificado durante la implementación de Azure Stack Hub. Busque `AADTenant` en el archivo de configuración ECE y seleccione el valor en el elemento `UniqueName`.
+Usuario administrador de inquilinos                            | El administrador de inquilinos de Azure Active Directory (Azure AD) que ha aprovisionado el administrador de servicios en el directorio de AAD. Este usuario realiza acciones a nivel de inquilino, como la implementación de plantillas para configurar los recursos (máquinas virtuales, cuentas de almacenamiento, etc.) y la ejecución de cargas de trabajo. Para más información sobre el aprovisionamiento de cuentas de inquilino, consulte [Adición de un nuevo inquilino de Azure Stack Hub](../operator/azure-stack-add-new-user-aad.md).
+Usuario administrador de servicios             | Administrador de Azure AD del inquilino del directorio de Azure AD especificado durante la implementación de Azure Stack Hub. Busque `AADTenant` en el archivo de configuración ECE y seleccione el valor en el elemento `UniqueName`.
 Usuario del administrador de la nube               | Cuenta de administrador de dominio de Azure Stack Hub (por ejemplo, `contoso\cloudadmin`). Busque `User Role="CloudAdmin"` en el archivo de configuración ECE y seleccione el valor en el elemento `UserName`.
 Cadena de conexión de diagnósticos          | Una URL de SAS a una cuenta de Azure Storage donde se copiarán los registro de diagnóstico durante la ejecución de pruebas. Para obtener instrucciones sobre la generación de la dirección URL de SAS, consulte [Generación de la cadena de conexión de diagnóstico](#generate-the-diagnostics-connection-string). |
 
@@ -64,7 +65,7 @@ Cadena de conexión de diagnósticos          | Una URL de SAS a una cuenta de A
 
 ### <a name="generate-the-diagnostics-connection-string"></a>Generación de la cadena de conexión de diagnóstico
 
-La cadena de conexión de diagnóstico es necesaria para almacenar los registros de diagnóstico durante la ejecución de pruebas. Use la cuenta de Azure Storage que creó durante la configuración (consulte [Set up your Validation as a Service resources](azure-stack-vaas-set-up-resources.md) [Configuración de los recursos de validación como servicio]) para crear una dirección URL de una firma de acceso compartido (SAS) para conceder acceso VaaS para cargar los registros en la cuenta de almacenamiento.
+La cadena de conexión de diagnóstico es necesaria para almacenar los registros de diagnóstico durante la ejecución de pruebas. Use la cuenta de Azure Storage que creó durante la configuración (consulte [Configuración de los recursos de validación como servicio](azure-stack-vaas-set-up-resources.md)) para crear una dirección URL de una firma de acceso compartido (SAS) para conceder acceso a VaaS para cargar los registros en la cuenta de almacenamiento.
 
 1. [!INCLUDE [azure-stack-vaas-sas-step_navigate](includes/azure-stack-vaas-sas-step_navigate.md)]
 
@@ -79,8 +80,7 @@ La cadena de conexión de diagnóstico es necesaria para almacenar los registros
 1. [!INCLUDE [azure-stack-vaas-sas-step_generate](includes/azure-stack-vaas-sas-step_generate.md)]
 
 > [!NOTE]  
-> La dirección URL de SAS expira a la hora de finalización especificada al generar la dirección URL.  
-Al programar las pruebas, asegúrese de que la dirección URL sea válida durante al menos 30 días y el tiempo necesario para la ejecución de pruebas (se recomiendan tres meses).
+> La dirección URL de SAS expira a la hora de finalización especificada al generar la dirección URL. Al programar las pruebas, asegúrese de que la dirección URL sea válida durante al menos 30 días y el tiempo necesario para la ejecución de pruebas (se recomiendan tres meses).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

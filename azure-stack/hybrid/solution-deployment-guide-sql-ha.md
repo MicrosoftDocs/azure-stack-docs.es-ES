@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: b1de7de0c81af80c30620b85bd19b4806877190a
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: f1cb202a30e381abc498ba950820d5fbefca9e2a
+ms.sourcegitcommit: a7db4594de43c31fe0c51e60e84fdaf4d41ef1bb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76876718"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77568476"
 ---
 # <a name="deploy-a-sql-server-2016-availability-group-to-azure-and-azure-stack-hub"></a>Implementar un grupo de disponibilidad de SQL Server 2016 en Azure y Azure Stack Hub
 
@@ -37,7 +37,7 @@ En esta solución, creará un entorno de ejemplo para:
 
 ## <a name="prerequisites-for-sql-server-2016"></a>Requisitos previos para SQL Server 2016
 
-  - Dos sistemas integrados de Azure Stack Hub conectados (Azure Stack Hub): esta implementación no funciona en los Kits de desarrollo de Azure Stack Hub (ASDK). Para obtener más información sobre Azure Stack Hub, consulte [¿Qué es Azure Stack Hub?](https://azure.microsoft.com/overview/azure-stack/)
+  - Dos sistemas integrados de Azure Stack Hub conectados (Azure Stack Hub): esta implementación no funciona en los Kits de desarrollo de Azure Stack (ASDK). Para obtener más información sobre Azure Stack Hub, consulte [¿Qué es Azure Stack Hub?](https://azure.microsoft.com/overview/azure-stack/)
   - Una suscripción de inquilino en cada instancia de Azure Stack Hub.    
       - **Tome nota de cada identificador de suscripción y del punto de conexión de Azure Resource Manager para cada instancia de Azure Stack Hub.**
   - Una entidad de servicio de Azure Active Directory (Azure AD) que tenga permisos para la suscripción del inquilino en cada instancia de Azure Stack Hub. Es posible que deba crear dos entidades de servicio si las instancias de Azure Stack Hub se implementan en diferentes inquilinos de Azure AD. Para obtener información sobre cómo crear una entidad de servicio para Azure Stack Hub, consulte [Creación de entidades de servicio para otorgar a las aplicaciones acceso a los recursos de Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-create-service-principals).

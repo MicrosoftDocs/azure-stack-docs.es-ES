@@ -2,18 +2,18 @@
 title: Administración de la infraestructura de almacenamiento para Azure Stack Hub
 titleSuffix: Azure Stack
 description: Aprenda a administrar la infraestructura de almacenamiento para Azure Stack Hub.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 1/22/2020
 ms.author: inhenkel
 ms.lastreviewed: 03/11/2019
 ms.reviewer: jiahan
-ms.openlocfilehash: 47233e29ef5921fbf8feb7b31f9160a8f67ff71b
-ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
+ms.openlocfilehash: 4db040483ff841801081ef4f2acf60d9a9e3d4a0
+ms.sourcegitcommit: a7db4594de43c31fe0c51e60e84fdaf4d41ef1bb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77491720"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77568646"
 ---
 # <a name="manage-storage-infrastructure-for-azure-stack-hub"></a>Administración de la infraestructura de almacenamiento para Azure Stack Hub
 
@@ -68,7 +68,7 @@ En una implementación de varios nodos, verá tres volúmenes de infraestructura
 
 - El número de volúmenes se mantiene aunque se quite un nodo o haya uno que no funcione correctamente.
 
-- Si utiliza el Kit de desarrollador de Azure Stack Hub, hay un único volumen con varios recursos compartidos.
+- Si utiliza el Kit de desarrollo de Azure Stack, hay un único volumen con varios recursos compartidos.
 
 Los volúmenes de Espacios de almacenamiento directo proporcionan resistencia para la protección frente a problemas de hardware, como errores de unidad o de servidor. También habilitan la disponibilidad continua durante el mantenimiento del servidor, como las actualizaciones de software. La implementación de Azure Stack Hub usa la creación de reflejo tridireccional para garantizar la resistencia de datos. Se escriben tres copias de datos de inquilino en distintos servidores, donde se colocan en la memoria caché:
 

@@ -3,20 +3,20 @@ title: Supervisión del estado del hardware de Azure Stack Hub
 description: Aprenda a supervisar el mantenimiento de los componentes de hardware de Azure Stack Hub.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 11/21/2019
+ms.date: 02/24/2020
 ms.author: sethm
 ms.reviewer: thoroet
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: dba47774205b4c0631f33de336e0efbfb73db9cf
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 4fe942e6a4230d9807780507de8b658a6e0ed4c3
+ms.sourcegitcommit: c653efe7cd5177bf61c1a321ba7f38c0cdf90346
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882223"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77575125"
 ---
 # <a name="monitor-azure-stack-hub-hardware-components"></a>Supervisión de componentes de hardware de Azure Stack Hub
 
-El sistema de mantenimiento y supervisión de Azure Stack Hub ya supervisa el estado del subsistema de almacenamiento y genera alertas cuando es necesario. Con la versión 1910 de Azure Stack Hub, el sistema de mantenimiento y supervisión ya puede generar también alertas para los siguientes componentes de hardware:
+El sistema de mantenimiento y supervisión de Azure Stack Hub supervisa el estado del subsistema de almacenamiento y genera alertas cuando es necesario. El sistema de mantenimiento y supervisión puede generar también alertas para los siguientes componentes de hardware:
 
 - Ventiladores del sistema
 - Temperatura del sistema

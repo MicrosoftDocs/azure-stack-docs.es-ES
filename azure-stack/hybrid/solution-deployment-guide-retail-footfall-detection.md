@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: d81fdf315e9bc834c46161d901d6ac10d736f7ab
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 66f6e316c83e25651dc0e0b1be95d6a8467f7f47
+ms.sourcegitcommit: a7db4594de43c31fe0c51e60e84fdaf4d41ef1bb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76875307"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77568391"
 ---
 # <a name="deploy-an-ai-based-footfall-detection-solution-using-azure-and-azure-stack-hub"></a>Implementación de una solución de detección de afluencia de público basada en IA con Azure y Azure Stack Hub
 
@@ -31,12 +31,12 @@ En esta solución, aprenderá cómo:
 > 
 > En el artículo [Consideraciones de diseño para aplicaciones híbridas](overview-app-design-considerations.md) se examinan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
 
-## <a name="prerequisites"></a>Prerequisites 
+## <a name="prerequisites"></a>Prerrequisitos 
 
 Antes de empezar a usar esta guía de implementación, asegúrese de:
 
 - Revisar la [información general de la solución de detección de afluencia de público](pattern-retail-footfall-detection.md) 
-- Obtener acceso de usuario a un kit de desarrollo de Azure Stack Hub (ASDK) o una instancia de sistema integrado de Azure Stack Hub con:
+- Obtener acceso de usuario a un Kit de desarrollo de Azure Stack (ASDK) o una instancia de sistema integrado de Azure Stack Hub con:
   - [Azure App Service en el proveedor de recursos de Azure Stack Hub](../operator/azure-stack-app-service-overview.md) instalado. Necesita acceso de operador a la instancia de Azure Stack Hub o trabajar con su administrador para realizar la instalación.
   - Una suscripción a una oferta que proporcione App Service y la cuota de Storage. Necesita acceso de operador para crear una oferta.
 - Obtener acceso a una suscripción de Azure

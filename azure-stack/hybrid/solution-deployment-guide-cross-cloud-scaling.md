@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: dc615786a23295468e173c3ce13b46cb308b8215
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 10ad85a306b225241822cb2b8531515dc9bb1719
+ms.sourcegitcommit: a7db4594de43c31fe0c51e60e84fdaf4d41ef1bb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76875630"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77568595"
 ---
 # <a name="deploy-an-app-that-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Implementación de una aplicación que se escala en toda la nube con Azure y Azure Stack Hub
 
@@ -35,12 +35,12 @@ En esta solución, creará un entorno de ejemplo para:
 > 
 > En el artículo [Consideraciones de diseño para aplicaciones híbridas](overview-app-design-considerations.md) se examinan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerrequisitos
 
 -   Suscripción de Azure. Si es necesario, cree una [cuenta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de comenzar.
 
-- Un sistema integrado de Azure Stack Hub o la implementación del kit de desarrollo de Azure Stack Hub.
-    - Para conocer las instrucciones de instalación de Azure Stack Hub, consulte [Instalación del Kit de desarrollo de Azure Stack Hub](../asdk/asdk-install.md).
+- Un sistema integrado de Azure Stack Hub o la implementación del kit de desarrollo de Azure Stack.
+    - Para obtener instrucciones para la instalación de Azure Stack Hub, consulte [Instalación del Kit de desarrollo de Azure Stack](../asdk/asdk-install.md).
     - Para ver un script de automatización posterior a la implementación de ASDK, vaya a: [https://github.com/mattmcspirit/azurestack/blob/master/deployment/ConfigASDK.ps1](https://github.com/mattmcspirit/azurestack/blob/master/deployment/ConfigASDK.ps1) 
     - Esta instalación puede tardar algunas horas en completarse.
 

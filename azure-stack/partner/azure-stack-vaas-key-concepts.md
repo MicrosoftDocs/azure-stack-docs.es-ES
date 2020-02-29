@@ -1,6 +1,7 @@
 ---
-title: Conceptos clave de la validación como servicio de Azure Stack Hub
-description: Describe los conceptos clave de la validación como servicio de Azure Stack Hub.
+title: Conceptos clave de la validación como servicio
+titleSuffix: Azure Stack Hub
+description: Conozca los conceptos clave de la validación como servicio de Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
 ms.date: 10/28/2019
@@ -8,12 +9,12 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 10/28/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 972b0be328f80a82ed3c12076a1f540c52b53ea7
-ms.sourcegitcommit: a76301a8bb54c7f00b8981ec3b8ff0182dc606d7
+ms.openlocfilehash: 211a2bf18643ff0c873969520f9bfae20d2ed89d
+ms.sourcegitcommit: 4e1c948ae4a498bd730543b0704bbc2b0d88e1ec
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77143755"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625414"
 ---
 # <a name="validation-as-a-service-key-concepts"></a>Conceptos clave de la validación como servicio
 
@@ -23,9 +24,9 @@ En este artículo se describen los conceptos clave de la validación como servic
 
 Una solución VaaS representa una solución de Azure Stack Hub con una lista de materiales de hardware en particular. La solución VaaS actúa como contenedor para los flujos de trabajo que se ejecutan frente a la solución de Azure Stack Hub.
 
-### <a name="create-a-solution-in-the-vaas-portal"></a>Creación de una solución en el portal de VaaS
+### <a name="create-a-solution-in-the-azure-stack-hub-validation-portal"></a>Creación de una solución en el portal de Azure Stack Hub Validation
 
-1. Inicie sesión en el [portal de VaaS](https://azurestackvalidation.com).
+1. Inicie sesión en el portal de [Azure Stack Hub Validation](https://azurestackvalidation.com).
 2. En el panel de soluciones, seleccione **Nueva solución**.
 3. Escriba un nombre para la solución. Para obtener sugerencias de nombres, consulte [Convenciones de nomenclatura para soluciones VaaS](azure-stack-vaas-best-practice.md#naming-convention-for-vaas-solutions).
 4. Seleccione **Guardar** para crear la solución.
@@ -47,20 +48,20 @@ Para más información sobre los tipos de flujo de trabajo, consulte [¿Qué es 
 
 1. En el panel de soluciones, cree una solución o seleccione una existente. Esto actualiza y activa los iconos de flujos de trabajo.
 2. Para crear un flujo de trabajo, seleccione **Iniciar** en cualquiera de los iconos. Para obtener información específica para cada flujo de trabajo, consulte los artículos siguientes:
-    - Prueba superada: [Inicio rápido: Uso del portal de validación como servicio para programar la primera prueba](azure-stack-vaas-schedule-test-pass.md)
+    - Prueba superada: [Inicio rápido: Uso del portal de Azure Stack Hub Validation para programar la primera prueba](azure-stack-vaas-schedule-test-pass.md)
     - Validación de la solución: [Validación de una nueva solución de Azure Stack Hub](azure-stack-vaas-validate-solution-new.md)
     - Validación del paquete (actualización mensual): [Validación de las actualizaciones de software de Microsoft](azure-stack-vaas-validate-microsoft-updates.md)
     - Validación del paquete (firma del paquete) [Validación de paquetes de OEM](azure-stack-vaas-validate-oem-package.md)
 
 3. Para administrar o supervisar un flujo de trabajo existente, seleccione **Administrar** en el icono del flujo de trabajo. Seleccione el nombre del flujo de trabajo y use el botón **Editar** para ver las propiedades o cambiar los parámetros comunes de las pruebas.
 
-Para más información sobre las propiedades y los parámetro de los flujos de trabajo, consulte [Parámetros comunes del flujo de trabajo en la validación como servicio de Azure Stack Hub](azure-stack-vaas-parameters.md).
+Para más información sobre las propiedades y los parámetros de los flujos de trabajo, consulte [Parámetros comunes del flujo de trabajo en la validación como servicio de Azure Stack Hub](azure-stack-vaas-parameters.md).
 
 ## <a name="tests"></a>Pruebas
 
 Una prueba en VaaS consta de un conjunto de operaciones que se ejecutan en una solución de Azure Stack Hub. Las pruebas tienen distintos propósitos identificados por categoría, como funcional o confiabilidad, y tienen como destino uno o varios servicios de Azure Stack Hub. Cada prueba define su propio conjunto de parámetros, algunos de los cuales se especifican mediante los parámetros comunes del flujo de trabajo que los contiene.
 
-Para más información sobre cómo administrar y supervisar las pruebas, consulte [Supervisión y administración de pruebas en el portal de VaaS](azure-stack-vaas-monitor-test.md).
+Para más información sobre cómo administrar y supervisar las pruebas, consulte [Supervisión y administración de pruebas en el portal de Azure Stack Hub Validation](azure-stack-vaas-monitor-test.md).
 
 Para más información sobre los parámetros de prueba, consulte [Parámetros comunes del flujo de trabajo en la validación como servicio de Azure Stack Hub](azure-stack-vaas-parameters.md).
 
