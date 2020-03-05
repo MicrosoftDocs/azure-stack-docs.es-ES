@@ -6,13 +6,13 @@ ms.topic: article
 ms.date: 1/22/2020
 ms.author: bryanla
 ms.reviewer: xiaofmao
-ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: afe2a9fe46a5abae9f94347422153480536c37bc
-ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
+ms.lastreviewed: 10/16/2019
+ms.openlocfilehash: 2da344a5699357d008fcc4494992cfcc67047971
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77492128"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77698885"
 ---
 # <a name="create-mysql-databases-in-azure-stack-hub"></a>Creación de bases de datos MySQL en Azure Stack Hub
 Un usuario de Azure Stack Hub que esté suscrito a una oferta que incluya el servicio de base de datos MySQL puede crear y administrar bases de datos MySQL de autoservicio en el portal de usuarios.

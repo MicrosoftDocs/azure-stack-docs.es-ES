@@ -7,12 +7,12 @@ ms.date: 12/13/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/13/2019
-ms.openlocfilehash: fd851b4d25d188c03fe09793986901e28a00a6a5
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: d3884f877511c3a0d285b62ecf3136673e24a116
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76884661"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77702455"
 ---
 # <a name="extending-storage-to-azure-stack-hub"></a>Ampliación del almacenamiento a Azure Stack Hub
 

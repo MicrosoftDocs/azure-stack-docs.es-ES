@@ -7,12 +7,12 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: f2fed0978ee2f5f6cee35f2ef3ffe75e51dc6758
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 2f4a9d31c1121387efc2310b25703344a85ea5ab
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883714"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77704121"
 ---
 # <a name="deploy-a-ruby-web-app-to-a-vm-in-azure-stack-hub"></a>Implementación de una aplicación web de Ruby en una máquina virtual en Azure Stack Hub
 

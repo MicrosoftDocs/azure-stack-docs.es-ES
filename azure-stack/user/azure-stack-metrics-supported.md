@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 11/11/2019
 ms.author: mabrigg
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: fcbde238f47759c8c962242f96fa35975e49d360
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: b90458e58054cd0f42564558fd3cb5a8226d6c5d
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76884636"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77702268"
 ---
 # <a name="supported-metrics-for-azure-monitor-on-azure-stack-hub"></a>Métricas de Azure Stack Hub compatibles con Azure Monitor
 

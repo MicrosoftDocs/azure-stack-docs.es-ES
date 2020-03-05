@@ -6,13 +6,13 @@ ms.topic: article
 ms.date: 01/07/2020
 ms.author: sethm
 ms.reviewer: alfredop
-ms.lastreviewed: 01/25/2018
-ms.openlocfilehash: c6c68b3455e7de78e116b3ef6ede1dde7172fb33
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.lastreviewed: 01/25/2019
+ms.openlocfilehash: 0dff4901d24f759404b69184506d1219273d90c5
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76881536"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77698120"
 ---
 # <a name="provider-resource-usage-api"></a>API de uso de recursos de proveedor
 

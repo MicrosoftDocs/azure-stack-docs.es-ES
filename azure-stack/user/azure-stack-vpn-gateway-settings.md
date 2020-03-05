@@ -5,13 +5,13 @@ author: sethmanheim
 ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: sethm
-ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: 2f0b520b4c615e56fea7575422b306c226188eb0
-ms.sourcegitcommit: 23861d659c89c2d36390085fe9532b2bcba2100d
+ms.lastreviewed: 12/27/2019
+ms.openlocfilehash: b762dfa9897ac732df7c09858ef3a5d25357f1d7
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77075223"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77705056"
 ---
 # <a name="configure-vpn-gateway-settings-for-azure-stack-hub"></a>Configuración de una puerta de enlace de VPN para Azure Stack Hub
 

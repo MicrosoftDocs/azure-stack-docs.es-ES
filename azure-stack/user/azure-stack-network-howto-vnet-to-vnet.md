@@ -7,18 +7,18 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: 83d52af03f33a01ccdf1b065ea1f59d7842f4cda
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: b1d60037dd86a6de1aac73ff5a607605ceda1614
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883388"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77703883"
 ---
 # <a name="connect-two-vnets-through-peering"></a>Conexión de dos redes virtuales mediante el emparejamiento
 
 En este artículo se describe cómo crear una conexión entre dos redes virtuales en el mismo entorno. Al configurar las conexiones, obtendrá información sobre cómo funcionan las puertas de enlace de VPN en Azure Stack Hub. Conecte dos redes virtuales en el mismo entorno de Azure Stack Hub con FortiGate de Fortinet. Este procedimiento implementa dos redes virtuales con una NVA FortiGate, una aplicación virtual de red, en cada red virtual, cada una dentro de un grupo de recursos independiente. También se detallan los cambios necesarios para configurar una VPN IPSec entre las dos redes virtuales. Repita los pasos de este artículo para cada implementación de red virtual.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerrequisitos
 
 -   Acceso a un sistema integrado de Azure Stack Hub con capacidad disponible para implementar los requisitos de proceso, red y recursos necesarios para esta solución.
 

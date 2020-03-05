@@ -8,12 +8,12 @@ ms.date: 05/31/2019
 ms.author: inhenkel
 ms.reviewer: prchint
 ms.lastreviewed: 05/31/2019
-ms.openlocfilehash: 0ef537db34ef882257ec5d35eb7d6c91ac1b03d1
-ms.sourcegitcommit: 4e1c948ae4a498bd730543b0704bbc2b0d88e1ec
+ms.openlocfilehash: e097904f990f76898253e2d56115b10ce230de36
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77625244"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77700993"
 ---
 # <a name="capacity-planning-for-azure-stack-hub-overview"></a>Introducción al planeamiento de capacidad de Azure Stack Hub
 

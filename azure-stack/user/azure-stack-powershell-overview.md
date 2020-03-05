@@ -7,12 +7,12 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: 2238b399c6c7de6e37a7059a395a0024d3e71a98
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: cf9d17bda49c1fe5d401481d79b61b18442ee7ef
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883320"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77703815"
 ---
 # <a name="get-started-with-powershell-in-azure-stack-hub"></a>Introducción a PowerShell en Azure Stack Hub
 

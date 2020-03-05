@@ -8,12 +8,12 @@ ms.date: 1/22/2020
 ms.author: bryanla
 ms.reviewer: jiahan
 ms.lastreviewed: 01/09/2019
-ms.openlocfilehash: 1b070538171024a34f3ba041ba756220e38d44b9
-ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
+ms.openlocfilehash: 23767e4d9134e27e1aaa27e5309cd4408a6789d4
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77491890"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77697457"
 ---
 # <a name="sql-resource-provider-11300-release-notes"></a>Notas de la versión del proveedor de recursos SQL 1.1.30.0
 

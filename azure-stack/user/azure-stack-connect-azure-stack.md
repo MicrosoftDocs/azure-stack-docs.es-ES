@@ -6,13 +6,13 @@ ms.topic: conceptual
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: thoroet
-ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 388c01ce8a4c5c6834ab88f8fe28013c1208e728
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.lastreviewed: 01/14/2020
+ms.openlocfilehash: 0a3dfcc7d12baa6616f57908e87d24afaf1e927e
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883908"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77704393"
 ---
 # <a name="connect-to-azure-stack-hub"></a>Conexión a Azure Stack Hub
 
@@ -38,7 +38,7 @@ Puede establecer una conexión de red privada virtual de túnel dividido al Kit 
 > [!NOTE] 
 > Esta conexión VPN no proporciona conectividad con las máquinas virtuales de la infraestructura de Azure Stack Hub. 
 
-### <a name="prerequisites"></a>Prerequisites
+### <a name="prerequisites"></a>Prerrequisitos
 
 * Instale los [módulos de Azure PowerShell compatibles con Azure Stack Hub](../operator/azure-stack-powershell-install.md) en su equipo local.  
 * Descargue las [herramientas necesarias para trabajar con Azure Stack Hub](../operator/azure-stack-powershell-download.md). 

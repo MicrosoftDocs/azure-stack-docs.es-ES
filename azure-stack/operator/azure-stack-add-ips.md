@@ -7,12 +7,12 @@ ms.date: 09/10/2019
 ms.author: justinha
 ms.reviewer: scottnap
 ms.lastreviewed: 09/10/2019
-ms.openlocfilehash: e047f50dbdb9e7c645351fd83f9f1551f75c157e
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: f17ef9fad4dd595d4a8d1e51b4efc3c0dd029bef
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76875172"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77703373"
 ---
 # <a name="add-public-ip-addresses"></a>Incorporación de direcciones IP públicas
 

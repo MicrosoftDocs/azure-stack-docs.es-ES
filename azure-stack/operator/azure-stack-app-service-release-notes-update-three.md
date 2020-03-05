@@ -7,13 +7,13 @@ ms.topic: article
 ms.date: 03/25/2019
 ms.author: anwestg
 ms.reviewer: anwestg
-ms.lastreviewed: 08/20/2018
-ms.openlocfilehash: 79fdd8a3d9b026aea21ab04ce85c095e30ee272c
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.lastreviewed: 08/20/2019
+ms.openlocfilehash: 0b277f33472c25d0dc8e6b813685029aea81a303
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76874389"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77701401"
 ---
 # <a name="app-service-on-azure-stack-hub-update-3-release-notes"></a>Notas de la versión de la actualización 3 de App Service en Azure Stack Hub
 
@@ -26,7 +26,7 @@ En estas notas de la versión se describen las mejoras, las correcciones y los p
 
 El número de compilación de la actualización 3 de App Service en Azure Stack Hub es **74.0.13698.31**.
 
-### <a name="prerequisites"></a>Prerequisites
+### <a name="prerequisites"></a>Prerrequisitos
 
 Consulte [Requisitos previos para implementar App Service en Azure Stack Hub](azure-stack-app-service-before-you-get-started.md) antes de comenzar la implementación.
 

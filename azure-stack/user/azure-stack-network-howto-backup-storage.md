@@ -7,12 +7,12 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/19/2019
-ms.openlocfilehash: b01f4b796f3d436f42da7cba5f2df60e1c666856
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: a945800e999ce825c11d5300d02baa58bbfba9b8
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76884583"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77703866"
 ---
 # <a name="back-up-your-storage-accounts-on-azure-stack-hub"></a>Copia de seguridad de las cuentas de almacenamiento en Azure Stack Hub
 

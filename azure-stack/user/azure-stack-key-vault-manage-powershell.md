@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 01/07/2020
 ms.author: sethm
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: c9d0f5eda2e4107d0686b8869c005e812268acaa
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 0c7dc4bffba85c60213df4e57c3fc95f756259df
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883636"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77704070"
 ---
 # <a name="manage-key-vault-in-azure-stack-hub-using-powershell"></a>Administración de Key Vault en Azure Stack Hub mediante PowerShell
 
@@ -24,7 +24,7 @@ En este artículo se describe cómo crear y administrar un almacén de claves en
 >[!NOTE]
 >Los cmdlets de PowerShell para Key Vault que se describen en este artículo se ofrecen como parte del SDK de Azure PowerShell.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerrequisitos
 
 * Debe suscribirse a una oferta que incluya el servicio Azure Key Vault.
 * [Instale PowerShell para Azure Stack Hub](../operator/azure-stack-powershell-install.md).

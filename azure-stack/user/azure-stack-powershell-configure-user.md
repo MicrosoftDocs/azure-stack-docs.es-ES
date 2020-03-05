@@ -7,12 +7,12 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: d7667ed91cb3ebde2b74d05b655e3ff880685d98
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 3656a5a6a992788ca8d4d975ac819f69793edb02
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76884539"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77702047"
 ---
 # <a name="connect-to-azure-stack-hub-with-powershell-as-a-user"></a>Conexión a Azure Stack Hub con PowerShell como usuario
 

@@ -7,12 +7,12 @@ ms.author: mabrigg
 ms.date: 11/14/2019
 ms.reviewer: waltero
 ms.lastreviewed: 11/14/2019
-ms.openlocfilehash: 5e98ed511fab30e7ece3ebca282c79ef6a5bed97
-ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
+ms.openlocfilehash: 80222728bca3aa65fd211ccc5ef5700d0a15f397
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76889548"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77703628"
 ---
 # <a name="troubleshoot-kubernetes-deployment-to-azure-stack-hub"></a>Solución de problemas de implementación de Kubernetes en Azure Stack Hub
 
@@ -115,7 +115,7 @@ Al implementar el clúster de Kubernetes, puede revisar el estado de implementac
 
 Si el portal de Azure Stack Hub no proporciona suficiente información para solucionar algún error de implementación, el siguiente paso es profundizar en los registros del clúster. Para recuperar manualmente los registros de implementación, normalmente deberá conectarse a una de las máquinas virtuales principales del clúster. Una alternativa más sencilla sería descargar y ejecutar el siguiente [script de Bash](https://aka.ms/AzsK8sLogCollectorScript) proporcionado por el equipo de Azure Stack Hub. Este script se conecta a la instancia de DVM y a las máquinas del clúster, recopila los registros pertinentes del sistema y del clúster y los descarga en la estación de trabajo.
 
-### <a name="prerequisites"></a>Prerequisites
+### <a name="prerequisites"></a>Prerrequisitos
 
 Necesita un símbolo del sistema de Bash en la máquina que usa para administrar Azure Stack Hub. En un equipo Windows, puede obtener un símbolo del sistema de Bash mediante la instalación de [GIT para Windows](https://git-scm.com/downloads). Una vez instalado, busque _Git Bash_ en el menú Inicio.
 

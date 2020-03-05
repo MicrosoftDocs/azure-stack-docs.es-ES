@@ -7,12 +7,12 @@ ms.date: 11/21/2019
 ms.author: sethm
 ms.reviewer: fiseraci
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 813e1ecbff5ecf5a8db2a00fb980bce014ee44d8
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 9cfcc7089fa481acdfaefa31438a5631b25275a7
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76885183"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77704801"
 ---
 # <a name="azure-stack-hub-security-updates"></a>Actualizaciones de seguridad de Azure Stack Hub
 

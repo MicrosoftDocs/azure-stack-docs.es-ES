@@ -7,12 +7,12 @@ ms.date: 11/26/2019
 ms.author: justinha
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/26/2019
-ms.openlocfilehash: 1210b537d36d4be5c31f596bde589afa9b3cadfa
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 9303a9d60fad754a5ba644d4b6e1c5cd3d331497
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882847"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77697423"
 ---
 # <a name="sql-resource-provider-11470-release-notes"></a>Notas de la versión del proveedor de recursos de SQL 1.1.47.0
 

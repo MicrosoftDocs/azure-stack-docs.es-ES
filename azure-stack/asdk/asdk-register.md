@@ -7,12 +7,12 @@ ms.date: 06/14/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 06/14/2019
-ms.openlocfilehash: 66fb60c8fbb19bf125ff143393308b9f755119b6
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 2f0af3bd550b31e70f7c1e722ab79149c57c1a2f
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76873556"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77700653"
 ---
 # <a name="register-the-asdk-with-azure"></a>Registro del Kit de desarrollo de Azure Stack en Azure
 
@@ -20,7 +20,7 @@ La instalación del Kit de desarrollo de Azure Stack se puede registrar en Azure
 
 Si no registra su ASDK, puede que vea la alerta de advertencia **Activación necesaria** que le informa que debe registrar el ASDK. Este comportamiento es normal.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerrequisitos
 
 Antes de usar estas instrucciones para registrar el ASDK en Azure, asegúrese de que ha instalado PowerShell para Azure Stack y ha descargado las herramientas de Azure Stack como se describe en el artículo de [configuración posterior a la implementación](asdk-post-deploy.md).
 

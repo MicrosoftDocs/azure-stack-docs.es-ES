@@ -7,13 +7,13 @@ ms.topic: article
 ms.date: 10/02/2019
 ms.lastreviewed: 03/18/2019
 ms.author: bryanla
-ms.reviewer: xiaofmao
-ms.openlocfilehash: 2faeb2c714099a3b055343445dc94a57879d2cd6
-ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
+ms.reviewer: xiao
+ms.openlocfilehash: ff351dcef91491e6d52aa61ff25f282968c963fe
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77491839"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77697355"
 ---
 # <a name="deploy-the-sql-server-resource-provider-on-azure-stack-hub"></a>Implementación del proveedor de recursos de SQL Server en Azure Stack Hub
 

@@ -6,13 +6,13 @@ ms.topic: article
 ms.date: 01/02/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 01/02/2020
-ms.openlocfilehash: 9a1a9f4d5edcd7446d980489cfd475db51ed5d07
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.lastreviewed: 01/02/2019
+ms.openlocfilehash: 0b8b4babeba269f84d5c63deccdb9cb9fbe2978b
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883466"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77702370"
 ---
 # <a name="upgrade-a-kubernetes-cluster-on-azure-stack-hub"></a>Actualización de un clúster de Kubernetes en Azure Stack Hub
 

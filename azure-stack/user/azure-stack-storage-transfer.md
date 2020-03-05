@@ -7,12 +7,12 @@ ms.date: 11/06/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/06/2019
-ms.openlocfilehash: b1a69cb2029a278ecec992abbca00dc3b80b1211
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 6b0a31c0eea7f2973563c3f1e481cd2e830c41f8
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883131"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77704886"
 ---
 # <a name="use-data-transfer-tools-in-azure-stack-hub-storage"></a>Uso de herramientas de transferencia de datos en Azure Stack Hub Storage
 

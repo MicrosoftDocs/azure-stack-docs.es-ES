@@ -7,12 +7,12 @@ ms.date: 12/3/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 12/3/2019
-ms.openlocfilehash: 9e4aef51779480cf7c5e663113e09df71e378f8b
-ms.sourcegitcommit: 5f53810d3c5917a3a7b816bffd1729a1c6b16d7f
+ms.openlocfilehash: eaa7fd667dfba1a9963c1bebfe292b8b6ba9a355
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76972505"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77705107"
 ---
 # <a name="vm-sizes-supported-in-azure-stack-hub"></a>Tamaños de máquina virtual admitidos en Azure Stack Hub
 

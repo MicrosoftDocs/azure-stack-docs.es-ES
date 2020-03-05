@@ -7,18 +7,18 @@ ms.date: 10/03/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: 19056b0ad37511e75d462c201190c8e2f3a606e0
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 1b3854ab04792ade8ca0b66cc63f1fdc2c0e60e9
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883380"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77703900"
 ---
 # <a name="set-up-vpn-gateway-for-azure-stack-hub-using-fortigate-nva"></a>Configuración de una puerta de enlace de VPN para Azure Stack Hub mediante la aplicación virtual de red FortiGate
 
 En este artículo se describe cómo crear una conexión VPN con su instancia de Azure Stack Hub. Una puerta de enlace de VPN es un tipo de puerta de enlace de red virtual que envía tráfico cifrado entre una red virtual de Azure Stack Hub y una puerta de enlace de VPN remota. El siguiente procedimiento implementa una red virtual con una NVA FortiGate, una aplicación virtual de red, dentro de un grupo de recursos. También se proporcionan los pasos para configurar una VPN IPSec en la NVA FortiGate.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerrequisitos
 
 -  Acceso a un sistema integrado de Azure Stack Hub con capacidad disponible para implementar los requisitos de proceso, red y recursos necesarios para esta solución. 
 

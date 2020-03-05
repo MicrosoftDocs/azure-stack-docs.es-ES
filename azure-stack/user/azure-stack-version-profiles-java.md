@@ -7,12 +7,12 @@ ms.date: 01/23/2020
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: da85abeff55d09684c561679bdc0f85e28440ed7
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: c0be80757eb12daac9d452f79ed7c0f5b7326120
+ms.sourcegitcommit: 390eac7abc94cea1405178e8d6a9358f6488f5d9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76884249"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231645"
 ---
 # <a name="use-api-version-profiles-with-java-in-azure-stack-hub"></a>Uso de los perfiles de la versión de API con Java en Azure Stack Hub
 
@@ -40,7 +40,7 @@ Un perfil de API es una combinación de los proveedores de recursos y las versio
      <dependency>
      <groupId>com.microsoft.azure.profile_2019_03_01_hybrid</groupId>
      <artifactId>azure</artifactId>
-     <version>1.0.0-beta</version>
+     <version>1.0.0-beta-1</version>
      </dependency>
      ```
 
@@ -62,7 +62,7 @@ Para instalar el SDK de Java, siga estos pasos:
    <dependency>
    <groupId>com.microsoft.azure.profile_2019_03_01_hybrid</groupId>
    <artifactId>azure</artifactId>
-   <version>1.0.0-beta</version>
+   <version>1.0.0-beta-1</version>
    </dependency>
    ```
 
@@ -78,7 +78,7 @@ Para instalar el SDK de Java, siga estos pasos:
 
 7. Asegúrese de que la entidad de servicio tenga rol de colaborador o propietario en la suscripción. Para obtener instrucciones sobre cómo asignar roles a entidades de servicio, consulte [Proporcionar a las aplicaciones acceso a Azure Stack Hub](../operator/azure-stack-create-service-principals.md).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerrequisitos
 
 Para usar el SDK de Java de Azure con Azure Stack Hub, debe especificar los siguientes valores y, después, establecer valores con variables de entorno. Para establecer las variables de entorno, consulte las instrucciones bajo la tabla para su sistema operativo.
 
@@ -295,13 +295,13 @@ Use los ejemplos siguientes de GitHub como referencia para crear soluciones con 
 
 6. En el archivo **Pom.xml**, agregue la dependencia siguiente para utilizar el perfil **2019-03-01-hybrid** para Azure Stack Hub. Esta dependencia instala los módulos asociados a este perfil para los proveedores de recursos de los servicios Compute, Redes, Storage, Key Vault y App Services:
 
-   ```xml
-   <dependency>
-   <groupId>com.microsoft.azure.profile_2019_03_01_hybrid</groupId>
-   <artifactId>azure</artifactId>
-   <vers1s.0.0-beta</version>
-   </dependency>
-   ```
+    ```xml
+    <dependency>
+      <groupId>com.microsoft.azure.profile_2019_03_01_hybrid</groupId>
+      <artifactId>azure</artifactId>
+      <version>1.0.0-beta-1</version>
+    </dependency>
+    ```
 
 7. En el símbolo del sistema que estaba abierto para establecer las variables de entorno, escriba el siguiente comando:
 

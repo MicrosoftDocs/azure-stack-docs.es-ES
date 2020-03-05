@@ -6,13 +6,13 @@ ms.topic: article
 ms.date: 01/13/2020
 ms.author: anwestg
 ms.reviewer: anwestg
-ms.lastreviewed: 01/13/2020
-ms.openlocfilehash: 7fa4ac0f63b3f5243a6473c921012614bb01bfb2
-ms.sourcegitcommit: a7db4594de43c31fe0c51e60e84fdaf4d41ef1bb
+ms.lastreviewed: 01/13/2019
+ms.openlocfilehash: 7bfd1ec2ebf20abb3b6881fffe1588260fc4476e
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/24/2020
-ms.locfileid: "77568629"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77703575"
 ---
 # <a name="deploy-azure-app-service-in-an-offline-environment-in-azure-stack-hub"></a>Implementación de Azure App Service en un entorno sin conexión en Azure Stack Hub
 

@@ -6,13 +6,13 @@ ms.topic: article
 ms.date: 04/02/2019
 ms.author: bryanla
 ms.reviewer: anajod
-ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: b764054e08af89ce20c123c7d3dd9659560e1297
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.lastreviewed: 01/14/2020
+ms.openlocfilehash: ec1a5b07498e380eeef3989df1185537afef360f
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76884364"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77704852"
 ---
 # <a name="sql-server-best-practices-to-optimize-performance-in-azure-stack-hub"></a>Procedimientos recomendados de SQL Server para optimizar el rendimiento en Azure Stack Hub.
 

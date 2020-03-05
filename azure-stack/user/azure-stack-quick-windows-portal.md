@@ -7,12 +7,12 @@ ms.date: 1/10/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 1/10/2020
-ms.openlocfilehash: 0792d0dffa8a61194b0f6725aba9222d69c8634e
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: c9b2309e5c640d9f2cab79f93dc8a13b1344cea2
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883299"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77703764"
 ---
 # <a name="quickstart-create-a-windows-server-vm-with-the-azure-stack-hub-portal"></a>Inicio rápido: Creación de una máquina virtual Windows Server con el portal de Azure Stack Hub
 

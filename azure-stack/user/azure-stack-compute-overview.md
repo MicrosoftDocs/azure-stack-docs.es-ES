@@ -6,13 +6,13 @@ ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: sethm
 ms.reviewer: kivenkat
-ms.lastreviewed: 01/05/2019
-ms.openlocfilehash: abb5e6d50b9ec99366578fd84e2d720fb52722a3
-ms.sourcegitcommit: 4178443d84cf6d3fbaba11425beff703568c1a2c
+ms.lastreviewed: 01/05/2020
+ms.openlocfilehash: 576580732440cabd8ae1c140d13130b81b212d16
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76977910"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77704410"
 ---
 # <a name="introduction-to-azure-stack-hub-vms"></a>Introducción a las máquinas virtuales de Azure Stack Hub
 
@@ -87,11 +87,11 @@ Los recursos de la tabla siguiente se usan en la máquina virtual y deben ya exi
 |Resource|Obligatorio|Descripción|
 |---------|---------|---------|
 |Resource group|Sí|La máquina virtual debe encontrarse en un grupo de recursos.|
-|Cuenta de almacenamiento|No|La máquina virtual no necesita la cuenta de Storage para almacenar sus discos duros virtuales si usa discos administrados. <br>La máquina virtual necesita la cuenta de Storage almacene sus discos duros virtuales si usa discos sin administrar.|
+|Cuenta de almacenamiento|Sin|La máquina virtual no necesita la cuenta de Storage para almacenar sus discos duros virtuales si usa discos administrados. <br>La máquina virtual necesita la cuenta de Storage almacene sus discos duros virtuales si usa discos sin administrar.|
 |Virtual network|Sí|La máquina virtual debe ser miembro de una red virtual.|
-|Dirección IP pública|No|La máquina virtual puede tener una dirección IP pública asignada para acceder remotamente a ella.|
+|Dirección IP pública|Sin|La máquina virtual puede tener una dirección IP pública asignada para acceder remotamente a ella.|
 |interfaz de red|Sí|La máquina virtual necesita la interfaz de red para comunicarse en la red.|
-|Discos de datos.|No|La máquina virtual puede incluir discos de datos para ampliar las funcionalidades de almacenamiento.|
+|Discos de datos.|Sin|La máquina virtual puede incluir discos de datos para ampliar las funcionalidades de almacenamiento.|
 
 ## <a name="create-your-first-vm"></a>Creación de la primera máquina virtual
 

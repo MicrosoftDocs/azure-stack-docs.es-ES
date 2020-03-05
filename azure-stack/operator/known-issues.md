@@ -7,12 +7,12 @@ ms.date: 12/27/2019
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 631a086b86fd7855780aa1cb6dba11dbfa799759
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 05b4fb4a3fedd1431e7850473a720fd4cc1bdf3d
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76879829"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77696046"
 ---
 # <a name="azure-stack-hub-known-issues"></a>Problemas conocidos de Azure Stack Hub
 

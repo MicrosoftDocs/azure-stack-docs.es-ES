@@ -7,12 +7,12 @@ ms.date: 01/22/2020
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 10/01/2019
-ms.openlocfilehash: b398c1dde1f9d7b6033ab4aed115ae45546190c1
-ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
+ms.openlocfilehash: 3a78dabf7e4bae13d4fcea5d672d79110ddb44b7
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76890177"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77699106"
 ---
 # <a name="azure-stack-hub-marketplace-changes"></a>Cambios en Marketplace de Azure Stack Hub
 

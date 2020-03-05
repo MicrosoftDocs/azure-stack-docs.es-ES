@@ -7,12 +7,12 @@ ms.date: 1/10/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 1/10/2020
-ms.openlocfilehash: 4e4f9eb8d9a1bf0966d75c2d4e47b94a998675f0
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 5b08cbf0ec316c8a5a2726800942f0d12a458db5
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76884467"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77702098"
 ---
 # <a name="quickstart-create-a-linux-server-vm-by-using-the-azure-stack-hub-portal"></a>Inicio rápido: Creación de una máquina virtual de servidor Linux mediante el portal de Azure Stack Hub
 
@@ -25,7 +25,7 @@ Puede crear una máquina virtual en Ubuntu Server 16.04 LTS mediante el portal d
 > [!NOTE]  
 > Las imágenes de este artículo se han actualizado para reflejar los cambios introducidos en la versión 1808 de Azure Stack Hub. La versión 1808 presenta compatibilidad con los *discos administrados*, además de los no administrados. Si usa una versión anterior, las imágenes para algunas tareas, como la selección de disco, diferirán de lo que se muestra en la interfaz de usuario.  
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerrequisitos
 
 * Una imagen de Linux en el Marketplace de Azure Stack Hub
 

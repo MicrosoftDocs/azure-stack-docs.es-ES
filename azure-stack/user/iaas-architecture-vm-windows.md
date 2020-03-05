@@ -7,12 +7,12 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: 2aaa7ccf995ac9cc4f5cfc012441ca2317af3504
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 1bd438802c00a1c00b10f81920c1756d22f83606
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76885298"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77705005"
 ---
 # <a name="run-a-windows-virtual-machine-on-azure-stack-hub"></a>Ejecución de una máquina virtual Windows en Azure Stack Hub
 

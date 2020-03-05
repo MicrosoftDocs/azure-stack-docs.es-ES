@@ -7,12 +7,12 @@ ms.date: 1/8/2020
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 1/8/2020
-ms.openlocfilehash: 74d21915b7df5161817c0cf48ec7db6f06cbd904
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 7dc570ede3f953b4886971ea827fe69b881b5b89
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76881525"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77698154"
 ---
 # <a name="use-the-privileged-endpoint-in-azure-stack-hub"></a>Uso del punto de conexión con privilegios en Azure Stack Hub
 

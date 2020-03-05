@@ -8,12 +8,12 @@ ms.date: 1/22/2020
 ms.author: inhenkel
 ms.reviewer: scottnap
 ms.lastreviewed: 09/17/2019
-ms.openlocfilehash: 8f52158e53bbb48b25b9b3a898c0ece33ab3c1be
-ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
+ms.openlocfilehash: f210f5939f60eb996f7c72b9552cf09d11f8de91
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77508028"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77696216"
 ---
 # <a name="manage-network-resources-in-azure-stack-hub"></a>Administración de recursos de red en Azure Stack Hub
 

@@ -6,13 +6,13 @@ ms.topic: article
 ms.date: 1/22/2020
 ms.author: bryanla
 ms.reviewer: jiahan
-ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: f3153de76385a74f7742dd72a1c12038acc2513e
-ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
+ms.lastreviewed: 01/11/2020
+ms.openlocfilehash: 219689721c66bcf97bb776874a1b33e84fcfa6d0
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77492077"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77698732"
 ---
 # <a name="mysql-resource-provider-maintenance-operations-in-azure-stack-hub"></a>Operaciones de mantenimiento del proveedor de recursos MySQL en Azure Stack Hub
 

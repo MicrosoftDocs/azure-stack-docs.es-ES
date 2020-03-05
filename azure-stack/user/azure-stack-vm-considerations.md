@@ -7,12 +7,12 @@ ms.date: 2/3/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 10/09/2019
-ms.openlocfilehash: 76ecac957ab7680032c31cd46db4b717a2f029e5
-ms.sourcegitcommit: 4178443d84cf6d3fbaba11425beff703568c1a2c
+ms.openlocfilehash: ba6e4483475b97b6803781f5b7c5d29d94cbe896
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76977893"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77705141"
 ---
 # <a name="azure-stack-hub-vm-features"></a>Características de las máquinas virtuales de Azure Stack Hub
 

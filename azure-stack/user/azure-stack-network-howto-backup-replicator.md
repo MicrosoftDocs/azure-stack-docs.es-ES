@@ -7,12 +7,12 @@ ms.date: 11/07/2019
 ms.author: mabrigg
 ms.reviewer: rtiberiu
 ms.lastreviewed: 11/07/2019
-ms.openlocfilehash: 095de73dea95a4ed3dec04d43e70c1a0554906ca
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: b8e955075553480b4178223a5475b44e3debd106
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76884616"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77702353"
 ---
 # <a name="replicate-resources-using-the-azure-stack-hub-subscription-replicator"></a>Replicación de recursos mediante el replicador de suscripciones de Azure Stack Hub
 

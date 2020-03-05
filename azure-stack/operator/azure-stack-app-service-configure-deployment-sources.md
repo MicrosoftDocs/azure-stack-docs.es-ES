@@ -6,13 +6,13 @@ ms.topic: article
 ms.date: 03/11/2019
 ms.author: anwestg
 ms.reviewer: anwestg
-ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: 30e7ced54a4c2bc69cb5249b58b4844cd9a0b332
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.lastreviewed: 10/15/2019
+ms.openlocfilehash: a3ca9d760969974d9ba6fd35f0907472d2271c61
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76874780"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77703509"
 ---
 # <a name="configure-deployment-sources-for-app-services-on-azure-stack-hub"></a>Configuración de orígenes de implementación para App Services en Azure Stack Hub
 

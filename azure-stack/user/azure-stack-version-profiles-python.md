@@ -7,12 +7,12 @@ ms.date: 01/23/2020
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: 48df6dab5d93e4e9875dc422f90f3f823a4b2ee9
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: db66156cfa1b4b5a2c97b5d17559ae2c48760ce0
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76884231"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77705192"
 ---
 # <a name="use-api-version-profiles-with-python-in-azure-stack-hub"></a>Uso de perfiles de la versión de la API con Python en Azure Stack Hub
 
@@ -43,7 +43,7 @@ El SDK de Python es compatible con los siguientes perfiles de la API:
 4. Cree una entidad de servicio y guarde su identificador y su secreto. Para obtener instrucciones sobre la creación de una entidad de servicio para Azure Stack Hub, consulte [Proporcionar a las aplicaciones acceso a Azure Stack Hub](../operator/azure-stack-create-service-principals.md).
 5. Asegúrese de que la entidad de servicio tenga rol de colaborador o propietario en la suscripción. Para obtener instrucciones sobre cómo asignar un rol a la entidad de servicio, consulte [Proporcionar a las aplicaciones acceso a Azure Stack Hub](../operator/azure-stack-create-service-principals.md).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerrequisitos
 
 Para usar el SDK de Azure para Python con Azure Stack Hub, debe proporcionar los siguientes valores y, luego, establecer valores con variables de entorno. Para establecer las variables de entorno, consulte las instrucciones bajo la tabla siguiente relativas a su sistema operativo específico.
 

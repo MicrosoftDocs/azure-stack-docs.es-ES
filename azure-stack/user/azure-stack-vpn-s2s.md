@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 01/07/2020
 ms.author: sethm
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 262d0714c8a0d5979a1313dcff48947f676109ce
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: a44af909dc3f3309c51f748b0f3b3f0275843c80
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882994"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77705073"
 ---
 # <a name="configure-ipsecike-policy-for-site-to-site-vpn-connections"></a>Configuración de la directiva IPsec/IKE para conexiones VPN de sitio a sitio
 
@@ -113,7 +113,7 @@ En esta sección se describen los pasos necesarios para crear una conexión VPN 
 
 Consulte [Creación de una conexión VPN de sitio a sitio](/azure/vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell) para obtener instrucciones detalladas sobre cómo crear una conexión VPN de sitio a sitio.
 
-### <a name="prerequisites"></a>Prerequisites
+### <a name="prerequisites"></a>Prerrequisitos
 
 Asegúrese de que cumple los siguientes requisitos previos antes de empezar:
 

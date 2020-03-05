@@ -8,12 +8,12 @@ ms.date: 09/16/2019
 ms.author: inhenkel
 ms.reviewer: ppacent
 ms.lastreviewed: 09/16/2019
-ms.openlocfilehash: 321ceff84ec24997866366c533eb31939acde2dd
-ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
+ms.openlocfilehash: e7b346f8c87e49980a57c39d0bebc6a88d21415f
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77509728"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77698222"
 ---
 # <a name="prepare-azure-stack-hub-pki-certificates-for-deployment-or-rotation"></a>Preparación de certificados PKI de Azure Stack Hub para implementación o rotación
 

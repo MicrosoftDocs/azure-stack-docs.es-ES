@@ -6,13 +6,13 @@ ms.topic: article
 ms.date: 01/22/2020
 ms.author: sethm
 ms.reviewer: kivenkat
-ms.lastreviewed: 10/22/2018
-ms.openlocfilehash: 7474b18a1d50c6ab8ed91be64f8f943a215ff7fd
-ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
+ms.lastreviewed: 10/22/2019
+ms.openlocfilehash: f0b23df25ef2e9fffe9c5f43ee649ecfe5f74092
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76889752"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77695298"
 ---
 # <a name="make-virtual-machine-scale-sets-available-in-azure-stack-hub"></a>Disponibilidad de los conjuntos de escalado de máquinas virtuales en Azure Stack Hub
 
@@ -27,7 +27,7 @@ Los conjuntos de escalado de máquinas virtuales de Azure Stack Hub son similare
 
 En Azure Stack Hub, los conjuntos de escalado de máquinas virtuales no admiten la escalabilidad automática. Puede agregar más instancias a un conjunto de escalado con plantillas de Resource Manager, la CLI o PowerShell.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerrequisitos
 
 * **Marketplace de Azure Stack Hub** Registre Azure Stack Hub en Azure global para permitir la disponibilidad de los elementos en Marketplace de Azure Stack Hub. Siga las instrucciones que se indican en [Registro de Azure Stack Hub en Azure](azure-stack-registration.md).
 * **Imagen del sistema operativo:** Para poder crear un conjunto de escalado de máquinas virtuales, antes es preciso descargar las imágenes de máquina virtual para usar en el conjunto de escalado desde [Marketplace de Azure Stack Hub](azure-stack-download-azure-marketplace-item.md). Para que un usuario pueda crear un conjunto de escalado, deben existir las imágenes.

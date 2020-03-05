@@ -10,12 +10,12 @@ ms.date: 01/27/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 02/26/2019
-ms.openlocfilehash: 1e5b2198bc830ea91babadab7a0a33ed5dc09f38
-ms.sourcegitcommit: 5f53810d3c5917a3a7b816bffd1729a1c6b16d7f
+ms.openlocfilehash: 9f7fbb8657ec13aa6c7768e1db4d62f36fbb46cb
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76972526"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77696454"
 ---
 # <a name="frequently-asked-questions-about-azure-stack-hub-usage"></a>Preguntas frecuentes sobre el uso de Azure Stack Hub
 
@@ -285,7 +285,7 @@ Se informa del uso para los siguientes proveedores de recursos:
 **Unidad**: GB  
 **Notas**: Bytes de respuesta de solicitud de entrada total + bytes de solicitud de salida total + bytes de respuesta de solicitud FTP de entrada total + bytes de respuesta de solicitud de implementación web de entrada total.  
   
-## <a name="how-do-the-azure-stack-hub-usage-apis-compare-to-the-azure-usage-apihttpsdocsmicrosoftcomazurebillingbilling-usage-rate-card-overviewazure-resource-usage-api-preview-currently-in-public-preview"></a>¿Cómo se comparan las API de uso de Azure Stack Hub con la [API de uso de Azure](https://docs.microsoft.com/azure/billing/billing-usage-rate-card-overview#azure-resource-usage-api-preview) (actualmente en versión preliminar pública)?
+## <a name="how-do-the-azure-stack-hub-usage-apis-compare-to-the-azure-usage-api-currently-in-public-preview"></a>¿Cómo se comparan las API de uso de Azure Stack Hub con la [API de uso de Azure](https://docs.microsoft.com/azure/billing/billing-usage-rate-card-overview#azure-resource-usage-api-preview) (actualmente en versión preliminar pública)?
 
 * La API Usage de inquilinos es coherente con la API de Azure, con una excepción: actualmente, la marca *showDetails* no se admite en Azure Stack Hub.
 * La API de uso del proveedor solo se aplica a Azure Stack Hub.

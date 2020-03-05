@@ -6,13 +6,13 @@ ms.topic: article
 ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: hectorl
-ms.lastreviewed: 10/25/2018
-ms.openlocfilehash: ee18141d01805b498a5f9fa1856d226b6738691c
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.lastreviewed: 10/25/2019
+ms.openlocfilehash: cdbe5150b72a720fa527d3bb1b1e32f5a66a6955
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76878333"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77703611"
 ---
 # <a name="infrastructure-backup-service-reference"></a>Referencia del servicio Infrastructure Backup
 

@@ -9,14 +9,14 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 31d47f947c4c71847156ca4e49c4b370c872e920
-ms.sourcegitcommit: 4e1c948ae4a498bd730543b0704bbc2b0d88e1ec
+ms.openlocfilehash: 4f6255ee26eb686b78640f95b44ee5286693d081
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77625295"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77704648"
 ---
-# <a name="validation-as-a-service-for-azure-stack-hub"></a>Validación como servicio para Azure Stack Hub
+# <a name="what-is-validation-as-a-service-for-azure-stack-hub"></a>¿Qué es la validación como servicio de Azure Stack Hub?
 
 [!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 

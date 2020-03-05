@@ -8,14 +8,15 @@ ms.date: 10/28/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 10/28/2019
-ms.openlocfilehash: aa2b6e3d2f9bfabea4032b368f77dbdaba198893
-ms.sourcegitcommit: 4e1c948ae4a498bd730543b0704bbc2b0d88e1ec
+ROBOTS: NOINDEX
+ms.openlocfilehash: da111d514946a3f4e28783c004778ce1d88c937d
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77625261"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77704597"
 ---
-# <a name="validation-as-a-service-release-notes"></a>Notas de la versión de validación como servicio
+# <a name="release-notes-for-validation-as-a-service"></a>Notas de la versión para la validación como servicio
 
 [!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 

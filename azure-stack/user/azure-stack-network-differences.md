@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mabrigg
 ms.reviewer: wamota
 ms.lastreviewed: 07/10/2019
-ms.openlocfilehash: 4cb075b429fa2a52d6bf0b12216716dd451fe444
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 1845a25b0cd66168277e39026a3651e6638cf98c
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883412"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77703917"
 ---
 # <a name="differences-and-considerations-for-azure-stack-hub-networking"></a>Diferencias y consideraciones para las redes de Azure Stack Hub
 

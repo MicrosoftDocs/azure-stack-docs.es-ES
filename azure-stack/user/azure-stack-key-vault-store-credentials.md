@@ -5,13 +5,13 @@ author: sethmanheim
 ms.topic: article
 ms.date: 01/24/2020
 ms.author: sethm
-ms.lastreviewed: 01/16/2019
-ms.openlocfilehash: 6c2943565ca750176bc3bba4ca28084a2b8b100e
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.lastreviewed: 01/16/2020
+ms.openlocfilehash: 66d69fa3397fa748dfbc67377c3e52c47f35904c
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883562"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77702727"
 ---
 # <a name="store-service-principal-credentials-in-azure-stack-hub-key-vault"></a>Almacenamiento de las credenciales de las entidades de servicio de Key Vault en Azure Stack Hub
 
@@ -19,7 +19,7 @@ El desarrollo de aplicaciones en Azure Stack Hub habitualmente requiere crear un
 
 Para más información acerca de Key Vault, consulte [Introducción a Key Vault en Azure Stack Hub](azure-stack-key-vault-intro.md).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerrequisitos
 
 - Una suscripción a una oferta que incluye el servicio de Azure Key Vault.
 - PowerShell está instalado y configurado para su uso con Azure Stack Hub.

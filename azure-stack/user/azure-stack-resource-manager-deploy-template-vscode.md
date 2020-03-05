@@ -7,12 +7,12 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 09/30/2019
-ms.openlocfilehash: b1dd38fcb9228bf4bcc6455462e5c6adc0e49007
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: d70c44b35612ffb7642a0ee79b5820dba7b66532
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883236"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77701894"
 ---
 # <a name="deploy-with-visual-studio-code-to-azure-stack-hub"></a>Implementación con Visual Studio Code en Azure Stack Hub
 
@@ -33,7 +33,7 @@ Para comprender los conceptos asociados a la coordinación de proveedores de rec
 
 El esquema de implementación de Azure Stack Hub admite perfiles híbridos mediante las plantillas de Azure Resource Manager en Visual Studio Code. Puede cambiar una línea en la plantilla JSON para hacer referencia al esquema y luego puede usar IntelliSense para revisar el recurso compatible con Azure. Con el esquema, revise los proveedores de recursos, los tipos y las versiones de API compatibles con su versión de Azure Stack Hub. El esquema depende del perfil de API para recuperar las versiones específicas de los puntos de conexión de API en los proveedores de recursos admitidos en su versión de Azure Stack Hub. Puede usar la finalización de palabra para los tipos y los valores de apiVersion y, posteriormente, se limitará a los tipos de recursos y valores de apiVersion disponibles para el perfil de API.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerrequisitos
 
 - [Visual Studio Code](https://code.visualstudio.com/)
 - Acceso a Azure Stack Hub

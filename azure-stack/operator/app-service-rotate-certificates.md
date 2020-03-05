@@ -6,13 +6,13 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: anwestg
 ms.reviewer: anwestg
-ms.lastreviewed: 01/10/2020
-ms.openlocfilehash: f1a42f5b04ea83d9ff9130fb63ba6833cd7d2914
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.lastreviewed: 01/10/2019
+ms.openlocfilehash: 5f5c8a8e1217999a282c0ac5621ab02ddfc43ef7
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76876548"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77703254"
 ---
 # <a name="rotate-app-service-on-azure-stack-hub-secrets-and-certificates"></a>Rotación de secretos y certificados de App Service en Azure Stack Hub
 

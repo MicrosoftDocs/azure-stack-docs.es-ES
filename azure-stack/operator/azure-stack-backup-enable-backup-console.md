@@ -7,12 +7,12 @@ ms.date: 08/21/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 08/21/2019
-ms.openlocfilehash: 0aa5fca80cfc408088f34923a607d4200ece15cb
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: ce401b20d6baa66807e6ee5f7ee1e94503b653af
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76878214"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77703169"
 ---
 # <a name="enable-backup-for-azure-stack-hub-from-the-administrator-portal"></a>Habilitación de la copia de seguridad de Azure Stack Hub desde el portal del administrador
 

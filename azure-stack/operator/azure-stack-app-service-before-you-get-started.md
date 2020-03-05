@@ -6,13 +6,13 @@ ms.topic: article
 ms.date: 01/13/2020
 ms.author: anwestg
 ms.reviewer: anwestg
-ms.lastreviewed: 01/13/2020
-ms.openlocfilehash: 8d995550ead87f31a9024cc9c87ba45f0800a78d
-ms.sourcegitcommit: a7db4594de43c31fe0c51e60e84fdaf4d41ef1bb
+ms.lastreviewed: 01/13/2019
+ms.openlocfilehash: 3a0a62fe74b3420ccc321f79539cdce16aac6934
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/24/2020
-ms.locfileid: "77568459"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77701231"
 ---
 # <a name="prerequisites-for-deploying-app-service-on-azure-stack-hub"></a>Requisitos previos para implementar App Service en Azure Stack Hub
 

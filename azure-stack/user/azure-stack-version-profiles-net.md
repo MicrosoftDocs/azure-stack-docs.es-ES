@@ -7,12 +7,12 @@ ms.date: 01/27/2020
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: 6f8220f9a8683569c23460acf2890c9aa8407f30
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 37ffe5bd8325e309f8d9381cf058cfd07ac48480
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883086"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77705209"
 ---
 # <a name="use-api-version-profiles-with-net-in-azure-stack-hub"></a>Uso de los perfiles de la versión de API con .NET en Azure Stack Hub
 
@@ -56,7 +56,7 @@ Puede combinar todas las opciones en la misma aplicación.
 
 - Asegúrese de que la entidad de servicio tenga rol de colaborador o propietario en la suscripción. Para más información sobre cómo asignar roles a la entidad de servicio, consulte [Proporcionar a las aplicaciones acceso a Azure Stack Hub][].
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerrequisitos
 
 Para usar el SDK de Azure para .NET con Azure Stack Hub, debe especificar los siguientes valores y, después, establecer valores con variables de entorno. Para establecer las variables de entorno, consulte las instrucciones bajo la tabla relativas a su sistema operativo específico.
 

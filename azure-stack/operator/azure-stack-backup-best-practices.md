@@ -7,12 +7,12 @@ ms.date: 02/08/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 02/08/2019
-ms.openlocfilehash: 880c5dfb72d0f70cc8748f2528a3c36562bebe93
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: a141beed4df6b34175f37d9e1e60e694f3ab71f2
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76878061"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77700517"
 ---
 # <a name="infrastructure-backup-service-best-practices"></a>Procedimientos recomendados del servicio Infrastructure Backup
 

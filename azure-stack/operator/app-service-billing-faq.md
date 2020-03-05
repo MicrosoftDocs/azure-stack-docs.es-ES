@@ -8,12 +8,12 @@ ms.date: 06/10/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: c22bb6c29082449d7590ad67e0f51c8a7c1b7aca
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: ea304dc9d95d672377e72ce1dad49d4751b7d5c6
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76875290"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77694890"
 ---
 # <a name="azure-app-service-on-azure-stack-hub-billing-overview-and-faq"></a>Introducción a la facturación de Azure App Service en Azure Stack Hub y preguntas frecuentes
 

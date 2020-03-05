@@ -6,13 +6,13 @@ ms.topic: conceptual
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: hectorl
-ms.lastreviewed: 3/19/2018
-ms.openlocfilehash: fdcae656e142f8981a41875daada938b5ce360ab
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.lastreviewed: 3/19/2019
+ms.openlocfilehash: 824352a27ae91b2bf0a351b9dc280c83bfb9d19a
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76884724"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77703968"
 ---
 # <a name="protect-vms-deployed-on-azure-stack-hub"></a>Protección de las máquinas virtuales implementadas en Azure Stack Hub
 

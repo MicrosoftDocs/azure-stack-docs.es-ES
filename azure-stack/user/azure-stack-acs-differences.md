@@ -6,13 +6,13 @@ ms.topic: conceptual
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviwer: xiaofmao
-ms.lastreviewed: 01/30/2019
-ms.openlocfilehash: 6e5171c105bd806895a04880e0bec0af5fab8855
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.lastreviewed: 01/30/2020
+ms.openlocfilehash: f852aa2165f51c0a57f09ea94b872de015535923
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883968"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77687400"
 ---
 # <a name="azure-stack-hub-storage-differences-and-considerations"></a>Azure Stack Hub Storage: Diferencias y consideraciones
 

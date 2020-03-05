@@ -7,12 +7,12 @@ ms.date: 10/08/2019
 ms.author: justinha
 ms.reviewer: shisab
 ms.lastreviewed: 10/08/2019
-ms.openlocfilehash: 3dede51916863a79f720f463af2a031e597f844f
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 19482e235690cae10411dde72587b0e4b95518f3
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76878197"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77695230"
 ---
 # <a name="configure-automatic-azure-stack-hub-diagnostic-log-collection"></a>Configuración de la recopilación de registros de diagnóstico automática de Azure Stack Hub
 
@@ -22,7 +22,7 @@ Recomendamos configurar la característica de recopilación de registros de diag
 
 Para poder configurar la recopilación de registros automática, deberá obtener una firma de acceso compartido (SAS) para un contenedor de blobs. Una SAS le permite conceder acceso a los recursos de su cuenta de almacenamiento sin compartir las claves de cuenta. Puede guardar los archivos de registro de Azure Stack Hub en un contenedor de blobs en Azure y, a continuación, proporcionar la dirección URL de SAS donde CSS puede recopilar los registros. 
 
-### <a name="prerequisites"></a>Prerequisites
+### <a name="prerequisites"></a>Prerrequisitos
 
 Puede usar un contenedor de blobs nuevo o existente en Azure. Para crear un contenedor de blobs en Azure, necesita al menos el [rol de colaborador de Storage Blob](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor) o el [permiso específico](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). Los administradores globales también tienen el permiso necesario. 
 

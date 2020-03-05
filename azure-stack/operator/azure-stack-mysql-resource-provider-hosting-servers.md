@@ -7,12 +7,12 @@ ms.date: 11/06/2019
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/06/2019
-ms.openlocfilehash: f8c998675f3446941a00da9d9a444f1f9186e60e
-ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
+ms.openlocfilehash: a0b0e654ac2698c1b9611924cca853bd1ff525de
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77492094"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77698766"
 ---
 # <a name="add-mysql-hosting-servers-in-azure-stack-hub"></a>Adición de servidores de hospedaje de MySQL en Azure Stack Hub
 

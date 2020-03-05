@@ -7,12 +7,12 @@ ms.date: 10/31/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 10/31/2019
-ms.openlocfilehash: 27fb31a29313543c3eec2b973cdf8e8ce32940fd
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: a644de92672305cdae82490b6a972620ea77924c
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76877330"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77688753"
 ---
 # <a name="footfall-detection-pattern"></a>Patrón de detección de afluencia de compradores
 

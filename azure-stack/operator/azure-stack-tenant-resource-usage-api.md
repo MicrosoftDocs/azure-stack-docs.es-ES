@@ -8,12 +8,12 @@ ms.date: 01/24/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 458dc41cd587ca78b979270611cb94ba109d7035
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 842291fc47d76ad40b9933bb6295efaa4446fe41
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76880889"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77696889"
 ---
 # <a name="tenant-resource-usage-api-reference"></a>Referencia de API de uso de recursos de inquilino
 

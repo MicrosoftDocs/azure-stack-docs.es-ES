@@ -7,12 +7,12 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 09/19/2019
-ms.openlocfilehash: 301704daa5369fe290227b540d96bdc91c0c64b7
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 8d2f79d85055ef15f7dc0af3e1b36434f9c63d79
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76881566"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77698290"
 ---
 # <a name="download-azure-stack-hub-tools-from-github"></a>Descarga de herramientas de Azure Stack Hub desde GitHub
 
