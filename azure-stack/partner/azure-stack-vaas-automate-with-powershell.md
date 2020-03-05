@@ -9,12 +9,12 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/26/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: a85f43096cffa900bfefb801bdd28b26358e6219
-ms.sourcegitcommit: 0a3c8b0bf9c116a5caaeca453a2bbc6e7f7cbfb9
+ms.openlocfilehash: c9372aed013c8af089e8e07a0474d6d0321ef53a
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77147760"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77704750"
 ---
 # <a name="automate-azure-stack-hub-validation-with-powershell"></a>Automatización de la validación de Azure Stack Hub con PowerShell
 

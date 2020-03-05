@@ -7,13 +7,13 @@ ms.topic: article
 ms.date: 01/27/2020
 ms.author: sethm
 ms.reviewer: efemmano
-ms.lastreviewed: 11/27/2018
-ms.openlocfilehash: 930909dd82b67dbeff5dbf656635855b6d34d92b
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.lastreviewed: 11/27/2019
+ms.openlocfilehash: 69cdd8a672cd3431906d949c1a038cc1dbdb9641
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76881455"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77698018"
 ---
 # <a name="region-management-in-azure-stack-hub"></a>Administración de regiones en Azure Stack Hub
 

@@ -6,13 +6,13 @@ ms.topic: article
 ms.date: 01/21/2020
 ms.author: sethm
 ms.reviewer: ihcherie
-ms.lastreviewed: 01/21/2020
-ms.openlocfilehash: 64618cb3f1840db5472023902c58fc3fa771e6a5
-ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
+ms.lastreviewed: 01/21/2019
+ms.openlocfilehash: 875aafa4602e9db34bfe98eb80a658c36b3d0041
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76890398"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77700551"
 ---
 # <a name="azure-marketplace-items-available-for-azure-stack-hub"></a>Elementos de Azure Marketplace disponibles para Azure Stack Hub
 

@@ -7,12 +7,12 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 31df74f7c5f3db5c7651747601010109620e82cd
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: ab9ff25591b46df26fa68c33bcea237e57356667
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883741"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77704104"
 ---
 # <a name="set-up-a-development-environment-in-azure-stack-hub"></a>Configuración de un entorno de desarrollo en Azure Stack Hub 
 

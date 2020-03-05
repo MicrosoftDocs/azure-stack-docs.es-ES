@@ -7,12 +7,12 @@ ms.date: 01/22/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 06/27/2019
-ms.openlocfilehash: 79f34d685998a6719bc580504d4d26a8e4be093f
-ms.sourcegitcommit: 2377c6947cf846fd2a4a0274c41326293a2a239c
+ms.openlocfilehash: 55609ca3ca8dc0dbb0d557422a9a5b4223450fc3
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77075996"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77696471"
 ---
 # <a name="usage-connectivity-errors"></a>Errores de conectividad de uso
 

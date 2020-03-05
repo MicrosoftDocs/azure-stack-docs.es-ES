@@ -7,12 +7,12 @@ ms.date: 10/15/2019
 ms.author: inhenkel
 ms.lastreviewed: 08/15/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 82c2af02b26e9a661e600b6296b19cf4b0ba802c
-ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
+ms.openlocfilehash: 8b8334b4a835952c9122e71ac764c3f1c52d99c6
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77508946"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77696709"
 ---
 # <a name="apply-azure-stack-hub-original-equipment-manufacturer-oem-updates"></a>Aplicación de actualizaciones del fabricante de equipos originales de Azure Stack Hub
 

@@ -8,12 +8,12 @@ ms.date: 06/10/2019
 ms.author: inhenkel
 ms.reviewer: jerskine
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: 54435c9e3bb4a7fa6604c8108497acc569da2d71
-ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
+ms.openlocfilehash: 0a725959e532744d9fff9300808c548943502c4e
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77508742"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77696301"
 ---
 # <a name="validate-graph-integration-for-azure-stack-hub"></a>Validación de la integración de Graph con Azure Stack Hub
 
@@ -108,7 +108,7 @@ De forma predeterminada, ambos archivos se escriben en `C:\Users\<username>\AppD
 Uso:
 
 * `-OutputPath`: el parámetro de *ruta de acceso* al final del comando de ejecución para especificar otra ubicación para el informe.
-* `-CleanReport`: el parámetro al final del comando de ejecución para borrar*AzsReadinessCheckerReport.json de la información del informe previo. Para más información, consulte [Informe de validación para Azure Stack Hub](azure-stack-validation-report.md).
+* `-CleanReport`: el parámetro al final del comando de ejecución para borrar*AzsReadinessCheckerReport.json* de la información del informe previo. Para más información, consulte [Informe de validación para Azure Stack Hub](azure-stack-validation-report.md).
 
 ## <a name="validation-failures"></a>Errores de validación
 

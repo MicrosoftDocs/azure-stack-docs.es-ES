@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: abaa1405db1e3837c02cbc67e00cd3a593e9b98b
-ms.sourcegitcommit: a7db4594de43c31fe0c51e60e84fdaf4d41ef1bb
+ms.openlocfilehash: b376be7855300dab0177bbbe735d6a5bf34d6bb9
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/24/2020
-ms.locfileid: "77568578"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77701078"
 ---
 # <a name="deploy-an-app-that-uses-on-premises-data-and-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Implementación de una aplicación que usa datos locales y se escala en toda la nube con Azure y Azure Stack Hub
 

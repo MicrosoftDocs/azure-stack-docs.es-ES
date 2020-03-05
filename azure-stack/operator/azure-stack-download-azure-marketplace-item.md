@@ -6,13 +6,13 @@ ms.topic: conceptual
 ms.date: 02/04/2020
 ms.author: sethm
 ms.reviewer: avishwan
-ms.lastreviewed: 12/23/2018
-ms.openlocfilehash: d909786e3cf3bacbf981fc2150f20084d283e81b
-ms.sourcegitcommit: c653efe7cd5177bf61c1a321ba7f38c0cdf90346
+ms.lastreviewed: 12/23/2019
+ms.openlocfilehash: a4882ca540b2a72d77195ee12a5d5ae0be87931d
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77575151"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77700024"
 ---
 # <a name="download-marketplace-items-to-azure-stack-hub"></a>Descarga de elementos de Marketplace en Azure Stack Hub 
 

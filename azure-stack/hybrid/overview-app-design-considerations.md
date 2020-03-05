@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 72a0fd215363911457271f65d636be37e3388c83
-ms.sourcegitcommit: 74ce7c12a93d47315d70427b02bcacbd3b44f854
+ms.openlocfilehash: adc185b290d0006ed3a32584a7e3d8473ba2aa6c
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77037172"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77689926"
 ---
 # <a name="hybrid-application-design-considerations"></a>Consideraciones sobre el diseño de aplicaciones híbridas 
 

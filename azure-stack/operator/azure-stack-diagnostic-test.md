@@ -7,12 +7,12 @@ ms.date: 01/10/2020
 ms.author: justinha
 ms.reviewer: adshar
 ms.lastreviewed: 01/10/2020
-ms.openlocfilehash: 79ce9557ecfa8ba3b80d463ca7e203be42c7df55
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 1cfae74381121534fea8a49dca4d048e749bc1e6
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882363"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77700007"
 ---
 # <a name="validate-azure-stack-hub-system-state"></a>Validación del estado del sistema con Azure Stack Hub
 

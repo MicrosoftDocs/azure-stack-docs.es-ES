@@ -7,12 +7,12 @@ ms.date: 12/16/2019
 ms.author: inhenkel
 ms.reviewer: ppacent
 ms.lastreviewed: 12/16/2019
-ms.openlocfilehash: 5ed0a7fa6091ee62a7de5e1938bd0094d7765512
-ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
+ms.openlocfilehash: 99bec3441d7b6671024f5e1689c6f8504a2f57c1
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77509711"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77698392"
 ---
 # <a name="azure-stack-hub-public-key-infrastructure-certificate-requirements"></a>Requisitos de certificados de la infraestructura de clave pública de Azure Stack Hub
 

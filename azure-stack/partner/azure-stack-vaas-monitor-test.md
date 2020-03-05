@@ -9,14 +9,14 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 697aabcb1b52bc52083b635e67058f1b08451a38
-ms.sourcegitcommit: 4e1c948ae4a498bd730543b0704bbc2b0d88e1ec
+ms.openlocfilehash: b01cea3fb30b2b707ac778a7878c03861b68c3ba
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77625446"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77704665"
 ---
-# <a name="manage-tests-in-the-azure-stack-hub-validation-portal"></a>Administración de pruebas en el portal de Azure Stack Hub Validation
+# <a name="monitor-and-manage-tests-in-the-vaas-portal"></a>Supervisión y administración de pruebas en el portal de VaaS
 
 [!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 

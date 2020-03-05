@@ -6,13 +6,13 @@ ms.topic: article
 ms.date: 05/06/2019
 ms.author: justinha
 ms.reviewer: knithinc
-ms.lastreviewed: 10/25/2018
-ms.openlocfilehash: df4b6c770ef1dd93cddbeb748c0845f391305173
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.lastreviewed: 10/25/2019
+ms.openlocfilehash: 1b562d2a72f3da4d4ac9ef7045f5cbd5408f4afa
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76874032"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77695417"
 ---
 # <a name="connect-to-the-asdk"></a>Conectarse al ASDK
 
@@ -50,7 +50,7 @@ La conectividad VPN se admite en Azure AD y en las implementaciones de Servicios
 > [!NOTE]
 > Una conexión VPN *no* proporciona conectividad a las máquinas virtuales de Azure Stack. No podrá usar el protocolo RDP en las VM de Azure Stack mientras esté conectado mediante VPN.
 
-### <a name="prerequisites"></a>Prerequisites
+### <a name="prerequisites"></a>Prerrequisitos
 Antes de configurar una conexión VPN al ASDK, asegúrese de cumplir los siguientes requisitos previos:
 
 - Instale [Azure Stack-compatible Azure PowerShell](asdk-post-deploy.md#install-azure-stack-powershell) en su equipo local.  

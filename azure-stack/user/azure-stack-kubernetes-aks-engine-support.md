@@ -7,12 +7,12 @@ ms.date: 11/21/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 7320389f5b8a74b4a8964216c06c9495fe3581b4
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 50474e9c05f55abc1bfb8213d051393714a9b5cc
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883516"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77702506"
 ---
 # <a name="support-policies-for-aks-engine-on-azure-stack-hub"></a>Directivas de compatibilidad para el motor de AKS en Azure Stack Hub
 

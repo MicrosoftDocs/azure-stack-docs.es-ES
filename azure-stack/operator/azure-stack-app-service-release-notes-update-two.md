@@ -7,13 +7,13 @@ ms.topic: article
 ms.date: 03/25/2019
 ms.author: anwestg
 ms.reviewer: anwestg
-ms.lastreviewed: 05/18/2018
-ms.openlocfilehash: 029601b9bac3bc3b14d2ab4202df072b6d9063de
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.lastreviewed: 05/18/2019
+ms.openlocfilehash: 2c80aafe3665b6ecb31e701483a5e903d0471e42
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76875800"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77703424"
 ---
 # <a name="app-service-on-azure-stack-hub-update-2-release-notes"></a>Notas de la versión de la actualización 2 de App Service en Azure Stack Hub
 
@@ -26,7 +26,7 @@ En estas notas de la versión se describen las mejoras, las correcciones y los p
 
 El número de compilación de la actualización 2 de App Service en Azure Stack Hub es **72.0.13698.10**.
 
-### <a name="prerequisites"></a>Prerequisites
+### <a name="prerequisites"></a>Prerrequisitos
 
 > [!IMPORTANT]
 > Las nuevas implementaciones de Azure App Service en Azure Stack Hub requieren ahora un [certificado comodín con tres firmantes](azure-stack-app-service-before-you-get-started.md#get-certificates) debido a las mejoras en la forma en que se trata el inicio de sesión único para Kudu en Azure App Service. El nuevo firmante es **\*.sso.appservice.\<región\>.\<nombreDominio\>.\<extensión\>**

@@ -6,13 +6,13 @@ ms.topic: article
 ms.date: 01/28/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 01/28/2020
-ms.openlocfilehash: 66e340df1d687e9a0c19f43c05c4fcb92e6940c2
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.lastreviewed: 01/28/2019
+ms.openlocfilehash: 7f37d6c8c46679a3511ee0e071fb3b98907c3075
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883549"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77704036"
 ---
 # <a name="install-the-aks-engine-on-linux-in-azure-stack-hub"></a>Instalación del motor de AKS en Linux para Azure Stack Hub
 

@@ -7,12 +7,12 @@ ms.date: 06/07/2019
 ms.author: justinha
 ms.reviewer: efemmano
 ms.lastreviewed: 06/07/2019
-ms.openlocfilehash: def9dd3fca3c7e3a2076ffdf79b96fa00e72fac5
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 358837da19ad34f82f81a94da0c89b165574ea49
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882021"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77699259"
 ---
 # <a name="use-the-administrator-portal-in-azure-stack-hub"></a>Uso del portal de administración de Azure Stack Hub
 

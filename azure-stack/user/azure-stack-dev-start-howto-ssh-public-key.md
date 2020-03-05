@@ -7,12 +7,12 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: c9a37dab12f3a96e2f44aa9ccb92eaea295a0d0b
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 5f65b0ff096fbf84b140406b7cb98fdbdf5b0b11
+ms.sourcegitcommit: 390eac7abc94cea1405178e8d6a9358f6488f5d9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883807"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231696"
 ---
 # <a name="use-an-ssh-public-key"></a>Uso de una clave pública SSH
 

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 01/24/2020
 ms.author: sethm
 ms.lastreviewed: 05/21/2019
-ms.openlocfilehash: 11f27fd12b546a217cd65e65ce21dacc78abbb70
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 35e17b6527b39bc12ad8f140b98a27fa6f4b69ac
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883056"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77705124"
 ---
 # <a name="create-vpn-gateways-for-azure-stack-hub"></a>Creación de puertas de enlace VPN para Azure Stack Hub
 

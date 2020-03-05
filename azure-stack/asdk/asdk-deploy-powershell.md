@@ -7,18 +7,18 @@ ms.date: 05/06/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 02/08/2019
-ms.openlocfilehash: b31792ce210cfc7fc5c2d1ee4ba1b496b2d340f6
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 3c9c4fca443af34422d76bd30af4efe5de685936
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76873811"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77695672"
 ---
 # <a name="deploy-asdk-from-the-command-line-using-powershell"></a>Implementación de ASDK desde la línea de comandos mediante PowerShell
 
 El Kit de desarrollo de Azure Stack (ASDK) es un entorno de desarrollo y pruebas que se puede implementar para evaluar y demostrar las características y servicios de Azure Stack. Para que funcione correctamente, debe preparar el hardware del entorno y ejecutar algunos scripts. Tenga en cuenta que los scripts tardan varias horas en ejecutarse. Una vez finalizado, puede iniciar sesión en los portales del administrador y de usuarios para comenzar a usar Azure Stack.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerrequisitos
 
 Prepare el equipo host de ASDK. Planee el hardware, software y red. El equipo que hospeda ASDK debe cumplir los requisitos de hardware, software y red. También debe elegir entre el uso de Azure Active Directory (Azure AD) o los Servicios de federación de Active Directory (AD FS). Asegúrese de cumplir estos requisitos previos antes de comenzar la implementación para que el proceso de instalación se ejecute sin problemas.
 
