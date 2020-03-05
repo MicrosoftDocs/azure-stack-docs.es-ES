@@ -7,13 +7,13 @@ ms.topic: article
 ms.date: 10/07/2019
 ms.author: bryanla
 ms.reviewer: xiaofmao
-ms.lastreviewed: 10/23/2018
-ms.openlocfilehash: 7201ad85961ecf08d1162d97aa684625e0782d35
-ms.sourcegitcommit: 381e4e47851dd2526bbf04d6b06af90fb1fb6a49
+ms.lastreviewed: 10/23/2019
+ms.openlocfilehash: 327b63e2b21ea545fd6e0d175d531862ceeac0d6
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77363022"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77696930"
 ---
 # <a name="create-highly-available-mysql-databases"></a>Creación de bases de datos MySQL de alta disponibilidad
 
