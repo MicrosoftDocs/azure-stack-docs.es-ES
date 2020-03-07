@@ -3,20 +3,20 @@ title: Incorporación de requisitos previos del motor de Azure Kubernetes Servic
 description: Aprenda a agregar los requisitos previos del motor de AKS al Marketplace de Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 11/21/2019
+ms.date: 2/27/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 59f49e3d59fa077f4308a62b567ee3dd147ba4f4
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 9c728b17913379edb13683ed4b5f1615d391b922
+ms.sourcegitcommit: bbc4023c9a673c146de4a9e242311d429f7781eb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76874797"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77782743"
 ---
 # <a name="add-the-azure-kubernetes-services-aks-engine-prerequisites-to-the-azure-stack-hub-marketplace"></a>Incorporación de requisitos previos del motor de Azure Kubernetes Service (AKS) al Marketplace de Azure Stack Hub
 
-Puede permitir que los usuarios configuren el motor de Azure Kubernetes Services (AKS) agregando los elementos que se describen en este artículo a Azure Stack Hub. Después, los usuarios pueden implementar un clúster de Kubernetes en una sola operación coordinada. Este artículo le guía por los pasos necesarios para hacer que el motor de AKS esté disponible para los usuarios, tanto en entornos conectados como desconectados. El motor de AKS depende de una identidad de entidad de servicio y, en Marketplace, una extensión de script personalizado y la imagen base de AKS.
+Puede permitir que los usuarios configuren el motor de Azure Kubernetes Services (AKS) agregando los elementos que se describen en este artículo a Azure Stack Hub. Después, los usuarios pueden implementar un clúster de Kubernetes en una sola operación coordinada. Este artículo le guía por los pasos necesarios para hacer que el motor de AKS esté disponible para los usuarios, tanto en entornos conectados como desconectados. El motor de AKS depende de una identidad de entidad de servicio y, en Marketplace, una extensión de script personalizado y la imagen base de AKS. El motor de AKS requiere que ejecute [Azure Stack Hub 1910](release-notes.md?view=azs-1910) u otra versión posterior.
 
 ## <a name="check-your-users-service-offering"></a>Comprobar la oferta de servicio del usuario
 
