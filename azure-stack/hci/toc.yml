@@ -4,6 +4,10 @@
   items:
     - name: ¿Qué es Azure Stack HCI?
       href: overview.md
+- name: Administrar
+  items:
+    - name: Creación de volúmenes
+      href: manage/create-volumes.md
 - name: Referencia
   items:
     - name: Comandos de PowerShell de Hyper-V
