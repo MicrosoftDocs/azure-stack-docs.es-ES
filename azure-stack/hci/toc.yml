@@ -16,6 +16,10 @@
       href: manage/replace-drives.md
 - name: Conceptos
   items:
+    - name: Elección de unidades
+      href: concepts/choose-drives.md
+    - name: Planeamiento de volúmenes
+      href: concepts/plan-volumes.md
     - name: Descripción de la memoria caché
       href: concepts/cache.md
     - name: Tolerancia a errores y eficacia del almacenamiento
