@@ -2,17 +2,17 @@
 title: Modificación de la configuración específica de la configuración del conmutador de Azure Stack Hub
 description: Aprenda lo que puede personalizar en la configuración del conmutador de Azure Stack Hub. Después de que el fabricante de equipos originales (OEM) cree la configuración, no la modifique sin su consentimiento o el del equipo de ingeniería de Microsoft Azure Stack Hub.
 author: IngridAtMicrosoft
-ms.topic: article
-ms.date: 11/11/2019
+ms.topic: conceptual
+ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: wamota
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: c4d0335f03e0e6012423cfe7d7a7eb684872db3e
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 19964b761478bb210d3377b177f05f708697167b
+ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77700313"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78368726"
 ---
 #  <a name="modify-specific-settings-on-your-azure-stack-hub-switch-configuration"></a>Modificación de la configuración específica de la configuración del conmutador de Azure Stack Hub
 

@@ -4,16 +4,16 @@ description: Conozca el contenido de la actualización 8 de App Service en Azur
 author: apwestgarth
 manager: stefsch
 ms.topic: article
-ms.date: 02/25/2020
+ms.date: 03/05/2020
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/25/2019
-ms.openlocfilehash: 56838a95c7c937c6fcbbe878ca284ce27d3d1397
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 82f43028253638f92866bb679a5ccb5478a5a56e
+ms.sourcegitcommit: 8198753ebafd69d0dbfc6b3548defbd70f4c79c1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77695604"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78935077"
 ---
 # <a name="app-service-on-azure-stack-hub-update-8-release-notes"></a>Notas de la versión de la actualización 8 de App Service en Azure Stack Hub
 
@@ -177,9 +177,9 @@ Debido a una regresión en esta versión, las bases de datos de App Service (app
             GO  
 
             /********[appservice_hosting] Migration End********/
-    '''
+    ```
 
-1. Migrate logins to contained database users.
+1. Migre los inicios de sesión a usuarios de la base de datos independiente.
 
     ```sql
         IF EXISTS(SELECT * FROM sys.databases WHERE Name=DB_NAME() AND containment = 1)
@@ -226,37 +226,42 @@ Debido a una regresión en esta versión, las bases de datos de App Service (app
 
   Los nuevos trabajos no pueden adquirir la cadena de conexión de la base de datos necesaria.  Para solucionar este problema, conéctese a una de las instancias del controlador, por ejemplo, CN0-VM, y ejecute el siguiente script de PowerShell:
 
-  ```powershell
- 
+    ```powershell
+    
     [System.Reflection.Assembly]::LoadWithPartialName("Microsoft.Web.Hosting")
-    $siteManager = New-Object Microsoft.Web.Hosting.SiteManager
-    $builder = New-Object System.Data.SqlClient.SqlConnectionStringBuilder -ArgumentList (Get-AppServiceConnectionString -Type Hosting)
-    $conn = New-Object System.Data.SqlClient.SqlConnection -ArgumentList $builder.ToString()
+    $siteManager = New-Object Microsoft.Web.Hosting.SiteManager
+
+    $builder = New-Object System.Data.SqlClient.SqlConnectionStringBuilder -ArgumentList (Get-AppServiceConnectionString -Type Hosting)
+    $conn = New-Object System.Data.SqlClient.SqlConnection -ArgumentList $builder.ToString()
 
     $siteManager.RoleServers | Where-Object {$_.IsWorker} | ForEach-Object {
-        $worker = $_
-        $dbUserName = "WebWorker_" + $worker.Name
+        $worker = $_
+        $dbUserName = "WebWorker_" + $worker.Name
 
-        if (!$siteManager.ConnectionContexts[$dbUserName]) {
-            $dbUserPassword = [Microsoft.Web.Hosting.Common.Security.PasswordHelper]::GenerateDatabasePassword()
+        if (!$siteManager.ConnectionContexts[$dbUserName]) {
+            $dbUserPassword = [Microsoft.Web.Hosting.Common.Security.PasswordHelper]::GenerateDatabasePassword()
+
             $conn.Open()
-            $command = $conn.CreateCommand()
-            $command.CommandText = "CREATE USER [$dbUserName] WITH PASSWORD = '$dbUserPassword'"
+            $command = $conn.CreateCommand()
+            $command.CommandText = "CREATE USER [$dbUserName] WITH PASSWORD = '$dbUserPassword'"
             $command.ExecuteNonQuery()
             $conn.Close()
+            
             $conn.Open()
-
-            $command = $conn.CreateCommand()
-            $command.CommandText = "ALTER ROLE [WebWorkerRole] ADD MEMBER [$dbUserName]"
+            $command = $conn.CreateCommand()
+            $command.CommandText = "ALTER ROLE [WebWorkerRole] ADD MEMBER [$dbUserName]"
             $command.ExecuteNonQuery()
             $conn.Close()
-
-            $builder.Password = $dbUserPassword
-            $builder["User ID"] = $dbUserName
-            $siteManager.ConnectionContexts.Add($dbUserName, $builder.ToString())
-        }
+            
+            $builder.Password = $dbUserPassword
+            $builder["User ID"] = $dbUserName
+            
+            $siteManager.ConnectionContexts.Add($dbUserName, $builder.ToString())
+        }
     }
+
     $siteManager.CommitChanges()
+        
     ```
 
 ### <a name="known-issues-for-cloud-admins-operating-azure-app-service-on-azure-stack"></a>Problemas conocidos para los administradores en la nube que trabajan con Azure App Service en Azure Stack

@@ -3,17 +3,17 @@ title: Creación de un rol personalizado para el registro de Azure Stack Hub
 titleSuffix: Azure Stack Hub
 description: Aprenda a crear un rol personalizado para evitar el uso de un administrador global para el registro de Azure Stack Hub.
 author: IngridAtMicrosoft
-ms.topic: article
-ms.date: 06/10/2019
+ms.topic: how-to
+ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: rtiberiu
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: ad173a5678f847cbaf6e18114597c963bfcb3c73
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: a7208ed3e66a4c86c591676c9d39ed8b3d8225f8
+ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77697916"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78367886"
 ---
 # <a name="create-a-custom-role-for-azure-stack-hub-registration"></a>Creación de un rol personalizado para el registro de Azure Stack Hub
 

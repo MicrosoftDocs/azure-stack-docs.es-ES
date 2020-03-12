@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 2dbff36dba8739661b88b58ef27eec49597646bc
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: cc17789485bc4c1d0676d54751f4d5bc820c3a5e
+ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77701010"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78366286"
 ---
 # <a name="create-a-geo-distributed-app-solution-to-direct-traffic-with-azure-and-azure-stack-hub"></a>Crear una solución de aplicación distribuida geográficamente para dirigir el tráfico con Azure y Azure Stack Hub
 
@@ -113,7 +113,7 @@ Configure la canalización de integración y entrega continuas (CI/CD) híbrida 
 
 ### <a name="create-web-app-deployment-in-both-clouds"></a>Creación de una implementación de aplicaciones web en ambas nubes
 
-1.  Edite el archivo **WebApplication.csproj**: Seleccione `Runtimeidentifier` y agregue `win10-x64`. (Consulte la documentación de [Implementaciones autocontenidas](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd)).
+1.  Edite el archivo **WebApplication.csproj**: Seleccione `Runtimeidentifier` y agregue `win10-x64`. (Consulte la documentación de [Implementaciones autocontenidas](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf)).
 
     ![Editar el archivo de proyecto de aplicación web en Visual Studio](media/solution-deployment-guide-geo-distributed/image3.png)
 
@@ -129,7 +129,7 @@ Configure la canalización de integración y entrega continuas (CI/CD) híbrida 
 
     ![Agregar código para la definición de compilación](media/solution-deployment-guide-geo-distributed/image4.png)
 
-3. **Ejecute la compilación**. El proceso de [compilación de implementación autocontenida](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd) publicará los artefactos que se pueden ejecutar en Azure y Azure Stack Hub.
+3. **Ejecute la compilación**. El proceso de [compilación de implementación autocontenida](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) publicará los artefactos que se pueden ejecutar en Azure y Azure Stack Hub.
 
 **Uso de un agente hospedado de Azure**
 

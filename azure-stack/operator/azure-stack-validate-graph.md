@@ -3,17 +3,17 @@ title: Validación de la integración de Azure Graph
 titleSuffix: Azure Stack Hub
 description: Use Azure Stack Hub Readiness Checker para validar la integración de Graph con Azure Stack Hub.
 author: IngridAtMicrosoft
-ms.topic: article
-ms.date: 06/10/2019
+ms.topic: how-to
+ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: jerskine
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: 0a725959e532744d9fff9300808c548943502c4e
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 541be4667328f6ac3906c785329b8816558c8b84
+ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77696301"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78366645"
 ---
 # <a name="validate-graph-integration-for-azure-stack-hub"></a>Validación de la integración de Graph con Azure Stack Hub
 

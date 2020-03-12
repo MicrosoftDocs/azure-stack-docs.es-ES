@@ -2,17 +2,17 @@
 title: Capacidad de proceso de Azure Stack Hub
 description: Obtenga más información sobre el planeamiento de la capacidad de proceso para las implementaciones de Azure Stack Hub.
 author: IngridAtMicrosoft
-ms.topic: article
-ms.date: 07/16/2019
+ms.topic: conceptual
+ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: prchint
 ms.lastreviewed: 06/13/2019
-ms.openlocfilehash: fd67c1bc02c16bc15eb569418bcb5d4914eca222
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 3ec8b0b3ac6f4687fd782dfc692f1c705c5ed733
+ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77688668"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78366354"
 ---
 # <a name="azure-stack-hub-compute-capacity"></a>Capacidad de proceso de Azure Stack Hub
 
@@ -76,10 +76,10 @@ Memoria disponible para la selección de la máquina virtual = memoria total del
 Reserva de resistencia = H + R * ((N-1) * H) + V * (N-2)
 
 > Donde:
-> - H = tamaño de la memoria de un solo servidor
+> -    H = tamaño de la memoria de un solo servidor
 > - N = tamaño de la unidad de escalado (número de servidores)
-> - R = reserva del sistema operativo para la sobrecarga de sistema operativo, que es 0,15 en esta fórmula<sup>2</sup>
-> - V = máquina virtual más grande de la unidad de escalado
+> -    R = reserva del sistema operativo para la sobrecarga de sistema operativo, que es 0,15 en esta fórmula<sup>2</sup>
+> -    V = máquina virtual más grande de la unidad de escalado
 
 <sup>1</sup> Sobrecarga de la infraestructura de Azure Stack Hub = 242 GB + (4 GB x n.º de nodos). Se usan, aproximadamente, 31 máquinas virtuales para hospedar la infraestructura de Azure Stack Hub y, en total, se consumen alrededor de 242 GB + (4 GB x n.º de nodos) de memoria y146 núcleos virtuales. La razón de este número de máquinas virtuales es satisfacer la separación del servicio que se necesita para cumplir los requisitos de seguridad, escalabilidad, servicio y aplicación de revisiones. Esta estructura de servicio interno permite la futura introducción de nuevos servicios de infraestructura mientras se desarrollan.
 

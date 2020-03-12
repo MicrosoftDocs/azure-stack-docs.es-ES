@@ -3,17 +3,17 @@ title: Inicio y detención
 titleSuffix: Azure Stack Hub
 description: Aprenda a iniciar y detener Azure Stack Hub.
 author: IngridAtMicrosoft
-ms.topic: article
-ms.date: 10/02/2019
+ms.topic: how-to
+ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: misainat
 ms.lastreviewed: 10/15/2019
-ms.openlocfilehash: 70e58880ec8ffa1776d507ff71d909d2385731f6
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: d6742ad75625eaed8f7e8c1ebec725fa1b62d53c
+ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77697117"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78367529"
 ---
 # <a name="start-and-stop-azure-stack-hub"></a>Inicio y detención de Azure Stack Hub
 
