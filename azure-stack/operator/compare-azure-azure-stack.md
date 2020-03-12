@@ -8,12 +8,12 @@ ms.date: 05/03/2019
 ms.author: justinha
 ms.reviewer: unknown
 ms.lastreviewed: 03/29/2019
-ms.openlocfilehash: b6186a836ac38d94c3b15aa7de45ebc80a8accd1
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: df143d08f3d5e4445020f4932a47de657805fa7c
+ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77696199"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78366422"
 ---
 # <a name="differences-between-global-azure-azure-stack-hub-and-azure-stack-hci"></a>Diferencias entre Azure global, Azure Stack Hub y Azure Stack HCI
 
@@ -29,7 +29,7 @@ Microsoft Azure es conjunto en constante expansión de servicios en la nube para
 
 Azure global ofrece más de 100 servicios disponibles en 54 regiones de todo el mundo. Para la lista más reciente de servicios de Azure global, consulte los [*Productos disponibles por región*](https://azure.microsoft.com/regions/services). Los servicios disponibles en Azure se enumeran por categoría y también por disponibilidad general o en versión preliminar.
 
-Para más información acerca de los servicios de Azure global, consulte [Introducción a Azure](https://docs.microsoft.com/azure/#pivot=get-started&panel=get-started1).
+Para más información acerca de los servicios de Azure global, consulte [Introducción a Azure](https://docs.microsoft.com/azure/?pivot=get-started&panel=get-started1).
 
 ## <a name="azure-stack-hub"></a>Azure Stack Hub
 
