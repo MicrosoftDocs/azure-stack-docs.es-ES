@@ -7,12 +7,12 @@ ms.date: 11/21/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 202a6269dfc978747b3d1c4dc754b19490911046
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: aa41ddde0986716e49073d571e967a050ef660f6
+ms.sourcegitcommit: 4301e8dee16b4db32b392f5979dfec01ab6566c9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77702438"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79313030"
 ---
 # <a name="troubleshoot-the-aks-engine-on-azure-stack-hub"></a>Solución de problemas del motor de AKS en Azure Stack Hub
 
@@ -84,7 +84,7 @@ Puede acceder a la información de revisión que crea AKS-Engine. El motor de AK
 
 ## <a name="collect-kubernetes-logs"></a>Recopilación de registros de Kubernetes
 
-Además de los registros del motor de AKS, los componentes de Kubernetes generan mensajes de estado y de error. Estos registros se pueden recopilar mediante el script de Bash, [getkuberneteslogs.sh](https://aka.ms/aa6z613).
+Además de los registros del motor de AKS, los componentes de Kubernetes generan mensajes de estado y de error. Estos registros se pueden recopilar mediante el script de Bash, [getkuberneteslogs.sh](https://github.com/msazurestackworkloads/azurestack-gallery/releases/tag/diagnosis-v0.1.3).
 
 Este script automatiza el proceso de recopilación de los siguientes registros: 
 

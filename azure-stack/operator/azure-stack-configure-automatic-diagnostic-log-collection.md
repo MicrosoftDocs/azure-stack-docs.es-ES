@@ -7,12 +7,12 @@ ms.date: 10/08/2019
 ms.author: justinha
 ms.reviewer: shisab
 ms.lastreviewed: 10/08/2019
-ms.openlocfilehash: 19482e235690cae10411dde72587b0e4b95518f3
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 3464738aef30a44b6c50c05b06116641235ab96e
+ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77695230"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79512276"
 ---
 # <a name="configure-automatic-azure-stack-hub-diagnostic-log-collection"></a>Configuración de la recopilación de registros de diagnóstico automática de Azure Stack Hub
 
@@ -68,7 +68,7 @@ Para ver procedimientos recomendados sobre cómo elegir parámetros para la cuen
 
 1. Haga clic en **Crear**.  
 
-Copie la dirección URL y escríbala al [configurar la recopilación de registros automática](azure-stack-configure-automatic-diagnostic-log-collection.md). Para obtener más información sobre las direcciones URL de SAS, consulte [Uso de firmas de acceso compartido (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1). 
+Copie la dirección URL y escríbala al [configurar la recopilación de registros automática](azure-stack-configure-automatic-diagnostic-log-collection-tzl.md). Para obtener más información sobre las direcciones URL de SAS, consulte [Uso de firmas de acceso compartido (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1). 
 
 
 ## <a name="steps-to-configure-automatic-log-collection"></a>Pasos para configurar la recopilación de registros automática

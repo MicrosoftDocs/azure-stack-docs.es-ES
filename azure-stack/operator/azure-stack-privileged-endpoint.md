@@ -7,12 +7,12 @@ ms.date: 1/8/2020
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 1/8/2020
-ms.openlocfilehash: 7dc570ede3f953b4886971ea827fe69b881b5b89
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 335afce7423872156c84c655d9c94ed59a9592d2
+ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77698154"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79512446"
 ---
 # <a name="use-the-privileged-endpoint-in-azure-stack-hub"></a>Uso del punto de conexión con privilegios en Azure Stack Hub
 
@@ -20,7 +20,7 @@ Como operador de Azure Stack Hub, debe usar el portal del administrador, PowerSh
 
 Puede usar el PEP para realizar estas tareas:
 
-- Tareas de bajo nivel, como la [recopilación de registros de diagnóstico](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs).
+- Tareas de bajo nivel, como la [recopilación de registros de diagnóstico](azure-stack-get-azurestacklog.md).
 - Muchas tareas de integración de centros de datos posteriores a la implementación para sistemas integrados, como agregar reenviadores de Sistema de nombres de dominio (DNS) después de la implementación, configurar la integración con Microsoft Graph y con Active Directory Federation Services (AD FS), la rotación de certificados, etc.
 - Trabaje con el soporte técnico para obtener acceso temporal y de alto nivel para la solución de problemas en profundidad de un sistema integrado.
 
@@ -197,4 +197,4 @@ Una vez los archivos de registro de transcripción se transfieren correctamente 
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Herramientas de diagnóstico de Azure Stack Hub](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs)
+[Herramientas de diagnóstico de Azure Stack Hub](azure-stack-diagnostic-log-collection-overview-tzl.md)

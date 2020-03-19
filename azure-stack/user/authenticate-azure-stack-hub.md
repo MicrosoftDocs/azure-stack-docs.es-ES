@@ -7,12 +7,12 @@ ms.date: 12/13/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/13/2019
-ms.openlocfilehash: 21cd92626a5ddb4e86e5f0dd7568dc1a875bd3c1
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 845be919279107e88a922dfd180e3fc8794e1a89
+ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77687451"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79293898"
 ---
 # <a name="get-authentication-information-for-azure-stack-hub"></a>Obtención de información de autenticación para Azure Stack Hub
 
@@ -68,7 +68,7 @@ Para obtener el identificador del inquilino:
 
 El punto de conexión de Azure Resource Manager es el punto de conexión de metadatos para el servicio de administración e implementación de Azure Stack Hub. Proporciona una capa de administración que le permite crear, actualizar y eliminar recursos de su suscripción de Azure.
 
-En el caso de un sistema integrado, la dirección URL del punto de conexión de Azure Resource Manager es:<br>`https://management.<location>.<fqdn>.com`
+En el caso de un sistema integrado, la dirección URL del punto de conexión de Azure Resource Manager es:<br>`https://management.<location>.<fqdn>`
 
 Para obtener el punto de conexión de metadatos que apunta a propiedades como el punto de conexión de la galería, el punto de conexión del grafo, el punto de conexión del portal, el punto de conexión del inicio de sesión y las audiencias, la dirección URL es: `<ResourceManager>/metadata/endpoints?api-version=1.0`
 

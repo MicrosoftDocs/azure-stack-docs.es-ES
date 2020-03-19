@@ -8,11 +8,11 @@ ms.date: 10/05/2019
 ms.author: bryanla
 ms.lastreviewed: 05/10/2019
 ms.openlocfilehash: 5225772f94e5a28d03872d1764681e56f14a2cf4
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77697083"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79295404"
 ---
 # <a name="create-subscriptions-to-offers-in-azure-stack-hub"></a>Creación de suscripciones para ofertas en Azure Stack Hub
 

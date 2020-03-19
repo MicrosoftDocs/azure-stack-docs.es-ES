@@ -8,11 +8,11 @@ ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 10/14/2019
 ms.openlocfilehash: 72fdb2bf4d19291ff5b0a83c2233354bde4ec201
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77700347"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79295536"
 ---
 # <a name="register-tenants-for-usage-tracking-in-azure-stack-hub"></a>Registro de inquilinos en Azure Stack Hub para el seguimiento de uso
 

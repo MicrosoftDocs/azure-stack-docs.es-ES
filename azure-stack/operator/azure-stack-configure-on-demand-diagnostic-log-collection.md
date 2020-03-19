@@ -7,19 +7,19 @@ ms.date: 01/16/2020
 ms.author: justinha
 ms.reviewer: shisab
 ms.lastreviewed: 01/16/2019
-ms.openlocfilehash: a0f905a0f6238a0303cacb71e5864ac05b223595
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: f17f835c88851d03d7ef1905cbac96b9f6701d8e
+ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77701554"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79512225"
 ---
 # <a name="collect-azure-stack-hub-diagnostic-logs-on-demand"></a>Recopilación de registros de diagnóstico de Azure Stack Hub a petición
 
 Como parte de la solución de problemas, es posible que los servicios de soporte al cliente de Microsoft (CSS) necesiten analizar los registros de diagnóstico. A partir de la versión 1907, los operadores de Azure Stack Hub pueden usar **Ayuda y soporte técnico** para cargar registros de diagnóstico en un contenedor de blobs de Azure. Se recomienda usar **Ayuda y soporte técnico** en lugar de PowerShell porque es más sencillo. Pero, si el portal no está disponible, los operadores pueden seguir recopilando registros mediante **Get-AzureStackLog** a través del punto de conexión con privilegios (PEP), igual que en las versiones anteriores. En este tema se tratan las dos maneras de recopilar registros de diagnóstico a petición.
 
 >[!Note]
->Como alternativa a la recopilación de registros a petición, puede simplificar el proceso de solución de problemas si habilita la [recopilación de registros de diagnóstico automático](azure-stack-configure-automatic-diagnostic-log-collection.md). En caso de que deban investigarse las condiciones de mantenimiento del sistema, los servicios de soporte al cliente (CSS) de Microsoft pueden cargar los registros automáticamente para su análisis. 
+>Como alternativa a la recopilación de registros a petición, puede simplificar el proceso de solución de problemas si habilita la [recopilación de registros de diagnóstico automático](azure-stack-configure-automatic-diagnostic-log-collection-tzl.md). En caso de que deban investigarse las condiciones de mantenimiento del sistema, los servicios de soporte al cliente (CSS) de Microsoft pueden cargar los registros automáticamente para su análisis. 
 
 ## <a name="use-help-and-support-to-collect-diagnostic-logs-on-demand"></a>Uso de la ayuda y soporte técnico para recopilar registros de diagnóstico a petición
 

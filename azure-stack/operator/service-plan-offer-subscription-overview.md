@@ -8,11 +8,11 @@ ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 10/01/2019
 ms.openlocfilehash: 0e5d71335fb5b7086341c7c06ec503aae1a8e728
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77704784"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79295266"
 ---
 # <a name="azure-stack-hub-services-plans-offers-subscriptions-overview"></a>Introducción a los servicios, los planes, las ofertas y las suscripciones de Azure Stack Hub
 

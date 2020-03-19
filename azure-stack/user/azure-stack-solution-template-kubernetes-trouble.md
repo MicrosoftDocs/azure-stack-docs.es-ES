@@ -7,12 +7,12 @@ ms.author: mabrigg
 ms.date: 11/14/2019
 ms.reviewer: waltero
 ms.lastreviewed: 11/14/2019
-ms.openlocfilehash: 80222728bca3aa65fd211ccc5ef5700d0a15f397
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 0d9e1512cab3ad33bba5cfa2d4f57128edf51cf2
+ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77703628"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79512599"
 ---
 # <a name="troubleshoot-kubernetes-deployment-to-azure-stack-hub"></a>Solución de problemas de implementación de Kubernetes en Azure Stack Hub
 
@@ -85,7 +85,7 @@ Puede recopilar y examinar los registros de implementación de las máquinas vir
     - Asegúrese de que el nombre de dominio completo (FQDN) de la máquina virtual comienza con un prefijo duplicado.
 5.  Si la máquina virtual es **correcta**, evalúe la instancia de DVM. Si la instancia de DVM tiene un mensaje de error:
     - Es posible que la clave pública no sea válida. Revise la clave que ha creado.  
-    - Póngase en contacto con el administrador de Azure Stack Hub para recuperar los registros de Azure Stack Hub mediante los puntos de conexión con privilegios. Para más información, consulte [Herramientas de diagnóstico de Azure Stack Hub](../operator/azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs).
+    - Póngase en contacto con el administrador de Azure Stack Hub para recuperar los registros de Azure Stack Hub mediante los puntos de conexión con privilegios. Para más información, consulte [Herramientas de diagnóstico de Azure Stack Hub](../operator/azure-stack-get-azurestacklog.md).
 5. Si tiene preguntas acerca de la implementación, puede publicarlas o ver si alguien ya ha respondido a la pregunta en el [foro de Azure Stack Hub](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack). 
 
 

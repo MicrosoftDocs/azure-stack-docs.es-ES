@@ -8,11 +8,11 @@ ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 10/15/2019
 ms.openlocfilehash: 73970197e6d0b1c55e29e028e53d6639aa9c0afa
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77695621"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79295440"
 ---
 # <a name="manage-usage-and-billing-for-azure-stack-hub-as-a-cloud-solution-provider"></a>Administración del uso y la facturación de Azure Stack Hub como proveedor de soluciones en la nube
 

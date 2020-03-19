@@ -3,16 +3,16 @@ title: Implemente una aplicación web de Python en una máquina virtual en Azure
 description: Implemente una aplicación web de Python en una máquina virtual en Azure Stack Hub.
 author: mattbriggs
 ms.topic: overview
-ms.date: 1/22/2020
+ms.date: 3/12/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: 3a5eb2667c290eba41a347209608db96c9ce5598
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.lastreviewed: 3/12/2020
+ms.openlocfilehash: 700589e985aa651a1a7ae4a5ffbc020b8e6a2d3f
+ms.sourcegitcommit: 4301e8dee16b4db32b392f5979dfec01ab6566c9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77704138"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79313024"
 ---
 # <a name="deploy-a-python-web-app-to-a-vm-in-azure-stack-hub"></a>Implementación de una aplicación web de Python en una máquina virtual en Azure Stack Hub
 
@@ -66,9 +66,9 @@ Este artículo usa Python 3.x, que ejecuta Flask en un entorno virtual en un ser
 1. Configure el repositorio de Git en la máquina virtual. Mientras sigue conectado a la máquina virtual en la sesión SSH, introduzca los siguientes comandos:
 
     ```bash  
-       git clone https://github.com/mattbriggs/flask-hello-world.git
+       git clone https://github.com/Azure-Samples/azure-stack-hub-flask-hello-world.git
     
-       cd flask-hello-world
+       cd azure-stack-hub-flask-hello-world
     ```
 
 2. Cree un entorno virtual y rellénelo con todas las dependencias de paquete. Mientras sigue conectado a la máquina virtual en la sesión SSH, introduzca los siguientes comandos:

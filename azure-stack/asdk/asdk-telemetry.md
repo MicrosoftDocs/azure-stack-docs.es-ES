@@ -8,11 +8,11 @@ ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 10/15/2019
 ms.openlocfilehash: 59fe407c24e10c94d2a0d354c98a1dd13301c7a1
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77694023"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79295170"
 ---
 # <a name="azure-stack-telemetry"></a>Telemetría de Azure Stack
 
