@@ -2,6 +2,8 @@
   href: index.yml
 - name: Información general
   items:
+    - name: ¿Qué es Azure Stack Hub?
+      href: user-overview.md
     - name: Consideraciones clave
       href: azure-stack-considerations.md
 - name: Guías de inicio rápido
