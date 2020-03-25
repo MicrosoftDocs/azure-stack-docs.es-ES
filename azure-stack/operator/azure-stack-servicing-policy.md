@@ -7,13 +7,13 @@ ms.topic: article
 ms.date: 02/07/2020
 ms.author: sethm
 ms.reviewer: harik
-ms.lastreviewed: 01/11/2020
-ms.openlocfilehash: f81ca3e48387f806e591deea08c4b0c9c518cebd
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.lastreviewed: 03/18/2020
+ms.openlocfilehash: 9b1459fbb5e484e3fc0588e8c9717f8e09b6e309
+ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77697542"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79512408"
 ---
 # <a name="azure-stack-hub-servicing-policy"></a>Directiva de servicio de Azure Stack Hub
 
@@ -45,10 +45,10 @@ Busque documentación sobre cómo planear y administrar actualizaciones y cómo 
 
 Para obtener información sobre una actualización concreta, incluido cómo descargarla, vea las notas de versión de la actualización:
 
+- [Actualización de Azure Stack Hub 2002](/azure-stack/operator/release-notes?view=azs-2002)
 - [Actualización de Azure Stack Hub 1910](/azure-stack/operator/release-notes?view=azs-1910)
 - [Actualización de Azure Stack Hub 1908](/azure-stack/operator/release-notes?view=azs-1908)
 - [Actualización de Azure Stack Hub 1907](/azure-stack/operator/release-notes?view=azs-1907)
-- [Actualización de Azure Stack Hub 1906](/azure-stack/operator/release-notes?view=azs-1906)
 
 ## <a name="hotfixes"></a>Revisiones
 
@@ -58,12 +58,19 @@ Las revisiones se descargan e instalan del mismo modo que los paquetes de actual
 
 Para más información acerca de las revisiones disponibles actualmente, consulte las notas de la versión de la actualización:
 
-- [Revisión de Azure Stack Hub 1910](/azure-stack/operator/release-notes?view=azs-1910#hotfixes)
-- [Revisión de Azure Stack Hub 1908](/azure-stack/operator/release-notes?view=azs-1908#hotfixes-1)
-- [Revisión de Azure Stack Hub 1907](/azure-stack/operator/release-notes?view=azs-1907#hotfixes-2)
-- [Revisión de Azure Stack Hub 1906](/azure-stack/operator/release-notes?view=azs-1906#hotfixes-3)
+- [Revisión de Azure Stack Hub 2002](/azure-stack/operator/release-notes?view=azs-2002#hotfixes)
+- [Revisión de Azure Stack Hub 1910](/azure-stack/operator/release-notes?view=azs-1910#hotfixes-1)
+- [Revisión de Azure Stack Hub 1908](/azure-stack/operator/release-notes?view=azs-1908#hotfixes-2)
+- [Revisión de Azure Stack Hub 1907](/azure-stack/operator/release-notes?view=azs-1907#hotfixes-3)
 
 ## <a name="keep-your-system-under-support"></a>Mantenimiento del sistema dentro del soporte técnico
+
+::: moniker range="azs-2002"
+
+> [!IMPORTANT]  
+> Con la actualización de Azure Stack Hub 2002, Microsoft amplía temporalmente las instrucciones de directiva de soporte técnico de Azure Stack Hub. Estamos trabajando con clientes de todo el mundo que tienen que hacer frente a la COVID-19 y que deben tomar decisiones importantes sobre sus sistemas de Azure Stack Hub, cómo se actualizan y administran, para garantizar que las operaciones empresariales del centro de datos continúan funcionando con normalidad. Para dar soporte técnico a nuestros clientes, Microsoft ofrece una extensión de cambio de directiva de soporte técnico temporal que incluye tres versiones de actualización anteriores. Como resultado, se admitirán la actualización 2002 recién publicada y cualquiera de las tres versiones de actualización anteriores (por ejemplo, 1910, 1908 y 1907).
+
+::: moniker-end
 
 Para que su instancia de Azure Stack Hub permanezca en un estado admitido, la instancia debe ejecutar la versión de actualización más reciente o cualquiera de las dos versiones de actualización anteriores.
 

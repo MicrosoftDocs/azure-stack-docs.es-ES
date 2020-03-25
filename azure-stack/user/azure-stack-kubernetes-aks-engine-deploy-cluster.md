@@ -7,12 +7,12 @@ ms.date: 01/10/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: b8826fc929c571e39d36139bf724861ae9cc7fbd
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: fc53a0b1e4273436e9e06e10feccbe577ea2e488
+ms.sourcegitcommit: 4301e8dee16b4db32b392f5979dfec01ab6566c9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77702710"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79312962"
 ---
 # <a name="deploy-a-kubernetes-cluster-with-the-aks-engine-on-azure-stack-hub"></a>Implementación de un clúster de Kubernetes con el motor de AKS en Azure Stack Hub
 
@@ -35,7 +35,7 @@ En esta sección se examina la creación de un modelo de API para el clúster.
     > [!Note]  
     > Si está desconectado, puede descargar el archivo y copiarlo manualmente en la máquina desconectada en la que piensa editarlo. Puede copiar el archivo en la máquina Linux con herramientas como [PuTTY o WinSCP](https://www.suse.com/documentation/opensuse103/opensuse103_startup/data/sec_filetrans_winssh.html).
 
-2.  Para abrirlo en un editor, puede usar nano:
+2.  Para abrir un modelo de API en un editor, puede usar nano:
 
     ```bash
     nano ./kubernetes-azurestack.json
@@ -88,9 +88,9 @@ En esta sección se examina la creación de un modelo de API para el clúster.
     | Campo | Descripción |
     | --- | --- |
     | adminUsername | Escriba el nombre de usuario administrador para la máquina virtual. |
-    | ssh | Escriba la clave pública que se usará para la autenticación SSH con máquinas virtuales. Si usa Putty, abra el generador de claves de PuTTy para cargar la clave privada y la clave pública que comienza con ssh-rsa, como en el ejemplo siguiente. Puede usar la clave generada al crear el cliente de Linux, pero **necesita copiar la clave pública para que sea un texto de una sola línea, tal como se muestra en el ejemplo**.|
+    | ssh | Escriba la clave pública que se usará para la autenticación SSH con máquinas virtuales. Use `ssh-rsa` y, después, la clave. Para obtener instrucciones para crear una clave pública, consulte [Creación de una clave SSH para Linux](create-ssh-key-on-windows.md). |
 
-    ![Generador de claves de PuTTY](media/azure-stack-kubernetes-aks-engine-deploy-cluster/putty-key-generator.png)
+    Si va a realizar la implementación en una red virtual personalizada, puede encontrar instrucciones para encontrar la clave y los valores necesarios y agregarlos a las matrices adecuadas del modelo de API en el artículo en que se explica la [implementación de un clúster de Kubernetes en una red virtual personalizada](kubernetes-aks-engine-custom-vnet.md).
 
 ### <a name="more-information-about-the-api-model"></a>Más información sobre el modelo de API
 
@@ -120,7 +120,7 @@ Continúe con la implementación de un clúster:
     | api-model | ./kubernetes-azurestack.json | Ruta de acceso al archivo de configuración del clúster o modelo de API. |
     | output-directory | kube-rg | Escriba el nombre del directorio que va a contener el archivo de salida `apimodel.json`, así como otros archivos generados. |
     | client-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Escriba el GUID de la entidad de servicio. El identificador de cliente indicado como identificador de la aplicación cuando el administrador de Azure Stack Hub creó la entidad de servicio. |
-    | client-secret | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Escriba el secreto de la entidad de servicio. Este es el secreto de cliente que configuró al crear el servicio. |
+    | client-secret | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Escriba el secreto de la entidad de servicio. Configure el secreto de cliente al crear el servicio. |
     | subscription-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | escriba el identificador de la suscripción. Para más información, consulte [Suscripción a una oferta](https://docs.microsoft.com/azure-stack/user/azure-stack-subscribe-services#subscribe-to-an-offer). |
 
     Este es un ejemplo:

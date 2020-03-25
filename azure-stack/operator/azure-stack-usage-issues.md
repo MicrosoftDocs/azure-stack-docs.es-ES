@@ -7,12 +7,12 @@ ms.date: 01/22/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 06/27/2019
-ms.openlocfilehash: 55609ca3ca8dc0dbb0d557422a9a5b4223450fc3
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 4a847578e73c5c9b518669a46340590242513686
+ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77696471"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79512356"
 ---
 # <a name="usage-connectivity-errors"></a>Errores de conectividad de uso
 
@@ -47,7 +47,7 @@ En esta sección se describen los códigos de errores de uso.
 | No autorizado               | Azure Bridge no puede insertar datos en el servicio de uso de Azure porque dicho servicio no puede realizar la autenticación del componente Bridge de Azure Stack Hub. | Compruebe si se ha modificado el recurso de registro y, si es así, vuelva a registrar Azure Stack Hub. <br><br> A veces, una vez problema de sincronización entre Azure Stack Hub y Azure AD puede producir este error. En este caso, asegúrese de que las horas en las máquinas virtuales XRP en Azure Stack Hub están sincronizadas con Azure AD. |
 |                            |                                                                                                                                                   |                                                                                                                                                                                                                                                                                                    |
 
-Además, es posible que deba proporcionar los archivos de registro de los componentes de Azure Bridge, WAS y WASPublic. Para ello, realice [estos pasos](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs).
+Además, es posible que deba proporcionar los archivos de registro de los componentes Azure Bridge, WAS y WASPublic.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

@@ -7,18 +7,18 @@ ms.date: 11/07/2019
 ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 11/07/2019
-ms.openlocfilehash: 05d54d3db2429faa410cc67a46fba234d285a1af
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 792c639a5233a7d30dc86488059045a9516dfaa2
+ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77700058"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79512565"
 ---
 # <a name="overview-of-azure-stack-hub-diagnostic-log-collection"></a>Introducción a la recopilación de registros de diagnóstico de Azure Stack Hub 
 
 Azure Stack Hub es una gran colección de componentes que funcionan juntos e interactúan entre sí. Todos estos componentes generan sus propios registros únicos. Esto puede dificultar el diagnóstico de problemas, especialmente en el caso de errores procedentes de varios componentes de Azure Stack Hub que interactúan. Para abordar este reto, hemos diseñado una experiencia de recopilación de registros de diagnóstico. 
 
-Antes de la versión 1907, la experiencia de diagnóstico incluía el uso de [Test-AzureStack](azure-stack-diagnostic-test.md) para validar el estado del sistema y el uso del [punto de conexión con privilegios (PEP)](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs) para recopilar los registros para la solución de problemas. 
+Antes de la versión 1907, la experiencia de diagnóstico incluía el uso de [Test-AzureStack](azure-stack-diagnostic-test.md) para validar el estado del sistema y el uso del [punto de conexión con privilegios (PEP)](azure-stack-get-azurestacklog.md) para recopilar los registros para la solución de problemas. 
 
 A partir de la versión 1907, la página **Ayuda y soporte técnico** agrega una experiencia más sencilla mediante la **recopilación de registros de diagnóstico**. 
 La **recopilación de registros de diagnóstico** es parte de una inversión continuada para mejorar la experiencia del operador de Azure Stack Hub con el proceso de solución de problemas. Con estas mejoras, los operadores pueden recopilar y compartir rápidamente los registros de diagnóstico con los servicios de soporte al cliente (CSS) de Microsoft. Los registros se pueden almacenar en un contenedor de blobs en Azure, donde el acceso se puede personalizar según sea necesario.    
@@ -31,20 +31,20 @@ La **recopilación de registros de diagnóstico** funciona de dos maneras difere
 ![Captura de pantalla de opciones de recopilación de registros de diagnóstico](media/azure-stack-automatic-log-collection/azure-stack-log-collection-overview.png)
 
 La **recopilación de registros de diagnóstico** tiene una interfaz de usuario sencilla y no requiere PowerShell. Los registros se recopilan de forma confiable incluso si los servicios de infraestructura están inactivos.
-Si la directiva permite compartir registros de diagnóstico con CSS, la **recopilación de registros de diagnóstico** es el método de recopilación recomendado a partir de la versión 1907. Solo debe usar [el PEP](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs) para recopilar registros si la **recopilación de registros de diagnóstico** en Ayuda y soporte técnico no está disponible.
+Si la directiva permite compartir registros de diagnóstico con CSS, la **recopilación de registros de diagnóstico** es el método de recopilación recomendado a partir de la versión 1907. Solo debe usar [el PEP](azure-stack-get-azurestacklog.md) para recopilar registros si la **recopilación de registros de diagnóstico** en Ayuda y soporte técnico no está disponible.
 
 ## <a name="automatic-diagnostic-log-collection"></a>Recopilación de registros de diagnóstico automática 
 
-Cuando hay una [alerta de estado específica](azure-stack-configure-automatic-diagnostic-log-collection.md#automatic-diagnostic-log-collection-alerts) activa, la recopilación de registros de diagnóstico automática inicia y carga de forma proactiva los registros de diagnóstico de Azure Stack Hub en un blob de almacenamiento de Azure, lo que reduce significativamente el tiempo necesario para compartir registros de diagnóstico con CSS. Los registros de diagnóstico solo se recopilan cuando se genera una alerta.  
+Cuando hay una [alerta de estado específica](azure-stack-configure-automatic-diagnostic-log-collection-tzl.md#proactive-diagnostic-log-collection-alerts) activa, la recopilación de registros de diagnóstico automática inicia y carga de forma proactiva los registros de diagnóstico de Azure Stack Hub en un blob de almacenamiento de Azure, lo que reduce significativamente el tiempo necesario para compartir registros de diagnóstico con CSS. Los registros de diagnóstico solo se recopilan cuando se genera una alerta.  
 
-Para más información sobre cómo configurar la recopilación de registros automática, consulte [Configuración de la recopilación de registros de diagnóstico automática de Azure Stack Hub](azure-stack-configure-automatic-diagnostic-log-collection.md).
+Para más información sobre cómo configurar la recopilación de registros automática, consulte [Configuración de la recopilación de registros de diagnóstico automática de Azure Stack Hub](azure-stack-configure-automatic-diagnostic-log-collection-tzl.md).
 
 ## <a name="on-demand-diagnostic-log-collection"></a>Recopilación de registros de diagnóstico a petición
 
 Con la recopilación a petición, los registros de diagnóstico se cargan desde Azure Stack Hub a un blob de almacenamiento en Azure cuando un operador de Azure Stack Hub desencadena manualmente dicha recopilación.
 CSS proporcionará la dirección URL de la firma de acceso compartido (SAS) a un blob de almacenamiento propiedad de CSS. Un operador de Azure Stack Hub puede hacer clic en **Collect logs now** (Recopilar registros ahora) y escribir la dirección URL de SAS. Después los registros de diagnóstico se cargarán directamente en el blob de CSS sin necesidad de un recurso compartido intermedio. 
 
-Para más información sobre la recopilación de registros a petición, consulte [Recopilación de registros de diagnóstico de Azure Stack Hub a petición](azure-stack-configure-on-demand-diagnostic-log-collection.md).
+Para más información sobre la recopilación de registros a petición, consulte [Envío inmediato de registros de diagnóstico de Azure Stack Hub](azure-stack-configure-on-demand-diagnostic-log-collection-portal-tzl.md).
 
 ## <a name="bandwidth-considerations"></a>Consideraciones sobre el ancho de banda
 

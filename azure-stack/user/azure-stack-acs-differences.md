@@ -7,12 +7,12 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviwer: xiaofmao
 ms.lastreviewed: 01/30/2020
-ms.openlocfilehash: f852aa2165f51c0a57f09ea94b872de015535923
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: eeca00875a13b8f67ccaeab38f124d17979d1a7c
+ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77687400"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79512004"
 ---
 # <a name="azure-stack-hub-storage-differences-and-considerations"></a>Azure Stack Hub Storage: Diferencias y consideraciones
 
@@ -30,9 +30,11 @@ En este artículo se resumen las diferencias entre los servicios de Azure Stack 
 |Opciones de replicación|Almacenamiento con redundancia local, almacenamiento con redundancia geográfica, almacenamiento con redundancia geográfica con acceso de lectura y almacenamiento con redundancia de zona|Almacenamiento con redundancia local.
 |Premium Storage|Proporciona almacenamiento de alto rendimiento y baja latencia. Solo admite blobs en páginas de cuentas de almacenamiento prémium.|Se pueden aprovisionar, pero no hay límite de rendimiento o garantía. No se realizaría ningún bloqueo con las opciones de blobs en bloques, anexar blobs, tablas y colas en las cuentas de almacenamiento prémium.
 |Discos administrados|Premium y estándar admitidos|Se admite cuando se usa la versión 1808 o posterior.
+|Instantáneas de disco administrado|Disponibilidad general|Compatible.
+|Instantáneas incrementales de discos administrados|Disponibilidad general|Todavía no se admite.
 |Nombre de blob|1 024 caracteres (2 048 bytes)|880 caracteres (1 760 bytes)
 |Tamaño máximo de blob en bloque|4,75 TB (100 MB x 50 000 bloques)|4,75 TB (100 MB x 50 000 bloques) para la actualización 1802 o versiones más recientes. 50 000 x 4 MB (aproximadamente 195 GB) para las versiones anteriores.
-|Copia de instantánea de blob en páginas|Copia de seguridad de discos de máquina virtual no administrados conectados a una máquina virtual en ejecución compatible|Todavía no se admite.
+|Copia de instantánea de blob en páginas|Copia de seguridad de discos de máquina virtual no administrados conectados a una máquina virtual en ejecución compatible|Se admite en una [API como operación asincrónica](azure-stack-acs-differences.md).
 |Copia de instantáneas incrementales del blob de página|Blobs en páginas de Azure estándar y premium admitidos|Todavía no se admite.
 |Facturación de blobs en páginas|Los cargos se generan por páginas únicas, independientemente de si están en el blob o en la instantánea. No se incurrirá en cargos adicionales por las instantáneas asociadas a un blob hasta que el blob base se actualice.|Los cargos se generan para el blob base y las instantáneas asociadas. Se podrían generar cargos adicionales por cada instantánea individual.
 |Niveles de almacenamiento para Blob Storage|Niveles de almacenamiento de acceso frecuente, de acceso esporádico y de acceso de archivo.|Todavía no se admite.

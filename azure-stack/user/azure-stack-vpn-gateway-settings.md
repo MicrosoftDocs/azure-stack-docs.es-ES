@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: sethm
 ms.lastreviewed: 12/27/2019
-ms.openlocfilehash: b762dfa9897ac732df7c09858ef3a5d25357f1d7
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: b8f7be7885bd4565a13983d858c1f10b30df20b3
+ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77705056"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79295572"
 ---
 # <a name="configure-vpn-gateway-settings-for-azure-stack-hub"></a>Configuración de una puerta de enlace de VPN para Azure Stack Hub
 
@@ -154,6 +154,10 @@ A veces es necesario modificar la configuración de la puerta de enlace de red l
 Cuando se configura una conexión VPN en Azure Stack Hub, es preciso configurar la conexión en ambos extremos. Si va a configurar una conexión VPN entre Azure Stack Hub y un dispositivo de hardware, como un conmutador o un enrutador que actúa como puerta de enlace de VPN, dicho dispositivo puede pedirle más valores.
 
 A diferencia de Azure, que admite varias ofertas como iniciador y respondedor, Azure Stack Hub admite solo una de forma predeterminada. Si tiene que usar distintas configuraciones IPSec/IKE para trabajar con el dispositivo VPN, hay más opciones de parámetros disponibles para configurar la conexión manualmente. Para más información, consulte [Configuración de la directiva IPsec/IKE para conexiones VPN de sitio a sitio](azure-stack-vpn-s2s.md).
+
+> [!IMPORTANT] 
+> Si se usa un túnel S2S, los paquetes se encapsulan con encabezados adicionales, lo que aumenta el tamaño global del paquete. En estos escenarios, debe fijar TCP **MSS** en **1350**. O, si los dispositivos VPN no admiten la fijación de MSS, también puede establecer el **MTU** en la interfaz de túnel en **1400** bytes. Para más información, consulte [Optimización del rendimiento de TCP/IP para máquinas virtuales] (virtual-network-tcpip-performance-tuning.md) 
+>
 
 ### <a name="ike-phase-1-main-mode-parameters"></a>Parámetros de la fase 1 de IKE (Modo principal)
 
