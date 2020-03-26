@@ -7,20 +7,19 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 09/19/2019
-ms.openlocfilehash: df0a87180e1e8ed4b2506d0f2b21406474ee93c1
-ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
+ms.openlocfilehash: b362ab1e4c555ae4de5be0feecd19d8cc8e6654a
+ms.sourcegitcommit: 17be49181c8ec55e01d7a55c441afe169627d268
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79512463"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80069437"
 ---
 # <a name="install-powershell-azurerm-module-for-azure-stack-hub"></a>Instalación del módulo AzureRM de PowerShell para Azure Stack Hub
 
 AzureRM de Azure PowerShell ofrece un conjunto de cmdlets que usan el modelo de Azure Resource Manager para administrar los recursos de Azure Stack Hub.
 
-Para trabajar con la nube, debe instalar los módulos de PowerShell compatibles con Azure Stack Hub. Azure Stack Hub puede usar el módulo **AzureRM** en lugar del [módulo **AzureAZ** más reciente](powershell-install-az-module.md). 
-
 También debe usar *perfiles de API* para especificar los puntos de conexión compatibles para los proveedores de recursos de Azure Stack Hub.
+
 Los perfiles de API proporcionan una manera de administrar las diferencias de versión entre Azure y Azure Stack Hub. Un perfil de versión de la API es un conjunto de módulos de PowerShell de Azure Resource Manager con versiones específicas de la API. Cada plataforma de la nube tiene un conjunto de perfiles de versión de API compatibles. Por ejemplo, Azure Stack Hub admite una versión de perfil específica, como **2019-03-01-hybrid**. Cuando se instala un perfil, se instalan los módulos de PowerShell Azure Resource Manager que se corresponden con el perfil especificado.
 
 Puede instalar los módulos de PowerShell compatibles con Azure Stack Hub en un escenario desconectado, parcialmente conectado o conectado a Internet. Este artículo le guía por las instrucciones detalladas para estos escenarios.
