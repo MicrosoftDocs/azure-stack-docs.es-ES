@@ -3,16 +3,16 @@ title: Configuración de los requisitos previos para el motor de AKS en Azure St
 description: Establezca los requisitos para ejecutar el motor de ASK en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 2/27/2020
+ms.date: 03/23/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 2/27/2020
-ms.openlocfilehash: 1f307a554eca0b9b1bc2af9d8e64a8ec585da078
-ms.sourcegitcommit: bbc4023c9a673c146de4a9e242311d429f7781eb
+ms.lastreviewed: 03/23/2020
+ms.openlocfilehash: f89dd7e1036f3c45df184b498c309fe128fe03ba
+ms.sourcegitcommit: 961e3b1fae32d7f9567359fa3f7cb13cdc37e28e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77782807"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80152214"
 ---
 # <a name="set-up-the-prerequisites-for-the-aks-engine-on-azure-stack-hub"></a>Configuración de los requisitos previos para el motor de AKS en Azure Stack Hub
 
@@ -33,8 +33,13 @@ El operador de la nube deberá tener en vigor los siguientes elementos.
 | Azure Stack Hub 1910 o posterior | El motor de AKS requiere Azure Stack Hub 1910 u otra versión posterior. | Obligatorio | Si no está seguro de la versión de Azure Stack Hub, póngase en contacto con el operador de la nube. |
 | Extensión de script personalizado de Linux | Extensión de script personalizado de Linux 2.0<br>Oferta: Script personalizado para Linux 2.0<br>Versión: 2.0.6 (o la versión más reciente)<br>Publicador: Microsoft Corp | Obligatorio | Si no tiene este elemento en la suscripción, póngase en contacto con el operador de la nube. |
 | Imagen base de Ubuntu de AKS | Imagen base de AKS<br>Oferta: AKS<br> 2019.10.24 (o una versión más reciente)<br>Publicador: Microsoft-AKS<br>SKU: aks-ubuntu-1604-201910 | Obligatorio | Si no tiene este elemento en la suscripción, póngase en contacto con el operador de la nube. Para obtener más información sobre la dependencia de versión, consulte [Correspondencia de la versión del motor con la imagen base](#matching-engine-to-base-image-version).<br> Si es operador en la nube de Azure Stack Hub y desea ofrecer el motor de AKS, siga las instrucciones que encontrará en [Incorporación de requisitos previos del motor de Azure Kubernetes Service (AKS) al Marketplace de Azure Stack Hub](../operator/azure-stack-aks-engine.md). |
-| Identidad de la entidad de servicio (SPN) |  Una aplicación que necesita implementar o configurar recursos a través de Azure Resource Manager, debe estar representada por una entidad de servicio. | Obligatorio | Es posible que deba ponerse en contacto con el operador de Azure Stack Hub para este elemento.  Para obtener instrucciones, consulte [Uso de una identidad de aplicación para acceder a recursos](https://docs.microsoft.com/azure-stack/operator/azure-stack-create-service-principals). |
+| Identidad de la entidad de servicio (SPN) |  Una aplicación que necesita implementar o configurar recursos a través de Azure Resource Manager, debe estar representada por una entidad de servicio. | Obligatorio | Es posible que deba ponerse en contacto con el operador de Azure Stack Hub para este elemento.<br>Si se usa una identidad de entidad de servicio de Azure Active Directory (AAD), se necesita acceso a Internet desde las máquinas virtuales del clúster de Kubernetes para que la entidad de servicio pueda autenticarse con AAD. Si no hay acceso a Internet, el clúster de Kubernetes no será funcional.<br>Para obtener instrucciones, consulte [Uso de una identidad de aplicación para acceder a recursos](https://docs.microsoft.com/azure-stack/operator/azure-stack-create-service-principals). |
 | Rol de **colaborador** asignado (SPN) | Para permitir que una aplicación acceda a los recursos de su suscripción con su entidad de servicio, debe asignar la entidad de servicio un rol para un determinado recurso. | Obligatorio | Para obtener instrucciones, consulte la sección [Asignar un rol](https://docs.microsoft.com/azure-stack/operator/azure-stack-create-service-principals#assign-a-role). |
+
+
+Agregue lo siguiente a la descripción del requisito "Entidad de servicio": ""
+
+
 
 Puede establecer los siguientes elementos.
 

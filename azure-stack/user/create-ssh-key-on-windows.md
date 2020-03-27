@@ -7,12 +7,12 @@ ms.date: 2/28/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 2/28/2020
-ms.openlocfilehash: ff66cdaffd4ffc7a6896edf0191871669ac84b16
-ms.sourcegitcommit: 4301e8dee16b4db32b392f5979dfec01ab6566c9
+ms.openlocfilehash: e82ddb48b3858acdf25163976854f538400da54b
+ms.sourcegitcommit: 17be49181c8ec55e01d7a55c441afe169627d268
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79318103"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80069196"
 ---
 # <a name="create-an-ssh-key-for-linux-on-azure-stack-hub"></a>Creación de una clave SSH para Linux en Azure Stack Hub
 

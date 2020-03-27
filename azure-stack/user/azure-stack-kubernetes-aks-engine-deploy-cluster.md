@@ -3,16 +3,16 @@ title: Implementación de un clúster de Kubernetes con el motor de AKS en Azure
 description: Implementación de un clúster de Kubernetes en Azure Stack Hub desde una máquina virtual de cliente que ejecute el motor de AKS.
 author: mattbriggs
 ms.topic: article
-ms.date: 01/10/2020
+ms.date: 3/19/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: fc53a0b1e4273436e9e06e10feccbe577ea2e488
-ms.sourcegitcommit: 4301e8dee16b4db32b392f5979dfec01ab6566c9
+ms.lastreviewed: 3/19/2020
+ms.openlocfilehash: 3186d3976f5d4ca533a89644b3abc16fdf824c7c
+ms.sourcegitcommit: 961e3b1fae32d7f9567359fa3f7cb13cdc37e28e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79312962"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80152180"
 ---
 # <a name="deploy-a-kubernetes-cluster-with-the-aks-engine-on-azure-stack-hub"></a>Implementación de un clúster de Kubernetes con el motor de AKS en Azure Stack Hub
 
@@ -66,7 +66,7 @@ En esta sección se examina la creación de un modelo de API para el clúster.
 
 6. Busque `portalURL` y proporcione la dirección URL al portal del inquilino. Por ejemplo, `https://portal.local.azurestack.external`.
 
-7.  En la matriz `masterProfile`, establezca los campos siguientes:
+7.  En `masterProfile`, establezca los campos siguientes:
 
     | Campo | Descripción |
     | --- | --- |
@@ -75,15 +75,18 @@ En esta sección se examina la creación de un modelo de API para el clúster.
     | vmSize |  Escriba [un tamaño admitido por Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-vm-sizes), ejemplo `Standard_D2_v2`. |
     | Distribuciones | Escriba `aks-ubuntu-16.04`. |
 
-8.  En la matriz `agentPoolProfiles`, actualice:
+8.  En `agentPoolProfiles`, actualice:
 
     | Campo | Descripción |
     | --- | --- |
-    | count | Escriba el número de agentes que desea para la implementación. |
+    | count | Escriba el número de agentes que desea para la implementación. El número máximo de nodos que se usarán por suscripción es 50. Si va a implementar más de un clúster por suscripción, asegúrese de que el número total de agentes no supere los 50. Asegúrese de usar los elementos de configuración especificados en [el archivo JSON del modelo de API de ejemplo](https://github.com/Azure/aks-engine/blob/master/examples/azure-stack/kubernetes-azurestack.json).  |
     | vmSize | Escriba [un tamaño admitido por Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-vm-sizes), ejemplo `Standard_D2_v2`. |
     | Distribuciones | Escriba `aks-ubuntu-16.04`. |
 
-9.  En la matriz `linuxProfile`, actualice:
+
+
+
+9.  En `linuxProfile`, actualice:
 
     | Campo | Descripción |
     | --- | --- |

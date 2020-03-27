@@ -8,12 +8,12 @@ ms.date: 1/22/2020
 ms.author: inhenkel
 ms.lastreviewed: 03/11/2019
 ms.reviewer: jiaha
-ms.openlocfilehash: 6bfdca8487a5725417f88b5fcf0fb1acce26635a
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 4ac1d0de3775c22c0c982d79713847e7cd171f41
+ms.sourcegitcommit: 961e3b1fae32d7f9567359fa3f7cb13cdc37e28e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77697100"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80152276"
 ---
 # <a name="manage-storage-infrastructure-for-azure-stack-hub"></a>Administración de la infraestructura de almacenamiento para Azure Stack Hub
 
@@ -25,9 +25,9 @@ En este artículo se describen el estado de mantenimiento y el estado operativo 
 
 Con tecnología de software de Windows Server, Azure Stack Hub define las funcionalidades de almacenamiento con una combinación de Espacios de almacenamiento directo (S2D) y clústeres de conmutación por error de Windows Server. Esta combinación proporciona un servicio de almacenamiento eficaz, escalable y resistente.
 
-Los asociados del sistema integrado de Azure Stack Hub ofrecen muchas variantes de la solución, incluida una amplia gama de flexibilidad de almacenamiento. Actualmente, puede seleccionar una combinación de tres tipos de unidades: NVMe (memoria rápida no volátil), SSD SATA o SAS (unidad de estado sólido), HDD (unidad de disco duro).
+Los asociados del sistema integrado de Azure Stack Hub ofrecen muchas variantes de la solución, incluida una amplia gama de flexibilidad de almacenamiento. Actualmente, puede seleccionar hasta dos tipos de unidad de los tres tipos de unidades compatibles: NVMe (memoria rápida no volátil), SSD SATA o SAS (unidad de estado sólido), HDD (unidad de disco duro). 
 
-Espacios de almacenamiento directo incluye una memoria caché para maximizar el rendimiento del almacenamiento. En un dispositivo de Azure Stack Hub con uno o varios tipos de unidades, Espacios de almacenamiento directo usa automáticamente todas las unidades del tipo "más rápido" (NVMe &gt; SSD &gt; HDD) para el almacenamiento en caché. Las unidades restantes se usan para la capacidad. Las unidades se podrían agrupar en una implementación "all-flash" o "híbrida":
+Espacios de almacenamiento directo incluye una memoria caché para maximizar el rendimiento del almacenamiento. En un dispositivo de Azure Stack Hub con un tipo de unidad (por ejemplo, NVMe o SSD), todas las unidades se usan para capacidad. Si hay dos tipos de unidad, Espacios de almacenamiento directo usa automáticamente todas las unidades del tipo más rápido (NVMe, SSD, HDD) para el almacenamiento en caché. Las unidades restantes se usan para la capacidad. Las unidades se podrían agrupar en una implementación "all-flash" o "híbrida":
 
 ![Infraestructura de almacenamiento de Azure Stack Hub](media/azure-stack-storage-infrastructure-overview/image1.png)
 

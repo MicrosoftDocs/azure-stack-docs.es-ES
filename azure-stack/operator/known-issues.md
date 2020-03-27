@@ -3,16 +3,16 @@ title: Problemas conocidos de Azure Stack Hub
 description: Obtenga información sobre los problemas conocidos de las versiones de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 03/18/2020
+ms.date: 03/20/2020
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 03/18/2020
-ms.openlocfilehash: a2f86835a9b1008417e427bc62229e94d6b00595
-ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
+ms.openlocfilehash: d06514242069e20957e15e1503b513ece366fba1
+ms.sourcegitcommit: 961e3b1fae32d7f9567359fa3f7cb13cdc37e28e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79512242"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80152156"
 ---
 # <a name="azure-stack-hub-known-issues"></a>Problemas conocidos de Azure Stack Hub
 
@@ -67,6 +67,12 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 - Corrección: seleccione un tipo de cuenta en la lista desplegable **Tipo de cuenta** y, a continuación, cree la instantánea.
 - Repetición: Comunes
 
+### <a name="alert-for-network-interface-disconnected"></a>Alerta de interfaz de red desconectada
+
+- Aplicable a: este problema afecta a la versión 1908 y superiores.
+- Causa: cuando se desconecta un cable de un adaptador de red, no se muestra ninguna alerta en el portal de administración. Este problema se debe a que este error está deshabilitado de forma predeterminada en Windows Server 2019.
+- Repetición: Comunes
+
 ## <a name="networking"></a>Redes
 
 ### <a name="network-security-groups"></a>Grupos de seguridad de red
@@ -104,6 +110,12 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
   - [Especificación de directivas de IPsec o IKE personalizadas](../user/azure-stack-vpn-gateway-settings.md#ipsecike-parameters)
 
 ## <a name="compute"></a>Proceso
+
+### <a name="nvv4-vm-size-on-portal"></a>Tamaño de máquina virtual NVv4 en el portal
+
+- Aplicable a: Este problema se aplica a la versión 2002 y versiones posteriores.
+- Causa: Durante la creación de una máquina virtual, verá el tamaño de máquina virtual: NV4as_v4. Los clientes que tienen el hardware necesario para la versión preliminar de la GPU de Azure Stack Hub basada en el procesador AMD Mi25 pueden realizar una implementación correcta de la máquina virtual. Todos los demás clientes recibirán un error de implementación con este tamaño de máquina virtual.
+- Corrección: Por diseño como preparación para la versión preliminar de la GPU de Azure Stack Hub.
 
 ### <a name="vm-boot-diagnostics"></a>Diagnósticos de arranque de VM
 

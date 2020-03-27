@@ -7,12 +7,12 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviwer: xiaofmao
 ms.lastreviewed: 01/30/2020
-ms.openlocfilehash: eeca00875a13b8f67ccaeab38f124d17979d1a7c
-ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
+ms.openlocfilehash: 864421f543e02da39dcbd3bf2972fe3a0782676f
+ms.sourcegitcommit: 17be49181c8ec55e01d7a55c441afe169627d268
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79512004"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80069386"
 ---
 # <a name="azure-stack-hub-storage-differences-and-considerations"></a>Azure Stack Hub Storage: Diferencias y consideraciones
 
@@ -32,6 +32,7 @@ En este artículo se resumen las diferencias entre los servicios de Azure Stack 
 |Discos administrados|Premium y estándar admitidos|Se admite cuando se usa la versión 1808 o posterior.
 |Instantáneas de disco administrado|Disponibilidad general|Compatible.
 |Instantáneas incrementales de discos administrados|Disponibilidad general|Todavía no se admite.
+|Instantáneas de discos administrados para la máquina virtual con el estado en ejecución|Disponibilidad general|Todavía no se admite.
 |Nombre de blob|1 024 caracteres (2 048 bytes)|880 caracteres (1 760 bytes)
 |Tamaño máximo de blob en bloque|4,75 TB (100 MB x 50 000 bloques)|4,75 TB (100 MB x 50 000 bloques) para la actualización 1802 o versiones más recientes. 50 000 x 4 MB (aproximadamente 195 GB) para las versiones anteriores.
 |Copia de instantánea de blob en páginas|Copia de seguridad de discos de máquina virtual no administrados conectados a una máquina virtual en ejecución compatible|Se admite en una [API como operación asincrónica](azure-stack-acs-differences.md).

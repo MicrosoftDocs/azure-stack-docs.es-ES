@@ -3,16 +3,16 @@ title: Notas de la versión de Azure Stack Hub
 description: Notas de la versión para los sistemas integrados de Azure Stack Hub, incluidas las actualizaciones y correcciones de errores.
 author: sethmanheim
 ms.topic: article
-ms.date: 03/18/2020
+ms.date: 03/20/2020
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 03/18/2020
-ms.openlocfilehash: ce8c4843bc8316a744e1cf3d4f13e744269a9183
-ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
+ms.openlocfilehash: cd8569e5ea0f3537aa915207b7d52141d9444afa
+ms.sourcegitcommit: fec2b21e80c8049a823baeaf2b642802ccdcfb67
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79512106"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80229553"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Notas de la versión de Azure Stack Hub
 
@@ -48,7 +48,7 @@ Para obtener ayuda con la solución de problemas de actualizaciones y el proceso
 El número de compilación de la actualización 2002 de Azure Stack Hub es **1.2002.0.35**.
 
 > [!IMPORTANT]  
-> Con la actualización de Azure Stack Hub 2002, Microsoft amplía temporalmente las [instrucciones de directiva de soporte técnico de Azure Stack Hub](azure-stack-servicing-policy.md).  Estamos trabajando con clientes de todo el mundo que tienen que hacer frente a la COVID-19 y que deben tomar decisiones importantes sobre sus sistemas de Azure Stack Hub, cómo se actualizan y administran, para garantizar que las operaciones empresariales del centro de datos continúan funcionando con normalidad. Para ayudar a nuestros clientes, Microsoft ofrece una extensión de cambio de directiva de soporte técnico temporal que incluye tres versiones de actualización anteriores.  Como resultado, se admitirán la actualización 2002 recién publicada y cualquiera de las tres versiones de actualización anteriores (por ejemplo, 1910, 1908 y 1907).
+> Con la actualización de Azure Stack Hub 2002, Microsoft amplía temporalmente las [instrucciones de directiva de soporte técnico de Azure Stack Hub](azure-stack-servicing-policy.md).  Estamos trabajando con clientes de todo el mundo que tienen que hacer frente a la COVID-19 y que deben tomar decisiones importantes sobre sus sistemas de Azure Stack Hub, cómo se actualizan y administran, para garantizar que las operaciones empresariales del centro de datos continúan funcionando con normalidad. Para dar soporte técnico a nuestros clientes, Microsoft ofrece una extensión de cambio de directiva de soporte técnico temporal que incluye tres versiones de actualización anteriores.  Como resultado, se admitirán la actualización 2002 recién publicada y cualquiera de las tres versiones de actualización anteriores (por ejemplo, 1910, 1908 y 1907).
 
 ### <a name="update-type"></a>Tipo de actualización
 
@@ -67,10 +67,9 @@ Para obtener más información sobre los tipos de compilación de actualización
 <!-- What's new, also net new experiences and features. -->
 
 - Hay disponible una nueva versión (1.8.1) de los módulos de administración de PowerShell para Azure Stack Hub en AzureRM.
-- Se publicará una nueva versión de los módulos de inquilino de az.* Azure PowerShell para Azure Stack el 16 de marzo de 2020. Los módulos de inquilino de Resource Manager para Azure Stack que se usan actualmente seguirán funcionando pero ya no se actualizarán después de la versión 2002.
 - Se ha agregado una nueva alerta de advertencia en el portal de administración de Azure Stack Hub para notificar problemas de conectividad con el servidor syslog configurado. El título de la alerta es **The Syslog client encountered a networking issue while sending a Syslog message** (El cliente de Syslog ha encontrado un problema de red al enviar un mensaje de Syslog).
 - Se ha agregado una nueva alerta de advertencia en el portal de administración de Azure Stack Hub para notificar problemas de conectividad con el protocolo de tiempo de red (NTP). El título de la alerta es **Invalid Time Source on [node name]** (Origen de hora no válido en [nombre del nodo]).
-- El [SDK de Java](https://azure.microsoft.com/develop/java/) ha publicado nuevos paquetes debido a un cambio importante en la actualización 2002 relacionado con las restricciones de TLS. Debe instalar la nueva dependencia del SDK de Java. Puede encontrar las instrucciones en los [perfiles de versión de Java y API](../user/azure-stack-version-profiles-java.md?view=azs-1910#java-and-api-version-profiles).
+- El [SDK de Java](https://azure.microsoft.com/develop/java/) ha publicado nuevos paquetes debido a un cambio importante en la actualización 2002 relacionado con las restricciones de TLS. Debe instalar la nueva dependencia del SDK de Java. Puede encontrar las instrucciones en los [perfiles de versión de Java y API](../user/azure-stack-version-profiles-java.md?view=azs-2002#java-and-api-version-profiles).
 - Hay una nueva versión (1.0.5.10) del módulo de administración de System Center Operations Manager para Azure Stack Hub disponible y obligatoria para todos los sistemas que ejecutan la actualización 2002 debido a cambios importantes en la API. Los cambios de la API afectan a los paneles de rendimiento de copia de seguridad y almacenamiento, y se recomienda que actualice primero todos los sistemas con la actualización 2002 antes de actualizar el módulo de administración.
 
 ### <a name="improvements"></a>Mejoras
@@ -80,6 +79,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 - Esta actualización contiene cambios en el proceso de actualización que mejoran considerablemente el rendimiento de futuras actualizaciones completas. Estos cambios surtirán efecto a partir de la siguiente actualización completa después de la versión 2002 y estarán diseñados, específicamente, para mejorar el rendimiento de una fase de actualización completa en la que se actualizan los sistemas operativos host. La mejora del rendimiento de las actualizaciones del sistema operativo host reduce significativamente el intervalo de tiempo en el que las cargas de trabajo de un inquilino se ven afectadas durante las actualizaciones completas.
 - La herramienta Azure Stack Hub Readiness Checker valida ahora la integración de AD Graph mediante todos los puertos TCP IP asignados a AD Graph.
 - La herramienta de redifusión sin conexión se ha actualizado con mejoras de confiabilidad. La herramienta ya no está disponible en GitHub y se ha [trasladado a la galería de PowerShell](https://www.powershellgallery.com/packages/Azs.Syndication.Admin/). Para más información, consulte [Descarga de elementos de Marketplace existentes desde Azure en Azure Stack Hub](azure-stack-download-azure-marketplace-item.md).
+- Se está incorporando una nueva funcionalidad de supervisión. La plataforma corregirá automáticamente la alerta de espacio en disco insuficiente para los hosts físicos y las máquinas virtuales de infraestructura, y solo si se produce un error en esta acción, la alerta será visible en el portal de administrador de Azure Stack Hub para que el operador tome medidas.
 - Mejoras en la [recopilación de registros de diagnóstico](azure-stack-diagnostic-log-collection-overview-tzl.md). La nueva experiencia mejora y simplifica la recopilación de registros de diagnóstico mediante la eliminación de la necesidad de configurar una cuenta de almacenamiento de blobs de antemano. El entorno de almacenamiento está preconfigurado para que pueda enviar registros antes de abrir una incidencia de soporte técnico y gaste menos tiempo en una llamada de soporte técnico.
 - El tiempo que se emplea en la [recopilación proactiva de registros y la recopilación de registros a petición](azure-stack-diagnostic-log-collection-overview-tzl.md) se ha reducido en un 80 %. El tiempo de recopilación de registros puede tardar más de lo esperado, pero no será necesaria ninguna acción por parte de los operadores de Azure Stack Hub a menos que se produzca un error en la recopilación de registros.
 - El progreso de la descarga de un paquete de actualizaciones de Azure Stack Hub es ahora visible en la hoja de actualización una vez que se inicia una actualización. Esto solo se aplica a los sistemas conectados de Azure Stack Hub que eligen [preparar los paquetes de actualizaciones mediante la descarga automática](azure-stack-update-prepare-package.md#automatic-download-and-preparation-for-update-packages).
