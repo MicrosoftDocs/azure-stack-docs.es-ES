@@ -14,6 +14,8 @@
       href: manage/delete-volumes.md
     - name: Sustitución de unidades
       href: manage/replace-drives.md
+    - name: Conexión de GPU a una máquina virtual Linux
+      href: manage/attach-gpu-to-linux-vm.md
 - name: Conceptos
   items:
     - name: Elección de unidades
@@ -32,10 +34,22 @@
       href: /powershell/module/hyper-v
     - name: Comandos de PowerShell de Storage
       href: /powershell/module/storage
+    - name: Comandos de PowerShell de ClusterAwareUpdating
+      href: /powershell/module/clusterawareupdating
+    - name: Comandos de PowerShell de FailoverClusters
+      href: /powershell/module/failoverclusters
+    - name: Comandos de PowerShell de StorageReplica
+      href: /powershell/module/storagereplica
 - name: Temas relacionados
   items:
     - name: "Familia Azure\_Stack"
       href: ../index.yml
+    - name: Azure Stack Hub
+      href: /azure-stack/operator/azure-stack-overview?view=azs-2002
+    - name: Azure Stack Edge
+      href: /azure/databox-online/data-box-edge-overview
+    - name: Windows Server
+      href: /windows-server/
     - name: Windows Admin Center
       href: /windows-server/manage/windows-admin-center/understand/windows-admin-center
     - name: Servicios híbridos de Azure
@@ -48,3 +62,5 @@
       href: /windows-server/virtualization/hyper-v/hyper-v-on-windows-server
     - name: Red definida por software
       href: /windows-server/networking/sdn
+    - name: System Center
+      href: /system-center/
