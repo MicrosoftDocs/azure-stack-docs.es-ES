@@ -21,6 +21,8 @@
       href: azure-stack-quick-create-vm-linux-powershell.md
     - name: 'Creación de máquinas virtuales Linux: CLI'
       href: azure-stack-quick-create-vm-linux-cli.md
+    - name: 'Creación de un clúster de Event Hubs: Portal'
+      href: event-hubs-quickstart-cluster-portal.md
 - name: Tutoriales
   items:
     - name: Suscripción a una oferta
@@ -185,6 +187,10 @@
                   href: azure-stack-key-vault-store-credentials.md
                 - name: Aplicación de ejemplos de Key Vault
                   href: azure-stack-key-vault-sample-app.md
+            - name: Event Hubs
+              items:
+                - name: Información general
+                  href: event-hubs-overview.md
             - name: Azure Monitor
               href: azure-stack-metrics-azure-data.md
               items:
