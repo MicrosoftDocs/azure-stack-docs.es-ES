@@ -7,12 +7,12 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: wfayed
 ms.lastreviewed: 09/12/2019
-ms.openlocfilehash: c8ea0ea53574132d144ad7e205f78c5bebc41226
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.openlocfilehash: 9ea880003492768e67c71f948a71d693e5a90c9b
+ms.sourcegitcommit: 19e9b6d6ce24d74ff396a5dc48208671aeda432a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79295326"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80362166"
 ---
 # <a name="datacenter-integration-planning-considerations-for-azure-stack-hub-integrated-systems"></a>Consideraciones sobre el planeamiento de la integración del centro de datos con los sistemas integrados de Azure Stack Hub
 
@@ -68,8 +68,8 @@ Para más información acerca de los modelos de licencias, consulte [Paquetes y 
 
 Debe pensar en cómo desea planear el espacio de nombres de Azure Stack Hub, especialmente el nombre de la región y del dominio externo. El nombre de dominio completo (FQDN) externo de la implementación de Azure Stack Hub para puntos de conexión de acceso público es la combinación de estos dos nombres: &lt;*región*&gt;.&lt;*fqdn*&gt;. Por ejemplo, *east.cloud.fabrikam.com*. En este ejemplo, los portales de Azure Stack Hub estarían disponibles en las direcciones URL siguientes:
 
-- https://portal.east.cloud.fabrikam.com
-- https://adminportal.east.cloud.fabrikam.com
+- `https://portal.east.cloud.fabrikam.com`
+- `https://adminportal.east.cloud.fabrikam.com`
 
 > [!IMPORTANT]
 > El nombre de región que elija para su implementación de Azure Stack Hub debe ser único y se mostrará en las direcciones del portal. 

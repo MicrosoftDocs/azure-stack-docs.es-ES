@@ -4,21 +4,21 @@ titleSuffix: Azure Stack Hub
 description: Aprenda a crear un rol personalizado para evitar el uso de un administrador global para el registro de Azure Stack Hub.
 author: IngridAtMicrosoft
 ms.topic: how-to
-ms.date: 03/04/2020
+ms.date: 03/27/2020
 ms.author: inhenkel
 ms.reviewer: rtiberiu
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: a7208ed3e66a4c86c591676c9d39ed8b3d8225f8
-ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
+ms.openlocfilehash: 599191a33334e8d38989abb4e293c7361855acfa
+ms.sourcegitcommit: da91962d8133b985169b236fb4c84f4ef564efc8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78367886"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80367775"
 ---
 # <a name="create-a-custom-role-for-azure-stack-hub-registration"></a>Creación de un rol personalizado para el registro de Azure Stack Hub
 
 > [!WARNING]
-> Esto no es una característica de la posición de seguridad. Úsela en escenarios donde quiera que las restricciones eviten cambios accidentales en la suscripción a Azure. Cuando un usuario tiene derechos delegados a este rol personalizado, también tendrá derechos para modificar los permisos y elevar derechos. Solo asigne usuarios en los que confía al rol personalizado.
+> Esto no es una característica de la postura de seguridad. Úsela en escenarios donde quiera que las restricciones eviten cambios accidentales en la suscripción a Azure. Cuando un usuario tiene derechos delegados a este rol personalizado, también tendrá derechos para modificar los permisos y elevar derechos. Solo asigne usuarios en los que confía al rol personalizado.
 
 Durante el registro de Azure Stack Hub, debe iniciar sesión con una cuenta de Azure Active Directory (Azure AD). La cuenta requiere los siguientes permisos de Azure AD y los permisos de suscripción a Azure:
 
@@ -51,7 +51,9 @@ Para crear un rol personalizado, debe tener el permiso `Microsoft.Authorization/
         "Microsoft.Authorization/roleAssignments/read",
         "Microsoft.Authorization/roleAssignments/write",
         "Microsoft.Authorization/roleAssignments/delete",
-        "Microsoft.Authorization/permissions/read"
+        "Microsoft.Authorization/permissions/read",
+        "Microsoft.Authorization/locks/read",
+        "Microsoft.Authorization/locks/write
       ],
       "NotActions": [
       ],
