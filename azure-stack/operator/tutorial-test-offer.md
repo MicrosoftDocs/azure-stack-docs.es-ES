@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 10/13/2019
 ms.reviewer: shriramnat
 ms.lastreviewed: 10/06/2019
-ms.openlocfilehash: 4d8f727178b4bbe6da6377f965a4863acf322abc
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 2aae33b324be4828b514ffbd019992aae989f50b
+ms.sourcegitcommit: dd53af1b0fc2390de162d41e3d59545d1baad1a7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77704767"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80423842"
 ---
 # <a name="tutorial-test-a-service-offering"></a>Tutorial: Prueba de una oferta de un servicio
 
@@ -143,3 +143,4 @@ A continuación, obtenga información sobre la implementación de proveedores de
 - [Ofrecer SQL en Azure Stack Hub](azure-stack-sql-resource-provider.md)
 - [Ofrecer MySQL en Azure Stack Hub](azure-stack-mysql-resource-provider.md)
 - [Ofrecer App Service en Azure Stack Hub](azure-stack-app-service-overview.md)
+- [Ofrecer Event Hubs en Azure Stack Hub](event-hubs-rp-overview.md)
