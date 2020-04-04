@@ -349,7 +349,7 @@
                 - name: Copia de seguridad y restauración
                   href: azure-stack-backup-infrastructure-backup.md
                 - name: Recopilación de registros
-                  href: azure-stack-diagnostic-log-collection-overview.md
+                  href: azure-stack-diagnostic-log-collection-overview-tzl.md
                 - name: Estado y alertas
                   href: azure-stack-monitor-health.md
                 - name: Administrar
