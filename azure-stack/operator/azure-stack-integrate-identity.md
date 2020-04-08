@@ -7,12 +7,12 @@ ms.date: 05/10/2019
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 05/10/2019
-ms.openlocfilehash: 288ece49e873da5820f6cb7dab70643418636704
-ms.sourcegitcommit: 961e3b1fae32d7f9567359fa3f7cb13cdc37e28e
+ms.openlocfilehash: 999c1b2983342189ca86805a4139e3c7f77b5ceb
+ms.sourcegitcommit: da91962d8133b985169b236fb4c84f4ef564efc8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80152316"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80367812"
 ---
 # <a name="integrate-ad-fs-identity-with-your-azure-stack-hub-datacenter"></a>Integración de la identidad de AD FS con Azure Stack Hub en el centro de datos
 
@@ -287,6 +287,13 @@ Si decide ejecutar manualmente los comandos, siga estos pasos:
    ```powershell  
    Set-AdfsProperties -IgnoreTokenBinding $true
    ```
+
+   **Para AD FS 2002 y versiones posteriores**
+
+   > [!NOTE]
+   > Al ejecutar `Add-ADFSRelyingPartyTrust` en la granja de servidores o el host de ADFS propiedad del cliente, primero debe asegurarse de que se aplica TLS 1.2 en el host o en la granja de servidores de ADFS. De lo contrario, el intento dará como resultado el siguiente mensaje de error:
+
+`Add-ADFSRelyingPartyTrust : The underlying connection was closed: An unexpected error occurred on a send.`
 
 ## <a name="spn-creation"></a>Creación de SPN
 

@@ -7,12 +7,12 @@ ms.date: 03/20/2020
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 03/18/2020
-ms.openlocfilehash: d06514242069e20957e15e1503b513ece366fba1
-ms.sourcegitcommit: 961e3b1fae32d7f9567359fa3f7cb13cdc37e28e
+ms.openlocfilehash: ca29dd169523872b2dcc21b323bc489de5caf9b3
+ms.sourcegitcommit: b824c7b9af9ba415ca4fe8d15673b521362f0abb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80152156"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80479224"
 ---
 # <a name="azure-stack-hub-known-issues"></a>Problemas conocidos de Azure Stack Hub
 
@@ -111,6 +111,12 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 
 ## <a name="compute"></a>Proceso
 
+### <a name="vm-overview-blade-does-not-show-correct-computer-name"></a>La hoja de información general de máquinas virtuales no muestra el nombre de equipo correcto
+
+- Aplicable a: Este problema se aplica a la versión 2002 y versiones posteriores.
+- Causa: Al ver los detalles de una máquina virtual en la hoja de información general, el nombre del equipo se muestra como **(no disponible)** .
+- Corrección: Vea la hoja **Propiedades** en **Configuración**.
+
 ### <a name="nvv4-vm-size-on-portal"></a>Tamaño de máquina virtual NVv4 en el portal
 
 - Aplicable a: Este problema se aplica a la versión 2002 y versiones posteriores.
@@ -138,6 +144,11 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: La creación de máquinas virtuales en un conjunto de disponibilidad de 3 dominios de error y la creación de una instancia de conjunto de escalado de máquinas virtuales genera un error **FabricVmPlacementErrorUnsupportedFaultDomainSize** durante el proceso de actualización en un entorno de Azure Stack Hub de 4 nodos.
 - Corrección: Se pueden crear VM únicas en un conjunto de disponibilidad con 2 dominios de error correctamente. Sin embargo, la creación de instancias del conjunto de escalado todavía no está disponible durante el proceso de actualización en una implementación de Azure Stack Hub de 4 nodos.
+
+### <a name="sql-vm-provision-will-be-failed-in-asdk"></a>No se pudo aprovisionar la máquina virtual de SQL en ASDK
+- Aplicable a: este problema solo se produce en ASDK 2002. 
+- Causa: al crear una nueva máquina virtual de SQL en ASDK 2002, puede recibir un mensaje de error **"No se encontró la extensión con el editor "Microsoft.SqlServer.Management ", el tipo "SqlIaaSAgent" y la versión del controlador de tipo "2.0" en el repositorio de extensiones".** No hay ningún "SqlIaaSAgent" 2.0 en Azure Stack Hub. 
+
 
 ## <a name="resource-providers"></a>Resource Providers
 

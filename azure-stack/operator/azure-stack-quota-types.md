@@ -7,12 +7,12 @@ ms.date: 01/07/2020
 ms.author: sethm
 ms.reviewer: xiaofmao
 ms.lastreviewed: 12/07/2019
-ms.openlocfilehash: 5af024f2b3d31e115e80d1e20883b0457037532e
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.openlocfilehash: bc36b4fe7326596f4ef993ceb087818270cf1b5a
+ms.sourcegitcommit: dd53af1b0fc2390de162d41e3d59545d1baad1a7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79295056"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80423858"
 ---
 # <a name="quota-types-in-azure-stack-hub"></a>Tipos de cuota en Azure Stack Hub
 
@@ -57,6 +57,12 @@ Las [cuotas](service-plan-offer-subscription-overview.md#plans) definen los lím
 | Número máximo de NIC |100 |El número máximo de interfaces de red que puede crear una suscripción en esta ubicación. |
 | Número máximo de equilibradores de carga |50 |El número máximo de equilibradores de carga que puede crear una suscripción en esta ubicación. |
 | Número máximo de grupos de seguridad de red |50 |El número máximo de grupos de seguridad de red que puede crear una suscripción en esta ubicación. |
+
+## <a name="event-hubs-quota-types"></a>Tipos de cuota de Event Hubs
+
+| **Tipo** | **Valor predeterminado** | **Descripción** |
+| --- | --- | --- |
+| Número máximo de núcleos de máquinas virtuales | 10 | El número máximo de núcleos que puede crear una suscripción en esta ubicación (por ejemplo, una máquina virtual A3 tiene cuatro núcleos). |
 
 ## <a name="view-an-existing-quota"></a>Visualización de una cuota existente
 

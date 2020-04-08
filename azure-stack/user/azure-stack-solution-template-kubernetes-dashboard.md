@@ -7,12 +7,12 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
-ms.openlocfilehash: e2b6598137774a5bf654aef1f9a75827da4f108a
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 04d7935ca88c578c2019703855e79278211127d1
+ms.sourcegitcommit: b824c7b9af9ba415ca4fe8d15673b521362f0abb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77703645"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80479315"
 ---
 # <a name="access-the-kubernetes-dashboard-in-azure-stack-hub"></a>Acceso al panel de Kubernetes en Azure Stack Hub 
 
@@ -121,6 +121,14 @@ Puede recuperar la dirección URL para el panel desde el nodo principal del clú
 Puede usar el panel. Para más información sobre el panel de Kubernetes, vea la información sobre el [panel de la interfaz de usuario web de Kubernetes](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/). 
 
 ![Panel de Kubernetes en Azure Stack Hub](media/azure-stack-solution-template-kubernetes-dashboard/azure-stack-kub-dashboard.png)
+
+## <a name="troubleshooting"></a>Solución de problemas
+
+### <a name="custom-virtual-networks"></a>Redes virtuales personalizadas
+
+Si experimenta problemas de conectividad al acceder al panel de Kubernetes después de implementar Kubernetes en una [red virtual personalizada](https://docs.microsoft.com/azure-stack/user/kubernetes-aks-engine-custom-vnet), asegúrese de que las subredes de destino están vinculadas a los recursos de la tabla de enrutamiento y del grupo de seguridad de red creados por el motor de AKS.
+
+Asegúrese de que las reglas del grupo de seguridad de red permitan la comunicación entre los nodos principales y la dirección IP del pod del panel de Kubernetes. Esto se puede confirmar mediante el comando ping desde un nodo maestro.
 
 ## <a name="next-steps"></a>Pasos siguientes 
 

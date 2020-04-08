@@ -3,20 +3,20 @@ title: Envío inmediato de registros de diagnóstico de Azure Stack Hub
 description: Aprenda a recopilar los registros de diagnóstico a petición en Azure Stack Hub mediante el portal del administrador o un script de PowerShell.
 author: justinha
 ms.topic: article
-ms.date: 02/26/2020
+ms.date: 03/30/2020
 ms.author: justinha
 ms.reviewer: shisab
-ms.lastreviewed: 02/26/2020
-ms.openlocfilehash: fb79a6378d2dec69804019b3ab0648ce874bf99d
-ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
+ms.lastreviewed: 03/30/2020
+ms.openlocfilehash: 2a46c031be648eedf42e204496ed2a123c926dd9
+ms.sourcegitcommit: b65952127f39c263b162aad990e4d5b265570a7f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79520570"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80402723"
 ---
 # <a name="send-azure-stack-hub-diagnostic-logs-now"></a>Envío inmediato de registros de diagnóstico de Azure Stack Hub
 
-Antes de solicitar soporte técnico, los operadores de Azure Stack pueden enviar registros de diagnóstico a petición a los servicios de soporte técnico al cliente de Microsoft mediante el portal del administrador o PowerShell. Si Azure Stack Hub está conectado a Azure, se recomienda utilizar la opción **Send logs now** (Enviar registros ahora) del portal del administrador porque es la forma más sencilla de enviar los registros directamente a Microsoft. Si el portal no está disponible, en su lugar, los operadores deben [usar PowerShell para enviar los registros ahora](azure-stack-configure-on-demand-diagnostic-log-collection-powershell-tzl.md). 
+Antes de solicitar soporte técnico, los operadores de Azure Stack pueden enviar registros de diagnóstico a petición a los servicios de soporte técnico al cliente de Microsoft mediante el portal del administrador o PowerShell. Si Azure Stack Hub está conectado a Azure, se recomienda utilizar la opción **Send logs now** (Enviar registros ahora) del portal del administrador porque es la forma más sencilla de enviar los registros directamente a Microsoft. Si el portal no está disponible, en su lugar, los operadores deben [enviar registros ahora con Send-AzureStackDiagnosticLog](azure-stack-configure-on-demand-diagnostic-log-collection-powershell-tzl.md). 
 
 Si está desconectado de Internet o solo desea guardar los registros de forma local, use el método [Get-AzureStackLog](azure-stack-get-azurestacklog.md) para enviar los registros. En el diagrama de flujo siguiente se muestra qué opción utilizar para enviar los registros de diagnóstico en cada caso. 
 
@@ -31,4 +31,4 @@ Especifique la hora de inicio y la hora de finalización de la recopilación de 
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Uso del punto de conexión con privilegios para enviar los registros de diagnóstico de Azure Stack Hub](azure-stack-get-azurestacklog.md)
+[Uso del punto de conexión con privilegios para enviar los registros de diagnóstico de Azure Stack Hub](azure-stack-configure-on-demand-diagnostic-log-collection-powershell-tzl.md)

@@ -7,12 +7,12 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviwer: xiaofmao
 ms.lastreviewed: 01/30/2020
-ms.openlocfilehash: 864421f543e02da39dcbd3bf2972fe3a0782676f
-ms.sourcegitcommit: 17be49181c8ec55e01d7a55c441afe169627d268
+ms.openlocfilehash: 3f5701cbb601b82db3b802bfd602c53576230b6f
+ms.sourcegitcommit: f114e9d268a74fde6891180b80c74c148dc0a129
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80069386"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80530761"
 ---
 # <a name="azure-stack-hub-storage-differences-and-considerations"></a>Azure Stack Hub Storage: Diferencias y consideraciones
 
@@ -44,9 +44,15 @@ En este artículo se resumen las diferencias entre los servicios de Azure Stack 
 |Tamaño de página de blob en página|512 bytes|4 KB
 |Clave de partición de tabla y tamaño de clave de fila|1 024 caracteres (2 048 bytes)|400 caracteres (800 bytes)
 |Instantánea de blob|No se limita el número máximo de instantáneas de un blob.|El número máximo de instantáneas de un blob es 1 000.
-|Autenticación de Azure AD para almacenamiento|En versión preliminar|Todavía no se admite.
+|Autenticación de Azure AD para almacenamiento|Disponibilidad general|Todavía no se admite.
 |Blobs inalterables|Disponibilidad general|Todavía no se admite.
 |Firewall y reglas de red virtual para almacenamiento|Disponibilidad general|Todavía no se admite.|
+|Asignación de un dominio personalizado a un punto de conexión de Blob Storage|Disponibilidad general|Todavía no se admite.|
+|Hospedaje de sitios web estáticos en Blob Storage|Disponibilidad general|Todavía no se admite.|
+|Cifrado de datos de almacenamiento en reposo con claves administradas por el cliente|Disponibilidad general|Todavía no se admite.|
+|Comprobación de la integridad de los datos transaccionales con hash CRC64|Disponibilidad general|Todavía no se admite.|
+|Copia sincrónica del lado servidor de datos de la dirección URL|Disponibilidad general|Todavía no se admite.|
+|API Batch para Blob Storage|Disponibilidad general|Todavía no se admite.|
 
 También hay diferencias en las métricas de almacenamiento:
 

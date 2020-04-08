@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 01/07/2020
 ms.author: sethm
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: a44af909dc3f3309c51f748b0f3b3f0275843c80
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 36a4ea0532eda0593de2beb9191d6e0911e58276
+ms.sourcegitcommit: da91962d8133b985169b236fb4c84f4ef564efc8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77705073"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80367805"
 ---
 # <a name="configure-ipsecike-policy-for-site-to-site-vpn-connections"></a>Configuración de la directiva IPsec/IKE para conexiones VPN de sitio a sitio
 
@@ -64,9 +64,9 @@ En la tabla siguiente se enumeran los algoritmos criptográficos y los niveles d
 |------------------------------------------------------|--------------------------------------------------------------------------|
 | Cifrado IKEv2                                     | AES256, AES192, AES128, DES3, DES                                        |
 | Integridad de IKEv2                                      | SHA384, SHA256, SHA1, MD5                                                |
-| Grupo DH                                             | ECP384, ECP256, DHGroup14, DHGroup2048, DHGroup2, DHGroup1, No         |
+| Grupo DH                                             | ECP384, ECP256, DHGroup14, DHGroup2, DHGroup1, None                      |
 | Cifrado IPsec                                     | GCMAES256, GCMAES192, GCMAES128, AES256, AES192, AES128, DES3, DES, No |
-| Integridad de IPsec                                      | GCMASE256, GCMAES192, GCMAES128, SHA256, SHA1, MD5                       |
+| Integridad de IPsec                                      | GCMASE256, GCMAES192, GCMAES128                                          |
 | Grupo PFS                                            | PFS24, ECP384, ECP256, PFS2048, PFS2, PFS1, No                         |
 | Vigencia de SA QM                                       | (Opcional: Se usan los valores predeterminados si no se especifica ningún valor)<br />                         Segundos (entero; mín. 300/predeterminado 27 000 segundos)<br />                         KBytes (entero; mín. 1024/predeterminado 102 400 000 KBytes) |
 | Selector de tráfico                                     | En Azure Stack Hub no se admiten selectores de tráfico basados en directivas.         |

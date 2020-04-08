@@ -7,12 +7,12 @@ ms.date: 12/18/2019
 ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 10/01/2019
-ms.openlocfilehash: 0e5d71335fb5b7086341c7c06ec503aae1a8e728
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.openlocfilehash: a5776189c1792844b6d9bf2ec229ec02936f82c1
+ms.sourcegitcommit: dd53af1b0fc2390de162d41e3d59545d1baad1a7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79295266"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80423877"
 ---
 # <a name="azure-stack-hub-services-plans-offers-subscriptions-overview"></a>Introducción a los servicios, los planes, las ofertas y las suscripciones de Azure Stack Hub
 
@@ -31,7 +31,7 @@ Para ofrecer un servicio, siga estos pasos de alto nivel:
 1. Planee la oferta de servicio mediante lo siguiente:
 
    - Servicios fundamentales, como los de proceso, almacenamiento, redes o Key Vault.
-   - Servicios de valor agregado como App Service, SQL Server o MySQL Server.
+   - Servicios de valor agregado como Event Hubs, App Service, SQL Server o MySQL Server.
 
 2. Cree un plan compuesto por uno o más servicios. Al crear un plan, seleccione o cree cuotas que definan los límites de recursos de cada servicio en el plan.
 3. Cree una oferta que tenga uno o varios planes. La oferta puede incluir planes base y planes complementarios opcionales.
@@ -44,8 +44,9 @@ Después de crear la oferta, los usuarios pueden suscribirse a ella para acceder
 
 Puede ofrecer servicios de [Infraestructura como servicio](https://azure.microsoft.com/overview/what-is-iaas/) (IaaS) que permiten a los usuarios crear una infraestructura de computación a petición, aprovisionada y administrada desde el portal de usuarios de Azure Stack Hub.
 
-También puede implementar servicios de [Plataforma como servicio](https://azure.microsoft.com/overview/what-is-paas/) (PaaS) para Azure Stack Hub de Microsoft y otros proveedores. Los servicios de PaaS que puede proporcionar son, entre otros:
+También puede implementar servicios de [Plataforma como servicio](https://azure.microsoft.com/overview/what-is-paas/) (PaaS) para Azure Stack Hub de Microsoft y proveedores de terceros. Los servicios de PaaS que se pueden implementar incluyen, entre otros:
 
+- [Event Hubs](event-hubs-rp-overview.md)
 - [App Service](azure-stack-app-service-overview.md)
 - [SQL Server](azure-stack-sql-resource-provider-deploy.md)
 - [MySQL Server](azure-stack-mysql-resource-provider-deploy.md)

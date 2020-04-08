@@ -7,14 +7,14 @@ ms.date: 3/04/2020
 ms.author: inhenkel
 ms.reviewer: ppacent
 ms.lastreviewed: 12/16/2019
-ms.openlocfilehash: a63fcbb13defc0d7e679c0be7fb931c0e2570b37
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.openlocfilehash: c4565ce33faf1f76a4774736d9195c9d7256b6da
+ms.sourcegitcommit: dd53af1b0fc2390de162d41e3d59545d1baad1a7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79295188"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80423828"
 ---
-# <a name="azure-stack-hub-public-key-infrastructure-certificate-requirements"></a>Requisitos de certificados de la infraestructura de clave pública de Azure Stack Hub
+# <a name="azure-stack-hub-public-key-infrastructure-pki-certificate-requirements"></a>Requisitos de certificados de la infraestructura de clave pública (PKI) de Azure Stack Hub
 
 Azure Stack Hub tiene una red de infraestructura pública que usa direcciones IP públicas accesibles externamente y asignadas a un pequeño conjunto de servicios de Azure Stack Hub y, posiblemente, a las máquinas virtuales del inquilino. Durante la implementación de Azure Stack Hub se requieren certificados PKI con los nombres DNS apropiados para estos puntos de conexión de la infraestructura pública de Azure Stack Hub. En este artículo se proporciona información acerca de lo siguiente:
 
@@ -91,12 +91,12 @@ Si implementa Azure Stack Hub con el modo de implementación de Azure AD, solo 
 > Todos los certificados que se indican en esta sección deben tener la misma contraseña.
 
 ## <a name="optional-paas-certificates"></a>Certificados de PaaS opcionales
-Si va a implementar los servicios PaaS adicionales de Azure Stack Hub (SQL, MySQL y App Service) después de implementar y configurar Azure Stack Hub, debe solicitar certificados adicionales para cubrir los puntos de conexión de los servicios PaaS.
+Si va a implementar los servicios PaaS adicionales de Azure Stack Hub (SQL, MySQL, App Service o Event Hubs) después de implementar y configurar Azure Stack Hub, tiene que solicitar certificados adicionales para cubrir los puntos de conexión de los servicios PaaS.
 
 > [!IMPORTANT]
-> Los certificados que se usan para los proveedores de recursos de App Service, SQL y MySQL deben tener la misma entidad de certificación raíz que los de los puntos de conexión globales de Azure Stack Hub.
+> Los certificados que se usan para los proveedores de recursos deben tener la misma entidad de certificación raíz que los de los puntos de conexión globales de Azure Stack Hub.
 
-En la tabla siguiente se describen los puntos de conexión y los certificados necesarios para los adaptadores de SQL y MySQL y para App Service. No es necesario copiar estos certificados en la carpeta de implementación de Azure Stack Hub. En su lugar, estos certificados se proporcionan al instalar los proveedores de recursos adicionales.
+En la tabla siguiente se describen los puntos de conexión y los certificados necesarios para los proveedores de recursos. No es necesario copiar estos certificados en la carpeta de implementación de Azure Stack Hub. En su lugar, proporcione estos certificados durante la instalación del proveedor de recursos.
 
 |Ámbito (por región)|Certificado|Nombres alternativos del firmante (SAN) y firmante del certificado requeridos|Espacio de nombres del subdominio|
 |-----|-----|-----|-----|
@@ -105,6 +105,7 @@ En la tabla siguiente se describen los puntos de conexión y los certificados ne
 |App Service|API|api.appservice. *&lt;región>.&lt;fqdn>*<br>(Certificado SSL<sup>2</sup>)|appservice. *&lt;región>.&lt;fqdn>*<br>scm.appservice. *&lt;región>.&lt;fqdn>*|
 |App Service|FTP|ftp.appservice. *&lt;región>.&lt;fqdn>*<br>(Certificado SSL<sup>2</sup>)|appservice. *&lt;región>.&lt;fqdn>*<br>scm.appservice. *&lt;región>.&lt;fqdn>*|
 |App Service|SSO|sso.appservice. *&lt;región>.&lt;fqdn>*<br>(Certificado SSL<sup>2</sup>)|appservice. *&lt;región>.&lt;fqdn>*<br>scm.appservice. *&lt;región>.&lt;fqdn>*|
+|Event Hubs|Event Hubs|&#42;.eventhub. *&lt;región>.&lt;fqdn>* (SAN)| eventhub. *&lt;región>.&lt;fqdn>* |
 
 <sup>1</sup> Requiere un certificado con varios nombres alternativos de firmante comodín. Puede que no todas las entidades de certificación públicas admitan varios nombres alternativos del firmante comodín en un solo certificado.
 

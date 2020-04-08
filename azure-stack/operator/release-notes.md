@@ -7,12 +7,12 @@ ms.date: 03/20/2020
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 03/18/2020
-ms.openlocfilehash: cd8569e5ea0f3537aa915207b7d52141d9444afa
-ms.sourcegitcommit: fec2b21e80c8049a823baeaf2b642802ccdcfb67
+ms.openlocfilehash: 33c620624feca5b2d416ff1173741209b99011cb
+ms.sourcegitcommit: b65952127f39c263b162aad990e4d5b265570a7f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80229553"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80402817"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Notas de la versión de Azure Stack Hub
 
@@ -269,11 +269,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 
 - Al descargar elementos de Marketplace de Azure en Azure Stack Hub, hay una nueva interfaz de usuario que permite especificar una versión del elemento, en caso de que existan varias versiones. La nueva interfaz de usuario está disponible tanto en escenarios conectados como desconectados. Para más información, consulte [Descarga de elementos de Marketplace existentes desde Azure en Azure Stack Hub](azure-stack-download-azure-marketplace-item.md).  
 
-- A partir de la versión 1910, el sistema de Azure Stack Hub **requiere** un espacio de direcciones IP internas privadas adicional /20. Esta red es privada para el sistema de Azure Stack Hub y se puede reutilizar en varios sistemas de Azure Stack Hub de su centro de datos. Aunque la red es privada de Azure Stack Hub, no debe superponerse con una red del centro de datos. El espacio IP privado /20 se divide en varias redes que permiten ejecutar la infraestructura de Azure Stack Hub en contenedores (como se mencionó anteriormente en las [notas de la versión 1905](release-notes.md?view=azs-1905)). Al ejecutar la infraestructura de Azure Stack Hub en contenedores se pretende optimizar el uso y mejorar el rendimiento. Además, el espacio IP privado /20 también se usa para permitir esfuerzos continuos que reducirán el espacio IP enrutable necesario antes de la implementación.
-
-  - Tenga en cuenta que la entrada /20 constituirá un requisito previo en la próxima actualización de Azure Stack Hub posterior a la 1910. Cuando se publique la siguiente actualización de Azure Stack Hub después de la versión 1910 e intente instalarla, se producirá un error en el proceso si no se ha completado la entrada /20 tal como se describe a continuación en los pasos de corrección. Se mostrará una alerta en el portal de administración hasta que se hayan completado los pasos de corrección indicados. Consulte el artículo [Integración de la red del centro de datos](azure-stack-network.md#private-network) para comprender cómo se consumirá este nuevo espacio privado.
-
-  - Pasos de corrección: Para llevar a cabo la corrección, siga las instrucciones para [abrir una sesión de PEP](azure-stack-privileged-endpoint.md#access-the-privileged-endpoint). Prepare un [intervalo de direcciones IP internas privadas](azure-stack-network.md#logical-networks) de tamaño /20 y ejecute el siguiente cmdlet (solo disponible a partir de la versión 1910) en la sesión PEP; para ello, use el siguiente ejemplo: `Set-AzsPrivateNetwork -UserSubnet 100.87.0.0/20`. Si la operación se realiza correctamente, recibirá el mensaje **Azs Internal Network range added to the config** (Intervalo de red interno de Azs agregado a la configuración). Además, la alerta se cerrará en el portal de administración. El sistema Azure Stack Hub ya se puede actualizar a la versión siguiente.
+- A partir de la versión 1910, el sistema de Azure Stack Hub **requiere** un espacio de direcciones IP internas privadas adicional /20.  Consulte (Planeación de la integración de red para Azure Stack)[azure-stack-network.md] para más información.
   
 - El servicio de copia de seguridad de la infraestructura elimina los datos de copias de seguridad cargadas parcialmente si la ubicación de almacenamiento externo se queda sin capacidad durante el procedimiento de carga.  
 
