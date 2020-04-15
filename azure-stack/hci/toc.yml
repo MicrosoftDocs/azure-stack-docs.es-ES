@@ -1,9 +1,13 @@
 - name: Documentación de Azure Stack HCI
-  href: overview.md
+  href: index.yml
 - name: Información general
   items:
     - name: ¿Qué es Azure Stack HCI?
       href: overview.md
+- name: Introducción
+  items:
+    - name: Uso de Azure Stack HCl con Windows Admin Center
+      href: get-started.md
 - name: Administrar
   items:
     - name: Creación de volúmenes
@@ -14,6 +18,8 @@
       href: manage/delete-volumes.md
     - name: Sustitución de unidades
       href: manage/replace-drives.md
+    - name: Supervisión con Azure Monitor
+      href: manage/azure-monitor.md
     - name: Conexión de GPU a una máquina virtual Linux
       href: manage/attach-gpu-to-linux-vm.md
 - name: Conceptos
@@ -40,6 +46,12 @@
       href: /powershell/module/failoverclusters
     - name: Comandos de PowerShell de StorageReplica
       href: /powershell/module/storagereplica
+    - name: Comandos de PowerShell de NetAdapter
+      href: /powershell/module/netadapter
+    - name: Comandos de PowerShell de NetQoS
+      href: /powershell/module/netqos
+    - name: Comandos de PowerShell de DcbQoS
+      href: /powershell/module/dcbqos
 - name: Temas relacionados
   items:
     - name: "Familia Azure\_Stack"

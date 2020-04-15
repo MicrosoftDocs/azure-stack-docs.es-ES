@@ -1,0 +1,57 @@
+### YamlMime:Landing
+title: Documentación de Azure Stack HCI
+summary: Azure Stack HCl es un clúster de Windows Server 2019 hiperconvergido que usa hardware validado para ejecutar cargas de trabajo virtualizadas en el entorno local, lo que facilita a los clientes la consolidación de la infraestructura de envejecimiento y la conexión a Azure para usar los servicios en la nube.
+metadata:
+  title: Documentación de Azure Stack HCI
+  description: Azure Stack HCI es un clúster de Windows Server 2019 hiperconvergido que usa hardware validado para ejecutar cargas de trabajo virtualizadas en el entorno local.
+  ms.topic: landing-page
+  author: khdownie
+  ms.author: v-kedow
+  ms.date: 04/09/2020
+  ms.openlocfilehash: d5a67973b2d9cd2be83346c97f7c5b0de58cbb44
+  ms.sourcegitcommit: bdd4d529bd3e115a9f76eece62b1613448d5d020
+  ms.translationtype: HT
+  ms.contentlocale: es-ES
+  ms.lasthandoff: 04/14/2020
+  ms.locfileid: "81119215"
+landingContent:
+- title: Acerca de Azure Stack HCI
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: ¿Qué es Azure Stack HCI?
+      url: overview.md
+  - linkListType: get-started
+    links:
+    - text: Catálogo de Azure Stack HCI
+      url: https://www.microsoft.com/cloud-platform/azure-stack-hci-catalog
+- title: Administración de Azure Stack HCI
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Creación de volúmenes
+      url: manage/create-volumes.md
+    - text: Extensión de volúmenes
+      url: manage/extend-volumes.md
+    - text: Eliminar volúmenes
+      url: manage/delete-volumes.md
+    - text: Sustitución de unidades
+      url: manage/replace-drives.md
+    - text: Supervisión con Azure Monitor
+      url: manage/azure-monitor.md
+    - text: Conexión de GPU a una máquina virtual Linux
+      url: manage/attach-gpu-to-linux-vm.md
+- title: Conceptos de Azure Stack HCI
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Elección de unidades
+      url: concepts/choose-drives.md
+    - text: Planeamiento de volúmenes
+      url: concepts/plan-volumes.md
+    - text: Descripción de la memoria caché
+      url: concepts/cache.md
+    - text: Tolerancia a errores y eficacia del almacenamiento
+      url: concepts/fault-tolerance.md
+    - text: Cuórum de clúster y bloque de almacenamiento
+      url: concepts/quorum.md
