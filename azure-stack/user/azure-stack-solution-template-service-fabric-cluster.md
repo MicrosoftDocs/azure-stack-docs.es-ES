@@ -8,10 +8,10 @@ ms.author: mabrigg
 ms.reviewer: shnatara
 ms.lastreviewed: 09/25/2019
 ms.openlocfilehash: b09e23fafdfcdff83329e70538cd8d072081a678
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: bdd4d529bd3e115a9f76eece62b1613448d5d020
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/14/2020
 ms.locfileid: "77687553"
 ---
 # <a name="deploy-a-service-fabric-cluster-in-azure-stack-hub"></a>Implementación de un clúster de Service Fabric en Azure Stack Hub

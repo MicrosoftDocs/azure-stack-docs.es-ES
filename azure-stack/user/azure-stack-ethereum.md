@@ -8,10 +8,10 @@ ms.topic: tutorial
 ms.reviewer: seyadava
 ms.lastreviewed: 06/03/2019
 ms.openlocfilehash: a0a13af01fc539788d76377f357ca28db9b05234
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: bdd4d529bd3e115a9f76eece62b1613448d5d020
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/14/2020
 ms.locfileid: "77703084"
 ---
 # <a name="deploy-an-ethereum-blockchain-network-on-azure-stack-hub"></a>Implementación de una red de la cadena de bloques Ethereum en Azure Stack Hub

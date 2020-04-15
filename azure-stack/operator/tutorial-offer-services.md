@@ -9,10 +9,10 @@ ms.date: 10/16/2019
 ms.reviewer: shriramnat
 ms.lastreviewed: 10/16/2019
 ms.openlocfilehash: 772871cffa3d5394d1d8b939fa22ae91bc90d4ac
-ms.sourcegitcommit: dd53af1b0fc2390de162d41e3d59545d1baad1a7
+ms.sourcegitcommit: bdd4d529bd3e115a9f76eece62b1613448d5d020
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 04/14/2020
 ms.locfileid: "80423906"
 ---
 # <a name="create-a-service-offering-for-users-in-azure-stack-hub"></a>Creación de una oferta de servicio para los usuarios en Azure Stack Hub

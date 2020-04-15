@@ -9,10 +9,10 @@ ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
 ms.openlocfilehash: 621bed34b4d5f633b1a104c03c0bca341ec21bdd
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.sourcegitcommit: bdd4d529bd3e115a9f76eece62b1613448d5d020
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/14/2020
 ms.locfileid: "79293922"
 ---
 # <a name="validate-oem-packages"></a>Validación de paquetes de OEM

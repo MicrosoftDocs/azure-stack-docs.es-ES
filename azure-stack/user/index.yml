@@ -10,10 +10,10 @@ metadata:
   ms.author: mabrigg
   ms.date: 03/19/2020
   ms.openlocfilehash: a72fa2f57da84c18ee236c017fdd31a659946143
-  ms.sourcegitcommit: 17be49181c8ec55e01d7a55c441afe169627d268
+  ms.sourcegitcommit: bdd4d529bd3e115a9f76eece62b1613448d5d020
   ms.translationtype: HT
   ms.contentlocale: es-ES
-  ms.lasthandoff: 03/21/2020
+  ms.lasthandoff: 04/14/2020
   ms.locfileid: "80069216"
 landingContent:
 - title: Acerca de Azure Stack Hub
