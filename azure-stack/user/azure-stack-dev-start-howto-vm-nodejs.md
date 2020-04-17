@@ -8,10 +8,10 @@ ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/02/20
 ms.openlocfilehash: 3166982098c68760f4f20f4094038f2ab275b73f
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: 4138a2a15f78e7db38b3a29acc963a71937146fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/15/2020
 ms.locfileid: "77703067"
 ---
 # <a name="deploy-a-nodejs-web-app-to-a-vm-in-azure-stack-hub"></a>Implementación de una aplicación web de Node.js en una máquina virtual en Azure Stack Hub

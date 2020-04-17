@@ -8,10 +8,10 @@ ms.author: justinha
 ms.reviewer: thoroet
 ms.lastreviewed: 12/23/2019
 ms.openlocfilehash: f74f35a8b1124ed9678e6b4bc254d4d2cd05a84e
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77699276"
 ---
 # <a name="set-access-permissions-using-role-based-access-control"></a>Establecimiento de permisos de acceso mediante el control de acceso basado en rol

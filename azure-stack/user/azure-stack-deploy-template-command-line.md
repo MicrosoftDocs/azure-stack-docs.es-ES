@@ -8,10 +8,10 @@ ms.author: mabrigg
 ms.reviewer: unknown
 ms.lastreviewed: 05/09/2019
 ms.openlocfilehash: fc01d7ebab8855580470a7d4e29ab86851b88280
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77704291"
 ---
 # <a name="deploy-a-template-with-the-command-line-in-azure-stack-hub"></a>Implementación de una plantilla con la línea de comandos en Azure Stack Hub

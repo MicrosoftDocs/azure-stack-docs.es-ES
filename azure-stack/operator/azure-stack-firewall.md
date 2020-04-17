@@ -3,16 +3,16 @@ title: Integración del firewall de Azure Stack Hub para sistemas integrados de 
 description: Más información sobre la integración del firewall de Azure Stack Hub para sistemas integrados de Azure Stack Hub
 author: IngridAtMicrosoft
 ms.topic: conceptual
-ms.date: 03/04/2020
+ms.date: 04/10/2020
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 11/15/2019
-ms.openlocfilehash: d0929edd5db0ba45593d5d061f5d831df50f3d35
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.openlocfilehash: c33c2dbcdb662f23072ef7aca83364643c3cdf0c
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79295338"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81244224"
 ---
 # <a name="azure-stack-hub-firewall-integration"></a>Integración del firewall de Azure Stack Hub
 Se recomienda que use un dispositivo de firewall para ayudar a proteger Azure Stack Hub. Los firewalls pueden ayudarle a defenderse contra ataques por denegación de servicio distribuido (DDOS), a detectar intrusos y a inspeccionar el contenido que reciba. Sin embargo, también pueden convertirse en un cuello de botella en el rendimiento de los servicios de Azure Storage como blobs, tablas y colas.
@@ -41,7 +41,7 @@ En una implementación perimetral, Azure Stack Hub se implementa directamente de
 
 Las direcciones IP enrutables públicas se especifican para el grupo de VIP públicas de la red externa en el momento de la implementación. En un escenario perimetral, no se recomienda utilizar direcciones IP enrutables públicas en ninguna otra red por motivos de seguridad. Este escenario permite que un usuario disfrute de la experiencia completa en la nube autocontrolada como si se tratara de una nube pública como Azure.  
 
-![Ejemplo de firewall perimetral de Azure Stack Hub](./media/azure-stack-firewall/firewallScenarios.png)
+![Ejemplo de firewall perimetral de Azure Stack Hub](./media/azure-stack-firewall/firewallScenarios.svg)
 
 ## <a name="enterprise-intranet-or-perimeter-network-firewall-scenario"></a>Escenario de firewall de red perimetral o de intranet empresarial
 En una implementación perimetral o de intranet empresarial, Azure Stack Hub se implementa en un firewall de varias zonas o entre el firewall perimetral y el firewall de red corporativo interno. A continuación, se distribuye el tráfico entre la red perimetral (o DMZ) segura y las zonas no seguras como se describe a continuación:
@@ -50,7 +50,7 @@ En una implementación perimetral o de intranet empresarial, Azure Stack Hub se 
 - **Zona perimetral**. La red perimetral es el lugar en que se suelen implementar las aplicaciones externas o accesibles desde Internet, como los servidores web. Se suelen supervisar a través de un firewall para evitar ataques como DDoS e intrusión (acceso por parte de piratas informáticos) y permitir el tráfico entrante especificado de Internet. Solo debe residir en la zona DMZ el grupo de VIP públicas de redes externas de Azure Stack Hub.
 - **Zona no segura**. Se trata de la red externa: Internet. **No** se recomienda implementar Azure Stack Hub en la zona no segura.
 
-![Ejemplo de red perimetral de Azure Stack Hub](./media/azure-stack-firewall/perimeter-network-scenario.png)
+![Ejemplo de red perimetral de Azure Stack Hub](./media/azure-stack-firewall/perimeter-network-scenario.svg)
 
 ## <a name="learn-more"></a>Más información
 Más información sobre los [puertos y protocolos que utilizan los puntos de conexión de Azure Stack Hub](azure-stack-integrate-endpoints.md).

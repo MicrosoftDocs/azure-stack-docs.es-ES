@@ -8,10 +8,10 @@ ms.author: sethm
 ms.reviewer: fiseraci
 ms.lastreviewed: 03/18/2020
 ms.openlocfilehash: dda2620e88ac6fcd8b4ce8ed9167d83f39af4737
-ms.sourcegitcommit: 17be49181c8ec55e01d7a55c441afe169627d268
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/21/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80069414"
 ---
 # <a name="azure-stack-hub-security-updates"></a>Actualizaciones de seguridad de Azure Stack Hub

@@ -8,10 +8,10 @@ ms.author: justinha
 ms.reviewer: shisab
 ms.lastreviewed: 10/08/2019
 ms.openlocfilehash: 3464738aef30a44b6c50c05b06116641235ab96e
-ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79512276"
 ---
 # <a name="configure-automatic-azure-stack-hub-diagnostic-log-collection"></a>Configuración de la recopilación de registros de diagnóstico automática de Azure Stack Hub

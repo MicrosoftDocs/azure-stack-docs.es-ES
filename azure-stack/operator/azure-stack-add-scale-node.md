@@ -8,10 +8,10 @@ ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 09/17/2019
 ms.openlocfilehash: 8aa33cda9a657d3e0bcec9525f86bd792c855e65
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77688770"
 ---
 # <a name="add-additional-scale-unit-nodes-in-azure-stack-hub"></a>Incorporación de nodos de la unidad de escalado adicionales en Azure Stack Hub

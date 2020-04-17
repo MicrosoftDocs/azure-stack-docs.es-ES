@@ -8,10 +8,10 @@ ms.date: 11/14/2019
 ms.reviewer: waltero
 ms.lastreviewed: 11/14/2019
 ms.openlocfilehash: 0d9e1512cab3ad33bba5cfa2d4f57128edf51cf2
-ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79512599"
 ---
 # <a name="troubleshoot-kubernetes-deployment-to-azure-stack-hub"></a>Solución de problemas de implementación de Kubernetes en Azure Stack Hub

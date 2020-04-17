@@ -8,10 +8,10 @@ ms.author: inhenkel
 ms.lastreviewed: 09/10/2019
 ms.reviewer: ppacent
 ms.openlocfilehash: 70079b0959f0e5dc5072ef83c68c8887cd006089
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79295410"
 ---
 # <a name="manage-updates-in-azure-stack-hub"></a>Administración de actualizaciones en Azure Stack Hub

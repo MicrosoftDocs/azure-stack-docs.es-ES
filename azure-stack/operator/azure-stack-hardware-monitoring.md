@@ -8,10 +8,10 @@ ms.author: sethm
 ms.reviewer: thoroet
 ms.lastreviewed: 11/21/2019
 ms.openlocfilehash: dc7be7e80f6277c6788c9b572ad2d74031d811f1
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77699735"
 ---
 # <a name="monitor-azure-stack-hub-hardware-components"></a>Supervisión de componentes de hardware de Azure Stack Hub

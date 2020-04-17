@@ -8,10 +8,10 @@ ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
 ms.openlocfilehash: 04d7935ca88c578c2019703855e79278211127d1
-ms.sourcegitcommit: b824c7b9af9ba415ca4fe8d15673b521362f0abb
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80479315"
 ---
 # <a name="access-the-kubernetes-dashboard-in-azure-stack-hub"></a>Acceso al panel de Kubernetes en Azure Stack Hub 

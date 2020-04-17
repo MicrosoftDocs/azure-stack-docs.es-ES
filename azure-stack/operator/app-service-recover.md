@@ -8,10 +8,10 @@ ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/21/2019
 ms.openlocfilehash: e04fa2f3e9d03f1982ef67d4d19549b7b73a1f1a
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77701690"
 ---
 # <a name="app-service-recovery-on-azure-stack-hub"></a>Recuperación de App Service en Azure Stack Hub

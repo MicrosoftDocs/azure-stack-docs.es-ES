@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 12/09/2019
 ms.reviewer: jfggdl
 ms.lastreviewed: 12/09/2019
-ms.openlocfilehash: 7eb9dce19bb25367181b17d3f13ada5ed12eff5d
-ms.sourcegitcommit: dd53af1b0fc2390de162d41e3d59545d1baad1a7
+ms.openlocfilehash: 4cd946bf306761533f7c8d6dcba8af75a5001400
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80424623"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80806726"
 ---
 # <a name="how-to-do-capacity-planning-for-event-hubs-on-azure-stack-hub"></a>Planeación de la capacidad de Event Hubs en Azure Stack Hub
 
@@ -40,7 +40,7 @@ Todos los clústeres de Event Hubs usan un tipo de máquina virtual [D11_V2](../
 
 ## <a name="resource-provider-resource-consumption"></a>Consumo de recursos del proveedor de recursos  
 
-El consumo de recursos por parte del proveedor de recursos de Event Hubs es constante e independiente del número o de los tamaños de los clústeres que los usuarios crean. En la tabla siguiente se muestra el uso de núcleos por parte del proveedor de recursos de Event Hubs en Azure Stack Hub y el consumo aproximado de recursos por parte de otros recursos. El proveedor de recursos de Event Hubs usa un tipo de máquina virtual [D2_V2](/user/azure-stack-vm-sizes#dv2-series) para la implementación.
+El consumo de recursos por parte del proveedor de recursos de Event Hubs es constante e independiente del número o de los tamaños de los clústeres que los usuarios crean. En la tabla siguiente se muestra el uso de núcleos por parte del proveedor de recursos de Event Hubs en Azure Stack Hub y el consumo aproximado de recursos por parte de otros recursos. El proveedor de recursos de Event Hubs usa un tipo de máquina virtual [D2_V2](/azure-stack/user/azure-stack-vm-sizes#dv2-series) para la implementación.
 
 |                                  | Tipo de máquina virtual | Nodos de clúster | Núcleos | Almacenamiento de máquinas virtuales | Memoria | Cuentas de almacenamiento |
 |----------------------------------|---------|-------|-------|------------|--------|------------------|

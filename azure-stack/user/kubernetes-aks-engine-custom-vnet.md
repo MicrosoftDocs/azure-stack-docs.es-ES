@@ -8,10 +8,10 @@ ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 3/19/2020
 ms.openlocfilehash: aac2f9a0991bdae7f15d7fc54517a880ab384785
-ms.sourcegitcommit: 17be49181c8ec55e01d7a55c441afe169627d268
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/21/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80068941"
 ---
 # <a name="deploy-a-kubernetes-cluster-to-a-custom-virtual-network-on-azure-stack-hub"></a>Implementación de un clúster de Kubernetes en una red virtual personalizada en Azure Stack Hub 

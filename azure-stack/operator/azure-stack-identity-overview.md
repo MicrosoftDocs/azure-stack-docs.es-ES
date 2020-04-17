@@ -3,16 +3,16 @@ title: Introducción a los proveedores de identidades en Azure Stack Hub
 description: Conozca los proveedores de identidades que se pueden usar con Azure Stack Hub.
 author: IngridAtMicrosoft
 ms.topic: conceptual
-ms.date: 06/03/2019
+ms.date: 04/10/2020
 ms.author: inhenkel
 ms.reviewer: fiseraci
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 896dc2b2def823a91278fe77062b20146a3c6976
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: c9a01d4aaa437549177f6e32c10f4600287732a7
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77699701"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81244167"
 ---
 # <a name="overview-of-identity-providers-for-azure-stack-hub"></a>Introducción a los proveedores de identidades en Azure Stack Hub
 
@@ -32,7 +32,7 @@ Para más información sobre estas opciones, que dependen de su entorno de Azure
 
 En las secciones siguientes se tratan conceptos comunes sobre proveedores de identidades y su uso en Azure Stack Hub.
 
-![Terminología de proveedores de identidades](media/azure-stack-identity-overview/terminology.png)
+![Terminología de proveedores de identidades](media/azure-stack-identity-overview/terminology.svg)
 
 ### <a name="directory-tenants-and-organizations"></a>Organizaciones e inquilinos de directorios
 
@@ -130,7 +130,7 @@ Si configura Azure AD con servicios multiinquilino, algunas aplicaciones se pro
 
 ### <a name="authentication-by-apps-and-users"></a>Autenticación de usuarios y aplicaciones
 
-![Identidad entre capas de Azure Stack Hub](media/azure-stack-identity-overview/identity-layers.png)
+![Identidad entre capas de Azure Stack Hub](media/azure-stack-identity-overview/identity-layers.svg)
 
 En el caso de aplicaciones y usuarios, la arquitectura de Azure Stack Hub se define en cuatro capas. Las interacciones entre cada una de estas capas pueden usar diferentes tipos de autenticación.
 
@@ -141,7 +141,7 @@ En el caso de aplicaciones y usuarios, la arquitectura de Azure Stack Hub se def
 |Proveedores de recursos     |Las llamadas pasadas a los proveedores de recursos están protegidas con autenticación basada en certificados. <br>Azure Resource Manager y el proveedor de recursos permanecen en comunicación mediante una API. El proveedor de recursos utiliza ese certificado para validar cada llamada recibida que se recibe de Azure Resource Manager.|
 |Infraestructura y lógica de negocios     |Los proveedores de recursos se comunican con la lógica de negocios y la infraestructura mediante el modo de autenticación de su elección. Los proveedores de recursos predeterminados que se envían con Azure Stack Hub usan la autenticación de Windows para proteger esta comunicación.|
 
-![Información necesaria para la autenticación](media/azure-stack-identity-overview/authentication.png)
+![Información necesaria para la autenticación](media/azure-stack-identity-overview/authentication.svg)
 
 ### <a name="authenticate-to-azure-resource-manager"></a>Autenticarse en Azure Resource Manager
 
@@ -168,7 +168,7 @@ El token debe pasar entonces el encabezado de una solicitud a Azure Resource Man
 
 Una vez realizadas todas las validaciones, Azure Resource Manager usa las notificaciones *object id* (oid) y *groups* para crear una lista de los recursos a los que puede acceder la entidad de seguridad.
 
-![Diagrama del protocolo de intercambio de tokens](media/azure-stack-identity-overview/token-exchange.png)
+![Diagrama del protocolo de intercambio de tokens](media/azure-stack-identity-overview/token-exchange.svg)
 
 > [!NOTE]
 > Después de la implementación, no se necesita el permiso de administrador global de Azure Active Directory. Sin embargo, algunas operaciones pueden requerir las credenciales de administrador global (por ejemplo, un script del instalador del proveedor de recursos o una nueva característica que necesita la concesión de un permiso). Puede restablecer temporalmente los permisos de administrador global de la cuenta o usar una cuenta de administrador global independiente que sea propietaria de la *suscripción del proveedor predeterminada*.

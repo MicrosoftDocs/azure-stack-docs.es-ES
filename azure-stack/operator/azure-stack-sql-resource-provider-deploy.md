@@ -8,12 +8,12 @@ ms.date: 10/02/2019
 ms.lastreviewed: 03/18/2019
 ms.author: bryanla
 ms.reviewer: xiao
-ms.openlocfilehash: ff351dcef91491e6d52aa61ff25f282968c963fe
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.openlocfilehash: 086d8008e44e50268aec29ff4d2c28a8d65b88ab
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79295458"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80806869"
 ---
 # <a name="deploy-the-sql-server-resource-provider-on-azure-stack-hub"></a>Implementación del proveedor de recursos de SQL Server en Azure Stack Hub
 
@@ -118,7 +118,7 @@ Puede especificar los parámetros siguientes en la línea de comandos. Si no lo 
 | Nombre de parámetro | Descripción | Comentario o valor predeterminado |
 | --- | --- | --- |
 | **CloudAdminCredential** | Credencial del administrador de la nube necesaria para el acceso al punto de conexión con privilegios. | _Obligatorio_ |
-| **AzCredential** | Credenciales de la cuenta de administrador de servicios de Azure Stack Hub. Use las mismas credenciales que para la implementación de Azure Stack Hub. | _Obligatorio_ |
+| **AzCredential** | Credenciales de la cuenta de administrador de servicios de Azure Stack Hub. Use las mismas credenciales que para la implementación de Azure Stack Hub. Se producirá un error en el script si la cuenta que usa con AzCredential requiere autenticación multifactor (MFA).| _Obligatorio_ |
 | **VMLocalCredential** | Credenciales de la cuenta de administrador local de la VM del proveedor de recursos SQL. | _Obligatorio_ |
 | **PrivilegedEndpoint** | Dirección IP o nombre DNS del punto de conexión con privilegios. |  _Obligatorio_ |
 | **AzureEnvironment** | Entorno de Azure de la cuenta de administrador de servicios que se usó para la implementación de Azure Stack Hub. Requerido solo para implementaciones de Azure AD. Los nombres de entorno que se admiten son **AzureCloud**, **AzureUSGovernment** o, si usa una suscripción a Azure Active Directory de China, **AzureChinaCloud**. | AzureCloud |

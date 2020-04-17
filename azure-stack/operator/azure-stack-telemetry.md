@@ -9,10 +9,10 @@ ms.author: inhenkel
 ms.reviewer: comartin
 ms.lastreviewed: 10/15/2019
 ms.openlocfilehash: 6bc12104ef8ce325fe9b1773373ef235a33919e5
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77696964"
 ---
 # <a name="configure-azure-stack-hub-telemetry"></a>Configuración de la telemetría de Azure Stack Hub

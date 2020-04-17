@@ -9,10 +9,10 @@ ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 08/29/2019
 ms.openlocfilehash: 95719c6b0651932ab41cef5321db06b77eb4fc63
-ms.sourcegitcommit: 17be49181c8ec55e01d7a55c441afe169627d268
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/21/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80069449"
 ---
 # <a name="azure-stack-hub-marketplace-faq"></a>Preguntas frecuentes acerca de Marketplace de Azure Stack Hub

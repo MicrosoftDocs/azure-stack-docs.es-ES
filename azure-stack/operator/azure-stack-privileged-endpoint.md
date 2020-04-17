@@ -8,10 +8,10 @@ ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 1/8/2020
 ms.openlocfilehash: 335afce7423872156c84c655d9c94ed59a9592d2
-ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79512446"
 ---
 # <a name="use-the-privileged-endpoint-in-azure-stack-hub"></a>Uso del punto de conexión con privilegios en Azure Stack Hub

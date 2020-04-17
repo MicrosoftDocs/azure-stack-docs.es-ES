@@ -8,10 +8,10 @@ ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/13/2019
 ms.openlocfilehash: 845be919279107e88a922dfd180e3fc8794e1a89
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79293898"
 ---
 # <a name="get-authentication-information-for-azure-stack-hub"></a>Obtención de información de autenticación para Azure Stack Hub

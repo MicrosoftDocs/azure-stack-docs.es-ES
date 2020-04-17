@@ -3,16 +3,16 @@ title: Integración del DNS de Azure Stack Hub en el centro de datos
 description: Aprenda a integrar el DNS de Azure Stack Hub con el DNS del centro de datos.
 author: IngridAtMicrosoft
 ms.topic: article
-ms.date: 1/22/2020
+ms.date: 04/10/2020
 ms.author: inhenkel
 ms.reviewer: wfayed
 ms.lastreviewed: 08/21/2019
-ms.openlocfilehash: 91d65a59d8db50162f5cf6c99f8d3ab1b5aeba86
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: d16aea039103c69302c8f84aa7de078907f1efce
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77699667"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81244091"
 ---
 # <a name="azure-stack-hub-datacenter-dns-integration"></a>Integración del DNS de Azure Stack Hub en el centro de datos
 
@@ -72,13 +72,11 @@ Existen dos tipos de servidores DNS:
 
 Azure Stack Hub incluye servidores DNS autoritativos y recursivos. Los servidores recursivos se usan para resolver todos los nombres, salvo para la zona privada interna y la zona DNS pública externa para esa implementación de Azure Stack Hub.
 
-![Arquitectura de DNS de Azure Stack Hub](media/azure-stack-integrate-dns/Integrate-DNS-01.png)
+![Arquitectura de DNS de Azure Stack Hub](media/azure-stack-integrate-dns/Integrate-DNS-01.svg)
 
 ## <a name="resolving-external-dns-names-from-azure-stack-hub"></a>Resolución de nombres DNS externos desde Azure Stack Hub
 
 Para resolver nombres DNS de puntos de conexión fuera de Azure Stack Hub (por ejemplo: www\.bing.com), debe proporcionar servidores DNS que Azure Stack Hub pueda usar para reenviar las solicitudes DNS para las que Azure Stack Hub no es autoritativo. Para la implementación, se requieren los servidores DNS a los que Azure Stack Hub reenvía las solicitudes en la hoja de cálculo de implementación (en el campo Reenviador DNS). Proporcione al menos dos servidores en este campo por razones de tolerancia a errores. Sin estos valores, se produce un error de implementación de Azure Stack Hub. Puede editar los valores del reenviador DNS con el [cmdlet **Set-AzSDnsForwarder**](#editing-dns-forwarder-ips) después de la implementación. 
-
-
 
 ### <a name="configure-conditional-dns-forwarding"></a>Configure el reenvío condicional de DNS
 
@@ -93,14 +91,14 @@ Para este procedimiento, use un equipo de la red del centro de datos que pueda c
 
 1. Abra una sesión de Windows PowerShell con privilegios elevados (ejecútela como administrador) y conéctese a la dirección IP del punto de conexión con privilegios. Use las credenciales para la autenticación de CloudAdmin.
 
-   ```
+   ```PowerShell
    $cred=Get-Credential 
    Enter-PSSession -ComputerName <IP Address of ERCS> -ConfigurationName PrivilegedEndpoint -Credential $cred
    ```
 
 2. Después de conectarse al punto de conexión con privilegios, ejecute el siguiente comando de PowerShell. Sustituya los valores de ejemplo proporcionados por su nombre de dominio y direcciones IP de los servidores DNS que quiere usar.
 
-   ```
+   ```PowerShell
    Register-CustomDnsServer -CustomDomainName "contoso.com" -CustomDnsIPAddresses "192.168.1.1","192.168.1.2"
    ```
 

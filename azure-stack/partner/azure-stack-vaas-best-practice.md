@@ -9,10 +9,10 @@ ms.reviewer: johnhas
 ms.lastreviewed: 10/28/2019
 ROBOTS: NOINDEX
 ms.openlocfilehash: b3d911a07c7a234ce2284055ff67a7ca46f567a2
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79295314"
 ---
 # <a name="azure-stack-validation-best-practices"></a>Procedimientos recomendados para la validación de Azure Stack

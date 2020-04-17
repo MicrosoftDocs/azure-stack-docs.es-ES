@@ -8,10 +8,10 @@ ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 07/25/2019
 ms.openlocfilehash: a99519d12109716c296e58b4525748229513a747
-ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79511970"
 ---
 # <a name="best-practices-for-automatic-azure-stack-hub-log-collection"></a>Procedimientos recomendados para la recopilación automática de registros de Azure Stack Hub 

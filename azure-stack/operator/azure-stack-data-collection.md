@@ -8,10 +8,10 @@ ms.author: justinha
 ms.reviewer: chengwei
 ms.lastreviewed: 02/24/2020
 ms.openlocfilehash: fc7d819bce237b98c359bc7c4bc43bc478d84952
-ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79512582"
 ---
 # <a name="azure-stack-hub-log-and-customer-data-handling"></a>Control de datos de clientes y registro de Azure Stack Hub 

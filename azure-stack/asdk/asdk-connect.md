@@ -8,10 +8,10 @@ ms.author: justinha
 ms.reviewer: knithinc
 ms.lastreviewed: 10/25/2019
 ms.openlocfilehash: 1b562d2a72f3da4d4ac9ef7045f5cbd5408f4afa
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79295290"
 ---
 # <a name="connect-to-the-asdk"></a>Conectarse al ASDK

@@ -9,10 +9,10 @@ ms.author: bryanla
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2020
 ms.openlocfilehash: 134839230eef3bb76c8df82cb2bd79b5127dfed9
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77697270"
 ---
 # <a name="sql-resource-provider-maintenance-operations"></a>Operaciones de mantenimiento del proveedor de recursos de SQL

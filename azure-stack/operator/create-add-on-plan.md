@@ -9,10 +9,10 @@ ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 06/11/2019
 ms.openlocfilehash: 2fd22acfe6f47d3a12502d5528e1f3fd96294460
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77696488"
 ---
 # <a name="create-add-on-plans-in-azure-stack-hub"></a>Creación de planes complementarios en Azure Stack Hub
@@ -47,7 +47,7 @@ Los planes complementarios se [crean de la misma manera](azure-stack-create-plan
 
 6. Revise la lista de planes complementarios incluidos con la oferta para comprobar que el nuevo plan complementario aparezca en la lista.
 
-    ![[Revisión de la lista de planes complementarios en el portal de administración de Azure Stack](media/create-add-on-plan/add-on4.png "Create add-on plan")](media/create-add-on-plan/add-on4lg.png#lightbox)
+    ![[Revisión de la lista de planes complementarios en el portal de administración de Azure Stack]\(media/create-add-on-plan/add-on4.png "Create add-on plan")](media/create-add-on-plan/add-on4lg.png#lightbox)
 ::: moniker-end
 
 ::: moniker range="<=azs-1901"

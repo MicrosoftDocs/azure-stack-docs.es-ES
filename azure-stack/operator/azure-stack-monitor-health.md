@@ -7,10 +7,10 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.lastreviewed: 01/18/2019
 ms.openlocfilehash: f2b827510087a40ae011e506b5d1f467153e3fdb
-ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "78368097"
 ---
 # <a name="monitor-health-and-alerts-in-azure-stack-hub"></a>Supervisión de estado y alertas en Azure Stack Hub

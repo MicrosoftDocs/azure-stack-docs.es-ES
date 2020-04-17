@@ -9,10 +9,10 @@ ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 12/02/2019
 ms.openlocfilehash: ec161fd296785f42049b7b2917142f08b47ac910
-ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "78367853"
 ---
 # <a name="replace-a-physical-disk-in-azure-stack-hub"></a>Reemplazo de un disco físico en Azure Stack Hub

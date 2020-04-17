@@ -3,16 +3,16 @@ title: Integración de una solución de supervisión externa con Azure Stack Hub
 description: Aprenda a integrar Azure Stack Hub con una solución de supervisión externa en el centro de datos.
 author: IngridAtMicrosoft
 ms.topic: article
-ms.date: 06/05/2019
+ms.date: 04/10/2020
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 06/05/2019
-ms.openlocfilehash: 37cef4cbeb1aa471fcd4a1d63cf2933a113a1762
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 0bc19bf584f482d2ec67758368afa11c91ae456e
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77699531"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81243918"
 ---
 # <a name="integrate-external-monitoring-solution-with-azure-stack-hub"></a>Integración de una solución de supervisión externa con Azure Stack Hub
 
@@ -29,7 +29,7 @@ Cada solución de Azure Stack Hub se suministra con un host de ciclo de vida de 
 
 En el siguiente diagrama se muestra el flujo de tráfico entre un sistema integrado de Azure Stack Hub, el host de ciclo de vida de hardware, una solución de supervisión externa y un sistema externo de recopilación de datos y vales.
 
-![Diagrama que muestra el tráfico entre Azure Stack Hub y las soluciones de vales y de supervisión.](media/azure-stack-integrate-monitor/MonitoringIntegration.png)  
+![Diagrama que muestra el tráfico entre Azure Stack Hub y las soluciones de vales y de supervisión.](media/azure-stack-integrate-monitor/monitoringintegration.svg)  
 
 > [!NOTE]
 > No se permite la integración de supervisión externa directamente con servidores físicos y la bloquean activamente las listas de control de acceso (ACL). Se admite la integración de supervisión externa directamente con dispositivos de red físicos. Consulte con su proveedor de OEM cómo habilitar esta característica.
@@ -57,7 +57,7 @@ Para obtener una solución de vales, puede integrar Operations Manager con Syste
 
 En el diagrama siguiente se muestra la integración de Azure Stack Hub con una implementación de System Center existente. Puede automatizar Service Manager aún más con System Center Orchestrator o Service Management Automation (SMA) para ejecutar las operaciones en Azure Stack Hub.
 
-![Diagrama que muestra la integración con OM, Service Manager y SMA.](media/azure-stack-integrate-monitor/SystemCenterIntegration.png)
+![Diagrama que muestra la integración con OM, Service Manager y SMA.](media/azure-stack-integrate-monitor/systemcenterintegration.svg)
 
 ## <a name="integrate-with-nagios"></a>Integración con Nagios
 

@@ -10,10 +10,10 @@ ms.reviewer: johnhas
 ms.lastreviewed: 10/28/2019
 ROBOTS: NOINDEX
 ms.openlocfilehash: 64ecf37e0fff2e9380a2c13b6fe65a41ec84de08
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77704716"
 ---
 # <a name="create-an-oem-package"></a>Creación de un paquete de OEM

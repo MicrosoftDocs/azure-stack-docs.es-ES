@@ -8,10 +8,10 @@ ms.author: justinha
 ms.reviewer: shisab
 ms.lastreviewed: 02/12/2020
 ms.openlocfilehash: 0c6bfe4dba2b3795e1069419d90624c8e3b55cda
-ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79520546"
 ---
 # <a name="send-azure-stack-hub-diagnostic-logs-proactively"></a>Envío proactivo de registros de diagnóstico de Azure Stack Hub

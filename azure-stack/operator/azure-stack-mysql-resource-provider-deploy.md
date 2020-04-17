@@ -8,10 +8,10 @@ ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 03/18/2019
 ms.openlocfilehash: 976d602cea47131bef68b38add07e0bcaeeb9617
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79295302"
 ---
 # <a name="deploy-the-mysql-resource-provider-on-azure-stack-hub"></a>Implementación del proveedor de recursos MySQL en Azure Stack Hub

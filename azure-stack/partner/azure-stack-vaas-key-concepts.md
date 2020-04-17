@@ -10,10 +10,10 @@ ms.reviewer: johnhas
 ms.lastreviewed: 10/28/2019
 ROBOTS: NOINDEX
 ms.openlocfilehash: 5199a9f3b8dcf9a3ac43d9563688cba8da949ce3
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79295164"
 ---
 # <a name="validation-as-a-service-key-concepts"></a>Conceptos clave de la validación como servicio

@@ -11,10 +11,10 @@ ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 05/07/2019
 ms.openlocfilehash: 294fec646462d154c8d8f2e1d22c31d2d88220d4
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77696386"
 ---
 # <a name="report-azure-stack-hub-usage-data-to-azure"></a>Notificar los datos de uso de Azure Stack Hub a Azure

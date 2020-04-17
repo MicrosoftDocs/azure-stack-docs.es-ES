@@ -8,10 +8,10 @@ ms.author: justinha
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/26/2019
 ms.openlocfilehash: 9303a9d60fad754a5ba644d4b6e1c5cd3d331497
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77697423"
 ---
 # <a name="sql-resource-provider-11470-release-notes"></a>Notas de la versión del proveedor de recursos de SQL 1.1.47.0

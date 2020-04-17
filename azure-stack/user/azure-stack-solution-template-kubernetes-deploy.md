@@ -8,10 +8,10 @@ ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
 ms.openlocfilehash: 5fa9c506b2e030adbf521191a623579f56f1ae0f
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79295200"
 ---
 # <a name="deploy-kubernetes-to-use-containers-with-azure-stack-hub"></a>Implementación de Kubernetes para usar contenedores con Azure Stack Hub

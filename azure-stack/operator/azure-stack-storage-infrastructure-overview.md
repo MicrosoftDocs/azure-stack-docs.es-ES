@@ -9,10 +9,10 @@ ms.author: inhenkel
 ms.lastreviewed: 03/11/2019
 ms.reviewer: jiaha
 ms.openlocfilehash: 4ac1d0de3775c22c0c982d79713847e7cd171f41
-ms.sourcegitcommit: 961e3b1fae32d7f9567359fa3f7cb13cdc37e28e
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80152276"
 ---
 # <a name="manage-storage-infrastructure-for-azure-stack-hub"></a>Administración de la infraestructura de almacenamiento para Azure Stack Hub

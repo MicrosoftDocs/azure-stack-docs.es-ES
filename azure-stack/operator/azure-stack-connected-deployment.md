@@ -8,10 +8,10 @@ ms.author: inhenkel
 ms.reviewer: wfayed
 ms.lastreviewed: 11/05/2019
 ms.openlocfilehash: b8f8dfe95e50b81c7032e2e2348c2d4e6a6d888d
-ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "78364775"
 ---
 # <a name="azure-connected-deployment-planning-decisions-for-azure-stack-hub-integrated-systems"></a>Decisiones sobre planeamiento de una implementación conectada a Azure de sistemas integrados de Azure Stack Hub

@@ -8,10 +8,10 @@ ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 09/30/2019
 ms.openlocfilehash: d70c44b35612ffb7642a0ee79b5820dba7b66532
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77701894"
 ---
 # <a name="deploy-with-visual-studio-code-to-azure-stack-hub"></a>Implementación con Visual Studio Code en Azure Stack Hub

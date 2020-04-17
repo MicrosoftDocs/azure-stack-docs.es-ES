@@ -11,10 +11,10 @@ ms.author: inhenkel
 ms.reviewer: jerskine
 ms.lastreviewed: 06/10/2019
 ms.openlocfilehash: 6c4ed64f3d7327004d3f508c54f98913c97af5fa
-ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "78366662"
 ---
 # <a name="validate-ad-fs-integration-for-azure-stack-hub"></a>Validación de la integración de AD FS para Azure Stack Hub

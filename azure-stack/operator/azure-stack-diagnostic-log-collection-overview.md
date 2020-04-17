@@ -8,10 +8,10 @@ ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 11/07/2019
 ms.openlocfilehash: 792c639a5233a7d30dc86488059045a9516dfaa2
-ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79512565"
 ---
 # <a name="overview-of-azure-stack-hub-diagnostic-log-collection"></a>Introducción a la recopilación de registros de diagnóstico de Azure Stack Hub 

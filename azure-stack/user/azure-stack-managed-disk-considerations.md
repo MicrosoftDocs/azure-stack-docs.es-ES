@@ -8,10 +8,10 @@ ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 03/23/2019
 ms.openlocfilehash: 1abee3556ac45791831c6dcb9fc8dce05477e51e
-ms.sourcegitcommit: b824c7b9af9ba415ca4fe8d15673b521362f0abb
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80479306"
 ---
 # <a name="azure-stack-hub-managed-disks-differences-and-considerations"></a>Discos administrados de Azure Stack Hub: Diferencias y consideraciones

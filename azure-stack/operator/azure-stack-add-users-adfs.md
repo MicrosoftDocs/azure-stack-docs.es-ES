@@ -8,10 +8,10 @@ ms.author: inhenkel
 ms.reviewer: unknown
 ms.lastreviewed: 06/03/2019
 ms.openlocfilehash: 79380d40282757e704f9dc0ef3bdaf977253ba14
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77703356"
 ---
 # <a name="add-a-new-azure-stack-hub-user-account-in-active-directory-federation-services-ad-fs"></a>Adición de una nueva cuenta de usuario de Azure Stack Hub en los Servicios de federación de Active Directory (AD FS)

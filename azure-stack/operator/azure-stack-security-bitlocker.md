@@ -9,10 +9,10 @@ ms.author: inhenkel
 ms.reviewer: fiseraci
 ms.lastreviewed: 03/11/2019
 ms.openlocfilehash: 19680b9e8317e419c0b696d79213f29bcbee2263
-ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "78367613"
 ---
 # <a name="data-at-rest-encryption-in-azure-stack-hub"></a>Cifrado de datos en reposo en Azure Stack Hub

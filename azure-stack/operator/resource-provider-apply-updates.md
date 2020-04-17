@@ -9,10 +9,10 @@ ms.date: 11/18/2019
 ms.reviewer: jfggdl
 ms.lastreviewed: 11/18/2019
 ms.openlocfilehash: 13ea59064ff653ff24fac97a867725c5d9f036d0
-ms.sourcegitcommit: dd53af1b0fc2390de162d41e3d59545d1baad1a7
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80424773"
 ---
 # <a name="how-to-update-an-azure-stack-hub-resource-provider"></a>Actualización de un proveedor de recursos de Azure Stack Hub

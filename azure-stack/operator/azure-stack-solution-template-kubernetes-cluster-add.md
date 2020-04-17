@@ -9,10 +9,10 @@ ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 03/24/2020v
 ms.openlocfilehash: bd8867b4bd7fae79f82752a0f4cdbd1457efc0ef
-ms.sourcegitcommit: fec2b21e80c8049a823baeaf2b642802ccdcfb67
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80229529"
 ---
 # <a name="add-kubernetes-to-azure-stack-hub-marketplace"></a>Incorporación de Kubernetes a Marketplace de Azure Stack Hub

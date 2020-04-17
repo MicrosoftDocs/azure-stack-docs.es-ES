@@ -8,10 +8,10 @@ ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 11/06/2019
 ms.openlocfilehash: f3b564bc667376361e1bfc57df0ec50e32522401
-ms.sourcegitcommit: 4e1c948ae4a498bd730543b0704bbc2b0d88e1ec
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/26/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77636325"
 ---
 # <a name="how-to-deploy-f5-across-two-azure-stack-hub-instances"></a>Implementación de F5 en dos instancias de Azure Stack Hub

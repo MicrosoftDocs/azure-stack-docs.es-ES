@@ -8,10 +8,10 @@ ms.author: justinha
 ms.reviewer: adshar
 ms.lastreviewed: 01/10/2020
 ms.openlocfilehash: 9b082876dca1e39f99ac0b98a7e438aa1231b3c2
-ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79512548"
 ---
 # <a name="validate-azure-stack-hub-system-state"></a>Validación del estado del sistema con Azure Stack Hub

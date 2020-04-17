@@ -8,10 +8,10 @@ ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 3/19/2020
 ms.openlocfilehash: 96a4fb569660c14cc864518406effa8a733d5111
-ms.sourcegitcommit: 17be49181c8ec55e01d7a55c441afe169627d268
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/21/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80108423"
 ---
 # <a name="what-is-azure-stack-hub"></a>¿Qué es Azure Stack Hub?

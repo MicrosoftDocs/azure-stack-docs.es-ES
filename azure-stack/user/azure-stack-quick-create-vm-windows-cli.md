@@ -7,10 +7,10 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.lastreviewed: 01/14/2020
 ms.openlocfilehash: 0d8e3ec61eb5acfbe98efcae1ec0318cb15f661f
-ms.sourcegitcommit: 390eac7abc94cea1405178e8d6a9358f6488f5d9
+ms.sourcegitcommit: 4138a2a15f78e7db38b3a29acc963a71937146fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 04/15/2020
 ms.locfileid: "78231662"
 ---
 # <a name="quickstart-create-a-windows-server-virtual-machine-using-azure-cli-in-azure-stack-hub"></a>Inicio rápido: Creación de una máquina virtual Windows Server con la CLI de Azure en Azure Stack Hub

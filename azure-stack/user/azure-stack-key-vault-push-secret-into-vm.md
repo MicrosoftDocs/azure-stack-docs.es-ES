@@ -7,10 +7,10 @@ ms.date: 01/24/2020
 ms.author: sethm
 ms.lastreviewed: 12/27/2019
 ms.openlocfilehash: f808d3dca853ef114d215be08f3e6ae3f6737fb5
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77702795"
 ---
 # <a name="deploy-a-vm-with-a-securely-stored-certificate-on-azure-stack-hub"></a>Implementación de una máquina virtual con un certificado almacenado de forma segura en Azure Stack Hub

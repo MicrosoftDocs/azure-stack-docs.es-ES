@@ -1,5 +1,5 @@
 ---
-title: Introducción a Event Hubs en Azure Stack Hub
+title: Introducción a Event Hubs en Azure Stack Hub
 description: Obtenga más información sobre el proveedor de recursos de Event Hubs en Azure Stack Hub.
 author: BryanLa
 ms.author: bryanla
@@ -9,10 +9,10 @@ ms.date: 12/09/2019
 ms.reviewer: jfggdl
 ms.lastreviewed: 12/09/2019
 ms.openlocfilehash: 4a7e7987a5b5b7bb60e6acc882c07b80519bc052
-ms.sourcegitcommit: dd53af1b0fc2390de162d41e3d59545d1baad1a7
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80424593"
 ---
 # <a name="event-hubs-on-azure-stack-hub-overview"></a>Introducción a Event Hubs en Azure Stack Hub

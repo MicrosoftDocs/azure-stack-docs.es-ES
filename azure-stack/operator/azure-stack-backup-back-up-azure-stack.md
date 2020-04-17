@@ -8,10 +8,10 @@ ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 09/05/2019
 ms.openlocfilehash: 10a7c60a18faa5528fb9c1917c62994b43bee51a
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77701044"
 ---
 # <a name="back-up-azure-stack-hub"></a>Copia de seguridad de Azure Stack Hub

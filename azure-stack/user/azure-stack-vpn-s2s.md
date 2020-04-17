@@ -7,10 +7,10 @@ ms.date: 01/07/2020
 ms.author: sethm
 ms.lastreviewed: 05/07/2019
 ms.openlocfilehash: 36a4ea0532eda0593de2beb9191d6e0911e58276
-ms.sourcegitcommit: da91962d8133b985169b236fb4c84f4ef564efc8
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80367805"
 ---
 # <a name="configure-ipsecike-policy-for-site-to-site-vpn-connections"></a>Configuración de la directiva IPsec/IKE para conexiones VPN de sitio a sitio

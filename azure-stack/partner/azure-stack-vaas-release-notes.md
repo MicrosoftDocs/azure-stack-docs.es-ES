@@ -10,10 +10,10 @@ ms.reviewer: johnhas
 ms.lastreviewed: 10/28/2019
 ROBOTS: NOINDEX
 ms.openlocfilehash: b842ea5de68cf64d498ec37ed86bb6e15b851395
-ms.sourcegitcommit: b4ebf81850d5ae487efe159b7d2225b4c2f73993
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/11/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79097757"
 ---
 # <a name="release-notes-for-validation-as-a-service"></a>Notas de la versión para la validación como servicio

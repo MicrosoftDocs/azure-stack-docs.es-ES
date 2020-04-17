@@ -8,10 +8,10 @@ ms.author: justinha
 ms.reviewer: shisab
 ms.lastreviewed: 03/05/2020
 ms.openlocfilehash: ca6240cb4f1e54c5e5fbfda79c46697909612063
-ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79520564"
 ---
 # <a name="send-azure-stack-hub-diagnostic-logs-to-azure-using-the-privileged-endpoint-pep"></a>Envío de los registros de diagnóstico de Azure Stack Hub a Azure mediante el punto de conexión con privilegios (PEP)
@@ -102,4 +102,4 @@ if ($session) {
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Uso del punto de conexión con privilegios (PEP) para enviar los registros de diagnóstico de Azure Stack Hub](azure-stack-get-azurestacklog.md)
+[Uso del punto de conexión con privilegios para enviar los registros de diagnóstico de Azure Stack Hub](azure-stack-get-azurestacklog.md)

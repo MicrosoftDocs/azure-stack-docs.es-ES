@@ -8,10 +8,10 @@ ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 3/12/2020
 ms.openlocfilehash: 700589e985aa651a1a7ae4a5ffbc020b8e6a2d3f
-ms.sourcegitcommit: 4301e8dee16b4db32b392f5979dfec01ab6566c9
+ms.sourcegitcommit: 4138a2a15f78e7db38b3a29acc963a71937146fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/15/2020
 ms.locfileid: "79313024"
 ---
 # <a name="deploy-a-python-web-app-to-a-vm-in-azure-stack-hub"></a>Implementación de una aplicación web de Python en una máquina virtual en Azure Stack Hub

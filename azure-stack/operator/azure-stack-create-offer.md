@@ -8,10 +8,10 @@ ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 06/11/2019
 ms.openlocfilehash: fe2cb87c666e8c3447eca46bdcb49c71514bccdc
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77704495"
 ---
 # <a name="create-an-offer-in-azure-stack-hub"></a>Creación de una oferta en Azure Stack Hub

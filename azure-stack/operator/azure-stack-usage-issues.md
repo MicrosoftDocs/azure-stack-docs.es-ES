@@ -8,10 +8,10 @@ ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 06/27/2019
 ms.openlocfilehash: 4a847578e73c5c9b518669a46340590242513686
-ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79512356"
 ---
 # <a name="usage-connectivity-errors"></a>Errores de conectividad de uso

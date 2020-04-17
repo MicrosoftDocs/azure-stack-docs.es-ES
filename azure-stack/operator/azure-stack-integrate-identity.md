@@ -3,16 +3,16 @@ title: Integración de la identidad de AD FS con Azure Stack Hub en el centro d
 description: Aprenda a integrar el proveedor de identidades de AD FS de Azure Stack Hub con AD FS del centro de datos.
 author: IngridAtMicrosoft
 ms.topic: article
-ms.date: 05/10/2019
+ms.date: 04/10/2020
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 05/10/2019
-ms.openlocfilehash: 999c1b2983342189ca86805a4139e3c7f77b5ceb
-ms.sourcegitcommit: da91962d8133b985169b236fb4c84f4ef564efc8
+ms.openlocfilehash: 31ef13db3d0a195d0d9505dec2fabf4124448a0f
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80367812"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81243819"
 ---
 # <a name="integrate-ad-fs-identity-with-your-azure-stack-hub-datacenter"></a>Integración de la identidad de AD FS con Azure Stack Hub en el centro de datos
 
@@ -27,7 +27,7 @@ La implementación con AD FS que las identidades de un bosque de Active Directo
 
 La autenticación es parte de la identidad. Para administrar el control de acceso basado en rol (RBAC) de Azure Stack Hub, se debe configurar el componente Graph. Cuando se delega el acceso a un recurso, el componente de Graph busca la cuenta de usuario en el bosque de Active Directory existente mediante el protocolo LDAP.
 
-![Arquitectura de AD FS de Azure Stack Hub](media/azure-stack-integrate-identity/Azure-Stack-ADFS-architecture.png)
+![Arquitectura de AD FS de Azure Stack Hub](media/azure-stack-integrate-identity/azure-stack-adfs-architecture.svg)
 
 La instancia existente de AD FS es el servicio de token de seguridad (STS) de la cuenta que envía notificaciones a AD FS de Azure Stack Hub (el STS del recurso). En Azure Stack Hub, la automatización crea la relación de confianza del proveedor de notificaciones con el punto de conexión de metadatos de la instancia de AD FS existente.
 
@@ -162,7 +162,6 @@ A partir de la versión 1807, utilice este método si se cumple alguna de las co
 - No hay conectividad de red al servidor de AD FS existente desde la instancia de AD FS de Azure Stack Hub.
 
 Se requiere la siguiente información como entrada para los parámetros de automatización:
-
 
 |Parámetro|Descripción|Ejemplo|
 |---------|---------|---------|

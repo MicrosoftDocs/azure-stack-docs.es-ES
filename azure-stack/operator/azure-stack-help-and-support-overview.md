@@ -8,10 +8,10 @@ ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 07/24/2019
 ms.openlocfilehash: 9423411f92845e149a2cb3427597ab2aa541b5da
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77699769"
 ---
 # <a name="microsoft-azure-stack-hub-help-and-support"></a>Ayuda y soporte técnico para Microsoft Azure Stack Hub

@@ -8,10 +8,10 @@ ms.author: justinha
 ms.reviewer: efemmano
 ms.lastreviewed: 06/07/2019
 ms.openlocfilehash: 358837da19ad34f82f81a94da0c89b165574ea49
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: 4138a2a15f78e7db38b3a29acc963a71937146fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/15/2020
 ms.locfileid: "77699259"
 ---
 # <a name="use-the-administrator-portal-in-azure-stack-hub"></a>Uso del portal de administración de Azure Stack Hub

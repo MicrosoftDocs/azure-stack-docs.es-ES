@@ -8,10 +8,10 @@ ms.author: inhenkel
 ms.reviewer: asganesh
 ms.lastreviewed: 11/07/2019
 ms.openlocfilehash: d55176266fc169b344e7bb43389a46657174b88e
-ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "78368862"
 ---
 # <a name="azure-stack-hub-datacenter-integration-walkthrough"></a>Tutorial acerca de la integración de Azure Stack Hub en el centro de datos

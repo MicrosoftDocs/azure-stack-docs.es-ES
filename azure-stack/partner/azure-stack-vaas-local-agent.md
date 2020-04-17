@@ -10,10 +10,10 @@ ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
 ms.openlocfilehash: a6358b7b9baff76726b2bd1282f525184a071c05
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.sourcegitcommit: 4138a2a15f78e7db38b3a29acc963a71937146fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/15/2020
 ms.locfileid: "79295620"
 ---
 # <a name="deploy-the-local-agent"></a>Implementación del agente local

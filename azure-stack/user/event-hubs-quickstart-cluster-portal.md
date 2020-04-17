@@ -9,10 +9,10 @@ ms.date: 01/22/2020
 ms.reviewer: bryanla
 ms.lastreviewed: 01/22/2020
 ms.openlocfilehash: 6af9ef6f562c9b31d7310b7f35d7b6b0533472ea
-ms.sourcegitcommit: b824c7b9af9ba415ca4fe8d15673b521362f0abb
+ms.sourcegitcommit: 4138a2a15f78e7db38b3a29acc963a71937146fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/15/2020
 ms.locfileid: "80479245"
 ---
 # <a name="quickstart-create-an-event-hubs-cluster-using-the-azure-stack-hub-portal"></a>Inicio rápido: Creación de un clúster de Event Hubs mediante el portal de Azure Stack Hub

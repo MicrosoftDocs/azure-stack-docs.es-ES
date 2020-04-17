@@ -5,12 +5,12 @@ author: khdownie
 ms.author: v-kedow
 ms.topic: article
 ms.date: 03/06/2020
-ms.openlocfilehash: 42fb0703ed1e4947a1f35cc14a8708c8372f220e
-ms.sourcegitcommit: 900332596d0bb473d82b1d1a28c3fe3aa6522add
+ms.openlocfilehash: ee51dc973c26335cfb6c75de991508a6063e0993
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79095212"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80806667"
 ---
 # <a name="choosing-drives-for-azure-stack-hci"></a>Selección de unidades para Azure Stack HCl
 
@@ -46,7 +46,7 @@ Actualmente existen tres formas de hacerlo:
 
 2. **NVMe + SSD.** El uso combinado de NVMe y SSD permite que NVMe almacene automáticamente en caché las escrituras en las unidades SSD. De esta manera, las escrituras se fusionan en la caché y se anula su almacenamiento provisional solo cuando es necesario, para reducir el desgaste en las SSD. Este procedimiento proporciona características de escritura de tipo NVMe, mientras que las lecturas se atienden directamente desde las SSD también rápidas.
 
-3. **Todo SSD.** Como con todo NVMe, no hay ninguna caché si todas las unidades tienen el mismo modelo. Si combina modelos de mayor y menor resistencia, puede configurar el primero para almacenar en caché las escrituras del segundo ([requiere instalación](/windows-server/storage/storage-spaces/understand-the-cache.md#manual-configuration)).
+3. **Todo SSD.** Como con todo NVMe, no hay ninguna caché si todas las unidades tienen el mismo modelo. Si combina modelos de mayor y menor resistencia, puede configurar el primero para almacenar en caché las escrituras del segundo ([requiere instalación](/windows-server/storage/storage-spaces/understand-the-cache#manual-configuration)).
 
    >[!NOTE]
    > Una ventaja de usar todo NVMe o todo SSD sin caché es que se obtiene la capacidad de almacenamiento utilizable de todas las unidades. No hay ninguna capacidad "dedicada" al almacenamiento en caché, lo que puede resultar atractivo a menor escala.

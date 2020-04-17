@@ -8,10 +8,10 @@ ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 03/23/2020
 ms.openlocfilehash: cce150e9e7698ea98035dc4f9104595100686cb7
-ms.sourcegitcommit: 961e3b1fae32d7f9567359fa3f7cb13cdc37e28e
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80152197"
 ---
 # <a name="vm-sizes-supported-in-azure-stack-hub"></a>Tamaños de máquina virtual admitidos en Azure Stack Hub

@@ -7,12 +7,12 @@ ms.date: 2/3/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 10/09/2019
-ms.openlocfilehash: 611fec639fbcec478b79d44975b24f2d806df5bc
-ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
+ms.openlocfilehash: f93ce26acd7474def8495e6e0df28bd3b8669848
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78364809"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80614425"
 ---
 # <a name="azure-stack-hub-vm-features"></a>Características de las máquinas virtuales de Azure Stack Hub
 
@@ -108,6 +108,17 @@ Los productos de Windows deben utilizarse de acuerdo con los derechos de uso del
 - Las máquinas virtuales que ejecutan Windows Server 2012 o versiones anteriores no se activan automáticamente y este proceso debe realizarse mediante la [activación de MAK](https://technet.microsoft.com/library/ff793438.aspx). Para usar la activación de MAK, debe proporcionar su propia clave de producto.
 
 Microsoft Azure utiliza la activación de KMS para activar las VM de Windows. Si mueve una máquina virtual de Azure Stack Hub a Azure y encuentra problemas de activación, consulte [Solución de problemas de activación de máquinas virtuales Windows de Azure](https://docs.microsoft.com/azure/virtual-machines/windows/troubleshoot-activation-problems). Puede encontrar información adicional en la entrada del blog del equipo de soporte técnico de Azure [Troubleshooting Windows activation failures on Azure VMs](https://blogs.msdn.microsoft.com/mast/2017/06/14/troubleshooting-windows-activation-failures-on-azure-vms/) (Solucionar problemas de errores de activación de Windows en máquinas virtuales de Azure).
+
+## <a name="high-availability"></a>Alta disponibilidad
+
+Es posible que la máquina virtual esté sujeta a un reinicio debido a un mantenimiento planeado según lo programado por el operador de Azure Stack Hub. Para conseguir alta disponibilidad en un sistema de producción con varias máquinas virtuales en Azure, las máquinas virtuales se colocan en un [conjunto de disponibilidad](https://docs.microsoft.com/azure/virtual-machines/windows/manage-availability#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy) que las distribuye entre varios dominios de error y dominios de actualización. En la escala más pequeña de Azure Stack Hub, un dominio de error en un conjunto de disponibilidad se define como un único nodo en la unidad de escalado.  
+
+Aunque la infraestructura de Azure Stack Hub ya es resistente a errores, la tecnología subyacente (los clústeres de conmutación por error) puede experimentar un cierto tiempo de inactividad de las máquinas virtuales ubicadas en un servidor físico en caso de error de hardware. Azure Stack Hub admite un conjunto de disponibilidad con un máximo de tres dominios de error para ser coherente con Azure.
+
+|                   |             |
+|-------------------|-------------|
+| **Dominios de error** | Las máquinas virtuales colocadas en conjuntos de disponibilidad se aislarán físicamente entre sí al distribuirlas de la manera más uniforme que sea posible en varios dominios de error (nodos de Azure Stack Hub). Si se produce un error de hardware, las máquinas virtuales del dominio de error se reiniciarán en otros dominios de error. Se mantendrán en dominios de error independientes de las otras máquinas virtuales, pero en el mismo conjunto de disponibilidad, si es posible. Cuando el hardware vuelva a estar en línea, las máquinas virtuales se volverán a equilibrar para mantener la alta disponibilidad. |
+| **Dominios de actualización**| Los dominios de actualización son otra manera que tiene Azure de proporcionar alta disponibilidad en los conjuntos de disponibilidad. Un dominio de actualización es un grupo lógico de hardware adyacente que puede someterse a mantenimiento al mismo tiempo. Las máquinas virtuales que se encuentran en el mismo dominio de actualización se reiniciarán en conjunto durante el mantenimiento planeado. Cuando los inquilinos crean máquinas virtuales dentro de un conjunto de disponibilidad, la plataforma de Azure las distribuye de manera automática entre estos dominios de actualización. <br>En Azure Stack Hub, las máquinas virtuales se migran en vivo entre los otros hosts en línea del clúster antes de que se actualice su host subyacente. Como no hay tiempo de inactividad para el inquilino durante una actualización del host, la característica de actualización de dominio de Azure Stack Hub solo existe por motivos de compatibilidad de la plantilla con Azure. Las máquinas virtuales de un conjunto de disponibilidad muestran 0 como número de dominio de actualización en el portal. |
 
 ## <a name="next-steps"></a>Pasos siguientes
 

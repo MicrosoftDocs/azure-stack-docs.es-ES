@@ -8,10 +8,10 @@ ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 11/06/2019
 ms.openlocfilehash: 28775cb3c279e2976a32a63fc21a8797bba6eb38
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77705090"
 ---
 # <a name="deploy-foundational-patterns-overview"></a>Introducción a la implementación de patrones fundamentales

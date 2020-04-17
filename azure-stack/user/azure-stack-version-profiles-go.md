@@ -8,10 +8,10 @@ ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/26/2019
 ms.openlocfilehash: d008a30991e41be6abc3f21f888acfbc8d46d69e
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77705243"
 ---
 # <a name="use-api-version-profiles-with-go-in-azure-stack-hub"></a>Uso de los perfiles de la versión de la API con GO en Azure Stack Hub

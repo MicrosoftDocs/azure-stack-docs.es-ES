@@ -8,10 +8,10 @@ ms.author: justinha
 ms.reviewer: unknown
 ms.lastreviewed: 11/08/2019
 ms.openlocfilehash: afa7f02f451192640172665e18213d125e24b574
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: 4138a2a15f78e7db38b3a29acc963a71937146fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/15/2020
 ms.locfileid: "77698460"
 ---
 # <a name="azure-stack-hub-overview"></a>Introducción a Azure Stack Hub

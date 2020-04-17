@@ -8,10 +8,10 @@ ms.author: inhenkel
 ms.lastreviewed: 09/10/2019
 ms.reviewer: ppace
 ms.openlocfilehash: 461bad387dd5616eba227df4bd9b6e8beee40e43
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79295104"
 ---
 # <a name="install-azure-stack-hub-updates"></a>Instalación de actualizaciones de Azure Stack Hub

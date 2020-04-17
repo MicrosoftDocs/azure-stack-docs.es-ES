@@ -8,10 +8,10 @@ ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 05/20/2019
 ms.openlocfilehash: 95cc91a2f9443271b0e89d6dbf22a67137924627
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77704308"
 ---
 # <a name="let-your-cloud-solution-provider-manage-your-azure-stack-hub-subscription"></a>Administración de una suscripción de Azure Stack Hub por parte de un proveedor de soluciones en la nube

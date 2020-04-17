@@ -8,10 +8,10 @@ ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 11/05/2019
 ms.openlocfilehash: 245951e86128fb71e6820f3b57bdf2723506d4bc
-ms.sourcegitcommit: 8198753ebafd69d0dbfc6b3548defbd70f4c79c1
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/09/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "78935055"
 ---
 # <a name="recover-from-catastrophic-data-loss"></a>Recuperación después de una pérdida de datos grave

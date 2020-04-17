@@ -8,10 +8,10 @@ ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
 ms.openlocfilehash: 5b79c676b922f0e76ed75e3ad043f53c1fb9d6a5
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79295494"
 ---
 # <a name="use-api-version-profiles-with-ruby-in-azure-stack-hub"></a>Uso de los perfiles de la versión de API con Ruby en Azure Stack Hub

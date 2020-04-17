@@ -8,10 +8,10 @@ ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 09/17/2019
 ms.openlocfilehash: eb9cc45f3c8de162550cb7f882060a9506831d23
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77704835"
 ---
 # <a name="add-tenant-for-usage-and-billing-to-azure-stack-hub"></a>Adición de inquilinos a Azure Stack Hub para uso y facturación

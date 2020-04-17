@@ -7,10 +7,10 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.lastreviewed: 11/11/2019
 ms.openlocfilehash: b90458e58054cd0f42564558fd3cb5a8226d6c5d
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77702268"
 ---
 # <a name="supported-metrics-for-azure-monitor-on-azure-stack-hub"></a>Métricas de Azure Stack Hub compatibles con Azure Monitor

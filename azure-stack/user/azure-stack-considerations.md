@@ -7,10 +7,10 @@ ms.date: 01/06/2020
 ms.author: sethm
 ms.lastreviewed: 12/27/2019
 ms.openlocfilehash: 9d60c9300d2a717f280ab16a7f6c55d67a13f28c
-ms.sourcegitcommit: 19e9b6d6ce24d74ff396a5dc48208671aeda432a
+ms.sourcegitcommit: 4138a2a15f78e7db38b3a29acc963a71937146fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/15/2020
 ms.locfileid: "80362147"
 ---
 # <a name="differences-between-azure-stack-hub-and-azure-when-using-services-and-building-apps"></a>Diferencias entre Azure Stack Hub y Azure al usar servicios y compilar aplicaciones

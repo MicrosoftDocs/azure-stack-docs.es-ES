@@ -7,10 +7,10 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.lastreviewed: 05/16/2019
 ms.openlocfilehash: 8ecb1fde96c4d53bd94c57199635af21d7cf7196
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77700874"
 ---
 # <a name="enable-azure-cli-for-azure-stack-hub-users"></a>Habilitación de la CLI de Azure para usuarios de Azure Stack Hub

@@ -6,10 +6,10 @@ ms.author: v-kedow
 ms.topic: article
 ms.date: 03/24/2020
 ms.openlocfilehash: c1f1ddbfb9f362261a8e55d32a0d8c28b7b64629
-ms.sourcegitcommit: b65952127f39c263b162aad990e4d5b265570a7f
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/30/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80402857"
 ---
 # <a name="attaching-a-gpu-to-an-ubuntu-linux-vm-on-azure-stack-hci"></a>Asociación de una GPU a una máquina virtual Ubuntu Linux en Azure Stack HCI

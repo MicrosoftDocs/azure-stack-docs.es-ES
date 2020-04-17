@@ -8,10 +8,10 @@ ms.author: inhenkel
 ms.reviewer: bryanr
 ms.lastreviewed: 06/10/2019
 ms.openlocfilehash: ba5c757a08b63c80ce86a9f8890f82fa696066a5
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79295434"
 ---
 # <a name="configure-multi-tenancy-in-azure-stack-hub"></a>Configuración de los servicios multiinquilino en Azure Stack Hub

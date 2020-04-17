@@ -8,10 +8,10 @@ ms.author: mabrigg
 ms.reviewer: justini
 ms.lastreviewed: 11/14/2019
 ms.openlocfilehash: c41989d662122dafb5d535c356aeb7d7e48ed4aa
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77704427"
 ---
 # <a name="use-azure-resource-manager-templates-in-azure-stack-hub"></a>Uso de plantillas de Administrador de recursos de Azure en Azure Stack Hub

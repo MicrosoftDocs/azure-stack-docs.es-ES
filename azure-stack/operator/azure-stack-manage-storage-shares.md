@@ -8,10 +8,10 @@ ms.author: inhenkel
 ms.reviewer: xiaofmao
 ms.lastreviewed: 03/19/2019
 ms.openlocfilehash: 212f68be85bfe4b129e84057cc63472e5259a41c
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79295086"
 ---
 # <a name="manage-storage-capacity-for-azure-stack-hub"></a>Administración de la capacidad de almacenamiento en Azure Stack Hub

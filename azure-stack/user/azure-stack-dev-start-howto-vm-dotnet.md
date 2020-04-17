@@ -8,10 +8,10 @@ ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 11/11/2019
 ms.openlocfilehash: 505d00c6255ef7b8b919f1af0229bd207bbe032f
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: 4138a2a15f78e7db38b3a29acc963a71937146fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/15/2020
 ms.locfileid: "77704189"
 ---
 # <a name="deploy-a-c-aspnet-web-app-to-a-vm-in-azure-stack-hub"></a>Implementación de una aplicación web de C# ASP.NET en una máquina virtual en Azure Stack Hub

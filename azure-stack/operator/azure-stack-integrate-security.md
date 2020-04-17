@@ -8,10 +8,10 @@ ms.author: inhenkel
 ms.reviewer: fiseraci
 ms.lastreviewed: 01/10/2019
 ms.openlocfilehash: a02458ba7790fdf48d8b506abfea0e771b8a179e
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77699429"
 ---
 # <a name="integrate-azure-stack-hub-with-monitoring-solutions-using-syslog-forwarding"></a>Integración de Azure Stack Hub con soluciones de supervisión mediante el reenvío de syslog

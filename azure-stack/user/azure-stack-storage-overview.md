@@ -7,10 +7,10 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.lastreviewed: 01/14/2020
 ms.openlocfilehash: ee08259248a49eef08ce0012d60be2705cc4f877
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77704920"
 ---
 # <a name="introduction-to-azure-stack-hub-storage"></a>Introducción a Azure Stack Hub Storage
@@ -39,7 +39,7 @@ Una cuenta de Azure Stack Hub Storage es una cuenta segura que proporciona acces
 
 ![Introducción a Azure Stack Hub Storage](media/azure-stack-storage-overview/AzureStackStorageOverview.png)
 
-### <a name="blob-storage"></a>Almacenamiento de blobs
+### <a name="blob-storage"></a>Blob Storage
 
 Blob Storage ofrece una solución rentable y escalable a aquellos usuarios con grandes cantidades de datos de objetos no estructurados para almacenar en la nube. Use esta característica para almacenar contenido como:
 

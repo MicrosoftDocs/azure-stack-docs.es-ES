@@ -136,6 +136,10 @@
           items:
             - name: Instalación del módulo RM para PowerShell
               href: azure-stack-powershell-install.md
+            - name: Instalación del módulo Az para PowerShell
+              href: powershell-install-az-module.md
+            - name: Migración del módulo AzureRM para PowerShell a Az
+              href: migrate-azurerm-az.md
             - name: Descarga de herramientas
               href: azure-stack-powershell-download.md
             - name: Conexión con PowerShell

@@ -8,10 +8,10 @@ ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 07/09/2019
 ms.openlocfilehash: 2a23469b36bd05aaef1c6597fc0be6e0c1bab783
-ms.sourcegitcommit: 4301e8dee16b4db32b392f5979dfec01ab6566c9
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79312979"
 ---
 # <a name="use-docker-to-run-powershell-in-azure-stack-hub"></a>Uso de Docker para ejecutar PowerShell en Azure Stack Hub

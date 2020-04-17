@@ -8,10 +8,10 @@ ms.author: justinha
 ms.reviewer: shnatara
 ms.lastreviewed: 10/19/2019
 ms.openlocfilehash: b02795cf0058a9d63947c6143b0721c544ff9811
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77701588"
 ---
 # <a name="change-the-billing-owner-for-an-azure-stack-hub-user-subscription"></a>Cambio del propietario de facturación de las suscripciones de usuario de Azure Stack Hub

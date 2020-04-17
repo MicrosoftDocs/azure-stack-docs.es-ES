@@ -8,10 +8,10 @@ ms.author: inhenkel
 ms.reviewer: wfayed
 ms.lastreviewed: 02/21/2019
 ms.openlocfilehash: 4e0fb77bc6f6f174d474a123611dbf529e814b0a
-ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "78364051"
 ---
 # <a name="azure-stack-hub-integrated-systems-connection-models"></a>Modelos de conexión de sistemas integrados en Azure Stack Hub

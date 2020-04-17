@@ -8,10 +8,10 @@ ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 11/16/2019
 ms.openlocfilehash: 532f61b2b306dab833c35dab403226e70950d43a
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79295098"
 ---
 # <a name="add-linux-images-to-the-azure-stack-hub-marketplace"></a>Adición de imágenes de Linux al Marketplace de Azure Stack Hub

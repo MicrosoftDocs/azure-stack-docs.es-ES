@@ -8,10 +8,10 @@ ms.author: mabrigg
 ms.reviewer: hectorl
 ms.lastreviewed: 3/5/2020
 ms.openlocfilehash: 913d0eeed1ba2cfce0b062385a4f544919889f43
-ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79512616"
 ---
 # <a name="protect-vms-deployed-on-azure-stack-hub"></a>Protección de las máquinas virtuales implementadas en Azure Stack Hub

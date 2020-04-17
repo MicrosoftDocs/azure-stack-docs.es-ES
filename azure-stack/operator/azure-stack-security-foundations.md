@@ -7,13 +7,13 @@ ms.topic: article
 ms.date: 06/10/2019
 ms.author: justinha
 ms.reviewer: fiseraci
-ms.lastreviewed: 1/16/2019
-ms.openlocfilehash: 63d50749d3877209dd81ca7a59a38e634b2d46e7
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.lastreviewed: 04/07/2020
+ms.openlocfilehash: 2d1b97bc17543e4fbdc1a1f79c39a01f188332df
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77697559"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80891097"
 ---
 # <a name="azure-stack-hub-infrastructure-security-controls"></a>Controles de seguridad de la infraestructura de Azure Stack Hub
 
@@ -105,11 +105,10 @@ Las evaluaciones incluyen estos estándares:
 - [CSA Cloud Control Matrix](https://cloudsecurityalliance.org/group/cloud-controls-matrix/#_overview) es una asignación completa entre varios estándares, incluidos FedRAMP Moderate, ISO27001, HIPAA, HITRUST, ITAR, NIST SP800-53 y otros.
 - [FedRAMP High](https://www.fedramp.gov/fedramp-releases-high-baseline/) para clientes gubernamentales.
 
-La documentación de cumplimiento está disponible en el [Portal de confianza del servicio de Microsoft](https://servicetrust.microsoft.com/ViewPage/AzureStack). Las guías de cumplimiento son un recurso protegido y para consultarlas es necesario iniciar sesión con sus credenciales de servicio en la nube de Azure.
+La documentación de cumplimiento está disponible en el [Portal de confianza del servicio de Microsoft](https://aka.ms/azurestackcompliance). Las guías de cumplimiento son un recurso protegido y para consultarlas es necesario iniciar sesión con sus credenciales de servicio en la nube de Azure.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
 - [Configuración de los controles de seguridad de Azure Stack Hub](azure-stack-security-configuration.md)
 - [Aprenda a cambiar los secretos en Azure Stack Hub](azure-stack-rotate-secrets.md)
-- [Documentos de PCI-DSS y CSA-CCM para Azure Stack Hub](https://servicetrust.microsoft.com/ViewPage/TrustDocuments)
-- [Documentos de DoD y NIST para Azure Stack Hub](https://servicetrust.microsoft.com/ViewPage/Blueprint)
+- [Documentos de PCI-DSS y CSA-CCM para Azure Stack Hub](https://aka.ms/azurestackcompliance)

@@ -11,10 +11,10 @@ ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 02/26/2019
 ms.openlocfilehash: 9f7fbb8657ec13aa6c7768e1db4d62f36fbb46cb
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77696454"
 ---
 # <a name="frequently-asked-questions-about-azure-stack-hub-usage"></a>Preguntas frecuentes sobre el uso de Azure Stack Hub

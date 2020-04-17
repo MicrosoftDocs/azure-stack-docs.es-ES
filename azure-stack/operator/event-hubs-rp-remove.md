@@ -9,10 +9,10 @@ ms.date: 12/09/2019
 ms.reviewer: jfggdl
 ms.lastreviewed: 12/09/2019
 ms.openlocfilehash: 2a1525f4b91998479d368714aa3a88df6ecfcef9
-ms.sourcegitcommit: dd53af1b0fc2390de162d41e3d59545d1baad1a7
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80424599"
 ---
 # <a name="how-to-remove-event-hubs-on-azure-stack-hub"></a>Cómo quitar Event Hubs en Azure Stack Hub

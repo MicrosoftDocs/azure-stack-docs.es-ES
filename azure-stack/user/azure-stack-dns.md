@@ -7,10 +7,10 @@ ms.date: 01/24/2020
 ms.author: sethm
 ms.lastreviewed: 01/05/2020
 ms.openlocfilehash: b9afba6322b80d487f4ba7d4324adcd42a8fd85a
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77703016"
 ---
 # <a name="use-dns-in-azure-stack-hub"></a>DNS en Azure Stack Hub

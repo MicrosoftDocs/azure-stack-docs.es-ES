@@ -8,10 +8,10 @@ ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/13/20192
 ms.openlocfilehash: 9e9447baf9f5676cac8555513682bab8da750bb2
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77701180"
 ---
 # <a name="capacity-planning-for-app-service-server-roles-in-azure-stack-hub"></a>Planeamiento de la capacidad de los roles de servidor de App Service en Azure Stack Hub

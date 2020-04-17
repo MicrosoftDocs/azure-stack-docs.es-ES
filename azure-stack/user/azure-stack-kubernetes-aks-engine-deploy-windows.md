@@ -8,10 +8,10 @@ ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 3/19/2020
 ms.openlocfilehash: ca48b252525ea6869233f23158a05962056aa7a4
-ms.sourcegitcommit: 17be49181c8ec55e01d7a55c441afe169627d268
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/21/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80069176"
 ---
 # <a name="install-the-aks-engine-on-windows-in-azure-stack-hub"></a>Instalación del motor de AKS en Windows para Azure Stack Hub

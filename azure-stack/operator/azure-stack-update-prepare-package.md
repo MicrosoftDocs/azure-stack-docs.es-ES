@@ -8,10 +8,10 @@ ms.author: inhenkel
 ms.lastreviewed: 09/10/2019
 ms.reviewer: ppacent
 ms.openlocfilehash: 1911a07c1a22cbb58b7b7794addadb9cf01f0993
-ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "78367342"
 ---
 # <a name="prepare-an-azure-stack-hub-update-package"></a>Preparación de un paquete de actualización de Azure Stack Hub

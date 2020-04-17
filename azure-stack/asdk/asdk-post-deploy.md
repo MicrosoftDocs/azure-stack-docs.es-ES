@@ -8,10 +8,10 @@ ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 07/31/2019
 ms.openlocfilehash: 8c0cd14dbeda4e2b7844aefaf10f4a8cf685d60d
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79295296"
 ---
 # <a name="post-deployment-configurations-for-asdk"></a>Configuraciones posteriores a la implementación del ASDK
