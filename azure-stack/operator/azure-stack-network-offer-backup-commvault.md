@@ -8,10 +8,10 @@ ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/28/2019
 ms.openlocfilehash: 8d2b9181c6db101113d1f60ef3ab5ab3a0929ed3
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77698562"
 ---
 # <a name="add-commvault-to-the-azure-stack-hub-marketplace"></a>Incorporación de Commvault a Marketplace de Azure Stack Hub

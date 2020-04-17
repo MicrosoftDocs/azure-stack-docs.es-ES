@@ -6,10 +6,10 @@ ms.author: v-kedow
 ms.topic: article
 ms.date: 02/27/2020
 ms.openlocfilehash: e0aaed5d444a0d7b617ecd2ccd350a9812be8a2c
-ms.sourcegitcommit: a77dea675af6500bdad529106f5782d86bec6a34
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79025975"
 ---
 # <a name="replace-failed-drives-on-azure-stack-hci"></a>Reemplazar unidades con errores en Azure Stack HCI

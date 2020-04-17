@@ -8,10 +8,10 @@ ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 05/07/2019
 ms.openlocfilehash: bb407a03b2a5887b75b8b5d729fa5cc2cc636755
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77704461"
 ---
 # <a name="create-and-publish-a-custom-azure-stack-hub-marketplace-item"></a>Creación y publicación de un elemento personalizado de Marketplace de Azure Stack Hub

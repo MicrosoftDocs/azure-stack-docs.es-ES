@@ -6,10 +6,10 @@ ms.author: v-kedow
 ms.topic: article
 ms.date: 03/06/2020
 ms.openlocfilehash: c6410e4f0d60138ce773f7f0abfae1a5c1850bd2
-ms.sourcegitcommit: 900332596d0bb473d82b1d1a28c3fe3aa6522add
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/11/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79095230"
 ---
 # <a name="planning-volumes-in-storage-spaces-direct"></a>Planeamiento de volúmenes en Espacios de almacenamiento directo

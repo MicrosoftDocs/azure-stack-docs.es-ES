@@ -8,10 +8,10 @@ ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 12/27/2019
 ms.openlocfilehash: 4c545c60c0890f87c87108101a3e30ab4c87d16d
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77705294"
 ---
 # <a name="use-the-template-validation-tool-in-azure-stack-hub"></a>Uso de la herramienta de validación de plantillas en Azure Stack Hub
@@ -75,12 +75,12 @@ El cmdlet del validador de plantillas admite los siguientes parámetros.
 | Parámetro | Descripción | Obligatorio |
 | ----- | -----| ----- |
 | `TemplatePath` | Especifica la ruta de acceso para buscar de forma recursiva las plantillas de Azure Resource Manager. | Sí |
-| `TemplatePattern` | Especifica el nombre de los archivos de plantilla para que coincida. | Sin |
+| `TemplatePattern` | Especifica el nombre de los archivos de plantilla para que coincida. | No |
 | `CapabilitiesPath` | Especifica la ruta de acceso al archivo JSON con funcionalidades de la nube. | Sí |
-| `IncludeComputeCapabilities` | Incluye la evaluación de recursos de IaaS, como tamaños de máquina virtual y extensiones de máquina virtual. | Sin |
-| `IncludeStorageCapabilities` | Incluye la evaluación de recursos de almacenamiento, como los tipos de SKU. | Sin |
-| `Report` | Especifica el nombre del informe HTML generado. | Sin |
-| `Verbose` | Registra los errores y las advertencias en la consola. | Sin|
+| `IncludeComputeCapabilities` | Incluye la evaluación de recursos de IaaS, como tamaños de máquina virtual y extensiones de máquina virtual. | No |
+| `IncludeStorageCapabilities` | Incluye la evaluación de recursos de almacenamiento, como los tipos de SKU. | No |
+| `Report` | Especifica el nombre del informe HTML generado. | No |
+| `Verbose` | Registra los errores y las advertencias en la consola. | No|
 
 ### <a name="examples"></a>Ejemplos
 

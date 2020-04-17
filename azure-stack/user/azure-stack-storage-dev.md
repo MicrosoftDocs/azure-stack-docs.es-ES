@@ -7,11 +7,11 @@ ms.date: 1/22/2020
 ms.topic: conceptual
 ms.reviewer: xiaofmao
 ms.lastreviewed: 02/27/2019
-ms.openlocfilehash: 57ca779f776e51d8f491c8c9fe3e6a59a37b42ec
-ms.sourcegitcommit: dd53af1b0fc2390de162d41e3d59545d1baad1a7
+ms.openlocfilehash: 939479350718ae2176f7d1531e64ad71301e0596
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80423807"
 ---
 # <a name="get-started-with-azure-stack-hub-storage-development-tools"></a>Introducción a las herramientas de desarrollo de Azure Stack Hub Storage
@@ -27,40 +27,8 @@ Utilice este artículo como guía de introducción a las herramientas de desarro
 
 En lo que respecta a las bibliotecas de cliente de almacenamiento, debe conocer cuál es la versión compatible con la API REST. También debe especificar el punto de conexión de Azure Stack Hub en el código.
 
-
-::: moniker range=">=azs-2002"
-### <a name="2002-update-or-newer-versions"></a>Actualización 2002 o versiones más recientes
-
-| Biblioteca de cliente | Versión compatible de Azure Stack Hub | Vínculo | Especificación de punto de conexión |
-|----------------|-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------|
-| .NET | 11.0.0 | Paquete NuGet:<br>Comunes: <https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/11.0.0><br>Blob: <https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/11.0.0><br>Queue: <https://www.nuget.org/packages/Microsoft.Azure.Storage.Queue/11.0.0><br> <br>Versión de GitHub:<br><https://github.com/Azure/azure-storage-net/releases/tag/v11.0.0> | archivo app.config |
-| Java | 7.0.0 | Paquete Maven:<br><https://mvnrepository.com/artifact/com.microsoft.azure/azure-storage/7.0.0><br> <br>Versión de GitHub:<br><https://github.com/Azure/azure-storage-java/releases/tag/v7.0.0> | Configuración de la cadena de conexión |
-| Node.js | 2.8.3 | Vínculo NPM:<br><https://www.npmjs.com/package/azure-storage><br>(Ejecutar: `npm install azure-storage@2.8.3`)<br> <br>Versión de GitHub:<br><https://github.com/Azure/azure-storage-node/releases/tag/v2.8.3> | Declaración de instancia de servicio |
-| C++ | 7.1.0 | Versión de GitHub:<br><https://github.com/Azure/azure-storage-cpp/releases/tag/v7.1.0> | Configuración de la cadena de conexión |
-| PHP | 1.2.0 | Versión de GitHub:<br>Comunes: <https://github.com/Azure/azure-storage-php/releases/tag/v1.2.0-common><br>Blob: <https://github.com/Azure/azure-storage-php/releases/tag/v1.2.0-blob><br>Queue: <https://github.com/Azure/azure-storage-php/releases/tag/v1.1.1-queue><br>Table: <https://github.com/Azure/azure-storage-php/releases/tag/v1.1.0-table><br> <br>Instalación mediante Composer (para obtener más información, [vea los siguientes detalles](#install-php-client-via-composer---current)). | Configuración de la cadena de conexión |
-| Python | 2.1.0 | Versión de GitHub:<br>Comunes: <https://github.com/Azure/azure-storage-python/releases/tag/v2.1.0-common><br>Blob: <https://github.com/Azure/azure-storage-python/releases/tag/v2.1.0-blob><br>Queue: <https://github.com/Azure/azure-storage-python/releases/tag/v2.1.0-queue> | Declaración de instancia de servicio |
-| Ruby | 1.0.1 | Paquete de RubyGems:<br>Comunes: <https://rubygems.org/gems/azure-storage-common/versions/1.0.1><br>Blob: <https://rubygems.org/gems/azure-storage-blob/versions/1.0.1><br>Queue: <https://rubygems.org/gems/azure-storage-queue/versions/1.0.1><br>Table: <https://rubygems.org/gems/azure-storage-table/versions/1.0.1><br> <br>Versión de GitHub:<br>Comunes: <https://github.com/Azure/azure-storage-ruby/releases/tag/v1.0.1-common><br>Blob: <https://github.com/Azure/azure-storage-ruby/releases/tag/v1.0.1-blob><br>Queue: <https://github.com/Azure/azure-storage-ruby/releases/tag/v1.0.1-queue><br>Table: <https://github.com/Azure/azure-storage-ruby/releases/tag/v1.0.1-table> | Configuración de la cadena de conexión |
-
-#### <a name="install-php-client-via-composer---current"></a>Instalación del cliente PHP a través de compositor: actual
-
-Para instalar a través de Composer: (usaremos el blob como ejemplo).
-
-1. Cree un archivo llamado **composer.json** en la raíz del proyecto con el código siguiente:
-
-    ```json
-    {
-      "require": {
-      "Microsoft/azure-storage-blob":"1.2.0"
-      }
-    }
-    ```
-
-2. Descargue [composer.phar](https://getcomposer.org/composer.phar) en la raíz del proyecto.
-3. Ejecute `php composer.phar install`.
-::: moniker-end
-
-::: moniker range=">=azs-1811 <azs-2002"
-### <a name="previous-versions-1811-to-1910-update"></a>Versiones anteriores (actualización de 1811 a 1910)
+::: moniker range=">=azs-1811"
+### <a name="1811-update-or-newer-versions"></a>Actualización 1811 o versiones más recientes
 
 | Biblioteca de cliente | Versión compatible de Azure Stack Hub | Vínculo | Especificación de punto de conexión |
 |----------------|-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------|
@@ -204,7 +172,7 @@ AccountKey=mykey;
 EndpointSuffix=local.azurestack.external
 ```
 
-## <a name="blob-storage"></a>Almacenamiento de blobs
+## <a name="blob-storage"></a>Blob Storage
 
 Los siguientes tutoriales de Azure Blob Storage son aplicables a Azure Stack Hub. Tenga en cuenta los requisitos específicos de los sufijos de punto de conexión de Azure Stack Hub que se describen en la sección de [ejemplos](#examples) anterior.
 

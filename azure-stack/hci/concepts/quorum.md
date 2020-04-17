@@ -6,10 +6,10 @@ ms.author: v-kedow
 ms.topic: article
 ms.date: 02/28/2020
 ms.openlocfilehash: 70f10bd8c2c2e5eb639229ba743090ba5e5ac79c
-ms.sourcegitcommit: a77dea675af6500bdad529106f5782d86bec6a34
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79026107"
 ---
 # <a name="understanding-cluster-and-pool-quorum-on-azure-stack-hci"></a>Descripción del cuórum de clúster y de grupo en Azure Stack HCl
@@ -33,10 +33,10 @@ En la tabla siguiente se proporciona información general sobre los resultados d
 
 | Nodos de servidor | Pueden sobrevivir a un error del nodo de servidor | Pueden sobrevivir a un error del nodo de servidor y luego a otro | Pueden sobrevivir a dos errores simultáneos del nodo de servidor |
 |--------------|-------------------------------------|---------------------------------------------------|----------------------------------------------------|
-| 2            | 50/50                               | Sin                                                | Sin                                                 |
-| 2 + testigo  | Sí                                 | Sin                                                | Sin                                                 |
-| 3            | Sí                                 | 50/50                                             | Sin                                                 |
-| 3 + testigo  | Sí                                 | Sí                                               | Sin                                                 |
+| 2            | 50/50                               | No                                                | No                                                 |
+| 2 + testigo  | Sí                                 | No                                                | No                                                 |
+| 3            | Sí                                 | 50/50                                             | No                                                 |
+| 3 + testigo  | Sí                                 | Sí                                               | No                                                 |
 | 4            | Sí                                 | Sí                                               | 50/50                                              |
 | 4 + testigo  | Sí                                 | Sí                                               | Sí                                                |
 | 5 y más  | Sí                                 | Sí                                               | Sí                                                |
@@ -169,11 +169,11 @@ En la tabla siguiente se proporciona información general sobre los resultados d
 
 | Nodos de servidor | Pueden sobrevivir a un error del nodo de servidor | Pueden sobrevivir a un error del nodo de servidor y luego a otro | Pueden sobrevivir a dos errores simultáneos del nodo de servidor |
 |--------------|-------------------------------------|---------------------------------------------------|----------------------------------------------------|
-| 2            | Sin                                  | Sin                                                | Sin                                                 |
-| 2 + testigo  | Sí                                 | Sin                                                | Sin                                                 |
-| 3            | Sí                                 | Sin                                                | Sin                                                 |
-| 3 + testigo  | Sí                                 | Sin                                                | Sin                                                 |
-| 4            | Sí                                 | Sin                                                | Sin                                                 |
+| 2            | No                                  | No                                                | No                                                 |
+| 2 + testigo  | Sí                                 | No                                                | No                                                 |
+| 3            | Sí                                 | No                                                | No                                                 |
+| 3 + testigo  | Sí                                 | No                                                | No                                                 |
+| 4            | Sí                                 | No                                                | No                                                 |
 | 4 + testigo  | Sí                                 | Sí                                               | Sí                                                |
 | 5 y más  | Sí                                 | Sí                                               | Sí                                                |
 

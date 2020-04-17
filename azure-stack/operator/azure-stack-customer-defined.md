@@ -8,10 +8,10 @@ ms.author: inhenkel
 ms.reviewer: wamota
 ms.lastreviewed: 11/11/2019
 ms.openlocfilehash: 19964b761478bb210d3377b177f05f708697167b
-ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "78368726"
 ---
 #  <a name="modify-specific-settings-on-your-azure-stack-hub-switch-configuration"></a>Modificación de la configuración específica de la configuración del conmutador de Azure Stack Hub

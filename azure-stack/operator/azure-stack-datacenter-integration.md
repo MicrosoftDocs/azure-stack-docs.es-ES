@@ -3,16 +3,16 @@ title: Consideraciones sobre el planeamiento de la integración del centro de da
 description: Aprenda a planear y preparar la integración del centro de datos con los sistemas integrados de Azure Stack Hub.
 author: IngridAtMicrosoft
 ms.topic: conceptual
-ms.date: 03/04/2020
+ms.date: 04/02/2020
 ms.author: inhenkel
 ms.reviewer: wfayed
 ms.lastreviewed: 09/12/2019
-ms.openlocfilehash: 9ea880003492768e67c71f948a71d693e5a90c9b
-ms.sourcegitcommit: 19e9b6d6ce24d74ff396a5dc48208671aeda432a
+ms.openlocfilehash: fbcca6d24f37162fa62729f38d50a6ceb0f0374c
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80362166"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80638185"
 ---
 # <a name="datacenter-integration-planning-considerations-for-azure-stack-hub-integrated-systems"></a>Consideraciones sobre el planeamiento de la integración del centro de datos con los sistemas integrados de Azure Stack Hub
 
@@ -26,6 +26,7 @@ Para implementar Azure Stack Hub, debe proporcionar información de planeamiento
 Al investigar y recopilar la información necesaria, es posible que tenga que realizar algunos cambios en la configuración previa a la implementación en su entorno de red. Estos cambios podrían incluir la reserva de espacios de direcciones IP para la solución Azure Stack Hub así como la configuración de los enrutadores, conmutadores y firewalls para prepararlos para la conectividad con los nuevos conmutadores de la solución Azure Stack Hub. Asegúrese de tener al experto del área temática a mano para ayudarle con el planeamiento.
 
 ## <a name="capacity-planning-considerations"></a>Consideraciones de planeamiento de capacidad
+
 Al evaluar una solución de Azure Stack Hub para su adquisición, es necesario elegir opciones de configuración de hardware que tengan un impacto directo en la capacidad total de esta solución. Esto incluye las opciones clásicas de CPU, densidad de memoria, configuración de almacenamiento y escala de solución global (por ejemplo, el número de servidores). A diferencia de una solución de virtualización tradicional, la aritmética simple de estos componentes no es aplicable a la hora de determinar la capacidad utilizable. El primer motivo es que Azure Stack Hub se ha diseñado para hospedar los componentes de infraestructura o administración dentro de la propia solución. El segundo motivo es que parte de la capacidad de la solución se reserva en favor de la resistencia; el software de la solución se actualiza de forma que minimiza la interrupción de las cargas de trabajo del inquilino.
 
 Use la [hoja de cálculo de la herramienta de planeamiento de capacidad de Azure Stack Hub](https://aka.ms/azstackcapacityplanner) para que le ayude a tomar decisiones fundamentadas para planear la capacidad de dos formas. La primera es seleccionando una oferta de hardware e intentando ajustarse a una combinación de recursos. La segunda es mediante la definición de la carga de trabajo que se pretende que Azure Stack Hub ejecute para ver las SKU de hardware disponibles que pueden admitirlo. Por último, la hoja de cálculo está pensada como una guía para ayudar a tomar decisiones relacionadas con el planeamiento y configuración de Azure Stack Hub.
@@ -33,6 +34,7 @@ Use la [hoja de cálculo de la herramienta de planeamiento de capacidad de Azure
 La hoja de cálculo no está pensada para que actúe como un sustituto de su propia investigación y análisis. Microsoft no ofrece ninguna manifestación o garantía, ni expresa ni implícita, con respecto a la información proporcionada en la hoja de cálculo.
 
 ## <a name="management-considerations"></a>Consideraciones de administración
+
 Azure Stack Hub es un sistema sellado en el cual la infraestructura está bloqueada desde una perspectiva de red y de permisos. Las listas de control de acceso (ACL) de red se aplican para bloquear todo el tráfico entrante no autorizado y todas las comunicaciones innecesarias entre los componentes de infraestructura. Esto dificulta el acceso al sistema de los usuarios no autorizados.
 
 Para la administración y las operaciones diarias, no hay ningún acceso de administrador a la infraestructura sin restricciones. Los operadores de Azure Stack Hub deben administrar el sistema mediante el portal del administrador o mediante Azure Resource Manager (con PowerShell o la API REST). No hay ningún acceso al sistema mediante otras herramientas de administración, como el Administrador de Hyper-V o el Administrador de clústeres de conmutación por error. Para ayudar a proteger el sistema, no se puede instalar software de terceros (por ejemplo, agentes) dentro de los componentes de la infraestructura de Azure Stack Hub. La interoperabilidad con el software de seguridad y la administración externa se produce a través de PowerShell o la API de REST.
@@ -42,6 +44,7 @@ Póngase en contacto con el Soporte técnico de Microsoft si necesita un mayor n
 ## <a name="identity-considerations"></a>Consideraciones de identidad
 
 ### <a name="choose-identity-provider"></a>Elegir el proveedor de identidades
+
 Debe tener en cuenta qué proveedor de identidades desea usar para la implementación de Azure Stack Hub, Azure AD o AD FS. No puede cambiar los proveedores de identidades tras la implementación sin volver a implementar todo el sistema. Si no dispone de su propia cuenta de Azure AD y está utilizando una que le suministró su proveedor de soluciones en la nube y decide cambiar de proveedor y usar una cuenta de Azure AD diferente, deberá ponerse en contacto con el proveedor de soluciones para que vuelva a implementar la solución, aunque tendrá que asumir los costos.
 
 Su elección del proveedor de identidades no repercute en las máquinas virtuales de inquilinos, en el sistema de identidades, en las cuentas que utilizan o en si puede unirse a un dominio de Active Directory, etc. Estas cosas son independientes.
@@ -49,15 +52,18 @@ Su elección del proveedor de identidades no repercute en las máquinas virtuale
 Puede obtener más información sobre cómo elegir un proveedor de identidades en el [artículo sobre modelos de conexión a sistemas integrados de Azure Stack Hub](./azure-stack-connection-models.md).
 
 ### <a name="ad-fs-and-graph-integration"></a>Integración de AD FS y Graph
+
 Si decide implementar Azure Stack Hub mediante AD FS como proveedor de identidades, debe integrar la instancia de AD FS en Azure Stack Hub con una instancia existente de AD FS mediante una confianza de federación. Esta integración permite autenticar las identidades de un bosque de Active Directory existente con los recursos de Azure Stack Hub.
 
 También puede integrar el servicio de Graph en Azure Stack Hub con la instancia de Active Directory existente. Esta integración le permite administrar el control de acceso basado en rol (RBAC) en Azure Stack Hub. Cuando se delega el acceso a un recurso, el componente de Graph busca la cuenta de usuario en el bosque de Active Directory existente mediante el protocolo LDAP.
 
-El siguiente diagrama muestra el flujo de tráfico de AD FS y Graph integrado.
-![Diagrama que muestra el flujo de tráfico de AD FS y Graph](media/azure-stack-datacenter-integration/ADFSIntegration.PNG)
+El siguiente diagrama muestra el flujo de tráfico de AD FS y Graph integrado.<br/><br/>
+![Diagrama que muestra el flujo de tráfico de AD FS y Graph](media/azure-stack-datacenter-integration/ADFSIntegration.svg)
 
 ## <a name="licensing-model"></a>Modelo de licencia
+
 Debe decidir qué modelo de licencia desea usar. Las opciones disponibles dependen de si implementa Azure Stack Hub conectado a Internet:
+
 - Para una [implementación conectada](azure-stack-connected-deployment.md), puede elegir licencias de pago por uso o según la capacidad. El pago por uso requiere una conexión a Azure para informar del uso, que, a continuación, se factura a través del comercio de Azure. 
 - La licencia según la capacidad solo se admite si [implementa desconectado](azure-stack-disconnected-deployment.md) desde Internet. 
 
@@ -76,8 +82,8 @@ Debe pensar en cómo desea planear el espacio de nombres de Azure Stack Hub, esp
 
 En la tabla siguiente se resumen estas decisiones de nomenclatura de dominio.
 
-| Nombre | Descripción | 
-| -------- | ------------- | 
+| Nombre | Descripción |
+| -------- | ------------- |
 |Nombre de la región | Nombre de su primera región de Azure Stack Hub. Este nombre se usa como parte del FQDN para las direcciones IP virtuales (VIP) públicas que administra Azure Stack Hub. Normalmente, el nombre de la región sería un identificador de ubicación física, como una ubicación de centro de datos.<br><br>El nombre de la región debe consistir solo en letras y números entre 0 y 9. No se permiten caracteres especiales, como `-`, `#`, etc.| 
 | Nombre de dominio externo | Nombre de la zona de Sistema de nombres de dominio (DNS) para los puntos de conexión con direcciones VIP de uso externo. Se utiliza en el FQDN para estas VIP públicas. | 
 | Nombre de dominio (interno) privado | Nombre del dominio (y de la zona DNS interna) creado en Azure Stack Hub para la administración de la infraestructura.
@@ -92,12 +98,11 @@ Para la implementación debe proporcionar los certificados de Capa de sockets se
 
 Para más información acerca de qué certificados de PKI se requieren para implementar Azure Stack Hub y cómo obtenerlos, consulte [Requisitos de certificados de infraestructura de clave pública de Azure Stack Hub](azure-stack-pki-certs.md).  
 
-
 > [!IMPORTANT]
 > La información del certificado de PKI facilitada debe utilizarse como guía general. Antes de adquirir los certificados de PKI para Azure Stack Hub, trabaje con los asociados de hardware OEM. Le proporcionarán una orientación más detallada de los certificados y los requisitos.
 
-
 ## <a name="time-synchronization"></a>Sincronización de la hora
+
 Debe elegir un servidor horario específico que se usará para sincronizar Azure Stack Hub. La sincronización de hora es fundamental para Azure Stack Hub y sus roles de infraestructura porque se usa para generar vales de Kerberos. Los vales de Kerberos se usan para autenticar servicios internos entre sí.
 
 Debe especificar una dirección IP para el servidor de sincronización de hora. Aunque la mayoría de los componentes de la infraestructura pueden resolver una dirección URL, algunos solo admiten direcciones IP. Si está usando la opción de implementación desconectada, debe especificar un servidor horario en la red corporativa para asegurarse de que se puede acceder desde la red de infraestructura de Azure Stack Hub.
@@ -117,11 +122,11 @@ Para la conectividad híbrida es importante tener en cuenta qué tipo de impleme
 - **Azure Stack Hub de inquilino único**: una implementación de Azure Stack Hub que parece, al menos desde una perspectiva de la red, como si fuera un inquilino. Puede haber muchas suscripciones de inquilinos, pero al igual que con cualquier servicio de intranet, todo el tráfico se transmite a través de las mismas redes. El tráfico de red de una suscripción se transmite a través de la misma conexión de red que otra suscripción y no es necesario su aislamiento con un túnel cifrado.
 
 - **Azure Stack Hub de varios inquilinos**: implementación de Azure Stack Hub donde el tráfico de suscripción de cada inquilino que está limitado por redes externas a Azure Stack Hub debe aislarse del tráfico de red de otros inquilinos.
- 
+
 - **Implementación en intranet**: una implementación de Azure Stack Hub que se encuentra en una intranet corporativa, normalmente en el espacio de direcciones IP privadas y detrás de uno o varios firewalls. Las direcciones IP públicas no son realmente públicas, ya que no se pueden enrutar directamente a través de la red pública de Internet.
 
 - **Implementación en Internet**: implementación de Azure Stack Hub que está conectada a la red pública de Internet y usa las direcciones IP públicas que se pueden redirigir por Internet para el intervalo de dirección VIP público. La implementación todavía puede ubicarse detrás de un firewall, pero el intervalo de dirección VIP público es accesible directamente desde Azure y la red pública de Internet.
- 
+
 En la tabla siguiente se resumen los escenarios de conectividad híbrida, con las ventajas, las desventajas y los casos de uso.
 
 | Escenario | Método de conectividad | Ventajas | Desventajas | Bueno para |
@@ -138,11 +143,11 @@ Puede conectar Azure Stack Hub a Azure a través de [ExpressRoute](https://docs.
 
 El siguiente diagrama muestra ExpressRoute para un escenario de inquilino único (donde "Conexión del cliente" es el circuito de ExpressRoute).
 
-![Diagrama que muestra un escenario de ExpressRoute de inquilino único](media/azure-stack-datacenter-integration/ExpressRouteSingleTenant.PNG)
+![Diagrama que muestra un escenario de ExpressRoute de inquilino único](media/azure-stack-datacenter-integration/ExpressRouteSingleTenant.svg)
 
-El siguiente diagrama muestra ExpressRoute para un escenario de varios inquilinos.
+El siguiente diagrama muestra ExpressRoute para un escenario de varios inquilinos.<br/><br/>
 
-![Diagrama que muestra un escenario de ExpressRoute de varios inquilinos](media/azure-stack-datacenter-integration/ExpressRouteMultiTenant.PNG)
+![Diagrama que muestra un escenario de ExpressRoute de varios inquilinos](media/azure-stack-datacenter-integration/ExpressRouteMultiTenant.svg)
 
 ## <a name="external-monitoring"></a>Supervisión externa
 Para obtener una vista única de todas las alertas de la implementación y los dispositivos de Azure Stack Hub, así como para integrar las alertas en los flujos de trabajo existentes de administración de servicios de TI para el control de incidencias, puede [integrar Azure Stack Hub con soluciones externas de supervisión de centros de datos](azure-stack-integrate-monitor.md).
@@ -157,10 +162,11 @@ En la tabla siguiente se resume la lista de opciones disponibles actualmente.
 | Servidores físicos (BMC a través de IPMI) | Hardware OEM: módulo de administración del distribuidor de Operations Manager<br>Solución suministrada por el distribuidor de hardware OEM<br>Complementos de Nagios del proveedor de hardware.<br>Solución de supervisión admitida por el asociado de OEM (incluido) | 
 | Dispositivos de red (SNMP) | Detección de dispositivos de red de Operations Manager<br>Solución suministrada por el distribuidor de hardware OEM<br>Complemento conmutador de Nagios |
 | Supervisión del estado de suscripción del inquilino | [Módulo de administración de System Center para Windows Azure](https://www.microsoft.com/download/details.aspx?id=50013) | 
-|  |  | 
+|  |  |
 
 Tenga en cuenta los siguientes requisitos:
-- La solución que use debe ser sin agente. No puede instalar agentes de terceros dentro de componentes de Azure Stack Hub. 
+
+- La solución que use debe ser sin agente. No puede instalar agentes de terceros dentro de componentes de Azure Stack Hub.
 - Si desea usar System Center Operations Manager, se requiere Operations Manager 2012 R2 u Operations Manager 2016.
 
 ## <a name="backup-and-disaster-recovery"></a>Copia de seguridad y recuperación ante desastres

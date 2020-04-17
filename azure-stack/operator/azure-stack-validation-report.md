@@ -9,10 +9,10 @@ ms.author: inhenkel
 ms.reviewer: unknown
 ms.lastreviewed: 10/23/2019
 ms.openlocfilehash: 5cc3f24c62fc9c91637744cf031da39c6c7279fb
-ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "78366507"
 ---
 # <a name="azure-stack-hub-validation-report"></a>Informe de validación de Azure Stack Hub

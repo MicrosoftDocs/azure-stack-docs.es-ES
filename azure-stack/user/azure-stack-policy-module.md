@@ -7,10 +7,10 @@ ms.date: 01/07/2020
 ms.author: sethm
 ms.lastreviewed: 03/26/2019
 ms.openlocfilehash: 7af2662c52de8085b6b77fa0c9a2b36f401168fc
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77703832"
 ---
 # <a name="manage-azure-policy-using-the-azure-stack-hub-policy-module"></a>Administración de la directiva de Azure con el módulo de directivas de Azure Stack Hub

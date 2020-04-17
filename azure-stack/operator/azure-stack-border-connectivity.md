@@ -7,12 +7,12 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: wamota
 ms.lastreviewed: 11/15/2019
-ms.openlocfilehash: a1faf66aa6bd3195ceece035b4c67234673359bf
-ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
+ms.openlocfilehash: d0b50cc2237315c1ab6063aef6419db0e18aa395
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78366233"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81243983"
 ---
 # <a name="border-connectivity"></a>Conectividad de borde 
 El planeamiento de la integración de red es un requisito previo importante para la correcta implementación, operación y administración de sistemas integrados de Azure Stack Hub. El planeamiento de la conectividad de borde comienza con la elección de si se debe usar el enrutamiento dinámico con el protocolo de puerta de enlace de borde (BGP). Esto requiere la asignación de un número de sistema autónomo de BGP de 16 bits (público o privado) o el uso del enrutamiento estático, en el cual se asigna una ruta estática predeterminada a los dispositivos de borde.
@@ -29,7 +29,7 @@ El equilibrador de carga de software (SLB) que se ejecuta dentro de los niveles 
 
 Para asegurarse de que el tráfico de usuario se recupera del error de forma transparente e inmediata, el VPC o MLAG configurados entre los dispositivos de Tor permiten el uso de la agregación de vínculos de chasis múltiples a los hosts y HSRP o VRRP que proporciona redundancia de red para las redes IP.
 
-![Enrutamiento BGP](media/azure-stack-border-connectivity/bgp-routing.png)
+![Enrutamiento BGP](media/azure-stack-border-connectivity/bgp-routing.svg)
 
 ## <a name="static-routing"></a>Enrutamiento estático
 El enrutamiento estático requiere una configuración adicional para los dispositivos de borde. Requiere más intervención y administración manual, así como un análisis exhaustivo antes de realizar cualquier cambio. Los problemas causados por un error de configuración pueden tardar más tiempo en revertirse según los cambios realizados. No se recomienda este método de enrutamiento, pero sí se admite.
@@ -42,7 +42,7 @@ Los dispositivos de Tor están configurados con una ruta estática predeterminad
 
 El enrutamiento estático solo se aplica a los vínculos superiores entre los conmutadores de Tor y de borde. El enrutamiento dinámico BGP se usa en el bastidor porque es una herramienta esencial para SLB y otros componentes, y no se puede deshabilitar ni quitar.
 
-![Enrutamiento estático](media/azure-stack-border-connectivity/static-routing.png)
+![Enrutamiento estático](media/azure-stack-border-connectivity/static-routing.svg)
 
 <sup>\*</sup> La red BMC es opcional después de la implementación.
 
@@ -58,7 +58,7 @@ Si el centro de datos requiere que todo el tráfico utilice un proxy, debe confi
 
 Un proxy transparente (también conocido como proxy interceptor, alineado o forzado) intercepta la comunicación normal en la capa de red sin requerir ninguna configuración especial del cliente. Los clientes no necesitan estar enterados de la existencia del proxy.
 
-![Proxy transparente](media/azure-stack-border-connectivity/transparent-proxy.png)
+![Proxy transparente](media/azure-stack-border-connectivity/transparent-proxy.svg)
 
 [No se admite](azure-stack-firewall.md#ssl-interception) la interceptación de tráfico SSL y puede provocar errores de servicio cuando se accede a los puntos de conexión. El tiempo de expiración máximo admitido para comunicarse con los puntos de conexión necesarios para la identidad es de 60 s con 3 reintentos.
 

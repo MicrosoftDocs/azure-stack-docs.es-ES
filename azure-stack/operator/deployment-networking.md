@@ -4,16 +4,16 @@ titleSuffix: Azure Stack Hub
 description: Obtenga información sobre el flujo de tráfico de red durante la implementación de Azure Stack Hub.
 author: IngridAtMicrosoft
 ms.topic: conceptual
-ms.date: 03/04/2020
+ms.date: 04/10/2020
 ms.author: inhenkel
 ms.reviewer: wamota
 ms.lastreviewed: 12/05/2019
-ms.openlocfilehash: b2acff92365cfd9904a033c381bf85ea843d6b30
-ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
+ms.openlocfilehash: a663544b21fee671e57483e13030639c7b5edd3b
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78366405"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81243785"
 ---
 # <a name="deployment-network-traffic"></a>Tráfico de red de implementación
 
@@ -21,7 +21,7 @@ Comprender cómo funciona el tráfico durante la implementación de Azure Stack 
 
 En esta ilustración se muestran todos los componentes y las conexiones que intervienen en el proceso de implementación:
 
-![Topología de red de implementación de Azure Stack Hub](media/deployment-networking/figure1.png)
+![Topología de red de implementación de Azure Stack Hub](media/deployment-networking/figure1.svg)
 
 > [!NOTE]
 > En este artículo se describen los requisitos para una implementación conectada. Para más información sobre otros métodos de implementación, consulte [Modelos de conexión de la implementación de Azure Stack Hub](azure-stack-connection-models.md).

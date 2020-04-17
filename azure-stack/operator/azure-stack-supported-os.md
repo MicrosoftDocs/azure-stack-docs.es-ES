@@ -9,10 +9,10 @@ ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 06/06/2019
 ms.openlocfilehash: a731c7c72f38fee0fb37fc8b82e55799d5b80d3b
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77696947"
 ---
 # <a name="guest-operating-systems-supported-on-azure-stack-hub"></a>Sistemas operativos invitados compatibles con Azure Stack Hub

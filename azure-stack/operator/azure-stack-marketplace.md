@@ -8,10 +8,10 @@ ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 05/07/2019
 ms.openlocfilehash: eeeda1d2b26ba6087e888ecd8ab847756c8e95fa
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77699021"
 ---
 # <a name="azure-stack-hub-marketplace-overview"></a>Introducción al Marketplace de Azure Stack Hub

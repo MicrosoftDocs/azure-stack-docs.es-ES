@@ -8,10 +8,10 @@ ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/20/2
 ms.openlocfilehash: 60f8ab926bb868517c7b9feeb1c5c4325212607c
-ms.sourcegitcommit: 1969a13d378cc3b8c58fea11dca8cf8c06136acd
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "80302815"
 ---
 # <a name="remove-the-mysql-resource-provider-in-azure-stack-hub"></a>Eliminación del proveedor de recursos MySQL en Azure Stack Hub

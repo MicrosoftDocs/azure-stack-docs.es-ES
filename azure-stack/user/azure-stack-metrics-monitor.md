@@ -7,10 +7,10 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.lastreviewed: 11/11/2019
 ms.openlocfilehash: 9bbe39f63a4b59446f5c8d6444381afc9ea89cc8
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77703934"
 ---
 # <a name="consume-monitoring-data-from-azure-stack-hub"></a>Consumo de datos de supervisión de Azure Stack Hub

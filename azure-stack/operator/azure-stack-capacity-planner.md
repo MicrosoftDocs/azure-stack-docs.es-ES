@@ -8,10 +8,10 @@ ms.author: inhenkel
 ms.reviewer: prchint
 ms.lastreviewed: 05/31/2019
 ms.openlocfilehash: 51b9530fdd67826616f6117c3c95dbe48b45303f
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77701655"
 ---
 # <a name="azure-stack-hub-capacity-planner"></a>Azure Stack Hub Capacity Planner

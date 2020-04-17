@@ -8,10 +8,10 @@ ms.author: mabrigg
 ms.reviewer: unknown
 ms.lastreviewed: 05/21/2019
 ms.openlocfilehash: ce9ee8a982ade764947af3c6e2fb2f880cefc217
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77702982"
 ---
 # <a name="develop-templates-for-azure-stack-hub-with-azure-resource-manager"></a>Desarrollo de plantillas para Azure Stack Hub con Azure Resource Manager

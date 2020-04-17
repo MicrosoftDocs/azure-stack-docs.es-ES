@@ -7,12 +7,12 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: rtiberiu
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 0a105730f36aa9ce14e967bcdcefdb93ece0f26b
-ms.sourcegitcommit: 4e1c948ae4a498bd730543b0704bbc2b0d88e1ec
+ms.openlocfilehash: 6656d4eec9eedda8bb037598d92b29a07b6a72a0
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77636291"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80806937"
 ---
 # <a name="vm-update-and-management-automation-in-azure-stack-hub"></a>Automatización de actualizaciones y administración de máquinas virtuales en Azure Stack Hub
 Use las siguientes características de solución de Azure Automation para administrar máquinas virtuales Windows y Linux que se implementan mediante Azure Stack Hub:
@@ -65,7 +65,7 @@ Como solución, Azure Monitor para VM permite supervisar el rendimiento y las de
 
 3. Mapa de dependencias que muestra los componentes interconectados con la VM de varios grupos de recursos y suscripciones.
 
-Una vez que se crea el área de trabajo de Log Analytics, habilite los contadores de rendimiento en el área de trabajo para la recopilación en máquinas virtuales Linux y Windows. Luego, instale y habilite las soluciones ServiceMap e InfrastructureInsights en el área de trabajo. El proceso se describe en la guía [Implementar Azure Monitor para VM](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-onboard#how-to-enable-azure-monitor-for-vms-preview).
+Una vez que se crea el área de trabajo de Log Analytics, habilite los contadores de rendimiento en el área de trabajo para la recopilación en máquinas virtuales Linux y Windows. Luego, instale y habilite las soluciones ServiceMap e InfrastructureInsights en el área de trabajo. El proceso se describe en la guía [Implementar Azure Monitor para VM](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-enable-overview).
 
 ### <a name="in-the-azure-stack-hub-administrator-portal"></a>En el portal del administrador de Azure Stack Hub
 Después de habilitar las soluciones de Azure Automation en Azure Portal, debe iniciar sesión en el portal del administrador de Azure Stack Hub como administrador en la nube y descargar las extensiones **Azure Monitor, Update and Configuration Management** y **Azure Monitor, Update and Configuration Management for Linux** de Marketplace de Azure Stack Hub.

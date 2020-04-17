@@ -8,10 +8,10 @@ ms.date: 1/22/2020
 ms.author: inhenkel
 ms.lastreviewed: 01/18/2019
 ms.openlocfilehash: 2d4085605fc37e95c3f68db074d4a517f5296a7a
-ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "78367920"
 ---
 # <a name="create-storage-accounts-in-azure-stack-hub"></a>Creación de cuentas de almacenamiento en Azure Stack Hub

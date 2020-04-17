@@ -9,10 +9,10 @@ ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/16/2019
 ms.openlocfilehash: 0d1e58fffc7bc5fcc6a2c54ad409752314d1d36b
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77697406"
 ---
 # <a name="create-sql-databases"></a>Creación de bases de datos SQL

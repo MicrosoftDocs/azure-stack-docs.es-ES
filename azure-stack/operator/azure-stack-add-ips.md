@@ -8,10 +8,10 @@ ms.author: justinha
 ms.reviewer: scottnap
 ms.lastreviewed: 09/10/2019
 ms.openlocfilehash: f17ef9fad4dd595d4a8d1e51b4efc3c0dd029bef
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77703373"
 ---
 # <a name="add-public-ip-addresses"></a>Incorporación de direcciones IP públicas

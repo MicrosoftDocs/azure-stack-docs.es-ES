@@ -6,10 +6,10 @@ ms.author: v-kedow
 ms.topic: article
 ms.date: 02/28/2020
 ms.openlocfilehash: 9ace3960b4c54461a4153c4997694e6d17ee4fd1
-ms.sourcegitcommit: a77dea675af6500bdad529106f5782d86bec6a34
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79026119"
 ---
 # <a name="fault-tolerance-and-storage-efficiency-in-azure-stack-hci"></a>Tolerancia a errores y eficacia del almacenamiento en Azure Stack HCI
@@ -97,7 +97,7 @@ La eficacia de almacenamiento de la paridad acelerada por reflejo se sitúa entr
 > [!IMPORTANT]
 > Se recomienda utilizar la creación de reflejo para la mayoría de las cargas de trabajo sensibles al rendimiento. Para más información sobre cómo equilibrar el rendimiento y la capacidad en función de la carga de trabajo, consulte [Planeamiento de volúmenes](/windows-server/storage/storage-spaces/plan-volumes#choosing-the-resiliency-type).
 
-## <a name="summary"></a>Resumen
+## <a name="summary"></a><a name="summary"></a>Resumen
 
 En esta sección se resumen los tipos de resistencia disponibles en Espacios de almacenamiento directo, los requisitos de escala mínimos para usar cada tipo, el número de errores que puede tolerar cada tipo y la eficacia de almacenamiento correspondiente.
 
@@ -166,7 +166,7 @@ En esta tabla se muestra la eficacia de almacenamiento de la paridad dual y los 
 |    15                 |    RS 6+2           |    75,0 %        |
 |    16                 |    LRC (12, 2, 1)   |    80,0 %        |
 
-## <a name="examples"></a>Ejemplos
+## <a name="examples"></a><a name="examples"></a>Ejemplos
 
 A menos que tenga solo dos servidores, se recomienda utilizar la creación de reflejo triple o la paridad dual, ya que ofrecen una mejor tolerancia a errores. En concreto, mantienen la seguridad y accesibilidad continua de todos los datos incluso cuando dos dominios de error (con Espacios de almacenamiento directo, esto significa dos servidores) se ven afectados por errores simultáneos.
 

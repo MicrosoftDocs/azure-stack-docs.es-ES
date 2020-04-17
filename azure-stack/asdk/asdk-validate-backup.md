@@ -8,10 +8,10 @@ ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 03/11/2020
 ms.openlocfilehash: 268bef58cb4176909ec6a13029324b18de75b52d
-ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "79512021"
 ---
 # <a name="use-the-asdk-to-validate-an-azure-stack-backup"></a>Uso del ASDK para validar una copia de seguridad de Azure Stack
@@ -41,7 +41,7 @@ El escenario siguiente **no** se admite al validar las copias de seguridad en el
 ## <a name="cloud-recovery-deployment"></a>Implementación de la recuperación en la nube
 Las copias de seguridad de infraestructura de la implementación de sistemas integrados se pueden validar mediante la realización de una implementación de recuperación en la nube del ASDK. En este tipo de implementación, los datos de servicio específicos se restauran a partir de la copia de seguridad después de instalar el ASDK en el equipo host.
 
-### <a name="prereqs"></a>Requisitos previos de recuperación en la nube
+### <a name="cloud-recovery-prerequisites"></a><a name="prereqs"></a>Requisitos previos de recuperación en la nube
 Antes de iniciar una implementación de recuperación en la nube del ASDK, asegúrese de que tiene la siguiente información:
 
 **Requisitos del instalador de la interfaz de usuario**
