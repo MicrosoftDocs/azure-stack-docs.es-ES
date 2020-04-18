@@ -7,13 +7,13 @@ metadata:
   ms.topic: landing-page
   author: khdownie
   ms.author: v-kedow
-  ms.date: 04/09/2020
-  ms.openlocfilehash: d5a67973b2d9cd2be83346c97f7c5b0de58cbb44
-  ms.sourcegitcommit: bdd4d529bd3e115a9f76eece62b1613448d5d020
+  ms.date: 04/17/2020
+  ms.openlocfilehash: f277947b8de05c0a038c01bf9ab994510aa95b4f
+  ms.sourcegitcommit: 355e21dd9b8c3f44e14abaae0b4f176443cf7495
   ms.translationtype: HT
   ms.contentlocale: es-ES
-  ms.lasthandoff: 04/14/2020
-  ms.locfileid: "81119215"
+  ms.lasthandoff: 04/17/2020
+  ms.locfileid: "81624965"
 landingContent:
 - title: Acerca de Azure Stack HCI
   linkLists:
@@ -23,8 +23,8 @@ landingContent:
       url: overview.md
   - linkListType: get-started
     links:
-    - text: Catálogo de Azure Stack HCI
-      url: https://www.microsoft.com/cloud-platform/azure-stack-hci-catalog
+    - text: Uso de Azure Stack HCl con Windows Admin Center
+      url: get-started.md
 - title: Administración de Azure Stack HCI
   linkLists:
   - linkListType: how-to-guide
