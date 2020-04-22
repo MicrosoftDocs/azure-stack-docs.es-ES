@@ -1,22 +1,22 @@
 ---
-title: Ejemplos de soluciones y patrones híbridos de Azure y Azure Stack
-description: Información general sobre ejemplos de soluciones y patrones híbridos que resulta útil para aprender y compilar soluciones híbridas en Azure y Azure Stack.
+title: Ejemplos de soluciones y patrones híbridos de Azure y Azure Stack Hub
+description: Información general sobre ejemplos de soluciones y patrones híbridos para aprender y compilar soluciones híbridas en Azure y Azure Stack Hub.
 author: BryanLa
 ms.topic: overview
 ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 5603c986c55454ce1d4cbb6aa3930579ad997d71
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: d56957c139728898117eab5f8a3a35c98722c0d2
+ms.sourcegitcommit: 4138a2a15f78e7db38b3a29acc963a71937146fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77689756"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "80812312"
 ---
 # <a name="hybrid-patterns-and-solution-examples-for-azure-and-azure-stack"></a>Ejemplos de soluciones y patrones híbridos de Azure y Azure Stack
 
-Microsoft proporciona soluciones y productos de Azure y Azure Stack como un ecosistema coherente de Azure. La familia de productos de Microsoft Azure Stack es una extensión de Azure. 
+Microsoft proporciona soluciones y productos de Azure y Azure Stack como un ecosistema coherente de Azure. La familia de productos de Microsoft Azure Stack es una extensión de Azure.
 
 ## <a name="the-hybrid-cloud-and-hybrid-apps"></a>Nube híbrida y aplicaciones híbridas
 
@@ -38,11 +38,11 @@ Los patrones de diseño ofrecen guías de diseño repetibles y generalizadas a p
 Hay dos tipos de artículos sobre patrones:
 
 - Patrón único: proporciona una guía de diseño para un único escenario de uso general.
-- Varios patrones: proporciona una guía de diseño en la que se usa la aplicación de varios patrones. Esto suele ser necesario para resolver escenarios más complejos o problemas específicos del sector.
+- Varios patrones: proporciona una guía de diseño en la que se usa la aplicación de varios patrones. Este patrón suele ser necesario para resolver escenarios más complejos o problemas específicos del sector.
 
 ## <a name="solution-deployment-guides"></a>Guías de implementación de soluciones
 
-Las guías de implementación paso a paso ayudan en la implementación de una solución de ejemplo. La guía también puede hacer referencia a un ejemplo de código complementario que está almacenado en el [repositorio de soluciones de ejemplo](https://github.com/Azure-Samples/azure-intelligent-edge-patterns) de GitHub. 
+Las guías de implementación paso a paso ayudan en la implementación de una solución de ejemplo. La guía también puede hacer referencia a un ejemplo de código complementario que está almacenado en el [repositorio de soluciones de ejemplo](https://github.com/Azure-Samples/azure-intelligent-edge-patterns) de GitHub.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
