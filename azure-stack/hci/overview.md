@@ -1,56 +1,53 @@
 ---
-title: Introducción a Azure Stack HCI
-description: Azure Stack HCI es un clúster de Windows Server 2019 hiperconvergido que usa hardware validado para ejecutar cargas de trabajo virtualizadas en el entorno local. Opcionalmente, también puede conectarse a servicios de Azure para las copias de seguridad basadas en la nube, la recuperación del sitio, etc. Las soluciones de Azure Stack HCI usan hardware validado por Microsoft para garantizar una confiabilidad y un rendimiento óptimos e incluyen compatibilidad con tecnologías como unidades de NVMe, memoria persistente y acceso directo a memoria remota (RDMA).
+title: Introducción a las soluciones de Azure Stack HCI
+description: Introducción a las soluciones de Azure Stack HCI
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 11/04/2019
-ms.openlocfilehash: cf2de02020eb7e05eedc4df605316ad35e1f401f
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 3b08b5e65c0cff4ab82494261fb1663b16bf757d
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77690113"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80812414"
 ---
-# <a name="azure-stack-hci-overview"></a>Introducción a Azure Stack HCI
+# <a name="azure-stack-hci-solutions-overview"></a>Introducción a las soluciones de Azure Stack HCI
 
-Azure Stack HCI es un clúster de Windows Server 2019 hiperconvergido que usa hardware validado para ejecutar cargas de trabajo virtualizadas en el entorno local. Opcionalmente, también puede conectarse a servicios de Azure para las copias de seguridad basadas en la nube, la recuperación del sitio, etc. Las soluciones de Azure Stack HCI usan hardware validado por Microsoft para garantizar una confiabilidad y un rendimiento óptimos e incluyen compatibilidad con tecnologías como unidades de NVMe, memoria persistente y acceso directo a memoria remota (RDMA).
+Azure Stack HCI es un clúster de Windows Server 2019 hiperconvergido que usa hardware validado para ejecutar cargas de trabajo virtualizadas en el entorno local. Opcionalmente, también puede conectarse a servicios de Azure para las copias de seguridad basadas en la nube, la recuperación del sitio, etc. Las soluciones de Azure Stack HCI usan hardware validado por Microsoft para garantizar un rendimiento y una confiabilidad óptimos. Las soluciones incluyen compatibilidad con tecnologías como las unidades de NVMe, la memoria persistente y la red de acceso directo a memoria remota (RDMA).
 
 Azure Stack HCI es una solución que combina varios productos:
 
 - Hardware de un asociado de OEM
-
 - Windows Server 2019 Datacenter Edition
-
 - Windows Admin Center
-
 - Servicios de Azure (opcionales)
 
-![Azure Stack HCI es la solución hiperconvergida de Microsoft disponible en una amplia variedad de asociados de hardware.](media/overview/azure-stack-hci-solution.png)
+![Solución Azure Stack HCI](media/overview/azure-stack-hci-solution.png)
 
-Azure Stack HCI es la solución hiperconvergida de Microsoft disponible en una amplia variedad de asociados de hardware. Tenga en cuenta los siguientes escenarios para una solución hiperconvergida para ayudarle a determinar si Azure Stack HCI es la solución más adecuada para sus necesidades:
+Azure Stack HCI es la solución hiperconvergida de Microsoft disponible desde una amplia variedad de asociados de hardware. Tenga en cuenta los siguientes escenarios para una solución hiperconvergida para ayudarle a determinar si Azure Stack HCI es la solución más adecuada para sus necesidades:
 
 - **Actualice el hardware anticuado.** Reemplace los antiguos servidores e infraestructura de almacenamiento y ejecute máquinas virtuales Windows y Linux en el entorno local y en el perímetro con las herramientas y aptitudes de TI existentes.
 
 - **Consolidar cargas de trabajo virtualizadas.** Consolide las aplicaciones heredadas en una infraestructura eficaz e hiperconvergida. Aproveche los mismos tipos de eficiencia en la nube utilizada para ejecutar los centros de datos a gran escala, como Microsoft Azure.
 
-- **Conéctese a Azure para obtener servicios en la nube híbrida.** Simplifique el acceso a los servicios de seguridad y administración en la nube de Azure, incluida la copia de seguridad fuera del sitio, la de sitios, la supervisión basada en la nube, etc.
+- **Conéctese a Azure para obtener servicios en la nube híbrida.** Simplifique el acceso a los servicios de seguridad y administración en la nube de Azure, incluida la copia de seguridad fuera del sitio, Site Recovery, la supervisión basada en la nube, etc.
 
 ## <a name="the-azure-stack-family"></a>La familia Azure Stack
 
-Azure Stack HCI forma parte de Azure y la familia de Azure Stack, ya que usa los mismos procesos definidos por software, almacenamiento y software de red que Azure Stack Hub. A continuación se muestra un resumen rápido de las distintas soluciones (para más información, consulte [Diferencias entre Azure global, Azure Stack y Azure Stack HCI](../operator/compare-azure-azure-stack.md)):
+Azure Stack HCI forma parte de Azure y la familia de Azure Stack, ya que usa los mismos procesos definidos por software, almacenamiento y software de red que Azure Stack Hub. A continuación se incluye un breve resumen de las distintas soluciones. Para más información, consulte [Diferencias entre Azure global, Azure Stack y Azure Stack HCI](../operator/compare-azure-azure-stack.md).
 
 - [Azure](https://azure.microsoft.com): use los servicios en la nube pública para que los recursos informáticos a petición y de autoservicio migren y modernicen las aplicaciones existentes y compilen nuevas aplicaciones nativas en la nube.
 - [Azure Stack Edge](https://docs.microsoft.com/azure/databox-online/data-box-edge-overview): acelere las cargas de trabajo de aprendizaje automático y ejecute aplicaciones en contenedores o cargas de trabajo virtualizadas en el entorno local, en un dispositivo administrado en la nube.
 - [Azure Stack HCI](https://azure.microsoft.com/overview/azure-stack/hci): ejecute aplicaciones virtualizadas en el entorno local, reemplace y consolide la infraestructura de servidor anticuada y conéctese a Azure para acceder a servicios en la nube.
 - [Azure Stack Hub](../operator/azure-stack-overview.md): ejecute aplicaciones en la nube en el entorno local sin conexión o para cumplir los requisitos normativos mediante servicios de Azure coherentes.
 
-![Azure Stack Edge es una aplicación administrada en la nube para ejecutar aplicaciones de aprendizaje automático y en contenedores en el perímetro, Azure Stack HCl es una solución hiperconvergida para la ejecución de máquinas virtuales y almacenamiento en el entorno local, mientras que Azure Stack Hub proporciona servicios coherentes con Azure y nativos de la nube en el entorno local.](media/overview/azure-family.png)
+![Azure, Azure Stack y Azure Stack HCI](media/overview/azure-family.png)
 
 Para obtener más información:
 
-- Obtenga más información en nuestro sitio web de soluciones de [Azure Stack HCI](https://azure.microsoft.com/overview/azure-stack/hci).
+- Consulte nuestro sitio web de soluciones de [Azure Stack HCI](https://azure.microsoft.com/overview/azure-stack/hci).
 - Vea a los expertos de Microsoft Jeff Woolsey y Vijay Tewari explicar las [nuevas soluciones de Azure Stack HCI](https://aka.ms/AzureStackOverviewVideo).
 
 ## <a name="hyperconverged-efficiencies"></a>Eficiencias hiperconvergidas
@@ -59,24 +56,18 @@ Las soluciones de Azure Stack HCI reúnen un proceso, almacenamiento y redes al
 
 Obtenga un rendimiento de la máquina virtual líder del sector para sus aplicaciones de servidor con Hyper-V, la tecnología de hipervisor de base de la nube de Microsoft y la tecnología Espacios de almacenamiento directo, con compatibilidad integrada para NVMe, memoria persistente y redes de acceso directo a memoria remota (RDMA).
 
-Contribuya a proteger las aplicaciones y los datos con máquinas virtuales protegidas, microsegmentación de red y cifrado nativo.
+Contribuya a proteger las aplicaciones y los datos con máquinas virtuales blindadas, microsegmentación de red y cifrado nativo.
 
 ## <a name="hybrid-capabilities"></a>Funcionalidades híbridas
 
 Puede aprovechar las ventajas de combinar las funcionalidades en la nube con las del entorno local mediante una plataforma de infraestructura hiperconvergida en la nube pública. El equipo puede empezar a desarrollar aptitudes en la nube con la integración incorporada a los servicios de administración de infraestructuras de Azure:
 
 - Azure Site Recovery para la alta disponibilidad y recuperación ante desastres como servicio (DRaaS).
-
 - Azure Monitor, una central centralizada para realizar un seguimiento de lo que sucede en sus aplicaciones, red e infraestructura, con análisis avanzados con tecnología de inteligencia artificial.
-
 - Testigo en la nube, para usar Azure como ligero desempate para el cuórum de clúster.
-
 - Azure Backup para la protección de datos sin conexión y para proteger frente al ransomware.
-
 - Azure Update Management para la evaluación de la actualización y las implementaciones de actualización para VM Windows que se ejecutan en Azure y en el entorno local.
-
 - Adaptador de red de Azure para conectar recursos en el entorno local con sus máquinas virtuales en Azure a través de una VPN de punto a sitio.
-
 - Sincronización del servidor de archivos con la nube mediante Azure File Sync.
 
 Para obtener más información, consulte [Connecting Windows Server to Azure hybrid services](https://docs.microsoft.com/windows-server/manage/windows-admin-center/azure/index) (Conexión de Windows Server a los servicios híbridos de Azure).
@@ -104,7 +95,7 @@ Si decide usar System Center para implementar y administrar su infraestructura,
 
 Puede adquirir soluciones de Azure Stack HCI validadas que ejecutan Windows Server 2019 de veinte asociados. Su asociado de Microsoft preferido puede prepararlo todo sin tener que pasar por un largo tiempo de diseño y compilación. También ofrecen un único punto de contacto para los servicios de implementación y soporte técnico.
 
-Visite el [sitio web de Azure Stack HCI](https://azure.microsoft.com/overview/azure-stack/hci) para ver las más de 70 soluciones de Azure Stack HCI actualmente disponibles de estos asociados de Microsoft: ASUS, Axellio, bluechip, DataON, Dell EMC, Fujitsu, HPE, Hitachi, Huawei, Lenovo, NEC, primeLine Solutions, QCT, SecureGUARD y Supermicro.
+Visite el [sitio web de Azure Stack HCI](https://azure.microsoft.com/overview/azure-stack/hci) para ver las más de 70 soluciones de Azure Stack HCI actualmente disponibles de estos asociados de Microsoft: ASUS, Axellio, Blue Chip, DataON, Dell EMC, Fujitsu, HPE, Hitachi, Huawei, Lenovo, NEC, primeLine Solutions, QCT, SecureGUARD y Supermicro.
 
 ## <a name="video-based-learning"></a>Aprendizaje basado en vídeos
 
@@ -130,7 +121,7 @@ Las soluciones de Azure Stack HCI presentan las mismas tecnologías de proceso, 
 
 ### <a name="how-are-they-different"></a>¿En qué se diferencian?
 
-Con Azure Stack Hub, ejecuta servicios en la nube en el entorno local. Puede ejecutar servicios Azure IaaS y PaaS en el entorno local para compilar y ejecutar de forma coherente aplicaciones en la nube en cualquier lugar, administrados desde Azure Portal en el entorno local.
+Con Azure Stack Hub, ejecuta servicios en la nube en el entorno local. Puede ejecutar servicios de IaaS y PaaS de Azure en el entorno local para compilar y ejecutar de forma coherente aplicaciones en la nube en cualquier lugar, administrados desde Azure Portal en el entorno local.
 
 Con Azure Stack HCI, ejecuta cargas de trabajo virtualizadas en el entorno local, administradas con Windows Admin Center y herramientas familiares de Windows Server. Opcionalmente, puede conectarse a Azure para los escenarios híbridos, como la recuperación del sitio basada en la nube, la supervisión, etc.
 
@@ -148,7 +139,7 @@ No, es opcional. Puede aprovechar la integración con Azure para escenarios híb
 
 Windows Server 2019 es la base de casi cualquier producto de Azure. Todas las características que valora aún están disponibles y se admitirán en Windows Server. Azure Stack HCI es la manera recomendada de implementar HCI en el entorno local mediante el hardware de nuestros asociados validado por Microsoft.
 
-### <a name="can-i-upgrade-from-azure-stack-hci-to-azure-stack-hub"></a>¿Puedo actualizar de Azure Stack HCI a Azure Stack Hub? 
+### <a name="can-i-upgrade-from-azure-stack-hci-to-azure-stack-hub"></a>¿Puedo actualizar de Azure Stack HCI a Azure Stack Hub?
 
 No, pero los clientes pueden migrar sus cargas de trabajo de Azure Stack HCI a Azure Stack Hub o Azure.
 
@@ -156,7 +147,7 @@ No, pero los clientes pueden migrar sus cargas de trabajo de Azure Stack HCI a 
 
 Para una lista actualizada de los servicios de Azure a los que puede conectar Azure Stack HCI, consulte [Connecting Windows Server to Azure hybrid services](https://docs.microsoft.com/windows-server/manage/windows-admin-center/azure/index) (Conexión de Windows Server a los servicios híbridos de Azure).
 
-### <a name="how-does-the-cost-of-azure-stack-hci-compare-to-azure-stack-hub"></a>¿Cuál es la diferencia entre Azure Stack HCI y Azure Stack Hub en relación con el costo? 
+### <a name="how-does-the-cost-of-azure-stack-hci-compare-to-azure-stack-hub"></a>¿Cuál es la diferencia entre Azure Stack HCI y Azure Stack Hub en relación con el costo?
 
 Azure Stack Hub se vende como sistema completamente integrado que incluye servicios y soporte técnico. Se puede comprar Azure Stack Hub como un sistema administrado por usted o como un servicio completamente administrado en nuestros asociados. Además del sistema base, los servicios de Azure que se ejecutan en Azure Stack Hub o Azure se venden conforme al principio del pago por uso.
 
@@ -167,14 +158,14 @@ Las soluciones de Azure Stack HCI siguen el modelo de compra tradicional. Puede 
 Siga estos pasos:
 
 1. Compre un sistema de hardware validado por Microsoft a su asociado de hardware preferido.
-1. Instale la edición Windows Server 2019 Datacenter y Windows Admin Center para la administración y la capacidad de conectarse a Azure para los servicios en la nube.
+1. Instale la edición Windows Server 2019 Datacenter y Windows Admin Center para la administración y la capacidad de conectarse a Azure para los servicios en la nube.
 1. Opcionalmente, puede usar su cuenta de Azure a fin de asociar los servicios de administración y seguridad basados en la nube a sus cargas de trabajo.
 
-![Para comprar soluciones de Azure Stack HCI, elija los asociados de hardware y la configuración que mejor se adapte a sus necesidades.](media/overview/buying-azure-stack-hci.png)
+![Pasos para comprar las soluciones de Azure Stack HCI](media/overview/buying-azure-stack-hci.png)
 
 ## <a name="compare-azure-stack-hub-and-azure-stack-hci"></a>Comparación entre Azure Stack Hub y Azure Stack HCI
 
-A medida que la organización se transforma digitalmente, puede que se dé cuenta de que puede avanzar más rápido utilizando los servicios de la nube pública para compilar soluciones en arquitecturas modernas y actualizar aplicaciones heredadas. Sin embargo, por motivos que incluyen obstáculos tecnológicos y normativos, las cargas de trabajo deben permanecer en el entorno local. La tabla siguiente le ayuda a determinar qué estrategia de nube híbrida de Microsoft proporciona lo que necesita cuando lo necesita, lo que ofrece innovación para cargas de trabajo, estén donde estén.
+A medida que la organización se transforma digitalmente, puede que se dé cuenta de que puede avanzar más rápido con el uso de los servicios de la nube pública para compilar soluciones en arquitecturas modernas y actualizar aplicaciones heredadas. Sin embargo, por motivos que incluyen obstáculos tecnológicos y normativos, las cargas de trabajo deben permanecer en el entorno local. La tabla siguiente le ayuda a determinar qué estrategia de nube híbrida de Microsoft proporciona lo que necesita cuando lo necesita, lo que ofrece innovación para cargas de trabajo, estén donde estén.
 
 | Azure Stack Hub | Azure Stack HCI |
 | --------------- | --------------- |

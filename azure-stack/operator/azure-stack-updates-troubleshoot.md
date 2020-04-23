@@ -3,28 +3,27 @@ title: Solución de problemas de las actualizaciones de Azure Stack Hub
 description: Como operador de Azure Stack Hub, obtenga información sobre cómo resolver problemas con la actualización para que Azure Stack Hub pueda volver a trabajar lo más rápido posible.
 author: IngridAtMicrosoft
 ms.topic: how-to
-ms.date: 03/04/2020
+ms.date: 04/06/2020
 ms.author: inhenkel
 ms.lastreviewed: 09/23/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 6cf5d83b9fdf71ba68506c760112635910d26eb3
-ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
+ms.openlocfilehash: 79512b70641626f6e7cc99eb7e92aa0a20f368fb
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79512322"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80682149"
 ---
 # <a name="best-practices-for-troubleshooting-azure-stack-hub-patch-and-update-issues"></a>Procedimientos recomendados para la solución de problemas de revisión y actualización de Azure Stack Hub
 
 En este artículo se proporciona una introducción sobre los procedimientos recomendados para solucionar problemas relacionados con la revisión y actualización de Azure Stack Hub, así como las soluciones correspondientes.
-
 
 El proceso de revisión y actualización de Azure Stack Hub está diseñado para permitir a los operadores aplicar paquetes de actualización de una manera coherente y simplificada. Aunque es poco frecuente, pueden producirse problemas durante la revisión y actualización. Se recomiendan los siguientes pasos en caso de que se produzca un problema durante el proceso de revisión y actualización:
 
 0. **Requisitos previos**: Asegúrese de que ha seguido la [lista de comprobación de actividades de actualización](release-notes-checklist.md) y de que ha [configurado la recopilación automática de registros](azure-stack-configure-automatic-diagnostic-log-collection-tzl.md).
 1. Siga los pasos de corrección de la alerta de error que se crea cuando se produce un error en la actualización.
 2. Revise los [problemas habituales de revisión y actualización de Azure Stack Hub](#common-azure-stack-hub-patch-and-update-issues) y realice las acciones recomendadas si aparece su problema.
-3. Si no ha podido resolver el problema con los pasos anteriores, cree una [incidencia de soporte técnico de Azure Stack Hub](azure-stack-help-and-support-overview-tzl.md). Asegúrese de que ha [recopilado los registros](https://docs.microsoft.com/azure-stack/operator/azure-stack-configure-on-demand-diagnostic-log-collection) del intervalo de tiempo en el que se produjo el problema.
+3. Si no ha podido resolver el problema con los pasos anteriores, cree una [incidencia de soporte técnico de Azure Stack Hub](azure-stack-help-and-support-overview-tzl.md). Asegúrese de que ha [recopilado los registros](azure-stack-configure-on-demand-diagnostic-log-collection-portal-tzl.md) del intervalo de tiempo en el que se produjo el problema.
 
 ## <a name="common-azure-stack-hub-patch-and-update-issues"></a>Problemas habituales de revisión y actualización de Azure Stack Hub
 

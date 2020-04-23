@@ -3,16 +3,16 @@ title: Conexión de Azure Stack Hub a Azure mediante VPN
 description: Cómo conectar redes virtuales en Azure Stack Hub a redes virtuales en Azure mediante VPN.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 01/22/2020
+ms.date: 04/07/2020
 ms.author: sethm
 ms.reviewer: scottnap
 ms.lastreviewed: 10/24/2019
-ms.openlocfilehash: 13ac78c3f0a665e4319db4d3bf70b0274b5b8dd5
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: c745325c720ed37f93b12fee844a6ebc0b829cca
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77704376"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80812448"
 ---
 # <a name="connect-azure-stack-hub-to-azure-using-vpn"></a>Conexión de Azure Stack Hub a Azure mediante VPN
 
@@ -112,6 +112,25 @@ En primer lugar, cree los recursos de red para Azure. Las instrucciones siguient
    >Si usa otro valor diferente para la clave compartida, recuerde que tiene que coincidir con el valor de la clave compartida que creó en el otro extremo de la conexión.
 
 10. Revise la sección **Resumen** y, a continuación, seleccione **Aceptar**.
+
+## <a name="create-a-custom-ipsec-policy"></a>Creación de una directiva de IPsec personalizada
+
+Puesto que los parámetros predeterminados de Azure Stack Hub para directivas de IPSec han cambiado en las [compilaciones 1910 y posteriores](azure-stack-vpn-gateway-settings.md#ipsecike-parameters), se necesita una directiva de IPSec personalizada para que Azure coincida con Azure Stack Hub.
+
+1. Cree una directiva personalizada:
+
+   ```powershell
+     $IPSecPolicy = New-AzIpsecPolicy -IkeEncryption AES256 -IkeIntegrity SHA384 -DhGroup ECP384  `
+     -IpsecEncryption GCMAES256 -IpsecIntegrity GCMAES256 -PfsGroup ECP384 -SALifeTimeSeconds 27000 `
+     -SADataSizeKilobytes 102400000 
+   ```
+
+2. Aplique la directiva a la conexión:
+
+   ```powershell
+   $Connection = Get-AzVirtualNetworkGatewayConnection -Name myTunnel -ResourceGroupName myRG
+   Set-AzVirtualNetworkGatewayConnection -IpsecPolicies $IPSecPolicy -VirtualNetworkGatewayConnection $Connection
+   ```
 
 ## <a name="create-a-vm"></a>Crear una VM
 

@@ -3,18 +3,18 @@ title: Instalación del módulo AzureRM de PowerShell para Azure Stack Hub
 description: Aprenda a instalar PowerShell para Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 1/22/2020
+ms.date: 04/14/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 09/19/2019
-ms.openlocfilehash: b362ab1e4c555ae4de5be0feecd19d8cc8e6654a
-ms.sourcegitcommit: 17be49181c8ec55e01d7a55c441afe169627d268
+ms.lastreviewed: 04/14/2020
+ms.openlocfilehash: 937a3610891a2ec532e5c95bc60a9b9c5a8cc684
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80069437"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81395008"
 ---
-# <a name="install-powershell-azurerm-module-for-azure-stack-hub"></a>Instalación del módulo AzureRM de PowerShell para Azure Stack Hub
+# <a name="install-powershell-azurerm-or-az-module-for-azure-stack-hub"></a>Instalación del módulo AzureRM o del módulo Az de PowerShell para Azure Stack Hub
 
 AzureRM de Azure PowerShell ofrece un conjunto de cmdlets que usan el modelo de Azure Resource Manager para administrar los recursos de Azure Stack Hub.
 
@@ -49,7 +49,7 @@ Confirme si PSGallery está registrado como repositorio.
 Abra un símbolo de sistema de PowerShell con privilegios elevados y ejecute los siguientes cmdlet:
 
 ```powershell
-Install-module -Name PowerShellGet -Force 
+Install-module -Name PowerShellGet -Force
 Import-Module -Name PackageManagement -ErrorAction Stop
 Get-PSRepository -Name "PSGallery"
 ```
@@ -65,16 +65,17 @@ Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
 
 Antes de instalar la versión requerida, asegúrese de desinstalar los módulos de PowerShell de Azure Stack Hub AzureRM instalados previamente. Desinstale los módulos mediante uno de los dos métodos siguientes:
 
-1. Para desinstalar los módulos de PowerShell de AzureRM existentes, cierre todas las sesiones de PowerShell activas y ejecute los siguientes cmdlets:
+1. Para desinstalar los módulos de PowerShell AzureRM y Az existentes, cierre todas las sesiones de PowerShell activas y ejecute los siguientes cmdlets:
 
     ```powershell
-    Get-Module -Name Azs.* -ListAvailable | Uninstall-Module -Force -Verbose
-    Get-Module -Name Azure* -ListAvailable | Uninstall-Module -Force -Verbose
+    Get-Module -Name Azure* -ListAvailable | Uninstall-Module -Force -Verbose -ErrorAction Continue
+    Get-Module -Name Azs.* -ListAvailable | Uninstall-Module -Force -Verbose -ErrorAction Continue
+    Get-Module -Name Az.* -ListAvailable | Uninstall-Module -Force -Verbose -ErrorAction Continue
     ```
 
     Si se produce algún error, como "el módulo ya se está utilizando", cierre las sesiones de PowerShell que usan los módulos y vuelva a ejecutar el script anterior.
 
-2. Elimine todas las carpetas que empiecen con `Azure` o `Azs.` de las carpetas `C:\Program Files\WindowsPowerShell\Modules` y `C:\Users\{yourusername}\Documents\WindowsPowerShell\Modules`. Al eliminar estas carpetas se quitan todos los módulos de PowerShell existentes.
+2. Elimine todas las carpetas que empiecen con `Azure`, `Az` o `Azs.` de las carpetas `C:\Program Files\WindowsPowerShell\Modules` y `C:\Users\{yourusername}\Documents\WindowsPowerShell\Modules`. Al eliminar estas carpetas se quitan todos los módulos de PowerShell existentes.
 
 ## <a name="4-connected-install-powershell-for-azure-stack-hub-with-internet-connectivity"></a>4. Escenario conectado: Instalación de PowerShell para Azure Stack Hub con conectividad a Internet
 
@@ -86,6 +87,10 @@ Ejecute el siguiente script de PowerShell para instalar estos módulos en la est
 
 ::: moniker range=">=azs-2002"
 Para Azure Stack Hub 2002 o una versión posterior:
+
+Puede usar los módulos AzureRM o Az en versión preliminar. El uso de los módulos Az requiere Azure Stack Hub 2002 y la revisión más reciente.
+
+Para usar los módulos Az en versión preliminar, siga las instrucciones descritas en [Instalación del módulo Az de PowerShell](powershell-install-az-module.md).
 
 ```powershell  
 # Install the AzureRM.BootStrapper module. Select Yes when prompted to install NuGet
@@ -139,7 +144,7 @@ Get-Module -Name "Azure*" -ListAvailable
 Get-Module -Name "Azs*" -ListAvailable
 ```
 
-Si la instalación es correcta, los módulos `AzureAz` y `AzureStack` se muestran en la salida.
+Si la instalación es correcta, los módulos `AzureRm` y `AzureStack` se muestran en la salida.
 
 ## <a name="5-disconnected-install-powershell-without-an-internet-connection"></a>5. Escenario desconectado: Instalación de PowerShell sin una conexión a Internet
 
@@ -159,6 +164,8 @@ La instalación consta de cinco pasos:
 
 ::: moniker range=">=azs-2002"
 Azure Stack Hub 2002 o una versión posterior.
+
+Puede usar los módulos AzureRM o Az en versión preliminar. Para los módulos Az, siga las instrucciones descritas en [Instalación del módulo Az de PowerShell](powershell-install-az-module.md).
 
 ```powershell
 

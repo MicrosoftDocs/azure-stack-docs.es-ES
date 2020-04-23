@@ -3,16 +3,16 @@ title: Notas de la versión del Kit de desarrollo de Azure Stack
 description: Mejoras, correcciones y problemas conocidos del Kit de desarrollo de Azure Stack (ASDK).
 author: sethmanheim
 ms.topic: article
-ms.date: 03/20/2020
+ms.date: 04/06/2020
 ms.author: sethm
 ms.reviewer: misainat
 ms.lastreviewed: 03/18/2020
-ms.openlocfilehash: 32b4bfb500a9717f99085fe0759297f999244bbb
-ms.sourcegitcommit: 961e3b1fae32d7f9567359fa3f7cb13cdc37e28e
+ms.openlocfilehash: bbe37512d943a45b5981f4e862f55440ade3b08f
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80152231"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80806710"
 ---
 # <a name="asdk-release-notes"></a>Notas de la versión del Kit de desarrollo de Azure Stack
 
@@ -32,6 +32,11 @@ Para estar al día de las novedades del ASDK, suscríbase a la [![RSS](./media/a
 - La contraseña de certificación del descifrado es una nueva opción para especificar la contraseña para el certificado autofirmado (.pfx) que contiene la clave privada necesaria para descifrar los datos de copia de seguridad. Esta contraseña solo es necesaria si la copia de seguridad se cifra mediante un certificado.
 - Para obtener una lista de problemas conocidos de Azure Stack en esta versión, consulte el artículo [Problemas conocidos](../operator/known-issues.md).
 - Tenga en cuenta que las revisiones disponibles de Azure Stack no son aplicables al ASDK.
+
+#### <a name="sql-vm-provision-fails-in-asdk"></a>Error de aprovisionamiento de máquina virtual SQL en ASDK
+
+- Aplicable a: Este problema se aplica a ASDK 2002.
+- Causa: al crear una nueva máquina virtual de SQL en ASDK 2002, puede recibir un mensaje de error **No se encontró la extensión con el editor "Microsoft.SqlServer.Management ", el tipo "SqlIaaSAgent" y la versión del controlador de tipo "2.0" en el repositorio de extensiones**. No hay ningún **SqlIaaSAgent** 2.0 en Azure Stack Hub.
 ::: moniker-end
 
 ::: moniker range="azs-1910"
@@ -60,7 +65,7 @@ Para estar al día de las novedades del ASDK, suscríbase a la [![RSS](./media/a
 
 ### <a name="new-features"></a>Nuevas características
 
-- Para obtener una lista de las nuevas características de esta versión, consulte [esta sección](/azure-stack/operator/release-notes?view=azs-1908#whats-new-1) de las notas de la versión de Azure Stack.
+- Para obtener una lista de las nuevas características de esta versión, consulte [esta sección](/azure-stack/operator/release-notes?view=azs-1908#whats-new-2) de las notas de la versión de Azure Stack.
 
 <!-- ### Changes -->
 
@@ -83,7 +88,7 @@ Para estar al día de las novedades del ASDK, suscríbase a la [![RSS](./media/a
 ### <a name="fixed-and-known-issues"></a>Problemas conocidos y resueltos
 
 - Al crear recursos de VM con algunas imágenes de Marketplace, es posible que no pueda completar la implementación. Como solución alternativa, puede hacer clic en el enlace **Descargar plantilla y parámetros** en la página **Resumen** y haga clic en el botón **Implementar** de la hoja **Plantilla**.
-- Para ver una lista de los problemas de Azure Stack resueltos en esta versión, consulte [esta sección](/azure-stack/operator/release-notes?view=azs-1907#fixes-2) de las notas de la versión de Azure Stack.
+- Para ver una lista de los problemas de Azure Stack resueltos en esta versión, consulte [esta sección](/azure-stack/operator/release-notes?view=azs-1907#fixes-3) de las notas de la versión de Azure Stack.
 - Para ver una lista de problemas conocidos, consulte [este artículo](/azure-stack/operator/known-issues?view=azs-1907).
-- Tenga en cuenta que [las revisiones disponibles de Azure Stack](/azure-stack/operator/release-notes?view=azs-1907#hotfixes-2) no son aplicables a Azure Stack ASDK.
+- Tenga en cuenta que [las revisiones disponibles de Azure Stack](/azure-stack/operator/release-notes?view=azs-1907#hotfixes-3) no son aplicables a Azure Stack ASDK.
 ::: moniker-end

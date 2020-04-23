@@ -2,18 +2,18 @@
 title: Aspectos básicos de la administración de Azure Stack Hub
 titleSuffix: Azure Stack Hub
 description: Aprenda los aspectos básicos de la administración de Azure Stack Hub.
-author: nicoalba
+author: justinha
 ms.topic: article
-ms.date: 03/02/2020
-ms.author: v-nialba
-ms.reviewer: ''
-ms.lastreviewed: ''
-ms.openlocfilehash: 8f56dafbcc27e3ff4de9adcfbf5de27dea115bb3
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.date: 04/03/2020
+ms.author: justinha
+ms.reviewer: thoroet
+ms.lastreviewed: 04/03/2020
+ms.openlocfilehash: 66fbcf3b94ae89f5f0946ee34582d69cea4ea97e
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79295068"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80979365"
 ---
 # <a name="azure-stack-hub-administration-basics"></a>Aspectos básicos de la administración de Azure Stack Hub
 
@@ -21,7 +21,7 @@ Si no está familiarizado con la administración de Azure Stack Hub, hay varias 
 
 ## <a name="understand-the-builds"></a>Descripción de las compilaciones
 
-Si usa un sistema integrado de Azure Stack Hub, las versiones actualizadas de Azure Stack Hub se distribuyen mediante paquetes de actualizaciones. Para importar y aplicar estos paquetes, haga clic en el icono  **Actualizaciones**  del portal de administración.
+Si usa un sistema integrado de Azure Stack Hub, las versiones actualizadas de Azure Stack Hub se distribuyen mediante paquetes de actualizaciones. Para importar y aplicar estos paquetes, haga clic en el icono **Actualizaciones** del portal de administración.
 
 ## <a name="learn-about-available-services"></a>Información sobre los servicios disponibles
 
@@ -53,7 +53,7 @@ Estos servicios requieren una configuración adicional para que pueda ponerlos a
 
 ### <a name="service-roadmap"></a>Mapa de ruta de los servicios
 
-Azure Stack Hub continuará agregando compatibilidad con los servicios de Azure. Para más información sobre el mapa de ruta previsto, consulte las notas del producto  [Azure Stack Hub: una extensión de Azure](https://go.microsoft.com/fwlink/?LinkId=842846&clcid=0x409) . También puede supervisar las  [publicaciones del blog de Azure Stack Hub](https://azure.microsoft.com/blog/tag/azure-stack-technical-preview) para conocer los nuevos anuncios.
+Azure Stack Hub continuará agregando compatibilidad con los servicios de Azure. Para información sobre el mapa de ruta previsto, consulte las notas del producto [Azure Stack Hub: una extensión de Azure](https://go.microsoft.com/fwlink/?LinkId=842846&clcid=0x409). También puede supervisar las [publicaciones del blog de Azure Stack Hub](https://azure.microsoft.com/blog/tag/azure-stack-technical-preview) para conocer los nuevos anuncios.
 
 ## <a name="what-account-should-i-use"></a>¿Qué cuenta debo usar?
 
@@ -68,31 +68,31 @@ Al administrar Azure Stack Hub, es preciso tener en cuenta varios aspectos con r
 
 ## <a name="what-tools-do-i-use-to-manage"></a>¿Qué herramientas debo usar para la administración?
 
-Puede usar el  [portal de administración](https://review.docs.microsoft.com/en-us/azure-stack/operator/azure-stack-manage-portals?view=azs-2002) o PowerShell para administrar Azure Stack Hub. La manera más fácil de aprender los conceptos básicos es a través del portal. Si quiere usar PowerShell, existen algunos pasos preparatorios. Antes de comenzar, es posible que desee familiarizarse con el uso de PowerShell en Azure Stack Hub. Para más información, consulte [Introducción a PowerShell en Azure Stack Hub](https://review.docs.microsoft.com/en-us/azure-stack/user/azure-stack-powershell-overview?view=azs-2002).
+Puede usar el [portal del administrador](https://docs.microsoft.com/azure-stack/operator/azure-stack-manage-portals) o PowerShell para administrar Azure Stack Hub. La manera más fácil de aprender los conceptos básicos es a través del portal. Si quiere usar PowerShell, existen algunos pasos preparatorios. Antes de comenzar, es posible que desee familiarizarse con el uso de PowerShell en Azure Stack Hub. Para más información, consulte [Introducción a PowerShell en Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-powershell-overview).
 
-Azure Stack Hub usa Azure Resource Manager como mecanismo subyacente de implementación, administración y organización. Si va a administrar Azure Stack Hub y ayudar en el soporte técnico a los usuarios, debe obtener información sobre Resource Manager. Consulte las notas del producto [Introducción a Azure Resource Manager](https://download.microsoft.com/download/E/A/4/EA4017B5-F2ED-449A-897E-BD92E42479CE/Getting_Started_With_Azure_Resource_Manager_white_paper_EN_US.pdf) .
+Azure Stack Hub usa Azure Resource Manager como mecanismo subyacente de implementación, administración y organización. Si va a administrar Azure Stack Hub y ayudar en el soporte técnico a los usuarios, debe obtener información sobre Resource Manager. Consulte las notas del producto [Getting Started with Azure Resource Manager](https://download.microsoft.com/download/E/A/4/EA4017B5-F2ED-449A-897E-BD92E42479CE/Getting_Started_With_Azure_Resource_Manager_white_paper_EN_US.pdf) (Introducción a Azure Resource Manager).
 
 ## <a name="your-typical-responsibilities"></a>Sus responsabilidades típicas
 
-Los usuarios quieren usar los servicios. Desde la perspectiva de estos, su rol principal es poner estos servicios a su disposición. Decida qué servicios se ofrecen y póngalos a disposición de los usuarios mediante la creación de planes, ofertas y cuotas. Para más información, consulte [Introducción a la oferta de servicios de Azure Stack Hub](https://review.docs.microsoft.com/en-us/azure-stack/operator/service-plan-offer-subscription-overview?view=azs-2002).
+Los usuarios quieren usar los servicios. Desde la perspectiva de estos, su rol principal es poner estos servicios a su disposición. Decida qué servicios se ofrecen y póngalos a disposición de los usuarios mediante la creación de planes, ofertas y cuotas. Para más información, consulte [Introducción a la oferta de servicios de Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/service-plan-offer-subscription-overview).
 
-También necesitará agregar elementos a [Marketplace de Azure Stack Hub](https://review.docs.microsoft.com/en-us/azure-stack/operator/azure-stack-marketplace?view=azs-2002). La forma más fácil de hacerlo es [descargar elementos de Marketplace de Azure a Azure Stack Hub](https://review.docs.microsoft.com/en-us/azure-stack/operator/azure-stack-download-azure-marketplace-item?view=azs-2002).
+También necesitará agregar elementos a [Marketplace de Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-marketplace). La forma más fácil de hacerlo es [descargar elementos de Marketplace de Azure a Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-download-azure-marketplace-item).
 
-Si desea probar sus planes, ofertas y servicios, puede utilizar el [portal de usuario](https://review.docs.microsoft.com/en-us/azure-stack/operator/azure-stack-manage-portals?view=azs-2002), no el portal de administración.
+Si desea probar sus planes, ofertas y servicios, puede utilizar el [portal de usuario](https://docs.microsoft.com/azure-stack/operator/azure-stack-manage-portals), no el portal de administración.
 
 Además de ofrecer servicios, debe realizar las tareas habituales de un operador para mantener Azure Stack Hub en funcionamiento. Estas tareas incluyen lo siguiente:
 
-- Incorporación de cuentas de usuario para la implementación de [Azure AD](https://review.docs.microsoft.com/en-us/azure-stack/operator/azure-stack-add-new-user-aad?view=azs-2002) .
-- [Establecimiento de permisos de acceso mediante el control de acceso basado en rol](https://review.docs.microsoft.com/en-us/azure-stack/operator/azure-stack-manage-permissions?view=azs-2002). (Esta tarea no está restringida a los administradores).
-- [Supervisar el mantenimiento de la infraestructura](https://review.docs.microsoft.com/en-us/azure-stack/operator/azure-stack-monitor-health?view=azs-2002).
-- Administración de los recursos de [red](https://review.docs.microsoft.com/en-us/azure-stack/operator/azure-stack-viewing-public-ip-address-consumption?view=azs-2002) y [almacenamiento](https://review.docs.microsoft.com/en-us/azure-stack/operator/azure-stack-manage-storage-accounts?view=azs-2002) .
-- [Inicio y detención de Azure Stack Hub](https://review.docs.microsoft.com/en-us/azure-stack/operator/azure-stack-start-and-stop?view=azs-2002&branch=release-tzl).
-- [Funcionamiento del almacenamiento extendido](https://review.docs.microsoft.com/en-us/azure-stack/tdc/extended-storage-operator-guide?view=azs-2002&branch=release-tzl).
-- [Administración de IoT Hub](https://review.docs.microsoft.com/en-us/azure-stack/operator/iot-hub-rp-overview?toc=%2Fazure-stack%2Ftdc%2Ftoc.json&.bc=%2Fazure-stack%2Fbreadcrumb%2Ftoc.json&view=azs-2002&branch=release-tzl).
-- [Administración de Event Hubs](https://review.docs.microsoft.com/en-us/azure-stack/operator/event-hubs-rp-overview?toc=%2Fazure-stack%2Ftdc%2Ftoc.json&bc=%2Fazure-stack%2Fbreadcrumb%2Ftoc.json&view=azs-2002&branch=release-tzl).
-- [Administración de App Service](https://review.docs.microsoft.com/en-us/azure-stack/operator/azure-stack-app-service-overview?toc=%2Fazure-stack%2Ftdc%2Ftoc.json&bc=%2Fazure-stack%2Fbreadcrumb%2Ftoc.json&view=azs-2002&branch=release-tzl).
-- Reemplazar el hardware defectuoso. Esta es la lista de [elementos reemplazables](https://review.docs.microsoft.com/en-us/azure-stack/tdc/cru-replaceable-parts?view=azs-2002&branch=release-tzl).
-- [Obtención de soporte técnico](https://review.docs.microsoft.com/en-us/azure-stack/operator/azure-stack-help-and-support-overview?toc=%2Fazure-stack%2Ftdc%2Ftoc.json&bc=%2Fazure-stack%2Fbreadcrumb%2Ftoc.json&view=azs-2002&branch=release-tzl).
+- Adición de cuentas de usuario para la implementación de [Azure AD](https://docs.microsoft.com/azure-stack/operator/azure-stack-add-new-user-aad).
+- [Establecimiento de permisos de acceso mediante el control de acceso basado en rol](https://docs.microsoft.com/azure-stack/operator/azure-stack-manage-permissions). (Esta tarea no está restringida a los administradores).
+- [Supervisar el mantenimiento de la infraestructura](https://docs.microsoft.com/azure-stack/operator/azure-stack-monitor-health).
+- Administrar los recursos de [red](https://docs.microsoft.com/azure-stack/operator/azure-stack-viewing-public-ip-address-consumption) y [almacenamiento](https://docs.microsoft.com/azure-stack/operator/azure-stack-manage-storage-accounts).
+- [Inicio y detención de Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-start-and-stop&branch=release-tzl).
+- [Funcionamiento del almacenamiento extendido](https://docs.microsoft.com/azure-stack/tdc/extended-storage-operator-guide&branch=release-tzl).
+- [Administración de IoT Hub](https://docs.microsoft.com/azure-stack/operator/iot-hub-rp-overview?toc=%2Fazure-stack%2Ftdc%2Ftoc.json&.bc=%2Fazure-stack%2Fbreadcrumb%2Ftoc.json&view=azs-2002&branch=release-tzl).
+- [Administración de Event Hubs](https://docs.microsoft.com/azure-stack/operator/event-hubs-rp-overview?toc=%2Fazure-stack%2Ftdc%2Ftoc.json&bc=%2Fazure-stack%2Fbreadcrumb%2Ftoc.json&view=azs-2002&branch=release-tzl).
+- [Administración de App Service](https://docs.microsoft.com/azure-stack/operator/azure-stack-app-service-overview?toc=%2Fazure-stack%2Ftdc%2Ftoc.json&bc=%2Fazure-stack%2Fbreadcrumb%2Ftoc.json&view=azs-2002&branch=release-tzl).
+- Reemplazar el hardware defectuoso. Esta es la lista de [elementos reemplazables](https://docs.microsoft.com/azure-stack/tdc/cru-replaceable-parts&branch=release-tzl).
+- [Obtención de soporte técnico](https://docs.microsoft.com/azure-stack/operator/azure-stack-help-and-support-overview?toc=%2Fazure-stack%2Ftdc%2Ftoc.json&bc=%2Fazure-stack%2Fbreadcrumb%2Ftoc.json&view=azs-2002&branch=release-tzl).
 
 ## <a name="operator-tasks"></a>Tareas del operador
 
@@ -135,35 +135,35 @@ Esta es la lista de tareas diarias, semanales y mensuales de un operador:
 
 ## <a name="what-to-tell-your-users"></a>Qué decirles a los usuarios
 
-Deberá informar a los usuarios cómo trabajar con los servicios en Azure Stack Hub, conectarse con el entorno y suscribirse a las ofertas. Además de toda la documentación personalizada que puede proporcionar a los usuarios, puede remitir a los usuarios a la [Documentación del usuario de Azure Stack Hub](https://review.docs.microsoft.com/en-us/azure-stack/user/).
+Deberá informar a los usuarios cómo trabajar con los servicios en Azure Stack Hub, conectarse con el entorno y suscribirse a las ofertas. Además de toda la documentación personalizada que puede proporcionar a los usuarios, puede enviar a los usuarios a la [Documentación del usuario de Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/).
 
 ### <a name="understand-how-to-work-with-services-in-azure-stack-hub"></a>Información sobre cómo trabajar con los servicios de Azure Stack Hub
 
 Hay información que los usuarios deben comprender antes de usar los servicios y crear aplicaciones en Azure Stack Hub. Por ejemplo, existen requisitos específicos para las versiones de PowerShell y API. Además, existen algunas diferencias de características entre un servicio en Azure y el servicio equivalente en Azure Stack Hub. Asegúrese de que los usuarios consulten los siguientes artículos:
 
-- [Diferencias entre Azure Stack Hub y Azure al usar servicios y compilar aplicaciones](https://review.docs.microsoft.com/en-us/azure-stack/user/azure-stack-considerations?view=azs-2002)
-- [Características de las máquinas virtuales de Azure Stack Hub](https://review.docs.microsoft.com/en-us/azure-stack/user/azure-stack-vm-considerations?view=azs-2002)
-- [Azure Stack Hub Storage: diferencias y consideraciones](https://review.docs.microsoft.com/en-us/azure-stack/user/azure-stack-acs-differences?view=azs-2002)
+- [Diferencias entre Azure Stack Hub y Azure al usar servicios y compilar aplicaciones](https://docs.microsoft.com/azure-stack/user/azure-stack-considerations)
+- [Características de las máquinas virtuales de Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-vm-considerations)
+- [Azure Stack Hub Storage: diferencias y consideraciones](https://docs.microsoft.com/azure-stack/user/azure-stack-acs-differences)
 
 La información de estos artículos resume las diferencias entre un servicio en Azure y Azure Stack Hub. Complementa la información disponible para un servicio de Azure en la documentación global de Azure.
 
 ### <a name="connect-to-azure-stack-hub-as-a-user"></a>Conexión a Azure Stack Hub como usuario
 
-Los usuarios querrán saber cómo [acceder al portal de usuarios](https://review.docs.microsoft.com/en-us/azure-stack/user/azure-stack-use-portal?view=azs-2002) o cómo conectarse mediante PowerShell. En un entorno de sistemas integrados, la dirección del portal de usuarios varía en función de la implementación. Tendrá que proporcionar a los usuarios la dirección URL correcta.
+Los usuarios querrán saber cómo [acceder al portal de usuarios](https://docs.microsoft.com/azure-stack/user/azure-stack-use-portal) o cómo conectarse a través de PowerShell. En un entorno de sistemas integrados, la dirección del portal de usuarios varía en función de la implementación. Tendrá que proporcionar a los usuarios la dirección URL correcta.
 
-Si usa PowerShell, puede que los usuarios deban registrar proveedores de recursos para poder usar los servicios. Un proveedor de recursos administra un servicio. Por ejemplo, el proveedor de recursos de red administra los recursos, como redes virtuales, interfaces de red y equilibradores de carga. Debe  [instalar](https://review.docs.microsoft.com/en-us/azure-stack/operator/azure-stack-powershell-install?view=azs-2002) PowerShell, [descargar](https://review.docs.microsoft.com/en-us/azure-stack/operator/azure-stack-powershell-download?view=azs-2002) módulos adicionales y [configurar](https://review.docs.microsoft.com/en-us/azure-stack/user/azure-stack-powershell-configure-user?view=azs-2002) PowerShell (lo cual incluye el registro de proveedores de recursos).
+Si usa PowerShell, puede que los usuarios deban registrar proveedores de recursos para poder usar los servicios. Un proveedor de recursos administra un servicio. Por ejemplo, el proveedor de recursos de red administra los recursos, como redes virtuales, interfaces de red y equilibradores de carga. Debe [instalar](https://docs.microsoft.com/azure-stack/operator/azure-stack-powershell-install) PowerShell, [descargar](https://docs.microsoft.com/azure-stack/operator/azure-stack-powershell-download) módulos adicionales y [configurar](https://docs.microsoft.com/azure-stack/user/azure-stack-powershell-configure-user) PowerShell (que incluye el registro de proveedores de recursos).
 
 ### <a name="subscribe-to-an-offer"></a>Suscripción a una oferta
 
-Para que un usuario pueda usar los servicios, debe [suscribirse a una oferta](https://review.docs.microsoft.com/en-us/azure-stack/operator/azure-stack-subscribe-plan-provision-vm?view=azs-2002) que haya creado un operador.
+Para que un usuario pueda usar los servicios, debe [suscribirse a una oferta](https://docs.microsoft.com/azure-stack/operator/azure-stack-subscribe-plan-provision-vm) que haya creado un operador.
 
 ## <a name="where-to-get-support"></a>Dónde obtener soporte técnico
 
-Para obtener información de soporte técnico de las versiones anteriores de Azure Stack Hub (antes de la 1905), consulte [Directiva de servicio de Azure Stack Hub](https://review.docs.microsoft.com/en-us/azure-stack/operator/azure-stack-servicing-policy?view=azs-2002).
+Para obtener información de soporte técnico de las versiones anteriores de Azure Stack Hub (antes de la 1905), consulte [Directiva de servicio de Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-servicing-policy).
 
 En el caso de un sistema integrado, hay un proceso de escalación y resolución coordinado entre Microsoft y nuestros asociados de hardware de fabricante de equipos originales (OEM).
 
-Si hay algún problema en los servicios en la nube, el soporte técnico se ofrece a través de los servicios de soporte técnico al cliente de Microsoft (CSS). Para abrir una solicitud de soporte técnico, seleccione el icono de Ayuda y soporte técnico (signo de interrogación) de la esquina superior derecha del portal de administración. Después, seleccione **Ayuda y soporte técnico** y, a continuación, **Nueva solicitud de soporte técnico** en la sección **Soporte técnico** .
+Si hay algún problema en los servicios en la nube, el soporte técnico se ofrece a través de los servicios de soporte técnico al cliente de Microsoft (CSS). Para abrir una solicitud de soporte técnico, seleccione el icono de Ayuda y soporte técnico (signo de interrogación) de la esquina superior derecha del portal de administración. Después, seleccione**Ayuda y soporte técnico** y, a continuación, **Nueva solicitud de soporte técnico** en la sección **Soporte técnico**.
 
 Si surge algún problema de implementación, aplicación de revisiones y actualizaciones, hardware (incluidas las unidades reemplazables en campo) o cualquier software específico de una marca de hardware, como el software que se ejecuta en el host del ciclo de vida del hardware, en primer lugar póngase en contacto con el proveedor de hardware OEM.
 
@@ -171,4 +171,4 @@ Para todo lo demás, póngase en contacto con el servicio de asistencia al clien
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Administración de regiones en Azure Stack Hub](https://review.docs.microsoft.com/en-us/azure-stack/operator/azure-stack-region-management?view=azs-2002)
+- [Administración de regiones en Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-region-management)

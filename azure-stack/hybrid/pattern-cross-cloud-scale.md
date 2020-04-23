@@ -1,18 +1,18 @@
 ---
-title: Patrón para compilar una aplicación que escale entre nubes, en Azure y Azure Stack Hub.
-description: Aprenda a usar Azure y Azure Stack Hub para compilar una aplicación entre nubes escalable.
+title: Patrón de escalado entre nubes en Azure Stack Hub
+description: Obtenga información sobre cómo crear una aplicación multiplataforma escalable en Azure y Azure Stack Hub.
 author: BryanLa
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 4d997735cdef07d1a0b8aeafe99fed9ee6155c82
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: a830f96e97c347cbbcc09a1b17f4836ecb6eb3e6
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77689467"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80891043"
 ---
 # <a name="cross-cloud-scaling-pattern"></a>Patrón de escalado de toda la nube
 
@@ -39,41 +39,51 @@ El patrón de escalado de toda la nube amplía una aplicación ubicada en una nu
 
 El patrón de escalado entre nubes consta de los siguientes componentes.
 
-**Traffic Manager**  
+### <a name="outside-the-cloud"></a>Fuera de la nube
 
-En el diagrama esto se encuentra fuera del grupo de la nube pública, pero debería ser capaz de coordinar el tráfico tanto en el centro de datos local como en la nube pública. El equilibrador ofrece alta disponibilidad para la aplicación mediante la supervisión de puntos de conexión y la redistribución de la conmutación por error cuando es necesario.
+#### <a name="traffic-manager"></a>Traffic Manager
 
-**Sistema de nombres de dominio (DNS)**  
+En el diagrama esto se encuentra fuera del grupo de la nube pública, pero debería ser capaz de coordinar el tráfico tanto en el centro de datos local como en la nube pública. El equilibrador ofrece alta disponibilidad para la aplicación mediante la supervisión de los puntos de conexión y la redistribución de la conmutación por error cuando es necesario.
+
+#### <a name="domain-name-system-dns"></a>Sistema de nombres de dominio (DNS)
 
 El sistema de nombres de dominio, o DNS, es responsable de traducir (o resolver) el nombre del sitio web o del servicio en su dirección IP.
 
 ### <a name="cloud"></a>Nube
 
-**Servidor de compilación hospedado**  
+#### <a name="hosted-build-server"></a>Servidor de compilación hospedado
+
 Un entorno para hospedar la canalización de compilación.
 
-**Recursos de aplicación**  
+#### <a name="app-resources"></a>Recursos de la aplicación
+
 Los recursos de la aplicación deben ser capaces de reducirse y escalarse horizontalmente, como los conjuntos de escalado de máquinas virtuales y los contenedores.
 
-**Nombre de dominio personalizado**  
+#### <a name="custom-domain-name"></a>Nombre de dominio personalizado
+
 Use un nombre de dominio personalizado para el enrutamiento global de las solicitudes.
 
-**Direcciones IP públicas**  
-Las direcciones IP públicas se usan para enrutar el tráfico entrante a través del administrador de tráfico al punto de conexión de recursos de aplicación de la nube pública.  
+#### <a name="public-ip-addresses"></a>Direcciones IP públicas
+
+Las direcciones IP públicas se usan para enrutar el tráfico entrante mediante Traffic Manager al punto de conexión de recursos de aplicación de la nube pública.  
 
 ### <a name="local-cloud"></a>Nube local
 
-**Servidor de compilación hospedado**  
+#### <a name="hosted-build-server"></a>Servidor de compilación hospedado
+
 Un entorno para hospedar la canalización de compilación.
 
-**Recursos de aplicación**  
-Los recursos de la aplicación necesitan la capacidad de reducirse y escalarse horizontalmente, como los conjuntos de escalado de máquinas virtuales y los contenedores.
+#### <a name="app-resources"></a>Recursos de la aplicación
 
-**Nombre de dominio personalizado**  
+Los recursos de la aplicación deben ser capaces de reducirse y escalarse horizontalmente, como los conjuntos de escalado de máquinas virtuales y los contenedores.
+
+#### <a name="custom-domain-name"></a>Nombre de dominio personalizado
+
 Use un nombre de dominio personalizado para el enrutamiento global de las solicitudes.
 
-**Direcciones IP públicas**  
-Las direcciones IP públicas se usan para enrutar el tráfico entrante a través del administrador de tráfico al punto de conexión de recursos de aplicación de la nube pública. 
+#### <a name="public-ip-addresses"></a>Direcciones IP públicas
+
+Las direcciones IP públicas se usan para enrutar el tráfico entrante mediante Traffic Manager al punto de conexión de recursos de aplicación de la nube pública.
 
 ## <a name="issues-and-considerations"></a>Problemas y consideraciones
 
@@ -81,7 +91,7 @@ Tenga en cuenta los puntos siguientes al decidir cómo implementar este patrón:
 
 ### <a name="scalability"></a>Escalabilidad
 
-El componente clave del escalado entre nubes es la capacidad de ofrecer escalado a petición. El escalado debe realizarse entre la infraestructura en la nube pública y local, así como ofrecer un servicio coherente y de confianza de acuerdo con la demanda.
+El componente clave del escalado entre nubes es la capacidad de ofrecer escalado a petición. El escalado debe ocurrir entre la infraestructura en la nube pública y local, así como ofrecer un servicio coherente y de confianza de acuerdo con la demanda.
 
 ### <a name="availability"></a>Disponibilidad
 
@@ -108,8 +118,9 @@ No se recomienda este patrón si:
 ## <a name="next-steps"></a>Pasos siguientes
 
 Para más información sobre los temas presentados en este artículo:
+
 - Consulte la [información general sobre Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview) para más información sobre cómo funciona este equilibrador de carga de tráfico basado en DNS.
-- Consulte [Consideraciones sobre el diseño de aplicaciones híbridas](overview-app-design-considerations.md) para más información sobre los procedimientos recomendados y responder a preguntas adicionales.
+- Consulte [Consideraciones sobre el diseño de aplicaciones híbridas](overview-app-design-considerations.md) para más información sobre los procedimientos recomendados y obtener respuestas a preguntas adicionales.
 - Consulte la información relativa a la [familia de productos y soluciones de Azure Stack](/azure-stack) para más información sobre toda la gama de productos y soluciones.
 
 Cuando esté listo para probar la solución de ejemplo, continúe con la [guía de implementación de soluciones de escalado entre nubes](solution-deployment-guide-cross-cloud-scaling.md). La guía de implementación proporciona instrucciones paso a paso para implementar y probar sus componentes. Aprenderá a crear una solución entre nubes que proporcione un proceso desencadenado manualmente para cambiar de una aplicación web hospedada en Azure Stack Hub a una aplicación web hospedada en Azure. También aprenderá a usar el escalado automático a través de Traffic Manager, garantizando una utilidad en la nube flexible y escalable bajo carga.

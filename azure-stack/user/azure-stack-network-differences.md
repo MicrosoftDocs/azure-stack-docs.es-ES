@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mabrigg
 ms.reviewer: wamota
 ms.lastreviewed: 07/10/2019
-ms.openlocfilehash: 1845a25b0cd66168277e39026a3651e6638cf98c
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: e1bdb6425848db2c796fed93520da3b5ef982ee3
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77703917"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81274079"
 ---
 # <a name="differences-and-considerations-for-azure-stack-hub-networking"></a>Diferencias y consideraciones para las redes de Azure Stack Hub
 
@@ -38,9 +38,10 @@ En este artículo se proporciona información general sobre las consideraciones 
 |  | Puntos de conexión de servicio | Admitido para la conexión interna (sin conexión a Internet) a los servicios de Azure. | Todavía no se admite. |
 |  | Directivas de puntos de conexión de servicio | Compatible | Todavía no se admite. |
 |  | Túneles de servicio | Compatible | Todavía no se admite.  |
-| Grupos de seguridad de red | Reglas de seguridad aumentada | Compatible | Todavía no se admite. |
+| Grupos de seguridad de red | Reglas de seguridad aumentada | Compatible | Compatible. |
 |  | Reglas de seguridad eficaz | Compatible | Todavía no se admite. |
 |  | Grupos de seguridad de la aplicación | Compatible | Todavía no se admite. |
+|  | Protocolos de reglas | TCP, UDP, ICMP, Cualquiera | Solo TCP, UDP o Cualquiera |
 | Puertas de enlace de red virtual | Puerta de enlace de VPN de punto a sitio | Compatible | Todavía no se admite. |
 |  | Puerta de enlace de VNET a VNET | Compatible | Todavía no se admite. |
 |  | Tipo de puerta de enlace de red virtual | Azure admite VPN<br> ExpressRoute <br> Red de Hyper. | Actualmente, Azure Stack Hub solo admite el tipo VPN. |

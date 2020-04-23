@@ -3,16 +3,16 @@ title: Descarga de elementos de Marketplace desde Azure y publicación en Azure 
 description: Aprenda a descargar elementos de Marketplace desde Azure y a publicarlos en Azure Stack Hub.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 02/04/2020
+ms.date: 04/08/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 12/23/2019
-ms.openlocfilehash: 38e0f6deea5cfeb86ba3c42c8590004ee5dc99bc
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.openlocfilehash: a37f8b14a1a21caa8f710afe54868f308971e422
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79295194"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80979444"
 ---
 # <a name="download-marketplace-items-to-azure-stack-hub"></a>Descarga de elementos de Marketplace en Azure Stack Hub 
 
@@ -54,9 +54,9 @@ La implementación de Azure Stack Hub debe tener conectividad a Internet y estar
 
    ![Adición desde Azure](media/azure-stack-download-azure-marketplace-item/add-from-azure1.png)
 
-5. Si la versión de un elemento se muestra como **Multiple** (Múltiples), puede seleccionar ese elemento y, a continuación, elegir una versión específica en la lista desplegable de selección de versión que aparece:
+5. Si la versión de un elemento se muestra como **Multiple** (Múltiples), puede seleccionar ese elemento y, a continuación, elegir una versión específica en la lista desplegable de selección de versión que aparece. Tenga en cuenta que Microsoft ahora puede agregar atributos para impedir que los administradores descarguen productos de Marketplace que no son compatibles con sus instancias de Azure Stack, mediante diversas propiedades como la versión de Azure Stack o el modelo de facturación. Solo Microsoft puede agregar estos atributos:
 
-   ![Adición desde Azure](media/azure-stack-download-azure-marketplace-item/add-from-azure3.png)
+   [![Agregar desde Azure](media/azure-stack-download-azure-marketplace-item/add-from-azure3sm.png "Varias versiones")](media/azure-stack-download-azure-marketplace-item/add-from-azure3.png#lightbox)
 
 6. Seleccione el elemento que desee y, después, seleccione **Download** (Descargar). Los tiempos de descarga varían y dependen de la conectividad de red. Una vez finalizada la descarga, el nuevo elemento de Marketplace se puede implementar como usuario u operador de Azure Stack Hub.
 

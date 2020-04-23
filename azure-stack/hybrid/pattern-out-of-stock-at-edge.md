@@ -1,5 +1,5 @@
 ---
-title: Patrón para implementar la detección de existencias agotadas en el perímetro con Azure y Azure Stack Edge
+title: Detección de existencias agotadas con Azure y Azure Stack Edge
 description: Aprenda a usar los servicios de Azure y Azure Stack Edge para implementar la detección de existencias agotadas.
 author: BryanLa
 ms.topic: article
@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 144163b415a5d5aaa914b2c36ab036b587acd999
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 865f63bc4234e50ed169aa29cefdb1886750594c
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77688821"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80891117"
 ---
 # <a name="out-of-stock-detection-at-the-edge-pattern"></a>Patrón de detección de existencias agotadas en el perímetro
 
@@ -20,15 +20,16 @@ Este patrón muestra cómo determinar si los estantes contienen artículos con e
 
 ## <a name="context-and-problem"></a>Contexto y problema
 
-Las tiendas físicas pierden ventas porque cuando los clientes buscan un artículo, no existe en el estante. Sin embargo, puede que el artículo esté en la trastienda pero que no se haya repuesto. A las tiendas les gusta usar a sus empleados de manera eficaz y recibir notificaciones automáticas cuando sea necesario reponer artículos.
+Las tiendas físicas pierden ventas porque cuando los clientes buscan un artículo, no existe en el estante. Sin embargo, puede que el artículo esté en la trastienda pero que no se haya repuesto. A las tiendas les gustaría que sus empleados pudieran trabajar de una manera más eficaz y recibir notificaciones automáticas cuando sea necesario reponer artículos.
 
 ## <a name="solution"></a>Solución
 
 En el ejemplo de la solución se usa un dispositivo perimetral, como Azure Stack Edge en cada tienda, que procesa los datos de las cámaras de la tienda de manera eficaz. Este diseño optimizado permite a las tiendas enviar solo las imágenes y los eventos apropiados a la nube. El diseño ahorra ancho de banda y espacio de almacenamiento y garantiza la privacidad de los clientes. A medida que se leen los fotogramas de cada cámara, un modelo de aprendizaje automático procesa la imagen y devuelve todas las áreas con existencias agotadas. La imagen y las áreas con existencias agotadas se muestran en una aplicación web local. Estos datos se pueden enviar a un entorno de Time Series Insight para mostrar información detallada en Power BI.
 
-![arquitectura de la solución de existencias agotadas en el perímetro](media/pattern-out-of-stock-at-edge/solution-architecture.png)
+![Arquitectura de la solución de existencias agotadas en el perímetro](media/pattern-out-of-stock-at-edge/solution-architecture.png)
 
 Así es como funciona la solución:
+
 1. Las imágenes se capturan con una cámara de red a través de HTTP o RTSP.
 2. La imagen se redimensiona y se envía al controlador de inferencia, que se comunica con el modelo de aprendizaje automático para determinar si hay alguna imagen de existencias agotadas.
 3. El modelo de aprendizaje automático devuelve todas las áreas de existencias agotadas.
@@ -56,7 +57,7 @@ Esta solución usa los siguientes componentes:
 
 Tenga en cuenta los puntos siguientes al decidir cómo implementar esta solución:
 
-### <a name="scalability"></a>Escalabilidad 
+### <a name="scalability"></a>Escalabilidad
 
 La mayoría de los modelos de aprendizaje automático solo se pueden ejecutar con un determinado número de fotogramas por segundo, en función del hardware proporcionado. Determine la frecuencia de muestreo óptima de las cámaras para asegurarse de que no se hace una copia de seguridad de la canalización de aprendizaje automático. Distintos tipos de hardware administrarán diferentes números de cámaras y velocidades de fotogramas.
 
@@ -70,14 +71,14 @@ Esta solución puede abarcar muchos dispositivos y ubicaciones, lo que podría r
 
 ### <a name="security"></a>Seguridad
 
-Este patrón controla los datos potencialmente confidenciales. Asegúrese de que las claves se rotan regularmente y de que los permisos de la cuenta de Azure Storage y los recursos compartidos locales están establecidos correctamente. 
+Este patrón controla los datos potencialmente confidenciales. Asegúrese de que las claves se rotan regularmente y de que los permisos de la cuenta de Azure Storage y los recursos compartidos locales están establecidos correctamente.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
 Para más información sobre los temas presentados en este artículo:
 - En este patrón se usan varios servicios relacionados con IoT, como [Azure IoT Edge](/azure/iot-edge/), [Azure IoT Hub](/azure/iot-hub/) y [Azure Time Series Insights](/azure/time-series-insights/).
 - Para más información sobre Microsoft Project Brainwave, consulte el [anuncio del blog](https://blogs.microsoft.com/ai/build-2018-project-brainwave/) y vea el [vídeo de Azure Machine Learning acelerado con Project Brainwave](https://www.youtube.com/watch?v=DJfMobMjCX0).
-- Consulte [Consideraciones sobre el diseño de aplicaciones híbridas](overview-app-design-considerations.md) para más información sobre los procedimientos recomendados y responder a preguntas adicionales.
+- Consulte [Consideraciones sobre el diseño de aplicaciones híbridas](overview-app-design-considerations.md) para más información sobre los procedimientos recomendados y para obtener respuestas a preguntas adicionales.
 - Consulte la información relativa a la [familia de productos y soluciones de Azure Stack](/azure-stack) para más información sobre toda la gama de productos y soluciones.
 
 Cuando esté listo para probar la solución de ejemplo, continúe con la [guía de implementación de soluciones de datos por niveles para análisis](https://aka.ms/edgeinferencingdeploy). La guía de implementación proporciona instrucciones paso a paso para implementar y probar sus componentes.

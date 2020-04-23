@@ -4,16 +4,17 @@ titleSuffix: Azure Stack Hub
 description: Aprenda a registrar los sistemas integrados de Azure Stack Hub en Azure de forma que pueda descargar elementos de Azure Marketplace y configurar informes de datos.
 author: IngridAtMicrosoft
 ms.topic: article
-ms.date: 02/25/2020
+ms.date: 04/06/2020
 ms.author: inhenkel
 ms.reviewer: avishwan
 ms.lastreviewed: 03/04/2019
-ms.openlocfilehash: 6af18b519f32975643dea10d81dfa9ed1f0588c5
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+zone_pivot_groups: state-connected-disconnected
+ms.openlocfilehash: 3f9741019a28548e9f20308312d62ea68e757795
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79295512"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81308253"
 ---
 # <a name="register-azure-stack-hub-with-azure"></a>Registro de Azure Stack Hub en Azure
 
@@ -26,13 +27,14 @@ La información de este artículo describe el registro de los sistemas integrado
 
 ## <a name="prerequisites"></a>Prerrequisitos
 
-Necesitará lo siguiente antes de realizar el registro:
+Complete los siguientes requisitos previos antes del registro:
 
 - Comprobar las credenciales
 - Establecer el modo de lenguaje de PowerShell
 - Instalación de PowerShell para Azure Stack Hub
 - Descargar las herramientas de Azure Stack Hub
-- Determinar el escenario de registro
+- Determinar el modelo de facturación.
+- Determinar el nombre de registro único.
 
 ### <a name="verify-your-credentials"></a>Comprobar las credenciales
 
@@ -58,7 +60,7 @@ Si no tiene una suscripción de Azure que cumpla estos requisitos, puede [crear 
 > [!NOTE]
 > Si tiene más de una instancia de Azure Stack Hub, se recomienda que registre cada una de ellas en su propia suscripción. Así resulta más fácil realizar un seguimiento del uso.
 
-### <a name="powershell-language-mode"></a>Modo de lenguaje de PowerShell
+### <a name="set-the-powershell-language-mode"></a>Establecer el modo de lenguaje de PowerShell
 
 Para registrar correctamente Azure Stack Hub, el modo de lenguaje de PowerShell debe establecerse en **FullLanguageMode**.  Para comprobar que el modo de lenguaje actual está establecido como completo, abra una ventana de PowerShell con privilegios elevados y ejecute los siguientes cmdlets de PowerShell:
 
@@ -80,25 +82,21 @@ El repositorio de GitHub de las herramientas de Azure Stack Hub contiene módulo
 
 Para asegurarse de que usa la versión más reciente, elimine las versiones existentes de las herramientas de Azure Stack Hub y [descargue la versión más reciente de GitHub](azure-stack-powershell-download.md) antes de registrarse en Azure.
 
-### <a name="determine-your-registration-scenario"></a>Determinar el escenario de registro
+### <a name="determine-your-billing-model"></a>Determinar el modelo de facturación
+::: zone pivot="state-connected"
+ Una implementación conectada permite a Azure Stack Hub conectarse a Internet y a Azure. También puede usar Azure AD o Servicios de federación de Active Directory (AD FS) como almacén de identidades y elegir entre dos modelos de facturación: pago por uso o basado en la capacidad. El modelo de facturación se especifica más adelante, mientras se ejecuta el script de registro.
+::: zone-end
 
-La implementación de Azure Stack Hub se puede *conectar* o *desconectar*.
+::: zone pivot="state-disconnected"
+ Una implementación desconectada le permite usar Azure Stack Hub sin conexión a Internet. Con una implementación desconectada, está limitado a un almacén de identidades de AD FS y el modelo de facturación basado en la capacidad. El modelo de facturación se especifica más adelante, mientras se ejecuta el script de registro.
+::: zone-end
 
-- **Conectada**  
- Conectada significa que ha implementado Azure Stack Hub, así que puede conectarse a Internet y a Azure. Puede usar Azure AD o Servicios de federación de Active Directory (AD FS) como almacén de identidades. Con una implementación conectada, puede elegir entre dos modelos de facturación: de pago por uso o según la capacidad.
-  - [Registro de una implementación conectada de Azure Stack Hub en Azure mediante el modelo de facturación de **pago por uso**](#register-connected-with-pay-as-you-go-billing).
-  - [Registro de una implementación conectada de Azure Stack Hub en Azure mediante el modelo de facturación por **capacidad**](#register-connected-with-capacity-billing).
+### <a name="determine-your-unique-registration-name"></a>Determinar el nombre de registro único
 
-- **Desconectada**  
- La opción de implementación desconectada de Azure permite implementar y usar Azure Stack Hub sin conexión a Internet. Sin embargo, este tipo de implementación tiene la limitación de que solo se puede usar el almacén de identidades de AD FS y el modelo de facturación por capacidad.
-  - [Registro de una implementación desconectada de Azure Stack Hub mediante el modelo de facturación por **capacidad**](#register-disconnected-with-capacity-billing).
-
-### <a name="determine-a-unique-registration-name-to-use"></a>Determinar un nombre de registro único para su uso
-
-Al registrar Azure Stack Hub en Azure, debe proporcionar un nombre de registro único. Una manera fácil de asociar la suscripción de Azure Stack Hub con un registro de Azure es usar el **Id. de nube** de Azure Stack Hub.
+Al ejecutar el script de registro, debe proporcionar un nombre de registro único. Una manera fácil de asociar la suscripción de Azure Stack Hub con un registro de Azure es usar el **Id. de nube** de Azure Stack Hub.
 
 > [!NOTE]
-> Los registros de Azure Stack Hub mediante el modelo de facturación basado en la capacidad deben cambiar el nombre único al volver a registrarse tras la expiración de las suscripciones anuales, a menos que [elimine el registro expirado](azure-stack-registration.md#change-the-subscription-you-use) y vuelva a registrarse en Azure.
+> Los registros de Azure Stack Hub mediante el modelo de facturación basado en la capacidad deben cambiar el nombre único al volver a registrarse tras la expiración de las suscripciones anuales, a menos que [elimine el registro expirado](#renew-or-change-registration) y vuelva a registrarse en Azure.
 
 Para determinar el identificador de nube de la implementación de Azure Stack Hub, abra PowerShell como administrador en un equipo que pueda acceder al punto de conexión con privilegios, ejecute los siguientes comandos y registre el valor de **CloudID**:
 
@@ -107,7 +105,8 @@ Run: Enter-PSSession -ComputerName <privileged endpoint computer name> -Configur
 Run: Get-AzureStackStampInformation
 ```
 
-## <a name="register-connected-with-pay-as-you-go-billing"></a>Registro conectado con la facturación de pago por uso
+::: zone pivot="state-connected"
+## <a name="register-with-pay-as-you-use-billing"></a>Registro con el modelo de facturación de pago por uso
 
 Use estos pasos para registrar Azure Stack Hub en Azure mediante el modelo de facturación de pago por uso.
 
@@ -174,9 +173,9 @@ Los entornos conectados pueden acceder a Internet y a Azure. En estos entornos, 
 
    El proceso tarda entre 10 y 15 minutos. Cuando finalice el comando, verá el mensaje **"Your environment is now registered and activated using the provided parameters."** (El entorno ya está registrado y se ha activado mediante los parámetros proporcionados).
 
-## <a name="register-connected-with-capacity-billing"></a>Registro conectado con la facturación por capacidad
+## <a name="register-with-capacity-billing"></a>Registro con el modelo de facturación basado en la capacidad
 
-Use estos pasos para registrar Azure Stack Hub en Azure mediante el modelo de facturación de pago por uso.
+Use estos pasos para registrar Azure Stack Hub en Azure mediante el modelo de facturación basado en la capacidad.
 
 > [!Note]  
 > Todos estos pasos se deben ejecutar desde un equipo que tenga acceso al punto de conexión con privilegios (PEP). Para información detallada sobre PEP, consulte [Uso del punto de conexión con privilegios en Azure Stack Hub](azure-stack-privileged-endpoint.md).
@@ -223,8 +222,10 @@ Los entornos conectados pueden acceder a Internet y a Azure. En estos entornos, 
    > Puede deshabilitar el uso de informes con el parámetro UsageReportingEnabled para el cmdlet**Set-AzsRegistration** al establecer el parámetro en false. 
    
    Para más información acerca del cmdlet Set-AzsRegistration, consulte [Referencia del registro](#registration-reference).
+::: zone-end
 
-## <a name="register-disconnected-with-capacity-billing"></a>Registro desconectado con la facturación por capacidad
+::: zone pivot="state-disconnected"
+## <a name="register-with-capacity-billing"></a>Registro con el modelo de facturación basado en la capacidad
 
 Si registra Azure Stack Hub en un entorno desconectado (sin conectividad a Internet), deberá obtener un token de registro del entorno de Azure Stack Hub. Después usará ese token en un equipo que pueda conectarse a Azure y que tenga instalado PowerShell para Azure Stack Hub.  
 
@@ -319,6 +320,7 @@ Si lo desea, puede usar el cmdlet Get-Content para señalar a un archivo que con
   $ActivationKey = Get-Content -Path '<Path>\<Activation Key File>'
   New-AzsActivationResource -PrivilegedEndpointCredential $YourCloudAdminCredential -PrivilegedEndpoint $YourPrivilegedEndpoint -ActivationKey $ActivationKey
   ```
+::: zone-end
 
 ## <a name="verify-azure-stack-hub-registration"></a>Comprobación del registro de Azure Stack Hub
 
@@ -348,15 +350,14 @@ Como alternativa, puede comprobar si el registro es correcto mediante la caracte
 
 ## <a name="renew-or-change-registration"></a>Renovación o cambio de registro
 
-### <a name="renew-or-change-registration-in-connected-environments"></a>Renovación o cambio de registro en entornos conectados
-
+::: zone pivot="state-connected"
 El registro se tiene que actualizar o renovar en las siguientes circunstancias:
 
 - Después de renovar su suscripción anual basada en capacidad.
 - Al cambiar el modelo de facturación.
 - Cuando se escalan cambios (se agregan o quitan nodos) para la facturación por capacidad.
 
-#### <a name="change-the-subscription-you-use"></a>Cambio de la suscripción que se usa
+### <a name="change-the-subscription-you-use"></a>Cambio de la suscripción que se usa
 
 Si desea cambiar la suscripción que utiliza, primero debe ejecutar el cmdlet **Remove-AzsRegistration** y, después, asegurarse de que inicia sesión en el contexto de Azure PowerShell correcto. A continuación, ejecute **Set-AzsRegistration** con los parámetros modificados, incluido `<billing model>`:
 
@@ -366,23 +367,23 @@ Si desea cambiar la suscripción que utiliza, primero debe ejecutar el cmdlet **
   Set-AzsRegistration -PrivilegedEndpointCredential $YourCloudAdminCredential -PrivilegedEndpoint $YourPrivilegedEndpoint -BillingModel <billing model> -RegistrationName $RegistrationName
   ```
 
-#### <a name="change-the-billing-model-or-how-to-offer-features"></a>Cambio del modelo de facturación o del modo de ofrecer características
+### <a name="change-the-billing-model-or-how-to-offer-features"></a>Cambio del modelo de facturación o del modo de ofrecer características
 
 Si desea cambiar el modelo de facturación o el modo de ofrecer características para una instalación, puede llamar a la función de registro para establecer los valores nuevos. No es preciso eliminar antes el registro actual:
 
   ```powershell  
   Set-AzsRegistration -PrivilegedEndpointCredential $YourCloudAdminCredential -PrivilegedEndpoint $YourPrivilegedEndpoint -BillingModel <billing model> -RegistrationName $RegistrationName
   ```
+::: zone-end
 
-### <a name="renew-or-change-registration-in-disconnected-environments"></a>Renovación o cambio de registro en entornos sin conexión
-
+::: zone pivot="state-disconnected"
 El registro se tiene que actualizar o renovar en las siguientes circunstancias:
 
 - Después de renovar su suscripción anual basada en capacidad.
 - Al cambiar el modelo de facturación.
 - Cuando se escalan cambios (se agregan o quitan nodos) para la facturación por capacidad.
 
-#### <a name="remove-the-activation-resource-from-azure-stack-hub"></a>Eliminación del recurso de activación de Azure Stack Hub
+### <a name="remove-the-activation-resource-from-azure-stack-hub"></a>Eliminación del recurso de activación de Azure Stack Hub
 
 En primer lugar, debe eliminar el recurso de activación de Azure Stack Hub y, después, el recurso de registro de Azure.  
 
@@ -408,15 +409,24 @@ O bien, puede usar el nombre de registro:
   Unregister-AzsEnvironment -RegistrationName $RegistrationName
   ```
 
+### <a name="re-register-using-connected-steps"></a>Nuevo registro con los pasos del modelo conectado
+
+Si cambia el modelo de facturación de la facturación basada en la capacidad en un estado desconectado a la facturación por consumo en un estado conectado, se registrará de nuevo según los [pasos del modelo conectado](azure-stack-registration.md?pivots=state-connected#change-the-billing-model-or-how-to-offer-features). 
+
+>[!Note] 
+>Esto no cambia el modelo de identidades, solo el mecanismo de facturación; seguirá usando ADFS como su origen de identidades.
+
 ### <a name="re-register-using-disconnected-steps"></a>Segundo registro mediante pasos desconectados
 
 Ya ha anulado completamente el registro en un escenario desconectado y debe repetir los pasos para registrar un entorno de Azure Stack Hub de nuevo en un escenario desconectado.
+::: zone-end
 
 ### <a name="disable-or-enable-usage-reporting"></a>Deshabilitar o habilitar los informes de uso
 
 En entornos de Azure Stack Hub que usan un modelo de facturación por capacidad, desactive los informes de uso con el parámetro **UsageReportingEnabled** mediante los cmdlets **Set-AzsRegistration** o **Get-AzsRegistrationToken**. Azure Stack Hub informa de las métricas de uso de forma predeterminada. Los operadores que tienen usos de capacidad o que admiten un entorno desconectado deben desactivar los informes de uso.
 
-#### <a name="with-a-connected-azure-stack-hub"></a>Con una implementación conectada de Azure Stack Hub
+::: zone pivot="state-connected"
+Ejecute los siguientes cmdlets de PowerShell:
 
    ```powershell  
    $CloudAdminCred = Get-Credential -UserName <Privileged endpoint credentials> -Message "Enter the cloud domain credentials to access the privileged endpoint."
@@ -427,9 +437,8 @@ En entornos de Azure Stack Hub que usan un modelo de facturación por capacidad,
       -BillingModel Capacity
       -RegistrationName $RegistrationName
    ```
-
-#### <a name="with-a-disconnected-azure-stack-hub"></a>Con una implementación desconectada de Azure Stack Hub
-
+::: zone-end
+::: zone pivot="state-disconnected"
 1. Para cambiar el token de registro, ejecute los siguientes cmdlets de PowerShell:  
 
    ```Powershell
@@ -442,6 +451,7 @@ En entornos de Azure Stack Hub que usan un modelo de facturación por capacidad,
    > El token del registro se guarda en el archivo especificado para *$FilePathForRegistrationToken*. Puede cambiar la ruta del archivo o el nombre de archivo a su entera discreción.
 
 2. Guarde este token de registro para usarlo en la máquina conectada a Azure. El archivo o el texto se pueden copiar de *$FilePathForRegistrationToken*.
+::: zone-end
 
 ## <a name="move-a-registration-resource"></a>Traslado de un recurso de registro
 
@@ -514,15 +524,16 @@ Es posible que vea uno de los errores siguientes al intentar registrar Azure Sta
 
 - El identificador de nube [`GUID`] ya está registrado. La reutilización de identificadores de nube no está permitida.
 
-   Causa: esto sucede si el entorno de Azure Stack ya está registrado. Si desea volver a registrar el entorno con una suscripción o modelo de facturación diferentes, [consulte estas instrucciones](#change-the-subscription-you-use).
+   Causa: esto sucede si el entorno de Azure Stack ya está registrado. Si desea volver a registrar el entorno con una suscripción o modelo de facturación diferentes, consulte [Pasos de renovación o cambio de registro](#renew-or-change-registration).
 
 - Al intentar acceder a la administración de Marketplace, se produce un error cuando se intenta distribuir productos.
 
    Causa: suele ocurrir cuando Azure Stack Hub no puede acceder al recurso de registro. Un motivo común es que, cuando cambia el inquilino de directorio de una suscripción a Azure, se restablece el registro. No puede acceder a Marketplace de Azure Stack Hub ni notificar el uso si cambió el inquilino de directorio de la suscripción. Debe volver a realizar el registro para corregir este problema.
-
+::: zone pivot="state-disconnected"
 - La administración de Marketplace todavía le pide que registre y active Azure Stack Hub, aunque ya ha registrado su sello mediante el proceso sin conexión.
 
-   Causa: se trata de un problema conocido para entornos desconectados. Puede comprobar su estado de registro siguiendo [estos pasos](azure-stack-registration.md#verify-azure-stack-hub-registration). Para poder usar la administración de Marketplace, utilice [la herramienta sin conexión](azure-stack-download-azure-marketplace-item.md#disconnected-or-a-partially-connected-scenario).
+   Causa: se trata de un problema conocido en entornos desconectados y requiere que [verifique su estado de registro](#verify-azure-stack-hub-registration). Para poder usar la administración de Marketplace, utilice [la herramienta sin conexión](azure-stack-download-azure-marketplace-item.md#disconnected-or-a-partially-connected-scenario).
+::: zone-end
 
 ## <a name="next-steps"></a>Pasos siguientes
 

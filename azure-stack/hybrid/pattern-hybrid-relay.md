@@ -1,39 +1,39 @@
 ---
-title: Patrón para implementar una solución de retransmisión híbrida con Azure y Azure Stack Hub
-description: Aprenda a usar los servicios de Azure y Azure Stack Hub para conectarse a recursos perimetrales o a dispositivos protegidos por firewalls.
+title: Patrón de retransmisión híbrida en Azure y Azure Stack Hub
+description: Utilice el patrón de retransmisión híbrida en Azure y Azure Stack Hub para conectarse a recursos perimetrales protegidos por firewalls.
 author: BryanLa
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 945aaf9fa9d422418718c87545c238239220bc06
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: abb4f2b779afb7450c04b98d1d6b02d824446b09
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77688787"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80891015"
 ---
 # <a name="hybrid-relay-pattern"></a>Patrón de retransmisión híbrida
 
-Aprenda a conectarse a recursos o dispositivos en el perímetro que están protegidos mediante firewalls mediante instancias de Azure Service Bus Relay.
+Aprenda a conectarse a recursos o dispositivos perimetrales protegidos mediante firewalls con el patrón de retransmisión híbrida en Azure Service Bus Relay.
 
 ## <a name="context-and-problem"></a>Contexto y problema
 
-Los dispositivos perimetrales suelen estar detrás de un firewall corporativo o un dispositivo NAT. Aunque son seguros, es posible que no puedan comunicarse con la nube pública o con dispositivos perimetrales de otras redes corporativas. Puede que sea necesario exponer determinados puertos y funcionalidad a los usuarios de la nube pública de forma segura. 
+Los dispositivos perimetrales suelen estar detrás de un firewall corporativo o un dispositivo NAT. Aunque son seguros, es posible que no puedan comunicarse con la nube pública o con dispositivos perimetrales de otras redes corporativas. Puede que sea necesario exponer determinados puertos y funcionalidad a los usuarios de la nube pública de forma segura.
 
 ## <a name="solution"></a>Solución
 
-El patrón de retransmisión híbrida usa instancias de Azure Service Bus Relay para establecer un túnel de WebSockets entre dos puntos de conexión que no se pueden comunicar directamente. Los dispositivos que no están en el entorno local, pero que necesitan conectarse a un punto de conexión local, se conectarán a un punto de conexión de la nube pública. Este punto de conexión redirigirá el tráfico de las rutas predefinidas por un canal seguro. Un punto de conexión dentro del entorno local recibe el tráfico y lo enruta al destino correcto. 
+El patrón de retransmisión híbrida usa instancias de Azure Service Bus Relay para establecer un túnel de WebSockets entre dos puntos de conexión que no se pueden comunicar directamente. Los dispositivos que no están en el entorno local, pero que necesitan conectarse a un punto de conexión local, se conectarán a un punto de conexión de la nube pública. Este punto de conexión redirigirá el tráfico de las rutas predefinidas por un canal seguro. Un punto de conexión dentro del entorno local recibe el tráfico y lo enruta al destino correcto.
 
-![arquitectura de la solución de retransmisión híbrida](media/pattern-hybrid-relay/solution-architecture.png)
+![arquitectura de la solución del patrón de retransmisión híbrida](media/pattern-hybrid-relay/solution-architecture.png)
 
-Así es como funciona la solución: 
+Este es el funcionamiento del patrón de retransmisión híbrida:
 
 1. Un dispositivo se conecta a la máquina virtual (VM) de Azure en un puerto predefinido.
 2. El tráfico se reenvía a Service Bus Relay en Azure.
 3. La máquina virtual de Azure Stack Hub, que ya ha establecido una conexión de larga duración con Service Bus Relay, recibe el tráfico y lo reenvía al destino.
-4. El servicio o punto de conexión local procesa la solicitud. 
+4. El servicio o punto de conexión local procesa la solicitud.
 
 ## <a name="components"></a>Componentes
 
@@ -50,7 +50,7 @@ Esta solución usa los siguientes componentes:
 
 Tenga en cuenta los puntos siguientes al decidir cómo implementar esta solución:
 
-### <a name="scalability"></a>Escalabilidad 
+### <a name="scalability"></a>Escalabilidad
 
 Este patrón solo permite asignaciones de puerto 1:1 en el cliente y el servidor. Por ejemplo, si se tuneliza el puerto 80 para un servicio del punto de conexión de Azure, no se puede usar para otro servicio. Las asignaciones de puertos deben planearse en consecuencia. Service Bus Relay y las máquinas virtuales deben escalarse adecuadamente para administrar el tráfico.
 
@@ -64,13 +64,14 @@ Esta solución puede abarcar muchos dispositivos y ubicaciones, lo que podría r
 
 ### <a name="security"></a>Seguridad
 
-Este patrón, tal como se muestra, permite el acceso ilimitado a un puerto en un dispositivo interno desde el perímetro. Considere la posibilidad de agregar un mecanismo de autenticación al servicio en el dispositivo interno o delante del punto de conexión de retransmisión híbrida. 
+Este patrón, tal como se muestra, permite el acceso ilimitado a un puerto en un dispositivo interno desde el perímetro. Considere la posibilidad de agregar un mecanismo de autenticación al servicio en el dispositivo interno o delante del punto de conexión de retransmisión híbrida.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
 Para más información sobre los temas presentados en este artículo:
+
 - Este patrón usa instancias de Azure Service Bus Relay. Para más información, consulte la [documentación de Azure Service Bus Relay](/azure/service-bus-relay/).
-- Consulte [Consideraciones sobre el diseño de aplicaciones híbridas](overview-app-design-considerations.md) para más información sobre los procedimientos recomendados y responder a preguntas adicionales.
+- Consulte [Consideraciones sobre el diseño de aplicaciones híbridas](overview-app-design-considerations.md) para más información sobre los procedimientos recomendados y obtener respuestas a preguntas adicionales.
 - Consulte la información relativa a la [familia de productos y soluciones de Azure Stack](/azure-stack) para más información sobre toda la gama de productos y soluciones.
 
 Cuando esté listo para probar la solución de ejemplo, continúe con la [guía de implementación de soluciones de retransmisión híbrida](https://aka.ms/hybridrelaydeployment). La guía de implementación proporciona instrucciones paso a paso para implementar y probar sus componentes.

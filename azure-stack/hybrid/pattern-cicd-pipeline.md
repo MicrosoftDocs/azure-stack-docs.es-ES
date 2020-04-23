@@ -1,18 +1,18 @@
 ---
-title: Patrón de DevOps para la inteligencia perimetral mediante Azure y Azure Stack Hub
-description: Conozca el patrón de DevOps para la inteligencia perimetral mediante Azure y Azure Stack Hub.
+title: Patrón DevOps en Azure Stack Hub
+description: Más información sobre el patrón DevOps para que pueda garantizar la coherencia entre las implementaciones de Azure y Azure Stack Hub.
 author: BryanLa
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: ebd9925b471d46dc67df29557f677b43d0221a1d
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 306cc9604a8e919724f9f76b7e5122d534d2d1ae
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77689552"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80812289"
 ---
 # <a name="devops-pattern"></a>Patrón DevOps
 
@@ -40,7 +40,7 @@ El uso de una canalización de versión de DevOps le ayuda a realizar lo siguien
 
 ## <a name="issues-and-considerations"></a>Problemas y consideraciones
 
-El patrón DevOps está pensado para garantizar la coherencia entre las implementaciones, independientemente del entorno de destino. Sin embargo, las funcionalidades varían en los entornos local y de nube. Tenga en cuenta lo siguiente.
+El patrón DevOps está pensado para garantizar la coherencia entre las implementaciones, independientemente del entorno de destino. Sin embargo, las funcionalidades varían en los entornos local y de nube. Considere los siguientes puntos:
 
 - ¿Las funciones, los puntos de conexión, los servicios y los demás recursos de la implementación están disponibles en las ubicaciones de implementación de destino?
 - ¿Los artefactos de configuración se almacenan en ubicaciones a las que se puede acceder a través de nubes?
@@ -59,9 +59,9 @@ Los sistemas de automatización de la implementación son el punto de control cl
 
 La disponibilidad en el contexto de DevPattern significa poder recuperar cualquier información de estado asociada al flujo de trabajo como, por ejemplo, los resultados de las pruebas, las dependencias de código u otros artefactos. Para evaluar los requisitos de disponibilidad, tenga en cuenta dos métricas comunes:
 
--   Objetivo de tiempo de recuperación (RTO) especifica cuánto tiempo se puede estar sin un sistema.
+- Objetivo de tiempo de recuperación (RTO) especifica cuánto tiempo se puede estar sin un sistema.
 
--   Objetivo de punto de recuperación (RPO) indica la cantidad de datos que puede permitirse perder si una interrupción del servicio afecta al sistema.
+- Objetivo de punto de recuperación (RPO) indica la cantidad de datos que puede permitirse perder si una interrupción del servicio afecta al sistema.
 
 En la práctica, las métricas RTO y el RPO implican redundancia y copia de seguridad. En la nube global de Azure, la disponibilidad no es una cuestión de recuperación de hardware, que forma parte de Azure, sino más bien de garantizar que mantenga el estado de sus sistemas DevOps. En Azure Stack Hub, es posible que deba tenerse en cuenta la recuperación de hardware.
 
@@ -78,7 +78,7 @@ Implemente entornos de producción y entornos de desarrollo y pruebas en grupos 
 Use este patrón en los siguientes casos:
 
 - Puede desarrollar código en un entorno que satisfaga las necesidades de los desarrolladores e implementarlo en un entorno específico de la solución en el que puede que sea difícil desarrollar código nuevo.
-- Puede usar el código y las herramientas que los desarrolladores quieran, siempre y cuando puedan seguir el proceso de integración continua y entrega continua del patrón de DevOps.
+- Puede usar el código y las herramientas que los desarrolladores quieran, siempre y cuando puedan seguir el proceso de integración y entrega continuas del patrón de DevOps.
 
 No se recomienda este patrón:
 
@@ -88,7 +88,8 @@ No se recomienda este patrón:
 ## <a name="next-steps"></a>Pasos siguientes
 
 Para más información sobre los temas presentados en este artículo:
+
 - Consulte la [documentación de Azure DevOps](/azure/devops) para más información sobre Azure DevOps y las herramientas relacionadas, como Azure Repos y Azure Pipelines.
 - Consulte la información relativa a la [familia de productos y soluciones de Azure Stack](/azure-stack) para más información sobre toda la gama de productos y soluciones.
 
-Cuando esté listo para probar la solución de ejemplo, continúe con la [guía de implementación de la solución de CI/CD híbrida de DevOps](https://aka.ms/hybriddevopsdeploy). La guía de implementación proporciona instrucciones paso a paso para implementar y probar sus componentes. Aprenda a implementar una aplicación en Azure y Azure Stack Hub mediante una canalización híbrida de integración continua y entrega continua (CI/CD).
+Cuando esté listo para probar la solución de ejemplo, continúe con la [guía de implementación de la solución de CI/CD híbrida de DevOps](https://aka.ms/hybriddevopsdeploy). La guía de implementación proporciona instrucciones paso a paso para implementar y probar sus componentes. Aprenda a implementar una aplicación en Azure y Azure Stack Hub mediante una canalización híbrida de integración y entrega continuas (CI/CD).

@@ -1,5 +1,6 @@
 ---
 title: 'Azure Stack Hub Storage: diferencias y consideraciones'
+titleSuffix: Azure Stack Hub
 description: Conozca las diferencias entre Azure Stack Hub Storage y Azure Storage, junto con las consideraciones de implementación de Azure Stack Hub.
 author: mattbriggs
 ms.topic: conceptual
@@ -7,12 +8,12 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviwer: xiaofmao
 ms.lastreviewed: 01/30/2020
-ms.openlocfilehash: 3f5701cbb601b82db3b802bfd602c53576230b6f
-ms.sourcegitcommit: f114e9d268a74fde6891180b80c74c148dc0a129
+ms.openlocfilehash: 47e8935e67185b91b73591a28ba3e453e827e708
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80530761"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81394965"
 ---
 # <a name="azure-stack-hub-storage-differences-and-considerations"></a>Azure Stack Hub Storage: Diferencias y consideraciones
 
@@ -24,39 +25,30 @@ En este artículo se resumen las diferencias entre los servicios de Azure Stack 
 
 | Característica | Azure (global) | Azure Stack Hub |
 | --- | --- | --- |
-|File Storage|Recursos compartidos de archivos SMB basado en la nube admitidos|Todavía no se admite
+|File Storage|Se admiten recursos compartidos de archivos SMB basados en la nube. | Todavía no se admite.
 |Cifrado del servicio Azure Storage para datos en reposo|Cifrado AES de 256 bits. Se admite el cifrado mediante claves administradas por el cliente en Key Vault.|Cifrado AES de 128 bits de BitLocker. No se admite el cifrado mediante claves administradas por el cliente.
-|Tipo de cuenta de almacenamiento|Cuentas de uso general V1, V2 y de Blob Storage|Solo de uso general V1.
-|Opciones de replicación|Almacenamiento con redundancia local, almacenamiento con redundancia geográfica, almacenamiento con redundancia geográfica con acceso de lectura y almacenamiento con redundancia de zona|Almacenamiento con redundancia local.
-|Premium Storage|Proporciona almacenamiento de alto rendimiento y baja latencia. Solo admite blobs en páginas de cuentas de almacenamiento prémium.|Se pueden aprovisionar, pero no hay límite de rendimiento o garantía. No se realizaría ningún bloqueo con las opciones de blobs en bloques, anexar blobs, tablas y colas en las cuentas de almacenamiento prémium.
-|Discos administrados|Premium y estándar admitidos|Se admite cuando se usa la versión 1808 o posterior.
-|Instantáneas de disco administrado|Disponibilidad general|Compatible.
-|Instantáneas incrementales de discos administrados|Disponibilidad general|Todavía no se admite.
-|Instantáneas de discos administrados para la máquina virtual con el estado en ejecución|Disponibilidad general|Todavía no se admite.
-|Nombre de blob|1 024 caracteres (2 048 bytes)|880 caracteres (1 760 bytes)
-|Tamaño máximo de blob en bloque|4,75 TB (100 MB x 50 000 bloques)|4,75 TB (100 MB x 50 000 bloques) para la actualización 1802 o versiones más recientes. 50 000 x 4 MB (aproximadamente 195 GB) para las versiones anteriores.
-|Copia de instantánea de blob en páginas|Copia de seguridad de discos de máquina virtual no administrados conectados a una máquina virtual en ejecución compatible|Se admite en una [API como operación asincrónica](azure-stack-acs-differences.md).
-|Copia de instantáneas incrementales del blob de página|Blobs en páginas de Azure estándar y premium admitidos|Todavía no se admite.
+|Tipo de cuenta de almacenamiento|Cuentas de uso general V1, V2 y de Blob Storage. |Solo de uso general V1.
+|Opciones de replicación|Almacenamiento con redundancia local, almacenamiento con redundancia geográfica, almacenamiento con redundancia geográfica con acceso de lectura y almacenamiento con redundancia de zona. |Almacenamiento con redundancia local.
+|Premium Storage|Proporcione almacenamiento de alto rendimiento y latencia baja. Solo admite blobs en páginas de cuentas de almacenamiento prémium.|Se pueden aprovisionar, pero no hay límite de rendimiento o garantía. No se realizaría ningún bloqueo con las opciones de blobs en bloques, blobs en anexos, tablas y colas en las cuentas de almacenamiento Premium.
+|Discos administrados|Se admiten Premium y Estándar. |Se admite cuando se usa la versión 1808 o posterior.
+|Nombre de blob|1 024 caracteres (2 048 bytes). |880 caracteres (1 760 bytes).
+|Tamaño máximo de blob en bloque|4,75 TB (100 MB x 50 000 bloques). |4,75 TB (100 MB x 50 000 bloques) para la actualización 1802 o versiones más recientes. 50 000 x 4 MB (aproximadamente 195 GB) para las versiones anteriores.
+|Copia de instantánea de blob en páginas|Copia de seguridad de discos de máquina virtual no administrados conectados a una máquina virtual en ejecución compatible. |Todavía no se admite.
+|Copia de instantáneas incrementales del blob de página|Se admiten Blobs en páginas de Azure Estándar y Premium. |Todavía no se admite.
 |Facturación de blobs en páginas|Los cargos se generan por páginas únicas, independientemente de si están en el blob o en la instantánea. No se incurrirá en cargos adicionales por las instantáneas asociadas a un blob hasta que el blob base se actualice.|Los cargos se generan para el blob base y las instantáneas asociadas. Se podrían generar cargos adicionales por cada instantánea individual.
 |Niveles de almacenamiento para Blob Storage|Niveles de almacenamiento de acceso frecuente, de acceso esporádico y de acceso de archivo.|Todavía no se admite.
-|Eliminación temporal para Blob Storage|Disponibilidad general|Todavía no se admite.
-|Tamaño máximo de blob en página|8 TB|1 TB
-|Tamaño de página de blob en página|512 bytes|4 KB
-|Clave de partición de tabla y tamaño de clave de fila|1 024 caracteres (2 048 bytes)|400 caracteres (800 bytes)
+|Eliminación temporal para Blob Storage|Disponible en general. |Todavía no se admite.
+|Tamaño máximo de blob en página|8 TB. |1 TB. 
+|Tamaño de página de blob en página|512 bytes. |4 KB. 
+|Clave de partición de tabla y tamaño de clave de fila|1 024 caracteres (2 048 bytes).|400 caracteres (800 bytes).
 |Instantánea de blob|No se limita el número máximo de instantáneas de un blob.|El número máximo de instantáneas de un blob es 1 000.
-|Autenticación de Azure AD para almacenamiento|Disponibilidad general|Todavía no se admite.
-|Blobs inalterables|Disponibilidad general|Todavía no se admite.
-|Firewall y reglas de red virtual para almacenamiento|Disponibilidad general|Todavía no se admite.|
-|Asignación de un dominio personalizado a un punto de conexión de Blob Storage|Disponibilidad general|Todavía no se admite.|
-|Hospedaje de sitios web estáticos en Blob Storage|Disponibilidad general|Todavía no se admite.|
-|Cifrado de datos de almacenamiento en reposo con claves administradas por el cliente|Disponibilidad general|Todavía no se admite.|
-|Comprobación de la integridad de los datos transaccionales con hash CRC64|Disponibilidad general|Todavía no se admite.|
-|Copia sincrónica del lado servidor de datos de la dirección URL|Disponibilidad general|Todavía no se admite.|
-|API Batch para Blob Storage|Disponibilidad general|Todavía no se admite.|
+|Autenticación de Azure AD para almacenamiento|En versión preliminar. |Todavía no se admite.
+|Blobs inalterables|Disponible en general. |Todavía no se admite.
+|Firewall y reglas de red virtual para almacenamiento|Disponible en general. |Todavía no se admite.|
 
 También hay diferencias en las métricas de almacenamiento:
 
-* Los datos de transacción de las métricas de almacenamiento no distinguirán el ancho de banda de red interna o externa.
+* Los datos de transacción de las métricas de almacenamiento no distinguen entre el ancho de banda de red interna o externa.
 * Los datos de transacción de las métricas de almacenamiento no incluyen el acceso de la máquina virtual a los discos montados.
 
 ## <a name="api-version"></a>Versión de API
@@ -103,13 +95,12 @@ Versiones anteriores:
 
 ## <a name="powershell-version"></a>Versión de PowerShell
 
-En lo que respecta a la instancia de PowerShell del módulo de almacenamiento, debe conocer cuál es la versión compatible con la API REST. 
+En lo que respecta a la instancia de PowerShell del módulo de almacenamiento, debe conocer cuál es la versión compatible con la API REST.
 
 | módulo | Versión admitida | Uso |
-|----------------|-------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Azure.Storage | [4.5.0](https://www.powershellgallery.com/packages/Azure.Storage/4.5.0) | Administra blobs, colas y tablas en las cuentas de almacenamiento de Azure Stack Hub |
-| AzureRM.Storage | [5.0.4](https://www.powershellgallery.com/packages/AzureRM.Storage/5.0.4) | Crea y administra cuentas de almacenamiento en Azure Stack Hub |
-
+|---|---|---|
+| Azure.Storage | [4.5.0](https://www.powershellgallery.com/packages/Azure.Storage/4.5.0) | Administra blobs, colas y tablas en las cuentas de almacenamiento de Azure Stack Hub. |
+| AzureRM.Storage | [5.0.4](https://www.powershellgallery.com/packages/AzureRM.Storage/5.0.4) | Crea y administra cuentas de almacenamiento en Azure Stack Hub. |
 
 Para más información sobre las bibliotecas de cliente de almacenamiento de Azure Stack Hub admitidas, consulte: [Introducción a las herramientas de desarrollo de Azure Stack Hub Storage](azure-stack-storage-dev.md).
 

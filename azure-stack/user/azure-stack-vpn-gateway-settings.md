@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: sethm
 ms.lastreviewed: 12/27/2019
-ms.openlocfilehash: b8f7be7885bd4565a13983d858c1f10b30df20b3
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.openlocfilehash: 6af8d30fc7902e716d974c5ad66049e3a6037f47
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79295572"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "80812431"
 ---
 # <a name="configure-vpn-gateway-settings-for-azure-stack-hub"></a>Configuración de una puerta de enlace de VPN para Azure Stack Hub
 
@@ -41,7 +41,7 @@ Azure Stack Hub ofrece las SKU de VPN Gateway que se muestran en la siguiente ta
 
 | | Rendimiento de VPN Gateway |Túneles IPsec máximos de VPN Gateway |
 |-------|-------|-------|
-|**SKU básica**  | 100 Mbps  | 20    |
+|**SKU básica**  | 100 Mbps    | 20    |
 |**SKU estándar**   | 100 Mbps  | 20 |
 |**SKU de alto rendimiento** | 200 Mbps | 10 |
 
@@ -156,7 +156,7 @@ Cuando se configura una conexión VPN en Azure Stack Hub, es preciso configurar 
 A diferencia de Azure, que admite varias ofertas como iniciador y respondedor, Azure Stack Hub admite solo una de forma predeterminada. Si tiene que usar distintas configuraciones IPSec/IKE para trabajar con el dispositivo VPN, hay más opciones de parámetros disponibles para configurar la conexión manualmente. Para más información, consulte [Configuración de la directiva IPsec/IKE para conexiones VPN de sitio a sitio](azure-stack-vpn-s2s.md).
 
 > [!IMPORTANT] 
-> Si se usa un túnel S2S, los paquetes se encapsulan con encabezados adicionales, lo que aumenta el tamaño global del paquete. En estos escenarios, debe fijar TCP **MSS** en **1350**. O, si los dispositivos VPN no admiten la fijación de MSS, también puede establecer el **MTU** en la interfaz de túnel en **1400** bytes. Para más información, consulte [Optimización del rendimiento de TCP/IP para máquinas virtuales] (virtual-network-tcpip-performance-tuning.md) 
+> Si se usa un túnel S2S, los paquetes se encapsulan con encabezados adicionales, lo que aumenta el tamaño global del paquete. En estos escenarios, debe fijar TCP **MSS** en **1350**. O, si los dispositivos VPN no admiten la fijación de MSS, también puede establecer la opción **MTU** en la interfaz de túnel en **1400** bytes. Para más información, consulte [Optimización del rendimiento de TCP/IP de la red virtual](/azure/virtual-network/virtual-network-tcpip-performance-tuning).
 >
 
 ### <a name="ike-phase-1-main-mode-parameters"></a>Parámetros de la fase 1 de IKE (Modo principal)

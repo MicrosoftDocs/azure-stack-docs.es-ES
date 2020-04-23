@@ -3,29 +3,29 @@ title: Publicación de servicios de Azure Stack Hub en el centro de datos
 description: Aprenda a publicar servicios de Azure Stack Hub en el centro de datos.
 author: IngridAtMicrosoft
 ms.topic: article
-ms.date: 12/11/2019
+ms.date: 04/10/2020
 ms.author: inhenkel
 ms.reviewer: wamota
 ms.lastreviewed: 12/11/2019
-ms.openlocfilehash: cf72ecf8d5c5e7bfbf4e640b6193319f9e16d511
-ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
+ms.openlocfilehash: 320764b823a5dd70808abda08e8cdc53c6a56e7d
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79295062"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81243903"
 ---
-# <a name="publish-azure-stack-hub-services-in-your-datacenter"></a>Publicación de servicios de Azure Stack Hub en el centro de datos 
+# <a name="publish-azure-stack-hub-services-in-your-datacenter"></a>Publicación de servicios de Azure Stack Hub en el centro de datos
 
 Azure Stack Hub configura direcciones IP virtuales (VIP) para sus roles de infraestructura. Estas VIP se asignan desde el grupo de direcciones IP públicas. Cada VIP está protegida con una lista de control de acceso (ACL) en el nivel de red definido por software. Las ACL también se usan en los conmutadores físicos (Tor y BMC) para proteger aún más la solución. Se crea una entrada DNS para cada punto de conexión de la zona DNS externa que se haya especificado durante la implementación. Por ejemplo, el portal de usuarios se asigna a la entrada de host de DNS de portal. *&lt;region>.&lt;fqdn>* .
 
 En el siguiente diagrama de arquitectura se muestran los diferentes niveles de red y ACL:
 
-![Diagrama que muestra diferentes capas de red y ACL](media/azure-stack-integrate-endpoints/Integrate-Endpoints-01.png)
+![Diagrama que muestra diferentes capas de red y ACL](media/azure-stack-integrate-endpoints/integrate-endpoints-01.svg)
 
-### <a name="ports-and-urls"></a>Puertos y direcciones URL
+## <a name="ports-and-urls"></a>Puertos y direcciones URL
 
 Para que los servicios de Azure Stack Hub (como los portales, Azure Resource Manager, DNS, etc.) estén disponible para las redes externas, debe permitir el tráfico entrante en estos puntos de conexión procedente de direcciones URL, puertos y protocolos específicos.
- 
+
 En una implementación en la que un proxy transparente establece un vínculo superior a un servidor proxy tradicional o un firewall protege la solución, debe permitir puertos y direcciones URL concretos para la comunicación [entrante](azure-stack-integrate-endpoints.md#ports-and-protocols-inbound) y [saliente](azure-stack-integrate-endpoints.md#ports-and-urls-outbound). Aquí se incluyen puertos y direcciones URL de identidad, productos de Marketplace, revisiones y actualizaciones y datos de uso.
 
 [No se admite](azure-stack-firewall.md#ssl-interception) la interceptación de tráfico SSL y puede provocar errores de servicio cuando se accede a los puntos de conexión. 
@@ -86,6 +86,7 @@ Azure Stack Hub solo admite servidores proxy transparentes. En una implementaci�
 |Windows Defender|&#42;.wdcp.microsoft.com<br>&#42;.wdcpalt.microsoft.com<br>&#42;.wd.microsoft.com<br>&#42;.update.microsoft.com<br>&#42;.download.microsoft.com<br>https:\//www.microsoft.com/pkiops/crl<br>https:\//www.microsoft.com/pkiops/certs<br>https:\//crl.microsoft.com/pki/crl/products<br>https:\//www.microsoft.com/pki/certs<br>https:\//secure.aadcdn.microsoftonline-p.com<br>|HTTPS|80<br>443|VIP pública - /27<br>Red de la infraestructura pública|
 |NTP|(Se proporciona la dirección IP del servidor NTP para la implementación)|UDP|123|VIP pública - /27|
 |DNS|(Se proporciona la dirección IP del servidor DNS para la implementación)|TCP<br>UDP|53|VIP pública - /27|
+|SYSLOG|(Se proporciona la dirección IP del servidor de SYSLOG para la implementación)|TCP<br>UDP|6514<br>514|VIP pública - /27|
 |CRL|(La dirección URL en los puntos de distribución de CRL en el certificado)|HTTP|80|VIP pública - /27|
 |LDAP|Bosque de Active Directory proporcionado para la integración con Graph|TCP<br>UDP|389|VIP pública - /27|
 |SSL de LDAP|Bosque de Active Directory proporcionado para la integración con Graph|TCP|636|VIP pública - /27|

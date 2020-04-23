@@ -8,12 +8,12 @@ ms.date: 10/07/2019
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/23/2019
-ms.openlocfilehash: bd62be6a7a2990a7a405dd5c5e1ff44e64007b6f
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 0c61abfab5615d265377341f6fb96fe5b4a18b29
+ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77696824"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81478832"
 ---
 # <a name="create-highly-available-sql-databases-with-azure-stack-hub"></a>Creación de bases de datos SQL de alta disponibilidad con Azure Stack Hub
 
@@ -37,7 +37,7 @@ Antes de comenzar, asegúrese de que el [proveedor de recursos de servidor de SQ
 
 - Imagen de Marketplace de [Windows Server 2016 Datacenter](https://azuremarketplace.microsoft.com/marketplace/apps/MicrosoftWindowsServer.WindowsServer).
 - SQL Server 2016 SP1 o SP2 (Developer, Standard o Enterprise) en la imagen del servidor de Windows Server 2016. En este artículo se usa la imagen de Marketplace [SQL Server 2016 SP2 Enterprise en Windows Server 2016](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoftsqlserver.sql2016sp2-ws2016).
-- [Extensión IaaS de SQL Server](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-agent-extension), versión 1.2.30 o superior. La extensión IaaS de SQL instala los componentes que son necesarios para los elementos de Marketplace de SQL Server para todas las versiones de Windows. Permite que los parámetros específicos de SQL se configuren en máquinas virtuales de SQL. Si la extensión no está instalada en el Marketplace local, el aprovisionamiento de SQL generará un error.
+- [Extensión IaaS de SQL Server](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-agent-extension), versión 1.3.20180 o superior. La extensión IaaS de SQL instala los componentes que son necesarios para los elementos de Marketplace de SQL Server para todas las versiones de Windows. Permite que los parámetros específicos de SQL se configuren en máquinas virtuales de SQL. Si la extensión no está instalada en el Marketplace local, el aprovisionamiento de SQL generará un error.
 - [Extensión de script personalizada para Windows](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.CustomScriptExtension), versión 1.9.1 o superior. La extensión de script personalizada es una herramienta que puede usarse para iniciar automáticamente las tareas de personalización de la máquina virtual posteriores a la implementación.
 - [Extensión DSC (configuración de estado deseado) de PowerShell](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.DSC-arm), versión 2.76.0.0 o superior. DSC es una plataforma de administración de Windows PowerShell que permite implementar y administrar datos de configuración de servicios de software. La plataforma también administra el entorno en el que se ejecutan estos servicios.
 
@@ -58,15 +58,15 @@ Siga los pasos de esta sección para implementar el grupo de disponibilidad Alwa
 - Un conjunto que disponibilidad que contiene las máquinas virtuales testigo del recurso compartido de archivos y SQL.
 
 1. 
-   [!INCLUDE [azs-admin-portal](../includes/azs-admin-portal.md)]
+   [!INCLUDE [azs-user-portal](../includes/azs-user-portal.md)]
 
 2. Seleccione **\+** **Crear un recurso** > **Personalizar** y, a continuación, **Implementación de plantilla**.
 
-   ![Implementación de plantillas personalizadas en el portal de administración de Azure Stack Hub](media/azure-stack-tutorial-sqlrp/1.png)
+   ![Implementación de plantillas personalizadas en el portal de administración de Azure Stack Hub](media/azure-stack-tutorial-sqlrp/aoag-template-deployment-1.png)
 
 3. En la hoja **Implementación personalizada**, seleccione **Editar plantilla** > **Plantilla de inicio rápido** y, a continuación, use la lista desplegable de plantillas personalizadas disponibles para seleccionar la plantilla **sql-2016-alwayson**. Seleccione **Aceptar** y **Guardar**.
 
-   [![Edición de una plantilla en el portal de administración de Azure Stack Hub](media/azure-stack-tutorial-sqlrp/2-sm.PNG "Selección de una plantilla de inicio rápido")](media/azure-stack-tutorial-sqlrp/2-lg.PNG#lightbox)
+   [![Edición de una plantilla en el portal de administración de Azure Stack Hub](media/azure-stack-tutorial-sqlrp/aoag-template-deployment-2.png "Selección de una plantilla de inicio rápido")](media/azure-stack-tutorial-sqlrp/aoag-template-deployment-2.png#lightbox)
 
 4. En la hoja **Implementación personalizada**, seleccione **Editar parámetros** y revise los valores predeterminados. Modifique los valores según sea necesario para proporcionar toda la información de los parámetros necesaria y, a continuación, seleccione **Aceptar**.
 
@@ -74,22 +74,20 @@ Siga los pasos de esta sección para implementar el grupo de disponibilidad Alwa
     - Proporcione contraseñas complejas para los parámetros ADMINPASSWORD, SQLSERVERSERVICEACCOUNTPASSWORD y SQLAUTHPASSWORD.
     - Escriba el sufijo DNS para la búsqueda inversa todo en minúsculas para el parámetro DNSSUFFIX (**azurestack.external** para las instalaciones de ASDK).
     
-   [![Edición de parámetros en el portal de administración de Azure Stack Hub](media/azure-stack-tutorial-sqlrp/3-sm.PNG "Edición de los parámetros de implementación personalizada")](media/azure-stack-tutorial-sqlrp/3-lg.PNG#lightbox)
+   [![Edición de parámetros en el portal de administración de Azure Stack Hub](media/azure-stack-tutorial-sqlrp/aoag-template-deployment-3.png "Edición de los parámetros de implementación personalizada")](media/azure-stack-tutorial-sqlrp/aoag-template-deployment-3.png#lightbox)
 
 5. En la hoja **Implementación personalizada**, seleccione la suscripción de Azure que se usará y cree un nuevo grupo de recursos o seleccione un grupo de recursos existente para la implementación personalizada.
 
     A continuación, seleccione la ubicación del grupo de recursos (**local** para las instalaciones de ASDK) y, a continuación, haga clic en **Crear**. Se validará la configuración de implementación personalizada y, a continuación, se iniciará la implementación.
 
-    [![Elección de la suscripción en el portal de administración de Azure Stack Hub](media/azure-stack-tutorial-sqlrp/4-sm.PNG "Creación de una implementación personalizada")](media/azure-stack-tutorial-sqlrp/4-lg.PNG#lightbox)
+    [![Elección de la suscripción en el portal de administración de Azure Stack Hub](media/azure-stack-tutorial-sqlrp/aoag-template-deployment-4.png "Creación de una implementación personalizada")](media/azure-stack-tutorial-sqlrp/aoag-template-deployment-4.png#lightbox)
 
-6. En el portal de administración, seleccione **Grupos de recursos** y, a continuación, el nombre del grupo de recursos que creó para la implementación personalizada (**resource-group** en este ejemplo). Vea el estado de la implementación para asegurarse de que todas las implementaciones se han completado correctamente.
+6. En el portal de usuario, seleccione **Grupos de recursos** y, a continuación, el nombre del grupo de recursos que creó para la implementación personalizada (**resource-group** en este ejemplo). Vea el estado de la implementación para asegurarse de que todas las implementaciones se han completado correctamente.
     
     A continuación, revise los elementos del grupo de recursos y seleccione el elemento de la dirección IP pública **SQLPIPsql\<nombre del grupo de recursos\>** . Anote la dirección IP pública y el nombre de dominio completo de la dirección IP pública del equilibrador de carga. Deberá proporcionar esta información al operador de Azure Stack Hub para que pueda crear un servidor de hospedaje SQL aprovechando este grupo de disponibilidad AlwaysOn de SQL.
 
    > [!NOTE]
    > La implementación de la plantilla tardará varias horas en completarse.
-
-   ![Personalización de la oferta completada en el portal de administración de Azure Stack Hub](./media/azure-stack-tutorial-sqlrp/5.png)
 
 ### <a name="enable-automatic-seeding"></a>Habilitación de la propagación automática
 
