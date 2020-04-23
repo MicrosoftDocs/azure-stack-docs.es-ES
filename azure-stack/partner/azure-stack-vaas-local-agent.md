@@ -4,17 +4,17 @@ titleSuffix: Azure Stack Hub
 description: Aprenda a implementar el agente local para la validación como servicio de Azure Stack Hub.
 author: mattbriggs
 ms.topic: quickstart
-ms.date: 11/11/2019
+ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: a6358b7b9baff76726b2bd1282f525184a071c05
-ms.sourcegitcommit: 4138a2a15f78e7db38b3a29acc963a71937146fd
+ms.openlocfilehash: ff20f82244adbbf4b1aebebd31bbf99e716bd6ce
+ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "79295620"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81661270"
 ---
 # <a name="deploy-the-local-agent"></a>Implementación del agente local
 

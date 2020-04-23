@@ -1,25 +1,26 @@
 ---
-title: Verificación de los paquetes del fabricante de equipos originales (OEM) en la validación como servicio de Azure Stack Hub
-description: Aprenda a verificar los paquetes del fabricante de equipos originales (OEM) con la validación como servicio.
+title: Validación de paquetes de OEM
+titleSuffix: Azure Stack Hub
+description: Aprenda a validar paquetes de OEM con la validación como servicio de Azure Stack Hub.
 author: mattbriggs
 ms.topic: tutorial
-ms.date: 11/11/2019
+ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 621bed34b4d5f633b1a104c03c0bca341ec21bdd
-ms.sourcegitcommit: bdd4d529bd3e115a9f76eece62b1613448d5d020
+ms.openlocfilehash: 4d62dcd1414edbc38b4407d980b7af974190c390
+ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "79293922"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81661410"
 ---
 # <a name="validate-oem-packages"></a>Validación de paquetes de OEM
 
 [!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 
-Puede probar un nuevo paquete de OEM cuando se ha producido un cambio en el firmware o en los controladores para una validación de solución completa. Cuando el paquete ha superado la prueba, Microsoft lo firma. La prueba debe contener el paquete de extensión de OEM actualizado con los controladores y el firmware que han superado las pruebas del logotipo de Windows Server y las pruebas PCS.
+Puede probar un nuevo paquete de fabricante de equipos originales (OEM) si se ha producido un cambio en el firmware o en los controladores para conseguir una validación de la solución completa. Cuando el paquete ha superado la prueba, Microsoft lo firma. La prueba debe contener el paquete de extensión de OEM actualizado con los controladores y el firmware que han superado las pruebas del logotipo de Windows Server y las pruebas PCS.
 
 [!INCLUDE [azure-stack-vaas-workflow-validation-completion](includes/azure-stack-vaas-workflow-validation-completion.md)]
 
@@ -28,7 +29,7 @@ Puede probar un nuevo paquete de OEM cuando se ha producido un cambio en el firm
 
 ## <a name="managing-packages-for-validation"></a>Administración de paquetes para la validación
 
-Al usar el flujo de trabajo **Validación del paquete** para validar un paquete, deberá proporcionar una dirección URL a **Azure Storage Blob**. Este blob es el paquete de OEM firmado de prueba que se instalará como parte del proceso de actualización. Cree el blob mediante la cuenta de almacenamiento de Azure que creó durante la instalación (consulte [Configuración de los recursos de Validación como servicio](azure-stack-vaas-set-up-resources.md)).
+Al usar el flujo de trabajo **Validación del paquete** para validar un paquete, deberá proporcionar una dirección URL a **Azure Storage Blob**. Este blob es el paquete de OEM firmado de prueba que se instala como parte del proceso de actualización. Cree el blob mediante la cuenta de Azure Storage que creó durante la instalación (consulte [Configuración de los recursos de validación como servicio [VaaS]](azure-stack-vaas-set-up-resources.md)).
 
 ### <a name="prerequisite-provision-a-storage-container"></a>Requisito previo: aprovisionar un contenedor de almacenamiento
 
@@ -39,7 +40,7 @@ Cree un contenedor en la cuenta de almacenamiento para los blobs de paquetes. Es
 2. En la hoja izquierda de **Blob Service**, seleccione **Contenedores**.
 
 3. Seleccione **+ Contenedor** en la barra de menús.
-    1. Proporcione un nombre para el contenedor, por ejemplo, `vaaspackages`.
+    1. Proporcione un nombre para el contenedor. Por ejemplo, `vaaspackages`.
     1. Seleccione el nivel de acceso deseado para los clientes no autenticados como VaaS. Para más información acerca de cómo conceder acceso de VaaS a los paquetes en cada escenario, consulte [Control del nivel de acceso de un contenedor](#handling-container-access-level).
 
 ### <a name="upload-package-to-storage-account"></a>Carga de un paquete en una cuenta de almacenamiento
@@ -55,7 +56,7 @@ Cree un contenedor en la cuenta de almacenamiento para los blobs de paquetes. Es
 
 ### <a name="generate-package-blob-url-for-vaas"></a>Generación de la dirección URL del blob del paquete para VaaS
 
-Al crear un flujo de trabajo de **Package Validation** (Validación del paquete) en el portal de VaaS, deberá proporcionar una dirección URL a la instancia de Azure Storage Blob que contiene el paquete. Algunas pruebas *interactivas*, incluidas la **comprobación mensual de actualizaciones de Azure Stack Hub** y la **comprobación del paquete de extensión de OEM**, también requieren una dirección URL para los blobs del paquete.
+Al crear un flujo de trabajo de **Validación del paquete** en el portal de VaaS, deberá proporcionar una dirección URL a la instancia de Azure Storage Blob que contiene el paquete. Algunas pruebas *interactivas*, incluidas la **comprobación mensual de actualizaciones de Azure Stack Hub** y la **comprobación del paquete de extensión de OEM**, también requieren una dirección URL para los blobs del paquete.
 
 #### <a name="handling-container-access-level"></a>Control del nivel de acceso de un contenedor
 
@@ -78,7 +79,7 @@ Use esta opción si se establece el nivel de acceso de su contenedor de almacena
 > [!NOTE]
 > Este método no funcionará para pruebas *interactivas*. Consulte [Opción 2: Construir un dirección URL de SAS del contenedor](#option-2-construct-a-container-sas-url).
 
-1. En [Azure Portal](https://portal.azure.com/), vaya a la cuenta de almacenamiento y, después, al archivo .zip que contiene el paquete.
+1. En [Azure Portal](https://portal.azure.com/), vaya a la cuenta de almacenamiento y, después, al archivo `.zip` que contiene el paquete.
 
 2. Seleccione **Generar SAS** en el menú contextual.
 
@@ -107,7 +108,7 @@ Use esta opción si el nivel de acceso de su contenedor de almacenamiento se est
 1. [!INCLUDE [azure-stack-vaas-sas-step_generate](includes/azure-stack-vaas-sas-step_generate.md)]
     El formato debe ser similar al siguiente: `https://storageaccountname.blob.core.windows.net/?sv=2016-05-31&ss=b&srt=co&sp=rl&se=2017-05-11T21:41:05Z&st=2017-05-11T13:41:05Z&spr=https`
 
-1. Modifique la dirección URL de SAS generada para incluir el contenedor del paquete, `{containername}`, y el nombre del blob del paquete, `{mypackage.zip}`, como sigue: `https://storageaccountname.blob.core.windows.net/{containername}/{mypackage.zip}?sv=2016-05-31&ss=b&srt=co&sp=rl&se=2017-05-11T21:41:05Z&st=2017-05-11T13:41:05Z&spr=https`
+1. Modifique la dirección URL de SAS generada para incluir el contenedor del paquete, `{containername}`, y el nombre del blob del paquete, `{mypackage.zip}`. Por ejemplo: `https://storageaccountname.blob.core.windows.net/{containername}/{mypackage.zip}?sv=2016-05-31&ss=b&srt=co&sp=rl&se=2017-05-11T21:41:05Z&st=2017-05-11T13:41:05Z&spr=https`.
 
     Use este valor al proporcionar las direcciones URL del blob de paquete para el portal.
 
@@ -118,7 +119,7 @@ Use esta opción si es aceptable permitir el acceso de clientes no autenticados 
 > [!CAUTION]
 > Esta opción abre los blobs para el acceso anónimo de solo lectura.
 
-1. Establezca el nivel de acceso del contenedor de paquete en **Blob** o **Contenedor**; para ello, siga las instrucciones de la sección [Concesión de permisos a usuarios anónimos a contenedores y blobs](https://docs.microsoft.com/azure/storage/storage-manage-access-to-resources#grant-anonymous-users-permissions-to-containers-and-blobs).
+1. Establezca el nivel de acceso del contenedor de paquetes en **Blob** o **Contenedor**. Para obtener más información, consulte [Concesión de permisos a usuarios anónimos a contenedores y blobs](https://docs.microsoft.com/azure/storage/storage-manage-access-to-resources#grant-anonymous-users-permissions-to-containers-and-blobs).
 
     > [!NOTE]
     > Si va a proporcionar una dirección URL del paquete a una prueba *interactiva*, tiene que conceder **acceso de lectura público completo** al contenedor para continuar con las pruebas.
@@ -141,14 +142,14 @@ Use esta opción si es aceptable permitir el acceso de clientes no autenticados 
 
 5. Escriba la dirección URL del blob de Azure Storage para el paquete de OEM firmado de prueba que requiera una firma de Microsoft. Para instrucciones, consulte [Generación de la dirección URL del blob del paquete para VaaS](#generate-package-blob-url-for-vaas).
 
-6. Copie la carpeta del paquete de actualización de Azure Stack Hub a un directorio local del DVM. Escriba la ruta de acceso a la **carpeta que contiene el archivo zip del paquete y el archivo de metadatos** para la "ruta de acceso a la carpeta del paquete de actualizaciones de AzureStack"
+6. Copie la carpeta del paquete de actualización de Azure Stack Hub a un directorio local del DVM. Escriba la ruta de acceso a la **carpeta que contiene el archivo zip del paquete y el archivo de metadatos** para la "ruta de acceso a la carpeta del paquete de actualizaciones de AzureStack".
 
-7. Copie la carpeta del paquete de OEM creado anteriormente a un directorio local del DVM. Escriba la ruta de acceso a la **carpeta que contiene el archivo zip del paquete y el archivo de metadatos** para la "ruta de acceso a la carpeta del paquete de actualizaciones de OEM"
+7. Copie la carpeta del paquete de OEM creado anteriormente a un directorio local del DVM. Escriba la ruta de acceso a la **carpeta que contiene el archivo zip del paquete y el archivo de metadatos** para la "ruta de acceso a la carpeta del paquete de actualizaciones de OEM".
 
     > [!NOTE]
     > Copie la actualización de Azure Stack Hub y la actualización de OEM en **2 directorios independientes**.
 
-8. "RequireDigitalSignature": proporcione **true** si necesita que el paquete esté firmado por Microsoft (mediante la ejecución del flujo de trabajo de validación de OEM). Si va a validar un paquete firmado por Microsoft en la actualización más reciente de Azure Stack Hub, proporcione este valor como false (mediante la ejecución de la comprobación mensual de actualizaciones de Azure Stack Hub).
+8. `RequireDigitalSignature`: proporcione **true** si necesita que el paquete esté firmado por Microsoft (mediante la ejecución del flujo de trabajo de validación de OEM). Si va a validar un paquete firmado por Microsoft en la actualización más reciente de Azure Stack Hub, proporcione este valor como false (mediante la ejecución de la comprobación mensual de actualizaciones de Azure Stack Hub).
 
 9. [!INCLUDE [azure-stack-vaas-workflow-step_test-params](includes/azure-stack-vaas-workflow-step_test-params.md)]
 
@@ -170,10 +171,10 @@ Es necesario ejecutar las pruebas siguientes para la validación de paquetes de 
 
 1. En la página **Package Validation tests summary** (Resumen de las pruebas de validación del paquete), se ejecutará un subconjunto de las pruebas enumeradas apropiadas para su escenario.
 
-    En los flujos de trabajo de validación, para **programar** una prueba se usan los parámetros comunes de nivel de flujo de trabajo que especificó durante la creación del flujo de trabajo (consulte [Parámetros comunes del flujo de trabajo en la validación de Azure Stack Hub como servicio](azure-stack-vaas-parameters.md)). Si alguno de los valores de parámetro de prueba deja de ser válido, debe volver a suministrarlo como se indica en [Modify workflow parameters](azure-stack-vaas-monitor-test.md#change-workflow-parameters) (Modificación de los parámetros de flujo de trabajo).
+    En los flujos de trabajo de validación, para **programar** una prueba se usan los parámetros comunes de nivel de flujo de trabajo que especificó durante la creación del flujo de trabajo (consulte [Parámetros comunes del flujo de trabajo en la validación como servicio de Azure Stack Hub](azure-stack-vaas-parameters.md)). Si alguno de los valores de parámetro de prueba deja de ser válido, debe volver a suministrarlo como se indica en [Modify workflow parameters](azure-stack-vaas-monitor-test.md#change-workflow-parameters) (Modificación de los parámetros de flujo de trabajo).
 
     > [!NOTE]
-    > La programación a través de una prueba de validación a través de una instancia existente creará una nueva instancia en el lugar de la anterior en el portal. Los registros de la instancia anterior se conservarán, pero no se podrá acceder a ellos desde el portal.  
+    > La programación a través de una prueba de validación a través de una instancia existente creará una nueva instancia en el lugar de la anterior en el portal. Los registros de la instancia anterior se conservarán, pero no se podrá acceder a ellos desde el portal.<br><br>
     > Una vez finalizada una prueba correctamente, la acción **Schedule** (Programar) pasará a estar deshabilitada.
 
 2. Seleccione el agente que ejecutará la prueba. Para más información acerca de cómo agregar agentes de ejecución de prueba, consulte [Implementación del agente local](azure-stack-vaas-local-agent.md).
@@ -184,7 +185,7 @@ Es necesario ejecutar las pruebas siguientes para la validación de paquetes de 
 
 5. Revise los resultados de las pruebas **necesarias**.
 
-Para enviar un solicitud de firma del paquete, envíe a [vaashelp@microsoft.com](mailto:vaashelp@microsoft.com) el nombre de la solución y el nombre de la validación del paquete asociado con esta ejecución.
+Para enviar una solicitud de firma del paquete, envíe un correo electrónico a [vaashelp@microsoft.com](mailto:vaashelp@microsoft.com) con el nombre de la solución y el nombre de la validación del paquete asociado con esta ejecución.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

@@ -3,16 +3,16 @@ title: Creación de una máquina virtual Windows con el portal de Azure Stack Hu
 description: Obtenga información sobre cómo crear una máquina virtual (VM) Windows Server 2016 mediante el portal de Azure Stack Hub.
 author: mattbriggs
 ms.topic: quickstart
-ms.date: 1/10/2020
+ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 1/10/2020
-ms.openlocfilehash: c9b2309e5c640d9f2cab79f93dc8a13b1344cea2
-ms.sourcegitcommit: 4138a2a15f78e7db38b3a29acc963a71937146fd
+ms.openlocfilehash: b32ce924aae800360229ca1e309b568fdc6f5353
+ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "77703764"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81660265"
 ---
 # <a name="quickstart-create-a-windows-server-vm-with-the-azure-stack-hub-portal"></a>Inicio rápido: Creación de una máquina virtual Windows Server con el portal de Azure Stack Hub
 

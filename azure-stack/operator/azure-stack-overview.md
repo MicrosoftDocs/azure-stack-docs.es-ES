@@ -3,16 +3,16 @@ title: Introducción a Azure Stack Hub
 description: Ofrece información general sobre qué es Azure Stack Hub y cómo le permite ejecutar servicios de Azure en su centro de datos.
 author: justinha
 ms.topic: overview
-ms.date: 11/08/2019
+ms.date: 04/20/2020
 ms.author: justinha
 ms.reviewer: unknown
 ms.lastreviewed: 11/08/2019
-ms.openlocfilehash: afa7f02f451192640172665e18213d125e24b574
-ms.sourcegitcommit: 4138a2a15f78e7db38b3a29acc963a71937146fd
+ms.openlocfilehash: dc5fa60f0ab1460a98ec21a0501c3cdcec6a6637
+ms.sourcegitcommit: a3ae6dd8670f8fb24224880df7eee256ebbcc4ef
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "77698460"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81772633"
 ---
 # <a name="azure-stack-hub-overview"></a>Introducción a Azure Stack Hub
 
@@ -40,11 +40,11 @@ La arquitectura de Azure Stack Hub le permite proporcionar servicios de Azure en
 
 ## <a name="deployment-options"></a>Opciones de implementación
 
-Los sistemas integrados de Azure Stack Hub se ofrecen gracias a una asociación entre Microsoft y sus asociados de hardware, que permite crear una solución que ofrece innovación dirigida a la nube y sencillez en la administración de la computación. Como Azure Stack Hub se ofrece como un sistema en el que el software y el hardware están perfectamente integrados, tendrá la flexibilidad y el control que necesita, así como la capacidad de innovar desde la nube. 
+Los sistemas integrados de Azure Stack Hub se ofrecen gracias a una asociación entre Microsoft y sus asociados de hardware, que permite crear una solución que ofrece innovación dirigida a la nube y sencillez en la administración de la computación. Como Azure Stack Hub se ofrece como un sistema en el que el software y el hardware están perfectamente integrados, tendrá la flexibilidad y el control que necesita, así como la capacidad de innovar desde la nube.
 
 Un sistema integrado de Azure Stack Hub puede estar compuesto de 4 a 16 servidores y se le denomina una *unidad de escalado*. Microsoft y el asociado de hardware admiten de forma conjunta los sistemas integrados. El diagrama siguiente muestra un ejemplo de una unidad de escalado. 
 
-![Diagrama que muestra un sistema integrado de Azure Stack Hub](./media/azure-stack-overview/azure-stack-integrated-system.png). 
+![Diagrama que muestra un sistema integrado de Azure Stack Hub](./media/azure-stack-overview/azure-stack-integrated-system.svg). 
 
 <!---add info and image on regions, etc--->
 
