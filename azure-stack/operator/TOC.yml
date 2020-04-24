@@ -134,7 +134,7 @@
           href: azure-stack-cli-admin.md
         - name: Configuración del entorno de administración
           items:
-            - name: Instalación del módulo RM para PowerShell
+            - name: Instalación de AzureRM para PowerShell
               href: azure-stack-powershell-install.md
             - name: Instalación del módulo Az para PowerShell
               href: powershell-install-az-module.md
