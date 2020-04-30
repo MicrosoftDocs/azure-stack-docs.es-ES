@@ -3,16 +3,16 @@ title: Incorporación de direcciones IP públicas en Azure Stack Hub
 description: Aprenda a agregar direcciones IP públicas a Azure Stack Hub.
 author: justinha
 ms.topic: article
-ms.date: 09/10/2019
+ms.date: 04/20/2020
 ms.author: justinha
 ms.reviewer: scottnap
 ms.lastreviewed: 09/10/2019
-ms.openlocfilehash: f17ef9fad4dd595d4a8d1e51b4efc3c0dd029bef
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: efa240fbec361657362b936594ccee4c79f70afe
+ms.sourcegitcommit: a3ae6dd8670f8fb24224880df7eee256ebbcc4ef
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77703373"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81772465"
 ---
 # <a name="add-public-ip-addresses"></a>Incorporación de direcciones IP públicas
 
@@ -26,7 +26,7 @@ Puede agregar direcciones IP públicas a su sistema de Azure Stack Hub en cualq
 
 De modo general, el proceso para agregar un nuevo bloque de direcciones IP públicas a Azure Stack Hub es similar al siguiente:
 
- ![Agregar un flujo de IP](media/azure-stack-add-ips/flow.PNG)
+ ![Agregar un flujo de IP](media/azure-stack-add-ips/flow.svg)
 
 ## <a name="obtain-the-address-block-from-your-provider"></a>Obtener el bloque de direcciones del proveedor
 Lo primero que debe hacer es obtener el bloque de direcciones que quiere agregar a Azure Stack Hub. Según de dónde obtenga el bloque de direcciones, tenga en cuenta cuál es el plazo y administre este dato en función de la velocidad a la que consume las direcciones IP públicas en Azure Stack Hub.

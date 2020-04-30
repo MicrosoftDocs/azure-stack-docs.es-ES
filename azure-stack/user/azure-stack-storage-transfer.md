@@ -3,16 +3,16 @@ title: Uso de herramientas de transferencia de datos en Azure Stack Hub Storage
 description: Obtenga información sobre las herramientas de transferencia de datos de Azure Stack Hub Storage.
 author: mattbriggs
 ms.topic: conceptual
-ms.date: 11/06/2019
+ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/06/2019
-ms.openlocfilehash: 6b0a31c0eea7f2973563c3f1e481cd2e830c41f8
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: d61ce13c46e53f5eb2b9ed8fa544096db6ca8590
+ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77704886"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81660149"
 ---
 # <a name="use-data-transfer-tools-in-azure-stack-hub-storage"></a>Uso de herramientas de transferencia de datos en Azure Stack Hub Storage
 

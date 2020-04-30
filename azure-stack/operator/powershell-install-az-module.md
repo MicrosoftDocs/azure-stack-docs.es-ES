@@ -7,12 +7,12 @@ ms.date: 04/14/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 04/14/2020
-ms.openlocfilehash: 7823e23650f8fc782b15d9cd03e1f19313dc640a
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: d39bac1a99c2dc7d7a43f211a5fd3e5a7275de33
+ms.sourcegitcommit: d930d52e27073829b8bf8ac2d581ec2accfa37e3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81395179"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82174022"
 ---
 # <a name="install-powershell-az-preview-module-for-azure-stack-hub"></a>Instalación del módulo Az de PowerShell en versión preliminar para Azure Stack Hub
 
@@ -76,7 +76,7 @@ Ejecute el siguiente comando desde una sesión de PowerShell:
 
 ```powershell  
 Install-Module -Name Az.BootStrapper -Force -AllowPrerelease
-Use-AzProfile -Profile 2019-03-01-hybrid -Force
+Install-AzProfile -Profile 2019-03-01-hybrid -Force
 Install-Module -Name AzureStack -RequiredVersion 2.0.0-preview -AllowPrerelease
 ```
 
@@ -149,7 +149,7 @@ Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v
 
    Set-BootstrapRepo -Repo $RepoName
 
-   Use-AzProfile -Profile '2019-03-01-hybrid' -Force -Scope AllUsers
+   Install-AzProfile -Profile '2019-03-01-hybrid' -Force -Scope AllUsers
 
    Install-Module -Name AzureStack -Repository $RepoName -RequiredVersion 2.0.0-preview -AllowPrerelease -Scope AllUsers
    ```

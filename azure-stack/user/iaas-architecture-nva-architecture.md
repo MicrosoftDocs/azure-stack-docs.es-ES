@@ -3,16 +3,16 @@ title: Implementación de aplicaciones virtuales de red de alta disponibilidad e
 description: Aprenda a implementar aplicaciones virtuales de red de alta disponibilidad en Azure Stack Hub.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 11/01/2019
+ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: 69516e7d50cb0635854d2b9168cb6bc308b229d8
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 916e12061961b22c518d0048e8bc8c191f8542a1
+ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77705039"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81660076"
 ---
 # <a name="deploy-highly-available-network-virtual-appliances-on-azure-stack-hub"></a>Implementación de aplicaciones virtuales de red de alta disponibilidad en Azure Stack Hub
 

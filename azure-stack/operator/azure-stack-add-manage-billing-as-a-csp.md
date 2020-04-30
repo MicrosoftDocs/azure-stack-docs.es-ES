@@ -3,16 +3,16 @@ title: Administración del uso y la facturación de Azure Stack Hub como proveed
 description: Obtenga información sobre cómo registrar Azure Stack Hub como proveedor de soluciones en la nube (CSP) y cómo agregar clientes para la facturación.
 author: sethmanheim
 ms.topic: article
-ms.date: 01/22/2020
+ms.date: 04/20/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 10/15/2019
-ms.openlocfilehash: 73970197e6d0b1c55e29e028e53d6639aa9c0afa
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 8202942a10e4faf48b09e9fd0d456a810d6a08fd
+ms.sourcegitcommit: a3ae6dd8670f8fb24224880df7eee256ebbcc4ef
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79295440"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81772408"
 ---
 # <a name="manage-usage-and-billing-for-azure-stack-hub-as-a-cloud-solution-provider"></a>Administración del uso y la facturación de Azure Stack Hub como proveedor de soluciones en la nube
 
@@ -22,7 +22,7 @@ Como CSP, trabaja con diversos clientes mediante su instancia de Azure Stack Hub
 
 En la siguiente ilustración se muestran los pasos necesarios para elegir su cuenta de servicios compartidos y registrar la cuenta de Azure con la cuenta de Azure Stack Hub. Una vez registrado, podrá incorporar los clientes finales:
 
-[![Proceso para habilitar el uso y la administración como un proveedor de soluciones en la nube](media/azure-stack-add-manage-billing-as-a-csp/process-add-useage-as-a-csp.png "Proceso para habilitar el uso y la administración como un proveedor de soluciones en la nube")](media/azure-stack-add-manage-billing-as-a-csp/process-add-useage-as-a-csp.png#lightbox)
+[![Proceso para habilitar el uso y la administración como un proveedor de soluciones en la nube](media/azure-stack-add-manage-billing-as-a-csp/process-add-useage-as-a-csp.svg "Proceso para habilitar el uso y la administración como un proveedor de soluciones en la nube")](media/azure-stack-add-manage-billing-as-a-csp/process-add-useage-as-a-csp.svg)
 
 ## <a name="create-a-csp-or-apss-subscription"></a>Creación de una suscripción de CSP o APSS
 

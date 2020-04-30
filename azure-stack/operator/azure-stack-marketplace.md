@@ -3,16 +3,16 @@ title: Introducción al Marketplace de Azure Stack Hub
 description: Una introducción al Marketplace de Azure Stack Hub y a los elementos de Marketplace.
 author: sethmanheim
 ms.topic: article
-ms.date: 01/07/2020
+ms.date: 04/20/2020
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: eeeda1d2b26ba6087e888ecd8ab847756c8e95fa
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 638ffe45cef9301059fd9e9e39b74b793e2ba86a
+ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77699021"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81661341"
 ---
 # <a name="azure-stack-hub-marketplace-overview"></a>Introducción al Marketplace de Azure Stack Hub
 

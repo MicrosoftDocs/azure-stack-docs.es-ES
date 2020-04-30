@@ -3,16 +3,16 @@ title: Conexión del Explorador de Storage a una suscripción de Azure Stack Hub
 description: Aprenda a conectar el Explorador de Storage a una suscripción de Azure Stack Hub
 author: mattbriggs
 ms.topic: conceptual
-ms.date: 11/11/2019
+ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: ecf05c089ca193cca3554fc6a8e52e406dce3da2
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 701b2a0c6bae3fa4f246877f49f73aca8482b0de
+ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77705000"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81660373"
 ---
 # <a name="connect-storage-explorer-to-an-azure-stack-hub-subscription-or-a-storage-account"></a>Conexión del Explorador de Storage a una suscripción de Azure Stack Hub o una cuenta de almacenamiento
 

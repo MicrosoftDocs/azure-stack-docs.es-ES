@@ -3,16 +3,16 @@ title: Conexión de Azure Stack Hub a Azure mediante ExpressRoute
 description: Aprenda a conectar redes virtuales de Azure Stack Hub con redes virtuales de Azure mediante ExpressRoute.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 01/23/2020
+ms.date: 04/20/2020
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 10/22/2019
-ms.openlocfilehash: 59fa339cfa58fa2c5c6b0e1b727cf2adee79b7e2
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 1b68435317136afdbfcc5d1ade16b18a2210baad
+ms.sourcegitcommit: a3ae6dd8670f8fb24224880df7eee256ebbcc4ef
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77701503"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81772690"
 ---
 # <a name="connect-azure-stack-hub-to-azure-using-azure-expressroute"></a>Conexión de Azure Stack Hub con Azure mediante Azure ExpressRoute
 
@@ -51,7 +51,7 @@ Para conectar Azure Stack Hub y Azure mediante ExpressRoute, debe cumplir los si
 
 En la ilustración siguiente, se muestran los entornos de Azure y Azure Stack Hub después de finalizar la configuración de ExpressRoute utilizando los ejemplos de este artículo:
 
-![Red de ExpressRoute](media/azure-stack-connect-expressroute/Conceptual.png)
+![Red de ExpressRoute](media/azure-stack-connect-expressroute/conceptual.svg)
 
 En la ilustración siguiente, se muestra cómo varios inquilinos se conectan desde la infraestructura de Azure Stack Hub a Azure mediante el enrutador de ExpressRoute:
 
@@ -68,7 +68,7 @@ Si desea configurar el entorno de Azure Stack Hub del primer inquilino, use los 
 >[!NOTE]
 >Estos pasos muestran cómo se crean recursos utilizando el portal de Azure Stack Hub, aunque también se puede usar PowerShell.
 
-![Configuración de red de Azure Stack Hub](media/azure-stack-connect-expressroute/image2.png)
+![Configuración de red de Azure Stack Hub](media/azure-stack-connect-expressroute/azure-stack-connect-expressrouteimage-image2.svg)
 
 ### <a name="before-you-begin"></a>Antes de empezar
 
@@ -267,7 +267,7 @@ El enrutador es un host de ASDK que ejecuta el rol de enrutamiento y servicios d
 
 Cuando termine de configurar Azure Stack Hub, puede implementar los recursos de Azure. En el siguiente diagrama se muestra un ejemplo de una red virtual de inquilino en Azure. Puede usar cualquier esquema de nombres y de direccionamiento para VNet en Azure. Sin embargo, el intervalo de direcciones de las redes virtuales de Azure y Azure Stack Hub debe ser único y no superponerse:
 
-![Redes virtuales de Azure](media/azure-stack-connect-expressroute/AzureArchitecture.png)
+![Redes virtuales de Azure](media/azure-stack-connect-expressroute/azurearchitecture.svg)
 
 Los recursos que se implementan en Azure son similares a los recursos que se implementar en Azure Stack Hub. Implementará los siguientes componentes:
 

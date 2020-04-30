@@ -6,16 +6,16 @@ services: azure-stack
 documentationcenter: ''
 author: sethmanheim
 ms.topic: article
-ms.date: 01/27/2020
+ms.date: 04/20/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 294fec646462d154c8d8f2e1d22c31d2d88220d4
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: d0d11295d9425e07e34dc59eb2fcc83c6b020582
+ms.sourcegitcommit: a3ae6dd8670f8fb24224880df7eee256ebbcc4ef
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77696386"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81772551"
 ---
 # <a name="report-azure-stack-hub-usage-data-to-azure"></a>Notificar los datos de uso de Azure Stack Hub a Azure
 
@@ -28,7 +28,7 @@ Los sistemas de varios nodos de Azure Stack Hub que usan el modelo de facturaci�
 
 Los informes de datos de uso son obligatorios para los usuarios de varios nodos de Azure Stack Hub con una licencia de modelo de pago por uso. Es opcional para los clientes con una licencia de modelo de capacidad (consulte la página [Cómo comprar](https://azure.microsoft.com/overview/azure-stack/how-to-buy/)). Para los usuarios del Kit de desarrollo de Azure Stack (ASDK), los operadores de Azure Stack Hub pueden notificar los datos de uso y probar la característica. Sin embargo, no se cobrará a los usuarios por el uso.
 
-![Flujo de facturación por el uso de datos en Azure Stack Hub](media/azure-stack-usage-reporting/billing-flow.png)
+![Flujo de facturación por el uso de datos en Azure Stack Hub](media/azure-stack-usage-reporting/billing-flow.svg)
 
 Los datos de uso se envían desde Azure Stack Hub a Azure mediante Azure Bridge. En Azure, el sistema commerce procesa los datos de uso y genera la factura. Cuando se genera la factura, el propietario de la suscripción de Azure puede verla y descargarla desde el [Centro de cuentas de Azure](https://account.windowsazure.com/subscriptions). Para obtener información sobre cómo se concede la licencia de Azure Stack Hub, consulte el [documento de precios y empaquetado de Azure Stack Hub](https://go.microsoft.com/fwlink/?LinkId=842847).
 

@@ -4,17 +4,17 @@ titleSuffix: Azure Stack Hub
 description: Notas de la versión de validación como servicio de Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 10/28/2019
+ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 10/28/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: b842ea5de68cf64d498ec37ed86bb6e15b851395
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 5c5aa3342acd37708231720663d10eacc7c2388b
+ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79097757"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81661175"
 ---
 # <a name="release-notes-for-validation-as-a-service"></a>Notas de la versión para la validación como servicio
 

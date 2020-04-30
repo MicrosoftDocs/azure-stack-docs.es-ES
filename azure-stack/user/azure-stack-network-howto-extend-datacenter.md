@@ -3,16 +3,16 @@ title: Ampliación del centro de datos en Azure Stack Hub
 description: Aprenda a ampliar el centro de datos en Azure Stack Hub.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 12/13/2019
+ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/13/2019
-ms.openlocfilehash: d3884f877511c3a0d285b62ecf3136673e24a116
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: d6f93b5aa35a6475472df4ff213d98f684a4f7bb
+ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77702455"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81661103"
 ---
 # <a name="extending-storage-to-azure-stack-hub"></a>Ampliación del almacenamiento a Azure Stack Hub
 

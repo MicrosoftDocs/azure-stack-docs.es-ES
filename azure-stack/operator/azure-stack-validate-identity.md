@@ -2,18 +2,18 @@
 title: Validación de la identidad de Azure
 titleSuffix: Azure Stack Hub
 description: Use Azure Stack Hub Readiness Checker para validar la identidad de Azure.
-author: IngridAtMicrosoft
+author: BryanLa
 ms.topic: how-to
 ms.date: 03/04/2020
-ms.author: inhenkel
+ms.author: bryanla
 ms.reviewer: unknown
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: 3c2eb6b0efc0bc6f0111ed342ef16e19223f0a85
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 0852c977494dcd91545b1ea13430811b83eeeddb
+ms.sourcegitcommit: d930d52e27073829b8bf8ac2d581ec2accfa37e3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "78366524"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82173842"
 ---
 # <a name="validate-azure-identity"></a>Validación de la identidad de Azure
 

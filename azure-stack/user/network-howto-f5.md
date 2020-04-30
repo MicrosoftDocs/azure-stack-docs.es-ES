@@ -3,16 +3,16 @@ title: Implementación de F5 en dos instancias de Azure Stack Hub
 description: Aprenda a implementar de F5 en dos instancias de Azure Stack Hub.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 11/06/2019
+ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 11/06/2019
-ms.openlocfilehash: f3b564bc667376361e1bfc57df0ec50e32522401
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: cfbd828923c7653da0f0bfd86ee74703897996c7
+ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77636325"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81661440"
 ---
 # <a name="how-to-deploy-f5-across-two-azure-stack-hub-instances"></a>Implementación de F5 en dos instancias de Azure Stack Hub
 

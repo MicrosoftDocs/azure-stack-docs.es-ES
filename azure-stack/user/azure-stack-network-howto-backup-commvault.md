@@ -3,16 +3,16 @@ title: Copia de seguridad de una máquina virtual en Azure Stack Hub con Commvau
 description: Aprenda a hacer una copia de seguridad de una máquina virtual en Azure Stack Hub con Commvault.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 10/30/2019
+ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/30/2019
-ms.openlocfilehash: ec02ccd45773c97df71369b1e325120452ce7da1
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 61ea70c9a59442547a9b4b73d4a3f9e676cf89c7
+ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77702472"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81661035"
 ---
 # <a name="back-up-your-vm-on-azure-stack-hub-with-commvault"></a>Copia de seguridad de una máquina virtual en Azure Stack Hub con Commvault
 

@@ -7,12 +7,12 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.lastreviewed: 09/10/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 70079b0959f0e5dc5072ef83c68c8887cd006089
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 48bc8e2df857b2e1c352ffaa55ef900672d4f78b
+ms.sourcegitcommit: a3ae6dd8670f8fb24224880df7eee256ebbcc4ef
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79295410"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81772496"
 ---
 # <a name="manage-updates-in-azure-stack-hub"></a>Administración de actualizaciones en Azure Stack Hub
 
@@ -67,7 +67,7 @@ El aviso de actualizaciones varía en función de un par de factores, como su co
 
 Una vez que sepa que tiene una actualización, aplíquela con los siguientes pasos.
 
-![Proceso de actualización de Azure Stack Hub](./media/azure-stack-updates/azure-stack-update-process.png)
+![Proceso de actualización de Azure Stack Hub](./media/azure-stack-updates/azure-stack-update-process.svg)
 
 1. **Planee la actualización**.
 

@@ -3,16 +3,16 @@ title: Incorporación de nodos de la unidad de escalado en Azure Stack Hub
 description: Aprenda a agregar nodos de la unidad de escalado a unidades de escalado de Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 1/16/2020
+ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 09/17/2019
-ms.openlocfilehash: 8aa33cda9a657d3e0bcec9525f86bd792c855e65
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: c264e0abc0fdc5a382b83a23158f860a56aea260
+ms.sourcegitcommit: a3ae6dd8670f8fb24224880df7eee256ebbcc4ef
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77688770"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81772586"
 ---
 # <a name="add-additional-scale-unit-nodes-in-azure-stack-hub"></a>Incorporación de nodos de la unidad de escalado adicionales en Azure Stack Hub
 
@@ -22,7 +22,7 @@ Para agregar un nodo de unidad de escalado, debe actuar en Azure Stack Hub y eje
 
 En el siguiente diagrama de flujo se muestra el proceso general para agregar un nodo de la unidad de escalado:
 
-![Flujo de cómo agregar una unidad de escalado](media/azure-stack-add-scale-node/add-node-flow.png)
+![Flujo de cómo agregar una unidad de escalado](media/azure-stack-add-scale-node/add-node-flow.svg)
 <br> *Si su proveedor de hardware de OEM implementa la colocación del bastidor del servidor físico y las actualizaciones, el firmware varía según su contrato de soporte técnico.*
 
 La operación para agregar un nuevo nodo puede tardar varias horas o días en completarse. No se producirá ningún impacto en las cargas de trabajo en ejecución en el sistema durante la incorporación de un nodo adicional de unidad de escalado.

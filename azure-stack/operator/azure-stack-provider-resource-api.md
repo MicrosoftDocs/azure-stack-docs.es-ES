@@ -3,16 +3,16 @@ title: API de uso de recursos de proveedor de Azure Stack Hub
 description: Referencia de la API de uso de recursos, que recupera información de uso de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 01/07/2020
+ms.date: 04/20/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: 0dff4901d24f759404b69184506d1219273d90c5
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: c360123e5393b328e8e5e800ddac283739f89b7b
+ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77698120"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81661336"
 ---
 # <a name="provider-resource-usage-api"></a>API de uso de recursos de proveedor
 

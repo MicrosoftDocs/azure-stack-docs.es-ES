@@ -3,16 +3,16 @@ title: Solución de problemas del motor de AKS en Azure Stack Hub
 description: Este artículo contiene los pasos necesarios para la solución de problemas del motor de AKS en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 3/19/2020
+ms.date: 4/17/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 3/19/2020
-ms.openlocfilehash: d362eb0bf418cf292953afc50fe993dc4867253c
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.lastreviewed: 4/17/2020
+ms.openlocfilehash: 8768628e246c439c86bba80f4faac2ff9ae1973d
+ms.sourcegitcommit: 355e21dd9b8c3f44e14abaae0b4f176443cf7495
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80069294"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81624996"
 ---
 # <a name="troubleshoot-the-aks-engine-on-azure-stack-hub"></a>Solución de problemas del motor de AKS en Azure Stack Hub
 
@@ -142,7 +142,7 @@ Requisitos:
 
 ## <a name="review-custom-script-extension-error-codes"></a>Examen de los códigos de error de extensión de script personalizado
 
-Puede consultar una lista de los códigos de error que crea la extensión de script personalizado (CSE) al ejecutar su clúster. El error de CSE puede ser útil para diagnosticar la causa principal del problema. El CSE del servidor Ubuntu que se usa en el clúster de Kubernetes admite muchas de las operaciones del motor de AKS. Para más información sobre los códigos de salida de CSE, consulte [cse_helpers.sh](https://github.com/Azure/aks-engine/blob/master/parts/k8s/cloud-init/artifacts/cse_helpers.sh).
+Puede consultar una lista de los códigos de error que crea la extensión de script personalizado (CSE) al ejecutar su clúster. El error de CSE puede ser útil para diagnosticar la causa principal del problema. El CSE del servidor Ubuntu que se usa en el clúster de Kubernetes admite muchas de las operaciones del motor de AKS. Para más información sobre los códigos de salida de CSE, consulte [cse_helpers.sh](https://github.com/Azure/aks-engine/blob/master/pkg/engine/cse.go).
 
 ### <a name="providing-kubernetes-logs-to-a-microsoft-support-engineer"></a>Entrega de registros de Kubernetes a un ingeniero del servicio de soporte técnico de Microsoft
 
