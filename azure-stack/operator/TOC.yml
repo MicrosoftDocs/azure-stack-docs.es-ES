@@ -496,6 +496,8 @@
   items:
     - name: PowerShell de Azure Stack Hub
       href: 'https://docs.microsoft.com/powershell/azure/azure-stack/overview'
+    - name: "Punto de conexión con privilegios de Azure\_Stack Hub"
+      href: ../reference/pep-2002/
     - name: Documentación de usuario de Azure Stack Hub
       href: /azure-stack/user/
     - name: Documentación de ASDK
