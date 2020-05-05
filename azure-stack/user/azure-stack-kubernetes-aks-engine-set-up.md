@@ -3,16 +3,16 @@ title: Configuración de los requisitos previos para el motor de AKS en Azure St
 description: Establezca los requisitos para ejecutar el motor de ASK en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 03/23/2020
+ms.date: 04/28/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 03/23/2020
-ms.openlocfilehash: f89dd7e1036f3c45df184b498c309fe128fe03ba
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.lastreviewed: 04/28/2020
+ms.openlocfilehash: 774e96c6366f9922d7fb59b564fd57998c327dca
+ms.sourcegitcommit: 29734b4ca6917b86674c17de9f41b0aaf367a838
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80152214"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223045"
 ---
 # <a name="set-up-the-prerequisites-for-the-aks-engine-on-azure-stack-hub"></a>Configuración de los requisitos previos para el motor de AKS en Azure Stack Hub
 
@@ -32,13 +32,9 @@ El operador de la nube deberá tener en vigor los siguientes elementos.
 | --- | --- | --- | --- | --- |
 | Azure Stack Hub 1910 o posterior | El motor de AKS requiere Azure Stack Hub 1910 u otra versión posterior. | Obligatorio | Si no está seguro de la versión de Azure Stack Hub, póngase en contacto con el operador de la nube. |
 | Extensión de script personalizado de Linux | Extensión de script personalizado de Linux 2.0<br>Oferta: Script personalizado para Linux 2.0<br>Versión: 2.0.6 (o la versión más reciente)<br>Publicador: Microsoft Corp | Obligatorio | Si no tiene este elemento en la suscripción, póngase en contacto con el operador de la nube. |
-| Imagen base de Ubuntu de AKS | Imagen base de AKS<br>Oferta: AKS<br> 2019.10.24 (o una versión más reciente)<br>Publicador: Microsoft-AKS<br>SKU: aks-ubuntu-1604-201910 | Obligatorio | Si no tiene este elemento en la suscripción, póngase en contacto con el operador de la nube. Para obtener más información sobre la dependencia de versión, consulte [Correspondencia de la versión del motor con la imagen base](#matching-engine-to-base-image-version).<br> Si es operador en la nube de Azure Stack Hub y desea ofrecer el motor de AKS, siga las instrucciones que encontrará en [Incorporación de requisitos previos del motor de Azure Kubernetes Service (AKS) al Marketplace de Azure Stack Hub](../operator/azure-stack-aks-engine.md). |
+| Imagen base de Ubuntu de AKS | Distribución de imágenes de la imagen base de AKS en Ubuntu 16.04-LTS, marzo de 2020, versión: 2020.03.19 | Obligatorio | Si no tiene este elemento en la suscripción, póngase en contacto con el operador de la nube. Para obtener más información sobre la dependencia de versión, consulte [Correspondencia de la versión del motor con la imagen base](#matching-engine-to-base-image-version).<br> Si es operador en la nube de Azure Stack Hub y desea ofrecer el motor de AKS, siga las instrucciones que encontrará en [Incorporación de requisitos previos del motor de Azure Kubernetes Service (AKS) al Marketplace de Azure Stack Hub](../operator/azure-stack-aks-engine.md). |
 | Identidad de la entidad de servicio (SPN) |  Una aplicación que necesita implementar o configurar recursos a través de Azure Resource Manager, debe estar representada por una entidad de servicio. | Obligatorio | Es posible que deba ponerse en contacto con el operador de Azure Stack Hub para este elemento.<br>Si se usa una identidad de entidad de servicio de Azure Active Directory (AAD), se necesita acceso a Internet desde las máquinas virtuales del clúster de Kubernetes para que la entidad de servicio pueda autenticarse con AAD. Si no hay acceso a Internet, el clúster de Kubernetes no será funcional.<br>Para obtener instrucciones, consulte [Uso de una identidad de aplicación para acceder a recursos](https://docs.microsoft.com/azure-stack/operator/azure-stack-create-service-principals). |
 | Rol de **colaborador** asignado (SPN) | Para permitir que una aplicación acceda a los recursos de su suscripción con su entidad de servicio, debe asignar la entidad de servicio un rol para un determinado recurso. | Obligatorio | Para obtener instrucciones, consulte la sección [Asignar un rol](https://docs.microsoft.com/azure-stack/operator/azure-stack-create-service-principals#assign-a-role). |
-
-
-Agregue lo siguiente a la descripción del requisito "Entidad de servicio": ""
-
 
 
 Puede establecer los siguientes elementos.
@@ -55,12 +51,12 @@ Puede establecer los siguientes elementos.
 
 ## <a name="matching-engine-to-base-image-version"></a>Correspondencia de la versión del motor con la imagen base
 
-El **motor de AKS** usa una imagen compilada, la imagen base de AKS. Cualquier versión del motor de AKS depende de una versión de imagen específica que el operador de Azure Stack Hub haya incorporado a Azure Stack Hub para que esté disponible. Puede encontrar una tabla que muestre las versiones del motor de AKS y las versiones de Kubernetes compatibles correspondientes en [Versiones admitidas de Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). Por ejemplo, la versión del motor de AKS `v0.43.0` depende de la versión `2019.10.24` de la imagen base de AKS. Pida al operador de Azure Stack Hub que descargue la versión de imagen específica de Azure Marketplace en Marketplace de Azure Stack Hub.
+El motor de AKS implementa un sistema operativo Ubuntu Server personalizado en la imagen de cada nodo de clúster, la **Distribución de imágenes de la imagen base de AKS en Ubuntu 16.04-LTS**. Cualquier versión del motor de AKS depende de una versión de imagen específica que el operador de Azure Stack Hub haya incorporado a Azure Stack Hub para que esté disponible. Puede encontrar una tabla que muestre las versiones del motor de AKS y las versiones de Kubernetes compatibles correspondientes en [Versiones admitidas de Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-aks-engine-versions). Por ejemplo, la versión del motor de AKS `v0.48.0` depende de la versión `2020.03.19` de la Distribución de imágenes de la imagen base de AKS en Ubuntu 16.04-LTS. Pida al operador de Azure Stack Hub que descargue la versión de imagen específica de Azure Marketplace en Marketplace de Azure Stack Hub.
 
-Se desencadenará un error si la imagen no está disponible en Marketplace de Azure Stack Hub. Por ejemplo, si actualmente utiliza la versión v0.43.0 del motor de AKS y la versión `2019.10.24` de la imagen base de AKS no está disponible, verá el siguiente error al ejecutar el motor de AKS: 
+Se desencadenará un error si la imagen no está disponible en Marketplace de Azure Stack Hub. Por ejemplo, si actualmente utiliza la versión v0.48.0 del motor de AKS y la versión `2020.03.19` de la Distribución de imágenes de la imagen base de AKS en Ubuntu 16.04-LTS no está disponible, verá el siguiente error al ejecutar el motor de AKS: 
 
 ```Text  
-The platform image 'microsoft-aks:aks:aks-ubuntu-1604-201908:2019.08.09' is not available. 
+The platform image 'microsoft-aks:aks:aks-ubuntu-1604-202003:2020.03.19' is not available. 
 Verify that all fields in the storage profile are correct.
 ```
 
@@ -68,8 +64,8 @@ Para comprobar la versión actual del motor de AKS, ejecute el comando siguiente
 
 ```bash  
 $ aks-engine version
-Version: v0.39.1
-GitCommit: 6fff62731
+Version: v0.48.0
+GitCommit: 44a35c00c
 GitTreeState: clean
 ```
 

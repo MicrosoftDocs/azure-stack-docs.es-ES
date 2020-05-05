@@ -7,16 +7,16 @@ ms.date: 2/28/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 2/28/2020
-ms.openlocfilehash: e82ddb48b3858acdf25163976854f538400da54b
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: b8bc4c1a9e56f363fa604e8df7a1fa0dbe37fcb0
+ms.sourcegitcommit: 355e21dd9b8c3f44e14abaae0b4f176443cf7495
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80069196"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81624997"
 ---
 # <a name="create-an-ssh-key-for-linux-on-azure-stack-hub"></a>Creación de una clave SSH para Linux en Azure Stack Hub
 
-En una máquina Windows se puede crear una clave SSH (Secure Shell) para una máquina Linux. Use la clave pública que se generará si se siguen los pasos de este artículo para autenticar SSH con máquinas virtuales. Si usa una máquina Windows, instale Ubuntu en Windows para poder tener un terminal con utilidades como bash, ssh y git, y con Ubuntu en Windows. Ejecute **ssh-keygen** para crear la clave.
+En una máquina Windows se puede crear una clave SSH (Secure Shell) para una máquina Linux. Use la clave pública que se generará si se siguen los pasos de este artículo para autenticar SSH con máquinas virtuales. Si usa una máquina Windows, instale Ubuntu en Windows para poder tener un terminal con utilidades como bash, ssh, git, apt, etc. Ejecute **ssh-keygen** para crear la clave.
 
 ## <a name="open-bash-on-windows"></a>Apertura de bash en Windows
 

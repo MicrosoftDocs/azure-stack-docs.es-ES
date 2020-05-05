@@ -1,18 +1,18 @@
 ---
-title: Implementación de una aplicación que se escala en toda la nube con Azure y Azure Stack Hub
-description: Aprenda a implementar una aplicación que se escala en toda la nube mediante Azure y Azure Stack Hub.
+title: Implementación de una aplicación que se escala entre nubes en Azure y Azure Stack Hub
+description: Aprenda a implementar una aplicación que se escala entre nubes en Azure y Azure Stack Hub.
 author: BryanLa
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 41c6b4e5adf7b659bf9db30eb8a3906c257f5473
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: a95ce4d59e5374cab351c165405895f552478f6b
+ms.sourcegitcommit: e5b587216a137819444680ec619281c90f37bad9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "78366252"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82167082"
 ---
 # <a name="deploy-an-app-that-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Implementación de una aplicación que se escala en toda la nube con Azure y Azure Stack Hub
 
@@ -31,32 +31,24 @@ En esta solución, creará un entorno de ejemplo para:
 
 > [!Tip]  
 > ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
-> Microsoft Azure Stack Hub es una extensión de Azure. Azure Stack Hub aporta la agilidad y la innovación de la informática en la nube a su entorno local y hace posible la única nube híbrida que le permite crear e implementar aplicaciones híbridas en cualquier parte.  
+> Microsoft Azure Stack Hub es una extensión de Azure. Azure Stack Hub aporta la agilidad e innovación de la informática en la nube a su entorno local, ya que habilita la única nube híbrida que permite crear e implementar aplicaciones híbridas en cualquier parte.  
 > 
-> En el artículo [Consideraciones de diseño para aplicaciones híbridas](overview-app-design-considerations.md) se examinan los pilares de la calidad de software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
+> En el artículo [Consideraciones de diseño de aplicaciones híbridas](overview-app-design-considerations.md) se examinan los fundamentos de calidad del software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
 
 ## <a name="prerequisites"></a>Prerrequisitos
 
--   Suscripción de Azure. Si es necesario, cree una [cuenta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de comenzar.
-
-- Un sistema integrado de Azure Stack Hub o la implementación del kit de desarrollo de Azure Stack.
-    - Para obtener instrucciones para la instalación de Azure Stack Hub, consulte [Instalación del Kit de desarrollo de Azure Stack](../asdk/asdk-install.md).
-    - Para ver un script de automatización posterior a la implementación de ASDK, vaya a: [https://github.com/mattmcspirit/azurestack/blob/master/deployment/ConfigASDK.ps1](https://github.com/mattmcspirit/azurestack/blob/master/deployment/ConfigASDK.ps1) 
-    - Esta instalación puede tardar algunas horas en completarse.
-
--   Implemente los servicios PaaS de [App Service](../operator/azure-stack-app-service-deploy.md) en Azure Stack Hub.
-
--   Cree [planes u ofertas](../operator/service-plan-offer-subscription-overview.md) dentro del entorno de Azure Stack Hub.
-
--   [Cree una suscripción de inquilino](../operator/azure-stack-subscribe-plan-provision-vm.md) dentro del entorno de Azure Stack Hub.
-
--   Cree una aplicación web dentro de la suscripción de inquilino. Anote la nueva dirección URL de aplicación web, ya que la usará más adelante.
-
--   Implemente la máquina virtual (VM) de Azure Pipelines dentro de la suscripción de inquilino.
-
--   Se requiere una máquina virtual Windows Server 2016 con .NET 3.5. Esta máquina virtual se compilará en la suscripción del inquilino en Azure Stack Hub como agente de compilación privado.
-
--   [Windows Server 2016 con la imagen de máquina virtual de SQL 2017](../operator/azure-stack-add-vm-image.md) está disponible en Marketplace de Azure Stack Hub. Si esta imagen no está disponible, trabaje con un operador de Azure Stack Hub para garantizar que se agrega al entorno.
+- Suscripción de Azure. Si es necesario, cree una [cuenta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de comenzar.
+- Un sistema integrado de Azure Stack Hub o la implementación del Kit de desarrollo de Azure Stack (ASDK).
+  - Para obtener instrucciones para la instalación de Azure Stack Hub, consulte [Instalación del Kit de desarrollo de Azure Stack](../asdk/asdk-install.md).
+  - Para ver un script de automatización posterior a la implementación de ASDK, vaya a: [https://github.com/mattmcspirit/azurestack/blob/master/deployment/ConfigASDK.ps1](https://github.com/mattmcspirit/azurestack/blob/master/deployment/ConfigASDK.ps1)
+  - Esta instalación puede tardar algunas horas en completarse.
+- Implemente los servicios PaaS de [App Service](../operator/azure-stack-app-service-deploy.md) en Azure Stack Hub.
+- [Cree planes u ofertas](../operator/service-plan-offer-subscription-overview.md) en el entorno de Azure Stack Hub.
+- [Cree una suscripción de inquilino](../operator/azure-stack-subscribe-plan-provision-vm.md) dentro del entorno de Azure Stack Hub.
+- Cree una aplicación web dentro de la suscripción de inquilino. Anote la nueva dirección URL de aplicación web, ya que la usará más adelante.
+- Implemente la máquina virtual (VM) de Azure Pipelines en la suscripción del inquilino.
+- Se requiere una máquina virtual Windows Server 2016 con .NET 3.5. Esta máquina virtual se compilará en la suscripción del inquilino en Azure Stack Hub como agente de compilación privado.
+- [Windows Server 2016 con la imagen de máquina virtual de SQL 2017](../operator/azure-stack-add-vm-image.md) está disponible en Marketplace de Azure Stack Hub. Si esta imagen no está disponible, trabaje con un operador de Azure Stack Hub para garantizar que se agrega al entorno.
 
 ## <a name="issues-and-considerations"></a>Problemas y consideraciones
 
@@ -74,22 +66,20 @@ La solución para toda la nube garantiza una administración sin problemas y una
 
 ## <a name="cross-cloud-scaling"></a>Escalado de toda la nube
 
-### <a name="obtain-a-custom-domain-and-configure-dns"></a>Obtención de un dominio personalizado y configuración de DNS
+### <a name="get-a-custom-domain-and-configure-dns"></a>Obtención de un dominio personalizado y configuración de DNS
 
 Actualice el archivo de zona DNS para el dominio. Azure AD comprobará la propiedad del nombre de dominio personalizado. Use [Azure DNS](https://docs.microsoft.com/azure/dns/dns-getstarted-portal) para los registros DNS de Azure/Office 365/external dentro de Azure, o bien agregue la entrada DNS a [un registrador DNS diferente](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
 
-1.  Registre un dominio personalizado con un registrador público.
-
-2.  Inicie sesión en el registrador de nombres de dominio para el dominio. Puede que se requiera un administrador autorizado para realizar las actualizaciones de DNS.
-
-3.  Actualice el archivo de zona DNS para el dominio. Para ello, agregue la entrada DNS que Azure AD proporcione. (La entrada del DNS no afectará al enrutamiento de correo electrónico ni a los comportamientos de hospedaje web).
+1. Registre un dominio personalizado con un registrador público.
+2. Inicie sesión en el registrador de nombres de dominio para el dominio. Puede que se requiera un administrador autorizado para realizar las actualizaciones de DNS.
+3. Actualice el archivo de zona DNS para el dominio. Para ello, agregue la entrada DNS que Azure AD proporcione (la entrada del DNS no afectará al enrutamiento de correo electrónico ni a los comportamientos de hospedaje web).
 
 ### <a name="create-a-default-multi-node-web-app-in-azure-stack-hub"></a>Creación de una aplicación web predeterminada de varios nodos en Azure Stack Hub
 
 Configure la canalización híbrida de integración continua e implementación continua (CI/CD) para implementar aplicaciones web en Azure y Azure Stack Hub e insertar automáticamente los cambios en ambas nubes.
 
 > [!Note]  
-> Se requiere Azure Stack Hub con las imágenes adecuadas sindicadas para ejecutarse (Windows Server y SQL) y la implementación de App Service. Para más información, revise la documentación de App Service [Antes de empezar a trabajar con App Service en Azure Stack Hub](../operator/azure-stack-app-service-before-you-get-started.md).
+> Se requiere Azure Stack Hub con las imágenes adecuadas sindicadas para ejecutarse (Windows Server y SQL) y la implementación de App Service. Para más información, revise en la documentación de App Service [Requisitos previos para implementar App Service en Azure Stack Hub](../operator/azure-stack-app-service-before-you-get-started.md).
 
 ### <a name="add-code-to-azure-repos"></a>Adición de código a Azure Repos
 
@@ -107,13 +97,13 @@ Azure Repos
 
 ### <a name="create-self-contained-web-app-deployment-for-app-services-in-both-clouds"></a>Creación de una implementación de aplicación web autocontenida para App Services en ambas nubes
 
-1.  Edite el archivo **WebApplication.csproj**. Seleccione `Runtimeidentifier` y agregue `win10-x64`. (Consulte la documentación de [Implementaciones autocontenidas](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf)). 
+1. Edite el archivo **WebApplication.csproj**. Seleccione `Runtimeidentifier` y agregue `win10-x64` (consulte el documento acerca de las [implementaciones autocontenidas](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf)).
 
     ![Editar el archivo del proyecto de aplicación web](media/solution-deployment-guide-cross-cloud-scaling/image3.png)
 
-2.  Inserte el código en Azure Repos mediante Team Explorer.
+2. Inserte el código en Azure Repos mediante Team Explorer.
 
-3.  Confirme que el código de la aplicación se ha insertado en el repositorio en Azure Repos.
+3. Confirme que el código de la aplicación se ha insertado en el repositorio en Azure Repos.
 
 ## <a name="create-the-build-definition"></a>Creación de la definición de compilación
 
@@ -131,11 +121,11 @@ El uso de un agente de compilación hospedado en Azure Pipelines es una opción 
 
 ### <a name="manage-and-configure-the-cd-process"></a>Administración y configuración del proceso de CD
 
-Azure Pipelines y Azure DevOps Services proporcionan una canalización con una gran capacidad de configuración y administración para versiones de varios entornos, como desarrollo, ensayo, control de calidad (QA) y producción, lo que incluye las aprobaciones necesarias en etapas específicas.
+Azure Pipelines y Azure DevOps Services proporcionan una canalización con una gran capacidad de configuración y administración para versiones para varios entornos, como desarrollo, almacenamiento provisional, control de calidad y producción, lo que incluye la solicitud de aprobaciones en etapas concretas.
 
 ## <a name="create-release-definition"></a>Creación de la definición de versión
 
-1.  Seleccione el botón **más** para agregar una nueva versión en la pestaña **Versiones** de la sección **Compilación y versión** de VSO.
+1. Seleccione el botón con el **signo más** para agregar una versión nueva en la pestaña **Releases** (Versiones) de la sección **Build and Release** (Compilación y versión) de Azure DevOps Services.
 
     ![Creación de una definición de versión](media/solution-deployment-guide-cross-cloud-scaling/image5.png)
 
@@ -174,32 +164,30 @@ Azure Pipelines y Azure DevOps Services proporcionan una canalización con una g
     ![Guardar los cambios en la canalización de versión](media/solution-deployment-guide-cross-cloud-scaling/image14.png)
 
 10. Agregue un nuevo artefacto mediante la selección de la compilación para la aplicación de Azure Stack Hub.
-    
+
     ![Agregar nuevo artefacto para la aplicación de Azure Stack Hub](media/solution-deployment-guide-cross-cloud-scaling/image15.png)
 
-
 11. Agregue un entorno más; para ello, aplique Implementación de Azure App Service.
-    
+
     ![Agregar entorno en implementación de Azure App Service](media/solution-deployment-guide-cross-cloud-scaling/image16.png)
 
-12. Asigne al nuevo entorno el nombre Azure Stack.
-    
+12. Asigne al nuevo entorno el nombre "Azure Stack".
+
     ![Nombrar entorno en implementación de Azure App Service](media/solution-deployment-guide-cross-cloud-scaling/image17.png)
 
 13. Busque el entorno de Azure Stack en la pestaña **Tarea**.
-    
+
     ![Entorno de Azure Stack](media/solution-deployment-guide-cross-cloud-scaling/image18.png)
 
 14. Seleccione la suscripción para el punto de conexión de Azure Stack.
-    
+
     ![Seleccionar la suscripción para el punto de conexión de Azure Stack](media/solution-deployment-guide-cross-cloud-scaling/image19.png)
 
 15. Establezca el nombre de la aplicación web de Azure Stack como el nombre del servicio de aplicación.
-
-    ![Definir el nombre de la aplicación web de Azure Stack](media/solution-deployment-guide-cross-cloud-scaling/image20.png)
+    ![Establecer el nombre de la aplicación web de Azure Stack](media/solution-deployment-guide-cross-cloud-scaling/image20.png)
 
 16. Seleccione el agente de Azure Stack.
-    
+
     ![Seleccionar el agente de Azure Stack](media/solution-deployment-guide-cross-cloud-scaling/image21.png)
 
 17. En la sección de implementación de Azure App Service, seleccione el **paquete o carpeta** válidos para el entorno. Seleccione **Aceptar** para la ubicación de carpeta.
@@ -209,15 +197,15 @@ Azure Pipelines y Azure DevOps Services proporcionan una canalización con una g
     ![Seleccionar carpeta para la implementación de Azure App Service](media/solution-deployment-guide-cross-cloud-scaling/image23.png)
 
 18. En la pestaña Variable, agregue una variable denominada `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS`, establezca su valor como **true** y defina el ámbito en Azure Stack.
-    
+
     ![Agregar variable a la implementación de App de Azure](media/solution-deployment-guide-cross-cloud-scaling/image24.png)
 
 19. Seleccione el icono del desencadenador de implementación **Continuo** en ambos artefactos y habilite el desencadenador de implementación **Continua**.
-    
+
     ![Seleccionar desencadenador de implementación continua](media/solution-deployment-guide-cross-cloud-scaling/image25.png)
 
 20. Seleccione el icono de condiciones **previas a la implementación** en el entorno de Azure Stack y establezca el desencadenador en **After release** (Tras el lanzamiento).
-    
+
     ![Seleccionar condiciones anteriores a la implementación](media/solution-deployment-guide-cross-cloud-scaling/image26.png)
 
 21. Guarde todos los cambios.
@@ -227,60 +215,60 @@ Azure Pipelines y Azure DevOps Services proporcionan una canalización con una g
 
 ## <a name="publish-to-azure-stack-hub-via-visual-studio"></a>Publicación en Azure Stack Hub mediante Visual Studio
 
-Mediante la creación de puntos de conexión, una compilación de Visual Studio Online (VSTO) puede implementar aplicaciones de Azure Service en Azure Stack Hub. Azure Pipelines se conecta con el agente de compilación, que, a su vez, se conecta con Azure Stack Hub.
+Mediante la creación de puntos de conexión, una compilación de Azure DevOps Services puede implementar aplicaciones de Azure Service en Azure Stack Hub. Azure Pipelines se conecta con el agente de compilación, que, a su vez, se conecta con Azure Stack Hub.
 
-1.  Inicie sesión en VSTO y vaya a la página de configuración de la aplicación.
+1. Inicie sesión en Azure DevOps Services y vaya a la página de configuración de la aplicación.
 
-2.  En **Configuración**, seleccione **Seguridad**.
+2. En **Configuración**, seleccione **Seguridad**.
 
-3.  En **Grupos de VSTS**, seleccione **Creadores de puntos de conexión**.
+3. En **Grupos de VSTS**, seleccione **Creadores de puntos de conexión**.
 
-4.  En la pestaña **Miembros**, seleccione **Agregar**.
+4. En la pestaña **Miembros**, seleccione **Agregar**.
 
-5.  En **Agregar usuarios y grupos**, escriba un nombre de usuario y seleccione ese usuario en la lista de usuarios.
+5. En **Agregar usuarios y grupos**, escriba un nombre de usuario y seleccione ese usuario en la lista de usuarios.
 
-6.  Seleccione **Save changes** (Guardar los cambios).
+6. Seleccione **Save changes** (Guardar los cambios).
 
-7.  En la lista **Grupos de VSTS**, seleccione **Administradores de puntos de conexión**.
+7. En la lista **Grupos de VSTS**, seleccione **Administradores de puntos de conexión**.
 
-8.  En la pestaña **Miembros**, seleccione **Agregar**.
+8. En la pestaña **Miembros**, seleccione **Agregar**.
 
-9.  En **Agregar usuarios y grupos**, escriba un nombre de usuario y seleccione ese usuario en la lista de usuarios.
+9. En **Agregar usuarios y grupos**, escriba un nombre de usuario y seleccione ese usuario en la lista de usuarios.
 
 10. Seleccione **Save changes** (Guardar los cambios).
 
 Ahora que existe la información del punto de conexión, la conexión de Azure Pipelines con Azure Stack Hub está lista para su uso. El agente de compilación de Azure Stack Hub obtiene instrucciones de Azure Pipelines y, luego, transmite la información del punto de conexión para la comunicación con Azure Stack Hub.
 
-## <a name="develop-the-application-build"></a>Desarrollo de la aplicación
+## <a name="develop-the-app-build"></a>Desarrollo de la compilación de la aplicación
 
 > [!Note]  
-> Se requiere Azure Stack Hub con las imágenes adecuadas sindicadas para ejecutarse (Windows Server y SQL) y la implementación de App Service. Para más información, revise la documentación de App Service [Antes de empezar a trabajar con App Service en Azure Stack Hub](../operator/azure-stack-app-service-before-you-get-started.md).
+> Se requiere Azure Stack Hub con las imágenes adecuadas sindicadas para ejecutarse (Windows Server y SQL) y la implementación de App Service. Para más información, consulte [Requisitos previos para implementar App Service en Azure Stack Hub](../operator/azure-stack-app-service-before-you-get-started.md).
 
 Use [plantillas de Azure Resource Manager](https://azure.microsoft.com/resources/templates/) como código de aplicación web de Azure Repos para implementar en ambas nubes.
 
 ### <a name="add-code-to-an-azure-repos-project"></a>Incorporación de código a un proyecto de Azure Repos
 
-1.  Inicie sesión en Azure Repos con una cuenta que tenga derechos de creación de proyectos en Azure Stack Hub. La captura de pantalla siguiente muestra cómo conectarse al proyecto HybridCICD.
+1. Inicie sesión en Azure Repos con una cuenta que tenga derechos de creación de proyectos en Azure Stack Hub.
 
-2.  **Clone el repositorio**; para ello, cree y abra la aplicación web predeterminada.
+2. **Clone el repositorio**; para ello, cree y abra la aplicación web predeterminada.
 
 #### <a name="create-self-contained-web-app-deployment-for-app-services-in-both-clouds"></a>Creación de una implementación de aplicación web autocontenida para App Services en ambas nubes
 
-1.  Edite el archivo **WebApplication.csproj**: Seleccione `Runtimeidentifier` y, después, agregue `win10-x64`. Para más información, consulte la documentación de la [implementación independiente](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf).
+1. Edite el archivo **WebApplication.csproj**: Seleccione `Runtimeidentifier` y, después, agregue `win10-x64`. Para más información, consulte la documentación de la [implementación independiente](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf).
 
-2.  Compruebe el código en Azure Repos mediante Team Explorer.
+2. Compruebe el código en Azure Repos mediante Team Explorer.
 
-3.  Confirme que el código de la aplicación se ha insertado en Azure Repos.
+3. Confirme que el código de la aplicación se ha insertado en Azure Repos.
 
 ### <a name="create-the-build-definition"></a>Creación de la definición de compilación
 
-1.  Inicie sesión en Azure Pipelines con una cuenta que pueda crear una definición de compilación.
+1. Inicie sesión en Azure Pipelines con una cuenta que pueda crear una definición de compilación.
 
-2.  Vaya a la página **Build Web Application** (Compilar aplicación web) del proyecto.
+2. Vaya a la página **Build Web Application** (Compilar aplicación web) del proyecto.
 
-3.  En **Argumentos**, agregue el código **-r win10-x64**. Esta adición es necesaria para desencadenar una implementación independiente con .NET Core.
+3. En **Argumentos**, agregue el código **-r win10-x64**. Esta adición es necesaria para desencadenar una implementación independiente con .NET Core.
 
-4.  Ejecute la compilación. El proceso de [compilación de implementación autocontenida](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) publicará los artefactos que se pueden ejecutar en Azure y Azure Stack Hub.
+4. Ejecute la compilación. El proceso de [compilación de implementación autocontenida](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) publicará los artefactos que se pueden ejecutar en Azure y Azure Stack Hub.
 
 #### <a name="use-an-azure-hosted-build-agent"></a>Uso de un agente de compilación hospedado en Azure
 
@@ -288,29 +276,29 @@ El uso de un agente de compilación hospedado en Azure Pipelines es una opción 
 
 ### <a name="configure-the-continuous-deployment-cd-process"></a>Configuración del proceso de implementación continua (CD)
 
-Azure Pipelines y Azure DevOps Services proporcionan una canalización con una gran capacidad de configuración y administración para versiones de varios entornos, como desarrollo, ensayo, control de calidad (QA) y producción. Este proceso puede incluir la necesidad de aprobaciones en determinadas fases del ciclo de vida de la aplicación.
+Azure Pipelines y Azure DevOps Services proporcionan una canalización con gran capacidad de configuración y administración para diferentes versiones de varios entornos, como desarrollo, almacenamiento provisional, control de calidad (QA) y producción. Este proceso puede incluir la solicitud de aprobaciones en determinadas fases del ciclo de vida de la aplicación.
 
 #### <a name="create-release-definition"></a>Creación de la definición de versión
 
 La creación de una definición de versión es el último paso en el proceso de compilación de la aplicación. Esta definición de versión se usa para crear una versión e implementar una compilación.
 
-1.  Inicie sesión en Azure Pipelines y vaya a **Compilación y versión** del proyecto.
+1. Inicie sesión en Azure Pipelines y vaya a **Build and Release** (Compilación y versión) en el proyecto.
 
-2.  En la pestaña **Versiones**, seleccione **[ + ]** y, a continuación, elija **Crear definición de versión**.
+2. En la pestaña **Versiones**, seleccione **[ + ]** y, a continuación, elija **Crear definición de versión**.
 
-3.  En **Seleccionar una plantilla**, elija **Implementación de Azure App Service** y, a continuación, seleccione **Aplicar**.
+3. En **Seleccionar una plantilla**, elija **Implementación de Azure App Service** y, a continuación, seleccione **Aplicar**.
 
-4.  En **Agregar artefacto**, en **Origen (definición de compilación)** , seleccione la aplicación de compilación en la nube de Azure.
+4. En **Agregar artefacto**, en **Origen (definición de compilación)** , seleccione la aplicación de compilación en la nube de Azure.
 
-5.  En la pestaña **Canalización**, seleccione el vínculo **1 fase**, **1 tarea** para **Ver tareas de entorno**.
+5. En la pestaña **Canalización**, seleccione el vínculo **1 fase**, **1 tarea** para **Ver tareas de entorno**.
 
-6.  En la pestaña **Tareas**, escriba Azure como **Nombre del entorno** y seleccione AzureCloud Traders-Web EP en la lista **Suscripción de Azure**.
+6. En la pestaña **Tareas**, escriba Azure como **Nombre del entorno** y seleccione AzureCloud Traders-Web EP en la lista **Suscripción de Azure**.
 
-7.  Escriba el **nombre de la instancia de Azure App Service**, que es `northwindtraders` en la siguiente captura de pantalla.
+7. Escriba el **nombre de la instancia de Azure App Service**, que es `northwindtraders` en la siguiente captura de pantalla.
 
-8.  Para la fase de agente, seleccione **VS2017 hospedado** en la lista **Cola de agentes**.
+8. Para la fase de agente, seleccione **VS2017 hospedado** en la lista **Cola de agentes**.
 
-9.  En **Implementar Azure App Service**, seleccione el valor de **Paquete o carpeta** válido para el entorno.
+9. En **Implementar Azure App Service**, seleccione el valor de **Paquete o carpeta** válido para el entorno.
 
 10. En **Seleccionar archivo o carpeta**, seleccione **Aceptar** para **Ubicación**.
 
@@ -341,35 +329,36 @@ La creación de una definición de versión es el último paso en el proceso de 
 23. Guarde todos los cambios.
 
 > [!Note]  
-> Algunos valores de configuración de las tareas se han definido automáticamente como [variables de entorno](https://docs.microsoft.com/azure/devops/pipelines/release/variables?view=vsts&tabs=batch#custom-variables) cuando se creó una definición de versión desde una plantilla. Esta configuración no puede modificarse en la configuración de la tarea, pero se puede modificar en los elementos del entorno primario.
+> Algunos valores de configuración de las tareas se han definido automáticamente como [variables de entorno](https://docs.microsoft.com/azure/devops/pipelines/release/variables?view=vsts&tabs=batch#custom-variables) cuando se creó una definición de versión desde una plantilla. Esta configuración no puede modificarse en la configuración de la tarea, pero sí en los elementos del entorno primario.
 
 ## <a name="create-a-release"></a>Creación de una versión
 
-1.  En la pestaña **Canalización**, abra la lista **Versión** y seleccione **Crear versión**.
+1. En la pestaña **Canalización**, abra la lista **Versión** y seleccione **Crear versión**.
 
-2.  Escriba la descripción de la versión, compruebe que se han seleccionado los artefactos correctos y seleccione **Create** (Crear). Transcurridos unos instantes, aparece un mensaje emergente que indica que se ha creado la nueva versión y el nombre de la versión se muestra como un vínculo. Seleccione el vínculo para ver la página de resumen de la versión.
+2. Escriba la descripción de la versión, compruebe que se han seleccionado los artefactos correctos y seleccione **Create** (Crear). Transcurridos unos instantes, aparece un mensaje emergente que indica que se ha creado la nueva versión y el nombre de la versión se muestra como un vínculo. Seleccione el vínculo para ver la página de resumen de la versión.
 
-3.  La página de resumen de la versión muestra detalles acerca de la versión. En la siguiente captura de pantalla de "Release-2", en la sección **Environments** (Entornos), en la columna **Deployment status** (Estado de implementación) de Azure aparece el valor "IN PROGRESS" (EN CURSO) y el estado de Azure Stack Hub es "SUCCEEDED" (CORRECTO). Cuando el estado de implementación para el entorno de Azure cambie a "Correcto", aparece un mensaje emergente que indica que la versión está lista para su aprobación. Cuando una implementación está pendiente o se ha producido un error, se muestra un icono de información **(i)** azul. Desplácese sobre el icono para ver un elemento emergente que contiene la razón del retraso o los errores.
+3. La página de resumen de la versión muestra detalles acerca de la versión. En la siguiente captura de pantalla de "Release-2", en la sección **Environments** (Entornos), en la columna **Deployment status** (Estado de implementación) de Azure aparece el valor "IN PROGRESS" (EN CURSO) y el estado de Azure Stack Hub es "SUCCEEDED" (CORRECTO). Cuando el estado de implementación para el entorno de Azure cambie a "Correcto", aparece un mensaje emergente que indica que la versión está lista para su aprobación. Cuando una implementación está pendiente o se ha producido un error, se muestra un icono de información **(i)** azul. Desplácese sobre el icono para ver un elemento emergente que contiene la razón del retraso o los errores.
 
-4.  Otras vistas, como la lista de versiones, también muestran un icono que indica que la aprobación está pendiente. El elemento emergente para este icono muestra el nombre del entorno y más detalles relacionados con la implementación. Es fácil para un administrador consultar el progreso general de las versiones y ver qué versiones están pendientes de aprobación.
+4. Otras vistas, como la lista de versiones, también muestran un icono que indica que está pendiente la aprobación. El elemento emergente para este icono muestra el nombre del entorno y más detalles relacionados con la implementación. Los administradores pueden ver fácilmente el progreso general de las versiones, así como qué versiones están pendientes de aprobación.
 
 ## <a name="monitor-and-track-deployments"></a>Supervisión y seguimiento de implementaciones
 
-1.  En la página de resumen **Release-2**, seleccione **Registros**. Durante una implementación, esta página muestra el registro en directo del agente. El panel izquierdo muestra el estado de cada operación de la implementación para cada entorno.
+1. En la página de resumen **Release-2**, seleccione **Registros**. Durante una implementación, esta página muestra el registro en directo del agente. El panel izquierdo muestra el estado de cada operación de la implementación para cada entorno.
 
-2.  Seleccione el icono de persona en la columna **Acción** correspondiente a una aprobación previa o posterior a la implementación para ver quién aprobó (o rechazó) la implementación y el mensaje que especificó.
+2. Seleccione el icono de persona en la columna **Acción** correspondiente a una aprobación previa o posterior a la implementación para ver quién aprobó (o rechazó) la implementación y el mensaje que especificó.
 
-3.  Una vez finalizada la implementación, se muestra el archivo de registro completo en el panel derecho. Seleccione cualquier **Paso** en el panel izquierdo para ver el archivo de registro de un único paso, como **Initialize job** (Inicializar trabajo). La posibilidad de ver registros individuales facilita realizar el seguimiento y la depuración de partes individuales de la implementación general. **Guarde** el archivo de registro de un paso o **descargue todos los registros como zip**.
+3. Una vez finalizada la implementación, se muestra el archivo de registro completo en el panel derecho. Seleccione cualquier **paso** en el panel izquierdo para ver el archivo de registro de un paso individual, como **Initialize Job** (Inicializar trabajo). La posibilidad de ver registros individuales facilita realizar el seguimiento y la depuración de partes individuales de la implementación general. **Guarde** el archivo de registro de un paso, o bien seleccione**Download all logs as zip** (Descargar todos los registros como zip).
 
-4.  Abra la pestaña **Resumen** para ver información general sobre la versión. Esta vista muestra detalles de la compilación, los entornos en los que se implementó, el estado de implementación y otra información sobre la versión.
+4. Abra la pestaña **Resumen** para ver información general sobre la versión. Esta vista muestra detalles de la compilación, los entornos en los que se implementó, el estado de implementación y otra información sobre la versión.
 
-5.  Seleccione un vínculo de entorno (**Azure** o **Azure Stack Hub**) para ver información sobre las implementaciones existentes y pendientes en un entorno específico. Use estas vistas como un modo rápido para comprobar que la misma compilación se implementó en ambos entornos.
+5. Seleccione un vínculo de entorno (**Azure** o **Azure Stack Hub**) para ver información sobre las implementaciones existentes y pendientes en un entorno específico. Use estas vistas como una forma rápida de comprobar que la misma compilación se ha implementado en ambos entornos.
 
-6.  Abra la **aplicación de producción implementada** en un explorador. Por ejemplo, para el sitio web de Azure App Services, abra la dirección URL `https://[your-app-name\].azurewebsites.net`.
+6. Abra la **aplicación de producción implementada** en un explorador. Por ejemplo, para el sitio web de Azure App Services, abra la dirección URL `https://[your-app-name\].azurewebsites.net`.
 
-**La integración de Azure y Azure Stack Hub proporciona una solución escalable para toda la nube**
+### <a name="integration-of-azure-and-azure-stack-hub-provides-a-scalable-cross-cloud-solution"></a>La integración de Azure y Azure Stack Hub proporciona una solución escalable entre nubes
 
 Un servicio de nube múltiple flexible y sólido proporciona seguridad de los datos, copia de seguridad y redundancia, disponibilidad coherente y rápida, almacenamiento y distribución escalables, y compatibilidad con el enrutamiento con replicación geográfica. Este proceso desencadenado manualmente garantiza una conmutación confiable y eficaz entre las aplicaciones web hospedadas y una disponibilidad inmediata de los datos más importantes.
 
 ## <a name="next-steps"></a>Pasos siguientes
+
 - Para más información sobre los patrones de nube de Azure, consulte [Patrones de diseño en la nube](https://docs.microsoft.com/azure/architecture/patterns).

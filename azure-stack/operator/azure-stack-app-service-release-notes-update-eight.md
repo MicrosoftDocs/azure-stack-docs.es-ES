@@ -1,6 +1,6 @@
 ---
 title: Notas de la versión de la actualización 8 de App Service en Azure Stack Hub
-description: Conozca el contenido de la actualización 8 de App Service en Azure Stack Hub, los problemas conocidos y la ubicación dónde debe descargarse.
+description: Notas de la versión de la actualización 8 de App Service en Azure Stack Hub, incluidas las nuevas características, correcciones y problemas conocidos.
 author: apwestgarth
 manager: stefsch
 ms.topic: article
@@ -8,19 +8,19 @@ ms.date: 03/05/2020
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/25/2019
-ms.openlocfilehash: 82f43028253638f92866bb679a5ccb5478a5a56e
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: ccbe8abd3a8d427005c34084d875af08ed3f5134
+ms.sourcegitcommit: 3fd4a38dc8446e0cdb97d51a0abce96280e2f7b7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "78935077"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82580098"
 ---
 # <a name="app-service-on-azure-stack-hub-update-8-release-notes"></a>Notas de la versión de la actualización 8 de App Service en Azure Stack Hub
 
-En estas notas de la versión se describen las mejoras y correcciones de la actualización 8 de Azure App Service en Azure Stack Hub y los problemas conocidos. Los problemas conocidos se dividen en aquellos que están relacionados directamente con el proceso de actualización y aquellos que están relacionados con la compilación (posteriores a la instalación).
+En estas notas de la versión se describen nuevas características, correcciones y problemas conocidos de la actualización 8 de Azure App Service en Azure Stack Hub. Los problemas conocidos se dividen en dos secciones: aquellos que están relacionados con el proceso de actualización y aquellos que están relacionados con la compilación (posteriores a la instalación).
 
 > [!IMPORTANT]
-> Aplique la actualización 1910 al sistema integrado de Azure Stack o implemente el kit de desarrollo de Azure Stack más reciente antes de implementar Azure App Service 1.8.
+> Aplique la actualización 1910 al sistema integrado de Azure Stack o implemente el Kit de desarrollo de Azure Stack (ASDK) más reciente antes de implementar Azure App Service 1.8.
 
 ## <a name="build-reference"></a>Referencia de compilación
 
@@ -28,11 +28,11 @@ El número de compilación de la actualización 8 de App Service en Azure Stack
 
 ### <a name="prerequisites"></a>Prerrequisitos
 
-Remítase a la [documentación de introducción](azure-stack-app-service-before-you-get-started.md) antes de comenzar la implementación.
+Consulte [Requisitos previos para implementar App Service en Azure Stack Hub](azure-stack-app-service-before-you-get-started.md) antes de comenzar la implementación.
 
 Antes de comenzar la actualización de Azure App Service en Azure Stack a la versión 1.8:
 
-- Asegúrese de que todos los roles están listos en la administración de Azure App Service desde el portal de administración de Azure Stack.
+- Asegúrese de que todos los roles están listos en la administración de Azure App Service del portal de administración de Azure Stack Hub.
 
 - Realice una copia de seguridad de App Service y de las bases de datos maestras:
   - AppService_Hosting;
@@ -41,19 +41,20 @@ Antes de comenzar la actualización de Azure App Service en Azure Stack a la ver
 
 - Realice una copia de seguridad del recurso compartido de archivos del contenido de la aplicación inquilina.
 
-- Distribuya la **extensión de script personalizado** de la versión **1.9.3** desde Marketplace.
+- Distribuya la **extensión de script personalizado** de la versión **1.9.3** desde Marketplace de Azure Stack Hub.
 
 ### <a name="new-features-and-fixes"></a>Nuevas características y correcciones
 
 La actualización 8 de Azure App Service en Azure Stack incluye las siguientes correcciones y mejoras:
 
-- Actualizaciones de las **herramientas de Kudu, los portales de Functions, Admin e inquilino de App Service**. Es coherente con la versión del SDK de Azure Stack Portal.
+- Actualizaciones de las **herramientas de Kudu, los portales de Functions, administración e inquilino de App Service**. Es coherente con la versión del SDK del portal de Azure Stack.
 
 - Actualiza el **entorno de ejecución de Azure Functions** a **v1.0.12615**.
 
 - Actualizaciones en el servicio principal para mejorar la confiabilidad y los mensajes de error, lo cual permite un diagnóstico de problemas comunes más sencillo.
 
 - **Actualizaciones de las herramientas y plataformas de aplicaciones siguientes**:
+
   - ASP.NET Core 3.1.0
   - ASP.NET Core 3.0.1
   - ASP.NET Core 2.2.8
@@ -76,36 +77,37 @@ La actualización 8 de Azure App Service en Azure Stack incluye las siguientes 
 
 - **Compatibilidad de disco administrado para nuevas implementaciones**
 
-Todas las nuevas implementaciones de Azure App Service en Azure Stack Hub utilizarán los discos administrados para todas las máquinas virtuales y conjuntos de escalado de máquinas virtuales.  Todas las implementaciones existentes seguirán usando discos no administrados.
+Todas las nuevas implementaciones de Azure App Service en Azure Stack Hub utilizarán los discos administrados para todas las máquinas virtuales y conjuntos de escalado de máquinas virtuales. Todas las implementaciones existentes seguirán usando discos no administrados.
 
 - **TLS 1.2 aplicado por equilibradores de carga front-end**
 
-A partir de esta actualización, **TLS 1.2** se aplicará para todas las aplicaciones.
+**TLS 1.2** ahora se aplica para todas las aplicaciones.
 
 ### <a name="known-issues-upgrade"></a>Problemas conocidos (actualización)
 
-- Se producirá un error en la actualización si un clúster de Grupos de disponibilidad AlwaysOn de SQL Server se ha conmutado por error a un nodo secundario
+- Se produce un error en la actualización si un clúster de Grupos de disponibilidad AlwaysOn de SQL Server se ha conmutado por error a un nodo secundario.
 
-Durante la actualización, hay una llamada para comprobar la existencia de la base de datos mediante la cadena de conexión maestra que producirá un error porque el inicio de sesión se encontraba en el nodo maestro anterior.
+Durante la actualización, hay una llamada para comprobar la existencia de la base de datos mediante la cadena de conexión maestra que produce un error porque el inicio de sesión se encontraba en el nodo maestro anterior.
 
-Realice una de las siguientes acciones y haga clic en Retry within the installer (Reintentar en el instalador).
+Realice una de las siguientes acciones y seleccione Retry within the installer (Reintentar en el instalador).
 
-- Copie el inicio de sesión de appservice_hostingAdmin desde el nuevo nodo secundario de SQL,
+- Copie el inicio de sesión de `appservice_hostingAdmin` desde el nuevo nodo secundario de SQL,
 
-**OR**
+    **OR**
 
 - Conmute por error el clúster de SQL al nodo activo anterior.
 
 ### <a name="post-deployment-steps"></a>Pasos posteriores a la implementación
 
 > [!IMPORTANT]
-> Si proporcionó el proveedor de recursos de App Service con una instancia de SQL Always On, DEBE [agregar las bases de datos appservice_hosting y appservice_metering a un grupo de disponibilidad](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database), así como sincronizar dichas bases de datos para evitar la pérdida de servicio en caso de producirse una conmutación por error de base de datos.
+> Si ha proporcionado al proveedor de recursos de App Service una instancia de SQL Always On, DEBE [agregar las bases de datos appservice_hosting y appservice_metering a un grupo de disponibilidad](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database) y sincronizarlas para evitar la pérdida de servicio en caso de producirse una conmutación por error de la base de datos.
 
 ### <a name="known-issues-post-installation"></a>Problemas conocidos (posteriores a la instalación)
 
 - Los trabajos no pueden llegar al servidor de archivos cuando App Service está implementada en una red virtual existente y el servidor de archivos solo está disponible en la red privada, tal y como se describe en la documentación de implementación de Azure App Service en Azure Stack.
 
-  Si decide realizar una implementación en una red virtual existente y en una dirección IP interna para conectarse al servidor de archivos, debe agregar una regla de seguridad de salida. De ese modo, permite que exista tráfico SMB entre la subred del rol de trabajo y el servidor de archivos. Vaya a WorkersNsg en el Portal de administración y agregue una regla de seguridad de salida con las siguientes propiedades:
+  Si decide realizar una implementación en una red virtual existente y en una dirección IP interna para conectarse al servidor de archivos, debe agregar una regla de seguridad de salida. De ese modo, permite que exista tráfico SMB entre la subred del rol de trabajo y el servidor de archivos. Vaya a WorkersNsg en el portal del administrador y agregue una regla de seguridad de salida con las siguientes propiedades:
+
   - Origen: Any
   - Intervalo de puertos de origen: *
   - Destino: Direcciones IP
@@ -118,28 +120,26 @@ Realice una de las siguientes acciones y haga clic en Retry within the installer
 
 - Las nuevas implementaciones de Azure App Service en Azure Stack Hub 1.8 requieren que las bases de datos se conviertan en bases de datos independientes.
 
-Debido a una regresión en esta versión, las bases de datos de App Service (appservice_hosting y appservice_metering) deben convertirse en bases de datos independientes cuando se implementen por **primera vez**.  Esto **NO** afecta a las implementaciones **actualizadas**.
+    Debido a una regresión en esta versión, las bases de datos de App Service (appservice_hosting y appservice_metering) deben convertirse en bases de datos independientes cuando se implementen por **primera vez**.  Esto **NO** afecta a las implementaciones **actualizadas**.
 
-> [!IMPORTANT]
-> Este procedimiento tarda aproximadamente entre 5 y 10 minutos. Este procedimiento implica la eliminación de las sesiones de inicio de sesión de base de datos existentes. Planee el tiempo de inactividad para migrar y validar Azure App Service en Azure Stack Hub después de la migración
->
->
+    > [!IMPORTANT]
+    > Este procedimiento tarda aproximadamente entre 5 y 10 minutos. Este procedimiento implica la eliminación de las sesiones de inicio de sesión de base de datos existentes. Planee el tiempo de inactividad para migrar y validar Azure App Service en Azure Stack Hub después de la migración.
 
-1. Agregue las [bases de datos de AppService (appservice_hosting y appservice_metering) al grupo de disponibilidad](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database).
+    1. Agregue las [bases de datos de AppService (appservice_hosting y appservice_metering) al grupo de disponibilidad](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database).
 
-1. Habilite la base de datos independiente.
+    1. Habilite la base de datos independiente.
 
-    ```sql
+        ```sql
 
         sp_configure 'contained database authentication', 1;
         GO
         RECONFIGURE;
             GO
-    ```
+        ```
 
-1. Convierta una base de datos a parcialmente independiente. Este paso incurrirá en un tiempo de inactividad, ya que se deben eliminar todas las sesiones activas.
+    1. Convierta la base de datos a parcialmente independiente. Este paso produce un tiempo de inactividad, ya que se deben eliminar todas las sesiones activas.
 
-    ```sql
+        ```sql
         /******** [appservice_metering] Migration Start********/
             USE [master];
 
@@ -177,11 +177,11 @@ Debido a una regresión en esta versión, las bases de datos de App Service (app
             GO  
 
             /********[appservice_hosting] Migration End********/
-    ```
+        ```
 
-1. Migre los inicios de sesión a usuarios de la base de datos independiente.
+    1. Migre los inicios de sesión a usuarios de la base de datos independiente.
 
-    ```sql
+        ```sql
         IF EXISTS(SELECT * FROM sys.databases WHERE Name=DB_NAME() AND containment = 1)
         BEGIN
         DECLARE @username sysname ;  
@@ -206,28 +206,28 @@ Debido a una regresión en esta versión, las bases de datos de App Service (app
             DEALLOCATE user_cursor ;
             END
         GO
-    ```
+        ```
 
     **Validación**
 
-1. Compruebe si SQL Server tiene la independencia habilitada.
+    1. Compruebe si SQL Server tiene la independencia habilitada.
 
-    ```sql
+        ```sql
         sp_configure  @configname='contained database authentication'
-    ```
+        ```
 
-1. Compruebe el comportamiento de independencia existente.
+    1. Compruebe el comportamiento de independencia existente.
 
-    ```sql
+        ```sql
         SELECT containment FROM sys.databases WHERE NAME LIKE (SELECT DB_NAME())
-    ```
+        ```
 
 - No se pueden escalar horizontalmente los trabajos
 
   Los nuevos trabajos no pueden adquirir la cadena de conexión de la base de datos necesaria.  Para solucionar este problema, conéctese a una de las instancias del controlador, por ejemplo, CN0-VM, y ejecute el siguiente script de PowerShell:
 
     ```powershell
-    
+
     [System.Reflection.Assembly]::LoadWithPartialName("Microsoft.Web.Hosting")
     $siteManager = New-Object Microsoft.Web.Hosting.SiteManager
 
@@ -246,22 +246,22 @@ Debido a una regresión en esta versión, las bases de datos de App Service (app
             $command.CommandText = "CREATE USER [$dbUserName] WITH PASSWORD = '$dbUserPassword'"
             $command.ExecuteNonQuery()
             $conn.Close()
-            
+
             $conn.Open()
             $command = $conn.CreateCommand()
             $command.CommandText = "ALTER ROLE [WebWorkerRole] ADD MEMBER [$dbUserName]"
             $command.ExecuteNonQuery()
             $conn.Close()
-            
+
             $builder.Password = $dbUserPassword
             $builder["User ID"] = $dbUserName
-            
+
             $siteManager.ConnectionContexts.Add($dbUserName, $builder.ToString())
         }
     }
 
     $siteManager.CommitChanges()
-        
+
     ```
 
 ### <a name="known-issues-for-cloud-admins-operating-azure-app-service-on-azure-stack"></a>Problemas conocidos para los administradores en la nube que trabajan con Azure App Service en Azure Stack
@@ -270,5 +270,5 @@ Consulte la documentación de las [notas de la versión de Azure Stack 1907](az
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Para obtener información general de Azure App Service, consulte la [Información general de Azure App Service en Azure Stack](azure-stack-app-service-overview.md).
-- Para obtener más información acerca de cómo prepararse para implementar App Service en Azure Stack, consulte [Antes de empezar a trabajar con App Service en Azure Stack](azure-stack-app-service-before-you-get-started.md).
+- Para información general sobre Azure App Service, consulte [Introducción a Azure App Service y Azure Functions en Azure Stack Hub](azure-stack-app-service-overview.md).
+- Para más información acerca de cómo prepararse para implementar App Service en Azure Stack, consulte [Requisitos previos para implementar App Service en Azure Stack Hub](azure-stack-app-service-before-you-get-started.md).

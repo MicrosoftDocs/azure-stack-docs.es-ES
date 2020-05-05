@@ -3,16 +3,16 @@ title: Implementación de un clúster de Kubernetes con el motor de AKS en Azure
 description: Implementación de un clúster de Kubernetes en Azure Stack Hub desde una máquina virtual de cliente que ejecute el motor de AKS.
 author: mattbriggs
 ms.topic: article
-ms.date: 3/19/2020
+ms.date: 4/23/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 3/19/2020
-ms.openlocfilehash: 3186d3976f5d4ca533a89644b3abc16fdf824c7c
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.lastreviewed: 4/23/2020
+ms.openlocfilehash: 85f9e789db3ce86b04b490be83f355eb73e7329e
+ms.sourcegitcommit: c51e7787e36c49d34ee86cabf9f823fb98b61026
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80152180"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82218830"
 ---
 # <a name="deploy-a-kubernetes-cluster-with-the-aks-engine-on-azure-stack-hub"></a>Implementación de un clúster de Kubernetes con el motor de AKS en Azure Stack Hub
 
@@ -44,11 +44,7 @@ En esta sección se examina la creación de un modelo de API para el clúster.
     > [!Note]  
     > Si no tiene nano instalado, puede instalar nano en Ubuntu: `sudo apt-get install nano`.
 
-3.  En el archivo kubernetes-azurestack.json, busque `orchestratorRelease`. Seleccione una de las versiones admitidas de Kubernetes. Por ejemplo, 1.14, 1.15. Las versiones se suelen actualizar. Especifique la versión como x.xx en lugar de x.xx.x. Para obtener una lista de las versiones actuales, consulte [Versiones admitidas de Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). Puede averiguar la versión compatible mediante la ejecución del siguiente comando del motor de AKS:
-
-    ```bash
-    aks-engine get-versions
-    ```
+3.  En el archivo kubernetes-azurestack.json, busque orchestratorRelease y orchestratorVersion. Seleccione una de las versiones admitidas de Kubernetes. Por ejemplo, para `orchestratorRelease` use 1.14 o 1.15 y para `orchestratorVersion` use 1.14.7 o 1.15.10 respectivamente. Especifique `orchestratorRelease` como x.xx y orchestratorVersion como x.xx.x. Para obtener una lista de las versiones actuales, consulte [Versiones admitidas del motor de AKS](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-aks-engine-versions).
 
 4.  Busque `customCloudProfile` y proporcione la dirección URL al portal del inquilino. Por ejemplo, `https://portal.local.azurestack.external`. 
 

@@ -3,15 +3,15 @@ title: Administración de Key Vault en Azure Stack Hub mediante PowerShell
 description: Aprenda a administrar Key Vault en Azure Stack Hub mediante PowerShell.
 author: sethmanheim
 ms.topic: article
-ms.date: 01/07/2020
+ms.date: 04/29/2020
 ms.author: sethm
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: 0c7dc4bffba85c60213df4e57c3fc95f756259df
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 5ca8221d9a85a6dad874969525006f789e6b7084
+ms.sourcegitcommit: 3fd4a38dc8446e0cdb97d51a0abce96280e2f7b7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77704070"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82580168"
 ---
 # <a name="manage-key-vault-in-azure-stack-hub-using-powershell"></a>Administración de Key Vault en Azure Stack Hub mediante PowerShell
 
@@ -145,14 +145,16 @@ Para autorizar a una aplicación a acceder a una clave o a un secreto del almac�
 
 En el siguiente ejemplo, el nombre del almacén es **ContosoKeyVault** y la aplicación que desea autorizar tiene el identificador de cliente **8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed**. Ejecute el comando siguiente para autorizar a la aplicación. También puede especificar el parámetro **PermissionsToKeys** para establecer permisos para un usuario, una aplicación o un grupo de seguridad.
 
+Cuando use Set-AzureRmKeyvaultAccessPolicy en un entorno de Azure Stack Hub configurado por ADFS, se debe proporcionar el parámetro BypassObjectIdValidation
+
 ```powershell
-Set-AzureRmKeyVaultAccessPolicy -VaultName 'ContosoKeyVault' -ServicePrincipalName 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed -PermissionsToKeys decrypt,sign
+Set-AzureRmKeyVaultAccessPolicy -VaultName 'ContosoKeyVault' -ServicePrincipalName 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed -PermissionsToKeys decrypt,sign -BypassObjectIdValidation
 ```
 
 Si desea autorizar a esa misma aplicación a leer los secretos del almacén, ejecute el siguiente cmdlet:
 
 ```powershell
-Set-AzureRmKeyVaultAccessPolicy -VaultName 'ContosoKeyVault' -ServicePrincipalName 8f8c4bbd-485b-45fd-98f7-ec6300 -PermissionsToKeys Get
+Set-AzureRmKeyVaultAccessPolicy -VaultName 'ContosoKeyVault' -ServicePrincipalName 8f8c4bbd-485b-45fd-98f7-ec6300 -PermissionsToKeys Get -BypassObjectIdValidation
 ```
 
 ## <a name="next-steps"></a>Pasos siguientes

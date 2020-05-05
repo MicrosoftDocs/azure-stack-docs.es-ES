@@ -3,16 +3,16 @@ title: Problemas conocidos de Azure Stack Hub
 description: Obtenga información sobre los problemas conocidos de las versiones de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 03/20/2020
+ms.date: 04/29/2020
 ms.author: sethm
-ms.reviewer: prchint
+ms.reviewer: sranthar
 ms.lastreviewed: 03/18/2020
-ms.openlocfilehash: ca29dd169523872b2dcc21b323bc489de5caf9b3
-ms.sourcegitcommit: b824c7b9af9ba415ca4fe8d15673b521362f0abb
+ms.openlocfilehash: df81020ce365f25587c406aaf13617281769834d
+ms.sourcegitcommit: 54f98b666bea9226c78f26dc255ddbdda539565f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80479224"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82556419"
 ---
 # <a name="azure-stack-hub-known-issues"></a>Problemas conocidos de Azure Stack Hub
 
@@ -36,7 +36,9 @@ Para tener acceso a los problemas conocidos de una versión diferente, use la li
 ::: moniker range="azs-2002"
 ## <a name="update"></a>Actualizar
 
-Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, consulte [Solución de problemas de actualizaciones en Azure Stack Hub](azure-stack-updates-troubleshoot.md).
+Después de aplicar la actualización 2002, puede aparecer incorrectamente una alerta de un "origen de hora no válido" en el portal de administración. Esta alerta es un falso positivo se puede ignorar y se corregirá en una próxima versión. 
+
+Para ver otros problemas conocidos con las actualizaciones de Azure Stack Hub, consulte [Solución de problemas de actualizaciones en Azure Stack Hub](azure-stack-updates-troubleshoot.md).
 
 ## <a name="portal"></a>Portal
 
@@ -81,6 +83,10 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 - Causa: No se puede crear una regla **DenyAllOutbound** explícita en un grupo de seguridad de red, ya que esto impedirá todas las comunicaciones internas con la infraestructura necesarias para que se complete la implementación de la máquina virtual.
 - Repetición: Comunes
 
+- Aplicable a: este problema se aplica a todas las versiones admitidas. 
+- Causa: al crear una regla de seguridad de red de entrada o de salida, la opción **Protocol** (Protocolo) muestra una opción **ICMP**. Esto es algo que no se admite actualmente en Azure Stack Hub. Este problema se ha corregido y no aparecerá en la siguiente versión de Azure Stack Hub.
+- Repetición: Comunes
+
 ### <a name="network-interface"></a>interfaz de red
 
 #### <a name="addingremoving-network-interface"></a>Incorporación o eliminación de una interfaz de red
@@ -94,6 +100,13 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: No se puede cambiar la NIC principal de una máquina virtual. La eliminación o desasociación de la NIC principal provoca problemas al iniciar la máquina virtual.
+- Repetición: Comunes
+
+### <a name="public-ip"></a>Dirección IP pública
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: el valor **IdleTimeoutInMinutes** de una dirección IP pública que está asociada a un equilibrador de carga no se puede cambiar. La operación pone a la dirección IP pública en estado de error.
+- Corrección: para devolverla a un estado correcto, cambie el valor **IdleTimeoutInMinutes** en la regla del equilibrador de carga que hace referencia a la dirección IP pública a su valor original (el valor predeterminado es 4 minutos).
 - Repetición: Comunes
 
 ### <a name="virtual-network-gateway"></a>Puerta de enlace de red virtual
@@ -113,8 +126,8 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 
 ### <a name="vm-overview-blade-does-not-show-correct-computer-name"></a>La hoja de información general de máquinas virtuales no muestra el nombre de equipo correcto
 
-- Aplicable a: Este problema se aplica a la versión 2002 y versiones posteriores.
-- Causa: Al ver los detalles de una máquina virtual en la hoja de información general, el nombre del equipo se muestra como **(no disponible)** .
+- Aplicable a: este problema afecta a todas las versiones.
+- Causa: Al ver los detalles de una máquina virtual en la hoja de información general, el nombre del equipo se muestra como **(no disponible)** . Por su propio diseño esto es para máquinas virtuales creadas a partir de discos o instantáneas de disco especializados.
 - Corrección: Vea la hoja **Propiedades** en **Configuración**.
 
 ### <a name="nvv4-vm-size-on-portal"></a>Tamaño de máquina virtual NVv4 en el portal
@@ -126,7 +139,13 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 ### <a name="vm-boot-diagnostics"></a>Diagnósticos de arranque de VM
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: al crear una nueva máquina virtual Windows, puede aparecer el siguiente error: **Failed to start virtual machine 'vm-name'. Error: Failed to update serial output settings for VM 'vm-name'** (No se pudo iniciar la máquina virtual "vm-name". No se pudo actualizar la configuración de salida de serie de la VM 'vm-name'). El error se produce si habilita el diagnóstico de arranque en una VM, pero elimina la cuenta de almacenamiento de diagnósticos de arranque.
+- Causa: al crear una nueva máquina virtual (VM), puede aparecer el siguiente error: **Failed to start virtual machine 'vm-name'. Error: Failed to update serial output settings for VM 'vm-name'** (No se pudo iniciar la máquina virtual "vm-name". No se pudo actualizar la configuración de salida de serie de la VM 'vm-name'). El error se produce si habilita el diagnóstico de arranque en una VM, pero elimina la cuenta de almacenamiento de diagnósticos de arranque.
+- Corrección: Vuelva a crear la cuenta de almacenamiento con el mismo nombre que usó anteriormente.
+- Repetición: Comunes
+
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: al intentar iniciar una máquina virtual desasignada, puede aparecer el siguiente error: **No se encontró la cuenta de almacenamiento de los diagnósticos de la máquina virtual "diagnosticstorageaccount". Asegúrese de que la cuenta de almacenamiento no se ha eliminado**. El error se produce si intenta iniciar una máquina virtual con los diagnósticos de arranque habilitados, pero se ha eliminado la cuenta de almacenamiento de diagnósticos de arranque a la que se hace referencia.
 - Corrección: Vuelva a crear la cuenta de almacenamiento con el mismo nombre que usó anteriormente.
 - Repetición: Comunes
 
@@ -145,12 +164,21 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 - Causa: La creación de máquinas virtuales en un conjunto de disponibilidad de 3 dominios de error y la creación de una instancia de conjunto de escalado de máquinas virtuales genera un error **FabricVmPlacementErrorUnsupportedFaultDomainSize** durante el proceso de actualización en un entorno de Azure Stack Hub de 4 nodos.
 - Corrección: Se pueden crear VM únicas en un conjunto de disponibilidad con 2 dominios de error correctamente. Sin embargo, la creación de instancias del conjunto de escalado todavía no está disponible durante el proceso de actualización en una implementación de Azure Stack Hub de 4 nodos.
 
-### <a name="sql-vm-provision-will-be-failed-in-asdk"></a>No se pudo aprovisionar la máquina virtual de SQL en ASDK
-- Aplicable a: este problema solo se produce en ASDK 2002. 
-- Causa: al crear una nueva máquina virtual de SQL en ASDK 2002, puede recibir un mensaje de error **"No se encontró la extensión con el editor "Microsoft.SqlServer.Management ", el tipo "SqlIaaSAgent" y la versión del controlador de tipo "2.0" en el repositorio de extensiones".** No hay ningún "SqlIaaSAgent" 2.0 en Azure Stack Hub. 
+### <a name="sql-vm"></a>VM con SQL
 
+#### <a name="storage-account-creating-failure-when-configuring-auto-backup"></a>Error al crear la cuenta de almacenamiento al configurar la copia de seguridad automática
 
-## <a name="resource-providers"></a>Resource Providers
+- Aplicable a: Este problema afecta a la versión 2002.
+- Causa: Al configurar la copia de seguridad automatizada de las máquinas virtuales con SQL con una nueva cuenta de almacenamiento, se produce el error **Error de validación de la plantilla de implementación. No se encuentra el parámetro de plantilla para "SqlAutobackupStorageAccountKind".**
+- Corrección: Aplique la revisión de la versión 2002 más reciente.
+
+#### <a name="auto-backup-cannot-be-configured-with-tls-12-enabled"></a>No se puede configurar la copia de seguridad automática con TLS 1.2 habilitado
+
+- Aplicable a: Este problema se aplica a las nuevas instalaciones de la versión 2002 y versiones posteriores y a cualquier versión anterior con TLS 1.2 habilitado.
+- Causa: Al configurar la copia de seguridad automatizada de las máquinas virtuales con SQL con una cuenta de almacenamiento existente, se produce el error **Agente de IaaS de SQL Server: Se ha cerrado la conexión subyacente: Error inesperado de envío.**
+- Repetición: Comunes
+
+## <a name="resource-providers"></a>Proveedores de recursos
 
 ### <a name="sqlmysql"></a>SQL/MySQL
 
@@ -186,7 +214,7 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 - Corrección: Si tiene recursos que se ejecutan en estas dos suscripciones, vuelva a crearlos en las suscripciones de usuario.
 - Repetición: Comunes
 
-### <a name="subscriptions-lock-blade"></a>Hoja Bloqueo en las suscripciones
+### <a name="duplicate-subscription-button-in-lock-blade"></a>Botón Duplicar suscripción en la hoja Bloqueo
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: en el portal del administrador, la hoja **Bloqueo** para las suscripciones de usuario tiene dos botones que muestran **Suscripción**.
@@ -424,7 +452,7 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 - Corrección: puede ver estas propiedades de suscripciones en el panel **Essentials** (Información esencial) de la hoja **Introducción a las suscripciones**.
 - Repetición: Comunes
 
-### <a name="subscriptions-lock-blade"></a>Hoja Bloqueo en las suscripciones
+### <a name="duplicate-subscription-button-in-lock-blade"></a>Botón Duplicar suscripción en la hoja Bloqueo
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: en el portal del administrador, la hoja **Bloqueo** para las suscripciones de usuario tiene dos botones que muestran **Suscripción**.

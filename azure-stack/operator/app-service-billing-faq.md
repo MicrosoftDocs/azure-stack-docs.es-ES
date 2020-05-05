@@ -1,6 +1,6 @@
 ---
 title: Introducción a la facturación de Azure App Service en Azure Stack Hub y preguntas frecuentes
-description: Más información sobre cómo se calculan los gastos de Azure App Service en Azure Stack Hub y cómo se facturan.
+description: Más información acerca de la facturación de Azure App Service en Azure Stack Hub.
 author: apwestgarth
 manager: stefsch
 ms.topic: article
@@ -8,20 +8,20 @@ ms.date: 06/10/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: ea304dc9d95d672377e72ce1dad49d4751b7d5c6
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: e5ab25785223d1361553f995d22196cd594a6f0a
+ms.sourcegitcommit: b185ab34c4c799892948536dd6d1d1b2fc31174e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77694890"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82150286"
 ---
 # <a name="azure-app-service-on-azure-stack-hub-billing-overview-and-faq"></a>Introducción a la facturación de Azure App Service en Azure Stack Hub y preguntas frecuentes
 
-En este artículo se muestra cómo se factura a los operadores de la nube la oferta de Azure App Service en Azure Stack Hub y cómo estos operadores pueden facturar a sus inquilinos por el uso del servicio.
+En este artículo se muestra cómo se factura a los operadores de la nube la oferta de Azure App Service en Azure Stack Hub y cómo pueden facturar estos a sus inquilinos por el uso del servicio.
 
 ## <a name="billing-overview"></a>Introducción a la facturación
 
-Los operadores de la nube de Azure Stack Hub pueden elegir implementar Azure App Service en su sello de Azure Stack Hub para ofrecer las funcionalidades de inquilino de Azure App Service y Azure Functions a sus clientes. El proveedor de recursos de Azure App Service consta de varios tipos de roles que se pueden dividir entre los niveles de trabajo y de infraestructura.
+Los operadores de la nube de Azure Stack Hub pueden elegir implementar Azure App Service en su stamp de Azure Stack Hub para ofrecer las funcionalidades de inquilino de Azure App Service y Azure Functions a sus clientes. El proveedor de recursos de Azure App Service consta de varios tipos de roles que se pueden dividir entre los niveles de trabajo y de infraestructura.
 
 Los roles de infraestructura no se facturan ya que son necesarios para el funcionamiento básico del servicio. Los roles de infraestructura se pueden escalar horizontalmente según sea necesario para satisfacer las demandas de los inquilinos del operador de nube. Los roles de infraestructura son los siguientes:
 
@@ -34,7 +34,7 @@ Los niveles de trabajo constan de dos tipos principales: compartidos y dedicados
 
 ## <a name="shared-workers"></a>Trabajos compartidos
 
-Los trabajos compartidos son multiinquilino, no tienen host, son planes compartidos de App Service y funciones basadas en el consumo de Azure Functions para muchos inquilinos. Los trabajos compartidos emiten medidores de uso cuando se marcan como listos en el proveedor de recursos de Azure App Service.
+Los trabajos compartidos son multiinquilino y no tienen host, y son planes de App Service compartidos y funciones basadas en el consumo de Azure Functions para muchos inquilinos. Los trabajos compartidos emiten medidores de uso cuando se marcan como listos en el proveedor de recursos de Azure App Service.
 
 ## <a name="dedicated-workers"></a>Trabajos dedicados
 
@@ -45,9 +45,9 @@ Los medidores se emiten para los trabajos dedicados cuando:
 - Se marcan como "listos" en el proveedor de recursos de Azure App Service.
 - Se asignan a un plan de App Service.
 
-Este modelo de facturación permite a los operadores en la nube aprovisionar un grupo de trabajos dedicados listos para que los clientes los usen sin tener que pagar por ellos hasta que el plan de App Service del inquilino los reserve de manera efectiva. 
+Este modelo de facturación permite a los operadores en la nube aprovisionar un grupo de trabajos dedicados listos para que los clientes los usen sin tener que pagar por ellos hasta que el plan de App Service del inquilino los reserve de manera efectiva.
 
-Por ejemplo, supongamos que tiene 20 trabajos en el nivel de trabajo pequeño. Entonces, si tiene cinco clientes que crean dos planes S1 de App Service, y cada uno de ellos escala el plan de App Service hasta dos instancias, no tiene ningún trabajo disponible. Como resultado, no tiene capacidad para que los clientes (nuevos o existentes) puedan escalar horizontalmente o crear nuevos planes de App Service. 
+Por ejemplo, supongamos que tiene 20 trabajos en el nivel de trabajo pequeño. Entonces, si tiene cinco clientes que crean dos planes S1 de App Service, y cada uno de ellos escala el plan de App Service hasta dos instancias, no tiene ningún trabajo disponible. Como resultado, no tiene capacidad para que los clientes (nuevos o existentes) puedan escalar horizontalmente o crear nuevos planes de App Service.
 
 Para ver el número actual de trabajos disponibles por nivel de trabajo, los operadores en la nube pueden examinar los niveles de trabajo de la configuración de Azure App Service en la administración de Azure Stack Hub.
 
@@ -61,19 +61,19 @@ Los operadores en la nube pueden consultar la [API de uso de recursos de inquili
 
 ### <a name="how-do-i-license-the-sql-server-and-file-server-infrastructure-required-in-the-prerequisites"></a>¿Cómo puedo activar las licencias de la infraestructura de SQL Server y del servidor de archivos que se indica en la sección de requisitos previos?
 
-La concesión de licencias para la infraestructura de SQL Server y del servidor de archivos que requiere el proveedor de recursos de Azure App Service se describe en el artículo sobre Azure App Service en Azure Stack Hub denominado [Antes de comenzar](azure-stack-app-service-before-you-get-started.md#licensing-concerns-for-required-file-server-and-sql-server).
+La activación de las licencias de SQL Server y de la infraestructura del servidor de archivos que requiere el proveedor de recursos de Azure App Service se describe aquí: [Requisitos previos para implementar App Service en Azure Stack Hub](azure-stack-app-service-before-you-get-started.md#licensing-concerns-for-required-file-server-and-sql-server).
 
-### <a name="the-usage-faq-lists-the-tenant-meters-but-not-the-prices-for-those-meters-where-can-i-find-them"></a>En la sección de preguntas más frecuentes sobre el uso se enumeran los medidores de los inquilinos, pero no se mencionan los precios para tales medidores. ¿Dónde puedo encontrarlos?
+### <a name="the-usage-faq-lists-the-tenant-meters-but-not-the-prices-for-those-meters-where-can-i-find-them"></a>En la sección de preguntas más frecuentes sobre el uso se enumeran los medidores de los inquilinos, pero no se mencionan sus precios. ¿Dónde puedo encontrarlos?
 
 Como operador en la nube, tiene la libertad de aplicar su propio modelo de precios a los clientes. El servicio de uso proporciona la medición del uso. Por tanto, puede usar la cantidad de medidor que va a cobrar a los clientes según el modelo de precios que usted determine. La posibilidad de establecer los precios permite a los operadores diferenciarse de otros operadores de Azure Stack Hub.
 
 ### <a name="as-a-csp-how-can-i-offer-free-and-shared-skus-for-customers-to-try-out-the-service"></a>Como CSP, ¿cómo puedo ofrecer SKU gratis y compartidas para que los clientes prueben el servicio?
 
-Como operador en la nube, incurre en costos para ofrecer SKU gratis y compartidas, ya que se hospedan en trabajos compartidos. Para minimizar ese costo, puede optar por reducir verticalmente el nivel de trabajo compartido a un mínimo. 
+Como operador en la nube, incurre en costos para ofrecer SKU gratis y compartidas, ya que se hospedan en trabajos compartidos. Para minimizar ese costo, puede optar por reducir verticalmente el nivel de trabajo compartido a un mínimo.
 
-Por ejemplo, para ofrecer SKU gratis y compartidas de planes de App Service y para ofrecer funciones basadas en el consumo, es necesario tener disponible un mínimo de una instancia A1. Los trabajos compartidos son multiinquilinos, por lo que pueden hospedar varias aplicaciones de clientes, cada una de ellas aislada y protegida por el espacio aislado de App Service. Al escalar el nivel de trabajo compartido de esta manera, se puede limitar el desembolso al costo de una vCPU por mes.
+Por ejemplo, para ofrecer SKU gratis y compartidas de planes de App Service y para ofrecer funciones basadas en el consumo, es necesario tener disponible un mínimo de una instancia A1. Los trabajos compartidos son multiinquilino, por lo que pueden hospedar varias aplicaciones de clientes, cada una de ellas aislada y protegida por el espacio aislado de App Service. Al escalar el nivel de trabajo compartido de esta manera, se puede limitar el desembolso al costo de una vCPU por mes.
 
-Por tanto, puede optar por crear una cuota, para usarla en un plan, que solo ofrezca SKU gratis y compartidas, y que limite el número de planes de App Service gratis y compartidos que el cliente puede crear.
+Por tanto, puede optar por crear una cuota para usarla en un plan, que solo ofrezca SKU gratis y compartidas, y que limite el número de planes de App Service gratis y compartidos que el cliente puede crear.
 
 ## <a name="sample-scripts-to-assist-with-billing"></a>Scripts de ejemplo para ayudar con la facturación
 

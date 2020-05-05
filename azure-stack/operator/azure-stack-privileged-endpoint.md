@@ -3,16 +3,16 @@ title: Uso del punto de conexión con privilegios en Azure Stack Hub
 description: Aprenda a usar el punto de conexión con privilegios (PEP) en Azure Stack Hub como operador.
 author: mattbriggs
 ms.topic: article
-ms.date: 1/8/2020
+ms.date: 04/28/2020
 ms.author: mabrigg
 ms.reviewer: fiseraci
-ms.lastreviewed: 1/8/2020
-ms.openlocfilehash: 335afce7423872156c84c655d9c94ed59a9592d2
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.lastreviewed: 04/28/2020
+ms.openlocfilehash: 8c68e7dd4aa40d448e76050e4c657ee4cea9763b
+ms.sourcegitcommit: 54f98b666bea9226c78f26dc255ddbdda539565f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79512446"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82556395"
 ---
 # <a name="use-the-privileged-endpoint-in-azure-stack-hub"></a>Uso del punto de conexión con privilegios en Azure Stack Hub
 
@@ -47,7 +47,7 @@ Tendrá que establecer la configuración de la referencia cultural actual en `en
       - En un sistema integrado, ejecute el siguiente comando desde una sesión de Windows PowerShell con privilegios elevados para agregar el PEP como host de confianza a la máquina virtual protegida que se ejecuta en el host de ciclo de vida de hardware o en la estación de trabajo de acceso con privilegios.
 
       ```powershell  
-        winrm s winrm/config/client '@{TrustedHosts="<IP Address of Privileged Endpoint>"}'
+    Set-Item WSMan:\localhost\Client\TrustedHosts -Value '<IP Address of Privileged Endpoint>' -Concatenate
       ```
 
       - Si va a ejecutar el ADSK, inicie sesión en el host del kit de desarrollo.
@@ -109,7 +109,7 @@ Tendrá que establecer la configuración de la referencia cultural actual en `en
    - Stop-AzureStack
    - Get-ClusterLog
 
-## <a name="tips-for-using-the-privileged-endpoint"></a>Sugerencias para el uso del punto de conexión con privilegios 
+## <a name="how-to-use-the-privileged-endpoint"></a>Uso del punto de conexión con privilegios 
 
 Tal y como se mencionó anteriormente, el PEP es un punto de conexión de [PowerShell JEA](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/overview). Al proporcionar una capa de seguridad sólida, un punto de conexión de JEA reduce algunas de las funcionalidades básicas de PowerShell, como la finalización con tabulación o de scripting. Si intenta algún tipo de operación de scripts, se producirá el error **ScriptsNotAllowed**. Este error es el comportamiento esperado.
 
@@ -119,7 +119,7 @@ Por ejemplo, para obtener la lista de parámetros de un cmdlet determinado, debe
     Get-Command <cmdlet_name> -Syntax
 ```
 
-Como alternativa, puede usar el cmdlet [Import-PSSession](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Import-PSSession?view=powershell-5.1) para importar todos los cmdlets de PEP a la sesión actual en al equipo local. De esta forma, todos los cmdlets y las funciones del PEP ahora están disponibles en el equipo local, junto con la finalización con tabulación y, más en general, de scripting.
+Como alternativa, puede usar el cmdlet [**Import-PSSession**](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Import-PSSession?view=powershell-5.1) para importar todos los cmdlets de PEP a la sesión actual en la máquina local. Los cmdlets y las funciones del PEP ahora están disponibles en la máquina local, junto con la finalización con tabulación y, más en general, con el scripting. También puede ejecutar el módulo **[Get-Help](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-help)** para revisar las instrucciones del cmdlet.
 
 Lleve a cabo los siguientes pasos para importar la sesión del PEP al equipo local:
 
@@ -197,4 +197,5 @@ Una vez los archivos de registro de transcripción se transfieren correctamente 
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Herramientas de diagnóstico de Azure Stack Hub](azure-stack-diagnostic-log-collection-overview-tzl.md)
+- [Herramientas de diagnóstico de Azure Stack Hub](azure-stack-diagnostic-log-collection-overview-tzl.md)
+- [Referencia del punto de conexión con privilegios elevados de Azure Stack Hub](../reference/pep-2002/index.md)

@@ -3,20 +3,20 @@ title: Adición de inquilinos a Azure Stack Hub para uso y facturación
 description: Aprenda a agregar inquilinos a Azure Stack Hub para uso y facturación.
 author: sethmanheim
 ms.topic: article
-ms.date: 01/24/2020
+ms.date: 04/24/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 09/17/2019
-ms.openlocfilehash: eb9cc45f3c8de162550cb7f882060a9506831d23
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: d5a846d762d0dab8d07a16c7a7b6f147d8a92324
+ms.sourcegitcommit: e5b587216a137819444680ec619281c90f37bad9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77704835"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82167031"
 ---
 # <a name="add-tenant-for-usage-and-billing-to-azure-stack-hub"></a>Adición de inquilinos a Azure Stack Hub para uso y facturación
 
-En este artículo se muestra cómo agregar un inquilino a una implementación de Azure Stack Hub administrada por un proveedor de soluciones en la nube (CSP). Cuando el nuevo inquilino usa recursos, Azure Stack Hub informa del uso a su suscripción de CSP.
+En este artículo se indica cómo agregar un inquilino a una implementación de Azure Stack Hub administrada por un proveedor de soluciones en la nube (CSP). Cuando el nuevo inquilino usa recursos, Azure Stack Hub informa del uso a su suscripción de CSP.
 
 Los CSP suelen ofrecen servicios a varios clientes finales (inquilinos) en su implementación de Azure Stack Hub. Al agregar inquilinos al registro de Azure Stack Hub se garantiza que el uso de cada inquilino se notifica en la suscripción del CSP correspondiente y se factura a esta. Si no se completan los pasos descritos en este artículo, el uso realizado por los inquilinos se cargará en la suscripción usada en el registro inicial de Azure Stack Hub. Antes de poder agregar a un cliente final a Azure Stack Hub para el seguimiento del uso y para administrar el inquilino, debe configurar Azure Stack Hub como un CSP. Para información sobre los pasos y los recursos, consulte [Administración del uso y la facturación de Azure Stack Hub como proveedor de soluciones en la nube](azure-stack-add-manage-billing-as-a-csp.md).
 
@@ -49,14 +49,14 @@ De forma predeterminada, como CSP, no tiene acceso a la suscripción de Azure St
 
 Actualice el registro con la suscripción del nuevo cliente. Azure informa acerca del uso del cliente con la identidad del cliente del Centro de partners. Este paso garantiza que se informa del uso de cada cliente de esa suscripción del CSP individual del cliente. Esto facilita el seguimiento del uso y la facturación. Para realizar este paso, debe [registrar primero Azure Stack Hub](azure-stack-registration.md).
 
-1. Abra Windows PowerShell con un símbolo del sistema con privilegios elevados y ejecute:  
+1. Abra Windows PowerShell en un símbolo del sistema con privilegios elevados y ejecute:  
 
    ```powershell
    Add-AzureRmAccount
    ```
 
-   >[!Note]
-   > Si la sesión expira, la contraseña ha cambiado o simplemente desea cambiar de cuenta, ejecute el siguiente cmdlet antes de iniciar sesión con Add-AzureRmAccount: `Remove-AzureRmAccount-Scope Process`
+   >[!NOTE]
+   > Si la sesión expira, la contraseña ha cambiado o simplemente desea cambiar de cuenta, ejecute el siguiente cmdlet antes de iniciar sesión con **Add-AzureRmAccount**: `Remove-AzureRmAccount-Scope Process`.
 
 2. Escriba sus credenciales de Azure.
 3. En la sesión de PowerShell, ejecute:

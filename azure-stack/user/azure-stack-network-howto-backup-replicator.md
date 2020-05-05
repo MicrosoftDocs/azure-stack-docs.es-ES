@@ -3,16 +3,16 @@ title: Replicación de recursos entre varias suscripciones de Azure Stack Hub
 description: Aprenda a replicar recursos mediante el conjunto de scripts del replicador de suscripciones de Azure Stack Hub.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 11/07/2019
+ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: rtiberiu
 ms.lastreviewed: 11/07/2019
-ms.openlocfilehash: b8e955075553480b4178223a5475b44e3debd106
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: a20979ff0bb60f058658e9a0f9f540b2c0cb434e
+ms.sourcegitcommit: d930d52e27073829b8bf8ac2d581ec2accfa37e3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77702353"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82173920"
 ---
 # <a name="replicate-resources-using-the-azure-stack-hub-subscription-replicator"></a>Replicación de recursos mediante el replicador de suscripciones de Azure Stack Hub
 
@@ -98,7 +98,7 @@ Deployment_Files contendrá dos archivos **DeployResourceGroups.ps1** y **Deploy
 
     ![Revisión de las carpetas](./media/azure-stack-network-howto-backup-replicator/image4.png)
 
-3.  Establezca el contexto en la suscripción de destino, cambie la carpeta a **Deployment_Files**, implemente los grupos de recursos e inicie la implementación de los recursos.
+3.  Establezca el contexto en la suscripción de destino, cambie la carpeta a **Deployment_Files**, implemente los grupos de recursos (ejecute el script DeployResourceGroups.ps1) e inicie la implementación de los recursos (ejecute el script DeployResources.ps1).
 
     ![Configuración e inicio de la implementación](./media/azure-stack-network-howto-backup-replicator/image6.png)
 

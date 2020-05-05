@@ -3,16 +3,16 @@ title: Creación del almacenamiento en disco de máquinas virtuales en Azure Sta
 description: Creación de discos de máquina virtual en Azure Stack Hub.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 12/03/2019
+ms.date: 04/22/2020
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 01/18/2019
-ms.openlocfilehash: 5bcfcb8a5e2af29b0d7b60774853fa35392d9f23
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 757b978012fc1b17362343309d57c0df09862a98
+ms.sourcegitcommit: 98f62c33469ba963ba266bd88e206e9144258ea3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77702489"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82032848"
 ---
 # <a name="create-vm-disk-storage-in-azure-stack-hub"></a>Creación del almacenamiento en disco de máquinas virtuales en Azure Stack Hub
 
@@ -42,7 +42,7 @@ En la tabla siguiente se resume cómo agregar discos desde el portal y desde Pow
 
 | Método | Opciones
 |-|-|
-|Portal de usuarios|- Agregue discos de datos nuevos a una máquina virtual existente. Azure Stack Hub crea nuevos discos. </br> </br> - Agregue un archivo (.vhd) de un disco existente a una máquina virtual creada anteriormente. Para ello, primero debe preparar el archivo .vhd y, después, cargarlo en Azure Stack Hub. |
+|Portal de usuarios| - Agregue discos de datos nuevos a una máquina virtual existente. Azure Stack Hub crea nuevos discos. </br> </br> - Agregue un archivo (.vhd) de un disco existente a una máquina virtual creada anteriormente. Para ello, primero debe preparar el archivo .vhd y, después, cargarlo en Azure Stack Hub. |
 |[PowerShell](#use-powershell-to-add-multiple-disks-to-a-vm) | -Crear una nueva máquina virtual con un disco del sistema operativo y, al mismo tiempo, agregar uno o más discos de datos a esa máquina virtual. |
 
 ## <a name="use-the-portal-to-add-disks-to-a-vm"></a>Uso del portal para agregar discos a una máquina virtual
@@ -56,8 +56,8 @@ Después de crear una máquina virtual, puede usar el portal para:
 
 Cada disco no administrado que agregue se debe colocar en un contenedor independiente.
 
->[!NOTE]  
->Los discos creados y administrados por Azure se denominan [discos administrados](/azure/virtual-machines/windows/managed-disks-overview).
+> [!NOTE]  
+> Los discos creados y administrados por Azure se denominan [discos administrados](/azure/virtual-machines/windows/managed-disks-overview).
 
 ### <a name="use-the-portal-to-create-and-attach-a-new-data-disk"></a>Uso del portal para crear y asociar un nuevo disco de datos
 
@@ -82,11 +82,8 @@ Cada disco no administrado que agregue se debe colocar en un contenedor independ
    * Seleccione el **Tipo de cuenta**.
       ![Ejemplo: Conexión de un nuevo disco a la máquina virtual](media/azure-stack-manage-vm-disks/create-manage-disk.png)
 
-      **SSD Premium**  
-      Los discos Premium (SSD) están respaldados por unidades de estado sólido y ofrecen coherencia y un rendimiento con baja latencia. Proporcionan el mejor equilibrio entre precio y rendimiento, y son ideales para aplicaciones intensivas de E/S y cargas de trabajo de producción.
-
-      **HDD estándar**  
-      Los discos estándar (HDD) están respaldados por unidades magnéticas y son preferibles para las aplicaciones en la que se accede con poca frecuencia a los datos. Los discos con redundancia de zona tienen el respaldo del almacenamiento con redundancia de zona (ZRS), que replica los datos en varias zonas, lo que garantiza la disponibilidad de los datos aunque una de las zonas esté inactiva.
+    > [!NOTE]  
+    > Los discos Premium (SSD) y los discos Estándar (HDD) cuentan con el respaldo de la misma infraestructura de almacenamiento en Azure Stack Hub. Proporcionan el mismo rendimiento.
 
    * Seleccione el **Tipo de origen**.
 
@@ -101,7 +98,7 @@ Cada disco no administrado que agregue se debe colocar en un contenedor independ
 
    * Seleccione el **Tamaño (GiB)** .
 
-     Los costos de disco Estándar aumentan en función del tamaño del disco. Los costos y el rendimiento de los discos Premium aumentan en función del tamaño del disco. Para más información, consulte [Precios de Managed Disks](https://go.microsoft.com/fwlink/?linkid=843142).
+     Los costos de disco aumentan según el tamaño del disco.
 
    * Seleccione **Crear**. Azure Stack Hub crea y valida el disco administrado.
 
@@ -126,10 +123,8 @@ Para más información acerca de cómo trabajar con cuentas de almacenamiento en
     - Considere usar un contenedor diferente para el archivo .vhd en lugar del que alberga el disco del sistema operativo.  
     - Antes de cargar los VHD en Azure, debe consultar [Preparación de un VHD o un VHDX de Windows antes de cargarlo en Azure](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
     - Revise [Plan for the migration to Managed Disks](https://docs.microsoft.com/azure/virtual-machines/windows/on-prem-to-azure#plan-for-the-migration-to-managed-disks) (Planeación de la migración a Managed Disks) antes de comenzar la migración a [Managed Disks](https://docs.microsoft.com/azure/virtual-machines/windows/managed-disks-overview).
-    
+
     ![Ejemplo: Carga de un archivo VHD](media/azure-stack-manage-vm-disks/upload-vhd.png)
-
-
 
 2. Una vez cargado el archivo .vhd, está listo para asociar el disco duro virtual a una VM. En el menú de la izquierda, haga clic en **Máquinas virtuales**.  
  ![Ejemplo: Selección de una máquina virtual en el panel](media/azure-stack-manage-vm-disks/vm-dashboard.png)
@@ -166,7 +161,7 @@ El cmdlet **Add-AzureRmVMDataDisk** agrega un disco de datos a una VM. Puede agr
 
 ### <a name="add-data-disks-to-a-new-vm"></a>Incorporación de discos de datos a una máquina virtual **nueva**
 
-En los ejemplos siguientes se usan comandos de PowerShell para crear una máquina virtual existente con tres discos de datos. Los comandos se proporcionan con varias partes debido a las pequeñas diferencias que se producen cuando se usan discos administrados o no administrados. 
+En los ejemplos siguientes se usan comandos de PowerShell para crear una máquina virtual existente con tres discos de datos. Los comandos se proporcionan con varias partes debido a las pequeñas diferencias que se producen cuando se usan discos administrados o no administrados.
 
 #### <a name="create-virtual-machine-configuration-and-network-resources"></a>Creación de la configuración y los recursos de red de una máquina virtual
 
@@ -212,9 +207,7 @@ $nic = New-AzureRmNetworkInterface -Name $nicName -ResourceGroupName $rgName `
 
 ```
 
-#### <a name="add-managed-disk"></a>Incorporación de un disco administrado
->[!NOTE]  
->Esta sección es solo para agregar discos administrados. 
+#### <a name="add-managed-disks"></a>Incorporación de discos administrados
 
 Los tres comandos siguientes agregan discos de datos administrados a la máquina virtual almacenada en `$VirtualMachine`. Cada comando especifica el nombre y las propiedades adicionales del disco:
 
@@ -245,10 +238,7 @@ $VirtualMachine = Set-AzureRmVMOSDisk -VM $VirtualMachine -Name $osDiskName  `
                                       -CreateOption FromImage -Windows
 ```
 
-#### <a name="add-unmanaged-disk"></a>Incorporación de un disco no administrado
-
->[!NOTE]  
->Esta sección es solo para agregar discos no administrados. 
+#### <a name="add-unmanaged-disks"></a>Incorporación de discos no administrados
 
 Los tres comandos siguientes asignan rutas de acceso de tres discos de datos no administrados a las variables `$DataDiskVhdUri01`, `$DataDiskVhdUri02` y `$DataDiskVhdUri03`. Defina otro nombre de ruta de acceso en la dirección URL para distribuir los discos a diferentes contenedores:
 
@@ -294,9 +284,9 @@ $VirtualMachine = Set-AzureRmVMOSDisk -VM $VirtualMachine -Name $osDiskName -Vhd
                                       -CreateOption FromImage -Windows
 ```
 
-
 #### <a name="create-new-virtual-machine"></a>Creación de una máquina virtual
-Use los siguientes comandos de PowerShell para establecer una imagen del sistema operativo, agregar una configuración de red a la máquina virtual y, después, iniciar la nueva máquina virtual.
+
+Use los siguientes comandos de PowerShell para establecer una imagen del sistema operativo, agregar una configuración de red a la máquina virtual y, después, iniciar la nueva máquina virtual:
 
 ```powershell
 #Create the new VM
@@ -307,9 +297,9 @@ $VirtualMachine = Set-AzureRmVMOperatingSystem -VM $VirtualMachine -Windows -Com
 New-AzureRmVM -ResourceGroupName $rgName -Location $location -VM $VirtualMachine
 ```
 
+### <a name="add-data-disks-to-an-existing-vm"></a>Adición de discos de datos a una VM existente
 
-### <a name="add-data-disks-to-an-existing-vm"></a>Incorporación de discos de datos a una máquina virtual **existente**
-En los ejemplos siguientes se usan comandos de PowerShell para agregar tres discos de datos a una máquina virtual existente.
+En los ejemplos siguientes se usan comandos de PowerShell para agregar tres discos de datos a una máquina virtual existente:
 
 #### <a name="get-virtual-machine"></a>Obtención de una máquina virtual
 
@@ -321,9 +311,6 @@ $VirtualMachine = Get-AzureRmVM -ResourceGroupName "myResourceGroup" `
 ```
 
 #### <a name="add-managed-disk"></a>Incorporación de un disco administrado
-
->[!NOTE]  
->Esta sección es solo para agregar discos administrados.
 
 Los tres comandos siguientes agregan los discos de datos administrados a la máquina virtual almacenada en la variable `$VirtualMachine`. Cada comando especifica el nombre y las propiedades adicionales del disco:
 
@@ -343,9 +330,6 @@ Add-AzureRmVMDataDisk -VM $VirtualMachine -Name "DataDisk3" -Lun 2 `
 ```
 
 #### <a name="add-unmanaged-disk"></a>Incorporación de un disco no administrado
-
->[!NOTE]  
->Esta sección es solo para agregar discos no administrados. 
 
 Los tres comandos siguientes asignan las rutas de acceso de tres discos de datos a las variables `$DataDiskVhdUri01`, `$DataDiskVhdUri02` y `$DataDiskVhdUri03`. Los diferentes nombres de ruta de acceso de los identificadores URI de los discos duros virtuales indican contenedores diferentes para la colocación de los discos:
 
