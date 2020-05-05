@@ -18,6 +18,8 @@
       href: manage/delete-volumes.md
     - name: Sustitución de unidades
       href: manage/replace-drives.md
+    - name: Uso de Azure Site Recovery
+      href: manage/azure-site-recovery.md
     - name: Supervisión con Azure Monitor
       href: manage/azure-monitor.md
     - name: Conexión de GPU a una máquina virtual Linux
