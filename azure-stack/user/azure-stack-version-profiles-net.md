@@ -3,16 +3,16 @@ title: Uso de los perfiles de la versión de API con .NET en Azure Stack Hub
 description: Más información sobre cómo usar los perfiles de la versión de API con .NET en Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 01/27/2020
+ms.date: 05/05/2020
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: 37ffe5bd8325e309f8d9381cf058cfd07ac48480
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: bb13b13f48aa9ccab231e255e0dcb5547b61615a
+ms.sourcegitcommit: 70c344b3c9c63f8c12867b2cdfdd1794fcc518dc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77705209"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82835924"
 ---
 # <a name="use-api-version-profiles-with-net-in-azure-stack-hub"></a>Uso de los perfiles de la versión de API con .NET en Azure Stack Hub
 

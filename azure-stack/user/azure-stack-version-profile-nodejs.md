@@ -3,16 +3,16 @@ title: Uso de perfiles de la versión de API con Node.js en Azure Stack Hub
 description: Aprenda a usar los perfiles de la versión de API con Node.js en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 04/20/2020
+ms.date: 04/30/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 639c532d4ac105e434557fe18ef8070b656c0849
-ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
+ms.lastreviewed: 04/30/2020
+ms.openlocfilehash: b838afd49f53adc32af94559cebc5a65db3ee7ef
+ms.sourcegitcommit: 6de5b687197798302c3b1f08e4c82f049a99e49f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81660120"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82596812"
 ---
 # <a name="use-api-version-profiles-with-nodejs-software-development-kit-sdk-in-azure-stack-hub"></a>Uso de perfiles de la versión de API con el kit de desarrollo de software (SDK) de Node.js en Azure Stack Hub
 
@@ -209,9 +209,9 @@ function main() {
 
 Puede usar los ejemplos siguientes como referencia para crear soluciones con perfiles de API de Azure Stack Hub y Node.js. Puede obtener los ejemplos de GitHub en los repositorios siguientes:
 
-- [Introducción al proveedor de recursos de nodos de almacenamiento](https://github.com/sijuman/storage-node-resource-provider-getting-started)
-- [Administración del nodo de ejecución](https://github.com/sijuman/compute-node-manage-vm)
-- [Grupos y recursos de nodos de Resource Manager](https://github.com/sijuman/resource-manager-node-resources-and-groups)
+- [Introducción al proveedor de recursos de nodos de almacenamiento](https://github.com/Azure-Samples/hybrid-storage-nodejs-create-storageaccount)
+- [Administración del nodo de ejecución](https://github.com/Azure-Samples/Hybrid-compute-nodejs-create-vm)
+- [Grupos y recursos de nodos de Resource Manager](https://github.com/Azure-Samples/Hybrid-resourcegroups-nodejs-manageresources)
 
 ### <a name="sample-create-storage-account"></a>Ejemplo de creación de cuenta de almacenamiento 
 

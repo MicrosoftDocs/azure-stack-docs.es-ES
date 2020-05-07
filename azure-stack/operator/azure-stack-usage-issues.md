@@ -3,16 +3,16 @@ title: Problemas de conectividad de uso y errores de Azure Stack Hub
 description: Solución de errores y problemas de uso de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 01/22/2020
+ms.date: 05/01/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 06/27/2019
-ms.openlocfilehash: 4a847578e73c5c9b518669a46340590242513686
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: a2c7ed968eeb6cbe9245590c6c0a75479294c916
+ms.sourcegitcommit: 278aaeca069213a98b90751253f6b15423634849
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79512356"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82742396"
 ---
 # <a name="usage-connectivity-errors"></a>Errores de conectividad de uso
 

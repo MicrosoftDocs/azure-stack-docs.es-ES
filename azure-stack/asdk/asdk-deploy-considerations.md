@@ -7,12 +7,12 @@ ms.date: 05/13/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 05/13/2019
-ms.openlocfilehash: 889180858826685150fadb7ad3bef0ffb789b8ec
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 98298b405bd818cb3cd1f67d52d1735a4cc3edd4
+ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79295284"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82846966"
 ---
 # <a name="asdk-requirements-and-considerations"></a>Requisitos y consideraciones de ASDK
 
@@ -28,7 +28,9 @@ Antes de implementar el Kit de desarrollo de Azure Stack (ASDK), asegúrese de q
 | Proceso: Memoria |192 GB de RAM. |256 GB de RAM. |
 | Proceso: BIOS |Hyper-V habilitado (con compatibilidad para SLAT). |Hyper-V habilitado (con compatibilidad para SLAT). |
 | Red: NIC |Certificación de Windows Server 2012 R2. No se necesitan características especializadas. | Certificación de Windows Server 2012 R2. No se necesitan características especializadas. |
-| Certificación del logotipo de hardware |[Certificado para Windows Server 2012 R2](https://windowsservercatalog.com/results.aspx?&chtext=&cstext=&csttext=&chbtext=&bCatID=1333&cpID=0&avc=79&ava=0&avq=0&OR=1&PGS=25&ready=0). |[Certificado para Windows Server 2016](https://windowsservercatalog.com/results.aspx?&chtext=&cstext=&csttext=&chbtext=&bCatID=1333&cpID=0&avc=79&ava=0&avq=0&OR=1&PGS=25&ready=0). |
+| Certificación del logotipo de hardware |[Certificado para Windows Server 2012 R2](https://www.windowsservercatalog.com/content.aspx?ctf=logo.htm). 
+|[Certificado para Windows Server 2016](https://www.windowsservercatalog.com/content.aspx?ctf=logo.htm). 
+|
 
 <sup>*</sup>Si tiene previsto agregar muchos de los [elementos de Marketplace](../operator/azure-stack-create-and-publish-marketplace-item.md) desde Azure, necesitará más capacidad de la que se recomienda.
 

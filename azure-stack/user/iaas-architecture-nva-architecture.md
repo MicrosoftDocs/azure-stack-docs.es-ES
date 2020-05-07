@@ -7,12 +7,12 @@ ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: 916e12061961b22c518d0048e8bc8c191f8542a1
-ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
+ms.openlocfilehash: 4fc7269e81e021f30049f7b93a9651443f381d6b
+ms.sourcegitcommit: 3ee7e9ddffe2ca44af24052e60d808fbef42cf4c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81660076"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82643529"
 ---
 # <a name="deploy-highly-available-network-virtual-appliances-on-azure-stack-hub"></a>Implementación de aplicaciones virtuales de red de alta disponibilidad en Azure Stack Hub
 
@@ -40,7 +40,7 @@ En este artículo se supone que el usuario tiene un conocimiento básico de las 
 
 Una aplicación virtual de red se puede implementar en una red perimetral en muchas arquitecturas diferentes. Por ejemplo, en la siguiente ilustración se muestra el uso de una única aplicación virtual de red para la entrada.
 
-![Captura de pantalla de una descripción de publicación de redes sociales generada automáticamente](./media/iaas-architecture-nva-architecture/image1.png)
+![Captura de pantalla de una descripción de publicación de redes sociales generada automáticamente](./media/iaas-architecture-nva-architecture/iaas-architecture-nva-architecture-image1.svg)
 
 En esta arquitectura, la aplicación de red virtual proporciona un límite de red segura, ya que comprueba todo el tráfico de red de entrada y salida y solo deja pasar aquel que cumple las reglas de seguridad de la red. El hecho de que todo el tráfico de la red deba pasar por la aplicación virtual de red significa que dicha aplicación es un único punto de error en la red. Así que, si se produce un error en la aplicación de red virtual, no habrá ninguna otra ruta para el tráfico de red ni ninguna subred back-end disponible.
 
@@ -58,7 +58,7 @@ Las arquitecturas siguientes describen los recursos y la configuración que son 
 
 En la siguiente ilustración se muestra una arquitectura de alta disponibilidad que implementa una red perimetral de entrada detrás de un equilibrador de carga accesible desde Internet. Esta arquitectura está diseñada para proporcionar conectividad a las cargas de trabajo de Azure Stack Hub con tráfico de capa 7, como HTTP o HTTPS:
 
-![Captura de pantalla de una descripción de mapa generada automáticamente](./media/iaas-architecture-nva-architecture/image2.png)
+![Captura de pantalla de una descripción de mapa generada automáticamente](./media/iaas-architecture-nva-architecture/iaas-architecture-nva-architecture-image2.svg)
 
 La ventaja de esta arquitectura es que todas las aplicaciones virtuales de red están activas y, si una no funciona correctamente, el equilibrador de carga dirige el tráfico de red a la otra. Ambas aplicaciones virtuales de red enrutan el tráfico al equilibrador de carga interno, de modo que, mientras una aplicación virtual de red esté activa, el tráfico seguirá fluyendo. Las aplicaciones virtuales de red son necesarias para terminar el tráfico de SSL destinado a las máquinas virtuales de nivel web. Estas aplicaciones virtuales de red no se pueden ampliar para administrar el tráfico de la red empresarial puesto que este necesita otro conjunto dedicado de aplicaciones virtuales de red con sus propias rutas de red.
 
@@ -66,7 +66,7 @@ La ventaja de esta arquitectura es que todas las aplicaciones virtuales de red e
 
 La entrada con arquitectura de NVA de capa 7 puede ampliarse para proporcionar una red perimetral de salida para las solicitudes que se originan en la carga de trabajo de Azure Stack Hub. La siguiente arquitectura está diseñada para proporcionar alta disponibilidad de las aplicaciones virtuales de red en la red perimetral para el tráfico de capa 7, como HTTP o HTTPS:
 
-![Captura de pantalla de una descripción de teléfono móvil generada automáticamente](./media/iaas-architecture-nva-architecture/image3.png)
+![Captura de pantalla de una descripción de teléfono móvil generada automáticamente](./media/iaas-architecture-nva-architecture/iaas-architecture-nva-architecture-image4.svg)
 
 En esta arquitectura, todo el tráfico que se origina en Azure Stack Hub se enruta a un equilibrador de carga interno. El equilibrador de carga distribuye las solicitudes salientes entre un conjunto de aplicaciones virtuales de red. Estas aplicaciones virtuales de red dirigen el tráfico a Internet mediante sus direcciones IP públicas individuales.
 
@@ -74,7 +74,7 @@ En esta arquitectura, todo el tráfico que se origina en Azure Stack Hub se enru
 
 En las dos arquitecturas de entrada y salida, había una red perimetral independiente para la entrada y la salida. La siguiente arquitectura muestra cómo crear una red perimetral que puede usarse tanto para la entrada como para la salida con el tráfico de capa 7, como HTTP o HTTPS:
 
-![Captura de pantalla de una descripción de publicación de redes sociales generada automáticamente](./media/iaas-architecture-nva-architecture/image4.png)
+![Captura de pantalla de una descripción de publicación de redes sociales generada automáticamente](./media/iaas-architecture-nva-architecture/iaas-architecture-nva-architecture-image4.svg)
 
 En la entrada y salida con la arquitectura de NVA de capa 7, las NVA procesan las solicitudes entrantes de un equilibrador de carga de capa 7. Las aplicaciones virtuales de red también procesan las solicitudes que salen de las máquinas virtuales de carga de trabajo en el grupo back-end del equilibrador de carga. Como el tráfico entrante se enruta con un equilibrador de carga de capa 7 y el tráfico saliente lo hace con un equilibrador de carga básico de Azure Stack Hub (SLB), las aplicaciones virtuales de red son las responsables de mantener la afinidad de la sesión. Es decir, el equilibrador de carga de capa 7 mantiene una asignación de solicitudes entrantes y salientes, de forma que pueda reenviar la respuesta correcta al solicitante original. Sin embargo, el equilibrador de carga interno no tiene acceso a las asignaciones del equilibrador de carga de capa 7, así que emplea su propia lógica para enviar las respuestas a las aplicaciones virtuales de red. Es posible que el equilibrador de carga envíe una respuesta a una aplicación virtual de red que inicialmente no recibió la solicitud del equilibrador de carga de capa 7. En este caso, las aplicaciones virtuales de red deben comunicarse y transferirse la respuesta entre ellos para que la aplicación virtual de red correcta pueda reenviar la respuesta al equilibrador de carga de capa 7.
 

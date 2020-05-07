@@ -7,12 +7,12 @@ ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/13/2019
-ms.openlocfilehash: d6f93b5aa35a6475472df4ff213d98f684a4f7bb
-ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
+ms.openlocfilehash: 99a8425901213d50c17175ab946aeff78a5aa81d
+ms.sourcegitcommit: 278aaeca069213a98b90751253f6b15423634849
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81661103"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82742595"
 ---
 # <a name="extending-storage-to-azure-stack-hub"></a>Ampliación del almacenamiento a Azure Stack Hub
 
@@ -30,7 +30,7 @@ Lo cual le lleva al escenario del que se va a tratar a continuación. Cómo se p
 
 En el diagrama se muestra un escenario en el que una sola máquina virtual, en la que se ejecuta una carga de trabajo, se conecta a un espacio de almacenamiento externo (a la máquina virtual y al propio Azure Stack Hub) y lo utiliza con fines de lectura y escritura de datos, etc. Este artículo se centrará en la recuperación simple de archivos, pero este ejemplo se puede ampliar a escenarios más complejos, como el almacenamiento remoto de archivos de base de datos.
 
-![](./media/azure-stack-network-howto-extend-datacenter/image1.png)
+![](./media/azure-stack-network-howto-extend-datacenter/azure-stack-network-howto-extend-datacenter-image1.svg)
 
 En el diagrama, puede ver que la máquina virtual del sistema de Azure Stack Hub se ha implementado con varias tarjetas de interfaz de red. Para mejorar la redundancia es importante tener varias rutas entre el objetivo y el destino, pero también lo es como procedimiento recomendado de almacenamiento. En los entornos más complejos es donde las máquinas virtuales de Azure Stack Hub tienen direcciones IP públicas y privadas, al igual que en Azure. Si el almacenamiento externo necesitara acceder a la máquina virtual, solo puede hacerlo a través de la dirección IP pública, ya que las direcciones IP privadas se usan principalmente en los sistemas de Azure Stack Hub, en las redes virtuales y en las subredes. El almacenamiento externo no podrá comunicarse con el espacio de IP privadas de la máquina virtual, salvo que atraviese una VPN de sitio a sitio, para acceder a la propia red virtual. Por lo tanto, en este ejemplo, nos centraremos en la comunicación a través del espacio de direcciones IP públicas. Algo en lo que hay que fijarse en el espacio de direcciones IP públicas del diagrama es que hay dos subredes del grupo de direcciones IP públicas diferentes. De forma predeterminada, Azure Stack Hub requiere solo un grupo para la dirección IP pública, pero hay algo que se debe tener en cuenta para el enrutamiento redundante, que puede que haya que agregar un segundo grupo. Sin embargo, actualmente no se puede seleccionar una dirección IP de un grupo específico, por lo que puede acabar con máquinas virtuales con direcciones IP públicas del mismo grupo en varias tarjetas de red virtual.
 

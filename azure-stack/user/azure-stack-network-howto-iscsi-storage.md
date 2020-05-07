@@ -7,12 +7,12 @@ ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/28/2019
-ms.openlocfilehash: f691ba0cfeadae0d359473db881601e90478276c
-ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
+ms.openlocfilehash: 27442f9bc5107d9dbeb07b19f1f53b84facc5a06
+ms.sourcegitcommit: e591e8531e8fee07a8315fdca29cf8f45a766c81
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81660886"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82687436"
 ---
 # <a name="connect-to-iscsi-storage-with-azure-stack-hub"></a>Conexión al almacenamiento de iSCSI con Azure Stack Hub
 
@@ -24,7 +24,7 @@ La plantilla se puede encontrar en la bifurcación **lucidqdreams** del reposito
 
 En el diagrama se muestra una máquina virtual hospedada en Azure Stack Hub con un disco montado en iSCSI desde una máquina Windows local (física o virtual) que permite que el almacenamiento externo en Azure Stack Hub pueda montarse dentro de la máquina virtual hospedada en Azure Stack Hub a través del protocolo iSCSI.
 
-![texto alternativo](./media/azure-stack-network-howto-iscsi-storage/overview.png)
+![texto alternativo](./media/azure-stack-network-howto-iscsi-storage/overview-iscsi2.svg)
 
 ### <a name="requirements"></a>Requisitos
 
@@ -57,7 +57,7 @@ En el diagrama se muestra una máquina virtual hospedada en Azure Stack Hub con 
 
 En el diagrama se muestran los recursos implementados desde la plantilla para crear el cliente iSCSI que puede usar para conectarse al destino iSCSI. Esta plantilla implementará la máquina virtual y otros recursos; además, ejecutará prepare-iSCSIClient.ps1 y reiniciará la máquina virtual.
 
-![texto alternativo](./media/azure-stack-network-howto-iscsi-storage/iscsi-file-server.png)
+![texto alternativo](./media/azure-stack-network-howto-iscsi-storage/iscsi-file-server.svg)
 
 ### <a name="the-deployment-process"></a>El proceso de implementación
 
@@ -68,7 +68,7 @@ La plantilla del grupo de recursos genera una salida pensada para que sea la ent
 3. Ejecute `Create-iSCSITarget.ps1` con la dirección IP y el nombre del servidor que aparecen en la plantilla como parámetros de entrada-salida para el script en el destino iSCSI, que puede ser una máquina virtual o un servidor físico.
 4. Use la dirección IP externa o las direcciones del servidor de destino iSCSI como entradas para ejecutar el script de `Connect-toiSCSITarget.ps1`. 
 
-![texto alternativo](./media/azure-stack-network-howto-iscsi-storage/process.png)
+![texto alternativo](./media/azure-stack-network-howto-iscsi-storage/process.svg)
 
 ### <a name="inputs-for-azuredeployjson"></a>Entradas de azuredeploy.json
 
@@ -97,7 +97,7 @@ La plantilla del grupo de recursos genera una salida pensada para que sea la ent
 
 También puede ejecutar los scripts en una máquina virtual existente para conectarse desde el cliente iSCSI a un destino iSCSI. Este flujo se da si va a crear el destino iSCSI. En este diagrama se muestra el flujo de ejecución de los scripts de PowerShell. Estos scripts se pueden encontrar en el directorio Script:
 
-![texto alternativo](./media/azure-stack-network-howto-iscsi-storage/script-flow.png)
+![texto alternativo](./media/azure-stack-network-howto-iscsi-storage/script-flow.svg)
 
 ### <a name="prepare-iscsiclientps1"></a>Prepare-iSCSIClient.ps1
 

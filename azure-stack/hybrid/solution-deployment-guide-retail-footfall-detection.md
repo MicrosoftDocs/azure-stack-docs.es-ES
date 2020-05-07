@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: ba27bf06a7cf65bd40155a80c8d8877b2ac68805
-ms.sourcegitcommit: b185ab34c4c799892948536dd6d1d1b2fc31174e
+ms.openlocfilehash: 7ddddf7802def5bc5c41bea9771d86f9e1ca300d
+ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82150300"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82847221"
 ---
 # <a name="deploy-an-ai-based-footfall-detection-solution-using-azure-and-azure-stack-hub"></a>Implementación de una solución de detección de afluencia de público basada en IA con Azure y Azure Stack Hub
 

@@ -7,12 +7,12 @@ ms.date: 04/20/2020
 ms.author: justinha
 ms.reviewer: unknown
 ms.lastreviewed: 11/08/2019
-ms.openlocfilehash: dc5fa60f0ab1460a98ec21a0501c3cdcec6a6637
-ms.sourcegitcommit: a3ae6dd8670f8fb24224880df7eee256ebbcc4ef
+ms.openlocfilehash: a1e49ef9138c04557c8cd0a54b11ada30d97f334
+ms.sourcegitcommit: f2d80d705a222095c2ea785b9797bbac0cf96fcc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81772633"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82605649"
 ---
 # <a name="azure-stack-hub-overview"></a>Introducción a Azure Stack Hub
 
@@ -65,7 +65,7 @@ Para las implementaciones desconectadas de Azure Stack Hub, tendrá que usar AD�
 
 Azure Stack Hub usa el mismo modelo de operaciones que Azure. Un operador de Azure Stack Hub puede proporcionar diversos servicios y aplicaciones a los usuarios inquilinos, al igual que hace Microsoft con los servicios de Azure. 
 
-![Diagrama que muestra los roles de trabajo de Azure Stack Hub](./media/azure-stack-overview/azure-stack-job-roles.png)
+![Diagrama que muestra los roles de trabajo de Azure Stack Hub](./media/azure-stack-overview/azure-stack-job-roles.svg)
 
 Puede administrar Azure Stack Hub con el portal de administración, el portal de usuarios o [PowerShell](https://docs.microsoft.com/powershell/azure/azure-stack/overview?view=azurestackps-1.7.1). Cada uno de los portales de Azure Stack Hub cuenta con el respaldo de instancias independientes de Azure Resource Manager. Un **operador de Azure Stack Hub** usa el portal de administración para administrar Azure Stack Hub y para hacer tareas como crear ofertas para inquilinos y mantener y supervisar el estado del sistema integrado. El portal de usuarios proporciona una experiencia de autoservicio para el consumo de recursos de nube, como máquinas virtuales, cuentas de almacenamiento y aplicaciones web.
 

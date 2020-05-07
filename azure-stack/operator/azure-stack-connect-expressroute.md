@@ -7,12 +7,12 @@ ms.date: 04/20/2020
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 10/22/2019
-ms.openlocfilehash: 1b68435317136afdbfcc5d1ade16b18a2210baad
-ms.sourcegitcommit: a3ae6dd8670f8fb24224880df7eee256ebbcc4ef
+ms.openlocfilehash: 5d2f30813cc0a7a42e376ec7fb9c76be1f7994eb
+ms.sourcegitcommit: f2d80d705a222095c2ea785b9797bbac0cf96fcc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81772690"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82605714"
 ---
 # <a name="connect-azure-stack-hub-to-azure-using-azure-expressroute"></a>Conexión de Azure Stack Hub con Azure mediante Azure ExpressRoute
 
@@ -55,7 +55,7 @@ En la ilustración siguiente, se muestran los entornos de Azure y Azure Stack Hu
 
 En la ilustración siguiente, se muestra cómo varios inquilinos se conectan desde la infraestructura de Azure Stack Hub a Azure mediante el enrutador de ExpressRoute:
 
-![Conexiones multiinquilino con ExpressRoute](media/azure-stack-connect-expressroute/Architecture.png)
+![Conexiones multiinquilino con ExpressRoute](media/azure-stack-connect-expressroute/architecture.svg)
 
 En el ejemplo de este artículo, se usa la misma arquitectura multiinquilino que aparece en este diagrama para conectar Azure Stack Hub a Azure mediante el emparejamiento privado de ExpressRoute. La conexión se realiza utilizando una conexión VPN de sitio a sitio desde la puerta de enlace de red virtual de Azure Stack Hub hasta un enrutador de ExpressRoute.
 
@@ -328,7 +328,7 @@ Repita estos pasos para cualquier VNet de inquilino adicional que desee conectar
 
 Puede usar el siguiente diagrama de configuración del enrutador de ExpressRoute como guía para configurar el enrutador de ExpressRoute. Esta figura muestra dos inquilinos (Tenant 1 y Tenant 2) con sus circuitos ExpressRoute correspondientes. Cada inquilino está vinculado a su propio VRF (enrutamiento virtual y reenvío) en el lado LAN y WAN del enrutador de ExpressRoute. Esta configuración garantiza el aislamiento de un extremo a otro entre los dos inquilinos. Anote las direcciones IP usadas en las interfaces del enrutador a medida que siga la configuración de ejemplo.
 
-![Configuración del enrutador de ExpressRoute](media/azure-stack-connect-expressroute/EndToEnd.png)
+![Configuración del enrutador de ExpressRoute](media/azure-stack-connect-expressroute/endtoend.svg)
 
 Puede usar cualquier enrutador que admita un BGP y una VPN de IKEv2 para finalizar la conexión VPN de sitio a sitio desde Azure Stack Hub. El mismo enrutador se utiliza para conectarse a Azure con un circuito ExpressRoute.
 

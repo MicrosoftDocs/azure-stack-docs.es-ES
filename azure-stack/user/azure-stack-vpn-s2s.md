@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 01/07/2020
 ms.author: sethm
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 36a4ea0532eda0593de2beb9191d6e0911e58276
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: a1cf522176e6943ad1975a402affbb81d1aeea4f
+ms.sourcegitcommit: 3ee7e9ddffe2ca44af24052e60d808fbef42cf4c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80367805"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82643495"
 ---
 # <a name="configure-ipsecike-policy-for-site-to-site-vpn-connections"></a>Configuración de la directiva IPsec/IKE para conexiones VPN de sitio a sitio
 
@@ -54,7 +54,7 @@ En esta sección se describe el flujo de trabajo necesario para crear y actualiz
 
 Las instrucciones incluidas en este artículo le ayudan a instalar y configurar directivas de IPsec o IKE como se muestra en la siguiente figura:
 
-![Instalación y configuración de directivas de IPsec o IKE](media/azure-stack-vpn-s2s/site-to-site.png)
+![Instalación y configuración de directivas de IPsec o IKE](media/azure-stack-vpn-s2s/site-to-site.svg)
 
 ## <a name="part-2---supported-cryptographic-algorithms-and-key-strengths"></a>Parte 2: algoritmos criptográficos y niveles de clave admitidos
 
@@ -64,10 +64,10 @@ En la tabla siguiente se enumeran los algoritmos criptográficos y los niveles d
 |------------------------------------------------------|--------------------------------------------------------------------------|
 | Cifrado IKEv2                                     | AES256, AES192, AES128, DES3, DES                                        |
 | Integridad de IKEv2                                      | SHA384, SHA256, SHA1, MD5                                                |
-| Grupo DH                                             | ECP384, ECP256, DHGroup14, DHGroup2, DHGroup1, None                      |
+| Grupo DH                                             | ECP384, ECP256, DHGroup24, DHGroup14, DHGroup2, DHGroup1                 |
 | Cifrado IPsec                                     | GCMAES256, GCMAES192, GCMAES128, AES256, AES192, AES128, DES3, DES, No |
 | Integridad de IPsec                                      | GCMASE256, GCMAES192, GCMAES128                                          |
-| Grupo PFS                                            | PFS24, ECP384, ECP256, PFS2048, PFS2, PFS1, No                         |
+| Grupo PFS                                            | PFS24, ECP384, ECP256, PFS2048, PFS2, PFS1, PFSMM, Ningún                  |
 | Vigencia de SA QM                                       | (Opcional: Se usan los valores predeterminados si no se especifica ningún valor)<br />                         Segundos (entero; mín. 300/predeterminado 27 000 segundos)<br />                         KBytes (entero; mín. 1024/predeterminado 102 400 000 KBytes) |
 | Selector de tráfico                                     | En Azure Stack Hub no se admiten selectores de tráfico basados en directivas.         |
 
@@ -109,7 +109,7 @@ Para más información, consulte [RFC3526](https://tools.ietf.org/html/rfc3526) 
 
 En esta sección se describen los pasos necesarios para crear una conexión VPN de sitio a sitio con una directiva de IPsec o IKE. Los pasos siguientes permiten crear la conexión, como se muestra en la figura siguiente:
 
-![directiva de sitio a sitio](media/azure-stack-vpn-s2s/site-to-site.png)
+![directiva de sitio a sitio](media/azure-stack-vpn-s2s/site-to-site.svg)
 
 Consulte [Creación de una conexión VPN de sitio a sitio](/azure/vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell) para obtener instrucciones detalladas sobre cómo crear una conexión VPN de sitio a sitio.
 

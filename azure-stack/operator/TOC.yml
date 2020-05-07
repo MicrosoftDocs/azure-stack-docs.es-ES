@@ -34,7 +34,11 @@
         - name: Proceso
           href: azure-stack-capacity-planning-compute.md
         - name: Storage
-          href: azure-stack-capacity-planning-storage.md
+          items:
+            - name: Planificación de la capacidad de Storage
+              href: azure-stack-capacity-planning-storage.md
+            - name: Introducción a la infraestructura de almacenamiento
+              href: azure-stack-storage-infrastructure-overview.md
         - name: Azure Stack Hub Capacity Planner
           href: azure-stack-capacity-planner.md
     - name: Integración del centro de datos
@@ -168,8 +172,6 @@
                   href: azure-stack-update-monitor.md
                 - name: Uso de punto de conexión con privilegios
                   href: azure-stack-monitor-update.md
-            - name: Solución de problemas de actualización
-              href: azure-stack-updates-troubleshoot.md
         - name: Supervisión de estado y alertas
           href: azure-stack-monitor-health.md
         - name: Supervisión de componentes de hardware
@@ -187,7 +189,7 @@
             - name: Administración de la capacidad de almacenamiento
               href: azure-stack-manage-storage-shares.md
             - name: Administración del almacenamiento y la infraestructura
-              href: azure-stack-storage-infrastructure-overview.md
+              href: azure-stack-manage-storage-infrastructure.md
             - name: Administración de la capacidad de memoria física
               href: azure-stack-manage-storage-physical-memory-capacity.md
             - name: Incorporación de nodos de unidad de escalado
@@ -294,50 +296,52 @@
               href: azure-stack-app-service-overview.md
             - name: Planeamiento de la capacidad de App Service
               href: azure-stack-app-service-capacity-planning.md
-            - name: Antes de comenzar
-              href: azure-stack-app-service-before-you-get-started.md
-            - name: Implementación de App Service
-              href: azure-stack-app-service-deploy.md
-            - name: Implementación de App Service para lograr alta disponibilidad
-              href: app-service-deploy-ha.md
-            - name: Implementación de App Service sin conexión
-              href: azure-stack-app-service-deploy-offline.md
-            - name: Actualización de App Service
-              href: azure-stack-app-service-update.md
-            - name: Actualización de App Service sin conexión
-              href: azure-stack-app-service-update-offline.md
-            - name: Adición de roles de infraestructura de App Service
-              href: azure-stack-app-service-add-worker-roles.md
-            - name: Configuración de orígenes de implementación
-              href: azure-stack-app-service-configure-deployment-sources.md
-            - name: Rotación de secretos y certificados de App Service
-              href: app-service-rotate-certificates.md
-            - name: Copia de seguridad de App Service
-              href: app-service-back-up.md
-            - name: Recuperación de App Service
-              href: app-service-recover.md
-            - name: Eliminación de App Service
-              href: app-service-remove.md
             - name: Preguntas frecuentes acerca de la facturación de App Service
               href: app-service-billing-faq.md
+            - name: Prerrequisitos
+              href: azure-stack-app-service-before-you-get-started.md
+            - name: Implementación
+              items:
+                - name: Implementación de App Service
+                  href: azure-stack-app-service-deploy.md
+                - name: Implementación de App Service para lograr alta disponibilidad
+                  href: app-service-deploy-ha.md
+            - name: Administración del ciclo de vida
+              items:
+                - name: Actualización de App Service
+                  href: azure-stack-app-service-update.md
+                - name: Adición de roles de infraestructura de App Service
+                  href: azure-stack-app-service-add-worker-roles.md
+                - name: Configuración de orígenes de implementación
+                  href: azure-stack-app-service-configure-deployment-sources.md
+                - name: Rotación de secretos y certificados de App Service
+                  href: app-service-rotate-certificates.md
+                - name: Copia de seguridad de App Service
+                  href: app-service-back-up.md
+                - name: Recuperación de App Service
+                  href: app-service-recover.md
+                - name: Eliminación de App Service
+                  href: app-service-remove.md
             - name: Notas de la versión de App Service en Azure Stack Hub
               items:
-                - name: "Notas de la versión de la actualización\_1 de App Service en Azure Stack Hub"
-                  href: azure-stack-app-service-release-notes-update-one.md
-                - name: "Notas de la versión de la actualización\_2 de App Service en Azure Stack Hub"
-                  href: azure-stack-app-service-release-notes-update-two.md
-                - name: "Notas de la versión de la actualización\_3 de App Service en Azure Stack Hub"
-                  href: azure-stack-app-service-release-notes-update-three.md
-                - name: "Notas de la versión de la actualización\_4 de App Service en Azure Stack Hub"
-                  href: azure-stack-app-service-release-notes-update-four.md
-                - name: "Notas de la versión de la actualización\_5 de App Service en Azure Stack Hub"
-                  href: azure-stack-app-service-release-notes-update-five.md
-                - name: "Notas de la versión de la actualización\_6 de App Service en Azure Stack Hub"
-                  href: azure-stack-app-service-release-notes-update-six.md
-                - name: "Notas de la versión de la actualización\_7 de App Service en Azure Stack Hub"
-                  href: azure-stack-app-service-release-notes-update-seven.md
+                - name: "Notas de la versión de App Service en Azure Stack Hub\_2020 Q2"
+                  href: app-service-release-notes-2020-Q2.md
                 - name: "Notas de la versión de la actualización\_8 de App Service en Azure Stack Hub"
                   href: azure-stack-app-service-release-notes-update-eight.md
+                - name: "Notas de la versión de la actualización\_7 de App Service en Azure Stack Hub"
+                  href: azure-stack-app-service-release-notes-update-seven.md
+                - name: "Notas de la versión de la actualización\_6 de App Service en Azure Stack Hub"
+                  href: azure-stack-app-service-release-notes-update-six.md
+                - name: "Notas de la versión de la actualización\_5 de App Service en Azure Stack Hub"
+                  href: azure-stack-app-service-release-notes-update-five.md
+                - name: "Notas de la versión de la actualización\_4 de App Service en Azure Stack Hub"
+                  href: azure-stack-app-service-release-notes-update-four.md
+                - name: "Notas de la versión de la actualización\_3 de App Service en Azure Stack Hub"
+                  href: azure-stack-app-service-release-notes-update-three.md
+                - name: "Notas de la versión de la actualización\_2 de App Service en Azure Stack Hub"
+                  href: azure-stack-app-service-release-notes-update-two.md
+                - name: "Notas de la versión de la actualización\_1 de App Service en Azure Stack Hub"
+                  href: azure-stack-app-service-release-notes-update-one.md
         - name: Event Hubs en Azure Stack Hub
           items:
             - name: Información general

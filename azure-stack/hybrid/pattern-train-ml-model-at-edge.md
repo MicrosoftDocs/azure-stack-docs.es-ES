@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 604553ad11961d42063685c1a4b70388605c0db8
-ms.sourcegitcommit: e5b587216a137819444680ec619281c90f37bad9
+ms.openlocfilehash: da1012cc8847f221de6bb540ba4e191e43920f41
+ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82166946"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82847714"
 ---
 # <a name="train-machine-learning-model-at-the-edge-pattern"></a>Entrenamiento del modelo de Machine Learning en el patrón perimetral
 

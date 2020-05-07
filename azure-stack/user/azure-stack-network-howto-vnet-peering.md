@@ -7,12 +7,12 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: 03ead55141ff6a7b8aa9451b814d399b607ebb47
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 97fc89897d63d368cfface0f5fc7dece4b8480cd
+ms.sourcegitcommit: 278aaeca069213a98b90751253f6b15423634849
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77702183"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82742567"
 ---
 # <a name="vnet-peering-in-azure-stack-hub-with-vms"></a>Emparejamiento de VNET en Azure Stack Hub con máquinas virtuales
 
@@ -23,7 +23,7 @@ Este patrón de implementación es la base que permitirá crear túneles de VPN 
 Puede encontrar las plantillas en el repositorio de GitHub [Azure Intelligent Edge Patterns](https://github.com/Azure-Samples/azure-intelligent-edge-patterns
 ). La plantilla se encuentra en la carpeta **S2SVPNTunnel**.
 
-![texto alternativo](./media/azure-stack-network-howto-vnet-peering/overview.png)
+![texto alternativo](./media/azure-stack-network-howto-vnet-peering/overview.svg)
 
 ## <a name="requirements"></a>Requisitos
 
@@ -51,7 +51,7 @@ Puede encontrar las plantillas en el repositorio de GitHub [Azure Intelligent Ed
 
 La plantilla proporciona valores predeterminados para la nomenclatura de redes virtuales y el direccionamiento IP. Requiere una contraseña para el administrador (rrasadmin) y también ofrece la posibilidad de usar su propio blob de almacenamiento con el token de SAS. Tenga cuidado de mantener estos valores dentro de los intervalos legales, ya que puede producirse un error en la implementación. El paquete de DSC de PowerShell se ejecuta en cada máquina virtual de RRAS e instala el enrutamiento y todos los servicios y características dependientes necesarios. Este DSC se puede personalizar aún más si fuera necesario. La extensión de script personalizado ejecuta el siguiente script y `Add-Site2Site.ps1` configura el túnel VPNS2S entre los dos servidores RRAS con una clave compartida. Puede ver la salida detallada de la extensión de script personalizado para ver los resultados de la configuración del túnel de VPN.
 
-![texto alternativo](./media/azure-stack-network-howto-vnet-peering/s2svpntunnels2.png)
+![texto alternativo](./media/azure-stack-network-howto-vnet-peering/s2svpntunnels2.svg)
 
 ## <a name="next-steps"></a>Pasos siguientes
 

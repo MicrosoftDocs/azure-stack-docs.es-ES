@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 1d73f4099c1bf5923f646cfee74f332d1492d771
-ms.sourcegitcommit: b185ab34c4c799892948536dd6d1d1b2fc31174e
+ms.openlocfilehash: b34ba7c10ff5f658d645923ae8b6de2fb2607ccb
+ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82150321"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82847187"
 ---
 # <a name="deploy-a-highly-available-mongodb-solution-to-azure-and-azure-stack-hub"></a>Implementar una solución MongoDB de alta disponibilidad en Azure y Azure Stack Hub
 

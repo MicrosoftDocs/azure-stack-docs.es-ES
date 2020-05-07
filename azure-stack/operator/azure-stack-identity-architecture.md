@@ -7,12 +7,12 @@ ms.date: 04/10/2020
 ms.author: bryanla
 ms.reviewer: fiseraci
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: 0175e0880edbecc4cb30e05df94cf26e518b8d0e
-ms.sourcegitcommit: d930d52e27073829b8bf8ac2d581ec2accfa37e3
+ms.openlocfilehash: d21df4d1a16f7ea56ec02a1aa1e7821bb7fe4484
+ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82173988"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82848241"
 ---
 # <a name="identity-architecture-for-azure-stack-hub"></a>Arquitectura de identidad para Azure Stack Hub
 
@@ -26,7 +26,7 @@ El proveedor de identidad que elija puede limitar las opciones, incluida la comp
 |------------------------------|----------|-------|
 |Conectado a Internet     |Sí       |Opcional|
 |Compatibilidad con arquitectura multiinquilino     |Sí       |No      |
-|Ofrecer elementos en Marketplace |Sí       |Sí (requiere el uso de la herramienta [Marketplace Syndication sin conexión](azure-stack-download-azure-marketplace-item.md#disconnected-or-a-partially-connected-scenario))|
+|Ofrecer elementos en Marketplace |Sí       |Sí (requiere el uso de la herramienta [Marketplace Syndication sin conexión](azure-stack-download-azure-marketplace-item.md?pivots=state-disconnected))|
 |Compatibilidad con la biblioteca de autenticación de Active Directory (ADAL) |Sí |Sí|
 |Compatibilidad con herramientas como la CLI de Azure, Visual Studio y PowerShell  |Sí |Sí|
 |Creación de entidades de servicio mediante Azure Portal     |Sí |No|

@@ -3,16 +3,16 @@ title: Versiones de la API del proveedor de recursos compatibles con perfiles de
 description: Obtenga información sobre las versiones de la API de Azure Resource Manager compatibles con perfiles de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 01/07/2020
+ms.date: 05/05/2020
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/08/2019
-ms.openlocfilehash: 883a39ac7c0d3f11d3f9242a7efaa8549e41f4cf
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 6495f3c42294df313b570c70a11dbf8e1d86616e
+ms.sourcegitcommit: 70c344b3c9c63f8c12867b2cdfdd1794fcc518dc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80302792"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82836264"
 ---
 # <a name="resource-provider-api-versions-supported-by-profiles-in-azure-stack-hub"></a>Versiones de la API del proveedor de recursos compatibles con perfiles de Azure Stack Hub
 

@@ -7,12 +7,12 @@ ms.date: 2/27/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: abbf82a61c27a58833d286639b281989d3a29fd7
-ms.sourcegitcommit: e5b587216a137819444680ec619281c90f37bad9
+ms.openlocfilehash: 5bebac9b3c604b2726cf5cd8f895fb17e0db3486
+ms.sourcegitcommit: 8646eba1674ca708baf6699f4a4b56d134766e85
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82166963"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861391"
 ---
 # <a name="add-the-azure-kubernetes-services-aks-engine-prerequisites-to-the-azure-stack-hub-marketplace"></a>Incorporación de requisitos previos del motor de Azure Kubernetes Service (AKS) al Marketplace de Azure Stack Hub
 
@@ -38,7 +38,7 @@ Si usa Active Directory Federated Services (AD FS) para el servicio de administ
 
 ## <a name="add-the-aks-base-image"></a>Agregar la imagen base de AKS
 
-Puede agregar la imagen base de AKS a Marketplace obteniendo el elemento de Azure. Pero si Azure Stack Hub está desconectado, siga estas instrucciones de [Descarga de elementos de Marketplace desde Azure](https://docs.microsoft.com/azure-stack/operator/azure-stack-download-azure-marketplace-item?view=azs-1908#disconnected-or-a-partially-connected-scenario) para agregar el elemento. Agregue el elemento especificado en el paso cinco.
+Puede agregar la imagen base de AKS a Marketplace obteniendo el elemento de Azure. Pero si Azure Stack Hub está desconectado, siga estas instrucciones de [Descarga de elementos de Marketplace desde Azure](azure-stack-download-azure-marketplace-item.md?pivots=state-disconnected) para agregar el elemento. Agregue el elemento especificado en el paso cinco.
 
 Agregue el siguiente elemento a Marketplace:
 
@@ -61,7 +61,7 @@ Agregue el siguiente elemento a Marketplace:
 
 ## <a name="add-a-custom-script-extension"></a>Agregar una extensión Custom Script para Linux
 
-Puede agregar el script personalizado a Marketplace obteniendo el elemento de Azure. Pero si Azure Stack Hub está desconectado, siga las instrucciones de [Descarga de elementos de Marketplace desde Azure](https://docs.microsoft.com/azure-stack/operator/azure-stack-download-azure-marketplace-item?view=azs-1908#disconnected-or-a-partially-connected-scenario) para agregar el elemento.  Agregue el elemento especificado en el paso cinco.
+Puede agregar el script personalizado a Marketplace obteniendo el elemento de Azure. Pero si Azure Stack Hub está desconectado, siga las instrucciones de [Descarga de elementos de Marketplace desde Azure](azure-stack-download-azure-marketplace-item.md?pivots=state-disconnected) para agregar el elemento.  Agregue el elemento especificado en el paso cinco.
 
 1. Abra el [portal de administración](https://adminportal.local.azurestack.external).
 

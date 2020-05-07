@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.lastreviewed: 01/14/2020
-ms.openlocfilehash: ee08259248a49eef08ce0012d60be2705cc4f877
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 69f47c34f55935d73ffb1349b8c90624d6311449
+ms.sourcegitcommit: 278aaeca069213a98b90751253f6b15423634849
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77704920"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82742361"
 ---
 # <a name="introduction-to-azure-stack-hub-storage"></a>Introducción a Azure Stack Hub Storage
 
@@ -37,7 +37,7 @@ Azure Stack Hub Storage proporciona los tres servicios siguientes:
 
 Una cuenta de Azure Stack Hub Storage es una cuenta segura que proporciona acceso a los servicios de Azure Stack Hub Storage. La cuenta de almacenamiento ofrece el espacio de nombres exclusivo para los recursos de almacenamiento. El siguiente diagrama muestra las relaciones entre los recursos de Azure Stack Hub Storage en una cuenta de almacenamiento:
 
-![Introducción a Azure Stack Hub Storage](media/azure-stack-storage-overview/AzureStackStorageOverview.png)
+![Introducción a Azure Stack Hub Storage](media/azure-stack-storage-overview/azurestackstorageoverview.svg)
 
 ### <a name="blob-storage"></a>Blob Storage
 

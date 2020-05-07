@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: d8a658e1ea285a19e09e5df27c0d7a349b3372eb
-ms.sourcegitcommit: e5b587216a137819444680ec619281c90f37bad9
+ms.openlocfilehash: f3c952695d430befa69c4b3dc2ffaf7787ac8b31
+ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82167014"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82847170"
 ---
 # <a name="configure-hybrid-cloud-identity-for-azure-and-azure-stack-hub-apps"></a>Configuración de la identidad de nube híbrida para aplicaciones de Azure y Azure Stack Hub
 

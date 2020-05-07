@@ -9,12 +9,12 @@ ms.author: inhenkel
 ms.reviewer: avishwan
 ms.lastreviewed: 03/04/2019
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: 3f9741019a28548e9f20308312d62ea68e757795
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: e8a8d2f156d2608db01a652225540a73722f16fc
+ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81308253"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82848224"
 ---
 # <a name="register-azure-stack-hub-with-azure"></a>Registro de Azure Stack Hub en Azure
 
@@ -486,7 +486,7 @@ Set-AzsRegistration [-PrivilegedEndpointCredential] <PSCredential> [-PrivilegedE
 | ResourceGroupName | String |  |
 | ResourceGroupLocation | String |  |
 | BillingModel | String | Es el modelo de facturación que usa la suscripción. Los valores permitidos para este parámetro son: Capacity, PayAsYouUse y Development. |
-| MarketplaceSyndicationEnabled | True/False | Determina si la característica de administración de Marketplace está disponible en el portal. Se establece en true si se registra con conectividad a Internet. Se establece en false si se registra en entornos sin conexión. Para los registros sin conexión, puede usar la [herramienta de redifusión sin conexión](azure-stack-download-azure-marketplace-item.md#disconnected-or-a-partially-connected-scenario) para descargar elementos de Marketplace. |
+| MarketplaceSyndicationEnabled | True/False | Determina si la característica de administración de Marketplace está disponible en el portal. Se establece en true si se registra con conectividad a Internet. Se establece en false si se registra en entornos sin conexión. Para los registros sin conexión, puede usar la [herramienta de redifusión sin conexión](azure-stack-download-azure-marketplace-item.md?pivots=state-disconnected) para descargar elementos de Marketplace. |
 | UsageReportingEnabled | True/False | Azure Stack Hub informa de las métricas de uso de forma predeterminada. Los operadores que tienen usos de capacidad o que admiten un entorno desconectado deben desactivar los informes de uso. Los valores permitidos para este parámetro son: True, False. |
 | AgreementNumber | String | Número del contrato Enterprise en el que se ha pedido la SKU de capacidad de este Azure Stack. |
 | RegistrationName | String | Establezca un nombre único para el registro si ejecuta el script de registro en más de una instancia de Azure Stack Hub mediante el mismo identificador de suscripción de Azure. El valor predeterminado del parámetro es **AzureStackRegistration**. Sin embargo, si usa el mismo nombre en más de una instancia de Azure Stack Hub, el script no se ejecuta correctamente. |
@@ -532,7 +532,7 @@ Es posible que vea uno de los errores siguientes al intentar registrar Azure Sta
 ::: zone pivot="state-disconnected"
 - La administración de Marketplace todavía le pide que registre y active Azure Stack Hub, aunque ya ha registrado su sello mediante el proceso sin conexión.
 
-   Causa: se trata de un problema conocido en entornos desconectados y requiere que [verifique su estado de registro](#verify-azure-stack-hub-registration). Para poder usar la administración de Marketplace, utilice [la herramienta sin conexión](azure-stack-download-azure-marketplace-item.md#disconnected-or-a-partially-connected-scenario).
+   Causa: se trata de un problema conocido en entornos desconectados y requiere que [verifique su estado de registro](#verify-azure-stack-hub-registration). Para poder usar la administración de Marketplace, utilice [la herramienta sin conexión](azure-stack-download-azure-marketplace-item.md?pivots=state-disconnected).
 ::: zone-end
 
 ## <a name="next-steps"></a>Pasos siguientes
