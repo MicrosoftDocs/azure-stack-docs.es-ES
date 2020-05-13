@@ -3,16 +3,16 @@ title: Acciones de los nodos de la unidad de escalado en Azure Stack Hub
 description: Obtenga información sobre las acciones de los nodos de la unidad de escalado, incluidas las de conectar, desconectar, deshabilitar y reanudar, así como visualizar el estado de los nodos en los sistemas integrados de Azure Stack Hub.
 author: IngridAtMicrosoft
 ms.topic: how-to
-ms.date: 03/04/2020
+ms.date: 04/30/2020
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 4874b93acf9e869a3b8e66f42191d5419e48fece
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 17ecab0f42c89d6c25daba98652d8dc9d1a9e3b0
+ms.sourcegitcommit: 21cdab346fc242b8848a04a124bc16c382ebc6f0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79295080"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82777753"
 ---
 # <a name="scale-unit-node-actions-in-azure-stack-hub"></a>Acciones de los nodos de la unidad de escalado en Azure Stack Hub
 
@@ -54,6 +54,35 @@ Para ver el estado de una unidad de escalado:
 | Reparando | El nodo se está reparando activamente. |
 | Mantenimiento | El nodo está en pausa y no se está ejecutando ninguna carga de trabajo de usuario activa. |
 | Requiere corrección | Se detectó un error que requiere que el nodo se repare. |
+
+### <a name="azure-stack-hub-shows-adding-status-after-an-operation"></a>Azure Stack Hub muestra cómo agregar el estado después de una operación
+
+Azure Stack Hub puede mostrar el estado operativo del nodo como **Agregando** después de ejecutar una operación como, por ejemplo, la de descarga, reanudación, reparación, apagado o inicio.
+Esto puede ocurrir si la memoria caché del rol Proveedor de recursos de Service Fabric no se actualizó después de una operación. 
+
+Antes de aplicar los pasos siguientes, asegúrese de que no haya ninguna operación en curso. Actualice el punto de conexión para que coincida con su entorno.
+
+1. Abra PowerShell y agregue el entorno de Azure Stack Hub. Esto requiere que se instale [PowerShell de Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-powershell-install) en el equipo.
+
+   ```powershell
+   Add-AzureRmEnvironment -Name AzureStack -ARMEndpoint https://adminmanagement.local.azurestack.external
+   Add-AzureRmAccount -Environment AzureStack
+   ```
+
+2. Ejecute el siguiente comando para reiniciar el rol de Proveedor de recursos de Service Fabric.
+
+   ```powershell
+   Restart-AzsInfrastructureRole -Name FabricResourceProvider
+   ```
+
+3. Valide el estado operativo del nodo afectado de la unidad de escalado que ha cambiado a **En ejecución**. Puede usar el portal de administración o el siguiente comando de PowerShell:
+
+   ```powershell
+   Get-AzsScaleUnitNode |ft name,scaleunitnodestatus,powerstate
+   ```
+
+4. Si el estado operativo del nodo todavía se muestra como **Agregando** abra un incidente de soporte técnico.
+
 
 ## <a name="scale-unit-node-actions"></a>Acciones de nodo de unidad de escalado
 
@@ -175,4 +204,6 @@ Para ejecutar la acción de apagado, abra un símbolo de sistema de PowerShell c
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Obtenga información sobre el módulo del operador de tejido de Azure Stack Hub](https://docs.microsoft.com/powershell/module/azs.fabric.admin/?view=azurestackps-1.6.0).
+- [Instalación de PowerShell de Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-powershell-install)
+- [Obtenga información sobre el módulo del operador de Service Fabric de Azure Stack Hub](https://docs.microsoft.com/powershell/module/azs.fabric.admin/?view=azurestackps-1.6.0)
+- [Supervisión de las operaciones para agregar nodo](https://docs.microsoft.com/azure-stack/operator/azure-stack-add-scale-node#monitor-add-node-operations)

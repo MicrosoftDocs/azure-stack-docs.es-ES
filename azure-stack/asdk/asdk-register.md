@@ -7,12 +7,12 @@ ms.date: 06/14/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 06/14/2019
-ms.openlocfilehash: 2f0af3bd550b31e70f7c1e722ab79149c57c1a2f
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: e93b5b16d30017dd7a1ea50d2f990ee983c8f124
+ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77700653"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82847136"
 ---
 # <a name="register-the-asdk-with-azure"></a>Registro del Kit de desarrollo de Azure Stack en Azure
 
@@ -209,7 +209,7 @@ Cuando se complete la activación, debería ver un mensaje similar a: **El entor
 
 Puede usar el icono de **administración de regiones** para comprobar si el registro de Azure Stack se realizó correctamente. Este icono está disponible en el panel predeterminado del portal del administrador.
 
-1. Inicie sesión en el [Portal de administración de Azure Stack](https://adminportal.local.azurestack.external).
+1. Inicie sesión en el portal de administración de Azure Stack `https://adminportal.local.azurestack.external`.
 
 2. En el panel, seleccione **Region management** (Administración de regiones).
 

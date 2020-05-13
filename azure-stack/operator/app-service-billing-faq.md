@@ -4,16 +4,16 @@ description: Más información acerca de la facturación de Azure App Service en
 author: apwestgarth
 manager: stefsch
 ms.topic: article
-ms.date: 06/10/2019
+ms.date: 05/05/2020
 ms.author: anwestg
 ms.reviewer: anwestg
-ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: e5ab25785223d1361553f995d22196cd594a6f0a
-ms.sourcegitcommit: b185ab34c4c799892948536dd6d1d1b2fc31174e
+ms.lastreviewed: 04/13/2020
+ms.openlocfilehash: 3717308e28b7dfa62534ee1abd4e71ff06361d50
+ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82150286"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82847952"
 ---
 # <a name="azure-app-service-on-azure-stack-hub-billing-overview-and-faq"></a>Introducción a la facturación de Azure App Service en Azure Stack Hub y preguntas frecuentes
 
@@ -70,6 +70,9 @@ Como operador en la nube, tiene la libertad de aplicar su propio modelo de preci
 ### <a name="as-a-csp-how-can-i-offer-free-and-shared-skus-for-customers-to-try-out-the-service"></a>Como CSP, ¿cómo puedo ofrecer SKU gratis y compartidas para que los clientes prueben el servicio?
 
 Como operador en la nube, incurre en costos para ofrecer SKU gratis y compartidas, ya que se hospedan en trabajos compartidos. Para minimizar ese costo, puede optar por reducir verticalmente el nivel de trabajo compartido a un mínimo.
+
+> [!IMPORTANT] 
+> Los valores predeterminados del instalador para el trabajo compartido se cambiaron en Azure App Service en Azure Stack Hub 2020.Q2 para las nuevas instalaciones.  De forma predeterminada, el trabajo compartidos se aprovisionan mediante la SKU de proceso A4_v2 SKU, que el operador puede cambiar en el momento de instalación o posteriormente.
 
 Por ejemplo, para ofrecer SKU gratis y compartidas de planes de App Service y para ofrecer funciones basadas en el consumo, es necesario tener disponible un mínimo de una instancia A1. Los trabajos compartidos son multiinquilino, por lo que pueden hospedar varias aplicaciones de clientes, cada una de ellas aislada y protegida por el espacio aislado de App Service. Al escalar el nivel de trabajo compartido de esta manera, se puede limitar el desembolso al costo de una vCPU por mes.
 

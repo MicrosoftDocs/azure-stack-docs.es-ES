@@ -7,22 +7,24 @@ ms.date: 11/21/2019
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 6d5138868b07e2a3d552cd154976352266941760
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: ede13e98893fcf30c0e1640d65271554410f659a
+ms.sourcegitcommit: 70c344b3c9c63f8c12867b2cdfdd1794fcc518dc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77704478"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82836094"
 ---
 # <a name="update-the-dns-forwarder-in-azure-stack-hub"></a>Actualización del reenviador DNS en Azure Stack Hub
 
-Para que la infraestructura de Azure Stack Hub resuelva los nombres externos se necesita al menos un reenviador DNS accesible. En la implementación de Azure Stack Hub se debe proporcionar un reenviador DNS. Esta entrada se usa en los servidores DNS internos de Azure Stack Hub como reenviador y permite la resolución de nombres externos para servicios como la autenticación, la administración de Marketplace o el uso.
+Para que la infraestructura de Azure Stack Hub resuelva los nombres externos se necesita al menos un reenviador DNS accesible. En la implementación de Azure Stack Hub se debe proporcionar un reenviador DNS. Esta entrada se usa en los servidores de nombres de dominio internos de Azure Stack Hub como reenviador y permite la resolución de nombres externos para servicios como la autenticación, la administración de Marketplace o el uso.
 
-DNS es un servicio esencial en la infraestructura del centro de datos que puede cambiar; si esto sucede, Azure Stack Hub debe actualizarse.
+El DNS es un servicio de infraestructura de los centros de datos críticos que puede cambiar. Si lo hace, se debe actualizar Azure Stack Hub.
 
-En este artículo se describe el uso del punto de conexión con privilegios (PEP) para actualizar el reenviador DNS en Azure Stack Hub. Se recomienda usar dos direcciones IP de reenviador DNS confiables.
+En este artículo se describe el uso del punto de conexión con privilegios (PEP) para actualizar el reenviador DNS en Azure Stack Hub. Se recomienda usar dos direcciones IP de reenviador de DNS confiables.
 
-1. Conéctese al [punto de conexión con privilegios](azure-stack-privileged-endpoint.md). Tenga en cuenta que no es necesario desbloquear el punto de conexión con privilegios mediante una incidencia de soporte técnico.
+## <a name="steps-to-update-the-dns-forwarder"></a>Pasos para actualizar el reenviador de DNS
+
+1. Conéctese al [punto de conexión con privilegios](azure-stack-privileged-endpoint.md). No es necesario desbloquear el punto de conexión con privilegios mediante la apertura de una incidencia de soporte técnico.
 
 2. Ejecute el siguiente comando para revisar el reenviador DNS configurado actualmente. Como alternativa, también puede usar las propiedades de la región del portal de administración:
 

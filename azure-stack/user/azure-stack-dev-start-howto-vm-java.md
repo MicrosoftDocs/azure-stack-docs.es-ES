@@ -2,21 +2,21 @@
 title: Implementación de un archivo WAR de Java en una máquina virtual en Azure Stack Hub
 description: Implemente un archivo WAR de Java en una máquina virtual en Azure Stack Hub.
 author: mattbriggs
-ms.topic: overview
-ms.date: 1/22/2020
+ms.topic: how-to
+ms.date: 05/05/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: 7ab1370ef77a246b1ccda4ab525040edf9cb596a
-ms.sourcegitcommit: 4138a2a15f78e7db38b3a29acc963a71937146fd
+ms.lastreviewed: 05/05/2020
+ms.openlocfilehash: f252a369588dcf224a1eb7d965a7ff99381e13a6
+ms.sourcegitcommit: 70c344b3c9c63f8c12867b2cdfdd1794fcc518dc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "77704155"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82836213"
 ---
 # <a name="deploy-a-java-web-app-to-a-vm-in-azure-stack-hub"></a>Implementación de una aplicación web de Java en una máquina virtual en Azure Stack Hub
 
-Puede crear una máquina virtual para hospedar la aplicación web de Python en Azure Stack Hub. En este artículo, va a instalar y configurar un servidor Apache Tomcat en una máquina virtual Linux en Azure Stack Hub. Después, va a cargar un archivo de recursos de aplicación web de Java (WAR) en el servidor. Un archivo WAR se utiliza para distribuir una colección de archivos Java (JAR), archivos comprimidos que contienen recursos de Java como clases, texto, imágenes, XML y HTML, y otros recursos que se utilizan para entregar una aplicación web.
+Puede crear una máquina virtual para hospedar la aplicación web de Java en Azure Stack Hub. En este artículo, va a instalar, abrir los puertos correctos y configurar un servidor Apache Tomcat en una máquina virtual Linux en Azure Stack Hub. Después, va a cargar un archivo de recursos de aplicación web de Java (WAR) en el servidor. Un archivo WAR se utiliza para distribuir una colección de archivos Java (JAR), archivos comprimidos que contienen recursos de Java como clases, texto, imágenes, XML y HTML, y otros recursos que se utilizan para entregar una aplicación web.
 
 ## <a name="create-a-vm"></a>Crear una VM
 

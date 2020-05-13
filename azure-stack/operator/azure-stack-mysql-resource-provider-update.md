@@ -7,23 +7,23 @@ ms.date: 1/22/2020
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 01/11/2020
-ms.openlocfilehash: a617efab5516fb2f6bad96e36c99f1b84852237c
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: d43c39aeed909946e852ccad37d92a2d47d3d889
+ms.sourcegitcommit: 519f4298dc1ed5c33f9c4fef811f61d61731dd84
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77698647"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82799771"
 ---
 # <a name="update-the-mysql-resource-provider-in-azure-stack-hub"></a>Actualización del proveedor de recursos MySQL en Azure Stack Hub
+
+> [!IMPORTANT]
+> Antes de actualizar el proveedor de recursos, revise las notas de la versión para obtener información sobre las nuevas funciones, correcciones y problemas conocidos que podrían afectar a la implementación. Las notas de la versión también especifican la versión mínima de Azure Stack Hub requerida para el proveedor de recursos.
 
 Cuando las compilaciones de Azure Stack Hub se actualicen, podría lanzarse un nuevo adaptador del proveedor de recursos de MySQL. Aunque el adaptador existente continúa funcionando, se recomienda actualizar a la compilación más reciente lo antes posible.
 
 A partir de la versión 1.1.33.0 del proveedor de recursos MySQL, las actualizaciones son acumulativas y no es necesario instalarlas en el orden en el que se han publicado, siempre y cuando empiece desde la versión 1.1.24.0 o posterior. Por ejemplo, si está ejecutando la versión 1.1.24.0 del proveedor de recursos MySQL, puede actualizar a la versión 1.1.33.0 o posterior sin necesidad de instalar primero la versión 1.1.30.0. Para revisar las versiones del proveedor de recursos disponibles y la versión de Azure Stack Hub compatible, consulte la lista de versiones en [Requisitos previos para implementar el proveedor de recursos](./azure-stack-mysql-resource-provider-deploy.md#prerequisites).
 
 Para actualizar el proveedor de recursos, use el script **UpdateMySQLProvider.ps1**. El procedimiento es similar al usado para instalar un proveedor de recursos, como se describe en la sección Implementar el proveedor de recursos de este artículo. El script se incluye con la descarga del proveedor de recursos. 
-
- > [!IMPORTANT]
- > Antes de actualizar el proveedor de recursos, revise las notas de la versión para obtener información sobre las nuevas funciones, correcciones y problemas conocidos que podrían afectar a la implementación.
 
 ## <a name="update-script-processes"></a>Procesos de script de actualización
 

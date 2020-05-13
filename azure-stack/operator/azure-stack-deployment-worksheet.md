@@ -1,5 +1,5 @@
 ---
-title: Hoja de cálculo de implementación para los sistemas integrados de Azure Stack Hub
+title: Hoja de cálculo de implementación para Azure Stack Hub
 description: Aprenda a instalar y usar la herramienta de hoja de cálculo de implementación para implementar Azure Stack Hub.
 author: IngridAtMicrosoft
 ms.topic: article
@@ -7,29 +7,29 @@ ms.date: 04/19/2019
 ms.author: inhenkel
 ms.reviewer: wamota
 ms.lastreviewed: 04/19/2019
-ms.openlocfilehash: 8c13121f5d591abca8a6c83771848d97cc9106db
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 1949d198c7d85e60c5a3195dfbd5e725cef834c7
+ms.sourcegitcommit: 70c344b3c9c63f8c12867b2cdfdd1794fcc518dc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77700075"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82836137"
 ---
 # <a name="deployment-worksheet-for-azure-stack-hub-integrated-systems"></a>Hoja de cálculo de implementación para los sistemas integrados de Azure Stack Hub
 
 La hoja de cálculo de implementación de Azure Stack Hub es una aplicación de Windows Forms que agrega toda la información y todas las decisiones de implementación necesarias en un solo lugar. Puede rellenar la hoja de cálculo de implementación durante el proceso de planeamiento y revisarla antes de iniciar la implementación.
 
-La información necesaria para la hoja de cálculo es de redes, seguridad e identidad. Requiere decisiones importantes que pueden exigir conocimientos en muchas áreas distintas; por lo tanto, es posible que quiera ponerse en contacto con los equipos que poseen experiencia en estas áreas para rellenar la hoja de cálculo.
+La información necesaria para la hoja de cálculo es de redes, seguridad e identidad. Esta información puede requerir conocimientos específicos en determinadas áreas, por lo que le recomendamos que consulte con expertos para completar la hoja de cálculo.
 
-Al rellenar la hoja de cálculo, es posible que tenga que realizar algunos cambios en la configuración previa a la implementación en su entorno de red. Esto podría incluir la reserva de espacios de direcciones IP para la solución Azure Stack Hub y la configuración de enrutadores, conmutadores y firewalls para prepararlos para la conectividad con la nueva solución Azure Stack Hub.
+Al rellenar la hoja de cálculo, es posible que tenga que realizar algunos cambios en la configuración previa a la implementación en su entorno de red. Estos cambios podrían incluir la reserva de espacios de direcciones IP para la solución Azure Stack Hub y la configuración de enrutadores, conmutadores y firewalls para prepararlos para la conectividad con la nueva solución Azure Stack Hub.
 
 > [!NOTE]
-> Para más información acerca de cómo completar la herramienta de hoja de cálculo de implementación, consulte [este artículo en la documentación de Azure Stack Hub](azure-stack-datacenter-integration.md).
+> Para más información sobre cómo completar la herramienta de hoja de cálculo de implementación, consulte [Consideraciones sobre el planeamiento de la integración del centro de datos con los sistemas integrados de Azure Stack Hub](azure-stack-datacenter-integration.md).
 
-[![Hoja de cálculo de implementación](media/azure-stack-deployment-worksheet/depworksheet.png "Hoja de cálculo de implementación")](media/azure-stack-deployment-worksheet/depworksheet.png)
+[![Hoja de cálculo de implementación para la implementación de Azure Stack Hub](media/azure-stack-deployment-worksheet/depworksheet.png "Hoja de cálculo de implementación")](media/azure-stack-deployment-worksheet/depworksheet.png)
 
 ## <a name="installing-the-windows-powershell-module"></a>Instalación del módulo de Windows PowerShell
 
-Para cada versión de la hoja de cálculo de implementación, debe realizar una instalación única de un módulo de Powershell para cada máquina en la que quiera usar la hoja de cálculo de implementación.
+Para cada versión de la hoja de cálculo de implementación, debe realizar una instalación única de un módulo de PowerShell para cada máquina en la que quiera usar la hoja de cálculo de implementación.
 
 > [!NOTE]  
 > El equipo debe estar conectado a Internet para que este método funcione.
@@ -72,7 +72,7 @@ La hoja de cálculo de implementación consta de pestañas independientes para r
 
 **Borrar todo**: borra todos los datos introducidos actualmente en los formularios y los devuelve a los valores predeterminados.
 
-**Guardar o abrir el trabajo en curso**: puede guardar y abrir datos introducidos parcialmente cuando trabaje en ellos mediante los menús **Archivo -> Guardar** y **Archivo -> Abrir**. Son diferentes de las funciones **Importar** y **Exportar**, ya que estas exigen que todos los datos estén introducidos y validados. Las opciones Abrir y Guardar no realizan la validación y no exigen que todos los campos se hayan introducido para guardar el trabajo en curso.
+**Guardar o abrir el trabajo en curso**: puede guardar y abrir datos especificados parcialmente cuando trabaje en ellos mediante los menús **Archivo -> Guardar** y **Archivo -> Abrir**. Esta función es diferente de las funciones **Importar** y **Exportar**, ya que estas exigen que todos los datos estén especificados y validados. Las opciones Abrir y Guardar no realizan la validación y no exigen que todos los campos se hayan introducido para guardar el trabajo en curso.
 
 **Registro y mensajes de advertencia**: mientras se usa el formulario, es posible que se muestren mensajes de advertencia no críticos en la ventana de PowerShell. Los errores críticos se muestran como mensajes emergentes. El registro detallado opcional, incluido un registro escrito en el disco, puede habilitarse para ayudar a solucionar problemas.
 

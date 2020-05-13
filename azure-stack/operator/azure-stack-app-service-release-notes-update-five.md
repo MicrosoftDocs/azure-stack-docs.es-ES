@@ -4,16 +4,16 @@ description: Información acerca de las mejoras, las correcciones y los problema
 author: bryanla
 manager: stefsch
 ms.topic: article
-ms.date: 03/25/2019
+ms.date: 05/05/2020
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/25/2019
-ms.openlocfilehash: 42a87396caeb4392b14e88dd122f78396efb8ead
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 32dbed7c4cca981c04f904f61e9abea77cb5fc4a
+ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77695502"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82847799"
 ---
 # <a name="app-service-on-azure-stack-hub-update-5-release-notes"></a>Notas de la versión de la actualización 5 de App Service en Azure Stack Hub
 
@@ -26,13 +26,15 @@ En estas notas de la versión se describen las mejoras, las correcciones y los p
 
 El número de compilación de la actualización 5 de App Service en Azure Stack Hub es **80.0.2.15**.
 
-### <a name="prerequisites"></a>Prerrequisitos
+## <a name="prerequisites"></a>Prerrequisitos
 
 Consulte [Requisitos previos para implementar App Service en Azure Stack Hub](azure-stack-app-service-before-you-get-started.md) antes de comenzar la implementación.
 
 Antes de comenzar la actualización de Azure App Service en Azure Stack Hub a la versión 1.5:
 
 - Asegúrese de que todos los roles están listos en la administración de Azure App Service del portal del administrador de Azure Stack Hub.
+
+- Realice una copia de seguridad de los secretos de App Service mediante la administración de App Service en el portal de administración de Azure Stack Hub.
 
 - Realice una copia de seguridad de App Service y de las bases de datos maestras:
   - AppService_Hosting;
@@ -41,9 +43,12 @@ Antes de comenzar la actualización de Azure App Service en Azure Stack Hub a la
 
 - Realice una copia de seguridad del recurso compartido de archivos del contenido de la aplicación inquilina.
 
+  > [!Important]
+  > Los operadores de la nube son responsables del mantenimiento y funcionamiento del servidor de archivos y el servidor de SQL Server.  El proveedor de recursos no administra estos recursos.  El operador de la nube es responsable de realizar copias de seguridad de las bases de datos y los recursos compartidos de archivos del contenido del inquilino de App Service.
+
 - Distribuya la **extensión de script personalizado** de la versión **1.9.1** desde Marketplace.
 
-### <a name="new-features-and-fixes"></a>Nuevas características y correcciones
+## <a name="new-features-and-fixes"></a>Nuevas características y correcciones
 
 La actualización 5 de Azure App Service en Azure Stack Hub incluye las siguientes correcciones y mejoras:
 
@@ -64,12 +69,12 @@ La actualización 5 de Azure App Service en Azure Stack Hub incluye las siguien
 - **Actualizaciones al sistema operativo subyacente de todos los roles**:
   - [Actualización acumulativa 2019-02 para Windows Server 2016 en sistemas basados en x64 (KB4487006)](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006)
 
-### <a name="post-deployment-steps"></a>Pasos posteriores a la implementación
+## <a name="post-deployment-steps"></a>Pasos posteriores a la implementación
 
 > [!IMPORTANT]  
 > Si ha proporcionado al proveedor de recursos de App Service una instancia de SQL Always On, *debe* [agregar las bases de datos appservice_hosting y appservice_metering a un grupo de disponibilidad](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database) y sincronizarlas para evitar la pérdida de servicio en caso de producirse una conmutación por error de la base de datos.
 
-### <a name="post-update-steps"></a>Pasos posteriores a la actualización
+## <a name="post-update-steps"></a>Pasos posteriores a la actualización
 
 En el caso de clientes que quieran migrar a una base de datos independiente en las implementaciones de Azure App Service en Azure Stack Hub existentes, ejecute estos pasos una vez completada la actualización 1.5 de Azure App Service en Azure Stack Hub:
 
@@ -132,6 +137,33 @@ En el caso de clientes que quieran migrar a una base de datos independiente en l
 1. Migre los inicios de sesión a usuarios de la base de datos independiente.
 
     ```sql
+        USE appservice_hosting
+        IF EXISTS(SELECT * FROM sys.databases WHERE Name=DB_NAME() AND containment = 1)
+        BEGIN
+        DECLARE @username sysname ;  
+        DECLARE user_cursor CURSOR  
+        FOR
+            SELECT dp.name
+            FROM sys.database_principals AS dp  
+            JOIN sys.server_principals AS sp
+                ON dp.sid = sp.sid  
+                WHERE dp.authentication_type = 1 AND dp.name NOT IN ('dbo','sys','guest','INFORMATION_SCHEMA');
+            OPEN user_cursor  
+            FETCH NEXT FROM user_cursor INTO @username  
+                WHILE @@FETCH_STATUS = 0  
+                BEGIN  
+                    EXECUTE sp_migrate_user_to_contained
+                    @username = @username,  
+                    @rename = N'copy_login_name',  
+                    @disablelogin = N'do_not_disable_login';  
+                FETCH NEXT FROM user_cursor INTO @username  
+            END  
+            CLOSE user_cursor ;  
+            DEALLOCATE user_cursor ;
+            END
+        GO
+
+        USE appservice_metering
         IF EXISTS(SELECT * FROM sys.databases WHERE Name=DB_NAME() AND containment = 1)
         BEGIN
         DECLARE @username sysname ;  
@@ -171,7 +203,7 @@ En el caso de clientes que quieran migrar a una base de datos independiente en l
         SELECT containment FROM sys.databases WHERE NAME LIKE (SELECT DB_NAME())
     ```
 
-### <a name="known-issues-post-installation"></a>Problemas conocidos (posteriores a la instalación)
+## <a name="known-issues-post-installation"></a>Problemas conocidos (posteriores a la instalación)
 
 - Los trabajos no pueden llegar al servidor de archivos cuando App Service está implementada en una red virtual existente y el servidor de archivos solo está disponible en la red privada. Este problema también se indica en la documentación de implementación de Azure App Service en Azure Stack Hub.
 
@@ -187,7 +219,7 @@ Si decide realizar una implementación en una red virtual existente y en una dir
  * Prioridad: 700
  * Nombre: Outbound_Allow_SMB445
 
-### <a name="known-issues-for-cloud-admins-operating-azure-app-service-on-azure-stack-hub"></a>Problemas conocidos para los administradores de la nube que usan Azure App Service en Azure Stack Hub
+## <a name="known-issues-for-cloud-admins-operating-azure-app-service-on-azure-stack-hub"></a>Problemas conocidos para los administradores de la nube que usan Azure App Service en Azure Stack Hub
 
 Consulte la documentación de las [notas de la versión 1809 de Azure Stack Hub](azure-stack-update-1903.md).
 

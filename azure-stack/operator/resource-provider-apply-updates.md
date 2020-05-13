@@ -8,14 +8,17 @@ ms.topic: how-to
 ms.date: 11/18/2019
 ms.reviewer: jfggdl
 ms.lastreviewed: 11/18/2019
-ms.openlocfilehash: 13ea59064ff653ff24fac97a867725c5d9f036d0
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 5ec6f85fc2f2e526c4b85521337ab65dc2b939cc
+ms.sourcegitcommit: 519f4298dc1ed5c33f9c4fef811f61d61731dd84
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80424773"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82799873"
 ---
 # <a name="how-to-update-an-azure-stack-hub-resource-provider"></a>Actualización de un proveedor de recursos de Azure Stack Hub
+
+> [!IMPORTANT]
+> Antes de continuar, revise las notas de la versión más reciente del proveedor de recursos para obtener información sobre las nuevas funciones, correcciones y problemas conocidos que podrían afectar a la implementación. Las notas de la versión también pueden especificar la versión mínima de Azure Stack Hub requerida para el proveedor de recursos.
 
 Los proveedores de recursos instalados desde Marketplace requerirán mantenimiento periódico. El mantenimiento se realiza mediante la aplicación de actualizaciones de servicio, que proporciona Microsoft de forma periódica. Las actualizaciones pueden incluir nuevas características y correcciones.  
 

@@ -3,16 +3,16 @@ title: Delegación de ofertas en Azure Stack Hub
 description: Aprenda a delegar tareas como la creación de ofertas y el registro de usuarios.
 author: sethmanheim
 ms.topic: article
-ms.date: 01/27/2020
+ms.date: 05/01/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 95b7ca9d6ed5bf0c8fed0019b4b3954fd3a7d458
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 4f32bc3e12689f75ad5c7e5b04e7fb36049271b3
+ms.sourcegitcommit: 278aaeca069213a98b90751253f6b15423634849
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77700245"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82742514"
 ---
 # <a name="delegate-offers-in-azure-stack-hub"></a>Delegación de ofertas en Azure Stack Hub
 
@@ -36,11 +36,11 @@ Los roles siguientes forman parte de la delegación:
 
 ## <a name="delegation-steps"></a>Pasos de delegación
 
-Hay dos pasos básicos para configurar la delegación:
+Hay dos pasos para configurar la delegación:
 
 1. **Crear una suscripción de proveedor delegado**: suscribir un usuario a una oferta que solo contenga el servicio de suscripción. Los usuarios que se suscriben a esta oferta, pueden ampliar las ofertas delegadas a otros usuarios si los suscriben a dichas ofertas.
 
-2. **Delegar una oferta en el proveedor delegado**: Esta oferta permite al proveedor delegado crear suscripciones o ampliar la oferta a sus usuarios. El proveedor delegado puede aprovechar ahora la oferta y ofrecerla a otros usuarios.
+2. **Delegar una oferta en el proveedor delegado**: Esta oferta permite al proveedor delegado crear suscripciones o ampliar la oferta a sus usuarios. El proveedor delegado puede aprovechar ahora la oferta y ampliarla a otros usuarios.
 
 En la siguiente ilustración se muestra los pasos para configurar la delegación:
 
@@ -54,11 +54,11 @@ Una vez establecida esta relación, el operador de Azure Stack Hub puede delegar
 
 ## <a name="delegation-walkthrough"></a>Tutorial de delegación
 
-Las secciones siguientes proporcionan un tutorial sobre cómo configurar un proveedor delegado, delegar una oferta y verificar que los usuarios pueden suscribirse a la oferta delegada.
+En las siguientes secciones se describen los pasos para configurar un proveedor delegado, delegar una oferta y comprobar que los usuarios pueden subscribirse a la misma.
 
 ### <a name="set-up-roles"></a>Configurar los roles
 
-Para usar este tutorial, necesita dos cuentas de Azure AD además de su cuenta de operador de Azure Stack Hub. Si no tiene estas dos cuentas, deberá crearlas. Las cuentas pueden pertenecer a cualquier usuario de Azure AD y se conocen como el usuario y el proveedor delegado.
+Para usar este tutorial, necesita dos cuentas de Azure AD además de su cuenta de operador de Azure Stack Hub. Si no tiene estas dos cuentas, deberá crearlas. Las cuentas pueden pertenecer a cualquier usuario de Azure AD y se conocen como el *proveedor delegado* y el *usuario*.
 
 | **Rol** | **Derechos organizativos** |
 | --- | --- |
@@ -66,7 +66,7 @@ Para usar este tutorial, necesita dos cuentas de Azure AD además de su cuenta 
 | Usuario |Usuario |
 
  > [!NOTE]
- > En el caso de un revendedor de CSP, para crear este proveedor delegado, se requiere que estos usuarios estén en el directorio del inquilino (instancia de Azure AD del usuario). El operador de Azure Stack Hub debe [incorporar primero](azure-stack-enable-multitenancy.md) la instancia de Azure AD de ese inquilino y, luego, configurar el uso y la facturación mediante [estos pasos](azure-stack-csp-howto-register-tenants.md).
+ > En el caso de un revendedor de CSP, para crear este proveedor delegado, se requiere que estos usuarios estén en el directorio del inquilino (instancia de Azure AD del usuario). El operador de Azure Stack Hub debe [incorporar primero](azure-stack-enable-multitenancy.md) la instancia de Azure AD de ese inquilino y, luego, configurar el uso y la facturación mediante [estos pasos](azure-stack-csp-howto-register-tenants.md).
 
 ### <a name="identify-the-delegated-provider"></a>Identificación de los proveedores delegados
 
@@ -114,7 +114,7 @@ Inicie sesión en el portal de usuarios como proveedor delegado y luego cree una
    ![Asignación de un nombre en el portal de usuarios de Azure Stack Hub](media/azure-stack-delegated-provider/image6.png)
 
    >[!IMPORTANT]
-   >Es importante saber que los proveedores delegados solo pueden elegir las ofertas que les hayan delegado. No pueden hacer cambios en dichas ofertas. Solo un operador de Azure Stack Hub puede modificar estas ofertas. Por ejemplo, solo un operador puede modificar los planes y cuotas. Un proveedor delegado no construye una oferta a partir de planes de base y de planes complementarios.
+   >Es importante saber que los proveedores delegados solo pueden elegir las ofertas que les hayan delegado. No pueden realizar cambios en esas ofertas; solo un operador de Azure Stack Hub puede cambiar estas ofertas. Por ejemplo, solo un operador puede modificar los planes y cuotas. Un proveedor delegado no construye una oferta a partir de planes base y de planes complementarios.
 
 3. El proveedor delegado puede exponer estas ofertas mediante la dirección URL de su propio portal. Para hacer pública la oferta, seleccione **Examinar** y, a continuación, **Ofertas**. Seleccione la oferta y, a continuación, seleccione **Cambiar estado**.
 

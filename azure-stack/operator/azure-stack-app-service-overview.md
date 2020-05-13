@@ -3,16 +3,16 @@ title: Introducción a Azure App Service en Azure Stack
 description: Introducción a Azure App Service y Azure Functions en Azure Stack Hub.
 author: BryanLa
 ms.topic: article
-ms.date: 01/13/2020
+ms.date: 05/05/2020
 ms.author: BryanLa
 ms.reviewer: anwestg
 ms.lastreviewed: 01/13/2019
-ms.openlocfilehash: ac9c6707e0b6e179fdae3dac0b4ec94bad11e6d7
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 8cf8f5c42eea1ce1884760c974881712954f1af7
+ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77688889"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82847833"
 ---
 # <a name="azure-app-service-and-azure-functions-on-azure-stack-hub-overview"></a>Introducción a Azure App Service y Azure Functions en Azure Stack Hub
 
@@ -34,7 +34,7 @@ App Service ofrece varios tipos de aplicación, cada uno pensado para hospedar u
 
 - [Web Apps](/azure/app-service/overview) para hospedar sitios y aplicaciones web.
 - [API Apps](/azure/app-service/overview) para hospedar las API REST.
-- Azure Functions para hospedar cargas de trabajo sin servidor basadas en eventos.
+- [Azure Functions v1](/azure/azure-functions) para hospedar cargas de trabajo sin servidor basadas en eventos.
 
 La palabra *aplicación* hace referencia a los recursos de hospedaje dedicados a ejecutar una carga de trabajo. Si se toma la *aplicación web* como ejemplo, probablemente está acostumbrado a pensar en una aplicación web como los recursos de proceso y el código de aplicación que juntos ofrecen funcionalidad a un explorador. En Azure App Service, una aplicación web es el recurso de proceso que Azure Stack Hub proporciona para hospedar su código de aplicación.
 
@@ -52,7 +52,6 @@ El proveedor de recursos de App Service usa el mismo código que Azure App Servi
 En Azure, hay trabajados compartidos y dedicados. Un trabajo compartido admite el hospedaje de aplicaciones para varios inquilinos de alta densidad, y solo existe un conjunto de trabajos compartidos. Solo un inquilino usa los servidores dedicados que pueden ser de tres tamaños: pequeño, mediano y grande. Las necesidades de los clientes locales no siempre se pueden describir con estos términos. En App Service en Azure Stack Hub, los administradores de proveedores de recursos definen los niveles de trabajo que quieren que estén disponibles. Según las necesidades concretas de hospedaje, puede definir varios conjuntos de trabajos compartidos o diferentes conjuntos de trabajos dedicados. Mediante el uso de esas definiciones de nivel de trabajo, pueden definir sus propias SKU de precios.
 
 ## <a name="portal-features"></a>Características del portal
-
 
 Azure App Service en Azure Stack Hub usa la misma interfaz de usuario que Azure App Service. Lo mismo puede decirse con el back-end. Sin embargo, en Azure Stack Hub algunas características están deshabilitadas. Las expectativas o los servicios específicos de Azure que requieren esas características no están disponibles actualmente en Azure Stack Hub.
 

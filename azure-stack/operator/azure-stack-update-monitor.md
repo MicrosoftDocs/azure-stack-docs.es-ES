@@ -1,5 +1,5 @@
 ---
-title: Supervisar actualizaciones en Azure Stack Hub con PowerShell
+title: Supervisión de actualizaciones en Azure Stack Hub con PowerShell
 description: Aprenda a supervisar actualizaciones en Azure Stack Hub con PowerShell.
 author: IngridAtMicrosoft
 ms.topic: how-to
@@ -7,14 +7,14 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.lastreviewed: 08/23/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: c611d901c62765462d5bccaee6894f5f7c0b0b18
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 0adeafb421c30eaf8753c735b16b85471173a5fc
+ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "78367291"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82848139"
 ---
-# <a name="monitor-updates-in-azure-stack-hub-using-powershell"></a>Supervisar actualizaciones en Azure Stack Hub con PowerShell
+# <a name="monitor-updates-in-azure-stack-hub-using-powershell"></a>Supervisión de actualizaciones en Azure Stack Hub con PowerShell
 
 Puede usar los puntos de conexión administrativos de Azure Stack Hub para supervisar y administrar las actualizaciones. Son accesibles con PowerShell. Para obtener instrucciones sobre cómo configurar PowerShell en Azure Stack Hub, consulte [Instalación de PowerShell para Azure Stack Hub](azure-stack-powershell-install.md).
 
@@ -43,6 +43,8 @@ Si se produce un error en la actualización, puede reanudar la ejecución de la 
 ```powershell
 Get-AzsUpdateRun -Name 5173e9f4-3040-494f-b7a7-738a6331d55c -UpdateName Microsoft1.0.180305.1 | Resume-AzsUpdateRun
 ```
+## <a name="troubleshoot"></a>Solución de problemas
+Para más información sobre la solución de problemas de actualizaciones, consulte [Solución de problemas de Azure Stack](azure-stack-troubleshooting.md).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

@@ -7,12 +7,12 @@ ms.date: 02/19/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 10/15/2019
-ms.openlocfilehash: ab0f54d94b96a7bdd75d13f04fd9146146d42740
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 75e20d593f1fb07e55655a7128c12b5417835dfe
+ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79295206"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82846898"
 ---
 # <a name="asdk-admin-basics"></a>Aspectos básicos de administración de ASDK
 Hay varias cosas que debe saber si no está familiarizado con la administración del Kit de desarrollo de Azure Stack. En esta guía se proporciona información general acerca de su rol como operador de Azure Stack en el entorno de evaluación. Familiarizarse con esta información garantiza que los usuarios de prueba sean productivos lo antes posible.
@@ -33,7 +33,7 @@ Al administrar Azure Stack, debe considerar algunos aspectos con respecto a la c
 |
 
 ## <a name="what-tools-do-i-use-to-manage"></a>¿Qué herramientas debo usar para la administración?
-Puede usar el [portal de administración de Azure Stack ](https://adminportal.local.azurestack.external) o PowerShell para administrar Azure Stack. La manera más fácil de aprender los conceptos básicos es a través del portal. Si desea usar PowerShell, es preciso que instale [PowerShell para Azure pila](asdk-post-deploy.md#install-azure-stack-powershell) y [descargar las herramientas de Azure Stack desde GitHub](asdk-post-deploy.md#download-the-azure-stack-tools).
+Puede usar el portal de administración de Azure Stack `https://adminportal.local.azurestack.external` o PowerShell para administrar Azure Stack. La manera más fácil de aprender los conceptos básicos es a través del portal. Si desea usar PowerShell, es preciso que instale [PowerShell para Azure pila](asdk-post-deploy.md#install-azure-stack-powershell) y [descargar las herramientas de Azure Stack desde GitHub](asdk-post-deploy.md#download-the-azure-stack-tools).
 
 Azure Stack usa Azure Resource Manager como mecanismo subyacente de implementación, administración y organización. Si va a administrar Azure Stack y ayudar a los usuarios de soporte, debe obtener información acerca de Azure Resource Manager. Para más información, lea el documento [Getting Started with Azure Resource Manager](https://download.microsoft.com/download/E/A/4/EA4017B5-F2ED-449A-897E-BD92E42479CE/Getting_Started_With_Azure_Resource_Manager_white_paper_EN_US.pdf) (Introducción a Azure Resource Manager).
 
@@ -41,7 +41,7 @@ Azure Stack usa Azure Resource Manager como mecanismo subyacente de implementaci
 Los usuarios quieren usar los servicios. Desde la perspectiva de estos, su rol principal es poner estos servicios a su disposición. Con el ASDK puede saber qué servicios ofrecer y poner dichos servicios a disposición de los usuarios mediante la [creación de planes, ofertas y cuotas](../operator/azure-stack-tutorial-tenant-vm.md). También tendrá que agregar elementos a Marketplace, como imágenes de máquinas virtuales (VM). La forma más fácil de hacerlo es [descargar elementos de Marketplace](../operator/azure-stack-create-and-publish-marketplace-item.md) de Azure a Azure Stack.
 
 > [!NOTE]
-> Si desea probar sus planes, ofertas y servicios, debe utilizar el [portal de usuario](https://portal.local.azurestack.external), no el [portal de administrador](https://adminportal.local.azurestack.external).
+> Si desea probar sus planes, ofertas y servicios, debe utilizar el portal de usuario `https://portal.local.azurestack.external`, no el portal de administración `https://adminportal.local.azurestack.external`.
 
 Además de ofrecer servicios, debe realizar todas las tareas habituales de un operador de Azure Stack para mantener ASDK en funcionamiento. Estas tareas incluyen lo siguiente:
 - Agregar cuentas de usuario en implementaciones de Azure AD o AD FS.

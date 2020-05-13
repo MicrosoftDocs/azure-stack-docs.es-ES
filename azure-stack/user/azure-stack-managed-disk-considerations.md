@@ -3,16 +3,16 @@ title: 'Discos administrados de Azure Stack Hub: Diferencias y consideraciones'
 description: Obtenga información sobre las diferencias y consideraciones a la hora de trabajar con discos administrados en Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 01/22/2020
+ms.date: 05/04/2020
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: 1abee3556ac45791831c6dcb9fc8dce05477e51e
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 335c6e39b067e9a95ec075866279d35b451d7c87
+ms.sourcegitcommit: 21cdab346fc242b8848a04a124bc16c382ebc6f0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80479306"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82777685"
 ---
 # <a name="azure-stack-hub-managed-disks-differences-and-considerations"></a>Discos administrados de Azure Stack Hub: Diferencias y consideraciones
 
@@ -21,7 +21,7 @@ En este artículo se resumen las diferencias entre los [*discos administrados* d
 Los discos administrados simplifican la administración de discos para las máquinas virtuales (VM) de IaaS, ya que administran las [cuentas de almacenamiento](../operator/azure-stack-manage-storage-accounts.md) asociadas a los discos de las máquinas virtuales.
 
 > [!NOTE]  
-> Los discos administrados en Azure Stack Hub están disponibles a partir de la actualización 1808. A partir de la actualización 1811, la característica está habilitada de forma predeterminada al crear máquinas virtuales mediante el portal de Azure Stack Hub.
+> Los discos administrados en Azure Stack Hub estaban disponibles a partir de la actualización 1808. A partir de la actualización 1811, la característica está habilitada de forma predeterminada al crear máquinas virtuales mediante el portal de Azure Stack Hub.
   
 ## <a name="cheat-sheet-managed-disk-differences"></a>Hoja de referencia rápida: diferencias entre los discos administrados
 
@@ -54,7 +54,7 @@ También hay diferencias en las métricas de almacenamiento:
 
 Los discos administrados de Azure Stack Hub admiten las versiones de API siguientes:
 
-- 2017-03-30 
+- 2017-03-30
 - 2017-12-01 (Solo imágenes administradas, sin discos, sin instantáneas)
 
 ## <a name="convert-to-managed-disks"></a>Conversión en discos administrados

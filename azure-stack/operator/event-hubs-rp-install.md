@@ -8,34 +8,29 @@ ms.topic: how-to
 ms.date: 12/09/2019
 ms.reviewer: jfggdl
 ms.lastreviewed: 12/09/2019
-ms.openlocfilehash: e07d311c8edbe140834a020af489ae49d8380d86
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+zone_pivot_groups: state-connected-disconnected
+ms.openlocfilehash: d92c8c8514020d3b33e236232aa07b95ade9f798
+ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80424605"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82848207"
 ---
 # <a name="how-to-install-event-hubs-on-azure-stack-hub"></a>Cómo instalar Event Hubs en Azure Stack Hub
 
-[!INCLUDE [preview-banner](../includes/event-hubs-preview.md)]
+[!INCLUDE [preview banner](../includes/event-hubs-preview.md)]
 
 En este artículo se muestra cómo descargar e instalar el proveedor de recursos de Event Hubs, haciendo que esté disponible para ofrecerlo a los clientes para la suscripción.
 
 ## <a name="download-packages"></a>Descarga de paquetes
 
-Para poder instalar Event Hubs en Azure Stack Hub, debe descargar el proveedor de recursos y sus paquetes dependientes. Tiene dos opciones, en función de su situación o requisitos:
-
-- Descargar Event Hubs en un escenario con conexión.
-- Descargar Event Hubs en un escenario sin conexión o con conexión parcial.
-
-Si no está familiarizado con la característica **Marketplace Management** (Administración de Marketplace) del portal de administrador de Azure Stack Hub, consulte [Descarga de elementos de Marketplace en Azure Stack Hub](azure-stack-download-azure-marketplace-item.md). El artículo le guía por el proceso de descarga de elementos de Azure en Marketplace de Azure Stack Hub. Abarca ambos escenarios, con conexión y sin ella. 
-
-### <a name="download-event-hubs---connected-scenario"></a>Descarga de Event Hubs: escenario con conexión
+Para poder instalar Event Hubs en Azure Stack Hub, debe descargar el proveedor de recursos y sus paquetes dependientes mediante la característica Administración de Marketplace. Si no está familiarizado con la característica Administración de Marketplace, consulte [Descarga de elementos de Marketplace desde Azure y publicación en Azure Stack Hub](azure-stack-download-azure-marketplace-item.md). El artículo le guía por el proceso de descarga de elementos de Azure en Marketplace de Azure Stack Hub. Abarca ambos escenarios, con conexión y sin ella. 
 
 > [!NOTE]
 > El proceso de descarga puede tardar entre 30 minutos y 2 horas, según la latencia de red y los paquetes existentes en la instancia de Azure Stack Hub. 
 
-Siga estas instrucciones si su instancia de Azure Stack Hub tiene conectividad a Internet:
+::: zone pivot="state-connected"
+Siga estas instrucciones para un escenario conectado:
 
 1. Inicie sesión en el Portal de administración de Azure Stack Hub.
 2. Seleccione **Marketplace Management** (Administración de Marketplace) a la izquierda.
@@ -50,25 +45,23 @@ Tenga en cuenta que se descargan paquetes de software adicionales junto con Even
 
 - Complemento de Microsoft Azure Stack Hub RP Windows Server (SOLO INTERNO)
 - Configuración de estado deseado de PowerShell
+::: zone-end
 
-Una vez completado el proceso de descarga, vaya a la [sección Instalar requisitos previos](#install-prerequisites).
+::: zone pivot="state-disconnected"
+En un escenario sin conexión o con conexión parcial, descargue los paquetes en la máquina local y luego impórtelos en la instancia de Azure Stack Hub.
 
-### <a name="download-event-hubs---disconnected-or-partially-connected-scenario"></a>Descarga de Event Hubs: escenario sin conexión o con conexión parcial
-
-En primer lugar, descargue los paquetes en la máquina local y luego impórtelos en la instancia de Azure Stack Hub.
-
-1. Si todavía no lo ha hecho, siga las instrucciones de [Descarga de elementos de Marketplace: escenario sin conexión o con conexión parcial](azure-stack-download-azure-marketplace-item.md#disconnected-or-a-partially-connected-scenario). Aquí puede descargar y ejecutar la herramienta de redifusión de Marketplace, que le permite descargar los paquetes de Event Hubs.
+1. Si todavía no lo ha hecho, siga las instrucciones de [Descarga de elementos de Marketplace: escenario sin conexión o con conexión parcial](azure-stack-download-azure-marketplace-item.md?pivots=state-disconnected). Aquí puede descargar y ejecutar la herramienta de redifusión de Marketplace, que le permite descargar los paquetes de Event Hubs.
 2. Una vez que se abra la ventana "Azure Marketplace Items" (Elementos de Azure Marketplace) de la herramienta de redifusión, busque y seleccione "Event Hubs" para descargar los paquetes necesarios en la máquina local.
 3. Una vez finalizada la descarga, importe los paquetes a la instancia de Azure Stack Hub y publíquela en Marketplace. 
+::: zone-end
 
 ## <a name="installation"></a>Instalación 
 
-1. Si aún no lo ha hecho, inicie sesión en el portal del administrador de Azure Stack Hub.
-2. Seleccione **Marketplace Management** (Administración de Marketplace) a la izquierda y, a continuación, seleccione **Resource providers** (Proveedores de recursos).
-3. Una vez que Event Hubs y el resto de software necesario se hayan descargado, **Marketplace Management** (Administración de Marketplace) mostrará los paquetes "Event Hubs" con el estado "Not Installed" (No instalado). Puede haber otros paquetes que muestren el estado "Downloaded" (Descargado). Seleccione la fila "Event Hubs" que desea instalar.
+1. Si todavía no lo ha hecho, inicie sesión en el portal de administración de Azure Stack Hub, seleccione **Administración de Marketplace** a la izquierda y seleccione **Proveedores de recursos**.
+2. Una vez que Event Hubs y el resto de software necesario se hayan descargado, **Administración de Marketplace** mostrará los paquetes "Event Hubs" con el estado "Not Installed" (No instalado). Puede haber otros paquetes que muestren el estado "Downloaded" (Descargado). Seleccione la fila "Event Hubs" que desea instalar.
    [![Paquetes descargados de administración de Marketplace](media/event-hubs-rp-install/2-marketplace-management-downloaded.png)](media/event-hubs-rp-install/2-marketplace-management-downloaded.png#lightbox)
  
-4. La página del paquete de instalación de Event Hubs debería mostrar un banner azul en la parte superior. Seleccione el banner para iniciar la instalación de Event Hubs.
+3. La página del paquete de instalación de Event Hubs muestra un banner azul en la parte superior. Seleccione el banner para iniciar la instalación de Event Hubs.
    [![Event Hubs en administración de Marketplace: iniciar instalación](media/event-hubs-rp-install/3-marketplace-management-install-ready.png)](media/event-hubs-rp-install/3-marketplace-management-install-ready.png#lightbox)
 
 ### <a name="install-prerequisites"></a>Requisitos previos de instalación

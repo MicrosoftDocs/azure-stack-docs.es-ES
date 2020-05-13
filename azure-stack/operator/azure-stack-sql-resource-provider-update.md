@@ -8,23 +8,23 @@ ms.date: 11/11/2019
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 43099dfb4bfb2ffe50e6c8ccdfc05633ff4f3a6e
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 2c6ad5acc7096f243334165032eb7c134fc5cae0
+ms.sourcegitcommit: 519f4298dc1ed5c33f9c4fef811f61d61731dd84
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77697168"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82799788"
 ---
 # <a name="update-the-sql-resource-provider"></a>Actualización del proveedor de recursos de SQL
+
+> [!IMPORTANT]
+> Antes de actualizar el proveedor de recursos, revise las notas de la versión para obtener información sobre las nuevas funciones, correcciones y problemas conocidos que podrían afectar a la implementación. Las notas de la versión también especifican la versión mínima de Azure Stack Hub requerida para el proveedor de recursos.
 
 Es posible que cuando Azure Stack Hub se actualice a una nueva compilación, se lance un nuevo proveedor de recursos de SQL. Aunque el proveedor de recursos existente continúa funcionando, se recomienda actualizar a la compilación más reciente lo antes posible.
 
 A partir de la versión 1.1.33.0 del proveedor de recursos de SQL, las actualizaciones son acumulativas y no es necesario instalarlas en el orden en el que se han publicado, siempre y cuando empiece desde la versión 1.1.24.0 o posterior. Por ejemplo, si está ejecutando la versión 1.1.24.0 del proveedor de recursos de SQL, puede actualizar a la versión 1.1.33.0 o posterior sin necesidad de instalar primero la versión 1.1.30.0. Para revisar las versiones disponibles del proveedor de recursos y la versión de Azure Stack Hub compatible, consulte la lista de versiones en la sección Requisitos previos de [Implementación del proveedor de recursos de SQL Server en Azure Stack Hub](./azure-stack-sql-resource-provider-deploy.md#prerequisites).
 
 Para actualizar el proveedor de recursos, use el script *UpdateSQLProvider.ps1*. Use la cuenta de servicio con derechos de administrador local y de **propietario** de la suscripción. El script se incluye con la descarga del nuevo proveedor de recursos de SQL. El proceso de actualización es similar al proceso usado para [implementar el proveedor de recursos](./azure-stack-sql-resource-provider-deploy.md). El script de actualización usa los mismos argumentos que el script DeploySqlProvider.ps1, y se deberá proporcionar información del certificado.
-
- > [!IMPORTANT]
- > Antes de actualizar el proveedor de recursos, revise las notas de la versión para obtener información sobre las nuevas funciones, correcciones y problemas conocidos que podrían afectar a la implementación.
 
 ## <a name="update-script-processes"></a>Procesos de script de actualización
 

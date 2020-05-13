@@ -7,12 +7,12 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: fiseraci
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 943f391d709f772ec3ed5aa0c99bd738f5de679a
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 21d7b22181283a0e634cb0bdd0cc5912f8dac84c
+ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "78368131"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82848190"
 ---
 # <a name="monitor-updates-in-azure-stack-hub-using-the-privileged-endpoint"></a>Supervisión de las actualizaciones de Azure Stack Hub mediante el punto de conexión con privilegios
 
@@ -160,6 +160,8 @@ Invoke-Command -Session $pepSession -ScriptBlock { Resume-AzureStackUpdate }
 ## <a name="troubleshoot"></a>Solución de problemas
 
 El punto de conexión con privilegios está disponible en todas las máquinas virtuales de ERCS del entorno de Azure Stack Hub. Dado que la conexión no se realiza a un punto de conexión de alta disponibilidad, puede experimentar algunas interrupciones, advertencias o mensajes de error. Estos mensajes podrían indicar que la sesión se ha desconectado o que se ha producido un error al comunicarse con el servicio ECE. Este comportamiento es normal. Puede volver a intentar la operación al cabo de unos minutos o crear una sesión de punto de conexión con privilegios en una de las otras VM ERCS.
+
+Para más información sobre la solución de problemas de actualizaciones, consulte [Solución de problemas de Azure Stack](azure-stack-troubleshooting.md).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

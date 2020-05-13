@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: a810579dd3dd50b58b357921657e87103dbfe59a
-ms.sourcegitcommit: e5b587216a137819444680ec619281c90f37bad9
+ms.openlocfilehash: ff314d46e51af89207b1a6299771bd891a995e71
+ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82166997"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82847510"
 ---
 # <a name="configure-hybrid-cloud-connectivity-using-azure-and-azure-stack-hub"></a>Configuración de la conectividad de nube híbrida con Azure y Azure Stack Hub
 
@@ -28,7 +28,7 @@ En esta solución, creará un entorno de ejemplo para:
 > ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Microsoft Azure Stack Hub es una extensión de Azure. Azure Stack Hub aporta la agilidad y la innovación de la informática en la nube a su entorno local y hace posible la única nube híbrida que le permite crear e implementar aplicaciones híbridas en cualquier parte.  
 > 
-> En el artículo [Consideraciones de diseño de aplicaciones híbridas](overview-app-design-considerations.md) se examinan los pilares de la calidad del software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
+> En el artículo [Consideraciones de diseño de aplicaciones híbridas](overview-app-design-considerations.md) se examinan los fundamentos de calidad del software (selección de ubicación, escalabilidad, disponibilidad, resistencia, manejabilidad y seguridad) para diseñar, implementar y usar aplicaciones híbridas. Las consideraciones de diseño ayudan a optimizar el diseño de aplicaciones híbridas y reducen los desafíos en los entornos de producción.
 
 ## <a name="prerequisites"></a>Prerrequisitos
 
@@ -43,7 +43,7 @@ Se requieren algunos componentes para crear una implementación de conectividad 
 
 Un asociado de hardware u OEM de Azure puede implementar una instancia de Azure Stack Hub de producción y todos los usuarios pueden implementar un Kit de desarrollo de Azure Stack (ASDK).
 
-- Use su instancia de Azure Stack Hub de producción o implemente el Kit de desarrollo de Azure Stack desde https://github.com/mattmcspirit/azurestack/blob/master/deployment/ConfigASDK.ps1.
+- Use su instancia de Azure Stack Hub de producción o implemente el Kit de desarrollo de Azure Stack.
    >[!Note]
    >La implementación del ASDK puede tardar hasta 7 horas, así que planéela en consecuencia.
 

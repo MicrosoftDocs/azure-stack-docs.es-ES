@@ -6,16 +6,16 @@ services: azure-stack
 documentationcenter: ''
 author: sethmanheim
 ms.topic: article
-ms.date: 01/27/2020
+ms.date: 05/01/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 02/26/2019
-ms.openlocfilehash: 9f7fbb8657ec13aa6c7768e1db4d62f36fbb46cb
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 1d5e6d9cbed6f3273cf2e6e18ffcb36d6a627a90
+ms.sourcegitcommit: 278aaeca069213a98b90751253f6b15423634849
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77696454"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82742410"
 ---
 # <a name="frequently-asked-questions-about-azure-stack-hub-usage"></a>Preguntas frecuentes sobre el uso de Azure Stack Hub
 
@@ -306,13 +306,13 @@ Actualmente, solo se puede consultar mediante el **tiempo notificado**.
 
 | **Código de estado HTTP** | **Código de error** | **Descripción** |
 | --- | --- | --- |
-| 400/Solicitud incorrecta |*NoApiVersion* |No se proporcionó el parámetro de consulta de la *api-version*. |
-| 400/Solicitud incorrecta |*InvalidProperty* |Falta una propiedad o hay un valor no válido. El mensaje en el código de error en el cuerpo de respuesta identifica la propiedad que falta. |
-| 400/Solicitud incorrecta |*RequestEndTimeIsInFuture* |El valor de *ReportedEndTime* no puede ser un tiempo futuro. En el futuro no se permiten valores para este argumento. |
-| 400/Solicitud incorrecta |*SubscriberIdIsNotDirectTenant* |Una llamada de API del proveedor ha usado un identificador de suscripción que no es un inquilino válido del autor de la llamada. |
-| 400/Solicitud incorrecta |*SubscriptionIdMissingInRequest* |Falta el identificador de suscripción del autor de la llamada. |
-| 400/Solicitud incorrecta |*InvalidAggregationGranularity* |Se solicitó una granularidad de agregación no válida. Los valores válidos son daily y hourly. |
-| 503 |*ServiceUnavailable* |Se produjo un error recuperable porque el servicio está ocupado o la llamada se está limitando. |
+| 400/Solicitud incorrecta |NoApiVersion |Falta el parámetro de consulta `api-version`. |
+| 400/Solicitud incorrecta |InvalidProperty |Falta una propiedad o hay un valor no válido. El mensaje en el código de error en el cuerpo de respuesta identifica la propiedad que falta. |
+| 400/Solicitud incorrecta |RequestEndTimeIsInFuture |El valor de `ReportedEndTime` está en el futuro. En el futuro no se permiten valores para este argumento. |
+| 400/Solicitud incorrecta |SubscriberIdIsNotDirectTenant |Una llamada de API del proveedor ha usado un identificador de suscripción que no es un inquilino válido del autor de la llamada. |
+| 400/Solicitud incorrecta |SubscriptionIdMissingInRequest |Falta el identificador de suscripción del autor de la llamada. |
+| 400/Solicitud incorrecta |InvalidAggregationGranularity |Se solicitó una granularidad de agregación no válida. Los valores válidos son daily y hourly. |
+| 503 |ServiceUnavailable |Se produjo un error recuperable porque el servicio está ocupado o la llamada se está limitando. |
 
 ## <a name="what-is-the-policy-for-charging-for-vms"></a>¿Cuál es la directiva de facturación para VM?
 
