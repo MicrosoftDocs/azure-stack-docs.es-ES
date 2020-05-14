@@ -8,12 +8,12 @@ ms.date: 10/11/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 08/20/2019
-ms.openlocfilehash: 824dd1304f027c1348eff2faad29d3f187e9732f
-ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
+ms.openlocfilehash: b29b5963326a49b5e74c786f22b53e20e32c2bd6
+ms.sourcegitcommit: ddcd083430ca905653d412dc2f7b813218d79509
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82847748"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83374697"
 ---
 # <a name="app-service-on-azure-stack-hub-update-7-release-notes"></a>Notas de la versión de la actualización 7 de App Service en Azure Stack Hub
 
