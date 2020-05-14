@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: f3c952695d430befa69c4b3dc2ffaf7787ac8b31
-ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
+ms.openlocfilehash: 7a0777c218a27647214ada7b628cede5f7c01587
+ms.sourcegitcommit: 510bb047b0a78fcc29ac611a2a7094fc285249a1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82847170"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988232"
 ---
 # <a name="configure-hybrid-cloud-identity-for-azure-and-azure-stack-hub-apps"></a>Configuración de la identidad de nube híbrida para aplicaciones de Azure y Azure Stack Hub
 
@@ -41,11 +41,11 @@ Para seguir los pasos de esta solución, debe tener permisos de operador de Azur
 
 ## <a name="create-a-service-principal-for-azure-ad-in-the-portal"></a>Crear a una entidad de servicio para Azure AD en el portal
 
-Si implementó Azure Stack Hub con Azure AD como el almacén de identidades, puede crear entidades de servicio como lo hace para Azure. La sección [Uso de una identidad de aplicación para acceder a recursos](../operator/azure-stack-create-service-principals.md#manage-an-azure-ad-service-principal) muestra cómo realizar los pasos desde el portal. Asegúrese de que dispone de los [permisos de Azure AD necesarios](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions) antes de comenzar.
+Si implementó Azure Stack Hub con Azure AD como el almacén de identidades, puede crear entidades de servicio como lo hace para Azure. La sección [Uso de una identidad de aplicación para acceder a recursos](../operator/azure-stack-create-service-principals.md#manage-an-azure-ad-app-identity) muestra cómo realizar los pasos desde el portal. Asegúrese de que dispone de los [permisos de Azure AD necesarios](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions) antes de comenzar.
 
 ## <a name="create-a-service-principal-for-ad-fs-using-powershell"></a>Creación de una entidad de servicio para AD FS mediante PowerShell
 
-Si implementó Azure Stack Hub con AD FS, puede usar PowerShell para crear una entidad de servicio, asignar un rol para el acceso e iniciar sesión en PowerShell con dicha identidad. La sección [Uso de una identidad de aplicación para acceder a recursos](../operator/azure-stack-create-service-principals.md#manage-an-ad-fs-service-principal) muestra cómo realizar los pasos necesarios mediante PowerShell.
+Si implementó Azure Stack Hub con AD FS, puede usar PowerShell para crear una entidad de servicio, asignar un rol para el acceso e iniciar sesión en PowerShell con dicha identidad. La sección [Uso de una identidad de aplicación para acceder a recursos](../operator/azure-stack-create-service-principals.md#manage-an-ad-fs-app-identity) muestra cómo realizar los pasos necesarios mediante PowerShell.
 
 ## <a name="using-the-azure-stack-hub-api"></a>Uso de la API de Azure Stack Hub
 
