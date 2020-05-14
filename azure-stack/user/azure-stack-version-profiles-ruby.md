@@ -3,16 +3,16 @@ title: Uso de los perfiles de la versión de API con Ruby en Azure Stack Hub
 description: Obtenga información sobre cómo usar los perfiles de la versión de API con Ruby en Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 01/23/2020
+ms.date: 05/05/2020
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: 5b79c676b922f0e76ed75e3ad043f53c1fb9d6a5
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: b59adea78b5325a449bd52b211edc5e04ea5e566
+ms.sourcegitcommit: 70c344b3c9c63f8c12867b2cdfdd1794fcc518dc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79295494"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82836247"
 ---
 # <a name="use-api-version-profiles-with-ruby-in-azure-stack-hub"></a>Uso de los perfiles de la versión de API con Ruby en Azure Stack Hub
 
@@ -44,7 +44,7 @@ Un perfil de API es una combinación de los proveedores de recursos y las versio
 
 - Si no está disponible, cree una suscripción y guarde su identificador para usarlo más adelante. Las instrucciones para crear una suscripción se encuentran en el artículo [Creación de suscripciones para ofertas en Azure Stack Hub](../operator/azure-stack-subscribe-plan-provision-vm.md).
 - Cree una entidad de servicio y guarde su identificador y su secreto. Las instrucciones para crear una entidad de servicio para Azure Stack Hub se encuentran en el artículo [Uso de una identidad de aplicación para acceder a recursos](../operator/azure-stack-create-service-principals.md).
-- Asegúrese de que la entidad de servicio tenga rol de colaborador o propietario asignado en la suscripción. Las instrucciones sobre cómo asignar un rol a una entidad de servicio se encuentran en [Uso de una identidad de aplicación para acceder a recursos](../operator/azure-stack-create-service-principals.md).
+- Asegúrese de que la entidad de servicio tenga rol de colaborador o propietario asignado en la suscripción. Las instrucciones sobre cómo asignar un rol a una entidad de servicio se encuentran en el artículo [Uso de una identidad de aplicación para acceder a recursos](../operator/azure-stack-create-service-principals.md).
 
 ## <a name="install-the-rubygem-packages"></a>Instalación de los paquetes RubyGem
 

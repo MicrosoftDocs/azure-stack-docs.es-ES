@@ -7,12 +7,12 @@ ms.date: 05/06/2019
 ms.author: justinha
 ms.reviewer: knithinc
 ms.lastreviewed: 10/25/2019
-ms.openlocfilehash: 1b562d2a72f3da4d4ac9ef7045f5cbd5408f4afa
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 44fa05f5841952d581a35d8394300e96333bfc4f
+ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79295290"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82847085"
 ---
 # <a name="connect-to-the-asdk"></a>Conectarse al ASDK
 
@@ -33,9 +33,9 @@ Un único usuario simultáneo puede administrar los recursos en el portal de adm
 
 2. En el equipo host de ASDK, abra el Administrador del servidor (ServerManager.exe). Seleccione **Servidor local**, desactive la opción **Configuración de seguridad mejorada de IE** y cierre el Administrador del servidor.
 
-3. Inicie sesión en el portal de administración como **AzureStack\CloudAdmin** o use otras credenciales de operador de Azure Stack. La dirección del portal del administrador del ASDK es [https://adminportal.local.azurestack.external](https://adminportal.local.azurestack.external).
+3. Inicie sesión en el portal de administración como **AzureStack\CloudAdmin** o use otras credenciales de operador de Azure Stack. La dirección del portal del administrador del ASDK es `https://adminportal.local.azurestack.external`.
 
-4. Inicie sesión en el portal de usuario como **AzureStack\CloudAdmin** o use otras credenciales de usuario de Azure Stack. La dirección del portal de usuario del ASDK es [https://portal.local.azurestack.external](https://portal.local.azurestack.external).
+4. Inicie sesión en el portal de usuario como **AzureStack\CloudAdmin** o use otras credenciales de usuario de Azure Stack. La dirección del portal de usuario del ASDK es `https://portal.local.azurestack.external`.
 
 > [!NOTE]
 > Para obtener más información sobre cuándo usar cada tipo de cuenta, consulte [Conceptos básicos de administración de ASDK](asdk-admin-basics.md#what-account-should-i-use).
@@ -118,7 +118,7 @@ La primera vez que se conecte, se le pedirá que instale el certificado raíz de
 
 ### <a name="test-vpn-connectivity"></a>Probar la conectividad VPN
 
-Para probar la conexión del portal, abra un explorador y vaya al portal de usuarios (https://portal.local.azurestack.external/) o al portal del administrador (https://adminportal.local.azurestack.external/).
+Para probar la conexión del portal, abra un explorador y vaya al portal de usuarios en `https://portal.local.azurestack.external/` o al portal de administración `https://adminportal.local.azurestack.external/`.
 
 Inicie sesión con las credenciales de la suscripción adecuada para crear y administrar los recursos.  
 
