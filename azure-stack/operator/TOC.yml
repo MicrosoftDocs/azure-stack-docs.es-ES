@@ -499,13 +499,13 @@
 - name: Referencia
   items:
     - name: PowerShell de Azure Stack Hub
-      href: 'https://docs.microsoft.com/powershell/azure/azure-stack/overview?view='
+      href: 'https://docs.microsoft.com/powershell/azure/azure-stack/overview'
     - name: "Punto de conexión con privilegios de Azure\_Stack Hub"
       href: ../reference/pep-2002/
     - name: API REST de administrador de Azure Stack Hub
       href: /rest/api/azure-stack/
     - name: Azure CLI
-      href: 'https://docs.microsoft.com/cli/azure/reference-index?view='
+      href: 'https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest'
 - name: Temas relacionados
   items:
     - name: Documentación de usuario de Azure Stack Hub
