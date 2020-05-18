@@ -7,12 +7,12 @@ ms.date: 11/26/2019
 ms.author: justinha
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/26/2019
-ms.openlocfilehash: 4984f36b4632f2bcb204c93ef409ea82a7f299f5
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: cf116e392cc75119eabe8fbea9ccb37f72f4b1a0
+ms.sourcegitcommit: ddcd083430ca905653d412dc2f7b813218d79509
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77698834"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83375143"
 ---
 # <a name="mysql-resource-provider-11470-release-notes"></a>Notas de la versión del proveedor de recursos de MySQL 1.1.47.0
 
@@ -31,19 +31,18 @@ Descargue el archivo binario del proveedor de recursos MySQL y ejecute el extrac
 
 ## <a name="new-features-and-fixes"></a>Nuevas características y correcciones
 
-Esta versión del proveedor de recursos MySQL de Azure Stack Hub es una versión de revisión que permite que el proveedor de recursos sea compatible con algunos de los cambios más recientes del portal realizados en la actualización 1910, y no incluye ninguna característica nueva.
+Esta versión del proveedor de recursos MySQL de Azure Stack Hub es una versión de revisión que permite que el proveedor de recursos sea compatible con algunos de los cambios más recientes del portal realizados en la actualización 1910. No hay características nuevas en esta versión.
 
-También admite el perfil de versión actual más reciente de Azure Stack Hub API 2019-03-01-hybrid y el módulo de PowerShell 1.8.0 para Azure Stack Hub. Por lo tanto, durante la implementación y la actualización, no es necesario instalar ninguna versión específica del historial de los módulos.
+También admite el perfil de versión más reciente de Azure Stack Hub API 2019-03-01-hybrid y el módulo de PowerShell 1.8.0 para Azure Stack Hub. Por lo tanto, durante la implementación y la actualización, no es necesario instalar ninguna versión específica del historial de los módulos.
 
-Se recomienda aplicar la revisión del proveedor de recursos MySQL 1.1.47.0 después de actualizar Azure Stack Hub a la versión 1910.
+Se recomienda aplicar la revisión del proveedor de recursos MySQL 1.1.47.0 después de actualizar Azure Stack Hub a la versión 1910.
 
 ## <a name="known-issues"></a>Problemas conocidos
 
 Ninguno.
 
 ## <a name="next-steps"></a>Pasos siguientes
-[Obtener más información sobre el proveedor de recursos MySQL](azure-stack-mysql-resource-provider.md).
 
-[Preparar la implementación del proveedor de recursos MySQL](azure-stack-mysql-resource-provider-deploy.md#prerequisites).
-
-[Actualizar el proveedor de recursos MySQL desde una versión anterior](azure-stack-mysql-resource-provider-update.md). 
+- [Obtener más información sobre el proveedor de recursos MySQL](azure-stack-mysql-resource-provider.md).
+- [Preparar la implementación del proveedor de recursos MySQL](azure-stack-mysql-resource-provider-deploy.md#prerequisites).
+- [Actualizar el proveedor de recursos MySQL desde una versión anterior](azure-stack-mysql-resource-provider-update.md).

@@ -1,24 +1,25 @@
 ---
 title: Notas de la versión del proveedor de recursos de SQL 1.1.47.0 de Azure Stack Hub
-description: Conozca las novedades de la actualización más reciente del proveedor de recursos SQL de Azure Stack Hub, incluidos los problemas conocidos y dónde descargarla.
+description: Vea las novedades de la actualización más reciente del proveedor de recursos SQL de Azure Stack Hub, entre las que se incluyen nuevas características, correcciones y problemas conocidos.
 author: justinha
 ms.topic: article
 ms.date: 11/26/2019
 ms.author: justinha
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/26/2019
-ms.openlocfilehash: 9303a9d60fad754a5ba644d4b6e1c5cd3d331497
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 59c8cfdaf13b84f7ba27e633731f4d1587cf63b8
+ms.sourcegitcommit: ddcd083430ca905653d412dc2f7b813218d79509
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77697423"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83375028"
 ---
 # <a name="sql-resource-provider-11470-release-notes"></a>Notas de la versión del proveedor de recursos de SQL 1.1.47.0
 
 Estas notas de la versión describen las mejoras y los problemas conocidos de la versión del proveedor de recursos de SQL 1.1.47.0.
 
 ## <a name="build-reference"></a>Referencia de compilación
+
 Descargue el archivo binario del proveedor de recursos SQL y ejecute el extractor automático para extraer el contenido en un directorio temporal. El proveedor de recursos tiene una compilación mínima correspondiente de Azure Stack Hub. La versión mínima de Azure Stack Hub necesaria para instalar esta versión del proveedor de recursos SQL se muestra a continuación:
 
 > |Versión mínima de Azure Stack Hub|Versión del proveedor de recursos SQL|
@@ -31,9 +32,9 @@ Descargue el archivo binario del proveedor de recursos SQL y ejecute el extracto
 
 ## <a name="new-features-and-fixes"></a>Nuevas características y correcciones
 
-Esta versión del proveedor de recursos SQL de Azure Stack Hub es una versión de revisión que permite que el proveedor de recursos sea compatible con algunos de los cambios más recientes del portal realizados en la actualización 1910, y no incluye ninguna característica nueva.
+Esta versión del proveedor de recursos SQL de Azure Stack Hub es una versión de revisión que permite que el proveedor de recursos sea compatible con los cambios más recientes del portal realizados en la actualización 1910. No hay características nuevas en esta versión.
 
-También admite el perfil de versión actual más reciente de Azure Stack Hub API 2019-03-01-hybrid y el módulo de PowerShell 1.8.0 para Azure Stack Hub. Por lo tanto, durante la implementación y la actualización, no es necesario instalar ninguna versión específica del historial de los módulos.
+También admite el perfil de versión más reciente de Azure Stack Hub API 2019-03-01-hybrid y el módulo de PowerShell 1.8.0 para Azure Stack Hub. Por lo tanto, durante la implementación y la actualización, no es necesario instalar ninguna versión específica del historial de los módulos.
 
 Siga el proceso de actualización del proveedor de recursos para aplicar la revisión 1.1.47.0 del proveedor de recursos SQL después de actualizar Azure Stack Hub a la versión 1910. Le ayudará a resolver un problema conocido en el portal de administrador por el que la supervisión de la capacidad del proveedor de recursos de SQL no deja de cargarse.
 
@@ -42,8 +43,7 @@ Siga el proceso de actualización del proveedor de recursos para aplicar la revi
 Ninguno.
 
 ## <a name="next-steps"></a>Pasos siguientes
-[Obtener más información sobre el proveedor de recursos SQL](azure-stack-sql-resource-provider.md).
 
-[Preparar la implementación del proveedor de recursos SQL](azure-stack-sql-resource-provider-deploy.md#prerequisites).
-
-[Actualizar el proveedor de recursos SQL desde una versión anterior](azure-stack-sql-resource-provider-update.md). 
+- [Obtener más información sobre el proveedor de recursos SQL](azure-stack-sql-resource-provider.md).
+- [Preparar la implementación del proveedor de recursos SQL](azure-stack-sql-resource-provider-deploy.md#prerequisites).
+- [Actualizar el proveedor de recursos SQL desde una versión anterior](azure-stack-sql-resource-provider-update.md).

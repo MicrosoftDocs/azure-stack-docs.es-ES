@@ -4,16 +4,16 @@ titleSuffix: Azure Stack
 description: Aprenda a solucionar problemas de Azure Stack Hub, como problemas con las máquinas virtuales, el almacenamiento y App Service.
 author: justinha
 ms.topic: article
-ms.date: 04/30/2020
+ms.date: 05/13/2020
 ms.author: justinha
 ms.reviewer: prchint
-ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 4c3488ac0f8b022d7d0e21ce09cfb3160f346d5c
-ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
+ms.lastreviewed: 15/13/2020
+ms.openlocfilehash: 4910a7aaa2462cb53c4ce89246c92a60f61d5017
+ms.sourcegitcommit: ddcd083430ca905653d412dc2f7b813218d79509
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82848122"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83375003"
 ---
 # <a name="troubleshoot-issues-in-azure-stack-hub"></a>Solución de problemas de Azure Stack Hub
 
@@ -127,7 +127,7 @@ Si se produce un error en el script Create-AADIdentityApp.ps1 necesario para App
 
 El proceso de revisión y actualización de Azure Stack Hub está diseñado para permitir a los operadores aplicar paquetes de actualización de una manera coherente y simplificada. Aunque es poco frecuente, pueden producirse problemas durante la revisión y actualización. Se recomiendan los siguientes pasos en caso de que se produzca un problema durante el proceso de revisión y actualización:
 
-0. **Requisitos previos**: Asegúrese de que ha seguido la [lista de comprobación de actividades de actualización](release-notes-checklist.md) y de que ha [configurado la recopilación automática de registros](azure-stack-configure-automatic-diagnostic-log-collection-tzl.md).
+0. **Requisitos previos**: Asegúrese de que ha seguido la [lista de comprobación de la actividad de actualización](release-notes-checklist.md) y de que ha [habilitado la recopilación proactiva de registros](azure-stack-configure-automatic-diagnostic-log-collection-tzl.md).
 
 1. Siga los pasos de corrección de la alerta de error que se crea cuando se produce un error en la actualización.
 

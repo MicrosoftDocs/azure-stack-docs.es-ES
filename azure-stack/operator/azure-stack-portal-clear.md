@@ -1,18 +1,18 @@
 ---
-title: Eliminación de los datos de usuario del portal a petición desde Azure Stack Hub.
-description: Como operador de Azure Stack Hub, aprende a borrar los datos de usuario del portal cuando lo soliciten los usuarios de Azure Stack Hub.
+title: Eliminación de los datos de usuario del portal a petición desde Azure Stack Hub
+description: Aprenda a borrar los datos de usuario del portal cuando lo soliciten los usuarios de Azure Stack Hub.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 01/27/2020
+ms.date: 05/06/2020
 ms.author: sethm
 ms.reviewer: troettinger
 ms.lastreviewed: 09/10/2019
-ms.openlocfilehash: bede8fc72cfcdd6f3376c49a87293fef3626c380
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: e419ebd632fabac6985b1a763b4661d75307e4ba
+ms.sourcegitcommit: ddcd083430ca905653d412dc2f7b813218d79509
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77698341"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83375093"
 ---
 # <a name="clear-portal-user-data-from-azure-stack-hub"></a>Eliminación de los datos de usuario del portal de Azure Stack Hub
 
@@ -33,7 +33,7 @@ La eliminación de la configuración de usuario del portal solo debe realizarse 
 - Las credenciales de administrador de Azure Stack Hub para acceder al punto de conexión de Resource Manager de administración.
 
 > [!NOTE]
-> Si intenta eliminar información de usuario del portal de un usuario que se ha invitado desde un directorio invitado (multiinquilino), debe tener permiso de lectura en ese directorio. Para más información, consulte el [escenario CSP más adelante en este artículo](#clear-portal-user-data-in-guest-directory).
+> Para intentar eliminar información de usuario del portal de un usuario al que se ha invitado desde un directorio invitado (multiinquilino), es preciso tener permiso de lectura en ese directorio. Para más información, consulte el [escenario CSP más adelante en este artículo](#clear-portal-user-data-in-guest-directory).
 
 ## <a name="clear-portal-user-data-using-a-user-principal-name"></a>Eliminación de los datos de usuario del portal mediante un nombre principal de usuario
 
@@ -43,7 +43,7 @@ Asegúrese de [descargar la versión más reciente de las herramientas de Azure 
 
 Para este procedimiento, use un equipo que pueda comunicarse con el punto de conexión de Resource Manager de administración de Azure Stack Hub.
 
-1. Abra una sesión de Windows PowerShell con privilegios elevados (ejecutar como administrador), desplácese a la carpeta raíz del directorio **AzureStack-Tools-master** e importe el módulo de PowerShell necesario:
+1. Abra una sesión de Windows PowerShell con privilegios elevados (ejecutar como administrador), vaya a la carpeta raíz del directorio **AzureStack-Tools-master** e importe el módulo de PowerShell necesario:
 
    ```powershell
    Import-Module .\DatacenterIntegration\Portal\PortalUserDataUtilities.psm1
@@ -72,11 +72,11 @@ Para este procedimiento, use un equipo que pueda comunicarse con el punto de con
    ```
 
    > [!NOTE]
-   > `azureStackDirectoryTenantId` es opcional. Si no especifica este valor, el script busca el nombre principal de usuario en todos los directorios de inquilinos registrados en Azure Stack Hub y, a continuación, borra los datos del portal de todos los usuarios coincidentes.
+   > `azureStackDirectoryTenantId` es opcional. Si no especifica este valor, el script busca el nombre principal de usuario en todos los directorios de inquilinos registrados en Azure Stack Hub y, después, borra los datos del portal de todos los usuarios coincidentes.
 
 ## <a name="clear-portal-user-data-in-guest-directory"></a>Eliminación de los datos de usuario del portal en el directorio invitado
 
-En este escenario, el operador de Azure Stack Hub no tiene acceso al directorio invitado en el que reside el usuario. Este es un escenario común cuando se trata de un proveedor de soluciones en la nube (CSP).
+En este escenario, el operador de Azure Stack Hub no tiene acceso al directorio invitado en el que reside el usuario. Este es un escenario común cuando para los proveedores de soluciones en la nube (CSP).
 
 Para que un operador de Azure Stack Hub quite los datos de usuario del portal, se requiere como mínimo el identificador de objeto de usuario.
 
@@ -84,7 +84,7 @@ El usuario debe consultar el identificador de objeto y proporcionarlo al operado
 
 ### <a name="user-retrieves-the-user-object-id"></a>El usuario recupera el identificador de objeto de usuario.
 
-1. Abra una sesión de Windows PowerShell con privilegios elevados (ejecutar como administrador), desplácese a la carpeta raíz del directorio **AzureStack-Tools-master** e importe el módulo de PowerShell necesario.
+1. Abra una sesión de Windows PowerShell con privilegios elevados (ejecutar como administrador), vaya a la carpeta raíz del directorio **AzureStack-Tools-master** e importe el módulo de PowerShell necesario.
 
    ```powershell
    Import-Module .\DatacenterIntegration\Portal\PortalUserDataUtilities.psm1
@@ -114,7 +114,7 @@ El usuario debe consultar el identificador de objeto y proporcionarlo al operado
 
 Después de recibir el identificador de objeto de usuario como un operador de Azure Stack Hub, ejecute los siguientes comandos para quitar los datos de usuario del portal:
 
-1. Abra una sesión de Windows PowerShell con privilegios elevados (ejecutar como administrador), desplácese a la carpeta raíz del directorio **AzureStack-Tools-master** e importe el módulo de PowerShell necesario.
+1. Abra una sesión de Windows PowerShell con privilegios elevados (ejecutar como administrador), vaya a la carpeta raíz del directorio **AzureStack-Tools-master** e importe el módulo de PowerShell necesario.
 
    ```powershell
    Import-Module .\DatacenterIntegration\Portal\PortalUserDataUtilities.psm1
@@ -128,7 +128,7 @@ Después de recibir el identificador de objeto de usuario como un operador de Az
 
    ## Replace the following value with the Azure Stack Hub directory tenant ID.
    $AzsAdminDirectoryTenantId = "f5025bf2-547f-4b49-9693-6420c1d5e4ca"
-   
+
    ## Replace the following value with the directory tenant ID of the user to clear.
    $DirectoryTenantId = "3160cbf5-c227-49dd-8654-86e924c0b72f"
 

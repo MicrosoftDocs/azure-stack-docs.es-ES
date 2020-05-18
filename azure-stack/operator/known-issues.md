@@ -3,16 +3,16 @@ title: Problemas conocidos de Azure Stack Hub
 description: Obtenga información sobre los problemas conocidos de las versiones de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 04/29/2020
+ms.date: 05/05/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 03/18/2020
-ms.openlocfilehash: df81020ce365f25587c406aaf13617281769834d
-ms.sourcegitcommit: 54f98b666bea9226c78f26dc255ddbdda539565f
+ms.openlocfilehash: 94b90f8a3a648a466ac221a76099a71964e00f9a
+ms.sourcegitcommit: 4a8d7203fd06aeb2c3026d31ffec9d4fbd403613
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82556419"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83202437"
 ---
 # <a name="azure-stack-hub-known-issues"></a>Problemas conocidos de Azure Stack Hub
 
@@ -38,7 +38,7 @@ Para tener acceso a los problemas conocidos de una versión diferente, use la li
 
 Después de aplicar la actualización 2002, puede aparecer incorrectamente una alerta de un "origen de hora no válido" en el portal de administración. Esta alerta es un falso positivo se puede ignorar y se corregirá en una próxima versión. 
 
-Para ver otros problemas conocidos con las actualizaciones de Azure Stack Hub, consulte [Solución de problemas de actualizaciones en Azure Stack Hub](azure-stack-updates-troubleshoot.md).
+Para ver otros problemas conocidos con las actualizaciones de Azure Stack Hub, consulte [Solución de problemas de actualizaciones en Azure Stack Hub](azure-stack-troubleshooting.md).
 
 ## <a name="portal"></a>Portal
 
@@ -74,6 +74,12 @@ Para ver otros problemas conocidos con las actualizaciones de Azure Stack Hub, c
 - Aplicable a: este problema afecta a la versión 1908 y superiores.
 - Causa: cuando se desconecta un cable de un adaptador de red, no se muestra ninguna alerta en el portal de administración. Este problema se debe a que este error está deshabilitado de forma predeterminada en Windows Server 2019.
 - Repetición: Comunes
+
+### <a name="access-control-iam"></a>Control de acceso (IAM)
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: La extensión IAM está obsoleta. El portal de Ibiza que se incluye con Azure Stack Hub introduce un nuevo comportamiento que hace que se produzca un error en la extensión RBAC si el usuario está abriendo la hoja **Access Control (IAM)** de una suscripción que no está seleccionada en el selector de suscripción global (**directorio + suscripción** en el portal de usuarios). La hoja muestra el mensaje **Cargando** en bucle y el usuario no puede agregar nuevos roles a la suscripción. La hoja **Agregar** también muestra el mensaje **Cargando** en bucle.
+- Corrección: Asegúrese de que la suscripción esté marcada en el menú **Directorio + suscripción**. A este menú se puede acceder desde la parte superior del portal, cerca del botón **Notificaciones**, o bien mediante el acceso directo de la hoja **Todos los recursos** que muestra el mensaje **Don't see a subscription? (¿No ve una suscripción?) Abra la configuración de Directorio + suscripción**. La suscripción se debe seleccionar en este menú.
 
 ## <a name="networking"></a>Redes
 
@@ -190,7 +196,7 @@ Para ver otros problemas conocidos con las actualizaciones de Azure Stack Hub, c
 
 - Aplicable a: este problema afecta a la versión 2002.
 - Causa: si el stamp contiene la versión 1.7 o anterior del proveedor de recursos (RP) de App Service, tras la actualización del stamp no se cargará la hoja de App Service.
-- Corrección: actualice el proveedor de recursos a la versión 1.8.
+- Corrección: actualice el proveedor de recursos a la versión [2020 Q2](azure-stack-app-service-update.md).
 
 <!-- ## Storage -->
 <!-- ## SQL and MySQL-->
@@ -203,7 +209,7 @@ Para ver otros problemas conocidos con las actualizaciones de Azure Stack Hub, c
 ::: moniker range="azs-1910"
 ## <a name="update"></a>Actualizar
 
-Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, consulte [Solución de problemas de actualizaciones en Azure Stack Hub](azure-stack-updates-troubleshoot.md).
+Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, consulte [Solución de problemas de actualizaciones en Azure Stack Hub](azure-stack-troubleshooting.md).
 
 ## <a name="portal"></a>Portal
 
@@ -246,7 +252,6 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 - Causa: en el portal de usuarios, cuando intenta cargar un blob en la hoja de carga, hay una opción para seleccionar **AAD** o **Autenticación de clave**, pero **AAD** no se admite en Azure Stack Hub.
 - Repetición: Comunes
 
-
 ### <a name="alert-for-network-interface-disconnected"></a>Alerta de interfaz de red desconectada
 
 - Aplicable a: este problema afecta a la versión 1908 y superiores.
@@ -264,7 +269,6 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: en el portal de usuarios, aparecen la característica **Solución de problemas de VPN** y **Métricas** en un recurso de puerta de enlace de VPN, pero esto no se admite en Azure Stack Hub.
 - Repetición: Comunes
-
 
 ### <a name="delete-a-storage-container"></a>Eliminación de un contenedor de almacenamiento
 

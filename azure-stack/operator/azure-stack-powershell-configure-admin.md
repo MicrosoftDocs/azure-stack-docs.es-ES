@@ -7,12 +7,12 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 09/19/2019
-ms.openlocfilehash: e0f10db1c9d983b4802812bd4274429387032c66
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 20f50ffdaee8ca24cfc0c0406d846d3f5e830396
+ms.sourcegitcommit: 510bb047b0a78fcc29ac611a2a7094fc285249a1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77698409"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988270"
 ---
 # <a name="connect-to-azure-stack-hub-with-powershell"></a>Conexión a Azure Stack Hub con PowerShell
 
@@ -62,7 +62,7 @@ Conéctese al entorno de operador de Azure Stack Hub con PowerShell con Azure A
   ```
 
 > [!Note]  
-> AD FS solo admite la autenticación interactiva con identidades de usuario. Si se requiere un objeto de credencial, debe usar una entidad de servicio (SPN). Para más información sobre cómo configurar una entidad de servicio con Azure Stack Hub y AD FS como servicio de administración de identidades, consulte [Administración de una entidad de servicio de AD FS](azure-stack-create-service-principals.md#manage-an-ad-fs-service-principal).
+> AD FS solo admite la autenticación interactiva con identidades de usuario. Si se requiere un objeto de credencial, debe usar una entidad de servicio (SPN). Para más información sobre cómo configurar una entidad de servicio con Azure Stack Hub y AD FS como servicio de administración de identidades, consulte [Administración de una entidad de aplicación de AD FS](azure-stack-create-service-principals.md#manage-an-ad-fs-app-identity).
 
 ## <a name="test-the-connectivity"></a>Prueba de la conectividad
 

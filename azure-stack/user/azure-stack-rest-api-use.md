@@ -3,16 +3,16 @@ title: Realización de solicitudes de API a Azure Stack Hub
 description: Aprenda a recuperar una autenticación de Azure para realizar solicitudes de API a Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 01/23/2020
+ms.date: 05/06/2020
 ms.author: sethm
 ms.reviewer: thoroet
 ms.lastreviewed: 01/14/2020
-ms.openlocfilehash: 3d7c4e7481b3054eaf44394e9b80f1e07bc75fa9
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: d44158342b1bca1aec575d51fb7144a8c88e88d1
+ms.sourcegitcommit: 9894804f31527234d43f4a93a9b7c106c8540435
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77703730"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82967750"
 ---
 <!--  cblackuk and charliejllewellyn. This is a community contribution by cblackuk-->
 
@@ -22,11 +22,11 @@ Puede usar la API REST de Azure Stack Hub para automatizar operaciones como la i
 
 La API requiere que el cliente se autentique en el punto de conexión de inicio de sesión de Microsoft Azure. Este punto de conexión devuelve un token en el encabezado de cada solicitud enviada a las API de Azure Stack Hub. Microsoft Azure usa Oauth 2.0.
 
-En este artículo se proporcionan ejemplos que usan la utilidad **cURL** para crear solicitudes de Azure Stack Hub. cURL es una herramienta de línea de comandos con una biblioteca para transferir datos. Estos ejemplos lo guían por el proceso de recuperación de un token de acceso a las API de Azure Stack Hub. La mayoría de los lenguajes de programación proporcionan bibliotecas Oauth 2.0, que presentan una buena administración de los tokens y controlan tareas tales como la actualización del token.
+En este artículo se proporcionan ejemplos que usan la utilidad **cURL** para crear solicitudes de Azure Stack Hub. cURL es una herramienta de línea de comandos con una biblioteca para transferir datos. Estos ejemplos describen el proceso de recuperación de un token de acceso a las API de Azure Stack Hub. La mayoría de los lenguajes de programación proporcionan bibliotecas Oauth 2.0, que presentan una buena administración de los tokens y controlan tareas tales como la actualización del token.
 
 Examine todo el proceso de utilización de las API REST de Azure Stack Hub con un cliente REST genérico, como **cURL**, para que le ayude a comprender las solicitudes subyacentes y lo que puede esperar de una carga de respuesta.
 
-En este artículo no se exploran todas las opciones disponibles para recuperar tokens, como el inicio de sesión interactivo o la creación de identificadores de aplicación dedicados. Para obtener información acerca de estos temas, consulte [Referencia de API REST de Azure](/rest/api/).
+En este artículo no se exploran todas las opciones disponibles para recuperar tokens, como el inicio de sesión interactivo o la creación de identificadores de aplicación dedicados. Para obtener información sobre estos temas, consulte [Referencia de API REST de Azure](/rest/api/).
 
 ## <a name="get-a-token-from-azure"></a>Obtención de un token de Azure
 

@@ -3,16 +3,16 @@ title: Adición de imágenes de Linux al Marketplace de Azure Stack Hub
 description: Aprenda a agregar imágenes de Linux al Marketplace de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 01/23/2020
+ms.date: 05/07/2020
 ms.author: sethm
-ms.reviewer: unknown
+ms.reviewer: ''
 ms.lastreviewed: 11/16/2019
-ms.openlocfilehash: 532f61b2b306dab833c35dab403226e70950d43a
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 32cdb1ec98f9825a63b5acfa68e4c8e3f43089a7
+ms.sourcegitcommit: 9894804f31527234d43f4a93a9b7c106c8540435
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79295098"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82967733"
 ---
 # <a name="add-linux-images-to-the-azure-stack-hub-marketplace"></a>Adición de imágenes de Linux al Marketplace de Azure Stack Hub
 
@@ -22,11 +22,11 @@ Puede implementar máquinas virtuales Linux en Azure Stack Hub mediante la adici
 
 Para descargar imágenes de Linux desde Azure Marketplace, consulte [Descarga de elementos de Marketplace de Azure a Azure Stack Hub](azure-stack-download-azure-marketplace-item.md). Seleccione las imágenes de Linux que quiera ofrecer a los usuarios en Azure Stack Hub.
 
-Hay actualizaciones frecuentes de estas imágenes, por lo que se recomienda comprobar Marketplace Management a menudo para estar al día.
+Hay actualizaciones frecuentes de estas imágenes, por lo que se recomienda realizar comprobaciones a menudo para estar al día.
 
 ## <a name="prepare-your-own-image"></a>Preparación de su propia imagen
 
-Siempre que sea posible, descargue las imágenes disponibles a través de Marketplace Management. Dichas imágenes se han preparado y probado para Azure Stack Hub.
+Siempre que sea posible, descargue las imágenes disponibles a través de la administración de Marketplace. Dichas imágenes se han preparado y probado para Azure Stack Hub.
 
 ### <a name="azure-linux-agent"></a>Agente Linux de Azure
 
@@ -101,12 +101,12 @@ runcmd:
   - nodejs index.js
   ```
   
-### <a name="step-2-reference-the-cloud-inittxt-during-the-linux-vm-deployment"></a>Paso 2: Referencia a cloud-init.txt durante la implementación de máquinas virtuales Linux
+### <a name="step-2-reference-cloud-inittxt-during-the-linux-vm-deployment"></a>Paso 2: Referencia al archivo cloud-init.txt durante la implementación de máquinas virtuales Linux
 
 Cargue el archivo en una cuenta de almacenamiento de Azure, una cuenta de almacenamiento de Azure Stack Hub o un repositorio de GitHub al que pueda acceder la máquina virtual Linux con Azure Stack Hub.
 Actualmente, el uso de cloud-init para la implementación de máquinas virtuales solo se admite en REST, PowerShell y la CLI, y no tiene una interfaz de usuario de portal asociada en Azure Stack Hub.
 
-Puede seguir [estas](../user/azure-stack-quick-create-vm-linux-powershell.md) instrucciones para crear la máquina virtual Linux con PowerShell, pero asegúrese de hacer referencia a cloud-init.txt como parte de la marca `-CustomData`:
+Puede seguir [estas instrucciones](../user/azure-stack-quick-create-vm-linux-powershell.md) para crear la máquina virtual Linux mediante PowerShell, pero asegúrese de hacer referencia a cloud-init.txt como parte de la marca `-CustomData`:
 
 ```powershell
 $VirtualMachine =Set-AzureRmVMOperatingSystem -VM $VirtualMachine `

@@ -9,12 +9,12 @@ ms.reviewer: ppacent
 ms.author: inhenkel
 ms.lastreviewed: 12/13/2019
 monikerRange: '>=azs-1802'
-ms.openlocfilehash: 5ffa1f2f03ca942192acdd881b7e785598c4c94b
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: a16928e233d47c6a3f3a8f612b5d5d22afc08456
+ms.sourcegitcommit: ddcd083430ca905653d412dc2f7b813218d79509
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80812380"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83375055"
 ---
 # <a name="rotate-secrets-in-azure-stack-hub"></a>Cambio de secretos en Azure Stack Hub
 
@@ -212,7 +212,7 @@ Para cambiar los secretos externos:
 
 5. Espere mientras cambian los secretos. El cambio de secretos externos tarda aproximadamente una hora.
 
-    Cuando se complete correctamente el cambio de secretos, la consola mostrará el mensaje **Overall action status: Success** (Estado global de la acción: correcto).
+    Cuando se complete correctamente la rotación de secretos, la consola mostrará el mensaje **ActionPlanInstanceID ... CurrentStatus: Completed**, seguido por **DONE** (Listo).
 
     > [!Note]
     > Si se produce un error en el cambio de secretos, siga las instrucciones del mensaje de error y vuelva a ejecutar **Start-SecretRotation** con el parámetro **-ReRun**.
@@ -258,7 +258,7 @@ Remove-PSSession -Session $PEPSession
 
 3. Espere mientras cambian los secretos.
 
-   Cuando se complete correctamente el cambio de secretos, la consola mostrará el mensaje **Overall action status: Success** (Estado global de la acción: correcto).
+   Cuando se complete correctamente la rotación de secretos, la consola mostrará el mensaje **ActionPlanInstanceID ... CurrentStatus: Completed**, seguido por **DONE** (Listo)
     > [!Note]
     > Si se produce un error en el cambio de secretos, siga las instrucciones del mensaje de error y vuelva a ejecutar **Start-SecretRotation** con los parámetros **-Internal** y **-ReRun**.  
 

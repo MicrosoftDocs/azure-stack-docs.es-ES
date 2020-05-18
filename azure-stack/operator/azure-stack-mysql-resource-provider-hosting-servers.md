@@ -7,12 +7,12 @@ ms.date: 11/06/2019
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/06/2019
-ms.openlocfilehash: b02ea9e241faea3aeaad76b85dbde9616e1edea5
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 90b20ddcc129b8077cf28fa1a1a758054795de60
+ms.sourcegitcommit: 4a8d7203fd06aeb2c3026d31ffec9d4fbd403613
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79295548"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83202501"
 ---
 # <a name="add-mysql-hosting-servers-in-azure-stack-hub"></a>Adición de servidores de hospedaje de MySQL en Azure Stack Hub
 
@@ -23,13 +23,31 @@ Puede hospedar una instancia del servidor host de MySQL en una máquina virtual 
 
 Para los servidores de hospedaje, se pueden usar las versiones de MySQL 5.6, 5.7 y 8.0. RP de MySQL no admite la autenticación caching_sha2_password. Los servidores MySQL 8.0 deben configurarse para usar mysql_native_password.
 
-## <a name="configure-external-access-to-the-mysql-hosting-server"></a>Configuración del acceso externo al servidor host de MySQL
+## <a name="prepare-a-mysql-hosting-server"></a>Preparación de un servidor de hospedaje de MySQL
 
-Para que el servidor de MySQL se pueda agregar como un host de servidor de MySQL de Azure Stack Hub, debe habilitarse el acceso externo. Tome BitNami MySQL, disponible en Marketplace de Azure Stack Hub, como ejemplo. Puede realizar los siguientes pasos para configurar el acceso externo.
+### <a name="create-a-network-security-group-rule"></a>Creación de una regla de grupo de seguridad de red
+
+De forma predeterminada, no hay ningún acceso público configurado para MySQL en la máquina virtual del host. Para que el proveedor de recursos de MySQL de Azure Stack Hub se conecte al servidor de MySQL y lo administre, es preciso crear una regla de grupo de seguridad de red (NSG) entrante.
+
+1. En el portal de administración, vaya al grupo de recursos que creó al implementar el servidor de MySQL y seleccione el grupo de seguridad de red (**default-subnet-sg**):
+
+   ![Selección del grupo de seguridad de red en el portal de administración de Azure Stack Hub](media/azure-stack-tutorial-mysqlrp/img6.png)
+
+2. Seleccione **Reglas de seguridad de entrada** y luego **Agregar**.
+
+    Escriba **3306** en el **Intervalo de puertos de destino** y, opcionalmente, proporcione una descripción en los campos **Nombre** y **Descripción**.
+
+   ![abierto](media/azure-stack-tutorial-mysqlrp/img7.png)
+
+3. Seleccione **Agregar** para cerrar el cuadro de diálogo de regla de seguridad de entrada.
+
+### <a name="configure-external-access-to-the-mysql-hosting-server"></a>Configuración del acceso externo al servidor host de MySQL
+
+Para que el servidor de MySQL se pueda agregar como un host de servidor de MySQL de Azure Stack Hub, debe habilitarse el acceso externo. Tome como ejemplo Bitnami MySQL, que está disponible en Marketplace de Azure Stack Hub. Puede realizar los siguientes pasos para configurar el acceso externo.
 
 1. Con un cliente de SSH (en este ejemplo se usa [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)), inicie sesión en el servidor de MySQL desde un equipo que pueda acceder a la dirección IP pública.
 
-    Use la dirección IP pública e inicie sesión en la máquina virtual con el nombre de usuario de **bitnami** y la contraseña de aplicación que creó anteriormente sin caracteres especiales.
+    Use la IP pública e inicie sesión en la máquina virtual con el nombre de usuario y la contraseña de aplicación que creó anteriormente sin caracteres especiales.
 
    ![LinuxLogin](media/azure-stack-tutorial-mysqlrp/bitnami1.png)
 
@@ -39,11 +57,24 @@ Para que el servidor de MySQL se pueda agregar como un host de servidor de MySQL
 
    ![Comprobación del servicio bitnami](media/azure-stack-tutorial-mysqlrp/bitnami2.png)
 
-3. Cree una cuenta de usuario de acceso remoto que utilizará el servidor de hospedaje de MySQL de Azure Stack Hub para conectarse a MySQL y, a continuación, cierre el cliente SSH.
+3. Si el servidor de hospedaje de MySQL tiene la versión 8.0 u otra posterior, necesita cambiar el método de autenticación a **mysql_native_password**. Si la versión de MySQL es inferior a la 8.0, este paso se puede omitir.
 
-    Ejecute los siguientes comandos para iniciar sesión en MySQL como usuario raíz, con la contraseña raíz creada anteriormente. Cree un nuevo usuario administrador y reemplace *\<username\>* y *\<password\>* por los valores que sean necesarios para su entorno. En este ejemplo, el usuario que se ha creado se llama **sqlsa** y se utiliza una contraseña segura:
+   Tome Bitnami MySQL como ejemplo, el archivo de configuración se encuentra en **/opt/bitnami/mysql/conf/my.cnf**. Establezca la propiedad **default_authentication_plugin** con el valor **mysql_native_password**.
+   ```
+   [mysqld]
+   default_authentication_plugin=mysql_native_password
+   ```
+   Reinicie el servicio Bitnami y asegúrese de que se ejecuta correctamente.
+   ```console
+   sudo service bitnami restart
+   sudo service bitnami status
+   ```
 
-   ```mysql
+4. Cree una cuenta de usuario de acceso remoto que utilizará el servidor de hospedaje de MySQL de Azure Stack Hub para conectarse a MySQL.
+
+    Ejecute los siguientes comandos para iniciar sesión en MySQL como usuario raíz, mediante la contraseña raíz que está registrada en *~/bitnami_credentials*. Cree un nuevo usuario administrador y reemplace *\<username\>* y *\<password\>* por los valores que sean necesarios para su entorno. En este ejemplo, el usuario que se ha creado se llama **sqlsa** y se utiliza una contraseña segura:
+
+   ```sql
    mysql -u root -p
    create user <username>@'%' identified by '<password>';
    grant all privileges on *.* to <username>@'%' with grant option;
@@ -52,9 +83,15 @@ Para que el servidor de MySQL se pueda agregar como un host de servidor de MySQL
 
    ![Creación de usuario administrador](media/azure-stack-tutorial-mysqlrp/bitnami3.png)
 
-4. Registre la nueva información de usuario de MySQL.
+5. Asegúrese de que el complemento del usuario de SQL creado, **sqlsa**, es **mysql_native_password** y salga del cliente SSH.
+   
+   ```sql
+   SELECT user,host,plugin from mysql.user;
+   ```
+6. Registre la nueva información de usuario de MySQL.
 
-Este nombre de usuario y contraseña se usarán mientras el operador de Azure Stack Hub crea un servidor host de MySQL mediante este servidor de MySQL.
+   Este nombre de usuario y contraseña se usarán mientras el operador de Azure Stack Hub crea un servidor de hospedaje de MySQL mediante este servidor de MySQL.
+
 
 ## <a name="connect-to-a-mysql-hosting-server"></a>Conexión a un servidor de hospedaje MySQL
 

@@ -3,16 +3,16 @@ title: Administración de actualizaciones
 description: Aprenda a administrar las actualizaciones en Azure Stack Hub
 author: IngridAtMicrosoft
 ms.topic: how-to
-ms.date: 03/04/2020
+ms.date: 05/13/2020
 ms.author: inhenkel
 ms.lastreviewed: 09/10/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 48bc8e2df857b2e1c352ffaa55ef900672d4f78b
-ms.sourcegitcommit: a3ae6dd8670f8fb24224880df7eee256ebbcc4ef
+ms.openlocfilehash: cdf2ba4d3dd226ea727efe05dc8be671ba172f8b
+ms.sourcegitcommit: ddcd083430ca905653d412dc2f7b813218d79509
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81772496"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83374607"
 ---
 # <a name="manage-updates-in-azure-stack-hub"></a>Administración de actualizaciones en Azure Stack Hub
 
@@ -49,7 +49,7 @@ Los tres tipos de actualizaciones se lanzan con la siguiente cadencia:
 
 Para seguir recibiendo soporte técnico, debe mantener su entorno de Azure Stack Hub con una versión de software de Azure Stack Hub compatible. Para más información, consulte la [Directiva de mantenimiento de Azure Stack Hub](azure-stack-update-servicing-policy.md).
 
-## <a name="where-to-get-notice-of-an-update"></a>Dónde recibirá el aviso de una actualización
+## <a name="how-to-know-an-update-is-available"></a>Aviso de actualizaciones disponibles
 
 El aviso de actualizaciones varía en función de un par de factores, como su conexión a Internet y el tipo de actualización.
 

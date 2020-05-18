@@ -1,22 +1,22 @@
 ---
 title: Novedades de Marketplace de Azure Stack Hub
-description: Cambios y actualizaciones en Marketplace de Azure Stack Hub.
+description: Consulte las novedades de Marketplace de Azure Stack Hub, incluidos los elementos nuevos, en desuso y actualizados de Marketplace.
 author: sethmanheim
 ms.topic: article
-ms.date: 04/27/2020
+ms.date: 05/13/2020
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 10/01/2019
-ms.openlocfilehash: 9852799c59e7ddf2c33a93f5af4feee69718d4ab
-ms.sourcegitcommit: e5b587216a137819444680ec619281c90f37bad9
+ms.openlocfilehash: 5d915c34d5752e2b496705a90215715121127409
+ms.sourcegitcommit: e83191c952a89d4ac52bf2606eb2b45075e6a8ba
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82166980"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83382495"
 ---
 # <a name="azure-stack-hub-marketplace-changes"></a>Cambios en Marketplace de Azure Stack Hub
 
-En este artículo se describen las recientes incorporaciones, actualizaciones, cambios y eliminaciones de [elementos de Marketplace de Azure Stack Hub](azure-stack-marketplace-azure-items.md) durante aproximadamente los tres últimos meses. La información de esta sección se actualiza de manera periódica, por lo que debe volver a comprobar con frecuencia los cambios.
+En este artículo se enumeran las más recientes incorporaciones, actualizaciones, cambios y eliminaciones de [elementos de Marketplace de Azure Stack Hub](azure-stack-marketplace-azure-items.md) de los últimos tres meses. La información de esta sección se actualiza de manera periódica, por lo que debe volver a comprobar con frecuencia los cambios.
 
 El artículo [Elementos de Azure Marketplace disponibles para Azure Stack Hub](azure-stack-marketplace-azure-items.md) siempre incluye la lista más actual de los elementos de Marketplace de Azure Stack Hub disponibles.
 
@@ -57,21 +57,158 @@ El artículo [Elementos de Azure Marketplace disponibles para Azure Stack Hub](a
 - Bitnami X2Engine Sales CRM
 - Bitnami SugarCRM
 - Bitnami Node.js High-Availability Cluster
+- Bitnami ProcessMaker Enterprise Edition
 - A10 vThunder: controlador de entrega de aplicaciones L4-L7, equilibrio de carga del servidor global (GSLB), SSL Insight
 - Administración de seguridad de Check Point vSEC
 
 ## <a name="updated-marketplace-items"></a>Elementos de Marketplace actualizados
 
+- 07/05/2020: Bitnami ActiveMQ: versión 5.15.2003260344
+- 07/05/2020: Bitnami Akeneo: versión 4-3.2.2004230142
+- 07/05/2020: Bitnami Alfresco Community: versión 201911.0.2004242008
+- 07/05/2020: BitNami Apache Solr: versión 8.5.2004201607
+- 07/05/2020: Bitnami JFrog Artifactory Open Source: versión 6.19.2005041054
+- 07/05/2020: Bitnami Cassandra: versión 3.11.2003302002
+- 07/05/2020: Bitnami CiviCRM: versión 5.24.2004230742
+- 07/05/2020: Bitnami CMS Made Simple: versión 2.2.2004220149
+- 07/05/2020: Bitnami concrete5: versión 8.5.2004220952
+- 07/05/2020: Bitnami HashiCorp Consul: versión 1.7.2003252309
+- 07/05/2020: Bitnami Coppermine: versión 1.6.2004220101
+- 07/05/2020: Bitnami CouchDB: versión 3.0.2004090905
+- 07/05/2020: Bitnami Diaspora: versión 0.7.2004220228
+- 07/05/2020: Bitnami Discourse: versión 2.4.2004222352
+- 07/05/2020: Bitnami Django: versión 2.2.2004220952
+- 07/05/2020: BitNami DokuWiki: versión 20180422.0.2004220151
+- 07/05/2020: Bitnami Dolibarr: versión 11.0.2004220907
+- 07/05/2020: Bitnami DreamFactory: versión 4.1.2004221304
+- 07/05/2020: Bitnami Drupal: versión 8.8.2004220309
+- 07/05/2020: Bitnami Elasticsearch: versión 7.6.2003312054
+- 07/05/2020: Bitnami ELK: versión 7.6.2003312108
+- 07/05/2020: Bitnami ERPNext: versión 12.7.2004231458
+- 07/05/2020: Bitnami EspoCRM: versión 5.8.2004220156
+- 07/05/2020: Bitnami etcd: versión 3.4.2004020147
+- 07/05/2020: Bitnami eXo Platform: versión 5.2.2004241913
+- 07/05/2020: Bitnami Fat Free CRM: versión 0.18.2004220211
+- 07/05/2020: Bitnami Ghost: versión 3.14.2005041054
+- 07/05/2020: Bitnami GitLab CE: versión 12.10.2004241755
+- 07/05/2020: Bitnami Grafana: versión 6.7.2004231501
+- 07/05/2020: Bitnami Apache Guacamole: versión 1.1.2003260344
+- 07/05/2020: Bitnami Hadoop: versión 3.2.2004242040
+- 07/05/2020: Bitnami HHVM: versión 3.30.2004220056
+- 07/05/2020: Bitnami Horde Groupware Webmail: versión 5.2.2004220952
+- 07/05/2020: Bitnami JasperReports: versión 7.5.2004220219
+- 07/05/2020: Bitnami Jenkins: versión 2.204.2003061428
+- 07/05/2020: Bitnami Joomla!: versión 3.9.2004220511
+- 07/05/2020: Bitnami JRuby: versión 9.2.2004241917
+- 07/05/2020: Bitnami Kafka: versión 2.5.2004152349
+- 07/05/2020: Bitnami Kong: versión 2.0.2004232326
+- 07/05/2020: Bitnami Kubernetes Sandbox: versión 1.18.2004090333
+- 07/05/2020: Bitnami LAMP: versión 7.3.2004241853
+- 07/05/2020: Bitnami LAPP: versión 7.3.2004241251
+- 07/05/2020: Bitnami Let's Chat: versión 0.4.2004221148
+- 07/05/2020: Bitnami Liferay: versión 7.3.2004231024
+- 07/05/2020: Bitnami LimeSurvey: versión 4.2.2005041206
+- 07/05/2020: Bitnami Live Helper Chat: versión 3.31.2004220209
+- 07/05/2020: Bitnami Magento: versión 2.3.2004220952
+- 07/05/2020: Bitnami Mahara: versión 10-19.10.2004220207
+- 07/05/2020: Bitnami Mantis: versión 2.24.2004220951
+- 07/05/2020: Bitnami MariaDB: versión 10.4.2003252212
+- 07/05/2020: Bitnami Mattermost Team Edition: versión 5.22.2005041054
+- 07/05/2020: Bitnami Mautic: versión 2.16.2004220323
+- 07/05/2020: Bitnami MEAN: versión 4.2.2004281603
+- 07/05/2020: Bitnami MediaWiki: versión 1.34.2004220952
+- 07/05/2020: Bitnami Memcached: versión 1.6.2004132340
+- 07/05/2020: Bitnami MODX: versión 2.7.2004220204
+- 07/05/2020: Bitnami MongoDB: versión 4.2.2004170936
+- 07/05/2020: Bitnami Moodle: versión 3.8.2004220952
+- 07/05/2020: Bitnami MyBB: versión 1.8.2004230613
+- 07/05/2020: Bitnami MySQL: versión 8.0.2003252232
+- 07/05/2020: Bitnami NATS: versión 2.1.2004010828
+- 07/05/2020: Bitnami Neo4j: versión 4.0.2003311444
+- 07/05/2020: Bitnami NGINX Open Source: versión 1.16.2004221209
+- 07/05/2020: Bitnami Noalyss: versión 7.3.2004220120
+- 07/05/2020: Bitnami Node.js: versión 12.16.2004281743
+- 07/05/2020: Bitnami Composr: versión 10.0.2004220137
+- 07/05/2020: Bitnami Odoo: versión 13.0.2004220418
+- 07/05/2020: Bitnami Open Atrium: versión 2.645.2004220952
+- 07/05/2020: Bitnami OpenCart: versión 3.0.2004230142
+- 07/05/2020: Bitnami Open edX: versión 576663.2.2004250743
+- 07/05/2020: Bitnami Openfire: versión 4.5.2004241829
+- 07/05/2020: Bitnami OpenProject: versión 10.3.2004220618
+- 07/05/2020: Bitnami OrangeHRM: versión 4.3.2004220223
+- 07/05/2020: Bitnami OroCRM: versión 4.0.2004220319
+- 07/05/2020: Bitnami Osclass: versión 3.9.2004221629
+- 07/05/2020: Bitnami ownCloud: versión 10.4.2004231341
+- 07/05/2020: Bitnami OXID eShop: versión 6.2.2004220516
+- 07/05/2020: Bitnami Parse Server: versión 4.2.2004091706
+- 07/05/2020: Bitnami Phabricator: versión 2020.7.2004220220
+- 07/05/2020: Bitnami phpBB: versión 3.3.2004220456
+- 07/05/2020: Bitnami phpList: versión 3.5.2004240140
+- 07/05/2020: Bitnami Pimcore: versión 6.6.2004220524
+- 07/05/2020: Bitnami Matomo: versión 3.13.2004221147
+- 07/05/2020: Bitnami Plone: versión 5.2.2004231024
+- 07/05/2020: Bitnami Pootle: versión 2.8.2004221629
+- 07/05/2020: Bitnami PostgreSQL: versión 12.2.2003252203
+- 07/05/2020: Bitnami PrestaShop: versión 1.7.2004220522
+- 07/05/2020: Bitnami ProcessMaker Community: versión 3.3.2004220909
+- 07/05/2020: Bitnami ProcessWire: versión 3.0.2004230142
+- 07/05/2020: Bitnami Publify: versión 9.1.2004220128
+- 07/05/2020: Bitnami RabbitMQ: versión 3.8.2003252248
+- 07/05/2020: Bitnami Re:dash: versión 8.0.2004231503
+- 07/05/2020: Bitnami Redis: versión 5.0.2004271447
+- 07/05/2020: Bitnami Redmine: versión 4.1.2004220530
+- 07/05/2020: Bitnami ReportServer Community: versión 3.1.2004220515
+- 07/05/2020: Bitnami ResourceSpace: versión 9.2.2004240738
+- 07/05/2020: Bitnami Review Board: versión 3.0.2004220506
+- 07/05/2020: Bitnami Roundcube: versión 1.4.2004220454
+- 07/05/2020: Bitnami Ruby: versión 2.5.2004220936
+- 07/05/2020: Bitnami SEO Panel: versión 4.3.2004220952
+- 07/05/2020: Bitnami Shopware: versión 6.1.2004231024
+- 07/05/2020: Bitnami SilverStripe: versión 4.5.2004220952
+- 07/05/2020: Bitnami Simple Machines Forum: versión 2.0.2004220454
+- 07/05/2020: Bitnami SonarQube: versión 4-8.2.2004250108
+- 07/05/2020: Bitnami Spree: versión 4.1.2004220518
+- 07/05/2020: Bitnami Subversion: versión 1.13.2004220556
+- 07/05/2020: Bitnami SuiteCRM: versión 7.11.2004220532
+- 07/05/2020: Bitnami TensorFlow Serving: versión 2.1.2004131848
+- 07/05/2020: Bitnami TestLink: versión 1.9.2004220510
+- 07/05/2020: Bitnami Tiki Wiki CMS Groupware: versión 21.0.2004221629
+- 07/05/2020: Bitnami Tiny Tiny RSS: versión 202004.0.2004220952
+- 07/05/2020: Bitnami Tomcat: versión 8.5.2004091906
+- 07/05/2020: Bitnami Trac: versión 1.4.2004220504
+- 07/05/2020: Bitnami TYPO3: versión 9.5.2004221628
+- 07/05/2020: Bitnami Weblate: versión 4.0.2004231024
+- 07/05/2020: Bitnami WildFly: versión 19.0.2004011057
+- 07/05/2020: Bitnami WordPress: versión 5.4.2004221628
+- 07/05/2020: Bitnami WordPress Multisite: versión 5.4.2004221629
+- 07/05/2020: Bitnami WordPress con NGINX y SSL: versión 5.4.2004221147
+- 07/05/2020: Bitnami XOOPS: versión 2.5.2004220506
+- 07/05/2020: Bitnami ZooKeeper: versión 3.6.2004302354
+- 07/05/2020: BitNami Zurmo: versión 3.2.2004220512
+- 20/04/2020: Windows Server 2019 Datacenter en modalidad "traiga su propia licencia", versión 2019.127.20200213
+- 20/04/2020: Windows Server 2019 Datacenter en modalidad "pago por uso", versión 2019.127.20200213
+- 20/04/2020: Windows Server 2019 Datacenter Server Core en modalidad "traiga su propia licencia", versión 2019.127.20200204
+- 20/04/2020: Windows Server 2019 Datacenter Server Core en modalidad "pago por uso", versión 2019.127.20200204
+- 20/04/2020: Windows Server 2019 Datacenter con Containers en modo "traiga su propia licencia", versión 2019.127.20200204
+- 20/04/2020: Windows Server 2019 Datacenter con Containers en modo "pago por uso", versión 2019.127.20200204
+- 20/04/2020: Windows Server 2019 Datacenter Core con Containers en modo "traiga su propia licencia", versión 2019.127.20200204
+- 20/04/2020: Windows Server 2019 Datacenter Core con Containers en modo "pago por uso", versión 2019.127.20200204
+- 20/04/2020: Windows Server 2016 Datacenter en modalidad "traiga su propia licencia", versión 2016.127.20200131
+- 20/04/2020: Windows Server 2016 Datacenter en modalidad de pago por uso, versión 2016.127.20200131
+- 20/04/2020: Windows Server 2016 Datacenter Server Core en modalidad "traiga su propia licencia", versión 2016.127.20200131
+- 20/04/2020: Windows Server 2016 Datacenter Server Core en modalidad de pago por uso, versión 2016.127.20200131
+- 20/04/2020: Windows Server 2016 Datacenter con Containers en modo "traiga su propia licencia", versión 2016.127.20200131
+- 20/04/2020: Windows Server 2016 Datacenter con Containers en modo de pago por uso, versión 2016.127.20200131
 - 20/04/2020: Windows Server 2012 Datacenter en modalidad "traiga su propia licencia", versión 3.127.20190521
 - 20/04/2020: Windows Server 2012 R2 Datacenter, modalidad de pago por uso, versión 4.127.20200205
 - 20/04/2020: Windows Server 2012 R2 Datacenter, modalidad "traiga su propia licencia", versión 4.127.20200205
 - 20/04/2020: Windows Server 2012 Datacenter en modalidad de pago por uso, versión 3.127.20200205
-- 20/04/2020: Windows Server 2016 Datacenter en modalidad "traiga su propia licencia", versión 2020.01
-- 20/04/2020: Windows Server 2016 Datacenter Server Core en modalidad de pago por uso, versión 2020.01
-- 20/04/2020: Windows Server 2016 Datacenter Server Core en modalidad "traiga su propia licencia", versión 2020.01
-- 20/04/2020: Windows Server 2016 Datacenter con Containers en modo de pago por uso, versión 2020.01
-- 20/04/2020: Windows Server 2016 Datacenter con Containers en modo "traiga su propia licencia", versión 2020.01
-- 20/04/2020: Windows Server 2016 Datacenter en modalidad de pago por uso, versión 2020.01
+- 20/04/2020: Windows Server 2012 R2 Datacenter, modalidad "traiga su propia licencia", versión 4.127.20200205
+- 20/04/2020: Windows Server 2012 R2 Datacenter, modalidad de pago por uso, versión 4.127.20200205
+- 20/04/2020: Windows Server 2012 Datacenter en modalidad "traiga su propia licencia", versión 3.127.20200205
+- 20/04/2020: Windows Server 2012 Datacenter en modalidad de pago por uso, versión 3.127.20200205
+- 20/04/2020: Windows Server 2008 R2 SP1 en modalidad "traiga su propia licencia", versión 2.127.20200206
+- 20/04/2020: Windows Server 2008 R2 SP1 en modalidad "pago por uso", versión 2.127.20200206
 - 17/04/2020: Bitnami AbanteCart: versión 1.2.2002091007
 - 17/04/2020: Bitnami ActiveMQ: versión 5.15.2003260344
 - 17/04/2020: Bitnami Akeneo: versión 3.2.2004030743
@@ -224,17 +361,17 @@ El artículo [Elementos de Azure Marketplace disponibles para Azure Stack Hub](a
 - 30/07/2019: SQL Server 2017 (ediciones Express, Developer, Standard y Enterprise) versión 14.0.20190410
 - 30/07/2019: SQL Server 2016 SP1 (ediciones Express, Developer, Standard y Enterprise) versión 13.2.20190410
 - 30/07/2019: SQL Server 2016 SP2 (ediciones Express, Developer, Standard y Enterprise) versión 13.2.20190410
-- 16/07/2019:   Windows Server 2016 Datacenter Server Core en modalidad "traiga su propia licencia", versión 2016.127.20190522
-- 16/07/2019:   Windows Server 2016 Datacenter Server Core en modalidad de pago por uso, versión 2016.127.20190522
-- 16/07/2019:   Windows Server 2016 Datacenter con Containers en modo "traiga su propia licencia", versión 2016.127.20190522
-- 16/07/2019:   Windows Server 2016 Datacenter con Containers en modo de pago por uso, versión 2016.127.20190522
-- 16/07/2019:   Windows Server 2016 Datacenter en modalidad "traiga su propia licencia", versión 2016.127.20190522
-- 16/07/2019:   Windows Server 2016 Datacenter en modalidad de pago por uso, versión 2016.127.20190522
-- 16/07/2019:   Windows Server 2008 R2, modalidad "traiga su propia licencia", versión 2.127.20190522
-- 16/07/2019:   Windows Server 2008 R2, modalidad de pago por uso, versión 2.127.20190522
-- 16/07/2019:   Windows Server 2012 R2 Datacenter, modalidad "traiga su propia licencia", versión 4.127.20190522
-- 16/07/2019:   Windows Server 2012 R2 Datacenter, modalidad de pago por uso, versión 4.127.20190522
-- 11/07/2019:   Thales CipherTrust Cloud Key Manager, versión 1.0.7
+- 16/07/2019: Windows Server 2016 Datacenter Server Core en modalidad "traiga su propia licencia", versión 2016.127.20190522
+- 16/07/2019: Windows Server 2016 Datacenter Server Core en modalidad de pago por uso, versión 2016.127.20190522
+- 16/07/2019: Windows Server 2016 Datacenter con Containers en modo "traiga su propia licencia", versión 2016.127.20190522
+- 16/07/2019: Windows Server 2016 Datacenter con Containers en modo de pago por uso, versión 2016.127.20190522
+- 16/07/2019: Windows Server 2016 Datacenter en modalidad "traiga su propia licencia", versión 2016.127.20190522
+- 16/07/2019: Windows Server 2016 Datacenter en modalidad de pago por uso, versión 2016.127.20190522
+- 16/07/2019: Windows Server 2008 R2, modalidad "traiga su propia licencia", versión 2.127.20190522
+- 16/07/2019: Windows Server 2008 R2, modalidad de pago por uso, versión 2.127.20190522
+- 16/07/2019: Windows Server 2012 R2 Datacenter, modalidad "traiga su propia licencia", versión 4.127.20190522
+- 16/07/2019: Windows Server 2012 R2 Datacenter, modalidad de pago por uso, versión 4.127.20190522
+- 11/07/2019: Thales CipherTrust Cloud Key Manager, versión 1.0.7
 
 ## <a name="next-steps"></a>Pasos siguientes
 

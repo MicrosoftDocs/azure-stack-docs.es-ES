@@ -9,12 +9,12 @@ ms.author: inhenkel
 ms.reviewer: avishwan
 ms.lastreviewed: 03/04/2019
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: e8a8d2f156d2608db01a652225540a73722f16fc
-ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
+ms.openlocfilehash: cda4a78a507f94d5e40f723cb5489a9e79990d50
+ms.sourcegitcommit: 510bb047b0a78fcc29ac611a2a7094fc285249a1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82848224"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988298"
 ---
 # <a name="register-azure-stack-hub-with-azure"></a>Registro de Azure Stack Hub en Azure
 
@@ -359,10 +359,10 @@ El registro se tiene que actualizar o renovar en las siguientes circunstancias:
 
 ### <a name="change-the-subscription-you-use"></a>Cambio de la suscripción que se usa
 
-Si desea cambiar la suscripción que utiliza, primero debe ejecutar el cmdlet **Remove-AzsRegistration** y, después, asegurarse de que inicia sesión en el contexto de Azure PowerShell correcto. A continuación, ejecute **Set-AzsRegistration** con los parámetros modificados, incluido `<billing model>`:
+Si desea cambiar la suscripción que utiliza, primero debe ejecutar el cmdlet **Remove-AzsRegistration** y, después, asegurarse de que inicia sesión en el contexto de Azure PowerShell correcto. Luego, ejecute **Set-AzsRegistration** con los parámetros modificados, incluido `<billing model>`. Durante el proceso de ejecución de **Remove-AzsRegistration**, es preciso haber iniciado sesión en la suscripción usada durante el registro y usar los valores de los parámetros `RegistrationName` y `ResourceGroupName`, como se muestra en el portal de administración [Buscar detalles de registro actuales](#verify-azure-stack-hub-registration):
 
   ```powershell  
-  Remove-AzsRegistration -PrivilegedEndpointCredential $YourCloudAdminCredential -PrivilegedEndpoint $YourPrivilegedEndpoint -RegistrationName $RegistrationName
+  Remove-AzsRegistration -PrivilegedEndpointCredential $YourCloudAdminCredential -PrivilegedEndpoint $YourPrivilegedEndpoint -RegistrationName '<Registration name from portal>' -ResourceGroupName '<Registration resource group from portal>'
   Set-AzureRmContext -SubscriptionId $NewSubscriptionId
   Set-AzsRegistration -PrivilegedEndpointCredential $YourCloudAdminCredential -PrivilegedEndpoint $YourPrivilegedEndpoint -BillingModel <billing model> -RegistrationName $RegistrationName
   ```
@@ -436,6 +436,7 @@ Ejecute los siguientes cmdlets de PowerShell:
       -PrivilegedEndpoint <PrivilegedEndPoint computer name> `
       -BillingModel Capacity
       -RegistrationName $RegistrationName
+      -UsageReportingEnabled:$false
    ```
 ::: zone-end
 ::: zone pivot="state-disconnected"
