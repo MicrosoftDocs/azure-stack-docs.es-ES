@@ -8,12 +8,12 @@ ms.date: 10/07/2019
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/23/2019
-ms.openlocfilehash: 0c61abfab5615d265377341f6fb96fe5b4a18b29
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: bf9ed5ced7bfde80219f0d9bddcf285e76183361
+ms.sourcegitcommit: 4a8d7203fd06aeb2c3026d31ffec9d4fbd403613
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81478832"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83202418"
 ---
 # <a name="create-highly-available-sql-databases-with-azure-stack-hub"></a>Creación de bases de datos SQL de alta disponibilidad con Azure Stack Hub
 
@@ -95,13 +95,18 @@ Una vez que se ha implementado correctamente la plantilla y se ha configurado el
 
 Cuando se crea un grupo de disponibilidad con propagación automática, SQL Server crea automáticamente las réplicas secundarias para cada base de datos en el grupo sin que se requiera más intervención manual. Esta medida garantiza una alta disponibilidad de las bases de datos de AlwaysOn.
 
-Use estos comandos SQL para configurar la propagación automática para el grupo de disponibilidad AlwaysOn. Sustituya `<InstanceName>` por el nombre de la instancia de SQL Server principal y `<availability_group_name>` por el nombre del grupo de disponibilidad AlwaysOn según sea necesario.
+Use estos comandos SQL para configurar la propagación automática para el grupo de disponibilidad AlwaysOn. Reemplace `<PrimaryInstanceName>` por el nombre de la instancia de SQL Server principal, `<SecondaryInstanceName>` por el nombre de la instancia de SQL Server secundaria y `<availability_group_name>` por el nombre del grupo de disponibilidad AlwaysOn cuando sea necesario.
 
 En la instancia de SQL principal:
 
   ```sql
   ALTER AVAILABILITY GROUP [<availability_group_name>]
-      MODIFY REPLICA ON '<InstanceName>'
+      MODIFY REPLICA ON '<PrimaryInstanceName>'
+      WITH (SEEDING_MODE = AUTOMATIC)
+  GO
+  
+  ALTER AVAILABILITY GROUP [<availability_group_name>]
+      MODIFY REPLICA ON '<SecondaryInstanceName>'
       WITH (SEEDING_MODE = AUTOMATIC)
   GO
   ```
