@@ -50,8 +50,8 @@
       href: /azure/active-directory/
 - name: Recursos
   items:
-    - name: Guía básica de Azure Stack Hub
-      href: 'https://azure.microsoft.com/roadmap/?tag=azure-stack'
+    - name: Hoja de ruta de Azure Stack Hub
+      href: 'https://azure.microsoft.com/updates/?query=azure%20stack%20hub'
     - name: Foro de MSDN de Azure Stack Hub
       href: 'https://social.msdn.microsoft.com/Forums/home?forum=AzureStack'
     - name: Comentarios sobre la documentación de Azure Stack Hub

@@ -59,8 +59,8 @@
       href: /azure-stack/user/
 - name: Recursos
   items:
-    - name: Mapa de ruta de Azure Stack
-      href: 'https://azure.microsoft.com/roadmap/?tag=azure-stack'
+    - name: Hoja de ruta de Azure Stack
+      href: 'https://azure.microsoft.com/updates/?query=azure%20stack%20hub'
     - name: Foro de MSDN de Azure Stack
       href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStack'
     - name: Comentarios sobre la documentación de Azure Stack
