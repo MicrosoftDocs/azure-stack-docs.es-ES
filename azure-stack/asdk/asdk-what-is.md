@@ -7,12 +7,12 @@ ms.date: 11/27/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 11/27/2019
-ms.openlocfilehash: a37547a7c2e5a737685e370307a1ae8f37d5d363
-ms.sourcegitcommit: 4138a2a15f78e7db38b3a29acc963a71937146fd
+ms.openlocfilehash: 6e58e60e0863e2ef40abc95689430f8e378a4fd4
+ms.sourcegitcommit: e75218d2e04f41620cc09caf04473ad4c7289253
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "79295638"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83708200"
 ---
 # <a name="what-is-the-azure-stack-development-kit-asdk"></a>¿Qué es el Kit de desarrollo de Azure Stack?
 El tamaño de los [sistemas integrados de Microsoft Azure Stack Hub](../operator/azure-stack-overview.md) va de los 4 a los 16 nodos y recibe soporte técnico conjunto de un asociado de hardware y Microsoft. Use los sistemas integrados de Azure Stack Hub para habilitar nuevos escenarios para las cargas de trabajo de producción. Si es un operador de Azure Stack Hub que administra la infraestructura de sistemas integrados y ofrece servicios, consulte la [documentación para operadores](/azure-stack/operator).
@@ -67,7 +67,7 @@ Actualmente, se admiten los siguientes servicios de plataforma como servicio (Pa
 > Estos servicios requieren una configuración adicional para que pueda ponerlos a disposición de los usuarios y no están disponibles de forma predeterminada al instalar el ASDK.
 
 ## <a name="service-roadmap"></a>Mapa de ruta de los servicios
-Azure Stack Hub continuará incorporando compatibilidad con otros servicios de Azure. Para más información acerca de las próximas novedades de Azure Stack Hub, consulte el [mapa de ruta de Azure Stack](https://azure.microsoft.com/roadmap/?tag=azure-stack). 
+Azure Stack Hub continuará incorporando compatibilidad con otros servicios de Azure. Para más información acerca de las próximas novedades de Azure Stack Hub, consulte el [mapa de ruta de Azure Stack](https://azure.microsoft.com/updates/?query=azure%20stack%20hub).
 
 
 ## <a name="next-steps"></a>Pasos siguientes
