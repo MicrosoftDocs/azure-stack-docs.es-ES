@@ -18,6 +18,8 @@
       href: manage/delete-volumes.md
     - name: Sustitución de unidades
       href: manage/replace-drives.md
+    - name: Administración de clústeres
+      href: manage/cluster.md
     - name: Uso de Azure Site Recovery
       href: manage/azure-site-recovery.md
     - name: Supervisión con Azure Monitor

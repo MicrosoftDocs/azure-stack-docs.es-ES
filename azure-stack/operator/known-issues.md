@@ -7,12 +7,12 @@ ms.date: 05/05/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 03/18/2020
-ms.openlocfilehash: 94b90f8a3a648a466ac221a76099a71964e00f9a
-ms.sourcegitcommit: 4a8d7203fd06aeb2c3026d31ffec9d4fbd403613
+ms.openlocfilehash: 31ef3ee64eb98b34160e95fee0a228fc32cee589
+ms.sourcegitcommit: 7c10a45a8de0c5c7649e5329ca5b69a0791e37b5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83202437"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83721885"
 ---
 # <a name="azure-stack-hub-known-issues"></a>Problemas conocidos de Azure Stack Hub
 
@@ -264,12 +264,6 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 - Causa: en el portal de usuarios, cuando se selecciona un disco administrado con el tipo de disco SSD Premium, la lista desplegable muestra **Disco del SO**. La información sobre herramientas situada junto a esa opción indica **Puede que algunos tamaños del disco del SO estén disponibles gratis en la cuenta gratuita de Azure**; sin embargo, esto no es válido para Azure Stack Hub. Además, la lista incluye **Cuenta gratuita válida**, opción que tampoco es válida para Azure Stack Hub.
 - Repetición: Comunes
 
-### <a name="vpn-troubleshoot-and-metrics"></a>Solución de problemas y métricas de VPN
-
-- Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: en el portal de usuarios, aparecen la característica **Solución de problemas de VPN** y **Métricas** en un recurso de puerta de enlace de VPN, pero esto no se admite en Azure Stack Hub.
-- Repetición: Comunes
-
 ### <a name="delete-a-storage-container"></a>Eliminación de un contenedor de almacenamiento
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
@@ -282,12 +276,6 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: en el portal de usuarios, cuando navega a **Máquinas virtuales** e intenta actualizar con el botón de la parte superior, los estados no se actualizan correctamente.
 - Corrección: el estado se actualiza automáticamente cada 5 minutos, con independencia de si se hace clic en el botón de actualización o no. Espere 5 minutos y compruebe el estado.
-- Repetición: Comunes
-
-### <a name="virtual-network-gateway"></a>Puerta de enlace de red virtual
-
-- Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: en el portal de usuarios, cuando se crea una tabla de rutas, aparece **Puerta de enlace de red virtual** como una de las opciones de tipo de próximo salto; sin embargo, esta opción no se admite en Azure Stack Hub.
 - Repetición: Comunes
 
 ### <a name="storage-account-options"></a>Opciones de la cuenta de almacenamiento
@@ -364,6 +352,12 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 
 ### <a name="virtual-network-gateway"></a>Puerta de enlace de red virtual
 
+#### <a name="next-hop-type"></a>Tipo de próximo salto
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: en el portal de usuarios, cuando se crea una tabla de rutas, aparece **Puerta de enlace de red virtual** como una de las opciones de tipo de próximo salto; sin embargo, esta opción no se admite en Azure Stack Hub.
+- Repetición: Comunes
+
 #### <a name="alerts"></a>Alertas
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
@@ -380,6 +374,10 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: en el portal de usuarios, la hoja **Conexiones** muestra una característica denominada **Solucionador de problemas de VPN**. Esta característica no se admite actualmente en Azure Stack Hub.
+- Repetición: Comunes
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: en el portal de usuarios, aparecen la característica **Solución de problemas de VPN** y **Métricas** en un recurso de puerta de enlace de VPN, pero esto no se admite en Azure Stack Hub.
 - Repetición: Comunes
 
 #### <a name="documentation"></a>Documentación
@@ -525,6 +523,12 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 - Repetición: Comunes
 
 ### <a name="virtual-network-gateway"></a>Puerta de enlace de red virtual
+
+#### <a name="next-hop-type"></a>Tipo de próximo salto
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: en el portal de usuarios, cuando se crea una tabla de rutas, aparece **Puerta de enlace de red virtual** como una de las opciones de tipo de próximo salto; sin embargo, esta opción no se admite en Azure Stack Hub.
+- Repetición: Comunes
 
 #### <a name="alerts"></a>Alertas
 
@@ -689,6 +693,12 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 - Repetición: Comunes
 
 ### <a name="virtual-network-gateway"></a>Puerta de enlace de red virtual
+
+#### <a name="next-hop-type"></a>Tipo de próximo salto
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: en el portal de usuarios, cuando se crea una tabla de rutas, aparece **Puerta de enlace de red virtual** como una de las opciones de tipo de próximo salto; sin embargo, esta opción no se admite en Azure Stack Hub.
+- Repetición: Comunes
 
 #### <a name="alerts"></a>Alertas
 
