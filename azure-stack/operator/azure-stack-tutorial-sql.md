@@ -8,12 +8,12 @@ ms.date: 10/07/2019
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/23/2019
-ms.openlocfilehash: bf9ed5ced7bfde80219f0d9bddcf285e76183361
-ms.sourcegitcommit: 4a8d7203fd06aeb2c3026d31ffec9d4fbd403613
+ms.openlocfilehash: be747a57b61b2d06a667bd577dd135c6220fc968
+ms.sourcegitcommit: e2ed259c0274abe930df1c7716c3f4c9f3a7b167
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83202418"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83403865"
 ---
 # <a name="create-highly-available-sql-databases-with-azure-stack-hub"></a>Creación de bases de datos SQL de alta disponibilidad con Azure Stack Hub
 
@@ -35,8 +35,8 @@ Antes de comenzar, asegúrese de que el [proveedor de recursos de servidor de SQ
 > [!IMPORTANT]
 > Todos los elementos siguientes son necesarios para utilizar la plantilla de inicio rápido de Azure Stack Hub.
 
-- Imagen de Marketplace de [Windows Server 2016 Datacenter](https://azuremarketplace.microsoft.com/marketplace/apps/MicrosoftWindowsServer.WindowsServer).
-- SQL Server 2016 SP1 o SP2 (Developer, Standard o Enterprise) en la imagen del servidor de Windows Server 2016. En este artículo se usa la imagen de Marketplace [SQL Server 2016 SP2 Enterprise en Windows Server 2016](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoftsqlserver.sql2016sp2-ws2016).
+- Imagen de Marketplace de Windows Server 2016 Datacenter.
+- SQL Server 2016 SP1 o SP2 (Enterprise o Developer) en la imagen del servidor de Windows Server 2016. En este artículo se usa la imagen de Marketplace SQL Server 2016 SP2 Enterprise en Windows Server 2016.
 - [Extensión IaaS de SQL Server](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-agent-extension), versión 1.3.20180 o superior. La extensión IaaS de SQL instala los componentes que son necesarios para los elementos de Marketplace de SQL Server para todas las versiones de Windows. Permite que los parámetros específicos de SQL se configuren en máquinas virtuales de SQL. Si la extensión no está instalada en el Marketplace local, el aprovisionamiento de SQL generará un error.
 - [Extensión de script personalizada para Windows](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.CustomScriptExtension), versión 1.9.1 o superior. La extensión de script personalizada es una herramienta que puede usarse para iniciar automáticamente las tareas de personalización de la máquina virtual posteriores a la implementación.
 - [Extensión DSC (configuración de estado deseado) de PowerShell](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.DSC-arm), versión 2.76.0.0 o superior. DSC es una plataforma de administración de Windows PowerShell que permite implementar y administrar datos de configuración de servicios de software. La plataforma también administra el entorno en el que se ejecutan estos servicios.
@@ -45,7 +45,7 @@ Para más información acerca de cómo agregar elementos al Marketplace de Azure
 
 ## <a name="create-a-sql-server-alwayson-availability-group"></a>Creación de un grupo de disponibilidad AlwaysOn de SQL Server
 
-Siga los pasos de esta sección para implementar el grupo de disponibilidad AlwaysOn de SQL Server mediante la [plantilla de inicio rápido de Azure Stack Hub sql-2016-alwayson](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/sql-2016-alwayson). Esta plantilla implementa dos instancias de SQL Server Enterprise, Standard o Developer en un grupo de disponibilidad AlwaysOn. Crea estos recursos:
+Siga los pasos de esta sección para implementar el grupo de disponibilidad AlwaysOn de SQL Server mediante la [plantilla de inicio rápido de Azure Stack Hub sql-2016-alwayson](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/sql-2016-alwayson). Esta plantilla implementa dos instancias de SQL Server Enterprise o Developer en un grupo de disponibilidad AlwaysOn. Crea estos recursos:
 
 - Un grupo de seguridad de red.
 - Una red virtual.
@@ -53,7 +53,7 @@ Siga los pasos de esta sección para implementar el grupo de disponibilidad Alwa
 - Cuatro direcciones IP públicas (una para AD, dos para cada máquina virtual de SQL y otra para el equilibrador de carga público enlazado al agente de escucha de SQL AlwaysOn).
 - Un equilibrador de carga externo para las máquinas virtuales de SQL con una dirección IP pública enlazada al agente de escucha AlwaysOn de SQL.
 - Una máquina virtual (Windows Server 2016) configurada como controlador de dominio para un nuevo bosque con un único dominio.
-- Dos máquinas virtuales (Windows Server 2016) configuradas con SQL Server 2016 SP1 o SP2 Enterprise, Standard o Developer Edition y en clúster. Deben ser imágenes de Marketplace.
+- Dos máquinas virtuales (Windows Server 2016) configuradas con SQL Server 2016 SP1 o SP2 Enterprise o Developer Edition y en clúster. Deben ser imágenes de Marketplace.
 - Una máquina virtual (Windows Server 2016) configurada como el testigo de recurso compartido de archivos para el clúster.
 - Un conjunto que disponibilidad que contiene las máquinas virtuales testigo del recurso compartido de archivos y SQL.
 
@@ -163,7 +163,7 @@ Una vez que el grupo de disponibilidad AlwaysOn de SQL se ha creado, configurado
 1. 
    [!INCLUDE [azs-user-portal](../includes/azs-user-portal.md)]
 
-2. Seleccione **\+** **Crear un recurso** > **Datos y almacenamiento** y, luego, **SQL Database**.
+2. Seleccione **\+** **Crear un recurso** > **Datos \+ y almacenamiento** y, luego, **SQL Database**.
 
     Proporcione la información de la propiedad de base de datos necesaria. Esta información incluye el nombre, la intercalación, el tamaño máximo y la suscripción, así como el grupo de recursos y la ubicación que se usará para la implementación.
 

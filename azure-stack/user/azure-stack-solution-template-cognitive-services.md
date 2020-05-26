@@ -3,25 +3,41 @@ title: Implementación de Azure Cognitive Services en Azure Stack Hub
 description: Obtenga información sobre cómo implementar Azure Cognitive Services en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 04/20/2020
+ms.date: 05/13/2020
 ms.author: mabrigg
 ms.reviewer: guanghu
-ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: ff5dd1ccb8193e9dae3d97401793773e3e28fb4d
-ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
+ms.lastreviewed: 05/13/2020
+ms.openlocfilehash: 857d934a9cb55052a5e27d15943f05f032d05d6c
+ms.sourcegitcommit: d5d89bbe8a3310acaff29a7a0cd7ac4f2cf5bfe7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81660189"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83554988"
 ---
 # <a name="deploy-azure-cognitive-services-to-azure-stack-hub"></a>Implementación de Azure Cognitive Services en Azure Stack Hub
 
-> [!Note]  
-> Azure Cognitive Services en Azure Stack Hub está en versión preliminar.
-
-Puede usar Azure Cognitive Services con compatibilidad con contenedores en Azure Stack Hub. La compatibilidad con contenedores en Azure Cognitive Services le permite usar las mismas API enriquecidas que están disponibles en Azure. El uso de contenedores ofrece flexibilidad en cuanto a dónde implementar y hospedar los servicios que se proporcionan en [contenedores de Docker](https://www.docker.com/what-container). La compatibilidad con contenedores está disponible actualmente en versión preliminar para un subconjunto de Azure Cognitive Services, incluidas las partes de [Computer Vision](https://docs.microsoft.com/azure/cognitive-services/computer-vision/home), [Face](https://docs.microsoft.com/azure/cognitive-services/face/overview), [Text Analytics](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview) y [Language Understanding](https://docs.microsoft.com/azure/cognitive-services/luis/luis-container-howto) (LUIS).
+Puede usar Azure Cognitive Services con compatibilidad con contenedores en Azure Stack Hub. La compatibilidad con contenedores en Azure Cognitive Services le permite usar las mismas API enriquecidas que están disponibles en Azure. El uso de contenedores ofrece flexibilidad en cuanto a dónde implementar y hospedar los servicios que se proporcionan en [contenedores de Docker](https://www.docker.com/what-container). 
 
 La creación de contenedores es un método de distribución de software en el que una aplicación o servicio, incluidas sus dependencias y configuración, se empaquetan como una imagen de contenedor. La imagen puede implementarse en un host de contenedor con pocas o ningunas modificaciones. Cada contenedor está aislado de otros contenedores y del sistema operativo subyacente. El propio sistema solo tiene los componentes necesarios para ejecutar la imagen. Un host de contenedor tiene una superficie menor que una máquina virtual. También puede crear contenedores a partir de imágenes para las tareas a corto plazo, ya que se pueden quitar cuando dejen de necesitarse.
+
+La compatibilidad con contenedores está disponible actualmente para un subconjunto de servicios de Azure Cognitive Services:
+
+- Language Understanding
+- Text Analytics (Sentiment 3.0)
+
+> [!IMPORTANT]
+> Un subconjunto de Azure Cognitive Services para Azure Stack Hub se encuentra actualmente en versión preliminar pública.
+> Se ofrece la versión preliminar sin Acuerdo de Nivel de Servicio y no se recomienda para cargas de trabajo de producción. Es posible que algunas características no sean compatibles o que tengan sus funcionalidades limitadas. Para más información, consulte [Términos de uso complementarios de las Versiones Preliminares de Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
+La compatibilidad con contenedores se encuentra actualmente en versión preliminar para un subconjunto de Azure Cognitive Services:
+
+- Lectura: reconocimiento óptico de caracteres \[(OCR)
+- Extracción de la frase clave
+- Detección de idiomas
+- Anomaly Detector
+- Form Recognizer
+- Voz a texto (personalizada, estándar)
+- Texto a voz (personalizada, estándar)
 
 ## <a name="use-containers-with-cognitive-services-on-azure-stack-hub"></a>Uso de contenedores con Azure Cognitive Services en Azure Stack Hub
 
@@ -141,12 +157,37 @@ Detalles sobre los campos de claves:
 Use el comando siguiente para implementar los contenedores de Cognitive Services:
 
 ```bash  
-    Kubectl apply -f <yamlFineName>
+    Kubectl apply -f <yamlFileName>
 ```
 Use el comando siguiente para supervisar cómo se implementa: 
 ```bash  
     Kubectl get pod - watch
 ```
+
+## <a name="configure-http-proxy-settings"></a>Configuración de los valores del proxy HTTP
+
+Los nodos de trabajo necesitan un proxy y el protocolo SSL. Para configurar un proxy HTTP para realizar solicitudes de salida, use estos dos argumentos:
+
+- **HTTP_PROXY**: el proxy que se va a utilizar, por ejemplo, `https://proxy:8888`
+- **HTTP_PROXY_CREDS**: las credenciales necesarias para autenticarse en el proxy, por ejemplo, `username:password`.
+
+### <a name="set-up-the-proxy"></a>Configuración del proxy
+
+1. Agregue un archivo `http-proxy.conf` a ambas ubicaciones:
+    - `/etc/system/system/docker.service.d/`
+    - `/cat/etc/environment/`
+
+2. Compruebe que puede iniciar sesión en el contenedor con las credenciales proporcionadas por el equipo de Cognitive Services y realizar una `docker pull` en el siguiente contenedor: 
+
+    `docker pull containerpreview.azurecr.io/microsoft/cognitive-services-read:latest`
+
+    Ejecutar:
+
+    `docker run hello-world pull`
+
+### <a name="ssl-interception-setup"></a>Configuración de la interceptación de SSL
+
+1. Agregue el certificado de **intercepción de https** a `/usr/local/share/ca-certificates` y actualice el almacén con `update-ca-certificates`. 
 
 ## <a name="test-the-cognitive-service"></a>Prueba de la instancia de Cognitive Services
 

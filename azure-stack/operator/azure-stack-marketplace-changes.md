@@ -3,16 +3,16 @@ title: Novedades de Marketplace de Azure Stack Hub
 description: Consulte las novedades de Marketplace de Azure Stack Hub, incluidos los elementos nuevos, en desuso y actualizados de Marketplace.
 author: sethmanheim
 ms.topic: article
-ms.date: 05/13/2020
+ms.date: 05/18/2020
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 10/01/2019
-ms.openlocfilehash: 5d915c34d5752e2b496705a90215715121127409
-ms.sourcegitcommit: e83191c952a89d4ac52bf2606eb2b45075e6a8ba
+ms.openlocfilehash: 952c77069126288bfe41f9775140aea44071580a
+ms.sourcegitcommit: 458ffe9638bd358e6b5d9e79145b4c1b70c3bacd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83382495"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83550153"
 ---
 # <a name="azure-stack-hub-marketplace-changes"></a>Cambios en Marketplace de Azure Stack Hub
 
@@ -63,6 +63,9 @@ El artículo [Elementos de Azure Marketplace disponibles para Azure Stack Hub](a
 
 ## <a name="updated-marketplace-items"></a>Elementos de Marketplace actualizados
 
+- 15/05/2020: Bitnami AbanteCart: versión 1.2.2004220207
+- 15/05/2020: Bitnami Canvas LMS: versión 2020.5.2005120909
+- 15/05/2020: Bitnami Neos: versión 5.2.2005130917
 - 07/05/2020: Bitnami ActiveMQ: versión 5.15.2003260344
 - 07/05/2020: Bitnami Akeneo: versión 4-3.2.2004230142
 - 07/05/2020: Bitnami Alfresco Community: versión 201911.0.2004242008
@@ -199,7 +202,7 @@ El artículo [Elementos de Azure Marketplace disponibles para Azure Stack Hub](a
 - 20/04/2020: Windows Server 2016 Datacenter Server Core en modalidad de pago por uso, versión 2016.127.20200131
 - 20/04/2020: Windows Server 2016 Datacenter con Containers en modo "traiga su propia licencia", versión 2016.127.20200131
 - 20/04/2020: Windows Server 2016 Datacenter con Containers en modo de pago por uso, versión 2016.127.20200131
-- 20/04/2020: Windows Server 2012 Datacenter en modalidad "traiga su propia licencia", versión 3.127.20190521
+- 20/04/2020: Windows Server 2012 Datacenter en modalidad "traiga su propia licencia", versión 3.127.20200205
 - 20/04/2020: Windows Server 2012 R2 Datacenter, modalidad de pago por uso, versión 4.127.20200205
 - 20/04/2020: Windows Server 2012 R2 Datacenter, modalidad "traiga su propia licencia", versión 4.127.20200205
 - 20/04/2020: Windows Server 2012 Datacenter en modalidad de pago por uso, versión 3.127.20200205

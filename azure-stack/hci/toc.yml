@@ -20,10 +20,16 @@
       href: manage/replace-drives.md
     - name: Administración de clústeres
       href: manage/cluster.md
+    - name: Incorporación o eliminación de servidores
+      href: manage/add-cluster.md
     - name: Uso de Azure Site Recovery
       href: manage/azure-site-recovery.md
     - name: Supervisión con Azure Monitor
       href: manage/azure-monitor.md
+    - name: Administración de máquinas virtuales
+      href: manage/vm.md
+    - name: Administración de máquinas virtuales con PowerShell
+      href: manage/vm-powershell.md
     - name: Conexión de GPU a una máquina virtual Linux
       href: manage/attach-gpu-to-linux-vm.md
 - name: Conceptos
