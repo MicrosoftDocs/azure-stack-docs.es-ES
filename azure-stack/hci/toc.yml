@@ -20,6 +20,8 @@
       href: manage/replace-drives.md
     - name: Administración de clústeres
       href: manage/cluster.md
+    - name: Administración de clústeres con PowerShell
+      href: manage/cluster-powershell.md
     - name: Incorporación o eliminación de servidores
       href: manage/add-cluster.md
     - name: Uso de Azure Site Recovery
