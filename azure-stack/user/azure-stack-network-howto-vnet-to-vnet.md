@@ -3,16 +3,16 @@ title: Conexión de dos entornos de Azure Stack Hub mediante el emparejamiento d
 description: Aprenda a conectar dos entornos de Azure Stack Hub mediante el emparejamiento de VNET.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 1/22/2020
+ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: b1d60037dd86a6de1aac73ff5a607605ceda1614
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 144d03f3b80e25f3db77cd6cbfba5ec7225a8496
+ms.sourcegitcommit: cad40ae88212cc72f40c84a1c88143ea0abb65ef
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77703883"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84111654"
 ---
 # <a name="connect-two-vnets-through-peering"></a>Conexión de dos redes virtuales mediante el emparejamiento
 

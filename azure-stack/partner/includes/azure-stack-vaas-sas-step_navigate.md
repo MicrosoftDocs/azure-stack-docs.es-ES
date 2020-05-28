@@ -2,15 +2,15 @@
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: include
-ms.date: 1/22/2020
+ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/26/2018
-ms.openlocfilehash: 7e6c298e6777743a5f7de3b20bca80bb6363ae45
-ms.sourcegitcommit: bdd4d529bd3e115a9f76eece62b1613448d5d020
+ms.openlocfilehash: 9a5ff44e6320548934bc5421de4143ff6295bbe9
+ms.sourcegitcommit: cad40ae88212cc72f40c84a1c88143ea0abb65ef
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "76535860"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84112085"
 ---
 En [Azure Portal](https://portal.azure.com/), vaya a la cuenta de almacenamiento. En **Configuración**, seleccione **Firma de acceso compartido**.

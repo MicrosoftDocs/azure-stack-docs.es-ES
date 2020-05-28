@@ -3,16 +3,16 @@ title: Copia de seguridad de las cuentas de almacenamiento en Azure Stack Hub
 description: Aprenda a hacer una copia de seguridad de las cuentas de almacenamiento en Azure Stack Hub.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 1/22/2020
+ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/19/2019
-ms.openlocfilehash: a945800e999ce825c11d5300d02baa58bbfba9b8
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 1af0a054c90369ba3f1e97d55dac7e5eec20ee43
+ms.sourcegitcommit: cad40ae88212cc72f40c84a1c88143ea0abb65ef
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77703866"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84111972"
 ---
 # <a name="back-up-your-storage-accounts-on-azure-stack-hub"></a>Copia de seguridad de las cuentas de almacenamiento en Azure Stack Hub
 

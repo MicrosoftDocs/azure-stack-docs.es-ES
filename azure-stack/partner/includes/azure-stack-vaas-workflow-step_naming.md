@@ -2,15 +2,15 @@
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: include
-ms.date: 1/22/2020
+ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/26/2018
-ms.openlocfilehash: bba544a3d6eef140fd955d16e36abc758605f066
-ms.sourcegitcommit: bdd4d529bd3e115a9f76eece62b1613448d5d020
+ms.openlocfilehash: 294f43ac4a41770609a3362431a2b1f3033916cc
+ms.sourcegitcommit: cad40ae88212cc72f40c84a1c88143ea0abb65ef
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "76694351"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84124516"
 ---
 Escriba un **nombre** para el flujo de trabajo. El nombre debe ser único dentro de la solución. Para obtener sugerencias de nombres, consulte [Convenciones de nomenclatura para flujos de trabajo VaaS](../azure-stack-vaas-best-practice.md#naming-convention-for-vaas-workflows).

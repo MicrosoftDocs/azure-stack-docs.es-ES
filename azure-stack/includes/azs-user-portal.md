@@ -1,14 +1,14 @@
 ---
 author: mattbriggs
 ms.topic: include
-ms.date: 1/22/2020
+ms.date: 5/27/2020
 ms.author: mabrigg
-ms.openlocfilehash: 87d760359bdf8b56136f5f91ce51381d1f8c507a
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 34a3daa2ee0b1ba91d7210ad3dd1bf1d886e3f1b
+ms.sourcegitcommit: cad40ae88212cc72f40c84a1c88143ea0abb65ef
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79082523"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84124369"
 ---
 Inicie sesión en el portal de usuario: 
 
