@@ -3,15 +3,15 @@ title: Creación de una máquina virtual Windows en Azure Stack Hub con la CLI d
 description: Creación de una máquina virtual Windows en Azure Stack Hub con la CLI de Azure
 author: mattbriggs
 ms.topic: quickstart
-ms.date: 1/22/2020
+ms.date: 5/27/2020
 ms.author: mabrigg
 ms.lastreviewed: 01/14/2020
-ms.openlocfilehash: 0d8e3ec61eb5acfbe98efcae1ec0318cb15f661f
-ms.sourcegitcommit: 4138a2a15f78e7db38b3a29acc963a71937146fd
+ms.openlocfilehash: 5c4c9c5f173b65051ba86e02ae7623a24a406f39
+ms.sourcegitcommit: cad40ae88212cc72f40c84a1c88143ea0abb65ef
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "78231662"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84111853"
 ---
 # <a name="quickstart-create-a-windows-server-virtual-machine-using-azure-cli-in-azure-stack-hub"></a>Inicio rápido: Creación de una máquina virtual Windows Server con la CLI de Azure en Azure Stack Hub
 
