@@ -3,16 +3,16 @@ title: Traslado del clúster del elemento de Marketplace al motor de AKS en Azur
 description: Aprenda a trasladar el clúster del elemento de Marketplace al motor de AKS en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 3/19/2020
+ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 3/19/2020
-ms.openlocfilehash: f15c870a1b256ffa546672a3abde2fc68f9baa4f
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 222212a26362a617322b65f93509a0cd2a313999
+ms.sourcegitcommit: db3c9179916a36be78b43a8a47e1fd414aed3c2e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80069003"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84146876"
 ---
 # <a name="move-your-marketplace-item-cluster-to-the-aks-engine-on-azure-stack-hub"></a>Traslado del clúster del elemento de Marketplace al motor de AKS en Azure Stack Hub
 
@@ -28,7 +28,8 @@ Cuando la implementación iniciada por el elemento Kubernetes de Marketplace de 
 4.  En la sesión de la máquina virtual de implementación, encontrará el motor de AKS en la siguiente ruta de acceso: `./var/lib/waagent/custom-script/download/0/bin/aks-engine`.
 5.  Busque el archivo `.json` que describe los clústeres que se usan como entrada en aks-engine. El archivo se encuentra en `/var/lib/waagent/custom-script/download/0/bin/azurestack.json`. Tenga en cuenta que el archivo tiene las credenciales de la entidad de servicio que se usan para implementar el clúster. Si decide conservar el archivo, tenga cuidado de transferir el archivo a un almacén protegido.
 6.  Busque el directorio de salida generado por el motor de AKS en `/var/lib/waagent/custom-script/download/0/_output/<resource group name>`. En este directorio, busque el archivo `apimodel.json` de salida en la ruta de acceso `/var/lib/waagent/custom-script/download/0/bin/apimodel.json`. El directorio y el archivo `apimodel.json` contienen todos los certificados, las claves y las credenciales generados que necesita para implementar el clúster de Kubernetes. Almacene estos recursos en una ubicación segura.
-7.  Busque el archivo de configuración de Kubernetes, que se suele conocer como el archivo **kubeconfig**, en la ruta de acceso `$HOME/<output dir>/kubeconfig/kubeconfing.<location>.json`, donde **\<location>** es su identificador de ubicación de Azure Stack Hub. Este archivo es útil si piensa configurar **kubectl** para tener acceso al clúster de Kubernetes.
+7.  Busque el archivo de configuración de Kubernetes, que se suele conocer como el archivo **kubeconfig**, en la ruta de acceso `/var/lib/waagent/custom-script/download/0/_output/k8smpi00/kubeconfig/kubeconfig.<location>.json`, donde **\<location>** se corresponde a su identificador de ubicación de Azure Stack Hub. Este archivo es útil si piensa configurar **kubectl** para tener acceso al clúster de Kubernetes.
+
 
 ## <a name="use-the-aks-engine-with-your-newly-created-cluster"></a>Uso del motor de AKS con el clúster recién creado
 
@@ -42,4 +43,3 @@ Cuando haya localizado aks-engine, el archivo apimodel.json de entrada, el direc
 
 - Obtenga información sobre [el motor de AKS en Azure Stack Hub](azure-stack-kubernetes-aks-engine-overview.md).  
 - [Solución de problemas del motor de AKS en Azure Stack Hub](azure-stack-kubernetes-aks-engine-troubleshoot.md)  
-
