@@ -3,16 +3,16 @@ title: Implementación de plantillas con Visual Studio en Azure Stack Hub
 description: Aprenda a implementar las plantillas con Visual Studio en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 1/22/2020
+ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 05/21/2019
-ms.openlocfilehash: 404928bfad6e3ad85b78d97bee0527cfcbc25f0e
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: ea268d367ab529fabe8a8b363ed14ce17bc790aa
+ms.sourcegitcommit: db3c9179916a36be78b43a8a47e1fd414aed3c2e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77704257"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84146808"
 ---
 # <a name="deploy-templates-in-azure-stack-hub-using-visual-studio"></a>Implementación de plantillas en Azure Stack Hub con Visual Studio
 

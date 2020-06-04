@@ -3,16 +3,16 @@ title: Características de las máquinas virtuales de Azure Stack Hub
 description: Obtenga información acerca de las diferentes características y consideraciones que deben tenerse en cuenta a la hora de trabajar con máquinas virtuales en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 2/3/2020
+ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 10/09/2019
-ms.openlocfilehash: f93ce26acd7474def8495e6e0df28bd3b8669848
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: c90231d96f3f076b0824222fba43c8d9ef680fa5
+ms.sourcegitcommit: db3c9179916a36be78b43a8a47e1fd414aed3c2e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80614425"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84146791"
 ---
 # <a name="azure-stack-hub-vm-features"></a>Características de las máquinas virtuales de Azure Stack Hub
 

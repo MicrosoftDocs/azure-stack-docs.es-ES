@@ -7,12 +7,12 @@ ms.date: 05/04/2020
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: 335c6e39b067e9a95ec075866279d35b451d7c87
-ms.sourcegitcommit: 21cdab346fc242b8848a04a124bc16c382ebc6f0
+ms.openlocfilehash: da3ba321eee4c71549fb84a61d3010803e5e6349
+ms.sourcegitcommit: 85c373fd8f9e8888a7ba25bedce2f640c93de1e5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82777685"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84334168"
 ---
 # <a name="azure-stack-hub-managed-disks-differences-and-considerations"></a>Discos administrados de Azure Stack Hub: Diferencias y consideraciones
 
@@ -186,13 +186,13 @@ $PIp = New-AzureRmPublicIpAddress -ResourceGroupName $ResourceGroupName -Locatio
   -Name "mypublicdns$(Get-Random)" -AllocationMethod Static -IdleTimeoutInMinutes 4
 
 # Create an inbound network security group rule for port 3389
-$NsgRuleRDP = New-AzureRmNetworkSecurityRuleConfig -Name "MyNetworkSecurityGroupRuleRDP"  -Protocol Tcp `
+$NsgRuleSSH = New-AzureRmNetworkSecurityRuleConfig -Name "MyNetworkSecurityGroupRuleSSH"  -Protocol Tcp `
   -Direction Inbound -Priority 1000 -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix * `
-  -DestinationPortRange 3389 -Access Allow
+  -DestinationPortRange 22 -Access Allow
 
 # Create a network security group
 $Nsg = New-AzureRmNetworkSecurityGroup -ResourceGroupName $ResourceGroupName -Location $Location `
-  -Name "MyNetworkSecurityGroup" -SecurityRules $NsgRuleRDP
+  -Name "MyNetworkSecurityGroup" -SecurityRules $NsgRuleSSH
 
 # Create a virtual network card and associate with public IP address and NSG
 $Nic = New-AzureRmNetworkInterface -Name "MyNic" -ResourceGroupName $ResourceGroupName -Location $Location `
