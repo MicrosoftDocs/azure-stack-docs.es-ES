@@ -3,16 +3,16 @@ title: Uso de una clave pública SSH con Azure Stack Hub
 description: Uso de una clave pública SSH
 author: mattbriggs
 ms.topic: overview
-ms.date: 1/22/2020
+ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: 5f65b0ff096fbf84b140406b7cb98fdbdf5b0b11
-ms.sourcegitcommit: 4138a2a15f78e7db38b3a29acc963a71937146fd
+ms.openlocfilehash: 1b5a83d8fa6626233acc3abbde69494310cbd06e
+ms.sourcegitcommit: db3c9179916a36be78b43a8a47e1fd414aed3c2e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "79295632"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84146927"
 ---
 # <a name="use-an-ssh-public-key"></a>Uso de una clave pública SSH
 
@@ -83,7 +83,7 @@ Antes de conectarse, necesitará:
 
     ![Panel de configuración de PuTTY: clave privada SSH](media/azure-stack-dev-start-howto-ssh-public-key/002-putty-set-private-key.png)
 
-5. Junto al cuadro **Private key file for authentication** (Archivo de clave privada para autenticación), seleccione **Browse** (Examinar) y, a continuación, busque el archivo de clave privada ( *\<nombreArchivo>.ppk*) del par de claves pública y privada.
+5. Junto al cuadro **Private key file for authentication** (Archivo de clave privada para autenticación), seleccione **Browse** (Examinar) y, a continuación, busque el archivo de clave privada ( *\<filename>.ppk*) del par de claves pública y privada.
 6. En el árbol **Category** (Categoría), seleccione **Session** (Sesión).
 
     ![Cuadro "Saved Sessions" (Sesiones guardadas) del panel de configuración de PuTTY](media/azure-stack-dev-start-howto-ssh-public-key/003-puTTY-save-session.png)
@@ -114,7 +114,7 @@ Para mover los archivos hacia y desde su máquina Linux, puede usar Filezilla co
     ![Panel de configuración de FileZilla](media/azure-stack-dev-start-howto-ssh-public-key/006-filezilla-add-private-key.png)
 
 1. En el árbol **Seleccione página**, expanda **Conexión** y, a continuación, seleccione **SFTP**.
-1. Seleccione **Añadir archivo de clave** y, a continuación, especifique el archivo de clave privada (por ejemplo, *\<nombreArchivo>.ppk*).
+1. Seleccione **Añadir archivo de clave** y, a continuación, especifique el archivo de clave privada (por ejemplo, *\<filename>.ppk*).
 1. Seleccione **Aceptar**.
 
 ### <a name="open-your-connection"></a>Apertura de la conexión
