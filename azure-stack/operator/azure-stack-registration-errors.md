@@ -7,12 +7,12 @@ ms.date: 05/01/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 06/27/2019
-ms.openlocfilehash: 4b193ada5c9a188b725ea88dc2d5f54905a5e537
-ms.sourcegitcommit: ddcd083430ca905653d412dc2f7b813218d79509
+ms.openlocfilehash: d4cd7b00b00f4447f9ba9a8bc341452ae6464897
+ms.sourcegitcommit: 804f94f288859027b8249d138b14e8bc1501e009
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83375081"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84158340"
 ---
 # <a name="usage-and-billing-registration-error-codes"></a>Códigos de error de registro de uso y facturación
 
@@ -23,7 +23,7 @@ A los proveedores de soluciones en la nube (CSP), les pueden aparecer los siguie
 | Error   | Detalles  | Comentarios  |
 |---|---|---|
 | RegistrationNotFound | No se encontró el registro proporcionado. Asegúrese de que la información siguiente se proporcionó correctamente:<br>1. Identificador de la suscripción (valor proporcionado: **identificador de suscripción**),<br>2. Grupo de recursos (valor proporcionado: **grupo de recursos**),<br>3. Nombre de registro (valor proporcionado: **nombre de registro**). | Este error suele producirse cuando la información que apunta al registro inicial no es correcta. Si necesita comprobar el grupo de recursos y el nombre del registro, puede encontrarlo en Azure Portal al enumerar todos los recursos. Si encuentra más de un recurso de registro, busque **CloudDeploymentID** en las propiedades y seleccione el registro cuyo **CloudDeploymentID** coincida con el de su nube. Para buscar el objeto **CloudDeploymentID**, puede usar este comando de PowerShell en Azure Stack Hub:<br>`$azureStackStampInfo = Invoke-Command -Session $session -ScriptBlock { Get-AzureStackStampInformation }` |
-| BadCustomerSubscriptionId | El **identificador de la suscripción del cliente** proporcionado y el identificador de suscripción del **nombre de registro** no pertenecen al mismo proveedor de soluciones en la nube de Microsoft. Compruebe que el identificador de la suscripción del cliente es correcto. Si el problema persiste, póngase en contacto con el soporte técnico. | Este error aparece cuando la suscripción del cliente es una suscripción de proveedor de soluciones en la nube, pero se transfiere a un asociado de CSP que no es al que se transfiere la suscripción utilizada en el registro inicial. Esta comprobación se realiza para evitar una situación cuya consecuencia podría ser que se facturara a un asociado de CSP que no es responsable del uso de Azure Stack Hub. |
+| BadCustomerSubscriptionId | El **identificador de la suscripción del cliente** proporcionado y el identificador de suscripción del **nombre de registro** no pertenecen al mismo proveedor de soluciones en la nube de Microsoft. Compruebe que el identificador de la suscripción del cliente es correcto. El identificador de suscripción del cliente distingue mayúsculas y minúsculas. Si el problema persiste, póngase en contacto con el soporte técnico. | Este error aparece cuando la suscripción del cliente es una suscripción de proveedor de soluciones en la nube, pero se transfiere a un asociado de CSP que no es al que se transfiere la suscripción utilizada en el registro inicial. Esta comprobación se realiza para evitar una situación cuya consecuencia podría ser que se facturara a un asociado de CSP que no es responsable del uso de Azure Stack Hub. |
 | InvalidCustomerSubscriptionId  | El **identificador de la suscripción del cliente** no es válido. Asegúrese de que se proporciona una suscripción válida de Azure. |   |
 | CustomerSubscriptionNotFound  | El **identificador de la suscripción del cliente** no se encuentra en el **nombre del registro**. Asegúrese de que se está usando una suscripción válida a Azure y de que el identificador de suscripción se ha agregado al registro mediante la operación PUT. | Este error se produce al intentar comprobar que se ha agregado un inquilino a una suscripción, pero no se detecta que la suscripción del cliente está asociada al registro. El cliente no se ha agregado al registro o el identificador de suscripción se ha escrito incorrectamente. |
 | UnauthorizedCspRegistration | El **nombre de registro** proporcionado no tiene la aprobación necesaria para usar una arquitectura multiinquilino. Envíe un correo electrónico a azstCSP@microsoft.com e incluya el nombre de registro, grupo de recursos e identificador de suscripción que se utilizó en el registro. | Microsoft debe aprobar un registro para el modo multiinquilino para que pueda empezar a agregarle inquilinos. |

@@ -7,12 +7,12 @@ ms.date: 05/01/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 10/14/2019
-ms.openlocfilehash: b067428a9096855f38f8e1f33a601010dc27359c
-ms.sourcegitcommit: 278aaeca069213a98b90751253f6b15423634849
+ms.openlocfilehash: 89ef1d91ae2c6cb41a26bed04cb87abf33da1650
+ms.sourcegitcommit: 804f94f288859027b8249d138b14e8bc1501e009
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82742308"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84158374"
 ---
 # <a name="register-tenants-for-usage-tracking-in-azure-stack-hub"></a>Registro de inquilinos en Azure Stack Hub para el seguimiento de uso
 
@@ -40,7 +40,7 @@ Para más información sobre los perfiles de API y Azure Stack Hub, consulte [Ad
 | Parámetro                  | Descripción |
 |---                         | --- |
 | registrationSubscriptionID | La suscripción de Azure que se ha usado para el registro inicial. |
-| customerSubscriptionID     | La suscripción de Azure (no Azure Stack Hub) a la que pertenece el cliente que se va a registrar. Debe crearse en la oferta del proveedor de soluciones en la nube (CSP) mediante el Centro de partners. Si un cliente tiene más de un inquilino, cree una suscripción para que el inquilino inicie sesión en Azure Stack Hub. |
+| customerSubscriptionID     | La suscripción de Azure (no Azure Stack Hub) a la que pertenece el cliente que se va a registrar. Debe crearse en la oferta del proveedor de soluciones en la nube (CSP) mediante el Centro de partners. Si un cliente tiene más de un inquilino, cree una suscripción para que el inquilino inicie sesión en Azure Stack Hub. El identificador de suscripción del cliente distingue mayúsculas y minúsculas. |
 | resourceGroup              | El grupo de recursos de Azure en el que se almacena el registro. |
 | registrationName           | El nombre del registro de Azure Stack Hub. Es un objeto almacenado en Azure. El nombre suele ser **azurestack-CloudID**, donde **CloudID** es el identificador de nube de su implementación de Azure Stack Hub. |
 
@@ -124,7 +124,7 @@ Puede quitar un inquilino que se haya agregado a un registro. Si ese inquilino t
 | registrationSubscriptionId | Identificador de suscripción para el registro.   |
 | resourceGroup              | El grupo de recursos para el registro.   |
 | registrationName           | Nombre del registro.  |
-| customerSubscriptionId     | Identificador de suscripción del cliente.  |
+| customerSubscriptionId     | Identificador de suscripción del cliente. El identificador de suscripción del cliente distingue mayúsculas y minúsculas.  |
 
 ### <a name="powershell"></a>PowerShell
 

@@ -9,12 +9,12 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 1bcca404c451190ccf1d0b82e93aea655e069044
-ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
+ms.openlocfilehash: 310a8a8d958428af2ce29f6c465a788e64870b8e
+ms.sourcegitcommit: db3c9179916a36be78b43a8a47e1fd414aed3c2e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81661403"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84146978"
 ---
 # <a name="troubleshoot-validation-as-a-service"></a>Solución de problemas de la validación como servicio
 
@@ -40,13 +40,22 @@ Si el proceso del agente se cierra de forma incorrecta, la prueba que se estaba 
 
 ## <a name="vm-images"></a>Imágenes de VM
 
+### <a name="failure-occurs-when-uploading-vm-image-in-the-vaasprereq-script"></a>Se produce un error al cargar la imagen de VM en el script `VaaSPreReq`
+Consulte la sección siguiente en **Control de la conectividad de red lenta**. Proporciona pasos manuales para cargar las imágenes de máquina virtual en la marca de Azure Stack.
+
 ### <a name="handle-slow-network-connectivity"></a>Control de la conectividad de red lenta
 
-Puede descargar la imagen del PIR en un recurso compartido en el centro de datos local. Luego puede comprobar la imagen.
+#### <a name="1-verify-that-the-environment-is-healthy"></a>1. Compruebe que el entorno es correcto
+
+1. Desde la DVM/jumpbox, compruebe que puede iniciar sesión correctamente en el portal de administración mediante las credenciales de administrador.
+
+2. Confirme que no haya ninguna alerta ni advertencia.
+
+3. Si el entorno es correcto, cargue manualmente las imágenes de máquina virtual necesarias para las series de pruebas de VaaS, como se indica en los pasos de la siguiente sección.
 
 <!-- This is from the appendix to the Deploy local agent topic. -->
 
-#### <a name="download-pir-image-to-local-share-in-case-of-slow-network-traffic"></a>Descarga de la imagen PIR en el recurso compartido local en el caso de tráfico de red lento
+#### <a name="2-download-pir-image-to-local-share-in-case-of-slow-network-traffic"></a>2. Descarga de la imagen PIR en el recurso compartido local en el caso de tráfico de red lento
 
 1. Descargue AzCopy desde: [vaasexternaldependencies(AzCopy)](https://vaasexternaldependencies.blob.core.windows.net/prereqcomponents/AzCopy.zip).
 
@@ -67,7 +76,7 @@ Puede descargar la imagen del PIR en un recurso compartido en el centro de datos
 > [!Note]  
 > LocalFileShare es la ruta de acceso del recurso compartido o la ruta de acceso local.
 
-#### <a name="verifying-pir-image-file-hash-value"></a>Comprobación del valor hash del archivo de imagen PIR
+#### <a name="3-verifying-pir-image-file-hash-value"></a>3. Comprobación del valor hash del archivo de imagen PIR
 
 Puede usar el cmdlet **Get-HashFile** para obtener el valor hash para los archivos de imagen del repositorio de imágenes públicas descargadas para comprobar la integridad de las imágenes.
 
@@ -81,19 +90,26 @@ Puede usar el cmdlet **Get-HashFile** para obtener el valor hash para los archiv
 | OpenLogic-CentOS-69-20180105.vhd | C8B874FE042E33B488110D9311AF1A5C7DC3B08E6796610BF18FDD6728C7913C |
 | Debian8_latest.vhd | 06F8C11531E195D0C90FC01DFF5DC396BB1DD73A54F8252291ED366CACD996C1 |
 
-### <a name="failure-happens-when-uploading-vm-image-in-the-vaasprereq-script"></a>Se produce un error al cargar la imagen de la máquina virtual en el script `VaaSPreReq`
+#### <a name="4-upload-vm-images-to-a-storage-account"></a>4. Carga de imágenes de máquina virtual en una cuenta de almacenamiento
 
-En primer lugar, compruebe que el entorno está en buen estado:
+1. Use una cuenta de almacenamiento existente o cree una nueva cuenta en Azure.
 
-1. Desde la DVM/jumpbox, compruebe que puede iniciar sesión correctamente en el portal de administración mediante las credenciales de administrador.
-1. Confirme que no haya ninguna alerta ni advertencia.
+2. Cree un contenedor en el que cargar las imágenes.
 
-Si el entorno está en buen estado, cargue manualmente las cinco imágenes de máquina virtual necesarias para las series de pruebas de VaaS:
+3. Use la herramienta Azcopy para cargar las imágenes de máquina virtual del [*LocalFileShare*] anterior (en el que descargó las imágenes de máquina virtual) en el contenedor que acaba de crear.
+    > [!IMPORTANT]
+    > Cambie el "nivel de acceso público" del contenedor a "Blob (acceso de lectura anónimo solo para blobs)".
+
+#### <a name="5-upload-vm-images-to-azure-stack-environment"></a>5. Carga de imágenes de máquina virtual en el entorno de Azure Stack
 
 1. Inicie sesión en el portal de administración como administrador de servicios. Puede encontrar la dirección URL del portal de administración en el almacén ECE o el archivo de información de marca. Para obtener instrucciones, consulte [Parámetros del entorno](azure-stack-vaas-parameters.md#environment-parameters).
-1. Seleccione **Más servicios** > **Proveedores de recursos** > **Proceso** > **Imágenes de VM**.
-1. Seleccione el botón **+ Agregar** situado en la parte superior de la hoja **Imágenes de VM**.
-1. Modifique o compruebe los valores de los siguientes campos para la primera imagen de VM:
+
+2. Seleccione **Más servicios** > **Proveedores de recursos** > **Proceso** > **Imágenes de VM**.
+
+3. Seleccione el botón **+ Agregar** situado en la parte superior de la hoja **Imágenes de VM**.
+
+4. Modifique o compruebe los valores de los siguientes campos para la primera imagen de VM:
+
     > [!IMPORTANT]
     > No todos los valores predeterminados son correctos para el elemento de Marketplace existente.
 
@@ -104,22 +120,24 @@ Si el entorno está en buen estado, cargue manualmente las cinco imágenes de m�
     | Tipo de SO | Windows |
     | SKU | Centro de datos de 2012-R2 |
     | Versión | 1.0.0 |
-    | URI del blob de disco de sistema operativo | https://azurestacktemplate.blob.core.windows.net/azurestacktemplate-public-container/WindowsServer2012R2DatacenterBYOL.vhd |
+    | URI del blob de disco de sistema operativo | https://<*cuentaDeAlmacenamiento*>/<*nombreDelContenedor*>/WindowsServer2012R2DatacenterBYOL.vhd |
 
-1. Seleccione el botón **Crear**.
-1. Repita para las imágenes de VM restantes.
 
-Las propiedades de las cinco imágenes de máquina virtual son las siguientes:
+5. Seleccione el botón **Crear**.
+
+6. Repita para las imágenes de VM restantes.
+
+Las propiedades de las imágenes de máquina virtual necesarias son las siguientes:
 
 | Publicador  | Oferta  | Tipo de SO | SKU | Versión | URI del blob de disco de sistema operativo |
 |---------|---------|---------|---------|---------|---------|
-| Microsoft Windows Server| Windows Server | Windows | Centro de datos de 2012-R2 | 1.0.0 | https://azurestacktemplate.blob.core.windows.net/azurestacktemplate-public-container/WindowsServer2012R2DatacenterBYOL.vhd |
-| Microsoft Windows Server | Windows Server | Windows | 2016-Datacenter | 1.0.0 | https://azurestacktemplate.blob.core.windows.net/azurestacktemplate-public-container/Server2016DatacenterFullBYOL.vhd |
-| Microsoft Windows Server | Windows Server | Windows | 2016-Datacenter-Server-Core | 1.0.0 | https://azurestacktemplate.blob.core.windows.net/azurestacktemplate-public-container/Server2016DatacenterCoreBYOL.vhd |
-| Canonical | UbuntuServer | Linux | 14.04.3-LTS | 1.0.0 | https://azurestacktemplate.blob.core.windows.net/azurestacktemplate-public-container/Ubuntu1404LTS.vhd |
-| Canonical | UbuntuServer | Linux | 16.04-LTS | 16.04.20170811 | https://azurestacktemplate.blob.core.windows.net/azurestacktemplate-public-container/Ubuntu1604-20170619.1.vhd |
-| OpenLogic | CentOS | Linux | 6.9 | 1.0.0 | https://azurestacktemplate.blob.core.windows.net/azurestacktemplate-public-container/OpenLogic-CentOS-69-20180105.vhd |
-| credativ | Debian | Linux | 8 | 1.0.0 | https://azurestacktemplate.blob.core.windows.net/azurestacktemplate-public-container/Debian8_latest.vhd |
+| Microsoft Windows Server| Windows Server | Windows | Centro de datos de 2012-R2 | 1.0.0 | https://[*cuentaDeAlmacenamiento*]/[*nombreDelContenedor*]/WindowsServer2012R2DatacenterBYOL.vhd |
+| Microsoft Windows Server | Windows Server | Windows | 2016-Datacenter | 1.0.0 | https://[*cuentaDeAlmacenamiento*]/[*nombreDelContenedor*]/Server2016DatacenterFullBYOL.vhd |
+| Microsoft Windows Server | Windows Server | Windows | 2016-Datacenter-Server-Core | 1.0.0 | https://[*cuentaDeAlmacenamiento*]/[*nombreDelContenedor*]/Server2016DatacenterCoreBYOL.vhd |
+| Canonical | UbuntuServer | Linux | 14.04.3-LTS | 1.0.0 | https://[*cuentaDeAlmacenamiento*]/[*nombreDelContenedor*]/Ubuntu1404LTS.vhd |
+| Canonical | UbuntuServer | Linux | 16.04-LTS | 16.04.20170811 | https://[*cuentaDeAlmacenamiento*]/[*nombreDelContenedor*]/Ubuntu1604-20170619.1.vhd |
+| OpenLogic | CentOS | Linux | 6.9 | 1.0.0 | https://[*cuentaDeAlmacenamiento*]/[*nombreDelContenedor*]/OpenLogic-CentOS-69-20180105.vhd |
+| Credativ | Debian | Linux | 8 | 1.0.0 | https://[*cuentaDeAlmacenamiento*]/[*nombreDelContenedor*]/Debian8_latest.vhd |
 
 ## <a name="next-steps"></a>Pasos siguientes
 

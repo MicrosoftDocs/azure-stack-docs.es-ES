@@ -3,16 +3,16 @@ title: Notas de la versión de Azure Stack Hub
 description: Notas de la versión para los sistemas integrados de Azure Stack Hub, incluidas las actualizaciones y correcciones de errores.
 author: sethmanheim
 ms.topic: article
-ms.date: 05/21/2020
+ms.date: 05/29/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 03/18/2020
-ms.openlocfilehash: d8da583fbf954857e2331ce963ec2ae7f0883ea2
-ms.sourcegitcommit: d69eacbf48c06309b00d17c82ebe0ce2bc6552df
+ms.openlocfilehash: 39e6c3ce9b942398954c5c81cbce172095520d90
+ms.sourcegitcommit: c167bf3724139aafe40066f9533985ed7d919c0e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83780802"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329221"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Notas de la versión de Azure Stack Hub
 
@@ -100,7 +100,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 
 - Las siguientes API de administrador han quedado en desuso:
 
-  | Proveedor de recursos       | Resource              | Versión            |
+  | Proveedor de recursos       | Recurso              | Versión            |
   |-------------------------|-----------------------|--------------------|
   | Microsoft.Storage.Admin | granjas                 | 2015-12-01-preview |
   | Microsoft.Storage.Admin | farms/acquisitions    | 2015-12-01-preview |
@@ -109,7 +109,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 
 - Se han sustituido las siguientes API de administrador por una versión más reciente (2018-09-01):
 
-  | Proveedor de recursos      | Resource              | Versión    |
+  | Proveedor de recursos      | Recurso              | Versión    |
   |------------------------|-----------------------|------------|
   | Microsoft.Backup.Admin | backupLocation         | 2016-05-01 |
   | Microsoft.Backup.Admin | backups                | 2016-05-01 |
@@ -162,14 +162,14 @@ Las revisiones de Azure Stack Hub solo son aplicables a los sistemas integrados 
 La versión 2002 de Azure Stack Hub debe aplicarse en la versión 1910 con las revisiones siguientes:
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Revisión 1.1910.40.138 de Azure Stack Hub](https://support.microsoft.com/help/4558082)
+- [Revisión 1.1910.42.142 de Azure Stack Hub](https://support.microsoft.com/help/4564874)
 
 ### <a name="after-successfully-applying-the-2002-update"></a>Después de aplicar correctamente la actualización 2002
 
 Después de instalar esta actualización, instale todas las revisiones aplicables. Para más información, consulte nuestra [directiva de servicio](azure-stack-servicing-policy.md).
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Revisión 1.2002.24.85 de Azure Stack Hub](https://support.microsoft.com/help/4558081)
+- [Revisión 1.2002.28.93 de Azure Stack Hub](https://support.microsoft.com/help/4562966)
 ::: moniker-end
 
 ::: moniker range="azs-1910"
@@ -326,7 +326,7 @@ La versión 1910 de Azure Stack Hub debe aplicarse en la versión 1908 con las
 Después de instalar esta actualización, instale todas las revisiones aplicables. Para más información, consulte nuestra [directiva de servicio](azure-stack-servicing-policy.md).
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Revisión 1.1910.40.138 de Azure Stack Hub](https://support.microsoft.com/help/4558082)
+- [Revisión 1.1910.42.142 de Azure Stack Hub](https://support.microsoft.com/help/4564874)
 ::: moniker-end
 
 ::: moniker range="azs-1908"

@@ -6,16 +6,15 @@ ms.author: bryanla
 ms.topic: how-to
 ms.date: 05/07/2020
 ms.lastreviewed: 05/07/2020
-ms.openlocfilehash: 372df0bdb99ce06b22912e9e5c175af07620f5f4
-ms.sourcegitcommit: 510bb047b0a78fcc29ac611a2a7094fc285249a1
+ms.openlocfilehash: 011018493cee92d23675369a9704f5bcf3503ebe
+ms.sourcegitcommit: fe9b2fae89e595c8e739251b7a0d6ea3a0d8659a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82988311"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84262674"
 ---
 # <a name="use-an-app-identity-to-access-azure-stack-hub-resources"></a>Uso de una identidad de aplicación para acceder a recursos de Azure Stack Hub
-
-Una aplicación que necesite implementar o configurar recursos mediante Azure Resource Manager debe estar representada por su propia identidad. Al igual que los usuarios están representados por entidades de seguridad llamadas entidades de seguridad de usuario, las aplicaciones están representadas por entidades de servicio. La entidad de servicio proporciona una identidad para la aplicación, lo que le permite delegar solo los permisos necesarios en la aplicación.  
+<meta name="robots" content="nosnippet"> Una aplicación que necesite implementar o configurar recursos mediante Azure Resource Manager debe estar representada por su propia identidad. Al igual que los usuarios están representados por entidades de seguridad llamadas entidades de seguridad de usuario, las aplicaciones están representadas por entidades de servicio. La entidad de servicio proporciona una identidad para la aplicación, lo que le permite delegar solo los permisos necesarios en la aplicación.  
 
 Por ejemplo, puede tener una aplicación de administración de configuración que use Azure Resource Manager para hacer un inventario de los recursos de Azure. En este escenario, puede crear una entidad de servicio, concederle el rol de "lector" y limitar la aplicación de administración de configuración al acceso de solo lectura.
 
@@ -337,7 +336,7 @@ El tipo de recurso que se elija también establece el *ámbito de acceso* de la 
 3. Seleccione la página **Access Control (IAM)** página, que es universal en todos los recursos compatibles con RBAC.
 4. Seleccione **+ Agregar**.
 5. En **Rol**, seleccione el rol que quiere asignar a la aplicación.
-6. En **Seleccionar**, busque la aplicación con un nombre de aplicación completo o parcial. Durante el registro, el nombre de la aplicación se genera como *Azurestack-\<YourAppName\>-\<ClientId\>* . Por ejemplo, si usa un nombre de aplicación *App2* y se asignó el ClientId *2bbe67d8-3fdb-4b62-87cf-cc41dd4344ff* durante la creación, el nombre completo sería * Azurestack-App2-2bbe67d8-3fdb-4b62-87cf-cc41dd4344ff*. Puede buscar la cadena exacta o una parte de esta, como *Azurestack* o *Azurestack App2*.
+6. En **Seleccionar**, busque la aplicación con un nombre de aplicación completo o parcial. Durante el registro, el nombre de la aplicación se genera como *Azurestack-\<YourAppName\>-\<ClientId\>* . Por ejemplo, si usa un nombre de aplicación *App2* y se asignó el ClientId *2bbe67d8-3fdb-4b62-87cf-cc41dd4344ff* durante la creación, el nombre completo sería  *Azurestack-App2-2bbe67d8-3fdb-4b62-87cf-cc41dd4344ff*. Puede buscar la cadena exacta o una parte de esta, como *Azurestack* o *Azurestack App2*.
 7. Cuando encuentre la aplicación, selecciónela y se mostrará en **Miembros seleccionados**.
 8. Haga clic en **Guardar** para finalizar la asignación del rol.
 

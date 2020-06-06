@@ -7,12 +7,12 @@ ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 10/25/2019
-ms.openlocfilehash: cdbe5150b72a720fa527d3bb1b1e32f5a66a6955
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 0760e7d796c6e17c88089675fa6ff659eb684cc7
+ms.sourcegitcommit: 721b82b3a1711f2825ec76ab6d75964b4f508631
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79295566"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84301035"
 ---
 # <a name="infrastructure-backup-service-reference"></a>Referencia del servicio Infrastructure Backup
 
@@ -111,6 +111,15 @@ Es recomendable realizar una copia de seguridad por lo menos dos veces al día y
 |----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Recurso compartido de archivos SMB hospedado en un dispositivo de almacenamiento dentro del entorno de red de confianza. | El puerto 445 es necesario si la instancia de Azure Stack Hub reside en un entorno protegido por firewall. Infrastructure Backup Controller iniciará una conexión con el servidor de archivos SMB en el puerto 445. |
 | Para usar el FQDN del servidor de archivos, el nombre debe poder resolverse desde el PEP.             |                                                                                                                                                                                         |
+
+#### <a name="firewall-rules"></a>Reglas de firewall
+Asegúrese de configurar las reglas de firewall para permitir la conectividad entre las máquinas virtuales de ERCS en la ubicación de almacenamiento externa. 
+
+| Source | Destino | Protocolo/puerto |
+|------------------|-----------------------|--------------------------------|
+| ERCS VM 1        | Ubicación de almacenamiento      | 445/SMB                        |
+| ERCS VM 2        | Ubicación de almacenamiento      | 445/SMB                        |
+| ERCS VM 3        | Ubicación de almacenamiento      | 445/SMB                        |
 
 > [!Note]  
 > Ningún puerto de entrada debe estar abierto.

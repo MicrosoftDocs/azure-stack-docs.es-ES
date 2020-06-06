@@ -3,20 +3,22 @@ title: Incorporación de direcciones IP públicas en Azure Stack Hub
 description: Aprenda a agregar direcciones IP públicas a Azure Stack Hub.
 author: justinha
 ms.topic: article
-ms.date: 04/20/2020
+ms.date: 05/28/2020
 ms.author: justinha
 ms.reviewer: scottnap
 ms.lastreviewed: 09/10/2019
-ms.openlocfilehash: 8cd89a90cb29c802c79e900e07cdb50bfe9c0894
-ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
+ms.openlocfilehash: 423f274dab5569273cc35ec4aac6b082326217f3
+ms.sourcegitcommit: f4c2d5b87bc86ac4accb4d4df5b731b67d1a346c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82847918"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84203143"
 ---
 # <a name="add-public-ip-addresses"></a>Incorporación de direcciones IP públicas
 
-En este artículo, se hace referencia a las direcciones externas como direcciones IP públicas. En el contexto de Azure Stack Hub, una dirección IP pública es una dirección IP a la que se puede acceder desde fuera de Azure Stack Hub. Para los fines de este artículo, no es relevante si la red externa es pública y enrutable en Internet o si está en una intranet y utiliza un espacio de direcciones privado, ya que los pasos son los mismos.
+En este artículo, se hace referencia a las direcciones externas como direcciones IP públicas. En el contexto de Azure Stack Hub, una dirección IP pública es una dirección IP a la que se puede acceder desde fuera de Azure Stack Hub. Para los fines de este artículo, no es relevante si la red externa es pública y enrutable en Internet o si está en una intranet y utiliza un espacio de direcciones privado, ya que los pasos son los mismos. 
+
+Aunque puede configurar varios grupos de direcciones IP, no podrá seleccionar cuál de ellos usar. Azure Stack Hub agrupa todos los grupos de direcciones IP en uno. Al crear un recurso, no se puede elegir una dirección IP para la asignación.
 
 > [!IMPORTANT]
 > Los pasos descritos en este artículo se aplican solo a los sistemas que se implementaron con la versión 1809 o posterior del kit de herramientas de asociados. Los sistemas que se implementaron antes de la versión 1809 requieren que las listas de control de acceso (ACL) de la parte superior del rack (TOR) se actualicen para permitir el nuevo intervalo de grupos de la dirección IP virtual pública. Si se ejecutan configuraciones de conmutador anteriores, trabaje con el OEM para agregar las ACL de permiso apropiadas para el nuevo grupo de direcciones IP públicas o vuelva a configurar el conmutador con el kit de herramientas de asociados más reciente para evitar que se bloquee la nueva dirección IP pública.

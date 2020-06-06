@@ -7,12 +7,12 @@ ms.date: 04/28/2020
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 04/28/2020
-ms.openlocfilehash: 8c68e7dd4aa40d448e76050e4c657ee4cea9763b
-ms.sourcegitcommit: 54f98b666bea9226c78f26dc255ddbdda539565f
+ms.openlocfilehash: ff1a4f255f81c10c29c87320bdb71fcbaf9b234b
+ms.sourcegitcommit: 804f94f288859027b8249d138b14e8bc1501e009
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82556395"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84158357"
 ---
 # <a name="use-the-privileged-endpoint-in-azure-stack-hub"></a>Uso del punto de conexión con privilegios en Azure Stack Hub
 
@@ -87,6 +87,8 @@ Tendrá que establecer la configuración de la referencia cultural actual en `en
       > Si no puede conectarse al punto de conexión de ERCS, vuelva a intentar los pasos uno y dos con otra dirección IP de la máquina virtual de ERCS.
 
 3. Después de conectarse, el símbolo del sistema cambia a **[*dirección IP o nombre de VM de ERCS*]: PS >** o a **[azs-ercs01]: PS >** , en función del entorno. Desde aquí, ejecute `Get-Command` para ver la lista de los cmdlets disponibles.
+
+    Puede encontrar una referencia para los cmdlets en [Referencia del punto de conexión con privilegios elevados de Azure Stack Hub](../reference/pep-2002/index.md)
 
    Muchos de estos cmdlets están concebidos únicamente para entornos de sistema integrados (por ejemplo, los cmdlets relacionados con la integración de centros de datos). En el ASDK, se han validado los siguientes cmdlets:
 
