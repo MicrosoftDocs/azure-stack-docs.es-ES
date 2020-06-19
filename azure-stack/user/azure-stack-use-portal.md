@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: efemmano
 ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: f60094812a5bc0b27a05ec7e66ac7bf65d747d76
-ms.sourcegitcommit: db3c9179916a36be78b43a8a47e1fd414aed3c2e
+ms.openlocfilehash: 26225b1b6ba55ed0f5934130e361f1dbab4b664e
+ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84147029"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84631397"
 ---
 # <a name="use-the-azure-stack-hub-user-portal"></a>Uso del portal de usuarios de Azure Stack Hub
 
@@ -23,7 +23,7 @@ El portal de Azure Stack Hub se usa para suscribirse a ofertas públicas y usar 
 El operador de Azure Stack Hub (un proveedor de servicios o un administrador de la organización) le indicará cuál es la dirección URL correcta para acceder al portal.
 
 - En un sistema integrado, la dirección URL varía en función de la región y el nombre de dominio externo del operador y tendrá el formato https://portal.&lt;*región*&gt;.&lt;*FQDN*&gt;.
-- Si usa el Kit de desarrollo de Azure Stack (ASDK), la dirección del portal es https://portal.local.azurestack.external.
+- Si usa el Kit de desarrollo de Azure Stack (ASDK), la dirección del portal es `https://portal.local.azurestack.external`.
 - La zona horaria predeterminada para todas las implementaciones de Azure Stack Hub se establece conforme a la hora universal coordinada (UTC). Puede seleccionar una zona horaria al instalar Azure Stack Hub, pero esta se revierte automáticamente a UTC como valor predeterminado durante la instalación.
 
 ## <a name="customize-the-dashboard"></a>Personalización del panel

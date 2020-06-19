@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: 144d03f3b80e25f3db77cd6cbfba5ec7225a8496
-ms.sourcegitcommit: cad40ae88212cc72f40c84a1c88143ea0abb65ef
+ms.openlocfilehash: 98c4b4d333a33dc018682e638cec821c8b8ee416
+ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84111654"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84631304"
 ---
 # <a name="connect-two-vnets-through-peering"></a>Conexión de dos redes virtuales mediante el emparejamiento
 
@@ -26,7 +26,7 @@ En este artículo se describe cómo crear una conexión entre dos redes virtuale
 
 -  Al menos dos archivos de licencia de FortiGate disponibles para activar la aplicación virtual de red FortiGate. Para obtener información sobre cómo obtener estas licencias, consulte el artículo de la biblioteca de documentos de Fortinet [Registro y descarga de la licencia](https://docs2.fortinet.com/vm/azure/FortiGate/6.2/azure-cookbook/6.2.0/19071/registering-and-downloading-your-license).
 
-    En este procedimiento se usa la [implementación de máquina virtual única de FortiGate](ttps://docs2.fortinet.com/vm/azure/FortiGate/6.2/azure-cookbook/6.2.0/632940/single-FortiGate-vm-deployment). Puede encontrar pasos sobre cómo conectar la aplicación virtual de red FortiGate de la red virtual de Azure Stack Hub a la red local.
+    En este procedimiento se usa la [implementación de máquina virtual única de FortiGate](https://docs2.fortinet.com/vm/azure/FortiGate/6.2/azure-cookbook/6.2.0/632940/single-FortiGate-vm-deployment). Puede encontrar pasos sobre cómo conectar la aplicación virtual de red FortiGate de la red virtual de Azure Stack Hub a la red local.
 
     Para más información sobre cómo implementar la solución FortiGate en una configuración activo-pasivo (alta disponibilidad), consulte los detalles en el artículo de la biblioteca de documentos de Fortinet [Alta disponibilidad para máquina virtual de FortiGate en Azure](https://docs2.fortinet.com/vm/azure/FortiGate/6.2/azure-cookbook/6.2.0/983245/ha-for-FortiGate-vm-on-azure).
 

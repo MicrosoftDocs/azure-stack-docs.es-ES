@@ -7,12 +7,12 @@ ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/10/2019
-ms.openlocfilehash: fb10c078754e68c12cf79a4080544626885525fb
-ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
+ms.openlocfilehash: c64b95874e6718fd394796dd0254f38127211f68
+ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81660104"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84631171"
 ---
 # <a name="manage-and-deploy-resources-to-azure-stack-hub-with-azure-cli"></a>Administración e implementación de recursos en Azure Stack Hub con la CLI de Azure
 
@@ -159,7 +159,7 @@ Para confiar en el certificado raíz de la entidad de certificación de Azure S
     | Value | Ejemplo | Descripción |
     | --- | --- | --- |
     | Nombre del entorno | AzureStackUser | Use `AzureStackUser` para el entorno de usuario. Si es operador, especifique `AzureStackAdmin`. |
-    | Punto de conexión de Resource Manager | https://management.local.azurestack.external | El valor de **ResourceManagerUrl** del ASDK es el siguiente: `https://management.local.azurestack.external/` El valor de **ResourceManagerUrl** en los sistemas integrados es: `https://management.<region>.<fqdn>/` Si tiene alguna pregunta sobre el punto de conexión del sistema integrado, póngase en contacto con su operador de nube. |
+    | Punto de conexión de Resource Manager | `https://management.local.azurestack.external` | El valor de **ResourceManagerUrl** del ASDK es el siguiente: `https://management.local.azurestack.external/` El valor de **ResourceManagerUrl** en los sistemas integrados es: `https://management.<region>.<fqdn>/` Si tiene alguna pregunta sobre el punto de conexión del sistema integrado, póngase en contacto con su operador de nube. |
     | Punto de conexión de Storage | local.azurestack.external | `local.azurestack.external` es para el ASDK. Para un sistema integrado, utilice un punto de conexión del sistema.  |
     | Sufijo de Key Vault | .vault.local.azurestack.external | `.vault.local.azurestack.external` es para el ASDK. Para un sistema integrado, utilice un punto de conexión del sistema.  |
     | Punto de conexión del documento de alias de imagen de VM | https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json | URI del documento que contiene los alias de imagen de máquina virtual. Para obtener más información, consulte [Configuración del punto de conexión de alias de máquina virtual](#set-up-the-virtual-machine-aliases-endpoint). |
@@ -272,7 +272,7 @@ Si usa el ASDK, deberá confiar en el certificado raíz de CA en la máquina rem
     | Value | Ejemplo | Descripción |
     | --- | --- | --- |
     | Nombre del entorno | AzureStackUser | Use `AzureStackUser` para el entorno de usuario. Si es operador, especifique `AzureStackAdmin`. |
-    | Punto de conexión de Resource Manager | https://management.local.azurestack.external | El valor de **ResourceManagerUrl** del ASDK es el siguiente: `https://management.local.azurestack.external/` El valor de **ResourceManagerUrl** en los sistemas integrados es: `https://management.<region>.<fqdn>/` Si tiene alguna pregunta sobre el punto de conexión del sistema integrado, póngase en contacto con su operador de nube. |
+    | Punto de conexión de Resource Manager | `https://management.local.azurestack.external` | El valor de **ResourceManagerUrl** del ASDK es el siguiente: `https://management.local.azurestack.external/` El valor de **ResourceManagerUrl** en los sistemas integrados es: `https://management.<region>.<fqdn>/` Si tiene alguna pregunta sobre el punto de conexión del sistema integrado, póngase en contacto con su operador de nube. |
     | Punto de conexión de Storage | local.azurestack.external | `local.azurestack.external` es para el ASDK. Para un sistema integrado, utilice un punto de conexión del sistema.  |
     | Sufijo de Key Vault | .vault.local.azurestack.external | `.vault.local.azurestack.external` es para el ASDK. Para un sistema integrado, le recomendamos que utilice un punto de conexión del sistema.  |
     | Punto de conexión del documento de alias de imagen de VM | https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json | URI del documento que contiene los alias de imagen de máquina virtual. Para obtener más información, consulte [Configuración del punto de conexión de alias de máquina virtual](#set-up-the-virtual-machine-aliases-endpoint). |
@@ -383,7 +383,7 @@ Use los pasos siguientes para conectarse a Azure Stack Hub:
     | Value | Ejemplo | Descripción |
     | --- | --- | --- |
     | Nombre del entorno | AzureStackUser | Use `AzureStackUser` para el entorno de usuario. Si es operador, especifique `AzureStackAdmin`. |
-    | Punto de conexión de Resource Manager | https://management.local.azurestack.external | El valor de **ResourceManagerUrl** del ASDK es el siguiente: `https://management.local.azurestack.external/` El valor de **ResourceManagerUrl** en los sistemas integrados es: `https://management.<region>.<fqdn>/` Si tiene alguna pregunta sobre el punto de conexión del sistema integrado, póngase en contacto con su operador de nube. |
+    | Punto de conexión de Resource Manager | `https://management.local.azurestack.external` | El valor de **ResourceManagerUrl** del ASDK es el siguiente: `https://management.local.azurestack.external/` El valor de **ResourceManagerUrl** en los sistemas integrados es: `https://management.<region>.<fqdn>/` Si tiene alguna pregunta sobre el punto de conexión del sistema integrado, póngase en contacto con su operador de nube. |
     | Punto de conexión de Storage | local.azurestack.external | `local.azurestack.external` es para el ASDK. Para un sistema integrado, utilice un punto de conexión del sistema.  |
     | Sufijo de Key Vault | .vault.local.azurestack.external | `.vault.local.azurestack.external` es para el ASDK. Para un sistema integrado, utilice un punto de conexión del sistema.  |
     | Punto de conexión del documento de alias de imagen de VM | https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json | URI del documento que contiene los alias de imagen de máquina virtual. Para obtener más información, consulte [Configuración del punto de conexión de alias de máquina virtual](#set-up-the-virtual-machine-aliases-endpoint). |
@@ -489,7 +489,7 @@ Use los pasos siguientes para conectarse a Azure Stack Hub:
     | Value | Ejemplo | Descripción |
     | --- | --- | --- |
     | Nombre del entorno | AzureStackUser | Use `AzureStackUser` para el entorno de usuario. Si es operador, especifique `AzureStackAdmin`. |
-    | Punto de conexión de Resource Manager | https://management.local.azurestack.external | El valor de **ResourceManagerUrl** del ASDK es el siguiente: `https://management.local.azurestack.external/` El valor de **ResourceManagerUrl** en los sistemas integrados es: `https://management.<region>.<fqdn>/` Si tiene alguna pregunta sobre el punto de conexión del sistema integrado, póngase en contacto con su operador de nube. |
+    | Punto de conexión de Resource Manager | `https://management.local.azurestack.external` | El valor de **ResourceManagerUrl** del ASDK es el siguiente: `https://management.local.azurestack.external/` El valor de **ResourceManagerUrl** en los sistemas integrados es: `https://management.<region>.<fqdn>/` Si tiene alguna pregunta sobre el punto de conexión del sistema integrado, póngase en contacto con su operador de nube. |
     | Punto de conexión de Storage | local.azurestack.external | `local.azurestack.external` es para el ASDK. Para un sistema integrado, utilice un punto de conexión del sistema.  |
     | Sufijo de Key Vault | .vault.local.azurestack.external | `.vault.local.azurestack.external` es para el ASDK. Para un sistema integrado, utilice un punto de conexión del sistema.  |
     | Punto de conexión del documento de alias de imagen de VM | https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json | URI del documento que contiene los alias de imagen de máquina virtual. Para obtener más información, consulte [Configuración del punto de conexión de alias de máquina virtual](#set-up-the-virtual-machine-aliases-endpoint). |

@@ -7,12 +7,12 @@ ms.date: 4/23/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 4/23/2020
-ms.openlocfilehash: 4e7ef93f7199e9257fd602d54d3479a92ac8e8a8
-ms.sourcegitcommit: c51e7787e36c49d34ee86cabf9f823fb98b61026
+ms.openlocfilehash: 347d790a4e70e37e83be43019f25b875b7ff2302
+ms.sourcegitcommit: f0ee2a3af78dd6d6e2806710681d52b763948967
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82218813"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84533729"
 ---
 # <a name="upgrade-a-kubernetes-cluster-on-azure-stack-hub"></a>Actualización de un clúster de Kubernetes en Azure Stack Hub
 
@@ -90,7 +90,7 @@ Para más información sobre una asignación completa del motor de AKS, las vers
 
 ## <a name="steps-to-only-upgrade-the-os-image"></a>Pasos para actualizar únicamente la imagen del sistema operativo
 
-1. Revise [la tabla supported-kubernetes-versions](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions) y determine si tiene la versión de aks-engine y la imagen base de AKS que planea para su actualización. Para ver la versión de aks-engine, ejecute: `aks-engine version`.
+1. Revise [la tabla supported-kubernetes-versions](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-aks-engine-versions) y determine si tiene la versión de aks-engine y la imagen base de AKS que planea para su actualización. Para ver la versión de aks-engine, ejecute: `aks-engine version`.
 2. Actualice el motor de AKS según corresponda, en la máquina en la que ha instalado aks-engine ejecute `./get-akse.sh --version vx.xx.x` y reemplace **x.xx.x** por la versión de destino.
 3. Pida a su operador de Azure Stack Hub que agregue la versión de la imagen base de AKS que necesita en Marketplace de Azure Stack Hub.
 4. Ejecute el comando `aks-engine upgrade` con la misma versión de Kubernetes que ya está usando, pero agregue `--force`. Puede ver un ejemplo en [Forzado de una actualización](#forcing-an-upgrade).
