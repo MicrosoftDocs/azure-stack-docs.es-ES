@@ -3,15 +3,15 @@ title: Introducción a Key Vault en Azure Stack Hub
 description: Aprenda la forma en que Key Vault administra claves y secretos en Azure Stack Hub.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 01/24/2020
+ms.date: 06/09/2020
 ms.author: sethm
 ms.lastreviewed: 05/21/2019
-ms.openlocfilehash: 09db1c2e8daa34b566512ca6daee2480a86527df
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 9842d0aa2892218b9d3e8ef527df8f83574487b8
+ms.sourcegitcommit: d91e47a51a02042f700c6a420f526f511a6db9a0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77704053"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84666471"
 ---
 # <a name="introduction-to-key-vault-in-azure-stack-hub"></a>Introducción a Key Vault en Azure Stack Hub
 

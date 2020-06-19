@@ -3,16 +3,16 @@ title: Desarrollo de aplicaciones para Azure Stack Hub
 description: Consideraciones a la hora de desarrollar prototipos de aplicaciones en Azure Stack Hub mediante los servicios de Azure.
 author: sethmanheim
 ms.topic: article
-ms.date: 01/24/2020
+ms.date: 06/12/2020
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 05/21/2019
-ms.openlocfilehash: 3404e0d0e5bbf2c8293d70a7cf816b9e4923261f
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 9aea9074b490a9d6e99ad4da0967d88ed63db04a
+ms.sourcegitcommit: dd140b3a2ac8e558eae9f5f422711d2ba560da16
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77704087"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84744851"
 ---
 # <a name="develop-for-azure-stack-hub"></a>Desarrollo para Azure Stack Hub
 

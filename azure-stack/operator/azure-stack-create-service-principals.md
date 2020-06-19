@@ -6,15 +6,16 @@ ms.author: bryanla
 ms.topic: how-to
 ms.date: 05/07/2020
 ms.lastreviewed: 05/07/2020
-ms.openlocfilehash: 011018493cee92d23675369a9704f5bcf3503ebe
-ms.sourcegitcommit: fe9b2fae89e595c8e739251b7a0d6ea3a0d8659a
+ms.openlocfilehash: 8a86c1c19f4239e6af1e7094ee8803865f9fd70d
+ms.sourcegitcommit: d91e47a51a02042f700c6a420f526f511a6db9a0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84262674"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84666420"
 ---
 # <a name="use-an-app-identity-to-access-azure-stack-hub-resources"></a>Uso de una identidad de aplicación para acceder a recursos de Azure Stack Hub
-<meta name="robots" content="nosnippet"> Una aplicación que necesite implementar o configurar recursos mediante Azure Resource Manager debe estar representada por su propia identidad. Al igual que los usuarios están representados por entidades de seguridad llamadas entidades de seguridad de usuario, las aplicaciones están representadas por entidades de servicio. La entidad de servicio proporciona una identidad para la aplicación, lo que le permite delegar solo los permisos necesarios en la aplicación.  
+
+Una aplicación que necesite implementar o configurar recursos mediante Azure Resource Manager debe estar representada por su propia identidad. Al igual que los usuarios están representados por entidades de seguridad llamadas entidades de seguridad de usuario, las aplicaciones están representadas por entidades de servicio. La entidad de servicio proporciona una identidad para la aplicación, lo que le permite delegar solo los permisos necesarios en la aplicación.  
 
 Por ejemplo, puede tener una aplicación de administración de configuración que use Azure Resource Manager para hacer un inventario de los recursos de Azure. En este escenario, puede crear una entidad de servicio, concederle el rol de "lector" y limitar la aplicación de administración de configuración al acceso de solo lectura.
 

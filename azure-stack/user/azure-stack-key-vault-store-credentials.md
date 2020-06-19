@@ -3,15 +3,15 @@ title: Almacenamiento de las credenciales de las entidades de servicio de Key Va
 description: Obtenga información sobre la forma en que Key Vault almacena las credenciales de una entidad de servicio en Azure Stack Hub
 author: sethmanheim
 ms.topic: article
-ms.date: 01/24/2020
+ms.date: 06/09/2020
 ms.author: sethm
 ms.lastreviewed: 01/16/2020
-ms.openlocfilehash: 66d69fa3397fa748dfbc67377c3e52c47f35904c
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: e42be131f23690611aa4509911644753bea53c4e
+ms.sourcegitcommit: d91e47a51a02042f700c6a420f526f511a6db9a0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77702727"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84666369"
 ---
 # <a name="store-service-principal-credentials-in-azure-stack-hub-key-vault"></a>Almacenamiento de las credenciales de las entidades de servicio de Key Vault en Azure Stack Hub
 
