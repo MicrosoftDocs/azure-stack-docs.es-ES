@@ -3,21 +3,21 @@ title: Concesión de permiso a las aplicaciones para acceder a los secretos de K
 description: Aprenda a ejecutar una aplicación de ejemplo que recupere las claves y los secretos de un almacén de claves en Azure Stack Hub.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 02/19/2020
+ms.date: 06/15/2020
 ms.author: sethm
 ms.lastreviewed: 04/08/2019
-ms.openlocfilehash: 16973c1c381cfecb611370f940f92a7695f9434f
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 2941adf109f9e8c142523f607bce969427127ec3
+ms.sourcegitcommit: c9737939f4e437f1d954e163db972d58b3f98ffd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77702778"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84813791"
 ---
 # <a name="allow-apps-to-access-azure-stack-hub-key-vault-secrets"></a>Concesión de permiso a las aplicaciones para acceder a los secretos de Key Vault de Azure Stack Hub
 
-Siga los pasos de este artículo para ejecutar la aplicación de ejemplo **HelloKeyVault** que recupera las claves y los secretos de un almacén de claves en Azure Stack Hub.
+En los pasos de este artículo se indica cómo ejecutar la aplicación de ejemplo **HelloKeyVault** que recupera las claves y los secretos de un almacén de claves en Azure Stack Hub.
 
-## <a name="prerequisites"></a>Prerrequisitos
+## <a name="prerequisites"></a>Requisitos previos
 
 Puede instalar los siguientes requisitos previos con el [Kit de desarrollo de Azure Stack](../asdk/asdk-connect.md#connect-to-azure-stack-using-rdp), o con un cliente externo basado en Windows si está [conectado a través de VPN](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn):
 
@@ -130,7 +130,7 @@ Tome nota de los valores de **VaultUrl**, **AuthClientId** y **AuthClientSecret*
 
 ## <a name="download-and-configure-the-sample-application"></a>Descarga y configuración de la aplicación de ejemplo
 
-Descargue el ejemplo de almacén de claves de la página de Azure [Key vault client samples](https://www.microsoft.com/download/details.aspx?id=45343) (ejemplos de cliente del almacén de claves). Extraiga el contenido del archivo .zip en la estación de trabajo de desarrollo. Hay dos aplicaciones dentro de la carpeta de ejemplos. En este artículo se usa **HelloKeyVault**.
+Descargue el ejemplo de almacén de claves de la página de Azure [Key vault client samples](https://www.microsoft.com/download/details.aspx?id=45343) (ejemplos de cliente del almacén de claves). Extraiga el contenido del archivo .zip en la estación de trabajo de desarrollo. Hay dos aplicaciones en la carpeta de ejemplos, en este artículo se usa **HelloKeyVault**.
 
 Para cargar el ejemplo **HelloKeyVault**:
 

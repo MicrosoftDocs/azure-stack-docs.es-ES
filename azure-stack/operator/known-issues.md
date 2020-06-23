@@ -3,16 +3,16 @@ title: Problemas conocidos de Azure Stack Hub
 description: Obtenga información sobre los problemas conocidos de las versiones de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 05/05/2020
+ms.date: 06/17/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 03/18/2020
-ms.openlocfilehash: 31ef3ee64eb98b34160e95fee0a228fc32cee589
-ms.sourcegitcommit: 7c10a45a8de0c5c7649e5329ca5b69a0791e37b5
+ms.openlocfilehash: 68b83e78f29e60d4dac2b980dd9fd4aefb3bcf66
+ms.sourcegitcommit: 7df4f3fbb211063e9eef6ac1e2734de72dc6078b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83721885"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84977179"
 ---
 # <a name="azure-stack-hub-known-issues"></a>Problemas conocidos de Azure Stack Hub
 
@@ -83,14 +83,23 @@ Para ver otros problemas conocidos con las actualizaciones de Azure Stack Hub, c
 
 ## <a name="networking"></a>Redes
 
-### <a name="network-security-groups"></a>Grupos de seguridad de red
+### <a name="denyalloutbound-rule-cannot-be-created"></a>No se puede crear la regla DenyAllOutbound
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas. 
 - Causa: No se puede crear una regla **DenyAllOutbound** explícita en un grupo de seguridad de red, ya que esto impedirá todas las comunicaciones internas con la infraestructura necesarias para que se complete la implementación de la máquina virtual.
 - Repetición: Comunes
 
+### <a name="icmp-protocol-not-supported-for-nsg-rules"></a>Protocolo ICMP no compatible con las reglas del grupo de seguridad de red
+
 - Aplicable a: este problema se aplica a todas las versiones admitidas. 
 - Causa: al crear una regla de seguridad de red de entrada o de salida, la opción **Protocol** (Protocolo) muestra una opción **ICMP**. Esto es algo que no se admite actualmente en Azure Stack Hub. Este problema se ha corregido y no aparecerá en la siguiente versión de Azure Stack Hub.
+- Repetición: Comunes
+
+### <a name="cannot-delete-an-nsg-if-nics-not-attached-to-running-vm"></a>No se puede eliminar un grupo de seguridad de red si las NIC no están conectadas a la máquina virtual en ejecución
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: al desasociar un grupo de seguridad de red y una NIC que no están conectadas a una máquina virtual en ejecución, se produce un error en la operación de actualización (PUT) de ese objeto en el nivel de la controladora de red. El grupo de seguridad de red se actualizará en el nivel del proveedor de recursos de red, pero no en la controladora de red, por lo que este grupo pasará a un estado de error.
+- Corrección: conecte las NIC asociadas al grupo de seguridad de red que se debe quitar con las máquinas virtuales en ejecución y desasocie este grupo o quite todas las NIC asociadas a él.
 - Repetición: Comunes
 
 ### <a name="network-interface"></a>interfaz de red
@@ -129,6 +138,11 @@ Para ver otros problemas conocidos con las actualizaciones de Azure Stack Hub, c
   - [Especificación de directivas de IPsec o IKE personalizadas](../user/azure-stack-vpn-gateway-settings.md#ipsecike-parameters)
 
 ## <a name="compute"></a>Proceso
+### <a name="cannot-create-a-vmss-with-standard_ds2_v2-vm-size-on-portal"></a>No se puede crear una instancia de Virtual Machine Scale Sets con el tamaño de máquina virtual Standard_DS2_v2 en el portal
+
+- Aplicable a: este problema se aplica a la versión 2002.
+- Causa: hay un error del portal que impide la creación de una instancia de Virtual Machine Scale Sets con el tamaño de máquina virtual Standard_DS2_v2. Al crear una se producirá el error: "{"code":"DeploymentFailed","message":" se ha producido un error al menos en una operación de implementación de recursos. Enumere las operaciones de implementación para obtener más información. Consulte https://aka.ms/arm-debug para obtener detalles de uso.","details":[{"code":"BadRequest","message":"{\r\n \" error\": {\r\n \" code\": \" NetworkProfileValidationError\" ,\r\n \" message\": \" El tamaño de máquina virtual Standard_DS2_v2 no está en la lista de tamaños permitidos para que las redes aceleradas se habiliten en la máquina virtual en el índice 0 del conjunto de escalado de máquinas virtuales /subscriptions/x/resourceGroups/RGVMSS/providers/Microsoft.Compute/virtualMachineScaleSets/vmss. Tamaños permitidos: .\"\r\n }\r\n}"}]}"
+- Corrección: cree una instancia de Virtual Machine Scale Sets con PowerShell o una plantilla de Resource Manager.
 
 ### <a name="vm-overview-blade-does-not-show-correct-computer-name"></a>La hoja de información general de máquinas virtuales no muestra el nombre de equipo correcto
 
@@ -138,7 +152,7 @@ Para ver otros problemas conocidos con las actualizaciones de Azure Stack Hub, c
 
 ### <a name="nvv4-vm-size-on-portal"></a>Tamaño de máquina virtual NVv4 en el portal
 
-- Aplicable a: Este problema se aplica a la versión 2002 y versiones posteriores.
+- Aplicable a: este problema se aplica a la versión 2002 y posteriores.
 - Causa: Durante la creación de una máquina virtual, verá el tamaño de máquina virtual: NV4as_v4. Los clientes que tienen el hardware necesario para la versión preliminar de la GPU de Azure Stack Hub basada en el procesador AMD Mi25 pueden realizar una implementación correcta de la máquina virtual. Todos los demás clientes recibirán un error de implementación con este tamaño de máquina virtual.
 - Corrección: Por diseño como preparación para la versión preliminar de la GPU de Azure Stack Hub.
 
@@ -149,6 +163,7 @@ Para ver otros problemas conocidos con las actualizaciones de Azure Stack Hub, c
 - Corrección: Vuelva a crear la cuenta de almacenamiento con el mismo nombre que usó anteriormente.
 - Repetición: Comunes
 
+### <a name="vm-boot-diagnostics"></a>Diagnósticos de arranque de VM
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: al intentar iniciar una máquina virtual desasignada, puede aparecer el siguiente error: **No se encontró la cuenta de almacenamiento de los diagnósticos de la máquina virtual "diagnosticstorageaccount". Asegúrese de que la cuenta de almacenamiento no se ha eliminado**. El error se produce si intenta iniciar una máquina virtual con los diagnósticos de arranque habilitados, pero se ha eliminado la cuenta de almacenamiento de diagnósticos de arranque a la que se hace referencia.
@@ -335,6 +350,13 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 - Causa: En el portal de usuarios, la hoja **Red virtual** muestra una opción para usar **puntos de conexión de servicio**. Esta característica no se admite actualmente en Azure Stack Hub.
 - Repetición: Comunes
 
+### <a name="cannot-delete-an-nsg-if-nics-not-attached-to-running-vm"></a>No se puede eliminar un grupo de seguridad de red si las NIC no están conectadas a la máquina virtual en ejecución
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: al desasociar un grupo de seguridad de red y una NIC que no están conectadas a una máquina virtual en ejecución, se produce un error en la operación de actualización (PUT) de ese objeto en el nivel de la controladora de red. El grupo de seguridad de red se actualizará en el nivel del proveedor de recursos de red, pero no en la controladora de red, por lo que este grupo pasará a un estado de error.
+- Corrección: conecte las NIC asociadas al grupo de seguridad de red que se debe quitar con las máquinas virtuales en ejecución y desasocie este grupo o quite todas las NIC asociadas a él.
+- Repetición: Comunes
+
 ### <a name="network-interface"></a>interfaz de red
 
 #### <a name="addingremoving-network-interface"></a>Incorporación o eliminación de una interfaz de red
@@ -375,6 +397,8 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: en el portal de usuarios, la hoja **Conexiones** muestra una característica denominada **Solucionador de problemas de VPN**. Esta característica no se admite actualmente en Azure Stack Hub.
 - Repetición: Comunes
+
+#### <a name="vpn-troubleshooter"></a>Solucionador de problemas de VPN
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: en el portal de usuarios, aparecen la característica **Solución de problemas de VPN** y **Métricas** en un recurso de puerta de enlace de VPN, pero esto no se admite en Azure Stack Hub.
@@ -504,6 +528,13 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: En el portal de usuarios, la hoja **Red virtual** muestra una opción para usar **puntos de conexión de servicio**. Esta característica no se admite actualmente en Azure Stack Hub.
+- Repetición: Comunes
+
+### <a name="cannot-delete-an-nsg-if-nics-not-attached-to-running-vm"></a>No se puede eliminar un grupo de seguridad de red si las NIC no están conectadas a la máquina virtual en ejecución
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: al desasociar un grupo de seguridad de red y una NIC que no están conectadas a una máquina virtual en ejecución, se produce un error en la operación de actualización (PUT) de ese objeto en el nivel de la controladora de red. El grupo de seguridad de red se actualizará en el nivel del proveedor de recursos de red, pero no en la controladora de red, por lo que este grupo pasará a un estado de error.
+- Corrección: conecte las NIC asociadas al grupo de seguridad de red que se debe quitar con las máquinas virtuales en ejecución y desasocie este grupo o quite todas las NIC asociadas a él.
 - Repetición: Comunes
 
 ### <a name="network-interface"></a>interfaz de red
@@ -662,6 +693,13 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas. 
 - Causa: al agregar máquinas virtuales del conjunto de disponibilidad al grupo back-end de un equilibrador de carga, se muestra un mensaje de error en el portal que indica **No se pudo guardar el grupo back-end de equilibradores de carga**. Se trata de un problema cosmético en el portal; la funcionalidad existe y las máquinas virtuales se agregan correctamente al grupo back-end de modo interno. 
+- Repetición: Comunes
+
+### <a name="cannot-delete-an-nsg-if-nics-not-attached-to-running-vm"></a>No se puede eliminar un grupo de seguridad de red si las NIC no están conectadas a la máquina virtual en ejecución
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: al desasociar un grupo de seguridad de red y una NIC que no están conectadas a una máquina virtual en ejecución, se produce un error en la operación de actualización (PUT) de ese objeto en el nivel de la controladora de red. El grupo de seguridad de red se actualizará en el nivel del proveedor de recursos de red, pero no en la controladora de red, por lo que este grupo pasará a un estado de error.
+- Corrección: conecte las NIC asociadas al grupo de seguridad de red que se debe quitar con las máquinas virtuales en ejecución y desasocie este grupo o quite todas las NIC asociadas a él.
 - Repetición: Comunes
 
 ### <a name="network-security-groups"></a>Grupos de seguridad de red

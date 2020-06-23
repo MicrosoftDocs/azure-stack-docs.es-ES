@@ -3,15 +3,15 @@ title: Uso del módulo de directivas de Azure Stack Hub
 description: Aprenda a restringir una suscripción de Azure para que se comporte como una suscripción de Azure Stack Hub
 author: sethmanheim
 ms.topic: article
-ms.date: 01/07/2020
+ms.date: 06/09/2020
 ms.author: sethm
 ms.lastreviewed: 03/26/2019
-ms.openlocfilehash: 7af2662c52de8085b6b77fa0c9a2b36f401168fc
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: f39bbf689cd3b847b29c2d5b046721029078a5dd
+ms.sourcegitcommit: d91e47a51a02042f700c6a420f526f511a6db9a0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77703832"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84666488"
 ---
 # <a name="manage-azure-policy-using-the-azure-stack-hub-policy-module"></a>Administración de la directiva de Azure con el módulo de directivas de Azure Stack Hub
 
@@ -30,7 +30,7 @@ El módulo de directivas de Azure Stack Hub le permite configurar una suscripci�
 
 ## <a name="apply-policy-to-azure-subscription"></a>Aplicación de la directiva a la suscripción de Azure
 
-Puede utilizar los comandos siguientes para aplicar una directiva predeterminada de Azure Stack Hub con su suscripción a Azure. Antes de ejecutar estos comandos, reemplace `Azure subscription name` por el nombre de la suscripción a Azure:
+Puede utilizar los comandos siguientes para aplicar una directiva predeterminada de Azure Stack Hub en su suscripción a Azure. Antes de ejecutar estos comandos, reemplace `Azure subscription name` por el nombre de la suscripción a Azure:
 
 ```powershell
 Add-AzureRmAccount

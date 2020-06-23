@@ -3,16 +3,16 @@ title: Incorporación de requisitos previos del motor de Azure Kubernetes Servic
 description: Aprenda a agregar los requisitos previos del motor de AKS al Marketplace de Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 2/27/2020
+ms.date: 6/08/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 5bebac9b3c604b2726cf5cd8f895fb17e0db3486
-ms.sourcegitcommit: 8646eba1674ca708baf6699f4a4b56d134766e85
+ms.lastreviewed: 6/08/2020
+ms.openlocfilehash: 7090ac774da41e8f7f1bc319a9956cba8f8b0f4a
+ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861391"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84630441"
 ---
 # <a name="add-the-azure-kubernetes-services-aks-engine-prerequisites-to-the-azure-stack-hub-marketplace"></a>Incorporación de requisitos previos del motor de Azure Kubernetes Service (AKS) al Marketplace de Azure Stack Hub
 
@@ -42,7 +42,7 @@ Puede agregar la imagen base de AKS a Marketplace obteniendo el elemento de Azur
 
 Agregue el siguiente elemento a Marketplace:
 
-1. Inicie sesión en el [portal de administración](https://adminportal.local.azurestack.external).
+1. Inicie sesión en el portal de administración `https://adminportal.local.azurestack.external`.
 
 1. Seleccione **Todos los servicios** y, a continuación, en la categoría **Administración**, seleccione **Marketplace management** (Administración de Marketplace).
 
@@ -50,12 +50,12 @@ Agregue el siguiente elemento a Marketplace:
 
 1. Escriba `AKS Base`.
 
-1. Seleccione la versión de la imagen que coincida con la versión del motor de AKS. Puede encontrar una lista de la imagen base de AKS con la versión del motor de AKS en [Versiones de Kubernetes admitidas](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). 
+1. Seleccione la versión de la imagen que coincida con la versión del motor de AKS. Puede encontrar una lista de la imagen base de AKS con la versión del motor de AKS en [Versiones de Kubernetes admitidas](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-aks-engine-versions). 
 
     En la lista, seleccione:
     - **Publicador**: Azure Kubernetes Service
     - **Oferta**: AKS
-    - **Versión**: Distribución de imágenes 16.04-LTS de la imagen base de AKS, octubre de 2019 (2019.10.24 o versión que se asigna al motor de AKS)
+    - **Versión**: Distribución de imágenes Ubuntu 16.04-LTS de la imagen base de AKS, marzo de 2020 (2020.03.19 o versión que se asigna al motor de AKS)
 
 1. Seleccione **Descargar**.
 
@@ -63,7 +63,7 @@ Agregue el siguiente elemento a Marketplace:
 
 Puede agregar el script personalizado a Marketplace obteniendo el elemento de Azure. Pero si Azure Stack Hub está desconectado, siga las instrucciones de [Descarga de elementos de Marketplace desde Azure](azure-stack-download-azure-marketplace-item.md?pivots=state-disconnected) para agregar el elemento.  Agregue el elemento especificado en el paso cinco.
 
-1. Abra el [portal de administración](https://adminportal.local.azurestack.external).
+1. Abra el portal de administración `https://adminportal.local.azurestack.external`.
 
 1. Seleccione **Todos los servicios** y, a continuación, en la categoría **Administración**, seleccione **Marketplace management** (Administración de Marketplace).
 

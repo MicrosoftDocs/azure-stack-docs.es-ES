@@ -7,12 +7,12 @@ ms.date: 3/12/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 3/12/2020
-ms.openlocfilehash: e85df91b08c51ce8255e2b35c9d7ba31505b3d00
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: ee0410467a7e2608580da5c209a97f86a60b675a
+ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79313231"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84631196"
 ---
 # <a name="deploy-kubernetes-to-azure-stack-hub-using-azure-active-directory"></a>Implementación de Kubernetes en Azure Stack Hub con Azure Active Directory
 
@@ -21,7 +21,7 @@ ms.locfileid: "79313231"
 
 Puede seguir los pasos descritos en este artículo para implementar y configurar los recursos de Kubernetes cuando use Azure Active Directory (Azure AD) como servicio de administración de identidad en una sola operación coordinada.
 
-## <a name="prerequisites"></a>Prerrequisitos
+## <a name="prerequisites"></a>Requisitos previos
 
 Para empezar, asegúrese de tener los permisos adecuados y de que la instancia de Azure Stack Hub está lista.
 
@@ -71,7 +71,7 @@ Cree una entidad de servicio en Azure. La entidad de servicio permite que la apl
 
 Dé a la entidad de servicio acceso a su suscripción para que la entidad pueda crear recursos.
 
-1.  Inicie sesión en el portal de [Azure Stack Hub](https://portal.local.azurestack.external/).
+1.  Inicie sesión en el portal de Azure Stack Hub `https://portal.local.azurestack.external/`.
 
 1. Seleccione **Todos los servicios**  > **Suscripciones**.
 
@@ -87,7 +87,7 @@ Dé a la entidad de servicio acceso a su suscripción para que la entidad pueda 
 
 ## <a name="deploy-kubernetes"></a>Implementación de Kubernetes
 
-1. Abra el [portal de Azure Stack Hub](https://portal.local.azurestack.external).
+1. Abra el portal de Azure Stack Hub `https://portal.local.azurestack.external`.
 
 1. Seleccione **+ Crear un recurso** > **Proceso** > **Clúster de Kubernetes**. Haga clic en **Crear**.
 

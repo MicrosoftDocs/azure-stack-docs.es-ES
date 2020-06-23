@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mabrigg
 ms.reviewer: wamota
 ms.lastreviewed: 07/10/2019
-ms.openlocfilehash: 2a71320a660c7dbf74ad885226bb7fcbfa78b35f
-ms.sourcegitcommit: cad40ae88212cc72f40c84a1c88143ea0abb65ef
+ms.openlocfilehash: 459d6177015cbca40d2f8f830eba85dc87be18c7
+ms.sourcegitcommit: e79aafb05c5fc512a83f0ebc6d76503213ccbc70
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84111391"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84730686"
 ---
 # <a name="differences-and-considerations-for-azure-stack-hub-networking"></a>Diferencias y consideraciones para las redes de Azure Stack Hub
 
@@ -52,6 +52,7 @@ En este artículo se proporciona información general sobre las consideraciones 
 |  | Cambio del tamaño de la puerta de enlace | Azure permite cambiar el tamaño de la puerta de enlace después de la implementación. | No se admite el cambio de tamaño. |
 |  | Configuración de disponibilidad | activa/activa | activa/pasiva |
 |  | UsePolicyBasedTrafficSelectors | Azure admite el uso de selectores de tráfico en función de directivas con las conexiones de puerta de enlace basadas en rutas. | Todavía no se admite. |
+|  | Supervisión y alertas | Azure utiliza Azure Monitor para proporcionar la capacidad de configurar alertas para los recursos de VPN. | Todavía no se admite.|
 | Equilibrador de carga | SKU | Se admiten los equilibradores de carga Estándar y Básico. | Solo se admite el equilibrador de carga Básico.<br>La propiedad SKU no se admite.<br>El equilibrador de carga de SKU básico /path/ no puede tener más de cinco configuraciones de IP de front-end.  |
 |  | Zones | Availability Zones se admite. | Todavía no se admite |
 |  | Las reglas NAT de entrada admiten los puntos de conexión de servicio | Azure permite especificar puntos de conexión de servicio para las reglas NAT de entrada. | Azure Stack Hub todavía no admite puntos de conexión de servicio, por lo que estos no se pueden especificar. |

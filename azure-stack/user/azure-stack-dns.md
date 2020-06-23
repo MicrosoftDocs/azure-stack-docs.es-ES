@@ -3,15 +3,15 @@ title: DNS en Azure Stack Hub
 description: Obtenga información sobre DNS en Azure Stack Hub y cómo crear y administrar zonas DNS.
 author: sethmanheim
 ms.topic: article
-ms.date: 01/24/2020
+ms.date: 06/11/2020
 ms.author: sethm
 ms.lastreviewed: 01/05/2020
-ms.openlocfilehash: b9afba6322b80d487f4ba7d4324adcd42a8fd85a
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 7ab3775b0424a8cba0b84bc3d3ccb40705b192fb
+ms.sourcegitcommit: dd140b3a2ac8e558eae9f5f422711d2ba560da16
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77703016"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84744916"
 ---
 # <a name="use-dns-in-azure-stack-hub"></a>DNS en Azure Stack Hub
 
@@ -43,7 +43,7 @@ Tiene solicitudes de procesamiento de un equilibrador de carga desde una aplicac
 
 Puede crear y administrar registros y zonas DNS en Azure Stack Hub.
 
-Azure Stack Hub proporciona un servicio DNS similar al de Azure mediante el uso de API que son coherentes con las API de Azure DNS.  Al hospedar dominios en DNS de Azure Stack Hub, puede administrar los registros DNS con las mismas credenciales, API y herramientas. También puede usar la misma facturación y soporte técnico que los otros servicios de Azure.
+Azure Stack Hub proporciona un servicio DNS similar al de Azure mediante el uso de API que son coherentes con las API de Azure DNS. Al hospedar dominios en DNS de Azure Stack Hub, puede administrar los registros DNS con las mismas credenciales, API y herramientas. También puede usar la misma facturación y soporte técnico que los otros servicios de Azure.
 
 La infraestructura de DNS de Azure Stack Hub es más compacta que la de Azure. El tamaño y la ubicación de una implementación de Azure Stack Hub afectará el ámbito, la escalabilidad y el rendimiento de DNS. Es decir, el rendimiento, la disponibilidad, la distribución global y la alta disponibilidad pueden variar de una implementación a otra.
 
@@ -53,7 +53,7 @@ El DNS en Azure Stack Hub es similar al DNS en Azure, con algunas excepciones im
 
 * **No admite registros AAAA**: Azure Stack Hub no admite registros AAAA porque no es compatible con las direcciones IPv6. Se trata de una diferencia clave entre el DNS de Azure y de Azure Stack Hub.
 
-* **No es multiinquilino**: el servicio DNS en Azure Stack Hub no es multiinquilino. Los inquilinos no pueden crear la misma zona DNS. Solo la primera suscripción que intenta crear la zona lo consigue, mientras que se produce un error en el resto de solicitudes posteriores. Se trata de otra importante diferencia entre los DNS de Azure Stack Hub y Azure.
+* **No es multiinquilino**: El servicio DNS en Azure Stack Hub no es multiinquilino. Los inquilinos no pueden crear la misma zona DNS. Solo la primera suscripción que intenta crear la zona lo consigue, mientras que se produce un error en el resto de solicitudes posteriores. Se trata de otra importante diferencia entre los DNS de Azure Stack Hub y Azure.
 
 * **Etiquetas, metadatos y etiquetas Etag**: hay pequeñas diferencias en cómo Azure Stack Hub manipula las etiquetas, los metadatos, las etiquetas ETag y los límites.
 
@@ -84,11 +84,11 @@ En el nivel de la API REST de DNS de Azure Stack Hub, los valores de ETag se esp
 | If-match *| PUT solo se realiza correctamente si el recurso existe.|
 | If-none-match *| PUT solo se realiza correctamente si el recurso no existe.|
 
-### <a name="limits"></a>límites
+### <a name="limits"></a>Límites
 
 Se aplican los límites predeterminados siguientes cuando se usa el DNS de Azure Stack Hub:
 
-| Resource| Límite predeterminado|
+| Recurso| Límite predeterminado|
 |---------|--------------|
 | Zonas por suscripción| 100|
 | Conjuntos de registros por zona| 5000|

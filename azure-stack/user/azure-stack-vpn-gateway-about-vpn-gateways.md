@@ -3,15 +3,15 @@ title: Creación de puertas de enlace VPN para Azure Stack Hub
 description: Creación y configuración de puertas de enlace VPN para Azure Stack Hub
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 01/24/2020
+ms.date: 06/15/2020
 ms.author: sethm
 ms.lastreviewed: 05/21/2019
-ms.openlocfilehash: 35e17b6527b39bc12ad8f140b98a27fa6f4b69ac
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 2393a088e64ec0a3144fe7d5f4c5c3d2c8e25ab1
+ms.sourcegitcommit: c9737939f4e437f1d954e163db972d58b3f98ffd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79295260"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84813724"
 ---
 # <a name="create-vpn-gateways-for-azure-stack-hub"></a>Creación de puertas de enlace VPN para Azure Stack Hub
 
@@ -25,8 +25,8 @@ Cada red virtual solo puede tener dos puertas de enlace de red virtual, pero sol
 
 Antes de crear y configurar puertas de enlace de VPN para Azure Stack Hub, revise las [consideraciones de los servicios de red de Azure Stack Hub](azure-stack-network-differences.md), donde encontrará información acerca de las diferencias de las configuraciones de Azure Stack Hub y Azure.
 
->[!NOTE]
->En Azure, el rendimiento de ancho de banda de la SKU de la puerta de enlace de VPN que elija debe dividirse entre todas las conexiones que están conectadas a la puerta de enlace. Sin embargo, en Azure Stack Hub, el valor de ancho de banda de la SKU de la puerta de enlace de VPN se aplica a cada recurso de conexión que está conectado a él.
+> [!NOTE]
+> En Azure, el rendimiento de ancho de banda de la SKU de la puerta de enlace de VPN que elija debe dividirse entre todas las conexiones que están conectadas a la puerta de enlace. Sin embargo, en Azure Stack Hub, el valor de ancho de banda de la SKU de la puerta de enlace de VPN se aplica a cada recurso de conexión que está conectado a él.
 >
 > Por ejemplo:
 >
@@ -78,7 +78,7 @@ Una conexión *multisitio* es una variación de la conexión de sitio a sitio. P
 
 Al crear una puerta de enlace de red virtual para Azure Stack Hub, especifique la SKU de la puerta de enlace que desea usar. Se admiten las siguientes SKU de VPN Gateway:
 
-* Básica
+* Básico
 * Estándar
 * Alto rendimiento
 
@@ -116,8 +116,8 @@ En la tabla siguiente se muestran los tipos de puerta de enlace y el rendimiento
 **(2)** El número de túneles máximo es el total por cada implementación de Azure Stack Hub para todas las suscripciones.  
 **(3)** El enrutamiento de BGP no es compatible con la SKU Básica.
 
->[!NOTE]
->Solo se puede crear una conexión VPN de sitio a sitio entre dos implementaciones de Azure Stack Hub. Esto se debe a una limitación en la plataforma, que no permitirá más de una conexión VPN a la misma dirección IP. Dado que Azure Stack Hub aprovecha la puerta de enlace multiinquilino que usa una sola dirección IP pública para todas las puertas de enlace de la VPN del sistema de Azure Stack Hub, no puede haber más de una conexión VPN entre dos sistemas de Azure Stack Hub. Esta limitación se aplica también a la existencia de más de una conexión VPN de sitio a sitio a cualquier puerta de enlace de VPN que use una única dirección IP. Azure Stack Hub no permitirá que se cree más de un recurso de puerta de enlace de red local con la misma dirección IP.
+> [!NOTE]
+> Solo se puede crear una conexión VPN de sitio a sitio entre dos implementaciones de Azure Stack Hub. Esto se debe a una limitación en la plataforma, que no permitirá más de una conexión VPN a la misma dirección IP. Dado que Azure Stack Hub aprovecha la puerta de enlace multiinquilino que usa una sola dirección IP pública para todas las puertas de enlace de la VPN del sistema de Azure Stack Hub, no puede haber más de una conexión VPN entre dos sistemas de Azure Stack Hub. Esta limitación se aplica también a la existencia de más de una conexión VPN de sitio a sitio a cualquier puerta de enlace de VPN que use una única dirección IP. Azure Stack Hub no permitirá que se cree más de un recurso de puerta de enlace de red local con la misma dirección IP.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

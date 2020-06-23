@@ -3,16 +3,16 @@ title: Notas de la versión de Azure Stack Hub
 description: Notas de la versión para los sistemas integrados de Azure Stack Hub, incluidas las actualizaciones y correcciones de errores.
 author: sethmanheim
 ms.topic: article
-ms.date: 05/29/2020
+ms.date: 06/09/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 03/18/2020
-ms.openlocfilehash: 39e6c3ce9b942398954c5c81cbce172095520d90
-ms.sourcegitcommit: c167bf3724139aafe40066f9533985ed7d919c0e
+ms.openlocfilehash: adb3d5d995b9bb267dacf957a9a7f15582114484
+ms.sourcegitcommit: 5f4f0ee043ff994efaad44129ce49be43c64d5dc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329221"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84819451"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Notas de la versión de Azure Stack Hub
 
@@ -157,6 +157,8 @@ Azure Stack Hub publica revisiones de forma periódica. Asegúrese de instalar l
 
 Las revisiones de Azure Stack Hub solo son aplicables a los sistemas integrados de Azure Stack Hub; no intente instalar revisiones en el ASDK.
 
+Para más información acerca de las revisiones, consulte [Directiva de servicio de Azure Stack Hub](azure-stack-servicing-policy.md#hotfixes).
+
 ### <a name="prerequisites-before-applying-the-2002-update"></a>Requisitos previos: Antes de aplicar la actualización 2002
 
 La versión 2002 de Azure Stack Hub debe aplicarse en la versión 1910 con las revisiones siguientes:
@@ -166,7 +168,7 @@ La versión 2002 de Azure Stack Hub debe aplicarse en la versión 1910 con las
 
 ### <a name="after-successfully-applying-the-2002-update"></a>Después de aplicar correctamente la actualización 2002
 
-Después de instalar esta actualización, instale todas las revisiones aplicables. Para más información, consulte nuestra [directiva de servicio](azure-stack-servicing-policy.md).
+Después de instalar esta actualización, instale todas las revisiones aplicables.
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
 - [Revisión 1.2002.28.93 de Azure Stack Hub](https://support.microsoft.com/help/4562966)
@@ -222,7 +224,7 @@ Para obtener más información sobre los tipos de compilación de actualización
     - Integración con Azure Arc
     - Integración con Azure Monitor para Containers.
   - Usar contenedores de Windows con el motor de AKS.
-  - Recibir soporte técnico de CSS e ingeniería para las implementaciones.
+  - Recibir soporte técnico y de ingeniería de Soporte técnico de Microsoft para sus implementaciones.
 
 ### <a name="improvements"></a>Mejoras
 
@@ -429,7 +431,7 @@ El tipo de compilación de la actualización 1907 de Azure Stack Hub es **Rápi
 
 <!-- What's new, also net new experiences and features. -->
 
-- Versión de disponibilidad general del servicio de recopilación de registros de diagnóstico de Azure Stack Hub para facilitar y mejorar la recopilación de registros de diagnóstico. El servicio de recopilación de registros de diagnóstico de Azure Stack Hub proporciona una manera simplificada de recopilar y compartir registros de diagnóstico con los servicios de asistencia al cliente (CSS) de Microsoft. Este servicio de recopilación de registros de diagnóstico proporciona una experiencia de usuario nueva en el portal de administración de Azure Stack Hub que permite que los operadores configuren la carga automática de los registros de diagnóstico en un blob de almacenamiento cuando surgen ciertas alertas críticas. El servicio también se puede usar para realizar la misma operación a petición. Para más información, consulte el artículo [Recopilación de registros de diagnóstico](azure-stack-diagnostic-log-collection-overview.md).
+- Versión de disponibilidad general del servicio de recopilación de registros de diagnóstico de Azure Stack Hub para facilitar y mejorar la recopilación de registros de diagnóstico. El servicio de recopilación de registros de diagnóstico de Azure Stack Hub proporciona una manera simplificada de recopilar y compartir registros de diagnóstico con Soporte técnico de Microsoft. Este servicio de recopilación de registros de diagnóstico proporciona una experiencia de usuario nueva en el portal de administración de Azure Stack Hub que permite que los operadores configuren la carga automática de los registros de diagnóstico en un blob de almacenamiento cuando surgen ciertas alertas críticas. El servicio también se puede usar para realizar la misma operación a petición. Para más información, consulte el artículo [Recopilación de registros de diagnóstico](azure-stack-diagnostic-log-collection-overview.md).
 
 - Versión de disponibilidad general de la validación de la infraestructura de red de Azure Stack Hub como parte de la herramienta de validación de Azure Stack Hub **Test-AzureStack**. La infraestructura de red de Azure Stack Hub será parte de **Test-AzureStack** para identificar si se produce un error en la infraestructura de red de Azure Stack Hub. Para comprobar la conectividad de la infraestructura de red, la prueba omite la red definida por software de Azure Stack Hub. Muestra la conectividad de una VIP pública a los reenviadores DNS configurados, los servidores NTP y los puntos de conexión de identidad. También comprueba la conectividad con Azure cuando se usa Azure AD como el proveedor de identidades o el servidor federado cuando se usa ADFS. Para más información, consulte el artículo sobre la [herramienta de validación de Azure Stack Hub](azure-stack-diagnostic-test.md).
 

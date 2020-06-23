@@ -7,12 +7,12 @@ ms.date: 3/12/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 3/12/2020
-ms.openlocfilehash: adca3be6659d140dcf05776d04696ff7302a9ab3
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 2dbef9bd19fac12541f738fc530dbf58f5c85c35
+ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79313191"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84631212"
 ---
 # <a name="deploy-kubernetes-to-azure-stack-hub-using-active-directory-federated-services"></a>Implementación de Kubernetes en Azure Stack Hub con los Servicios de federación de Active Directory
 
@@ -21,7 +21,7 @@ ms.locfileid: "79313191"
 
 Puede seguir los pasos descritos en este artículo para implementar y configurar los recursos de Kubernetes. Siga estos pasos cuando los Servicios de federación de Active Directory (AD FS) sean su servicio de administración de identidad.
 
-## <a name="prerequisites"></a>Prerrequisitos 
+## <a name="prerequisites"></a>Requisitos previos 
 
 Para empezar, asegúrese de tener los permisos adecuados y de que la instancia de Azure Stack Hub está lista.
 
@@ -55,7 +55,7 @@ Deberá trabajar con el administrador de Azure Stack Hub para que configure la e
 
 ## <a name="deploy-kubernetes"></a>Implementación de Kubernetes
 
-1. Abra el [portal de Azure Stack Hub](https://portal.local.azurestack.external).
+1. Abra el portal de Azure Stack Hub `https://portal.local.azurestack.external`.
 
 1. Seleccione **+ Crear un recurso** > **Proceso** > **Clúster de Kubernetes**. Seleccione **Crear**.
 

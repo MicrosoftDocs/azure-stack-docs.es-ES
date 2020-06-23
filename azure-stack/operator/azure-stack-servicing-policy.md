@@ -4,16 +4,16 @@ titleSuffix: Azure Stack Hub
 description: Conozca la directiva de servicio de Azure Stack Hub y cómo mantener un sistema integrado en un estado admitido.
 author: sethmanheim
 ms.topic: article
-ms.date: 05/07/2020
+ms.date: 06/09/2020
 ms.author: sethm
-ms.reviewer: harik
+ms.reviewer: niy
 ms.lastreviewed: 03/18/2020
-ms.openlocfilehash: 479343623f59720cd330c3f9d8d8b8c7836a8a0e
-ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
+ms.openlocfilehash: 6b2a3a281e16ff658b7124071cdb83326d0cbbde
+ms.sourcegitcommit: 396f79ce073d99d14fcc71b85c4a4932334832a8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82848156"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84636842"
 ---
 # <a name="azure-stack-hub-servicing-policy"></a>Directiva de servicio de Azure Stack Hub
 
@@ -52,9 +52,9 @@ Para obtener información sobre una actualización concreta, incluido cómo desc
 
 ## <a name="hotfixes"></a>Revisiones
 
-En ocasiones, Microsoft ofrece revisiones para Azure Stack Hub que solucionan un determinado problema que suele ser de naturaleza preventiva o urgente. Todas las revisiones se publican con su correspondiente artículo de Microsoft Knowledge Base que detalla el problema, la causa y la resolución.
+En ocasiones, Microsoft ofrece revisiones para Azure Stack Hub que solucionan un determinado problema que suele ser de naturaleza preventiva o urgente. Todas las revisiones se publican con su correspondiente artículo de Microsoft Knowledge Base que detalla los problemas que se corrigen en esa revisión.
 
-Las revisiones se descargan e instalan del mismo modo que los paquetes de actualización completos normales de Azure Stack Hub. Pero, a diferencia de una actualización completa, las revisiones pueden instalarse en minutos. Se recomienda que los operadores de Azure Stack Hub establezcan ventanas de mantenimiento al instalar revisiones. Las revisiones actualizan la versión de la nube de Azure Stack Hub para que se pueda determinar fácilmente si se han aplicado. Se ofrece una revisión distinta para cada versión de Azure Stack Hub que aún reciba soporte técnico. Cada revisión para una iteración concreta es acumulativa e incluye las actualizaciones anteriores de esa misma versión. Puede obtener más información sobre la aplicabilidad de una revisión determinada en el correspondiente artículo de Knowledge Base. Consulte los vínculos de notas de la versión en la sección anterior.
+Las revisiones se descargan e instalan del mismo modo que los paquetes de actualización completos normales de Azure Stack Hub. Pero, a diferencia de una actualización completa, las revisiones pueden instalarse en minutos. Se recomienda que los operadores de Azure Stack Hub establezcan ventanas de mantenimiento al instalar revisiones. Las revisiones actualizan la versión de la nube de Azure Stack Hub para que se pueda determinar fácilmente si se han aplicado. Se ofrece una revisión distinta para cada versión de Azure Stack Hub que aún reciba soporte técnico. **Cada revisión para una iteración concreta es acumulativa e incluye las actualizaciones anteriores de esa misma versión.** Puede obtener más información sobre la aplicabilidad de una revisión determinada en el correspondiente artículo de Knowledge Base. Consulte los vínculos de notas de la versión en la sección anterior.
 
 Para más información acerca de las revisiones disponibles actualmente, consulte las notas de la versión de la actualización:
 

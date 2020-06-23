@@ -7,12 +7,12 @@ ms.date: 04/17/2020
 ms.author: justinha
 ms.reviewer: shisab
 ms.lastreviewed: 04/17/2020
-ms.openlocfilehash: e77252cf89d52291d7d4071d83981eb36bb062ef
-ms.sourcegitcommit: 70c344b3c9c63f8c12867b2cdfdd1794fcc518dc
+ms.openlocfilehash: 067817e29858113fc22b596aa394d6e0942e921a
+ms.sourcegitcommit: 5f4f0ee043ff994efaad44129ce49be43c64d5dc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82836179"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84819424"
 ---
 # <a name="proactive-diagnostic-log-collection-in-azure-stack-hub"></a>Recopilación proactiva de registros de diagnóstico en Azure Stack Hub
 
@@ -20,7 +20,7 @@ ms.locfileid: "82836179"
 
 Ahorre tiempo con el equipo de soporte técnico al cliente mediante la recopilación proactiva de registros de diagnóstico cuando se genera una alerta en Azure Stack Hub.
 
-Si es necesario investigar el estado de mantenimiento del sistema, los registros se pueden cargar automáticamente para su análisis antes de abrir una incidencia con los servicios de soporte técnico al cliente de Microsoft.
+Si es necesario investigar el estado de mantenimiento del sistema, los registros se pueden cargar automáticamente para su análisis antes de abrir una incidencia para el equipo de Soporte técnico de Microsoft.
 
 ## <a name="steps-to-configure-proactive-log-collection"></a>Pasos para configurar la recopilación proactiva de registros
 
@@ -41,15 +41,15 @@ Siga estos pasos para configurar la recopilación proactiva de registros. La rec
 
 Recomendamos configurar la característica de recopilación de registros de diagnóstico automática para optimizar su experiencia de asistencia al cliente y recopilación de registros.
 
-En caso de que deban investigarse las condiciones de mantenimiento del sistema, los servicios de soporte al cliente (CSS) de Microsoft pueden cargar los registros automáticamente para su análisis.
+En caso de que deban investigarse las condiciones de mantenimiento del sistema, Soporte técnico de Microsoft puede cargar los registros automáticamente para su análisis.
 
 ## <a name="create-an-azure-blob-container-sas-url"></a>Creación de una dirección URL de SAS de contenedor de blobs de Azure
 
 Para poder configurar la recopilación de registros automática, deberá obtener una firma de acceso compartido (SAS) para un contenedor de blobs. Una SAS le permite conceder acceso a los recursos de su cuenta de almacenamiento sin compartir las claves de cuenta.
 
-Puede guardar los archivos de registro de Azure Stack Hub en un contenedor de blobs en Azure y, a continuación, proporcionar la dirección URL de SAS donde CSS puede recopilar los registros.
+Puede guardar los archivos de registro de Azure Stack Hub en un contenedor de blobs en Azure y, a continuación, proporcionar la dirección URL de SAS donde Soporte técnico de Microsoft puede recopilar los registros.
 
-### <a name="prerequisites"></a>Prerrequisitos
+### <a name="prerequisites"></a>Requisitos previos
 
 Puede usar un contenedor de blobs nuevo o existente en Azure. Para crear un contenedor de blobs en Azure, necesita al menos el [rol de colaborador de Storage Blob](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor) o el [permiso específico](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). Los administradores globales también tienen el permiso necesario.
 
@@ -135,7 +135,7 @@ El historial de registros recopilados de Azure Stack Hub aparece en la página *
 
 Si está habilitada, la recopilación proactiva de registros carga los registros solo cuando se produce uno de los siguientes eventos.
 
-Por ejemplo, **Error de actualización** es una alerta que desencadena la recopilación proactiva de registros de diagnóstico. Si la opción está habilitada, los registros de diagnóstico se capturarán de forma proactiva durante un error de actualización para ayudar a los servicios de soporte técnico al cliente a solucionar el problema. Los registros de diagnóstico solo se recopilan cuando se produce la alerta **Error de actualización**.
+Por ejemplo, **Error de actualización** es una alerta que desencadena la recopilación proactiva de registros de diagnóstico. Si la opción está habilitada, los registros de diagnóstico se capturarán de forma proactiva durante un error de actualización para ayudar a Soporte técnico de Microsoft a solucionar el problema. Los registros de diagnóstico solo se recopilan cuando se produce la alerta **Error de actualización**.
 
 | Título de la alerta | FaultIdType |
 |---|---|

@@ -7,16 +7,16 @@ ms.date: 01/10/2020
 ms.author: justinha
 ms.reviewer: adshar
 ms.lastreviewed: 01/10/2020
-ms.openlocfilehash: 9b082876dca1e39f99ac0b98a7e438aa1231b3c2
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: bb83d8dcf567bac6081083e34c0770a277879282
+ms.sourcegitcommit: 5f4f0ee043ff994efaad44129ce49be43c64d5dc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79512548"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84819493"
 ---
 # <a name="validate-azure-stack-hub-system-state"></a>Validación del estado del sistema con Azure Stack Hub
 
-Como operador de Azure Stack Hub, es esencial tener la capacidad de determinar a petición el mantenimiento y el estado del sistema. La herramienta de validación de Azure Stack Hub (**Test-AzureStack**) es un cmdlet de PowerShell que le permite ejecutar una serie de pruebas en el sistema para identificar errores, si los hubiera. Cuando se ponga en contacto con los Servicios de atención al cliente y soporte técnico de Microsoft (CSS) con un problema, normalmente se le pedirá que ejecute esta herramienta a través del [punto de conexión con privilegios (PEP)](azure-stack-privileged-endpoint.md). Con la información sobre el mantenimiento y el estado en todo el sistema, CSS puede recopilar y analizar registros detallados, centrarse en el área donde se produjo el error y trabajar conjuntamente con usted para resolver el problema.
+Como operador de Azure Stack Hub, es esencial tener la capacidad de determinar a petición el mantenimiento y el estado del sistema. La herramienta de validación de Azure Stack Hub (**Test-AzureStack**) es un cmdlet de PowerShell que le permite ejecutar una serie de pruebas en el sistema para identificar errores, si los hubiera. Cuando se ponga en contacto con los Servicios de atención al cliente y soporte técnico de Microsoft (Soporte técnico de Microsoft) con un problema, normalmente se le pedirá que ejecute esta herramienta a través del [punto de conexión con privilegios (PEP)](azure-stack-privileged-endpoint.md). Con la información sobre el mantenimiento y el estado en todo el sistema, Soporte técnico de Microsoft puede recopilar y analizar registros detallados, centrarse en el área donde se produjo el error y trabajar conjuntamente con usted para resolver el problema.
 
 ## <a name="running-the-validation-tool-and-accessing-results"></a>Ejecución de la herramienta de validación y acceso a los resultados
 
@@ -49,9 +49,9 @@ Como se indicó anteriormente, la herramienta de validación se ejecuta a travé
 
 1. Si cualquier informe de pruebas aparece como **FAIL**, ejecute `Get-AzureStackLog`. Para obtener instrucciones sobre un sistema integrado, consulte cómo ejecutar [Get-AzureStackLog en sistemas integrados de Azure Stack Hub](azure-stack-get-azurestacklog.md).
 
-   El cmdlet recopila registros generados por Test-AzureStack. Se recomienda no recopilar registros y ponerse en contacto con CSS en su lugar si las pruebas envían una notificación **WARN**.
+   El cmdlet recopila registros generados por Test-AzureStack. Se recomienda no recopilar registros y ponerse en contacto con Soporte técnico de Microsoft en su lugar si las pruebas envían una notificación **WARN**.
 
-1. Si el CSS le indicó que ejecutase la herramienta de validación, el representante del CSS le solicitará los registros que haya recopilado para continuar con la solución del problema.
+1. Si Soporte técnico de Microsoft le indicó que ejecutase la herramienta de validación, el representante de Soporte técnico de Microsoft le solicitará los registros que haya recopilado para continuar con la solución del problema.
 
 ## <a name="tests-available"></a>Pruebas disponibles
 

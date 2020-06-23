@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 01/14/2020
-ms.openlocfilehash: 1b4db2cf67231f8660948af43d4935bbcf9c846c
-ms.sourcegitcommit: cad40ae88212cc72f40c84a1c88143ea0abb65ef
+ms.openlocfilehash: d94f9130825493ea521441a43a58aa053ff2cc05
+ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84111904"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84631401"
 ---
 # <a name="connect-to-azure-stack-hub"></a>Conexión a Azure Stack Hub
 
@@ -28,7 +28,7 @@ Con una conexión a Escritorio remoto, un único usuario simultáneo puede traba
 
 2. En el equipo del kit de desarrollo, abra el Administrador del servidor, haga clic en **Servidor local**, desactive la opción de seguridad mejorada de Internet Explorer y, a continuación, cierre el Administrador del servidor.
 
-3. Para abrir el portal, vaya a https://portal.local.azurestack.external/) e inicie sesión con las credenciales de usuario.
+3. Para abrir el portal, vaya a `https://portal.local.azurestack.external/` e inicie sesión con las credenciales de usuario.
 
 
 ## <a name="connect-to-azure-stack-hub-with-vpn"></a>Conexión a Azure Stack Hub con VPN
@@ -38,7 +38,7 @@ Puede establecer una conexión de red privada virtual de túnel dividido al Kit 
 > [!NOTE] 
 > Esta conexión VPN no proporciona conectividad con las máquinas virtuales de la infraestructura de Azure Stack Hub. 
 
-### <a name="prerequisites"></a>Prerrequisitos
+### <a name="prerequisites"></a>Requisitos previos
 
 * Instale los [módulos de Azure PowerShell compatibles con Azure Stack Hub](../operator/azure-stack-powershell-install.md) en su equipo local.  
 * Descargue las [herramientas necesarias para trabajar con Azure Stack Hub](../operator/azure-stack-powershell-download.md). 
@@ -97,7 +97,7 @@ Conéctese a la instancia de Azure Stack Hub, para lo que puede usar cualquiera 
 
 ### <a name="test-the-vpn-connectivity"></a>Prueba de la conectividad VPN
 
-Para probar la conexión del portal, abra un explorador y vaya hasta el portal de usuario (https://portal.local.azurestack.external/) ), inicie sesión y cree recursos.  
+Para probar la conexión del portal, abra un explorador y vaya hasta el portal de usuario `https://portal.local.azurestack.external/`, inicie sesión y cree recursos.  
 
 ## <a name="next-steps"></a>Pasos siguientes
 

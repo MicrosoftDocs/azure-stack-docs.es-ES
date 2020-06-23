@@ -7,12 +7,12 @@ ms.date: 02/26/2020
 ms.author: justinha
 ms.reviewer: shisab
 ms.lastreviewed: 02/26/2020
-ms.openlocfilehash: 20d20e5e53a8826ea0514e894bacbfeeeda6c540
-ms.sourcegitcommit: 3fd4a38dc8446e0cdb97d51a0abce96280e2f7b7
+ms.openlocfilehash: a9b81eb49abdcd08cef13e89845473db5c9c9032
+ms.sourcegitcommit: 5f4f0ee043ff994efaad44129ce49be43c64d5dc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82580135"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84819501"
 ---
 # <a name="azure-stack-hub-help-and-support"></a>Ayuda y soporte técnico de Azure Stack Hub
 
@@ -42,15 +42,15 @@ En la parte superior de **Ayuda y soporte técnico** hay opciones que debería p
 
 En el caso de un sistema integrado, hay un proceso de escalación y resolución coordinado entre Microsoft y nuestros asociados de hardware de fabricante de equipos originales (OEM).
 
-Si hay algún problema en los servicios en la nube, el soporte técnico se ofrece a través de los servicios de soporte técnico al cliente de Microsoft (CSS). Puede seleccionar **Ayuda** (signo de interrogación) en la esquina superior derecha del portal de administración y, después, seleccionar **Ayuda y soporte técnico** para abrir la **información general de la ayuda y soporte técnico**, y enviar una nueva solicitud de soporte técnico. La creación de una solicitud de soporte técnico preseleccionará el servicio Azure Stack Hub. Se recomienda que los clientes utilicen esta experiencia para enviar incidencias de soporte técnico en lugar de utilizar la versión global de Azure Portal.
+Si hay algún problema en los servicios en la nube, el soporte técnico se ofrece a través de Soporte técnico de Microsoft. Puede seleccionar **Ayuda** (signo de interrogación) en la esquina superior derecha del portal de administración y, después, seleccionar **Ayuda y soporte técnico** para abrir la **información general de la ayuda y soporte técnico**, y enviar una nueva solicitud de soporte técnico. La creación de una solicitud de soporte técnico preseleccionará el servicio Azure Stack Hub. Se recomienda que los clientes utilicen esta experiencia para enviar incidencias de soporte técnico en lugar de utilizar la versión global de Azure Portal.
 
-Si surge algún problema de implementación, aplicación de revisiones y actualizaciones, hardware (incluidas las unidades reemplazables en campo) y cualquier software específico de una marca de hardware (como el software que se ejecuta en el host del ciclo de vida del hardware) en primer lugar póngase en contacto con el proveedor de hardware OEM. Para todo lo demás, póngase en contacto con el servicio de asistencia al cliente (CSS) de Microsoft.
+Si surge algún problema de implementación, aplicación de revisiones y actualizaciones, hardware (incluidas las unidades reemplazables en campo) y cualquier software específico de una marca de hardware (como el software que se ejecuta en el host del ciclo de vida del hardware) en primer lugar póngase en contacto con el proveedor de hardware OEM. Para todo lo demás, póngase en contacto con Soporte técnico de Microsoft.
 
 ![Obtención de ayuda experta para sistemas integrados](media/azure-stack-help-and-support/get-support-integrated.png)
 
 En el caso del Kit de desarrollo de Azure Stack, puede realizar las preguntas relacionadas con el soporte técnico en el [foro de MSDN de Azure Stack Hub](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack).
 
-Seleccione **Ayuda** (signo de interrogación) en la esquina superior derecha del portal de administración y, después, seleccione **Ayuda y soporte técnico** para abrir la **información general de la ayuda y el soporte técnico**, que tiene un vínculo al foro. Los foros de MSDN se supervisan periódicamente. Dado que ASDK es un entorno de evaluación, el servicio de asistencia al cliente (CSS) de Microsoft no ofrece soporte técnico oficial.
+Seleccione **Ayuda** (signo de interrogación) en la esquina superior derecha del portal de administración y, después, seleccione **Ayuda y soporte técnico** para abrir la **información general de la ayuda y el soporte técnico**, que tiene un vínculo al foro. Los foros de MSDN se supervisan periódicamente. Dado que ASDK es un entorno de evaluación, Soporte técnico de Microsoft no ofrece soporte técnico oficial.
 
 También se puede acceder a los foros de MSDN para tratar un problema o para realizar cursos en línea y mejorar sus conocimientos.
 
@@ -83,7 +83,7 @@ A partir de la versión 1907, hay dos nuevas formas de recopilar registros en **
 
 ![Opciones de recopilación de registros de diagnóstico](media/azure-stack-automatic-log-collection/azure-stack-log-collection-overview.png)
 
-Los sistemas integrados pueden compartir los registros de diagnóstico con el servicio de soporte al cliente (CSS) de Microsoft. Dado que el Kit de desarrollo de Azure Stack (ASDK) es un entorno de evaluación, no es compatible con CSS. Para más información, consulte [Información general sobre la recopilación de registros de diagnóstico de Azure Stack Hub](azure-stack-diagnostic-log-collection-overview.md).
+Los sistemas integrados pueden compartir los registros de diagnóstico con Soporte técnico de Microsoft. Dado que el Kit de desarrollo de Azure Stack (ASDK) es un entorno de evaluación, no es compatible con Soporte técnico de Microsoft. Para más información, consulte [Información general sobre la recopilación de registros de diagnóstico de Azure Stack Hub](azure-stack-diagnostic-log-collection-overview.md).
 
 ## <a name="help-and-support-for-earlier-releases-azure-stack-hub-pre-1905"></a>Ayuda y soporte técnico para las versiones anteriores de Azure Stack Hub (anteriores a la versión 1905)
 
@@ -91,15 +91,15 @@ Las versiones anteriores de Azure Stack Hub también tienen un vínculo a la **a
 
 ![Obtención de tutoriales de soporte técnico](media/azure-stack-help-and-support/get-support-previous.png)
 
-Si hay algún problema en los servicios en la nube, el soporte técnico se ofrece a través de los servicios de soporte técnico al cliente de Microsoft (CSS). Puede seleccionar **Ayuda** (signo de interrogación) en la esquina superior derecha del portal de administración, luego **Ayuda y soporte técnico** y, finalmente, **Nueva solicitud de soporte técnico** para enviar directamente una nueva solicitud de soporte técnico con CSS.
+Si hay algún problema en los servicios en la nube, el soporte técnico se ofrece a través de Soporte técnico de Microsoft. Puede seleccionar **Ayuda** (signo de interrogación) en la esquina superior derecha del portal de administración, luego **Ayuda y soporte técnico** y, finalmente, **Nueva solicitud de soporte técnico** para enviar directamente una nueva solicitud de soporte técnico con Soporte técnico de Microsoft.
 
-En el caso de un sistema integrado, hay un proceso de escalación y resolución coordinadas entre Microsoft y nuestros asociados OEM. Si hay algún problema en los servicios en la nube, el soporte técnico se ofrece a través de Microsoft CSS.
+En el caso de un sistema integrado, hay un proceso de escalación y resolución coordinadas entre Microsoft y nuestros asociados OEM. Si hay algún problema en los servicios en la nube, el soporte técnico se ofrece a través de Soporte técnico de Microsoft.
 
-Si surge algún problema en la implementación, aplicación de revisiones y actualizaciones, hardware (incluidas las unidades reemplazables en campo) y cualquier software específico de una marca de hardware, como el software que se ejecuta en el host del ciclo de vida del hardware, en primer lugar póngase en contacto con el proveedor de hardware OEM. Para todo lo demás, póngase en contacto con el servicio de asistencia al cliente (CSS) de Microsoft.
+Si surge algún problema en la implementación, aplicación de revisiones y actualizaciones, hardware (incluidas las unidades reemplazables en campo) y cualquier software específico de una marca de hardware, como el software que se ejecuta en el host del ciclo de vida del hardware, en primer lugar póngase en contacto con el proveedor de hardware OEM. Para todo lo demás, póngase en contacto con Soporte técnico de Microsoft.
 
 Para ASDK, puede dirigir las preguntas relacionadas con el soporte técnico a los [foros de MSDN de Azure Stack Hub](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack).
 
-Seleccione **Ayuda** (signo de interrogación) en la esquina superior derecha del portal de administración y, después, **Nueva solicitud de soporte técnico** para obtener ayuda de los expertos de la comunidad de Azure Stack Hub. Dado que ASDK es un entorno de evaluación, el servicio de asistencia al cliente (CSS) de Microsoft no ofrece soporte técnico oficial.
+Seleccione **Ayuda** (signo de interrogación) en la esquina superior derecha del portal de administración y, después, **Nueva solicitud de soporte técnico** para obtener ayuda de los expertos de la comunidad de Azure Stack Hub. Dado que ASDK es un entorno de evaluación, Soporte técnico de Microsoft no ofrece soporte técnico oficial.
 
 ::: moniker-end
 

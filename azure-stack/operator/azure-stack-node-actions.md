@@ -7,12 +7,12 @@ ms.date: 04/30/2020
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 17ecab0f42c89d6c25daba98652d8dc9d1a9e3b0
-ms.sourcegitcommit: 21cdab346fc242b8848a04a124bc16c382ebc6f0
+ms.openlocfilehash: e78b396822c86c9785ddecc691f57c27afeb6fcd
+ms.sourcegitcommit: e79aafb05c5fc512a83f0ebc6d76503213ccbc70
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82777753"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84730720"
 ---
 # <a name="scale-unit-node-actions-in-azure-stack-hub"></a>Acciones de los nodos de la unidad de escalado en Azure Stack Hub
 
@@ -46,7 +46,7 @@ Para ver el estado de una unidad de escalado:
 
 ### <a name="node-operational-states"></a>Estados operativos de nodo
 
-| Status | Descripción |
+| Estado | Descripción |
 |----------------------|-------------------------------------------------------------------|
 | En ejecución | El nodo está participando activamente en la unidad de escalado. |
 | Detenido | El nodo no está disponible. |

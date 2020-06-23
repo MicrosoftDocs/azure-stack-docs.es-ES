@@ -7,12 +7,12 @@ ms.date: 06/11/2019
 ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 06/11/2019
-ms.openlocfilehash: fe2cb87c666e8c3447eca46bdcb49c71514bccdc
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: ab12123410971dcbff3a4750650dd5508ca93efe
+ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77704495"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84631149"
 ---
 # <a name="create-an-offer-in-azure-stack-hub"></a>Creación de una oferta en Azure Stack Hub
 
@@ -21,7 +21,7 @@ Las [ofertas](azure-stack-overview.md) son grupos de uno o varios planes que los
 ::: moniker range=">=azs-1902"
 ## <a name="create-an-offer-1902-and-later"></a>Creación de una oferta (1902 y posteriores)
 
-1. Inicie sesión en el [portal del administrador de Azure Stack Hub](https://adminportal.local.azurestack.external) y seleccione **Create a resource**, **Offers + Plans** y, finalmente, **Offer** (Crear un recurso > Ofertas y planes > Oferta).
+1. Inicie sesión en el portal de administración de Azure Stack Hub `https://adminportal.local.azurestack.external` y seleccione **+ Crear un recurso**, **Ofertas y planes** y, finalmente, **Oferta**.
 
    ![Creación de una oferta en Azure Stack Hub](media/azure-stack-create-offer/offers.png)
 
@@ -68,7 +68,7 @@ Hay dos formas de cambiar el estado de una oferta:
 ::: moniker range="<=azs-1901"
 ## <a name="create-an-offer-1901-and-earlier"></a>Creación de una oferta (1901 y anteriores)
 
-1. Inicie sesión en el [portal del administrador de Azure Stack Hub](https://adminportal.local.azurestack.external) y seleccione **+ Create a resource** (+ Crear un recurso), **Tenant Offers + Plans** (Ofertas y planes de inquilino) y, finalmente, **Offer** (Oferta).
+1. Inicie sesión en el portal del administración de Azure Stack Hub `https://adminportal.local.azurestack.external` y seleccione **+ Crear un recurso**, **Ofertas + Planes de inquilinos** y, finalmente, **Oferta**.
 
    ![Creación de una oferta en Azure Stack Hub](media/azure-stack-create-offer/image01.png)
   

@@ -7,12 +7,12 @@ ms.date: 06/11/2019
 ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 06/11/2019
-ms.openlocfilehash: 20ee0c2b59f3a8038afc443f9b3c1b12d606d95d
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: c762f4c8c75fbfd6755c25877c52fbb68c88f7ca
+ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77700840"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84631120"
 ---
 # <a name="create-a-plan-in-azure-stack-hub"></a>Creación de un plan en Azure Stack Hub
 
@@ -21,7 +21,7 @@ Los [planes de Azure Stack Hub](azure-stack-overview.md) son agrupaciones de uno
 ::: moniker range=">=azs-1902"
 ## <a name="create-a-plan-1902-and-later"></a>Crear un plan (1902 y posteriores)
 
-1. Inicie sesión en el portal del administrador de [Azure Stack Hub](https://adminportal.local.azurestack.external).
+1. Inicie sesión en el portal de administración de Azure Stack Hub en `https://adminportal.local.azurestack.external`.
 
 2. Para crear un plan y una oferta a la que los usuarios puedan suscribirse, seleccione **+ Crear un recurso**, **Ofertas y planes** y, finalmente, **Plan**.
   
@@ -65,7 +65,7 @@ Los [planes de Azure Stack Hub](azure-stack-overview.md) son agrupaciones de uno
 ::: moniker range="<=azs-1901"
 ## <a name="create-a-plan-1901-and-earlier"></a>Crear un plan (1901 y anteriores)
 
-1. Inicie sesión en el portal del administrador de [Azure Stack Hub](https://adminportal.local.azurestack.external).
+1. Inicie sesión en el portal de administración de Azure Stack Hub en `https://adminportal.local.azurestack.external`.
 
 2. Para crear un plan y una oferta a la que los usuarios puedan suscribirse, seleccione **+ New** (+Nuevo), después **Offers + Plans** (Ofertas y planes) y, finalmente, **Plan**.
   

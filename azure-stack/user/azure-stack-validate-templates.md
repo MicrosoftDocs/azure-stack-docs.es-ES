@@ -3,20 +3,20 @@ title: Uso de la herramienta de validación de plantillas en Azure Stack Hub
 description: Compruebe las plantillas que se van a implementar en Azure Stack Hub con una herramienta de validación de plantillas.
 author: sethmanheim
 ms.topic: article
-ms.date: 01/24/2020
+ms.date: 06/09/2020
 ms.author: sethm
-ms.reviewer: unknown
+ms.reviewer: sijuman
 ms.lastreviewed: 12/27/2019
-ms.openlocfilehash: 4c545c60c0890f87c87108101a3e30ab4c87d16d
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 69df3da5b5769be9ee9d9bd3234c53de177fd9e2
+ms.sourcegitcommit: dd140b3a2ac8e558eae9f5f422711d2ba560da16
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77705294"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84744881"
 ---
 # <a name="use-the-template-validation-tool-in-azure-stack-hub"></a>Uso de la herramienta de validación de plantillas en Azure Stack Hub
 
-Use la herramienta de validación de plantillas para comprobar si las [plantillas](azure-stack-arm-templates.md) de Azure Resource Manager están listas para implementarse en Azure Stack Hub. La herramienta de validación de plantillas está disponible como parte del repositorio de GitHub de herramientas de Azure Stack Hub. Para descargar las herramientas de Azure Stack Hub, siga los pasos que se describen en el artículo [Descarga de herramientas de Azure Stack Hub desde GitHub](../operator/azure-stack-powershell-download.md).
+Use la herramienta de validación de plantillas para comprobar si las [plantillas](azure-stack-arm-templates.md) de Azure Resource Manager están listas para implementarse en Azure Stack Hub. La herramienta de validación de plantillas está disponible con el repositorio de GitHub de herramientas de Azure Stack Hub. Para descargar las herramientas de Azure Stack Hub, siga los pasos que se describen en el artículo [Descarga de herramientas de Azure Stack Hub desde GitHub](../operator/azure-stack-powershell-download.md).
 
 ## <a name="overview"></a>Información general
 
@@ -29,7 +29,7 @@ Para validar una plantilla, primero tiene que crear un archivo con funcionalidad
 
 Para poder usar el validador de plantillas, ejecute el módulo de PowerShell **AzureRM.CloudCapabilities** para generar un archivo JSON.
 
->[!NOTE]
+> [!NOTE]
 > Si actualiza el sistema integrado o agrega los nuevos servicios o extensiones virtuales, también debe volver a ejecutar ese módulo.
 
 1. Asegúrese de que dispone de conectividad con Azure Stack Hub. Estos pasos se pueden realizar desde el host del Kit de desarrollo de Azure Stack (ASDK), o se puede usar una [VPN](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn) para conectarse desde la estación de trabajo.

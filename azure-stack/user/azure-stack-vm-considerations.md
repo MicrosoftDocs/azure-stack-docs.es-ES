@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 10/09/2019
-ms.openlocfilehash: c90231d96f3f076b0824222fba43c8d9ef680fa5
-ms.sourcegitcommit: db3c9179916a36be78b43a8a47e1fd414aed3c2e
+ms.openlocfilehash: 4559eb88c044d38182a14f1bafecf2f7019cd5cb
+ms.sourcegitcommit: 7df4f3fbb211063e9eef6ac1e2734de72dc6078b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84146791"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84977145"
 ---
 # <a name="azure-stack-hub-vm-features"></a>Características de las máquinas virtuales de Azure Stack Hub
 
@@ -36,6 +36,7 @@ Las máquinas virtuales de Azure Stack Hub proporcionan recursos informáticos e
 | Conjuntos de escalado de máquinas virtuales|Compatible con la escalabilidad automática.|No compatible con la escalabilidad automática.<br><br>Agregar más instancias a un conjunto de escalado con el portal, las plantillas de Resource Manager o PowerShell. |
 | Testigo de Cloud | Seleccione los puntos de conexión de las propiedades de la cuenta de almacenamiento disponibles en Azure Stack Hub. | El [testigo en la nube](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness) es un tipo de testigo de cuórum de clúster de conmutación por error que usa Microsoft Azure para proporcionar un voto en el cuórum de clúster.<br>Los puntos de conexión de Azure global pueden tener el siguiente aspecto en comparación con los de Azure Stack Hub:<br>Para Azure global:<br>`https://mywitness.blob.core.windows.net/`<br>Para Azure Stack Hub:<br>`https://mywitness.blob.<region>.<FQDN>/`|
 | Diagnóstico de máquina virtual | Se admiten los diagnósticos de máquinas virtuales Linux. | En Azure Stack Hub no se admiten diagnósticos de máquinas virtuales Linux. Si implementa una máquina virtual Linux con diagnósticos de máquina virtual habilitado, se producirá un error en la implementación. Tampoco se podrá realizar la implementación si habilita las métricas básicas de máquina virtual Linux a través de la configuración de diagnóstico. |
+| Tamaños de máquina virtual de la virtualización anidada | Compatible | No compatible |
 
 ## <a name="vm-sizes"></a>Tamaños de VM
 

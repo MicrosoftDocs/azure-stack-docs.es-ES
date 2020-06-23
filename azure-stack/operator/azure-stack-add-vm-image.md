@@ -3,16 +3,16 @@ title: Adición de una imagen de máquina virtual personalizada a Azure Stack Hu
 description: Aprenda a agregar o quitar una imagen de máquina virtual personalizada en Azure Stack Hub.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 02/07/2020
+ms.date: 06/15/2020
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 06/08/2019
-ms.openlocfilehash: 167a9c9d46be7ac77e59e2be7ede1c09e43fda70
-ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
+ms.openlocfilehash: 7bd8a93c50038b7a593136df44e94b8a8f2f43d0
+ms.sourcegitcommit: c9737939f4e437f1d954e163db972d58b3f98ffd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82847935"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84813815"
 ---
 # <a name="add-a-custom-vm-image-to-azure-stack-hub"></a>Adición de una imagen de máquina virtual personalizada a Azure Stack Hub
 
@@ -31,15 +31,15 @@ Cree un disco duro virtual generalizado personalizado.
 - Al aprovisionar la máquina virtual en Azure, use PowerShell y aprovisiónela sin la marca `-ProvisionVMAgent`.
 - Elimine todas las extensiones de la máquina virtual mediante el cmdlet **Remove-AzureRmVMExtension** de la máquina virtual antes de generalizarla en Azure. Para saber qué extensiones de máquina virtual se instalan, vaya a `Windows (C:) > WindowsAzure > Logs > Plugins`.
 
-```powershell
-Remove-AzureRmVMExtension -ResourceGroupName winvmrg1 -VMName windowsvm -Name "CustomScriptExtension"
-```
+   ```powershell
+   Remove-AzureRmVMExtension -ResourceGroupName winvmrg1 -VMName windowsvm -Name "CustomScriptExtension"
+   ```
 
 Siga las instrucciones de [este documento](/azure/virtual-machines/windows/download-vhd) para generalizar y descargar correctamente el disco duro virtual antes de migrarlo a Azure Stack Hub.
 
 ### <a name="linux"></a>Linux
 
-**Si el disco duro virtual está fuera de Azure**, siga las instrucciones adecuadas para generalizar el disco duro virtual:
+Si el disco duro virtual está fuera de Azure, siga las instrucciones adecuadas para generalizar el disco duro virtual:
 
 - [Distribuciones basadas en CentOS](/azure/virtual-machines/linux/create-upload-centos?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 - [Debian Linux](/azure/virtual-machines/linux/debian-create-upload-vhd?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
@@ -57,33 +57,33 @@ Siga las instrucciones de [este documento](/azure/virtual-machines/windows/downl
    logout
    ```
 
-   Tenga en cuenta las versiones del agente Linux de Azure que funcionan con Azure Stack Hub [como se documenta aquí](azure-stack-linux.md#azure-linux-agent). Asegúrese de que la imagen preparada con Sysprep tenga una versión del agente Linux de Azure compatible con Azure Stack Hub.
+   Las versiones del agente Linux de Azure que funcionan con Azure Stack Hub [se documentan aquí](azure-stack-linux.md#azure-linux-agent). Asegúrese de que la imagen preparada con Sysprep tenga una versión del agente Linux de Azure compatible con Azure Stack Hub.
 
 2. Detenga o desasigne la máquina virtual.
 
 3. Descargue el disco duro virtual.
 
-   1. Para descargar el archivo del disco duro virtual, debe generar una dirección URL de firma de acceso compartido (SAS). Una vez generada la dirección URL, se asigna un tiempo de expiración a la dirección URL.
+   1. Para descargar el archivo del disco duro virtual, genere una dirección URL de firma de acceso compartido (SAS). Una vez generada la dirección URL, se asigna un tiempo de expiración a la dirección URL.
 
-   1. En el menú de la hoja de la máquina virtual, seleccione **Discos**.
+   2. En el menú de la hoja de la máquina virtual, seleccione **Discos**.
 
-   1. Seleccione el disco de sistema operativo de la máquina virtual y luego seleccione **Exportación del disco**.
+   3. Seleccione el disco de sistema operativo de la máquina virtual y luego seleccione **Exportación del disco**.
 
-   1. Establezca el tiempo de expiración de la dirección URL en 36 000.
+   4. Establezca el tiempo de expiración de la dirección URL en 36 000.
 
-   1. Seleccione **Generar dirección URL**.
+   5. Seleccione **Generar dirección URL**.
 
-   1. Genere la dirección URL.
+   6. Genere la dirección URL.
 
-   1. En la dirección URL generada, seleccione **Descargar el archivo VHD**.
+   7. En la dirección URL generada, seleccione **Descargar el archivo VHD**.
 
-   1. Es posible que tenga que seleccionar **Guardar** en el explorador para iniciar la descarga. El nombre predeterminado del archivo de VHD es _abcd_.
+   8. Es posible que tenga que seleccionar **Guardar** en el explorador para iniciar la descarga. El nombre predeterminado del archivo de VHD es **abcd**.
 
 ### <a name="considerations"></a>Consideraciones
 
 Antes de cargar la imagen, es importante tener en cuenta lo siguiente:
 
-- Azure Stack Hub solo admite máquinas virtuales de primera generación (1) en el formato de disco duro virtual de disco fijo. El formato fijo estructura el disco lógico linealmente dentro del archivo, de manera que el desplazamiento del disco *X* se almacena en el desplazamiento del blob *X*. Un breve pie de página al final del blob describe las propiedades del disco duro virtual. Para confirmar que el disco está fijado, use el cmdlet **Get-VHD** de PowerShell.
+- Azure Stack Hub solo admite máquinas virtuales de primera generación en el formato de disco duro virtual de disco fijo. El formato fijo estructura el disco lógico linealmente dentro del archivo, de manera que el desplazamiento del disco **X** se almacena en el desplazamiento del blob **X**. Un breve pie de página al final del blob describe las propiedades del disco duro virtual. Para confirmar que el disco está fijado, use el cmdlet **Get-VHD** de PowerShell.
 
 - Azure Stack Hub no admite discos duros virtuales dinámicos.
 
@@ -93,21 +93,21 @@ Antes de cargar la imagen, es importante tener en cuenta lo siguiente:
 
 2. Inicie sesión como operador en Azure Stack Hub. Para obtener instrucciones, consulte [Iniciar sesión como operador en Azure Stack Hub](azure-stack-powershell-configure-admin.md).
 
-3. Debe poderse hacer referencia a las imágenes mediante un identificador URI de Blob Storage. Prepare una imagen de sistema operativo Windows o Linux en formato VHD (no VHDX) y, a continuación, cargue la imagen en una cuenta de almacenamiento en Azure Stack Hub.
+3. Se debe hacer referencia a las imágenes mediante un identificador URI de Blob Storage. Prepare una imagen de sistema operativo Windows o Linux en formato VHD (no VHDX) y, a continuación, cargue la imagen en una cuenta de almacenamiento en Azure Stack Hub.
 
    - Si el disco duro virtual está en Azure, puede usar una herramienta como [Azcopy](/azure/storage/common/storage-use-azcopy) para transferir directamente el disco duro virtual entre Azure y su cuenta de almacenamiento de Azure Stack Hub si lo está ejecutando en una instancia de Azure Stack conectada.
 
-   - En una instancia de Azure Stack Hub desconectada, si el disco duro virtual está en Azure, deberá descargar el disco duro virtual en una máquina que tenga conectividad con Azure y Azure Stack Hub. Después, copie el disco duro virtual en esta máquina desde Azure antes de transferir el disco duro virtual a Azure Stack Hub con cualquiera de las [herramientas de transferencia de datos de almacenamiento](../user/azure-stack-storage-transfer.md) comunes que se pueden usar en Azure y Azure Stack Hub.
+   - En una instancia de Azure Stack Hub desconectada, si el disco duro virtual está en Azure, debe descargar el disco duro virtual en una máquina que tenga conectividad con Azure y Azure Stack Hub. Después, copie el disco duro virtual en esta máquina desde Azure antes de transferir el disco duro virtual a Azure Stack Hub con cualquiera de las [herramientas de transferencia de datos de almacenamiento](../user/azure-stack-storage-transfer.md) comunes que se pueden usar en Azure y Azure Stack Hub.
 
-     Una de estas herramientas que se usa en este ejemplo es el comando Add-AzureRmVHD para cargar un disco duro virtual en una cuenta de almacenamiento en el portal de administración de Azure Stack Hub.  
+     Una de estas herramientas que se usa en este ejemplo es el cmdlet **Add-AzureRmVHD** que carga un disco duro virtual en una cuenta de almacenamiento del portal de administración de Azure Stack Hub.  
 
      ```powershell
      Add-AzureRmVhd -Destination "https://bash.blob.redmond.azurestack.com/sample/vhdtestingmgd.vhd" -LocalFilePath "C:\vhd\vhdtestingmgd.vhd"
      ```
 
-4. Anote el identificador URI donde cargará la imagen de Blob Storage. El identificador URI de Blob Storage tiene el siguiente formato: *&lt;storageAccount&gt;/&lt;blobContainer&gt;/&lt;targetVHDName&gt;* .vhd.
+4. Anote el identificador URI de Blob Storage en el que cargó la imagen. El URI de Blob Storage tiene el formato `<storageAccount>/<blobContainer>/<targetVHDName>.vhd`.
 
-5. Para que sea posible acceder al blob de manera anónima, vaya al contenedor de blobs de la cuenta de almacenamiento donde se cargó el disco duro virtual de la imagen de máquina virtual. Seleccione **Blob** y, a continuación, seleccione **Directiva de acceso**. Opcionalmente, puede generar una firma de acceso compartido para el contenedor e incluirla como parte del identificador URI del blob. Este paso garantiza que el blob está disponible para su uso. Si no se puede acceder al blob de forma anónima, la imagen de la máquina virtual se creará con estado de error.
+5. Para que sea posible acceder al blob de manera anónima, vaya al contenedor de blobs de la cuenta de almacenamiento donde se cargó el disco duro virtual de la imagen de máquina virtual. Seleccione **Blob** y, a continuación, seleccione **Directiva de acceso**. Opcionalmente, puede generar una firma de acceso compartido para el contenedor e incluirla como parte del identificador URI del blob. Este paso hace que el blob esté disponible para su uso. Si no se puede acceder al blob de forma anónima, la imagen de la máquina virtual se creará con un estado de error.
 
    ![Vaya a los blobs de la cuenta de almacenamiento.](./media/azure-stack-add-vm-image/tca1.png)
 
@@ -117,11 +117,11 @@ Antes de cargar la imagen, es importante tener en cuenta lo siguiente:
 
 ## <a name="step-3-option-1-add-the-vm-image-as-an-azure-stack-hub-operator-using-the-portal"></a>Paso 3, opción 1: Incorporación de la imagen de máquina virtual como un operador de Azure Stack Hub mediante el portal
 
-1. Inicie sesión como operador en Azure Stack Hub. En el menú, seleccione **Todos los servicios** > **Proceso** en **Imágenes de VM** > **Agregar**.
+1. Inicie sesión en el portal de Azure Stack Hub como operador. Seleccione **Todos los servicios** y, después, **Proceso** en **Imágenes de VM** > **Agregar**.
 
    ![Interfaz de usuario de la instalación de prueba de la imagen personalizada](./media/azure-stack-add-vm-image/tca4.png)
 
-2. En **Crear imagen**, escriba el publicador, la oferta, la SKU, la versión y el identificador URI del blob de disco del sistema operativo. A continuación, seleccione **Crear** para empezar a crear la imagen de máquina virtual.
+2. En **Crear imagen**, escriba el **publicador**, la **oferta**, la **SKU**, la **versión** y el identificador URI del blob de disco del sistema operativo. A continuación, seleccione **Crear** para empezar a crear la imagen de máquina virtual.
 
    ![Interfaz de usuario de la instalación de prueba de la imagen personalizada](./media/azure-stack-add-vm-image/tca5.png)
 
@@ -149,16 +149,16 @@ Antes de cargar la imagen, es importante tener en cuenta lo siguiente:
    El cmdlet **Add-AzsPlatformimage** especifica valores usados por las plantillas de Azure Resource Manager para hacer referencia a la imagen de máquina virtual. Los valores incluyen:
    - **publisher**  
      Por ejemplo: `Canonical`  
-     El segmento del nombre del **publicador** de la imagen de máquina virtual que usan los usuarios al implementar la imagen. No incluya un espacio ni otros caracteres especiales en este campo.  
+     El segmento del nombre del **publicador** de la imagen de máquina virtual que usan los usuarios al implementar la imagen. No incluya un espacio u otros caracteres especiales en este campo.  
    - **offer**  
      Por ejemplo: `UbuntuServer`  
-     El segmento del nombre de la **oferta** de la imagen de máquina virtual que usan los usuarios al implementar la imagen de máquina virtual. No incluya un espacio ni otros caracteres especiales en este campo.  
+     El segmento del nombre de la **oferta** de la imagen de máquina virtual que usan los usuarios al implementar la imagen de máquina virtual. No incluya un espacio u otros caracteres especiales en este campo.  
    - **sku**  
      Por ejemplo: `14.04.3-LTS`  
-     El segmento del nombre de la **SKU** de la imagen de máquina virtual que usan los usuarios al implementar la imagen de máquina virtual. No incluya un espacio ni otros caracteres especiales en este campo.  
+     El segmento del nombre de la **SKU** de la imagen de máquina virtual que usan los usuarios al implementar la imagen de máquina virtual. No incluya un espacio u otros caracteres especiales en este campo.  
    - **version**  
      Por ejemplo: `1.0.0`  
-     La versión de la imagen de máquina virtual que usan los usuarios al implementar la imagen de máquina virtual. Esta versión está en el formato *\#.\#.\#* . No incluya un espacio ni otros caracteres especiales en este campo.  
+     La versión de la imagen de máquina virtual que usan los usuarios al implementar la imagen de máquina virtual. Esta versión está en el formato **#.#.#** . No incluya un espacio u otros caracteres especiales en este campo.  
    - **osType**  
      Por ejemplo: `Linux`  
      El valor de **osType** de la imagen debe ser **Windows** o **Linux**.  
@@ -182,7 +182,7 @@ Antes de cargar la imagen, es importante tener en cuenta lo siguiente:
 
 ## <a name="remove-a-vm-image-as-an-azure-stack-hub-operator-using-powershell"></a>Eliminación de una imagen de máquina virtual como un operador de Azure Stack Hub mediante PowerShell
 
-Cuando ya no necesite la imagen de máquina virtual que ha cargado, puede eliminarla de Marketplace mediante el siguiente cmdlet:
+Cuando ya no necesite la imagen de máquina virtual que ha cargado, puede eliminarla de Marketplace mediante el cmdlet **Remove-AzsPlatformImage**:
 
 1. [Instale PowerShell para Azure Stack Hub](azure-stack-powershell-install.md).
 
@@ -201,16 +201,16 @@ Cuando ya no necesite la imagen de máquina virtual que ha cargado, puede elimin
    El cmdlet **Remove-AzsPlatformImage** especifica valores usados por las plantillas de Azure Resource Manager para hacer referencia a la imagen de máquina virtual. Los valores incluyen:
    - **publisher**  
      Por ejemplo: `Canonical`  
-     El segmento del nombre del **publicador** de la imagen de máquina virtual que usan los usuarios al implementar la imagen. No incluya un espacio ni otros caracteres especiales en este campo.  
+     El segmento del nombre del **publicador** de la imagen de máquina virtual que usan los usuarios al implementar la imagen. No incluya un espacio u otros caracteres especiales en este campo.  
    - **offer**  
      Por ejemplo: `UbuntuServer`  
-     El segmento del nombre de la **oferta** de la imagen de máquina virtual que usan los usuarios al implementar la imagen de máquina virtual. No incluya un espacio ni otros caracteres especiales en este campo.  
+     El segmento del nombre de la **oferta** de la imagen de máquina virtual que usan los usuarios al implementar la imagen de máquina virtual. No incluya un espacio u otros caracteres especiales en este campo.  
    - **sku**  
      Por ejemplo: `14.04.3-LTS`  
-     El segmento del nombre de la **SKU** de la imagen de máquina virtual que usan los usuarios al implementar la imagen de máquina virtual. No incluya un espacio ni otros caracteres especiales en este campo.  
+     El segmento del nombre de la **SKU** de la imagen de máquina virtual que usan los usuarios al implementar la imagen de máquina virtual. No incluya un espacio u otros caracteres especiales en este campo.  
    - **version**  
      Por ejemplo: `1.0.0`  
-     La versión de la imagen de máquina virtual que usan los usuarios al implementar la imagen de máquina virtual. Esta versión está en el formato *\#.\#.\#* . No incluya un espacio ni otros caracteres especiales en este campo.  
+     La versión de la imagen de máquina virtual que usan los usuarios al implementar la imagen de máquina virtual. Esta versión está en el formato **#.#.#** . No incluya un espacio u otros caracteres especiales en este campo.  
 
      Para más información sobre el cmdlet **Remove-AzsPlatformImage**, consulte la [documentación del módulo de operador de Azure Stack Hub](/powershell/module/) para Microsoft PowerShell.
 

@@ -8,12 +8,12 @@ ms.date: 05/13/2020
 ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 15/13/2020
-ms.openlocfilehash: 4910a7aaa2462cb53c4ce89246c92a60f61d5017
-ms.sourcegitcommit: ddcd083430ca905653d412dc2f7b813218d79509
+ms.openlocfilehash: de19e65866413ec4e498c9a21848c1f43af6d65a
+ms.sourcegitcommit: 5f4f0ee043ff994efaad44129ce49be43c64d5dc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83375003"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84819513"
 ---
 # <a name="troubleshoot-issues-in-azure-stack-hub"></a>Solución de problemas de Azure Stack Hub
 
@@ -21,7 +21,7 @@ Este documento contiene información acerca de cómo solucionar problemas en los
 
 ## <a name="frequently-asked-questions"></a>Preguntas más frecuentes
 
-En estas secciones se incluyen vínculos a documentos que abordan las preguntas comunes enviadas a los servicios de soporte técnico al cliente (CSS) de Microsoft.
+En estas secciones se incluyen vínculos a documentos que abordan las preguntas comunes enviadas a Soporte técnico de Microsoft.
 
 ### <a name="purchase-considerations"></a>Consideraciones de compra
 
@@ -80,7 +80,7 @@ Elija el tipo de cuenta de servicios compartidos que utiliza con Azure Stack Hub
 
 ### <a name="get-scale-unit-metrics"></a>Obtención de métricas de unidad de escalado
 
-Puede usar PowerShell para obtener información sobre el uso de la marca sin ayuda de CSS. Para obtener el uso de la marca:
+Puede usar PowerShell para obtener información sobre el uso de la marca sin ayuda de Soporte técnico de Microsoft. Para obtener el uso de la marca:
 
 1. Cree una sesión PEP.
 2. Ejecute `test-azurestack`.

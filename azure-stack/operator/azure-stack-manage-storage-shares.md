@@ -7,12 +7,12 @@ ms.date: 1/22/2020
 ms.author: inhenkel
 ms.reviewer: xiaofmao
 ms.lastreviewed: 03/19/2019
-ms.openlocfilehash: 15908ca3057cb347f1dd02c7ee5113c0e9d0b9de
-ms.sourcegitcommit: e75218d2e04f41620cc09caf04473ad4c7289253
+ms.openlocfilehash: ecac1c8c69a8f332a85bf0a934f688f14dbcaddd
+ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83708369"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84630997"
 ---
 # <a name="manage-storage-capacity-for-azure-stack-hub"></a>Administración de la capacidad de almacenamiento en Azure Stack Hub
 
@@ -90,7 +90,7 @@ Como operador en la nube, puede supervisar la capacidad de almacenamiento de un 
 ### <a name="use-the-administrator-portal"></a>Uso del portal de administración
 Como operador en la nube, puede utilizar el portal de administración para ver la capacidad de almacenamiento de todos los recursos compartidos.
 
-1. Inicie sesión en el [portal de administración](https://adminportal.local.azurestack.external).
+1. Inicie sesión en el portal de administración en `https://adminportal.local.azurestack.external`.
 2. Seleccione **Todos los servicios** > **Almacenamiento** > **Recursos compartidos de archivos** para abrir la lista de recursos compartidos de archivos donde puede ver la información de uso.
 
     ![Ejemplo: Recursos compartidos de almacenamiento en el portal del administrador de Azure Stack Hub](media/azure-stack-manage-storage-shares/storage-file-shares.png)
@@ -152,7 +152,7 @@ Puede reclamar la capacidad que utilizan las cuentas de inquilinos que se han el
 
 Para más información, consulte la sección "Reclamación de capacidad" de [Administración de cuentas de almacenamiento de Azure Stack Hub](azure-stack-manage-storage-accounts.md#reclaim).
 
-::: moniker range="<azs-2002"
+::: moniker range="<azs-1910"
 
 ### <a name="migrate-a-container-between-volumes"></a>Migración de un contenedor entre volúmenes
 *Esta opción solo se aplica a sistemas integrados de Azure Stack Hub.*
@@ -242,7 +242,7 @@ La migración consolida todos los blobs de contenedores en el nuevo recurso comp
 El método más extremo para administrar el espacio implica el traslado de discos de máquinas virtuales. Como mover un contenedor asociado (uno que contiene un disco de máquina virtual) es complejo, póngase en contacto con el soporte técnico de Microsoft para realizar esta acción.
 
 ::: moniker-end
-::: moniker range=">=azs-2002"
+::: moniker range=">=azs-1910"
 
 ### <a name="migrate-a-managed-disk-between-volumes"></a>Migración de un disco administrado entre volúmenes
 *Esta opción solo se aplica a sistemas integrados de Azure Stack Hub.*
@@ -263,7 +263,10 @@ Puede tratar de liberar espacio en un volumen sobreutilizado mediante la migraci
    $StorageSubSystem = (Get-AzsStorageSubSystem -ScaleUnit $ScaleUnit.Name)[0]
    $Volumes = (Get-AzsVolume -ScaleUnit $ScaleUnit.Name -StorageSubSystem $StorageSubSystem.Name | Where-Object {$_.VolumeLabel -Like "ObjStore_*"})
    $SourceVolume  = ($Volumes | Sort-Object RemainingCapacityGB)[0]
-   $Disks = Get-AzsDisk -Status All -ScaleUnit $ScaleUnit.name -VolumeLabel $SourceVolume.VolumeLabel | Select-Object -First 10
+   $VolumeName = $SourceVolume.Name.Split("/")[2]
+   $VolumeName = $VolumeName.Substring($VolumeName.IndexOf(".")+1)
+   $MigrationSource = "\\SU1FileServer."+$VolumeName+"\SU1_"+$SourceVolume.VolumeLabel
+   $Disks = Get-AzsDisk -Status All -SharePath $MigrationSource | Select-Object -First 10
    ```
    A continuación, examine $disks:
 
@@ -277,13 +280,16 @@ Puede tratar de liberar espacio en un volumen sobreutilizado mediante la migraci
 
    ```powershell
    $DestinationVolume  = ($Volumes | Sort-Object RemainingCapacityGB -Descending)[0]
+   $VolumeName = $DestinationVolume.Name.Split("/")[2]
+   $VolumeName = $VolumeName.Substring($VolumeName.IndexOf(".")+1)
+   $MigrationTarget = "\\SU1FileServer."+$VolumeName+"\SU1_"+$DestinationVolume.VolumeLabel
    ```
 
 4. Inicie la migración de los discos administrados. La migración es asincrónica. Si comienza la migración de discos adicionales antes de que se complete la primera migración, utilice el nombre del trabajo para realizar un seguimiento del estado de cada uno.
 
    ```powershell
    $jobName = "MigratingDisk"
-   Start-AzsDiskMigrationJob -Disks $Disks -TargetScaleUnit $ScaleUnit.name -TargetVolumeLabel $DestinationVolume.VolumeLabel -Name $jobName
+   Start-AzsDiskMigrationJob -Disks $Disks -TargetShare $MigrationTarget -Name $jobName
    ```
 
 5. Use el nombre del trabajo para comprobar el estado del trabajo de migración. Cuando finaliza la migración del disco, **MigrationStatus** se establece como **Completado**.

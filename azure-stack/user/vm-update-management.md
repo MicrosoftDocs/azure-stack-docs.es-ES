@@ -7,12 +7,12 @@ ms.date: 04/27/2020
 ms.author: mabrigg
 ms.reviewer: rtiberiu
 ms.lastreviewed: 04/27/2020
-ms.openlocfilehash: 7ef6b1fe7bcaa0cba1138c194847c40076f3ec6e
-ms.sourcegitcommit: 29734b4ca6917b86674c17de9f41b0aaf367a838
+ms.openlocfilehash: 838ce4ab909019ce14569a8c5ad5da0b19457a90
+ms.sourcegitcommit: f082a8aa7e9cfaeab21b750d58520db58147ff1a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82223062"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84679712"
 ---
 # <a name="vm-update-and-management-automation-in-azure-stack-hub"></a>Automatización de actualizaciones y administración de máquinas virtuales en Azure Stack Hub
 Use las siguientes características de solución de Azure Automation para administrar máquinas virtuales Windows y Linux que se implementan mediante Azure Stack Hub:
@@ -28,7 +28,7 @@ Use las siguientes características de solución de Azure Automation para admini
 > [!IMPORTANT]
 > Estas soluciones son las mismas que las que se usan para administrar VM de Azure. Tanto las máquinas virtuales de Azure como de Azure Stack Hub se administran de la misma manera, desde la misma interfaz, con las mismas herramientas. Las máquinas virtuales de Azure Stack Hub también tienen el mismo precio que las máquinas virtuales de Azure cuando se usan las soluciones Update Management, Change Tracking, Inventario y las soluciones de Azure Monitor para VM con Azure Stack Hub.
 
-## <a name="prerequisites"></a>Prerrequisitos
+## <a name="prerequisites"></a>Requisitos previos
 Deben cumplirse varios requisitos previos antes de usar estas características para actualizar y administrar las máquinas virtuales de Azure Stack Hub. Entre otros, se incluyen pasos que deben darse en Azure Portal y también en el portal de administración de Azure Stack Hub.
 
 ### <a name="in-the-azure-portal"></a>En el Portal de Azure

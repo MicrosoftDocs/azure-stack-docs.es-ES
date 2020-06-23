@@ -1,18 +1,18 @@
 ---
 title: Administración de actualizaciones
 description: Aprenda a administrar las actualizaciones en Azure Stack Hub
-author: IngridAtMicrosoft
+author: sethmanheim
 ms.topic: how-to
-ms.date: 05/13/2020
-ms.author: inhenkel
+ms.date: 06/09/2020
+ms.author: sethm
 ms.lastreviewed: 09/10/2019
-ms.reviewer: ppacent
-ms.openlocfilehash: cdf2ba4d3dd226ea727efe05dc8be671ba172f8b
-ms.sourcegitcommit: ddcd083430ca905653d412dc2f7b813218d79509
+ms.reviewer: niy
+ms.openlocfilehash: d3f365f825e30e03e74d2e822653ee3ccfdb9e58
+ms.sourcegitcommit: 396f79ce073d99d14fcc71b85c4a4932334832a8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83374607"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84636876"
 ---
 # <a name="manage-updates-in-azure-stack-hub"></a>Administración de actualizaciones en Azure Stack Hub
 
@@ -63,7 +63,17 @@ El aviso de actualizaciones varía en función de un par de factores, como su co
 
     Las actualizaciones de OEM dependerán de su fabricante. Tendrá que establecer un canal de comunicación con su fabricante de equipos originales para saber cuándo tiene actualizaciones que se deban aplicar. Para más información sobre los OEM y el proceso de actualización de los OEM, consulte [Aplicación de las actualizaciones del fabricante de equipos originales (OEM) de Azure Stack Hub](azure-stack-update-oem.md).
 
-## <a name="update-processes"></a>Procesos de actualización
+### <a name="major-version-to-major-version"></a>Versión principal a versión principal
+
+Una actualización de una versión principal a otra versión principal se debe realizar paso por paso: el entorno actual solo se puede actualizar a la siguiente versión principal y no se puede omitir ninguna actualización de versión principal.
+
+Por ejemplo, si el entorno de Azure Stack Hub es de la versión 1908.x y la última versión de actualización disponible es la 2002.x, debe actualizar de la versión 1908 a la 1910 y, a continuación, actualizar a la 2002.
+
+### <a name="hotfixes-within-major-versions"></a>Revisiones de versiones principales
+
+En el mismo número de versión principal, Azure Stack Hub puede publicar varias revisiones. Las revisiones son acumulativas, es decir, el paquete de revisión más reciente incluye todas las revisiones anteriores de esa versión. Para más información, consulte [Revisiones](azure-stack-servicing-policy.md#hotfixes).
+
+## <a name="update-process"></a>Proceso de actualización
 
 Una vez que sepa que tiene una actualización, aplíquela con los siguientes pasos.
 

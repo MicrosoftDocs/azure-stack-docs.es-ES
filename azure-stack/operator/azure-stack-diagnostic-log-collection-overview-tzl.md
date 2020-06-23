@@ -7,20 +7,20 @@ ms.date: 02/26/2020
 ms.author: justinha
 ms.reviewer: shisab
 ms.lastreviewed: 02/26/2020
-ms.openlocfilehash: 2fcc31625fc0f508532c5c6a524f26e9cef31760
-ms.sourcegitcommit: 70c344b3c9c63f8c12867b2cdfdd1794fcc518dc
+ms.openlocfilehash: d3c6ecaa062f97aef76835d3c291b4ecaf405b11
+ms.sourcegitcommit: 5f4f0ee043ff994efaad44129ce49be43c64d5dc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82836043"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84819465"
 ---
 # <a name="diagnostic-log-collection-in-azure-stack-hub"></a>Recopilación de registros de diagnóstico en Azure Stack Hub
 
 ::: moniker range=">= azs-2002"
 
-Azure Stack Hub es una gran colección de componentes de Windows y servicios locales de Azure que interactúan entre sí. Todos estos componentes y servicios generan su propio conjunto de registros. Para que los servicios de soporte al cliente de Microsoft diagnostiquen los problemas de forma eficaz, hemos creado un sistema ágil de recopilación de registros de diagnóstico.
+Azure Stack Hub es una gran colección de componentes de Windows y servicios locales de Azure que interactúan entre sí. Todos estos componentes y servicios generan su propio conjunto de registros. Para que Soporte técnico de Microsoft diagnostique los problemas de forma eficaz, hemos creado un sistema ágil de recopilación de registros de diagnóstico.
 
-La recopilación de registros de diagnóstico de **Ayuda y soporte técnico**  ayuda a los operadores a recopilar y a compartir rápidamente registros de diagnóstico con CSS en una interfaz de usuario sencilla que no requiere PowerShell. Los registros se recopilan aunque haya otros servicios de infraestructura inactivos.  
+La recopilación de registros de diagnóstico de **Ayuda y soporte técnico**  ayuda a los operadores a recopilar y a compartir rápidamente registros de diagnóstico con Soporte técnico de Microsoft en una interfaz de usuario sencilla que no requiere PowerShell. Los registros se recopilan aunque haya otros servicios de infraestructura inactivos.  
 
 Se recomienda usar este enfoque de recopilación de registros y recurrir al [uso del punto de conexión con privilegios (PEP)](azure-stack-get-azurestacklog.md) únicamente si el portal de administración o la hoja **Ayuda y soporte técnico** no están disponibles.
 
@@ -35,7 +35,7 @@ La característica de recopilación de registros de diagnóstico ofrece dos opci
 
 ### <a name="send-logs-proactively"></a>Envío de registros de forma proactiva
 
-La [recopilación proactiva de registros](azure-stack-configure-automatic-diagnostic-log-collection-tzl.md) agiliza y simplifica la recopilación de registros de diagnóstico para que los clientes puedan enviar los registros a Microsoft antes de abrir una incidencia de soporte técnico. Los registros de diagnóstico se cargan de forma proactiva desde Azure Stack Hub para su análisis. Estos registros solo se recopilan cuando se genera una [alerta de mantenimiento del sistema](azure-stack-configure-automatic-diagnostic-log-collection-tzl.md#proactive-diagnostic-log-collection-alerts) y solo se tiene acceso a ellos desde los servicios de soporte técnico al cliente en el contexto de una incidencia de soporte técnico.
+La [recopilación proactiva de registros](azure-stack-configure-automatic-diagnostic-log-collection-tzl.md) agiliza y simplifica la recopilación de registros de diagnóstico para que los clientes puedan enviar los registros a Microsoft antes de abrir una incidencia de soporte técnico. Los registros de diagnóstico se cargan de forma proactiva desde Azure Stack Hub para su análisis. Estos registros solo se recopilan cuando se genera una [alerta de mantenimiento del sistema](azure-stack-configure-automatic-diagnostic-log-collection-tzl.md#proactive-diagnostic-log-collection-alerts) y solo se tiene acceso a ellos desde el equipo de Soporte técnico de Microsoft en el contexto de una incidencia de soporte técnico.
 
 #### <a name="how-the-data-is-handled"></a>Cómo se controlan los datos
 
@@ -51,7 +51,7 @@ Los registros recopilados mediante la **recopilación proactiva de registros** s
 
 [Send logs now](azure-stack-configure-on-demand-diagnostic-log-collection-portal-tzl.md) (Enviar registros ahora) es una opción manual para cargar los registros de diagnóstico desde Azure Stack Hub solo cuando el cliente inicia la recopilación, normalmente antes de abrir una incidencia de soporte técnico.
 
-Los operadores de Azure Stack pueden enviar registros de diagnóstico a petición a los servicios de soporte al cliente (CSS) de Microsoft mediante el portal de administración o PowerShell. Si Azure Stack Hub está conectado a Azure, se recomienda usar la opción [Send logs now](azure-stack-configure-on-demand-diagnostic-log-collection-portal-tzl.md) (Enviar registros ahora) del portal de administración, ya que es la forma más sencilla de enviar los registros directamente a Microsoft. Si el portal no está disponible, en su lugar, los operadores deben [usar PowerShell para enviar los registros ahora](azure-stack-configure-on-demand-diagnostic-log-collection-powershell-tzl.md).
+Los operadores de Azure Stack pueden enviar registros de diagnóstico a petición al Soporte técnico de Microsoft mediante el portal de administración o PowerShell. Si Azure Stack Hub está conectado a Azure, se recomienda usar la opción [Send logs now](azure-stack-configure-on-demand-diagnostic-log-collection-portal-tzl.md) (Enviar registros ahora) del portal de administración, ya que es la forma más sencilla de enviar los registros directamente a Microsoft. Si el portal no está disponible, en su lugar, los operadores deben [usar PowerShell para enviar los registros ahora](azure-stack-configure-on-demand-diagnostic-log-collection-powershell-tzl.md).
 
 Si está desconectado de Internet o desea guardar los registros solo de forma local, use el método [Get-AzureStackLog](azure-stack-get-azurestacklog.md) para enviar los registros. En el diagrama de flujo siguiente se muestra qué opción utilizar para enviar los registros de diagnóstico en cada caso.
 
@@ -59,7 +59,7 @@ Si está desconectado de Internet o desea guardar los registros solo de forma lo
 
 #### <a name="how-the-data-is-handled"></a>Cómo se controlan los datos
 
-Al iniciar la recopilación de registros de diagnóstico desde Azure Stack Hub, acepta y da su consentimiento para cargar esos registros y conservarlos en una cuenta de Azure Storage administrada y controlada por Microsoft. Los servicios de soporte técnico al cliente de Microsoft pueden acceder a estos registros de inmediato con la incidencia de soporte técnico sin tener que ponerse en contacto con el cliente para la recopilación de los registros.
+Al iniciar la recopilación de registros de diagnóstico desde Azure Stack Hub, acepta y da su consentimiento para cargar esos registros y conservarlos en una cuenta de Azure Storage administrada y controlada por Microsoft. Soporte técnico de Microsoft puede acceder a estos registros de inmediato con la incidencia de soporte técnico sin tener que ponerse en contacto con el cliente para la recopilación de los registros.
 
 Los datos se usarán solo para solucionar problemas de alertas de mantenimiento del sistema, no para marketing, publicidad ni ningún otro propósito comercial sin su consentimiento. Los datos se pueden conservar durante un máximo de 90 días y cualquier dato que Microsoft recopile se controlará según nuestros [procedimientos de privacidad estándar](https://privacy.microsoft.com/).
 

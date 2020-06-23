@@ -3,18 +3,18 @@ title: Registro de Azure Stack Hub en Azure
 titleSuffix: Azure Stack Hub
 description: Aprenda a registrar los sistemas integrados de Azure Stack Hub en Azure de forma que pueda descargar elementos de Azure Marketplace y configurar informes de datos.
 author: IngridAtMicrosoft
-ms.topic: article
+ms.topic: how-to
 ms.date: 04/06/2020
 ms.author: inhenkel
 ms.reviewer: avishwan
 ms.lastreviewed: 03/04/2019
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: 497a051c67b05683a874de955c069256c19bba9a
-ms.sourcegitcommit: d69eacbf48c06309b00d17c82ebe0ce2bc6552df
+ms.openlocfilehash: e21b3a68d17f07006997b70eb1ff3dfa22bad229
+ms.sourcegitcommit: 5f4f0ee043ff994efaad44129ce49be43c64d5dc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83780789"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84819554"
 ---
 # <a name="register-azure-stack-hub-with-azure"></a>Registro de Azure Stack Hub en Azure
 
@@ -25,7 +25,7 @@ La información de este artículo describe el registro de los sistemas integrado
 > [!IMPORTANT]  
 > Es necesario que el registro admita todas funcionalidades de Azure Stack Hub, incluida los artículos en oferta de Marketplace. Si no se registra al usar el modelo de facturación de pago por uso, infringirá los términos de licencia de Azure Stack Hub. Para más información sobre los modelos de licencia de Azure Stack Hub, consulte la [página de compra](https://azure.microsoft.com/overview/azure-stack/how-to-buy/).
 
-## <a name="prerequisites"></a>Prerrequisitos
+## <a name="prerequisites"></a>Requisitos previos
 
 Complete los siguientes requisitos previos antes del registro:
 
@@ -326,7 +326,7 @@ Si lo desea, puede usar el cmdlet Get-Content para señalar a un archivo que con
 
 Puede usar el icono de **administración de regiones** para comprobar si el registro de Azure Stack Hub se ha realizado correctamente. Este icono está disponible en el panel predeterminado del portal del administrador. El estado puede ser Registrado o No registrado. Si está registrado, también se muestra el identificador de la suscripción de Azure que usó para registrar Azure Stack Hub, junto con el grupo de recursos de registro y el nombre.
 
-1. Inicie sesión en el portal del administrador de [Azure Stack Hub](https://adminportal.local.azurestack.external).
+1. Inicie sesión en el portal de administración de Azure Stack Hub en `https://adminportal.local.azurestack.external`.
 
 2. En el panel, seleccione **Region management** (Administración de regiones).
 
@@ -357,13 +357,13 @@ El registro se tiene que actualizar o renovar en las siguientes circunstancias:
 - Al cambiar el modelo de facturación.
 - Cuando se escalan cambios (se agregan o quitan nodos) para la facturación por capacidad.
 
-### <a name="prerequisites"></a>Prerrequisitos
+### <a name="prerequisites"></a>Requisitos previos
 
 Necesita la siguiente información del [portal de administración](#verify-azure-stack-hub-registration) para renovar o cambiar el registro:
 
 | Administrator Portal | Parámetro del cmdlet | Notas | 
 |-----|-----|-----|
-| IDENTIFICADOR DE SUSCRIPCIÓN PARA EL REGISTRO | Subscription | Identificador de suscripción que se usó durante el registro anterior |
+| IDENTIFICADOR DE SUSCRIPCIÓN PARA EL REGISTRO | Suscripción | Identificador de suscripción que se usó durante el registro anterior |
 | GRUPO DE RECURSOS DE REGISTRO | ResourceGroupName | Grupo de recursos en el que existe el recurso de registro anterior |
 | NOMBRE DEL REGISTRO | RegistrationName | Nombre de registro usado durante el registro anterior |
 

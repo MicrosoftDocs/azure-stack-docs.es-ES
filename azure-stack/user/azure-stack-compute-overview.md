@@ -3,16 +3,16 @@ title: Introducción a las máquinas virtuales de Azure Stack Hub
 description: Más información acerca de las máquinas virtuales de Azure Stack Hub.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 02/03/2020
+ms.date: 06/15/2020
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 01/05/2020
-ms.openlocfilehash: 576580732440cabd8ae1c140d13130b81b212d16
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 9dda1268962952e4828b292a472ba342f1fadd23
+ms.sourcegitcommit: c9737939f4e437f1d954e163db972d58b3f98ffd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79295578"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84813738"
 ---
 # <a name="introduction-to-azure-stack-hub-vms"></a>Introducción a las máquinas virtuales de Azure Stack Hub
 
@@ -57,7 +57,7 @@ Su suscripción tiene límites de cuota predeterminados que pueden afectar a la 
 
 ### <a name="operating-system-disks-and-images"></a>Imágenes y discos del sistema operativo
 
-Las máquinas virtuales de Azure Stack Hub se limitan al formato de disco duro virtual de la generación 1 (VHD/VHDX). Los discos duros virtuales se pueden usar para almacenar el sistema operativo de la máquina y los datos. Estos discos también se usan para las imágenes entre las que se puede elegir para instalar un sistema operativo. Azure Stack Hub proporciona un Marketplace para usar con diversas versiones y tipos de sistemas operativos. Las imágenes de Marketplace se identifican mediante el publicador de la imagen, la oferta, la SKU y la versión (normalmente, la última versión se especifica como **la más reciente**).
+Las máquinas virtuales de Azure Stack Hub se limitan al formato de disco duro virtual de la primera generación (VHD/VHDX). Los discos duros virtuales se pueden usar para almacenar el sistema operativo de la máquina y los datos. Estos discos también se usan para las imágenes que se emplean para instalar un sistema operativo. Azure Stack Hub proporciona un Marketplace para usar con diversas versiones y tipos de sistemas operativos. Las imágenes de Marketplace se identifican mediante el publicador de la imagen, la oferta, la SKU y la versión (normalmente, la última versión se especifica como **la más reciente**).
 
 En la tabla siguiente se muestra como encontrar la información sobre una imagen:
 
@@ -71,8 +71,7 @@ Puede elegir cargar y usar su propia imagen. Si lo hace, el nombre del anunciant
 
 ### <a name="extensions"></a>Extensiones
 
-Las extensiones de máquina virtual ofrecen funcionalidades adicionales de máquina virtual por medio de la configuración posterior a la implementación y tareas automatizadas.
-Pueden llevarse a cabo estas tareas comunes mediante las extensiones:
+Las extensiones de máquina virtual ofrecen funcionalidades adicionales de máquina virtual por medio de la configuración posterior a la implementación y tareas automatizadas. Puede llevar a cabo estas tareas comunes mediante las extensiones:
 
 - **Ejecutar scripts personalizados**: La extensión de script personalizado ayuda a configurar cargas de trabajo en la máquina virtual al ejecutar su script cuando se aprovisiona la máquina virtual.
 
@@ -84,10 +83,10 @@ Pueden llevarse a cabo estas tareas comunes mediante las extensiones:
 
 Los recursos de la tabla siguiente se usan en la máquina virtual y deben ya existir o crearse al tiempo que esta:
 
-|Resource|Obligatorio|Descripción|
+|Recurso|Obligatorio|Descripción|
 |---------|---------|---------|
 |Resource group|Sí|La máquina virtual debe encontrarse en un grupo de recursos.|
-|Cuenta de almacenamiento|No|La máquina virtual no necesita la cuenta de Storage para almacenar sus discos duros virtuales si usa discos administrados. <br>La máquina virtual necesita la cuenta de Storage almacene sus discos duros virtuales si usa discos sin administrar.|
+|Cuenta de almacenamiento|No|La máquina virtual no necesita la cuenta de Storage para almacenar sus discos duros virtuales si usa discos administrados. |
 |Virtual network|Sí|La máquina virtual debe ser miembro de una red virtual.|
 |Dirección IP pública|No|La máquina virtual puede tener una dirección IP pública asignada para acceder remotamente a ella.|
 |interfaz de red|Sí|La máquina virtual necesita la interfaz de red para comunicarse en la red.|
@@ -95,18 +94,18 @@ Los recursos de la tabla siguiente se usan en la máquina virtual y deben ya exi
 
 ## <a name="create-your-first-vm"></a>Creación de la primera máquina virtual
 
-Hay varias opciones para crear una máquina virtual. La elección depende del entorno. En la tabla siguiente se proporciona información que le ayudará a comenzar a crear la máquina virtual:
+Hay varias maneras de crear una máquina virtual. La elección depende del entorno. En la tabla siguiente se proporciona información que le ayudará a comenzar a crear la máquina virtual:
 
 |Método|Artículo|
 |---------|---------|
-|Portal de Azure Stack Hub|Creación de una máquina virtual Windows con el portal de Azure Stack Hub<br>[Creación de una máquina virtual Linux con el portal de Azure Stack Hub](azure-stack-quick-linux-portal.md)|
+|Portal de Azure Stack Hub|[Creación de una máquina virtual Windows con el portal de Azure Stack Hub](azure-stack-quick-windows-portal.md).<br>[Creación de una máquina virtual Linux con el portal de Azure Stack Hub](azure-stack-quick-linux-portal.md).|
 |Plantillas|Las plantillas de inicio rápido de Azure Stack Hub se encuentran en:<br> [https://github.com/Azure/AzureStack-QuickStart-Templates](https://aka.ms/aa6z60s)|
 |PowerShell|[Creación de una máquina virtual Windows mediante PowerShell en Azure Stack Hub](azure-stack-quick-create-vm-windows-powershell.md)<br>[Creación de una máquina virtual Linux mediante PowerShell en Azure Stack Hub](azure-stack-quick-create-vm-linux-powershell.md)|
 |CLI|[Creación de una máquina virtual Windows mediante la CLI en Azure Stack Hub](azure-stack-quick-create-vm-windows-cli.md)<br>[Creación de una máquina virtual Linux mediante la CLI en Azure Stack Hub](azure-stack-quick-create-vm-linux-cli.md)|
 
 ## <a name="manage-your-vm"></a>Administración de la máquina virtual
 
-Las máquinas virtuales pueden administrarse mediante un portal basado en el explorador, herramientas de línea de comandos con compatibilidad con scripts o directamente mediante API. Algunas tareas de administración habituales que puede realizar son:
+Las máquinas virtuales pueden administrarse mediante un portal basado en el explorador, herramientas de línea de comandos con compatibilidad con scripts o directamente mediante API. Algunas tareas de administración típicas son:
 
 - Obtener información sobre una máquina virtual
 - Conectarse a una máquina virtual
@@ -115,17 +114,17 @@ Las máquinas virtuales pueden administrarse mediante un portal basado en el exp
 
 ### <a name="get-information-about-your-vm"></a>Obtención de información acerca de la máquina virtual
 
-En la tabla siguiente se muestran algunas maneras en que puede obtener información sobre una máquina virtual.
+En la tabla siguiente se muestran algunas maneras en que puede obtener información sobre una máquina virtual:
 
 |Método|Descripción|
 |---------|---------|
 |Portal de Azure Stack Hub|En el menú central, haga clic en **Máquinas virtuales** y seleccione la máquina virtual en la lista. En la página de la máquina virtual, puede ver información general, establecer valores y supervisar métricas.|
-|Azure PowerShell|La administración de las máquinas virtuales es similar en Azure y Azure Stack Hub. Para más información sobre el uso de PowerShell, consulte el siguiente tema de Azure:<br>[Creación y administración de máquinas virtuales Windows con el módulo de Azure PowerShell](/azure/virtual-machines/windows/tutorial-manage-vm#understand-vm-sizes)|
-|SDK de cliente|El uso de C# para administrar máquinas virtuales es similar en Azure y Azure Stack Hub. Para obtener más información, consulte el siguiente tema de Azure:<br>[Creación y administración de máquinas virtuales Windows en Azure mediante C#](/azure/virtual-machines/windows/csharp)|
+|Azure PowerShell|La administración de las máquinas virtuales es similar en Azure y Azure Stack Hub. Para más información sobre el uso de PowerShell, consulte el tema de Azure [Creación y administración de máquinas virtuales Windows con el módulo de Azure PowerShell](/azure/virtual-machines/windows/tutorial-manage-vm#understand-vm-sizes).|
+|SDK de cliente|El uso de C# para administrar máquinas virtuales es similar en Azure y Azure Stack Hub. Para más información, consulte [Creación y administración de máquinas virtuales Windows en Azure mediante C#](/azure/virtual-machines/windows/csharp).|
 
 ### <a name="connect-to-your-vm"></a>Conexión a la máquina virtual
 
-Puede usar el botón **Conectar** en el portal de Azure Stack Hub para conectarse a la máquina virtual.
+Puede usar la opción **Conectar** en el portal de Azure Stack Hub para conectarse a la máquina virtual.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

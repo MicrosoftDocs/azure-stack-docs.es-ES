@@ -7,12 +7,12 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: xiaofmao
 ms.lastreviewed: 03/19/2019
-ms.openlocfilehash: 995342f471ed7300d2fb9dd95a6623588a13d1a9
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 2d836c601f292b25a472b38d1afef464a3b22960
+ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79295332"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84630925"
 ---
 # <a name="manage-azure-stack-hub-storage-accounts"></a>Administración de cuentas de almacenamiento de Azure Stack Hub
 
@@ -22,7 +22,7 @@ Aprenda a administrar cuentas de almacenamiento de Azure Stack Hub. Busque, recu
 
 La lista de cuentas de almacenamiento de la región se puede ver en Azure Stack Hub mediante estos pasos:
 
-1. Inicie sesión en el [portal de administración](https://adminportal.local.azurestack.external).
+1. Inicie sesión en el portal de administración en `https://adminportal.local.azurestack.external`.
 
 2. Seleccione **Todos los servicios** > **Almacenamiento** > **Cuentas de almacenamiento**.
 
@@ -89,7 +89,7 @@ La configuración del período de retención permite a un operador de nube espec
 
 **Para cambiar el periodo de retención:**
 
-1. Inicie sesión en el [portal de administración](https://adminportal.local.azurestack.external).
+1. Inicie sesión en el portal de administración en `https://adminportal.local.azurestack.external`.
 2. Seleccione **Todos los servicios** > **Administración de regiones** en **Administración**.
 3. Seleccione **Proveedores de recursos** > **Almacenamiento** > **Configuración**. La ruta de acceso es Inicio > *región* - Proveedores de recursos > Almacenamiento.
 4. Seleccione **Configuración** y, luego, edite el valor del período de retención.

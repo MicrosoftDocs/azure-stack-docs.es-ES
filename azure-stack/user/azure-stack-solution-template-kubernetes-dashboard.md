@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
-ms.openlocfilehash: 82c3a0c7c43494a3a1a2790ba4672c3d498a61cd
-ms.sourcegitcommit: cad40ae88212cc72f40c84a1c88143ea0abb65ef
+ms.openlocfilehash: 0efcac6635a94b3fdc5551f9aa61b5c774e93905
+ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84111562"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84631185"
 ---
 # <a name="access-the-kubernetes-dashboard-in-azure-stack-hub"></a>Acceso al panel de Kubernetes en Azure Stack Hub 
 
@@ -47,7 +47,7 @@ Puede recuperar la dirección URL para el panel desde el nodo principal del clú
 
 1. Obtenga la dirección IP pública y el nombre de usuario para el nodo principal del clúster desde el panel de Azure Stack Hub. Para obtener esta información:
 
-    - Inicie sesión en el [portal de Azure Stack Hub](https://portal.local.azurestack.external/).
+    - Inicie sesión en el portal de Azure Stack Hub `https://portal.local.azurestack.external/`.
     - Seleccione **Todos los servicios** > **Todos los recursos**. Busque el nodo principal en el grupo de recursos de clúster. El nodo principal se denomina `k8s-master-<sequence-of-numbers>`. 
 
 2. Abra el nodo principal en el portal. Copie la dirección **IP pública**. Haga clic en **Conectar** para obtener el nombre de usuario en el cuadro **Iniciar sesión con la cuenta local de VM**. Este es el mismo nombre de usuario que se establece al crear el clúster. Utilice la dirección IP pública en lugar de la dirección IP privada que se muestra en la hoja de conexión.
