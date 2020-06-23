@@ -8,12 +8,12 @@ metadata:
   author: khdownie
   ms.author: v-kedow
   ms.date: 04/17/2020
-  ms.openlocfilehash: f277947b8de05c0a038c01bf9ab994510aa95b4f
-  ms.sourcegitcommit: 355e21dd9b8c3f44e14abaae0b4f176443cf7495
+  ms.openlocfilehash: 4a0a9d91efd11cc2affe70ecdbfe4b9781f3a2a5
+  ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
   ms.translationtype: HT
   ms.contentlocale: es-ES
-  ms.lasthandoff: 04/17/2020
-  ms.locfileid: "81624965"
+  ms.lasthandoff: 06/22/2020
+  ms.locfileid: "85196790"
 landingContent:
 - title: Acerca de Azure Stack HCI
   linkLists:
