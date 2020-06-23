@@ -7,12 +7,12 @@ ms.date: 06/07/2019
 ms.author: justinha
 ms.reviewer: efemmano
 ms.lastreviewed: 06/07/2019
-ms.openlocfilehash: 358837da19ad34f82f81a94da0c89b165574ea49
-ms.sourcegitcommit: 4138a2a15f78e7db38b3a29acc963a71937146fd
+ms.openlocfilehash: d7951500afe21ec0800328230d6b5f1653934c40
+ms.sourcegitcommit: 5f4f0ee043ff994efaad44129ce49be43c64d5dc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "77699259"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84819197"
 ---
 # <a name="use-the-administrator-portal-in-azure-stack-hub"></a>Uso del portal de administración de Azure Stack Hub
 
@@ -24,7 +24,7 @@ Para obtener acceso al portal de administración, vaya a la dirección URL del m
 
 | Entorno | Dirección URL del portal de administración |   
 | -- | -- | 
-| ASDK| https://adminportal.local.azurestack.external  |
+| ASDK| `https://adminportal.local.azurestack.external`  |
 | Sistemas integrados | https://adminportal.&lt;*región*&gt;.&lt;*FQDN*&gt; | 
 | | |
 
@@ -77,8 +77,8 @@ Para obtener acceso a la documentación del operador de Azure Stack Hub, use el
 
 Si hace clic sucesivamente en el icono de ayuda (signo de interrogación) en la esquina superior derecha del portal de administración, en **Help + support** (Ayuda y soporte técnico) y en **New support request** (Nueva solicitud de soporte técnico) bajo **Support** (Soporte técnico), se producirá uno de los siguientes resultados:
 
-- Si usa un sistema integrado, esta acción abre un sitio donde puede abrir directamente un vale de soporte técnico para los servicios de soporte al cliente de Microsoft (CSS). Consulte [dónde obtener soporte técnico](azure-stack-manage-basics.md#where-to-get-support) para saber cuándo debe acudir al servicio de soporte técnico de Microsoft o al soporte técnico del proveedor de hardware OEM (fabricante de equipo original).
-- Si usa ASDK, esta acción abre directamente el [sitio de foros de Azure Stack Hub](https://social.msdn.microsoft.com/Forums/home?forum=AzureStack). Estos foros se supervisan periódicamente. Dado que ASDK es un entorno de evaluación, el servicio de asistencia al cliente (CSS) de Microsoft no ofrece soporte técnico oficial.
+- Si usa un sistema integrado, esta acción abre un sitio en el que puede crear directamente una incidencia para el equipo de Soporte técnico de Microsoft. Consulte [dónde obtener soporte técnico](azure-stack-manage-basics.md#where-to-get-support) para saber cuándo debe acudir al servicio de soporte técnico de Microsoft o al soporte técnico del proveedor de hardware OEM (fabricante de equipo original).
+- Si usa ASDK, esta acción abre directamente el [sitio de foros de Azure Stack Hub](https://social.msdn.microsoft.com/Forums/home?forum=AzureStack). Estos foros se supervisan periódicamente. Dado que ASDK es un entorno de evaluación, Soporte técnico de Microsoft no ofrece soporte técnico oficial.
 
 ### <a name="quick-access-to-the-azure-roadmap"></a>Acceso rápido a la hoja de ruta de Azure
 

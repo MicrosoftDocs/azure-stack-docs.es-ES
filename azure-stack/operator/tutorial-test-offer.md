@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 10/13/2019
 ms.reviewer: shriramnat
 ms.lastreviewed: 10/06/2019
-ms.openlocfilehash: 2aae33b324be4828b514ffbd019992aae989f50b
-ms.sourcegitcommit: bdd4d529bd3e115a9f76eece62b1613448d5d020
+ms.openlocfilehash: b0dd6b5013a19c120d1d8e69594406292ee6ac6c
+ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "80423842"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84631355"
 ---
 # <a name="tutorial-test-a-service-offering"></a>Tutorial: Prueba de una oferta de un servicio
 
@@ -24,7 +24,7 @@ En este tutorial, aprenderá a:
 > * una suscripción
 > * Creación e implementación de recursos
 
-## <a name="prerequisites"></a>Prerrequisitos
+## <a name="prerequisites"></a>Requisitos previos
 
 Antes de comenzar con este tutorial, debe completar los siguientes requisitos previos:
 
@@ -37,7 +37,7 @@ Antes de comenzar con este tutorial, debe completar los siguientes requisitos pr
 1. Inicie sesión en el portal de usuario con una cuenta de usuario. 
 
    - En un sistema integrado, la dirección URL varía en función de la región y el nombre de dominio externo del operador y tendrá el formato https://portal.&lt;*región*&gt;.&lt;*FQDN*&gt;.
-   - Si usa el Kit de desarrollo de Azure Stack, la dirección del portal es https://portal.local.azurestack.external.
+   - Si usa el Kit de desarrollo de Azure Stack, la dirección del portal es `https://portal.local.azurestack.external`.
 
 1. Seleccione el icono **Get a Subscription** (Obtener una suscripción).
 

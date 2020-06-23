@@ -7,12 +7,12 @@ ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 1/10/2020
-ms.openlocfilehash: 75056bbadb3ab5792bd51ed3dcb348ef3d42aa3e
-ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
+ms.openlocfilehash: 5a9d6902d317af76145dde564cef56ac2f42dce8
+ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81660434"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84631273"
 ---
 # <a name="quickstart-create-a-linux-server-vm-by-using-the-azure-stack-hub-portal"></a>Inicio rápido: Creación de una máquina virtual de servidor Linux mediante el portal de Azure Stack Hub
 
@@ -25,7 +25,7 @@ Puede crear una máquina virtual en Ubuntu Server 16.04 LTS mediante el portal d
 > [!NOTE]  
 > Las imágenes de este artículo se han actualizado para reflejar los cambios introducidos en la versión 1808 de Azure Stack Hub. La versión 1808 presenta compatibilidad con los *discos administrados*, además de los no administrados. Si usa una versión anterior, las imágenes para algunas tareas, como la selección de disco, diferirán de lo que se muestra en la interfaz de usuario.  
 
-## <a name="prerequisites"></a>Prerrequisitos
+## <a name="prerequisites"></a>Requisitos previos
 
 * Una imagen de Linux en el Marketplace de Azure Stack Hub
 
@@ -63,7 +63,7 @@ Para crear un par de claves SSH:
 
 La dirección del portal de Azure Stack Hub depende del producto de Azure Stack al que se vaya a conectar:
 
-* Para el ASDK, vaya a https://portal.local.azurestack.external.
+* Para el ASDK, vaya a `https://portal.local.azurestack.external`.
 
 * Para un sistema integrado de Azure Stack Hub, vaya a la dirección URL que proporciona su operador de Azure Stack Hub.
 
@@ -152,7 +152,7 @@ Los grupos de seguridad de red (NSG) protegen el tráfico entrante y saliente. C
 
 Con NGINX instalado y el puerto 80 abierto en la VM, puede acceder al servidor web mediante la dirección IP pública de la VM. (La dirección IP pública se muestra en la página **Información general** de la VM).
 
-Abra un explorador web y vaya a *http://\<dirección IP pública>* .
+Abra un explorador web y vaya a *http://\<public IP address>* .
 
 ![Página principal del servidor web NGINX](media/azure-stack-quick-linux-portal/linux-05a.png)
 
