@@ -1,40 +1,57 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Documentación para asociados de Azure Stack Hub
+summary: Aprenda a validar hardware para que hospedar Azure Stack Hub. VaaS es un servicio nativo de Azure diseñado para que los usen asociados de soluciones que diseñan de forma conjunta ofertas con Microsoft.
 metadata:
-  title: 'D\Documentación para asociados de Azure Stack Hub: tutoriales y R\referencia de API'
-  description: Aprenda a validar hardware para que hospedar Azure Stack Hub. La validación como servicio es un servicio nativo de Azure diseñado para su uso por los asociados de la solución que diseñan de forma conjunta ofertas de Azure Stack Hub con Microsoft.
-  services: azure-stack
-  author: mattbriggs
-  manager: femila
+  title: Asociado de Azure Stack Hub
+  description: Aprenda a validar hardware para que hospedar Azure Stack Hub. VaaS es un servicio nativo de Azure diseñado para que lo usen asociados de soluciones que diseñan de forma conjunta ofertas con Microsoft.
   ms.service: azure-stack
-  ms.tgt_pltfrm: na
-  ms.devlang: na
+  ms.subservice: partner
   ms.topic: landing-page
-  ms.date: 07/25/2018
+  author: mattbriggs
   ms.author: mabrigg
-  ms.reviewer: johnhas
-abstract:
-  description: Puede utilizar la validación como servicio para comprobar hardware para usarlo con Azure Stack Hub. El servicio es un servicio nativo de Azure diseñado para su uso por los asociados de la solución que diseñan de forma conjunta ofertas de Azure Stack Hub con Microsoft.
-sections:
-  - title: Inicio rápido en 5 minutos
-    items:
-      - type: paragraph
-        text: Aprenda a usar el portal de validación como servicio para programar pruebas en el hardware.
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: media/i_account-management.svg
-            text: Uso del portal de validación como servicio para programar la primera prueba
-            href: azure-stack-vaas-schedule-test-pass.md
-  - title: Tutoriales detallados
-    items:
-      - type: paragraph
-        text: Aprenda a validar el hardware de Azure Stack Hub.
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure-stack/partner/azure-stack-vaas-validate-solution-new">Validación de una nueva solución de Azure Stack Hub</a>
-          - html: <a href="/azure-stack/partner/azure-stack-vaas-validate-oem-package">Validación de paquetes de OEM</a>
-          - html: <a href="/azure-stack/partner/azure-stack-vaas-validate-microsoft-updates">Validación de las actualizaciones de software de Microsoft</a>
+  ms.date: 06/22/2020
+  ms.openlocfilehash: 1e1deb2af682bbe732d374873e0b0ccbd292fce7
+  ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
+  ms.translationtype: HT
+  ms.contentlocale: es-ES
+  ms.lasthandoff: 06/22/2020
+  ms.locfileid: "85197028"
+landingContent:
+- title: Acerca de VaaS para Azure Stack Hub
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: ¿Qué es VaaS?
+      url: azure-stack-vaas-overview.md
+  - linkListType: whats-new
+    links:
+    - text: Notas de la versión
+      url: azure-stack-vaas-release-notes.md
+- title: Introducción
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Aprenda a usar el portal de VaaS
+      url: azure-stack-vaas-schedule-test-pass.md
+    - text: Validación de una solución
+      url: azure-stack-vaas-validate-solution-new.md
+- title: Modo de uso
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Validación de una nueva solución de Azure Stack Hub
+      url: azure-stack-vaas-validate-solution-new.md
+    - text: Validación de paquetes de OEM
+      url: azure-stack-vaas-validate-oem-package.md
+    - text: Validación de las actualizaciones de software de Microsoft
+      url: azure-stack-vaas-validate-microsoft-updates.md
+    - text: Solución de problemas de la validación como servicio
+      url: azure-stack-vaas-troubleshoot.md
+  - linkListType: concept
+    links:
+    - text: Conceptos clave
+      url: azure-stack-vaas-key-concepts.md
+    - text: Procedimientos recomendados
+      url: azure-stack-vaas-best-practice.md
+    - text: Parámetros comunes
+      url: azure-stack-vaas-parameters.md
