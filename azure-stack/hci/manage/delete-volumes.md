@@ -3,14 +3,14 @@ title: Eliminación de volúmenes en Azure Stack HCI
 description: Eliminación de volúmenes en Azure Stack HCI mediante Windows Admin Center y PowerShell.
 author: khdownie
 ms.author: v-kedow
-ms.topic: article
+ms.topic: how-to
 ms.date: 03/17/2020
-ms.openlocfilehash: cf556a9b6c130907e8607d8e5b9436b71756a3d4
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: ffa848436169a55e2a2ad4f878e1e3aecaf29d6e
+ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79511902"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85196365"
 ---
 # <a name="deleting-volumes-in-azure-stack-hci"></a>Eliminación de volúmenes en Azure Stack HCI
 
@@ -33,7 +33,7 @@ Vea un vídeo rápido sobre cómo eliminar un volumen con Windows Admin Center.
 
 Use el cmdlet **Remove-VirtualDisk** para eliminar volúmenes en Espacios de almacenamiento directo. Este cmdlet se utiliza para eliminar el objeto **VirtualDisk** y devolver el espacio que usaba al grupo de almacenamiento que expone el objeto **VirtualDisk**.
 
-En primer lugar, inicie PowerShell en el equipo de administración y ejecute el cmdlet **Get-VirtualDisk** con el parámetro **CimSession**, que es el nombre de un clúster de Espacios de almacenamiento directo o un nodo de servidor, por ejemplo *nombreDelClúster.microsoft.com*: 
+En primer lugar, inicie PowerShell en el equipo de administración y ejecute el cmdlet **Get-VirtualDisk** con el parámetro **CimSession**, que es el nombre de un clúster de Espacios de almacenamiento directo o un nodo de servidor, por ejemplo *nombreDelClúster.microsoft.com*:
 
 ```PowerShell
 Get-VirtualDisk -CimSession clustername.microsoft.com

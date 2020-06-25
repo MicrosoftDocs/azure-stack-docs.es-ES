@@ -3,14 +3,14 @@ title: Descripción de la memoria caché en Azure Stack HCI
 description: Funcionamiento del almacenamiento en caché de lectura y escritura en Espacios de almacenamiento directo y Azure Stack HCI.
 author: khdownie
 ms.author: v-kedow
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/28/2020
-ms.openlocfilehash: f1fc40a6475b8e51a063491cc120e2c4236cbeea
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 063dab5f6f395e33a42a9722b399a469f6ce6ac7
+ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79026101"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85196926"
 ---
 # <a name="understanding-the-cache-in-azure-stack-hci"></a>Descripción de la memoria caché en Azure Stack HCI
 
@@ -171,7 +171,7 @@ Puede optar por usar la memoria caché de CSV o no: depende de usted. Está desa
 
 ## <a name="manual-configuration"></a>Configuración manual
 
-Para la mayoría de las implementaciones, no se requiere la configuración manual. En caso de que lo necesite, consulte las secciones siguientes. 
+Para la mayoría de las implementaciones, no se requiere la configuración manual. En caso de que lo necesite, consulte las secciones siguientes.
 
 Si necesita realizar cambios en el modelo de dispositivo de la caché después de la instalación, edite el documento de componentes de soporte del Servicio de mantenimiento, como se describe en la [introducción al Servicio de mantenimiento](/windows-server/failover-clustering/health-service-overview#supported-components-document).
 

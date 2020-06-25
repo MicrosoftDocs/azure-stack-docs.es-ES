@@ -2,16 +2,16 @@
 title: Administración de clústeres de Azure Stack HCI mediante PowerShell
 description: Aprenda a administrar clústeres en Azure Stack HCI mediante PowerShell.
 author: v-dasis
-ms.topic: article
+ms.topic: how-to
 ms.date: 05/21/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: 922a6188c1529d3461288ac28ff542db6fa9a527
-ms.sourcegitcommit: f2203f070c17e19ba1a41d681662bac3ab50ed12
+ms.openlocfilehash: 7b87efc11518a982591340f9a8b5b8b72532eedc
+ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83855707"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85196399"
 ---
 # <a name="manage-azure-stack-hci-clusters-using-powershell"></a>Administración de clústeres de Azure Stack HCI mediante PowerShell
 

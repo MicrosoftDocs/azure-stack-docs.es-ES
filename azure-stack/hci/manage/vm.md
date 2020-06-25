@@ -2,16 +2,16 @@
 title: Administración de máquinas virtuales en Azure Stack HCI mediante Windows Admin Center
 description: Aprenda a crear y administrar máquinas virtuales en un clúster en Azure Stack HCl mediante Windows Admin Center.
 author: v-dasis
-ms.topic: article
+ms.topic: how-to
 ms.date: 05/20/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: f3ba9415cd5d91260067a1648bdb38c196be206a
-ms.sourcegitcommit: d69eacbf48c06309b00d17c82ebe0ce2bc6552df
+ms.openlocfilehash: 21bb8cf8c88a66fdb4ecee8d45d3e13127faabec
+ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83794411"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85196501"
 ---
 # <a name="manage-vms-on-azure-stack-hci-using-windows-admin-center"></a>Administración de máquinas virtuales en Azure Stack HCI mediante Windows Admin Center
 
@@ -61,7 +61,7 @@ Puede ver las métricas de rendimiento y uso de los recursos de todas las máqui
 :::image type="content" source="media/manage-vm/host-metrics.png" alt-text="Pantalla de métricas del host":::
 
 1. En **Herramientas**, desplácese hacia abajo y seleccione **Máquinas virtuales**.
-1. En la pestaña **Resumen** de la derecha se proporciona una vista global de los recursos del host de Hyper-V y el rendimiento de un servidor o clúster seleccionado, incluido lo siguiente: 
+1. En la pestaña **Resumen** de la derecha se proporciona una vista global de los recursos del host de Hyper-V y el rendimiento de un servidor o clúster seleccionado, incluido lo siguiente:
     - El número de máquinas virtuales que se ejecutan, detienen, pausan y guardan
     - Alertas de estado recientes o eventos del registro de eventos de Hyper-V para clústeres
     - Uso de la CPU y la memoria con una comparación entre el host y el invitado
@@ -148,7 +148,7 @@ Puede crear fácilmente una nueva máquina virtual mediante Windows Admin Center
 1. En **Procesadores virtuales**, seleccione el número de procesadores virtuales y si desea habilitar la virtualización anidada.
 1. En **Memoria**, seleccione la cantidad de memoria de inicio (se recomienda un mínimo de 4 GB) y un intervalo mínimo y máximo de memoria dinámica, según corresponda, para asignarla a la máquina virtual.
 1. En **Red**, seleccione un adaptador de red en la lista desplegable.
-1. En **Almacenamiento**, haga clic en **Agregar** y seleccione si desea crear un nuevo disco duro virtual o usar uno ya existente. Si va a utilizar uno ya existente, haga clic en **Examinar** y seleccione la ruta de acceso del archivo correspondiente.  
+1. En **Almacenamiento**, haga clic en **Agregar** y seleccione si desea crear un nuevo disco duro virtual o usar uno ya existente. Si va a utilizar uno ya existente, haga clic en **Examinar** y seleccione la ruta de acceso del archivo correspondiente.
 1. En **Sistema operativo**, realice una de las acciones siguientes:
    - Seleccione **Instalar un sistema operativo más adelante** si desea instalar un sistema operativo para la máquina virtual más adelante.
    - Seleccione **Install an operating system from an image file (*.iso)** (Instalar un sistema operativo a partir de un archivo de imagen (*.iso), haga clic en **Examinar** y, a continuación, seleccione el archivo de imagen .iso correspondiente que se va a usar.

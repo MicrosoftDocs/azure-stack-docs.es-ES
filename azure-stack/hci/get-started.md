@@ -3,14 +3,14 @@ title: Introducción a Azure Stack HCI y Windows Admin Center
 description: Conéctese rápidamente a un clúster de Azure Stack HCI existente y use Windows Admin Center para supervisar el rendimiento del clúster y del almacenamiento.
 author: khdownie
 ms.author: v-kedow
-ms.topic: article
+ms.topic: overview
 ms.date: 04/08/2020
-ms.openlocfilehash: efd0922639f628bfea0f2c78755b10de0053bc1f
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: dd97ee55779d1c3c35976005a880a0dd510e29af
+ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80979458"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85196892"
 ---
 # <a name="get-started-with-azure-stack-hci-and-windows-admin-center"></a>Introducción a Azure Stack HCI y Windows Admin Center
 
@@ -35,7 +35,7 @@ Después de haber completado la instalación de Windows Admin Center, puede agre
     :::image type="content" source="media/get-started/addcluster.png" alt-text="Captura de pantalla de Agregar clúster":::
 
 2. Seleccione para agregar un clúster de Windows Server:
-    
+
     :::image type="content" source="media/get-started/chooseconnectiontype.png" alt-text="Captura de pantalla de Elige el tipo de conexión":::
 
 3. Escriba el nombre del clúster que desea administrar y haga clic en **Agregar**. El clúster se agregará a la lista de conexiones en la página de información general.

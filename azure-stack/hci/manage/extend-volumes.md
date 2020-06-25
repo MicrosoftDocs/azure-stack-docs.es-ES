@@ -3,14 +3,14 @@ title: Extensión de volúmenes en Azure Stack HCI
 description: Cómo cambiar el tamaño de volúmenes en Azure Stack HCI mediante Windows Admin Center y PowerShell.
 author: khdownie
 ms.author: v-kedow
-ms.topic: article
+ms.topic: how-to
 ms.date: 03/10/2020
-ms.openlocfilehash: 703931b0dccb533b2b924847eb3302f0efa46d1a
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 1369d3bcd0393fd322d17e1977524732d5b97ccf
+ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79089301"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85196450"
 ---
 # <a name="extending-volumes-in-storage-spaces-direct"></a>Extensión de volúmenes en Espacios de almacenamiento directo
 > Se aplica a: Windows Server 2019
@@ -61,7 +61,7 @@ Para seguir las asociaciones entre los objetos de la pila, canalice un cmdlet **
 Por ejemplo, aquí se muestra cómo obtener un disco virtual hasta su volumen:
 
 ```PowerShell
-Get-VirtualDisk <FriendlyName> | Get-Disk | Get-Partition | Get-Volume 
+Get-VirtualDisk <FriendlyName> | Get-Disk | Get-Partition | Get-Volume
 ```
 
 ### <a name="step-1--resize-the-virtual-disk"></a>Paso 1: Cambio de tamaño del disco virtual
@@ -71,7 +71,7 @@ El disco virtual puede usar o no capas de almacenamiento, en función de cómo s
 Para comprobarlo, ejecute el siguiente cmdlet:
 
 ```PowerShell
-Get-VirtualDisk <FriendlyName> | Get-StorageTier 
+Get-VirtualDisk <FriendlyName> | Get-StorageTier
 ```
 
 Si el cmdlet no devuelve nada, el disco virtual no usa capas de almacenamiento.
@@ -126,7 +126,7 @@ $VirtualDisk = Get-VirtualDisk <FriendlyName>
 # Get its partition
 $Partition = $VirtualDisk | Get-Disk | Get-Partition | Where PartitionNumber -Eq 2
 
-# Resize to its maximum supported size 
+# Resize to its maximum supported size
 $Partition | Resize-Partition -Size ($Partition | Get-PartitionSupportedSize).SizeMax
 ```
 

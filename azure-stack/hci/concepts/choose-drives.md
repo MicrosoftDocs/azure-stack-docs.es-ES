@@ -3,14 +3,14 @@ title: Selección de unidades para Azure Stack HCl
 description: Selección de unidades de Espacios de almacenamiento directo en Azure Stack HCl.
 author: khdownie
 ms.author: v-kedow
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/06/2020
-ms.openlocfilehash: ee51dc973c26335cfb6c75de991508a6063e0993
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: c16907c9fab70bd185e0174b79ce746770ff646a
+ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80806667"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85196858"
 ---
 # <a name="choosing-drives-for-azure-stack-hci"></a>Selección de unidades para Azure Stack HCl
 

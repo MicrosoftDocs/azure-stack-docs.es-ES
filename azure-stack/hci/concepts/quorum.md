@@ -3,14 +3,14 @@ title: Descripción del cuórum de clúster y de grupo en Azure Stack HCl
 description: Descripción del cuórum de clúster y de grupo en Espacios de almacenamiento directo en Azure Stack HCl, con ejemplos específicos para ver los detalles.
 author: khdownie
 ms.author: v-kedow
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/28/2020
-ms.openlocfilehash: 70f10bd8c2c2e5eb639229ba743090ba5e5ac79c
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 82b1ab24567b124c4a2450149e37e9f05aab8bf8
+ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79026107"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85196875"
 ---
 # <a name="understanding-cluster-and-pool-quorum-on-azure-stack-hci"></a>Descripción del cuórum de clúster y de grupo en Azure Stack HCl
 
@@ -59,7 +59,7 @@ Hay dos maneras en que el clúster puede hacer que el *número total de votos* s
 1. En primer lugar, puede *activar* uno agregando un *testigo* con un voto adicional. Esto requiere la configuración del usuario.
 2. O bien, puede *desactivar* uno si pone a cero el voto de un nodo menos afortunado (se realiza automáticamente según sea necesario).
 
-Siempre que los nodos supervivientes comprueben correctamente que son la *mayoría*, la definición de *mayoría* se actualiza para que estén entre los supervivientes. Esto permite que el clúster pierda un nodo, luego otro, después otro, etc. Este concepto de la adaptación del *número total de votos* después de errores sucesivos se conoce como ***cuórum dinámico***.  
+Siempre que los nodos supervivientes comprueben correctamente que son la *mayoría*, la definición de *mayoría* se actualiza para que estén entre los supervivientes. Esto permite que el clúster pierda un nodo, luego otro, después otro, etc. Este concepto de la adaptación del *número total de votos* después de errores sucesivos se conoce como ***cuórum dinámico***.
 
 ### <a name="dynamic-witness"></a>Testigo dinámico
 
@@ -74,7 +74,7 @@ El cuórum dinámico funciona con el testigo dinámico de la manera que se descr
 - Si tiene un número **par** de nodos más un testigo, *el testigo vota*, por lo que el total es impar.
 - Si tiene un número**impar** de nodos más un testigo, *el testigo no vota*.
 
-El cuórum dinámico ofrece la posibilidad de asignar un voto a un nodo de forma dinámica para evitar la pérdida de la mayoría de los votos y permitir que el clúster se ejecute con un nodo (el último que queda). Vamos a tomar como ejemplo un clúster de cuatro nodos. Supongamos que el cuórum necesita tres votos. 
+El cuórum dinámico ofrece la posibilidad de asignar un voto a un nodo de forma dinámica para evitar la pérdida de la mayoría de los votos y permitir que el clúster se ejecute con un nodo (el último que queda). Vamos a tomar como ejemplo un clúster de cuatro nodos. Supongamos que el cuórum necesita tres votos.
 
 En este caso, el clúster se habría vuelto inactivo si ha perdido dos nodos.
 
@@ -140,7 +140,7 @@ Todos los nodos y el testigo votan, por lo que la *mayoría* se determina a part
 
 - Puede sobrevivir a un error del servidor: **Sí**.
 - Puede sobrevivir a un error del servidor y luego a otro: **Sí**.
-- Puede sobrevivir a dos errores seguidos del servidor: **Sí**. 
+- Puede sobrevivir a dos errores seguidos del servidor: **Sí**.
 
 #### <a name="five-nodes-and-beyond"></a>Cinco nodos y más.
 Todos los nodos votan, o todos menos uno, lo que hace que el total sea impar. De todos modos, Espacios de almacenamiento directo no puede controlar más de dos nodos inactivos, por lo que en este momento ningún testigo es necesario o útil.
@@ -149,7 +149,7 @@ Todos los nodos votan, o todos menos uno, lo que hace que el total sea impar. De
 
 - Puede sobrevivir a un error del servidor: **Sí**.
 - Puede sobrevivir a un error del servidor y luego a otro: **Sí**.
-- Puede sobrevivir a dos errores seguidos del servidor: **Sí**. 
+- Puede sobrevivir a dos errores seguidos del servidor: **Sí**.
 
 Ahora que sabemos cómo funciona el cuórum, echemos un vistazo a los tipos de testigos de cuórum.
 
@@ -189,25 +189,25 @@ Sin embargo, el cuórum de grupo funciona de forma diferente al cuórum de clús
 
 ### <a name="examples"></a>Ejemplos
 
-#### <a name="four-nodes-with-a-symmetrical-layout"></a>Cuatro nodos con un diseño simétrico. 
+#### <a name="four-nodes-with-a-symmetrical-layout"></a>Cuatro nodos con un diseño simétrico.
 Cada una de las 16 unidades tiene un voto y el nodo 2 también tiene un voto (puesto que es el propietario del recurso del grupo). La *mayoría* se determina a partir de un total de **16 votos**. Si los nodos 3 y 4 están inactivos, el subconjunto superviviente tiene 8 unidades y el propietario del recurso del grupo, lo que suma 9/16 votos. Por lo tanto, el grupo sobrevive.
 
 ![Cuórum de grupo 1](media/quorum/pool-1.png)
 
 - Puede sobrevivir a un error del servidor: **Sí**.
 - Puede sobrevivir a un error del servidor y luego a otro: **Sí**.
-- Puede sobrevivir a dos errores seguidos del servidor: **Sí**. 
+- Puede sobrevivir a dos errores seguidos del servidor: **Sí**.
 
-#### <a name="four-nodes-with-a-symmetrical-layout-and-drive-failure"></a>Cuatro nodos con un diseño simétrico y un error de unidad. 
+#### <a name="four-nodes-with-a-symmetrical-layout-and-drive-failure"></a>Cuatro nodos con un diseño simétrico y un error de unidad.
 Cada una de las 16 unidades tiene un voto y el nodo 2 también tiene un voto (puesto que es el propietario del recurso del grupo). La *mayoría* se determina a partir de un total de **16 votos**. En primer lugar, la unidad 7 deja de funcionar. Si los nodos 3 y 4 están inactivos, el subconjunto superviviente tiene 7 unidades y el propietario del recurso del grupo, lo que suma 8/16 votos. Por lo tanto, el grupo no tiene mayoría y deja de funcionar.
 
 ![Cuórum de grupo 2](media/quorum/pool-2.png)
 
 - Puede sobrevivir a un error del servidor: **Sí**.
 - Puede sobrevivir a un error del servidor y luego a otro: **No**.
-- Puede sobrevivir a dos errores seguidos del servidor: **No**. 
+- Puede sobrevivir a dos errores seguidos del servidor: **No**.
 
-#### <a name="four-nodes-with-a-non-symmetrical-layout"></a>Cuatro nodos con un diseño no simétrico. 
+#### <a name="four-nodes-with-a-non-symmetrical-layout"></a>Cuatro nodos con un diseño no simétrico.
 Cada una de las 24 unidades tiene un voto y el nodo dos también tiene un voto (puesto que es el propietario del recurso del grupo). La *mayoría* se determina a partir de un total de **24 votos**. Si los nodos 3 y 4 están inactivos, el subconjunto superviviente tiene 8 unidades y el propietario del recurso del grupo, lo que suma 9/24 votos. Por lo tanto, el grupo no tiene mayoría y deja de funcionar.
 
 ![Cuórum de grupo 3](media/quorum/pool-3.png)
@@ -219,7 +219,7 @@ Cada una de las 24 unidades tiene un voto y el nodo dos también tiene un voto (
 ### <a name="pool-quorum-recommendations"></a>Recomendaciones para los cuórums de grupo
 
 - Asegúrese de que cada nodo del clúster sea simétrico (mismo número de unidades).
-- Habilite el reflejo triple o la paridad dual para que pueda tolerar errores de nodo y mantener en línea los discos virtuales. 
+- Habilite el reflejo triple o la paridad dual para que pueda tolerar errores de nodo y mantener en línea los discos virtuales.
 - Si hay más de dos nodos inactivos, o dos nodos y un disco de otro nodo están inactivos, es posible que los volúmenes no tengan acceso a las tres copias de sus datos y, por tanto, se desconecten y no estén disponibles. Se recomienda recuperar los servidores o reemplazar los discos rápidamente para garantizar la máxima resistencia de todos los datos del volumen.
 
 ## <a name="next-steps"></a>Pasos siguientes

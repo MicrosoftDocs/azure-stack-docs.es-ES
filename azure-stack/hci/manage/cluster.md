@@ -1,17 +1,17 @@
 ---
 title: Administración de clústeres de Azure Stack HCI mediante Windows Admin Center
 description: Aprenda a administrar los clústeres de Azure Stack HCI mediante Windows Admin Center.
-ms.topic: article
+ms.topic: how-to
 author: v-dasis
 ms.author: v-dasis
 ms.reviewer: jgerend
 ms.date: 05/20/2020
-ms.openlocfilehash: 55ce577cbedde36d271ab6fc13234b009c825d7e
-ms.sourcegitcommit: 7c10a45a8de0c5c7649e5329ca5b69a0791e37b5
+ms.openlocfilehash: 63290b49558d85e0869664c6ca760ae492718c34
+ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83729446"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85196484"
 ---
 # <a name="manage-azure-stack-hci-clusters-using-windows-admin-center"></a>Administración de clústeres de Azure Stack HCI mediante Windows Admin Center
 

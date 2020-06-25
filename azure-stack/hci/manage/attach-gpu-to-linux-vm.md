@@ -3,14 +3,14 @@ title: Asociación de una GPU a una máquina virtual Linux en Azure Stack HCI
 description: Cómo usar una GPU con cargas de trabajo de inteligencia artificial que se ejecutan en una máquina virtual Ubuntu Linux en Azure Stack HCI.
 author: khdownie
 ms.author: v-kedow
-ms.topic: article
+ms.topic: how-to
 ms.date: 03/24/2020
-ms.openlocfilehash: c1f1ddbfb9f362261a8e55d32a0d8c28b7b64629
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 804ead80185f6fe140f6b7d216bcff845769735e
+ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80402857"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85196994"
 ---
 # <a name="attaching-a-gpu-to-an-ubuntu-linux-vm-on-azure-stack-hci"></a>Asociación de una GPU a una máquina virtual Ubuntu Linux en Azure Stack HCI
 
@@ -273,12 +273,12 @@ Para prepararse para esta configuración, revise las preguntas frecuentes conten
     # and any modifications thereto.  Any use, reproduction, disclosure or
     # distribution of this software and related documentation without an express
     # license agreement from NVIDIA Corporation is strictly prohibited.
-    
+
     [application]
     enable-perf-measurement=1
     perf-measurement-interval-sec=5
     #gie-kitti-output-dir=streamscl
-    
+
     [tiled-display]
     enable=1
     rows=2
@@ -292,7 +292,7 @@ Para prepararse para esta configuración, revise las preguntas frecuentes conten
     #(3): nvbuf-mem-cuda-unified - Allocate Unified cuda memory, applicable for Tesla
     #(4): nvbuf-mem-surface-array - Allocate Surface Array memory, applicable for Jetson
     nvbuf-memory-type=0
-    
+
     [source0]
     enable=1
     #Type - 1=CameraV4L2 2=URI 3=MultiURI
@@ -301,7 +301,7 @@ Para prepararse para esta configuración, revise las preguntas frecuentes conten
     num-sources=2
     gpu-id=0
     nvbuf-memory-type=0
-    
+
     [source1]
     enable=1
     #Type - 1=CameraV4L2 2=URI 3=MultiURI
@@ -310,10 +310,10 @@ Para prepararse para esta configuración, revise las preguntas frecuentes conten
     num-sources=2
     gpu-id=0
     nvbuf-memory-type=0
-    
+
     [sink0]
     enable=0
-    
+
     [sink3]
     enable=1
     #Type - 1=FakeSink 2=EglSink 3=File 4=RTSPStreaming
@@ -325,7 +325,7 @@ Para prepararse para esta configuración, revise las preguntas frecuentes conten
     # set below properties in case of RTSPStreaming
     rtsp-port=8554
     udp-port=5400
-    
+
     [sink1]
     enable=1
     #Type - 1=FakeSink 2=EglSink 3=File 4=UDPSink 5=nvoverlaysink 6=MsgConvBroker
@@ -340,7 +340,7 @@ Para prepararse para esta configuración, revise las preguntas frecuentes conten
     topic=mytopic
     #Optional:
     #msg-broker-config=../../../../libs/azure_protocol_adaptor/module_client/cfg_azure.txt
-    
+
     [sink2]
     enable=0
     type=3
@@ -353,7 +353,7 @@ Para prepararse para esta configuración, revise las preguntas frecuentes conten
     bitrate=2000000
     output-file=out.mp4
     source-id=0
-    
+
     [osd]
     enable=1
     gpu-id=0
@@ -368,7 +368,7 @@ Para prepararse para esta configuración, revise las preguntas frecuentes conten
     clock-text-size=12
     clock-color=1;0;0;0
     nvbuf-memory-type=0
-    
+
     [streammux]
     gpu-id=0
     ##Boolean property to inform muxer that sources are live
@@ -384,7 +384,7 @@ Para prepararse para esta configuración, revise las preguntas frecuentes conten
     ##along with width, height properties
     enable-padding=0
     nvbuf-memory-type=0
-    
+
     [primary-gie]
     enable=1
     gpu-id=0
@@ -401,7 +401,7 @@ Para prepararse para esta configuración, revise las preguntas frecuentes conten
     labelfile-path=../../../../../samples/models/Primary_Detector/labels.txt
     config-file=../../../../../samples/configs/deepstream-app/config_infer_primary.txt
     #infer-raw-output-dir=../../../../../samples/primary_detector_raw_output/
-    
+
     [tracker]
     enable=1
     tracker-width=600
@@ -413,7 +413,7 @@ Para prepararse para esta configuración, revise las preguntas frecuentes conten
     gpu-id=0
     #enable-batch-process applicable to DCF only
     enable-batch-process=0
-    
+
     [tests]
     file-loop=1
     ```

@@ -3,14 +3,14 @@ title: Planeamiento de volúmenes en Azure Stack HCl
 description: Cómo planear volúmenes de almacenamiento en Azure Stack HCl.
 author: khdownie
 ms.author: v-kedow
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/06/2020
-ms.openlocfilehash: c6410e4f0d60138ce773f7f0abfae1a5c1850bd2
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: f056fbbb8c8e05da6f0a4fc7a7fb38d36249747f
+ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79095230"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85196943"
 ---
 # <a name="planning-volumes-in-storage-spaces-direct"></a>Planeamiento de volúmenes en Espacios de almacenamiento directo
 
