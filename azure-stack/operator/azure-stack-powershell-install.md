@@ -7,12 +7,12 @@ ms.date: 04/14/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 04/14/2020
-ms.openlocfilehash: d2c40307daa37b8f522fde9010a3d285eebff0fc
-ms.sourcegitcommit: 7b8e067cb449e67ca9c2935580684d78840ad495
+ms.openlocfilehash: 114be8564f264f38715ebacbb74c85559540c72f
+ms.sourcegitcommit: 8ad3ff64e6a47e512c7ae4442d5418fa79345fb5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82106948"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85264165"
 ---
 # <a name="install-powershell-azurerm-module-for-azure-stack-hub"></a>Instalación del módulo AzureRM de PowerShell para Azure Stack Hub
 
@@ -266,6 +266,25 @@ En escenarios donde se necesita un servidor proxy para acceder a Internet, prime
    #Alternatively, to prompt for separate credentials that can be used for #proxy authentication
    [System.Net.WebRequest]::DefaultWebProxy.Credentials = Get-Credential
    ```
+
+## <a name="known-issue"></a>Problema conocido
+
+###  <a name="method-get_serializationsettings-error"></a>Error en el método get_SerializationSettings 
+
+- Causa: El módulo Az y los módulos AzureRM de PowerShell no son compatibles.
+
+    El siguiente error indica que los módulos AzureRM y Az se han cargado en la misma sesión: 
+
+    ```powershell  
+    >  Method 'get_SerializationSettings' in type 'Microsoft.Azure.Management.Internal.Resources.ResourceManagementClient' from assembly 'Microsoft.Azure.Commands.ResourceManager.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' does 
+    not have an implementation.
+    ```
+
+- Corrección: Desinstale los módulos en conflicto. 
+
+  Si desea usar los módulos AzureRM, desinstale los módulos Az. O bien, desinstale el módulo AzureRM si desea usar los módulos Az. Cierre la sesión de PowerShell y desinstale los módulos Az o AzureRM según corresponda. 
+  
+  Puede encontrar más instrucciones en [Desinstale las versiones existentes de los módulos de PowerShell para Azure Stack Hub](#3-uninstall-existing-versions-of-the-azure-stack-hub-powershell-modules).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

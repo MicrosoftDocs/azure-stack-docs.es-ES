@@ -3,20 +3,20 @@ title: Novedades de Marketplace de Azure Stack Hub
 description: Consulte las novedades de Marketplace de Azure Stack Hub, incluidos los elementos nuevos, en desuso y actualizados de Marketplace.
 author: sethmanheim
 ms.topic: article
-ms.date: 06/16/2020
+ms.date: 06/19/2020
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 05/28/2020
-ms.openlocfilehash: 6649f7d282c869fbd348310a2bfdf883727282ff
-ms.sourcegitcommit: 5f4f0ee043ff994efaad44129ce49be43c64d5dc
+ms.openlocfilehash: a1e7b227a0e18475a1fcfac3246f193f54b84ced
+ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84819364"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85196960"
 ---
 # <a name="azure-stack-hub-marketplace-changes"></a>Cambios en Marketplace de Azure Stack Hub
 
-En este artículo se enumeran las más recientes incorporaciones, actualizaciones, cambios y eliminaciones de [elementos de Marketplace de Azure Stack Hub](azure-stack-marketplace-azure-items.md) de los últimos tres meses. La información de esta sección se actualiza de manera periódica, por lo que debe volver a comprobar con frecuencia los cambios.
+En este artículo se muestran las incorporaciones, actualizaciones, cambios y eliminaciones recientes de [elementos de Marketplace de Azure Stack Hub](azure-stack-marketplace-azure-items.md). La información de esta sección se actualiza de manera periódica, por lo que debe volver a comprobar con frecuencia los cambios.
 
 El artículo [Elementos de Azure Marketplace disponibles para Azure Stack Hub](azure-stack-marketplace-azure-items.md) siempre incluye la lista más actual de los elementos de Marketplace de Azure Stack Hub disponibles.
 
@@ -63,6 +63,7 @@ El artículo [Elementos de Azure Marketplace disponibles para Azure Stack Hub](a
 
 ## <a name="updated-marketplace-items"></a>Elementos de Marketplace actualizados
 
+- 19/06/2020: Bitnami GitLab CE: versión 13.0.2006110322
 - 16/06/2020: SQLIaaSExtension versión 1.3.20370
 - 12/06/2020: Bitnami Grafana: versión 6.7.2006040249
 - 21/5/2020: Ubuntu Server 16.04 LTS, versión 16.04.202004290

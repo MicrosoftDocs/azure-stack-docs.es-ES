@@ -3,16 +3,16 @@ title: Configuración de los servicios multiinquilino en Azure Stack Hub
 description: Aprenda a habilitar y deshabilitar varios inquilinos de Azure Active Directory en Azure Stack Hub.
 author: BryanLa
 ms.topic: how-to
-ms.date: 03/04/2020
+ms.date: 06/18/2020
 ms.author: bryanla
 ms.reviewer: bryanr
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: ffad503fec50952eca492e16ca0051e69d1c1f14
-ms.sourcegitcommit: d930d52e27073829b8bf8ac2d581ec2accfa37e3
+ms.openlocfilehash: 16b8ca5999507bd64d3416c3ee22fdd5c827c8b5
+ms.sourcegitcommit: 874ad1cf8ce7e9b3615d6d69651419642d5012b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82173886"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85107159"
 ---
 # <a name="configure-multi-tenancy-in-azure-stack-hub"></a>Configuración de los servicios multiinquilino en Azure Stack Hub
 
@@ -76,7 +76,7 @@ Register-AzSGuestDirectoryTenant -AdminResourceManagerEndpoint $adminARMEndpoint
 
 Cuando el operador de Azure Stack Hub haya habilitado el directorio de Fabrikam que se usará con Azure Stack Hub, Mary debe registrar Azure Stack Hub en el inquilino del directorio de Fabrikam.
 
-#### <a name="registering-azure-stack-hub-with-the-guest-directory"></a>Registro de Azure Stack Hub en el directorio invitado
+#### <a name="register-azure-stack-hub-with-the-guest-directory"></a>Registro de Azure Stack Hub en el directorio invitado
 
 Mary (administradora del directorio de Fabrikam) ejecuta los comandos siguientes en el fabrikam.onmicrosoft.com del directorio invitado:
 
@@ -94,7 +94,7 @@ Register-AzSWithMyDirectoryTenant `
 ```
 
 > [!IMPORTANT]
-> Si el administrador de Azure Stack Hub instala nuevos servicios o actualizaciones en el futuro, puede que tenga que volver a ejecutar este script.
+> Si el Administrador de Azure Stack Hub instala nuevos servicios o actualizaciones en el futuro, puede que tenga que volver a ejecutar este script.
 >
 > Ejecute este script de nuevo en cualquier momento para comprobar el estado de las aplicaciones de Azure Stack Hub en su directorio.
 >
@@ -104,7 +104,7 @@ Register-AzSWithMyDirectoryTenant `
 
 Ahora que usted y Mary han completado los pasos para incorporar el directorio de Mary, Mary puede instruir a los usuarios de Fabrikam para que inicien sesión. Para iniciar sesión, los usuarios de Fabrikam (es decir, los usuarios con el sufijo fabrikam.onmicrosoft.com) visitan https\://portal.local.azurestack.external.
 
-Mary indica a todas las [entidades de seguridad externas](/azure/role-based-access-control/rbac-and-directory-admin-roles) del directorio de Fabrikam (los usuarios del directorio de Fabrikam sin el sufijo fabrikam.onmicrosoft.com) que inicien sesión con https\://portal.local.azurestack.external/fabrikam.onmicrosoft.com. Si no utilizan esta dirección URL, se envían a su directorio predeterminado (Fabrikam) y reciben un error que indica que su administrador no ha dado su consentimiento.
+Mary indica a todas las [entidades de seguridad externas](/azure/role-based-access-control/rbac-and-directory-admin-roles) del directorio de Fabrikam (los usuarios del directorio de Fabrikam sin el sufijo fabrikam.onmicrosoft.com) que inicien sesión con https\://portal.local.azurestack.external/fabrikam.onmicrosoft.com. Si no se utiliza esta dirección URL, se envían al directorio predeterminado (Fabrikam) y reciben un error que indica que el administrador no ha dado su consentimiento.
 
 ## <a name="disable-multi-tenancy"></a>Deshabilitación del servicio multiinquilino
 
@@ -125,7 +125,7 @@ Si ya no desea varios inquilinos en Azure Stack Hub, puede deshabilitar el servi
      -Verbose 
     ```
 
-2. Como administrador de servicios de Azure Stack Hub (usted en este escenario), ejecute *Unregister-AzSGuestDirectoryTenant*.
+2. Como administrador de servicios de Azure Stack Hub (usted en este caso), ejecute *Unregister-AzSGuestDirectoryTenant*.
 
     ``` PowerShell
     ## The following Azure Resource Manager endpoint is for the ASDK. If you're in a multinode environment, contact your operator or service provider to get the endpoint.
@@ -148,6 +148,42 @@ Si ya no desea varios inquilinos en Azure Stack Hub, puede deshabilitar el servi
 
     > [!WARNING]
     > Los pasos para deshabilitar el servicio multiinquilino deben realizarse en orden. Si el paso 2 se realiza primero, el paso 1 generará errores.
+
+## <a name="retrieve-azure-stack-hub-identity-health-report"></a>Recuperación del informe de estado de identidades de Azure Stack Hub 
+
+Reemplace los marcadores de posición `<region>`, `<domain>` y `<homeDirectoryTenant>` y, a continuación, ejecute el siguiente cmdlet como administrador de Azure Stack Hub.
+
+```powershell
+
+$AdminResourceManagerEndpoint = "https://adminmanagement.<region>.<domain>"
+$DirectoryName = "<homeDirectoryTenant>.onmicrosoft.com"
+$healthReport = Get-AzsHealthReport -AdminResourceManagerEndpoint $AdminResourceManagerEndpoint -DirectoryTenantName $DirectoryName
+Write-Host "Healthy directories: "
+$healthReport.directoryTenants | Where status -EQ 'Healthy' | Select -Property tenantName,tenantId,status | ft
+
+
+Write-Host "Unhealthy directories: "
+$healthReport.directoryTenants | Where status -NE 'Healthy' | Select -Property tenantName,tenantId,status | ft
+```
+
+### <a name="update-azure-ad-tenant-permissions"></a>Actualización de los permisos de inquilino de Azure AD
+
+Esta acción con el estado Desactivar la alerta en Azure Stack Hub indica que un directorio requiere una actualización. Ejecute los siguientes comandos desde la carpeta **Azurestack-tools-master/identity**:
+
+```powershell
+Import-Module ..\Connect\AzureStack.Connect.psm1
+Import-Module ..\Identity\AzureStack.Identity.psm1
+
+$adminResourceManagerEndpoint = "https://adminmanagement.<region>.<domain>"
+
+# This is the primary tenant Azure Stack is registered to:
+$homeDirectoryTenantName = "<homeDirectoryTenant>.onmicrosoft.com"
+
+Update-AzsHomeDirectoryTenant -AdminResourceManagerEndpoint $adminResourceManagerEndpoint `
+   -DirectoryTenantName $homeDirectoryTenantName -Verbose
+```
+
+El script le pide credenciales administrativas en el inquilino de Azure AD y tarda varios minutos en ejecutarse. La alerta se debería desactivar después de ejecutar el cmdlet.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

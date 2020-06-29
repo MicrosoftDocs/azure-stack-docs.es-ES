@@ -7,12 +7,12 @@ ms.date: 05/04/2020
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: da3ba321eee4c71549fb84a61d3010803e5e6349
-ms.sourcegitcommit: 85c373fd8f9e8888a7ba25bedce2f640c93de1e5
+ms.openlocfilehash: bfa7abf0d481e8791c4e35d80d391de95b8a5b97
+ms.sourcegitcommit: 874ad1cf8ce7e9b3615d6d69651419642d5012b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84334168"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85107187"
 ---
 # <a name="azure-stack-hub-managed-disks-differences-and-considerations"></a>Discos administrados de Azure Stack Hub: Diferencias y consideraciones
 
@@ -152,7 +152,7 @@ Asegúrese de generalizar la máquina virtual correctamente antes de realizar es
 
 Siga las instrucciones de [Creación de una imagen a partir de una máquina virtual que usa una cuenta de almacenamiento](/azure/virtual-machines/windows/capture-image-resource#create-an-image-from-a-vm-that-uses-a-storage-account) para crear una imagen administrada a partir de un VHD generalizado en una cuenta de almacenamiento. Puede usar esta imagen en el futuro para crear máquinas virtuales administradas.
 
-#### <a name="case-2-create-managed-vm-from-managed-image-using-powershell"></a>Caso 2: Creación de una máquina virtual administrada a partir de una imagen administrada mediante Powershell
+#### <a name="case-2-create-managed-vm-from-managed-image-using-powershell"></a>Caso 2: Creación de una máquina virtual administrada a partir de una imagen administrada mediante PowerShell
 
 Después de crear una imagen a partir de una máquina virtual de disco administrado existente mediante el script de [Creación de una imagen a partir de un disco administrado mediante PowerShell](/azure/virtual-machines/windows/capture-image-resource#create-an-image-from-a-managed-disk-using-powershell), el siguiente script de ejemplo crea una máquina virtual Linux similar a partir de un objeto de imagen existente.
 
@@ -210,7 +210,7 @@ Add-AzureRmVMNetworkInterface -Id $Nic.Id
 New-AzureRmVM -ResourceGroupName $ResourceGroupName -Location $Location -VM $VmConfig
 ```
 
-También puede usar el portal para crear una máquina virtual desde una imagen administrada. Para obtener más información, consulte los artículos de imagen administrada de Azure [Creación de una imagen administrada de una máquina virtual generalizada en Azure](/azure/virtual-machines/windows/capture-image-resource) y [Creación de una máquina virtual a partir de una imagen administrada](/azure/virtual-machines/windows/create-vm-generalized-managed).
+También puede usar el portal para crear una máquina virtual desde una imagen administrada. Para obtener más información, consulte los artículos de imagen administrada de Azure [Captura de una imagen administrada de una máquina virtual generalizada en Azure](/azure/virtual-machines/windows/capture-image-resource) y [Creación de una máquina virtual a partir de una imagen administrada](/azure/virtual-machines/windows/create-vm-generalized-managed).
 
 ## <a name="configuration"></a>Configuración
 
@@ -219,7 +219,7 @@ Después de aplicar la actualización 1808 o posterior, debe realizar el siguien
 - Si una suscripción se ha creado antes de la actualización 1808, siga estos pasos para actualizar la suscripción. En caso contrario, la implementación de máquinas virtuales en esta suscripción podría producir un error con un mensaje del tipo "Error interno en el administrador de discos".
    1. En el portal de usuarios de Azure Stack Hub, vaya a **Suscripciones** y busque la suscripción. Haga clic en **Proveedores de recursos**, después en **Microsoft.Compute** y luego en **Volver a registrar**.
    2. En la misma suscripción, vaya a **Control de acceso (IAM)** y compruebe que **Azure Stack Hub – Managed Disk** (Azure Stack Hub - Disco administrado) aparece en la lista.
-- Si usa un entorno de varios inquilinos, pida a su operador de nube (puede ser de su propia organización o del proveedor de servicios) que vuelva a configurar cada uno de los directorios de invitado siguiendo los pasos que se indican en [este artículo](../operator/azure-stack-enable-multitenancy.md#registering-azure-stack-hub-with-the-guest-directory). En caso contrario, la implementación de máquinas virtuales en una suscripción asociada con ese directorio de invitado podría producir un error con el mensaje "Error interno en el administrador de discos".
+- Si usa un entorno de varios inquilinos, pida a su operador de nube (puede ser de su propia organización o del proveedor de servicios) que vuelva a configurar cada uno de los directorios de invitado siguiendo los pasos que se indican en [este artículo](../operator/azure-stack-enable-multitenancy.md#register-azure-stack-hub-with-the-guest-directory). En caso contrario, la implementación de máquinas virtuales en una suscripción asociada con ese directorio de invitado podría producir un error con el mensaje "Error interno en el administrador de discos".
 
 ## <a name="next-steps"></a>Pasos siguientes
 
