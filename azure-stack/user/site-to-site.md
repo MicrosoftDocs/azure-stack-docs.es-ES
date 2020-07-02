@@ -7,12 +7,12 @@ ms.date: 05/12/2020
 ms.topic: article
 ms.reviewer: sranthar
 ms.lastreviewed: 05/12/2020
-ms.openlocfilehash: 361fefb0cfac67d5d55c9b3391da68877d695da3
-ms.sourcegitcommit: f4c2d5b87bc86ac4accb4d4df5b731b67d1a346c
+ms.openlocfilehash: 84a6f69eebb461d25cd9569f61d3dee22ec79a49
+ms.sourcegitcommit: b2b0fe629d840ca8d5b6353a90f1fcb392a73bd5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84203126"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85376823"
 ---
 # <a name="troubleshoot-site-to-site-vpn-connections"></a>Solución de problemas de conexiones VPN de sitio a sitio
 
@@ -77,4 +77,4 @@ Los parámetros predeterminados de Azure Stack Hub para IPsec/IKEV2 han cambiado
 
 ## <a name="create-a-support-ticket"></a>Creación de una incidencia de soporte técnico
 
-Si ninguno de los pasos anteriores soluciona el problema, cree una [incidencia de soporte técnico](../operator/azure-stack-manage-basics.md#where-to-get-support) y use la [herramienta de recopilación de registros a petición](../operator/azure-stack-configure-on-demand-diagnostic-log-collection.md) para proporcionar registros.
+Si ninguno de los pasos anteriores soluciona el problema, cree una [incidencia de soporte técnico](../operator/azure-stack-manage-basics.md#where-to-get-support) y use la [herramienta de recopilación de registros a petición](../operator/azure-stack-diagnostic-log-collection-overview.md) para proporcionar registros.

@@ -2,22 +2,22 @@
 title: Uso del punto de conexión con privilegios (PEP) para recopilar registros de diagnóstico
 description: Aprenda a recopilar los registros de diagnóstico a petición en Azure Stack Hub mediante el portal del administrador o un script de PowerShell.
 author: justinha
+ms.custom: conteperfq4
 ms.topic: article
-ms.date: 03/05/2020
+ms.date: 06/30/2020
 ms.author: justinha
 ms.reviewer: shisab
-ms.lastreviewed: 03/05/2020
-ms.openlocfilehash: df5a98e8526181a84d8b214fbdf82eb1dba00088
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.lastreviewed: 06/30/2020
+ms.openlocfilehash: b8be0f88b53bb599b716d50ac75e1d6d18515475
+ms.sourcegitcommit: bd775dfb298ba1dc67ac9ac7d591794179151026
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79520654"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85764582"
 ---
 # <a name="send-azure-stack-hub-diagnostic-logs-by-using-the-privileged-endpoint-pep"></a>Envío de los registros de diagnóstico de Azure Stack Hub mediante el punto de conexión con privilegios
 
 <!--how do you look up the PEP IP address. You look up the azurestackstampinfo.json--->
-
 
 Para ejecutar Get-AzureStackLog en un sistema integrado, debe tener acceso al punto de conexión con privilegios. Este es un script de ejemplo que se puede ejecutar mediante el punto de conexión con privilegios para recopilar los registros. Si va a cancelar una recopilación de registros en ejecución para iniciar una nueva, espere 5 minutos antes de iniciar la nueva recopilación de registros y escriba `Remove-PSSession -Session $session`.
 

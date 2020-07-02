@@ -7,12 +7,12 @@ ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 11/06/2019
-ms.openlocfilehash: b41b0fd7d9ce86a8e56fb8f445e52c224df65a65
-ms.sourcegitcommit: f0ee2a3af78dd6d6e2806710681d52b763948967
+ms.openlocfilehash: d3450c78c3dc0632d5230d65bcd176b5067be852
+ms.sourcegitcommit: 2a144c367a17eb1f8db58dd7bf1c820520182015
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84533763"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85835082"
 ---
 # <a name="deploy-foundational-patterns-overview"></a>Introducción a la implementación de patrones fundamentales
 
@@ -43,7 +43,7 @@ Cada artículo trata aspectos comunes, como:
 Use los patrones de almacenamiento para aumentar las opciones de almacenamiento con Azure Stack Hub. El almacenamiento de Azure Stack Hub es finito. Conéctese a los recursos del centro de datos existente. Encuentre instrucciones para crear una máquina virtual Windows en Azure Stack hub para conectarse a un destino iSCSI externo. Puede aprender a habilitar algunas características clave, como E/S de múltiples rutas, para optimizar el rendimiento y la conectividad entre la máquina virtual y el almacenamiento externo.
 
 | Almacenamiento iSCSI | Ampliación del almacenamiento |
-| --- | --- | --- |
+| --- | --- |
 | ![Conexión al almacenamiento iSCSI](media/deploy-foundational-patterns/icon-storage-87-storage-accounts-classic.svg)<br>[Conexión al almacenamiento iSCSI](azure-stack-network-howto-iscsi-storage.md) | ![Ampliación del centro de datos](media/deploy-foundational-patterns/icon-storage-88-recovery-services-vaults.svg)<br>[Ampliación del centro de datos](azure-stack-network-howto-extend-datacenter.md) |
 
 ## <a name="backup"></a>Copia de seguridad
@@ -53,9 +53,9 @@ Puede usar los patrones de copia de seguridad y recuperación ante desastres par
 
 
 |  Copia de seguridad  |  Copiar  |
-| --- | --- | --- |
+| --- | --- |
 | ![Copia de seguridad de una máquina virtual en Azure Stack Hub con Commvault](media/deploy-foundational-patterns/icon-storage-100-import-export-jobs.svg)<br>[Copia de seguridad de una máquina virtual en Azure Stack Hub con Commvault](azure-stack-network-howto-backup-commvault.md) | ![Copia de recursos de suscripción](media/deploy-foundational-patterns/icon-storage-94-data-box.svg)<br>[Copia de recursos de suscripción](azure-stack-network-howto-backup-replicator.md) |
-|  | ![Copia de seguridad de las cuentas de almacenamiento en Azure Stack Hub](media/deploy-foundational-patterns/icon-storage-93-storage-sync-services.svg)<br>[Copia de seguridad de las cuentas de almacenamiento en Azure Stack Hub](azure-stack-network-howto-backup-storage.md)  |
+|  ![Copia de seguridad de las cuentas de almacenamiento en Azure Stack Hub](media/deploy-foundational-patterns/icon-storage-93-storage-sync-services.svg)<br>[Copia de seguridad de las cuentas de almacenamiento en Azure Stack Hub](azure-stack-network-howto-backup-storage.md)  | |
 
 ## <a name="github-samples"></a>Ejemplos de GitHub
 
@@ -63,4 +63,4 @@ Puede encontrar las plantillas en el repositorio de GitHub [Azure Intelligent Ed
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Documentación sobre soluciones y patrones híbridos de Azure](\hybrid\app-solutions)
+[Documentación sobre soluciones y patrones híbridos de Azure](/hybrid/app-solutions)

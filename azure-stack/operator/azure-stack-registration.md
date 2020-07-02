@@ -8,13 +8,14 @@ ms.date: 04/06/2020
 ms.author: inhenkel
 ms.reviewer: avishwan
 ms.lastreviewed: 03/04/2019
+ms.custom: contperfq4
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: e21b3a68d17f07006997b70eb1ff3dfa22bad229
-ms.sourcegitcommit: 5f4f0ee043ff994efaad44129ce49be43c64d5dc
+ms.openlocfilehash: 334c32fa9522831f74d924b16797dea85cbe30d5
+ms.sourcegitcommit: 9c3339e0e3c3a953d64feff9ae08d94300c351ff
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84819554"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85449878"
 ---
 # <a name="register-azure-stack-hub-with-azure"></a>Registro de Azure Stack Hub en Azure
 
