@@ -3,16 +3,16 @@ title: Notas de la versión del motor de Azure Kubernetes Service (AKS) en Azure
 description: Conozca los pasos que debe llevar a cabo con la actualización del motor de AKS en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 06/19/2020
+ms.date: 06/29/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 06/19/2020
-ms.openlocfilehash: 13fd13ddd0177893f2cd5626caafa0487d927820
-ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
+ms.lastreviewed: 06/25/2020
+ms.openlocfilehash: d606e76a6c7bdaabc1828c26cd07fffba2d6fec7
+ms.sourcegitcommit: bd775dfb298ba1dc67ac9ac7d591794179151026
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85197113"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85764572"
 ---
 # <a name="release-notes-for-the-aks-engine-on-azure-stack-hub"></a>Notas de la versión del motor de AKS en Azure Stack Hub
 ::: moniker range=">=azs-2002"
@@ -80,8 +80,8 @@ Hay nuevas versiones de estas disponibles con esta actualización:
 
 | Versión de Azure Stack Hub | Versión del motor de AKS |
 | ----------------------------- | ------------------------ |
-| 1910 | 0.43.0 |
-| 2002 | 0.43.1, 0.51.0 |
+| 1910 | 0.43.0, 0.43.1 |
+| 2002 | 0.48.0, 0.51.0 |
 
 ## <a name="kubernetes-version-upgrade-path-in-aks-engine-0510"></a>Ruta de actualización de la versión de Kubernetes en el motor de AKS 0.51.0
 
@@ -92,9 +92,7 @@ Puede encontrar la versión actual y la versión de actualización en la tabla s
 | 1.14.7, 1.14.8 | 1.15.12 |
 | 1.15.4, 1.15.5, 1.15.10 | 1.15.12, 1.16.9 |
 | 1.15.12 | 1.16.9 |
-| 1.16.8 | 1.16.9, 1.17.5 |
-| 1.16.9 | 1.17.5 |
-| 1.17.4 | 1.17.5 |
+| 1.16.8 | 1.16.9 |
 
 En el archivo JSON del modelo de API, especifique los valores de versión secundaria y versión principal en la sección `orchestratorProfile`, por ejemplo, si desea implementar Kubernetes 1.16.9, se deben establecer los dos valores siguientes (consulte el ejemplo [kubernetes-azurestack.json](https://raw.githubusercontent.com/Azure/aks-engine/master/examples/azure-stack/kubernetes-azurestack.json)):
 
@@ -107,7 +105,6 @@ En el archivo JSON del modelo de API, especifique los valores de versión secund
 
 -   Se ha agregado compatibilidad con Kubernetes 1.15.12 ([#3212](https://github.com/Azure/aks-engine/issues/3212))
 -   Se ha agregado compatibilidad con Kubernetes 1.16.8 y 1.16.9 ([#3157](https://github.com/Azure/aks-engine/issues/3157) y [#3087](https://github.com/Azure/aks-engine/issues/3087))
--   Se ha agregado compatibilidad con Kubernetes 1.17.5 ([#3088](https://github.com/Azure/aks-engine/issues/3088))
 -   Complemento del panel de Kubernetes v2.0.0 ([#3140](https://github.com/Azure/aks-engine/issues/3140))
 -   Mejora de la confiabilidad de las operaciones mediante la eliminación de los bloqueos apt sin retención** Una vez que se han completado las operaciones apt ([#3049](https://github.com/Azure/aks-engine/issues/3049))
 -   Mejora de la confiabilidad de las operaciones mediante la finalización de la ejecución de scripts incluso después de obtener un error al conectarse al servidor de API K8s ([#3022](https://github.com/Azure/aks-engine/issues/3022))
@@ -128,8 +125,13 @@ En el archivo JSON del modelo de API, especifique los valores de versión secund
 ## <a name="known-issues"></a>Problemas conocidos
 
 -   La implementación de varios servicios de Kubernetes en paralelo dentro de un único clúster puede producir un error en la configuración del equilibrador de carga básico. Implemente un servicio cada vez si es posible.
+-   No se admite Kubernetes 1.17 en esta versión. Aunque hay solicitudes de incorporación de cambios que aluden a la versión 1.17, en realidad no se admite esta versión.
 -   La ejecución del comando aks-engine get-versions producirá información aplicable en Azure y Azure Stack Hub. Sin embargo, no hay una manera explícita de diferenciar lo que corresponde a Azure Stack Hub. No utilice este comando para averiguar qué versiones están disponibles en el área para su actualización. Use la tabla de referencia que se ha descrito anteriormente.
 -   La herramienta de aks-engine es un repositorio de código fuente de uso compartido entre Azure y Azure Stack Hub. Si examina las numerosas notas de la versión y las solicitudes de incorporación de cambios puede llegar a pensar que la herramienta es compatible con otras versiones de Kubernetes y la plataforma de SO además de las mencionadas anteriormente. Ignórelas y use la tabla de versiones anterior como la guía oficial de esta actualización.
+- Durante la actualización (actualización de aks-engine) de un clúster de Kubernetes de la versión 1.15.x a 1.16.x, el componente **kube-proxy** no se actualiza:
+  - En entornos conectados, es posible que este problema pase desapercibido ya que no hay ningún signo en el clúster de que **kube-proxy** no se haya actualizado. Todo parece funcionar según lo previsto.
+  - En entornos desconectados, puede ver este problema al ejecutar la siguiente consulta del estado de los pods del sistema y ver que los pods de **kube-proxy** no están en el estado **Listo**: `kubectl get pods -n kube-system`.
+  - Para solucionar este problema, elimine el daemonset de **kube-proxy** para que Kubernetes lo reinicie con la versión correcta. Ejecute el siguiente comando: `kubectl delete ds kube-proxy -n kube-system`.
 
 ## <a name="reference"></a>Referencia
 

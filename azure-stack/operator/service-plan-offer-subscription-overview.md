@@ -7,12 +7,12 @@ ms.date: 12/18/2019
 ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 10/01/2019
-ms.openlocfilehash: a5776189c1792844b6d9bf2ec229ec02936f82c1
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 2ebbc1d7a2d6a159c4d35303c833875452c20c01
+ms.sourcegitcommit: bd775dfb298ba1dc67ac9ac7d591794179151026
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80423877"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85764602"
 ---
 # <a name="azure-stack-hub-services-plans-offers-subscriptions-overview"></a>Introducción a los servicios, los planes, las ofertas y las suscripciones de Azure Stack Hub
 
@@ -98,6 +98,10 @@ Cuando planifique las ofertas, tenga en cuenta los puntos siguientes:
 Las suscripciones permiten a los usuarios acceder a sus ofertas. Si es un operador de Azure Stack Hub de un proveedor de servicios, los usuarios (inquilinos) le compran sus servicios mediante la suscripción a sus ofertas. Si es un operador de Azure Stack Hub de una organización, los usuarios (empleados) pueden suscribirse a los servicios que les ofrece sin pagar.
 
 Los usuarios crean otras suscripciones y obtienen acceso a las suscripciones existentes cuando inician sesión en Azure Stack Hub. Cada suscripción representa una asociación con una única oferta. La oferta (y sus planes y cuotas) asignada a una suscripción no se puede compartir con otras suscripciones. Cada recurso que crea un usuario está asociado a una suscripción.
+
+Como operador de Azure Stack Hub, puede ver información sobre las suscripciones de inquilinos, pero no puede acceder al contenido de estas a menos que un administrador de inquilinos de esa suscripción le agregue explícitamente mediante el control de acceso basado en roles. Esto permite a los inquilinos aplicar la separación de poderes y responsabilidades entre el operador de Azure Stack Hub y los espacios de inquilino. 
+
+La excepción a este caso es una situación en la que el propietario de la suscripción no puede proporcionar al operador acceso a la suscripción, lo que requiere que el administrador asuma la propiedad de la suscripción como se indica en [Cambio del propietario de facturación de las suscripciones de usuario de Azure Stack Hub](azure-stack-change-subscription-owner.md).
 
 ### <a name="default-provider-subscription"></a>Suscripción de proveedor predeterminada
 

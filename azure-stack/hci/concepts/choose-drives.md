@@ -4,27 +4,28 @@ description: Selección de unidades de Espacios de almacenamiento directo en Azu
 author: khdownie
 ms.author: v-kedow
 ms.topic: conceptual
-ms.date: 03/06/2020
-ms.openlocfilehash: c16907c9fab70bd185e0174b79ce746770ff646a
-ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
+ms.date: 07/01/2020
+ms.openlocfilehash: 693414f25687c923af3a3be8c1c421f08076cd28
+ms.sourcegitcommit: 92392e7275ab7fbbb9b75d0529d66adbd11070a3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85196858"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85814303"
 ---
 # <a name="choosing-drives-for-azure-stack-hci"></a>Selección de unidades para Azure Stack HCl
 
->Se aplica a: Windows Server 2019
+>Se aplica a: Azure Stack HCI, versión 20H2; Windows Server 2019
 
 En este tema se proporcionan instrucciones sobre cómo elegir las unidades de [Espacios de almacenamiento directo](/windows-server/storage/storage-spaces/storage-spaces-direct-overview) para satisfacer los requisitos de rendimiento y capacidad de Azure Stack HCl.
 
 ## <a name="drive-types"></a>Tipos de unidad
 
-Espacios de almacenamiento directo funciona actualmente con tres tipos de unidades:
+Espacios de almacenamiento directo funciona actualmente con cuatro tipos de unidades:
 
 |||
 |----------------------|--------------------------|
-|![NVMe](media/choose-drives/NVMe-100-px.png)|**NVMe** (memoria no volátil rápida) hace referencia a las unidades de estado sólido que se colocan directamente en el bus PCIe. Los factores de forma comunes son 2,5" U.2, AIC (Add-In Card) PCIe y M.2. NVMe ofrece mayor rendimiento de IOPS y E/S con latencia más baja que ningún otro tipo de unidad que se admita hoy en día.|
+|![PMem](media/choose-drives/pmem-100px.png)|**PMem** hace referencia a la memoria persistente, un nuevo tipo de almacenamiento de baja latencia y alto rendimiento.|
+|![NVMe](media/choose-drives/NVMe-100-px.png)|**NVMe** (memoria no volátil rápida) hace referencia a las unidades de estado sólido que se colocan directamente en el bus PCIe. Los factores de forma comunes son 2,5" U.2, AIC (Add-In Card) PCIe y M.2. NVMe ofrece mayor rendimiento de IOPS y E/S con latencia más baja que ningún otro tipo de unidad que se admita hoy en día excepto PMem.|
 |![SSD](media/choose-drives/SSD-100-px.png)|**SSD** hace referencia a las unidades de estado sólido, que se conectan a través de un dispositivo SATA o SAS convencional.|
 |![HDD](media/choose-drives/HDD-100-px.png)|**HDD** hace referencia a unidades de disco duro magnéticas de rotación que ofrecen gran capacidad de almacenamiento.|
 
@@ -99,4 +100,5 @@ Para obtener más información, vea también:
 - [Descripción de la caché en Azure Stack HCI](cache.md)
 - [Requisitos de hardware de Espacios de almacenamiento directo](/windows-server/storage/storage-spaces/storage-spaces-direct-hardware-requirements)
 - [Planeamiento de volúmenes en Azure Stack HCl](plan-volumes.md)
-- [Tolerancia a errores y eficacia del almacenamiento](fault-tolerance.md)
+- [Tolerancia a errores y eficiencia del almacenamiento](fault-tolerance.md)
+- [Descripción e implementación de memoria persistente](/windows-server/storage/storage-spaces/deploy-pmem)

@@ -6,12 +6,12 @@ author: v-dasis
 ms.author: v-dasis
 ms.reviewer: jgerend
 ms.date: 05/20/2020
-ms.openlocfilehash: 63290b49558d85e0869664c6ca760ae492718c34
-ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
+ms.openlocfilehash: 08cc96a1b4e4c9d1752b0f988a042735df1034b1
+ms.sourcegitcommit: b307cc147ede308e0b534ef656bc685ddaf5f95e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85196484"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85370088"
 ---
 # <a name="manage-azure-stack-hci-clusters-using-windows-admin-center"></a>Administración de clústeres de Azure Stack HCI mediante Windows Admin Center
 
@@ -103,7 +103,7 @@ Hay cinco valores del host de Hyper-V que se pueden aplicar al clúster.
 
     :::image type="content" source="media/manage-cluster/cluster-settings-numa.png" alt-text="pantalla Expansión de NUMA del clúster":::
 
-1. Para especificar el número de máquinas virtuales que pueden moverse simultáneamente durante la ejecución (migrado en vivo), seleccione **Migración en vivo**, seleccione un número y, a continuación, especifique lo siguiente:
+1. Para especificar el número de máquinas virtuales que pueden moverse simultáneamente durante la ejecución (migración en vivo), seleccione **Migración en vivo**, seleccione un número y, a continuación, especifique lo siguiente:
 
    - En **Protocolo de autenticación**, seleccione **CredSSP** o **Kerberos**.
 

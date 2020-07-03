@@ -7,12 +7,12 @@ ms.date: 05/12/2020
 ms.topic: article
 ms.reviewer: sranthar
 ms.lastreviewed: 05/12/2020
-ms.openlocfilehash: f933e9c4e70f533d4194b48c7b9e4d6e4bf380b0
-ms.sourcegitcommit: d5d89bbe8a3310acaff29a7a0cd7ac4f2cf5bfe7
+ms.openlocfilehash: 04c381bfefa40cc04f59e4b5f6641c2a227d14b8
+ms.sourcegitcommit: b2b0fe629d840ca8d5b6353a90f1fcb392a73bd5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83554971"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85376806"
 ---
 # <a name="troubleshoot-network-virtual-appliance-problems"></a>Solución de problemas de aplicaciones virtuales de red
 
@@ -92,7 +92,7 @@ Algunos sistemas operativos en el nivel de invitado pueden tener directivas de f
 ### <a name="check-whether-traffic-can-reach-the-nva"></a>Comprobación de si el tráfico puede llegar a la aplicación virtual de red
 
 1. Busque una máquina virtual que debiera estar conectada a la aplicación virtual de red.
-1. Compruebe si los grupos de seguridad de red bloquean el tráfico. En Windows, ejecute **ping** (ICMP) o **Test-NetConnection \<Private IP of NVA\>** (TCP). Para Linux, ejecute **Tcpping \<Private IP of NVA\>** .
+1. Compruebe si los grupos de seguridad de red bloquean el tráfico. En Windows, ejecute **ping** (ICMP) o **Test-NetConnection \<Private IP of NVA\>** (TCP). En Linux, ejecute **Tcpping \<Private IP of NVA\>** .
 1. Si los grupos de seguridad de red bloquean el tráfico, modifíquelos para que lo permitan.
 
 ### <a name="check-whether-the-nva-and-vms-are-listening-for-expected-traffic"></a>Comprobación de si la aplicación virtual de red y las máquinas virtuales están escuchando el tráfico esperado
@@ -163,4 +163,4 @@ Si necesita ayuda, [póngase en contacto con el proveedor de la aplicación virt
 
 ### <a name="create-a-support-ticket"></a>Creación de una incidencia de soporte técnico
 
-Si los pasos anteriores no solucionan el problema, cree una [incidencia de soporte técnico](../operator/azure-stack-manage-basics.md#where-to-get-support) y use la [herramienta de recopilación de registros a petición](../operator/azure-stack-configure-on-demand-diagnostic-log-collection.md) para proporcionar registros.
+Si los pasos anteriores no solucionan el problema, cree una [incidencia de soporte técnico](../operator/azure-stack-manage-basics.md#where-to-get-support) y use la [herramienta de recopilación de registros a petición](../operator/azure-stack-diagnostic-log-collection-overview.md) para proporcionar registros.
