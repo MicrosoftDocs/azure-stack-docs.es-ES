@@ -7,12 +7,13 @@ ms.date: 04/20/2020
 ms.author: justinha
 ms.reviewer: unknown
 ms.lastreviewed: 11/08/2019
-ms.openlocfilehash: a1e49ef9138c04557c8cd0a54b11ada30d97f334
-ms.sourcegitcommit: f2d80d705a222095c2ea785b9797bbac0cf96fcc
+ms.custom: conteperfq4
+ms.openlocfilehash: 468e6617ecf4b8be13b56176c805d07c994acda6
+ms.sourcegitcommit: e28821041b8111fdcd2c28d35a83ab0a8018455c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82605649"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86033283"
 ---
 # <a name="azure-stack-hub-overview"></a>Introducción a Azure Stack Hub
 

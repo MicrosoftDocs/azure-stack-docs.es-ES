@@ -106,8 +106,6 @@
         - name: Validación del registro de Azure
           href: azure-stack-validate-registration.md
           items:
-            - name: Referencia del cmdlet Start-AzsReadiness
-              href: azure-stack-azsreadiness-cmdlet.md
             - name: Ver el informe de preparación
               href: azure-stack-validation-report.md
         - name: Supervisión externa
@@ -298,7 +296,7 @@
               href: azure-stack-app-service-capacity-planning.md
             - name: Preguntas frecuentes acerca de la facturación de App Service
               href: app-service-billing-faq.md
-            - name: Prerrequisitos
+            - name: Requisitos previos
               href: azure-stack-app-service-before-you-get-started.md
             - name: Implementación
               items:
@@ -348,7 +346,7 @@
               href: event-hubs-rp-overview.md
             - name: Planificación de capacidad
               href: event-hubs-rp-capacity-planning.md
-            - name: Prerrequisitos
+            - name: Requisitos previos
               href: event-hubs-rp-prerequisites.md
             - name: Instalar
               href: event-hubs-rp-install.md

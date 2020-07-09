@@ -7,12 +7,13 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 05/05/2020
-ms.openlocfilehash: 1a7915743314481630dc489f733b3123ae2fafe8
-ms.sourcegitcommit: db3c9179916a36be78b43a8a47e1fd414aed3c2e
+ms.custom: conteperfq4
+ms.openlocfilehash: bc1a7bd86b63a5399468f117395dfd4e29f83c2c
+ms.sourcegitcommit: e28821041b8111fdcd2c28d35a83ab0a8018455c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84147012"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86033305"
 ---
 # <a name="deploy-a-java-web-app-to-a-vm-in-azure-stack-hub"></a>Implementación de una aplicación web de Java en una máquina virtual en Azure Stack Hub
 
