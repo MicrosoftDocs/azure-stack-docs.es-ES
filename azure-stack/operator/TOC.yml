@@ -357,7 +357,7 @@
                 - name: Copia de seguridad y restauración
                   href: azure-stack-backup-infrastructure-backup.md
                 - name: Recopilación de registros
-                  href: azure-stack-diagnostic-log-collection-overview-tzl.md
+                  href: azure-stack-diagnostic-log-collection-overview.md
                 - name: Estado y alertas
                   href: azure-stack-monitor-health.md
                 - name: Administrar
@@ -473,21 +473,21 @@
         - name: Portal de ayuda y soporte técnico
           items:
             - name: Información general
-              href: azure-stack-help-and-support-overview-tzl.md
+              href: azure-stack-help-and-support-overview.md
             - name: Búsqueda del identificador de nube
               href: azure-stack-find-cloud-id.md
             - name: Recopilación de registros de diagnóstico
               items:
                 - name: Información general
-                  href: azure-stack-diagnostic-log-collection-overview-tzl.md
+                  href: azure-stack-diagnostic-log-collection-overview.md
                 - name: Envío de registros de forma proactiva
-                  href: azure-stack-configure-automatic-diagnostic-log-collection-tzl.md
+                  href: azure-stack-configure-automatic-diagnostic-log-collection.md
                 - name: Envío de registros
                   items:
                     - name: Uso del portal de administrador
-                      href: azure-stack-configure-on-demand-diagnostic-log-collection-portal-tzl.md
+                      href: azure-stack-configure-on-demand-diagnostic-log-collection-portal.md
                     - name: Uso de PowerShell
-                      href: azure-stack-configure-on-demand-diagnostic-log-collection-powershell-tzl.md
+                      href: azure-stack-configure-on-demand-diagnostic-log-collection-powershell.md
                 - name: Get-AzureStackLog (PEP)
                   href: azure-stack-get-azurestacklog.md
         - name: Validación de Azure Stack Hub
