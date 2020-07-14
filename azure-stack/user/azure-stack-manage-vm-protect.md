@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: hectorl
 ms.lastreviewed: 3/5/2020
-ms.openlocfilehash: 3a59f36b5bae91255628d79b14ee727a5990ef11
-ms.sourcegitcommit: db3c9179916a36be78b43a8a47e1fd414aed3c2e
+ms.openlocfilehash: 1fd3c8de163d8539a0a3bf09e75e33959413fe96
+ms.sourcegitcommit: e28821041b8111fdcd2c28d35a83ab0a8018455c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84146944"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86033223"
 ---
 # <a name="protect-vms-deployed-on-azure-stack-hub"></a>Protección de las máquinas virtuales implementadas en Azure Stack Hub
 
@@ -71,9 +71,9 @@ Los productos de copia de seguridad pueden proteger la configuración de máquin
 > [!Important]  
 > Actualmente, no se admite el uso de instantáneas de discos para ninguna máquina virtual que se encuentre en ejecución. La creación de una instantánea de un disco conectado a una máquina virtual en ejecución puede reducir el rendimiento o el impacto de la disponibilidad del sistema operativo o de la aplicación en la máquina virtual. La recomendación es usar un agente invitado para proteger la aplicación si no se puede disponer de un tiempo de inactividad planeado. 
 
-### <a name="vms-in-a-scale-set-or-availability-group"></a>Máquinas virtuales en un conjunto de escalado o grupo de disponibilidad
+### <a name="vms-in-a-scale-set-or-availability-set"></a>Máquinas virtuales en un conjunto de escalado o conjunto de disponibilidad
 
-En el nivel de máquina virtual no se deben realizar copias de seguridad de las máquinas virtuales de un conjunto de escalado o grupo de disponibilidad que se consideren recursos efímeros, sobre todo si la aplicación está sin estado. En el caso de las aplicaciones con estado implementadas en un conjunto de escalado o en un grupo de disponibilidad, considere la posibilidad de proteger los datos de las aplicaciones (por ejemplo, una base de datos o un volumen de un grupo de almacenamiento). 
+En el nivel de máquina virtual no se deben realizar copias de seguridad de las máquinas virtuales de un conjunto de escalado o grupo de disponibilidad que se consideren recursos efímeros, sobre todo si la aplicación está sin estado. En el caso de las aplicaciones con estado implementadas en un conjunto de escalado o de disponibilidad, considere la posibilidad de proteger los datos de las aplicaciones (por ejemplo, una base de datos o un volumen de un grupo de almacenamiento). 
 
 ### <a name="replicationmanual-failover"></a>Replicación o conmutación por error manual
 
@@ -83,7 +83,7 @@ Con este enfoque, la aplicación se implementa en una nube y los datos se replic
  
 ### <a name="high-availabilityautomatic-failover"></a>Alta disponibilidad o conmutación por error automática
 
-Para aquellas aplicaciones sin estado que pueden tolerar pocos segundos o minutos de tiempo de inactividad, considere la posibilidad de una configuración de alta disponibilidad. Las aplicaciones de alta disponibilidad están diseñadas para implementarse en varias ubicaciones en una topología activa/activa en la que todas las instancias pueden atender solicitudes. En el caso de errores del hardware local, la infraestructura de Azure Stack Hub implementa alta disponibilidad en la red física mediante los dos principales conmutadores del bastidor. En el caso de errores en el nivel de proceso, Azure Stack Hub usa varios nodos en una unidad de escalado. En el nivel de la máquina virtual, puede utilizar conjuntos de escalado en combinación con dominios de error para asegurarse de que los errores de los nodos no desactivan la aplicación. La misma aplicación debe implementarse en una ubicación secundaria de la misma configuración. Para que la aplicación sea activa/activa, se puede usar un equilibrador de carga o un sistema de nombres de dominio que dirijan las solicitudes a todas las instancias disponibles.
+Para aquellas aplicaciones sin estado que pueden tolerar pocos segundos o minutos de tiempo de inactividad, considere la posibilidad de una configuración de alta disponibilidad. Las aplicaciones de alta disponibilidad están diseñadas para implementarse en varias ubicaciones en una topología activa/activa en la que todas las instancias pueden atender solicitudes. En el caso de errores del hardware local, la infraestructura de Azure Stack Hub implementa alta disponibilidad en la red física mediante los dos principales conmutadores del bastidor. En el caso de errores en el nivel de proceso, Azure Stack Hub usa varios nodos en una unidad de escalado y realiza automáticamente la conmutación por error de una máquina virtual. En el nivel de la máquina virtual, puede utilizar conjuntos de escalado o máquinas virtuales en un conjunto de disponibilidad para asegurarse de que los errores de los nodos no desactiven la aplicación. La misma aplicación debe implementarse en una ubicación secundaria de la misma configuración. Para que la aplicación sea activa/activa, se puede usar un equilibrador de carga o un sistema de nombres de dominio que dirijan las solicitudes a todas las instancias disponibles.
 
 ### <a name="no-recovery"></a>Sin recuperación
 

@@ -135,6 +135,8 @@
                   href: azure-stack-managed-disk-considerations.md
                 - name: Protección de máquinas virtuales
                   href: azure-stack-manage-vm-protect.md
+                - name: Problemas conocidos de máquinas virtuales
+                  href: troubleshoot-vm-known-issues.md
                 - name: Administración y actualización de la máquina virtual
                   href: vm-update-management.md
                 - name: Consideraciones sobre VM con SQL Server

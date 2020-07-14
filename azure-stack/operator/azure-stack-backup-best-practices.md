@@ -7,12 +7,12 @@ ms.date: 02/08/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 02/08/2019
-ms.openlocfilehash: a141beed4df6b34175f37d9e1e60e694f3ab71f2
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 6ea6d73e14b5c164691ed42deab298109b1c1ad8
+ms.sourcegitcommit: a5bb340c5689f7dcf1ef3a340416f7f337782170
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77700517"
+ms.lasthandoff: 07/03/2020
+ms.locfileid: "85937953"
 ---
 # <a name="infrastructure-backup-service-best-practices"></a>Procedimientos recomendados del servicio Infrastructure Backup
 
@@ -53,6 +53,7 @@ La clave debe almacenarse en una ubicación segura (por ejemplo, un secreto de A
 ### <a name="backups"></a>Copias de seguridad
 
  - Los trabajos de copia de seguridad se ejecutan mientras se está ejecutando el sistema, de modo que no hay ningún tiempo de inactividad en las aplicaciones de usuario o las experiencias de administración. Los trabajos de copia de seguridad tardan entre 20 y 40 minutos para una solución que está bajo una carga razonable.
+ - Las copias de seguridad automáticas no se iniciarán durante las operaciones de la revisión, actualización y FRU. Los trabajos de copias de seguridad programadas se omitirán de forma predeterminada. También se bloquearán las solicitudes a petición de copias de seguridad durante estas operaciones.    
  - Utilizando las instrucciones proporcionadas por el OEM, el host de ciclo de vida de hardware y los conmutadores de red de copia de seguridad manuales deben almacenarse en el recurso compartido de copia de seguridad en el que el controlador de Copia de seguridad de infraestructura almacena los datos de copia de seguridad del plano de control. Considere la posibilidad de almacenar las configuraciones del host de ciclo de vida de hardware y el conmutador en la carpeta de la región. Si tiene varias instancias de la Azure Stack Hub en la misma región, puede usar un identificador para cada configuración que pertenezca a una unidad de escala.
 
 ### <a name="folder-names"></a>Nombres de carpetas

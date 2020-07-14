@@ -3,16 +3,16 @@ title: Implementación de un clúster de Kubernetes con el motor de AKS en Azure
 description: Implementación de un clúster de Kubernetes en Azure Stack Hub desde una máquina virtual de cliente que ejecute el motor de AKS.
 author: mattbriggs
 ms.topic: article
-ms.date: 4/23/2020
+ms.date: 07/07/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 4/23/2020
-ms.openlocfilehash: 85f9e789db3ce86b04b490be83f355eb73e7329e
-ms.sourcegitcommit: c51e7787e36c49d34ee86cabf9f823fb98b61026
+ms.lastreviewed: 07/07/2020
+ms.openlocfilehash: 6dd3cb20570bcd4cf580f169f8ba9cbc44a673ac
+ms.sourcegitcommit: 84b089387f5cf89e3a72e576f1c7649667075e0a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82218830"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86137189"
 ---
 # <a name="deploy-a-kubernetes-cluster-with-the-aks-engine-on-azure-stack-hub"></a>Implementación de un clúster de Kubernetes con el motor de AKS en Azure Stack Hub
 
@@ -90,6 +90,9 @@ En esta sección se examina la creación de un modelo de API para el clúster.
     | ssh | Escriba la clave pública que se usará para la autenticación SSH con máquinas virtuales. Use `ssh-rsa` y, después, la clave. Para obtener instrucciones para crear una clave pública, consulte [Creación de una clave SSH para Linux](create-ssh-key-on-windows.md). |
 
     Si va a realizar la implementación en una red virtual personalizada, puede encontrar instrucciones para encontrar la clave y los valores necesarios y agregarlos a las matrices adecuadas del modelo de API en el artículo en que se explica la [implementación de un clúster de Kubernetes en una red virtual personalizada](kubernetes-aks-engine-custom-vnet.md).
+
+    > [!Note]  
+    > El motor de AKS para Azure Stack Hub no le permite proporcionar sus propios certificados para la creación del clúster.
 
 ### <a name="more-information-about-the-api-model"></a>Más información sobre el modelo de API
 

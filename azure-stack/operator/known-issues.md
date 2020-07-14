@@ -3,16 +3,16 @@ title: Problemas conocidos de Azure Stack Hub
 description: Obtenga información sobre los problemas conocidos de las versiones de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 06/17/2020
+ms.date: 07/06/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 03/18/2020
-ms.openlocfilehash: 68b83e78f29e60d4dac2b980dd9fd4aefb3bcf66
-ms.sourcegitcommit: 7df4f3fbb211063e9eef6ac1e2734de72dc6078b
+ms.openlocfilehash: 5f0210d32367212769da66b2a55b1fff91fb5017
+ms.sourcegitcommit: e28821041b8111fdcd2c28d35a83ab0a8018455c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84977179"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86033213"
 ---
 # <a name="azure-stack-hub-known-issues"></a>Problemas conocidos de Azure Stack Hub
 
@@ -100,6 +100,12 @@ Para ver otros problemas conocidos con las actualizaciones de Azure Stack Hub, c
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: al desasociar un grupo de seguridad de red y una NIC que no están conectadas a una máquina virtual en ejecución, se produce un error en la operación de actualización (PUT) de ese objeto en el nivel de la controladora de red. El grupo de seguridad de red se actualizará en el nivel del proveedor de recursos de red, pero no en la controladora de red, por lo que este grupo pasará a un estado de error.
 - Corrección: conecte las NIC asociadas al grupo de seguridad de red que se debe quitar con las máquinas virtuales en ejecución y desasocie este grupo o quite todas las NIC asociadas a él.
+- Repetición: Comunes
+
+### <a name="load-balancer-directing-traffic-to-one-backend-vm-in-specific-scenarios"></a>Load Balancer dirige el tráfico a una máquina virtual de back-end en escenarios específicos 
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas. 
+- Causa: Al habilitar la **afinidad de sesión** en un equilibrador de carga, el hash de tupla 2 emplea la dirección IP física en lugar de las IP privadas asignadas a las máquinas virtuales. En escenarios en los que el tráfico dirigido al equilibrador de carga llega a través de una VPN, o si todas las máquinas virtuales cliente (IP de origen) residen en el mismo nodo y la afinidad de sesión está habilitada, todo el tráfico se dirige a una máquina virtual de back-end.
 - Repetición: Comunes
 
 ### <a name="network-interface"></a>interfaz de red
