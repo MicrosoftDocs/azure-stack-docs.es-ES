@@ -8,12 +8,12 @@ ms.date: 11/11/2019
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 2c6ad5acc7096f243334165032eb7c134fc5cae0
-ms.sourcegitcommit: 519f4298dc1ed5c33f9c4fef811f61d61731dd84
+ms.openlocfilehash: 5f714d5ae2a73a026268a9585cab17ffee14f25b
+ms.sourcegitcommit: c1f48c19c8a9c438fd22298bc570c12a9b19bb45
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82799788"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86410630"
 ---
 # <a name="update-the-sql-resource-provider"></a>Actualización del proveedor de recursos de SQL
 
@@ -116,9 +116,9 @@ $env:PSModulePath = $env:PSModulePath + ";" + $rpModulePath
   -VMLocalCredential $vmLocalAdminCreds `
   -CloudAdminCredential $cloudAdminCreds `
   -PrivilegedEndpoint $privilegedEndpoint `
-  -AzureEnvironment $AzureEnvironment `
+  -AzureEnvironment $AzureEnvironment ` 
   -DefaultSSLCertificatePassword $PfxPass `
-  -DependencyFilesLocalPath $tempDir\cert
+  -DependencyFilesLocalPath $tempDir\cert 
 
  ```
 

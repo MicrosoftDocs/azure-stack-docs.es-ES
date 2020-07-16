@@ -7,12 +7,12 @@ ms.date: 1/22/2020
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 01/11/2020
-ms.openlocfilehash: d43c39aeed909946e852ccad37d92a2d47d3d889
-ms.sourcegitcommit: 519f4298dc1ed5c33f9c4fef811f61d61731dd84
+ms.openlocfilehash: 909927d82953cb21c8665afcb45c82131675c2e4
+ms.sourcegitcommit: c1f48c19c8a9c438fd22298bc570c12a9b19bb45
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82799771"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86410588"
 ---
 # <a name="update-the-mysql-resource-provider-in-azure-stack-hub"></a>Actualización del proveedor de recursos MySQL en Azure Stack Hub
 
@@ -113,7 +113,7 @@ $env:PSModulePath = $env:PSModulePath + ";" + $rpModulePath
 -VMLocalCredential $vmLocalAdminCreds ` 
 -CloudAdminCredential $cloudAdminCreds ` 
 -PrivilegedEndpoint $privilegedEndpoint ` 
--AzureEnvironment $AzureEnvironment `
+-AzureEnvironment $AzureEnvironment ` 
 -DefaultSSLCertificatePassword $PfxPass ` 
 -DependencyFilesLocalPath $tempDir\cert ` 
 -AcceptLicense 

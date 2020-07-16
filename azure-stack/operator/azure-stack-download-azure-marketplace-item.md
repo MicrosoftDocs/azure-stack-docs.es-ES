@@ -3,17 +3,17 @@ title: Descarga de elementos de Marketplace desde Azure y publicación en Azure 
 description: Aprenda a descargar elementos de Marketplace desde Azure y a publicarlos en Azure Stack Hub.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 04/13/2020
+ms.date: 07/09/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 12/23/2019
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: 48b1d7e5c0b4d40b04ac27c872fd015f3b448913
-ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
+ms.openlocfilehash: 5774d06e07c6f4bc7f71d5dcd58257fcbb8700ee
+ms.sourcegitcommit: fe48fd5310004d68a4f28589e4d311708babb634
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82848275"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86210045"
 ---
 # <a name="download-marketplace-items-to-azure-stack-hub"></a>Descarga de elementos de Marketplace en Azure Stack Hub 
 
@@ -21,8 +21,8 @@ Los operadores en la nube pueden descargar elementos de Marketplace en Azure Sta
 
 Existen dos escenarios para descargar productos de Marketplace:
 
-- **Escenario conectado**: requiere que el entorno de Azure Stack Hub esté conectado a Internet. El portal de administración de Azure Stack Hub se usa para buscar y descargar elementos.
 - **Escenario sin conexión o con conexión parcial**: requiere que se acceda a Internet mediante la herramienta de redifusión de Marketplace para descargar los elementos de este. Después, los elementos descargados se transfieren a la instalación desconectada de Azure Stack Hub. Este escenario usa PowerShell.
+- **Escenario conectado**: requiere que el entorno de Azure Stack Hub esté conectado a Internet. El portal de administración de Azure Stack Hub se usa para buscar y descargar elementos.
 
 Consulte [Elementos de Azure Marketplace disponibles para Azure Stack Hub](azure-stack-marketplace-azure-items.md) para encontrar una lista completa de los elementos de Marketplace que se pueden descargar. Consulte el artículo [Cambios en Marketplace de Azure Stack Hub](azure-stack-marketplace-changes.md) para ver una lista de adiciones, eliminaciones y actualizaciones recientes en Marketplace de Azure Stack Hub.
 
