@@ -54,9 +54,9 @@
 - name: Temas relacionados
   items:
     - name: Documentación del operador de Azure Stack Hub
-      href: /azure-stack/operator
+      href: ../operator/index.yml
     - name: Documentación de usuario de Azure Stack Hub
-      href: /azure-stack/user/
+      href: ../user/index.yml
 - name: Recursos
   items:
     - name: Hoja de ruta de Azure Stack
@@ -70,4 +70,4 @@
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-stack'
     - name: Aprendizaje y certificación
-      href: /azure-stack/operator/azure-stack-train-and-cert
+      href: ../operator/azure-stack-train-and-cert.md

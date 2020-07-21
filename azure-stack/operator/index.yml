@@ -10,12 +10,12 @@ metadata:
   author: justinha
   ms.author: justinha
   ms.date: 04/13/2020
-  ms.openlocfilehash: 16a63e28a67b6dfc9d68b29df343e130ae4abca0
-  ms.sourcegitcommit: bdd4d529bd3e115a9f76eece62b1613448d5d020
+  ms.openlocfilehash: f9cd55d94c31a26ce0162d933d2922b3df137a96
+  ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
   ms.translationtype: HT
   ms.contentlocale: es-ES
-  ms.lasthandoff: 04/14/2020
-  ms.locfileid: "81274096"
+  ms.lasthandoff: 07/20/2020
+  ms.locfileid: "86490072"
 landingContent:
 - title: Acerca de Azure Stack Hub
   linkLists:
@@ -24,13 +24,13 @@ landingContent:
     - text: ¿Qué es Azure Stack Hub?
       url: azure-stack-overview.md
     - text: ¿Qué es Azure Stack HCI?
-      url: azure-stack-hci-overview.md
+      url: ../hci/overview.md
   - linkListType: whats-new
     links:
     - text: Actualizaciones de seguridad
-      url: azure-stack-release-notes-security-updates.md
+      url: ./release-notes-security-updates.md?view=azs-2002
     - text: Notas de la versión
-      url: azure-stack-release-notes-1908.md
+      url: ./release-notes.md?view=azs-2002
     - text: Azure Stack Hub Capacity Planner
       url: azure-stack-capacity-planning-overview.md
 - title: Introducción
@@ -78,7 +78,7 @@ landingContent:
   - linkListType: deploy
     links:
     - text: Creación de una oferta para una máquina virtual
-      url: azure-stack-tutorial-tenant-vm.md
+      url: ./tutorial-offer-services.md?view=azs-2002
     - text: Creación de una base de datos MySQL de alta disponibilidad
       url: azure-stack-tutorial-mysql.md
     - text: Creación de aplicaciones para cualquier plataforma
