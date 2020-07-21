@@ -298,12 +298,8 @@
               href: app-service-billing-faq.md
             - name: Requisitos previos
               href: azure-stack-app-service-before-you-get-started.md
-            - name: Implementación
-              items:
-                - name: Implementación de App Service
-                  href: azure-stack-app-service-deploy.md
-                - name: Implementación de App Service para lograr alta disponibilidad
-                  href: app-service-deploy-ha.md
+            - name: Implementación de App Service
+              href: azure-stack-app-service-deploy.md
             - name: Administración del ciclo de vida
               items:
                 - name: Actualización de App Service
@@ -320,26 +316,14 @@
                   href: app-service-recover.md
                 - name: Eliminación de App Service
                   href: app-service-remove.md
-            - name: Notas de la versión de App Service en Azure Stack Hub
+            - name: Notas de la versión
               items:
-                - name: "Notas de la versión de App Service en Azure Stack Hub\_2020 Q2"
+                - name: 'Notas de la versión del segundo trimestre de 2020 [May2020]'
                   href: app-service-release-notes-2020-Q2.md
-                - name: "Notas de la versión de la actualización\_8 de App Service en Azure Stack Hub"
+                - name: 'Notas de la versión de la actualización 8 [Jan2020]'
                   href: azure-stack-app-service-release-notes-update-eight.md
-                - name: "Notas de la versión de la actualización\_7 de App Service en Azure Stack Hub"
+                - name: 'Notas de la versión de la actualización 7 [Aug2019]'
                   href: azure-stack-app-service-release-notes-update-seven.md
-                - name: "Notas de la versión de la actualización\_6 de App Service en Azure Stack Hub"
-                  href: azure-stack-app-service-release-notes-update-six.md
-                - name: "Notas de la versión de la actualización\_5 de App Service en Azure Stack Hub"
-                  href: azure-stack-app-service-release-notes-update-five.md
-                - name: "Notas de la versión de la actualización\_4 de App Service en Azure Stack Hub"
-                  href: azure-stack-app-service-release-notes-update-four.md
-                - name: "Notas de la versión de la actualización\_3 de App Service en Azure Stack Hub"
-                  href: azure-stack-app-service-release-notes-update-three.md
-                - name: "Notas de la versión de la actualización\_2 de App Service en Azure Stack Hub"
-                  href: azure-stack-app-service-release-notes-update-two.md
-                - name: "Notas de la versión de la actualización\_1 de App Service en Azure Stack Hub"
-                  href: azure-stack-app-service-release-notes-update-one.md
         - name: Event Hubs en Azure Stack Hub
           items:
             - name: Información general
@@ -497,19 +481,19 @@
 - name: Referencia
   items:
     - name: PowerShell de Azure Stack Hub
-      href: 'https://docs.microsoft.com/powershell/azure/azure-stack/overview'
+      href: /powershell/azure/azure-stack/overview
     - name: "Punto de conexión con privilegios de Azure\_Stack Hub"
       href: ../reference/pep-2002/
     - name: API REST de administrador de Azure Stack Hub
       href: /rest/api/azure-stack/
     - name: Azure CLI
-      href: 'https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest'
+      href: /cli/azure/reference-index?view=azure-cli-latest
 - name: Temas relacionados
   items:
     - name: Documentación de usuario de Azure Stack Hub
-      href: /azure-stack/user/
+      href: ../user/index.yml
     - name: Documentación de ASDK
-      href: /azure-stack/asdk/
+      href: ../asdk/index.yml
 - name: Recursos
   items:
     - name: Aprendizaje y certificación
