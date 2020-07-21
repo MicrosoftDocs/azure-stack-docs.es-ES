@@ -10,12 +10,12 @@ metadata:
   author: justinha
   ms.author: justinha
   ms.date: 07/02/2020
-  ms.openlocfilehash: 85d70f0c63ac220c6683b12ad893758c1c57552d
-  ms.sourcegitcommit: 84b089387f5cf89e3a72e576f1c7649667075e0a
+  ms.openlocfilehash: 27aa97ccf85a401b09019fed180136353a0575fe
+  ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
   ms.translationtype: HT
   ms.contentlocale: es-ES
-  ms.lasthandoff: 07/08/2020
-  ms.locfileid: "86137156"
+  ms.lasthandoff: 07/20/2020
+  ms.locfileid: "86489885"
 landingContent:
 - title: Implementación del ASDK
   linkLists:
@@ -36,7 +36,7 @@ landingContent:
   - linkListType: tutorial
     links:
     - text: Ofertas de servicios de IaaS
-      url: ../operator/azure-stack-tutorial-tenant-vm.md
+      url: ../operator/tutorial-offer-services.md?view=azs-2002
 - title: Modo de uso
   linkLists:
   - linkListType: how-to-guide
