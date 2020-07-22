@@ -3,16 +3,16 @@ title: Problemas conocidos de Azure Stack Hub
 description: Obtenga información sobre los problemas conocidos de las versiones de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 07/06/2020
+ms.date: 07/10/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 03/18/2020
-ms.openlocfilehash: 5f0210d32367212769da66b2a55b1fff91fb5017
-ms.sourcegitcommit: e28821041b8111fdcd2c28d35a83ab0a8018455c
+ms.openlocfilehash: d0a212b231f187ca9ed2ce5520639b0e08a3d7e2
+ms.sourcegitcommit: e433e6f772789ab00c131c24650e700c65e6d73a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86033213"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86272958"
 ---
 # <a name="azure-stack-hub-known-issues"></a>Problemas conocidos de Azure Stack Hub
 
@@ -71,15 +71,9 @@ Para ver otros problemas conocidos con las actualizaciones de Azure Stack Hub, c
 
 ### <a name="alert-for-network-interface-disconnected"></a>Alerta de interfaz de red desconectada
 
-- Aplicable a: este problema afecta a la versión 1908 y superiores.
+- Aplicable a: Este problema se aplica a la versión 1908 y versiones posteriores.
 - Causa: cuando se desconecta un cable de un adaptador de red, no se muestra ninguna alerta en el portal de administración. Este problema se debe a que este error está deshabilitado de forma predeterminada en Windows Server 2019.
 - Repetición: Comunes
-
-### <a name="access-control-iam"></a>Control de acceso (IAM)
-
-- Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: La extensión IAM está obsoleta. El portal de Ibiza que se incluye con Azure Stack Hub introduce un nuevo comportamiento que hace que se produzca un error en la extensión RBAC si el usuario está abriendo la hoja **Access Control (IAM)** de una suscripción que no está seleccionada en el selector de suscripción global (**directorio + suscripción** en el portal de usuarios). La hoja muestra el mensaje **Cargando** en bucle y el usuario no puede agregar nuevos roles a la suscripción. La hoja **Agregar** también muestra el mensaje **Cargando** en bucle.
-- Corrección: Asegúrese de que la suscripción esté marcada en el menú **Directorio + suscripción**. A este menú se puede acceder desde la parte superior del portal, cerca del botón **Notificaciones**, o bien mediante el acceso directo de la hoja **Todos los recursos** que muestra el mensaje **Don't see a subscription? (¿No ve una suscripción?) Abra la configuración de Directorio + suscripción**. La suscripción se debe seleccionar en este menú.
 
 ## <a name="networking"></a>Redes
 

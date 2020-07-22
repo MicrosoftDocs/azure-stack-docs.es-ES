@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 05/21/2020
 ms.author: sethm
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: fdc1f71e5d4c5afa8b3989b69795d150cf96de67
-ms.sourcegitcommit: d69eacbf48c06309b00d17c82ebe0ce2bc6552df
+ms.openlocfilehash: 81608b62ad84a5b26028a80da40bc5a627b231f6
+ms.sourcegitcommit: 7447a9b9312cdae2f5fa13a700be84cd1ffdd456
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83780677"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86302140"
 ---
 # <a name="configure-ipsecike-policy-for-site-to-site-vpn-connections"></a>Configuración de la directiva IPsec/IKE para conexiones VPN de sitio a sitio
 
@@ -39,7 +39,7 @@ Tenga en cuenta las siguientes consideraciones importantes al utilizar estas dir
 
 - Consulte las especificaciones del proveedor de dispositivos VPN para asegurarse de que los dispositivos VPN locales admiten la directiva. No se pueden establecer conexiones de sitio a sitio si las directivas son incompatibles.
 
-### <a name="prerequisites"></a>Prerrequisitos
+### <a name="prerequisites"></a>Requisitos previos
 
 Asegúrese de que cumple los siguientes requisitos previos antes de empezar:
 
@@ -73,12 +73,14 @@ En la tabla siguiente se enumeran los algoritmos criptográficos y los niveles d
 |------------------------------------------------------|--------------------------------------------------------------------------|
 | Cifrado IKEv2                                     | AES256, AES192, AES128, DES3, DES                                        |
 | Integridad de IKEv2                                      | SHA384, SHA256, SHA1, MD5                                                |
-| Grupo DH                                             | ECP384, ECP256, DHGroup24, DHGroup14, DHGroup2, DHGroup1                 |
+| Grupo DH                                             | ECP384, DHGroup14, DHGroup2, DHGroup1, ECP256 *, DHGroup24*             |
 | Cifrado IPsec                                     | GCMAES256, GCMAES192, GCMAES128, AES256, AES192, AES128, DES3, DES, No |
 | Integridad de IPsec                                      | GCMASE256, GCMAES192, GCMAES128                                          |
 | Grupo PFS                                            | PFS24, ECP384, ECP256, PFS2048, PFS2, PFS1, PFSMM, Ningún                  |
 | Vigencia de SA QM                                       | (Opcional: Se usan los valores predeterminados si no se especifica ningún valor)<br />                         Segundos (entero; mín. 300/predeterminado 27 000 segundos)<br />                         KBytes (entero; mín. 1024/predeterminado 102 400 000 KBytes) |
 | Selector de tráfico                                     | En Azure Stack Hub no se admiten selectores de tráfico basados en directivas.         |
+
+\* Estos parámetros solo están disponibles en las compilaciones 2002 y posteriores. 
 
 - La configuración de su dispositivo VPN local debe coincidir o contener los siguientes algoritmos y parámetros que se especifican en la directiva de IPsec o IKE de Azure:
 
@@ -108,9 +110,11 @@ En la tabla siguiente se muestran los grupos Diffie-Hellman admitidos en la dire
 | 1                    | DHGroup1  | PFS1          | MODP de 768 bits  |
 | 2                    | DHGroup2  | PFS2          | MODP de 1024 bits |
 | 14                   | DHGroup14<br/>DHGroup2048 | PFS2048       | MODP de 2048 bits |
-| 19                   | ECP256    | ECP256        | ECP de 256 bits   |
+| 19                   | ECP256*    | ECP256        | ECP de 256 bits   |
 | 20                   | ECP384    | ECP384        | ECP de 384 bits   |
-| 24                   | DHGroup24 | PFS24         | MODP de 2048 bits |
+| 24                   | DHGroup24* | PFS24         | MODP de 2048 bits |
+
+\* Estos parámetros solo están disponibles en las compilaciones 2002 y posteriores. 
 
 Para más información, consulte [RFC3526](https://tools.ietf.org/html/rfc3526) y [RFC5114](https://tools.ietf.org/html/rfc5114).
 

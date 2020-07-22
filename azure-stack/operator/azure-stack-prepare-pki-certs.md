@@ -8,18 +8,123 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: ppacent
 ms.lastreviewed: 09/16/2019
-ms.openlocfilehash: 3ad54cfdda10e5674b4f42edefdeda832a44aa5f
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: a371723250e52fb98e5c1ab7dc3151d1d4b9cbf3
+ms.sourcegitcommit: c1f48c19c8a9c438fd22298bc570c12a9b19bb45
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "78367961"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86410647"
 ---
 # <a name="prepare-azure-stack-hub-pki-certificates-for-deployment-or-rotation"></a>Preparación de certificados PKI de Azure Stack Hub para implementación o rotación
 
 Los archivos de certificado [obtenidos de la entidad de certificación (CA) de su elección](azure-stack-get-pki-certs.md) deben importarse y exportarse de forma que las propiedades coincidan con los requisitos de certificado de Azure Stack Hub.
 
-## <a name="prepare-certificates-for-deployment"></a>Preparación de los certificados para la implementación
+## <a name="prepare-certificates-for-deployment-with-azure-stack-readiness-checker"></a>Preparación de certificados para la implementación (con Azure Stack Readiness Checker)
+
+Use la herramienta Azure Stack Hub Readiness Checker para importar, empaquetar y validar certificados listos para la implementación o la rotación.
+
+## <a name="prerequisites"></a>Requisitos previos
+
+El sistema debe cumplir los siguientes requisitos previos para empaquetar los certificados PKI de una implementación de Azure Stack Hub:
+
+- Microsoft Azure Stack Hub Readiness Checker
+- Certificados devueltos por la entidad de certificación en un único directorio en formato .cer (otros formatos configurables .cert, .SST o .pfx).
+- Windows 10 o Windows Server 2016
+- Use el mismo sistema que generó la solicitud de firma de certificado. (A menos que el destino del certificado anterior se haya empaquetado previamente en PFXs)
+
+## <a name="generate-certificate-signing-requests-for-new-deployments"></a>Generación de solicitudes de firma de certificados para nuevas implementaciones
+
+Siga estos pasos para empaquetar los certificados de los nuevos certificados PKI de Azure Stack Hub:
+
+1. Instale AzsReadinessChecker desde un símbolo del sistema de PowerShell (5.1 o superior) mediante la ejecución del siguiente cmdlet:
+
+    ```powershell  
+        Install-Module Microsoft.AzureStack.ReadinessChecker
+    ```
+2. Declare la **ruta de acceso** en la que los certificados residen en el disco. Por ejemplo:
+
+    ```powershell  
+        $Path = "$env:USERPROFILE\Documents\AzureStack"
+    ```
+
+3. Declare la contraseña **pfxPassword**. Por ejemplo:
+
+    ```powershell  
+        $pfxPassword = Read-Host -AsSecureString -Prompt "PFX Password"
+    ```
+4. Declare la ruta de **ExportPath** a la que se exportarán los PFX resultantes. Por ejemplo:
+
+    ```powershell  
+        $ExportPath = "$env:USERPROFILE\Documents\AzureStack"
+    ```
+
+5. Convierta los certificados en certificados de Azure Stack Hub. Por ejemplo:
+
+    ```powershell  
+        ConvertTo-AzsPFX -Path $Path -pfxPassword $pfxPassword -ExportPath $ExportPath
+    ```
+8.  Revise la salida:
+
+    ```powershell  
+    ConvertTo-AzsPFX v1.2005.1286.272 started.
+
+    Stage 1: Scanning Certificates
+        Path: C:\Users\[*redacted*]\Documents\AzureStack Filter: CER Certificate count: 11
+        adminmanagement_east_azurestack_contoso_com_CertRequest_20200710235648.cer
+        adminportal_east_azurestack_contoso_com_CertRequest_20200710235645.cer
+        management_east_azurestack_contoso_com_CertRequest_20200710235644.cer
+        portal_east_azurestack_contoso_com_CertRequest_20200710235646.cer
+        wildcard_adminhosting_east_azurestack_contoso_com_CertRequest_20200710235649.cer
+        wildcard_adminvault_east_azurestack_contoso_com_CertRequest_20200710235642.cer
+        wildcard_blob_east_azurestack_contoso_com_CertRequest_20200710235653.cer
+        wildcard_hosting_east_azurestack_contoso_com_CertRequest_20200710235652.cer
+        wildcard_queue_east_azurestack_contoso_com_CertRequest_20200710235654.cer
+        wildcard_table_east_azurestack_contoso_com_CertRequest_20200710235650.cer
+        wildcard_vault_east_azurestack_contoso_com_CertRequest_20200710235647.cer
+
+    Detected ExternalFQDN: east.azurestack.contoso.com
+
+    Stage 2: Exporting Certificates
+        east.azurestack.contoso.com\Deployment\ARM Admin\ARMAdmin.pfx
+        east.azurestack.contoso.com\Deployment\Admin Portal\AdminPortal.pfx
+        east.azurestack.contoso.com\Deployment\ARM Public\ARMPublic.pfx
+        east.azurestack.contoso.com\Deployment\Public Portal\PublicPortal.pfx
+        east.azurestack.contoso.com\Deployment\Admin Extension Host\AdminExtensionHost.pfx
+        east.azurestack.contoso.com\Deployment\KeyVaultInternal\KeyVaultInternal.pfx
+        east.azurestack.contoso.com\Deployment\ACSBlob\ACSBlob.pfx
+        east.azurestack.contoso.com\Deployment\Public Extension Host\PublicExtensionHost.pfx
+        east.azurestack.contoso.com\Deployment\ACSQueue\ACSQueue.pfx
+        east.azurestack.contoso.com\Deployment\ACSTable\ACSTable.pfx
+        east.azurestack.contoso.com\Deployment\KeyVault\KeyVault.pfx
+
+    Stage 3: Validating Certificates.
+
+    Validating east.azurestack.contoso.com-Deployment-AAD certificates in C:\Users\[*redacted*]\Documents\AzureStack\east.azurestack.contoso.com\Deployment 
+
+    Testing: KeyVaultInternal\KeyVaultInternal.pfx
+    Thumbprint: E86699****************************4617D6
+        PFX Encryption: OK
+        Expiry Date: OK
+        Signature Algorithm: OK
+        DNS Names: OK
+        Key Usage: OK
+        Key Length: OK
+        Parse PFX: OK
+        Private Key: OK
+        Cert Chain: OK
+        Chain Order: OK
+        Other Certificates: OK
+    Testing: ARM Public\ARMPublic.pfx
+        ...
+    Log location (contains PII): C:\Users\[*redacted*]\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessChecker.log
+    ConvertTo-AzsPFX Completed
+    ```
+    > [!NOTE]
+    > Para un uso adicional, use Get-help ConvertTo-AzsPFX -Full para un uso avanzado como, por ejemplo, para deshabilitar la validación o el filtrado de los diferentes formatos de certificado.
+
+    Después de una validación correcta, se pueden presentar los certificados para su implementación o rotación sin necesidad de realizar ningún paso adicional.
+
+## <a name="prepare-certificates-for-deployment-manual-steps"></a>Preparación de los certificados para la implementación (pasos manuales)
 
 Siga estos pasos para preparar y validar los certificados PKI de Azure Stack Hub que se usarán para implementar un nuevo entorno de Azure Stack Hub o para rotar los secretos de un entorno existente de Azure Stack Hub.
 
