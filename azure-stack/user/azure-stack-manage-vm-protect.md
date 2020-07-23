@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: hectorl
 ms.lastreviewed: 3/5/2020
-ms.openlocfilehash: 1fd3c8de163d8539a0a3bf09e75e33959413fe96
-ms.sourcegitcommit: e28821041b8111fdcd2c28d35a83ab0a8018455c
+ms.openlocfilehash: 4fd1ebca5ab4f4a7eeec2c3d758ccb4aaead3d36
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86033223"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86567372"
 ---
 # <a name="protect-vms-deployed-on-azure-stack-hub"></a>Protección de las máquinas virtuales implementadas en Azure Stack Hub
 
@@ -111,11 +111,11 @@ En este artículo se proporcionan directrices generales para proteger las máqui
 - [Consideraciones sobre continuidad empresarial y recuperación ante desastres](https://aka.ms/azurestackbcdrconsiderationswp)
 
 ### <a name="azure-backup-server"></a>Servidor de Azure Backup
- - [Uso de Azure Backup para realizar copias de seguridad de archivos y aplicaciones en Azure Stack Hub](https://docs.microsoft.com/azure/backup/backup-mabs-files-applications-azure-stack)
- - [Compatibilidad de Azure Backup Server con Azure Stack Hub](https://docs.microsoft.com/azure/backup/ ) 
+ - [Uso de Azure Backup para realizar copias de seguridad de archivos y aplicaciones en Azure Stack Hub](/azure/backup/backup-mabs-files-applications-azure-stack)
+ - [Compatibilidad de Azure Backup Server con Azure Stack Hub](/azure/backup/ ) 
  
  ### <a name="azure-site-recovery"></a>Azure Site Recovery
- - [Compatibilidad de Azure Site Recovery con Azure Stack Hub](https://docs.microsoft.com/azure/site-recovery/)  
+ - [Compatibilidad de Azure Site Recovery con Azure Stack Hub](/azure/site-recovery/)  
  
  ### <a name="partner-products"></a>Productos de asociado
  - [Hoja de datos del Ecosistema de asociados de integración de centros de datos de Azure Stack Hub](https://aka.ms/azurestackbcdrpartners)

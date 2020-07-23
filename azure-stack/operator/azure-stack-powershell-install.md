@@ -7,12 +7,12 @@ ms.date: 04/14/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 04/14/2020
-ms.openlocfilehash: 114be8564f264f38715ebacbb74c85559540c72f
-ms.sourcegitcommit: 8ad3ff64e6a47e512c7ae4442d5418fa79345fb5
+ms.openlocfilehash: 253ede500b206724e7f8dd024435fdb842fa4f36
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85264165"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86488270"
 ---
 # <a name="install-powershell-azurerm-module-for-azure-stack-hub"></a>Instalación del módulo AzureRM de PowerShell para Azure Stack Hub
 
@@ -29,7 +29,7 @@ Puede instalar los módulos de PowerShell compatibles con Azure Stack Hub en un 
 Antes de empezar con Azure Stack Hub y el módulo AzureRM de PowerShell, debe cumplir los siguientes requisitos previos:
 
 - **PowerShell versión 5.1** <br>
-Para comprobar la versión, ejecute **$PSVersionTable.PSVersion** y compare la versión **principal**. Si no tiene PowerShell 5.1, siga las instrucciones sobre cómo [instalar Windows PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell).
+Para comprobar la versión, ejecute **$PSVersionTable.PSVersion** y compare la versión **principal**. Si no tiene PowerShell 5.1, siga las instrucciones sobre cómo [instalar Windows PowerShell](/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell).
 
   > [!Note]
   > PowerShell 5.1 requiere una máquina Windows.
@@ -223,7 +223,7 @@ Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v
 
 2. Inicie sesión en la estación de trabajo desconectada y copie los paquetes desde el dispositivo USB en una ubicación en dicha estación de trabajo.
 
-3. Realice manualmente el arranque del proveedor de NuGet en su estación de trabajo desconectada. Para obtener instrucciones, consulte [Arranque manual del proveedor de NuGet en una máquina no conectada a Internet](https://docs.microsoft.com/powershell/scripting/gallery/how-to/getting-support/bootstrapping-nuget#manually-bootstrapping-the-nuget-provider-on-a-machine-that-is-not-connected-to-the-internet).
+3. Realice manualmente el arranque del proveedor de NuGet en su estación de trabajo desconectada. Para obtener instrucciones, consulte [Arranque manual del proveedor de NuGet en una máquina no conectada a Internet](/powershell/scripting/gallery/how-to/getting-support/bootstrapping-nuget#manually-bootstrapping-the-nuget-provider-on-a-machine-that-is-not-connected-to-the-internet).
 
 4. Registre esta ubicación como el repositorio predeterminado e instale los módulos AzureRM y `AzureStack` desde este repositorio:
 

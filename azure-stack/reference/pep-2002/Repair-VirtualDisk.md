@@ -7,12 +7,12 @@ ms.date: 04/27/2020
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 04/27/2020
-ms.openlocfilehash: ef7fa22c00b11f93ff39e0ce03fa91383c2cffc7
-ms.sourcegitcommit: 54f98b666bea9226c78f26dc255ddbdda539565f
+ms.openlocfilehash: d6aedfb0b45bbc450322b24c81b3b576b6d512a3
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82563743"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86486417"
 ---
 # <a name="repair-virtualdisk"></a>Repair-VirtualDisk
 
@@ -192,4 +192,4 @@ Accept wildcard characters: False
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Para más información sobre el acceso y el uso de un punto de conexión con privilegios, consulte [Uso del punto de conexión con privilegios en Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-privileged-endpoint).
+Para más información sobre el acceso y el uso de un punto de conexión con privilegios, consulte [Uso del punto de conexión con privilegios en Azure Stack Hub](../../operator/azure-stack-privileged-endpoint.md).

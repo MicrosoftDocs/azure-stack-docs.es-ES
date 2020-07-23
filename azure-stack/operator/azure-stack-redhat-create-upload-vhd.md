@@ -8,12 +8,12 @@ ms.date: 05/04/2020
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 12/11/2019
-ms.openlocfilehash: 8f0642cc1ee90ce8e4ae1d26b6bdae9a3b6cdef5
-ms.sourcegitcommit: 21cdab346fc242b8848a04a124bc16c382ebc6f0
+ms.openlocfilehash: 3c1fdb568b1d0ceb91cad85bc054b614efcf0b26
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82777872"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86488151"
 ---
 # <a name="prepare-a-red-hat-based-virtual-machine-for-azure-stack-hub"></a>Preparación de una máquina virtual basada en Red Hat para Azure Stack Hub
 
@@ -23,7 +23,7 @@ Para obtener información de soporte técnico de Red Hat Enterprise Linux, consu
 
 ## <a name="prepare-a-red-hat-based-vm-from-hyper-v-manager"></a>Preparación de una máquina virtual basada en Red Hat desde el Administrador de Hyper-V
 
-En esta sección se supone que ya tiene un archivo ISO en el sitio web de Red Hat y que instaló la imagen RHEL en un disco duro virtual (VHD). Para más información sobre cómo usar el Administrador de Hyper-V para instalar una imagen de sistema operativo, consulte el artículo sobre cómo [instalar el rol de Hyper-V y configurar una máquina virtual](https://technet.microsoft.com/library/hh846766.aspx).
+En esta sección se supone que ya tiene un archivo ISO en el sitio web de Red Hat y que instaló la imagen RHEL en un disco duro virtual (VHD). Para más información sobre cómo usar el Administrador de Hyper-V para instalar una imagen de sistema operativo, consulte el artículo sobre cómo [instalar el rol de Hyper-V y configurar una máquina virtual](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh846766(v=ws.11)).
 
 ### <a name="rhel-installation-notes"></a>Notas de instalación de RHEL
 
@@ -34,7 +34,7 @@ En esta sección se supone que ya tiene un archivo ISO en el sitio web de Red Ha
 * Se requiere la compatibilidad de kernel para el montaje de sistemas de archivos de formato de disco universal (UDF). En el primer arranque, los medios con formato UDF conectados al invitado pasan la configuración de aprovisionamiento a la máquina virtual Linux. El agente Linux de Azure debe montar el sistema de archivos UDF para leer su configuración y aprovisionar la máquina virtual.
 * No configure una partición de intercambio en el disco del sistema operativo. El agente de Linux se puede configurar para crear un archivo de intercambio en el disco de recursos temporal. Puede encontrar más información al respecto en los pasos siguientes.
 * En Azure, todos los discos duros virtuales deben tener un tamaño virtual alineado con 1 MB. Al convertir un disco sin formato en un disco duro virtual, tiene que asegurarse de que su tamaño es un múltiplo de 1 MB antes de la conversión. Se puede encontrar más información en los siguientes pasos.
-* Azure Stack Hub admite cloud-init. [cloud-init](/azure/virtual-machines/linux/using-cloud-init) es un enfoque ampliamente usado para personalizar una máquina virtual Linux la primera vez que se arranca. Puede usar cloud-init para instalar paquetes y escribir archivos o para configurar los usuarios y la seguridad. Dado que se llama a cloud-init durante el proceso de arranque inicial, no se necesitan pasos adicionales ni agentes para aplicar la configuración. Para obtener instrucciones sobre cómo agregar cloud-init a la imagen, consulte [Preparación de la imagen de máquina virtual Linux en Azure para usarse con cloud-init](https://docs.microsoft.com/azure/virtual-machines/linux/cloudinit-prepare-custom-image).
+* Azure Stack Hub admite cloud-init. [cloud-init](/azure/virtual-machines/linux/using-cloud-init) es un enfoque ampliamente usado para personalizar una máquina virtual Linux la primera vez que se arranca. Puede usar cloud-init para instalar paquetes y escribir archivos o para configurar los usuarios y la seguridad. Dado que se llama a cloud-init durante el proceso de arranque inicial, no se necesitan pasos adicionales ni agentes para aplicar la configuración. Para obtener instrucciones sobre cómo agregar cloud-init a la imagen, consulte [Preparación de la imagen de máquina virtual Linux en Azure para usarse con cloud-init](/azure/virtual-machines/linux/cloudinit-prepare-custom-image).
 
 ### <a name="prepare-an-rhel-7-vm-from-hyper-v-manager"></a>Preparación de una máquina virtual de RHEL 7 desde el Administrador de Hyper-V
 

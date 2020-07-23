@@ -7,12 +7,12 @@ ms.date: 04/27/2020
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 04/27/2020
-ms.openlocfilehash: 99ac0d7b96d040979861cf0a6fe22db6b30fc596
-ms.sourcegitcommit: 54f98b666bea9226c78f26dc255ddbdda539565f
+ms.openlocfilehash: 73b60d2dc7f64c5cdbcb4b0843e755d68ed61fe3
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82563809"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86486723"
 ---
 # <a name="new-cloudadminuser"></a>New-CloudAdminUser
 
@@ -71,4 +71,4 @@ Accept wildcard characters: False
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Para más información sobre el acceso y el uso de un punto de conexión con privilegios, consulte [Uso del punto de conexión con privilegios en Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-privileged-endpoint).
+Para más información sobre el acceso y el uso de un punto de conexión con privilegios, consulte [Uso del punto de conexión con privilegios en Azure Stack Hub](../../operator/azure-stack-privileged-endpoint.md).

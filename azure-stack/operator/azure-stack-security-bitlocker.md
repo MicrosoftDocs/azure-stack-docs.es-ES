@@ -8,12 +8,12 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: fiseraci
 ms.lastreviewed: 03/11/2019
-ms.openlocfilehash: 19680b9e8317e419c0b696d79213f29bcbee2263
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 60ad202ef08d7afd72591640fa1d4d8beef0c476
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "78367613"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86488015"
 ---
 # <a name="data-at-rest-encryption-in-azure-stack-hub"></a>Cifrado de datos en reposo en Azure Stack Hub
 
@@ -56,4 +56,4 @@ Si cree que el sistema tiene problemas con BitLocker (por ejemplo, si Azure Stac
 ## <a name="next-steps"></a>Pasos siguientes
 
 - [Más información acerca de la seguridad de Azure Stack Hub](azure-stack-security-foundations.md).
-- Para obtener más información sobre cómo BitLocker protege CSV, vea [Proteger volúmenes compartidos de clúster y redes de área de almacenamiento con BitLocker](https://docs.microsoft.com/windows/security/information-protection/bitlocker/protecting-cluster-shared-volumes-and-storage-area-networks-with-bitlocker).
+- Para obtener más información sobre cómo BitLocker protege CSV, vea [Proteger volúmenes compartidos de clúster y redes de área de almacenamiento con BitLocker](/windows/security/information-protection/bitlocker/protecting-cluster-shared-volumes-and-storage-area-networks-with-bitlocker).

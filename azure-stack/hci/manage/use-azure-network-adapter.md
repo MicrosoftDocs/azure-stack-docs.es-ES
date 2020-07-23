@@ -5,12 +5,12 @@ ms.topic: article
 author: thomasmaurer
 ms.author: thmaure
 ms.date: 07/14/2020
-ms.openlocfilehash: 1bec00f972cd0cfb1b56aeae831dd1ba2914ab33
-ms.sourcegitcommit: 2be3dd5419b0d003a9598a42541ebb1d251aea3d
+ms.openlocfilehash: 8e383024dd61b2fd16a38ab475f8eea0c82a9655
+ms.sourcegitcommit: a15a0f955bac922cebb7bf90a72384fd84ddfe56
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86393634"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86947391"
 ---
 # <a name="use-azure-network-adapter-to-connect-a-server-to-an-azure-virtual-network"></a>Uso de un adaptador de red de Azure para conectar un servidor a una instancia de Azure Virtual Network
 
@@ -18,7 +18,7 @@ ms.locfileid: "86393634"
 
 Muchas cargas de trabajo que se ejecutan en entornos locales y en entornos multinube requieren conexiones a máquinas virtuales que se ejecutan en Microsoft Azure. Para conectar un servidor a una instancia de Azure Virtual Network, tiene varias opciones, entre las que se incluyen VPN de sitio a sitio, Azure Express Route y VPN de punto a sitio.
 
-Windows Admin Center y el adaptador de red de Azure proporcionan una experiencia en un solo clic para conectar el servidor a la red virtual con una conexión [VPN de punto a sitio](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal). El proceso automatiza la configuración de la puerta de enlace de red virtual y el cliente VPN local.
+Windows Admin Center y el adaptador de red de Azure proporcionan una experiencia en un solo clic para conectar el servidor a la red virtual con una conexión [VPN de punto a sitio](/azure/vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal). El proceso automatiza la configuración de la puerta de enlace de red virtual y el cliente VPN local.
 
 ## <a name="when-to-use-azure-network-adapter"></a>Cuándo usar un adaptador de red de Azure
 Las conexiones VPN de punto a sitio del adaptador de red de Azure resultan útiles cuando se desea establecer conexión con la red virtual desde una ubicación remota como, por ejemplo, una sucursal, tienda u otra ubicación. También puede usar el adaptador de red de Azure en lugar de una VPN de sitio a sitio si solo necesita unos pocos servidores para conectarse a una red virtual. Las conexiones del adaptador de red de Azure no requieren un dispositivo VPN ni una dirección IP pública para funcionar.
@@ -29,7 +29,7 @@ El uso de un adaptador de red de Azure para conectarse a una red virtual requier
 - Una red virtual existente.
 - Acceso a Internet para los servidores de destino que desea conectar a la red virtual de Azure.
 - Una conexión de Windows Admin Center a Azure.
-  Para más información, consulte [Configuración de la integración con Azure](https://docs.microsoft.com/windows-server/manage/windows-admin-center/azure/azure-integration).
+  Para más información, consulte [Configuración de la integración con Azure](/windows-server/manage/windows-admin-center/azure/azure-integration).
 - La versión más reciente de Windows Admin Center.
   Para más información, consulte [Windows Admin Center](https://www.microsoft.com/windows-server/windows-admin-center).
 
@@ -57,7 +57,7 @@ En Windows Admin Center:
 
         Azure usa certificados para autenticar a los clientes que se conectan a una red virtual a través de una conexión VPN de punto a sitio. La información de clave pública del certificado raíz se carga en Azure. En ese momento, Azure considera que el certificado raíz es "de confianza" para conectarse desde una conexión de punto a sitio a la red virtual. Los certificados de cliente se deben generar a partir del certificado raíz de confianza e instalarse en el servidor cliente. El certificado de cliente se utiliza para autenticar al cliente cuando se inicia una conexión con la red virtual.
     
-        Para más información, consulte la sección "Configuración del tipo de autenticación" de [Configuración de una conexión VPN de punto a sitio a una red virtual mediante la autenticación nativa de los certificados de Azure: Azure Portal](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal).
+        Para más información, consulte la sección "Configuración del tipo de autenticación" de [Configuración de una conexión VPN de punto a sitio a una red virtual mediante la autenticación nativa de los certificados de Azure: Azure Portal](/azure/vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal).
 
     :::image type="content" source="media/azure-network-adapter/add-azure-network-adapter.png" alt-text="Panel Agregar adaptador de red de Azure en Windows Admin Center.":::
 
@@ -71,4 +71,4 @@ Si ya no necesita conectividad, en **Redes**, seleccione el adaptador de red de 
 ## <a name="next-steps"></a>Pasos siguientes
 Para más información acerca de Azure Virtual Network, consulte también:
 
-- [Preguntas más frecuentes (P+F) acerca de Azure Virtual Network](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq)
+- [Preguntas más frecuentes (P+F) acerca de Azure Virtual Network](/azure/virtual-network/virtual-networks-faq)

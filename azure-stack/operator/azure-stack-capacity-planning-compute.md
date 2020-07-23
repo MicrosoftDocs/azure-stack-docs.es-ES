@@ -7,16 +7,16 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: prchint
 ms.lastreviewed: 06/13/2019
-ms.openlocfilehash: 3ec8b0b3ac6f4687fd782dfc692f1c705c5ed733
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: dd82a3a9c2b6eff74c8f6823fc37b8767431ca02
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "78366354"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86489239"
 ---
 # <a name="azure-stack-hub-compute-capacity"></a>Capacidad de proceso de Azure Stack Hub
 
-Los [tamaños de máquina virtual](https://docs.microsoft.com/azure-stack/user/azure-stack-vm-sizes) admitidos en Azure Stack Hub son un subconjunto de los que se admiten en Azure. Azure impone límites de recursos junto con varios vectores para evitar el consumo excesivo de recursos (nivel de servicio y local del servidor). Sin la imposición de algunos límites sobre el consumo del inquilino, las experiencias de este se verán afectadas cuando otros inquilinos consuman recursos en exceso. Para la salida de redes de la máquina virtual, hay límites de ancho de banda en Azure Stack Hub que coinciden con las limitaciones de Azure. En el caso de los recursos de almacenamiento en Azure Stack Hub, los límites de IOPS de almacenamiento evitan el consumo excesivo básico de recursos por parte de los inquilinos por el acceso al almacenamiento.
+Los [tamaños de máquina virtual](../user/azure-stack-vm-sizes.md) admitidos en Azure Stack Hub son un subconjunto de los que se admiten en Azure. Azure impone límites de recursos junto con varios vectores para evitar el consumo excesivo de recursos (nivel de servicio y local del servidor). Sin la imposición de algunos límites sobre el consumo del inquilino, las experiencias de este se verán afectadas cuando otros inquilinos consuman recursos en exceso. Para la salida de redes de la máquina virtual, hay límites de ancho de banda en Azure Stack Hub que coinciden con las limitaciones de Azure. En el caso de los recursos de almacenamiento en Azure Stack Hub, los límites de IOPS de almacenamiento evitan el consumo excesivo básico de recursos por parte de los inquilinos por el acceso al almacenamiento.
 
 >[!IMPORTANT]
 >[Capacity Planner de Azure Stack Hub](https://aka.ms/azstackcapacityplanner) no considera ni garantiza el rendimiento de IOPS.
@@ -25,7 +25,7 @@ Los [tamaños de máquina virtual](https://docs.microsoft.com/azure-stack/user/a
 
 El motor de ubicación de Azure Stack Hub coloca las máquinas virtuales de los inquilinos entre los hosts disponibles.
 
-Azure Stack Hub usa dos consideraciones al ubicar máquinas virtuales. La primera, ¿hay suficiente memoria en el host para ese tipo de máquina virtual? La segunda, ¿forman parte las máquinas virtuales de un [conjunto de disponibilidad](https://docs.microsoft.com/azure/virtual-machines/windows/manage-availability) o son [conjuntos de escalado de máquinas virtuales](https://docs.microsoft.com/azure/virtual-machine-scale-sets/overview)?
+Azure Stack Hub usa dos consideraciones al ubicar máquinas virtuales. La primera, ¿hay suficiente memoria en el host para ese tipo de máquina virtual? La segunda, ¿forman parte las máquinas virtuales de un [conjunto de disponibilidad](/azure/virtual-machines/windows/manage-availability) o son [conjuntos de escalado de máquinas virtuales](/azure/virtual-machine-scale-sets/overview)?
 
 Para conseguir la alta disponibilidad de un sistema de producción con varias máquinas virtuales en Azure Stack Hub, las máquinas virtuales se colocan en un conjunto de disponibilidad que las distribuye entre varios dominios de error. Un dominio de error en un conjunto de disponibilidad se define como un único nodo en la unidad de escalado. Azure Stack Hub admite un conjunto de disponibilidad con un máximo de tres dominios de error para ser coherente con Azure. Las máquinas virtuales colocadas en conjuntos de disponibilidad se aislarán físicamente entre sí al distribuirlas de la manera más uniforme que sea posible en varios dominios de error (hosts de Azure Stack Hub). Si se produce un error de hardware, las máquinas virtuales del dominio de error se reiniciarán en otros dominios de error. Se mantendrán en dominios de error independientes de las otras máquinas virtuales, pero en el mismo conjunto de disponibilidad, si es posible. Cuando el host vuelva a estar en línea, las VM se volverán a equilibrar para mantener la alta disponibilidad.  
 

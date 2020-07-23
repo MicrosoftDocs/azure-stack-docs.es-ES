@@ -6,18 +6,18 @@ ms.topic: article
 ms.date: 5/27/2020
 ms.author: mabrigg
 ms.lastreviewed: 12/01/2019
-ms.openlocfilehash: ea2ccd33bc64c01b4ab5ba56024a54aa82453e63
-ms.sourcegitcommit: cad40ae88212cc72f40c84a1c88143ea0abb65ef
+ms.openlocfilehash: bd8a7ee4082f446c9d175a9b3b69fa0e5a460b24
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84112040"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86567423"
 ---
 # <a name="use-azure-monitor-on-azure-stack-hub"></a>Uso de Azure Monitor en Azure Stack Hub
 
 En este artículo se proporciona información general sobre el servicio Azure Monitor en Azure Stack Hub. En él, se explica el funcionamiento de Azure Monitor y se proporciona información adicional sobre su uso en Azure Stack Hub.
 
-Si desea ver una introducción a Azure Monitor, consulte el artículo sobre Azure global [Introducción a Azure Monitor en Azure Stack Hub](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-get-started).
+Si desea ver una introducción a Azure Monitor, consulte el artículo sobre Azure global [Introducción a Azure Monitor en Azure Stack Hub](/azure/monitoring-and-diagnostics/monitoring-get-started).
 
 ![Hoja de Monitor en Azure Stack Hub](./media/azure-stack-metrics-azure-data/azs-monitor.png)
 
@@ -71,7 +71,7 @@ Los recursos de Compute enumerados anteriormente tienen una máquina virtual hos
 
 ### <a name="activity-log"></a>Registro de actividades
 
-Puede buscar los registros de actividad para obtener información sobre los recursos de proceso tal y como se ven en la infraestructura de Azure Stack Hub. El registro contiene información tal como el número de veces que se crean o se destruye recursos. Los registros de actividad de Azure Stack Hub son coherentes con Azure. Para más información, consulte la descripción de [Introducción al registro de actividad de Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs). 
+Puede buscar los registros de actividad para obtener información sobre los recursos de proceso tal y como se ven en la infraestructura de Azure Stack Hub. El registro contiene información tal como el número de veces que se crean o se destruye recursos. Los registros de actividad de Azure Stack Hub son coherentes con Azure. Para más información, consulte la descripción de [Introducción al registro de actividad de Azure](/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs). 
 
 
 ## <a name="azure-monitor-sources-everything-else"></a>Orígenes de Azure Monitor: todos los demás
@@ -114,9 +114,9 @@ Algunos métodos de visualización incluyen:
 Puede manipular el seguimiento, el enrutamiento y la recuperación de los datos mediante uno de los métodos siguientes. No todos los métodos están disponibles para todas las acciones o tipos de datos. 
 
  - [Portal de usuarios de Azure Stack Hub](azure-stack-use-portal.md)
- - [PowerShell](https://docs.microsoft.com/azure/monitoring-and-diagnostics/insights-powershell-samples)
- - [Interfaz de la línea de comandos (CLI) multiplataforma](https://docs.microsoft.com/azure/monitoring-and-diagnostics/insights-cli-samples)
- - [REST API](https://docs.microsoft.com/rest/api/monitor)
+ - [PowerShell](/azure/monitoring-and-diagnostics/insights-powershell-samples)
+ - [Interfaz de la línea de comandos (CLI) multiplataforma](/azure/monitoring-and-diagnostics/insights-cli-samples)
+ - [REST API](/rest/api/monitor)
  - [SDK de .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Monitor)
 
 > [!Important]  

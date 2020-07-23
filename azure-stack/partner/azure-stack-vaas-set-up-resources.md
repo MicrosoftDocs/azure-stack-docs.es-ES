@@ -9,12 +9,12 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/26/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: 3b3cbaff12c4d4decb0d7204fa558dd5690fe638
-ms.sourcegitcommit: cad40ae88212cc72f40c84a1c88143ea0abb65ef
+ms.openlocfilehash: 1076dc69190b79728d28be99c7b84629e80b5709
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84112023"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86490174"
 ---
 # <a name="tutorial-set-up-resources-for-validation-as-a-service"></a>Tutorial: Configuración de recursos para la validación como servicio
 
@@ -30,13 +30,13 @@ En este tutorial, aprenderá a:
 
 ## <a name="configure-an-azure-ad-tenant"></a>Configurar un inquilino de Azure AD
 
-Se usa un inquilino de Azure AD para registrar una organización y autenticar los usuarios mediante VaaS. El asociado usará las características de control de acceso basado en rol (RBAC) del inquilino para administrar qué usuarios de la organización del asociado pueden usar VaaS. Para más información, consulte [¿Qué es Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis)
+Se usa un inquilino de Azure AD para registrar una organización y autenticar los usuarios mediante VaaS. El asociado usará las características de control de acceso basado en rol (RBAC) del inquilino para administrar qué usuarios de la organización del asociado pueden usar VaaS. Para más información, consulte [¿Qué es Azure Active Directory?](/azure/active-directory/fundamentals/active-directory-whatis)
 
 ### <a name="create-a-tenant"></a>Creación de un inquilino
 
 Cree un inquilino para que la organización lo use para acceder a los servicios de VaaS. Use un nombre descriptivo, como `ContosoVaaS@onmicrosoft.com`.
 
-1. Cree un inquilino de Azure AD en [Azure Portal](https://portal.azure.com) o use un inquilino existente. <!-- For instructions on creating new Azure AD tenants, see [Get started with Azure AD](https://docs.microsoft.com/azure/active-directory/get-started-azure-ad). -->
+1. Cree un inquilino de Azure AD en [Azure Portal](https://portal.azure.com) o use un inquilino existente. <!-- For instructions on creating new Azure AD tenants, see [Get started with Azure AD](/azure/active-directory/get-started-azure-ad). -->
 
 2. Agregue miembros de la organización al inquilino. Estos usuarios serán responsables de usar el servicio para ver o programar las pruebas. Una vez que termine el registro, definirá los niveles de acceso de los usuarios.
 
@@ -68,7 +68,7 @@ Este proceso le otorga al inquilino autorización para la aplicación **Azure St
     |--------------------------------|---------------------------------------------------------------------------------------------|
     | Nombre de la organización | Nombre oficial de la organización. |
     | Nombre del directorio del inquilino de Azure AD | Nombre del directorio de inquilino de Azure AD que se registra. |
-    | Identificador del directorio de inquilino de Azure AD | GUID del directorio de inquilino de Azure AD asociado con el directorio. Para obtener información acerca de cómo encontrar el identificador del directorio de inquilino de Azure AD, consulte [Get tenant ID](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#get-values-for-signing-in) (Obtención del identificador de inquilino). |
+    | Identificador del directorio de inquilino de Azure AD | GUID del directorio de inquilino de Azure AD asociado con el directorio. Para obtener información acerca de cómo encontrar el identificador del directorio de inquilino de Azure AD, consulte [Get tenant ID](/azure/azure-resource-manager/resource-group-create-service-principal-portal#get-values-for-signing-in) (Obtención del identificador de inquilino). |
 
 2. Espere la confirmación del equipo de Azure Stack Hub Validation para comprobar que el inquilino puede usar el portal de este servicio.
 

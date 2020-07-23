@@ -8,18 +8,18 @@ ms.date: 10/07/2019
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/23/2019
-ms.openlocfilehash: 6d5c80403a355186632c245baecd0796ac3acbf9
-ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
+ms.openlocfilehash: ce3f6e0542678fe2d399e101a90a916cf412599f
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84630989"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86487726"
 ---
 # <a name="create-highly-available-sql-databases-with-azure-stack-hub"></a>Creación de bases de datos SQL de alta disponibilidad con Azure Stack Hub
 
 Como operador de Azure Stack Hub, puede configurar máquinas virtuales de servidor para hospedar bases de datos de SQL Server. Una vez que se haya creado un servidor de hospedaje de SQL y Azure Stack Hub lo administre, los usuarios suscritos a servicios de SQL pueden crear fácilmente bases de datos SQL.
 
-En este artículo se muestra cómo usar una plantilla de inicio rápido de Azure Stack Hub para crear un [grupo de disponibilidad AlwaysOn de SQL Server](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-2017), agregarlo como servidor de hospedaje SQL de Azure Stack Hub y, a continuación, crear una base de datos SQL de alta disponibilidad.
+En este artículo se muestra cómo usar una plantilla de inicio rápido de Azure Stack Hub para crear un [grupo de disponibilidad AlwaysOn de SQL Server](/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-2017), agregarlo como servidor de hospedaje SQL de Azure Stack Hub y, a continuación, crear una base de datos SQL de alta disponibilidad.
 
 Temas que se abordarán:
 
@@ -37,7 +37,7 @@ Antes de comenzar, asegúrese de que el [proveedor de recursos de servidor de SQ
 
 - Windows Server 2016 Datacenter.
 - SQL Server 2016 SP1 o SP2 (Developer, Standard o Enterprise) en la imagen del servidor de Windows Server 2016. 
-- [Extensión IaaS de SQL Server](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-agent-extension), versión 1.3.20180 o superior. La extensión IaaS de SQL instala los componentes que son necesarios para los elementos de Marketplace de SQL Server para todas las versiones de Windows. Permite que los parámetros específicos de SQL se configuren en máquinas virtuales de SQL. Si la extensión no está instalada en el Marketplace local, el aprovisionamiento de SQL generará un error.
+- [Extensión IaaS de SQL Server](/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-agent-extension), versión 1.3.20180 o superior. La extensión IaaS de SQL instala los componentes que son necesarios para los elementos de Marketplace de SQL Server para todas las versiones de Windows. Permite que los parámetros específicos de SQL se configuren en máquinas virtuales de SQL. Si la extensión no está instalada en el Marketplace local, el aprovisionamiento de SQL generará un error.
 - [Extensión de script personalizada para Windows](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.CustomScriptExtension), versión 1.9.1 o superior. La extensión de script personalizada es una herramienta que puede usarse para iniciar automáticamente las tareas de personalización de la máquina virtual posteriores a la implementación.
 - [Extensión DSC (configuración de estado deseado) de PowerShell](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.DSC-arm), versión 2.76.0.0 o superior. DSC es una plataforma de administración de Windows PowerShell que permite implementar y administrar datos de configuración de servicios de software. La plataforma también administra el entorno en el que se ejecutan estos servicios.
 
@@ -91,7 +91,7 @@ Siga los pasos de esta sección para implementar el grupo de disponibilidad Alwa
 
 ### <a name="enable-automatic-seeding"></a>Habilitación de la propagación automática
 
-Una vez que se ha implementado correctamente la plantilla y se ha configurado el grupo de disponibilidad AlwaysON de SQL, debe habilitar la [propagación automática](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/automatically-initialize-always-on-availability-group) en cada instancia de SQL Server del grupo de disponibilidad.
+Una vez que se ha implementado correctamente la plantilla y se ha configurado el grupo de disponibilidad AlwaysON de SQL, debe habilitar la [propagación automática](/sql/database-engine/availability-groups/windows/automatically-initialize-always-on-availability-group) en cada instancia de SQL Server del grupo de disponibilidad.
 
 Cuando se crea un grupo de disponibilidad con propagación automática, SQL Server crea automáticamente las réplicas secundarias para cada base de datos en el grupo sin que se requiera más intervención manual. Esta medida garantiza una alta disponibilidad de las bases de datos de AlwaysOn.
 
@@ -124,7 +124,7 @@ En las instancias de SQL secundarias:
 
 ### <a name="configure-contained-database-authentication"></a>Configuración de autenticación de base de datos independiente
 
-Antes de agregar una base de datos independiente a un grupo de disponibilidad, asegúrese de que la opción de servidor de autenticación de la base de datos independiente se establece en 1 en cada instancia del servidor que hospeda una réplica de disponibilidad para el grupo de disponibilidad. Para obtener más información, consulte [contained database authentication (opción de configuración del servidor)](https://docs.microsoft.com/sql/database-engine/configure-windows/contained-database-authentication-server-configuration-option?view=sql-server-2017).
+Antes de agregar una base de datos independiente a un grupo de disponibilidad, asegúrese de que la opción de servidor de autenticación de la base de datos independiente se establece en 1 en cada instancia del servidor que hospeda una réplica de disponibilidad para el grupo de disponibilidad. Para obtener más información, consulte [contained database authentication (opción de configuración del servidor)](/sql/database-engine/configure-windows/contained-database-authentication-server-configuration-option?view=sql-server-2017).
 
 Use estos comandos para establecer la opción del servidor de autenticación de base de datos independiente para cada instancia de SQL Server del grupo de disponibilidad:
 

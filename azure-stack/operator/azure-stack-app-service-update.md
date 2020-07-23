@@ -8,12 +8,12 @@ ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 01/13/2019
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: ecedd49789a20788f1f1ba40e568298c569d168d
-ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
+ms.openlocfilehash: 9ab446785d463358b3d04850b5d08ff9410a40d5
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82848088"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86489664"
 ---
 # <a name="update-azure-app-service-on-azure-stack-hub"></a>Actualización de Azure App Service en Azure Stack Hub
 
@@ -96,7 +96,7 @@ En este artículo aprenderá a actualizar el [proveedor de recursos de Azure App
 * Esté protegido por Servicios de federación de Active Directory (AD FS) 2.0.
 
 > [!IMPORTANT]
-> Antes de ejecutar la actualización, debe completar [implementación de Azure App Service en Azure Stack Hub en un entorno sin conexión](azure-stack-app-service-deploy-offline.md). 
+> Antes de ejecutar la actualización, debe completar [implementación de Azure App Service en Azure Stack Hub en un entorno sin conexión](./azure-stack-app-service-deploy.md?pivots=state-disconnected&view=azs-2002). 
 
 ## <a name="run-the-app-service-resource-provider-installer"></a>Ejecución del instalador del proveedor de recursos de App Service
 

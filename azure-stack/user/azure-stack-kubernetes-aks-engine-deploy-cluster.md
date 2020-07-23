@@ -7,12 +7,12 @@ ms.date: 07/07/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 07/07/2020
-ms.openlocfilehash: 6dd3cb20570bcd4cf580f169f8ba9cbc44a673ac
-ms.sourcegitcommit: 84b089387f5cf89e3a72e576f1c7649667075e0a
+ms.openlocfilehash: c687e704f1e8cb1d0e650dd0e283567a07d96fd2
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86137189"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86566216"
 ---
 # <a name="deploy-a-kubernetes-cluster-with-the-aks-engine-on-azure-stack-hub"></a>Implementación de un clúster de Kubernetes con el motor de AKS en Azure Stack Hub
 
@@ -68,7 +68,7 @@ En esta sección se examina la creación de un modelo de API para el clúster.
     | --- | --- |
     | dnsPrefix | Escriba una cadena única que sirva para identificar el nombre de host de las máquinas virtuales. Por ejemplo, un nombre basado en el nombre del grupo de recursos. |
     | count |  Escriba el número de maestros que desea para la implementación. El mínimo para una implementación de alta disponibilidad es tres, pero se permite uno para implementaciones que no son de alta disponibilidad. |
-    | vmSize |  Escriba [un tamaño admitido por Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-vm-sizes), ejemplo `Standard_D2_v2`. |
+    | vmSize |  Escriba [un tamaño admitido por Azure Stack Hub](./azure-stack-vm-sizes.md), ejemplo `Standard_D2_v2`. |
     | Distribuciones | Escriba `aks-ubuntu-16.04`. |
 
 8.  En `agentPoolProfiles`, actualice:
@@ -76,7 +76,7 @@ En esta sección se examina la creación de un modelo de API para el clúster.
     | Campo | Descripción |
     | --- | --- |
     | count | Escriba el número de agentes que desea para la implementación. El número máximo de nodos que se usarán por suscripción es 50. Si va a implementar más de un clúster por suscripción, asegúrese de que el número total de agentes no supere los 50. Asegúrese de usar los elementos de configuración especificados en [el archivo JSON del modelo de API de ejemplo](https://github.com/Azure/aks-engine/blob/master/examples/azure-stack/kubernetes-azurestack.json).  |
-    | vmSize | Escriba [un tamaño admitido por Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-vm-sizes), ejemplo `Standard_D2_v2`. |
+    | vmSize | Escriba [un tamaño admitido por Azure Stack Hub](./azure-stack-vm-sizes.md), ejemplo `Standard_D2_v2`. |
     | Distribuciones | Escriba `aks-ubuntu-16.04`. |
 
 
@@ -123,7 +123,7 @@ Continúe con la implementación de un clúster:
     | output-directory | kube-rg | Escriba el nombre del directorio que va a contener el archivo de salida `apimodel.json`, así como otros archivos generados. |
     | client-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Escriba el GUID de la entidad de servicio. El identificador de cliente indicado como identificador de la aplicación cuando el administrador de Azure Stack Hub creó la entidad de servicio. |
     | client-secret | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Escriba el secreto de la entidad de servicio. Configure el secreto de cliente al crear el servicio. |
-    | subscription-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | escriba el identificador de la suscripción. Para más información, consulte [Suscripción a una oferta](https://docs.microsoft.com/azure-stack/user/azure-stack-subscribe-services#subscribe-to-an-offer). |
+    | subscription-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | escriba el identificador de la suscripción. Para más información, consulte [Suscripción a una oferta](./azure-stack-subscribe-services.md#subscribe-to-an-offer). |
 
     Este es un ejemplo:
 

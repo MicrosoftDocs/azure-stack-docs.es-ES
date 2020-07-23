@@ -9,12 +9,12 @@ ms.author: inhenkel
 ms.lastreviewed: 5/5/2020
 ms.reviewer: jiaha
 ms.custom: contperfq4
-ms.openlocfilehash: a8bc501587c4f4450a07704734391a8e889e3296
-ms.sourcegitcommit: 7d4c28353bc138bbae744d9dbca79fe934c2e94b
+ms.openlocfilehash: 86809f68e488f077b0a8125d92db325b40dc5452
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83624579"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86487826"
 ---
 # <a name="azure-stack-hub-storage-infrastructure-overview"></a>Introducción a la infraestructura de almacenamiento de Azure Stack Hub
 
@@ -99,7 +99,7 @@ El número de volúmenes temporales de máquina virtual y de almacenamiento de o
 - El número de volúmenes se mantiene aunque se quite un nodo o haya uno que no funcione correctamente.
 
 > [!NOTE]
-> Si utiliza el [Kit de desarrollo de Azure Stack](https://docs.microsoft.com/azure-stack/asdk/), hay un único volumen con varios [recursos compartidos](azure-stack-manage-storage-shares.md).
+> Si utiliza el [Kit de desarrollo de Azure Stack](../asdk/index.yml), hay un único volumen con varios [recursos compartidos](azure-stack-manage-storage-shares.md).
 
 ### <a name="fault-tolerance-and-mirroring"></a>Tolerancia a errores y creación de reflejo
 

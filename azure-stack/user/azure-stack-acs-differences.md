@@ -8,12 +8,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviwer: xiaofmao
 ms.lastreviewed: 01/30/2020
-ms.openlocfilehash: 4206ebb6e8195c43ad043f09567d0911222c1e20
-ms.sourcegitcommit: cad40ae88212cc72f40c84a1c88143ea0abb65ef
+ms.openlocfilehash: 6ca925e0571d295c13d0a32d71131b176b686838
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84111938"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86567627"
 ---
 # <a name="azure-stack-hub-storage-differences-and-considerations"></a>Azure Stack Hub Storage: Diferencias y consideraciones
 
@@ -59,39 +59,39 @@ API de los servicios de Azure Storage:
 
 Actualización 1811 o versiones más recientes:
 
-- [2017-11-09](https://docs.microsoft.com/rest/api/storageservices/version-2017-11-09)
-- [2017-07-29](https://docs.microsoft.com/rest/api/storageservices/version-2017-07-29)
-- [2017-04-17](https://docs.microsoft.com/rest/api/storageservices/version-2017-04-17)
-- [2016-05-31](https://docs.microsoft.com/rest/api/storageservices/version-2016-05-31)
-- [2015-12-11](https://docs.microsoft.com/rest/api/storageservices/version-2015-12-11)
-- [2015-07-08](https://docs.microsoft.com/rest/api/storageservices/version-2015-07-08)
-- [2015-04-05](https://docs.microsoft.com/rest/api/storageservices/version-2015-04-05)
+- [2017-11-09](/rest/api/storageservices/version-2017-11-09)
+- [2017-07-29](/rest/api/storageservices/version-2017-07-29)
+- [2017-04-17](/rest/api/storageservices/version-2017-04-17)
+- [2016-05-31](/rest/api/storageservices/version-2016-05-31)
+- [2015-12-11](/rest/api/storageservices/version-2015-12-11)
+- [2015-07-08](/rest/api/storageservices/version-2015-07-08)
+- [2015-04-05](/rest/api/storageservices/version-2015-04-05)
 
 Versiones anteriores:
 
-- [2017-04-17](https://docs.microsoft.com/rest/api/storageservices/version-2017-04-17)
-- [2016-05-31](https://docs.microsoft.com/rest/api/storageservices/version-2016-05-31)
-- [2015-12-11](https://docs.microsoft.com/rest/api/storageservices/version-2015-12-11)
-- [2015-07-08](https://docs.microsoft.com/rest/api/storageservices/version-2015-07-08)
-- [2015-04-05](https://docs.microsoft.com/rest/api/storageservices/version-2015-04-05)
+- [2017-04-17](/rest/api/storageservices/version-2017-04-17)
+- [2016-05-31](/rest/api/storageservices/version-2016-05-31)
+- [2015-12-11](/rest/api/storageservices/version-2015-12-11)
+- [2015-07-08](/rest/api/storageservices/version-2015-07-08)
+- [2015-04-05](/rest/api/storageservices/version-2015-04-05)
 
 API de administración de los servicios de Azure Storage:
 
 Actualización 1811 o versiones más recientes:
 
-- [2017-10-01](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN)
-- [2017-06-01](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN)
-- [2016-12-01](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN)
-- [2016-05-01](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN)
-- [2016-01-01](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN)
-- [2015-06-15](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN)
-- [2015-05-01-preview](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN)
+- [2017-10-01](/rest/api/storagerp/)
+- [2017-06-01](/rest/api/storagerp/)
+- [2016-12-01](/rest/api/storagerp/)
+- [2016-05-01](/rest/api/storagerp/)
+- [2016-01-01](/rest/api/storagerp/)
+- [2015-06-15](/rest/api/storagerp/)
+- [2015-05-01-preview](/rest/api/storagerp/)
 
 Versiones anteriores:
 
-- [2016-01-01](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN)
-- [2015-06-15](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN)
-- [2015-05-01-preview](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN)
+- [2016-01-01](/rest/api/storagerp/)
+- [2015-06-15](/rest/api/storagerp/)
+- [2015-05-01-preview](/rest/api/storagerp/)
 
 ## <a name="powershell-version"></a>Versión de PowerShell
 

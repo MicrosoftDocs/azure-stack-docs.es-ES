@@ -7,18 +7,18 @@ ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: 4fc7269e81e021f30049f7b93a9651443f381d6b
-ms.sourcegitcommit: 3ee7e9ddffe2ca44af24052e60d808fbef42cf4c
+ms.openlocfilehash: 19cfee9cf4e2698bcb75cb7dd15a9439ed55341a
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82643529"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86566097"
 ---
 # <a name="deploy-highly-available-network-virtual-appliances-on-azure-stack-hub"></a>Implementación de aplicaciones virtuales de red de alta disponibilidad en Azure Stack Hub
 
 En este artículo se muestra cómo implementar un conjunto de aplicaciones virtuales de red (NVA) de alta disponibilidad en Azure Stack Hub. Una NVA se usa normalmente para controlar el flujo del tráfico de red desde una red perimetral, conocida también como DMZ, hasta otras redes o subredes. El artículo incluye arquitecturas de ejemplo de solo entrada, solo salida y de entrada y salida.
 
-Hay NVA de distintos proveedores disponibles en el [Marketplace de Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-marketplace-azure-items). Use uno de ellos para obtener un rendimiento óptimo.
+Hay NVA de distintos proveedores disponibles en el [Marketplace de Azure Stack Hub](../operator/azure-stack-marketplace-azure-items.md). Use uno de ellos para obtener un rendimiento óptimo.
 
 La arquitectura tiene los siguientes componentes.
 
@@ -26,13 +26,13 @@ La arquitectura tiene los siguientes componentes.
 
 -   **Red virtual y subredes**. Todas las máquinas virtuales se implementan en una red virtual que se puede dividir en subredes. Cree una subred independiente para cada nivel.
 
--   **Equilibrador de carga de capa 7.** Como Application Gateway todavía no está disponible en Azure Stack Hub, existen alternativas disponibles en el [Marketplace de Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-marketplace-azure-items) como: [KEMP LoadMaster Load Balancer ADC Content Switch](https://azuremarketplace.microsoft.com/marketplace/apps/kemptech.vlm-azure)/ [f5 Big-IP Virtual Edition](https://azuremarketplace.microsoft.com/marketplace/apps/f5-networks.f5-big-ip-best) o [A10 vThunder ADC](https://azuremarketplace.microsoft.com/marketplace/apps/a10networks.vthunder-414-gr1)
+-   **Equilibrador de carga de capa 7.** Como Application Gateway todavía no está disponible en Azure Stack Hub, existen alternativas disponibles en el [Marketplace de Azure Stack Hub](../operator/azure-stack-marketplace-azure-items.md) como: [KEMP LoadMaster Load Balancer ADC Content Switch](https://azuremarketplace.microsoft.com/marketplace/apps/kemptech.vlm-azure)/ [f5 Big-IP Virtual Edition](https://azuremarketplace.microsoft.com/marketplace/apps/f5-networks.f5-big-ip-best) o [A10 vThunder ADC](https://azuremarketplace.microsoft.com/marketplace/apps/a10networks.vthunder-414-gr1)
 
--   **Equilibradores de carga.** Use [Azure Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview) para distribuir el tráfico de red desde el nivel web al nivel de empresa y desde el nivel de empresa a SQL Server.
+-   **Equilibradores de carga.** Use [Azure Load Balancer](/azure/load-balancer/load-balancer-overview) para distribuir el tráfico de red desde el nivel web al nivel de empresa y desde el nivel de empresa a SQL Server.
 
 -   **Grupos de seguridad de red** (NSG). Use NSG para restringir el tráfico de red dentro de la red virtual. Por ejemplo, en la arquitectura de tres niveles que se muestra aquí, el nivel de base de datos no acepta el tráfico procedente del front-end web, solo el procedente del nivel de empresa y la subred de administración.
 
--   **Rutas definidas por el usuario.** Use [*rutas definidas por el usuario*](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview/) (UDR) para enrutar el tráfico al equilibrador de carga específico.
+-   **Rutas definidas por el usuario.** Use [*rutas definidas por el usuario*](/azure/virtual-network/virtual-networks-udr-overview/) (UDR) para enrutar el tráfico al equilibrador de carga específico.
 
 En este artículo se supone que el usuario tiene un conocimiento básico de las redes de Azure Stack Hub.
 
@@ -84,4 +84,4 @@ En la entrada y salida con la arquitectura de NVA de capa 7, las NVA procesan la
 ## <a name="next-steps"></a>Pasos siguientes
 
 - Para más información acerca de las máquinas virtuales de Azure Stack Hub, consulte [Características de las máquinas virtuales de Azure Stack Hub](azure-stack-vm-considerations.md).  
-- Para más información sobre los patrones de nube de Azure, consulte [Patrones de diseño en la nube](https://docs.microsoft.com/azure/architecture/patterns).
+- Para más información sobre los patrones de nube de Azure, consulte [Patrones de diseño en la nube](/azure/architecture/patterns).

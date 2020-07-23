@@ -7,12 +7,12 @@ ms.date: 08/21/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 08/21/2019
-ms.openlocfilehash: ce401b20d6baa66807e6ee5f7ee1e94503b653af
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 1c44bbc0e185d15ef14b2a7f57aa1309b82a4298
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77703169"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86489477"
 ---
 # <a name="enable-backup-for-azure-stack-hub-from-the-administrator-portal"></a>Habilitación de la copia de seguridad de Azure Stack Hub desde el portal del administrador
 
@@ -28,8 +28,8 @@ Sin embargo, el servicio Copia de seguridad de infraestructura no realiza copias
 Los administradores y los usuarios son los responsables de realizar copias de seguridad de los recursos de IaaS y PaaS, y restaurar esos recursos por separado a partir de los procesos de copia de seguridad de la infraestructura. Para más información sobre la copia de seguridad de los recursos de IaaS y PaaS, vea los siguientes vínculos:
 
 - [Protección de las máquinas virtuales implementadas en Azure Stack Hub](../user/azure-stack-manage-vm-protect.md)
-- [Realizar una copia de seguridad de la aplicación en Azure](https://docs.microsoft.com/azure/app-service/manage-backup)
-- [SQL Server en máquinas virtuales de Azure (Windows)](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-iaas-overview)
+- [Realizar una copia de seguridad de la aplicación en Azure](/azure/app-service/manage-backup)
+- [SQL Server en máquinas virtuales de Azure (Windows)](/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-iaas-overview)
 
 
 ## <a name="enable-or-reconfigure-backup"></a>Habilitación o reconfiguración de la copia de seguridad
@@ -67,7 +67,7 @@ Los administradores y los usuarios son los responsables de realizar copias de se
    > [!Note]
    > **1901 y posteriores**: Azure Stack Hub acepta un certificado para cifrar los datos de copia de seguridad de infraestructura. Asegúrese de almacenar el certificado con las claves pública y privada en una ubicación segura. Por motivos de seguridad, no se recomienda usar este certificado para configurar los valores de copia de seguridad. Para más información sobre cómo administrar el ciclo de vida de este certificado, consulte [Procedimientos recomendados del servicio Copia de seguridad de infraestructura](azure-stack-backup-best-practices.md).
    > 
-   > **1811 o versiones anteriores**: Azure Stack Hub acepta una clave simétrica para cifrar los datos de copia de seguridad de infraestructura. Use el [cmdlet New-AzsEncryptionKey64 para crear una clave](https://docs.microsoft.com/powershell/module/azs.backup.admin/new-azsencryptionkeybase64). Después de actualizar de 1811 a 1901, la configuración de copia de seguridad conservará la clave de cifrado. Se recomienda actualizar la configuración de copia de seguridad para usar un certificado. Ahora, la compatibilidad con la clave de cifrado está en desuso. Dispondrá de tres versiones como mínimo para actualizar la configuración a fin de usar un certificado.
+   > **1811 o versiones anteriores**: Azure Stack Hub acepta una clave simétrica para cifrar los datos de copia de seguridad de infraestructura. Use el [cmdlet New-AzsEncryptionKey64 para crear una clave](/powershell/module/azs.backup.admin/new-azsencryptionkeybase64). Después de actualizar de 1811 a 1901, la configuración de copia de seguridad conservará la clave de cifrado. Se recomienda actualizar la configuración de copia de seguridad para usar un certificado. Ahora, la compatibilidad con la clave de cifrado está en desuso. Dispondrá de tres versiones como mínimo para actualizar la configuración a fin de usar un certificado.
 
 10. Seleccione **Aceptar** para guardar la configuración del controlador de copia de seguridad.
 
@@ -115,7 +115,7 @@ Las nuevas copias de seguridad empezarán a usar la clave pública en el nuevo c
 ![Azure Stack Hub: visualización de la huella digital de certificado](media/azure-stack-backup/encryption-settings-thumbprint.png)
 
 ### <a name="backwards-compatibility-mode"></a>Modo de compatibilidad con versiones anteriores
-Si configuró la copia de seguridad antes de actualizar a la versión 1901, la configuración se traslada sin ningún cambio en el comportamiento. En este caso, la clave de cifrado se admite para la compatibilidad con versiones anteriores. Puede actualizar la clave de cifrado o cambiar para usar un certificado. Dispondrá de tres versiones como mínimo para seguir actualizando la clave de cifrado. Úsela esta vez para realizar la transición a un certificado. Para crear una nueva clave de cifrado, use [New-AzsEncryptionKeyBase64](https://docs.microsoft.com/powershell/module/azs.backup.admin/new-azsencryptionkeybase64).
+Si configuró la copia de seguridad antes de actualizar a la versión 1901, la configuración se traslada sin ningún cambio en el comportamiento. En este caso, la clave de cifrado se admite para la compatibilidad con versiones anteriores. Puede actualizar la clave de cifrado o cambiar para usar un certificado. Dispondrá de tres versiones como mínimo para seguir actualizando la clave de cifrado. Úsela esta vez para realizar la transición a un certificado. Para crear una nueva clave de cifrado, use [New-AzsEncryptionKeyBase64](/powershell/module/azs.backup.admin/new-azsencryptionkeybase64).
 
 ![Azure Stack Hub: uso de la clave de cifrado en modo de compatibilidad con versiones anteriores](media/azure-stack-backup/encryption-settings-backcompat-encryption-key.png)
 

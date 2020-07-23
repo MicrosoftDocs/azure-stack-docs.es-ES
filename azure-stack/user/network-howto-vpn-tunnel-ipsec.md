@@ -7,16 +7,16 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 09/19/2019
-ms.openlocfilehash: 4a4a284b1f4e02399a8030e0338b83ccf44ae1fe
-ms.sourcegitcommit: db3c9179916a36be78b43a8a47e1fd414aed3c2e
+ms.openlocfilehash: 4405ec29584904c24401b0fc6823078702ca1c7e
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84146638"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86565944"
 ---
 # <a name="how-to-create-a-vpn-tunnel-using-ipsec--in-azure-stack-hub"></a>Creación de un túnel de VPN con IPSEC en Azure Stack Hub
 
-Puede usar la plantilla de Resource Manager de Azure Stack Hub en esta solución para conectar dos redes virtuales de Azure Stack Hub en el mismo entorno. [No puede conectar redes virtuales de Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-network-differences) con la puerta de enlace de red virtual integrada. Por ahora, debe usar aplicaciones virtuales de red (NVA) para crear un túnel de VPN entre dos redes virtuales de Azure Stack Hub. La plantilla de la solución implementa dos máquinas virtuales Windows Server 2016 con RRAS instalado. La solución configura los dos servidores RRAS para usar un túnel IKEv2 de S2SVPN entre las dos redes virtuales. Se crean las reglas adecuadas de grupo de seguridad de red y de UDR para permitir el enrutamiento entre las subredes de cada red virtual designada como **interna**. 
+Puede usar la plantilla de Resource Manager de Azure Stack Hub en esta solución para conectar dos redes virtuales de Azure Stack Hub en el mismo entorno. [No puede conectar redes virtuales de Azure Stack Hub](./azure-stack-network-differences.md) con la puerta de enlace de red virtual integrada. Por ahora, debe usar aplicaciones virtuales de red (NVA) para crear un túnel de VPN entre dos redes virtuales de Azure Stack Hub. La plantilla de la solución implementa dos máquinas virtuales Windows Server 2016 con RRAS instalado. La solución configura los dos servidores RRAS para usar un túnel IKEv2 de S2SVPN entre las dos redes virtuales. Se crean las reglas adecuadas de grupo de seguridad de red y de UDR para permitir el enrutamiento entre las subredes de cada red virtual designada como **interna**. 
 
 Esta solución es la base que le permitirá crear túneles de VPN no solo dentro de la instancia de Azure Stack Hub, sino también entre instancias de Azure Stack Hub y otros recursos, como las redes locales con el uso de túneles de VPN de sitio a sitio de RRAS de Windows.
 

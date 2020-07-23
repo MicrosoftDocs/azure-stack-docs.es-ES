@@ -7,19 +7,19 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.reviewer: sijuman
 ms.lastreviewed: 04/14/2020
-ms.openlocfilehash: bcfd4b467013a6f207efa37bc02917d3800e3eb0
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 5dc6ef639875803bdb321d1f3aaafdc707ba7ea1
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81395185"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86490055"
 ---
 # <a name="migrate-from-azurerm-to-azure-powershell-az-in-azure-stack-hub"></a>Migración desde AzureRM al módulo Az de Azure PowerShell en Azure Stack Hub
 
 El módulo Az incluye paridad de características con AzureRM, pero usa nombres de cmdlet más cortos y más coherentes.
 Los scripts escritos para los cmdlets de AzureRM no funcionan automáticamente con el nuevo módulo. Para facilitar la transición, Az ofrece herramientas que le permiten ejecutar los scripts existentes con AzureRM. No es conveniente nunca una migración a un nuevo conjunto de comandos, pero este artículo le ayudará a empezar a trabajar en la transición al nuevo módulo.
 
-Para ver la lista completa de los cambios importantes entre AzureRM y Az, consulte la [Guía de migración de Az 1.0.0](https://docs.microsoft.com/powershell/azure/migrate-az-1.0.0).
+Para ver la lista completa de los cambios importantes entre AzureRM y Az, consulte la [Guía de migración de Az 1.0.0](/powershell/azure/migrate-az-1.0.0).
 
 ## <a name="check-for-installed-versions-of-azurerm"></a>Consulte las versiones instaladas de AzureRM
 
@@ -43,7 +43,7 @@ Para instalar el módulo Az de Azure PowerShell, siga estos pasos:
 
 * __RECOMENDACIÓN__: [Desinstale el módulo AzureRM](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module).
   Asegúrese de eliminar _todas_ las versiones instaladas de AzureRM, no solo la última versión.
-* [Instale el módulo Az](https://docs.microsoft.com/powershell/azure/install-az-ps)
+* [Instale el módulo Az](/powershell/azure/install-az-ps)
 
 ## <a name="enable-azurerm-compatibility-aliases"></a>Habilitación de los alias de compatibilidad de AzureRM 
 

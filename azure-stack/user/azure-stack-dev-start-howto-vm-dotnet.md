@@ -7,12 +7,12 @@ ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 1f986c1d09397fae9d765f2a64a7fda267f4ac98
-ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
+ms.openlocfilehash: 9b6ac818a4347b50cc68fcb618ce50f2aa31afc8
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81661070"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86567576"
 ---
 # <a name="deploy-a-c-aspnet-web-app-to-a-vm-in-azure-stack-hub"></a>Implementación de una aplicación web de C# ASP.NET en una máquina virtual en Azure Stack Hub
 
@@ -97,8 +97,7 @@ En este artículo se usa una aplicación C# 6.0 que usa ASP.NET Core 2.2 y se ej
 
 ## <a name="create-an-app"></a>Creación de una aplicación 
 
-Puede usar su propia aplicación web, o bien el ejemplo de [Publicar una aplicación de ASP.NET Core en Azure con Visual Studio](https://docs.microsoft.com/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-2.2&tabs=visual-studio
-). En este artículo se describe cómo crear y publicar una aplicación web de ASP.NET en una máquina virtual de Azure mediante la característica de publicación Azure Virtual Machines en Visual Studio 2017. Una vez que haya instalado su aplicación y se haya asegurado de que se ejecuta localmente, actualizará su destino de publicación para la máquina virtual Windows de su instancia de Azure Stack Hub.
+Puede usar su propia aplicación web, o bien el ejemplo de [Publicar una aplicación de ASP.NET Core en Azure con Visual Studio](/aspnet/core/tutorials/razor-pages/razor-pages-start?tabs=visual-studio&view=aspnetcore-2.2). En este artículo se describe cómo crear y publicar una aplicación web de ASP.NET en una máquina virtual de Azure mediante la característica de publicación Azure Virtual Machines en Visual Studio 2017. Una vez que haya instalado su aplicación y se haya asegurado de que se ejecuta localmente, actualizará su destino de publicación para la máquina virtual Windows de su instancia de Azure Stack Hub.
 
 ## <a name="deploy-and-run-the-app"></a>Implementación y ejecución de la aplicación
 
@@ -136,4 +135,4 @@ Cree un destino de publicación para la máquina virtual en Azure Stack Hub.
 
 - Consulte [Configurar un entorno de desarrollo en Azure Stack Hub](azure-stack-dev-start.md) para conocer el procedimiento.
 - Obtenga información sobre las [implementaciones comunes para Azure Stack Hub como IaaS](azure-stack-dev-start-deploy-app.md).
-- Para conocer el lenguaje de programación de C# y consultar recursos adicionales, consulte [la guía de C#](https://docs.microsoft.com/dotnet/csharp/).
+- Para conocer el lenguaje de programación de C# y consultar recursos adicionales, consulte [la guía de C#](/dotnet/csharp/).

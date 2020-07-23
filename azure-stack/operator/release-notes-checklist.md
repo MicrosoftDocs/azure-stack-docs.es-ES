@@ -7,12 +7,12 @@ ms.date: 05/04/2020
 ms.author: sethm
 ms.reviewer: ppacent
 ms.lastreviewed: 01/14/2020
-ms.openlocfilehash: 03f2b9d80b4fde1f0c7b73b3c24a2d5e799d4d49
-ms.sourcegitcommit: 519f4298dc1ed5c33f9c4fef811f61d61731dd84
+ms.openlocfilehash: 7e150d67dbc636c11419e0b2f482cceea71c23bc
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82799856"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86489987"
 ---
 # <a name="azure-stack-hub-update-activity-checklist"></a>Lista de comprobación de la actividad de actualización de Azure Stack Hub
 
@@ -26,7 +26,7 @@ Revise esta lista de comprobación para prepararse para obtener una actualizaci�
 | Revisión de las actualizaciones de seguridad | [Lista de actualizaciones de seguridad](release-notes-security-updates.md).      |
 | Revisión de las actualizaciones del proveedor de recursos del complemento | [App Service](azure-stack-app-service-update.md)<br>[Event Hubs](resource-provider-apply-updates.md)<br> [MySQL](azure-stack-sql-resource-provider-update.md)<br>[SQL](azure-stack-mysql-resource-provider-update.md)<br>  |
 | Aplicación del paquete de OEM más reciente | Póngase en contacto con el OEM para asegurarse de que el sistema cumple los requisitos mínimos del paquete de OEM para la versión de Azure Stack Hub a la que se está actualizando el sistema. Asegúrese de que su paquete de OEM sea compatible con la versión de Azure Stack Hub a la que está actualizando. Si su paquete de OEM no es compatible con la versión de Azure Stack Hub a la que está actualizando, deberá realizar una actualización del paquete de OEM antes de ejecutar una actualización de Azure Stack Hub. Para obtener instrucciones, consulte "Aplicar actualizaciones del fabricante de equipos originales (OEM) de Azure Stack Hub". |
-| Opcional: Configuración de la recopilación de registros automática | Se recomienda configurar la recopilación de registros automática en el entorno de Azure Stack Hub para simplificar el proceso de recopilación de registros del sistema en caso de que sea necesario abrir una incidencia de soporte técnico. Para configurar la recopilación de registros automática, consulte las instrucciones de [Configuración de la recopilación de registros de diagnóstico automática de Azure Stack Hub](azure-stack-configure-automatic-diagnostic-log-collection-tzl.md). |
+| Opcional: Configuración de la recopilación de registros automática | Se recomienda configurar la recopilación de registros automática en el entorno de Azure Stack Hub para simplificar el proceso de recopilación de registros del sistema en caso de que sea necesario abrir una incidencia de soporte técnico. Para configurar la recopilación de registros automática, consulte las instrucciones de [Configuración de la recopilación de registros de diagnóstico automática de Azure Stack Hub](./azure-stack-configure-automatic-diagnostic-log-collection.md?view=azs-2002). |
 | Aplicación de las revisiones más recientes | Aplique las revisiones más recientes que sean aplicables a la versión instalada actualmente. Para obtener una lista de las últimas revisiones, consulte la sección [Revisión de las notas de la versión](release-notes.md). |
 | Ejecutar la herramienta Capacity Planner | Asegúrese de que usa la versión más reciente de la [herramienta Azure Stack Hub Capacity Planner](azure-stack-capacity-planning-overview.md) para realizar el planeamiento y el ajuste de tamaño de la carga de trabajo. La última versión contiene correcciones de errores y proporciona nuevas características que se publican con cada actualización de Azure Stack Hub. |
 | Ejecute **Test-AzureStack**. | Ejecute `Test-AzureStack -Group UpdateReadiness` para identificar los problemas operativos. El cmdlet es accesible a través de la sesión de punto de conexión con privilegios (PEP). Para más información, consulte [Validación del estado del sistema de Azure Stack Hub](azure-stack-diagnostic-test.md). |

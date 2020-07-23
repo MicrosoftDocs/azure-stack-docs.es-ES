@@ -7,22 +7,22 @@ ms.date: 3/19/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 3/19/2020
-ms.openlocfilehash: aac2f9a0991bdae7f15d7fc54517a880ab384785
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: da15bfa9b19da8d65f54db86633b5ec300d76067
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80068941"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86567729"
 ---
 # <a name="deploy-a-kubernetes-cluster-to-a-custom-virtual-network-on-azure-stack-hub"></a>Implementación de un clúster de Kubernetes en una red virtual personalizada en Azure Stack Hub 
 
 Los clústeres de Kubernetes se pueden implementar mediante el motor de Azure Kubernetes Service (AKS) en una red virtual personalizada. En este artículo se examina la búsqueda de la información que se necesita en una red virtual. Puede encontrar los pasos necesarios para calcular las direcciones IP que usa el clúster y establecer los valores en el modelo de API, así como establecer la tabla de rutas y el grupo de seguridad de red.
 
-En Azure Stack Hub, el clúster de Kubernetes que usa el motor de AKS usa el complemento de red kubenet. Para ver una explicación acerca de las redes kubenet en Azure, consulte [Uso de redes kubenet con intervalos de direcciones IP propios en Azure Kubernetes Service (AKS)](https://docs.microsoft.com/azure/aks/configure-kubenet).
+En Azure Stack Hub, el clúster de Kubernetes que usa el motor de AKS usa el complemento de red kubenet. Para ver una explicación acerca de las redes kubenet en Azure, consulte [Uso de redes kubenet con intervalos de direcciones IP propios en Azure Kubernetes Service (AKS)](/azure/aks/configure-kubenet).
 
 ## <a name="create-custom-virtual-network"></a>Creación de una red virtual personalizada
 
-Debe tener una red virtual personalizada en su instancia de Azure Stack Hub. Para más información, consulte [Inicio rápido: Creación de una red virtual mediante Azure Portal](https://docs.microsoft.com/azure/virtual-network/quick-create-portal).
+Debe tener una red virtual personalizada en su instancia de Azure Stack Hub. Para más información, consulte [Inicio rápido: Creación de una red virtual mediante Azure Portal](/azure/virtual-network/quick-create-portal).
 
 Cree una subred en la red virtual. Tendrá que obtener el identificador de recurso de la subred y el intervalo de direcciones IP. Tanto el identificador de recurso como el intervalo los usará en el modelo de API al implementar el clúster.
 
@@ -130,4 +130,4 @@ Después de implementar el clúster, vuelva a la red virtual en el portal de usu
 ## <a name="next-steps"></a>Pasos siguientes
 
 - Obtenga información sobre [el motor de AKS en Azure Stack Hub](azure-stack-kubernetes-aks-engine-overview.md).  
-- Consulte [Introducción a Azure Monitor para contenedores](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-overview).
+- Consulte [Introducción a Azure Monitor para contenedores](/azure/azure-monitor/insights/container-insights-overview).

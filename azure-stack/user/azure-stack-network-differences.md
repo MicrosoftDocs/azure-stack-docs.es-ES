@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mabrigg
 ms.reviewer: wamota
 ms.lastreviewed: 07/10/2019
-ms.openlocfilehash: 459d6177015cbca40d2f8f830eba85dc87be18c7
-ms.sourcegitcommit: e79aafb05c5fc512a83f0ebc6d76503213ccbc70
+ms.openlocfilehash: f47e3c48bf6a43276f9e4b11c2e3f0f43a224f18
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84730686"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86567355"
 ---
 # <a name="differences-and-considerations-for-azure-stack-hub-networking"></a>Diferencias y consideraciones para las redes de Azure Stack Hub
 
@@ -31,7 +31,7 @@ En este artículo se proporciona información general sobre las consideraciones 
 |  | Servidores de nombres para la delegación de zona | Azure proporciona cuatro servidores de nombres para cada zona de usuario (inquilino) que se crea. | Azure Stack Hub proporciona dos servidores de nombres para cada zona de usuario (inquilino) que se crea. |
 | Azure Firewall | Servicio de seguridad de red | Azure Firewall es un servicio de seguridad de red administrado y basado en la nube que protege los recursos de Azure Virtual Network. | Todavía no se admite. |
 | Virtual Network | Emparejamiento de redes virtuales de Azure | Conecte dos redes virtuales de la misma región mediante la red troncal de Azure. | Todavía no se admite |
-|  | Direcciones IPv6 | Puede asignar una dirección IPv6 como parte de la [configuración de la interfaz de red](https://docs.microsoft.com/azure/virtual-network/virtual-network-network-interface-addresses#ip-address-versions). | Se admite solo IPv4. |
+|  | Direcciones IPv6 | Puede asignar una dirección IPv6 como parte de la [configuración de la interfaz de red](/azure/virtual-network/virtual-network-network-interface-addresses#ip-address-versions). | Se admite solo IPv4. |
 |  | Plan de DDoS Protection | Compatible | Todavía no se admite. |
 |  | Configuraciones de direcciones IP del conjunto de escalado | Compatible | Todavía no se admite. |
 |  | Servicios de acceso privado (subred) | Compatible | Todavía no se admite. |

@@ -7,16 +7,16 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: 428c95a4f9d387cd298a1965f165278dfdc5a763
-ms.sourcegitcommit: cad40ae88212cc72f40c84a1c88143ea0abb65ef
+ms.openlocfilehash: 34e48ce402678a8fa2f1632e0431cfb38fb895e9
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84111989"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86567287"
 ---
 # <a name="vnet-peering-in-azure-stack-hub-with-vms"></a>Emparejamiento de VNET en Azure Stack Hub con máquinas virtuales
 
-Puede conectar dos redes virtuales de Azure Stack Hub entre sí en el mismo entorno de Azure Stack Hub. Actualmente no es posible conectar redes virtuales de Azure Stack Hub mediante la [puerta de enlace de red virtual](https://docs.microsoft.com/azure-stack/user/azure-stack-network-differences)integrada. Debe usar aplicaciones NVA para crear un túnel de VPN entre dos redes virtuales de Azure Stack Hub. En las referencias de las plantillas de este artículo, se implementan dos máquinas virtuales con Windows Server 2016 con RRAS instalado. Se configuran los dos servidores RRAS para implementar un túnel IKEv2 de S2SVPN entre dos redes virtuales. Se crean las reglas de NSG y UDR para que pueda realizarse el enrutamiento entre las subredes de las redes virtuales designadas como **internas**. 
+Puede conectar dos redes virtuales de Azure Stack Hub entre sí en el mismo entorno de Azure Stack Hub. Actualmente no es posible conectar redes virtuales de Azure Stack Hub mediante la [puerta de enlace de red virtual](./azure-stack-network-differences.md)integrada. Debe usar aplicaciones NVA para crear un túnel de VPN entre dos redes virtuales de Azure Stack Hub. En las referencias de las plantillas de este artículo, se implementan dos máquinas virtuales con Windows Server 2016 con RRAS instalado. Se configuran los dos servidores RRAS para implementar un túnel IKEv2 de S2SVPN entre dos redes virtuales. Se crean las reglas de NSG y UDR para que pueda realizarse el enrutamiento entre las subredes de las redes virtuales designadas como **internas**. 
 
 Este patrón de implementación es la base que permitirá crear túneles de VPN no solo en una instancia de Azure Stack Hub, sino también entre instancias de Azure Stack Hub y otros recursos, como las redes locales con el uso de túneles de VPN de sitio a sitio de RRAS de Windows. 
 

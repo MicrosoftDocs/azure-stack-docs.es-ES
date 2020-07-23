@@ -7,12 +7,12 @@ ms.date: 02/26/2020
 ms.author: justinha
 ms.reviewer: shisab
 ms.lastreviewed: 02/26/2020
-ms.openlocfilehash: d3c6ecaa062f97aef76835d3c291b4ecaf405b11
-ms.sourcegitcommit: b2b0fe629d840ca8d5b6353a90f1fcb392a73bd5
+ms.openlocfilehash: f7d9335e612387a780e002a2fe3d070436a10c5a
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85377183"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86488984"
 ---
 # <a name="diagnostic-log-collection-in-azure-stack-hub"></a>Recopilación de registros de diagnóstico en Azure Stack Hub
 
@@ -35,7 +35,7 @@ La característica de recopilación de registros de diagnóstico ofrece dos opci
 
 ### <a name="send-logs-proactively"></a>Envío de registros de forma proactiva
 
-La [recopilación proactiva de registros](azure-stack-configure-automatic-diagnostic-log-collection-tzl.md) agiliza y simplifica la recopilación de registros de diagnóstico para que los clientes puedan enviar los registros a Microsoft antes de abrir una incidencia de soporte técnico. Los registros de diagnóstico se cargan de forma proactiva desde Azure Stack Hub para su análisis. Estos registros solo se recopilan cuando se genera una [alerta de mantenimiento del sistema](azure-stack-configure-automatic-diagnostic-log-collection-tzl.md#proactive-diagnostic-log-collection-alerts) y solo se tiene acceso a ellos desde el equipo de Soporte técnico de Microsoft en el contexto de una incidencia de soporte técnico.
+La [recopilación proactiva de registros](./azure-stack-configure-automatic-diagnostic-log-collection.md?view=azs-2002) agiliza y simplifica la recopilación de registros de diagnóstico para que los clientes puedan enviar los registros a Microsoft antes de abrir una incidencia de soporte técnico. Los registros de diagnóstico se cargan de forma proactiva desde Azure Stack Hub para su análisis. Estos registros solo se recopilan cuando se genera una [alerta de mantenimiento del sistema](./azure-stack-configure-automatic-diagnostic-log-collection.md?view=azs-2002#proactive-diagnostic-log-collection-alerts) y solo se tiene acceso a ellos desde el equipo de Soporte técnico de Microsoft en el contexto de una incidencia de soporte técnico.
 
 #### <a name="how-the-data-is-handled"></a>Cómo se controlan los datos
 
@@ -49,9 +49,9 @@ Los registros recopilados mediante la **recopilación proactiva de registros** s
 
 ### <a name="send-logs-now"></a>Envío inmediato de registros
 
-[Send logs now](azure-stack-configure-on-demand-diagnostic-log-collection-portal-tzl.md) (Enviar registros ahora) es una opción manual para cargar los registros de diagnóstico desde Azure Stack Hub solo cuando el cliente inicia la recopilación, normalmente antes de abrir una incidencia de soporte técnico.
+[Send logs now](./azure-stack-configure-on-demand-diagnostic-log-collection-portal.md?view=azs-2002) (Enviar registros ahora) es una opción manual para cargar los registros de diagnóstico desde Azure Stack Hub solo cuando el cliente inicia la recopilación, normalmente antes de abrir una incidencia de soporte técnico.
 
-Los operadores de Azure Stack pueden enviar registros de diagnóstico a petición al Soporte técnico de Microsoft mediante el portal de administración o PowerShell. Si Azure Stack Hub está conectado a Azure, se recomienda usar la opción [Send logs now](azure-stack-configure-on-demand-diagnostic-log-collection-portal-tzl.md) (Enviar registros ahora) del portal de administración, ya que es la forma más sencilla de enviar los registros directamente a Microsoft. Si el portal no está disponible, en su lugar, los operadores deben [usar PowerShell para enviar los registros ahora](azure-stack-configure-on-demand-diagnostic-log-collection-powershell-tzl.md).
+Los operadores de Azure Stack pueden enviar registros de diagnóstico a petición al Soporte técnico de Microsoft mediante el portal de administración o PowerShell. Si Azure Stack Hub está conectado a Azure, se recomienda usar la opción [Send logs now](./azure-stack-configure-on-demand-diagnostic-log-collection-portal.md?view=azs-2002) (Enviar registros ahora) del portal de administración, ya que es la forma más sencilla de enviar los registros directamente a Microsoft. Si el portal no está disponible, en su lugar, los operadores deben [usar PowerShell para enviar los registros ahora](./azure-stack-configure-on-demand-diagnostic-log-collection-powershell.md?view=azs-2002).
 
 Si está desconectado de Internet o desea guardar los registros solo de forma local, use el método [Get-AzureStackLog](azure-stack-get-azurestacklog.md) para enviar los registros. En el diagrama de flujo siguiente se muestra qué opción utilizar para enviar los registros de diagnóstico en cada caso.
 
@@ -82,17 +82,17 @@ En la tabla siguiente se enumeran las consideraciones para entornos con conexion
 
 ## <a name="collecting-logs-from-multiple-azure-stack-hub-systems"></a>Recopilación de registros de varios sistemas de Azure Stack Hub
 
-Configure un contenedor de blobs para todas las unidades de escalado de Azure Stack Hub de las que quiera recopilar registros. Para más información sobre cómo configurar el contenedor de blobs, consulte [Configuración de la recopilación de registros de diagnóstico automática de Azure Stack Hub](azure-stack-configure-automatic-diagnostic-log-collection-tzl.md). Como procedimiento recomendado, guarde solo los registros de diagnóstico de la misma unidad de escalado de Azure Stack Hub en un solo contenedor de blobs.
+Configure un contenedor de blobs para todas las unidades de escalado de Azure Stack Hub de las que quiera recopilar registros. Para más información sobre cómo configurar el contenedor de blobs, consulte [Configuración de la recopilación de registros de diagnóstico automática de Azure Stack Hub](./azure-stack-configure-automatic-diagnostic-log-collection.md?view=azs-2002). Como procedimiento recomendado, guarde solo los registros de diagnóstico de la misma unidad de escalado de Azure Stack Hub en un solo contenedor de blobs.
 
 ## <a name="retention-policy"></a>Directiva de retención
 
-Cree una [regla de administración del ciclo de vida](https://docs.microsoft.com/azure/storage/blobs/storage-lifecycle-management-concepts) de Azure Blob Storage para administrar la directiva de retención de registros. Recomendamos que los registros de diagnóstico se retengan durante 30 días. Para crear una regla de administración del ciclo de vida en Azure Storage, inicie sesión en Azure Portal, seleccione **Cuentas de almacenamiento**, seleccione el contenedor de blobs y, en **Blob service**, seleccione **Administración del ciclo de vida**.
+Cree una [regla de administración del ciclo de vida](/azure/storage/blobs/storage-lifecycle-management-concepts) de Azure Blob Storage para administrar la directiva de retención de registros. Recomendamos que los registros de diagnóstico se retengan durante 30 días. Para crear una regla de administración del ciclo de vida en Azure Storage, inicie sesión en Azure Portal, seleccione **Cuentas de almacenamiento**, seleccione el contenedor de blobs y, en **Blob service**, seleccione **Administración del ciclo de vida**.
 
 ![Administración del ciclo de vida en Azure Portal](media/azure-stack-automatic-log-collection/blob-storage-lifecycle-management.png)
 
 ## <a name="sas-token-expiration"></a>Expiración del token de SAS
 
-Establezca la expiración de la dirección URL de SAS en dos años. Si alguna vez renueva sus claves de cuenta, asegúrese de regenerar la dirección URL de SAS. Debe administrar el token de SAS según los procedimientos recomendados. Para obtener más información, consulte [Procedimientos recomendados al usar SAS](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1#best-practices-when-using-sas).
+Establezca la expiración de la dirección URL de SAS en dos años. Si alguna vez renueva sus claves de cuenta, asegúrese de regenerar la dirección URL de SAS. Debe administrar el token de SAS según los procedimientos recomendados. Para obtener más información, consulte [Procedimientos recomendados al usar SAS](/azure/storage/common/storage-dotnet-shared-access-signature-part-1#best-practices-when-using-sas).
 
 ## <a name="bandwidth-consumption"></a>Consumo de ancho de banda
 
@@ -114,12 +114,12 @@ La siguiente tabla puede ayudar a los entornos con conexiones limitadas a Azure 
 
 ## <a name="managing-costs"></a>Administración de los costos
 
-Los [cargos de Blob Storage](https://azure.microsoft.com/pricing/details/storage/blobs/) dependen no solo de la cantidad de datos que se guardan cada mes, sino también de otros factores como la redundancia de datos. Si no tiene una cuenta de almacenamiento existente, puede iniciar sesión en Azure Portal, seleccionar **Cuentas de almacenamiento** y seguir los pasos para [crear una dirección URL de SAS del contenedor de blobs de Azure](azure-stack-configure-automatic-diagnostic-log-collection-tzl.md).
+Los [cargos de Blob Storage](https://azure.microsoft.com/pricing/details/storage/blobs/) dependen no solo de la cantidad de datos que se guardan cada mes, sino también de otros factores como la redundancia de datos. Si no tiene una cuenta de almacenamiento existente, puede iniciar sesión en Azure Portal, seleccionar **Cuentas de almacenamiento** y seguir los pasos para [crear una dirección URL de SAS del contenedor de blobs de Azure](./azure-stack-configure-automatic-diagnostic-log-collection.md?view=azs-2002).
 
-Como procedimiento recomendado, cree una [directiva de administración del ciclo de vida](https://docs.microsoft.com/azure/storage/blobs/storage-lifecycle-management-concepts) de Azure Blob Storage para minimizar los costos de almacenamiento en curso. Para más información sobre cómo configurar la cuenta de almacenamiento, consulte [Configuración de la recopilación de registros de diagnóstico automática de Azure Stack Hub](azure-stack-configure-automatic-diagnostic-log-collection-tzl.md).
+Como procedimiento recomendado, cree una [directiva de administración del ciclo de vida](/azure/storage/blobs/storage-lifecycle-management-concepts) de Azure Blob Storage para minimizar los costos de almacenamiento en curso. Para más información sobre cómo configurar la cuenta de almacenamiento, consulte [Configuración de la recopilación de registros de diagnóstico automática de Azure Stack Hub](./azure-stack-configure-automatic-diagnostic-log-collection.md?view=azs-2002).
 
 ::: moniker-end
 
 ## <a name="see-also"></a>Consulte también
 
-[Control de datos de clientes y registro de Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-data-collection)
+[Control de datos de clientes y registro de Azure Stack Hub](./azure-stack-data-collection.md)

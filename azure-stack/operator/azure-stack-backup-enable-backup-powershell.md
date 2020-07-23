@@ -7,12 +7,12 @@ ms.date: 04/25/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 03/14/2019
-ms.openlocfilehash: 2369ffbd1d3fc72c9d2df7ff87be6131f7aabcd7
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 01f02fcf624db0a8ce47084ec5aa331e0831014b
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77703322"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86489290"
 ---
 # <a name="enable-backup-for-azure-stack-hub-with-powershell"></a>Habilitación de la copia de seguridad para Azure Stack Hub con PowerShell
 
@@ -42,7 +42,7 @@ En la misma sesión de PowerShell, modifique el siguiente script de PowerShell a
 | `$frequencyInHours` | La frecuencia en horas determina con qué frecuencia se crean las copias de seguridad. El valor predeterminado es 12. Scheduler admite un máximo de 12 y un mínimo de 4.|
 | `$retentionPeriodInDays` | El período de retención en días determina cuántos días de copias de seguridad se conservan en la ubicación externa. El valor predeterminado es 7. Scheduler admite un máximo de 14 y un mínimo de 2. Las copias de seguridad anteriores al período de retención se eliminan automáticamente de la ubicación externa.|
 | `$encryptioncertpath` | Se aplica a la compilación 1901 y posteriores. El parámetro está disponible en el módulo de Azure Stack Hub de la versión 1.7 y posterior. La ruta de acceso del certificado de cifrado especifica la ruta de acceso al archivo .CER con la clave pública que se usa para cifrar los datos. |
-| `$encryptionkey` | Se aplica a la compilación 1811 o anteriores. El parámetro está disponible en el módulo de Azure Stack Hub de la versión 1.6 o anterior. Clave de cifrado usada para el cifrado de datos. Use el cmdlet [New-AzsEncryptionKeyBase64](https://docs.microsoft.com/powershell/module/azs.backup.admin/new-azsencryptionkeybase64) para generar una nueva clave. |
+| `$encryptionkey` | Se aplica a la compilación 1811 o anteriores. El parámetro está disponible en el módulo de Azure Stack Hub de la versión 1.6 o anterior. Clave de cifrado usada para el cifrado de datos. Use el cmdlet [New-AzsEncryptionKeyBase64](/powershell/module/azs.backup.admin/new-azsencryptionkeybase64) para generar una nueva clave. |
 |     |     |
 
 ### <a name="enable-backup-on-1901-and-later-using-certificate"></a>Habilitación de copias de seguridad en la compilación 1901 y versiones posteriores con un certificado

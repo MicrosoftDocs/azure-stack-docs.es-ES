@@ -7,19 +7,19 @@ ms.date: 06/09/2020
 ms.author: sethm
 ms.lastreviewed: 09/10/2019
 ms.reviewer: niy
-ms.openlocfilehash: d3f365f825e30e03e74d2e822653ee3ccfdb9e58
-ms.sourcegitcommit: 396f79ce073d99d14fcc71b85c4a4932334832a8
+ms.openlocfilehash: a2fadeaf7700b08f2fab70f882f5f6c1fc03f48f
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84636876"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86487522"
 ---
 # <a name="manage-updates-in-azure-stack-hub"></a>Administración de actualizaciones en Azure Stack Hub
 
 Azure Stack Hub se mantiene actualizado gracias tanto a las actualizaciones, completas o rápidas, y las revisiones, como a las actualizaciones de controladores y firmware del fabricante de equipos originales. En este artículo se explican los diferentes tipos de actualizaciones, cuándo se espera su lanzamiento y dónde se puede encontrar más información sobre la versión actual.
 
 > [!Note]  
-> No puede aplicar actualizaciones de Azure Stack Hub al kit de desarrollo de Azure Stack (ASDK). Las actualizaciones están diseñadas para sistemas integrados. Para obtener información, consulte [Volver a implementar el ASDK](https://docs.microsoft.com/azure-stack/asdk/asdk-redeploy).
+> No puede aplicar actualizaciones de Azure Stack Hub al kit de desarrollo de Azure Stack (ASDK). Las actualizaciones están diseñadas para sistemas integrados. Para obtener información, consulte [Volver a implementar el ASDK](../asdk/asdk-redeploy.md).
 
 ## <a name="update-package-types"></a>Tipos de actualizaciones
 

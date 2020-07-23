@@ -7,12 +7,12 @@ ms.date: 04/27/2020
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 04/27/2020
-ms.openlocfilehash: 164a20928f312d2ffa4dea73f54c05f41809ebf5
-ms.sourcegitcommit: 54f98b666bea9226c78f26dc255ddbdda539565f
+ms.openlocfilehash: b91d363626bc600027b37a1b9c56e69f6c40c3aa
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82563719"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86486399"
 ---
 # <a name="remove-graphapplication"></a>Remove-GraphApplication
 
@@ -69,4 +69,4 @@ Accept wildcard characters: False
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Para más información sobre el acceso y el uso de un punto de conexión con privilegios, consulte [Uso del punto de conexión con privilegios en Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-privileged-endpoint).
+Para más información sobre el acceso y el uso de un punto de conexión con privilegios, consulte [Uso del punto de conexión con privilegios en Azure Stack Hub](../../operator/azure-stack-privileged-endpoint.md).

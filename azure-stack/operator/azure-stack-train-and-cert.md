@@ -8,12 +8,12 @@ ms.date: 11/11/2019
 ms.author: inhenkel
 ms.lastreviewed: 11/11/2019
 ms.reviewer: efemm
-ms.openlocfilehash: 984a8dc52409c22481148c28ac47939543680896
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: bbf668cf509fcc2ccde4d0a60f20d3f74a935a1e
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77696845"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86487624"
 ---
 # <a name="azure-stack-hub-training-and-certification"></a>Cursos y certificaciones de Azure Stack Hub
 
@@ -42,4 +42,4 @@ ms.locfileid: "77696845"
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Documentación de Azure Stack Hub](/azure-stack/operator)
+[Documentación de Azure Stack Hub](./index.yml)

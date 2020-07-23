@@ -7,12 +7,12 @@ ms.date: 02/26/2020
 ms.author: justinha
 ms.reviewer: shisab
 ms.lastreviewed: 02/26/2020
-ms.openlocfilehash: a9b81eb49abdcd08cef13e89845473db5c9c9032
-ms.sourcegitcommit: b2b0fe629d840ca8d5b6353a90f1fcb392a73bd5
+ms.openlocfilehash: f08f2af4cf85d1e4346b6fc378135d218216c9d0
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85377184"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86488848"
 ---
 # <a name="azure-stack-hub-help-and-support"></a>Ayuda y soporte técnico de Azure Stack Hub
 
@@ -66,8 +66,8 @@ Este conjunto de tutoriales se puede personalizar en función de si se ejecutan 
 
 Los registros de diagnóstico se pueden enviar a Microsoft de dos formas:
 
-- [Envío de registros de forma proactiva](azure-stack-configure-automatic-diagnostic-log-collection-tzl.md): si está habilitada, ciertas alertas de estado desencadenan la recopilación de registros.
-- [Envío inmediato de registros](azure-stack-configure-on-demand-diagnostic-log-collection-portal-tzl.md) puede elegir manualmente una ventana deslizante específica como período de tiempo de la recopilación de registros.
+- [Envío de registros de forma proactiva](./azure-stack-configure-automatic-diagnostic-log-collection.md?view=azs-2002): si está habilitada, ciertas alertas de estado desencadenan la recopilación de registros.
+- [Envío inmediato de registros](./azure-stack-configure-on-demand-diagnostic-log-collection-portal.md?view=azs-2002) puede elegir manualmente una ventana deslizante específica como período de tiempo de la recopilación de registros.
 
 ![Opciones de recopilación de registros de diagnóstico](media/azure-stack-help-and-support/banner-enable-automatic-log-collection.png)
 
@@ -105,6 +105,6 @@ Seleccione **Ayuda** (signo de interrogación) en la esquina superior derecha de
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Información sobre la [recopilación de registros de diagnóstico](azure-stack-diagnostic-log-collection-overview-tzl.md).
+- Información sobre la [recopilación de registros de diagnóstico](./azure-stack-diagnostic-log-collection-overview.md?view=azs-2002).
 - Aprenda a [buscar el identificador de su nube](azure-stack-find-cloud-id.md).
 - Aprenda a [solucionar problemas de Azure Stack Hub](azure-stack-troubleshooting.md).

@@ -7,12 +7,12 @@ ms.date: 12/23/2019
 ms.author: justinha
 ms.reviewer: thoroet
 ms.lastreviewed: 12/23/2019
-ms.openlocfilehash: f74f35a8b1124ed9678e6b4bc254d4d2cd05a84e
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: c54e086ad8edefcb8e7a799c5153af6b7ce5b194
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77699276"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86488542"
 ---
 # <a name="set-access-permissions-using-role-based-access-control"></a>Establecimiento de permisos de acceso mediante el control de acceso basado en rol
 
@@ -23,7 +23,7 @@ En Azure Stack Hub, un usuario puede ser un lector, propietario o colaborador de
  - Propietario: El usuario puede administrar todo, incluido el acceso a los recursos.
  - Personalizado: El usuario tiene acceso limitado y específico a los recursos.
 
- Para más información sobre la creación de un rol personalizado, consulte [Roles personalizados en los recursos de Azure](https://docs.microsoft.com/azure/role-based-access-control/custom-roles).
+ Para más información sobre la creación de un rol personalizado, consulte [Roles personalizados en los recursos de Azure](/azure/role-based-access-control/custom-roles).
 
 ## <a name="set-access-permissions-for-a-user"></a>Establecimiento de los permisos de acceso de un usuario
 

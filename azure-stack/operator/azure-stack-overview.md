@@ -8,12 +8,12 @@ ms.author: justinha
 ms.reviewer: unknown
 ms.lastreviewed: 11/08/2019
 ms.custom: conteperfq4
-ms.openlocfilehash: 468e6617ecf4b8be13b56176c805d07c994acda6
-ms.sourcegitcommit: e28821041b8111fdcd2c28d35a83ab0a8018455c
+ms.openlocfilehash: 5acbe557c58d33785e0c227c2014264fbcd06a06
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86033283"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86488423"
 ---
 # <a name="azure-stack-hub-overview"></a>Introducción a Azure Stack Hub
 
@@ -68,13 +68,13 @@ Azure Stack Hub usa el mismo modelo de operaciones que Azure. Un operador de Azu
 
 ![Diagrama que muestra los roles de trabajo de Azure Stack Hub](./media/azure-stack-overview/azure-stack-job-roles.svg)
 
-Puede administrar Azure Stack Hub con el portal de administración, el portal de usuarios o [PowerShell](https://docs.microsoft.com/powershell/azure/azure-stack/overview?view=azurestackps-1.7.1). Cada uno de los portales de Azure Stack Hub cuenta con el respaldo de instancias independientes de Azure Resource Manager. Un **operador de Azure Stack Hub** usa el portal de administración para administrar Azure Stack Hub y para hacer tareas como crear ofertas para inquilinos y mantener y supervisar el estado del sistema integrado. El portal de usuarios proporciona una experiencia de autoservicio para el consumo de recursos de nube, como máquinas virtuales, cuentas de almacenamiento y aplicaciones web.
+Puede administrar Azure Stack Hub con el portal de administración, el portal de usuarios o [PowerShell](/powershell/azure/azure-stack/overview?view=azurestackps-1.7.1). Cada uno de los portales de Azure Stack Hub cuenta con el respaldo de instancias independientes de Azure Resource Manager. Un **operador de Azure Stack Hub** usa el portal de administración para administrar Azure Stack Hub y para hacer tareas como crear ofertas para inquilinos y mantener y supervisar el estado del sistema integrado. El portal de usuarios proporciona una experiencia de autoservicio para el consumo de recursos de nube, como máquinas virtuales, cuentas de almacenamiento y aplicaciones web.
 
 > Para más información acerca de cómo administrar Azure Stack Hub mediante el portal de administración, consulte el [inicio rápido del portal de administración de Azure Stack Hub](azure-stack-manage-portals.md).
 
-Como operador de Azure Stack Hub, puede ofrecer [máquinas virtuales](azure-stack-tutorial-tenant-vm.md), [aplicaciones web](azure-stack-app-service-overview.md), [SQL Server](azure-stack-tutorial-sql.md) de alta disponibilidad y bases de datos de [MySQL Server](azure-stack-tutorial-mysql.md). También puede usar [plantillas de inicio rápido de Azure Resource Manager para Azure Stack Hub](https://github.com/Azure/AzureStack-QuickStart-Templates) para implementar SharePoint, Exchange y mucho más.
+Como operador de Azure Stack Hub, puede ofrecer [máquinas virtuales](./tutorial-offer-services.md?view=azs-2002), [aplicaciones web](azure-stack-app-service-overview.md), [SQL Server](azure-stack-tutorial-sql.md) de alta disponibilidad y bases de datos de [MySQL Server](azure-stack-tutorial-mysql.md). También puede usar [plantillas de inicio rápido de Azure Resource Manager para Azure Stack Hub](https://github.com/Azure/AzureStack-QuickStart-Templates) para implementar SharePoint, Exchange y mucho más.
 
-Un operador puede administrar Azure Stack Hub con el [portal de administración](azure-stack-manage-portals.md) o con [PowerShell](https://docs.microsoft.com/powershell/azure/azure-stack/overview?view=azurestackps-1.7.1). Puede configurar Azure Stack Hub para [prestar servicios](service-plan-offer-subscription-overview.md) a inquilinos mediante planes, ofertas, cuotas y suscripciones. Los usuarios inquilinos pueden suscribirse a varias ofertas. Las ofertas pueden tener uno o varios planes, y los planes pueden tener uno o varios servicios. Los operadores también administran la capacidad y responden a las alertas.
+Un operador puede administrar Azure Stack Hub con el [portal de administración](azure-stack-manage-portals.md) o con [PowerShell](/powershell/azure/azure-stack/overview?view=azurestackps-1.7.1). Puede configurar Azure Stack Hub para [prestar servicios](service-plan-offer-subscription-overview.md) a inquilinos mediante planes, ofertas, cuotas y suscripciones. Los usuarios inquilinos pueden suscribirse a varias ofertas. Las ofertas pueden tener uno o varios planes, y los planes pueden tener uno o varios servicios. Los operadores también administran la capacidad y responden a las alertas.
 
 Los usuarios utilizan los servicios que ofrece el operador. Los usuarios pueden aprovisionar, supervisar y administrar los servicios a los que se han suscrito, como Web Apps, Storage y Virtual Machines. Los usuarios pueden administrar Azure Stack Hub con el portal de usuarios o con PowerShell.
 
@@ -90,7 +90,7 @@ Hay tres proveedores de recursos de IaaS fundamentales:
 
 - **Proceso**: El proveedor de recursos de proceso permite a los inquilinos de Azure Stack Hub crear sus propias máquinas virtuales. El proveedor de recursos de Compute incluye la capacidad de crear tanto máquinas virtuales como extensiones de máquina virtual. El servicio de extensión de máquinas virtuales ayuda a ofrecer funcionalidades de IaaS a máquinas virtuales Windows y Linux. Por ejemplo, puede usar el proveedor de recursos de Compute para aprovisionar una máquina virtual Linux y ejecutar scripts de Bash durante la implementación para configurar la máquina virtual.
 - **Proveedor de recursos de red**: El proveedor de recursos de red ofrece una serie de características de Redes definidas por software (SDN) y Virtualización de función de red (NFV) a la nube privada. El proveedor de recursos de red puede usarse para crear recursos, como equilibradores de carga de software, direcciones IP públicas, grupos de seguridad de red y redes virtuales.
-- **Proveedor de recursos de Storage**: El proveedor de recursos de Storage ofrece cuatro servicios de almacenamiento compatibles con Azure: [Blob](https://docs.microsoft.com/azure/storage/common/storage-introduction#blob-storage), [Queue](https://docs.microsoft.com/azure/storage/common/storage-introduction#queue-storage), [Table](https://docs.microsoft.com/azure/storage/common/storage-introduction#table-storage) y administración de cuentas de [Key Vault](https://docs.microsoft.com/azure/key-vault/), que proporciona administración y auditoría de secretos, como contraseñas y certificados. También ofrece un servicio de administración del almacenamiento en la nube para facilitar la administración del proveedor de los servicios de Storage compatibles con Azure. Azure Storage proporciona la flexibilidad necesaria para almacenar y recuperar grandes cantidades de datos no estructurados, como documentos y archivos multimedia con Blobs de Azure y datos estructurados basados en NoSQL con Tablas de Azure.
+- **Proveedor de recursos de Storage**: El proveedor de recursos de Storage ofrece cuatro servicios de almacenamiento compatibles con Azure: [Blob](/azure/storage/common/storage-introduction#blob-storage), [Queue](/azure/storage/common/storage-introduction#queue-storage), [Table](/azure/storage/common/storage-introduction#table-storage) y administración de cuentas de [Key Vault](/azure/key-vault/), que proporciona administración y auditoría de secretos, como contraseñas y certificados. También ofrece un servicio de administración del almacenamiento en la nube para facilitar la administración del proveedor de los servicios de Storage compatibles con Azure. Azure Storage proporciona la flexibilidad necesaria para almacenar y recuperar grandes cantidades de datos no estructurados, como documentos y archivos multimedia con Blobs de Azure y datos estructurados basados en NoSQL con Tablas de Azure.
 
 ### <a name="optional-resource-providers"></a>Proveedores de recursos opcionales
 

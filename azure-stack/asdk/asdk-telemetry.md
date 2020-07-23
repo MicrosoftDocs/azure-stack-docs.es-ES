@@ -7,12 +7,12 @@ ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 10/15/2019
-ms.openlocfilehash: df742ed6c0a2b082aaddd4498c313474a47c6227
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 455ad320466d1306b1bded888ff8ff0c0fbb52c7
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80362181"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86489970"
 ---
 # <a name="azure-stack-telemetry"></a>Telemetría de Azure Stack
 
@@ -23,7 +23,7 @@ Como operador de Azure Stack, la telemetría puede proporcionar información val
 > [!NOTE]
 > Azure Stack también se puede configurar para reenviar información de uso a Azure para la facturación. Esta información es necesaria para los clientes de Azure Stack de varios nodos que eligen la facturación de pago por uso. Los informes de uso se controlan de forma independiente de la telemetría y no son necesarios para los clientes de varios nodos que eligen el modelo de capacidad o para los usuarios del Kit de desarrollo de Azure Stack (ASDK). En estos escenarios, los informes de uso se pueden desactivar [mediante el script de registro](../operator/azure-stack-usage-reporting.md).
 
-La telemetría de Azure Stack se basa en el componente *Experiencia del usuario conectado y telemetría de Windows Server 2016*, que usa la tecnología de registro de [Seguimiento de eventos para Windows (ETW)](https://msdn.microsoft.com/library/dn904632(v=vs.85).aspx) para recopilar y almacenar eventos de telemetría y datos. Los componentes de Azure Stack usan la misma tecnología de registro para publicar eventos y datos que se recopilan mediante las API de seguimiento y registro de eventos del sistema operativo. Algunos ejemplos de componentes de Azure Stack son Proveedor de recursos de red, Proveedor de recursos de almacenamiento, Proveedor de recursos de supervisión y Proveedor de recursos de actualización. El componente Experiencia del usuario y telemetría asociadas cifra los datos mediante SSL y usa la asignación de certificados para transmitir datos de telemetría al servicio Microsoft Data Management a través de HTTPS.
+La telemetría de Azure Stack se basa en el componente *Experiencia del usuario conectado y telemetría de Windows Server 2016*, que usa la tecnología de registro de [Seguimiento de eventos para Windows (ETW)](/windows/win32/tracelogging/trace-logging-about) para recopilar y almacenar eventos de telemetría y datos. Los componentes de Azure Stack usan la misma tecnología de registro para publicar eventos y datos que se recopilan mediante las API de seguimiento y registro de eventos del sistema operativo. Algunos ejemplos de componentes de Azure Stack son Proveedor de recursos de red, Proveedor de recursos de almacenamiento, Proveedor de recursos de supervisión y Proveedor de recursos de actualización. El componente Experiencia del usuario y telemetría asociadas cifra los datos mediante SSL y usa la asignación de certificados para transmitir datos de telemetría al servicio Microsoft Data Management a través de HTTPS.
 
 > [!NOTE]
 > Para admitir el flujo de datos de telemetría, el puerto 443 (HTTPS) debe estar abierto en la red. El componente Experiencia del usuario conectado y telemetría se conecta al servicio Administración de datos de Microsoft en `https://v10.vortex-win.data.microsoft.com` y también a `https://settings-win.data.microsoft.com` para descargar la información de configuración.

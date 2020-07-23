@@ -7,12 +7,12 @@ ms.date: 05/13/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 05/13/2019
-ms.openlocfilehash: 98298b405bd818cb3cd1f67d52d1735a4cc3edd4
-ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
+ms.openlocfilehash: d9681a9245c856378a779a25ab3de2c051d97b0b
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82846966"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86489851"
 ---
 # <a name="asdk-requirements-and-considerations"></a>Requisitos y consideraciones de ASDK
 
@@ -140,5 +140,4 @@ Azure Stack necesita acceso a Internet, ya sea directamente o a través de un pr
 ## <a name="next-steps"></a>Pasos siguientes
 
 - [Descarga del paquete de implementación de ASDK](asdk-download.md).
-- Para más información acerca de Espacios de almacenamiento directo, consulte [Información general de Espacios de almacenamiento directos](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview).
-
+- Para más información acerca de Espacios de almacenamiento directo, consulte [Información general de Espacios de almacenamiento directos](/windows-server/storage/storage-spaces/storage-spaces-direct-overview).

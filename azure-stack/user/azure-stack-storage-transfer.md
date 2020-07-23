@@ -7,12 +7,12 @@ ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/06/2019
-ms.openlocfilehash: d61ce13c46e53f5eb2b9ed8fa544096db6ca8590
-ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
+ms.openlocfilehash: 496d22eac80c00c723732b6c5d12543b059f8c31
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81660149"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86566607"
 ---
 # <a name="use-data-transfer-tools-in-azure-stack-hub-storage"></a>Uso de herramientas de transferencia de datos en Azure Stack Hub Storage
 
@@ -276,7 +276,7 @@ El Explorador de Azure Storage es una aplicación independiente de Microsoft. Pe
 
 [Blobfuse](https://github.com/Azure/azure-storage-fuse) es un controlador virtual del sistema de archivos para Azure Blob Storage que permite acceder a los datos de blobs en bloques existentes en la cuenta de almacenamiento a través del sistema de archivos Linux. Azure Blob Storage es un servicio de almacenamiento de objetos y, por lo tanto, no tiene un espacio de nombres jerárquico. Blobfuse proporciona el espacio de nombres mediante el esquema de directorio virtual con el uso de la barra oblicua `/` como delimitador. Blobfuse funciona tanto en Azure como en Azure Stack Hub. 
 
-Para obtener más información sobre el montaje de almacenamiento de blobs como un sistema de archivos con Blobfuse en Linux, vea [Cómo montar el almacenamiento de blobs como sistema de archivos con blobfuse](https://docs.microsoft.com/azure/storage/blobs/storage-how-to-mount-container-linux). 
+Para obtener más información sobre el montaje de almacenamiento de blobs como un sistema de archivos con Blobfuse en Linux, vea [Cómo montar el almacenamiento de blobs como sistema de archivos con blobfuse](/azure/storage/blobs/storage-how-to-mount-container-linux). 
 
 En Azure Stack Hub, se debe especificar *blobEndpoint* mientras se configuran las credenciales de la cuenta de almacenamiento con accountName, accountKey/sasToken y containerName.
 

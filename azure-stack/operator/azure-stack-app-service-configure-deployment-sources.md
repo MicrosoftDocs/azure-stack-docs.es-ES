@@ -7,12 +7,12 @@ ms.date: 03/11/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 10/15/2019
-ms.openlocfilehash: f679f4a609f7be2798a664dc4a748e56f8b0d2fb
-ms.sourcegitcommit: ddcd083430ca905653d412dc2f7b813218d79509
+ms.openlocfilehash: 2dda2d52a1819f715f0b80f8d14c247ba256ed7f
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83374905"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86489783"
 ---
 # <a name="configure-deployment-sources-for-app-services-on-azure-stack-hub"></a>Configuración de orígenes de implementación para App Services en Azure Stack Hub
 
@@ -154,7 +154,7 @@ Debe tener una cuenta de Microsoft vinculada a una de OneDrive para completar es
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Los usuarios ahora pueden usar los orígenes de implementación para utilidades como la [implementación continua](https://docs.microsoft.com/azure/app-service/deploy-continuous-deployment), la [implementación de Git local](https://docs.microsoft.com/azure/app-service/deploy-local-git) y la [sincronización de carpetas en la nube](https://docs.microsoft.com/azure/app-service/deploy-content-sync).
+Los usuarios ahora pueden usar los orígenes de implementación para utilidades como la [implementación continua](/azure/app-service/deploy-continuous-deployment), la [implementación de Git local](/azure/app-service/deploy-local-git) y la [sincronización de carpetas en la nube](/azure/app-service/deploy-content-sync).
 
 <!--Image references-->
 [1]: ./media/azure-stack-app-service-configure-deployment-sources/App-service-provider-admin.png

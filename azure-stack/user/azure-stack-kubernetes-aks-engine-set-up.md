@@ -7,12 +7,12 @@ ms.date: 06/19/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 06/19/2020
-ms.openlocfilehash: 5c60fc396e15f7dd280740c7541a4207eb56d3ef
-ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
+ms.openlocfilehash: 37ae031199c0e547e635fc0473d833dc94865523
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85197096"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86566046"
 ---
 # <a name="set-up-the-prerequisites-for-the-aks-engine-on-azure-stack-hub"></a>Configuración de los requisitos previos para el motor de AKS en Azure Stack Hub
 
@@ -33,21 +33,21 @@ El operador de la nube deberá tener en vigor los siguientes elementos.
 | Azure Stack Hub 2002 o posterior | El motor de AKS requiere Azure Stack Hub 2002 u otra versión posterior. | Obligatorio | Si no está seguro de la versión de Azure Stack Hub, póngase en contacto con el operador de la nube. |
 | Extensión de script personalizado de Linux | Extensión de script personalizado de Linux 2.0<br>Oferta: Script personalizado para Linux 2.0<br>Versión: 2.0.6 (o la versión más reciente)<br>Publicador: Microsoft Corp | Obligatorio | Si no tiene este elemento en la suscripción, póngase en contacto con el operador de la nube. |
 | Imagen base de Ubuntu de AKS | Distribución de la imagen base de AKS en Ubuntu 16.04-LTS, mayo de 2020 (2020.05.13) | Obligatorio | Si no tiene este elemento en la suscripción, póngase en contacto con el operador de la nube. Para obtener más información sobre la dependencia de versión, consulte [Correspondencia de la versión del motor con la imagen base](#matching-engine-to-base-image-version).<br> Si es operador en la nube de Azure Stack Hub y desea ofrecer el motor de AKS, siga las instrucciones que encontrará en [Incorporación de requisitos previos del motor de Azure Kubernetes Service (AKS) al Marketplace de Azure Stack Hub](../operator/azure-stack-aks-engine.md). |
-| Identidad de la entidad de servicio (SPN) |  Una aplicación que necesita implementar o configurar recursos a través de Azure Resource Manager, debe estar representada por una entidad de servicio. | Obligatorio | Es posible que deba ponerse en contacto con el operador de Azure Stack Hub para este elemento.<br>Si se usa una identidad de entidad de servicio de Azure Active Directory (AAD), se necesita acceso a Internet desde las máquinas virtuales del clúster de Kubernetes para que la entidad de servicio pueda autenticarse con AAD. Si no hay acceso a Internet, el clúster de Kubernetes no será funcional.<br>Para obtener instrucciones, consulte [Uso de una identidad de aplicación para acceder a recursos](https://docs.microsoft.com/azure-stack/operator/azure-stack-create-service-principals). |
-| Rol de **colaborador** asignado (SPN) | Para permitir que una aplicación acceda a los recursos de su suscripción con su entidad de servicio, debe asignar la entidad de servicio un rol para un determinado recurso. | Obligatorio | Para obtener instrucciones, consulte la sección [Asignar un rol](https://docs.microsoft.com/azure-stack/operator/azure-stack-create-service-principals#assign-a-role). |
+| Identidad de la entidad de servicio (SPN) |  Una aplicación que necesita implementar o configurar recursos a través de Azure Resource Manager, debe estar representada por una entidad de servicio. | Obligatorio | Es posible que deba ponerse en contacto con el operador de Azure Stack Hub para este elemento.<br>Si se usa una identidad de entidad de servicio de Azure Active Directory (AAD), se necesita acceso a Internet desde las máquinas virtuales del clúster de Kubernetes para que la entidad de servicio pueda autenticarse con AAD. Si no hay acceso a Internet, el clúster de Kubernetes no será funcional.<br>Para obtener instrucciones, consulte [Uso de una identidad de aplicación para acceder a recursos](../operator/azure-stack-create-service-principals.md). |
+| Rol de **colaborador** asignado (SPN) | Para permitir que una aplicación acceda a los recursos de su suscripción con su entidad de servicio, debe asignar la entidad de servicio un rol para un determinado recurso. | Obligatorio | Para obtener instrucciones, consulte la sección [Asignar un rol](../operator/azure-stack-create-service-principals.md#assign-a-role). |
 
 
 Puede establecer los siguientes elementos.
 
 | Requisito previo | Descripción | Obligatorio | Instructions |
 | --- | --- | --- | --- |
-| Suscripción a Azure Stack Hub | A las ofertas de Azure Stack Hub se acceder mediante suscripciones. La oferta contiene los servicios que tiene a su disposición. | Obligatorio | Para poder implementar cargas de trabajo de inquilinos en Azure Stack Hub, primero es preciso obtener una [suscripción a Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-subscribe-services). |
-| Resource group | Un grupo de recursos es un contenedor que almacena los recursos relacionados con una solución de Azure. Si no especifica un grupo de recursos existente, la herramienta creará uno automáticamente. | Opcional | [Administración de grupos de recursos de Azure Resource Manager mediante Azure Portal](https://docs.microsoft.com/azure/azure-resource-manager/manage-resource-groups-portal) |
-| Clave pública privada | Para usar una conexión SSH abierta desde una máquina de desarrollo a la máquina virtual del servidor en una instancia de Azure Stack Hub que hospede una aplicación web, es preciso crear un par de claves, pública y privada, de Secure Shell (SSH). | Obligatorio | Para obtener instrucciones sobre cómo generar una clave, consulte [SSH Key Generation](https://docs.microsoft.com/azure-stack/user/azure-stack-dev-start-howto-ssh-public-key) (Generación de claves SSH).|
+| Suscripción a Azure Stack Hub | A las ofertas de Azure Stack Hub se acceder mediante suscripciones. La oferta contiene los servicios que tiene a su disposición. | Obligatorio | Para poder implementar cargas de trabajo de inquilinos en Azure Stack Hub, primero es preciso obtener una [suscripción a Azure Stack Hub](./azure-stack-subscribe-services.md). |
+| Resource group | Un grupo de recursos es un contenedor que almacena los recursos relacionados con una solución de Azure. Si no especifica un grupo de recursos existente, la herramienta creará uno automáticamente. | Opcional | [Administración de grupos de recursos de Azure Resource Manager mediante Azure Portal](/azure/azure-resource-manager/manage-resource-groups-portal) |
+| Clave pública privada | Para usar una conexión SSH abierta desde una máquina de desarrollo a la máquina virtual del servidor en una instancia de Azure Stack Hub que hospede una aplicación web, es preciso crear un par de claves, pública y privada, de Secure Shell (SSH). | Obligatorio | Para obtener instrucciones sobre cómo generar una clave, consulte [SSH Key Generation](./azure-stack-dev-start-howto-ssh-public-key.md) (Generación de claves SSH).|
 
 
 > [!Note]  
-> También puede crear los requisitos previos para el motor de AKS con la [CLI de Azure para Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-version-profiles-azurecli2) o [PowerShell de Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-powershell-install).
+> También puede crear los requisitos previos para el motor de AKS con la [CLI de Azure para Azure Stack Hub](./azure-stack-version-profiles-azurecli2.md) o [PowerShell de Azure Stack Hub](../operator/azure-stack-powershell-install.md).
 
 ## <a name="matching-engine-to-base-image-version"></a>Correspondencia de la versión del motor con la imagen base
 

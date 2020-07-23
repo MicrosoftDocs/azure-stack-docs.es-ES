@@ -7,16 +7,16 @@ ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: ee2352e6e7ee6b6e6a7322bcdb66ea4d24797eb8
-ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
+ms.openlocfilehash: e8563a21ec3c49fa9d5789b28a556645dc73b1ce
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84631129"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86567763"
 ---
 # <a name="windows-n-tier-application-on-azure-stack-hub-with-sql-server"></a>Aplicación Windows de n niveles en Azure Stack Hub con SQL Server
 
-Esta arquitectura de referencia muestra cómo implementar máquinas virtuales (VM) y una red virtual configurada para una aplicación de [n niveles](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/n-tier), con SQL Server en Windows para la capa de datos. 
+Esta arquitectura de referencia muestra cómo implementar máquinas virtuales (VM) y una red virtual configurada para una aplicación de [n niveles](/azure/architecture/guide/architecture-styles/n-tier), con SQL Server en Windows para la capa de datos. 
 
 ## <a name="architecture"></a>Architecture
 
@@ -26,7 +26,7 @@ La arquitectura tiene los siguientes componentes.
 
 ## <a name="general"></a>General
 
--   **Grupo de recursos**. Los [grupos de recursos](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) se utilizan para agrupar los recursos de Azure con el fin de que puedan administrarse según su duración, su propietario u otros criterios.
+-   **Grupo de recursos**. Los [grupos de recursos](/azure/azure-resource-manager/resource-group-overview) se utilizan para agrupar los recursos de Azure con el fin de que puedan administrarse según su duración, su propietario u otros criterios.
 
 -   **Conjunto de disponibilidad.** Un conjunto de disponibilidad es otra configuración de centro de datos para proporcionar redundancia y disponibilidad de máquina virtual. Esta configuración dentro de una marca de Azure Stack Hub garantiza que, durante un evento de mantenimiento planeado o no planeado, hay al menos una máquina virtual disponible. Las máquinas virtuales se colocan en un conjunto de disponibilidad que las distribuye entre varios dominios de error (hosts de Azure Stack Hub).
 
@@ -34,9 +34,9 @@ La arquitectura tiene los siguientes componentes.
 
 -   **Red virtual y subredes**. Todas las máquinas virtuales se implementan en una red virtual que se puede dividir en subredes. Cree una subred independiente para cada nivel.
 
--   **Equilibrador de carga de capa 7.** Como Application Gateway todavía no está disponible en Azure Stack Hub, existen alternativas disponibles en el [Marketplace de Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-marketplace-azure-items?view=azs-1908) como: [KEMP LoadMaster Load Balancer ADC Content Switch](https://azuremarketplace.microsoft.com/marketplace/apps/kemptech.vlm-azure)/ [f5 Big-IP Virtual Edition](https://azuremarketplace.microsoft.com/marketplace/apps/f5-networks.f5-big-ip-best) o [A10 vThunder ADC](https://azuremarketplace.microsoft.com/marketplace/apps/a10networks.vthunder-414-gr1)
+-   **Equilibrador de carga de capa 7.** Como Application Gateway todavía no está disponible en Azure Stack Hub, existen alternativas disponibles en el [Marketplace de Azure Stack Hub](../operator/azure-stack-marketplace-azure-items.md?view=azs-1908) como: [KEMP LoadMaster Load Balancer ADC Content Switch](https://azuremarketplace.microsoft.com/marketplace/apps/kemptech.vlm-azure)/ [f5 Big-IP Virtual Edition](https://azuremarketplace.microsoft.com/marketplace/apps/f5-networks.f5-big-ip-best) o [A10 vThunder ADC](https://azuremarketplace.microsoft.com/marketplace/apps/a10networks.vthunder-414-gr1)
 
--   **Equilibradores de carga.** Use [Azure Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview) para distribuir el tráfico de red desde el nivel web al nivel de empresa y desde el nivel de empresa a SQL Server.
+-   **Equilibradores de carga.** Use [Azure Load Balancer](/azure/load-balancer/load-balancer-overview) para distribuir el tráfico de red desde el nivel web al nivel de empresa y desde el nivel de empresa a SQL Server.
 
 -   **Grupos de seguridad de red** (NSG). Use NSG para restringir el tráfico de red dentro de la red virtual. Por ejemplo, en la arquitectura de tres niveles que se muestra aquí, el nivel de base de datos no acepta el tráfico procedente del front-end web, solo el procedente del nivel de empresa y la subred de administración.
 
@@ -48,7 +48,7 @@ La arquitectura tiene los siguientes componentes.
 
 -   **Servidores de Active Directory Domain Services (AD DS)** . Los objetos de equipo del clúster de conmutación por error y sus roles en clúster asociados se crean en Active Directory Domain Services (AD DS). La configuración de servidores de AD DS en máquinas virtuales en la misma red virtual es el método preferido para unir otras máquinas virtuales a AD DS. También puede unir las máquinas virtuales a una instancia de AD DS empresarial existente conectando la red virtual a la red empresarial con la conexión VPN. Con ambos enfoques, debe cambiar el DNS de la red virtual al servidor DNS de AD DS (en la red virtual o la red empresarial existente) para resolver el FQDN del dominio de AD DS.
 
--   **Testigo en la nube**. Un clúster de conmutación por error requiere que más de la mitad de sus nodos se estén ejecutando, lo que se conoce como tener cuórum. Si el clúster tiene solo dos nodos, una partición de la red podría provocar que cada uno de ellos creyera que es el principal. En ese caso, se necesita un *testigo* que sea quien dilucide cuál es el principal y establezca el cuórum. Un testigo es un recurso, como por ejemplo un disco compartido, que puede actuar como dilucidador para establecer el cuórum. Un testigo en la nube es un tipo de testigo que usa Azure Blob Storage. Para más información acerca del concepto de quórum, consulte [Understanding cluster and pool quorum](https://docs.microsoft.com/windows-server/storage/storage-spaces/understand-quorum) (Descripción del cuórum de clúster y de grupo). Para más información acerca del testigo en la nube, consulte [Implementación de un testigo en la nube en un clúster de conmutación por error](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness). En Azure Stack Hub, el punto de conexión del testigo en la nube es distinto de Azure global. 
+-   **Testigo en la nube**. Un clúster de conmutación por error requiere que más de la mitad de sus nodos se estén ejecutando, lo que se conoce como tener cuórum. Si el clúster tiene solo dos nodos, una partición de la red podría provocar que cada uno de ellos creyera que es el principal. En ese caso, se necesita un *testigo* que sea quien dilucide cuál es el principal y establezca el cuórum. Un testigo es un recurso, como por ejemplo un disco compartido, que puede actuar como dilucidador para establecer el cuórum. Un testigo en la nube es un tipo de testigo que usa Azure Blob Storage. Para más información acerca del concepto de quórum, consulte [Understanding cluster and pool quorum](/windows-server/storage/storage-spaces/understand-quorum) (Descripción del cuórum de clúster y de grupo). Para más información acerca del testigo en la nube, consulte [Implementación de un testigo en la nube en un clúster de conmutación por error](/windows-server/failover-clustering/deploy-cloud-witness). En Azure Stack Hub, el punto de conexión del testigo en la nube es distinto de Azure global. 
 
 Puede tener el aspecto siguiente:
 
@@ -74,13 +74,13 @@ Cuando cree la red virtual, determine cuántas direcciones IP requieren los recu
 
 Elija un intervalo de direcciones que no se superponga con la red local, en caso de que necesite configurar una puerta de enlace entre la red virtual y la red local más adelante. Una vez creada la red virtual, no se puede cambiar el intervalo de direcciones.
 
-Diseñe subredes teniendo en cuenta los requisitos de funcionalidad y seguridad. Todas las máquinas virtuales dentro del mismo nivel o rol deben incluirse en la misma subred, lo que puede servir como un límite de seguridad. Para más información sobre cómo diseñar las redes virtuales y las subredes, consulte [Planeamiento y diseño de Azure Virtual Networks](https://docs.microsoft.com/azure/virtual-network/virtual-network-vnet-plan-design-arm).
+Diseñe subredes teniendo en cuenta los requisitos de funcionalidad y seguridad. Todas las máquinas virtuales dentro del mismo nivel o rol deben incluirse en la misma subred, lo que puede servir como un límite de seguridad. Para más información sobre cómo diseñar las redes virtuales y las subredes, consulte [Planeamiento y diseño de Azure Virtual Networks](/azure/virtual-network/virtual-network-vnet-plan-design-arm).
 
 ### <a name="load-balancers"></a>Equilibradores de carga
 
 No exponga las máquinas virtuales directamente a Internet; en su lugar, asigne una dirección IP privada a cada una. Los clientes se conectan mediante la dirección IP pública asociada con el equilibrador de carga de capa 7.
 
-Defina reglas del equilibrador de carga para dirigir el tráfico de red a las máquinas virtuales. Por ejemplo, para habilitar el tráfico HTTP, asigne el puerto 80 de la configuración de front-end al puerto 80 del grupo de direcciones de back-end. Cuando un cliente envía una solicitud HTTP al puerto 80, el equilibrador de carga selecciona una dirección IP de back-end mediante un [algoritmo hash](https://docs.microsoft.com/azure/load-balancer/concepts#limitations) que incluye la dirección IP de origen. Las solicitudes del cliente se distribuyen entre todas las máquinas virtuales del grupo de direcciones de back-end.
+Defina reglas del equilibrador de carga para dirigir el tráfico de red a las máquinas virtuales. Por ejemplo, para habilitar el tráfico HTTP, asigne el puerto 80 de la configuración de front-end al puerto 80 del grupo de direcciones de back-end. Cuando un cliente envía una solicitud HTTP al puerto 80, el equilibrador de carga selecciona una dirección IP de back-end mediante un [algoritmo hash](/azure/load-balancer/concepts#limitations) que incluye la dirección IP de origen. Las solicitudes del cliente se distribuyen entre todas las máquinas virtuales del grupo de direcciones de back-end.
 
 ### <a name="network-security-groups"></a>Grupos de seguridad de red
 
@@ -98,15 +98,15 @@ Cree las reglas 2 a 4 con una prioridad más alta que la primera regla para que 
 
 ## <a name="sql-server-always-on-availability-groups"></a>Grupos de disponibilidad AlwaysOn de SQL Server
 
-Se recomiendan los [grupos de disponibilidad AlwaysOn](https://msdn.microsoft.com/library/hh510230.aspx) para alta disponibilidad de SQL Server. Antes de Windows Server 2016, los grupos de disponibilidad AlwaysOn requerían un controlador de dominio y todos los nodos del grupo de disponibilidad debían estar en el mismo dominio de AD.
+Se recomiendan los [grupos de disponibilidad AlwaysOn](/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-ver15) para alta disponibilidad de SQL Server. Antes de Windows Server 2016, los grupos de disponibilidad AlwaysOn requerían un controlador de dominio y todos los nodos del grupo de disponibilidad debían estar en el mismo dominio de AD.
 
 En el caso de alta disponibilidad del nivel de máquina virtual, todas las máquinas virtuales de SQL deben estar en un conjunto de disponibilidad.
 
-Otros niveles se conectan a la base de datos a través de una [escucha de grupo de disponibilidad](https://msdn.microsoft.com/library/hh213417.aspx). La escucha permite a un cliente SQL conectarse sin conocer el nombre de la instancia física de SQL Server. Las máquinas virtuales que acceden a la base de datos deben estar unidas al dominio. El cliente (en este caso, otro nivel) utiliza DNS para resolver el nombre de la red virtual de la escucha en direcciones IP.
+Otros niveles se conectan a la base de datos a través de una [escucha de grupo de disponibilidad](/sql/database-engine/availability-groups/windows/listeners-client-connectivity-application-failover?view=sql-server-ver15). La escucha permite a un cliente SQL conectarse sin conocer el nombre de la instancia física de SQL Server. Las máquinas virtuales que acceden a la base de datos deben estar unidas al dominio. El cliente (en este caso, otro nivel) utiliza DNS para resolver el nombre de la red virtual de la escucha en direcciones IP.
 
 Configure el grupo de disponibilidad AlwaysOn de SQL Server como sigue:
 
-1.  Cree un clúster de clústeres de conmutación por error de Windows Server (WSFC), un grupo de disponibilidad AlwaysOn de SQL Server y una réplica principal. Para más información, consulte [Introducción a Grupos de disponibilidad AlwaysOn](https://msdn.microsoft.com/library/gg509118.aspx).
+1.  Cree un clúster de clústeres de conmutación por error de Windows Server (WSFC), un grupo de disponibilidad AlwaysOn de SQL Server y una réplica principal. Para más información, consulte [Introducción a Grupos de disponibilidad AlwaysOn](/sql/database-engine/availability-groups/windows/getting-started-with-always-on-availability-groups-sql-server?view=sql-server-ver15).
 
 2.  Cree un equilibrador de carga interno con una dirección IP privada estática.
 
@@ -117,21 +117,21 @@ Configure el grupo de disponibilidad AlwaysOn de SQL Server como sigue:
 > [!Note]
 > Cuando la IP flotante está habilitada, el número de puerto de front-end debe ser el mismo que el número de puerto de back-end en la regla del equilibrador de carga.
 
-Cuando un cliente SQL intenta conectarse, el equilibrador de carga enruta la solicitud de conexión a la réplica principal. Si se produce una conmutación por error a otra réplica, el equilibrador de carga enruta automáticamente las nuevas solicitudes a una nueva réplica principal. Para más información, consulte [Configuración de un equilibrador de carga para Grupos de disponibilidad AlwaysOn de SQL Server](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-alwayson-int-listener).
+Cuando un cliente SQL intenta conectarse, el equilibrador de carga enruta la solicitud de conexión a la réplica principal. Si se produce una conmutación por error a otra réplica, el equilibrador de carga enruta automáticamente las nuevas solicitudes a una nueva réplica principal. Para más información, consulte [Configuración de un equilibrador de carga para Grupos de disponibilidad AlwaysOn de SQL Server](/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-alwayson-int-listener).
 
 Durante una conmutación por error, se cierran las conexiones de cliente existentes. Una vez completada la conmutación por error, las conexiones nuevas se enrutarán a la nueva réplica principal.
 
-Si la aplicación realiza más lecturas que escrituras, puede descargar algunas de las consultas de solo lectura en una réplica secundaria. Consulte [Usar un agente de escucha para conectarse a una réplica secundaria de solo lectura (enrutamiento de solo lectura)](https://technet.microsoft.com/library/hh213417.aspx#ConnectToSecondary).
+Si la aplicación realiza más lecturas que escrituras, puede descargar algunas de las consultas de solo lectura en una réplica secundaria. Consulte [Usar un agente de escucha para conectarse a una réplica secundaria de solo lectura (enrutamiento de solo lectura)](/sql/database-engine/availability-groups/windows/listeners-client-connectivity-application-failover?view=sql-server-ver15#ConnectToSecondary).
 
-Para probar la implementación, [fuerce una conmutación por error manual](https://msdn.microsoft.com/library/ff877957.aspx) del grupo de disponibilidad.
+Para probar la implementación, [fuerce una conmutación por error manual](/sql/database-engine/availability-groups/windows/perform-a-forced-manual-failover-of-an-availability-group-sql-server?view=sql-server-ver15) del grupo de disponibilidad.
 
-Si necesita optimizar el rendimiento de SQL, consulte también el artículo [Procedimientos recomendados de SQL Server para optimizar el rendimiento en Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-sql-server-vm-considerations).
+Si necesita optimizar el rendimiento de SQL, consulte también el artículo [Procedimientos recomendados de SQL Server para optimizar el rendimiento en Azure Stack Hub](./azure-stack-sql-server-vm-considerations.md).
 
 **Jumpbox**
 
 No permita el acceso mediante RDP desde la red pública de Internet a las máquinas virtuales que ejecutan la carga de trabajo de la aplicación. En su lugar, todo el acceso RDP a estas máquinas virtuales se debe realizar a través de JumpBox. Un administrador inicia sesión en JumpBox y, después, en la otra máquina virtual desde JumpBox. JumpBox permite el tráfico RDP desde Internet, pero solo desde direcciones IP conocidas y seguras.
 
-JumpBox tiene unos requisitos de rendimiento mínimos, por lo que puede seleccionar un pequeño tamaño de máquina virtual. Cree una [dirección IP pública](https://docs.microsoft.com/azure/virtual-network/virtual-network-ip-addresses-overview-arm) para JumpBox. Coloque JumpBox en la misma red virtual que las demás máquinas virtuales, pero en una subred de administración independiente.
+JumpBox tiene unos requisitos de rendimiento mínimos, por lo que puede seleccionar un pequeño tamaño de máquina virtual. Cree una [dirección IP pública](/azure/virtual-network/virtual-network-ip-addresses-overview-arm) para JumpBox. Coloque JumpBox en la misma red virtual que las demás máquinas virtuales, pero en una subred de administración independiente.
 
 Para proteger JumpBox, agregue una regla de grupo de seguridad de red que permita las conexiones RDP solo desde un conjunto seguro de direcciones IP públicas. Configure el NSG para las demás subredes, a fin de permitir el tráfico RDP de la subred de administración.
 
@@ -139,15 +139,15 @@ Para proteger JumpBox, agregue una regla de grupo de seguridad de red que permit
 
 ### <a name="scale-sets"></a>Conjuntos de escalado
 
-Para los niveles web y de empresa, considere la posibilidad de usar [conjuntos de escalado de máquinas virtuales](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-design-overview), en lugar de implementar máquinas virtuales independientes. Un conjunto de escalado permite implementar y administrar de manera sencilla un conjunto de máquinas virtuales idénticas. Considere la posibilidad de usar conjuntos de escalado si necesita escalar horizontalmente las máquinas virtuales de manera rápida.
+Para los niveles web y de empresa, considere la posibilidad de usar [conjuntos de escalado de máquinas virtuales](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-design-overview), en lugar de implementar máquinas virtuales independientes. Un conjunto de escalado permite implementar y administrar de manera sencilla un conjunto de máquinas virtuales idénticas. Considere la posibilidad de usar conjuntos de escalado si necesita escalar horizontalmente las máquinas virtuales de manera rápida.
 
 Hay dos maneras básicas de configurar máquinas virtuales implementadas en un conjunto de escalado:
 
 -   Use extensiones para configurar la máquina virtual después de implementarla. Con este método, las nuevas instancias de máquina virtual pueden tardar más en iniciarse que una máquina virtual sin extensiones.
 
--   Implemente un [disco administrado](https://docs.microsoft.com/azure-stack/user/azure-stack-managed-disk-considerations) con una imagen de disco personalizada. Esta opción puede ser más rápida de implementar. Sin embargo, requiere que la imagen esté actualizada.
+-   Implemente un [disco administrado](./azure-stack-managed-disk-considerations.md) con una imagen de disco personalizada. Esta opción puede ser más rápida de implementar. Sin embargo, requiere que la imagen esté actualizada.
 
-Para más información, consulte [Consideraciones de diseño para conjuntos de escalado](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-design-overview). Esta consideración de diseño se cumple principalmente para Azure Stack Hub, aunque hay algunos puntos en los que debe poner atención:
+Para más información, consulte [Consideraciones de diseño para conjuntos de escalado](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-design-overview). Esta consideración de diseño se cumple principalmente para Azure Stack Hub, aunque hay algunos puntos en los que debe poner atención:
 
 -   Los conjuntos de escalado de máquinas virtuales de Azure Stack Hub no admiten el sobreaprovisionamiento ni las actualizaciones graduales.
 
@@ -159,18 +159,18 @@ Para más información, consulte [Consideraciones de diseño para conjuntos de e
 
 ## <a name="subscription-limits"></a>Límites de suscripción
 
-Cada suscripción de inquilino de Azure Stack Hub tiene límites predeterminados, incluido un número máximo de máquinas virtuales por región que configura el operador de Azure Stack Hub. Para más información, consulte [Introducción a los servicios, planes, ofertas y suscripciones de Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/service-plan-offer-subscription-overview). Consulte también [Tipos de cuota en Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-quota-types).
+Cada suscripción de inquilino de Azure Stack Hub tiene límites predeterminados, incluido un número máximo de máquinas virtuales por región que configura el operador de Azure Stack Hub. Para más información, consulte [Introducción a los servicios, planes, ofertas y suscripciones de Azure Stack Hub](../operator/service-plan-offer-subscription-overview.md). Consulte también [Tipos de cuota en Azure Stack Hub](../operator/azure-stack-quota-types.md).
 
 ## <a name="security-considerations"></a>Consideraciones sobre la seguridad
 
 Las redes virtuales son un límite de aislamiento del tráfico de Azure. De manera predeterminada, las máquinas virtuales de una red virtual no se pueden comunicar directamente con las máquinas virtuales de otra red virtual.
 
-**NSG**. Use los [grupos de seguridad de red](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg) para restringir el tráfico desde y hacia Internet. Para más información, consulte [Servicios en la nube de Microsoft y seguridad de red](https://docs.microsoft.com/azure/best-practices-network-security).
+**NSG**. Use los [grupos de seguridad de red](/azure/virtual-network/virtual-networks-nsg) para restringir el tráfico desde y hacia Internet. Para más información, consulte [Servicios en la nube de Microsoft y seguridad de red](/azure/best-practices-network-security).
 
 **DMZ**. Considere la posibilidad de agregar una aplicación virtual de red (NVA) para crear una red perimetral entre la red de Internet y la red virtual de Azure. NVA es un término genérico para una aplicación virtual que puede realizar tareas relacionadas con la red, como firewall, inspección de paquetes, auditoría y enrutamiento personalizado.
 
-**Cifrado**. Cifre datos confidenciales en reposo y use [Key Vault en Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-key-vault-manage-portal) para administrar las claves de cifrado de la base de datos. Para más información, consulte [Configuración de la integración de Azure Key Vault para SQL Server en máquinas virtuales de Azure](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-ps-sql-keyvault). También se recomienda almacenar los secretos de aplicación como, por ejemplo, las cadenas de conexión de base de datos, en Key Vault.
+**Cifrado**. Cifre datos confidenciales en reposo y use [Key Vault en Azure Stack Hub](./azure-stack-key-vault-manage-portal.md) para administrar las claves de cifrado de la base de datos. Para más información, consulte [Configuración de la integración de Azure Key Vault para SQL Server en máquinas virtuales de Azure](/azure/virtual-machines/virtual-machines-windows-ps-sql-keyvault). También se recomienda almacenar los secretos de aplicación como, por ejemplo, las cadenas de conexión de base de datos, en Key Vault.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Para más información sobre los patrones de nube de Azure, consulte [Patrones de diseño en la nube](https://docs.microsoft.com/azure/architecture/patterns).
+- Para más información sobre los patrones de nube de Azure, consulte [Patrones de diseño en la nube](/azure/architecture/patterns).

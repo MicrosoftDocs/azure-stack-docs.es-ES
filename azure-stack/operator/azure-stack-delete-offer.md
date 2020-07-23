@@ -7,12 +7,12 @@ ms.date: 08/13/2019
 ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 04/25/2019
-ms.openlocfilehash: 3c8c8b424d6ce555b19f4a77dbb8275b731f488e
-ms.sourcegitcommit: 70c344b3c9c63f8c12867b2cdfdd1794fcc518dc
+ms.openlocfilehash: 3ceea390376610ca1354a1b015ca91a5edd096e5
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82836145"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86566301"
 ---
 # <a name="delete-quotas-plans-offers-and-subscriptions"></a>Eliminación de cuotas, planes, ofertas y suscripciones
 
@@ -59,8 +59,9 @@ Desde el portal de administración puede ver y editar las cuotas existentes. Par
 
 También se pueden eliminar algunas cuotas mediante las siguientes API REST:
 
-- [Proceso](/rest/api/azurestack/quotas%20(compute)/delete)
+- [Proceso](/rest/api/azurestack/quotas/delete)
 - [Network](/rest/api/azurestack/quotas%20(network)/delete)
+- [Storage](/rest/api/azurestack/storagequotas/delete)
 
 > [!NOTE]
 > Si cualquiera de los planes actuales utiliza alguna cuota, esta no se puede eliminar. Primero debe eliminar el plan al que hace referencia la cuota.

@@ -4,15 +4,17 @@ description: Cómo reemplazar unidades con errores en Azure Stack HCI.
 author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
-ms.date: 06/24/2020
-ms.openlocfilehash: 93aa7035719fcfd6d96be0c21fc4616608e8af85
-ms.sourcegitcommit: bd775dfb298ba1dc67ac9ac7d591794179151026
+ms.date: 07/21/2020
+ms.openlocfilehash: d3d03f1e5cc89186e2eb8198b52e96bffbd21768
+ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85764559"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86866490"
 ---
 # <a name="replace-failed-drives-on-azure-stack-hci"></a>Reemplazar unidades con errores en Azure Stack HCI
+
+> Se aplica a: Azure Stack HCI, versión 20H2; Windows Server 2019
 
 Azure Stack HCI funciona con unidades SATA, SAS o NVMe de conexión directa o unidades de memoria persistente, cada una de ellas conectada directamente a un solo servidor. Si se produce un error en una unidad, tendrá que acceder al hardware del servidor físico para reemplazarla.
 

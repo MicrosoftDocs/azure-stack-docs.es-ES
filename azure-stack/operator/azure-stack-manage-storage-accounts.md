@@ -7,12 +7,12 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: xiaofmao
 ms.lastreviewed: 03/19/2019
-ms.openlocfilehash: 2d836c601f292b25a472b38d1afef464a3b22960
-ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
+ms.openlocfilehash: a99339b2a8708bac8c20b5f2fb507e42fc7588de
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84630925"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86488661"
 ---
 # <a name="manage-azure-stack-hub-storage-accounts"></a>Administración de cuentas de almacenamiento de Azure Stack Hub
 
@@ -123,7 +123,7 @@ También puede usar PowerShell para reemplazar explícitamente el período de re
 **Para reclamar la capacidad mediante PowerShell:**
 
 1. Confirme que ha instalado y configurado Azure PowerShell. Si no es así, use las siguientes instrucciones: 
-   * Para instalar la versión más reciente de Azure PowerShell y asociarla a su suscripción de Azure, consulte [Instalación y configuración de Azure PowerShell](https://azure.microsoft.com/documentation/articles/powershell-install-configure/).
+   * Para instalar la versión más reciente de Azure PowerShell y asociarla a su suscripción de Azure, consulte [Instalación y configuración de Azure PowerShell](/powershell/azure/).
    Para más información sobre los cmdlets de Azure Resource Manager, consulte [Uso de Azure PowerShell con Azure Resource Manager](https://go.microsoft.com/fwlink/?LinkId=394767).
 2. Ejecute los siguientes cmdlets:
 
@@ -135,7 +135,7 @@ También puede usar PowerShell para reemplazar explícitamente el período de re
     Start-AzsReclaimStorageCapacity -FarmName $farm_name
 ```
 
-Para más información, consulte la [documentación de PowerShell de Azure Stack Hub](https://docs.microsoft.com/powershell/azure/azure-stack/overview).
+Para más información, consulte la [documentación de PowerShell de Azure Stack Hub](/powershell/azure/azure-stack/overview).
  
 
 ## <a name="next-steps"></a>Pasos siguientes

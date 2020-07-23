@@ -7,12 +7,12 @@ ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: 7667039bc64fe45f912cb855d5cb832b7fe5d28f
-ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
+ms.openlocfilehash: fe96b2adeb679492a2f6ca820880763c0c2c0686
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81659876"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86567814"
 ---
 # <a name="run-an-n-tier-application-in-multiple-azure-stack-hub-regions-for-high-availability"></a>Ejecución de una aplicación de n niveles en varias regiones de Azure Stack Hub para lograr alta disponibilidad
 
@@ -29,15 +29,15 @@ Esta arquitectura se basa en la que se muestra en [Aplicación de n niveles con 
 
 -   **Regiones primarias y secundarias** Use dos regiones para lograr una mayor disponibilidad. Una es la región primaria. La otra región es para la conmutación por error.
 
--   **Azure Traffic Manager**. [Traffic Manager](https://azure.microsoft.com/services/traffic-manager) enruta las solicitudes entrantes a una de las regiones. Durante las operaciones normales enruta las solicitudes a la región primaria. Si dicha región no está disponible, Traffic Manager conmuta por error a la región secundaria. Para más información, consulte la sección [Configuración de Traffic Manager](https://docs.microsoft.com/azure/architecture/reference-architectures/n-tier/multi-region-sql-server#traffic-manager-configuration).
+-   **Azure Traffic Manager**. [Traffic Manager](https://azure.microsoft.com/services/traffic-manager) enruta las solicitudes entrantes a una de las regiones. Durante las operaciones normales enruta las solicitudes a la región primaria. Si dicha región no está disponible, Traffic Manager conmuta por error a la región secundaria. Para más información, consulte la sección [Configuración de Traffic Manager](/azure/architecture/reference-architectures/n-tier/multi-region-sql-server#traffic-manager-configuration).
 
--   **Grupos de recursos**. Cree [grupos de recursos](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) independientes para la región primaria y para la región secundaria. De esta manera, obtiene la flexibilidad para administrar cada región como una única colección de recursos. Por ejemplo, podría volver a implementar una región, sin quitar la otra. [Vincule los grupos de recursos](https://docs.microsoft.com/azure/resource-group-link-resources), de modo que pueda ejecutar una consulta para obtener una lista de todos los recursos de la aplicación.
+-   **Grupos de recursos**. Cree [grupos de recursos](/azure/azure-resource-manager/resource-group-overview) independientes para la región primaria y para la región secundaria. De esta manera, obtiene la flexibilidad para administrar cada región como una única colección de recursos. Por ejemplo, podría volver a implementar una región, sin quitar la otra. [Vincule los grupos de recursos](/azure/resource-group-link-resources), de modo que pueda ejecutar una consulta para obtener una lista de todos los recursos de la aplicación.
 
 -   **Redes virtuales**. Cree una red virtual independiente para cada región. Asegúrese de que los espacios de direcciones no se superpongan.
 
--   **Grupo de disponibilidad AlwaysOn de SQL Server** Si usa SQL Server, se recomiendan los [grupos de disponibilidad AlwaysOn de SQL](https://msdn.microsoft.com/library/hh510230.aspx) para conseguir alta disponibilidad. Cree un único grupo de disponibilidad que incluya las instancias de SQL Server en ambas regiones.
+-   **Grupo de disponibilidad AlwaysOn de SQL Server** Si usa SQL Server, se recomiendan los [grupos de disponibilidad AlwaysOn de SQL](/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-ver15) para conseguir alta disponibilidad. Cree un único grupo de disponibilidad que incluya las instancias de SQL Server en ambas regiones.
 
--   **Conexión VPN de red virtual a red virtual**. Como Emparejamiento de VNET todavía no está disponible en Azure Stack Hub, use la conexión VPN de red virtual a red virtual para conectar las dos redes virtuales. Consulte [Red virtual a red virtual en Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-network-howto-vnet-to-vnet?view=azs-1908) para más información.
+-   **Conexión VPN de red virtual a red virtual**. Como Emparejamiento de VNET todavía no está disponible en Azure Stack Hub, use la conexión VPN de red virtual a red virtual para conectar las dos redes virtuales. Consulte [Red virtual a red virtual en Azure Stack Hub](./azure-stack-network-howto-vnet-to-vnet.md?view=azs-1908) para más información.
 
 ## <a name="recommendations"></a>Recomendaciones
 
@@ -57,9 +57,9 @@ Esta arquitectura de referencia se centra en el enfoque activo/pasivo con espera
 
 Al configurar Traffic Manager, tenga en cuenta lo siguiente:
 
--   **Enrutamiento**. Traffic Manager admite varios [algoritmos de enrutamiento](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-routing-methods). Para el escenario descrito en este artículo, use el enrutamiento de *prioridad* (anteriormente conocido como enrutamiento de *conmutación por error*). Con esta configuración, Traffic Manager envía todas las solicitudes a la región primaria, a no ser que no sea posible comunicarse con ella. En ese momento, conmuta por error automáticamente a la región secundaria. Consulte [Configuración del método de conmutación por error](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-configure-failover-routing-method).
+-   **Enrutamiento**. Traffic Manager admite varios [algoritmos de enrutamiento](/azure/traffic-manager/traffic-manager-routing-methods). Para el escenario descrito en este artículo, use el enrutamiento de *prioridad* (anteriormente conocido como enrutamiento de *conmutación por error*). Con esta configuración, Traffic Manager envía todas las solicitudes a la región primaria, a no ser que no sea posible comunicarse con ella. En ese momento, conmuta por error automáticamente a la región secundaria. Consulte [Configuración del método de conmutación por error](/azure/traffic-manager/traffic-manager-configure-failover-routing-method).
 
--   **Sondeo de mantenimiento**. Traffic Manager usa un [sondeo](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-monitoring) HTTP (o HTTPS) para supervisar la disponibilidad de cada región. El sondeo comprueba si hay una respuesta HTTP 200 para una ruta de acceso de dirección URL especificada. Como procedimiento recomendado, cree un punto de conexión que indique el estado general de la aplicación y úselo para el sondeo de estado. En caso contrario, el sondeo podría informar de un punto de conexión correcto cuando realmente se producen errores en partes críticas de la aplicación. Para más información, consulte [Patrón Health Endpoint Monitoring](https://docs.microsoft.com/azure/architecture/patterns/health-endpoint-monitoring).
+-   **Sondeo de mantenimiento**. Traffic Manager usa un [sondeo](/azure/traffic-manager/traffic-manager-monitoring) HTTP (o HTTPS) para supervisar la disponibilidad de cada región. El sondeo comprueba si hay una respuesta HTTP 200 para una ruta de acceso de dirección URL especificada. Como procedimiento recomendado, cree un punto de conexión que indique el estado general de la aplicación y úselo para el sondeo de estado. En caso contrario, el sondeo podría informar de un punto de conexión correcto cuando realmente se producen errores en partes críticas de la aplicación. Para más información, consulte [Patrón Health Endpoint Monitoring](/azure/architecture/patterns/health-endpoint-monitoring).
 
 Cuando Traffic Manager conmuta por error, hay un período de tiempo en que los clientes no pueden comunicarse con la aplicación. La duración viene determinada por los siguientes factores:
 
@@ -67,13 +67,13 @@ Cuando Traffic Manager conmuta por error, hay un período de tiempo en que los c
 
 -   Los servidores DNS deben actualizar los registros DNS almacenados en caché con la dirección IP, lo cual depende del período de vida (TTL) de DNS. El TTL predeterminado es de 300 segundos (5 minutos), pero puede configurar este valor al crear el perfil de Traffic Manager.
 
-Para más información, consulte el artículo [sobre la supervisión de Traffic Manager](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-monitoring).
+Para más información, consulte el artículo [sobre la supervisión de Traffic Manager](/azure/traffic-manager/traffic-manager-monitoring).
 
 Si Traffic Manager conmuta por error, se recomienda realizar una conmutación por recuperación manual en lugar de implementar una automática. En caso contrario, puede crear una situación donde la aplicación va y viene incesantemente entre regiones. Compruebe que todos los subsistemas de aplicación tengan un estado correcto antes de la conmutación por recuperación.
 
 Tenga en cuenta que Traffic Manager conmuta por recuperación automáticamente de forma predeterminada. Para evitar esto, reduzca manualmente la prioridad de la región primaria después de un evento de conmutación por error. Por ejemplo, suponga que la región primaria tiene la prioridad 1 y la secundaria la prioridad 2. Después de una conmutación por error, establezca la región primaria en la prioridad 3 para evitar la conmutación por recuperación automática. Cuando esté listo para cambiar de nuevo, actualice la prioridad a 1.
 
-El siguiente comando de la [CLI de Azure](https://docs.microsoft.com/cli/azure/) actualiza la prioridad:
+El siguiente comando de la [CLI de Azure](/cli/azure/) actualiza la prioridad:
 
 ```cli  
 az network traffic-manager endpoint update --resource-group <resource-group> --profile-name <profile>
@@ -105,15 +105,15 @@ Para configurar el grupo de disponibilidad:
 
 -   Asigne una dirección IP estática a cada controlador de dominio.
 
--   Cree una [VPN](https://docs.microsoft.com/azure-stack/user/azure-stack-vpn-gateway-about-vpn-gateways) para habilitar la comunicación entre dos redes virtuales.
+-   Cree una [VPN](./azure-stack-vpn-gateway-about-vpn-gateways.md) para habilitar la comunicación entre dos redes virtuales.
 
--   Para cada red virtual, agregue las direcciones IP de los controladores de dominio (de ambas regiones) a la lista de servidores DNS. Puede usar el siguiente comando de la CLI. Para más información, consulte [Cambio de servidores DNS](https://docs.microsoft.com/azure/virtual-network/manage-virtual-network#change-dns-servers).
+-   Para cada red virtual, agregue las direcciones IP de los controladores de dominio (de ambas regiones) a la lista de servidores DNS. Puede usar el siguiente comando de la CLI. Para más información, consulte [Cambio de servidores DNS](/azure/virtual-network/manage-virtual-network#change-dns-servers).
 
     ```cli
     az network vnet update --resource-group <resource-group> --name <vnet-name> --dns-servers "10.0.0.4,10.0.0.6,172.16.0.4,172.16.0.6"
     ```
 
--   Cree un clúster de [Clústeres de conmutación por error de Windows Server](https://msdn.microsoft.com/library/hh270278.aspx) (WSFC) que incluya las instancias de SQL Server en ambas regiones.
+-   Cree un clúster de [Clústeres de conmutación por error de Windows Server](/sql/sql-server/failover-clusters/windows/windows-server-failover-clustering-wsfc-with-sql-server?view=sql-server-ver15) (WSFC) que incluya las instancias de SQL Server en ambas regiones.
 
 -   Cree un grupo de disponibilidad AlwaysOn de SQL Server que incluya las instancias de SQL Server en las regiones primaria y secundaria. Consulte [Extending Always On Availability Group to Remote Azure Datacenter (PowerShell)](https://techcommunity.microsoft.com/t5/DataCAT/Extending-AlwaysOn-Availability-Group-to-Remote-Azure-Datacenter/ba-p/305217) (Extensión de un grupo de disponibilidad AlwaysOn para el acceso remoto a un centro de datos de Azure [PowerShell)] para conocer los pasos.
 
@@ -134,10 +134,10 @@ Traffic Manager es un posible punto de error en el sistema. Si se produce un err
 
 Para el clúster de SQL Server, hay dos escenarios de conmutación por error que se deben tener en cuenta:
 
--   Todas las réplicas de base de datos de SQL Server de la región primaria generarán un error. Esto podría ocurrir, por ejemplo, durante una interrupción regional. En ese caso, debe conmutar por error manualmente el grupo de disponibilidad, aunque Traffic Manager conmute por error automáticamente en el servidor front-end. Siga los pasos que se indican en [Perform a Forced Manual Failover of a SQL Server Availability Group](https://msdn.microsoft.com/library/ff877957.aspx) (Realización de una conmutación por error manual forzada de un grupo de disponibilidad de SQL Server), donde se describe cómo realizar una conmutación por error forzada mediante SQL Server Management Studio, Transact-SQL o PowerShell en SQL Server 2016.
+-   Todas las réplicas de base de datos de SQL Server de la región primaria generarán un error. Esto podría ocurrir, por ejemplo, durante una interrupción regional. En ese caso, debe conmutar por error manualmente el grupo de disponibilidad, aunque Traffic Manager conmute por error automáticamente en el servidor front-end. Siga los pasos que se indican en [Perform a Forced Manual Failover of a SQL Server Availability Group](/sql/database-engine/availability-groups/windows/perform-a-forced-manual-failover-of-an-availability-group-sql-server?view=sql-server-ver15) (Realización de una conmutación por error manual forzada de un grupo de disponibilidad de SQL Server), donde se describe cómo realizar una conmutación por error forzada mediante SQL Server Management Studio, Transact-SQL o PowerShell en SQL Server 2016.
 
     > [!Warning]  
-    > Con la conmutación por error forzada, se corre el riesgo de pérdida de datos. Una vez que la región primaria vuelve a estar en línea, tome una instantánea de la base de datos y use [tablediff](https://msdn.microsoft.com/library/ms162843.aspx) para encontrar las diferencias.
+    > Con la conmutación por error forzada, se corre el riesgo de pérdida de datos. Una vez que la región primaria vuelve a estar en línea, tome una instantánea de la base de datos y use [tablediff](/sql/tools/tablediff-utility?view=sql-server-ver15) para encontrar las diferencias.
 
 -   Traffic Manager conmuta por error a la región secundaria, pero la réplica principal de base de datos SQL Server sigue estando disponible. Por ejemplo, si el nivel de front-end produjera un error, las máquinas virtuales de SQL Server no se verían afectadas. En ese caso, el tráfico de Internet se enrutaría a la región secundaria y esa región podría seguir conectándose a la réplica principal. Sin embargo, habrá una mayor latencia, ya que las conexiones de SQL Server atraviesan las regiones. En esta situación, debe realizar una conmutación por error manual como se indica a continuación:
 
@@ -171,4 +171,4 @@ Medición de los tiempos de recuperación y comprobación de que cumplen los req
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Para más información sobre los patrones de nube de Azure, consulte [Patrones de diseño en la nube](https://docs.microsoft.com/azure/architecture/patterns).
+- Para más información sobre los patrones de nube de Azure, consulte [Patrones de diseño en la nube](/azure/architecture/patterns).

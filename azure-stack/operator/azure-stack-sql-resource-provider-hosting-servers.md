@@ -8,12 +8,12 @@ ms.date: 10/02/2019
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/16/2019
-ms.openlocfilehash: a30c3a4f745e46a5e7b58d4355f1c193d8702e28
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 0345c3290b717385d8080dc6be771660ea22a2e1
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79295428"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86487913"
 ---
 # <a name="add-hosting-servers-for-the-sql-resource-provider"></a>Incorporación de servidores de hospedaje para el proveedor de recursos SQL
 
@@ -41,7 +41,7 @@ Antes de agregar un servidor de hospedaje SQL, revise los siguientes requisitos 
 
 Las imágenes de máquina virtual IaaS de SQL están disponibles en la característica Administración de Marketplace. Estas imágenes son las mismas que las máquinas virtuales de SQL disponibles en Azure.
 
-Asegúrese de descargar siempre la versión más reciente de la **extensión IaaS de SQL** antes de implementar una máquina virtual de SQL mediante un elemento de Marketplace. La extensión de IaaS y las correspondientes mejoras del portal proporcionan características adicionales tales como la copia de seguridad y la aplicación de revisiones. Para más información acerca de esta extensión, consulte [Automatizar las tareas de administración en Azure Virtual Machines con la extensión del Agente SQL Server](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-agent-extension).
+Asegúrese de descargar siempre la versión más reciente de la **extensión IaaS de SQL** antes de implementar una máquina virtual de SQL mediante un elemento de Marketplace. La extensión de IaaS y las correspondientes mejoras del portal proporcionan características adicionales tales como la copia de seguridad y la aplicación de revisiones. Para más información acerca de esta extensión, consulte [Automatizar las tareas de administración en Azure Virtual Machines con la extensión del Agente SQL Server](/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-agent-extension).
 
 > [!NOTE]
 > La extensión SQL IaaS es _obligatoria_ para todas las imágenes de SQL en Windows de Marketplace; se produce un error de implementación de la máquina virtual si no se ha descargado la extensión. No se usa con imágenes de máquina virtual de SQL basadas en Linux.
@@ -66,7 +66,7 @@ La siguiente información proporciona una guía de seguridad adicional:
 
 * Todo el almacenamiento de Azure Stack Hub está cifrado con BitLocker, por lo que cualquier instancia de SQL en Azure Stack Hub utilizará almacenamiento de blobs cifrado.
 * El proveedor de recursos de SQL es totalmente compatible con TLS 1.2. Asegúrese de que cualquier servidor SQL Server que se administra mediante el proveedor de recursos de SQL está configurado _solo_ para TLS 1.2, y que el proveedor de recursos lo usará de forma predeterminada. Todas las versiones compatibles de SQL Server admiten TLS 1.2. Para más información, consulte [Compatibilidad de TLS 1.2 con Microsoft SQL Server](https://support.microsoft.com/help/3135244/tls-1-2-support-for-microsoft-sql-server).
-* Use Administrador de configuración de SQL Server para establecer la opción **ForceEncryption** para garantizar que todas las comunicaciones con SQL server están siempre cifradas. Para más información, consulte [Para configurar el servidor para forzar conexiones cifradas](https://docs.microsoft.com/sql/database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine?view=sql-server-2017#to-configure-the-server-to-force-encrypted-connections).
+* Use Administrador de configuración de SQL Server para establecer la opción **ForceEncryption** para garantizar que todas las comunicaciones con SQL server están siempre cifradas. Para más información, consulte [Para configurar el servidor para forzar conexiones cifradas](/sql/database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine?view=sql-server-2017#to-configure-the-server-to-force-encrypted-connections).
 * Asegúrese de que cualquier aplicación cliente también se comunica a través de una conexión cifrada.
 * El proveedor de recursos está configurado para confiar en los certificados usados por las instancias de SQL Server.
 
@@ -106,15 +106,15 @@ Para agregar un servidor de hospedaje independiente que ya se haya configurado, 
 
 La configuración de instancias de SQL de Always On requiere pasos adicionales e implica tres máquinas virtuales (o máquinas físicas). En este artículo se da por hecho que ya conoce bien los grupos de disponibilidad Always On. Para más información, consulte los siguientes artículos.
 
-* [Introducción a los grupos de disponibilidad Always On de SQL Server en Azure Virtual Machines](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-availability-group-overview)
-* [Grupos de disponibilidad Always On (SQL Server)](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-2017)
+* [Introducción a los grupos de disponibilidad Always On de SQL Server en Azure Virtual Machines](/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-availability-group-overview)
+* [Grupos de disponibilidad Always On (SQL Server)](/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-2017)
 
 > [!NOTE]
 > El proveedor de recursos del adaptador SQL _solo_ admite instancias de SQL 2016 SP1 Enterprise o versiones posteriores para grupos de disponibilidad AlwaysOn. Esta configuración de adaptador requiere nuevas características SQL como la propagación automática.
 
 ### <a name="automatic-seeding"></a>Propagación automática
 
-Tiene que habilitar la opción [Propagación automática](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/automatically-initialize-always-on-availability-group) en cada grupo de disponibilidad para cada instancia de SQL Server.
+Tiene que habilitar la opción [Propagación automática](/sql/database-engine/availability-groups/windows/automatically-initialize-always-on-availability-group) en cada grupo de disponibilidad para cada instancia de SQL Server.
 
 Para habilitar la propagación automática en todas las instancias, edite y ejecute el siguiente comando SQL en la réplica principal para cada instancia secundaria:
 
@@ -136,7 +136,7 @@ En los nodos secundarios, ejecute el siguiente comando SQL:
 
 ### <a name="configure-contained-database-authentication"></a>Configuración de autenticación de base de datos independiente
 
-Antes de agregar una base de datos independiente a un grupo de disponibilidad, asegúrese de que la opción de servidor de autenticación de la base de datos independiente se establece en 1 en cada instancia del servidor que hospeda una réplica de disponibilidad para el grupo de disponibilidad. Para más información, consulte la [opción de configuración del servidor de autenticación de base de datos independiente](https://docs.microsoft.com/sql/database-engine/configure-windows/contained-database-authentication-server-configuration-option?view=sql-server-2017).
+Antes de agregar una base de datos independiente a un grupo de disponibilidad, asegúrese de que la opción de servidor de autenticación de la base de datos independiente se establece en 1 en cada instancia del servidor que hospeda una réplica de disponibilidad para el grupo de disponibilidad. Para más información, consulte la [opción de configuración del servidor de autenticación de base de datos independiente](/sql/database-engine/configure-windows/contained-database-authentication-server-configuration-option?view=sql-server-2017).
 
 Use estos comandos para establecer la opción del servidor de autenticación de base de datos independiente para cada instancia:
 

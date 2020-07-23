@@ -7,12 +7,12 @@ ms.date: 04/27/2020
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 04/27/2020
-ms.openlocfilehash: 97ac51cd72b3ffc009caeeab30b55a95d2664a53
-ms.sourcegitcommit: 54f98b666bea9226c78f26dc255ddbdda539565f
+ms.openlocfilehash: a86864610930e729d64c57dfa6be4d6398d0a6b8
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82563731"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86486485"
 ---
 # <a name="remove-azurestackactivation"></a>Remove-AzureStackActivation
 
@@ -59,4 +59,4 @@ Accept wildcard characters: False
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Para más información sobre el acceso y el uso de un punto de conexión con privilegios, consulte [Uso del punto de conexión con privilegios en Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-privileged-endpoint).
+Para más información sobre el acceso y el uso de un punto de conexión con privilegios, consulte [Uso del punto de conexión con privilegios en Azure Stack Hub](../../operator/azure-stack-privileged-endpoint.md).

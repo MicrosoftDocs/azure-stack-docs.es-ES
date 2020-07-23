@@ -8,12 +8,12 @@ ms.date: 06/24/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 08/20/2019
-ms.openlocfilehash: 974b338ff7da9bd4442d4aadc02d475bd01686df
-ms.sourcegitcommit: ddcd083430ca905653d412dc2f7b813218d79509
+ms.openlocfilehash: 932686cb52e7aa2a1aa1c948e1ab5d5469d4bf30
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83374638"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86489596"
 ---
 # <a name="app-service-on-azure-stack-hub-update-6-release-notes"></a>Notas de la versión de la actualización 6 de App Service en Azure Stack Hub
 
@@ -78,7 +78,7 @@ La actualización 6 de Azure App Service en Azure Stack Hub incluye las siguien
 ## <a name="post-deployment-steps"></a>Pasos posteriores a la implementación
 
 > [!IMPORTANT]
-> Si ha proporcionado al proveedor de recursos de App Service una instancia de SQL Always On, DEBE [agregar las bases de datos appservice_hosting y appservice_metering](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database) a un grupo de disponibilidad y sincronizarlas para evitar la pérdida de servicio en caso de producirse una conmutación por error de la base de datos.
+> Si ha proporcionado al proveedor de recursos de App Service una instancia de SQL Always On, DEBE [agregar las bases de datos appservice_hosting y appservice_metering](/sql/database-engine/availability-groups/windows/availability-group-add-a-database) a un grupo de disponibilidad y sincronizarlas para evitar la pérdida de servicio en caso de producirse una conmutación por error de la base de datos.
 
 ## <a name="known-issues-post-installation"></a>Problemas conocidos (posteriores a la instalación)
 
@@ -98,7 +98,7 @@ Si decide realizar una implementación en una red virtual existente y en una dir
 
 ## <a name="known-issues-for-cloud-admins-operating-azure-app-service-on-azure-stack-hub"></a>Problemas conocidos para los administradores de la nube que usan Azure App Service en Azure Stack Hub
 
-Consulte la documentación en las [notas de la versión 1908 de Azure Stack Hub](/azure-stack/operator/release-notes?view=azs-1908).
+Consulte la documentación en las [notas de la versión 1908 de Azure Stack Hub](./release-notes.md?view=azs-1908).
 
 ## <a name="known-issues-for-tenants-deploying-applications-on-azure-app-service-on-azure-stack-hub"></a>Problemas conocidos de los inquilinos que implementan aplicaciones en Azure App Service en Azure Stack Hub
 

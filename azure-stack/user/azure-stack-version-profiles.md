@@ -7,12 +7,12 @@ ms.date: 05/04/2020
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 07/24/2019
-ms.openlocfilehash: f72f0e79fe7b890c65c630ff00ec3870d4756c5e
-ms.sourcegitcommit: 70c344b3c9c63f8c12867b2cdfdd1794fcc518dc
+ms.openlocfilehash: 8dd456ad26605c592160ffdc4a4c0d0ea28b2628
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82836230"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86567338"
 ---
 # <a name="manage-api-version-profiles-in-azure-stack-hub"></a>Administración de perfiles de la versión de API en Azure Stack Hub
 
@@ -73,7 +73,7 @@ Puede encontrar ejemplos de código que le ayudarán a integrar la solución con
 - **.NET** <br>
 Use el perfil de la API de .NET para obtener la versión más reciente y más estable de cada tipo de recurso de un paquete de proveedor de recursos. Para más información, consulte [Uso de perfiles de la versión de API con .NET en Azure Stack Hub](azure-stack-version-profiles-net.md).
 - **PowerShell**  
-Use el módulo **AzureRM.Bootstrapper** disponible en la Galería de PowerShell para obtener los cmdlets de PowerShell necesarios para trabajar con los perfiles de la versión de la API. Para más información, consulte el artículo sobre el [uso de perfiles de versión de API para PowerShell](azure-stack-version-profiles-powershell.md).
+Use el módulo **AzureRM.Bootstrapper** disponible en la Galería de PowerShell para obtener los cmdlets de PowerShell necesarios para trabajar con los perfiles de la versión de la API. Para más información, consulte el artículo sobre el [uso de perfiles de versión de API para PowerShell](../operator/azure-stack-powershell-install.md?view=azs-2002).
 - **CLI de Azure**  
 Actualice la configuración del entorno para usar el perfil de la versión de API específico de Azure Stack Hub. Para más información, consulte el artículo [Uso de los perfiles de la versión de la API con la CLI de Azure](azure-stack-version-profiles-azurecli2.md).
 - **Go**  

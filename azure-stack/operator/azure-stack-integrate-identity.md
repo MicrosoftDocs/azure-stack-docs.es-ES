@@ -8,12 +8,12 @@ ms.author: bryanla
 ms.reviewer: thoroet
 ms.lastreviewed: 05/10/2019
 ms.custom: conteperfq4
-ms.openlocfilehash: 04cca678b32c04faac1b3c8f12a09deb918fb0c0
-ms.sourcegitcommit: e28821041b8111fdcd2c28d35a83ab0a8018455c
+ms.openlocfilehash: 8e6ec9fcb6428b9f8dad7c4f78acde54291b30f1
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86033257"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86488627"
 ---
 # <a name="integrate-ad-fs-identity-with-your-azure-stack-hub-datacenter"></a>Integración de la identidad de AD FS con Azure Stack Hub en el centro de datos
 
@@ -64,7 +64,7 @@ En las implementaciones de Active Directory con varios sitios, configure el sit
 
 Agregue la subred de la [red VIP pública](azure-stack-network.md#public-vip-network) de Azure Stack Hub al sitio de Azure Active Directory más cercano a Azure Stack Hub. Por ejemplo, supongamos que su instancia de Active Directory tiene dos sitios: Seattle y Redmond. Si Azure Stack Hub está implementado en el sitio de Seattle, agregaría la subred de la red VIP pública de Azure Stack Hub al sitio de Active Directory de Seattle.
 
-Para más información sobre los sitios de Active Directory, consulte [Diseño de la topología de sitio](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/designing-the-site-topology).
+Para más información sobre los sitios de Active Directory, consulte [Diseño de la topología de sitio](/windows-server/identity/ad-ds/plan/designing-the-site-topology).
 
 > [!Note]  
 > Si su instancia de Active Directory consta de un único sitio, puede omitir este paso. Si tiene una subred comodín configurada, valide que la subred de la red VIP pública de Azure Stack Hub no forme parte de ella.
@@ -260,7 +260,7 @@ Si decide ejecutar manualmente los comandos, siga estos pasos:
    ```
 
     > [!Note]  
-    > Es posible que las cadenas del agente de usuario compatibles con la autenticación integrada de Windows (WIA) estén obsoletas para la implementación de AD FS y que sea necesario actualizarlas para que sean compatibles con los clientes más recientes. Puede leer más sobre cómo actualizar las cadenas del agente de usuario compatibles con WIA en el artículo [Configuración de la autenticación basada en formularios de la intranet para dispositivos que no admiten WIA](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia).<br><br>Para conocer los pasos para habilitar la directiva de autenticación basada en formularios, consulte [Configuración de directivas de autenticación](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-authentication-policies).
+    > Es posible que las cadenas del agente de usuario compatibles con la autenticación integrada de Windows (WIA) estén obsoletas para la implementación de AD FS y que sea necesario actualizarlas para que sean compatibles con los clientes más recientes. Puede leer más sobre cómo actualizar las cadenas del agente de usuario compatibles con WIA en el artículo [Configuración de la autenticación basada en formularios de la intranet para dispositivos que no admiten WIA](/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia).<br><br>Para conocer los pasos para habilitar la directiva de autenticación basada en formularios, consulte [Configuración de directivas de autenticación](/windows-server/identity/ad-fs/operations/configure-authentication-policies).
 
 3. Para agregar la relación de confianza para usuario autenticado, ejecute el siguiente comando de Windows PowerShell en la instancia de AD FS o un miembro de la granja de servidores. Asegúrese de actualizar el punto de conexión de AD FS y seleccione el archivo creado en el paso 1.
 

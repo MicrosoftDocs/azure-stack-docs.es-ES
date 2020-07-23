@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 12/09/2019
 ms.reviewer: jfggdl
 ms.lastreviewed: 12/09/2019
-ms.openlocfilehash: 71bc2a58dd3420aad1672c431f3c5114364980c4
-ms.sourcegitcommit: f2d80d705a222095c2ea785b9797bbac0cf96fcc
+ms.openlocfilehash: 06b0dabf4c7fc54d5c886e7ecc777f8a754e3ef0
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82605669"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86490123"
 ---
 # <a name="how-to-do-capacity-planning-for-event-hubs-on-azure-stack-hub"></a>Planeación de la capacidad de Event Hubs en Azure Stack Hub
 
@@ -40,7 +40,7 @@ Todos los clústeres de Event Hubs usan un tipo de máquina virtual [D11_V2](../
 
 ## <a name="resource-provider-resource-consumption"></a>Consumo de recursos del proveedor de recursos  
 
-El consumo de recursos por parte del proveedor de recursos de Event Hubs es constante e independiente del número o de los tamaños de los clústeres que los usuarios crean. En la tabla siguiente se muestra el uso de núcleos por parte del proveedor de recursos de Event Hubs en Azure Stack Hub y el consumo aproximado de recursos por parte de otros recursos. El proveedor de recursos de Event Hubs usa un tipo de máquina virtual [D2_V2](/azure-stack/user/azure-stack-vm-sizes#dv2-series) para la implementación.
+El consumo de recursos por parte del proveedor de recursos de Event Hubs es constante e independiente del número o de los tamaños de los clústeres que los usuarios crean. En la tabla siguiente se muestra el uso de núcleos por parte del proveedor de recursos de Event Hubs en Azure Stack Hub y el consumo aproximado de recursos por parte de otros recursos. El proveedor de recursos de Event Hubs usa un tipo de máquina virtual [D2_V2](../user/azure-stack-vm-sizes.md#dv2-series) para la implementación.
 
 |                                  | Tipo de máquina virtual | Nodos de clúster | Núcleos | Almacenamiento de máquinas virtuales | Memoria | Cuentas de almacenamiento | Direcciones IP públicas |
 |----------------------------------|---------|---------------|-------|------------|--------|------------------|------------|
@@ -68,8 +68,3 @@ En la tabla siguiente se muestra el consumo total de Event Hubs con distintas co
 ## <a name="next-steps"></a>Pasos siguientes
 
 Complete los [requisitos previos para instalar Event Hubs en Azure Stack Hub](event-hubs-rp-prerequisites.md) antes de comenzar el proceso de instalación.
-
-
-
-
-

@@ -7,12 +7,12 @@ ms.date: 04/02/2020
 ms.author: inhenkel
 ms.reviewer: wfayed
 ms.lastreviewed: 09/12/2019
-ms.openlocfilehash: fbcca6d24f37162fa62729f38d50a6ceb0f0374c
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 15c62fc6812b4b4247ce7370316a23490dfc65ce
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80638185"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86489035"
 ---
 # <a name="datacenter-integration-planning-considerations-for-azure-stack-hub-integrated-systems"></a>Consideraciones sobre el planeamiento de la integración del centro de datos con los sistemas integrados de Azure Stack Hub
 
@@ -111,7 +111,7 @@ Debe especificar una dirección IP para el servidor de sincronización de hora. 
 
 Para escenarios de nube híbridos, debe planear cómo conectar Azure Stack Hub a Azure. Hay dos métodos admitidos para conectar redes virtuales de Azure Stack Hub a redes virtuales de Azure:
 
-- **De sitio a sitio**: Una conexión de red privada virtual (VPN) sobre el protocolo de seguridad de Internet (IKE v1 e IKE v2). Este tipo de conexión requiere un dispositivo VPN o un servicio de enrutamiento y acceso remoto (RRAS). Para más información acerca de VPN Gateway, consulte [Acerca de VPN Gateway](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). La comunicación a través de este túnel está cifrada y es segura. Sin embargo, el ancho de banda está limitado por el rendimiento máximo del túnel (de 100 a 200 Mbps).
+- **De sitio a sitio**: Una conexión de red privada virtual (VPN) sobre el protocolo de seguridad de Internet (IKE v1 e IKE v2). Este tipo de conexión requiere un dispositivo VPN o un servicio de enrutamiento y acceso remoto (RRAS). Para más información acerca de VPN Gateway, consulte [Acerca de VPN Gateway](/azure/vpn-gateway/vpn-gateway-about-vpngateways). La comunicación a través de este túnel está cifrada y es segura. Sin embargo, el ancho de banda está limitado por el rendimiento máximo del túnel (de 100 a 200 Mbps).
 
 - **NAT de salida**: De forma predeterminada, todas las máquinas virtuales de Azure Stack Hub tendrán conectividad a redes externas a través de NAT de salida. Cada red virtual que se crea en Azure Stack Hub obtiene una dirección IP pública asignada. Si la máquina virtual se asigna directamente a una dirección IP pública o está detrás de un equilibrador de carga con una dirección IP pública, tendrá acceso de salida a través de NAT de salida mediante la dirección VIP de la red virtual. Este método funciona solo para la comunicación que inicia la máquina virtual y que se destina a redes externas (Internet o intranet). No se puede utilizar para comunicarse con la máquina virtual desde fuera.
 
@@ -139,7 +139,7 @@ En la tabla siguiente se resumen los escenarios de conectividad híbrida, con la
 
 ### <a name="using-expressroute"></a>Uso de ExpressRoute
 
-Puede conectar Azure Stack Hub a Azure a través de [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) para escenarios de intranet de inquilino único y de varios inquilinos. Necesitará un circuito ExpressRoute aprovisionado a través de [un proveedor de conectividad](https://docs.microsoft.com/azure/expressroute/expressroute-locations).
+Puede conectar Azure Stack Hub a Azure a través de [ExpressRoute](/azure/expressroute/expressroute-introduction) para escenarios de intranet de inquilino único y de varios inquilinos. Necesitará un circuito ExpressRoute aprovisionado a través de [un proveedor de conectividad](/azure/expressroute/expressroute-locations).
 
 El siguiente diagrama muestra ExpressRoute para un escenario de inquilino único (donde "Conexión del cliente" es el circuito de ExpressRoute).
 

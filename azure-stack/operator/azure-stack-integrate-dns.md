@@ -7,12 +7,12 @@ ms.date: 04/10/2020
 ms.author: inhenkel
 ms.reviewer: wfayed
 ms.lastreviewed: 08/21/2019
-ms.openlocfilehash: d16aea039103c69302c8f84aa7de078907f1efce
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: be6ea1e8dbf8b17e02a4117f5f2d20cb9cfbbcfe
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81244091"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86488729"
 ---
 # <a name="azure-stack-hub-datacenter-dns-integration"></a>Integración del DNS de Azure Stack Hub en el centro de datos
 
@@ -133,7 +133,7 @@ Si la máquina virtual de implementación ya no está disponible o no es accesib
 
 La manera más sencilla y segura de integrar Azure Stack Hub con la infraestructura de DNS es hacer un reenvío condicional de la zona desde el servidor que hospeda la zona principal. Se recomienda este enfoque si tiene el control directo de los servidores DNS que hospedan la zona principal del espacio de nombres DNS externo de Azure Stack Hub.
 
-Si no está familiarizado con los reenvíos condicionales mediante DNS, consulte el siguiente artículo de TechNet: [Assign a Conditional Forwarder for a Domain Name](https://technet.microsoft.com/library/cc794735) (Asignación de reenviadores condicionales a un nombre de dominio) o la documentación específica de la solución DNS.
+Si no está familiarizado con los reenvíos condicionales mediante DNS, consulte el siguiente artículo de TechNet: [Assign a Conditional Forwarder for a Domain Name](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794735(v=ws.10)) (Asignación de reenviadores condicionales a un nombre de dominio) o la documentación específica de la solución DNS.
 
 Si ha especificado que la zona DNS externa de Azure Stack Hub debe parecer un dominio secundario de su nombre de dominio corporativo, no se puede usar el reenvío condicional. Se debe configurar la delegación DNS.
 

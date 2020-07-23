@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: efc23ad5694ba7828c2dc5c5ba5de09be3591e04
-ms.sourcegitcommit: 5f4f0ee043ff994efaad44129ce49be43c64d5dc
+ms.openlocfilehash: bc828444a67e1489f2d5b4b51fc0cbd18e6f0641
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84819281"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86489936"
 ---
 # <a name="troubleshoot-the-asdk"></a>Solucionar problemas del ASDK
 En este artículo se proporciona información sobre cómo solucionar problemas comunes para el Kit de desarrollo de Azure Stack (ASDK). Para obtener ayuda con los sistemas integrados de Azure Stack, consulte [Solución de problemas de Microsoft Azure Stack](../operator/azure-stack-troubleshooting.md). 
@@ -36,10 +36,10 @@ Este comportamiento probablemente sea solo el resultado del comportamiento prede
 
 Si recibe un mensaje de error durante la validación de la plantilla que indica que el parámetro "osProfile" no está permitido, asegúrese de que está usando las versiones correctas de las API para estos componentes:
 
-- [Proceso](https://docs.microsoft.com/azure-stack/user/azure-stack-profiles-azure-resource-manager-versions#microsoftcompute)
-- [Network](https://docs.microsoft.com/azure-stack/user/azure-stack-profiles-azure-resource-manager-versions#microsoftnetwork)
+- [Proceso](../user/azure-stack-profiles-azure-resource-manager-versions.md#microsoftcompute)
+- [Network](../user/azure-stack-profiles-azure-resource-manager-versions.md#microsoftnetwork)
 
-Para copiar un disco duro virtual de Azure a Azure Stack, use [AzCopy 7.3.0](https://docs.microsoft.com/azure-stack/user/azure-stack-storage-transfer#download-and-install-azcopy). Trabaje con su proveedor para resolver los problemas con la propia imagen. Para más información sobre los requisitos de WALinuxAgent para Azure Stack, consulte [Agente Linux de Azure](../operator/azure-stack-linux.md#azure-linux-agent).
+Para copiar un disco duro virtual de Azure a Azure Stack, use [AzCopy 7.3.0](../user/azure-stack-storage-transfer.md#download-and-install-azcopy). Trabaje con su proveedor para resolver los problemas con la propia imagen. Para más información sobre los requisitos de WALinuxAgent para Azure Stack, consulte [Agente Linux de Azure](../operator/azure-stack-linux.md#azure-linux-agent).
 
 ### <a name="deployment-fails-due-to-lack-of-external-access"></a>La implementación produce un error debido a la falta de acceso externo
 Cuando se produce un error en la implementación durante las etapas en las que se requiere de acceso externo, se devuelve una excepción similar al ejemplo siguiente:

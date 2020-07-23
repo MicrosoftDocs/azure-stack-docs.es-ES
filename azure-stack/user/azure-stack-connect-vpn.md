@@ -7,12 +7,12 @@ ms.date: 04/07/2020
 ms.author: sethm
 ms.reviewer: scottnap
 ms.lastreviewed: 10/24/2019
-ms.openlocfilehash: 186559752531021ff74833ac71184e692d40a04d
-ms.sourcegitcommit: 3ee7e9ddffe2ca44af24052e60d808fbef42cf4c
+ms.openlocfilehash: dc143c4cfc6beec14891caa7e23d3f058f49eae5
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82643580"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86567678"
 ---
 # <a name="connect-azure-stack-hub-to-azure-using-vpn"></a>Conexión de Azure Stack Hub a Azure mediante VPN
 
@@ -318,4 +318,4 @@ Si desea saber qué cantidad de datos pasa mediante la conexión de sitio a siti
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-* [Implementación de aplicaciones en Azure y Azure Stack Hub](azure-stack-solution-pipeline.md)
+* [Implementación de aplicaciones en Azure y Azure Stack Hub](https://github.com/Azure-Samples/azure-intelligent-edge-patterns/tree/master/hybrid-devops)

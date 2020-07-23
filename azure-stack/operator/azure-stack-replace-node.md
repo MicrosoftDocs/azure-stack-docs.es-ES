@@ -8,12 +8,12 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 9d39763397ce39c83a50bb57d97f0b5b8e07de6b
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 7166ab4072776adef3d3b3fd233bf082214ad39a
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "78367995"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86488219"
 ---
 # <a name="replace-a-scale-unit-node-on-an-azure-stack-hub-integrated-system"></a>Reemplazo de un nodo de la unidad de escalado en un sistema integrado de Azure Stack Hub
 
@@ -29,7 +29,7 @@ En el siguiente diagrama de flujo se muestra el proceso general de FRU para reem
 *Es posible que esta acción no sea necesaria en función de la condición física del hardware.
 
 > [!Note]  
-> Si se produce un error en la operación de apagado, se recomienda usar la operación de purga seguida de la operación de detención. Para más información, consulte el artículo sobre las [acciones de los nodos de unidad de escalado en Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-node-actions).
+> Si se produce un error en la operación de apagado, se recomienda usar la operación de purga seguida de la operación de detención. Para más información, consulte el artículo sobre las [acciones de los nodos de unidad de escalado en Azure Stack Hub](./azure-stack-node-actions.md).
 
 ## <a name="review-alert-information"></a>Revisión de la información de las alertas
 

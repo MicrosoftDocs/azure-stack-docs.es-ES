@@ -7,12 +7,12 @@ ms.date: 04/20/2020
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 10/22/2019
-ms.openlocfilehash: 5d2f30813cc0a7a42e376ec7fb9c76be1f7994eb
-ms.sourcegitcommit: f2d80d705a222095c2ea785b9797bbac0cf96fcc
+ms.openlocfilehash: b30016866f0d3b7da4c449c40cff54d77adf3e2f
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82605714"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86489273"
 ---
 # <a name="connect-azure-stack-hub-to-azure-using-azure-expressroute"></a>Conexión de Azure Stack Hub con Azure mediante Azure ExpressRoute
 
@@ -601,4 +601,4 @@ Si desea saber la cantidad de tráfico que pasa por la conexión, puede encontra
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Implementación de aplicaciones en Azure y Azure Stack Hub](../user/azure-stack-solution-pipeline.md)
+[Implementación de aplicaciones en Azure y Azure Stack Hub](https://github.com/Azure-Samples/azure-intelligent-edge-patterns/tree/master/hybrid-devops)

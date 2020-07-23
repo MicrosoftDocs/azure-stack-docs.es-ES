@@ -7,12 +7,12 @@ ms.date: 07/02/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 07/02/2020
-ms.openlocfilehash: 4fdcc16679051087968161c0ac36175155a2717a
-ms.sourcegitcommit: e433e6f772789ab00c131c24650e700c65e6d73a
+ms.openlocfilehash: 02f4d8ec694ffc56966029f35dd12fd263a5cb8b
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86272921"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86566148"
 ---
 # <a name="known-issues-with-the-aks-engine-on-azure-stack-hub"></a>Problemas conocidos del motor de AKS en Azure Stack Hub
 
@@ -42,7 +42,7 @@ En este tema se tratan los problemas conocidos del motor de AKS en Azure Stack H
 
 ## <a name="basic-load-balancer-sku-limitations"></a>Limitaciones de la SKU básica de Load Balancer
 
-* Limitación de un solo grupo de agentes. Actualmente, Azure Stack Hub solo admite la SKU básica de Load Balancer. Esta SKU [limita](https://docs.microsoft.com/azure/load-balancer/concepts-limitations#skus) los puntos de conexión del grupo de back-end a las máquinas virtuales que están en un único conjunto de disponibilidad (o conjunto de escalado de máquinas virtuales). Esto implica que todas las réplicas de un servicio LoadBalancer deben implementarse en el mismo grupo de agentes, y también que cada clúster individual puede tener un servicio LoadBalancer de Linux o un servicio LoadBalancer de Windows.
+* Limitación de un solo grupo de agentes. Actualmente, Azure Stack Hub solo admite la SKU básica de Load Balancer. Esta SKU [limita](/azure/load-balancer/concepts#limitations) los puntos de conexión del grupo de back-end a las máquinas virtuales que están en un único conjunto de disponibilidad (o conjunto de escalado de máquinas virtuales). Esto implica que todas las réplicas de un servicio LoadBalancer deben implementarse en el mismo grupo de agentes, y también que cada clúster individual puede tener un servicio LoadBalancer de Linux o un servicio LoadBalancer de Windows.
 
   Puede hacer que Kubernetes cree pods en un grupo de agentes específico agregando [node selector](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/) "agentpool: MI_NOMBRE_DE_GRUPO" en la plantilla de pod.
 

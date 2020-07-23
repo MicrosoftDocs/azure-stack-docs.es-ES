@@ -7,12 +7,12 @@ ms.date: 3/19/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 3/19/2020
-ms.openlocfilehash: 96a4fb569660c14cc864518406effa8a733d5111
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: dbd85bdf95dfc3008dc125e1c96d68bc41e7cbfc
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80108423"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86565978"
 ---
 # <a name="what-is-azure-stack-hub"></a>¿Qué es Azure Stack Hub?
 
@@ -20,9 +20,9 @@ Azure Stack Hub es una plataforma en la nube híbrida que le permite usar servic
 
 ## <a name="how-to-use-azure-stack-hub"></a>Cómo usar Azure Stack Hub
 
-Si es un operador de Azure Stack Hub que administra la infraestructura y ofrece servicios, consulte la [documentación del operador](https://docs.microsoft.com/azure-stack/operator/).
+Si es un operador de Azure Stack Hub que administra la infraestructura y ofrece servicios, consulte la [documentación del operador](../operator/index.yml).
 
-Los usuarios de Azure Stack Hub interesados en el Kit de desarrollo de Azure Stack (ASDK), una implementación con un único nodo de Azure Stack que se puede descargar y usar de forma gratuita, pueden consultar la [documentación de ASDK](https://docs.microsoft.com/azure-stack/asdk/).
+Los usuarios de Azure Stack Hub interesados en el Kit de desarrollo de Azure Stack (ASDK), una implementación con un único nodo de Azure Stack que se puede descargar y usar de forma gratuita, pueden consultar la [documentación de ASDK](../asdk/index.yml).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

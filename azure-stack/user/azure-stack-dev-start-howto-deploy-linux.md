@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: 35863d41776ece59592d57264db6522e47ee4208
-ms.sourcegitcommit: db3c9179916a36be78b43a8a47e1fd414aed3c2e
+ms.openlocfilehash: 67b1971c3579de31374b9babdf6696e2950dbb35
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84146961"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86567542"
 ---
 # <a name="deploy-a-linux-vm-to-host-a-web-app-in-azure-stack-hub"></a>Implementación de una máquina virtual Linux para hospedar una aplicación web en Azure Stack Hub
 
@@ -87,7 +87,7 @@ Para implementar la VM, siga las instrucciones que aparecen en las secciones sig
 
     b. En **Almacenamiento**, seleccione **Discos Premium (SSD)** o **Discos estándar (HDD)** . Los discos Premium (SSD) están respaldados por unidades de estado sólido y ofrecen coherencia y un rendimiento con baja latencia. Proporcionan el mejor equilibrio entre precio y rendimiento, y son ideales para aplicaciones intensivas de E/S y cargas de trabajo de producción. Los discos estándar están respaldados por unidades magnéticas y son preferibles para las aplicaciones en las que se accede con poca frecuencia a los datos. Los discos con redundancia de zona están respaldados por almacenamiento con redundancia de zona (ZRS), que replica los datos en varias zonas y están disponibles aunque una de las zonas está inactiva. 
 
-    c. Seleccione **Usar discos administrados**. Cuando habilita esta característica, Azure administra automáticamente la disponibilidad de los discos. Disfrutará de redundancia de datos y tolerancia a errores, sin tener que crear y administrar cuentas de almacenamiento por su cuenta. Es posible que los discos administrados no estén disponibles en todas las regiones. Para más información, consulte [Introducción a Azure Managed Disks](https://docs.microsoft.com/azure/virtual-machines/windows/managed-disks-overview).
+    c. Seleccione **Usar discos administrados**. Cuando habilita esta característica, Azure administra automáticamente la disponibilidad de los discos. Disfrutará de redundancia de datos y tolerancia a errores, sin tener que crear y administrar cuentas de almacenamiento por su cuenta. Es posible que los discos administrados no estén disponibles en todas las regiones. Para más información, consulte [Introducción a Azure Managed Disks](/azure/virtual-machines/windows/managed-disks-overview).
 
     d. Para configurar la red, seleccione **Red virtual**. Las redes virtuales están aisladas lógicamente entre sí en Azure. Puede configurar sus intervalos de direcciones IP, subredes, tablas de rutas, puertas de enlace y configuraciones de seguridad, de manera muy similar a como lo haría con una red tradicional en su centro de datos. Las máquinas virtuales de la misma red virtual puede acceder unas a otras de forma predeterminada. 
 

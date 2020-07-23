@@ -8,12 +8,12 @@ ms.date: 06/10/2019
 ms.author: justinha
 ms.reviewer: fiseraci
 ms.lastreviewed: 04/07/2020
-ms.openlocfilehash: 35b4fbd97032df00236a67dd5b776a2f3fada8ea
-ms.sourcegitcommit: 5f4f0ee043ff994efaad44129ce49be43c64d5dc
+ms.openlocfilehash: 27ba6098755d93ef1de902a9a4e052f1ff6b53d5
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84819245"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86487879"
 ---
 # <a name="azure-stack-hub-infrastructure-security-controls"></a>Controles de seguridad de la infraestructura de Azure Stack Hub
 
@@ -48,7 +48,7 @@ Para más información sobre cómo aplicar TLS 1.2 en los puntos de conexión e
 
 ## <a name="secret-management"></a>Administración de secretos
 
-La infraestructura de Azure Stack Hub emplea multitud de secretos, como contraseñas y certificados, para funcionar. La mayoría de las contraseñas asociadas a las cuentas de servicio internas se rotan automáticamente cada 24 horas ya que se trata de [cuentas de servicio administradas de grupo (gMSA)](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview), un tipo de cuenta de dominio administrado directamente por el controlador de dominio interno.
+La infraestructura de Azure Stack Hub emplea multitud de secretos, como contraseñas y certificados, para funcionar. La mayoría de las contraseñas asociadas a las cuentas de servicio internas se rotan automáticamente cada 24 horas ya que se trata de [cuentas de servicio administradas de grupo (gMSA)](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview), un tipo de cuenta de dominio administrado directamente por el controlador de dominio interno.
 
 La infraestructura de Azure Stack Hub usa claves RSA de 4096 bits para todos sus certificados internos. También se pueden usar los certificados de la misma longitud de clave para los puntos de conexión externos. Para más información sobre secretos y la rotación de certificados, consulte [Cambio de secretos en Azure Stack Hub](azure-stack-rotate-secrets.md).
 
@@ -59,7 +59,7 @@ Azure Stack Hub emplea las características de seguridad de Windows Server más
 El código autorizado está firmado por Microsoft o el socio de OEM. El código autorizado firmado se incluye en la lista de software permitido especificada en una directiva definida por Microsoft. En otras palabras, solo se puede ejecutar software que esté aprobado para ejecutarse en la infraestructura de Azure Stack Hub. Cualquier intento de ejecutar código no autorizado se bloqueará y se generará una alerta. Azure Stack Hub aplica la Integridad de código del modo de usuario (UMCI) y la Integridad del código de hipervisor (HVCI).
 
 La directiva de MDAC también impide que agentes o software de terceros se ejecuten en la infraestructura de Azure Stack Hub.
-Para más información sobre WDAC, consulte [Control de aplicaciones de Windows Defender y protección de la integridad del código basada en la virtualización](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control).
+Para más información sobre WDAC, consulte [Control de aplicaciones de Windows Defender y protección de la integridad del código basada en la virtualización](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control).
 
 ## <a name="credential-guard"></a>Protección de credenciales
 

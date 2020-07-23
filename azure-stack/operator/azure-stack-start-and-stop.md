@@ -8,12 +8,12 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: misainat
 ms.lastreviewed: 10/15/2019
-ms.openlocfilehash: 2c8211606ae797b4a88da1c268a7fb36b7de214b
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 730e4dd823509f7a8c738f3d02bd10c82529834c
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79512378"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86487794"
 ---
 # <a name="start-and-stop-azure-stack-hub"></a>Inicio y detención de Azure Stack Hub
 
@@ -84,4 +84,4 @@ Realice los pasos que se indican a continuación en caso de que los servicios de
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Más información sobre las [herramientas de diagnóstico de Azure Stack Hub](azure-stack-diagnostic-log-collection-overview-tzl.md)
+Más información sobre las [herramientas de diagnóstico de Azure Stack Hub](./azure-stack-diagnostic-log-collection-overview.md?view=azs-2002)

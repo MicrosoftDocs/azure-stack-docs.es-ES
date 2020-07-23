@@ -8,12 +8,12 @@ ms.date: 1/22/2020
 ms.author: inhenkel
 ms.reviewer: scottnap
 ms.lastreviewed: 09/17/2019
-ms.openlocfilehash: f210f5939f60eb996f7c72b9552cf09d11f8de91
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: b96485e74286cbbbd2ff20f2378dc7c452849b52
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77696216"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86487403"
 ---
 # <a name="manage-network-resources-in-azure-stack-hub"></a>Administración de recursos de red en Azure Stack Hub
 
@@ -29,7 +29,7 @@ Azure Stack Hub usa un grupo de direcciones MAC estáticas para generar y asigna
 
 En función de cómo se conectan las redes virtuales con las redes corporativas existentes, cabe esperar que haya direcciones MAC duplicadas de máquinas virtuales.
 
-Para más información sobre el uso de grupos de direcciones MAC, use el cmdlet [Get-AzsMacAddressPool](https://docs.microsoft.com/powershell/module/azs.fabric.admin/get-azsmacaddresspool) en el módulo de PowerShell del administrador de Azure Stack Hub.
+Para más información sobre el uso de grupos de direcciones MAC, use el cmdlet [Get-AzsMacAddressPool](/powershell/module/azs.fabric.admin/get-azsmacaddresspool) en el módulo de PowerShell del administrador de Azure Stack Hub.
 
 ## <a name="view-public-ip-address-consumption-in-azure-stack-hub"></a>Visualización del consumo de direcciones IP públicas en Azure Stack Hub
 

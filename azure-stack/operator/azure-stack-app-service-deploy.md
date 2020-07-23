@@ -8,12 +8,12 @@ ms.author: bryanla
 ms.reviewer: anwestg
 ms.lastreviewed: 04/13/2019
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: 4f9bdf84f73bf06c42f3b6910e0faad83a9bbd80
-ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
+ms.openlocfilehash: 441200d89d64705e0632c8f09a76afa65d52e194
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82848001"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86489902"
 ---
 # <a name="deploy-app-service-in-azure-stack-hub"></a>Implementación de App Service en Azure Stack Hub
 
@@ -180,7 +180,7 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 ## <a name="post-deployment-steps"></a>Pasos posteriores a la implementación
 
 > [!IMPORTANT]
-> Si ha proporcionado el proveedor de recursos de App Service con una instancia de SQL Always On, **debe** [agregar las bases de datos appservice_hosting y appservice_metering a un grupo de disponibilidad](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database), así como sincronizar dichas bases de datos para evitar la pérdida de servicio en caso de producirse una conmutación por error de base de datos.
+> Si ha proporcionado el proveedor de recursos de App Service con una instancia de SQL Always On, **debe** [agregar las bases de datos appservice_hosting y appservice_metering a un grupo de disponibilidad](/sql/database-engine/availability-groups/windows/availability-group-add-a-database), así como sincronizar dichas bases de datos para evitar la pérdida de servicio en caso de producirse una conmutación por error de base de datos.
 
 Si va a realizar la implementación en una red virtual existente y a usar una dirección IP interna para conectarse al servidor de archivos, debe agregar una regla de seguridad de salida. Esta regla habilita el tráfico SMB entre la subred de trabajo y el servidor de archivos. En el portal del administrador vaya al grupo de seguridad de red WorkersNsg y agregue una regla de seguridad de salida con las siguientes propiedades:
 
@@ -418,7 +418,7 @@ Para implementar Azure App Service en un entorno sin conexión, primero debe cre
 ## <a name="post-deployment-steps"></a>Pasos posteriores a la implementación
 
 > [!IMPORTANT]
-> Si ha proporcionado al proveedor de recursos de Azure App Service una instancia de SQL Always On, **debe**[agregar las bases de datos appservice_hosting y appservice_metering a un grupo de disponibilidad](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database). También debe sincronizar las bases de datos para evitar cualquier pérdida de servicio en caso de una conmutación por error de la base de datos.
+> Si ha proporcionado al proveedor de recursos de Azure App Service una instancia de SQL Always On, **debe**[agregar las bases de datos appservice_hosting y appservice_metering a un grupo de disponibilidad](/sql/database-engine/availability-groups/windows/availability-group-add-a-database). También debe sincronizar las bases de datos para evitar cualquier pérdida de servicio en caso de una conmutación por error de la base de datos.
 
 Si decide realizar una implementación en una red virtual existente y en una dirección IP interna para conectarse al servidor de archivos, debe agregar una regla de seguridad de salida. De ese modo, permite que exista tráfico SMB entre la subred del rol de trabajo y el servidor de archivos. En el portal del administrador vaya al grupo de seguridad de red WorkersNsg y agregue una regla de seguridad de salida con las siguientes propiedades:
 

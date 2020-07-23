@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
-ms.openlocfilehash: 0efcac6635a94b3fdc5551f9aa61b5c774e93905
-ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
+ms.openlocfilehash: b454d6b91a99ecebc512de4a20e5e230af8bf47f
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84631185"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86566828"
 ---
 # <a name="access-the-kubernetes-dashboard-in-azure-stack-hub"></a>Acceso al panel de Kubernetes en Azure Stack Hub 
 
@@ -29,7 +29,7 @@ Kubernetes incluye un panel web que se puede usar para operaciones básicas de a
 
 * Cliente SSH
 
-    Necesitará un cliente SSH para conectarse con seguridad al nodo principal del clúster. Si usa Windows, puede usar [Putty](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/virtual-machine/cpp-connect-vm). Necesitará la clave privada utilizada cuando implementó el clúster de Kubernetes.
+    Necesitará un cliente SSH para conectarse con seguridad al nodo principal del clúster. Si usa Windows, puede usar [Putty](/azure/marketplace/cloud-partner-portal/virtual-machine/cpp-connect-vm). Necesitará la clave privada utilizada cuando implementó el clúster de Kubernetes.
 
 * FTP (PSCP)
 
@@ -52,7 +52,7 @@ Puede recuperar la dirección URL para el panel desde el nodo principal del clú
 
 2. Abra el nodo principal en el portal. Copie la dirección **IP pública**. Haga clic en **Conectar** para obtener el nombre de usuario en el cuadro **Iniciar sesión con la cuenta local de VM**. Este es el mismo nombre de usuario que se establece al crear el clúster. Utilice la dirección IP pública en lugar de la dirección IP privada que se muestra en la hoja de conexión.
 
-3.  Abra un cliente de SSH para conectarse al nodo principal. Si está trabajando en Windows, puede usar [Putty](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/virtual-machine/cpp-connect-vm) para crear la conexión. Utilizará la dirección IP pública para el nodo principal y el nombre de usuario y agregará la clave privada que utilizó al crear el clúster.
+3.  Abra un cliente de SSH para conectarse al nodo principal. Si está trabajando en Windows, puede usar [Putty](/azure/marketplace/cloud-partner-portal/virtual-machine/cpp-connect-vm) para crear la conexión. Utilizará la dirección IP pública para el nodo principal y el nombre de usuario y agregará la clave privada que utilizó al crear el clúster.
 
 4.  Cuando se conecte el terminal, escriba `kubectl` para abrir el cliente de la línea de comandos de Kubernetes.
 
@@ -116,7 +116,7 @@ Puede recuperar la dirección URL para el panel desde el nodo principal del clú
     kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard 
     ``` 
 
-    El script otorga privilegios de administrador en la nube `kubernetes-dashboard`. Para más información, vea [Para clústeres con RBAC habilitado](https://docs.microsoft.com/azure/aks/kubernetes-dashboard).
+    El script otorga privilegios de administrador en la nube `kubernetes-dashboard`. Para más información, vea [Para clústeres con RBAC habilitado](/azure/aks/kubernetes-dashboard).
 
 Puede usar el panel. Para más información sobre el panel de Kubernetes, vea la información sobre el [panel de la interfaz de usuario web de Kubernetes](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/). 
 
@@ -126,7 +126,7 @@ Puede usar el panel. Para más información sobre el panel de Kubernetes, vea la
 
 ### <a name="custom-virtual-networks"></a>Redes virtuales personalizadas
 
-Si experimenta problemas de conectividad al acceder al panel de Kubernetes después de implementar Kubernetes en una [red virtual personalizada](https://docs.microsoft.com/azure-stack/user/kubernetes-aks-engine-custom-vnet), asegúrese de que las subredes de destino están vinculadas a los recursos de la tabla de enrutamiento y del grupo de seguridad de red creados por el motor de AKS.
+Si experimenta problemas de conectividad al acceder al panel de Kubernetes después de implementar Kubernetes en una [red virtual personalizada](./kubernetes-aks-engine-custom-vnet.md), asegúrese de que las subredes de destino están vinculadas a los recursos de la tabla de enrutamiento y del grupo de seguridad de red creados por el motor de AKS.
 
 Asegúrese de que las reglas del grupo de seguridad de red permitan la comunicación entre los nodos principales y la dirección IP del pod del panel de Kubernetes. Esto se puede confirmar mediante el comando ping desde un nodo maestro.
 
@@ -136,4 +136,4 @@ Asegúrese de que las reglas del grupo de seguridad de red permitan la comunicac
 
 [Adición de un clúster de Kubernetes a Marketplace (para el operador de Azure Stack Hub)](../operator/azure-stack-solution-template-kubernetes-cluster-add.md)  
 
-[Kubernetes en Azure](https://docs.microsoft.com/azure/container-service/kubernetes/container-service-kubernetes-walkthrough)  
+[Kubernetes en Azure](/azure/container-service/kubernetes/container-service-kubernetes-walkthrough)  

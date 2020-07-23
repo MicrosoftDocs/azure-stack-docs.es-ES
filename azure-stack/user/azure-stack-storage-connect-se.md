@@ -7,16 +7,16 @@ ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: a72179e26ab4c873aa67ece9e207f4e6f4e71579
-ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
+ms.openlocfilehash: c92b037d34026df65569747949cca98d75910fad
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84631238"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86566794"
 ---
 # <a name="connect-storage-explorer-to-an-azure-stack-hub-subscription-or-a-storage-account"></a>Conexión del Explorador de Storage a una suscripción de Azure Stack Hub o una cuenta de almacenamiento
 
-En este artículo, aprenderá a conectarse a sus suscripciones y cuentas de almacenamiento de Azure Stack Hub mediante el [Explorador de Azure Storage](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer). El Explorador de Storage es una aplicación independiente que permite trabajar fácilmente con datos de Azure Stack Hub Storage en Windows, macOS y Linux.
+En este artículo, aprenderá a conectarse a sus suscripciones y cuentas de almacenamiento de Azure Stack Hub mediante el [Explorador de Azure Storage](/azure/vs-azure-tools-storage-manage-with-storage-explorer). El Explorador de Storage es una aplicación independiente que permite trabajar fácilmente con datos de Azure Stack Hub Storage en Windows, macOS y Linux.
 
 > [!NOTE]  
 > Hay varias herramientas disponibles para mover datos hacia Azure Stack Hub Storage y desde este. Para más información, consulte el artículo sobre las [herramientas de transferencia de datos para Azure Stack Hub Storage](azure-stack-storage-transfer.md).

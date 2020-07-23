@@ -7,12 +7,12 @@ ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/10/2019
-ms.openlocfilehash: c64b95874e6718fd394796dd0254f38127211f68
-ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
+ms.openlocfilehash: bb43fc0503e05e09dc121597027179b8b0a276b5
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84631171"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86566449"
 ---
 # <a name="manage-and-deploy-resources-to-azure-stack-hub-with-azure-cli"></a>Administración e implementación de recursos en Azure Stack Hub con la CLI de Azure
 
@@ -81,7 +81,7 @@ Puede configurar un punto de conexión accesible públicamente que hospede un ar
 
 ### <a name="install-or-upgrade-cli"></a>Instalación o actualización de la CLI
 
-Inicie sesión en la estación de trabajo de desarrollo e instale la CLI. Azure Stack Hub requiere la versión 2.0 o superior de la CLI de Azure. La versión más reciente de los perfiles de API requiere una versión actual de la CLI. Instale la CLI mediante los pasos descritos en el artículo [Instalación de la CLI de Azure](https://docs.microsoft.com/cli/azure/install-azure-cli). 
+Inicie sesión en la estación de trabajo de desarrollo e instale la CLI. Azure Stack Hub requiere la versión 2.0 o superior de la CLI de Azure. La versión más reciente de los perfiles de API requiere una versión actual de la CLI. Instale la CLI mediante los pasos descritos en el artículo [Instalación de la CLI de Azure](/cli/azure/install-azure-cli). 
 
 1. Para comprobar si la instalación se realizó correctamente, abra un terminal o una ventana del símbolo del sistema y ejecute el siguiente comando:
 
@@ -198,7 +198,7 @@ Para confiar en el certificado raíz de la entidad de certificación de Azure S
 
    - Inicie sesión como una *entidad de servicio*: 
     
-     Antes de iniciar sesión, [cree una entidad de servicio en Azure Portal](azure-stack-create-service-principals.md) o mediante la CLI y asígnele un rol. Ahora, inicie sesión con el siguiente comando:
+     Antes de iniciar sesión, [cree una entidad de servicio en Azure Portal](../operator/azure-stack-create-service-principals.md?view=azs-2002) o mediante la CLI y asígnele un rol. Ahora, inicie sesión con el siguiente comando:
 
      ```azurecli  
      az login --tenant <Azure Active Directory Tenant name. For example: myazurestack.onmicrosoft.com> --service-principal -u <Application Id of the Service Principal> -p <Key generated for the Service Principal>
@@ -424,7 +424,7 @@ Use los pasos siguientes para conectarse a Azure Stack Hub:
    
    * Iniciar sesión como una *entidad de servicio*
     
-     Antes de iniciar sesión, [cree una entidad de servicio en Azure Portal](azure-stack-create-service-principals.md) o mediante la CLI y asígnele un rol. Ahora, inicie sesión con el siguiente comando:
+     Antes de iniciar sesión, [cree una entidad de servicio en Azure Portal](../operator/azure-stack-create-service-principals.md?view=azs-2002) o mediante la CLI y asígnele un rol. Ahora, inicie sesión con el siguiente comando:
 
      ```azurecli  
      az login \

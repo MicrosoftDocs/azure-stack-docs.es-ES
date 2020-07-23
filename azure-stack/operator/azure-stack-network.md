@@ -7,12 +7,12 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: wamota
 ms.lastreviewed: 06/04/2019
-ms.openlocfilehash: f447f4969e9cb9bcb4d56ea5961473e1028e44f3
-ms.sourcegitcommit: 7b8e067cb449e67ca9c2935580684d78840ad495
+ms.openlocfilehash: 563892dd4275c6e42fdda1f7046edc7418f50350
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82106914"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86488406"
 ---
 # <a name="network-integration-planning-for-azure-stack"></a>Planeamiento de la capacidad de red de Azure Stack
 
@@ -92,7 +92,7 @@ Esta red /29 (seis IP de host) está dedicada a conectar los puertos de administ
 
 ## <a name="permitted-networks"></a>Redes permitidas
 
-A partir de la versión 1910, la hoja de cálculo de implementación tendrá este nuevo campo que permitirá al operador cambiar algunas listas de control de acceso (ACL) para proporcionar acceso a las interfaces de administración de dispositivos de red y al host de ciclo de vida de hardware (HLH) desde un intervalo de red del centro de datos de confianza. Con el cambio de la lista de control de acceso, el operador puede permitir que sus máquinas virtuales de jumpbox de administración de un intervalo de red específico obtengan acceso a la interfaz de administración de conmutadores, al sistema operativo HLH y al BMC HLH. El operador puede proporcionar una o varias subredes a esta lista; si se deja en blanco, se denegará el acceso de forma predeterminada. Esta nueva funcionalidad reemplaza la necesidad de una intervención manual posterior a la implementación, tal como se solía describir en [Modificar la configuración específica de la configuración del conmutador de Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-customer-defined#access-control-list-updates).
+A partir de la versión 1910, la hoja de cálculo de implementación tendrá este nuevo campo que permitirá al operador cambiar algunas listas de control de acceso (ACL) para proporcionar acceso a las interfaces de administración de dispositivos de red y al host de ciclo de vida de hardware (HLH) desde un intervalo de red del centro de datos de confianza. Con el cambio de la lista de control de acceso, el operador puede permitir que sus máquinas virtuales de jumpbox de administración de un intervalo de red específico obtengan acceso a la interfaz de administración de conmutadores, al sistema operativo HLH y al BMC HLH. El operador puede proporcionar una o varias subredes a esta lista; si se deja en blanco, se denegará el acceso de forma predeterminada. Esta nueva funcionalidad reemplaza la necesidad de una intervención manual posterior a la implementación, tal como se solía describir en [Modificar la configuración específica de la configuración del conmutador de Azure Stack](./azure-stack-customer-defined.md#access-control-list-updates).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

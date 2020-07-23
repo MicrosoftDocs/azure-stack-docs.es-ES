@@ -8,16 +8,16 @@ ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 04/28/2020
 ms.custom: conteperfq4
-ms.openlocfilehash: d0ca1abfbecc76ac3d6dd3362626a19b7ee52d0a
-ms.sourcegitcommit: e28821041b8111fdcd2c28d35a83ab0a8018455c
+ms.openlocfilehash: 2906846b3f9aac2a748955032d8f9bce060f14cd
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86033198"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86488253"
 ---
 # <a name="use-the-privileged-endpoint-in-azure-stack-hub"></a>Uso del punto de conexión con privilegios en Azure Stack Hub
 
-Como operador de Azure Stack Hub, debe usar el portal del administrador, PowerShell o las API de Azure Resource Manager en la mayor parte de las tareas de administración diarias. Sin embargo, con algunas operaciones menos comunes, deberá usar el *punto de conexión con privilegios* (PEP). El PEP es una consola remota de PowerShell preconfigurada que proporciona las funcionalidades suficientes para ayudarle a realizar una tarea necesaria. El punto de conexión usa [PowerShell JEA (Just Enough Administration)](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/overview) para exponer únicamente un conjunto restringido de cmdlets. Para acceder al PEP e invocar el conjunto restringido de cmdlets, se usa una cuenta sin privilegios. No se necesita ninguna cuenta de administrador. Para mayor seguridad, no se permite scripting.
+Como operador de Azure Stack Hub, debe usar el portal del administrador, PowerShell o las API de Azure Resource Manager en la mayor parte de las tareas de administración diarias. Sin embargo, con algunas operaciones menos comunes, deberá usar el *punto de conexión con privilegios* (PEP). El PEP es una consola remota de PowerShell preconfigurada que proporciona las funcionalidades suficientes para ayudarle a realizar una tarea necesaria. El punto de conexión usa [PowerShell JEA (Just Enough Administration)](/powershell/scripting/learn/remoting/jea/overview) para exponer únicamente un conjunto restringido de cmdlets. Para acceder al PEP e invocar el conjunto restringido de cmdlets, se usa una cuenta sin privilegios. No se necesita ninguna cuenta de administrador. Para mayor seguridad, no se permite scripting.
 
 Puede usar el PEP para realizar estas tareas:
 
@@ -41,7 +41,7 @@ También puede encontrar la dirección IP en el portal de administración de Azu
 Tendrá que establecer la configuración de la referencia cultural actual en `en-US` al ejecutar el punto de conexión con privilegios; de lo contrario, los cmdlets como Test-AzureStack o Get-AzureStackLog no funcionarán según lo esperado.
 
 > [!NOTE]
-> Por motivos de seguridad, es necesario conectarse al PEP solo desde una máquina virtual protegida que se ejecute en el host de ciclo de vida de hardware, o desde un equipo seguro dedicado, como una [estación de trabajo de acceso con privilegios](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations). No se debe modificar la configuración original del host de ciclo de vida de hardware, (incluida la instalación de software nuevo) ni usarse para la conexión al PEP.
+> Por motivos de seguridad, es necesario conectarse al PEP solo desde una máquina virtual protegida que se ejecute en el host de ciclo de vida de hardware, o desde un equipo seguro dedicado, como una [estación de trabajo de acceso con privilegios](/windows-server/identity/securing-privileged-access/privileged-access-workstations). No se debe modificar la configuración original del host de ciclo de vida de hardware, (incluida la instalación de software nuevo) ni usarse para la conexión al PEP.
 
 1. Establezca la confianza.
 
@@ -114,7 +114,7 @@ Tendrá que establecer la configuración de la referencia cultural actual en `en
 
 ## <a name="how-to-use-the-privileged-endpoint"></a>Uso del punto de conexión con privilegios 
 
-Tal y como se mencionó anteriormente, el PEP es un punto de conexión de [PowerShell JEA](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/overview). Al proporcionar una capa de seguridad sólida, un punto de conexión de JEA reduce algunas de las funcionalidades básicas de PowerShell, como la finalización con tabulación o de scripting. Si intenta algún tipo de operación de scripts, se producirá el error **ScriptsNotAllowed**. Este error es el comportamiento esperado.
+Tal y como se mencionó anteriormente, el PEP es un punto de conexión de [PowerShell JEA](/powershell/scripting/learn/remoting/jea/overview). Al proporcionar una capa de seguridad sólida, un punto de conexión de JEA reduce algunas de las funcionalidades básicas de PowerShell, como la finalización con tabulación o de scripting. Si intenta algún tipo de operación de scripts, se producirá el error **ScriptsNotAllowed**. Este error es el comportamiento esperado.
 
 Por ejemplo, para obtener la lista de parámetros de un cmdlet determinado, debe ejecutar el siguiente comando:
 
@@ -122,7 +122,7 @@ Por ejemplo, para obtener la lista de parámetros de un cmdlet determinado, debe
     Get-Command <cmdlet_name> -Syntax
 ```
 
-Como alternativa, puede usar el cmdlet [**Import-PSSession**](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Import-PSSession?view=powershell-5.1) para importar todos los cmdlets de PEP a la sesión actual en la máquina local. Los cmdlets y las funciones del PEP ahora están disponibles en la máquina local, junto con la finalización con tabulación y, más en general, con el scripting. También puede ejecutar el módulo **[Get-Help](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-help)** para revisar las instrucciones del cmdlet.
+Como alternativa, puede usar el cmdlet [**Import-PSSession**](/powershell/module/microsoft.powershell.utility/import-pssession?view=powershell-5.1) para importar todos los cmdlets de PEP a la sesión actual en la máquina local. Los cmdlets y las funciones del PEP ahora están disponibles en la máquina local, junto con la finalización con tabulación y, más en general, con el scripting. También puede ejecutar el módulo **[Get-Help](/powershell/module/microsoft.powershell.core/get-help)** para revisar las instrucciones del cmdlet.
 
 Lleve a cabo los siguientes pasos para importar la sesión del PEP al equipo local:
 
@@ -200,5 +200,5 @@ Una vez los archivos de registro de transcripción se transfieren correctamente 
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Herramientas de diagnóstico de Azure Stack Hub](azure-stack-diagnostic-log-collection-overview-tzl.md)
+- [Herramientas de diagnóstico de Azure Stack Hub](./azure-stack-diagnostic-log-collection-overview.md?view=azs-2002)
 - [Referencia del punto de conexión con privilegios elevados de Azure Stack Hub](../reference/pep-2002/index.md)

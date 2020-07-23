@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 06/16/2020
 ms.author: justinha
 ms.lastreviewed: 06/16/2020
-ms.openlocfilehash: 62cccdb235432f6ca870605e061be2c2c0dac74a
-ms.sourcegitcommit: 5f4f0ee043ff994efaad44129ce49be43c64d5dc
+ms.openlocfilehash: bacaccd664996af7dafa7fd6b7b3518b7dcaa851
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84819271"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86488559"
 ---
 # <a name="azure-stack-hub-administration-basics"></a>Aspectos básicos de la administración de Azure Stack Hub
 
@@ -96,7 +96,7 @@ Además de ofrecer servicios, debe realizar las tareas habituales de un operador
 
 ## <a name="what-to-tell-your-users"></a>Qué decirles a los usuarios
 
-Deberá informar a los usuarios cómo trabajar con los servicios en Azure Stack Hub, conectarse con el entorno y suscribirse a las ofertas. Además de toda la documentación personalizada que puede proporcionar a los usuarios, puede enviar a los usuarios a la [Documentación del usuario de Azure Stack Hub](/azure-stack/user/).
+Deberá informar a los usuarios cómo trabajar con los servicios en Azure Stack Hub, conectarse con el entorno y suscribirse a las ofertas. Además de toda la documentación personalizada que puede proporcionar a los usuarios, puede enviar a los usuarios a la [Documentación del usuario de Azure Stack Hub](../user/index.yml).
 
 **Información sobre cómo trabajar con los servicios de Azure Stack Hub**
 

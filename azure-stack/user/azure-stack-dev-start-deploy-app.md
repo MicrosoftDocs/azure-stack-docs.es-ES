@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: f162a244e97d2346851ff4b13b6bdd04033e33fb
-ms.sourcegitcommit: db3c9179916a36be78b43a8a47e1fd414aed3c2e
+ms.openlocfilehash: fa94f2bb29b75a2fcbbdbc7707a69d9ba2f8d0cf
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84146859"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86567610"
 ---
 # <a name="common-deployments-for-azure-stack-hub"></a>Implementaciones comunes para Azure Stack Hub
 
@@ -36,4 +36,4 @@ Los siguientes artículos sobre procedimientos le guiarán a través de la confi
 ## <a name="next-steps"></a>Pasos siguientes
 
 - Configuración de un [entorno de desarrollo en Azure Stack Hub](azure-stack-dev-start.md).
-- Configure una [canalización de integración continua/entrega continua (CI/CD) en Azure Stack Hub](azure-stack-solution-pipeline.md).
+- Configure una [canalización de integración continua/entrega continua (CI/CD) en Azure Stack Hub](https://github.com/Azure-Samples/azure-intelligent-edge-patterns/tree/master/hybrid-devops).

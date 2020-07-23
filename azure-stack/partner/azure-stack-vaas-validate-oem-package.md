@@ -9,12 +9,12 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 4d62dcd1414edbc38b4407d980b7af974190c390
-ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
+ms.openlocfilehash: afbe701cb9943494329baec929aadbe62eaf8ada
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81661410"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86490242"
 ---
 # <a name="validate-oem-packages"></a>Validación de paquetes de OEM
 
@@ -62,7 +62,7 @@ Al crear un flujo de trabajo de **Validación del paquete** en el portal de VaaS
 
 El nivel de acceso mínimo requerido por VaaS depende de si va a crear un flujo de trabajo de validación del paquete o programar una prueba *interactiva*.
 
-En el caso de los niveles de acceso **Privado** y **Blob**, tiene que conceder acceso temporalmente al blob del paquete proporcionando a VaaS una [firma de acceso compartido](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1?) (SAS). El nivel de acceso **Contenedor** no necesita que se generen direcciones URL de SAS, pero permite el acceso no autenticado al contenedor y sus blobs.
+En el caso de los niveles de acceso **Privado** y **Blob**, tiene que conceder acceso temporalmente al blob del paquete proporcionando a VaaS una [firma de acceso compartido](/azure/storage/common/storage-dotnet-shared-access-signature-part-1) (SAS). El nivel de acceso **Contenedor** no necesita que se generen direcciones URL de SAS, pero permite el acceso no autenticado al contenedor y sus blobs.
 
 |Nivel de acceso | Requisito de flujo de trabajo | Requisito de prueba |
 |---|---------|---------|
@@ -119,7 +119,7 @@ Use esta opción si es aceptable permitir el acceso de clientes no autenticados 
 > [!CAUTION]
 > Esta opción abre los blobs para el acceso anónimo de solo lectura.
 
-1. Establezca el nivel de acceso del contenedor de paquetes en **Blob** o **Contenedor**. Para obtener más información, consulte [Concesión de permisos a usuarios anónimos a contenedores y blobs](https://docs.microsoft.com/azure/storage/storage-manage-access-to-resources#grant-anonymous-users-permissions-to-containers-and-blobs).
+1. Establezca el nivel de acceso del contenedor de paquetes en **Blob** o **Contenedor**. Para obtener más información, consulte [Concesión de permisos a usuarios anónimos a contenedores y blobs](/azure/storage/storage-manage-access-to-resources#grant-anonymous-users-permissions-to-containers-and-blobs).
 
     > [!NOTE]
     > Si va a proporcionar una dirección URL del paquete a una prueba *interactiva*, tiene que conceder **acceso de lectura público completo** al contenedor para continuar con las pruebas.

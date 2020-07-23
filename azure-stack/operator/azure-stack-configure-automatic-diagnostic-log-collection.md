@@ -7,12 +7,12 @@ ms.date: 04/17/2020
 ms.author: justinha
 ms.reviewer: shisab
 ms.lastreviewed: 04/17/2020
-ms.openlocfilehash: 067817e29858113fc22b596aa394d6e0942e921a
-ms.sourcegitcommit: b2b0fe629d840ca8d5b6353a90f1fcb392a73bd5
+ms.openlocfilehash: a348b2c301b7fbfbffe31f9ea5dff3fbb3e92b44
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85377177"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86489341"
 ---
 # <a name="proactive-diagnostic-log-collection-in-azure-stack-hub"></a>Recopilación proactiva de registros de diagnóstico en Azure Stack Hub
 
@@ -51,9 +51,9 @@ Puede guardar los archivos de registro de Azure Stack Hub en un contenedor de bl
 
 ### <a name="prerequisites"></a>Requisitos previos
 
-Puede usar un contenedor de blobs nuevo o existente en Azure. Para crear un contenedor de blobs en Azure, necesita al menos el [rol de colaborador de Storage Blob](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor) o el [permiso específico](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). Los administradores globales también tienen el permiso necesario.
+Puede usar un contenedor de blobs nuevo o existente en Azure. Para crear un contenedor de blobs en Azure, necesita al menos el [rol de colaborador de Storage Blob](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor) o el [permiso específico](/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). Los administradores globales también tienen el permiso necesario.
 
-Para ver procedimientos recomendados sobre cómo elegir parámetros para la cuenta de almacenamiento de recopilación de registros automática, consulte [Procedimientos recomendados para la recopilación de registros automática de Azure Stack Hub](azure-stack-best-practices-automatic-diagnostic-log-collection.md). Para más información sobre los tipos de cuentas de almacenamiento, consulte [Introducción a las cuentas de Azure Storage](https://docs.microsoft.com/azure/storage/common/storage-account-overview).
+Para ver procedimientos recomendados sobre cómo elegir parámetros para la cuenta de almacenamiento de recopilación de registros automática, consulte [Procedimientos recomendados para la recopilación de registros automática de Azure Stack Hub](./azure-stack-overview.md?view=azs-2002). Para más información sobre los tipos de cuentas de almacenamiento, consulte [Introducción a las cuentas de Azure Storage](/azure/storage/common/storage-account-overview).
 
 ### <a name="create-a-blob-storage-account"></a>Creación de una cuenta de almacenamiento de blobs
 
@@ -97,7 +97,7 @@ Para ver procedimientos recomendados sobre cómo elegir parámetros para la cuen
 
 1. Seleccione **Crear**.  
 
-Copie la dirección URL y escríbala al [configurar la recopilación de registros automática](azure-stack-configure-automatic-diagnostic-log-collection-tzl.md). Para obtener más información sobre las direcciones URL de SAS, consulte [Uso de firmas de acceso compartido (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1).
+Copie la dirección URL y escríbala al [configurar la recopilación de registros automática](?view=azs-2002). Para obtener más información sobre las direcciones URL de SAS, consulte [Uso de firmas de acceso compartido (SAS)](/azure/storage/common/storage-dotnet-shared-access-signature-part-1).
 
 ## <a name="steps-to-configure-automatic-log-collection"></a>Pasos para configurar la recopilación de registros automática
 

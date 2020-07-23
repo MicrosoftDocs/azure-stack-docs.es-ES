@@ -8,12 +8,12 @@ ms.date: 05/05/2020
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 04/30/2020
-ms.openlocfilehash: 57cdd5ed496d0792f2d36f1e12d5fb8fce1d4370
-ms.sourcegitcommit: 8646eba1674ca708baf6699f4a4b56d134766e85
+ms.openlocfilehash: 9a04f99df8093f0f37d68137dfbe9ff18664d385
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861408"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86489749"
 ---
 # <a name="app-service-on-azure-stack-hub-2020-q2-release-notes"></a>Notas de la versión de App Service en Azure Stack Hub 2020 Q2
 
@@ -119,7 +119,7 @@ Revise los [problemas conocidos de la actualización](#known-issues-update) y re
 ## <a name="post-deployment-steps"></a>Pasos posteriores a la implementación
 
 > [!IMPORTANT]
-> Si proporcionó el proveedor de recursos de App Service con una instancia de SQL Always On, DEBE [agregar las bases de datos appservice_hosting y appservice_metering a un grupo de disponibilidad](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database), así como sincronizar dichas bases de datos para evitar la pérdida de servicio en caso de producirse una conmutación por error de base de datos.
+> Si proporcionó el proveedor de recursos de App Service con una instancia de SQL Always On, DEBE [agregar las bases de datos appservice_hosting y appservice_metering a un grupo de disponibilidad](/sql/database-engine/availability-groups/windows/availability-group-add-a-database), así como sincronizar dichas bases de datos para evitar la pérdida de servicio en caso de producirse una conmutación por error de base de datos.
 
 ## <a name="known-issues-update"></a>Problemas conocidos (actualización)
 

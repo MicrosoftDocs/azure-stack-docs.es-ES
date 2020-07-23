@@ -7,20 +7,20 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: shnatara
 ms.lastreviewed: 09/25/2019
-ms.openlocfilehash: 4ccbdfe93f8ed960002c251e0d18e24f29a9b229
-ms.sourcegitcommit: cad40ae88212cc72f40c84a1c88143ea0abb65ef
+ms.openlocfilehash: fe06aca2423f5347193490798427446c684b6703
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84111870"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86566981"
 ---
 # <a name="deploy-a-service-fabric-cluster-in-azure-stack-hub"></a>Implementación de un clúster de Service Fabric en Azure Stack Hub
 
 Use el elemento **Clúster de Service Fabric** en Azure Marketplace para implementar un clúster protegido de Service Fabric en Azure Stack Hub. 
 
-Para más información sobre cómo trabajar con Service Fabric, consulte [Información general de Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview) y [Escenarios de seguridad de los clústeres de Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-security) en la documentación de Azure.
+Para más información sobre cómo trabajar con Service Fabric, consulte [Información general de Azure Service Fabric](/azure/service-fabric/service-fabric-overview) y [Escenarios de seguridad de los clústeres de Service Fabric](/azure/service-fabric/service-fabric-cluster-security) en la documentación de Azure.
 
-El clúster de Service Fabric en Azure Stack Hub no utiliza el proveedor de recursos Microsoft.ServiceFabric. En su lugar, en Azure Stack Hub, el clúster de Service Fabric es un conjunto de escalado de máquinas virtuales con un conjunto de software preinstalado con [Desired State Configuration (DSC)](https://docs.microsoft.com/powershell/scripting/dsc/overview/overview).
+El clúster de Service Fabric en Azure Stack Hub no utiliza el proveedor de recursos Microsoft.ServiceFabric. En su lugar, en Azure Stack Hub, el clúster de Service Fabric es un conjunto de escalado de máquinas virtuales con un conjunto de software preinstalado con [Desired State Configuration (DSC)](/powershell/scripting/dsc/overview/overview).
 
 ## <a name="prerequisites"></a>Prerrequisitos
 
@@ -29,13 +29,13 @@ Se necesitan los siguientes requisitos para implementar el clúster de Service F
    Este es el certificado de servidor X.509 que va a agregar a KeyVault al implementar Service Fabric. 
    - El **CN** de este certificado debe coincidir con el nombre de dominio completo (FQDN) del clúster de Service Fabric que cree. 
    - El formato del certificado debe ser PFX, ya que se requieren las claves públicas y privadas. 
-     Consulte los [requisitos](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-security) para crear este certificado del lado servidor.
+     Consulte los [requisitos](/azure/service-fabric/service-fabric-cluster-security) para crear este certificado del lado servidor.
 
      > [!NOTE]  
      > Puede usar un certificado autofirmado en lugar del certificado de servidor X.509 para fines de prueba. No es necesario que los certificados autofirmados coincidan con el nombre de dominio completo del clúster.
 
 1. **Certificado de cliente de administración**  
-   Este es el certificado que usa el cliente para autenticarse en el clúster de Service Fabric. Puede ser autofirmado. Consulte los [requisitos](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-security) para crear este certificado de cliente.
+   Este es el certificado que usa el cliente para autenticarse en el clúster de Service Fabric. Puede ser autofirmado. Consulte los [requisitos](/azure/service-fabric/service-fabric-cluster-security) para crear este certificado de cliente.
 
 1. **Los siguientes elementos deben estar disponibles en Marketplace de Azure Stack Hub:**
     - **Windows Server 2016**: la plantilla usa la imagen de Windows Server 2016 para crear el clúster.  
@@ -199,7 +199,7 @@ Puede acceder al clúster de Service Fabric mediante el uso de Service Fabric Ex
 
 ### <a name="use-service-fabric-powershell"></a>Use Service Fabric PowerShell
 
-1. Instale el *SDK de Microsoft Azure Service Fabric* desde [Preparación del entorno de desarrollo en Windows](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started#install-the-sdk-and-tools) en la documentación de Azure Service Fabric.  
+1. Instale el *SDK de Microsoft Azure Service Fabric* desde [Preparación del entorno de desarrollo en Windows](/azure/service-fabric/service-fabric-get-started#install-the-sdk-and-tools) en la documentación de Azure Service Fabric.  
 
 1. Una vez completada la instalación, configure las variables de entorno del sistema para asegurarse de que se puede acceder a los cmdlets de Service Fabric desde PowerShell.  
     

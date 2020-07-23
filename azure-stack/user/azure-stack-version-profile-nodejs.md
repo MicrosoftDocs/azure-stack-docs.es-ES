@@ -7,12 +7,12 @@ ms.date: 04/30/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 04/30/2020
-ms.openlocfilehash: b838afd49f53adc32af94559cebc5a65db3ee7ef
-ms.sourcegitcommit: 6de5b687197798302c3b1f08e4c82f049a99e49f
+ms.openlocfilehash: 92f05840d8a2a8f58f70abd10e2860224f706d2b
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82596812"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86566505"
 ---
 # <a name="use-api-version-profiles-with-nodejs-software-development-kit-sdk-in-azure-stack-hub"></a>Uso de perfiles de la versión de API con el kit de desarrollo de software (SDK) de Node.js en Azure Stack Hub
 
@@ -72,7 +72,7 @@ Utilice las versiones específicas de API definidas dentro del paquete para usar
 
 4. Instale la biblioteca cliente del proveedor de recursos usando npm. En la línea de comandos, ejecute `npm install <package-name>`. Por ejemplo, puede ejecutar `npm install @azure/arm-authorization-profile-2019-03-01-hybrid` para instalar la biblioteca del proveedor de recursos de autorización.
 
-5.  Cree una suscripción y tome nota del identificador de suscripción al usar el SDK. Para ver las instrucciones necesarias para hacerlo, consulte [Creación de suscripciones para ofertas en Azure Stack Hub](https://docs.microsoft.com/azure/azure-stack/azure-stack-subscribe-plan-provision-vm).
+5.  Cree una suscripción y tome nota del identificador de suscripción al usar el SDK. Para ver las instrucciones necesarias para hacerlo, consulte [Creación de suscripciones para ofertas en Azure Stack Hub](/azure/azure-stack/azure-stack-subscribe-plan-provision-vm).
 
 6.  Cree una entidad de servicio y guarde el identificador y el secreto de cliente. El identificador de cliente también se conoce como el identificador de aplicación al crear una entidad de servicio. Para más información, consulte [Proporcionar a las aplicaciones acceso a Azure Stack Hub](../operator/azure-stack-create-service-principals.md).
 
@@ -84,11 +84,11 @@ Para usar el SDK de Azure de Node.js con Azure Stack Hub, debe proporcionar los 
 
 | Value | Variables de entorno | Descripción |
 | --- | --- | --- |
-| Id. de inquilino | TENANT\_ID | El valor de su [identificador de inquilino](https://docs.microsoft.com/azure/azure-stack/azure-stack-identity-overview) de Azure Stack Hub. |
+| Id. de inquilino | TENANT\_ID | El valor de su [identificador de inquilino](/azure/azure-stack/azure-stack-identity-overview) de Azure Stack Hub. |
 | Id. de cliente | CLIENT\_ID | El identificador de aplicación de la entidad de servicio que guardó al crear esta última en la sección anterior de este documento.  |
-| Id. de suscripción | AZURE\_SUBSCRIPTION\_ID   Para acceder a las ofertas de Azure Stack Hub, es imprescindible el [identificador de suscripción](/azure-stack/operator/service-plan-offer-subscription-overview#subscriptions).  |
+| Id. de suscripción | AZURE\_SUBSCRIPTION\_ID   Para acceder a las ofertas de Azure Stack Hub, es imprescindible el [identificador de suscripción](../operator/service-plan-offer-subscription-overview.md#subscriptions).  |
 | Secreto del cliente | APPLICATION\_SECRET | El secreto de aplicación de la entidad de servicio que guardó al crear esta última. |
-| Punto de conexión de Resource Manager | ARM\_ENDPOINT | Consulte [Punto de conexión de Resource Manager de Azure Stack Hub](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-version-profiles-ruby#the-azure-stack-hub-resource-manager-endpoint). |
+| Punto de conexión de Resource Manager | ARM\_ENDPOINT | Consulte [Punto de conexión de Resource Manager de Azure Stack Hub](/azure/azure-stack/user/azure-stack-version-profiles-ruby#the-azure-stack-hub-resource-manager-endpoint). |
 
 #### <a name="set-your-environmental-variables-for-nodejs"></a>Establecimiento las variables de entorno para Node.js
 
@@ -147,7 +147,7 @@ Archivo JSON de ejemplo:
 
     El perfil consta de las versiones más recientes de todos los servicios. Use las versiones más recientes de todos los servicios de Azure.
 
-Para más información sobre los perfiles de API y Azure Stack Hub, consulte [Resumen de perfiles de API](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-version-profiles#summary-of-api-profiles).
+Para más información sobre los perfiles de API y Azure Stack Hub, consulte [Resumen de perfiles de API](/azure/azure-stack/user/azure-stack-version-profiles#summary-of-api-profiles).
 
 ### <a name="azure-nodejs-sdk-api-profile-usage"></a>Uso de perfil de API del SDK de Node.js de Azure
 
@@ -221,7 +221,7 @@ Puede usar los ejemplos siguientes como referencia para crear soluciones con per
     git clone https://github.com/sijuman/storage-node-resource-provider-getting-started.git
     ```
 
-2.  Cree una entidad de servicio de Azure y asigne un rol para acceder a la suscripción. Para ver las instrucciones, consulte [Uso de Azure PowerShell para crear una entidad de servicio con un certificado](https://docs.microsoft.com/azure/azure-stack/azure-stack-create-service-principals).
+2.  Cree una entidad de servicio de Azure y asigne un rol para acceder a la suscripción. Para ver las instrucciones, consulte [Uso de Azure PowerShell para crear una entidad de servicio con un certificado](/azure/azure-stack/azure-stack-create-service-principals).
 
 3.  Recupere los siguientes valores obligatorios:
     - Id. de inquilino

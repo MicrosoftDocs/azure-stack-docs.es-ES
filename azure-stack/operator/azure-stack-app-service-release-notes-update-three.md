@@ -8,12 +8,12 @@ ms.date: 03/25/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 08/20/2019
-ms.openlocfilehash: ed14d3a482a61b3daad827d559ef96926b65c551
-ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
+ms.openlocfilehash: 49ebbbcdebb369c98349e1c919f14fc75b65d6c2
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82848071"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86489562"
 ---
 # <a name="app-service-on-azure-stack-hub-update-3-release-notes"></a>Notas de la versión de la actualización 3 de App Service en Azure Stack Hub
 
@@ -75,7 +75,7 @@ En el caso de clientes que quieran migrar a una base de datos independiente en l
 >
 >
 
-1. Agregue las [bases de datos de AppService (appservice_hosting y appservice_metering) al grupo de disponibilidad](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database).
+1. Agregue las [bases de datos de AppService (appservice_hosting y appservice_metering) al grupo de disponibilidad](/sql/database-engine/availability-groups/windows/availability-group-add-a-database).
 
 1. Habilite la base de datos independiente.
     ```sql

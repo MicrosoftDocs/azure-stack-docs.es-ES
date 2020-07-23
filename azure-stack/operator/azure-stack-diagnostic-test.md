@@ -7,12 +7,12 @@ ms.date: 01/10/2020
 ms.author: justinha
 ms.reviewer: adshar
 ms.lastreviewed: 01/10/2020
-ms.openlocfilehash: bb83d8dcf567bac6081083e34c0770a277879282
-ms.sourcegitcommit: 5f4f0ee043ff994efaad44129ce49be43c64d5dc
+ms.openlocfilehash: c2133c85e9bae8c4f1bdf1e13b84ed6e79fb28ae
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84819493"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86488916"
 ---
 # <a name="validate-azure-stack-hub-system-state"></a>Validación del estado del sistema con Azure Stack Hub
 
@@ -234,6 +234,6 @@ Test-AzureStack -Include AzsNetworkInfra -Debug
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Para más información acerca de las herramientas de diagnóstico de Azure Stack Hub y el registro de problemas, consulte [Uso del punto de conexión con privilegios (PEP) para recopilar registros de diagnóstico](azure-stack-diagnostic-log-collection-overview-tzl.md).
+Para más información acerca de las herramientas de diagnóstico de Azure Stack Hub y el registro de problemas, consulte [Uso del punto de conexión con privilegios (PEP) para recopilar registros de diagnóstico](./azure-stack-diagnostic-log-collection-overview.md?view=azs-2002).
 
 Para más información acerca de la solución de problemas, consulte [Solución de problemas de Microsoft Azure Stack Hub](azure-stack-troubleshooting.md).

@@ -4,17 +4,17 @@ description: Cómo usar una GPU con cargas de trabajo de inteligencia artificial
 author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
-ms.date: 03/24/2020
-ms.openlocfilehash: 804ead80185f6fe140f6b7d216bcff845769735e
-ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
+ms.date: 07/01/2020
+ms.openlocfilehash: e00d35e02b45d0a184bc8274d06ed2460f2de152
+ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85196994"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86866865"
 ---
 # <a name="attaching-a-gpu-to-an-ubuntu-linux-vm-on-azure-stack-hci"></a>Asociación de una GPU a una máquina virtual Ubuntu Linux en Azure Stack HCI
 
-> Se aplica a: Windows Server 2019
+> Se aplica a: Azure Stack HCI, versión 20H2; Windows Server 2019
 
 En este tema se proporcionan instrucciones paso a paso sobre cómo instalar y configurar una unidad de procesamiento gráfico (GPU) NVIDIA con Azure Stack HCI mediante la tecnología de asignación de dispositivos discretos (DDA) en una máquina virtual Ubuntu.
 En este documento se da por hecho que tiene implementado el clúster de Azure Stack HCI y las máquinas virtuales instaladas.

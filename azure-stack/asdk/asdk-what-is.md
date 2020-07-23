@@ -7,15 +7,15 @@ ms.date: 11/27/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 11/27/2019
-ms.openlocfilehash: 197d1b47b3127b21f3b843a77a57642894270a71
-ms.sourcegitcommit: 5f4f0ee043ff994efaad44129ce49be43c64d5dc
+ms.openlocfilehash: 38aaf52936d09c999765118e36bfcde909409cdd
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84819240"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86489919"
 ---
 # <a name="what-is-the-azure-stack-development-kit-asdk"></a>¿Qué es el Kit de desarrollo de Azure Stack?
-El tamaño de los [sistemas integrados de Microsoft Azure Stack Hub](../operator/azure-stack-overview.md) va de los 4 a los 16 nodos y recibe soporte técnico conjunto de un asociado de hardware y Microsoft. Use los sistemas integrados de Azure Stack Hub para habilitar nuevos escenarios para las cargas de trabajo de producción. Si es un operador de Azure Stack Hub que administra la infraestructura de sistemas integrados y ofrece servicios, consulte la [documentación para operadores](/azure-stack/operator).
+El tamaño de los [sistemas integrados de Microsoft Azure Stack Hub](../operator/azure-stack-overview.md) va de los 4 a los 16 nodos y recibe soporte técnico conjunto de un asociado de hardware y Microsoft. Use los sistemas integrados de Azure Stack Hub para habilitar nuevos escenarios para las cargas de trabajo de producción. Si es un operador de Azure Stack Hub que administra la infraestructura de sistemas integrados y ofrece servicios, consulte la [documentación para operadores](../operator/index.yml).
 
 El ASDK es una implementación de un único nodo de Azure Stack Hub que puede descargar y usar de forma **gratuita**. Todos los componentes de ASDK se instalan en máquinas virtuales que se ejecutan en un equipo de un solo host, que debe cumplir o superar los [requisitos mínimos de hardware](asdk-deploy-considerations.md#hardware). El ASDK está pensado para proporcionar un entorno en el que pueda evaluar Azure Stack Hub y desarrollar aplicaciones actuales con API y herramientas coherentes con Azure en un entorno *que no sea de producción*. 
 
