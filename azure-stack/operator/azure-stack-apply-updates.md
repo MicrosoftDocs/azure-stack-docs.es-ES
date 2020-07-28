@@ -1,22 +1,22 @@
 ---
 title: Instalación de actualizaciones de Azure Stack Hub
 description: Aprenda a instalar actualizaciones de Azure Stack Hub.
-author: IngridAtMicrosoft
+author: sethmanheim
 ms.topic: how-to
-ms.date: 03/04/2020
-ms.author: inhenkel
+ms.date: 07/22/2020
+ms.author: sethm
 ms.lastreviewed: 09/10/2019
-ms.reviewer: ppace
-ms.openlocfilehash: 461bad387dd5616eba227df4bd9b6e8beee40e43
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.reviewer: sranthar
+ms.openlocfilehash: e46bc4258883e01b80b78a96bf95cfe8012934d9
+ms.sourcegitcommit: 16ff77f7157e5b04a8cd401b095f7b71f51d5a11
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79295104"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86949549"
 ---
 # <a name="install-azure-stack-hub-updates"></a>Instalación de actualizaciones de Azure Stack Hub
 
-Puede instalar paquetes de actualizaciones con la hoja **Update** (Actualizar) de Azure Stack Hub. Este artículo le guía por los pasos necesarios para actualizar, supervisar y solucionar problemas del proceso de actualización. Use la hoja Update (Actualizar) para ver información sobre la actualización, instalar actualizaciones, supervisar el progreso de las actualizaciones, revisar el historial de actualizaciones y ver la versión actual de Azure Stack Hub y del paquete de OEM.
+Puede instalar las actualizaciones con la hoja **Actualizar**  en el portal de administrador de Azure Stack Hub. En este artículo se describen los pasos para actualizar, supervisar y solucionar problemas del proceso de actualización. Use la hoja **Actualizar** para ver información sobre la actualización, instalar actualizaciones, supervisar el progreso de las actualizaciones, revisar el historial de actualizaciones y ver la versión actual de Azure Stack Hub y del paquete de OEM.
 
 Puede administrar las actualizaciones desde el portal del administrador y usar la sección **Actualizaciones** del panel para:
 
@@ -29,18 +29,16 @@ Puede administrar las actualizaciones desde el portal del administrador y usar l
 
 Puede ver la versión actual de Azure Stack Hub en la hoja **Updates** (Actualizaciones). Para abrirla:
 
-1.  Abra el portal del administrador de Azure Stack Hub.
+1. Abra el portal del administrador de Azure Stack Hub.
 
-2.  Seleccione **Panel**. En la hoja **Actualización**, se muestra la versión actual.
+2. Seleccione **Panel**. En la hoja **Actualización**, se muestra la versión actual. Por ejemplo, en esta imagen la versión es 1.1903.0.35:
 
     ![Icono de las actualizaciones en el panel predeterminado](./media/azure-stack-update-apply/image1.png)
 
-    Por ejemplo, en esta imagen la versión es 1.1903.0.35.
-
 ## <a name="install-updates-and-monitor-progress"></a>Instalar actualizaciones y supervisar el progreso
 
-> [!Important]
-> Antes de aplicar las actualizaciones de Azure Stack Hub, asegúrese de que ha completado **TODOS** los pasos de la [lista de comprobación previa a la actualización](release-notes-checklist.md) y ha programado un periodo de mantenimiento apropiado para el tipo de actualización que está aplicando.
+> [!IMPORTANT]
+> Antes de aplicar las actualizaciones de Azure Stack Hub, asegúrese de que ha completado todos los pasos de la [lista de comprobación previa a la actualización](release-notes-checklist.md) y ha programado una ventana de mantenimiento apropiada para el tipo de actualización que está aplicando.
 
 1. Abra el portal del administrador de Azure Stack Hub.
 
@@ -56,11 +54,11 @@ Puede ver la versión actual de Azure Stack Hub en la hoja **Updates** (Actualiz
 
 6. Seleccione **Descargar resumen** en la hoja de detalles de la ejecución de actualización para descargar los registros completos.
 
-    Si surge algún problema durante la supervisión de la actualización, puede usar el [punto de conexión con privilegios](https://docs.microsoft.com/azure-stack/operator/azure-stack-privileged-endpoint) para supervisar el progreso de la ejecución de una actualización de Azure Stack Hub. Si el portal de Azure Stack Hub deja de estar disponible, también puede usar el punto de conexión con privilegios para reanudar la ejecución de una actualización con errores desde el último paso correcto. Para obtener instrucciones, consulte [Supervisar actualizaciones en Azure Stack Hub con PowerShell](azure-stack-update-monitor.md).
+    Si tiene algún problema durante la supervisión de la actualización, puede usar el [punto de conexión con privilegios](./azure-stack-privileged-endpoint.md) para supervisar el progreso de la ejecución de una actualización de Azure Stack Hub. Si el portal de Azure Stack Hub deja de estar disponible, también puede usar el punto de conexión con privilegios para reanudar la ejecución de una actualización con errores desde el último paso correcto. Para obtener instrucciones, consulte [Supervisar actualizaciones en Azure Stack Hub con PowerShell](azure-stack-update-monitor.md).
 
     ![Detalles de ejecución de la actualización de Azure Stack Hub](./media/azure-stack-update-apply/image3.png)
 
-7. Una vez completada la actualización, el proveedor de recursos de actualización proporciona una confirmación de operación **correcta** para mostrar que el proceso de actualización ha finalizado e indicar el tiempo que tardó. Desde ahí, con el filtro puede ver información sobre todas las actualizaciones, las actualizaciones disponibles o las actualizaciones instaladas.
+7. Cuando se completa, el proveedor de recursos de actualización muestra una confirmación de operación **correcta** para mostrar que el proceso de actualización ha finalizado e indicar el tiempo que tardó. Desde ahí, con el filtro puede ver información sobre todas las actualizaciones, las actualizaciones disponibles o las actualizaciones instaladas.
 
     ![azure-stack-update-apply](./media/azure-stack-update-apply/image4.png)
 
@@ -78,5 +76,5 @@ Puede ver la versión actual de Azure Stack Hub en la hoja **Updates** (Actualiz
 
 ## <a name="next-steps"></a>Pasos siguientes
 
--   [Introducción a la administración de actualizaciones en Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-updates)  
--   [Directiva de mantenimiento de Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-servicing-policy)  
+- [Introducción a la administración de actualizaciones en Azure Stack Hub](./azure-stack-updates.md)  
+- [Directiva de mantenimiento de Azure Stack Hub](./azure-stack-servicing-policy.md)  
