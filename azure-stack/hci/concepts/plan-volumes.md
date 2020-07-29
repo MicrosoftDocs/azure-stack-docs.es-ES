@@ -1,26 +1,26 @@
 ---
-title: Planeamiento de volúmenes en Azure Stack HCl
+title: Planeamiento de volúmenes en Azure Stack HCI
 description: Cómo planear volúmenes de almacenamiento en Azure Stack HCl.
 author: khdownie
 ms.author: v-kedow
 ms.topic: conceptual
-ms.date: 03/06/2020
-ms.openlocfilehash: f056fbbb8c8e05da6f0a4fc7a7fb38d36249747f
-ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
+ms.date: 07/21/2020
+ms.openlocfilehash: 34806347a8a5e71cb15c93073b546c52f534cdf5
+ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85196943"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86866950"
 ---
-# <a name="planning-volumes-in-storage-spaces-direct"></a>Planeamiento de volúmenes en Espacios de almacenamiento directo
+# <a name="plan-volumes-in-azure-stack-hci"></a>Planeamiento de volúmenes en Azure Stack HCI
 
-> Se aplica a: Windows Server 2019
+> Se aplica a: Azure Stack HCI, versión 20H2; Windows Server 2019
 
-En este tema se proporcionan instrucciones sobre cómo planear volúmenes en Espacios de almacenamiento directo para satisfacer las necesidades de rendimiento y capacidad de las cargas de trabajo, incluida la elección del sistema de archivos, el tipo de resistencia y el tamaño.
+En este tema se proporcionan instrucciones sobre cómo planear volúmenes en Azure Stack HCI para satisfacer las necesidades de rendimiento y capacidad de las cargas de trabajo, incluida la elección del sistema de archivos, el tipo de resistencia y el tamaño.
 
 ## <a name="review-what-are-volumes"></a>Revisión: Qué son los volúmenes
 
-Los volúmenes son donde se colocan los archivos que las cargas de trabajo necesitan, como los archivos VHD o VHDX para máquinas virtuales de Hyper-V. Los volúmenes combinan las unidades del bloque de almacenamiento para introducir las ventajas de tolerancia a errores, escalabilidad y rendimiento de Espacios de almacenamiento directo.
+Los volúmenes son donde se colocan los archivos que las cargas de trabajo necesitan, como los archivos VHD o VHDX para máquinas virtuales de Hyper-V. Los volúmenes combinan las unidades del bloque de almacenamiento para introducir las ventajas de tolerancia a errores, escalabilidad y rendimiento de [Espacios de almacenamiento directo](/windows-server/storage/storage-spaces/storage-spaces-direct-overview), la tecnología de almacenamiento definida mediante software en la que se basa Azure Stack HCI.
 
    >[!NOTE]
    > Volúmenes compartidos de clúster.En la documentación de Espacios de almacenamiento directo, usamos el término "volumen" para hacer referencia conjuntamente al volumen y al disco virtual que contiene, incluida la funcionalidad proporcionada por otras características integradas de Windows, como los volúmenes compartidos de clúster (CSV) y ReFS. No es necesario entender estas distinciones a nivel de implementación para planear e implementar Espacios de almacenamiento directo correctamente.
@@ -191,6 +191,5 @@ Consulte [Creación de volúmenes en Azure Stack HCI](../manage/create-volumes.m
 
 Para obtener más información, vea también:
 
-- [Introducción a Azure Stack HCI](../overview.md)
 - [Selección de unidades para Espacios de almacenamiento directo](choose-drives.md)
 - [Tolerancia a errores y eficacia del almacenamiento](fault-tolerance.md)

@@ -4,19 +4,19 @@ description: Cómo crear volúmenes en Azure Stack HCI mediante Windows Admin Ce
 author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
-ms.date: 02/28/2020
-ms.openlocfilehash: e5ef5d16ca1d03ec7f6c6cbd1318b7d1e5e90096
-ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
+ms.date: 07/21/2020
+ms.openlocfilehash: 61f3515bcec6e0819b175db149d27f15a347f132
+ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85196416"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86866580"
 ---
-# <a name="creating-volumes-in-azure-stack-hci"></a>Creación de volúmenes en Azure Stack HCI
+# <a name="create-volumes-in-azure-stack-hci"></a>Creación de volúmenes en Azure Stack HCI
 
-> Se aplica a: Windows Server 2019
+> Se aplica a: Azure Stack HCI, versión 20H2; Windows Server 2019
 
-En este tema se describe cómo crear volúmenes en un clúster de Espacios de almacenamiento directo mediante Windows Admin Center y Windows PowerShell, cómo trabajar con archivos en los volúmenes y cómo habilitar la compresión y la desduplicación de datos en los volúmenes.
+En este tema se describe cómo crear volúmenes en un clúster de Azure Stack HCI mediante Windows Admin Center y Windows PowerShell, cómo trabajar con archivos en los volúmenes y cómo habilitar la compresión y la desduplicación de datos en los volúmenes. Para aprender a crear volúmenes y configurar la replicación para clústeres extendidos, consulte [Creación de volúmenes extendidos](create-stretched-volumes.md).
 
 ## <a name="create-a-three-way-mirror-volume"></a>Creación de un volumen de reflejo tridireccional
 
@@ -147,9 +147,9 @@ New-Volume -FriendlyName "Volume4" -FileSystem CSVFS_ReFS -StoragePoolFriendlyNa
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Para realizar otras tareas de administración del almacenamiento en Espacios de almacenamiento directo, consulte también:
+Para temas relacionados y otras tareas de administración del almacenamiento, vea también:
 
 - [Introducción a Espacios de almacenamiento directo](/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
-- [Planeamiento de volúmenes en Espacios de almacenamiento directo](/windows-server/storage/storage-spaces/plan-volumes)
-- [Extensión de volúmenes en Espacios de almacenamiento directo](/windows-server/storage/storage-spaces/resize-volumes)
-- [Eliminación de volúmenes en Espacios de almacenamiento directo](/windows-server/storage/storage-spaces/delete-volumes)
+- [Planeamiento de volúmenes](../concepts/plan-volumes.md)
+- [Ampliar volúmenes](extend-volumes.md)
+- [Eliminar volúmenes](delete-volumes.md)

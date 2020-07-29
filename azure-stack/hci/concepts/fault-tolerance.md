@@ -4,17 +4,17 @@ description: Descripción de las opciones de resistencia en Espacios de almacena
 author: khdownie
 ms.author: v-kedow
 ms.topic: conceptual
-ms.date: 02/28/2020
-ms.openlocfilehash: 1505e86133fe66bebf4198e0d0620a8632f067c8
-ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
+ms.date: 07/21/2020
+ms.openlocfilehash: f7ac25f80a738d2c6c59d2561668ac13d112b442
+ms.sourcegitcommit: a15a0f955bac922cebb7bf90a72384fd84ddfe56
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85196909"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86947136"
 ---
 # <a name="fault-tolerance-and-storage-efficiency-in-azure-stack-hci"></a>Tolerancia a errores y eficacia del almacenamiento en Azure Stack HCI
 
->Se aplica a: Windows Server 2019
+> Se aplica a: Azure Stack HCI, versión 20H2; Windows Server 2019
 
 En este tema se presentan las opciones de resistencia disponibles en Espacios de almacenamiento directo y se describen los requisitos de escala, la eficacia de almacenamiento y las ventajas y desventajas generales de cada una. También presenta algunas instrucciones de uso para empezar a trabajar y se incluyen referencias a artículos, blogs y contenidos adicionales interesantes donde puede obtener más información.
 
@@ -28,7 +28,7 @@ Al igual que con RAID, Espacios de almacenamiento puede hacer esto de varias man
 
 ## <a name="mirroring"></a>Creación de reflejo
 
-La creación de reflejo proporciona tolerancia a errores gracias al mantenimiento de varias copias de todos los datos. Esto se parece más a RAID-1. La manera de seccionar y colocar estos datos no es trivial (consulte [este blog](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/) para obtener más información), pero es absolutamente cierto que los datos almacenados mediante la creación de reflejo se escriben, en su totalidad, varias veces. Cada copia se escribe en distinto hardware físico (unidades diferentes en distintos servidores), que se supone que generan un error de forma independiente.
+La creación de reflejo proporciona tolerancia a errores gracias al mantenimiento de varias copias de todos los datos. Esto se parece más a RAID-1. La manera de seccionar y colocar estos datos no es trivial (consulte [este blog](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deep-dive-the-storage-pool-in-storage-spaces-direct/ba-p/425959) para obtener más información), pero es absolutamente cierto que los datos almacenados mediante la creación de reflejo se escriben, en su totalidad, varias veces. Cada copia se escribe en distinto hardware físico (unidades diferentes en distintos servidores), que se supone que generan un error de forma independiente.
 
 Espacios de almacenamiento ofrece dos tipos de creación de reflejo: "bidireccional" y "tridireccional".
 
@@ -84,11 +84,11 @@ Con unidades de disco duro (HDD), el tamaño del grupo es de cuatro símbolos; c
 
 ![local-reconstruction-codes](media/fault-tolerance/local-reconstruction-codes-180px.png)
 
-Se recomienda consultar este completo tutorial sobre [cómo los códigos de reconstrucción local controlan distintos escenarios de error y por qué resultan útiles](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/), de [Claus Joergensen](https://twitter.com/clausjor).
+Se recomienda consultar este completo tutorial sobre [cómo los códigos de reconstrucción local controlan distintos escenarios de error y por qué resultan útiles](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB), de [Claus Joergensen](https://twitter.com/clausjor).
 
 ## <a name="mirror-accelerated-parity"></a>Paridad acelerada por reflejo
 
-Un volumen de Espacios de almacenamiento directo puede combinar reflejo y paridad. Las operaciones de escritura llegan primero a la parte reflejada y se mueven gradualmente a la parte de la paridad más adelante. De hecho, esto es [usar la creación de reflejo para acelerar la codificación](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/).
+Un volumen de Espacios de almacenamiento directo puede combinar reflejo y paridad. Las operaciones de escritura llegan primero a la parte reflejada y se mueven gradualmente a la parte de la paridad más adelante. De hecho, esto es [usar la creación de reflejo para acelerar la codificación](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB).
 
 Para combinar el reflejo triple y la paridad dual, se necesitan al menos cuatro dominios de error (es decir, cuatro servidores).
 
@@ -202,14 +202,14 @@ Durante su vigencia, Espacios de almacenamiento puede tolerar cualquier número 
 
 ## <a name="usage"></a>Uso
 
-Consulte [Creación de volúmenes en Espacios de almacenamiento directo](/windows-server/storage/storage-spaces/create-volumes).
+Consulte el artículo [Creación de volúmenes](../manage/create-volumes.md).
 
 ## <a name="next-steps"></a>Pasos siguientes
 
 Para más información sobre los temas que se mencionan en este artículo, consulte lo siguiente:
 
 - [Codificación de borrado en Azure de Microsoft Research](https://www.microsoft.com/research/publication/erasure-coding-in-windows-azure-storage/)
-- [Códigos de reconstrucción locales y aceleración de volúmenes de paridad](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
-- [Volúmenes en la API de administración de almacenamiento](https://blogs.technet.microsoft.com/filecab/2016/08/29/deep-dive-volumes-in-spaces-direct/)
+- [Códigos de reconstrucción locales y aceleración de volúmenes de paridad](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)
+- [Volúmenes en la API de administración de almacenamiento](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)
 - [Demostración de la eficacia de almacenamiento en Microsoft Ignite 2016](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s)
 - [Versión preliminar de la calculadora de capacidad para Espacios de almacenamiento directo](https://aka.ms/s2dcalc)

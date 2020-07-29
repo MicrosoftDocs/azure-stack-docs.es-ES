@@ -7,16 +7,16 @@ ms.date: 09/16/2019
 ms.author: Justinha
 ms.reviewer: scottnap
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 3209c3a51b491bcdf2779e95c58f41cb124cd3f3
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 466e44156181e53a92181ecb462b8b4ff0074317
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77704869"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86566539"
 ---
 # <a name="use-idns-in-azure-stack-hub"></a>Uso de iDNS en Azure Stack Hub 
 
-iDNS es una característica de redes de Azure Stack Hub que permite resolver nombres DNS externos (por ejemplo, https:\//www.bing.com). También permite registrar los nombres de redes virtuales internas. Así, puede resolver las máquinas virtuales (VM) de la misma red virtual por nombre en lugar de por dirección IP. Este enfoque elimina la necesidad de proporcionar las entradas de servidor DNS personalizadas. Para más información acerca de DNS, consulte la [Introducción a Azure DNS](https://docs.microsoft.com/azure/dns/dns-overview).
+iDNS es una característica de redes de Azure Stack Hub que permite resolver nombres DNS externos (por ejemplo, https:\//www.bing.com). También permite registrar los nombres de redes virtuales internas. Así, puede resolver las máquinas virtuales (VM) de la misma red virtual por nombre en lugar de por dirección IP. Este enfoque elimina la necesidad de proporcionar las entradas de servidor DNS personalizadas. Para más información acerca de DNS, consulte la [Introducción a Azure DNS](/azure/dns/dns-overview).
 
 ## <a name="what-does-idns-do"></a>¿Para qué sirve iDNS?
 
@@ -171,7 +171,7 @@ Address:  172.31.12.76
 En resumen, de lo anterior se puede observar que:
  
 *   Cada red virtual tiene su propia zona, que contiene los registros D de todas las direcciones IP privadas, que constan del nombre de la máquina virtual y del sufijo DNS de la red virtual (que es su GUID).
-    *   \<nombreVM>.\<vnetGUID\>.internal.\<region>.\<stackinternalFQDN>
+    *   \<vmname>.\<vnetGUID\>.internal.\<region>.\<stackinternalFQDN>
     *   Esto se realiza de forma automática
 *   Si usa direcciones IP públicas, también puede crear etiquetas DNS para ellas. Se resuelven como cualquier otra dirección externa.
  

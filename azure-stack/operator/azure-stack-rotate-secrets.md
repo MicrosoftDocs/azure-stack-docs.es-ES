@@ -9,12 +9,12 @@ ms.reviewer: ppacent
 ms.author: inhenkel
 ms.lastreviewed: 12/13/2019
 monikerRange: '>=azs-1802'
-ms.openlocfilehash: a16928e233d47c6a3f3a8f612b5d5d22afc08456
-ms.sourcegitcommit: ddcd083430ca905653d412dc2f7b813218d79509
+ms.openlocfilehash: d66f4c6a83dbac71b407990f65922354ee353dc3
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83375055"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86488117"
 ---
 # <a name="rotate-secrets-in-azure-stack-hub"></a>Cambio de secretos en Azure Stack Hub
 
@@ -25,12 +25,12 @@ Los secretos ayudan a proteger la comunicación entre los servicios y los recurs
 ## <a name="rotate-secrets-overview"></a>Información general del cambio de secretos
 
 1. Prepare los certificados que se usarán para el cambio de secretos.
-2. Revise los [requisitos de certificados de infraestructura de clave pública de Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-pki-certs).
+2. Revise los [requisitos de certificados de infraestructura de clave pública de Azure Stack Hub](./azure-stack-pki-certs.md).
 3. [Use el punto de conexión con privilegios](azure-stack-privileged-endpoint.md) y ejecute **Test-azurestack** para confirmar que todo está bien.  
 4. Revise los [pasos previos para el cambio de secretos](#pre-steps-for-secret-rotation).
-5. [Valide los certificados PKI de Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-validate-pki-certs). Asegúrese de que no haya ningún carácter especial en la contraseña como `*` o `)`.
-6. Asegúrese de que el cifrado PFX es **TripleDES-SHA1**. Si surge un problema, consulte [Corrección de problemas comunes con certificados de PKI en Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-remediate-certs#pfx-encryption).
-7. Prepare la estructura de carpetas.  Encontrará un ejemplo en la sección [Rotación de secretos externos](https://docs.microsoft.com/azure-stack/operator/azure-stack-rotate-secrets#rotating-external-secrets).
+5. [Valide los certificados PKI de Azure Stack Hub](./azure-stack-validate-pki-certs.md). Asegúrese de que no haya ningún carácter especial en la contraseña como `*` o `)`.
+6. Asegúrese de que el cifrado PFX es **TripleDES-SHA1**. Si surge un problema, consulte [Corrección de problemas comunes con certificados de PKI en Azure Stack Hub](./azure-stack-remediate-certs.md#pfx-encryption).
+7. Prepare la estructura de carpetas.  Encontrará un ejemplo en la sección [Rotación de secretos externos](#rotating-external-secrets).
 8. [Inicie la rotación de secretos](#use-powershell-to-rotate-secrets).
 
 ## <a name="rotate-secrets"></a>Girar secretos
@@ -141,7 +141,7 @@ Si ejecuta el cambio de secretos mediante las instrucciones que aparecen a conti
 > El mensaje de error indica que hay un problema para acceder al recurso compartido de archivos, pero en realidad es la estructura de carpetas lo que se aplica aquí. Puede encontrar más información en Microsoft AzureStack Readiness Checker: [módulo PublicCertHelper](https://www.powershellgallery.com/packages/Microsoft.AzureStack.ReadinessChecker/1.1811.1101.1/Content/CertificateValidation%5CPublicCertHelper.psm1).
 >
 > También es importante que la estructura de la carpeta del recurso compartido de archivos comience con la carpeta **Certificates**; de lo contrario, también se producirá un error en la validación.
-> El montaje del recurso compartido de archivos debe ser similar a **\\\\\<IPAddress>\\\<ShareName>\\** y debe contener la carpeta **Certificates\AAD** o **Certificates\ADFS** dentro.
+> El montaje del recurso compartido de archivos debe ser similar a **\\\\\<IPAddress>\\\<ShareName>\\** y debe contener la carpeta **Certificates\AAD** o **Certificates\ADFS**.
 >
 > Por ejemplo:
 > - Fileshare = **\\\\\<IPAddress>\\\<ShareName>\\**
@@ -152,7 +152,7 @@ Si ejecuta el cambio de secretos mediante las instrucciones que aparecen a conti
 
 Para cambiar los secretos externos:
 
-1. En el directorio **\Certificates\\\<IdentityProvider>** que se creó en los pasos anteriores, coloque el nuevo conjunto de certificados externos de reemplazo en la estructura de directorios siguiendo el formato que se indica en la sección **Certificados obligatorios** de [Requisitos de certificados de infraestructura de clave pública de Azure Stack Hub](azure-stack-pki-certs.md#mandatory-certificates).
+1. En el directorio **\Certificates\\\<IdentityProvider>** recién creado en los pasos previos, coloque el nuevo conjunto de certificados externos de reemplazo en la estructura de directorios según el formato descrito en la sección **Certificados obligatorios** de [Requisitos de certificados de infraestructura de clave pública de Azure Stack](azure-stack-pki-certs.md).
 
     Ejemplo de la estructura de carpetas para el proveedor de identidades de Azure AD:
     ```powershell
@@ -200,7 +200,7 @@ Para cambiar los secretos externos:
     > [!IMPORTANT]  
     > No especifique la sesión. Almacene la sesión como una variable.
 
-3. Ejecute **[Invoke-Command](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/Invoke-Command?view=powershell-5.1)** . Pase la variable de sesión de PowerShell del punto de conexión con privilegios como parámetro **Session**.
+3. Ejecute **[Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-5.1)** . Pase la variable de sesión de PowerShell del punto de conexión con privilegios como parámetro **Session**.
 
 4. Ejecute **Start-SecretRotation** con los siguientes parámetros:
     - **PfxFilesPath**  

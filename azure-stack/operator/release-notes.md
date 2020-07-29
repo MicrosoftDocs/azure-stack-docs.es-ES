@@ -3,16 +3,16 @@ title: Notas de la versión de Azure Stack Hub
 description: Notas de la versión para los sistemas integrados de Azure Stack Hub, incluidas las actualizaciones y correcciones de errores.
 author: sethmanheim
 ms.topic: article
-ms.date: 07/07/2020
+ms.date: 07/21/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 03/18/2020
-ms.openlocfilehash: 4519c52d9075ba78d7a66d982400f706b3bd72f0
-ms.sourcegitcommit: 84b089387f5cf89e3a72e576f1c7649667075e0a
+ms.openlocfilehash: aef85fb3ee99254350c604a819befd27728a8b7c
+ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86137201"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86867035"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Notas de la versión de Azure Stack Hub
 
@@ -71,7 +71,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 <!-- What's new, also net new experiences and features. -->
 
 - Hay disponible una nueva versión (1.8.1) de los módulos de administración de PowerShell para Azure Stack Hub en AzureRM.
-- Hay disponible una nueva versión de la API REST de administración de Azure Stack Hub. Encontrará información detallada sobre los puntos de conexión y los cambios importantes en la [referencia de la API](https://docs.microsoft.com/rest/api/azure-stack/).
+- Hay disponible una nueva versión de la API REST de administración de Azure Stack Hub. Encontrará información detallada sobre los puntos de conexión y los cambios importantes en la [referencia de la API](/rest/api/azure-stack/).
 - El 15 de abril de 2020 se lanzarán nuevos módulos de inquilino de Azure PowerShell para Azure Stack Hub. Los módulos de Azure Resource Manager no dejarán de funcionar, pero dejarán de actualizarse después de la versión 2002.
 - Se ha agregado una nueva alerta de advertencia en el portal de administración de Azure Stack Hub para notificar problemas de conectividad con el servidor syslog configurado. El título de la alerta es **The Syslog client encountered a networking issue while sending a Syslog message** (El cliente de Syslog ha encontrado un problema de red al enviar un mensaje de Syslog).
 - Se ha agregado una nueva alerta de advertencia en el portal de administración de Azure Stack Hub para notificar problemas de conectividad con el protocolo de tiempo de red (NTP). El título de la alerta es **Invalid Time Source on [node name]** (Origen de hora no válido en [nombre del nodo]).
@@ -86,8 +86,8 @@ Para obtener más información sobre los tipos de compilación de actualización
 - La herramienta Azure Stack Hub Readiness Checker valida ahora la integración de AD Graph mediante todos los puertos TCP IP asignados a AD Graph.
 - La herramienta de redifusión sin conexión se ha actualizado con mejoras de confiabilidad. La herramienta ya no está disponible en GitHub y se ha [trasladado a la galería de PowerShell](https://www.powershellgallery.com/packages/Azs.Syndication.Admin/). Para más información, consulte [Descarga de elementos de Marketplace existentes desde Azure en Azure Stack Hub](azure-stack-download-azure-marketplace-item.md).
 - Se está incorporando una nueva funcionalidad de supervisión. La plataforma corregirá automáticamente la alerta de espacio en disco insuficiente para los hosts físicos y las máquinas virtuales de infraestructura, y solo si se produce un error en esta acción, la alerta será visible en el portal de administrador de Azure Stack Hub para que el operador tome medidas.
-- Mejoras en la [recopilación de registros de diagnóstico](azure-stack-diagnostic-log-collection-overview-tzl.md). La nueva experiencia mejora y simplifica la recopilación de registros de diagnóstico mediante la eliminación de la necesidad de configurar una cuenta de almacenamiento de blobs de antemano. El entorno de almacenamiento está preconfigurado para que pueda enviar registros antes de abrir una incidencia de soporte técnico y gaste menos tiempo en una llamada de soporte técnico.
-- El tiempo que se emplea en la [recopilación proactiva de registros y la recopilación de registros a petición](azure-stack-diagnostic-log-collection-overview-tzl.md) se ha reducido en un 80 %. El tiempo de recopilación de registros puede tardar más de lo esperado, pero no será necesaria ninguna acción por parte de los operadores de Azure Stack Hub a menos que se produzca un error en la recopilación de registros.
+- Mejoras en la [recopilación de registros de diagnóstico](./azure-stack-diagnostic-log-collection-overview.md?view=azs-2002). La nueva experiencia mejora y simplifica la recopilación de registros de diagnóstico mediante la eliminación de la necesidad de configurar una cuenta de almacenamiento de blobs de antemano. El entorno de almacenamiento está preconfigurado para que pueda enviar registros antes de abrir una incidencia de soporte técnico y gaste menos tiempo en una llamada de soporte técnico.
+- El tiempo que se emplea en la [recopilación proactiva de registros y la recopilación de registros a petición](./azure-stack-diagnostic-log-collection-overview.md?view=azs-2002) se ha reducido en un 80 %. El tiempo de recopilación de registros puede tardar más de lo esperado, pero no será necesaria ninguna acción por parte de los operadores de Azure Stack Hub a menos que se produzca un error en la recopilación de registros.
 - El progreso de la descarga de un paquete de actualizaciones de Azure Stack Hub es ahora visible en la hoja de actualización una vez que se inicia una actualización. Esto solo se aplica a los sistemas conectados de Azure Stack Hub que eligen [preparar los paquetes de actualizaciones mediante la descarga automática](azure-stack-update-prepare-package.md#automatic-download-and-preparation-for-update-packages).
 - Se han realizado mejoras de confiabilidad en el agente del host de Controladora de red.
 - Se ha presentado un nuevo microservicio denominado DNS Orchestrator que mejora la lógica de resistencia de los servicios DNS internos durante los procesos de revisión y actualización.
@@ -137,7 +137,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 - Se ha corregido un problema que hacía que se produjera un error en las operaciones del proveedor de recursos de complementos después de realizar la rotación de secretos de Azure Stack Hub.
 - Se ha corregido un problema que provocaba errores frecuentes de actualización de Azure Stack Hub debido a la presión de memoria en el rol ERCS.
 - Se ha corregido un error en la hoja de actualización por el que el estado de actualización aparecía como **Instalación en curso** en lugar de **Se está preparando** durante la fase de preparación de una actualización de Azure Stack Hub.
-- Se ha corregido un problema por el que la característica RSC en los conmutadores físicos creaba incoherencias e interrumpía el flujo de tráfico que pasaba a través de un equilibrador de carga. La característica RSC está ahora deshabilitada de forma predeterminada.
+- Se ha corregido un problema por el que la característica RSC en los conmutadores virtuales creaba incoherencias e interrumpía el flujo de tráfico que pasaba a través de un equilibrador de carga. La característica RSC está ahora deshabilitada de forma predeterminada.
 - Se corrigió un problema que hacía que varias configuraciones de IP de una NIC provocaran que el tráfico se enrutará de forma incorrecta, lo que impedía que hubiera conectividad de salida. 
 - Se ha corregido un problema en el que la dirección MAC de una NIC se almacenaba en la memoria caché y la asignación de esa dirección a otro recurso causaba errores de implementación de la máquina virtual.
 - Se ha corregido un problema por el que AVMA no podía activar las licencias de las imágenes de máquinas virtuales Windows desde el canal comercial RETAIL.
@@ -609,5 +609,3 @@ Para acceder a las notas de la versión archivadas de una versión anterior, use
 ::: moniker range="<azs-1907"
 Puede consultar las [notas de las versiones anteriores de Azure Stack Hub en la Galería de TechNet](https://aka.ms/azsarchivedrelnotes). Estos documentos archivados se proporcionan únicamente con fines de referencia y no implican que estas versiones sean compatibles. Para obtener información sobre el soporte técnico de Azure Stack Hub, consulte [Directiva de mantenimiento de Azure Stack Hub](azure-stack-servicing-policy.md). Para obtener más ayuda, póngase en contacto con los servicios de asistencia al cliente de Microsoft.
 ::: moniker-end
-
-

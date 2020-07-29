@@ -1,28 +1,27 @@
 ---
-title: Generación de solicitudes de firma de certificado para Azure Stack Hub
-description: Obtenga información acerca de cómo generar solicitudes de firma para los certificados PKI de Azure Stack Hub en los sistemas integrados de Azure Stack Hub.
+title: Obtención de solicitudes de firma de certificado para la implementación en Azure Stack Hub
+description: Obtenga información acerca de cómo obtener solicitudes de firma para los certificados PKI de Azure Stack Hub en los sistemas integrados de Azure Stack Hub.
 author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 09/10/2019
 ms.author: inhenkel
 ms.reviewer: ppacent
 ms.lastreviewed: 09/10/2019
-ms.openlocfilehash: 22781a4613b495e8441dd3f24ed7684932bdeb90
-ms.sourcegitcommit: c1f48c19c8a9c438fd22298bc570c12a9b19bb45
+ms.openlocfilehash: 37f308a9b554453a1f7c10219d68b1255c23cbf0
+ms.sourcegitcommit: 09fbc4e8fc53828647d515bfb556dfe42df28c19
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 07/16/2020
-ms.locfileid: "86410595"
+ms.locfileid: "86419273"
 ---
-# <a name="generate-certificate-signing-requests-for-azure-stack-hub"></a>Generación de solicitudes de firma de certificado para Azure Stack Hub
+# <a name="get-certificate-signing-requests-for-deployment-in-azure-stack-hub"></a>Obtención de solicitudes de firma de certificado para la implementación en Azure Stack Hub
 
 Puede usar la herramienta Azure Stack Hub Readiness Checker para crear solicitudes de firma de certificado (CSR) adecuadas para una implementación de Azure Stack Hub. Los certificados se deben solicitar, generar y validar con suficiente tiempo para probarlos antes de la implementación. Puede obtener la herramienta [en la Galería de PowerShell](https://aka.ms/AzsReadinessChecker).
 
 Puede usar la herramienta Azure Stack Hub Readiness Checker (AzsReadinessChecker) para solicitar los siguientes certificados:
 
-- **Solicitudes de certificado estándar** según se indica en [Generación de solicitudes de firma de certificado para nuevas implementaciones](azure-stack-get-pki-certs.md#generate-certificate-signing-requests-for-new-deployments).
-- **Renovación de solicitudes de certificado estándar** según se indica en [Generación de solicitudes de firma de certificado para nuevas implementaciones](azure-stack-get-pki-certs.md#generate-certificate-signing-requests-for-certificate-renewal).
-- **Plataforma como servicio**: Puede solicitar nombres de Plataforma como servicio (PaaS) para los certificados como se especifica en [Requisitos de certificados de infraestructura de clave pública de Azure Stack Hub: Certificados PaaS opcionales](azure-stack-pki-certs.md#optional-paas-certificates).
+- **Solicitudes de certificado estándar** según se indica en [Generación de solicitudes de firma de certificado](azure-stack-get-pki-certs.md).
+- **Plataforma como servicio**: Puede solicitar nombres de Plataforma como servicio (PaaS) para los certificados como se especifica en [Requisitos de certificados de infraestructura de clave pública de Azure Stack Hub: Certificados PaaS opcionales](azure-stack-pki-certs.md).
 
 ## <a name="prerequisites"></a>Requisitos previos
 

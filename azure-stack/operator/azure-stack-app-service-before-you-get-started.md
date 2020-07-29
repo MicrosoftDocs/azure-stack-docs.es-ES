@@ -8,12 +8,12 @@ ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 04/13/2019
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: c3512a441116f57f74921cec38d5937b89a1978c
-ms.sourcegitcommit: d04b8f2d431ec1e12bcf5aa976fb06ec109caa25
+ms.openlocfilehash: 95d038b53432e94d0259352a2d71c88c24f68c1f
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82868472"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86489732"
 ---
 # <a name="prerequisites-for-deploying-app-service-on-azure-stack-hub"></a>Requisitos previos para implementar App Service en Azure Stack Hub
 
@@ -228,7 +228,7 @@ icacls %WEBSITES_FOLDER% /grant *S-1-1-0:(OI)(CI)(IO)(RA,REA,RD)
 
 Para que Azure App Service en Azure Stack Hub pueda hospedar y medir bases de datos, debe preparar una instancia de SQL Server en la que se almacenen las bases de datos de App Service.
 
-Para entornos de producción y para ofrecer alta disponibilidad, debe usar una versión completa de SQL Server 2014 SP2 o versiones posteriores, habilitar la autenticación de modo mixto y realizar la implementación en una [configuración de alta disponibilidad](https://docs.microsoft.com/sql/sql-server/failover-clusters/high-availability-solutions-sql-server).
+Para entornos de producción y para ofrecer alta disponibilidad, debe usar una versión completa de SQL Server 2014 SP2 o versiones posteriores, habilitar la autenticación de modo mixto y realizar la implementación en una [configuración de alta disponibilidad](/sql/sql-server/failover-clusters/high-availability-solutions-sql-server).
 
 La instancia de SQL Server para Azure App Service en Azure Stack Hub debe ser accesible desde todos los roles de App Service. SQL Server se puede implementar en la suscripción predeterminada del proveedor de Azure Stack Hub. También puede usar la infraestructura existente de su organización (siempre y cuando haya conectividad con Azure Stack Hub). Si va a usar una imagen de Azure Marketplace, no olvide configurar el firewall adecuadamente.
 
@@ -388,7 +388,7 @@ Siga estos pasos para crear la entidad de servicio en el inquilino de Azure AD:
 1. Busque el identificador de la aplicación que anotó en el paso 7. 
 1. Seleccione el registro de aplicaciones de App Service de la lista.
 1. Seleccione **Permisos de API** en el panel izquierdo.
-1. Seleccione **Conceder consentimiento de administrador para \<tenant\>** , donde \<tenant\> es el nombre de su inquilino de Azure AD. Para confirmar el consentimiento seleccione **Sí**.
+1. Seleccione **Conceder consentimiento de administrador para \<tenant\>** , donde \<tenant\> es el nombre del inquilino de Azure AD. Para confirmar el consentimiento seleccione **Sí**.
 
 ```powershell
     Create-AADIdentityApp.ps1

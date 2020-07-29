@@ -4,17 +4,17 @@ description: Descripción del cuórum de clúster y de grupo en Espacios de alma
 author: khdownie
 ms.author: v-kedow
 ms.topic: conceptual
-ms.date: 02/28/2020
-ms.openlocfilehash: 82b1ab24567b124c4a2450149e37e9f05aab8bf8
-ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
+ms.date: 07/21/2020
+ms.openlocfilehash: cf9ecc42ed839fc133eb64b38b314816f19aecd7
+ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85196875"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86866916"
 ---
 # <a name="understanding-cluster-and-pool-quorum-on-azure-stack-hci"></a>Descripción del cuórum de clúster y de grupo en Azure Stack HCl
 
->Se aplica a: Windows Server 2019
+> Se aplica a: Azure Stack HCI, versión 20H2; Windows Server 2019
 
 Los [clústeres de conmutación por error de Windows Server](/windows-server/failover-clustering/failover-clustering-overview) proporcionan alta disponibilidad para las cargas de trabajo. Estos recursos se consideran de alta disponibilidad si los nodos que los hospedan están activos; sin embargo, el clúster necesita generalmente que más de la mitad de los nodos estén en ejecución, es decir, que tengan *cuórum*.
 
@@ -227,4 +227,4 @@ Cada una de las 24 unidades tiene un voto y el nodo dos también tiene un voto (
 Para obtener más información, vea lo siguiente:
 
 - [Configurar y administrar el cuórum](/windows-server/failover-clustering/manage-cluster-quorum)
-- [Implementar un testigo en la nube](/windows-server/failover-clustering/deploy-cloud-witness)
+- [Configuración de un testigo del clúster](../deploy/witness.md)

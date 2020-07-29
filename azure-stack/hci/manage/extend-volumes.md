@@ -4,18 +4,19 @@ description: Cómo cambiar el tamaño de volúmenes en Azure Stack HCI mediante 
 author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
-ms.date: 03/10/2020
-ms.openlocfilehash: 1369d3bcd0393fd322d17e1977524732d5b97ccf
-ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
+ms.date: 07/21/2020
+ms.openlocfilehash: bb4a72e28bd6126d12dbdb1f97d0579fb98bca8e
+ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85196450"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86866598"
 ---
-# <a name="extending-volumes-in-storage-spaces-direct"></a>Extensión de volúmenes en Espacios de almacenamiento directo
-> Se aplica a: Windows Server 2019
+# <a name="extending-volumes-in-azure-stack-hci"></a>Extensión de volúmenes en Azure Stack HCI
 
-En este tema se proporcionan instrucciones para cambiar el tamaño de los volúmenes en un clúster de [Espacios de almacenamiento directo](/windows-server/storage/storage-spaces/storage-spaces-direct-overview) mediante Windows Admin Center.
+> Se aplica a: Azure Stack HCI, versión 20H2; Windows Server 2019
+
+En este tema se proporcionan instrucciones para cambiar el tamaño de los volúmenes en un clúster de Azure Stack HCI mediante Windows Admin Center.
 
 > [!WARNING]
 > **No se permite cambiar el tamaño del almacenamiento subyacente que Espacios de almacenamiento directo utiliza.** Si ejecuta Espacios de almacenamiento directo en un entorno de almacenamiento virtualizado, incluido en Azure, no se permite admite cambiar el tamaño ni modificar las características de los dispositivos de almacenamiento que las máquinas virtuales utilizan, y los datos quedarán inaccesibles. En su lugar, siga las instrucciones de la sección [Adición de servidores o unidades](/windows-server/storage/storage-spaces/add-nodes) para agregar más capacidad antes de extender los volúmenes.
@@ -26,7 +27,7 @@ Vea un vídeo rápido sobre cómo cambiar el tamaño de un volumen.
 
 ## <a name="extending-volumes-using-windows-admin-center"></a>Extensión de volúmenes mediante Windows Admin Center
 
-1. En Windows Admin Center, conéctese a un clúster de Espacios de almacenamiento directo y seleccione **Volumes** (Volúmenes) en el panel **Tools** (Herramientas).
+1. En Windows Admin Center, conéctese a un clúster de Azure Stack HCI y seleccione **Volumes** (Volúmenes) en el panel **Tools** (Herramientas).
 2. En la página **Volumes** (Volúmenes), seleccione la pestaña **Inventory** (Inventario) y, a continuación, seleccione el volumen cuyo tamaño quiere cambiar.
 
     En la página de detalles del volumen, se indica la capacidad de almacenamiento del volumen. También puede abrir la página de detalles de los volúmenes directamente desde el panel. En el panel Alertas, seleccione la alerta que notifica si un volumen se está quedando sin capacidad de almacenamiento, y seleccione **Go To Volume** (Ir al volumen).
@@ -143,6 +144,6 @@ Eso es todo.
 
 Para obtener instrucciones detalladas sobre otras tareas de administración del almacenamiento esenciales, consulte también:
 
-- [Planeamiento de volúmenes en Espacios de almacenamiento directo](/windows-server/storage/storage-spaces/plan-volumes)
-- [Creación de volúmenes en Espacios de almacenamiento directo](/windows-server/storage/storage-spaces/create-volumes)
-- [Eliminación de volúmenes en Espacios de almacenamiento directo](/windows-server/storage/storage-spaces/delete-volumes)
+- [Planeamiento de volúmenes](../concepts/plan-volumes.md)
+- [Creación de volúmenes](create-volumes.md)
+- [Eliminación de volúmenes](delete-volumes.md)

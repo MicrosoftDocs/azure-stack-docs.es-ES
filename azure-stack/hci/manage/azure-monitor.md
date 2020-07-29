@@ -4,17 +4,17 @@ description: Supervise servidores y configure alertas con Azure Monitor desde Wi
 author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
-ms.date: 04/03/2020
-ms.openlocfilehash: 43bcc5be8fd96e33d16cfdebd87e0d965c8eff41
-ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
+ms.date: 07/21/2020
+ms.openlocfilehash: f721b16d6742cde5e27fae8b81d8d256c7defa2a
+ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85196977"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86866814"
 ---
 # <a name="monitor-azure-stack-hci-with-azure-monitor"></a>Supervisión de Azure Stack HCI con Azure Monitor
 
-> Se aplica a: Windows Server 2019
+> Se aplica a: Azure Stack HCI, versión 20H2; Windows Server 2019
 
 [Azure Monitor](/azure/azure-monitor/overview) recopila, analiza y actúa con los datos de telemetría de una variedad de recursos entre los que se incluyen servidores y máquinas virtuales Windows, tanto en el entorno local como en la nube. Aunque Azure Monitor extrae datos de las máquinas virtuales y de otros recursos de Azure, este artículo se centra en cómo funciona Azure Monitor con servidores locales y máquinas virtuales que se ejecutan en Azure Stack HCI y, concretamente, con Windows Admin Center.
 
@@ -24,7 +24,7 @@ Los datos generados desde servidores locales de Windows Server se recopilan en u
 
 Cuando se habilita una solución de supervisión en un área de trabajo de Log Analytics, todos los servidores que envían notificaciones a esa área de trabajo empiezan a recopilar datos pertinentes para esa solución, de modo que la esta pueda generar información para todos los servidores del área de trabajo.
 
-Para recopilar datos de telemetría en un servidor local e insertarlos en el área de trabajo de Log Analytics, Azure Monitor requiere la instalación de Microsoft Monitoring Agent (MMA). Ciertas soluciones de supervisión también requieren un agente secundario. Por ejemplo, Azure Monitor para VM también depende de un agente ServiceMap para la funcionalidad adicional que proporciona esta solución.
+Para recopilar datos de diagnóstico en un servidor local e insertarlos en el área de trabajo de Log Analytics, Azure Monitor requiere la instalación de Microsoft Monitoring Agent (MMA). Ciertas soluciones de supervisión también requieren un agente secundario. Por ejemplo, Azure Monitor para VM también depende de un agente ServiceMap para la funcionalidad adicional que proporciona esta solución.
 
 Algunas soluciones, como Azure Update Management, dependen también de Azure Automation, lo que le permite administrar recursos de forma centralizada en entornos que pueden ser de Azure o no. Por ejemplo, Azure Update Management usa Azure Automation para programar y coordinar la instalación de actualizaciones en las máquinas de su entorno, de forma centralizada, desde Azure Portal.
 
@@ -58,9 +58,9 @@ Por ejemplo, si primero va a la herramienta **Actualizaciones** para configurar 
 
 Si desea agregar otra solución de supervisión desde Windows Admin Center en el mismo servidor, Windows Admin Center simplemente instalará esa solución en el área de trabajo existente a la que está conectado el servidor. Windows Admin Center instalará además cualquier otro agente necesario.
 
-Si se conecta a un servidor diferente, pero ya ha configurado un área de trabajo de Log Analytics (ya sea a través de Windows Admin Center o manualmente en Azure Portal), también podrá instalar Microsoft Monitoring Agent en el servidor y conectarlo a un área de trabajo existente. Al conectar un servidor a un área de trabajo, esta empieza automáticamente a recopilar datos y generar informes para las soluciones instaladas en esa área de trabajo.
+Si se conecta a un servidor diferente, pero ya ha configurado un área de trabajo de Log Analytics (ya sea a través de Windows Admin Center o manualmente en Azure Portal), también podrá instalar MMA en el servidor y conectarlo a un área de trabajo existente. Al conectar un servidor a un área de trabajo, esta empieza automáticamente a recopilar datos y generar informes para las soluciones instaladas en esa área de trabajo.
 
-## <a name="azure-monitor-for-virtual-machines-aka-virtual-machine-insights"></a>Azure Monitor for VM (anteriormente Virtual Machine Insights)
+## <a name="azure-monitor-for-virtual-machines-virtual-machine-insights"></a>Azure Monitor para máquinas virtuales (conclusiones de la máquina virtual)
 
 Al configurar Azure Monitor para VM en **Configuración del servidor**, Windows Admin Center habilita la solución Azure Monitor para VM, también conocida como Virtual Machine Insights. Esta solución le permite supervisar el estado y los eventos del servidor, crear alertas de correo electrónico, obtener una vista consolidada del rendimiento del servidor en todo el entorno y visualizar las aplicaciones, sistemas y servicios conectados a un servidor determinado.
 
@@ -110,7 +110,7 @@ Para comprender la configuración compatible, revise los [sistemas operativos Wi
 
 Si no tiene una suscripción a Azure, cree una [cuenta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de empezar.
 
-#### <a name="login-in-to-azure-portal"></a>Inicio de sesión en Azure Portal
+#### <a name="log-in-to-azure-portal"></a>Iniciar sesión en Azure Portal
 
 Inicie sesión en Azure Portal en [https://portal.azure.com](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
@@ -172,7 +172,7 @@ Para comprender la configuración compatible, revise los [sistemas operativos Wi
 
 Una vez que haya conectado el servidor a Azure Monitor, puede usar los hipervínculos inteligentes que se encuentran en la página **Configuración > Supervisión y alertas** para ir a Azure Portal. En Windows Admin Center, puede configurar fácilmente las alertas predeterminadas que se aplicarán a todos los servidores del área de trabajo de Log Analytics. Windows Admin Center habilita automáticamente la recopilación de contadores de rendimiento, por lo que puede [crear una nueva alerta](/azure/azure-monitor/platform/alerts-log) mediante la personalización de una de las muchas consultas predefinidas o escribir las suyas propias.
 
-:::image type="content" source="media/monitor/setup1.gif" alt-text="Captura de pantalla de la configuración de alertas":::
+:::image type="content" source="media/monitor/setup1.gif" alt-text="Captura de pantalla de configuración de alertas":::
 
 Estas son las alertas y sus condiciones predeterminadas que puede modificar:
 
@@ -187,7 +187,7 @@ Estas son las alertas y sus condiciones predeterminadas que puede modificar:
 
 Una vez configuradas las alertas en Windows Admin Center, puede ver las alertas en el área de trabajo de Log Analytics en Azure.
 
-:::image type="content" source="media/monitor/setup2.gif" alt-text="Captura de pantalla de la visualización de alertas":::
+:::image type="content" source="media/monitor/setup2.gif" alt-text="Captura de pantalla de visualización de alertas":::
 
 ### <a name="collecting-event-and-performance-data"></a>Recopilación de datos de eventos y rendimiento
 
@@ -238,7 +238,7 @@ Active la casilla situada junto a **Error** en **EVENTLEVELNAME** o escriba lo s
 Event | where (EventLevelName == "Error")
 ```
 
-:::image type="content" source="media/monitor/log-analytics-portal-eventlist-02.png" alt-text="Captura de pantalla de filtros":::
+:::image type="content" source="media/monitor/log-analytics-portal-eventlist-02.png" alt-text="Captura de pantalla de filtro":::
 
 Una vez que haya realizado las consultas adecuadas para los eventos que le interesan, guárdelas para el paso siguiente.
 
@@ -249,7 +249,7 @@ Ahora, vamos a examinar un ejemplo de creación de una alerta.
 2. En el panel izquierdo, seleccione **Alertas** y, a continuación, haga clic en **Nueva regla de alertas** en la parte superior de la página para crear una nueva alerta.
     :::image type="content" source="media/monitor/alert-rule-02.png" alt-text="Captura de pantalla de creación de una nueva regla de alertas":::
 3. Como primer paso, en la sección **Crear alerta**, seleccione el área de trabajo de Log Analytics como el recurso, ya que se trata de una señal de alerta basada en el registro.  Filtre los resultados seleccionando la **Suscripción** específica en la lista desplegable si tiene más de una, la cual contiene el área de trabajo de Log Analytics creada anteriormente.  Filtre el **Tipo de recurso** seleccionando **Log Analytics** en la lista desplegable.  Por último, seleccione el **recurso** **DefaultLAWorkspace** y haga clic en **Listo**.
-    :::image type="content" source="media/monitor/alert-rule-03.png" alt-text="Captura de pantalla del paso 1 de creación de una nueva regla de alertas":::
+    :::image type="content" source="media/monitor/alert-rule-03.png" alt-text="Captura de pantalla del paso 1 de la creación de una nueva regla de alertas":::
 4. En la sección **Criterios de alerta**, haga clic en **Agregar criterios** para seleccionar la consulta guardada y, a continuación, especifique la lógica que sigue la regla de alertas.
 5. Configure la alerta con la siguiente información: a. En la lista desplegable **Basado en**, seleccione **Unidades métricas**.  Una medida de métricas creará una alerta por cada objeto de la consulta con un valor que supere el umbral especificado.
    b. Para **Condición**, seleccione **Mayor que** y especifique un umbral.
@@ -299,7 +299,7 @@ Cuando Windows Admin Center incorpora un servidor en la solución Virtual Machin
 
 ## <a name="disabling-monitoring"></a>Deshabilitar la supervisión
 
-Para desconectar completamente el servidor del área de trabajo de Log Analytics, desinstale Microsoft Monitoring Agent. Esto significa que este servidor ya no enviará datos al área de trabajo y que todas las soluciones instaladas en esa área de trabajo dejarán de recopilar y procesar los datos de ese servidor. Sin embargo, esto no afecta al área de trabajo en sí; todos los recursos que envían notificaciones a esa área de trabajo seguirán haciéndolo. Para desinstalar el agente MMA en WAC, vaya a **Aplicaciones y características**, busque **Microsoft Monitoring Agent** y haga clic en **Desinstalar**.
+Para desconectar completamente el servidor del área de trabajo de Log Analytics, desinstale Microsoft Monitoring Agent. Esto significa que este servidor ya no enviará datos al área de trabajo y que todas las soluciones instaladas en esa área de trabajo dejarán de recopilar y procesar los datos de ese servidor. Sin embargo, esto no afecta al área de trabajo en sí; todos los recursos que envían notificaciones a esa área de trabajo seguirán haciéndolo. Para desinstalar el agente de MMA en Windows Admin Center, conéctese al servidor y, a continuación, vaya a **aplicaciones instaladas**, busque Microsoft Monitoring Agent y, a continuación, seleccione **Quitar**.
 
 Si desea desactivar una solución específica dentro de un área de trabajo, tendrá que [quitar la solución de supervisión de Azure Portal](/azure/azure-monitor/insights/solutions#remove-a-management-solution). La eliminación de una solución de supervisión significa que la información creada por esa solución ya no se generará para _todos_ los servidores que envían notificaciones a esa área de trabajo. Por ejemplo, si desinstala la solución Azure Monitor para VM, ya no verá más la información detallada sobre el rendimiento de las máquinas virtuales o servidores de ninguna de las máquinas conectadas al área de trabajo.
 

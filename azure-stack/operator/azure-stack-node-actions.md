@@ -7,12 +7,12 @@ ms.date: 04/30/2020
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: e78b396822c86c9785ddecc691f57c27afeb6fcd
-ms.sourcegitcommit: e79aafb05c5fc512a83f0ebc6d76503213ccbc70
+ms.openlocfilehash: e82e551930196c3c0c2e958957172e26bf9861cb
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84730720"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86488341"
 ---
 # <a name="scale-unit-node-actions-in-azure-stack-hub"></a>Acciones de los nodos de la unidad de escalado en Azure Stack Hub
 
@@ -62,7 +62,7 @@ Esto puede ocurrir si la memoria caché del rol Proveedor de recursos de Service
 
 Antes de aplicar los pasos siguientes, asegúrese de que no haya ninguna operación en curso. Actualice el punto de conexión para que coincida con su entorno.
 
-1. Abra PowerShell y agregue el entorno de Azure Stack Hub. Esto requiere que se instale [PowerShell de Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-powershell-install) en el equipo.
+1. Abra PowerShell y agregue el entorno de Azure Stack Hub. Esto requiere que se instale [PowerShell de Azure Stack Hub](./azure-stack-powershell-install.md) en el equipo.
 
    ```powershell
    Add-AzureRmEnvironment -Name AzureStack -ARMEndpoint https://adminmanagement.local.azurestack.external
@@ -101,7 +101,7 @@ Debe instalar los módulos de PowerShell de Azure Stack Hub. Estos cmdlets está
 
 La acción **Detener** desactiva el nodo. Equivale a presionar el botón de encendido. No envía una señal de apagado al sistema operativo. Para las operaciones de detención planeadas, intente siempre llevar a cabo la operación de apagado primero.
 
-Esta acción se utiliza normalmente cuando un nodo está en un estado bloqueado y ya no responde a las solicitudes.
+Esta acción se usa normalmente cuando un nodo ya no responde a las solicitudes.
 
 Para ejecutar la acción de detención, abra un símbolo de sistema de PowerShell con privilegios elevados y ejecute el siguiente cmdlet:
 
@@ -111,7 +111,7 @@ Para ejecutar la acción de detención, abra un símbolo de sistema de PowerShel
 
 En el improbable caso de que la acción de detención no funcione, vuelva a intentar la operación y, si produce un error una segunda vez, use la interfaz web de BMC en su lugar.
 
-Para más información, consulte [Stop-AzsScaleUnitNode](https://docs.microsoft.com/powershell/module/azs.fabric.admin/stop-azsscaleunitnode).
+Para más información, consulte [Stop-AzsScaleUnitNode](/powershell/module/azs.fabric.admin/stop-azsscaleunitnode).
 
 ## <a name="start"></a>Start
 
@@ -125,7 +125,7 @@ Para ejecutar la acción de inicio, abra un símbolo de sistema de PowerShell co
 
 En el caso improbable de que la acción de inicio no funcione, vuelva a intentar la operación. Si se produce un error por segunda vez, utilice la interfaz web de BMC en su lugar.
 
-Para más información, consulte [Start-AzsScaleUnitNode](https://docs.microsoft.com/powershell/module/azs.fabric.admin/start-azsscaleunitnode).
+Para más información, consulte [Start-AzsScaleUnitNode](/powershell/module/azs.fabric.admin/start-azsscaleunitnode).
 
 ## <a name="drain"></a>Purga
 
@@ -142,7 +142,7 @@ Para ejecutar la acción de purga, abra un símbolo de sistema de PowerShell con
   Disable-AzsScaleUnitNode -Location <RegionName> -Name <NodeName>
 ```
 
-Para más información, consulte [Disable-AzsScaleUnitNode](https://docs.microsoft.com/powershell/module/azs.fabric.admin/disable-azsscaleunitnode).
+Para más información, consulte [Disable-AzsScaleUnitNode](/powershell/module/azs.fabric.admin/disable-azsscaleunitnode).
 
 ## <a name="resume"></a>Reanudación
 
@@ -154,7 +154,7 @@ Para reanudar la acción de purga, abra un símbolo de sistema de PowerShell con
   Enable-AzsScaleUnitNode -Location <RegionName> -Name <NodeName>
 ```
 
-Para más información, consulte [Enable-AzsScaleUnitNode](https://docs.microsoft.com/powershell/module/azs.fabric.admin/enable-azsscaleunitnode).
+Para más información, consulte [Enable-AzsScaleUnitNode](/powershell/module/azs.fabric.admin/enable-azsscaleunitnode).
 
 ## <a name="repair"></a>Reparación
 
@@ -204,6 +204,6 @@ Para ejecutar la acción de apagado, abra un símbolo de sistema de PowerShell c
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Instalación de PowerShell de Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-powershell-install)
-- [Obtenga información sobre el módulo del operador de Service Fabric de Azure Stack Hub](https://docs.microsoft.com/powershell/module/azs.fabric.admin/?view=azurestackps-1.6.0)
-- [Supervisión de las operaciones para agregar nodo](https://docs.microsoft.com/azure-stack/operator/azure-stack-add-scale-node#monitor-add-node-operations)
+- [Instalación de PowerShell de Azure Stack](./azure-stack-powershell-install.md)
+- [Obtenga información sobre el módulo del operador de Service Fabric de Azure Stack Hub](/powershell/module/azs.fabric.admin/?view=azurestackps-1.6.0)
+- [Supervisión de las operaciones para agregar nodo](./azure-stack-add-scale-node.md#monitor-add-node-operations)

@@ -1,0 +1,50 @@
+---
+title: Información general sobre clústeres extendidos
+description: Más información sobre los clústeres extendidos
+author: v-dasis
+ms.topic: how-to
+ms.date: 07/21/2020
+ms.author: v-dasis
+ms.reviewer: JasonGerend
+ms.openlocfilehash: ecf7974cec80888b149454c0a2ff90eb48c2e9e3
+ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86868163"
+---
+# <a name="stretched-clusters-overview"></a>Información general sobre clústeres extendidos
+
+> Se aplica a Azure Stack HCl, versión v20H2
+
+Una solución de clústeres extendidos de Azure Stack HCI extendida para la recuperación ante desastres proporciona conmutación automática por error para restaurar la producción rápidamente y sin necesidad de intervención manual. La réplica de almacenamiento proporciona la replicación de volúmenes entre sitios para la recuperación ante desastres y mantiene todos los servidores sincronizados.
+
+La réplica de almacenamiento admite la replicación sincrónica y asincrónica:
+
+- La replicación sincrónica refleja los datos entre sitios en una red de baja latencia con volúmenes coherentes frente a bloqueos para garantizar que no se pierdan datos en el nivel del sistema de archivos durante un error.
+- La Replicación asincrónica refleja los datos entre sitios más allá de los intervalos metropolitanos a través de enlaces de red con latencias superiores, pero sin ninguna garantía de que ambos sitios tengan copias idénticas de los datos en el momento del error.
+
+Hay dos tipos de clústeres extendidos: activo-pasivo y activo-activo. Puede configurar la replicación del sitio activo-pasivo, donde hay un sitio y una dirección preferidos para la replicación. La replicación activa-activa es donde la replicación puede producirse de forma bidireccional desde cualquier sitio. En este artículo solo se trata la configuración activa-pasiva.
+
+En términos simples, un sitio *activo* es uno que tiene recursos y proporciona roles y cargas de trabajo con los que los clientes se conectan. Un sitio *pasivo* es el que no proporciona roles o cargas de trabajo para clientes y está esperando una conmutación por error del sitio activo para la recuperación ante desastres.
+
+Los sitios pueden estar en dos estados, ciudades, plantas o salas diferentes. Los clústeres extendidos que usan dos sitios ofrecen recuperación ante desastres y continuidad empresarial en caso de que un sitio sufra una interrupción o un error.
+
+## <a name="active-passive-stretched-cluster"></a>Clúster extendido activo-pasivo
+
+En el diagrama siguiente se muestra el sitio 1 como el sitio activo con replicación en el sitio 2, una replicación unidireccional.
+
+:::image type="content" source="media/stretched-cluster/active-passive-stretched-cluster.png" alt-text="Escenario del clúster extendido activo-pasivo"  lightbox="media/stretched-cluster/active-passive-stretched-cluster.png":::
+
+## <a name="active-active-stretched-cluster"></a>Clúster extendido activo-activo
+
+En el diagrama siguiente se muestran el sitio 1 y el sitio 2 como sitios activos, con replicación bidireccional en el otro sitio.
+
+:::image type="content" source="media/stretched-cluster/active-active-stretched-cluster.png" alt-text="Escenario del clúster extendido activo-activo" lightbox="media/stretched-cluster/active-active-stretched-cluster.png":::
+
+## <a name="next-steps"></a>Pasos siguientes
+
+- Más información sobre los requisitos de hardware y de otro tipo para los clústeres extendidos. Consulte [Antes de empezar](../deploy/before-you-start.md).
+- Aprenda a implementar un clúster extendido con Windows Admin Center. Consulte [Creación de un clúster con Windows Admin Center](../deploy/create-cluster.md).
+- Aprenda a implementar un clúster extendido con PowerShell. Consulte [Creación de un clúster con PowerShell](../deploy/create-cluster-powershell.md).
+- Aprenda a crear volúmenes y configurar la replicación para clústeres extendidos. Consulte [Creación de volúmenes y configuración de la replicación para clústeres extendidos](../manage/create-stretched-volumes.md).

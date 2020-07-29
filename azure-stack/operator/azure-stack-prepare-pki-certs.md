@@ -8,18 +8,18 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: ppacent
 ms.lastreviewed: 09/16/2019
-ms.openlocfilehash: a371723250e52fb98e5c1ab7dc3151d1d4b9cbf3
-ms.sourcegitcommit: c1f48c19c8a9c438fd22298bc570c12a9b19bb45
+ms.openlocfilehash: fa252ee475cc58fa13429ec7ef9a6cbbf37b6a0f
+ms.sourcegitcommit: 9bbaa8dc7edb9632f1d06f76ebf8f49c8cb8eed6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86410647"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86437139"
 ---
 # <a name="prepare-azure-stack-hub-pki-certificates-for-deployment-or-rotation"></a>Preparación de certificados PKI de Azure Stack Hub para implementación o rotación
 
 Los archivos de certificado [obtenidos de la entidad de certificación (CA) de su elección](azure-stack-get-pki-certs.md) deben importarse y exportarse de forma que las propiedades coincidan con los requisitos de certificado de Azure Stack Hub.
 
-## <a name="prepare-certificates-for-deployment-with-azure-stack-readiness-checker"></a>Preparación de certificados para la implementación (con Azure Stack Readiness Checker)
+## <a name="prepare-certificates-for-deployment-with-azure-stack-readiness-checker"></a>Preparación de certificados para la implementación con Azure Stack Readiness Checker
 
 Use la herramienta Azure Stack Hub Readiness Checker para importar, empaquetar y validar certificados listos para la implementación o la rotación.
 
@@ -30,7 +30,7 @@ El sistema debe cumplir los siguientes requisitos previos para empaquetar los ce
 - Microsoft Azure Stack Hub Readiness Checker
 - Certificados devueltos por la entidad de certificación en un único directorio en formato .cer (otros formatos configurables .cert, .SST o .pfx).
 - Windows 10 o Windows Server 2016
-- Use el mismo sistema que generó la solicitud de firma de certificado. (A menos que el destino del certificado anterior se haya empaquetado previamente en PFXs)
+- Use el mismo sistema que generó la solicitud de firma de certificado (a menos que esté destinado a un certificado preempaquetado en PFX).
 
 ## <a name="generate-certificate-signing-requests-for-new-deployments"></a>Generación de solicitudes de firma de certificados para nuevas implementaciones
 

@@ -7,12 +7,12 @@ ms.date: 1/22/2020
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 03/18/2019
-ms.openlocfilehash: a187937ded0f2f28bb9c772607cb21aad0021a3c
-ms.sourcegitcommit: 41195d1ee8ad14eda102cdd3fee3afccf1d83aca
+ms.openlocfilehash: 699c9a32c316e183c5432308ca26239533f71c98
+ms.sourcegitcommit: 09fbc4e8fc53828647d515bfb556dfe42df28c19
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82908493"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86419145"
 ---
 # <a name="deploy-the-mysql-resource-provider-on-azure-stack-hub"></a>Implementación del proveedor de recursos MySQL en Azure Stack Hub
 
@@ -53,7 +53,7 @@ Hay varios requisitos previos que se deben cumplir antes de implementar el prove
     |-----|-----|
     |El reenvío condicional de DNS se ha establecido correctamente.|[Integración de Azure Stack Hub en el centro de datos: DNS](azure-stack-integrate-dns.md)|
     |Los puertos de entrada para los proveedores de recursos están abiertos.|[Integración de Azure Stack Hub en el centro de datos: publicar puntos de conexión](azure-stack-integrate-endpoints.md#ports-and-protocols-inbound)|
-    |Se han establecido correctamente el SAN y el asunto del certificado.|[Requisitos de certificados de infraestructura de clave pública de Azure Stack Hub: certificados obligatorios](azure-stack-pki-certs.md#mandatory-certificates)[Requisitos de certificados de PaaS de Azure Stack Hub: certificados opcionales](azure-stack-pki-certs.md#optional-paas-certificates)|
+    |Se han establecido correctamente el SAN y el asunto del certificado.|[Requisitos de certificados de infraestructura de clave pública de Azure Stack Hub: certificados obligatorios](azure-stack-pki-certs.md)[Requisitos de certificados de PaaS de Azure Stack Hub: certificados opcionales](azure-stack-pki-certs.md)|
     |     |     |
 
 Si trabaja en un escenario desconectado, complete los pasos siguientes para descargar los módulos de PowerShell necesarios y registrar el repositorio manualmente.
@@ -92,7 +92,7 @@ New-Item -Path $env:ProgramFiles -name "SqlMySqlPsh" -ItemType "Directory"
 
 ### <a name="certificates"></a>Certificados
 
-_Solo para las instalaciones de sistemas integrados_. Debe proporcionar el certificado PKI de PaaS de SQL que se describe en la sección Certificados de PaaS opcionales de [Requisitos de certificados de infraestructura de clave pública de Azure Stack Hub](./azure-stack-pki-certs.md#optional-paas-certificates). Coloque el archivo .pfx en la ubicación especificada por el parámetro **DependencyFilesLocalPath**. No proporcione un certificado para los sistemas ASDK.
+_Solo para las instalaciones de sistemas integrados_. Debe proporcionar el certificado PKI de PaaS de SQL que se describe en la sección Certificados de PaaS opcionales de [Requisitos de certificados de infraestructura de clave pública de Azure Stack Hub](./azure-stack-pki-certs.md). Coloque el archivo .pfx en la ubicación especificada por el parámetro **DependencyFilesLocalPath**. No proporcione un certificado para los sistemas ASDK.
 
 ## <a name="deploy-the-resource-provider"></a>Implementar el proveedor de recursos
 
@@ -204,7 +204,7 @@ Cuando finalice el script de instalación del proveedor de recursos, actualice e
 
 1. Inicie sesión en el portal de administración como administrador de servicios.
 2. Seleccione **Grupos de recursos**.
-3. Seleccione el grupo de recursos **system.\<ubicación\>.mysqladapter**.
+3. Seleccione el grupo de recursos **system.\<location\>.mysqladapter**.
 4. En la página de resumen de la información general del grupo de recursos no debería haber implementaciones con errores.
 5. Por último, seleccione **Máquinas virtuales** en el portal de administración para comprobar que la VM del proveedor de recursos MySQL se ha creado correctamente y está en ejecución.
 

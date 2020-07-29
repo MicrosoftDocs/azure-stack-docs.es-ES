@@ -7,12 +7,12 @@ ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/13/2019
-ms.openlocfilehash: 99a8425901213d50c17175ab946aeff78a5aa81d
-ms.sourcegitcommit: 278aaeca069213a98b90751253f6b15423634849
+ms.openlocfilehash: 0cbf08e1a77caaac94457719dfdb8605e5a91ba7
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82742595"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86567593"
 ---
 # <a name="extending-storage-to-azure-stack-hub"></a>Ampliación del almacenamiento a Azure Stack Hub
 
@@ -50,7 +50,7 @@ En este escenario, implementaremos y configuraremos una máquina virtual con Win
 
 2.  Una vez que tenga una imagen de Windows Server 2019 en el entorno de Azure Stack Hub, **inicie sesión en el portal de usuarios de Azure Stack Hub**.
 
-3.  Una vez que haya iniciado sesión en el portal de usuarios de Azure Stack Hub, asegúrese de que tiene una [suscripción a una oferta](https://docs.microsoft.com/azure-stack/operator/azure-stack-subscribe-plan-provision-vm?view=azs-1908), lo que le permite aprovisionar recursos de IaaS (Compute, Storage y Network).
+3.  Una vez que haya iniciado sesión en el portal de usuarios de Azure Stack Hub, asegúrese de que tiene una [suscripción a una oferta](../operator/azure-stack-subscribe-plan-provision-vm.md?view=azs-1908), lo que le permite aprovisionar recursos de IaaS (Compute, Storage y Network).
 
 4.  Una vez que tenga una suscripción disponible, vuelva al **panel** del portal de usuarios de Azure Stack Hub, seleccione **Create a resource** (Crear un recurso), seleccione **Compute** y, luego, seleccione el **elemento de la galería Windows Server 2019 Datacenter**.
 
@@ -60,9 +60,9 @@ En este escenario, implementaremos y configuraremos una máquina virtual con Win
 
     b.  **Username** (Nombre de usuario): localadmin
 
-    c.  **Password** (Contraseña) y **Confirm password** (Confirmar contraseña): \<la contraseña que prefiera>
+    c.  **Password** (Contraseña) y **Confirm password** (Confirmar contraseña): \<password of your choice>
 
-    d.  **Subscription** (Suscripción): \<la suscripción que prefiera, con los recursos compute/storage/network>.
+    d.  **Suscripción**: \<subscription of your choice, with compute/storage/network resources>.
 
     e.  **Resource group** (Grupo de recursos): storagetesting (crear nuevo)
 
@@ -208,7 +208,7 @@ Tras la actualización y reinicialización puede configurar este servidor como d
 
 12) En la página **Especificar servidores de acceso**, seleccione **Agregar**. Se abre un cuadro de diálogo para especificar los **iniciadores** específicos que estarán autorizados a conectarse al destino iSCSI.
 
-13) En la **ventana Agregar id. de iniciador**, seleccione **Enter a value for the selected type** (Escribir un valor para el tipo seleccionado) y en **Type** (Tipo) asegúrese de que IQN está seleccionado en el menú desplegable. Escriba **iqn.1991-05.com.microsoft:\<computername>** donde\<computername> es el **nombre de equipo** de **VM001** y seleccione **Siguiente**.
+13) En la **ventana Agregar id. de iniciador**, seleccione **Enter a value for the selected type** (Escribir un valor para el tipo seleccionado) y en **Type** (Tipo) asegúrese de que IQN está seleccionado en el menú desplegable. Escriba **iqn.1991-05.com.microsoft:\<computername>** donde \<computername> es el **nombre de equipo** de **VM001**. A continuación, seleccione **Siguiente**.
 
     ![](./media/azure-stack-network-howto-extend-datacenter/image12.png)
 
@@ -286,7 +286,7 @@ Para configurar el iniciador iSCSI, en primer lugar, vuelva a iniciar sesión en
 
     b.  **IP del iniciador**: 10.10.10.4.
 
-    c.  **IP del portal de destino**: \<la primera IP del destino iSCSI/3260>.
+    c.  **IP de portal de destino**: \<your first iSCSI Target IP / 3260>.
 
 ![](./media/azure-stack-network-howto-extend-datacenter/image20.png)
 
@@ -296,7 +296,7 @@ Para configurar el iniciador iSCSI, en primer lugar, vuelva a iniciar sesión en
 
     b.  **IP del iniciador**: 10.10.11.4.
 
-    c.  **IP del portal de destino:** : \<la segunda IP del destino iSCSI/3260>.
+    c.  **IP de portal de destino**: \<your second iSCSI Target IP / 3260>.
 
         ![](./media/azure-stack-network-howto-extend-datacenter/image21.png)
 

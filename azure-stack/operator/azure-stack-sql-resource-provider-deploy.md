@@ -8,12 +8,12 @@ ms.date: 10/02/2019
 ms.lastreviewed: 03/18/2019
 ms.author: bryanla
 ms.reviewer: xiao
-ms.openlocfilehash: bc59808b0b1ebb954812882442cb6dc2d8b02e83
-ms.sourcegitcommit: 41195d1ee8ad14eda102cdd3fee3afccf1d83aca
+ms.openlocfilehash: 0c91d214ba35a3bda98da05e2e7359c45707d760
+ms.sourcegitcommit: 09fbc4e8fc53828647d515bfb556dfe42df28c19
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82908480"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86419099"
 ---
 # <a name="deploy-the-sql-server-resource-provider-on-azure-stack-hub"></a>Implementación del proveedor de recursos de SQL Server en Azure Stack Hub
 
@@ -49,7 +49,7 @@ Hay varios requisitos previos que se deben cumplir antes de implementar el prove
     |-----|-----|
     |El reenvío condicional de DNS se ha establecido correctamente.|[Integración de Azure Stack Hub en el centro de datos: DNS](azure-stack-integrate-dns.md)|
     |Los puertos de entrada para los proveedores de recursos están abiertos.|[Integración de Azure Stack Hub en el centro de datos: puertos y protocolos entrantes](azure-stack-integrate-endpoints.md#ports-and-protocols-inbound)|
-    |Se han establecido correctamente el SAN y el asunto del certificado.|[Requisitos de certificados de infraestructura de clave pública de Azure Stack Hub: certificados obligatorios](azure-stack-pki-certs.md#mandatory-certificates)<br>[Requisitos de certificados de infraestructura de clave pública de Azure Stack Hub: certificados de PaaS opcionales](azure-stack-pki-certs.md#optional-paas-certificates)|
+    |Se han establecido correctamente el SAN y el asunto del certificado.|[Requisitos de certificados de infraestructura de clave pública de Azure Stack Hub: certificados obligatorios](azure-stack-pki-certs.md)<br>[Requisitos de certificados de infraestructura de clave pública de Azure Stack Hub: certificados de PaaS opcionales](azure-stack-pki-certs.md)|
     |     |     |
 
 Si trabaja en un escenario desconectado, complete los pasos siguientes para descargar los módulos de PowerShell necesarios y registrar el repositorio manualmente.
@@ -88,7 +88,7 @@ New-Item -Path $env:ProgramFiles -name "SqlMySqlPsh" -ItemType "Directory"
 
 ### <a name="certificates"></a>Certificados
 
-_Solo para las instalaciones de sistemas integrados_. Debe proporcionar el certificado PKI de PaaS de SQL que se describe en la sección Certificados de PaaS opcionales de [Requisitos de certificados de infraestructura de clave pública de Azure Stack Hub](./azure-stack-pki-certs.md#optional-paas-certificates). Coloque el archivo .pfx en la ubicación especificada por el parámetro **DependencyFilesLocalPath**. No proporcione un certificado para los sistemas ASDK.
+_Solo para las instalaciones de sistemas integrados_. Debe proporcionar el certificado PKI de PaaS de SQL que se describe en la sección Certificados de PaaS opcionales de [Requisitos de certificados de infraestructura de clave pública de Azure Stack Hub](./azure-stack-pki-certs.md). Coloque el archivo .pfx en la ubicación especificada por el parámetro **DependencyFilesLocalPath**. No proporcione un certificado para los sistemas ASDK.
 
 ## <a name="deploy-the-sql-resource-provider"></a>Implementar el proveedor de recursos SQL
 
@@ -200,7 +200,7 @@ Puede usar los pasos siguientes para verificar que el proveedor de recursos de S
 
 1. Inicie sesión en el portal de administración como administrador de servicios.
 2. Seleccione **Grupos de recursos**.
-3. A continuación, seleccione el grupo de recursos **system.\<location\>.sqladapter**.
+3. Seleccione el grupo de recursos **system.\<location\>.sqladapter**.
 4. En la página de resumen de la información general del grupo de recursos no debería haber implementaciones con errores.
 
     ![Comprobación de la implementación del proveedor de recursos de SQL en el portal del administrador de Azure Stack Hub](./media/azure-stack-sql-rp-deploy/sqlrp-verify.png)

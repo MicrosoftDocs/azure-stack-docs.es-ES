@@ -4,19 +4,19 @@ description: Eliminación de volúmenes en Azure Stack HCI mediante Windows Admi
 author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
-ms.date: 03/17/2020
-ms.openlocfilehash: ffa848436169a55e2a2ad4f878e1e3aecaf29d6e
-ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
+ms.date: 07/21/2020
+ms.openlocfilehash: 7a90948cccb75bb8bb1578101d530c46852e99d6
+ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85196365"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86866529"
 ---
 # <a name="deleting-volumes-in-azure-stack-hci"></a>Eliminación de volúmenes en Azure Stack HCI
 
-> Se aplica a: Windows Server 2019
+> Se aplica a: Azure Stack HCI, versión 20H2; Windows Server 2019
 
-En este tema se proporcionan instrucciones para eliminar volúmenes en un clúster de [Espacios de almacenamiento directo](/windows-server/storage/storage-spaces/storage-spaces-direct-overview) mediante Windows Admin Center.
+En este tema se proporcionan instrucciones para eliminar volúmenes en un clúster de Azure Stack HCI mediante Windows Admin Center.
 
 Vea un vídeo rápido sobre cómo eliminar un volumen con Windows Admin Center.
 
@@ -58,6 +58,6 @@ Se le pedirá que confirme que desea realizar la acción y borrar todos los dato
 
 Para obtener instrucciones detalladas sobre otras tareas de administración del almacenamiento esenciales, consulte también:
 
-- [Planeamiento de volúmenes en Espacios de almacenamiento directo](../concepts/plan-volumes.md)
-- [Creación de volúmenes en Espacios de almacenamiento directo](create-volumes.md)
-- [Extensión de volúmenes en Espacios de almacenamiento directo](extend-volumes.md)
+- [Planeamiento de volúmenes](../concepts/plan-volumes.md)
+- [Creación de volúmenes](create-volumes.md)
+- [Extensión de volúmenes](extend-volumes.md)

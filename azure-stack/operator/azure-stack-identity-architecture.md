@@ -3,16 +3,16 @@ title: Arquitectura de identidad para Azure Stack Hub
 description: Obtenga información sobre la arquitectura de identidad para Azure Stack Hub y las diferencias entre Azure AD y AD FS.
 author: BryanLa
 ms.topic: conceptual
-ms.date: 04/10/2020
+ms.date: 07/20/2020
 ms.author: bryanla
 ms.reviewer: fiseraci
-ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: d21df4d1a16f7ea56ec02a1aa1e7821bb7fe4484
-ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
+ms.lastreviewed: 07/20/2020
+ms.openlocfilehash: fa79df515e2676655ea98b6024179d3f56c41fbf
+ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82848241"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86566199"
 ---
 # <a name="identity-architecture-for-azure-stack-hub"></a>Arquitectura de identidad para Azure Stack Hub
 
@@ -34,6 +34,7 @@ El proveedor de identidad que elija puede limitar las opciones, incluida la comp
 |Creación de entidades de servicio con secretos (claves)    |Sí |Sí|
 |Las aplicaciones pueden usar el servicio Graph           |Sí |No|
 |Las aplicaciones pueden utilizar el proveedor de identidades para iniciar sesión |Sí |Sí (requiere que las aplicaciones se federen con instancias de AD FS locales) |
+| Identidades de sistemas administradas | No | No |
 
 ## <a name="topologies"></a>Topologías
 

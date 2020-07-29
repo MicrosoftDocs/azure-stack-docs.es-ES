@@ -8,12 +8,12 @@ ms.date: 03/25/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 05/18/2019
-ms.openlocfilehash: 9c9838a93c0ee46ce0556cd86e9f6ae8b4c7c9d4
-ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
+ms.openlocfilehash: b06ab0601616f8c089d7bcf90526dae97a8c6e5f
+ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82848054"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86489545"
 ---
 # <a name="app-service-on-azure-stack-hub-update-2-release-notes"></a>Notas de la versión de la actualización 2 de App Service en Azure Stack Hub
 
@@ -29,7 +29,7 @@ El número de compilación de la actualización 2 de App Service en Azure Stack
 ## <a name="prerequisites"></a>Prerrequisitos
 
 > [!IMPORTANT]
-> Las nuevas implementaciones de Azure App Service en Azure Stack Hub requieren ahora un certificado comodín con tres firmantes debido a las mejoras en la forma en que se trata el inicio de sesión único para Kudu en Azure App Service. El nuevo firmante es **\*.sso.appservice.\<región\>.\<nombreDominio\>.\<extensión\>**
+> Las nuevas implementaciones de Azure App Service en Azure Stack Hub requieren ahora un certificado comodín con tres firmantes debido a las mejoras en la forma en que se trata el inicio de sesión único para Kudu en Azure App Service. El nuevo firmante es: **\*.sso.appservice.\<region\>.\<domainname\>.\<extension\>**
 
 Consulte [Requisitos previos para implementar App Service en Azure Stack Hub](azure-stack-app-service-before-you-get-started.md) antes de comenzar la implementación.
 
@@ -55,11 +55,11 @@ La actualización 2 de Azure App Service en Azure Stack Hub incluye las siguient
   - Se actualizaron los componentes .Net Core para que fueran coherentes con Azure App Service en la nube pública.
   - Kudu actualizado
 
-- Característica de intercambio automático de ranuras de implementación habilitada: [Configuración del intercambio automático](https://docs.microsoft.com/azure/app-service/deploy-staging-slots#configure-auto-swap).
+- Característica de intercambio automático de ranuras de implementación habilitada: [Configuración del intercambio automático](/azure/app-service/deploy-staging-slots#configure-auto-swap).
 
 - Característica de prueba de producción habilitada: [Introducción a Testing in Production](https://azure.microsoft.com/resources/videos/introduction-to-azure-websites-testing-in-production-with-galin-iliev/).
 
-- Azure Functions Proxies habilitado: [Uso de Azure Functions Proxies](https://docs.microsoft.com/azure/azure-functions/functions-proxies).
+- Azure Functions Proxies habilitado: [Uso de Azure Functions Proxies](/azure/azure-functions/functions-proxies).
 
 - Se agregó compatibilidad de la experiencia de usuario con la extensión de administración de App Service para:
   - Rotación de secretos
@@ -85,7 +85,7 @@ Si decide realizar una implementación en una red virtual existente y en una dir
 
 ## <a name="known-issues-for-cloud-admins-operating-azure-app-service-on-azure-stack-hub"></a>Problemas conocidos para los administradores de la nube que usan Azure App Service en Azure Stack Hub
 
-Consulte la documentación en las [notas de la versión 1804 de Azure Stack Hub](azure-stack-update-1903.md).
+Consulte la documentación en las [notas de la versión 1804 de Azure Stack Hub](./release-notes.md?view=azs-2002).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

@@ -4,17 +4,17 @@ description: Selección de unidades de Espacios de almacenamiento directo en Azu
 author: khdownie
 ms.author: v-kedow
 ms.topic: conceptual
-ms.date: 07/14/2020
-ms.openlocfilehash: f243bcefec74f23efb555e0dbf72597736687694
-ms.sourcegitcommit: 2be3dd5419b0d003a9598a42541ebb1d251aea3d
+ms.date: 07/21/2020
+ms.openlocfilehash: 7ae6a7abc3bb9dc0f73f64c72c56e2436b91a990
+ms.sourcegitcommit: a15a0f955bac922cebb7bf90a72384fd84ddfe56
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86390796"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86947153"
 ---
 # <a name="choosing-drives-for-azure-stack-hci"></a>Selección de unidades para Azure Stack HCl
 
->Se aplica a: Windows Server 2019
+> Se aplica a: Azure Stack HCI, versión 20H2; Windows Server 2019
 
 En este tema se proporcionan instrucciones sobre cómo elegir las unidades de [Espacios de almacenamiento directo](/windows-server/storage/storage-spaces/storage-spaces-direct-overview) para satisfacer los requisitos de rendimiento y capacidad de Azure Stack HCl.
 
@@ -64,7 +64,7 @@ En el caso de entornos con una gran variedad de aplicaciones y cargas de trabajo
 
     Hay una opción adicional más exótica: usar unidades de *los tres* tipos.
 
-3. **NVMe + SSD + HDD.** Con las unidades de los tres tipos, las unidades NVMe realizan el almacenamiento en caché de los SSD y HDD. Lo interesante es que puede crear volúmenes en las SSD y volúmenes en las HHD, en paralelo en el mismo clúster, todos ellos acelerados mediante NVMe. Los primeros son exactamente como en una implementación todo flash, y los segundos son exactamente como en las implementaciones "híbridas" descritas anteriormente. Desde un punto de vista conceptual, es como tener dos grupos, con ciclos de reparación, errores y administración de la capacidad en gran medida independientes, etc.
+3. **NVMe + SSD + HDD.** Con las unidades de los tres tipos, las unidades NVMe realizan el almacenamiento en caché de los SSD y HDD. Lo interesante es que puede crear volúmenes en SSD y en HHD, en paralelo en el mismo clúster, todos ellos acelerados mediante NVMe. Los primeros son exactamente como en una implementación todo flash, y los segundos son exactamente como en las implementaciones "híbridas" descritas anteriormente. Desde un punto de vista conceptual, es como tener dos grupos, con ciclos de reparación, errores y administración de la capacidad en gran medida independientes, etc.
 
    >[!IMPORTANT]
    > Se recomienda usar el nivel SSD para colocar las cargas de trabajo más sensibles al rendimiento en todo flash.
@@ -86,17 +86,16 @@ En el caso de cargas de trabajo que requieran gran capacidad y poca escritura, c
 
 Cada servidor debe tener al menos dos unidades de caché (el mínimo necesario para la redundancia). Se recomienda que el número de unidades de capacidad sea un múltiplo del número de unidades de caché. Por ejemplo, si tiene 4 unidades de caché, experimentará un rendimiento más coherente con 8 unidades de capacidad (relación 1:2) que con 7 o 9.
 
-El tamaño de la caché debe ajustarse para adaptarse al espacio de trabajo de las aplicaciones y las cargas de trabajo, es decir, todos los datos que leen y escriben activamente en un momento dado. Aparte de eso, no hay ningún requisito de tamaño de la caché. En el caso de implementaciones con unidades HDD, un buen punto de partida es un 10 por ciento de la capacidad; por ejemplo, si cada servidor tiene 4 HDD de 4 TB = 16 TB de capacidad, entonces 2 SSD de 800 GB = 1,6 TB de caché por servidor. En el caso de las implementaciones todo-flash, especialmente con unidades SSD de [alta resistencia](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/), sería más justo empezar más cerca del 5 por ciento de capacidad; por ejemplo, si cada servidor tiene 24 SSD de 1,2 TB = 28,8 TB de capacidad, entonces 2 NVMe de 750 GB = 1,5 TB de caché por servidor. Siempre puede agregar o quitar unidades de caché más adelante para realizar los ajustes necesarios.
+El tamaño de la caché debe ajustarse para adaptarse al espacio de trabajo de las aplicaciones y las cargas de trabajo, es decir, todos los datos que leen y escriben activamente en un momento dado. Aparte de eso, no hay ningún requisito de tamaño de la caché. En el caso de implementaciones con unidades HDD, un buen punto de partida es un 10 por ciento de la capacidad; por ejemplo, si cada servidor tiene 4 HDD de 4 TB = 16 TB de capacidad, entonces 2 SSD de 800 GB = 1,6 TB de caché por servidor. En el caso de las implementaciones todo-flash, especialmente con unidades SSD de [alta resistencia](https://techcommunity.microsoft.com/t5/storage-at-microsoft/understanding-ssd-endurance-drive-writes-per-day-dwpd-terabytes/ba-p/426024), sería más justo empezar más cerca del 5 por ciento de capacidad; por ejemplo, si cada servidor tiene 24 SSD de 1,2 TB = 28,8 TB de capacidad, entonces 2 NVMe de 750 GB = 1,5 TB de caché por servidor. Siempre puede agregar o quitar unidades de caché más adelante para realizar los ajustes necesarios.
 
 ### <a name="general"></a>General
 
-Se recomienda limitar la capacidad total de almacenamiento por servidor a aproximadamente 400 terabytes (TB). Cuanto mayor sea la capacidad de almacenamiento por servidor, mayor será el tiempo necesario para volver a sincronizar los datos después del tiempo de inactividad o el reinicio, como cuando se aplican actualizaciones de software. El tamaño máximo actual por grupo de almacenamiento es 4 petabytes (PB) (4000 TB) para Windows Server 2019.
+Se recomienda limitar la capacidad total de almacenamiento por servidor a aproximadamente 400 terabytes (TB). Cuanto mayor sea la capacidad de almacenamiento por servidor, mayor será el tiempo necesario para volver a sincronizar los datos después del tiempo de inactividad o el reinicio, como cuando se aplican actualizaciones de software. El tamaño máximo actual por grupo de almacenamiento es de 4 petabytes (PB) (4000 TB) para Windows Server 2019.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
 Para obtener más información, vea también:
 
-- [Introducción a Azure Stack HCI](../overview.md)
 - [Descripción de la caché en Azure Stack HCI](cache.md)
 - [Requisitos de hardware de Espacios de almacenamiento directo](/windows-server/storage/storage-spaces/storage-spaces-direct-hardware-requirements)
 - [Planeamiento de volúmenes en Azure Stack HCl](plan-volumes.md)
