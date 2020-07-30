@@ -53,7 +53,7 @@
     - name: Hoja de ruta de Azure Stack Hub
       href: 'https://azure.microsoft.com/updates/?query=azure%20stack%20hub'
     - name: Preguntas y respuestas acerca de Azure Stack Hub
-      href: 'https://docs.microsoft.com/answers/questions/topics/single/50514.html'
+      href: /answers/questions/topics/single/50514.html
     - name: Comentarios sobre la documentación de Azure Stack Hub
       href: 'https://feedback.azure.com/forums/344565-azure-stack?category_id=160275'
     - name: Información de precios
