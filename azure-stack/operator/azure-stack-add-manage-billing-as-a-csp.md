@@ -3,16 +3,16 @@ title: Administración del uso y la facturación de Azure Stack Hub como proveed
 description: Obtenga información sobre cómo registrar Azure Stack Hub como proveedor de soluciones en la nube (CSP) y cómo agregar clientes para la facturación.
 author: sethmanheim
 ms.topic: article
-ms.date: 04/20/2020
+ms.date: 07/27/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 10/15/2019
-ms.openlocfilehash: 8202942a10e4faf48b09e9fd0d456a810d6a08fd
-ms.sourcegitcommit: a3ae6dd8670f8fb24224880df7eee256ebbcc4ef
+ms.openlocfilehash: 1fc7914755cfa78cf02fa13101559caca766d20c
+ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81772408"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87250867"
 ---
 # <a name="manage-usage-and-billing-for-azure-stack-hub-as-a-cloud-solution-provider"></a>Administración del uso y la facturación de Azure Stack Hub como proveedor de soluciones en la nube
 

@@ -3,16 +3,16 @@ title: Implementación de Kubernetes en Azure Stack Hub con Azure Active Direc
 description: Obtenga información sobre cómo implementar Kubernetes en Azure Stack Hub con Azure Active Directory (Azure AD).
 author: mattbriggs
 ms.topic: article
-ms.date: 3/12/2020
+ms.date: 07/24/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 3/12/2020
-ms.openlocfilehash: aaee4195a4c3fccedd14ddedf63d663af6bfb565
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.openlocfilehash: 109b899e266a8c74a185bc157ccedbb3524a2739
+ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86566811"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87250952"
 ---
 # <a name="deploy-kubernetes-to-azure-stack-hub-using-azure-active-directory"></a>Implementación de Kubernetes en Azure Stack Hub con Azure Active Directory
 

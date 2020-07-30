@@ -3,16 +3,16 @@ title: Implemente una aplicación web de Python en una máquina virtual en Azure
 description: Implemente una aplicación web de Python en una máquina virtual en Azure Stack Hub.
 author: mattbriggs
 ms.topic: overview
-ms.date: 3/12/2020
+ms.date: 07/24/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 3/12/2020
-ms.openlocfilehash: 700589e985aa651a1a7ae4a5ffbc020b8e6a2d3f
-ms.sourcegitcommit: 4138a2a15f78e7db38b3a29acc963a71937146fd
+ms.openlocfilehash: c72b08ca3e847a44a1270fb2b8e670a0b30a0929
+ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "79313024"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87250935"
 ---
 # <a name="deploy-a-python-web-app-to-a-vm-in-azure-stack-hub"></a>Implementación de una aplicación web de Python en una máquina virtual en Azure Stack Hub
 

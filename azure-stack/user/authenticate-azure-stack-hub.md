@@ -7,12 +7,12 @@ ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/13/2019
-ms.openlocfilehash: 43461dc60afd98086f99fdf508e7248db975ca0e
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.openlocfilehash: 750e247906fcd4bf639b4fd5879910957c18b374
+ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86567661"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87251071"
 ---
 # <a name="get-authentication-information-for-azure-stack-hub"></a>Obtención de información de autenticación para Azure Stack Hub
 

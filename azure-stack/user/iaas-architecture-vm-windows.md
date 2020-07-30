@@ -3,16 +3,16 @@ title: Ejecución de una máquina virtual Windows en Azure Stack Hub
 description: Aprenda a ejecutar una máquina virtual Windows en Azure Stack Hub.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 3/9/2020
+ms.date: 7/24/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 3/9/2020
-ms.openlocfilehash: 11ab20369bc95d86f4a1468c4eda670015f33e65
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.openlocfilehash: d642f01ca55fc18b832a04328be835703dfb5dd2
+ms.sourcegitcommit: ad6bbb611ac671b295568d3f00a193b783470c68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86567780"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87397556"
 ---
 # <a name="run-a-windows-virtual-machine-on-azure-stack-hub"></a>Ejecución de una máquina virtual Windows en Azure Stack Hub
 
@@ -40,7 +40,7 @@ IOPS (operaciones de entrada y salida por segundo) de disco en Azure Stack Hub e
 
 También se recomienda usar [Managed Disks](./azure-stack-managed-disk-considerations.md). Managed Disks simplifica la administración de discos y controla el almacenamiento automáticamente. Los discos administrados no requieren una cuenta de almacenamiento. Solo debe especificar el tamaño y el tipo de disco, y se implementará como un recurso de alta disponibilidad.
 
-El disco del sistema operativo es un disco duro virtual almacenado en Azure Stack Hub Blob Storage, por lo que se conserva incluso cuando la máquina host está inactiva. También se recomienda crear uno o varios [discos de datos](./azure-stack-manage-vm-disks.md), que son discos duros virtuales persistentes que se usan para los datos de aplicación. Cuando sea posible, instale las aplicaciones en un disco de datos, no en el disco del sistema operativo. Es posible que algunas aplicaciones heredadas deban instalar componentes en la unidad C:. En ese caso, puede [cambiar el tamaño del disco del sistema operativo](/azure/virtual-machines/virtual-machines-windows-expand-os-disk) mediante PowerShell.
+El disco del sistema operativo es un disco duro virtual almacenado en Azure Stack Hub Blob Storage, por lo que se conserva incluso cuando la máquina host está inactiva. También se recomienda crear uno o varios [discos de datos](./azure-stack-manage-vm-disks.md), que son discos duros virtuales persistentes que se usan para los datos de aplicación. Cuando sea posible, instale las aplicaciones en un disco de datos, no en el disco del sistema operativo. Es posible que algunas aplicaciones heredadas deban instalar componentes en la unidad C:. En ese caso, puede [cambiar el tamaño del disco del sistema operativo](/azure/virtual-machines/windows/expand-os-disk) mediante PowerShell.
 
 La máquina virtual también se crea con un disco temporal (la unidad D: de Windows). Este disco se almacena en un volumen temporal de la infraestructura de Azure Stack Hub Storage. Se puede eliminar durante los reinicios y otros eventos del ciclo de vida de la máquina virtual. Use este disco solo para datos temporales, como archivos de paginación o de intercambio.
 
@@ -56,7 +56,7 @@ Los componentes de red incluyen los siguientes recursos:
 
 -   Reserve una [dirección IP estática](/azure/virtual-network/virtual-networks-reserved-public-ip) si necesita una dirección IP fija que no cambie; por ejemplo, si tiene que crear un registro "A" en DNS o agregar la dirección IP a una lista segura.
 
--   También puede crear un nombre de dominio completo (FQDN) para la dirección IP. Después, puede registrar un [registro CNAME](https://en.wikipedia.org/wiki/CNAME_record) en DNS que apunte al nombre de dominio completo. Para más información, consulte [Crear un nombre de dominio completo en Azure Portal](/azure/virtual-machines/virtual-machines-windows-portal-create-fqdn).
+-   También puede crear un nombre de dominio completo (FQDN) para la dirección IP. Después, puede registrar un [registro CNAME](https://en.wikipedia.org/wiki/CNAME_record) en DNS que apunte al nombre de dominio completo. Para más información, consulte [Crear un nombre de dominio completo en Azure Portal](/azure/virtual-machines/windows/portal-create-fqdn).
 
 -   **Grupo de seguridad de red (NSG)** . Los NSG se utilizan para permitir o denegar el tráfico de red a las máquinas virtuales. Los grupos de seguridad de red se pueden asociar con subredes o con instancias de máquina virtual individuales.
 
