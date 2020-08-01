@@ -57,6 +57,8 @@
       href: ../operator/index.yml
     - name: Documentación de usuario de Azure Stack Hub
       href: ../user/index.yml
+    - name: Documentación de la nube híbrida de Azure
+      href: /hybrid
 - name: Recursos
   items:
     - name: Hoja de ruta de Azure Stack

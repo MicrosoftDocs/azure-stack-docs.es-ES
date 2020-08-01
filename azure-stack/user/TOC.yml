@@ -343,6 +343,8 @@
       href: ../operator/index.yml
     - name: Documentación de ASDK
       href: ../asdk/index.yml
+    - name: Documentación de la nube híbrida de Azure
+      href: /hybrid
 - name: Recursos
   items:
     - name: Hoja de ruta de Azure Stack Hub
