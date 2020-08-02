@@ -3,16 +3,16 @@ title: Configuración de un entorno de desarrollo en Azure Stack Hub
 description: Empiece a desarrollar aplicaciones para Azure Stack Hub.
 author: mattbriggs
 ms.topic: overview
-ms.date: 04/20/2020
+ms.date: 7/23/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: d86797e7239b32e779567942b2c53c1ae58d94c8
-ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
+ms.openlocfilehash: ac9e373881ef5d7c88a0397130fdfd560e41e352
+ms.sourcegitcommit: f2a5ce52fcf69e05fe89be8211b7360de46f4a94
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81661000"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87133748"
 ---
 # <a name="set-up-a-development-environment-in-azure-stack-hub"></a>Configuración de un entorno de desarrollo en Azure Stack Hub 
 
