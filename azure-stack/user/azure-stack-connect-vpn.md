@@ -3,16 +3,16 @@ title: Conexión de Azure Stack Hub a Azure mediante VPN
 description: Cómo conectar redes virtuales en Azure Stack Hub a redes virtuales en Azure mediante VPN.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 04/07/2020
+ms.date: 07/23/2020
 ms.author: sethm
-ms.reviewer: scottnap
+ms.reviewer: TBD
 ms.lastreviewed: 10/24/2019
-ms.openlocfilehash: dc143c4cfc6beec14891caa7e23d3f058f49eae5
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.openlocfilehash: 2ea7dfcccf2b2f4590e09f60db4530d7ebe6d319
+ms.sourcegitcommit: f2a5ce52fcf69e05fe89be8211b7360de46f4a94
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86567678"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87133765"
 ---
 # <a name="connect-azure-stack-hub-to-azure-using-vpn"></a>Conexión de Azure Stack Hub a Azure mediante VPN
 
@@ -35,7 +35,7 @@ La ilustración siguiente muestra el aspecto que debería tener la configuració
 
 La tabla de ejemplos de configuración de la red muestra los valores que se usan para los ejemplos de este artículo. Puede usar estos valores o hacer referencia a ellos para comprender mejor los ejemplos de este artículo:
 
-|   |Azure Stack Hub|Azure|
+| Value   |Azure Stack Hub|Azure|
 |---------|---------|---------|
 |Nombre de la red virtual     |Azs-VNet|AzureVNet |
 |Espacio de direcciones de red virtual |10.1.0.0/16|10.100.0.0/16|
@@ -119,9 +119,9 @@ Puesto que los parámetros predeterminados de Azure Stack Hub para directivas de
 1. Cree una directiva personalizada:
 
    ```powershell
-     $IPSecPolicy = New-AzIpsecPolicy -IkeEncryption AES256 -IkeIntegrity SHA384 -DhGroup ECP384  `
-     -IpsecEncryption GCMAES256 -IpsecIntegrity GCMAES256 -PfsGroup ECP384 -SALifeTimeSeconds 27000 `
-     -SADataSizeKilobytes 102400000 
+   $IPSecPolicy = New-AzIpsecPolicy -IkeEncryption AES256 -IkeIntegrity SHA384 -DhGroup ECP384  `
+   -IpsecEncryption GCMAES256 -IpsecIntegrity GCMAES256 -PfsGroup ECP384 -SALifeTimeSeconds 27000 `
+   -SADataSizeKilobytes 102400000
    ```
 
 2. Aplique la directiva a la conexión:
@@ -202,7 +202,7 @@ Un administrador de servicios puede iniciar sesión como usuario para probar los
 
 ### <a name="create-the-local-network-gateway"></a>Creación de la puerta de enlace de red local
 
-El concepto de una *puerta de enlace de red local* en Azure Stack Hub es un algo diferente del de en una implementación de Azure.
+El concepto de una *puerta de enlace de red local* en Azure Stack Hub es diferente al de una implementación de Azure.
 
 En una implementación de Azure, una puerta de enlace de red local representa un dispositivo físico local (en la ubicación del usuario) que se conecta a una puerta de enlace de red virtual en Azure. Sin embargo, en Azure Stack Hub, ambos extremos de la conexión son puertas de enlace de red virtual.
 
@@ -256,8 +256,8 @@ Después de que se establece la conexión de sitio a sitio, debe comprobar que p
 * Inicie sesión en la máquina virtual que creó en Azure Stack Hub y haga ping en la máquina virtual de Azure.
 * Inicie sesión en la máquina virtual que creó en Azure y haga ping en la máquina virtual de Azure Stack Hub.
 
->[!NOTE]
->Para asegurarse de que envía el tráfico a través de la conexión de sitio a sitio, haga ping a la dirección IP directa (DIP) de la máquina virtual en la subred remota, no a la IP virtual.
+> [!NOTE]
+> Para asegurarse de que envía el tráfico a través de la conexión de sitio a sitio, haga ping a la dirección IP directa (DIP) de la máquina virtual en la subred remota, no a la IP virtual.
 
 ### <a name="sign-in-to-the-user-vm-in-azure-stack-hub"></a>Inicio de sesión en la máquina virtual de usuario en Azure Stack Hub
 

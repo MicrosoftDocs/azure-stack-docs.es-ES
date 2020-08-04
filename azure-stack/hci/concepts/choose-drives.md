@@ -4,13 +4,13 @@ description: Selección de unidades de Espacios de almacenamiento directo en Azu
 author: khdownie
 ms.author: v-kedow
 ms.topic: conceptual
-ms.date: 07/21/2020
-ms.openlocfilehash: 7ae6a7abc3bb9dc0f73f64c72c56e2436b91a990
-ms.sourcegitcommit: a15a0f955bac922cebb7bf90a72384fd84ddfe56
+ms.date: 07/22/2020
+ms.openlocfilehash: 56d9c2cf09d05de59700c70fd7851999db42265f
+ms.sourcegitcommit: aca1b05b570aa72bfe410c9cf7109f590526ed84
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86947153"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87115199"
 ---
 # <a name="choosing-drives-for-azure-stack-hci"></a>Selección de unidades para Azure Stack HCl
 
@@ -37,7 +37,7 @@ Para más información, consulte [Descripción de la memoria caché de Espacios 
 
 ## <a name="option-1--maximizing-performance"></a>Opción 1: Maximización del rendimiento
 
-Para lograr latencias inferiores al milisegundo predecibles y uniformes entre lecturas y escrituras aleatorias en cualquier dato, o para lograr un número de IOPS (se han realizado [más de seis millones](https://www.youtube.com/watch?v=0LviCzsudGY&t=28m)) o un rendimiento de E/S (se ha realizado [más de 1 TB/s](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=16m50s)) extremadamente altos, es necesario usar todo flash.
+Para lograr latencias inferiores al milisegundo predecibles y uniformes entre lecturas y escrituras aleatorias en cualquier dato, o para lograr un número de IOPS (se han realizado [más de 13 millones](https://techcommunity.microsoft.com/t5/storage-at-microsoft/the-new-hci-industry-record-13-7-million-iops-with-windows/ba-p/428314)) o un rendimiento de E/S (se han realizado lectura a más de 500 GB/segundo) extremadamente altos, es necesario usar todo flash.
 
 Actualmente existen tres formas de hacerlo:
 

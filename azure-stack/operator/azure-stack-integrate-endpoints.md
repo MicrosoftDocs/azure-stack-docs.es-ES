@@ -3,16 +3,16 @@ title: Publicación de servicios de Azure Stack Hub en el centro de datos
 description: Aprenda a publicar servicios de Azure Stack Hub en el centro de datos.
 author: IngridAtMicrosoft
 ms.topic: article
-ms.date: 04/10/2020
+ms.date: 07/24/2020
 ms.author: inhenkel
 ms.reviewer: wamota
-ms.lastreviewed: 12/11/2019
-ms.openlocfilehash: 628253c966717b1d6f291dca35754e058722f1f8
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.lastreviewed: 07/24/2020
+ms.openlocfilehash: 2ff8d71d31b05ccdd4d63805da2626a3a5785e1b
+ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86488678"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87250850"
 ---
 # <a name="publish-azure-stack-hub-services-in-your-datacenter"></a>Publicación de servicios de Azure Stack Hub en el centro de datos
 
@@ -93,7 +93,7 @@ Azure Stack Hub solo admite servidores proxy transparentes. En una implementaci�
 |GC DE LDAP|Bosque de Active Directory proporcionado para la integración con Graph|TCP|3268|VIP pública - /27|
 |SSL de GC de LDAP|Bosque de Active Directory proporcionado para la integración con Graph|TCP|3269|VIP pública - /27|
 |AD FS|Punto de conexión de metadatos de AD FS proporcionado para la integración con AD FS|TCP|443|VIP pública - /27|
-|Servicio de recopilación de registros de diagnóstico|Dirección URL de SAS de blob proporcionada por Azure Storage|HTTPS|443|VIP pública - /27|
+| Recopilación de registros de diagnóstico | https://azsdiagppelocalwestus02.blob.core.windows.net<br>https://azsdiagppewestusfrontend.westus.cloudapp.azure.com<br>https://azsdiagprdwestusfrontend.westus.cloudapp.azure.com | HTTPS | 443 | VIP pública - /27 |
 |     |     |     |     |     |
 
 Las direcciones URL de salida tienen equilibrio de carga mediante Azure Traffic Manager para proporcionar la mejor conectividad posible basada en la ubicación geográfica. Con las direcciones URL con equilibrio de carga, Microsoft puede actualizar y cambiar los puntos de conexión de back-end sin que ello afecte a los usuarios. Microsoft no comparte la lista de direcciones IP para las direcciones URL con equilibrio de carga. Debe usar un dispositivo que admita el filtrado por dirección URL, en lugar de por dirección IP.

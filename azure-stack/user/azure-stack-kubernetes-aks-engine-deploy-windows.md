@@ -3,16 +3,16 @@ title: Implementación del motor de AKS en Windows para Azure Stack Hub
 description: Aprenda a usar una máquina Windows en Azure Stack Hub para hospedar el motor de AKS con el fin de implementar y administrar un clúster de Kubernetes.
 author: mattbriggs
 ms.topic: article
-ms.date: 3/19/2020
+ms.date: 07/24/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 3/19/2020
-ms.openlocfilehash: 6b10f43081ae9781005fcbc13eec50bd03b5128e
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.openlocfilehash: d973099817dada07b8d91ccd5d561f8b3fce5944
+ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86566114"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87251037"
 ---
 # <a name="install-the-aks-engine-on-windows-in-azure-stack-hub"></a>Instalación del motor de AKS en Windows para Azure Stack Hub
 
@@ -88,7 +88,7 @@ Tendrá que agregar un certificado al ejecutar la máquina virtual cliente para 
 
 Si usa un ASDK, el punto de conexión de Azure Resource Manager utiliza un certificado autofirmado y debe agregar explícitamente este certificado al almacén de certificados de confianza de la máquina. Puede encontrar el certificado raíz del ASDK en cualquier máquina virtual que implemente en el ASDK.
 
-1. Exporte el certificado raíz de la entidad de certificación. Para ver las instrucciones necesarias, consulte [Exportación del certificado raíz de la entidad de certificación de Azure Stack Hub](./azure-stack-version-profiles-azurecli2.md#export-the-azure-stack-hub-ca-root-certificate)
+1. Exporte el certificado raíz de la entidad de certificación. Para ver las instrucciones necesarias, consulte [Exportación del certificado raíz de la entidad de certificación de Azure Stack Hub](./azure-stack-version-profiles-azurecli2.md#export-the-azure-stack-hub-ca-root-certificate).
 2. Confianza en el certificado raíz de la entidad de certificación de Azure Stack Hub. Para ver las instrucciones necesarias, consulte [Confianza en el certificado raíz de la entidad de certificación de Azure Stack Hub](./azure-stack-version-profiles-azurecli2.md#trust-the-azure-stack-hub-ca-root-certificate).
 
 ## <a name="next-steps"></a>Pasos siguientes

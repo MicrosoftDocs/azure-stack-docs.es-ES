@@ -7,14 +7,14 @@ ms.date: 7/20/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 7/20/2020
-ms.openlocfilehash: f66eacdcd65feedaf52324dc84b32d84677ce80b
-ms.sourcegitcommit: 16ff77f7157e5b04a8cd401b095f7b71f51d5a11
+ms.openlocfilehash: e3efdd0e218ae82cfcea14b20f4b172e5cc87f32
+ms.sourcegitcommit: ad6bbb611ac671b295568d3f00a193b783470c68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86949532"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87397352"
 ---
-# <a name="use-docker-to-run-powershell-in-azure-stack-hub"></a>Uso de Docker para ejecutar PowerShell en Azure Stack Hub
+# <a name="use-docker-to-run-powershell-for-azure-stack-hub"></a>Uso de Docker para ejecutar PowerShell para Azure Stack Hub
 
 En este artículo, puede usar Docker para crear un contenedor en el que se ejecutará la versión de PowerShell necesaria para trabajar con las distintas interfaces. Puede encontrar instrucciones para usar tanto los módulos de AzureRM como los módulos de Az más recientes. AzureRM requiere un contenedor basado en Windows. Az usa un contenedor basado en Linux.
 
@@ -34,11 +34,9 @@ En este artículo, puede usar Docker para crear un contenedor en el que se ejecu
 
 Para usar PowerShell para acceder a los recursos de Azure Stack Hub, necesita una entidad de servicio en su inquilino de Azure Active Directory (Azure AD). Los permisos se delegan con el control de acceso basado en rol de usuario (RBAC). Es posible que tenga que solicitar la entidad de servicio a su operador de nube.
 
-1. Para configurar la entidad de servicio, siga las instrucciones del artículo [Creación de entidades de servicio para otorgar a las aplicaciones acceso a los recursos de Azure Stack Hub](azure-stack-create-service-principals.md).
+1. Para configurar la entidad de servicio, siga las instrucciones del artículo [Creación de entidades de servicio para otorgar a las aplicaciones acceso a los recursos de Azure Stack Hub](../operator/azure-stack-create-service-principals.md?view=azs-2002).
 
 2. Anote el identificador de aplicación, el secreto, el identificador del inquilino y el identificador del objeto para usarlos más tarde.
-
-1. Para configurar la entidad de servicio, siga las instrucciones del artículo [Creación de entidades de servicio para otorgar a las aplicaciones acceso a los recursos de Azure Stack Hub](../operator/azure-stack-create-service-principals.md?view=azs-2002).
 
 ## <a name="run-powershell-in-docker"></a>Ejecución de PowerShell en Docker
 

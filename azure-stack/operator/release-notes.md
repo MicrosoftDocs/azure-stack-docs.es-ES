@@ -3,16 +3,16 @@ title: Notas de la versión de Azure Stack Hub
 description: Notas de la versión para los sistemas integrados de Azure Stack Hub, incluidas las actualizaciones y correcciones de errores.
 author: sethmanheim
 ms.topic: article
-ms.date: 07/21/2020
+ms.date: 07/23/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 03/18/2020
-ms.openlocfilehash: aef85fb3ee99254350c604a819befd27728a8b7c
-ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
+ms.openlocfilehash: fec33723ae5d7da03b8e59dc835d88c7ff418aa1
+ms.sourcegitcommit: f2a5ce52fcf69e05fe89be8211b7360de46f4a94
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86867035"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87133697"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Notas de la versión de Azure Stack Hub
 
@@ -165,14 +165,14 @@ Para más información acerca de las revisiones, consulte [Directiva de servicio
 La versión 2002 de Azure Stack Hub debe aplicarse en la versión 1910 con las revisiones siguientes:
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Revisión 1.1910.62.184 de Azure Stack Hub](https://support.microsoft.com/help/4571141)
+- [Revisión 1.1910.63.186 de Azure Stack Hub](https://support.microsoft.com/help/4574735)
 
 ### <a name="after-successfully-applying-the-2002-update"></a>Después de aplicar correctamente la actualización 2002
 
 Después de instalar esta actualización, instale todas las revisiones aplicables.
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Revisión 1.2002.52.142 de Azure Stack Hub](https://support.microsoft.com/help/4571140)
+- [Revisión 1.2002.53.144 de Azure Stack Hub](https://support.microsoft.com/help/4574736)
 ::: moniker-end
 
 ::: moniker range="azs-1910"
@@ -322,14 +322,14 @@ Las revisiones de Azure Stack Hub solo son aplicables a los sistemas integrados 
 La versión 1910 de Azure Stack Hub debe aplicarse en la versión 1908 con las revisiones siguientes:
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Revisión 1.1908.50.131 de Azure Stack Hub](https://support.microsoft.com/help/4571142)
+- [Revisión 1.1908.51.133 de Azure Stack Hub](https://support.microsoft.com/help/4574734)
 
 ### <a name="after-successfully-applying-the-1910-update"></a>Después de aplicar correctamente la actualización 1910
 
 Después de instalar esta actualización, instale todas las revisiones aplicables. Para más información, consulte nuestra [directiva de servicio](azure-stack-servicing-policy.md).
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Revisión 1.1910.62.184 de Azure Stack Hub](https://support.microsoft.com/help/4571141)
+- [Revisión 1.1910.63.186 de Azure Stack Hub](https://support.microsoft.com/help/4574735)
 ::: moniker-end
 
 ::: moniker range="azs-1908"
@@ -408,7 +408,7 @@ La actualización 1908 de Azure Stack Hub requiere la **versión de OEM 2.1 o p
 Después de instalar esta actualización, instale todas las revisiones aplicables. Para más información, consulte nuestra [directiva de servicio](azure-stack-servicing-policy.md).
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Revisión 1.1908.50.131 de Azure Stack Hub](https://support.microsoft.com/help/4571142)
+- [Revisión 1.1908.51.133 de Azure Stack Hub](https://support.microsoft.com/help/4574734)
 ::: moniker-end
 
 ::: moniker range="azs-1907"

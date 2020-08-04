@@ -3,20 +3,20 @@ title: Introducción al Marketplace de Azure Stack Hub
 description: Una introducción al Marketplace de Azure Stack Hub y a los elementos de Marketplace.
 author: sethmanheim
 ms.topic: article
-ms.date: 04/20/2020
+ms.date: 07/27/2020
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 638ffe45cef9301059fd9e9e39b74b793e2ba86a
-ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
+ms.openlocfilehash: b9f01cb8237a3a6764b6ce450e279700a17eea01
+ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81661341"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87250816"
 ---
 # <a name="azure-stack-hub-marketplace-overview"></a>Introducción al Marketplace de Azure Stack Hub
 
-Marketplace de Azure Stack Hub es una colección de servicios, aplicaciones y recursos personalizados para Azure Stack Hub. Los recursos incluyen redes, máquinas virtuales (VM), almacenamiento, etc. Use Marketplace de Azure Stack Hub para crear nuevos recursos e implementar nuevas aplicaciones; o busque y seleccione los elementos que desee utilizar. Para utilizar un elemento de Marketplace, los usuarios deben suscribirse a una oferta que les conceda acceso al elemento.
+Marketplace de Azure Stack Hub es una colección de servicios, aplicaciones y recursos personalizados para Azure Stack Hub. Los recursos incluyen redes, máquinas virtuales (VM), almacenamiento, etc. Use Marketplace de Azure Stack Hub para crear nuevos recursos e implementar nuevas aplicaciones; o busque y seleccione los elementos que desee utilizar. Para utilizar un elemento de Marketplace, los usuarios deben suscribirse a una oferta que les conceda acceso a ese elemento.
 
 Como operador de Azure Stack Hub, usted decide qué elementos quiere agregar (publicar) en Marketplace de Azure Stack Hub. Puede publicar elementos como bases de datos, App Services, etc. Esto hace que sean visibles para todos los usuarios. Puede publicar elementos personalizados creados por usted o elementos de una creciente [lista de elementos de Azure Marketplace](azure-stack-marketplace-azure-items.md). Cuando publica un elemento en Marketplace de Azure Stack Hub, los usuarios pueden verlo en menos de cinco minutos.
 

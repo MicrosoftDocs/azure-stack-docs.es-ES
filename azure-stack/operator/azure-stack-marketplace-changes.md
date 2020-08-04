@@ -3,16 +3,16 @@ title: Novedades de Marketplace de Azure Stack Hub
 description: Consulte las novedades de Marketplace de Azure Stack Hub, incluidos los elementos nuevos, en desuso y actualizados de Marketplace.
 author: sethmanheim
 ms.topic: article
-ms.date: 06/19/2020
+ms.date: 07/27/2020
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 05/28/2020
-ms.openlocfilehash: a1e7b227a0e18475a1fcfac3246f193f54b84ced
-ms.sourcegitcommit: 76af742a42e807c400474a337e29d088ede8a60d
+ms.openlocfilehash: 95d6064ed11807f9fb8aae0205ae21607dbb5d2d
+ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85196960"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87250799"
 ---
 # <a name="azure-stack-hub-marketplace-changes"></a>Cambios en Marketplace de Azure Stack Hub
 
@@ -63,11 +63,30 @@ El artículo [Elementos de Azure Marketplace disponibles para Azure Stack Hub](a
 
 ## <a name="updated-marketplace-items"></a>Elementos de Marketplace actualizados
 
+- 27/07/2020: Ubuntu Server 20.04 LTS, versión 20.04.202007080
+- 27/07/2020: Ubuntu Server 20.04 LTS, versión 20.04.202007160
+- 27/07/2020: Ubuntu Server 20.04 LTS, versión 20.04.202004230
+- 27/07/2020: Ubuntu Server 16.04 LTS, versión 16.04.202007080
+- 27/07/2020: Ubuntu Server 18.04 LTS, versión 16.04.202007080
+- 21/07/2020: {WS-PAYG} Licencia gratis: SQL Server 2016 SP2 Developer en Windows Server 2016: versión 13.2.20200513
+- 21/07/2020: {WS-PAYG} Licencia gratis: SQL Server 2016 SP2 Express en Windows Server 2016: versión 13.2.20200514
+- 21/07/2020: {WS-PAYG} Licencia gratis de SQL Server: SQL Server 2017 Developer en Windows Server 2016: versión 14.0.20200513
+- 21/07/2020: {WS-PAYG} Licencia gratis de SQL Server: SQL Server 2017 Express en Windows Server 2016: versión 14.0.20200514
+- 21/07/2020: {WS-PAYG} SQL Server 2016 SP2 Enterprise en Windows Server 2016: versión 13.2.20200513
+- 21/07/2020: {WS-PAYG} SQL Server 2016 SP2 Standard en Windows Server 2016: versión 13.2.20200514
+- 21/07/2020: {WS-PAYG} SQL Server 2017 Enterprise en Windows Server 2016: versión 14.0.20200513
+- 21/07/2020: {WS-PAYG} SQL Server 2017 Standard en Windows Server 2016: versión 14.0.20200514
+- 22/07/2020: {WS-BYOL} Licencia gratis: SQL Server 2016 SP2 Developer en Windows Server 2016: versión 13.2.20200513
+- 22/07/2020: {WS-BYOL} Licencia gratis: SQL Server 2016 SP2 Express en Windows Server 2016: versión 13.2.20200514
+- 22/07/2020: {WS-BYOL} Licencia gratis de SQL Server: SQL Server 2017 Developer en Windows Server 2016: versión 14.0.20200513
+- 22/07/2020: {WS-BYOL} Licencia gratis de SQL Server: SQL Server 2017 Express en Windows Server 2016: versión 14.0.20200514
+- 22/07/2020: {WS-BYOL} SQL Server 2016 SP2 Enterprise en Windows Server 2016: versión 13.2.20200513
+- 22/07/2020: {WS-BYOL} SQL Server 2016 SP2 Standard en Windows Server 2016: versión 13.2.20200514
+- 22/07/2020: {WS-BYOL} SQL Server 2017 Enterprise en Windows Server 2016: versión 14.0.20200513
+- 22/07/2020: {WS-BYOL} SQL Server 2017 Standard en Windows Server 2016: versión 14.0.20200514
 - 19/06/2020: Bitnami GitLab CE: versión 13.0.2006110322
 - 16/06/2020: SQLIaaSExtension versión 1.3.20370
 - 12/06/2020: Bitnami Grafana: versión 6.7.2006040249
-- 21/5/2020: Ubuntu Server 16.04 LTS, versión 16.04.202004290
-- 21/5/2020: Ubuntu Server 18.04 LTS, versión 18.04.202004080
 - 21/5/2020: Windows Server 2008 R2 SP1 en modalidad "traiga su propia licencia", versión 7601.24552.2004101827
 - 21/5/2020: Windows Server 2008 R2 SP1 en modalidad "pago por uso", versión 7601.24552.2004101827
 - 21/5/2020: Windows Server 2012 Datacenter en modalidad "traiga su propia licencia", versión 9200.23016.2004101828

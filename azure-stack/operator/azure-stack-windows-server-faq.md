@@ -4,16 +4,16 @@ titleSuffix: Azure Stack Hub
 description: Lista de preguntas frecuentes del Marketplace de Azure Stack Hub para Windows Server.
 author: sethmanheim
 ms.topic: article
-ms.date: 03/19/2020
+ms.date: 07/23/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 08/29/2019
-ms.openlocfilehash: 95719c6b0651932ab41cef5321db06b77eb4fc63
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: fff299a0d537bb4190e66a57eb642db7e8b9824d
+ms.sourcegitcommit: f2a5ce52fcf69e05fe89be8211b7360de46f4a94
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80069449"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87133646"
 ---
 # <a name="azure-stack-hub-marketplace-faq"></a>Preguntas frecuentes acerca de Marketplace de Azure Stack Hub
 
@@ -31,7 +31,7 @@ En primer lugar, determine si las plantillas de Azure Resource Manager hacen ref
 
 A continuación, si los conjuntos de escalado de máquinas virtuales hacen referencia a una versión específica, debería pensar si será necesario escalarlas más tarde y decidir si conservar las versiones anteriores. Si ninguna de estas condiciones es aplicable, elimine las imágenes antiguas de Marketplace de Azure Stack Hub antes de descargar las más recientes. Use la administración de Marketplace para eliminarlas si es así cómo se descargó el original. A continuación, descargue la versión más reciente.
 
-### <a name="what-are-the-licensing-options-for-windows-server-marketplace-images-on-azure-stack-hub"></a>¿Qué opciones hay para obtener licencias de imágenes de Windows Server en el Marketplace de Azure Stack Hub?
+### <a name="what-are-the-licensing-options-for-windows-server-images-on-azure-stack-hub-marketplace"></a>¿Qué opciones hay para obtener licencias de imágenes de Windows Server en el Marketplace de Azure Stack Hub?
 
 Microsoft ofrece dos versiones de imágenes de Windows Server a través de Marketplace de Azure Stack Hub. Solo una versión de esta imagen puede usarse en un entorno de Azure Stack Hub.  
 
@@ -40,7 +40,7 @@ Microsoft ofrece dos versiones de imágenes de Windows Server a través de Marke
 - **Traiga su propia licencia (BYOL)** : Estas imágenes ejecutan medidores básicos.
    Quién debe usar esta opción: Clientes con EA y con una licencia de Windows Server; o para CSP que usan licencias de SPLA.
 
-Ventaja de uso híbrido de Azure no se admite en Azure Stack Hub. Los clientes que obtienen licencias a través del modelo "Capacidad" deben usar la imagen BYOL. Si va a realizar pruebas con el Kit de desarrollo de Azure Stack (ASDK), puede usar cualquiera de estas opciones.
+Ventaja de uso híbrido de Azure (AHUB) no se admite en Azure Stack Hub. Los clientes que obtienen licencias a través del modelo "Capacidad" deben usar la imagen BYOL. Si va a realizar pruebas con el Kit de desarrollo de Azure Stack (ASDK), puede usar cualquiera de estas opciones.
 
 ### <a name="what-if-i-downloaded-the-wrong-version-to-offer-my-tenantsusers"></a>¿Qué ocurre si descargué la versión incorrecta para mis inquilinos o usuarios?
 
@@ -58,7 +58,7 @@ $vm.LicenseType = "None"
 Update-AzureRmVM -ResourceGroupName "<your RG>" -VM $vm
 ```
 
-Puede comprobar el tipo de licencia de su VM mediante la ejecución de los siguientes comandos. Si el modelo de licencia indica **Windows_Server**, se le cobrará el precio según el modelo de traiga su propia licencia. De lo contrario, se le cobrará por el medidor de Windows según el modelo de pago por uso:
+Puede comprobar el tipo de licencia de su máquina virtual mediante la ejecución de los siguientes comandos. Si el modelo de licencia indica **Windows_Server**, se le cobrará el precio según el modelo de traiga su propia licencia. De lo contrario, se le cobrará por el medidor de Windows según el modelo de pago por uso:
 
 ```powershell
 $vm | ft Name, VmId,LicenseType,ProvisioningState
@@ -78,7 +78,7 @@ Update-AzureRmVM -ResourceGroupName "<your RG>" -VM $vm
 
 Estas imágenes se aplican al parámetro **licenseType**, por lo que el modelo que se sigue es el de pago por uso. Puede establecer este parámetro (consulte la pregunta anterior). Esto solo se aplica al software de Windows Server, y no a productos en capas, como SQL, que tienen que aportar su propia licencia. Las licencias de pago por uso no se aplican a productos de software en capas.
 
-Solo puede cambiar la propiedad **licenseType** para imágenes de SQL Server de Marketplace de Azure Stack Hub si la versión es XX.X.20190410 o superior. Si está ejecutando una versión anterior de las imágenes de SQL Server de Marketplace de Azure Stack Hub, no puede cambiar el atributo **licenseType** y debe volver a implementarlo con las imágenes de SQL Server más recientes de Marketplace.
+Solo puede cambiar la propiedad **licenseType** para imágenes de SQL Server de Marketplace de Azure Stack Hub si la versión es **XX.X.20190410** o superior. Si está ejecutando una versión anterior de las imágenes de SQL Server de Marketplace de Azure Stack Hub, no puede cambiar el atributo **licenseType** y debe volver a implementarlo con las imágenes de SQL Server más recientes de Marketplace.
 
 ### <a name="i-have-an-enterprise-agreement-ea-and-will-be-using-my-ea-windows-server-license-how-do-i-make-sure-images-are-billed-correctly"></a>Tengo un contrato Enterprise (EA) y usaré mi licencia EA Windows Server, ¿cómo puedo asegurarme de que las imágenes se facturarán correctamente?
 

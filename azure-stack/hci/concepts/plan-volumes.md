@@ -4,13 +4,13 @@ description: Cómo planear volúmenes de almacenamiento en Azure Stack HCl.
 author: khdownie
 ms.author: v-kedow
 ms.topic: conceptual
-ms.date: 07/21/2020
-ms.openlocfilehash: 34806347a8a5e71cb15c93073b546c52f534cdf5
-ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
+ms.date: 07/27/2020
+ms.openlocfilehash: c40d1ca54bfe71088b18413371b90bd26f8b7386
+ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86866950"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87250459"
 ---
 # <a name="plan-volumes-in-azure-stack-hci"></a>Planeamiento de volúmenes en Azure Stack HCI
 
@@ -35,7 +35,7 @@ Todos los volúmenes son accesibles para todos los servidores del clúster al mi
 
 Se recomienda que el número de unidades de volúmenes sea un múltiplo del número de servidores del clúster. Por ejemplo, si tiene 4 servidores, experimentará un rendimiento más coherente con 4 volúmenes que con 3 o 5. Esto permite al clúster distribuir la "propiedad" del volumen (un servidor controla la orquestación de los metadatos de cada volumen) uniformemente entre los servidores.
 
-Se recomienda limitar el número total de volúmenes a 64 por clúster para Windows Server 2019.
+Se recomienda limitar el número total de volúmenes a 64 por clúster.
 
 ## <a name="choosing-the-filesystem"></a>Elección del sistema de archivos
 
@@ -55,13 +55,13 @@ Los volúmenes de Espacios de almacenamiento directo ofrecen resistencia para pr
 
 ### <a name="with-two-servers"></a>Con dos servidores
 
-Con dos servidores en el clúster, puede usar la creación de reflejo bidireccional. Si utiliza Windows Server 2019, también puede usar la resistencia anidada.
+Con dos servidores en el clúster, puede usar la creación de reflejo bidireccional o puede utilizar la resistencia anidada.
 
 La creación de reflejo bidireccional mantiene dos copias de todos los datos, una copia en las unidades de cada servidor. Su eficacia de almacenamiento es del 50 por ciento; para escribir 1 TB de datos, necesita al menos 2 TB de capacidad de almacenamiento físico en el bloque de almacenamiento. La creación de reflejo bidireccional puede tolerar de manera segura un error de hardware cada vez (un servidor o una unidad).
 
 ![two-way-mirror](media/plan-volumes/two-way-mirror.png)
 
-La resistencia anidada (disponible solo en Windows Server 2019) proporciona resistencia de datos entre servidores con creación de reflejo bidireccional y, a continuación, agrega resistencia dentro de un servidor con creación de reflejo bidireccional o paridad acelerada por reflejo. El anidamiento proporciona resistencia de datos incluso cuando un servidor se está reiniciando o no está disponible. Su eficacia de almacenamiento es del 25 por ciento con la creación de reflejo bidireccional anidada y en torno al 35-40 por ciento para la paridad acelerada por reflejo anidada. La resistencia anidada puede tolerar de manera segura dos errores de hardware a la vez (dos unidades, o un servidor y una unidad del servidor restante). Debido a esta resistencia de datos adicional, se recomienda usar la resistencia anidada en las implementaciones de producción de clústeres de dos servidores si ejecuta Windows Server 2019. Para más información, consulte [Resistencia anidada](/windows-server/storage/storage-spaces/nested-resiliency).
+La resistencia anidada proporciona resistencia de datos entre servidores con creación de reflejo bidireccional y, a continuación, agrega resistencia dentro de un servidor con creación de reflejo bidireccional o paridad acelerada por reflejo. El anidamiento proporciona resistencia de datos incluso cuando un servidor se está reiniciando o no está disponible. Su eficacia de almacenamiento es del 25 por ciento con la creación de reflejo bidireccional anidada y en torno al 35-40 por ciento para la paridad acelerada por reflejo anidada. La resistencia anidada puede tolerar de manera segura dos errores de hardware a la vez (dos unidades, o un servidor y una unidad del servidor restante). Debido a esta resistencia de datos adicional, se recomienda usar la resistencia anidada en las implementaciones de producción de clústeres de dos servidores. Para más información, consulte [Resistencia anidada](/windows-server/storage/storage-spaces/nested-resiliency).
 
 ![Paridad acelerada por reflejo anidada](media/plan-volumes/nested-mirror-accelerated-parity.png)
 

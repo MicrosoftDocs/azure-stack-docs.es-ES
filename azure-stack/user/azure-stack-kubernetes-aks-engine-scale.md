@@ -3,16 +3,16 @@ title: Escalado de un clúster de Kubernetes en Azure Stack Hub
 description: Aprenda a escalar un clúster de Kubernetes en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 3/19/2020
+ms.date: 07/24/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 3/19/2020
-ms.openlocfilehash: e5a9c44d91137d8f9868a9a9c6a809a54ca09026
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 293ca21dda02fb2bfb5031f4b9b16a797bcc4f66
+ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80069114"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87250986"
 ---
 # <a name="scale-a-kubernetes-cluster-on-azure-stack-hub"></a>Escalado de un clúster de Kubernetes en Azure Stack Hub
 
@@ -34,7 +34,7 @@ El comando scale usa los siguientes parámetros para buscar el archivo de defini
 | subscription-id |  | El identificador único global de la suscripción que contiene los recursos que usa el clúster. Asegúrese de que la cuota de la suscripción es suficiente para el escalado. | 
 | client-id |  | El identificador de cliente de la entidad de servicio que usó al crear el clúster desde el motor de AKS. | 
 | client-secret |  | El secreto de la entidad de servicio que se utilizó al crear el clúster. | 
-| api-model | kube-rg/apimodel.json | La ruta de acceso al archivo de definición del clúster (apimodel.json). Esta puede ser:  _output/\<dnsPrefix>/apimodel.json | 
+| api-model | kube-rg/apimodel.json | La ruta de acceso al archivo de definición del clúster (apimodel.json). Esta puede estar en:  _output/\<dnsPrefix>/apimodel.json | 
 | -new-node-count | 9 | El recuento de nodos que desea. | 
 | -master-FQDN |  | FQDN maestro. Es necesario para reducir verticalmente. |
 | identity-system | adfs | Opcional. Especifique la solución de administración de identidad si usa los Servicios de federación de Active Directory (AD FS). |

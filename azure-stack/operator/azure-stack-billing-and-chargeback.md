@@ -3,16 +3,16 @@ title: Facturación y contracargo del cliente en Azure Stack Hub
 description: Aprenda cómo se factura a los usuarios de Azure Stack Hub por el uso de los recursos y cómo se accede a la información de facturación para realizar análisis y contracargos.
 author: sethmanheim
 ms.topic: article
-ms.date: 04/20/2020
+ms.date: 07/27/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 03/21/2019
-ms.openlocfilehash: 9606f5ec17826e4fc339ebad5b4439829bd828cc
-ms.sourcegitcommit: a3ae6dd8670f8fb24224880df7eee256ebbcc4ef
+ms.openlocfilehash: 890d685bcd6922c02373e7dbe02310e1e2f2bd1f
+ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81772536"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87250323"
 ---
 # <a name="usage-and-billing-in-azure-stack-hub"></a>Uso y facturación en Azure Stack Hub
 
@@ -28,7 +28,7 @@ Todos los proveedores de recursos de Azure Stack Hub publican datos de uso en fu
 
 Si ha [registrado su instancia de Azure Stack Hub en Azure](azure-stack-registration.md), Azure Stack Hub está configurado para enviar los datos de uso a Azure Commerce. Una vez que los datos estén cargados en Azure, puede acceder a ellos a través del portal de facturación o mediante las API de uso de recursos de Azure. Para más información sobre el uso de datos que se notifica a Azure, consulte [Informes de datos de uso](azure-stack-usage-reporting.md).  
 
-La siguiente imagen muestra los principales componentes de la canalización de uso:
+La siguiente ilustración muestra los principales componentes de la canalización de uso:
 
 ![Canalización de uso](media/azure-stack-billing-and-chargeback/usagepipeline.svg)
 

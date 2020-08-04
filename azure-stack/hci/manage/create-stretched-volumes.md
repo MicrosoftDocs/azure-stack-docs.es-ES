@@ -1,24 +1,26 @@
 ---
-title: Creación de volúmenes y configuración de la replicación para clústeres extendidos en Azure Stack HCI
+title: Creación de volúmenes de clústeres extendidos y configuración de la replicación
 description: Cómo crear volúmenes y configurar la replicación para clústeres extendidos en Azure Stack HCI mediante Windows Admin Center y PowerShell.
-author: khdownie
-ms.author: v-kedow
+author: v-dasis
+ms.author: v-dasis
 ms.topic: how-to
-ms.date: 07/21/2020
-ms.openlocfilehash: 647fbbc1fc0ae070955f796aee7aa102290bbc4f
-ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
+ms.date: 07/24/2020
+ms.openlocfilehash: 9d6ba44da5da188f60f031bddab2e49190dbfee3
+ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86868119"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87250714"
 ---
-# <a name="create-volumes-and-set-up-replication-for-stretched-clusters"></a>Creación de volúmenes y configuración de la replicación para clústeres extendidos
+# <a name="create-stretched-cluster-volumes-and-set-up-replication"></a>Creación de volúmenes de clústeres extendidos y configuración de la replicación
 
 > Se aplica a: Azure Stack HCI, versión 20H2
 
-En este tema se describe cómo crear volúmenes y configurar la replicación para clústeres extendidos en Azure Stack HCI mediante Windows Admin Center y PowerShell. Para obtener información sobre cómo crear volúmenes en clústeres de un solo sitio, trabajar con archivos en los volúmenes y habilitar la desduplicación de datos y la compresión en los volúmenes, consulte [Crear volúmenes](create-volumes.md).
+En este artículo se describe cómo crear volúmenes y configurar la replicación para clústeres extendidos en Azure Stack HCI mediante Windows Admin Center y PowerShell.
 
-## <a name="create-volumes-and-set-up-replication-for-stretched-clusters-using-windows-admin-center"></a>Creación de volúmenes y configuración de la replicación para clústeres extendidos mediante Windows Admin Center
+Vamos a crear volúmenes en cuatro servidores de dos sitios, dos servidores por sitio, a modo de ejemplo. Sin embargo, tenga en cuenta que si desea crear volúmenes reflejados tridireccionales, necesitará al menos seis servidores, es decir, tres servidores por sitio.
+
+## <a name="stretched-volumes-and-replication-using-windows-admin-center"></a>Volúmenes extendidos y replicación mediante Windows Admin Center
 
 Empecemos:
 
@@ -42,85 +44,85 @@ Empecemos:
 
 Después, debe comprobar la correcta replicación de los datos entre sitios antes de implementar VM y otras cargas de trabajo. Consulte la sección de comprobación de la replicación en [Validación del clúster](../deploy/validate.md) para obtener más información.
 
-## <a name="create-volumes-for-stretched-clusters-using-powershell"></a>Creación de volúmenes para clústeres extendidos mediante PowerShell
+## <a name="create-stretched-volumes-using-powershell"></a>Creación de volúmenes extendidos con PowerShell
 
 La creación de volúmenes es diferente para los clústeres estándar de un solo sitio y para los clústeres extendidos de dos sitios. No obstante, para ambos escenarios se usa el cmdlet `New-Volume` para crear un disco virtual, crear una partición y formatearla, crear un volumen con un nombre coincidente y agregarlo a los volúmenes compartidos del clúster (CSV).
 
-La creación de volúmenes y discos virtuales para clústeres extendidos es un poco más complicada que en el caso de los clústeres de un solo sitio. Los clústeres extendidos requieren un mínimo de cuatro volúmenes: dos volúmenes de datos y dos de registro. En cada sitio reside al menos un par de volúmenes de datos/registro. A continuación creará un grupo de replicación para cada sitio y configurará la replicación entre ellos.
+La creación de volúmenes y discos virtuales para clústeres extendidos es un poco más complicada que en el caso de los clústeres de un solo sitio. Los clústeres extendidos requieren un mínimo de cuatro volúmenes: dos volúmenes de datos y dos de registro. En cada sitio reside al menos un par de volúmenes de datos/registro. A continuación creará un grupo de replicación para cada sitio y configurará la replicación entre ellos. Es necesario mover los grupos de recursos de un servidor a otro. Para hacer esto, se usa el cmdlet `Move-ClusterGroup`.
 
-En primer lugar, es necesario mover los grupos de recursos de un nodo a otro. Para hacer esto, se usa el cmdlet `Move-ClusterGroup`.
+1. En primer lugar, se mueve el grupo de recursos del bloque de almacenamiento `Available Storage` a `Server1` en `Site1` con el cmdlet `Move-ClusterGroup`:
 
-En primer lugar, se mueve el grupo de recursos del bloque de almacenamiento al nodo Server1 de Site1 mediante el cmdlet `Move-ClusterGroup`:
+    ```powershell
+    Move-ClusterGroup -Cluster ClusterS1 -Name ‘Available Storage’ -Node Server1
+    ```
 
-```powershell
-Move-ClusterGroup -Cluster ClusterS1 -Name ‘Available Storage’ -Node Server1
-```
+1. A continuación, cree el primer disco virtual (`Disk1`) para `Server1` en `Site1`:
 
-A continuación, cree el primer disco virtual (Disk1) para el nodo Server1 en el sitio Site1:
+    ```powershell
+    New-Volume -CimSession Server1 -FriendlyName Disk1 -FileSystem REFS -DriveLetter F -ResiliencySettingName Mirror -Size 10GB -StoragePoolFriendlyName "Storage Pool for Site 1"
+    ```
 
-```powershell
-New-Volume -CimSession Server1 -FriendlyName Disk1 -FileSystem REFS -DriveLetter F -ResiliencySettingName Mirror -Size 10GB -StoragePoolFriendlyName "Storage Pool for Site 1"
-```
+1. Cree un segundo disco virtual (`Disk2`) para `Server1` en `Site1`:
 
-Cree un segundo disco virtual (Disk2) para el nodo Server1:
+    ```powershell
+    New-Volume -CimSession Server1 -FriendlyName Disk2 -FileSystem REFS -DriveLetter G -ResiliencySettingName Mirror -Size 10GB -StoragePoolFriendlyName "Storage Pool for Site 1"
+    ```
 
-```powershell
-New-Volume -CimSession Server1 -FriendlyName Disk2 -FileSystem REFS -DriveLetter G -ResiliencySettingName Mirror -Size 10GB -StoragePoolFriendlyName "Storage Pool for Site 1"
-```
+1. Ahora, desconecte el grupo `Available Storage`:
 
-Ahora, desconecte el grupo "Available Storage":
+    ```powershell
+    Stop-ClusterGroup -Cluster ClusterS1 -Name 'Available Storage'
+    ```
 
-```powershell
-Stop-ClusterGroup -Cluster ClusterS1 -Name 'Available Storage'
-```
+1. Y mueva el grupo `Available Storage` a `Server3` en `Site2`:
 
-Y mueva el grupo "Almacenamiento disponible" al nodo Server3 en Site2:
+    ```powershell
+    Move-ClusterGroup -Name 'Available Storage' -Node Server3
+    ```
 
-```powershell
-Move-ClusterGroup -Name 'Available Storage' -Node Server3
-```
+1. Cree el primer disco virtual (`Disk3`) en `Server3` en `Site2`:
 
-Cree el primer disco virtual (Disk3) en el nodo Server3 de Site2:
+    ```powershell
+    New-Volume -CimSession Server3 -FriendlyName Disk3 -FileSystem REFS -DriveLetter H -ResiliencySettingName Mirror -Size 10GB -StoragePoolFriendlyName "Storage Pool for Site 2"
+    ```
 
-```powershell
-New-Volume -CimSession Server3 -FriendlyName Disk3 -FileSystem REFS -DriveLetter H -ResiliencySettingName Mirror -Size 10GB -StoragePoolFriendlyName "Storage Pool for Site 2"
-```
+1. Y cree un segundo disco virtual (`Disk4`) en `Server3` en `Site2`:
 
-Y cree un segundo disco virtual (Disk4) en el nodo Server3:
+    ```powershell
+    New-Volume -CimSession Server3 -FriendlyName Disk4 -FileSystem REFS -DriveLetter I -ResiliencySettingName Mirror -Size 10GB -StoragePoolFriendlyName "Storage Pool for Site 2"
+    ```
 
-```powershell
-New-Volume -CimSession Server3 -FriendlyName Disk4 -FileSystem REFS -DriveLetter I -ResiliencySettingName Mirror -Size 10GB -StoragePoolFriendlyName "Storage Pool for Site 2"
-```
+1. Ahora desconecte el grupo `Available Storage` y, a continuación, muévalo de nuevo a uno de los nodos de `Site1`:
 
-Ahora desconecte el grupo `Available Storage` y, a continuación, muévalo de nuevo a uno de los nodos de Site1:
+    ```powershell
+    Stop-ClusterGroup -Cluster ClusterS1 -Name 'Available Storage'
+    ```
 
-```powershell
-Stop-ClusterGroup -Cluster ClusterS1 -Name 'Available Storage'
-```
+    ```powershell
+    Move-ClusterGroup -Cluster ClusterS1 -Name 'Available Storage' -Node Server1
+    ```
 
-```powershell
-Move-ClusterGroup -Cluster ClusterS1 -Name 'Available Storage' -Node Server1
-```
+1. Con el cmdlet `Get-ClusterResource`, asegúrese de que se crearon cuatro volúmenes de discos virtuales, dos en cada bloque de almacenamiento:
 
-Con el cmdlet `Get-ClusterResource`, asegúrese de que se crearon cuatro volúmenes de discos virtuales, dos en cada bloque de almacenamiento:
+    ```powershell
+    Get-ClusterResource -Cluster ClusterS1
+    ```
 
-```powershell
-Get-ClusterResource -Cluster ClusterS1
-```
+1. Ahora agregue `Disk1` a los volúmenes compartidos del clúster:
 
-Ahora agregue Disk1 a los volúmenes compartidos del clúster:
+    ```powershell
+    Add-ClusterSharedVolume -Name 'Cluster Virtual Disk (Disk1)'
+    ```
 
-```powershell
-Add-ClusterSharedVolume -Name 'Cluster Virtual Disk (Disk1)'
-```
+Ha terminado de crear volúmenes y está listo para configurar la característica Réplica de almacenamiento para la replicación.
 
-## <a name="setup-replication-for-stretched-clusters-using-powershell"></a>Configuración de la replicación para clústeres extendidos mediante PowerShell
+## <a name="set-up-replication-using-powershell"></a>Configuración de la replicación mediante PowerShell
 
 Al usar PowerShell para configurar la réplica de almacenamiento para un clúster extendido, el disco que se usará para los datos de origen tendrá que agregarse como volumen compartido de clúster (CSV). Todos los demás discos deben permanecer como unidades no CSV en el grupo de almacenamiento disponible. Estos discos se agregarán entonces como volúmenes compartidos de clúster durante el proceso de creación de réplica de almacenamiento.
 
 En el paso anterior, los discos virtuales se agregaron mediante letras de unidad para facilitar su identificación. La réplica de almacenamiento es una replicación de uno a uno, lo que significa que un solo disco puede replicarse a otro disco.
 
-### <a name="validate-the-topology-for-replication"></a>Validación de la topología para la replicación
+### <a name="step-1-validate-the-topology-for-replication"></a>Paso 1: Validación de la topología para la replicación
 
 Antes de empezar, debe ejecutar el cmdlet `Test-SRTopology` durante un período prolongado (p. ej., varias horas). El cmdlet `Test-SRTopology` valida una posible asociación de replicación y también valida el host local en el servidor de destino o de forma remota entre los servidores de origen y de destino.
 
@@ -148,7 +150,7 @@ Un comando de ejemplo que se ejecutaría durante 5 horas sería:
 Test-SRTopology -SourceComputerName Server1 -SourceVolumeName W: -SourceLogVolumeName X: -DestinationComputerName Server3 -DestinationVolumeName Y: -DestinationLogVolumeName Z: -DurationInMinutes 300 -ResultPath c:\temp
 ```
 
-### <a name="create-the-replication-partnership"></a>Creación del grupo de replicación
+### <a name="step-2-create-the-replication-partnership"></a>Paso 2: Creación del grupo de replicación
 
 Ahora que ha completado las pruebas de `Test-SRTopology`, está listo para configurar la réplica de almacenamiento y crear la asociación de replicación. En pocas palabras, configuraremos la réplica de almacenamiento mediante la creación de grupos de replicación (RG) para cada sitio y la especificación de los volúmenes de datos y de registro de los nodos de servidor de origen de Site1 (Server1, Server2) y los nodos de servidor de destino (replicados) de Site2 (Server3, Server4).
 

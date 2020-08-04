@@ -7,12 +7,12 @@ ms.date: 04/14/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 04/14/2020
-ms.openlocfilehash: 253ede500b206724e7f8dd024435fdb842fa4f36
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: dd86ca8d5b97249d00006d7bd94f817db3f81b56
+ms.sourcegitcommit: f2a5ce52fcf69e05fe89be8211b7360de46f4a94
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86488270"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87133663"
 ---
 # <a name="install-powershell-azurerm-module-for-azure-stack-hub"></a>Instalación del módulo AzureRM de PowerShell para Azure Stack Hub
 
@@ -23,6 +23,8 @@ También debe usar *perfiles de API* para especificar los puntos de conexión co
 Los perfiles de API proporcionan una manera de administrar las diferencias de versión entre Azure y Azure Stack Hub. Un perfil de versión de la API es un conjunto de módulos de PowerShell de Azure Resource Manager con versiones específicas de la API. Cada plataforma de la nube tiene un conjunto de perfiles de versión de API compatibles. Por ejemplo, Azure Stack Hub admite una versión de perfil específica, como **2019-03-01-hybrid**. Cuando se instala un perfil, se instalan los módulos de PowerShell Azure Resource Manager que se corresponden con el perfil especificado.
 
 Puede instalar los módulos de PowerShell compatibles con Azure Stack Hub en un escenario desconectado, parcialmente conectado o conectado a Internet. Este artículo le guía por las instrucciones detalladas para estos escenarios.
+
+También puede ejecutar módulos AzureRM para Azure Stack Hub en un contenedor de Docker. Para obtener instrucciones, consulte [Uso de Docker para ejecutar PowerShell para Azure Stack Hub](../user/azure-stack-powershell-user-docker.md).
 
 ## <a name="1-verify-your-prerequisites"></a>1. Comprobación de los requisitos previos
 

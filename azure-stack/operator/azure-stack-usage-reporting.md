@@ -6,16 +6,16 @@ services: azure-stack
 documentationcenter: ''
 author: sethmanheim
 ms.topic: article
-ms.date: 04/20/2020
+ms.date: 07/27/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: d0d11295d9425e07e34dc59eb2fcc83c6b020582
-ms.sourcegitcommit: a3ae6dd8670f8fb24224880df7eee256ebbcc4ef
+ms.openlocfilehash: 8dff2f6debb12b8579e3b8e0b451b8d6bac17cad
+ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81772551"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87250357"
 ---
 # <a name="report-azure-stack-hub-usage-data-to-azure"></a>Notificar los datos de uso de Azure Stack Hub a Azure
 

@@ -3,16 +3,16 @@ title: Creación del almacenamiento en disco de máquinas virtuales en Azure Sta
 description: Creación de discos de máquina virtual en Azure Stack Hub.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 04/22/2020
+ms.date: 07/27/2020
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 01/18/2019
-ms.openlocfilehash: 95fafe541db48ced7025d7750b46de9789b441cf
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.openlocfilehash: ecca2f76e15d23d904db018d82c86269504195f7
+ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86567508"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87250918"
 ---
 # <a name="create-vm-disk-storage-in-azure-stack-hub"></a>Creación del almacenamiento en disco de máquinas virtuales en Azure Stack Hub
 
@@ -54,7 +54,7 @@ Después de crear una máquina virtual, puede usar el portal para:
 * Crear un disco de datos y asociarlo a la máquina virtual.
 * Cargar un disco de datos existente y asociarlo a la máquina virtual.
 
-Cada disco no administrado que agregue se debe colocar en un contenedor independiente.
+Ponga cada disco no administrado que agregue en un contenedor independiente.
 
 > [!NOTE]  
 > Los discos creados y administrados por Azure se denominan [discos administrados](/azure/virtual-machines/windows/managed-disks-overview).
