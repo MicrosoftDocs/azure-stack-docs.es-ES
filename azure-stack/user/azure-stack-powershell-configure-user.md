@@ -3,16 +3,16 @@ title: Conexión a Azure Stack Hub con PowerShell como usuario
 description: Aprenda a conectarse a Azure Stack Hub con PowerShell.
 author: mattbriggs
 ms.topic: article
-ms.date: 5/27/2020
+ms.date: 8/4/2020
 ms.author: mabrigg
 ms.reviewer: thoroet
-ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: 43140eb8e64840aefa738ea08c3138cb9dd1d89f
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.lastreviewed: 8/4/2020
+ms.openlocfilehash: deebca904b4ccf543a46a02d3e10bb699c5a63ab
+ms.sourcegitcommit: c75e2cfd96f37a3497958eb87446888477f85bc9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86567066"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810749"
 ---
 # <a name="connect-to-azure-stack-hub-with-powershell-as-a-user"></a>Conexión a Azure Stack Hub con PowerShell como usuario
 
@@ -73,6 +73,8 @@ foreach($s in (Get-AzureRmSubscription)) {
 Get-AzureRmResourceProvider -ListAvailable | Register-AzureRmResourceProvider
     }
 ```
+
+[!Include [AD FS only supports interactive authentication with user identities](../includes/note-powershell-adfs.md)]
 
 ## <a name="test-the-connectivity"></a>Prueba de la conectividad
 

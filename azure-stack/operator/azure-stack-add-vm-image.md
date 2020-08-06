@@ -7,12 +7,12 @@ ms.date: 07/14/2020
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 07/10/2020
-ms.openlocfilehash: ebcb85ba88d90d43a1364b465c4f66e6851d09cb
-ms.sourcegitcommit: 2be3dd5419b0d003a9598a42541ebb1d251aea3d
+ms.openlocfilehash: 54732e12b330eeda8ba65e9b4add0b78547ac891
+ms.sourcegitcommit: 635c8c69d90b7e941659d54141d9f1c58f51cf45
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86390779"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87477631"
 ---
 # <a name="add-a-custom-vm-image-to-azure-stack-hub"></a>Adición de una imagen de máquina virtual personalizada a Azure Stack Hub
 
@@ -314,7 +314,7 @@ Agregue la imagen de máquina virtual como un operador de Azure Stack Hub median
 
 Para eliminar la imagen de máquina virtual como un operador de Azure Stack Hub mediante el portal de Azure Stack Hub, siga estos pasos:
 
-1. Abra el [portal del administrador](https://adminportal.local.azurestack.external) de Azure Stack Hub.
+1. Abra el [portal del administrador](https://portal.azure.com/signin/index) de Azure Stack Hub.
 
 2. Si la imagen de máquina virtual tiene un elemento de Marketplace asociado, seleccione **Marketplace Management** y, después, seleccione el elemento de Marketplace de la máquina virtual que desea eliminar.
 

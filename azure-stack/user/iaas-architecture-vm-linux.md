@@ -7,12 +7,12 @@ ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: 970a128933e8bb65320e8d3d5a0657fac4bc208b
-ms.sourcegitcommit: ad6bbb611ac671b295568d3f00a193b783470c68
+ms.openlocfilehash: d7284e454b93db28dd47323342fb01e42c51c014
+ms.sourcegitcommit: 9be88793533d21b756718af9a82349760c4abd52
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87397539"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87523499"
 ---
 # <a name="run-a-linux-virtual-machine-on-azure-stack-hub"></a>Ejecución de una máquina virtual Linux en Azure Stack Hub
 
@@ -70,7 +70,7 @@ Los componentes de red incluyen los siguientes recursos:
 
 -   **VIP/Dirección IP pública**. Es necesaria una dirección IP pública para comunicarse con la máquina virtual, por ejemplo, a través de Escritorio remoto (RDP). La dirección IP pública puede ser dinámica o estática. El valor predeterminado es dinámica. Si necesita varias tarjetas de interfaz de red para la máquina virtual, tenga en cuenta que hay un número máximo definido para cada [tamaño de máquina virtual](./azure-stack-vm-sizes.md).
 
--   También puede crear un nombre de dominio completo (FQDN) para la dirección IP. Después, puede registrar un [registro CNAME](https://en.wikipedia.org/wiki/CNAME_record) en DNS que apunte al nombre de dominio completo. Para más información, consulte [Crear un nombre de dominio completo en Azure Portal](/azure/virtual-machines/linux/portal-create-fqdn).
+-   También puede crear un nombre de dominio completo (FQDN) para la dirección IP. Después, puede registrar un [registro CNAME](https://en.wikipedia.org/wiki/CNAME_record) en DNS que apunte al nombre de dominio completo. Para más información, consulte [Crear un nombre de dominio completo en Azure Portal](/azure/virtual-machines/windows/portal-create-fqdn).
 
 -   **Grupo de seguridad de red (NSG).** Los grupos de seguridad de red se utilizan para permitir o denegar el tráfico de red a las máquinas vituales. Los grupos de seguridad de red se pueden asociar con subredes o con instancias de máquina virtual individuales.
 

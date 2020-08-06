@@ -7,12 +7,12 @@ ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: e8563a21ec3c49fa9d5789b28a556645dc73b1ce
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.openlocfilehash: 722c6dbc5d806e9d37817e5f9279e3e51a0ddc14
+ms.sourcegitcommit: 635c8c69d90b7e941659d54141d9f1c58f51cf45
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86567763"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87477597"
 ---
 # <a name="windows-n-tier-application-on-azure-stack-hub-with-sql-server"></a>Aplicación Windows de n niveles en Azure Stack Hub con SQL Server
 
@@ -169,7 +169,7 @@ Las redes virtuales son un límite de aislamiento del tráfico de Azure. De mane
 
 **DMZ**. Considere la posibilidad de agregar una aplicación virtual de red (NVA) para crear una red perimetral entre la red de Internet y la red virtual de Azure. NVA es un término genérico para una aplicación virtual que puede realizar tareas relacionadas con la red, como firewall, inspección de paquetes, auditoría y enrutamiento personalizado.
 
-**Cifrado**. Cifre datos confidenciales en reposo y use [Key Vault en Azure Stack Hub](./azure-stack-key-vault-manage-portal.md) para administrar las claves de cifrado de la base de datos. Para más información, consulte [Configuración de la integración de Azure Key Vault para SQL Server en máquinas virtuales de Azure](/azure/virtual-machines/virtual-machines-windows-ps-sql-keyvault). También se recomienda almacenar los secretos de aplicación como, por ejemplo, las cadenas de conexión de base de datos, en Key Vault.
+**Cifrado**. Cifre datos confidenciales en reposo y use [Key Vault en Azure Stack Hub](./azure-stack-key-vault-manage-portal.md) para administrar las claves de cifrado de la base de datos. Para más información, consulte [Configuración de la integración de Azure Key Vault para SQL Server en máquinas virtuales de Azure](/azure/azure-sql/virtual-machines/windows/azure-key-vault-integration-configure). También se recomienda almacenar los secretos de aplicación como, por ejemplo, las cadenas de conexión de base de datos, en Key Vault.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
