@@ -68,6 +68,8 @@
           href: manage/languages.md
         - name: Solución de problemas de informes de validación de clústeres
           href: manage/validate-qos.md
+        - name: Solución de problemas de CredSSP
+          href: manage/troubleshoot-credssp.md
     - name: Administración de servicios de Azure
       items:
         - name: Registro de Windows Admin Center con Azure
