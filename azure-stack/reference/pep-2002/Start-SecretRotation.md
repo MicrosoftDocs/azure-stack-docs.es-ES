@@ -1,18 +1,18 @@
 ---
-title: Punto de conexión con privilegios de Close-PrivilegedEndpoint para Azure Stack Hub
-description: 'Referencia del punto de conexión con privilegios de Azure Stack para PowerShell: Close-PrivilegedEndpoint'
+title: Cmdlet del punto de conexión con privilegios de Start-SecretRotation para Azure Stack Hub
+description: 'Referencia del punto de conexión con privilegios de Azure Stack Hub para PowerShell: Start-SecretRotation'
 author: mattbriggs
 ms.topic: reference
-ms.date: 04/27/2020
+ms.date: 07/29/2020
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 04/27/2020
-ms.openlocfilehash: e06d51a735daae8c82e1203f7f5e98bfbea47851
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: 12614343df051b9283f2e3b8fc2af56f8fc4058e
+ms.sourcegitcommit: eb91a28a19a74f799b093ae2a705f7f6e4c5cd49
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86486145"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87436443"
 ---
 # <a name="start-secretrotation"></a>Start-SecretRotation
 
@@ -27,12 +27,12 @@ Start-SecretRotation [-PathAccessCredential <Object>] [-ReRun] [-CertificatePass
 ```
 
 ## <a name="description"></a>Descripción
-Invoca el proceso de rotación de secretos.
+Invoca el proceso de rotación de los secretos de la infraestructura de un sistema de Azure Stack Hub. De forma predeterminada, solo se cambian los certificados de los puntos de conexión de la infraestructura de red externa. Consulte [Cambio de secretos en Azure Stack Hub](../../operator/azure-stack-rotate-secrets.md) para más información.
 
 ## <a name="parameters"></a>Parámetros
 
 ### <a name="-internal"></a>-Internal
- 
+Cambie los secretos de los puntos de conexión de la infraestructura de red interna.
 
 ```yaml
 Type: SwitchParameter

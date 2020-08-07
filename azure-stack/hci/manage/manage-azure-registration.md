@@ -4,13 +4,13 @@ description: Cómo administrar el registro de Azure para Azure Stack HCl y compr
 author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
-ms.date: 07/21/2020
-ms.openlocfilehash: 297643ca5f47c619572e213da2ffd1502d7d1b6f
-ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
+ms.date: 07/29/2020
+ms.openlocfilehash: 696ef552dcf49f31fb613a22393617e653f7e10d
+ms.sourcegitcommit: eb91a28a19a74f799b093ae2a705f7f6e4c5cd49
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86868099"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87436463"
 ---
 # <a name="manage-azure-registration"></a>Administración del registro de Azure
 
@@ -60,11 +60,21 @@ Solicitar la aprobación del administrador de Azure Active Directory podría lle
 
 Cuando esté listo para retirar su clúster de Azure Stack HCI, use el cmdlet `Unregister-AzStackHCI` para anular el registro. Esto detiene toda la funcionalidad de supervisión, soporte técnico y facturación mediante Azure Arc. Se eliminan el recurso de Azure que representa el clúster y la identidad de la aplicación de Azure Active Directory, pero el grupo de recursos, no, ya que puede contener otros recursos no relacionados.
 
-La sintaxis mínima no requiere ningún parámetro; solo tiene que autenticarse en Azure antes de ejecutar el siguiente cmdlet:
+Si ejecuta el cmdlet `Unregister-AzStackHCI` en un nodo de clúster, use esta sintaxis y especifique el identificador de la suscripción de Azure así como el nombre del recurso del clúster de Azure Stack HCI cuyo registro desea anular:
 
 ```PowerShell
-Unregister-AzStackHCI
+Unregister-AzStackHCI -SubscriptionId "e569b8af-6ecc-47fd-a7d5-2ac7f23d8bfe" -ResourceName HCI001
 ```
+
+Se le pedirá que visite microsoft.com/devicelogin en otro dispositivo (como su PC o teléfono), escriba el código e inicie sesión allí para autenticarse con Azure.
+
+Si ejecuta el cmdlet desde un equipo de administración, también deberá especificar el nombre de un servidor del clúster:
+
+```PowerShell
+Unregister-AzStackHCI -ComputerName ClusterNode1 -SubscriptionId "e569b8af-6ecc-47fd-a7d5-2ac7f23d8bfe" -ResourceName HCI001
+```
+
+Aparecerá una ventana interactiva de inicio de sesión de Azure. Los mensajes exactos que verá variarán en función de la configuración de seguridad (por ejemplo, la autenticación en dos fases). Siga las indicaciones para iniciar sesión.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
