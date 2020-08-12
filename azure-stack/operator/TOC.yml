@@ -322,8 +322,6 @@
                   href: app-service-release-notes-2020-Q2.md
                 - name: 'Notas de la versión de la actualización 8 [Jan2020]'
                   href: azure-stack-app-service-release-notes-update-eight.md
-                - name: 'Notas de la versión de la actualización 7 [Aug2019]'
-                  href: azure-stack-app-service-release-notes-update-seven.md
         - name: Event Hubs en Azure Stack Hub
           items:
             - name: Información general

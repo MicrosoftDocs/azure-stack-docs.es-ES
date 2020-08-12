@@ -129,6 +129,8 @@
                   href: azure-stack-vm-considerations.md
                 - name: Tamaños de VM
                   href: azure-stack-vm-sizes.md
+                - name: Máquinas virtuales con GPU compatibles
+                  href: gpu-vms-about.md
                 - name: Administración de discos de máquinas virtuales
                   href: azure-stack-manage-vm-disks.md
                 - name: Consideraciones sobre discos administrados
