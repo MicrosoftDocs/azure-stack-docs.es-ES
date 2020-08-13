@@ -328,7 +328,7 @@
               href: event-hubs-rp-overview.md
             - name: Planificación de capacidad
               href: event-hubs-rp-capacity-planning.md
-            - name: Requisitos previos
+            - name: Prerrequisitos
               href: event-hubs-rp-prerequisites.md
             - name: Instalar
               href: event-hubs-rp-install.md
@@ -452,6 +452,8 @@
           href: azure-stack-backup-reference.md
     - name: Obtención de soporte técnico
       items:
+        - name: Estación de trabajo de acceso del operador
+          href: operator-access-workstation.md
         - name: Portal de ayuda y soporte técnico
           items:
             - name: Información general
