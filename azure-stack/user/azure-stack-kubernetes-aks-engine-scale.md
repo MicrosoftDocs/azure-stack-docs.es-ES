@@ -7,12 +7,12 @@ ms.date: 07/24/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 3/19/2020
-ms.openlocfilehash: 293ca21dda02fb2bfb5031f4b9b16a797bcc4f66
-ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
+ms.openlocfilehash: 96ae7677d0e72e29f3ff065014910a222dac914f
+ms.sourcegitcommit: e03727655e288ace0cf2c4789acea143c1b7b4ae
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87250986"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88039602"
 ---
 # <a name="scale-a-kubernetes-cluster-on-azure-stack-hub"></a>Escalado de un clúster de Kubernetes en Azure Stack Hub
 

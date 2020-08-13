@@ -3,16 +3,16 @@ title: Instalación del módulo AzureRM de PowerShell para Azure Stack Hub
 description: Aprenda a instalar PowerShell para Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 04/14/2020
+ms.date: 08/04/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 04/14/2020
-ms.openlocfilehash: dd86ca8d5b97249d00006d7bd94f817db3f81b56
-ms.sourcegitcommit: f2a5ce52fcf69e05fe89be8211b7360de46f4a94
+ms.lastreviewed: 08/04/2020
+ms.openlocfilehash: 246554e669bfac47fb8f65845a1addbf786cc11d
+ms.sourcegitcommit: af7f169c7e204ffdf344f47c07ab8426e2afbd1d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87133663"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87865190"
 ---
 # <a name="install-powershell-azurerm-module-for-azure-stack-hub"></a>Instalación del módulo AzureRM de PowerShell para Azure Stack Hub
 
@@ -100,7 +100,7 @@ Install-Module -Name AzureRM.BootStrapper
 
 # Install and import the API Version Profile required by Azure Stack Hub into the current PowerShell session.
 Use-AzureRmProfile -Profile 2019-03-01-hybrid -Force
-Install-Module -Name AzureStack -RequiredVersion 1.8.1
+Install-Module -Name AzureStack -RequiredVersion 1.8.2
 ```
 
 ::: moniker-end
@@ -176,7 +176,7 @@ Import-Module -Name PackageManagement -ErrorAction Stop
 
 $Path = "<Path that is used to save the packages>"
 Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name AzureRM -Path $Path -Force -RequiredVersion 2.5.0
-Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name AzureStack -Path $Path -Force -RequiredVersion 1.8.1
+Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name AzureStack -Path $Path -Force -RequiredVersion 1.8.2
 ```
 ::: moniker-end
 

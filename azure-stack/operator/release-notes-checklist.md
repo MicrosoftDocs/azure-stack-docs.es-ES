@@ -3,16 +3,16 @@ title: Lista de comprobación de la actividad de actualización de Azure Stack H
 description: Lista de comprobación para preparar el sistema para la actualización más reciente de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 05/04/2020
+ms.date: 08/10/2020
 ms.author: sethm
-ms.reviewer: ppacent
+ms.reviewer: TBD
 ms.lastreviewed: 01/14/2020
-ms.openlocfilehash: 7e150d67dbc636c11419e0b2f482cceea71c23bc
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: 188f403b89e0e77b75f88a5e50440fd72cc61fdb
+ms.sourcegitcommit: 52b33ea180c38a5ecce150f5a9ea4a026344cc3d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86489987"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88074271"
 ---
 # <a name="azure-stack-hub-update-activity-checklist"></a>Lista de comprobación de la actividad de actualización de Azure Stack Hub
 

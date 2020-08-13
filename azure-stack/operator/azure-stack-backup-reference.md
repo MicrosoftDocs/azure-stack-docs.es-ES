@@ -7,12 +7,12 @@ ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 10/25/2019
-ms.openlocfilehash: 0760e7d796c6e17c88089675fa6ff659eb684cc7
-ms.sourcegitcommit: 721b82b3a1711f2825ec76ab6d75964b4f508631
+ms.openlocfilehash: 8fc10bd53bfcf9822f46eb977c02055db1a65cb7
+ms.sourcegitcommit: 1ab1293b594fe8ffc00dc800c663cf1323dc41ce
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84301035"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939300"
 ---
 # <a name="infrastructure-backup-service-reference"></a>Referencia del servicio Infrastructure Backup
 
@@ -75,30 +75,15 @@ Estos requisitos son:
 
 #### <a name="smb-encryption"></a>Cifrado de SMB
 
-**1907 y versiones posteriores**
+::: moniker range=">=azs-1907"
 
 El servicio Copia de seguridad de infraestructura admite la transferencia de datos de copia de seguridad a una ubicación de almacenamiento externa con cifrado SMB habilitado en el lado servidor. Si el servidor no admite el cifrado SMB o no tiene habilitada la característica, el servicio Copia de seguridad de infraestructura revertirá a la transferencia de datos sin cifrar. Los datos de copia de seguridad que se colocan en la ubicación de almacenamiento externo siempre se cifran en reposo y no dependen del cifrado SMB.
+
+::: moniker-end
 
 #### <a name="storage-location-sizing"></a>Ajuste del tamaño de la ubicación de almacenamiento
 
 Es recomendable realizar una copia de seguridad por lo menos dos veces al día y guardar como máximo siete días de copias de seguridad. Este es el comportamiento predeterminado cuando se habilitan las copias de seguridad de infraestructura en Azure Stack Hub.
-
-**1907 y versiones posteriores**
-
-***Sistema conectado al proveedor de identidades de Azure AD***
-
-| Escala del entorno | Tamaño previsto de copia de seguridad | Cantidad total de espacio necesario |
-|-------------------|--------------------------|--------------------------------|
-| 4-16 nodos/ASDK   | 1 GB                     | 20 GB                          |
-
-***Sistema conectado al proveedor de identidades de AD corporativo a través de ADFS***
-
-| Escala del entorno | Tamaño previsto de copia de seguridad | Cantidad total de espacio necesario |
-|-------------------|--------------------------|--------------------------------|
-| 4 a 16 nodos        | 20 GB                    | 280 GB                        |
-| ASDK              | 10 GB                    | 140 GB                        |
-
-**Versiones anteriores a la 1907**
 
 | Escala del entorno | Tamaño previsto de copia de seguridad | Cantidad total de espacio necesario |
 |-------------------|--------------------------|--------------------------------|

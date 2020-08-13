@@ -7,12 +7,12 @@ ms.date: 7/24/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 3/19/2020
-ms.openlocfilehash: 956a42ba847b128b6c0c578648f7003fe9fd40a4
-ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
+ms.openlocfilehash: 01590ef431df7a3de036cf07168756a4b24e07c2
+ms.sourcegitcommit: e03727655e288ace0cf2c4789acea143c1b7b4ae
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87251105"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88039534"
 ---
 # <a name="use-azure-monitor-for-containers-on-azure-stack-hub"></a>Uso de Azure Monitor para contenedores en Azure Stack Hub
 
