@@ -4,13 +4,13 @@ description: Conéctese rápidamente a un clúster de Azure Stack HCI existente 
 author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
-ms.date: 07/21/2020
-ms.openlocfilehash: 18d5947bc5816bac4b4ed9610c970ebeb4195909
-ms.sourcegitcommit: e675eafd12b044a6d8ae3790d1874e935f80f7cb
+ms.date: 07/29/2020
+ms.openlocfilehash: 30b2533bd33bd39488a3e010262c9e950a84295c
+ms.sourcegitcommit: 952d26ad08fcc28ad3ad83e27644e61497623a44
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86892062"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889164"
 ---
 # <a name="get-started-with-azure-stack-hci-and-windows-admin-center"></a>Introducción a Azure Stack HCI y Windows Admin Center
 
@@ -20,7 +20,9 @@ En este tema se proporcionan instrucciones para conectarse a un clúster de Azur
 
 ## <a name="install-windows-admin-center"></a>Instalación de Windows Admin Center
 
-Windows Admin Center es una aplicación implementada localmente y basada en un explorador para la administración de Azure Stack HCI. La manera más sencilla de [instalar Windows Admin Center](/windows-server/manage/windows-admin-center/deploy/install) es en un equipo de administración local, aunque también puede instalarlo en un servidor.
+Windows Admin Center es una aplicación implementada localmente y basada en un explorador para la administración de Azure Stack HCI. La manera más sencilla de [instalar Windows Admin Center](/windows-server/manage/windows-admin-center/deploy/install) es en un equipo de administración local (modo de escritorio), aunque también puede instalarlo en un servidor (modo de servicio).
+
+Si instala Windows Admin Center en un servidor, las tareas que requieren CredSSP, como la creación de clústeres y la instalación de actualizaciones y extensiones, requieren también el uso de una cuenta que sea miembro del grupo de administradores de puerta de enlace en el servidor de Windows Admin Center. Para más información, consulte las dos primeras secciones de [Configuración de los permisos y el control de acceso de usuarios](/windows-server/manage/windows-admin-center/configure/user-access-control#gateway-access-role-definitions).
 
 ## <a name="add-and-connect-to-an-azure-stack-hci-cluster"></a>Adición y conexión a un clúster de Azure Stack HCI
 
