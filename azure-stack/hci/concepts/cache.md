@@ -4,13 +4,15 @@ description: Funcionamiento del almacenamiento en caché de lectura y escritura 
 author: khdownie
 ms.author: v-kedow
 ms.topic: conceptual
-ms.date: 07/21/2020
-ms.openlocfilehash: 214e4fa6fde30d69d063326cc0c7548bb75b694a
-ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
+ms.service: azure-stack
+ms.subservice: azure-stack-hci
+ms.date: 08/11/2020
+ms.openlocfilehash: 39d67ffb49b8fa8ceb343038883602b3e940f8e1
+ms.sourcegitcommit: 7d518629bd55f24e7459404bb19b7db8a54f4b94
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86867018"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88145669"
 ---
 # <a name="understanding-the-cache-in-azure-stack-hci"></a>Descripción de la memoria caché en Azure Stack HCI
 
@@ -28,7 +30,7 @@ El vídeo siguiente incluye detalles sobre cómo funciona el almacenamiento en c
 
 Espacios de almacenamiento directo funciona actualmente con cuatro tipos de unidades:
 
-|||
+| Tipo de unidad | Descripción |
 |----------------------|--------------------------|
 |![PMem](media/choose-drives/pmem-100px.png)|**PMem** hace referencia a la memoria persistente, un nuevo tipo de almacenamiento de baja latencia y alto rendimiento.|
 |![NVMe](media/choose-drives/NVMe-100-px.png)|**NVMe** (memoria no volátil rápida) hace referencia a las unidades de estado sólido que se colocan directamente en el bus PCIe. Los factores de forma comunes son 2,5" U.2, AIC (Add-In Card) PCIe y M.2. NVMe ofrece mayor rendimiento de IOPS y E/S con latencia más baja que ningún otro tipo de unidad que se admita hoy en día excepto PMem.|

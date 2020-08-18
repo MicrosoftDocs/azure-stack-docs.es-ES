@@ -3,16 +3,16 @@ title: Novedades de Marketplace de Azure Stack Hub
 description: Consulte las novedades de Marketplace de Azure Stack Hub, incluidos los elementos nuevos, en desuso y actualizados de Marketplace.
 author: sethmanheim
 ms.topic: article
-ms.date: 08/05/2020
+ms.date: 08/07/2020
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 05/28/2020
-ms.openlocfilehash: 7bb7baf25b2f3eb6799e1ffca834c818c3bcb667
-ms.sourcegitcommit: c75e2cfd96f37a3497958eb87446888477f85bc9
+ms.openlocfilehash: f876ebf99169d4c73fa4b437ae60844ea99e94d4
+ms.sourcegitcommit: cfc453689a5a2f2491ce00ab77a7c5bfddfe01d8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810786"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997726"
 ---
 # <a name="azure-stack-hub-marketplace-changes"></a>Cambios en Marketplace de Azure Stack Hub
 
@@ -53,6 +53,12 @@ El artículo [Elementos de Azure Marketplace disponibles para Azure Stack Hub](a
 
 ## <a name="deprecated-marketplace-items"></a>Elementos de Marketplace en desuso
 
+- Bitnami Shopware
+- SQL Server 2017 Standard en SUSE Linux Enterprise Server (SLES) 12 SP2
+- Licencia gratuita: SQL Server 2017 Developer en SUSE Linux Enterprise Server (SLES) 12 SP2
+- Licencia gratuita: SQL Server 2017 Express en SUSE Linux Enterprise Server (SLES) 12 SP2
+- SQL Server 2017 Enterprise en SUSE Linux Enterprise Server (SLES) 12 SP2
+- SQL Server 2017 Web en SUSE Linux Enterprise Server (SLES) 12 SP2
 - BitNami Codiad
 - Bitnami X2Engine Sales CRM
 - Bitnami SugarCRM

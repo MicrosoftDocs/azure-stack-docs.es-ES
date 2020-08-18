@@ -4,16 +4,16 @@ titleSuffix: Azure Stack Hub
 description: Conozca la directiva de servicio de Azure Stack Hub y cómo mantener un sistema integrado en un estado admitido.
 author: sethmanheim
 ms.topic: article
-ms.date: 06/09/2020
+ms.date: 08/11/2020
 ms.author: sethm
 ms.reviewer: niy
 ms.lastreviewed: 03/18/2020
-ms.openlocfilehash: 38fb04f0b3dae557eee18271146312c57347bd89
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: 22ba6cd5ae2552541c1eeb67ce38699ca012e640
+ms.sourcegitcommit: 7d518629bd55f24e7459404bb19b7db8a54f4b94
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86487862"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88145478"
 ---
 # <a name="azure-stack-hub-servicing-policy"></a>Directiva de servicio de Azure Stack Hub
 
@@ -21,9 +21,9 @@ En este artículo se describe la directiva de servicio para sistemas integrados 
 
 ## <a name="download-update-packages-for-integrated-systems"></a>Descarga de actualizaciones para sistemas integrados
 
-Microsoft publica actualizaciones mensuales completas, así como revisiones, para tratar problemas específicos.
+Microsoft publica actualizaciones completas, así como revisiones, para tratar problemas específicos.
 
-Las actualizaciones mensuales se hospedan en un punto de conexión seguro de Azure. Puede descargarlas manualmente mediante la [herramienta de descarga de actualizaciones de Azure Stack Hub](https://aka.ms/azurestackupdatedownload). Si la unidad de escalado está conectada, la actualización aparece automáticamente en el portal del administrador como **Actualización disponible**. Las actualizaciones mensuales completas están bien documentadas en cada versión. Para más información acerca de cada versión, puede hacer clic en cualquier versión de la sección [Ritmo de lanzamiento de las actualizaciones](#update-package-release-cadence) de este artículo.
+Las actualizaciones completas se hospedan en un punto de conexión seguro de Azure. Puede descargarlas manualmente mediante la [herramienta de descarga de actualizaciones de Azure Stack Hub](https://aka.ms/azurestackupdatedownload). Si la unidad de escalado está conectada, la actualización aparece automáticamente en el portal del administrador como **Actualización disponible**. Para más información acerca de cada versión, puede hacer clic en cualquier versión de la sección [Ritmo de lanzamiento de las actualizaciones](#update-package-release-cadence) de este artículo.
 
 Las actualizaciones de revisiones se hospedan en el mismo punto de conexión seguro de Azure. Puede descargarlas mediante los vínculos insertados en cada uno de los artículos de KB de revisión respectivos; por ejemplo, [Revisión de Azure Stack Hub 1.1809.12.114](https://support.microsoft.com/help/4481548/azure-stack-hotfix-1-1809-12-114). Al igual que con los paquetes de actualización mensuales completos, los operadores de Azure Stack Hub pueden descargar los archivos .xml, .bin y .exe e importarlos mediante el procedimiento descrito en [Aplicación de actualizaciones en Azure Stack Hub](azure-stack-apply-updates.md). Los operadores de Azure Stack Hub con unidades de escalado conectadas verán que las revisiones aparecen automáticamente en el portal del administrador con el mensaje **Actualización disponible**.
 
@@ -45,36 +45,32 @@ Busque documentación sobre cómo planear y administrar actualizaciones y cómo 
 
 Para obtener información sobre una actualización concreta, incluido cómo descargarla, vea las notas de versión de la actualización:
 
-- [Actualización de Azure Stack Hub 2002](./release-notes.md?view=azs-2002)
-- [Actualización de Azure Stack Hub 1910](./release-notes.md?view=azs-1910)
-- [Actualización de Azure Stack Hub 1908](./release-notes.md?view=azs-1908)
-- [Actualización de Azure Stack Hub 1907](./release-notes.md?view=azs-1907)
+- [Actualización de Azure Stack Hub 2005](/azure-stack/operator/release-notes?view=azs-2005)
+- [Actualización de Azure Stack Hub 2002](/azure-stack/operator/release-notes?view=azs-2002)
+- [Actualización de Azure Stack Hub 1910](/azure-stack/operator/release-notes?view=azs-1910)
 
 ## <a name="hotfixes"></a>Revisiones
 
-En ocasiones, Microsoft ofrece revisiones para Azure Stack Hub que solucionan un determinado problema que suele ser de naturaleza preventiva o urgente. Todas las revisiones se publican con su correspondiente artículo de Microsoft Knowledge Base que detalla los problemas que se corrigen en esa revisión.
+En ocasiones, Microsoft ofrece revisiones para Azure Stack Hub que solucionan un determinado problema que suele ser de naturaleza preventiva o urgente. Todas las revisiones se publican con su correspondiente artículo de Microsoft Knowledge Base (KB) en el que detallan los problemas que se corrigen en esa revisión.
 
-Las revisiones se descargan e instalan del mismo modo que los paquetes de actualización completos normales de Azure Stack Hub. Pero, a diferencia de una actualización completa, las revisiones pueden instalarse en minutos. Se recomienda que los operadores de Azure Stack Hub establezcan ventanas de mantenimiento al instalar revisiones. Las revisiones actualizan la versión de la nube de Azure Stack Hub para que se pueda determinar fácilmente si se han aplicado. Se ofrece una revisión distinta para cada versión de Azure Stack Hub que aún reciba soporte técnico. **Cada revisión para una iteración concreta es acumulativa e incluye las actualizaciones anteriores de esa misma versión.** Puede obtener más información sobre la aplicabilidad de una revisión determinada en el correspondiente artículo de Knowledge Base. Consulte los vínculos de notas de la versión en la sección anterior.
+A partir de la compilación 2005, cuando se actualiza a una nueva versión principal (por ejemplo, 1.2002.x a 1.2005.x), se instalan automáticamente las revisiones más recientes (si existen) en la nueva versión principal. A partir de ese momento, si se publica una revisión para una compilación, se debe instalar.
+
+Las revisiones se descargan e instalan del mismo modo que los paquetes de actualización completos normales de Azure Stack Hub. Pero, a diferencia de una actualización completa, las revisiones pueden instalarse en minutos. Se recomienda que los operadores de Azure Stack Hub establezcan ventanas de mantenimiento al instalar revisiones. Las revisiones actualizan la versión de la nube de Azure Stack Hub para que se pueda determinar fácilmente si se han aplicado. Se ofrece una revisión distinta para cada versión de Azure Stack Hub que aún reciba soporte técnico. **Cada revisión para una iteración concreta es acumulativa e incluye las actualizaciones anteriores de esa misma versión.** Se puede leer más sobre la aplicabilidad de una revisión determinada en el correspondiente artículo de Knowledge Base. Consulte los vínculos de notas de la versión en la sección anterior.
 
 Para más información acerca de las revisiones disponibles actualmente, consulte las notas de la versión de la actualización:
 
-- [Revisión de Azure Stack Hub 2002](./release-notes.md?view=azs-2002#hotfixes)
-- [Revisión de Azure Stack Hub 1910](./release-notes.md?view=azs-1910#hotfixes-1)
-- [Revisión de Azure Stack Hub 1908](./release-notes.md?view=azs-1908#hotfixes-2)
-- [Revisión de Azure Stack Hub 1907](./release-notes.md?view=azs-1907#hotfixes-3)
+- [Revisión de Azure Stack Hub 2005](/azure-stack/operator/release-notes?view=azs-2005#hotfixes)
+- [Revisión de Azure Stack Hub 2002](/azure-stack/operator/release-notes?view=azs-2002#hotfixes-1)
+- [Revisión de Azure Stack Hub 1910](/azure-stack/operator/release-notes?view=azs-1910#hotfixes-2)
 
 ## <a name="keep-your-system-under-support"></a>Mantenimiento del sistema dentro del soporte técnico
 
-::: moniker range="azs-2002"
-
 > [!IMPORTANT]  
-> Con la actualización de Azure Stack Hub 2002, Microsoft amplía temporalmente las instrucciones de directiva de soporte técnico de Azure Stack Hub. Estamos trabajando con clientes de todo el mundo que tienen que hacer frente a la COVID-19 y que deben tomar decisiones importantes sobre sus sistemas de Azure Stack Hub, cómo se actualizan y administran, para garantizar que las operaciones empresariales del centro de datos continúan funcionando con normalidad. Para dar soporte técnico a nuestros clientes, Microsoft ofrece una extensión de cambio de directiva de soporte técnico temporal que incluye tres versiones de actualización anteriores. Como resultado, se admitirán la actualización 2002 recién publicada y cualquiera de las tres versiones de actualización anteriores (por ejemplo, 1910, 1908 y 1907).
-
-::: moniker-end
+> Con la [versión 2002](release-notes.md?view=azs-2002) de Azure Stack Hub y, para proporcionar soporte técnico a nuestros clientes de todo el mundo que están respondiendo a la COVID-19 y que pueden estar tomando decisiones importantes sobre sus sistemas de Azure Stack Hub, Microsoft amplió temporalmente su directiva de soporte técnico para incluir tres versiones de actualización anteriores (N-3). Con la versión 2005, continuamos con esta extensión durante otros 45 días (hasta el 25 de septiembre de 2020). Como resultado, se admitirán la actualización 2005 recién publicada y cualquiera de las tres versiones de actualización anteriores (por ejemplo, 2002, 1910 y 1908, o N-3). Transcurridos estos 45 días (después del 25 de septiembre de 2020), volveremos a nuestra directiva de soporte técnico estándar, lo que significa que las versiones admitidas serán 2005, 2002 y 1910, o N-2.
 
 Para que su instancia de Azure Stack Hub permanezca en un estado admitido, la instancia debe ejecutar la versión de actualización más reciente o cualquiera de las dos versiones de actualización anteriores.
 
-Las revisiones no se consideran versiones de actualización importantes. Si a su instancia le faltan *más de dos actualizaciones* de Azure Stack Hub, se considera que no cumple los requisitos. Para recibir soporte técnico, deberá actualizarla al menos a la versión mínima admitida.
+Las revisiones no se consideran versiones de actualización importantes. Si a su instancia le faltan más de dos actualizaciones de Azure Stack Hub, se considera que no cumple los requisitos. Para recibir soporte técnico, deberá actualizarla al menos a la versión mínima admitida.
 
 Por ejemplo, si la versión de actualización disponible más reciente es la 1904 y las dos actualizaciones anteriores eran las versiones 1903 y 1902, estas dos últimas versiones siguen optando a recibir soporte técnico. Sin embargo, la versión 1901 queda fuera del soporte técnico. La directiva es válida cuando no hay ninguna versión durante uno o dos meses. Por ejemplo, si la versión actual es la 1807 y no hubo ninguna versión 1806, las dos actualizaciones anteriores, 1805 y 1804, permanecen dentro del soporte técnico.
 

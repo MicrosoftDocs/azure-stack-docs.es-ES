@@ -3,22 +3,28 @@ title: Implementación de un clúster de Kubernetes en una red virtual personali
 description: Aprenda a implementar un clúster de Kubernetes en una red virtual personalizada en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 7/24/2020
+ms.date: 08/05/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 3/19/2020
-ms.openlocfilehash: f2d0dbf140e5296df7533ba99bb06a081d97afe0
-ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
+ms.lastreviewed: 08/05/2020
+ms.openlocfilehash: f6fca607f9e963fc2c007c27ebed05cecdf2e35a
+ms.sourcegitcommit: af7f169c7e204ffdf344f47c07ab8426e2afbd1d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87250340"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87865238"
 ---
 # <a name="deploy-a-kubernetes-cluster-to-a-custom-virtual-network-on-azure-stack-hub"></a>Implementación de un clúster de Kubernetes en una red virtual personalizada en Azure Stack Hub 
 
 Los clústeres de Kubernetes se pueden implementar mediante el motor de Azure Kubernetes Service (AKS) en una red virtual personalizada. En este artículo se examina la búsqueda de la información que se necesita en una red virtual. Puede encontrar los pasos necesarios para calcular las direcciones IP que usa el clúster y establecer los valores en el modelo de API, así como establecer la tabla de rutas y el grupo de seguridad de red.
 
 En Azure Stack Hub, el clúster de Kubernetes que usa el motor de AKS usa el complemento de red kubenet. Para ver una explicación acerca de las redes kubenet en Azure, consulte [Uso de redes kubenet con intervalos de direcciones IP propios en Azure Kubernetes Service (AKS)](/azure/aks/configure-kubenet).
+
+## <a name="constraints-when-creating-a-custom-virtual-network"></a>Restricciones al crear una red virtual personalizada
+
+-  La red virtual personalizada debe estar en la misma suscripción que todos los demás componentes del clúster de Kubernetes.
+-  El grupo de nodos maestros y el grupo de nodos agente deben estar en la misma red virtual. Se pueden implementar los nodos en subredes diferentes dentro de la misma red virtual.
+-  La subred del clúster de Kubernetes debe usar un intervalo de direcciones IP dentro del espacio del intervalo de direcciones IP de la red virtual personalizada; consulte [Obtención del bloque de direcciones IP](#get-the-ip-address-block).
 
 ## <a name="create-custom-virtual-network"></a>Creación de una red virtual personalizada
 
@@ -40,8 +46,6 @@ Cree una subred en la red virtual. Tendrá que obtener el identificador de recur
     ![Bloque CIDR de la red virtual](media/kubernetes-aks-engine-custom-vnet/virtual-network-cidr-block.png)
     
 6. En la hoja de la subred, anote el intervalo de direcciones y el bloque CIDR de la red virtual, por ejemplo: `10.1.0.0 - 10.1.0.255 (256 addresses)` y `10.1.0.0/24`.
-
-
 
 ## <a name="get-the-ip-address-block"></a>Obtención del bloque de direcciones IP
 
@@ -69,7 +73,6 @@ En este ejemplo, la propiedad `firstConsecutiveStaticIP` sería `10.1.0.224`.
 
 En el caso de subredes mayores, por ejemplo /16 (con más de 60 000 direcciones), es posible que no resulte práctico establecer las asignaciones de direcciones IP estáticas al final del espacio de red. Establezca el intervalo de direcciones IP estáticas del clúster fuera de las 24 primeras direcciones del espacio de IP, con el fin de que el clúster pueda ser resistente al reclamar direcciones.
 
-
 ## <a name="update-the-api-model"></a>Actualización del modelo de API
 
 Actualice el modelo de API que se usa para implementar el clúster desde el motor AKS en su red virtual personalizada.
@@ -87,6 +90,12 @@ En **agentPoolProfiles**, establezca los valores siguientes:
 | --- | --- | --- |
 | vnetSubnetId | `/subscriptions/77e28b6a-582f-42b0-94d2-93b9eca60845/resourceGroups/MDBN-K8S/providers/Microsoft.Network/virtualNetworks/MDBN-K8S/subnets/default` | Especifique el identificador de la ruta de acceso de Azure Resource Manager de la subred.  |
 
+En **orchestratorProfile**, busque **kubernetesConfig** y establezca el siguiente valor:
+
+| Campo | Ejemplo | Descripción |
+| --- | --- | --- |
+| clusterSubnet | `172.16.244.0/24` | El intervalo de direcciones IP de la subred del clúster (red POD) debe usar un intervalo de direcciones IP dentro del espacio del intervalo de direcciones IP de red virtual personalizado que haya definido. |
+
 Por ejemplo:
 
 ```json
@@ -103,6 +112,13 @@ Por ejemplo:
     "vnetSubnetId": "/subscriptions/77e28b6a-582f-42b0-94d2-93b9eca60845/resourceGroups/MDBN-K8S/providers/Microsoft.Network/virtualNetworks/MDBN-K8S/subnets/default",
     ...
   },
+    ...
+"kubernetesConfig": [
+  {
+    ...
+    "clusterSubnet": "172.16.244.0/24",
+    ...
+  },
 
 ```
 
@@ -110,7 +126,7 @@ Por ejemplo:
 
 Después de agregar los valores al modelo de API puede implementar el clúster desde la máquina cliente mediante el comando `deploy` que usa el motor AKS. Para ver las instrucciones, consulte la sección [Implementación de un clúster de Kubernetes](azure-stack-kubernetes-aks-engine-deploy-cluster.md#deploy-a-kubernetes-cluster).
 
-## <a name="set-the-route-table-and-network-security-group"></a>Establecimiento de la tabla de rutas y del grupo de seguridad de red
+## <a name="set-the-route-table"></a>Establecimiento de la tabla de rutas
 
 Después de implementar el clúster, vuelva a la red virtual en el portal de usuario de Azure Stack. Establezca tanto la tabla de rutas como el grupo de seguridad de red en la hoja de la subred. Si no usa Azure CNI, por ejemplo, `networkPlugin`: `kubenet` en el objeto de configuración del modelo de API `kubernetesConfig`. Una vez que haya implementado correctamente un clúster en su red virtual personalizada, obtenga el identificador del recurso Tabla de rutas en la hoja **Network** (Red) del grupo de recursos del clúster.
 
@@ -122,7 +138,6 @@ Después de implementar el clúster, vuelva a la red virtual en el portal de usu
     ![Tabla de rutas y grupo de seguridad de red](media/kubernetes-aks-engine-custom-vnet/virtual-network-rt-nsg.png)
     
 5. Seleccione **Tabla de rutas** y, después, seleccione la tabla de rutas del clúster.
-6. Seleccione **Grupo de seguridad de red** y, después, seleccione el grupo del clúster.
 
 > [!Note]  
 > La red virtual personalizada de un clúster Windows de Kubernetes tiene un [problema conocido](https://github.com/Azure/aks-engine/issues/371).

@@ -7,12 +7,12 @@ ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 245951e86128fb71e6820f3b57bdf2723506d4bc
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: ab90c0e9ef0f873fbed44932e9ffc418077fee4a
+ms.sourcegitcommit: 1ab1293b594fe8ffc00dc800c663cf1323dc41ce
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "78935055"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939584"
 ---
 # <a name="recover-from-catastrophic-data-loss"></a>Recuperación después de una pérdida de datos grave
 
@@ -52,10 +52,10 @@ Si se produce un desastre que hace que no se pueda usar el hardware, solo es pos
 Azure Stack Hub admite un tipo de implementación llamado modo de recuperación en la nube. Este modo se usa solo si elige recuperar Azure Stack Hub después de que un desastre o error en un producto hayan hecho que la solución no se pueda recuperar. Este modo de implementación no recupera ninguno de los datos de usuario almacenados en la solución. El ámbito de este modo de implementación está limitado a la restauración de los datos siguientes:
 
  - Entradas de implementación
- - Datos internos del servicio de identidad (implementaciones de ADFS).
+ - Datos internos del servicio de identidad
  - Configuración de identificación federada (implementaciones de ADFS).
  - Certificados raíz usados por la entidad de certificación interna.
- - Datos de usuario de la configuración de Azure Resource Manager, como suscripciones, planes, ofertas, cuotas de almacenamiento, cuotas de red y recursos de proceso.
+ - Datos de usuario de la configuración de Azure Resource Manager, como suscripciones, planes, ofertas, grupos de recursos, etiquetas, cuotas de almacenamiento, cuotas de red y recursos de proceso.
  - Almacenes y secretos de KeyVault.
  - Asignaciones de directivas de RBAC y asignaciones de rol.
 

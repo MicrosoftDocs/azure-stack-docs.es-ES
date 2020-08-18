@@ -5,12 +5,12 @@ author: khdownie
 ms.author: v-kedow
 ms.topic: conceptual
 ms.date: 07/22/2020
-ms.openlocfilehash: 56d9c2cf09d05de59700c70fd7851999db42265f
-ms.sourcegitcommit: aca1b05b570aa72bfe410c9cf7109f590526ed84
+ms.openlocfilehash: ca2903e6d7680b38f21482076bf46e49097d444f
+ms.sourcegitcommit: cfc453689a5a2f2491ce00ab77a7c5bfddfe01d8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87115199"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997753"
 ---
 # <a name="choosing-drives-for-azure-stack-hci"></a>Selección de unidades para Azure Stack HCl
 
@@ -22,7 +22,7 @@ En este tema se proporcionan instrucciones sobre cómo elegir las unidades de [E
 
 Espacios de almacenamiento directo funciona actualmente con cuatro tipos de unidades:
 
-|||
+| Tipo de unidad | Descripción |
 |----------------------|--------------------------|
 |![PMem](media/choose-drives/pmem-100px.png)|**PMem** hace referencia a la memoria persistente, un nuevo tipo de almacenamiento de baja latencia y alto rendimiento.|
 |![NVMe](media/choose-drives/NVMe-100-px.png)|**NVMe** (memoria no volátil rápida) hace referencia a las unidades de estado sólido que se colocan directamente en el bus PCIe. Los factores de forma comunes son 2,5" U.2, AIC (Add-In Card) PCIe y M.2. NVMe ofrece mayor rendimiento de IOPS y E/S con latencia más baja que ningún otro tipo de unidad que se admita hoy en día excepto PMem.|

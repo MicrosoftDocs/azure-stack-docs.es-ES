@@ -3,21 +3,21 @@ title: Creación de un clúster de Azure Stack HCI mediante Windows Admin Center
 description: Aprenda a administrar un clúster de servidor para Azure Stack HCI mediante Windows Admin Center.
 author: v-dasis
 ms.topic: how-to
-ms.date: 07/21/2020
+ms.date: 08/11/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: faca39736eb1ed3410f2f3972765d4d7df6c9d5a
-ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
+ms.openlocfilehash: 75c4da1ab4e03bae4f9beb2a5d1c170933c6b985
+ms.sourcegitcommit: 673d9b7cf723bc8ef6c04aee5017f539a815da51
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86868139"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88110540"
 ---
 # <a name="create-an-azure-stack-hci-cluster-using-windows-admin-center"></a>Creación de un clúster de Azure Stack HCI mediante Windows Admin Center
 
 > Se aplica a Azure Stack HCl, versión v20H2
 
-En este artículo, aprenderá a usar Windows Admin Center para crear un clúster hiperconvergido de Azure Stack HCI que use Espacios de almacenamiento directo. El Asistente para crear clúster de Windows Admin Center hará la mayor parte del trabajo pesado. Si prefiere hacerlo con PowerShell, consulte [Creación de un clúster de Azure Stack HCl mediante PowerShell](create-cluster-powershell.md).
+En este artículo, aprenderá a usar Windows Admin Center para crear un clúster hiperconvergido de Azure Stack HCI que use Espacios de almacenamiento directo. El Asistente para crear clúster de Windows Admin Center hará la mayor parte del trabajo pesado. Si prefiere hacerlo con PowerShell, consulte [Creación de un clúster de Azure Stack HCl mediante PowerShell](create-cluster-powershell.md). El artículo de PowerShell también es una buena fuente de información sobre las operaciones en segundo plano del asistente y para solucionar problemas.
 
 Tiene la opción de crear dos tipos de clúster:
 
@@ -26,16 +26,21 @@ Tiene la opción de crear dos tipos de clúster:
 
 Para obtener más información sobre los clústeres extendidos, consulte [Información general sobre clústeres extendidos](../concepts/stretched-clusters.md).
 
+Si está interesado en realizar pruebas de Azure Stack HCI, pero tiene hardware limitado o no tiene hardware de repuesto, consulte la [guía de evaluación de Azure Stack HCI](https://github.com/Azure/AzureStackHCI-EvalGuide/blob/main/README.md), donde le guiaremos a través de la experimentación de Azure Stack HCI mediante la virtualización anidada, ya sea en Azure o en un solo sistema físico local.
+
 ## <a name="before-you-run-the-wizard"></a>Antes ejecutar el asistente
 
 Antes de ejecutar el Asistente para crear clúster, asegúrese de lo siguiente:
 
 - Ha leído los requisitos de hardware y de otro tipo en [Antes de implementar Azure Stack HCl](before-you-start.md).
 - Instale el sistema operativo de Azure Stack HCI en cada servidor del clúster. Consulte [Implementación del sistema operativo de Azure Stack HCI](operating-system.md).
-- Instale Windows Admin Center en un equipo remoto (administración). Consulte [Antes de implementar Azure Stack HCI](before-you-start.md). No ejecute el asistente desde un servidor del clúster.
 - Use una cuenta que sea miembro del grupo de administradores local en cada servidor.
+- Instale Windows Admin Center en un equipo o servidor de administración. Consulte [Instalación de Windows Admin Center](/windows-server/manage/windows-admin-center/deploy/install).
+- En el caso de los clústeres extendidos, configure los dos sitios de antemano en Active Directory. Pero no se preocupe, el asistente también puede configurarlos.
 
-Además, el equipo de administración debe estar unido al mismo dominio de Active Directory en el que va a crear el clúster o a un dominio de plena confianza. Los servidores que se van a agrupar en clústeres aún no tienen que pertenecer al dominio. Se pueden agregar al dominio durante la creación del clúster.
+Si va a ejecutar Windows Admin Center en un servidor (en lugar de en un equipo local), use una cuenta que sea miembro del grupo Administradores de puerta de enlace o el grupo Administradores locales en el servidor de Windows Admin Center.
+
+Además, el equipo de administración de Windows Admin Center debe estar unido al mismo dominio de Active Directory en el que va a crear el clúster o a un dominio de plena confianza. Los servidores que se van a agrupar en clústeres aún no tienen que pertenecer al dominio. Se pueden agregar al dominio durante la creación del clúster.
 
 Estos son los pasos principales del Asistente para crear clúster:
 
@@ -46,11 +51,14 @@ Estos son los pasos principales del Asistente para crear clúster:
 
 Una vez completado el asistente, configure el testigo del clúster, Regístrese en Azure y cree volúmenes (lo que también configura la replicación entre sitios si está creando un clúster extendido).
 
-De acuerdo, empecemos:
+Empecemos:
 
 1. En Windows Admin Center, en **All connections** (Todas las conexiones), haga clic en **Add** (Agregar).
 1. En el panel **Add resources** (Agregar recursos), en **Clúster de Windows Server** (Windows Server cluster), seleccione **Create new** (Crear nuevo).
 1. En **Choose cluster type** (Seleccionar tipo de clúster), seleccione **Azure Stack HCI**.
+
+    :::image type="content" source="media/cluster/create-cluster-type.png" alt-text="Asistente para crear clúster: Opción de HCI" lightbox="media/cluster/create-cluster-type.png":::
+
 1. En **Select server locations** (Seleccionar ubicaciones de servidor), seleccione una de las opciones siguientes:
 
     - **All servers in one site** (Todos los servidores de un sitio)
@@ -58,7 +66,7 @@ De acuerdo, empecemos:
 
 1. Cuando haya terminado, haga clic en **Crear**. Ahora verá el Asistente para crear clúster, como se muestra a continuación.
 
-    :::image type="content" source="media/cluster/create-cluster-wizard.png" alt-text="Escenario del clúster extendido activo-activo" lightbox="media/cluster/create-cluster-wizard.png":::
+    :::image type="content" source="media/cluster/create-cluster-wizard.png" alt-text="Asistente para crear clúster: Introducción" lightbox="media/cluster/create-cluster-wizard.png":::
 
 ## <a name="step-1-get-started"></a>Paso 1: Primeros pasos
 
@@ -76,7 +84,7 @@ El paso 1 del asistente le guía por los pasos necesarios para asegurarse de que
     - BitLocker
     - Protocolo de puente del centro de datos (para adaptadores de red RoCEv2)
     - Clústeres de conmutación por error
-    - Servidor de archivos (para el testigo de recurso compartido de archivos o para hospedar recursos compartidos de archivos)
+    - Servidor de archivos
     - Módulo FS-Data-Deduplication
     - Hyper-V
     - Módulo RSAT-AD-PowerShell
@@ -88,55 +96,65 @@ El paso 1 del asistente le guía por los pasos necesarios para asegurarse de que
 
 ## <a name="step-2-networking"></a>Paso 2: Redes
 
-El paso 2 del asistente le guía a lo largo de la comprobación de los adaptadores de la interfaz de red (NIC), la selección de un adaptador de administración, la asignación de direcciones IP, máscaras de subred e identificadores de VLAN para cada servidor, y la creación de conmutadores virtuales.
-
-Es obligatorio seleccionar al menos uno de los adaptadores con fines de administración, ya que el asistente requiere al menos una NIC física dedicada para la administración del clúster.  Una vez que se designa un adaptador para la administración, se excluye del resto del flujo de trabajo del asistente.
-
-Los adaptadores de administración tienen dos opciones de configuración:
-
-- Adaptador físico: se usa si el adaptador seleccionado usa el direccionamiento DHCP.
-
-- Adaptadores en equipo (para la creación de conmutadores virtuales): si los adaptadores seleccionados usan direccionamiento DHCP (ya sea para uno o ambos), la dirección IP de DHCP se asignará como direcciones IP estáticas para estos adaptadores.
-
-Mediante el uso de adaptadores en equipo, tiene una única conexión a varios conmutadores físicos, pero solo usa una dirección IP única. El equilibrio de carga está disponible y la tolerancia a errores es instantánea, en lugar de esperar a que se actualicen los registros DNS.
-
-Empecemos:
+El paso 2 del asistente le guía a través de la configuración de varios elementos de red para el clúster. Empecemos:
 
 1. Seleccione **Siguiente: Redes**.
 1. En **Verify the network adapters** (Comprobar los adaptadores de red), espere a que aparezcan las casillas verdes junto a cada adaptador y seleccione **Siguiente**.
 
-1. En **Select management adapters** (Seleccionar adaptadores de administración), seleccione uno o dos adaptadores de administración para usarlos para cada servidor y, a continuación, haga lo siguiente con cada servidor:
+1. En **Select management adapters** (Seleccionar adaptadores de administración), seleccione uno o dos adaptadores de administración para usarlos para cada servidor. Es obligatorio seleccionar al menos uno de los adaptadores con fines de administración, ya que el asistente requiere al menos una NIC física dedicada para la administración del clúster.  Una vez que se designa un adaptador para la administración, se excluye del resto del flujo de trabajo del asistente.
+
+    Los adaptadores de administración tienen dos opciones de configuración:
+
+    - Adaptador físico único que se usa para la administración. Solo se admite DHCP o la asignación de direcciones IP estáticas.
+
+    - Se usan y agrupan dos adaptadores físicos. Si se agrupa un par de adaptadores, solo se admite la asignación de direcciones IP estáticas. Si los adaptadores seleccionados usan direccionamiento de DHCP (para uno de ellos o para ambos), la dirección IP de DHCP se convertirá en direcciones IP estáticas antes de la creación del conmutador virtual.
+
+    Mediante el uso de adaptadores agrupados, tiene una única conexión a varios conmutadores, pero solo usa una dirección IP única. El equilibrio de carga está disponible y la tolerancia a errores es instantánea, en lugar de esperar a que se actualicen los registros DNS.
+
+    Haga lo siguiente para cada adaptador:
 
     - Active la casilla **Description** (Descripción). Tenga en cuenta que todos los adaptadores están seleccionados y que el asistente puede ofrecerle una recomendación.
     - Desactive las casillas de los adaptadores que no quiera usar para la administración de clústeres.
 
-     Puede usar adaptadores de 1 GB como adaptadores de administración, pero se recomienda usar adaptadores de 10 GB o más rápidos para transportar el tráfico de almacenamiento y de carga de trabajo (VM).
+    > [!NOTE]
+    > Puede usar adaptadores de 1 GB como adaptadores de administración, pero se recomienda usar adaptadores de 10 GB o más rápidos para transportar el tráfico de almacenamiento y de carga de trabajo (VM).
 
 1. Cuando se hayan realizado cambios, haga clic en **Apply and test** (Aplicar y probar).
 1. En **Define networks** (Definir redes), asegúrese de que cada adaptador de red de cada servidor tiene una dirección IP estática única, una máscara de subred y un identificador de VLAN. Mantenga el mouse sobre cada elemento de tabla y escriba o cambie los valores según sea necesario. Cuando haya finalizado, haga clic en **Apply and test** (Aplicar y probar)
 
     > [!NOTE]
-    > Los adaptadores de red que no admiten la propiedad avanzada `VLANID` no aceptarán los identificadores de VLAN.
+    > Para admitir la configuración del identificador de VLAN del clúster, todas las tarjetas de red de todos los servidores deben admitir la propiedad VLANID.
 
 1. Espere a que la columna **Status** (Estado) muestre **Passed** (Superado) para cada servidor y, a continuación, haga clic en **Next** (Siguiente). Este paso comprueba la conectividad de red entre todos los adaptadores con la misma subred y el mismo identificador de VLAN. Las direcciones IP proporcionadas se transfieren desde el adaptador físico a los adaptadores virtuales una vez que se crean los conmutadores virtuales en el paso siguiente. La tarea puede tardar varios minutos en completarse, según el número de adaptadores configurados.
 
-1. En **Conmutador virtual**, seleccione una de las siguientes opciones según corresponda. En función del número de adaptadores presente, es posible que no se muestren todas las opciones.
+1. En **Conmutador virtual**, seleccione una de las siguientes opciones según corresponda. En función del número de adaptadores presente, es posible que no se muestren todas las opciones:
 
     - Crear un conmutador virtual para usarlo con Hyper-V y el almacenamiento
     - Crear un conmutador virtual para usarlo solo con Hyper-V
     - Crear dos conmutadores virtuales: uno para Hyper-V y otro para usarlo con el almacenamiento
     - No crear ningún conmutador virtual
 
+    En la tabla siguiente se muestra qué configuraciones de conmutador virtual se admiten y están habilitadas para varias configuraciones de adaptador de red:
+
+    | Opción | 1-2 adaptadores | 3 adaptadores o más | adaptadores agrupados |
+    | :------------- | :--------- |:--------| :---------|
+    | conmutador único (proceso y almacenamiento) | enabled | enabled  | no admitido |
+    | conmutador único (solo proceso) | no admitido| enabled | enabled |
+    | dos conmutadores | no admitido | enabled | enabled |
+
 1. Cambie el nombre de un conmutador y otras opciones de configuración según sea necesario y, a continuación, haga clic en **Apply and test** (Aplicar y probar). La columna **Status** (Estado) debe mostrar **Passed** (Superado) para cada servidor una vez creados los conmutadores virtuales.
+
+> [!NOTE]
+> Si surgen errores durante los pasos de conexión en redes o en los pasos relacionados con conmutadores virtuales, pruebe a hacer clic en **Apply and test** (Aplicar y probar) de nuevo. Es posible que las comprobaciones de conectividad de red no se realicen de forma intermitente, lo que puede provocar errores de ping del servidor en el intento inicial.
 
 ## <a name="step-3-clustering"></a>Paso 3: Agrupación en clústeres
 
-En el paso 3 del asistente, se asegura de que todo lo anterior se ha configurado correctamente, se asignan sitios en el caso de las implementaciones de clústeres extendidos y, a continuación, se crea el clúster.
+En el paso 3 del asistente, se asegura de que todo lo anterior se ha configurado correctamente, se configuran automáticamente dos sitios en el caso de las implementaciones de clústeres extendidos y, a continuación, se crea el clúster. También puede configurar los sitios de antemano en Active Directory.
 
 1. Seleccione **Siguiente: Agrupación en clústeres**
 1. En **Validate the cluster** (Validar el clúster), seleccione **Validate** (Validar). Es posible que la validación tarde varios minutos.
 
-    Si aparece el mensaje emergente **Credential Security Service Provider (CredSSP)** (Proveedor del servicio de seguridad de credenciales [CredSSP]), seleccione **Yes** (Sí) para habilitar de forma temporal CredSSP para que el asistente pueda continuar. Una vez creado el clúster y finalizado el asistente, se deshabilitará CredSSP para aumentar la seguridad.
+    Si aparece el mensaje emergente **Credential Security Service Provider (CredSSP)** (Proveedor del servicio de seguridad de credenciales [CredSSP]), seleccione **Yes** (Sí) para habilitar de forma temporal CredSSP para que el asistente pueda continuar. Una vez creado el clúster y finalizado el asistente, se deshabilitará CredSSP para aumentar la seguridad. Si tiene problemas con CredSSP, consulte [Solución de problemas de CredSSP](../manage/troubleshoot-credssp.md) para más información.
 
 1. Revise todos los estados de validación, descargue el informe para obtener información detallada sobre los errores, realice cambios y, a continuación, haga clic en **Validate again** (Volver a validar) según sea necesario. Vuelva a repetir el proceso según sea necesario hasta que se superen todas las comprobaciones de validación.
 1. En **Create the cluster** (Crear el cluster), escriba un nombre para el clúster.
@@ -163,13 +181,15 @@ El paso 4 del Asistente le guía a lo largo de la configuración de Espacios de 
 
 Enhorabuena, ya tiene un clúster.
 
-Una vez creado el clúster, el nombre del clúster puede tardar en replicarse en el dominio. Si la resolución del clúster no se realiza correctamente después de un tiempo, en la mayoría de los casos, puede sustituir el nombre de equipo de un nodo de servidor en el clúster, en lugar del nombre del clúster.
+Una vez creado el clúster, el nombre del clúster puede tardar unos instantes en replicarse en el dominio, especialmente si los servidores del grupo de trabajo se han agregado recientemente a Active Directory. Aunque el clúster podría aparecer en Windows Admin Center, es posible que no esté disponible para conectarse todavía.
+
+Si la resolución del clúster no se realiza correctamente después de un tiempo, en la mayoría de los casos, puede sustituir el nombre del servidor del clúster, en lugar del nombre del clúster.
 
 ## <a name="after-you-run-the-wizard"></a>Después de ejecutar el asistente
 
-Una vez completado el asistente, todavía hay algunas tareas importantes que debe completar para tener un clúster totalmente funcional.
+Una vez completado el asistente, todavía hay algunas tareas importantes que debe completar.
 
-La primera tarea consiste en deshabilitar el protocolo de proveedor de compatibilidad para seguridad de credenciales (CredSSP) en cada servidor por motivos de seguridad. Recuerde que CredSSP debe estar habilitado para el asistente. Para obtener más información, consulte [CVE-2018-0886](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2018-0886).
+La primera tarea consiste en deshabilitar el protocolo de proveedor de compatibilidad para seguridad de credenciales (CredSSP) en cada servidor por motivos de seguridad. Recuerde que CredSSP debe estar habilitado para el asistente. Si tiene problemas con CredSSP, consulte [Solución de problemas de CredSSP](../manage/troubleshoot-credssp.md) para más información.
 
 1. En Windows Admin Center, en **All connections** (Todas las conexiones), seleccione el clúster que acaba de crear.
 1. En **Herramientas**, seleccione **Servidores**.

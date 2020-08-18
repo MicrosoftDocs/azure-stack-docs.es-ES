@@ -3,16 +3,16 @@ title: Problemas conocidos del motor de AKS en Azure Stack Hub
 description: Obtenga más información sobre los problemas conocidos del motor de AKS en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 07/02/2020
+ms.date: 08/05/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 07/02/2020
-ms.openlocfilehash: 02f4d8ec694ffc56966029f35dd12fd263a5cb8b
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.lastreviewed: 08/05/2020
+ms.openlocfilehash: 75a4fe1dfbe8738bd806ac1f0eaae2c41b3f2e28
+ms.sourcegitcommit: af7f169c7e204ffdf344f47c07ab8426e2afbd1d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86566148"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87865207"
 ---
 # <a name="known-issues-with-the-aks-engine-on-azure-stack-hub"></a>Problemas conocidos del motor de AKS en Azure Stack Hub
 
@@ -40,21 +40,9 @@ En este tema se tratan los problemas conocidos del motor de AKS en Azure Stack H
 
 * No se admite Kubernetes 1.17 en esta versión. Aunque hay solicitudes de incorporación de cambios de GitHub que hacen referencia a la versión 1.17, esta no se admite.
 
-## <a name="basic-load-balancer-sku-limitations"></a>Limitaciones de la SKU básica de Load Balancer
+## <a name="aks-engine-get-versions-command-limitations"></a>Limitaciones del comando aks-engine get-versions
 
-* Limitación de un solo grupo de agentes. Actualmente, Azure Stack Hub solo admite la SKU básica de Load Balancer. Esta SKU [limita](/azure/load-balancer/concepts#limitations) los puntos de conexión del grupo de back-end a las máquinas virtuales que están en un único conjunto de disponibilidad (o conjunto de escalado de máquinas virtuales). Esto implica que todas las réplicas de un servicio LoadBalancer deben implementarse en el mismo grupo de agentes, y también que cada clúster individual puede tener un servicio LoadBalancer de Linux o un servicio LoadBalancer de Windows.
-
-  Puede hacer que Kubernetes cree pods en un grupo de agentes específico agregando [node selector](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/) "agentpool: MI_NOMBRE_DE_GRUPO" en la plantilla de pod.
-
-  ```json
-  nodeSelector:
-
-        agentpool: linuxpool
-  ```
-  
-  Si ya se ha creado un servicio LoadBalancer en el clúster, puede averiguar qué grupo de agentes se seleccionó como grupo de back-end de Load Balancer; para ello, inspeccione la hoja de grupos de back-end de Load Balancer en el portal de Azure Stack Hub. Cuando tenga esa información, puede especificar el grupo de agentes de destino actualizando el código YAML de la implementación o el pod (como se explicó en el párrafo anterior).
-
-* Ámbito de comando para `get-versions`. La salida del comando `get-versions` solo pertenece a Azure y no a las nubes de Azure Stack Hub. Para más información acerca de las distintas rutas de actualización, consulte [Pasos para actualizar a una versión más reciente de Kubernetes](azure-stack-kubernetes-aks-engine-upgrade.md#steps-to-upgrade-to-a-newer-kubernetes-version).
+La salida del comando **aks-engine** `get-versions` solo se relaciona con Azure global, no con Azure Stack Hub. Para más información sobre las distintas rutas de actualización, consulte [Pasos para actualizar a una versión más reciente de Kubernetes](azure-stack-kubernetes-aks-engine-upgrade.md#steps-to-upgrade-to-a-newer-kubernetes-version).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

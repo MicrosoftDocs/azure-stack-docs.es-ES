@@ -4,24 +4,24 @@ description: Preparación de la implementación de Azure Stack HCI
 author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
-ms.date: 07/21/2020
-ms.openlocfilehash: defa210cded7f7911586a91e10d3d028d8624261
-ms.sourcegitcommit: a15a0f955bac922cebb7bf90a72384fd84ddfe56
+ms.date: 08/03/2020
+ms.openlocfilehash: fc12f638970e82c293a9143c398892a88049f6cd
+ms.sourcegitcommit: 952d26ad08fcc28ad3ad83e27644e61497623a44
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86947119"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889179"
 ---
 # <a name="before-you-deploy-azure-stack-hci"></a>Antes de implementar Azure Stack HCI
 
-> Se aplica a: Azure Stack HCI, v20H2
+> Se aplica a: Azure Stack HCI, versión 20H2
 
 En esta guía paso a paso, aprenderá a:
 
 - Determinar si el hardware cumple los requisitos básicos de los clústeres estándar (un sitio) o extendidos (dos sitios) de Azure Stack HCI
 - Asegurarse de no superar las especificaciones de hardware máximas admitidas
 - Recopilar la información necesaria para una implementación correcta
-- Instalar Windows Admin Center en un equipo de administración
+- Instalación de Windows Admin Center en un equipo o un servidor de administración
 
 ## <a name="determine-hardware-requirements"></a>Determinar los requisitos de hardware
 
@@ -41,7 +41,13 @@ Microsoft recomienda adquirir una solución de hardware o software de Azure Stac
 
 ### <a name="networking-requirements"></a>Requisitos de red
 
-Un clúster de Azure Stack HCI requiere una conexión de red confiable de baja latencia y gran ancho de banda entre cada nodo de servidor. Hay varios tipos de comunicación entre los nodos de servidor:
+Un clúster de Azure Stack HCI requiere una conexión de red confiable de baja latencia y gran ancho de banda entre cada nodo de servidor. Debe comprobar lo siguiente:
+
+- Compruebe que, al menos, un adaptador de red está disponible y dedicado para la administración del clúster.
+- Compruebe que los conmutadores físicos de la red estén configurados para permitir el tráfico en cualquier VLAN que utilice.
+
+
+Hay varios tipos de comunicación entre los nodos de servidor:
 
 - Comunicación del clúster (combinaciones de nodos, actualizaciones de clúster, actualizaciones del registro)
 - Latidos de clúster
@@ -163,10 +169,13 @@ Para prepararse para la implementación, recopile los detalles siguientes sobre 
 - **Direcciones IP estáticas:** Azure Stack HCI requiere direcciones IP estáticas para el tráfico de almacenamiento y de carga de trabajo (máquina virtual) y no admite la asignación de direcciones IP dinámicas a través de DHCP para esta red de alta velocidad. Puede usar DHCP para el adaptador de red de administración a menos que esté usando dos en un equipo, en cuyo caso volverá a necesitar el uso de direcciones IP estáticas. Consulte con el administrador de red la dirección IP que debe usar para cada servidor del clúster.
 - **Redes RDMA:** Hay dos tipos de protocolos RDMA: iWarp y RoCE. Observe cuál usa su adaptador de red y, si es RoCE, tenga en cuenta también la versión (v1 o v2). En el caso de RoCE, tenga en cuenta también el modelo del conmutador de la parte superior del rack.
 - **IDENTIFICADOR DE VLAN:** Tenga en cuenta el identificador de VLAN que se usará para los adaptadores de red en los servidores, si los hay. Debe poder obtenerlo desde el administrador de red.
+- **Nombres de sitio:** En el caso de los clústeres extendidos, se usan dos sitios para la recuperación ante desastres. Puede configurar los sitios mediante Active Directory Domain Services o puede dejar que el asistente para crear clústeres los configure automáticamente. Consulte al administrador del dominio sobre la configuración de los sitios. Para más información, consulte [Introducción a Active Directory Domain Services](/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview).
 
 ## <a name="install-windows-admin-center"></a>Instalación de Windows Admin Center
 
-Windows Admin Center es una aplicación implementada localmente y basada en un explorador para la administración de Azure Stack HCI. La manera más sencilla de [instalar Windows Admin Center](/windows-server/manage/windows-admin-center/deploy/install) es en un equipo de administración local, aunque también puede instalarlo en un servidor.
+Windows Admin Center es una aplicación implementada localmente y basada en un explorador para la administración de Azure Stack HCI. La manera más sencilla de [instalar Windows Admin Center](/windows-server/manage/windows-admin-center/deploy/install) es en un equipo de administración local (modo de escritorio), aunque también puede instalarlo en un servidor (modo de servicio).
+
+Si instala Windows Admin Center en un servidor, las tareas que requieren CredSSP, como la creación de clústeres y la instalación de actualizaciones y extensiones, requieren también el uso de una cuenta que sea miembro del grupo de administradores de puerta de enlace en el servidor de Windows Admin Center. Para más información, consulte las dos primeras secciones de [Configuración de los permisos y el control de acceso de usuarios](/windows-server/manage/windows-admin-center/configure/user-access-control#gateway-access-role-definitions).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

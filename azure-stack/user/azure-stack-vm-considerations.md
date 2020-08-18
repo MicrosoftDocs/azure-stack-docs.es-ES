@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 10/09/2019
-ms.openlocfilehash: 726c632964e0580a5d55219f161e2bc8d6e679de
-ms.sourcegitcommit: ad6bbb611ac671b295568d3f00a193b783470c68
+ms.openlocfilehash: 993fb7a054cd350f0231eeb2108cc5a43ddb3f9e
+ms.sourcegitcommit: 7d518629bd55f24e7459404bb19b7db8a54f4b94
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87397505"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88145444"
 ---
 # <a name="azure-stack-hub-vm-features"></a>Características de las máquinas virtuales de Azure Stack Hub
 
@@ -45,6 +45,7 @@ Azure Stack Hub impone límites de recursos para evitar el consumo excesivo de r
 - Para la salida de redes de la máquina virtual, hay extremos de ancho de banda. Los extremos de Azure Stack Hub son los mismos que los de Azure.
 - En el caso de los recursos de almacenamiento, Azure Stack Hub implementa límites de IOPS (operaciones de entrada/salida por segundo) de almacenamiento para evitar el consumo excesivo básico de recursos por parte de los inquilinos para el uso de almacenamiento.
 - En el caso de los discos de máquina virtual, las operaciones de entrada y salida por segundo de disco en Azure Stack Hub son una función del tamaño de la máquina virtual, en lugar del tipo de disco. Esto significa que para una VM de la serie Standard_Fs, independientemente de si elige SSD o HDD para el tipo de disco, el límite de IOPS de un segundo disco de datos es de solo 2300 IOPS.
+- Los discos temporales asociados a la máquina virtual no son persistentes y se pueden perder en las operaciones del plano de control, como cambiar de tamaño o detener y desasignar.
 
 En la tabla siguiente se enumeran las máquinas virtuales que se admiten en Azure Stack Hub, junto con su configuración:
 

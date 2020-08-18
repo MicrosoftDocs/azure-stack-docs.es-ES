@@ -6,14 +6,14 @@ author: mattbriggs
 ms.topic: conceptual
 ms.date: 5/27/2020
 ms.author: mabrigg
-ms.reviwer: xiaofmao
-ms.lastreviewed: 01/30/2020
-ms.openlocfilehash: 6ca925e0571d295c13d0a32d71131b176b686838
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.reviwer: jiahan
+ms.lastreviewed: 08/12/2020
+ms.openlocfilehash: 3f4ed6bd83414d158ef80996cadf024653956d38
+ms.sourcegitcommit: 7d518629bd55f24e7459404bb19b7db8a54f4b94
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86567627"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88145393"
 ---
 # <a name="azure-stack-hub-storage-differences-and-considerations"></a>Azure Stack Hub Storage: Diferencias y consideraciones
 
@@ -57,9 +57,12 @@ Las siguientes versiones son compatibles con Azure Stack Hub Storage:
 
 API de los servicios de Azure Storage:
 
-Actualización 1811 o versiones más recientes:
+Actualización 2005 o versiones más recientes:
 
-- [2017-11-09](/rest/api/storageservices/version-2017-11-09)
+- [2019-02-02](/rest/api/storageservices/version-2019-02-02)
+- [2018-11-09](/rest/api/storageservices/version-2018-11-09)
+- [2018-03-28](/rest/api/storageservices/version-2018-03-28)
+- <bpt id="p1">[</bpt>2017-11-09<ept id="p1">](/rest/api/storageservices/version-2017-11-09)</ept>
 - [2017-07-29](/rest/api/storageservices/version-2017-07-29)
 - [2017-04-17](/rest/api/storageservices/version-2017-04-17)
 - [2016-05-31](/rest/api/storageservices/version-2016-05-31)
@@ -69,6 +72,8 @@ Actualización 1811 o versiones más recientes:
 
 Versiones anteriores:
 
+- [2017-11-09](/rest/api/storageservices/version-2017-11-09)
+- [2017-07-29](/rest/api/storageservices/version-2017-07-29)
 - [2017-04-17](/rest/api/storageservices/version-2017-04-17)
 - [2016-05-31](/rest/api/storageservices/version-2016-05-31)
 - [2015-12-11](/rest/api/storageservices/version-2015-12-11)
@@ -97,7 +102,7 @@ Versiones anteriores:
 
 En lo que respecta a la instancia de PowerShell del módulo de almacenamiento, debe conocer cuál es la versión compatible con la API REST.
 
-| módulo | Versión admitida | Uso |
+| Module | Versión admitida | Uso |
 |---|---|---|
 | Azure.Storage | [4.5.0](https://www.powershellgallery.com/packages/Azure.Storage/4.5.0) | Administra blobs, colas y tablas en las cuentas de almacenamiento de Azure Stack Hub. |
 | AzureRM.Storage | [5.0.4](https://www.powershellgallery.com/packages/AzureRM.Storage/5.0.4) | Crea y administra cuentas de almacenamiento en Azure Stack Hub. |

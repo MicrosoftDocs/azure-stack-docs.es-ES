@@ -3,16 +3,16 @@ title: Incorporación de nodos de la unidad de escalado en Azure Stack Hub
 description: Aprenda a agregar nodos de la unidad de escalado a unidades de escalado de Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 04/20/2020
+ms.date: 08/03/2020
 ms.author: mabrigg
 ms.reviewer: thoroet
-ms.lastreviewed: 09/17/2019
-ms.openlocfilehash: c264e0abc0fdc5a382b83a23158f860a56aea260
-ms.sourcegitcommit: a3ae6dd8670f8fb24224880df7eee256ebbcc4ef
+ms.lastreviewed: 08/03/2020
+ms.openlocfilehash: cc9023e6f7653d13d11a0a63cb65c59840f64ab7
+ms.sourcegitcommit: 952d26ad08fcc28ad3ad83e27644e61497623a44
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81772586"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889246"
 ---
 # <a name="add-additional-scale-unit-nodes-in-azure-stack-hub"></a>Incorporación de nodos de la unidad de escalado adicionales en Azure Stack Hub
 
@@ -51,7 +51,7 @@ Los pasos siguientes son una descripción general de alto nivel de cómo agregar
 
 Puede usar el portal del administrador o PowerShell para agregar nuevos nodos. La operación Agregar nodo primero agrega el nuevo nodo de unidad de escalado como capacidad de proceso disponible y luego extiende la capacidad de almacenamiento automáticamente. La capacidad se expande automáticamente porque Azure Stack Hub es un sistema hiperconvergido donde *proceso* y *almacenamiento* escalan juntos.
 
-### <a name="use-the-administrator-portal"></a>Uso del portal de administración
+### <a name="administrator-portal"></a>[Administrator Portal](#tab/portal)
 
 1. Inicie sesión en el portal del administrador de Azure Stack Hub como operador de Azure Stack Hub.
 2. Vaya a **+ Create a resource (Crear un recurso)**  > **Capacidad** > **Nodo de la unidad de escalado**.
@@ -60,7 +60,7 @@ Puede usar el portal del administrador o PowerShell para agregar nuevos nodos. L
    ![Incorporación de detalles de nodo](media/azure-stack-add-scale-node/select-node2.png)
  
 
-### <a name="use-powershell"></a>Uso de PowerShell
+### <a name="powershell-azurerm"></a>[PowerShell AzureRM](#tab/AzureRM)
 
 Use el cmdlet **New-AzsScaleUnitNodeObject** para agregar un nodo.  
 
@@ -76,6 +76,23 @@ Antes de utilizar cualquiera de los siguientes scripts de PowerShell de ejemplo,
  
   Add-AzsScaleUnitNode -NodeList $NewNode -ScaleUnit "<name_of_scale_unit_cluster>" 
   ```  
+
+### <a name="powershell-az"></a>[PowerShell Az](#tab/Az)
+
+Use el cmdlet **Add-AzsScaleUnitNode** para agregar un nodo.  
+
+Antes de usar cualquiera de los siguientes scripts de PowerShell de ejemplo, reemplace los valores *name_of_new_node*, *name_of_scale_unit_cluster* y *BMCIP_address_of_new_node* por los de su entorno de Azure Stack Hub.
+
+  > [!Note]  
+  > Al asignar nombres a un nodo, debe mantener el nombre con menos de 15 caracteres de longitud. No puede usar tampoco un nombre que contenga un espacio o alguno de los siguientes caracteres: `\`, `/`, `:`, `*`, `?`, `"`, `<`, `>`, `|`, `\`, `~`, `!`, `@`, `#`, `$`, `%`, `^`, `&`, `(`, `)`, `{`,`}` y `_`.
+
+**Agregue un nodo:**
+  ```powershell
+  ## Add a single Node 
+    Add-AzsScaleUnitNode -BMCIPv4Address "<BMCIP_address_of_new_node>" -computername "<name_of_new_node>" -ScaleUnit "<name_of_scale_unit_cluster>" 
+  ```  
+
+---
 
 ## <a name="monitor-add-node-operations"></a>Supervisión de las operaciones para agregar nodo 
 Use el portal del administrador o PowerShell para obtener el estado de la operación Agregar nodo. Las operaciones Agregue nodo pueden tardar de varias horas a días en completarse.
@@ -96,7 +113,7 @@ El estado de la unidad de escalado y de los nodos de unidad de escalado se puede
 ### <a name="status-for-the-add-node-operation"></a>Estado de la operación Agregar nodo 
 **Para una unidad de escalado:**
 
-|Status               |Descripción  |
+|Estado               |Descripción  |
 |---------------------|---------|
 |En ejecución              |Todos los nodos están participando activamente en la unidad de escalado.|
 |Detenido              |El nodo de unidad de escalado está inactivo o es inaccesible.|
@@ -107,7 +124,7 @@ El estado de la unidad de escalado y de los nodos de unidad de escalado se puede
 
 **Para un nodo de unidad de escalado:**
 
-|Status                |Descripción  |
+|Estado                |Descripción  |
 |----------------------|---------|
 |En ejecución               |El nodo está participando activamente en la unidad de escalado.|
 |Detenido               |El nodo no está disponible.|
@@ -120,17 +137,17 @@ El estado de la unidad de escalado y de los nodos de unidad de escalado se puede
 ## <a name="troubleshooting"></a>Solución de problemas
 Los siguientes son problemas comunes observados al agregar un nodo. 
 
-**Escenario 1:**  Se produce un error en la operación de incorporación del nodo de unidad de escalado pero uno o varios nodos se muestran con un estado de Detenido.  
+**Escenario 1:** se produce un error en la operación de incorporación de nodo de unidad de escalado pero uno o varios nodos se muestran con un estado de Detenido.  
 - Corrección: Use la operación de corrección para reparar uno o más nodos. Solo se puede ejecutar una operación de reparación al mismo tiempo.
 
-**Escenario 2:** Se han agregado uno o varios nodos de unidad de escalado pero no se pudo realizar la expansión de almacenamiento. En este escenario, el objeto de nodo de unidad de escalado notifica el estado En ejecución pero no se inicia la tarea de configuración del almacenamiento.  
-- Corrección: Use el punto de conexión con privilegios para revisar el estado de almacenamiento ejecutando el siguiente cmdlet de PowerShell:
+**Escenario 2:** se han agregado uno o varios nodos de unidad de escalado pero no se pudo realizar la expansión de almacenamiento. En este escenario, el objeto de nodo de unidad de escalado notifica el estado En ejecución pero no se inicia la tarea de configuración del almacenamiento.  
+- Corrección: use el punto de conexión con privilegios para revisar el estado de almacenamiento ejecutando el siguiente cmdlet de PowerShell:
   ```powershell
      Get-VirtualDisk -CimSession s-cluster | Get-StorageJob
   ```
  
-**Escenario 3:** Recibe una alerta que indica un error en el trabajo de escalabilidad horizontal del almacenamiento.  
-- Corrección: En este caso, se produjeron errores en la tarea de configuración de almacenamiento. Este problema requiere que se ponga en contacto con soporte técnico.
+**Escenario 3:** recibe una alerta que indica un error en el trabajo de escalabilidad horizontal del almacenamiento.  
+- Corrección: en este caso, se produjeron errores en la tarea de configuración de almacenamiento. Este problema requiere que se ponga en contacto con soporte técnico.
 
 
 ## <a name="next-steps"></a>Pasos siguientes 

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 05/21/2020
 ms.author: sethm
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 81608b62ad84a5b26028a80da40bc5a627b231f6
-ms.sourcegitcommit: 7447a9b9312cdae2f5fa13a700be84cd1ffdd456
+ms.openlocfilehash: 88013fbde291d05daa41adf0c65db563c867ff5a
+ms.sourcegitcommit: 52b33ea180c38a5ecce150f5a9ea4a026344cc3d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86302140"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88074305"
 ---
 # <a name="configure-ipsecike-policy-for-site-to-site-vpn-connections"></a>Configuración de la directiva IPsec/IKE para conexiones VPN de sitio a sitio
 
@@ -75,7 +75,7 @@ En la tabla siguiente se enumeran los algoritmos criptográficos y los niveles d
 | Integridad de IKEv2                                      | SHA384, SHA256, SHA1, MD5                                                |
 | Grupo DH                                             | ECP384, DHGroup14, DHGroup2, DHGroup1, ECP256 *, DHGroup24*             |
 | Cifrado IPsec                                     | GCMAES256, GCMAES192, GCMAES128, AES256, AES192, AES128, DES3, DES, No |
-| Integridad de IPsec                                      | GCMASE256, GCMAES192, GCMAES128                                          |
+| Integridad de IPsec                                      | GCMAES256, GCMAES192, GCMAES128                                          |
 | Grupo PFS                                            | PFS24, ECP384, ECP256, PFS2048, PFS2, PFS1, PFSMM, Ningún                  |
 | Vigencia de SA QM                                       | (Opcional: Se usan los valores predeterminados si no se especifica ningún valor)<br />                         Segundos (entero; mín. 300/predeterminado 27 000 segundos)<br />                         KBytes (entero; mín. 1024/predeterminado 102 400 000 KBytes) |
 | Selector de tráfico                                     | En Azure Stack Hub no se admiten selectores de tráfico basados en directivas.         |

@@ -6,13 +6,13 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: inhenkel
 ms.reviewer: fiseraci
-ms.lastreviewed: 01/10/2019
-ms.openlocfilehash: a02458ba7790fdf48d8b506abfea0e771b8a179e
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.lastreviewed: 06/15/2020
+ms.openlocfilehash: 84a60646a383d83ba2913b268d51f1cd74f214b9
+ms.sourcegitcommit: 52b33ea180c38a5ecce150f5a9ea4a026344cc3d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77699429"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88074152"
 ---
 # <a name="integrate-azure-stack-hub-with-monitoring-solutions-using-syslog-forwarding"></a>Integración de Azure Stack Hub con soluciones de supervisión mediante el reenvío de syslog
 
@@ -234,6 +234,8 @@ Prefix fields
 * Signature ID: Microsoft-AzureStack-PrivilegedEndpoint: <PEP Event ID>
 * Name: <PEP Task Name>
 * Severity: mapped from PEP Level (details see the PEP Severity table below)
+* Who: account used to connect to the PEP
+* WhichIP: IP address of the device used to connect to the PEP
 ```
 
 Tabla de eventos para el punto de conexión con privilegios:
@@ -271,6 +273,8 @@ Prefix fields
 * Signature ID: Microsoft-AzureStack-PrivilegedEndpoint: <REP Event ID>
 * Name: <REP Task Name>
 * Severity: mapped from REP Level (details see the REP Severity table below)
+* Who: account used to connect to the REP
+* WhichIP: IP address of the device used to connect to the REP
 ```
 
 Tabla de eventos del punto de conexión de recuperación:
@@ -337,7 +341,7 @@ Tabla de extensión personalizada para los eventos de Windows creados en Azure S
 |MasProviderEventSourceName ||
 |MasProviderGuid |AEA1B4FA-97D1-45F2-A64C-4D69FFFD92C9|
 |MasProviderName |Microsoft-Windows-GroupPolicy|
-|MasSecurityUserId |\<SID de Windows\> |
+|MasSecurityUserId |\<Windows SID\> |
 |MasTask |0|
 |MasTaskCategory| Creación de un proceso|
 |MasUserData|KB4093112!!5112!!Installed!!0x0!!WindowsUpdateAgent Xpath: /Event/UserData/*|
@@ -354,7 +358,7 @@ Tabla de extensión personalizada para los eventos de Windows creados en Azure S
 
 Tabla de gravedad de alertas:
 
-| severity | Nivel |
+| Gravedad | Nivel |
 |----------|-------|
 |0|No definido|
 |10|Crítico|
@@ -364,7 +368,7 @@ Tabla de extensión personalizada para las alertas creadas en Azure Stack Hub:
 
 | Nombre de la extensión personalizada | Ejemplo | 
 |-----------------------|---------|
-|MasEventDescription|DESCRIPCIÓN: una cuenta de usuario \<TestUser\> se creó para \<TestDomain\>. Es un riesgo potencial de seguridad. -- CORRECCIÓN: Póngase en contacto con el servicio de soporte técnico. Se requiere el servicio de asistencia al cliente se para resolver este problema. No intente resolver este problema sin su ayuda. Antes de abrir una solicitud de soporte técnico, inicie el proceso de recopilación de archivos de registro siguiendo las instrucciones de https://aka.ms/azurestacklogfiles.
+|MasEventDescription|DESCRIPCIÓN: Se creó una cuenta de usuario \<TestUser\> para \<TestDomain\>. Es un riesgo potencial de seguridad. -- CORRECCIÓN: póngase en contacto con el servicio de soporte técnico. Se requiere el servicio de asistencia al cliente se para resolver este problema. No intente resolver este problema sin su ayuda. Antes de abrir una solicitud de soporte técnico, inicie el proceso de recopilación de archivos de registro siguiendo las instrucciones de https://aka.ms/azurestacklogfiles.
 
 ### <a name="cef-mapping-for-alerts-closed"></a>Asignación de CEF para las alertas cerradas
 

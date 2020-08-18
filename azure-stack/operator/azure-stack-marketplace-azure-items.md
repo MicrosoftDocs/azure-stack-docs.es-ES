@@ -3,16 +3,16 @@ title: Elementos de Azure Marketplace disponibles para Azure Stack Hub
 description: Descubra qué elementos de Azure Marketplace se pueden usar en Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 05/07/2020
+ms.date: 08/07/2020
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 01/21/2019
-ms.openlocfilehash: 7cecc0eda09c2ae000f469c3704f3256e68268c7
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: 1d1c297ca303b38a541bcd982df218444affbc71
+ms.sourcegitcommit: cfc453689a5a2f2491ce00ab77a7c5bfddfe01d8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86490225"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997999"
 ---
 # <a name="azure-marketplace-items-available-for-azure-stack-hub"></a>Elementos de Azure Marketplace disponibles para Azure Stack Hub
 
@@ -20,7 +20,7 @@ ms.locfileid: "86490225"
 
 Cada vez que haya actualizaciones de las extensiones de la máquina virtual que utiliza, debe descargarlas. Las extensiones que se distribuyen con el producto no se actualizarán durante el proceso normal de revisión y actualización; por tanto, compruebe con frecuencia las actualizaciones que pueda haber. Otras extensiones solo están disponibles a través de la administración de Marketplace.
 
-|  | Nombre del elemento | Descripción | Publicador | Tipo de SO |
+| Imagen | Nombre del elemento | Descripción | Publicador | Tipo de SO |
 | --- | --- | --- | --- | --- |
 |![Extensión IaaS de SQL (SqlIaasExtension)](media/azure-stack-marketplace-azure-items/cse.png) | [Extensión IaaS de SQL (SqlIaasExtension)](/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-agent-extension)| **Descargue esta extensión para implementar cualquier servidor de SQL Server en el elemento de Marketplace (esta extensión es obligatoria).** | Microsoft | Windows |
 |![Custom Script Extension](media/azure-stack-marketplace-azure-items/cse.png) | [Extensión Custom Script](/azure/virtual-machines/windows/extensions-customscript)| **Descargar esta actualización a la versión incluida en la extensión de script personalizado de Windows.** | Microsoft | Windows |
@@ -41,23 +41,18 @@ Cada vez que haya actualizaciones de las extensiones de la máquina virtual que 
 
 Microsoft Azure Stack Hub es compatible con las siguientes plantillas de soluciones y máquinas virtuales de Azure Marketplace. Descargue las dependencias por separado, tal como se indica. Debe tener las licencias adecuadas para aplicaciones como SQL Server y Machine Learning Server, excepto cuando sean versiones gratuitas o de prueba.
 
-|  | Nombre del elemento | Descripción | Publicador |
+| Imagen | Nombre del elemento | Descripción | Publicador |
 | --- | --- | --- | --- |
 | ![SharePoint Server 2013 Trial](media/azure-stack-marketplace-azure-items/sharepoint.png) | [Versión de evaluación de SharePoint Server 2013](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftsharepoint.microsoftsharepointserver) | Versión de evaluación de Microsoft SharePoint Server 2013 en Windows Server 2012 Datacenter y Visual Studio 2019 Community Edition. | Microsoft |
 | ![Versión de evaluación de SharePoint Server 2016](media/azure-stack-marketplace-azure-items/sharepoint.png) | [Versión de evaluación de SharePoint Server 2016](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftsharepoint.microsoftsharepointserver) | Versión de evaluación de Microsoft SharePoint Server 2016 en Windows Server 2016 Datacenter. | Microsoft |
 | ![SQL Server 2014 SP3 en Windows Server 2012 R2](media/azure-stack-marketplace-azure-items/sql.png) | [SQL Server 2014 SP3 en Windows Server 2012 R2](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftsqlserver.sql2014sp3-ws2012r2) | SQL Server 2014 Service Pack 2. **Descarga necesaria:** Extensión IaaS de SQL. | Microsoft |
-| ![SQL Server 2017 Standard en SUSE Linux Enterprise Server (SLES) 12 SP2](media/azure-stack-marketplace-azure-items/sql.png) | [SQL Server 2017 Standard en SUSE Linux Enterprise Server (SLES) 12 SP2](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.SQLServer2017StandardonSLES12SP2?tab=Overview) | Plataforma de base de datos para aplicaciones inteligentes críticas. | Microsoft y SUSE |
-| ![Licencia gratuita: SQL Server 2017 Developer en SUSE Linux Enterprise Server (SLES) 12 SP2](media/azure-stack-marketplace-azure-items/sql.png) | [Licencia gratuita: SQL Server 2017 Developer en SUSE Linux Enterprise Server (SLES) 12 SP2](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.FreeSQLServerLicenseSQLServer2017DeveloperonSLES12SP2?tab=Overview) | Versión gratuita para desarrolladores de SQL Server 2017 para cargas de trabajo transaccionales, almacenamiento de datos, inteligencia empresarial y análisis. | Microsoft y SUSE |
-| ![Licencia gratuita: SQL Server 2017 Express en SUSE Linux Enterprise Server (SLES) 12 SP2](media/azure-stack-marketplace-azure-items/sql.png) | [Licencia gratuita: SQL Server 2017 Express en SUSE Linux Enterprise Server (SLES) 12 SP2](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.FreeSQLServerLicenseSQLServer2017ExpressonSLES12SP2) | Versión Express gratuita de SQL Server 2017. | Microsoft y SUSE |
-| ![SQL Server 2017 Enterprise en SUSE Linux Enterprise Server (SLES) 12 SP2](media/azure-stack-marketplace-azure-items/sql.png) | [SQL Server 2017 Enterprise en SUSE Linux Enterprise Server (SLES) 12 SP2](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.SQLServer2017EnterpriseonSLES12SP2?tab=Overview) | Plataforma de base de datos para aplicaciones inteligentes críticas. | Microsoft y SUSE |
-| ![SQL Server 2017 Web en SUSE Linux Enterprise Server (SLES) 12 SP2](media/azure-stack-marketplace-azure-items/sql.png) | [SQL Server 2017 Web en SUSE Linux Enterprise Server (SLES) 12 SP2](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.SQLServer2017WebonSLES12SP2) | Plataforma de base de datos para aplicaciones inteligentes críticas. | Microsoft y SUSE |
 | ![Microsoft Machine Learning Server 9.3.0 en Windows Server 2016](media/azure-stack-marketplace-azure-items/microsoft.png) | [Microsoft Machine Learning Server 9.3.0 en Windows Server 2016](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.MicrosoftMachineLearningServer930onWindowsServer2016) | Microsoft Machine Learning Server 9.3.0 en Windows Server 2016. | Microsoft |
 | ![Microsoft Machine Learning Server 9.3.0 en Ubuntu 16.04](media/azure-stack-marketplace-azure-items/microsoft.png) | [Microsoft Machine Learning Server 9.3.0 en Ubuntu 16.04](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.MicrosoftMachineLearningServer930onUbuntu1604) | Microsoft Machine Learning Server 9.3.0 en Ubuntu 16.04. | Microsoft y Canonical |
 | ![Microsoft Machine Learning Server 9.3.0 en CentOS Linux 7.2](media/azure-stack-marketplace-azure-items/microsoft.png) | [Microsoft Machine Learning Server 9.3.0 en CentOS Linux 7.2](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.MicrosoftMachineLearningServer930onCentOSLinux72) | Microsoft Machine Learning Server 9.3.0 en CentOS Linux 7.2. | Microsoft y Rogue Wave |
 
 ## <a name="linux-distributions"></a>Distribuciones de Linux
 
-|  | Nombre del elemento | Descripción | Publicador |
+| Imagen | Nombre del elemento | Descripción | Publicador |
 | --- | --- | --- | --- |
 | ![Sistema operativo Clear Linux](media/azure-stack-marketplace-azure-items/clearlinux.png) | [Sistema operativo Clear Linux](https://azuremarketplace.microsoft.com/marketplace/apps/clear-linux-project.clear-linux-os) | Una distribución Linux de referencia optimizada para la arquitectura Intel. | Proyecto Clear Linux |
 | ![CoreOS Linux (estable)](media/azure-stack-marketplace-azure-items/coreos.png) | [CoreOS Linux (estable)](https://azuremarketplace.microsoft.com/marketplace/apps/CoreOS.CoreOS) | CoreOS es un sistema de distribución moderno y mínimo de Linux que ofrece una forma fácil de ejecutar contenedores, administrar clústeres y actualizar los servidores sin problemas: todos los componentes que habilitan el proceso a escala de almacén. | CoreOS |
@@ -73,7 +68,7 @@ Microsoft Azure Stack Hub es compatible con las siguientes plantillas de solucio
 
 ## <a name="third-party-byol-free-trial-images-and-solution-templates"></a>BYOL de terceros, imágenes de las versiones gratuita y de prueba y plantillas de soluciones
 
-|  | Nombre del elemento | Descripción | Publicador |
+| Imagen | Nombre del elemento | Descripción | Publicador |
 | --- | --- | --- | --- |
 | ![A10 vThunder ADC](media/azure-stack-marketplace-azure-items/a10.png) | [A10 vThunder ADC](https://azuremarketplace.microsoft.com/marketplace/apps/a10networks.vthunder-414-gr1) | El controlador de entrega de aplicaciones A10 Networks vThunder ADC para Microsoft Azure está especialmente diseñado ofrecer un alto rendimiento, flexibilidad y entrega de aplicaciones y equilibrio de cargas de servidor fáciles de implementar. Además, está optimizado para ejecutarse de forma nativa en Azure Cloud. | A10 Networks |
 | ![Arista vEOS Router](media/azure-stack-marketplace-azure-items/arista.png) | [Arista vEOS Router](https://azuremarketplace.microsoft.com/marketplace/apps/arista-networks.veos-router) | Arista vEOS Router es un completo enrutador virtual multinube y multihipervisor que permite a las empresas y los proveedores de nube compilar redes híbridas coherentes, muy seguras y escalables. | Arista Networks |
@@ -163,7 +158,7 @@ Microsoft Azure Stack Hub es compatible con las siguientes plantillas de solucio
 | ![Neo4J](media/azure-stack-marketplace-azure-items/neo4j.png) | [Neo4j](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.neo4j) | Neo4j es un almacén de gráficos de alto rendimiento que incluye todas las características que se esperan en una base de datos madura y sólida, como un lenguaje de consulta sencillo y transacciones ACID.| Bitnami |
 | ![Nginx](media/azure-stack-marketplace-azure-items/nginx.png) | [Nginx](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.nginxstack) | Completo entorno de desarrollo de PHP, MySQL y Nginx. | Bitnami |
 | ![Noalyss](media/azure-stack-marketplace-azure-items/noalyss.png) | [Noalyss](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.noalyss) | Eficaz sistema contable de entrada doble. | Bitnami |
-| ![Node.js](media/azure-stack-marketplace-azure-items/nodejs.png) | [node.js](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.nodejs) | Entorno de código abierto escrito en Javascript para facilitar la compilación. | Bitnami |
+| ![Node.js](media/azure-stack-marketplace-azure-items/nodejs.png) | [node.js](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.nodejs) | Entorno de código abierto escrito en JavaScript para facilitar la compilación. | Bitnami |
 | ![Odoo](media/azure-stack-marketplace-azure-items/odoo.png) | [Odoo](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.odoo) | Sistema ERP y CRM que conecta de manera eficaz los procesos empresariales. | Bitnami |
 | ![Open Atrium](media/azure-stack-marketplace-azure-items/openatrium.png) | [Open Atrium](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.openatrium) | Plataforma de intranet flexible con varias facetas. | Bitnami |
 | ![OpenCart](media/azure-stack-marketplace-azure-items/opencart.png) | [OpenCart](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.opencart) | Plataforma gratuita de comercio electrónico para comerciantes en línea. | Bitnami |
@@ -203,7 +198,6 @@ Microsoft Azure Stack Hub es compatible con las siguientes plantillas de solucio
 | ![Roundcube](media/azure-stack-marketplace-azure-items/roundcube.png) | [Roundcube](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.roundcube) | Cliente IMAP basado en explorador con funcionalidad, como compatibilidad con MIME. | Bitnami |
 | ![Ruby](media/azure-stack-marketplace-azure-items/ruby.png) | [Ruby](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.rubystack) | Entorno de desarrollo fácil de usar para Ruby on Rails. | Bitnami |
 | ![SEO Panel](media/azure-stack-marketplace-azure-items/seopanel.png) | [SEO Panel](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.seopanel) | Aplicación de administración de SEO de código abierto para el seguimiento de varios sitios web. | Bitnami |
-| ![Shopware](media/azure-stack-marketplace-azure-items/shopware.png) | [Shopware](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.shopware) | Plataforma de comercio electrónico de código abierto. | Bitnami |
  ![SilverStripe](media/azure-stack-marketplace-azure-items/silverstripe.png) | [SilverStripe](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.silverstripe) | SilverStripe es un sistema de administración de contenido intuitivo de código abierto y un marco flexible. Esta combinación proporciona tanto a los desarrolladores como a los editores de contenido las herramientas necesarias para crear proyectos web innovadores. | Bitnami |
 | ![Simple Machines Forum](media/azure-stack-marketplace-azure-items/simplemachinesforum.png) | [Simple Machines Forum](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.simplemachinesforum) | Software de foros sencillo para crear su propia comunidad en línea. | Bitnami |
 | ![SonarQube](media/azure-stack-marketplace-azure-items/sonarqube.png) | [SonarQube](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.sonarqube) | SonarQube es una plataforma de administración de calidad de código abierto que analiza y mide la calidad técnica del código. Permite a los desarrolladores detectar problemas de código, vulnerabilidades y errores en las primeras fases. | Bitnami |

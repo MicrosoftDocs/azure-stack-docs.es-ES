@@ -7,12 +7,12 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: prchint
 ms.lastreviewed: 06/13/2019
-ms.openlocfilehash: dd82a3a9c2b6eff74c8f6823fc37b8767431ca02
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: 72bebdc5933f09aef58de25627d8b627d7987bdb
+ms.sourcegitcommit: 17ef9f9119f5fea9782adeefb9a430e6a3a650e6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86489239"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88170428"
 ---
 # <a name="azure-stack-hub-compute-capacity"></a>Capacidad de proceso de Azure Stack Hub
 
@@ -40,6 +40,10 @@ Dado que los algoritmos de selección no contemplan como factor la relación de 
 Hay una nueva consideración para planear la capacidad de Azure Stack Hub con precisión. A partir de la actualización 1901 (y cada actualización posterior), hay un límite en el número total de máquinas virtuales que se pueden crear. Este límite está diseñado para ser temporal y evitar la inestabilidad de la solución. El origen del problema de estabilidad cuando hay un número mayor de máquinas virtuales se está abordando, pero aún no se ha determinado una escala de tiempo específica para la corrección. Ahora hay un límite por servidor de 60 máquinas de virtuales con un límite total en la solución de 700. Por ejemplo, el límite de una máquina virtual de Azure Stack Hub de ocho servidores sería 480 (8 * 60). Para una solución de Azure Stack Hub de 12 a 16 servidores, el límite sería 700. Este límite se ha creado teniendo todas las consideraciones de capacidad de proceso en cuenta, como la reserva de resistencia y la relación entre la CPU virtual y la física que le gustaría mantener al operador en la unidad de escalado. Para más información, consulte la nueva versión del planeador de capacidad.
 
 Si se alcanza el límite de escalado de la máquina virtual, se devolverán como resultado los códigos de error siguientes: `VMsPerScaleUnitLimitExceeded`, `VMsPerScaleUnitNodeLimitExceeded`.
+
+## <a name="consideration-for-batch-deployment-of-vms"></a>Consideración sobre la implementación por lotes de máquinas virtuales
+
+En versiones anteriores a 2002, el uso de 2 a 5 máquinas virtuales por lote con una diferencia de 5 minutos entre los lotes proporcionaba implementaciones de máquina virtual confiables hasta alcanzar una escala de 700 máquinas virtuales. Con la versión 2005 de Azure Stack Hub, podemos aprovisionar máquinas virtuales de forma confiable en tamaños de lote de 50 con una diferencia de 5 minutos entre las implementaciones por lotes.
 
 ## <a name="considerations-for-deallocation"></a>Consideraciones para la desasignación
 

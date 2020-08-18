@@ -7,12 +7,12 @@ ms.date: 07/07/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 07/07/2020
-ms.openlocfilehash: c687e704f1e8cb1d0e650dd0e283567a07d96fd2
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.openlocfilehash: 38a362cdc29cac4f0862fe598d9ac29d5f60fd68
+ms.sourcegitcommit: af7f169c7e204ffdf344f47c07ab8426e2afbd1d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86566216"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87865156"
 ---
 # <a name="deploy-a-kubernetes-cluster-with-the-aks-engine-on-azure-stack-hub"></a>Implementación de un clúster de Kubernetes con el motor de AKS en Azure Stack Hub
 
@@ -123,7 +123,7 @@ Continúe con la implementación de un clúster:
     | output-directory | kube-rg | Escriba el nombre del directorio que va a contener el archivo de salida `apimodel.json`, así como otros archivos generados. |
     | client-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Escriba el GUID de la entidad de servicio. El identificador de cliente indicado como identificador de la aplicación cuando el administrador de Azure Stack Hub creó la entidad de servicio. |
     | client-secret | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Escriba el secreto de la entidad de servicio. Configure el secreto de cliente al crear el servicio. |
-    | subscription-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | escriba el identificador de la suscripción. Para más información, consulte [Suscripción a una oferta](./azure-stack-subscribe-services.md#subscribe-to-an-offer). |
+    | subscription-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | escriba el identificador de la suscripción. Se debe proporcionar una suscripción para el inquilino. No se admite la implementación en la suscripción administrativa.  Para más información, consulte [Suscripción a una oferta](./azure-stack-subscribe-services.md#subscribe-to-an-offer). |
 
     Este es un ejemplo:
 

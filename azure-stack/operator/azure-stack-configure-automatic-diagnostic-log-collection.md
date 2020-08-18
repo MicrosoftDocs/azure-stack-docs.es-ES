@@ -3,16 +3,16 @@ title: Recopilación proactiva de registros de diagnóstico en Azure Stack Hub
 description: Aprenda a configurar la recopilación proactiva de registros de diagnóstico en Ayuda y soporte técnico de Azure Stack Hub.
 author: justinha
 ms.topic: article
-ms.date: 04/17/2020
+ms.date: 06/16/2020
 ms.author: justinha
 ms.reviewer: shisab
-ms.lastreviewed: 04/17/2020
-ms.openlocfilehash: a348b2c301b7fbfbffe31f9ea5dff3fbb3e92b44
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.lastreviewed: 06/16/2020
+ms.openlocfilehash: fe1ae4c0c979d579df99b6e440d62dd16a9df2e9
+ms.sourcegitcommit: 52b33ea180c38a5ecce150f5a9ea4a026344cc3d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86489341"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88074169"
 ---
 # <a name="proactive-diagnostic-log-collection-in-azure-stack-hub"></a>Recopilación proactiva de registros de diagnóstico en Azure Stack Hub
 
@@ -21,6 +21,9 @@ ms.locfileid: "86489341"
 Ahorre tiempo con el equipo de soporte técnico al cliente mediante la recopilación proactiva de registros de diagnóstico cuando se genera una alerta en Azure Stack Hub.
 
 Si es necesario investigar el estado de mantenimiento del sistema, los registros se pueden cargar automáticamente para su análisis antes de abrir una incidencia para el equipo de Soporte técnico de Microsoft.
+
+>[!NOTE]
+>Si está desconectado de Internet o solo desea guardar los registros de forma local, use el método [Get-AzureStackLog](azure-stack-get-azurestacklog.md) para enviar los registros. 
 
 ## <a name="steps-to-configure-proactive-log-collection"></a>Pasos para configurar la recopilación proactiva de registros
 
@@ -118,6 +121,9 @@ Siga estos pasos para agregar la dirección URL de SAS a la interfaz de usuario 
 >La recopilación de registros automática puede deshabilitarse y habilitarse de nuevo en cualquier momento. La configuración de la dirección URL de SAS no cambiará. Si se vuelve a habilitar la recopilación de registros automática, la dirección URL de SAS indicada anteriormente se someterá a las mismas comprobaciones de validación y se rechazará una dirección URL de SAS expirada.
 
 ::: moniker-end
+
+>[!NOTE]
+>Si la configuración de la ubicación de registro es para un recurso compartido de archivos local, asegúrese de que las directivas de administración del ciclo de vida impidan que el almacenamiento de recursos compartidos alcance su cuota de tamaño. Azure Stack Hub no supervisa el recurso compartido de archivos local ni aplica ninguna directiva de retención.
 
 ## <a name="view-log-collection"></a>Visualización de la recopilación de registros
 

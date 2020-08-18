@@ -3,16 +3,16 @@ title: Directivas de compatibilidad para el motor de AKS en Azure Stack Hub
 description: Este tema contiene las directivas de compatibilidad para el motor de AKS en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 07/24/2020
+ms.date: 08/10/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 3/19/2020
-ms.openlocfilehash: 106b93873a157b1c37790dcb89f817ec1663d7ef
-ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
+ms.lastreviewed: 08/10/2020
+ms.openlocfilehash: a41aba4dbca012e7eaaee123ce46eb5022bb5870
+ms.sourcegitcommit: 17ef9f9119f5fea9782adeefb9a430e6a3a650e6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87250969"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88170445"
 ---
 # <a name="support-policies-for-aks-engine-on-azure-stack-hub"></a>Directivas de compatibilidad para el motor de AKS en Azure Stack Hub
 
@@ -20,7 +20,7 @@ En este artículo se proporciona información acerca de las directivas de compat
 
 ## <a name="self-managed-kubernetes-clusters-on-azure-stack-hub-with-aks-engine"></a>Clústeres de Kubernetes autoadministrados en Azure Stack Hub con el motor de AKS
 
-Los componentes de la nube de infraestructura como servicio (IaaS), como los de proceso o red, proporcionan a los usuarios acceso a opciones de personalización y a controles de bajo nivel. El motor de AKS permite al usuario establecer clústeres de Kubernetes que usan estos componentes de IaaS de forma transparente, los usuarios pueden acceder a todos los aspectos de sus implementaciones y modificarlos.
+Los componentes de la nube de infraestructura como servicio (IaaS), como los de proceso o red, proporcionan a los usuarios acceso a opciones de personalización y a controles de bajo nivel. El motor de AKS permite al usuario establecer clústeres de Kubernetes que usan estos componentes de IaaS de forma transparente, así los usuarios pueden acceder a todos los aspectos de sus implementaciones y modificarlos.
 
 Al crear un clúster, el cliente define los nodos de trabajo y maestros de Kubernetes que crea el motor de AKS. Las cargas de trabajo de cliente se ejecutan en esos nodos. Los clientes poseen y pueden ver o modificar tanto los nodos maestros como los de trabajo. La modificación descuidada de los nodos puede causar la pérdida de datos y de cargas de trabajo, y que el clúster deje de ser funcional. Además, las operaciones del motor de AKS, como las de actualización o escala, sobrescribirán todos los cambios inapropiados. Por ejemplo, si el clúster tiene pods estáticos, no se conservarán después de una operación de actualización del motor de AKS.
 
@@ -32,11 +32,11 @@ Microsoft proporciona soporte técnico para lo siguiente:
 
 -  Problemas con los comandos del motor de AKS: implementar, generar, actualizar y escalar. La herramienta debe ser coherente con su comportamiento en Azure.
 -  Problemas con un clúster de Kubernetes implementado según la información que se proporciona en el artículo de [introducción al motor de AKS](azure-stack-kubernetes-aks-engine-overview.md).
--  Problemas de conectividad con otros servicios de Azure Stack Hub 
--  Problemas de conectividad de Kubernetes API
--  Problemas con la funcionalidad del proveedor de Kubernetes de Azure Stack Hub y con la conectividad con Azure Resource Manager
--  Problemas con la configuración generada por el motor de AKS de artefactos nativos de Azure Stack Hub, como equilibradores de carga, grupos de seguridad de red, redes virtuales, subredes, interfaces de red, tabla de rutas, conjuntos de disponibilidad, direcciones IP públicas, cuentas de almacenamiento y máquinas virtuales 
--  Problemas de latencia y rendimiento de la red
+-  Problemas de conectividad con otros servicios de Azure Stack Hub. 
+-  Problemas de conectividad de Kubernetes API.
+-  Problemas con la funcionalidad del proveedor de Kubernetes de Azure Stack Hub y con la conectividad con Azure Resource Manager.
+-  Problemas con la configuración generada por el motor de AKS de artefactos nativos de Azure Stack Hub, como equilibradores de carga, grupos de seguridad de red, redes virtuales, subredes, interfaces de red, tabla de rutas, conjuntos de disponibilidad, direcciones IP públicas, cuentas de almacenamiento y máquinas virtuales. 
+-  Problemas de latencia y rendimiento de la red.
 -  Problemas con la imagen base de AKS que usa el motor de AKS en las implementaciones desconectadas. 
 
 ## <a name="aks-engine-areas-not-supported"></a>Áreas del motor de AKS no admitidas
@@ -47,7 +47,7 @@ Microsoft no proporciona soporte técnico para lo siguiente:
 -  Elemento de Marketplace de Kubernetes de Azure Stack Hub.
 -  Uso de las siguientes opciones y complementos de definición de clúster del motor de AKS.
     -  Complementos no compatibles:  
-            -  AAD Pod Identity  
+            -  Azure AD Pod Identity  
             -  ACI Connector  
             -  Blobfuse Flex Volume  
             -  Cluster Autoscaler  
@@ -85,6 +85,7 @@ Microsoft no proporciona soporte técnico para lo siguiente:
 -  Software de terceros. Este software puede incluir herramientas de análisis de seguridad y dispositivos o software de red.
 -  Problemas relacionados con la nube múltiple o con construcciones de varios proveedores. Por ejemplo, Microsoft no admite los problemas relacionados con la ejecución de una solución de proveedor en la nube federado para distintas audiencias.
 -  Personalizaciones de red que no sean las que se enumeran en la sección [Áreas con soporte del motor de AKS](#aks-engine-supported-areas).
+-  En los entornos de producción solo se deben usar clústeres de Kubernetes de alta disponibilidad, es decir, clústeres implementados con tres maestros y tres nodos agente como mínimo. Menos no se admite en las implementaciones de producción.
 
 ##  <a name="security-issues-and-patching"></a>Problemas de seguridad y aplicación de revisiones
 
@@ -92,7 +93,7 @@ Si se encuentra un error de seguridad en uno o varios componentes del motor de A
 
 ## <a name="kubernetes-marketplace-item"></a>Elemento de Marketplace de Kubernetes
 
-Los usuarios pueden descargar un elemento de Marketplace de Kubernetes, lo que les permite implementar clústeres de Kubernetes mediante el motor de AKS de forma indirecta mediante una plantilla en el portal de usuarios de Azure Stack Hub, lo que resulta más sencillo que usar directamente el motor de AKS. Esta es una herramienta útil para configurar rápidamente clústeres para demostraciones, pruebas y desarrollo. No está previsto que se use en producción, por lo que no se incluye en el conjunto de elementos que admite Microsoft.
+Los usuarios pueden descargar un elemento de Marketplace de Kubernetes, que les permite implementar clústeres de Kubernetes mediante el motor de AKS de forma indirecta por medio de una plantilla en el portal de usuarios de Azure Stack Hub. Este enfoque resulta más sencillo que usar el motor de AKS directamente. El elemento de Marketplace de Kubernetes es una herramienta útil para configurar rápidamente clústeres para demostraciones, pruebas y desarrollo. No está previsto que se use en producción, por lo que no se incluye en el conjunto de elementos que admite Microsoft.
 
 ## <a name="preview-features"></a>Características en vista previa
 

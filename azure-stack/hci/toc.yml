@@ -30,6 +30,8 @@
       href: deploy/register-with-azure.md
     - name: Validación del clúster
       href: deploy/validate.md
+    - name: Implementación de la controladora de red
+      href: deploy/network-controller-powershell.md
 - name: Administrar
   items:
     - name: Administración de máquinas virtuales

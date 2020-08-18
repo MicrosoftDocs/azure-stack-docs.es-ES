@@ -7,13 +7,13 @@ ms.topic: how-to
 ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: fiseraci
-ms.lastreviewed: 03/11/2019
-ms.openlocfilehash: 60ad202ef08d7afd72591640fa1d4d8beef0c476
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.lastreviewed: 08/06/2020
+ms.openlocfilehash: 2aa24a852e5388a36b1103c2a61f5aa70930d84d
+ms.sourcegitcommit: 1ab1293b594fe8ffc00dc800c663cf1323dc41ce
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86488015"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939537"
 ---
 # <a name="data-at-rest-encryption-in-azure-stack-hub"></a>Cifrado de datos en reposo en Azure Stack Hub
 
@@ -35,14 +35,14 @@ Para obtener las claves de recuperación de BitLocker, es necesario acceder al [
 
 ```powershell
 ##This cmdlet retrieves the recovery keys for all the volumes that are encrypted with BitLocker.
-Get-AzsRecoveryKeys
+Get-AzsRecoveryKeys -raw
 ```
 
-Parámetros opcionales para el cmdlet *Get-AzsRecoveryKeys*:
+Parámetros para el cmdlet *Get-AzsRecoveryKeys*:
 
 | Parámetro | Descripción | Tipo | Obligatorio |
 |---------|---------|---------|---------|
-|*raw* (sin formato) | Devuelve datos sin procesar de la asignación entre la clave de recuperación, el nombre de equipo y los identificadores de contraseña de cada volumen cifrado.  | Switch | No (diseñado para escenarios de soporte técnico).|
+|*raw* (sin formato) | Devuelve la asignación de datos entre la clave de recuperación, el nombre de equipo y los identificadores de contraseña de cada volumen cifrado.  | Switch | No, pero recomendable |
 
 ## <a name="troubleshoot-issues"></a>Solución de problemas
 
