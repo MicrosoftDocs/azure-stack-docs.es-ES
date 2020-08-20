@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 10/16/2019
 ms.reviewer: shriramnat
 ms.lastreviewed: 10/16/2019
-ms.openlocfilehash: 772871cffa3d5394d1d8b939fa22ae91bc90d4ac
-ms.sourcegitcommit: bdd4d529bd3e115a9f76eece62b1613448d5d020
+ms.openlocfilehash: e0c152f3c541b3bc2dad042ae88f162b539cec60
+ms.sourcegitcommit: 34db213dc6549f21662ed44d090f55359cfe8469
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "80423906"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88564809"
 ---
 # <a name="create-a-service-offering-for-users-in-azure-stack-hub"></a>Creación de una oferta de servicio para los usuarios en Azure Stack Hub
 
@@ -133,7 +133,7 @@ Durante el proceso de creación de la oferta, creará una oferta y un plan. El p
 1. Inicie sesión en el portal de administración con una cuenta de administrador en la nube.
 
     - En un sistema integrado, la dirección URL varía en función de la región y el nombre de dominio externo del operador y tendrá el formato `https://adminportal.<region>.<FQDN>`.
-    - Si usa el Kit de desarrollo de Azure Stack, la dirección URL es <https://adminportal.local.azurestack.external>.
+    - Si usa el Kit de desarrollo de Azure Stack, la dirección URL es `https://adminportal.local.azurestack.external`.
 
     Seleccione **+ Crear un recurso** > **Ofertas y planes** > **Oferta**.
 

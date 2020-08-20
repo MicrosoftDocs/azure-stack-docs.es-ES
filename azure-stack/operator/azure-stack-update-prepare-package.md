@@ -7,12 +7,12 @@ ms.date: 07/22/2020
 ms.author: sethm
 ms.lastreviewed: 09/10/2019
 ms.reviewer: sranthar
-ms.openlocfilehash: ef2813c34bd089ef1bb429ba704e02faa06005be
-ms.sourcegitcommit: 16ff77f7157e5b04a8cd401b095f7b71f51d5a11
+ms.openlocfilehash: e0ad221764e116bb2b5f73601da3ac6917681ff0
+ms.sourcegitcommit: 34db213dc6549f21662ed44d090f55359cfe8469
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86949634"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88564792"
 ---
 # <a name="prepare-an-azure-stack-hub-update-package"></a>Preparación de un paquete de actualización de Azure Stack Hub
 
@@ -45,7 +45,7 @@ Revise el contenido del paquete. Normalmente, un paquete de actualización const
 
 ### <a name="automatic-download-and-preparation-for-update-packages"></a>Descarga y preparación automáticas de las actualizaciones
 
-Tanto las actualizaciones de software como las revisiones de Azure Stack Hub se preparan automáticamente en los sistemas con conexión a los **puntos de conexión de actualización automática de Azure Stack Hub**: <https://*.azureedge.net> y <https://aka.ms/azurestackautomaticupdate>. Para obtener más información acerca de cómo configurar la conectividad con los **puntos de conexión de actualización automática de Azure Stack Hub**, consulte los puntos de conexión de **Revisión y actualización** que se describen en [Integración del firewall de Azure Stack Hub](./azure-stack-integrate-endpoints.md#ports-and-urls-outbound).
+Tanto las actualizaciones de software como las revisiones de Azure Stack Hub se preparan automáticamente en los sistemas con conexión a los **puntos de conexión de actualización automática de Azure Stack Hub**: `https://*.azureedge.net` y `https://aka.ms/azurestackautomaticupdate`. Para obtener más información acerca de cómo configurar la conectividad con los **puntos de conexión de actualización automática de Azure Stack Hub**, consulte los puntos de conexión de **Revisión y actualización** que se describen en [Integración del firewall de Azure Stack Hub](./azure-stack-integrate-endpoints.md#ports-and-urls-outbound).
 
 ### <a name="where-to-download-azure-stack-hub-update-packages"></a>Ubicación de la descarga de las actualizaciones de Azure Stack Hub
 

@@ -4,16 +4,16 @@ titleSuffix: Azure Stack Hub
 description: Aprenda a actualizar el proveedor de recursos de SQL de Azure Stack Hub.
 author: bryanla
 ms.topic: article
-ms.date: 11/11/2019
+ms.date: 8/19/2020
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 5f714d5ae2a73a026268a9585cab17ffee14f25b
-ms.sourcegitcommit: c1f48c19c8a9c438fd22298bc570c12a9b19bb45
+ms.openlocfilehash: dcc3a0f66d0e1ced8ae534e6eee99f4ef7f01250
+ms.sourcegitcommit: eb9ec6bab69543c63d6e51b37387cc80ecb7be87
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86410630"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88612306"
 ---
 # <a name="update-the-sql-resource-provider"></a>Actualización del proveedor de recursos de SQL
 
@@ -116,10 +116,9 @@ $env:PSModulePath = $env:PSModulePath + ";" + $rpModulePath
   -VMLocalCredential $vmLocalAdminCreds `
   -CloudAdminCredential $cloudAdminCreds `
   -PrivilegedEndpoint $privilegedEndpoint `
-  -AzureEnvironment $AzureEnvironment ` 
+  -AzureEnvironment $AzureEnvironment `
   -DefaultSSLCertificatePassword $PfxPass `
-  -DependencyFilesLocalPath $tempDir\cert 
-
+  -DependencyFilesLocalPath $tempDir\cert
  ```
 
 Cuando finalice el script de actualización del proveedor de recursos, cierre la sesión actual de PowerShell.

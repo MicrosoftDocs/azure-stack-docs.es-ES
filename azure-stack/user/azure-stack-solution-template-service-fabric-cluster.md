@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: shnatara
 ms.lastreviewed: 09/25/2019
-ms.openlocfilehash: fe06aca2423f5347193490798427446c684b6703
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.openlocfilehash: 5347225398e6494d89ba70d6468a6657d13b58e0
+ms.sourcegitcommit: 34db213dc6549f21662ed44d090f55359cfe8469
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86566981"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88564775"
 ---
 # <a name="deploy-a-service-fabric-cluster-in-azure-stack-hub"></a>Implementación de un clúster de Service Fabric en Azure Stack Hub
 
@@ -188,7 +188,7 @@ Puede acceder al clúster de Service Fabric mediante el uso de Service Fabric Ex
 
 1. Para buscar la dirección URL de Service Fabric Explorer y el punto de conexión de cliente, revise los resultados de la implementación de la plantilla.
 
-1. En el explorador, vaya a <https://*FQDN*:19080>. Sustituya *FQDN* por el FQDN del clúster de Service Fabric del paso 2.   
+1. En el explorador, vaya a `https://*FQDN*:19080`. Sustituya *FQDN* por el FQDN del clúster de Service Fabric del paso 2.   
    Si ha usado un certificado autofirmado, recibirá una advertencia de que la conexión no es segura. Para continuar con el sitio web, seleccione **More information** (Más información) y, a continuación, **Go on to the webpage** (Acceder a la página web). 
 
 1. Para autenticar el sitio debe seleccionar el certificado que va a usar. Seleccione **Más opciones**, seleccione el certificado adecuado y, finalmente, haga clic en **Aceptar** para conectarse a Service Fabric Explorer. 
