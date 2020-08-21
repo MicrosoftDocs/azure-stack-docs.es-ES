@@ -4,19 +4,21 @@ description: Conéctese rápidamente a un clúster de Azure Stack HCI existente 
 author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
-ms.date: 07/29/2020
-ms.openlocfilehash: 30b2533bd33bd39488a3e010262c9e950a84295c
-ms.sourcegitcommit: 952d26ad08fcc28ad3ad83e27644e61497623a44
+ms.service: azure-stack
+ms.subservice: azure-stack-hci
+ms.date: 08/12/2020
+ms.openlocfilehash: 4dff1265bd542cebe1268ea54248a7c869bd3df1
+ms.sourcegitcommit: a3e042c782a38ecf3baf7a64b1d492a655972f9a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889164"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88198793"
 ---
 # <a name="get-started-with-azure-stack-hci-and-windows-admin-center"></a>Introducción a Azure Stack HCI y Windows Admin Center
 
 > Se aplica a: Azure Stack HCI, versión 20H2; Windows Server 2019
 
-En este tema se proporcionan instrucciones para conectarse a un clúster de Azure Stack HCI y supervisar el rendimiento del clúster y del almacenamiento.
+En este tema se proporcionan instrucciones para conectarse a un clúster de Azure Stack HCI y supervisar el rendimiento del clúster y del almacenamiento. Si aún no ha configurado un clúster, consulte [Introducción a la implementación](deploy/deployment-overview.md) para obtener instrucciones.
 
 ## <a name="install-windows-admin-center"></a>Instalación de Windows Admin Center
 
