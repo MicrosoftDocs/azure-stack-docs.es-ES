@@ -88,9 +88,10 @@
               href: azure-stack-validate-adfs.md
             - name: Validación de la integración de gráficos
               href: azure-stack-validate-graph.md
-        - name: Requisitos de PKI para la implementación de Azure Stack Hub
-          href: azure-stack-pki-certs.md
+        - name: Requisitos y procesos de PKI
           items:
+            - name: Requisitos de certificados PKI
+              href: azure-stack-pki-certs.md
             - name: Generación de certificados PKI
               href: azure-stack-get-pki-certs.md
             - name: Preparación de certificados PKI de Azure Stack Hub
@@ -452,8 +453,6 @@
           href: azure-stack-backup-reference.md
     - name: Obtención de soporte técnico
       items:
-        - name: Estación de trabajo de acceso del operador
-          href: operator-access-workstation.md
         - name: Portal de ayuda y soporte técnico
           items:
             - name: Información general
