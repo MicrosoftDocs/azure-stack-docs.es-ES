@@ -3,16 +3,16 @@ title: Notas de la versión de Azure Stack Hub
 description: Notas de la versión para los sistemas integrados de Azure Stack Hub, incluidas las actualizaciones y correcciones de errores.
 author: sethmanheim
 ms.topic: article
-ms.date: 08/11/2020
+ms.date: 08/13/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 08/11/2020
-ms.openlocfilehash: 4f38683260cbcc69a16e9cc3cfce19c045d18093
-ms.sourcegitcommit: 17ef9f9119f5fea9782adeefb9a430e6a3a650e6
+ms.openlocfilehash: fd1e1fa5c6315932728764d65eb042c1d2e44e20
+ms.sourcegitcommit: 977c47a5587a747dbd67aa110381759ba39044b7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88170462"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88512468"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Notas de la versión de Azure Stack Hub
 
@@ -20,11 +20,11 @@ En este artículo se describe el contenido de los paquetes de actualización de 
 
 Para tener acceso a las notas de la versión de una versión diferente, use la lista desplegable del selector de versiones encima de la tabla de contenido de la izquierda.
 
-::: moniker range=">=azs-1910"
+::: moniker range=">=azs-1908"
 > [!IMPORTANT]  
 > Este paquete de actualización es únicamente para los sistemas integrados de Azure Stack Hub. No lo aplique al Kit de desarrollo de Azure Stack (ASDK).
 ::: moniker-end
-::: moniker range="<azs-1910"
+::: moniker range="<azs-1908"
 > [!IMPORTANT]  
 > Si a su instancia le faltan más de dos actualizaciones de Azure Stack Hub, se considera que no cumple los requisitos. [Para recibir soporte técnico, deberá actualizarla al menos a la versión mínima admitida.](azure-stack-servicing-policy.md#keep-your-system-under-support)
 ::: moniker-end
@@ -69,7 +69,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 ### <a name="whats-new"></a>Novedades
 
 <!-- What's new, also net new experiences and features. -->
-- Esta compilación ofrece compatibilidad con 3 nuevos tipos de máquinas virtuales de GPU: Tamaños de máquina virtual NCv3 (NVIDIA V100), NVv4 (AMD Mi25) y NCas_T4_v3 (NVIDIA T4). Las implementaciones de máquinas virtuales se realizarán correctamente para aquellos que tengan el hardware adecuado y se incorporen al programa de versión preliminar de GPU de Azure Stack Hub. Si está interesado, regístrese en el programa de versión preliminar de GPU en https://aka.ms/azurestackhubgpupreview. Para más información, consulte [aquí](../user/gpu-vms-about.md).
+- Esta compilación ofrece compatibilidad con 3 nuevos tipos de máquinas virtuales de GPU: Tamaños de máquina virtual NCv3 (NVIDIA V100), NVv4 (AMD MI25) y NCas_v4 (NVIDIA T4). Las implementaciones de máquinas virtuales se realizarán correctamente para aquellos que tengan el hardware adecuado y se incorporen al programa de versión preliminar de GPU de Azure Stack Hub. Si está interesado, regístrese en el programa de versión preliminar de GPU en https://aka.ms/azurestackhubgpupreview. Para más información, consulte [aquí](../user/gpu-vms-about.md).
 - Esta versión ofrece una nueva característica que habilita una funcionalidad de recuperación autónoma, que detecta los errores, evalúa el efecto y mitiga de forma segura los problemas del sistema. Con esta característica, estamos trabajando para aumentar la disponibilidad del sistema sin intervención manual. Con la versión 2005 y versiones posteriores, los clientes experimentarán una reducción en el número de alertas. Cualquier error en esta canalización no requerirá ninguna acción por parte de los operadores de Azure Stack Hub, a menos que se notifique lo contrario.
 - Existe una nueva opción en el portal de administración de Azure Stack Hub para clientes de Azure Stack Hub desconectados o protegidos con aislamiento físico, que permite guardar los registros de forma local. Se pueden almacenar los registros en un recurso compartido de SMB local cuando Azure Stack Hub está desconectado de Azure.
 - Ahora, el portal de administración de Azure Stack Hub bloquea determinadas operaciones si una operación del sistema ya está en curso. Por ejemplo, si hay una actualización en curso, no es posible agregar un nuevo nodo de unidad de escalado.
@@ -446,12 +446,88 @@ Después de instalar esta actualización, instale todas las revisiones aplicable
 - [Revisión 1.1910.63.186 de Azure Stack Hub](https://support.microsoft.com/help/4574735)
 ::: moniker-end
 
+::: moniker range="azs-1908"
+## <a name="1908-build-reference"></a>Referencia de la compilación 1908
+
+El número de compilación de la actualización 1908 de Azure Stack Hub es **1.1908.4.33**.
+
+### <a name="update-type"></a>Tipo de actualización
+
+En la versión 1908, el sistema operativo subyacente en el que se ejecuta Azure Stack Hub se ha actualizado a Windows Server 2019. Esta actualización permite conseguir mejoras fundamentales básicas y disponer de la capacidad de incorporar funciones adicionales a Azure Stack Hub.
+
+El tipo de compilación de la actualización 1908 de Azure Stack Hub es **Completo**. Como resultado, la actualización 1908 tiene un tiempo de ejecución más largo que las actualizaciones rápidas, como 1906 y 1907. Los tiempos de ejecución exactos para las actualizaciones completas suelen depender del número de nodos que contiene la instancia de Azure Stack Hub, de la capacidad del sistema que usan las cargas de trabajo del inquilino, de la conectividad de red del sistema (si está conectado a Internet) y de la configuración del hardware del sistema. La actualización 1908 tuvo los siguientes tiempos de ejecución previstos en nuestras pruebas internas: 4 nodos: 42 horas, 8 nodos: 50 horas, 12 nodos: 60 horas, 16 nodos: 70 horas. Unos tiempos de ejecución de actualizaciones superiores a estos valores previstos son habituales y no requieren ninguna acción por parte de los operadores de Azure Stack Hub, a menos que se produzca un error durante la actualización.
+
+Para obtener más información sobre los tipos de compilación de actualización, consulte [Administración de actualizaciones en Azure Stack Hub](azure-stack-updates.md).
+
+- Por lo general, los tiempos de ejecución de actualización exactos dependen de la capacidad que usen en el sistema las cargas de trabajo de inquilino, de la conectividad de red del sistema (si está conectado a Internet) y de las configuración de hardware del sistema.
+- Los tiempos de ejecución superiores a lo esperado son habituales y no requieren ninguna acción por parte de los operadores de Azure Stack Hub, a menos que se produzca un error durante la actualización.
+- Esta aproximación del tiempo de ejecución es específica para la actualización 1908 y no se debe comparar con otras actualizaciones de Azure Stack Hub.
+
+<!-- ## What's in this update -->
+
+<!-- The current theme (if any) of this release. -->
+
+### <a name="whats-new"></a>Novedades
+
+<!-- What's new, also net new experiences and features. -->
+
+- Tenga en cuenta que en la versión 1908 el sistema operativo subyacente en el que se ejecuta Azure Stack Hub se ha actualizado a Windows Server 2019. Esta actualización permite conseguir mejoras fundamentales básicas y disponer de la capacidad de incorporar funciones adicionales a Azure Stack Hub.
+- Ahora todos los componentes de la infraestructura de Azure Stack Hub funcionan en modo FIPS 140-2.
+- Los operadores de Azure Stack Hub pueden quitar ahora los datos de usuario del portal. Para más información, consulte [Eliminación de los datos de usuario del portal de Azure Stack Hub](azure-stack-portal-clear.md).
+
+### <a name="improvements"></a>Mejoras
+
+<!-- Changes and product improvements with tangible customer-facing value. -->
+- Se han producido mejoras en el cifrado de datos en reposo de Azure Stack Hub para conservar los secretos en el Módulo de plataforma segura (TPM) del hardware de los nodos físicos.
+
+### <a name="changes"></a>Cambios
+
+- Los proveedores de hardware lanzarán el paquete de extensión de OEM de la versión 2.1 o posterior al mismo tiempo que la versión 1908 de Azure Stack Hub. Este paquete será un requisito previo para la versión 1908 de Azure Stack Hub. Para obtener más información acerca de cómo descargar el paquete de extensión de OEM de la versión 2.1 o posterior, póngase en contacto con el proveedor de hardware del sistema y consulte el artículo sobre [actualizaciones de OEM](azure-stack-update-oem.md#oem-contact-information).  
+
+### <a name="fixes"></a>Correcciones
+
+- Se ha corregido un problema de compatibilidad con futuras actualizaciones de OEM de Azure Stack Hub y un problema con la implementación de máquinas virtuales mediante imágenes de usuario de cliente. Este problema se encontró en la versión 1907 y se corrigió en la revisión [KB4517473](https://support.microsoft.com/en-us/help/4517473/azure-stack-hotfix-1-1907-12-44).  
+- Se ha corregido un problema con la actualización de firmware de OEM y se ha corregido un error de diagnóstico en la prueba de Azure Stack para el estado del anillo de Fabric. Este problema se encontró en la versión 1907 y se corrigió en la revisión [KB4515310](https://support.microsoft.com/en-us/help/4515310/azure-stack-hotfix-1-1907-7-35).
+- Se corrigió un problema con el proceso de actualización de firmware de OEM. Este problema se encontró en la versión 1907 y se corrigió en la revisión [KB4515650](https://support.microsoft.com/en-us/help/4515650/azure-stack-hotfix-1-1907-8-37).
+
+<!-- Product fixes that came up from customer deployments worth highlighting, especially if there's an SR/ICM associated to it. -->
+
+## <a name="security-updates"></a>Actualizaciones de seguridad
+
+Para obtener información sobre las actualizaciones de seguridad de esta actualización de Azure Stack Hub, consulte [Actualizaciones de seguridad de Azure Stack Hub](release-notes-security-updates.md).
+
+El informe de vulnerabilidad de Qualys para esta versión se puede descargar del [sitio web de Qualys](https://www.qualys.com/azure-stack/).
+
+## <a name="download-the-update"></a>Descarga de la actualización
+
+Puede descargar la actualización de Azure Stack Hub 1908 desde [la página de descarga de Azure Stack Hub](https://aka.ms/azurestackupdatedownload).
+
+## <a name="hotfixes"></a>Revisiones
+
+Azure Stack Hub publica revisiones de forma periódica. Asegúrese de instalar la revisión más reciente de Azure Stack Hub para la versión 1907 antes de actualizar Azure Stack Hub a la versión 1908.
+
+Las revisiones de Azure Stack Hub solo son aplicables a los sistemas integrados de Azure Stack Hub; no intente instalar revisiones en el ASDK.
+
+### <a name="prerequisites-before-applying-the-1908-update"></a>Requisitos previos: Antes de aplicar la actualización 1908
+
+La versión 1908 de Azure Stack Hub debe aplicarse en la versión 1907 con las revisiones siguientes:
+
+<!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
+- [Revisión 1.1907.29.80 de Azure Stack Hub](https://support.microsoft.com/help/4555650)
+
+La actualización 1908 de Azure Stack Hub requiere la **versión de OEM 2.1 o posterior para Azure Stack Hub** del proveedor de hardware del sistema. Las actualizaciones de OEM incluyen actualizaciones de controladores y firmware en el hardware del sistema Azure Stack Hub. Para más información sobre la aplicación de actualizaciones de OEM, consulte [Aplicar actualizaciones del fabricante de equipos originales (OEM) de Azure Stack Hub](azure-stack-update-oem.md).
+
+### <a name="after-successfully-applying-the-1908-update"></a>Después de aplicar correctamente la actualización 1908
+
+Después de instalar esta actualización, instale todas las revisiones aplicables. Para más información, consulte nuestra [directiva de servicio](azure-stack-servicing-policy.md).
+
+<!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
+- [Revisión 1.1908.51.133 de Azure Stack Hub](https://support.microsoft.com/help/4574734)
+::: moniker-end
+
 <!------------------------------------------------------------>
 <!------------------- UNSUPPORTED VERSIONS ------------------->
 <!------------------------------------------------------------>
-::: moniker range="azs-1908"
-## <a name="1908-archived-release-notes"></a>Notas de la versión archivadas de la compilación 1908
-::: moniker-end
 ::: moniker range="azs-1907"
 ## <a name="1907-archived-release-notes"></a>Notas de la versión archivadas de la compilación 1907
 ::: moniker-end
@@ -498,6 +574,6 @@ Después de instalar esta actualización, instale todas las revisiones aplicable
 ## <a name="1802-archived-release-notes"></a>Notas de la versión archivadas de la compilación 1802
 ::: moniker-end
 
-::: moniker range="<azs-1910"
+::: moniker range="<azs-1908"
 Puede consultar las [notas de las versiones anteriores de Azure Stack Hub en la Galería de TechNet](https://aka.ms/azsarchivedrelnotes). Estos documentos archivados se proporcionan únicamente con fines de referencia y no implican que estas versiones sean compatibles. Para obtener información sobre el soporte técnico de Azure Stack Hub, consulte [Directiva de mantenimiento de Azure Stack Hub](azure-stack-servicing-policy.md). Para obtener más ayuda, póngase en contacto con los servicios de asistencia al cliente de Microsoft.
 ::: moniker-end

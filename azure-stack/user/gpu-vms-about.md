@@ -8,23 +8,23 @@ ms.topic: reference
 ms.date: 07/07/2020
 ms.reviewer: kivenkat
 ms.lastreviewed: 07/07/2020
-ms.openlocfilehash: ec859cfc977c5596f44bf349c765c68873ea7430
-ms.sourcegitcommit: 17ef9f9119f5fea9782adeefb9a430e6a3a650e6
+ms.openlocfilehash: 33bdc3fa38edace2656d86eec20b12917020cac1
+ms.sourcegitcommit: 977c47a5587a747dbd67aa110381759ba39044b7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88170360"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88512383"
 ---
 # <a name="graphics-processing-unit-gpu-virtual-machine-vm-on-azure-stack-hub"></a>Máquina virtual (VM) de la unidad de procesamiento gráfico (GPU) en Azure Stack Hub
 
 *Se aplica a: Sistemas integrados de Azure Stack*
 
-En este artículo, aprenderá cuáles son los modelos de unidad de procesamiento gráfico (GPU) que se admiten en el sistema de varios nodos de Azure Stack Hub. También se pueden encontrar instrucciones sobre la instalación de los controladores que se usan con las GPU. La compatibilidad con GPU en Azure Stack Hub permite soluciones de inteligencia artificial, entrenamiento, inferencia y visualización de datos. La GPU AMD Radeon Instinct Mi25 puede usarse para respaldar aplicaciones con un uso intensivo de gráficos, como AutoCAD de Autodesk.
+En este artículo, aprenderá cuáles son los modelos de unidad de procesamiento gráfico (GPU) que se admiten en el sistema de varios nodos de Azure Stack Hub. También se pueden encontrar instrucciones sobre la instalación de los controladores que se usan con las GPU. La compatibilidad con GPU en Azure Stack Hub permite soluciones de inteligencia artificial, entrenamiento, inferencia y visualización de datos. La GPU AMD Radeon Instinct MI25 puede usarse para respaldar aplicaciones con un uso intensivo de gráficos, como AutoCAD de Autodesk.
 
-Se puede elegir entre tres modelos de GPU en el período de versión preliminar pública. Están disponibles en las GPU de NVIDIA V100, NVIDIA T4 y AMD Mi25. Estas GPU físicas se alinean con los siguientes tipos de máquina virtual (VM) de la serie N de Azure de la siguiente manera:
+Se puede elegir entre tres modelos de GPU en el período de versión preliminar pública. Están disponibles en las GPU de NVIDIA V100, NVIDIA T4 y AMD MI25. Estas GPU físicas se alinean con los siguientes tipos de máquina virtual (VM) de la serie N de Azure de la siguiente manera:
 - [NCv3](https://docs.microsoft.com/azure/virtual-machines/ncv3-series)
 - [NVv4 (AMD Mi25)](https://docs.microsoft.com/azure/virtual-machines/nvv4-series)
-- NCas_T4_v3
+- NCas_v4
 
 > [!IMPORTANT]  
 > La compatibilidad con GPU de Azure Stack Hub está actualmente en versión preliminar pública. Para participar en la versión preliminar, rellene el formulario en [aka.ms/azurestackhubgpupreview](https://aka.ms/azurestackhubgpupreview).
@@ -42,23 +42,23 @@ Las máquinas virtuales de la serie NCv3 disponen de la tecnología de las GPU N
 
 ## <a name="nvv4"></a>NVv4
 
-Las máquinas virtuales de la serie NVv4 usan la tecnología de las GPU [AMD Radeon Instinct MI25](https://www.amd.com/en/products/professional-graphics/instinct-mi25). Con la serie NVv4, Azure Stack Hub introduce máquinas virtuales con GPU parciales. Este tamaño se puede usar con aplicaciones de gráficos aceleradas por GPU y escritorios virtuales. Las máquinas virtuales NVv4 actualmente solo admiten el sistema operativo invitado Windows. 
+Las máquinas virtuales de la serie NVv4 usan la tecnología de las GPU [AMD Radeon Instinct MI25](https://www.amd.com/en/products/professional-graphics/instinct-MI25). Con la serie NVv4, Azure Stack Hub introduce máquinas virtuales con GPU parciales. Este tamaño se puede usar con aplicaciones de gráficos aceleradas por GPU y escritorios virtuales. Las máquinas virtuales NVv4 actualmente solo admiten el sistema operativo invitado Windows. 
 
 | Size | vCPU | Memoria: GiB | GiB de almacenamiento temporal (SSD) | GPU | Memoria de GPU: GiB | Discos de datos máx. | Nº máx. NIC | 
 | --- | --- | --- | --- | --- | --- | --- | --- |   
 | Standard_NV4as_v4 |4 |14 |88 | 1/8 | 2 | 4 | 2 | 
 
-## <a name="ncas_t4_v3"></a>NCas_T4_v3
+## <a name="ncas_v4"></a>NCas_v4
 
-Este nuevo tamaño de máquina virtual de NVIDIA T4 permite que se ejecuten cargas de trabajo ligeras de aprendizaje automático, inferencia y visualización en Azure Stack Hub. Actualmente, este tamaño de máquina virtual no está disponible en el portal para la implementación y, en su lugar, se debe usar PowerShell o la CLI.
+Este nuevo tamaño de máquina virtual de NVIDIA T4 permite que se ejecuten cargas de trabajo ligeras de aprendizaje automático, inferencia y visualización en Azure Stack Hub. Actualmente, este tamaño de máquina virtual *no* está disponible en el portal para la implementación y, en su lugar, se debe usar PowerShell o la CLI.
 
 
 | Size | vCPU | Memoria: GiB | GPU | Memoria de GPU: GiB | Discos de datos máx. | Nº máx. NIC | 
 | --- | --- | --- | --- | --- | --- | --- |
-| Standard_NC4as_T4_v3 |4 |28 | 1 | 16 | 8 | 4 | 
-| Standard_NC8as_T4_v3 |4 |56 | 1 | 16 | 16 | 8 | 
-| Standard_NC16as_T4_v3 |4 |112 | 1 | 16 | 32 | 8 | 
-| Standard_NC64as_T4_v3 |4 |448 | 4 | 64 | 32 | 8 | 
+| Standard_NC4as_v4 |4 |28 | 1 | 16 | 8 | 4 | 
+| Standard_NC8as_v4 |4 |56 | 1 | 16 | 16 | 8 | 
+| Standard_NC16as_v4 |4 |112 | 1 | 16 | 32 | 8 | 
+| Standard_NC64as_v4 |4 |448 | 4 | 64 | 32 | 8 | 
 
 
 ## <a name="patch-and-update-fru-behavior-of-vms"></a>Revisión y actualización, comportamiento de FRU de máquinas virtuales 
@@ -72,8 +72,8 @@ Las máquinas virtuales de GPU experimentarán tiempo de inactividad durante ope
 
 ## <a name="guest-driver-installation"></a>Instalación del controlador de invitado 
 
-### <a name="amd-mi25"></a>AMD Mi25
-En el artículo [Instalación de controladores de GPU de AMD en máquinas virtuales de la serie N con Windows](https://docs.microsoft.com/azure/virtual-machines/windows/n-series-amd-driver-setup) se proporcionan instrucciones sobre cómo instalar el controlador para AMD Radeon Instinct Mi25 en la máquina virtual habilitada para la GPU-P NVv4 junto con los pasos para comprobar la instalación del controlador. Esta extensión solo funciona en modo conectado.
+### <a name="amd-mi25"></a>AMD MI25
+En el artículo [Instalación de controladores de GPU de AMD en máquinas virtuales de la serie N con Windows](https://docs.microsoft.com/azure/virtual-machines/windows/n-series-amd-driver-setup) se proporcionan instrucciones sobre cómo instalar el controlador para AMD Radeon Instinct MI25 en la máquina virtual habilitada para la GPU-P NVv4 junto con los pasos para comprobar la instalación del controlador. Esta extensión solo funciona en modo conectado.
 
 ### <a name="nvidia"></a>NVIDIA
 

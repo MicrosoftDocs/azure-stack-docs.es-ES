@@ -7,12 +7,12 @@ ms.date: 07/14/2020
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 07/10/2020
-ms.openlocfilehash: 54732e12b330eeda8ba65e9b4add0b78547ac891
-ms.sourcegitcommit: 635c8c69d90b7e941659d54141d9f1c58f51cf45
+ms.openlocfilehash: 71b097b46d388371ef997288f43474873d92af85
+ms.sourcegitcommit: cdfc7bf5fee5e6cb4c531ba58d23a83c36be7de4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87477631"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88251415"
 ---
 # <a name="add-a-custom-vm-image-to-azure-stack-hub"></a>Adición de una imagen de máquina virtual personalizada a Azure Stack Hub
 
@@ -36,7 +36,7 @@ Las imágenes personalizadas presentan dos formas: **generalizada** y **especial
 
 #### <a name="vhd-is-from-outside-azure"></a>El disco duro virtual está fuera de Azure
 
-Siga los pasos descritos en [Carga de un VHD generalizado y su uso para crear máquinas virtuales nuevas en Azure](/azure/virtual-machines/windows/upload-generalized-managed) para utilizar **Sysprep** correctamente en el disco duro virtual y convertirlo en generalizado.
+Siga los pasos descritos en [Preparación de un VHD o un VHDX de Windows antes de cargarlo en Azure](/azure/virtual-machines/windows/prepare-for-upload-vhd-image) para generalizar correctamente el disco duro virtual antes de la carga.
 
 #### <a name="vhd-is-from-azure"></a>El disco duro virtual es de Azure
 

@@ -3,16 +3,16 @@ title: Problemas conocidos de Azure Stack Hub
 description: Obtenga información sobre los problemas conocidos de las versiones de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 08/10/2020
+ms.date: 08/13/2020
 ms.author: sethm
 ms.reviewer: sranthar
-ms.lastreviewed: 08/10/2020
-ms.openlocfilehash: 78426f8492cd569ea7f67def9db432da2509b732
-ms.sourcegitcommit: 673d9b7cf723bc8ef6c04aee5017f539a815da51
+ms.lastreviewed: 08/13/2020
+ms.openlocfilehash: 2513fe687bdfc08fe34a4c0cf05e388b84947fee
+ms.sourcegitcommit: 77f53d8f4188feea7dd2197650ee860104b1e2aa
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88110508"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501065"
 ---
 # <a name="azure-stack-hub-known-issues"></a>Problemas conocidos de Azure Stack Hub
 
@@ -20,11 +20,11 @@ En este artículo se enumeran los problemas conocidos de las versiones de Azure 
 
 Para tener acceso a los problemas conocidos de una versión diferente, use la lista desplegable del selector de versiones encima de la tabla de contenido de la izquierda.
 
-::: moniker range=">=azs-1910"
+::: moniker range=">=azs-1908"
 > [!IMPORTANT]  
 > Revise esta sección antes de aplicar la actualización.
 ::: moniker-end
-::: moniker range="<azs-1910"
+::: moniker range="<azs-1908"
 > [!IMPORTANT]  
 > Si a su instancia le faltan más de dos actualizaciones de Azure Stack Hub, se considera que no cumple los requisitos. [Para recibir soporte técnico, deberá actualizarla al menos a la versión mínima admitida.](azure-stack-servicing-policy.md#keep-your-system-under-support) 
 ::: moniker-end
@@ -58,23 +58,18 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 
 ### <a name="network-security-groups"></a>Grupos de seguridad de red
 
-- Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: No se puede crear una regla **DenyAllOutbound** explícita en un grupo de seguridad de red, ya que esto impedirá todas las comunicaciones internas con la infraestructura necesarias para que se complete la implementación de la máquina virtual.
-- Repetición: Comunes
-
-### <a name="cannot-delete-an-nsg-if-nics-not-attached-to-running-vm"></a>No se puede eliminar un grupo de seguridad de red si las NIC no están conectadas a la máquina virtual en ejecución
+#### <a name="cannot-delete-an-nsg-if-nics-not-attached-to-running-vm"></a>No se puede eliminar un grupo de seguridad de red si las NIC no están conectadas a la máquina virtual en ejecución
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: al desasociar un grupo de seguridad de red y una NIC que no están conectadas a una máquina virtual en ejecución, se produce un error en la operación de actualización (PUT) de ese objeto en el nivel de la controladora de red. El grupo de seguridad de red se actualizará en el nivel del proveedor de recursos de red, pero no en la controladora de red, por lo que este grupo pasará a un estado de error.
 - Corrección: conecte las NIC asociadas al grupo de seguridad de red que se debe quitar con las máquinas virtuales en ejecución y desasocie este grupo o quite todas las NIC asociadas a él.
 - Repetición: Comunes
 
-### <a name="network-interface"></a>interfaz de red
-
-#### <a name="primary-network-interface"></a>Interfaz de red principal
+#### <a name="denyalloutbound-rule-cannot-be-created"></a>No se puede crear la regla DenyAllOutbound
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: No se puede cambiar la NIC principal de una máquina virtual. La eliminación o desasociación de la NIC principal provoca problemas al iniciar la máquina virtual.
+- Causa: No se puede crear una regla **DenyAllOutbound** explícita para Internet en un grupo de seguridad de red durante la creación de una máquina virtual, ya que esto impedirá las comunicaciones necesarias para que se complete la implementación de la máquina virtual.
+- Corrección: Permita el tráfico saliente a Internet durante la creación de la máquina virtual y modifique el grupo de seguridad de red para bloquear el tráfico necesario una vez completada la creación de la máquina virtual.
 - Repetición: Comunes
 
 ### <a name="virtual-network-gateway"></a>Puerta de enlace de red virtual
@@ -89,13 +84,28 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
   - [Configuración de BGP en Azure Stack Hub](../user/azure-stack-vpn-gateway-settings.md#gateway-requirements)
   - [Circuitos ExpressRoute](azure-stack-connect-expressroute.md)
   - [Especificación de directivas de IPsec o IKE personalizadas](../user/azure-stack-vpn-gateway-settings.md#ipsecike-parameters)
+  
+### <a name="load-balancer"></a>Load Balancer
+
+#### <a name="load-balancer-directing-traffic-to-one-backend-vm-in-specific-scenarios"></a>Load Balancer dirige el tráfico a una máquina virtual de back-end en escenarios específicos
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas. 
+- Causa: Al habilitar la **afinidad de sesión** en un equilibrador de carga, el hash de tupla 2 emplea la dirección IP física en lugar de las IP privadas asignadas a las máquinas virtuales. En escenarios en los que el tráfico dirigido al equilibrador de carga llega a través de una VPN, o si todas las máquinas virtuales cliente (IP de origen) residen en el mismo nodo y la afinidad de sesión está habilitada, todo el tráfico se dirige a una máquina virtual de back-end.
+- Repetición: Comunes
+
+#### <a name="public-ip"></a>Dirección IP pública
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: el valor **IdleTimeoutInMinutes** de una dirección IP pública que está asociada a un equilibrador de carga no se puede cambiar. La operación pone a la dirección IP pública en estado de error.
+- Corrección: Para devolverla a un estado correcto, cambie el valor **IdleTimeoutInMinutes** en la regla del equilibrador de carga que hace referencia a la dirección IP pública a su valor original (el valor predeterminado es 4 minutos).
+- Repetición: Comunes
 
 ## <a name="compute"></a>Proceso
 
 ### <a name="nvv4-vm-size-on-portal"></a>Tamaño de máquina virtual NVv4 en el portal
 
 - Aplicable a: Este problema se aplica a la versión 2002 y versiones posteriores.
-- Causa: Durante la creación de una máquina virtual, verá el tamaño de máquina virtual: NV4as_v4. Los clientes que tienen el hardware necesario para la versión preliminar de la GPU de Azure Stack Hub basada en el procesador AMD Mi25 pueden realizar una implementación correcta de la máquina virtual. Todos los demás clientes recibirán un error de implementación con este tamaño de máquina virtual.
+- Causa: Durante la creación de una máquina virtual, verá el tamaño de máquina virtual: NV4as_v4. Los clientes que tienen el hardware necesario para la versión preliminar de la GPU de Azure Stack Hub basada en el procesador AMD MI25 pueden realizar una implementación correcta de la máquina virtual. Todos los demás clientes recibirán un error de implementación con este tamaño de máquina virtual.
 - Corrección: Por diseño como preparación para la versión preliminar de la GPU de Azure Stack Hub.
 
 ### <a name="consumed-compute-quota"></a>Cuota de proceso consumida
@@ -179,8 +189,9 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 
 ### <a name="denyalloutbound-rule-cannot-be-created"></a>No se puede crear la regla DenyAllOutbound
 
-- Aplicable a: este problema se aplica a todas las versiones admitidas. 
-- Causa: No se puede crear una regla **DenyAllOutbound** explícita en un grupo de seguridad de red, ya que esto impedirá todas las comunicaciones internas con la infraestructura necesarias para que se complete la implementación de la máquina virtual.
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: No se puede crear una regla **DenyAllOutbound** explícita para Internet en un grupo de seguridad de red durante la creación de una máquina virtual, ya que esto impedirá las comunicaciones necesarias para que se complete la implementación de la máquina virtual.
+- Corrección: Permita el tráfico saliente a Internet durante la creación de la máquina virtual y modifique el grupo de seguridad de red para bloquear el tráfico necesario una vez completada la creación de la máquina virtual.
 - Repetición: Comunes
 
 ### <a name="icmp-protocol-not-supported-for-nsg-rules"></a>Protocolo ICMP no compatible con las reglas del grupo de seguridad de red
@@ -253,7 +264,7 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 ### <a name="nvv4-vm-size-on-portal"></a>Tamaño de máquina virtual NVv4 en el portal
 
 - Aplicable a: este problema se aplica a la versión 2002 y posteriores.
-- Causa: Durante la creación de una máquina virtual, verá el tamaño de máquina virtual: NV4as_v4. Los clientes que tienen el hardware necesario para la versión preliminar de la GPU de Azure Stack Hub basada en el procesador AMD Mi25 pueden realizar una implementación correcta de la máquina virtual. Todos los demás clientes recibirán un error de implementación con este tamaño de máquina virtual.
+- Causa: Durante la creación de una máquina virtual, verá el tamaño de máquina virtual: NV4as_v4. Los clientes que tienen el hardware necesario para la versión preliminar de la GPU de Azure Stack Hub basada en el procesador AMD MI25 pueden realizar una implementación correcta de la máquina virtual. Todos los demás clientes recibirán un error de implementación con este tamaño de máquina virtual.
 - Corrección: Por diseño como preparación para la versión preliminar de la GPU de Azure Stack Hub.
 
 ### <a name="vm-boot-diagnostics"></a>Diagnósticos de arranque de VM
@@ -554,6 +565,195 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 <!-- ### Marketplace -->
 ::: moniker-end
 
+::: moniker range="azs-1908"
+## <a name="1908-update-process"></a>Proceso de actualización de 1908
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Al intentar instalar la actualización de Azure Stack Hub, es posible que se produzca un error en el estado de esa actualización y dicho estado cambie a **PreparationFailed**. La causa es que el proveedor de recursos de actualización (URP) no se puede transferir correctamente desde el contenedor de almacenamiento a un recurso compartido de infraestructura interno para su procesamiento.
+- Corrección: A partir de la versión 1901 (1.1901.0.95), para solucionar este problema, puede hacer clic en **Actualizar ahora** de nuevo (en lugar de en **Reanudar**). A continuación, URP limpia los archivos del intento anterior y vuelve a iniciar la descarga. Si el problema persiste, recomendamos cargar manualmente la actualización siguiendo la [sección de instalación de actualizaciones](azure-stack-apply-updates.md#install-updates-and-monitor-progress).
+- Repetición: Comunes
+
+## <a name="portal"></a>Portal
+
+### <a name="administrative-subscriptions"></a>Suscripciones administrativas
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Las dos suscripciones administrativas que se incluyeron con la versión 1804 no deberían usarse. Los tipos de suscripción son **suscripción de medición** y **suscripción de consumo**.
+- Corrección: Si tiene recursos que se ejecutan en estas dos suscripciones, vuelva a crearlos en las suscripciones de usuario.
+- Repetición: Comunes
+
+### <a name="subscriptions-properties-blade"></a>Hoja de propiedades de suscripciones
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: en el portal de administrador, la hoja **Propiedades** de las suscripciones no se carga correctamente.
+- Corrección: puede ver estas propiedades de suscripciones en el panel **Essentials** (Información esencial) de la hoja **Introducción a las suscripciones**.
+- Repetición: Comunes
+
+### <a name="duplicate-subscription-button-in-lock-blade"></a>Botón Duplicar suscripción en la hoja Bloqueo
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: en el portal del administrador, la hoja **Bloqueo** para las suscripciones de usuario tiene dos botones que muestran **Suscripción**.
+- Repetición: Comunes
+
+### <a name="subscription-permissions"></a>Permisos de suscripción
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: No puede ver los permisos de la suscripción mediante los portales de Azure Stack Hub.
+- Corrección: Use [PowerShell para verificar los permisos](/powershell/module/azurerm.resources/get-azurermroleassignment).
+- Repetición: Comunes
+
+### <a name="storage-account-settings"></a>Configuración de cuentas de almacenamiento
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, la hoja **Configuración** de la cuenta de almacenamiento muestra una opción para cambiar el **tipo de transferencia de seguridad**. La característica no se admite actualmente en Azure Stack Hub.
+- Repetición: Comunes
+
+### <a name="upload-blob"></a>Carga de blob
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, al intentar cargar un blob mediante la opción **OAuth(preview)** , la tarea genera un mensaje de error.
+- Corrección: Cargue el blob mediante la opción SAS.
+- Repetición: Comunes
+
+### <a name="alert-for-network-interface-disconnected"></a>Alerta de interfaz de red desconectada
+
+- Aplicable a: este problema se aplica a la versión 1908.
+- Causa: cuando se desconecta un cable de un adaptador de red, no se muestra ninguna alerta en el portal de administración. Este problema se debe a que este error está deshabilitado de forma predeterminada en Windows Server 2019.
+- Repetición: Comunes
+
+## <a name="networking"></a>Redes
+
+### <a name="load-balancer"></a>Load Balancer
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas. 
+- Causa: al agregar máquinas virtuales del conjunto de disponibilidad al grupo back-end de un equilibrador de carga, se muestra un mensaje de error en el portal que indica **No se pudo guardar el grupo back-end de equilibradores de carga**. Se trata de un problema cosmético en el portal; la funcionalidad existe y las máquinas virtuales se agregan correctamente al grupo back-end de modo interno. 
+- Repetición: Comunes
+
+### <a name="network-security-groups"></a>Grupos de seguridad de red
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas. 
+- Causa: No se puede crear una regla **DenyAllOutbound** explícita en un grupo de seguridad de red, ya que esto impedirá todas las comunicaciones internas con la infraestructura necesarias para que se complete la implementación de la máquina virtual.
+- Repetición: Comunes
+
+### <a name="service-endpoints"></a>Puntos de conexión del servicio
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, la hoja **Red virtual** muestra una opción para usar **puntos de conexión de servicio**. Esta característica no se admite actualmente en Azure Stack Hub.
+- Repetición: Comunes
+
+### <a name="cannot-delete-an-nsg-if-nics-not-attached-to-running-vm"></a>No se puede eliminar un grupo de seguridad de red si las NIC no están conectadas a la máquina virtual en ejecución
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: al desasociar un grupo de seguridad de red y una NIC que no están conectadas a una máquina virtual en ejecución, se produce un error en la operación de actualización (PUT) de ese objeto en el nivel de la controladora de red. El grupo de seguridad de red se actualizará en el nivel del proveedor de recursos de red, pero no en la controladora de red, por lo que este grupo pasará a un estado de error.
+- Corrección: conecte las NIC asociadas al grupo de seguridad de red que se debe quitar con las máquinas virtuales en ejecución y desasocie este grupo o quite todas las NIC asociadas a él.
+- Repetición: Comunes
+
+### <a name="network-interface"></a>interfaz de red
+
+#### <a name="addingremoving-network-interface"></a>Incorporación o eliminación de una interfaz de red
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: No se puede agregar una nueva interfaz de red a una VM cuyo estado es **En ejecución**.
+- Corrección: Detenga la máquina virtual antes de agregar o quitar una interfaz de red.
+- Repetición: Comunes
+
+#### <a name="primary-network-interface"></a>Interfaz de red principal
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: No se puede agregar una nueva interfaz de red a una VM cuyo estado es **En ejecución**.
+- Corrección: Detenga la máquina virtual antes de agregar o quitar una interfaz de red.
+- Repetición: Comunes
+
+### <a name="virtual-network-gateway"></a>Puerta de enlace de red virtual
+
+#### <a name="next-hop-type"></a>Tipo de próximo salto
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: en el portal de usuarios, cuando se crea una tabla de rutas, aparece **Puerta de enlace de red virtual** como una de las opciones de tipo de próximo salto; sin embargo, esta opción no se admite en Azure Stack Hub.
+- Repetición: Comunes
+
+#### <a name="alerts"></a>Alertas
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, la hoja **Puerta de enlace de red virtual** muestra una opción para usar **alertas**. Esta característica no se admite actualmente en Azure Stack Hub.
+- Repetición: Comunes
+
+#### <a name="active-active"></a>Activo-activo
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, durante la creación, y en el menú de recursos de **Puerta de enlace de red virtual**, verá una opción para habilitar la configuración **activa-activa**. Esta característica no se admite actualmente en Azure Stack Hub.
+- Repetición: Comunes
+
+#### <a name="vpn-troubleshooter"></a>Solucionador de problemas de VPN
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: En el portal de usuarios, la hoja **Conexiones** muestra una característica denominada **Solucionador de problemas de VPN**. Esta característica no se admite actualmente en Azure Stack Hub.
+- Repetición: Comunes
+
+#### <a name="documentation"></a>Documentación
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Los vínculos de documentación de la página de introducción a la Puerta de enlace de red virtual enlazan a la documentación específica de Azure en lugar de a la de Azure Stack Hub. Use los vínculos siguientes para consultar la documentación de Azure Stack Hub:
+
+  - [SKU de puerta de enlace](../user/azure-stack-vpn-gateway-about-vpn-gateways.md#gateway-skus)
+  - [Conexiones de alta disponibilidad](../user/azure-stack-vpn-gateway-about-vpn-gateways.md#gateway-availability)
+  - [Configuración de BGP en Azure Stack Hub](../user/azure-stack-vpn-gateway-settings.md#gateway-requirements)
+  - [Circuitos ExpressRoute](azure-stack-connect-expressroute.md)
+  - [Especificación de directivas de IPsec o IKE personalizadas](../user/azure-stack-vpn-gateway-settings.md#ipsecike-parameters)
+
+## <a name="compute"></a>Proceso
+
+### <a name="vm-boot-diagnostics"></a>Diagnósticos de arranque de VM
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Al crear una nueva máquina virtual Windows, puede aparecer el siguiente error: **Failed to start virtual machine 'vm-name'. Error: Failed to update serial output settings for VM 'vm-name'** (No se pudo iniciar la máquina virtual "vm-name". No se pudo actualizar la configuración de salida de serie de la VM 'vm-name'). El error se produce si habilita el diagnóstico de arranque en una VM, pero elimina la cuenta de almacenamiento de diagnósticos de arranque.
+- Corrección: Vuelva a crear la cuenta de almacenamiento con el mismo nombre que usó anteriormente.
+- Repetición: Comunes
+
+### <a name="virtual-machine-scale-set"></a>Conjunto de escalado de máquina virtual
+
+#### <a name="create-failures-during-patch-and-update-on-4-node-azure-stack-hub-environments"></a>Creación de errores durante la revisión y actualización de entornos de Azure Stack Hub de 4 nodos
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: La creación de máquinas virtuales en un conjunto de disponibilidad de 3 dominios de error y la creación de una instancia de conjunto de escalado de máquinas virtuales genera un error **FabricVmPlacementErrorUnsupportedFaultDomainSize** durante el proceso de actualización en un entorno de Azure Stack Hub de 4 nodos.
+- Corrección: Se pueden crear VM únicas en un conjunto de disponibilidad con 2 dominios de error correctamente. Sin embargo, la creación de instancias del conjunto de escalado todavía no está disponible durante el proceso de actualización en una instancia de Azure Stack Hub de 4 nodos.
+
+### <a name="ubuntu-ssh-access"></a>Acceso a SSH en Ubuntu
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Una VM de Ubuntu 18.04 creada con la autorización de SSH habilitada no le permite usar las claves SSH para iniciar sesión.
+- Corrección: Utilice el acceso a la VM para la extensión de Linux a fin de implementar las claves SSH después del aprovisionamiento o utilice la autenticación basada en contraseña.
+- Repetición: Comunes
+
+### <a name="virtual-machine-scale-set-reset-password-does-not-work"></a>La contraseña de restablecimiento del conjunto de escalado de máquinas virtuales no funciona
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Aparece una nueva hoja para restablecer la contraseña en la interfaz de usuario del conjunto de escalado, pero Azure Stack Hub todavía no admite el restablecimiento de contraseña en un conjunto de escalado.
+- Corrección: Ninguno.
+- Repetición: Comunes
+
+### <a name="rainy-cloud-on-scale-set-diagnostics"></a>Nube con lluvia en el diagnóstico del conjunto de escalado
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: La página de información general del conjunto de escalado de máquinas virtuales muestra un gráfico vacío. Al hacer clic en el gráfico vacío, se abre una hoja de "nube de lluvia". Este es el gráfico de información de diagnóstico del conjunto de escalado, como el porcentaje de CPU, y no es una característica admitida en la compilación actual de Azure Stack Hub.
+- Corrección: Ninguno.
+- Repetición: Comunes
+
+### <a name="virtual-machine-diagnostic-settings-blade"></a>Hoja de configuración de diagnóstico de la máquina virtual
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.    
+- Causa: La hoja de configuración de diagnóstico de la máquina virtual tiene una pestaña **Receptor**, que solicita una **Cuenta de Application Insights**. Este es el resultado de una nueva hoja y aún no se admite en Azure Stack Hub.
+- Corrección: Ninguno.
+- Repetición: Comunes
+
+<!-- ## Storage -->
+<!-- ## SQL and MySQL-->
+<!-- ## App Service -->
+<!-- ## Usage -->
+<!-- ### Identity -->
+<!-- ### Marketplace -->
+::: moniker-end
+
 ::: moniker range=">=azs-1908"
 ## <a name="archive"></a>Archivar
 
@@ -568,9 +768,6 @@ Para acceder a los problemas conocidos archivados de una versión anterior, use 
 <!------------------------------------------------------------>
 <!------------------- UNSUPPORTED VERSIONS ------------------->
 <!------------------------------------------------------------>
-::: moniker range="azs-1908"
-## <a name="1908-archived-known-issues"></a>Problemas conocidos archivados de la compilación 1908
-::: moniker-end
 ::: moniker range="azs-1907"
 ## <a name="1907-archived-known-issues"></a>Problemas conocidos archivados de la compilación 1907
 ::: moniker-end
@@ -617,6 +814,6 @@ Para acceder a los problemas conocidos archivados de una versión anterior, use 
 ## <a name="1802-archived-known-issues"></a>Problemas conocidos archivados de la compilación 1802
 ::: moniker-end
 
-::: moniker range="<azs-1910"
+::: moniker range="<azs-1908"
 Puede consultar los [problemas conocidos de las versiones anteriores de Azure Stack Hub en la Galería de TechNet](https://aka.ms/azsarchivedrelnotes). Estos documentos archivados se proporcionan únicamente con fines de referencia y no implican que estas versiones sean compatibles. Para obtener información sobre el soporte técnico de Azure Stack Hub, consulte [Directiva de mantenimiento de Azure Stack Hub](azure-stack-servicing-policy.md). Para obtener más ayuda, póngase en contacto con los servicios de asistencia al cliente de Microsoft.
 ::: moniker-end

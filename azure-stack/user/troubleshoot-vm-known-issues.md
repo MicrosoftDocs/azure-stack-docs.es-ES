@@ -7,12 +7,12 @@ ms.date: 07/09/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 07/09/2020
-ms.openlocfilehash: b21738b7e7083a582413993f45312379fedb6085
-ms.sourcegitcommit: ecec5eece56136d950e1c61c5115000ca87477ea
+ms.openlocfilehash: a33c732309d2b74ef341f248a7e89dcbd35a4221
+ms.sourcegitcommit: 77f53d8f4188feea7dd2197650ee860104b1e2aa
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86236348"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501048"
 ---
 # <a name="known-issues-vms-on-azure-stack-hub"></a>Problemas conocidos: Máquinas virtuales en Azure Stack Hub
 
@@ -32,7 +32,7 @@ En este artículo puede encontrar ayuda para solucionar problemas conocidos del 
 - **Aplicable a**  
     Este problema se aplica a Azure Stack Hub versión 2002 y posteriores.  
 - **Causa**  
-    Durante la creación de una máquina virtual, verá el tamaño de máquina virtual: NV4as_v4. Los clientes que tienen el hardware necesario para la versión preliminar de la GPU de Azure Stack Hub basada en el procesador AMD Mi25 pueden realizar una implementación correcta de la máquina virtual. Todos los demás clientes recibirán un error de implementación con este tamaño de máquina virtual.  
+    Durante la creación de una máquina virtual, verá el tamaño de máquina virtual: NV4as_v4. Los clientes que tienen el hardware necesario para la versión preliminar de la GPU de Azure Stack Hub basada en el procesador AMD MI25 pueden realizar una implementación correcta de la máquina virtual. Todos los demás clientes recibirán un error de implementación con este tamaño de máquina virtual.  
 - **Corrección**  
     Ninguno.  
 - **Repetición**  

@@ -7,12 +7,12 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: prchint
 ms.lastreviewed: 06/13/2019
-ms.openlocfilehash: 72bebdc5933f09aef58de25627d8b627d7987bdb
-ms.sourcegitcommit: 17ef9f9119f5fea9782adeefb9a430e6a3a650e6
+ms.openlocfilehash: 8cb772d76b4bfd01a7e0c260c6ff3d20bdec3e0a
+ms.sourcegitcommit: 977c47a5587a747dbd67aa110381759ba39044b7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88170428"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88512485"
 ---
 # <a name="azure-stack-hub-compute-capacity"></a>Capacidad de proceso de Azure Stack Hub
 
@@ -43,7 +43,7 @@ Si se alcanza el límite de escalado de la máquina virtual, se devolverán como
 
 ## <a name="consideration-for-batch-deployment-of-vms"></a>Consideración sobre la implementación por lotes de máquinas virtuales
 
-En versiones anteriores a 2002, el uso de 2 a 5 máquinas virtuales por lote con una diferencia de 5 minutos entre los lotes proporcionaba implementaciones de máquina virtual confiables hasta alcanzar una escala de 700 máquinas virtuales. Con la versión 2005 de Azure Stack Hub, podemos aprovisionar máquinas virtuales de forma confiable en tamaños de lote de 50 con una diferencia de 5 minutos entre las implementaciones por lotes.
+En versiones anteriores a 2002, el uso de 2 a 5 máquinas virtuales por lote con una diferencia de 5 minutos entre los lotes proporcionaba implementaciones de máquina virtual confiables hasta alcanzar una escala de 700 máquinas virtuales. Con la versión 2005 de Azure Stack Hub, podemos aprovisionar máquinas virtuales de forma confiable en tamaños de lote de 40 con una diferencia de 5 minutos entre las implementaciones por lotes.
 
 ## <a name="considerations-for-deallocation"></a>Consideraciones para la desasignación
 

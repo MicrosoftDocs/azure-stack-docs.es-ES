@@ -3,16 +3,16 @@ title: Uso de Docker para ejecutar PowerShell en Azure Stack Hub
 description: Uso de Docker para ejecutar PowerShell en Azure Stack Hub
 author: mattbriggs
 ms.topic: how-to
-ms.date: 7/20/2020
+ms.date: 8/17/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 7/20/2020
-ms.openlocfilehash: e3efdd0e218ae82cfcea14b20f4b172e5cc87f32
-ms.sourcegitcommit: ad6bbb611ac671b295568d3f00a193b783470c68
+ms.lastreviewed: 8/17/2020
+ms.openlocfilehash: e803641b9d63a8b1136f720ce51eb5f7ca79c6e7
+ms.sourcegitcommit: 34db213dc6549f21662ed44d090f55359cfe8469
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87397352"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88564758"
 ---
 # <a name="use-docker-to-run-powershell-for-azure-stack-hub"></a>Uso de Docker para ejecutar PowerShell para Azure Stack Hub
 
@@ -65,7 +65,13 @@ El archivo Dockerfile abre la imagen de Microsoft *microsoft/windowsservercore*,
 4. Una vez compilada la imagen, para iniciar un contenedor interactivo, escriba:
 
     ```bash  
-        docker run -it azure-stack-powershell powershell
+    docker run -it azure-stack-powershell powershell
+    ```
+
+    Anote el nombre del contenedor. Puede usar el mismo contenedor en lugar de crear uno nuevo cada vez. Para ello, ejecute el siguiente comando de Docker:
+
+    ```bash  
+        docker exec -it "Container name" powershell
     ```
 
 5. El shell está listo para los cmdlets.
@@ -82,7 +88,8 @@ El archivo Dockerfile abre la imagen de Microsoft *microsoft/windowsservercore*,
     ```powershell
     $passwd = ConvertTo-SecureString <Secret> -AsPlainText -Force
     $pscredential = New-Object System.Management.Automation.PSCredential('<ApplicationID>', $passwd)
-    Connect-AzureRmAccount -ServicePrincipal -Credential $pscredential -TenantId <TenantID>
+    Add-AzureRMEnvironment -Name "AzureStackUser" -ArmEndpoint <Your Azure Resource Manager endoint>
+    Add-AzureRmAccount -EnvironmentName "AzureStackUser" -TenantId <TenantID> -ServicePrincipal -Credential $pscredential
     ```
 
    PowerShell devuelve el objeto de cuenta:
