@@ -135,6 +135,8 @@
                   href: azure-stack-manage-vm-disks.md
                 - name: Consideraciones sobre discos administrados
                   href: azure-stack-managed-disk-considerations.md
+                - name: Plantillas de discos administrados
+                  href: virtual-machines-use-managed-disks-template.md
                 - name: Eliminación de una máquina virtual con dependencias
                   href: delete-vm.md
                 - name: Protección de máquinas virtuales
