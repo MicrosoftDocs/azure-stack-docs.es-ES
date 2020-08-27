@@ -3,16 +3,16 @@ title: Implementación de F5 en dos instancias de Azure Stack Hub
 description: Aprenda a implementar de F5 en dos instancias de Azure Stack Hub.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 04/20/2020
+ms.date: 08/24/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 11/06/2019
-ms.openlocfilehash: cfbd828923c7653da0f0bfd86ee74703897996c7
-ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
+ms.openlocfilehash: 29f23f30fd154da33e4a39ab306a4edd9d921b9b
+ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81661440"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88920209"
 ---
 # <a name="how-to-deploy-f5-across-two-azure-stack-hub-instances"></a>Implementación de F5 en dos instancias de Azure Stack Hub
 
@@ -62,7 +62,7 @@ Impleméntelo en la instancias A y B de Azure Stack Hub.
 
     ![](./media/network-howto-f5/image4.png)
 
-    > [!Note]  
+    > [!NOTE]  
     > Cada implementación de BIG-IP suele tardar unos 20 minutos.
 
 ## <a name="configure-big-ip-appliances"></a>Configuración de dispositivos BIG-IP
@@ -90,7 +90,7 @@ Siga estos pasos para las instancias A y B de Azure Stack Hub.
 
 1. Inicie sesión en BIG-IP y cree un grupo de sincronización de DNS. Para obtener instrucciones, consulte [Creación de un grupo de sincronización de DNS de BIG-IP](https://f5-dns-automation-demo-12-1-x.readthedocs.io/en/latest/lab2/sync-group.html).
 
-    > [!Note]  
+    > [!NOTE]  
     > Puede encontrar la dirección IP local del dispositivo de BIG-IP en el grupo de recursos **F5-GSLB**. La interfaz de red es "f5stack1-ext" y desea conectarse a una dirección IP pública o privada (en función del acceso).
 
     ![](./media/network-howto-f5/image5.png)
@@ -113,7 +113,7 @@ Después de la instalación, tendrá que configurar los grupos de seguridad de r
 
 4. Implemente una carga de trabajo de aplicación web básica en el entorno de Azure Stack Hub para equilibrar la carga que hay detrás de BIG-IP. Puede encontrar un ejemplo de uso del servidor NGINX en [Implementación de NGINX y NGINX Plus en Docker](https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-docker/).
 
-    > [!Note]  
+    > [!NOTE]  
     > Implemente una instancia de NGINX en las instancias A y B de Azure Stack Hub.
 
 5. Después de implementar NGINX en un contenedor de Docker de una máquina virtual Ubuntu dentro de cada una de las instancias de Azure Stack Hub, compruebe que puede acceder a la página web predeterminada en los servidores.
@@ -143,7 +143,7 @@ Después de la instalación, tendrá que configurar los grupos de seguridad de r
     | Nombre | NGINX_Pool |
     | Health Monitor | HTTPS |
     | Nombre del nodo | NGINX |
-    | Dirección | \<la dirección IP privada de NGINX> |
+    | Dirección | \<your NGINX private IP address> |
     | Puerto de servicio | 443 |
 
 11. Seleccione **Finished** (Finalizado). Si se configura correctamente, el estado del grupo es verde.
@@ -161,7 +161,7 @@ Después de la instalación, tendrá que configurar los grupos de seguridad de r
     | Clave | Value |
     | --- | --- |
     |Nombre | NGINX |
-    |Dirección de destino | \<dirección IP propia de BIG-IP> |
+    |Dirección de destino | \<Self IP address of the BIG-IP> |
     |Puerto de servicio | 443 |
     |Perfil SSL (cliente) | clientssl |
     |Traducción de direcciones de origen | Asignación automática |

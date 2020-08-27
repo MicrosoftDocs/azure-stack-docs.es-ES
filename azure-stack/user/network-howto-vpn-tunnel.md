@@ -3,16 +3,16 @@ title: Configuración de un túnel de VPN de sitio a sitio en Azure Stack Hub
 description: Aprenda a configurar un túnel de VPN de sitio a sitio en Azure Stack Hub.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 04/20/2020
+ms.date: 08/24/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 09/19/2019
-ms.openlocfilehash: ccfab1377a21c9de1df46c9695d10e4afab84dea
-ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
+ms.openlocfilehash: 4ea38352ca26c94c02f588a786122e51494fadc2
+ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81661495"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88920855"
 ---
 # <a name="how-to-set-up-a-multiple-site-to-site-vpn-tunnel-in-azure-stack-hub"></a>Configuración de un túnel de VPN de sitio a sitio en Azure Stack Hub
 
@@ -69,7 +69,7 @@ Este proceso tiene varios pasos. Para esta solución usará el portal de Azure S
 
 Puede usar el mismo proceso que **WebTier** pero parámetros diferentes, como se muestra aquí:
 
-> [!Note]  
+> [!NOTE]  
 > El espacio de direcciones de AppTier será **10.20.0.0/16** y puede ver que la ubicación del grupo de recursos es **WestUS2**.
 
 ![](./media/azure-stack-network-howto-vpn-tunnel/image6.png)
@@ -144,7 +144,7 @@ Si ve la salida de la extensión del script personalizado, puede ver el túnel q
 
 2.  Si copia el script de `Add-Site2SiteIKE.ps1` del repositorio y lo ejecuta localmente, el script instala **WindowsFeature** y **RemoteAccess**.
 
-    > [!Note]
+    > [!NOTE]
     > Dependiendo de su entorno, es posible que tenga que reiniciar el sistema.
 
     Como referencia, consulte la configuración de red de la máquina local.
@@ -193,10 +193,10 @@ Si ve la salida de la extensión del script personalizado, puede ver el túnel q
 
     ![](./media/azure-stack-network-howto-vpn-tunnel/image23.png)
 
-    > [!Note]  
+    > [!NOTE]  
     > Se puede probar RDP tanto desde una máquina hasta la segunda como desde la segunda hasta la primera.
 
-    > [!Note]  
+    > [!NOTE]  
     > Para implementar esta solución en un entorno local, necesitará implementar rutas de la red remota de Azure Stack Hub en la infraestructura que cambia o, como mínimo, en máquinas virtuales concretas.
 
 ### <a name="deploying-a-gre-tunnel"></a>Implementación de un túnel GRE

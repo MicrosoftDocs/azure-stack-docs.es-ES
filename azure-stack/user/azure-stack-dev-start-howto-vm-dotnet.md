@@ -3,16 +3,16 @@ title: Implementación de una aplicación web de C# ASP.NET en una máquina virt
 description: Implemente una aplicación web de C# ASP.NET en una máquina virtual en Azure Stack Hub.
 author: mattbriggs
 ms.topic: overview
-ms.date: 04/20/2020
+ms.date: 08/24/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 9b6ac818a4347b50cc68fcb618ce50f2aa31afc8
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.openlocfilehash: ec60c16ac4bff55064cd0b0643b2aafb101dd5c2
+ms.sourcegitcommit: 65a115d1499b5fe16b6fe1c31cce43be21d05ef8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86567576"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88819157"
 ---
 # <a name="deploy-a-c-aspnet-web-app-to-a-vm-in-azure-stack-hub"></a>Implementación de una aplicación web de C# ASP.NET en una máquina virtual en Azure Stack Hub
 

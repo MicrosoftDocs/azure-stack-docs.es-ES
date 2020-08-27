@@ -3,16 +3,16 @@ title: Configuración de una puerta de enlace de VPN para Azure Stack Hub
 description: Aprenda a configurar una puerta de enlace de VPN para Azure Stack Hub.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 04/20/2020
+ms.date: 08/24/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: 9b7086f63e22ede89ae0ed21be1aec8453532de6
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.openlocfilehash: a2ec06ef5e01fa2614a2e54af03162a5b4dddbdf
+ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86567457"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88920804"
 ---
 # <a name="set-up-vpn-gateway-for-azure-stack-hub-using-fortigate-nva"></a>Configuración de una puerta de enlace de VPN para Azure Stack Hub mediante la aplicación virtual de red FortiGate
 
@@ -22,14 +22,14 @@ En este artículo se describe cómo crear una conexión VPN con su instancia de 
 
 -  Acceso a un sistema integrado de Azure Stack Hub con capacidad disponible para implementar los requisitos de proceso, red y recursos necesarios para esta solución. 
 
-    > [!Note]  
+    > [!NOTE]  
     > Estas instrucciones **no** funcionan con un Kit de desarrollo de Azure Stack (ASDK) debido a las limitaciones de red en ASDK. Para más información, consulte [Requisitos y consideraciones de ASDK](../asdk/asdk-deploy-considerations.md).
 
 -  Acceso a un dispositivo VPN en la red local que hospeda el sistema integrado de Azure Stack Hub. El dispositivo debe crear un túnel IPSec que cumpla los parámetros descritos en [Parámetros de implementación](#deployment-parameters).
 
 -  Una solución de aplicación virtual de red (NVA) disponible en Marketplace de Azure Stack Hub. Una NVA controla el flujo del tráfico de red desde una red perimetral a otras redes o subredes. En este procedimiento se usa la [Solución de máquina virtual única del firewall de próxima generación FortiGate de Fortinet](https://azuremarketplace.microsoft.com/marketplace/apps/fortinet.fortinet-FortiGate-singlevm).
 
-    > [!Note]  
+    > [!NOTE]  
     > Si **Fortinet FortiGate-VM For Azure BYOL** y **FortiGate NGFW - Single VM Deployment (BYOL)** no están disponibles en Marketplace de Azure Stack Hub, póngase en contacto con su operador de la nube.
 
 -  Necesitará al menos dos archivos de licencia de FortiGate disponibles para activar la aplicación virtual de red FortiGate. Para obtener información sobre cómo adquirir estas licencias, consulte el artículo de la biblioteca de documentos de Fortinet [Registro y descarga de la licencia](https://docs2.fortinet.com/vm/azure/FortiGate/6.2/azure-cookbook/6.2.0/19071/registering-and-downloading-your-license).
@@ -58,7 +58,7 @@ En la tabla siguiente se resumen los parámetros que se usan en estas implementa
 | Nombre de la dirección IP pública | forti1-publicip1 |
 | Tipo de dirección IP pública | estática |
 
-> [!Note]
+> [!NOTE]
 > \* Elija un espacio de direcciones y prefijos de subred diferentes si `172.16.0.0/16` se superpone con la red local o el grupo de VIP de Azure Stack Hub.
 
 ## <a name="deploy-the-fortigate-ngfw-marketplace-items"></a>Implementación de los elementos de Marketplace de FortiGate NGFW
@@ -176,7 +176,7 @@ Una vez que haya activado las NVA, cree un túnel VPN IPSec en la NVA.
 
 16. Seleccione **Pre-shared Key** (Clave compartida previamente) y escriba (y anote) una clave compartida previamente. 
 
-    > [!Note]  
+    > [!NOTE]  
     > Necesitará esta clave para configurar la conexión en el dispositivo VPN local, es decir, deben coincidir *exactamente*.
 
     ![](./media/azure-stack-network-howto-vnet-to-onprem/image17.png)

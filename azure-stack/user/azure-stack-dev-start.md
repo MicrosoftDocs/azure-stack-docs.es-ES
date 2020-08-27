@@ -7,12 +7,12 @@ ms.date: 7/23/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: ac9e373881ef5d7c88a0397130fdfd560e41e352
-ms.sourcegitcommit: f2a5ce52fcf69e05fe89be8211b7360de46f4a94
+ms.openlocfilehash: f54c8a442b9df31ff112f1e385b15c441c7c0ffd
+ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87133748"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88920685"
 ---
 # <a name="set-up-a-development-environment-in-azure-stack-hub"></a>Configuración de un entorno de desarrollo en Azure Stack Hub 
 
@@ -106,7 +106,7 @@ Si usa un máquina Windows 10, puede trabajar con PowerShell 5.0 y Visual Studio
 
 Si utiliza una máquina Linux, puede trabajar con la CLI de Azure, Visual Studio Code o su propio entorno de desarrollo integrado preferido. 
 
-> [!Note]   
+> [!NOTE]   
 > Si usa una máquina Linux con el ASDK, el equipo remoto deberá estar en la misma red que el ASDK. No podrá conectarse usando una conexión de red privada virtual. 
 
 ### <a name="set-up-your-tools"></a>Configuración de las herramientas 
@@ -135,7 +135,7 @@ Si utiliza una máquina Linux, puede trabajar con la CLI de Azure, Visual Studi
 
 Una máquina macOS le permitirá trabajar con la CLI de Azure y Visual Studio Code, o bien con su propio entorno de desarrollo integrado preferido. 
 
-> [!Note]   
+> [!NOTE]   
 > Si usa una máquina macOS con el ASDK, la máquina remota deberá estar en la misma red que el ASDK. No podrá conectarse usando una conexión de red privada virtual. 
 
 ### <a name="set-up-your-tools"></a>Configuración de las herramientas 

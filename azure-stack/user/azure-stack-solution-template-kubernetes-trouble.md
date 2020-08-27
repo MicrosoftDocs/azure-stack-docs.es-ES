@@ -4,19 +4,19 @@ description: Aprenda a solucionar problemas de implementación de Kubernetes en 
 author: mattbriggs
 ms.topic: article
 ms.author: mabrigg
-ms.date: 04/20/2020
+ms.date: 08/24/2020
 ms.reviewer: waltero
 ms.lastreviewed: 11/14/2019
-ms.openlocfilehash: 8342d8eccca348771630777ed212c18111f88bda
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.openlocfilehash: 9a88b6ff0e759c38ad62e6455cbee25eaa9be9eb
+ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86566726"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88920770"
 ---
 # <a name="troubleshoot-kubernetes-deployment-to-azure-stack-hub"></a>Solución de problemas de implementación de Kubernetes en Azure Stack Hub
 
-> [!Note]  
+> [!NOTE]  
 > Use únicamente el elemento Kubernetes de Marketplace de Azure Stack Hub para implementar clústeres como prueba de concepto. Para los clústeres de Kubernetes admitidos en Azure Stack Hub, utilice el [motor de AKS](azure-stack-kubernetes-aks-engine-overview.md).
 
 En este artículo se indica cómo solucionar los problemas de cualquier clúster de Kubernetes. Para empezar a solucionar problemas, examine los elementos necesarios para la implementación. Es posible que necesite recopilar los registros de implementación de Azure Stack Hub o de las máquinas virtuales Linux que hospedan Kubernetes. Para recuperar los registros de un punto de conexión administrativo, póngase en contacto con el administrador de Azure Stack Hub.
@@ -155,7 +155,7 @@ Siga estos pasos para recopilar y descargar los registros del clúster:
 
     El script del recopilador de registros también buscará errores en los archivos de registro e incluirá los pasos necesarios para solucionar cualquier problema, en caso de que sea conocido. Asegúrese de que ejecuta la versión más reciente del script para aumentar las probabilidades de encontrar problemas conocidos.
 
-> [!Note]  
+> [!NOTE]  
 > Consulte este [repositorio](https://github.com/msazurestackworkloads/azurestack-gallery/tree/master/diagnosis) de GitHub para obtener más detalles sobre el script del recopilador de registros.
 
 ## <a name="next-steps"></a>Pasos siguientes

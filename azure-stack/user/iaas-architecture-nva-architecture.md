@@ -3,16 +3,16 @@ title: Implementación de aplicaciones virtuales de red de alta disponibilidad e
 description: Aprenda a implementar aplicaciones virtuales de red de alta disponibilidad en Azure Stack Hub.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 04/20/2020
+ms.date: 08/24/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: 19cfee9cf4e2698bcb75cb7dd15a9439ed55341a
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.openlocfilehash: 6fdb1a5ff99b125b513bd4afc39570ee73c1c5b6
+ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86566097"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88920413"
 ---
 # <a name="deploy-highly-available-network-virtual-appliances-on-azure-stack-hub"></a>Implementación de aplicaciones virtuales de red de alta disponibilidad en Azure Stack Hub
 
@@ -78,7 +78,7 @@ En las dos arquitecturas de entrada y salida, había una red perimetral independ
 
 En la entrada y salida con la arquitectura de NVA de capa 7, las NVA procesan las solicitudes entrantes de un equilibrador de carga de capa 7. Las aplicaciones virtuales de red también procesan las solicitudes que salen de las máquinas virtuales de carga de trabajo en el grupo back-end del equilibrador de carga. Como el tráfico entrante se enruta con un equilibrador de carga de capa 7 y el tráfico saliente lo hace con un equilibrador de carga básico de Azure Stack Hub (SLB), las aplicaciones virtuales de red son las responsables de mantener la afinidad de la sesión. Es decir, el equilibrador de carga de capa 7 mantiene una asignación de solicitudes entrantes y salientes, de forma que pueda reenviar la respuesta correcta al solicitante original. Sin embargo, el equilibrador de carga interno no tiene acceso a las asignaciones del equilibrador de carga de capa 7, así que emplea su propia lógica para enviar las respuestas a las aplicaciones virtuales de red. Es posible que el equilibrador de carga envíe una respuesta a una aplicación virtual de red que inicialmente no recibió la solicitud del equilibrador de carga de capa 7. En este caso, las aplicaciones virtuales de red deben comunicarse y transferirse la respuesta entre ellos para que la aplicación virtual de red correcta pueda reenviar la respuesta al equilibrador de carga de capa 7.
 
-> [!Note]  
+> [!NOTE]  
 > Otra manera de resolver el problema del enrutamiento asimétrico es asegurarse de que las aplicaciones virtuales de red realicen la traducción de las direcciones de red de origen (SNAT). De esta forma, se reemplazaría la dirección IP de origen original del solicitante por una de las direcciones IP de la aplicación virtual de red usada en el flujo de entrada. Con ello se garantiza que pueda usar varias aplicaciones virtuales de red al mismo tiempo sin perder la simetría de la ruta.
 
 ## <a name="next-steps"></a>Pasos siguientes

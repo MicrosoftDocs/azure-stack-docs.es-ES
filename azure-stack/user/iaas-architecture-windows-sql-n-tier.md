@@ -3,16 +3,16 @@ title: Aplicación Windows de n niveles en Azure Stack Hub con SQL Server
 description: Obtenga información sobre cómo ejecutar una aplicación Windows de n niveles en Azure Stack Hub con SQL Server.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 04/20/2020
+ms.date: 08/24/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: 722c6dbc5d806e9d37817e5f9279e3e51a0ddc14
-ms.sourcegitcommit: 635c8c69d90b7e941659d54141d9f1c58f51cf45
+ms.openlocfilehash: f719ec7404e19d5e32f87e6fb9bfd5e41146abb0
+ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87477597"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88920073"
 ---
 # <a name="windows-n-tier-application-on-azure-stack-hub-with-sql-server"></a>Aplicación Windows de n niveles en Azure Stack Hub con SQL Server
 
@@ -114,7 +114,7 @@ Configure el grupo de disponibilidad AlwaysOn de SQL Server como sigue:
 
 4.  Cree una regla del equilibrador de carga para el puerto de escucha de SQL Server (puerto TCP 1433 de forma predeterminada). La regla del equilibrador de carga debe habilitar la *IP flotante*, también denominada Direct Server Return. Esto causa que la máquina virtual responda directamente al cliente, lo que permite establecer una conexión directa con la réplica principal.
 
-> [!Note]
+> [!NOTE]
 > Cuando la IP flotante está habilitada, el número de puerto de front-end debe ser el mismo que el número de puerto de back-end en la regla del equilibrador de carga.
 
 Cuando un cliente SQL intenta conectarse, el equilibrador de carga enruta la solicitud de conexión a la réplica principal. Si se produce una conmutación por error a otra réplica, el equilibrador de carga enruta automáticamente las nuevas solicitudes a una nueva réplica principal. Para más información, consulte [Configuración de un equilibrador de carga para Grupos de disponibilidad AlwaysOn de SQL Server](/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-alwayson-int-listener).

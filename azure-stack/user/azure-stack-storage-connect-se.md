@@ -3,16 +3,16 @@ title: Conexión del Explorador de Storage a una suscripción de Azure Stack Hub
 description: Aprenda a conectar el Explorador de Storage a una suscripción de Azure Stack Hub
 author: mattbriggs
 ms.topic: conceptual
-ms.date: 04/20/2020
+ms.date: 08/24/2020
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: c92b037d34026df65569747949cca98d75910fad
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.openlocfilehash: ff36107a50a534dbb14b77747839bf1aabd0ebbb
+ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86566794"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88920379"
 ---
 # <a name="connect-storage-explorer-to-an-azure-stack-hub-subscription-or-a-storage-account"></a>Conexión del Explorador de Storage a una suscripción de Azure Stack Hub o una cuenta de almacenamiento
 
@@ -29,7 +29,7 @@ Después de conectarse a una suscripción de Azure Stack Hub o a una cuenta de a
 
 Necesita acceso directo a Azure Stack Hub o una conexión VPN para que el Explorador de Storage pueda acceder a la suscripción de Azure Stack Hub. Para más información sobre cómo configurar una conexión VPN a Azure Stack Hub, consulte [Conexión a Azure Stack Hub con VPN](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn).
 
-> [!Note]  
+> [!NOTE]  
 > En el caso de ASDK, si se va a conectar ASDK mediante VPN, no utilice el certificado raíz (CA.cer) que se creó en el proceso de configuración de la VPN.  Este certificado tiene codificación DER y no permitirá que el Explorador de Storage recupere las suscripciones de Azure Stack Hub. Siga estos pasos para exportar un certificado codificado en base 64 para usarlo con el Explorador de Storage.
 
 En el caso de los sistemas integrados que están desconectados y para ASDK, se recomienda usar una entidad de certificación empresarial interna para exportar el certificado raíz en un formato de base 64 y, a continuación, importarlo en el Explorador de Azure Storage.  
@@ -89,7 +89,7 @@ Siga estos pasos para conectar el Explorador de Storage a una suscripción de Az
 
 ## <a name="connect-to-an-azure-stack-hub-subscription-with-ad-fs-account"></a>Conexión a una suscripción de Azure Stack Hub con una cuenta de AD FS
 
-> [!Note]  
+> [!NOTE]  
 > La experiencia de inicio de sesión de los Servicios de federación de Active Directory (AD FS) es compatible con el Explorador de Storage 1.2.0 o versiones más recientes con Azure Stack Hub 1804 u otras actualizaciones más recientes.
 Siga estos pasos para conectar el Explorador de Storage a una suscripción de Azure Stack Hub que pertenece a una cuenta de AD FS.
 

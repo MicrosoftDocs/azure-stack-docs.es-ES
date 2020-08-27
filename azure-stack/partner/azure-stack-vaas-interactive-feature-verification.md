@@ -4,17 +4,17 @@ titleSuffix: Azure Stack Hub
 description: Aprenda a crear pruebas de comprobación de características interactivas para Azure Stack Hub con validación como servicio.
 author: mattbriggs
 ms.topic: tutorial
-ms.date: 04/20/2020
+ms.date: 08/24/2020
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 10/28/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 5529164b909099156219086dd8a4895c223ed5a3
-ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
+ms.openlocfilehash: 52fa5bcb02632f2c04dffa389c6a859a409cf52a
+ms.sourcegitcommit: 4922a14fdbc8a3b67df065336e8a21a42f224867
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81661301"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88764841"
 ---
 # <a name="interactive-feature-verification-testing"></a>Pruebas de comprobación de características interactivas  
 

@@ -7,12 +7,12 @@ ms.date: 7/24/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 3/9/2020
-ms.openlocfilehash: d642f01ca55fc18b832a04328be835703dfb5dd2
-ms.sourcegitcommit: ad6bbb611ac671b295568d3f00a193b783470c68
+ms.openlocfilehash: 3419e701aede4864cac62ace216a574a6dcc1226
+ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87397556"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88920175"
 ---
 # <a name="run-a-windows-virtual-machine-on-azure-stack-hub"></a>Ejecución de una máquina virtual Windows en Azure Stack Hub
 
@@ -91,7 +91,7 @@ Incorpore sus máquinas virtuales a [Azure Security Center](/azure/security-cent
 
 **Control de acceso**. Use el [control de acceso basado en rol (RBAC)](/azure/active-directory/role-based-access-control-what-is) para controlar el acceso a los recursos de Azure. RBAC le permite asignar roles de autorización a los miembros de su equipo de DevOps. Por ejemplo, el rol de lector puede ver recursos de Azure pero no crearlos, administrarlos o eliminarlos. Algunos permisos son específicos para un tipo de recurso de Azure. Por ejemplo, el rol Colaborador de la máquina virtual puede reiniciar o desasignar una máquina virtual, restablecer la contraseña de administrador, crear una nueva máquina virtual, etc. Otros [roles de RBAC integrados](/azure/active-directory/role-based-access-built-in-roles) que pueden resultar útiles para esta arquitectura son, por ejemplo, el de [Usuario de DevTest Labs](/azure/active-directory/role-based-access-built-in-roles#devtest-labs-user) y el de [Colaborador de la red](/azure/active-directory/role-based-access-built-in-roles#network-contributor).
 
-> [!Note]  
+> [!NOTE]  
 > RBAC no limita las acciones que puede realizar un usuario que ha iniciado sesión en una máquina virtual. Esos permisos están determinados por el tipo de cuenta en el sistema operativo invitado.
 
 **Registros de auditoría**. Use los [registros de actividad](./azure-stack-metrics-azure-data.md?#activity-log) para ver las acciones de aprovisionamiento y otros eventos de la máquina virtual.

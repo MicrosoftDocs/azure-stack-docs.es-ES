@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: 58706a248036d38027208518177a89c69922591a
-ms.sourcegitcommit: db3c9179916a36be78b43a8a47e1fd414aed3c2e
+ms.openlocfilehash: 7ac497c75eb3a18dbade85e41ed5a5d214b5dd2c
+ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84146842"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88920753"
 ---
 # <a name="deploy-a-ruby-web-app-to-a-vm-in-azure-stack-hub"></a>Implementación de una aplicación web de Ruby en una máquina virtual en Azure Stack Hub
 
@@ -65,7 +65,7 @@ En este artículo se usa Ruby y la plataforma web Ruby on Rails.
     sudo gem install bundler
     ```
 
-    > [!Note]  
+    > [!NOTE]  
     > Mientras instala las dependencias de Ruby on Rails, es posible que deba ejecutar repetidamente `sudo gem install bundler`. Si se produce un error en la instalación, revise los registros de errores y resuelva los problemas.
 
 4. Valide la instalación. Aún conectado a la máquina virtual en la sesión SSH, introduzca el siguiente comando:

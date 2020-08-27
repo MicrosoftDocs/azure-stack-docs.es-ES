@@ -3,16 +3,16 @@ title: Replicación de recursos entre varias suscripciones de Azure Stack Hub
 description: Aprenda a replicar recursos mediante el conjunto de scripts del replicador de suscripciones de Azure Stack Hub.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 04/20/2020
+ms.date: 08/24/2020
 ms.author: mabrigg
 ms.reviewer: rtiberiu
 ms.lastreviewed: 11/07/2019
-ms.openlocfilehash: a20979ff0bb60f058658e9a0f9f540b2c0cb434e
-ms.sourcegitcommit: d930d52e27073829b8bf8ac2d581ec2accfa37e3
+ms.openlocfilehash: 7f3c3c2ff61b629d4942edcaf53100e6bb5e7eb5
+ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82173920"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88920600"
 ---
 # <a name="replicate-resources-using-the-azure-stack-hub-subscription-replicator"></a>Replicación de recursos mediante el replicador de suscripciones de Azure Stack Hub
 
@@ -80,7 +80,7 @@ Para ejecutar la herramienta del replicador de suscripciones de Azure (v3), debe
 
 Cuando el script termine de ejecutarse, habrá tres nuevas carpetas, **Deployment_Files**, **Parameter_Files** y **Custom_ARM_Templates**.
 
- > [!Note]  
+ > [!NOTE]  
  > Antes de ejecutar cualquiera de los scripts generados debe establecer el entorno correcto e iniciar sesión en la suscripción de destino (en la nueva instancia de Azure Stack Hub, por ejemplo) y establecer el directorio de trabajo en la carpeta **Deployment_Files**.
 
 Deployment_Files contendrá dos archivos **DeployResourceGroups.ps1** y **DeployResources.ps1**. Al ejecutar DeployResourceGroups.ps1, se implementarán los grupos de recursos. Al ejecutar DeployResources.ps1, se implementarán todos los recursos que se procesaron. En el caso de que la herramienta se ejecute con **All** (Todos) o **Microsoft.Compute/virtualMachines** como tipo de recurso, DeployResources.ps1 solicitará al usuario que escriba una contraseña de administrador de máquina virtual que se usará para crear todas las máquinas virtuales.
@@ -91,7 +91,7 @@ Deployment_Files contendrá dos archivos **DeployResourceGroups.ps1** y **Deploy
 
     ![Ejecute el script.](./media/azure-stack-network-howto-backup-replicator/image2.png)
 
-    > [!Note]  
+    > [!NOTE]  
     > No olvide configurar el entorno de origen y el contexto de la suscripción para la instancia de PS. 
 
 2.  Revise las carpetas recién creadas:
@@ -170,7 +170,7 @@ Al ejecutar la herramienta con **All** (Todos) como tipo de recurso, se seguirá
             - Configuración de grupos de seguridad de red  
             - Configuración del conjunto de disponibilidad  
 
-> [!Note]  
+> [!NOTE]  
 > Solo crea discos administrados para discos del sistema operativo y discos de datos. Actualmente, no se admite el uso de cuentas de almacenamiento. 
 
 ### <a name="limitations"></a>Limitaciones

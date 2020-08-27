@@ -3,16 +3,16 @@ title: Registro de inquilinos en Azure Stack Hub para el seguimiento de uso
 description: Aprenda a registrar inquilinos y cómo se realiza el seguimiento del uso de estos en Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 05/01/2020
+ms.date: 08/24/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 10/14/2019
-ms.openlocfilehash: 89ef1d91ae2c6cb41a26bed04cb87abf33da1650
-ms.sourcegitcommit: 804f94f288859027b8249d138b14e8bc1501e009
+ms.openlocfilehash: ac318c1352963a7ee0fb873adaae4b30fa58949b
+ms.sourcegitcommit: d73637146daaba0ef0ab1729683bb52c65466099
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84158374"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88857517"
 ---
 # <a name="register-tenants-for-usage-tracking-in-azure-stack-hub"></a>Registro de inquilinos en Azure Stack Hub para el seguimiento de uso
 

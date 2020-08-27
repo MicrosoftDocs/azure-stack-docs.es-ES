@@ -3,15 +3,15 @@ title: Consumo de datos de supervisión de Azure Stack Hub
 description: Obtenga más información sobre las opciones para consumir datos de supervisión de Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 04/20/2020
+ms.date: 08/24/2020
 ms.author: mabrigg
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 933d05e17098ed7ef27a21d5ed846a420ff2f48a
-ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
+ms.openlocfilehash: 7d45b0bf71914ab8344fa162c6758f7914474495
+ms.sourcegitcommit: 65a115d1499b5fe16b6fe1c31cce43be21d05ef8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81660519"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88818953"
 ---
 # <a name="consume-monitoring-data-from-azure-stack-hub"></a>Consumo de datos de supervisión de Azure Stack Hub
 

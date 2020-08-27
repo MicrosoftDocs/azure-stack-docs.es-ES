@@ -3,16 +3,16 @@ title: Conexión a Azure Stack Hub mediante la extensión de la cuenta de Azure 
 description: Conectarse a Azure Stack Hub como desarrollador mediante la extensión de la cuenta de Azure en Visual Studio Code
 author: mattbriggs
 ms.topic: conceptual
-ms.date: 04/20/2020
+ms.date: 08/24/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 768b93c2ef2d984fcc75f6893be6260a1c4fbb1c
-ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
+ms.openlocfilehash: a3cd09d7138029ba578648e1599916fd71b42292
+ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81661050"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88920617"
 ---
 # <a name="connect-to-azure-stack-hub-using-azure-account-extension-in-visual-studio-code"></a>Conexión a Azure Stack Hub mediante la extensión de la cuenta de Azure en Visual Studio Code
 
@@ -20,7 +20,7 @@ En este artículo, le orientaremos acerca de cómo conectarse a Azure Stack Hub 
 
 VS Code es un editor ligero para compilar y depurar aplicaciones web y en la nube. ASP.NET Core, Python, NodeJS, Go y otros desarrolladores usan VS Code. Con la extensión de la cuenta de Azure, puede usar un único inicio de sesión de Azure con filtrado de suscripción para extensiones adicionales de Azure. La extensión hace que Azure Cloud Shell esté disponible en el terminal integrado de VS Code. Mediante la extensión, puede conectarse a una suscripción de Azure Stack Hub mediante Azure AD (Azure AD) y Active Directory Federated Services (AD FS) para el administrador de identidades. Puede iniciar sesión en Azure Stack Hub, seleccionar la suscripción y abrir una nueva línea de comandos en un shell en la nube. 
 
-> [!Note]  
+> [!NOTE]  
 > Puede usar los pasos de este artículo para un entorno de Active Directory Federated Services (AD FS). Use los puntos de conexión y las credenciales de AD FS.
 
 ## <a name="pre-requisites-for-the-azure-account-extension"></a>Requisitos previos para la extensión de la cuenta de Azure

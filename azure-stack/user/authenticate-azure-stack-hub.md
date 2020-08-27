@@ -3,16 +3,16 @@ title: Obtención de información de autenticación para Azure Stack Hub
 description: Aprenda a obtener información de autenticación para Azure Stack Hub
 author: mattbriggs
 ms.topic: how-to
-ms.date: 04/20/2020
+ms.date: 08/24/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/13/2019
-ms.openlocfilehash: 750e247906fcd4bf639b4fd5879910957c18b374
-ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
+ms.openlocfilehash: 21d6bec2fea4e94e5be62884cf2e24bde44c179d
+ms.sourcegitcommit: 65a115d1499b5fe16b6fe1c31cce43be21d05ef8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87251071"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88818392"
 ---
 # <a name="get-authentication-information-for-azure-stack-hub"></a>Obtención de información de autenticación para Azure Stack Hub
 

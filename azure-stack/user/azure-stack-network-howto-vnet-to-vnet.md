@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: 98c4b4d333a33dc018682e638cec821c8b8ee416
-ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
+ms.openlocfilehash: 729a57d8069f4260fbf68dd31dc0160dbb9d2c8d
+ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84631304"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88920396"
 ---
 # <a name="connect-two-vnets-through-peering"></a>Conexión de dos redes virtuales mediante el emparejamiento
 
@@ -68,7 +68,7 @@ En la tabla siguiente se resumen los parámetros que se usan en estas implementa
 | Nombre de la dirección IP pública | Forti2-publicip1 |
 | Tipo de dirección IP pública | estática |
 
-> [!Note]
+> [!NOTE]
 > \* Elija otro conjunto de espacios de direcciones y prefijos de subred si el anterior se superpone de cualquier manera con el entorno de la red local, incluido el grupo de VIP de cualquiera de los entornos de Azure Stack Hub. Asegúrese también de que los intervalos de direcciones no se superponen entre sí.
 
 ## <a name="deploy-the-fortigate-ngfw"></a>Implementación de FortiGate NGFW
@@ -186,7 +186,7 @@ Siga los pasos que se indican a continuación para la NVA forti1 y la NVA forti2
 
 16. Seleccione **Pre-shared Key** (Clave compartida previamente) y escriba (y anote) una clave compartida previamente. 
 
-    > [!Note]  
+    > [!NOTE]  
     > Necesitará esta clave para configurar la conexión en el dispositivo VPN local, es decir, deben coincidir *exactamente*.
 
     ![](./media/azure-stack-network-howto-vnet-to-vnet/image17.png)

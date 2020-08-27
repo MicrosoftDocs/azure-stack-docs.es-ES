@@ -7,12 +7,12 @@ ms.date: 08/05/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 08/05/2020
-ms.openlocfilehash: f6fca607f9e963fc2c007c27ebed05cecdf2e35a
-ms.sourcegitcommit: af7f169c7e204ffdf344f47c07ab8426e2afbd1d
+ms.openlocfilehash: 0b13c0e1655fe9df0cf030872fe8f545219394ba
+ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87865238"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88920090"
 ---
 # <a name="deploy-a-kubernetes-cluster-to-a-custom-virtual-network-on-azure-stack-hub"></a>Implementación de un clúster de Kubernetes en una red virtual personalizada en Azure Stack Hub 
 
@@ -135,11 +135,11 @@ Después de implementar el clúster, vuelva a la red virtual en el portal de usu
 3. Escriba el nombre de la red virtual en el cuadro de búsqueda.
 4. Seleccione **Subredes** y, después, seleccione el nombre de la subred que contiene el clúster.
     
-    ![Tabla de rutas y grupo de seguridad de red](media/kubernetes-aks-engine-custom-vnet/virtual-network-rt-nsg.png)
+    ![Tabla de rutas y grupo de seguridad de red](media/kubernetes-aks-engine-custom-vnet/virtual-network-route-table.png)
     
 5. Seleccione **Tabla de rutas** y, después, seleccione la tabla de rutas del clúster.
 
-> [!Note]  
+> [!NOTE]  
 > La red virtual personalizada de un clúster Windows de Kubernetes tiene un [problema conocido](https://github.com/Azure/aks-engine/issues/371).
 
 ## <a name="next-steps"></a>Pasos siguientes

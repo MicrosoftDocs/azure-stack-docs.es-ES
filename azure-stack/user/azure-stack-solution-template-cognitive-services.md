@@ -7,12 +7,12 @@ ms.date: 05/21/2020
 ms.author: mabrigg
 ms.reviewer: guanghu
 ms.lastreviewed: 05/21/2020
-ms.openlocfilehash: 217dc3a46d277aa8abf57379224dcad0fca4d983
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.openlocfilehash: 8a1c71a86f5b0fe6290bddab35726eca5bda0144
+ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86566760"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88920634"
 ---
 # <a name="deploy-azure-cognitive-services-to-azure-stack-hub"></a>Implementación de Azure Cognitive Services en Azure Stack Hub
 
@@ -75,7 +75,7 @@ Cree un recurso de Cognitive Services en Azure para obtener una vista previa de 
 
 1. Cree un recurso de Azure en Azure Portal. Si quiere obtener una vista previa del contenedor de Face, primero debe crear un recurso correspondiente de Face en Azure Portal. Para más información, consulte [Inicio rápido: Creación de una cuenta de Cognitive Services en Azure Portal](/azure/cognitive-services/cognitive-services-apis-create-account).
 
-   > [!Note]
+   > [!NOTE]
    >  El recurso de Face o Computer Vision debe usar el plan de tarifa F0.
 
 2. Obtenga la dirección URL del punto de conexión y la clave de suscripción para el recurso de Azure. Una vez que cree el recurso de Azure, use la clave de suscripción y la dirección URL del punto de conexión de dicho recurso para crear una instancia del contenedor de Face, LUIS o Reconocer texto correspondiente para la vista previa.

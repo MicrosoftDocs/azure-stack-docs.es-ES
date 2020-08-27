@@ -7,12 +7,12 @@ ms.date: 07/07/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 07/07/2020
-ms.openlocfilehash: 38a362cdc29cac4f0862fe598d9ac29d5f60fd68
-ms.sourcegitcommit: af7f169c7e204ffdf344f47c07ab8426e2afbd1d
+ms.openlocfilehash: e791f05f76831e9448c4eba796ca8a12d631b9cd
+ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87865156"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88920005"
 ---
 # <a name="deploy-a-kubernetes-cluster-with-the-aks-engine-on-azure-stack-hub"></a>Implementación de un clúster de Kubernetes con el motor de AKS en Azure Stack Hub
 
@@ -32,7 +32,7 @@ En esta sección se examina la creación de un modelo de API para el clúster.
     curl -o kubernetes-azurestack.json https://raw.githubusercontent.com/Azure/aks-engine/master/examples/azure-stack/kubernetes-azurestack.json
     ```
 
-    > [!Note]  
+    > [!NOTE]  
     > Si está desconectado, puede descargar el archivo y copiarlo manualmente en la máquina desconectada en la que piensa editarlo. Puede copiar el archivo en la máquina Linux con herramientas como [PuTTY o WinSCP](https://www.suse.com/documentation/opensuse103/opensuse103_startup/data/sec_filetrans_winssh.html).
 
 2.  Para abrir un modelo de API en un editor, puede usar nano:
@@ -41,7 +41,7 @@ En esta sección se examina la creación de un modelo de API para el clúster.
     nano ./kubernetes-azurestack.json
     ```
 
-    > [!Note]  
+    > [!NOTE]  
     > Si no tiene nano instalado, puede instalar nano en Ubuntu: `sudo apt-get install nano`.
 
 3.  En el archivo kubernetes-azurestack.json, busque orchestratorRelease y orchestratorVersion. Seleccione una de las versiones admitidas de Kubernetes. Por ejemplo, para `orchestratorRelease` use 1.14 o 1.15 y para `orchestratorVersion` use 1.14.7 o 1.15.10 respectivamente. Especifique `orchestratorRelease` como x.xx y orchestratorVersion como x.xx.x. Para obtener una lista de las versiones actuales, consulte [Versiones admitidas del motor de AKS](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-aks-engine-versions).
@@ -57,7 +57,7 @@ En esta sección se examina la creación de un modelo de API para el clúster.
         },
     ```
 
-    > [!Note]  
+    > [!NOTE]  
     > Si usa Azure AD para su sistema de identidades, no es necesario agregar el campo **identitySystem**.
 
 6. Busque `portalURL` y proporcione la dirección URL al portal del inquilino. Por ejemplo, `https://portal.local.azurestack.external`.
@@ -91,7 +91,7 @@ En esta sección se examina la creación de un modelo de API para el clúster.
 
     Si va a realizar la implementación en una red virtual personalizada, puede encontrar instrucciones para encontrar la clave y los valores necesarios y agregarlos a las matrices adecuadas del modelo de API en el artículo en que se explica la [implementación de un clúster de Kubernetes en una red virtual personalizada](kubernetes-aks-engine-custom-vnet.md).
 
-    > [!Note]  
+    > [!NOTE]  
     > El motor de AKS para Azure Stack Hub no le permite proporcionar sus propios certificados para la creación del clúster.
 
 ### <a name="more-information-about-the-api-model"></a>Más información sobre el modelo de API

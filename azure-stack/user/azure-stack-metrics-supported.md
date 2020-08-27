@@ -3,15 +3,15 @@ title: Métricas de Azure Stack Hub compatibles con Azure Monitor
 description: Descubra las métricas de Azure Stack Hub compatibles con Azure Monitor.
 author: mattbriggs
 ms.topic: article
-ms.date: 04/20/2020
+ms.date: 08/24/2020
 ms.author: mabrigg
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 2a200939dd987ba11edcd5fbca516c3fc6566dbd
-ms.sourcegitcommit: 32834e69ef7a804c873fd1de4377d4fa3cc60fb6
+ms.openlocfilehash: d6caf522efed58c60635b507b4b8314a15c72a5b
+ms.sourcegitcommit: 65a115d1499b5fe16b6fe1c31cce43be21d05ef8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81661031"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88818829"
 ---
 # <a name="supported-metrics-for-azure-monitor-on-azure-stack-hub"></a>Métricas de Azure Stack Hub compatibles con Azure Monitor
 

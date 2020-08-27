@@ -8,12 +8,12 @@ ms.topic: reference
 ms.date: 07/07/2020
 ms.reviewer: kivenkat
 ms.lastreviewed: 07/07/2020
-ms.openlocfilehash: 33bdc3fa38edace2656d86eec20b12917020cac1
-ms.sourcegitcommit: 977c47a5587a747dbd67aa110381759ba39044b7
+ms.openlocfilehash: d5782aa1513d9e16bc461e93fe919a06cd7fc422
+ms.sourcegitcommit: 9be6adfe859ba0a09951a5a1a876928cb38dd595
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88512383"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88706122"
 ---
 # <a name="graphics-processing-unit-gpu-virtual-machine-vm-on-azure-stack-hub"></a>Máquina virtual (VM) de la unidad de procesamiento gráfico (GPU) en Azure Stack Hub
 
@@ -56,9 +56,9 @@ Este nuevo tamaño de máquina virtual de NVIDIA T4 permite que se ejecuten carg
 | Size | vCPU | Memoria: GiB | GPU | Memoria de GPU: GiB | Discos de datos máx. | Nº máx. NIC | 
 | --- | --- | --- | --- | --- | --- | --- |
 | Standard_NC4as_v4 |4 |28 | 1 | 16 | 8 | 4 | 
-| Standard_NC8as_v4 |4 |56 | 1 | 16 | 16 | 8 | 
-| Standard_NC16as_v4 |4 |112 | 1 | 16 | 32 | 8 | 
-| Standard_NC64as_v4 |4 |448 | 4 | 64 | 32 | 8 | 
+| Standard_NC8as_v4 |8 |56 | 1 | 16 | 16 | 8 | 
+| Standard_NC16as_v4 |16 |112 | 1 | 16 | 32 | 8 | 
+| Standard_NC64as_v4 |64 |448 | 4 | 64 | 32 | 8 | 
 
 
 ## <a name="patch-and-update-fru-behavior-of-vms"></a>Revisión y actualización, comportamiento de FRU de máquinas virtuales 

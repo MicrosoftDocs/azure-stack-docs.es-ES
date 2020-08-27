@@ -3,22 +3,22 @@ title: Ejecución de una aplicación de n niveles en varias regiones de Azure St
 description: Obtenga información sobre cómo ejecutar una aplicación de niveles en varias regiones de Azure Stack Hub para lograr alta disponibilidad.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 04/20/2020
+ms.date: 08/24/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: fe96b2adeb679492a2f6ca820880763c0c2c0686
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.openlocfilehash: 164533628b605ff1723a50ba2dbcf8ea413ad3bd
+ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86567814"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88920345"
 ---
 # <a name="run-an-n-tier-application-in-multiple-azure-stack-hub-regions-for-high-availability"></a>Ejecución de una aplicación de n niveles en varias regiones de Azure Stack Hub para lograr alta disponibilidad
 
 Esta arquitectura de referencia muestra un conjunto de procedimientos de demostrada eficacia para la ejecución de una aplicación de n niveles en varias regiones de Azure Stack Hub, con la finalidad de conseguir disponibilidad y una sólida estructura de recuperación ante desastres. En este documento, Traffic Manager se usa para lograr alta disponibilidad. Sin embargo, si Traffic Manager no es una opción preferida en el entorno, también podría usarse un par de equilibradores de carga de alta disponibilidad.
 
-> [!Note]  
+> [!NOTE]  
 > Tenga en cuenta que la instancia de Traffic Manager que se usa en la arquitectura siguiente se debe configurar en Azure y los puntos de conexión usados para configurar el perfil de Traffic Manager deben ser direcciones IP enrutables públicamente.
 
 ## <a name="architecture"></a>Architecture
@@ -123,7 +123,7 @@ Para configurar el grupo de disponibilidad:
 
     -   Coloque una o varias réplicas secundarias en la región secundaria. Por motivos de rendimiento, configure estas opciones para usar confirmación *asincrónica*. (De lo contrario, todas las transacciones de T-SQL deberán esperar el recorrido de ida y vuelta a través de la red hasta la región secundaria).
 
-> [!Note]  
+> [!NOTE]  
 > Las réplicas de confirmación asincrónica no admiten la conmutación automática por error.
 
 ## <a name="availability-considerations"></a>Consideraciones sobre disponibilidad

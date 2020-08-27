@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 08/17/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: 52934023bab0a223a8ed99acd161a90b17581fe7
-ms.sourcegitcommit: 977c47a5587a747dbd67aa110381759ba39044b7
+ms.openlocfilehash: 6405b774cf27e8c48b9200d401174eaa5e292584
+ms.sourcegitcommit: 65a115d1499b5fe16b6fe1c31cce43be21d05ef8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88513362"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88818324"
 ---
 # <a name="deploy-network-controller-using-windows-powershell"></a>Implementación de controladora de red con Windows PowerShell
 
@@ -215,4 +215,4 @@ Install-NetworkController -Node @($a,$b,$c) -ClientAuthentication Kerberos -Clie
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Si no usa Kerberos con la implementación de Controladora de red, debe implementar certificados. Para más información, consulte los [pasos posteriores a la implementación de Controladora de red](/technologies/network-controller/post-deploy-steps-nc.md).
+Si no usa Kerberos con la implementación de Controladora de red, debe implementar certificados. Para más información, consulte los [pasos posteriores a la implementación de Controladora de red](https://docs.microsoft.com/windows-server/networking/sdn/technologies/network-controller/post-deploy-steps-nc).
