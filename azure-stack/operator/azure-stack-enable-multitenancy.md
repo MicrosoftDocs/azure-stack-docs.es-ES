@@ -7,12 +7,12 @@ ms.date: 06/18/2020
 ms.author: bryanla
 ms.reviewer: bryanr
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: 16b8ca5999507bd64d3416c3ee22fdd5c827c8b5
-ms.sourcegitcommit: 874ad1cf8ce7e9b3615d6d69651419642d5012b4
+ms.openlocfilehash: e99c1cc09f3dc6b0a04ff22f5b5dc96004ba305e
+ms.sourcegitcommit: d73637146daaba0ef0ab1729683bb52c65466099
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85107159"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88857503"
 ---
 # <a name="configure-multi-tenancy-in-azure-stack-hub"></a>Configuración de los servicios multiinquilino en Azure Stack Hub
 
@@ -24,16 +24,17 @@ Puede configurar Azure Stack Hub para admitir usuarios de varios inquilinos de A
 
 En esta guía encontrará los pasos necesarios, en el contexto de este escenario, para configurar los servicios multiinquilino en Azure Stack Hub. En este escenario, usted y Mary deben realizar los pasos para permitir que los usuarios de Fabrikam inicien sesión y consuman servicios de la implementación de Azure Stack Hub en Contoso.
 
+Si es un proveedor de soluciones en la nube (CSP), tiene maneras adicionales de [configurar y administrar una instancia multiinquilino de Azure Stack Hub](azure-stack-add-manage-billing-as-a-csp.md). 
+
 ## <a name="enable-multi-tenancy"></a>Habilitación de servicios multiinquilino
 
 Hay algunos requisitos previos que se deben tener en cuenta antes de configurar los servicios multiinquilino en Azure Stack Hub:
   
  - Usted y Mary deben coordinar los procedimientos administrativos tanto en el directorio donde está instalado Azure Stack Hub (Contoso) como en el directorio de invitados (Fabrikam).
  - Asegúrese de que ha [instalado](azure-stack-powershell-install.md) y [configurado](azure-stack-powershell-configure-admin.md) PowerShell para Azure Stack Hub.
- - [Descargue Azure Stack Hub Tools](azure-stack-powershell-download.md) e importe los módulos Connect e Identity:
+ - [Descargue Azure Stack Hub Tools](azure-stack-powershell-download.md) e importe el módulo Identity:
 
     ```powershell
-    Import-Module .\Connect\AzureStack.Connect.psm1
     Import-Module .\Identity\AzureStack.Identity.psm1
     ```
 
@@ -168,10 +169,9 @@ $healthReport.directoryTenants | Where status -NE 'Healthy' | Select -Property t
 
 ### <a name="update-azure-ad-tenant-permissions"></a>Actualización de los permisos de inquilino de Azure AD
 
-Esta acción con el estado Desactivar la alerta en Azure Stack Hub indica que un directorio requiere una actualización. Ejecute los siguientes comandos desde la carpeta **Azurestack-tools-master/identity**:
+Esta acción con el estado Desactivar la alerta en Azure Stack Hub indica que un directorio requiere una actualización. Ejecute el siguiente comando desde la carpeta **Azurestack-tools-master/identity**:
 
 ```powershell
-Import-Module ..\Connect\AzureStack.Connect.psm1
 Import-Module ..\Identity\AzureStack.Identity.psm1
 
 $adminResourceManagerEndpoint = "https://adminmanagement.<region>.<domain>"

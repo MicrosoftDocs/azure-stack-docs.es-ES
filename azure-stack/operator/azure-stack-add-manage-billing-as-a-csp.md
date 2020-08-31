@@ -7,12 +7,12 @@ ms.date: 07/27/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 10/15/2019
-ms.openlocfilehash: 1fc7914755cfa78cf02fa13101559caca766d20c
-ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
+ms.openlocfilehash: 400ae8a487d18b37efdfc52c087019183702a638
+ms.sourcegitcommit: d73637146daaba0ef0ab1729683bb52c65466099
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87250867"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88857566"
 ---
 # <a name="manage-usage-and-billing-for-azure-stack-hub-as-a-cloud-solution-provider"></a>Administración del uso y la facturación de Azure Stack Hub como proveedor de soluciones en la nube
 
@@ -32,6 +32,10 @@ Elija el tipo de cuenta de servicios compartidos que utiliza con Azure Stack Hub
 
 - Proveedor de soluciones en la nube
 - Suscripción de servicios compartidos de asociados
+
+Hemos creado un vídeo de tutorial que le ayudará a comprender cómo administrar sus derechos multiinquilino:
+
+> [!VIDEO https://www.youtube.com/embed/ZP6jkbLeS34]
 
 #### <a name="azure-partner-shared-services"></a>Servicios compartidos para asociados de Azure
 

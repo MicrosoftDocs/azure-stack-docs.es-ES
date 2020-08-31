@@ -3,16 +3,16 @@ title: Envío inmediato de registros de diagnóstico de Azure Stack Hub
 description: Aprenda a recopilar los registros de diagnóstico a petición en Azure Stack Hub mediante el portal del administrador o un script de PowerShell.
 author: justinha
 ms.topic: article
-ms.date: 03/30/2020
+ms.date: 08/24/2020
 ms.author: justinha
 ms.reviewer: shisab
-ms.lastreviewed: 03/30/2020
-ms.openlocfilehash: a4939e308b4f91fc0a9821499bb51615d11ab131
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.lastreviewed: 08/24/2020
+ms.openlocfilehash: abcf70b6d714f9a759aeaa9a7f591a60e195594f
+ms.sourcegitcommit: 4922a14fdbc8a3b67df065336e8a21a42f224867
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86489256"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88764654"
 ---
 # <a name="send-azure-stack-hub-diagnostic-logs-now"></a>Envío inmediato de registros de diagnóstico de Azure Stack Hub
 
@@ -31,6 +31,14 @@ Especifique la hora de inicio y la hora de finalización de la recopilación de 
 
 ![Captura de pantalla de la opción Send logs now (Enviar registros ahora)](media/azure-stack-help-and-support/send-logs-now.png)
 
+
+::: moniker-end
+::: moniker range=">= azs-2005"
+## <a name="save-logs-locally"></a>Almacenamiento local de los registros
+
+Se pueden guardar los registros en un recurso compartido de SMB local cuando Azure Stack Hub está desconectado de Azure. En la hoja **Settings** (Configuración), escriba la ruta de acceso y un nombre de usuario y una contraseña con permiso para escribir en el recurso compartido. Durante una incidencia de soporte técnico, Soporte técnico de Microsoft proporcionará pasos detallados sobre cómo se transfieren estos registros locales. Si el portal de administración no está disponible, puede usar [Get-AzureStackLog](azure-stack-get-azurestacklog.md) para guardar los registros localmente.
+
+![Captura de pantalla de opciones de recopilación de registros de diagnóstico](media/azure-stack-help-and-support/save-logs-locally.png)
 
 ::: moniker-end
 ::: moniker range="<= azs-1910"

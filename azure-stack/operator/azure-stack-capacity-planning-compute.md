@@ -7,12 +7,12 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: prchint
 ms.lastreviewed: 06/13/2019
-ms.openlocfilehash: 8cb772d76b4bfd01a7e0c260c6ff3d20bdec3e0a
-ms.sourcegitcommit: 977c47a5587a747dbd67aa110381759ba39044b7
+ms.openlocfilehash: d87014dfe5d09a6c41e5108b8ae10b26e23b62d8
+ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88512485"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88920192"
 ---
 # <a name="azure-stack-hub-compute-capacity"></a>Capacidad de proceso de Azure Stack Hub
 
@@ -96,6 +96,26 @@ El valor V, la máquina virtual más grande de la unidad de escalado, se basa di
 **P.** : Mi inquilino ha implementado una nueva máquina virtual, ¿cuánto tiempo tardará el gráfico de capacidad del portal de administración en mostrar la capacidad restante?
 
 **R.** : La hoja de capacidad se actualiza cada 15 minutos, por lo tanto, tenga esto en cuenta.
+
+**P.** : ¿Cómo puedo ver los núcleos disponibles y los núcleos asignados?
+
+**R.** : En **PowerShell** ejecute `test-azurestack -include AzsVmPlacement -debug`, lo cual generará una salida similar a la siguiente:
+
+    ```console
+    Starting Test-AzureStack
+    Launching AzsVmPlacement
+     
+    Azure Stack Scale Unit VM Placement Summary Results
+     
+    Cluster Node    VM Count VMs Running Physical Core Total Virtual Co Physical Memory Total Virtual Mem
+    ------------    -------- ----------- ------------- ---------------- --------------- -----------------
+    LNV2-Node02     20       20          28            66               256             119.5            
+    LNV2-Node03     17       16          28            62               256             110              
+    LNV2-Node01     11       11          28            47               256             111              
+    LNV2-Node04     10       10          28            49               256             101              
+    
+    PASS : Azure Stack Scale Unit VM Placement Summary
+    ```
 
 **P.** : El número de máquinas virtuales implementadas en mi instancia de Azure Stack Hub no ha cambiado, pero mi capacidad fluctúa. ¿Por qué?
 

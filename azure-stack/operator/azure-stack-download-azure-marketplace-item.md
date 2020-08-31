@@ -3,19 +3,19 @@ title: Descarga de elementos de Marketplace desde Azure y publicación en Azure 
 description: Aprenda a descargar elementos de Marketplace desde Azure y a publicarlos en Azure Stack Hub.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 07/09/2020
+ms.date: 08/19/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 12/23/2019
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: 5774d06e07c6f4bc7f71d5dcd58257fcbb8700ee
-ms.sourcegitcommit: fe48fd5310004d68a4f28589e4d311708babb634
+ms.openlocfilehash: 2c502a80d5253b90200d3829a6167b419d711bd2
+ms.sourcegitcommit: 4922a14fdbc8a3b67df065336e8a21a42f224867
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86210045"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88764535"
 ---
-# <a name="download-marketplace-items-to-azure-stack-hub"></a>Descarga de elementos de Marketplace en Azure Stack Hub 
+# <a name="download-marketplace-items-to-azure-stack-hub"></a>Descarga de elementos de Marketplace en Azure Stack Hub
 
 Los operadores en la nube pueden descargar elementos de Marketplace en Azure Stack Hub y hacer que estén disponibles para todos los usuarios mediante el entorno de Azure Stack Hub. Dichos elementos se pueden elegir de una lista de elementos de Azure Marketplace que se han probados con anterioridad y se sabe que son compatibles con Azure Stack Hub. Con frecuencia se agregan nuevos elementos a esta lista, así que es aconsejable consultar periódicamente si tiene contenido nuevo.
 
@@ -87,12 +87,13 @@ Este escenario tiene dos partes:
 
   - Para habilitar la importación de un elemento de Marketplace descargado, debe estar configurado el [entorno de PowerShell para el operador de Azure Stack Hub](azure-stack-powershell-configure-admin.md).
 
-- Descargue el módulo Azs.Syndication.Admin de la Galería de PowerShell mediante el comando siguiente.
-  ```
+- Descargue el módulo **Azs.Syndication.Admin** de la Galería de PowerShell mediante el comando siguiente:
+
+  ```powershell
   Install-Module -Name Azs.Syndication.Admin
   ```
   
-- .NET Framework 4.7 o versiones posteriores
+- .NET Framework 4.7 o superior.
 
 Una vez registrado Azure Stack, puede ignorar el mensaje siguiente que aparece en la hoja de administración de Marketplace, ya que no es aplicable en un caso de uso sin conexión:
 
@@ -105,15 +106,16 @@ Una vez registrado Azure Stack, puede ignorar el mensaje siguiente que aparece e
 
 1. En un equipo con conexión a Internet, abra una consola de PowerShell como administrador.
 
-2. Inicie sesión en la nube de Azure adecuada y en el inquilino de Azure AD con la cuenta de Azure que ha usado para registrar Azure Stack Hub. Para agregar la cuenta, en PowerShell ejecute **Add-AzureRmAccount**. 
+2. Inicie sesión en la nube de Azure adecuada y en el inquilino de Azure AD con la cuenta de Azure que ha usado para registrar Azure Stack Hub. Para agregar la cuenta, en PowerShell ejecute `Add-AzureRmAccount`:
 
    ```powershell  
    Login-AzureRmAccount -Environment AzureCloud -Tenant '<mydirectory>.onmicrosoft.com'
    ```
+
    Se le solicita que escriba las credenciales de su cuenta de Azure y puede que tenga que utilizar la autenticación en dos fases en función de la configuración de la cuenta.
 
    > [!NOTE]
-   > Si la sesión expira, la contraseña ha cambiado o simplemente desea cambiar de cuenta, ejecute el siguiente cmdlet antes de iniciar sesión con **Add-AzureRmAccount**: **Proceso Remove-AzureRmAccount-Scope**.
+   > Si la sesión expira, la contraseña ha cambiado o desea cambiar de cuenta, ejecute el siguiente cmdlet antes de iniciar sesión mediante `Add-AzureRmAccount`: `Remove-AzureRmAccount -Scope Process`.
 
 3. Si tiene varias suscripciones, ejecute el siguiente comando para seleccionar la que ha usado para el registro:
 
@@ -127,7 +129,7 @@ Una vez registrado Azure Stack, puede ignorar el mensaje siguiente que aparece e
    Install-Module -Name Azs.Syndication.Admin
    ```
 
-5. Para seleccionar elementos de Marketplace como imágenes de máquinas virtuales, extensiones o plantillas de soluciones para descargar, ejecute el siguiente comando. 
+5. Para seleccionar elementos de Marketplace como imágenes de máquinas virtuales, extensiones o plantillas de soluciones para descargar, ejecute el siguiente comando:
 
    ```powershell
    $products = Select-AzsMarketplaceItem

@@ -1,27 +1,28 @@
 ---
-title: Obtención de solicitudes de firma de certificado para la implementación en Azure Stack Hub
-description: Obtenga información acerca de cómo obtener solicitudes de firma para los certificados PKI de Azure Stack Hub en los sistemas integrados de Azure Stack Hub.
+title: Generación de solicitudes de firma de certificado para Azure Stack Hub
+description: Obtenga información acerca de cómo generar solicitudes de firma para los certificados PKI de Azure Stack Hub en los sistemas integrados de Azure Stack Hub.
 author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 09/10/2019
 ms.author: inhenkel
 ms.reviewer: ppacent
 ms.lastreviewed: 09/10/2019
-ms.openlocfilehash: 37f308a9b554453a1f7c10219d68b1255c23cbf0
-ms.sourcegitcommit: 09fbc4e8fc53828647d515bfb556dfe42df28c19
+ms.openlocfilehash: 6bcdc7aacfadb37d348eaa33449065b9fb345446
+ms.sourcegitcommit: 65a115d1499b5fe16b6fe1c31cce43be21d05ef8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86419273"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88818358"
 ---
-# <a name="get-certificate-signing-requests-for-deployment-in-azure-stack-hub"></a>Obtención de solicitudes de firma de certificado para la implementación en Azure Stack Hub
+# <a name="generate-certificate-signing-requests-for-azure-stack-hub"></a>Generación de solicitudes de firma de certificado para Azure Stack Hub
 
 Puede usar la herramienta Azure Stack Hub Readiness Checker para crear solicitudes de firma de certificado (CSR) adecuadas para una implementación de Azure Stack Hub. Los certificados se deben solicitar, generar y validar con suficiente tiempo para probarlos antes de la implementación. Puede obtener la herramienta [en la Galería de PowerShell](https://aka.ms/AzsReadinessChecker).
 
 Puede usar la herramienta Azure Stack Hub Readiness Checker (AzsReadinessChecker) para solicitar los siguientes certificados:
 
-- **Solicitudes de certificado estándar** según se indica en [Generación de solicitudes de firma de certificado](azure-stack-get-pki-certs.md).
-- **Plataforma como servicio**: Puede solicitar nombres de Plataforma como servicio (PaaS) para los certificados como se especifica en [Requisitos de certificados de infraestructura de clave pública de Azure Stack Hub: Certificados PaaS opcionales](azure-stack-pki-certs.md).
+- **Solicitudes de certificado estándar** según se indica en [Generación de solicitudes de firma de certificado para nuevas implementaciones](azure-stack-get-pki-certs.md#generate-certificate-signing-requests-for-new-deployments).
+- **Renovación de solicitudes de certificado estándar** según se indica en [Generación de solicitudes de firma de certificado para nuevas implementaciones](azure-stack-get-pki-certs.md#generate-certificate-signing-requests-for-certificate-renewal).
+- **Plataforma como servicio**: Puede solicitar nombres de Plataforma como servicio (PaaS) para los certificados como se especifica en [Requisitos de certificados de infraestructura de clave pública de Azure Stack Hub: Certificados PaaS opcionales](azure-stack-pki-certs.md#optional-paas-certificates).
 
 ## <a name="prerequisites"></a>Requisitos previos
 
@@ -137,15 +138,15 @@ Siga estos pasos para preparar solicitudes de firma de certificados para la reno
         Install-Module Microsoft.AzureStack.ReadinessChecker
     ```
 
-2. Declare el **stampEndpoint**. Por ejemplo:
+2. Declare el valor de **stampEndpoint** con el formato regionname.domain.com del sistema de Azure Stack Hub. Por ejemplo, si la dirección del portal del inquilino de Azure Stack Hub es https://portal.east.azurestack.contoso.com):
 
     ```powershell  
-    $stampEndpoint = 'portal.east.azurestack.contoso.com'
+    $stampEndpoint = 'east.azurestack.contoso.com'
     ```
 
     > [!NOTE]  
-    > Se requiere conectividad HTTPS para el punto de conexión anterior.
-    > El punto de conexión anterior debe coincidir con uno de los certificados que necesita el tipo de certificado. Por ejemplo, para los certificados de implementación se necesita el punto de conexión portal.region.domain, para AppServices sso.appservices.region.domain, etc. El certificado enlazado al punto de conexión se usará para clonar atributos como los de asunto, longitud de la clave y algoritmo de firma.  Solo se necesita un punto de conexión existente y se crearán todas las solicitudes de firma de todos los certificados necesarios.
+    > Se requiere conectividad HTTPS para el sistema de Azure Stack Hub anterior.
+    > Readiness Checker utilizará el valor de stampendpoint (región y dominio) para crear un puntero a los certificados existentes necesarios por tipo de certificado. Por ejemplo, para los certificados de implementación, la herramienta antepone "portal", de modo que, para la clonación de certificados, se utiliza portal.east.azurestack.contoso.com, para AppServices se utiliza sso.appservices.east.azurestack.contoso.com, etc. El certificado enlazado al punto de conexión procesado se usará para clonar atributos como los de asunto, longitud de la clave y algoritmo de firma.  Si desea cambiar cualquiera de estos atributos, debe seguir los pasos de [Generación de solicitudes de firma de certificado para nuevas implementaciones](azure-stack-get-pki-certs.md#generate-certificate-signing-requests-for-new-deployments) en su lugar.
 
 3. Declare un directorio de salida que ya exista. Por ejemplo:
 

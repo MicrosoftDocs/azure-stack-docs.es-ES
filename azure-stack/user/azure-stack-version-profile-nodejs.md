@@ -7,12 +7,12 @@ ms.date: 04/30/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 04/30/2020
-ms.openlocfilehash: 92f05840d8a2a8f58f70abd10e2860224f706d2b
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.openlocfilehash: b378ce7f3e894a2ec9de532393907c1266e2eeed
+ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86566505"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88920362"
 ---
 # <a name="use-api-version-profiles-with-nodejs-software-development-kit-sdk-in-azure-stack-hub"></a>Uso de perfiles de la versión de API con el kit de desarrollo de software (SDK) de Node.js en Azure Stack Hub
 
@@ -55,7 +55,7 @@ Para usar la versión más reciente de la API de un servicio, utilice el perfil 
 
 Utilice las versiones específicas de API definidas dentro del paquete para usar las versiones de API de un proveedor de recursos.
 
-  > [!Note]  
+  > [!NOTE]  
   > Puede combinar todas las opciones en la misma aplicación.
 
 ## <a name="install-the-nodejs-sdk"></a>Instalación del SDK de Node.js
@@ -112,7 +112,7 @@ Microsoft Azure Resource Manager es una plataforma de administración que permit
 
 Puede obtener la información de metadatos del punto de conexión de Resource Manager. El punto de conexión devuelve un archivo JSON con la información necesaria para ejecutar el código.
 
-> [!Note]  
+> [!NOTE]  
 > El valor de **ResourceManagerUrl** del Kit de desarrollo de Azure Stack (ASDK) es: `https://management.local.azurestack.external` La dirección **ResourceManagerUrl** en un sistema integrado es: `https://management.region.<fqdn>/`, donde `<fqdn>` es el nombre de dominio completo.
 Para recuperar los metadatos necesarios: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`
 
@@ -221,16 +221,21 @@ Puede usar los ejemplos siguientes como referencia para crear soluciones con per
     git clone https://github.com/sijuman/storage-node-resource-provider-getting-started.git
     ```
 
+1. `cd` en el clon del repositorio.
+
 2.  Cree una entidad de servicio de Azure y asigne un rol para acceder a la suscripción. Para ver las instrucciones, consulte [Uso de Azure PowerShell para crear una entidad de servicio con un certificado](/azure/azure-stack/azure-stack-create-service-principals).
 
 3.  Recupere los siguientes valores obligatorios:
     - Id. de inquilino
-    - Id. de cliente
+    - Id. de cliente (Id. de aplicación)
     - Secreto del cliente
     - Identificador de suscripción de Azure
     - Punto de conexión de Resource Manager de Azure Stack Hub
 
 4.  Establezca las siguientes variables de entorno con la información que recuperó de la entidad de servicio que creó con el símbolo del sistema:
+
+    > [!NOTE]  
+    > En Windows, use **set** en lugar de **export**.
 
     ```bash  
     export TENANT_ID=<your tenant id>
@@ -239,9 +244,6 @@ Puede usar los ejemplos siguientes como referencia para crear soluciones con per
     export AZURE_SUBSCRIPTION_ID=<your subscription id>
     export ARM_ENDPOINT=<your Azure Stack Hub Resource manager URL>
     ```
-
-    > [!Note]  
-    > En Windows, use **set** en lugar de **export**.
 
 5.  Abra el archivo `index.js` de la aplicación de ejemplo.
 

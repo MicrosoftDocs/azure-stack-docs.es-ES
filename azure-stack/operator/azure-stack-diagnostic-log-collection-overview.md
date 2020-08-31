@@ -3,16 +3,16 @@ title: Recopilación de registros de diagnóstico en Azure Stack Hub
 description: Obtenga información acerca de la recopilación de registros de diagnóstico en Ayuda y soporte técnico de Azure Stack Hub.
 author: justinha
 ms.topic: article
-ms.date: 05/11/2020
+ms.date: 08/24/2020
 ms.author: justinha
 ms.reviewer: shisab
-ms.lastreviewed: 05/11/2020
-ms.openlocfilehash: c924c5a48337106c08d1112328c32c031d7371bc
-ms.sourcegitcommit: 52b33ea180c38a5ecce150f5a9ea4a026344cc3d
+ms.lastreviewed: 08/24/2020
+ms.openlocfilehash: 841c031b6009cdb7970194a3268010e745e9e0f0
+ms.sourcegitcommit: 4922a14fdbc8a3b67df065336e8a21a42f224867
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88074251"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88764518"
 ---
 # <a name="diagnostic-log-collection-in-azure-stack-hub"></a>Recopilación de registros de diagnóstico en Azure Stack Hub
 
@@ -89,7 +89,7 @@ Al iniciar la recopilación de registros de diagnóstico desde Azure Stack Hub, 
 
 ## <a name="save-logs-locally"></a>Almacenamiento local de los registros
 
-Se pueden guardar los registros en un recurso compartido de SMB local cuando Azure Stack Hub está desconectado de Azure. En la hoja **Settings** (Configuración), escriba la ruta de acceso y un nombre de usuario y una contraseña con permiso para escribir en el recurso compartido. Durante un caso de soporte técnico, Microsoft CSS proporcionará pasos detallados sobre cómo se transfieren estos registros locales.
+Se pueden guardar los registros en un recurso compartido de SMB local cuando Azure Stack Hub está desconectado de Azure. En la hoja **Settings** (Configuración), escriba la ruta de acceso y un nombre de usuario y una contraseña con permiso para escribir en el recurso compartido. Durante una incidencia de soporte técnico, Soporte técnico de Microsoft proporcionará pasos detallados sobre cómo se transfieren estos registros locales. Si el portal de administración no está disponible, puede usar [Get-AzureStackLog](azure-stack-get-azurestacklog.md) para guardar los registros localmente.
 
 ![Captura de pantalla de opciones de recopilación de registros de diagnóstico](media/azure-stack-help-and-support/save-logs-locally.png)
 

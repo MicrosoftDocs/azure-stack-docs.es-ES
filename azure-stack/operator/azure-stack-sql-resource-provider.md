@@ -4,16 +4,16 @@ titleSuffix: Azure Stack Hub
 description: Aprenda a usar el proveedor de recursos de SQL Server para ofrecer bases de datos SQL como servicio en Azure Stack Hub.
 author: bryanla
 ms.topic: article
-ms.date: 10/02/2019
+ms.date: 8/19/2020
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/25/2019
-ms.openlocfilehash: 15eaf26162b0d3f647d65dfab66e3d9327b2f357
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: c0f599d8a63f0a1ea16e5a39303391cb1b0790a0
+ms.sourcegitcommit: 8079220917523ab9ddb824e4bba3e9b091f38a9f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77697151"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88661595"
 ---
 # <a name="use-sql-databases-on-azure-stack-hub"></a>Uso de bases de datos SQL en Azure Stack Hub
 
@@ -28,6 +28,7 @@ Limitaciones a tener en cuenta antes de instalar el proveedor de recursos de SQL
 - El operador de Azure Stack Hub es responsable de implementar, actualizar, proteger, configurar y mantener los hosts y servidores de bases de datos de SQL. El servicio Proveedor de recursos no proporciona ninguna funcionalidad de administración de instancias de servidor de bases de datos y hosts.
 - Las bases de datos de diferentes usuarios de distintas suscripciones se pueden colocar en la misma instancia del servidor de bases de datos. El proveedor de recursos no proporciona ningún mecanismo para aislar las bases de datos en diferentes hosts o instancias del servidor de bases de datos.
 - El proveedor de recursos no proporciona ningún informe sobre el uso de los inquilinos de las bases de datos.
+- Solo puede trasladar un servidor de hospedaje de SQL a otra suscripción de Azure global. Azure Stack Hub no admite el traslado de un servidor host de SQL a otra suscripción.
 
 En el caso de las cargas de trabajo tradicionales locales de SQL Server, se recomienda la máquina virtual de SQL Server en Azure Stack Hub.
 

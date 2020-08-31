@@ -3,16 +3,16 @@ title: Creación y publicación de un elemento de Marketplace en Azure Stack Hub
 description: Aprenda a crear y publicar un elemento de Marketplace de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 06/11/2020
+ms.date: 08/18/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 16ea5f5873e7904931fb05d6113c0b6cb74f9612
-ms.sourcegitcommit: bc246d59f4ad42cc2cc997884f9d52c5097f0964
+ms.openlocfilehash: db8a05c8a3f8d4c219cb37de018df46c60f39348
+ms.sourcegitcommit: 4922a14fdbc8a3b67df065336e8a21a42f224867
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85069125"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88764552"
 ---
 # <a name="create-and-publish-a-custom-azure-stack-hub-marketplace-item"></a>Creación y publicación de un elemento personalizado de Marketplace de Azure Stack Hub
 
@@ -22,10 +22,14 @@ Cada elemento publicado en Marketplace de Azure Stack Hub usa el formato de paqu
 
 En los ejemplos de este artículo se muestra cómo crear una oferta de Marketplace de una máquina virtuale, de tipo Windows o Linux.
 
-## <a name="create-a-marketplace-item"></a>Creación de un elemento para Marketplace
+### <a name="prerequisites"></a>Prerrequisitos
 
-> [!IMPORTANT]
-> Antes de crear el elemento de máquina virtual de Marketplace, cargue la imagen de máquina virtual personalizada en el portal de Azure Stack Hub; para ello, siga las instrucciones del artículo sobre la [incorporación de una imagen de máquina virtual en Azure Stack Hub](azure-stack-add-vm-image.md). Después, siga las instrucciones de este artículo para empaquetar la imagen (crear un archivo .azpkg) y cárguela en Marketplace en Azure Stack Hub.
+Antes de crear un elemento de Marketplace de máquina virtual, haga lo siguiente:
+
+1. Cargue la imagen de máquina virtual personalizada en el portal de Azure Stack Hub; para ello, siga las instrucciones del artículo sobre la [incorporación de una imagen de máquina virtual en Azure Stack Hub](azure-stack-add-vm-image.md). 
+2. Siga las instrucciones de este artículo para empaquetar la imagen (crear un archivo .azpkg) y cárguela en Marketplace en Azure Stack Hub.
+
+## <a name="create-a-marketplace-item"></a>Creación de un elemento para Marketplace
 
 Para crear un elemento de Marketplace personalizado, haga lo siguiente:
 
@@ -46,6 +50,8 @@ Para crear un elemento de Marketplace personalizado, haga lo siguiente:
    > [!NOTE]  
    > Nunca codifique de forma rígida los secretos, como las claves de producto, contraseñas o cualquier información de identificación del cliente, en la plantilla de Azure Resource Manager. Los archivos de plantilla de JSON son accesibles sin necesidad de autenticación una vez publicados en la galería. Almacene todos los secretos en [Key Vault](/azure/azure-resource-manager/resource-manager-keyvault-parameter) y llámelos desde dentro de la plantilla.
 
+   Se recomienda que antes de publicar su propia plantilla personalizada, intente publicar el ejemplo tal cual y se asegure de que funciona en su entorno. Una vez que haya comprobado que este paso funciona, elimine el ejemplo de la galería y realice cambios iterativos hasta que esté satisfecho con el resultado.
+
    La plantilla siguiente es un ejemplo del archivo Manifest.json:
 
     ```json
@@ -61,29 +67,19 @@ Para crear un elemento de Marketplace personalizado, haga lo siguiente:
        "longSummary": "ms-resource:longSummary",
        "description": "ms-resource:description",
        "longDescription": "ms-resource:description",
-       "uiDefinition": {
-          "path": "UIDefinition.json" (7)
-          },
        "links": [
         { "displayName": "ms-resource:documentationLink", "uri": "http://go.microsoft.com/fwlink/?LinkId=532898" }
         ],
        "artifacts": [
           {
-             "name": "<Template name>",
-             "type": "Template",
-             "path": "DeploymentTemplates\\<Template name>.json", (8)
              "isDefault": true
           }
        ],
-       "categories":[ (9)
-          "Custom",
-          "<Template name>"
-          ],
        "images": [{
           "context": "ibiza",
           "items": [{
              "id": "small",
-             "path": "icons\\Small.png", (10)
+             "path": "icons\\Small.png", (7)
              "type": "icon"
              },
              {
@@ -113,10 +109,7 @@ Para crear un elemento de Marketplace personalizado, haga lo siguiente:
     - (4): el nombre que ven los clientes.
     - (5): el nombre del editor que ven los clientes.
     - (6): nombre legal del editor.
-    - (7): la ruta de acceso donde se almacena el archivo **UIDefinition.json**.  
-    - (8): la ruta de acceso y el nombre del archivo de plantilla principal JSON.
-    - (9): los nombres de las categorías en las que se muestra esta plantilla.
-    - (10): la ruta de acceso y el nombre de cada icono.
+    - (7): la ruta de acceso y el nombre de cada icono.
 
 5. Para todos los campos que hacen referencia a **ms-resource**, tiene que cambiar los valores correspondientes en el archivo **strings/resources.json**:
 
@@ -130,8 +123,6 @@ Para crear un elemento de Marketplace personalizado, haga lo siguiente:
     "documentationLink": "Documentation"
     }
     ```
-
-    ![Presentación del paquete](media/azure-stack-create-and-publish-marketplace-item/pkg1.png) ![Package display](media/azure-stack-create-and-publish-marketplace-item/pkg2.png)
 
 6. Pruebe la plantilla con las [API de Azure Stack Hub](../user/azure-stack-profiles-azure-resource-manager-versions.md) para asegurarse de que el recurso puede implementarse correctamente.
 
@@ -186,12 +177,12 @@ Para crear un elemento de Marketplace personalizado, haga lo siguiente:
 
 6. Una vez que el elemento se ha publicado correctamente en Marketplace, puede eliminar el contenido de la cuenta de almacenamiento.
 
-   > [!CAUTION]  
-   > Ahora se puede acceder a todos los artefactos de la galería predeterminados y personalizados sin autenticación mediante las direcciones URL siguientes:  
-   `https://adminportal.[Region].[external FQDN]:30015/artifact/20161101/[Template Name]/DeploymentTemplates/Template.json`
-   `https://portal.[Region].[external FQDN]:30015/artifact/20161101/[Template Name]/DeploymentTemplates/Template.json`
+   Ahora se puede acceder a todos los artefactos de la galería predeterminados y personalizados sin autenticación mediante las direcciones URL siguientes:
 
-6. Puede quitar un elemento de Marketplace mediante el cmdlet **Remove-AzureRMGalleryItem**. Por ejemplo:
+   - `https://galleryartifacts.adminhosting.[Region].[externalFQDN]/artifact/20161101/[TemplateName]/DeploymentTemplates/Template.json`
+   - `https://galleryartifacts.hosting.[Region].[externalFQDN]/artifact/20161101/[TemplateName]/DeploymentTemplates/Template.json`
+
+7. Puede quitar un elemento de Marketplace mediante el cmdlet **Remove-AzureRMGalleryItem**. Por ejemplo:
 
    ```powershell
    Remove-AzsGalleryItem -Name <Gallery package name> -Verbose

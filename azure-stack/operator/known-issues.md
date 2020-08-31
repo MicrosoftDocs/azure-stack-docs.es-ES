@@ -3,16 +3,16 @@ title: Problemas conocidos de Azure Stack Hub
 description: Obtenga información sobre los problemas conocidos de las versiones de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 08/13/2020
+ms.date: 08/25/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 08/13/2020
-ms.openlocfilehash: 2513fe687bdfc08fe34a4c0cf05e388b84947fee
-ms.sourcegitcommit: 77f53d8f4188feea7dd2197650ee860104b1e2aa
+ms.openlocfilehash: d403128cfe2cfe34bb9f5ed188a8591656819e1e
+ms.sourcegitcommit: 65a115d1499b5fe16b6fe1c31cce43be21d05ef8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501065"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88818341"
 ---
 # <a name="azure-stack-hub-known-issues"></a>Problemas conocidos de Azure Stack Hub
 
@@ -102,6 +102,12 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 
 ## <a name="compute"></a>Proceso
 
+### <a name="issues-using-vm-extensions-in-ubuntu-server-2004"></a>Problemas con las extensiones de máquina virtual de Ubuntu Server 20.04
+
+- Aplicable a: Este problema se aplica a **Ubuntu Server 20 04 LTS**.
+- Causa: Algunas distribuciones de Linux han pasado a Python 3.8 y han quitado el punto de entrada de `/usr/bin/python` heredado para Python por completo. Los usuarios de distribución de Linux que han pasado a Python 3.x deben asegurarse de que el punto de entrada `/usr/bin/python` heredado exista antes de intentar implementar esas extensiones en sus máquinas virtuales. De lo contrario, podría producirse un error en la implementación de la extensión.
+- Corrección: Siga los pasos de resolución descritos en [Problemas al usar extensiones de VM en los sistemas de Azure Virtual Machines para Linux habilitados para Python 3](/azure/virtual-machines/extensions/issues-using-vm-extensions-python-3) pero omita el paso 2, ya que Azure Stack Hub no tiene la funcionalidad **Ejecutar comando**.
+
 ### <a name="nvv4-vm-size-on-portal"></a>Tamaño de máquina virtual NVv4 en el portal
 
 - Aplicable a: Este problema se aplica a la versión 2002 y versiones posteriores.
@@ -122,6 +128,16 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
 - Causa: La creación de máquinas virtuales en un conjunto de disponibilidad de 3 dominios de error y la creación de una instancia de conjunto de escalado de máquinas virtuales genera un error **FabricVmPlacementErrorUnsupportedFaultDomainSize** durante el proceso de actualización en un entorno de Azure Stack Hub de 4 nodos.
 - Corrección: Se pueden crear VM únicas en un conjunto de disponibilidad con 2 dominios de error correctamente. Sin embargo, la creación de instancias del conjunto de escalado todavía no está disponible durante el proceso de actualización en una implementación de Azure Stack Hub de 4 nodos.
+
+## <a name="storage"></a>Storage
+
+### <a name="retention-period-reverts-to-0"></a>El período de retención vuelve a 0
+
+- Aplicable a: este problema afecta a las versiones 2002 y 2005.
+- Causa: Si especifica un período de tiempo distinto de 0 como valor del período de retención, este vuelve a 0 (el valor predeterminado de esta configuración) en las actualizaciones 2002 o 2005. El valor de 0 días surte efecto inmediatamente después de finalizar la actualización, lo que hace que todas las cuentas de almacenamiento existentes y las cuentas de almacenamiento recién eliminadas queden inmediatamente fuera del período de retención y se marquen para la recolección de elementos no utilizados periódica (que se ejecuta cada hora).
+- Corrección: Especifique manualmente un valor correcto para el período de retención. Las cuentas de almacenamiento cuyos elementos no utilizados se hayan recolectado antes de que se especifique el nuevo período de retención, no son recuperables.  
+
+## <a name="resource-providers"></a>Proveedores de recursos
 
 ### <a name="sqlmysql"></a>SQL/MySQL
 
@@ -309,6 +325,14 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 - Aplicable a: Este problema se aplica a las nuevas instalaciones de la versión 2002 y versiones posteriores y a cualquier versión anterior con TLS 1.2 habilitado.
 - Causa: Al configurar la copia de seguridad automatizada de las máquinas virtuales con SQL con una cuenta de almacenamiento existente, se produce el error **Agente de IaaS de SQL Server: Se ha cerrado la conexión subyacente: Error inesperado de envío.**
 - Repetición: Comunes
+
+## <a name="storage"></a>Storage
+
+### <a name="retention-period-revert-to-0"></a>El período de retención vuelve a 0
+
+- Aplicable a: este problema afecta a las versiones 2002 y 2005.
+- Causa: Si previamente especificó un período de tiempo distinto de 0 como valor del período de retención, este volverá a 0 (el valor predeterminado de esta configuración) durante las actualizaciones 2002 y 2005. El valor de 0 días surte efecto inmediatamente después de finalizar la actualización, lo que hace que todas las cuentas de almacenamiento existentes y las cuentas de almacenamiento recién eliminadas queden inmediatamente fuera del período de retención y se marquen para la recolección de elementos no utilizados periódica (que se ejecuta cada hora). 
+- Corrección: Especifique manualmente un valor adecuado para el período de retención. Sin embargo, las cuentas de almacenamiento cuyos elementos no utilizados se hayan recolectado antes de que se especifique el nuevo período de retención, no son recuperables.  
 
 ## <a name="resource-providers"></a>Proveedores de recursos
 

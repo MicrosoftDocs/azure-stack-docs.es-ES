@@ -3,16 +3,16 @@ title: Adición de imágenes de Linux al Marketplace de Azure Stack Hub
 description: Aprenda a agregar imágenes de Linux al Marketplace de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 05/07/2020
+ms.date: 08/24/2020
 ms.author: sethm
 ms.reviewer: ''
 ms.lastreviewed: 11/16/2019
-ms.openlocfilehash: 32cdb1ec98f9825a63b5acfa68e4c8e3f43089a7
-ms.sourcegitcommit: 9894804f31527234d43f4a93a9b7c106c8540435
+ms.openlocfilehash: 32e16bac548193a7c0af517c3a60e78a3e52f3ce
+ms.sourcegitcommit: d73637146daaba0ef0ab1729683bb52c65466099
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82967733"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88857526"
 ---
 # <a name="add-linux-images-to-the-azure-stack-hub-marketplace"></a>Adición de imágenes de Linux al Marketplace de Azure Stack Hub
 
