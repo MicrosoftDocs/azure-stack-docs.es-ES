@@ -3,16 +3,16 @@ title: Problemas conocidos de Azure Stack Hub
 description: Obtenga información sobre los problemas conocidos de las versiones de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 08/25/2020
+ms.date: 09/02/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 08/13/2020
-ms.openlocfilehash: d403128cfe2cfe34bb9f5ed188a8591656819e1e
-ms.sourcegitcommit: 65a115d1499b5fe16b6fe1c31cce43be21d05ef8
+ms.openlocfilehash: 664d89ecfde65906bbda33d71d9adc24284a33ba
+ms.sourcegitcommit: cf99d632ca2afccba4aaad5c8a013ba3443bcd54
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88818341"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89410980"
 ---
 # <a name="azure-stack-hub-known-issues"></a>Problemas conocidos de Azure Stack Hub
 
@@ -39,13 +39,6 @@ Para tener acceso a los problemas conocidos de una versión diferente, use la li
 Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, consulte [Solución de problemas de actualizaciones en Azure Stack Hub](azure-stack-troubleshooting.md#troubleshoot-azure-stack-hub-updates).
 
 ## <a name="portal"></a>Portal
-
-### <a name="subscription-permissions"></a>Permisos de suscripción
-
-- Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: No puede ver los permisos de la suscripción mediante los portales de Azure Stack Hub.
-- Corrección: Use [PowerShell para verificar los permisos](/powershell/module/azurerm.resources/get-azurermroleassignment).
-- Repetición: Comunes
 
 ### <a name="administrative-subscriptions"></a>Suscripciones administrativas
 
@@ -120,6 +113,12 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 - Causa: Al crear una nueva máquina virtual, es posible que reciba un error como, por ejemplo, **Esta suscripción tiene una capacidad de vCPU regionales totales en esta ubicación y está usando todas las disponibles 50 vCPU regionales totales**. Esto indica que se ha alcanzado la cuota de núcleos totales que tiene disponibles.
 - Corrección: pida a su operador un plan complementario con una cuota adicional. La edición de la cuota del plan actual no funcionará ni reflejará la cuota incrementada.
 - Repetición: poco frecuente
+
+### <a name="vm-overview-blade-does-not-show-correct-computer-name"></a>La hoja de información general de máquinas virtuales no muestra el nombre de equipo correcto
+
+- Aplicable a: este problema afecta a todas las versiones.
+- Causa: Al ver los detalles de una máquina virtual en la hoja de información general, el nombre del equipo se muestra como **(no disponible)** . Por su propio diseño esto es para máquinas virtuales creadas a partir de discos o instantáneas de disco especializados.
+- Corrección: Vea la hoja **Propiedades** en **Configuración**.
 
 ### <a name="virtual-machine-scale-set"></a>Conjunto de escalado de máquina virtual
 

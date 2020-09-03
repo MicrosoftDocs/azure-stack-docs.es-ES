@@ -3,16 +3,16 @@ title: Descarga de herramientas de Azure Stack Hub desde GitHub
 description: Obtenga información sobre cómo descargar las herramientas necesarias para trabajar con Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 6/13/2020
+ms.date: 8/28/2020
 ms.author: mabrigg
 ms.reviewer: thoroet
-ms.lastreviewed: 6/13/2020
-ms.openlocfilehash: 2ab627803b1c811f131694ab58a8c53da6104774
-ms.sourcegitcommit: 9c4c3487ca79b4e077b415611051cd4ad471277c
+ms.lastreviewed: 8/28/2020
+ms.openlocfilehash: 3b7734f5baccdad399f88bd36a076574f0c9c91a
+ms.sourcegitcommit: 28894abb31423046f6775aadef490c467f1b1820
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84766378"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89089616"
 ---
 # <a name="download-azure-stack-hub-tools-from-github"></a>Descarga de herramientas de Azure Stack Hub desde GitHub
 
@@ -55,10 +55,10 @@ cd \
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 
 invoke-webrequest `
   https://github.com/Azure/AzureStack-Tools/archive/az.zip `
-  -OutFile master.zip
+  -OutFile az.zip
 
 # Expand the downloaded files.
-expand-archive master.zip `
+expand-archive az.zip `
   -DestinationPath . `
   -Force
 

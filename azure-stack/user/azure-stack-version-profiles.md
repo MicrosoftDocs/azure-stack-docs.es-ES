@@ -3,16 +3,16 @@ title: Administración de perfiles de la versión de API en Azure Stack Hub
 description: Obtenga información acerca de los perfiles de la versión de API en Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 05/04/2020
+ms.date: 08/28/2020
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 07/24/2019
-ms.openlocfilehash: 8dd456ad26605c592160ffdc4a4c0d0ea28b2628
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.openlocfilehash: 44638ca39dc5604ee436af5c0fa09c58fadf59eb
+ms.sourcegitcommit: 28894abb31423046f6775aadef490c467f1b1820
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86567338"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89089650"
 ---
 # <a name="manage-api-version-profiles-in-azure-stack-hub"></a>Administración de perfiles de la versión de API en Azure Stack Hub
 

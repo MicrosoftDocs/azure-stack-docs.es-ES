@@ -4,16 +4,16 @@ description: Aprenda a recopilar los registros de diagnóstico a petición en Az
 author: justinha
 ms.custom: conteperfq4
 ms.topic: article
-ms.date: 06/30/2020
+ms.date: 09/02/2020
 ms.author: justinha
 ms.reviewer: shisab
-ms.lastreviewed: 06/30/2020
-ms.openlocfilehash: b8be0f88b53bb599b716d50ac75e1d6d18515475
-ms.sourcegitcommit: bd775dfb298ba1dc67ac9ac7d591794179151026
+ms.lastreviewed: 09/02/2020
+ms.openlocfilehash: 29f46fceab5e87bc7dff59a4e4c80a48fa8f34fc
+ms.sourcegitcommit: cf99d632ca2afccba4aaad5c8a013ba3443bcd54
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85764582"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89410963"
 ---
 # <a name="send-azure-stack-hub-diagnostic-logs-by-using-the-privileged-endpoint-pep"></a>Envío de los registros de diagnóstico de Azure Stack Hub mediante el punto de conexión con privilegios
 
@@ -83,25 +83,25 @@ if ($session) {
 * Recopilación de registros para los proveedores de recursos de valor añadido. La sintaxis general es:
  
   ```powershell
-  Get-AzureStackLogs -FilterByResourceProvider <<value-add RP name>>
+  Get-AzureStackLog -FilterByResourceProvider <<value-add RP name>>
   ```
  
   Para recopilar los registros de IoT Hub: 
 
   ```powershell
-  Get-AzureStackLogs -FilterByResourceProvider IotHub
+  Get-AzureStackLog -FilterByResourceProvider IotHub
   ```
  
   Para recopilar los registros de Event Hubs:
 
   ```powershell
-  Get-AzureStackLogs -FilterByResourceProvider eventhub
+  Get-AzureStackLog -FilterByResourceProvider eventhub
   ```
  
   Para recopilar los registros de Azure Stack Edge:
 
   ```powershell
-  Get-AzureStackLogs -FilterByResourceProvide databoxedge
+  Get-AzureStackLog -FilterByResourceProvide databoxedge
   ```
 
 * Recopilar registros y almacenarlos en el contenedor de blobs de Azure Storage especificado. La sintaxis general para esta operación es como sigue:

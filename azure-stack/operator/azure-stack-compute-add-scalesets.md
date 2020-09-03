@@ -3,16 +3,16 @@ title: Disponibilidad de los conjuntos de escalado de máquinas virtuales en Azu
 description: Conozca cómo un operador de la nube puede agregar conjuntos de escalado de máquinas virtuales a Marketplace de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 05/04/2020
+ms.date: 08/28/2020
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 10/22/2019
-ms.openlocfilehash: d4383a9848ff2fd3e5f5da1fb71d88c71056bbd2
-ms.sourcegitcommit: 21cdab346fc242b8848a04a124bc16c382ebc6f0
+ms.openlocfilehash: 3714b69e2a65baeb0a5b0ba9a029a5b3144bee1a
+ms.sourcegitcommit: 28894abb31423046f6775aadef490c467f1b1820
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82777838"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89089701"
 ---
 # <a name="make-virtual-machine-scale-sets-available-in-azure-stack-hub"></a>Disponibilidad de los conjuntos de escalado de máquinas virtuales en Azure Stack Hub
 
@@ -33,9 +33,6 @@ En Azure Stack Hub, los conjuntos de escalado de máquinas virtuales no admiten 
 * **Imagen del sistema operativo:** Para poder crear un conjunto de escalado de máquinas virtuales, antes es preciso descargar las imágenes de máquina virtual para usar en el conjunto de escalado desde [Marketplace de Azure Stack Hub](azure-stack-download-azure-marketplace-item.md). Para que un usuario pueda crear un conjunto de escalado, deben existir las imágenes.
 
 ## <a name="use-the-azure-stack-hub-portal"></a>Uso del portal de Azure Stack Hub
-
->[!IMPORTANT]  
-> La información de esta sección se aplica cuando se usa la versión 1808 de Azure Stack Hub o una posterior.
 
 1. Inicie sesión en el portal de Azure Stack Hub. Después vaya a **Todos los servicios**, luego **Conjuntos de escalado de máquinas virtuales** y, en **COMPUTE**, seleccione **Conjuntos de escalado de máquinas virtuales**.
    ![Selección de conjuntos de escalado de máquinas virtuales](media/azure-stack-compute-add-scalesets/all-services.png)

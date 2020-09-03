@@ -98,6 +98,8 @@
       href: concepts/updates.md
     - name: Elección de unidades
       href: concepts/choose-drives.md
+    - name: Consideraciones de simetría de unidad
+      href: concepts/drive-symmetry-considerations.md
     - name: Planeamiento de volúmenes
       href: concepts/plan-volumes.md
     - name: Red definida por software
