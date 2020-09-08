@@ -6,29 +6,28 @@ ms.author: v-kedow
 ms.topic: conceptual
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 08/11/2020
-ms.openlocfilehash: 39d67ffb49b8fa8ceb343038883602b3e940f8e1
-ms.sourcegitcommit: 7d518629bd55f24e7459404bb19b7db8a54f4b94
+ms.date: 09/01/2020
+ms.openlocfilehash: 0c5ce6430ac44601b7e0a172203faabf2732e0a2
+ms.sourcegitcommit: 08a421ab5792ab19cc06b849763be22f051e6d78
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88145669"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364752"
 ---
 # <a name="understanding-the-cache-in-azure-stack-hci"></a>Descripción de la memoria caché en Azure Stack HCI
 
 > Se aplica a: Azure Stack HCI, versión 20H2; Windows Server 2019
 
-[Espacios de almacenamiento directo](/windows-server/storage/storage-spaces/storage-spaces-direct-overview) incluye una memoria caché incorporada en el lado servidor para maximizar el rendimiento del almacenamiento. Se trata de una memoria caché grande, persistente y de lectura *y* escritura en tiempo real. La caché se configura automáticamente cuando se habilita Espacios de almacenamiento directo. En la mayoría de los casos, no se requiere ninguna administración manual.
-El funcionamiento de la caché depende de los tipos de unidades presentes.
+Azure Stack HCI incluye una memoria caché integrada en el lado servidor para maximizar el rendimiento del almacenamiento. Se trata de una memoria caché grande, persistente y de lectura *y* escritura en tiempo real. La caché se configura automáticamente cuando se implementa Azure Stack HCI. En la mayoría de los casos, no se requiere ninguna administración manual. El funcionamiento de la caché depende de los tipos de unidades presentes.
 
-El vídeo siguiente incluye detalles sobre cómo funciona el almacenamiento en caché de Espacios de almacenamiento directo, así como otras consideraciones de diseño.
+En el vídeo siguiente, se describen el funcionamiento del almacenamiento en caché para Espacios de almacenamiento directo, la tecnología de virtualización de almacenamiento presente en Azure Stack HCI, así como otras consideraciones de diseño.
 
 <strong>Consideraciones de diseño de Espacios de almacenamiento directo</strong><br>(20 minutos)<br>
 <iframe src="https://channel9.msdn.com/Blogs/windowsserver/Design-Considerations-for-Storage-Spaces-Direct/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
 ## <a name="drive-types-and-deployment-options"></a>Tipos de unidad y opciones de implementación
 
-Espacios de almacenamiento directo funciona actualmente con cuatro tipos de unidades:
+Azure Stack HCI actualmente funciona con cuatro tipos de unidades:
 
 | Tipo de unidad | Descripción |
 |----------------------|--------------------------|
@@ -53,7 +52,7 @@ Las implementaciones híbridas tienen como objetivo equilibrar el rendimiento y 
 
 ## <a name="cache-drives-are-selected-automatically"></a>Las unidades de caché se seleccionan de forma automática.
 
-En las implementaciones con varios tipos de unidades, Espacios de almacenamiento directo usa automáticamente todas las unidades del tipo "más rápido" para el almacenamiento en caché. Las unidades restantes se usan para la capacidad.
+En las implementaciones con varios tipos de unidades, Azure Stack HCI usa automáticamente todas las unidades del tipo "más rápido" para el almacenamiento en caché. Las unidades restantes se usan para la capacidad.
 
 El tipo "más rápido" se determina según la siguiente jerarquía.
 
@@ -89,9 +88,9 @@ Como resultado, las características de escritura, como la latencia de escritura
 
 Al almacenar en caché las unidades de disco duro (HDD), las lecturas *y* las escrituras se almacenan en caché para proporcionar una latencia similar a la de la memoria flash (a menudo 10 veces mejor) para ambas. La memoria caché de lectura almacena datos que se han leído recientemente y con frecuencia para obtener un acceso rápido y para minimizar el tráfico aleatorio a las unidades de disco duro. (Debido a los retrasos por búsqueda y rotación, la latencia y la pérdida de tiempo que provoca el acceso aleatorio a una unidad de disco duro es importante). Las escrituras se almacenan en caché para absorber las ráfagas y, al igual que antes, para fusionar las escrituras y las reescrituras y minimizar el tráfico acumulativo hacia las unidades de capacidad.
 
-Espacios de almacenamiento directo implementa un algoritmo que elimina la aleatoriedad de las escrituras antes de moverlas, para emular un modelo de E/S en disco que parezca secuencial aunque la E/S real proveniente de la carga de trabajo (por ejemplo, máquinas virtuales) sea aleatoria. Esto maximiza el número de operaciones de entrada y salida y el rendimiento de las unidades HDD.
+Azure Stack HCI implementa un algoritmo que anula la aleatorización de las escrituras antes de retirarlas del almacenamiento provisional, para emular un patrón de E/S en el disco que parece secuencial incluso cuando el patrón de E/S real procedente de la carga de trabajo (por ejemplo, de las máquinas virtuales) es aleatorio. Esto maximiza el número de operaciones de entrada y salida y el rendimiento de las unidades HDD.
 
-### <a name="caching-in-deployments-with-drives-of-all-three-types"></a>Almacenamiento en caché en implementaciones con unidades de los tres tipos
+### <a name="caching-in-deployments-with-nvme-ssd-and-hdd"></a>Almacenamiento en caché en implementaciones con NVMe, SSD y HDD
 
 Cuando hay unidades de los tres tipos, las unidades de NVMe proporcionan almacenamiento en caché para los discos SSD y HDD. El comportamiento es como el descrito anteriormente: solo se almacenan en caché las escrituras para los discos SSD, y las lecturas y escrituras para las unidades de disco duro. La carga del almacenamiento en caché para las unidades de disco duro se distribuye uniformemente entre las unidades de caché.
 
@@ -114,7 +113,7 @@ La memoria caché se implementa en el nivel de unidad: las unidades de caché in
 
 Dado que la memoria caché está debajo del resto de la pila de almacenamiento definido por software de Windows, no tiene ni necesita el reconocimiento de conceptos como espacios de almacenamiento o tolerancia a errores. Puede considerarlo como la creación de unidades "híbridas" (en parte flash, en parte disco) que luego se presentan a Windows. Al igual que con una unidad híbrida real, el movimiento en tiempo real de los datos fríos y calientes entre las partes más rápidas y más lentas de los medios físicos es casi invisible en el exterior.
 
-Dado que la resistencia de la característica Espacios de almacenamiento directo ocurre, como mínimo, en el nivel de servidor (es decir, las copias de datos siempre se escriben en servidores diferentes, a lo sumo una copia por servidor), los datos que están en la memoria caché aprovechan la misma resistencia que los datos que no están en la caché.
+Dado que la resistencia en Azure Stack HCI se produce al menos en el nivel de servidor (lo que significa que las copias de datos siempre se escriben en servidores diferentes; como máximo una copia por servidor), los datos de la caché se benefician de la misma resistencia que los datos que no están en la caché.
 
 ![Arquitectura de la caché en el lado servidor](media/cache/Cache-Server-Side-Architecture.png)
 
@@ -147,9 +146,9 @@ Después, puede reemplazar la unidad de caché igual que lo haría con cualquier
 
 Hay varias memorias caché no relacionadas en la pila de almacenamiento definida por software de Windows. Entre los ejemplos se incluyen la caché con reescritura de Espacios de almacenamiento y la caché de lectura en memoria del volumen compartido de clúster (CSV).
 
-Con Espacios de almacenamiento directo, no se debería modificar el comportamiento predeterminado de la caché con reescritura de espacios de almacenamiento. Por ejemplo, no se deben usar parámetros como **-WriteCacheSize** en el cmdlet **New-Volume**.
+Con Azure Stack HCI, no se debería modificar el comportamiento predeterminado de la caché con reescritura de espacios de almacenamiento. Por ejemplo, no se deben usar parámetros como **-WriteCacheSize** en el cmdlet **New-Volume**.
 
-Puede optar por usar la memoria caché de CSV o no: depende de usted. Está desactivada de forma predeterminada en Espacios de almacenamiento directo, pero no entra en conflicto con la nueva caché descrita en este tema en absoluto. En algunos escenarios, puede mejorar el rendimiento significativamente. Para más información, consulte [Cómo habilitar la caché de CSV](/windows-server/failover-clustering/failover-cluster-csvs#enable-the-csv-cache-for-read-intensive-workloads-optional).
+Puede optar por usar la memoria caché de CSV o no: depende de usted. Está desactivada de manera predeterminada en Windows Server 2019, pero no entra en conflicto con la nueva caché que se describe en este tema de ningún modo. En algunos escenarios, puede mejorar el rendimiento significativamente. Para más información, consulte [Cómo habilitar la caché de CSV](/windows-server/failover-clustering/failover-cluster-csvs#enable-the-csv-cache-for-read-intensive-workloads-optional).
 
 ## <a name="manual-configuration"></a>Configuración manual
 
@@ -161,7 +160,7 @@ Si necesita realizar cambios en el modelo de dispositivo de la caché después d
 
 En las implementaciones donde todas las unidades tienen el mismo tipo, como las implementaciones de todas unidades NVMe o SSD, no se configura ninguna memoria caché porque Windows no puede distinguir automáticamente las características (por ejemplo, la resistencia de escritura) entre las unidades del mismo tipo.
 
-Si quieres usar unidades de mayor resistencia para almacenar en caché para unidades del mismo tipo que tienen menor resistencia, puedes especificar qué modelo de unidad se va a usar mediante el parámetro **-CacheDeviceModel** del cmdlet **Enable-ClusterS2D**. Una vez que se habilita Espacios de almacenamiento directo, todas las unidades de ese modelo se usarán para el almacenamiento en caché.
+Si quieres usar unidades de mayor resistencia para almacenar en caché para unidades del mismo tipo que tienen menor resistencia, puedes especificar qué modelo de unidad se va a usar mediante el parámetro **-CacheDeviceModel** del cmdlet **Enable-ClusterS2D**. Todas las unidades de ese modelo se usarán para el almacenamiento en caché.
 
    >[!TIP]
    > Asegúrese de que la cadena del modelo coincida exactamente como aparece en la salida de **Get-PhysicalDisk**.
@@ -201,7 +200,7 @@ La configuración manual habilita las siguientes posibilidades de implementació
 
 Es posible reemplazar el comportamiento predeterminado de la memoria caché. Por ejemplo, puede establecerlo en lecturas de caché en una implementación con todo flash. No es recomendable que modifique el comportamiento a menos que esté seguro de que el predeterminado no es adecuado para su carga de trabajo.
 
-Para reemplazar el comportamiento, use el cmdlet **Set-ClusterStorageSpacesDirect**y sus parámetros **-CacheModeSSD** y **-CacheModeHDD**. El parámetro **CacheModeSSD** establece el comportamiento de la caché al almacenar en caché para las unidades de estado sólido. El parámetro **CacheModeHDD** establece el comportamiento de la caché al almacenar en caché para las unidades de disco duro. Esto se puede realizar en cualquier momento una vez que se haya habilitado Espacios de almacenamiento directo.
+Para reemplazar el comportamiento, use el cmdlet **Set-ClusterStorageSpacesDirect**y sus parámetros **-CacheModeSSD** y **-CacheModeHDD**. El parámetro **CacheModeSSD** establece el comportamiento de la caché al almacenar en caché para las unidades de estado sólido. El parámetro **CacheModeHDD** establece el comportamiento de la caché al almacenar en caché para las unidades de disco duro.
 
 Puede usar **Get-ClusterStorageSpacesDirect** para comprobar que se ha establecido el comportamiento.
 

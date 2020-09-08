@@ -7,12 +7,12 @@ ms.date: 06/09/2020
 ms.author: sethm
 ms.reviewer: xiaofmao
 ms.lastreviewed: 12/07/2019
-ms.openlocfilehash: 9556784a86ecca0d55b7cafa407a667b69efd8fd
-ms.sourcegitcommit: d91e47a51a02042f700c6a420f526f511a6db9a0
+ms.openlocfilehash: af5aa752d48fd51712695056d771ddf333a34df0
+ms.sourcegitcommit: e6665cfb15fae57218e58cd6de6053f16c1f9044
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84666401"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89274116"
 ---
 # <a name="quota-types-in-azure-stack-hub"></a>Tipos de cuota en Azure Stack Hub
 
@@ -43,7 +43,7 @@ Las [cuotas](service-plan-offer-subscription-overview.md#plans) definen los lím
 | Número total de cuentas de almacenamiento |20 |El número máximo de cuentas de almacenamiento que puede crear una suscripción en esta ubicación. |
 
 > [!NOTE]
-> Si se supera la **capacidad máxima (GB)** en una suscripción, no se podrá crear un nuevo recurso de almacenamiento en esta suscripción. Sin embargo, puede seguir usando los discos no administrados que se crearon en esta suscripción en las máquinas virtuales, lo cual podría hacer que la capacidad total utilizada superara el límite de cuota.<br>La capacidad máxima de los discos administrados es independiente de la cuota de almacenamiento total. Puede establecer este valor en **Compute quotas** (Cuotas de proceso).
+> Cuando se supera la **Capacidad máxima (GB)** de una suscripción, no puede crear un nuevo recurso de almacenamiento en la suscripción. Si bien puede crear máquinas virtuales con discos no administrados, esto podría hacer que la capacidad total utilizada supere el límite de cuota.<br>La capacidad máxima de los discos administrados es independiente de la cuota de almacenamiento total. Puede establecer la cuota de almacenamiento total en **Compute quotas** (Cuotas de proceso).
 
 ## <a name="network-quota-types"></a>Tipos de cuota de red
 

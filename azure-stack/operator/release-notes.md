@@ -3,16 +3,16 @@ title: Notas de la versión de Azure Stack Hub
 description: Notas de la versión para los sistemas integrados de Azure Stack Hub, incluidas las actualizaciones y correcciones de errores.
 author: sethmanheim
 ms.topic: article
-ms.date: 08/13/2020
+ms.date: 09/02/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 08/11/2020
-ms.openlocfilehash: fd1e1fa5c6315932728764d65eb042c1d2e44e20
-ms.sourcegitcommit: 977c47a5587a747dbd67aa110381759ba39044b7
+ms.openlocfilehash: 14d41d920d9a91744c5cfa05d2d252a68146b4d1
+ms.sourcegitcommit: cf99d632ca2afccba4aaad5c8a013ba3443bcd54
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88512468"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89410946"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Notas de la versión de Azure Stack Hub
 
@@ -107,7 +107,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 - Se ha corregido un problema con la escalabilidad horizontal y vertical del rol de infraestructura de soporte técnico que tiene un efecto en cascada sobre la reparación de los nodos de la unidad de escalado.
 - Se ha corregido un problema que hacía que la extensión .VHD (en lugar de .vhd) no se permitiera cuando los operadores agregaban sus propias imágenes al portal de administración de Azure Stack Hub en **All services > Compute > VM Images > Add** (Todos los servicios > Proceso > Imágenes de VM > Agregar).
 - Se ha corregido un problema que hacía que una operación anterior de reinicio de la máquina virtual provocara un reinicio posterior inesperado después de cualquier otra operación de actualización de la máquina virtual (agregar discos, etiquetas, etc.).
-- Se ha corregido un problema que hacía que al crear una zona DNS duplicada se bloqueara el portal. Ahora debería mostrarse un error adecuado.
+- Se ha corregido un problema que provocaba que el portal dejara de responder al crear una zona DNS duplicada. Ahora debería mostrarse un error adecuado.
 - Se ha corregido un problema que hacía que **Get-AzureStackLogs** no recopilara los registros necesarios para solucionar las incidencias de red. 
 - Se ha corregido un problema que hacía que el portal permitiera asociar menos NIC de las realmente permitidas. 
 - Se ha corregido la directiva de integridad de código para no emitir eventos de infracción para determinado software interno. De esta forma, se reduce el ruido en los eventos de infracción de la integridad del código emitidos a través del cliente de syslog.
@@ -115,6 +115,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 - Se ha corregido un problema que hacía que al usar un servidor NTP de Linux se generaran alertas por error en el portal de administración.  
 - Se ha corregido un problema que hacía que la conmutación por error de la instancia del servicio de controladora de copia de seguridad deshabilitara las copias de seguridad automáticas.
 - Se ha corregido un problema que hace que la rotación interna de un secreto produzca un error cuando los servicios de infraestructura no tienen conectividad a Internet.
+- Se ha corregido un problema que impedía a los usuarios ver los permisos de suscripción mediante los portales de Azure Stack Hub.
 
 ## <a name="security-updates"></a>Actualizaciones de seguridad
 

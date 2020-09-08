@@ -3,16 +3,16 @@ title: 'Discos administrados de Azure Stack Hub: Diferencias y consideraciones'
 description: Obtenga información sobre las diferencias y consideraciones a la hora de trabajar con discos administrados en Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 05/04/2020
+ms.date: 08/27/2020
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: 0bb8ebeb46c0290a6e5d66f4aa8e9928f660598d
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: ededa6951727d20ec07a96229b41750b31bdc18c
+ms.sourcegitcommit: 03aad17afe8519536066c735c59ad1bdfe8de083
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86490157"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89041458"
 ---
 # <a name="azure-stack-hub-managed-disks-differences-and-considerations"></a>Discos administrados de Azure Stack Hub: Diferencias y consideraciones
 
@@ -20,8 +20,7 @@ En este artículo se resumen las diferencias entre los [*discos administrados* d
 
 Los discos administrados simplifican la administración de discos para las máquinas virtuales (VM) de IaaS, ya que administran las [cuentas de almacenamiento](../operator/azure-stack-manage-storage-accounts.md) asociadas a los discos de las máquinas virtuales.
 
-> [!NOTE]  
-> Los discos administrados en Azure Stack Hub estaban disponibles a partir de la actualización 1808. A partir de la actualización 1811, la característica está habilitada de forma predeterminada al crear máquinas virtuales mediante el portal de Azure Stack Hub.
+Los discos administrados se habilitan de forma predeterminada al crear máquinas virtuales mediante el portal de Azure Stack Hub.
   
 ## <a name="cheat-sheet-managed-disk-differences"></a>Hoja de referencia rápida: diferencias entre los discos administrados
 

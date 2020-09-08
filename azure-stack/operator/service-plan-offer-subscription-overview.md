@@ -7,12 +7,12 @@ ms.date: 12/18/2019
 ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 10/01/2019
-ms.openlocfilehash: 2ebbc1d7a2d6a159c4d35303c833875452c20c01
-ms.sourcegitcommit: bd775dfb298ba1dc67ac9ac7d591794179151026
+ms.openlocfilehash: 076ea0efb7307ce9a87b04c19608a5b3c723d3f4
+ms.sourcegitcommit: e6665cfb15fae57218e58cd6de6053f16c1f9044
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85764602"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89274082"
 ---
 # <a name="azure-stack-hub-services-plans-offers-subscriptions-overview"></a>Introducción a los servicios, los planes, las ofertas y las suscripciones de Azure Stack Hub
 
@@ -74,6 +74,9 @@ Los planes son agrupaciones de uno o varios servicios. Como operador de Azure St
 ### <a name="base-plan"></a>Plan base
 
 Al crear una oferta, el administrador de servicios puede incluir un plan base. Estos planes se incluyen de forma predeterminada cuando un usuario se suscribe a la oferta. Cuando un usuario se suscribe, tiene acceso a todos los proveedores de recursos especificados en dichos planes base (con las cuotas correspondientes).
+
+> [!NOTE]
+> Si una oferta tiene varios planes base, la capacidad de almacenamiento combinada de los planes no puede superar la cuota de almacenamiento.
 
 ### <a name="add-on-plans"></a>Planes complementarios
 

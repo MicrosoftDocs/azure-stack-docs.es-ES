@@ -1,26 +1,28 @@
 ---
-title: Selección de unidades para Azure Stack HCl
-description: Selección de unidades de Espacios de almacenamiento directo en Azure Stack HCl.
+title: Selección de unidades para Azure Stack HCI
+description: Procedimiento para seleccionar unidades para Azure Stack HCI.
 author: khdownie
 ms.author: v-kedow
 ms.topic: conceptual
-ms.date: 07/22/2020
-ms.openlocfilehash: ca2903e6d7680b38f21482076bf46e49097d444f
-ms.sourcegitcommit: cfc453689a5a2f2491ce00ab77a7c5bfddfe01d8
+ms.service: azure-stack
+ms.subservice: azure-stack-hci
+ms.date: 09/01/2020
+ms.openlocfilehash: c53ef48ab191a831a981c0a0c91b59efa766c948
+ms.sourcegitcommit: 08a421ab5792ab19cc06b849763be22f051e6d78
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997753"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364718"
 ---
-# <a name="choosing-drives-for-azure-stack-hci"></a>Selección de unidades para Azure Stack HCl
+# <a name="choose-drives-for-azure-stack-hci"></a>Selección de unidades para Azure Stack HCI
 
 > Se aplica a: Azure Stack HCI, versión 20H2; Windows Server 2019
 
-En este tema se proporcionan instrucciones sobre cómo elegir las unidades de [Espacios de almacenamiento directo](/windows-server/storage/storage-spaces/storage-spaces-direct-overview) para satisfacer los requisitos de rendimiento y capacidad de Azure Stack HCl.
+En este tema se proporcionan instrucciones sobre cómo elegir las unidades para satisfacer los requisitos de rendimiento y capacidad de Azure Stack HCI.
 
 ## <a name="drive-types"></a>Tipos de unidad
 
-Espacios de almacenamiento directo funciona actualmente con cuatro tipos de unidades:
+Azure Stack HCI actualmente funciona con cuatro tipos de unidades:
 
 | Tipo de unidad | Descripción |
 |----------------------|--------------------------|
@@ -31,15 +33,15 @@ Espacios de almacenamiento directo funciona actualmente con cuatro tipos de unid
 
 ## <a name="built-in-cache"></a>Memoria caché integrada
 
-Espacios de almacenamiento directo presenta una caché de lado servidor integrada. Se trata de una caché de lectura y escritura grande, persistente y en tiempo real. En implementaciones con varios tipos de unidades, se configura automáticamente para usar todas las unidades del tipo "más rápido". Las unidades restantes se usan para la capacidad.
+Azure Stack HCI incluye una memoria caché integrada del lado servidor. Se trata de una caché de lectura y escritura grande, persistente y en tiempo real. En implementaciones con varios tipos de unidades, se configura automáticamente para usar todas las unidades del tipo "más rápido". Las unidades restantes se usan para la capacidad.
 
-Para más información, consulte [Descripción de la memoria caché de Espacios de almacenamiento directo](/windows-server/storage/storage-spaces/understand-the-cache).
+Para más información, consulte [Descripción de la memoria caché de Azure Stack HCI](cache.md).
 
 ## <a name="option-1--maximizing-performance"></a>Opción 1: Maximización del rendimiento
 
 Para lograr latencias inferiores al milisegundo predecibles y uniformes entre lecturas y escrituras aleatorias en cualquier dato, o para lograr un número de IOPS (se han realizado [más de 13 millones](https://techcommunity.microsoft.com/t5/storage-at-microsoft/the-new-hci-industry-record-13-7-million-iops-with-windows/ba-p/428314)) o un rendimiento de E/S (se han realizado lectura a más de 500 GB/segundo) extremadamente altos, es necesario usar todo flash.
 
-Actualmente existen tres formas de hacerlo:
+Hay varias formas de hacerlo:
 
 ![Posibilidades de implementación de todo flash](media/choose-drives/All-Flash-Deployment-Possibilities.png)
 
@@ -96,8 +98,9 @@ Se recomienda limitar la capacidad total de almacenamiento por servidor a aproxi
 
 Para obtener más información, vea también:
 
-- [Descripción de la caché en Azure Stack HCI](cache.md)
-- [Requisitos de hardware de Espacios de almacenamiento directo](/windows-server/storage/storage-spaces/storage-spaces-direct-hardware-requirements)
-- [Planeamiento de volúmenes en Azure Stack HCl](plan-volumes.md)
+- [Descripción de la memoria caché](cache.md)
+- [Determinar los requisitos de hardware](../deploy/before-you-start.md#determine-hardware-requirements)
+- [Consideraciones de simetría de unidad](drive-symmetry-considerations.md)
+- [Planeamiento de volúmenes](plan-volumes.md)
 - [Tolerancia a errores y eficiencia del almacenamiento](fault-tolerance.md)
 - [Descripción e implementación de memoria persistente](/windows-server/storage/storage-spaces/deploy-pmem)

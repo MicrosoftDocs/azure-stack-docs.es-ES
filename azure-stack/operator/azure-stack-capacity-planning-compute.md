@@ -4,15 +4,15 @@ description: Obtenga más información sobre el planeamiento de la capacidad de 
 author: IngridAtMicrosoft
 ms.topic: conceptual
 ms.date: 03/04/2020
-ms.author: inhenkel
+ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 06/13/2019
-ms.openlocfilehash: d87014dfe5d09a6c41e5108b8ae10b26e23b62d8
-ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
+ms.openlocfilehash: bd1c6674bd125546526c1588f98f5b0d17a57fef
+ms.sourcegitcommit: cf99d632ca2afccba4aaad5c8a013ba3443bcd54
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88920192"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89410997"
 ---
 # <a name="azure-stack-hub-compute-capacity"></a>Capacidad de proceso de Azure Stack Hub
 
@@ -27,7 +27,7 @@ El motor de ubicación de Azure Stack Hub coloca las máquinas virtuales de los 
 
 Azure Stack Hub usa dos consideraciones al ubicar máquinas virtuales. La primera, ¿hay suficiente memoria en el host para ese tipo de máquina virtual? La segunda, ¿forman parte las máquinas virtuales de un [conjunto de disponibilidad](/azure/virtual-machines/windows/manage-availability) o son [conjuntos de escalado de máquinas virtuales](/azure/virtual-machine-scale-sets/overview)?
 
-Para conseguir la alta disponibilidad de un sistema de producción con varias máquinas virtuales en Azure Stack Hub, las máquinas virtuales se colocan en un conjunto de disponibilidad que las distribuye entre varios dominios de error. Un dominio de error en un conjunto de disponibilidad se define como un único nodo en la unidad de escalado. Azure Stack Hub admite un conjunto de disponibilidad con un máximo de tres dominios de error para ser coherente con Azure. Las máquinas virtuales colocadas en conjuntos de disponibilidad se aislarán físicamente entre sí al distribuirlas de la manera más uniforme que sea posible en varios dominios de error (hosts de Azure Stack Hub). Si se produce un error de hardware, las máquinas virtuales del dominio de error se reiniciarán en otros dominios de error. Se mantendrán en dominios de error independientes de las otras máquinas virtuales, pero en el mismo conjunto de disponibilidad, si es posible. Cuando el host vuelva a estar en línea, las VM se volverán a equilibrar para mantener la alta disponibilidad.  
+Para conseguir la alta disponibilidad de una carga de trabajo de producción con varias máquinas virtuales en Azure Stack Hub, las máquinas virtuales se colocan en un conjunto de disponibilidad que las distribuye entre varios dominios de error. Un dominio de error en un conjunto de disponibilidad se define como un único nodo en la unidad de escalado. Azure Stack Hub admite un conjunto de disponibilidad con un máximo de tres dominios de error para ser coherente con Azure. Las máquinas virtuales colocadas en conjuntos de disponibilidad se aislarán físicamente entre sí al distribuirlas de la manera más uniforme que sea posible en varios dominios de error (nodos de Azure Stack Hub). Si se produce un error de hardware, las máquinas virtuales del dominio de error se reiniciarán en otros dominios de error. Se mantendrán en dominios de error independientes de las otras máquinas virtuales, pero en el mismo conjunto de disponibilidad, si es posible. Cuando el host vuelva a estar en línea, las VM se volverán a equilibrar para mantener la alta disponibilidad.  
 
 Los conjuntos de escalado de máquinas virtuales usan conjuntos de disponibilidad en el back-end y comprueban que cada instancia de conjunto de escalado de máquinas virtuales se coloque en un dominio de error distinto. Esto significa que usan nodos de infraestructura de Azure Stack Hub independientes. Por ejemplo, en un sistema de Azure Stack Hub de cuatro nodos, puede haber una situación en la que un conjunto de escalado de máquinas virtuales de tres instancias genere un error durante la creación debido a la falta de la capacidad de cuatro nodos para colocar tres instancias de conjunto de escalado de máquinas virtuales en tres nodos independientes de Azure Stack Hub. Además, los nodos de Azure Stack Hub se pueden completar a distintos niveles antes de intentar seleccionar su ubicación.
 
@@ -44,14 +44,6 @@ Si se alcanza el límite de escalado de la máquina virtual, se devolverán como
 ## <a name="consideration-for-batch-deployment-of-vms"></a>Consideración sobre la implementación por lotes de máquinas virtuales
 
 En versiones anteriores a 2002, el uso de 2 a 5 máquinas virtuales por lote con una diferencia de 5 minutos entre los lotes proporcionaba implementaciones de máquina virtual confiables hasta alcanzar una escala de 700 máquinas virtuales. Con la versión 2005 de Azure Stack Hub, podemos aprovisionar máquinas virtuales de forma confiable en tamaños de lote de 40 con una diferencia de 5 minutos entre las implementaciones por lotes.
-
-## <a name="considerations-for-deallocation"></a>Consideraciones para la desasignación
-
-Cuando una máquina virtual se encuentra en estado _desasignado_, no se usan recursos de memoria. Esto permite colocar otras máquinas virtuales en el sistema.
-
-Si la máquina virtual desasignada se vuelve a iniciar, la utilización de memoria o la asignación se tratan como si se colocara una máquina virtual nueva en el sistema y se utiliza la memoria disponible.
-
-Si no hay memoria disponible, la máquina virtual no se iniciará.
 
 ## <a name="azure-stack-hub-memory"></a>Memoria de Azure Stack Hub
 
@@ -90,6 +82,61 @@ Reserva de resistencia = H + R * ((N-1) * H) + V * (N-2)
 <sup>2</sup>Reserva del sistema operativo para la sobrecarga = 15 % (0,15) de la memoria del nodo. El valor de reserva del sistema operativo es un valor estimado y puede variar según la capacidad de memoria física del servidor y la sobrecarga general del sistema operativo.
 
 El valor V, la máquina virtual más grande de la unidad de escalado, se basa dinámicamente en el tamaño más grande de memoria de la máquina virtual del inquilino. Por ejemplo, el valor de la máquina virtual más grande podría ser 7 GB o 112 GB, así como cualquier otro tamaño de memoria de la máquina virtual admitido en la solución de Azure Stack Hub. Cambiar la mayor máquina virtual del tejido de Azure Stack Hub provocará un aumento en la reserva de resistencia, además del aumento de memoria de la propia máquina virtual.
+
+## <a name="considerations-for-deallocation"></a>Consideraciones para la desasignación
+
+Cuando una máquina virtual se encuentra en estado _desasignado_, no se usan recursos de memoria. Esto permite colocar otras máquinas virtuales en el sistema.
+
+Si la máquina virtual desasignada se vuelve a iniciar, la utilización de memoria o la asignación se tratan como si se colocara una máquina virtual nueva en el sistema y se utiliza la memoria disponible. Si no hay memoria disponible, la máquina virtual no se iniciará.
+
+Las máquinas virtuales de gran tamaño implementadas actualmente muestran que la memoria asignada es de 112 GB, pero la demanda de memoria de estas máquinas virtuales es de 2 a 3 GB aproximadamente.
+    
+| Nombre | Memoria asignada (GB) | Demanda de memoria (GB) | ComputerName |  
+| ---- | -------------------- | ------------------ | ------------ |                                        
+| ca7ec2ea-40fd-4d41-9d9b-b11e7838d508 |                 112  |     2.2392578125  |  LISSA01P-NODE01 |
+| 10cd7b0f-68f4-40ee-9d98-b9637438ebf4  |                112  |     2.2392578125  |   LISSA01P-NODE01 |
+| 2e403868-ff81-4abb-b087-d9625ca01d84   |               112   |    2.2392578125  |   LISSA01P-NODE04 |
+
+Hay tres maneras de desasignar memoria para la selección de ubicación de las máquinas virtuales mediante la fórmula **Reserva de resistencia = H + R * ((N-1) * H) + V * (N-2)** :
+* Reducir el tamaño de la máquina virtual más grande
+* Aumentar la memoria de un nodo
+* Agregar un nodo
+
+### <a name="reduce-the-size-of-the-largest-vm"></a>Reducir el tamaño de la máquina virtual más grande 
+
+Al reducir el tamaño de la máquina virtual más grande a la siguiente máquina virtual más pequeña del stamp (24 GB), se reducirá el tamaño de la reserva de resistencia.
+
+![Reducir el tamaño de la VM](media/azure-stack-capacity-planning/decrease-vm-size.png)        
+        
+ Reserva de resistencia = 384 + 172,8 + 48 = 604,8 GB
+        
+| Memoria total | GB de infra. | GB de inquilino | Reserva de resistencia | Total de memoria reservada          | Total de GB disponibles para la selección de ubicación |
+|--------------|--------------------|---------------------|--------------------|--------------------------------|----------------------------------|
+| 1536 GB      | 258 GB             | 329,25 GB           | 604,8 GB           | 258 + 329,25 + 604,8 = 1168 GB | **~344 GB**                         |
+     
+### <a name="add-a-node"></a>Agregar un nodo
+
+[Al agregar un nodo de Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-add-scale-node), se desasignará la memoria mediante la distribución equitativa de la memoria entre los dos nodos.
+
+![Agregar un nodo](media/azure-stack-capacity-planning/add-a-node.png)
+
+Reserva de resistencia = 384 + (0,15) ((5)*384) + 112 * (3) = 1008 GB
+    
+| Memoria total | GB de infra. | GB de inquilino | Reserva de resistencia | Total de memoria reservada          | Total de GB disponibles para la selección de ubicación |
+|--------------|--------------------|---------------------|--------------------|--------------------------------|----------------------------------|
+| 1536 GB      | 258 GB             | 329,25 GB           | 604,8 GB           | 258 + 329,25 + 604,8 = 1168 GB | **~ 344 GB**                         |
+
+### <a name="increase-memory-on-each-node-to-512-gb"></a>Aumentar la memoria de cada nodo a 512 GB
+
+[Al aumentar la memoria de cada nodo](https://docs.microsoft.com/azure-stack/operator/azure-stack-manage-storage-physical-memory-capacity), se aumentará la memoria total disponible.
+
+![Aumentar el tamaño del nodo](media/azure-stack-capacity-planning/increase-node-size.png)
+
+Reserva de resistencia = 512 + 230,4 + 224 = 966,4 GB
+    
+| Memoria total    | GB de infra. | GB de inquilino | Reserva de resistencia | Total de memoria reservada | Total de GB disponibles para la selección de ubicación |
+|-----------------|----------|-----------|--------------------|-----------------------|----------------------------------|
+| 2048 (4*512) GB | 258 GB   | 505,75 GB | 966,4 GB           | 1730,15 GB            | **~ 318 GB**                         |
 
 ## <a name="frequently-asked-questions"></a>Preguntas más frecuentes
 

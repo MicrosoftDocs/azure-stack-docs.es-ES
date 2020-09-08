@@ -8,12 +8,12 @@ ms.date: 10/02/2019
 ms.author: bryanla
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2020
-ms.openlocfilehash: 7021bf8bcc9a6a81ba625e2c9e88a6f5133b81be
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: 6fc476b1f373c8f21481b979d1eefcdbe356766b
+ms.sourcegitcommit: 08a421ab5792ab19cc06b849763be22f051e6d78
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86487947"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364837"
 ---
 # <a name="sql-resource-provider-maintenance-operations"></a>Operaciones de mantenimiento del proveedor de recursos de SQL
 
@@ -44,6 +44,7 @@ Al usar los proveedores de recursos SQL y MySQL con sistemas integrados de Azure
 - Certificado SSL externo [proporcionado durante la implementación](azure-stack-pki-certs.md).
 - La contraseña de la cuenta de administrador local de la máquina virtual del proveedor de recursos proporcionada durante la implementación.
 - Contraseña de usuario de diagnóstico del proveedor de recursos (dbadapterdiag).
+- (versión >= 1.1.47.0) Certificado de Key Vault generado durante la implementación.
 
 ### <a name="powershell-examples-for-rotating-secrets"></a>Ejemplos de PowerShell de cambio de secretos
 
@@ -57,7 +58,8 @@ Al usar los proveedores de recursos SQL y MySQL con sistemas integrados de Azure
     -DiagnosticsUserPassword $passwd `
     -DependencyFilesLocalPath $certPath `
     -DefaultSSLCertificatePassword $certPasswd  `
-    -VMLocalCredential $localCreds
+    -VMLocalCredential $localCreds `
+    -KeyVaultPfxPassword $keyvaultCertPasswd
 ```
 
 **Cambio de la contraseña de usuario de diagnóstico.**
@@ -91,22 +93,34 @@ Al usar los proveedores de recursos SQL y MySQL con sistemas integrados de Azure
     -DefaultSSLCertificatePassword $certPasswd
 ```
 
+**Cambio de la contraseña del certificado de Key Vault.**
+
+```powershell
+.\SecretRotationSQLProvider.ps1 `
+    -Privilegedendpoint $Privilegedendpoint `
+    -CloudAdminCredential $cloudCreds `
+    -AzCredential $adminCreds `
+    -KeyVaultPfxPassword $keyvaultCertPasswd
+```
+
 ### <a name="secretrotationsqlproviderps1-parameters"></a>Parámetros de SecretRotationSQLProvider.ps1
 
-|Parámetro|Descripción|
-|-----|-----|
-|AzCredential|Credencial de la cuenta de administrador de servicios de Azure Stack Hub.|
-|CloudAdminCredential|Credencial de la cuenta de dominio de administración en la nube de Azure Stack Hub.|
-|PrivilegedEndpoint|Punto de conexión con privilegios para acceder a Get-AzureStackStampInformation.|
-|DiagnosticsUserPassword|Contraseña de la cuenta de usuario de diagnóstico.|
-|VMLocalCredential|Cuenta de administrador local en la máquina virtual MySQLAdapter.|
-|DefaultSSLCertificatePassword|Contraseña del certificado SSL predeterminado (*.pfx).|
-|DependencyFilesLocalPath|Ruta de acceso local de los archivos de dependencia.|
-|     |     |
+|Parámetro|Descripción|Comentario|
+|-----|-----|-----|
+|AzureEnvironment|Entorno de Azure de la cuenta de administrador de servicios que se usó para la implementación de Azure Stack Hub. Requerido solo para implementaciones de Azure AD. Los nombres de entorno que se admiten son **AzureCloud**, **AzureUSGovernment** o, si usa una suscripción a Azure Active Directory de China, **AzureChinaCloud**.|Opcional|
+|AzCredential|Credencial de la cuenta de administrador de servicios de Azure Stack Hub.|Mandatory|
+|CloudAdminCredential|Credencial de la cuenta de dominio de administración en la nube de Azure Stack Hub.|Mandatory|
+|PrivilegedEndpoint|Punto de conexión con privilegios para acceder a Get-AzureStackStampInformation.|Mandatory|
+|DiagnosticsUserPassword|Contraseña de la cuenta de usuario de diagnóstico.|Opcional|
+|VMLocalCredential|Cuenta de administrador local en la máquina virtual MySQLAdapter.|Opcional|
+|DefaultSSLCertificatePassword|Contraseña del certificado SSL predeterminado (*.pfx).|Opcional|
+|DependencyFilesLocalPath|Ruta de acceso local de los archivos de dependencia.|Opcional|
+|KeyVaultPfxPassword|Contraseña que se usa para generar el certificado de Key Vault para el adaptador de la base de datos.|Opcional|
+|     |     |     |
 
 ### <a name="known-issues"></a>Problemas conocidos
 
-**Problema:**<br>
+**Problema**:<br>
 Registros de cambio de secretos. Los registros para el cambio de secretos no se recopilan automáticamente si se produce un error en el script personalizado de cambio de secretos cuando se ejecuta.
 
 **Solución alternativa**:<br>

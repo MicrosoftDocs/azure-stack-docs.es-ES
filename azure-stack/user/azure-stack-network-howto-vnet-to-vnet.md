@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: 729a57d8069f4260fbf68dd31dc0160dbb9d2c8d
-ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
+ms.openlocfilehash: 5d8dcba27b1aaed79489b27a2dd6224f6211ac18
+ms.sourcegitcommit: 9557a5029cf329599f5b523c68e8305b876108d7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88920396"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88965116"
 ---
 # <a name="connect-two-vnets-through-peering"></a>Conexión de dos redes virtuales mediante el emparejamiento
 
@@ -75,17 +75,17 @@ En la tabla siguiente se resumen los parámetros que se usan en estas implementa
 
 1.  Abra el portal de usuarios de Azure Stack Hub.
 
-    ![](./media/azure-stack-network-howto-vnet-to-onprem/image5.png)
+    ![Se muestra la pantalla principal, con el botón "+ Crear un recurso".](./media/azure-stack-network-howto-vnet-to-onprem/image5.png)
 
 2.  Seleccione **Crear un recurso** y busque `FortiGate`.
 
-    ![](./media/azure-stack-network-howto-vnet-to-onprem/image6.png)
+    !La lista de resultados de la búsqueda muestra FortiGate NGFW - Single VM Deployment (FortiGate NGFW: implementación de una sola máquina virtual).] (./media/azure-stack-network-howto-vnet-to-onprem/image6.png)
 
 3.  Seleccione **FortiGate NGFW** y seleccione **Crear**.
 
 4.  Complete la sección **Básico** con los parámetros de la tabla [Parámetros de implementación](#deployment-parameters).
 
-    ![](./media/azure-stack-network-howto-vnet-to-onprem/image7.png)
+    ![La pantalla de datos básicos incluye los valores de los parámetros de implementación especificados en los cuadros de lista y texto.](./media/azure-stack-network-howto-vnet-to-onprem/image7.png)
 
 5.  Seleccione **Aceptar**.
 
@@ -98,7 +98,7 @@ En la tabla siguiente se resumen los parámetros que se usan en estas implementa
 
 8.  Configure la dirección IP pública para la aplicación virtual de red FortiGate:
 
-    ![](./media/azure-stack-network-howto-vnet-to-onprem/image8.png)
+    ![En el cuadro de diálogo Asignación de IP se muestran los valores forti1-publicip1 para "Nombre de dirección IP pública" y Estático para "Tipo de dirección IP pública".](./media/azure-stack-network-howto-vnet-to-onprem/image8.png)
 
 9.  Seleccione **Aceptar**. Y, a continuación, seleccione **Aceptar**.
 
@@ -112,33 +112,33 @@ Realice estos pasos para ambas implementaciones, forti1-rg1 y forti2-rg1.
 
 1. Abra el portal de usuarios de Azure Stack Hub.
 
-2. Seleccione Resource groups (Grupos de recursos). Escriba `forti1-rg1` en el filtro y haga doble clic en el grupo de recursos forti1-rg1.
+1. Seleccione Resource groups (Grupos de recursos). Escriba `forti1-rg1` en el filtro y haga doble clic en el grupo de recursos forti1-rg1.
 
-    ![resource group](./media/azure-stack-network-howto-vnet-to-onprem/image9.png)
+    ![Se enumeran diez recursos para el grupo de recursos forti1-Rg1] (./media/azure-stack-network-howto-vnet-to-onprem/image9.png)
 
-2. Seleccione el recurso **forti1-forti1-InsideSubnet-routes-xxxx**.
+1. Seleccione el recurso **forti1-forti1-InsideSubnet-routes-xxxx**.
 
-3. Seleccione **Routes** (Rutas) en **Settings** (Configuración).
+1. Seleccione **Routes** (Rutas) en **Settings** (Configuración).
 
-    ![Rutas](./media/azure-stack-network-howto-vnet-to-onprem/image10.png)
+    ![El botón Rutas está seleccionado en el cuadro de diálogo Configuración.](./media/azure-stack-network-howto-vnet-to-onprem/image10.png)
 
-4. Elimine la ruta **to-Internet**.
+1. Elimine la ruta **to-Internet**.
 
-    ![to-Internet](./media/azure-stack-network-howto-vnet-to-onprem/image11.png)
+    ![La única ruta que aparece en la lista es to-Internet y está seleccionada. Hay un botón de eliminación.](./media/azure-stack-network-howto-vnet-to-onprem/image11.png)
 
-5. Seleccione *Sí*.
+1. Seleccione *Sí*.
 
-6. Seleccione **Add** (Agregar) para agregar una nueva ruta.
+1. Seleccione **Add** (Agregar) para agregar una nueva ruta.
 
-7. Asigne a la ruta el nombre `to-onprem`.
+1. Asigne a la ruta el nombre `to-onprem`.
 
-8. Escriba el intervalo de red IP que define el intervalo de red de la red local a la que se conectará la VPN.
+1. Escriba el intervalo de red IP que define el intervalo de red de la red local a la que se conectará la VPN.
 
-9. Seleccione **Virtual appliance** (Aplicación virtual) para **Next hop type** (Tipo del próximo salto) y `172.16.1.4`. Utilice su intervalo de direcciones IP si usa un intervalo IP diferente.
+1. Seleccione **Virtual appliance** (Aplicación virtual) para **Next hop type** (Tipo del próximo salto) y `172.16.1.4`. Utilice su intervalo de direcciones IP si usa un intervalo IP diferente.
 
-    ![Tipo de próximo salto](./media/azure-stack-network-howto-vnet-to-onprem/image12.png)
+    ![En el cuadro de diálogo Agregar ruta se muestran los cuatro valores que se seleccionaron y especificaron en los cuadros de texto.](./media/azure-stack-network-howto-vnet-to-onprem/image12.png)
 
-10. Seleccione **Guardar**.
+1. Seleccione **Guardar**.
 
 Necesitará un archivo de licencia válido de Fortinet para activar cada NVA FortiGate. Las NVA **no** funcionarán hasta que haya activado cada NVA. Para más información sobre cómo obtener un archivo de licencia y los pasos para activar la NVA, consulte el artículo de la biblioteca de documentos de Fortinet [Registro y descarga de la licencia](https://docs2.fortinet.com/vm/azure/FortiGate/6.2/azure-cookbook/6.2.0/19071/registering-and-downloading-your-license).
 
@@ -150,76 +150,76 @@ Una vez que se han activado las NVA, siga estos pasos para crear una VPN IPSec e
 
 Siga los pasos que se indican a continuación para la NVA forti1 y la NVA forti2:
 
-1.  Para obtener la dirección IP pública asignada, vaya a la página de información general de la máquina virtual fortiX:
+1. Para obtener la dirección IP pública asignada, vaya a la página de información general de la máquina virtual fortiX:
 
-    ![](./media/azure-stack-network-howto-vnet-to-vnet/image13.png)
+    ![En la página de información general de la máquina virtual forti1 se muestran los valores de forti1, como el grupo de recursos y el estado.](./media/azure-stack-network-howto-vnet-to-vnet/image13.png)
 
-2.  Copie la dirección IP asignada, abra un explorador y pegue la dirección en la barra de direcciones. El explorador puede avisarle de que el certificado de seguridad no es de confianza. Continúe de todos modos.
+1. Copie la dirección IP asignada, abra un explorador y pegue la dirección en la barra de direcciones. El explorador puede avisarle de que el certificado de seguridad no es de confianza. Continúe de todos modos.
 
-4.  Escriba el nombre de usuario administrativo y la contraseña de FortiGate que proporcionó durante la implementación.
+1. Escriba el nombre de usuario administrativo y la contraseña de FortiGate que proporcionó durante la implementación.
 
-    ![](./media/azure-stack-network-howto-vnet-to-vnet/image14.png)
+    ![El cuadro de diálogo de inicio de sesión tiene cuadros de texto para especificar el usuario y la contraseña, además de un botón de inicio de sesión.](./media/azure-stack-network-howto-vnet-to-vnet/image14.png)
 
-5.  Seleccione **System** > **Firmware** (Sistema > Firmware).
+1. Seleccione **System** > **Firmware** (Sistema > Firmware).
 
-6.  Seleccione la casilla que muestra el firmware más reciente; por ejemplo, `FortiOS v6.2.0 build0866`.
+1. Seleccione la casilla que muestra el firmware más reciente; por ejemplo, `FortiOS v6.2.0 build0866`.
 
-    ![](./media/azure-stack-network-howto-vnet-to-vnet/image15.png)
+    ![El cuadro de diálogo Firmware tiene el identificador de firmware "FortiOS v6.2.0 build0866", un vínculo a las notas de la versión y dos botones: "Backup config and upgrade" (Realizar copia de seguridad de la configuración) y "Actualizar".](./media/azure-stack-network-howto-vnet-to-vnet/image15.png)
 
-7.  Seleccione **Backup config and upgrade** > **Continue** (Realizar copia de seguridad de la configuración y actualizar > Continuar).
+1. Seleccione **Backup config and upgrade** > **Continue** (Realizar copia de seguridad de la configuración y actualizar > Continuar).
 
-8.  La NVA actualiza su firmware a la compilación más reciente y se reinicia. El proceso tarda unos cinco minutos. Vuelva a iniciar sesión en la consola web de FortiGate.
+1. La NVA actualiza su firmware a la compilación más reciente y se reinicia. El proceso tarda unos cinco minutos. Vuelva a iniciar sesión en la consola web de FortiGate.
 
-10.  Haga clic en **VPN** > **IPSec Wizard** (VPN > Asistente de IPSec).
+1. Haga clic en **VPN** > **IPSec Wizard** (VPN > Asistente de IPSec).
 
-11. Escriba un nombre para la VPN, por ejemplo, `conn1`, en **VPN Creation Wizard** (Asistente para la creación de VPN).
+1. Escriba un nombre para la VPN, por ejemplo, `conn1`, en **VPN Creation Wizard** (Asistente para la creación de VPN).
 
-12. Seleccione **This site is behind NAT** (Este sitio está detrás de un sistema NAT).
+1. Seleccione **This site is behind NAT** (Este sitio está detrás de un sistema NAT).
 
-    ![](./media/azure-stack-network-howto-vnet-to-vnet/image16.png)
+    ![En la captura de pantalla de VPN Creation Wizard (Asistente para creación de VPN), esto se muestra en el primer paso, VPN Setup (Configuración de VPN). Aparecen seleccionados los valores siguientes: "Sitio a sitio" en Tipo de plantilla, "FortiGate" en Remote Device Type (Tipo de dispositivo remoto) y "This site is behind NAT" (Este sitio está detrás de un sistema NAT) en Configuración de NAT.](./media/azure-stack-network-howto-vnet-to-vnet/image16.png)
 
-13. Seleccione **Next** (Siguiente).
+1. Seleccione **Next** (Siguiente).
 
-14. Escriba la dirección IP remota del dispositivo VPN local al que se va a conectar.
+1. Escriba la dirección IP remota del dispositivo VPN local al que se va a conectar.
 
-15. Seleccione **port1** en **Outgoing Interface** (Interfaz de salida).
+1. Seleccione **port1** en **Outgoing Interface** (Interfaz de salida).
 
-16. Seleccione **Pre-shared Key** (Clave compartida previamente) y escriba (y anote) una clave compartida previamente. 
+1. Seleccione **Pre-shared Key** (Clave compartida previamente) y escriba (y anote) una clave compartida previamente. 
 
     > [!NOTE]  
     > Necesitará esta clave para configurar la conexión en el dispositivo VPN local, es decir, deben coincidir *exactamente*.
 
-    ![](./media/azure-stack-network-howto-vnet-to-vnet/image17.png)
+    ![En la captura de pantalla de VPN Creation Wizard (Asistente para creación de VPN), esto se muestra en el segundo paso, Autenticación, y los valores seleccionados aparecen resaltados.](./media/azure-stack-network-howto-vnet-to-vnet/image17.png)
 
-17. Seleccione **Next** (Siguiente).
+1. Seleccione **Next** (Siguiente).
 
-18. Seleccione **port2** en **Local Interface** (Interfaz local).
+1. Seleccione **port2** en **Local Interface** (Interfaz local).
 
-19. Escriba el intervalo de la subred local:
+1. Escriba el intervalo de la subred local:
     - forti1: 172.16.0.0/16
     - forti2: 172.17.0.0/16
 
     Utilice su intervalo de direcciones IP si usa un intervalo IP diferente.
 
-20. Escriba las subredes remotas adecuadas que representan la red local a la que se conectará a través del dispositivo VPN local.
+1. Escriba las subredes remotas adecuadas que representan la red local a la que se conectará a través del dispositivo VPN local.
     - forti1: 172.16.0.0/16
     - forti2: 172.17.0.0/16
 
     Utilice su intervalo de direcciones IP si usa un intervalo IP diferente.
 
-    ![](./media/azure-stack-network-howto-vnet-to-vnet/image18.png)
+    ![En la captura de pantalla de VPN Creation Wizard (Asistente para creación de VPN), esto se muestra en el tercer paso, Policy & Routing (Directiva y enrutamiento). Se muestran los valores seleccionados y especificados.](./media/azure-stack-network-howto-vnet-to-vnet/image18.png)
 
-21. Seleccione **Crear**
+1. Seleccione **Crear**
 
-22. Seleccione **Network** > **Interfaces** (Red > Interfaces).
+1. Seleccione **Network** > **Interfaces** (Red > Interfaces).
 
-    ![](./media/azure-stack-network-howto-vnet-to-vnet/image19.png)
+    ![En la lista de interfaces se muestran dos: port1 (se ha configurado) y port2 (sin configurar). Hay botones para crear, editar y eliminar interfaces.](./media/azure-stack-network-howto-vnet-to-vnet/image19.png)
 
-23. Haga doble clic en **port2**.
+1. Haga doble clic en **port2**.
 
-24. Elija **LAN** en la lista **Role** (Rol) y **DHCP** para el modo de direccionamiento.
+1. Elija **LAN** en la lista **Role** (Rol) y **DHCP** para el modo de direccionamiento.
 
-25. Seleccione **Aceptar**.
+1. Seleccione **Aceptar**.
 
 Repita los pasos para la otra NVA.
 
@@ -229,11 +229,11 @@ Una vez que se haya completado lo anterior para *ambas* NVA:
 
 1.  En la consola web de FortiGate para forti2, seleccione **Monitor** > **IPsec Monitor** (Monitor > Monitor IPsec). 
 
-    ![](./media/azure-stack-network-howto-vnet-to-vnet/image20.png)
+    ![El monitor de la conexión VPN conn1 figura en la lista. Se muestra como desconectado, al igual que el selector de fase 2 correspondiente.](./media/azure-stack-network-howto-vnet-to-vnet/image20.png)
 
 2.  Resalte `conn1` y seleccione **Bring Up** > **All Phase 2 Selectors** (Mostrar > Todos los selectores de la fase 2).
 
-    ![](./media/azure-stack-network-howto-vnet-to-vnet/image21.png)
+    ![El monitor y el selector de fase 2 aparecen como activos.](./media/azure-stack-network-howto-vnet-to-vnet/image21.png)
 
 ## <a name="test-and-validate-connectivity"></a>Prueba y validación de la conectividad
 

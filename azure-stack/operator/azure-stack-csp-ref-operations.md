@@ -3,16 +3,16 @@ title: Registro de inquilinos en Azure Stack Hub para el seguimiento de uso
 description: Aprenda a registrar inquilinos y cómo se realiza el seguimiento del uso de estos en Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 08/24/2020
+ms.date: 09/01/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 10/14/2019
-ms.openlocfilehash: ac318c1352963a7ee0fb873adaae4b30fa58949b
-ms.sourcegitcommit: d73637146daaba0ef0ab1729683bb52c65466099
+ms.openlocfilehash: 66a21943e19cef13aa7a3986b6a058f69cc85793
+ms.sourcegitcommit: 0714ce748e20065b52f8283d5dbba7ab068978d1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88857517"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89285505"
 ---
 # <a name="register-tenants-for-usage-tracking-in-azure-stack-hub"></a>Registro de inquilinos en Azure Stack Hub para el seguimiento de uso
 
@@ -49,7 +49,7 @@ Para más información sobre los perfiles de API y Azure Stack Hub, consulte [Ad
 
 ### <a name="powershell"></a>PowerShell
 
-Use el cmdlet **New-AzureRmResource** para agregar un inquilino. [Conéctese a Azure Stack Hub](azure-stack-powershell-configure-admin.md) y, después, desde un símbolo del sistema con privilegios elevados, use el siguiente cmdlet:
+Use el cmdlet **New-AzureRmResource** para agregar un inquilino. [Conéctese a Azure](/powershell/azure/get-started-azureps) y, luego, ejecute el siguiente comando desde el símbolo del sistema con privilegios elevados:
 
 ```powershell  
 New-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01

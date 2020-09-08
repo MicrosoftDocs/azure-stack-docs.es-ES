@@ -3,15 +3,15 @@ title: Implementación de una máquina virtual con un certificado almacenado de 
 description: Aprenda a implementar una máquina virtual e inserte en ella un certificado mediante un almacén de claves en Azure Stack Hub
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 06/12/2020
+ms.date: 09/01/2020
 ms.author: sethm
 ms.lastreviewed: 12/27/2019
-ms.openlocfilehash: 7f193a0a58018217d8b68758546de269f799b90e
-ms.sourcegitcommit: dd140b3a2ac8e558eae9f5f422711d2ba560da16
+ms.openlocfilehash: 0291245616570804f7f6ddb22ba619433566507e
+ms.sourcegitcommit: 0714ce748e20065b52f8283d5dbba7ab068978d1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84744884"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89285522"
 ---
 # <a name="deploy-a-vm-with-a-securely-stored-certificate-on-azure-stack-hub"></a>Implementación de una máquina virtual con un certificado almacenado de forma segura en Azure Stack Hub
 
@@ -44,7 +44,7 @@ Los pasos siguientes describen el proceso necesario para insertar un certificado
 
 ## <a name="create-a-key-vault-secret"></a>Creación de un secreto de almacén de claves
 
-El script siguiente crea un certificado con el formato .pfx, crea un almacén de claves y almacena el certificado en el almacén de claves como un secreto.
+El script siguiente crea un certificado con el formato .pfx, crea un almacén de claves y almacena el certificado en el almacén de claves como un secreto. El valor de `contentType` del secreto debe establecerse en `pfx`.
 
 > [!IMPORTANT]
 > Debe usar el parámetro `-EnabledForDeployment` cuando cree el almacén de datos. Este parámetro garantiza que se puede hacer referencia al almacén de claves desde las plantillas de Azure Resource Manager.

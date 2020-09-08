@@ -4,16 +4,16 @@ titleSuffix: Azure Stack Hub
 description: Aprenda a crear y cargar un disco duro virtual (VHD) de Azure que contiene un sistema operativo Red Hat Linux.
 author: sethmanheim
 ms.topic: article
-ms.date: 05/04/2020
+ms.date: 08/28/2020
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 12/11/2019
-ms.openlocfilehash: 3c1fdb568b1d0ceb91cad85bc054b614efcf0b26
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: 8756b1fce06582411e321ab5015d6f14da43c6d1
+ms.sourcegitcommit: 28894abb31423046f6775aadef490c467f1b1820
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86488151"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89089599"
 ---
 # <a name="prepare-a-red-hat-based-virtual-machine-for-azure-stack-hub"></a>Preparación de una máquina virtual basada en Red Hat para Azure Stack Hub
 
@@ -145,7 +145,7 @@ En esta sección se supone que ya tiene un archivo ISO en el sitio web de Red Ha
         waagent -version
         ```
 
-    [Después de la versión 1910] Siga estas instrucciones para descargar un WALinuxAgent compatible:
+    [Después de la versión 1910] Siga estas instrucciones para descargar un agente WALinuxAgent compatible:
     
     1. El paquete WALinuxAgent `WALinuxAgent-<version>` se ha insertado en el repositorio de extras de Red Hat. Habilite el repositorio de extras ejecutando el comando siguiente:
 
@@ -159,7 +159,6 @@ En esta sección se supone que ya tiene un archivo ISO en el sitio web de Red Ha
         sudo yum install WALinuxAgent
         sudo systemctl enable waagent.service
         ```
-    
 
 1. No cree espacio de intercambio en el disco del sistema operativo.
 
@@ -354,10 +353,10 @@ En esta sección se supone que ya tiene un archivo ISO en el sitio web de Red Ha
 
         1. Instale el Agente de Linux de Azure ejecutando el comando siguiente:
 
-            ```bash
-            sudo yum install WALinuxAgent
-            sudo systemctl enable waagent.service
-            ```
+        ```bash
+        sudo yum install WALinuxAgent
+        sudo systemctl enable waagent.service
+        ```
 
 1. No cree espacio de intercambio en el disco del sistema operativo.
 
@@ -558,11 +557,11 @@ En esta sección se supone que ya instaló una máquina virtual RHEL en VMware. 
     ```
 
     1. Instale el Agente de Linux de Azure ejecutando el comando siguiente:
-        
-        ```bash
-        sudo yum install WALinuxAgent
-        sudo systemctl enable waagent.service
-        ```
+
+    ```bash
+    sudo yum install WALinuxAgent
+    sudo systemctl enable waagent.service
+    ```
         
 1. No cree espacio de intercambio en el disco del sistema operativo.
 

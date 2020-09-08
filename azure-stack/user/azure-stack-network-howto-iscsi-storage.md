@@ -7,12 +7,12 @@ ms.date: 08/24/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/28/2019
-ms.openlocfilehash: 17f768ddfeb2422c2e3f1c4d3947c6b142ac13bc
-ms.sourcegitcommit: 65a115d1499b5fe16b6fe1c31cce43be21d05ef8
+ms.openlocfilehash: 214b1d2cd06f70e9787c36c974ae4d1d18225924
+ms.sourcegitcommit: 9557a5029cf329599f5b523c68e8305b876108d7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88818732"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88965133"
 ---
 # <a name="connect-to-iscsi-storage-with-azure-stack-hub"></a>Conexión al almacenamiento de iSCSI con Azure Stack Hub
 
@@ -24,7 +24,7 @@ La plantilla se puede encontrar en la bifurcación **lucidqdreams** del reposito
 
 En el diagrama se muestra una máquina virtual hospedada en Azure Stack Hub con un disco montado en iSCSI desde una máquina Windows local (física o virtual) que permite que el almacenamiento externo en Azure Stack Hub pueda montarse dentro de la máquina virtual hospedada en Azure Stack Hub a través del protocolo iSCSI.
 
-![texto alternativo](./media/azure-stack-network-howto-iscsi-storage/overview-iscsi2.svg)
+![En el diagrama se muestra una máquina virtual hospedada en Azure Stack Hub que tiene acceso a un disco montado iSCSI externo.](./media/azure-stack-network-howto-iscsi-storage/overview-iscsi2.svg)
 
 ### <a name="requirements"></a>Requisitos
 
@@ -57,7 +57,7 @@ En el diagrama se muestra una máquina virtual hospedada en Azure Stack Hub con 
 
 En el diagrama se muestran los recursos implementados desde la plantilla para crear el cliente iSCSI que puede usar para conectarse al destino iSCSI. Esta plantilla implementará la máquina virtual y otros recursos; además, ejecutará prepare-iSCSIClient.ps1 y reiniciará la máquina virtual.
 
-![texto alternativo](./media/azure-stack-network-howto-iscsi-storage/iscsi-file-server.svg)
+![En el diagrama se muestran los recursos implementados a partir de la plantilla para crear el cliente de iSCSI para conectarse al destino de iSCSI. Se muestra un servidor de archivos con una subred interna y una NIC (tarjeta de red), un PIP interno (protocolo de Internet privado) y NSG (grupo de seguridad de red).](./media/azure-stack-network-howto-iscsi-storage/iscsi-file-server.svg)
 
 ### <a name="the-deployment-process"></a>El proceso de implementación
 
@@ -68,11 +68,11 @@ La plantilla del grupo de recursos genera una salida pensada para que sea la ent
 3. Ejecute `Create-iSCSITarget.ps1` con la dirección IP y el nombre del servidor que aparecen en la plantilla como parámetros de entrada-salida para el script en el destino iSCSI, que puede ser una máquina virtual o un servidor físico.
 4. Use la dirección IP externa o las direcciones del servidor de destino iSCSI como entradas para ejecutar el script de `Connect-toiSCSITarget.ps1`. 
 
-![texto alternativo](./media/azure-stack-network-howto-iscsi-storage/process.svg)
+![En el diagrama se muestran los tres primeros pasos de los cuatro pasos descritos anteriormente, con las entradas y las salidas. Los pasos son: implementar la infraestructura, crear el destino de iSCSI y conectarse a iSCSI.](./media/azure-stack-network-howto-iscsi-storage/process.svg)
 
 ### <a name="inputs-for-azuredeployjson"></a>Entradas de azuredeploy.json
 
-|**Parámetros**|**valor predeterminado**|**description**|
+|**Parámetros**|**default**|**description**|
 |------------------|---------------|------------------------------|
 |WindowsImageSKU         |2019-Datacenter   |Seleccione la imagen de máquina virtual Windows base
 |VMSize                  |Standard_D2_v2    |Especifique el tamaño de la máquina virtual
@@ -97,7 +97,7 @@ La plantilla del grupo de recursos genera una salida pensada para que sea la ent
 
 También puede ejecutar los scripts en una máquina virtual existente para conectarse desde el cliente iSCSI a un destino iSCSI. Este flujo se da si va a crear el destino iSCSI. En este diagrama se muestra el flujo de ejecución de los scripts de PowerShell. Estos scripts se pueden encontrar en el directorio Script:
 
-![texto alternativo](./media/azure-stack-network-howto-iscsi-storage/script-flow.svg)
+![En el diagrama se muestran los tres scripts que se describen a continuación. En orden de ejecución, son los siguientes: Prepare-iSCSIClient.ps1 (se ejecuta en el cliente), Create-iSCSITarget.ps1 (se ejecuta en los destinos) y Connect-toiSCSITarget.ps1 (se ejecuta en el cliente).](./media/azure-stack-network-howto-iscsi-storage/script-flow.svg)
 
 ### <a name="prepare-iscsiclientps1"></a>Prepare-iSCSIClient.ps1
 
@@ -112,9 +112,9 @@ Es importante reiniciar el sistema después de instalar estos requisitos previos
 
 ### <a name="create-iscsitargetps1"></a>Create-iSCSITarget.ps1
 
-El script `Create-iSCSITarget.ps1 `se debe ejecutar en el sistema que presta servicio al almacenamiento. Puede crear varios discos y destinos, y la única restricción la establecen los iniciadores. Este script se puede ejecutar varias veces para crear muchos discos virtuales que se pueden conectar a diferentes destinos. Puede conectar varios discos a un solo destino. 
+El script `Create-iSCSITarget.ps1` se va a ejecutar en el servidor de almacenamiento. Puede crear varios discos y destinos, y la única restricción la establecen los iniciadores. Este script se puede ejecutar varias veces para crear muchos discos virtuales que se pueden conectar a diferentes destinos. Puede conectar varios discos a un solo destino. 
 
-|**Entrada**|**valor predeterminado**|**description**|
+|**Entrada**|**default**|**description**|
 |------------------|---------------|------------------------------|
 |RemoteServer         |FileServer               |El nombre del servidor que se conecta al destino iSCSI
 |RemoteServerIPs      |1.1.1.1                  |La dirección IP desde la que provendrá el tráfico iSCSI
@@ -129,7 +129,7 @@ El script `Create-iSCSITarget.ps1 `se debe ejecutar en el sistema que presta ser
 
 `Connect-toiSCSITarget.ps1` es el script final, que se ejecuta en el cliente iSCSI y monta el disco presentado por el destino iSCSI en el cliente iSCSI.
 
-|**Entrada**|**valor predeterminado**|**description**|
+|**Entrada**|**default**|**description**|
 |------------------|---------------|------------------------------|
 |TargetiSCSIAddresses   |"2.2.2.2","2.2.2.3"    |Las direcciones IP del destino iSCSI
 |LocalIPAddresses       |"10.10.1.4"            |Esta es la dirección IP interna desde la que provendrá el tráfico iSCSI

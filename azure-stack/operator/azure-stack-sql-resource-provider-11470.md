@@ -7,12 +7,12 @@ ms.date: 11/26/2019
 ms.author: justinha
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/26/2019
-ms.openlocfilehash: 59c8cfdaf13b84f7ba27e633731f4d1587cf63b8
-ms.sourcegitcommit: ddcd083430ca905653d412dc2f7b813218d79509
+ms.openlocfilehash: 9f86466ebacaebc74b7799ec1145cc405faf1b7d
+ms.sourcegitcommit: 08a421ab5792ab19cc06b849763be22f051e6d78
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83375028"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364701"
 ---
 # <a name="sql-resource-provider-11470-release-notes"></a>Notas de la versión del proveedor de recursos de SQL 1.1.47.0
 
@@ -40,7 +40,7 @@ Siga el proceso de actualización del proveedor de recursos para aplicar la revi
 
 ## <a name="known-issues"></a>Problemas conocidos
 
-Ninguno.
+Al [rotar el certificado](azure-stack-mysql-resource-provider-maintain.md#secrets-rotation) de los sistemas integrados de Azure Stack Hub, el argumento KeyVaultPfxPassword es obligatorio incluso si no hay ninguna intención de actualizar la contraseña del certificado de Key Vault.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

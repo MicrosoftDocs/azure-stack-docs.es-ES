@@ -8,12 +8,12 @@ ms.date: 07/21/2020
 ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 07/21/2020
-ms.openlocfilehash: cef555f353b00a0ccfc494b91b5cf4d3c69ac9e9
-ms.sourcegitcommit: ad6bbb611ac671b295568d3f00a193b783470c68
+ms.openlocfilehash: 8072a868106de26be3cbb2b2918d97696647df77
+ms.sourcegitcommit: 03aad17afe8519536066c735c59ad1bdfe8de083
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87397454"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89041628"
 ---
 # <a name="troubleshoot-issues-in-azure-stack-hub"></a>Solución de problemas de Azure Stack Hub
 
@@ -218,3 +218,13 @@ El proceso de revisión y actualización de Azure Stack Hub está diseñado para
 **Corrección**: Para solucionar este problema, vuelva a hacer clic en **Instalar ahora**. Si el problema persiste, recomendamos cargar manualmente la actualización siguiendo la [sección de instalación de actualizaciones](azure-stack-apply-updates.md?#install-updates-and-monitor-progress).
 
 **Repetición**: Comunes
+
+::: moniker range="azs-2002"
+### <a name="2002-update-failed"></a>Error en la actualización 2002
+
+**Aplicable a**: este problema solo se aplica a la versión 2002.
+
+**Causa**: al intentar instalar la actualización 2002, es posible que se produzca un error de actualización y que se proporcione el siguiente mensaje: `The private network parameter is missing from cloud parameters. Please use set-azsprivatenetwork cmdlet to set private networkTrace`.
+
+**Corrección**: [configure una red interna privada](https://docs.microsoft.com/azure-stack/operator/azure-stack-network?view=azs-2002#private-network).
+::: moniker-end

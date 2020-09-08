@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: 34e48ce402678a8fa2f1632e0431cfb38fb895e9
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.openlocfilehash: ac0ddc1ac4b93e236f29ff10dda9e32cf2b8dc32
+ms.sourcegitcommit: 9557a5029cf329599f5b523c68e8305b876108d7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86567287"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88965048"
 ---
 # <a name="vnet-peering-in-azure-stack-hub-with-vms"></a>Emparejamiento de VNET en Azure Stack Hub con máquinas virtuales
 
@@ -23,7 +23,7 @@ Este patrón de implementación es la base que permitirá crear túneles de VPN 
 Puede encontrar las plantillas en el repositorio de GitHub [Azure Intelligent Edge Patterns](https://github.com/Azure-Samples/azure-intelligent-edge-patterns
 ). La plantilla se encuentra en la carpeta **S2SVPNTunnel**.
 
-![texto alternativo](./media/azure-stack-network-howto-vnet-peering/overview.svg)
+![En el diagrama se muestra una implementación que proporciona un túnel de VPN entre dos redes virtuales. Se muestra un servidor RRAS en cada red virtual, además de una subred interna y una subred de túnel.](./media/azure-stack-network-howto-vnet-peering/overview.svg)
 
 ## <a name="requirements"></a>Requisitos
 
@@ -51,7 +51,7 @@ Puede encontrar las plantillas en el repositorio de GitHub [Azure Intelligent Ed
 
 La plantilla proporciona valores predeterminados para la nomenclatura de redes virtuales y el direccionamiento IP. Requiere una contraseña para el administrador (rrasadmin) y también ofrece la posibilidad de usar su propio blob de almacenamiento con el token de SAS. Tenga cuidado de mantener estos valores dentro de los intervalos legales, ya que puede producirse un error en la implementación. El paquete de DSC de PowerShell se ejecuta en cada máquina virtual de RRAS e instala el enrutamiento y todos los servicios y características dependientes necesarios. Este DSC se puede personalizar aún más si fuera necesario. La extensión de script personalizado ejecuta el siguiente script y `Add-Site2Site.ps1` configura el túnel VPNS2S entre los dos servidores RRAS con una clave compartida. Puede ver la salida detallada de la extensión de script personalizado para ver los resultados de la configuración del túnel de VPN.
 
-![texto alternativo](./media/azure-stack-network-howto-vnet-peering/s2svpntunnels2.svg)
+![En el diagrama, denominado S2SVPNTunnel, se muestran dos redes virtuales conectadas mediante un túnel de VPN de sitio a sitio.](./media/azure-stack-network-howto-vnet-peering/s2svpntunnels2.svg)
 
 ## <a name="next-steps"></a>Pasos siguientes
 

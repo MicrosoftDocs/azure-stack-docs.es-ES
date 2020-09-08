@@ -7,12 +7,12 @@ ms.date: 08/24/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: f719ec7404e19d5e32f87e6fb9bfd5e41146abb0
-ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
+ms.openlocfilehash: 310d9a198c7fb6c9212ff15ff9b838a74bd342d1
+ms.sourcegitcommit: 9557a5029cf329599f5b523c68e8305b876108d7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88920073"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88965303"
 ---
 # <a name="windows-n-tier-application-on-azure-stack-hub-with-sql-server"></a>Aplicación Windows de n niveles en Azure Stack Hub con SQL Server
 
@@ -22,7 +22,7 @@ Esta arquitectura de referencia muestra cómo implementar máquinas virtuales (V
 
 La arquitectura tiene los siguientes componentes.
 
-![](./media/iaas-architecture-windows-sql-n-tier/image1.png)
+![En el diagrama se muestra una red virtual compuesta por seis subredes: Application Gateway, administración, capa web, capa de negocio, capa de datos y Active Directory. La subred de capa de datos usa Testigo en la nube. Hay tres equilibradores de carga.](./media/iaas-architecture-windows-sql-n-tier/image1.png)
 
 ## <a name="general"></a>General
 
@@ -127,7 +127,7 @@ Para probar la implementación, [fuerce una conmutación por error manual](/sql/
 
 Si necesita optimizar el rendimiento de SQL, consulte también el artículo [Procedimientos recomendados de SQL Server para optimizar el rendimiento en Azure Stack Hub](./azure-stack-sql-server-vm-considerations.md).
 
-**Jumpbox**
+**JumpBox**
 
 No permita el acceso mediante RDP desde la red pública de Internet a las máquinas virtuales que ejecutan la carga de trabajo de la aplicación. En su lugar, todo el acceso RDP a estas máquinas virtuales se debe realizar a través de JumpBox. Un administrador inicia sesión en JumpBox y, después, en la otra máquina virtual desde JumpBox. JumpBox permite el tráfico RDP desde Internet, pero solo desde direcciones IP conocidas y seguras.
 

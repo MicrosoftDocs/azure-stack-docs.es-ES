@@ -3,16 +3,16 @@ title: Novedades de Marketplace de Azure Stack Hub
 description: Consulte las novedades de Marketplace de Azure Stack Hub, incluidos los elementos nuevos, en desuso y actualizados de Marketplace.
 author: sethmanheim
 ms.topic: article
-ms.date: 08/24/2020
+ms.date: 09/01/2020
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 05/28/2020
-ms.openlocfilehash: 5628758d54dc396fe9936dd0567838069f222d33
-ms.sourcegitcommit: 4922a14fdbc8a3b67df065336e8a21a42f224867
+ms.openlocfilehash: 692f6ca51f2a0e241504914b5f687e172486912b
+ms.sourcegitcommit: e6665cfb15fae57218e58cd6de6053f16c1f9044
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88764620"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89274031"
 ---
 # <a name="azure-stack-hub-marketplace-changes"></a>Cambios en Marketplace de Azure Stack Hub
 
@@ -69,6 +69,7 @@ El artículo [Elementos de Azure Marketplace disponibles para Azure Stack Hub](a
 
 ## <a name="updated-marketplace-items"></a>Elementos de Marketplace actualizados
 
+- 31/08/2020: distribución de la imagen base de AKS en Ubuntu 16.04-LTS, agosto de 2020, versión 2020.08.24
 - 21/08/2020: Windows 10 Enterprise, versión 1903 en modalidad "traiga su propia licencia": versión 18362.959.2007101755
 - 21/08/2020: Windows 10 Pro versión 1903 en modalidad "traiga su propia licencia": versión 18362.959.2007101755
 - 21/08/2020: Windows 10 Enterprise versión 1909 en modalidad "traiga su propia licencia": versión 18363.959.2007101752

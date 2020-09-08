@@ -4,13 +4,15 @@ description: Registro de Azure Stack HCI en Azure.
 author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
-ms.date: 07/27/2020
-ms.openlocfilehash: f45d2ada3b9699688b69b8848490b19961c500ac
-ms.sourcegitcommit: f0c032b300d9c640653b1f795a6ea1439e049a6e
+ms.service: azure-stack
+ms.subservice: azure-stack-hci
+ms.date: 08/12/2020
+ms.openlocfilehash: aeed44bdc36036272e223cbc1cb740396ce1413e
+ms.sourcegitcommit: 750d8682261ac1a3c47fbeb331ac0b4e6f76a03e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87333831"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89219308"
 ---
 # <a name="connect-azure-stack-hci-to-azure"></a>Conexión de Azure Stack HCI a Azure
 
@@ -46,53 +48,44 @@ Necesitará permisos de Azure Active Directory para completar el proceso de regi
 
 ## <a name="register-using-powershell"></a>Registro mediante PowerShell
 
-Instale el módulo de PowerShell para Azure Stack HCl; para ello, ejecute el siguiente comando de PowerShell en uno o varios servidores de un clúster que ejecute el sistema operativo de Azure Stack HCI:
+Use el siguiente procedimiento para registrar un clúster de Azure Stack HCI con Azure:
 
-```PowerShell
-Install-WindowsFeature RSAT-Azure-Stack-HCI -ComputerName Server1
-```
+1. Conéctese a uno de los nodos del clúster. Para ello, abra una sesión de PowerShell y escriba el siguiente comando:
 
-Instale los cmdlets necesarios en un nodo de clúster o equipo de administración:
+   ```PowerShell
+   Enter-PSSession <server-name>
+   ```
 
-```PowerShell
-Install-Module Az.StackHCI
-```
+2. Instale el módulo de PowerShell para Azure Stack HCI:
+
+   ```PowerShell
+   Install-WindowsFeature RSAT-Azure-Stack-HCI
+   ```
+
+3. Instale los cmdlets necesarios:
+
+   ```PowerShell
+   Install-Module Az.StackHCI
+   ```
+
    > [!NOTE]
    > 1. Es posible que vea un mensaje parecido al siguiente"¿Quiere que PowerShellGet se instale e importe el proveedor de NuGet ahora?", a la que debe responder Sí (S).
    > 2. Es posible que además se le pregunte "¿Estás seguro de que quieres instalar los módulos de 'PSGallery'?", a lo que debe responder Sí (S).
    > 3. Por último, podría suponer que la instalación de la totalidad del módulo de **Az** incluiría el submódulo **StackHCI** y que será correcto a largo plazo. Sin embargo, según la convención estándar de Azure PowerShell, los submódulos en versión preliminar no se incluyen automáticamente; en su lugar, debe especificarlos de manera explícita. Por lo tanto, por ahora debe solicitar explícitamente **Az.StackHCI** como se mostró anteriormente.
 
-Para disfrutar de la experiencia más sencilla, ejecute el siguiente comando en un nodo de clúster de Azure Stack HCI (esto le pedirá el inicio de sesión de Azure):
+4. Realice el registro real:
 
-```PowerShell
-Register-AzStackHCI  -SubscriptionId "e569b8af-6ecc-47fd-a7d5-2ac7f23d8bfe" [-ResourceName] [-ResourceGroupName]
-```
+   ```PowerShell
+   Register-AzStackHCI  -SubscriptionId "<subscription_ID>" [-ResourceName] [-ResourceGroupName]
+   ```
 
-La sintaxis mínima requiere solo su identificador de suscripción de Azure. Esta sintaxis registra el clúster local (del que es miembro el servidor local), como el usuario actual, con la región de Azure y el entorno de nube predeterminados, y mediante nombres predeterminados inteligentes para el recurso y el grupo de recursos de Azure. 
+   Esta sintaxis registra el clúster local (del que es miembro el servidor local), como el usuario actual, con la región de Azure y el entorno de nube predeterminados, y mediante nombres predeterminados inteligentes para el recurso y el grupo de recursos de Azure, pero puede agregar parámetros a este comando para especificar estos valores si lo desea.
 
-Si prefiere registrar el clúster mediante un equipo de administración, proporcione el parámetro **-ComputerName** con el nombre de un servidor en el clúster y sus credenciales, si es necesario:
+   Recuerde que el usuario que ejecuta el cmdlet `Register-AzStackHCI` debe tener [permisos de Azure Active Directory](../manage/manage-azure-registration.md#azure-active-directory-permissions), o el proceso de registro no se completará y, en vez de eso, se cerrará y dejará el registro pendiente del consentimiento del administrador. Una vez que se hayan concedido los permisos, solo tiene que volver a ejecutar `Register-AzStackHCI` para completar el registro.
 
-```PowerShell
-Register-AzStackHCI  -SubscriptionId "e569b8af-6ecc-47fd-a7d5-2ac7f23d8bfe" -ComputerName Server1 [–Credential] [-ResourceName] [-ResourceGroupName]
-```
+5. Autenticación con Azure
 
-De forma predeterminada, el recurso de Azure que se crea para representar el clúster de Azure Stack HCI hereda el nombre del clúster y se coloca en un nuevo grupo de recursos con el mismo nombre más el sufijo "-rg". Puede especificar un nombre de recurso diferente o colocar el recurso en un grupo de recursos existente con los parámetros opcionales enumerados anteriormente.
-
-Recuerde que el usuario que ejecuta el cmdlet `Register-AzStackHCI` debe tener [permisos de Azure Active Directory](../manage/manage-azure-registration.md#azure-active-directory-permissions), o el proceso de registro no se completará y, en vez de eso, se cerrará y dejará el registro pendiente del consentimiento del administrador. Una vez que se hayan concedido los permisos, solo tiene que volver a ejecutar `Register-AzStackHCI` para completar el registro.
-
-   > [!NOTE]
-   > Si, tras el registro, recibe un error similar al mensaje siguiente, **intente volver a registrarse en 24 a 48 horas**. La integración de Azure todavía está en proceso de implementación entre regiones. Aún puede continuar con la evaluación, y no se verá afectada ninguna funcionalidad. Solo tiene que asegurarse de volver y registrarse más tarde.
-   >
-   > `Register-AzStackHCI : Azure Stack HCI is not yet available in region <regionName>`
-   >
-   > Para comprobar si Azure Stack HCI está disponible en su región de Azure, [use esta herramienta](https://azure.microsoft.com/global-infrastructure/services/) y busque "hci".
-
-## <a name="authenticate-with-azure"></a>Autenticación con Azure
-Una vez que se han instalado las dependencias y se han validado los parámetros, debe autenticarse (iniciar sesión) con su cuenta de Azure. La cuenta debe tener acceso a la suscripción de Azure que se especificó para que continúe el registro.
-
-Si ejecutó `Register-AzStackHCI` localmente en el sistema operativo de Azure Stack HCI, que no puede representar una ventana interactiva de inicio de sesión de Azure, se le pedirá que visite microsoft.com/devicelogin en otro dispositivo (como su PC o teléfono), escriba el código e inicie sesión en él. Esta es la misma experiencia que Microsoft usa para otros dispositivos con modalidades de entrada limitadas, como Xbox.
-
-Si ejecutó `Register-AzStackHCI` de forma remota desde un equipo de administración con experiencia de escritorio, como Windows 10, aparecerá una ventana interactiva de inicio de sesión de Azure. Los mensajes exactos que verá variarán en función de la configuración de seguridad (por ejemplo, la autenticación en dos fases). Siga las indicaciones para iniciar sesión.
+   Para completar el proceso de registro, debe autenticarse (iniciar sesión) con su cuenta de Azure. La cuenta debe tener acceso a la suscripción de Azure que se especificó en el paso 4 anterior para que se realice el registro. Copie el código proporcionado, vaya a microsoft.com/devicelogin en otro dispositivo (como su PC o teléfono), escriba el código e inicie sesión allí. Esta es la misma experiencia que Microsoft usa para otros dispositivos con modalidades de entrada limitadas, como Xbox.
 
 El flujo de trabajo de registro detectará cuando haya iniciado sesión y continuará con el proceso de finalización. A partir de entonces, debería poder ver el clúster en Azure Portal.
 

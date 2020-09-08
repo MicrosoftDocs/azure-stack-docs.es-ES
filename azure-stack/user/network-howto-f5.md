@@ -7,12 +7,12 @@ ms.date: 08/24/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 11/06/2019
-ms.openlocfilehash: 29f23f30fd154da33e4a39ab306a4edd9d921b9b
-ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
+ms.openlocfilehash: 8deb2905f0d151fb1a2ce196efd2ba8eb5748c85
+ms.sourcegitcommit: 9557a5029cf329599f5b523c68e8305b876108d7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88920209"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88965218"
 ---
 # <a name="how-to-deploy-f5-across-two-azure-stack-hub-instances"></a>Implementación de F5 en dos instancias de Azure Stack Hub
 
@@ -46,21 +46,21 @@ Impleméntelo en la instancias A y B de Azure Stack Hub.
 
 4. Seleccione **F5 BIG-IP VE - ALL (BYOL, 2 ubicaciones de arranque)** .
 
-    ![](./media/network-howto-f5/image1.png)
+    ![En el cuadro de diálogo "Panel > Nuevo > Marketplace > Todo > F5 BIG-IP VE - ALL (BYOL, 2 ubicaciones de arranque)" aparece F5 en el cuadro de búsqueda. El resultado de la búsqueda individual es "F5 BIG-IP VE - ALL (BYOL, 2 ubicaciones de arranque)".](./media/network-howto-f5/image1.png)
 
 5. En la parte inferior de la página siguiente, seleccione **Crear**.
 
-    ![](./media/network-howto-f5/image2.png)
+    ![En el cuadro de diálogo "F5 BIG-IP VE - todo (BYOL, 2 ubicaciones de arranque)" se proporciona información sobre BIG-IP VE y los módulos que se pueden implementar, en función de la licencia. Se muestra un botón de creación.](./media/network-howto-f5/image2.png)
 
 6. Cree un nuevo grupo de recursos denominado **F5-GSLB**.
 
 7. Use los valores siguientes como ejemplo para completar la implementación:
 
-    ![](./media/network-howto-f5/image3.png)
+    ![La página de entradas del cuadro de diálogo Microsoft.Template muestra 15 cuadros de texto (como VIRTUALMACHINENAME y ADMINUSERNAME) que contienen valores para una implementación de ejemplo.](./media/network-howto-f5/image3.png)
 
 8. Compruebe que la implementación finaliza correctamente.
 
-    ![](./media/network-howto-f5/image4.png)
+    ![La página de información general del cuadro de diálogo Microsoft.Template muestra el mensaje "Your deployment is complete" (La implementación se ha completado) y proporciona detalles sobre la implementación.](./media/network-howto-f5/image4.png)
 
     > [!NOTE]  
     > Cada implementación de BIG-IP suele tardar unos 20 minutos.
@@ -71,7 +71,7 @@ Siga estos pasos para las instancias A y B de Azure Stack Hub.
 
 1. Inicie sesión en el portal de usuarios de Azure Stack Hub, en la instancia A de Azure Stack Hub, para revisar los recursos que se crearon a partir de la implementación de la plantilla BIG-IP.
 
-    ![](./media/network-howto-f5/image18.png)
+    ![En la página de información general del cuadro de diálogo F5-GSLB se muestran los recursos implementados y la información asociada.](./media/network-howto-f5/image18.png)
 
 2. Siga las instrucciones que aparecen en F5 sobre los [elementos de configuración de BIG-IP](https://clouddocs.f5.com/training/community/dns/html/class1/class1.html). 
 
@@ -93,15 +93,15 @@ Siga estos pasos para las instancias A y B de Azure Stack Hub.
     > [!NOTE]  
     > Puede encontrar la dirección IP local del dispositivo de BIG-IP en el grupo de recursos **F5-GSLB**. La interfaz de red es "f5stack1-ext" y desea conectarse a una dirección IP pública o privada (en función del acceso).
 
-    ![](./media/network-howto-f5/image5.png)
+    ![En el cuadro de diálogo "DNS >> GSLB: Data Centers: Data Center List (Centro de datos: lista de centros de datos)" se muestran los centros de datos con su estado. Hay tres botones, Habilitar, Deshabilitar y Eliminar, para aplicar a los centros de datos seleccionados.](./media/network-howto-f5/image5.png)
           
-    ![](./media/network-howto-f5/image6.png)
+    ![En el cuadro de diálogo "DNS >> GSLB: Servidores: Lista de servidores" se muestran los servidores con su estado. Hay cuatro botones, Habilitar, Deshabilitar, Eliminar y Volver a conectar, para aplicar a los servidores seleccionados.](./media/network-howto-f5/image6.png)
 
 1. Seleccione el nuevo grupo de recursos **F5-GSLB**, seleccione la máquina virtual **f5stack1** y, en **Configuración**, seleccione **Redes**.
 
 ## <a name="post-install-configurations"></a>Configuraciones posteriores a la instalación
 
-Después de la instalación, tendrá que configurar los grupos de seguridad de red de Azure Stack Hub y bloquear las direcciones IP de origen.
+Después de la instalación, tiene que configurar los grupos de seguridad de red de Azure Stack Hub y bloquear las direcciones IP de origen.
 
 1. Deshabilite el puerto 22 una vez establecida la confianza.
 
@@ -109,7 +109,7 @@ Después de la instalación, tendrá que configurar los grupos de seguridad de r
 
 3. La regla GTM_DNS se ha establecido para permitir el tráfico de entrada del puerto 53 (DNS) y la resolución de BIG-IP comenzará a funcionar inmediatamente. Se crean clientes de escucha.
 
-    ![](./media/network-howto-f5/image7.png)
+    ![La página fStack1-ext del cuadro de diálogo Interfaz de red muestra información sobre la interfaz fstack1-ext y sobre su grupo de seguridad de red, fstack1-ext-nsg. Hay pestañas para seleccionar la visualización de las reglas de puerto de entrada o las reglas de puerto de salida.](./media/network-howto-f5/image7.png)
 
 4. Implemente una carga de trabajo de aplicación web básica en el entorno de Azure Stack Hub para equilibrar la carga que hay detrás de BIG-IP. Puede encontrar un ejemplo de uso del servidor NGINX en [Implementación de NGINX y NGINX Plus en Docker](https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-docker/).
 
@@ -118,11 +118,11 @@ Después de la instalación, tendrá que configurar los grupos de seguridad de r
 
 5. Después de implementar NGINX en un contenedor de Docker de una máquina virtual Ubuntu dentro de cada una de las instancias de Azure Stack Hub, compruebe que puede acceder a la página web predeterminada en los servidores.
 
-    ![](./media/network-howto-f5/image8.png)
+    ![En la página de bienvenida de nginx se indica que el servidor web de nginx se instaló correctamente y que se requiere una configuración adicional. Hay dos vínculos que dirigen a la información de soporte técnico.](./media/network-howto-f5/image8.png)
 
 6. Inicie sesión en la interfaz de administración del dispositivo de BIG-IP. En este ejemplo, use la dirección IP pública **f5-stack1-ext**.
 
-    ![](./media/network-howto-f5/image9.png)
+    ![La pantalla de inicio de sesión de la utilidad de configuración de BIG-IP requiere un nombre de usuario y una contraseña.](./media/network-howto-f5/image9.png)
 
 7. Publique el acceso a NGINX mediante BIG-IP.
     
@@ -132,11 +132,11 @@ Después de la instalación, tendrá que configurar los grupos de seguridad de r
 
 9. Seleccione la interfaz de red de NGINX.
 
-    ![](./media/network-howto-f5/image10.png)
+    ![En la página de información general del cuadro de diálogo "Panel > Grupos de recursos > NGINX > ubuntu2673" se muestra información acerca de la interfaz de red ubuntu2673.](./media/network-howto-f5/image10.png)
 
 10. En la consola de BIG-IP, vaya a **Local traffic > Pools > Pool List** (Tráfico local > Grupos > Lista de grupos) y seleccione **+** . Configure el grupo con los valores de la tabla. Deje todos los demás campos con sus valores predeterminados.
 
-    ![](./media/network-howto-f5/image11.png)
+    ![En el panel izquierdo se puede navegar para crear un nuevo grupo. El panel derecho se denomina "Local Traffic >> Pools: Pool List >> New Pool" (Tráfico local >> Grupos: lista de grupos >> Grupo nuevo) y proporciona funcionalidades para especificar la información sobre el nuevo grupo. Hay un botón de terminado.](./media/network-howto-f5/image11.png)
     
     | Clave | Value |
     | --- | --- |
@@ -148,13 +148,13 @@ Después de la instalación, tendrá que configurar los grupos de seguridad de r
 
 11. Seleccione **Finished** (Finalizado). Si se configura correctamente, el estado del grupo es verde.
 
-    ![](./media/network-howto-f5/image12.png)
+    ![El panel derecho se denomina "Local Traffic >> Pools: Pool List" (Tráfico local >> Grupos: lista de grupos)", y el grupo recién creado es la única entrada de la lista.](./media/network-howto-f5/image12.png)
 
     Ahora debe configurar el servidor virtual. Para ello, primero debe buscar la dirección IP privada de F5 BIG-IP.
 
 12. En la consola de BIG-IP, vaya a **Network > Self IPs** (Red > IP propias) y anote la dirección IP.
 
-    ![](./media/network-howto-f5/image13.png)
+    ![En el panel izquierdo se puede navegar para mostrar las direcciones IP propias. El panel derecho se denomina "Network > > Self IPs" (Red >> IP propias). Se muestran dos direcciones IP propias, y la primera, self_2nic, está resaltada.](./media/network-howto-f5/image13.png)
 
 13. Para crear un servidor virtual, vaya a **Local Traffic** > **Virtual Servers** > **Virtual Server List** (Tráfico local > Servidores virtuales > Lista de servidores virtuales) y seleccione **+** . Configure el grupo con los valores de la tabla. Deje todos los demás campos con sus valores predeterminados.
 
@@ -166,21 +166,21 @@ Después de la instalación, tendrá que configurar los grupos de seguridad de r
     |Perfil SSL (cliente) | clientssl |
     |Traducción de direcciones de origen | Asignación automática |
         
-    ![](./media/network-howto-f5/image14.png)
+    ![El panel izquierdo se utiliza para navegar por el panel derecho hasta "Local Traffic >> Virtual Servers: Virtual Server List >> NGINX" (Tráfico local > > Servidores virtuales: lista de servidores virtuales >> NGINX), donde se especifica la información necesaria.](./media/network-howto-f5/image14.png)
 
-    ![](./media/network-howto-f5/image15.png)
+    ![En esta página se puede especificar información adicional. Hay botones para actualizar y para eliminar.](./media/network-howto-f5/image15.png)
 
 14. Ahora ya ha completado la configuración de BIG-IP para la aplicación NGINX. Para comprobar que funciona correctamente, examine el sitio y compruebe las estadísticas de F5.
 
 15. Abra un explorador, vaya a `https://<F5-public-VIP-IP>` y asegúrese de que muestra la página predeterminada de NGINX.
 
-    ![](./media/network-howto-f5/image16.png)
+    ![En la página de bienvenida de nginx se indica que el servidor web de nginx se instaló correctamente y que se requiere una configuración adicional. Hay dos vínculos que dirigen a la información de soporte técnico.](./media/network-howto-f5/image16.png)
 
 16. Ahora, compruebe las estadísticas del servidor virtual para comprobar el flujo de tráfico. Para ello, vaya a **Statistics > Module Statistics > Local Traffic** (Estadísticas > Estadísticas del módulo > Tráfico local).
 
 17. En **Statistics Type** (Tipo de estadísticas), seleccione **Virtual Servers** (Servidores virtuales).
 
-    ![](./media/network-howto-f5/image17.png)
+    ![El panel izquierdo ha navegado por el panel derecho hasta "Statistics >> Module Statistics: Local Traffic >> Virtual Servers" (Estadísticas > Estadísticas de módulo: tráfico local >> Servidores virtuales), y la lista muestra el servidor virtual NGINX y otros servidores. NGINX está resaltado.](./media/network-howto-f5/image17.png)
 
 
 ## <a name="for-more-information"></a>Para obtener más información

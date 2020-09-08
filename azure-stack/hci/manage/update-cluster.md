@@ -4,13 +4,13 @@ description: Cómo aplicar actualizaciones de firmware y del sistema operativo a
 author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
-ms.date: 07/21/2020
-ms.openlocfilehash: bf57a83c11737b1443762212f775c75eb17d6cfc
-ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
+ms.date: 08/31/2020
+ms.openlocfilehash: 94908514e85df153f69cbeea81a11d4468dfc7fe
+ms.sourcegitcommit: e6665cfb15fae57218e58cd6de6053f16c1f9044
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86868100"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89274065"
 ---
 # <a name="update-azure-stack-hci-clusters"></a>Actualización de clústeres de Azure Stack HCl
 
@@ -21,6 +21,8 @@ Al actualizar clústeres de Azure Stack HCI, el objetivo es mantener la disponib
 ## <a name="update-a-cluster-using-windows-admin-center"></a>Actualización de un clúster con Windows Admin Center
 
 Windows Admin Center facilita la actualización de un clúster y la aplicación de actualizaciones del sistema operativo y de la solución mediante una sencilla interfaz de usuario. Si ha adquirido un sistema integrado de un asociado de hardware de Microsoft, es fácil obtener los controladores, el firmware y otras actualizaciones más recientes directamente de Windows Admin Center mediante la instalación de las extensiones de actualización de asociado adecuadas. Si el hardware no se compró como sistema integrado, es posible que sea necesario realizar actualizaciones de firmware y de controlador por separado, de acuerdo con las recomendaciones del fabricante del hardware.
+
+Windows Admin Center comprobará si el clúster está configurado correctamente para ejecutar la actualización compatible con clústeres (CAU) y, si es necesario, le preguntará si desea que Windows Admin Center configure la CAU automáticamente, incluida la instalación del rol de clúster de CAU y la habilitación de las reglas de firewall necesarias.
 
 1. Al conectarse a un clúster, el panel de Windows Admin Center le avisará si uno o más servidores tienen actualizaciones listas para instalarse y proporcionará un vínculo para actualizar ahora. Como alternativa, puede seleccionar **Actualizaciones** en el menú **Herramientas** de la izquierda.
 1. Para usar la herramienta Actualización compatible con clústeres en Windows Admin Center, debe habilitar el proveedor del servicio de seguridad de credenciales (CredSSP) y proporcionar credenciales explícitas. Cuando se le pregunte si CredSSP debe habilitarse, haga clic en **Yes** (Sí).

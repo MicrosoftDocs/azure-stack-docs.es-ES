@@ -4,16 +4,16 @@ titleSuffix: Azure Stack Hub
 description: Introducción a la administración de regiones en Azure Stack Hub
 author: sethmanheim
 ms.topic: article
-ms.date: 05/04/2020
+ms.date: 08/27/2020
 ms.author: sethm
 ms.reviewer: efemmano
 ms.lastreviewed: 11/27/2019
-ms.openlocfilehash: e04f6a6baca7b834a248bc40835d05f0773fd5b4
-ms.sourcegitcommit: 21cdab346fc242b8848a04a124bc16c382ebc6f0
+ms.openlocfilehash: e40d79dcac58035172d4e292461fd0950ee77979
+ms.sourcegitcommit: 03aad17afe8519536066c735c59ad1bdfe8de083
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82777855"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89041645"
 ---
 # <a name="region-management-in-azure-stack-hub"></a>Administración de regiones en Azure Stack Hub
 
@@ -23,7 +23,7 @@ Una implementación del sistema integrado (lo que se conoce como una *nube de Az
 
 ## <a name="information-available-through-the-region-management-tile"></a>Información disponible a través del icono Administración de regiones
 
-Azure Stack Hub incluye un conjunto de funcionalidades de administración de regiones disponibles en el icono **Region management** (Administración de regiones). Este icono está disponible para los operadores de Azure Stack Hub en el panel predeterminado del portal del administrador. Si hace clic en él, puede supervisar y actualizar la región de Azure Stack Hub y sus componentes, que son específicos de cada región.
+Azure Stack Hub incluye un conjunto de funcionalidades de administración de regiones disponibles en el icono **Region management** (Administración de regiones). Este icono está disponible para los operadores de Azure Stack Hub en el panel predeterminado del portal del administrador. En esta pantalla, se pueden supervisar y actualizar la región de Azure Stack Hub y sus componentes, que son específicos de cada región.
 
 ![Icono de administración de regiones en el portal del administrador de Azure Stack Hub](media/azure-stack-region-management/image1.png)
 

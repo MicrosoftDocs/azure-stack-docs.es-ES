@@ -4,13 +4,13 @@ description: Preparación de la implementación de Azure Stack HCI
 author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
-ms.date: 08/03/2020
-ms.openlocfilehash: fc12f638970e82c293a9143c398892a88049f6cd
-ms.sourcegitcommit: 952d26ad08fcc28ad3ad83e27644e61497623a44
+ms.date: 09/01/2020
+ms.openlocfilehash: 33e1e5b6c113f954a819cf6488f22a18f64d93c5
+ms.sourcegitcommit: 08a421ab5792ab19cc06b849763be22f051e6d78
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889179"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364820"
 ---
 # <a name="before-you-deploy-azure-stack-hci"></a>Antes de implementar Azure Stack HCI
 
@@ -136,7 +136,7 @@ Puede que se requieran puertos adicionales no mencionados antes. Estos son los p
 ### <a name="storage-requirements"></a>Requisitos de almacenamiento
 
 - Azure Stack HCI funciona con unidades SATA, SAS o NVMe de conexión directa o unidades de memoria persistente, cada una de ellas conectada directamente a un solo servidor.
-- Cada servidor del clúster debe tener el mismo modelo, tamaño y número de unidades, con los mismos tamaños de sector en todos los discos. Las unidades pueden ser internas en el servidor o en un contenedor externo que esté conectado a un solo servidor.
+- Cada servidor del clúster debe tener los mismos tipos de unidades y el mismo número de cada tipo. También se recomienda (pero no es obligatorio) que las unidades tengan el mismo tamaño y modelo. Las unidades pueden ser internas en el servidor o en un contenedor externo que esté conectado a un solo servidor.
 - Cada servidor del clúster debe tener volúmenes dedicados para los registros, con un almacenamiento de registros al menos tan rápido como el almacenamiento de datos. Los clústeres extendidos requieren al menos dos volúmenes: uno para los datos replicados y otro para los datos de registro.
 - Se requiere SCSI Enclosure Services (SES) para la asignación e identificación de ranuras. Cada contenedor externo debe presentar un identificador único. **NO SE ADMITEN:** Tarjetas controladoras RAID o almacenamiento SAN (Canal de fibra, iSCSI, FCoE), alojamientos compartidos SAS conectados a varios servidores o cualquier forma de E/S de múltiples rutas (MPIO) donde se pueda acceder a las unidades mediante varias rutas de acceso. Las tarjetas adaptadoras de bus host (HBA) deben implementar el modo de paso a través simple.
 - Para más ayuda, consulte el tema [Elección de unidades para Espacios de almacenamiento directo](../concepts/choose-drives.md) o [Requisitos de hardware de Espacios de almacenamiento directo](/windows-server/storage/storage-spaces/storage-spaces-direct-hardware-requirements).
