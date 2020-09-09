@@ -50,12 +50,16 @@
           href: manage/create-volumes.md
         - name: Creación de volúmenes extendidos
           href: manage/create-stretched-volumes.md
+        - name: Protección de volúmenes
+          href: manage/volume-encryption-deduplication.md
         - name: Extensión de volúmenes
           href: manage/extend-volumes.md
         - name: Eliminar volúmenes
           href: manage/delete-volumes.md
         - name: Sustitución de unidades
           href: manage/replace-drives.md
+        - name: Uso de la caché de lectura en memoria del archivo CSV
+          href: manage/use-csv-cache.md
     - name: Administración del clúster
       items:
         - name: Administración del clúster
