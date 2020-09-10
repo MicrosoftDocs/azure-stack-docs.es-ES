@@ -114,6 +114,8 @@
       href: concepts/fault-tolerance.md
     - name: Cuórum de clúster y bloque de almacenamiento
       href: concepts/quorum.md
+    - name: Controladora de red
+      href: concepts/network-controller.md
     - name: Consideraciones sobre la seguridad
       href: concepts/security.md
 - name: Referencia
