@@ -3,16 +3,16 @@ title: Implementación de un clúster de Kubernetes con el motor de AKS en Azure
 description: Implementación de un clúster de Kubernetes en Azure Stack Hub desde una máquina virtual de cliente que ejecute el motor de AKS.
 author: mattbriggs
 ms.topic: article
-ms.date: 07/07/2020
+ms.date: 09/02/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 07/07/2020
-ms.openlocfilehash: e791f05f76831e9448c4eba796ca8a12d631b9cd
-ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
+ms.lastreviewed: 09/02/2020
+ms.openlocfilehash: 2d757fd5feab19bd196a7c5161cc074c4c64e80f
+ms.sourcegitcommit: b80d529ff47b15b8b612d8a787340c7b0f68165b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88920005"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473272"
 ---
 # <a name="deploy-a-kubernetes-cluster-with-the-aks-engine-on-azure-stack-hub"></a>Implementación de un clúster de Kubernetes con el motor de AKS en Azure Stack Hub
 

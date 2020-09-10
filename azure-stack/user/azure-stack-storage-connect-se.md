@@ -7,12 +7,12 @@ ms.date: 08/24/2020
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: ff36107a50a534dbb14b77747839bf1aabd0ebbb
-ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
+ms.openlocfilehash: d504f92db4a703252fb7ea623555624de27adc57
+ms.sourcegitcommit: 1c5e7d8419037c0f3ef6fe9d8e6bfb6a59659c84
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88920379"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89428624"
 ---
 # <a name="connect-storage-explorer-to-an-azure-stack-hub-subscription-or-a-storage-account"></a>Conexión del Explorador de Storage a una suscripción de Azure Stack Hub o una cuenta de almacenamiento
 
@@ -91,6 +91,7 @@ Siga estos pasos para conectar el Explorador de Storage a una suscripción de Az
 
 > [!NOTE]  
 > La experiencia de inicio de sesión de los Servicios de federación de Active Directory (AD FS) es compatible con el Explorador de Storage 1.2.0 o versiones más recientes con Azure Stack Hub 1804 u otras actualizaciones más recientes.
+
 Siga estos pasos para conectar el Explorador de Storage a una suscripción de Azure Stack Hub que pertenece a una cuenta de AD FS.
 
 1. Seleccione **Administrar cuentas**. El explorador enumera las suscripciones de Microsoft en las que ha iniciado sesión.

@@ -7,12 +7,12 @@ ms.date: 08/18/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: db8a05c8a3f8d4c219cb37de018df46c60f39348
-ms.sourcegitcommit: 4922a14fdbc8a3b67df065336e8a21a42f224867
+ms.openlocfilehash: 672071c93d5f227ae6ec9bfccedc043e6838ac61
+ms.sourcegitcommit: 69c859a89941ee554d438d5472308eece6766bdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88764552"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89621323"
 ---
 # <a name="create-and-publish-a-custom-azure-stack-hub-marketplace-item"></a>Creación y publicación de un elemento personalizado de Marketplace de Azure Stack Hub
 
@@ -45,7 +45,7 @@ Para crear un elemento de Marketplace personalizado, haga lo siguiente:
 
    ![Captura de pantalla de la estructura de las plantillas de implementación](media/azure-stack-create-and-publish-marketplace-item/gallerypkg2.png)
 
-4. Reemplace los siguientes valores resaltados (con números) en la plantilla Manifest.json por el valor que proporcionó al [cargar la imagen personalizada](azure-stack-add-vm-image.md).
+4. Reemplace los siguientes valores resaltados (con números) en la plantilla Manifest.json por el valor que proporcionó al [cargar la imagen personalizada](azure-stack-add-vm-image.md#add-a-platform-image).
 
    > [!NOTE]  
    > Nunca codifique de forma rígida los secretos, como las claves de producto, contraseñas o cualquier información de identificación del cliente, en la plantilla de Azure Resource Manager. Los archivos de plantilla de JSON son accesibles sin necesidad de autenticación una vez publicados en la galería. Almacene todos los secretos en [Key Vault](/azure/azure-resource-manager/resource-manager-keyvault-parameter) y llámelos desde dentro de la plantilla.

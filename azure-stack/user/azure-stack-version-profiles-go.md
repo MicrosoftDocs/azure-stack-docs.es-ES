@@ -3,16 +3,16 @@ title: Uso de los perfiles de la versión de la API con GO en Azure Stack Hub
 description: Aprenda a usar los perfiles de la versión de API con GO en Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 05/05/2020
+ms.date: 09/02/2020
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/26/2019
-ms.openlocfilehash: e40c51d44f93fae4e7293113ab7f06bad03677e3
-ms.sourcegitcommit: 70c344b3c9c63f8c12867b2cdfdd1794fcc518dc
+ms.openlocfilehash: 3b8df9de2975c7ba0e6eefdb10a2731cd5d47ca6
+ms.sourcegitcommit: 7c01ab4b2e2250a7acd67d1c5ba27d15c1e8bce0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82836196"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89448680"
 ---
 # <a name="use-api-version-profiles-with-go-in-azure-stack-hub"></a>Uso de los perfiles de la versión de la API con GO en Azure Stack Hub
 

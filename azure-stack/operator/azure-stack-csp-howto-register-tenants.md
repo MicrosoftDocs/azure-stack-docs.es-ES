@@ -3,16 +3,16 @@ title: Adición de inquilinos a Azure Stack Hub para uso y facturación
 description: Aprenda a agregar inquilinos a Azure Stack Hub para uso y facturación.
 author: sethmanheim
 ms.topic: article
-ms.date: 5/28/2020
+ms.date: 9/02/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 5/28/2020
-ms.openlocfilehash: 08185a25c608c735aa99ca7f7d2b060c8b67042b
-ms.sourcegitcommit: 804f94f288859027b8249d138b14e8bc1501e009
+ms.openlocfilehash: e0d426ac19645cbbc318f66b827946534539d125
+ms.sourcegitcommit: 7c01ab4b2e2250a7acd67d1c5ba27d15c1e8bce0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84158391"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89448578"
 ---
 # <a name="add-tenant-for-usage-and-billing-to-azure-stack-hub"></a>Adición de inquilinos a Azure Stack Hub para uso y facturación
 
@@ -74,7 +74,7 @@ En la siguiente sección se describen los parámetros para el cmdlet **New-Azure
 |registrationSubscriptionID | La suscripción de Azure que se ha usado para el registro inicial de Azure Stack Hub.|
 | customerSubscriptionID | La suscripción de Azure (no Azure Stack Hub) a la que pertenece el cliente que se va a registrar. Debe crearse en la oferta de CSP. En la práctica, esto significa mediante el centro de partners. Si un cliente tiene más de un inquilino de Azure Active Directory, esta suscripción debe crearse en el inquilino que se usará para iniciar sesión en Azure Stack Hub. El identificador de suscripción del cliente distingue mayúsculas y minúsculas. |
 | resourceGroup | El grupo de recursos de Azure en el que se almacena el registro. |
-| registrationName | El nombre del registro de Azure Stack Hub. Es un objeto almacenado en Azure. 
+| registrationName | El nombre del registro de Azure Stack Hub. Es un objeto almacenado en Azure.
 
 > [!NOTE]  
 > Los inquilinos se deben registrar en cada instancia de Azure Stack Hub que usen. Si tiene dos implementaciones de Azure Stack Hub y un inquilino usa ambas, debe actualizar los registros iniciales de cada implementación con la suscripción del inquilino.

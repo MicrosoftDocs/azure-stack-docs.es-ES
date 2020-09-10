@@ -3,16 +3,16 @@ title: Escalado de un clúster de Kubernetes en Azure Stack Hub
 description: Aprenda a escalar un clúster de Kubernetes en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 07/24/2020
+ms.date: 09/02/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 3/19/2020
-ms.openlocfilehash: 96ae7677d0e72e29f3ff065014910a222dac914f
-ms.sourcegitcommit: e03727655e288ace0cf2c4789acea143c1b7b4ae
+ms.lastreviewed: 09/02/2020
+ms.openlocfilehash: cfa531c42ebcc191461d4a801d0c17ce9526b912
+ms.sourcegitcommit: b80d529ff47b15b8b612d8a787340c7b0f68165b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88039602"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473153"
 ---
 # <a name="scale-a-kubernetes-cluster-on-azure-stack-hub"></a>Escalado de un clúster de Kubernetes en Azure Stack Hub
 

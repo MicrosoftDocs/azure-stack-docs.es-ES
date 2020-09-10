@@ -3,16 +3,16 @@ title: Implementación de un clúster de Kubernetes en una red virtual personali
 description: Aprenda a implementar un clúster de Kubernetes en una red virtual personalizada en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 08/05/2020
+ms.date: 9/2/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 08/05/2020
-ms.openlocfilehash: 0b13c0e1655fe9df0cf030872fe8f545219394ba
-ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
+ms.lastreviewed: 9/2/2020
+ms.openlocfilehash: ae17f23447bfe8bb465f5a942ff4e10dc40cd389
+ms.sourcegitcommit: b80d529ff47b15b8b612d8a787340c7b0f68165b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88920090"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89472864"
 ---
 # <a name="deploy-a-kubernetes-cluster-to-a-custom-virtual-network-on-azure-stack-hub"></a>Implementación de un clúster de Kubernetes en una red virtual personalizada en Azure Stack Hub 
 

@@ -3,16 +3,16 @@ title: Implementación del motor de AKS en Windows para Azure Stack Hub
 description: Aprenda a usar una máquina Windows en Azure Stack Hub para hospedar el motor de AKS con el fin de implementar y administrar un clúster de Kubernetes.
 author: mattbriggs
 ms.topic: article
-ms.date: 07/24/2020
+ms.date: 09/02/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 3/19/2020
-ms.openlocfilehash: 59181b426ace2ce5f0ce5f9441a7f225dfcfd4d9
-ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
+ms.lastreviewed: 09/02/2020
+ms.openlocfilehash: 2c8f5c38c9cd6e5f8632e3abac75f51c2b71d481
+ms.sourcegitcommit: b80d529ff47b15b8b612d8a787340c7b0f68165b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88920736"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473238"
 ---
 # <a name="install-the-aks-engine-on-windows-in-azure-stack-hub"></a>Instalación del motor de AKS en Windows para Azure Stack Hub
 
@@ -40,7 +40,7 @@ Puede instalar la máquina virtual cliente para administrar el clúster de Kuber
 5. Ejecute el siguiente comando desde un símbolo del sistema con privilegios elevados e incluya el número de versión:
 
     ```PowerShell  
-        choco install aks-engine --version 0.51.0 -y
+        choco install aks-engine --version 0.55.0 -y
     ```
 
 > [!NOTE]  
@@ -65,7 +65,7 @@ Puede instalar la máquina virtual cliente para administrar el clúster de Kuber
 7.  Ejecute el siguiente comando en un símbolo del sistema con privilegios elevados. Incluya el número de versión correcto:
 
     ```PowerShell  
-        choco install aks-engine --version 0.51.0 -y
+        choco install aks-engine --version 0.55.0 -y
     ```
 
 ## <a name="verify-the-installation"></a>Comprobación de la instalación

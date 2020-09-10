@@ -7,12 +7,12 @@ ms.date: 04/10/2020
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 06/05/2019
-ms.openlocfilehash: 0bc19bf584f482d2ec67758368afa11c91ae456e
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 231e4ac3b0bc8e0d43c608ff252f7d4c274e84a8
+ms.sourcegitcommit: 1c5e7d8419037c0f3ef6fe9d8e6bfb6a59659c84
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81243918"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89428556"
 ---
 # <a name="integrate-external-monitoring-solution-with-azure-stack-hub"></a>Integración de una solución de supervisión externa con Azure Stack Hub
 
@@ -69,6 +69,9 @@ Este complemento se escribe en Python y aprovecha la API de REST del proveedor d
 
 Con la versión 1.2, el complemento Nagios para Azure Stack Hub aprovecha la biblioteca Microsoft ADAL y admite la autenticación mediante una entidad de servicio con un secreto o certificado. Además, la configuración se ha simplificado mediante el uso de un único archivo de configuración con parámetros nuevos. Ahora admite implementaciones de Azure Stack Hub que usan Azure AD y AD FS como sistema de identidad.
 
+> [!IMPORTANT]
+> AD FS solo admite sesiones de inicio de sesión interactivo. Si necesita un inicio de sesión no interactivo para un escenario automatizado, debe utilizar un nombre de entidad de seguridad de servicio.
+
 El complemento funciona con Nagios 4 x y XI. Para descargar el complemento, consulte el artículo sobre la [supervisión de alertas de Azure Stack Hub](https://exchange.nagios.org/directory/Plugins/Cloud/Monitoring-AzureStack-Alerts/details). El sitio de descarga también incluye detalles de instalación y configuración.
 
 ### <a name="requirements-for-nagios"></a>Requisitos de Nagios
@@ -122,7 +125,7 @@ Para más información sobre cómo crear un nombre de entidad de seguridad de se
 | client_id: | Id. de cliente | SPN con secreto |
 | client_secret: | Contraseña de cliente | SPN con secreto |
 | client_cert\*\*: | Ruta de acceso al certificado | SPN con certificado |
-| client_cert_thumbprint\*\*: | Huella digital de certificado | SPN con certificado |
+| client_cert_thumbprint\*\*: | Huella digital del certificado | SPN con certificado |
 
 \*El identificador de inquilino no es necesario para las implementaciones de Azure Stack Hub con AD FS.
 
@@ -156,7 +159,7 @@ La configuración de Nagios debe actualizarse para asegurarse de que el compleme
    /usr/local/nagios/etc/nagios.cfg
    ```
 
-2. Agregue la siguiente entrada:
+2. Agregue la entrada siguiente:
 
    ```bash  
    # Load the Azure Stack Hub Plugin Configuration

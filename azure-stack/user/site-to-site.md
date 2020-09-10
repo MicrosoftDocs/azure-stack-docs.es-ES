@@ -7,12 +7,12 @@ ms.date: 05/12/2020
 ms.topic: article
 ms.reviewer: sranthar
 ms.lastreviewed: 05/12/2020
-ms.openlocfilehash: 84a6f69eebb461d25cd9569f61d3dee22ec79a49
-ms.sourcegitcommit: b2b0fe629d840ca8d5b6353a90f1fcb392a73bd5
+ms.openlocfilehash: e4385f7b1ac22f36f069e9ac4d5b35011e290982
+ms.sourcegitcommit: 593a6c9cff741af24aac28a3328605fe071129ea
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85376823"
+ms.lasthandoff: 09/07/2020
+ms.locfileid: "89510945"
 ---
 # <a name="troubleshoot-site-to-site-vpn-connections"></a>Solución de problemas de conexiones VPN de sitio a sitio
 
@@ -21,6 +21,9 @@ En este paso se describen los pasos que se pueden dar para solucionar los distin
 Si su problema con Azure Stack Hub no se trata en este artículo, puede visitar el [foro de Azure Stack Hub en MSDN](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack).
 
 También puede enviar una solicitud de soporte técnico de Azure. Consulte la sección sobre el [soporte técnico de Azure Stack Hub](../operator/azure-stack-manage-basics.md#where-to-get-support).
+
+> [!NOTE]
+> Solo se puede crear una conexión VPN de sitio a sitio entre dos implementaciones de Azure Stack Hub. Esto se debe a una limitación en la plataforma, que no permitirá más de una conexión VPN a la misma dirección IP. Dado que Azure Stack Hub aprovecha la puerta de enlace multiinquilino que usa una sola dirección IP pública para todas las puertas de enlace de la VPN del sistema de Azure Stack Hub, no puede haber más de una conexión VPN entre dos sistemas de Azure Stack Hub. Esta limitación se aplica también a la existencia de más de una conexión VPN de sitio a sitio a cualquier puerta de enlace de VPN que use una única dirección IP. Azure Stack Hub no permitirá que se cree más de un recurso de puerta de enlace de red local con la misma dirección IP.
 
 ## <a name="initial-troubleshooting-steps"></a>Pasos iniciales para la solución de problemas
 

@@ -3,16 +3,16 @@ title: Problemas conocidos del motor de AKS en Azure Stack Hub
 description: Obtenga más información sobre los problemas conocidos del motor de AKS en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 08/05/2020
+ms.date: 09/02/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 08/05/2020
-ms.openlocfilehash: 75a4fe1dfbe8738bd806ac1f0eaae2c41b3f2e28
-ms.sourcegitcommit: af7f169c7e204ffdf344f47c07ab8426e2afbd1d
+ms.lastreviewed: 09/02/2020
+ms.openlocfilehash: 106aafd33441c2961cf933606cc8f48cbe4fc60d
+ms.sourcegitcommit: b80d529ff47b15b8b612d8a787340c7b0f68165b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87865207"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473219"
 ---
 # <a name="known-issues-with-the-aks-engine-on-azure-stack-hub"></a>Problemas conocidos del motor de AKS en Azure Stack Hub
 
