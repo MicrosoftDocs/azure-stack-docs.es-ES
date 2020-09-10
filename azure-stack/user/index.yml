@@ -9,12 +9,12 @@ metadata:
   author: mattbriggs
   ms.author: mabrigg
   ms.date: 03/19/2020
-  ms.openlocfilehash: b78dc0d3acf20f66ddd4779efc0ac785cb5ab7d6
-  ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+  ms.openlocfilehash: 889a3841ca8fd4bf54d38f04b83270ab3086d1ab
+  ms.sourcegitcommit: 69c859a89941ee554d438d5472308eece6766bdf
   ms.translationtype: HT
   ms.contentlocale: es-ES
-  ms.lasthandoff: 07/21/2020
-  ms.locfileid: "86567746"
+  ms.lasthandoff: 09/10/2020
+  ms.locfileid: "89621289"
 landingContent:
 - title: Acerca de Azure Stack Hub
   linkLists:
@@ -58,14 +58,18 @@ landingContent:
       url: azure-stack-dev-start-vscode-azure.md
 - title: Infraestructura como servicio (IaaS) en Azure Stack Hub
   linkLists:
+  - linkListType: quickstart
+    links:
+    - text: 'Inicio rápido: Creación de una máquina virtual'
+      url: azure-stack-quick-linux-portal.md
   - linkListType: how-to-guide
     links:
+    - text: Migración de máquinas virtuales
+      url: vm-move-overview.md
     - text: Implementación de una máquina virtual en IaaS con una plantilla
       url: azure-stack-create-vm-template.md
     - text: Configuración de una red virtual
       url: deploy-foundational-patterns.md
-    - text: 'Inicio rápido: Creación de una máquina virtual'
-      url: azure-stack-quick-linux-portal.md
     - text: Hospedaje de aplicaciones escritas en su código
       url: azure-stack-dev-start-deploy-app.md
 - title: Plataforma como servicio (PaaS) en Azure Stack Hub
