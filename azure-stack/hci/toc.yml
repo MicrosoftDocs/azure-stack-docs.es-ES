@@ -108,7 +108,7 @@
       href: concepts/plan-volumes.md
     - name: Red definida por software
       href: concepts/software-defined-networking.md
-    - name: Descripción de la memoria caché
+    - name: Descripción de la caché de un bloque de almacenamiento
       href: concepts/cache.md
     - name: Tolerancia a errores y eficacia del almacenamiento
       href: concepts/fault-tolerance.md
