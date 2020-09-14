@@ -7,12 +7,12 @@ ms.date: 1/22/2020
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 03/18/2019
-ms.openlocfilehash: 699c9a32c316e183c5432308ca26239533f71c98
-ms.sourcegitcommit: 09fbc4e8fc53828647d515bfb556dfe42df28c19
+ms.openlocfilehash: 760f8680c20acdbd219cc4dd9e97e799a37598ea
+ms.sourcegitcommit: b80d529ff47b15b8b612d8a787340c7b0f68165b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86419145"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473119"
 ---
 # <a name="deploy-the-mysql-resource-provider-on-azure-stack-hub"></a>Implementación del proveedor de recursos MySQL en Azure Stack Hub
 
@@ -29,23 +29,17 @@ Hay varios requisitos previos que se deben cumplir antes de implementar el prove
 
 * Agregue la máquina virtual de Windows Server Core necesaria a Marketplace de Azure Stack Hub mediante la descarga de la imagen de **Windows Server 2016 Datacenter - Server Core**.
 
-* Descargue el archivo binario del proveedor de recursos MySQL y ejecute el extractor automático para extraer el contenido en un directorio temporal.
+* Descargue la versión compatible del archivo binario del proveedor de recursos de MySQL según la tabla de asignación de versiones siguiente. Ejecute el autoextractor para extraer el contenido descargado en un directorio temporal. 
 
-  >[!NOTE]
-  >Para implementar el proveedor MySQL en un sistema sin acceso a Internet, copie el archivo [mysql-connector-net-6.10.5.msi](https://dev.mysql.com/get/Downloads/Connector-Net/mysql-connector-net-6.10.5.msi) en una ruta de acceso local. Proporcione el nombre de ruta de acceso mediante el parámetro **DependencyFilesLocalPath**.
-
-* El proveedor de recursos tiene una compilación mínima correspondiente de Azure Stack Hub.
-
-  |Versión mínima de Azure Stack Hub|MySQL RP, versión|
+  |Versión de Azure Stack Hub compatible|MySQL RP, versión|
   |-----|-----|
-  |Versión 1910 (1.1910.0.58)|[MySQL RP, versión 1.1.47.0](https://aka.ms/azurestackmysqlrp11470)|
-  |Versión 1808 (1.1808.0.97)|[MySQL RP, versión 1.1.33.0](https://aka.ms/azurestackmysqlrp11330)|  
-  |Versión 1808 (1.1808.0.97)|[MySQL RP, versión 1.1.30.0](https://aka.ms/azurestackmysqlrp11300)|
-  |Versión 1804 (1.0.180513.1)|[MySQL RP, versión 1.1.24.0](https://aka.ms/azurestackmysqlrp11240)
+  |2005, 2002, 1910|[MySQL RP, versión 1.1.47.0](https://aka.ms/azurestackmysqlrp11470)|
+  |1908|[MySQL RP, versión 1.1.33.0](https://aka.ms/azurestackmysqlrp11330)|
   |     |     |
-  
-> [!IMPORTANT]
-> Antes de implementar la versión 1.1.47.0 del proveedor de recursos MySQL, debe pasar el sistema Azure Stack Hub a la actualización 1910 o versiones posteriores. La versión 1.1.47.0 del proveedor de recursos MySQL no funciona en versiones anteriores de Azure Stack Hub no compatibles.
+
+>[!NOTE]
+>Para implementar el proveedor MySQL en un sistema sin acceso a Internet, copie el archivo [mysql-connector-net-6.10.5.msi](https://dev.mysql.com/get/Downloads/Connector-Net/mysql-connector-net-6.10.5.msi) en una ruta de acceso local. Proporcione el nombre de ruta de acceso mediante el parámetro **DependencyFilesLocalPath**.
+
 
 * Asegúrese de que se cumplen los requisitos previos de la integración del centro de datos:
 
@@ -66,8 +60,8 @@ Import-Module -Name PackageManagement -ErrorAction Stop
 
 # path to save the packages, c:\temp\azs1.6.0 as an example here
 $Path = "c:\temp\azs1.6.0"
-Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name AzureRM -Path $Path -Force -RequiredVersion 2.3.0
-Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name AzureStack -Path $Path -Force -RequiredVersion 1.6.0
+Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name AzureRM -Path $Path -Force -RequiredVersion 2.5.0
+Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name AzureStack -Path $Path -Force -RequiredVersion 1.8.2
 ```
 
 2. Después, copie los paquetes descargados en un dispositivo USB.

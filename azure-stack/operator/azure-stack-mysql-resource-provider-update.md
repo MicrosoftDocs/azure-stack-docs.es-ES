@@ -7,12 +7,12 @@ ms.date: 8/19/2020
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 01/11/2020
-ms.openlocfilehash: 3e508523230fa1beb072652d86f5cb6a07adb835
-ms.sourcegitcommit: eb9ec6bab69543c63d6e51b37387cc80ecb7be87
+ms.openlocfilehash: 3f19dc4c3fd398d55f2570d9636b3c46df17490b
+ms.sourcegitcommit: b80d529ff47b15b8b612d8a787340c7b0f68165b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88612289"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473000"
 ---
 # <a name="update-the-mysql-resource-provider-in-azure-stack-hub"></a>Actualización del proveedor de recursos MySQL en Azure Stack Hub
 
@@ -20,6 +20,12 @@ ms.locfileid: "88612289"
 > Antes de actualizar el proveedor de recursos, revise las notas de la versión para obtener información sobre las nuevas funciones, correcciones y problemas conocidos que podrían afectar a la implementación. Las notas de la versión también especifican la versión mínima de Azure Stack Hub requerida para el proveedor de recursos.
 
 Cuando las compilaciones de Azure Stack Hub se actualicen, podría lanzarse un nuevo adaptador del proveedor de recursos de MySQL. Aunque el adaptador existente continúa funcionando, se recomienda actualizar a la compilación más reciente lo antes posible.
+
+  |Versión de Azure Stack Hub compatible|MySQL RP, versión|
+  |-----|-----|
+  |2005, 2002, 1910|[MySQL RP, versión 1.1.47.0](https://aka.ms/azurestackmysqlrp11470)|
+  |1908|[MySQL RP, versión 1.1.33.0](https://aka.ms/azurestackmysqlrp11330)|
+  |     |     |
 
 A partir de la versión 1.1.33.0 del proveedor de recursos MySQL, las actualizaciones son acumulativas y no es necesario instalarlas en el orden en el que se han publicado, siempre y cuando empiece desde la versión 1.1.24.0 o posterior. Por ejemplo, si está ejecutando la versión 1.1.24.0 del proveedor de recursos MySQL, puede actualizar a la versión 1.1.33.0 o posterior sin necesidad de instalar primero la versión 1.1.30.0. Para revisar las versiones del proveedor de recursos disponibles y la versión de Azure Stack Hub compatible, consulte la lista de versiones en [Requisitos previos para implementar el proveedor de recursos](./azure-stack-mysql-resource-provider-deploy.md#prerequisites).
 
@@ -65,7 +71,7 @@ Si va a actualizar el proveedor de recursos MySQL a la versión 1.1.33.0 o vers
 # Note that this might not be the most currently available version of Azure Stack Hub PowerShell.
 Install-Module -Name AzureRm.BootStrapper -Force
 Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
-Install-Module -Name AzureStack -RequiredVersion 1.6.0
+Install-Module -Name AzureStack -RequiredVersion 1.8.2
 ```
 
 > [!NOTE]

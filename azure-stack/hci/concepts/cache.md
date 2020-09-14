@@ -1,20 +1,20 @@
 ---
-title: Descripción de la memoria caché en Azure Stack HCI
+title: Descripción de la caché de bloque de almacenamiento en Azure Stack HCI
 description: Funcionamiento del almacenamiento en caché de lectura y escritura en Espacios de almacenamiento directo y Azure Stack HCI.
 author: khdownie
 ms.author: v-kedow
 ms.topic: conceptual
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 09/01/2020
-ms.openlocfilehash: 0c5ce6430ac44601b7e0a172203faabf2732e0a2
-ms.sourcegitcommit: 08a421ab5792ab19cc06b849763be22f051e6d78
+ms.date: 09/04/2020
+ms.openlocfilehash: 573cbe36fefecdc37394270fbeec6540d4369991
+ms.sourcegitcommit: 01dcda15d88c8d44b4918e2f599daca462a8e3d9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89364752"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89493876"
 ---
-# <a name="understanding-the-cache-in-azure-stack-hci"></a>Descripción de la memoria caché en Azure Stack HCI
+# <a name="understanding-the-storage-pool-cache-in-azure-stack-hci"></a>Descripción de la caché de bloque de almacenamiento en Azure Stack HCI
 
 > Se aplica a: Azure Stack HCI, versión 20H2; Windows Server 2019
 
@@ -148,7 +148,7 @@ Hay varias memorias caché no relacionadas en la pila de almacenamiento definida
 
 Con Azure Stack HCI, no se debería modificar el comportamiento predeterminado de la caché con reescritura de espacios de almacenamiento. Por ejemplo, no se deben usar parámetros como **-WriteCacheSize** en el cmdlet **New-Volume**.
 
-Puede optar por usar la memoria caché de CSV o no: depende de usted. Está desactivada de manera predeterminada en Windows Server 2019, pero no entra en conflicto con la nueva caché que se describe en este tema de ningún modo. En algunos escenarios, puede mejorar el rendimiento significativamente. Para más información, consulte [Cómo habilitar la caché de CSV](/windows-server/failover-clustering/failover-cluster-csvs#enable-the-csv-cache-for-read-intensive-workloads-optional).
+Puede optar por usar la memoria caché de CSV o no: depende de usted. Está activada de manera predeterminada en Azure Stack HCI, pero no entra en conflicto con la caché que se describe en este tema de ningún modo. En algunos escenarios, puede mejorar el rendimiento significativamente. Para más información, consulte [Uso de la caché de lectura en memoria de Volumen compartido de clúster con Azure Stack HCI](../manage/use-csv-cache.md).
 
 ## <a name="manual-configuration"></a>Configuración manual
 

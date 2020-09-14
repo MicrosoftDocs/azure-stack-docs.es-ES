@@ -114,6 +114,8 @@
       href: concepts/fault-tolerance.md
     - name: Cuórum de clúster y bloque de almacenamiento
       href: concepts/quorum.md
+    - name: Planificación de una infraestructura de SDN
+      href: concepts/plan-software-defined-networking-infrastructure.md
     - name: Controladora de red
       href: concepts/network-controller.md
     - name: Consideraciones sobre la seguridad

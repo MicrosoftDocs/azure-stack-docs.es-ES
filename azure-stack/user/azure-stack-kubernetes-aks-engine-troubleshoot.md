@@ -3,16 +3,16 @@ title: Solución de problemas del motor de AKS en Azure Stack Hub
 description: Este artículo contiene los pasos necesarios para la solución de problemas del motor de AKS en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 08/24/2020
+ms.date: 09/08/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 4/17/2020
-ms.openlocfilehash: 794320af0595138e335c0b1cd3dad61a777251ff
-ms.sourcegitcommit: 65a115d1499b5fe16b6fe1c31cce43be21d05ef8
+ms.lastreviewed: 09/08/2020
+ms.openlocfilehash: e9e1e09d40be623dfb973503295274790a86dfb8
+ms.sourcegitcommit: 2407498dc34158a49959d9f87f84d6a1cde0cca6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88818769"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89560970"
 ---
 # <a name="troubleshoot-the-aks-engine-on-azure-stack-hub"></a>Solución de problemas del motor de AKS en Azure Stack Hub
 
@@ -70,16 +70,16 @@ Para más información, consulte el artículo [Solución de problemas ](https://
 
 ## <a name="collect-aks-engine-logs"></a>Recopilación de registros del motor de AKS
 
-Puede acceder a la información de revisión que crea AKS-Engine. El motor de AKS informa acerca del estado y los errores mientras se ejecuta la aplicación. La salida se puede canalizar a un archivo de texto, o bien se puede copiar directamente desde la consola de la línea de comandos. Consulte una lista de códigos de error desencadenados por el motor de AKS en [Examen de los códigos de error de extensión de script personalizado](#review-custom-script-extension-error-codes).
+Puede revisar la información que crea el motor de AKS. El motor de AKS informa acerca del estado y los errores mientras se ejecuta la aplicación. La salida se puede canalizar a un archivo de texto, o bien se puede copiar directamente desde la consola de la línea de comandos. Consulte una lista de códigos de error desencadenados por el motor de AKS en [Examen de los códigos de error de extensión de script personalizado](#review-custom-script-extension-error-codes).
 
 1.  Recopile la salida estándar y los errores de la información que se muestra en la herramienta de línea de comandos del motor de AKS.
 
-2. Obtenga los registros de un archivo local. Puede establecer el directorio de salida con el parámetro **--output-directory**.
+2. Obtenga los registros de un archivo local. Puede establecer el directorio de salida con el comando `get-logs`estableciendo la marca **--output-directory**.
 
     Para establecer la ruta de acceso local para los registros:
 
     ```bash  
-    aks-engine --output-directory <path to the directory>
+    aks-engine get-logs --output-directory <path to the directory>
     ```
 
 ## <a name="collect-kubernetes-logs"></a>Recopilación de registros de Kubernetes
@@ -102,8 +102,8 @@ Sin este script, necesitaría conectarse a todos los nodos del clúster para bus
 Requisitos:
 
  - Una máquina virtual Linux, Git Bash o Bash en Windows.
- - La [CLI de Azure](azure-stack-version-profiles-azurecli2.md) instalada en la máquina desde donde se ejecutará el script.
- - Identidad de la entidad de servicio que ha iniciado una sesión de la CLI de Azure en Azure Stack Hub. Como el script tiene la funcionalidad de detectar y crear recursos ARM para realizar su trabajo, requiere la CLI de Azure y una identidad de la entidad de servicio.
+ - La [CLI de Azure](azure-stack-version-profiles-azurecli2.md) instalada en la máquina en la que se ejecutará el script.
+ - Identidad de la entidad de servicio que ha iniciado una sesión de la CLI de Azure en Azure Stack Hub. Como el script tiene la capacidad de detectar y crear recursos de Resource Manager para Azure Stack para realizar su trabajo, requiere la CLI de Azure y una identidad de la entidad de servicio.
  - Una cuenta de usuario (suscripción) en la que el clúster de Kubernetes ya está seleccionado en el entorno. 
 1. Descargue la versión más reciente del archivo tar del script en la máquina virtual del cliente, una máquina que tenga acceso al clúster de Kubernetes o a la misma máquina que usó para implementar el clúster con AKS-Engine.
 

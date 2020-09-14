@@ -3,16 +3,16 @@ title: Uso de perfiles de la versión de la API con Python en Azure Stack Hub
 description: Aprenda a usar los perfiles de la versión de la API con Python en Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 05/05/2020
+ms.date: 09/03/2020
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: 42a00b997031850a61077ec59a92d5df5b6776ef
-ms.sourcegitcommit: 70c344b3c9c63f8c12867b2cdfdd1794fcc518dc
+ms.openlocfilehash: 88c2ecd1448a210daddd1d7da34ffea03c67a6b1
+ms.sourcegitcommit: 7c01ab4b2e2250a7acd67d1c5ba27d15c1e8bce0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82835907"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89448646"
 ---
 # <a name="use-api-version-profiles-with-python-in-azure-stack-hub"></a>Uso de perfiles de la versión de la API con Python en Azure Stack Hub
 
@@ -37,7 +37,7 @@ El SDK de Python es compatible con los siguientes perfiles de la API:
 
 ## <a name="install-the-azure-python-sdk"></a>Instalación del SDK de Azure para Python
 
-1. Instale Git desde [el sitio oficial](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+1. [Instale Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 2. Para obtener instrucciones sobre la instalación del SDK de Python, consulte [Azure para desarrolladores de Python](/python/azure/python-sdk-azure-install?view=azure-python).
 3. Si no está disponible, cree una suscripción y guarde su identificador para usarlo más adelante. Para instrucciones sobre la creación de una suscripción, consulte [Creación de suscripciones para ofertas en Azure Stack Hub](../operator/azure-stack-subscribe-plan-provision-vm.md).
 4. Cree una entidad de servicio y guarde su identificador y su secreto. Para obtener instrucciones sobre la creación de una entidad de servicio para Azure Stack Hub, consulte [Proporcionar a las aplicaciones acceso a Azure Stack Hub](../operator/azure-stack-create-service-principals.md).
@@ -187,6 +187,6 @@ Cada operación está claramente etiquetada con un comentario y una función de 
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Centro para desarrolladores de Python de Azure](https://azure.microsoft.com/develop/python/)
+- [Centro para desarrolladores de Python para Azure](https://azure.microsoft.com/develop/python/)
 - [Documentación de Azure Virtual Machines](https://azure.microsoft.com/services/virtual-machines/)
 - [Ruta de aprendizaje de Virtual Machines](/learn/paths/deploy-a-website-with-azure-virtual-machines/)

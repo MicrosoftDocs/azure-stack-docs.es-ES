@@ -7,12 +7,12 @@ ms.date: 8/28/2020
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 8/28/2020
-ms.openlocfilehash: 3b7734f5baccdad399f88bd36a076574f0c9c91a
-ms.sourcegitcommit: 28894abb31423046f6775aadef490c467f1b1820
+ms.openlocfilehash: 8aa2c3cad35af9d6c887217ea977a92eae7428cf
+ms.sourcegitcommit: 7c01ab4b2e2250a7acd67d1c5ba27d15c1e8bce0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89089616"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89448459"
 ---
 # <a name="download-azure-stack-hub-tools-from-github"></a>Descarga de herramientas de Azure Stack Hub desde GitHub
 
@@ -20,7 +20,7 @@ ms.locfileid: "89089616"
 
 ## <a name="get-tools-for-azure-stack-hub-azurerm-module"></a>Obtención de herramientas para el módulo AzureRM de Azure Stack Hub
 
-Para obtener estas herramientas, clone el repositorio de GitHub de la rama `master` o descargue la carpeta **AzureStack-Tools** mediante la ejecución del script siguiente:
+Para obtener estas herramientas, clone el repositorio de GitHub de la rama `master` o descargue la carpeta **AzureStack-Tools** mediante la ejecución del script siguiente en un símbolo del sistema de PowerShell con privilegios elevados:
 
 ```powershell
 # Change directory to the root directory.

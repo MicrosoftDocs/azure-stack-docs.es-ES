@@ -3,16 +3,16 @@ title: Incorporación de nodos de la unidad de escalado en Azure Stack Hub
 description: Aprenda a agregar nodos de la unidad de escalado a unidades de escalado de Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 08/03/2020
+ms.date: 09/09/2020
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 08/03/2020
-ms.openlocfilehash: cc9023e6f7653d13d11a0a63cb65c59840f64ab7
-ms.sourcegitcommit: 952d26ad08fcc28ad3ad83e27644e61497623a44
+ms.openlocfilehash: bf1cbd3dc999a90fb53ef30b48dc6f06e82f4d5a
+ms.sourcegitcommit: 69c859a89941ee554d438d5472308eece6766bdf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889246"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89621306"
 ---
 # <a name="add-additional-scale-unit-nodes-in-azure-stack-hub"></a>Incorporación de nodos de la unidad de escalado adicionales en Azure Stack Hub
 
@@ -27,14 +27,14 @@ En el siguiente diagrama de flujo se muestra el proceso general para agregar un 
 
 La operación para agregar un nuevo nodo puede tardar varias horas o días en completarse. No se producirá ningún impacto en las cargas de trabajo en ejecución en el sistema durante la incorporación de un nodo adicional de unidad de escalado.
 
-> [!Note]  
+> [!NOTE]  
 > No intente ninguna de las siguientes operaciones mientras ya esté en curso una operación de nodo para agregar una unidad de escalado:
 >
 >  - Actualización de Azure Stack Hub
 >  - Rotación de certificados
 >  - Detención de Azure Stack Hub
 >  - Reparación de un nodo de unidad de escalado
-
+>  - Adición de otro nodo (el error de la acción Agregar nodo anterior también se considera en curso)
 
 ## <a name="add-scale-unit-nodes"></a>Incorporación de nodos de unidad de escalado
 

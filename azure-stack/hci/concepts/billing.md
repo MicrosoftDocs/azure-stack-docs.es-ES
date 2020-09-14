@@ -4,13 +4,15 @@ description: Cómo funciona la facturación y el pago en Azure Stack HCl.
 author: khdownie
 ms.author: v-kedow
 ms.topic: conceptual
-ms.date: 07/21/2020
-ms.openlocfilehash: 32c3a0305775c9825e27fe3e8a99911b297a129c
-ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
+ms.service: azure-stack
+ms.subservice: azure-stack-hci
+ms.date: 09/01/2020
+ms.openlocfilehash: 22758f9a6b905e2c948a47c5870a05edcb63acdf
+ms.sourcegitcommit: 1c5e7d8419037c0f3ef6fe9d8e6bfb6a59659c84
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86868199"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89428488"
 ---
 # <a name="azure-stack-hci-billing-and-payment"></a>Facturación y pago de Azure Stack HCl
 

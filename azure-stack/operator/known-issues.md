@@ -3,16 +3,16 @@ title: Problemas conocidos de Azure Stack Hub
 description: Obtenga información sobre los problemas conocidos de las versiones de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 09/02/2020
+ms.date: 09/04/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 08/13/2020
-ms.openlocfilehash: 664d89ecfde65906bbda33d71d9adc24284a33ba
-ms.sourcegitcommit: cf99d632ca2afccba4aaad5c8a013ba3443bcd54
+ms.openlocfilehash: d7a9112955891a59e29bfe997888d3e444784494
+ms.sourcegitcommit: 01dcda15d88c8d44b4918e2f599daca462a8e3d9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89410980"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89493825"
 ---
 # <a name="azure-stack-hub-known-issues"></a>Problemas conocidos de Azure Stack Hub
 
@@ -117,7 +117,7 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 ### <a name="vm-overview-blade-does-not-show-correct-computer-name"></a>La hoja de información general de máquinas virtuales no muestra el nombre de equipo correcto
 
 - Aplicable a: este problema afecta a todas las versiones.
-- Causa: Al ver los detalles de una máquina virtual en la hoja de información general, el nombre del equipo se muestra como **(no disponible)** . Por su propio diseño esto es para máquinas virtuales creadas a partir de discos o instantáneas de disco especializados.
+- Causa: Al ver los detalles de una máquina virtual en la hoja de información general, el nombre del equipo se muestra como **(no disponible)** . Por su propio diseño esto es para máquinas virtuales creadas a partir de discos o instantáneas de disco especializados y aparece también para imágenes de Marketplace.
 - Corrección: Vea la hoja **Propiedades** en **Configuración**.
 
 ### <a name="virtual-machine-scale-set"></a>Conjunto de escalado de máquina virtual
@@ -264,6 +264,7 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
   - [Especificación de directivas de IPsec o IKE personalizadas](../user/azure-stack-vpn-gateway-settings.md#ipsecike-parameters)
 
 ## <a name="compute"></a>Proceso
+
 ### <a name="cannot-create-a-vmss-with-standard_ds2_v2-vm-size-on-portal"></a>No se puede crear una instancia de Virtual Machine Scale Sets con el tamaño de máquina virtual Standard_DS2_v2 en el portal
 
 - Aplicable a: este problema se aplica a la versión 2002.
@@ -273,7 +274,7 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 ### <a name="vm-overview-blade-does-not-show-correct-computer-name"></a>La hoja de información general de máquinas virtuales no muestra el nombre de equipo correcto
 
 - Aplicable a: este problema afecta a todas las versiones.
-- Causa: Al ver los detalles de una máquina virtual en la hoja de información general, el nombre del equipo se muestra como **(no disponible)** . Por su propio diseño esto es para máquinas virtuales creadas a partir de discos o instantáneas de disco especializados.
+- Causa: Al ver los detalles de una máquina virtual en la hoja de información general, el nombre del equipo se muestra como **(no disponible)** . Por su propio diseño esto es para máquinas virtuales creadas a partir de discos o instantáneas de disco especializados y aparece también para imágenes de Marketplace.
 - Corrección: Vea la hoja **Propiedades** en **Configuración**.
 
 ### <a name="nvv4-vm-size-on-portal"></a>Tamaño de máquina virtual NVv4 en el portal

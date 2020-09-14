@@ -3,16 +3,16 @@ title: Notas de la versión de Azure Stack Hub
 description: Notas de la versión para los sistemas integrados de Azure Stack Hub, incluidas las actualizaciones y correcciones de errores.
 author: sethmanheim
 ms.topic: article
-ms.date: 09/02/2020
+ms.date: 09/04/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 08/11/2020
-ms.openlocfilehash: 14d41d920d9a91744c5cfa05d2d252a68146b4d1
-ms.sourcegitcommit: cf99d632ca2afccba4aaad5c8a013ba3443bcd54
+ms.openlocfilehash: 73cf9222b445164063c3dccfb1beb400913cea3e
+ms.sourcegitcommit: 50e2a81b255847fbd6288c70d60e7a080da372e9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89410946"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89557486"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Notas de la versión de Azure Stack Hub
 
@@ -156,7 +156,7 @@ A partir de la versión 2005, cuando se actualiza a una nueva versión principal
 
 Después de la instalación de 2005, si se publican posteriormente algunas revisiones de la versión 2005, se deben instalar:
 
-- No hay ninguna revisión de Azure Stack Hub disponible para la versión 2005.
+- [Revisión 1.2005.12.66 de Azure Stack Hub](https://support.microsoft.com/help/4580968)
 ::: moniker-end
 
 ::: moniker range="azs-2002"
@@ -214,7 +214,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 
 - Las siguientes API de administrador han quedado en desuso:
 
-  | Proveedor de recursos       | Resource              | Versión            |
+  | Proveedor de recursos       | Recurso              | Versión            |
   |-------------------------|-----------------------|--------------------|
   | Microsoft.Storage.Admin | granjas                 | 2015-12-01-preview |
   | Microsoft.Storage.Admin | farms/acquisitions    | 2015-12-01-preview |
@@ -223,7 +223,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 
 - Se han sustituido las siguientes API de administrador por una versión más reciente (2018-09-01):
 
-  | Proveedor de recursos      | Resource              | Versión    |
+  | Proveedor de recursos      | Recurso              | Versión    |
   |------------------------|-----------------------|------------|
   | Microsoft.Backup.Admin | backupLocation         | 2016-05-01 |
   | Microsoft.Backup.Admin | backups                | 2016-05-01 |
