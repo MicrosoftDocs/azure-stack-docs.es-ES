@@ -1,18 +1,18 @@
 ---
 title: Requisitos y consideraciones de ASDK
 description: Consulte los requisitos de hardware, software y entorno para instalar el Kit de desarrollo de Azure Stack (ASDK).
-author: justinha
+author: myoungerman
 ms.topic: article
 ms.date: 05/13/2019
-ms.author: justinha
+ms.author: v-myoung
 ms.reviewer: misainat
 ms.lastreviewed: 05/13/2019
-ms.openlocfilehash: d9681a9245c856378a779a25ab3de2c051d97b0b
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: f74ffc103c53fa8cb1c317f42455c4063e1b0baa
+ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86489851"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90572109"
 ---
 # <a name="asdk-requirements-and-considerations"></a>Requisitos y consideraciones de ASDK
 
@@ -20,18 +20,16 @@ Antes de implementar el Kit de desarrollo de Azure Stack (ASDK), asegúrese de q
 
 ## <a name="hardware"></a>Hardware
 
-| Componente | Mínima | Recomendado |
-| --- | --- | --- |
-| Unidades de disco: Sistema operativo |Un disco de sistema operativo con un mínimo de 200 GB disponibles para la partición del sistema (SSD o HDD). |Un disco del sistema operativo con un mínimo de 200 GB disponibles para la partición del sistema (SSD o HDD). |
-| Unidades de disco: datos generales del kit de desarrollo<sup>*</sup>  |Cuatro discos. Cada disco proporciona un mínimo de 240 GB de capacidad (SSD o HDD). Se utilizan todos los discos disponibles. |Cuatro discos. Cada disco proporciona un mínimo de 400 GB de capacidad (SSD o HDD). Se utilizan todos los discos disponibles. |
-| Proceso: CPU |Socket dual: 16 núcleos físicos (total). |Socket dual: 20 núcleos físicos (total). |
-| Proceso: Memoria |192 GB de RAM. |256 GB de RAM. |
-| Proceso: BIOS |Hyper-V habilitado (con compatibilidad para SLAT). |Hyper-V habilitado (con compatibilidad para SLAT). |
-| Red: NIC |Certificación de Windows Server 2012 R2. No se necesitan características especializadas. | Certificación de Windows Server 2012 R2. No se necesitan características especializadas. |
-| Certificación del logotipo de hardware |[Certificado para Windows Server 2012 R2](https://www.windowsservercatalog.com/content.aspx?ctf=logo.htm). 
-|[Certificado para Windows Server 2016](https://www.windowsservercatalog.com/content.aspx?ctf=logo.htm). 
-|
-
+| Componente                                             | Mínima                                                                                                 | Recomendado                                                                                             |
+|-------------------------------------------------------|---------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| Unidades de disco: Sistema operativo                         | Un disco de sistema operativo con un mínimo de 200 GB disponibles para la partición del sistema (SSD o HDD).             | Un disco del sistema operativo con un mínimo de 200 GB disponibles para la partición del sistema (SSD o HDD).                           |
+| Unidades de disco: datos generales del kit de desarrollo<sup>*</sup> | Cuatro discos. Cada disco proporciona un mínimo de 240 GB de capacidad (SSD o HDD). Se utilizan todos los discos disponibles. | Cuatro discos. Cada disco proporciona un mínimo de 400 GB de capacidad (SSD o HDD). Se utilizan todos los discos disponibles. |
+| Proceso: CPU                                          | Socket dual: 16 núcleos físicos (total).                                                                 | Socket dual: 20 núcleos físicos (total).                                                                 |
+| Proceso: Memoria                                       | 192 GB de RAM.                                                                                             | 256 GB de RAM.                                                                                             |
+| Proceso: BIOS                                         | Hyper-V habilitado (con compatibilidad para SLAT).                                                                    | Hyper-V habilitado (con compatibilidad para SLAT).                                                                    |
+| Red: NIC                                          | Certificación de Windows Server 2012 R2. No se necesitan características especializadas.                                 | Certificación de Windows Server 2012 R2. No se necesitan características especializadas.                                 |
+| Certificación del logotipo de hardware                                 | [Certificado para Windows Server 2012 R2](https://www.windowsservercatalog.com/content.aspx?ctf=logo.htm). | [Certificado para Windows Server 2016](https://www.windowsservercatalog.com/content.aspx?ctf=logo.htm).    |
+  
 <sup>*</sup>Si tiene previsto agregar muchos de los [elementos de Marketplace](../operator/azure-stack-create-and-publish-marketplace-item.md) desde Azure, necesitará más capacidad de la que se recomienda.
 
 ### <a name="hardware-notes"></a>Notas de hardware

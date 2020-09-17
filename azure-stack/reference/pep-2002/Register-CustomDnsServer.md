@@ -1,5 +1,5 @@
 ---
-title: Punto de conexión con privilegios de Close-PrivilegedEndpoint para Azure Stack Hub
+title: Register-CustomDnsServer
 description: 'Referencia del punto de conexión con privilegios de Azure Stack para PowerShell: Close-PrivilegedEndpoint'
 author: mattbriggs
 ms.topic: reference
@@ -7,12 +7,12 @@ ms.date: 04/27/2020
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 04/27/2020
-ms.openlocfilehash: 5df0c8ffc18699f796afb59c49d101cb28e6a534
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: 896ab0f8efa224b4d2224d417dba91e55dea1c19
+ms.sourcegitcommit: 4af79f4fa2598d57c81e994192c10f8c6be5a445
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86486550"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89742663"
 ---
 # <a name="register-customdnsserver"></a>Register-CustomDnsServer
 

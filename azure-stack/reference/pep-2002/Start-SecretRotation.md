@@ -7,12 +7,12 @@ ms.date: 07/29/2020
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 04/27/2020
-ms.openlocfilehash: 12614343df051b9283f2e3b8fc2af56f8fc4058e
-ms.sourcegitcommit: eb91a28a19a74f799b093ae2a705f7f6e4c5cd49
+ms.openlocfilehash: 8a3dee9ad26c37626c0f3383b874f149be4fac01
+ms.sourcegitcommit: 4af79f4fa2598d57c81e994192c10f8c6be5a445
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87436443"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89742601"
 ---
 # <a name="start-secretrotation"></a>Start-SecretRotation
 
@@ -85,6 +85,8 @@ Puede ser diferente de la contraseña pfx original proporcionada en el momento d
 Se volverán a generar los archivos pfx con la contraseña de CA correcta.
 
 Uso:
+
+```console
     # Rotates external certificates only
     Start-SecretRotation -PfxFilesPath \<String\> -PathAccessCredential \<PSCredential\> -CertificatePassword \<SecureString\>
 
@@ -96,6 +98,7 @@ Uso:
 
     # Reruns external certificates only
     Start-SecretRotation -ReRun
+```
 
 ```yaml
 Type: Object

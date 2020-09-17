@@ -4,13 +4,15 @@ description: Preparación de la implementación de Azure Stack HCI
 author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
+ms.service: azure-stack
+ms.subservice: azure-stack-hci
 ms.date: 09/03/2020
-ms.openlocfilehash: 1cffde5eb3fa29357a71a0d6ca397f1da1b63879
-ms.sourcegitcommit: 7c01ab4b2e2250a7acd67d1c5ba27d15c1e8bce0
+ms.openlocfilehash: b780dad569f1f2bdb2488505ecb2e12b0aaf2b3f
+ms.sourcegitcommit: 4af79f4fa2598d57c81e994192c10f8c6be5a445
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89448612"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89742191"
 ---
 # <a name="before-you-deploy-azure-stack-hci"></a>Antes de implementar Azure Stack HCI
 

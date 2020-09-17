@@ -1,5 +1,5 @@
 ---
-title: Punto de conexión con privilegios de Close-PrivilegedEndpoint para Azure Stack Hub
+title: Set-SyslogServer
 description: 'Referencia del punto de conexión con privilegios de Azure Stack para PowerShell: Close-PrivilegedEndpoint'
 author: mattbriggs
 ms.topic: reference
@@ -7,12 +7,12 @@ ms.date: 04/27/2020
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 04/27/2020
-ms.openlocfilehash: 8fda3e8e1c492673ac3f113b717c824079c01636
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: 328862a4d6d598781a88597ea1d03fbaf50a4885
+ms.sourcegitcommit: 4af79f4fa2598d57c81e994192c10f8c6be5a445
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86485874"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89742701"
 ---
 # <a name="set-syslogserver"></a>Set-SyslogServer
 
