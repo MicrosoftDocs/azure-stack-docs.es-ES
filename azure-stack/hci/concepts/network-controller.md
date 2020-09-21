@@ -4,13 +4,13 @@ description: En este tema se explica cómo planear la implementación de Control
 author: AnirbanPaul
 ms.author: anpaul
 ms.topic: conceptual
-ms.date: 09/09/2020
-ms.openlocfilehash: 58ae46591e2119bbfc9269440f36e9c37fd0e7b9
-ms.sourcegitcommit: 69c859a89941ee554d438d5472308eece6766bdf
+ms.date: 09/10/2020
+ms.openlocfilehash: 785665c9edc3af3230b4813e6da6bceddc43bd0a
+ms.sourcegitcommit: b147d617c32cea138b5bd4bab568109282e44317
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89643942"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010839"
 ---
 # <a name="plan-to-deploy-the-network-controller"></a>Plan de implementación de Controladora de red
 
@@ -21,7 +21,7 @@ La planeación de la implementación de Controladora de red mediante Windows Adm
    >[!NOTE]
    > Es recomendable implementar Controladora de red en sus propias máquinas virtuales dedicadas.
 
-## <a name="network-controller-requirements-for-azure-stack-hci"></a>Requisitos de Controladora de red para Azure Stack HCI
+## <a name="network-controller-requirements"></a>Requisitos de Controladora de red
 Se requiere lo siguiente para implementar Controladora de red:
 - Un disco duro virtual para el sistema operativo de Azure Stack HCI para crear las máquinas virtuales de Controladora de red.
 - Un nombre de dominio y credenciales para unir las máquinas virtuales de Controladora de red a un dominio.

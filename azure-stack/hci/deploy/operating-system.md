@@ -1,22 +1,24 @@
 ---
 title: Implementación del sistema operativo de Azure Stack HCI
-description: En este artículo se describen diferentes formas de implementar el sistema operativo Azure Stack HCI y, a continuación, utilizar Windows Admin Center para conectarse a los servidores. Se incluye una referencia a las instrucciones relacionadas con la creación de un clúster de servidores, así como pasos opcionales para obtener las actualizaciones de Windows y el firmware más recientes de los servidores.
+description: Aprenda a implementar el sistema operativo de Azure Stack HCI y, después, use Windows Admin Center para conectarse a sus servidores. Aprenda a crear un clúster de servidores y averigüe cómo obtener las actualizaciones y el firmware más recientes de Windows para los servidores.
 author: JohnCobb1
 ms.author: v-johcob
 ms.topic: tutorial
-ms.date: 07/21/2020
-ms.openlocfilehash: bfdd1a85afa9da48e785beab45991fe5ccdeca6e
-ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
+ms.service: azure-stack
+ms.subservice: azure-stack-hci
+ms.date: 09/09/2020
+ms.openlocfilehash: ec39d00d1cf9fef1e41977009c17d51de3ba95ba
+ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86867070"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90572023"
 ---
 # <a name="deploy-the-azure-stack-hci-operating-system"></a>Implementación del sistema operativo de Azure Stack HCI
 
 > Se aplica a: Azure Stack HCI, versión 20H2
 
-Después de realizar los pasos que se indican en [Antes de implementar Azure Stack HCI](before-you-start.md#install-windows-admin-center), el primer paso para implementar Azure Stack HCI es instalar este sistema operativo en cada servidor que desee agrupar en el clúster. En este artículo se describen diferentes formas de implementar el sistema operativo y de utilizar Windows Admin Center para conectarse a los servidores.
+Después de realizar los pasos que se indican en [Antes de implementar Azure Stack HCI](before-you-start.md#install-windows-admin-center), el primer paso para la implementación es [descargar Azure Stack HCI](https://azure.microsoft.com/en-us/products/azure-stack/hci/hci-download/) e instalarlo en cada servidor que desee agrupar en el clúster. En este artículo se describen diferentes formas de implementar el sistema operativo y de utilizar Windows Admin Center para conectarse a los servidores.
 
 Después de implementar el sistema operativo, está listo para usar las instrucciones relacionadas con la creación de un clúster de servidores y la obtención de las actualizaciones más recientes de Windows y del firmware de los servidores, tal y como se indica en [Creación de un clúster de Azure Stack HCI](create-cluster.md).
 

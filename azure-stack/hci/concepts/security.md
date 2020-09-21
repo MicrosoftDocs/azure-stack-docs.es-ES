@@ -4,13 +4,13 @@ description: En este tema se proporcionan instrucciones sobre las consideracione
 author: JohnCobb1
 ms.author: v-johcob
 ms.topic: conceptual
-ms.date: 07/21/2020
-ms.openlocfilehash: 90a7904a9f102688364b2776d81eee5d7d6e559a
-ms.sourcegitcommit: a15a0f955bac922cebb7bf90a72384fd84ddfe56
+ms.date: 09/10/2020
+ms.openlocfilehash: 6a8a0c3068061c599ac18e160ebd32c7b5cc8eda
+ms.sourcegitcommit: b147d617c32cea138b5bd4bab568109282e44317
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86946983"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010822"
 ---
 # <a name="azure-stack-hci-security-considerations"></a>Consideraciones sobre la seguridad de Azure Stack HCI
 
@@ -53,18 +53,8 @@ En esta sección se explica cómo proteger los servicios y las máquinas virtual
 En esta sección se describe cómo usar Windows Admin Center para proteger los datos y las cargas de trabajo en el sistema operativo:
 
 - **BitLocker para Espacios de almacenamiento** protege los datos en reposo. Puede usar BitLocker para cifrar el contenido de los volúmenes de datos de Espacios de almacenamiento en el sistema operativo. El uso de BitLocker para proteger los datos puede ayudar a las organizaciones a cumplir estándares gubernamentales, regionales y específicos del sector, como FIPS 140-2 e HIPAA.
-
-    Para acceder a BitLocker en Windows Admin Center, haga lo siguiente:
-
-    1. Conéctese a un clúster de Espacios de almacenamiento directo y luego, en el panel **Herramientas** , seleccione **Volúmenes**.
-    1. En la página **Volúmenes**, seleccione **Inventario**, y luego, en **Características opcionales**, active el conmutador **Encryption (BitLocker)** (Cifrado [BitLocker]).
-    
-        :::image type="content" source="./media/security/bitlocker-toggle-switch.png" alt-text="Conmutador de alternancia para habilitar BitLocker":::
-    
-    1. En la ventana emergente **Encryption (BitLocker)** (Cifrado [BitLocker]), seleccione **Iniciar** y, a continuación, en la página **Turn on Encryption** (Activar cifrado), proporcione sus credenciales para completar el flujo de trabajo.
-
-   >[!NOTE]
-   > Si la ventana emergente **Install BitLocker feature first** (Instalar primero la característica de BitLocker), siga las instrucciones para instalar la característica en cada servidor del clúster y, a continuación, reinicie los servidores.
+ 
+    Para más información acerca del uso de BitLocker en Windows Admin Center, consulte [Habilitación del cifrado de volumen, desduplicación y compresión](../manage/volume-encryption-deduplication.md).
 
 - El cifrado de **SMB** para redes de Windows protege los datos en tránsito. El *Bloque de mensajes del servidor (SMB)* es un protocolo de uso compartido de archivos de red que permite que las aplicaciones de un equipo puedan leer archivos y escribir en ellos, así como solicitar servicios desde los programas de servidor en una red de equipos.
 

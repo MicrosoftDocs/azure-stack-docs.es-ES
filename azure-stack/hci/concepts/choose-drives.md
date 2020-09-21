@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
 ms.date: 09/01/2020
-ms.openlocfilehash: c53ef48ab191a831a981c0a0c91b59efa766c948
-ms.sourcegitcommit: 08a421ab5792ab19cc06b849763be22f051e6d78
+ms.openlocfilehash: a1283982ba04acd8de0b54c02fbc0bb88da9ebc6
+ms.sourcegitcommit: 4af79f4fa2598d57c81e994192c10f8c6be5a445
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89364718"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89742308"
 ---
 # <a name="choose-drives-for-azure-stack-hci"></a>Selección de unidades para Azure Stack HCI
 
@@ -43,7 +43,7 @@ Para lograr latencias inferiores al milisegundo predecibles y uniformes entre le
 
 Hay varias formas de hacerlo:
 
-![Posibilidades de implementación de todo flash](media/choose-drives/All-Flash-Deployment-Possibilities.png)
+![Diagrama que muestra las opciones de implementación All-Flash entre las que se incluye NVMe para capacidad, NVMe para caché con SSD para capacidad y SSD para capacidad.](media/choose-drives/All-Flash-Deployment-Possibilities.png)
 
 1. **Todo NVMe.** El uso de todo NVMe proporciona un rendimiento incomparable, incluida la baja latencia más predecible. Si todas las unidades son el mismo modelo, no hay ninguna caché. También es posible combinar modelos de NVMe de alta y baja resistencia, y configurar el primero para almacenar en caché las escrituras del segundo ([requiere instalación](/windows-server/storage/storage-spaces/understand-the-cache#manual-configuration)).
 
@@ -58,7 +58,7 @@ Hay varias formas de hacerlo:
 
 En el caso de entornos con una gran variedad de aplicaciones y cargas de trabajo, algunos con requisitos de rendimiento rigurosos y otros que requieren una capacidad de almacenamiento considerable, debe decantarse por una opción "híbrida" con almacenamiento en caché NVMe o SSD para unidades HDD de mayor tamaño.
 
-![Posibilidades de implementación híbrida](media/choose-drives/Hybrid-Deployment-Possibilities.png)
+![En el diagrama se muestran varias posibilidades de implementación, entre las que se incluyen NVMe para caché con HDD para capacidad, SSD para caché con HDD para capacidad y NVMe para caché con SSD y HDD mixtas para capacidad.](media/choose-drives/Hybrid-Deployment-Possibilities.png)
 
 1. **NVMe + HDD**. Las unidades NVMe acelerarán las lecturas y escrituras al almacenar en caché ambas. El almacenamiento en caché de las lecturas permite que las unidades HDD se centren en las escrituras. El almacenamiento en caché de las escrituras absorbe las ráfagas y permite que las escrituras se fusionen y se anule su almacenamiento provisional, según sea necesario, de una manera serializada artificialmente que maximice el rendimiento de IOPS y E/S de HDD. Este procedimiento proporciona características de escritura de tipo NVMe y, para los datos leídos con frecuencia o recientemente, también características de lectura de tipo NVMe.
 

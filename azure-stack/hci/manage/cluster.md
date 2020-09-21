@@ -1,17 +1,17 @@
 ---
 title: Administración de clústeres de Azure Stack HCI mediante Windows Admin Center
-description: Aprenda a administrar los clústeres de Azure Stack HCI mediante Windows Admin Center.
+description: Aprenda a administrar clústeres de Azure Stack HCI mediante Windows Admin Center.
 ms.topic: how-to
 author: v-dasis
 ms.author: v-dasis
 ms.reviewer: jgerend
 ms.date: 07/21/2020
-ms.openlocfilehash: ef528e23c9b6de9df0a6f5ea399e3337960dabf2
-ms.sourcegitcommit: a15a0f955bac922cebb7bf90a72384fd84ddfe56
+ms.openlocfilehash: d1b8556908da268bbd99c7aa9341128c9dc5be36
+ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86947561"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90573792"
 ---
 # <a name="manage-azure-stack-hci-clusters-using-windows-admin-center"></a>Administración de clústeres de Azure Stack HCI mediante Windows Admin Center
 
@@ -42,8 +42,8 @@ Para ver esta información, seleccione el nombre del clúster en **Todas las con
 
 Hay dos opciones de configuración que puede cambiar relacionadas con Espacios de almacenamiento directo que se pueden aplicar al clúster.
 
-1. En Windows Admin Center, haga clic en **Administrador de clústeres** en la flecha desplegable de la parte superior.
-1. En **Herramientas**, haga clic en **Configuración** en la parte inferior.
+1. En Windows Admin Center, seleccione **Administrador de clústeres** en la flecha desplegable de la parte superior.
+1. En **Herramientas**, seleccione **Configuración** en la parte inferior.
 1. Para configurar la memoria caché de almacenamiento, seleccione **Espacios de almacenamiento directo** y, a continuación, configure lo siguiente:
 
    - En **Caché persistente**, seleccione **Habilitada** o **Deshabilitada**.
@@ -62,8 +62,8 @@ Hay dos opciones de configuración que puede cambiar relacionadas con Espacios d
 
 Hay cinco valores generales que se pueden aplicar al clúster. Aquí puede establecer y administrar puntos de acceso, el comportamiento de apagado del nodo, el cifrado de tráfico, el equilibrio de carga de máquinas virtuales y el testigo del clúster.
 
-1. En Windows Admin Center, haga clic en **Administrador de clústeres** en la flecha desplegable de la parte superior.
-1. En **Herramientas**, haga clic en **Configuración**.
+1. En Windows Admin Center, seleccione **Administrador de clústeres** en la flecha desplegable de la parte superior.
+1. En **Herramientas**, seleccione **Configuración**.
 1. Para cambiar el nombre del clúster, seleccione **Punto de acceso** y escriba el nuevo nombre.
 
     :::image type="content" source="media/manage-cluster/cluster-settings-access.png" alt-text="Escenario del clúster extendido activo/activo" lightbox="media/manage-cluster/cluster-settings-access.png":::
@@ -103,8 +103,8 @@ Hay cinco valores generales que se pueden aplicar al clúster. Aquí puede estab
 
 Hay cinco valores del host de Hyper-V que se pueden aplicar al clúster.
 
-1. En Windows Admin Center, haga clic en **Administrador de clústeres** en la flecha desplegable de la parte superior.
-1. En **Herramientas**, haga clic en **Configuración**.
+1. En Windows Admin Center, seleccione **Administrador de clústeres** en la flecha desplegable de la parte superior.
+1. En **Herramientas**, seleccione **Configuración**.
 1. Seleccione **General** y, a continuación, use los siguientes valores:
 
    - **Ruta de acceso de discos duros virtuales**: especifique la carpeta predeterminada para almacenar los archivos del disco duro virtual.

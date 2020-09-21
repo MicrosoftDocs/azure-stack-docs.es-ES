@@ -1,16 +1,16 @@
 ---
-title: Descripción del cuórum de clúster y de grupo en Azure Stack HCl
+title: Descripción del cuórum de clúster y de grupo en Azure Stack HCI
 description: Descripción del cuórum de clúster y de grupo en Espacios de almacenamiento directo en Azure Stack HCl, con ejemplos específicos para ver los detalles.
 author: khdownie
 ms.author: v-kedow
 ms.topic: conceptual
 ms.date: 07/21/2020
-ms.openlocfilehash: cf9ecc42ed839fc133eb64b38b314816f19aecd7
-ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
+ms.openlocfilehash: d60ec2edb4247c72d35e69e199bf3fc28259e2ce
+ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86866916"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90572130"
 ---
 # <a name="understanding-cluster-and-pool-quorum-on-azure-stack-hci"></a>Descripción del cuórum de clúster y de grupo en Azure Stack HCl
 

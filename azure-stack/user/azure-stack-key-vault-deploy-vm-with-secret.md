@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: ppacent
 ms.lastreviewed: 01/14/2020
-ms.openlocfilehash: f010700c86e4481063528bd1148d7898e8bd17fe
-ms.sourcegitcommit: cad40ae88212cc72f40c84a1c88143ea0abb65ef
+ms.openlocfilehash: 46b76402695131a6bb099a9dc55c15d1066d4c84
+ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84111887"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90573826"
 ---
 # <a name="deploy-an-azure-stack-hub-vm-using-a-password-stored-in-key-vault"></a>Implementación de una máquina virtual de Azure Stack Hub mediante una contraseña almacenada en Key Vault
 

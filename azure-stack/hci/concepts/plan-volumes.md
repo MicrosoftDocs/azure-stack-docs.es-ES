@@ -5,12 +5,12 @@ author: khdownie
 ms.author: v-kedow
 ms.topic: conceptual
 ms.date: 07/27/2020
-ms.openlocfilehash: c40d1ca54bfe71088b18413371b90bd26f8b7386
-ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
+ms.openlocfilehash: 49124c0112d2ecba8c621520cfb1b6c293418401
+ms.sourcegitcommit: 4af79f4fa2598d57c81e994192c10f8c6be5a445
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87250459"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89742546"
 ---
 # <a name="plan-volumes-in-azure-stack-hci"></a>Planeamiento de volúmenes en Azure Stack HCI
 
@@ -25,11 +25,11 @@ Los volúmenes son donde se colocan los archivos que las cargas de trabajo neces
    >[!NOTE]
    > Volúmenes compartidos de clúster.En la documentación de Espacios de almacenamiento directo, usamos el término "volumen" para hacer referencia conjuntamente al volumen y al disco virtual que contiene, incluida la funcionalidad proporcionada por otras características integradas de Windows, como los volúmenes compartidos de clúster (CSV) y ReFS. No es necesario entender estas distinciones a nivel de implementación para planear e implementar Espacios de almacenamiento directo correctamente.
 
-![what-are-volumes](media/plan-volumes/what-are-volumes.png)
+![En el diagrama se muestran tres carpetas etiquetadas como volúmenes asociadas cada una a un disco virtual etiquetado como volúmenes, todos asociados a un bloque de almacenamiento de discos común.](media/plan-volumes/what-are-volumes.png)
 
 Todos los volúmenes son accesibles para todos los servidores del clúster al mismo tiempo. Una vez creados, se muestran en **C:\ClusterStorage\\** en todos los servidores.
 
-![csv-folder-screenshot](media/plan-volumes/csv-folder-screenshot.png)
+![La captura de pantalla muestra una ventana del explorador de archivos titulada ClusterStorage que contiene los volúmenes denominados Volume1, Volume2 y Volume3.](media/plan-volumes/csv-folder-screenshot.png)
 
 ## <a name="choosing-how-many-volumes-to-create"></a>Elección del número de volúmenes que crear
 
@@ -59,17 +59,17 @@ Con dos servidores en el clúster, puede usar la creación de reflejo bidireccio
 
 La creación de reflejo bidireccional mantiene dos copias de todos los datos, una copia en las unidades de cada servidor. Su eficacia de almacenamiento es del 50 por ciento; para escribir 1 TB de datos, necesita al menos 2 TB de capacidad de almacenamiento físico en el bloque de almacenamiento. La creación de reflejo bidireccional puede tolerar de manera segura un error de hardware cada vez (un servidor o una unidad).
 
-![two-way-mirror](media/plan-volumes/two-way-mirror.png)
+![El diagrama muestra los volúmenes Data y Copy conectados mediante flechas circulares y ambos volúmenes están asociados con un banco de discos de los servidores.](media/plan-volumes/two-way-mirror.png)
 
 La resistencia anidada proporciona resistencia de datos entre servidores con creación de reflejo bidireccional y, a continuación, agrega resistencia dentro de un servidor con creación de reflejo bidireccional o paridad acelerada por reflejo. El anidamiento proporciona resistencia de datos incluso cuando un servidor se está reiniciando o no está disponible. Su eficacia de almacenamiento es del 25 por ciento con la creación de reflejo bidireccional anidada y en torno al 35-40 por ciento para la paridad acelerada por reflejo anidada. La resistencia anidada puede tolerar de manera segura dos errores de hardware a la vez (dos unidades, o un servidor y una unidad del servidor restante). Debido a esta resistencia de datos adicional, se recomienda usar la resistencia anidada en las implementaciones de producción de clústeres de dos servidores. Para más información, consulte [Resistencia anidada](/windows-server/storage/storage-spaces/nested-resiliency).
 
-![Paridad acelerada por reflejo anidada](media/plan-volumes/nested-mirror-accelerated-parity.png)
+![En el diagrama se muestra la paridad acelerada de reflejo anidado con reflejo bidireccional entre servidores asociados a un reflejo bidireccional dentro de cada servidor que se corresponde a una capa de paridad de cada servidor.](media/plan-volumes/nested-mirror-accelerated-parity.png)
 
 ### <a name="with-three-servers"></a>Con tres servidores
 
 Con tres servidores, debe usar la creación de reflejo triple para mejorar la tolerancia a errores y el rendimiento. La creación de reflejo triple mantiene tres copias de todos los datos, una copia en las unidades de cada servidor. Su eficacia de almacenamiento es del 33,3 por ciento; para escribir 1 TB de datos, necesita al menos 3 TB de capacidad de almacenamiento físico en el bloque de almacenamiento. La creación de reflejo triple puede tolerar de forma segura [al menos dos problemas de hardware (unidad o servidor) a la vez](/windows-server/storage/storage-spaces/storage-spaces-fault-tolerance#examples). Si dos nodos dejan de estar disponibles, el bloque de almacenamiento perderá el cuórum, ya que 2/3 de los discos no están disponibles y no se podrá acceder a los discos virtuales. Sin embargo, un nodo puede estar inactivo y se puede producir un error en uno o varios discos de otro nodo y los discos virtuales permanecerán en línea. Por ejemplo, si se está reiniciando un servidor cuando, de repente, se produce un error en otra unidad u otro servidor, la seguridad y la accesibilidad de los datos se mantienen.
 
-![three-way-mirror](media/plan-volumes/three-way-mirror.png)
+![En el diagrama se muestra un volumen con la etiqueta Data y dos volúmenes con la etiqueta Copy conectados mediante flechas circulares con cada volumen asociado a un servidor que contiene discos físicos.](media/plan-volumes/three-way-mirror.png)
 
 ### <a name="with-four-or-more-servers"></a>Con cuatro o más servidores
 
@@ -77,7 +77,7 @@ Con cuatro o más servidores, puede elegir para cada volumen si desea utilizar l
 
 La paridad dual proporciona la misma tolerancia a errores que la creación de reflejo triple, pero con una mayor eficacia de almacenamiento. Con cuatro servidores, su eficacia de almacenamiento es del 50 por ciento; para almacenar 2 TB de datos, necesita 4 TB de capacidad de almacenamiento físico en el bloque de almacenamiento. Esto aumenta hasta el 66,7% la eficacia de almacenamiento con siete servidores y continúa hasta una eficacia de almacenamiento del 80,0%. La contrapartida es que la codificación de paridad es un proceso más intensivo, lo que puede limitar su rendimiento.
 
-![dual-parity](media/plan-volumes/dual-parity.png)
+![En el diagrama se muestran dos volúmenes con la etiqueta Data y otros dos con la etiqueta Parity conectados mediante flechas circulares y cada volumen está asociado a un servidor que contiene discos físicos.](media/plan-volumes/dual-parity.png)
 
 El tipo de resistencia que usar depende de las necesidades de la carga de trabajo. En esta tabla se resume qué cargas de trabajo son una buena opción para cada tipo de resistencia, así como el rendimiento y la eficacia de almacenamiento de cada tipo de resistencia.
 
@@ -131,7 +131,7 @@ El tamaño es distinto de la *superficie* del volumen, la capacidad total de alm
 
 Las superficies de los volúmenes deben caber en el bloque de almacenamiento.
 
-![size-versus-footprint](media/plan-volumes/size-versus-footprint.png)
+![En el diagrama se muestra un volumen de 2 TB en comparación con una superficie de 6 TB en el bloque de almacenamiento con un multiplicador especificado de tres.](media/plan-volumes/size-versus-footprint.png)
 
 ### <a name="reserve-capacity"></a>Capacidad de reserva
 
@@ -139,7 +139,7 @@ Al dejar sin asignar algo de capacidad en el bloque de almacenamiento, se propor
 
 Se recomienda reservar el equivalente de una unidad de capacidad por servidor, hasta 4 unidades. Puede reservar más a su discreción, pero esta recomendación mínima garantiza que una reparación en contexto, paralela e inmediata pueda realizarse correctamente después del error de cualquier unidad.
 
-![reserva](media/plan-volumes/reserve.png)
+![El diagrama muestra un volumen asociado a varios discos de un bloque de almacenamiento y discos no asociados marcados como reserva.](media/plan-volumes/reserve.png)
 
 Por ejemplo, si tiene 2 servidores y usa unidades de 1 TB de capacidad, disponga 2 x 1 = 2 TB del bloque como reserva. Si tiene 3 servidores y unidades de 1 TB de capacidad, disponga 3 x 1 = 3 TB como reserva. Si tiene 4 servidores y unidades de 1 TB de capacidad, disponga 4 x 1 = 4 TB como reserva.
 
@@ -176,7 +176,7 @@ No es necesario que todos los volúmenes tengan el mismo tamaño, pero para simp
 
 Los cuatro volúmenes se ajustan exactamente a la capacidad de almacenamiento físico disponible en nuestro bloque, lo que resulta ideal.
 
-![ejemplo](media/plan-volumes/example.png)
+![El diagrama muestra dos volúmenes de reflejo tridireccional de 12 TB cada uno asociados con 36 TB de almacenamiento y dos volúmenes de paridad dual de 12 TB asociados cada uno con 24 TB, sumando todos 120 TB en un bloque de almacenamiento.](media/plan-volumes/example.png)
 
    >[!TIP]
    > No es necesario crear todos los volúmenes inmediatamente. Siempre puede ampliar volúmenes o crear nuevos volúmenes más adelante.

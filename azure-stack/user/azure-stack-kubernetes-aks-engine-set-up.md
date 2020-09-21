@@ -7,12 +7,12 @@ ms.date: 09/08/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 09/08/2020
-ms.openlocfilehash: 9dbe60bfbc9b15f75b31e423bf08c988d9e168be
-ms.sourcegitcommit: 2407498dc34158a49959d9f87f84d6a1cde0cca6
+ms.openlocfilehash: 6b3443b64dae560451d4d04d653e097d055fa5c1
+ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89560953"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90573809"
 ---
 # <a name="set-up-the-prerequisites-for-the-aks-engine-on-azure-stack-hub"></a>Configuración de los requisitos previos para el motor de AKS en Azure Stack Hub
 
@@ -30,9 +30,9 @@ El operador de la nube deberá tener en vigor los siguientes elementos.
 
 | Requisito previo | Descripción | Obligatorio | Instructions |
 | --- | --- | --- | --- | --- |
-| Azure Stack Hub 2002 o posterior | El motor de AKS requiere Azure Stack Hub 2002 u otra versión posterior. | Obligatorio | Si no está seguro de la versión de Azure Stack Hub, póngase en contacto con el operador de la nube. |
+| Azure Stack Hub 1910 o posterior | El motor de AKS requiere Azure Stack Hub 1910 u otra versión posterior. | Obligatorio | Si no está seguro de la versión de Azure Stack Hub, póngase en contacto con el operador de la nube. |
 | Extensión de script personalizado de Linux | Extensión de script personalizado de Linux 2.0<br>Oferta: Script personalizado para Linux 2.0<br>Versión: 2.0.6 (o la versión más reciente)<br>Publicador: Microsoft Corp | Obligatorio | Si no tiene este elemento en la suscripción, póngase en contacto con el operador de la nube. |
-| Imagen base de Ubuntu de AKS | Imagen base de AKS en Ubuntu 16.04-LTS, agosto de 2020 (2020.08.24) | Obligatorio | Si no tiene este elemento en la suscripción, póngase en contacto con el operador de la nube. Para obtener más información sobre la dependencia de versión, consulte [Correspondencia de la versión del motor con la imagen base](#matching-engine-to-base-image-version).<br> Si es operador en la nube de Azure Stack Hub y desea ofrecer el motor de AKS, siga las instrucciones que encontrará en [Incorporación de requisitos previos del motor de Azure Kubernetes Service (AKS) al Marketplace de Azure Stack Hub](../operator/azure-stack-aks-engine.md). |
+| Imagen base de Ubuntu de AKS | Imagen base de AKS en Ubuntu 16.04-LTS<br>Para más información sobre la dependencia de versión, consulte [Correspondencia de la versión del motor con la imagen base](#matching-engine-to-base-image-version). | Obligatorio | Si no tiene este elemento en la suscripción, póngase en contacto con el operador de la nube.<br> Si es operador en la nube de Azure Stack Hub y desea ofrecer el motor de AKS, siga las instrucciones que encontrará en [Incorporación de requisitos previos del motor de Azure Kubernetes Service (AKS) al Marketplace de Azure Stack Hub](../operator/azure-stack-aks-engine.md). |
 | Identidad de la entidad de servicio (SPN) |  Una aplicación que necesita implementar o configurar recursos a través de Azure Resource Manager, debe estar representada por una entidad de servicio. | Obligatorio | Es posible que deba ponerse en contacto con el operador de Azure Stack Hub para este elemento.<br>Si se usa una identidad de entidad de servicio de Azure Active Directory (Azure AD), se necesita acceso a Internet desde las máquinas virtuales del clúster de Kubernetes para que la entidad de servicio pueda autenticarse con Azure AD. Si no hay acceso a Internet, el clúster de Kubernetes no será funcional.<br>Para obtener instrucciones, consulte [Uso de una identidad de aplicación para acceder a recursos](../operator/azure-stack-create-service-principals.md). |
 | Rol de **colaborador** asignado (SPN) | Para permitir que una aplicación acceda a los recursos de su suscripción con su entidad de servicio, debe asignar la entidad de servicio un rol para un determinado recurso. | Obligatorio | Para obtener instrucciones, consulte la sección [Asignar un rol](../operator/azure-stack-create-service-principals.md#assign-a-role). |
 

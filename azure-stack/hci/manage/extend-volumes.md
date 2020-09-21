@@ -5,12 +5,12 @@ author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
 ms.date: 07/21/2020
-ms.openlocfilehash: bb4a72e28bd6126d12dbdb1f97d0579fb98bca8e
-ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
+ms.openlocfilehash: c6f874fb7bd8641933722631d9faac0dc513b5e3
+ms.sourcegitcommit: 4af79f4fa2598d57c81e994192c10f8c6be5a445
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86866598"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89742282"
 ---
 # <a name="extending-volumes-in-azure-stack-hci"></a>Extensión de volúmenes en Azure Stack HCI
 
@@ -47,7 +47,7 @@ Antes de cambiar el tamaño de un volumen, asegúrese de que tiene suficiente ca
 
 En Espacios de almacenamiento directo, cada volumen consta de varios objetos apilados: el volumen compartido del clúster (CSV), que es un volumen; la partición; el disco, que es un disco virtual; y una o más capas de almacenamiento (si procede). Para cambiar el tamaño de un volumen, deberá cambiar el tamaño de varios de estos objetos.
 
-![volumes-in-smapi](media/extend-volumes/volumes-in-smapi.png)
+![En el diagrama se muestran las capas de un volumen, entre las que se incluyen el volumen de particiones del clúster, el volumen, la partición, el disco, el disco virtual y las capas de almacenamiento.](media/extend-volumes/volumes-in-smapi.png)
 
 Para familiarizarse con ellos, pruebe a ejecutar **Get-** con el nombre correspondiente en PowerShell.
 
@@ -89,7 +89,7 @@ Get-VirtualDisk <FriendlyName> | Resize-VirtualDisk -Size <Size>
 
 Cuando se cambia el tamaño de **VirtualDisk**, también se cambia el tamaño de **Disk** automáticamente.
 
-![Resize-VirtualDisk](media/extend-volumes/Resize-VirtualDisk.gif)
+![El diagrama animado muestra cómo se hace más grande el disco virtual de un volumen mientras la capa de disco situada inmediatamente encima se hace automáticamente más grande como resultado.](media/extend-volumes/Resize-VirtualDisk.gif)
 
 #### <a name="with-storage-tiers"></a>Con capas de almacenamiento
 
@@ -112,7 +112,7 @@ Get-StorageTier <FriendlyName> | Resize-StorageTier -Size <Size>
 
 Cuando se cambia el tamaño de **StorageTier**, también se cambia el tamaño de **VirtualDisk** y **Disk** automáticamente.
 
-![Resize-StorageTier](media/extend-volumes/Resize-StorageTier.gif)
+![El diagrama muestra una detrás de otra una capa de almacenamiento que se hace más grande mientras que la capa del disco virtual y la del disco situadas encima se hacen también más grandes.](media/extend-volumes/Resize-StorageTier.gif)
 
 ### <a name="step-2--resize-the-partition"></a>Paso 2: Cambio de tamaño de la partición
 
@@ -133,7 +133,7 @@ $Partition | Resize-Partition -Size ($Partition | Get-PartitionSupportedSize).Si
 
 Al cambiar el tamaño de **Partition**, también se cambia el tamaño de **Volume** y **ClusterSharedVolume** automáticamente.
 
-![Resize-Partition](media/extend-volumes/Resize-Partition.gif)
+![El diagrama animado muestra cómo crece la capa del disco virtual, en la parte inferior del volumen, y cómo se hacen más grandes cada una de las capas situadas por encima.](media/extend-volumes/Resize-Partition.gif)
 
 Eso es todo.
 

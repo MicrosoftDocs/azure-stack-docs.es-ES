@@ -3,16 +3,16 @@ title: Novedades de Marketplace de Azure Stack Hub
 description: Consulte las novedades de Marketplace de Azure Stack Hub, incluidos los elementos nuevos, en desuso y actualizados de Marketplace.
 author: sethmanheim
 ms.topic: article
-ms.date: 09/09/2020
+ms.date: 09/10/2020
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 05/28/2020
-ms.openlocfilehash: dea9253c6f00f3bca620c0f4684c55b34956b9fb
-ms.sourcegitcommit: 9a340b383dcf42c85bc6ec0d01ff3c9ae29dfe4c
+ms.openlocfilehash: f16d432d67244bf4152f49d103014e94abcfe777
+ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89598483"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90572735"
 ---
 # <a name="azure-stack-hub-marketplace-changes"></a>Cambios en Marketplace de Azure Stack Hub
 
@@ -70,6 +70,7 @@ El artículo [Elementos de Azure Marketplace disponibles para Azure Stack Hub](a
 
 ## <a name="updated-marketplace-items"></a>Elementos de Marketplace actualizados
 
+- 09/09/2020: FortiGate NGFW: implementación de una sola máquina virtual (BYOL): versión 1.0.2
 - 04/09/2020: CentOS-based 6.10: versión 6.10.2020042900
 - 04/09/2020: CentOS-based 7.4: versión 7.4.20200220
 - 04/09/2020: CentOS-based 7.5: versión 7.5.201808150

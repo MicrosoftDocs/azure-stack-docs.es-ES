@@ -10,12 +10,12 @@ ms.reviewer: avishwan
 ms.lastreviewed: 03/04/2019
 ms.custom: contperfq4
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: 334c32fa9522831f74d924b16797dea85cbe30d5
-ms.sourcegitcommit: 9c3339e0e3c3a953d64feff9ae08d94300c351ff
+ms.openlocfilehash: dab71944ecc46fdaa92f7ca65d3ba5c848b24762
+ms.sourcegitcommit: dbc6739584aa407b26e4ad4921d967b7b608de38
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85449878"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90038835"
 ---
 # <a name="register-azure-stack-hub-with-azure"></a>Registro de Azure Stack Hub en Azure
 
@@ -99,12 +99,7 @@ Al ejecutar el script de registro, debe proporcionar un nombre de registro únic
 > [!NOTE]
 > Los registros de Azure Stack Hub mediante el modelo de facturación basado en la capacidad deben cambiar el nombre único al volver a registrarse tras la expiración de las suscripciones anuales, a menos que [elimine el registro expirado](#renew-or-change-registration) y vuelva a registrarse en Azure.
 
-Para determinar el identificador de nube de la implementación de Azure Stack Hub, abra PowerShell como administrador en un equipo que pueda acceder al punto de conexión con privilegios, ejecute los siguientes comandos y registre el valor de **CloudID**:
-
-```powershell
-Run: Enter-PSSession -ComputerName <privileged endpoint computer name> -ConfigurationName PrivilegedEndpoint
-Run: Get-AzureStackStampInformation
-```
+Para determinar el identificador de nube para la implementación de Azure Stack Hub, consulte [Búsqueda del identificador de nube](azure-stack-find-cloud-id.md).
 
 ::: zone pivot="state-connected"
 ## <a name="register-with-pay-as-you-use-billing"></a>Registro con el modelo de facturación de pago por uso

@@ -3,20 +3,20 @@ title: Notas de la versión del motor de Azure Kubernetes Service (AKS) en Azure
 description: Conozca los pasos que debe llevar a cabo con la actualización del motor de AKS en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 9/2/2020
+ms.date: 09/16/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 9/2/2020
-ms.openlocfilehash: 60e75b899ac66fae88e2e2e3f780c25ad0aac804
-ms.sourcegitcommit: b80d529ff47b15b8b612d8a787340c7b0f68165b
+ms.lastreviewed: 09/16/2020
+ms.openlocfilehash: 5207fa80a97581847d309a460a31039695183e1c
+ms.sourcegitcommit: 719569bb9e3f9924494a9229b4f2d211ae3f4f74
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473255"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717944"
 ---
 # <a name="release-notes-for-the-aks-engine-on-azure-stack-hub"></a>Notas de la versión del motor de AKS en Azure Stack Hub
 ::: moniker range=">=azs-2002"
-*Se aplica a la versión 0.55.0 del motor de AKS.*
+*Se aplica a la versión v0.55.4 del motor de AKS.*
 
 En este artículo se describe el contenido del motor de Azure Kubernetes Service (AKS) en la actualización de Azure Stack Hub. La actualización incluye mejoras y correcciones de la versión más reciente del motor de AKS en la plataforma de Azure Stack Hub. Tenga en cuenta que esto no pretende documentar la información sobre la versión del motor de AKS para Azure global.
 
@@ -68,9 +68,9 @@ Hay nuevas versiones de estas disponibles con esta actualización:
 
 -   El operador de Azure Stack Hub tendrá que descargar una nueva imagen base de AKS en Ubuntu en el marketplace de stamps:
 
-    -   Nombre: Distribución de imágenes de la imagen base de AKS en Ubuntu 16.04-LTS, agosto 2020 (2020.08.24)
+    -   Nombre: Distribución de imágenes de la imagen base de AKS en Ubuntu 16.04-LTS, agosto 2020 (2020.09.14)
 
-    -   Versión: 2020.08.24
+    -   Versión: 2020.09.14
 
     -   Siga las instrucciones que se indican en el artículo [Incorporación de requisitos previos del motor de Azure Kubernetes Service (AKS) al Marketplace de Azure Stack Hub](../operator/azure-stack-aks-engine.md).
 
@@ -82,9 +82,9 @@ Hay nuevas versiones de estas disponibles con esta actualización:
 | ----------------------------- | ------------------------ |
 | 1910 | 0.43.0, 0.43.1 |
 | 2002 | 0.48.0, 0.51.0 |
-| 2005 | 0.48.0, 0.51.0, 0.55.0 |
+| 2005 | 0.48.0, 0.51.0, 0.55.0, 0.55.4 |
 
-## <a name="kubernetes-version-upgrade-path-in-aks-engine-0550"></a>Ruta de actualización de la versión de Kubernetes en el motor de AKS 0.55.0
+## <a name="kubernetes-version-upgrade-path-in-aks-engine-v0554"></a>Ruta de actualización de la versión de Kubernetes en el motor de AKS v0.55.4
 
 Puede encontrar la versión actual y la versión de actualización en la tabla siguiente de Azure Stack Hub. No siga el comando get-versions de aks-engine ya que incluye también las versiones admitidas de Azure global. La siguiente tabla de versiones y actualizaciones se aplica al clúster del motor de AKS en Azure Stack Hub.
 
@@ -105,7 +105,7 @@ En el archivo JSON del modelo de API, especifique los valores de versión secund
 
 - Agrega compatibilidad con K8s v1.17.11 en Azure Stack [#3702](https://github.com/Azure/aks-engine/pull/3702)
 - Agrega compatibilidad con K8s v1.16.14 en Azure Stack [#3704](https://github.com/Azure/aks-engine/pull/3704)
-- Actualización del disco duro virtual de Linux a 2020.08.24 [#3750](https://github.com/Azure/aks-engine/pull/3750)
+- Actualización del disco duro virtual de Linux a 2020.09.14 [#3750](https://github.com/Azure/aks-engine/pull/3750)
 - Actualización del disco duro virtual de Windows a la versión de agosto [#3730](https://github.com/Azure/aks-engine/pull/3730)
 - Actualiza el servidor de métricas de Kubernetes a la versión v0.3.7 [#3669](https://github.com/Azure/aks-engine/pull/3669)
 - Actualiza la versión de Docker para corregir el problema de la rotación del registro [#3693](https://github.com/Azure/aks-engine/pull/3693)
@@ -131,6 +131,7 @@ Este es el conjunto completo de notas de la versión de Azure y Azure Stack Hub 
 - https://github.com/Azure/aks-engine/releases/tag/v0.53.1
 - https://github.com/Azure/aks-engine/releases/tag/v0.54.1
 - https://github.com/Azure/aks-engine/releases/tag/v0.55.0
+- https://github.com/Azure/aks-engine/releases/tag/v0.55.4
 
 ::: moniker-end
 ::: moniker range="<=azs-1910"

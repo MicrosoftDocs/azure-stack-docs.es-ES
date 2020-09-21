@@ -1,18 +1,18 @@
 ---
 title: Envío inmediato de registros de diagnóstico de Azure Stack Hub
 description: Aprenda a recopilar los registros de diagnóstico a petición en Azure Stack Hub mediante el portal del administrador o un script de PowerShell.
-author: justinha
+author: myoungerman
 ms.topic: article
 ms.date: 08/24/2020
-ms.author: justinha
+ms.author: v-myoung
 ms.reviewer: shisab
 ms.lastreviewed: 08/24/2020
-ms.openlocfilehash: abcf70b6d714f9a759aeaa9a7f591a60e195594f
-ms.sourcegitcommit: 4922a14fdbc8a3b67df065336e8a21a42f224867
+ms.openlocfilehash: 3d4725a832aa1ba88c0ecc5e2b435696cba3bbcd
+ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88764654"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90573163"
 ---
 # <a name="send-azure-stack-hub-diagnostic-logs-now"></a>Envío inmediato de registros de diagnóstico de Azure Stack Hub
 
@@ -47,7 +47,7 @@ Se pueden guardar los registros en un recurso compartido de SMB local cuando Azu
 Para solucionar un problema, Soporte técnico de Microsoft podría solicitar que un operador de Azure Stack Hub recopilara los registros de diagnóstico a petición de una ventana de tiempo específica de la semana anterior. En ese caso, Soporte técnico de Microsoft proporcionará al operador una dirección URL de SAS para cargar la colección. 
 Siga los pasos que se indican a continuación para configurar la recopilación de registros a petición mediante la dirección URL de SAS de Soporte técnico de Microsoft:
 
-1. Abra **Help and Support Overview** (Información general de ayuda y soporte técnico) y haga clic en **Collect logs now** (Recopilar registros ahora). 
+1. Abra **Ayuda y soporte técnico > Recopilación de registros > Recopilar registros ahora**. 
 1. Puede elegir una ventana deslizante de entre 1 y 4 horas de los últimos siete días. 
 1. Elija la zona horaria local.
 1. Escriba la dirección URL de SAS que le proporcionó Soporte técnico de Microsoft.

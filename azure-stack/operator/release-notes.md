@@ -3,16 +3,16 @@ title: Notas de la versión de Azure Stack Hub
 description: Notas de la versión para los sistemas integrados de Azure Stack Hub, incluidas las actualizaciones y correcciones de errores.
 author: sethmanheim
 ms.topic: article
-ms.date: 09/04/2020
+ms.date: 09/15/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 08/11/2020
-ms.openlocfilehash: 73cf9222b445164063c3dccfb1beb400913cea3e
-ms.sourcegitcommit: 50e2a81b255847fbd6288c70d60e7a080da372e9
+ms.openlocfilehash: e90564a9dceefda2b9712b3dedf69974512bdcd1
+ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89557486"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90571905"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Notas de la versión de Azure Stack Hub
 
@@ -76,7 +76,8 @@ Para obtener más información sobre los tipos de compilación de actualización
 - Esta versión proporciona una mayor coherencia del tejido con Azure en las máquinas virtuales creadas antes de la versión 1910. En la versión 1910, Microsoft anunció que todas las máquinas virtuales recién creadas usarían el protocolo WireServer. Este protocolo permite a los clientes usar el mismo agente de WALA y el mismo agente invitado de Windows que Azure, lo que facilita el uso de imágenes de Azure en Azure Stack Hub. Con esta versión, todas las máquinas virtuales creadas antes de la versión 1910 se migran automáticamente para usar el protocolo WireServer. En este contexto, también se crean máquinas virtuales e implementaciones de extensiones más confiables, y se proporcionan mejoras en el tiempo de actividad de estado estable.
 - Azure Stack Hub Storage admite ahora las API de servicios de Azure Storage, versión 2019-02-02. En el caso de las bibliotecas cliente de Azure, estas API son compatibles con la nueva versión de la API REST. Para más información, consulte [Herramientas de desarrollo de Azure Stack Hub Storage](../user/azure-stack-storage-dev.md#azure-client-libraries).
 - Azure Stack Hub admite ahora la versión más reciente de [CreateUiDefinition (versión 2)](/azure/azure-resource-manager/managed-applications/create-uidefinition-overview).
-- Nueva guía para implementaciones por lotes de máquinas virtuales. Para más información, consulte [aquí](../operator/azure-stack-capacity-planning-compute.md).
+- Nueva guía para implementaciones por lotes de máquinas virtuales. Para más información, [consulte este artículo](../operator/azure-stack-capacity-planning-compute.md).
+- El elemento Container Linux de CoreOS del Marketplace de Azure Stack Hub [se aproxima a su fecha de vencimiento](https://azure.microsoft.com/updates/flatcar-in-azure/). Para más información, consulte [Migración desde Container Linux de CoreOS](https://docs.flatcar-linux.org/os/migrate-from-container-linux/).
 
 ### <a name="improvements"></a>Mejoras
 
@@ -120,18 +121,6 @@ Para obtener más información sobre los tipos de compilación de actualización
 ## <a name="security-updates"></a>Actualizaciones de seguridad
 
 Para obtener información sobre las actualizaciones de seguridad de esta actualización de Azure Stack Hub, consulte [Actualizaciones de seguridad de Azure Stack Hub](release-notes-security-updates.md).
-
-## <a name="update-planning"></a>Planeación de la actualización
-
-Antes de aplicar la actualización, asegúrese de revisar la información siguiente:
-
-- [Problemas conocidos](known-issues.md)
-- [Actualizaciones de seguridad](release-notes-security-updates.md)
-- [Lista de comprobación de las actividades antes y después de aplicar la actualización](release-notes-checklist.md)
-
-## <a name="download-the-update"></a>Descarga de la actualización
-
-Puede descargar el paquete de actualizaciones de Azure Stack Hub 2005 desde [la página de descarga de Azure Stack Hub](https://aka.ms/azurestackupdatedownload).
 
 ## <a name="hotfixes"></a>Revisiones
 

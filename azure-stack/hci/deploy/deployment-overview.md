@@ -4,13 +4,15 @@ description: Introducción sobre el proceso de implementación de Azure Stack HC
 author: khdownie
 ms.author: v-kedow
 ms.topic: overview
-ms.date: 07/21/2020
-ms.openlocfilehash: a4b0fcabe7625e31a251a21815f5442b42b98ebd
-ms.sourcegitcommit: e675eafd12b044a6d8ae3790d1874e935f80f7cb
+ms.service: azure-stack
+ms.subservice: azure-stack-hci
+ms.date: 09/09/2020
+ms.openlocfilehash: 9b851b59093a85f7ddd5f9df47359784f41fe24e
+ms.sourcegitcommit: 4af79f4fa2598d57c81e994192c10f8c6be5a445
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86891993"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89742146"
 ---
 # <a name="what-is-the-deployment-process-for-azure-stack-hci"></a>¿Cuál es el proceso de implementación de Azure Stack HCI?
 
@@ -42,7 +44,7 @@ Antes de empezar, [determine si el hardware cumple los requisitos básicos y rec
 
 ### <a name="2-deploy-azure-stack-hci"></a>2. Implementación de Azure Stack HCI
 
-Implemente el [sistema operativo](operating-system.md) de Azure Stack HCI en cada servidor que desee incluir en el clúster.
+[Descargue Azure Stack HCI](https://azure.microsoft.com/en-us/products/azure-stack/hci/hci-download/) e implemente este [sistema operativo](operating-system.md) en cada servidor que desee incluir en el clúster.
 
 ### <a name="3-create-the-cluster"></a>3. Creación del clúster
 

@@ -1,5 +1,5 @@
 ---
-title: Planeación de la capacidad de Event Hubs en Azure Stack Hub
+title: Planeación de la capacidad para Event Hubs en Azure Stack Hub
 description: Obtenga información sobre cómo planear la capacidad del proveedor de recursos de Event Hubs en Azure Stack Hub.
 author: BryanLa
 ms.author: bryanla
@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 12/09/2019
 ms.reviewer: jfggdl
 ms.lastreviewed: 12/09/2019
-ms.openlocfilehash: 06b0dabf4c7fc54d5c886e7ecc777f8a754e3ef0
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: ec369d8f01ed9dc5e6e5635af4922ef80736c4c5
+ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86490123"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90572160"
 ---
 # <a name="how-to-do-capacity-planning-for-event-hubs-on-azure-stack-hub"></a>Planeación de la capacidad de Event Hubs en Azure Stack Hub
 

@@ -1,5 +1,5 @@
 ---
-title: Máquina virtual (VM) de la unidad de procesamiento gráfico (GPU) en Azure Stack Hub
+title: Máquina virtual de la unidad de procesamiento gráfico en Azure Stack Hub
 description: Referencia de computación de GPU en Azure Stack Hub.
 author: mattbriggs
 ms.author: mabrigg
@@ -8,12 +8,12 @@ ms.topic: reference
 ms.date: 07/07/2020
 ms.reviewer: kivenkat
 ms.lastreviewed: 07/07/2020
-ms.openlocfilehash: d5782aa1513d9e16bc461e93fe919a06cd7fc422
-ms.sourcegitcommit: 9be6adfe859ba0a09951a5a1a876928cb38dd595
+ms.openlocfilehash: 4d1b6df185225a244996246b3e6883b09ac32d8e
+ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88706122"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90574234"
 ---
 # <a name="graphics-processing-unit-gpu-virtual-machine-vm-on-azure-stack-hub"></a>Máquina virtual (VM) de la unidad de procesamiento gráfico (GPU) en Azure Stack Hub
 

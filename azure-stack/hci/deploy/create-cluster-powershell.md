@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 08/11/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: e92aa28deadbf334e3cd545e5cd9bc6b0e12e6c4
-ms.sourcegitcommit: 673d9b7cf723bc8ef6c04aee5017f539a815da51
+ms.openlocfilehash: c51a6296caac3c173650ee57af8e1d23b2473f26
+ms.sourcegitcommit: 877fe2207b569500aeefa6594eed990f15609776
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88110475"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90082501"
 ---
 # <a name="create-an-azure-stack-hci-cluster-using-windows-powershell"></a>Creación de un clúster de Azure Stack HCI mediante Windows PowerShell
 
@@ -430,7 +430,7 @@ En el caso de los clústeres extendidos, el cmdlet `Enable-ClusterStorageSpacesD
 - Determinar qué nodos están en qué sitios.
 - Determinar qué almacenamiento tiene disponible cada nodo.
 - Comprobar si la característica Réplica de almacenamiento está instalada en cada nodo.
-- Crear un bloque de almacenamiento para cada sitio e identificarlo con el mismo sitio.
+- Crear un bloque de almacenamiento para cada sitio e identificarlo por el nombre del sitio.
 - Crear volúmenes de datos y de registro en cada bloque de almacenamiento (uno por sitio).
 
 El siguiente comando habilita Espacios de almacenamiento directo. También puede especificar un nombre descriptivo para un bloque de almacenamiento, como se muestra aquí:

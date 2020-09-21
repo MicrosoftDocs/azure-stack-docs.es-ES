@@ -1,18 +1,18 @@
 ---
 title: Implementación con Visual Studio Code en Azure Stack Hub
-description: Como usuario, quiero crear una plantilla de Azure Resource Manager en Visual Studio Code y usar el esquema de implementación para preparar una plantilla que sea compatible con mi versión de Azure Stack Hub.
+description: Creación de una plantilla de Azure Resource Manager en Visual Studio Code y uso del esquema de implementación para preparar una plantilla que sea compatible con mi versión de Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
 ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 09/30/2019
-ms.openlocfilehash: 7da28f1cbe1087ff9f791c27979091de1869a56f
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.openlocfilehash: 3f97ec57900119543e37b0d99a7d82e30c900f42
+ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86566998"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90574251"
 ---
 # <a name="deploy-with-visual-studio-code-to-azure-stack-hub"></a>Implementación con Visual Studio Code en Azure Stack Hub
 

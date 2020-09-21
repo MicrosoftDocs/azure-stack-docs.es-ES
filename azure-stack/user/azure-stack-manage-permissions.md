@@ -7,12 +7,12 @@ ms.date: 09/13/2019
 ms.author: bryanla
 ms.reviewer: fiseraci
 ms.lastreviewed: 03/11/2019
-ms.openlocfilehash: 2f633e44b4646659a888df85e51450147104710e
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 1002f45b51f4a70ddbadb8230df6e98f591fcbb6
+ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77703985"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90573758"
 ---
 # <a name="manage-access-to-resources-in-azure-stack-hub-with-role-based-access-control"></a>Administración del acceso a los recursos de Azure Stack Hub con control de acceso basado en rol
 
@@ -62,7 +62,7 @@ Los siguientes pasos describen cómo configurar permisos para un usuario.
 1. Inicie sesión con una cuenta que tenga permisos de propietario en el recurso que desea administrar.
 2. En el panel de la izquierda, seleccione **Grupos de recursos**.
 3. Elija el nombre del grupo de recursos en el que quiera establecer los permisos.
-4. En el panel de navegación del grupo de recursos, elija **Control de acceso (IAM)** .<BR> En la vista **Asignaciones de roles**, se muestran los elementos que tienen acceso al grupo de recursos. Puede filtrar y agrupar los resultados.
+4. En el panel de navegación del grupo de recursos, elija **Control de acceso (IAM)**.<BR> En la vista **Asignaciones de roles**, se muestran los elementos que tienen acceso al grupo de recursos. Puede filtrar y agrupar los resultados.
 5. En la barra de menús **Control de acceso**, elija **Agregar**.
 6. En el panel **Agregar permisos**:
 

@@ -7,12 +7,12 @@ ms.date: 02/08/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 02/08/2019
-ms.openlocfilehash: 6ea6d73e14b5c164691ed42deab298109b1c1ad8
-ms.sourcegitcommit: a5bb340c5689f7dcf1ef3a340416f7f337782170
+ms.openlocfilehash: fe0fa50ca2dfd69475fe2726042332c6ce9f51ad
+ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "85937953"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90573129"
 ---
 # <a name="infrastructure-backup-service-best-practices"></a>Procedimientos recomendados del servicio Infrastructure Backup
 
@@ -66,20 +66,23 @@ Por ejemplo, el recurso compartido de copia de seguridad es AzSBackups, hospedad
 FQDN: contoso.com  
 Región: nyc
 
-
+```console
     \\fileserver01.contoso.com\AzSBackups
     \\fileserver01.contoso.com\AzSBackups\contoso.com
     \\fileserver01.contoso.com\AzSBackups\contoso.com\nyc
     \\fileserver01.contoso.com\AzSBackups\contoso.com\nyc\MASBackup
+```
 
 La carpeta MASBackup es donde Azure Stack Hub almacena sus datos de copia de seguridad. No use esta carpeta para almacenar sus propios datos. Los OEM no deben usar tampoco esta carpeta para almacenar los datos de copia de seguridad.
 
 Se recomienda a los OEM que almacenen los datos de copia de seguridad de sus componentes en la carpeta de la región. Cada conmutador de red, host de ciclo de vida de hardware, etc., puede almacenarse en su propia subcarpeta. Por ejemplo:
 
+```console
     \\fileserver01.contoso.com\AzSBackups\contoso.com\nyc\HLH
     \\fileserver01.contoso.com\AzSBackups\contoso.com\nyc\Switches
     \\fileserver01.contoso.com\AzSBackups\contoso.com\nyc\DeploymentData
     \\fileserver01.contoso.com\AzSBackups\contoso.com\nyc\Registration
+```
 
 ### <a name="monitoring"></a>Supervisión
 

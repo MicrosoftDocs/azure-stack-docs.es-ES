@@ -1,20 +1,20 @@
 ---
-title: Conexión de dos entornos de Azure Stack Hub mediante el emparejamiento de VNET
-description: Aprenda a conectar dos entornos de Azure Stack Hub mediante el emparejamiento de VNET.
+title: Conexión de dos redes virtuales en el mismo entorno de Azure Stack
+description: Aprenda a conectar dos redes virtuales en el mismo entorno de Azure Stack Hub con Fortinet FortiGate.
 author: mattbriggs
 ms.topic: how-to
 ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: 5d8dcba27b1aaed79489b27a2dd6224f6211ac18
-ms.sourcegitcommit: 9557a5029cf329599f5b523c68e8305b876108d7
+ms.openlocfilehash: 4aeca3ba7630d05921578de7023359c042d74ffb
+ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88965116"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90574115"
 ---
-# <a name="connect-two-vnets-through-peering"></a>Conexión de dos redes virtuales mediante el emparejamiento
+# <a name="vnet-peering-with-fortigate"></a>Emparejamiento de VNet con FortiGate
 
 En este artículo se describe cómo crear una conexión entre dos redes virtuales en el mismo entorno. Al configurar las conexiones, obtendrá información sobre cómo funcionan las puertas de enlace de VPN en Azure Stack Hub. Conecte dos redes virtuales en el mismo entorno de Azure Stack Hub con FortiGate de Fortinet. Este procedimiento implementa dos redes virtuales con una NVA FortiGate, una aplicación virtual de red, en cada red virtual, cada una dentro de un grupo de recursos independiente. También se detallan los cambios necesarios para configurar una VPN IPSec entre las dos redes virtuales. Repita los pasos de este artículo para cada implementación de red virtual.
 
@@ -79,7 +79,7 @@ En la tabla siguiente se resumen los parámetros que se usan en estas implementa
 
 2.  Seleccione **Crear un recurso** y busque `FortiGate`.
 
-    !La lista de resultados de la búsqueda muestra FortiGate NGFW - Single VM Deployment (FortiGate NGFW: implementación de una sola máquina virtual).] (./media/azure-stack-network-howto-vnet-to-onprem/image6.png)
+    ![En la lista de resultados de la búsqueda se muestra FortiGate NGFW - Single VM Deployment (FortiGate NGFW: implementación de una sola máquina virtual).](./media/azure-stack-network-howto-vnet-to-onprem/image6.png)
 
 3.  Seleccione **FortiGate NGFW** y seleccione **Crear**.
 

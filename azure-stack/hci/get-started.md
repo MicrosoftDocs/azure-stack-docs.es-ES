@@ -6,19 +6,19 @@ ms.author: v-kedow
 ms.topic: how-to
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 08/12/2020
-ms.openlocfilehash: 4dff1265bd542cebe1268ea54248a7c869bd3df1
-ms.sourcegitcommit: a3e042c782a38ecf3baf7a64b1d492a655972f9a
+ms.date: 09/09/2020
+ms.openlocfilehash: 67ba53d7daf5bb335283f328579439f192d0020b
+ms.sourcegitcommit: 4af79f4fa2598d57c81e994192c10f8c6be5a445
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88198793"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89742416"
 ---
 # <a name="get-started-with-azure-stack-hci-and-windows-admin-center"></a>Introducción a Azure Stack HCI y Windows Admin Center
 
 > Se aplica a: Azure Stack HCI, versión 20H2; Windows Server 2019
 
-En este tema se proporcionan instrucciones para conectarse a un clúster de Azure Stack HCI y supervisar el rendimiento del clúster y del almacenamiento. Si aún no ha configurado un clúster, consulte [Introducción a la implementación](deploy/deployment-overview.md) para obtener instrucciones.
+En este tema se proporcionan instrucciones para conectarse a un clúster de Azure Stack HCI y supervisar el rendimiento del clúster y del almacenamiento. Si aún no ha configurado un clúster, [descargue Azure Stack HCI](https://azure.microsoft.com/en-us/products/azure-stack/hci/hci-download/) y consulte [Introducción a la implementación](deploy/deployment-overview.md) para obtener instrucciones.
 
 ## <a name="install-windows-admin-center"></a>Instalación de Windows Admin Center
 

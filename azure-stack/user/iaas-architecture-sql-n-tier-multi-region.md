@@ -7,12 +7,12 @@ ms.date: 08/24/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: 164533628b605ff1723a50ba2dbcf8ea413ad3bd
-ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
+ms.openlocfilehash: 0b379e776c64daf1f5d66bf8d1c24216523a889c
+ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88920345"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90572382"
 ---
 # <a name="run-an-n-tier-application-in-multiple-azure-stack-hub-regions-for-high-availability"></a>Ejecución de una aplicación de n niveles en varias regiones de Azure Stack Hub para lograr alta disponibilidad
 

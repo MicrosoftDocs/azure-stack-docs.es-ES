@@ -1,5 +1,5 @@
 ---
-title: Uso del punto de conexión con privilegios (PEP) para recopilar registros de diagnóstico
+title: Uso del punto de conexión con privilegios para recopilar registros de diagnóstico
 description: Aprenda a recopilar los registros de diagnóstico a petición en Azure Stack Hub mediante el portal del administrador o un script de PowerShell.
 author: justinha
 ms.custom: conteperfq4
@@ -8,12 +8,12 @@ ms.date: 09/02/2020
 ms.author: justinha
 ms.reviewer: shisab
 ms.lastreviewed: 09/02/2020
-ms.openlocfilehash: a07904e1dde804398b55d61e7b1faa0b105aba22
-ms.sourcegitcommit: 69c859a89941ee554d438d5472308eece6766bdf
+ms.openlocfilehash: 6eb6f55ab9836cfd78b2fdb72dff220837f1865a
+ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89621274"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90572823"
 ---
 # <a name="send-azure-stack-hub-diagnostic-logs-by-using-the-privileged-endpoint-pep"></a>Envío de los registros de diagnóstico de Azure Stack Hub mediante el punto de conexión con privilegios
 
@@ -137,12 +137,10 @@ if ($session) {
   9. Seleccione **Crear**.
   10. Obtendrá una firma de acceso compartido. Copie la parte de la dirección URL y proporciónesela al parámetro `-OutputSasUri`.
 
-### <a name="parameter-considerations"></a>Consideraciones sobre los parámetros 
+### <a name="parameter-considerations"></a>Consideraciones sobre los parámetros
 
 * Los parámetros **OutputSharePath** y **OutputShareCredential** se utilizan para almacenar registros en una ubicación especificada por el usuario.
-
 * Los parámetros **FromDate** y **ToDate** pueden utilizarse para recopilar registros durante un período de tiempo determinado. Si no se especifican los parámetros, se recopilan los registros de las últimas cuatro horas de forma predeterminada.
-
 * Use el parámetro **FilterByNode** para filtrar los registros por nombre de equipo. Por ejemplo:
 
     ```powershell
@@ -159,28 +157,175 @@ if ($session) {
 * La recopilación de registros de archivos de copia de seguridad está deshabilitada de forma predeterminada. Para habilitarla, utilice el parámetro de modificador **IncludeDumpFile**.
 * Actualmente, no se puede usar el parámetro **FilterByRole** para filtrar la colección de registros de los roles siguientes:
 
-  |   |   |   |    |     |
-  | - | - | - | -  |  -  |
-  |ACS                   |CA                             |HRP                            |OboService                |VirtualMachines|
-  |ACSBlob               |CacheService                   |IBC                            |OEM                       |WAS            |
-  |ACSDownloadService    |Proceso                        |InfraServiceController         |OnboardRP                 |WASPUBLIC|
-  |ACSFabric             |CPI                            |KeyVaultAdminResourceProvider  |PXE                       |         |
-  |ACSFrontEnd           |CRP                            |KeyVaultControlPlane           |QueryServiceCoordinator   |         | 
-  |ACSMetrics            |DeploymentMachine              |KeyVaultDataPlane              |QueryServiceWorker        |         |
-  |ACSMigrationService   |DiskRP                         |KeyVaultInternalControlPlane   |SeedRing                  |         |
-  |ACSMonitoringService  |Domain                         |KeyVaultInternalDataPlane      |SeedRingServices          |         |
-  |ACSSettingsService    |ECE                            |KeyVaultNamingService          |SLB                       |         |
-  |ACSTableMaster        |EventAdminRP                   |MDM                            |SQL                       |         |
-  |ACSTableServer        |EventRP                        |MetricsAdminRP                 |SRP                       |         |
-  |ACSWac                |ExternalDNS                    |MetricsRP                      |Storage                   |         |
-  |ADFS                  |FabricRing                     |MetricsServer                  |StorageController         |         |
-  |ApplicationController |FabricRingServices             |MetricsStoreService            |URP                       |         |
-  |ASAppGateway          |FirstTierAggregationService    |MonAdminRP                     |SupportBridgeController   |         |
-  |AzureBridge           |FRP                            |MonRP                          |SupportRing               |         |
-  |AzureMonitor          |Puerta de enlace                        |NC                             |SupportRingServices       |         |
-  |BareMetal             |HealthMonitoring               |NonPrivilegedAppGateway        |SupportBridgeRP           |         |
-  |BRP                   |HintingServiceV2               |NRP                            |UsageBridge               |         |
-  |   |   |   |    |     | 
+:::row:::
+   :::column span="":::
+
+      ACS
+
+      ACSBlob
+
+      ACSDownloadService
+
+      ACSFabric
+
+      ACSFrontEnd
+
+      ACSMetrics
+
+      ACSMigrationService
+
+      ACSMonitoringService
+
+      ACSSettingsService
+
+      ACSTableMaster
+
+      ACSTableServer
+
+      ACSWac
+
+      ADFS
+
+      ApplicationController
+
+      ASAppGateway
+
+      AzureBridge
+
+      AzureMonitor
+
+      BareMetal
+
+      BRP
+
+      CA
+
+      CacheService
+
+      Compute
+
+      CPI
+
+      CRP
+
+      DeploymentMachine
+
+      DiskRP
+
+      Domain
+
+   :::column-end:::
+   :::column span="":::
+
+      ECE
+
+      EventAdminRP
+
+      EventRP
+
+      ExternalDNS
+
+      FabricRing
+
+      FabricRingServices
+
+      FirstTierAggregationService
+
+      FRP
+
+      Puerta de enlace
+
+      HealthMonitoring
+
+      HintingServiceV2
+
+      HRP
+
+      IBC
+
+      InfraServiceController
+
+      KeyVaultAdminResourceProvider
+
+      KeyVaultControlPlane
+
+      KeyVaultDataPlane
+
+      KeyVaultInternalControlPlane
+
+      KeyVaultInternalDataPlane
+
+      KeyVaultNamingService
+
+      MDM
+
+      MetricsAdminRP
+
+      MetricsRP
+
+      MetricsServer
+
+      MetricsStoreService
+
+      MonAdminRP
+
+      MonRP
+
+   :::column-end:::
+   :::column span="":::
+
+      NC
+
+      NonPrivilegedAppGateway
+
+      NRP
+
+      OboService
+
+      OEM
+
+      OnboardRP
+
+      PXE
+
+      QueryServiceCoordinator
+
+      QueryServiceWorker
+
+      SeedRing
+
+      SeedRingServices
+
+      SLB
+
+      SQL
+
+      SRP
+
+      Storage
+
+      StorageController
+
+      URP
+
+      SupportBridgeController
+
+      SupportRing
+
+      SupportRingServices
+
+      SupportBridgeRP
+
+      UsageBridge
+
+      VirtualMachines
+
+      WAS
+
+      WASPUBLIC
+   
+   :::column-end:::
+:::row-end:::
 
 ### <a name="additional-considerations-on-diagnostic-logs"></a>Consideraciones adicionales sobre los registros de diagnóstico
 

@@ -1,5 +1,5 @@
 ---
-title: Habilitación de la copia de seguridad de Azure Stack Hub desde el portal del administrador
+title: Habilitación de la copia de seguridad de Azure Stack Hub desde el portal de administración
 description: Aprenda a habilitar el servicio Copia de seguridad de infraestructura desde el portal del administrador para que Azure Stack Hub se pueda restaurar si se produce un error.
 author: justinha
 ms.topic: article
@@ -7,12 +7,12 @@ ms.date: 08/21/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 08/21/2019
-ms.openlocfilehash: 1c44bbc0e185d15ef14b2a7f57aa1309b82a4298
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: d071b9457388d4f282fad0f0532ce71dc9304f13
+ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86489477"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90573197"
 ---
 # <a name="enable-backup-for-azure-stack-hub-from-the-administrator-portal"></a>Habilitación de la copia de seguridad de Azure Stack Hub desde el portal del administrador
 

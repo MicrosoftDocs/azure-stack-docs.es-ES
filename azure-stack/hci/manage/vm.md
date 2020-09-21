@@ -1,17 +1,17 @@
 ---
-title: Administración de máquinas virtuales en Azure Stack HCI mediante Windows Admin Center
+title: 'Administración de máquinas virtuales con Windows Admin Center: Azure Stack HCI'
 description: Aprenda a crear y administrar máquinas virtuales en un clúster en Azure Stack HCl mediante Windows Admin Center.
 author: v-dasis
 ms.topic: how-to
 ms.date: 07/21/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: cecf03b01a4c621226d7439bc307eb9317918fa7
-ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
+ms.openlocfilehash: 42c8062fb18b011365a0b245f713f5cd378885aa
+ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86866451"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90573673"
 ---
 # <a name="manage-vms-on-azure-stack-hci-using-windows-admin-center"></a>Administración de máquinas virtuales en Azure Stack HCI mediante Windows Admin Center
 
@@ -156,31 +156,6 @@ Hay varios valores de configuración que puede cambiar para una máquina virtual
     - En **Directiva de seguridad**, seleccione **Habilitar blindaje** para ver opciones de protección adicionales para la máquina virtual.
 
         :::image type="content" source="media/manage-vm/vm-settings-security.png" alt-text="Pantalla de cambio de la configuración de seguridad de una máquina virtual" lightbox="media/manage-vm/vm-settings-security.png":::
-
-## <a name="create-a-new-vm"></a>Creación de una máquina virtual nueva
-
-Puede crear fácilmente una nueva máquina virtual mediante Windows Admin Center.
-
-:::image type="content" source="media/manage-vm/new-vm.png" alt-text="Pantalla de nueva máquina virtual":::
-
-1. En la página principal de Windows Admin Center, en **Todas las conexiones**, seleccione el servidor o clúster en el que desea crear la máquina virtual.
-1. En **Herramientas**, desplácese hacia abajo y seleccione **Máquinas virtuales**.
-1. En **Máquinas virtuales**, seleccione la pestaña **Inventario** y, a continuación, seleccione **Nuevo**.
-1. En **Nueva máquina virtual**, escriba un nombre para la máquina virtual.
-1. Seleccione **Generación 2 (recomendado)** .
-1. Seleccione una ruta de acceso de archivo preasignada en la lista desplegable o haga clic en **Examinar** para elegir la carpeta en la que desea guardar la configuración de la máquina virtual y los archivos del disco duro virtual (VHD). Para buscar cualquier recurso compartido de SMB disponible en la red, escriba la ruta de acceso como *\\servidor\recurso compartido*.
-
-1. En **Procesadores virtuales**, seleccione el número de procesadores virtuales y si desea habilitar la virtualización anidada.
-1. En **Memoria**, seleccione la cantidad de memoria de inicio (se recomienda un mínimo de 4 GB) y un intervalo mínimo y máximo de memoria dinámica, según corresponda, para asignarla a la máquina virtual.
-1. En **Red**, seleccione un adaptador de red en la lista desplegable.
-1. En **Almacenamiento**, haga clic en **Agregar** y seleccione si desea crear un nuevo disco duro virtual o usar uno ya existente. Si va a utilizar uno ya existente, haga clic en **Examinar** y seleccione la ruta de acceso del archivo correspondiente.
-1. En **Sistema operativo**, realice una de las acciones siguientes:
-   - Seleccione **Instalar un sistema operativo más adelante** si desea instalar un sistema operativo para la máquina virtual más adelante.
-   - Seleccione **Install an operating system from an image file (*.iso)** (Instalar un sistema operativo a partir de un archivo de imagen (*.iso), haga clic en **Examinar** y, a continuación, seleccione el archivo de imagen .iso correspondiente que se va a usar.
-   - Seleccione **Instalar un sistema operativo desde un servidor de instalación en red** si desea instalar un sistema operativo en la máquina virtual más adelante con este método. Asegúrese de haber seleccionado previamente un adaptador de red o, de lo contrario, no funcionará.
-1. Cuando haya finalizado, haga clic en **Crear** para crear la máquina virtual.
-1. Para iniciar la máquina virtual, en la lista de **Máquinas virtuales**, mantenga el mouse sobre la nueva máquina virtual, active la casilla correspondiente a la izquierda y seleccione **Iniciar**.
-1. En **Estado**, compruebe que el estado de la máquina virtual es **En ejecución**.
 
 ## <a name="move-a-vm-to-another-server-in-the-cluster"></a>Traslado de una máquina virtual a otro servidor del clúster
 

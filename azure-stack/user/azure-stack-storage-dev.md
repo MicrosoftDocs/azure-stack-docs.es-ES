@@ -1,5 +1,5 @@
 ---
-title: Introducción a las herramientas de desarrollo de Azure Stack Hub Storage
+title: Descripción de las herramientas de desarrollo de Azure Stack Hub Storage
 description: Guía de introducción a las herramientas de desarrollo de Azure Stack Hub Storage
 author: mattbriggs
 ms.author: mabrigg
@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.topic: conceptual
 ms.reviewer: jiahan
 ms.lastreviewed: 08/12/2020
-ms.openlocfilehash: fb1165cb78ad14f9fc4d785df9a712e556c53b91
-ms.sourcegitcommit: 7d518629bd55f24e7459404bb19b7db8a54f4b94
+ms.openlocfilehash: 28b1d8ade7b56a767d436b918ad7d386ef4759bd
+ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88145495"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90574149"
 ---
 # <a name="get-started-with-azure-stack-hub-storage-development-tools"></a>Introducción a las herramientas de desarrollo de Azure Stack Hub Storage
 

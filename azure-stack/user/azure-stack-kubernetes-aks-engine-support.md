@@ -3,16 +3,16 @@ title: Directivas de compatibilidad para el motor de AKS en Azure Stack Hub
 description: Este tema contiene las directivas de compatibilidad para el motor de AKS en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 09/02/2020
+ms.date: 09/10/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 09/02/2020
-ms.openlocfilehash: 1b61cd32988ed314445105936155806f58dc46ba
-ms.sourcegitcommit: b80d529ff47b15b8b612d8a787340c7b0f68165b
+ms.lastreviewed: 09/0102020
+ms.openlocfilehash: 389dd7110bfc5b8b42d1594c947ad522f4fbab98
+ms.sourcegitcommit: f19aaf989d758f0712e1ef3cbc4abf90a1110554
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89472792"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90026224"
 ---
 # <a name="support-policies-for-aks-engine-on-azure-stack-hub"></a>Directivas de compatibilidad para el motor de AKS en Azure Stack Hub
 
@@ -25,6 +25,10 @@ Los componentes de la nube de infraestructura como servicio (IaaS), como los de 
 Al crear un clúster, el cliente define los nodos de trabajo y maestros de Kubernetes que crea el motor de AKS. Las cargas de trabajo de cliente se ejecutan en esos nodos. Los clientes poseen y pueden ver o modificar tanto los nodos maestros como los de trabajo. La modificación descuidada de los nodos puede causar la pérdida de datos y de cargas de trabajo, y que el clúster deje de ser funcional. Además, las operaciones del motor de AKS, como las de actualización o escala, sobrescribirán todos los cambios inapropiados. Por ejemplo, si el clúster tiene pods estáticos, no se conservarán después de una operación de actualización del motor de AKS.
 
 Dado que los nodos del clúster de cliente ejecutan código privado y almacenan información confidencial, el Soporte técnico de Microsoft solo puede acceder a ellos con restricciones. El Soporte técnico de Microsoft no puede iniciar sesión en estos nodos, ejecutar comandos en ellos ni ver sus registros sin el consentimiento expreso o la asistencia del cliente.
+
+## <a name="version-support"></a>Compatibilidad con versiones
+
+La compatibilidad con la versión del motor de AKS sigue el mismo patrón establecido por el resto de la directiva de compatibilidad de Azure Stack Hub, es decir, la compatibilidad de una versión del motor de AKS en Azure Stack Hub se basa en la fórmula n-2. Por ejemplo, si la última versión del motor de AKS es v0.55.0, el conjunto de versiones admitidas es: 0.48.0, 0.51.0, 0.55.0. También es importante que siga la versión de actualización de Azure Stack Hub y la asignación correspondiente a la versión compatible con el motor de AKS que se mantiene en las [notas de la versión del motor de AKS](kubernetes-aks-engine-release-notes.md#aks-engine-and-azure-stack-version-mapping).
 
 ## <a name="aks-engine-supported-areas"></a>Áreas con soporte del motor de AKS
 

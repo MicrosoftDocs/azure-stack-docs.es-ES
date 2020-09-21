@@ -3,22 +3,22 @@ title: Solución de problemas de aplicaciones virtuales de red en Azure Stack Hu
 description: Solucione problemas de conectividad de máquina virtual o de VPN al utilizar una aplicación virtual de red (NVA) en Microsoft Azure Stack Hub.
 author: sethmanheim
 ms.author: sethm
-ms.date: 05/12/2020
+ms.date: 09/08/2020
 ms.topic: article
 ms.reviewer: sranthar
 ms.lastreviewed: 05/12/2020
-ms.openlocfilehash: 04c381bfefa40cc04f59e4b5f6641c2a227d14b8
-ms.sourcegitcommit: b2b0fe629d840ca8d5b6353a90f1fcb392a73bd5
+ms.openlocfilehash: 293e445343acfe13a0be2cabab6cb1577c3941a2
+ms.sourcegitcommit: b147d617c32cea138b5bd4bab568109282e44317
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85376806"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010890"
 ---
 # <a name="troubleshoot-network-virtual-appliance-problems"></a>Solución de problemas de aplicaciones virtuales de red
 
 Es posible que experimente problemas de conectividad con las máquinas virtuales o las VPN que utilizan una aplicación virtual de red en Azure Stack Hub.
 
-En este artículo se indican los pasos para ayudarle a validar los requisitos básicos de la plataforma de Azure Stack Hub para las configuraciones de aplicaciones virtuales de red.
+Este artículo le ayuda a validar los requisitos básicos de la plataforma de Azure Stack Hub para las configuraciones de aplicaciones virtuales de red.
 
 El proveedor de una aplicación virtual de red proporciona soporte técnico para esta y para su integración con la plataforma de Azure Stack Hub.
 
@@ -39,8 +39,8 @@ Si en este artículo no se aborda el problema de su aplicación virtual de red c
 ## <a name="basic-troubleshooting-steps"></a>Pasos básicos para solucionar problemas
 
 1. Comprobación de la configuración básica.
-1. Comprobación del rendimiento de la aplicación virtual de red.
-1. Solución de problemas avanzados de red.
+2. Comprobación del rendimiento de la aplicación virtual de red.
+3. Solución de problemas avanzados de red.
 
 ## <a name="check-the-minimum-configuration-requirements-for-nvas-on-azure"></a>Comprobación de los requisitos mínimos de la configuración de las aplicaciones virtuales de red en Azure
 
@@ -58,8 +58,8 @@ Cada aplicación virtual de red tiene requisitos básicos de configuración para
 #### <a name="use-the-azure-stack-hub-portal"></a>Uso del portal de Azure Stack Hub
 
 1. Busque el recurso de la aplicación virtual de red en el portal de Azure Stack Hub, seleccione las **redes** y, después, seleccione la interfaz de red.
-1. En la página **Interfaz de red**, seleccione **Configuraciones de IP**.
-1. Asegúrese de que está habilitado el reenvío IP.
+2. En la página **Interfaz de red**, seleccione **Configuraciones de IP**.
+3. Asegúrese de que está habilitado el reenvío IP.
 
 #### <a name="use-powershell"></a>Uso de PowerShell
 
@@ -69,8 +69,9 @@ Cada aplicación virtual de red tiene requisitos básicos de configuración para
    Get-AzureRMNetworkInterface -ResourceGroupName <ResourceGroupName> -Name <NIC name>
    ```
 
-1. Compruebe la propiedad **EnableIPForwarding**.
-1. Si el reenvío IP no está habilitado, ejecute los siguientes comandos para habilitarlo:
+2. Compruebe la propiedad **EnableIPForwarding**.
+
+3. Si el reenvío IP no está habilitado, ejecute los siguientes comandos para habilitarlo:
 
    ```powershell
    $nic2 = Get-AzureRMNetworkInterface -ResourceGroupName <ResourceGroupName> -Name <NIC name>
@@ -84,7 +85,7 @@ Cada aplicación virtual de red tiene requisitos básicos de configuración para
 ### <a name="check-whether-traffic-can-be-routed-to-the-nva"></a>Comprobación de si se puede enrutar el tráfico a la aplicación virtual de red
 
 1. Busque una máquina virtual que esté configurada para redirigir el tráfico a la aplicación virtual de red.
-1. Para comprobar que la aplicación virtual de red es el próximo salto, ejecute **Tracert \<Private IP of NVA\>** para Windows o **Traceroute \<Private IP of NVA\>** .
+1. Para comprobar que la aplicación virtual de red es el próximo salto, ejecute `Tracert <Private IP of NVA>` para Windows o `Traceroute <Private IP of NVA>`.
 1. Si la aplicación virtual de red no aparece como próximo salto, compruebe y actualice las tablas de rutas de Azure Stack Hub.
 
 Algunos sistemas operativos en el nivel de invitado pueden tener directivas de firewall para bloquear el tráfico ICMP. Actualice estas reglas de firewall para que los comandos anteriores funcionen.
@@ -92,7 +93,7 @@ Algunos sistemas operativos en el nivel de invitado pueden tener directivas de f
 ### <a name="check-whether-traffic-can-reach-the-nva"></a>Comprobación de si el tráfico puede llegar a la aplicación virtual de red
 
 1. Busque una máquina virtual que debiera estar conectada a la aplicación virtual de red.
-1. Compruebe si los grupos de seguridad de red bloquean el tráfico. En Windows, ejecute **ping** (ICMP) o **Test-NetConnection \<Private IP of NVA\>** (TCP). En Linux, ejecute **Tcpping \<Private IP of NVA\>** .
+1. Compruebe si los grupos de seguridad de red bloquean el tráfico. Para Windows, ejecute `ping` (ICMP) o `Test-NetConnection <Private IP of NVA>` (TCP). Para Linux, ejecute `Tcpping <Private IP of NVA>`.
 1. Si los grupos de seguridad de red bloquean el tráfico, modifíquelos para que lo permitan.
 
 ### <a name="check-whether-the-nva-and-vms-are-listening-for-expected-traffic"></a>Comprobación de si la aplicación virtual de red y las máquinas virtuales están escuchando el tráfico esperado
@@ -133,7 +134,7 @@ Si la red de VM muestra picos o períodos de uso elevado, considere la posibilid
 
 ### <a name="capture-a-network-trace"></a>Captura de un seguimiento de red
 
-Mientras ejecuta [**PsPing**](/sysinternals/downloads/psping) o **Nmap**, capture un seguimiento de red simultáneo en las máquinas virtuales de origen y de destino, y en la aplicación virtual de red. Después, detenga el seguimiento.
+Mientras ejecuta [`PsPing`](/sysinternals/downloads/psping) o `Nmap`, capture un seguimiento de red simultáneo en las máquinas virtuales de origen y de destino, y en la aplicación virtual de red. Después, detenga el seguimiento.
 
 1. Para capturar un seguimiento de red simultáneo, ejecute el siguiente comando:
 
@@ -149,9 +150,9 @@ Mientras ejecuta [**PsPing**](/sysinternals/downloads/psping) o **Nmap**, captur
    sudo tcpdump -s0 -i eth0 -X -w vmtrace.cap
    ```
 
-2. Utilice **PsPing** o **Nmap** desde la máquina virtual de origen a la máquina virtual de destino. Algunos ejemplos son **PsPing 10.0.0.4:80** o **Nmap -p 80 10.0.0.4**.
+2. Utilice `PsPing` o `Nmap` desde la máquina virtual de origen a la máquina virtual de destino. Algunos ejemplos son `PsPing 10.0.0.4:80` o `Nmap -p 80 10.0.0.4`.
 
-3. Abra el seguimiento de red desde la máquina virtual de destino mediante **tcpdump** o un analizador de paquetes de su elección. Aplique un filtro de visualización para la IP de la máquina virtual de origen desde la que ejecutó **PsPing** o **Nmap**. Un ejemplo de **netmon** de Windows es **IPv4.address==10.0.0.4**. Los ejemplos de Linux son **tcpdump -nn -r vmtrace.cap src** y **dst host 10.0.0.4**.
+3. Abra el seguimiento de red desde la máquina virtual de destino mediante **tcpdump** o un analizador de paquetes de su elección. Aplique un filtro de visualización para la IP de la máquina virtual de origen desde la que ejecutó `PsPing` o `Nmap`. Un ejemplo de **netmon** de Windows es `IPv4.address==10.0.0.4`. Algunos ejemplos de Linux son `tcpdump -nn -r vmtrace.cap src` y `dst host 10.0.0.4`.
 
 ### <a name="analyze-traces"></a>Análisis de seguimientos
 

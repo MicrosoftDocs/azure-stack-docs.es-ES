@@ -4,13 +4,13 @@ description: Cómo crear volúmenes en Azure Stack HCI mediante Windows Admin Ce
 author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
-ms.date: 07/21/2020
-ms.openlocfilehash: 61f3515bcec6e0819b175db149d27f15a347f132
-ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
+ms.date: 09/10/2020
+ms.openlocfilehash: aa0da05ba1cac74cf558a28627962e61c1418a73
+ms.sourcegitcommit: b147d617c32cea138b5bd4bab568109282e44317
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86866580"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010856"
 ---
 # <a name="create-volumes-in-azure-stack-hci"></a>Creación de volúmenes en Azure Stack HCI
 
@@ -74,19 +74,7 @@ Vea un vídeo rápido sobre cómo abrir un volumen y agregar archivos.
 
 La desduplicación y la compresión se administran en cada volumen. La desduplicación y la compresión utilizan un modelo de procesamiento posterior, lo que significa que no verá cuánto ahorra hasta que se ejecute. Cuando lo hace, funcionará en todos los archivos, incluso en los que ya estaban allí.
 
-1. En Windows Admin Center, conéctese a un clúster de Espacios de almacenamiento directo y seleccione **Volumes** (Volúmenes) en el panel **Tools** (Herramientas).
-2. En la página **Volumes** (Volúmenes), seleccione la pestaña **Inventory** (Inventario).
-3. En la lista de volúmenes, seleccione el nombre del volumen que desea administrar.
-4. En la página de detalles del volumen, haga clic en el conmutador **Deduplication and compression** (Desduplicación y compresión).
-5. En el panel **Enable deduplication** (Habilitar desduplicación), seleccione el modo de desduplicación.
-
-    En lugar de configuraciones complicadas, Windows Admin Center permite elegir perfiles ya preparados para diferentes cargas de trabajo. Si no está seguro, use la configuración predeterminada.
-
-6. Seleccione **Habilitar**.
-
-Vea un vídeo rápido sobre cómo activar la desduplicación y la compresión.
-
-> [!VIDEO https://www.youtube-nocookie.com/embed/PRibTacyKko]
+Para más información, consulte [Habilitación del cifrado de volumen, desduplicación y compresión](volume-encryption-deduplication.md).
 
 ## <a name="create-volumes-using-windows-powershell"></a>Creación de volúmenes con Windows PowerShell
 

@@ -5,12 +5,12 @@ author: v-dasis
 ms.author: v-dasis
 ms.topic: how-to
 ms.date: 07/24/2020
-ms.openlocfilehash: 9d6ba44da5da188f60f031bddab2e49190dbfee3
-ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
+ms.openlocfilehash: 8c885f7a344ff9d34228bad76c79e65f1f345f25
+ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87250714"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90573690"
 ---
 # <a name="create-stretched-cluster-volumes-and-set-up-replication"></a>Creación de volúmenes de clústeres extendidos y configuración de la replicación
 
@@ -22,7 +22,7 @@ Vamos a crear volúmenes en cuatro servidores de dos sitios, dos servidores por 
 
 ## <a name="stretched-volumes-and-replication-using-windows-admin-center"></a>Volúmenes extendidos y replicación mediante Windows Admin Center
 
-Empecemos:
+Para crear un volumen y configurar la replicación:
 
 1. En Windows Admin Center, en **Tools** (Tools), seleccione **Volumes** (Volúmenes).
 1. En el panel derecho, seleccione la pestaña **Inventory** (Inventario) y, a continuación **Create** (Crear).

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
 ms.date: 09/01/2020
-ms.openlocfilehash: d4d10d7a2470f474130b3a14758b608b7ac2ad34
-ms.sourcegitcommit: 08a421ab5792ab19cc06b849763be22f051e6d78
+ms.openlocfilehash: 545a0b90ad938a172a184748780974ba7403f19f
+ms.sourcegitcommit: 4af79f4fa2598d57c81e994192c10f8c6be5a445
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89365071"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89742398"
 ---
 # <a name="drive-symmetry-considerations-for-azure-stack-hci"></a>Consideraciones sobre la simetría de unidades para Azure Stack HCI
 
@@ -90,7 +90,7 @@ Sin embargo, es posible que el uso de unidades de caché de distintos tamaños n
 
 A continuación se describen algunas configuraciones compatibles y no compatibles:
 
-### <a name="supported-supported-different-models-between-servers"></a>![admitido](media/drive-symmetry-considerations/supported.png) Compatible: diferentes modelos entre servidores
+### <a name="image-typeicon-sourcemediadrive-symmetry-considerationssupportedpng-borderfalse-supported-different-models-between-servers"></a>:::image type="icon" source="media/drive-symmetry-considerations/supported.png" border="false"::: Compatible: diferentes modelos entre servidores
 
 Los dos primeros servidores usan el modelo "X" de NVMe, pero el tercer servidor usa el modelo "Z" de NVMe, que es muy similar.
 
@@ -101,7 +101,7 @@ Los dos primeros servidores usan el modelo "X" de NVMe, pero el tercer servidor 
 
 Esta configuración es compatible.
 
-### <a name="supported-supported-different-models-within-server"></a>![admitido](media/drive-symmetry-considerations/supported.png) Compatible: diferentes modelos en el servidor
+### <a name="image-typeicon-sourcemediadrive-symmetry-considerationssupportedpng-borderfalse-supported-different-models-within-server"></a>:::image type="icon" source="media/drive-symmetry-considerations/supported.png" border="false"::: Compatible: diferentes modelos en el servidor
 
 Cada servidor utiliza una combinación diferente de modelos de HDD "Y" y "Z", que son muy similares. Cada servidor tiene 10 HDD en total.
 
@@ -113,7 +113,7 @@ Cada servidor utiliza una combinación diferente de modelos de HDD "Y" y "Z", qu
 
 Esta configuración es compatible.
 
-### <a name="supported-supported-different-sizes-across-servers"></a>![admitido](media/drive-symmetry-considerations/supported.png) Compatible: tamaños diferentes entre servidores
+### <a name="image-typeicon-sourcemediadrive-symmetry-considerationssupportedpng-borderfalse-supported-different-sizes-across-servers"></a>:::image type="icon" source="media/drive-symmetry-considerations/supported.png" border="false"::: Compatible: tamaños diferentes entre servidores
 
 Los dos primeros servidores usan una unidad de disco duro de 4 TB, pero el tercer servidor usa un HDD de 6 TB muy similar.
 
@@ -124,7 +124,7 @@ Los dos primeros servidores usan una unidad de disco duro de 4 TB, pero el terc
 
 Si bien esto es compatible, producirá una capacidad inmovilizada.
 
-### <a name="supported-supported-different-sizes-within-server"></a>![admitido](media/drive-symmetry-considerations/supported.png) Compatible: diferentes modelos en el servidor
+### <a name="image-typeicon-sourcemediadrive-symmetry-considerationssupportedpng-borderfalse-supported-different-sizes-within-server"></a>:::image type="icon" source="media/drive-symmetry-considerations/supported.png" border="false"::: Compatible: diferentes modelos en el servidor
 
 Cada servidor utiliza una combinación diferente de SSD de 1,2 TB y de 1,6 TB muy similar. Cada servidor tiene 4 SSD en total.
 
@@ -136,7 +136,7 @@ Cada servidor utiliza una combinación diferente de SSD de 1,2 TB y de 1,6 TB 
 
 Esta configuración es compatible.
 
-### <a name="unsupported-not-supported-different-types-of-drives-across-servers"></a>![no admitido](media/drive-symmetry-considerations/unsupported.png) No compatible: diferentes tipos de unidades entre servidores
+### <a name="image-typeicon-sourcemediadrive-symmetry-considerationsunsupportedpng-borderfalse-not-supported-different-types-of-drives-across-servers"></a>:::image type="icon" source="media/drive-symmetry-considerations/unsupported.png" border="false"::: No compatible: diferentes tipos de unidades entre servidores
 
 El servidor 1 tiene NVMe, pero los otros no.
 
@@ -148,7 +148,7 @@ El servidor 1 tiene NVMe, pero los otros no.
 
 No es una opción admitida. Los tipos de unidades deben ser los mismos en todos los servidores.
 
-### <a name="unsupported-not-supported-different-number-of-each-type-across-servers"></a>![no admitido](media/drive-symmetry-considerations/unsupported.png) No compatible: número diferente de cada tipo entre servidores
+### <a name="image-typeicon-sourcemediadrive-symmetry-considerationsunsupportedpng-borderfalse-not-supported-different-number-of-each-type-across-servers"></a>:::image type="icon" source="media/drive-symmetry-considerations/unsupported.png" border="false"::: No compatible: número diferente de cada tipo entre servidores
 
 El servidor 3 tiene más unidades que los demás.
 
@@ -159,7 +159,7 @@ El servidor 3 tiene más unidades que los demás.
 
 No es una opción admitida. El número de unidades de cada tipo debe ser el mismo en todos los servidores.
 
-### <a name="unsupported-not-supported-only-hdd-drives"></a>![no admitido](media/drive-symmetry-considerations/unsupported.png) No compatible: solo unidades HDD
+### <a name="image-typeicon-sourcemediadrive-symmetry-considerationsunsupportedpng-borderfalse-not-supported-only-hdd-drives"></a>:::image type="icon" source="media/drive-symmetry-considerations/unsupported.png" border="false"::: No compatible: solo unidades HDD
 
 Todos los servidores tienen unidades HDD conectadas solamente.
 

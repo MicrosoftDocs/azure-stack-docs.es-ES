@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
 ms.date: 09/04/2020
-ms.openlocfilehash: 573cbe36fefecdc37394270fbeec6540d4369991
-ms.sourcegitcommit: 01dcda15d88c8d44b4918e2f599daca462a8e3d9
+ms.openlocfilehash: 9a15b953ffe2229d7f92bea998392b8570f481de
+ms.sourcegitcommit: 4af79f4fa2598d57c81e994192c10f8c6be5a445
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89493876"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89742529"
 ---
 # <a name="understanding-the-storage-pool-cache-in-azure-stack-hci"></a>Descripción de la caché de bloque de almacenamiento en Azure Stack HCI
 
@@ -42,13 +42,13 @@ Estos se pueden combinar de varias maneras que se agrupan en dos categorías: "t
 
 Todas las implementaciones all-flash tienen el objetivo de maximizar el rendimiento del almacenamiento y no incluyen unidades de disco duro (HDD) rotacionales.
 
-![Posibilidades de implementación de todo flash](media/cache/All-Flash-Deployment-Possibilities.png)
+![Diagrama que muestra implementaciones All-Flash entre las que se incluye NVMe para capacidad, NVMe para caché con SSD para capacidad y SSD para capacidad.](media/cache/All-Flash-Deployment-Possibilities.png)
 
 ### <a name="hybrid-deployment-possibilities"></a>Posibilidades de implementación híbrida
 
 Las implementaciones híbridas tienen como objetivo equilibrar el rendimiento y la capacidad o maximizar la capacidad, e incluyen unidades de disco duro (HDD) rotacionales.
 
-![Posibilidades de implementación híbridas](media/cache/Hybrid-Deployment-Possibilities.png)
+![En el diagrama se muestran implementaciones híbridas, entre las que se incluyen NVMe para caché con HDD para capacidad, SSD para caché con HDD para capacidad y NVMe para caché con HDD más SSD para capacidad.](media/cache/Hybrid-Deployment-Possibilities.png)
 
 ## <a name="cache-drives-are-selected-automatically"></a>Las unidades de caché se seleccionan de forma automática.
 
@@ -56,7 +56,7 @@ En las implementaciones con varios tipos de unidades, Azure Stack HCI usa autom�
 
 El tipo "más rápido" se determina según la siguiente jerarquía.
 
-![Jerarquía de tipos de unidad](media/cache/Drive-Type-Hierarchy.png)
+![En el diagrama se muestran los tipos de disco ordenados del más rápido al más lento en el orden NVMe, SSD, disco sin etiquetar que representa a HDD.](media/cache/Drive-Type-Hierarchy.png)
 
 Por ejemplo, si tiene NVMe y SSD, la NVMe se almacenará en caché para los SSD.
 
@@ -74,7 +74,7 @@ Si todas las unidades son del mismo tipo, no se configura automáticamente ningu
 
 El comportamiento de la memoria caché se determina automáticamente según los tipos de las unidades de las que se realiza el almacenamiento en caché. Al realizar el almacenamiento en caché de las unidades de estado sólido (por ejemplo, almacenamiento en caché NVMe para SSD), solo las escrituras se almacenan en caché. Al almacenar en caché las unidades de disco duro (por ejemplo, almacenar en caché los discos SSD para las unidades HDD), tanto las lecturas como las escrituras se almacenan en caché.
 
-![Comportamiento de lectura y escritura en caché](media/cache/Cache-Read-Write-Behavior.png)
+![Diagrama que compara el almacenamiento en caché de las implementaciones All-Flash en las que las escrituras se almacenan en caché y las lecturas no, con las implementaciones híbridas en las que las lecturas y las escrituras se almacenan en caché.](media/cache/Cache-Read-Write-Behavior.png)
 
 ### <a name="write-only-caching-for-all-flash-deployments"></a>Almacenamiento en caché de solo escritura para las implementaciones todo flash
 
@@ -115,7 +115,7 @@ Dado que la memoria caché está debajo del resto de la pila de almacenamiento d
 
 Dado que la resistencia en Azure Stack HCI se produce al menos en el nivel de servidor (lo que significa que las copias de datos siempre se escriben en servidores diferentes; como máximo una copia por servidor), los datos de la caché se benefician de la misma resistencia que los datos que no están en la caché.
 
-![Arquitectura de la caché en el lado servidor](media/cache/Cache-Server-Side-Architecture.png)
+![El diagrama representa tres servidores unidos por un reflejo tridireccional en una capa de espacio de almacenamiento que accede a una capa de caché de unidades NVMe que acceden a unidades de capacidad sin etiquetar.](media/cache/Cache-Server-Side-Architecture.png)
 
 Por ejemplo, cuando se usa la creación de reflejo triple, se escriben tres copias de los datos en servidores diferentes, y se colocan en la memoria caché. Independientemente de si se retiran del almacenamiento provisional posteriormente o no, siempre existirán tres copias.
 
@@ -123,7 +123,7 @@ Por ejemplo, cuando se usa la creación de reflejo triple, se escriben tres copi
 
 El enlace entre las unidades de caché y de capacidad puede tener cualquier proporción, desde 1:1 hasta 1:12 e incluso más. Se ajusta dinámicamente cada vez que se agregan o quitan unidades como, por ejemplo, al escalar verticalmente o después de errores. Esto significa que puede agregar unidades de caché o unidades de capacidad de forma independiente, siempre que lo desee.
 
-![Enlace dinámico](media/cache/Dynamic-Binding.gif)
+![Diagrama animado que muestra dos unidades de caché NVMe que se asignan dinámicamente a las cuatro, seis u ocho primeras unidades de capacidad.](media/cache/Dynamic-Binding.gif)
 
 Se recomienda que el número de unidades de capacidad sea un múltiplo del número de unidades de caché por motivos de simetría. Por ejemplo, si tienes 4 unidades de caché, habrá un rendimiento más uniforme con 8 unidades de capacidad (relación 1:2) que con 7 o 9 unidades.
 
@@ -135,7 +135,7 @@ Durante un breve período, las unidades de capacidad que estaban enlazadas a la 
 
 Este escenario es el motivo por el que se necesitan al menos dos unidades de caché por servidor para mantener el rendimiento.
 
-![Control de errores](media/cache/Handling-Failure.gif)
+![Diagrama animado que muestra dos unidades de caché SSD asignadas a seis unidades de capacidad hasta que se produce un error en una unidad de caché que hace que se asignen las seis unidades a la unidad de caché restante.](media/cache/Handling-Failure.gif)
 
 Después, puede reemplazar la unidad de caché igual que lo haría con cualquier otra unidad.
 
@@ -194,7 +194,7 @@ Puedes comprobar que las unidades que propones están en uso para almacenamiento
 
 La configuración manual habilita las siguientes posibilidades de implementación:
 
-![Posibilidades de implementación exóticas](media/cache/Exotic-Deployment-Possibilities.png)
+![Diagrama que muestra las posibilidades de implementación, entre las que se incluye NVMe para caché y para capacidad, SSD para caché y capacidad, y SSD para capacidad y SSD y HDD mixtas para capacidad.](media/cache/Exotic-Deployment-Possibilities.png)
 
 ### <a name="set-cache-behavior"></a>Establecimiento del comportamiento de la caché
 

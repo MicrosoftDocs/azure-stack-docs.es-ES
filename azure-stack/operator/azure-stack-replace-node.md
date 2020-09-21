@@ -8,12 +8,12 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 7166ab4072776adef3d3b3fd233bf082214ad39a
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: a96ee2a4ffb2abb3c3e11db23d4fb676ace8c1c0
+ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86488219"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90572637"
 ---
 # <a name="replace-a-scale-unit-node-on-an-azure-stack-hub-integrated-system"></a>Reemplazo de un nodo de la unidad de escalado en un sistema integrado de Azure Stack Hub
 

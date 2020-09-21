@@ -7,25 +7,25 @@ ms.date: 10/08/2019
 ms.author: justinha
 ms.reviewer: shisab
 ms.lastreviewed: 10/08/2019
-ms.openlocfilehash: 09b22541ed77915a2a28c4abf5212ccbbbf5fb81
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: 647f731d1d82c41d26142ff88e56b8ec0717f5ef
+ms.sourcegitcommit: dbc6739584aa407b26e4ad4921d967b7b608de38
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86488967"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90038818"
 ---
 # <a name="find-your-cloud-id"></a>Búsqueda del identificador de nube
 
-En este tema se explica cómo obtener el identificador de nube mediante el portal del administrador o el punto de conexión con privilegios. 
+En este tema se explica cómo obtener el identificador de nube mediante el portal de administración o el punto de conexión con privilegios. El identificador de nube es el identificador único para el seguimiento de los datos de compatibilidad cargados desde una unidad de escalado específica. Cuando los registros de diagnóstico se cargan para el análisis de compatibilidad, el identificador de nube es la forma en que los registros se asocian a esa unidad de escalado.
 
 ## <a name="use-the-administrator-portal"></a>Uso del portal de administración
 
 1. Abra el portal de administrador. 
-1. Haga clic en **Region management** (Administración de regiones).
+1. Seleccione **Region management** (Administración de regiones).
 
    ![Captura de pantalla del panel](./media/azure-stack-automatic-log-collection/dashboard.png)
 
-1. Haga clic en **Properties** (Propiedades) y copie el valor de **Stamp Cloud ID** (Id. de nube del stamp).
+1. Seleccione **Properties** (Propiedades) y copie el valor de **Stamp Cloud ID** (Id. de nube del stamp).
 
    ![Captura de pantalla de las propiedades de la región con el identificador de nube del stamp](media/azure-stack-automatic-log-collection/region-properties-blade-with-stamp-cloud-id.png)
 
@@ -51,5 +51,5 @@ En este tema se explica cómo obtener el identificador de nube mediante el porta
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-* [Envío proactivo de registros](./azure-stack-configure-automatic-diagnostic-log-collection.md?view=azs-2002)
+* [Envío de registros de forma proactiva](./azure-stack-configure-automatic-diagnostic-log-collection.md?view=azs-2002)
 * [Envío inmediato de registros](./azure-stack-configure-on-demand-diagnostic-log-collection-portal.md?view=azs-2002)

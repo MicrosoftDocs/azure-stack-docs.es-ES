@@ -3,22 +3,29 @@ title: Problemas conocidos del motor de AKS en Azure Stack Hub
 description: Obtenga más información sobre los problemas conocidos del motor de AKS en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 09/02/2020
+ms.date: 09/11/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 09/02/2020
-ms.openlocfilehash: 106aafd33441c2961cf933606cc8f48cbe4fc60d
-ms.sourcegitcommit: b80d529ff47b15b8b612d8a787340c7b0f68165b
+ms.lastreviewed: 09/11/2020
+ms.openlocfilehash: 685cf02aed8e6e485d596531c37653f496a4bc5f
+ms.sourcegitcommit: a845ae0d3794b5d845b2ae712baa7e38f3011a7b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473219"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90045285"
 ---
 # <a name="known-issues-with-the-aks-engine-on-azure-stack-hub"></a>Problemas conocidos del motor de AKS en Azure Stack Hub
 
 En este tema se tratan los problemas conocidos del motor de AKS en Azure Stack Hub.
 
-## <a name="upgrade-issues-in-aks-engine-0510"></a>Problemas de actualización del motor de AKS 0.51.0
+## <a name="disk-detach-operation-fails-in-aks-engine-0550"></a>Error en la operación de desasociación de disco en el motor de AKS 0.55.0
+
+- **Aplicable a**: Azure Stack Hub (actualización 2005), motor de AKS 0.55.0
+- **Descripción**: al intentar eliminar una implementación que contiene volúmenes de persistencia, la operación de eliminación desencadena una serie de errores de asociación y desasociación. Esto se debe a un error en el proveedor de nube del motor de AKS v0.55.0. El proveedor de nube llama a Azure Resource Manager mediante una versión más nueva de la API que la que admite actualmente Azure Resource Manager en Azure Stack Hub (actualización 2005).
+- **Corrección**: puede encontrar más detalles y la mitigación en el [repositorio de GitHub del motor de AKS (problema 3817)](https://github.com/Azure/aks-engine/issues/3817#issuecomment-691329443). Actualice en cuanto esté disponible una nueva compilación del motor de AKS y la imagen correspondiente.
+- **Repetición**: al eliminar una implementación que contiene volúmenes de persistencia.
+
+## <a name="upgrade-issues-in-aks-engine-0510"></a>Problemas de actualización del motor de AKS 0.51.0
 
 * Durante la actualización (aks-engine upgrade) de un clúster de Kubernetes de la versión 1,15.x a 1.16.x, la actualización de los siguientes componentes de Kubernetes requiere pasos manuales adicionales: **kube-proxy**, **azure-cni-networkmonitor**, **csi-secrets-store**, **kubernetes-dashboard**. A continuación se describe lo que puede observar y cómo solucionar los problemas.
 

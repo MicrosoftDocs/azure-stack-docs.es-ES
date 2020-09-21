@@ -1,5 +1,5 @@
 ---
-title: Integración del firewall de Azure Stack Hub para sistemas integrados de Azure Stack Hub
+title: Integración de un firewall con un sistema de Azure Stack Hub
 description: Más información sobre la integración del firewall de Azure Stack Hub para sistemas integrados de Azure Stack Hub
 author: IngridAtMicrosoft
 ms.topic: conceptual
@@ -7,12 +7,12 @@ ms.date: 04/10/2020
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 11/15/2019
-ms.openlocfilehash: c33c2dbcdb662f23072ef7aca83364643c3cdf0c
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 666d205fb99ac309196bd4b84032ef8c7877ab8a
+ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81244224"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90572874"
 ---
 # <a name="azure-stack-hub-firewall-integration"></a>Integración del firewall de Azure Stack Hub
 Se recomienda que use un dispositivo de firewall para ayudar a proteger Azure Stack Hub. Los firewalls pueden ayudarle a defenderse contra ataques por denegación de servicio distribuido (DDOS), a detectar intrusos y a inspeccionar el contenido que reciba. Sin embargo, también pueden convertirse en un cuello de botella en el rendimiento de los servicios de Azure Storage como blobs, tablas y colas.
