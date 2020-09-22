@@ -24,7 +24,7 @@ En este tema se explica cómo conectarse a la parte de Azure Stack HCI de Azure 
 
 Una vez que se registra un clúster de Azure Stack HCI, su recurso de Azure es visible en Azure Portal. Para verlo, primero inicie sesión en [Azure Portal](https://portal.azure.com). Si ya ha [registrado el clúster con Azure](../deploy/register-with-azure.md), debería ver un nuevo grupo de recursos con el nombre del clúster con el sufijo "-rg". Si no aparece el grupo de recursos de Azure Stack HCI, busque "HCI" y seleccione el clúster en el menú desplegable:
 
-:::image type="content" source="media/azure-portal/azure-portal-search.png" alt-text="Busque "hci" en Azure Portal para encontrar el recurso de Azure Stack HCI":::
+:::image type="content" source="media/azure-portal/azure-portal-search.png" alt-text="Busque hci en Azure Portal para encontrar el recurso de Azure Stack HCI":::
 
 La página principal del servicio Azure Stack HCI muestra todos los clústeres junto con su grupo de recursos, la ubicación y la suscripción asociada.
 
