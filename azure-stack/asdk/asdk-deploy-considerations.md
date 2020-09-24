@@ -3,16 +3,16 @@ title: Requisitos y consideraciones de ASDK
 description: Consulte los requisitos de hardware, software y entorno para instalar el Kit de desarrollo de Azure Stack (ASDK).
 author: myoungerman
 ms.topic: article
-ms.date: 05/13/2019
+ms.date: 09/23/2020
 ms.author: v-myoung
 ms.reviewer: misainat
-ms.lastreviewed: 05/13/2019
-ms.openlocfilehash: f74ffc103c53fa8cb1c317f42455c4063e1b0baa
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.lastreviewed: 09/23/2020
+ms.openlocfilehash: b16247c53ea0677573573c827f68e56081a9de5e
+ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90572109"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91106960"
 ---
 # <a name="asdk-requirements-and-considerations"></a>Requisitos y consideraciones de ASDK
 
@@ -79,9 +79,6 @@ Ejemplo de configuración de espejo bidireccional:
 | --- | --- |
 | **Versión del SO.** |Windows Server 2016 o una versión posterior. La versión del sistema operativo no es crítica antes de iniciar la implementación, ya que podrá arrancar el equipo host en el disco duro virtual que se incluye en la instalación de Azure Stack. El sistema operativo y todas las revisiones necesarias ya están integradas en la imagen. No use ninguna clave para activar las instancias de Windows Server que se usan en ASDK. |
 
-> [!TIP]
-> Después de instalar el sistema operativo, puede usar el [Comprobador de implementación para Azure Stack](https://gallery.technet.microsoft.com/Deployment-Checker-for-50e0f51b) para confirmar que el hardware cumple todos los requisitos.
-
 ## <a name="account-requirements"></a>Requisitos de cuenta
 Normalmente, se implementa ASDK con conectividad a Internet, lo que permite conectarse a Microsoft Azure. En este caso, debe configurar una cuenta de Azure Active Directory (Azure AD) para implementar ASDK.
 
@@ -108,7 +105,7 @@ Para implementar Azure Stack mediante una cuenta de Azure AD, debe preparar una 
 Después de la implementación, no se necesita el permiso de administrador global de Azure AD. Sin embargo, algunas operaciones pueden requerir la credencial de administrador global. Los ejemplos de tales operaciones incluyen un script de instalación del proveedor de recursos o una nueva característica que necesite la concesión de un permiso. Puede restablecer temporalmente los permisos de administrador global de la cuenta o usar una cuenta de administrador global independiente que sea propietaria de la *suscripción del proveedor predeterminada*.
 
 ## <a name="network"></a>Red
-### <a name="switch"></a>Switch
+### <a name="switch"></a>Conmutador
 Un puerto disponible en un conmutador para la máquina de ASDK.  
 
 La máquina de ASDK admite la conexión a un puerto de acceso de conmutador o puerto de tronco. No se requieren características especializadas en el conmutador. Si está usando un puerto de tronco o necesita configurar un identificador de VLAN, tendrá que proporcionar el identificador de VLAN como parámetro de implementación.
