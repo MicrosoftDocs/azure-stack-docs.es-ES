@@ -3,16 +3,16 @@ title: Implementación de ASDK desde la línea de comandos mediante PowerShell
 description: En este artículo aprenderá a implementar ASDK desde la línea de comandos mediante PowerShell.
 author: justinha
 ms.topic: article
-ms.date: 05/06/2019
+ms.date: 09/23/2020
 ms.author: justinha
 ms.reviewer: misainat
-ms.lastreviewed: 02/08/2019
-ms.openlocfilehash: d6c7e29f83700eb2eb897bcd4b8bfdd65c7dfb4c
-ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
+ms.lastreviewed: 09/23/2020
+ms.openlocfilehash: c9931654b6c217d0c9f06bf51b37460046c47c2c
+ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82847153"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91106938"
 ---
 # <a name="deploy-asdk-from-the-command-line-using-powershell"></a>Implementación de ASDK desde la línea de comandos mediante PowerShell
 
@@ -26,8 +26,6 @@ Antes de implementar ASDK, asegúrese de que las configuraciones de hardware, si
 
 **[Revisión de las consideraciones y requisitos de implementación de ASDK](asdk-deploy-considerations.md)** .
 
-> [!TIP]
-> Puede usar la [herramienta de comprobación de requisitos de implementación de Azure Stack](https://gallery.technet.microsoft.com/Deployment-Checker-for-50e0f51b) después de instalar el sistema operativo para confirmar que el hardware cumple todos los requisitos.
 
 ## <a name="download-and-extract-the-deployment-package"></a>Descargar y extraer el paquete de implementación
 Después de asegurarse de que el equipo host de ASDK cumple los requisitos básicos para instalar ASDK, el siguiente paso es descargar y extraer el paquete de implementación de ASDK. El paquete de implementación incluye el archivo Cloudbuilder.vhdx, que es una unidad de disco duro virtual que incluye un sistema operativo de arranque y los archivos de instalación de Azure Stack.

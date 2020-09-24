@@ -9,12 +9,12 @@ ms.reviewer: ppacent
 ms.author: bryanla
 ms.lastreviewed: 08/15/2020
 monikerRange: '>=azs-1803'
-ms.openlocfilehash: 7cb9d68d7e1a994ef1552c8b59868c5e9c2662a3
-ms.sourcegitcommit: e72145ebb5eac17a47ba1c9119fd31de545fdace
+ms.openlocfilehash: 463fc8fbee16aa7eddc78cee7c3868f1526fad21
+ms.sourcegitcommit: 849be7ebd02a1e54e8d0ec59736c9917c67e309e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88724870"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91134753"
 ---
 # <a name="rotate-secrets-in-azure-stack-hub"></a>Cambio de secretos en Azure Stack Hub
 
@@ -230,7 +230,7 @@ Consulte el script de PowerShell en el paso 2 de [Rotación de secretos externos
     # Run Secret Rotation
     ...
     Invoke-Command -Session $PEPSession -ScriptBlock {
-        Start-SecretRotation -Internal -PfxFilesPath $using:CertSharePath -PathAccessCredential $using:CertShareCreds -CertificatePassword $using:CertPassword
+        Start-SecretRotation -Internal
     }
     ...
     ```
