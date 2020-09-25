@@ -142,6 +142,8 @@
       href: /powershell/module/dcbqos
 - name: Temas relacionados
   items:
+    - name: Azure Kubernetes Service en Azure Stack HCl
+      href: ../aks-hci/overview.md
     - name: "Familia Azure\_Stack"
       href: ../index.yml
     - name: Nube híbrida de Azure
