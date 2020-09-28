@@ -181,6 +181,8 @@
           href: azure-stack-change-subscription-owner.md
         - name: Inicio y detención de Azure Stack Hub
           href: azure-stack-start-and-stop.md
+        - name: Herramienta Azure Site Recovery
+          href: site-recovery-failback.md
         - name: Administrar la capacidad
           items:
             - name: Administración de recursos de almacenamiento
