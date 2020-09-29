@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 10/16/2019
 ms.reviewer: shriramnat
 ms.lastreviewed: 10/16/2019
-ms.openlocfilehash: e0c152f3c541b3bc2dad042ae88f162b539cec60
-ms.sourcegitcommit: 34db213dc6549f21662ed44d090f55359cfe8469
+ms.openlocfilehash: f2716bfbdab58c90401e3c6b10908c35f774feed
+ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88564809"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91107183"
 ---
 # <a name="create-a-service-offering-for-users-in-azure-stack-hub"></a>Creación de una oferta de servicio para los usuarios en Azure Stack Hub
 
@@ -80,23 +80,23 @@ Durante el proceso de creación de la oferta, creará una oferta y un plan. El p
 
     Seleccione **+ Crear un recurso** > **Ofertas y planes** > **Oferta**.
 
-    ![Nueva oferta en el portal de administración de Azure Stack Hub](media/tutorial-offer-services/1-create-resource-offer.png)
+    ![Captura de pantalla que muestra cómo crear una nueva oferta en el portal de administración de Azure Stack Hub.](media/tutorial-offer-services/1-create-resource-offer.png)
 
 1. En **Create a new offer** (Crear una nueva oferta) en la pestaña **Basics** (Datos básicos), escriba un **nombre para mostrar**, un **nombre de recurso** y seleccione un **grupo de recursos** existente o cree uno. El nombre para mostrar es el nombre descriptivo de la oferta. Solo el operador en la nube puede ver el nombre del recurso, que es el que usan los administradores para trabajar con la oferta como un recurso de Azure Resource Manager.
 
-   ![Nombre para mostrar en el portal de administración de Azure Stack Hub](media/tutorial-offer-services/2-create-new-offer.png)
+   ![Captura de pantalla que muestra dónde agregar información básica en el portal de administración de Azure Stack Hub.](media/tutorial-offer-services/2-create-new-offer.png)
 
 1. Seleccione la pestaña **Planes base** y **Crear nuevo plan** para crear un nuevo plan. También se agregará el plan a la oferta como un plan base.
 
-   ![Incorporación de un plan en el portal de administración de Azure Stack Hub](media/tutorial-offer-services/3-create-new-offer-base-plans.png)
+   ![Captura de pantalla que muestra cómo agregar un plan en el portal de administración de Azure Stack Hub.](media/tutorial-offer-services/3-create-new-offer-base-plans.png)
 
 1. En **New plan** (Nuevo plan) en la pestaña **Basics** (Datos básicos), escriba un **nombre para mostrar** y **nombre del recurso**. El nombre para mostrar es el nombre descriptivo del plan que ven los usuarios. Solo el operador en la nube puede ver el nombre del recurso, que es el que usan los operadores en la nube para trabajar con el plan como un recurso de Azure Resource Manager. El **grupo de recursos** se establecerá en el que se especificó en la oferta.
 
-   ![Nombre para mostrar del plan en el portal de administración de Azure Stack Hub](media/tutorial-offer-services/4-create-new-plan-basics.png)
+   ![Captura de pantalla que muestra el nombre para mostrar del plan en el portal de administración de Azure Stack Hub.](media/tutorial-offer-services/4-create-new-plan-basics.png)
 
 1. Seleccione la pestaña **Services** (Servicios) y verá una lista de servicios disponibles de los proveedores de recursos instalados. Seleccione **Microsoft.Compute**, **Microsoft.Network** y **Microsoft.Storage**.
 
-   ![Servicios del plan en el portal de administración de Azure Stack Hub](media/tutorial-offer-services/5-create-new-plan-services.png)
+   ![Captura de pantalla que muestra los servicios del plan en el portal de administración de Azure Stack Hub.](media/tutorial-offer-services/5-create-new-plan-services.png)
 
 1. Seleccione la pestaña de **cuotas** y verá la lista de servicios que habilitó para este plan. Seleccione **Crear nuevo** para especificar una cuota personalizada para **Microsoft.Compute**. Es necesaria la cuota **Name** (Nombre), aunque puede aceptar o cambiar cada valor de cuota. Seleccione **OK** (Aceptar) cuando haya terminado y repita estos pasos para los servicios restantes.
 

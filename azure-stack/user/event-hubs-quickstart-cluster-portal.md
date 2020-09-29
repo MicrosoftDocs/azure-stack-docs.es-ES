@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 01/22/2020
 ms.reviewer: bryanla
 ms.lastreviewed: 01/22/2020
-ms.openlocfilehash: 6af9ef6f562c9b31d7310b7f35d7b6b0533472ea
-ms.sourcegitcommit: 4138a2a15f78e7db38b3a29acc963a71937146fd
+ms.openlocfilehash: 7a2b8504a247048a4f90f7ec70772ff52b5ae9dc
+ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "80479245"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91107242"
 ---
 # <a name="quickstart-create-an-event-hubs-cluster-using-the-azure-stack-hub-portal"></a>Inicio rápido: Creación de un clúster de Event Hubs mediante el portal de Azure Stack Hub
 
@@ -116,7 +116,7 @@ Para eliminar el clúster:
 1. Vuelva a seleccionar  **Todos los servicios**  en el panel de navegación izquierdo. Escriba "Clústeres de Event Hubs" en la barra de búsqueda y seleccione el elemento **Clústeres de Event Hubs** en la lista de resultados.
 2. En la página **Clústeres de Event Hubs**, busque y seleccione el clúster que creó anteriormente.
 
-   [![Clústeres de Event Hubs: eliminación de un clúster](media/event-hubs-quickstart-cluster-portal/4-delete-cluster-clusters.png)](media/event-hubs-quickstart-cluster-portal/4-delete-cluster-clusters.png#lightbox)
+   [![Captura de pantalla que muestra cómo seleccionar el clúster que se va a eliminar.](media/event-hubs-quickstart-cluster-portal/4-delete-cluster-clusters.png)](media/event-hubs-quickstart-cluster-portal/4-delete-cluster-clusters.png#lightbox)
 
 3. En la página **Información general** de **Clúster de Event Hubs**:
    - Seleccione  **Eliminar**  en el menú superior.  

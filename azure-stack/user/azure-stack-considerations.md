@@ -3,15 +3,15 @@ title: Diferencias entre Azure Stack Hub y Azure al usar servicios y compilar ap
 description: Descripción de las diferencias entre Azure y Azure Stack Hub al usar servicios y compilar aplicaciones.
 author: sethmanheim
 ms.topic: overview
-ms.date: 06/11/2020
+ms.date: 09/21/2020
 ms.author: sethm
 ms.lastreviewed: 12/27/2019
-ms.openlocfilehash: fb5f30d97d1c12a94b5366a358dc21450965fd93
-ms.sourcegitcommit: 5f4f0ee043ff994efaad44129ce49be43c64d5dc
+ms.openlocfilehash: 25d836bece262f881901df6c62b5dc8f4aeaf11d
+ms.sourcegitcommit: dabbe44c3208fbf989b7615301833929f50390ff
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84819530"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90946461"
 ---
 # <a name="differences-between-azure-stack-hub-and-azure-when-using-services-and-building-apps"></a>Diferencias entre Azure Stack Hub y Azure al usar servicios y compilar aplicaciones
 
@@ -84,3 +84,4 @@ Para obtener más información detallada acerca de las diferencias en un nivel d
 * [Consideraciones sobre máquinas virtuales en Azure Stack Hub](azure-stack-vm-considerations.md)
 * [Consideraciones sobre el almacenamiento en Azure Stack Hub](azure-stack-acs-differences.md)
 * [Consideraciones sobre las redes de Azure Stack Hub](azure-stack-network-differences.md)
+* [Consideraciones sobre el proveedor de recursos SQL de Azure Stack Hub](../operator/azure-stack-sql-resource-provider.md)
