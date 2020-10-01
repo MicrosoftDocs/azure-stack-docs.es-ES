@@ -7,12 +7,12 @@ ms.date: 9/8/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 9/8/2020
-ms.openlocfilehash: bcd4d3e2255a839efe3ef4075d81042e241d00f3
-ms.sourcegitcommit: 9a340b383dcf42c85bc6ec0d01ff3c9ae29dfe4c
+ms.openlocfilehash: c8c68a64f7a05e03c70e138cb4d8c95da7417ec9
+ms.sourcegitcommit: 3e225b30a54159b6b8dbeb2f843a2e5a721b746e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89609925"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91519440"
 ---
 # <a name="move-a-vm-from-azure-to-azure-stack-hub"></a>Traslado de una máquina virtual de Azure a Azure Stack Hub
 
@@ -48,7 +48,7 @@ Siga las instrucciones de [Descargar un VHD de Windows desde Azure](/azure/virtu
 
 - Antes de descargar la máquina virtual Linux, siga las instrucciones de la sección "Preparación de la máquina virtual" del artículo [Creación de una VM Linux desde un disco personalizado con la CLI de Azure](/azure/virtual-machines/linux/upload-vhd#prepare-the-vm)
 - Siga los pasos del artículo [Descarga de un VHD de Linux desde Azure](/azure//virtual-machines/windows/download-vhd) para preparar y descargar el disco duro virtual.
-- En el caso de un disco duro virtual especializado, asegúrese de usar la semántica de "conexión" mediante `-CreateOption Attach`. Puede encontrar un ejemplo en el artículo [Creación de una máquina virtual con un disco administrado existente del sistema operativo mediante PowerShell (Windows)](/azure/virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm-from-managed-os-disks).
+- En el caso de un disco duro virtual especializado, asegúrese de usar la semántica de "conexión" mediante `-CreateOption Attach`. Puede encontrar un ejemplo en el artículo [Creación de una máquina virtual con un disco administrado existente del sistema operativo mediante PowerShell (Windows)](/azure/virtual-machines/scripts/virtual-machines-powershell-sample-create-vm-from-managed-os-disks).
 
 #### <a name="linux---generalized"></a>[Linux: Generalizado](#tab/lin-gen)
 

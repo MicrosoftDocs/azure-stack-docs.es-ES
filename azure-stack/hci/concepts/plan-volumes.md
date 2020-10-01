@@ -5,12 +5,12 @@ author: khdownie
 ms.author: v-kedow
 ms.topic: conceptual
 ms.date: 07/27/2020
-ms.openlocfilehash: 49124c0112d2ecba8c621520cfb1b6c293418401
-ms.sourcegitcommit: 4af79f4fa2598d57c81e994192c10f8c6be5a445
+ms.openlocfilehash: 8125ff0432b16f254f8660e8c5f755f7f4916b12
+ms.sourcegitcommit: 69cfff119ab425d0fbb71e38d1480d051fc91216
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89742546"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91572779"
 ---
 # <a name="plan-volumes-in-azure-stack-hci"></a>Planeamiento de volúmenes en Azure Stack HCI
 
@@ -39,7 +39,7 @@ Se recomienda limitar el número total de volúmenes a 64 por clúster.
 
 ## <a name="choosing-the-filesystem"></a>Elección del sistema de archivos
 
-Se recomienda usar el nuevo [Sistema de archivos resistente (ReFS)](/en-us/windows-server/storage/refs/refs-overview) para Espacios de almacenamiento directo. ReFS es un sistema de archivos superior creado específicamente para la virtualización que ofrece muchas ventajas, entre las que se incluyen importantes aceleraciones de rendimiento y una protección integrada frente a daños en los datos. Admite casi todas las características de NTFS clave, incluida la desduplicación de datos en Windows Server, versión 1709 y posteriores. Consulte la [tabla de comparación de características de ReFS](/windows-server/storage/refs/refs-overview#feature-comparison) para más información.
+Se recomienda usar el nuevo [Sistema de archivos resistente (ReFS)](/windows-server/storage/refs/refs-overview) para Espacios de almacenamiento directo. ReFS es un sistema de archivos superior creado específicamente para la virtualización que ofrece muchas ventajas, entre las que se incluyen importantes aceleraciones de rendimiento y una protección integrada frente a daños en los datos. Admite casi todas las características de NTFS clave, incluida la desduplicación de datos en Windows Server, versión 1709 y posteriores. Consulte la [tabla de comparación de características de ReFS](/windows-server/storage/refs/refs-overview#feature-comparison) para más información.
 
 Si la carga de trabajo requiere una característica que ReFS no admite todavía, puede usar NTFS en su lugar.
 

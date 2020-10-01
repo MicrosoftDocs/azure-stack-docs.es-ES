@@ -5,12 +5,12 @@ author: JohnCobb1
 ms.author: v-johcob
 ms.topic: conceptual
 ms.date: 09/10/2020
-ms.openlocfilehash: 6a8a0c3068061c599ac18e160ebd32c7b5cc8eda
-ms.sourcegitcommit: b147d617c32cea138b5bd4bab568109282e44317
+ms.openlocfilehash: 181eb53d4b0e5c95065371e6b87e470a5e413d06
+ms.sourcegitcommit: 69cfff119ab425d0fbb71e38d1480d051fc91216
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010822"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91572677"
 ---
 # <a name="azure-stack-hci-security-considerations"></a>Consideraciones sobre la seguridad de Azure Stack HCI
 
@@ -41,7 +41,7 @@ En esta sección se explica cómo proteger los servicios y las máquinas virtual
 
 - **Device Guard** y **Credential Guard**. Device Guard protege contra malware sin firma conocida, código sin firmar y malware que obtiene acceso al kernel para capturar información confidencial o dañar el sistema. Credential Guard de Windows Defender utiliza la seguridad basada en la virtualización para aislar los secretos, de modo que solo el software del sistema con privilegios pueda acceder a ellos.
 
-    Para obtener más información, consulte [Administrar Credential Guard de Windows Defender](/windows/security/identity-protection/credential-guard/credential-guard-manage) y descargue la [herramienta de preparación de hardware de Device Guard y Credential Guard](https://www.microsoft.com/en-us/download/details.aspx?id=53337).
+    Para obtener más información, consulte [Administrar Credential Guard de Windows Defender](/windows/security/identity-protection/credential-guard/credential-guard-manage) y descargue la [herramienta de preparación de hardware de Device Guard y Credential Guard](https://www.microsoft.com/download/details.aspx?id=53337).
 
 - Las actualizaciones del **firmware** y de **Windows** son esenciales en clústeres, servidores (incluidas las máquinas virtuales invitadas) y equipos para garantizar que el sistema operativo y el hardware del sistema están protegidos contra los atacantes. Puede usar la herramienta **Actualizaciones** de Windows Admin Center para aplicar actualizaciones a sistemas individuales. Si el proveedor de hardware incluye compatibilidad con Windows Admin Center para obtener actualizaciones de controladores, firmware y soluciones, puede obtener estas actualizaciones al mismo tiempo que las actualizaciones de Windows; de lo contrario, puede obtenerlas directamente de su proveedor.
 
@@ -88,7 +88,7 @@ En esta sección se describe cómo usar Windows Admin Center para proteger las i
 
 - El **control de acceso basado en roles (RBAC)** en Windows Admin Center permite a los usuarios tener acceso limitado a los servidores que deben administrar en lugar de convertirlos en administradores locales completos. Para usar RBAC en Windows Admin Center, configure cada servidor administrado con un punto de conexión de Just Enough Administration de PowerShell.
 
-    Para obtener más información, consulte el artículo [Control de acceso basado en roles](/windows-server/manage/windows-admin-center/plan/user-access-options#role-based-access-control) y [Just Enough Administration](/powershell/scripting/learn/remoting/jea/overview?view=powershell-7).
+    Para obtener más información, consulte el artículo [Control de acceso basado en roles](/windows-server/manage/windows-admin-center/plan/user-access-options#role-based-access-control) y [Just Enough Administration](/powershell/scripting/learn/remoting/jea/overview).
 
 - Las **herramientas de seguridad** de Windows Admin Center que puede usar para administrar y proteger las identidades incluyen Active Directory, certificados, firewall, usuarios locales y grupos, etc.
 
@@ -126,7 +126,7 @@ En las secciones siguientes se recomiendan las herramientas y tecnologías de se
      
      - El **Módulo de plataforma segura virtual (vTPM)** en Windows Server admite TPM para máquinas virtuales, lo que permite usar tecnologías de seguridad avanzadas, como BitLocker en máquinas virtuales. Puede habilitar la compatibilidad con TPM en cualquier máquina virtual de Hyper-V de generación 2 mediante el administrador de Hyper-V o el cmdlet de Windows PowerShell `Enable-VMTPM`.
      
-        Para obtener más información, vea [Enable-VMTPM](/powershell/module/hyper-v/enable-vmtpm?view=win10-ps)
+        Para obtener más información, vea [Enable-VMTPM](/powershell/module/hyper-v/enable-vmtpm)
      
      - Las **Redes definidas por software (SDN)** en Azure Stack HCl y Windows Server configuran y administran de forma centralizada dispositivos de red físicos y virtuales, como enrutadores, conmutadores y puertas de enlace en su centro de datos. Los elementos de red virtual, como el conmutador virtual de Hyper-V, la virtualización de red de Hyper-V y la puerta de enlace de RAS están diseñados para ser elementos integrales de la infraestructura de SDN.
 

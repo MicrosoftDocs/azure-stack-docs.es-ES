@@ -5,12 +5,12 @@ author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
 ms.date: 08/31/2020
-ms.openlocfilehash: 94908514e85df153f69cbeea81a11d4468dfc7fe
-ms.sourcegitcommit: e6665cfb15fae57218e58cd6de6053f16c1f9044
+ms.openlocfilehash: 06a5a1ccf59b5d5c34ef1d2e36feeb1000b49776
+ms.sourcegitcommit: 69cfff119ab425d0fbb71e38d1480d051fc91216
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89274065"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91572643"
 ---
 # <a name="update-azure-stack-hci-clusters"></a>Actualización de clústeres de Azure Stack HCl
 
@@ -87,9 +87,8 @@ La Actualización compatible con clústeres puede coordinar toda la operación d
   
 -   **Modo de actualización remota** Para este modo, un equipo de administración remoto (normalmente, un equipo con Windows 10) que tenga conectividad de red con el clúster de conmutación por error, pero que no sea miembro del clúster de conmutación por error, se configura con las Herramientas de clúster de conmutación por error. Desde el equipo de administración remoto, llamado coordinador de actualizaciones, el administrador desencadena una actualización a petición mediante un perfil de ejecución de actualización personalizado o predeterminado. El modo de actualización remota resulta útil para supervisar el progreso en tiempo real durante la ejecución de la actualización y en los clústeres que se ejecutan en instalaciones Server Core.  
 
-
    > [!NOTE]
-   > A partir de la actualización de octubre de 2018 de Windows 10, RSAT se incluye como un conjunto de "características a petición" desde Windows 10. Simplemente vaya a **Configuración > Aplicaciones > Aplicaciones y características > Características opcionales > Agregar una característica > RSAT: Herramientas de clústeres de conmutación por error** y seleccione **Instalar**. Para ver el progreso de la instalación, haga clic en el botón Atrás para ver el estado en la página "Administrar características opcionales". La característica instalada se conservará en las diferentes actualizaciones de versión de Windows 10. Para instalar RSAT para Windows 10 antes de la actualización de octubre de 2018, [descargue un paquete de RSAT](https://www.microsoft.com/en-us/download/details.aspx?id=45520).
+   > A partir de la actualización de octubre de 2018 de Windows 10, RSAT se incluye como un conjunto de "características a petición" desde Windows 10. Simplemente vaya a **Configuración > Aplicaciones > Aplicaciones y características > Características opcionales > Agregar una característica > RSAT: Herramientas de clústeres de conmutación por error** y seleccione **Instalar**. Para ver el progreso de la instalación, haga clic en el botón Atrás para ver el estado en la página "Administrar características opcionales". La característica instalada se conservará en las diferentes actualizaciones de versión de Windows 10. Para instalar RSAT para Windows 10 antes de la actualización de octubre de 2018, [descargue un paquete de RSAT](https://www.microsoft.com/download/details.aspx?id=45520).
 
 ### <a name="add-cau-cluster-role-to-the-cluster"></a>Adición de un rol de clúster de CAU al clúster
 
@@ -105,7 +104,7 @@ Si aún no se ha configurado el rol en el clúster, verá el mensaje de error si
 
 ```Get-CauClusterRole : The current cluster is not configured with a Cluster-Aware Updating clustered role.```
 
-Para agregar el rol de clúster de la Actualización compatible con clústeres para el modo de actualización automática con PowerShell, use el cmdlet **`Add-CauClusterRole`** y proporcione los [parámetros](/powershell/module/clusterawareupdating/add-cauclusterrole?view=win10-ps#parameters) correspondientes, como en el ejemplo siguiente:
+Para agregar el rol de clúster de la Actualización compatible con clústeres para el modo de actualización automática con PowerShell, use el cmdlet **`Add-CauClusterRole`** y proporcione los [parámetros](/powershell/module/clusterawareupdating/add-cauclusterrole#parameters) correspondientes, como en el ejemplo siguiente:
 
 ```PowerShell
 Add-CauClusterRole -ClusterName Cluster1 -MaxFailedNodes 0 -RequireAllNodesOnline -EnableFirewallRules -VirtualComputerObjectName Cluster1-CAU -Force -CauPluginName Microsoft.WindowsUpdatePlugin -MaxRetriesPerNode 3 -CauPluginArguments @{ 'IncludeRecommendedUpdates' = 'False' } -StartDate "3/2/2020 3:00:00 AM" -DaysOfWeek 4 -WeeksOfMonth @(3) -verbose
