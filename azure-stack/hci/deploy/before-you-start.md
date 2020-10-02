@@ -6,13 +6,13 @@ ms.author: v-kedow
 ms.topic: how-to
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 09/23/2020
-ms.openlocfilehash: 64303a9d923bc001a67259cf48d4e55cb8429087
-ms.sourcegitcommit: 849be7ebd02a1e54e8d0ec59736c9917c67e309e
+ms.date: 09/24/2020
+ms.openlocfilehash: d4dc446f5d58f25ba6183cf4415b5f4e2d34df9a
+ms.sourcegitcommit: 034e61836038ca75199a0180337257189601cd12
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91134719"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91230468"
 ---
 # <a name="before-you-deploy-azure-stack-hci"></a>Antes de implementar Azure Stack HCI
 
@@ -24,6 +24,8 @@ En esta guía paso a paso, aprenderá a:
 - Asegurarse de no superar las especificaciones de hardware máximas admitidas
 - Recopilar la información necesaria para una implementación correcta
 - Instalación de Windows Admin Center en un equipo o un servidor de administración
+
+Para más información, consulte [Requisitos de Azure Kubernetes Service en Azure Stack HCI](../../aks-hci/overview.md#what-you-need-to-get-started).
 
 ## <a name="determine-hardware-requirements"></a>Determinar los requisitos de hardware
 
@@ -105,8 +107,8 @@ Cuando se conectan sitios de clústeres extendidos, siguen siendo aplicables los
 
 - Al menos una conexión RDMA o Ethernet/TCP de 1 GB entre sitios para la replicación sincrónica. Se prefiere una conexión RDMA de 25 GB.
 - Una red entre sitios con suficiente ancho de banda para contener la carga de trabajo de escritura de E/S y un promedio de latencia de ida y vuelta de 5 ms para la replicación sincrónica. Este tipo de replicación no tiene una recomendación de latencia.
-- Si usa una única conexión entre sitios, establezca límites de ancho de banda SMB para la réplica de almacenamiento mediante PowerShell. Para más información, consulte [Set-SmbBandwidthLimit](/powershell/module/smbshare/set-smbbandwidthlimit?view=win10-ps).
-- Si usa varias conexiones entre sitios, separe el tráfico entre las conexiones. Por ejemplo, coloque el tráfico de la réplica de almacenamiento en una red independiente distinta a la del tráfico de migración en vivo de Hyper-V con PowerShell. Para más información, consulte [Set-SRNetworkConstraint](/powershell/module/storagereplica/set-srnetworkconstraint?view=win10-ps).
+- Si usa una única conexión entre sitios, establezca límites de ancho de banda SMB para la réplica de almacenamiento mediante PowerShell. Para más información, consulte [Set-SmbBandwidthLimit](/powershell/module/smbshare/set-smbbandwidthlimit).
+- Si usa varias conexiones entre sitios, separe el tráfico entre las conexiones. Por ejemplo, coloque el tráfico de la réplica de almacenamiento en una red independiente distinta a la del tráfico de migración en vivo de Hyper-V con PowerShell. Para más información, consulte [Set-SRNetworkConstraint](/powershell/module/storagereplica/set-srnetworkconstraint).
 
 ### <a name="network-port-requirements"></a>Requisitos de puerto de red
 

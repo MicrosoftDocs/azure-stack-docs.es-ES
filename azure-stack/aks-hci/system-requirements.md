@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: abhilashaagarwala
 ms.author: abha
 ms.date: 09/22/2020
-ms.openlocfilehash: b4f79281987b425b907126081e74ce32bf9ee14d
-ms.sourcegitcommit: dabbe44c3208fbf989b7615301833929f50390ff
+ms.openlocfilehash: 4c91dad12e4d6680ca0887da2e6ca314cdbd64ee
+ms.sourcegitcommit: 3e225b30a54159b6b8dbeb2f843a2e5a721b746e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90949348"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91519393"
 ---
 # <a name="system-requirements-for-azure-kubernetes-service-on-azure-stack-hci"></a>Requisitos del sistema de Azure Kubernetes Service en Azure Stack HCI
 
@@ -83,7 +83,7 @@ Las excepciones de URL de firewall son necesarias para la máquina de Windows Ad
 
 | URL        | Port | Servicio | Notas |
 | ---------- | ---- | --- | ---- |
-https://get.helm.sh/  | 443 | Agente de descarga, WAC | Se usa para descargar los archivos binarios de Helm 
+https://helm.sh/blog/get-helm-sh/  | 443 | Agente de descarga, WAC | Se usa para descargar los archivos binarios de Helm 
 https://storage.googleapis.com/  | 443 | Cloud Init | Descarga de archivos binarios de Kubernetes 
 https://azurecliprod.blob.core.windows.net/ | 443 | Cloud Init | Descarga de archivos binarios y contenedores 
 https://aka.ms/installazurecliwindows | 443 | WAC | Descarga de la CLI de Azure 
@@ -118,10 +118,10 @@ Windows Admin Center es la interfaz de usuario para crear y administrar Azure Ku
 
 La máquina que ejecuta la puerta de enlace de Windows Admin Center debe cumplir los siguientes requisitos: 
 
- - Windows 10 (no se admiten los servidores de Windows Admin Center en este momento)
+ - Windows 10 (no admitimos los servidores de Windows Admin Center en este momento).
  - 60 GB de espacio disponible
  - Estar registrado en Azure
- - Estar en el mismo dominio que el clúster de Azure Stack HCI
+ - Estar en el mismo dominio que el clúster de Azure Stack HCI.
 
 ## <a name="next-steps"></a>Pasos siguientes 
 
