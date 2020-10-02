@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/19/2019
-ms.openlocfilehash: 001514995d13c63ecf697769e0fc71e2155b7382
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.openlocfilehash: 3a14c50413ddd431f6a8db8815d0147ef9d173e7
+ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90574166"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91107220"
 ---
 # <a name="back-up-your-storage-accounts-on-azure-stack-hub"></a>Copia de seguridad de las cuentas de almacenamiento en Azure Stack Hub
 
@@ -22,7 +22,7 @@ En este artículo se examina la protección y la recuperación de las cuentas de
 
 En esta sección se examina la estructura general de la solución y las partes principales.
 
-![Copia de seguridad de Azure Stack Hub Storage](./media/azure-stack-network-howto-backup-storage/azure-stack-storage-backup.png)
+![Diagrama que muestra la estructura general de la copia de seguridad de almacenamiento de Azure Stack Hub.](./media/azure-stack-network-howto-backup-storage/azure-stack-storage-backup.png)
 
 ### <a name="application-layer"></a>Nivel de aplicación
 
@@ -60,7 +60,7 @@ Cuando haya configurado el servidor Windows Server, tendrá que instalar [Power
 
 1. Recupere el punto de conexión de blobs para las cuentas de almacenamiento de origen y de destino.
 
-    ![Copia de seguridad de Azure Stack Hub Storage](./media/azure-stack-network-howto-backup-storage/back-up-step1.png)
+    ![Captura de pantalla que muestra el punto de conexión del blob principal para las cuentas de almacenamiento de origen y de destino.](./media/azure-stack-network-howto-backup-storage/back-up-step1.png)
 
 2. Cree y registre los tokens de SAS para las cuentas de almacenamiento de origen y de destino.
 

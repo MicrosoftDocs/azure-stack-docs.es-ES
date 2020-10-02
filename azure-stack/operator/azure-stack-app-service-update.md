@@ -8,12 +8,12 @@ ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 01/13/2019
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: 9ab446785d463358b3d04850b5d08ff9410a40d5
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: 6a63ae93488a13b2b3c8f872aadf882a9ccd1a13
+ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86489664"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91106868"
 ---
 # <a name="update-azure-app-service-on-azure-stack-hub"></a>Actualización de Azure App Service en Azure Stack Hub
 
@@ -45,7 +45,7 @@ Para actualizar la implementación de Azure App Service en Azure Stack Hub, siga
 
 2. Ejecute appservice.exe como administrador.
 
-    ![Instalador de Azure App Service][1]
+    ![Captura de pantalla que muestra cómo iniciar el proceso de implementación o actualización en el instalador de App Service.][1]
 
 3. Haga clic en **Implementar Azure App Service o actualizar a la última versión.**
 
@@ -55,7 +55,7 @@ Para actualizar la implementación de Azure App Service en Azure Stack Hub, siga
 
 6. Asegúrese de que la información del punto de conexión de Azure Resource Manager de Azure Stack Hub y del inquilino de Active Directory es correcta. Si ha usado la configuración predeterminada durante la implementación del ASDK, puede aceptar los valores predeterminados. Sin embargo, si personalizó las opciones al implementar Azure Stack Hub, debe editar los valores en esta ventana. Por ejemplo, si se usa el sufijo de dominio *mycloud.com*, el punto de conexión de Azure Resource Manager de Azure Stack Hub se debe cambiar a *management.region.mycloud.com*. Después de confirmar la información, haga clic en **Siguiente**.
 
-    ![Información de la nube de Azure Stack Hub][2]
+    ![Captura de pantalla que muestra dónde se configuran los puntos de conexión de Azure Resource Manager en el instalador de App Service.][2]
 
 7. En la página siguiente:
 
@@ -73,20 +73,20 @@ Para actualizar la implementación de Azure App Service en Azure Stack Hub, siga
 
     1. Si se detecta una implementación existente de Azure App Service, la cuenta de almacenamiento y el grupo de recursos se rellenan y quedan no disponibles.
 
-      ![Instalación de Azure App Service detectada][3]
+      ![Captura de pantalla que muestra dónde se especifica la información de suscripción de Azure Stack Hub en el instalador de App Service.][3]
 
 8. En la página de resumen:
    1. Compruebe las selecciones realizadas. Para realizar cambios, use los botones **Anterior** para visitar las páginas anteriores.
    2. Si las configuraciones son correctas, active la casilla.
    3. Para iniciar la actualización, haga clic en **Siguiente**.
 
-       ![Resumen de la actualización de Azure App Service][4]
+       ![Captura de pantalla que muestra el resumen de la actualización de App Service en el instalador.][4]
 
 9. Página de progreso de la actualización:
     1. Realice un seguimiento del progreso de la actualización. La duración de la actualización de Azure App Service en Azure Stack Hub varía según el número de instancias de rol implementadas.
     2. Después de que la actualización finalice correctamente, haga clic en **Salir**.
 
-        ![Progreso de la actualización de Azure App Service][5]
+        ![Captura de pantalla que muestra el progreso de la implementación en el instalador de App Service.][5]
 ::: zone-end
 
 ::: zone pivot="state-disconnected"
@@ -120,11 +120,11 @@ Para actualizar App Service en un entorno desconectado, primero debe crear un pa
 
 1. Ejecute appservice.exe como administrador
 
-    ![Instalador de Azure App Service][11]
+    ![Captura de pantalla que muestra cómo iniciar una actualización en un entorno sin conexión.][11]
 
 2. Haga clic en **Avanzado** > **Crear paquete sin conexión**
 
-    ![Instalador avanzado de Azure App Service][12]
+    ![Captura de pantalla que muestra cómo crear un paquete sin conexión en el instalador de App Service.][12]
 
 3. El instalador de Azure App Service crea un paquete de actualización sin conexión y muestra su ruta de acceso.  Puede hacer clic en **Abrir carpeta** para abrir la carpeta en el Explorador de archivos.
 
@@ -137,11 +137,11 @@ Para actualizar App Service en un entorno desconectado, primero debe crear un pa
 
 1. Ejecute appservice.exe como administrador.
 
-    ![Instalador de Azure App Service][11]
+    ![Captura de pantalla que muestra cómo iniciar una actualización.][11]
 
 2. Haga clic en **Avanzado** > **Completar la instalación o actualización sin conexión**.
 
-    ![Instalador avanzado de Azure App Service][12]
+    ![Captura de pantalla que muestra cómo realizar una instalación sin conexión o una actualización en el instalador de App Service.][12]
 
 3. Vaya a la ubicación del paquete de actualización sin conexión que creó previamente y haga clic en **Siguiente**.
 
@@ -151,7 +151,7 @@ Para actualizar App Service en un entorno desconectado, primero debe crear un pa
 
 6. Asegúrese de que la información del punto de conexión de Azure Resource Manager de Azure Stack Hub y el inquilino de Active Directory son correctos. Si usó la configuración predeterminada durante la implementación del Kit de desarrollo de Azure Stack, puede aceptar los valores predeterminados aquí. Sin embargo, si personalizó las opciones al implementar Azure Stack Hub, debe editar los valores en esta ventana. Por ejemplo, si se usa el sufijo de dominio *mycloud.com*, el punto de conexión de Azure Resource Manager de Azure Stack Hub se debe cambiar a *management.region.mycloud.com*. Después de confirmar su información, haga clic en **Siguiente**.
 
-    ![Información de la nube de Azure Stack Hub][13]
+    ![Captura de pantalla que muestra dónde se configuran los puntos de conexión de Azure Resource Manager en el instalador.][13]
 
 7. En la página siguiente:
 
@@ -169,19 +169,19 @@ Para actualizar App Service en un entorno desconectado, primero debe crear un pa
    
    1. Si se detecta una implementación existente de App Service, la cuenta de almacenamiento y el grupo de recursos se rellenan y quedan atenuados.
 
-      ![Instalación de Azure App Service detectada][14]
+      ![Captura de pantalla que muestra dónde configurar las suscripciones de Azure Stack Hub en el instalador.][14]
 8. En la página de resumen:
    1. Compruebe las selecciones realizadas. Para realizar cambios, use los botones **Anterior** para visitar las páginas anteriores.
    2. Si las configuraciones son correctas, active la casilla.
    3. Para iniciar la actualización, haga clic en **Siguiente**.
 
-       ![Resumen de la actualización de Azure App Service][15]
+       ![Captura de pantalla que muestra el resumen de la información recopilada en el instalador.][15]
 
 9. Página de progreso de la actualización:
     1. Realice un seguimiento del progreso de la actualización. La duración de la actualización de App Service en Azure Stack Hub varía según el número de instancias de rol implementadas.
     2. Después de que la actualización finalice correctamente, haga clic en **Salir**.
 
-        ![Progreso de la actualización de Azure App Service][16]
+        ![Captura de pantalla que muestra que la actualización se completó correctamente.][16]
 ::: zone-end
 
 ## <a name="next-steps"></a>Pasos siguientes

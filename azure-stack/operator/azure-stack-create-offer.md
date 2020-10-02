@@ -7,12 +7,12 @@ ms.date: 06/11/2019
 ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 06/11/2019
-ms.openlocfilehash: ab12123410971dcbff3a4750650dd5508ca93efe
-ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
+ms.openlocfilehash: 8371b23da292400087def86fc6a18bbee90a0217
+ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84631149"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91107066"
 ---
 # <a name="create-an-offer-in-azure-stack-hub"></a>Creación de una oferta en Azure Stack Hub
 
@@ -23,17 +23,17 @@ Las [ofertas](azure-stack-overview.md) son grupos de uno o varios planes que los
 
 1. Inicie sesión en el portal de administración de Azure Stack Hub `https://adminportal.local.azurestack.external` y seleccione **+ Crear un recurso**, **Ofertas y planes** y, finalmente, **Oferta**.
 
-   ![Creación de una oferta en Azure Stack Hub](media/azure-stack-create-offer/offers.png)
+   ![Captura de pantalla que muestra cómo crear una oferta en Azure Stack Hub.](media/azure-stack-create-offer/offers.png)
 
 2. Aparece una interfaz de usuario con pestañas que permite definir el nombre de la oferta. También puede agregar nuevos planes base y planes complementarios. Lo más importante es que puede revisar los detalles de la oferta que crea, antes de decidirse a crearla.
 
    En la pestaña **Basics** (Básico), escriba un **nombre para mostrar** y un **nombre de recurso** y, después, en **Resource Group** (Grupo de recursos), seleccione **Create new** (Crear nuevo) o **Use existing** (Usar existente). El nombre para mostrar es el nombre descriptivo de la oferta. Este nombre descriptivo es la única información acerca de la oferta que verán los usuarios cuando se suscriban a una oferta en el portal de usuarios. Utilice un nombre intuitivo que ayude al usuario a entender lo que incluye la oferta. Solo el administrador puede ver el nombre del recurso. Es el nombre que usan los administradores para trabajar con la oferta como un recurso de Azure Resource Manager. En esta pestaña, también puede elegir si quiere que esta oferta sea pública o mantenerla privada. El valor predeterminado es privada. Puede [cambiar el estado público o privado de la oferta](#change-the-state-of-an-offer) en cualquier momento.
 
-   ![Nueva oferta de Azure Stack Hub](media/azure-stack-create-offer/new-offer.png)
+   ![Captura de pantalla que muestra dónde agregar información básica sobre la nueva oferta en Azure Stack Hub.](media/azure-stack-create-offer/new-offer.png)
   
 3. Seleccione la pestaña **Base plans** (Planes base) o haga clic en el botón **Next: Base plans >** (Siguiente: Planes base). Seleccione los planes que quiere incluir en la oferta.
 
-   ![Selección del plan que quiere incluir en la oferta de Azure Stack Hub](media/azure-stack-create-offer/select-plan.png)
+   ![Captura de pantalla que muestra cómo seleccionar un plan para incluirlo en la oferta de Azure Stack Hub.](media/azure-stack-create-offer/select-plan.png)
 
 4. En este momento puede crear un plan complementario para modificar el plan base, pero es un paso opcional. Tiene la oportunidad de crear un plan complementario en el siguiente artículo, [Planes complementarios de Azure Stack Hub](create-add-on-plan.md).
 
@@ -58,7 +58,7 @@ Hay dos formas de cambiar el estado de una oferta:
 
 1. En **Todos los recursos**, seleccione el nombre de la oferta. En la pantalla **Información general** de la oferta, seleccione **Cambiar estado**. Elija el estado que quiere utilizar (por ejemplo, **Público**).
 
-   ![Cambio del estado de la oferta de Azure Stack Hub](media/azure-stack-create-offer/change-state.png)
+   ![Captura de pantalla que muestra cómo cambiar el estado de la oferta de Azure Stack Hub.](media/azure-stack-create-offer/change-state.png)
 
 2. Seleccione **Offer settings** (Configuración de la oferta). Elija el estado que quiere utilizar (por ejemplo, **Público**) y, después, seleccione **Guardar**.
 
@@ -70,15 +70,15 @@ Hay dos formas de cambiar el estado de una oferta:
 
 1. Inicie sesión en el portal del administración de Azure Stack Hub `https://adminportal.local.azurestack.external` y seleccione **+ Crear un recurso**, **Ofertas + Planes de inquilinos** y, finalmente, **Oferta**.
 
-   ![Creación de una oferta en Azure Stack Hub](media/azure-stack-create-offer/image01.png)
+   ![Captura de pantalla que muestra cómo crear una oferta.](media/azure-stack-create-offer/image01.png)
   
 2. En **Nueva oferta**, escriba un **Nombre para mostrar** y un **Nombre de recurso** y, después, en **Grupo de recursos** seleccione **Crear nuevo** o **Usar existente**. El nombre para mostrar es el nombre descriptivo de la oferta. Este nombre descriptivo es la única información acerca de la oferta que verán los usuarios cuando se suscriban a ella. Utilice un nombre intuitivo que ayude al usuario a entender lo que incluye la oferta. Solo el administrador puede ver el nombre del recurso. Es el nombre que usan los administradores para trabajar con la oferta como un recurso de Azure Resource Manager.
 
-   ![Nueva oferta de Azure Stack Hub](media/azure-stack-create-offer/image01a.png)
+   ![Captura de pantalla que muestra cómo crear un recurso para la nueva oferta en Azure Stack Hub.](media/azure-stack-create-offer/image01a.png)
   
 3. Seleccione **Planes base** para abrir el **plan**. Seleccione los planes que desea incluir en la oferta y, después, elija **Seleccionar**. Para crear la oferta, seleccione **Crear**.
 
-   ![Selección del plan que quiere incluir en la oferta de Azure Stack Hub](media/azure-stack-create-offer/image02.png)
+   ![Captura de pantalla que muestra cómo seleccionar el plan para incluirlo en la oferta de Azure Stack Hub.](media/azure-stack-create-offer/image02.png)
   
 4. Después de crear la oferta puede cambiar su estado. Las ofertas deben hacerse **públicas** para que los usuarios tengan la vista completa de ellas cuando se suscriban. Las ofertas pueden ser:
 
@@ -91,7 +91,7 @@ Hay dos formas de cambiar el estado de una oferta:
 
    En la pantalla de información general de la oferta, seleccione **Estado de accesibilidad**. Elija el estado que desea utilizar (por ejemplo, **Público**) y, después, seleccione **Guardar**.
 
-     ![Cambio del estado de la oferta de Azure Stack Hub](media/azure-stack-create-offer/change-stage-1807.png)
+     ![Captura de pantalla que muestra dónde cambiar el estado de la oferta de Azure Stack Hub.](media/azure-stack-create-offer/change-stage-1807.png)
 
      Como alternativa, seleccione **Cambiar estado** y, a continuación, elija un estado.
 

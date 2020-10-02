@@ -6,19 +6,39 @@ ms.author: v-kedow
 ms.topic: conceptual
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 09/08/2020
-ms.openlocfilehash: 9913b1976152f78078d78d0e807bff3348c3276f
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.date: 09/17/2020
+ms.openlocfilehash: 57aa49c075afad4f6ccb37802293424d8e0e309f
+ms.sourcegitcommit: c45f92186edf62b95b38d1020e0851dd54bc6536
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90573469"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90765397"
 ---
 # <a name="release-notes-for-azure-stack-hci-public-preview"></a>Notas de la versión de Azure Stack HCl, versión preliminar pública
 
 > Se aplica a: Azure Stack HCI, versión 20H2
 
 En este artículo se describe el contenido de los paquetes de actualización de la versión preliminar pública de Azure Stack Hub.
+
+## <a name="september-17-2020-preview-update-kb4577629"></a>Actualización de la versión preliminar del 17 de septiembre de 2020 (KB4577629)
+
+Esta actualización incluye mejoras y correcciones para la versión más reciente de Azure Stack HCI.
+
+### <a name="improvements-and-fixes"></a>Mejoras y correcciones
+Esta actualización no relacionada con la seguridad incluye mejoras de calidad. Los cambios principales son:
+- Se ha solucionado un problema en el que el tráfico del equilibrador de carga del software que pasaba por el multiplexor se redirigía a un host diferente lo cual producía un problema de conexión de la aplicación.
+
+### <a name="known-issues-in-this-update"></a>Problemas conocidos de esta actualización
+A fecha de hoy, Microsoft no conoce ningún problema con esta actualización.
+
+### <a name="how-to-get-this-update"></a>Obtención de esta actualización
+La actualización de seguridad del 17 de septiembre de 2020 (KB4577629) para la [versión preliminar de Azure Stack HCI](https://azure.microsoft.com/products/azure-stack/hci/hci-download/) se proporciona a través de Windows Update. Para instalarla en el clúster de Azure Stack HCI, consulte [Actualización de clústeres de Azure Stack HCI](manage/update-cluster.md).
+
+### <a name="file-information"></a>información de archivo
+Para obtener una lista de los archivos que se proporcionan en esta actualización (Sistema operativo versión 17784.1259), descargue la [información de archivo de la actualización acumulativa 4577629](https://download.microsoft.com/download/9/1/a/91addcbb-2b36-408c-ab88-736de42edb98/4577629.csv).
+
+   > [!NOTE]
+   > En algunos archivos se incluye por error el estado "No aplicable" en la columna "Versión del archivo" del archivo CSV. Esto podría provocar falsos positivos o falsos negativos al usar herramientas de detección de análisis de terceros para validar la compilación.
 
 ## <a name="september-8-2020-security-update-kb4577470"></a>Actualización de seguridad del 8 de septiembre de 2020 (KB4577470)
 

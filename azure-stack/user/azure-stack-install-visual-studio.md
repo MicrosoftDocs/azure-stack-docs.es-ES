@@ -7,12 +7,12 @@ ms.date: 06/11/2020
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 01/04/2020
-ms.openlocfilehash: c9d8ad6293735db1a65d6f24e7a53a869535af6d
-ms.sourcegitcommit: dd140b3a2ac8e558eae9f5f422711d2ba560da16
+ms.openlocfilehash: 686a2b1a976df23e91cd38df61267b95008f993a
+ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84744936"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91107104"
 ---
 # <a name="install-visual-studio-and-connect-to-azure-stack-hub"></a>Instalación de Visual Studio y conexión a Azure Stack Hub
 
@@ -42,7 +42,7 @@ Puede usar Visual Studio para escribir e implementar [plantillas](azure-stack-ar
 
 3. Seleccione **Administrar cuentas** y, a continuación, en el nuevo panel, inicie sesión con sus credenciales de Azure Active Directory (Azure AD).  
 
-    ![Captura de pantalla de Cloud Explorer después de iniciar sesión en Azure Stack Hub y conectarse](./media/azure-stack-install-visual-studio/image2.png)
+    ![Captura de pantalla de Cloud Explorer después de iniciar sesión en Azure Stack Hub y conectarse.](./media/azure-stack-install-visual-studio/image2.png)
 
 Después de iniciar sesión, puede [implementar plantillas](azure-stack-deploy-template-visual-studio.md) o examinar los tipos y los grupos de recursos disponibles para crear sus propias plantillas.  
 
@@ -62,7 +62,7 @@ Después de iniciar sesión, puede [implementar plantillas](azure-stack-deploy-t
 
     Visual Studio llama a Azure Resource Manager y descubre los puntos de conexión, incluido el punto de conexión de autenticación para Azure Directory Federated Services (AD FS).
 
-    ![Captura de pantalla de Cloud Explorer después de iniciar sesión en Azure Stack Hub y conectarse](./media/azure-stack-install-visual-studio/image6.png)
+    ![Captura de pantalla que muestra los puntos de conexión de Azure Directory Federated Services.](./media/azure-stack-install-visual-studio/image6.png)
 
 6. Seleccione **Cloud Explorer** en el menú **Ver**.
 

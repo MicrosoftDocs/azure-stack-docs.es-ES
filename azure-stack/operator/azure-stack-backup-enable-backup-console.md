@@ -7,12 +7,12 @@ ms.date: 08/21/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 08/21/2019
-ms.openlocfilehash: d071b9457388d4f282fad0f0532ce71dc9304f13
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.openlocfilehash: ba942571d804ec221ee9c25d1b78ddfa1e3a52de
+ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90573197"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91106634"
 ---
 # <a name="enable-backup-for-azure-stack-hub-from-the-administrator-portal"></a>Habilitación de la copia de seguridad de Azure Stack Hub desde el portal del administrador
 
@@ -77,7 +77,7 @@ Los administradores y los usuarios son los responsables de realizar copias de se
 ## <a name="start-backup"></a>Inicio de la copia de seguridad
 Para iniciar una copia de seguridad, haga clic en **Backup now** (Hacer copia de seguridad ahora) y comience la copia de seguridad a petición. Una copia de seguridad a petición no modificará la hora de la siguiente copia de seguridad programada. Una vez completada la tarea, puede confirmar la configuración en **Información esencial**:
 
-![Azure Stack Hub: copia de seguridad a petición](media/azure-stack-backup/scheduled-backup.png)
+![Captura de pantalla que muestra cómo iniciar una copia de seguridad a petición.](media/azure-stack-backup/scheduled-backup.png)
 
 También puede ejecutar el cmdlet de PowerShell **Start-AzsBackup** en el equipo de administración de Azure Stack Hub. Para más información, consulte [Copia de seguridad de Azure Stack Hub](azure-stack-backup-back-up-azure-stack.md).
 

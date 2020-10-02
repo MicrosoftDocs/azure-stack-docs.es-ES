@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 09/30/2019
-ms.openlocfilehash: 12dc8715b90aa257953b5dc13bf671c9264aea8d
-ms.sourcegitcommit: cad40ae88212cc72f40c84a1c88143ea0abb65ef
+ms.openlocfilehash: a145a95207fb923d736582f79a315ae625d7223b
+ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84111163"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91107014"
 ---
 # <a name="offer-a-network-solution-in-azure-stack-hub-with-fortinet-fortigate"></a>Oferta de una solución de red en Azure Stack Hub con FortiGate de Fortinet
 
@@ -30,7 +30,7 @@ Para más información sobre FortiGate en Azure Marketplace, consulte el artícu
     - FortiGate-VM de Fortinet para BYOL de Azure
     - FortiGate NGFW: implementación de una sola máquina virtual (BYOL)
 
-    ![FortiGate de Fortinet para Azure Stack Hub](./media/azure-stack-network-solutions-enable/azure-stack-marketplace-FortiGate-fortinet.png)
+    ![Captura de pantalla que muestra los elementos descargados disponibles.](./media/azure-stack-network-solutions-enable/azure-stack-marketplace-FortiGate-fortinet.png)
 
 4. Espere hasta que los elementos del Marketplace tengan el estado **Descargado**. Estos elementos puede tardar varios minutos en descargarse.
 

@@ -3,15 +3,15 @@ title: Creación de un clúster de Azure Stack HCI mediante Windows Admin Center
 description: Aprenda a administrar un clúster de servidor para Azure Stack HCI mediante Windows Admin Center.
 author: v-dasis
 ms.topic: how-to
-ms.date: 08/11/2020
+ms.date: 09/21/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: 75c4da1ab4e03bae4f9beb2a5d1c170933c6b985
-ms.sourcegitcommit: 673d9b7cf723bc8ef6c04aee5017f539a815da51
+ms.openlocfilehash: b7c6c76353ff29f01eca458ca563517807ca0cd3
+ms.sourcegitcommit: 9a3397f703ff9dd7d539372bd8e5fdbe6d6a0725
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88110540"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "91019555"
 ---
 # <a name="create-an-azure-stack-hci-cluster-using-windows-admin-center"></a>Creación de un clúster de Azure Stack HCI mediante Windows Admin Center
 
@@ -66,7 +66,7 @@ Empecemos:
 
 1. Cuando haya terminado, haga clic en **Crear**. Ahora verá el Asistente para crear clúster, como se muestra a continuación.
 
-    :::image type="content" source="media/cluster/create-cluster-wizard.png" alt-text="Asistente para crear clúster: Introducción" lightbox="media/cluster/create-cluster-wizard.png":::
+    :::image type="content" source="media/cluster/create-cluster-wizard.png" alt-text="Asistente para crear clúster: Opción de HCI" lightbox="media/cluster/create-cluster-wizard.png":::
 
 ## <a name="step-1-get-started"></a>Paso 1: Primeros pasos
 
@@ -96,7 +96,10 @@ El paso 1 del asistente le guía por los pasos necesarios para asegurarse de que
 
 ## <a name="step-2-networking"></a>Paso 2: Redes
 
-El paso 2 del asistente le guía a través de la configuración de varios elementos de red para el clúster. Empecemos:
+El paso 2 del asistente le guía a través de la configuración de conmutadores virtuales y otros elementos de red para el clúster.
+
+> [!NOTE]
+> Si surgen errores durante los pasos de conexión en redes o en los pasos relacionados con conmutadores virtuales, pruebe a hacer clic en **Apply and test** (Aplicar y probar) de nuevo.
 
 1. Seleccione **Siguiente: Redes**.
 1. En **Verify the network adapters** (Comprobar los adaptadores de red), espere a que aparezcan las casillas verdes junto a cada adaptador y seleccione **Siguiente**.
@@ -105,9 +108,9 @@ El paso 2 del asistente le guía a través de la configuración de varios elemen
 
     Los adaptadores de administración tienen dos opciones de configuración:
 
-    - Adaptador físico único que se usa para la administración. Solo se admite DHCP o la asignación de direcciones IP estáticas.
+    - **Un adaptador de red físico para la administración**. Para esta opción, se admite DHCP o la asignación de direcciones IP estáticas.
 
-    - Se usan y agrupan dos adaptadores físicos. Si se agrupa un par de adaptadores, solo se admite la asignación de direcciones IP estáticas. Si los adaptadores seleccionados usan direccionamiento de DHCP (para uno de ellos o para ambos), la dirección IP de DHCP se convertirá en direcciones IP estáticas antes de la creación del conmutador virtual.
+    - **Dos adaptadores de red físicos en equipo para la administración**. Si se agrupa un par de adaptadores, solo se admite la asignación de direcciones IP estáticas. Si los adaptadores seleccionados usan direccionamiento de DHCP (para uno de ellos o para ambos), la dirección IP de DHCP se convertirá en direcciones IP estáticas antes de la creación del conmutador virtual.
 
     Mediante el uso de adaptadores agrupados, tiene una única conexión a varios conmutadores, pero solo usa una dirección IP única. El equilibrio de carga está disponible y la tolerancia a errores es instantánea, en lugar de esperar a que se actualicen los registros DNS.
 
@@ -129,10 +132,13 @@ El paso 2 del asistente le guía a través de la configuración de varios elemen
 
 1. En **Conmutador virtual**, seleccione una de las siguientes opciones según corresponda. En función del número de adaptadores presente, es posible que no se muestren todas las opciones:
 
-    - Crear un conmutador virtual para usarlo con Hyper-V y el almacenamiento
-    - Crear un conmutador virtual para usarlo solo con Hyper-V
-    - Crear dos conmutadores virtuales: uno para Hyper-V y otro para usarlo con el almacenamiento
-    - No crear ningún conmutador virtual
+    - **Omitir la creación del conmutador virtual**
+    - **Crear un conmutador virtual para usarlo para el almacenamiento y el proceso**
+    - **Crear un conmutador virtual para usarlo solo para el proceso**
+    - **Crear dos conmutadores virtuales**
+
+    > [!NOTE]
+    > Si va a implementar Controladora de red para SDN (en **Paso 5: SDN** del asistente), necesitará un conmutador virtual. Por lo tanto, si decide no crear un conmutador virtual aquí y no crea uno fuera del asistente, el asistente no implementará Controladora de red.
 
     En la tabla siguiente se muestra qué configuraciones de conmutador virtual se admiten y están habilitadas para varias configuraciones de adaptador de red:
 
@@ -143,9 +149,6 @@ El paso 2 del asistente le guía a través de la configuración de varios elemen
     | dos conmutadores | no admitido | enabled | enabled |
 
 1. Cambie el nombre de un conmutador y otras opciones de configuración según sea necesario y, a continuación, haga clic en **Apply and test** (Aplicar y probar). La columna **Status** (Estado) debe mostrar **Passed** (Superado) para cada servidor una vez creados los conmutadores virtuales.
-
-> [!NOTE]
-> Si surgen errores durante los pasos de conexión en redes o en los pasos relacionados con conmutadores virtuales, pruebe a hacer clic en **Apply and test** (Aplicar y probar) de nuevo. Es posible que las comprobaciones de conectividad de red no se realicen de forma intermitente, lo que puede provocar errores de ping del servidor en el intento inicial.
 
 ## <a name="step-3-clustering"></a>Paso 3: Agrupación en clústeres
 
@@ -170,7 +173,6 @@ En el paso 3 del asistente, se asegura de que todo lo anterior se ha configurado
 
 El paso 4 del Asistente le guía a lo largo de la configuración de Espacios de almacenamiento directo para el clúster.
 
-
 1. Seleccione **Siguiente: Storage** (Almacenamiento).
 1. En **Verify drives** (Comprobar las unidades), haga clic en el icono **>** situado junto a cada servidor para comprobar que los discos funcionan y están conectados y, a continuación, haga clic en **Next** (Siguiente).
 1. En **Clean drives** (Limpiar unidades), haga clic en **Clean drives** (Limpiar unidades) para vaciar las unidades de datos. Cuando esté listo, haga clic en **Next** (Siguiente).
@@ -185,7 +187,42 @@ Una vez creado el clúster, el nombre del clúster puede tardar unos instantes e
 
 Si la resolución del clúster no se realiza correctamente después de un tiempo, en la mayoría de los casos, puede sustituir el nombre del servidor del clúster, en lugar del nombre del clúster.
 
-## <a name="after-you-run-the-wizard"></a>Después de ejecutar el asistente
+## <a name="step-5-sdn-optional"></a>Paso 5: SDN (opcional)
+
+El paso 5 del asistente le guiará a través de la configuración de Controladora de red en el clúster para redes definidas por software (SDN). Una vez configurado el rol Controladora de red, se puede usar para configurar otros componentes de SDN, como el equilibrador de carga del software y la puerta de enlace de RAS.
+
+> [!NOTE]
+> Este paso del asistente es opcional.
+
+:::image type="content" source="media/cluster/create-cluster-network-controller.png" alt-text="Asistente para crear clúster: Opción de HCI" lightbox="media/cluster/create-cluster-network-controller.png":::
+
+1. Seleccione **Siguiente: SDN**.
+1. En **Host**, escriba un nombre para Controladora de red.
+1. Especifique una ruta de acceso al archivo VHD de Azure Stack HCI. Use **Examinar** para encontrarlo más rápido.
+1. Especifique el número de máquinas virtuales que se dedicarán a Controladora de red. Se recomiendan entre tres y cinco máquinas virtuales para lograr una alta disponibilidad.
+1. En **Red**, escriba el identificador de VLAN.
+1. En **VM network addressing** (Direcciones de red de VM), seleccione **DHCP** o **Estáticas**.
+1. Si seleccionó **DHCP**, escriba el nombre y la dirección IP de las máquinas virtuales de Controladora de red.
+1. Si seleccionó **Estáticas**, haga lo siguiente:
+    1. Especifique un prefijo de subred.
+    1. Especifique la puerta de enlace predeterminada.
+    1. Especifique uno o varios servidores DNS. Haga clic en **Agregar** para agregar servidores DNS adicionales.
+1. En **Credenciales**, escriba el nombre de usuario y la contraseña usados para unir las máquinas virtuales de Controladora de red al dominio del clúster.
+1. Escriba la contraseña administrativa local para estas máquinas virtuales.
+1. En **Avanzado**, escriba la ruta de acceso a las máquinas virtuales.
+1. Escriba los valores de **inicio del grupo de direcciones MAC** y **final del grupo de direcciones MAC**.
+1. Cuando termine, haga clic en **Siguiente**.
+1. Espere hasta que el asistente complete su trabajo. Permanezca en esta página hasta que se completen todas las tareas en curso. Haga clic en **Finalizar**.
+ 
+Si se produce un error en la implementación de Controladora de red, haga lo siguiente antes de volver a intentarlo:
+
+- Detenga y elimine todas las máquinas virtuales de Controladora de red que haya creado el asistente.  
+
+- Limpie los puntos de montaje de todos los discos duros virtuales que haya creado el asistente.  
+
+- Asegúrese de tener al menos 50-100 GB de espacio libre en los hosts de Hyper-V.  
+
+## <a name="after-you-complete-the-wizard"></a>Después de finalizar el asistente
 
 Una vez completado el asistente, todavía hay algunas tareas importantes que debe completar.
 
@@ -208,4 +245,5 @@ Estas son las otras tareas que tendrá que hacer:
 - Registrar el clúster con Azure. Consulte [Administración del registro de Azure](../manage/manage-azure-registration.md).
 - Realice una validación final del clúster. Consulte [Validación de un clúster de Azure Stack HCI](validate.md)
 - Aprovisionar las VM. Consulte [Administración de máquinas virtuales en Azure Stack HCI mediante Windows Admin Center](../manage/vm.md).
-- También puede crear un clúster mediante PowerShell. Consulte [Creación de un clúster de Azure Stack HCI mediante PowerShell](create-cluster-powershell.md).
+- También puede implementar un clúster mediante PowerShell. Consulte [Creación de un clúster de Azure Stack HCI mediante PowerShell](create-cluster-powershell.md).
+- También puede implementar Controladora de red mediante PowerShell. Consulte [Implementación de Controladora de red mediante PowerShell](network-controller-powershell.md).

@@ -9,12 +9,12 @@ ms.author: inhenkel
 ms.lastreviewed: 5/5/2020
 ms.reviewer: jiaha
 ms.custom: contperfq4
-ms.openlocfilehash: 86809f68e488f077b0a8125d92db325b40dc5452
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: a60de3bf059522b980d7a3e74295736118334773
+ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86487826"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91106441"
 ---
 # <a name="azure-stack-hub-storage-infrastructure-overview"></a>Introducción a la infraestructura de almacenamiento de Azure Stack Hub
 
@@ -50,12 +50,12 @@ Las unidades se podrían agrupar en una implementación "all-flash" o en una "h�
 
 Todas las implementaciones all-flash tienen el objetivo de maximizar el rendimiento del almacenamiento y no incluyen unidades de disco duro (HDD) rotacionales.
 
-![Infraestructura de almacenamiento de Azure Stack Hub](media/azure-stack-storage-infrastructure-overview/image1.png)
+![Diagrama que muestra un grupo de implementaciones all-flash.](media/azure-stack-storage-infrastructure-overview/image1.png)
 
 
 Las implementaciones híbridas tienen como objetivo equilibrar el rendimiento y la capacidad o maximizar la capacidad, e incluyen unidades de disco duro (HDD) rotacionales.
 
-![Infraestructura de almacenamiento de Azure Stack Hub](media/azure-stack-storage-infrastructure-overview/image2.png)
+![Diagrama que muestra un grupo de implementaciones híbridas.](media/azure-stack-storage-infrastructure-overview/image2.png)
 
 ### <a name="caching-behavior"></a>Comportamiento del almacenamiento en caché
 
@@ -65,7 +65,7 @@ Las lecturas no se almacenan en caché. Las lecturas no se almacenan en la cach�
 
 Al almacenar en caché las unidades de disco duro (por ejemplo, los discos SSD para las unidades HDD), tanto las lecturas como las escrituras se almacenan en la caché para proporcionar una latencia similar a la de la memoria flash (a menudo, 10 veces mejor) para ambas.
 
-![Infraestructura de almacenamiento de Azure Stack Hub](media/azure-stack-storage-infrastructure-overview/image3.svg)
+![Diagrama que muestra el comportamiento de almacenamiento en caché de Azure Stack Hub.](media/azure-stack-storage-infrastructure-overview/image3.svg)
 
 Para la configuración de almacenamiento disponible, puede comprobar los asociados OEM de Azure Stack Hub (https://azure.microsoft.com/overview/azure-stack/partners/) ) para especificaciones detalladas.
 
@@ -76,7 +76,7 @@ Para la configuración de almacenamiento disponible, puede comprobar los asociad
 
 El *servicio de almacenamiento* crea particiones del almacenamiento disponible en volúmenes separados que se asignan para almacenar los datos del sistema y del inquilino. Los volúmenes combinan las unidades del bloque de almacenamiento para proporcionar las ventajas de tolerancia a errores, escalabilidad y rendimiento de Espacios de almacenamiento directo.
 
-![Infraestructura de almacenamiento de Azure Stack Hub](media/azure-stack-storage-infrastructure-overview/image4.svg)
+![Diagrama que muestra las particiones del servicio de almacenamiento de Azure Stack Hub.](media/azure-stack-storage-infrastructure-overview/image4.svg)
 
 ### <a name="volume-types"></a>Tipos de volúmenes
 
@@ -111,7 +111,7 @@ La implementación de Azure Stack Hub usa la creación de reflejo tridireccional
 
 Se escriben tres copias de datos de inquilino en distintos servidores, donde se colocan en la memoria caché:
 
-![Infraestructura de almacenamiento de Azure Stack Hub](media/azure-stack-storage-infrastructure-overview/image5.png)
+![Diagrama que muestra cómo se escriben tres copias de datos de inquilino en distintos servidores.](media/azure-stack-storage-infrastructure-overview/image5.png)
 
 ## <a name="next-step"></a>Paso siguiente
 

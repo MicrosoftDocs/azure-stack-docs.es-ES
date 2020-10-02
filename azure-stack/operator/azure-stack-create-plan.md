@@ -7,12 +7,12 @@ ms.date: 06/11/2019
 ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 06/11/2019
-ms.openlocfilehash: c762f4c8c75fbfd6755c25877c52fbb68c88f7ca
-ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
+ms.openlocfilehash: 12de836d74382f26efd49ec8873aaa99a919ecd5
+ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84631120"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91107088"
 ---
 # <a name="create-a-plan-in-azure-stack-hub"></a>Creación de un plan en Azure Stack Hub
 
@@ -25,37 +25,37 @@ Los [planes de Azure Stack Hub](azure-stack-overview.md) son agrupaciones de uno
 
 2. Para crear un plan y una oferta a la que los usuarios puedan suscribirse, seleccione **+ Crear un recurso**, **Ofertas y planes** y, finalmente, **Plan**.
   
-   ![Selección de un plan en el portal del administrador de Azure Stack Hub](media/azure-stack-create-plan/select-plan.png)
+   ![Captura de pantalla que muestra cómo seleccionar un plan en el portal de administración de Azure Stack Hub.](media/azure-stack-create-plan/select-plan.png)
 
 3. Aparece una interfaz de usuario con pestañas que le permite especificar el nombre del plan, agregar servicios y definir cuotas para cada uno de los servicios seleccionados. Lo más importante es que puede revisar los detalles de la oferta que crea, antes de decidirse a crearla.
 
    En la pestaña **Conceptos básicos** de la ventana **Nuevo plan**, escriba un **Nombre para mostrar** y un **Nombre de recurso**. El nombre para mostrar es el nombre descriptivo del plan que ven los operadores. En el portal de administrador, los detalles del plan solo son visibles para los operadores.
 
-   ![Especificación de los detalles de un nuevo plan en Azure Stack Hub](media/azure-stack-create-plan/plan-name.png)
+   ![Captura de pantalla que muestra cómo especificar los detalles del nuevo plan en Azure Stack Hub.](media/azure-stack-create-plan/plan-name.png)
 
 4. Cree un nuevo **Grupo de recursos** o seleccione uno existente, como contenedor para el plan.
 
-   ![Especificación del grupo de recursos de un nuevo plan en Azure Stack Hub](media/azure-stack-create-plan/resource-group.png)
+   ![Captura de pantalla que muestra cómo especificar el grupo de recursos del nuevo plan en Azure Stack Hub.](media/azure-stack-create-plan/resource-group.png)
 
 5. Seleccione la pestaña **Services** (Servicios) o haga clic en el botón **Next: Services >** (Siguiente: Servicios) y, a continuación, seleccione la casilla **Microsoft.Compute**, **Microsoft.Network** y **Microsoft.Storage**.
   
-   ![Selección de los servicios de un nuevo plan en Azure Stack Hub](media/azure-stack-create-plan/services.png)
+   ![Captura de pantalla que muestra cómo seleccionar los servicios del nuevo plan en Azure Stack Hub.](media/azure-stack-create-plan/services.png)
 
 6. Seleccione la pestaña **Quotas** (Cuotas) o haga clic en el botón **Next: Quotas >** (Siguiente: Cuotas). Junto a **Microsoft.Storage**, elija la cuota predeterminada del menú desplegable, o bien seleccione **Crear nueva** para crear una cuota personalizada.
   
-   ![Especificación de las cuotas de un nuevo plan en Azure Stack Hub](media/azure-stack-create-plan/quotas.png)
+   ![Captura de pantalla que muestra cómo especificar las cuotas del nuevo plan en Azure Stack Hub.](media/azure-stack-create-plan/quotas.png)
 
 7. Si va a crear una nueva cuota, escriba un **Nombre** para la cuota y, a continuación, especifique los valores de cuota. Seleccione **Aceptar** para crear la cuota.
 
-   ![Creación de una nueva cuota para un nuevo plan en Azure Stack Hub](media/azure-stack-create-plan/new-quota.png)
+   ![Captura de pantalla que muestra cómo crear una cuota para el nuevo plan en Azure Stack Hub.](media/azure-stack-create-plan/new-quota.png)
 
 8. Repita los pasos 6 y 7 para crear y asignar cuotas de **Microsoft.Network** y **Microsoft.Compute**. Cuando los tres servicios tienen cuotas asignadas, son similares a las del ejemplo siguiente.
 
-   ![Asignaciones de cuota realizadas para un nuevo plan en Azure Stack Hub](media/azure-stack-create-plan/all-quotas-assigned.png)
+   ![Captura de pantalla que muestra cómo completar las asignaciones de cuotas del nuevo plan en Azure Stack Hub.](media/azure-stack-create-plan/all-quotas-assigned.png)
 
 9. Seleccione **Revisar y crear** para revisar el plan. Revise todos los valores y las cuotas para asegurarse de que son correctos. La interfaz le permite expandir las cuotas de los planes elegidos, de una en una, para ver los detalles de cada cuota en un plan. También puede volver atrás para realizar las modificaciones necesarias.
 
-   ![Creación del plan en Azure Stack Hub](media/azure-stack-create-plan/create.png)
+   ![Captura de pantalla que muestra cómo crear el plan en Azure Stack Hub.](media/azure-stack-create-plan/create.png)
 
 10. Cuando esté listo, seleccione **Crear** para crear el plan.
 

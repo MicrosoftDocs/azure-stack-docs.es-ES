@@ -7,12 +7,12 @@ ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: ab90c0e9ef0f873fbed44932e9ffc418077fee4a
-ms.sourcegitcommit: 1ab1293b594fe8ffc00dc800c663cf1323dc41ce
+ms.openlocfilehash: 7f57336cdb15be2f55fdcd3756f5f3714f51b1af
+ms.sourcegitcommit: d197e8d3c3b69c20d09de4c43d8089ec0a993baf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939584"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90836512"
 ---
 # <a name="recover-from-catastrophic-data-loss"></a>Recuperación después de una pérdida de datos grave
 
@@ -24,7 +24,7 @@ En este escenario se aborda la recuperación de toda la instalación si se produ
 
 | Escenario                                                           | Pérdida de datos                            | Consideraciones                                                             |
 |--------------------------------------------------------------------|--------------------------------------|----------------------------------------------------------------------------|
-| Recuperación después de una pérdida de datos grave debido a un desastre o a un error en un producto. | Todos los datos de infraestructura, usuarios y aplicaciones. | Los datos y las aplicaciones de usuario se protegen por separado de los datos de la infraestructura. |
+| Recuperación después de una pérdida de datos grave debido a un desastre o a un error en un producto. | Todos los datos de infraestructura, usuarios y aplicaciones. | Se puede restaurar en un fabricante de equipos originales diferente.<br/> Se puede restaurar en una generación diferente de hardware.<br/> Se puede restaurar en un recuento diferente de nodos de unidad de escalado.<br/> Los datos y las aplicaciones de usuario se protegen por separado de los datos de la infraestructura. |
 
 ## <a name="workflows"></a>Workflows
 

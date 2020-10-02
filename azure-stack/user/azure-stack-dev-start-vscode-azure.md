@@ -3,16 +3,16 @@ title: Conexión a Azure Stack Hub mediante la extensión de la cuenta de Azure 
 description: Conectarse a Azure Stack Hub como desarrollador mediante la extensión de la cuenta de Azure en Visual Studio Code
 author: mattbriggs
 ms.topic: conceptual
-ms.date: 08/24/2020
+ms.date: 09/21/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: a3cd09d7138029ba578648e1599916fd71b42292
-ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
+ms.lastreviewed: 09/21/2020
+ms.openlocfilehash: bedb015cb799619933510745e5bc3292a722cf14
+ms.sourcegitcommit: 9a3397f703ff9dd7d539372bd8e5fdbe6d6a0725
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88920617"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "91019612"
 ---
 # <a name="connect-to-azure-stack-hub-using-azure-account-extension-in-visual-studio-code"></a>Conexión a Azure Stack Hub mediante la extensión de la cuenta de Azure en Visual Studio Code
 
@@ -81,7 +81,8 @@ VS Code es un editor ligero para compilar y depurar aplicaciones web y en la nub
         | `tenant-ID` | El valor de su [identificador de inquilino](../operator/azure-stack-identity-overview.md) de Azure Stack Hub. |
         | `activeDirectoryEndpointUrl` | Esta es la dirección URL de la propiedad loginEndpoint. |
         | `activeDirectoryResourceId` | Se trata de la dirección URL de la propiedad Audiences.
-        | `resourceManagerEndpointUrl` | Se trata de la dirección URL raíz de Azure Resource Manager para Azure Stack Hub. | 
+        | `resourceManagerEndpointUrl` | Se trata de la dirección URL raíz de Azure Resource Manager para Azure Stack Hub. |
+        | `validateAuthority` | Puede omitir este parámetro si usa Azure AD como administrador de identidades. Agregue el parámetro con el valor `false` si usa AD FS. |
 
     - Fragmento de código JSON:
 
@@ -91,6 +92,7 @@ VS Code es un editor ligero para compilar y depurar aplicaciones web y en la nub
           "activeDirectoryEndpointUrl": "Login endpoint",
           "activeDirectoryResourceId": "This is the URL from the audiences property.",
           "resourceManagerEndpointUrl": "Aure Resource Management Endpoint",
+          "validateAuthority" : false, 
       },
       "azure.cloud": "AzurePPE"
       ```
@@ -109,7 +111,7 @@ VS Code es un editor ligero para compilar y depurar aplicaciones web y en la nub
 | Azure: Sign In to Azure Cloud | Inicie sesión en su suscripción de Azure en una de las nubes soberanas. |
 | Azure: cierre de sesión del | Cierre la sesión de su suscripción a Azure. |
 | Azure: Selección de suscripciones | Elija el conjunto de suscripciones con el que quiere trabajar. La extensión solo muestra los recursos dentro de las suscripciones filtradas. |
-| Azure: Creación de una cuenta | Si no tiene ninguna cuenta de Azure, puede [registrarse](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-azure-account&mktingSource=vscode-azure-account) para conseguir una hoy mismo y recibir 200 USD en créditos gratis. |
+| Azure: Creación de una cuenta | Si no tiene ninguna cuenta de Azure, puede [](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-azure-account&mktingSource=vscode-azure-account)registrarse\$ para conseguir una hoy mismo y recibir 200 USD en créditos gratis. |
 | Azure: Open Bash in Cloud Shell | Abra un terminal nuevo ejecutando Bash en Cloud Shell. |
 | Azure: Open PowerShell in Cloud Shell | Abra un terminal nuevo ejecutando PowerShell en Cloud Shell. |
 | Azure: Upload to Cloud Shell | Cargue un archivo en su cuenta de almacenamiento de Cloud Shell. |

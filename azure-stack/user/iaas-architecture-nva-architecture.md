@@ -7,12 +7,12 @@ ms.date: 08/24/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: 6fdb1a5ff99b125b513bd4afc39570ee73c1c5b6
-ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
+ms.openlocfilehash: 31635f6ecfefc0c513fddec5ec00da1006b44f44
+ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88920413"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91106997"
 ---
 # <a name="deploy-highly-available-network-virtual-appliances-on-azure-stack-hub"></a>Implementación de aplicaciones virtuales de red de alta disponibilidad en Azure Stack Hub
 
@@ -40,7 +40,7 @@ En este artículo se supone que el usuario tiene un conocimiento básico de las 
 
 Una aplicación virtual de red se puede implementar en una red perimetral en muchas arquitecturas diferentes. Por ejemplo, en la siguiente ilustración se muestra el uso de una única aplicación virtual de red para la entrada.
 
-![Captura de pantalla de una descripción de publicación de redes sociales generada automáticamente](./media/iaas-architecture-nva-architecture/iaas-architecture-nva-architecture-image1.svg)
+![Captura de pantalla que muestra el uso de una única aplicación de red virtual para la entrada.](./media/iaas-architecture-nva-architecture/iaas-architecture-nva-architecture-image1.svg)
 
 En esta arquitectura, la aplicación de red virtual proporciona un límite de red segura, ya que comprueba todo el tráfico de red de entrada y salida y solo deja pasar aquel que cumple las reglas de seguridad de la red. El hecho de que todo el tráfico de la red deba pasar por la aplicación virtual de red significa que dicha aplicación es un único punto de error en la red. Así que, si se produce un error en la aplicación de red virtual, no habrá ninguna otra ruta para el tráfico de red ni ninguna subred back-end disponible.
 

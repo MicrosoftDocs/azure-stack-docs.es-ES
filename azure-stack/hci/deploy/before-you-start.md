@@ -6,13 +6,13 @@ ms.author: v-kedow
 ms.topic: how-to
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 09/03/2020
-ms.openlocfilehash: b780dad569f1f2bdb2488505ecb2e12b0aaf2b3f
-ms.sourcegitcommit: 4af79f4fa2598d57c81e994192c10f8c6be5a445
+ms.date: 09/23/2020
+ms.openlocfilehash: 64303a9d923bc001a67259cf48d4e55cb8429087
+ms.sourcegitcommit: 849be7ebd02a1e54e8d0ec59736c9917c67e309e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89742191"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91134719"
 ---
 # <a name="before-you-deploy-azure-stack-hci"></a>Antes de implementar Azure Stack HCI
 
@@ -48,7 +48,6 @@ Un clúster de Azure Stack HCI requiere una conexión de red confiable de baja l
 - Compruebe que, al menos, un adaptador de red está disponible y dedicado para la administración del clúster.
 - Compruebe que los conmutadores físicos de la red estén configurados para permitir el tráfico en cualquier VLAN que utilice.
 
-
 Hay varios tipos de comunicación entre los nodos de servidor:
 
 - Comunicación del clúster (combinaciones de nodos, actualizaciones de clúster, actualizaciones del registro)
@@ -62,6 +61,16 @@ Con Espacios de almacenamiento directo, se debe tener en cuenta el tráfico de r
 - Estado: supervisión y administración de objetos (nodos, unidades, tarjetas de red, servicio de clúster)
 
 En el caso de los clústeres extendidos, también hay tráfico adicional de réplica de almacenamiento que fluye entre los sitios. El tráfico de la capa de bus de almacenamiento (SBL) y el del volumen compartido de clúster (CSV) no se dirige entre sitios, solo entre los nodos de servidor dentro de cada sitio.
+
+### <a name="software-defined-networking-requirements"></a>Requisitos de redes definidas por software
+
+Cuando crea un clúster de Azure Stack HCI mediante Windows Admin Center tiene la opción de implementar Controladora de red para permitir las redes definidas por software. Si tiene previsto usar redes definidas por software en Azure Stack HCI:
+
+- Asegúrese de que los servidores host tengan al menos 50-100 GB de espacio disponible para crear las máquinas virtuales de Controladora de red.
+
+- Debe copiar un disco duro virtual del sistema operativo Azure Stack HCI en el primer nodo del clúster para crear las máquinas virtuales de Controladora de red. Puede preparar el disco duro virtual mediante [Sysprep](/windows-hardware/manufacture/desktop/sysprep-process-overview) o ejecutando el script [Convert-WindowsImage](https://gallery.technet.microsoft.com/scriptcenter/Convert-WindowsImageps1-0fe23a8f) para convertir un archivo .iso en un disco duro virtual.
+
+Para más información acerca de cómo preparar el uso de redes definidas por software en Azure Stack HCI, consulte [Planeamiento de una infraestructura de red definida por software](../concepts/plan-software-defined-networking-infrastructure.md) y [Planeamiento de la implementación de Controladora de red](../concepts/network-controller.md).
 
 ### <a name="domain-requirements"></a>Requisitos del dominio
 

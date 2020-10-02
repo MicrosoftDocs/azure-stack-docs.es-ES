@@ -9,12 +9,12 @@ ms.date: 12/09/2019
 ms.reviewer: jfggdl
 ms.lastreviewed: 12/09/2019
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: d92c8c8514020d3b33e236232aa07b95ade9f798
-ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
+ms.openlocfilehash: f7eb790506c5dbbb7d49fc469dd61d394fb1f0fc
+ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82848207"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91106852"
 ---
 # <a name="how-to-install-event-hubs-on-azure-stack-hub"></a>Cómo instalar Event Hubs en Azure Stack Hub
 
@@ -62,12 +62,12 @@ En un escenario sin conexión o con conexión parcial, descargue los paquetes en
    [![Paquetes descargados de administración de Marketplace](media/event-hubs-rp-install/2-marketplace-management-downloaded.png)](media/event-hubs-rp-install/2-marketplace-management-downloaded.png#lightbox)
  
 3. La página del paquete de instalación de Event Hubs muestra un banner azul en la parte superior. Seleccione el banner para iniciar la instalación de Event Hubs.
-   [![Event Hubs en administración de Marketplace: iniciar instalación](media/event-hubs-rp-install/3-marketplace-management-install-ready.png)](media/event-hubs-rp-install/3-marketplace-management-install-ready.png#lightbox)
+   [![Captura de pantalla que muestra cómo iniciar la instalación en los centros de eventos de administración de Marketplace.](media/event-hubs-rp-install/3-marketplace-management-install-ready.png)](media/event-hubs-rp-install/3-marketplace-management-install-ready.png#lightbox)
 
 ### <a name="install-prerequisites"></a>Requisitos previos de instalación
 
 1. A continuación, se le transferirá a la página de instalación. Seleccione **Install Prerequisites** (Instalar requisitos previos) para iniciar el proceso de instalación.
-   ![Event Hubs en administración de Marketplace: requisitos previos](media/event-hubs-rp-install/4-marketplace-management-install-prereqs-start.png)
+   ![Captura de pantalla que muestra cómo instalar los requisitos previos en los centros de eventos de administración de Marketplace.](media/event-hubs-rp-install/4-marketplace-management-install-prereqs-start.png)
  
 2. Espere hasta que la instalación de los requisitos previos sea correcta. Verá una marca de verificación verde junto a **Install prerequisites** (Instalar requisitos previos) antes de continuar con el paso siguiente.
 

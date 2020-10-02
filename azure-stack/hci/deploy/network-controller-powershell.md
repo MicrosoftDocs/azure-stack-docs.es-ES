@@ -3,21 +3,24 @@ title: Implementación de controladora de red con Windows PowerShell
 description: Aprenda a implementar Controladora de red con Windows PowerShell.
 author: v-dasis
 ms.topic: how-to
-ms.date: 08/17/2020
+ms.date: 09/22/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: 6405b774cf27e8c48b9200d401174eaa5e292584
-ms.sourcegitcommit: 65a115d1499b5fe16b6fe1c31cce43be21d05ef8
+ms.openlocfilehash: b9f86e715835ac52bbc34782e4f9eb41ca8b4851
+ms.sourcegitcommit: 9a3397f703ff9dd7d539372bd8e5fdbe6d6a0725
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88818324"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "91019578"
 ---
 # <a name="deploy-network-controller-using-windows-powershell"></a>Implementación de controladora de red con Windows PowerShell
 
 > Se aplica a Azure Stack HCI, versión 20H2; Windows Server 2019
 
 En este tema se proporcionan instrucciones sobre el uso de Windows PowerShell para implementar Controladora de red en una o varias máquinas virtuales que se ejecutan en un clúster de Azure Stack HCI. Controladora de red es un componente de redes definidas por software (SDN).
+
+>[!NOTE]
+>También puede implementar Controladora de red mediante el asistente de creación del clústeres de Windows Admin Center. Para más información, consulte [Creación de un clúster de Azure Stack HCI mediante Windows Admin Center](create-cluster.md).
 
 ## <a name="using-windows-powershell"></a>Uso de Windows PowerShell
 

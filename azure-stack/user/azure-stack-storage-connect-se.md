@@ -7,12 +7,12 @@ ms.date: 08/24/2020
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 440e48470a11de10ad9cae4d32a1449781cb2c84
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.openlocfilehash: 773d80909c167f328e6e3eb0868cb99c7d52ffd7
+ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90573860"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91107143"
 ---
 # <a name="connect-storage-explorer-to-an-azure-stack-hub-subscription-or-a-storage-account"></a>Conexión del Explorador de Storage a una suscripción de Azure Stack Hub o una cuenta de almacenamiento
 
@@ -97,7 +97,7 @@ Siga estos pasos para conectar el Explorador de Storage a una suscripción de Az
 1. Seleccione **Administrar cuentas**. El explorador enumera las suscripciones de Microsoft en las que ha iniciado sesión.
 2. Para conectarse a la suscripción de Azure Stack Hub, seleccione **Add an account** (Agregar una cuenta).
 
-    ![Agregar una cuenta (Explorador de Storage)](media/azure-stack-storage-connect-se/add-an-account.png)
+    ![Captura de pantalla que muestra cómo agregar una cuenta en Explorador de Storage.](media/azure-stack-storage-connect-se/add-an-account.png)
 
 3. Seleccione **Next** (Siguiente). En el cuadro de diálogo Conectar a Azure Storage, en **Entorno de Azure**, seleccione **Use Custom Environment** (Usar entorno personalizado) y luego haga clic en **Siguiente**.
 

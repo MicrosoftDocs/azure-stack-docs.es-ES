@@ -3,16 +3,16 @@ title: Problemas conocidos de Azure Stack Hub
 description: Obtenga información sobre los problemas conocidos de las versiones de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 09/04/2020
+ms.date: 09/18/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 08/13/2020
-ms.openlocfilehash: d7a9112955891a59e29bfe997888d3e444784494
-ms.sourcegitcommit: 01dcda15d88c8d44b4918e2f599daca462a8e3d9
+ms.openlocfilehash: d86149b041abd3737ed03696e2c041bbd24f0392
+ms.sourcegitcommit: d197e8d3c3b69c20d09de4c43d8089ec0a993baf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89493825"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90836495"
 ---
 # <a name="azure-stack-hub-known-issues"></a>Problemas conocidos de Azure Stack Hub
 
@@ -94,6 +94,12 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 - Repetición: Comunes
 
 ## <a name="compute"></a>Proceso
+
+### <a name="issues-deploying-virtual-machine-scale-set-with-standard_ds2_v2-size-using-the-portal"></a>Problemas de implementación del conjunto de escalado de máquinas virtuales con el tamaño Standard_DS2_v2 mediante el portal
+
+- Aplicable a: este problema se aplica a la versión 2005.
+- Causa: un error del portal hace que se produzca un error en la creación del conjunto de escalado de máquinas virtuales con el tamaño Standard_DS2_v2.
+- Corrección: use PowerShell o la CLI para implementar este tamaño de máquina virtual del conjunto de escalado de máquinas virtuales.
 
 ### <a name="issues-using-vm-extensions-in-ubuntu-server-2004"></a>Problemas con las extensiones de máquina virtual de Ubuntu Server 20.04
 
@@ -265,11 +271,11 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 
 ## <a name="compute"></a>Proceso
 
-### <a name="cannot-create-a-vmss-with-standard_ds2_v2-vm-size-on-portal"></a>No se puede crear una instancia de Virtual Machine Scale Sets con el tamaño de máquina virtual Standard_DS2_v2 en el portal
+### <a name="cannot-create-a-virtual-machine-scale-set-with-standard_ds2_v2-vm-size-on-portal"></a>No se puede crear un conjunto de escalado de máquinas virtuales con el tamaño de máquina virtual Standard_DS2_v2 en el portal
 
 - Aplicable a: este problema se aplica a la versión 2002.
-- Causa: hay un error del portal que impide la creación de una instancia de Virtual Machine Scale Sets con el tamaño de máquina virtual Standard_DS2_v2. Al crear una se producirá el error: "{"code":"DeploymentFailed","message":" se ha producido un error al menos en una operación de implementación de recursos. Enumere las operaciones de implementación para obtener más información. Consulte https://aka.ms/arm-debug para obtener detalles de uso.","details":[{"code":"BadRequest","message":"{\r\n \" error\": {\r\n \" code\": \" NetworkProfileValidationError\" ,\r\n \" message\": \" El tamaño de máquina virtual Standard_DS2_v2 no está en la lista de tamaños permitidos para que las redes aceleradas se habiliten en la máquina virtual en el índice 0 del conjunto de escalado de máquinas virtuales /subscriptions/x/resourceGroups/RGVMSS/providers/Microsoft.Compute/virtualMachineScaleSets/vmss. Tamaños permitidos: .\"\r\n }\r\n}"}]}"
-- Corrección: cree una instancia de Virtual Machine Scale Sets con PowerShell o una plantilla de Resource Manager.
+- Causa: hay un error del portal que impide la creación de un conjunto de escalado de máquinas virtuales con el tamaño de máquina virtual Standard_DS2_v2. Al crear una se producirá el error: "{"code":"DeploymentFailed","message":" se ha producido un error al menos en una operación de implementación de recursos. Enumere las operaciones de implementación para obtener más información. Consulte https://aka.ms/arm-debug para obtener detalles de uso.","details":[{"code":"BadRequest","message":"{\r\n \" error\": {\r\n \" code\": \" NetworkProfileValidationError\" ,\r\n \" message\": \" El tamaño de máquina virtual Standard_DS2_v2 no está en la lista de tamaños permitidos para que las redes aceleradas se habiliten en la máquina virtual en el índice 0 del conjunto de escalado de máquinas virtuales /subscriptions/x/resourceGroups/RGVMSS/providers/Microsoft.Compute/virtualMachineScaleSets/vmss. Tamaños permitidos: .\"\r\n }\r\n}"}]}"
+- Corrección: cree un conjunto de escalado de máquinas virtuales con PowerShell o con una plantilla de Azure Resource Manager.
 
 ### <a name="vm-overview-blade-does-not-show-correct-computer-name"></a>La hoja de información general de máquinas virtuales no muestra el nombre de equipo correcto
 

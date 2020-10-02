@@ -7,12 +7,12 @@ ms.date: 07/27/2020
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 01/18/2019
-ms.openlocfilehash: ecca2f76e15d23d904db018d82c86269504195f7
-ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
+ms.openlocfilehash: 7da3f2b488444e0868099cfe34e6ebfff56926ea
+ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87250918"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91107154"
 ---
 # <a name="create-vm-disk-storage-in-azure-stack-hub"></a>Creación del almacenamiento en disco de máquinas virtuales en Azure Stack Hub
 
@@ -65,15 +65,15 @@ Ponga cada disco no administrado que agregue en un contenedor independiente.
    ![Ejemplo: Panel de máquinas virtuales](media/azure-stack-manage-vm-disks/vm-dashboard.png)
 
 2. Seleccione una VM que se haya creado anteriormente.
-   ![Ejemplo: Selección de una máquina virtual en el panel](media/azure-stack-manage-vm-disks/select-a-vm.png)
+   ![Captura de pantalla que muestra una máquina virtual seleccionada.](media/azure-stack-manage-vm-disks/select-a-vm.png)
 
 3. En la VM, seleccione **Discos** y, después, **Agregar disco de datos**.
-   ![Ejemplo: Conexión de un nuevo disco a la máquina virtual](media/azure-stack-manage-vm-disks/Attach-disks.png)
+   ![Captura de pantalla que muestra cómo conectar un nuevo disco a la máquina virtual.](media/azure-stack-manage-vm-disks/Attach-disks.png)
 
 4. Para el disco de datos:
    * Escriba el **LUN**. El número de unidad lógica (LUN) tiene que ser un número válido.
    * Seleccione **Crear disco**.
-   ![Ejemplo: Conexión de un nuevo disco a la máquina virtual](media/azure-stack-manage-vm-disks/add-a-data-disk-create-disk.png)
+   ![Captura de pantalla que muestra cómo crear un disco de datos.](media/azure-stack-manage-vm-disks/add-a-data-disk-create-disk.png)
 
 5. En la hoja **Crear disco administrado**:
    * Escriba el **Nombre** del disco.
@@ -114,7 +114,7 @@ Para más información acerca de cómo trabajar con cuentas de almacenamiento en
 2. Seleccione el **Contenedor** en el que desea colocar el disco de datos. En la hoja **Contenedores**, puede crear un nuevo contenedor si así lo desea. A continuación, puede cambiar la ubicación del nuevo disco por la de su propio contenedor. Cuando use un contenedor independiente para cada disco, distribuya la colocación del disco de datos que mejora el rendimiento.
 3. Haga clic en **Seleccionar** para guardar la selección.
 
-    ![Ejemplo: Seleccionar un contenedor](media/azure-stack-manage-vm-disks/select-container.png)
+    ![Captura de pantalla que muestra cómo seleccionar un contenedor.](media/azure-stack-manage-vm-disks/select-container.png)
 
 ## <a name="attach-an-existing-data-disk-to-a-vm"></a>Incorporación de un disco de datos existente a una VM
 
@@ -127,7 +127,7 @@ Para más información acerca de cómo trabajar con cuentas de almacenamiento en
     ![Ejemplo: Carga de un archivo VHD](media/azure-stack-manage-vm-disks/upload-vhd.png)
 
 2. Una vez cargado el archivo .vhd, está listo para asociar el disco duro virtual a una VM. En el menú de la izquierda, haga clic en **Máquinas virtuales**.  
- ![Ejemplo: Selección de una máquina virtual en el panel](media/azure-stack-manage-vm-disks/vm-dashboard.png)
+ ![Captura de pantalla que muestra las máquinas virtuales seleccionadas.](media/azure-stack-manage-vm-disks/vm-dashboard.png)
 
 3. Seleccione la VM en la lista.
 
