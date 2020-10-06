@@ -98,32 +98,38 @@
           href: manage/use-azure-network-adapter.md
 - name: Conceptos
   items:
-    - name: Clústeres extendidos
-      href: concepts/stretched-clusters.md
-    - name: Facturación
-      href: concepts/billing.md
-    - name: Actualizaciones
-      href: concepts/updates.md
-    - name: Elección de unidades
-      href: concepts/choose-drives.md
-    - name: Consideraciones de simetría de unidad
-      href: concepts/drive-symmetry-considerations.md
-    - name: Planeamiento de volúmenes
-      href: concepts/plan-volumes.md
-    - name: Red definida por software
-      href: concepts/software-defined-networking.md
-    - name: Descripción de la caché de un bloque de almacenamiento
-      href: concepts/cache.md
-    - name: Tolerancia a errores y eficacia del almacenamiento
-      href: concepts/fault-tolerance.md
-    - name: Cuórum de clúster y bloque de almacenamiento
-      href: concepts/quorum.md
-    - name: Planificación de una infraestructura de SDN
-      href: concepts/plan-software-defined-networking-infrastructure.md
-    - name: Controladora de red
-      href: concepts/network-controller.md
-    - name: Consideraciones sobre la seguridad
-      href: concepts/security.md
+    - name: Almacenamiento y clústeres
+      items:
+        - name: Elección de unidades
+          href: concepts/choose-drives.md
+        - name: Consideraciones de simetría de unidad
+          href: concepts/drive-symmetry-considerations.md
+        - name: Planeamiento de volúmenes
+          href: concepts/plan-volumes.md
+        - name: Descripción de la caché de un bloque de almacenamiento
+          href: concepts/cache.md
+        - name: Tolerancia a errores y eficacia del almacenamiento
+          href: concepts/fault-tolerance.md
+        - name: Clústeres extendidos
+          href: concepts/stretched-clusters.md
+        - name: Cuórum de clúster y bloque de almacenamiento
+          href: concepts/quorum.md
+    - name: Redes
+      items:
+        - name: Red definida por software
+          href: concepts/software-defined-networking.md
+        - name: Planificación de una infraestructura de SDN
+          href: concepts/plan-software-defined-networking-infrastructure.md
+        - name: Planificación de una controladora de red
+          href: concepts/network-controller.md
+    - name: Mantenimiento y seguridad
+      items:
+        - name: Facturación
+          href: concepts/billing.md
+        - name: Actualizaciones
+          href: concepts/updates.md
+        - name: Consideraciones sobre la seguridad
+          href: concepts/security.md
 - name: Referencia
   items:
     - name: Comandos de PowerShell de Hyper-V
