@@ -469,14 +469,6 @@
               items:
                 - name: Información general
                   href: azure-stack-diagnostic-log-collection-overview.md
-                - name: Envío de registros de forma proactiva
-                  href: azure-stack-configure-automatic-diagnostic-log-collection.md
-                - name: Envío de registros
-                  items:
-                    - name: Uso del portal de administrador
-                      href: azure-stack-configure-on-demand-diagnostic-log-collection-portal.md
-                    - name: Uso de PowerShell
-                      href: azure-stack-configure-on-demand-diagnostic-log-collection-powershell.md
                 - name: Get-AzureStackLog (PEP)
                   href: azure-stack-get-azurestacklog.md
         - name: Validación de Azure Stack Hub
