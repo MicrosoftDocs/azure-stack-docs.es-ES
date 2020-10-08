@@ -4,16 +4,16 @@ titleSuffix: Azure Stack Hub
 description: Más información sobre las operaciones de mantenimiento de un proveedor de recursos de SQL en Azure Stack Hub.
 author: bryanla
 ms.topic: article
-ms.date: 10/02/2019
+ms.date: 9/22/2020
 ms.author: bryanla
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2020
-ms.openlocfilehash: 6fc476b1f373c8f21481b979d1eefcdbe356766b
-ms.sourcegitcommit: 08a421ab5792ab19cc06b849763be22f051e6d78
+ms.openlocfilehash: 0de06d7bf13919be95b3d97aa1113221f4378625
+ms.sourcegitcommit: 69cfff119ab425d0fbb71e38d1480d051fc91216
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89364837"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91572830"
 ---
 # <a name="sql-resource-provider-maintenance-operations"></a>Operaciones de mantenimiento del proveedor de recursos de SQL
 
@@ -130,7 +130,7 @@ Utilice el cmdlet Get-AzsDBAdapterLogs para recopilar todos los registros del pr
 
 Use uno de los métodos siguientes para actualizar el sistema operativo de la máquina virtual.
 
-- Instalación del paquete más reciente del proveedor de recursos mediante una imagen de Windows Server 2016 Core actualmente revisada.
+- Instale el paquete más reciente del proveedor de recursos mediante una imagen de máquina virtual actualmente revisada.
 - Instalar un paquete de Windows Update durante la instalación o actualización del proveedor de recursos.
 
 ## <a name="update-the-vm-windows-defender-definitions"></a>Actualización de las definiciones de Windows Defender de la VM

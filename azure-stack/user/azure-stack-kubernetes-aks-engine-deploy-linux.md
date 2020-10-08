@@ -3,16 +3,16 @@ title: Instalación del motor de AKS en Linux para Azure Stack Hub
 description: Aprenda a usar una máquina Linux en Azure Stack Hub para hospedar el motor de AKS con el fin de implementar y administrar un clúster de Kubernetes.
 author: mattbriggs
 ms.topic: article
-ms.date: 09/16/2020
+ms.date: 10/1/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 09/16/2020
-ms.openlocfilehash: 49855cbe926dc29b20c3309e4fc3a084ee5a5e70
-ms.sourcegitcommit: 719569bb9e3f9924494a9229b4f2d211ae3f4f74
+ms.lastreviewed: 10/1/2020
+ms.openlocfilehash: efb4323bd6544a33d70a01f301aabb29c5d2a915
+ms.sourcegitcommit: 09572e1442c96a5a1c52fac8ee6b0395e42ab77d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717977"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91625896"
 ---
 # <a name="install-the-aks-engine-on-linux-in-azure-stack-hub"></a>Instalación del motor de AKS en Linux para Azure Stack Hub
 
@@ -39,7 +39,7 @@ Puede instalar la máquina virtual cliente para administrar el clúster de Kuber
     ```bash  
         curl -o get-akse.sh https://raw.githubusercontent.com/Azure/aks-engine/master/scripts/get-akse.sh
         chmod 700 get-akse.sh
-        ./get-akse.sh --version 0.55.4
+        ./get-akse.sh --version v0.55.4
     ```
 
     > [!NOTE]  

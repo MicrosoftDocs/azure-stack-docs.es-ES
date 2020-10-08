@@ -8,16 +8,16 @@ ms.date: 10/02/2019
 ms.lastreviewed: 03/18/2019
 ms.author: bryanla
 ms.reviewer: xiao
-ms.openlocfilehash: adc2288d8886c5b952f26da4798fccd731738733
-ms.sourcegitcommit: dabbe44c3208fbf989b7615301833929f50390ff
+ms.openlocfilehash: 804c70ab3785e3932f2d2df01f43ccbd520d51a5
+ms.sourcegitcommit: 69cfff119ab425d0fbb71e38d1480d051fc91216
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90946412"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91572813"
 ---
 # <a name="deploy-the-sql-server-resource-provider-on-azure-stack-hub"></a>Implementación del proveedor de recursos de SQL Server en Azure Stack Hub
 
-Use el proveedor de recursos de SQL Server de Azure Stack Hub para exponer las bases de datos SQL como un servicio de Azure Stack Hub. El proveedor de recursos de SQL se ejecuta como un servicio en una máquina virtual (VM) Server Core de Windows Server 2016.
+Use el proveedor de recursos de SQL Server de Azure Stack Hub para exponer las bases de datos SQL como un servicio de Azure Stack Hub. El proveedor de recursos de SQL se ejecuta como un servicio en una máquina virtual de Windows Server 2016 Server Core (para una versión del adaptador < = 1.1.47.0 >) o en una instancia del complemento RP para Windows Server (para una versión del adaptador > = 1.1.93.0).
 
 > [!IMPORTANT]
 > Solo el proveedor de recursos puede crear elementos en servidores que hospedan SQL o MySQL. Los elementos creados en un servidor host que no se crean con el proveedor de recursos podrían dar lugar a un error de coincidencia de estado.
@@ -28,15 +28,19 @@ Hay varios requisitos previos que se deben cumplir antes de implementar el prove
 
 - Si aún no lo ha hecho, [registre Azure Stack Hub](azure-stack-registration.md) en Azure para poder descargar elementos de Azure Marketplace.
 
-- Agregue la máquina virtual de Windows Server Core necesaria a Marketplace de Azure Stack Hub mediante la descarga de la imagen de **Windows Server 2016 Datacenter - Server Core**.
+- Agregue la máquina virtual de Windows Server necesaria a Marketplace de Azure Stack Hub.
+  * Para una versión <= 1.1.47.0 de SQL RP, descargue la imagen de **Windows Server 2016 Datacenter - Server Core**.
+  * Para una versión > = 1.1.93.0 de SQL RP, descargue la imagen de **Complemento de Microsoft Azure Stack RP Windows Server (SOLO INTERNO)** . Esta versión de Windows Server está especializada en la infraestructura del complemento Azure Stack RP y no es visible para el marketplace de inquilinos.
+
 
 - Descargue la versión compatible del archivo binario del proveedor de recursos SQL según la tabla de asignación de versiones siguiente. Ejecute el autoextractor para extraer el contenido descargado en un directorio temporal. 
 
-  |Versión de Azure Stack Hub compatible|Versión de SQL RP|
-  |-----|-----|
-  |2005, 2002, 1910|[SQL RP, versión 1.1.47.0](https://aka.ms/azurestacksqlrp11470)|
-  |1908|[SQL RP versión 1.1.33.0](https://aka.ms/azurestacksqlrp11330)| 
-  |     |     |
+  |Versión de Azure Stack Hub compatible|Versión de SQL RP|Windows Server en el que se está ejecutando el servicio RP
+  |-----|-----|-----|
+  |2005|[SQL RP, versión 1.1.93.0](https://aka.ms/azshsqlrp11930)|Complemento de Microsoft Azure Stack RP Windows Server (SOLO INTERNO)
+  |2005, 2002, 1910|[SQL RP, versión 1.1.47.0](https://aka.ms/azurestacksqlrp11470)|Windows Server 2016 Datacenter - Server Core|
+  |1908|[SQL RP versión 1.1.33.0](https://aka.ms/azurestacksqlrp11330)|Windows Server 2016 Datacenter - Server Core|
+  |     |     |     |
 
 - Asegúrese de que se cumplen los requisitos previos de la integración del centro de datos:
 
@@ -57,15 +61,26 @@ Import-Module -Name PackageManagement -ErrorAction Stop
 
 # path to save the packages, c:\temp\azs1.6.0 as an example here
 $Path = "c:\temp\azs1.6.0"
+```
+
+2. En función de la versión del proveedor de recursos que esté implementando, ejecute uno de estos scripts.
+
+```powershell
+# for resource provider version >= 1.1.93.0
 Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name AzureRM -Path $Path -Force -RequiredVersion 2.5.0
 Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name AzureStack -Path $Path -Force -RequiredVersion 1.8.2
 ```
+```powershell
+# for resource provider version <= 1.1.47.0
+Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name AzureRM -Path $Path -Force -RequiredVersion 2.3.0
+Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name AzureStack -Path $Path -Force -RequiredVersion 1.6.0
+```
 
-2. Después, copie los paquetes descargados en un dispositivo USB.
+3. Después, copie los paquetes descargados en un dispositivo USB.
 
-3. Inicie sesión en la estación de trabajo desconectada y copie los paquetes desde el dispositivo USB en una ubicación en dicha estación de trabajo.
+4. Inicie sesión en la estación de trabajo desconectada y copie los paquetes desde el dispositivo USB en una ubicación en dicha estación de trabajo.
 
-4. Registre esta ubicación como un repositorio local.
+5. Registre esta ubicación como un repositorio local.
 
 ```powershell
 # requires -Version 5
@@ -102,7 +117,7 @@ Ejecute el script DeploySqlProvider.ps1, que realiza las tareas siguientes:
 - Carga los certificados y otros artefactos en una cuenta de almacenamiento de Azure Stack Hub.
 - Publica paquetes de la galería para poder implementar las bases de datos SQL mediante la galería.
 - Publica un paquete de galería para implementar los servidores de hospedaje.
-- Implementa una máquina virtual mediante la imagen principal de Windows Server 2016 descargada y, luego, instala el proveedor de recursos de SQL.
+- Implementa una máquina virtual mediante la imagen principal de Windows Server 2016 o del complemento Microsoft Azure Stack RP Windows Server y, luego, instala el proveedor de recursos de SQL.
 - Registra un registro de DNS local que se asigna a la VM del proveedor de recursos.
 - Registra el proveedor de recursos en la instancia local de Azure Resource Manager para las cuentas de operador.
 
@@ -129,7 +144,7 @@ Puede especificar los parámetros siguientes en la línea de comandos. Si no lo 
 
 ## <a name="deploy-the-sql-resource-provider-using-a-custom-script"></a>Implementar el proveedor de recursos SQL con un script personalizado
 
-Si va a implementar la versión 1.1.33.0 del proveedor de recursos de SQL o versiones anteriores, debe instalar versiones específicas de los módulos AzureRm.BootStrapper y Azure Stack Hub en PowerShell. Si va a implementar la versión 1.1.47.0 del proveedor de recursos de SQL, el script de implementación descargará e instalará automáticamente los módulos de PowerShell necesarios en la ruta de acceso C:\Archivos de programa\SqlMySqlPsh.
+Si va a implementar la versión 1.1.33.0 del proveedor de recursos de SQL o versiones anteriores, debe instalar versiones específicas de los módulos AzureRm.BootStrapper y Azure Stack Hub en PowerShell. Si va a implementar la versión 1.1.47.0, u otra posterior, del proveedor de recursos de SQL, el script de implementación descargará e instalará automáticamente los módulos de PowerShell necesarios en la ruta de acceso C:\Archivos de programa\SqlMySqlPsh.
 
 ```powershell
 # Install the AzureRM.Bootstrapper module, set the profile, and install the AzureStack module
@@ -173,7 +188,7 @@ $CloudAdminCreds = New-Object System.Management.Automation.PSCredential ("$domai
 # Change the following as appropriate.
 $PfxPass = ConvertTo-SecureString 'P@ssw0rd1' -AsPlainText -Force
 
-# For version 1.1.47.0, the PowerShell modules used by the RP deployment are placed in C:\Program Files\SqlMySqlPsh
+# For version 1.1.47.0 or later, the PowerShell modules used by the RP deployment are placed in C:\Program Files\SqlMySqlPsh
 # The deployment script adds this path to the system $env:PSModulePath to ensure correct modules are used.
 $rpModulePath = Join-Path -Path $env:ProgramFiles -ChildPath 'SqlMySqlPsh'
 $env:PSModulePath = $env:PSModulePath + ";" + $rpModulePath 

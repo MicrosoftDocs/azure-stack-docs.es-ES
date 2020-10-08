@@ -8,12 +8,12 @@ ms.date: 06/10/2019
 ms.author: justinha
 ms.reviewer: fiseraci
 ms.lastreviewed: 04/07/2020
-ms.openlocfilehash: 27ba6098755d93ef1de902a9a4e052f1ff6b53d5
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: 2f276149e3998e5483ae4289ae6793d4b3ea86df
+ms.sourcegitcommit: 373e9e3e84eaa33331db9f78e52486fbb6beb907
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86487879"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91592876"
 ---
 # <a name="azure-stack-hub-infrastructure-security-controls"></a>Controles de seguridad de la infraestructura de Azure Stack Hub
 
@@ -54,7 +54,7 @@ La infraestructura de Azure Stack Hub usa claves RSA de 4096 bits para todos sus
 
 ## <a name="windows-defender-application-control"></a>Control de aplicaciones de Windows Defender
 
-Azure Stack Hub emplea las características de seguridad de Windows Server más recientes. Una de ellas es Control de aplicaciones de Windows Defender (MDAC, conocida anteriormente como Integridad de código), que proporciona la inclusión en lista blanca de archivos ejecutables y que garantiza que solo se ejecuta en la infraestructura de Azure Stack Hub código autorizado.
+Azure Stack Hub emplea las características de seguridad de Windows Server más recientes. Una de ellas es Control de aplicaciones de Windows Defender (MDAC, conocida anteriormente como Integridad de código), que proporciona el filtrado de archivos ejecutables y que garantiza que solo se ejecuta código autorizado en la infraestructura de Azure Stack Hub.
 
 El código autorizado está firmado por Microsoft o el socio de OEM. El código autorizado firmado se incluye en la lista de software permitido especificada en una directiva definida por Microsoft. En otras palabras, solo se puede ejecutar software que esté aprobado para ejecutarse en la infraestructura de Azure Stack Hub. Cualquier intento de ejecutar código no autorizado se bloqueará y se generará una alerta. Azure Stack Hub aplica la Integridad de código del modo de usuario (UMCI) y la Integridad del código de hipervisor (HVCI).
 
@@ -81,7 +81,7 @@ La administración de Azure Stack Hub está controlada mediante tres puntos de e
 
 - El [portal de administrador](azure-stack-manage-portals.md) permite realizar las operaciones diarias con una experiencia de "apuntar y hacer clic".
 - Azure Resource Manager expone todas las operaciones de administración del portal de administrador mediante una API REST, que usan PowerShell y la CLI de Azure.
-- Para las operaciones específicas de bajo nivel (por ejemplo, integración en el centro de datos o escenarios de soporte técnico), Azure Stack Hub expone un punto de conexión de PowerShell llamado [punto de conexión con privilegios](azure-stack-privileged-endpoint.md). Este punto de conexión solo expone un conjunto de cmdlets incluidos en una lista de autorizados y está sometido a una auditoría exhaustiva.
+- Para las operaciones específicas de bajo nivel (por ejemplo, integración en el centro de datos o escenarios de soporte técnico), Azure Stack Hub expone un punto de conexión de PowerShell llamado [punto de conexión con privilegios](azure-stack-privileged-endpoint.md). Este punto de conexión solo expone un conjunto de cmdlets permitidos y está sometido a una auditoría exhaustiva.
 
 ## <a name="network-controls"></a>Controles de red
 

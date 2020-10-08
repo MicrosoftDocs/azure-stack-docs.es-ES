@@ -8,12 +8,12 @@ ms.date: 8/19/2020
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 1c6a7e39131dc9d422a68161b3022ac1acc28f7e
-ms.sourcegitcommit: b80d529ff47b15b8b612d8a787340c7b0f68165b
+ms.openlocfilehash: 60d9ce421ce4cdede89dd9f0fa9ff4ee4746d039
+ms.sourcegitcommit: 69cfff119ab425d0fbb71e38d1480d051fc91216
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89472881"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91572864"
 ---
 # <a name="update-the-sql-resource-provider"></a>Actualización del proveedor de recursos de SQL
 
@@ -22,24 +22,27 @@ ms.locfileid: "89472881"
 
 Es posible que cuando Azure Stack Hub se actualice a una nueva compilación, se lance un nuevo proveedor de recursos de SQL. Aunque el proveedor de recursos existente continúa funcionando, se recomienda actualizar a la compilación más reciente lo antes posible.
 
- |Versión de Azure Stack Hub compatible|Versión de SQL RP|
-  |-----|-----|
-  |2005, 2002, 1910|[SQL RP, versión 1.1.47.0](https://aka.ms/azurestacksqlrp11470)|
-  |1908|[SQL RP versión 1.1.33.0](https://aka.ms/azurestacksqlrp11330)| 
-  |     |     |
+|Versión de Azure Stack Hub compatible|Versión de SQL RP|Windows Server en el que se está ejecutando el servicio RP
+  |-----|-----|-----|
+  |2005|[SQL RP, versión 1.1.93.0](https://aka.ms/azshsqlrp11930)|Complemento de Microsoft Azure Stack RP Windows Server (SOLO INTERNO)
+  |2005, 2002, 1910|[SQL RP, versión 1.1.47.0](https://aka.ms/azurestacksqlrp11470)|Windows Server 2016 Datacenter - Server Core|
+  |1908|[SQL RP versión 1.1.33.0](https://aka.ms/azurestacksqlrp11330)|Windows Server 2016 Datacenter - Server Core|
+  |     |     |     |
 
-A partir de la versión 1.1.33.0 del proveedor de recursos de SQL, las actualizaciones son acumulativas y no es necesario instalarlas en el orden en el que se han publicado, siempre y cuando empiece desde la versión 1.1.24.0 o posterior. Por ejemplo, si está ejecutando la versión 1.1.24.0 del proveedor de recursos de SQL, puede actualizar a la versión 1.1.33.0 o posterior sin necesidad de instalar primero la versión 1.1.30.0. Para revisar las versiones disponibles del proveedor de recursos y la versión de Azure Stack Hub compatible, consulte la lista de versiones en la sección Requisitos previos de [Implementación del proveedor de recursos de SQL Server en Azure Stack Hub](./azure-stack-sql-resource-provider-deploy.md#prerequisites).
+La actualización del proveedor de recursos de SQL es acumulativa. Al actualizar desde una versión anterior, puede actualizar directamente a la versión más reciente. 
 
-Para actualizar el proveedor de recursos, use el script *UpdateSQLProvider.ps1*. Use la cuenta de servicio con derechos de administrador local y de **propietario** de la suscripción. El script se incluye con la descarga del nuevo proveedor de recursos de SQL. El proceso de actualización es similar al proceso usado para [implementar el proveedor de recursos](./azure-stack-sql-resource-provider-deploy.md). El script de actualización usa los mismos argumentos que el script DeploySqlProvider.ps1, y se deberá proporcionar información del certificado.
+Para actualizar el proveedor de recursos, use el script **UpdateSQLProvider.ps1**. Use la cuenta de servicio con derechos de administrador local y de **propietario** de la suscripción. Este script de actualización se incluye con la descarga del proveedor de recursos. 
+
+El proceso de actualización es similar al proceso usado para [implementar el proveedor de recursos](./azure-stack-sql-resource-provider-deploy.md). El script de actualización usa los mismos argumentos que el script DeploySqlProvider.ps1, y se deberá proporcionar información del certificado.
 
 ## <a name="update-script-processes"></a>Procesos de script de actualización
 
-El script *UpdateSQLProvider.ps1* crea una nueva máquina virtual (VM) con el código del proveedor de recursos más reciente.
+El script **UpdateSQLProvider.ps1** crea una nueva máquina virtual con la imagen más reciente del sistema operativo, implementa el código del proveedor de recursos más reciente y migra la configuración del proveedor de recursos antiguo al nuevo. 
 
 > [!NOTE]
-> Se recomienda descargar la imagen de Windows Server 2016 Core más reciente de Marketplace Management (Administración de Marketplace). Si tiene que instalar una actualización, puede colocar un **único** paquete MSU en la ruta de acceso local de la dependencia. El script dará error si hay más de un archivo MSU en esta ubicación.
+>Se recomienda que descargue la imagen de Windows Server 2016 Core más reciente o la del complemento Microsoft Azure Stack RP Windows Server de Marketplace Management (Administración de Marketplace). Si tiene que instalar una actualización, puede colocar un **único** paquete MSU en la ruta de acceso local de la dependencia. El script dará error si hay más de un archivo MSU en esta ubicación.
 
-Después de que el script *UpdateSQLProvider.ps1* crea una nueva máquina virtual, migra la siguiente configuración desde la máquina virtual del proveedor antiguo:
+Cuando el script *UpdateSQLProvider.ps1* crea una nueva máquina virtual, también migra la siguiente configuración desde la máquina virtual del proveedor antiguo:
 
 * La información de base de datos
 * La información del servidor de hospedaje
@@ -64,17 +67,21 @@ Puede especificar los siguientes parámetros desde la línea de comandos al ejec
 | **DebugMode** | Impide la limpieza automática en caso de error. | No |
 
 ## <a name="update-script-powershell-example"></a>Ejemplo de actualización del script de PowerShell
-> [!NOTE]
-> Este proceso de actualización solo se aplica a sistemas integrados de Azure Stack Hub.
 
-Si va a actualizar a la versión 1.1.33.0 del proveedor de recursos de SQL o versiones anteriores, debe instalar versiones específicas de los módulos AzureRm.BootStrapper y Azure Stack Hub en PowerShell. Si va a actualizar a la versión 1.1.47.0 del proveedor de recursos de SQL, el script de implementación descargará e instalará automáticamente los módulos de PowerShell necesarios en la ruta de acceso C:\Archivos de programa\SqlMySqlPsh.
+Si va a actualizar a la versión 1.1.33.0 del proveedor de recursos de SQL o versiones anteriores, debe instalar versiones específicas de los módulos AzureRm.BootStrapper y Azure Stack Hub en PowerShell. 
+
+Si va a actualizar el proveedor de recursos de SQL a la versión 1.1.47.0 u otra posterior, este paso se puede omitir. El script de implementación descargará e instalará automáticamente los módulos de PowerShell necesarios en la ruta de acceso C:\Archivos de programa\SqlMySqlPsh.
+
+>[!NOTE]
+>Si la carpeta C:\Archivos de programa\SqlMySqlPsh ya existe con el módulo de PowerShell descargado, se recomienda limpiar esta carpeta antes de ejecutar el script de actualización. Esto se hace para asegurarse de que se descarga y se usa la versión correcta del módulo de PowerShell.
 
 ```powershell
+# Run the following scripts when updating to version 1.1.33.0 only.
 # Install the AzureRM.Bootstrapper module, set the profile, and install the AzureStack module.
 # Note that this might not be the most currently available version of Azure Stack Hub PowerShell.
 Install-Module -Name AzureRm.BootStrapper -Force
 Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
-Install-Module -Name AzureStack -RequiredVersion 1.8.2
+Install-Module -Name AzureStack -RequiredVersion 1.6.0
 ```
 
 > [!NOTE]
@@ -111,7 +118,7 @@ $CloudAdminCreds = New-Object System.Management.Automation.PSCredential ("$domai
 # Change the following as appropriate.
 $PfxPass = ConvertTo-SecureString "P@ssw0rd1" -AsPlainText -Force
 
-# For version 1.1.47.0, the PowerShell modules used by the RP deployment are placed in C:\Program Files\SqlMySqlPsh
+# For version 1.1.47.0 or later, the PowerShell modules used by the RP deployment are placed in C:\Program Files\SqlMySqlPsh
 # The deployment script adds this path to the system $env:PSModulePath to ensure correct modules are used.
 $rpModulePath = Join-Path -Path $env:ProgramFiles -ChildPath 'SqlMySqlPsh'
 $env:PSModulePath = $env:PSModulePath + ";" + $rpModulePath

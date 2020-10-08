@@ -5,12 +5,12 @@ author: davannaw-msft
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: dawhite
-ms.openlocfilehash: 312431b1ae36debc79b1a9bd3a874b648dfc9cd9
-ms.sourcegitcommit: dabbe44c3208fbf989b7615301833929f50390ff
+ms.openlocfilehash: e30d5ba784efc6453ce161bc2a87db7c728d3fce
+ms.sourcegitcommit: 373e9e3e84eaa33331db9f78e52486fbb6beb907
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90949347"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91592924"
 ---
 # <a name="troubleshooting-azure-kubernetes-service-on-azure-stack-hci"></a>Solución de problemas de Azure Kubernetes Service en Azure Stack HCI
 
@@ -24,7 +24,7 @@ Para solucionar problemas con CredSSP, visite [Solución de problemas de CredSSP
 ## <a name="troubleshooting-windows-admin-center"></a>Solución de problemas de Windows Admin Center
 Este producto se encuentra actualmente en estado de versión preliminar pública, lo que significa que todavía está en desarrollo. En la actualidad, hay varios problemas con la extensión de Azure Kubernetes Service para Windows Admin Center: 
 * Actualmente, cada servidor del clúster del sistema que usa para configurar Azure Kubernetes Service en Azure Stack HCI debe ser un servidor de confianza. Esto significa que Windows Admin Center debe ser capaz de realizar operaciones CredSSP en cada servidor del clúster, no solo en uno, o en algunos, de ellos. 
-* Si se produce un error que dice `msft.sme.aks couldn't load` e indica que se ha producido un error al cargar los fragmentos, use la versión más reciente de Edge o Google Chrome e inténtelo de nuevo.
+* Si se produce un error que dice `msft.sme.aks couldn't load` e indica que se ha producido un error al cargar los fragmentos, use la versión más reciente de Microsoft Edge o Google Chrome e inténtelo de nuevo.
 * Antes de iniciar el asistente de instalación del host de Azure Kubernetes Service o el asistente de creación del clúster de Kubernetes, debe iniciar sesión en Azure a través de Windows Admin Center. Es posible que sea necesario volver a iniciar sesión durante el flujo de trabajo. Si tiene dificultades para iniciar sesión en Azure a través de Windows Admin Center, intente iniciar sesión en su cuenta de Azure desde otro origen, por ejemplo desde [Azure Portal](https://portal.azure.com/). Si sigue teniendo problemas, consulte el artículo sobre [problemas conocidos de Windows Admin Center](/windows-server/manage/windows-admin-center/support/known-issues) antes de ponerse en contacto con el servicio de soporte técnico.
 * En la iteración actual de la implementación de Azure Kubernetes Service en Azure Stack HCI mediante Windows Admin Center, solo el usuario que configuró el host de Azure Kubernetes Service puede crear clústeres de Kubernetes en el sistema. Para solucionar este problema, copie la carpeta `.wssd` del perfil de usuario que configuró el host de Azure Kubernetes Service en el perfil de usuario que va a iniciar el nuevo clúster de Kubernetes.
 * Si recibe un error en cualquiera de los asistentes sobre una configuración incorrecta, realice las operaciones de limpieza del clúster. Esto puede implicar la eliminación del archivo `C:\Program Files\AksHci\mocctl.exe`.

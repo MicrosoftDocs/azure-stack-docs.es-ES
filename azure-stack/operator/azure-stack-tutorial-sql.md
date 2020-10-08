@@ -8,24 +8,24 @@ ms.date: 10/07/2019
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/23/2019
-ms.openlocfilehash: ce3f6e0542678fe2d399e101a90a916cf412599f
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: b30126bcfbbe57cd36a54ce1f5fc487014fe7a03
+ms.sourcegitcommit: 69cfff119ab425d0fbb71e38d1480d051fc91216
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86487726"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91572881"
 ---
 # <a name="create-highly-available-sql-databases-with-azure-stack-hub"></a>Creación de bases de datos SQL de alta disponibilidad con Azure Stack Hub
 
 Como operador de Azure Stack Hub, puede configurar máquinas virtuales de servidor para hospedar bases de datos de SQL Server. Una vez que se haya creado un servidor de hospedaje de SQL y Azure Stack Hub lo administre, los usuarios suscritos a servicios de SQL pueden crear fácilmente bases de datos SQL.
 
-En este artículo se muestra cómo usar una plantilla de inicio rápido de Azure Stack Hub para crear un [grupo de disponibilidad AlwaysOn de SQL Server](/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-2017), agregarlo como servidor de hospedaje SQL de Azure Stack Hub y, a continuación, crear una base de datos SQL de alta disponibilidad.
+En este artículo se muestra cómo usar una plantilla de inicio rápido de Azure Stack Hub para crear un [grupo de disponibilidad AlwaysOn de SQL Server](/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server), agregarlo como servidor de hospedaje SQL de Azure Stack Hub y, a continuación, crear una base de datos SQL de alta disponibilidad.
 
 Temas que se abordarán:
 
 > [!div class="checklist"]
 > * Creación de grupos de disponibilidad AlwaysOn de SQL Server a partir de una plantilla.
-> * Creación de un servidor de hospedaje SQL de Azure Stack Hub.
+> * Configure el grupo de disponibilidad AlwaysOn de SQL Server como servidor de hospedaje de SQL para Azure Stack Hub.
 > * Creación de una base de datos SQL de alta disponibilidad.
 
 Se usarán los elementos disponibles de Marketplace para Azure Stack para crear y configurar un grupo de disponibilidad AlwaysOn de SQL Server para dos máquinas virtuales.
@@ -124,7 +124,7 @@ En las instancias de SQL secundarias:
 
 ### <a name="configure-contained-database-authentication"></a>Configuración de autenticación de base de datos independiente
 
-Antes de agregar una base de datos independiente a un grupo de disponibilidad, asegúrese de que la opción de servidor de autenticación de la base de datos independiente se establece en 1 en cada instancia del servidor que hospeda una réplica de disponibilidad para el grupo de disponibilidad. Para obtener más información, consulte [contained database authentication (opción de configuración del servidor)](/sql/database-engine/configure-windows/contained-database-authentication-server-configuration-option?view=sql-server-2017).
+Antes de agregar una base de datos independiente a un grupo de disponibilidad, asegúrese de que la opción de servidor de autenticación de la base de datos independiente se establece en 1 en cada instancia del servidor que hospeda una réplica de disponibilidad para el grupo de disponibilidad. Para obtener más información, consulte [contained database authentication (opción de configuración del servidor)](/sql/database-engine/configure-windows/contained-database-authentication-server-configuration-option).
 
 Use estos comandos para establecer la opción del servidor de autenticación de base de datos independiente para cada instancia de SQL Server del grupo de disponibilidad:
 
@@ -137,9 +137,9 @@ Use estos comandos para establecer la opción del servidor de autenticación de 
 
 ![Establecimiento de la autenticación de la base de datos independiente](./media/azure-stack-tutorial-sqlrp/sql3.png)
 
-## <a name="create-an-azure-stack-hub-sql-hosting-server"></a>Creación de un servidor de hospedaje SQL de Azure Stack Hub
+## <a name="configure-an-azure-stack-hub-sql-hosting-server"></a>Configuración de un servidor de hospedaje de SQL para Azure Stack Hub
 
-Una vez que el grupo de disponibilidad AlwaysOn de SQL Server se ha creado y configurado correctamente, un operador de Azure Stack Hub debe crear un servidor de hospedaje de SQL de Azure Stack Hub. Este servidor sirve para facilitar una mayor capacidad que permita a los usuarios crear bases de datos.
+Una vez que el grupo de disponibilidad AlwaysOn de SQL Server se ha creado y configurado correctamente, un operador de Azure Stack Hub debe configurarlo como servidor de hospedaje de SQL para Azure Stack Hub. 
 
 Asegúrese de utilizar la dirección IP pública o el nombre de dominio completo para la dirección IP pública del equilibrador de carga SQL que anotó anteriormente, cuando creó el grupo de recursos del grupo de disponibilidad AlwaysOn de SQL (**SQLPIPsql\<resource group name\>** ). Además, tendrá que conocer las credenciales de autenticación de SQL Server utilizadas para tener acceso a las instancias de SQL en el grupo de disponibilidad AlwaysOn.
 

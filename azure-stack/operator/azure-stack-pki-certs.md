@@ -7,12 +7,12 @@ ms.date: 08/19/2020
 ms.author: inhenkel
 ms.reviewer: ppacent
 ms.lastreviewed: 12/16/2019
-ms.openlocfilehash: 93712c3eedb3045d99b9c2ed46a066b8505771dd
-ms.sourcegitcommit: e72145ebb5eac17a47ba1c9119fd31de545fdace
+ms.openlocfilehash: a5ccf4ecd9ab6f70f54af22c343f28eb692f9c54
+ms.sourcegitcommit: 373e9e3e84eaa33331db9f78e52486fbb6beb907
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88724887"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91592894"
 ---
 # <a name="azure-stack-hub-public-key-infrastructure-pki-certificate-requirements"></a>Requisitos de certificados de la infraestructura de clave pública (PKI) de Azure Stack Hub
 
@@ -23,7 +23,7 @@ Azure Stack Hub tiene una red de infraestructura pública que usa direcciones IP
 - Certificados opcionales necesarios al implementar los proveedores de recursos de valor agregado.
 
 > [!NOTE]
-> De forma predeterminada, Azure Stack Hub usa también los certificados emitidos por una entidad de certificación (CA) interna de Active Directory integrada para la autenticación entre los nodos. Para validar el certificado, todas las máquinas de la infraestructura de Azure Stack Hub confían en el certificado raíz de la entidad de certificación interna mediante la adición de ese certificado a su almacén de certificados local. No hay ninguna asignación ni inclusión en listas blancas de certificados en Azure Stack Hub. El nombre alternativo del firmante de cada certificado de servidor se valida en el nombre de dominio completo del destino. También se valida la cadena de confianza completa, junto con la fecha de expiración del certificado (autenticación del servidor TLS estándar sin asignación de certificados).
+> De forma predeterminada, Azure Stack Hub usa también los certificados emitidos por una entidad de certificación (CA) interna de Active Directory integrada para la autenticación entre los nodos. Para validar el certificado, todas las máquinas de la infraestructura de Azure Stack Hub confían en el certificado raíz de la entidad de certificación interna mediante la adición de ese certificado a su almacén de certificados local. No hay ninguna asignación ni filtrado de certificados en Azure Stack Hub. El nombre alternativo del firmante de cada certificado de servidor se valida en el nombre de dominio completo del destino. También se valida la cadena de confianza completa, junto con la fecha de expiración del certificado (autenticación del servidor TLS estándar sin asignación de certificados).
 
 ## <a name="certificate-requirements"></a>Requisitos de certificados
 En la lista siguiente se describen los requisitos generales de emisión, seguridad y formato de los certificados:

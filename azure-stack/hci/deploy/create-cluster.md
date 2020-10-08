@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 09/21/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: b7c6c76353ff29f01eca458ca563517807ca0cd3
-ms.sourcegitcommit: 9a3397f703ff9dd7d539372bd8e5fdbe6d6a0725
+ms.openlocfilehash: 992b06b652dbac306570e0f58e274cec7735d14a
+ms.sourcegitcommit: 69cfff119ab425d0fbb71e38d1480d051fc91216
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "91019555"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91572694"
 ---
 # <a name="create-an-azure-stack-hci-cluster-using-windows-admin-center"></a>Creación de un clúster de Azure Stack HCI mediante Windows Admin Center
 
@@ -189,10 +189,7 @@ Si la resolución del clúster no se realiza correctamente después de un tiempo
 
 ## <a name="step-5-sdn-optional"></a>Paso 5: SDN (opcional)
 
-El paso 5 del asistente le guiará a través de la configuración de Controladora de red en el clúster para redes definidas por software (SDN). Una vez configurado el rol Controladora de red, se puede usar para configurar otros componentes de SDN, como el equilibrador de carga del software y la puerta de enlace de RAS.
-
-> [!NOTE]
-> Este paso del asistente es opcional.
+Este paso opcional le guía a través de la configuración del componente de Controladora de red de [redes definidas por software (SDN)](../concepts/software-defined-networking.md). Una vez configurado el rol Controladora de red, se puede usar para configurar otros componentes de SDN, como el equilibrador de carga del software y la puerta de enlace de RAS.
 
 :::image type="content" source="media/cluster/create-cluster-network-controller.png" alt-text="Asistente para crear clúster: Opción de HCI" lightbox="media/cluster/create-cluster-network-controller.png":::
 
@@ -213,7 +210,7 @@ El paso 5 del asistente le guiará a través de la configuración de Controlador
 1. Escriba los valores de **inicio del grupo de direcciones MAC** y **final del grupo de direcciones MAC**.
 1. Cuando termine, haga clic en **Siguiente**.
 1. Espere hasta que el asistente complete su trabajo. Permanezca en esta página hasta que se completen todas las tareas en curso. Haga clic en **Finalizar**.
- 
+
 Si se produce un error en la implementación de Controladora de red, haga lo siguiente antes de volver a intentarlo:
 
 - Detenga y elimine todas las máquinas virtuales de Controladora de red que haya creado el asistente.  

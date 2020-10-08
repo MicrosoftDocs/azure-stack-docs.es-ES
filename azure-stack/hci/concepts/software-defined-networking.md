@@ -1,20 +1,20 @@
 ---
 title: Redes definidas por software (SDN) en Azure Stack HCI
-description: Una introducción a los temas sobre redes definidas por software (SDN) que se aplican a las características de Azure Stack HCI.
+description: SDN proporciona una manera de configurar y administrar de forma centralizada redes y servicios de red como conmutación, enrutamiento y equilibrio de carga en el centro de datos.
 author: khdownie
 ms.author: v-kedow
 ms.topic: conceptual
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 08/18/2020
-ms.openlocfilehash: 5a2820de2c681ad5a49d0e4ee3e4973736e1169b
-ms.sourcegitcommit: fb89c3d837e2673b28784fd997099c825deb32f0
+ms.date: 09/29/2020
+ms.openlocfilehash: e14d0475c941f568f08a027de9e71eb25f00a999
+ms.sourcegitcommit: 69cfff119ab425d0fbb71e38d1480d051fc91216
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88591799"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91572660"
 ---
-# <a name="sdn-in-azure-stack-hci"></a>SDN en Azure Stack HCI
+# <a name="software-defined-networking-sdn-in-azure-stack-hci"></a>Redes definidas por software (SDN) en Azure Stack HCI
 
 > Se aplica a Azure Stack HCI, versión 20H2; Windows Server 2019
 
@@ -35,7 +35,7 @@ La implementación de Controladora de red permite las siguientes funcionalidades
 - Conexión de aplicaciones virtuales a las redes virtuales.
 - Configuración de directivas de Calidad de servicio (QoS) para las máquinas virtuales conectadas a redes virtuales o redes basadas en VLAN tradicionales.
 
-Se recomienda [implementar Controladora de red mediante PowerShell](../deploy/network-controller-powershell.md) después de crear un clúster de Azure Stack HCI.
+Es recomendable [implementar Controladora de red durante la creación del clúster](../deploy/create-cluster.md#step-5-sdn-optional). Como alternativa, puede [implementar Controladora de red mediante PowerShell](../deploy/network-controller-powershell.md) después de crear un clúster de Azure Stack HCI.
 
 ## <a name="software-load-balancing"></a>Equilibrio de carga de software
 
@@ -55,5 +55,6 @@ Las puertas de enlace usan [Protocolo de puerta de enlace de borde](/windows-ser
 
 Para obtener información relacionada, consulte:
 
+- [Planeamiento de una infraestructura de red definida por software](plan-software-defined-networking-infrastructure.md)
 - [Introducción a SDN en Windows Server](/windows-server/networking/sdn/software-defined-networking)
 - [Implementación de una infraestructura de red definida por software con scripts](/windows-server/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)

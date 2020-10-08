@@ -2,18 +2,18 @@
 title: Solución de problemas de Azure Stack Hub
 titleSuffix: Azure Stack
 description: Aprenda a solucionar problemas de Azure Stack Hub, como problemas con las máquinas virtuales, el almacenamiento y App Service.
-author: justinha
+author: myoungerman
 ms.topic: article
 ms.date: 07/21/2020
-ms.author: justinha
+ms.author: v-myoung
 ms.reviewer: prchint
 ms.lastreviewed: 07/21/2020
-ms.openlocfilehash: 8072a868106de26be3cbb2b2918d97696647df77
-ms.sourcegitcommit: 03aad17afe8519536066c735c59ad1bdfe8de083
+ms.openlocfilehash: 403335a81a5ac02f2e32432f54df584baf7c2a02
+ms.sourcegitcommit: 868887e4b13b1572f15004a9db2c334e60d8add2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89041628"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91778138"
 ---
 # <a name="troubleshoot-issues-in-azure-stack-hub"></a>Solución de problemas de Azure Stack Hub
 
@@ -30,7 +30,7 @@ En estas secciones se incluyen vínculos a documentos que abordan las preguntas 
 
 ### <a name="updates-and-diagnostics"></a>Actualizaciones y diagnósticos
 
-* [Uso de las herramientas de diagnóstico en Azure Stack Hub](./azure-stack-configure-on-demand-diagnostic-log-collection-portal.md?view=azs-2002)
+* [Uso de las herramientas de diagnóstico en Azure Stack Hub](./azure-stack-diagnostic-log-collection-overview.md)
 * [Validación del estado del sistema en Azure Stack Hub](azure-stack-diagnostic-test.md)
 * [Ritmo del lanzamiento de las actualizaciones](azure-stack-servicing-policy.md#update-package-release-cadence)
 * [Comprobación y solución de problemas de estado de nodo](azure-stack-node-actions.md)
@@ -199,11 +199,11 @@ Si se produce un error en el script Create-AADIdentityApp.ps1 necesario para App
 
 El proceso de revisión y actualización de Azure Stack Hub está diseñado para permitir a los operadores aplicar paquetes de actualización de una manera coherente y simplificada. Aunque es poco frecuente, pueden producirse problemas durante la revisión y actualización. Se recomiendan los siguientes pasos en caso de que se produzca un problema durante el proceso de revisión y actualización:
 
-0. **Requisitos previos**: Asegúrese de que ha seguido la [lista de comprobación de la actividad de actualización](release-notes-checklist.md) y de que ha [habilitado la recopilación proactiva de registros](./azure-stack-configure-automatic-diagnostic-log-collection.md?view=azs-2002).
+0. **Requisitos previos**: Asegúrese de que ha seguido la [lista de comprobación de la actividad de actualización](release-notes-checklist.md) y de que ha [habilitado la recopilación proactiva de registros](./azure-stack-diagnostic-log-collection-overview.md#send-logs-proactively).
 
 1. Siga los pasos de corrección de la alerta de error que se crea cuando se produce un error en la actualización.
 
-2. Si no ha podido resolver el problema, cree una [incidencia de soporte técnico de Azure Stack Hub](./azure-stack-help-and-support-overview.md?view=azs-2002). Asegúrese de que ha [recopilado los registros](./azure-stack-configure-on-demand-diagnostic-log-collection-portal.md?view=azs-2002) del intervalo de tiempo en el que se produjo el problema.
+2. Si no ha podido resolver el problema, cree una [incidencia de soporte técnico de Azure Stack Hub](./azure-stack-help-and-support-overview.md?view=azs-2002). Asegúrese de que ha [recopilado los registros](./azure-stack-diagnostic-log-collection-overview.md#send-logs-now) del intervalo de tiempo en el que se produjo el problema.
 
 ## <a name="common-azure-stack-hub-patch-and-update-issues"></a>Problemas habituales de revisión y actualización de Azure Stack Hub
 

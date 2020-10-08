@@ -4,16 +4,16 @@ titleSuffix: Azure Stack Hub
 description: Conozca la directiva de servicio de Azure Stack Hub y cómo mantener un sistema integrado en un estado admitido.
 author: sethmanheim
 ms.topic: article
-ms.date: 08/11/2020
+ms.date: 09/25/2020
 ms.author: sethm
 ms.reviewer: niy
 ms.lastreviewed: 03/18/2020
-ms.openlocfilehash: 7cf6420069dbc8589722aab38658206a482632e0
-ms.sourcegitcommit: b80d529ff47b15b8b612d8a787340c7b0f68165b
+ms.openlocfilehash: 9ae3d2a145b04c9f1e3fa6b926eb657a4af83ebf
+ms.sourcegitcommit: bf7b1a394ede397dba2b75f90bdf953b3ff2f2be
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89472966"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91367264"
 ---
 # <a name="azure-stack-hub-servicing-policy"></a>Directiva de servicio de Azure Stack Hub
 
@@ -39,7 +39,9 @@ Hay dos tipos de actualizaciones para los sistemas integrados:
 
 ## <a name="update-package-release-cadence"></a>Ritmo de lanzamientos de las actualizaciones
 
-Microsoft espera lanzar actualizaciones de software a un ritmo mensual. Sin embargo, puede haber varios lanzamientos de actualizaciones en un mes, o ninguno. Los proveedores de hardware de OEM lanzan sus actualizaciones en función de la necesidad.
+Microsoft espera lanzar paquetes de actualización de software varias veces al año.
+
+Los proveedores de hardware de OEM lanzan sus actualizaciones en función de la necesidad. Consulte con el fabricante de equipos originales las actualizaciones más recientes del hardware.
 
 Busque documentación sobre cómo planear y administrar actualizaciones y cómo determinar la versión actual en [Introducción a la administración de actualizaciones en Azure Stack](azure-stack-updates.md).
 

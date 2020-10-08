@@ -3,16 +3,16 @@ title: Creación de una máquina virtual Windows con el portal de Azure Stack Hu
 description: Obtenga información sobre cómo crear una máquina virtual (VM) Windows Server 2016 mediante el portal de Azure Stack Hub.
 author: mattbriggs
 ms.topic: quickstart
-ms.date: 08/24/2020
+ms.date: 10/06/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
-ms.lastreviewed: 1/10/2020
-ms.openlocfilehash: bbf0ad658100457c9d7b6b47e9f89b2af48e0e1f
-ms.sourcegitcommit: 65a115d1499b5fe16b6fe1c31cce43be21d05ef8
+ms.lastreviewed: 10/06/2020
+ms.openlocfilehash: 77c7e3484186a0bea1f6220330338128aad72fad
+ms.sourcegitcommit: 2d2ae0b6db2e4f43f8496b184f30cddbb08b2cbd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88819174"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91815425"
 ---
 # <a name="quickstart-create-a-windows-server-vm-with-the-azure-stack-hub-portal"></a>Inicio rápido: Creación de una máquina virtual Windows Server con el portal de Azure Stack Hub
 
@@ -31,10 +31,10 @@ Inicie sesión en el portal de Azure Stack Hub. La dirección del portal de Azur
 
 ## <a name="create-a-vm"></a>Crear una VM
 
-1. Seleccione **Crear un recurso** > **Proceso**. Busque` Windows Server 2016 Datacenter – Pay as you use`.
+1. Seleccione **Crear un recurso** > **Proceso**. Busque` Windows Server 2016 Datacenter - Pay as you use`.
     Si no ve la entrada **Windows Server 2016 Datacenter - Pay-as-you-use**, póngase en contacto con su operador de nube de Azure Stack Hub y pida que se agregue la imagen al Marketplace de Azure Stack Hub. Para obtener instrucciones, el operador de la nube puede consultar [Creación y publicación de un elemento personalizado de Marketplace de Azure Stack Hub](../operator/azure-stack-create-and-publish-marketplace-item.md).
 
-    ![Windows Server 2016 Datacenter – Pay as you use](./media/azure-stack-quick-windows-portal/image1.png)
+    ![Windows Server 2016 Datacenter: Pago por uso](./media/azure-stack-quick-windows-portal/image1.png)
 
 1. Seleccione **Crear**.
 

@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: 4aeca3ba7630d05921578de7023359c042d74ffb
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.openlocfilehash: 9d9bf332c71bbafd78a235cf0257283738e5a304
+ms.sourcegitcommit: 2d2ae0b6db2e4f43f8496b184f30cddbb08b2cbd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90574115"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91815519"
 ---
 # <a name="vnet-peering-with-fortigate"></a>Emparejamiento de VNet con FortiGate
 
@@ -74,8 +74,6 @@ En la tabla siguiente se resumen los parámetros que se usan en estas implementa
 ## <a name="deploy-the-fortigate-ngfw"></a>Implementación de FortiGate NGFW
 
 1.  Abra el portal de usuarios de Azure Stack Hub.
-
-    ![Se muestra la pantalla principal, con el botón "+ Crear un recurso".](./media/azure-stack-network-howto-vnet-to-onprem/image5.png)
 
 2.  Seleccione **Crear un recurso** y busque `FortiGate`.
 
@@ -176,7 +174,7 @@ Siga los pasos que se indican a continuación para la NVA forti1 y la NVA forti2
 
 1. Seleccione **This site is behind NAT** (Este sitio está detrás de un sistema NAT).
 
-    ![En la captura de pantalla de VPN Creation Wizard (Asistente para creación de VPN), esto se muestra en el primer paso, VPN Setup (Configuración de VPN). Aparecen seleccionados los valores siguientes: "Sitio a sitio" en Tipo de plantilla, "FortiGate" en Remote Device Type (Tipo de dispositivo remoto) y "This site is behind NAT" (Este sitio está detrás de un sistema NAT) en Configuración de NAT.](./media/azure-stack-network-howto-vnet-to-vnet/image16.png)
+    ![En la captura de pantalla de VPN Creation Wizard (Asistente para creación de VPN), esto se muestra en el primer paso, VPN Setup (Configuración de VPN). Aparecen seleccionados los valores siguientes: "Sitio a sitio" en Tipo de plantilla, "FortiGate" en Remote Device Type (Tipo de dispositivo remoto) y "This site is behind NAT" (Este sitio está detrás de NAT) en Configuración de NAT.](./media/azure-stack-network-howto-vnet-to-vnet/image16.png)
 
 1. Seleccione **Next** (Siguiente).
 

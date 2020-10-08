@@ -3,16 +3,16 @@ title: Administración de actualizaciones
 description: Aprenda a administrar las actualizaciones en Azure Stack Hub
 author: sethmanheim
 ms.topic: how-to
-ms.date: 07/16/2020
+ms.date: 09/25/2020
 ms.author: sethm
 ms.lastreviewed: 07/16/2020
 ms.reviewer: niy
-ms.openlocfilehash: b5aa356cfdb77cac5609b7e835add0d32a8e26cf
-ms.sourcegitcommit: 52b33ea180c38a5ecce150f5a9ea4a026344cc3d
+ms.openlocfilehash: e769999ce24e1571b93c94a707c62df757460705
+ms.sourcegitcommit: bf7b1a394ede397dba2b75f90bdf953b3ff2f2be
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88073863"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91367230"
 ---
 # <a name="manage-updates-in-azure-stack-hub"></a>Administración de actualizaciones en Azure Stack Hub
 
@@ -43,7 +43,7 @@ Hay tres tipos de actualizaciones para los sistemas integrados:
 
 Los tres tipos de actualizaciones se lanzan con la siguiente cadencia:
 
-- **Actualizaciones de software de Azure Stack Hub**. Microsoft suele lanzar paquetes de actualización de software cada mes.
+- **Actualizaciones de software de Azure Stack Hub**. Microsoft publica varios paquetes de actualización de software completos y exprés al año.
 
 - **Revisiones de Azure Stack Hub**. Las revisiones son versiones sujetas a una limitación temporal que se pueden publicar en cualquier momento. Si va a actualizar de una versión principal a otra (por ejemplo, 1.2002.x a 1.2005.x), se instalan automáticamente las revisiones más recientes (si existen) en la nueva versión principal.
 

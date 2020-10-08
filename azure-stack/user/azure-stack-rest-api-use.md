@@ -3,16 +3,16 @@ title: Realización de solicitudes de API a Azure Stack Hub
 description: Aprenda a recuperar una autenticación de Azure para realizar solicitudes de API a Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 05/06/2020
+ms.date: 10/01/2020
 ms.author: sethm
 ms.reviewer: thoroet
 ms.lastreviewed: 01/14/2020
-ms.openlocfilehash: d44158342b1bca1aec575d51fb7144a8c88e88d1
-ms.sourcegitcommit: 9894804f31527234d43f4a93a9b7c106c8540435
+ms.openlocfilehash: 70a1a6e1d2fb4eb6766948a4e02d5072f4e04281
+ms.sourcegitcommit: a1e2003fb9c6dacdc76f97614ff5a26a5b197b49
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82967750"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91623326"
 ---
 <!--  cblackuk and charliejllewellyn. This is a community contribution by cblackuk-->
 

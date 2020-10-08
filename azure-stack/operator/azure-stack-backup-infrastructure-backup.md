@@ -1,18 +1,18 @@
 ---
 title: Recuperación de datos de Azure Stack Hub con el servicio Copia de seguridad de infraestructura
 description: Aprenda a realizar una copia de seguridad de la configuración y los datos de servicio de Azure Stack Hub, así como a restaurarlos, con el servicio Copia de seguridad de infraestructura.
-author: justinha
+author: myoungerman
 ms.topic: article
 ms.date: 05/16/2019
-ms.author: justinha
+ms.author: v-myoung
 ms.reviewer: hectorl
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: a6017b6bdf1a7075ae01726ddfd1513adaa4ed63
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.openlocfilehash: c73e95677bb1666fb315ad73e1dd6d62f73c68b7
+ms.sourcegitcommit: bf7b1a394ede397dba2b75f90bdf953b3ff2f2be
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90573078"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91367247"
 ---
 # <a name="recover-data-in-azure-stack-hub-with-the-infrastructure-backup-service"></a>Recuperación de datos de Azure Stack Hub con el servicio Copia de seguridad de infraestructura
 
@@ -40,7 +40,7 @@ El servicio contiene las características siguientes:
 ## <a name="verify-requirements-for-the-infrastructure-backup-service"></a>Comprobación de los requisitos para el servicio Infrastructure Backup
 
 - **Ubicación de almacenamiento**  
-  Necesita un recurso compartido de archivos accesible desde Azure Stack Hub que pueda contener siete copias de seguridad. Cada copia de seguridad ocupa aproximadamente 10 GB. El recurso compartido debe ser capaz de almacenar 140 GB de copias de seguridad. Para más información sobre cómo seleccionar una ubicación de almacenamiento para el servicio Copia de seguridad de infraestructura de Azure Stack, consulte [Requisitos de Backup Controller](azure-stack-backup-reference.md#backup-controller-requirements).
+  Necesita un recurso compartido de archivos accesible desde Azure Stack Hub que pueda contener 14 copias de seguridad. Cada copia de seguridad ocupa aproximadamente 10 GB. El recurso compartido de archivos deberá ser capaz de almacenar 140 GB de copias de seguridad. Para más información sobre cómo seleccionar una ubicación de almacenamiento para el servicio Copia de seguridad de infraestructura de Azure Stack, consulte [Requisitos de Backup Controller](azure-stack-backup-reference.md#backup-controller-requirements).
 - **Credenciales**  
   Necesita una cuenta de usuario de dominio y credenciales. Por ejemplo, puede usar las credenciales de administrador de Azure Stack Hub.
 - **Certificado de cifrado**  

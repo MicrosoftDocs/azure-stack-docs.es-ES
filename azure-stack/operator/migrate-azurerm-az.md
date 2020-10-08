@@ -4,15 +4,15 @@ description: Obtenga información sobre los pasos y herramientas para migrar los
 author: mattbriggs
 ms.author: mabrigg
 ms.topic: conceptual
-ms.date: 08/24/2020
+ms.date: 10/05/2020
 ms.reviewer: sijuman
 ms.lastreviewed: 04/14/2020
-ms.openlocfilehash: 9b41f2f25e2c9c727d397dedd3f95e9683080e25
-ms.sourcegitcommit: 4922a14fdbc8a3b67df065336e8a21a42f224867
+ms.openlocfilehash: ea3ec5389aa00d0b606d86e483a8ca5a2607aa1a
+ms.sourcegitcommit: af21e3097e833bcb0670733a5e92d6fc3deaa53b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88764756"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91729243"
 ---
 # <a name="migrate-from-azurerm-to-azure-powershell-az-in-azure-stack-hub"></a>Migración desde AzureRM al módulo Az de Azure PowerShell en Azure Stack Hub
 
@@ -23,7 +23,7 @@ Para ver la lista completa de los cambios importantes entre AzureRM y Az, consul
 
 ## <a name="check-for-installed-versions-of-azurerm"></a>Consulte las versiones instaladas de AzureRM
 
-El módulo Az se puede instalar en paralelo con el módulo AzureRM, pero no es recomendable. Antes de llevar a cabo los pasos de la migración, compruebe qué versiones de AzureRM están instaladas en el sistema. Así podrá asegurarse de que ya se están ejecutando las últimas versiones de los scripts y saber si puede habilitar los alias de comandos sin desinstalar AzureRM.
+Antes de llevar a cabo los pasos de la migración, compruebe qué versiones de AzureRM están instaladas en el sistema. Así podrá asegurarse de que ya se están ejecutando las últimas versiones de los scripts y saber si puede habilitar los alias de comandos sin desinstalar AzureRM.
 
 Para comprobar qué versiones de AzureRM tiene instaladas, ejecute el comando:
 
@@ -43,7 +43,7 @@ Para instalar el módulo Az de Azure PowerShell, siga estos pasos:
 
 * __RECOMENDACIÓN__: [Desinstale el módulo AzureRM](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module).
   Asegúrese de eliminar _todas_ las versiones instaladas de AzureRM, no solo la última versión.
-* [Instale el módulo Az](/powershell/azure/install-az-ps)
+* [Instalación del módulo Az](/powershell/azure/install-az-ps)
 
 ## <a name="enable-azurerm-compatibility-aliases"></a>Habilitación de los alias de compatibilidad de AzureRM 
 
