@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 09/21/2020
 ms.author: abha
 ms.reviewer: ''
-ms.openlocfilehash: 7436498ea993281f803d7ff8a0c4108728570f59
-ms.sourcegitcommit: dabbe44c3208fbf989b7615301833929f50390ff
+ms.openlocfilehash: 91f7249beb34e5afee808d299df48611a5ce26bb
+ms.sourcegitcommit: 868887e4b13b1572f15004a9db2c334e60d8add2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90949356"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91778134"
 ---
 # <a name="use-persistent-storage-in-a-windows-container-and-prepare-windows-nodes-for-group-managed-service-accounts"></a>Uso de almacenamiento persistente en un contenedor de Windows y preparación de nodos de Windows para las cuentas de servicio administradas de grupo
 
@@ -146,7 +146,7 @@ kubectl get nodes -o wide
 
 A continuación, puede conectarse con SSH al nodo mediante `ssh Administrator@ip`. 
 
-Una vez que haya iniciado sesión correctamente en el nodo de trabajo de Windows, ejecute el siguiente comando de PowerShell para unir a un dominio al nodo. Se le pedirá que escriba las credenciales de su **cuenta de administrador de dominio**. También puede utilizar credenciales de usuario con permisos elevados a la que se haya otorgado determinados derechos para unir equipos al dominio concreto. Después, tendrá que reiniciar el nodo de trabajo de Windows.
+Una vez que haya iniciado sesión correctamente en el nodo de trabajo de Windows, ejecute el siguiente comando de PowerShell para unir el nodo a un dominio. Se le pedirá que escriba las credenciales de su **cuenta de administrador de dominio**. También puede utilizar credenciales de usuario con permisos elevados a la que se haya otorgado determinados derechos para unir equipos al dominio concreto. Después, tendrá que reiniciar el nodo de trabajo de Windows.
 
 ```PowerShell
 add-computer --domainame "YourDomainName" -restart

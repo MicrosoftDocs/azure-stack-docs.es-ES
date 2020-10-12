@@ -4,23 +4,25 @@ description: Descripción de la importancia de la validación del clúster y cu�
 author: JohnCobb1
 ms.author: v-johcob
 ms.topic: article
-ms.date: 07/21/2020
-ms.openlocfilehash: 8a096af308901669def134e0dd281490c5ed0294
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.date: 10/2/2020
+ms.openlocfilehash: 682e9063f6f04f5298e7cab4053af179e1c90cd7
+ms.sourcegitcommit: 6ed6db8e393aace41586a0fba925dc297159d45e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90572092"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91663948"
 ---
 # <a name="validate-an-azure-stack-hci-cluster"></a>Validación de un clúster de Azure Stack HCI
 
 >Se aplica a: Azure Stack HCI, versión 20H2; Windows Server 2019
 
 Este artículo de procedimientos se centra en los motivos por los que la validación de clústeres es importante y cuándo ejecutarla en un clúster existente de Azure Stack HCI. Se recomienda realizar la validación de clústeres para los siguientes escenarios principales:
-- Después de implementar un clúster de servidores, ejecute la herramienta Validate-DCB para probar las redes, y ejecute la validación de clústeres en Windows Admin Center.
+- Después de implementar un clúster de servidores, ejecute la herramienta Validate-DCB para probar las redes.
 - Después de actualizar un clúster de servidores, en función del escenario, ejecute ambas opciones de validación para solucionar los problemas del clúster.
 - Después de configurar la replicación con Réplica de almacenamiento, compruebe que la replicación se esté realizando normalmente; para ello, compruebe algunos eventos en concreto y ejecute un par de comandos.
-Para obtener información sobre cómo implementar un clúster de Azure Stack HCI, consulte [Implementación de Espacios de almacenamiento directo](/windows-server/storage/storage-spaces/deploy-storage-spaces-direct).
+- Después de crear un clúster de servidores, ejecute la herramienta Validate-DCB antes de pasarlo a producción.
+
+    Para más información sobre cómo implementar un clúster de Azure Stack HCI, consulte [Introducción a la implementación](deployment-overview.md).
 
 ## <a name="what-is-cluster-validation"></a>¿Qué es la validación de un clúster?
 La validación de un clúster está pensada para detectar problemas de hardware o de configuración antes de que un clúster pase a producción. La validación de un clúster ayuda a asegurar que la solución de Azure Stack HCI que va a implementar sea realmente confiable. También puede usar la validación de un clúster en clústeres de conmutación por error configurados, como herramienta de diagnóstico.
@@ -84,14 +86,14 @@ Para instalar y ejecutar la herramienta Validate-DCB:
    1. En **Nombre de adaptador**, escriba el nombre de cada NIC física, en **Host vNIC Name** (Nombre de vNIC host), el nombre de cada NIC virtual (vNIC) y, en **VLAN**, el identificador de VLAN que se usa para cada adaptador.
    1. Expanda el cuadro de lista desplegable **RDMA Type** (Tipo de RDMA) y seleccione el protocolo adecuado: **RoCE** o **iWARP**. Establezca también **Tramas gigantes** en el valor adecuado para la red y, a continuación, seleccione **Siguiente**.
 
-    :::image type="content" source="../media/validate/adapters.png" alt-text="Página Adaptadores del asistente para la configuración de Validate-DCB" lightbox="../media/validate/adapters.png":::
+    :::image type="content" source="../media/validate/adapters.png" alt-text="Página de clústeres y nodos del asistente para la configuración de Validate-DCB" lightbox="../media/validate/adapters.png":::
 
     > [!NOTE]
     > - Para obtener más información sobre cómo SR-IOV mejora el rendimiento de la red, consulte [Información general de la virtualización de E/S de raíz única (SR-IOV)](/windows-hardware/drivers/network/overview-of-single-root-i-o-virtualization--sr-iov-).
 
 1. En la página Protocolo de puente del centro de datos, modifique los valores para que coincidan con la configuración de la organización en cuanto a **Prioridad**, **Nombre de directiva**y **Bandwidth Reservation** (Reserva de ancho de banda) y, a continuación, seleccione **Siguiente**.
 
-    :::image type="content" source="../media/validate/data-center-bridging.png" alt-text="Página Protocolo de puente del centro de datos del asistente para la configuración de Validate-DCB" lightbox="../media/validate/data-center-bridging.png":::
+    :::image type="content" source="../media/validate/data-center-bridging.png" alt-text="Página de clústeres y nodos del asistente para la configuración de Validate-DCB" lightbox="../media/validate/data-center-bridging.png":::
 
     > [!NOTE]
     > La selección de RDMA sobre RoCE en la página anterior del asistente requiere DCB para la confiabilidad de la red en todas las NIC y switchports.
@@ -100,7 +102,7 @@ Para instalar y ejecutar la herramienta Validate-DCB:
 
    - De manera opcional, puede implementar el archivo de configuración completando la sección **Deploy Configuration to Nodes** (Implementar la configuración en los nodos) de la página, que incluye la capacidad de usar una cuenta de Azure Automation para implementar la configuración y, después, validarla. Consulte [Creación de una cuenta de Azure Automation](/azure/automation/automation-quickstart-create-account) para empezar a trabajar con Azure Automation.
 
-    :::image type="content" source="../media/validate/save-and-deploy.png" alt-text="Página Guardar e implementar del asistente para la configuración de Validate-DCB":::
+    :::image type="content" source="../media/validate/save-and-deploy.png" alt-text="Página de clústeres y nodos del asistente para la configuración de Validate-DCB":::
 
 ### <a name="review-results-and-fix-errors"></a>Revisión de los resultados y corrección de los errores
 La herramienta Validate-DCB genera resultados en dos unidades:
@@ -109,24 +111,24 @@ La herramienta Validate-DCB genera resultados en dos unidades:
 
 En este ejemplo se muestran resultados de exámenes correctos de un solo servidor para todos los requisitos previos, y las pruebas de unidades modales indicando un recuento de errores (FailedConunt) de 0.
 
-:::image type="content" source="../media/validate/global-unit-and-modal-unit-results.png" alt-text="Resultados de pruebas de unidades globales y unidades modales de Validate-DCB":::
+:::image type="content" source="../media/validate/global-unit-and-modal-unit-results.png" alt-text="Página de clústeres y nodos del asistente para la configuración de Validate-DCB":::
 
 En los pasos siguientes se muestra cómo identificar un error del paquete gigante desde vNIC SMB02 y cómo corregirlo:
 1. Los resultados de los exámenes de la herramienta Validate-DCB muestran un recuento de errores de 1.
 
-    :::image type="content" source="../media/validate/failed-count-error-1.png" alt-text="Resultados de exámenes de la herramienta Validate-DCB que muestran un recuento de errores de 1":::
+    :::image type="content" source="../media/validate/failed-count-error-1.png" alt-text="Página de clústeres y nodos del asistente para la configuración de Validate-DCB":::
 
 1. Al volver por los resultados se muestra un error en rojo que indica que el paquete gigante para vNIC SMB02 en el host S046036 se ha establecido en el tamaño predeterminado de 1514, pero debe establecerse en 9014.
 
-    :::image type="content" source="../media/validate/jumbo-packet-setting-error.png" alt-text="Resultado de exámenes de la herramienta Validate-DCB que muestra un error de configuración de tamaño del paquete gigante":::
+    :::image type="content" source="../media/validate/jumbo-packet-setting-error.png" alt-text="Página de clústeres y nodos del asistente para la configuración de Validate-DCB":::
 
 1. Al revisar las propiedades **Avanzadas** de vNIC SMB02 en el host S046036, se muestra que el paquete gigante está establecido en el valor predeterminado **Disabled** (Deshabilitado).
 
-    :::image type="content" source="../media/validate/hyper-v-advanced-properties-jumbo-packet-setting.png" alt-text="Propiedades avanzadas de la configuración del paquete gigante de Hyper-V del host del servidor":::
+    :::image type="content" source="../media/validate/hyper-v-advanced-properties-jumbo-packet-setting.png" alt-text="Página de clústeres y nodos del asistente para la configuración de Validate-DCB":::
 
 1. Para corregir el error, es necesario habilitar la característica de paquetes gigantes y cambiar su tamaño a 9014 bytes. Al ejecutar el examen de nuevo en el host S046036 se confirma este cambio al devolverse un recuento de errores de 0.
 
-    :::image type="content" source="../media/validate/jumbo-packet-error-fix-confirmation.png" alt-text="Resultados del examen de Validate-DCB que confirman que la configuración del paquete gigante del host del servidor se ha corregido":::
+    :::image type="content" source="../media/validate/jumbo-packet-error-fix-confirmation.png" alt-text="Página de clústeres y nodos del asistente para la configuración de Validate-DCB":::
 
 Para obtener más información sobre cómo resolver errores que identifica la herramienta Validate-DCB, vea el vídeo siguiente.
 
@@ -143,7 +145,7 @@ Siga estos pasos para validar los servidores de un clúster existente en Windows
 1. En la página **Inventario**, seleccione los servidores del clúster, expanda el submenú **Más** y seleccione **Validar clúster**.
 1. En la ventana emergente **Validar clúster**, seleccione **Sí**.
 
-    :::image type="content" source="../media/validate/validate-cluster-pop-up.png" alt-text="Ventana emergente Validar clúster":::
+    :::image type="content" source="../media/validate/validate-cluster-pop-up.png" alt-text="Página de clústeres y nodos del asistente para la configuración de Validate-DCB":::
 
 1. En la ventana emergente **Credential Security Service Provider (CredSSP)** (Proveedor de servicios de seguridad de credenciales [CredSSP]), seleccione **Sí**.
 1. Proporcione sus credenciales para habilitar **CredSSP** y, después, seleccione **Continuar**.<br> La validación del clúster se ejecuta en segundo plano y le proporciona una notificación cuando se completa, momento en el que puede ver el informe de validación, tal como se describe en la sección siguiente.

@@ -6,13 +6,13 @@ ms.author: v-kedow
 ms.topic: how-to
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 09/24/2020
-ms.openlocfilehash: d4dc446f5d58f25ba6183cf4415b5f4e2d34df9a
-ms.sourcegitcommit: 034e61836038ca75199a0180337257189601cd12
+ms.date: 10/01/2020
+ms.openlocfilehash: 8a4c8557fe708535bfdde383ef30dd78395b1c01
+ms.sourcegitcommit: 09572e1442c96a5a1c52fac8ee6b0395e42ab77d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91230468"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91625879"
 ---
 # <a name="before-you-deploy-azure-stack-hci"></a>Antes de implementar Azure Stack HCI
 
@@ -145,6 +145,57 @@ Al usar el Asistente para creación de clústeres en Windows Admin Center para c
 - ICMPv4 e ICMPv6 (si se usa Test-SRTopology)
 
 Puede que se requieran puertos adicionales no mencionados antes. Estos son los puertos para la funcionalidad básica de Azure Stack HCI.
+
+### <a name="network-switch-requirements"></a>Requisitos del conmutador de red
+
+En esta sección se definen los requisitos de los conmutadores físicos que se usan con Azure Stack HCI. En estos requisitos se enumeran las especificaciones del sector, los estándares de la organización y los protocolos que son obligatorios para todas las implementaciones de Azure Stack HCI. A menos que se indique lo contrario, se requiere la última versión activa (no reemplazada) del estándar.
+
+Estos requisitos ayudan a garantizar unas comunicaciones confiables entre los nodos de las implementaciones de clúster de Azure Stack HCI. Unas comunicaciones confiables entre los nodos resultan fundamentales. Proporcionar el nivel de confiabilidad necesario para Azure Stack HCI requiere que los conmutadores:
+
+- Cumplan con las especificaciones, los estándares y los protocolos aplicables del sector
+- Ofrezcan visibilidad sobre qué especificaciones, estándares y protocolos admite el conmutador
+- Proporcionen información sobre qué funcionalidades están habilitadas
+
+Asegúrese de preguntar al proveedor del conmutador si el conmutador admite lo siguiente:
+
+#### <a name="standard-ieee-8021q"></a>Estándar: IEEE 802.1Q
+
+Los conmutadores Ethernet deben cumplir con la especificación IEEE 802.1Q que define las redes VLAN. Las VLAN son necesarias para varios aspectos de Azure Stack HCI y son necesarias en todos los escenarios.
+
+#### <a name="standard-ieee-8021qbb"></a>Estándar: IEEE 802.1Qbb
+
+Los conmutadores Ethernet deben cumplir con la especificación IEEE 802.1Qbb que define el control de flujo basado en prioridades (PFC). Si se usa Data Center Bridging (DCB), se necesita PFC. Como DCB se puede usar en escenarios de RDMA como RoCE e iWARP, se necesita 802.1Qbb en todos los escenarios. Se requiere un mínimo de tres prioridades de clase de servicio (CoS) sin que se degraden las funcionalidades del conmutador o la velocidad del puerto.
+
+#### <a name="standard-ieee-8021qaz"></a>Estándar: IEEE 802.1Qaz
+
+Los conmutadores Ethernet deben cumplir con la especificación IEEE 802.1Qaz que define la selección de transmisiones mejorada (ETS). Se requiere ETS si se usa DCB. Como DCB se puede usar en escenarios de RDMA como RoCE e iWARP, se necesita 802.1Qaz en todos los escenarios. Se requiere un mínimo de tres prioridades de clase de servicio (CoS) sin que se degraden las funcionalidades del conmutador o la velocidad del puerto.
+
+#### <a name="standard-ieee-8021ab"></a>Estándar: IEEE 802.1AB
+
+Los conmutadores Ethernet deben cumplir la especificación IEEE 802.1AB que define el protocolo de detección de niveles de vínculo (LLDP). Se requiere LLDP para que Windows detecte la configuración del conmutador. La configuración del tipo, longitud y valores (TLVs) de LLDP debe estar habilitada dinámicamente. Estos conmutadores no deben requerir configuración adicional.
+
+Por ejemplo, si habilita el subtipo 3 de 802.1, se anunciarán automáticamente todas las redes VLAN disponibles en los puertos del conmutador.
+
+#### <a name="tlv-requirements"></a>Requisitos de TLV
+
+LLDP permite a las organizaciones definir y codificar sus propios TLV personalizados. Estos se denominan TLV específicos de la organización. Todos los TLV específicos de la organización se inician con un valor de tipo TLV de LLDP de 127. En la tabla siguiente se muestra qué subtipos de TLV personalizados específicos de la organización (tipo de TLV 127) son obligatorios y cuáles son opcionales:
+
+|Condición|Organización|Subtipo de TLV|
+|-|-|-|
+|Obligatorio|IEEE 802.1|Nombre de VLAN (subtipo = 3)|
+|Obligatorio|IEEE 802.3|Tamaño máximo del marco (subtipo = 4)|
+|Opcional|IEEE 802.1|Identificador de VLAN del puerto (subtipo = 1)|
+|Opcional|IEEE 802.1|Identificador de VLAN de puerto y protocolo (subtipo = 2)|
+|Opcional|IEEE 802.1|Agregación de vínculos (subtipo = 7)|
+|Opcional|IEEE 802.1|Notificación de congestión (subtipo = 8)|
+|Opcional|IEEE 802.1|Configuración de ETS (subtipo = 9)|
+|Opcional|IEEE 802.1|Recomendación de ETS (subtipo = A)|
+|Opcional|IEEE 802.1|Configuración de PFC (subtipo = B)|
+|Opcional|IEEE 802.1|EVB (subtipo = D)|
+|Opcional|IEEE 802.3|Agregación de vínculos (subtipo = 3)|
+
+> [!NOTE]
+> En el futuro, es posible que se requieran algunas de las características opcionales que se enumeran.
 
 ### <a name="storage-requirements"></a>Requisitos de almacenamiento
 

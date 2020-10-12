@@ -7,12 +7,12 @@ ms.date: 04/10/2020
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 06/05/2019
-ms.openlocfilehash: 231e4ac3b0bc8e0d43c608ff252f7d4c274e84a8
-ms.sourcegitcommit: 1c5e7d8419037c0f3ef6fe9d8e6bfb6a59659c84
+ms.openlocfilehash: 1a8e4618f81f157ff05117505bf5b76922bd4c35
+ms.sourcegitcommit: 2d2ae0b6db2e4f43f8496b184f30cddbb08b2cbd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89428556"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91815145"
 ---
 # <a name="integrate-external-monitoring-solution-with-azure-stack-hub"></a>Integración de una solución de supervisión externa con Azure Stack Hub
 
@@ -119,9 +119,9 @@ Para más información sobre cómo crear un nombre de entidad de seguridad de se
 
 | Parámetro | Descripción | Authentication |
 | --- | --- | --- |
-| **External_domain_fqdn ** | Nombre de dominio completo externo |    |
-| **region: ** | Nombre de región |    |
-| **tenant_id: ** | Id. de inquilino\* |    |
+| **External_domain_fqdn** | Nombre de dominio completo externo |    |
+| **region:** | Nombre de región |    |
+| **tenant_id:** | Id. de inquilino\* |    |
 | client_id: | Id. de cliente | SPN con secreto |
 | client_secret: | Contraseña de cliente | SPN con secreto |
 | client_cert\*\*: | Ruta de acceso al certificado | SPN con certificado |

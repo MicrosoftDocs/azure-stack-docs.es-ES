@@ -3,16 +3,16 @@ title: Disponibilidad de los conjuntos de escalado de máquinas virtuales en Azu
 description: Conozca cómo un operador de la nube puede agregar conjuntos de escalado de máquinas virtuales a Marketplace de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 08/28/2020
+ms.date: 10/07/2020
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 10/22/2019
-ms.openlocfilehash: 3714b69e2a65baeb0a5b0ba9a029a5b3144bee1a
-ms.sourcegitcommit: 28894abb31423046f6775aadef490c467f1b1820
+ms.openlocfilehash: a69f29a168853a2cb2bc1c757f90185e0b56636e
+ms.sourcegitcommit: 2d2ae0b6db2e4f43f8496b184f30cddbb08b2cbd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89089701"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91815001"
 ---
 # <a name="make-virtual-machine-scale-sets-available-in-azure-stack-hub"></a>Disponibilidad de los conjuntos de escalado de máquinas virtuales en Azure Stack Hub
 
@@ -35,16 +35,17 @@ En Azure Stack Hub, los conjuntos de escalado de máquinas virtuales no admiten 
 ## <a name="use-the-azure-stack-hub-portal"></a>Uso del portal de Azure Stack Hub
 
 1. Inicie sesión en el portal de Azure Stack Hub. Después vaya a **Todos los servicios**, luego **Conjuntos de escalado de máquinas virtuales** y, en **COMPUTE**, seleccione **Conjuntos de escalado de máquinas virtuales**.
-   ![Selección de conjuntos de escalado de máquinas virtuales](media/azure-stack-compute-add-scalesets/all-services.png)
+   [![Seleccionar Conjuntos de escalado de máquinas virtuales](media/azure-stack-compute-add-scalesets/all-services-small.png)](media/azure-stack-compute-add-scalesets/all-services.png#lightbox)
 
-2. Seleccione ***Create Virtual machine scale sets*** (Crear conjuntos de escalado de máquinas virtuales).
-   ![Creación de un conjunto de escalado de máquinas virtuales](media/azure-stack-compute-add-scalesets/create-scale-set.png)
+2. Seleccione **Agregar**.
 
-3. Rellene los campos vacíos y elija valores de las listas desplegables **Imagen del disco del sistema operativo**, **Suscripción** y **Tamaño de instancia**. Seleccione **Sí** para **Usar discos administrados**. A continuación, haga clic en **Crear**.
-    ![Configuración y creación de escalado de máquinas virtuales](media/azure-stack-compute-add-scalesets/create.png)
+   ![Crear un conjunto de escalado de máquinas virtuales](media/azure-stack-compute-add-scalesets/create-scale-set.png)
+
+3. Rellene los campos vacíos y elija valores de las listas desplegables **Imagen del disco del sistema operativo**, **Suscripción** y **Tamaño de instancia**. Seleccione **Sí** para **Usar discos administrados**. Seleccione **Crear**.
+    [![Configuración y creación de conjuntos de escalado de máquinas virtuales](media/azure-stack-compute-add-scalesets/create-small.png)](media/azure-stack-compute-add-scalesets/create.png#lightbox)
 
 4. Para ver el nuevo conjunto de escalado de máquinas virtuales, vaya a **Todos los recursos**, busque el nombre del conjunto de escalado de máquinas virtuales y, después, seleccione su nombre en la búsqueda.
-   ![Visualización del conjunto de escalado de máquinas virtuales](media/azure-stack-compute-add-scalesets/search.png)
+   [![Visualización del conjunto de escalado de máquinas virtuales](media/azure-stack-compute-add-scalesets/search-small.png)](media/azure-stack-compute-add-scalesets/search.png#lightbox)
 
 ## <a name="update-images-in-a-virtual-machine-scale-set"></a>Actualización de imágenes en un conjunto de escalado de máquinas virtuales
 
@@ -79,7 +80,7 @@ Puede cambiar el tamaño de un conjunto de escalado de máquinas virtuales para 
 
 2. Use la barra de desplazamiento para establecer el nuevo nivel de escalado para este conjunto de escalado de máquinas virtuales y, luego, haga clic en **Guardar**.
 
-     ![Escalado del conjunto de máquinas virtuales](media/azure-stack-compute-add-scalesets/scale.png)
+     [![Escalado del conjunto de máquinas virtuales](media/azure-stack-compute-add-scalesets/scale-small.png)](media/azure-stack-compute-add-scalesets/scale.png#lightbox)
 
 ## <a name="next-steps"></a>Pasos siguientes
 

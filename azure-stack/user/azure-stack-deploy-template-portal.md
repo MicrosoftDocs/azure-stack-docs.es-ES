@@ -2,51 +2,59 @@
 title: Implementación de una plantilla desde el portal en Azure Stack Hub
 description: Aprenda a usar el portal de Azure Stack Hub para implementar plantillas.
 author: mattbriggs
-ms.topic: article
-ms.date: 5/27/2020
+ms.topic: how-to
+ms.date: 10/05/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: ffcc181f0d5693b1c525f871ff5ba92f0b508b04
-ms.sourcegitcommit: cad40ae88212cc72f40c84a1c88143ea0abb65ef
+ms.lastreviewed: 10/05/2020
+ms.openlocfilehash: b428c99f7c8b847e575e40af2915a4da60f2312f
+ms.sourcegitcommit: 868887e4b13b1572f15004a9db2c334e60d8add2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84112144"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91778017"
 ---
 # <a name="deploy-a-template-using-the-portal-in-azure-stack-hub"></a>Implementación de una plantilla desde el portal en Azure Stack Hub
 
-Puede usar el portal para implementar plantillas de Azure Resource Manager en Azure Stack Hub.
+Puede usar el portal de usuarios de Azure Stack Hub para implementar plantillas de Azure Resource Manager en Azure Stack Hub.
 
 ## <a name="to-deploy-a-template"></a>Para implementar una plantilla
 
-1. Inicie sesión en el portal, seleccione **+ Crear un recurso** y, a continuación, seleccione **Personalizado**.
+1. Inicie sesión en el portal de usuarios de Azure Stack Hub y seleccione **+ Crear un recurso** > **Personalizar** > **Template Deployment**.
 
    ![Creación de un recurso en el portal de Azure Stack Hub](media/azure-stack-deploy-template-portal/template-deploy1.png)
 
-1. Seleccione **Implementación de plantillas**.
+2. Puede seleccionar **Type to start filter** (Escribir para empezar a filtrar) para elegir una plantilla de inicio rápido de GitHub, o bien elija **Cree su propia plantilla en el editor**.
 
    ![Implementación de una plantilla en el portal de Azure Stack Hub](media/azure-stack-deploy-template-portal/template-deploy2.png)
 
-1. Seleccione **Editar plantilla** y, a continuación, pegue el código de la plantilla JSON en la ventana de código. Seleccione **Guardar**.
+    Un miembro de la comunidad de Azure Stack Hub (y no Microsoft) es quien ha creado [**AzureStack-QuickStart-Templates**](https://github.com/Azure/AzureStack-QuickStart-Templates). Su propietario (no Microsoft) le permite usar las plantillas con arreglo a un acuerdo de licencia. Microsoft no se responsabiliza de estas plantillas en cuanto a su seguridad, compatibilidad ni rendimiento. Las plantillas de la comunidad no reciben ningún tipo de soporte en ningún servicio ni programa de soporte de Microsoft. Dichas plantillas se proporcionan *tal cual*, sin garantía de ningún tipo.
+
+3. Si seleccionó **Cree su propia plantilla en el editor**, pegue el código de la plantilla JSON en la ventana de código.
 
    ![Edición de plantillas en el portal de Azure Stack Hub](media/azure-stack-deploy-template-portal/template-deploy3.png)
 
-1. Seleccione **Editar parámetros**, escriba los valores para los parámetros que se muestran y, a continuación, seleccione **Aceptar**.
+    - Seleccione **Plantilla de inicio rápido** para cargar una plantilla de la comunidad en el editor.
+
+    - Seleccione **Cargar archivo** para cargar una plantilla de Azure Resource Manager desde la máquina local al editor.
+
+    - Seleccione **Descargar** para guardar la plantilla de Azure Resource Manager en la máquina local.
+
+    Cuando haya terminado de realizar cambios en la plantilla, seleccione **Guardar**.
+
+4. Seleccione**Suscripción**. Elija la suscripción que desee usar. Seleccione **Grupo de recursos**. Puede elegir un grupo de recursos existente o crear uno y, a continuación, seleccionar **Aceptar**. Después, seleccione **Revisar y crear**.
 
    ![Edición de parámetros en el portal de Azure Stack Hub](media/azure-stack-deploy-template-portal/template-deploy4.png)
 
-1. Seleccione**Suscripción**. Elija la suscripción que quiere usar y, a continuación, seleccione **Aceptar**.
+5. Seleccione **Crear**.
 
    ![Selección de una suscripción en el portal de Azure Stack Hub](media/azure-stack-deploy-template-portal/template-deploy5.png)
 
-1. Seleccione **Grupo de recursos**. Elija un grupo de recursos existente o cree uno y, a continuación, seleccione **Aceptar**.
+6. Un icono nuevo en el panel realiza el seguimiento del progreso de la implementación de la plantilla.
 
    ![Selección de un grupo de recursos en el portal de Azure Stack Hub](media/azure-stack-deploy-template-portal/template-deploy6.png)
 
-1. Seleccione **Crear**. Un icono nuevo en el panel realiza el seguimiento del progreso de la implementación de la plantilla.
-
-   ![Creación de una plantilla en el portal de Azure Stack Hub](media/azure-stack-deploy-template-portal/template-deploy7.png)
+   Puede utilizar las plantillas de Azure Resource Manager para implementar y aprovisionar todos los recursos para su aplicación en una única operación coordinada. También se pueden volver a implementar plantillas para realizar cambios en los recursos de un grupo de recursos. Para más información sobre el uso de plantillas con Azure Stack Hub, consulte [Uso de plantillas de Administrador de recursos de Azure en Azure Stack Hub](azure-stack-arm-templates.md).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

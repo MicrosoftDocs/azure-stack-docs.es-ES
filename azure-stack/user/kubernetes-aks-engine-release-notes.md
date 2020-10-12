@@ -7,12 +7,12 @@ ms.date: 09/28/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 09/28/2020
-ms.openlocfilehash: 03824b30d3d5d5c8982b1295a5999c299d14cf08
-ms.sourcegitcommit: 703be61f2f1565bf478b8c184753869c29e5c33c
+ms.openlocfilehash: b4c5a2f6af605cc390a990df874bceae691006d3
+ms.sourcegitcommit: edb60c948b445537e9411d6261c6c78359b71d0b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91495769"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91810650"
 ---
 # <a name="release-notes-for-the-aks-engine-on-azure-stack-hub"></a>Notas de la versión del motor de AKS en Azure Stack Hub
 ::: moniker range=">=azs-2002"
@@ -68,7 +68,7 @@ Hay nuevas versiones de estas disponibles con esta actualización:
 
 -   El operador de Azure Stack Hub tendrá que descargar una nueva imagen base de AKS en Ubuntu en el marketplace de stamps:
 
-    -   Nombre: Distribución de imágenes de la imagen base de AKS en Ubuntu 16.04-LTS, agosto 2020 (2020.09.14)
+    -   Nombre: Distribución de imágenes de la imagen base de AKS en Ubuntu 16.04-LTS, septiembre de 2020 (2020.09.14)
 
     -   Versión: 2020.09.14
 

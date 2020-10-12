@@ -1,19 +1,19 @@
 ---
 title: Administración de la infraestructura de almacenamiento para Azure Stack Hub
 titleSuffix: Azure Stack
-description: Aprenda a administrar la infraestructura de almacenamiento para Azure Stack Hub.
+description: Aprenda a administrar la infraestructura de almacenamiento para Azure Stack Hub. Consulte cómo supervisar volúmenes y unidades. Vea sugerencias para la solución de problemas al agregar unidades a grupos.
 author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 5/4/2020
 ms.author: inhenkel
 ms.lastreviewed: 5/4/2020
 ms.reviewer: jiaha
-ms.openlocfilehash: 3fff3c9c7742d22c24ab540d4bf523ade3e7a227
-ms.sourcegitcommit: c263a86d371192e8ef2b80ced2ee0a791398cfb7
+ms.openlocfilehash: a267c0bf5429bdd97b5a722f45f2fd188b63efb2
+ms.sourcegitcommit: a1e2003fb9c6dacdc76f97614ff5a26a5b197b49
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82848339"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91623207"
 ---
 # <a name="manage-storage-infrastructure-for-azure-stack-hub"></a>Administración de la infraestructura de almacenamiento para Azure Stack Hub
 En este artículo se describen el estado de mantenimiento y el estado operativo de los recursos de infraestructura de almacenamiento de Azure Stack Hub. Estos recursos incluyen unidades y volúmenes de almacenamiento. La información de este tema le ayudará a solucionar varios problemas, como la imposibilidad de agregar una unidad a un grupo.

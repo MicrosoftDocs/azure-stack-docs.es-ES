@@ -8,12 +8,12 @@ ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 01/13/2019
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: 6a63ae93488a13b2b3c8f872aadf882a9ccd1a13
-ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
+ms.openlocfilehash: 5dc8599a62c4b9e10d603bf2f02f18bf5024e203
+ms.sourcegitcommit: edb60c948b445537e9411d6261c6c78359b71d0b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91106868"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91810667"
 ---
 # <a name="update-azure-app-service-on-azure-stack-hub"></a>Actualización de Azure App Service en Azure Stack Hub
 
@@ -141,7 +141,7 @@ Para actualizar App Service en un entorno desconectado, primero debe crear un pa
 
 2. Haga clic en **Avanzado** > **Completar la instalación o actualización sin conexión**.
 
-    ![Captura de pantalla que muestra cómo realizar una instalación sin conexión o una actualización en el instalador de App Service.][12]
+    ![Captura de pantalla que muestra cómo completar una instalación sin conexión o una actualización en el instalador de App Service.][12]
 
 3. Vaya a la ubicación del paquete de actualización sin conexión que creó previamente y haga clic en **Siguiente**.
 
