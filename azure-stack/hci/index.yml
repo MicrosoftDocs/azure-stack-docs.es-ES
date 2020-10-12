@@ -7,13 +7,13 @@ metadata:
   ms.topic: landing-page
   author: khdownie
   ms.author: v-kedow
-  ms.date: 07/21/2020
-  ms.openlocfilehash: 439e41651800ddb6ee478bfad083890193aef5da
-  ms.sourcegitcommit: e675eafd12b044a6d8ae3790d1874e935f80f7cb
+  ms.date: 10/5/2020
+  ms.openlocfilehash: f66164d37b0e5fa1fab243f73b81df3b732205bc
+  ms.sourcegitcommit: 1621f2748b2059fd47ccacd48595a597c44ee63f
   ms.translationtype: HT
   ms.contentlocale: es-ES
-  ms.lasthandoff: 07/22/2020
-  ms.locfileid: "86891975"
+  ms.lasthandoff: 10/08/2020
+  ms.locfileid: "91853149"
 landingContent:
 - title: Acerca de Azure Stack HCI
   linkLists:
@@ -29,17 +29,17 @@ landingContent:
   linkLists:
   - linkListType: deploy
     links:
-    - text: Antes de comenzar
+    - text: Antes de empezar
       url: deploy/before-you-start.md
     - text: Implementación del sistema operativo de Azure Stack HCI
       url: deploy/operating-system.md
-    - text: Crear clúster
+    - text: Crear un clúster
       url: deploy/create-cluster.md
     - text: Configuración de un testigo del clúster
       url: deploy/witness.md
     - text: Registrarse en Azure
       url: deploy/register-with-azure.md
-    - text: Validación de un clúster de Azure Stack HCI
+    - text: Validación de un clúster
       url: deploy/validate.md
 - title: Administración del almacenamiento
   linkLists:
@@ -49,22 +49,18 @@ landingContent:
       url: manage/create-volumes.md
     - text: Creación de volúmenes extendidos
       url: manage/create-stretched-volumes.md
+    - text: Protección de volúmenes
+      url: manage/volume-encryption-deduplication.md
     - text: Extensión de volúmenes
       url: manage/extend-volumes.md
     - text: Eliminar volúmenes
       url: manage/delete-volumes.md
     - text: Sustitución de unidades
       url: manage/replace-drives.md
-- title: Administración de máquinas virtuales
-  linkLists:
-  - linkListType: how-to-guide
-    links:
-    - text: Administración de máquinas virtuales con Windows Admin Center
-      url: manage/vm.md
-    - text: Administración de máquinas virtuales con PowerShell
-      url: manage/vm-powershell.md
-    - text: Configuración de reglas de afinidad de máquina virtual
-      url: deploy/before-you-start.md
+    - text: Uso de la caché del archivo .csv
+      url: manage/use-csv-cache.md
+    - text: Administración de SMB multicanal
+      url: manage/manage-smb-multichannel.md
 - title: Administración del clúster
   linkLists:
   - linkListType: how-to-guide
@@ -75,10 +71,22 @@ landingContent:
       url: manage/cluster-powershell.md
     - text: Incorporación o eliminación de servidores
       url: manage/add-cluster.md
+    - text: Supervisión de clúster
+      url: manage/monitor-cluster.md
     - text: Actualización de clústeres
       url: manage/update-cluster.md
     - text: Cambio de idiomas
       url: manage/vm-powershell.md
+- title: Administración de máquinas virtuales
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Administración de máquinas virtuales con Windows Admin Center
+      url: manage/vm.md
+    - text: Administración de máquinas virtuales con PowerShell
+      url: manage/vm-powershell.md
+    - text: Configuración de reglas de afinidad de máquina virtual
+      url: deploy/before-you-start.md
 - title: Conceptos de Azure Stack HCI
   linkLists:
   - linkListType: concept
@@ -91,16 +99,24 @@ landingContent:
       url: concepts/updates.md
     - text: Elección de unidades
       url: concepts/choose-drives.md
+    - text: Consideraciones de simetría de unidad
+      url: concepts/drive-symmetry-considerations.md
     - text: Planeamiento de volúmenes
       url: concepts/plan-volumes.md
     - text: Tolerancia a errores y eficacia del almacenamiento
       url: concepts/fault-tolerance.md
     - text: Consideraciones sobre la seguridad
       url: concepts/security.md
+    - text: Caché de bloque de almacenamiento
+      url: concepts/cache.md
+    - text: Cuórum de clúster y bloque de almacenamiento
+      url: concepts/quorum.md
 - title: Conexión con Azure
   linkLists:
   - linkListType: how-to-guide
     links:
+    - text: Administración del registro de Azure
+      url: manage/manage-azure-registration.md
     - text: Registro de Windows Admin Center con Azure
       url: manage/register-windows-admin-center.md
     - text: Uso de Azure Site Recovery
@@ -111,3 +127,21 @@ landingContent:
       url: manage/use-azure-network-adapter.md
     - text: Uso de Azure Backup
       url: manage/use-azure-backup.md
+- title: Red definida por software
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Introducción a las Redes definidas por software (SDN)
+      url: concepts/software-defined-networking.md
+    - text: Planificación de la infraestructura de SDN
+      url: concepts/plan-software-defined-networking-infrastructure.md
+    - text: Introducción a la controladora de red
+      url: concepts/network-controller-overview.md
+    - text: Planificación de una controladora de red
+      url: concepts/network-controller.md
+    - text: Introducción al software Load Balancer
+      url: concepts/software-load-balancer.md
+    - text: Introducción a la puerta de enlace de RAS
+      url: concepts/gateway-overview.md
+    - text: Introducción a Route Reflector
+      url: concepts/route-reflector-overview.md

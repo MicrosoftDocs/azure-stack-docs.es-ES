@@ -118,12 +118,20 @@
           href: concepts/quorum.md
     - name: Redes
       items:
-        - name: Red definida por software
+        - name: Redes definidas por software (SDN)
           href: concepts/software-defined-networking.md
         - name: Planificación de una infraestructura de SDN
           href: concepts/plan-software-defined-networking-infrastructure.md
+        - name: Introducción a la controladora de red
+          href: concepts/network-controller-overview.md
         - name: Planificación de una controladora de red
           href: concepts/network-controller.md
+        - name: Introducción al software Load Balancer
+          href: concepts/software-load-balancer.md
+        - name: Introducción a la puerta de enlace de RAS
+          href: concepts/gateway-overview.md
+        - name: Introducción a Route Reflector
+          href: concepts/route-reflector-overview.md
     - name: Mantenimiento y seguridad
       items:
         - name: Facturación
