@@ -7,19 +7,19 @@ ms.date: 09/16/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 09/16/2020
-ms.openlocfilehash: 810aa253eb4872a58ea2e52070bb42eaaa1f6aaa
-ms.sourcegitcommit: 719569bb9e3f9924494a9229b4f2d211ae3f4f74
+ms.openlocfilehash: 4cbb253b88f86f18c69c7528b6beabb58d277d14
+ms.sourcegitcommit: 362081a8c19e7674c3029c8a44d7ddbe2deb247b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717995"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91899455"
 ---
 # <a name="add-the-azure-kubernetes-services-aks-engine-prerequisites-to-the-azure-stack-hub-marketplace"></a>Incorporación de requisitos previos del motor de Azure Kubernetes Service (AKS) al Marketplace de Azure Stack Hub
 
 Puede configurar el motor de Azure Kubernetes Services (AKS) para los usuarios. Agregue los elementos que se describen en este artículo a Azure Stack Hub. Después, los usuarios pueden implementar un clúster de Kubernetes en una sola operación coordinada. Este artículo le guía por los pasos necesarios para hacer que el motor de AKS esté disponible para los usuarios, tanto en entornos conectados como desconectados. El motor de AKS depende de una identidad de entidad de servicio y, en Marketplace, una extensión de script personalizado y la imagen base de AKS. El motor de AKS requiere que ejecute [Azure Stack Hub 1910](release-notes.md?view=azs-1910&preserve-view=true) u otra versión posterior.
 
 > [!NOTE]  
-> Puede encontrar la asignación de Azure Stack Hub al número de versión del motor de AKS en las [notas de la versión del motor de AKS](/azure-stack/user/kubernetes-aks-engine-release-notes#aks-engine-and-azure-stack-version-mapping).
+> Puede encontrar la asignación de Azure Stack Hub al número de versión del motor de AKS en las [notas de la versión del motor de AKS](../user/kubernetes-aks-engine-release-notes.md#aks-engine-and-azure-stack-version-mapping).
 
 ## <a name="check-your-users-service-offering"></a>Comprobar la oferta de servicio del usuario
 

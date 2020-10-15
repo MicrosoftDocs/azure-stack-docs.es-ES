@@ -7,12 +7,12 @@ ms.date: 03/04/2020
 ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 06/13/2019
-ms.openlocfilehash: 4577da446c11f1053372cdf3d6458cd7c90937be
-ms.sourcegitcommit: 4af79f4fa2598d57c81e994192c10f8c6be5a445
+ms.openlocfilehash: 67e1961a0f1f739e550cc55d100900190892bb5e
+ms.sourcegitcommit: 362081a8c19e7674c3029c8a44d7ddbe2deb247b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89742499"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91899761"
 ---
 # <a name="azure-stack-hub-compute-capacity"></a>Capacidad de proceso de Azure Stack Hub
 
@@ -116,7 +116,7 @@ Al reducir el tamaño de la máquina virtual más grande a la siguiente máquina
      
 ### <a name="add-a-node"></a>Agregar un nodo
 
-[Al agregar un nodo de Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-add-scale-node), se desasignará la memoria mediante la distribución equitativa de la memoria entre los dos nodos.
+[Al agregar un nodo de Azure Stack Hub](./azure-stack-add-scale-node.md), se desasignará la memoria mediante la distribución equitativa de la memoria entre los dos nodos.
 
 ![Agregar un nodo](media/azure-stack-capacity-planning/add-a-node.png)
 
@@ -128,7 +128,7 @@ Reserva de resistencia = 384 + (0,15) ((5)*384) + 112 * (3) = 1008 GB
 
 ### <a name="increase-memory-on-each-node-to-512-gb"></a>Aumentar la memoria de cada nodo a 512 GB
 
-[Al aumentar la memoria de cada nodo](https://docs.microsoft.com/azure-stack/operator/azure-stack-manage-storage-physical-memory-capacity), se aumentará la memoria total disponible.
+[Al aumentar la memoria de cada nodo](./azure-stack-manage-storage-physical-memory-capacity.md), se aumentará la memoria total disponible.
 
 ![Aumentar el tamaño del nodo](media/azure-stack-capacity-planning/increase-node-size.png)
 

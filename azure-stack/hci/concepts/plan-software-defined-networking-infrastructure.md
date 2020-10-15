@@ -7,12 +7,12 @@ ms.assetid: ea7e53c8-11ec-410b-b287-897c7aaafb13
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 09/11/2020
-ms.openlocfilehash: 7d7eeaec5f82e08cf33a307f429389f03e712987
-ms.sourcegitcommit: a845ae0d3794b5d845b2ae712baa7e38f3011a7b
+ms.openlocfilehash: 986aba8f7591239abfa5502dc2c335177df2eed1
+ms.sourcegitcommit: 362081a8c19e7674c3029c8a44d7ddbe2deb247b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/12/2020
-ms.locfileid: "90045548"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91899540"
 ---
 # <a name="plan-a-software-defined-network-infrastructure"></a>Planeamiento de una infraestructura de red definida por software
 
@@ -175,7 +175,7 @@ Rol|Requisitos de CPU virtual|Requisitos de memoria|Requisitos de disco|
 |Puerta de enlace RAS<br> (grupo único de puerta de enlace<br> de tres nodos, dos activos, uno pasivo)|8 vCPU|Se recomiendan 8 GB|75 GB para la unidad de sistema operativo
 |Enrutador BGP de puerta de enlace de RAS<br> para el emparejamiento de SLB/MUX<br> (como alternativa, use el conmutador para la parte superior del rack<br> como enrutador BGP)|2 CPU virtuales|2 GB|75 GB para la unidad de sistema operativo|
 
-Si usa System Center Virtual Machine Manager (VMM) para la implementación, se necesitarán recursos de máquinas virtuales de infraestructura adicionales para VMM y otras infraestructuras que no sean de SDN. Para más información, consulte [Requisitos del sistema para System Center Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/system-requirements?view=sc-vmm-2019&preserve-view=true).
+Si usa System Center Virtual Machine Manager (VMM) para la implementación, se necesitarán recursos de máquinas virtuales de infraestructura adicionales para VMM y otras infraestructuras que no sean de SDN. Para más información, consulte [Requisitos del sistema para System Center Virtual Machine Manager](/system-center/vmm/system-requirements?preserve-view=true&view=sc-vmm-2019).
 
 ## <a name="extending-your-infrastructure"></a>Ampliación de la infraestructura
 Los requisitos de tamaño y recursos de la infraestructura dependen de las máquinas virtuales de carga de trabajo de inquilino que planea hospedar. Los requisitos de CPU, memoria y disco de las máquinas virtuales de infraestructura (por ejemplo: Controladora de red, SLB, puerta de enlace, etc.) se definen en la tabla anterior. Puede agregar más máquinas virtuales de infraestructura para realizar un escalado según sea necesario. Sin embargo, las máquinas virtuales de los inquilinos que se ejecutan en los hosts de Hyper-V tienen sus propios requisitos de CPU, memoria y disco que se deben tener en cuenta.
@@ -197,4 +197,4 @@ Característica|Requisitos para la implementación|Requisitos de red|
 ## <a name="next-steps"></a>Pasos siguientes
 Para obtener información relacionada, consulte:
 - [Requisitos de implementación de Controladora de red](/windows-server/networking/sdn/plan/installation-and-preparation-requirements-for-deploying-network-controller)
-- [SDN en Azure Stack HCI](https://docs.microsoft.com/azure-stack/hci/concepts/software-defined-networking)
+- [SDN en Azure Stack HCI](./software-defined-networking.md)

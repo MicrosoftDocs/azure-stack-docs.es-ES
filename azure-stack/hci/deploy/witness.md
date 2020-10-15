@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 08/11/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: 43d63e4e565a36c30837e2a8b460e0d73a35c0a5
-ms.sourcegitcommit: 7d518629bd55f24e7459404bb19b7db8a54f4b94
+ms.openlocfilehash: 075198e9045ac2d735f2113164e7fc4e24b7934f
+ms.sourcegitcommit: 362081a8c19e7674c3029c8a44d7ddbe2deb247b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88145557"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91899523"
 ---
 # <a name="set-up-a-cluster-witness"></a>Configuración de un testigo del clúster
 
@@ -84,7 +84,7 @@ El testigo de la nube siempre usa **Blob** como tipo de almacenamiento. Azure us
 
 En Azure Portal, vaya a su cuenta de almacenamiento, haga clic en **Toda la configuración** y después en **Propiedades** para ver y copiar las direcciones URL del punto de conexión.  
 
-:::image type="content" source="media/witness/cloud-witness-2.png" alt-text="Dirección URL del punto de conexión del testigo en la nube" lightbox="media/witness/cloud-witness-2.png":::  
+:::image type="content" source="media/witness/cloud-witness-2.png" alt-text="Claves de acceso del testigo en la nube" lightbox="media/witness/cloud-witness-2.png":::  
 
 ## <a name="set-up-a-witness-using-windows-powershell"></a>Configuración de un testigo mediante Windows PowerShell
 
@@ -106,4 +106,4 @@ Set-ClusterQuorum -FileShareWitness "\\fileserver\share" -Credential (Get-Creden
 
 - Para obtener más información sobre el cuórum de clúster, consulte [Descripción del cuórum de clúster y de grupo en Azure Stack HCl](../concepts/quorum.md).
 
-- Para más información sobre creación y administración de cuentas de Azure Storage, consulte [Acerca de las cuentas de Azure Storage](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/).
+- Para más información sobre creación y administración de cuentas de Azure Storage, consulte [Acerca de las cuentas de Azure Storage](/azure/storage/common/storage-account-create).

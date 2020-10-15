@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: b9f86e715835ac52bbc34782e4f9eb41ca8b4851
-ms.sourcegitcommit: 9a3397f703ff9dd7d539372bd8e5fdbe6d6a0725
+ms.openlocfilehash: e217c8b3e2a67dafa121fe752b66af9f24f888a1
+ms.sourcegitcommit: 362081a8c19e7674c3029c8a44d7ddbe2deb247b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "91019578"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91899557"
 ---
 # <a name="deploy-network-controller-using-windows-powershell"></a>Implementación de controladora de red con Windows PowerShell
 
@@ -40,7 +40,7 @@ Use este procedimiento para instalar el rol del servidor Controladora de red en 
 Para realizar este procedimiento es necesario pertenecer al grupo **Administradores**, o un grupo equivalente.  
 
 >[!NOTE]
->Si desea usar Administrador del servidor en lugar de Windows PowerShell para instalar Controladora de red, consulte [Instalación del rol del servidor Controladora de red mediante Administrador del servidor](https://technet.microsoft.com/library/mt403348.aspx)
+>Si desea usar Administrador del servidor en lugar de Windows PowerShell para instalar Controladora de red, consulte [Instalación del rol del servidor Controladora de red mediante Administrador del servidor](/windows-server/networking/sdn/technologies/network-controller/install-the-network-controller-server-role-using-server-manager)
 
 Para instalar Controladora de red, escriba los siguientes comandos:
 
@@ -218,4 +218,4 @@ Install-NetworkController -Node @($a,$b,$c) -ClientAuthentication Kerberos -Clie
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Si no usa Kerberos con la implementación de Controladora de red, debe implementar certificados. Para más información, consulte los [pasos posteriores a la implementación de Controladora de red](https://docs.microsoft.com/windows-server/networking/sdn/technologies/network-controller/post-deploy-steps-nc).
+Si no usa Kerberos con la implementación de Controladora de red, debe implementar certificados. Para más información, consulte los [pasos posteriores a la implementación de Controladora de red](/windows-server/networking/sdn/technologies/network-controller/post-deploy-steps-nc).

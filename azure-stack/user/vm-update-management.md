@@ -3,16 +3,16 @@ title: Automatización de actualizaciones y administración de máquinas virtual
 description: Uso de las soluciones Azure Monitor para VM, Update Management, Change Tracking e Inventario en Azure Automation para administrar máquinas virtuales Windows y Linux implementadas en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 04/27/2020
+ms.date: 10/08/2020
 ms.author: mabrigg
 ms.reviewer: rtiberiu
-ms.lastreviewed: 04/27/2020
-ms.openlocfilehash: f0d1ecb2f5ad2313894cb15998f43f2bfd257c77
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.lastreviewed: 10/08/2020
+ms.openlocfilehash: b9a37df9404de01bd9b094ae259c8c62637cb369
+ms.sourcegitcommit: 1621f2748b2059fd47ccacd48595a597c44ee63f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90572449"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91853268"
 ---
 # <a name="vm-update-and-management-automation-in-azure-stack-hub"></a>Automatización de actualizaciones y administración de máquinas virtuales en Azure Stack Hub
 Use las siguientes características de solución de Azure Automation para administrar máquinas virtuales Windows y Linux que se implementan mediante Azure Stack Hub:
@@ -83,7 +83,7 @@ Siga estos pasos para habilitar Update Management para máquinas virtuales de Az
 
 2. En el portal de usuarios de Azure Stack Hub, vaya a la hoja Extensiones de las máquinas virtuales para las que quiere habilitar estas soluciones, haga clic en **+ Agregar**, seleccione la extensión **Azure Update and Configuration Management** y haga clic en **Crear**:
 
-   [![En el cuadro de diálogo "Azure Update and Configuration Management", se proporciona información explicativa, un botón Crear (resaltado) para agregar la extensión y un vínculo para obtener más información.](media//vm-update-management/3-sm.PNG "Hoja de la extensión de máquina virtual")](media//vm-update-management/3-lg.PNG)
+    ![En el cuadro de diálogo "Azure Update and Configuration Management", se proporciona información explicativa, un botón Crear (resaltado) para agregar la extensión y un vínculo para obtener más información.](media//vm-update-management/3-sm.PNG "Hoja de la extensión de máquina virtual")
 
 3. Proporcione el id. del área de trabajo y la clave principal creados anteriormente para vincular el agente con el área de trabajo de Log Analytics. Luego, haga clic en **Aceptar** para implementar la extensión.
 

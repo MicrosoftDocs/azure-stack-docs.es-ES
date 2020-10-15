@@ -6,12 +6,12 @@ ms.topic: include
 ms.date: 08/04/2020
 ms.reviewer: thoroet
 ms.lastreviewed: 08/04/2020
-ms.openlocfilehash: 8b8f26eefd70e54629a1505a01e1306cab2eda1d
-ms.sourcegitcommit: 9a340b383dcf42c85bc6ec0d01ff3c9ae29dfe4c
+ms.openlocfilehash: 28fe06ca182b2df8104c2d8b23ce9f5c27448064
+ms.sourcegitcommit: 362081a8c19e7674c3029c8a44d7ddbe2deb247b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89609921"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91936175"
 ---
 Puede cargar el disco duro virtual con el portal, o con el contenedor que creó en el portal, mediante AzCopy.
 
@@ -33,7 +33,7 @@ Puede cargar el disco duro virtual con el portal, o con el contenedor que creó 
 
 Use Explorador de Azure Storage o AzCopy para reducir la posibilidad de que el disco duro virtual se dañe en el proceso de carga y esta sea más rápida. En los pasos siguientes se usa AzCopy en una máquina con Windows 10. AzCopy es una utilidad de línea de comandos que puede usar para copiar blobs o archivos a una cuenta de almacenamiento o desde una cuenta de almacenamiento.
 
-1. Si no tiene instalado AzCopy, instálelo. Encontrará instrucciones para descargar y empezar a trabajar con AzCopy en el artículo [Introducción a AzCopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10). Tome nota de dónde almacena el archivo binario. Puede [agregar AzCopy a la ruta de acceso](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/) para usarlo desde la línea de comandos de PowerShell.
+1. Si no tiene instalado AzCopy, instálelo. Encontrará instrucciones para descargar y empezar a trabajar con AzCopy en el artículo [Introducción a AzCopy](/azure/storage/common/storage-use-azcopy-v10). Tome nota de dónde almacena el archivo binario. Puede [agregar AzCopy a la ruta de acceso](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/) para usarlo desde la línea de comandos de PowerShell.
 
 2. Abra PowerShell para usar AzCopy desde el shell.
 
@@ -47,4 +47,4 @@ Use Explorador de Azure Storage o AzCopy para reducir la posibilidad de que el d
 > [!NOTE]  
 > Cargue el disco duro virtual con una sintaxis similar a la carga de un archivo único en el directorio virtual. Agregue `--blob-type=PageBlob` para asegurarse de que el disco duro virtual se carga como un **blob en páginas**, en lugar de como **bloque** de forma predeterminada.
 
-Para más información sobre el uso de AzCopy y otras herramientas de almacenamiento, consulte [Uso de herramientas de transferencia de datos en Azure Stack Hub Storage](/azure-stack/user/azure-stack-storage-transfer).
+Para más información sobre el uso de AzCopy y otras herramientas de almacenamiento, consulte [Uso de herramientas de transferencia de datos en Azure Stack Hub Storage](../user/azure-stack-storage-transfer.md).

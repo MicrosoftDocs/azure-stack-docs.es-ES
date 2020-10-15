@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.author: justinha
 ms.reviewer: asganesh
 ms.lastreviewed: 09/24/2020
-ms.openlocfilehash: ee292a3461b591a042c0847bd11bb63285a4faf4
-ms.sourcegitcommit: 034e61836038ca75199a0180337257189601cd12
+ms.openlocfilehash: 46946f72fe22345ee60c620ba2cf0283e056ae99
+ms.sourcegitcommit: 362081a8c19e7674c3029c8a44d7ddbe2deb247b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91230621"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91899829"
 ---
 # <a name="azure-stack-hub-operator-access-workstation"></a>Estación de trabajo de acceso del operador de Azure Stack Hub 
 
@@ -26,14 +26,14 @@ En las siguientes tablas se enumeran los escenarios comunes de la estación de t
 
 |Escenario                                                                                                                          |Descripción                 |
 |----------------------------------------------------------------------------------------------------------------------------------|-----------------------------|
-|[Acceso al portal de administración](https://docs.microsoft.com/azure-stack/operator/azure-stack-manage-portals)                     |Realiza operaciones administrativas                                                                           |
-|[Acceso a PEP](https://docs.microsoft.com/azure-stack/operator/azure-stack-privileged-endpoint)                                     |Recopila y carga de registros:<br>-[Creación de un recurso compartido de SMB](#transfer-files-between-the-hlh-and-oaw) en el HLH para la transferencia de archivos desde Azure Stack Hub<br>\- Uso del Explorador de Azure Storage para cargar los registros guardados en el recurso compartido de SMB |
-|[Registro de Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-registration#renew-or-change-registration) |Para volver a registrarlo, obtenga el nombre de registro y el grupo de recursos anterior en el portal de administración                               |
-|[Redifusión de Marketplace](https://docs.microsoft.com/azure-stack/operator/azure-stack-download-azure-marketplace-item)            |[Crea un recurso compartido de SMB](#transfer-files-between-the-hlh-and-oaw) en el HLH para almacenar la imagen o la extensión descargadas                                                        |
+|[Acceso al portal de administración](./azure-stack-manage-portals.md)                     |Realiza operaciones administrativas                                                                           |
+|[Acceso a PEP](./azure-stack-privileged-endpoint.md)                                     |Recopila y carga de registros:<br>-[Creación de un recurso compartido de SMB](#transfer-files-between-the-hlh-and-oaw) en el HLH para la transferencia de archivos desde Azure Stack Hub<br>\- Uso del Explorador de Azure Storage para cargar los registros guardados en el recurso compartido de SMB |
+|[Registro de Azure Stack Hub](./azure-stack-registration.md#renew-or-change-registration) |Para volver a registrarlo, obtenga el nombre de registro y el grupo de recursos anterior en el portal de administración                               |
+|[Redifusión de Marketplace](./azure-stack-download-azure-marketplace-item.md)            |[Crea un recurso compartido de SMB](#transfer-files-between-the-hlh-and-oaw) en el HLH para almacenar la imagen o la extensión descargadas                                                        |
 
 ## <a name="download-files"></a>Descarga de archivos
 
-Para obtener los archivos para crear la máquina virtual de la estación de trabajo de acceso del operador, [**descárguelos aquí**](https://aka.ms/OAWDownload). Asegúrese de revisar la [declaración de privacidad de Microsoft](https://privacy.microsoft.com/privacystatement) y los [términos legales](https://docs.microsoft.com/legal/azure-stack-hub/azure-stack-operator-access-workstation-legal-terms) antes de la descarga.
+Para obtener los archivos para crear la máquina virtual de la estación de trabajo de acceso del operador, [**descárguelos aquí**](https://aka.ms/OAWDownload). Asegúrese de revisar la [declaración de privacidad de Microsoft](https://privacy.microsoft.com/privacystatement) y los [términos legales](/legal/azure-stack-hub/azure-stack-operator-access-workstation-legal-terms) antes de la descarga.
 
 Debido a la naturaleza sin estados de la solución, no hay ninguna actualización de la máquina virtual de la estación de trabajo de acceso del operador. Para cada hito, se lanzará una nueva versión del archivo de imagen de máquina virtual. Use la versión más reciente para crear una nueva máquina virtual de OAW. El archivo de imagen se basa en la versión más reciente de Windows Server 2019. Después de la instalación, puede aplicar las actualizaciones, incluidas las actualizaciones críticas, mediante Windows Update. 
 
@@ -80,11 +80,11 @@ En la tabla siguiente se muestra el software preinstalado en la máquina virtual
 | Nombre del software           | Location                                                                                       |
 |--------------------------|------------------------------------------------------------------------------------------------|
 | [Microsoft Edge para empresas](https://www.microsoft.com/edge/business/)                                            | \[SystemDrive\]\Program Files (x86)\Microsoft\Edge\Application                                                                                        |
-| [Modules de Az](https://docs.microsoft.com/azure-stack/operator/powershell-install-az-module)                         | \[SystemDrive\]\ProgramFiles\WindowsPowerShell\Modules                                         |  
+| [Modules de Az](./powershell-install-az-module.md)                         | \[SystemDrive\]\ProgramFiles\WindowsPowerShell\Modules                                         |  
 | [PowerShell 7](https://devblogs.microsoft.com/powershell/announcing-PowerShell-7-0/)| \[SystemDrive\]\Program Files\PowerShell\7                                                                       |
-| [Interfaz de la línea de comandos (CLI) de Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) | \[SystemDrive\]\Program Files (x86)\Microsoft SDKs\Azure\CLI2 |
+| [Interfaz de la línea de comandos (CLI) de Azure](/cli/azure/?view=azure-cli-latest) | \[SystemDrive\]\Program Files (x86)\Microsoft SDKs\Azure\CLI2 |
 | [Explorador de Microsoft Azure Storage](https://azure.microsoft.com/features/storage-explorer/)   | \[SystemDrive\]\Program Files (x86)\Microsoft Azure Storage Explorer                                                                       |
-| [AzCopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10)                             | \[SystemDrive\]\VMSoftware\azcopy_windows_amd64_10.3.4                                         |
+| [AzCopy](/azure/storage/common/storage-use-azcopy-v10)                             | \[SystemDrive\]\VMSoftware\azcopy_windows_amd64_10.3.4                                         |
 | [AzureStack-Tools](https://github.com/Azure/AzureStack-Tools/tree/az)                  | \[SystemDrive\]\VMSoftware\AzureStack-Tools                                                    |
 
 ## <a name="check-hlh-version"></a>Comprobación de la versión de HLH
@@ -227,9 +227,9 @@ SkipNetworkConfiguration     | Opcionales | Omite la configuración de red de la
 
 ## <a name="transfer-files-between-the-hlh-and-oaw"></a>Transferencia de archivos entre HLH y la estación de trabajo de acceso del operador
 
-Si necesita transferir archivos entre HLH y la estación de trabajo de acceso del operador, cree un recurso compartido de SMB mediante el cmdlet [New-SmbShare](https://docs.microsoft.com/powershell/module/smbshare/new-smbshare?view=win10-ps). New-SmbShare expone una carpeta del sistema de archivos a los clientes remotos como un recurso compartido de bloque de mensajes del servidor (SMB). Por ejemplo:
+Si necesita transferir archivos entre HLH y la estación de trabajo de acceso del operador, cree un recurso compartido de SMB mediante el cmdlet [New-SmbShare](/powershell/module/smbshare/new-smbshare?view=win10-ps). New-SmbShare expone una carpeta del sistema de archivos a los clientes remotos como un recurso compartido de bloque de mensajes del servidor (SMB). Por ejemplo:
 
-Para eliminar un recurso compartido creado mediante este cmdlet, use el cmdlet [Remove-SmbShare](https://docs.microsoft.com/powershell/module/smbshare/remove-smbshare?view=win10-ps). Por ejemplo:
+Para eliminar un recurso compartido creado mediante este cmdlet, use el cmdlet [Remove-SmbShare](/powershell/module/smbshare/remove-smbshare?view=win10-ps). Por ejemplo:
 
 ## <a name="remove-the-oaw-vm"></a>Eliminación de la máquina virtual de OAW
 

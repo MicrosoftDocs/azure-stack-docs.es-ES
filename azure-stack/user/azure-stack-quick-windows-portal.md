@@ -7,12 +7,12 @@ ms.date: 10/06/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 10/06/2020
-ms.openlocfilehash: 77c7e3484186a0bea1f6220330338128aad72fad
-ms.sourcegitcommit: 2d2ae0b6db2e4f43f8496b184f30cddbb08b2cbd
+ms.openlocfilehash: 68a28c28c02565c996c3bbc6742554cc78090846
+ms.sourcegitcommit: 1621f2748b2059fd47ccacd48595a597c44ee63f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91815425"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91853248"
 ---
 # <a name="quickstart-create-a-windows-server-vm-with-the-azure-stack-hub-portal"></a>Inicio rápido: Creación de una máquina virtual Windows Server con el portal de Azure Stack Hub
 
@@ -58,7 +58,7 @@ Inicie sesión en el portal de Azure Stack Hub. La dirección del portal de Azur
 
 1. Seleccione **Virtual Machines** para revisar la nueva máquina virtual. Busque el nombre de la máquina virtual y, a continuación, seleccione la máquina virtual en los resultados de la búsqueda.
 
-![Creación de una máquina virtual: Búsqueda de máquinas virtuales](./media/azure-stack-quick-windows-portal/image7.png)
+:::image type="content" source="./media/azure-stack-quick-windows-portal/image7-inline.png" alt-text="Creación de una máquina virtual: Búsqueda de máquinas virtuales" lightbox="./media/azure-stack-quick-windows-portal/image7.png":::
 
 ## <a name="clean-up-resources"></a>Limpieza de recursos
 
