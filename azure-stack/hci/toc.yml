@@ -118,6 +118,8 @@
           href: concepts/quorum.md
     - name: Redes
       items:
+        - name: Planificación de redes de host
+          href: concepts/plan-host-networking.md
         - name: Redes definidas por software (SDN)
           href: concepts/software-defined-networking.md
         - name: Planificación de una infraestructura de SDN
