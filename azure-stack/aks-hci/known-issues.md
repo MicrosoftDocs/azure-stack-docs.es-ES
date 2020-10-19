@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 09/22/2020
 ms.author: abha
 ms.reviewer: ''
-ms.openlocfilehash: 21c511521837eff83d31784db3cf59bcfe25cb2f
-ms.sourcegitcommit: 373e9e3e84eaa33331db9f78e52486fbb6beb907
+ms.openlocfilehash: f5451a9d30f87c2f4b985e4ae82541b12de52461
+ms.sourcegitcommit: 362081a8c19e7674c3029c8a44d7ddbe2deb247b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91592830"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91899710"
 ---
 # <a name="known-issues-for-azure-kubernetes-service-on-azure-stack-hci-public-preview"></a>Problemas conocidos de Azure Kubernetes Service en Azure Stack HCI (versión preliminar pública)
 En este artículo se describen problemas conocidos con la versión preliminar pública de Azure Kubernetes Service en Azure Stack HCI.
@@ -69,10 +69,16 @@ Windows Admin Center no implementará Azure Kubernetes Service en un entorno con
 Este problema se corregirá en una versión futura.
 
 ## <a name="windows-admin-center-only-supports-azure-kubernetes-service-for-azure-stack-hci-in-desktop-mode"></a>Windows Admin Center solo admite Azure Kubernetes Service para Azure Stack HCI en modo de escritorio
-En la versión preliminar, todas las funciones de Azure Kubernetes Service para Azure Stack HCI solo se admiten en el modo de escritorio de Windows Admin Center. La puerta de enlace de Windows Admin Center debe estar instalada en un equipo con Windows 10. Para más información acerca de las opciones de instalación, visite la [documentación de Windows Admin Center](https://docs.microsoft.com/windows-server/manage/windows-admin-center/plan/installation-options). Estos escenarios adicionales se admitirán en una versión futura.
+En la versión preliminar, todas las funciones de Azure Kubernetes Service para Azure Stack HCI solo se admiten en el modo de escritorio de Windows Admin Center. La puerta de enlace de Windows Admin Center debe estar instalada en un equipo con Windows 10. Para más información acerca de las opciones de instalación, visite la [documentación de Windows Admin Center](/windows-server/manage/windows-admin-center/plan/installation-options). Estos escenarios adicionales se admitirán en una versión futura.
 
 ## <a name="azure-kubernetes-service-host-setup-fails-in-windows-admin-center-if-reboots-are-required"></a>Se producirá un error en la instalación del host de Azure Kubernetes Service en Windows Admin Center si se requieren reinicios
 Se producirá un error en el asistente para la instalación del host de Azure Kubernetes Service si es necesario reiniciar uno o más servidores para instalar roles como PowerShell o Hyper-V. La solución actual es salir del asistente e intentarlo de nuevo en el mismo sistema después de que los servidores vuelvan a estar en línea. Este problema se corregirá en una versión futura.
 
 ## <a name="azure-registration-step-in-azure-kubernetes-service-host-setup-asks-to-try-again"></a>El paso del registro de Azure en la instalación del host de Azure Kubernetes Service pide que se vuelva a intentar
 Si usa Windows Admin Center para configurar el host de Azure Kubernetes Service, es posible que se le pida que vuelva a intentarlo después de escribir la información necesaria en la página de registro de Azure. Puede que tenga que volver a iniciar sesión en Azure en la puerta de enlace de Windows Admin Center para continuar con este paso. Este problema se corregirá en una versión futura.
+
+## <a name="windows-admin-center-doesnt-have-an-arc-offboarding-experience"></a>Windows Admin Center no incluye una experiencia de retirada de Arc
+Windows Admin Center no tiene actualmente ningún proceso para retirar un clúster de Azure Arc. Para eliminar los agentes de Arc de un clúster que se ha destruido, vaya al grupo de recursos del clúster en Azure Portal y elimine manualmente el contenido de Arc. Para eliminar los agentes de Arc de un clúster que todavía está en ejecución, los usuarios deben ejecutar el siguiente comando:
+```PowerShell
+az connectedk8s delete
+```

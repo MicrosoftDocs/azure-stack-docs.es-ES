@@ -3,20 +3,20 @@ title: Introducción a las máquinas virtuales de Azure Stack Hub
 description: Más información acerca de las máquinas virtuales de Azure Stack Hub.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 06/15/2020
+ms.date: 10/01/2020
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 01/05/2020
-ms.openlocfilehash: 9dda1268962952e4828b292a472ba342f1fadd23
-ms.sourcegitcommit: c9737939f4e437f1d954e163db972d58b3f98ffd
+ms.openlocfilehash: 01ee528229e52a66174c3b4d1dbba49eea6a5318
+ms.sourcegitcommit: a1e2003fb9c6dacdc76f97614ff5a26a5b197b49
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84813738"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91623139"
 ---
 # <a name="introduction-to-azure-stack-hub-vms"></a>Introducción a las máquinas virtuales de Azure Stack Hub
 
-Azure Stack Hub le ofrece máquinas virtuales como un tipo de recurso informático escalable y a petición. Puede elegir una máquina virtual cuando necesite más control sobre el entorno informático. En este artículo se proporcionan detalles antes de crear la primera máquina virtual.
+Azure Stack Hub le ofrece máquinas virtuales como un tipo de recurso informático escalable y a petición. Puede elegir una máquina virtual cuando necesite más control sobre el entorno informático. En este artículo se proporcionan detalles sobre la creación de la primera máquina virtual.
 
 Una máquina virtual de Azure Stack Hub le da la flexibilidad de la virtualización sin necesidad de administrar clústeres o máquinas individuales. Sin embargo, la máquina virtual sigue necesitando mantenimiento con tareas como configurar, aplicar revisiones o actualizaciones e instalar el software que se ejecuta en ella.
 
@@ -41,7 +41,7 @@ Siempre es necesario tener en cuenta los aspectos relativos al diseño cuando se
 - La configuración de la máquina virtual después de iniciarse
 - Los recursos relacionados que necesita la máquina virtual
 
-### <a name="naming"></a>Nomenclatura
+### <a name="names"></a>Nombres
 
 Una máquina virtual tiene un nombre asignado y un nombre de equipo configurado como parte del sistema operativo. El nombre de una máquina virtual puede tener hasta 15 caracteres.
 
@@ -107,10 +107,10 @@ Hay varias maneras de crear una máquina virtual. La elección depende del entor
 
 Las máquinas virtuales pueden administrarse mediante un portal basado en el explorador, herramientas de línea de comandos con compatibilidad con scripts o directamente mediante API. Algunas tareas de administración típicas son:
 
-- Obtener información sobre una máquina virtual
-- Conectarse a una máquina virtual
-- Administrar la disponibilidad
-- Realizar copias de seguridad
+- Obtener información sobre una máquina virtual.
+- Conectarse a una máquina virtual.
+- Administrar la disponibilidad.
+- Realizar copias de seguridad.
 
 ### <a name="get-information-about-your-vm"></a>Obtención de información acerca de la máquina virtual
 

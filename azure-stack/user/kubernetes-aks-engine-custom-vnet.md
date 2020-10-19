@@ -7,12 +7,12 @@ ms.date: 9/2/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 9/2/2020
-ms.openlocfilehash: 976f7b84df4084776f8b7f94d8903efdb1c06d6c
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.openlocfilehash: 588adfc39dc6ff3eec26e67283a7f51a28655fd2
+ms.sourcegitcommit: 1621f2748b2059fd47ccacd48595a597c44ee63f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90574013"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91853217"
 ---
 # <a name="deploy-a-kubernetes-cluster-to-a-custom-virtual-network-on-azure-stack-hub"></a>Implementación de un clúster de Kubernetes en una red virtual personalizada en Azure Stack Hub 
 
@@ -46,6 +46,13 @@ Cree una subred en la red virtual. Tendrá que obtener el identificador de recur
     ![Bloque CIDR de la red virtual](media/kubernetes-aks-engine-custom-vnet/virtual-network-cidr-block.png)
     
 6. En la hoja de la subred, anote el intervalo de direcciones y el bloque CIDR de la red virtual, por ejemplo: `10.1.0.0 - 10.1.0.255 (256 addresses)` y `10.1.0.0/24`.
+
+## <a name="considerations-for-selecting-an-address-space"></a>Consideraciones para seleccionar un espacio de direcciones
+
+Al crear una red virtual personalizada, especifique el espacio de direcciones IP de la red y un intervalo de direcciones IP para cada subred. Tenga en cuenta los siguientes factores al elegir los espacios de direcciones y los intervalos que se usarán en el clúster de Kubernetes:
+-  Los espacios de direcciones superpuestos pueden dar lugar a conflictos de direcciones IP o errores de comunicación. Para reducir el riesgo de que las direcciones IP se superpongan, elija un espacio de direcciones único para la nueva red virtual.
+-  Los espacios de direcciones en los intervalos `10.` y `172.` se usan a menudo para redes privadas, y la infraestructura existente del centro de datos también los puede usar. Si las aplicaciones de Kubernetes usan recursos del centro de datos, reduzca el riesgo de conflictos mediante la elección de un espacio de direcciones para la red virtual personalizada que sea diferente del espacio de direcciones del centro de datos.
+-  Se recomienda usar una subred dedicada para el clúster de Kubernetes.
 
 ## <a name="get-the-ip-address-block"></a>Obtención del bloque de direcciones IP
 

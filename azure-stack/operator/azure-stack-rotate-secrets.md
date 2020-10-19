@@ -9,12 +9,12 @@ ms.reviewer: ppacent
 ms.author: bryanla
 ms.lastreviewed: 08/15/2020
 monikerRange: '>=azs-1803'
-ms.openlocfilehash: 463fc8fbee16aa7eddc78cee7c3868f1526fad21
-ms.sourcegitcommit: 849be7ebd02a1e54e8d0ec59736c9917c67e309e
+ms.openlocfilehash: aca163df1026193933ffb9d09dbdf4a854638a75
+ms.sourcegitcommit: 362081a8c19e7674c3029c8a44d7ddbe2deb247b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91134753"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91899812"
 ---
 # <a name="rotate-secrets-in-azure-stack-hub"></a>Cambio de secretos en Azure Stack Hub
 
@@ -106,7 +106,7 @@ Para la rotación de secretos internos y externos:
 
 En el caso de la rotación de secretos externos, complete estos requisitos previos adicionales:
 
-1. Ejecute **[Test-AzureStack](azure-stack-diagnostic-test.md)** y confirme que todos los resultados de prueba estén en buen estado antes de cambiar los secretos.
+1. Ejecute el cmdlet **[`Test-AzureStack`](azure-stack-diagnostic-test.md)** de PowerShell con el parámetro `-group SecretRotationReadiness`, para confirmar que todas las salidas de prueba son correctas antes de rotar los secretos.
 2. Prepare un nuevo conjunto de certificados externos de reemplazo:
     - El nuevo conjunto debe coincidir con las especificaciones de certificado que se describen en [Requisitos de certificados de infraestructura de clave pública de Azure Stack Hub](azure-stack-pki-certs.md). 
     - Puede generar una solicitud de firma de certificados (CSR) para su envío a la entidad de certificación mediante los pasos que se describen en [Generación de solicitudes de firma de certificados](azure-stack-get-pki-certs.md) y prepararlos para utilizarlos en su entorno de Azure Stack Hub siguiendo los pasos de [Preparación de certificados PKI](azure-stack-prepare-pki-certs.md). 
@@ -200,7 +200,7 @@ Realice los pasos siguientes para rotar los secretos externos:
 
     - Cree una sesión de PowerShell con el [punto de conexión con privilegios](azure-stack-privileged-endpoint.md) mediante la cuenta **CloudAdmin** y almacene la sesión como una variable. Esta variable se usa como parámetro en el paso siguiente. 
 
-    - Ejecuta [Invoke-Command](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/Invoke-Command?view=powershell-5.1) para pasar la variable de la sesión de PEP como parámetro `-Session`.
+    - Ejecuta [Invoke-Command](/powershell/module/microsoft.powershell.core/Invoke-Command) para pasar la variable de la sesión de PEP como parámetro `-Session`.
 
     - Ejecuta `Start-SecretRotation` en la sesión de PEP, con los parámetros siguientes:
         - `-PfxFilesPath`: la ruta de acceso de red al directorio de certificados que creó anteriormente.  
@@ -224,7 +224,7 @@ La rotación de secretos internos solo es necesaria si sospecha que alguno de el
 
 Consulte el script de PowerShell en el paso 2 de [Rotación de secretos externos](#rotate-external-secrets). El script proporciona un ejemplo que se puede adaptar a la rotación de secretos internos, realizando algunos cambios para ejecutar los pasos siguientes:
 
-1. En la sección "Run Secret Rotation" (Ejecutar rotación de secreto), agregue el parámetro `-Internal` al cmdlet [Start-SecretRotation](/azure-stack/reference/pep-2002/start-secretrotation), por ejemplo:
+1. En la sección "Run Secret Rotation" (Ejecutar rotación de secreto), agregue el parámetro `-Internal` al cmdlet [Start-SecretRotation](../reference/pep-2002/start-secretrotation.md), por ejemplo:
 
     ```powershell
     # Run Secret Rotation
@@ -268,7 +268,7 @@ El controlador de administración de placa base supervisa el estado físico de s
 
 2. Abra un punto de conexión con privilegios en sesiones de Azure Stack Hub. Para obtener instrucciones, consulte [Uso del punto de conexión con privilegios en Azure Stack Hub](azure-stack-privileged-endpoint.md). 
 
-3. Después que el símbolo del sistema de PowerShell haya cambiado a `[IP address or ERCS VM name]: PS>` o a `[azs-ercs01]: PS>`, según el entorno, ejecute `Set-BmcCredential` mediante la ejecución de `Invoke-Command`. Si usa el parámetro opcional `-BypassBMCUpdate` con `Set-BMCCredential`, las credenciales del BMC no se actualizarán. Solo se actualiza el almacén de datos de la instancia interna de Azure Stack Hub. Pase la variable de la sesión del punto de conexión con privilegios como parámetro. 
+3. Después de abrir una sesión de punto de conexión con privilegios, ejecute uno de los siguientes scripts de PowerShell que usan Invoke-Command para ejecutar Set-BmcCredential. Si usa el parámetro opcional -BypassBMCUpdate con Set-BMCCredential, las credenciales del BMC no se actualizarán. Solo se actualiza el almacén de datos de la instancia interna de Azure Stack Hub. Pase la variable de la sesión del punto de conexión con privilegios como parámetro.
 
     Este es un script de ejemplo de PowerShell que solicitará el nombre de usuario y la contraseña: 
 
@@ -310,7 +310,7 @@ El controlador de administración de placa base supervisa el estado físico de s
 
 ## <a name="reference-start-secretrotation-cmdlet"></a>Referencia: Cmdlet Start-SecretRotation
 
-El [cmdlet Start-SecretRotation](/azure-stack/reference/pep-2002/start-secretrotation) permite rotar los secretos de la infraestructura de un sistema de Azure Stack Hub. Este cmdlet solo se puede ejecutar en el punto de conexión con privilegios de Azure Stack Hub, mediante un bloque de script `Invoke-Command` que pasa la sesión de PEP en el parámetro `-Session`. De forma predeterminada, solo se cambian los certificados de todos los puntos de conexión de la infraestructura de red externa.
+El [cmdlet Start-SecretRotation](../reference/pep-2002/start-secretrotation.md) permite rotar los secretos de la infraestructura de un sistema de Azure Stack Hub. Este cmdlet solo se puede ejecutar en el punto de conexión con privilegios de Azure Stack Hub, mediante un bloque de script `Invoke-Command` que pasa la sesión de PEP en el parámetro `-Session`. De forma predeterminada, solo se cambian los certificados de todos los puntos de conexión de la infraestructura de red externa.
 
 | Parámetro | Tipo | Obligatorio | Posición | Valor predeterminado | Descripción |
 |--|--|--|--|--|--|

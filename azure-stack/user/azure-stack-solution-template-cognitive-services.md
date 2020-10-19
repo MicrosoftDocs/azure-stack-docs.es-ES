@@ -3,16 +3,16 @@ title: Implementación de Azure Cognitive Services en Azure Stack Hub
 description: Obtenga información sobre cómo implementar Azure Cognitive Services en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 05/21/2020
+ms.date: 10/09/2020
 ms.author: mabrigg
 ms.reviewer: guanghu
-ms.lastreviewed: 05/21/2020
-ms.openlocfilehash: 8a1c71a86f5b0fe6290bddab35726eca5bda0144
-ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
+ms.lastreviewed: 10/09/2020
+ms.openlocfilehash: 121a26506fbbe2993786c2fa7f7bfe58fc85a3f0
+ms.sourcegitcommit: 1e97e42380734ee7b239ee7e995c302d9dc3e2b3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88920634"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91952413"
 ---
 # <a name="deploy-azure-cognitive-services-to-azure-stack-hub"></a>Implementación de Azure Cognitive Services en Azure Stack Hub
 
@@ -22,8 +22,16 @@ La creación de contenedores es un método de distribución de software en el qu
 
 La compatibilidad con contenedores está disponible actualmente para un subconjunto de servicios de Azure Cognitive Services:
 
-- Language Understanding
-- Text Analytics (Sentiment 3.0)
+- **Voz**
+    - Texto a voz (estándar)
+    - Texto a voz (personalizado)
+    - Texto a voz (estándar)
+- **Lenguaje**
+    - Comprensión del lenguaje
+    - Text Analytics (análisis de opiniones)
+- **Decisión**
+    - Anomaly Detector
+
 
 > [!IMPORTANT]
 > Un subconjunto de Azure Cognitive Services para Azure Stack Hub se encuentra actualmente en versión preliminar pública.
@@ -31,13 +39,17 @@ La compatibilidad con contenedores está disponible actualmente para un subconju
 
 La compatibilidad con contenedores se encuentra actualmente en versión preliminar para un subconjunto de Azure Cognitive Services:
 
-- Lectura: reconocimiento óptico de caracteres \[(OCR)
-- Extracción de la frase clave
-- Detección de idiomas
-- Anomaly Detector
-- Form Recognizer
-- Voz a texto (personalizada, estándar)
-- Texto a voz (personalizada, estándar)
+- **Computer Vision**
+    - Read 3.0, Read 3.1
+    - Análisis espacial (nuevo)
+- **Lenguaje**
+    - Extracción de la frase clave
+    - Detección de idiomas
+    - Text Analytics for Health
+- **Voz**
+    - Detección de idioma de Voz
+    - TTS neuronal
+    - Texto a voz (personalizado)
 
 ## <a name="use-containers-with-cognitive-services-on-azure-stack-hub"></a>Uso de contenedores con Azure Cognitive Services en Azure Stack Hub
 
@@ -53,7 +65,7 @@ La compatibilidad con contenedores se encuentra actualmente en versión prelimin
 - **Alto rendimiento y baja latencia**  
    Proporcione a los usuarios de la aplicación la capacidad de escalar cuando se produzcan picos de tráfico para lograr un alto rendimiento y una baja latencia. Permita que Cognitive Services se ejecute en Azure Kubernetes Service físicamente cerca de sus datos y lógica de aplicación.
 
-Con Azure Stack Hub, implemente contenedores de Cognitive Services en un clúster de Kubernetes junto con los contenedores de su aplicación para lograr una alta disponibilidad y un escalado elástico. A la hora de desarrollar la aplicación, puede combinar Cognitive Services con componentes creados en App Services, Functions, Blob Storage, SQL o bases de datos mySQL.
+Con Azure Stack Hub, implemente contenedores de Cognitive Services en un clúster de Kubernetes junto con los contenedores de su aplicación para lograr una alta disponibilidad y un escalado elástico. A la hora de desarrollar la aplicación, puede combinar Cognitive Services con componentes creados en App Services, Functions, Blob Storage, SQL o bases de datos MySQL.
 
 Para más información sobre los contenedores de Cognitive Services, consulte [Compatibilidad con contenedores en Azure Cognitive Services](/azure/cognitive-services/cognitive-services-container-support).
 
@@ -71,7 +83,7 @@ Antes de comenzar, necesitará lo siguiente:
 
 ## <a name="create-azure-resources"></a>Creación de recursos de Azure
 
-Cree un recurso de Cognitive Services en Azure para obtener una vista previa de los contenedores de Face, LUIS o Reconocer texto. Deberá utilizar la clave de suscripción y la dirección URL del punto de conexión desde el recurso para crear una instancia de los contenedores de Cognitive Services.
+Cree un recurso de Cognitive Services en Azure para obtener una vista previa de los contenedores de Face, Language Understanding (LUIS) o Reconocer texto. Deberá utilizar la clave de suscripción y la dirección URL del punto de conexión desde el recurso para crear una instancia de los contenedores de Cognitive Services.
 
 1. Cree un recurso de Azure en Azure Portal. Si quiere obtener una vista previa del contenedor de Face, primero debe crear un recurso correspondiente de Face en Azure Portal. Para más información, consulte [Inicio rápido: Creación de una cuenta de Cognitive Services en Azure Portal](/azure/cognitive-services/cognitive-services-apis-create-account).
 
@@ -168,7 +180,7 @@ Use el comando siguiente para supervisar cómo se implementa:
 
 Los nodos de trabajo necesitan un proxy y el protocolo SSL. Para configurar un proxy HTTP para realizar solicitudes de salida, use estos dos argumentos:
 
-- **HTTP_PROXY**: el proxy que se va a utilizar, por ejemplo, `https://proxy:8888`
+- **HTTP_PROXY**: el proxy que va a usar, por ejemplo `https://proxy:8888`
 - **HTTP_PROXY_CREDS**: las credenciales necesarias para autenticarse en el proxy, por ejemplo, `username:password`.
 
 ### <a name="set-up-the-proxy"></a>Configuración del proxy

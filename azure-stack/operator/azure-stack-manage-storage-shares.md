@@ -3,16 +3,16 @@ title: Administración de la capacidad de almacenamiento en Azure Stack Hub
 description: Obtenga información acerca de cómo supervisar y administrar la capacidad de almacenamiento y la disponibilidad en Azure Stack Hub.
 author: IngridAtMicrosoft
 ms.topic: conceptual
-ms.date: 1/22/2020
+ms.date: 10/09/2020
 ms.author: inhenkel
 ms.reviewer: xiaofmao
 ms.lastreviewed: 03/19/2019
-ms.openlocfilehash: f2b51ad2bff721c2a8be6490902cf3bb07559fb2
-ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
+ms.openlocfilehash: 21a8d4f5238af436474cb33a41e6e35fbab3afb7
+ms.sourcegitcommit: 362081a8c19e7674c3029c8a44d7ddbe2deb247b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91106816"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91899744"
 ---
 # <a name="manage-storage-capacity-for-azure-stack-hub"></a>Administración de la capacidad de almacenamiento en Azure Stack Hub
 
@@ -20,18 +20,22 @@ Este artículo ayuda a los operadores en la nube de Azure Stack Hub a supervisar
 
 Como operador en la nube, dispone de una cantidad limitada de almacenamiento con la que trabajar. La cantidad de almacenamiento se define por la solución que se implementa. La solución la proporciona el proveedor OEM cuando se usa una solución de varios nodos, o el hardware en el que se instala el Kit de desarrollo de Azure Stack (ASDK).
 
-Dado que Azure Stack Hub no admite la expansión de la capacidad de almacenamiento, es importante [supervisar](#monitor-shares) el almacenamiento disponible para garantizar que se mantiene la eficiencia de las operaciones.
+Azure Stack Hub solo admite la expansión de la capacidad de almacenamiento mediante la adición de más nodos de unidades de escalado. Para más información, consulte el artículo sobre la [incorporación de nodos de unidades de escalado en Azure Stack Hub](azure-stack-add-scale-node.md). La adición de discos físicos a los nodos no ampliará la capacidad de almacenamiento.
 
-Si la capacidad libre restante de un volumen está limitada, planee [administrar el espacio disponible](#manage-available-space) para evitar que los recursos compartidos se queden sin capacidad.
+Es importante [supervisar](#monitor-shares) el almacenamiento disponible para asegurarse de que se mantienen unas operaciones eficientes. Si la capacidad libre restante de un volumen está limitada, planee [administrar el espacio disponible](#manage-available-space) para evitar que los recursos compartidos se queden sin capacidad.
 
 Entre las opciones para administrar la capacidad se incluyen:
+
+
 - Reclamación de la capacidad.
 - Migración de objetos de almacenamiento.
 
 Cuando se utiliza un volumen de almacenamiento de objetos al 100 %, el servicio de almacenamiento ya no funciona para ese volumen. Para obtener ayuda para restaurar las operaciones del volumen, póngase en contacto con el soporte técnico de Microsoft.
 
 ## <a name="understand-volumes-and-shares-containers-and-disks"></a>Conocimiento de los volúmenes y recursos compartidos, contenedores y discos
+
 ### <a name="volumes-and-shares"></a>Volúmenes y recursos compartidos
+
 El *servicio de almacenamiento* crea particiones del almacenamiento disponible en volúmenes independientes e iguales que se asignan para almacenar los datos del inquilino. Para más información acerca de los volúmenes en Azure Stack Hub, consulte [Administración de la infraestructura de almacenamiento para Azure Stack Hub](azure-stack-manage-storage-infrastructure.md).
 
 Los volúmenes de almacenamiento de objetos contienen datos de inquilino. Los datos de inquilino incluyen blobs en páginas, blobs en bloques, blobs en anexos, tablas, colas, bases de datos y almacenes de metadatos relacionados. El número de volúmenes de almacenamiento de objetos es igual al número de nodos en la implementación de Azure Stack Hub:
@@ -48,6 +52,7 @@ Cuando un volumen de almacenamiento de objetos tiene poco espacio libre y las ac
 Para obtener información acerca de cómo trabajan los usuarios del inquilino con el almacenamiento de blobs en Azure Stack Hub, consulte los [servicios de Azure Stack Hub Storage](../user/azure-stack-storage-overview.md).
 
 ### <a name="containers"></a>Contenedores
+
 Los usuarios inquilinos crean contenedores que se usan para almacenar los datos de blobs. Aunque el usuario decide en qué contenedor va a colocar los blobs, el servicio de almacenamiento utiliza un algoritmo para determinar en qué volumen colocar el contenedor. El algoritmo normalmente elige el volumen con el mayor espacio disponible.  
 
 Una vez que el blob se coloca en un contenedor, ese blob puede aumentar para usar más espacio. A medida que agrega nuevos blobs y aumentan los existentes, el espacio disponible en el volumen que contiene ese contenedor se reduce. 
@@ -57,6 +62,7 @@ Los contenedores no se limitan a un único volumen. Cuando los datos de blobs co
 Cuando se utiliza el 80 % (y después el 90 %) del espacio disponible en un volumen, el sistema genera [alertas](#storage-space-alerts) en el portal de administración de Azure Stack Hub. Los operadores en la nube deben revisar la capacidad de almacenamiento disponible y planear el reequilibrio del contenido. El servicio de almacenamiento deja de funcionar cuando se utiliza un disco al 100 % y no se generan alertas adicionales.
 
 ### <a name="disks"></a>Discos
+
 Azure Stack Hub admite el uso de discos administrados y no administrados en máquinas virtuales, que pueden ser tanto discos del sistema operativo como discos de datos.
 
 Los **discos administrados** simplifican la administración de discos para las máquinas virtuales de Azure IaaS, ya que administran las cuentas de almacenamiento asociadas a los discos de las máquinas virtuales. Solo tiene que especificar el tamaño del disco que necesita y Azure Stack Hub creará y administrará el disco automáticamente. Para más información, consulte [Introducción a Managed Disks](/azure/virtual-machines/windows/managed-disks-overview).
@@ -77,9 +83,11 @@ Las opciones para liberar espacio en un contenedor asociado son limitadas. Para 
 
 ::: moniker range="<azs-2002"
 ## <a name="monitor-shares"></a>Supervisión de recursos compartidos
+
 Utilice Azure PowerShell o el portal de administración para supervisar los recursos compartidos de manera que pueda comprender cuándo está limitado el espacio libre. Cuando utiliza el portal, recibe alertas sobre los recursos compartidos que se están quedando sin espacio.
 
 ### <a name="use-powershell"></a>Uso de PowerShell
+
 Como operador en la nube, puede supervisar la capacidad de almacenamiento de un recurso compartido mediante el cmdlet `Get-AzsStorageShare` de PowerShell. El cmdlet devuelve el espacio total, el asignado y el disponible en bytes en cada uno de los recursos compartidos.
 
 ![Ejemplo: Devolución del espacio libre para recursos compartidos](media/azure-stack-manage-storage-shares/free-space.png)
@@ -88,6 +96,7 @@ Como operador en la nube, puede supervisar la capacidad de almacenamiento de un 
 - **Capacidad usada**: es la cantidad de datos en bytes que utilizan todas las extensiones de los archivos que almacenan los datos del inquilino y los metadatos asociados.
 
 ### <a name="use-the-administrator-portal"></a>Uso del portal de administración
+
 Como operador en la nube, puede utilizar el portal de administración para ver la capacidad de almacenamiento de todos los recursos compartidos.
 
 1. Inicie sesión en el portal de administración en `https://adminportal.local.azurestack.external`.
@@ -102,9 +111,11 @@ Como operador en la nube, puede utilizar el portal de administración para ver l
 ::: moniker range=">=azs-2002"
 
 ## <a name="monitor-volumes"></a>Supervisión de volúmenes
+
 Utilice PowerShell o el portal de administración para supervisar los volúmenes de manera que pueda conocer cuándo está limitado el espacio libre. Cuando utiliza el portal, recibe alertas sobre los volúmenes que se están quedando sin espacio.
 
 ### <a name="use-powershell"></a>Uso de PowerShell
+
 Como operador en la nube, puede supervisar la capacidad de almacenamiento de un volumen mediante el cmdlet `Get-AzsVolume` de PowerShell. El cmdlet devuelve el espacio total y el espacio disponible en gigabytes en cada uno de los volúmenes.
 
 ![Ejemplo: Devolución del espacio libre para volúmenes](media/azure-stack-manage-storage-shares/listvolumespowershell.png)
@@ -113,6 +124,7 @@ Como operador en la nube, puede supervisar la capacidad de almacenamiento de un 
 - **Capacidad restante**: Cantidad de espacio disponible en GB para almacenar los datos de inquilino y los metadatos asociados.
 
 ### <a name="use-the-administrator-portal"></a>Uso del portal de administración
+
 Como operador de la nube, puede utilizar el portal de administración para ver la capacidad de almacenamiento de todos los volúmenes.
 
 1. Inicie sesión en el portal de administración de Azure Stack Hub (`https://adminportal.local.azurestack.external`).
@@ -126,6 +138,7 @@ Como operador de la nube, puede utilizar el portal de administración para ver l
 ::: moniker-end
 
 ### <a name="storage-space-alerts"></a>Alertas de espacio de almacenamiento
+
 Cuando utiliza el portal de administración, recibe alertas sobre los volúmenes que se están quedando sin espacio.
 
 > [!IMPORTANT]
@@ -144,6 +157,7 @@ Cuando utiliza el portal de administración, recibe alertas sobre los volúmenes
   ![Ejemplo: Visualización de detalles de la alerta en el portal de administración de Azure Stack Hub](media/azure-stack-manage-storage-shares/alert-details.png)
 
 ## <a name="manage-available-space"></a>Administración del espacio disponible
+
 Cuando sea necesario liberar espacio en un volumen, primero utilice los métodos menos invasivos. Por ejemplo, intente recuperar espacio antes de elegir migrar un disco administrado.  
 
 ### <a name="reclaim-capacity"></a>Reclamación de capacidad
@@ -155,6 +169,7 @@ Para más información, consulte la sección "Reclamación de capacidad" de [Adm
 ::: moniker range="<azs-1910"
 
 ### <a name="migrate-a-container-between-volumes"></a>Migración de un contenedor entre volúmenes
+
 *Esta opción solo se aplica a sistemas integrados de Azure Stack Hub.*
 
 Debido a los patrones de uso de inquilinos, algunos recursos compartidos de inquilino usan más espacio que otros. El resultado puede ser un recurso compartido que se queda sin espacio antes que otros recursos compartidos que están relativamente sin usar.
@@ -173,6 +188,7 @@ La migración consolida todos los blobs de contenedores en el nuevo recurso comp
 > La migración de blobs para un contenedor es una operación sin conexión que requiere el uso de PowerShell. Hasta que se completa la migración, todos los blobs del contenedor que está migrando permanecen sin conexión y no se pueden utilizar. También debe evitar la actualización de Azure Stack Hub hasta que se completen todas las migraciones en curso.
 
 #### <a name="migrate-containers-by-using-powershell"></a>Migración de contenedores mediante PowerShell
+
 1. Confirme que ha [instalado y configurado Azure PowerShell](/powershell/azure/). Para más información, consulte [Administración de recursos de Azure con Azure PowerShell](https://go.microsoft.com/fwlink/?LinkId=394767).
 2. Examine el contenedor para entender qué datos hay sobre el recurso compartido que planea migrar. Para identificar los mejores contenedores candidatos para la migración en un volumen, utilice el cmdlet `Get-AzsStorageContainer`:
 
@@ -237,6 +253,7 @@ La migración consolida todos los blobs de contenedores en el nuevo recurso comp
     ![Captura de pantalla que muestra un ejemplo de un estado de migración cancelado.](media/azure-stack-manage-storage-shares/cancelled.png)
 
 ### <a name="move-vm-disks"></a>Traslado de discos de máquinas virtuales
+
 *Esta opción solo se aplica a sistemas integrados de Azure Stack Hub.*
 
 El método más extremo para administrar el espacio implica el traslado de discos de máquinas virtuales. Como mover un contenedor asociado (uno que contiene un disco de máquina virtual) es complejo, póngase en contacto con el soporte técnico de Microsoft para realizar esta acción.
@@ -245,6 +262,7 @@ El método más extremo para administrar el espacio implica el traslado de disco
 ::: moniker range=">=azs-1910"
 
 ### <a name="migrate-a-managed-disk-between-volumes"></a>Migración de un disco administrado entre volúmenes
+
 *Esta opción solo se aplica a sistemas integrados de Azure Stack Hub.*
 
 Debido a los patrones de uso de inquilinos, algunos volúmenes de inquilino usan más espacio que otros. El resultado puede ser un volumen que se queda sin espacio antes que otros volúmenes que están relativamente sin usar.
@@ -255,6 +273,7 @@ Puede tratar de liberar espacio en un volumen sobreutilizado mediante la migraci
 > La migración de discos administrados es una operación sin conexión que requiere el uso de PowerShell. Debe desasociar los discos candidatos a la migración de la máquina virtual propietaria antes de iniciar el trabajo de migración (una vez que el trabajo de migración haya finalizado, puede volver a adjuntarlos). Hasta que se complete la migración, todos los discos administrados que se van a migrar deben permanecer sin conexión y no se pueden usar; de lo contrario, se anulará el trabajo de migración y todos los discos sin migrar permanecerán en sus volúmenes originales. También debe evitar la actualización de Azure Stack Hub hasta que se completen todas las migraciones en curso.
 
 #### <a name="to-migrate-managed-disks-using-powershell"></a>Para migrar discos administrados con PowerShell
+
 1. Confirme que ha instalado y configurado Azure PowerShell. Si necesita instrucciones para configurar el entorno de PowerShell, consulte esta artículo sobre la [instalación de PowerShell para Azure Stack Hub](azure-stack-powershell-install.md). Para iniciar sesión en Azure Stack Hub, consulte [Configuración del entorno de operador e inicio de sesión en Azure Stack Hub](azure-stack-powershell-configure-admin.md).
 2. Examine los discos administrados para comprender qué discos hay en el volumen que planea migrar. Para identificar los mejores discos candidatos a la migración en un volumen, utilice el cmdlet `Get-AzsDisk`:
 
@@ -317,6 +336,7 @@ Puede tratar de liberar espacio en un volumen sobreutilizado mediante la migraci
    ![Ejemplo: Estado cancelado](media/azure-stack-manage-storage-shares/diskmigrationstop.png)
 
 ### <a name="distribute-unmanaged-disks"></a>Distribución de discos no administrados
+
 *Esta opción solo se aplica a sistemas integrados de Azure Stack Hub.*
 
 El método más extremo para administrar el espacio implica el traslado de discos no administrados. Si el inquilino agrega varios discos no administrados a un contenedor, la capacidad total usada del contenedor podría aumentar más allá de la capacidad disponible del volumen que lo contiene antes de que el contenedor entre en modo de *desbordamiento*. Para evitar que un solo contenedor agote el espacio de un volumen, el inquilino podría distribuir los discos no administrados existentes de un contenedor en distintos contenedores. Como distribuir un contenedor asociado (uno que contiene un disco de máquina virtual) es complejo, póngase en contacto con el soporte técnico de Microsoft para realizar esta acción.
@@ -324,4 +344,5 @@ El método más extremo para administrar el espacio implica el traslado de disco
 ::: moniker-end
 
 ## <a name="next-steps"></a>Pasos siguientes
+
 Para más información sobre cómo ofrecer máquinas virtuales a los usuarios, consulte [Administración de la capacidad de almacenamiento en Azure Stack Hub](./tutorial-offer-services.md?view=azs-2002).

@@ -3,16 +3,16 @@ title: Solución de problemas del motor de AKS en Azure Stack Hub
 description: Este artículo contiene los pasos necesarios para la solución de problemas del motor de AKS en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 10/02/2020
+ms.date: 10/07/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 10/02/2020
-ms.openlocfilehash: d9e862386e76c9bf44638a58432b58b409e9c2df
-ms.sourcegitcommit: af21e3097e833bcb0670733a5e92d6fc3deaa53b
+ms.lastreviewed: 10/07/2020
+ms.openlocfilehash: ae82bb1c07ec8f466eb29fe8c610af09e01e233a
+ms.sourcegitcommit: 1621f2748b2059fd47ccacd48595a597c44ee63f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91729226"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91853183"
 ---
 # <a name="troubleshoot-the-aks-engine-on-azure-stack-hub"></a>Solución de problemas del motor de AKS en Azure Stack Hub
 
@@ -88,14 +88,27 @@ Además de los registros del motor de AKS, los componentes de Kubernetes generan
 
 Este script automatiza el proceso de recopilación de los siguientes registros: 
 
- - Registros del agente Linux de Microsoft Azure (waagent)
- - Registros de la extensión de script personalizado
- - Ejecución de metadatos de contenedor de kube-system
- - Ejecución de registros de contenedor de kube-system
- - Diario y estado del servicio Kubelet
- - Diario y estado del servicio Etcd
- - Registros de DVM del elemento de la galería
- - Instantánea de kube-system
+- Archivos de registro del directorio `/var/log/azure/`
+- Archivos de registro del directorio `/var/log/kubeaudit` (registros de auditoría de kube)
+- Archivo de registro de `/var/log/waagent.log` (waagent)
+- Archivo de registro de `/var/log/azure/deploy-script-dvm.log` (si se implementa mediante el elemento de Marketplace de clúster de Kubernetes para Azure Stack Hub)
+- Manifiestos estáticos del directorio `/etc/kubernetes/manifests`
+- Complementos estáticos del directorio ` /etc/kubernetes/addons`
+- Metadatos y registros de contenedores de kube-system
+- Estado y diario del servicio Kubelet
+- Estado y diario de etcd
+- Estado y diario de Docker
+- Instantánea de kube-system
+- Archivos de configuración de Azure CNI
+
+Se recuperan algunos registros adicionales para los nodos de Windows:
+
+- Archivo de registro `c:\Azure\CustomDataSetupScript.log`
+- Estado y diario de kube-proxy
+- Estado y diario de containerd
+- Registro azure-vnet y azure-vnet-telemetry
+- Eventos ETW para Docker
+- Eventos ETW para Hyper-V
 
 Sin este script, necesitaría conectarse a todos los nodos del clúster para buscar y descargar los registros manualmente. Además, el script también puede cargar los registros recopilados en una cuenta de almacenamiento que se puede usar para compartir los registros con otros usuarios.
 

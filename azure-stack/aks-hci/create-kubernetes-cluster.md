@@ -5,12 +5,12 @@ author: davannaw-msft
 ms.topic: quickstart
 ms.date: 09/22/2020
 ms.author: dawhite
-ms.openlocfilehash: ddaac062a147440b4ce290ad988629c417a5932a
-ms.sourcegitcommit: dabbe44c3208fbf989b7615301833929f50390ff
+ms.openlocfilehash: 7ef2f0e0532ee342e8821b362b16433f755bc072
+ms.sourcegitcommit: a1e2003fb9c6dacdc76f97614ff5a26a5b197b49
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90949395"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91623275"
 ---
 # <a name="quickstart-create-a-kubernetes-cluster-on-azure-stack-hci-using-windows-admin-center"></a>Inicio rápido: creación de un clúster de Kubernetes en Azure Stack HCI mediante Windows Admin Center
 
@@ -31,7 +31,7 @@ Comencemos:
 
     ![Se muestra la página Aspectos básicos del asistente para clústeres de Kubernetes.](.\media\create-kubernetes-cluster\basics.png)
 
-5. Puede configurar los grupos de nodos adicionales para ejecutar las cargas de trabajo en la página **Grupos de nodos**. Si usa la versión preliminar pública, puede agregar como máximo un grupo de nodos de Windows y un grupo de nodos de Linux (además del grupo de nodos del sistema). Cuando haya finalizado, seleccione **Siguiente**.
+5. Puede configurar los grupos de nodos adicionales para ejecutar las cargas de trabajo en la página **Grupos de nodos**. Si usa la versión preliminar pública, puede agregar como máximo un grupo de nodos de Windows y un grupo de nodos de Linux (además del grupo de nodos del sistema). Si desea habilitar la integración de Azure Arc más adelante en este asistente, necesitará al menos un grupo de nodos de Linux que no sea el grupo de nodos principal. Cuando haya finalizado, seleccione **Siguiente**.
 6. Especifique la configuración de red en la página **Redes**. Si selecciona la opción "Avanzado", puede personalizar el intervalo de direcciones que se usa al crear una red virtual para los nodos del clúster. Si selecciona la opción "Básico", se crearán redes virtuales para los nodos del clúster con un intervalo de direcciones predeterminado. Tenga en cuenta que la configuración de red (por ejemplo, el equilibrador de carga, la directiva de red y el enrutamiento de aplicaciones HTTP) no se puede cambiar en la versión preliminar pública. Cuando haya terminado, seleccione **Agregar**.
 
     ![Se muestra la página Redes del asistente para clústeres de Kubernetes.](.\media\create-kubernetes-cluster\networking.png)

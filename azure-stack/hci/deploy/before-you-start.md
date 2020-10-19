@@ -6,13 +6,13 @@ ms.author: v-kedow
 ms.topic: how-to
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 10/01/2020
-ms.openlocfilehash: 8a4c8557fe708535bfdde383ef30dd78395b1c01
-ms.sourcegitcommit: 09572e1442c96a5a1c52fac8ee6b0395e42ab77d
+ms.date: 10/14/2020
+ms.openlocfilehash: 4ff495aba1f46824a6ab47c95601687402d24edb
+ms.sourcegitcommit: 8122672409954815e472a5b251bb7319fab8f951
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91625879"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92060113"
 ---
 # <a name="before-you-deploy-azure-stack-hci"></a>Antes de implementar Azure Stack HCI
 
@@ -64,6 +64,8 @@ Con Espacios de almacenamiento directo, se debe tener en cuenta el tráfico de r
 
 En el caso de los clústeres extendidos, también hay tráfico adicional de réplica de almacenamiento que fluye entre los sitios. El tráfico de la capa de bus de almacenamiento (SBL) y el del volumen compartido de clúster (CSV) no se dirige entre sitios, solo entre los nodos de servidor dentro de cada sitio.
 
+Para conocer los requisitos y las consideraciones de planeación de redes de host, consulte [Planeamiento de redes de host para Azure Stack HCI](../concepts/plan-host-networking.md).
+
 ### <a name="software-defined-networking-requirements"></a>Requisitos de redes definidas por software
 
 Cuando crea un clúster de Azure Stack HCI mediante Windows Admin Center tiene la opción de implementar Controladora de red para permitir las redes definidas por software. Si tiene previsto usar redes definidas por software en Azure Stack HCI:
@@ -77,125 +79,6 @@ Para más información acerca de cómo preparar el uso de redes definidas por so
 ### <a name="domain-requirements"></a>Requisitos del dominio
 
 No hay ningún requisito especial de nivel funcional de dominio para Azure Stack HCI, solo una versión del sistema operativo para el controlador de dominio que todavía se admite. Se recomienda activar la característica de papelera de reciclaje de Active Directory como procedimiento recomendado general, si no lo ha hecho ya.
-
-### <a name="interconnect-requirements-between-nodes"></a>Requisitos de interconexión entre nodos
-
-En esta sección se describen los requisitos de red específicos entre los nodos de servidor de un sitio, denominados interconexiones. Se pueden usar las interconexiones de nodos con conmutador o sin conmutador y se admiten:
-
-- **Con conmutador:** los nodos de servidor suelen conectarse entre sí a través de redes Ethernet que usan conmutadores de red. Los conmutadores deben estar configurados correctamente para administrar el ancho de banda y el tipo de red. Si usa RDMA que implementa el protocolo RoCE, es importante el dispositivo de red y la configuración del conmutador.
-- **Sin conmutador:** los nodos de servidor también se pueden interconectar mediante conexiones Ethernet directas sin un conmutador. En este caso, cada nodo de servidor debe tener una conexión directa con todos los demás nodos del clúster en el mismo sitio.
-
-#### <a name="interconnects-for-2-3-node-clusters"></a>Interconexiones para clústeres de dos o tres nodos
-
-Estos son los requisitos *mínimos* de interconexión para los clústeres de sitio único que tienen dos o tres nodos. Se aplican a cada nodo de servidor:
-
-- Una o más tarjetas de adaptador de red de 1 GB que se usarán para las funciones de administración
-- Una o más tarjetas de interfaz de red de 10 GB (o superior) para el tráfico de almacenamiento y carga de trabajo
-- Se recomiendan dos o más conexiones de red entre cada nodo para la redundancia y el rendimiento
-
-#### <a name="interconnects-for-4-node-and-greater-clusters"></a>Interconexiones para clústeres de cuatro o más nodos
-
-Estos son los requisitos *mínimos* de interconexión para los clústeres que tienen cuatro o más nodos, y para los clústeres de alto rendimiento. Se aplican a cada nodo de servidor:
-
-- Una o más tarjetas de adaptador de red de 1 GB que se usarán para las funciones de administración.
-- Una o más tarjetas de interfaz de red de 25 GB (o superior) para el tráfico de almacenamiento y carga de trabajo. Se recomiendan dos o más conexiones de red para la redundancia y el rendimiento.
-- Tarjetas de red que son compatibles con el acceso directo a memoria remota (RDMA): iWARP (opción recomendada) o RoCE.
-
-### <a name="site-to-site-requirements-stretched-cluster"></a>Requisitos de sitio a sitio (clúster extendido)
-
-Cuando se conectan sitios de clústeres extendidos, siguen siendo aplicables los requisitos de interconexión de cada sitio y tienen requisitos adicionales de tráfico de migración en vivo de la réplica de almacenamiento y de Hyper-V que deben tenerse en cuenta:
-
-- Al menos una conexión RDMA o Ethernet/TCP de 1 GB entre sitios para la replicación sincrónica. Se prefiere una conexión RDMA de 25 GB.
-- Una red entre sitios con suficiente ancho de banda para contener la carga de trabajo de escritura de E/S y un promedio de latencia de ida y vuelta de 5 ms para la replicación sincrónica. Este tipo de replicación no tiene una recomendación de latencia.
-- Si usa una única conexión entre sitios, establezca límites de ancho de banda SMB para la réplica de almacenamiento mediante PowerShell. Para más información, consulte [Set-SmbBandwidthLimit](/powershell/module/smbshare/set-smbbandwidthlimit).
-- Si usa varias conexiones entre sitios, separe el tráfico entre las conexiones. Por ejemplo, coloque el tráfico de la réplica de almacenamiento en una red independiente distinta a la del tráfico de migración en vivo de Hyper-V con PowerShell. Para más información, consulte [Set-SRNetworkConstraint](/powershell/module/storagereplica/set-srnetworkconstraint).
-
-### <a name="network-port-requirements"></a>Requisitos de puerto de red
-
-Asegúrese de que los puertos de red adecuados estén abiertos entre todos los nodos de servidor de un sitio y entre sitios (para clústeres extendidos). Necesitará reglas adecuadas de firewall y de enrutador para permitir ICMP, SMB (puerto 445, más el puerto 5445 para SMB directo) y el tráfico bidireccional WS-MAN (puerto 5985) entre todos los servidores del clúster.
-
-Al usar el Asistente para creación de clústeres en Windows Admin Center para crear el clúster, el Asistente abre automáticamente los puertos de firewall adecuados en cada servidor del clúster para los clústeres de conmutación por error, Hyper-V y réplica de almacenamiento. Si usa un firewall de software diferente en cada servidor, abra los puertos siguientes:
-
-#### <a name="failover-clustering-ports"></a>Puertos de clústeres de conmutación por error
-
-- ICMPv4 e ICMPv6
-- Puerto TCP 445
-- Puertos dinámicos RPC
-- Puerto TCP 135
-- Puerto TCP 137
-- Puerto TCP 3343
-- Puerto UDP 3343
-
-#### <a name="hyper-v-ports"></a>Puertos de Hyper-V
-
-- Puerto TCP 135
-- Puerto TCP 80 (conectividad HTTP)
-- Puerto TCP 443 (conectividad HTTPS)
-- Puerto TCP 6600
-- Puerto TCP 2179
-- Puertos dinámicos RPC
-- Asignador de puntos de conexión de RPC
-- Puerto TCP 445
-
-#### <a name="storage-replica-ports-stretched-cluster"></a>Puertos de réplica de almacenamiento (clúster extendido)
-
-- Puerto TCP 445
-- TCP 5445 (si se usa iWarp RDMA)
-- Puerto TCP 5985
-- ICMPv4 e ICMPv6 (si se usa Test-SRTopology)
-
-Puede que se requieran puertos adicionales no mencionados antes. Estos son los puertos para la funcionalidad básica de Azure Stack HCI.
-
-### <a name="network-switch-requirements"></a>Requisitos del conmutador de red
-
-En esta sección se definen los requisitos de los conmutadores físicos que se usan con Azure Stack HCI. En estos requisitos se enumeran las especificaciones del sector, los estándares de la organización y los protocolos que son obligatorios para todas las implementaciones de Azure Stack HCI. A menos que se indique lo contrario, se requiere la última versión activa (no reemplazada) del estándar.
-
-Estos requisitos ayudan a garantizar unas comunicaciones confiables entre los nodos de las implementaciones de clúster de Azure Stack HCI. Unas comunicaciones confiables entre los nodos resultan fundamentales. Proporcionar el nivel de confiabilidad necesario para Azure Stack HCI requiere que los conmutadores:
-
-- Cumplan con las especificaciones, los estándares y los protocolos aplicables del sector
-- Ofrezcan visibilidad sobre qué especificaciones, estándares y protocolos admite el conmutador
-- Proporcionen información sobre qué funcionalidades están habilitadas
-
-Asegúrese de preguntar al proveedor del conmutador si el conmutador admite lo siguiente:
-
-#### <a name="standard-ieee-8021q"></a>Estándar: IEEE 802.1Q
-
-Los conmutadores Ethernet deben cumplir con la especificación IEEE 802.1Q que define las redes VLAN. Las VLAN son necesarias para varios aspectos de Azure Stack HCI y son necesarias en todos los escenarios.
-
-#### <a name="standard-ieee-8021qbb"></a>Estándar: IEEE 802.1Qbb
-
-Los conmutadores Ethernet deben cumplir con la especificación IEEE 802.1Qbb que define el control de flujo basado en prioridades (PFC). Si se usa Data Center Bridging (DCB), se necesita PFC. Como DCB se puede usar en escenarios de RDMA como RoCE e iWARP, se necesita 802.1Qbb en todos los escenarios. Se requiere un mínimo de tres prioridades de clase de servicio (CoS) sin que se degraden las funcionalidades del conmutador o la velocidad del puerto.
-
-#### <a name="standard-ieee-8021qaz"></a>Estándar: IEEE 802.1Qaz
-
-Los conmutadores Ethernet deben cumplir con la especificación IEEE 802.1Qaz que define la selección de transmisiones mejorada (ETS). Se requiere ETS si se usa DCB. Como DCB se puede usar en escenarios de RDMA como RoCE e iWARP, se necesita 802.1Qaz en todos los escenarios. Se requiere un mínimo de tres prioridades de clase de servicio (CoS) sin que se degraden las funcionalidades del conmutador o la velocidad del puerto.
-
-#### <a name="standard-ieee-8021ab"></a>Estándar: IEEE 802.1AB
-
-Los conmutadores Ethernet deben cumplir la especificación IEEE 802.1AB que define el protocolo de detección de niveles de vínculo (LLDP). Se requiere LLDP para que Windows detecte la configuración del conmutador. La configuración del tipo, longitud y valores (TLVs) de LLDP debe estar habilitada dinámicamente. Estos conmutadores no deben requerir configuración adicional.
-
-Por ejemplo, si habilita el subtipo 3 de 802.1, se anunciarán automáticamente todas las redes VLAN disponibles en los puertos del conmutador.
-
-#### <a name="tlv-requirements"></a>Requisitos de TLV
-
-LLDP permite a las organizaciones definir y codificar sus propios TLV personalizados. Estos se denominan TLV específicos de la organización. Todos los TLV específicos de la organización se inician con un valor de tipo TLV de LLDP de 127. En la tabla siguiente se muestra qué subtipos de TLV personalizados específicos de la organización (tipo de TLV 127) son obligatorios y cuáles son opcionales:
-
-|Condición|Organización|Subtipo de TLV|
-|-|-|-|
-|Obligatorio|IEEE 802.1|Nombre de VLAN (subtipo = 3)|
-|Obligatorio|IEEE 802.3|Tamaño máximo del marco (subtipo = 4)|
-|Opcional|IEEE 802.1|Identificador de VLAN del puerto (subtipo = 1)|
-|Opcional|IEEE 802.1|Identificador de VLAN de puerto y protocolo (subtipo = 2)|
-|Opcional|IEEE 802.1|Agregación de vínculos (subtipo = 7)|
-|Opcional|IEEE 802.1|Notificación de congestión (subtipo = 8)|
-|Opcional|IEEE 802.1|Configuración de ETS (subtipo = 9)|
-|Opcional|IEEE 802.1|Recomendación de ETS (subtipo = A)|
-|Opcional|IEEE 802.1|Configuración de PFC (subtipo = B)|
-|Opcional|IEEE 802.1|EVB (subtipo = D)|
-|Opcional|IEEE 802.3|Agregación de vínculos (subtipo = 3)|
-
-> [!NOTE]
-> En el futuro, es posible que se requieran algunas de las características opcionales que se enumeran.
 
 ### <a name="storage-requirements"></a>Requisitos de almacenamiento
 

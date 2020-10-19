@@ -5,12 +5,12 @@ author: davannaw-msft
 ms.topic: quickstart
 ms.date: 09/22/2020
 ms.author: dawhite
-ms.openlocfilehash: fa07b755405fced34a404dbd2b2473450a8b8e26
-ms.sourcegitcommit: dabbe44c3208fbf989b7615301833929f50390ff
+ms.openlocfilehash: 2f442928c01c59bc85eb672153b2f5b21a653ef1
+ms.sourcegitcommit: 362081a8c19e7674c3029c8a44d7ddbe2deb247b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90949404"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91899727"
 ---
 # <a name="quickstart-set-up-azure-kubernetes-service-on-azure-stack-hci-using-windows-admin-center"></a>Inicio rápido: Configuración de Azure Kubernetes Service en Azure Stack HCI mediante Windows Admin Center
 
@@ -28,7 +28,7 @@ Antes de empezar, asegúrese de que cumple todos los requisitos previos que se d
 
 ## <a name="setting-up-windows-admin-center"></a>Configuración de Windows Admin Center
 
-Si aún no ha instalado Windows Admin Center, consulte [Instalación de Windows Admin Center](https://docs.microsoft.com/windows-server/manage/windows-admin-center/deploy/install). Para obtener una versión preliminar pública de Azure Kubernetes Service en Azure Stack HCI, debe descargar y ejecutar Windows Admin Center en una máquina Windows 10. Tenga en cuenta que en estos momentos solo el modo de escritorio de Windows Admin Center es compatible con Azure Kubernetes Service en Azure Stack HCI. Igualmente, recuerde que la funcionalidad Azure Kubernetes Service en Azure Stack HCI solo está disponible para la compilación de 2009 o una posterior de Windows Admin Center.
+Si aún no ha instalado Windows Admin Center, consulte [Instalación de Windows Admin Center](/windows-server/manage/windows-admin-center/deploy/install). Para obtener una versión preliminar pública de Azure Kubernetes Service en Azure Stack HCI, debe descargar y ejecutar Windows Admin Center en una máquina Windows 10. Tenga en cuenta que en estos momentos solo el modo de escritorio de Windows Admin Center es compatible con Azure Kubernetes Service en Azure Stack HCI. Igualmente, recuerde que la funcionalidad Azure Kubernetes Service en Azure Stack HCI solo está disponible para la compilación de 2009 o una posterior de Windows Admin Center.
 
 ## <a name="installing-the-azure-kubernetes-service-extension"></a>Instalación de la extensión de Azure Kubernetes Service
 
@@ -51,9 +51,14 @@ Esta configuración se puede realizar con la nueva herramienta de Azure Kubernet
 
 Con esta herramienta podrá instalar y descargar los paquetes necesarios, así como crear un clúster de administración que proporcione los servicios básicos de Kubernetes y organice las cargas de trabajo de la aplicación. 
 
-Comencemos: 
+Antes de usar esta herramienta, abra PowerShell y ejecute el siguiente comando en cada nodo para asegurarse de que el inicio de sesión de Azure no esté bloqueado por ninguna configuración del equipo:
+```PowerShell
+az login
+```
+
+Ahora que hemos comprobado la configuración del sistema, vamos a empezar: 
 1. Seleccione **Configurar** para iniciar el asistente de configuración.
-2. Revise los requisitos previos de la máquina en la que se ejecuta Windows Admin Center, el clúster de Azure Stack HCI al que está conectado y la red. Además, debe asegurarse de que haya iniciado sesión en una cuenta de Azure en Windows Admin Center. Cuando termine, seleccione **Siguiente**.
+2. Revise los requisitos previos de la máquina en la que se ejecuta Windows Admin Center, el clúster de Azure Stack HCI al que está conectado y la red. Además, asegúrese de que ha iniciado sesión en una cuenta de Azure en Windows Admin Center y de que la suscripción de Azure que está planeando usar no ha expirado. Cuando haya finalizado, seleccione **Siguiente**.
 3. En la página **Comprobaciones del sistema** del asistente, realice las acciones necesarias, como conectar la puerta de enlace de Windows Admin Center a Azure. En este paso deberá comprobar que Windows Admin Center y el sistema que hospedará Azure Kubernetes Service tengan las configuraciones adecuadas para continuar. Cuando haya terminado de realizar esta acción, seleccione **Siguiente**.
 4. Configure la máquina que hospedará Azure Kubernetes Service en el paso **Configuración del host**. Le recomendamos que seleccione la **opción de descarga automática de actualizaciones** en esta sección. Cuando haya terminado, seleccione **Siguiente**. En este paso el asistente le pedirá que configure los detalles siguientes:
     * Detalles del host, como el nombre del clúster de administración y una carpeta para almacenar las imágenes de VM.

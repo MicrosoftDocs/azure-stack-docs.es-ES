@@ -7,12 +7,12 @@ ms.date: 09/23/2020
 ms.author: v-myoung
 ms.reviewer: misainat
 ms.lastreviewed: 09/23/2020
-ms.openlocfilehash: b16247c53ea0677573573c827f68e56081a9de5e
-ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
+ms.openlocfilehash: dbd0398b7f6582c12288c2ae72137c4a673ddfcc
+ms.sourcegitcommit: 950dbc793b3498173923d0bc9fe56662a349abf1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91106960"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92082095"
 ---
 # <a name="asdk-requirements-and-considerations"></a>Requisitos y consideraciones de ASDK
 
@@ -108,7 +108,7 @@ Después de la implementación, no se necesita el permiso de administrador globa
 ### <a name="switch"></a>Conmutador
 Un puerto disponible en un conmutador para la máquina de ASDK.  
 
-La máquina de ASDK admite la conexión a un puerto de acceso de conmutador o puerto de tronco. No se requieren características especializadas en el conmutador. Si está usando un puerto de tronco o necesita configurar un identificador de VLAN, tendrá que proporcionar el identificador de VLAN como parámetro de implementación.
+La máquina de ASDK admite la conexión a un puerto de acceso de conmutador o puerto de tronco. No se requieren características especializadas en el conmutador.
 
 ### <a name="subnet"></a>Subnet
 No conecte el equipo de ASDK a las subredes siguientes:
@@ -129,7 +129,7 @@ Se admite solo IPv4. No se pueden crear redes IPv6.
 Asegúrese de que hay un servidor DHCP disponible en la red a la que se conecta la tarjeta NIC. Si DHCP no está disponible, debe preparar una red IPv4 estática adicional además de la que usa el host. Debe proporcionar esa dirección IP y la puerta de enlace como parámetro de implementación.
 
 ### <a name="internet-access"></a>Acceso a Internet
-Azure Stack necesita acceso a Internet, ya sea directamente o a través de un proxy transparente. Azure Stack no admite la configuración de un proxy web para habilitar el acceso a Internet. Tanto la dirección IP del host como la nueva dirección IP asignada a AzS-BGPNAT01 (mediante DHCP o la dirección IP estática) deben poder acceder a Internet. Se usan los puertos 80 y 443 en los dominios graph.windows.net y login.microsoftonline.com.
+Azure Stack necesita acceso a Internet, ya sea directamente o a través de un proxy transparente. Azure Stack no admite la configuración de un proxy web para habilitar el acceso a Internet. Se usan los puertos 80 y 443 en los dominios graph.windows.net y login.microsoftonline.com.
 
 
 ## <a name="next-steps"></a>Pasos siguientes

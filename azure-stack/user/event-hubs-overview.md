@@ -1,6 +1,6 @@
 ---
 title: Introducción a Event Hubs en Azure Stack Hub
-description: Obtenga más información sobre el proveedor de recursos de Event Hubs en Azure Stack Hub.
+description: Obtenga mas información sobre Event Hubs en Azure Stack Hub. Consulte cómo crear soluciones híbridas. Compare las características de Azure Event Hubs y Event Hubs en Azure Stack Hub.
 author: BryanLa
 ms.author: bryanla
 ms.service: azure-stack
@@ -8,18 +8,18 @@ ms.topic: how-to
 ms.date: 11/27/2019
 ms.reviewer: jfggdl
 ms.lastreviewed: 11/27/2019
-ms.openlocfilehash: b2e03617b8409e321edb3b2d924f5f0762ad9b9f
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.openlocfilehash: 117fd4cd1d688b9ace109f6c2038cd3ffe0d9e6f
+ms.sourcegitcommit: a1e2003fb9c6dacdc76f97614ff5a26a5b197b49
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86566420"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91623156"
 ---
-# <a name="event-hubs-on-azure-stack-hub-overview"></a>Introducción a Event Hubs en Azure Stack Hub
+# <a name="overview-of-event-hubs-on-azure-stack-hub"></a>Introducción a Event Hubs en Azure Stack Hub
 
 [!INCLUDE [preview-banner](../includes/event-hubs-preview.md)]
 
-Event Hubs en Azure Stack Hub permite desarrollar escenarios de nube híbrida. Se admiten las soluciones de streaming y basadas en eventos, tanto en el procesamiento local como en la nube de Azure. Tanto si el escenario es híbrido (con conexión) como sin conexión, la solución puede admitir el procesamiento de eventos o secuencias a gran escala. El escenario solo está limitado por el tamaño del clúster de Event Hubs, que puede aprovisionar según sus necesidades. 
+Event Hubs en Azure Stack Hub permite desarrollar escenarios de nube híbrida. Se admiten las soluciones de streaming y basadas en eventos, tanto en el procesamiento local como en la nube de Azure. Tanto si el escenario es híbrido (conectado) como desconectado, la solución puede admitir el procesamiento de eventos o secuencias a gran escala. El escenario solo está limitado por el tamaño del clúster de Event Hubs, que puede aprovisionar según sus necesidades. 
 
 ## <a name="run-event-processing-tasks-and-build-event-driven-applications-on-site"></a>Ejecución de tareas de procesamiento de eventos y creación de aplicaciones controladas por eventos en el sitio
 
@@ -62,7 +62,7 @@ La [documentación de Azure Event Hubs](/azure/event-hubs/) se aplica a las dos 
 - Detalles sobre los [conceptos de Event Hubs](/azure/event-hubs/event-hubs-features)
 - [Creación de un clúster y un espacio de nombres de Event Hubs](event-hubs-quickstart-cluster-portal.md)
 - [Creación de un centro de eventos](/azure/event-hubs/event-hubs-create#create-an-event-hub)
-- La transmisión [mediante el protocolo Kafka](/azure/event-hubs/event-hubs-quickstart-kafka-enabled-event-hubs)
+- [Transmisión mediante el protocolo Kafka](/azure/event-hubs/event-hubs-quickstart-kafka-enabled-event-hubs)
 
 ### <a name="operator-documentation"></a>Documentación del operador 
  

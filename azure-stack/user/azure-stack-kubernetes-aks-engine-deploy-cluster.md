@@ -7,12 +7,12 @@ ms.date: 09/02/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 09/02/2020
-ms.openlocfilehash: 68acf1fa04762d8288e621c5087d501c464912fd
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.openlocfilehash: b90b7c61e5eeed1265bf258b6ba3ce7b042b6897
+ms.sourcegitcommit: 1621f2748b2059fd47ccacd48595a597c44ee63f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90573962"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91853200"
 ---
 # <a name="deploy-a-kubernetes-cluster-with-the-aks-engine-on-azure-stack-hub"></a>Implementación de un clúster de Kubernetes con el motor de AKS en Azure Stack Hub
 
@@ -226,6 +226,22 @@ Compruebe el clúster mediante la implementación de MySQL con Helm.
     ```bash
     kubectl delete deployment -l app=redis
     ```
+
+## <a name="rotate-your-service-principle-secret"></a>Rotación del secreto de la entidad de servicio
+
+Después de la implementación del clúster de Kubernetes con el motor de AKS, la entidad de servicio se usa para administrar las interacciones con la instancia de Azure Resource Manager en Azure Stack Hub. En algún momento, es posible que el secreto de esta entidad de servicio expire. Si el secreto expira, puede actualizar las credenciales mediante:
+
+- Actualización de cada nodo con el nuevo secreto de la entidad de servicio.
+- O bien, mediante la actualización de las credenciales del modelo de API y la ejecución de la actualización.
+
+### <a name="update-each-node-manually"></a>Actualización de cada nodo manualmente
+
+1. Obtenga un nuevo secreto para la entidad de servicio del operador de la nube. Para obtener instrucciones para Azure Stack Hub, consulte [Uso de una identidad de aplicación para acceder a recursos de Azure Stack Hub](/azure-stack/operator/azure-stack-create-service-principals).
+2. Use las nuevas credenciales proporcionadas por el operador de la nube para actualizar `/etc/kubernetes/azure.json` en cada nodo. Después de efectuar la actualización, reinicie **kubelet** y **kube-controller-manager**.
+
+### <a name="update-the-cluster-with-aks-engine-update"></a>Actualización del clúster con la actualización del motor de AKS
+
+Como alternativa, puede reemplazar las credenciales de `apimodel.json` y ejecutar la actualización mediante el archivo JSON actualizado para la misma versión de Kubernetes u otra más reciente. Para obtener instrucciones sobre cómo actualizar el modelo, consulte [Actualización de un clúster de Kubernetes en Azure Stack Hub](azure-stack-kubernetes-aks-engine-upgrade.md).
 
 ## <a name="next-steps"></a>Pasos siguientes
 
