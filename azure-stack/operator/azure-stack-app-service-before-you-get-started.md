@@ -8,12 +8,12 @@ ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 04/13/2019
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: e779ea4166f2e7693b87e1fe7ba4b084ca7451d0
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.openlocfilehash: d750c52eb60ecea29e4b850dce23e25705cd1383
+ms.sourcegitcommit: 81e2d627c9dc4cc365deb4a0e0674b5ab3a7efbf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90573367"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297900"
 ---
 # <a name="prerequisites-for-deploying-app-service-on-azure-stack-hub"></a>Requisitos previos para implementar App Service en Azure Stack Hub
 
@@ -27,7 +27,7 @@ En esta sección se enumeran los requisitos previos para las implementaciones de
 
 ### <a name="resource-provider-prerequisites"></a>Requisitos previos del proveedor de recursos
 
-[!INCLUDE [Common RP prerequisites](../includes/marketplace-resource-provider-prerequisites.md)]
+[!INCLUDE [Common RP prerequisites](../includes/resource-provider-prerequisites.md)]
 
 ### <a name="installer-and-helper-scripts"></a>Scripts del instalador y el asistente
 

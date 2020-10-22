@@ -4,16 +4,16 @@ titleSuffix: Azure Stack
 description: Aprenda a administrar la infraestructura de almacenamiento para Azure Stack Hub. Consulte cómo supervisar volúmenes y unidades. Vea sugerencias para la solución de problemas al agregar unidades a grupos.
 author: IngridAtMicrosoft
 ms.topic: article
-ms.date: 5/4/2020
+ms.date: 10/19/2020
 ms.author: inhenkel
 ms.lastreviewed: 5/4/2020
 ms.reviewer: jiaha
-ms.openlocfilehash: a267c0bf5429bdd97b5a722f45f2fd188b63efb2
-ms.sourcegitcommit: a1e2003fb9c6dacdc76f97614ff5a26a5b197b49
+ms.openlocfilehash: 7141d52e100ce465a20637da2a40cbb75b417939
+ms.sourcegitcommit: e4e2cc6a68f02c3e856f58ca5ee51b3313c7ff8f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91623207"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92179460"
 ---
 # <a name="manage-storage-infrastructure-for-azure-stack-hub"></a>Administración de la infraestructura de almacenamiento para Azure Stack Hub
 En este artículo se describen el estado de mantenimiento y el estado operativo de los recursos de infraestructura de almacenamiento de Azure Stack Hub. Estos recursos incluyen unidades y volúmenes de almacenamiento. La información de este tema le ayudará a solucionar varios problemas, como la imposibilidad de agregar una unidad a un grupo.
@@ -93,7 +93,7 @@ En las secciones siguientes se describen los estados de mantenimiento que puede 
 | Aceptar | El estado del volumen es correcto. |
 | En servicio | La unidad está realizando operaciones de mantenimiento interno. Una vez completada la acción, la unidad debería volver al estado de mantenimiento correcto (OK). |
 
-### <a name="drive-health-state-healthy"></a>Estado de mantenimiento de las unidades: Healthy
+### <a name="drive-health-state-warning"></a>Estado de mantenimiento de las unidades: Advertencia
 
 Una unidad en estado de advertencia puede leer y escribir datos correctamente, pero tiene un problema.
 

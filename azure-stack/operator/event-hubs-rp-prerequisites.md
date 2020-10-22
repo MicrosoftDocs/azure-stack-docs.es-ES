@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 12/09/2019
 ms.reviewer: jfggdl
 ms.lastreviewed: 12/09/2019
-ms.openlocfilehash: 6b081f5285daf5f6963c7626a62993f9ea8587c4
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.openlocfilehash: 750e35c81a386687f80445011b9841196f86f6b6
+ms.sourcegitcommit: 81e2d627c9dc4cc365deb4a0e0674b5ab3a7efbf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90572211"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297868"
 ---
 # <a name="prerequisites-for-installing-event-hubs-on-azure-stack-hub"></a>Requisitos previos para la instalación de Event Hubs en Azure Stack Hub
 
@@ -25,11 +25,11 @@ Deben completarse los siguientes requisitos previos para poder instalar Event Hu
 > En estos requisitos previos, se da por hecho que ya ha implementado al menos un sistema integrado Azure Stack Hub de cuatro nodos. No se admite el proveedor de recursos de Event Hubs en el Kit de desarrollo de Azure Stack (ASDK).
 
 > [!IMPORTANT]
-> Event Hubs necesita la versión de compilación de Azure Stack Hub 2002 o posterior. Tenga en cuenta que las compilaciones de Azure Stack Hub son incrementales. Por ejemplo, si tiene instalada la [versión 1910](./release-notes.md?view=azs-1910#1910-build-reference), primero debe actualizar a la versión [2002](./release-notes.md?view=azs-2002#2002-build-reference) y luego a la 2005. Es decir, no puede omitir las compilaciones intermedias.
+> Event Hubs necesita la versión de compilación de Azure Stack Hub 2002 o posterior. Tenga en cuenta que las compilaciones de Azure Stack Hub son incrementales. Por ejemplo, si tiene instalada la [versión 1910](./release-notes.md?view=azs-1910&preserve-view=true#1910-build-reference), primero debe actualizar a la versión [2002](./release-notes.md?view=azs-2002&preserve-view=true#2002-build-reference) y luego a la 2005. Es decir, no puede omitir las compilaciones intermedias.
 
 ## <a name="common-prerequisites"></a>Requisitos previos comunes
 
-[!INCLUDE [Common RP prerequisites](../includes/marketplace-resource-provider-prerequisites.md)]
+[!INCLUDE [Common RP prerequisites](../includes/resource-provider-prerequisites.md)]
 
 ## <a name="event-hubs-prerequisites"></a>Requisitos previos de Event Hubs
 

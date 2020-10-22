@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: 90467f57cdae2b12038c8f237fcbe5e41fb1c039
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.openlocfilehash: 2a3eb313122f5f8798129592f35656bdad443f02
+ms.sourcegitcommit: 8ffa29f71d69191534d42f86f49f719b4198a097
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90574064"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92353854"
 ---
 # <a name="deploy-a-linux-vm-to-host-a-web-app-in-azure-stack-hub"></a>Implementación de una máquina virtual Linux para hospedar una aplicación web en Azure Stack Hub
 
@@ -46,7 +46,7 @@ Para implementar la VM, siga las instrucciones que aparecen en las secciones sig
 1. Cree una clave pública Secure Shell (SSH) para el servidor. Para obtener más información, consulte [How to use an SSH public key](azure-stack-dev-start-howto-ssh-public-key.md) (Uso de una clave pública SSH).
 1. En el portal de Azure Stack Hub, seleccione **Crear un recurso** > **Proceso** > **Ubuntu Server 16.04 LTS**.
 
-    ![Implementación de una aplicación web en una máquina virtual de Azure Stack Hub](media/azure-stack-dev-start-howto-deploy-linux/001-portal-compute.png)
+    ![Implementación de una aplicación web en una máquina virtual de Azure Stack Hub](media/azure-stack-dev-start-howto-deploy-linux/001-portal-computea.png)
 
 4. En el panel **Crear una máquina virtual**, en **1. Configuración básica**:
 

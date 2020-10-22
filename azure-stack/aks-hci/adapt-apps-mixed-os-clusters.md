@@ -3,15 +3,15 @@ title: Adaptación de las aplicaciones para su uso en clústeres de Kubernetes c
 description: Uso de selectores de nodo o de intolerancias y tolerancias en Azure Kubernetes Service para garantizar que las aplicaciones de clústeres de Kubernetes con sistema operativo mixto que se ejecutan en Azure Stack HCI estén programadas en el sistema operativo del nodo de trabajo correcto
 author: abha
 ms.topic: how-to
-ms.date: 09/22/2020
+ms.date: 10/20/2020
 ms.author: abha
 ms.reviewer: ''
-ms.openlocfilehash: e70ac456929b5c8402e49c969ca8b9c87a703311
-ms.sourcegitcommit: dabbe44c3208fbf989b7615301833929f50390ff
+ms.openlocfilehash: 04b103fee921cf8bdab82a4004c6c80afd54d687
+ms.sourcegitcommit: be445f183d003106192f039990d1fb8ee151c8d7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90949344"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92253953"
 ---
 # <a name="adapt-apps-for-mixed-os-kubernetes-clusters-using-node-selectors-or-taints-and-tolerations"></a>Adaptación de las aplicaciones a los clústeres de Kubernetes con sistemas operativos mixtos mediante selectores de nodo o intolerancias y tolerancias
 
@@ -41,7 +41,7 @@ Las *intolerancias* y *tolerancias* funcionan conjuntamente para garantizar que 
 A los nodos del sistema operativo Windows de Azure Kubernetes Service en Azure Stack HCI se les puede aplicar una intolerancia con el siguiente par clave-valor. Los usuarios no deben usar otro diferente.
 
 ```yaml
-node.kubernetes.io/os=Windowss:NoSchedule
+node.kubernetes.io/os=Windows:NoSchedule
 ```
 Ejecute `kubectl get` e identifique los nodos de trabajo de Windows a los que desea aplicar la intolerancia.
 
