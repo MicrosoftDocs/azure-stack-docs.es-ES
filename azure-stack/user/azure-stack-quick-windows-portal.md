@@ -7,12 +7,12 @@ ms.date: 10/06/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 10/06/2020
-ms.openlocfilehash: 68a28c28c02565c996c3bbc6742554cc78090846
-ms.sourcegitcommit: 1621f2748b2059fd47ccacd48595a597c44ee63f
+ms.openlocfilehash: efd182e35f8229ee171ec0e03c71829c17f7c32e
+ms.sourcegitcommit: 8ffa29f71d69191534d42f86f49f719b4198a097
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91853248"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92353973"
 ---
 # <a name="quickstart-create-a-windows-server-vm-with-the-azure-stack-hub-portal"></a>Inicio rápido: Creación de una máquina virtual Windows Server con el portal de Azure Stack Hub
 
@@ -34,31 +34,31 @@ Inicie sesión en el portal de Azure Stack Hub. La dirección del portal de Azur
 1. Seleccione **Crear un recurso** > **Proceso**. Busque` Windows Server 2016 Datacenter - Pay as you use`.
     Si no ve la entrada **Windows Server 2016 Datacenter - Pay-as-you-use**, póngase en contacto con su operador de nube de Azure Stack Hub y pida que se agregue la imagen al Marketplace de Azure Stack Hub. Para obtener instrucciones, el operador de la nube puede consultar [Creación y publicación de un elemento personalizado de Marketplace de Azure Stack Hub](../operator/azure-stack-create-and-publish-marketplace-item.md).
 
-    ![Windows Server 2016 Datacenter: Pago por uso](./media/azure-stack-quick-windows-portal/image1.png)
+    ![Windows Server 2016 Datacenter: Pago por uso](./media/azure-stack-quick-windows-portal/image1a.png)
 
 1. Seleccione **Crear**.
 
-    ![Creación de un recurso](./media/azure-stack-quick-windows-portal/image2.png)
+    ![Creación de un recurso](./media/azure-stack-quick-windows-portal/image2a.png)
 
 1. Escriba un **nombre**, **tipo de disco**, **nombre de usuario** y **contraseña** en **Aspectos básicos**. Elija una **suscripción**. Cree un **grupo de recursos**, o seleccione uno ya existente, seleccione una **ubicación** y, después, seleccione **Aceptar**.
 
-    ![Creación de una máquina virtual: Aspectos básicos](./media/azure-stack-quick-windows-portal/image3.png)
+    ![Creación de una máquina virtual: Aspectos básicos](./media/azure-stack-quick-windows-portal/image3a.png)
 
 1. Seleccione **D1_v2** en **Tamaño** y, después, elija **Seleccionar**.
 
-    ![Creación de una máquina virtual: Tamaño](./media/azure-stack-quick-windows-portal/image4.png)
+    ![Creación de una máquina virtual: Tamaño](./media/azure-stack-quick-windows-portal/image4a.png)
 
 1. En la página **Configuración**, realice los cambios necesarios en los valores predeterminados. Debe configurar los puertos de entrada públicos deseados en el menú desplegable relacionado. Cuando haya terminado, seleccione **Aceptar**.
 
-    ![Creación de una máquina virtual: Configuración](./media/azure-stack-quick-windows-portal/image5.png)
+    ![Creación de una máquina virtual: Configuración](./media/azure-stack-quick-windows-portal/image5a.png)
 
 1. Seleccione **Aceptar** en **Resumen** para crear la máquina virtual.
 
-    ![Creación de una máquina virtual: Resumen](./media/azure-stack-quick-windows-portal/image6.png)
+    ![Creación de una máquina virtual: Resumen](./media/azure-stack-quick-windows-portal/image6a.png)
 
 1. Seleccione **Virtual Machines** para revisar la nueva máquina virtual. Busque el nombre de la máquina virtual y, a continuación, seleccione la máquina virtual en los resultados de la búsqueda.
 
-:::image type="content" source="./media/azure-stack-quick-windows-portal/image7-inline.png" alt-text="Creación de una máquina virtual: Búsqueda de máquinas virtuales" lightbox="./media/azure-stack-quick-windows-portal/image7.png":::
+![Creación de una máquina virtual: Búsqueda de máquinas virtuales](./media/azure-stack-quick-windows-portal/image7a.png)
 
 ## <a name="clean-up-resources"></a>Limpieza de recursos
 
