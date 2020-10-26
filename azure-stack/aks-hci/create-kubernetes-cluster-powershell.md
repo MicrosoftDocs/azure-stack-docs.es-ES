@@ -5,12 +5,12 @@ author: jessicaguan
 ms.topic: quickstart
 ms.date: 09/22/2020
 ms.author: jeguan
-ms.openlocfilehash: 35d527b56a2429676d343ba8098fc6821835fb00
-ms.sourcegitcommit: dabbe44c3208fbf989b7615301833929f50390ff
+ms.openlocfilehash: b9287add391d2a3132b3ef0baadf5668b1ea057e
+ms.sourcegitcommit: be445f183d003106192f039990d1fb8ee151c8d7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90949391"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92253985"
 ---
 # <a name="quickstart-create-kubernetes-clusters-on-azure-stack-hci-using-windows-powershell"></a>Inicio rápido: Creación de clústeres de Kubernetes en Azure Stack HCI mediante Windows PowerShell
 
@@ -130,11 +130,24 @@ Si quiere usar los nodos de Windows, la versión mínima necesaria es v1.1.8.6.
 
 ## <a name="step-4-access-your-clusters-using-kubectl"></a>Paso 4: acceder a los clústeres mediante kubectl
 
-Para acceder al host de Azure Kubernetes Service o al clúster de Kubernetes mediante kubectl, ejecute el siguiente comando. Se usará el archivo kubeconfig del clúster especificado como archivo kubeconfig predeterminado para kubectl.
+Para acceder a los clústeres de Kubernetes con kubectl, ejecute el siguiente comando. Se usará el archivo kubeconfig del clúster especificado como archivo kubeconfig predeterminado para kubectl.
 
 ```powershell
-Set-AksHciKubeConfig -clusterName
+Get-AksHciCredential -clusterName
+                     [-outputLocation]
 ```
+
+### <a name="required-parameters"></a>Parámetros obligatorios
+
+`clusterName`
+
+Nombre del clúster.
+
+### <a name="optional-parameters"></a>Parámetros opcionales
+
+`outputLocation`
+
+La ubicación en la que desea descargar kubeconfig. El valor predeterminado es `%USERPROFILE%\.kube`.
 
 ## <a name="delete-a-kubernetes-cluster"></a>Eliminación de un clúster de Kubernetes
 

@@ -5,12 +5,12 @@ author: jessicaguan
 ms.topic: quickstart
 ms.date: 09/23/2020
 ms.author: jeguan
-ms.openlocfilehash: b4b128c5d51d7f916e0936102224283dd77a971d
-ms.sourcegitcommit: 849be7ebd02a1e54e8d0ec59736c9917c67e309e
+ms.openlocfilehash: 089488e246bdb7c12bbd0808ef2e92a4c83b0fce
+ms.sourcegitcommit: be445f183d003106192f039990d1fb8ee151c8d7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91134668"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92253967"
 ---
 # <a name="quickstart-set-up-an-azure-kubernetes-service-host-on-azure-stack-hci-using-powershell"></a>Inicio rápido: Configuración de un host de Azure Kubernetes Service en Azure Stack HCI mediante PowerShell
 
@@ -20,9 +20,19 @@ En este inicio rápido, aprenderá a configurar un host de Azure Kubernetes Serv
 
 ## <a name="before-you-begin"></a>Antes de empezar
 
-Antes de empezar, asegúrese de que tiene un clúster de Azure Stack HCI de entre 2 y 4 nodos o una instancia de Azure Stack HCI de un único nodo. **Le recomendamos tener un clúster de Azure Stack HCI de entre 2 y 4 nodos.** Si no lo tiene, siga las instrucciones sobre cómo conseguirlo que encontrará [aquí](./system-requirements.md).
+Antes de empezar, asegúrese de que tiene un clúster de Azure Stack HCI de entre 2 y 4 nodos o una instancia de Azure Stack HCI de un único nodo. **Le recomendamos tener un clúster de Azure Stack HCI de entre 2 y 4 nodos.** Si no es así, siga las instrucciones que aparecen en la [página de registro de Azure Stack HCI](https://azure.microsoft.com/products/azure-stack/hci/hci-download/).
 
-También tendrá que asegurarse de que tiene instalado el módulo de PowerShell AksHci. El paquete de descarga que encontrará [aquí](https://aka.ms/AKS-HCI-Evaluate) tendrá el módulo en un archivo ZIP. Asegúrese de extraer el archivo ZIP en la ubicación correcta (`%systemdrive%\program files\windowspowershell\modules`) y, a continuación, ejecute el siguiente comando en una ventana administrativa de PowerShell.
+## <a name="step-1-download-and-install-the-akshci-powershell-module"></a>Paso 1: Descargar e instalar el módulo AksHci de PowerShell
+
+Descargue `AKS-HCI-Public=Preview-Oct-2020` de la [página de registro de Azure Kubernetes Service en Azure Stack HCI](https://aka.ms/AKS-HCI-Evaluate). El archivo zip `AksHci.Powershell.zip` contiene el módulo de PowerShell.
+
+Si ha instalado anteriormente Azure Kubernetes Service en Azure Stack HCI mediante PowerShell o Windows Admin Center, ejecute el siguiente comando antes de continuar.
+
+   ```powershell
+   Uninstall-AksHci
+   ```
+
+**Cierre todas las ventanas de PowerShell.** Elimine los directorios existentes de AksHci, AksHci.Day2 y MSK8sDownloadAgent que se encuentran en la ruta `%systemdrive%\program files\windowspowershell\modules`. Una vez hecho esto, puede extraer el contenido del nuevo archivo zip. Asegúrese de extraer el archivo zip en la ubicación correcta (`%systemdrive%\program files\windowspowershell\modules`).
 
    ```powershell
    Import-Module AksHci
@@ -30,9 +40,9 @@ También tendrá que asegurarse de que tiene instalado el módulo de PowerShell 
 
 Después de ejecutar el comando anterior, cierre todas las ventanas de PowerShell y vuelva a abrir una sesión administrativa para ejecutar los comandos en los pasos siguientes.
 
-## <a name="step-1-prepare-your-machines-for-deployment"></a>Paso 1: preparar las máquinas para la implementación
+## <a name="step-2-prepare-your-machines-for-deployment"></a>Paso 2: preparar las máquinas para la implementación
 
-En primer lugar, ejecutaremos varias comprobaciones en cada nodo físico para ver si se cumplen todos los requisitos para instalar Azure Kubernetes Service en Azure Stack HCI.
+Ejecute varias comprobaciones en cada nodo físico para ver si se cumplen todos los requisitos para instalar Azure Kubernetes Service en Azure Stack HCI.
 
 Abra PowerShell como administrador y ejecute el siguiente comando.
 
@@ -42,7 +52,7 @@ Abra PowerShell como administrador y ejecute el siguiente comando.
 
 Una vez finalizadas las comprobaciones, verá el texto "Listo" en color verde.
 
-## <a name="step-2-configure-your-deployment"></a>Paso 2: configurar la implementación
+## <a name="step-3-configure-your-deployment"></a>Paso 3: configurar la implementación
 
 Establezca los valores de configuración del host de Azure Kubernetes Service. **Si tiene un clúster de Azure Stack HCI de entre 2 y 4 nodos, debe especificar el valor `MultiNode` en el elemento `-deploymentType` y los parámetros `wssdImageDir` y `cloudConfigLocation`.** En el caso de un clúster de Azure Stack HCI de un único nodo, todos los parámetros son opcionales y se establecen con sus valores predeterminados. Sin embargo, para obtener un rendimiento óptimo, **le recomendamos usar una implementación de clúster de Azure Stack HCI de entre 2 y 4 nodos.**
 
@@ -61,6 +71,8 @@ Configure la implementación con el siguiente comando.
                     [-vipPoolEndIp]
                     [-macPoolStart]
                     [-macPoolEnd]
+                    [-vlanID]
+                    [-cloudServiceCidr]
                     [-wssdDir]
                     [-akshciVersion]
                     [-vnetType]
@@ -82,11 +94,11 @@ Tipo de implementación. Valores aceptados: SingleNode y MultiNode. El valor pre
 
 `-wssdImageDir`
 
-Ruta de acceso al directorio donde Azure Kubernetes Service en Azure Stack HCI almacenará sus imágenes de VHD. El valor predeterminado es `%systemdrive%\wssdimagestore` para las implementaciones de un solo nodo. *En cuanto a las implementaciones de varios nodos, se debe especificar este parámetro*. La ruta de acceso debe apuntar a una ruta de acceso de almacenamiento compartida como  `C:\ClusterStorage\Volume2\ImageStore` o a un recurso compartido de SMB como  `\\FileShare\ImageStore`.
+Ruta de acceso al directorio donde Azure Kubernetes Service en Azure Stack HCI almacenará sus imágenes de VHD. El valor predeterminado es `%systemdrive%\wssdimagestore` para las implementaciones de un solo nodo. *En cuanto a las implementaciones de varios nodos, se debe especificar este parámetro* . La ruta de acceso debe apuntar a una ruta de acceso de almacenamiento compartida como  `C:\ClusterStorage\Volume2\ImageStore` o a un recurso compartido de SMB como  `\\FileShare\ImageStore`.
 
 `-cloudConfigLocation`
 
-Ubicación donde el agente de nube almacenará su configuración. El valor predeterminado es `%systemdrive%\wssdimagestore` para las implementaciones de un solo nodo. La ubicación puede ser la misma que la ruta de acceso del valor  `-wssdImageDir` anterior. En cuanto a las *implementaciones de varios nodos, se debe especificar este parámetro*.
+Ubicación donde el agente de nube almacenará su configuración. El valor predeterminado es `%systemdrive%\wssdimagestore` para las implementaciones de un solo nodo. La ubicación puede ser la misma que la ruta de acceso del valor  `-wssdImageDir` anterior. En cuanto a las *implementaciones de varios nodos, se debe especificar este parámetro* .
 
 `-nodeConfigLocation`
 
@@ -123,6 +135,14 @@ Se usa para especificar el inicio de la dirección MAC del grupo de direcciones 
 `-macPoolEnd`
 
 Se usa para especificar el final de la dirección MAC del grupo de direcciones MAC que quiere usar en la máquina virtual del host de Azure Kubernetes Service. La sintaxis de la dirección MAC requiere que el bit menos significativo del primer byte siempre sea 0. Asimismo, el primer byte siempre debe ser un número par (por ejemplo, 00, 02, 04, 06...). El primer byte de la dirección que se ha pasado como `-macPoolEnd` debe ser el mismo que el que se pasó como `-macPoolStart`. El valor predeterminado es none.
+
+`-vlandID`
+
+Este se puede usar para especificar un identificador de VLAN de red. El host de Azure Kubernetes Service y los adaptadores de red de VM del clúster de Kubernetes se etiquetarán con el identificador de VLAN proporcionado. El valor predeterminado es none.
+
+`cloudServiceCidr`
+
+Se puede usar para proporcionar un prefijo de dirección IP estática o de red que se asignará al servicio MOC CloudAgent. Este valor debe proporcionarse con el formato CIDR. (Por ejemplo: 192.168.1.2/16). El valor predeterminado es none.
 
 `-wssdDir`
 
@@ -172,7 +192,7 @@ Para restablecer la configuración de Azure Kubernetes Service en Azure Stack HC
 Set-AksHciConfig
 ```
 
-## <a name="step-3-start-a-new-deployment"></a>Paso 3: iniciar una nueva implementación
+## <a name="step-4-start-a-new-deployment"></a>Paso 4: iniciar una nueva implementación
 
 Una vez configurada la implementación, debe iniciarla. Se instalarán los agentes y servicios de Azure Kubernetes Service en Azure Stack HCI y el host de Azure Kubernetes Service.
 
@@ -182,21 +202,34 @@ Para comenzar la implementación, ejecute el siguiente comando.
 Install-AksHci
 ```
 
-### <a name="check-your-deployed-clusters"></a>Comprobación de los clústeres implementados
+### <a name="verify-your-deployed-azure-kubernetes-service-host"></a>Comprobación de que el host de Azure Kubernetes Service está implementado
 
-Para obtener una lista de los hosts de Azure Kubernetes Service implementados, ejecute el siguiente comando. También podrá obtener los clústeres de Kubernetes mediante el mismo comando después de implementarlos.
+Para asegurarse de que el host de Azure Kubernetes Service esté implementado, ejecute el siguiente comando. También podrá obtener los clústeres de Kubernetes mediante el mismo comando después de implementarlos.
 
 ```powershell
 Get-AksHciCluster
 ```
 
-## <a name="step-4-access-your-clusters-using-kubectl"></a>Paso 4: acceder a los clústeres mediante kubectl
+## <a name="step-5-access-your-clusters-using-kubectl"></a>Paso 5: acceder a los clústeres mediante kubectl
 
 Para acceder al host de Azure Kubernetes Service o al clúster de Kubernetes mediante kubectl, ejecute el siguiente comando. Se usará el archivo kubeconfig del clúster especificado como archivo kubeconfig predeterminado para kubectl.
 
 ```powershell
-Set-AksHciKubeConfig -clusterName
+Get-AksHciCredential -clusterName
+                     [-outputLocation]
 ```
+
+### <a name="required-parameters"></a>Parámetros obligatorios
+
+`clusterName`
+
+Nombre del clúster.
+
+### <a name="optional-parameters"></a>Parámetros opcionales
+
+`outputLocation`
+
+La ubicación en la que desea descargar kubeconfig. El valor predeterminado es `%USERPROFILE%\.kube`.
 
 ## <a name="get-logs"></a>Obtención de registros
 
