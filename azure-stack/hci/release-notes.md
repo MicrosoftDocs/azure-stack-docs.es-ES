@@ -6,19 +6,60 @@ ms.author: v-kedow
 ms.topic: conceptual
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 10/13/2020
-ms.openlocfilehash: 2432a7fb28ba65f08b0540113ec5d3f90f742509
-ms.sourcegitcommit: 64060ff02d2450c6cf91cb21cdefdcf6b720a75f
+ms.date: 10/20/2020
+ms.openlocfilehash: 6d480f1229fb0c38cb3241c4a9de5bc53eadf87c
+ms.sourcegitcommit: be445f183d003106192f039990d1fb8ee151c8d7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92009837"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92254019"
 ---
 # <a name="release-notes-for-azure-stack-hci-public-preview"></a>Notas de la versión de Azure Stack HCl, versión preliminar pública
 
 > Se aplica a: Azure Stack HCI, versión 20H2
 
 En este artículo se describe el contenido de los paquetes de actualización de la versión preliminar pública de Azure Stack Hub.
+
+## <a name="october-20-2020-preview-update-kb4580388"></a>Actualización de la versión preliminar del 20 de octubre de 2020 (KB4580388)
+
+Esta actualización incluye mejoras y correcciones para la versión más reciente de Azure Stack HCI.
+
+### <a name="improvements-and-fixes"></a>Mejoras y correcciones
+Esta actualización no relacionada con la seguridad incluye mejoras de calidad. Los cambios principales son:
+
+- Con esta actualización, los clientes de Azure Stack HCI que tienen licencias válidas de Windows Server 2019 Datacenter Edition pueden usarlas para activar cómodamente las máquinas virtuales (VM) hospedadas en Azure Stack HCI sin tener que administrar las claves de producto de cada VM.
+
+### <a name="known-issues-in-this-update"></a>Problemas conocidos de esta actualización
+
+Microsoft tiene constancia de un problema con esta actualización.
+
+#### <a name="symptom"></a>Síntoma
+Al usar la opción Migración en vivo para trasladar una VM entre los sistemas operativos Windows Server y Azure Stack HCI, es posible que se muestre un error similar al siguiente: "Se bloqueó una operación de migración para la máquina virtual <vmname> porque no se admite la migración de VM entre diferentes ediciones de Windows (identificador de la máquina virtual)".
+
+Esto también puede provocar un error en la operación Actualización compatible con clústeres (CAU) si se espera que alguna de las VM ejecute Migración en vivo durante dicha operación.
+
+#### <a name="workaround"></a>Solución alternativa
+
+Use la opción Migración rápida en lugar de Migración en vivo. Si usa la operación CAU, cambie temporalmente el comportamiento predeterminado para que esta use la opción Migración rápida.
+
+Ejemplo:
+
+```powershell
+Get-ClusterResourceType "Virtual Machine" | Set-ClusterParameter MoveTypeThreshold 3001
+```
+
+Se recomienda volver al valor `MoveTypeThreshold` anterior una vez que la operación CAU se complete correctamente.
+
+Para obtener más información, consulte [Configuring How VMs Are Moved when a Node is Drained](https://techcommunity.microsoft.com/t5/failover-clustering/configuring-how-vms-are-moved-when-a-node-is-drained/ba-p/371848) (Configuración del movimiento de las VM al purgar un nodo).
+
+### <a name="how-to-get-this-update"></a>Obtención de esta actualización
+La actualización de seguridad del 20 de octubre de 2020 (KB4580388) para la [versión preliminar de Azure Stack HCI](https://azure.microsoft.com/products/azure-stack/hci/hci-download/) se proporciona a través de Windows Update. Para instalarla en el clúster de Azure Stack HCI, consulte [Actualización de clústeres de Azure Stack HCI](manage/update-cluster.md).
+
+### <a name="file-information"></a>información de archivo
+Para obtener una lista de los archivos que se proporcionan en esta actualización (Sistema operativo versión 17784.1321), descargue la [información de archivo de la actualización acumulativa 4580388](https://download.microsoft.com/download/2/f/b/2fb766d3-c4c8-4279-8718-8efbd0b6f211/4580388.csv).
+
+   > [!NOTE]
+   > En algunos archivos se incluye por error el estado "No aplicable" en la columna "Versión del archivo" del archivo CSV. Esto podría provocar falsos positivos o falsos negativos al usar herramientas de detección de análisis de terceros para validar la compilación.
 
 ## <a name="october-13-2020-security-update-kb4580363"></a>13 de octubre de 2020, actualización de seguridad (KB4580363)
 

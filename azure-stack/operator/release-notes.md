@@ -3,16 +3,16 @@ title: Notas de la versión de Azure Stack Hub
 description: Notas de la versión para los sistemas integrados de Azure Stack Hub, incluidas las actualizaciones y correcciones de errores.
 author: sethmanheim
 ms.topic: article
-ms.date: 09/28/2020
+ms.date: 10/20/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 08/11/2020
-ms.openlocfilehash: cff17c92a44bec23d0a10620d6c182ad5240c451
-ms.sourcegitcommit: 703be61f2f1565bf478b8c184753869c29e5c33c
+ms.openlocfilehash: 923dbd141ad7911326f896d0d4f8d124648035e5
+ms.sourcegitcommit: b6d5d59481c3569a5ff670a91b3a46a9d3a7a63d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91495803"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92336897"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Notas de la versión de Azure Stack Hub
 
@@ -49,11 +49,11 @@ Se puede descargar el paquete de actualizaciones de Azure Stack Hub con la [herr
 ::: moniker range="azs-2005"
 ## <a name="2005-build-reference"></a>Referencia de la compilación 2005
 
-El número de compilación de la actualización 2005 de Azure Stack Hub es **1.2005.6.53**.
+El número de compilación de la actualización 2005 de Azure Stack Hub es **1.2005.6.53** .
 
 ### <a name="update-type"></a>Tipo de actualización
 
-El tipo de compilación de la actualización 2005 de Azure Stack Hub es **Completo**.
+El tipo de compilación de la actualización 2005 de Azure Stack Hub es **Completo** .
 
 El tamaño del paquete de la actualización 2005 es mayor en comparación con el de actualizaciones anteriores. Esto supone que el tiempo de descarga es también mayor. La actualización permanecerá en el estado **Preparando** durante bastante tiempo; los operadores pueden prever que este proceso tardará más que en las actualizaciones anteriores. La actualización 2005 ha tenido los siguientes tiempos de ejecución previstos en nuestras pruebas internas. 4 nodos: 13-20 horas, 8 nodos: 16-26 horas, 12 nodos: 19-32 horas, 16 nodos: 22-38 horas. Por lo general, los tiempos de ejecución de actualización exactos dependen de la capacidad que usen las cargas de trabajo de inquilino en el sistema, de la conectividad de red del sistema (si está conectado a Internet) y de las especificaciones de hardware del sistema. Unos tiempos de ejecución inferiores o superiores al valor esperado son habituales y no requieren ninguna acción por parte de los operadores de Azure Stack Hub, a menos que se produzca un error de actualización. Esta aproximación del tiempo de ejecución es específica de la actualización 2005 y no se debe comparar con otras actualizaciones de Azure Stack Hub.
 
@@ -94,7 +94,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 
 ### <a name="changes"></a>Cambios
 
-- Se han quitado las acciones para detener, apagar y reiniciar una instancia de rol de infraestructura desde el portal de administración. También se han quitado las API correspondientes en el proveedor de recursos del tejido. Los siguientes cmdlets de PowerShell del módulo RM de administrador y de la versión preliminar de AZ para Azure Stack Hub ya no funcionan: **Stop-AzsInfrastructureRoleInstance**, **Disable-InfrastructureRoleInstance** y **Restart-InfrastructureRoleInstance**. Estos cmdlets se quitarán de la siguiente versión del módulo AZ de administrador para Azure Stack Hub.
+- Se han quitado las acciones para detener, apagar y reiniciar una instancia de rol de infraestructura desde el portal de administración. También se han quitado las API correspondientes en el proveedor de recursos del tejido. Los siguientes cmdlets de PowerShell del módulo RM de administrador y de la versión preliminar de AZ para Azure Stack Hub ya no funcionan: **Stop-AzsInfrastructureRoleInstance** , **Disable-InfrastructureRoleInstance** y **Restart-InfrastructureRoleInstance** . Estos cmdlets se quitarán de la siguiente versión del módulo AZ de administrador para Azure Stack Hub.
 - Azure Stack Hub 2005 ahora solo admite [App Service en Azure Stack Hub 2020 (versiones 87 .x)](app-service-release-notes-2020-Q2.md).
 
 ### <a name="fixes"></a>Correcciones
@@ -142,20 +142,20 @@ A partir de la versión 2005, cuando se actualiza a una nueva versión principal
 
 Después de la instalación de 2005, si se publican posteriormente algunas revisiones de la versión 2005, se deben instalar:
 
-- [Revisión 1.2005.13.68 de Azure Stack Hub](https://support.microsoft.com/help/4583399)
+- [Revisión 1.2005.18.78 de Azure Stack Hub](https://support.microsoft.com/help/4584238)
 ::: moniker-end
 
 ::: moniker range="azs-2002"
 ## <a name="2002-build-reference"></a>Referencia de la compilación 2002
 
-El número de compilación de la actualización 2002 de Azure Stack Hub es **1.2002.0.35**.
+El número de compilación de la actualización 2002 de Azure Stack Hub es **1.2002.0.35** .
 
 > [!IMPORTANT]  
 > Con la actualización de Azure Stack Hub 2002, Microsoft amplía temporalmente las [instrucciones de directiva de soporte técnico de Azure Stack Hub](azure-stack-servicing-policy.md).  Estamos trabajando con clientes de todo el mundo que tienen que hacer frente a la COVID-19 y que deben tomar decisiones importantes sobre sus sistemas de Azure Stack Hub, cómo se actualizan y administran, para garantizar que las operaciones empresariales del centro de datos continúan funcionando con normalidad. Para dar soporte técnico a nuestros clientes, Microsoft ofrece una extensión de cambio de directiva de soporte técnico temporal que incluye tres versiones de actualización anteriores.  Como resultado, se admitirán la actualización 2002 recién publicada y cualquiera de las tres versiones de actualización anteriores (por ejemplo, 1910, 1908 y 1907).
 
 ### <a name="update-type"></a>Tipo de actualización
 
-El tipo de compilación de la actualización 2002 de Azure Stack Hub es **Completo**.
+El tipo de compilación de la actualización 2002 de Azure Stack Hub es **Completo** .
 
 El tamaño del paquete de la actualización 2002 es mayor en comparación con actualizaciones anteriores. Esto supone que el tiempo de descarga es también mayor. La actualización permanecerá en el estado **Preparando** durante bastante tiempo; los operadores pueden prever que este proceso tardará más que en las actualizaciones anteriores. La actualización 2002 tuvo los siguientes tiempos de ejecución previstos en nuestras pruebas internas: 4 nodos: 15-42 horas, 8 nodos: 20-50 horas, 12 nodos: 20-60 horas, 16 nodos: 25-70 horas. Por lo general, los tiempos de ejecución de actualización exactos dependen de la capacidad que usen las cargas de trabajo de inquilino en el sistema, de la conectividad de red del sistema (si está conectado a Internet) y de las especificaciones de hardware del sistema. Unos tiempos de ejecución inferiores o superiores al valor esperado son habituales y no requieren ninguna acción por parte de los operadores de Azure Stack Hub, a menos que se produzca un error de actualización. Esta aproximación del tiempo de ejecución es específica para la actualización 2002 y no se debe comparar con otras actualizaciones de Azure Stack Hub.
 
@@ -186,7 +186,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 - La herramienta de redifusión sin conexión se ha actualizado con mejoras de confiabilidad. La herramienta ya no está disponible en GitHub y se ha [trasladado a la galería de PowerShell](https://www.powershellgallery.com/packages/Azs.Syndication.Admin/). Para más información, consulte [Descarga de elementos de Marketplace existentes desde Azure en Azure Stack Hub](azure-stack-download-azure-marketplace-item.md).
 - Se está incorporando una nueva funcionalidad de supervisión. La plataforma corregirá automáticamente la alerta de espacio en disco insuficiente para los hosts físicos y las máquinas virtuales de infraestructura, y solo si se produce un error en esta acción, la alerta será visible en el portal de administrador de Azure Stack Hub para que el operador tome medidas.
 - Mejoras en la [recopilación de registros de diagnóstico](./azure-stack-diagnostic-log-collection-overview.md?view=azs-2002). La nueva experiencia mejora y simplifica la recopilación de registros de diagnóstico mediante la eliminación de la necesidad de configurar una cuenta de almacenamiento de blobs de antemano. El entorno de almacenamiento está preconfigurado para que pueda enviar registros antes de abrir una incidencia de soporte técnico y gaste menos tiempo en una llamada de soporte técnico.
-- El tiempo que se emplea en la [recopilación proactiva de registros y la recopilación de registros a petición](./azure-stack-diagnostic-log-collection-overview.md?view=azs-2002) se ha reducido en un 80 %. El tiempo de recopilación de registros puede tardar más de lo esperado, pero no será necesaria ninguna acción por parte de los operadores de Azure Stack Hub a menos que se produzca un error en la recopilación de registros.
+- El tiempo que se emplea en la [recopilación proactiva de registros y la recopilación de registros a petición](./azure-stack-diagnostic-log-collection-overview.md?view=azs-2002) se ha reducido en un 80 %. El tiempo de recopilación de registros puede tardar más de lo esperado, pero no será necesaria ninguna acción por parte de los operadores de Azure Stack Hub a menos que se produzca un error en la recopilación de registros.
 - El progreso de la descarga de un paquete de actualizaciones de Azure Stack Hub es ahora visible en la hoja de actualización una vez que se inicia una actualización. Esto solo se aplica a los sistemas conectados de Azure Stack Hub que eligen [preparar los paquetes de actualizaciones mediante la descarga automática](azure-stack-update-prepare-package.md#automatic-download-and-preparation-for-update-packages).
 - Se han realizado mejoras de confiabilidad en el agente del host de Controladora de red.
 - Se ha presentado un nuevo microservicio denominado DNS Orchestrator que mejora la lógica de resistencia de los servicios DNS internos durante los procesos de revisión y actualización.
@@ -200,7 +200,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 
 - Las siguientes API de administrador han quedado en desuso:
 
-  | Proveedor de recursos       | Recurso              | Versión            |
+  | Proveedor de recursos       | Resource              | Versión            |
   |-------------------------|-----------------------|--------------------|
   | Microsoft.Storage.Admin | granjas                 | 2015-12-01-preview |
   | Microsoft.Storage.Admin | farms/acquisitions    | 2015-12-01-preview |
@@ -209,7 +209,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 
 - Se han sustituido las siguientes API de administrador por una versión más reciente (2018-09-01):
 
-  | Proveedor de recursos      | Recurso              | Versión    |
+  | Proveedor de recursos      | Resource              | Versión    |
   |------------------------|-----------------------|------------|
   | Microsoft.Backup.Admin | backupLocation         | 2016-05-01 |
   | Microsoft.Backup.Admin | backups                | 2016-05-01 |
@@ -264,7 +264,7 @@ Para más información acerca de las revisiones, consulte [Directiva de servicio
 La versión 2002 de Azure Stack Hub debe aplicarse en la versión 1910 con las revisiones siguientes:
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Revisión 1.1910.63.186 de Azure Stack Hub](https://support.microsoft.com/help/4574735)
+- [Revisión 1.1910.81.224 de Azure Stack Hub](https://support.microsoft.com/help/4583406)
 
 ### <a name="after-successfully-applying-the-2002-update"></a>Después de aplicar correctamente la actualización 2002
 
@@ -277,13 +277,13 @@ Después de instalar esta actualización, instale todas las revisiones aplicable
 ::: moniker range="azs-1910"
 ## <a name="1910-build-reference"></a>Referencia de la compilación 1910
 
-El número de compilación de la actualización 1910 de Azure Stack Hub es **1.1910.0.58**.
+El número de compilación de la actualización 1910 de Azure Stack Hub es **1.1910.0.58** .
 
 ### <a name="update-type"></a>Tipo de actualización
 
 A partir de la versión 1908, el sistema operativo subyacente en el que se ejecuta Azure Stack Hub se actualizó a Windows Server 2019. Esta actualización permite conseguir mejoras fundamentales básicas y disponer de la capacidad de incorporar funciones adicionales a Azure Stack Hub.
 
-El tipo de compilación de la actualización 1910 de Azure Stack Hub es **Rápido**.
+El tipo de compilación de la actualización 1910 de Azure Stack Hub es **Rápido** .
 
 El tamaño del paquete de la actualización 1910 es mayor en comparación con actualizaciones anteriores, lo cual conlleva tiempos de descarga superiores. La actualización permanecerá en el estado **Preparando** durante bastante tiempo; los operadores pueden prever que este proceso tardará más que en las actualizaciones anteriores. El tiempo esperado que tarda en completarse la actualización 1910 es de aproximadamente 10 horas, independientemente del número de nodos físicos del entorno de Azure Stack Hub. Por lo general, los tiempos de ejecución de actualización exactos dependen de la capacidad que usen las cargas de trabajo de inquilino en el sistema, de la conectividad de red del sistema (si está conectado a Internet) y de las especificaciones de hardware del sistema. Los tiempos de ejecución superiores al valor esperado son habituales y no requieren ninguna acción por parte de los operadores de Azure Stack Hub, a menos que se produzca un error de actualización. Esta aproximación del tiempo de ejecución es específica para la actualización 1910 y no se debe comparar con otras actualizaciones de Azure Stack Hub.
 
@@ -332,7 +332,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 
 <!-- Changes and product improvements with tangible customer-facing value. -->
 
-- Azure Stack Hub ha mejorado la capacidad de corregir de forma automática algunos problemas de revisión y actualización que antes causaban errores de actualización o impedían que los operadores iniciaran una actualización de Azure Stack Hub. Como resultado, se incluyen menos pruebas en el grupo **Test-AzureStack -UpdateReadiness**. Para más información, consulte [Validación del estado del sistema de Azure Stack Hub](azure-stack-diagnostic-test.md#groups). Las tres pruebas siguientes aún se mantienen en el grupo **UpdateReadiness**:
+- Azure Stack Hub ha mejorado la capacidad de corregir de forma automática algunos problemas de revisión y actualización que antes causaban errores de actualización o impedían que los operadores iniciaran una actualización de Azure Stack Hub. Como resultado, se incluyen menos pruebas en el grupo **Test-AzureStack -UpdateReadiness** . Para más información, consulte [Validación del estado del sistema de Azure Stack Hub](azure-stack-diagnostic-test.md#groups). Las tres pruebas siguientes aún se mantienen en el grupo **UpdateReadiness** :
 
   - **AzSInfraFileValidation**
   - **AzSActionPlanStatus**
@@ -383,13 +383,13 @@ Para obtener más información sobre los tipos de compilación de actualización
 - En las implementaciones de AAD, el servicio de copia de seguridad de la infraestructura agrega el servicio de identidad a la carga útil de copia de seguridad.  
 
 - El módulo de PowerShell para Azure Stack Hub se ha actualizado a la versión 1.8.0 para la versión 1910.<br>Los cambios incluyen:
-   - **Nuevo módulo de administración DRP**: Deployment Resource Provider (DRP) permite las implementaciones organizadas de proveedores de recursos en Azure Stack Hub. Estos comandos interactúan con el nivel de Azure Resource Manager para interactuar con DRP.
-   - **BRP**: <br />
+   - **Nuevo módulo de administración DRP** : Deployment Resource Provider (DRP) permite las implementaciones organizadas de proveedores de recursos en Azure Stack Hub. Estos comandos interactúan con el nivel de Azure Resource Manager para interactuar con DRP.
+   - **BRP** : <br />
            - Compatibilidad con la restauración de rol único para la copia de seguridad de infraestructura de Azure Stack. <br />
            - Incorporación del parámetro `RoleName` al cmdlet `Restore-AzsBackup`.
-   - **FRP**: Cambios importantes en los recursos **Unidad** y **Volumen** con la versión de API `2019-05-01`. Las características son compatibles con Azure Stack Hub 1910 y versiones posteriores: <br />
+   - **FRP** : Cambios importantes en los recursos **Unidad** y **Volumen** con la versión de API `2019-05-01`. Las características son compatibles con Azure Stack Hub 1910 y versiones posteriores: <br />
             - Se han cambiado los valores de `ID`, `Name`, `HealthStatus` y `OperationalStatus`. <br />
-            - Nuevas propiedades compatibles `FirmwareVersion`, `IsIndicationEnabled`, `Manufacturer` y `StoragePool` para recursos de **Unidad**. <br />
+            - Nuevas propiedades compatibles `FirmwareVersion`, `IsIndicationEnabled`, `Manufacturer` y `StoragePool` para recursos de **Unidad** . <br />
             - Las propiedades `CanPool` y `CannotPoolReason` de los recursos de **Unidad** están en desuso; en su lugar, use `OperationalStatus`.
 
 ### <a name="fixes"></a>Correcciones
@@ -423,14 +423,14 @@ Las revisiones de Azure Stack Hub solo son aplicables a los sistemas integrados 
 La versión 1910 de Azure Stack Hub debe aplicarse en la versión 1908 con las revisiones siguientes:
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Revisión 1.1908.51.133 de Azure Stack Hub](https://support.microsoft.com/help/4574734)
+- [Revisión 1.1908.57.146 de Azure Stack Hub](https://support.microsoft.com/help/4583007)
 
 ### <a name="after-successfully-applying-the-1910-update"></a>Después de aplicar correctamente la actualización 1910
 
 Después de instalar esta actualización, instale todas las revisiones aplicables. Para más información, consulte nuestra [directiva de servicio](azure-stack-servicing-policy.md).
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Revisión 1.1910.63.186 de Azure Stack Hub](https://support.microsoft.com/help/4574735)
+- [Revisión 1.1910.81.224 de Azure Stack Hub](https://support.microsoft.com/help/4583406)
 ::: moniker-end
 
 <!------------------------------------------------------------>

@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 10/13/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: 8f18cd223faca91bc490b659e0a25fce1add3fea
-ms.sourcegitcommit: 4b1a4ec0ac0283faea9438e6617fcb3cfc6fee6d
+ms.openlocfilehash: 46f98ba8f5d2f33e0b5d9d85ee9c2469a098c17d
+ms.sourcegitcommit: d835e211fe65dc54a0d49dfb21ca2465ced42aa4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92041229"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92200491"
 ---
 # <a name="plan-host-networking-for-azure-stack-hci"></a>Planeamiento de redes de host para Azure Stack HCI
 
@@ -35,7 +35,6 @@ El tráfico SMB puede viajar por los siguientes protocolos:
 
 - Protocolo de control de transmisión (TCP): se usa entre sitios
 - Acceso directo a memoria remota (RDMA)
-- QUIC: futuro
 
 ## <a name="traffic-bandwidth-allocation"></a>Asignación de ancho de banda para el tráfico
 
@@ -50,7 +49,7 @@ En la tabla siguiente se muestran las asignaciones de ancho de banda para varios
 - El tráfico de Latido (HB) obtiene el 1 % del 50 % restante
 - \* = debe usar la compresión en lugar de RDMA si la asignación de ancho de banda para el tráfico de LM es < 5 Gbps
 
-|Velocidad de NIC|Velocidad de NIC en equipo|Reserva de Azure del 50 % de SMB|SBL/CSV %|Ancho de banda de SBL/CSV|LM %|Ancho de banda de LM|SR % |Ancho de banda de SR|HB %|Ancho de banda de HB|
+|Velocidad de NIC|Ancho de banda agrupado|Reserva de Azure del 50 % de SMB|SBL/CSV %|Ancho de banda de SBL/CSV|LM %|Ancho de banda de LM|SR % |Ancho de banda de SR|HB %|Ancho de banda de HB|
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 |10|20|10|70%|7|14 %*|1,4*|14 %|1.4|2 %|0,2|
 |25|50|25|70%|17.5|15 %*|3,75*|14 %|3,5|1 %|0,25|
@@ -77,7 +76,7 @@ Estos son los requisitos de RDMA para Azure Stack HCI:
     - Se deben aprovisionar una o más vNIC adicionales para la réplica de almacenamiento
     - Las vNIC de réplica de almacenamiento deben tener el RDMA deshabilitado mediante el cmdlet [Disable-NetAdapterRDMA](https://docs.microsoft.com/powershell/module/netadapter/disable-netadapterrdma) de PowerShell porque el RDMA es por definición entre sitios y entre subredes.
     - Los adaptadores de RDMA nativos necesitan un vSwitch y varias VNIC para la compatibilidad con réplica de almacenamiento con el fin de satisfacer los requisitos de sitio o subred anteriores
-    - Los requisitos de ancho de banda de RDMA internos del sitio requieren conocer los porcentajes de ancho de banda por tipo de tráfico, como se describe en la sección **Asignación de ancho de banda para el tráfico**. Esto garantizará que se puedan aplicar los límites y reservas de ancho de banda adecuados para el tráfico horizontal de derecha a izquierda (nodo a nodo).
+    - Los requisitos de ancho de banda de RDMA internos del sitio requieren conocer los porcentajes de ancho de banda por tipo de tráfico, como se describe en la sección **Asignación de ancho de banda para el tráfico** . Esto garantizará que se puedan aplicar los límites y reservas de ancho de banda adecuados para el tráfico horizontal de derecha a izquierda (nodo a nodo).
 - El tráfico de migración en vivo y de réplica de almacenamiento debe estar limitado por el ancho de banda de SMB; de lo contrario, podrían consumir todo el ancho de banda, lo que privaría de este al tráfico de almacenamiento de alta prioridad. Para más información, consulte los cmdlets [Set-SmbBandwidthLimit](https://docs.microsoft.com/powershell/module/smbshare/set-smbbandwidthlimit) y [Set-SRNetworkConstraint](https://docs.microsoft.com/powershell/module/storagereplica/set-srnetworkconstraint) de PowerShell.
 
 > [!NOTE]

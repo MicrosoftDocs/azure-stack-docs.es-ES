@@ -6,13 +6,13 @@ ms.topic: conceptual
 ms.assetid: ea7e53c8-11ec-410b-b287-897c7aaafb13
 ms.author: anpaul
 author: AnirbanPaul
-ms.date: 09/11/2020
-ms.openlocfilehash: 986aba8f7591239abfa5502dc2c335177df2eed1
-ms.sourcegitcommit: 362081a8c19e7674c3029c8a44d7ddbe2deb247b
+ms.date: 10/16/2020
+ms.openlocfilehash: 6df469fcc6997b1f56a552bc141692c7a8a49808
+ms.sourcegitcommit: 301e571626f8e85556d9eabee3f385d0b81fdef4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91899540"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92157689"
 ---
 # <a name="plan-a-software-defined-network-infrastructure"></a>Planeamiento de una infraestructura de red definida por software
 
@@ -20,15 +20,18 @@ ms.locfileid: "91899540"
 
 Obtenga información sobre cómo planear la implementación de una infraestructura de red definida por software en la que se incluyan los requisitos previos de hardware y software. En este tema se incluyen los requisitos de planeamiento de la configuración de red física y lógica, el enrutamiento, las puertas de enlace, el hardware de red, etc. También se incluyen consideraciones sobre la extensión de una infraestructura de red definida por software y el uso de una implementación por fases.
 
+   > [!NOTE]
+   > SDN no se admite en clústeres extendidos (multisitio).
+
 ## <a name="prerequisites"></a>Requisitos previos
 Hay varios requisitos previos de hardware y software para una infraestructura de red definida por software, entre los que se incluyen:
-- **Grupos de seguridad y registro DNS dinámico**. Debe preparar el centro de datos para la implementación del rol Controladora de red, para lo cual se necesita un conjunto de máquinas virtuales. Para poder implementar Controladora de red, debe configurar los grupos de seguridad y el registro DNS dinámico.
+- **Grupos de seguridad y registro DNS dinámico** . Debe preparar el centro de datos para la implementación del rol Controladora de red, para lo cual se necesita un conjunto de máquinas virtuales. Para poder implementar Controladora de red, debe configurar los grupos de seguridad y el registro DNS dinámico.
 
     Para más información acerca de la implementación de Controladora de red para el centro de datos, consulte [Requisitos de implementación de Controladora de red](/windows-server/networking/sdn/plan/installation-and-preparation-requirements-for-deploying-network-controller).
 
-- **Red física**. Necesita acceso a los dispositivos de red física para configurar las redes de área local virtual, el enrutamiento y el Protocolo de puerta de enlace de borde (BGP). En este tema se proporcionan instrucciones para la configuración manual de conmutadores, así como opciones para usar el emparejamiento BGP en conmutadores y enrutadores de nivel 3, o en una máquina virtual de servidor de enrutamiento y acceso remoto (RRAS).
+- **Red física** . Necesita acceso a los dispositivos de red física para configurar las redes de área local virtual, el enrutamiento y el Protocolo de puerta de enlace de borde (BGP). En este tema se proporcionan instrucciones para la configuración manual de conmutadores, así como opciones para usar el emparejamiento BGP en conmutadores y enrutadores de nivel 3, o en una máquina virtual de servidor de enrutamiento y acceso remoto (RRAS).
 
-- **Hosts de proceso físico**. Estos hosts ejecutan Hyper-V y son necesarios para hospedar una infraestructura de red definida por software y máquinas virtuales de inquilino. Se necesita un hardware de red específico en estos hosts para obtener el mejor rendimiento, como se indica en la sección [Hardware de red](#network-hardware).
+- **Hosts de proceso físico** . Estos hosts ejecutan Hyper-V y son necesarios para hospedar una infraestructura de red definida por software y máquinas virtuales de inquilino. Se necesita un hardware de red específico en estos hosts para obtener el mejor rendimiento, como se indica en la sección [Hardware de red](#network-hardware).
 
 ## <a name="physical-and-logical-network-configuration"></a>Configuración de la red física y lógica
 Cada host de proceso físico requiere conectividad de red a través de uno o varios adaptadores de red conectados a un puerto del conmutador físico. Una [VLAN](https://en.wikipedia.org/wiki/Virtual_LAN) de nivel 2 admite redes divididas en varios segmentos de red lógica.

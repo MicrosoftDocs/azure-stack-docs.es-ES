@@ -4,13 +4,13 @@ description: Descripción de la importancia de la validación del clúster y cu�
 author: JohnCobb1
 ms.author: v-johcob
 ms.topic: article
-ms.date: 10/2/2020
-ms.openlocfilehash: 682e9063f6f04f5298e7cab4053af179e1c90cd7
-ms.sourcegitcommit: 6ed6db8e393aace41586a0fba925dc297159d45e
+ms.date: 10/16/2020
+ms.openlocfilehash: fe49df76ccb2a90849587acd5d4df7a41e329efb
+ms.sourcegitcommit: 301e571626f8e85556d9eabee3f385d0b81fdef4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91663948"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92157706"
 ---
 # <a name="validate-an-azure-stack-hci-cluster"></a>Validación de un clúster de Azure Stack HCI
 
@@ -50,7 +50,7 @@ En esta sección se describen los escenarios en los que la validación también 
 ## <a name="validate-networking"></a>Validación de las redes
 La herramienta Microsoft Validate-DCB está diseñada para validar la configuración del Protocolo de puente del centro de datos (DCB) en el clúster. Para ello, la herramienta toma una configuración esperada como entrada y, a continuación, prueba cada servidor del clúster. En esta sección se explica cómo instalar y ejecutar la herramienta Validate-DCB, revisar los resultados y resolver los errores de red que identifique la herramienta.
 
-En la red, el acceso directo a memoria remota (RDMA) sobre Ethernet convergente (RoCE) requiere tecnologías DCB para que el tejido de red no tenga pérdidas. Y, si bien iWARP no requiere DCB, aún así se recomienda. Sin embargo, la configuración de DCB puede ser compleja, donde se necesita una configuración exacta para:
+En la red, el acceso directo a memoria remota (RDMA) sobre Ethernet convergente (RoCE) requiere tecnologías DCB para que el tejido de red no tenga pérdidas. Con iWARP, DCB es opcional. Sin embargo, la configuración de DCB puede ser compleja, donde se necesita una configuración exacta para:
 - Cada servidor del clúster
 - Cada puerto de red por el que pasa el tráfico RDMA en el tejido
 
@@ -76,29 +76,29 @@ Para instalar y ejecutar la herramienta Validate-DCB:
     > [!NOTE]
     > Si no puede ejecutar el script de la herramienta Validate-DCB, es posible que tenga que ajustar las directivas de ejecución de PowerShell. Use el cmdlet Get-ExecutionPolicy para ver la configuración actual de la directiva de ejecución de scripts. Para obtener más información sobre la configuración de directivas de ejecución en PowerShell, consulte [Acerca de las directivas de ejecución](/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7).
 
-1. En la página del asistente para la configuración de Validate-DCB, haga clic en **Siguiente**.
-1. En la página Clusters and Nodes (Clústeres y nodos), escriba el nombre del clúster de servidores que desea validar, seleccione **Resolver** para que se muestre en la página y, a continuación, seleccione **Siguiente**.
+1. En la página del asistente para la configuración de Validate-DCB, haga clic en **Siguiente** .
+1. En la página Clusters and Nodes (Clústeres y nodos), escriba el nombre del clúster de servidores que desea validar, seleccione **Resolver** para que se muestre en la página y, a continuación, seleccione **Siguiente** .
 
     :::image type="content" source="../media/validate/clusters-and-nodes.png" alt-text="Página de clústeres y nodos del asistente para la configuración de Validate-DCB":::
 
 1. En la página Adaptadores:
    1. Active la casilla **vSwitch attached** (vSwitch conectado) y escriba el nombre del vSwitch.
-   1. En **Nombre de adaptador**, escriba el nombre de cada NIC física, en **Host vNIC Name** (Nombre de vNIC host), el nombre de cada NIC virtual (vNIC) y, en **VLAN**, el identificador de VLAN que se usa para cada adaptador.
-   1. Expanda el cuadro de lista desplegable **RDMA Type** (Tipo de RDMA) y seleccione el protocolo adecuado: **RoCE** o **iWARP**. Establezca también **Tramas gigantes** en el valor adecuado para la red y, a continuación, seleccione **Siguiente**.
+   1. En **Nombre de adaptador** , escriba el nombre de cada NIC física, en **Host vNIC Name** (Nombre de vNIC host), el nombre de cada NIC virtual (vNIC) y, en **VLAN** , el identificador de VLAN que se usa para cada adaptador.
+   1. Expanda el cuadro de lista desplegable **RDMA Type** (Tipo de RDMA) y seleccione el protocolo adecuado: **RoCE** o **iWARP** . Establezca también **Tramas gigantes** en el valor adecuado para la red y, a continuación, seleccione **Siguiente** .
 
     :::image type="content" source="../media/validate/adapters.png" alt-text="Página de clústeres y nodos del asistente para la configuración de Validate-DCB" lightbox="../media/validate/adapters.png":::
 
     > [!NOTE]
     > - Para obtener más información sobre cómo SR-IOV mejora el rendimiento de la red, consulte [Información general de la virtualización de E/S de raíz única (SR-IOV)](/windows-hardware/drivers/network/overview-of-single-root-i-o-virtualization--sr-iov-).
 
-1. En la página Protocolo de puente del centro de datos, modifique los valores para que coincidan con la configuración de la organización en cuanto a **Prioridad**, **Nombre de directiva**y **Bandwidth Reservation** (Reserva de ancho de banda) y, a continuación, seleccione **Siguiente**.
+1. En la página Protocolo de puente del centro de datos, modifique los valores para que coincidan con la configuración de la organización en cuanto a **Prioridad** , **Nombre de directiva** y **Bandwidth Reservation** (Reserva de ancho de banda) y, a continuación, seleccione **Siguiente** .
 
     :::image type="content" source="../media/validate/data-center-bridging.png" alt-text="Página de clústeres y nodos del asistente para la configuración de Validate-DCB" lightbox="../media/validate/data-center-bridging.png":::
 
     > [!NOTE]
     > La selección de RDMA sobre RoCE en la página anterior del asistente requiere DCB para la confiabilidad de la red en todas las NIC y switchports.
 
-1. En la página Guardar e implementar, en el cuadro **Ruta de archivo de configuración**, guarde el archivo de configuración con una extensión .ps1 en una ubicación en la que pueda utilizarlo de nuevo más adelante si es necesario y, a continuación, seleccione **Exportar** para comenzar la ejecución de la herramienta Validate-DCB.
+1. En la página Guardar e implementar, en el cuadro **Ruta de archivo de configuración** , guarde el archivo de configuración con una extensión .ps1 en una ubicación en la que pueda utilizarlo de nuevo más adelante si es necesario y, a continuación, seleccione **Exportar** para comenzar la ejecución de la herramienta Validate-DCB.
 
    - De manera opcional, puede implementar el archivo de configuración completando la sección **Deploy Configuration to Nodes** (Implementar la configuración en los nodos) de la página, que incluye la capacidad de usar una cuenta de Azure Automation para implementar la configuración y, después, validarla. Consulte [Creación de una cuenta de Azure Automation](/azure/automation/automation-quickstart-create-account) para empezar a trabajar con Azure Automation.
 
@@ -137,18 +137,18 @@ Para obtener más información sobre cómo resolver errores que identifica la he
 ## <a name="validate-the-cluster"></a>Validación del clúster
 Siga estos pasos para validar los servidores de un clúster existente en Windows Admin Center.
 
-1. En Windows Admin Center, en **Todas las conexiones**, seleccione el clúster de Azure Stack HCI que desea validar y, a continuación, seleccione **Conectar**.
+1. En Windows Admin Center, en **Todas las conexiones** , seleccione el clúster de Azure Stack HCI que desea validar y, a continuación, seleccione **Conectar** .
 
     En el panel **Cluster Manager** (Administrador de clústeres) se muestra información general sobre el clúster.
 
-1. En el panel **Cluster Manager** (Administrador de clústeres), en **Herramientas**, seleccione **Servidores**.
-1. En la página **Inventario**, seleccione los servidores del clúster, expanda el submenú **Más** y seleccione **Validar clúster**.
-1. En la ventana emergente **Validar clúster**, seleccione **Sí**.
+1. En el panel **Cluster Manager** (Administrador de clústeres), en **Herramientas** , seleccione **Servidores** .
+1. En la página **Inventario** , seleccione los servidores del clúster, expanda el submenú **Más** y seleccione **Validar clúster** .
+1. En la ventana emergente **Validar clúster** , seleccione **Sí** .
 
     :::image type="content" source="../media/validate/validate-cluster-pop-up.png" alt-text="Página de clústeres y nodos del asistente para la configuración de Validate-DCB":::
 
-1. En la ventana emergente **Credential Security Service Provider (CredSSP)** (Proveedor de servicios de seguridad de credenciales [CredSSP]), seleccione **Sí**.
-1. Proporcione sus credenciales para habilitar **CredSSP** y, después, seleccione **Continuar**.<br> La validación del clúster se ejecuta en segundo plano y le proporciona una notificación cuando se completa, momento en el que puede ver el informe de validación, tal como se describe en la sección siguiente.
+1. En la ventana emergente **Credential Security Service Provider (CredSSP)** (Proveedor de servicios de seguridad de credenciales [CredSSP]), seleccione **Sí** .
+1. Proporcione sus credenciales para habilitar **CredSSP** y, después, seleccione **Continuar** .<br> La validación del clúster se ejecuta en segundo plano y le proporciona una notificación cuando se completa, momento en el que puede ver el informe de validación, tal como se describe en la sección siguiente.
 
 > [!NOTE]
 > Una vez validados los servidores del clúster, deberá deshabilitar CredSSP por motivos de seguridad.
@@ -156,8 +156,8 @@ Siga estos pasos para validar los servidores de un clúster existente en Windows
 ### <a name="disable-credssp"></a>Deshabilitación de CredSSP
 Después de haber validado correctamente el clúster de servidores, tendrá que deshabilitar el protocolo de Proveedor de compatibilidad para seguridad de credenciales (CredSSP) en cada servidor por motivos de seguridad. Para obtener más información, consulte [CVE-2018-0886](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2018-0886).
 
-1. En Windows Admin Center, en **Todas las conexiones**, seleccione el primer servidor del clúster y, a continuación, seleccione **Conectar**.
-1. En la página **Información general**, seleccione **Disable CredSSP** (Deshabilitar CredSSP) y, a continuación, en la ventana emergente **Disable CredSSP** (Deshabilitar CredSSP), seleccione **Sí**.
+1. En Windows Admin Center, en **Todas las conexiones** , seleccione el primer servidor del clúster y, a continuación, seleccione **Conectar** .
+1. En la página **Información general** , seleccione **Disable CredSSP** (Deshabilitar CredSSP) y, a continuación, en la ventana emergente **Disable CredSSP** (Deshabilitar CredSSP), seleccione **Sí** .
 
     El resultado del paso 2 quita el banner rojo **CredSSP HABILITADO** en la parte superior de la página **Información general** del servidor y deshabilita CredSSP en los otros servidores.
 
@@ -165,14 +165,14 @@ Después de haber validado correctamente el clúster de servidores, tendrá que 
 Ahora está listo para ver el informe de validación del clúster.
 
 Hay un par de formas de acceder a los informes de validación:
-- En la página **Inventario**, expanda el submenú **Más** y, a continuación, seleccione **View validation reports** (Ver informes de validación).
+- En la página **Inventario** , expanda el submenú **Más** y, a continuación, seleccione **View validation reports** (Ver informes de validación).
 
 
-- En la parte superior derecha de **Windows Admin Center**, seleccione el icono de campana **Notificaciones** para mostrar el panel **Notificaciones**.
+- En la parte superior derecha de **Windows Admin Center** , seleccione el icono de campana **Notificaciones** para mostrar el panel **Notificaciones** .
 Seleccione el aviso **Successfully validated cluster** (Clúster validado correctamente) y, a continuación, seleccione **Go to Failover Cluster validation report** (Ir al informe de validación de clúster de conmutación por error).
 
 > [!NOTE]
-> El proceso de validación del clúster de servidores puede tardar algún tiempo en completarse. No cambie a otra herramienta en Windows Admin Center mientras se ejecuta el proceso. En el panel **Notificaciones**, una barra de estado situada debajo del aviso **Validar clúster** indica cuándo se completa el proceso.
+> El proceso de validación del clúster de servidores puede tardar algún tiempo en completarse. No cambie a otra herramienta en Windows Admin Center mientras se ejecuta el proceso. En el panel **Notificaciones** , una barra de estado situada debajo del aviso **Validar clúster** indica cuándo se completa el proceso.
 
 ## <a name="validate-the-cluster-using-powershell"></a>Validación del clúster mediante PowerShell
 También puede usar Windows PowerShell para ejecutar pruebas de validación en el clúster de servidores y ver los resultados. Puede ejecutar pruebas tanto antes como después de configurar un clúster.

@@ -6,19 +6,19 @@ ms.author: v-kedow
 ms.topic: how-to
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 09/04/2020
-ms.openlocfilehash: 84d5292c3f812402027b310954a021752276a799
-ms.sourcegitcommit: 01dcda15d88c8d44b4918e2f599daca462a8e3d9
+ms.date: 10/16/2020
+ms.openlocfilehash: 47bfa8c656a2581c9dc125b1bd99379b9012e448
+ms.sourcegitcommit: 301e571626f8e85556d9eabee3f385d0b81fdef4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89493808"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92157638"
 ---
 # <a name="use-the-csv-in-memory-read-cache-with-azure-stack-hci"></a>Uso de la caché de lectura en memoria de Volumen compartido de clúster con Azure Stack HCI
 
 > Se aplica a: Azure Stack HCI, versión 20H2; Windows Server 2019
 
-En este tema se describe cómo usar la memoria del sistema para mejorar el rendimiento de Azure Stack HCI.
+En este tema se describe cómo usar la memoria del sistema para mejorar el rendimiento de Azure Stack HCI mediante el almacenamiento en caché de las lecturas frecuentes. Las escrituras no se pueden almacenar en la memoria caché.
 
 Azure Stack HCI es compatible con la caché de lectura en memoria de Volumen compartido de clúster (CSV). El uso de la memoria del sistema para las lecturas de caché puede mejorar el rendimiento de aplicaciones como Hyper-V, que usa E/S sin almacenamiento en búfer para acceder a los archivos VHD o VHDX. (Las operaciones de E/S sin almacenamiento en búfer se dan en cualquier operación que el administrador de la caché de Windows no almacena en caché).
 
@@ -33,7 +33,7 @@ La caché de lectura en memoria es más eficaz con cargas de trabajo de lectura 
 Puede usar hasta el 80 % de la memoria física total para la caché de lectura en memoria de Volumen compartido de clúster. No olvide dejar suficiente memoria para las máquinas virtuales.
 
   > [!NOTE]
-  > Ciertas herramientas de microrealización de pruebas comparativas, como DISKSPD y [VM Fleet](https://github.com/Microsoft/diskspd/tree/master/Frameworks/VMFleet) pueden obtener peores resultados con la caché de lectura en memoria de Volumen compartido de clúster habilitada que sin ella. De forma predeterminada, VM Fleet crea un VHDX de 10 GiB por máquina virtual, lo que supone aproximadamente un total de 1 TiB para 100 máquinas virtuales y, a continuación, realiza lecturas y escrituras *aleatorias de forma uniforme*. A diferencia de las cargas de trabajo reales, las lecturas no siguen ningún patrón predecible o repetitivo, por lo que la caché en memoria no es efectiva y solo produce sobrecarga.
+  > Ciertas herramientas de microrealización de pruebas comparativas, como DISKSPD y [VM Fleet](https://github.com/Microsoft/diskspd/tree/master/Frameworks/VMFleet) pueden obtener peores resultados con la caché de lectura en memoria de Volumen compartido de clúster habilitada que sin ella. De forma predeterminada, VM Fleet crea un VHDX de 10 GiB por máquina virtual, lo que supone aproximadamente un total de 1 TiB para 100 máquinas virtuales y, a continuación, realiza lecturas y escrituras *aleatorias de forma uniforme* . A diferencia de las cargas de trabajo reales, las lecturas no siguen ningún patrón predecible o repetitivo, por lo que la caché en memoria no es efectiva y solo produce sobrecarga.
 
 ## <a name="configuring-the-in-memory-read-cache"></a>Configuración de la caché de lectura en memoria
 
@@ -44,6 +44,8 @@ La caché de lectura en memoria de Volumen compartido de clúster está disponib
 | Azure Stack HCI     | 1 GiB                  |
 | Windows Server 2019 | 1 GiB                  |
 | Windows Server 2016 | 0 (deshabilitado)           |
+
+Para configurar la memoria caché mediante Windows Admin Center, seleccione **Configuración** en la parte inferior del menú **Herramientas** de la izquierda. A continuación, vaya a **Almacenamiento > Caché en memoria** . Una casilla habilita o deshabilita la memoria caché. También puede especificar la cantidad máxima de memoria por servidor que se va a asignar a la memoria caché. Asegúrese de hacer clic en **Guardar** en la parte inferior de la página después de realizar los cambios.
 
 Para ver cuánta memoria está asignada con PowerShell, ejecute:
 
