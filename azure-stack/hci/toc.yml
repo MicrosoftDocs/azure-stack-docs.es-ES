@@ -74,6 +74,8 @@
           href: manage/monitor-cluster.md
         - name: Incorporación o eliminación de servidores
           href: manage/add-cluster.md
+        - name: Desconexión de un servidor para realizar el mantenimiento
+          href: manage/maintain-servers.md
         - name: Administración del registro de Azure
           href: manage/manage-azure-registration.md
         - name: Cambio de idiomas
@@ -144,6 +146,10 @@
           href: concepts/security.md
 - name: Referencia
   items:
+    - name: Comandos de la CLI de Azure para el registro de Azure
+      href: 'https://docs.microsoft.com/cli/azure/ext/stack-hci/stack-hci'
+    - name: Comandos de PowerShell para el registro de Azure
+      href: 'https://docs.microsoft.com/powershell/module/az.stackhci'
     - name: Comandos de PowerShell de Hyper-V
       href: /powershell/module/hyper-v
     - name: Comandos de PowerShell de Storage
