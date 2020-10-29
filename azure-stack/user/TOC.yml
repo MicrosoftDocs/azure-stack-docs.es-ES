@@ -250,6 +250,8 @@
                       href: azure-stack-kubernetes-aks-engine-scale.md
                     - name: Actualizar un clúster
                       href: azure-stack-kubernetes-aks-engine-upgrade.md
+                    - name: Habilitación de la característica Service Account Token Volume Projection
+                      href: kubernetes-aks-engine-service-account.md
                     - name: Solución de problemas del motor de AKS
                       href: azure-stack-kubernetes-aks-engine-troubleshoot.md
                     - name: Uso de Azure Monitor para contenedores
