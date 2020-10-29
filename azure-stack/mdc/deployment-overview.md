@@ -16,12 +16,12 @@ ms.date: 10/20/2020
 ms.author: justinha
 ms.reviewer: asganesh
 ms.lastreviewed: 10/20/2020
-ms.openlocfilehash: 60361a3e44b5ad54c63e6a94223d75a7b5106b9e
-ms.sourcegitcommit: be445f183d003106192f039990d1fb8ee151c8d7
+ms.openlocfilehash: aa5d67405ff471cecf147256d4b2109e94d993ef
+ms.sourcegitcommit: 716ca50bd198fd51a4eec5b40d5247f6f8c16530
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253934"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92898596"
 ---
 # <a name="mdc-deployment-overview"></a>Introducción a la implementación del Centro de datos modular
 
@@ -58,10 +58,6 @@ En la tabla siguiente se enumeran algunos de los términos que se usan en esta g
 |Unidad de escalado    |Un componente básico de Azure Stack Hub que proporciona recursos de proceso y almacenamiento para la infraestructura y las cargas de trabajo del tejido de Azure Stack Hub. Cada pod incluye ocho servidores MDC R840, también denominados nodos.|
 |Almacenamiento de Isilon |    Componente de Azure Stack Hub específico de la solución de MDC. Isilon proporciona almacenamiento de archivos y blobs adicional para las cargas de trabajo de Azure Stack Hub. Cada pod incluye 48 nodos de almacenamiento de Isilon.|
 |Pod    |En el contexto de MDC, un pod es una unidad lógica independiente que consta de dos bastidores físicos interconectados. Una solución completa incluye tres pods instalados en un solo contenedor.|
-
-
-
-
 
 ## <a name="deployment-workflow"></a>Flujo de trabajo de implementación
 
