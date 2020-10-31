@@ -7,13 +7,13 @@ metadata:
   ms.topic: landing-page
   author: khdownie
   ms.author: v-kedow
-  ms.date: 10/5/2020
-  ms.openlocfilehash: f66164d37b0e5fa1fab243f73b81df3b732205bc
-  ms.sourcegitcommit: 1621f2748b2059fd47ccacd48595a597c44ee63f
+  ms.date: 10/28/2020
+  ms.openlocfilehash: 89ed0a4885057e8802906adfa2ca8ae7af42d53b
+  ms.sourcegitcommit: 296c95cad20ed62bdad0d27f1f5246bfc1c81d5e
   ms.translationtype: HT
   ms.contentlocale: es-ES
-  ms.lasthandoff: 10/08/2020
-  ms.locfileid: "91853149"
+  ms.lasthandoff: 10/30/2020
+  ms.locfileid: "93064419"
 landingContent:
 - title: Acerca de Azure Stack HCI
   linkLists:
@@ -29,8 +29,6 @@ landingContent:
   linkLists:
   - linkListType: deploy
     links:
-    - text: Antes de empezar
-      url: deploy/before-you-start.md
     - text: Implementación del sistema operativo de Azure Stack HCI
       url: deploy/operating-system.md
     - text: Crear un clúster
@@ -86,7 +84,7 @@ landingContent:
     - text: Administración de máquinas virtuales con PowerShell
       url: manage/vm-powershell.md
     - text: Configuración de reglas de afinidad de máquina virtual
-      url: deploy/before-you-start.md
+      url: manage/vm-affinity.md
 - title: Conceptos de Azure Stack HCI
   linkLists:
   - linkListType: concept

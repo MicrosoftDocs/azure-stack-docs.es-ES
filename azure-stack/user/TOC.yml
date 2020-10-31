@@ -213,6 +213,10 @@
               items:
                 - name: Información general
                   href: event-hubs-overview.md
+            - name: IoT Hub
+              items:
+                - name: Información general
+                  href: iot-hub-overview.md
             - name: Azure Monitor
               href: azure-stack-metrics-azure-data.md
               items:
