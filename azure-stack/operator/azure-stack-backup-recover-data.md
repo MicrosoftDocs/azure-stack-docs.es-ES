@@ -3,16 +3,16 @@ title: Recuperación ante una pérdida de datos grave en Azure Stack Hub
 description: Aprenda cómo recuperar y restaurar los datos de infraestructura en Azure Stack Hub después de una pérdida de datos grave.
 author: justinha
 ms.topic: article
-ms.date: 02/12/2019
+ms.date: 10/23/2020
 ms.author: justinha
 ms.reviewer: hectorl
-ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 7f57336cdb15be2f55fdcd3756f5f3714f51b1af
-ms.sourcegitcommit: d197e8d3c3b69c20d09de4c43d8089ec0a993baf
+ms.lastreviewed: 10/23/2020
+ms.openlocfilehash: 35d55eec6c1311c39014f94f94fb04d39c7acb3b
+ms.sourcegitcommit: 25f6211aa16308d50315872f647d840f402fa62e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90836512"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92496417"
 ---
 # <a name="recover-from-catastrophic-data-loss"></a>Recuperación después de una pérdida de datos grave
 
@@ -60,6 +60,10 @@ Azure Stack Hub admite un tipo de implementación llamado modo de recuperación 
  - Asignaciones de directivas de RBAC y asignaciones de rol.
 
 Ninguno de los recursos de usuario de Infraestructura como servicio (IaaS) o Plataforma como servicio (PaaS) se recupera durante la implementación. Se pierden las máquinas virtuales de IaaS, las cuentas de almacenamiento, los blobs, las tablas, la configuración de red, etc. El propósito de la recuperación en la nube es garantizar que los operadores y usuarios puedan volver a iniciar sesión en el portal una vez que se complete la implementación. Los usuarios que vuelven a iniciar sesión no verán ninguno de sus recursos. Se restauran las suscripciones de los usuarios y, junto con ellas, las directivas de ofertas y planes originales que definió el administrador. Los usuarios que vuelven a iniciar sesión en el sistema funcionan bajo las mismas restricciones que imponía la solución original antes del desastre. Una vez que se completa la recuperación en la nube, el operador puede restaurar manualmente los puntos de recuperación de terceros y con valor agregado, además de los datos asociados.
+
+## <a name="validate-backups"></a>Validación de copias de seguridad 
+
+Puede usar el ASDK para probar una copia de seguridad para confirmar que los datos son válidos y se pueden usar. Para obtener más información, consulte [Uso del ASDK para validar una copia de seguridad de Azure Stack](../asdk/asdk-validate-backup.md).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

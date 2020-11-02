@@ -4,19 +4,24 @@ description: Cómo aplicar actualizaciones de firmware y del sistema operativo a
 author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
-ms.date: 08/31/2020
-ms.openlocfilehash: 06a5a1ccf59b5d5c34ef1d2e36feeb1000b49776
-ms.sourcegitcommit: 69cfff119ab425d0fbb71e38d1480d051fc91216
+ms.date: 10/27/2020
+ms.openlocfilehash: acb3b9c8c0db738d04bba44ccec799a5f9c0939b
+ms.sourcegitcommit: 75603007badd566f65d01ac2eacfe48ea4392e58
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91572643"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688307"
 ---
 # <a name="update-azure-stack-hci-clusters"></a>Actualización de clústeres de Azure Stack HCl
 
 > Se aplica a: Azure Stack HCI, versión 20H2; Windows Server 2019
 
-Al actualizar clústeres de Azure Stack HCI, el objetivo es mantener la disponibilidad actualizando solo un servidor del clúster a la vez. Muchas actualizaciones del sistema operativo requieren desconectar el servidor; por ejemplo, para reiniciar o actualizar software, como la pila de red. Se recomienda usar la [Actualización compatible con clústeres (CAU)](/windows-server/failover-clustering/cluster-aware-updating), una característica que facilita la instalación de actualizaciones de Windows en todos los servidores del clúster, a la vez que mantiene las aplicaciones en ejecución mediante la automatización del proceso de actualización de software. La Actualización compatible con clústeres se puede usar en todas las ediciones de Windows Server, incluidas las instalaciones de Server Core, y se puede iniciar mediante Windows Admin Center o PowerShell.
+Al actualizar clústeres de Azure Stack HCI, el objetivo es mantener la disponibilidad actualizando solo un servidor del clúster a la vez. Muchas actualizaciones del sistema operativo requieren desconectar el servidor; por ejemplo, para reiniciar o actualizar software, como la pila de red. Se recomienda usar la Actualización compatible con clústeres (CAU), una característica que facilita la instalación de actualizaciones en todos los servidores del clúster, a la vez que mantiene las aplicaciones en ejecución. La Actualización compatible con clústeres automatiza la activación y desactivación del modo de mantenimiento en el servidor, mientras instala actualizaciones y reinicia el servidor, si es necesario. La Actualización compatible con clústeres es el método de actualización predeterminado que usa Windows Admin Center y también se puede iniciar con PowerShell.
+
+   > [!IMPORTANT]
+   > La actualización de versión preliminar del 20 de octubre de 2020 (KB4580388) para Azure Stack HCl puede hacer que se produzca un error en una operación de Actualización compatible con clústeres si se espera que alguna de las máquinas virtuales realice la migración en vivo durante la operación CAU. Consulte las [notas de la versión](../release-notes.md#october-20-2020-preview-update-kb4580388) para obtener una solución alternativa.
+
+Este tema se centra en el sistema operativo y las actualizaciones de software. Si necesita desconectar un servidor para realizar tareas de mantenimiento en el hardware, consulte [Desconexión de un servidor para realizar el mantenimiento](maintain-servers.md).
 
 ## <a name="update-a-cluster-using-windows-admin-center"></a>Actualización de un clúster con Windows Admin Center
 
@@ -35,9 +40,9 @@ Windows Admin Center comprobará si el clúster está configurado correctamente 
 
 ## <a name="update-a-cluster-using-powershell"></a>Actualización de un clúster con PowerShell
 
-Para poder actualizar un clúster con la Actualización compatible con clústeres, primero debe instalar las **Herramientas de clúster de conmutación por error**, que forman parte de las **Herramientas de administración remota del servidor (RSAT)** e incluyen el software de Actualización compatible con clústeres. Si está actualizando un clúster existente, es posible que estas herramientas ya estén instaladas.
+Para poder actualizar un clúster con la Actualización compatible con clústeres, primero debe instalar las **Herramientas de clúster de conmutación por error** , que forman parte de las **Herramientas de administración remota del servidor (RSAT)** e incluyen el software de Actualización compatible con clústeres. Si está actualizando un clúster existente, es posible que estas herramientas ya estén instaladas.
 
-Para probar si un clúster de conmutación por error está correctamente configurado para aplicar actualizaciones de software mediante la Actualización compatible con clústeres, ejecute el cmdlet de PowerShell **Test-CauSetup**, que realiza un examen del Analizador de procedimientos recomendados (BPA) del clúster de conmutación por error y del entorno de red, y le alerta de cualquier advertencia o error:
+Para probar si un clúster de conmutación por error está correctamente configurado para aplicar actualizaciones de software mediante la Actualización compatible con clústeres, ejecute el cmdlet de PowerShell **Test-CauSetup** , que realiza un examen del Analizador de procedimientos recomendados (BPA) del clúster de conmutación por error y del entorno de red, y le alerta de cualquier advertencia o error:
 
 ```PowerShell
 Test-CauSetup -ClusterName Cluster1
@@ -73,7 +78,7 @@ Install-WindowsFeature –Name Failover-Clustering -IncludeAllSubFeature –Incl
 
 Este comando también instalará el Módulo Clúster de conmutación por error para PowerShell, que incluye cmdlets de PowerShell para administrar clústeres de conmutación por error, y el módulo de Actualización compatible con clústeres para PowerShell, para la instalación de actualizaciones de software en clústeres de conmutación por error.
 
-Si la característica Clústeres de conmutación por error ya está instalada, pero el Módulo de clústeres de conmutación por error para Windows PowerShell no lo está, simplemente, instálela en cada servidor del clúster con el cmdlet **Install-WindowsFeature**:
+Si la característica Clústeres de conmutación por error ya está instalada, pero el Módulo de clústeres de conmutación por error para Windows PowerShell no lo está, simplemente, instálela en cada servidor del clúster con el cmdlet **Install-WindowsFeature** :
 
 ```PowerShell
 Install-WindowsFeature –Name RSAT-Clustering-PowerShell -ComputerName Server1
@@ -83,12 +88,12 @@ Install-WindowsFeature –Name RSAT-Clustering-PowerShell -ComputerName Server1
 
 La Actualización compatible con clústeres puede coordinar toda la operación de actualización de clústeres de dos modos:  
   
--   **Modo de actualización automática**: en este modo, el rol en clúster de la Actualización compatible con clústeres se configura como una carga de trabajo en el clúster de conmutación por error que se va a actualizar y se establece la programación de actualización correspondiente. El clúster se actualiza automáticamente a horas programadas mediante un perfil de ejecución de actualización personalizado o predeterminado. Durante la ejecución de actualización, el proceso del coordinador de actualizaciones se inicia en el nodo que actualmente es propietario del rol en clústeres de la Actualización compatible con clústeres y el proceso realiza actualizaciones secuencialmente en cada nodo de clúster. Para actualizar el nodo del clúster actual, el rol en clústeres de la Actualización compatible con clústeres conmuta por error a otro nodo de clúster y un nuevo proceso del coordinador de actualizaciones del nodo asume el control de la ejecución de la actualización. En el modo de actualización automática, la Actualización compatible con clústeres puede actualizar el clúster de conmutación por error mediante un proceso de actualización de un extremo a otro totalmente automatizado. Un administrador también puede desencadenar actualizaciones a petición en este modo o, simplemente, usar el enfoque de actualización remota, si lo desea.
+-   **Modo de actualización automática** : en este modo, el rol en clúster de la Actualización compatible con clústeres se configura como una carga de trabajo en el clúster de conmutación por error que se va a actualizar y se establece la programación de actualización correspondiente. El clúster se actualiza automáticamente a horas programadas mediante un perfil de ejecución de actualización personalizado o predeterminado. Durante la ejecución de actualización, el proceso del coordinador de actualizaciones se inicia en el nodo que actualmente es propietario del rol en clústeres de la Actualización compatible con clústeres y el proceso realiza actualizaciones secuencialmente en cada nodo de clúster. Para actualizar el nodo del clúster actual, el rol en clústeres de la Actualización compatible con clústeres conmuta por error a otro nodo de clúster y un nuevo proceso del coordinador de actualizaciones del nodo asume el control de la ejecución de la actualización. En el modo de actualización automática, la Actualización compatible con clústeres puede actualizar el clúster de conmutación por error mediante un proceso de actualización de un extremo a otro totalmente automatizado. Un administrador también puede desencadenar actualizaciones a petición en este modo o, simplemente, usar el enfoque de actualización remota, si lo desea.
   
 -   **Modo de actualización remota** Para este modo, un equipo de administración remoto (normalmente, un equipo con Windows 10) que tenga conectividad de red con el clúster de conmutación por error, pero que no sea miembro del clúster de conmutación por error, se configura con las Herramientas de clúster de conmutación por error. Desde el equipo de administración remoto, llamado coordinador de actualizaciones, el administrador desencadena una actualización a petición mediante un perfil de ejecución de actualización personalizado o predeterminado. El modo de actualización remota resulta útil para supervisar el progreso en tiempo real durante la ejecución de la actualización y en los clústeres que se ejecutan en instalaciones Server Core.  
 
    > [!NOTE]
-   > A partir de la actualización de octubre de 2018 de Windows 10, RSAT se incluye como un conjunto de "características a petición" desde Windows 10. Simplemente vaya a **Configuración > Aplicaciones > Aplicaciones y características > Características opcionales > Agregar una característica > RSAT: Herramientas de clústeres de conmutación por error** y seleccione **Instalar**. Para ver el progreso de la instalación, haga clic en el botón Atrás para ver el estado en la página "Administrar características opcionales". La característica instalada se conservará en las diferentes actualizaciones de versión de Windows 10. Para instalar RSAT para Windows 10 antes de la actualización de octubre de 2018, [descargue un paquete de RSAT](https://www.microsoft.com/download/details.aspx?id=45520).
+   > A partir de la actualización de octubre de 2018 de Windows 10, RSAT se incluye como un conjunto de "características a petición" desde Windows 10. Simplemente vaya a **Configuración > Aplicaciones > Aplicaciones y características > Características opcionales > Agregar una característica > RSAT: Herramientas de clústeres de conmutación por error** y seleccione **Instalar** . Para ver el progreso de la instalación, haga clic en el botón Atrás para ver el estado en la página "Administrar características opcionales". La característica instalada se conservará en las diferentes actualizaciones de versión de Windows 10. Para instalar RSAT para Windows 10 antes de la actualización de octubre de 2018, [descargue un paquete de RSAT](https://www.microsoft.com/download/details.aspx?id=45520).
 
 ### <a name="add-cau-cluster-role-to-the-cluster"></a>Adición de un rol de clúster de CAU al clúster
 
@@ -175,9 +180,30 @@ InstallResults           : Microsoft.ClusterAwareUpdating.UpdateInstallResult[]
 }
 ```
 
+## <a name="perform-a-fast-offline-update-of-all-servers-in-a-cluster"></a>Realización de una actualización rápida y sin conexión de todos los servidores de un clúster
+
+Este método permite desconectar todos los servidores de un clúster a la vez y actualizarlos todos al mismo tiempo. Esto ahorra tiempo durante el proceso de actualización, pero la desventaja es el tiempo de inactividad de los recursos hospedados.
+
+Si hay una actualización de seguridad crítica que necesita aplicar rápidamente, o debe asegurarse de que las actualizaciones se completen dentro de la ventana de mantenimiento, este método puede ser adecuado. Este proceso desactiva el clúster de Azure Stack HCI, actualiza los servidores y vuelve a activarlo todo.
+
+1. Planee la ventana de mantenimiento.
+2. Desconecte los discos virtuales.
+3. Detenga el clúster para desconectar el bloque de almacenamiento. Ejecute el cmdlet **STOP-Cluster** o use Windows Admin Center para detener el clúster.
+4. Establezca el servicio de clúster en **Deshabilitado** en Services.msc en cada servidor. Esto impide que el servicio de clúster se inicie mientras se está actualizando.
+5. Aplique la actualización acumulativa de Windows Server y todas las actualizaciones de pila de mantenimiento necesarias a todos los servidores. Puede actualizar todos los servidores al mismo tiempo; no es necesario esperar, porque el clúster está inactivo.
+6. Reinicie los servidores y asegúrese de que todo es correcto.
+7. Vuelva a establecer el servicio de clúster en **Automático** en cada servidor.
+8. Inicie el clúster. Ejecute el cmdlet **Start-Cluster** o use Windows Admin Center.
+
+   Espere unos minutos.  Asegúrese de que el estado del bloque de almacenamiento es correcto.
+
+9. Vuelva a poner en línea los discos virtuales.
+10. Para supervisar el estado de los discos virtuales ejecute los cmdlets **Get-Volume** y **Get-VirtualDisk** .
+
 ## <a name="next-steps"></a>Pasos siguientes
 
 Para obtener información relacionada, consulte:
 
+- [Actualización compatible con clústeres (CAU)](/windows-server/failover-clustering/cluster-aware-updating)
 - [Actualización del firmware de la unidad en Espacios de almacenamiento directo](/windows-server/storage/update-firmware)
 - [Validación de un clúster de Azure Stack HCI](../deploy/validate.md)

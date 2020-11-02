@@ -8,16 +8,16 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: fiseraci
 ms.lastreviewed: 08/06/2020
-ms.openlocfilehash: 2aa24a852e5388a36b1103c2a61f5aa70930d84d
-ms.sourcegitcommit: 1ab1293b594fe8ffc00dc800c663cf1323dc41ce
+ms.openlocfilehash: 8d188c77ab04044db94e13cdbf36fdb0e7cbe839
+ms.sourcegitcommit: 6a51687a98c417a004cd4295ad06ae813e1978cc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939537"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92638825"
 ---
 # <a name="data-at-rest-encryption-in-azure-stack-hub"></a>Cifrado de datos en reposo en Azure Stack Hub
 
-Azure Stack Hub protege los datos de infraestructura y de usuario en el nivel del subsistema de almacenamiento mediante el cifrado en reposo. El subsistema de almacenamiento de Azure Stack Hub se cifra mediante BitLocker con un cifrado AES de 128 bits. Las claves de BitLocker se conservan de manera persistente en un almacén secreto interno.
+Azure Stack Hub protege los datos de infraestructura y de usuario en el nivel del subsistema de almacenamiento mediante el cifrado en reposo. De forma predeterminada, el subsistema de almacenamiento de Azure Stack Hub se cifra mediante BitLocker con un cifrado AES de 128 bits. Las claves de BitLocker se conservan de manera persistente en un almacén secreto interno. En el momento de la implementación, también es posible configurar BitLocker para usar el cifrado AES de 256 bits.
 
 El cifrado de datos en reposo es un requisito común para las principales normas de cumplimiento (por ejemplo, PCI-DSS, FedRAMP e HIPAA). Azure Stack Hub le permite cumplir esos requisitos sin configuraciones ni tareas adicionales. Para más información sobre cómo Azure Stack Hub le ayuda a respetar las normas de cumplimiento, consulte el [Portal de confianza de servicios de Microsoft](https://aka.ms/AzureStackCompliance).
 
@@ -38,7 +38,7 @@ Para obtener las claves de recuperación de BitLocker, es necesario acceder al [
 Get-AzsRecoveryKeys -raw
 ```
 
-Parámetros para el cmdlet *Get-AzsRecoveryKeys*:
+Parámetros para el cmdlet *Get-AzsRecoveryKeys* :
 
 | Parámetro | Descripción | Tipo | Obligatorio |
 |---------|---------|---------|---------|
