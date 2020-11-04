@@ -43,6 +43,8 @@
       href: asdk-validate-backup.md
     - name: Conectarse al ASDK
       href: asdk-connect.md
+    - name: Configuración de la CLI de Azure
+      href: asdk-cli.md
     - name: Solución de problemas
       href: asdk-troubleshooting.md
 - name: Referencia

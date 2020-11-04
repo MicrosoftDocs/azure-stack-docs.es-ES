@@ -8,6 +8,8 @@
       href: known-issues.md
     - name: Notas de la versión
       href: release-notes.md
+    - name: Preguntas más frecuentes
+      href: faq.md
 - name: Introducción
   items:
     - name: Uso de Azure Stack HCl con Windows Admin Center
