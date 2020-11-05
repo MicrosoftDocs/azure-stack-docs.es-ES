@@ -7,12 +7,12 @@ ms.date: 06/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 06/22/2020
-ms.openlocfilehash: bc10f4dc985172deccef997d55520d656121867a
-ms.sourcegitcommit: af7f169c7e204ffdf344f47c07ab8426e2afbd1d
+ms.openlocfilehash: da2a12256a6714c727a5bfa5cdf8fe635d5b742e
+ms.sourcegitcommit: 08aa3b381aec7a6a3df4f9591edd6f08928071d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87865173"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93363969"
 ---
 # <a name="install-powershell-az-preview-module-for-azure-stack-hub"></a>Instalación del módulo Az de PowerShell en versión preliminar para Azure Stack Hub
 
@@ -116,7 +116,7 @@ Import-Module -Name PackageManagement -ErrorAction Stop
 
 $savedModulesPath = "<Path that is used to save the packages>"
 Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name Az -Path $savedModulesPath -Force -RequiredVersion 0.10.0-preview
-Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name AzureStack -Path $savedModulesPath -Force -RequiredVersion 2.0.1-preview
+Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name AzureStack -Path $savedModulesPath -Force -RequiredVersion 2.0.2-preview
 ```
 ::: moniker-end
 

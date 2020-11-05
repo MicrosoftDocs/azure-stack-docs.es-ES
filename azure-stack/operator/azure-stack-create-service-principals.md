@@ -7,12 +7,13 @@ ms.topic: how-to
 ms.date: 05/07/2020
 ms.lastreviewed: 05/07/2020
 ms.custom: contperfq4
-ms.openlocfilehash: 5842ac27969a136ceaace4647ed5791bc3260b1c
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+zone_pivot_groups: state-connected-disconnected
+ms.openlocfilehash: cc73e0cd735c12a15d45efec080c7861d9ea9f00
+ms.sourcegitcommit: 08aa3b381aec7a6a3df4f9591edd6f08928071d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90573146"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93364003"
 ---
 # <a name="use-an-app-identity-to-access-azure-stack-hub-resources"></a>Uso de una identidad de aplicación para acceder a recursos de Azure Stack Hub
 
@@ -24,12 +25,12 @@ Por ejemplo, puede tener una aplicación de administración de configuración qu
 
 Al igual que los usuarios, las aplicaciones deben presentar credenciales durante la autenticación. Esta autenticación consta de dos elementos:
 
-- Un **Id. de aplicación**, que a veces se conoce como “Id. de cliente”. Un GUID que identifica de manera única el registro de la aplicación en el inquilino de Active Directory.
+- Un **Id. de aplicación** , que a veces se conoce como “Id. de cliente”. Un GUID que identifica de manera única el registro de la aplicación en el inquilino de Active Directory.
 - Un **secreto** asociado al id. de la aplicación. Puedes generar una cadena de secreto de cliente (similar a una contraseña), o especificar un certificado X509 (que usa su clave pública).
 
 Estos son los motivos por los que es preferible ejecutar una aplicación con su propia identidad a hacerlo con la identidad del usuario:
 
- - **Credenciales más seguras**: las aplicaciones pueden iniciar sesión con un certificado X509, en lugar de con una contraseña o secreto compartidos de texto.  
+ - **Credenciales más seguras** : las aplicaciones pueden iniciar sesión con un certificado X509, en lugar de con una contraseña o secreto compartidos de texto.  
  - Se pueden asignar **permisos más restrictivos** a una aplicación. Normalmente, estos permisos están restringidos solo a aquello que la aplicación debe hacer, lo que se conoce como *principio de privilegio mínimo*.
  - Las **credenciales y los permisos no cambian con tanta frecuencia** en una aplicación como las credenciales de usuario. Por ejemplo, cuando cambian las responsabilidades del usuario, los requisitos de contraseña necesitan un cambio o cuando un usuario abandona la empresa.
 
@@ -42,6 +43,7 @@ Este artículo comienza con el proceso de creación y administración de una ent
 
 En primer lugar, aprenderá a asignar la entidad de servicio a un rol, lo que limitará el acceso a los recursos.
 
+::: zone pivot="state-connected"
 ## <a name="manage-an-azure-ad-app-identity"></a>Administración de una identidad de aplicación de Azure AD
 
 Si implementó Azure Stack Hub con Azure AD como servicio de administración de identidades, cree entidades de servicio igual que hace para Azure. En este tema se muestra cómo realizar estos pasos a través de Azure Portal. Compruebe que tiene los [permisos de Azure AD necesarios](/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions) antes de comenzar.
@@ -54,7 +56,7 @@ En esta sección, debe registrar la aplicación mediante Azure Portal, que crea 
 2. Haga clic en **Azure Active Directory** > **Registros de aplicaciones** > **Nuevo registro**.
 3. Proporcione un **nombre** para la aplicación.
 4. Seleccione los **tipos de cuenta admitidos** adecuados.
-5. En **URI de redirección**, seleccione **Web** como tipo de aplicación y, de manera opcional, especifique un URI de redirección si así lo requiere la aplicación.
+5. En **URI de redirección** , seleccione **Web** como tipo de aplicación y, de manera opcional, especifique un URI de redirección si así lo requiere la aplicación.
 6. Después de configurar los valores, seleccione **Registrar**. Se crea el registro de aplicación y se muestra la página **Información general**.
 7. Copie el **Id. de aplicación** para usarlo en el código de la aplicación. Este nombre también se conoce como “id. de cliente”.
 8. Para generar un secreto de cliente, seleccione la página **Certificados y secretos**. Seleccione **Nuevo secreto de cliente**.
@@ -65,6 +67,7 @@ En esta sección, debe registrar la aplicación mediante Azure Portal, que crea 
     ![Clave guardada en secretos de cliente](./media/azure-stack-create-service-principal/create-service-principal-in-azure-stack-secret.png)
 
 Vaya a la sección [Asignación de un rol](#assign-a-role) para aprender a establecer el control de acceso basado en rol para la identidad de la aplicación.
+::: zone-end
 
 ## <a name="manage-an-ad-fs-app-identity"></a>Administración de una identidad de aplicación de AD FS
 
@@ -254,7 +257,7 @@ Mantenga la sesión de la consola de PowerShell abierta, ya que la usará con el
 
 ### <a name="update-a-client-secret"></a>Actualización de secretos de cliente
 
-Actualice la credencial de secreto de cliente con PowerShell, mediante el parámetro **ResetClientSecret**, que cambia inmediatamente el secreto de cliente. Sustituya sus propios valores por los marcadores de posición siguientes:
+Actualice la credencial de secreto de cliente con PowerShell, mediante el parámetro **ResetClientSecret** , que cambia inmediatamente el secreto de cliente. Sustituya sus propios valores por los marcadores de posición siguientes:
 
 | Marcador de posición | Descripción | Ejemplo |
 | ----------- | ----------- | ------- |
@@ -337,8 +340,8 @@ El tipo de recurso que se elija también establece el *ámbito de acceso* de la 
 
 3. Seleccione la página **Access Control (IAM)** página, que es universal en todos los recursos compatibles con RBAC.
 4. Seleccione **+ Agregar**.
-5. En **Rol**, seleccione el rol que quiere asignar a la aplicación.
-6. En **Seleccionar**, busque la aplicación con un nombre de aplicación completo o parcial. Durante el registro, el nombre de la aplicación se genera como *Azurestack-\<YourAppName\>-\<ClientId\>* . Por ejemplo, si usa un nombre de aplicación *App2* y se asignó el ClientId *2bbe67d8-3fdb-4b62-87cf-cc41dd4344ff* durante la creación, el nombre completo sería  *Azurestack-App2-2bbe67d8-3fdb-4b62-87cf-cc41dd4344ff*. Puede buscar la cadena exacta o una parte de esta, como *Azurestack* o *Azurestack App2*.
+5. En **Rol** , seleccione el rol que quiere asignar a la aplicación.
+6. En **Seleccionar** , busque la aplicación con un nombre de aplicación completo o parcial. Durante el registro, el nombre de la aplicación se genera como *Azurestack-\<YourAppName\>-\<ClientId\>* . Por ejemplo, si usa un nombre de aplicación *App2* y se asignó el ClientId *2bbe67d8-3fdb-4b62-87cf-cc41dd4344ff* durante la creación, el nombre completo sería  *Azurestack-App2-2bbe67d8-3fdb-4b62-87cf-cc41dd4344ff*. Puede buscar la cadena exacta o una parte de esta, como *Azurestack* o *Azurestack App2*.
 7. Cuando encuentre la aplicación, selecciónela y se mostrará en **Miembros seleccionados**.
 8. Haga clic en **Guardar** para finalizar la asignación del rol.
 

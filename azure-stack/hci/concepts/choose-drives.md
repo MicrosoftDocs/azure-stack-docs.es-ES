@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
 ms.date: 09/01/2020
-ms.openlocfilehash: a1283982ba04acd8de0b54c02fbc0bb88da9ebc6
-ms.sourcegitcommit: 4af79f4fa2598d57c81e994192c10f8c6be5a445
+ms.openlocfilehash: e5069745a1ada76f37a9dea78eeeafa18a481cff
+ms.sourcegitcommit: 296c95cad20ed62bdad0d27f1f5246bfc1c81d5e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89742308"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93064657"
 ---
 # <a name="choose-drives-for-azure-stack-hci"></a>Selección de unidades para Azure Stack HCI
 
@@ -99,7 +99,7 @@ Se recomienda limitar la capacidad total de almacenamiento por servidor a aproxi
 Para obtener más información, vea también:
 
 - [Descripción de la memoria caché](cache.md)
-- [Determinar los requisitos de hardware](../deploy/before-you-start.md#determine-hardware-requirements)
+- [Requisitos del sistema](system-requirements.md)
 - [Consideraciones de simetría de unidad](drive-symmetry-considerations.md)
 - [Planeamiento de volúmenes](plan-volumes.md)
 - [Tolerancia a errores y eficiencia del almacenamiento](fault-tolerance.md)

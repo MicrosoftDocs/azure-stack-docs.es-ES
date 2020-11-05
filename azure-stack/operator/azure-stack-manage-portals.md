@@ -7,12 +7,12 @@ ms.date: 06/07/2019
 ms.author: justinha
 ms.reviewer: efemmano
 ms.lastreviewed: 06/07/2019
-ms.openlocfilehash: d7951500afe21ec0800328230d6b5f1653934c40
-ms.sourcegitcommit: 5f4f0ee043ff994efaad44129ce49be43c64d5dc
+ms.openlocfilehash: 4c79d8a9c9aa5877dd2dfb264257f2a7cfaaa46f
+ms.sourcegitcommit: 08aa3b381aec7a6a3df4f9591edd6f08928071d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84819197"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93363986"
 ---
 # <a name="use-the-administrator-portal-in-azure-stack-hub"></a>Uso del portal de administración de Azure Stack Hub
 
@@ -25,11 +25,13 @@ Para obtener acceso al portal de administración, vaya a la dirección URL del m
 | Entorno | Dirección URL del portal de administración |   
 | -- | -- | 
 | ASDK| `https://adminportal.local.azurestack.external`  |
-| Sistemas integrados | https://adminportal.&lt;*región*&gt;.&lt;*FQDN*&gt; | 
+| Sistemas integrados | https://adminportal.&lt; *región*&gt;.&lt;*FQDN*&gt; | 
 | | |
 
 > [!TIP]
 > En un entorno de ASDK, primero deberá asegurarse de que puede [conectarse al host del kit de desarrollo](../asdk/asdk-connect.md) mediante Conexión a Escritorio remoto o una red privada virtual (VPN).
+
+[!INCLUDE [Azure Stack Hub Operator Access Workstation](../includes/operator-note-owa.md)]
 
  ![Portal de administración de Azure Stack Hub](media/azure-stack-manage-portals/admin-portal.png)
 
@@ -82,7 +84,7 @@ Si hace clic sucesivamente en el icono de ayuda (signo de interrogación) en la 
 
 ### <a name="quick-access-to-the-azure-roadmap"></a>Acceso rápido a la hoja de ruta de Azure
 
-Si selecciona **Ayuda y soporte técnico** (signo de interrogación) en la esquina superior derecha del portal del administrador y después **Hoja de ruta de Azure**, se abrirá una nueva pestaña del explorador con la hoja de ruta de Azure. Si escribe **Azure Stack Hub** en el cuadro de búsqueda de **Productos**, podrá ver todas las actualizaciones de la hoja de ruta de Azure Stack Hub.
+Si selecciona **Ayuda y soporte técnico** (signo de interrogación) en la esquina superior derecha del portal del administrador y después **Hoja de ruta de Azure** , se abrirá una nueva pestaña del explorador con la hoja de ruta de Azure. Si escribe **Azure Stack Hub** en el cuadro de búsqueda de **Productos** , podrá ver todas las actualizaciones de la hoja de ruta de Azure Stack Hub.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

@@ -8,12 +8,12 @@ ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 12/23/2019
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: 685a448fd8fdc06edc0ffa92890ce9eaea2c39e6
-ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
+ms.openlocfilehash: 2be02c831b4e96e88e6bf8c108373d9ab2fc11cd
+ms.sourcegitcommit: 08aa3b381aec7a6a3df4f9591edd6f08928071d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91107035"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93364037"
 ---
 # <a name="download-marketplace-items-to-azure-stack-hub"></a>Descarga de elementos de Marketplace en Azure Stack Hub
 
@@ -21,13 +21,15 @@ Los operadores en la nube pueden descargar elementos de Marketplace en Azure Sta
 
 Existen dos escenarios para descargar productos de Marketplace:
 
-- **Escenario sin conexión o con conexión parcial**: requiere que se acceda a Internet mediante la herramienta de redifusión de Marketplace para descargar los elementos de este. Después, los elementos descargados se transfieren a la instalación desconectada de Azure Stack Hub. Este escenario usa PowerShell.
-- **Escenario conectado**: requiere que el entorno de Azure Stack Hub esté conectado a Internet. El portal de administración de Azure Stack Hub se usa para buscar y descargar elementos.
+- **Escenario sin conexión o con conexión parcial** : requiere que se acceda a Internet mediante la herramienta de redifusión de Marketplace para descargar los elementos de este. Después, los elementos descargados se transfieren a la instalación desconectada de Azure Stack Hub. Este escenario usa PowerShell.
+- **Escenario conectado** : requiere que el entorno de Azure Stack Hub esté conectado a Internet. El portal de administración de Azure Stack Hub se usa para buscar y descargar elementos.
 
 Consulte [Elementos de Azure Marketplace disponibles para Azure Stack Hub](azure-stack-marketplace-azure-items.md) para encontrar una lista completa de los elementos de Marketplace que se pueden descargar. Consulte el artículo [Cambios en Marketplace de Azure Stack Hub](azure-stack-marketplace-changes.md) para ver una lista de adiciones, eliminaciones y actualizaciones recientes en Marketplace de Azure Stack Hub.
 
 > [!NOTE]
 > El catálogo será diferente en función de la nube a la que esté conectado el sistema de Azure Stack Hub. El entorno de nube viene determinado por la suscripción de Azure que se usa para registrar la instancia de Azure Stack Hub.
+
+[!INCLUDE [Azure Stack Hub Operator Access Workstation](../includes/operator-note-owa.md)]
 
 ::: zone pivot="state-connected"
 Una implementación con conexión le permite usar el portal de administración para descargar elementos de Marketplace.
@@ -70,8 +72,8 @@ La herramienta de redifusión de Marketplace también se puede usar en un escena
 
 Este escenario tiene dos partes:
 
-- **Parte 1**: descarga de elementos de Marketplace. En el equipo con acceso a Internet, configure PowerShell, descargue la herramienta de redifusión y, después, descargue los elementos desde Azure Marketplace.
-- **Parte 2**: carga y publicación en Marketplace de Azure Stack Hub. Mueva los archivos que ha descargado a su entorno de Azure Stack Hub y, después, publíquelos en Marketplace de Azure Stack Hub.
+- **Parte 1** : descarga de elementos de Marketplace. En el equipo con acceso a Internet, configure PowerShell, descargue la herramienta de redifusión y, después, descargue los elementos desde Azure Marketplace.
+- **Parte 2** : carga y publicación en Marketplace de Azure Stack Hub. Mueva los archivos que ha descargado a su entorno de Azure Stack Hub y, después, publíquelos en Marketplace de Azure Stack Hub.
 
 ## <a name="prerequisites"></a>Prerrequisitos
 
@@ -153,7 +155,7 @@ Una vez registrado Azure Stack, puede ignorar el mensaje siguiente que aparece e
     $products | Export-AzsMarketplaceItem  -RepositoryDir "Destination folder path in quotes"
     ```
 
-7. El tiempo que tarda la descarga depende del tamaño del elemento. Una vez que se completa la descarga, el elemento está disponible en la carpeta que se especificó en el script. La descarga incluye un archivo VHD (para máquinas virtuales) o un archivo .zip (para extensiones de máquina virtual y proveedores de recursos). También puede incluir un paquete de galería en el formato *.azpkg*, que es un archivo .zip.
+7. El tiempo que tarda la descarga depende del tamaño del elemento. Una vez que se completa la descarga, el elemento está disponible en la carpeta que se especificó en el script. La descarga incluye un archivo VHD (para máquinas virtuales) o un archivo .zip (para extensiones de máquina virtual y proveedores de recursos). También puede incluir un paquete de galería en el formato *.azpkg* , que es un archivo .zip.
 
 8. Si se produce un error en la descarga, puede intentarlo de nuevo volviendo a ejecutar el siguiente cmdlet de PowerShell:
 
@@ -174,7 +176,7 @@ Una vez registrado Azure Stack, puede ignorar el mensaje siguiente que aparece e
 
 1. Debe mover los archivos que [descargó anteriormente](#use-the-marketplace-syndication-tool-to-download-marketplace-items) de forma local a una máquina que tenga conexión al entorno de Azure Stack Hub. La herramienta de redifusión de Marketplace debe estar disponible también en su entorno de Azure Stack Hub, ya que necesita usarla para realizar la operación de importación.
 
-   En la siguiente imagen muestra un ejemplo de estructura de carpeta. **D:\downloadfolder** contiene todos los elementos de Marketplace descargados. Cada subcarpeta es un elemento de Marketplace (por ejemplo, **microsoft.custom-script-linux-arm-2.0.3**) y tienen como nombre el identificador del producto. Dentro de cada subcarpeta se encuentra el contenido descargado del elemento de Marketplace.
+   En la siguiente imagen muestra un ejemplo de estructura de carpeta. **D:\downloadfolder** contiene todos los elementos de Marketplace descargados. Cada subcarpeta es un elemento de Marketplace (por ejemplo, **microsoft.custom-script-linux-arm-2.0.3** ) y tienen como nombre el identificador del producto. Dentro de cada subcarpeta se encuentra el contenido descargado del elemento de Marketplace.
 
    ![Estructura de directorios de descarga de Marketplace](media/azure-stack-download-azure-marketplace-item/mp1.png)
 

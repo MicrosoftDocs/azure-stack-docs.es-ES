@@ -7,12 +7,12 @@ ms.date: 09/16/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 09/16/2020
-ms.openlocfilehash: d3a16f92cb441a92a045721e477b3b10933d174d
-ms.sourcegitcommit: 719569bb9e3f9924494a9229b4f2d211ae3f4f74
+ms.openlocfilehash: 29255d706edcb052711b2ed42e65fd3dc0b6412b
+ms.sourcegitcommit: b960df16e84ec9fbccfce772102b91f0b7ae7060
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717973"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93291239"
 ---
 # <a name="install-the-aks-engine-on-windows-in-azure-stack-hub"></a>Instalación del motor de AKS en Windows para Azure Stack Hub
 
@@ -88,8 +88,8 @@ Tendrá que agregar un certificado al ejecutar la máquina virtual cliente para 
 
 Si usa un ASDK, el punto de conexión de Azure Resource Manager utiliza un certificado autofirmado y debe agregar explícitamente este certificado al almacén de certificados de confianza de la máquina. Puede encontrar el certificado raíz del ASDK en cualquier máquina virtual que implemente en el ASDK.
 
-1. Exporte el certificado raíz de la entidad de certificación. Para ver las instrucciones necesarias, consulte [Exportación del certificado raíz de la entidad de certificación de Azure Stack Hub](./azure-stack-version-profiles-azurecli2.md#export-the-azure-stack-hub-ca-root-certificate).
-2. Confianza en el certificado raíz de la entidad de certificación de Azure Stack Hub. Para ver las instrucciones necesarias, consulte [Confianza en el certificado raíz de la entidad de certificación de Azure Stack Hub](./azure-stack-version-profiles-azurecli2.md#trust-the-azure-stack-hub-ca-root-certificate).
+1. Exporte el certificado raíz de la entidad de certificación. Para ver las instrucciones necesarias, consulte [Exportación del certificado raíz de la entidad de certificación de Azure Stack Hub](../asdk/asdk-cli.md#export-the-azure-stack-hub-ca-root-certificate).
+2. Confianza en el certificado raíz de la entidad de certificación de Azure Stack Hub. Para ver las instrucciones necesarias, consulte [Confianza en el certificado raíz de la entidad de certificación de Azure Stack Hub](../asdk/asdk-cli.md#trust-the-certificate).
 
 ## <a name="next-steps"></a>Pasos siguientes
 
