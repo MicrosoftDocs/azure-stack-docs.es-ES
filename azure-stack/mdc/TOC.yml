@@ -152,7 +152,7 @@
               href: ../operator/azure-stack-azsreadiness-cmdlet.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
             - name: Ver el informe de preparación
               href: ../operator/azure-stack-validation-report.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
-        - name: Integración del centro de datos
+        - name: Configuración de centro de datos
           items:
             - name: Configuración de reenviador de DNS
               href: ../operator/azure-stack-configure-dns.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
