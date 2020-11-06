@@ -6,28 +6,59 @@ ms.author: v-johcob
 ms.topic: tutorial
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 09/24/2020
-ms.openlocfilehash: cf34506f5fbeec1c6e0531eda231219ae2949b59
-ms.sourcegitcommit: 69cfff119ab425d0fbb71e38d1480d051fc91216
+ms.date: 10/28/2020
+ms.openlocfilehash: ba063e4ebff85830ac50c25c2514bda443dce323
+ms.sourcegitcommit: 296c95cad20ed62bdad0d27f1f5246bfc1c81d5e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91572609"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93064742"
 ---
 # <a name="deploy-the-azure-stack-hci-operating-system"></a>Implementación del sistema operativo de Azure Stack HCI
 
 > Se aplica a: Azure Stack HCI, versión 20H2
 
-Después de realizar los pasos que se indican en [Antes de implementar Azure Stack HCI](before-you-start.md#install-windows-admin-center), el primer paso para la implementación es [descargar Azure Stack HCI](https://azure.microsoft.com/products/azure-stack/hci/hci-download/) e instalarlo en cada servidor que desee agrupar en el clúster. En este artículo se describen diferentes formas de implementar el sistema operativo y de utilizar Windows Admin Center para conectarse a los servidores.
+El primer paso para la implementación es [descargar Azure Stack HCI](https://azure.microsoft.com/products/azure-stack/hci/hci-download/) e instalarlo en cada servidor que desee agrupar en el clúster. En este artículo se describen diferentes formas de implementar el sistema operativo y de utilizar Windows Admin Center para conectarse a los servidores.
 
-Después de implementar el sistema operativo, está listo para usar las instrucciones relacionadas con la creación de un clúster de servidores y la obtención de las actualizaciones más recientes de Windows y del firmware de los servidores, tal y como se indica en [Creación de un clúster de Azure Stack HCI](create-cluster.md).
+> [!NOTE]
+> Si ha adquirido el hardware de una solución de sistema integrado de Azure Stack HCI en el [catálogo de Azure Stack HCI](https://azure.microsoft.com/en-us/products/azure-stack/hci/catalog/) de su asociado de hardware de Microsoft preferido, este sistema operativo vendrá preinstalado. En ese caso, puede omitir este paso y pasar a la [creación de un clúster de Azure Stack HCI](create-cluster.md).
 
 ## <a name="prerequisites"></a>Requisitos previos
 
-- Windows Admin Center configurado en un sistema que pueda acceder a los servidores que desea agrupar en un clúster, tal como se indica en [Antes de implementar Azure Stack HCI](before-you-start.md#install-windows-admin-center).
-- Una solución de Azure Stack HCI que proporciona hardware validado por Microsoft de su proveedor de hardware preferido, el sistema operativo Azure Stack HCI y los servicios de Azure, como se detalla en [Soluciones de Azure Stack HCI](https://azure.microsoft.com/products/azure-stack/hci/).
+Antes de implementar el sistema operativo de Azure Stack HCI, tendrá que:
 
-## <a name="deployment-preparation"></a>Preparación de la implementación
+- Determinar si el hardware cumple los requisitos de los clústeres de Azure Stack HCI
+- Recopilar la información necesaria para una implementación correcta
+- Instalación de Windows Admin Center en un equipo o un servidor de administración
+
+Para más información, consulte [Requisitos de Azure Kubernetes Service en Azure Stack HCI](../../aks-hci/overview.md#what-you-need-to-get-started).
+
+### <a name="determine-hardware-requirements"></a>Determinar los requisitos de hardware
+
+Microsoft recomienda adquirir una solución de hardware o software de Azure Stack HCI validada de nuestros asociados. Estas soluciones se diseñan, se ensamblan y se validan con nuestra arquitectura de referencia para garantizar la compatibilidad y la confiabilidad, de modo que pueda empezar a utilizarlas rápidamente. Compruebe que los sistemas, componentes, dispositivos y controladores que usa estén certificados para Windows Server 2019 según el catálogo de Windows Server. Visite el sitio web de [soluciones de Azure Stack HCI](https://azure.microsoft.com/overview/azure-stack/hci) para obtener soluciones validadas.
+
+Como mínimo, necesitará dos servidores, una conexión de red confiable de alto ancho de banda y baja latencia entre los servidores, y unidades SATA, SAS, NVMe o de memoria persistente conectadas físicamente a un solo servidor cada una.
+
+Sin embargo, los requisitos de hardware pueden variar en función del tamaño y la configuración de los clústeres que desea implementar. Para asegurarse de que la implementación se realiza correctamente, revise los [requisitos del sistema](../concepts/system-requirements.md) de Azure Stack HCI.
+
+### <a name="gather-information"></a>Recopilación de información
+
+Para prepararse para la implementación, recopile los detalles siguientes sobre su entorno:
+
+- **Nombres del servidor:** Familiarícese con las directivas de nomenclatura de la organización para equipos, archivos, rutas de acceso y otros recursos. Deberá aprovisionar varios servidores, cada uno con nombres únicos.
+- **Nombre de dominio:** Familiarícese con las directivas de la organización para la nomenclatura de dominios y de unión a un dominio. Unirá los servidores al dominio y tendrá que especificar el nombre de dominio.
+- **Direcciones IP estáticas:** Azure Stack HCI requiere direcciones IP estáticas para el tráfico de almacenamiento y de carga de trabajo (máquina virtual) y no admite la asignación de direcciones IP dinámicas a través de DHCP para esta red de alta velocidad. Puede usar DHCP para el adaptador de red de administración a menos que esté usando dos en un equipo, en cuyo caso volverá a necesitar el uso de direcciones IP estáticas. Consulte con el administrador de red la dirección IP que debe usar para cada servidor del clúster.
+- **Redes RDMA:** Hay dos tipos de protocolos RDMA: iWarp y RoCE. Observe cuál usa su adaptador de red y, si es RoCE, tenga en cuenta también la versión (v1 o v2). En el caso de RoCE, tenga en cuenta también el modelo del conmutador de la parte superior del rack.
+- **IDENTIFICADOR DE VLAN:** Tenga en cuenta el identificador de VLAN que se usará para los adaptadores de red en los servidores, si los hay. Debe poder obtenerlo desde el administrador de red.
+- **Nombres de sitio:** En el caso de los clústeres extendidos, se usan dos sitios para la recuperación ante desastres. Puede configurar los sitios mediante [Active Directory Domain Services](/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) o puede dejar que el asistente para crear clústeres los configure automáticamente. Consulte al administrador del dominio sobre la configuración de los sitios.
+
+### <a name="install-windows-admin-center"></a>Instalación de Windows Admin Center
+
+Windows Admin Center es una aplicación implementada localmente y basada en un explorador para la administración de Azure Stack HCI. La manera más sencilla de [instalar Windows Admin Center](/windows-server/manage/windows-admin-center/deploy/install) es en un equipo de administración local (modo de escritorio), aunque también puede instalarlo en un servidor (modo de servicio).
+
+Si instala Windows Admin Center en un servidor, las tareas que requieren CredSSP, como la creación de clústeres y la instalación de actualizaciones y extensiones, requieren también el uso de una cuenta que sea miembro del grupo de administradores de puerta de enlace en el servidor de Windows Admin Center. Para más información, consulte las dos primeras secciones de [Configuración de los permisos y el control de acceso de usuarios](/windows-server/manage/windows-admin-center/configure/user-access-control#gateway-access-role-definitions).
+
+## <a name="prepare-hardware-for-deployment"></a>Preparación del hardware para la implementación
 
 Una vez que haya adquirido el hardware del servidor para la solución de Azure Stack HCI, es el momento de instalarlo en el bastidor y conectarlo. Siga los pasos que se indican a continuación para preparar el hardware del servidor para la implementación del sistema operativo.
 
@@ -45,7 +76,7 @@ Puede implementar el sistema operativo Azure Stack HCI de la misma manera que im
 - Implementación de red.
 - Implementación manual mediante la conexión de un teclado y un monitor directamente al hardware del servidor en el centro de datos, o mediante la conexión de un dispositivo de hardware KVM.
 
-### <a name="server-manufacturer-preinstallation"></a>Preinstalación del fabricante del servidor
+### <a name="server-manufacturer-pre-installation"></a>Preinstalación del fabricante del servidor
 
 Para la implementación empresarial del sistema operativo Azure Stack HCI, se recomienda el hardware de una solución de sistema integrado de Azure Stack HCI del asociado de hardware que prefiera. El hardware de la solución viene con el sistema operativo preinstalado y admite el uso de Windows Admin Center para implementar y actualizar los controladores y el firmware del fabricante del hardware.
 
@@ -60,7 +91,7 @@ La herramienta Administrador de imágenes de sistema está disponible en Windows
 
 ### <a name="system-center-virtual-machine-manager-vmm-deployment"></a>Implementación de System Center Virtual Machine Manager (VMM)
 
-System Center Virtual Machine Manager (VMM) forma parte del conjunto de pruebas de System Center. Puede usar VMM para implementar el sistema operativo Azure Stack HCI en hardware sin sistema operativo, así como para agrupar los servidores en un clúster. Para más información sobre VMM, consulte [Requisitos del sistema para System Center Virtual Machine Manager](/system-center/vmm/system-requirements).
+Puede usar System Center Virtual Machine Manager para implementar el sistema operativo Azure Stack HCI en hardware sin sistema operativo, así como para agrupar los servidores en un clúster. Para más información sobre VMM, consulte [Requisitos del sistema para System Center Virtual Machine Manager](/system-center/vmm/system-requirements).
 
 Para más información acerca del uso de VMM para realizar una implementación del sistema operativo en equipos sin este, consulte [Aprovisionamiento de un host o clúster de Hyper-V de equipos sin sistema operativo](/system-center/vmm/hyper-v-bare-metal).
 
@@ -84,31 +115,31 @@ Para instalar manualmente el sistema operativo Azure Stack HCI:
     > [!NOTE]
     > En esta versión del sistema operativo no se admiten las instalaciones de actualizaciones.
 
-    :::image type="content" source="../media/operating-system/azure-stack-hci-install-which-type.png" alt-text="Página de idiomas del asistente para la instalación de Azure Stack HCI.":::
+    :::image type="content" source="../media/operating-system/azure-stack-hci-install-which-type.png" alt-text="Página de opciones del tipo de instalación del asistente para instalación de Azure Stack HCI.":::
 
 1. En la página que le pregunta dónde desea instalar Azure Stack HCI, confirme la ubicación de la unidad en la que desea instalar el sistema operativo o actualícela y, a continuación, seleccione **Next** (Siguiente).
 
-    :::image type="content" source="../media/operating-system/azure-stack-hci-install-where.png" alt-text="Página de idiomas del asistente para la instalación de Azure Stack HCI.":::
+    :::image type="content" source="../media/operating-system/azure-stack-hci-install-where.png" alt-text="Página de la ubicación de la unidad del asistente para la instalación de Azure Stack HCI.":::
 
 1. Aparece la página de instalación de Azure Stack HCI que muestra el estado del proceso.
 
-    :::image type="content" source="../media/operating-system/azure-stack-hci-installing.png" alt-text="Página de idiomas del asistente para la instalación de Azure Stack HCI.":::
+    :::image type="content" source="../media/operating-system/azure-stack-hci-installing.png" alt-text="Página de estado del asistente para la instalación de Azure Stack HCI.":::
 
     > [!NOTE]
     > El proceso de instalación reinicia el sistema operativo dos veces para completar el proceso y muestra avisos sobre el inicio de los servicios antes de abrir un símbolo del sistema del administrador.
 
 1. En el símbolo del sistema del administrador, seleccione **OK** (Aceptar) para cambiar la contraseña del usuario antes de iniciar sesión en el sistema operativo y presione Entrar.
 
-    :::image type="content" source="../media/operating-system/azure-stack-hci-change-admin-password.png" alt-text="Página de idiomas del asistente para la instalación de Azure Stack HCI.":::
+    :::image type="content" source="../media/operating-system/azure-stack-hci-change-admin-password.png" alt-text="Aviso de cambio de contraseña.":::
 
 1. En el aviso Enter new credential for Administrator (Escribir nueva credencial para el administrador), escriba una nueva contraseña, escríbala de nuevo para confirmarla y, a continuación, presione Entrar.
 1. En el mensaje de confirmación Your password has been changed (Se ha cambiado la contraseña), presione Entrar.
 
-    :::image type="content" source="../media/operating-system/azure-stack-hci-admin-password-changed.png" alt-text="Página de idiomas del asistente para la instalación de Azure Stack HCI.":::
+    :::image type="content" source="../media/operating-system/azure-stack-hci-admin-password-changed.png" alt-text="Mensaje de confirmación de contraseña modificada":::
 
 Ahora está listo para usar la herramienta de configuración de servidores (Sconfig) para realizar tareas importantes. Para usar Sconfig, inicie sesión en el servidor que ejecuta el sistema operativo Azure Stack HCI. Esto se podría realizar en el lugar mediante un teclado y un monitor, o mediante un controlador de administración remota (sin periféricos ni BMC) o un escritorio remoto. La herramienta Sconfig se abre automáticamente al iniciar sesión en el servidor.
 
-:::image type="content" source="../media/operating-system/azure-stack-hci-sconfig-screen.png" alt-text="Página de idiomas del asistente para la instalación de Azure Stack HCI." lightbox="../media/operating-system/azure-stack-hci-sconfig-screen.png":::
+:::image type="content" source="../media/operating-system/azure-stack-hci-sconfig-screen.png" alt-text="Interfaz de la herramienta de configuración de servidores." lightbox="../media/operating-system/azure-stack-hci-sconfig-screen.png":::
 
 En la página principal de la herramienta Sconfig, puede realizar las siguientes tareas de configuración inicial:
 - Configure las redes o confirme que la red se configuró automáticamente mediante el protocolo de configuración dinámica de host (DHCP).

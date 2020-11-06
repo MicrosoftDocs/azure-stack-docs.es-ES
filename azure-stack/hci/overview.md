@@ -6,13 +6,13 @@ author: khdownie
 ms.author: v-kedow
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 09/24/2020
-ms.openlocfilehash: 135cf9147b69410b4276860dcde2b167e771a695
-ms.sourcegitcommit: 69cfff119ab425d0fbb71e38d1480d051fc91216
+ms.date: 11/3/2020
+ms.openlocfilehash: 5b54efc32bf62c0abeca97ecdee9bb4414cced9f
+ms.sourcegitcommit: ecd98662194d2cdb15c22f8b1f99812fc5f4c15a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91572541"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93344871"
 ---
 # <a name="azure-stack-hci-solution-overview"></a>Introducción a la solución Azure Stack HCI
 
@@ -69,8 +69,8 @@ Nos estamos esforzando para crear funcionalidades adicionales, así que permanez
 También puede suscribirse a otros servicios híbridos de Azure:
 
 - **Azure Site Recovery** para obtener alta disponibilidad y recuperación ante desastres como servicio (DRaaS).
-- **Azure Monitor**, un centro de conectividad centralizado para realizar un seguimiento de lo que sucede en sus aplicaciones, red e infraestructura, con análisis avanzados con tecnología de inteligencia artificial.
-- **Testigo en la nube**, para usar Azure como pequeño factor de desempate del cuórum de clúster.
+- **Azure Monitor** , un centro de conectividad centralizado para realizar un seguimiento de lo que sucede en sus aplicaciones, red e infraestructura, con análisis avanzados con tecnología de inteligencia artificial.
+- **Testigo en la nube** , para usar Azure como pequeño factor de desempate del cuórum de clúster.
 - **Azure Backup** para la protección de datos sin conexión y para proteger frente al ransomware.
 - **Azure Update Management** para la evaluación e implementación de actualizaciones de máquinas virtuales Windows que se ejecutan en Azure y en el entorno local.
 - **Adaptador de red de Azure** para conectar recursos en el entorno local con sus máquinas virtuales en Azure a través de una VPN de punto a sitio.
@@ -99,7 +99,7 @@ Para empezar, esto es lo que necesita:
 - Una conexión a Internet para cada servidor del clúster que pueda conectarse mediante el tráfico HTTPS saliente al siguiente punto de conexión al menos cada 30 días: *-azurestackhci-usage.azurewebsites.net
 - En el caso de los clústeres extendidos entre dos sitios, necesita al menos una conexión de 1 GB entre esos sitios (se prefiere una conexión RDMA de 25 GB), con un recorrido de ida y vuelta con una latencia media de 5 ms si desea realizar una replicación sincrónica en la que las escrituras puedan producirse simultáneamente en ambos sitios.
 
-Para más información, consulte la sección [Antes de empezar](deploy/before-you-start.md). Para más información, consulte [Requisitos de Azure Kubernetes Service en Azure Stack HCI](../aks-hci/overview.md#what-you-need-to-get-started).
+Para más información, consulte [Requisitos del sistema](concepts/system-requirements.md). Para más información, consulte [Requisitos de Azure Kubernetes Service en Azure Stack HCI](../aks-hci/overview.md#what-you-need-to-get-started).
 
 ## <a name="hardware-partners"></a>Asociados de hardware
 
@@ -134,68 +134,6 @@ Para administrar estas tecnologías, puede usar las herramientas de administraci
 - Otras herramientas de administración, como el [Administrador del servidor](/windows-server/administration/server-manager/server-manager) y complementos MMC
 - Herramientas que no sean de Microsoft, como 5Nine Manager
 
-## <a name="faq"></a>Preguntas más frecuentes
-
-### <a name="how-does-azure-stack-hci-relate-to-windows-server"></a>¿Qué relación existe entre Azure Stack HCI y Windows Server?
-
-Windows Server es la base de casi todos los productos de Azure y todas las características que le gustan se siguen admitiendo y enviando en Windows Server. La oferta inicial de Azure Stack HCI se basaba en Windows Server 2019 y usaba el modelo de licencias tradicional de este. En la actualidad, Azure Stack HCI tiene su propio sistema operativo y modelo de licencias basado en suscripciones. Azure Stack HCI es la manera recomendada de implementar HCI en el entorno local mediante el hardware de nuestros asociados validado por Microsoft.
-
-### <a name="does-azure-stack-hci-need-to-connect-to-azure"></a>¿Necesita Azure Stack HCI estar conectado a Azure?
-
-Sí, el clúster debe conectarse a Azure al menos una vez cada 30 días para que se evalúe el número de núcleos con fines de facturación. También puede aprovechar la integración con Azure para escenarios híbridos, como la copia de seguridad y la recuperación ante desastres fuera del sitio, y la administración de la supervisión y la actualización en la nube, pero son opcionales. Se puede ejecutar sin conexión a Internet sin ningún problema durante períodos amplios.
-
-### <a name="can-i-upgrade-from-windows-server-2019-to-azure-stack-hci"></a>¿Puedo actualizar desde Windows Server 2019 a Azure Stack HCI?
-
-En este momento no hay ninguna actualización local de Windows Server a Azure Stack HCI. Manténgase atento a la guía de migración específica para los clientes que ejecutan clústeres hiperconvergidos basados en Windows Server 2019 y 2016.
-
-### <a name="what-do-azure-stack-hub-and-azure-stack-hci-solutions-have-in-common"></a>¿Qué tienen en común las soluciones de Azure Stack Hub y Azure Stack HCI?
-
-Las características de Azure Stack HCI presentan las mismas tecnologías de proceso, almacenamiento y red definidas por software y basadas en Hyper-V que Azure Stack Hub. Ambas ofertas cumplen rigurosos criterios de prueba y validación para garantizar la confiabilidad y la compatibilidad con la plataforma de hardware subyacente.
-
-### <a name="how-are-they-different"></a>¿En qué se diferencian?
-
-Con Azure Stack Hub, ejecuta servicios en la nube en el entorno local. Puede ejecutar servicios de IaaS y PaaS de Azure en el entorno local para compilar y ejecutar de forma coherente aplicaciones en la nube en cualquier lugar, administrados desde Azure Portal en el entorno local.
-
-Con Azure Stack HCI, ejecuta cargas de trabajo virtualizadas en el entorno local, administradas con Windows Admin Center y herramientas familiares de Windows Server. También puede conectarse a Azure para escenarios híbridos como la recuperación del sitio basada en la nube, la supervisión, etc.
-
-### <a name="why-is-microsoft-bringing-its-hci-offering-to-the-azure-stack-family"></a>¿Por qué Microsoft trae su oferta de HCI a la familia de productos de Azure Stack?
-
-La tecnología hiperconvergida de Microsoft ya es la base de Azure Stack Hub.
-
-Muchos clientes de Microsoft tienen entornos de TI complejos y nuestro objetivo es proporcionar soluciones que los encuentren donde estén con la tecnología adecuada para la necesidad de negocio adecuada. Azure Stack HCI es una evolución de las soluciones de Windows Server definidas por software (WSSD) que estaban disponibles anteriormente en nuestros asociados de hardware. Lo trajimos a la familia de productos Azure Stack porque hemos empezado a ofrecer nuevas opciones para conectarse sin problemas con Azure para los servicios de administración de la infraestructura.
-
-### <a name="can-i-upgrade-from-azure-stack-hci-to-azure-stack-hub"></a>¿Puedo actualizar de Azure Stack HCI a Azure Stack Hub?
-
-No, pero los clientes pueden migrar sus cargas de trabajo de Azure Stack HCI a Azure Stack Hub o Azure.
-
-### <a name="what-azure-services-can-i-connect-to-azure-stack-hci"></a>¿Qué servicios de Azure puedo conectar a Azure Stack HCI?
-
-Para una lista actualizada de los servicios de Azure a los que puede conectar Azure Stack HCI, consulte [Connecting Windows Server to Azure hybrid services](/windows-server/manage/windows-admin-center/azure/index) (Conexión de Windows Server a los servicios híbridos de Azure).
-
-### <a name="does-azure-stack-hci-collect-any-data-from-my-system"></a>¿Recopila Azure Stack HCI algún dato de mi sistema?
-
-Sí: se recopila un conjunto de datos muy limitado. Estos datos se usan para mantener HCI actualizado, con un funcionamiento correcto, y para proporcionar información a Azure Portal y evaluar el número de núcleos de procesador del clúster con fines de facturación.
-
-### <a name="to-which-endpoints-is-the-data-transmitted"></a>¿A qué puntos de conexión se transmiten los datos?  
-
-Azure Stack HCI usa el siguiente punto de conexión para transmitir los datos de facturación: *-azurestackhci-usage.azurewebsites.net
-
-### <a name="how-do-i-identify-an-azure-stack-hci-server"></a>¿Cómo identifico un servidor de Azure Stack HCI?
-
-Windows Admin Center muestra el sistema operativo en la lista Todas las conexiones y en otros lugares, o puede usar el siguiente comando de PowerShell para consultar el nombre y la versión del sistema operativo.
-
-```PowerShell
-Get-ComputerInfo -Property 'osName', 'osDisplayVersion'
-```
-
-A continuación se muestra una salida de ejemplo:
-
-```
-OsName                    OSDisplayVersion
-------                    ----------------
-Microsoft Azure Stack HCI 20H2
-```
-
 ## <a name="the-azure-stack-family"></a>La familia Azure Stack
 
 Azure Stack HCI forma parte de Azure y la familia de Azure Stack, ya que usa los mismos procesos definidos por software, almacenamiento y software de red que Azure Stack Hub. A continuación se incluye un breve resumen de las distintas soluciones. Para más información, consulte [Diferencias entre Azure global, Azure Stack y Azure Stack HCI](../operator/compare-azure-azure-stack.md).
@@ -205,7 +143,7 @@ Azure Stack HCI forma parte de Azure y la familia de Azure Stack, ya que usa l
 - [Azure Stack HCI](https://azure.microsoft.com/overview/azure-stack/hci): ejecute aplicaciones virtualizadas en el entorno local, reemplace y consolide la infraestructura de servidor anticuada y conéctese a Azure para acceder a servicios en la nube.
 - [Azure Stack Hub](../operator/azure-stack-overview.md): ejecute aplicaciones en la nube en el entorno local sin conexión o para cumplir los requisitos normativos mediante servicios de Azure coherentes.
 
-:::image type="content" source="media/overview/azure-family-updated.png" alt-text="El sistema operativo de Azure Stack HCI se ejecuta sobre el hardware validado, se administra mediante Windows Admin Center y se conecta a Azure" border="false":::
+:::image type="content" source="media/overview/azure-family-updated.png" alt-text="Diagrama de soluciones de la familia de Azure Stack" border="false":::
 
 ## <a name="compare-windows-server-and-azure-stack-hci"></a>Comparación entre Windows Server y Azure Stack HCI
 
@@ -261,20 +199,20 @@ A medida que la organización se transforma digitalmente, puede que se dé cuent
 
 La versión 2009 de Windows Admin Center agrega una serie de características a Azure Stack HCI, entre las que cabe destacar las siguientes:
 
-- **Funcionalidades de hospedaje de Azure Kubernetes Service**: ahora puede instalar una versión preliminar de [Azure Kubernetes Service en Azure Stack HCI](https://azure.microsoft.com/products/azure-stack/hci/hci-download/).
-- **Inclusión de redes definidas por software en el asistente de creación de clústeres**: El asistente de creación de clústeres incluye ahora la opción de implementar la característica de Controladora de red denominada [redes definidas por software](concepts/software-defined-networking.md) durante la [creación del clúster](deploy/create-cluster.md#step-5-sdn-optional).
+- **Funcionalidades de hospedaje de Azure Kubernetes Service** : ahora puede instalar una versión preliminar de [Azure Kubernetes Service en Azure Stack HCI](https://azure.microsoft.com/products/azure-stack/hci/hci-download/).
+- **Inclusión de redes definidas por software en el asistente de creación de clústeres** : El asistente de creación de clústeres incluye ahora la opción de implementar la característica de Controladora de red denominada [redes definidas por software](concepts/software-defined-networking.md) durante la [creación del clúster](deploy/create-cluster.md#step-5-sdn-optional).
 
 Para más información acerca de las nuevas características de Windows Admin Center, consulte el [blog de Windows Admin Center](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog).
 
 Los clústeres que ejecutan Azure Stack HCI, versión 20H2, tienen las siguientes características nuevas en comparación con las soluciones basadas en Windows Server 2019:
 
-- **Nuevas funcionalidades de Windows Admin Center**: con la posibilidad de crear y actualizar clústeres hiperconvergidos mediante una interfaz de usuario intuitiva, Azure Stack HCI es más fácil de usar que nunca.
-- **Clústeres extendidos para la conmutación automática por error**: la agrupación en clústeres multisitio con replicación de réplicas de almacenamiento y conmutación automática por error de máquinas virtuales proporciona recuperación ante desastres y continuidad empresarial nativas a los clústeres que usan Espacios de almacenamiento directo.
-- **Reglas de afinidad y de falta de afinidad**: se pueden usar de manera parecida a la forma en que Azure usa Availability Zones para mantener juntas las máquinas virtuales o de manera independiente en clústeres con varios dominios de error como, por ejemplo, los clústeres extendidos.
-- **Integración de Azure Portal**: la experiencia de Azure Portal para Azure Stack HCI está diseñada para ver todos los clústeres de Azure Stack HCI de todo el mundo, con nuevas características en el desarrollo.
-- **Aceleración de GPU para cargas de trabajo de alto rendimiento**: las aplicaciones de inteligencia artificial o de aprendizaje automático pueden beneficiarse del aumento del rendimiento con los procesadores GPU.
-- **Cifrado de BitLocker**: ahora puede usar BitLocker para cifrar el contenido de los volúmenes de datos en Azure Stack HCI, lo cual ayuda a los gobiernos y a otros clientes a cumplir con estándares como FIPS 140-2 e HIPAA.
-- **Mayor velocidad de reparación de los volúmenes de Espacios de almacenamiento directo**: repare los volúmenes de forma rápida y sencilla.
+- **Nuevas funcionalidades de Windows Admin Center** : con la posibilidad de crear y actualizar clústeres hiperconvergidos mediante una interfaz de usuario intuitiva, Azure Stack HCI es más fácil de usar que nunca.
+- **Clústeres extendidos para la conmutación automática por error** : la agrupación en clústeres multisitio con replicación de réplicas de almacenamiento y conmutación automática por error de máquinas virtuales proporciona recuperación ante desastres y continuidad empresarial nativas a los clústeres que usan Espacios de almacenamiento directo.
+- **Reglas de afinidad y de falta de afinidad** : se pueden usar de manera parecida a la forma en que Azure usa Availability Zones para mantener juntas las máquinas virtuales o de manera independiente en clústeres con varios dominios de error como, por ejemplo, los clústeres extendidos.
+- **Integración de Azure Portal** : la experiencia de Azure Portal para Azure Stack HCI está diseñada para ver todos los clústeres de Azure Stack HCI de todo el mundo, con nuevas características en el desarrollo.
+- **Aceleración de GPU para cargas de trabajo de alto rendimiento** : las aplicaciones de inteligencia artificial o de aprendizaje automático pueden beneficiarse del aumento del rendimiento con los procesadores GPU.
+- **Cifrado de BitLocker** : ahora puede usar BitLocker para cifrar el contenido de los volúmenes de datos en Azure Stack HCI, lo cual ayuda a los gobiernos y a otros clientes a cumplir con estándares como FIPS 140-2 e HIPAA.
+- **Mayor velocidad de reparación de los volúmenes de Espacios de almacenamiento directo** : repare los volúmenes de forma rápida y sencilla.
 
 Windows Admin Center, versión 20H2 también proporciona una nueva interfaz de usuario de actualización de clústeres para clústeres basados en Windows Server que incluye las soluciones de Azure Stack HCI originales. Aunque puede usar el Asistente para crear un nuevo clúster con Windows Server, no puede crear clústeres de Windows Server con Espacios de almacenamiento directo. Para eso necesita el sistema operativo de Azure Stack HCI.
 
