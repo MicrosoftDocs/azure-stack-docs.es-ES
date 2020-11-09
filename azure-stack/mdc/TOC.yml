@@ -102,12 +102,12 @@
                   href: ../operator/azure-stack-validate-pki-certs.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
                 - name: Corrección de certificados PKI
                   href: ../operator/azure-stack-remediate-certs.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
-        - name: Aprovisionamiento
+        - name: Registro y preparación
           items:
+            - name: Register
+              href: operator/registration-tzl.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
             - name: Validación del registro de Azure
               href: ../operator/azure-stack-validate-registration.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
-            - name: Registrarse
-              href: operator/registration-tzl.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
             - name: Proveedores de recursos de valor añadido
               items:
                 - name: App Service
