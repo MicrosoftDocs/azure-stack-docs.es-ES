@@ -178,12 +178,8 @@
                   href: ../operator/azure-stack-enable-multitenancy.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
     - name: Guías de procedimientos
       items:
-        - name: Almacenamiento extendido
-          items:
-            - name: Actualizaciones de OneFS y del firmware
-              href: extended-storage-firmware-updates.md
-            - name: Comprobaciones de estado
-              href: extended-storage-health-checks.md
+        - name: Comprobaciones de estado del almacenamiento extendido
+          href: extended-storage-health-checks.md
         - name: Administrar
           items:
             - name: Conceptos básicos de administración
