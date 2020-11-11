@@ -3,16 +3,16 @@ title: Problemas conocidos de Azure Stack Hub
 description: Obtenga información sobre los problemas conocidos de las versiones de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 09/28/2020
+ms.date: 11/02/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 08/13/2020
-ms.openlocfilehash: b52944255569197e9390db879f690f9e5d5a21d5
-ms.sourcegitcommit: 703be61f2f1565bf478b8c184753869c29e5c33c
+ms.openlocfilehash: 50b80df35ceed77242e7deb45c54664fb5a9563f
+ms.sourcegitcommit: 62fc0592fdec706ade2b14e685448256ad0b4fe9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91495786"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93239604"
 ---
 # <a name="azure-stack-hub-known-issues"></a>Problemas conocidos de Azure Stack Hub
 
@@ -37,6 +37,13 @@ Para tener acceso a los problemas conocidos de una versión diferente, use la li
 ## <a name="update"></a>Actualizar
 
 Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, consulte [Solución de problemas de actualizaciones en Azure Stack Hub](azure-stack-troubleshooting.md#troubleshoot-azure-stack-hub-updates).
+
+### <a name="update-failed-to-install-package-microsoftazurestackcomputeinstaller-to-ca-vm"></a>Error de la actualización al instalar el paquete Microsoft.AzureStack.Compute.Installer en la máquina virtual de la entidad de certificación
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Durante la actualización, un proceso adopta un bloqueo en el contenido nuevo que debe copiarse en la máquina virtual de la entidad de certificación. Si se produce un error en la actualización, se termina el bloqueo.
+- Corrección: Reanude la actualización.
+- Repetición: poco frecuente
 
 ## <a name="portal"></a>Portal
 
@@ -171,6 +178,13 @@ Después de aplicar la actualización 2002, puede aparecer incorrectamente una a
 
 Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, consulte [Solución de problemas de actualizaciones en Azure Stack Hub](azure-stack-troubleshooting.md#troubleshoot-azure-stack-hub-updates).
 
+### <a name="update-failed-to-install-package-microsoftazurestackcomputeinstaller-to-ca-vm"></a>Error de la actualización al instalar el paquete Microsoft.AzureStack.Compute.Installer en la máquina virtual de la entidad de certificación
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Durante la actualización, un proceso adopta un bloqueo en el contenido nuevo que debe copiarse en la máquina virtual de la entidad de certificación. Si se produce un error en la actualización, se termina el bloqueo.
+- Corrección: Reanude la actualización.
+- Repetición: poco frecuente
+
 ## <a name="portal"></a>Portal
 
 ### <a name="administrative-subscriptions"></a>Suscripciones administrativas
@@ -190,7 +204,7 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 ### <a name="storage-account-options"></a>Opciones de la cuenta de almacenamiento
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: en el portal de usuarios, el nombre de las cuentas de almacenamiento se muestra como **Cuenta de almacenamiento: blob, archivo, tabla, cola**; sin embargo, la opción **archivo** no se admite en Azure Stack Hub.
+- Causa: en el portal de usuarios, el nombre de las cuentas de almacenamiento se muestra como **Cuenta de almacenamiento: blob, archivo, tabla, cola** ; sin embargo, la opción **archivo** no se admite en Azure Stack Hub.
 - Repetición: Comunes
 
 ### <a name="create-managed-disk-snapshot"></a>Creación de una instantánea de disco administrado
@@ -367,6 +381,13 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 
 Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, consulte [Solución de problemas de actualizaciones en Azure Stack Hub](azure-stack-troubleshooting.md#troubleshoot-azure-stack-hub-updates).
 
+### <a name="update-failed-to-install-package-microsoftazurestackcomputeinstaller-to-ca-vm"></a>Error de la actualización al instalar el paquete Microsoft.AzureStack.Compute.Installer en la máquina virtual de la entidad de certificación
+
+- Aplicable a: este problema se aplica a todas las versiones admitidas.
+- Causa: Durante la actualización, un proceso adopta un bloqueo en el contenido nuevo que debe copiarse en la máquina virtual de la entidad de certificación. Si se produce un error en la actualización, se termina el bloqueo.
+- Corrección: Reanude la actualización.
+- Repetición: poco frecuente
+
 ## <a name="portal"></a>Portal
 
 ### <a name="administrative-subscriptions"></a>Suscripciones administrativas
@@ -405,7 +426,7 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 ### <a name="upload-blob-option-unsupported"></a>Opción de carga de BLOB no admitida
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: en el portal de usuarios, cuando intenta cargar un blob en la hoja de carga, hay una opción para seleccionar **AAD** o **Autenticación de clave**, pero **AAD** no se admite en Azure Stack Hub.
+- Causa: en el portal de usuarios, cuando intenta cargar un blob en la hoja de carga, hay una opción para seleccionar **AAD** o **Autenticación de clave** , pero **AAD** no se admite en Azure Stack Hub.
 - Repetición: Comunes
 
 ### <a name="alert-for-network-interface-disconnected"></a>Alerta de interfaz de red desconectada
@@ -417,7 +438,7 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 ### <a name="incorrect-tooltip-when-creating-vm"></a>Información sobre herramientas incorrecta al crear una máquina virtual
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: en el portal de usuarios, cuando se selecciona un disco administrado con el tipo de disco SSD Premium, la lista desplegable muestra **Disco del SO**. La información sobre herramientas situada junto a esa opción indica **Puede que algunos tamaños del disco del SO estén disponibles gratis en la cuenta gratuita de Azure**; sin embargo, esto no es válido para Azure Stack Hub. Además, la lista incluye **Cuenta gratuita válida**, opción que tampoco es válida para Azure Stack Hub.
+- Causa: en el portal de usuarios, cuando se selecciona un disco administrado con el tipo de disco SSD Premium, la lista desplegable muestra **Disco del SO**. La información sobre herramientas situada junto a esa opción indica **Puede que algunos tamaños del disco del SO estén disponibles gratis en la cuenta gratuita de Azure** ; sin embargo, esto no es válido para Azure Stack Hub. Además, la lista incluye **Cuenta gratuita válida** , opción que tampoco es válida para Azure Stack Hub.
 - Repetición: Comunes
 
 ### <a name="delete-a-storage-container"></a>Eliminación de un contenedor de almacenamiento
@@ -437,13 +458,13 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 ### <a name="storage-account-options"></a>Opciones de la cuenta de almacenamiento
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: en el portal de usuarios, el nombre de las cuentas de almacenamiento se muestra como **Cuenta de almacenamiento: blob, archivo, tabla, cola**; sin embargo, la opción **archivo** no se admite en Azure Stack Hub.
+- Causa: en el portal de usuarios, el nombre de las cuentas de almacenamiento se muestra como **Cuenta de almacenamiento: blob, archivo, tabla, cola** ; sin embargo, la opción **archivo** no se admite en Azure Stack Hub.
 - Repetición: Comunes
 
 ### <a name="storage-account-configuration"></a>Configuración de la cuenta de almacenamiento
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: en el portal de usuarios, cuando se crea una cuenta de almacenamiento y se ve su **Configuración**, no se pueden guardar los cambios de configuración, ya que generarían un error de AJAX.
+- Causa: en el portal de usuarios, cuando se crea una cuenta de almacenamiento y se ve su **Configuración** , no se pueden guardar los cambios de configuración, ya que generarían un error de AJAX.
 - Repetición: Comunes
 
 ### <a name="capacity-monitoring-in-sql-resource-provider-keeps-loading"></a>La supervisión de la capacidad del proveedor de recursos de SQL continúa cargándose
@@ -456,8 +477,8 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 ### <a name="access-control-iam"></a>Control de acceso (IAM)
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: La extensión IAM está obsoleta. El portal de Ibiza que se incluye con Azure Stack Hub introduce un nuevo comportamiento que hace que se produzca un error en la extensión RBAC si el usuario está abriendo la hoja **Access Control (IAM)** de una suscripción que no está seleccionada en el selector de suscripción global (**directorio + suscripción** en el portal de usuarios). La hoja muestra el mensaje **Cargando** en bucle y el usuario no puede agregar nuevos roles a la suscripción. La hoja **Agregar** también muestra el mensaje **Cargando** en bucle.
-- Corrección: Asegúrese de que la suscripción esté marcada en el menú **Directorio + suscripción**. A este menú se puede acceder desde la parte superior del portal, cerca del botón **Notificaciones**, o bien mediante el acceso directo de la hoja **Todos los recursos** que muestra el mensaje **Don't see a subscription? (¿No ve una suscripción?) Abra la configuración de Directorio + suscripción**. La suscripción se debe seleccionar en este menú.
+- Causa: La extensión IAM está obsoleta. El portal de Ibiza que se incluye con Azure Stack Hub introduce un nuevo comportamiento que hace que se produzca un error en la extensión RBAC si el usuario está abriendo la hoja **Access Control (IAM)** de una suscripción que no está seleccionada en el selector de suscripción global ( **directorio + suscripción** en el portal de usuarios). La hoja muestra el mensaje **Cargando** en bucle y el usuario no puede agregar nuevos roles a la suscripción. La hoja **Agregar** también muestra el mensaje **Cargando** en bucle.
+- Corrección: Asegúrese de que la suscripción esté marcada en el menú **Directorio + suscripción**. A este menú se puede acceder desde la parte superior del portal, cerca del botón **Notificaciones** , o bien mediante el acceso directo de la hoja **Todos los recursos** que muestra el mensaje **Don't see a subscription? (¿No ve una suscripción?) Abra la configuración de Directorio + suscripción**. La suscripción se debe seleccionar en este menú.
 
 ### <a name="sql-resource-provider"></a>Proveedor de recursos SQL
 
@@ -530,7 +551,7 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 #### <a name="active-active"></a>Activo-activo
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: En el portal de usuarios, durante la creación, y en el menú de recursos de **Puerta de enlace de red virtual**, verá una opción para habilitar la configuración **activa-activa**. Esta característica no se admite actualmente en Azure Stack Hub.
+- Causa: En el portal de usuarios, durante la creación, y en el menú de recursos de **Puerta de enlace de red virtual** , verá una opción para habilitar la configuración **activa-activa**. Esta característica no se admite actualmente en Azure Stack Hub.
 - Repetición: Comunes
 
 #### <a name="vpn-troubleshooter"></a>Solucionador de problemas de VPN
@@ -576,7 +597,7 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 
 - Aplicable a: este problema se aplica a la versión 1910 y a las anteriores.
 - Causa: no es posible conectar con el punto de conexión con privilegios (máquinas virtuales ERC) desde un equipo cuya versión de Windows no esté en inglés.
-- Corrección: este es un problema conocido que se ha solucionado en las versiones posteriores a la 1910. Una posible solución es ejecutar los cmdlets de PowerShell **New-PSSession** y **Enter-PSSession** mediante la referencia cultural **en-US**; para ver distintos ejemplos, establezca la cultura mediante este script: https://resources.oreilly.com/examples/9780596528492/blob/master/Use-Culture.ps1.
+- Corrección: este es un problema conocido que se ha solucionado en las versiones posteriores a la 1910. Una posible solución es ejecutar los cmdlets de PowerShell **New-PSSession** y **Enter-PSSession** mediante la referencia cultural **en-US** ; para ver distintos ejemplos, establezca la cultura mediante este script: https://resources.oreilly.com/examples/9780596528492/blob/master/Use-Culture.ps1.
 - Repetición: poco frecuente
 
 ### <a name="virtual-machine-scale-set"></a>Conjunto de escalado de máquina virtual

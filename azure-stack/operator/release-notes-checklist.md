@@ -7,12 +7,12 @@ ms.date: 08/10/2020
 ms.author: v-myoung
 ms.reviewer: TBD
 ms.lastreviewed: 01/14/2020
-ms.openlocfilehash: f3839c9191a5b96c9a489d7c13b83b1f8f13fdf9
-ms.sourcegitcommit: 868887e4b13b1572f15004a9db2c334e60d8add2
+ms.openlocfilehash: aa8755b2cd8b7161eee8c7c60375c2b799df2e80
+ms.sourcegitcommit: 296c95cad20ed62bdad0d27f1f5246bfc1c81d5e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91778166"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93064793"
 ---
 # <a name="azure-stack-hub-update-activity-checklist"></a>Lista de comprobación de la actividad de actualización de Azure Stack Hub
 
@@ -46,6 +46,9 @@ Revise esta lista de comprobación para prepararse para obtener una actualizaci�
 
 > [!IMPORTANT]  
 > No ejecute **Test-AzureStack** durante una actualización, ya que esto hará que la actualización se detenga.
+>
+>No ejecute la reparación de nodo durante una actualización, independientemente de su estado.
+>Póngase en contacto con Soporte técnico de Microsoft si es necesario reparar el nodo durante la actualización.
 
 ## <a name="after-azure-stack-hub-update"></a>Después del proceso de actualización de Azure Stack Hub
 

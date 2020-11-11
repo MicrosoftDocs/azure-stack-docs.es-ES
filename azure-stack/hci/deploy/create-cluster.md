@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 10/17/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: 927a57097eff9890dc8c546be9914e70dad5ec3c
-ms.sourcegitcommit: e4e2cc6a68f02c3e856f58ca5ee51b3313c7ff8f
+ms.openlocfilehash: 508bf39e9cdeb55485bc2a517c412cee7f3dcd80
+ms.sourcegitcommit: 296c95cad20ed62bdad0d27f1f5246bfc1c81d5e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92179539"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93064776"
 ---
 # <a name="create-an-azure-stack-hci-cluster-using-windows-admin-center"></a>Creación de un clúster de Azure Stack HCI mediante Windows Admin Center
 
@@ -32,7 +32,7 @@ Si está interesado en realizar pruebas de Azure Stack HCI, pero tiene hardware 
 
 Antes de ejecutar el Asistente para crear clúster, asegúrese de lo siguiente:
 
-- Ha leído los requisitos de hardware y de otro tipo en [Antes de implementar Azure Stack HCl](before-you-start.md).
+- Ha leído los requisitos de hardware y de otro tipo descritos en [Requisitos del sistema](../concepts/system-requirements.md).
 - Instale el sistema operativo de Azure Stack HCI en cada servidor del clúster. Consulte [Implementación del sistema operativo de Azure Stack HCI](operating-system.md).
 - Use una cuenta que sea miembro del grupo de administradores local en cada servidor.
 - Instale Windows Admin Center en un equipo o servidor de administración. Consulte [Instalación de Windows Admin Center](/windows-server/manage/windows-admin-center/deploy/install).
@@ -55,7 +55,7 @@ Empecemos:
 
 1. En Windows Admin Center, en **All connections** (Todas las conexiones), haga clic en **Add** (Agregar).
 1. En el panel **Add resources** (Agregar recursos), en **Clúster de Windows Server** (Windows Server cluster), seleccione **Create new** (Crear nuevo).
-1. En **Choose cluster type** (Seleccionar tipo de clúster), seleccione **Azure Stack HCI** .
+1. En **Choose cluster type** (Seleccionar tipo de clúster), seleccione **Azure Stack HCI**.
 
     :::image type="content" source="media/cluster/create-cluster-type.png" alt-text="Asistente para crear clúster: Opción de HCI" lightbox="media/cluster/create-cluster-type.png":::
 
@@ -64,20 +64,20 @@ Empecemos:
     - **All servers in one site** (Todos los servidores de un sitio)
     - **Servers in two sites** (Servidores de dos sitios) (para un clúster extendido)
 
-1. Cuando haya terminado, haga clic en **Crear** . Ahora verá el Asistente para crear clúster, como se muestra a continuación.
+1. Cuando haya terminado, haga clic en **Crear**. Ahora verá el Asistente para crear clúster, como se muestra a continuación.
 
-    :::image type="content" source="media/cluster/create-cluster-wizard.png" alt-text="Asistente para crear clúster: Opción de HCI" lightbox="media/cluster/create-cluster-wizard.png":::
+    :::image type="content" source="media/cluster/create-cluster-wizard.png" alt-text="Asistente para crear clúster: Introducción" lightbox="media/cluster/create-cluster-wizard.png":::
 
 ## <a name="step-1-get-started"></a>Paso 1: Primeros pasos
 
 El paso 1 del asistente le guía por los pasos necesarios para asegurarse de que se cumplen todos los requisitos previos, se agregan los nodos de servidor, se instalan las características necesarias y, si es necesario, se reinicia cada servidor.
 
-1. Revise los requisitos previos enumerados en el asistente para asegurarse de que cada nodo de servidor está listo para el clúster. Cuando termine, haga clic en **Siguiente** .
+1. Revise los requisitos previos enumerados en el asistente para asegurarse de que cada nodo de servidor está listo para el clúster. Cuando termine, haga clic en **Siguiente**.
 1. En la página **Add servers to the cluster** (Agregar servidores al clúster), escriba el nombre de usuario y la contraseña de su cuenta y, a continuación, haga clic en **Next** (Siguiente). Esta cuenta debe ser miembro del grupo de administradores local en cada servidor.
 1. Escriba el nombre del primer servidor que quiera agregar y, a continuación, haga clic en **Add** (Agregar).
-1. Repita el paso 3 para cada servidor que formará parte del clúster. Cuando termine, haga clic en **Siguiente** .
+1. Repita el paso 3 para cada servidor que formará parte del clúster. Cuando termine, haga clic en **Siguiente**.
 1. Si es necesario, en la página **Join the servers to a domain** (Unir los servidores a un dominio), especifique el dominio y una cuenta para unir los servidores al dominio. Después, puede cambiar el nombre de los servidores a nombres más descriptivos y hacer clic en **Next** (Siguiente).
-1. Haga clic en **Install Features** (Instalar características). Cuando termine, haga clic en **Siguiente** .
+1. Haga clic en **Install Features** (Instalar características). Cuando termine, haga clic en **Siguiente**.
 
     El asistente instala las siguientes características necesarias:
 
@@ -90,8 +90,8 @@ El paso 1 del asistente le guía por los pasos necesarios para asegurarse de que
     - Módulo RSAT-AD-PowerShell
     - Réplica de almacenamiento (solo se instala para clústeres extendidos)
 
-1. En **Install updates** (Instalar actualizaciones), si es necesario, haga clic en **Install updates** (Instalar actualizaciones). Cuando haya terminado, haga clic en **Siguiente** .
-1. En **Solution updates** (Actualizaciones de la solución), si es necesario, haga clic en **Instalar extensión** . Cuando haya terminado, haga clic en **Siguiente** .
+1. En **Install updates** (Instalar actualizaciones), si es necesario, haga clic en **Install updates** (Instalar actualizaciones). Cuando haya terminado, haga clic en **Siguiente**.
+1. En **Solution updates** (Actualizaciones de la solución), si es necesario, haga clic en **Instalar extensión**. Cuando haya terminado, haga clic en **Siguiente**.
 1. Haga clic en **Restart servers** (Reiniciar los servidores), si es necesario. Compruebe que se ha iniciado correctamente cada servidor.
 
 ## <a name="step-2-networking"></a>Paso 2: Redes
@@ -101,16 +101,16 @@ El paso 2 del asistente le guía a través de la configuración de conmutadores 
 > [!NOTE]
 > Si surgen errores durante los pasos de conexión en redes o en los pasos relacionados con conmutadores virtuales, pruebe a hacer clic en **Apply and test** (Aplicar y probar) de nuevo.
 
-1. Seleccione **Siguiente: Redes** .
-1. En **Verify the network adapters** (Comprobar los adaptadores de red), espere a que aparezcan las casillas verdes junto a cada adaptador y seleccione **Siguiente** .
+1. Seleccione **Siguiente: Redes**.
+1. En **Verify the network adapters** (Comprobar los adaptadores de red), espere a que aparezcan las casillas verdes junto a cada adaptador y seleccione **Siguiente**.
 
 1. En **Select management adapters** (Seleccionar adaptadores de administración), seleccione uno o dos adaptadores de administración para usarlos para cada servidor. Es obligatorio seleccionar al menos uno de los adaptadores con fines de administración, ya que el asistente requiere al menos una NIC física dedicada para la administración del clúster.  Una vez que se designa un adaptador para la administración, se excluye del resto del flujo de trabajo del asistente.
 
     Los adaptadores de administración tienen dos opciones de configuración:
 
-    - **Un adaptador de red físico para la administración** . Para esta opción, se admite DHCP o la asignación de direcciones IP estáticas.
+    - **Un adaptador de red físico para la administración**. Para esta opción, se admite DHCP o la asignación de direcciones IP estáticas.
 
-    - **Dos adaptadores de red físicos en equipo para la administración** . Si se agrupa un par de adaptadores, solo se admite la asignación de direcciones IP estáticas. Si los adaptadores seleccionados usan direccionamiento de DHCP (para uno de ellos o para ambos), la dirección IP de DHCP se convertirá en direcciones IP estáticas antes de la creación del conmutador virtual.
+    - **Dos adaptadores de red físicos en equipo para la administración**. Si se agrupa un par de adaptadores, solo se admite la asignación de direcciones IP estáticas. Si los adaptadores seleccionados usan direccionamiento de DHCP (para uno de ellos o para ambos), la dirección IP de DHCP se convertirá en direcciones IP estáticas antes de la creación del conmutador virtual.
 
     Mediante el uso de adaptadores agrupados, tiene una única conexión a varios conmutadores, pero solo usa una dirección IP única. El equilibrio de carga está disponible y la tolerancia a errores es instantánea, en lugar de esperar a que se actualicen los registros DNS.
 
@@ -194,14 +194,14 @@ Este paso opcional le guía a través de la configuración del componente de Con
 > [!NOTE]
 > SDN no se admite o no está disponible para los clústeres extendidos.
 
-:::image type="content" source="media/cluster/create-cluster-network-controller.png" alt-text="Asistente para crear clúster: Opción de HCI" lightbox="media/cluster/create-cluster-network-controller.png":::
+:::image type="content" source="media/cluster/create-cluster-network-controller.png" alt-text="Asistente de creación de clústeres: Controladora de red de SDN" lightbox="media/cluster/create-cluster-network-controller.png":::
 
-1. Seleccione **Siguiente: SDN** .
+1. Seleccione **Siguiente: SDN**.
 1. En **Host** , escriba un nombre para Controladora de red.
 1. Especifique una ruta de acceso al archivo VHD de Azure Stack HCI. Use **Examinar** para encontrarlo más rápido.
 1. Especifique el número de máquinas virtuales que se dedicarán a Controladora de red. Se recomiendan entre tres y cinco máquinas virtuales para lograr una alta disponibilidad.
 1. En **Red** , escriba el identificador de VLAN.
-1. En **VM network addressing** (Direcciones de red de VM), seleccione **DHCP** o **Estáticas** .
+1. En **VM network addressing** (Direcciones de red de VM), seleccione **DHCP** o **Estáticas**.
 1. Si seleccionó **DHCP** , escriba el nombre y la dirección IP de las máquinas virtuales de Controladora de red.
 1. Si seleccionó **Estáticas** , haga lo siguiente:
     1. Especifique un prefijo de subred.
@@ -210,9 +210,9 @@ Este paso opcional le guía a través de la configuración del componente de Con
 1. En **Credenciales** , escriba el nombre de usuario y la contraseña usados para unir las máquinas virtuales de Controladora de red al dominio del clúster.
 1. Escriba la contraseña administrativa local para estas máquinas virtuales.
 1. En **Avanzado** , escriba la ruta de acceso a las máquinas virtuales.
-1. Escriba los valores de **inicio del grupo de direcciones MAC** y **final del grupo de direcciones MAC** .
-1. Cuando termine, haga clic en **Siguiente** .
-1. Espere hasta que el asistente complete su trabajo. Permanezca en esta página hasta que se completen todas las tareas en curso. Haga clic en **Finalizar** .
+1. Escriba los valores de **inicio del grupo de direcciones MAC** y **final del grupo de direcciones MAC**.
+1. Cuando termine, haga clic en **Siguiente**.
+1. Espere hasta que el asistente complete su trabajo. Permanezca en esta página hasta que se completen todas las tareas en curso. Haga clic en **Finalizar**.
 
 Si se produce un error en la implementación de Controladora de red, haga lo siguiente antes de volver a intentarlo:
 
@@ -229,7 +229,7 @@ Una vez completado el asistente, todavía hay algunas tareas importantes que deb
 La primera tarea consiste en deshabilitar el protocolo de proveedor de compatibilidad para seguridad de credenciales (CredSSP) en cada servidor por motivos de seguridad. Recuerde que CredSSP debe estar habilitado para el asistente. Si tiene problemas con CredSSP, consulte [Solución de problemas de CredSSP](../manage/troubleshoot-credssp.md) para más información.
 
 1. En Windows Admin Center, en **All connections** (Todas las conexiones), seleccione el clúster que acaba de crear.
-1. En **Herramientas** , seleccione **Servidores** .
+1. En **Herramientas** , seleccione **Servidores**.
 1. En el panel derecho, seleccione el primer servidor del clúster.
 1. En **Información general** , seleccione **Disable CredSSP** (Deshabilitar CredSSP). Verá que el banner **CredSSP ENABLED** (CredSSP HABILITADO) de la parte superior desaparece.
 1. Repita los pasos 3 y 4 para cada servidor del clúster.

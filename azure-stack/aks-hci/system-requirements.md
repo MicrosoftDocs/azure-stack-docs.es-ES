@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: abhilashaagarwala
 ms.author: abha
 ms.date: 09/22/2020
-ms.openlocfilehash: 4c91dad12e4d6680ca0887da2e6ca314cdbd64ee
-ms.sourcegitcommit: 3e225b30a54159b6b8dbeb2f843a2e5a721b746e
+ms.openlocfilehash: 62b1b2983b2e41b5c6d991b4d53338a67bc5aeab
+ms.sourcegitcommit: 296c95cad20ed62bdad0d27f1f5246bfc1c81d5e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91519393"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93064674"
 ---
 # <a name="system-requirements-for-azure-kubernetes-service-on-azure-stack-hci"></a>Requisitos del sistema de Azure Kubernetes Service en Azure Stack HCI
 
@@ -40,7 +40,7 @@ Para que Azure Kubernetes Service en Azure Stack HCI funcione de forma óptima e
 
  - Aunque técnicamente puede ejecutar Azure Kubernetes Service en un servidor de un solo nodo de Azure Stack HCI, no se recomienda hacerlo.
 
- - Otros requisitos de proceso para Azure Kubernetes Service en Azure Stack HCI están en línea con los requisitos de Azure Stack HCI. Visite [Requisitos de Azure Stack HCI](../hci/deploy/before-you-start.md) para obtener más detalles sobre los requisitos del servidor de Azure Stack HCI.  
+ - Otros requisitos de proceso para Azure Kubernetes Service en Azure Stack HCI están en línea con los requisitos de Azure Stack HCI. Consulte [Requisitos del sistema de Azure Stack HCI](../hci/concepts/system-requirements.md#server-requirements) para más información sobre los requisitos del servidor de Azure Stack HCI.
 
  - Esta versión preliminar requiere la instalación del sistema operativo de Azure Stack HCI en cada servidor del clúster con las selecciones de idioma y región EN-US. Cambiarlos después de la instalación no es posible en este momento.
 

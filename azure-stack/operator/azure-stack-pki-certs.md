@@ -7,12 +7,12 @@ ms.date: 08/19/2020
 ms.author: inhenkel
 ms.reviewer: ppacent
 ms.lastreviewed: 12/16/2019
-ms.openlocfilehash: a5ccf4ecd9ab6f70f54af22c343f28eb692f9c54
-ms.sourcegitcommit: 373e9e3e84eaa33331db9f78e52486fbb6beb907
+ms.openlocfilehash: ee0ef7119dfb2255cd97e343f8e7339ab715ed7d
+ms.sourcegitcommit: 0e3296fb27b9dabbc2569bf85656c4c7b1d58ba9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91592894"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93049609"
 ---
 # <a name="azure-stack-hub-public-key-infrastructure-pki-certificate-requirements"></a>Requisitos de certificados de la infraestructura de clave pública (PKI) de Azure Stack Hub
 
@@ -63,7 +63,7 @@ En la tabla de esta sección se describen los certificados PKI públicos del pun
 
 Se requieren certificados con los nombres DNS apropiados para cada punto de conexión de la infraestructura pública de Azure Stack Hub. El nombre DNS de cada punto de conexión se expresa en el formato: *&lt;prefijo>.&lt;región>.&lt;fqdn>* .
 
-En la implementación, los valores de [region] y [externalfqdn] deben coincidir con los nombres de dominio externo y región que eligió para el sistema de Azure Stack Hub. Por ejemplo, si el nombre de la región es *Redmond* y el nombre de dominio externo fuese *contoso.com*, los nombres DNS tendrían el formato *&lt;prefijo>.redmond.contoso.com *. Los valores de *&lt;prefijo>* son designados de antemano por Microsoft para describir el punto de conexión protegido por el certificado. Además, los valores de *&lt;prefijo>* de los puntos de conexión de la infraestructura externa dependen del servicio de Azure Stack Hub que use el punto de conexión concreto.
+En la implementación, los valores de [region] y [externalfqdn] deben coincidir con los nombres de dominio externo y región que eligió para el sistema de Azure Stack Hub. Por ejemplo, si el nombre de la región es *Redmond* y el nombre de dominio externo fuese *contoso.com* , los nombres DNS tendrían el formato *&lt;prefijo>.redmond.contoso.com*. Los valores de *&lt;prefijo>* son designados de antemano por Microsoft para describir el punto de conexión protegido por el certificado. Además, los valores de *&lt;prefijo>* de los puntos de conexión de la infraestructura externa dependen del servicio de Azure Stack Hub que use el punto de conexión concreto.
 
 Para los entornos de producción, se recomienda que se generen certificados individuales para cada punto de conexión y que se copien en el directorio correspondiente. Para los entornos de desarrollo, los certificados se pueden proporcionar como un certificado comodín único que abarque todos los espacios de nombres en los campos de Sujeto y Nombre alternativo del sujeto (SAN) y que se copie en todos los directorios. Un certificado único que abarca todos los servicios y puntos de conexión es una postura insegura y, por tanto, solo para desarrollo. Recuerde que, en ambos casos, debe utilizar certificados comodín para puntos de conexión como **acs** y Key Vault donde sean necesarios.
 
@@ -105,12 +105,13 @@ En la tabla siguiente se describen los puntos de conexión y los certificados ne
 
 |Ámbito (por región)|Certificado|Nombres alternativos del firmante (SAN) y firmante del certificado requeridos|Espacio de nombres del subdominio|
 |-----|-----|-----|-----|
-|SQL, MySQL|SQL y MySQL|&#42;.dbadapter. *&lt;región>.&lt;fqdn>*<br>(Certificado SSL comodín)|dbadapter. *&lt;región>.&lt;fqdn>*|
 |App Service|Certificado SSL predeterminado de tráfico web|&#42;.appservice. *&lt;región>.&lt;fqdn>*<br>&#42;.scm.appservice. *&lt;región>.&lt;fqdn>*<br>&#42;.sso.appservice. *&lt;region>.&lt;fqdn>*<br>(Certificado SSL comodín de varios dominios<sup>1</sup>)|appservice. *&lt;región>.&lt;fqdn>*<br>scm.appservice. *&lt;región>.&lt;fqdn>*|
 |App Service|API|api.appservice. *&lt;región>.&lt;fqdn>*<br>(Certificado SSL<sup>2</sup>)|appservice. *&lt;región>.&lt;fqdn>*<br>scm.appservice. *&lt;región>.&lt;fqdn>*|
 |App Service|FTP|ftp.appservice. *&lt;región>.&lt;fqdn>*<br>(Certificado SSL<sup>2</sup>)|appservice. *&lt;región>.&lt;fqdn>*<br>scm.appservice. *&lt;región>.&lt;fqdn>*|
 |App Service|SSO|sso.appservice. *&lt;región>.&lt;fqdn>*<br>(Certificado SSL<sup>2</sup>)|appservice. *&lt;región>.&lt;fqdn>*<br>scm.appservice. *&lt;región>.&lt;fqdn>*|
-|Event Hubs|Event Hubs|&#42;.eventhub. *&lt;región>.&lt;fqdn>* (SAN)| eventhub. *&lt;región>.&lt;fqdn>* |
+|Event Hubs|SSL|&#42;.eventhub. *&lt;region>.&lt;fqdn>* | eventhub. *&lt;región>.&lt;fqdn>* |
+|IoT Hub|SSL|&#42;.mgmtiothub. *&lt;region>.&lt;fqdn>* | mgmtiothub. *&lt;region>.&lt;fqdn>* |
+|SQL, MySQL|SQL y MySQL|&#42;.dbadapter. *&lt;región>.&lt;fqdn>*<br>(Certificado SSL comodín)|dbadapter. *&lt;región>.&lt;fqdn>*|
 
 <sup>1</sup> Requiere un certificado con varios nombres alternativos de firmante comodín. Puede que no todas las entidades de certificación públicas admitan varios nombres alternativos del firmante comodín en un solo certificado.
 

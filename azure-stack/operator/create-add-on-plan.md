@@ -7,17 +7,17 @@ ms.topic: conceptual
 ms.date: 10/05/2019
 ms.author: bryanla
 ms.reviewer: efemmano
-ms.lastreviewed: 06/11/2019
-ms.openlocfilehash: 29ae7acf1954dfafad1583bf037603f8ccac7514
-ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
+ms.lastreviewed: 11/3/2020
+ms.openlocfilehash: a3cc9436ec0e3ec0c939760454b194bfec4a8c58
+ms.sourcegitcommit: ecd98662194d2cdb15c22f8b1f99812fc5f4c15a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91106793"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93344888"
 ---
 # <a name="create-add-on-plans-in-azure-stack-hub"></a>Creación de planes complementarios en Azure Stack Hub
 
-Como operador de Azure Stack Hub, puede crear planes complementarios para modificar un [plan base](azure-stack-create-plan.md) cuando quiera ofrecer servicios adicionales o ampliar las cuotas de *equipo*, *almacenamiento* o *red* más allá de la oferta inicial del plan base. Los planes complementarios modifican el plan base y son extensiones opcionales que los usuarios pueden elegir habilitar en su suscripción.
+Como operador de Azure Stack Hub, puede crear planes complementarios para modificar un [plan base](azure-stack-create-plan.md) cuando quiera ofrecer servicios adicionales o ampliar las cuotas de *equipo* , *almacenamiento* o *red* más allá de la oferta inicial del plan base. Los planes complementarios modifican el plan base y son extensiones opcionales que los usuarios pueden elegir habilitar en su suscripción.
 
 Hay ocasiones en las que combinar todo en un único plan es la solución óptima. En otras ocasiones puede interesarle más tener un plan base y ofrecer los servicios adicionales utilizando planes complementarios. Por ejemplo, podría decidir ofrecer servicios IaaS como parte de un plan base, con todos los servicios PaaS tratados como planes complementarios.
 
@@ -47,7 +47,7 @@ Los planes complementarios se [crean de la misma manera](azure-stack-create-plan
 
 6. Revise la lista de planes complementarios incluidos con la oferta para comprobar que el nuevo plan complementario aparezca en la lista.
 
-    ![Captura de pantalla que muestra una lista de planes complementarios para su revisión en el portal de administración de Azure Stack](media/create-add-on-plan/add-on4.png "Creación de un plan complementario")](media/create-add-on-plan/add-on4lg.png#lightbox)
+    [![Captura de pantalla que muestra una lista de planes complementarios para su revisión en el portal de administración de Azure Stack.](media/create-add-on-plan/add-on4.png)](media/create-add-on-plan/add-on4lg.png#lightbox)
 ::: moniker-end
 
 ::: moniker range="<=azs-1901"
@@ -55,7 +55,7 @@ Los planes complementarios se [crean de la misma manera](azure-stack-create-plan
 ## <a name="create-an-add-on-plan-1901-and-earlier"></a>Crear un plan complementario (1901 y anteriores)
 
 1. Inicie sesión en el portal del administrador de Azure Stack Hub como administrador de nube.
-2. Siga los mismos pasos utilizados para [crear un plan base](azure-stack-create-plan.md) para crear un nuevo plan que ofrezca servicios que no se ofrecían anteriormente. En este ejemplo, los servicios de Key Vault (**Microsoft.KeyVault**) se incluirán en el nuevo plan.
+2. Siga los mismos pasos utilizados para [crear un plan base](azure-stack-create-plan.md) para crear un nuevo plan que ofrezca servicios que no se ofrecían anteriormente. En este ejemplo, los servicios de Key Vault ( **Microsoft.KeyVault** ) se incluirán en el nuevo plan.
 3. En el portal de administración, seleccione **Ofertas** y, a continuación, seleccione la oferta que desea actualizar con un plan complementario.
 
    ![Selección de la oferta que quiere actualizar con el plan complementario en el portal de administración de Azure Stack](media/create-add-on-plan/1.PNG)

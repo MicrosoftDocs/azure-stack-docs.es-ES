@@ -6,13 +6,13 @@ ms.author: v-kedow
 ms.topic: conceptual
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 09/01/2020
-ms.openlocfilehash: 545a0b90ad938a172a184748780974ba7403f19f
-ms.sourcegitcommit: 4af79f4fa2598d57c81e994192c10f8c6be5a445
+ms.date: 10/29/2020
+ms.openlocfilehash: 6cf983d6cf64b0b41bb9710bdf720dd1777c9ad6
+ms.sourcegitcommit: 296c95cad20ed62bdad0d27f1f5246bfc1c81d5e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89742398"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93064810"
 ---
 # <a name="drive-symmetry-considerations-for-azure-stack-hci"></a>Consideraciones sobre la simetría de unidades para Azure Stack HCI
 
@@ -25,6 +25,8 @@ En realidad, somos conscientes de que esto no siempre puede ponerse en práctica
 En este tema se explican las restricciones y se proporcionan ejemplos de configuraciones compatibles y no compatibles.
 
 ## <a name="constraints"></a>Restricciones
+
+En esta sección se explican las restricciones en cuanto al tipo de unidad, el modelo, el tamaño y el número de unidades.
 
 ### <a name="type"></a>Tipo
 
@@ -184,5 +186,5 @@ En resumen, cada servidor del clúster debe tener los mismos tipos de unidades y
 
 Para obtener información relacionada, consulte:
 
-- [Antes de implementar Azure Stack HCI](../deploy/before-you-start.md)
+- [Requisitos del sistema](system-requirements.md)
 - [Elegir las unidades](choose-drives.md)

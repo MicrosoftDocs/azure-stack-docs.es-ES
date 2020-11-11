@@ -3,7 +3,7 @@ title: Recorrido del cliente desde la compra hasta la fase posterior a la implem
 description: Obtenga más información acerca de lo que cabe esperar de una implementación correcta in situ de un Centro de datos modular (MDC), desde el planeamiento hasta la etapa posterior a la implementación.
 services: azure-stack
 documentationcenter: ''
-author: asganesh
+author: ashika789
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -12,24 +12,24 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/27/2020
+ms.date: 11/04/2020
 ms.author: justinha
 ms.reviewer: asganesh
-ms.lastreviewed: 10/27/2020
-ms.openlocfilehash: f170ab6025effe394c891aa4fb3ad7111bac7133
-ms.sourcegitcommit: 716ca50bd198fd51a4eec5b40d5247f6f8c16530
+ms.lastreviewed: 11/04/2020
+ms.openlocfilehash: 12631a118600e67611294c87636cd2fa62bfaaea
+ms.sourcegitcommit: ecd98662194d2cdb15c22f8b1f99812fc5f4c15a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92898618"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93344786"
 ---
-# <a name="mdc-integration-overview"></a>Información general sobre la integración del MDC
+# <a name="modular-data-center-integration-overview"></a>Introducción sobre la integración del Centro de datos modular
 
 En este artículo se describe el proceso completo para la integración del MDC, desde la compra hasta la fase posterior a la implementación. La integración es un proyecto colaborativo entre el cliente y Microsoft. En las secciones siguientes se tratan las distintas fases de la escala de tiempo del proyecto y los pasos específicos para los miembros del proyecto.
 
 ## <a name="introduction"></a>Introducción
 
-En la tabla siguiente se describe lo que se puede esperar durante las distintas fases de la implementación.
+En la tabla siguiente se muestra lo que se puede esperar durante las distintas fases de la implementación.
 
 |   |Proceso de pedido  |Anterior a la implementación |Integración, validación y transporte |Implementación in situ  |Después de la implementación |
 |---|---------------|---------------|-----------------------------------|--------------------|----------------|
@@ -41,6 +41,19 @@ En la tabla siguiente se describe lo que se puede esperar durante las distintas 
 
 Su organización trabajará con Microsoft para realizar un pedido de un número de sistemas asignado. Una vez realizado el pedido, Microsoft entregará el MDC en su ubicación de EE. UU. Microsoft garantizará el cumplimiento de todos los requisitos de la cadena de suministro segura. 
 
+## <a name="hardware-delivery"></a>Entrega de hardware
+
+Microsoft trabajará con usted para asegurarse de que todo el hardware necesario llega a la ubicación estadounidense en el plazo asignado.  
+
+Es **fundamental** que todos los datos sobre requisitos previos estén bloqueados y disponibles *antes de que llegue el ingeniero de implementación de Microsoft in situ para implementar la solución*.
+
+- La hoja de cálculo de implementación tiene todos los datos rellenados. 
+- Ya se deben haber validado todos los certificados y deben estar listos.
+- Debe decidir el nombre de la región.
+- Todos los parámetros de integración de red están finalizados.
+
+>[!Tip]
+>Si alguno de estos datos ha cambiado, asegúrese de trabajar con la organización interna para asegurarse de que la información se actualiza antes de la llegada del ingeniero de implementación in situ. Esto impedirá que se produzcan retrasos en el proceso de implementación.
 
 ## <a name="pre-deployment"></a>Anterior a la implementación
 
@@ -51,30 +64,12 @@ Puede decidir cómo integrar Azure Stack Hub en el centro de datos. Microsoft ha
 
 Debe elegir los siguientes elementos:
 
-- **El modelo de conexión y el proveedor de identidades de Azure Stack Hub** . Puede implementar Azure Stack Hub, ya sea [conectado a Internet (y a Azure)](../operator/azure-stack-connected-deployment.md) o [desconectado](../operator/azure-stack-disconnected-deployment.md). Para sacar el máximo partido a Azure Stack Hub, incluidos los escenarios híbridos, es posible que quiera implementar la opción con conexión a Azure. La elección de Servicios de federación de Active Directory (AD FS) o de Azure Active Directory (Azure AD) es una decisión que se toma una sola vez y se realiza en el momento de la implementación. **Para cambiar el proveedor de identidades posteriormente es preciso volver a implementar todo el sistema.**
+- **El modelo de conexión y el proveedor de identidades de Azure Stack Hub**. Puede implementar Azure Stack Hub, ya sea [conectado a Internet (y a Azure)](../operator/azure-stack-connected-deployment.md) o [desconectado](../operator/azure-stack-disconnected-deployment.md). Para sacar el máximo partido a Azure Stack Hub, incluidos los escenarios híbridos, es posible que quiera implementar la opción con conexión a Azure. La elección de Servicios de federación de Active Directory (AD FS) o de Azure Active Directory (Azure AD) es una decisión que se toma una sola vez y se realiza en el momento de la implementación. **Para cambiar el proveedor de identidades posteriormente es preciso volver a implementar todo el sistema.**
 - **Integración de red.** La [integración de red](../operator/azure-stack-network.md) es fundamental para la implementación, funcionamiento y administración de los sistemas de Azure Stack Hub. Hay varias consideraciones que debe tener en cuenta para garantizar que la solución Azure Stack Hub es resistente y tiene una infraestructura física de alta disponibilidad compatible con sus operaciones.
 - **Integración de firewall.** Se recomienda que [use un firewall](../operator/azure-stack-firewall.md) para ayudar a proteger Azure Stack Hub. Los firewalls ayudan a evitar ataques de DDOS, detectar intrusiones e inspeccionar contenidos. Sin embargo, debe tener en cuenta que se puede convertir en un cuello de botella de rendimiento para los servicios de almacenamiento de Azure.
 - **Requisitos de certificado.** Es fundamental que todos los [certificados necesarios](../operator/azure-stack-pki-certs.md) estén disponibles antes de que un ingeniero llegue in situ al centro de datos para la implementación.
 
 Una vez recopilada toda la información de requisitos previos a través de la hoja de cálculo de implementación, Microsoft se asegurará de que comprobamos que todas las herramientas de validación se han ejecutado y le ayudamos con las demás preguntas que pueda tener. 
-
-## <a name="site-preparation"></a>Preparación del sitio
-
-Para obtener más información acerca de los requisitos para la preparación de sitios, consulte la Guía de inicio rápido.
-
-## <a name="hardware-delivery"></a>Entrega de hardware
-
-Microsoft trabajará con usted para asegurarse de que todo el hardware necesario llega a la ubicación estadounidense en el plazo asignado.  
-
-Es **fundamental** que todos los datos sobre requisitos previos estén bloqueados y disponibles *antes de que llegue el ingeniero de implementación de Microsoft in situ para implementar la solución* .
-
-- La hoja de cálculo de implementación tiene todos los datos rellenados. 
-- Ya se deben haber validado todos los certificados y deben estar listos.
-- Debe decidir el nombre de la región.
-- Todos los parámetros de integración de red están finalizados.
-
->[!Tip]
->Si alguno de estos datos ha cambiado, asegúrese de trabajar con la organización interna para asegurarse de que la información se actualiza antes de la llegada del ingeniero de implementación in situ. Esto impedirá que se produzcan retrasos en el proceso de implementación.
 
 ## <a name="onsite-deployment"></a>Implementación in situ
 
@@ -108,5 +103,5 @@ Acciones que debe realizar el ingeniero de implementación de Microsoft:
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Obtenga más información sobre los [pasos para instalar y configurar un Centro de datos modular](deployment-overview.md).
+[Introducción a la implementación del Centro de datos modular](deployment-overview.md).
 

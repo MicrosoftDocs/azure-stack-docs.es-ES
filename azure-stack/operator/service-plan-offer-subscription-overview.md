@@ -7,12 +7,12 @@ ms.date: 12/18/2019
 ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 10/01/2019
-ms.openlocfilehash: 076ea0efb7307ce9a87b04c19608a5b3c723d3f4
-ms.sourcegitcommit: e6665cfb15fae57218e58cd6de6053f16c1f9044
+ms.openlocfilehash: 00a44e66563bbb038928c55f1f643f2ca0ffbd37
+ms.sourcegitcommit: 9ecf9c58fbcc4bc42c1fdc688f370c643c761a29
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89274082"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93327477"
 ---
 # <a name="azure-stack-hub-services-plans-offers-subscriptions-overview"></a>Introducción a los servicios, los planes, las ofertas y las suscripciones de Azure Stack Hub
 
@@ -63,7 +63,7 @@ Para ayudarle a administrar la capacidad de la nube, puede usar *cuotas* configu
 Puede configurar cuotas por región. Por ejemplo, un plan que proporciona servicios de proceso para la región A puede tener una cuota de dos máquinas virtuales.
 
 >[!NOTE]
->En el Kit de desarrollo de Azure Stack (ASDK), solo hay una región (denominada *local*) disponible.
+>En el Kit de desarrollo de Azure Stack (ASDK), solo hay una región (denominada *local* ) disponible.
 
 Más información sobre los [tipos de cuota en Azure Stack Hub](azure-stack-quota-types.md).
 
@@ -90,11 +90,11 @@ Cuando se [crea una oferta](azure-stack-create-offer.md), debe incluir al menos 
 
 Cuando planifique las ofertas, tenga en cuenta los puntos siguientes:
 
-**Ofertas de prueba**: utilice las ofertas de prueba para atraer a usuarios nuevos, que luego pueden actualizar a servicios adicionales. Para crear una oferta de prueba, cree un pequeño [plan base](service-plan-offer-subscription-overview.md#base-plan) con un plan de complementos opcional mayor. Como alternativa, puede crear una oferta de evaluación compuesta por un plan base pequeño y una oferta independiente con un plan de "pago por uso" mayor.
+**Ofertas de prueba** : utilice las ofertas de prueba para atraer a usuarios nuevos, que luego pueden actualizar a servicios adicionales. Para crear una oferta de prueba, cree un pequeño [plan base](service-plan-offer-subscription-overview.md#base-plan) con un plan de complementos opcional mayor. Como alternativa, puede crear una oferta de evaluación compuesta por un plan base pequeño y una oferta independiente con un plan de "pago por uso" mayor.
 
-**Planificación de capacidad**: es posible que le preocupe que los usuarios acaparen grandes cantidades de recursos y atasquen el sistema para todos los usuarios. Para mejorar el rendimiento, puede [configurar sus planes con cuotas](service-plan-offer-subscription-overview.md#plans) para limitar el uso.
+**Planificación de capacidad** : es posible que le preocupe que los usuarios acaparen grandes cantidades de recursos y atasquen el sistema para todos los usuarios. Para mejorar el rendimiento, puede [configurar sus planes con cuotas](service-plan-offer-subscription-overview.md#plans) para limitar el uso.
 
-**Proveedores delegados**: puede conceder a otros usuarios la capacidad de crear ofertas en su entorno. Por ejemplo, si es proveedor de servicios, puede [delegar](azure-stack-delegated-provider.md) esta funcionalidad en sus distribuidores. O bien, si es una organización, puede delegar en otras divisiones o subsidiarias.
+**Proveedores delegados** : puede conceder a otros usuarios la capacidad de crear ofertas en su entorno. Por ejemplo, si es proveedor de servicios, puede [delegar](azure-stack-delegated-provider.md) esta funcionalidad en sus distribuidores. O bien, si es una organización, puede delegar en otras divisiones o subsidiarias.
 
 ## <a name="subscriptions"></a>Suscripciones
 
@@ -105,6 +105,8 @@ Los usuarios crean otras suscripciones y obtienen acceso a las suscripciones exi
 Como operador de Azure Stack Hub, puede ver información sobre las suscripciones de inquilinos, pero no puede acceder al contenido de estas a menos que un administrador de inquilinos de esa suscripción le agregue explícitamente mediante el control de acceso basado en roles. Esto permite a los inquilinos aplicar la separación de poderes y responsabilidades entre el operador de Azure Stack Hub y los espacios de inquilino. 
 
 La excepción a este caso es una situación en la que el propietario de la suscripción no puede proporcionar al operador acceso a la suscripción, lo que requiere que el administrador asuma la propiedad de la suscripción como se indica en [Cambio del propietario de facturación de las suscripciones de usuario de Azure Stack Hub](azure-stack-change-subscription-owner.md).
+
+Si la instancia de Azure Stack Hub está desconectada y tiene dos dominios diferentes en los que los usuarios del dominio 1 crean suscripciones que consumen los usuarios del dominio 2, puede que algunas suscripciones aparezcan en el portal de administración, pero no en el portal de usuarios. Para solucionar este comportamiento, haga que los usuarios del dominio 1 establezcan el RBAC correcto para las suscripciones del dominio 2.
 
 ### <a name="default-provider-subscription"></a>Suscripción de proveedor predeterminada
 

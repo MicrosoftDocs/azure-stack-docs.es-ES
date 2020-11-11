@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 08/11/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: 075198e9045ac2d735f2113164e7fc4e24b7934f
-ms.sourcegitcommit: 362081a8c19e7674c3029c8a44d7ddbe2deb247b
+ms.openlocfilehash: 2d2db45af0df86ebe6ea210df9b4a86da22c3303
+ms.sourcegitcommit: 296c95cad20ed62bdad0d27f1f5246bfc1c81d5e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91899523"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93064487"
 ---
 # <a name="set-up-a-cluster-witness"></a>Configuración de un testigo del clúster
 
@@ -21,20 +21,20 @@ La configuración de un recurso de testigo es obligatoria para todos los clúste
 
 Puede usar un recurso compartido de archivos de SMB como testigo o utilizar un testigo en la nube de Azure. Le recomendamos que use un testigo en la nube de Azure, siempre que todos los nodos de servidor del clúster tengan una conexión a Internet confiable. Para obtener más información, consulte [Implementación de un testigo en la nube para un clúster de conmutación por error](/windows-server/failover-clustering/deploy-cloud-witness).
 
-En el caso de los testigos de recurso compartido de archivos, existen requisitos para el servidor de archivos. Para obtener más información, consulte el artículo [Antes de implementar Azure Stack HCI](before-you-start.md).
+En el caso de los testigos de recurso compartido de archivos, existen requisitos para el servidor de archivos. Para más información, consulte [Requisitos del sistema](../concepts/system-requirements.md).
 
 ## <a name="set-up-a-witness-using-windows-admin-center"></a>Configuración de un testigo mediante Windows Admin Center
 
 1. En Windows Admin Center, seleccione **Administrador de clústeres** en la flecha desplegable de la parte superior.
-1. En **Conexiones de clúster**, seleccione el clúster.
-1. En **Herramientas**, seleccione **Configuración**.
+1. En **Conexiones de clúster** , seleccione el clúster.
+1. En **Herramientas** , seleccione **Configuración**.
 1. En el panel derecho, seleccione **Testigo**.
 1. En **Witness type** (Tipo de testigo), seleccione una de las siguientes opciones:
-      - **Testigo en la nube**: escriba el nombre, la clave de acceso y la dirección URL del punto de conexión de la cuenta de Azure Storage como se indica a continuación.
-      - **Testigo de recurso compartido de archivos**: escriba la ruta de acceso del recurso compartido de archivos "(//server/share)".
+      - **Testigo en la nube** : escriba el nombre, la clave de acceso y la dirección URL del punto de conexión de la cuenta de Azure Storage como se indica a continuación.
+      - **Testigo de recurso compartido de archivos** : escriba la ruta de acceso del recurso compartido de archivos "(//server/share)".
 
 > [!NOTE]
-> La tercera opción, **Testigo de disco**, no es adecuada para usarse en clústeres extendidos.
+> La tercera opción, **Testigo de disco** , no es adecuada para usarse en clústeres extendidos.
 
 ## <a name="create-an-azure-storage-account-to-use-as-a-cloud-witness"></a>Creación de una cuenta de Azure Storage para su uso como testigo en la nube
 
@@ -56,9 +56,9 @@ Cuando se usa la misma cuenta de Azure Storage para configurar el testigo en la 
     <br>Los nombres de las cuentas de almacenamiento deben tener entre 3 y 24 caracteres, y solo pueden incluir números y letras en minúscula. El nombre de la cuenta de almacenamiento también debe ser único dentro de Azure.
     1. En **Tipo de cuenta** seleccione **Uso general**.
     <br>No se puede usar una cuenta de almacenamiento de blobs para un testigo en la nube.
-    1. En **Rendimiento**, seleccione **Estándar**.
+    1. En **Rendimiento** , seleccione **Estándar**.
     <br>No se puede usar Azure Premium Storage para un testigo en la nube.
-    1. En **Replicación**, seleccione **Almacenamiento con redundancia local (LRS)** .
+    1. En **Replicación** , seleccione **Almacenamiento con redundancia local (LRS)** .
     <br>Los clústeres de conmutación por error usan el archivo de blob como punto de arbitraje, lo cual requiere algunas garantías de coherencia al leer los datos. Por tanto, debe seleccionar **Almacenamiento con redundancia local (LRS)** como tipo de **Replicación**.
 
 ### <a name="view-and-copy-storage-access-keys-for-your-azure-storage-account"></a>Visualización y copia de las claves de acceso de almacenamiento de la cuenta de Azure Storage
@@ -84,7 +84,7 @@ El testigo de la nube siempre usa **Blob** como tipo de almacenamiento. Azure us
 
 En Azure Portal, vaya a su cuenta de almacenamiento, haga clic en **Toda la configuración** y después en **Propiedades** para ver y copiar las direcciones URL del punto de conexión.  
 
-:::image type="content" source="media/witness/cloud-witness-2.png" alt-text="Claves de acceso del testigo en la nube" lightbox="media/witness/cloud-witness-2.png":::  
+:::image type="content" source="media/witness/cloud-witness-2.png" alt-text="Dirección URL del punto de conexión del testigo en la nube" lightbox="media/witness/cloud-witness-2.png":::  
 
 ## <a name="set-up-a-witness-using-windows-powershell"></a>Configuración de un testigo mediante Windows PowerShell
 

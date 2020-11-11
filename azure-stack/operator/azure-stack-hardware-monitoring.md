@@ -7,12 +7,12 @@ ms.date: 10/01/2020
 ms.author: sethm
 ms.reviewer: thoroet
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: aa2773519250a901be421f1177d2f940b1670644
-ms.sourcegitcommit: a1e2003fb9c6dacdc76f97614ff5a26a5b197b49
+ms.openlocfilehash: 6eb455dbcf30b1d77818b13d1fc7db6b6b11c6f9
+ms.sourcegitcommit: 62fc0592fdec706ade2b14e685448256ad0b4fe9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91623292"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93239570"
 ---
 # <a name="monitor-azure-stack-hub-hardware-components"></a>Supervisión de componentes de hardware de Azure Stack Hub
 
@@ -26,7 +26,7 @@ El sistema de mantenimiento y supervisión de Azure Stack Hub supervisa el estad
 - Unidades de arranque
 
 > [!NOTE]
-> Antes de habilitar esta característica, debe ponerse en contacto con el asociado de hardware para asegurarse de que estén listas. El asociado de hardware también proporcionará los pasos detallados para habilitar esta característica en el controlador de administración de placa base (BMC).
+> Antes de habilitar esta característica, debe ponerse en contacto con el asociado de hardware para asegurarse de que estén listas. El asociado de hardware también proporcionará los pasos detallados para habilitar esta característica en el controlador de administración de placa base (BMC). El cifrado del usuario del controlador de administración de la placa base debe establecerse en AES para la compilación 2005 y versiones posteriores. 
 
 ## <a name="snmp-listener-scenario"></a>Escenario del cliente de escucha de SNMP
 

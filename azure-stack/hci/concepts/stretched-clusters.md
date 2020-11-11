@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 07/21/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: ecf7974cec80888b149454c0a2ff90eb48c2e9e3
-ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
+ms.openlocfilehash: 611f76491f6edd5cb8700a13e79c0769c02c4fad
+ms.sourcegitcommit: 296c95cad20ed62bdad0d27f1f5246bfc1c81d5e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86868163"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93064759"
 ---
 # <a name="stretched-clusters-overview"></a>Información general sobre clústeres extendidos
 
@@ -44,7 +44,7 @@ En el diagrama siguiente se muestran el sitio 1 y el sitio 2 como sitios activos
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Más información sobre los requisitos de hardware y de otro tipo para los clústeres extendidos. Consulte [Antes de empezar](../deploy/before-you-start.md).
+- Más información sobre los requisitos de hardware y de otro tipo para los clústeres extendidos. Consulte [Requisitos del sistema](system-requirements.md).
 - Aprenda a implementar un clúster extendido con Windows Admin Center. Consulte [Creación de un clúster con Windows Admin Center](../deploy/create-cluster.md).
 - Aprenda a implementar un clúster extendido con PowerShell. Consulte [Creación de un clúster con PowerShell](../deploy/create-cluster-powershell.md).
 - Aprenda a crear volúmenes y configurar la replicación para clústeres extendidos. Consulte [Creación de volúmenes y configuración de la replicación para clústeres extendidos](../manage/create-stretched-volumes.md).

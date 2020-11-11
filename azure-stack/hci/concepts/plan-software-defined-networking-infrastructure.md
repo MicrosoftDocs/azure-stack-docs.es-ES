@@ -6,13 +6,13 @@ ms.topic: conceptual
 ms.assetid: ea7e53c8-11ec-410b-b287-897c7aaafb13
 ms.author: anpaul
 author: AnirbanPaul
-ms.date: 10/16/2020
-ms.openlocfilehash: 6df469fcc6997b1f56a552bc141692c7a8a49808
-ms.sourcegitcommit: 301e571626f8e85556d9eabee3f385d0b81fdef4
+ms.date: 10/28/2020
+ms.openlocfilehash: d75e22814afcb9610bdd1f9af3824d3e12e3199b
+ms.sourcegitcommit: 296c95cad20ed62bdad0d27f1f5246bfc1c81d5e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92157689"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93064572"
 ---
 # <a name="plan-a-software-defined-network-infrastructure"></a>Planeamiento de una infraestructura de red definida por software
 
@@ -25,13 +25,13 @@ Obtenga información sobre cómo planear la implementación de una infraestructu
 
 ## <a name="prerequisites"></a>Requisitos previos
 Hay varios requisitos previos de hardware y software para una infraestructura de red definida por software, entre los que se incluyen:
-- **Grupos de seguridad y registro DNS dinámico** . Debe preparar el centro de datos para la implementación del rol Controladora de red, para lo cual se necesita un conjunto de máquinas virtuales. Para poder implementar Controladora de red, debe configurar los grupos de seguridad y el registro DNS dinámico.
+- **Grupos de seguridad y registro DNS dinámico**. Debe preparar el centro de datos para la implementación del rol Controladora de red, para lo cual se necesita un conjunto de máquinas virtuales. Para poder implementar Controladora de red, debe configurar los grupos de seguridad y el registro DNS dinámico.
 
     Para más información acerca de la implementación de Controladora de red para el centro de datos, consulte [Requisitos de implementación de Controladora de red](/windows-server/networking/sdn/plan/installation-and-preparation-requirements-for-deploying-network-controller).
 
-- **Red física** . Necesita acceso a los dispositivos de red física para configurar las redes de área local virtual, el enrutamiento y el Protocolo de puerta de enlace de borde (BGP). En este tema se proporcionan instrucciones para la configuración manual de conmutadores, así como opciones para usar el emparejamiento BGP en conmutadores y enrutadores de nivel 3, o en una máquina virtual de servidor de enrutamiento y acceso remoto (RRAS).
+- **Red física**. Necesita acceso a los dispositivos de red física para configurar las redes de área local virtual, el enrutamiento y el Protocolo de puerta de enlace de borde (BGP). En este tema se proporcionan instrucciones para la configuración manual de conmutadores, así como opciones para usar el emparejamiento BGP en conmutadores y enrutadores de nivel 3, o en una máquina virtual de servidor de enrutamiento y acceso remoto (RRAS).
 
-- **Hosts de proceso físico** . Estos hosts ejecutan Hyper-V y son necesarios para hospedar una infraestructura de red definida por software y máquinas virtuales de inquilino. Se necesita un hardware de red específico en estos hosts para obtener el mejor rendimiento, como se indica en la sección [Hardware de red](#network-hardware).
+- **Hosts de proceso físico**. Estos hosts ejecutan Hyper-V y son necesarios para hospedar una infraestructura de red definida por software y máquinas virtuales de inquilino. Se necesita un hardware de red específico en estos hosts para obtener el mejor rendimiento, como se describe en [Requisitos de hardware de SDN](system-requirements.md#sdn-hardware-requirements).
 
 ## <a name="physical-and-logical-network-configuration"></a>Configuración de la red física y lógica
 Cada host de proceso físico requiere conectividad de red a través de uno o varios adaptadores de red conectados a un puerto del conmutador físico. Una [VLAN](https://en.wikipedia.org/wiki/Virtual_LAN) de nivel 2 admite redes divididas en varios segmentos de red lógica.
@@ -108,50 +108,10 @@ Las máquinas configuradas para conectarse a varias redes como, por ejemplo, las
 - En el caso de las máquinas virtuales de SLB/MUX, use la red de administración como la puerta de enlace predeterminada.
 - En el caso de las máquinas virtuales de puerta de enlace, use la red del proveedor de HNV como puerta de enlace predeterminada. Esto se debe establecer en la NIC de front-end de las máquinas virtuales de puerta de enlace.
 
-## <a name="network-hardware"></a>Hardware de red
-En esta sección se proporcionan los requisitos de implementación de hardware de red para las NIC y los conmutadores físicos.
+## <a name="switches-and-routers"></a>Conmutadores y enrutadores
+Para ayudar a configurar el conmutador físico o enrutador, hay disponible un conjunto de archivos de configuración de ejemplo para diversos modelos y proveedores de conmutadores en el [repositorio de GitHub de Microsoft SDN](https://github.com/microsoft/SDN/tree/master/SwitchConfigExamples). Se proporciona un archivo Léame y comandos comprobados de la interfaz de la línea de comandos (CLI) para conmutadores específicos.
 
-### <a name="network-interface-cards-nics"></a>Tarjetas de interfaz de red (NIC)
-Las NIC que se usan en los hosts de Hyper-V y los hosts de almacenamiento requieren funcionalidades específicas para lograr el mejor rendimiento.
-
-El acceso directo a memoria remota (RDMA) es una técnica de omisión de kernel que permite transferir grandes cantidades de datos sin usar la CPU del host, lo cual libera la CPU para realizar otros trabajos. Switch Embedded Teaming (SET) es una solución alternativa de formación de equipos de NIC que puede usar en entornos que incluyen Hyper-V y la pila de SDN. SET integra la funcionalidad de formación de equipos de NIC en el conmutador virtual de Hyper-V.
-
-Para más información, consulte [Acceso directo a memoria remota (RDMA) y Switch Embedded Teaming (SET)](/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming).
-
-Para tener en cuenta la sobrecarga en el tráfico de red virtual del inquilino causada por los encabezados de encapsulación VXLAN o NVGRE, la unidad de transmisión máxima (MTU) del tejido de red del nivel 2 (conmutadores y hosts) debe establecerse en un valor mayor o igual a 1674 bytes \(incluidos los encabezados Ethernet de nivel 2\).
-
-Las NIC que admiten la nueva palabra clave *EncapOverhead* de adaptador avanzado establecen la unidad de transmisión máxima automáticamente a través del agente de host de Controladora de red. Las NIC que no admiten la nueva palabra clave *EncapOverhead* deben establecer el tamaño de la unidad de transmisión máxima de forma manual en cada host físico mediante la palabra clave *JumboPacket* u otra palabra clave \(equivalente\).
-
-### <a name="switches"></a>Conmutadores
-Al seleccionar un conmutador físico y un enrutador para su entorno, asegúrese de que admite el siguiente conjunto de funcionalidades:
-- La configuración de la unidad de transmisión máxima del switchport es \(obligatoria\)
-- Se debe establecer la unidad de transmisión máxima en 1674 bytes o más \(incluido el encabezado L2-Ethernet\)
-- Se \(requieren\) protocolos L3
-- Enrutamiento multidireccional de igual costo (ECMP)
-- ECMP basado en BGP \(IETF RFC 4271\)\-
-
-Las implementaciones deben admitir las instrucciones obligatorias de los siguientes estándares IETF:
-- RFC 2545: [extensiones multiprotocolo BGP-4 para el enrutamiento entre dominios IPv6](https://tools.ietf.org/html/rfc2545)
-- RFC 4760: [extensiones multiprotocolo para BGP-4](https://tools.ietf.org/html/rfc4760)
-- RFC 4893: [compatibilidad con BGP para el espacio de números del sistema autónomo de cuatro octetos](https://tools.ietf.org/html/rfc4893)
-- RFC 4456: [Reflejo de rutas BGP: una alternativa al protocolo BGP interno de malla completa (IBGP)](https://tools.ietf.org/html/rfc4456)
-- RFC 4724: [mecanismo de reinicio estable para BGP](https://tools.ietf.org/html/rfc4724)
-
-Se requieren los siguientes protocolos de etiquetado:
-- VLAN: aislamiento de varios tipos de tráfico
-- Tronco 802.1q
-
-Los elementos siguientes proporcionan control de vínculos:
-- Calidad de servicio \(QoS\) \(PFC solo es necesario si se usa RoCE\)
-- Selección de tráfico mejorada \(802.1Qaz\)
-- Control de flujo basado en prioridades (PFC) \(802.1p/Q y 802.1Qbb\)
-
-Los siguientes elementos proporcionan disponibilidad y redundancia:
-- Disponibilidad del conmutador (obligatorio)
-- Se requiere un enrutador de alta disponibilidad para realizar funciones de puerta de enlace. Puede proporcionarlo mediante el uso de un conmutador o enrutador de varios chasis, o tecnologías como el protocolo de redundancia de enrutador virtual (VRRP).
-
-### <a name="switch-configuration-examples"></a>Ejemplos de configuración de conmutadores
-Para ayudar a configurar el conmutador físico o enrutador, hay disponible un conjunto de archivos de configuración de ejemplo para diversos modelos y proveedores de conmutadores en el [repositorio de GitHub de Microsoft SDN](https://github.com/microsoft/SDN/tree/master/SwitchConfigExamples). Se proporciona un archivo Léame detallado y comandos comprobados de la interfaz de la línea de comandos (CLI) para conmutadores específicos.
+Para conocer los requisitos detallados de conmutadores y enrutadores, consulte [Requisitos de hardware de SDN](system-requirements.md#sdn-hardware-requirements).
 
 ## <a name="compute"></a>Compute
 Todos los hosts de Hyper-V deben tener instalado el sistema operativo adecuado, estar habilitados para Hyper-V y usar un conmutador virtual externo de Hyper-V con al menos un adaptador físico conectado a la red lógica de administración. El host debe ser accesible a través de una dirección IP de administración asignada a la NIC virtual del host de administración.

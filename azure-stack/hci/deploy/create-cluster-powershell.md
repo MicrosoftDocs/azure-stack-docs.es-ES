@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 08/11/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: c51a6296caac3c173650ee57af8e1d23b2473f26
-ms.sourcegitcommit: 877fe2207b569500aeefa6594eed990f15609776
+ms.openlocfilehash: 4bd669e04f2b4b4e1ef173a3a44e52d8c6067a60
+ms.sourcegitcommit: 296c95cad20ed62bdad0d27f1f5246bfc1c81d5e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90082501"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93064521"
 ---
 # <a name="create-an-azure-stack-hci-cluster-using-windows-powershell"></a>Creación de un clúster de Azure Stack HCI mediante Windows PowerShell
 
@@ -36,7 +36,7 @@ Si está interesado en realizar pruebas de Azure Stack HCI, pero tiene hardware 
 
 Antes de comenzar, asegúrese de que:
 
-- Ha leído los requisitos de hardware y de otro tipo en [Antes de implementar Azure Stack HCl](before-you-start.md).
+- Ha leído [Requisitos del sistema de Azure Stack HCI](../concepts/system-requirements.md).
 - Instale el sistema operativo de Azure Stack HCI en cada servidor del clúster. Consulte [Implementación del sistema operativo de Azure Stack HCI](operating-system.md).
 - Use una cuenta que sea miembro del grupo de administradores local en cada servidor.
 - Tiene permisos de Active Directory para crear objetos.
@@ -401,7 +401,7 @@ También puede definir un sitio *preferido* global, lo que significa que los rec
 
 La especificación de un sitio preferido para clústeres extendidos presenta las siguientes ventajas:
 
-- **Arranque en frío**: durante un arranque en frío, las máquinas virtuales se colocan en el sitio preferido.
+- **Arranque en frío** : durante un arranque en frío, las máquinas virtuales se colocan en el sitio preferido.
 
 - **Votación de cuórum**
   - Mediante el uso de un cuórum dinámico, la ponderación se reduce primero en el sitio pasivo (replicado) para garantizar que el sitio preferido sobreviva si todo lo demás sigue igual. Además, los nodos de servidor se eliminan del sitio pasivo en primer lugar durante la reagrupación después de eventos tales como errores de conectividad de red asimétrica.
