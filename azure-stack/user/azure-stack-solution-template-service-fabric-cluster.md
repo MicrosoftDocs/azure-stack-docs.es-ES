@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: shnatara
 ms.lastreviewed: 09/25/2019
-ms.openlocfilehash: 5347225398e6494d89ba70d6468a6657d13b58e0
-ms.sourcegitcommit: 34db213dc6549f21662ed44d090f55359cfe8469
+ms.openlocfilehash: 5fd3f9f3d4d13ccf2fa03d656ac76d9cab462103
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88564775"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94546283"
 ---
 # <a name="deploy-a-service-fabric-cluster-in-azure-stack-hub"></a>Implementación de un clúster de Service Fabric en Azure Stack Hub
 
@@ -38,9 +38,9 @@ Se necesitan los siguientes requisitos para implementar el clúster de Service F
    Este es el certificado que usa el cliente para autenticarse en el clúster de Service Fabric. Puede ser autofirmado. Consulte los [requisitos](/azure/service-fabric/service-fabric-cluster-security) para crear este certificado de cliente.
 
 1. **Los siguientes elementos deben estar disponibles en Marketplace de Azure Stack Hub:**
-    - **Windows Server 2016**: la plantilla usa la imagen de Windows Server 2016 para crear el clúster.  
-    - **Extensión de script personalizada**: extensión de máquina virtual de Microsoft.  
-    - **Configuración de estado deseado de PowerShell**: extensión de máquina virtual de Microsoft.
+    - **Windows Server 2016** : la plantilla usa la imagen de Windows Server 2016 para crear el clúster.  
+    - **Extensión de script personalizada** : extensión de máquina virtual de Microsoft.  
+    - **Configuración de estado deseado de PowerShell** : extensión de máquina virtual de Microsoft.
 
 
 ## <a name="add-a-secret-to-key-vault"></a>Incorporación de un secreto a Key Vault
@@ -80,7 +80,7 @@ Use el siguiente script para crear el identificador de Key Vault y agregar el *c
             $pfxCertObject = Get-ThumbprintFromPfx -PfxFilePath $PfxFilePath -Password $Password
     
             Write-Host "KeyVault id: " -ForegroundColor Green
-            (Get-AzureRmKeyVault -VaultName $KeyVaultName).ResourceId
+            (Get-AzKeyVault -VaultName $KeyVaultName).ResourceId
             
             Write-Host "Secret Id: " -ForegroundColor Green
             (Get-AzureKeyVaultSecret -VaultName $KeyVaultName -Name $keyVaultSecretName).id
@@ -97,15 +97,15 @@ Use el siguiente script para crear el identificador de Key Vault y agregar el *c
     $clusterCertPfxPassword = "Your_password_for_ClusterCert.pfx"
     #==============================================================================
     
-    Add-AzureRmEnvironment -Name AzureStack -ARMEndpoint $armEndpoint
-    Login-AzureRmAccount -Environment AzureStack -TenantId $tenantId
+    Add-AzEnvironment -Name AzureStack -ARMEndpoint $armEndpoint
+    Login-AzAccount -Environment AzureStack -TenantId $tenantId
     
     $rgName = "sfvaultrg"
     Write-Host "Creating Resource Group..." -ForegroundColor Yellow
-    New-AzureRmResourceGroup -Name $rgName -Location $location
+    New-AzResourceGroup -Name $rgName -Location $location
     
     Write-Host "Creating Key Vault..." -ForegroundColor Yellow
-    $Vault = New-AzureRmKeyVault -VaultName sfvault -ResourceGroupName $rgName -Location $location -EnabledForTemplateDeployment -EnabledForDeployment -EnabledForDiskEncryption
+    $Vault = New-AzKeyVault -VaultName sfvault -ResourceGroupName $rgName -Location $location -EnabledForTemplateDeployment -EnabledForDeployment -EnabledForDiskEncryption
     
     Write-Host "Publishing certificate to Vault..." -ForegroundColor Yellow
     Publish-SecretToKeyVault -PfxFilePath $clusterCertPfxPath -Password $clusterCertPfxPassword -KeyVaultName $vault.VaultName
@@ -120,7 +120,7 @@ Para más información, consulte [Administrar Key Vault en Azure Stack Hub media
 
    ![Seleccione el clúster de Service Fabric](./media/azure-stack-solution-template-service-fabric-cluster/image2.png)
 
-2. Para cada página como, por ejemplo, *Aspectos básicos*, rellene el formulario de implementación. Use los valores predeterminados si no está seguro de un valor.
+2. Para cada página como, por ejemplo, *Aspectos básicos* , rellene el formulario de implementación. Use los valores predeterminados si no está seguro de un valor.
 
     En caso de implementaciones en una instancia desconectada de Azure Stack Hub o para implementar otra versión de Service Fabric, descargue el paquete de implementación de Service Fabric y el correspondiente paquete del entorno de ejecución, y hospédelo en un blob de Azure Stack Hub. Proporcione estos valores para los campos **Service Fabric deployment package URL** (URL del paquete de implementación de Service Fabric) y **Service Fabric runtime package URL** (URL del paquete del entorno de ejecución de Service Fabric).
     > [!NOTE]  
@@ -133,13 +133,13 @@ Para más información, consulte [Administrar Key Vault en Azure Stack Hub media
    ![Aspectos básicos](media/azure-stack-solution-template-service-fabric-cluster/image3.png)
 
     
-3. En la página *Configuración de red*, puede especificar los puertos específicos que debe abrir para las aplicaciones:
+3. En la página *Configuración de red* , puede especificar los puertos específicos que debe abrir para las aplicaciones:
 
    ![Configuración de red](media/azure-stack-solution-template-service-fabric-cluster/image4.png)
 
 4. En la página *Security* (Seguridad), agregue los valores que obtuvo al [crear la instancia de Azure Key Vault](#add-a-secret-to-key-vault) y cargar el secreto.
 
-   En *Huella digital del certificado de cliente de administración*, especifique la huella digital del *certificado de cliente de administración*. (Consulte los [requisitos previos](#prerequisites)).
+   En *Huella digital del certificado de cliente de administración* , especifique la huella digital del *certificado de cliente de administración*. (Consulte los [requisitos previos](#prerequisites)).
    
    - Source Key Vault (Almacén de claves de origen):  especifique toda la cadena de `keyVault id` a partir de los resultados del script. 
    - Cluster Certificate URL (URL del certificado de clúster): especifique la dirección URL completa de `Secret Id` a partir de los resultados del script. 
@@ -165,7 +165,7 @@ Puede acceder al clúster de Service Fabric mediante el uso de Service Fabric Ex
 
     a. Abra Internet Explorer y vaya a **Opciones de Internet** > **Contenido** > **Certificados**.
   
-    b. En Certificados, seleccione **Importar** para iniciar el *Asistente para importación de certificados*y, a continuación, haga clic en **Siguiente**. En la página *Archivo para importar* haga clic en **Examinar**y seleccione el **certificado de cliente de administración** que proporcionó a la plantilla de Azure Resource Manager.
+    b. En Certificados, seleccione **Importar** para iniciar el *Asistente para importación de certificados* y, a continuación, haga clic en **Siguiente**. En la página *Archivo para importar* haga clic en **Examinar** y seleccione el **certificado de cliente de administración** que proporcionó a la plantilla de Azure Resource Manager.
         
        > [!NOTE]  
        > Este certificado no es el certificado de clúster que se agregó previamente a la instancia de Key Vault.  
@@ -174,7 +174,7 @@ Puede acceder al clúster de Service Fabric mediante el uso de Service Fabric Ex
 
        ![Intercambio de información personal](media/azure-stack-solution-template-service-fabric-cluster/image8.png)  
 
-    d. En la página *Almacén de certificados*, seleccione **Personal** y complete el asistente.  
+    d. En la página *Almacén de certificados* , seleccione **Personal** y complete el asistente.  
        ![Almacén de certificados](media/azure-stack-solution-template-service-fabric-cluster/image9.png)  
 1. Para buscar el nombre de dominio completo del clúster de Service Fabric:  
 
@@ -191,7 +191,7 @@ Puede acceder al clúster de Service Fabric mediante el uso de Service Fabric Ex
 1. En el explorador, vaya a `https://*FQDN*:19080`. Sustituya *FQDN* por el FQDN del clúster de Service Fabric del paso 2.   
    Si ha usado un certificado autofirmado, recibirá una advertencia de que la conexión no es segura. Para continuar con el sitio web, seleccione **More information** (Más información) y, a continuación, **Go on to the webpage** (Acceder a la página web). 
 
-1. Para autenticar el sitio debe seleccionar el certificado que va a usar. Seleccione **Más opciones**, seleccione el certificado adecuado y, finalmente, haga clic en **Aceptar** para conectarse a Service Fabric Explorer. 
+1. Para autenticar el sitio debe seleccionar el certificado que va a usar. Seleccione **Más opciones** , seleccione el certificado adecuado y, finalmente, haga clic en **Aceptar** para conectarse a Service Fabric Explorer. 
 
    ![Authenticate](media/azure-stack-solution-template-service-fabric-cluster/image14.png)
 
@@ -207,9 +207,9 @@ Puede acceder al clúster de Service Fabric mediante el uso de Service Fabric Ex
     
       ![Panel de control](media/azure-stack-solution-template-service-fabric-cluster/image15.png) 
 
-    b. En la pestaña **Avanzado** en *Propiedades del sistema*, seleccione **Variables de entorno**.  
+    b. En la pestaña **Avanzado** en *Propiedades del sistema* , seleccione **Variables de entorno**.  
 
-    c. En *Variable del sistema*, edite **Ruta de acceso** y asegúrese de que **C:\\Archivos de programa\\Microsoft Service Fabric\\bin\\Fabric\\Fabric.Code** está en la parte superior de la lista de variables de entorno.  
+    c. En *Variable del sistema* , edite **Ruta de acceso** y asegúrese de que **C:\\Archivos de programa\\Microsoft Service Fabric\\bin\\Fabric\\Fabric.Code** está en la parte superior de la lista de variables de entorno.  
 
       ![Lista de variables de entorno](media/azure-stack-solution-template-service-fabric-cluster/image16.png)
 

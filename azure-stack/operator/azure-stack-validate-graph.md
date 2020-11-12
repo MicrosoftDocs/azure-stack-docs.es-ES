@@ -4,16 +4,16 @@ titleSuffix: Azure Stack Hub
 description: Use Azure Stack Hub Readiness Checker para validar la integración de Graph con Azure Stack Hub.
 author: BryanLa
 ms.topic: how-to
-ms.date: 03/04/2020
+ms.date: 10/19/2020
 ms.author: bryanla
 ms.reviewer: jerskine
-ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: e4af68d1d4f9a44bb957f318f0f13ec1d2c9ecdd
-ms.sourcegitcommit: d930d52e27073829b8bf8ac2d581ec2accfa37e3
+ms.lastreviewed: 10/19/2020
+ms.openlocfilehash: 1abb44838e0c70764d08a4aa47a0fdf73660072d
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82173852"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94545608"
 ---
 # <a name="validate-graph-integration-for-azure-stack-hub"></a>Validación de la integración de Graph con Azure Stack Hub
 
@@ -39,7 +39,7 @@ Deben cumplirse los siguientes requisitos previos.
 **Equipo donde se ejecuta la herramienta:**
 
 * Windows 10 o Windows Server 2016 con conectividad de dominio.
-* Azure PowerShell 5.1 o posterior. Para comprobar la versión, ejecute el siguiente comando de PowerShell y luego revise la versión *principal* y las versiones *secundarias*:
+* Azure PowerShell 5.1 o posterior. Para comprobar la versión, ejecute el siguiente comando de PowerShell y luego revise la versión *principal* y las versiones *secundarias* :
     ```powershell
     $PSVersionTable.PSVersion
     ```
@@ -56,7 +56,7 @@ Deben cumplirse los siguientes requisitos previos.
 1. En un equipo que cumpla los requisitos previos, abra un símbolo del sistema administrativo de PowerShell y ejecute el siguiente comando para instalar AzsReadinessChecker:
 
     ```powershell
-    Install-Module Microsoft.AzureStack.ReadinessChecker -Force
+    Install-Module Microsoft.AzureStack.ReadinessChecker -Force -AllowPrerelease
     ```
 
 1. Desde el símbolo del sistema de PowerShell, ejecute el comando siguiente para establecer la variable *$graphCredential* en la cuenta del gráfico. Reemplace `contoso\graphservice` con su cuenta mediante el formato `domain\username`.
@@ -108,7 +108,7 @@ De forma predeterminada, ambos archivos se escriben en `C:\Users\<username>\AppD
 Uso:
 
 * `-OutputPath`: el parámetro de *ruta de acceso* al final del comando de ejecución para especificar otra ubicación para el informe.
-* `-CleanReport`: el parámetro al final del comando de ejecución para borrar*AzsReadinessCheckerReport.json* de la información del informe previo. Para más información, consulte [Informe de validación para Azure Stack Hub](azure-stack-validation-report.md).
+* `-CleanReport`: el parámetro al final del comando de ejecución para borrar *AzsReadinessCheckerReport.json* de la información del informe previo. Para más información, consulte [Informe de validación para Azure Stack Hub](azure-stack-validation-report.md).
 
 ## <a name="validation-failures"></a>Errores de validación
 

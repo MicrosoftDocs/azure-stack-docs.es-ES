@@ -6,16 +6,16 @@ services: azure-stack
 documentationcenter: ''
 author: IngridAtMicrosoft
 ms.topic: how-to
-ms.date: 03/04/2020
+ms.date: 10/19/2020
 ms.author: inhenkel
 ms.reviewer: ppacent
-ms.lastreviewed: 01/08/2019
-ms.openlocfilehash: c0a077d8278361370a1781260c3f9c2bb2b11f55
-ms.sourcegitcommit: c1f48c19c8a9c438fd22298bc570c12a9b19bb45
+ms.lastreviewed: 10/19/2020
+ms.openlocfilehash: 201acbad11011731a8e7017d14b39be120e460d3
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86410613"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94545817"
 ---
 # <a name="validate-azure-stack-hub-pki-certificates"></a>Preparación de certificados PKI de Azure Stack Hub
 
@@ -63,7 +63,7 @@ Siga estos pasos para validar los certificados PKI de Azure Stack Hub para la im
 1. Instale **AzsReadinessChecker** desde un símbolo del sistema de PowerShell (5.1 o superior) mediante la ejecución del siguiente cmdlet:
 
     ```powershell  
-        Install-Module Microsoft.AzureStack.ReadinessChecker -force 
+        Install-Module Microsoft.AzureStack.ReadinessChecker -Force -AllowPrerelease
     ```
 
 2. Cree la estructura de directorios del paquete. En el ejemplo siguiente, puede cambiar `<C:\Certificates\Deployment>` por la ruta de un nuevo directorio de su elección.
@@ -211,9 +211,9 @@ Siga estos pasos para validar los certificados PKI de Azure Stack Hub para la im
 
 ### <a name="known-issues"></a>Problemas conocidos
 
-**Síntoma**: se omiten las pruebas
+**Síntoma** : se omiten las pruebas
 
-**Causa**: AzsReadinessChecker omite varias pruebas si no se cumple una dependencia:
+**Causa** : AzsReadinessChecker omite varias pruebas si no se cumple una dependencia:
 
  - Otros certificados se omiten si se produce un error en la cadena de certificados.
 

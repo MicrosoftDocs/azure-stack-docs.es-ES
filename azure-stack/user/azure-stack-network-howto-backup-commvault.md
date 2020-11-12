@@ -7,12 +7,12 @@ ms.date: 04/20/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/30/2019
-ms.openlocfilehash: 5e46d9ee2f23aa58ec3be3735c29f1dfb104c9ee
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.openlocfilehash: 9308e8b017201119a7179c78dbeb99006f4ebfff
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90571888"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94547099"
 ---
 # <a name="back-up-your-vm-on-azure-stack-hub-with-commvault"></a>Copia de seguridad de una máquina virtual en Azure Stack Hub con Commvault
 
@@ -124,7 +124,7 @@ Tendrá que saber si el administrador de identidades es Azure AD o ADFS. En la 
 
 2. Instale PowerShell en Azure Stack Hub y las herramientas de Azure Stack Hub en la máquina virtual de Commvault.
 
-    a. Para obtener instrucciones sobre cómo instalar PowerShell en Azure Stack Hub, consulte [Instalación de PowerShell para Azure Stack Hub](../operator/azure-stack-powershell-install.md?toc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fuser%2FTOC.json&bc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fbreadcrumb%2Ftoc.json).  
+    a. Para obtener instrucciones sobre cómo instalar PowerShell en Azure Stack Hub, consulte [Instalación de PowerShell para Azure Stack Hub](../operator/powershell-install-az-module.md?toc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fuser%2FTOC.json&bc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fbreadcrumb%2Ftoc.json).  
     b. Para obtener instrucciones sobre cómo instalar las herramientas de Azure Stack Hub, consulte [Descarga de herramientas de Azure Stack Hub desde GitHub](../operator/azure-stack-powershell-download.md?toc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fuser%2FTOC.json%3Fview%3Dazs-1908&bc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fbreadcrumb%2Ftoc.json%3Fview%3Dazs-1908&view=azs-1908).
 
 3. Después de que Commvault se instala en su máquina virtual, abra Commcell Console. En Inicio, seleccione **Commvault** > **Commvault Commcell Console**.
@@ -145,13 +145,13 @@ Tendrá que saber si el administrador de identidades es Azure AD o ADFS. En la 
 
 9. Escriba la información de acceso de la cuenta de almacenamiento. Puede encontrar aquí instrucciones sobre la configuración de una cuenta de Azure Storage. Información de acceso:
 
-    -  **Host de servicio**: obtenga el nombre de la dirección URL de las propiedades del contenedor de blobs en el recurso. Por ejemplo, mi dirección URL era https:\//backuptest.blob.westus.stackpoc.com/mybackups y usé blob.westus.stackpoc.com en el host de servicio.
+    -  **Host de servicio** : obtenga el nombre de la dirección URL de las propiedades del contenedor de blobs en el recurso. Por ejemplo, mi dirección URL era https:\//backuptest.blob.westus.stackpoc.com/mybackups y usé blob.westus.stackpoc.com en el host de servicio.
     
-    -   **Nombre de cuenta**: use el nombre de la cuenta de almacenamiento. Puede encontrarlo en la hoja Access Keys (Claves de acceso) del recurso de almacenamiento.
+    -   **Nombre de cuenta** : use el nombre de la cuenta de almacenamiento. Puede encontrarlo en la hoja Access Keys (Claves de acceso) del recurso de almacenamiento.
     
-    -   **Clave de acceso**: obtenga la clave de acceso en la hoja Access Keys (Claves de acceso) del recurso de almacenamiento.
+    -   **Clave de acceso** : obtenga la clave de acceso en la hoja Access Keys (Claves de acceso) del recurso de almacenamiento.
     
-    -   **Contenedor**: nombre del contenedor. En este caso, mybackups.
+    -   **Contenedor** : nombre del contenedor. En este caso, mybackups.
     
     -   **Storage Class** (Clase de almacenamiento): deje este campo como la clase de almacenamiento predeterminada del contenedor de usuario.
 

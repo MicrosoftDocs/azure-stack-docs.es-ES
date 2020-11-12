@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 06/16/2020
 ms.author: justinha
 ms.lastreviewed: 06/16/2020
-ms.openlocfilehash: bacaccd664996af7dafa7fd6b7b3518b7dcaa851
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: b277eb9dcb1ac66af870db68c919e711aadc1ac7
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86488559"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94543517"
 ---
 # <a name="azure-stack-hub-administration-basics"></a>Aspectos básicos de la administración de Azure Stack Hub
 
@@ -114,7 +114,7 @@ En un entorno de ASDK, si un usuario no usa Escritorio remoto para conectarse al
 
 Los usuarios querrán saber cómo [acceder al portal de usuarios](../user/azure-stack-use-portal.md) o cómo conectarse a través de PowerShell. En un entorno de sistemas integrados, la dirección del portal de usuarios varía en función de la implementación. Tendrá que proporcionar a los usuarios la dirección URL correcta.
 
-Si usa PowerShell, puede que los usuarios deban registrar proveedores de recursos para poder usar los servicios. Un proveedor de recursos administra un servicio. Por ejemplo, el proveedor de recursos de red administra los recursos, como redes virtuales, interfaces de red y equilibradores de carga. Debe [instalar](azure-stack-powershell-install.md) PowerShell, [descargar](azure-stack-powershell-download.md) módulos adicionales y [configurar](../user/azure-stack-powershell-configure-user.md) PowerShell (que incluye el registro de proveedores de recursos).
+Si usa PowerShell, puede que los usuarios deban registrar proveedores de recursos para poder usar los servicios. Un proveedor de recursos administra un servicio. Por ejemplo, el proveedor de recursos de red administra los recursos, como redes virtuales, interfaces de red y equilibradores de carga. Debe [instalar](powershell-install-az-module.md) PowerShell, [descargar](azure-stack-powershell-download.md) módulos adicionales y [configurar](../user/azure-stack-powershell-configure-user.md) PowerShell (que incluye el registro de proveedores de recursos).
 
 **Suscripción a una oferta**
 
@@ -129,7 +129,7 @@ Para que un usuario pueda usar los servicios, debe [suscribirse a una oferta](az
 
 En el caso de un sistema integrado, hay un proceso de escalación y resolución coordinado entre Microsoft y nuestros asociados de hardware de fabricante de equipos originales (OEM).
 
-Si hay algún problema en los servicios en la nube, el soporte técnico se ofrece a través de Soporte técnico de Microsoft. Para abrir una solicitud de soporte técnico, seleccione el icono de Ayuda y soporte técnico (signo de interrogación) de la esquina superior derecha del portal de administración. Después, seleccione**Ayuda y soporte técnico** y, a continuación, **Nueva solicitud de soporte técnico** en la sección **Soporte técnico**.
+Si hay algún problema en los servicios en la nube, el soporte técnico se ofrece a través de Soporte técnico de Microsoft. Para abrir una solicitud de soporte técnico, seleccione el icono de Ayuda y soporte técnico (signo de interrogación) de la esquina superior derecha del portal de administración. Después, seleccione **Ayuda y soporte técnico** y, a continuación, **Nueva solicitud de soporte técnico** en la sección **Soporte técnico**.
 
 Si surge algún problema de implementación, aplicación de revisiones y actualizaciones, hardware (incluidas las unidades reemplazables en campo) o cualquier software específico de una marca de hardware, como el software que se ejecuta en el host del ciclo de vida del hardware, en primer lugar póngase en contacto con el proveedor de hardware OEM.
 
@@ -137,7 +137,7 @@ Para todo lo demás, póngase en contacto con Soporte técnico de Microsoft.
 
 ### <a name="azure-stack-development-kit-asdk"></a>Kit de desarrollo de Azure Stack (ASDK)
 
-En el caso de ASDK, puede dirigir las preguntas relacionadas con el soporte técnico a los [foros de Microsoft](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack). Para acceder a los foros, seleccione el icono de ayuda y soporte técnico (signo de interrogación) en la esquina superior derecha del portal de administración, luego seleccione **Ayuda y soporte técnico** y, finalmente, **Foros de MSDN** en la sección **Soporte técnico**. Estos foros se supervisan periódicamente. Dado que ASDK es un entorno de evaluación, el servicio de asistencia al cliente (CSS) de Microsoft no ofrece soporte técnico oficial.
+En el caso de ASDK, puede dirigir las preguntas relacionadas con el soporte técnico a los [foros de Microsoft](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack). Para acceder a los foros, seleccione el icono de ayuda y soporte técnico (signo de interrogación) en la esquina superior derecha del portal de administración, luego seleccione **Ayuda y soporte técnico** y, finalmente, **Foros de MSDN** en la sección **Soporte técnico**. Estos foros se supervisan periódicamente. Dado que ASDK es un entorno de evaluación, Soporte técnico de Microsoft no ofrece soporte técnico oficial.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

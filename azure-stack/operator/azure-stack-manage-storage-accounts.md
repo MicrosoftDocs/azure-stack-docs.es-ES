@@ -7,12 +7,12 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: xiaofmao
 ms.lastreviewed: 03/19/2019
-ms.openlocfilehash: a99339b2a8708bac8c20b5f2fb507e42fc7588de
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: 2e4882717b4dc708298df7b4ee9a8dc0ef2c1b9c
+ms.sourcegitcommit: 30ea43f486895828710297967270cb5b8d6a1a18
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86488661"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93415324"
 ---
 # <a name="manage-azure-stack-hub-storage-accounts"></a>Administración de cuentas de almacenamiento de Azure Stack Hub
 
@@ -37,12 +37,12 @@ Si está interesado en una cuenta de almacenamiento determinada, puede **filtrar
 **Para filtrar las cuentas:**
 
 1. Seleccione **Filtrar** en la parte superior del panel.
-2. En el panel Filtro, puede especificar el **nombre de cuenta**, el **identificador de suscripción** o el **estado** para ajustar la lista de cuentas de almacenamiento que se mostrará. Use esta información de la manera adecuada.
+2. En el panel Filtro, puede especificar el **nombre de cuenta** , el **identificador de suscripción** o el **estado** para ajustar la lista de cuentas de almacenamiento que se mostrará. Use esta información de la manera adecuada.
 3. A medida que escriba, la lista aplicará automáticamente el filtro.
 
     ![Filtrado de las cuentas de almacenamiento de Azure Stack Hub](media/azure-stack-manage-storage-accounts/image5.png)
 
-4. Para restablecer el filtro: seleccione **Filtro**, borre las selecciones y actualice.
+4. Para restablecer el filtro: seleccione **Filtro** , borre las selecciones y actualice.
 
 El cuadro de texto de búsqueda (de la parte superior del panel de lista de cuentas de almacenamiento) permite resaltar el texto seleccionado en la lista de cuentas. Se puede utilizar cuando el nombre completo o el identificador no están disponibles fácilmente.
 
@@ -124,7 +124,7 @@ También puede usar PowerShell para reemplazar explícitamente el período de re
 
 1. Confirme que ha instalado y configurado Azure PowerShell. Si no es así, use las siguientes instrucciones: 
    * Para instalar la versión más reciente de Azure PowerShell y asociarla a su suscripción de Azure, consulte [Instalación y configuración de Azure PowerShell](/powershell/azure/).
-   Para más información sobre los cmdlets de Azure Resource Manager, consulte [Uso de Azure PowerShell con Azure Resource Manager](https://go.microsoft.com/fwlink/?LinkId=394767).
+   Para más información sobre los cmdlets de Azure Resource Manager, consulte [Uso de Azure PowerShell con Azure Resource Manager](/azure/azure-resource-manager/management/manage-resources-powershell).
 2. Ejecute los siguientes cmdlets:
 
 > [!NOTE]  

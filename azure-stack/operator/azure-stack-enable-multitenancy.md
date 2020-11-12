@@ -3,16 +3,16 @@ title: Configuración de los servicios multiinquilino en Azure Stack Hub
 description: Aprenda a habilitar y deshabilitar varios inquilinos de Azure Active Directory en Azure Stack Hub.
 author: BryanLa
 ms.topic: how-to
-ms.date: 06/18/2020
+ms.date: 10/16/2020
 ms.author: bryanla
 ms.reviewer: bryanr
-ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: 6d6e6f3c28a4386a099727f132d28f97cf4dacbe
-ms.sourcegitcommit: b960df16e84ec9fbccfce772102b91f0b7ae7060
+ms.lastreviewed: 10/16/2020
+ms.openlocfilehash: 923c430291c742069a29806449b45d4fc9cdef07
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93291208"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94544231"
 ---
 # <a name="configure-multi-tenancy-in-azure-stack-hub"></a>Configuración de los servicios multiinquilino en Azure Stack Hub
 
@@ -31,8 +31,8 @@ Si es un proveedor de soluciones en la nube (CSP), tiene maneras adicionales de 
 Hay algunos requisitos previos que se deben tener en cuenta antes de configurar los servicios multiinquilino en Azure Stack Hub:
   
  - Usted y Mary deben coordinar los procedimientos administrativos tanto en el directorio donde está instalado Azure Stack Hub (Contoso) como en el directorio de invitados (Fabrikam).
- - Asegúrese de que ha [instalado](azure-stack-powershell-install.md) y [configurado](azure-stack-powershell-configure-admin.md) PowerShell para Azure Stack Hub.
- - [Descargue Azure Stack Hub Tools](azure-stack-powershell-download.md) e importe el módulo Identity:
+ - Asegúrese de que ha [instalado](powershell-install-az-module.md) y [configurado](azure-stack-powershell-configure-admin.md) PowerShell para Azure Stack Hub.
+ - [Descargue Azure Stack Hub Tools](azure-stack-powershell-download.md) e importe los módulos Connect e Identity:
 
     ```powershell
     Import-Module .\Identity\AzureStack.Identity.psm1

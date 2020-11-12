@@ -7,12 +7,12 @@ ms.date: 04/27/2020
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 04/27/2020
-ms.openlocfilehash: ec984252235334b5706a79a510852868c8f40dba
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: c8da0312a9c0d3f3250ed603523fd28b13dab38e
+ms.sourcegitcommit: 30ea43f486895828710297967270cb5b8d6a1a18
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86487114"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93415375"
 ---
 # <a name="get-clusterlog"></a>Get-ClusterLog
 
@@ -223,6 +223,6 @@ Accept wildcard characters: False
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[https://go.microsoft.com/fwlink/?LinkId=216212](https://go.microsoft.com/fwlink/?LinkId=216212)
+[https://go.microsoft.com/fwlink/?LinkId=216212](/powershell/module/failoverclusters/get-clusterlog)
 
 Para más información sobre el acceso y el uso de un punto de conexión con privilegios, consulte [Uso del punto de conexión con privilegios en Azure Stack Hub](../../operator/azure-stack-privileged-endpoint.md).

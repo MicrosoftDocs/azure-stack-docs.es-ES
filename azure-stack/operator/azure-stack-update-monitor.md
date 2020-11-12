@@ -7,16 +7,16 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.lastreviewed: 08/23/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 315cf773c63e3154ce92472c15d18b5e4bbbe019
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: bee3cbf3ab3faedbe54212c67dada1faa746071a
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86487556"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94545268"
 ---
 # <a name="monitor-updates-with-powershell-in-azure-stack-hub"></a>Supervisión de actualizaciones con PowerShell en Azure Stack Hub
 
-Puede usar los puntos de conexión administrativos de Azure Stack Hub para supervisar y administrar las actualizaciones. Son accesibles con PowerShell. Para obtener instrucciones sobre cómo configurar PowerShell en Azure Stack Hub, consulte [Instalación de PowerShell para Azure Stack Hub](azure-stack-powershell-install.md).
+Puede usar los puntos de conexión administrativos de Azure Stack Hub para supervisar y administrar las actualizaciones. Son accesibles con PowerShell. Para obtener instrucciones sobre cómo configurar PowerShell en Azure Stack Hub, consulte [Instalación de PowerShell para Azure Stack Hub](powershell-install-az-module.md).
 
 Puede usar los siguientes cmdlets de PowerShell para administrar las actualizaciones:
 

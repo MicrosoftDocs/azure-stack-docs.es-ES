@@ -3,16 +3,16 @@ title: Descarga de herramientas de Azure Stack Hub desde GitHub
 description: Obtenga información sobre cómo descargar las herramientas necesarias para trabajar con Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 8/28/2020
+ms.date: 10/16/2020
 ms.author: mabrigg
 ms.reviewer: thoroet
-ms.lastreviewed: 8/28/2020
-ms.openlocfilehash: 1c85de355be1597c09db7083b5ca335a5469154c
-ms.sourcegitcommit: 08aa3b381aec7a6a3df4f9591edd6f08928071d2
+ms.lastreviewed: 10/16/2020
+ms.openlocfilehash: 023e04d807ff34f78bd4acbc68487e8893831ba4
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93363739"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94545064"
 ---
 # <a name="download-azure-stack-hub-tools-from-github"></a>Descarga de herramientas de Azure Stack Hub desde GitHub
 
@@ -74,7 +74,7 @@ Para más información sobre el uso del módulo AzureRM de Azure Stack Hub, cons
 
 
 
-Para más información sobre el uso del módulo Az de Azure Stack Hub, consulte [Instalación del módulo Az (versión preliminar) de PowerShell para Azure Stack Hub](powershell-install-az-module.md).
+---
 
 ---
 
@@ -88,7 +88,7 @@ El repositorio **AzureStack-Tools** contiene los módulos de PowerShell que admi
 | [Directiva de Resource Manager para Azure Stack Hub](../user/azure-stack-policy-module.md) | Utilice este módulo para configurar una suscripción de Azure o un grupo de recursos de Azure con la misma disponibilidad de servicios y control de versiones que Azure Stack Hub. | Operadores de nube y usuarios |
 | [Registro con Azure](azure-stack-registration.md ) | Utilice este módulo para registrar la instancia del ASDK en Azure. Después del registro, puede descargar los elementos de Azure Marketplace y usarlos en Azure Stack Hub. | Operadores de nube |
 | [Implementación de Azure Stack Hub](../asdk/asdk-install.md) | Use este módulo para preparar el equipo host de Azure Stack Hub para implementar y volver a implementar con la imagen de disco duro virtual (VHD) de Azure Stack Hub. | Operadores de nube|
-| [Conexión a Azure Stack Hub](azure-stack-powershell-install.md) | Utilice este módulo para configurar la conectividad VPN a Azure Stack Hub. | Operadores de nube y usuarios |
+| [Conexión a Azure Stack Hub](azure-stack-powershell-configure-admin.md) | Utilice este módulo para configurar la conectividad VPN a Azure Stack Hub. | Operadores de nube y usuarios |
 | [Validador de plantilla](../user/azure-stack-validate-templates.md) | Utilice este módulo para comprobar si una plantilla nueva o existente puede implementarse en Azure Stack Hub. | Operadores de nube y usuarios|
 
 ## <a name="next-steps"></a>Pasos siguientes

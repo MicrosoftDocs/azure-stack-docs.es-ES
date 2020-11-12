@@ -5,12 +5,12 @@ author: davannaw-msft
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: dawhite
-ms.openlocfilehash: eaa5879f0e8cd00f43a37247f03f7ce09ecdb78c
-ms.sourcegitcommit: 362081a8c19e7674c3029c8a44d7ddbe2deb247b
+ms.openlocfilehash: 4f13aff85c1444197fce5a01c62319026f844fe6
+ms.sourcegitcommit: 30ea43f486895828710297967270cb5b8d6a1a18
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91899625"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93415052"
 ---
 # <a name="troubleshooting-azure-kubernetes-service-on-azure-stack-hci"></a>Solución de problemas de Azure Kubernetes Service en Azure Stack HCI
 
@@ -98,4 +98,4 @@ Conéctese con SSH al nodo mediante `ssh clouduser@ip`.
 Para más información sobre la solución de problemas en escenarios comunes relacionados con la conectividad, los permisos y los agentes de Arc, consulte [Solución de problemas de Kubernetes habilitado para Azure Arc](/azure/azure-arc/kubernetes/troubleshooting).
 
 ## <a name="next-steps"></a>Pasos siguientes
-Si sigue teniendo problemas al usar Azure Kubernetes Service en Azure Stack HCI, puede enviar los errores mediante [GitHub](https://aka.ms/aks-hci-issues).  
+Si sigue teniendo problemas al usar Azure Kubernetes Service en Azure Stack HCI, puede enviar los errores mediante [GitHub](https://aka.ms/aks-hci-issues).

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 06/15/2020
 ms.author: sethm
 ms.lastreviewed: 04/08/2019
-ms.openlocfilehash: 2941adf109f9e8c142523f607bce969427127ec3
-ms.sourcegitcommit: c9737939f4e437f1d954e163db972d58b3f98ffd
+ms.openlocfilehash: 1d12e1bf449a923e97d871d3971b97dbe19c2849
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84813791"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94546232"
 ---
 # <a name="allow-apps-to-access-azure-stack-hub-key-vault-secrets"></a>Concesión de permiso a las aplicaciones para acceder a los secretos de Key Vault de Azure Stack Hub
 
@@ -21,7 +21,7 @@ En los pasos de este artículo se indica cómo ejecutar la aplicación de ejempl
 
 Puede instalar los siguientes requisitos previos con el [Kit de desarrollo de Azure Stack](../asdk/asdk-connect.md#connect-to-azure-stack-using-rdp), o con un cliente externo basado en Windows si está [conectado a través de VPN](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn):
 
-* Instale los [módulos de Azure PowerShell compatibles con Azure Stack Hub](../operator/azure-stack-powershell-install.md).
+* Instale los [módulos de Azure PowerShell compatibles con Azure Stack Hub](../operator/powershell-install-az-module.md).
 * Descargue las [herramientas necesarias para trabajar con Azure Stack Hub](../operator/azure-stack-powershell-download.md).
 
 ## <a name="create-a-key-vault-and-register-an-app"></a>Creación de un almacén de claves y registro de una aplicación
@@ -62,7 +62,7 @@ $tenantARM = "https://management.local.azurestack.external"
 $aadTenantName = "FILL THIS IN WITH YOUR AAD TENANT NAME. FOR EXAMPLE: myazurestack.onmicrosoft.com"
 
 # Configure the Azure Stack Hub operator's PowerShell environment.
-Add-AzureRMEnvironment `
+Add-AzEnvironment `
   -Name "AzureStackUser" `
   -ArmEndpoint $tenantARM
 
@@ -71,7 +71,7 @@ $TenantID = Get-AzsDirectoryTenantId `
   -EnvironmentName AzureStackUser
 
 # Sign in to the user portal.
-Add-AzureRmAccount `
+Add-AzAccount `
   -EnvironmentName "AzureStackUser" `
   -TenantId $TenantID `
 
@@ -85,7 +85,7 @@ $identifierUri = [string]::Format("http://localhost:8080/{0}",[Guid]::NewGuid().
 $homePage = "https://contoso.com"
 
 Write-Host "Creating a new AAD Application"
-$ADApp = New-AzureRmADApplication `
+$ADApp = New-AzADApplication `
   -DisplayName $applicationName `
   -HomePage $homePage `
   -IdentifierUris $identifierUri `
@@ -94,23 +94,23 @@ $ADApp = New-AzureRmADApplication `
   -Password $applicationPassword
 
 Write-Host "Creating a new AAD service principal"
-$servicePrincipal = New-AzureRmADServicePrincipal `
+$servicePrincipal = New-AzADServicePrincipal `
   -ApplicationId $ADApp.ApplicationId
 
 # Create a new resource group and a key vault in that resource group.
-New-AzureRmResourceGroup `
+New-AzResourceGroup `
   -Name $resourceGroupName `
   -Location $location
 
 Write-Host "Creating vault $vaultName"
-$vault = New-AzureRmKeyVault -VaultName $vaultName `
+$vault = New-AzKeyVault -VaultName $vaultName `
   -ResourceGroupName $resourceGroupName `
   -Sku standard `
   -Location $location
 
 # Specify full privileges to the vault for the application.
 Write-Host "Setting access policy"
-Set-AzureRmKeyVaultAccessPolicy -VaultName $vaultName `
+Set-AzKeyVaultAccessPolicy -VaultName $vaultName `
   -ObjectId $servicePrincipal.Id `
   -PermissionsToKeys all `
   -PermissionsToSecrets all
@@ -126,13 +126,13 @@ En la imagen siguiente se muestra la salida del script usado para crear el almac
 
 ![Almacén de claves con claves de acceso](media/azure-stack-key-vault-sample-app/settingsoutput.png)
 
-Tome nota de los valores de **VaultUrl**, **AuthClientId** y **AuthClientSecret** que devolvió el script anterior. Para ejecutar la aplicación **HelloKeyVault**, utilizará estos valores.
+Tome nota de los valores de **VaultUrl** , **AuthClientId** y **AuthClientSecret** que devolvió el script anterior. Para ejecutar la aplicación **HelloKeyVault** , utilizará estos valores.
 
 ## <a name="download-and-configure-the-sample-application"></a>Descarga y configuración de la aplicación de ejemplo
 
 Descargue el ejemplo de almacén de claves de la página de Azure [Key vault client samples](https://www.microsoft.com/download/details.aspx?id=45343) (ejemplos de cliente del almacén de claves). Extraiga el contenido del archivo .zip en la estación de trabajo de desarrollo. Hay dos aplicaciones en la carpeta de ejemplos, en este artículo se usa **HelloKeyVault**.
 
-Para cargar el ejemplo **HelloKeyVault**:
+Para cargar el ejemplo **HelloKeyVault** :
 
 1. Vaya a la carpeta **Microsoft.Azure.KeyVault.Samples** > **ejemplos** > **HelloKeyVault**.
 2. Abra la aplicación **HelloKeyVault** en Visual Studio.
@@ -142,7 +142,7 @@ Para cargar el ejemplo **HelloKeyVault**:
 En Visual Studio:
 
 1. Abra el archivo HelloKeyVault\App.config y busque el elemento `<appSettings>`.
-2. Actualice las claves **VaultUrl**, **AuthClientId** y **AuthCertThumbprint** con los valores devueltos al crear el almacén de claves. De forma predeterminada, el archivo App.config tiene un marcador de posición para `AuthCertThumbprint`. Reemplace este marcador de posición por `AuthClientSecret`.
+2. Actualice las claves **VaultUrl** , **AuthClientId** y **AuthCertThumbprint** con los valores devueltos al crear el almacén de claves. De forma predeterminada, el archivo App.config tiene un marcador de posición para `AuthCertThumbprint`. Reemplace este marcador de posición por `AuthClientSecret`.
 
    ```xml
    <appSettings>
@@ -158,7 +158,7 @@ En Visual Studio:
 
 ## <a name="run-the-app"></a>Ejecución la aplicación
 
-Al ejecutar **HelloKeyVault**, la aplicación inicia sesión en Azure AD y, a continuación, usa el token de `AuthClientSecret` para autenticarse en el almacén de claves de Azure Stack Hub.
+Al ejecutar **HelloKeyVault** , la aplicación inicia sesión en Azure AD y, a continuación, usa el token de `AuthClientSecret` para autenticarse en el almacén de claves de Azure Stack Hub.
 
 Puede usar el ejemplo **HelloKeyVault** para:
 

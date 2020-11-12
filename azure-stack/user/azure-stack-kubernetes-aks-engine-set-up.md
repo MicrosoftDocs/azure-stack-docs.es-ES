@@ -3,16 +3,16 @@ title: Configuración de los requisitos previos para el motor de AKS en Azure St
 description: Establezca los requisitos para ejecutar el motor de ASK en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 09/08/2020
+ms.date: 10/16/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 09/08/2020
-ms.openlocfilehash: 6b3443b64dae560451d4d04d653e097d055fa5c1
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.lastreviewed: 10/16/2020
+ms.openlocfilehash: c703d9cd9c20e48dec6172e3e0e3c12fcc3a7e2a
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90573809"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94543534"
 ---
 # <a name="set-up-the-prerequisites-for-the-aks-engine-on-azure-stack-hub"></a>Configuración de los requisitos previos para el motor de AKS en Azure Stack Hub
 
@@ -46,8 +46,8 @@ Puede establecer los siguientes elementos.
 | Clave pública privada | Para usar una conexión SSH abierta desde una máquina de desarrollo a la máquina virtual del servidor en una instancia de Azure Stack Hub que hospede una aplicación web, es preciso crear un par de claves, pública y privada, de Secure Shell (SSH). | Obligatorio | Para obtener instrucciones sobre cómo generar una clave, consulte [SSH Key Generation](./azure-stack-dev-start-howto-ssh-public-key.md) (Generación de claves SSH).|
 
 
-> [!NOTE]  
-> También puede crear los requisitos previos para el motor de AKS con la [CLI de Azure para Azure Stack Hub](./azure-stack-version-profiles-azurecli2.md) o [PowerShell de Azure Stack Hub](../operator/azure-stack-powershell-install.md).
+> [!Note]  
+> También puede crear los requisitos previos para el motor de AKS con la [CLI de Azure para Azure Stack Hub](./azure-stack-version-profiles-azurecli2.md) o [PowerShell de Azure Stack Hub](../operator/powershell-install-az-module.md).
 
 ## <a name="matching-engine-to-base-image-version"></a>Correspondencia de la versión del motor con la imagen base
 

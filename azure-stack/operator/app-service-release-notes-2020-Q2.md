@@ -8,12 +8,12 @@ ms.date: 05/05/2020
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 04/30/2020
-ms.openlocfilehash: 9a04f99df8093f0f37d68137dfbe9ff18664d385
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: c5e6ac0a2a500cf43cf94cbc40b2a95c58784d28
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86489749"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94544724"
 ---
 # <a name="app-service-on-azure-stack-hub-2020-q2-release-notes"></a>Notas de la versión de App Service en Azure Stack Hub 2020 Q2
 
@@ -45,7 +45,7 @@ Antes de comenzar la actualización de Azure App Service en Azure Stack a la ver
   > [!Important]
   > Los operadores de la nube son responsables del mantenimiento y funcionamiento del servidor de archivos y el servidor de SQL Server.  El proveedor de recursos no administra estos recursos.  El operador de la nube es responsable de realizar copias de seguridad de las bases de datos y los recursos compartidos de archivos del contenido del inquilino de App Service.
 
-- Distribuya la **extensión de script personalizado** de la versión **1.9.3** desde Marketplace.
+- Distribuya la **extensión de script personalizado** de la versión  **1.9.3** desde Marketplace.
 
 
 
@@ -59,7 +59,7 @@ La actualización Q2 de Azure App Service en Azure Stack incluye las siguientes
 
 - Actualizaciones en el servicio principal para mejorar la confiabilidad y los mensajes de error, lo cual permite un diagnóstico de problemas comunes más sencillo.
 
-- **Actualizaciones de las herramientas y plataformas de aplicaciones siguientes**:
+- **Actualizaciones de las herramientas y plataformas de aplicaciones siguientes** :
   - ASP.NET Framework 4.7.2
   - ASP.NET Core 3.1.3
   - Módulo ASP.NET Core v2 13.1.19331.0
@@ -76,13 +76,13 @@ La actualización Q2 de Azure App Service en Azure Stack incluye las siguientes
     - 6.12.0
     - 6.13.4
   
-- **Actualizaciones al sistema operativo subyacente de todos los roles**:
+- **Actualizaciones al sistema operativo subyacente de todos los roles** :
   - [Actualización acumulativa 2020-04 para Windows Server 2016 en sistemas basados en x64 (KB4550929)](https://support.microsoft.com/help/4550929)
   - [Actualización 2020-04 de la pila de servicio para Windows Server 2016 en sistemas basados en x64 (KB4550994)](https://support.microsoft.com/help/4550994)
 
 - **Las actualizaciones acumulativas de Windows Server ahora se aplican a los roles de Controlador como parte de la implementación y la actualización**
 
-- **Se han actualizado las SKU de las máquinas virtuales y conjuntos de escalado predeterminados de las nuevas implementaciones**: Para mantener la coherencia con nuestro servicio en la nube pública, las nuevas implementaciones de Azure App Service en Azure Stack Hub usarán las siguientes SKU para las máquinas y conjuntos de escalado subyacentes empleados para operar el proveedor de recursos.
+- **Se han actualizado las SKU de las máquinas virtuales y conjuntos de escalado predeterminados de las nuevas implementaciones** : Para mantener la coherencia con nuestro servicio en la nube pública, las nuevas implementaciones de Azure App Service en Azure Stack Hub usarán las siguientes SKU para las máquinas y conjuntos de escalado subyacentes empleados para operar el proveedor de recursos.
   
   | Role | SKU mínima |
   | --- | --- |
@@ -131,8 +131,9 @@ Los clientes deben ejecutar el siguiente script en el servidor de SQL Server qu
 
 Este script se debe ejecutar en las siguientes condiciones:
 
-1. Lo debe ejecutar un usuario que tenga privilegios de administrador del sistema, por ejemplo, la cuenta SA de SQL;
-1. Si usa grupos de disponibilidad Always On de SQL, asegúrese de que el script se ejecuta desde la instancia de SQL que contiene todos los inicios de sesión de App Service de la forma siguiente:
+- Lo debe ejecutar un usuario que tenga privilegios de administrador del sistema, por ejemplo, la cuenta SA de SQL;
+- Si usa grupos de disponibilidad Always On de SQL, asegúrese de que el script se ejecuta desde la instancia de SQL que contiene todos los inicios de sesión de App Service de la forma siguiente:
+
     - appservice_hosting_FileServer
     - appservice_hosting_HostingAdmin
     - appservice_hosting_LoadBalancer

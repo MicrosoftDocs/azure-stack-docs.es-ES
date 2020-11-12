@@ -15,12 +15,12 @@ ms.date: 12/20/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 12/20/2019
-ms.openlocfilehash: dfc1070a39efb0b470b087b9c554868e3e9d3f1e
-ms.sourcegitcommit: e4e2cc6a68f02c3e856f58ca5ee51b3313c7ff8f
+ms.openlocfilehash: a480f5fcafd6d40dbcb76dcad4c38c64ad9f6ff8
+ms.sourcegitcommit: ce864e1d86ad05a03fe896721dea8f0cce92085f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92183525"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94383452"
 ---
 # <a name="azure-stack-vm-features"></a>Características de las máquinas virtuales de Azure Stack
 
@@ -31,7 +31,7 @@ Las máquinas virtuales de Azure Stack proporcionan recursos informáticos escal
 | Característica | Azure (global) | Azure Stack |
 | --- | --- | --- |
 | Imágenes de máquinas virtuales | Azure Marketplace tiene imágenes que puede usar para crear una máquina virtual. Consulte la página de [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/compute?subcategories=virtual-machine-images&page=1) para ver la lista de imágenes que están disponibles en Azure Marketplace. | De forma predeterminada, no hay ninguna imagen disponible en Marketplace de Azure Stack. El administrador de la nube de Azure Stack debe publicar o descargar imágenes en el Marketplace de Azure Stack antes de que los usuarios puedan usarlas. |
-| Tamaños de máquina virtual | Azure admite una amplia variedad de tamaños de máquinas virtuales. Para aprender más acerca de las opciones y los tamaños disponibles, consulte los temas [Tamaños de máquinas virtuales Windows](/azure/virtual-machines/virtual-machines-windows-sizes) y [Tamaños de máquina virtual Linux](/azure/virtual-machines/linux/sizes). | Azure Stack admite un subconjunto de tamaños de máquinas virtuales que están disponibles en Azure. Para ver la lista de tamaños admitidos, consulte la sección [Tamaños de máquina virtual](#vm-sizes) de este artículo. |
+| Tamaños de máquina virtual | Azure admite una amplia variedad de tamaños de máquinas virtuales. Para aprender más acerca de las opciones y los tamaños disponibles, consulte los temas [Tamaños de máquinas virtuales Windows](/azure/virtual-machines/sizes) y [Tamaños de máquina virtual Linux](/azure/virtual-machines/linux/sizes). | Azure Stack admite un subconjunto de tamaños de máquinas virtuales que están disponibles en Azure. Para ver la lista de tamaños admitidos, consulte la sección [Tamaños de máquina virtual](#vm-sizes) de este artículo. |
 | Cuotas de máquinas virtuales | Los [límites de cuota](/azure/azure-subscription-service-limits#service-specific-limits) los establece Microsoft. | El administrador de la nube de Azure Stack debe asignar cuotas antes de ofrecer máquinas virtuales a los usuarios. |
 | Extensiones de máquina virtual |Azure admite una amplia variedad de extensiones de máquinas virtuales. Para aprender acerca de las extensiones disponibles, consulte el artículo [Extensiones y características de las máquinas virtuales](/azure/virtual-machines/windows/extensions-features).| Azure Stack admite un subconjunto de extensiones que están disponibles en Azure y cada una de ellas tiene una versión específica. El administrador de la nube de Azure Stack puede elegir qué extensiones están disponibles para sus usuarios. Para ver la lista de extensiones admitidas, consulte la sección [Extensiones de máquina virtual](#vm-extensions) de este artículo. |
 | Red de máquinas virtuales | Las direcciones IP públicas asignadas a una máquina virtual del inquilino son accesibles a través de Internet.<br><br><br>Las máquinas virtuales de Azure tienen un nombre DNS fijo. | Las direcciones IP públicas asignadas a una máquina virtual del inquilino son accesibles solo desde el entorno del Kit de desarrollo de Azure Stack. Un usuario debe tener acceso al Kit de desarrollo de Azure Stack a través de un [RDP](../asdk/asdk-connect.md#connect-to-azure-stack-using-rdp) o una [VPN](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn) para conectarse a una máquina virtual que se crea en Azure Stack.<br><br>Las máquinas virtuales creadas dentro de una instancia específica de Azure Stack tienen un nombre DNS basado en el valor que se configura mediante el administrador de la nube. |

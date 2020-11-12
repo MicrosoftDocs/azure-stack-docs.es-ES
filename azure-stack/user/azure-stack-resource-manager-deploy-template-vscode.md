@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 09/30/2019
-ms.openlocfilehash: 3f97ec57900119543e37b0d99a7d82e30c900f42
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.openlocfilehash: 72652f1a681ed630bdc67745f24c6e472101915f
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90574251"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94546861"
 ---
 # <a name="deploy-with-visual-studio-code-to-azure-stack-hub"></a>Implementación con Visual Studio Code en Azure Stack Hub
 
@@ -37,7 +37,7 @@ El esquema de implementación de Azure Stack Hub admite perfiles híbridos media
 
 - [Visual Studio Code](https://code.visualstudio.com/)
 - Acceso a Azure Stack Hub
-- [PowerShell para Azure Stack Hub instalado](../operator/azure-stack-powershell-install.md?toc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fuser%2FTOC.json&bc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fbreadcrumb%2Ftoc.json) en una máquina que alcanza los puntos de conexión de administración
+- [PowerShell para Azure Stack Hub instalado](../operator/powershell-install-az-module.md?toc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fuser%2FTOC.json&bc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fbreadcrumb%2Ftoc.json) en una máquina que alcanza los puntos de conexión de administración
 
 ## <a name="install-resource-manager-tools-extension"></a>Instalación de la extensión Herramientas de Resource Manager
 

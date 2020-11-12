@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 11/27/2019
 ms.reviewer: jfggdl
 ms.lastreviewed: 11/27/2019
-ms.openlocfilehash: 117fd4cd1d688b9ace109f6c2038cd3ffe0d9e6f
-ms.sourcegitcommit: a1e2003fb9c6dacdc76f97614ff5a26a5b197b49
+ms.openlocfilehash: adb00ebbe3f5ea3cf233ebaa485913d48ea63e23
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91623156"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94546963"
 ---
 # <a name="overview-of-event-hubs-on-azure-stack-hub"></a>Introducción a Event Hubs en Azure Stack Hub
 
@@ -53,7 +53,7 @@ Las ediciones de Event Hubs (en Azure Stack Hub y en Azure) ofrecen un alto grad
 | Azure Monitor | ✔ | ✔ |
 | Característica de inflado automático | ✘ | ✔ |
 
-Las operaciones de administración de recursos de Azure también se pueden realizar mediante plantillas de Resource Manager, [PowerShell](/powershell/module/azurerm.eventhub/) y la [CLI de Azure](/cli/azure/eventhubs/eventhub/). Actualmente, no se admiten las operaciones de administración de operadores en PowerShell ni en la CLI de Azure.
+Las operaciones de administración de recursos de Azure también se pueden realizar mediante plantillas de Resource Manager, [PowerShell](/powershell/module/Az.eventhub/) y la [CLI de Azure](/cli/azure/eventhubs/eventhub/). Actualmente, no se admiten las operaciones de administración de operadores en PowerShell ni en la CLI de Azure.
 
 ## <a name="feature-documentation"></a>Documentación de características
 

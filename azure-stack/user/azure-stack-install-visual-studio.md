@@ -7,12 +7,12 @@ ms.date: 06/11/2020
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 01/04/2020
-ms.openlocfilehash: 686a2b1a976df23e91cd38df61267b95008f993a
-ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
+ms.openlocfilehash: 89a6b4da29796cd29d988ea5869330a1486ce420
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91107104"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94546521"
 ---
 # <a name="install-visual-studio-and-connect-to-azure-stack-hub"></a>Instalación de Visual Studio y conexión a Azure Stack Hub
 
@@ -30,7 +30,7 @@ Puede usar Visual Studio para escribir e implementar [plantillas](azure-stack-ar
 
     ![Captura de pantalla de los pasos de la instalación de WebPI](./media/azure-stack-install-visual-studio/image1.png)
 
-5. [Instale PowerShell para Azure Stack Hub](../operator/azure-stack-powershell-install.md).
+5. [Instale PowerShell para Azure Stack Hub](../operator/powershell-install-az-module.md).
 
 6. Una vez finalizada la instalación, reinicie el equipo.
 
@@ -38,7 +38,7 @@ Puede usar Visual Studio para escribir e implementar [plantillas](azure-stack-ar
 
 1. Inicie Visual Studio.
 
-2. En el menú **Ver**, seleccione **Cloud Explorer**.
+2. En el menú **Ver** , seleccione **Cloud Explorer**.
 
 3. Seleccione **Administrar cuentas** y, a continuación, en el nuevo panel, inicie sesión con sus credenciales de Azure Active Directory (Azure AD).  
 
@@ -50,7 +50,7 @@ Después de iniciar sesión, puede [implementar plantillas](azure-stack-deploy-t
 
 1. Inicie Visual Studio.
 
-2. En **Herramientas**, seleccione **Opciones**.
+2. En **Herramientas** , seleccione **Opciones**.
 
 3. Expanda **Entorno** en el panel de navegación y seleccione **Cuentas**.
 

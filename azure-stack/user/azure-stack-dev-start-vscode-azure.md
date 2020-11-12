@@ -7,12 +7,12 @@ ms.date: 09/21/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 09/21/2020
-ms.openlocfilehash: 66a4a8f846002cc126d4861e1acc52b672e78dc5
-ms.sourcegitcommit: 68c00d9ee7c5a9e7da6d41e2f753c0f93d26238e
+ms.openlocfilehash: fc07b78253a19d8a7f459aecacd699338a129ea7
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91211166"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94546708"
 ---
 # <a name="connect-to-azure-stack-hub-using-azure-account-extension-in-visual-studio-code"></a>Conexión a Azure Stack Hub mediante la extensión de la cuenta de Azure en Visual Studio Code
 
@@ -34,7 +34,7 @@ VS Code es un editor ligero para compilar y depurar aplicaciones web y en la nub
 
 1. Ejecute el script **Identity** desde las herramientas de Azure Stack Hub en GitHub.
 
-    - Antes de ejecutar el script, deberá tener PowerShell instalado y configurado para su entorno. Para obtener instrucciones, consulte [Instalación de PowerShell para Azure Stack Hub](../operator/azure-stack-powershell-install.md).
+    - Antes de ejecutar el script, deberá tener PowerShell instalado y configurado para su entorno. Para obtener instrucciones, consulte [Instalación de PowerShell para Azure Stack Hub](../operator/powershell-install-az-module.md).
 
     - Para el script **Identity** y sus instrucciones, consulte [AzureStack-Tools/Identity](https://aka.ms/aa6z611).
 
@@ -97,7 +97,7 @@ VS Code es un editor ligero para compilar y depurar aplicaciones web y en la nub
       "azure.cloud": "AzurePPE"
       ```
 
-10. Guarde la configuración de usuario y use **Ctrl + Mayús + P** una vez más. Seleccione **Azure: Sign in to Azure Cloud**. Se mostrará la nueva opción, **AzurePPE**, en la lista de destinos.
+10. Guarde la configuración de usuario y use **Ctrl + Mayús + P** una vez más. Seleccione **Azure: Sign in to Azure Cloud**. Se mostrará la nueva opción, **AzurePPE** , en la lista de destinos.
 
 11. Seleccione **AzurePPE**. La página de autenticación se cargará en el explorador. Inicie sesión en el punto de conexión.
 

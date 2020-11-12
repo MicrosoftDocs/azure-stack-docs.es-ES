@@ -7,17 +7,17 @@ ms.date: 10/08/2020
 ms.author: mabrigg
 ms.reviewer: rtiberiu
 ms.lastreviewed: 10/08/2020
-ms.openlocfilehash: b9a37df9404de01bd9b094ae259c8c62637cb369
-ms.sourcegitcommit: 1621f2748b2059fd47ccacd48595a597c44ee63f
+ms.openlocfilehash: 7b3c69b26ef1fee21e652c70f0ca9a9ddc156460
+ms.sourcegitcommit: ce864e1d86ad05a03fe896721dea8f0cce92085f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91853268"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94383673"
 ---
 # <a name="vm-update-and-management-automation-in-azure-stack-hub"></a>Automatización de actualizaciones y administración de máquinas virtuales en Azure Stack Hub
 Use las siguientes características de solución de Azure Automation para administrar máquinas virtuales Windows y Linux que se implementan mediante Azure Stack Hub:
 
-- **[Update Management](/azure/automation/automation-update-management)** . Con la solución Update Management, puede evaluar rápidamente el estado de las actualizaciones disponibles en todos los equipos agente y administrar el proceso de instalación de las actualizaciones necesarias para las VM Windows y Linux.
+- **[Update Management](/azure/automation/update-management/overview)** . Con la solución Update Management, puede evaluar rápidamente el estado de las actualizaciones disponibles en todos los equipos agente y administrar el proceso de instalación de las actualizaciones necesarias para las VM Windows y Linux.
 
 - **[Change Tracking](/azure/automation/automation-change-tracking)** . Los cambios en los demonios de Linux, en el registro y los archivos de Windows, en los servicios de Windows y en el software instalado en los servidores supervisados se envían al servicio de Azure Monitor en la nube para su procesamiento. Se aplica la lógica a los datos recibidos y el servicio de nube registra los datos. Con la información en el panel de seguimiento de cambios, puede ver fácilmente los cambios realizados en la infraestructura de servidores.
 
@@ -37,13 +37,13 @@ Para usar las características de Azure Monitor para VM, Inventario, Change Trac
 > [!TIP]
 > Si ya habilitó estas características para VM de Azure, puede usar sus credenciales preexistentes del área de trabajo de Log Analytics. Si ya tiene un id. de área de trabajo de Log Analytics y la clave principal que quiere usar, vaya directamente a la [sección siguiente](./vm-update-management.md#in-the-azure-stack-hub-administrator-portal). De lo contrario, continúe en esta sección para crear una nueva cuenta de Automation y el área de trabajo de Log Analytics.
 
-El primer paso para habilitar estas soluciones es [crear un área de trabajo de Log Analytics](/azure/log-analytics/log-analytics-quick-create-workspace) en su suscripción de Azure. Un área de trabajo de Log Analytics es un entorno de registros único de Azure Monitor con un repositorio de datos, orígenes de datos y soluciones propios. Después de crear un área de trabajo, anote el identificador del área de trabajo y la clave. Para ver esta información, vaya a la hoja del área de trabajo, haga clic en **Configuración avanzada**y revise los valores **Id. del área de trabajo** y **Clave principal**. 
+El primer paso para habilitar estas soluciones es [crear un área de trabajo de Log Analytics](/azure/log-analytics/log-analytics-quick-create-workspace) en su suscripción de Azure. Un área de trabajo de Log Analytics es un entorno de registros único de Azure Monitor con un repositorio de datos, orígenes de datos y soluciones propios. Después de crear un área de trabajo, anote el identificador del área de trabajo y la clave. Para ver esta información, vaya a la hoja del área de trabajo, haga clic en **Configuración avanzada** y revise los valores **Id. del área de trabajo** y **Clave principal**. 
 
 Luego, debe [crear una cuenta de Automation](/azure/automation/automation-create-standalone-account). Una cuenta de Automation es un contenedor para los recursos de Azure Automation. Proporciona una manera de separar los entornos u organizar aún más los flujos de trabajo y recursos de Automation. Una vez que cree la cuenta de Automation, debe habilitar las características de Inventario, Change Tracking y Update Management. Para habilitar cada característica, siga estos pasos:
 
 1. En Azure Portal, vaya a la cuenta de Automation que va a usar.
 
-2. Seleccione la solución que va a habilitar (ya sea **Inventario**, **Change Tracking** o **Update Management**).
+2. Seleccione la solución que va a habilitar (ya sea **Inventario** , **Change Tracking** o **Update Management** ).
 
 3. Use la lista desplegable **Seleccionar área de trabajo...** para seleccionar el área de trabajo de Log Analytics que va a usar.
 
@@ -72,7 +72,7 @@ Después de habilitar las soluciones de Azure Automation en Azure Portal, debe i
 
    ![En el cuadro de diálogo "Inicio > Administración de Marketplace > Agregar desde Azure > Azure Monitor, Update and Configuration Management", se describe la extensión y se ofrece un botón de descarga.](media//vm-update-management/2.PNG) 
 
-Para habilitar la solución Asignación de Azure Monitor para VM y obtener información sobre las dependencias de red, descargue **Azure Monitor Dependency Agent**:
+Para habilitar la solución Asignación de Azure Monitor para VM y obtener información sobre las dependencias de red, descargue **Azure Monitor Dependency Agent** :
 
    ![En el cuadro de diálogo "Inicio > Administración de Marketplace > Agregar desde Azure > Azure Monitor Dependency Agent", se describe la extensión y se ofrece un botón de descarga.](media//vm-update-management/2-dependency.PNG) 
 
@@ -81,7 +81,7 @@ Siga estos pasos para habilitar Update Management para máquinas virtuales de Az
 
 1. Inicie sesión en el portal de usuarios de Azure Stack Hub.
 
-2. En el portal de usuarios de Azure Stack Hub, vaya a la hoja Extensiones de las máquinas virtuales para las que quiere habilitar estas soluciones, haga clic en **+ Agregar**, seleccione la extensión **Azure Update and Configuration Management** y haga clic en **Crear**:
+2. En el portal de usuarios de Azure Stack Hub, vaya a la hoja Extensiones de las máquinas virtuales para las que quiere habilitar estas soluciones, haga clic en **+ Agregar** , seleccione la extensión **Azure Update and Configuration Management** y haga clic en **Crear** :
 
     ![En el cuadro de diálogo "Azure Update and Configuration Management", se proporciona información explicativa, un botón Crear (resaltado) para agregar la extensión y un vínculo para obtener más información.](media//vm-update-management/3-sm.PNG "Hoja de la extensión de máquina virtual")
 
@@ -89,7 +89,7 @@ Siga estos pasos para habilitar Update Management para máquinas virtuales de Az
 
    [![El cuadro de diálogo "Instalar extensión" tiene cuadros de texto para especificar los valores de WorkspaceID y WorkspaceKey de Azure.](media//vm-update-management/4-sm.PNG "Especificación del identificador del área de trabajo y la clave")](media//vm-update-management/4-lg.PNG) 
 
-4. Tal como se describe en la [documentación de Update Management](/azure/automation/automation-update-management), deberá habilitar la solución Update Management para cada VM que quiera administrar. Para habilitar la solución para todas las VM que informan al área de trabajo, seleccione **Update Management**, haga clic en **Administrar las máquinas** y, luego, seleccione la opción **Habilitar en todas las máquinas disponibles y futuras**.
+4. Tal como se describe en la [documentación de Update Management](/azure/automation/update-management/overview), deberá habilitar la solución Update Management para cada VM que quiera administrar. Para habilitar la solución para todas las VM que informan al área de trabajo, seleccione **Update Management** , haga clic en **Administrar las máquinas** y, luego, seleccione la opción **Habilitar en todas las máquinas disponibles y futuras**.
 
    [![En el cuadro de diálogo Administrar máquinas: administración de actualizaciones se muestran las máquinas que no tienen habilitada la opción Administración de actualizaciones. Se ofrecen tres opciones de habilitación, y una de ellas, "Habilitar en todas las máquinas disponibles y futuras", está seleccionada y resaltada. También se proporciona un botón Habilitar.](media//vm-update-management/5-sm.PNG "Habilitación de la solución Update Management en todas las máquinas")](media//vm-update-management/5-lg.PNG) 
 

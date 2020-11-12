@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/19/2019
-ms.openlocfilehash: 3a14c50413ddd431f6a8db8815d0147ef9d173e7
-ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
+ms.openlocfilehash: e77c05c6f13a3ee3cb23a13a466bb7e0e80394f7
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91107220"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94546198"
 ---
 # <a name="back-up-your-storage-accounts-on-azure-stack-hub"></a>Copia de seguridad de las cuentas de almacenamiento en Azure Stack Hub
 
@@ -54,7 +54,7 @@ Puede crear un servidor Windows Server o Linux como servidor intermedio. El ser
 - Para obtener instrucciones sobre la configuración de un servidor Linux, consulte [Creación de una máquina virtual de servidor Linux mediante el portal de Azure Stack Hub](azure-stack-quick-linux-portal.md).  
 - Para obtener instrucciones sobre la configuración de un servidor Windows Server, consulte [Creación de una máquina virtual Windows Server en el portal de Azure Stack Hub](azure-stack-quick-windows-portal.md).  
 
-Cuando haya configurado el servidor Windows Server, tendrá que instalar [PowerShell en Azure Stack Hub](../operator/azure-stack-powershell-install.md?toc=https%3A%2F%2Fdocs.microsoft.com%2FFazure-stack%2Fuser%2FTOC.json&bc=https%3A%2F%2Fdocs.microsoft.com%2FFazure-stack%2Fbreadcrumb%2Ftoc.json) y las [herramientas de Azure Stack Hub](../operator/azure-stack-powershell-download.md?toc=https%3A%2F%2Fdocs.microsoft.com%2FFazure-stack%2Fuser%2FTOC.json&bc=https%3A%2F%2Fdocs.microsoft.com%2FFazure-stack%2Fbreadcrumb%2Ftoc.json).
+Cuando haya configurado el servidor Windows Server, tendrá que instalar [PowerShell en Azure Stack Hub](../operator/powershell-install-az-module.md?toc=https%3A%2F%2Fdocs.microsoft.com%2FFazure-stack%2Fuser%2FTOC.json&bc=https%3A%2F%2Fdocs.microsoft.com%2FFazure-stack%2Fbreadcrumb%2Ftoc.json) y las [herramientas de Azure Stack Hub](../operator/azure-stack-powershell-download.md?toc=https%3A%2F%2Fdocs.microsoft.com%2FFazure-stack%2Fuser%2FTOC.json&bc=https%3A%2F%2Fdocs.microsoft.com%2FFazure-stack%2Fbreadcrumb%2Ftoc.json).
 
 ## <a name="set-up-backup-for-storage-accounts"></a>Configuración de copias de seguridad para cuentas de almacenamiento
 
@@ -80,13 +80,13 @@ Cuando haya configurado el servidor Windows Server, tendrá que instalar [Power
     export AZCOPY_DEFAULT_SERVICE_API_VERSION=2017-11-09
     ```
 
-4. En el servidor intermedio, cree un script. Actualice este comando con la **cuenta de almacenamiento**, la **clave SAS** y la **ruta de acceso del directorio local**. Ejecutará el script para copiar los datos de forma incremental desde la cuenta de almacenamiento de **origen**.
+4. En el servidor intermedio, cree un script. Actualice este comando con la **cuenta de almacenamiento** , la **clave SAS** y la **ruta de acceso del directorio local**. Ejecutará el script para copiar los datos de forma incremental desde la cuenta de almacenamiento de **origen**.
 
     ```
     azcopy sync "https:/<storagaccount>/<container>?<SAS Key>" "C:\\myFolder" --recursive=true --delete-destination=true
     ```
 
-5.  Escriba la **cuenta de almacenamiento**,** la clave SAS ** y la **ruta de acceso del directorio local.  Los usará para copiar los datos incrementalmente en la cuenta de almacenamiento de **destino**.
+5.  Escriba la **cuenta de almacenamiento** ,** la clave SAS ** y la **ruta de acceso del directorio local.  Los usará para copiar los datos incrementalmente en la cuenta de almacenamiento de **destino**.
     
     ```
     azcopy sync "C:\\myFolder" "https:// <storagaccount>/<container>?<SAS Key>" --recursive=true --delete-destination=true

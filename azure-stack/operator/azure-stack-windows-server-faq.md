@@ -4,16 +4,16 @@ titleSuffix: Azure Stack Hub
 description: Lista de preguntas frecuentes del Marketplace de Azure Stack Hub para Windows Server.
 author: sethmanheim
 ms.topic: article
-ms.date: 07/23/2020
+ms.date: 11/09/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 08/29/2019
-ms.openlocfilehash: fff299a0d537bb4190e66a57eb642db7e8b9824d
-ms.sourcegitcommit: f2a5ce52fcf69e05fe89be8211b7360de46f4a94
+ms.openlocfilehash: 0801f9530bc3f462e1ddfd0fbce15d193ea6343e
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87133646"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94545792"
 ---
 # <a name="azure-stack-hub-marketplace-faq"></a>Preguntas frecuentes acerca de Marketplace de Azure Stack Hub
 
@@ -35,8 +35,8 @@ A continuación, si los conjuntos de escalado de máquinas virtuales hacen refer
 
 Microsoft ofrece dos versiones de imágenes de Windows Server a través de Marketplace de Azure Stack Hub. Solo una versión de esta imagen puede usarse en un entorno de Azure Stack Hub.  
 
-- **Pago por uso**: estas imágenes ejecutan los medidores de precio completo de Windows.
-   Quién debe usar esta opción: Clientes con contratos Enterprise (EA) que usan el *modelo de facturación de consumo*; o CSP que no desean usar licencias de SPLA.
+- **Pago por uso** : estas imágenes ejecutan los medidores de precio completo de Windows.
+   Quién debe usar esta opción: Clientes con contratos Enterprise (EA) que usan el *modelo de facturación de consumo* ; o CSP que no desean usar licencias de SPLA.
 - **Traiga su propia licencia (BYOL)** : Estas imágenes ejecutan medidores básicos.
    Quién debe usar esta opción: Clientes con EA y con una licencia de Windows Server; o para CSP que usan licencias de SPLA.
 
@@ -44,7 +44,7 @@ Ventaja de uso híbrido de Azure (AHUB) no se admite en Azure Stack Hub. Los cli
 
 ### <a name="what-if-i-downloaded-the-wrong-version-to-offer-my-tenantsusers"></a>¿Qué ocurre si descargué la versión incorrecta para mis inquilinos o usuarios?
 
-Primero, debe eliminar la versión incorrecta a través de Administración de Marketplace. Espere a que la eliminación finalice (consulte las notificaciones que indican la finalización, no la hoja **Administración de Marketplace**). A continuación, descargue la versión correcta.
+Primero, debe eliminar la versión incorrecta a través de Administración de Marketplace. Espere a que la eliminación finalice (consulte las notificaciones que indican la finalización, no la hoja **Administración de Marketplace** ). A continuación, descargue la versión correcta.
 
 Si descarga ambas versiones de la imagen, solo la versión más reciente es visible para los clientes finales en Marketplace de Azure Stack Hub.
 
@@ -53,12 +53,12 @@ Si descarga ambas versiones de la imagen, solo la versión más reciente es visi
 Puede cambiar el atributo del modelo de licencia para cambiar de traiga su propia licencia (BYOL) al modelo de pago por uso (PAYG) mediante la ejecución del siguiente script:
 
 ```powershell
-$vm= Get-Azurermvm -ResourceGroup "<your RG>" -Name "<your VM>"
+$vm= Get-Azvm -ResourceGroup "<your RG>" -Name "<your VM>"
 $vm.LicenseType = "None"
-Update-AzureRmVM -ResourceGroupName "<your RG>" -VM $vm
+Update-AzVM -ResourceGroupName "<your RG>" -VM $vm
 ```
 
-Puede comprobar el tipo de licencia de su máquina virtual mediante la ejecución de los siguientes comandos. Si el modelo de licencia indica **Windows_Server**, se le cobrará el precio según el modelo de traiga su propia licencia. De lo contrario, se le cobrará por el medidor de Windows según el modelo de pago por uso:
+Puede comprobar el tipo de licencia de su máquina virtual mediante la ejecución de los siguientes comandos. Si el modelo de licencia indica **Windows_Server** , se le cobrará el precio según el modelo de traiga su propia licencia. De lo contrario, se le cobrará por el medidor de Windows según el modelo de pago por uso:
 
 ```powershell
 $vm | ft Name, VmId,LicenseType,ProvisioningState
@@ -69,14 +69,14 @@ $vm | ft Name, VmId,LicenseType,ProvisioningState
 Puede cambiar el atributo del modelo de licencia al modelo de traiga su propia licencia. Para ello, ejecute los siguientes comandos:
 
 ```powershell
-$vm= Get-Azurermvm -ResourceGroup "<your RG>" -Name "<your VM>"
+$vm= Get-Azvm -ResourceGroup "<your RG>" -Name "<your VM>"
 $vm.LicenseType = "Windows_Server"
-Update-AzureRmVM -ResourceGroupName "<your RG>" -VM $vm
+Update-AzVM -ResourceGroupName "<your RG>" -VM $vm
 ```
 
 ### <a name="what-about-other-vms-that-use-windows-server-such-as-sql-or-machine-learning-server"></a>¿Qué ocurre con otras máquinas virtuales que usan Windows Server, como SQL o Machine Learning Server?
 
-Estas imágenes se aplican al parámetro **licenseType**, por lo que el modelo que se sigue es el de pago por uso. Puede establecer este parámetro (consulte la pregunta anterior). Esto solo se aplica al software de Windows Server, y no a productos en capas, como SQL, que tienen que aportar su propia licencia. Las licencias de pago por uso no se aplican a productos de software en capas.
+Estas imágenes se aplican al parámetro **licenseType** , por lo que el modelo que se sigue es el de pago por uso. Puede establecer este parámetro (consulte la pregunta anterior). Esto solo se aplica al software de Windows Server, y no a productos en capas, como SQL, que tienen que aportar su propia licencia. Las licencias de pago por uso no se aplican a productos de software en capas.
 
 Solo puede cambiar la propiedad **licenseType** para imágenes de SQL Server de Marketplace de Azure Stack Hub si la versión es **XX.X.20190410** o superior. Si está ejecutando una versión anterior de las imágenes de SQL Server de Marketplace de Azure Stack Hub, no puede cambiar el atributo **licenseType** y debe volver a implementarlo con las imágenes de SQL Server más recientes de Marketplace.
 

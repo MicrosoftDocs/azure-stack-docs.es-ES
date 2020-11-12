@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/05/2020
 ms.reviewer: sijuman
 ms.lastreviewed: 04/14/2020
-ms.openlocfilehash: ea3ec5389aa00d0b606d86e483a8ca5a2607aa1a
-ms.sourcegitcommit: af21e3097e833bcb0670733a5e92d6fc3deaa53b
+ms.openlocfilehash: bfb385e29a89ad8d47ace3b15776bd368e0cf521
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91729243"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94546178"
 ---
 # <a name="migrate-from-azurerm-to-azure-powershell-az-in-azure-stack-hub"></a>Migración desde AzureRM al módulo Az de Azure PowerShell en Azure Stack Hub
 
@@ -33,7 +33,7 @@ Get-InstalledModule -Name AzureRM -AllVersions
 
 ## <a name="check-current-scripts-work-with-azurerm"></a>Comprobación de que los scripts actuales funcionan con AzureRM
 
-Este es el paso más importante. Ejecute los scripts existentes y asegúrese de que funcionan con la versión _más reciente_ de AzureRM (__2.5.0__). Si los scripts no funcionan, no olvide leer la [Guía de migración de AzureRM](/powershell/azure/azurerm/migration-guide.6.0.0).
+Este es el paso más importante. Ejecute los scripts existentes y asegúrese de que funcionan con la versión _más reciente_ de AzureRM ( __2.5.0__ ). Si los scripts no funcionan, no olvide leer la [Guía de migración de AzureRM](/powershell/azure/azurerm/migration-guide.6.0.0).
 
 ## <a name="install-the-azure-powershell-az-module"></a>Instalación del módulo Az de Azure PowerShell
 
@@ -41,7 +41,7 @@ El primer paso es instalar el módulo Az en la plataforma. Para instalar Az, se 
 
 Para instalar el módulo Az de Azure PowerShell, siga estos pasos:
 
-* __RECOMENDACIÓN__: [Desinstale el módulo AzureRM](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module).
+* __RECOMENDACIÓN__ : [Desinstale el módulo AzureRM](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module).
   Asegúrese de eliminar _todas_ las versiones instaladas de AzureRM, no solo la última versión.
 * [Instalación del módulo Az](/powershell/azure/install-az-ps)
 
@@ -208,7 +208,7 @@ RequiredModules = @(@{ModuleName="AzureRM.Profile"; ModuleVersion="5.8.2"})
 Se deben cambiar a:
 
 ```powershell
-RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
+RequiredModules = @(@{ModuleName="Az.Accounts"; ModuleVersion="1.0.0"})
 ```
 
 ### <a name="removed-modules"></a>Módulos eliminados

@@ -7,12 +7,12 @@ ms.date: 04/25/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 03/14/2019
-ms.openlocfilehash: 01f02fcf624db0a8ce47084ec5aa331e0831014b
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: bc6ce6c36e3aca05015e6acbef3de0d5fd841eb6
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86489290"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94543925"
 ---
 # <a name="enable-backup-for-azure-stack-hub-with-powershell"></a>Habilitación de la copia de seguridad para Azure Stack Hub con PowerShell
 
@@ -28,7 +28,7 @@ Puede tener acceso a los cmdlets de PowerShell para habilitar la copia de seguri
 
 ## <a name="prepare-powershell-environment"></a>Preparación del entorno de PowerShell
 
-Si necesita instrucciones para configurar el entorno de PowerShell, consulte esta artículo sobre la [instalación de PowerShell para Azure Stack Hub](azure-stack-powershell-install.md). Para iniciar sesión en Azure Stack Hub, consulte [Configuración del entorno de operador e inicio de sesión en Azure Stack Hub](azure-stack-powershell-configure-admin.md).
+Si necesita instrucciones para configurar el entorno de PowerShell, consulte esta artículo sobre la [instalación de PowerShell para Azure Stack Hub](powershell-install-az-module.md). Para iniciar sesión en Azure Stack Hub, consulte [Configuración del entorno de operador e inicio de sesión en Azure Stack Hub](azure-stack-powershell-configure-admin.md).
 
 ## <a name="provide-the-backup-share-credentials-and-encryption-key-to-enable-backup"></a>Provisión del recurso compartido de copia de seguridad, las credenciales y la clave de cifrado para habilitar la copia de seguridad
 
@@ -134,7 +134,7 @@ El resultado debe tener una apariencia similar a la del ejemplo siguiente:
 El cmdlet de PowerShell para configurar la copia de seguridad de la infraestructura es Set-AzsBackupConfiguration. En versiones anteriores, el cmdlet era Set-AzsBackupShare. Este cmdlet requiere proporcionar un certificado. Si Copia de seguridad de infraestructura se configura con una clave de cifrado, no podrá actualizar la clave de cifrado ni ver la propiedad. Debe usar la versión 1.6 del administrador de PowerShell.
 
 Si Copia de seguridad de infraestructura se ha configurado antes de actualizar a 1901, puede usar la versión 1.6 del administrador de PowerShell para establecer y ver la clave de cifrado. Con la versión 1.6, no podrá actualizar de una clave de cifrado a un archivo de certificado.
-Consulte [Instalación de PowerShell para Azure Stack Hub](azure-stack-powershell-install.md) para más información sobre cómo instalar la versión correcta del módulo.
+Consulte [Instalación de PowerShell para Azure Stack Hub](powershell-install-az-module.md) para más información sobre cómo instalar la versión correcta del módulo.
 
 
 ## <a name="next-steps"></a>Pasos siguientes

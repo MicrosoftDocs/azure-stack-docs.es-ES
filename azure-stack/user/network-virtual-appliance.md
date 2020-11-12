@@ -7,12 +7,12 @@ ms.date: 09/08/2020
 ms.topic: article
 ms.reviewer: sranthar
 ms.lastreviewed: 05/12/2020
-ms.openlocfilehash: 293e445343acfe13a0be2cabab6cb1577c3941a2
-ms.sourcegitcommit: b147d617c32cea138b5bd4bab568109282e44317
+ms.openlocfilehash: 0facc0cc06ad3ff672531f1eeb7e31eee2f56ee0
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010890"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94546895"
 ---
 # <a name="troubleshoot-network-virtual-appliance-problems"></a>Solución de problemas de aplicaciones virtuales de red
 
@@ -58,7 +58,7 @@ Cada aplicación virtual de red tiene requisitos básicos de configuración para
 #### <a name="use-the-azure-stack-hub-portal"></a>Uso del portal de Azure Stack Hub
 
 1. Busque el recurso de la aplicación virtual de red en el portal de Azure Stack Hub, seleccione las **redes** y, después, seleccione la interfaz de red.
-2. En la página **Interfaz de red**, seleccione **Configuraciones de IP**.
+2. En la página **Interfaz de red** , seleccione **Configuraciones de IP**.
 3. Asegúrese de que está habilitado el reenvío IP.
 
 #### <a name="use-powershell"></a>Uso de PowerShell
@@ -66,7 +66,7 @@ Cada aplicación virtual de red tiene requisitos básicos de configuración para
 1. Ejecute el siguiente comando: Reemplace los valores de los corchetes angulares por su información.
 
    ```powershell
-   Get-AzureRMNetworkInterface -ResourceGroupName <ResourceGroupName> -Name <NIC name>
+   Get-AzNetworkInterface -ResourceGroupName <ResourceGroupName> -Name <NIC name>
    ```
 
 2. Compruebe la propiedad **EnableIPForwarding**.
@@ -74,9 +74,9 @@ Cada aplicación virtual de red tiene requisitos básicos de configuración para
 3. Si el reenvío IP no está habilitado, ejecute los siguientes comandos para habilitarlo:
 
    ```powershell
-   $nic2 = Get-AzureRMNetworkInterface -ResourceGroupName <ResourceGroupName> -Name <NIC name>
+   $nic2 = Get-AzNetworkInterface -ResourceGroupName <ResourceGroupName> -Name <NIC name>
    $nic2.EnableIPForwarding = 1
-   Set-AzureRMNetworkInterface -NetworkInterface $nic2
+   Set-AzNetworkInterface -NetworkInterface $nic2
    Execute: $nic2 #and check for an expected output:
    EnableIPForwarding   : True
    NetworkSecurityGroup : null

@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 01/14/2020
-ms.openlocfilehash: d94f9130825493ea521441a43a58aa053ff2cc05
-ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
+ms.openlocfilehash: 8661666b4f953d07a96f1a2402782970e32c140b
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84631401"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94545818"
 ---
 # <a name="connect-to-azure-stack-hub"></a>Conexión a Azure Stack Hub
 
@@ -26,7 +26,7 @@ Con una conexión a Escritorio remoto, un único usuario simultáneo puede traba
 
 1. Abra una conexión a Escritorio remoto y conecte con el kit de desarrollo. Escriba **AzureStack\AzureStackAdmin** como nombre de usuario y la contraseña de administrador que especificó en la instalación de Azure Stack Hub.  
 
-2. En el equipo del kit de desarrollo, abra el Administrador del servidor, haga clic en **Servidor local**, desactive la opción de seguridad mejorada de Internet Explorer y, a continuación, cierre el Administrador del servidor.
+2. En el equipo del kit de desarrollo, abra el Administrador del servidor, haga clic en **Servidor local** , desactive la opción de seguridad mejorada de Internet Explorer y, a continuación, cierre el Administrador del servidor.
 
 3. Para abrir el portal, vaya a `https://portal.local.azurestack.external/` e inicie sesión con las credenciales de usuario.
 
@@ -40,7 +40,7 @@ Puede establecer una conexión de red privada virtual de túnel dividido al Kit 
 
 ### <a name="prerequisites"></a>Requisitos previos
 
-* Instale los [módulos de Azure PowerShell compatibles con Azure Stack Hub](../operator/azure-stack-powershell-install.md) en su equipo local.  
+* Instale los [módulos de Azure PowerShell compatibles con Azure Stack Hub](../operator/powershell-install-az-module.md) en su equipo local.  
 * Descargue las [herramientas necesarias para trabajar con Azure Stack Hub](../operator/azure-stack-powershell-download.md). 
 
 ### <a name="configure-vpn-connectivity"></a>Configuración de la conectividad VPN

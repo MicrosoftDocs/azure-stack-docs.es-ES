@@ -7,12 +7,12 @@ ms.date: 10/30/2020
 ms.author: v-myoung
 ms.reviewer: shisab
 ms.lastreviewed: 10/30/2020
-ms.openlocfilehash: 80756669b32459d066d80b50546df9d1c23b9317
-ms.sourcegitcommit: 1e3a182d82cf01b64118647d6ab418651f83ad1e
+ms.openlocfilehash: b5f182fcf76fe28855240931e3515d3c9a467ee1
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93233368"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94543313"
 ---
 # <a name="diagnostic-log-collection"></a>Recopilación de registros de diagnóstico
 

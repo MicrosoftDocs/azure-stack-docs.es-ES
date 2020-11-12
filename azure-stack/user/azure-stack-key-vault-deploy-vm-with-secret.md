@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: ppacent
 ms.lastreviewed: 01/14/2020
-ms.openlocfilehash: 46b76402695131a6bb099a9dc55c15d1066d4c84
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.openlocfilehash: 1232a3ea585cbab53daf905ad0f4707f6df156c8
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90573826"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94546453"
 ---
 # <a name="deploy-an-azure-stack-hub-vm-using-a-password-stored-in-key-vault"></a>Implementación de una máquina virtual de Azure Stack Hub mediante una contraseña almacenada en Key Vault
 
@@ -28,7 +28,7 @@ Puede almacenar valores, por ejemplo, una contraseña como un secreto, en un alm
 ## <a name="prerequisites"></a>Prerrequisitos
 
 * Debe suscribirse a una oferta que incluya el servicio Key Vault.
-* [Instale PowerShell para Azure Stack Hub](../operator/azure-stack-powershell-install.md).
+* [Instale PowerShell para Azure Stack Hub](../operator/powershell-install-az-module.md).
 * [Configure el entorno de PowerShell.](azure-stack-powershell-configure-user.md)
 
 Los pasos siguientes describen el proceso necesario para crear una máquina virtual mediante la recuperación de la contraseña almacenada en un almacén de claves:
@@ -51,11 +51,11 @@ $resourceGroup = "contosovaultrg"
 $location = "local"
 $secretName = "MySecret"
 
-New-AzureRmResourceGroup `
+New-AzResourceGroup `
   -Name $resourceGroup `
   -Location $location
 
-New-AzureRmKeyVault `
+New-AzKeyVault `
   -VaultName $vaultName `
   -ResourceGroupName $resourceGroup `
   -Location $location
@@ -110,7 +110,7 @@ Actualice el archivo `azuredeploy.parameters.json` con los valores de KeyVault U
 Ahora implemente la plantilla con el siguiente script de PowerShell:
 
 ```powershell  
-New-AzureRmResourceGroupDeployment `
+New-AzResourceGroupDeployment `
   -Name KVPwdDeployment `
   -ResourceGroupName $resourceGroup `
   -TemplateFile "<Fully qualified path to the azuredeploy.json file>" `

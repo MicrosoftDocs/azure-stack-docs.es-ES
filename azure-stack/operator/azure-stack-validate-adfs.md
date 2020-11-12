@@ -6,16 +6,16 @@ services: azure-stack
 documentationcenter: ''
 author: BryanLa
 ms.topic: how-to
-ms.date: 03/04/2020
+ms.date: 10/19/2020
 ms.author: bryanla
 ms.reviewer: jerskine
-ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: a8809c9f3a041d6bb4812c58d614693ce2d5431a
-ms.sourcegitcommit: d930d52e27073829b8bf8ac2d581ec2accfa37e3
+ms.lastreviewed: 10/19/2020
+ms.openlocfilehash: 0b032929496646de763336a630f22782bd03091c
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82174005"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94545688"
 ---
 # <a name="validate-ad-fs-integration-for-azure-stack-hub"></a>Validación de la integración de AD FS para Azure Stack Hub
 
@@ -40,7 +40,7 @@ Deben cumplirse los siguientes requisitos previos.
 **Equipo donde se ejecuta la herramienta:**
 
 * Windows 10 o Windows Server 2016 con conectividad de dominio.
-* Azure PowerShell 5.1 o posterior. Para comprobar la versión, ejecute el siguiente comando de PowerShell y luego revise la versión *principal* y las versiones *secundarias*:  
+* Azure PowerShell 5.1 o posterior. Para comprobar la versión, ejecute el siguiente comando de PowerShell y luego revise la versión *principal* y las versiones *secundarias* :  
     ```powershell
     $PSVersionTable.PSVersion
     ```
@@ -58,7 +58,7 @@ Necesita al menos uno de los siguientes formatos de metadatos:
 1. En un equipo que cumpla los requisitos previos, abra un símbolo del sistema administrativo de PowerShell y ejecute el siguiente comando para instalar AzsReadinessChecker:
 
     ```powershell
-    Install-Module Microsoft.AzureStack.ReadinessChecker -Force
+    Install-Module Microsoft.AzureStack.ReadinessChecker -Force -AllowPrerelease
     ```
 
 1. Desde el símbolo del sistema de PowerShell, ejecute el comando siguiente para iniciar la validación. Especifique el valor de **-CustomADFSFederationMetadataEndpointUri** como el URI para los metadatos de federación.
@@ -117,7 +117,7 @@ Los ejemplos siguientes ofrecen instrucciones sobre errores de validación comun
 Invoke-AzsADFSValidation : The term 'Invoke-AzsADFSValidation' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
 ```
 
-**Causa**: PowerShell Autoload no se pudo cargar correctamente en el módulo de Readiness Checker.
+**Causa** : PowerShell Autoload no se pudo cargar correctamente en el módulo de Readiness Checker.
 
 **Solución:** importe el módulo de Readiness Checker de forma explícita. Copie y pegue el código siguiente en PowerShell y actualice `<version>` con el número correspondiente a la versión instalada actualmente.
 

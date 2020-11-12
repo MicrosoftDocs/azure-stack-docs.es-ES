@@ -4,20 +4,20 @@ titleSuffix: Azure Stack Hub
 description: Use Azure Stack Hub Readiness Checker para validar la identidad de Azure.
 author: BryanLa
 ms.topic: how-to
-ms.date: 06/25/2020
+ms.date: 10/19/2020
 ms.author: bryanla
 ms.reviewer: jerskine
-ms.lastreviewed: 06/25/2020
-ms.openlocfilehash: 63f071b50b2e0dac09b5a8ae628001734457d7b8
-ms.sourcegitcommit: 28850ae18844213ee410cfe96fc936655b5f6412
+ms.lastreviewed: 10/19/2020
+ms.openlocfilehash: c0fa7d69f0941a3a4867f8bec2d60ebc20c079b7
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86148114"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94545591"
 ---
 # <a name="validate-azure-identity"></a>Validación de la identidad de Azure
 
-Use la herramienta Azure Stack Readiness Checker (**AzsReadinessChecker**) para validar que su instancia de Azure Active Directory (Azure AD) está lista para usarse con Azure Stack Hub. Antes de empezar a implementar Azure Stack Hub, valide la solución de identidad de Azure.  
+Use la herramienta Azure Stack Readiness Checker ( **AzsReadinessChecker** ) para validar que su instancia de Azure Active Directory (Azure AD) está lista para usarse con Azure Stack Hub. Antes de empezar a implementar Azure Stack Hub, valide la solución de identidad de Azure.  
 
 La herramienta Readiness Checker valida:
 
@@ -32,71 +32,6 @@ Descargue la versión más reciente de la herramienta Azure Stack Hub Readiness 
 
 ## <a name="install-and-configure"></a>Instalar y configurar
 
-### <a name="azurerm-powershell"></a>[AzureRM PowerShell](#tab/rm)
-
-## <a name="prerequisites"></a>Requisitos previos
-
-Se necesitan los siguientes requisitos previos:
-
-#### <a name="azurerm-powershell-modules"></a>Módulos de PowerShell para AzureRM
-
-Tendrá que tener instalados los módulos de Az PowerShell. Para obtener instrucciones, consulte [Instalación del módulo AzureRM de PowerShell](azure-stack-powershell-install.md).
-
-#### <a name="the-computer-on-which-the-tool-runs"></a>El equipo en el que se ejecuta la herramienta
-
-- Windows 10 o Windows Server 2016, con conectividad a Internet.
-- Azure PowerShell 5.1 o posterior. Para comprobar la versión, ejecute el siguiente comando de PowerShell y luego revise la versión **principal** y las versiones **secundarias**:  
-  ```powershell
-  $PSVersionTable.PSVersion
-  ```
-- [PowerShell configurado para Azure Stack Hub](azure-stack-powershell-install.md).
-- Versión más reciente de la herramienta [Microsoft Azure Stack Hub Readiness Checker](https://aka.ms/AzsReadinessChecker).
-
-#### <a name="azure-ad-environment"></a>Entorno de Azure AD
-
-- Identifique la cuenta de Azure AD que va a usar con Azure Stack Hub y compruebe que es administrador global de Azure AD.
-- Identifique el nombre del inquilino de Azure AD. El nombre del inquilino debe ser el nombre de dominio principal de Azure AD. Por ejemplo, **contoso.onmicrosoft.com**.
-- Identifique el entorno de Azure que va a usar. Los valores admitidos para el parámetro de nombre de entorno son **AzureCloud**, **AzureChinaCloud** o **AzureUSGovernment**, dependiendo de la suscripción a Azure que se use.
-
-## <a name="steps-to-validate-azure-identity"></a>Pasos para validar la identidad de Azure
-
-1. En un equipo que cumpla los requisitos previos, abra un símbolo del sistema de comandos de PowerShell con privilegios elevados y ejecute el siguiente comando para instalar **AzsReadinessChecker**:  
-
-   ```powershell
-   Install-Module Microsoft.AzureStack.ReadinessChecker -Force
-   ```
-
-2. Desde el símbolo del sistema de PowerShell, ejecute el siguiente comando para establecer `$serviceAdminCredential` como administrador de servicios del inquilino de Azure AD.  Reemplace `serviceadmin\@contoso.onmicrosoft.com` por la cuenta y nombre de inquilino:
-
-   ```powershell
-   $serviceAdminCredential = Get-Credential serviceadmin@contoso.onmicrosoft.com -Message "Enter credentials for service administrator of Azure Active Directory tenant"
-   ```
-
-3. Desde el símbolo del sistema de PowerShell, ejecute el siguiente comando para iniciar la validación de Azure AD.
-
-   - Especifique el valor de nombre de entorno para la clase **AzureEnvironment**. Los valores admitidos para el parámetro de nombre de entorno son **AzureCloud**, **AzureChinaCloud** o **AzureUSGovernment**, dependiendo de la suscripción a Azure que se use.
-   - Reemplace `contoso.onmicrosoft.com` por el nombre del inquilino de Azure AD.
-
-   ```powershell
-   Invoke-AzsAzureIdentityValidation -AADServiceAdministrator $serviceAdminCredential -AzureEnvironment <environment name> -AADDirectoryTenantName contoso.onmicrosoft.com
-   ```
-
-4. Después de ejecutar la herramienta, revise el resultado. Confirme que el estado es **correcto** para los requisitos de instalación. Una validación correcta tiene un aspecto similar al del siguiente ejemplo:
-
-   ```powershell
-   Invoke-AzsAzureIdentityValidation v1.1809.1005.1 started.
-   Starting Azure Identity Validation
-
-   Checking Installation Requirements: OK
-
-   Finished Azure Identity Validation
-
-   Log location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessChecker.log
-   Report location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json
-   Invoke-AzsAzureIdentityValidation Completed
-   ```
-
-
 ### <a name="az-powershell"></a>[Az PowerShell](#tab/az)
 
 ### <a name="prerequisites"></a>Requisitos previos
@@ -105,7 +40,7 @@ Se necesitan los siguientes requisitos previos:
 
 #### <a name="az-powershell-modules"></a>Módulos Az de PowerShell
 
-Tendrá que tener instalados los módulos Az de PowerShell. Para obtener instrucciones, consulte [Instalación del módulo Az de PowerShell en versión preliminar](powershell-install-az-module.md).
+Tendrá que tener instalados los módulos de Az PowerShell. Para obtener instrucciones, consulte [Instalación del módulo Az de PowerShell en versión preliminar](powershell-install-az-module.md).
 
 #### <a name="azure-active-directory-azure-ad-environment"></a>Entorno de Azure Active Directory (Azure AD)
 
@@ -114,7 +49,7 @@ Tendrá que tener instalados los módulos Az de PowerShell. Para obtener instruc
 
 ### <a name="steps-to-validate-azure-identity"></a>Pasos para validar la identidad de Azure
 
-1. En un equipo que cumpla los requisitos previos, abra un símbolo del sistema de comandos de PowerShell con privilegios elevados y ejecute el siguiente comando para instalar **AzsReadinessChecker**:  
+1. En un equipo que cumpla los requisitos previos, abra un símbolo del sistema de comandos de PowerShell con privilegios elevados y ejecute el siguiente comando para instalar **AzsReadinessChecker** :  
 
    ```powershell
    Install-Module -Name Az.BootStrapper -Force -AllowPrerelease
@@ -149,6 +84,70 @@ Tendrá que tener instalados los módulos Az de PowerShell. Para obtener instruc
    Invoke-AzsAzureIdentityValidation Completed
    ```
 
+
+### <a name="azurerm-powershell"></a>[AzureRM PowerShell](#tab/rm)
+
+## <a name="prerequisites"></a>Requisitos previos
+
+Se necesitan los siguientes requisitos previos:
+
+#### <a name="azurerm-powershell-modules"></a>Módulos de PowerShell para AzureRM
+
+Tendrá que tener instalados los módulos Az de PowerShell. Para obtener instrucciones, consulte [Instalación del módulo AzureRM de PowerShell](powershell-install-az-module.md).
+
+#### <a name="the-computer-on-which-the-tool-runs"></a>El equipo en el que se ejecuta la herramienta
+
+- Windows 10 o Windows Server 2016, con conectividad a Internet.
+- Azure PowerShell 5.1 o posterior. Para comprobar la versión, ejecute el siguiente comando de PowerShell y luego revise la versión **principal** y las versiones **secundarias** :  
+  ```powershell
+  $PSVersionTable.PSVersion
+  ```
+- [PowerShell configurado para Azure Stack Hub](powershell-install-az-module.md).
+- Versión más reciente de la herramienta [Microsoft Azure Stack Hub Readiness Checker](https://aka.ms/AzsReadinessChecker).
+
+#### <a name="azure-ad-environment"></a>Entorno de Azure AD
+
+- Identifique la cuenta de Azure AD que va a usar con Azure Stack Hub y compruebe que es administrador global de Azure AD.
+- Identifique el nombre del inquilino de Azure AD. El nombre del inquilino debe ser el nombre de dominio principal de Azure AD. Por ejemplo, **contoso.onmicrosoft.com**.
+- Identifique el entorno de Azure que va a usar. Los valores admitidos para el parámetro de nombre de entorno son **AzureCloud** , **AzureChinaCloud** o **AzureUSGovernment** , dependiendo de la suscripción a Azure que se use.
+
+## <a name="steps-to-validate-azure-identity"></a>Pasos para validar la identidad de Azure
+
+1. En un equipo que cumpla los requisitos previos, abra un símbolo del sistema de comandos de PowerShell con privilegios elevados y ejecute el siguiente comando para instalar **AzsReadinessChecker** :  
+
+   ```powershell
+   Install-Module Microsoft.AzureStack.ReadinessChecker -Force -AllowPrerelease
+   ```
+
+2. Desde el símbolo del sistema de PowerShell, ejecute el siguiente comando para establecer `$serviceAdminCredential` como administrador de servicios del inquilino de Azure AD.  Reemplace `serviceadmin\@contoso.onmicrosoft.com` por la cuenta y nombre de inquilino:
+
+   ```powershell
+   $serviceAdminCredential = Get-Credential serviceadmin@contoso.onmicrosoft.com -Message "Enter credentials for service administrator of Azure Active Directory tenant"
+   ```
+
+3. Desde el símbolo del sistema de PowerShell, ejecute el siguiente comando para iniciar la validación de Azure AD.
+
+   - Especifique el valor de nombre de entorno para la clase **AzureEnvironment**. Los valores admitidos para el parámetro de nombre de entorno son **AzureCloud** , **AzureChinaCloud** o **AzureUSGovernment** , dependiendo de la suscripción a Azure que se use.
+   - Reemplace `contoso.onmicrosoft.com` por el nombre del inquilino de Azure AD.
+
+   ```powershell
+   Invoke-AzsAzureIdentityValidation -AADServiceAdministrator $serviceAdminCredential -AzureEnvironment <environment name> -AADDirectoryTenantName contoso.onmicrosoft.com
+   ```
+
+4. Después de ejecutar la herramienta, revise el resultado. Confirme que el estado es **correcto** para los requisitos de instalación. Una validación correcta tiene un aspecto similar al del siguiente ejemplo:
+
+   ```powershell
+   Invoke-AzsAzureIdentityValidation v1.1809.1005.1 started.
+   Starting Azure Identity Validation
+
+   Checking Installation Requirements: OK
+
+   Finished Azure Identity Validation
+
+   Log location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessChecker.log
+   Report location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json
+   Invoke-AzsAzureIdentityValidation Completed
+   ```
 --- 
 
 
@@ -189,9 +188,9 @@ Report location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadines
 Invoke-AzsAzureIdentityValidation Completed
 ```
 
-**Causa**: la cuenta no puede iniciar sesión porque la contraseña es temporal o ha expirado.
+**Causa** : la cuenta no puede iniciar sesión porque la contraseña es temporal o ha expirado.
 
-**Resolución**: en PowerShell, ejecute el siguiente comando y siga los avisos para restablecer la contraseña:
+**Resolución** : en PowerShell, ejecute el siguiente comando y siga los avisos para restablecer la contraseña:
 
 ```powershell
 Login-AzureRMAccount
@@ -217,9 +216,9 @@ Report location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadines
 Invoke-AzsAzureIdentityValidation Completed
 ```
 
-**Causa**: la cuenta no puede iniciar sesión en el entorno de Azure AD especificado (**AADDirectoryTenantName**). En este ejemplo, **AzureChinaCloud** se especifica como valor de **AzureEnvironment**.
+**Causa** : la cuenta no puede iniciar sesión en el entorno de Azure AD especificado ( **AADDirectoryTenantName** ). En este ejemplo, **AzureChinaCloud** se especifica como valor de **AzureEnvironment**.
 
-**Resolución**: confirme que la cuenta es válida para el entorno de Azure especificado. En PowerShell, ejecute el siguiente comando para comprobar que la cuenta es válida para un entorno concreto:
+**Resolución** : confirme que la cuenta es válida para el entorno de Azure especificado. En PowerShell, ejecute el siguiente comando para comprobar que la cuenta es válida para un entorno concreto:
 
 ```powershell
 Login-AzureRmAccount -EnvironmentName AzureChinaCloud
@@ -243,9 +242,9 @@ Report location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadines
 Invoke-AzsAzureIdentityValidation Completed
 ```
 
-**Causa**: aunque la cuenta puede iniciar sesión correctamente, la cuenta no es de un administrador de Azure AD (**AADDirectoryTenantName**).  
+**Causa** : aunque la cuenta puede iniciar sesión correctamente, la cuenta no es de un administrador de Azure AD ( **AADDirectoryTenantName** ).  
 
-**Resolución**: inicie sesión en [Azure Portal](https://portal.azure.com) como propietario de la cuenta, vaya sucesivamente a **Azure Active Directory**, a **Usuarios** y a **Seleccione el usuario**. A continuación, seleccione **Rol de directorio** y asegúrese de que el usuario es un **Administrador global**. Si la cuenta es de **usuario**, vaya a **Azure Active Directory** > **Nombres de dominio personalizado** y confirme que el nombre que especificó para **AADDirectoryTenantName** está marcado como nombre de dominio principal del directorio. En este ejemplo, se trata de **contoso.onmicrosoft.com**.
+**Resolución** : inicie sesión en [Azure Portal](https://portal.azure.com) como propietario de la cuenta, vaya sucesivamente a **Azure Active Directory** , a **Usuarios** y a **Seleccione el usuario**. A continuación, seleccione **Rol de directorio** y asegúrese de que el usuario es un **Administrador global**. Si la cuenta es de **usuario** , vaya a **Azure Active Directory** > **Nombres de dominio personalizado** y confirme que el nombre que especificó para **AADDirectoryTenantName** está marcado como nombre de dominio principal del directorio. En este ejemplo, se trata de **contoso.onmicrosoft.com**.
 
 Azure Stack Hub requiere que el nombre de dominio sea el nombre de dominio principal.
 

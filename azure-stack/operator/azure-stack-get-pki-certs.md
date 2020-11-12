@@ -3,16 +3,16 @@ title: Generación de solicitudes de firma de certificado para Azure Stack Hub
 description: Obtenga información acerca de cómo generar solicitudes de firma para los certificados PKI de Azure Stack Hub en los sistemas integrados de Azure Stack Hub.
 author: IngridAtMicrosoft
 ms.topic: article
-ms.date: 09/10/2019
+ms.date: 10/19/2020
 ms.author: inhenkel
 ms.reviewer: ppacent
-ms.lastreviewed: 09/10/2019
-ms.openlocfilehash: e72d00d7a0a5f1a9299d3d279e3b7ee8dd779b30
-ms.sourcegitcommit: 1c5e7d8419037c0f3ef6fe9d8e6bfb6a59659c84
+ms.lastreviewed: 10/19/2020
+ms.openlocfilehash: 1b7737f387ea1ea3afc913116642605fa54818a6
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89428573"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94543722"
 ---
 # <a name="generate-certificate-signing-requests-for-azure-stack-hub"></a>Generación de solicitudes de firma de certificado para Azure Stack Hub
 
@@ -22,7 +22,7 @@ Puede usar la herramienta Azure Stack Hub Readiness Checker (AzsReadinessChecker
 
 - **Solicitudes de certificado estándar** según se indica en [Generación de solicitudes de firma de certificado para nuevas implementaciones](azure-stack-get-pki-certs.md#generate-certificate-signing-requests-for-new-deployments).
 - **Renovación de solicitudes de certificado estándar** según se indica en [Generación de solicitudes de firma de certificado para nuevas implementaciones](azure-stack-get-pki-certs.md#generate-certificate-signing-requests-for-certificate-renewal).
-- **Plataforma como servicio**: Puede solicitar nombres de Plataforma como servicio (PaaS) para los certificados como se especifica en [Requisitos de certificados de infraestructura de clave pública de Azure Stack Hub: Certificados PaaS opcionales](azure-stack-pki-certs.md#optional-paas-certificates).
+- **Plataforma como servicio** : Puede solicitar nombres de Plataforma como servicio (PaaS) para los certificados como se especifica en [Requisitos de certificados de infraestructura de clave pública de Azure Stack Hub: Certificados PaaS opcionales](azure-stack-pki-certs.md#optional-paas-certificates).
 
 ## <a name="prerequisites"></a>Requisitos previos
 
@@ -111,7 +111,7 @@ Siga estos pasos para preparar solicitudes de firma de certificados para los nue
     New-AzsHubIoTHubCertificateSigningRequest -RegionName $regionName -FQDN $externalFQDN -subject $subject -OutputRequestPath $OutputDirectory
     ```
 
-7. Como alternativa, para entornos de desarrollo y pruebas, para generar una única solicitud de certificado con varios nombres alternativos del firmante, agregue el parámetro **-RequestType SingleCSR** y el valor (**no** se recomienda para entornos de producción):
+7. Como alternativa, para entornos de desarrollo y pruebas, para generar una única solicitud de certificado con varios nombres alternativos del firmante, agregue el parámetro **-RequestType SingleCSR** y el valor ( **no** se recomienda para entornos de producción):
 
     ```powershell  
     New-AzsHubDeploymentCertificateSigningRequest -RegionName $regionName -FQDN $externalFQDN -RequestType SingleCSR -subject $subject -OutputRequestPath $OutputDirectory -IdentitySystem $IdentitySystem
@@ -135,7 +135,7 @@ Siga estos pasos para preparar solicitudes de firma de certificados para la reno
 1. Instale AzsReadinessChecker desde un símbolo del sistema de PowerShell (5.1 o superior) mediante la ejecución del siguiente cmdlet:
 
     ```powershell  
-        Install-Module Microsoft.AzureStack.ReadinessChecker
+        Install-Module Microsoft.AzureStack.ReadinessChecker -Force -AllowPrerelease
     ```
 
 2. Declare el valor de **stampEndpoint** con el formato regionname.domain.com del sistema de Azure Stack Hub. Por ejemplo, si la dirección del portal del inquilino de Azure Stack Hub es <code> https://</code><code>portal.east.azurestack.contoso.com</code>):
@@ -176,7 +176,7 @@ Siga estos pasos para preparar solicitudes de firma de certificados para la reno
     New-AzsHubIotHubCertificateSigningRequest -StampEndpoint $stampEndpoint -OutputRequestPath $OutputDirectory
     ```
 
-5. Como alternativa, para entornos de desarrollo y pruebas, para generar una única solicitud de certificado con varios nombres alternativos del firmante, agregue el parámetro **-RequestType SingleCSR** y el valor (**no** se recomienda para entornos de producción):
+5. Como alternativa, para entornos de desarrollo y pruebas, para generar una única solicitud de certificado con varios nombres alternativos del firmante, agregue el parámetro **-RequestType SingleCSR** y el valor ( **no** se recomienda para entornos de producción):
 
     ```powershell  
     New-AzsHubDeploymentCertificateSigningRequest -StampEndpoint $stampendpoint -OutputRequestPath $OutputDirectory -RequestType SingleCSR

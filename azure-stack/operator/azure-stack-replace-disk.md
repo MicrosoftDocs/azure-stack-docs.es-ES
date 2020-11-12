@@ -8,12 +8,12 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 12/02/2019
-ms.openlocfilehash: ec161fd296785f42049b7b2917142f08b47ac910
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 172512b35e4f13a7ad86011162fe7ca9ebb825e5
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "78367853"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94545387"
 ---
 # <a name="replace-a-physical-disk-in-azure-stack-hub"></a>Reemplazo de un disco físico en Azure Stack Hub
 
@@ -48,7 +48,7 @@ Después de reemplazar el disco, Azure Stack Hub detecta automáticamente el nue
 
 Después de reemplazar el disco, puede supervisar el estado de mantenimiento del disco virtual y el progreso del trabajo de reparación mediante PowerShell de Azure Stack Hub.
 
-1. Asegúrese de tener instalado PowerShell de Azure Stack Hub. Para más información, consulte [Instalación de PowerShell para Azure Stack Hub](azure-stack-powershell-install.md).
+1. Asegúrese de tener instalado PowerShell de Azure Stack Hub. Para más información, consulte [Instalación de PowerShell para Azure Stack Hub](powershell-install-az-module.md).
 2. Conexión a Azure Stack Hub como operador con PowerShell Para más información, consulte [Conexión a Azure Stack Hub como operador con PowerShell](azure-stack-powershell-configure-admin.md).
 3. Ejecute los siguientes cmdlets para comprobar el estado del disco virtual y el estado de reparación:
 

@@ -7,12 +7,12 @@ ms.date: 01/13/2020
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 01/13/2019
-ms.openlocfilehash: b468ed4c41c259a0017969615681abcd007d96c7
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 9f4fac881a4b8e946edd527590dc95ca32aa1c84
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77695332"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94544741"
 ---
 # <a name="add-workers-and-infrastructure-in-azure-app-service-on-azure-stack-hub"></a>Adición de trabajos e infraestructura en App Service en Azure Stack Hub
 
@@ -37,7 +37,7 @@ Azure App Service en Azure Stack Hub implementa todos los roles mediante conjunt
     ##### Scale out the AppService Role instances ######
    
     # Set context to AzureStack admin.
-    Login-AzureRmAccount -EnvironmentName AzureStackAdmin
+    Login-AzAccount -EnvironmentName AzureStackAdmin
                                                  
     ## Name of the Resource group where AppService is deployed.
     $AppServiceResourceGroupName = "AppService.local"
@@ -50,11 +50,11 @@ Azure App Service en Azure Stack Hub implementa todos los roles mediante conjunt
     $TotalCapacity = 2  
 
     # Get current scale set
-    $vmss = Get-AzureRmVmss -ResourceGroupName $AppServiceResourceGroupName -VMScaleSetName $ScaleSetName
+    $vmss = Get-AzVmss -ResourceGroupName $AppServiceResourceGroupName -VMScaleSetName $ScaleSetName
 
     # Set and update the capacity
     $vmss.sku.capacity = $TotalCapacity
-    Update-AzureRmVmss -ResourceGroupName $AppServiceResourceGroupName -Name $ScaleSetName -VirtualMachineScaleSet $vmss 
+    Update-AzVmss -ResourceGroupName $AppServiceResourceGroupName -Name $ScaleSetName -VirtualMachineScaleSet $vmss 
    ```    
 
    > [!NOTE]
@@ -78,7 +78,7 @@ Azure App Service en Azure Stack Hub implementa todos los roles mediante conjunt
 
     ![Roles de App Service del conjunto de escalado en el portal del administrador de Azure Stack Hub](media/azure-stack-app-service-add-worker-roles/image02.png)
 
-5. Haga clic en **Escalado**, seleccione el número de instancias a las que desea escalar y, a continuación, haga clic en **Guardar**.
+5. Haga clic en **Escalado** , seleccione el número de instancias a las que desea escalar y, a continuación, haga clic en **Guardar**.
 
     ![Establecimiento de instancias para escalar en los roles de App Service del portal del administrador de Azure Stack Hub](media/azure-stack-app-service-add-worker-roles/image03.png)
 

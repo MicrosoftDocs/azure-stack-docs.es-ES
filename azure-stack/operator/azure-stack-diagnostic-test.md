@@ -7,16 +7,16 @@ ms.date: 01/10/2020
 ms.author: justinha
 ms.reviewer: adshar
 ms.lastreviewed: 01/10/2020
-ms.openlocfilehash: 40a916a282f4808d9897cc5c23ea953739b0a0cf
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.openlocfilehash: 4c91954e4a3a19640d519d16363c0d2742077d67
+ms.sourcegitcommit: 30ea43f486895828710297967270cb5b8d6a1a18
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90572942"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93415171"
 ---
 # <a name="validate-azure-stack-hub-system-state"></a>Validación del estado del sistema con Azure Stack Hub
 
-Como operador de Azure Stack Hub, es esencial tener la capacidad de determinar a petición el mantenimiento y el estado del sistema. La herramienta de validación de Azure Stack Hub (**Test-AzureStack**) es un cmdlet de PowerShell que le permite ejecutar una serie de pruebas en el sistema para identificar errores, si los hubiera. Cuando se ponga en contacto con los Servicios de atención al cliente y soporte técnico de Microsoft (Soporte técnico de Microsoft) con un problema, normalmente se le pedirá que ejecute esta herramienta a través del [punto de conexión con privilegios (PEP)](azure-stack-privileged-endpoint.md). Con la información sobre el mantenimiento y el estado en todo el sistema, Soporte técnico de Microsoft puede recopilar y analizar registros detallados, centrarse en el área donde se produjo el error y trabajar conjuntamente con usted para resolver el problema.
+Como operador de Azure Stack Hub, es esencial tener la capacidad de determinar a petición el mantenimiento y el estado del sistema. La herramienta de validación de Azure Stack Hub ( **Test-AzureStack** ) es un cmdlet de PowerShell que le permite ejecutar una serie de pruebas en el sistema para identificar errores, si los hubiera. Cuando se ponga en contacto con los Servicios de atención al cliente y soporte técnico de Microsoft (Soporte técnico de Microsoft) con un problema, normalmente se le pedirá que ejecute esta herramienta a través del [punto de conexión con privilegios (PEP)](azure-stack-privileged-endpoint.md). Con la información sobre el mantenimiento y el estado en todo el sistema, Soporte técnico de Microsoft puede recopilar y analizar registros detallados, centrarse en el área donde se produjo el error y trabajar conjuntamente con usted para resolver el problema.
 
 ## <a name="running-the-validation-tool-and-accessing-results"></a>Ejecución de la herramienta de validación y acceso a los resultados
 
@@ -47,7 +47,7 @@ Como se indicó anteriormente, la herramienta de validación se ejecuta a travé
 
    Acuda a las secciones [Consideraciones sobre los parámetros](azure-stack-diagnostic-test.md#parameter-considerations) y [Ejemplos de caso de uso](azure-stack-diagnostic-test.md#use-case-examples) para más información.
 
-1. Si cualquier informe de pruebas aparece como **FAIL**, ejecute `Get-AzureStackLog`. Para obtener instrucciones sobre un sistema integrado, consulte cómo ejecutar [Get-AzureStackLog en sistemas integrados de Azure Stack Hub](azure-stack-get-azurestacklog.md).
+1. Si cualquier informe de pruebas aparece como **FAIL** , ejecute `Get-AzureStackLog`. Para obtener instrucciones sobre un sistema integrado, consulte cómo ejecutar [Get-AzureStackLog en sistemas integrados de Azure Stack Hub](azure-stack-get-azurestacklog.md).
 
    El cmdlet recopila registros generados por Test-AzureStack. Se recomienda no recopilar registros y ponerse en contacto con Soporte técnico de Microsoft en su lugar si las pruebas envían una notificación **WARN**.
 
@@ -130,7 +130,7 @@ Los siguientes escenarios de nube han sido probados por la herramienta de valida
 - **DetailedResults** puede usarse para obtener información sobre las ejecuciones correctas, incorrectas o con advertencias de cada prueba, y para conocer la ejecución en general. Cuando no se especifica, **Test-AzureStack** devuelve **$true** si no hay errores, y **$false** si hay errores.
 - **TimeoutSeconds** puede usarse para establecer una hora específica de finalización de cada grupo.
 
-- La herramienta de validación también admite parámetros comunes de PowerShell: Verbose, Debug, ErrorAction, ErrorVariable, WarningAction, WarningVariable, OutBuffer, PipelineVariable y OutVariable. Para más información, consulte [About Common Parameters](https://go.microsoft.com/fwlink/?LinkID=113216) (Acerca de parámetros habituales).  
+- La herramienta de validación también admite parámetros comunes de PowerShell: Verbose, Debug, ErrorAction, ErrorVariable, WarningAction, WarningVariable, OutBuffer, PipelineVariable y OutVariable. Para más información, consulte [About Common Parameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters) (Acerca de parámetros habituales).  
 
 ## <a name="use-case-examples"></a>Ejemplos de caso de uso
 
@@ -163,16 +163,16 @@ El nombre del usuario administrador de la nube tiene que escribirse en formato U
 
 ### <a name="groups"></a>Grupos
 
-Para mejorar la experiencia del operador, se ha habilitado un parámetro **Group** para ejecutar varias categorías de pruebas al mismo tiempo. Actualmente, hay tres grupos definidos: **Default**, **UpdateReadiness** y **SecretRotationReadiness**.
+Para mejorar la experiencia del operador, se ha habilitado un parámetro **Group** para ejecutar varias categorías de pruebas al mismo tiempo. Actualmente, hay tres grupos definidos: **Default** , **UpdateReadiness** y **SecretRotationReadiness**.
 
-- **Valor predeterminado**: Se considera una ejecución estándar de **Test-AzureStack**. Si no se selecciona ningún otro grupo, este grupo se ejecuta de forma predeterminada.
-- **UpdateReadiness**: una comprobación para ver si se puede actualizar la instancia de Azure Stack Hub. Cuando se ejecuta el grupo **UpdateReadiness**, se muestran advertencias como errores en la salida de la consola, y se deben considerar bloqueadores de la actualización. A partir de la versión 1910 de Azure Stack Hub, las siguientes categorías forman parte del grupo **UpdateReadiness**:
+- **Valor predeterminado** : Se considera una ejecución estándar de **Test-AzureStack**. Si no se selecciona ningún otro grupo, este grupo se ejecuta de forma predeterminada.
+- **UpdateReadiness** : una comprobación para ver si se puede actualizar la instancia de Azure Stack Hub. Cuando se ejecuta el grupo **UpdateReadiness** , se muestran advertencias como errores en la salida de la consola, y se deben considerar bloqueadores de la actualización. A partir de la versión 1910 de Azure Stack Hub, las siguientes categorías forman parte del grupo **UpdateReadiness** :
 
   - **AzsInfraFileValidation**
   - **AzsActionPlanStatus**
   - **AzsStampBMCSummary**
 
-- **SecretRotationReadiness**: comprobación para ver si la instancia de Azure Stack Hub está en un estado en el que se pueda ejecutar la rotación de secretos. Cuando se ejecuta el grupo **SecretRotationReadiness**, se muestran advertencias como errores en la salida de la consola y se deben considerar bloqueadores de rotación de secretos. Las siguientes categorías forman parte del grupo SecretRotationReadiness:
+- **SecretRotationReadiness** : comprobación para ver si la instancia de Azure Stack Hub está en un estado en el que se pueda ejecutar la rotación de secretos. Cuando se ejecuta el grupo **SecretRotationReadiness** , se muestran advertencias como errores en la salida de la consola y se deben considerar bloqueadores de rotación de secretos. Las siguientes categorías forman parte del grupo SecretRotationReadiness:
 
   - **AzsAcsSummary**
   - **AzsDefenderSummary**
@@ -192,7 +192,7 @@ El siguiente ejemplo ejecuta **Test-AzureStack** para probar la preparación del
 Test-AzureStack -Group UpdateReadiness
 ```
 
-Si Azure Stack Hub ejecuta una versión anterior a 1811, use los siguientes comandos de PowerShell para ejecutar **Test-AzureStack**:
+Si Azure Stack Hub ejecuta una versión anterior a 1811, use los siguientes comandos de PowerShell para ejecutar **Test-AzureStack** :
 
 ```powershell
 New-PSSession -ComputerName "<ERCS VM-name/IP address>" -ConfigurationName PrivilegedEndpoint -Credential $localcred 
@@ -201,7 +201,7 @@ Test-AzureStack -Include AzsControlPlane, AzsDefenderSummary, AzsHostingInfraSum
 
 ### <a name="run-validation-tool-to-test-infrastructure-backup-settings"></a>Ejecución de la herramienta de validación para probar la configuración de copia de seguridad de la infraestructura
 
-*Antes* de configurar la copia de seguridad de la infraestructura, puede probar la ruta de acceso y las credenciales del recurso compartido de copia de seguridad mediante la prueba **AzsBackupShareAccessibility**:
+*Antes* de configurar la copia de seguridad de la infraestructura, puede probar la ruta de acceso y las credenciales del recurso compartido de copia de seguridad mediante la prueba **AzsBackupShareAccessibility** :
 
   ```powershell
   Enter-PSSession -ComputerName "<ERCS VM-name/IP address>" -ConfigurationName PrivilegedEndpoint -Credential $localcred 

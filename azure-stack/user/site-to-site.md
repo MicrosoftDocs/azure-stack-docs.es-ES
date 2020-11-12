@@ -7,12 +7,12 @@ ms.date: 10/01/2020
 ms.topic: article
 ms.reviewer: sranthar
 ms.lastreviewed: 05/12/2020
-ms.openlocfilehash: 7d4fc17759365434f6179229674b0bb21137f58b
-ms.sourcegitcommit: a1e2003fb9c6dacdc76f97614ff5a26a5b197b49
+ms.openlocfilehash: 6d677d4b192cef17d44896ba5ef41387b1c95765
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91623343"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94546878"
 ---
 # <a name="troubleshoot-site-to-site-vpn-connections"></a>Solución de problemas de conexiones VPN de sitio a sitio
 
@@ -48,14 +48,14 @@ Los parámetros predeterminados de Azure Stack Hub para IPsec/IKEV2 han cambiado
 
 - Compare la clave compartida del dispositivo VPN local y la de la VPN de la red virtual de AzSH para asegurarse de que coinciden. Para ver la clave compartida de la conexión de la VPN de AzSH, use uno de los siguientes métodos:
 
-  - **Portal de inquilino de Azure Stack Hub**: Vaya a la conexión de sitio a sitio de la puerta de enlace VPN que ha creado. En la sección **Settings** (Configuración), seleccione **Shared key** (Clave compartida).
+  - **Portal de inquilino de Azure Stack Hub** : Vaya a la conexión de sitio a sitio de la puerta de enlace VPN que ha creado. En la sección **Settings** (Configuración), seleccione **Shared key** (Clave compartida).
 
       :::image type="content" source="media/site-to-site/vpn-connection.png" alt-text="Conexión VPN":::
 
-  - **Azure PowerShell**: Use el siguiente comando de PowerShell:
+  - **Azure PowerShell** : Use el siguiente comando de PowerShell:
 
       ```powershell
-      Get-AzureRMVirtualNetworkGatewayConnectionSharedKey -Name <Connection name> -ResourceGroupName <Resource group>
+      Get-AzVirtualNetworkGatewayConnectionSharedKey -Name <Connection name> -ResourceGroupName <Resource group>
       ```
 
 ## <a name="status-connected--traffic-not-flowing"></a>Estado "Conectado": el tráfico no fluye

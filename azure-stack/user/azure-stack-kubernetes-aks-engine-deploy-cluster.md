@@ -7,12 +7,12 @@ ms.date: 09/02/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 09/02/2020
-ms.openlocfilehash: b90b7c61e5eeed1265bf258b6ba3ce7b042b6897
-ms.sourcegitcommit: 1621f2748b2059fd47ccacd48595a597c44ee63f
+ms.openlocfilehash: 213e7a0d3a0ad8e395729749e68466a3a4dbab42
+ms.sourcegitcommit: 30ea43f486895828710297967270cb5b8d6a1a18
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91853200"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93415273"
 ---
 # <a name="deploy-a-kubernetes-cluster-with-the-aks-engine-on-azure-stack-hub"></a>Implementación de un clúster de Kubernetes con el motor de AKS en Azure Stack Hub
 
@@ -236,7 +236,7 @@ Después de la implementación del clúster de Kubernetes con el motor de AKS, l
 
 ### <a name="update-each-node-manually"></a>Actualización de cada nodo manualmente
 
-1. Obtenga un nuevo secreto para la entidad de servicio del operador de la nube. Para obtener instrucciones para Azure Stack Hub, consulte [Uso de una identidad de aplicación para acceder a recursos de Azure Stack Hub](/azure-stack/operator/azure-stack-create-service-principals).
+1. Obtenga un nuevo secreto para la entidad de servicio del operador de la nube. Para obtener instrucciones para Azure Stack Hub, consulte [Uso de una identidad de aplicación para acceder a recursos de Azure Stack Hub](../operator/azure-stack-create-service-principals.md).
 2. Use las nuevas credenciales proporcionadas por el operador de la nube para actualizar `/etc/kubernetes/azure.json` en cada nodo. Después de efectuar la actualización, reinicie **kubelet** y **kube-controller-manager**.
 
 ### <a name="update-the-cluster-with-aks-engine-update"></a>Actualización del clúster con la actualización del motor de AKS

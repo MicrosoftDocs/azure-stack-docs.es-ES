@@ -7,16 +7,16 @@ ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 09/05/2019
-ms.openlocfilehash: 10a7c60a18faa5528fb9c1917c62994b43bee51a
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 2090471cee6fa36a32b9e2147de7941cd4abed54
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77701044"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94544282"
 ---
 # <a name="back-up-azure-stack-hub"></a>Copia de seguridad de Azure Stack Hub
 
-En este artículo, se explica cómo realizar una copia de seguridad a petición en Azure Stack Hub. Si necesita instrucciones para configurar el entorno de PowerShell, consulte esta artículo sobre la [instalación de PowerShell para Azure Stack Hub](azure-stack-powershell-install.md). Para iniciar sesión en Azure Stack Hub, consulte [Uso del portal del administrador de Azure Stack Hub](azure-stack-manage-portals.md).
+En este artículo, se explica cómo realizar una copia de seguridad a petición en Azure Stack Hub. Si necesita instrucciones para configurar el entorno de PowerShell, consulte esta artículo sobre la [instalación de PowerShell para Azure Stack Hub](powershell-install-az-module.md). Para iniciar sesión en Azure Stack Hub, consulte [Uso del portal del administrador de Azure Stack Hub](azure-stack-manage-portals.md).
 
 ## <a name="start-azure-stack-hub-backup"></a>Inicio de la copia de seguridad de Azure Stack Hub
 
@@ -104,7 +104,7 @@ El resultado debe tener un aspecto similar a la siguiente salida:
 Use el portal del administrador de Azure Stack Hub para verificar si esa copia de seguridad se ha completado correctamente; para ello, siga estos pasos:
 
 1. Abra el [portal del administrador de Azure Stack Hub](azure-stack-manage-portals.md).
-2. Seleccione **Todos los servicios** y, luego, en la categoría **ADMINISTRACIÓN**, seleccione > **Copia de seguridad de infraestructura**. Elija **Configuración** en la hoja **Copia de seguridad de infraestructura**.
+2. Seleccione **Todos los servicios** y, luego, en la categoría **ADMINISTRACIÓN** , seleccione > **Copia de seguridad de infraestructura**. Elija **Configuración** en la hoja **Copia de seguridad de infraestructura**.
 3. Busque el **Nombre** y la **Fecha de finalización** de la copia de seguridad en la lista **Copias de seguridad disponibles**.
 4. Compruebe que el **Estado** es **Correcto**.
 

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 05/07/2020
 ms.author: sethm
 ms.lastreviewed: 12/27/2019
-ms.openlocfilehash: 6ff4822e3093dd636bdd5b83fb3150eb9036d9ec
-ms.sourcegitcommit: 9894804f31527234d43f4a93a9b7c106c8540435
+ms.openlocfilehash: 55f62550521e6b57d08852eb6d3f0c14da735fec
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82967784"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94546810"
 ---
 # <a name="configure-vpn-gateway-settings-for-azure-stack-hub"></a>Configuración de una puerta de enlace de VPN para Azure Stack Hub
 
@@ -28,7 +28,7 @@ Cada red virtual de Azure Stack Hub es compatible con una puerta de enlace de re
 Al crear una puerta de enlace de red virtual, debe asegurarse de que el tipo de puerta de enlace es el correcto para su configuración. Una puerta de enlace de VPN requiere la marca `-GatewayType Vpn`, por ejemplo:
 
 ```powershell
-New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
+New-AzVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
 -Location 'West US' -IpConfigurations $gwipconfig -GatewayType Vpn `
 -VpnType RouteBased
 ```
@@ -49,7 +49,7 @@ Azure Stack Hub ofrece las SKU de VPN Gateway que se muestran en la siguiente ta
 
 Azure Stack Hub no admite un cambio de tamaño de las SKU entre las SKU heredadas compatibles.
 
-De igual modo, Azure Stack Hub no admite un cambio de tamaño de una SKU heredada compatible (**Básica**, **Estándar** y **HighPerformance**), a una SKU más reciente compatible con Azure (**VpnGw1**, **VpnGw2** y **VpnGw3**).
+De igual modo, Azure Stack Hub no admite un cambio de tamaño de una SKU heredada compatible ( **Básica** , **Estándar** y **HighPerformance** ), a una SKU más reciente compatible con Azure ( **VpnGw1** , **VpnGw2** y **VpnGw3** ).
 
 ### <a name="configure-the-gateway-sku"></a>Configuración de la SKU de puerta de enlace
 
@@ -59,10 +59,10 @@ Si usa el portal de Azure Stack Hub para crear una puerta de enlace de red virtu
 
 #### <a name="powershell"></a>PowerShell
 
-En el siguiente ejemplo de PowerShell se especifica el parámetro `-GatewaySku` como **Standard**:
+En el siguiente ejemplo de PowerShell se especifica el parámetro `-GatewaySku` como **Standard** :
 
 ```powershell
-New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
+New-AzVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
 -Location 'West US' -IpConfigurations $gwipconfig -GatewaySku Standard `
 -GatewayType Vpn -VpnType RouteBased
 ```
@@ -74,7 +74,7 @@ En el modelo de implementación de Resource Manager, cada configuración requier
 En el siguiente ejemplo de PowerShell, se crea una conexión S2S que requiere el tipo de conexión IPsec:
 
 ```powershell
-New-AzureRmVirtualNetworkGatewayConnection -Name localtovon -ResourceGroupName testrg `
+New-AzVirtualNetworkGatewayConnection -Name localtovon -ResourceGroupName testrg `
 -Location 'West US' -VirtualNetworkGateway1 $gateway1 -LocalNetworkGateway2 $local `
 -ConnectionType IPsec -RoutingWeight 10 -SharedKey 'abc123'
 ```
@@ -88,17 +88,17 @@ Al crear la puerta de enlace de red virtual para una configuración de puerta de
 >
 > Además, Azure Stack Hub no admite el uso de selectores de tráfico basados en directivas para puertas de enlace basadas en rutas en este momento, ya que las configuraciones de directivas personalizadas de IPSec/IKE no se admiten.
 
-* **PolicyBased**: las VPN basadas en directivas cifran y dirigen los paquetes a través de túneles de IPsec basados en las directivas de IPsec configuradas con las combinaciones de prefijos de dirección entre su red local y la red virtual de Azure Stack Hub. La directiva (o el selector de tráfico) suele ser una lista de acceso en la configuración del dispositivo VPN.
+* **PolicyBased** : las VPN basadas en directivas cifran y dirigen los paquetes a través de túneles de IPsec basados en las directivas de IPsec configuradas con las combinaciones de prefijos de dirección entre su red local y la red virtual de Azure Stack Hub. La directiva (o el selector de tráfico) suele ser una lista de acceso en la configuración del dispositivo VPN.
 
   >[!NOTE]
   >**PolicyBased** es compatible con Azure, pero no con Azure Stack Hub.
 
-* **RouteBased**: las VPN basadas en rutas utilizan rutas que se configuran en la dirección IP de reenvío o en la tabla de enrutamiento para dirigir los paquetes a sus correspondientes interfaces de túnel. A continuación, las interfaces de túnel cifran o descifran los paquetes dentro y fuera de los túneles. La directiva o el selector de tráfico para las VPN **RouteBased** se configuran como una conectividad universal (también se pueden usar caracteres comodín). De forma predeterminada, no se puede cambiar. El valor de un tipo de VPN **basada en ruta** es **RouteBased**.
+* **RouteBased** : las VPN basadas en rutas utilizan rutas que se configuran en la dirección IP de reenvío o en la tabla de enrutamiento para dirigir los paquetes a sus correspondientes interfaces de túnel. A continuación, las interfaces de túnel cifran o descifran los paquetes dentro y fuera de los túneles. La directiva o el selector de tráfico para las VPN **RouteBased** se configuran como una conectividad universal (también se pueden usar caracteres comodín). De forma predeterminada, no se puede cambiar. El valor de un tipo de VPN **basada en ruta** es **RouteBased**.
 
 En el siguiente ejemplo de PowerShell se especifica `-VpnType` como **RouteBased**. Al crear una puerta de enlace, debe asegurarse de que `-VpnType` es correcto para su configuración.
 
 ```powershell
-New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
+New-AzVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
 -Location 'West US' -IpConfigurations $gwipconfig `
 -GatewayType Vpn -VpnType RouteBased
 ```
@@ -128,7 +128,7 @@ Además, debe asegurarse de que la subred de puerta de enlace tenga suficientes 
 En el ejemplo de PowerShell de Resource Manager siguiente, se muestra una subred de puerta de enlace con el nombre **GatewaySubnet**. Puede ver que la notación CIDR especifica /27, que permite suficientes direcciones IP para la mayoría de las configuraciones que existen.
 
 ```powershell
-Add-AzureRmVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -AddressPrefix 10.0.3.0/27
+Add-AzVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -AddressPrefix 10.0.3.0/27
 ```
 
 > [!IMPORTANT]
@@ -143,7 +143,7 @@ Asigne un nombre a la puerta de enlace de red local, así como la dirección IP 
 En el ejemplo siguiente de PowerShell, se crea una nueva puerta de enlace de red local:
 
 ```powershell
-New-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg `
+New-AzLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg `
 -Location 'West US' -GatewayIpAddress '23.99.221.164' -AddressPrefix '10.5.51.0/24'
 ```
 

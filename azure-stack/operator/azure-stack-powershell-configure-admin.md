@@ -3,16 +3,16 @@ title: Conexión a Azure Stack Hub con PowerShell
 description: Aprenda a conectarse a Azure Stack Hub con PowerShell.
 author: mattbriggs
 ms.topic: article
-ms.date: 8/4/2020
+ms.date: 10/19/2020
 ms.author: mabrigg
 ms.reviewer: thoroet
-ms.lastreviewed: 8/4/2020
-ms.openlocfilehash: 3001d06deb81e275f3b62127cb555d3afceaff3c
-ms.sourcegitcommit: c75e2cfd96f37a3497958eb87446888477f85bc9
+ms.lastreviewed: 10/19/2020
+ms.openlocfilehash: d99212c63e33060fbbb8eb483dd32e7c01d54ba1
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810803"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94545149"
 ---
 # <a name="connect-to-azure-stack-hub-with-powershell"></a>Conexión a Azure Stack Hub con PowerShell
 
@@ -22,7 +22,7 @@ Puede configurar Azure Stack Hub para usar PowerShell para administrar recursos,
 
 Implemente los siguientes requisitos previos desde el [Kit de desarrollo de Azure Stack (ASDK)](../asdk/asdk-connect.md#connect-with-rdp) o desde un cliente externo basado en Windows si está [conectado al ASDK por VPN](../asdk/asdk-connect.md#connect-with-vpn).
 
-- Instale los [módulos de Azure PowerShell compatibles con Azure Stack Hub](azure-stack-powershell-install.md).  
+- Instale los [módulos de Azure PowerShell compatibles con Azure Stack Hub](powershell-install-az-module.md).  
 - Descargue las [herramientas necesarias para trabajar con Azure Stack Hub](azure-stack-powershell-download.md).  
 
 ## <a name="connect-with-azure-ad"></a>Conexión con Azure AD
@@ -33,7 +33,7 @@ Para configurar el entorno de operador de Azure Stack Hub con PowerShell, ejecut
 
 ```powershell  
     # Register an Azure Resource Manager environment that targets your Azure Stack Hub instance. Get your Azure Resource Manager endpoint value from your service provider.
-    Add-AzureRMEnvironment -Name "AzureStackAdmin" -ArmEndpoint "https://adminmanagement.local.azurestack.external" `
+    Add-AzEnvironment -Name "AzureStackAdmin" -ArmEndpoint "https://adminmanagement.local.azurestack.external" `
       -AzureKeyVaultDnsSuffix adminvault.local.azurestack.external `
       -AzureKeyVaultServiceEndpointResourceId https://adminvault.local.azurestack.external
 
@@ -53,7 +53,7 @@ Conéctese al entorno de operador de Azure Stack Hub con PowerShell con Azure A
 
   ```powershell  
   # Register an Azure Resource Manager environment that targets your Azure Stack Hub instance. Get your Azure Resource Manager endpoint value from your service provider.
-    Add-AzureRMEnvironment -Name "AzureStackAdmin" -ArmEndpoint "https://adminmanagement.local.azurestack.external" `
+    Add-AzEnvironment -Name "AzureStackAdmin" -ArmEndpoint "https://adminmanagement.local.azurestack.external" `
       -AzureKeyVaultDnsSuffix adminvault.local.azurestack.external `
       -AzureKeyVaultServiceEndpointResourceId https://adminvault.local.azurestack.external
 

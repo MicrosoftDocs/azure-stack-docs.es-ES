@@ -6,16 +6,16 @@ services: azure-stack
 documentationcenter: ''
 author: sethmanheim
 ms.topic: article
-ms.date: 07/27/2020
+ms.date: 11/09/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 8dff2f6debb12b8579e3b8e0b451b8d6bac17cad
-ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
+ms.openlocfilehash: e11eedc6cade8b3546182d2abf66a0dbb7e1c91a
+ms.sourcegitcommit: 980be7813e6f39fb59926174a5d3e0d392b04293
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87250357"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94414221"
 ---
 # <a name="report-azure-stack-hub-usage-data-to-azure"></a>Notificar los datos de uso de Azure Stack Hub a Azure
 
@@ -36,12 +36,12 @@ Los datos de uso se envían desde Azure Stack Hub a Azure mediante Azure Bridge.
 
 Para configurar los informes de datos de uso, debe [registrar la instancia de Azure Stack Hub en Azure](azure-stack-registration.md). Como parte del proceso de registro, se configura el componente Azure Bridge de Azure Stack Hub. El componente Azure Bridge es lo que conecta Azure Stack Hub a Azure. Los siguientes datos de uso se envían desde Azure Stack Hub a Azure:
 
-- **Id. de medidor**: identificador único del recurso que se consumió.
-- **Cantidad**: cantidad de uso de los recursos.
-- **Ubicación**: ubicación donde está implementado el recurso actual de Azure Stack Hub.
-- **URI de recurso**: URI completo del recurso para el que se notifica el uso.
-- **Id. de suscripción**: identificador de suscripción del usuario de Azure Stack Hub, que es la suscripción (Azure Stack Hub) local.
-- **Tiempo**: hora de inicio y finalización de los datos de uso. Hay un retraso determinado entre el momento en que se usan estos recursos en Azure Stack Hub y el momento en que se notifican los datos de uso al comercio. Azure Stack Hub agrega los datos de uso cada 24 horas y la notificación de los datos de uso a la canalización del comercio en Azure tarda unas horas más. Por lo tanto, el uso que se produce brevemente antes de medianoche puede aparecer en Azure al día siguiente.
+- **Id. de medidor** : identificador único del recurso que se consumió.
+- **Cantidad** : cantidad de uso de los recursos.
+- **Ubicación** : ubicación donde está implementado el recurso actual de Azure Stack Hub.
+- **URI de recurso** : URI completo del recurso para el que se notifica el uso.
+- **Id. de suscripción** : identificador de suscripción del usuario de Azure Stack Hub, que es la suscripción (Azure Stack Hub) local.
+- **Tiempo** : hora de inicio y finalización de los datos de uso. Hay un retraso determinado entre el momento en que se usan estos recursos en Azure Stack Hub y el momento en que se notifican los datos de uso al comercio. Azure Stack Hub agrega los datos de uso cada 24 horas y la notificación de los datos de uso a la canalización del comercio en Azure tarda unas horas más. Por lo tanto, el uso que se produce brevemente antes de medianoche puede aparecer en Azure al día siguiente.
 
 ## <a name="generate-usage-data-reporting"></a>Generación de informes de datos de uso
 

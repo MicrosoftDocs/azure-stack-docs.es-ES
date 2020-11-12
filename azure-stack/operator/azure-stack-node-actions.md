@@ -7,12 +7,12 @@ ms.date: 04/30/2020
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: e82e551930196c3c0c2e958957172e26bf9861cb
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: ddfc8ad0ab6eccd10488f70873c7cefc0cf6668e
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86488341"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94545200"
 ---
 # <a name="scale-unit-node-actions-in-azure-stack-hub"></a>Acciones de los nodos de la unidad de escalado en Azure Stack Hub
 
@@ -27,10 +27,10 @@ En el portal de administrador, puede ver el estado de una unidad de escalado y s
 
 Para ver el estado de una unidad de escalado:
 
-1. En el icono **Administración de regiones**, seleccione la región.
+1. En el icono **Administración de regiones** , seleccione la región.
 2. A la izquierda, bajo **Infrastructure resources** (Recursos de infraestructura), seleccione **Scale units** (Unidades de escalado).
 3. En los resultados, seleccione la unidad de escalado.
-4. En el lado izquierdo, bajo **General**, seleccione **Nodos**.
+4. En el lado izquierdo, bajo **General** , seleccione **Nodos**.
 
    Vea la siguiente información:
 
@@ -62,11 +62,11 @@ Esto puede ocurrir si la memoria caché del rol Proveedor de recursos de Service
 
 Antes de aplicar los pasos siguientes, asegúrese de que no haya ninguna operación en curso. Actualice el punto de conexión para que coincida con su entorno.
 
-1. Abra PowerShell y agregue el entorno de Azure Stack Hub. Esto requiere que se instale [PowerShell de Azure Stack Hub](./azure-stack-powershell-install.md) en el equipo.
+1. Abra PowerShell y agregue el entorno de Azure Stack Hub. Esto requiere que se instale [PowerShell de Azure Stack Hub](./powershell-install-az-module.md) en el equipo.
 
    ```powershell
-   Add-AzureRmEnvironment -Name AzureStack -ARMEndpoint https://adminmanagement.local.azurestack.external
-   Add-AzureRmAccount -Environment AzureStack
+   Add-AzEnvironment -Name AzureStack -ARMEndpoint https://adminmanagement.local.azurestack.external
+   Add-AzAccount -Environment AzureStack
    ```
 
 2. Ejecute el siguiente comando para reiniciar el rol de Proveedor de recursos de Service Fabric.
@@ -95,7 +95,7 @@ Al ver la información sobre un nodo de la unidad de escalado, también puede re
 
 El estado operativo del nodo determina qué opciones están disponibles.
 
-Debe instalar los módulos de PowerShell de Azure Stack Hub. Estos cmdlets están en el módulo **Azs.Fabric.Admin**. Para instalar o comprobar la instalación de PowerShell para Azure Stack Hub, consulte [Instalación de PowerShell para Azure Stack Hub](azure-stack-powershell-install.md).
+Debe instalar los módulos de PowerShell de Azure Stack Hub. Estos cmdlets están en el módulo **Azs.Fabric.Admin**. Para instalar o comprobar la instalación de PowerShell para Azure Stack Hub, consulte [Instalación de PowerShell para Azure Stack Hub](powershell-install-az-module.md).
 
 ## <a name="stop"></a>Stop
 
@@ -204,6 +204,6 @@ Para ejecutar la acción de apagado, abra un símbolo de sistema de PowerShell c
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Instalación de PowerShell de Azure Stack](./azure-stack-powershell-install.md)
+- [Instalación de PowerShell de Azure Stack](./powershell-install-az-module.md)
 - [Obtenga información sobre el módulo del operador de Service Fabric de Azure Stack Hub](/powershell/module/azs.fabric.admin/?view=azurestackps-1.6.0)
 - [Supervisión de las operaciones para agregar nodo](./azure-stack-add-scale-node.md#monitor-add-node-operations)

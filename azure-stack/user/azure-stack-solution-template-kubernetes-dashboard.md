@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
-ms.openlocfilehash: 03dcd58562aaa0bc65bbc545e19c9e3a24c52a4b
-ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
+ms.openlocfilehash: 0497cf3b457276df9fc6c4938e7a1c1370eaa4a3
+ms.sourcegitcommit: ce864e1d86ad05a03fe896721dea8f0cce92085f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88920498"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94383656"
 ---
 # <a name="access-the-kubernetes-dashboard-in-azure-stack-hub"></a>Acceso al panel de Kubernetes en Azure Stack Hub 
 
@@ -29,7 +29,7 @@ Kubernetes incluye un panel web que se puede usar para operaciones básicas de a
 
 * Cliente SSH
 
-    Necesitará un cliente SSH para conectarse con seguridad al nodo principal del clúster. Si usa Windows, puede usar [Putty](/azure/marketplace/cloud-partner-portal/virtual-machine/cpp-connect-vm). Necesitará la clave privada utilizada cuando implementó el clúster de Kubernetes.
+    Necesitará un cliente SSH para conectarse con seguridad al nodo principal del clúster. Si usa Windows, puede usar [Putty](https://www.ssh.com/ssh/putty/download). Necesitará la clave privada utilizada cuando implementó el clúster de Kubernetes.
 
 * FTP (PSCP)
 
@@ -52,7 +52,7 @@ Puede recuperar la dirección URL para el panel desde el nodo principal del clú
 
 2. Abra el nodo principal en el portal. Copie la dirección **IP pública**. Haga clic en **Conectar** para obtener el nombre de usuario en el cuadro **Iniciar sesión con la cuenta local de VM**. Este es el mismo nombre de usuario que se establece al crear el clúster. Utilice la dirección IP pública en lugar de la dirección IP privada que se muestra en la hoja de conexión.
 
-3.  Abra un cliente de SSH para conectarse al nodo principal. Si está trabajando en Windows, puede usar [Putty](/azure/marketplace/cloud-partner-portal/virtual-machine/cpp-connect-vm) para crear la conexión. Utilizará la dirección IP pública para el nodo principal y el nombre de usuario y agregará la clave privada que utilizó al crear el clúster.
+3.  Abra un cliente de SSH para conectarse al nodo principal. Si está trabajando en Windows, puede usar [Putty](https://www.ssh.com/ssh/putty/download) para crear la conexión. Utilizará la dirección IP pública para el nodo principal y el nombre de usuario y agregará la clave privada que utilizó al crear el clúster.
 
 4.  Cuando se conecte el terminal, escriba `kubectl` para abrir el cliente de la línea de comandos de Kubernetes.
 
