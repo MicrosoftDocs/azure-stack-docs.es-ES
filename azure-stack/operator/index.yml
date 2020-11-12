@@ -10,12 +10,12 @@ metadata:
   author: justinha
   ms.author: justinha
   ms.date: 04/13/2020
-  ms.openlocfilehash: e344e301c9fa5d83caa03a857e529a43266b4cdb
-  ms.sourcegitcommit: f2a5ce52fcf69e05fe89be8211b7360de46f4a94
+  ms.openlocfilehash: f06730d44f811f0b80bd88669c1870888c0d627c
+  ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
   ms.translationtype: HT
   ms.contentlocale: es-ES
-  ms.lasthandoff: 07/24/2020
-  ms.locfileid: "87133578"
+  ms.lasthandoff: 11/12/2020
+  ms.locfileid: "94545793"
 landingContent:
 - title: Acerca de Azure Stack Hub
   linkLists:
@@ -58,9 +58,7 @@ landingContent:
     - text: Descarga de herramientas de Azure Stack Hub desde GitHub
       url: azure-stack-powershell-download.md
     - text: Instalación de PowerShell de Azure Stack
-      url: azure-stack-powershell-install.md
-    - text: Uso de Docker para ejecutar PowerShell
-      url: ../user/azure-stack-powershell-user-docker.md
+      url: powershell-install-az-module.md
     - text: Conexión con PowerShell de Azure Stack
       url: azure-stack-powershell-configure-admin.md
     - text: Descarga del Kit de desarrollo de Azure Stack (ASDK)
