@@ -137,10 +137,10 @@
           href: azure-stack-cli-admin.md
         - name: Configuración del entorno de administración
           items:
-            - name: Instalación de AzureRM para PowerShell
-              href: azure-stack-powershell-install.md
             - name: Instalación del módulo Az para PowerShell
               href: powershell-install-az-module.md
+            - name: Instalación de AzureRM para PowerShell
+              href: azure-stack-powershell-install.md
             - name: Migración del módulo AzureRM para PowerShell a Az
               href: migrate-azurerm-az.md
             - name: Descarga de herramientas
@@ -319,9 +319,11 @@
                   href: app-service-remove.md
             - name: Notas de la versión
               items:
-                - name: 'Notas de la versión del segundo trimestre de 2020 [May2020]'
+                - name: 'Notas de la versión del tercer trimestre de 2020 [septiembre de 2020]'
+                  href: app-service-release-notes-2020-Q3.md
+                - name: 'Notas de la versión del segundo trimestre de 2020 [mayo de 2020]'
                   href: app-service-release-notes-2020-Q2.md
-                - name: 'Notas de la versión de la actualización 8 [Jan2020]'
+                - name: 'Notas de la versión de la actualización 8 [enero de 2020]'
                   href: azure-stack-app-service-release-notes-update-eight.md
         - name: Event Hubs en Azure Stack Hub
           items:
