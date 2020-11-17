@@ -5,15 +5,15 @@ author: BryanLa
 ms.author: bryanla
 ms.service: azure-stack
 ms.topic: overview
-ms.date: 01/13/2020
+ms.date: 11/06/2020
 ms.reviewer: prchint
-ms.lastreviewed: 01/13/2020
-ms.openlocfilehash: d2803f1968be7a4a3e64f65f3d86a2dbb41aaf1c
-ms.sourcegitcommit: e4e2cc6a68f02c3e856f58ca5ee51b3313c7ff8f
+ms.lastreviewed: 11/06/2020
+ms.openlocfilehash: eaa84fb673863935dc4778f34a6fce592590a7a8
+ms.sourcegitcommit: ce864e1d86ad05a03fe896721dea8f0cce92085f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92183543"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94383416"
 ---
 # <a name="modular-data-center-overview"></a>Introducción al Centro de datos modular 
 
@@ -27,7 +27,7 @@ Azure Stack ofrece a los escenarios modulares perimetrales cuatro principios bá
 
 ### <a name="develop-and-deliver-apps-with-a-common-devops-model-including-api-symmetry-with-azure"></a>Desarrollo y entrega de aplicaciones con un modelo DevOps común que incluye la simetría de API con Azure
 
-La coherencia entre Azure y Azure Stack significa que las soluciones para frente se desarrollan una vez, se implementan para que admitan distintos casos de uso y se protegen y mantienen mediante un conjunto común de herramientas, como Azure Key Vault para la administración de claves y Azure Monitor para la supervisión y administración de recursos. Azure Stack puede funcionar con datos, aplicaciones y herramientas para DevOps locales, y con operaciones seguras como, por ejemplo, la administración de claves.
+La coherencia entre Azure y Azure Stack significa que las soluciones se desarrollan una vez, se implementan para que admitan distintos casos de uso y se protegen y mantienen mediante un conjunto común de herramientas, como Azure Key Vault para la administración de claves y Azure Monitor para la supervisión y administración de recursos. Azure Stack puede funcionar con datos, aplicaciones y herramientas para DevOps locales, y con operaciones seguras como, por ejemplo, la administración de claves.
 
 ### <a name="deliver-azure-services-on-premises"></a>Entrega de servicios de Azure locales
 
@@ -35,7 +35,7 @@ Azure Stack se ejecuta en entornos de comunicaciones poco favorables (con proble
 
 ### <a name="use-integrated-hardware-and-software-delivery-experience"></a>Uso de la experiencia de entrega de software y hardware integrada
 
-El perímetro modular requiere una gama de funcionalidades que proporcionan no solo servicios de proceso y almacenamiento básicos, sino también funcionalidades avanzadas de aprendizaje automático, inteligencia artificial y análisis. La capacidad para conectarse a su nube segura desde el perímetro modular cuando sea posible, o a la inversa, de operar de forma independiente de ella en entornos difíciles, es fundamental para proporcionar al frente de batalla acceso a los datos necesarios para tomar decisiones.
+El perímetro modular requiere una gama de funcionalidades que proporcionan no solo servicios de proceso y almacenamiento básicos, sino también funcionalidades avanzadas de aprendizaje automático, inteligencia artificial y análisis. La capacidad para conectarse a su nube segura desde el perímetro modular cuando sea posible, o a la inversa, de operar de forma independiente de ella en entornos difíciles, es fundamental para proporcionar acceso a los datos necesarios para tomar decisiones.
 
 ### <a name="keep-your-datacenter-secure-and-available-with-hybrid-cloud-security-operations"></a>Mantenimiento del centro de datos seguro y disponible con las operaciones de seguridad en la nube híbrida
 

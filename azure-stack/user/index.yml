@@ -9,12 +9,12 @@ metadata:
   author: mattbriggs
   ms.author: mabrigg
   ms.date: 03/19/2020
-  ms.openlocfilehash: c9b1d0bb896ccbfeefaf21e6d5b4de51b3d79021
-  ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+  ms.openlocfilehash: 79f86cd84098c63a614e8d25f27159a0ae553c5f
+  ms.sourcegitcommit: 8187658b1d45dceed727aca3ae1b9b57aca04392
   ms.translationtype: HT
   ms.contentlocale: es-ES
-  ms.lasthandoff: 11/12/2020
-  ms.locfileid: "94545455"
+  ms.lasthandoff: 11/14/2020
+  ms.locfileid: "94630794"
 landingContent:
 - title: Acerca de Azure Stack Hub
   linkLists:
@@ -72,6 +72,8 @@ landingContent:
       url: deploy-foundational-patterns.md
     - text: Hospedaje de aplicaciones escritas en su código
       url: azure-stack-dev-start-deploy-app.md
+    - text: Implementación de un módulo de IoT de GPU
+      url: gpu-deploy-sample-module.md
 - title: Plataforma como servicio (PaaS) en Azure Stack Hub
   linkLists:
   - linkListType: how-to-guide

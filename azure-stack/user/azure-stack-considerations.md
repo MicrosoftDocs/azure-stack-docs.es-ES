@@ -6,12 +6,12 @@ ms.topic: overview
 ms.date: 09/21/2020
 ms.author: sethm
 ms.lastreviewed: 12/27/2019
-ms.openlocfilehash: 25d836bece262f881901df6c62b5dc8f4aeaf11d
-ms.sourcegitcommit: dabbe44c3208fbf989b7615301833929f50390ff
+ms.openlocfilehash: f4a0ff18d8b96c6c92aa3020031e604d2775c893
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90946461"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94543568"
 ---
 # <a name="differences-between-azure-stack-hub-and-azure-when-using-services-and-building-apps"></a>Diferencias entre Azure Stack Hub y Azure al usar servicios y compilar aplicaciones
 
@@ -54,7 +54,7 @@ Microsoft proporciona las herramientas e instrucciones necesarias que le ayudan 
 
 | Recomendación | Referencias |
 | -------- | ------------- |
-| Instalar las herramientas adecuadas en la estación de trabajo de desarrollador. | - [Instalación de PowerShell](../operator/azure-stack-powershell-install.md)<br>- [Descarga de herramientas](../operator/azure-stack-powershell-download.md)<br>- [Configuración de PowerShell](azure-stack-powershell-configure-user.md)<br>- [Instalación de Visual Studio](azure-stack-install-visual-studio.md)
+| Instalar las herramientas adecuadas en la estación de trabajo de desarrollador. | - [Instalación de PowerShell](../operator/powershell-install-az-module.md)<br>- [Descarga de herramientas](../operator/azure-stack-powershell-download.md)<br>- [Configuración de PowerShell](azure-stack-powershell-configure-user.md)<br>- [Instalación de Visual Studio](azure-stack-install-visual-studio.md)
 | Revise la información acerca de los siguientes aspectos:<br>- Consideraciones sobre la plantilla de Azure Resource Manager.<br>- Búsqueda de plantillas de inicio rápido.<br>- Uso de un módulo de directivas que le ayude a usar Azure para desarrollar para Azure Stack. | [Desarrollo para Azure Stack Hub](azure-stack-developer.md) |
 | Revise y siga las prácticas recomendadas para plantillas. | [Plantillas de inicio rápido de Resource Manager](https://aka.ms/aa6yz42)
 | | |
@@ -68,14 +68,14 @@ Para asegurarse de que está usando una versión correcta de Azure PowerShell, u
 > [!NOTE]
 > Si usa el Kit de desarrollo de Azure Stack y tiene acceso administrativo, consulte la sección [Determinación de la versión actual](../operator/azure-stack-updates.md) para determinar la compilación de Azure Stack Hub.
 
-Para otras API, ejecute el siguiente comando de PowerShell para generar los espacios de nombres, los tipos de recursos y las versiones de API compatibles con la suscripción de Azure Stack Hub (aún podría haber diferencias en un nivel de propiedad). Para que este comando funcione, debe haber [instalado](../operator/azure-stack-powershell-install.md) y [configurado](azure-stack-powershell-configure-user.md) PowerShell para un entorno de Azure Stack Hub. También hay que tener una suscripción a una oferta de Azure Stack Hub.
+Para otras API, ejecute el siguiente comando de PowerShell para generar los espacios de nombres, los tipos de recursos y las versiones de API compatibles con la suscripción de Azure Stack Hub (aún podría haber diferencias en un nivel de propiedad). Para que este comando funcione, debe haber [instalado](../operator/powershell-install-az-module.md) y [configurado](azure-stack-powershell-configure-user.md) PowerShell para un entorno de Azure Stack Hub. También hay que tener una suscripción a una oferta de Azure Stack Hub.
 
 ```powershell
-Get-AzureRmResourceProvider | Select ProviderNamespace -Expand ResourceTypes | Select * -Expand ApiVersions | `
+Get-AzResourceProvider | Select ProviderNamespace -Expand ResourceTypes | Select * -Expand ApiVersions | `
 Select ProviderNamespace, ResourceTypeName, @{Name="ApiVersion"; Expression={$_}} 
 ```
 
-Resultado de ejemplo (truncado): ![resultado de ejemplo del comando Get-AzureRmResourceProvider](media/azure-stack-considerations/image1.png)
+Resultado de ejemplo (truncado): ![Resultado de ejemplo del comando Get-AzResourceProvider](media/azure-stack-considerations/image1.png)
 
 ## <a name="next-steps"></a>Pasos siguientes
 

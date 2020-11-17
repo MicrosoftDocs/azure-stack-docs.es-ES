@@ -9,9 +9,6 @@
         - name: Kit de desarrollo de Azure Stack Hub
           tocHref: /azure-stack/asdk/
           topicHref: /azure-stack/asdk/index
-        - name: Híbrido
-          tocHref: /azure-stack/hybrid/
-          topicHref: /azure-stack/hybrid/index
         - name: Operador de Hub
           tocHref: /azure-stack/operator/
           topicHref: /azure-stack/operator/index
@@ -32,3 +29,9 @@
         - name: Usuario de Hub
           tocHref: /azure-stack/user/
           topicHref: /azure-stack/user/index
+        - name: Infraestructura hiperconvergida de AKS
+          tocHref: /azure-stack/aks-hci/
+          topicHref: /azure-stack/aks-hci/index
+        - name: Infraestructura hiperconvergida
+          tocHref: /azure-stack/hci/
+          topicHref: /azure-stack/hci/index

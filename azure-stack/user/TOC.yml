@@ -298,6 +298,8 @@
               href: azure-stack-dev-start-howto-vm-python.md
             - name: Implementación de una aplicación web de NodeJS
               href: azure-stack-dev-start-howto-vm-nodejs.md
+        - name: Implementación de un módulo de IoT de GPU
+          href: gpu-deploy-sample-module.md
     - name: Implementación de patrones fundamentales
       href: deploy-foundational-patterns.md
       items:
