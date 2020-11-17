@@ -3,15 +3,15 @@ title: Información general sobre clústeres extendidos
 description: Más información sobre los clústeres extendidos
 author: v-dasis
 ms.topic: how-to
-ms.date: 07/21/2020
+ms.date: 11/05/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: 611f76491f6edd5cb8700a13e79c0769c02c4fad
-ms.sourcegitcommit: 296c95cad20ed62bdad0d27f1f5246bfc1c81d5e
+ms.openlocfilehash: e9651111e82b3449823ec7d13135154e7f0a447e
+ms.sourcegitcommit: 96bc36a203954622be411fdb038d601e49f97d4e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93064759"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94441147"
 ---
 # <a name="stretched-clusters-overview"></a>Información general sobre clústeres extendidos
 
@@ -29,6 +29,9 @@ Hay dos tipos de clústeres extendidos: activo-pasivo y activo-activo. Puede con
 En términos simples, un sitio *activo* es uno que tiene recursos y proporciona roles y cargas de trabajo con los que los clientes se conectan. Un sitio *pasivo* es el que no proporciona roles o cargas de trabajo para clientes y está esperando una conmutación por error del sitio activo para la recuperación ante desastres.
 
 Los sitios pueden estar en dos estados, ciudades, plantas o salas diferentes. Los clústeres extendidos que usan dos sitios ofrecen recuperación ante desastres y continuidad empresarial en caso de que un sitio sufra una interrupción o un error.
+
+Dedique unos minutos a ver el vídeo sobre el clúster extendido de Azure Stack HCI:
+> [!VIDEO https://www.youtube.com/embed/rYnZL1wMiqU]
 
 ## <a name="active-passive-stretched-cluster"></a>Clúster extendido activo-pasivo
 

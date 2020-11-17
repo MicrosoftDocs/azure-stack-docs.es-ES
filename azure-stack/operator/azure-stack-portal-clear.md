@@ -7,12 +7,12 @@ ms.date: 05/06/2020
 ms.author: sethm
 ms.reviewer: troettinger
 ms.lastreviewed: 09/10/2019
-ms.openlocfilehash: e419ebd632fabac6985b1a763b4661d75307e4ba
-ms.sourcegitcommit: ddcd083430ca905653d412dc2f7b813218d79509
+ms.openlocfilehash: 3821eced3f37902b20f13ee4d918b2ff2ea8aca9
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83375093"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94545098"
 ---
 # <a name="clear-portal-user-data-from-azure-stack-hub"></a>Eliminación de los datos de usuario del portal de Azure Stack Hub
 
@@ -27,7 +27,7 @@ La eliminación de la configuración de usuario del portal solo debe realizarse 
 
 ## <a name="requirements"></a>Requisitos
 
-- [Instale PowerShell para Azure Stack Hub](azure-stack-powershell-install.md).
+- [Instale PowerShell para Azure Stack Hub](powershell-install-az-module.md).
 - [Descargue las herramientas de Azure Stack Hub](azure-stack-powershell-download.md) desde GitHub.
 - La cuenta de usuario todavía debe existir en el directorio.
 - Las credenciales de administrador de Azure Stack Hub para acceder al punto de conexión de Resource Manager de administración.
@@ -43,7 +43,7 @@ Asegúrese de [descargar la versión más reciente de las herramientas de Azure 
 
 Para este procedimiento, use un equipo que pueda comunicarse con el punto de conexión de Resource Manager de administración de Azure Stack Hub.
 
-1. Abra una sesión de Windows PowerShell con privilegios elevados (ejecutar como administrador), vaya a la carpeta raíz del directorio **AzureStack-Tools-master** e importe el módulo de PowerShell necesario:
+1. Abra una sesión de Windows PowerShell con privilegios elevados (ejecutar como administrador), vaya a la carpeta raíz del directorio **AzureStack-Tools-az** e importe el módulo de PowerShell necesario:
 
    ```powershell
    Import-Module .\DatacenterIntegration\Portal\PortalUserDataUtilities.psm1
@@ -84,7 +84,7 @@ El usuario debe consultar el identificador de objeto y proporcionarlo al operado
 
 ### <a name="user-retrieves-the-user-object-id"></a>El usuario recupera el identificador de objeto de usuario.
 
-1. Abra una sesión de Windows PowerShell con privilegios elevados (ejecutar como administrador), vaya a la carpeta raíz del directorio **AzureStack-Tools-master** e importe el módulo de PowerShell necesario.
+1. Abra una sesión de Windows PowerShell con privilegios elevados (ejecutar como administrador), vaya a la carpeta raíz del directorio **AzureStack-Tools-az** e importe el módulo de PowerShell necesario.
 
    ```powershell
    Import-Module .\DatacenterIntegration\Portal\PortalUserDataUtilities.psm1
@@ -114,7 +114,7 @@ El usuario debe consultar el identificador de objeto y proporcionarlo al operado
 
 Después de recibir el identificador de objeto de usuario como un operador de Azure Stack Hub, ejecute los siguientes comandos para quitar los datos de usuario del portal:
 
-1. Abra una sesión de Windows PowerShell con privilegios elevados (ejecutar como administrador), vaya a la carpeta raíz del directorio **AzureStack-Tools-master** e importe el módulo de PowerShell necesario.
+1. Abra una sesión de Windows PowerShell con privilegios elevados (ejecutar como administrador), vaya a la carpeta raíz del directorio **AzureStack-Tools-az** e importe el módulo de PowerShell necesario.
 
    ```powershell
    Import-Module .\DatacenterIntegration\Portal\PortalUserDataUtilities.psm1

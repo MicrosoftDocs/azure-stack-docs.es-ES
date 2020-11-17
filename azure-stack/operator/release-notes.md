@@ -3,16 +3,16 @@ title: Notas de la versión de Azure Stack Hub
 description: Notas de la versión para los sistemas integrados de Azure Stack Hub, incluidas las actualizaciones y correcciones de errores.
 author: sethmanheim
 ms.topic: article
-ms.date: 11/03/2020
+ms.date: 11/11/2020
 ms.author: sethm
 ms.reviewer: sranthar
-ms.lastreviewed: 08/11/2020
-ms.openlocfilehash: 07ad819985268ad88f86c3c2bf7b7b18e75d491f
-ms.sourcegitcommit: 08aa3b381aec7a6a3df4f9591edd6f08928071d2
+ms.lastreviewed: 09/09/2020
+ms.openlocfilehash: 74b1be3736d21d968fa45135034637d4ca3cd5eb
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93363884"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94546062"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Notas de la versión de Azure Stack Hub
 
@@ -20,11 +20,11 @@ En este artículo se describe el contenido de los paquetes de actualización de 
 
 Para tener acceso a las notas de la versión de una versión diferente, use la lista desplegable del selector de versiones encima de la tabla de contenido de la izquierda.
 
-::: moniker range=">=azs-1910"
+::: moniker range=">=azs-2002"
 > [!IMPORTANT]  
 > Este paquete de actualización es únicamente para los sistemas integrados de Azure Stack Hub. No lo aplique al Kit de desarrollo de Azure Stack (ASDK).
 ::: moniker-end
-::: moniker range="<azs-1910"
+::: moniker range="<azs-2002"
 > [!IMPORTANT]  
 > Si a su instancia le faltan más de dos actualizaciones de Azure Stack Hub, se considera que no cumple los requisitos. [Para recibir soporte técnico, deberá actualizarla al menos a la versión mínima admitida.](azure-stack-servicing-policy.md#keep-your-system-under-support)
 ::: moniker-end
@@ -46,6 +46,89 @@ Se puede descargar el paquete de actualizaciones de Azure Stack Hub con la [herr
 <!---------------------------------------------------------->
 <!------------------- SUPPORTED VERSIONS ------------------->
 <!---------------------------------------------------------->
+::: moniker range="azs-2008"
+## <a name="2008-build-reference"></a>Referencia de la compilación 2008
+
+El número de compilación de la actualización 2008 de Azure Stack Hub es **1.2008.13.88**.
+
+### <a name="update-type"></a>Tipo de actualización
+
+El tipo de compilación de la actualización 2008 de Azure Stack Hub es **Completo**.
+
+El tamaño del paquete de la actualización 2008 es mayor en comparación con el de actualizaciones anteriores. Esto supone que el tiempo de descarga es también mayor. La actualización permanecerá en el estado **Preparando** durante bastante tiempo; los operadores pueden prever que este proceso tardará más que en las actualizaciones anteriores. La actualización 2008 ha tenido los siguientes tiempos de ejecución previstos en nuestras pruebas internas. 4 nodos: 13-20 horas, 8 nodos: 16-26 horas, 12 nodos: 19-32 horas, 16 nodos: 22-38 horas. Por lo general, los tiempos de ejecución de actualización exactos dependen de la capacidad que usen las cargas de trabajo de inquilino en el sistema, de la conectividad de red del sistema (si está conectado a Internet) y de las especificaciones de hardware del sistema. Unos tiempos de ejecución inferiores o superiores al valor esperado son habituales y no requieren ninguna acción por parte de los operadores de Azure Stack Hub, a menos que se produzca un error de actualización. Esta aproximación del tiempo de ejecución es específica de la actualización 2008 y no se debe comparar con otras actualizaciones de Azure Stack Hub.
+
+Para obtener más información sobre los tipos de compilación de actualización, consulte [Administración de actualizaciones en Azure Stack Hub](azure-stack-updates.md).
+
+<!-- ## What's in this update -->
+
+<!-- The current theme (if any) of this release. -->
+
+### <a name="whats-new"></a>Novedades
+
+<!-- What's new, also net new experiences and features. -->
+- Azure Stack Hub admite ahora el emparejamiento de VNET, que ofrece la posibilidad de conectar redes virtuales sin una aplicación virtual de red (NVA). Para más información, consulte la [nueva documentación del emparejamiento de VNET](../user/virtual-network-peering.md).
+- El almacenamiento de blobs de Azure Stack Hub permite ahora a los usuarios usar un blob inmutable. Mediante el establecimiento de directivas inmutables en un contenedor, puede almacenar objetos de datos críticos para la empresa en un estado WORM (escribir una vez, leer muchas). En esta versión, las directivas inmutables solo se pueden establecer a través de la API de REST o los SDK de cliente. Escribir blobs en anexos tampoco es posible en esta versión. Para más información sobre los blobs inmutables, vea [Almacenamiento de datos críticos para la empresa con almacenamiento inmutable](/azure/storage/blobs/storage-blob-immutable-storage).
+- Azure Stack Hub Storage admite ahora las API de servicios de Azure Storage, versión 2019-07-07. En el caso de las bibliotecas cliente de Azure que son compatibles con la nueva versión de API de REST, consulte [Herramientas de desarrollo de almacenamiento de Azure Stack Hub](../user/azure-stack-storage-dev.md#azure-client-libraries).
+- El proceso de Azure Stack Hub es ahora compatible con las API de Azure Compute versión 2020-06-01, con un subconjunto de las características totales disponibles.
+- Versión preliminar de Windows Admin Center que ahora puede conectarse a Azure Stack Hub para proporcionar información detallada sobre la infraestructura durante las operaciones de soporte técnico (se requiere romper el cristal).
+- Capacidad de agregar un banner de inicio de sesión al punto de conexión con privilegios (PEP) en el momento de la implementación.
+- Se han publicado más banners de **operaciones exclusivas**, que mejoran la visibilidad de las operaciones que se están produciendo actualmente en el sistema y que deshabilitan el inicio de los usuarios (y posterior el error) de cualquier otra operación exclusiva.
+- Se han introducido dos nuevos banners en cada página de producto del elemento de Marketplace de Azure Stack Hub. Si se produce un error de descarga de Marketplace, los operadores pueden ver los detalles del error y probar los pasos recomendados para resolver el problema.
+- Se ha publicado una herramienta de clasificación para que los clientes proporcionen comentarios. Esto permitirá que Azure Stack Hub mida y optimice la experiencia del cliente.
+
+### <a name="improvements"></a>Mejoras
+
+<!-- Changes and product improvements with tangible customer-facing value. -->
+- Se ha implementado la supervisión interna del controlador de red y los agentes de host SLB, por lo que los servicios se corrigen automáticamente si entran en estado detenido.
+- Los Servicios de federación de Active Directory (AD FS) recuperan ahora el nuevo certificado de firma de tokens después de que el cliente lo haya cambiado en su propio servidor de AD FS. A fin de aprovechar esta nueva funcionalidad para los sistemas ya configurados, se debe volver a configurar la integración de AD FS. Para más información, consulte [Integración de la identidad de AD FS con el centro de datos de Azure Stack Hub](azure-stack-integrate-identity.md).
+- Cambios en el proceso de inicio y apagado en las instancias de rol de la infraestructura y sus dependencias en nodos de unidad de escalado. Con ello se aumenta la confiabilidad del inicio y apagado de Azure Stack Hub.
+- El conjunto **AzSScenarios** de la herramienta de validación **Test-AzureStack** se ha actualizado para que los proveedores de servicios en la nube puedan ejecutar este conjunto correctamente con la autenticación multifactor aplicada en todas las cuentas de cliente.
+- Mejora de la confiabilidad de las alertas mediante la adición de lógica de supresión para 29 alertas orientadas al cliente durante las operaciones del ciclo de vida.
+
+### <a name="changes"></a>Cambios
+
+- Se ha habilitado la propiedad **supportHttpsTrafficOnly** de tipo de recurso de cuenta de almacenamiento en SRP API versión **2016-01-01** y **2016-05-01**, pero esta propiedad no se admite en Azure Stack Hub.
+- Se ha elevado el umbral de alerta de uso de capacidad de volumen del 80 % (advertencia) y el 90 % (crítico) al 90 % (advertencia) y el 95 % (crítico). Para más información, consulte [Alertas de espacio de almacenamiento](azure-stack-manage-storage-shares.md#storage-space-alerts).
+- Los pasos de configuración de AD Graph cambian con esta versión. Para más información, consulte [Integración de la identidad de AD FS con el centro de datos de Azure Stack Hub](azure-stack-integrate-identity.md).
+- Para estar en línea con los procedimientos recomendados actuales definidos para Windows Server 2019, se han efectuado cambios en Azure Stack Hub para que use una clase o prioridad de tráfico adicional para separar aún más la comunicación entre servidores y mejorar la comunicación del control de los clústeres de conmutación por error. El resultado de estos cambios proporciona una mayor resistencia para la comunicación del clúster de conmutación por error. Esta configuración de clase de tráfico y reserva de ancho de banda se realiza mediante un cambio en los conmutadores de la parte superior del rack (ToR) de la solución de Azure Stack Hub y en el host o los servidores de Azure Stack Hub.
+
+  Tenga en cuenta que estos cambios se agregan en el nivel de host de un sistema de Azure Stack Hub. Póngase en contacto con su OEM para organizar la realización de los cambios necesarios en los conmutadores de red Top-of-rack (ToR). Este cambio de ToR se puede realizar antes o después de actualizar a la versión 2008. Para más información, consulte la [documentación de migración de red](azure-stack-network.md).
+
+  - Los tamaños de máquina virtual compatibles con GPU **NCas_v4 (NVIDIA T4)** se han reemplazado en esta compilación por los tamaños de máquina virtual **NCasT4_v3**, para ser coherentes con Azure. Tenga en cuenta que todavía no están visibles en el portal y solo se pueden usar a través de plantillas de Azure Resource Manager.
+
+### <a name="fixes"></a>Correcciones
+
+<!-- Product fixes that came up from customer deployments worth highlighting, especially if there is an SR/ICM associated to it. -->
+- Se ha corregido un problema por el que se producía un error al eliminar un NSG de una instancia de NIC que no estaba conectada a una máquina virtual en ejecución.
+- Se ha corregido un problema por el que la modificación del valor **IdleTimeoutInMinutes** para una dirección IP pública asociada a un equilibrador de carga ponía la dirección IP pública en estado de error.
+- Se ha corregido el cmdlet **Get-AzsDisk** para que devuelva el estado **Conectado** correcto, en lugar de **OnlineMigration**, para los discos administrados conectados.
+
+## <a name="security-updates"></a>Actualizaciones de seguridad
+
+Para obtener información sobre las actualizaciones de seguridad de esta actualización de Azure Stack Hub, consulte [Actualizaciones de seguridad de Azure Stack Hub](release-notes-security-updates.md).
+
+## <a name="hotfixes"></a>Revisiones
+
+Azure Stack Hub publica revisiones de forma periódica. A partir de la versión 2005, cuando se actualiza a una nueva versión principal (por ejemplo, 1.2002.x a 1.2005 x), se instalan automáticamente en ella las revisiones más recientes (si existen). A partir de ese momento, si se publica una revisión para una compilación, se debe instalar.
+
+> [!NOTE]
+> Las revisiones de Azure Stack Hub son acumulativas; solo tiene que instalar la revisión más reciente para obtener todas las correcciones incluidas en las revisiones anteriores de esa versión.
+
+Para más información, consulte nuestra [directiva de servicio](azure-stack-servicing-policy.md).
+
+Las revisiones de Azure Stack Hub solo son aplicables a los sistemas integrados de Azure Stack Hub; no intente instalar revisiones en el ASDK.
+
+### <a name="prerequisites-before-applying-the-2008-update"></a>Requisitos previos: Antes de aplicar la actualización 2008
+
+Cuando se actualiza a una nueva versión principal (por ejemplo, de 1.2005.x a 1.2008.x), se instalan automáticamente las revisiones más recientes (si existen) en la nueva versión principal. A partir de ese momento, si se publica una revisión para una compilación, se debe instalar.
+
+### <a name="after-successfully-applying-the-2008-update"></a>Después de aplicar correctamente la actualización 2008
+
+Después de la instalación de 2008, si se publica posteriormente alguna revisión de la versión 2008, se debe instalar:
+
+- No hay ninguna revisión de Azure Stack Hub disponible para la versión 2008.
+::: moniker-end
+
 ::: moniker range="azs-2005"
 ## <a name="2005-build-reference"></a>Referencia de la compilación 2005
 
@@ -94,7 +177,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 
 ### <a name="changes"></a>Cambios
 
-- Se han quitado las acciones para detener, apagar y reiniciar una instancia de rol de infraestructura desde el portal de administración. También se han quitado las API correspondientes en el proveedor de recursos del tejido. Los siguientes cmdlets de PowerShell del módulo RM de administrador y de la versión preliminar de AZ para Azure Stack Hub ya no funcionan: **Stop-AzsInfrastructureRoleInstance** , **Disable-InfrastructureRoleInstance** y **Restart-InfrastructureRoleInstance**. Estos cmdlets se quitarán de la siguiente versión del módulo AZ de administrador para Azure Stack Hub.
+- Se han quitado las acciones para detener, apagar y reiniciar una instancia de rol de infraestructura desde el portal de administración. También se han quitado las API correspondientes en el proveedor de recursos del tejido. Los siguientes cmdlets de PowerShell del módulo RM de administrador y de la versión preliminar de AZ para Azure Stack Hub ya no funcionan: **Stop-AzsInfrastructureRoleInstance**, **Disable-InfrastructureRoleInstance** y **Restart-InfrastructureRoleInstance**. Estos cmdlets se quitarán de la siguiente versión del módulo AZ de administrador para Azure Stack Hub.
 - Azure Stack Hub 2005 ahora solo admite [App Service en Azure Stack Hub 2020 (versiones 87 .x)](app-service-release-notes-2020-Q2.md).
 - La configuración de cifrado del usuario necesaria para la supervisión de hardware se cambió de DES a AES para aumentar la seguridad. Póngase en contacto con su asociado de hardware para más información sobre cómo cambiar la configuración en el controlador de administración de la placa base (BMC). Una vez realizado el cambio en el BMC, puede requerir que ejecute el comando **Set-BmcCredential** de nuevo mediante el punto de conexión con privilegios. Consulte [Cambio de secretos en Azure Stack Hub](azure-stack-rotate-secrets.md) para más información.
 
@@ -135,7 +218,7 @@ Las revisiones de Azure Stack Hub solo son aplicables a los sistemas integrados 
 
 La versión 2005 de Azure Stack Hub debe aplicarse sobre la versión 2002 con las revisiones siguientes:
 
-- [Revisión 1.2002.56.152 de Azure Stack Hub](https://support.microsoft.com/help/4582983)
+- [Revisión 1.2002.61.163 de Azure Stack Hub](https://support.microsoft.com/help/4592241)
 
 ### <a name="after-successfully-applying-the-2005-update"></a>Después de aplicar correctamente la actualización 2005
 
@@ -265,178 +348,22 @@ Para más información acerca de las revisiones, consulte [Directiva de servicio
 La versión 2002 de Azure Stack Hub debe aplicarse en la versión 1910 con las revisiones siguientes:
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Revisión 1.1910.81.224 de Azure Stack Hub](https://support.microsoft.com/help/4583406)
+- [Revisión 1.1910.84.230 de Azure Stack Hub](https://support.microsoft.com/help/4592243)
 
 ### <a name="after-successfully-applying-the-2002-update"></a>Después de aplicar correctamente la actualización 2002
 
 Después de instalar esta actualización, instale todas las revisiones aplicables.
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Revisión 1.2002.56.152 de Azure Stack Hub](https://support.microsoft.com/help/4582983)
-::: moniker-end
-
-::: moniker range="azs-1910"
-## <a name="1910-build-reference"></a>Referencia de la compilación 1910
-
-El número de compilación de la actualización 1910 de Azure Stack Hub es **1.1910.0.58**.
-
-### <a name="update-type"></a>Tipo de actualización
-
-A partir de la versión 1908, el sistema operativo subyacente en el que se ejecuta Azure Stack Hub se actualizó a Windows Server 2019. Esta actualización permite conseguir mejoras fundamentales básicas y disponer de la capacidad de incorporar funciones adicionales a Azure Stack Hub.
-
-El tipo de compilación de la actualización 1910 de Azure Stack Hub es **Rápido**.
-
-El tamaño del paquete de la actualización 1910 es mayor en comparación con actualizaciones anteriores, lo cual conlleva tiempos de descarga superiores. La actualización permanecerá en el estado **Preparando** durante bastante tiempo; los operadores pueden prever que este proceso tardará más que en las actualizaciones anteriores. El tiempo esperado que tarda en completarse la actualización 1910 es de aproximadamente 10 horas, independientemente del número de nodos físicos del entorno de Azure Stack Hub. Por lo general, los tiempos de ejecución de actualización exactos dependen de la capacidad que usen las cargas de trabajo de inquilino en el sistema, de la conectividad de red del sistema (si está conectado a Internet) y de las especificaciones de hardware del sistema. Los tiempos de ejecución superiores al valor esperado son habituales y no requieren ninguna acción por parte de los operadores de Azure Stack Hub, a menos que se produzca un error de actualización. Esta aproximación del tiempo de ejecución es específica para la actualización 1910 y no se debe comparar con otras actualizaciones de Azure Stack Hub.
-
-Para obtener más información sobre los tipos de compilación de actualización, consulte [Administración de actualizaciones en Azure Stack Hub](azure-stack-updates.md).
-
-<!-- ## What's in this update -->
-
-<!-- The current theme (if any) of this release. -->
-
-### <a name="whats-new"></a>Novedades
-
-<!-- What's new, also net new experiences and features. -->
-
-- El portal del administrador muestra ahora las direcciones IP de punto de conexión con privilegios en el menú de propiedades de la región, para facilitar la detección. Además, muestra el servidor horario y los reenviadores DNS configurados actuales. Para más información, consulte [Uso del punto de conexión con privilegios en Azure Stack Hub](azure-stack-privileged-endpoint.md).
-
-- El sistema de mantenimiento y supervisión de Azure Stack Hub ahora puede generar alertas para diversos componentes de hardware si se produce un error. Estas alertas requieren una configuración adicional. Para más información, consulte [Supervisión de componentes de hardware de Azure Stack Hub](azure-stack-hardware-monitoring.md).
-
-- [Compatibilidad con cloud-init para Azure Stack Hub](/azure/virtual-machines/linux/using-cloud-init): cloud-init es un enfoque ampliamente usado para personalizar una máquina virtual Linux la primera vez que se arranca. Puede usar cloud-init para instalar paquetes y escribir archivos o para configurar los usuarios y la seguridad. Dado que se llama a cloud-init durante el proceso de arranque inicial, no se necesitan pasos adicionales ni agentes para aplicar la configuración. Las imágenes de Ubuntu en Marketplace se han actualizado para admitir cloud-init para el aprovisionamiento.
-
-- Azure Stack Hub ahora admite todas las versiones del agente de Linux para Windows Azure como Azure.
-
-- Hay disponible una nueva versión de los módulos de administración de PowerShell para Azure Stack Hub. <!-- For more information, see -->
-
-- El 15 de abril de 2020 se lanzaron nuevos módulos de inquilino de Azure PowerShell para Azure Stack Hub. Los módulos de Azure Resource Manager no dejarán de funcionar, pero dejarán de actualizarse después de la versión 2002.
-
-- Se ha agregado el cmdlet **Set-AzSDefenderManualUpdate** en el punto de conexión con privilegios (PEP) para configurar la actualización manual de las definiciones de Windows Defender en la infraestructura de Azure Stack Hub. Para más información, consulte [Actualización de Antivirus de Windows Defender en Azure Stack Hub](azure-stack-security-av.md).
-
-- Se ha agregado el cmdlet **Get-AzSDefenderManualUpdate** en el punto de conexión con privilegios (PEP) para recuperar la configuración de la actualización manual de las definiciones de Windows Defender en la infraestructura de Azure Stack Hub. Para más información, consulte [Actualización de Antivirus de Windows Defender en Azure Stack Hub](azure-stack-security-av.md).
-
-- Se ha agregado el cmdlet **Set-AzSDnsForwarder** en el punto de conexión con privilegios (PEP) para cambiar la configuración de reenviador de los servidores DNS en Azure Stack Hub. Para más información acerca de la configuración de DNS, consulte [Integración de DNS del centro de datos de Azure Stack Hub](azure-stack-integrate-dns.md).
-
-- Se ha agregado el cmdlet **Get-AzSDnsForwarder** en el punto de conexión con privilegios (PEP) para recuperar la configuración de reenviador de los servidores DNS en Azure Stack Hub. Para más información acerca de la configuración de DNS, consulte [Integración de DNS del centro de datos de Azure Stack Hub](azure-stack-integrate-dns.md).
-
-- Se ha agregado compatibilidad con la administración de **clústeres de Kubernetes** mediante el [motor de AKS](../user/azure-stack-kubernetes-aks-engine-overview.md). A partir de esta actualización, los clientes pueden implementar clústeres de Kubernetes de producción. El motor de AKS permite a los usuarios:
-  - Administrar el ciclo de vida de los clústeres de Kubernetes. Pueden crear, actualizar y escalar clústeres.
-  - Mantener los clústeres mediante imágenes administradas generadas por AKS y los equipos de Azure Stack Hub.
-  - Aprovechar las ventajas de un proveedor de nube de Kubernetes integrado en Azure Resource Manager que compila clústeres mediante recursos nativos de Azure.
-  - Implementar y administrar los clústeres en sellos de Azure Stack Hub conectados o desconectados.
-  - Usar características híbridas de Azure:
-    - Integración con Azure Arc
-    - Integración con Azure Monitor para Containers.
-  - Usar contenedores de Windows con el motor de AKS.
-  - Recibir soporte técnico y de ingeniería de Soporte técnico de Microsoft para sus implementaciones.
-
-### <a name="improvements"></a>Mejoras
-
-<!-- Changes and product improvements with tangible customer-facing value. -->
-
-- Azure Stack Hub ha mejorado la capacidad de corregir de forma automática algunos problemas de revisión y actualización que antes causaban errores de actualización o impedían que los operadores iniciaran una actualización de Azure Stack Hub. Como resultado, se incluyen menos pruebas en el grupo **Test-AzureStack -UpdateReadiness**. Para más información, consulte [Validación del estado del sistema de Azure Stack Hub](azure-stack-diagnostic-test.md#groups). Las tres pruebas siguientes aún se mantienen en el grupo **UpdateReadiness** :
-
-  - **AzSInfraFileValidation**
-  - **AzSActionPlanStatus**
-  - **AzsStampBMCSummary**
-
-- Se ha agregado una regla de auditoría para notificar cuando se monta un dispositivo externo (por ejemplo, una llave USB) en un nodo de la infraestructura de Azure Stack Hub. El registro de auditoría se emite a través de Syslog y aparece como **Microsoft-Windows-Security-Auditing: 6416|Plug and Play Events** (Eventos Plug and Play). Para más información sobre cómo configurar el cliente de Syslog, consulte [Reenvío de Syslog](azure-stack-integrate-security.md).
-
-- Azure Stack Hub cambia a las claves RSA de 4096 bits para los certificados internos. La ejecución de la rotación interna de secretos reemplazará los antiguos certificados de 2048 bits por certificados largos de 4096 bits. Para más información sobre la rotación de secretos en Azure Stack Hub, consulte [Cambio de secretos en Azure Stack Hub](azure-stack-rotate-secrets.md).
-
-- Actualizaciones en la complejidad de los algoritmos criptográficos y la seguridad de clave de varios componentes internos para cumplir con la directiva 15 del Comité de Sistemas Nacionales de Seguridad estadounidense (CNSSP-15), que proporciona procedimientos recomendados para el uso de estándares públicos sobre el uso compartido de la información de forma segura. Entre las mejoras, se incluye AES256 para la autenticación Kerberos y SHA384 para el cifrado VPN. Para más información sobre CNSSP-15, consulte la [página de directivas del Comité de Sistemas Nacionales de Seguridad](http://www.cnss.gov/CNSS/issuances/Policies.cfm) estadounidense.
-
-- Debido a la actualización anterior, Azure Stack Hub ahora tiene nuevos valores predeterminados para las configuraciones de IPsec/IKEv2. Los nuevos valores predeterminados que se usan en Azure Stack Hub son los siguientes:
-
-   **Parámetros de la fase 1 de IKE (modo principal)**
-
-   | Propiedad              | Value|
-   |-|-|
-   | Versión de IKE           | IKEv2 |
-   |Grupo Diffie-Hellman   | ECP384 |
-   | Método de autenticación | Clave precompartida |
-   |Algoritmos de cifrado y hash | AES256, SHA384 |
-   |Vigencia de SA (tiempo)     | 28.800 segundos|
-
-   **Parámetros de la fase 2 de IKE (modo rápido)**
-
-   | Propiedad| Value|
-   |-|-|
-   |Versión de IKE |IKEv2 |
-   |Cifrados y algoritmos hash (cifrado)     | GCMAES256|
-   |Cifrados y algoritmos hash (autenticación) | GCMAES256|
-   |Vigencia de SA (tiempo)  | 27 000 segundos  |
-   |Vigencia de SA (Kilobytes) | 33 553 408     |
-   |Confidencialidad directa perfecta (PFS) | ECP384 |
-   |Detección de cuellos del mismo nivel | Compatible|
-
-   Estos cambios también se reflejan en la documentación de la [propuesta predeterminada de IPsec/IKE](../user/azure-stack-vpn-gateway-settings.md#ipsecike-parameters).
-
-- El servicio de copia de seguridad de la infraestructura mejora la lógica que calcula el espacio libre deseado para las copias de seguridad, en lugar de basarse en un umbral fijo. El servicio utilizará el tamaño de una copia de seguridad, la directiva de retención, la reserva y el uso actual de la ubicación de almacenamiento externo para determinar si es necesario enviar una advertencia al operador.
-
-### <a name="changes"></a>Cambios
-
-- Al descargar elementos de Marketplace de Azure en Azure Stack Hub, hay una nueva interfaz de usuario que permite especificar una versión del elemento, en caso de que existan varias versiones. La nueva interfaz de usuario está disponible tanto en escenarios conectados como desconectados. Para más información, consulte [Descarga de elementos de Marketplace existentes desde Azure en Azure Stack Hub](azure-stack-download-azure-marketplace-item.md).  
-
-- A partir de la versión 1910, el sistema de Azure Stack Hub **requiere** un espacio de direcciones IP internas privadas adicional /20. Para más información, consulte [Planeación de la integración de red para Azure Stack](azure-stack-network.md).
-  
-- El servicio de copia de seguridad de la infraestructura elimina los datos de copias de seguridad cargadas parcialmente si la ubicación de almacenamiento externo se queda sin capacidad durante el procedimiento de carga.  
-
-- En las implementaciones de AAD, el servicio de copia de seguridad de la infraestructura agrega el servicio de identidad a la carga útil de copia de seguridad.  
-
-- El módulo de PowerShell para Azure Stack Hub se ha actualizado a la versión 1.8.0 para la versión 1910.<br>Los cambios incluyen:
-   - **Nuevo módulo de administración DRP** : Deployment Resource Provider (DRP) permite las implementaciones organizadas de proveedores de recursos en Azure Stack Hub. Estos comandos interactúan con el nivel de Azure Resource Manager para interactuar con DRP.
-   - **BRP** : <br />
-           - Compatibilidad con la restauración de rol único para la copia de seguridad de infraestructura de Azure Stack. <br />
-           - Incorporación del parámetro `RoleName` al cmdlet `Restore-AzsBackup`.
-   - **FRP** : Cambios importantes en los recursos **Unidad** y **Volumen** con la versión de API `2019-05-01`. Las características son compatibles con Azure Stack Hub 1910 y versiones posteriores: <br />
-            - Se han cambiado los valores de `ID`, `Name`, `HealthStatus` y `OperationalStatus`. <br />
-            - Nuevas propiedades compatibles `FirmwareVersion`, `IsIndicationEnabled`, `Manufacturer` y `StoragePool` para recursos de **Unidad**. <br />
-            - Las propiedades `CanPool` y `CannotPoolReason` de los recursos de **Unidad** están en desuso; en su lugar, use `OperationalStatus`.
-
-### <a name="fixes"></a>Correcciones
-
-<!-- Product fixes that came up from customer deployments worth highlighting, especially if there's an SR/ICM associated to it. -->
-
-- Se corrigió un problema que impedía la aplicación de la directiva TLS 1.2 en entornos implementados antes de la versión 1904 de Azure Stack Hub.
-- Se ha corregido un problema por el que una máquina virtual de Ubuntu 18.04 creada con la autorización de SSH habilitada no permitía usar las claves SSH para iniciar sesión.
-- Se quitó la opción **Restablecer contraseña** de la interfaz de usuario del conjunto de escalado de máquinas virtuales.
-- Se corrigió un problema por el que la eliminación del equilibrador de carga del portal no eliminaba el objeto en el nivel de infraestructura.
-- Se corrigió un problema que mostraba un porcentaje inexacto de la alerta de uso del grupo de servidores de puerta de enlace en el portal de administración.
-<!-- Fixed an issue where adding more than one public IP on the same NIC on a Virtual Machine resulted in internet connectivity issues. Now, a NIC with two public IPs should work as expected.[This fix actually didn't go in 1910 due to build issues, commenting out until next build (2002) ] -->
-
-## <a name="security-updates"></a>Actualizaciones de seguridad
-
-Para obtener información sobre las actualizaciones de seguridad de esta actualización de Azure Stack Hub, consulte [Actualizaciones de seguridad de Azure Stack Hub](release-notes-security-updates.md).
-
-El informe de vulnerabilidad de Qualys para esta versión se puede descargar del [sitio web de Qualys](https://www.qualys.com/azure-stack/).
-
-## <a name="hotfixes"></a>Revisiones
-
-Azure Stack Hub publica revisiones de forma periódica. Asegúrese de instalar la revisión más reciente de Azure Stack Hub para la versión 1908 antes de actualizar Azure Stack Hub a la versión 1910.
-
-> [!NOTE]
-> Las revisiones de Azure Stack Hub son acumulativas; solo tiene que instalar la revisión más reciente para obtener todas las correcciones incluidas en las revisiones anteriores de esa versión.
-
-Las revisiones de Azure Stack Hub solo son aplicables a los sistemas integrados de Azure Stack Hub; no intente instalar revisiones en el ASDK.
-
-### <a name="prerequisites-before-applying-the-1910-update"></a>Requisitos previos: Antes de aplicar la actualización 1910
-
-La versión 1910 de Azure Stack Hub debe aplicarse en la versión 1908 con las revisiones siguientes:
-
-<!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Revisión 1.1908.57.146 de Azure Stack Hub](https://support.microsoft.com/help/4583007)
-
-### <a name="after-successfully-applying-the-1910-update"></a>Después de aplicar correctamente la actualización 1910
-
-Después de instalar esta actualización, instale todas las revisiones aplicables. Para más información, consulte nuestra [directiva de servicio](azure-stack-servicing-policy.md).
-
-<!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Revisión 1.1910.81.224 de Azure Stack Hub](https://support.microsoft.com/help/4583406)
+- [Revisión 1.2002.61.163 de Azure Stack Hub](https://support.microsoft.com/help/4592241)
 ::: moniker-end
 
 <!------------------------------------------------------------>
 <!------------------- UNSUPPORTED VERSIONS ------------------->
 <!------------------------------------------------------------>
+::: moniker range="azs-1910"
+## <a name="1910-archived-release-notes"></a>Notas de la versión archivadas de la compilación 1910
+::: moniker-end
 ::: moniker range="azs-1908"
 ## <a name="1908-archived-release-notes"></a>Notas de la versión archivadas de la compilación 1908
 ::: moniker-end
@@ -486,6 +413,6 @@ Después de instalar esta actualización, instale todas las revisiones aplicable
 ## <a name="1802-archived-release-notes"></a>Notas de la versión archivadas de la compilación 1802
 ::: moniker-end
 
-::: moniker range="<azs-1910"
+::: moniker range="<azs-2002"
 Puede consultar las [notas de las versiones anteriores de Azure Stack Hub en la Galería de TechNet](https://aka.ms/azsarchivedrelnotes). Estos documentos archivados se proporcionan únicamente con fines de referencia y no implican que estas versiones sean compatibles. Para obtener información sobre el soporte técnico de Azure Stack Hub, consulte [Directiva de mantenimiento de Azure Stack Hub](azure-stack-servicing-policy.md). Para obtener más ayuda, póngase en contacto con los servicios de asistencia al cliente de Microsoft.
 ::: moniker-end

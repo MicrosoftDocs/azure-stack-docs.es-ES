@@ -7,12 +7,12 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: wfayed
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: b8f8dfe95e50b81c7032e2e2348c2d4e6a6d888d
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: c9defcc7f569ba30628cb16632b52c00ae7f2bec
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "78364775"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94543875"
 ---
 # <a name="azure-connected-deployment-planning-decisions-for-azure-stack-hub-integrated-systems"></a>Decisiones sobre planeamiento de una implementación conectada a Azure de sistemas integrados de Azure Stack Hub
 Una vez que haya decidido [cómo va a integrar Azure Stack Hub en el entorno de nube híbrida](azure-stack-connection-models.md), puede concluir sus decisiones sobre la implementación de Azure Stack Hub.
@@ -33,6 +33,11 @@ El uso de Azure AD para el almacén de identidades requiere dos cuentas de Azur
 
     - Para aprovisionar y delegar aplicaciones y entidades de servicio para todos los servicios de Azure Stack Hub que tienen que interactuar con Azure AD y Graph API.
     - Como cuenta del administrador del servicio. Esta cuenta es la propietaria de la suscripción de proveedor predeterminada (que puede cambiar más adelante). Puede iniciar sesión en el portal del administrador de Azure Stack Hub con esta cuenta y usarla para crear ofertas y planes, establecer las cuotas y realizar otras funciones administrativas en Azure Stack Hub.
+
+> [!IMPORTANT]
+> - No es necesario que la cuenta de administrador global ejecute Azure Stack Hub y se puede deshabilitar después de la implementación.
+> - Proteja la cuenta de administrador global siguiendo los [procedimientos recomendados que se documentan aquí](/azure/security/fundamentals/identity-management-best-practices).
+
 
 2. **Cuenta de facturación** (necesaria tanto para las implementaciones conectadas como para las desconectadas). Esta cuenta de Azure se utiliza para establecer la relación de facturación entre el sistema integrado de Azure Stack Hub y el back-end de comercio de Azure. Se trata de la cuenta en la que se le facturará por los honorarios de Azure Stack Hub. Esta cuenta también se usará para ofertar elementos de Marketplace y otros escenarios híbridos.
 

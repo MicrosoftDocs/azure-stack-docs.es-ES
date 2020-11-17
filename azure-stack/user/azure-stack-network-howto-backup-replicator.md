@@ -7,12 +7,12 @@ ms.date: 08/24/2020
 ms.author: mabrigg
 ms.reviewer: rtiberiu
 ms.lastreviewed: 11/07/2019
-ms.openlocfilehash: 14f86b63e8089069d53e7b849d4bfea55007f34e
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.openlocfilehash: 80200b283ba6ef0266513eefaa1fdcb8faf9faa8
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90571701"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94546742"
 ---
 # <a name="replicate-resources-using-the-azure-stack-hub-subscription-replicator"></a>Replicación de recursos mediante el replicador de suscripciones de Azure Stack Hub
 
@@ -54,7 +54,7 @@ Un procesador personalizado determina cómo se debe replicar un recurso al deter
 
 Hay una carpeta en la estructura de archivos del replicador denominada **Standardized_ARM_Templates**. En función del entorno de origen, las implementaciones utilizarán una de estas plantillas de Azure Resource Manager normalizadas, o habrá que generar una plantilla de Azure Resource Manager personalizada. En este caso, el procesador personalizado debe llamar a un generador de plantillas de Azure Resource Manager. En el ejemplo iniciado anteriormente, el nombre de un generador de plantillas de Azure Resource Manager para máquinas virtuales se denominará **virtualMachines_ARM_Template_Generator.ps1**. El generador de plantillas de Azure Resource Manager es responsable de crear una plantilla de Azure Resource Manager personalizada basada en la información que se encuentra en los metadatos de un recurso. Por ejemplo, si el recurso de máquina virtual tiene metadatos que especifican que es miembro de un conjunto de disponibilidad, el generador de plantillas de Azure Resource Manager creará una plantilla de Azure Resource Manager con código que especifique el identificador del conjunto de disponibilidad del que forma parte la máquina virtual. De este modo, cuando la máquina virtual se implementa en la nueva suscripción, se agrega automáticamente al conjunto de disponibilidad en el momento de la implementación. Estas plantillas de Azure Resource Manager personalizadas se almacenan en la carpeta **Custom_ARM_Templates**, que se encuentra en la carpeta **Standardized_ARM_Templates**. El script post_processor.ps1 es responsable de determinar si una implementación debe utilizar una plantilla de Azure Resource Manager normalizada o una personalizada, así como de generar el código de implementación correspondiente.
 
-El script **post-orocess.ps1** es responsable de limpiar los archivos de parámetros y de crear los scripts que usará el usuario para implementar los nuevos recursos. Durante la fase de limpieza, el script reemplaza todas las referencias al identificador de la suscripción de origen, al identificador de inquilino y a la ubicación con los valores de destino correspondientes. Después, genera el archivo de parámetros en la carpeta **Parameter_Files**. A continuación, determina si el recurso que se está procesando usa o no una plantilla de Azure Resource Manager personalizada y genera el código de implementación correspondiente, que utiliza el cmdlet **New-AzureRmResourceGroupDeployment**. Después, el código de implementación se agrega al archivo denominado **DeployResources.ps1** almacenado en la carpeta **Deployment_Files**. Por último, el script determina el grupo de recursos al que pertenece el recurso y comprueba el script **DeployResourceGroups.ps1** para ver si el código de implementación que implementa ese grupo de recursos ya existe. Si no es así, agregará código a ese script para implementar el grupo de recursos, en caso de que no haga nada.
+El script **post-orocess.ps1** es responsable de limpiar los archivos de parámetros y de crear los scripts que usará el usuario para implementar los nuevos recursos. Durante la fase de limpieza, el script reemplaza todas las referencias al identificador de la suscripción de origen, al identificador de inquilino y a la ubicación con los valores de destino correspondientes. Después, genera el archivo de parámetros en la carpeta **Parameter_Files**. A continuación, determina si el recurso que se está procesando usa o no una plantilla de Azure Resource Manager personalizada y genera el código de implementación correspondiente, que utiliza el cmdlet **New-AzResourceGroupDeployment**. Después, el código de implementación se agrega al archivo denominado **DeployResources.ps1** almacenado en la carpeta **Deployment_Files**. Por último, el script determina el grupo de recursos al que pertenece el recurso y comprueba el script **DeployResourceGroups.ps1** para ver si el código de implementación que implementa ese grupo de recursos ya existe. Si no es así, agregará código a ese script para implementar el grupo de recursos, en caso de que no haga nada.
 
 ### <a name="dynamic-api-retrieval"></a>Recuperación de API dinámica
 
@@ -68,7 +68,7 @@ Sin embargo, existe la posibilidad de que la versión de la API del proveedor de
 
 ### <a name="parallel-deployments"></a>Implementaciones paralelas
 
-La herramienta requiere un parámetro denominado **parallel**. Este parámetro toma un valor booleano que especifica si los recursos recuperados se deben implementar en paralelo o no. Si el valor se establece en **true**, cada llamada a **New-AzureRmResourceGroupDeployment** tendrá la marca **-asJob** y se agregarán bloques de código para esperar a que finalicen los trabajos paralelos en los conjuntos de implementaciones de recursos basados en los tipos de recursos. Garantiza que todos los recursos de un tipo se hayan implementado antes de implementar el siguiente tipo de recurso. Si el valor del parámetro **parallel** se establece en **false**, todos los recursos se implementarán en serie.
+La herramienta requiere un parámetro denominado **parallel**. Este parámetro toma un valor booleano que especifica si los recursos recuperados se deben implementar en paralelo o no. Si el valor se establece en **true**, cada llamada a **New-AzResourceGroupDeployment** tendrá la marca **-asJob** y se agregarán bloques de código para esperar a que finalicen los trabajos paralelos en los conjuntos de implementaciones de recursos basados en los tipos de recursos. Garantiza que todos los recursos de un tipo se hayan implementado antes de implementar el siguiente tipo de recurso. Si el valor del parámetro **parallel** se establece en **false**, todos los recursos se implementarán en serie.
 
 ## <a name="add-additional-resource-types"></a>Incorporación de tipos de recursos adicionales
 

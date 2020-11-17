@@ -3,16 +3,16 @@ title: Novedades de Marketplace de Azure Stack Hub
 description: Consulte las novedades de Marketplace de Azure Stack Hub, incluidos los elementos nuevos, en desuso y actualizados de Marketplace.
 author: sethmanheim
 ms.topic: article
-ms.date: 11/02/2020
+ms.date: 11/09/2020
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 05/28/2020
-ms.openlocfilehash: aa5cbb7d631cdcf8fb5a27666bdedfd6ef3ab665
-ms.sourcegitcommit: 1e3a182d82cf01b64118647d6ab418651f83ad1e
+ms.openlocfilehash: 50c5bb306585709c9fdd8aeadc126709e4967e72
+ms.sourcegitcommit: 980be7813e6f39fb59926174a5d3e0d392b04293
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192245"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94414153"
 ---
 # <a name="azure-stack-hub-marketplace-changes"></a>Cambios en Marketplace de Azure Stack Hub
 
@@ -54,6 +54,102 @@ El artículo [Elementos de Azure Marketplace disponibles para Azure Stack Hub](a
 
 ## <a name="deprecated-marketplace-items"></a>Elementos de Marketplace en desuso
 
+- 21/08/2020: Windows 10 Enterprise, versión 1903 en modalidad "traiga su propia licencia": versión 18362.959.2007101755
+- 21/08/2020: Windows 10 Pro versión 1903 en modalidad "traiga su propia licencia": versión 18362.959.2007101755
+- 21/08/2020: Windows 10 Enterprise versión 1909 en modalidad "traiga su propia licencia": versión 18363.959.2007101752
+- 21/08/2020: Windows 10 Pro versión 1909 en modalidad "traiga su propia licencia": versión 18363.959.2007101752
+- 21/08/2020: Windows 10 Enterprise versión 2004 en modalidad "traiga su propia licencia": versión 19041.388.2007101729
+- 21/08/2020: Windows 10 Enterprise 2016 LTSB en modalidad "traiga su propia licencia": versión 14393.3808.2007101707
+- 21/08/2020: Windows 10 Enterprise 2019 LTSC en modalidad "traiga su propia licencia": versión 17763.1339.2007101755
+- 21/08/2020: Windows 10 Pro versión 1809 en modalidad "traiga su propia licencia": versión 17763.1339.2007101755
+- 21/08/2020: Windows Server 2008 R2 SP1 en modalidad "pago por uso", versión 7601.24557.2007101756
+- 21/08/2020: [smalldisk] Windows Server 2008 R2 SP1 en modalidad "pago por uso": versión 7601.24557.2007101756
+- 21/08/2020: Windows Server 2012 Datacenter en modalidad "pago por uso", versión 9200.23086.2007131700
+- 21/08/2020: [smalldisk] Windows Server 2012 Datacenter en modalidad "pago por uso": versión 9200.23086.2007131700
+- 21/08/2020: Windows Server 2012 R2 Datacenter, modalidad de pago por uso, versión 9600.19756.2007111612
+- 21/08/2020: [smalldisk] Windows Server 2012 R2 Datacenter en modalidad "pago por uso": versión 9600.19756.2007111612
+- 21/08/2020: Windows Server 2016 Datacenter en modalidad "pago por uso", versión 14393.3808.2007101707
+- 21/08/2020: Windows Server 2016 Datacenter Server Core en modalidad "pago por uso": versión 14393.3808.2007101707
+- 21/08/2020: [smalldisk] Windows Server 2016 Datacenter Server Core en modalidad "pago por uso": versión 14393.3808.2007101707
+- 21/08/2020: [smalldisk] Windows Server 2016 Datacenter en modalidad "pago por uso": versión 14393.3808.2007101707
+- 21/08/2020: Windows Server 2019 Datacenter Server Core en modalidad "pago por uso": versión 17763.1339.2007101755
+- 21/08/2020: [smalldisk] Windows Server 2019 Datacenter Server Core en modalidad "pago por uso": versión 17763.1339.2007101755
+- 21/08/2020: Windows Server 2019 Datacenter Server Core con Containers en modalidad "pago por uso": versión 17763.1339.2007101755
+- 21/08/2020: [smalldisk] Windows Server 2019 Datacenter Server Core con Containers en modalidad "pago por uso": versión 17763.1339.2007101755
+- 21/08/2020: Windows Server 2019 Datacenter en modalidad "pago por uso", versión 17763.1339.2007101755
+- 21/08/2020: [smalldisk] Windows Server 2019 Datacenter en modalidad "pago por uso": versión 17763.1339.2007101755
+- 21/08/2020: Windows Server 2019 Datacenter con Containers en modalidad "pago por uso", versión 17763.1339.2007101755
+- 21/08/2020: [smalldisk] Windows Server 2019 Datacenter con Containers en modalidad "pago por uso": versión 17763.1339.2007101755
+- 21/08/2020: [smalldisk] Windows Server, versión 1809 con Containers en modalidad "pago por uso": versión 17763.1339.2007101755
+- 21/08/2020: [smalldisk] Windows Server, versión 1903 con Containers en modalidad "pago por uso": versión 18362.959.2007101755
+- 21/08/2020: [smalldisk] Windows Server, versión 1909 con Containers en modalidad "pago por uso": versión 18363.959.2007101752
+- 21/08/2020: [smalldisk] Windows Server, versión 2004 con Containers en modalidad "pago por uso": versión 19041.388.2007101729
+- 04/08/2020: Windows Server 2008 R2 SP1 en modalidad "traiga su propia licencia": versión 7601.24556.2006050139
+- 04/08/2020: Windows Server 2008 R2 SP1 en modalidad "pago por uso", versión 7601.24556.2006050139
+- 04/08/2020: [smalldisk] Windows Server 2008 R2 SP1 en modalidad "traiga su propia licencia": versión 7601.24556.2006050139
+- 04/08/2020: [smalldisk] Windows Server 2008 R2 SP1 en modalidad "pago por uso": versión 7601.24556.2006050139
+- 04/08/2020: Windows Server 2012 Datacenter en modalidad "traiga su propia licencia": versión 9200.23066.2006051749
+- 04/08/2020: Windows Server 2012 Datacenter en modalidad "pago por uso", versión 9200.23066.2006051749
+- 04/08/2020: [smalldisk] Windows Server 2012 Datacenter en modalidad "traiga su propia licencia": versión 9200.23066.2006051749
+- 04/08/2020: [smalldisk] Windows Server 2012 Datacenter en modalidad "pago por uso": versión 9200.23066.2006051749
+- 04/08/2020: Windows Server 2012 R2 Datacenter en modalidad "traiga su propia licencia": versión 9600.19728.2006050139
+- 04/08/2020: Windows Server 2012 R2 Datacenter, modalidad de pago por uso, versión 9600.19728.2006050139
+- 04/08/2020: [smalldisk] Windows Server 2012 R2 Datacenter en modalidad "traiga su propia licencia": versión 9600.19728.2006050139
+- 04/08/2020: [smalldisk] Windows Server 2012 R2 Datacenter en modalidad "pago por uso": versión 9600.19728.2006050139
+- 04/08/2020: Windows Server 2016 Datacenter en modalidad "traiga su propia licencia": versión 14393.3750.2006031549
+- 04/08/2020: Windows Server 2016 Datacenter en modalidad "pago por uso", versión 14393.3750.2006031549
+- 04/08/2020: Windows Server 2016 Datacenter Server Core en modalidad "traiga su propia licencia": versión 14393.3750.2006031549
+- 04/08/2020: Windows Server 2016 Datacenter Server Core en modalidad "pago por uso": versión 14393.3750.2006031549
+- 04/08/2020: [smalldisk] Windows Server 2016 Datacenter Server Core en modalidad "traiga su propia licencia": versión 14393.3750.2006031549
+- 04/08/2020: [smalldisk] Windows Server 2016 Datacenter Server Core en modalidad "pago por uso": versión 14393.3750.2006031549
+- 04/08/2020: [smalldisk] Windows Server 2016 Datacenter en modalidad "traiga su propia licencia": versión 14393.3750.2006031549
+- 04/08/2020: [smalldisk] Windows Server 2016 Datacenter en modalidad "pago por uso": versión 14393.3750.2006031549
+- 04/08/2020: Windows Server 2019 Datacenter en modalidad "traiga su propia licencia": versión 17763.1282.2006061952
+- 04/08/2020: Windows Server 2019 Datacenter Server Core en modalidad "traiga su propia licencia": versión 17763.1282.2006061952
+- 04/08/2020: Windows Server 2019 Datacenter Server Core en modalidad "pago por uso": versión 17763.1282.2006061952
+- 04/08/2020: [smalldisk] Windows Server 2019 Datacenter Server Core en modalidad "traiga su propia licencia": versión 17763.1282.2006061952
+- 04/08/2020: [smalldisk] Windows Server 2019 Datacenter Server Core en modalidad "pago por uso": versión 17763.1282.2006061952
+- 04/08/2020: Windows Server 2019 Datacenter Server Core con Containers en modalidad "traiga su propia licencia": versión 17763.1282.2006061952
+- 04/08/2020: Windows Server 2019 Datacenter Server Core con Containers en modalidad "pago por uso": versión 17763.1282.2006061952
+- 04/08/2020: [smalldisk] Windows Server 2019 Datacenter Server Core con Containers en modalidad "traiga su propia licencia": versión 17763.1282.2006061952
+- 04/08/2020: [smalldisk] Windows Server 2019 Datacenter Server Core con Containers en modalidad "pago por uso": versión 17763.1282.2006061952
+- 04/08/2020: Windows Server 2019 Datacenter en modalidad "pago por uso", versión 17763.1282.2006061952
+- 04/08/2020: [smalldisk] Windows Server 2019 Datacenter en modalidad "traiga su propia licencia": versión 17763.1282.2006061952
+- 04/08/2020: [smalldisk] Windows Server 2019 Datacenter en modalidad "pago por uso": versión 17763.1282.2006061952
+- 04/08/2020: Windows Server 2019 Datacenter con Containers en modalidad "traiga su propia licencia": versión 17763.1282.2006061952
+- 04/08/2020: Windows Server 2019 Datacenter con Containers en modalidad "pago por uso", versión 17763.1282.2006061952
+- 04/08/2020: [smalldisk] Windows Server 2019 Datacenter con Containers en modalidad "traiga su propia licencia": versión 17763.1282.2006061952
+- 04/08/2020: [smalldisk] Windows Server 2019 Datacenter con Containers en modalidad "pago por uso": versión 17763.1282.2006061952
+- 04/08/2020: [smalldisk] Windows Server, versión 1809 con Containers en modalidad "traiga su propia licencia": versión 17763.1282.2006061952
+- 04/08/2020: [smalldisk] Windows Server, versión 1809 con Containers en modalidad "pago por uso": versión 17763.1282.2006061952
+- 04/08/2020: [smalldisk] Windows Server, versión 1903 con Containers en modalidad "traiga su propia licencia": versión 18362.900.2006061800
+- 04/08/2020: [smalldisk] Windows Server, versión 1903 con Containers en modalidad "pago por uso": versión 18362.900.2006061800
+- 04/08/2020: [smalldisk] Windows Server, versión 2004 con Containers en modalidad "traiga su propia licencia": versión 19041.329.2006042019
+- 04/08/2020: Windows 10 Enterprise 2016 LTSB en modalidad "traiga su propia licencia": versión 14393.3750.2006031549
+- 04/08/2020: Windows 10 Enterprise 2019 LTSC en modalidad "traiga su propia licencia": versión 17763.1282.2006061952
+- 04/08/2020: Windows 10 Enterprise versión 1809 en modalidad "traiga su propia licencia": versión 17763.1282.2006061952
+- 04/08/2020: Windows 10 Pro versión 1809 en modalidad "traiga su propia licencia": versión 17763.1282.2006061952
+- 04/08/2020: Windows 10 Enterprise versión 1903 en modalidad "traiga su propia licencia": versión 18362.900.2006061800
+- 04/08/2020: Windows 10 Pro versión 1903 en modalidad "traiga su propia licencia": versión 18362.900.2006061800
+- 04/08/2020: Windows 10 Enterprise versión 1909 en modalidad "traiga su propia licencia": versión 18363.900.2006061800
+- 04/08/2020: Windows 10 Pro versión 1909 en modalidad "traiga su propia licencia": versión 18363.900.2006061800
+- 04/08/2020: Windows 10 Enterprise versión 2004 en modalidad "traiga su propia licencia": versión 19041.329.2006042019
+- 21/05/2020: Windows Server 2008 R2 SP1 en modalidad "traiga su propia licencia", versión 7601.24552.2004101827
+- 21/05/2020: Windows Server 2008 R2 SP1 en modalidad "pago por uso", versión 7601.24552.2004101827
+- 21/05/2020: Windows Server 2012 Datacenter en modalidad "traiga su propia licencia", versión 9200.23016.2004101828
+- 21/05/2020: Windows Server 2012 Datacenter en modalidad de pago por uso, versión 9200.23016.2004101828
+- 21/05/2020: Windows Server 2012 R2 Datacenter, modalidad "traiga su propia licencia", versión 9600.19676.2004101829
+- 21/05/2020: Windows Server 2012 R2 Datacenter, modalidad de pago por uso, versión 9600.19676.2004101829
+- 21/05/2020: Windows Server 2016 Datacenter en modalidad "traiga su propia licencia", versión 14393.3630.2004101604
+- 21/05/2020: Windows Server 2016 Datacenter en modalidad de pago por uso, versión 14393.3630.2004101604
+- 21/05/2020: Windows Server 2016 Datacenter Server Core en modalidad "traiga su propia licencia", versión 14393.3630.2004101604
+- 21/05/2020: Windows Server 2016 Datacenter Server Core en modalidad de pago por uso, versión 14393.3630.2004101604
+- 21/05/2020: Windows Server 2019 Datacenter Server Core en modalidad "traiga su propia licencia", versión 17763.1158.2004131759
+- 21/05/2020: Windows Server 2019 Datacenter Server Core en modalidad de pago por uso, versión 17763.1158.2004131759
+- 21/05/2020: Windows Server 2019 Datacenter en modalidad "traiga su propia licencia", versión 17763.1158.2004131759
+- 21/05/2020: Windows Server 2019 Datacenter en modalidad de pago por uso, versión 17763.1158.2004131759
+- 21/05/2020: Windows Server 2019 Datacenter con Containers en modo "traiga su propia licencia", versión 17763.1158.2004131759
+- 21/05/2020: Windows Server 2019 Datacenter con Containers en modo de pago por uso, versión 17763.1158.2004131759
 - Bitnami Shopware
 - SQL Server 2017 Standard en SUSE Linux Enterprise Server (SLES) 12 SP2
 - Licencia gratuita: SQL Server 2017 Developer en SUSE Linux Enterprise Server (SLES) 12 SP2
@@ -70,6 +166,23 @@ El artículo [Elementos de Azure Marketplace disponibles para Azure Stack Hub](a
 
 ## <a name="updated-marketplace-items"></a>Elementos de Marketplace actualizados
 
+- 05/11/2020: SQL Server 2017 Standard en Windows Server 2016 en modalidad "Traiga su propia licencia": versión 14.0.20201015
+- 05/11/2020: SQL Server 2017 Standard en Windows Server 2016 en modalidad "Pago por uso": versión 14.0.20201015
+- 05/11/2020: SQL Server 2017 Enterprise en Windows Server 2016 en modalidad "Traiga su propia licencia": versión 14.0.20201015
+- 05/11/2020: SQL Server 2017 Enterprise en Windows Server 2016 en modalidad "Pago por uso": versión 14.0.20201015
+- 05/11/2020: SQL Server 2016 SP2 Standard en Windows Server 2016 en modalidad "Traiga su propia licencia": versión 13.2.20201015
+- 05/11/2020: SQL Server 2016 SP2 Standard en Windows Server 2016 en modalidad "Pago por uso": versión 13.2.20201015
+- 05/11/2020: SQL Server 2016 SP2 Enterprise en Windows Server 2016 en modalidad "Pago por uso": versión 13.2.20201015
+- 05/11/2020: Licencia de SQL Server gratis: SQL Server 2017 Express en Windows Server 2016 en modalidad "Traiga su propia licencia": versión 14.0.20201015
+- 05/11/2020: Licencia de SQL Server gratis: SQL Server 2017 Express en Windows Server 2016 en modalidad "Pago por uso": versión 14.0.20201015
+- 05/11/2020: Licencia de SQL Server gratis: SQL Server 2017 Developer en Windows Server 2016 en modalidad "Traiga su propia licencia": versión 14.0.20201015
+- 05/11/2020: Licencia de SQL Server gratis: SQL Server 2017 Developer en Windows Server 2016 en modalidad "Pago por uso": versión 14.0.20201015
+- 05/11/2020: Licencia gratuita: SQL Server 2016 SP2 Express en Windows Server 2016 en modalidad "Traiga su propia licencia": versión 13.2.20201015
+- 05/11/2020: Licencia gratuita: SQL Server 2016 SP2 Express en Windows Server 2016 en modalidad "Pago por uso": versión 13.2.20201015
+- 05/11/2020: Licencia gratuita: SQL Server 2016 SP2 Developer en Windows Server 2016 en modalidad "Traiga su propia licencia": versión 13.2.20201015
+- 05/11/2020: Licencia gratuita: SQL Server 2016 SP2 Developer en Windows Server 2016 en modalidad "Pago por uso": versión 13.2.20201015
+- 05/11/2020: SQL Server 2016 SP2 Enterprise en Windows Server 2016 en modalidad "Traiga su propia licencia": versión 13.2.20201015
+- 04/11/2020: Teradici Cloud Access para Azure Stack no GPU versión 1.0.2
 - 29/10/2020: [smalldisk] Windows Server 2008 R2 SP1 en modalidad "pago por uso": versión 7601.24561.2010082056
 - 29/10/2020: [smalldisk] Windows Server 2008 R2 SP1 en modalidad "traiga su propia licencia": versión 7601.24561.2010082056
 - 29/10/2020: Windows Server 2008 R2 SP1 en modalidad "pago por uso": versión 7601.24561.2010082056

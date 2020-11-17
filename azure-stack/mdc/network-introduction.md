@@ -7,12 +7,12 @@ ms.service: azure-stack
 ms.topic: conceptual
 ms.date: 12/31/2019
 ms.lastreviewed: 12/31/2019
-ms.openlocfilehash: 511ea66e0f70041ffc237463e33fccdbf390360d
-ms.sourcegitcommit: e4e2cc6a68f02c3e856f58ca5ee51b3313c7ff8f
+ms.openlocfilehash: 4aec8b6dde194590d0bc5cb00f42869462fc365e
+ms.sourcegitcommit: ce864e1d86ad05a03fe896721dea8f0cce92085f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92183473"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94383554"
 ---
 # <a name="modular-data-center-mdc-network-introduction"></a>Introducción a la red del Centro de datos modular (MDC)
 
@@ -79,9 +79,9 @@ El HLH también hospeda la máquina virtual de implementación (DVM). La DVM se 
 
 La red /20 (4096 IP de host) es privada para la región de MDC. No se expande más allá de los dispositivos de conmutación de borde de la región de MDC. Esta red se divide en varias subredes, por ejemplo:
 
-- **Red de almacenamiento** . Una red /25 (128 direcciones IP) que se utiliza para admitir el uso del tráfico de almacenamiento de espacios directo y el bloque de mensajes del servidor (SMB), y la migración en vivo de máquinas virtuales.
+- **Red de almacenamiento**. Una red /25 (128 direcciones IP) que se utiliza para admitir el uso del tráfico de almacenamiento de espacios directo y el bloque de mensajes del servidor (SMB), y la migración en vivo de máquinas virtuales.
 - Red IP virtual interna: red /25 dedicada a las IP virtuales solo internas para el equilibrador de carga de software.
-- **Red de contenedor** : red /23 (512 IP) dedicada al tráfico solo interno entre contenedores que ejecutan servicios de infraestructura.
+- **Red de contenedor**: red /23 (512 IP) dedicada al tráfico solo interno entre contenedores que ejecutan servicios de infraestructura.
 
 El tamaño de la red privada modificado es /20 (4096 IP) del espacio de direcciones IP privadas. Esta red es privada para el sistema de MDC. No se enruta más allá de los dispositivos de conmutación de borde del sistema de MDC y se puede reutilizar en varios de estos sistemas. Aunque la red es privada para MDC, no debe superponerse a otras redes del centro de datos. Para obtener instrucciones sobre el espacio de direcciones IP privadas, se recomienda seguir las RFC 1918.
 
@@ -109,7 +109,7 @@ Hay dos redes /25, una que reside en el conmutador TOR y otra que se usa en el c
 
 ## <a name="dns-design-overview"></a>Introducción al diseño de DNS
 
-Para acceder a los puntos de conexión de MDC ( *portal* ,  *adminportal* ,  *management* y *adminmanagement* ) desde fuera de MDC, debe integrar los servicios de DNS de MDC con los servidores DNS que hospedan las zonas DNS que quiere usar en MDC.
+Para acceder a los puntos de conexión de MDC (*portal*, *adminportal*, *management* y *adminmanagement*) desde fuera de MDC, debe integrar los servicios de DNS de MDC con los servidores DNS que hospedan las zonas DNS que quiere usar en MDC.
 
 ### <a name="mdc-dns-namespace"></a>Espacio de nombres DNS del Centro de datos modular
 
@@ -120,15 +120,15 @@ Se le solicitará que proporcione información importante relacionada con DNS cu
 | Region | Ubicación geográfica de la implementación del Centro de datos modular. | *este* |
 | Nombre de dominio externo | Nombre de la zona que quiere usar para la implementación de MDC. | *cloud.fabrikam.com* |
 | Nombre de dominio interno | Nombre de la zona interna que se usa para los servicios de infraestructura en MDC. Está integrado en el servicio de directorio y es privado (no es accesible desde fuera de la implementación de MDC). | *azurestack.local* |
-| Reenviadores de DNS | Servidores DNS que se usan para reenviar consultas de DNS, registros y zonas DNS que se hospedan fuera de MDC, ya sea en la intranet corporativa o en la red pública de Internet. Puede editar el valor del reenviador DNS con el cmdlet  **Set-AzSDnsForwarder** después de la implementación. | |
-| Prefijo de nomenclatura (opcional) | Prefijo de nomenclatura que quiere que tengan los nombres de máquina de instancia de rol de infraestructura de MDC. Si no se proporciona, el valor predeterminado es  *azs* . | *azs* |
+| Reenviadores de DNS | Servidores DNS que se usan para reenviar consultas de DNS, registros y zonas DNS que se hospedan fuera de MDC, ya sea en la intranet corporativa o en la red pública de Internet. Puede editar el valor del reenviador DNS con el cmdlet **Set-AzSDnsForwarder** después de la implementación. | |
+| Prefijo de nomenclatura (opcional) | Prefijo de nomenclatura que quiere que tengan los nombres de máquina de instancia de rol de infraestructura de MDC. Si no se proporciona, el valor predeterminado es *azs*. | *azs* |
 
-El nombre de dominio completo (FQDN) de su implementación y puntos de conexión de MDC es la combinación de los parámetros de región y de nombre de dominio externo. Con los valores de los ejemplos de la tabla anterior, el FQDN para esta implementación de MDC sería el siguiente: *east.cloud.fabrikam.com* .
+El nombre de dominio completo (FQDN) de su implementación y puntos de conexión de MDC es la combinación de los parámetros de región y de nombre de dominio externo. Con los valores de los ejemplos de la tabla anterior, el FQDN para esta implementación de MDC sería el siguiente: *east.cloud.fabrikam.com*.
 
 De esta forma, los ejemplos de algunos de los puntos de conexión de esta implementación tendrían un aspecto parecido a las direcciones URL siguientes:
 
-- https://portal.east.cloud.fabrikam.com
-- https://adminportal.east.cloud.fabrikam.com
+- `https://portal.east.cloud.fabrikam.com`
+- `https://adminportal.east.cloud.fabrikam.com`
 
 Para usar este espacio de nombres DNS de ejemplo para una implementación de MDC, se deben cumplir las condiciones siguientes:
 
@@ -142,9 +142,9 @@ Para resolver los nombres DNS para los puntos de conexión y las instancias de M
 
 #### <a name="dns-name-labels"></a>Etiquetas de nombre DNS
 
-MDC admite la adición de una etiqueta de nombre DNS a una dirección IP pública para permitir la resolución de nombres de las direcciones IP públicas. Las etiquetas DNS constituyen una manera práctica de acceder a las aplicaciones y los servicios hospedados en MDC por el nombre. La etiqueta de nombre DNS usa un espacio de nombres ligeramente diferente al de los puntos de conexión de la infraestructura. Siguiendo el ejemplo de espacio de nombres anterior, el espacio de nombres para las etiquetas de nombre DNS sería: *\*.east.cloudapp.cloud.fabrikam.com* . 
+MDC admite la adición de una etiqueta de nombre DNS a una dirección IP pública para permitir la resolución de nombres de las direcciones IP públicas. Las etiquetas DNS constituyen una manera práctica de acceder a las aplicaciones y los servicios hospedados en MDC por el nombre. La etiqueta de nombre DNS usa un espacio de nombres ligeramente diferente al de los puntos de conexión de la infraestructura. Siguiendo el ejemplo de espacio de nombres anterior, el espacio de nombres para las etiquetas de nombre DNS sería: *\*.east.cloudapp.cloud.fabrikam.com*. 
 
-Si un inquilino especifica **Myapp** en el campo de la etiqueta de nombre DNS de un recurso de dirección IP pública, crea un registro A para myapp en la zona **east.cloudapp.cloud.fabrikam.com** en el servidor DNS externo de MDC. El nombre de dominio completo resultante sería: *myapp.east.cloudapp.cloud.fabrikam.com* . 
+Si un inquilino especifica **Myapp** en el campo de la etiqueta de nombre DNS de un recurso de dirección IP pública, crea un registro A para myapp en la zona **east.cloudapp.cloud.fabrikam.com** en el servidor DNS externo de MDC. El nombre de dominio completo resultante sería: *myapp.east.cloudapp.cloud.fabrikam.com*. 
 
 Si desea aprovechar esta funcionalidad y usar este espacio de nombres, debe integrar los servidores DNS. Se incluyen los servidores que hospedan la zona DNS externa para MDC y también los servidores DNS que hospedan la zona principal que quiere usar. Este espacio de nombres es distinto del espacio de nombres utilizado para los puntos de conexión de servicio de MDC, por lo que debe crear una delegación adicional o un regla de reenvío condicional.
 
@@ -162,7 +162,7 @@ MDC incluye servidores DNS autoritativos y recursivos. Los servidores recursivos
 
 ### <a name="resolving-external-dns-names-from-mdc"></a>Resolver nombres DNS externos desde MDC
 
-Para resolver nombres DNS para puntos de conexión fuera de MDC (por ejemplo, www.bing.com), deberá proporcionar servidores DNS para que MDC reenvíe las solicitudes DNS para las que MDC no es autoritativo. Se requieren los servidores DNS a los que MDC reenvía las solicitudes en la hoja de cálculo de implementación (en el campo Reenviador DNS). Proporcione al menos dos servidores en este campo por razones de tolerancia a errores. Sin estos valores, se produce un error de implementación de MDC. Puede editar los valores del reenviador DNS con el cmdlet  **Set-AzSDnsForwarder** después de la implementación.
+Para resolver nombres DNS para puntos de conexión fuera de MDC (por ejemplo, www.bing.com), deberá proporcionar servidores DNS para que MDC reenvíe las solicitudes DNS para las que MDC no es autoritativo. Se requieren los servidores DNS a los que MDC reenvía las solicitudes en la hoja de cálculo de implementación (en el campo Reenviador DNS). Proporcione al menos dos servidores en este campo por razones de tolerancia a errores. Sin estos valores, se produce un error de implementación de MDC. Puede editar los valores del reenviador DNS con el cmdlet **Set-AzSDnsForwarder** después de la implementación.
 
 ## <a name="firewall-design-overview"></a>Introducción al diseño del firewall
 
@@ -202,9 +202,9 @@ Las direcciones IP enrutables públicas se especifican para el grupo de VIP púb
 
 En una implementación perimetral o de intranet empresarial, MDC se implementa en un firewall de varias zonas o entre el firewall perimetral y el firewall de red corporativo interno. A continuación, se distribuye el tráfico entre la red perimetral (o DMZ) segura y las zonas no seguras como se describe a continuación:
 
-- **Zona segura** : red interna que usa direcciones IP enrutables corporativas o internas. La red segura se puede dividir. Puede tener acceso de salida a Internet a través de la especificación NAT del firewall. Normalmente es accesible desde dentro del centro de datos a través de la red interna. Todas las redes de MDC deben residir en la zona segura, excepto el grupo de VIP públicas de la red externa.
-- **Zona perimetral** : la red perimetral es el lugar en que se suelen implementar las aplicaciones externas o accesibles desde Internet, como los servidores web. Se suele supervisar a través de un firewall para evitar ataques como DDoS e intrusión (acceso por parte de piratas informáticos) y permitir el tráfico entrante especificado de Internet. Solo debe residir en la zona DMZ el grupo de VIP públicas de redes externas de MDC. 
-- **Zona no segura** : red externa, Internet. **No** se recomienda implementar MDC en la zona no segura.
+- **Zona segura**: red interna que usa direcciones IP enrutables corporativas o internas. La red segura se puede dividir. Puede tener acceso de salida a Internet a través de la especificación NAT del firewall. Normalmente es accesible desde dentro del centro de datos a través de la red interna. Todas las redes de MDC deben residir en la zona segura, excepto el grupo de VIP públicas de la red externa.
+- **Zona perimetral**: la red perimetral es el lugar en que se suelen implementar las aplicaciones externas o accesibles desde Internet, como los servidores web. Se suele supervisar a través de un firewall para evitar ataques como DDoS e intrusión (acceso por parte de piratas informáticos) y permitir el tráfico entrante especificado de Internet. Solo debe residir en la zona DMZ el grupo de VIP públicas de redes externas de MDC. 
+- **Zona no segura**: red externa, Internet. **No** se recomienda implementar MDC en la zona no segura.
 
 ![Escenario de firewall de red perimetral](media/network-introduction/perimeter-network-firewall-scenario-50.png) 
 
@@ -235,8 +235,8 @@ Al crear la puerta de enlace de red virtual para una configuración de puerta de
 >[!IMPORTANT]
 > En la actualidad, MDC solo admite el tipo de VPN basado en ruta. Si el dispositivo solo admite VPN basadas en directiva, no se admiten conexiones a dichos dispositivos desde MDC. Además, MDC no admite el uso de selectores de tráfico basados en directivas para puertas de enlace basadas en rutas en este momento, ya que las configuraciones de directivas personalizadas de IPSec/IKE no se admiten todavía. 
 
-- **PolicyBased** : las VPN basadas en directivas cifran y dirigen los paquetes a través de túneles IPsec, en función de las directivas IPsec. Las directivas se configuran con las combinaciones de prefijos de dirección entre la red local y la red virtual de MDC. La directiva (o el selector de tráfico) suele ser una lista de acceso en la configuración del dispositivo VPN. **PolicyBased** es compatible con Azure, pero no con MDC. 
-- **RouteBased** : las VPN basadas en enrutamiento usan rutas configuradas en la tabla de enrutamiento o reenvío de IP. Las rutas dirigen los paquetes a sus interfaces de túnel correspondientes. A continuación, las interfaces de túnel cifran o descifran los paquetes dentro y fuera de los túneles. La directiva o el selector de tráfico para las VPN **RouteBased** se configuran como una conectividad universal (también se pueden usar caracteres comodín). De forma predeterminada, no se puede cambiar. El valor de un tipo de VPN **RouteBased** es **VPN** .
+- **PolicyBased**: las VPN basadas en directivas cifran y dirigen los paquetes a través de túneles IPsec, en función de las directivas IPsec. Las directivas se configuran con las combinaciones de prefijos de dirección entre la red local y la red virtual de MDC. La directiva (o el selector de tráfico) suele ser una lista de acceso en la configuración del dispositivo VPN. **PolicyBased** es compatible con Azure, pero no con MDC. 
+- **RouteBased**: las VPN basadas en enrutamiento usan rutas configuradas en la tabla de enrutamiento o reenvío de IP. Las rutas dirigen los paquetes a sus interfaces de túnel correspondientes. A continuación, las interfaces de túnel cifran o descifran los paquetes dentro y fuera de los túneles. La directiva o el selector de tráfico para las VPN **RouteBased** se configuran como una conectividad universal (también se pueden usar caracteres comodín). De forma predeterminada, no se puede cambiar. El valor de un tipo de VPN **basada en ruta** es **RouteBased**.
 
 ### <a name="configuring-a-vpn-gateway"></a>Configuración de una puerta de enlace de VPN
 

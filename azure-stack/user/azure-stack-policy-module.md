@@ -6,20 +6,20 @@ ms.topic: article
 ms.date: 06/09/2020
 ms.author: sethm
 ms.lastreviewed: 03/26/2019
-ms.openlocfilehash: f39bbf689cd3b847b29c2d5b046721029078a5dd
-ms.sourcegitcommit: d91e47a51a02042f700c6a420f526f511a6db9a0
+ms.openlocfilehash: ca96de45f50f48b91dbb2e6e8679df5dedab8d8f
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84666488"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94547065"
 ---
 # <a name="manage-azure-policy-using-the-azure-stack-hub-policy-module"></a>Administración de la directiva de Azure con el módulo de directivas de Azure Stack Hub
 
-El módulo de directivas de Azure Stack Hub le permite configurar una suscripción de Azure con la misma disponibilidad de servicios y control de versiones que Azure Stack Hub. El módulo utiliza el cmdlet de PowerShell [**New-AzureRmPolicyDefinition**](/powershell/module/azurerm.resources/new-azurermpolicydefinition) para crear una directiva de Azure. Esta directiva limita los tipos de recursos y los servicios que están disponibles en una suscripción. Después, puede crear una asignación de la directiva dentro del ámbito que corresponda utilizando el cmdlet [**New-AzureRmPolicyAssignment**](/powershell/module/azurerm.resources/new-azurermpolicyassignment). Después de configurar la directiva, puede usar su suscripción de Azure para desarrollar aplicaciones destinadas a Azure Stack Hub.
+El módulo de directivas de Azure Stack Hub le permite configurar una suscripción de Azure con la misma disponibilidad de servicios y control de versiones que Azure Stack Hub. El módulo utiliza el cmdlet de PowerShell [**New-AzPolicyDefinition**](/powershell/module/Az.resources/new-Azpolicydefinition) para crear una directiva de Azure. Esta directiva limita los tipos de recursos y los servicios que están disponibles en una suscripción. Después, puede crear una asignación de la directiva dentro del ámbito que corresponda utilizando el cmdlet [**New-AzPolicyAssignment**](/powershell/module/Az.resources/new-Azpolicyassignment). Después de configurar la directiva, puede usar su suscripción de Azure para desarrollar aplicaciones destinadas a Azure Stack Hub.
 
 ## <a name="install-the-module"></a>Instalación del módulo
 
-1. Instale la versión apropiada del módulo AzureRM PowerShell, tal y como se describe en el paso 1 de [Instalación de PowerShell para Azure Stack Hub](../operator/azure-stack-powershell-install.md).
+1. Instale la versión apropiada del módulo Az PowerShell, tal y como se describe en el paso 1 de [Instalación de PowerShell para Azure Stack Hub](../operator/powershell-install-az-module.md).
 2. [Descargue las herramientas de Azure Stack Hub desde GitHub](../operator/azure-stack-powershell-download.md).
 3. [Configure PowerShell para utilizarlo con Azure Stack Hub](azure-stack-powershell-configure-user.md).
 4. Importe el módulo **AzureStack.Policy.psm1**:
@@ -33,11 +33,11 @@ El módulo de directivas de Azure Stack Hub le permite configurar una suscripci�
 Puede utilizar los comandos siguientes para aplicar una directiva predeterminada de Azure Stack Hub en su suscripción a Azure. Antes de ejecutar estos comandos, reemplace `Azure subscription name` por el nombre de la suscripción a Azure:
 
 ```powershell
-Add-AzureRmAccount
-$s = Select-AzureRmSubscription -SubscriptionName "Azure subscription name"
-$policy = New-AzureRmPolicyDefinition -Name AzureStackPolicyDefinition -Policy (Get-AzsPolicy)
+Add-AzAccount
+$s = Select-AzSubscription -SubscriptionName "Azure subscription name"
+$policy = New-AzPolicyDefinition -Name AzureStackPolicyDefinition -Policy (Get-AzsPolicy)
 $subscriptionID = $s.Subscription.SubscriptionId
-New-AzureRmPolicyAssignment -Name AzureStack -PolicyDefinition $policy -Scope /subscriptions/$subscriptionID
+New-AzPolicyAssignment -Name AzureStack -PolicyDefinition $policy -Scope /subscriptions/$subscriptionID
 ```
 
 ## <a name="apply-policy-to-a-resource-group"></a>Aplicación de la directiva a un grupo de recursos
@@ -45,12 +45,12 @@ New-AzureRmPolicyAssignment -Name AzureStack -PolicyDefinition $policy -Scope /s
 Quizá desee aplicar directivas más detalladas. Por ejemplo, puede tener otros recursos que se ejecuten en la misma suscripción. Puede delimitar la aplicación de directivas a un grupo de recursos específico, lo que le permite probar sus aplicaciones para Azure Stack Hub con recursos de Azure. Antes de ejecutar los comandos siguientes, reemplace `Azure subscription name` por el nombre de la suscripción a Azure:
 
 ```powershell
-Add-AzureRmAccount
+Add-AzAccount
 $rgName = 'myRG01'
-$s = Select-AzureRmSubscription -SubscriptionName "Azure subscription name"
-$policy = New-AzureRmPolicyDefinition -Name AzureStackPolicyDefinition -Policy (Get-AzsPolicy)
+$s = Select-AzSubscription -SubscriptionName "Azure subscription name"
+$policy = New-AzPolicyDefinition -Name AzureStackPolicyDefinition -Policy (Get-AzsPolicy)
 $subscriptionID = $s.Subscription.SubscriptionId
-New-AzureRmPolicyAssignment -Name AzureStack -PolicyDefinition $policy -Scope /subscriptions/$subscriptionID/resourceGroups/$rgName
+New-AzPolicyAssignment -Name AzureStack -PolicyDefinition $policy -Scope /subscriptions/$subscriptionID/resourceGroups/$rgName
 ```
 
 ## <a name="policy-in-action"></a>Directiva en acción

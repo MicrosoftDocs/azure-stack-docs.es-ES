@@ -3,15 +3,15 @@ title: Planeamiento de redes de host para Azure Stack HCI
 description: Aprenda a planear redes de host para clústeres de Azure Stack HCI
 author: v-dasis
 ms.topic: how-to
-ms.date: 10/13/2020
+ms.date: 11/09/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: 46f98ba8f5d2f33e0b5d9d85ee9c2469a098c17d
-ms.sourcegitcommit: d835e211fe65dc54a0d49dfb21ca2465ced42aa4
+ms.openlocfilehash: b6cfbfcff408483d7086c311dff41fdab59c9524
+ms.sourcegitcommit: 980be7813e6f39fb59926174a5d3e0d392b04293
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92200491"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94414068"
 ---
 # <a name="plan-host-networking-for-azure-stack-hci"></a>Planeamiento de redes de host para Azure Stack HCI
 
@@ -19,72 +19,9 @@ ms.locfileid: "92200491"
 
 En este tema se describen los requisitos y consideraciones de planeamiento de redes de host en entornos de clústeres de Azure Stack HCI extendidos y no extendidos.
 
-## <a name="traffic-types-supported"></a>Tipos de tráfico admitidos
-
-Azure Stack HCI usa Bloque de mensajes del servidor (SMB). SMB en Azure Stack HCI admite los siguientes tipos de tráfico:
-
-- Capa de bus de almacenamiento (SBL): es la que Espacios de almacenamiento directo usa. Se emplea para el tráfico de prioridad más alta
-- Volúmenes compartidos de clúster (CSV)
-- Migración en vivo (LM)
-- Réplica de almacenamiento (SR): solo se instala en clústeres extendidos
-- Recursos compartidos de archivos (FS): FS tradicional y Servidor de archivos de escalabilidad horizontal (SOFS)
-- Latido del clúster (HB)
-- Comunicación del clúster (combinaciones de nodos, actualizaciones de clúster, actualizaciones del registro)
-
-El tráfico SMB puede viajar por los siguientes protocolos:
-
-- Protocolo de control de transmisión (TCP): se usa entre sitios
-- Acceso directo a memoria remota (RDMA)
-
-## <a name="traffic-bandwidth-allocation"></a>Asignación de ancho de banda para el tráfico
-
-En la tabla siguiente se muestran las asignaciones de ancho de banda para varios tipos de tráfico, donde:
-
-- Todas las unidades están en Gbps
-- Los valores se aplican a los clústeres extendidos y no extendidos
-- El tráfico SMB obtiene el 50 % de la asignación de ancho de banda total
-- El tráfico de la capa de bus de almacenamiento y de Volumen compartido de clúster (SBL/CSV) obtiene el 70 % del 50 % restante
-- El tráfico de Migración en vivo (LM) obtiene el 15 % del 50 % restante
-- El tráfico de Réplica de almacenamiento (SR) obtiene el 14 % del 50 % restante
-- El tráfico de Latido (HB) obtiene el 1 % del 50 % restante
-- \* = debe usar la compresión en lugar de RDMA si la asignación de ancho de banda para el tráfico de LM es < 5 Gbps
-
-|Velocidad de NIC|Ancho de banda agrupado|Reserva de Azure del 50 % de SMB|SBL/CSV %|Ancho de banda de SBL/CSV|LM %|Ancho de banda de LM|SR % |Ancho de banda de SR|HB %|Ancho de banda de HB|
-|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-|10|20|10|70%|7|14 %*|1,4*|14 %|1.4|2 %|0,2|
-|25|50|25|70%|17.5|15 %*|3,75*|14 %|3,5|1 %|0,25|
-|40|80| 40|70%|28|15 %|6|14 %|5.6|1 %|0,4|
-|50|100|50|70%|35|15 %|7.5|14 %|7|1 %|0.5|
-|100|200|100|70%|70|15 %|15|14 %|14|1 %|1|
-|200|400|200|70%|140|15 %|30|14 %|28|1 %|2|
-
-## <a name="rdma-considerations"></a>Consideraciones sobre RDMA
-
-El acceso directo a memoria remota (RDMA) es un acceso directo a memoria desde la memoria de un equipo a la de otro sin necesidad de que intervenga ningún sistema operativo del equipo. Esto permite redes de alto rendimiento y baja latencia a la vez que reduce el uso de la CPU, lo que resulta especialmente útil en los clústeres.
-
-Todo el tráfico de RDMA del host aprovecha las ventajas de SMB directo. SMB directo es el tráfico de SMB 3.0 que se envía a través de RDMA y se multiplexa en el puerto 445. Para que el tráfico RDMA siga siendo compatible con la mayoría de los conmutadores físicos actuales y futuros del mercado, se debe usar un mínimo de dos clases de tráfico habilitadas para el control de flujo basado en prioridades.
-
-El protocolo RDMA de área extensa de Internet (iWARP) ejecuta RDMA mediante TCP, mientras que RDMA sobre Ethernet convergente (RoCE) evita el uso de TCP, pero requiere conmutadores de NIC y conmutadores físicos que lo admitan. Para conocer los requisitos de red convergentes para RDMA sobre RoCE, consulte la [guía de implementación de RDMA para Windows Server 2016 y 2019](https://github.com/Microsoft/SDN/blob/master/Diagnostics/S2D%20WS2016_ConvergedNIC_Configuration.docx).
-
-RDMA está habilitado de forma predeterminada para todo el tráfico horizontal de derecha a izquierda entre los nodos de clúster de un sitio de la misma subred. RDMA está deshabilitado y no se admite para el tráfico de clúster extendido vertical de arriba abajo entre sitios de diferentes subredes.
-
-Estos son los requisitos de RDMA para Azure Stack HCI:
-
-- Todo el tráfico entre subredes y entre sitios (clústeres extendidos) debe usar WinSock TCP. Los saltos de red intermedios se encuentran fuera de la vista y el control de Azure Stack HCI.
-- No se admite el RDMA entre subredes y entre sitios (clústeres extendidos). El uso de vínculos superiores y varios dispositivos de red conlleva múltiples puntos de error que hacen que este sea inestable y no compatible.
-- No se necesitan NIC virtuales adicionales para el tráfico de réplica de almacenamiento de los clústeres extendidos. No obstante, para solucionar problemas, puede ser útil mantener el tráfico entre sitios y entre subredes separado del tráfico RDMA horizontal de derecha a izquierda. Si SMB directo no se puede deshabilitar de forma nativa entre sitios o entre subredes por flujo, entonces:
-    - Se deben aprovisionar una o más vNIC adicionales para la réplica de almacenamiento
-    - Las vNIC de réplica de almacenamiento deben tener el RDMA deshabilitado mediante el cmdlet [Disable-NetAdapterRDMA](https://docs.microsoft.com/powershell/module/netadapter/disable-netadapterrdma) de PowerShell porque el RDMA es por definición entre sitios y entre subredes.
-    - Los adaptadores de RDMA nativos necesitan un vSwitch y varias VNIC para la compatibilidad con réplica de almacenamiento con el fin de satisfacer los requisitos de sitio o subred anteriores
-    - Los requisitos de ancho de banda de RDMA internos del sitio requieren conocer los porcentajes de ancho de banda por tipo de tráfico, como se describe en la sección **Asignación de ancho de banda para el tráfico** . Esto garantizará que se puedan aplicar los límites y reservas de ancho de banda adecuados para el tráfico horizontal de derecha a izquierda (nodo a nodo).
-- El tráfico de migración en vivo y de réplica de almacenamiento debe estar limitado por el ancho de banda de SMB; de lo contrario, podrían consumir todo el ancho de banda, lo que privaría de este al tráfico de almacenamiento de alta prioridad. Para más información, consulte los cmdlets [Set-SmbBandwidthLimit](https://docs.microsoft.com/powershell/module/smbshare/set-smbbandwidthlimit) y [Set-SRNetworkConstraint](https://docs.microsoft.com/powershell/module/storagereplica/set-srnetworkconstraint) de PowerShell.
-
-> [!NOTE]
-> Debe convertir bits en bytes al usar el cmdlet `Set-SmbBandwidthLimit`.
-
 ## <a name="node-interconnect-requirements"></a>Requisitos de interconexión entre nodos
 
-En esta sección se describen los requisitos de red específicos entre los nodos de servidor de un sitio, denominados interconexiones. Se pueden usar las interconexiones de nodos con conmutador o sin conmutador y se admiten:
+En esta sección se describen los requisitos de red específicos entre los servidores de un sitio, denominados interconexiones. Se pueden usar las interconexiones de nodos con conmutador o sin conmutador y se admiten:
 
 - **Con conmutador:** los nodos de servidor suelen conectarse entre sí a través de redes Ethernet que usan conmutadores de red. Los conmutadores deben estar configurados correctamente para administrar el ancho de banda y el tipo de red. Si usa RDMA que implementa el protocolo RoCE, es importante el dispositivo de red y la configuración del conmutador.
 - **Sin conmutador:** los nodos de servidor también se pueden interconectar mediante conexiones Ethernet directas sin un conmutador. En este caso, cada nodo de servidor debe tener una conexión directa con todos los demás nodos del clúster en el mismo sitio.
@@ -113,6 +50,52 @@ Cuando se conectan sitios de clústeres extendidos, siguen siendo aplicables los
 - Una red entre sitios con suficiente ancho de banda para contener la carga de trabajo de escritura de E/S y un promedio de latencia de ida y vuelta de 5 ms para la replicación sincrónica. Este tipo de replicación no tiene una recomendación de latencia.
 - Si usa una única conexión entre sitios, establezca límites de ancho de banda SMB para la réplica de almacenamiento mediante PowerShell. Para más información, consulte [Set-SmbBandwidthLimit](/powershell/module/smbshare/set-smbbandwidthlimit).
 - Si usa varias conexiones entre sitios, separe el tráfico entre las conexiones. Por ejemplo, coloque el tráfico de la réplica de almacenamiento en una red independiente distinta a la del tráfico de migración en vivo de Hyper-V con PowerShell. Para más información, consulte [Set-SRNetworkConstraint](/powershell/module/storagereplica/set-srnetworkconstraint).
+
+## <a name="rdma-considerations"></a>Consideraciones sobre RDMA
+
+El acceso directo a memoria remota (RDMA) es un acceso directo a memoria desde la memoria de un equipo a la de otro sin necesidad de que intervenga ningún sistema operativo del equipo. Esto permite redes de alto rendimiento y baja latencia a la vez que reduce el uso de la CPU, lo que resulta especialmente útil en los clústeres.
+
+Todo el tráfico de RDMA del host aprovecha las ventajas de SMB directo. SMB directo es el tráfico de SMB 3.0 que se envía a través de RDMA y se multiplexa en el puerto 445. Para que el tráfico RDMA siga siendo compatible con la mayoría de los conmutadores físicos actuales y futuros del mercado, se debe usar un mínimo de dos clases de tráfico habilitadas para el control de flujo basado en prioridades.
+
+El protocolo RDMA de área extensa de Internet (iWARP) ejecuta RDMA mediante TCP, mientras que RDMA sobre Ethernet convergente (RoCE) evita el uso de TCP, pero requiere conmutadores de NIC y conmutadores físicos que lo admitan. Para conocer los requisitos de red convergentes para RDMA sobre RoCE, consulte la [guía de implementación de RDMA para Windows Server 2016 y 2019](https://github.com/Microsoft/SDN/blob/master/Diagnostics/S2D%20WS2016_ConvergedNIC_Configuration.docx).
+
+RDMA está habilitado de forma predeterminada para todo el tráfico horizontal de derecha a izquierda entre los nodos de clúster de un sitio de la misma subred. RDMA está deshabilitado y no se admite para el tráfico de clúster extendido vertical de arriba abajo entre sitios de diferentes subredes.
+
+Estos son los requisitos de RDMA para Azure Stack HCI:
+
+- Todo el tráfico entre subredes y entre sitios (clústeres extendidos) debe usar WinSock TCP. Los saltos de red intermedios se encuentran fuera de la vista y el control de Azure Stack HCI.
+- No se admite el RDMA entre subredes y entre sitios (clústeres extendidos). El uso de vínculos superiores y varios dispositivos de red conlleva múltiples puntos de error que hacen que este sea inestable y no compatible.
+- No se necesitan NIC virtuales adicionales para el tráfico de réplica de almacenamiento de los clústeres extendidos. No obstante, para solucionar problemas, puede ser útil mantener el tráfico entre sitios y entre subredes separado del tráfico RDMA horizontal de derecha a izquierda. Si SMB directo no se puede deshabilitar de forma nativa entre sitios o entre subredes por flujo, entonces:
+    - Se deben aprovisionar una o más vNIC adicionales para la réplica de almacenamiento
+    - Las vNIC de réplica de almacenamiento deben tener el RDMA deshabilitado mediante el cmdlet [Disable-NetAdapterRDMA](https://docs.microsoft.com/powershell/module/netadapter/disable-netadapterrdma) de PowerShell porque el RDMA es por definición entre sitios y entre subredes.
+    - Los adaptadores de RDMA nativos necesitan un vSwitch y varias VNIC para la compatibilidad con réplica de almacenamiento con el fin de satisfacer los requisitos de sitio o subred anteriores
+    - Los requisitos de ancho de banda de RDMA internos del sitio requieren conocer los porcentajes de ancho de banda por tipo de tráfico, como se describe en la sección **Asignación de ancho de banda para el tráfico**. Esto garantizará que se puedan aplicar los límites y reservas de ancho de banda adecuados para el tráfico horizontal de derecha a izquierda (nodo a nodo).
+- El tráfico de migración en vivo y de réplica de almacenamiento debe estar limitado por el ancho de banda de SMB; de lo contrario, podrían consumir todo el ancho de banda, lo que privaría de este al tráfico de almacenamiento de alta prioridad. Para más información, consulte los cmdlets [Set-SmbBandwidthLimit](https://docs.microsoft.com/powershell/module/smbshare/set-smbbandwidthlimit) y [Set-SRNetworkConstraint](https://docs.microsoft.com/powershell/module/storagereplica/set-srnetworkconstraint) de PowerShell.
+
+> [!NOTE]
+> Debe convertir bits en bytes al usar el cmdlet `Set-SmbBandwidthLimit`.
+
+## <a name="traffic-bandwidth-allocation"></a>Asignación de ancho de banda para el tráfico
+
+En la tabla siguiente se muestran las asignaciones de ancho de banda para varios tipos de tráfico, donde:
+
+- Todas las unidades están en Gbps
+- Los valores se aplican a los clústeres extendidos y no extendidos
+- El tráfico SMB obtiene el 50 % de la asignación de ancho de banda total
+- El tráfico de la capa de bus de almacenamiento y de Volumen compartido de clúster (SBL/CSV) obtiene el 70 % del 50 % restante
+- El tráfico de Migración en vivo (LM) obtiene el 15 % del 50 % restante
+- El tráfico de Réplica de almacenamiento (SR) obtiene el 14 % del 50 % restante
+- El tráfico de Latido (HB) obtiene el 1 % del 50 % restante
+- \* = debe usar la compresión en lugar de RDMA si la asignación de ancho de banda para el tráfico de LM es < 5 Gbps
+
+|Velocidad de NIC|Ancho de banda agrupado|Reserva de Azure del 50 % de SMB|SBL/CSV %|Ancho de banda de SBL/CSV|LM %|Ancho de banda de LM|SR % |Ancho de banda de SR|HB %|Ancho de banda de HB|
+|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+|10|20|10|70%|7|14 %*|1,4*|14 %|1.4|2 %|0,2|
+|25|50|25|70%|17.5|15 %*|3,75*|14 %|3,5|1 %|0,25|
+|40|80| 40|70%|28|15 %|6|14 %|5.6|1 %|0,4|
+|50|100|50|70%|35|15 %|7.5|14 %|7|1 %|0.5|
+|100|200|100|70%|70|15 %|15|14 %|14|1 %|1|
+|200|400|200|70%|140|15 %|30|14 %|28|1 %|2|
 
 ## <a name="network-port-requirements"></a>Requisitos de puerto de red
 
@@ -200,6 +183,24 @@ LLDP permite a las organizaciones definir y codificar sus propios TLV personaliz
 
 > [!NOTE]
 > En el futuro, es posible que se requieran algunas de las características opcionales que se enumeran.
+
+## <a name="traffic-types-supported"></a>Tipos de tráfico admitidos
+
+Azure Stack HCI usa Bloque de mensajes del servidor (SMB). SMB en Azure Stack HCI admite los siguientes tipos de tráfico:
+
+- Capa de bus de almacenamiento (SBL): es la que Espacios de almacenamiento directo usa. Se emplea para el tráfico de prioridad más alta
+- Volúmenes compartidos de clúster (CSV)
+- Migración en vivo (LM)
+- Réplica de almacenamiento (SR): solo se instala en clústeres extendidos
+- Recursos compartidos de archivos (FS): FS tradicional y Servidor de archivos de escalabilidad horizontal (SOFS)
+- Latido del clúster (HB)
+- Comunicación del clúster (combinaciones de nodos, actualizaciones de clúster, actualizaciones del registro)
+
+El tráfico SMB puede viajar por los siguientes protocolos:
+
+- Protocolo de control de transmisión (TCP): se usa entre sitios
+- Acceso directo a memoria remota (RDMA)
+
 
 ## <a name="next-steps"></a>Pasos siguientes
 

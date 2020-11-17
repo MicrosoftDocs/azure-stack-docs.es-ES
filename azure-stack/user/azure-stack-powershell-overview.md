@@ -3,16 +3,16 @@ title: PowerShell en Azure Stack Hub
 description: PowerShell en Azure Stack Hub incluye una serie de módulos y contextos.
 author: mattbriggs
 ms.topic: article
-ms.date: 5/27/2020
+ms.date: 10/16/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: 9731586043f42358bef0e8e37f9de7e23feebbff
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.lastreviewed: 10/16/2020
+ms.openlocfilehash: 7103a2a8268ffb4c8cbbc84f35e6e1a6a90992c3
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86567049"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94546589"
 ---
 # <a name="get-started-with-powershell-in-azure-stack-hub"></a>Introducción a PowerShell en Azure Stack Hub
 
@@ -35,7 +35,7 @@ Los proveedores de recursos proporcionan tanto la funcionalidad como los control
 
 En el siguiente diagrama de bloques se muestra la relación entre los conjuntos de módulos de PowerShell. En la máquina, puede cargar los módulos de PowerShell y administrar Azure global y Azure Stack Hub.
 
-![PowerShell de Azure Stack Hub](media/azure-stack-powershell-overview/azure-stack-powerShell.svg)
+![PowerShell de Azure Stack Hub](media/azure-stack-powershell-overview/azure-stack-powershell.svg)
 
 ### <a name="global-azure"></a>Azure global
 
@@ -43,11 +43,11 @@ Azure PowerShell contiene un conjunto de cmdlets que usan la versión actual de 
 
 ### <a name="azure-stack-hub-resource-manager"></a>Punto de conexión de Resource Manager de Azure Stack Hub
 
-PowerShell de Azure Stack Hub proporciona un conjunto de cmdlets que usan versiones anteriores de Azure Resource Manager. Estos cmdlets son compatibles con los proveedores de recursos de Azure Stack Hub. Cada proveedor de recursos de Azure Stack Hub usa una versión anterior del proveedor que se encuentra en Azure global. Para ayudar a coordinar la versión de cada proveedor compatible con Azure Stack Hub, puede usar perfiles de API. PowerShell de Azure Stack Hub usa PowerShell 5.1 y solo está disponible en Windows. Para más información, consulte [Administración de perfiles de versión de API en Azure Stack Hub](azure-stack-version-profiles.md).
+PowerShell de Azure Stack Hub proporciona un conjunto de cmdlets que usan versiones anteriores de Azure Resource Manager. Estos cmdlets son compatibles con los proveedores de recursos de Azure Stack Hub. Cada proveedor de recursos de Azure Stack Hub usa una versión anterior del proveedor que se encuentra en Azure global. Para ayudar a coordinar la versión de cada proveedor compatible con Azure Stack Hub, puede usar perfiles de API. Para más información, consulte [Administración de perfiles de versión de API en Azure Stack Hub](azure-stack-version-profiles.md).
 
 ### <a name="azure-stack-hub-administrator"></a>Administrador de Azure Stack Hub
 
-Azure Stack Hub expone un conjunto de proveedores de recursos al operador en la nube para que este pueda realizar la instalación y el mantenimiento de Azure Stack Hub. En Azure global, esta interacción se separa del usuario y se gestiona en segundo plano como parte de Azure. Sin embargo, con Azure Stack Hub, las empresas pueden admitir una nube privada. Para hacer estas tareas, el operador interactúa con las API de administración de Azure Stack Hub. Para más información, consulte [Instalación de PowerShell para Azure Stack Hub](../operator/azure-stack-powershell-install.md).
+Azure Stack Hub expone un conjunto de proveedores de recursos al operador en la nube para que este pueda realizar la instalación y el mantenimiento de Azure Stack Hub. En Azure global, esta interacción se separa del usuario y se gestiona en segundo plano como parte de Azure. Sin embargo, con Azure Stack Hub, las empresas pueden admitir una nube privada. Para hacer estas tareas, el operador interactúa con las API de administración de Azure Stack Hub. Para más información, consulte [Instalación de PowerShell para Azure Stack Hub](../operator/powershell-install-az-module.md).
 
 ### <a name="azure-stack-hub-privileged-endpoint"></a>Punto de conexión con privilegios de Azure Stack Hub
 
@@ -61,7 +61,7 @@ Azure Stack Hub pone scripts y cmdlets adicionales a disposición de los usuari
 
 PowerShell proporciona una manera de interactuar con Azure Resource Manager mediante programación. Puede trabajar con un símbolo del sistema interactivo o, si va a automatizar tareas, escribir scripts.
 
-Si pasa mucho tiempo trabajando con PowerShell de Azure Stack Hub, deberá instalar y reinstalar los módulos. Si trabaja con Azure global al mismo tiempo, esta rutina puede resultar difícil, ya que tendrá que desinstalar y reinstalar los módulos en función del destino. 
+Si pasa mucho tiempo trabajando con PowerShell de Azure Stack Hub, deberá instalar y reinstalar los módulos. Si trabaja con Azure global al mismo tiempo, esta rutina puede resultar difícil, ya que tendrá que desinstalar y reinstalar los módulos en función del destino.
 
 Puede usar contenedores de Docker para aislar cada versión de PowerShell en la máquina local. Para usar contenedores de Docker y poder cambiar entre conjuntos de módulos de PowerShell, consulte [Uso de Docker para ejecutar PowerShell](azure-stack-powershell-user-docker.md).
 
@@ -69,5 +69,5 @@ Puede usar contenedores de Docker para aislar cada versión de PowerShell en la 
 ## <a name="next-steps"></a>Pasos siguientes
 
 - Obtenga más información sobre los [Perfiles de API para PowerShell](azure-stack-version-profiles.md) en Azure Stack Hub.
-- Instalación de [PowerShell de Azure Stack Hub](../operator/azure-stack-powershell-install.md).
+- Instalación de [PowerShell de Azure Stack Hub](../operator/powershell-install-az-module.md).
 - Lea sobre la creación de [plantillas de Azure Resource Manager](azure-stack-develop-templates.md) para mantener la coherencia en la nube.

@@ -2,18 +2,18 @@
 title: Solución de problemas comunes con los certificados PKI
 titleSuffix: Azure Stack Hub
 description: Corrija problemas comunes con los certificados PKI de Azure Stack Hub mediante Azure Stack Hub Readiness Checker.
-author: IngridAtMicrosoft
+author: BryanLa
 ms.topic: how-to
-ms.date: 03/04/2020
-ms.author: inhenkel
+ms.date: 11/10/2020
+ms.author: bryanla
 ms.reviewer: unknown
-ms.lastreviewed: 11/19/2019
-ms.openlocfilehash: c7f17c603a6b54474db4036953f0fbd755d496cf
-ms.sourcegitcommit: e72145ebb5eac17a47ba1c9119fd31de545fdace
+ms.lastreviewed: 10/19/2020
+ms.openlocfilehash: 81215c7b3fb25f0e9b9877dae401b776517cf143
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88724853"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94545353"
 ---
 # <a name="fix-common-issues-with-azure-stack-hub-pki-certificates"></a>Solución de problemas comunes con los certificados PKI de Azure Stack Hub
 
@@ -105,7 +105,7 @@ Deben cumplirse los siguientes requisitos previos en el equipo donde se ejecuta 
    $PSVersionTable.PSVersion
    ```
 
-- Configure [PowerShell para Azure Stack Hub](azure-stack-powershell-install.md).
+- Configure [PowerShell para Azure Stack Hub](powershell-install-az-module.md).
 - Descargue la versión más reciente de la herramienta [Azure Stack Hub Readiness Checker](https://aka.ms/AzsReadinessChecker).
 
 ### <a name="import-and-export-an-existing-pfx-file"></a>Importación y exportación de una archivo PFX existente
@@ -113,13 +113,13 @@ Deben cumplirse los siguientes requisitos previos en el equipo donde se ejecuta 
 1. En un equipo que cumpla los requisitos previos, abra un símbolo del sistema de PowerShell con privilegios elevados y ejecute el siguiente comando para instalar Azure Stack Hub Readiness Checker:
 
    ```powershell
-   Install-Module Microsoft.AzureStack.ReadinessChecker -Force
+   Install-Module Microsoft.AzureStack.ReadinessChecker -Force -AllowPrerelease
    ```
 
-2. Desde el símbolo del sistema de PowerShell, ejecute el siguiente cmdlet para establecer la contraseña PFX. Reemplace `PFXpassword` por la contraseña real:
+2. Desde el símbolo del sistema de PowerShell, ejecute el siguiente cmdlet para establecer la contraseña PFX. Escriba la contraseña cuando se le solicite:
 
    ```powershell
-   $password = Read-Host -Prompt PFXpassword -AsSecureString
+   $password = Read-Host -Prompt "Enter password" -AsSecureString
    ```
 
 3. Desde el símbolo del sistema de PowerShell, ejecute el siguiente comando para exportar un nuevo archivo PFX:

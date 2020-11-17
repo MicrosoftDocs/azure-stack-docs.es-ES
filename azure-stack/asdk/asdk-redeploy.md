@@ -7,12 +7,12 @@ ms.date: 02/12/2019
 ms.author: v-myoung
 ms.reviewer: misainat
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 55a35a509b4fe3fadbe9a58e705cc53cfd18a027
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.openlocfilehash: 7408bcb7317550d7093f97a4cfe10bbc17119467
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90572177"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94543636"
 ---
 # <a name="redeploy-the-asdk"></a>Reimplementación del Kit de desarrollo de Azure Stack
 En este artículo, aprenderá a volver a implementar el Kit de desarrollo de Azure Stack (ASDK) en un entorno que no sea de producción. Dado que la actualización del Kit de desarrollo de Azure Stack, debe volver a implementarla completamente para pasar a una versión más reciente. También puede volver a implementar el ASDK cuando quiera comenzar desde cero.
@@ -23,7 +23,7 @@ En este artículo, aprenderá a volver a implementar el Kit de desarrollo de Azu
 ## <a name="remove-azure-registration"></a>Quitar el registro de Azure 
 Si ha registrado anteriormente la instalación del ASDK con Azure, debe quitar el recurso de registro antes de volver a implementar el ASDK. Vuelva a registrar el Kit de desarrollo de Azure Stack para habilitar la disponibilidad de los elementos en Marketplace cuando se vuelve a implementar el kit de desarrollo. Si no ha registrado previamente el ASDK con su suscripción a Azure, puede omitir esta sección.
 
-Para quitar el recurso de registro, utilice el cmdlet **Remove-AzsRegistration** para anular el registro de Azure Stack. Después, use el cmdlet **Remove-AzureRMResourceGroup** para eliminar el grupo de recursos de Azure Stack de su suscripción de Azure:
+Para quitar el recurso de registro, utilice el cmdlet **Remove-AzsRegistration** para anular el registro de Azure Stack. Después, use el cmdlet **Remove-AzResourceGroup** para eliminar el grupo de recursos de Azure Stack de su suscripción de Azure:
 
 1. Abra una consola de PowerShell como administrador en un equipo que tenga acceso al punto de conexión con privilegios. En el caso del ASDK, este es el equipo host del kit de desarrollo.
 
@@ -31,10 +31,10 @@ Para quitar el recurso de registro, utilice el cmdlet **Remove-AzsRegistration**
 
    ```powershell    
    #Import the registration module that was downloaded with the GitHub tools
-   Import-Module C:\AzureStack-Tools-master\Registration\RegisterWithAzure.psm1
+   Import-Module C:\AzureStack-Tools-az\Registration\RegisterWithAzure.psm1
 
    # Provide Azure subscription admin credentials
-   Add-AzureRmAccount
+   Add-AzAccount
 
    # Provide ASDK admin credentials
    $CloudAdminCred = Get-Credential -UserName AZURESTACK\CloudAdmin -Message "Enter the cloud domain credentials to access the privileged endpoint"
@@ -46,7 +46,7 @@ Para quitar el recurso de registro, utilice el cmdlet **Remove-AzsRegistration**
       -RegistrationName $RegistrationName
 
    # Remove the Azure Stack resource group
-   Remove-AzureRmResourceGroup -Name azurestack -Force
+   Remove-AzResourceGroup -Name azurestack -Force
    ```
 
 3. Se le pedirá que inicie sesión tanto en su suscripción a Azure como en la instalación local del ASDK cuando se ejecute el script.

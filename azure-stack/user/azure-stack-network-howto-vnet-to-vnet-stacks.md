@@ -7,14 +7,14 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: d9d76b848ed30521fb5a7ba983ef930e19b93866
-ms.sourcegitcommit: 8ffa29f71d69191534d42f86f49f719b4198a097
+ms.openlocfilehash: d8c20d3fe7b80a7ace90422a622c4f067f631954
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92355094"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94547116"
 ---
-# <a name="establish-a-vnet-to-vnet-connection-in-azure-stack-hub-with-fortinet-fortigate-nva"></a>Establecimiento de una conexión entre redes virtuales en Azure Stack Hub con la NVA FortiGate de Fortinet
+# <a name="vnet-to-vnet-connectivity-between-azure-stack-hub-instances-with-fortinet-fortigate-nva"></a>Conectividad de VNet a VNet entre instancias de Azure Stack Hub con la NVA FortiGate de Fortinet
 
 En este artículo, conectará una red virtual de un entorno de Azure Stack Hub a una red virtual de otro entorno de Azure Stack Hub mediante la NVA FortiGate de Fortinet, una aplicación virtual de red.
 
@@ -134,7 +134,7 @@ Realice estos pasos para ambas implementaciones, forti1-rg1 y forti2-rg1.
 
 6. Seleccione **Agregar**.
 
-7. En **Ruta, asigne los nombres ** `to-forti1` o `to-forti2`. Utilice su intervalo de direcciones IP si usa un intervalo IP diferente.
+7. En **Ruta, asigne los nombres** `to-forti1` o `to-forti2`. Utilice su intervalo de direcciones IP si usa un intervalo IP diferente.
 
 8. Especifique:
     - forti1: `172.17.0.0/16`  

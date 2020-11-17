@@ -3,22 +3,22 @@ title: Incorporación de nodos de la unidad de escalado en Azure Stack Hub
 description: Aprenda a agregar nodos de la unidad de escalado a unidades de escalado de Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 09/09/2020
+ms.date: 11/05/2020
 ms.author: mabrigg
 ms.reviewer: thoroet
-ms.lastreviewed: 08/03/2020
-ms.openlocfilehash: bf1cbd3dc999a90fb53ef30b48dc6f06e82f4d5a
-ms.sourcegitcommit: 69c859a89941ee554d438d5472308eece6766bdf
+ms.lastreviewed: 11/05/2020
+ms.openlocfilehash: 86672961ee2a02f858cfce73a895154c6eb1bcbe
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89621306"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94544044"
 ---
 # <a name="add-additional-scale-unit-nodes-in-azure-stack-hub"></a>Incorporación de nodos de la unidad de escalado adicionales en Azure Stack Hub
 
-Los operadores de Azure Stack Hub pueden aumentar la capacidad total de una unidad de escalado existente mediante la incorporación de un equipo físico adicional. Al equipo físico también se le conoce como nodo de unidad de escalado. Cada nuevo nodo de unidad de escalado que agregue debe ser homogéneo en cuanto al tipo de CPU, memoria y número y tamaño de discos, respecto a los nodos que ya están presentes en dicha unidad.
+Puede aumentar la capacidad total de una unidad de escalado existente mediante la incorporación de un equipo físico adicional. Al equipo físico también se le conoce como nodo de unidad de escalado. Cada nuevo nodo de unidad de escalado que agregue debe ser homogéneo en cuanto al tipo de CPU, memoria y número y tamaño de discos, respecto a los nodos que ya están presentes en dicha unidad.
 
-Para agregar un nodo de unidad de escalado, debe actuar en Azure Stack Hub y ejecutar las herramientas de su fabricante de equipos de hardware (OEM). Las herramientas de OEM se ejecutan en el host del ciclo de vida de hardware (HLH) para asegurarse de que el equipo físico nuevo coincide con el mismo nivel de firmware que los nodos existentes.
+Para agregar un nodo de unidad de escalado, debe actuar en Azure Stack Hub y ejecutar las herramientas del fabricante del equipo de hardware (OEM). Las herramientas de OEM se ejecutan en el host del ciclo de vida de hardware (HLH) para asegurarse de que el equipo físico nuevo coincide con el mismo nivel de firmware que los nodos existentes.
 
 En el siguiente diagrama de flujo se muestra el proceso general para agregar un nodo de la unidad de escalado:
 
@@ -60,6 +60,21 @@ Puede usar el portal del administrador o PowerShell para agregar nuevos nodos. L
    ![Incorporación de detalles de nodo](media/azure-stack-add-scale-node/select-node2.png)
  
 
+### <a name="powershell-az"></a>[PowerShell Az](#tab/Az)
+
+Use el cmdlet **Add-AzsScaleUnitNode** para agregar un nodo.  
+
+Antes de usar cualquiera de los siguientes scripts de PowerShell de ejemplo, reemplace los valores *name_of_new_node*, *name_of_scale_unit_cluster* y *BMCIP_address_of_new_node* por los de su entorno de Azure Stack Hub.
+
+  > [!Note]  
+  > Al asignar nombres a un nodo, debe mantener el nombre con menos de 15 caracteres de longitud. No puede usar tampoco un nombre que contenga un espacio o alguno de los siguientes caracteres: `\`, `/`, `:`, `*`, `?`, `"`, `<`, `>`, `|`, `\`, `~`, `!`, `@`, `#`, `$`, `%`, `^`, `&`, `(`, `)`, `{`,`}` y `_`.
+
+**Agregue un nodo:**
+  ```powershell
+  ## Add a single Node 
+    Add-AzsScaleUnitNode -BMCIPv4Address "<BMCIP_address_of_new_node>" -computername "<name_of_new_node>" -ScaleUnit "<name_of_scale_unit_cluster>" 
+  ```  
+
 ### <a name="powershell-azurerm"></a>[PowerShell AzureRM](#tab/AzureRM)
 
 Use el cmdlet **New-AzsScaleUnitNodeObject** para agregar un nodo.  
@@ -75,21 +90,6 @@ Antes de utilizar cualquiera de los siguientes scripts de PowerShell de ejemplo,
   $NewNode=New-AzsScaleUnitNodeObject -computername "<name_of_new_node>" -BMCIPv4Address "<BMCIP_address_of_new_node>" 
  
   Add-AzsScaleUnitNode -NodeList $NewNode -ScaleUnit "<name_of_scale_unit_cluster>" 
-  ```  
-
-### <a name="powershell-az"></a>[PowerShell Az](#tab/Az)
-
-Use el cmdlet **Add-AzsScaleUnitNode** para agregar un nodo.  
-
-Antes de usar cualquiera de los siguientes scripts de PowerShell de ejemplo, reemplace los valores *name_of_new_node*, *name_of_scale_unit_cluster* y *BMCIP_address_of_new_node* por los de su entorno de Azure Stack Hub.
-
-  > [!Note]  
-  > Al asignar nombres a un nodo, debe mantener el nombre con menos de 15 caracteres de longitud. No puede usar tampoco un nombre que contenga un espacio o alguno de los siguientes caracteres: `\`, `/`, `:`, `*`, `?`, `"`, `<`, `>`, `|`, `\`, `~`, `!`, `@`, `#`, `$`, `%`, `^`, `&`, `(`, `)`, `{`,`}` y `_`.
-
-**Agregue un nodo:**
-  ```powershell
-  ## Add a single Node 
-    Add-AzsScaleUnitNode -BMCIPv4Address "<BMCIP_address_of_new_node>" -computername "<name_of_new_node>" -ScaleUnit "<name_of_scale_unit_cluster>" 
   ```  
 
 ---

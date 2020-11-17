@@ -5,12 +5,12 @@ author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
 ms.date: 07/01/2020
-ms.openlocfilehash: 1d881db2d8802e93611437cbc14fe9782540be16
-ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
+ms.openlocfilehash: 422f6984fad6218387673d2dc9292f0ae7cb1739
+ms.sourcegitcommit: 7b189e5317b8fe5f8ad825565da3607a39a1b899
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91106951"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94493659"
 ---
 # <a name="attaching-a-gpu-to-an-ubuntu-linux-vm-on-azure-stack-hci"></a>Asociación de una GPU a una máquina virtual Ubuntu Linux en Azure Stack HCI
 
@@ -27,20 +27,17 @@ En este documento se da por hecho que tiene implementado el clúster de Azure St
 4. Abra **Administrador de dispositivos** y vaya a la sección *Otros dispositivos*. Verá en la lista un dispositivo "Controladora de vídeo 3D".
 5. Haga clic con el botón derecho en "Controladora de vídeo 3D" para que se muestre la página **Propiedades**. Haga clic en **Detalles**. En la lista desplegable situada debajo de **Propiedad**, seleccione "Rutas de acceso de ubicación".
 6. Observe el valor con la cadena PCIRoot que se resalta en la captura de pantalla siguiente. Haga clic con el botón derecho en **Valor** y cópielo y guárdelo.
-    :::image type="content" source="media/attach-gpu-to-linux-vm/pciroot.png" alt-text="Captura de pantalla de ruta de acceso de ubicación&quot;:::
+    :::image type="content" source="media/attach-gpu-to-linux-vm/pciroot.png" alt-text="Captura de pantalla de ruta de acceso de ubicación":::
 7. Abra Windows PowerShell con privilegios elevados y ejecute el cmdlet `Dismount-VMHostAssignableDevice` para desmontar el dispositivo GPU de DDA en la máquina virtual. Reemplace el valor *LocationPath* por el de su dispositivo obtenido en el paso 6.
     ```PowerShell
-    Dismount-VMHostAssignableDevice -LocationPath &quot;PCIROOT(16)#PCI(0000)#PCI(0000)" -force
+    Dismount-VMHostAssignableDevice -LocationPath "PCIROOT(16)#PCI(0000)#PCI(0000)" -force
     ```
 8. Confirme que el dispositivo aparece en los dispositivos del sistema en **Administrador de dispositivos** como Desmontado.
-    :::image type="content" source="media/attach-gpu-to-linux-vm/dismounted.png" alt-text="Captura de pantalla de ruta de acceso de ubicación&quot;:::
-7. Abra Windows PowerShell con privilegios elevados y ejecute el cmdlet `Dismount-VMHostAssignableDevice` para desmontar el dispositivo GPU de DDA en la máquina virtual. Reemplace el valor *LocationPath* por el de su dispositivo obtenido en el paso 6.
-    ```PowerShell
-    Dismount-VMHostAssignableDevice -LocationPath &quot;PCIROOT(16)#PCI(0000)#PCI(0000)":::
+    :::image type="content" source="media/attach-gpu-to-linux-vm/dismounted.png" alt-text="Captura de pantalla del dispositivo desmontado":::
 
 ## <a name="create-and-configure-an-ubuntu-virtual-machine"></a>Creación y configuración de una máquina virtual Ubuntu
 
-1. Descargue el [ISO 18.04.02 de la versión de escritorio de Ubuntu](http://cdimage.ubuntu.com/lubuntu/releases/18.04.2/release/lubuntu-18.04.2-desktop-amd64.iso).
+1. Descargue el [ISO 18.04.02 de la versión de escritorio de Ubuntu](http://old-releases.ubuntu.com/releases/18.04.2/).
 2. Abra el **Administrador de Hyper-V** en el nodo del sistema con la GPU instalada.
    > [!NOTE]
    > [DDA no admite la conmutación por error](/windows-server/virtualization/hyper-v/plan/plan-for-deploying-devices-using-discrete-device-assignment). Se trata de una limitación de la máquina virtual con DDA. Por lo tanto, se recomienda usar el **Administrador de Hyper-V** para implementar la máquina virtual en el nodo en lugar del **Administrador de clústeres de conmutación por error**. El uso del **Administrador de clústeres de conmutación por error** con DDA producirá un mensaje de error que indica que la máquina virtual tiene un dispositivo que no admite alta disponibilidad.
@@ -57,10 +54,7 @@ En este documento se da por hecho que tiene implementado el clúster de Azure St
     Get-VMAssignableDevice -VMName Ubuntu
     ```
 
-    La asignación correcta de la GPU a la máquina virtual mostrará la siguiente salida:  :::image type="content" source="media/attach-gpu-to-linux-vm/assign-gpu.png" alt-text="Captura de pantalla de ruta de acceso de ubicación&quot;:::
-7. Abra Windows PowerShell con privilegios elevados y ejecute el cmdlet `Dismount-VMHostAssignableDevice` para desmontar el dispositivo GPU de DDA en la máquina virtual. Reemplace el valor *LocationPath* por el de su dispositivo obtenido en el paso 6.
-    ```PowerShell
-    Dismount-VMHostAssignableDevice -LocationPath &quot;PCIROOT(16)#PCI(0000)#PCI(0000)":::
+    La asignación correcta de la GPU a la máquina virtual mostrará la siguiente salida:  :::image type="content" source="media/attach-gpu-to-linux-vm/assign-gpu.png" alt-text="Captura de pantalla de asignación de GPU":::
 
     Siga la documentación de la GPU [aquí](/windows-server/virtualization/hyper-v/deploy/deploying-graphics-devices-using-dda) para configurar valores adicionales:
 
@@ -80,24 +74,27 @@ En este documento se da por hecho que tiene implementado el clúster de Azure St
 
 5. Mediante el Administrador de Hyper-V, conéctese a la máquina virtual e inicie la instalación del sistema operativo Ubuntu. Elija los valores predeterminados para instalar el sistema operativo Ubuntu en la máquina virtual.
 
-6. Una vez finalizada la instalación, use el **Administrador de Hyper-V** para apagar la máquina virtual y configurar la **acción de detención automática** para que la máquina virtual cierre el sistema operativo invitado, como se muestra en la siguiente captura de pantalla:  :::image type="content" source="media/attach-gpu-to-linux-vm/guest-shutdown.png" alt-text="Captura de pantalla de ruta de acceso de ubicación&quot;:::
-7. Abra Windows PowerShell con privilegios elevados y ejecute el cmdlet `Dismount-VMHostAssignableDevice` para desmontar el dispositivo GPU de DDA en la máquina virtual. Reemplace el valor *LocationPath* por el de su dispositivo obtenido en el paso 6.
-    ```PowerShell
-    Dismount-VMHostAssignableDevice -LocationPath &quot;PCIROOT(16)#PCI(0000)#PCI(0000)" (Controladora 3D).
+6. Una vez finalizada la instalación, use el **Administrador de Hyper-V** para apagar la máquina virtual y configurar la **acción de detención automática** para que la máquina virtual cierre el sistema operativo invitado, como se muestra en la siguiente captura de pantalla:  :::image type="content" source="media/attach-gpu-to-linux-vm/guest-shutdown.png" alt-text="Captura de pantalla de apagado del sistema operativo invitado":::
+
+7. Inicie sesión en Ubuntu y abra el terminal para instalar SSH:
+
+   ```shell
+    $ sudo apt install openssh-server
+   ```
+
+8. Busque la dirección TCP/IP para la instalación de Ubuntu con el comando **ifconfig** y copie la dirección IP de la interfaz **eth0**.
+
+9. Use un cliente SSH como OpenSSH (ssh.exe instalado con Windows 10 de forma predeterminada) o [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/) para conectarse a la máquina virtual de Ubuntu para una realizar una configuración adicional.
+
+10. Tras iniciar sesión en el cliente SSH, emita el comando **lspci** y compruebe que la GPU de NVIDIA aparece como "3D controller" (Controladora 3D).
 
     > [!IMPORTANT]
     > En caso negativo, no continúe. Asegúrese de que se siguen los pasos anteriores antes de continuar.
 
 11. Dentro de la máquina virtual, busque y abra **Software & Updates** (Software y actualizaciones). Vaya a **Additional Drivers** (Controladores adicionales) y, después, elija los controladores de la GPU de NVIDIA más recientes enumerados. Para completar la instalación del controlador, haga clic en el botón **Apply Changes** (Aplicar cambios).
-    :::image type="content" source="media/attach-gpu-to-linux-vm/driver-install.png" alt-text="Captura de pantalla de ruta de acceso de ubicación&quot;:::
-7. Abra Windows PowerShell con privilegios elevados y ejecute el cmdlet `Dismount-VMHostAssignableDevice` para desmontar el dispositivo GPU de DDA en la máquina virtual. Reemplace el valor *LocationPath* por el de su dispositivo obtenido en el paso 6.
-    ```PowerShell
-    Dismount-VMHostAssignableDevice -LocationPath &quot;PCIROOT(16)#PCI(0000)#PCI(0000)":::
+    :::image type="content" source="media/attach-gpu-to-linux-vm/driver-install.png" alt-text="Captura de pantalla de instalación del controlador":::
 
-12. Una vez completada la instalación del controlador, reinicie la máquina virtual Ubuntu. Después de iniciar la máquina virtual, conéctese a través del cliente SSH y emita el comando **NVIDIA-SMI** para comprobar que la instalación del controlador de la GPU de NVIDIA se completó correctamente. La salida debería ser similar a la captura de pantalla siguiente: :::image type="content" source="media/attach-gpu-to-linux-vm/nvidia-smi.png" alt-text="Captura de pantalla de ruta de acceso de ubicación&quot;:::
-7. Abra Windows PowerShell con privilegios elevados y ejecute el cmdlet `Dismount-VMHostAssignableDevice` para desmontar el dispositivo GPU de DDA en la máquina virtual. Reemplace el valor *LocationPath* por el de su dispositivo obtenido en el paso 6.
-    ```PowerShell
-    Dismount-VMHostAssignableDevice -LocationPath &quot;PCIROOT(16)#PCI(0000)#PCI(0000)":::
+12. Una vez completada la instalación del controlador, reinicie la máquina virtual Ubuntu. Después de iniciar la máquina virtual, conéctese a través del cliente SSH y emita el comando **NVIDIA-SMI** para comprobar que la instalación del controlador de la GPU de NVIDIA se completó correctamente. La salida debería ser similar a la captura de pantalla siguiente: :::image type="content" source="media/attach-gpu-to-linux-vm/nvidia-smi.png" alt-text="Captura de pantalla que muestra la salida del comando nvidia-smi.":::
 
 13. Mediante el cliente SSH, configure el repositorio e instale el motor de Docker CE:
 
@@ -191,15 +188,36 @@ Para prepararse para esta configuración, revise las preguntas frecuentes conten
     sudo docker run --runtime=nvidia --rm nvidia/cuda:9.0-base nvidia-smi
     ```
 
-    Si la instalación se ha realizado correctamente, verá una salida parecida a la de la captura de pantalla siguiente:  :::image type="content" source="media/attach-gpu-to-linux-vm/docker.png" alt-text="Captura de pantalla de ruta de acceso de ubicación&quot;:::
-7. Abra Windows PowerShell con privilegios elevados y ejecute el cmdlet `Dismount-VMHostAssignableDevice` para desmontar el dispositivo GPU de DDA en la máquina virtual. Reemplace el valor *LocationPath* por el de su dispositivo obtenido en el paso 6.
-    ```PowerShell
-    Dismount-VMHostAssignableDevice -LocationPath &quot;PCIROOT(16)#PCI(0000)#PCI(0000)" no tenga ningún espacio en blanco delante y de que los elementos anidados muestran una sangría de dos espacios:
+    Si la instalación se ha realizado correctamente, verá una salida parecida a la de la captura de pantalla siguiente:  :::image type="content" source="media/attach-gpu-to-linux-vm/docker.png" alt-text="Captura de pantalla de instalación correcta de Docker":::
 
-    :::image type="content" source="media/attach-gpu-to-linux-vm/manual-provisioning.png" alt-text="Captura de pantalla de ruta de acceso de ubicación&quot;:::
-7. Abra Windows PowerShell con privilegios elevados y ejecute el cmdlet `Dismount-VMHostAssignableDevice` para desmontar el dispositivo GPU de DDA en la máquina virtual. Reemplace el valor *LocationPath* por el de su dispositivo obtenido en el paso 6.
-    ```PowerShell
-    Dismount-VMHostAssignableDevice -LocationPath &quot;PCIROOT(16)#PCI(0000)#PCI(0000)":::
+5. Siga las instrucciones que se indican aquí y continúe con la instalación de Azure IoT Edge, pero omita la instalación del entorno de ejecución:
+
+    ```shell
+    curl https://packages.microsoft.com/config/ubuntu/18.04/multiarch/prod.list > ./microsoft-prod.list
+
+    sudo cp ./microsoft-prod.list /etc/apt/sources.list.d/
+
+    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+    sudo cp ./microsoft.gpg /etc/apt/trusted.gpg.d/
+    sudo apt-get update
+
+    sudo apt-get install iotedge
+    ```
+
+    > [!NOTE]
+    > Después de instalar Azure IoT Edge, compruebe que el archivo config.yaml existe en la máquina virtual Ubuntu en /etc/iotedge/config.yaml
+
+6. Cree una identidad de dispositivo IoT Edge en Azure Portal mediante las instrucciones que [aquí](/azure/iot-edge/how-to-register-device#register-in-the-azure-portal) se indican. A continuación, copie la cadena de conexión del dispositivo para la instancia de IoT Edge recién creada.
+
+7. Mediante el cliente SSH, actualice la cadena de conexión del dispositivo en config.yaml en la máquina virtual Ubuntu:
+
+    ```shell
+    sudo nano /etc/iotedge/config.yaml
+    ```
+
+    Busque las configuraciones de aprovisionamiento del archivo y quite la marca de comentario de la sección "Manual provisioning configuration". Actualice el valor de device_connection_string con la cadena de conexión del dispositivo IoT Edge. Asegúrese de que las demás secciones de aprovisionamiento estén comentadas. Asegúrese de que la línea "provisioning:" no tenga ningún espacio en blanco delante y de que los elementos anidados muestran una sangría de dos espacios:
+
+    :::image type="content" source="media/attach-gpu-to-linux-vm/manual-provisioning.png" alt-text="Captura de pantalla de configuración de aprovisionamiento manual":::
 
     Para pegar el contenido del portapapeles en Nano, presione Mayús y haga clic con el botón derecho o presione Mayús + Insertar. Guarde y cierre el archivo (Ctrl + X, Y, Entrar).
 
@@ -243,10 +261,7 @@ Para prepararse para esta configuración, revise las preguntas frecuentes conten
 
     El contenido del directorio /var/deepstream/custom_streams debe parecerse a la captura de pantalla siguiente:
 
-    :::image type="content" source="media/attach-gpu-to-linux-vm/custom-streams.png" alt-text="Captura de pantalla de ruta de acceso de ubicación&quot;:::
-7. Abra Windows PowerShell con privilegios elevados y ejecute el cmdlet `Dismount-VMHostAssignableDevice` para desmontar el dispositivo GPU de DDA en la máquina virtual. Reemplace el valor *LocationPath* por el de su dispositivo obtenido en el paso 6.
-    ```PowerShell
-    Dismount-VMHostAssignableDevice -LocationPath &quot;PCIROOT(16)#PCI(0000)#PCI(0000)":::
+    :::image type="content" source="media/attach-gpu-to-linux-vm/custom-streams.png" alt-text="Captura de pantalla de secuencias personalizadas":::
 
 11. Cree un archivo llamado test5_config_file_src_infer_azure_iotedge_edited.txt en el directorio /var/deepstream/custom_configs. Con un editor de texto, abra el archivo, pegue el código siguiente y, luego, guarde y cierre el archivo.
 
@@ -405,52 +420,77 @@ Para prepararse para esta configuración, revise las preguntas frecuentes conten
 
 12. Acceda a Azure Portal. Seleccione **IoT Hub Provisioned** (IoT Hub aprovisionado), haga clic en **Automatic Device Management** (Administración automática de dispositivos) y, luego, haga clic en **IoT Edge**:
 
-    :::image type="content" source="media/attach-gpu-to-linux-vm/iot-edge.png" alt-text="Captura de pantalla de ruta de acceso de ubicación&quot;:::
-7. Abra Windows PowerShell con privilegios elevados y ejecute el cmdlet `Dismount-VMHostAssignableDevice` para desmontar el dispositivo GPU de DDA en la máquina virtual. Reemplace el valor *LocationPath* por el de su dispositivo obtenido en el paso 6.
-    ```PowerShell
-    Dismount-VMHostAssignableDevice -LocationPath &quot;PCIROOT(16)#PCI(0000)#PCI(0000)":::
+    :::image type="content" source="media/attach-gpu-to-linux-vm/iot-edge.png" alt-text="Captura de pantalla de administración automática de dispositivos":::
 
 13. En el panel derecho, seleccione la identidad del dispositivo cuya cadena de conexión de dispositivo se usó anteriormente. Haga clic en Establecer módulos:
 
-    :::image type="content" source="media/attach-gpu-to-linux-vm/set-modules.png" alt-text="Captura de pantalla de ruta de acceso de ubicación&quot;:::
-7. Abra Windows PowerShell con privilegios elevados y ejecute el cmdlet `Dismount-VMHostAssignableDevice` para desmontar el dispositivo GPU de DDA en la máquina virtual. Reemplace el valor *LocationPath* por el de su dispositivo obtenido en el paso 6.
-    ```PowerShell
-    Dismount-VMHostAssignableDevice -LocationPath &quot;PCIROOT(16)#PCI(0000)#PCI(0000)":::
+    :::image type="content" source="media/attach-gpu-to-linux-vm/set-modules.png" alt-text="Captura de pantalla de Establecer módulos":::
 
-14. En Módulos de IoT Edge, haga clic y elija Módulo de Marketplace:
+14. En Módulos IoT Edge, haga clic y elija el módulo IoT Edge:
 
-    :::image type="content" source="media/attach-gpu-to-linux-vm/marketplace-module.png" alt-text="Captura de pantalla de ruta de acceso de ubicación&quot;:::
-7. Abra Windows PowerShell con privilegios elevados y ejecute el cmdlet `Dismount-VMHostAssignableDevice` para desmontar el dispositivo GPU de DDA en la máquina virtual. Reemplace el valor *LocationPath* por el de su dispositivo obtenido en el paso 6.
-    ```PowerShell
-    Dismount-VMHostAssignableDevice -LocationPath &quot;PCIROOT(16)#PCI(0000)#PCI(0000)":::
+    :::image type="content" source="media/attach-gpu-to-linux-vm/marketplace-module.png" alt-text="Captura de la pantalla Agregar módulo IoT Edge":::
 
-15. Busque NVIDIA y elija el SDK de DeepStream, como se muestra a continuación:
+15. En el panel **Agregar módulo IoT Edge**, seleccione la pestaña **Configuración del módulo** y, a continuación, escriba o seleccione los valores siguientes:
 
-    :::image type="content" source="media/attach-gpu-to-linux-vm/deepstream.png" alt-text="Captura de pantalla de ruta de acceso de ubicación&quot;:::
-7. Abra Windows PowerShell con privilegios elevados y ejecute el cmdlet `Dismount-VMHostAssignableDevice` para desmontar el dispositivo GPU de DDA en la máquina virtual. Reemplace el valor *LocationPath* por el de su dispositivo obtenido en el paso 6.
-    ```PowerShell
-    Dismount-VMHostAssignableDevice -LocationPath &quot;PCIROOT(16)#PCI(0000)#PCI(0000)":::
+    - **Nombre del módulo IoT Edge**: NVIDIADeepStreamSDK
+
+    - **URI de la imagen**: marketplace.azurecr.io/nvidia/deepstream-iot2
+
+    - **Directiva de reinicio**: siempre
+
+    - **Estado deseado**: en ejecución
+
+    - **Image Pull Policy** (Directiva de extracción de imágenes): *en blanco*
+    
+    Seleccione **Agregar**.
+
+    :::image type="content" source="media/attach-gpu-to-linux-vm/deepstream-module-settings.png" alt-text="Captura de pantalla del SDK de DeepStream":::
 
 16. Asegúrese de que el módulo NvidiaDeepStreamSDK aparece en Módulos de IoT Edge:
 
-    :::image type="content" source="media/attach-gpu-to-linux-vm/edge-modules.png" alt-text="Captura de pantalla de ruta de acceso de ubicación&quot;:::
-7. Abra Windows PowerShell con privilegios elevados y ejecute el cmdlet `Dismount-VMHostAssignableDevice` para desmontar el dispositivo GPU de DDA en la máquina virtual. Reemplace el valor *LocationPath* por el de su dispositivo obtenido en el paso 6.
-    ```PowerShell
-    Dismount-VMHostAssignableDevice -LocationPath &quot;PCIROOT(16)#PCI(0000)#PCI(0000)" y elija "Opciones de creación del contenedor". La configuración predeterminada se muestra aquí.
+    :::image type="content" source="media/attach-gpu-to-linux-vm/edge-modules.png" alt-text="Captura de pantalla de Módulos de IoT Edge":::
 
-    :::image type="content" source="media/attach-gpu-to-linux-vm/container-create-options.png" alt-text="Captura de pantalla de ruta de acceso de ubicación&quot;:::
-7. Abra Windows PowerShell con privilegios elevados y ejecute el cmdlet `Dismount-VMHostAssignableDevice` para desmontar el dispositivo GPU de DDA en la máquina virtual. Reemplace el valor *LocationPath* por el de su dispositivo obtenido en el paso 6.
-    ```PowerShell
-    Dismount-VMHostAssignableDevice -LocationPath &quot;PCIROOT(16)#PCI(0000)#PCI(0000)"
+17. Haga clic en el módulo "NVIDIADeepStreamSDK" y elija "Opciones de creación del contenedor". La configuración predeterminada se muestra aquí.
+
+    :::image type="content" source="media/attach-gpu-to-linux-vm/container-create-options.png" alt-text="Captura de pantalla de Opciones de creación del contenedor":::
+
+    Reemplace la configuración anterior por la siguiente:
+
+    ```shell
+    {
+      "ExposedPorts": {
+        "8554/tcp": {}
+      },
+      "Entrypoint": [
+        "/usr/bin/deepstream-test5-app",
+        "-c",
+        "test5_config_file_src_infer_azure_iotedge_edited.txt",
+        "-p",
+        "1",
+        "-m",
+        "1"
+      ],
+      "HostConfig": {
+        "runtime": "nvidia",
+        "Binds": [
+          "/var/deepstream/custom_configs:/root/deepstream_sdk_v4.0.2_x86_64/sources/apps/sample_apps/deepstream-test5/custom_configs/",
+          "/var/deepstream/custom_streams:/root/deepstream_sdk_v4.0.2_x86_64/sources/apps/sample_apps/deepstream-test5/custom_streams/"
+        ],
+        "PortBindings": {
+          "8554/tcp": [
+            {
+              "HostPort": "8554"
+            }
+          ]
+        }
+      },
+      "WorkingDir": "/root/deepstream_sdk_v4.0.2_x86_64/sources/apps/sample_apps/deepstream-test5/custom_configs/"
     }
     ```
 
 18. Haga clic en **Revisar y crear** y, en la página siguiente, haga clic en **Crear**. Ahora verá que aparecen a continuación los tres módulos para el dispositivo IoT Edge en Azure Portal:
 
-    :::image type="content" source="media/attach-gpu-to-linux-vm/edge-hub-connections.png" alt-text="Captura de pantalla de ruta de acceso de ubicación&quot;:::
-7. Abra Windows PowerShell con privilegios elevados y ejecute el cmdlet `Dismount-VMHostAssignableDevice` para desmontar el dispositivo GPU de DDA en la máquina virtual. Reemplace el valor *LocationPath* por el de su dispositivo obtenido en el paso 6.
-    ```PowerShell
-    Dismount-VMHostAssignableDevice -LocationPath &quot;PCIROOT(16)#PCI(0000)#PCI(0000)":::
+    :::image type="content" source="media/attach-gpu-to-linux-vm/edge-hub-connections.png" alt-text="Captura de pantalla de módulos y conexiones del concentrador de IoT Edge":::
 
 19. Conéctese a la máquina virtual Ubuntu mediante el cliente SSH y compruebe que se ejecutan los módulos correctos:
 
@@ -458,19 +498,16 @@ Para prepararse para esta configuración, revise las preguntas frecuentes conten
     sudo iotedge list
     ```
 
-    :::image type="content" source="media/attach-gpu-to-linux-vm/verify-modules-sudo.png" alt-text="Captura de pantalla de ruta de acceso de ubicación&quot;:::
-7. Abra Windows PowerShell con privilegios elevados y ejecute el cmdlet `Dismount-VMHostAssignableDevice` para desmontar el dispositivo GPU de DDA en la máquina virtual. Reemplace el valor *LocationPath* por el de su dispositivo obtenido en el paso 6.
-    ```PowerShell
-    Dismount-VMHostAssignableDevice -LocationPath &quot;PCIROOT(16)#PCI(0000)#PCI(0000)":::
+    :::image type="content" source="media/attach-gpu-to-linux-vm/verify-modules-sudo.png" alt-text="Captura de pantalla que muestra la salida de la lista iotedge.":::
 
     ```shell
     nvidia-smi
     ```
 
-    :::image type="content" source="media/attach-gpu-to-linux-vm/verify-modules-nvidia-smi.png" alt-text="Captura de pantalla de ruta de acceso de ubicación&quot;:::
-7. Abra Windows PowerShell con privilegios elevados y ejecute el cmdlet `Dismount-VMHostAssignableDevice` para desmontar el dispositivo GPU de DDA en la máquina virtual. Reemplace el valor *LocationPath* por el de su dispositivo obtenido en el paso 6.
-    ```PowerShell
-    Dismount-VMHostAssignableDevice -LocationPath &quot;PCIROOT(16)#PCI(0000)#PCI(0000)" para examinar los registros del demonio de iotedge.
+    :::image type="content" source="media/attach-gpu-to-linux-vm/verify-modules-nvidia-smi.png" alt-text="captura de pantalla de nvidia-smi":::
+
+    > [!NOTE]
+    > El contenedor NvidiaDeepstream tardará unos minutos en descargarse. Puede validar la descarga con el comando "journalctl -u iotedge --no-pager --no-full" para examinar los registros del demonio de iotedge.
 
 20. Confirme que el contenedor NvdiaDeepStreem está operativo. La salida del comando en las capturas de pantallas siguientes indica que la operación se ha realizado correctamente.
 
@@ -478,28 +515,19 @@ Para prepararse para esta configuración, revise las preguntas frecuentes conten
     sudo iotedge list
     ```
 
-    :::image type="content" source="media/attach-gpu-to-linux-vm/verify1.png" alt-text="Captura de pantalla de ruta de acceso de ubicación&quot;:::
-7. Abra Windows PowerShell con privilegios elevados y ejecute el cmdlet `Dismount-VMHostAssignableDevice` para desmontar el dispositivo GPU de DDA en la máquina virtual. Reemplace el valor *LocationPath* por el de su dispositivo obtenido en el paso 6.
-    ```PowerShell
-    Dismount-VMHostAssignableDevice -LocationPath &quot;PCIROOT(16)#PCI(0000)#PCI(0000)":::
+    :::image type="content" source="media/attach-gpu-to-linux-vm/verify1.png" alt-text="Captura de pantalla de la salida que muestra que el contenedor NvdiaDeepStreem está operativo.":::
 
     ```shell
     sudo iotedge logs -f NVIDIADeepStreamSDK
     ```
 
-    :::image type="content" source="media/attach-gpu-to-linux-vm/verify2.png" alt-text="Captura de pantalla de ruta de acceso de ubicación&quot;:::
-7. Abra Windows PowerShell con privilegios elevados y ejecute el cmdlet `Dismount-VMHostAssignableDevice` para desmontar el dispositivo GPU de DDA en la máquina virtual. Reemplace el valor *LocationPath* por el de su dispositivo obtenido en el paso 6.
-    ```PowerShell
-    Dismount-VMHostAssignableDevice -LocationPath &quot;PCIROOT(16)#PCI(0000)#PCI(0000)":::
+    :::image type="content" source="media/attach-gpu-to-linux-vm/verify2.png" alt-text="Captura de pantalla que muestra la salida de los registros iotedge del comando -f NVIDIADeepStreamSDK.":::
 
     ```shell
     nvidia-smi
     ```
 
-    :::image type="content" source="media/attach-gpu-to-linux-vm/verify3.png" alt-text="Captura de pantalla de ruta de acceso de ubicación&quot;:::
-7. Abra Windows PowerShell con privilegios elevados y ejecute el cmdlet `Dismount-VMHostAssignableDevice` para desmontar el dispositivo GPU de DDA en la máquina virtual. Reemplace el valor *LocationPath* por el de su dispositivo obtenido en el paso 6.
-    ```PowerShell
-    Dismount-VMHostAssignableDevice -LocationPath &quot;PCIROOT(16)#PCI(0000)#PCI(0000)":::
+    :::image type="content" source="media/attach-gpu-to-linux-vm/verify3.png" alt-text="Captura de pantalla que muestra la salida adicional del comando nvidia-smi.":::
 
 21. Confirme la dirección TCP/IP de la máquina virtual Ubuntu con el comando **ifconfig** y busque la dirección TCP/IP junto a la interfaz **eth0**.
 
@@ -509,10 +537,7 @@ Para prepararse para esta configuración, revise las preguntas frecuentes conten
 
     donde ipaddress es la dirección TCP/IP de la máquina virtual.
 
-    :::image type="content" source="media/attach-gpu-to-linux-vm/vlc-player.png" alt-text="Captura de pantalla de ruta de acceso de ubicación&quot;:::
-7. Abra Windows PowerShell con privilegios elevados y ejecute el cmdlet `Dismount-VMHostAssignableDevice` para desmontar el dispositivo GPU de DDA en la máquina virtual. Reemplace el valor *LocationPath* por el de su dispositivo obtenido en el paso 6.
-    ```PowerShell
-    Dismount-VMHostAssignableDevice -LocationPath &quot;PCIROOT(16)#PCI(0000)#PCI(0000)":::
+    :::image type="content" source="media/attach-gpu-to-linux-vm/vlc-player.png" alt-text="Captura de pantalla de VLC Player":::
 
 ## <a name="next-steps"></a>Pasos siguientes
 

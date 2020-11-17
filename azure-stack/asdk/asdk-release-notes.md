@@ -3,22 +3,33 @@ title: Notas de la versión del Kit de desarrollo de Azure Stack
 description: Mejoras, correcciones y problemas conocidos del Kit de desarrollo de Azure Stack (ASDK).
 author: sethmanheim
 ms.topic: article
-ms.date: 08/10/2020
+ms.date: 11/11/2020
 ms.author: sethm
 ms.reviewer: misainat
 ms.lastreviewed: 08/10/2020
-ms.openlocfilehash: 6bbbc76acd38984924c454c26204f1edb0d68142
-ms.sourcegitcommit: 52b33ea180c38a5ecce150f5a9ea4a026344cc3d
+ms.openlocfilehash: f4e97cfaba4e3cde832a318647b72d96cbca8965
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88074135"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94543415"
 ---
 # <a name="asdk-release-notes"></a>Notas de la versión del Kit de desarrollo de Azure Stack
 
 En este artículo se proporciona información sobre los cambios, correcciones y problemas conocidos del Kit de desarrollo de Azure Stack (ASDK). Si no está seguro de qué versión ejecuta, [use el portal para comprobarlo](../operator/azure-stack-updates.md).
 
 Para estar al día de las novedades del ASDK, suscríbase a la [fuente RSS](https://docs.microsoft.com/api/search/rss?search=ASDK+release+notes&locale=en-us#) de ![RSS](./media/asdk-release-notes/feed-icon-14x14.png).
+
+::: moniker range="azs-2008"
+## <a name="build-120081388"></a>Compilación 1.2008.13.88
+
+### <a name="new-features"></a>Nuevas características
+
+- Para obtener una lista de los problemas corregidos, los cambios y las nuevas características de esta versión, consulte las secciones correspondientes en las [notas de la versión de Azure Stack](../operator/release-notes.md).
+
+### <a name="fixed-and-known-issues"></a>Problemas conocidos y resueltos
+
+::: moniker-end
 
 ::: moniker range="azs-2005"
 ## <a name="build-12005040"></a>Compilación 1.2005.0.40
@@ -73,7 +84,6 @@ Para estar al día de las novedades del ASDK, suscríbase a la [fuente RSS](http
 ::: moniker-end
 
 ::: moniker range="azs-1910"
-
 ## <a name="build-11910058"></a>Compilación 1.1910.0.58
 
 ### <a name="new-features"></a>Nuevas características

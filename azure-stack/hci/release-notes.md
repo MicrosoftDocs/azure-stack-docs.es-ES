@@ -6,19 +6,68 @@ ms.author: v-kedow
 ms.topic: conceptual
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 10/20/2020
-ms.openlocfilehash: 6d480f1229fb0c38cb3241c4a9de5bc53eadf87c
-ms.sourcegitcommit: be445f183d003106192f039990d1fb8ee151c8d7
+ms.date: 11/10/2020
+ms.openlocfilehash: eaa9417abd41828495d3cd685ecc1f56c42c92e1
+ms.sourcegitcommit: 96bc36a203954622be411fdb038d601e49f97d4e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92254019"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94441181"
 ---
 # <a name="release-notes-for-azure-stack-hci-public-preview"></a>Notas de la versión de Azure Stack HCl, versión preliminar pública
 
 > Se aplica a: Azure Stack HCI, versión 20H2
 
 En este artículo se describe el contenido de los paquetes de actualización de la versión preliminar pública de Azure Stack Hub.
+
+## <a name="november-10-2020-security-update-kb4586811"></a>Actualización de seguridad del 10 de noviembre de 2020 (KB4586811)
+
+Esta actualización incluye mejoras y correcciones para la versión más reciente de Azure Stack HCI.
+
+### <a name="improvements-and-fixes"></a>Mejoras y correcciones
+Esta actualización contiene varias mejoras de seguridad relacionadas con la funcionalidad interna del sistema operativo. No se han documentado problemas adicionales para esta versión.
+
+Para más información sobre las vulnerabilidades resueltas de seguridad, consulte la [guía de actualizaciones de seguridad](https://portal.msrc.microsoft.com/security-guidance).
+
+### <a name="known-issues-in-this-update"></a>Problemas conocidos de esta actualización
+A fecha de hoy, Microsoft no conoce ningún problema con esta actualización.
+
+### <a name="how-to-get-this-update"></a>Obtención de esta actualización
+La actualización de seguridad del 10 de noviembre de 2020 (KB4586811) para la [versión preliminar de Azure Stack HCI](https://azure.microsoft.com/products/azure-stack/hci/hci-download/) se proporciona a través de Windows Update. Para instalarla en el clúster de Azure Stack HCI, consulte [Actualización de clústeres de Azure Stack HCI](manage/update-cluster.md).
+
+### <a name="file-information"></a>información de archivo
+Para obtener una lista de los archivos que se proporcionan en esta actualización (Sistema operativo versión 17784.1345), descargue la [información de archivo de la actualización acumulativa 4586811](https://download.microsoft.com/download/8/f/2/8f2ce4bb-e113-4abc-b3ff-f0f4c4c71403/4586811.csv).
+
+   > [!NOTE]
+   > En algunos archivos se incluye por error el estado "No aplicable" en la columna "Versión del archivo" del archivo CSV. Esto podría provocar falsos positivos o falsos negativos al usar herramientas de detección de análisis de terceros para validar la compilación.
+
+## <a name="november-10-2020-servicing-stack-update-kb4590242"></a>Actualización de la pila de servicio del 10 de noviembre de 2020 (KB4590242)
+
+Esta actualización incluye mejoras de calidad para la versión más reciente de Azure Stack HCI.
+
+### <a name="improvements-and-fixes"></a>Mejoras y correcciones
+Esta actualización realiza mejoras de calidad en la pila de servicio, que es el componente que instala las actualizaciones. Las actualizaciones de la pila de servicio (SSU) garantizan que tiene una pila de servicio potente y confiable para que los dispositivos puedan recibir e instalar actualizaciones de Microsoft.
+
+### <a name="how-to-get-this-update"></a>Obtención de esta actualización
+La actualización de la pila de servicio de noviembre de 2020 (KB4590242) para la [versión preliminar de Azure Stack HCI](https://azure.microsoft.com/products/azure-stack/hci/hci-download/) se proporciona a través de Windows Update. Para instalarla en el clúster de Azure Stack HCI, consulte [Actualización de clústeres de Azure Stack HCI](manage/update-cluster.md).
+
+### <a name="restart-information"></a>Información de reinicio
+No es necesario reiniciar el equipo después de aplicar esta actualización.
+
+### <a name="removal-information"></a>Información de eliminación
+Las actualizaciones de la pila de servicio (SSU) realizan cambios en cómo se instalan las actualizaciones y no se pueden desinstalar del dispositivo.
+
+### <a name="file-information"></a>información de archivo
+Para obtener una lista de los archivos que se proporcionan en esta actualización (Sistema operativo versión 17784.1342), descargue la información de [archivo para la actualización acumulativa 4590242](https://download.microsoft.com/download/b/b/4/bb4fb4f5-c0ba-4e55-bada-d72310857982/4590242.csv).
+
+### <a name="references"></a>Referencias
+
+Para más información sobre las actualizaciones de la pila de servicio, consulte los artículos siguientes:
+
+- [Actualizaciones de la pila de servicio](/windows/deployment/update/servicing-stack-updates)
+- [Actualizaciones de la pila de servicio: Preguntas más frecuentes](https://support.microsoft.com/help/4535697)
+
+Obtenga información sobre la [terminología](https://support.microsoft.com/help/824684) que Microsoft usa para describir las actualizaciones de software.
 
 ## <a name="october-20-2020-preview-update-kb4580388"></a>Actualización de la versión preliminar del 20 de octubre de 2020 (KB4580388)
 

@@ -3,17 +3,17 @@ title: Implementación de App Service en Azure Stack Hub
 description: Aprenda a implementar App Service en Azure Stack Hub.
 author: bryanla
 ms.topic: article
-ms.date: 05/05/2020
+ms.date: 10/28/2020
 ms.author: bryanla
 ms.reviewer: anwestg
-ms.lastreviewed: 04/13/2019
+ms.lastreviewed: 10/28/2020
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: d8b5be96bf3e150308faf01c161d20e180beeb69
-ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
+ms.openlocfilehash: 78457d49b35c49cefc458070dc8c1f41391eb9eb
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91106977"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94544584"
 ---
 # <a name="deploy-app-service-in-azure-stack-hub"></a>Implementación de App Service en Azure Stack Hub
 
@@ -97,7 +97,7 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
    >[!NOTE]
    >El instalador intenta comprobar la conectividad con el recurso compartido de archivos antes de continuar. Sin embargo, si implementa en una red virtual existente, puede que se produzca un error en esta prueba de conectividad. Se le envía una advertencia y un aviso para continuar. Si la información del recurso compartido de archivos es correcta, continúe con la implementación.
 
-   ![Captura de pantalla que muestra la configuración del recurso compartido de archivos en el instalador de App Service.][7]
+   ![Captura de pantalla que muestra la pantalla en la que se configuran las rutas de acceso y credenciales del servidor de archivos en el instalador de App Service][5]
 
 9. En la página siguiente del instalador de App Service, siga estos pasos:
 
@@ -111,23 +111,23 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
    e. Seleccione **Next** (Siguiente).
 
-   ![Captura de pantalla que muestra dónde escribir la información de la aplicación de identidad en el instalador de App Service.][9]
+   ![Captura de pantalla que muestra la pantalla en la que se proporcionan los detalles de la aplicación de identidad de AAD/ADFS y el certificado de Resource Manager de Azure Stack, en el instalador de App Service][6]
 
 10. Para cada uno de los tres cuadros de archivo de certificado, seleccione **Examinar** y navegue hasta el archivo de certificado adecuado. Debe proporcionar la contraseña de cada certificado. Estos certificados son los que ha creado en [Requisitos previos para implementar App Service en Azure Stack Hub](azure-stack-app-service-before-you-get-started.md). Seleccione **Siguiente** después de escribir toda la información.
 
     | Box | Ejemplo de nombre de archivo de certificado |
     | --- | --- |
-    | **Archivo de certificado SSL predeterminado de App Service ** | \_.appservice.local.AzureStack.external.pfx |
+    | **Archivo de certificado SSL predeterminado de App Service** | \_.appservice.local.AzureStack.external.pfx |
     | **Archivo de certificado SSL de API de App Service** | api.appservice.local.AzureStack.external.pfx |
     | **Archivo de certificado SSL del publicador de App Service** | ftp.appservice.local.AzureStack.external.pfx |
 
     Si usó un sufijo de dominio diferente cuando creó los certificados, los nombres de archivo de certificado no usan *local.AzureStack.external*. En su lugar, use la información del dominio personalizado.
 
-    ![Captura de pantalla que muestra dónde escribir las ubicaciones y contraseñas del certificado en el instalador de App Service.][10]
+    ![Captura de pantalla que muestra la pantalla en la que se proporcionan los detalles de los certificados necesarios en el instalador de App Service][7]
 
 11. Escriba los detalles de SQL Server para la instancia de servidor que se usa para hospedar la base de datos del proveedor de recursos de App Service y, después, seleccione **Siguiente**. El instalador valida las propiedades de conexión de SQL.<br><br>El instalador de App Service intenta probar la conectividad con la instancia de SQL Server antes de continuar. Si realiza la implementación en una red virtual existente, puede que se produzca un error en esta prueba de conectividad. Se le envía una advertencia y un aviso para continuar. Si la información de SQL Server es correcta, continúe con la implementación.
 
-    ![Captura de pantalla que muestra dónde escribir la información de configuración de SQL en el instalador de App Service.][11]
+    ![Captura de pantalla que muestra la pantalla en la que se proporcionan los detalles de conexión de SQL Server en el instalador de App Service][8]
 
 12. Revise las opciones de SKU y la instancia de rol. Los valores predeterminados se rellenan con el número mínimo de instancias y la SKU mínima de cada rol en una implementación en producción.  En el caso de las implementaciones de ASDK, puede reducir verticalmente las instancias para las SKU inferiores para reducir el uso de los núcleos y la memoria pero experimentará una degradación del rendimiento. Se proporciona un resumen de los requisitos de memoria y vCPU para ayudar a planear la implementación. Después de realizar las selecciones, elija **Siguiente**.
 
@@ -142,7 +142,7 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
     | FrontEnd | 1 | Standard_A4_v2 - (4 núcleos, 8192 MB) | Enruta las solicitudes a las aplicaciones de App Service. |
     | Trabajo compartido | 1 | Standard_A4_v2 - (4 núcleos, 8192 MB) | Hospeda aplicaciones de API o web y aplicaciones de Azure Functions. Puede ser conveniente agregar más instancias. Como operador, puede definir su oferta y elegir cualquier nivel de SKU. Los niveles deben tener una vCPU como mínimo. |
 
-    ![Captura de pantalla que muestra dónde se configuran los roles de trabajo en el instalador de App Service.][13]
+    ![Captura de pantalla que muestra la pantalla en la que se proporciona el número de instancias de rol y su SKU de proceso correspondiente en el instalador de App Service][9]
 
     > [!NOTE]
     > **Windows Server 2016 Core no es una imagen de plataforma compatible para su uso con Azure App Service en Azure Stack Hub.  No use imágenes de evaluación para las implementaciones de producción.**
@@ -157,7 +157,7 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
      c. Seleccione **Next** (Siguiente).
 
-    ![Captura de pantalla que muestra dónde se configuran las credenciales de los roles de trabajo en el instalador de App Service.][15]
+    ![Captura de pantalla que muestra la pantalla donde se selecciona la imagen de la plataforma Windows que va a usar el instalador de App Service][10]
 
 15. En la página de resumen del instalador de App Service, siga estos pasos:
 
@@ -167,7 +167,7 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
     c. Para iniciar la implementación, seleccione **Siguiente**.
 
-    ![Captura de pantalla que muestra la información de resumen de la implementación de la pila en el instalador de App Service.][16]
+    ![Captura de pantalla que muestra el resumen de las opciones especificadas para su implementación por el instalador de App Service][11]
 
 16. En la página siguiente del instalador de App Service, siga estos pasos:
 
@@ -175,7 +175,7 @@ Para implementar el proveedor de recursos de App Service, siga estos pasos:
 
     b. Después de que el instalador finalice correctamente, seleccione **Salir**.
 
-    ![Captura de pantalla que muestra el progreso de la implementación en el instalador de App Service.][17]
+    ![Captura de pantalla que muestra el progreso de la implementación realizada en el instalador de App Service][12]
 
 ## <a name="post-deployment-steps"></a>Pasos posteriores a la implementación
 
@@ -200,7 +200,7 @@ Si va a realizar la implementación en una red virtual existente y a usar una di
 
 2. En la información general, debajo del estado, compruebe que en **Estado** se muestra el mensaje **Todos los roles están listos**.
 
-    ![Administración de App Service](media/azure-stack-app-service-deploy/image12.png)
+    ![Administración de App Service en el portal del administrador de Azure Stack Hub](media/azure-stack-app-service-deploy/image12.png)
 
 ## <a name="test-drive-app-service-on-azure-stack-hub"></a>Prueba de App Service en Azure Stack Hub
 
@@ -264,11 +264,11 @@ Para implementar Azure App Service en un entorno sin conexión, primero debe cre
 
 2. Seleccione **Opciones avanzadas** > **Crear paquete de instalación sin conexión**. Este paso tardará varios minutos en completarse.
 
-    ![Creación de un paquete sin conexión en el instalador de Azure App Service][31]
+    ![Creación de un paquete sin conexión en el instalador de Azure App Service][13]
 
 3. El instalador de Azure App Service crea un paquete de instalación sin conexión y muestra su ruta de acceso. Puede seleccionar **Abrir carpeta** para abrir la carpeta en el Explorador de archivos.
 
-    ![El paquete de instalación sin conexión generado correctamente en el instalador de Azure App Service](media/azure-stack-app-service-deploy-offline/image02.png)
+    ![El paquete de instalación sin conexión generado correctamente en el instalador de Azure App Service][14]
 
 4. Copie el instalador (AppService.exe) y el paquete de instalación sin conexión en una máquina que tenga conectividad con Azure Stack Hub.
 
@@ -278,11 +278,11 @@ Para implementar Azure App Service en un entorno sin conexión, primero debe cre
 
 1. Seleccione **Opciones avanzadas** > **Completar la instalación sin conexión**.
 
-    ![Realización de la instalación sin conexión en el instalador de Azure App Service][32]
+    ![Realización de la instalación sin conexión en el instalador de Azure App Service][15]
 
 1. Vaya a la ubicación del paquete de instalación sin conexión que creó previamente y seleccione **Siguiente**.
 
-    ![Especificación de la ruta de acceso del paquete de instalación sin conexión en el instalador de Azure App Service](media/azure-stack-app-service-deploy-offline/image04.png)
+    ![Especificación de la ruta de acceso del paquete de instalación sin conexión en el instalador de Azure App Service][16]
 
 1. Revise y acepte los términos de licencia del software de Microsoft y seleccione **Siguiente**.
 
@@ -291,7 +291,7 @@ Para implementar Azure App Service en un entorno sin conexión, primero debe cre
 
 1. Asegúrese de que la información de configuración en la nube de Azure App Service sea correcta. Si ha usado la configuración predeterminada durante la implementación del ASDK, puede aceptar los valores predeterminados. Sin embargo, si personalizó las opciones cuando implementó Azure Stack Hub o va a realizar la implementación en un sistema integrado, debe editar los valores de esta ventana para reflejar esos cambios. Por ejemplo, si usa el sufijo de dominio mycloud.com, el punto de conexión de Azure Resource Manager del inquilino de Azure Stack Hub debe cambiarse por `management.<region>.mycloud.com`. Después de confirmar la información, seleccione **Siguiente**.
 
-    ![Configuración de la nube de Azure App Service en el instalador de Azure App Service][33]
+    ![Configuración de la nube de Azure App Service en el instalador de Azure App Service][2]
 
 1. En la siguiente página del instalador de App Service, se conectará a su instancia de Azure Stack Hub:
 
@@ -315,14 +315,14 @@ Para implementar Azure App Service en un entorno sin conexión, primero debe cre
        3. Seleccione los valores correctos de **subred** para cada una de las subredes de rol necesarias.
        4. Seleccione **Next** (Siguiente).
 
-      ![Información de red virtual y subred en el instalador de Azure App Service][35]
+      ![Información de red virtual y subred en el instalador de Azure App Service][4]
 
 1. Escriba la información para el recurso compartido de archivos y, a continuación, seleccione **Siguiente**. La dirección del recurso compartido de archivos debe usar el nombre de dominio completo (FQDN) o la dirección IP del servidor de archivos. Por ejemplo, \\\appservicefileserver.local.cloudapp.azurestack.external\websites, o \\\10.0.0.1\websites.  Si usa un servidor de archivos que está unido a un dominio, debe proporcionar el nombre de usuario completo, incluido el dominio. Por ejemplo: `<myfileserverdomain>\<FileShareOwner>`.
 
     > [!NOTE]
     > El instalador intenta comprobar la conectividad con el recurso compartido de archivos antes de continuar. Sin embargo, si ha elegido realizar la implementación en una red virtual existente, puede que el instalador no pueda conectarse al recurso compartido de archivos y muestre una advertencia, que le pregunta si desea continuar. Compruebe la información del recurso compartido de archivos y continúe si es correcta.
 
-   ![Información del recurso compartido de archivos en el instalador de Azure App Service][38]
+   ![Información del recurso compartido de archivos en el instalador de Azure App Service][5]
 
 1. En la página siguiente:
     1. En el cuadro **Identificador de la aplicación de identidad**, escriba el GUID de la aplicación que creó como parte de los [requisitos previos](azure-stack-app-service-before-you-get-started.md).
@@ -331,19 +331,19 @@ Para implementar Azure App Service en un entorno sin conexión, primero debe cre
     1. En el cuadro **Azure Resource Manager root certificate file** (Archivo del certificado raíz de Azure Resource Manager) escriba (vaya a) la ubicación del archivo del certificado.
     1. Seleccione **Next** (Siguiente).
 
-    ![Especificación del identificador de la aplicación y la información del certificado en el instalador de Azure App Service][40]
+    ![Especificación del identificador de la aplicación y la información del certificado en el instalador de Azure App Service][6]
 
 1. Para cada uno de los tres cuadros de archivo de certificado, seleccione **Examinar** y navegue hasta el archivo de certificado adecuado. Debe proporcionar la contraseña de cada certificado. Estos certificados son los que ha creado en [Requisitos previos para implementar App Service en Azure Stack Hub](azure-stack-app-service-before-you-get-started.md). Seleccione **Siguiente** después de escribir toda la información.
 
     | Box | Ejemplo de nombre de archivo de certificado |
     | --- | --- |
-    | **Archivo de certificado SSL predeterminado de App Service ** | \_.appservice.local.AzureStack.external.pfx |
+    | **Archivo de certificado SSL predeterminado de App Service** | \_.appservice.local.AzureStack.external.pfx |
     | **Archivo de certificado SSL de API de App Service** | api.appservice.local.AzureStack.external.pfx |
     | **Archivo de certificado SSL del publicador de App Service** | ftp.appservice.local.AzureStack.external.pfx |
 
     Si usó un sufijo de dominio diferente cuando creó los certificados, los nombres de archivo de certificado no usan *local.AzureStack.external*. En su lugar, use la información del dominio personalizado.
 
-    ![Especificación de la información del certificado SSL en el instalador de Azure App Service][41]
+    ![Especificación de la información del certificado SSL en el instalador de Azure App Service][7]
 
 1. Escriba los detalles de SQL Server de la instancia de servidor que se usa para hospedar las bases de datos del proveedor de recursos de Azure App Service y, después, seleccione **Siguiente**. El instalador valida las propiedades de conexión de SQL. **Debe** escribir la dirección IP interna o el nombre de dominio completo para el nombre de SQL Server.
 
@@ -362,7 +362,7 @@ Para implementar Azure App Service en un entorno sin conexión, primero debe cre
     > ```
     > Para más información, consulte las [notas de la versión de Azure App Service en Azure Stack Hub 1.3](azure-stack-app-service-release-notes-update-three.md).
 
-    ![Especificación de la información de SQL Server en el instalador de Azure App Service][42]
+    ![Especificación de la información de SQL Server en el instalador de Azure App Service][8]
 
 1. Revise las opciones de SKU y la instancia de rol. Los valores predeterminados se rellenan con el número mínimo de instancias y la SKU mínima de cada rol en una implementación en producción.  En el caso de las implementaciones de ASDK, puede reducir verticalmente las instancias para las SKU inferiores para reducir el uso de los núcleos y la memoria pero experimentará una degradación del rendimiento.  Se proporciona un resumen de los requisitos de memoria y vCPU para ayudar a planear la implementación. Después de realizar las selecciones, elija **Siguiente**.
 
@@ -380,7 +380,7 @@ Para implementar Azure App Service en un entorno sin conexión, primero debe cre
     | FrontEnd | 1 | Standard_A4_v2 - (4 núcleos, 8192 MB) | Enruta las solicitudes a las aplicaciones de App Service. |
     | Trabajo compartido | 1 | Standard_A4_v2 - (4 núcleos, 8192 MB) | Hospeda aplicaciones de API o web y aplicaciones de Azure Functions. Puede ser conveniente agregar más instancias. Como operador, puede definir su oferta y elegir cualquier nivel de SKU. Los niveles deben tener una vCPU como mínimo. |
 
-    ![Establecimiento de los niveles de rol y las opciones de SKU en el instalador de Azure App Service][44]
+    ![Establecimiento de los niveles de rol y las opciones de SKU en el instalador de Azure App Service][9]
 
 1. En el cuadro **Seleccionar imagen de plataforma**, elija su imagen de implementación de máquina virtual Windows Server 2016 entre las que están disponibles en el proveedor de recursos de proceso para la nube de Azure App Service. Seleccione **Next** (Siguiente).
 
@@ -399,21 +399,21 @@ Para implementar Azure App Service en un entorno sin conexión, primero debe cre
      2. Escriba el nombre de usuario y la contraseña del administrador de máquinas virtuales con otros roles.
      3. Seleccione **Next** (Siguiente).
 
-    ![Especificación de administradores de máquina virtual de rol en el instalador de Azure App Service][46]
+    ![Especificación de administradores de máquina virtual de rol en el instalador de Azure App Service][10]
 
 1. En la página de resumen:
     1. Compruebe las selecciones realizadas. Para realizar cambios, use los botones **Anterior** para visitar las páginas anteriores.
     2. Si las configuraciones son correctas, active la casilla.
     3. Para iniciar la implementación, seleccione **Siguiente**.
 
-    ![Resumen de las selecciones realizadas en el instalador de Azure App Service][47]
+    ![Resumen de las selecciones realizadas en el instalador de Azure App Service][11]
 
 1. En la página siguiente:
     1. Realice un seguimiento del progreso de la instalación. La implementación de App Service en Azure Stack Hub puede tardar hasta 240 minutos según las opciones predeterminadas y la antigüedad de la imagen base de Windows 2016 Datacenter.
 
     2. Cuando el instalador termine de ejecutarse, seleccione **Salir**.
 
-    ![Seguimiento del proceso de instalación en el instalador de Azure App Service][48]
+    ![Seguimiento del proceso de instalación en el instalador de Azure App Service][12]
 
 ## <a name="post-deployment-steps"></a>Pasos posteriores a la implementación
 
@@ -489,36 +489,17 @@ Prepárese para realizar operaciones de administración adicionales para App Ser
 [2]: ./media/azure-stack-app-service-deploy/app-service-azure-stack-arm-endpoints.png
 [3]: ./media/azure-stack-app-service-deploy/app-service-azure-stack-subscription-information.png
 [4]: ./media/azure-stack-app-service-deploy/app-service-default-VNET-config.png
-[5]: ./media/azure-stack-app-service-deploy/app-service-custom-VNET-config.png
-[6]: ./media/azure-stack-app-service-deploy/app-service-custom-VNET-config-with-values.png
-[7]: ./media/azure-stack-app-service-deploy/app-service-fileshare-configuration.png
-[8]: ./media/azure-stack-app-service-deploy/app-service-fileshare-configuration-error.png
-[9]: ./media/azure-stack-app-service-deploy/app-service-identity-app.png
-[10]: ./media/azure-stack-app-service-deploy/app-service-certificates.png
-[11]: ./media/azure-stack-app-service-deploy/app-service-sql-configuration.png
-[12]: ./media/azure-stack-app-service-deploy/app-service-sql-configuration-error.png
-[13]: ./media/azure-stack-app-service-deploy/app-service-cloud-quantities.png
-[14]: ./media/azure-stack-app-service-deploy/app-service-windows-image-selection.png
-[15]: ./media/azure-stack-app-service-deploy/app-service-role-credentials.png
-[16]: ./media/azure-stack-app-service-deploy/app-service-azure-stack-deployment-summary.png
-[17]: ./media/azure-stack-app-service-deploy/app-service-deployment-progress.png
+[5]: ./media/azure-stack-app-service-deploy/app-service-fileshare-configuration.png
+[6]: ./media/azure-stack-app-service-deploy/app-service-identity-app.png
+[7]: ./media/azure-stack-app-service-deploy/app-service-certificates.png
+[8]: ./media/azure-stack-app-service-deploy/app-service-sql-configuration.png
+[9]: ./media/azure-stack-app-service-deploy/app-service-cloud-quantities.png
+[10]: ./media/azure-stack-app-service-deploy/app-service-role-credentials.png
+[11]: ./media/azure-stack-app-service-deploy/app-service-azure-stack-deployment-summary.png
+[12]: ./media/azure-stack-app-service-deploy/app-service-deployment-progress.png
 
 <!-- Disconnected image references-->
-[31]: ./media/azure-stack-app-service-deploy-offline/app-service-exe-advanced-create-package.png
-[32]: ./media/azure-stack-app-service-deploy-offline/app-service-exe-advanced-complete-offline.png
-[33]: ./media/azure-stack-app-service-deploy-offline/app-service-azure-stack-arm-endpoints.png
-[34]: ./media/azure-stack-app-service-deploy-offline/app-service-azure-stack-subscription-information.png
-[35]: ./media/azure-stack-app-service-deploy-offline/app-service-default-VNET-config.png
-[36]: ./media/azure-stack-app-service-deploy-offline/app-service-custom-VNET-config.png
-[37]: ./media/azure-stack-app-service-deploy-offline/app-service-custom-VNET-config-with-values.png
-[38]: ./media/azure-stack-app-service-deploy-offline/app-service-fileshare-configuration.png
-[39]: ./media/azure-stack-app-service-deploy-offline/app-service-fileshare-configuration-error.png
-[40]: ./media/azure-stack-app-service-deploy-offline/app-service-identity-app.png
-[41]: ./media/azure-stack-app-service-deploy-offline/app-service-certificates.png
-[42]: ./media/azure-stack-app-service-deploy-offline/app-service-sql-configuration.png
-[43]: ./media/azure-stack-app-service-deploy-offline/app-service-sql-configuration-error.png
-[44]: ./media/azure-stack-app-service-deploy-offline/app-service-cloud-quantities.png
-[45]: ./media/azure-stack-app-service-deploy-offline/app-service-windows-image-selection.png
-[46]: ./media/azure-stack-app-service-deploy-offline/app-service-role-credentials.png
-[47]: ./media/azure-stack-app-service-deploy-offline/app-service-azure-stack-deployment-summary.png
-[48]: ./media/azure-stack-app-service-deploy-offline/app-service-deployment-progress.png
+[13]: ./media/azure-stack-app-service-deploy/app-service-exe-advanced-create-package.png
+[14]: ./media/azure-stack-app-service-deploy/app-service-exe-advanced-create-package-complete.png
+[15]: ./media/azure-stack-app-service-deploy/app-service-exe-advanced-complete-offline.png
+[16]: ./media/azure-stack-app-service-deploy/app-service-exe-advanced-complete-offline-package-browse.png

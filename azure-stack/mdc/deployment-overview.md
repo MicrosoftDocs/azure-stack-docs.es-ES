@@ -16,31 +16,30 @@ ms.date: 10/20/2020
 ms.author: justinha
 ms.reviewer: asganesh
 ms.lastreviewed: 10/20/2020
-ms.openlocfilehash: aa5d67405ff471cecf147256d4b2109e94d993ef
-ms.sourcegitcommit: 716ca50bd198fd51a4eec5b40d5247f6f8c16530
+ms.openlocfilehash: 339927d28c2778a5c2953d8acf90e04931e3c815
+ms.sourcegitcommit: ce864e1d86ad05a03fe896721dea8f0cce92085f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92898596"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94383639"
 ---
-# <a name="mdc-deployment-overview"></a>Introducción a la implementación del Centro de datos modular
+# <a name="mdc-requirements-overview"></a>Información general sobre los requisitos de MDC
 
-En esta guía de implementación se describen los pasos para instalar y configurar un Centro de datos modular (MDC). En esta guía también se describe el proceso automatizado para configurar el servidor de administración del host de ciclo de vida de hardware (HLH) de Azure Stack Hub para la implementación de Azure Stack Hub.
+En esta guía de implementación se describen los requisitos necesarios para instalar y configurar un Centro de datos modular (MDC). 
 
 Los objetivos de esta guía incluyen:
 
 - Proporcionar una lista de comprobación previa a la implementación para comprobar que se cumplen todos los requisitos previos antes de la instalación de los componentes.
 - Presentar los componentes clave de un Centro de datos modular.
-- Describir el procedimiento de instalación y configuración de los componentes clave.
 - Validar la implementación del cliente.
 
-Se requiere experiencia técnica con la virtualización, los servidores, los sistemas operativos, las redes y las soluciones de almacenamiento para comprender totalmente el contenido de esta guía. El ingeniero de implementación debe tener conocimientos de Microsoft Windows Server 2019 con Hyper-V, Azure Stack Hub, Azure y Microsoft PowerShell.
+Se requiere experiencia técnica con la virtualización, los servidores, los sistemas operativos, las redes y las soluciones de almacenamiento para comprender totalmente el contenido de esta guía. 
 
-Esta guía se centra en la implementación de los componentes principales de Microsoft Azure Stack Hub y en los detalles de la solución de MDC. En esta guía no se explican los procedimientos operativos de Azure Stack Hub ni se explican todas las características disponibles en Azure Stack Hub. Para más información, consulte la [guía del operador de Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/).
+Esta guía se centra en la implementación de los componentes principales de Microsoft Azure Stack Hub y en los detalles de la solución de MDC. En esta guía no se explican los procedimientos operativos de Azure Stack Hub ni se explican todas las características disponibles en Azure Stack Hub. 
 
 ## <a name="introduction"></a>Introducción
 
-MDC es una oferta integrada para Azure Stack Hub empaquetada en un contenedor estándar de envío de metal de 12 metros. El contenedor incluye una unidad de control climático, y un sistema de iluminación y alerta. Los componentes principales de Azure Stack Hub, como servidores y conmutadores, se instalan en seis bastidores físicos que se organizan de forma lógica en tres pods independientes.
+MDC es una oferta integrada para Azure Stack Hub empaquetada en un contenedor estándar de envío de metal de 12 metros. El contenedor incluye una unidad de control climático, y un sistema de iluminación y alerta. Los componentes principales de Azure Stack Hub se instalan como tres pods independientes: Pod 1, bastidor 1 y bastidor 2, pod 2, bastidor 1 y bastidor 2 y pod 3, bastidor 1 y bastidor 2.
 
 Cada pod consta de dos bastidores 42U. Un pod incluye los conmutadores para la parte superior del rack (ToR), los conmutadores perimetrales y un conmutador de controlador de administración de placa base (BMC). Además, cada pod incluye un host de ciclo de vida de hardware (HLH) y un concentrador de puerto serie. La capacidad básica de proceso y almacenamiento se proporciona a través de unidades de escalado (SU) de Azure Stack Hub que constan de ocho servidores REA (Rugged Edge Appliance) R840. 48 nodos de almacenamiento de Isilon proporcionan capacidad de almacenamiento adicional. La configuración física de todos los pods es idéntica.
 
@@ -87,6 +86,4 @@ De forma general, el proceso de implementación de MDC consta de los pasos sigui
 1. Fase de validación (independiente para cada uno de los tres pods):
    1. Validación del estado posterior a la implementación.
    1. Registro de Azure Stack Hub en Microsoft.
-   1. Transición del operador de Azure Stack Hub.
-  
-Cada uno de los temas anteriores se explica con más detalle en esta guía.
+   1. Transición del cliente de Azure Stack Hub.

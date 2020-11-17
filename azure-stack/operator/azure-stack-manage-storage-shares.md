@@ -3,16 +3,16 @@ title: Administración de la capacidad de almacenamiento en Azure Stack Hub
 description: Obtenga información acerca de cómo supervisar y administrar la capacidad de almacenamiento y la disponibilidad en Azure Stack Hub.
 author: IngridAtMicrosoft
 ms.topic: conceptual
-ms.date: 10/09/2020
+ms.date: 10/16/2020
 ms.author: inhenkel
 ms.reviewer: xiaofmao
-ms.lastreviewed: 03/19/2019
-ms.openlocfilehash: 21a8d4f5238af436474cb33a41e6e35fbab3afb7
-ms.sourcegitcommit: 362081a8c19e7674c3029c8a44d7ddbe2deb247b
+ms.lastreviewed: 10/16/2020
+ms.openlocfilehash: bbced92ca9eb275ed1599ff7422bde1601be11c0
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91899744"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94545506"
 ---
 # <a name="manage-storage-capacity-for-azure-stack-hub"></a>Administración de la capacidad de almacenamiento en Azure Stack Hub
 
@@ -20,7 +20,7 @@ Este artículo ayuda a los operadores en la nube de Azure Stack Hub a supervisar
 
 Como operador en la nube, dispone de una cantidad limitada de almacenamiento con la que trabajar. La cantidad de almacenamiento se define por la solución que se implementa. La solución la proporciona el proveedor OEM cuando se usa una solución de varios nodos, o el hardware en el que se instala el Kit de desarrollo de Azure Stack (ASDK).
 
-Azure Stack Hub solo admite la expansión de la capacidad de almacenamiento mediante la adición de más nodos de unidades de escalado. Para más información, consulte el artículo sobre la [incorporación de nodos de unidades de escalado en Azure Stack Hub](azure-stack-add-scale-node.md). La adición de discos físicos a los nodos no ampliará la capacidad de almacenamiento.
+Azure Stack Hub solo admite la expansión de la capacidad de almacenamiento mediante la adición de más nodos de unidades de escalado. Para más información, consulte el artículo sobre la [incorporación de nodos de unidades de escalado en Azure Stack Hub](azure-stack-add-scale-node.md). La adición de discos físicos a los nodos no expandirá la capacidad de almacenamiento.
 
 Es importante [supervisar](#monitor-shares) el almacenamiento disponible para asegurarse de que se mantienen unas operaciones eficientes. Si la capacidad libre restante de un volumen está limitada, planee [administrar el espacio disponible](#manage-available-space) para evitar que los recursos compartidos se queden sin capacidad.
 
@@ -189,7 +189,7 @@ La migración consolida todos los blobs de contenedores en el nuevo recurso comp
 
 #### <a name="migrate-containers-by-using-powershell"></a>Migración de contenedores mediante PowerShell
 
-1. Confirme que ha [instalado y configurado Azure PowerShell](/powershell/azure/). Para más información, consulte [Administración de recursos de Azure con Azure PowerShell](https://go.microsoft.com/fwlink/?LinkId=394767).
+1. Confirme que ha [instalado y configurado Azure PowerShell](/powershell/azure/). Para más información, consulte [Administración de recursos de Azure con Azure PowerShell](/azure/azure-resource-manager/management/manage-resources-powershell).
 2. Examine el contenedor para entender qué datos hay sobre el recurso compartido que planea migrar. Para identificar los mejores contenedores candidatos para la migración en un volumen, utilice el cmdlet `Get-AzsStorageContainer`:
 
    ```powershell  

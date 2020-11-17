@@ -7,12 +7,12 @@ ms.date: 09/09/2020
 ms.author: inhenkel
 ms.reviewer: wamota
 ms.lastreviewed: 06/04/2019
-ms.openlocfilehash: 915c0ec4a661bbc039a7dc4d40f72ed83d135915
-ms.sourcegitcommit: b147d617c32cea138b5bd4bab568109282e44317
+ms.openlocfilehash: dc9273ba215c819595099aa35e6b3487623f6cd2
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010873"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94545251"
 ---
 # <a name="network-integration-planning-for-azure-stack"></a>Planeamiento de la capacidad de red de Azure Stack
 
@@ -27,12 +27,12 @@ La solución Azure Stack requiere una infraestructura física resistente y de al
 
 ![Diseño de red de Azure Stack recomendado](media/azure-stack-network/physical-network.svg)
 
-## <a name="bandwidth-allocation"></a>Asignación de ancho de banda
+### <a name="bandwidth-allocation"></a>Asignación de ancho de banda
 
-Azure Stack Hub se crea mediante las tecnologías de clústeres de conmutación por error de Windows Server 2019 y Espacios de almacenamiento directo. Una parte de la configuración de red física de Azure Stack Hub usa las garantías de separación de tráfico y ancho de banda para asegurarse de que las comunicaciones de Espacios de almacenamiento directo pueden satisfacer el rendimiento y el escalado necesarios de la solución. La configuración de red utiliza las clases de tráfico para separar las comunicaciones basadas en RDMA de los espacios directos de las de la utilización de la red por parte de la infraestructura de Azure Stack Hub y el inquilino.
+Azure Stack Hub se crea mediante las tecnologías de clústeres de conmutación por error de Windows Server 2019 y Espacios de almacenamiento directo. Una parte de la configuración de red física de Azure Stack Hub se realiza para usar las garantías de separación de tráfico y ancho de banda para asegurarse de que las comunicaciones de Espacios de almacenamiento directo pueden satisfacer el rendimiento y el escalado necesarios de la solución. La configuración de red utiliza las clases de tráfico para separar las comunicaciones basadas en RDMA de los espacios directos de las de la utilización de la red por parte de la infraestructura de Azure Stack Hub y el inquilino. Para estar en línea con los procedimientos recomendados actuales definidos para Windows Server 2019, se han efectuado cambios en Azure Stack Hub para que use una clase o prioridad de tráfico adicional para separar aún más la comunicación entre servidores y mejorar la comunicación del control de los clústeres de conmutación por error. Esta nueva definición de clase de tráfico se configurará para reservar el 2 % del ancho de banda físico disponible. Esta configuración de clase de tráfico y reserva de ancho de banda se realiza mediante un cambio en los conmutadores de la parte superior del rack (ToR) de la solución de Azure Stack Hub y en el host o los servidores de Azure Stack Hub. Tenga en cuenta que no se necesitan cambios en los dispositivos de red de borde del cliente. Estos cambios proporcionarán una mayor resistencia para la comunicación del clúster de conmutación por error y se destinará a evitar situaciones en las que el ancho de banda de red se consume por completo y, como resultado, se interrumpen los mensajes de control del clúster de conmutación por error. Tenga en cuenta que la comunicación del clúster de conmutación por error es un componente esencial de la infraestructura de Azure Stack Hub y, si se interrumpe durante períodos largos, puede provocar inestabilidad en Espacios de almacenamiento directo o en otros servicios, lo cual finalmente afectará a la estabilidad del inquilino o de la carga de trabajo del usuario final.
 
 > [!NOTE]
-> La siguiente actualización de Azure Stack Hub incluye una clase de tráfico adicional. Como preparación para este cambio, Microsoft recomienda que se ponga en contacto con el fabricante del equipos original para organizar los cambios necesarios en los conmutadores de red de la parte superior del rack (ToR). Este cambio de ToR se puede realizar antes o después de actualizar a la siguiente versión.
+> Los cambios descritos se agregan en el nivel de host de un sistema de Azure Stack Hub de la versión 2008. Póngase en contacto con su OEM para organizar la realización de los cambios necesarios en los conmutadores de red ToR. Este cambio de ToR se puede realizar antes o después de actualizar a la versión 2008. El cambio de configuración de los conmutadores ToR es necesario para mejorar las comunicaciones del clúster de conmutación por error.
 
 ## <a name="logical-networks"></a>Redes lógicas
 

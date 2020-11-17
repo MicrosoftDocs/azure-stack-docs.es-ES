@@ -8,12 +8,12 @@ ms.date: 08/05/2020
 ms.author: bryanla
 ms.reviewer: rtiberiu
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: cb2da0dc57069647ecefd8ccc278526f7f35f57d
-ms.sourcegitcommit: b69c8334571094721b26e6bdebd639f4fd294dd0
+ms.openlocfilehash: 9348930a09a57ab25be867616c604e11603a82c0
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87839239"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94545421"
 ---
 # <a name="create-a-custom-role-for-azure-stack-hub-registration"></a>Creación de un rol personalizado para el registro de Azure Stack Hub
 
@@ -66,13 +66,13 @@ Para crear un rol personalizado, debe tener el permiso `Microsoft.Authorization/
 3. En PowerShell, conéctese a Azure para usar Azure Resource Manager. Cuando se le solicite, autentíquese con una cuenta con permisos suficientes como [Propietario](/azure/role-based-access-control/built-in-roles#owner) o [Administrador de acceso de usuario](/azure/role-based-access-control/built-in-roles#user-access-administrator).
 
     ```azurepowershell
-    Connect-AzureRmAccount
+    Connect-AzAccount
     ```
 
-4. Para crear el rol personalizado, utilice **New-AzureRmRoleDefinition** mediante la especificación del archivo de plantilla JSON.
+4. Para crear el rol personalizado, utilice **New-AzRoleDefinition** mediante la especificación del archivo de plantilla JSON.
 
     ``` azurepowershell
-    New-AzureRmRoleDefinition -InputFile "C:\CustomRoles\registrationrole.json"
+    New-AzRoleDefinition -InputFile "C:\CustomRoles\registrationrole.json"
     ```
 
 ## <a name="assign-a-user-to-registration-role"></a>Asignación de un usuario al rol de registro

@@ -1,19 +1,19 @@
 ---
-title: 'Administración de máquinas virtuales con Windows Admin Center: Azure Stack HCI'
+title: Administración de máquinas virtuales con Windows Admin Center
 description: Aprenda a crear y administrar máquinas virtuales en un clúster en Azure Stack HCl mediante Windows Admin Center.
 author: v-dasis
 ms.topic: how-to
-ms.date: 07/21/2020
+ms.date: 11/06/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: 42c8062fb18b011365a0b245f713f5cd378885aa
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.openlocfilehash: 73d705bf5b36509b3aed31afb09105f2da91862f
+ms.sourcegitcommit: 08ef9545316798c9a21c2f9bc1da8c15cb648982
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90573673"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94360356"
 ---
-# <a name="manage-vms-on-azure-stack-hci-using-windows-admin-center"></a>Administración de máquinas virtuales en Azure Stack HCI mediante Windows Admin Center
+# <a name="manage-vms-with-windows-admin-center"></a>Administración de máquinas virtuales con Windows Admin Center
 
 > Se aplica a Azure Stack HCI, versión 20H2; Windows Server 2019
 
@@ -21,25 +21,25 @@ Windows Admin Center se puede usar para crear y administrar máquinas virtuales 
 
 ## <a name="create-a-new-vm"></a>Creación de una máquina virtual nueva
 
-Puede crear fácilmente una nueva máquina virtual mediante Windows Admin Center.
+Puede crear fácilmente una nueva máquina virtual mediante Windows Admin Center.
 
 :::image type="content" source="media/manage-vm/new-vm.png" alt-text="Pantalla de nueva máquina virtual" lightbox="media/manage-vm/new-vm.png":::
 
-1. En la página principal de Windows Admin Center, en **Todas las conexiones**, seleccione el servidor o clúster en el que desea crear la máquina virtual.
+1. En la página principal de Windows Admin Center, en **Todas las conexiones**, seleccione el servidor o clúster en el que desea crear la máquina virtual.
 1. En **Herramientas**, desplácese hacia abajo y seleccione **Máquinas virtuales**.
-1. En **Máquinas virtuales**, seleccione la pestaña **Inventario** y, a continuación, seleccione **Nuevo**.
+1. En **Máquinas virtuales**, seleccione la pestaña **Inventario** y, a continuación, seleccione **Añadir** y **Nuevo**.
 1. En **Nueva máquina virtual**, escriba un nombre para la máquina virtual.
 1. Seleccione **Generación 2 (recomendado)** .
-1. Seleccione una ruta de acceso de archivo preasignada en la lista desplegable o haga clic en **Examinar** para elegir la carpeta en la que desea guardar la configuración de la máquina virtual y los archivos del disco duro virtual (VHD). Para buscar cualquier recurso compartido de SMB disponible en la red, escriba la ruta de acceso como *\\servidor\recurso compartido*.
+1. En **Host**, seleccione el servidor en el que desea que resida la máquina virtual.
+1. En **Ruta de acceso**, seleccione una ruta de acceso de archivo preasignada en la lista desplegable o haga clic en **Examinar** para elegir la carpeta en la que desea guardar la configuración de la máquina virtual y los archivos del disco duro virtual (VHD). Para buscar cualquier recurso compartido de SMB disponible en la red, escriba la ruta de acceso como *\\servidor\recurso compartido*.
 
-1. En **Procesadores virtuales**, seleccione el número de procesadores virtuales y si desea habilitar la virtualización anidada.
+1. En **Procesadores virtuales**, seleccione el número de procesadores virtuales y si desea habilitar la virtualización anidada para la máquina virtual.
 1. En **Memoria**, seleccione la cantidad de memoria de inicio (se recomienda un mínimo de 4 GB) y un intervalo mínimo y máximo de memoria dinámica, según corresponda, para asignarla a la máquina virtual.
 1. En **Red**, seleccione un adaptador de red en la lista desplegable.
 1. En **Almacenamiento**, haga clic en **Agregar** y seleccione si desea crear un nuevo disco duro virtual o usar uno ya existente. Si va a utilizar uno ya existente, haga clic en **Examinar** y seleccione la ruta de acceso del archivo correspondiente.  
 1. En **Sistema operativo**, realice una de las acciones siguientes:
-   - Seleccione **Instalar un sistema operativo más adelante** si desea instalar un sistema operativo para la máquina virtual más adelante.
+   - Seleccione **Instalar un sistema operativo más adelante** si desea instalar un sistema operativo para la máquina virtual después de crearla.
    - Seleccione **Install an operating system from an image file (*.iso)** (Instalar un sistema operativo a partir de un archivo de imagen (*.iso), haga clic en **Examinar** y, a continuación, seleccione el archivo de imagen .iso correspondiente que se va a usar.
-   - Seleccione **Instalar un sistema operativo desde un servidor de instalación en red** si desea instalar un sistema operativo en la máquina virtual más adelante con este método. Asegúrese de haber seleccionado previamente un adaptador de red o, de lo contrario, no funcionará.
 1. Cuando haya finalizado, haga clic en **Crear** para crear la máquina virtual.
 1. Para iniciar la máquina virtual, en la lista de **Máquinas virtuales**, mantenga el mouse sobre la nueva máquina virtual, active la casilla correspondiente a la izquierda y seleccione **Iniciar**.
 1. En **Estado**, compruebe que el estado de la máquina virtual es **En ejecución**.
@@ -61,7 +61,7 @@ Puede ver fácilmente todas las máquinas virtuales de un servidor o del clúste
     - Replicar una máquina virtual con Azure Site Recovery.
     - En el caso de operaciones que se pueden ejecutar en varias máquinas virtuales como iniciar, apagar, guardar, pausar, eliminar o restablecer, puede seleccionar varias máquinas virtuales y ejecutar la operación una vez.
 
-## <a name="view-vm-metrics"></a>Visualización de las métricas de la máquina virtual
+## <a name="view-vm-details"></a>Visualización de los detalles de la máquina virtual
 
 Puede ver información detallada y los gráficos de rendimiento de una máquina virtual específica desde su página dedicada.
 
@@ -74,7 +74,7 @@ Puede ver información detallada y los gráficos de rendimiento de una máquina 
    - Ver, crear, aplicar, cambiar el nombre y eliminar puntos de control.
    - Ver los detalles de archivos de discos duros virtuales (.vhd), adaptadores de red y servidores host.
    - Ver el estado de la máquina virtual.
-   - Guardar la máquina virtual, eliminar un estado guardado o crear un punto de control.
+   - Guardar la máquina virtual, eliminar un estado guardado, exportar o clonar la máquina virtual.
    - Cambiar la configuración de la máquina virtual.
    - Conectarse a la consola de la máquina virtual mediante VMConnect a través del host de Hyper-V.
    - Replicar la máquina virtual con Azure Site Recovery.
@@ -117,7 +117,7 @@ Hay varios valores de configuración que puede cambiar para una máquina virtual
 
     :::image type="content" source="media/manage-vm/vm-settings-processor.png" alt-text="Pantalla de cambio de la configuración del procesador de una máquina virtual" lightbox="media/manage-vm/vm-settings-processor.png":::
 
-1. Para agregar un nuevo disco virtual, seleccione **Discos** y, a continuación, seleccione si desea crear un disco virtual vacío o usar un disco duro existente o un archivo de imagen ISO (.iso). Haga clic en **Examinar** y seleccione la ruta de acceso al disco virtual o al archivo de imagen.
+1. Para cambiar el tamaño de un disco existente, modifique el valor de **Tamaño (GB)** . Para agregar un nuevo disco virtual, seleccione **Discos** y, a continuación, seleccione si desea crear un disco virtual vacío o usar un disco duro existente o un archivo de imagen ISO (.iso). Haga clic en **Examinar** y seleccione la ruta de acceso al disco virtual o al archivo de imagen.
 
     :::image type="content" source="media/manage-vm/vm-settings-disk.png" alt-text="Pantalla de cambio de la configuración de disco de una máquina virtual" lightbox="media/manage-vm/vm-settings-disk.png":::
 
@@ -134,15 +134,20 @@ Hay varios valores de configuración que puede cambiar para una máquina virtual
 
     :::image type="content" source="media/manage-vm/vm-settings-boot.png" alt-text="Pantalla de cambio del orden de arranque de la máquina virtual" lightbox="media/manage-vm/vm-settings-boot.png":::
 
-1. Seleccione **Puntos de comprobación** para habilitar los puntos de comprobación de la máquina virtual, el tipo de punto de comprobación y la ubicación.
+1. Seleccione **Puntos de control** para habilitar los puntos de control de la máquina virtual, seleccionar el tipo de punto de control y especificar la ubicación del archivo de punto de control.
 
     > [!NOTE]
     > Se recomienda utilizar el valor del punto de comprobación **Producción** ya que usa tecnología de copia de seguridad en el sistema operativo invitado para crear puntos de comprobación coherentes con los datos. El valor **Estándar** utiliza instantáneas de VHD para crear puntos de comprobación con el estado de aplicaciones y servicios.
 
      :::image type="content" source="media/manage-vm/vm-settings-checkpoint.png" alt-text="Pantalla de cambio de puntos de comprobación de máquina virtual" lightbox="media/manage-vm/vm-settings-checkpoint.png":::
 
+1. Seleccione **Affinity rules** (Reglas de afinidad) a fin de crear una regla de afinidad para una máquina virtual. Para obtener más información sobre la creación de reglas de afinidad, consulte [Creación de reglas de afinidad de sitio y servidor para máquinas virtuales](vm-affinity.md).
+
+    :::image type="content" source="media/manage-vm/vm-affinity.png" alt-text="Pantalla de reglas de afinidad de máquina virtual" lightbox="media/manage-vm/vm-affinity.png":::
+
 1. Para cambiar la configuración de seguridad de la máquina virtual, seleccione **Seguridad** y haga lo siguiente:
     - Seleccione **Habilitar arranque seguro** para ayudar a evitar que se ejecute código no autorizado en el arranque (recomendado). Seleccione también una plantilla de Microsoft o de código abierto en el cuadro desplegable.
+    - En **Plantilla**, seleccione la plantilla de seguridad que se va a usar.
 
     - En **Compatibilidad con cifrado**, puede:
 
@@ -157,17 +162,43 @@ Hay varios valores de configuración que puede cambiar para una máquina virtual
 
         :::image type="content" source="media/manage-vm/vm-settings-security.png" alt-text="Pantalla de cambio de la configuración de seguridad de una máquina virtual" lightbox="media/manage-vm/vm-settings-security.png":::
 
-## <a name="move-a-vm-to-another-server-in-the-cluster"></a>Traslado de una máquina virtual a otro servidor del clúster
+## <a name="move-a-vm-to-another-server-or-cluster"></a>Traslado de una máquina virtual a otro servidor o clúster
 
-Puede trasladar fácilmente una máquina virtual a otro servidor del clúster de la siguiente manera:
-
-:::image type="content" source="media/manage-vm/vm-more-move.png" alt-text="Pantalla de traslado de máquina virtual" lightbox="media/manage-vm/vm-more-move.png":::
+Puede trasladar fácilmente una máquina virtual a otro servidor o a otro clúster de la siguiente manera:
 
 1. En **Herramientas**, desplácese hacia abajo y seleccione **Máquinas virtuales**.
-1. Seleccione la pestaña **Inventario** de la derecha. Elija una máquina virtual de la lista y seleccione **Más > Mover**.
+1. En la pestaña **Inventario**, seleccione una máquina virtual de la lista y seleccione **Administrar > Mover**.
 1. Elija un servidor de la lista y seleccione **Mover**.
-1. En **Mover máquina virtual**, seleccione **Clúster de conmutación por error** y, a continuación, escriba el nombre del clúster y el nodo del clúster al que va a trasladar la máquina virtual.
-1. Después de un traslado correcto, verá el nombre actualizado en la lista en **Servidor host**.
+1. Si quiere trasladar la máquina virtual y su almacenamiento, elija si desea moverla a otro clúster o a otro servidor del mismo clúster.
+
+    :::image type="content" source="media/manage-vm/vm-more-move.png" alt-text="Pantalla de traslado de máquina virtual" lightbox="media/manage-vm/vm-more-move.png":::
+
+1. Si desea trasladar solo el almacenamiento de la máquina virtual, seleccione moverlo a la misma ruta de acceso o seleccione diferentes rutas de acceso para la configuración, el punto de control o la paginación inteligente.
+
+    :::image type="content" source="media/manage-vm/vm-move-storage.png" alt-text="Pantalla de traslado de almacenamiento de máquina virtual" lightbox="media/manage-vm/vm-move-storage.png":::
+
+## <a name="join-a-vm-to-a-domain"></a>Unión de una máquina virtual a un dominio
+
+Puede unir con facilidad una máquina virtual a un dominio de la manera siguiente:
+
+:::image type="content" source="media/manage-vm/vm-domain-join.png" alt-text="Pantalla de unión de máquina virtual a un dominio" lightbox="media/manage-vm/vm-domain-join.png":::
+
+1. En **Herramientas**, desplácese hacia abajo y seleccione **Máquinas virtuales**.
+1. En la pestaña **Inventario**, seleccione una máquina virtual de la lista y seleccione **Administrar > Unión a un dominio**.
+1. Escriba el nombre del dominio al que desea unirse, junto con el nombre de usuario y la contraseña del dominio.
+1. Escriba el nombre de usuario y la contraseña de la máquina virtual.
+1. Cuando haya finalizado, haga clic en **Unirse**.
+
+## <a name="clone-a-vm"></a>Clonación de una máquina virtual
+
+Puede clonar fácilmente una máquina virtual como se indica a continuación:
+
+1. En **Herramientas**, desplácese hacia abajo y seleccione **Máquinas virtuales**.
+1. Seleccione la pestaña **Inventario** de la derecha. Elija una máquina virtual de la lista y seleccione **Administrar > Clonar**.
+1. Especifique un nombre y una ruta de acceso a la máquina virtual clonada.
+1. Ejecute Sysprep en la máquina virtual si todavía no lo ha hecho.
+
+:::image type="content" source="media/manage-vm/vm-clone.png" alt-text="Pantalla de clonación de máquina virtual" lightbox="media/manage-vm/vm-clone.png":::
 
 ## <a name="import-or-export-a-vm"></a>Importación o exportación de una máquina virtual
 
@@ -176,13 +207,20 @@ Puede importar o exportar fácilmente una máquina virtual. En el siguiente proc
 :::image type="content" source="media/manage-vm/vm-more-import.png" alt-text="Pantalla de importación de máquina virtual" lightbox="media/manage-vm/vm-more-import.png":::
 
 1. En **Herramientas**, desplácese hacia abajo y seleccione **Máquinas virtuales**.
-1. Seleccione la pestaña **Inventario** de la derecha. Elija una máquina virtual en clúster de la lista y seleccione **Más > Importar**.
+1. En la pestaña **Inventario**, seleccione **Agregar > Importar**.
 1. Escriba el nombre de la carpeta que contiene la máquina virtual o haga clic en **Examinar** y seleccione una carpeta.
 1. Seleccione la máquina virtual que desea importar.
 1. Cree un identificador único para la máquina virtual si es necesario.
 1. Cuando termine, seleccione **Importar**.
 
-Para exportar una máquina virtual, el proceso es muy parecido. Solo tiene que seleccionar **Más > Exportar** en su lugar.
+Para exportar una máquina virtual, el proceso es parecido:
+
+1. En **Herramientas**, desplácese hacia abajo y seleccione **Máquinas virtuales**.
+1. En la pestaña **Inventario**, seleccione la máquina virtual que desea exportar en la lista.
+1. Seleccione **Administrar > Exportar**.
+1. Escriba la ruta de acceso a la que se va a exportar la máquina virtual.
+
+:::image type="content" source="media/manage-vm/vm-export.png" alt-text="Pantalla de exportación de máquina virtual" lightbox="media/manage-vm/vm-export.png":::
 
 ## <a name="view-vm-event-logs"></a>Visualización de registros de eventos de la máquina virtual
 
@@ -197,7 +235,7 @@ Puede ver los registros de eventos de la máquina virtual de la siguiente manera
 En lugar de usar Windows Admin Center, también puede administrar las máquinas virtuales mediante un host de Hyper-V con una conexión de Protocolo de escritorio remoto (RDP).
 
 1. En **Herramientas**, desplácese hacia abajo y seleccione **Máquinas virtuales**.
-1. Seleccione la pestaña **Inventario** de la derecha. Elija una máquina virtual de la lista y seleccione la opción **Más > Conectar** o **Más > Descargar archivo RDP**. Ambas opciones usan la herramienta VMConnect para conectarse a la máquina virtual invitada mediante el host de Hyper-V y requieren que escriba las credenciales de nombre de usuario y contraseña de administrador de este host.
+1. En la pestaña **Inventario**, seleccione una máquina virtual de la lista y seleccione la opción **Conectar > Conectar** o **Conectar > Descargar archivo RDP**. Ambas opciones usan la herramienta VMConnect para conectarse a la máquina virtual invitada mediante el host de Hyper-V y requieren que escriba las credenciales de nombre de usuario y contraseña de administrador de este host.
 
     - La opción **Conectar** se conecta a la máquina virtual mediante Escritorio remoto en el explorador web.
 

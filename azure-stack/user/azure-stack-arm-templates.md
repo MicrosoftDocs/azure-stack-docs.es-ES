@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: justini
 ms.lastreviewed: 11/14/2019
-ms.openlocfilehash: 41f83e1e7f1432e182473c3b090171d3c426d340
-ms.sourcegitcommit: cad40ae88212cc72f40c84a1c88143ea0abb65ef
+ms.openlocfilehash: 9d5bf245a78bfd2ec77578701c4727c40b98f9e6
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84111921"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94545799"
 ---
 # <a name="use-azure-resource-manager-templates-in-azure-stack-hub"></a>Uso de plantillas de Administrador de recursos de Azure en Azure Stack Hub
 
@@ -66,7 +66,7 @@ Utilice la extensión de DSC de PowerShell para configurar Administrador de conf
 
 ## <a name="cancel-a-running-template-deployment"></a>Cancelación de una implementación de la plantilla en ejecución
 
-Para cancelar la implementación de una plantilla en ejecución, use el [cmdlet](/powershell/module/azurerm.resources/stop-azurermresourcegroupdeployment) de PowerShell [Stop-AzureRmResourceGroupDeployment de PowerShell](/powershell/scripting/developer/cmdlet/cmdlet-overview).
+Para cancelar la implementación de una plantilla en ejecución, use el [cmdlet](/powershell/scripting/developer/cmdlet/cmdlet-overview) de PowerShell [Stop-AzResourceGroupDeployment](/powershell/module/Az.resources/stop-Azresourcegroupdeployment).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

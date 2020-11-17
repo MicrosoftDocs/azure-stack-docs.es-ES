@@ -7,12 +7,12 @@ ms.date: 09/03/2020
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: 6813bf18656e034688255bcdb46b9b943359ce9c
-ms.sourcegitcommit: 7c01ab4b2e2250a7acd67d1c5ba27d15c1e8bce0
+ms.openlocfilehash: 93ede4373a2799551bc3091a6d9b3cd00cb9d578
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89448629"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94546487"
 ---
 # <a name="use-api-version-profiles-with-ruby-in-azure-stack-hub"></a>Uso de los perfiles de la versión de API con Ruby en Azure Stack Hub
 
@@ -70,7 +70,7 @@ El SDK de Ruby para Azure Resource Manager está en versión preliminar y probab
 
 ## <a name="use-the-azure_sdk-gem"></a>Uso de la gema azure_sdk
 
-La gema **azure_sdk** es una acumulación de todas las gemas admitidas en el SDK de Ruby. Esta gema consta de un perfil  **más reciente** , que admite la última versión de todos los servicios. Incluye los perfiles de las versiones  **V2017_03_09** y **V2019_03_01_Hybrid**, que se compilan para Azure Stack Hub.
+La gema **azure_sdk** es una acumulación de todas las gemas admitidas en el SDK de Ruby. Esta gema consta de un perfil **más reciente**, que admite la última versión de todos los servicios. Incluye los perfiles de las versiones **V2017_03_09** y **V2019_03_01_Hybrid**, que se compilan para Azure Stack Hub.
 
 Puede instalar la gema de acumulación azure_sdk con el siguiente comando:  
 
@@ -306,5 +306,5 @@ Para ejecutar el ejemplo, asegúrese de haber instalado Ruby. Si usa Visual Stud
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Instalación de PowerShell para Azure Stack Hub](../operator/azure-stack-powershell-install.md)
+- [Instalación de PowerShell para Azure Stack Hub](../operator/powershell-install-az-module.md)
 - [Configuración del entorno de PowerShell del usuario de Azure Stack Hub](azure-stack-powershell-configure-user.md)  

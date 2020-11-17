@@ -7,12 +7,12 @@ ms.date: 09/01/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 10/14/2019
-ms.openlocfilehash: 66a21943e19cef13aa7a3986b6a058f69cc85793
-ms.sourcegitcommit: 0714ce748e20065b52f8283d5dbba7ab068978d1
+ms.openlocfilehash: c98893cb686ebb9edb2c6e7257507da4a688c52f
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89285505"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94543806"
 ---
 # <a name="register-tenants-for-usage-tracking-in-azure-stack-hub"></a>Registro de inquilinos en Azure Stack Hub para el seguimiento de uso
 
@@ -25,7 +25,7 @@ En este artículo se incluye información acerca de las operaciones de registro.
 
 Utilice la operación cuando desee agregar un nuevo inquilino a su registro. Se informa del uso de inquilinos en una suscripción de Azure conectada con el inquilino de Azure Active Directory (Azure AD).
 
-También puede usar la operación para cambiar la suscripción asociada a un inquilino. Llame a PUT o al cmdlet **New-AzureRMResource** de PowerShell para sobrescribir la asignación anterior.
+También puede usar la operación para cambiar la suscripción asociada a un inquilino. Llame a PUT o al cmdlet **New-AzResource** de PowerShell para sobrescribir la asignación anterior.
 
 Puede asociar una sola suscripción de Azure a un inquilino. Si intenta agregar una segunda suscripción a un inquilino existente, la primera suscripción se sobrescribe.
 
@@ -52,7 +52,7 @@ Para más información sobre los perfiles de API y Azure Stack Hub, consulte [Ad
 Use el cmdlet **New-AzureRmResource** para agregar un inquilino. [Conéctese a Azure](/powershell/azure/get-started-azureps) y, luego, ejecute el siguiente comando desde el símbolo del sistema con privilegios elevados:
 
 ```powershell  
-New-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01
+New-AzResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01
 ```
 
 ### <a name="api-call"></a>Llamada a la API
@@ -79,10 +79,10 @@ Obtenga una lista de todos los inquilinos que se han agregado a un registro.
 
 ### <a name="powershell"></a>PowerShell
 
-Use el cmdlet **Get-AzureRmResource** para enumerar todos los inquilinos registrados. [Conéctese a Azure Stack Hub](azure-stack-powershell-configure-admin.md) y, después, desde un símbolo del sistema con privilegios elevados, ejecute el siguiente cmdlet:
+Use el cmdlet **Get-AzResource** para enumerar todos los inquilinos registrados. [Conéctese a Azure Stack Hub](azure-stack-powershell-configure-admin.md) y, después, desde un símbolo del sistema con privilegios elevados, ejecute el siguiente cmdlet:
 
 ```powershell
-Get-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions" -ApiVersion 2017-06-01
+Get-AzResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions" -ApiVersion 2017-06-01
 ```
 
 ### <a name="api-call"></a>Llamada a la API
@@ -128,10 +128,10 @@ Puede quitar un inquilino que se haya agregado a un registro. Si ese inquilino t
 
 ### <a name="powershell"></a>PowerShell
 
-Use el cmdlet **Remove-AzureRmResource** para quitar un inquilino. [Conéctese a Azure Stack Hub](azure-stack-powershell-configure-admin.md) y, después, desde un símbolo del sistema con privilegios elevados, ejecute el siguiente cmdlet:
+Use el cmdlet **Remove-AzResource** para quitar un inquilino. [Conéctese a Azure Stack Hub](azure-stack-powershell-configure-admin.md) y, después, desde un símbolo del sistema con privilegios elevados, ejecute el siguiente cmdlet:
 
 ```powershell
-Remove-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01
+Remove-AzResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01
 ```
 
 ### <a name="api-call"></a>Llamada a la API

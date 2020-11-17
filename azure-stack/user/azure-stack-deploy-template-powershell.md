@@ -7,20 +7,20 @@ ms.date: 5/27/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 09/23/2019
-ms.openlocfilehash: 7c8c27374b7ba114dc09297c2f0112d3f0f9579d
-ms.sourcegitcommit: cad40ae88212cc72f40c84a1c88143ea0abb65ef
+ms.openlocfilehash: a5bd582cd93a95f662a8acc2094e6a62a7ecdf50
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84112153"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94546912"
 ---
 # <a name="deploy-a-template-using-powershell-in-azure-stack-hub"></a>Implementación de una plantilla mediante PowerShell en Azure Stack Hub
 
 Puede usar PowerShell para implementar plantillas de Azure Resource Manager en Azure Stack Hub. En este artículo, se describe cómo usar PowerShell para implementar una plantilla.
 
-## <a name="run-azurerm-powershell-cmdlets"></a>Ejecución de cmdlets de AzureRM PowerShell
+## <a name="run-az-powershell-cmdlets"></a>Ejecución de cmdlets de PowerShell Az
 
-En este ejemplo, se utilizan cmdlets de **AzureRM PowerShell** y una plantilla almacenada en GitHub. La plantilla crea una máquina virtual del centro de datos para Windows Server 2012 R2.
+En este ejemplo, se utilizan cmdlets de PowerShell **Az** y una plantilla almacenada en GitHub. La plantilla crea una máquina virtual del centro de datos para Windows Server 2012 R2.
 
 >[!NOTE]
 > Antes de probar este ejemplo, asegúrese de que se haya [configurado PowerShell](azure-stack-powershell-configure-user.md) para un usuario de Azure Stack Hub.
@@ -36,10 +36,10 @@ En este ejemplo, se utilizan cmdlets de **AzureRM PowerShell** y una plantilla a
     $myLocation = "yourregion" # local for the ASDK
 
     # Create resource group for template deployment
-    New-AzureRmResourceGroup -Name $RGName -Location $myLocation
+    New-AzResourceGroup -Name $RGName -Location $myLocation
 
     # Deploy simple IaaS template
-    New-AzureRmResourceGroupDeployment `
+    New-AzResourceGroupDeployment `
         -Name myDeployment$myNum `
         -ResourceGroupName $RGName `
         -TemplateUri <path>\AzureStack-QuickStart-Templates\101-vm-windows-create\azuredeploy.json `
@@ -54,7 +54,7 @@ En este ejemplo, se utilizan cmdlets de **AzureRM PowerShell** y una plantilla a
 
 ## <a name="cancel-a-running-template-deployment"></a>Cancelación de una implementación de la plantilla en ejecución
 
-Para cancelar la implementación de una plantilla en ejecución, use el cmdlet `Stop-AzureRmResourceGroupDeployment` de PowerShell.
+Para cancelar la implementación de una plantilla en ejecución, use el cmdlet `Stop-AzResourceGroupDeployment` de PowerShell.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

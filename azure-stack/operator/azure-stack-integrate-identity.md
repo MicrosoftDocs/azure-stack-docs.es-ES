@@ -8,12 +8,12 @@ ms.author: bryanla
 ms.reviewer: thoroet
 ms.lastreviewed: 05/10/2019
 ms.custom: conteperfq4
-ms.openlocfilehash: 8e6ec9fcb6428b9f8dad7c4f78acde54291b30f1
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: 3087e7b4f84aa710a89a2f122e91bcfd643eed8d
+ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86488627"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94544197"
 ---
 # <a name="integrate-ad-fs-identity-with-your-azure-stack-hub-datacenter"></a>Integración de la identidad de AD FS con Azure Stack Hub en el centro de datos
 
@@ -87,13 +87,23 @@ Para este procedimiento, use un equipo de la red del centro de datos que pueda c
 
    ```powershell  
    $creds = Get-Credential
-   Enter-PSSession -ComputerName <IP Address of ERCS> -ConfigurationName PrivilegedEndpoint -Credential $creds
+   $pep = New-PSSession -ComputerName <IP Address of ERCS> -ConfigurationName PrivilegedEndpoint -Credential $creds
    ```
 
-2. Ahora que se ha conectado al punto de conexión con privilegios, ejecute el siguiente comando: 
+2. Ahora que dispone de una sesión con el punto de conexión con privilegios, ejecute el siguiente comando: 
 
    ```powershell  
-   Register-DirectoryService -CustomADGlobalCatalog contoso.com
+    $i = @(
+           [pscustomobject]@{ 
+                     CustomADGlobalCatalog="fabrikam.com"
+                     CustomADAdminCredential= get-credential
+                     SkipRootDomainValidation = $false 
+                     ValidateParameters = $true
+                   }) 
+
+    Invoke-Command -Session $pep -ScriptBlock {Register-DirectoryService -customCatalog $using:i} 
+
+
    ```
 
    Cuando se le solicite, especifique la credencial para la cuenta de usuario que desea utilizar para el servicio Graph (por ejemplo, graphservice). La entrada para el cmdlet Register-DirectoryService debe ser el nombre de bosque o la raíz del dominio del bosque en lugar de cualquier otro dominio del bosque.
@@ -105,8 +115,8 @@ Para este procedimiento, use un equipo de la red del centro de datos que pueda c
 
    |Parámetro|Descripción|
    |---------|---------|
-   |`-SkipRootDomainValidation`|Especifica que se debe usar un dominio secundario, en lugar del dominio raíz recomendado.|
-   |`-Force`|Omite todas las comprobaciones de validación.|
+   |`SkipRootDomainValidation`|Especifica que se debe usar un dominio secundario, en lugar del dominio raíz recomendado.|
+   |`ValidateParameters`|Omite todas las comprobaciones de validación.|
 
 #### <a name="graph-protocols-and-ports"></a>Puertos y protocolos de Graph
 
