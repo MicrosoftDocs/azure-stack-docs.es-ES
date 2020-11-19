@@ -6,13 +6,13 @@ ms.author: v-kedow
 ms.topic: how-to
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 09/24/2020
-ms.openlocfilehash: 8e5f1a07425224c8e343d4193cee2d721ae1f0b6
-ms.sourcegitcommit: 81e2d627c9dc4cc365deb4a0e0674b5ab3a7efbf
+ms.date: 11/17/2020
+ms.openlocfilehash: 7a98692fb29b1a539bf9f9fd26e0a3e226cb8669
+ms.sourcegitcommit: 2562b86f47db20e2652d4636227afb9cfd0e03ae
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92297887"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94785792"
 ---
 # <a name="connect-azure-stack-hci-to-azure"></a>Conexión de Azure Stack HCI a Azure
 
@@ -65,13 +65,13 @@ Use el siguiente procedimiento para registrar un clúster de Azure Stack HCI con
 3. Instale los cmdlets necesarios:
 
    ```PowerShell
-   Install-Module Az.StackHCI
+   Install-Module -Name Az.StackHCI -RequiredVersion 0.3.1
    ```
 
    > [!NOTE]
    > 1. Es posible que vea un mensaje parecido al siguiente"¿Quiere que PowerShellGet se instale e importe el proveedor de NuGet ahora?", a la que debe responder Sí (S).
    > 2. Es posible que además se le pregunte "¿Estás seguro de que quieres instalar los módulos de 'PSGallery'?", a lo que debe responder Sí (S).
-   > 3. Por último, podría suponer que la instalación de la totalidad del módulo de **Az** incluiría el submódulo **StackHCI** , pero no es el caso. Los submódulos en versión preliminar no se incluyen automáticamente según la convención estándar de Azure PowerShell, por lo que debe solicitar de manera explícita el submódulo **Az.StackHCI** como hemos visto anteriormente.
+   > 3. Por último, podría suponer que la instalación de la totalidad del módulo de **Az** incluiría el submódulo **StackHCI**, pero no es el caso. Los submódulos en versión preliminar no se incluyen automáticamente según la convención estándar de Azure PowerShell, por lo que debe solicitar de manera explícita el submódulo **Az.StackHCI** como hemos visto anteriormente.
 
 4. Realice el registro real:
 
