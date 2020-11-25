@@ -1,19 +1,19 @@
 ---
-title: Notas de la versión de App Service en Azure Stack Hub 2002 Q3
-description: Conozca el contenido de la versión 2002 Q3 de App Service en Azure Stack Hub, los problemas conocidos y la ubicación dónde debe descargarse.
+title: Notas de la versión de App Service en Azure Stack Hub 2020 Q3
+description: Conozca el contenido de la versión 2020 Q3 de App Service en Azure Stack Hub, los problemas conocidos y la ubicación de descarga de la actualización.
 author: apwestgarth
 manager: stefsch
 ms.topic: article
-ms.date: 10/28/2020
+ms.date: 11/17/2020
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 10/23/2020
-ms.openlocfilehash: 55c8e18f3bbd36a0fef4cfb745ab9d40651e7533
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: f9d575a91c55379326beaac2d76b3400172c8dd0
+ms.sourcegitcommit: 2562b86f47db20e2652d4636227afb9cfd0e03ae
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94548722"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94785879"
 ---
 # <a name="app-service-on-azure-stack-hub-2020-q3-release-notes"></a>Notas de la versión de App Service en Azure Stack Hub 2020 Q3
 
@@ -102,6 +102,8 @@ La actualización Q3 de Azure App Service en Azure Stack incluye las siguientes
 - La supervisión de funciones ahora puede recuperar datos de los puntos de conexión de almacenamiento aplicando TLS 1.2.
 
 - Se ha cambiado el paso de esperar a los servidores de administración fuera del paso de implementar la nube durante la instalación para mejorar la confiabilidad de la implementación y la actualización
+
+- Problema por el que los trabajos no pueden completar el ejercicio de comprobación de mantenimiento debido a que el tamaño de la carpeta del archivo de registro del entorno en tiempo de ejecución del trabajo infringe el límite de cuota después de un error en la lógica de limpieza.  La lógica de limpieza se corrigió en esta actualización.
 
 ## <a name="pre-update-steps"></a>Pasos previos a la actualización
 

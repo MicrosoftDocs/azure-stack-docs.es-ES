@@ -8,12 +8,12 @@ ms.topic: reference
 ms.date: 10/20/2020
 ms.reviewer: kivenkat
 ms.lastreviewed: 07/07/2020
-ms.openlocfilehash: 9289b1c2ae3119a03898e2d9c361bde4976a16f7
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: 0379b435a1f8b71766540865f358ca5da71d63e6
+ms.sourcegitcommit: 8187658b1d45dceed727aca3ae1b9b57aca04392
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94546929"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94630760"
 ---
 # <a name="graphics-processing-unit-gpu-virtual-machine-vm-on-azure-stack-hub"></a>Máquina virtual (VM) de la unidad de procesamiento gráfico (GPU) en Azure Stack Hub
 
@@ -87,5 +87,5 @@ Los controladores de NVIDIA CUDA y GRID deben instalarse manualmente en la máqu
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Instalación de controladores de GPU de NVIDIA en máquinas virtuales de la serie N con Linux](/azure/virtual-machines/linux/n-series-driver-setup)
-- [Características de las máquinas virtuales de Azure Stack](azure-stack-vm-considerations.md)
+- [Características de las máquinas virtuales de Azure Stack](azure-stack-vm-considerations.md)  
+- [Implementación de un módulo de IoT habilitado para GPU en Azure Stack Hub](gpu-deploy-sample-module.md)

@@ -4,16 +4,16 @@ description: Notas de la versión de la actualización 8 de App Service en Azure
 author: apwestgarth
 manager: stefsch
 ms.topic: article
-ms.date: 05/05/2020
+ms.date: 11/17/2020
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/25/2019
-ms.openlocfilehash: f19d64331e7ef64095bc91a04eb817e2f056d3a9
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: 4c89f139c2fc0f80a80fc70ab6d5842a7ffffd4f
+ms.sourcegitcommit: 2562b86f47db20e2652d4636227afb9cfd0e03ae
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86489715"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94785811"
 ---
 # <a name="app-service-on-azure-stack-hub-update-8-release-notes"></a>Notas de la versión de la actualización 8 de App Service en Azure Stack Hub
 
@@ -298,7 +298,26 @@ Realice una de las siguientes acciones y seleccione Retry within the installer (
 
 ## <a name="known-issues-for-cloud-admins-operating-azure-app-service-on-azure-stack-hub"></a>Problemas conocidos para los administradores de la nube que usan Azure App Service en Azure Stack Hub
 
-Consulte la documentación en las [notas de la versión 1907 de Azure Stack Hub](./release-notes.md?view=azs-2002).
+Consulte la documentación en las [notas de la versión 1907 de Azure Stack Hub](./release-notes.md?view=azs-1907&preserve-view=true).
+
+- Los inquilinos no pueden crear un plan de App Service con la nueva vista Plan de App Service en el portal de inquilinos
+
+Cuando se crea una nueva aplicación, los inquilinos pueden crear planes de App Service durante el flujo de trabajo de creación de la aplicación, al cambiar el plan de App Service de una aplicación actual o mediante el elemento de Marketplace del plan de App Service.
+
+- Los dominios personalizados no se admiten en entornos sin conexión.
+
+App Service realiza la comprobación de la propiedad del dominio con los puntos de conexión DNS públicos. Por este motivo, los dominios personalizados no se admiten en escenarios desconectados.
+
+- En algunos casos, los trabajos no pueden completar las comprobaciones de mantenimiento (espacio en disco insuficiente).
+
+En algunos casos, en que se asigna un número elevado de sitios a un trabajo o un sitio controla un gran número de solicitudes, el trabajo generará una gran cantidad de archivos de registro en tiempo de ejecución en C:\DWAS\LogFiles.  Esto se debe a un error en la lógica de limpieza de estos archivos de registro.  
+
+Para mitigar este problema de forma remota al trabajo individual y borrar el contenido de la carpeta.
+
+Este problema se ha corregido en [App Service en Azure Stack Hub 2020 Q3](app-service-release-notes-2020-Q3.md). Se recomienda a los clientes que actualicen a la versión 2020 Q3 lo antes posible.
+
+> [!IMPORTANT]
+> Para actualizar a Azure App Service en Azure Stack Hub 2020 T3, **debe** actualizar a Azure Stack Hub 2008.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

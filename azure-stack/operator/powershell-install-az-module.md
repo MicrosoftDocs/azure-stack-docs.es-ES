@@ -3,16 +3,16 @@ title: Instalación del módulo Az de PowerShell para Azure Stack Hub
 description: Aprenda a instalar PowerShell para Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 11/11/2020
+ms.date: 11/17/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 11/11/2020
-ms.openlocfilehash: de226383fc5109cd702c4883754766664ea9ab73
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.lastreviewed: 11/27/2020
+ms.openlocfilehash: 3666965dd3cfe7827fc9ea4c12b06d40ad210ac6
+ms.sourcegitcommit: 2562b86f47db20e2652d4636227afb9cfd0e03ae
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94546946"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94785845"
 ---
 # <a name="install-powershell-az-module-for-azure-stack-hub"></a>Instalación del módulo Az de PowerShell para Azure Stack Hub
 
@@ -33,9 +33,9 @@ Puede instalar los módulos Az de PowerShell compatibles con Azure Stack Hub en 
 
 ## <a name="1-verify-your-prerequisites"></a>1. Comprobación de los requisitos previos
 
-Los módulos Az solo se admiten en [Azure Stack Hub con la actualización 2002](./release-notes.md?view=azs-2002#2002-build-reference) y la [revisión](./release-notes.md?view=azs-2002#hotfixes) más reciente.
+Ahora se admiten los módulos de Az en Azure Stack Hub con la actualización 2002 o posterior y con las revisiones actuales instaladas. Consulte las [Notas de la versión de Azure Stack Hub](release-notes.md) para obtener más información.
 
-Azure PowerShell funciona con PowerShell 5.1 o versiones posteriores en Windows o con PowerShell Core 6.x y versiones posteriores en cualquier plataforma. Debe instalar la [última versión de PowerShell Core](/powershell/scripting/install/installing-powershell#powershell-core) disponible para su sistema operativo. No hay ningún requisito adicional para Azure PowerShell cuando se usa PowerShell Core.
+Los módulos de Az de Azure PowerShell funcionan con PowerShell 5.1 o versiones posteriores en Windows o con PowerShell Core 6.x y versiones posteriores en cualquier plataforma. Debe instalar la [última versión de PowerShell Core](/powershell/scripting/install/installing-powershell#powershell-core) disponible para su sistema operativo. No hay ningún requisito adicional para Azure PowerShell cuando se usa PowerShell Core.
 
 Para comprobar la versión de PowerShell, ejecute el comando:
 

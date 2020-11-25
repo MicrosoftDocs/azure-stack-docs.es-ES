@@ -9,12 +9,12 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 10/28/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 6f51b4720655159cc1b191c28b640daa74f71a6e
-ms.sourcegitcommit: 4922a14fdbc8a3b67df065336e8a21a42f224867
+ms.openlocfilehash: 780c6a2e0f3235e2681ba4cf6cc01ce2f13eb3dc
+ms.sourcegitcommit: 75a2e1a52d7582e26ce8eaf37a470c62f99b4da0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88764637"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94580817"
 ---
 # <a name="release-notes-for-validation-as-a-service"></a>Notas de la versión para la validación como servicio
 
@@ -30,6 +30,38 @@ En este artículo se incluyen las notas de la versión para la validación como 
 
 - Corrección de errores
   - Se han corregido las pruebas Test101LinuxEmptyAttachedDiskManagedDisk, Test101WindowsEmptyAttachedDiskManagedDisk.
+
+## <a name="version-4442"></a>Versión 4.4.4.2
+
+11 de noviembre de 2020
+
+- Ahora, el flujo de trabajo de validación de CSE se ha actualizado para poder instalar un paquete de extensión de OEM con firma de prueba automáticamente después de una actualización completa de AzureStack.
+  - Antes de esta corrección, VaaS no podía instalar un paquete de extensión de OEM con firma de prueba en un stamp después de una actualización completa de AzureStack. VaaS aplicaba la actualización de AzureStack y, a continuación, abandonaba la ejecución.
+  - Esto se ha corregido y ahora debería ver cómo el flujo de trabajo de validación de CSE instala la actualización de AzureStack proporcionada y el paquete de extensión de OEM con firma de prueba.
+- Se agregó extensión de validación de paquetes de OEM al “flujo de trabajo de validación de OEM”.
+  - Esta extensión se ejecutará antes de iniciar cualquier actualización en el stamp.
+  - La extensión validará el contenido del paquete de extensión de OEM y los elementos de oemMetadata.xml.
+  - Si se produjeron errores o problemas con el paquete de extensión de OEM, los detectaremos antes de que se inicien las pruebas de VaaS.
+  - Antes, estas validaciones se ejecutaban en el momento de firmar el paquete, después de la ejecución de prueba de VaaS.  
+- Requisitos previos de VaaS actualizados para instalar la versión más reciente de los módulos de PowerShell de AzureStack y AzureRM
+  - Versión de módulo de AzureStack de PS 1.8.2
+  - Versión de módulo de AzureRM de PS 2.5.0
+- Pequeñas actualizaciones de servicio.
+
+## <a name="version-443112"></a>Versión 4.4.3.112
+
+23 de agosto de 2020
+
+- Actualizaciones de servicio.
+  - Actualizaciones en la implementación del servicio.
+  - Métodos de autenticación de servicio actualizados.
+
+## <a name="version-44368"></a>Versión 4.4.3.68
+
+30 de junio de 2020
+
+- Actualizaciones de servicio.
+  - El servicio se ha trasladado para su ejecución en Service Fabric.
 
 ## <a name="version-4421"></a>Versión 4.4.2.1
 
@@ -56,7 +88,6 @@ En este artículo se incluyen las notas de la versión para la validación como 
     - Test101LinuxEmptyAttachedDiskManagedDisk
     - Test101WindowsEmptyAttachedDiskManagedDisk
 
-
 ## <a name="version-4353"></a>Versión 4.3.5.3
 
 7 de noviembre de 2019
@@ -70,7 +101,7 @@ En este artículo se incluyen las notas de la versión para la validación como 
   - Se corrigió un problema por el que no se podía ejecutar la comprobación mensual de actualizaciones de Azure Stack Hub si el archivo .zip de la actualización contenía caracteres especiales.
 
 - Problemas conocidos
-  - Las pruebas de VaaS producirán un error si no se encuentra el archivo mstest.exe. Solución alternativa:
+  - Las pruebas de VaaS producirán un error si no se encuentra el archivo mstest.exe. Solución:
     1. Presione CTRL + C en el agente en la ventana de PowerShell.
     1. Escriba mstest.exe para comprobar que es un programa reconocido.
     1. Si no se reconoce mstest.exe, cierre la ventana actual de PowerShell.

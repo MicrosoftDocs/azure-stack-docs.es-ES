@@ -3,16 +3,16 @@ title: Problemas conocidos de Azure Stack Hub
 description: Obtenga información sobre los problemas conocidos de las versiones de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 11/11/2020
+ms.date: 11/16/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 09/09/2020
-ms.openlocfilehash: f1f38d309814e40422783cd4903086c736d19978
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: da21b724e914527ef2a4d5065d1d83a30ad3bb85
+ms.sourcegitcommit: 2562b86f47db20e2652d4636227afb9cfd0e03ae
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94545833"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94785785"
 ---
 # <a name="azure-stack-hub-known-issues"></a>Problemas conocidos de Azure Stack Hub
 
@@ -20,11 +20,11 @@ En este artículo se enumeran los problemas conocidos de las versiones de Azure 
 
 Para tener acceso a los problemas conocidos de una versión diferente, use la lista desplegable del selector de versiones encima de la tabla de contenido de la izquierda.
 
-::: moniker range=">=azs-1910"
+::: moniker range=">=azs-2002"
 > [!IMPORTANT]  
 > Revise esta sección antes de aplicar la actualización.
 ::: moniker-end
-::: moniker range="<azs-1910"
+::: moniker range="<azs-2002"
 > [!IMPORTANT]  
 > Si a su instancia le faltan más de dos actualizaciones de Azure Stack Hub, se considera que no cumple los requisitos. [Para recibir soporte técnico, deberá actualizarla al menos a la versión mínima admitida.](azure-stack-servicing-policy.md#keep-your-system-under-support) 
 ::: moniker-end
@@ -61,7 +61,8 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 #### <a name="denyalloutbound-rule-cannot-be-created"></a>No se puede crear la regla DenyAllOutbound
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas.
-- Causa: No se puede crear una regla **DenyAllOutbound** explícita para Internet en un grupo de seguridad de red durante la creación de una máquina virtual, ya que esto impedirá las comunicaciones necesarias para que se complete la implementación de la máquina virtual.
+- Causa: No se puede crear una regla **DenyAllOutbound** explícita para Internet en un grupo de seguridad de red durante la creación de una máquina virtual, ya que esto impedirá las comunicaciones necesarias para que se complete la implementación de la máquina virtual. También se denegarán las dos direcciones IP esenciales necesarias para implementar VM: IP DHCP: 169.254.169.254 e IP DNS: 168.63.129.16.
+
 - Corrección: Permita el tráfico saliente a Internet durante la creación de la máquina virtual y modifique el grupo de seguridad de red para bloquear el tráfico necesario una vez completada la creación de la máquina virtual.
 - Repetición: Comunes
 
@@ -86,7 +87,7 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 - Causa: Al habilitar la **afinidad de sesión** en un equilibrador de carga, el hash de tupla 2 emplea la dirección IP física en lugar de las IP privadas asignadas a las máquinas virtuales. En escenarios en los que el tráfico dirigido al equilibrador de carga llega a través de una VPN, o si todas las máquinas virtuales cliente (IP de origen) residen en el mismo nodo y la afinidad de sesión está habilitada, todo el tráfico se dirige a una máquina virtual de back-end.
 - Repetición: Comunes
 
-## <a name="compute"></a>Proceso
+<!-- ## Compute -->
 
 <!-- ## Storage -->
 <!-- ## SQL and MySQL-->

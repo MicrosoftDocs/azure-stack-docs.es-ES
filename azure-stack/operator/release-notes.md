@@ -3,16 +3,16 @@ title: Notas de la versión de Azure Stack Hub
 description: Notas de la versión para los sistemas integrados de Azure Stack Hub, incluidas las actualizaciones y correcciones de errores.
 author: sethmanheim
 ms.topic: article
-ms.date: 11/11/2020
+ms.date: 11/18/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 09/09/2020
-ms.openlocfilehash: 74b1be3736d21d968fa45135034637d4ca3cd5eb
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: 945dd42d0ed4b78f5572abbd679eb8fda7b12d96
+ms.sourcegitcommit: 6db48bd8e6ccfaaa897713ad7eb2846a8d506358
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94546062"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94885808"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Notas de la versión de Azure Stack Hub
 
@@ -33,9 +33,10 @@ Para tener acceso a las notas de la versión de una versión diferente, use la l
 
 Antes de aplicar la actualización, asegúrese de revisar la información siguiente:
 
-- [Problemas conocidos](known-issues.md)
-- [Actualizaciones de seguridad](release-notes-security-updates.md)
 - [Lista de comprobación de las actividades antes y después de aplicar la actualización](release-notes-checklist.md)
+- [Problemas conocidos](known-issues.md)
+- [Revisiones](#hotfixes)
+- [Actualizaciones de seguridad](release-notes-security-updates.md)
 
 Para obtener ayuda con la solución de problemas de actualizaciones y el proceso de actualización, consulte [Solución de problemas de actualizaciones y revisiones para Azure Stack Hub](azure-stack-troubleshooting.md).
 
@@ -70,11 +71,17 @@ Para obtener más información sobre los tipos de compilación de actualización
 - El almacenamiento de blobs de Azure Stack Hub permite ahora a los usuarios usar un blob inmutable. Mediante el establecimiento de directivas inmutables en un contenedor, puede almacenar objetos de datos críticos para la empresa en un estado WORM (escribir una vez, leer muchas). En esta versión, las directivas inmutables solo se pueden establecer a través de la API de REST o los SDK de cliente. Escribir blobs en anexos tampoco es posible en esta versión. Para más información sobre los blobs inmutables, vea [Almacenamiento de datos críticos para la empresa con almacenamiento inmutable](/azure/storage/blobs/storage-blob-immutable-storage).
 - Azure Stack Hub Storage admite ahora las API de servicios de Azure Storage, versión 2019-07-07. En el caso de las bibliotecas cliente de Azure que son compatibles con la nueva versión de API de REST, consulte [Herramientas de desarrollo de almacenamiento de Azure Stack Hub](../user/azure-stack-storage-dev.md#azure-client-libraries).
 - El proceso de Azure Stack Hub es ahora compatible con las API de Azure Compute versión 2020-06-01, con un subconjunto de las características totales disponibles.
+- Ahora, los discos administrados de Azure Stack Hub admiten la versión **2019-03-01** de las API de discos de Azure, con un subconjunto de las características disponibles.
 - Versión preliminar de Windows Admin Center que ahora puede conectarse a Azure Stack Hub para proporcionar información detallada sobre la infraestructura durante las operaciones de soporte técnico (se requiere romper el cristal).
 - Capacidad de agregar un banner de inicio de sesión al punto de conexión con privilegios (PEP) en el momento de la implementación.
 - Se han publicado más banners de **operaciones exclusivas**, que mejoran la visibilidad de las operaciones que se están produciendo actualmente en el sistema y que deshabilitan el inicio de los usuarios (y posterior el error) de cualquier otra operación exclusiva.
 - Se han introducido dos nuevos banners en cada página de producto del elemento de Marketplace de Azure Stack Hub. Si se produce un error de descarga de Marketplace, los operadores pueden ver los detalles del error y probar los pasos recomendados para resolver el problema.
 - Se ha publicado una herramienta de clasificación para que los clientes proporcionen comentarios. Esto permitirá que Azure Stack Hub mida y optimice la experiencia del cliente.
+- Esta versión de Azure Stack Hub incluye una versión preliminar privada de Azure Kubernetes Service (AKS) y Azure Container Registry (ACR). El propósito de la versión preliminar privada es recopilar comentarios sobre la calidad, las características y la experiencia del usuario de AKS y ACR en Azure Stack Hub.
+- Esta versión incluye una versión preliminar pública de Azure CNI y contenedores de Windows con el [motor de AKS v0.55.4](../user/kubernetes-aks-engine-release-notes.md). Para ver un ejemplo de cómo usarlas en el modelo de API, [consulte este ejemplo en GitHub](https://raw.githubusercontent.com/Azure/aks-engine/master/examples/azure-stack/kubernetes-windows.json).
+- Ahora se admite la [implementación de Istio 1.3](https://github.com/Azure/aks-engine/tree/master/examples/service-mesh) en los clústeres que implementa el [motor de AKS v0.55.4](../user/kubernetes-aks-engine-release-notes.md). Para obtener más información, [consulte estas instrucciones](../user/kubernetes-aks-engine-service-account.md).
+- Ahora se admite la implementación de [clústeres privados](https://github.com/Azure/aks-engine/blob/master/docs/topics/features.md#private-cluster) mediante el [motor de AKS v0.55.4](../user/kubernetes-aks-engine-release-notes.md).
+- Esta versión incluye compatibilidad con el [abastecimiento de secretos de configuración de Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/keyvault-secrets.md#use-key-vault-as-the-source-of-cluster-configuration-secrets) de las instancias de Key Vault de Azure Stack Hub y Azure.
 
 ### <a name="improvements"></a>Mejoras
 
@@ -84,6 +91,8 @@ Para obtener más información sobre los tipos de compilación de actualización
 - Cambios en el proceso de inicio y apagado en las instancias de rol de la infraestructura y sus dependencias en nodos de unidad de escalado. Con ello se aumenta la confiabilidad del inicio y apagado de Azure Stack Hub.
 - El conjunto **AzSScenarios** de la herramienta de validación **Test-AzureStack** se ha actualizado para que los proveedores de servicios en la nube puedan ejecutar este conjunto correctamente con la autenticación multifactor aplicada en todas las cuentas de cliente.
 - Mejora de la confiabilidad de las alertas mediante la adición de lógica de supresión para 29 alertas orientadas al cliente durante las operaciones del ciclo de vida.
+- Ahora puede ver un informe HTML de recopilación de registros detallado que proporciona detalles sobre los roles, la duración y el estado de la recopilación de registros. El propósito de este informe es ayudar a los usuarios a proporcionar un resumen de los registros recopilados. Después, los servicios de asistencia al cliente de Microsoft pueden evaluar rápidamente el informe para evaluar los datos de registro y ayudar a solucionar y mitigar los problemas del sistema.
+- La cobertura de detección de errores de infraestructura se ha ampliado con la adición de 7 nuevos monitores en distintos escenarios de usuario, como el uso de la CPU y el consumo de memoria, lo que ayuda a aumentar la confiabilidad de la detección de errores.
 
 ### <a name="changes"></a>Cambios
 
@@ -109,7 +118,7 @@ Para obtener información sobre las actualizaciones de seguridad de esta actuali
 
 ## <a name="hotfixes"></a>Revisiones
 
-Azure Stack Hub publica revisiones de forma periódica. A partir de la versión 2005, cuando se actualiza a una nueva versión principal (por ejemplo, 1.2002.x a 1.2005 x), se instalan automáticamente en ella las revisiones más recientes (si existen). A partir de ese momento, si se publica una revisión para una compilación, se debe instalar.
+Azure Stack Hub publica revisiones de forma periódica. A partir de la versión 2005, cuando se actualiza a una nueva versión principal (por ejemplo, 1.2005.x a 1.2008 x), se instalan automáticamente en ella las revisiones más recientes (si existen). A partir de ese momento, si se publica una revisión para una compilación, se debe instalar.
 
 > [!NOTE]
 > Las revisiones de Azure Stack Hub son acumulativas; solo tiene que instalar la revisión más reciente para obtener todas las correcciones incluidas en las revisiones anteriores de esa versión.
@@ -118,11 +127,14 @@ Para más información, consulte nuestra [directiva de servicio](azure-stack-ser
 
 Las revisiones de Azure Stack Hub solo son aplicables a los sistemas integrados de Azure Stack Hub; no intente instalar revisiones en el ASDK.
 
-### <a name="prerequisites-before-applying-the-2008-update"></a>Requisitos previos: Antes de aplicar la actualización 2008
+### <a name="hotfix-prerequisites-before-applying-the-2008-update"></a>Requisitos previos de la revisión: antes de aplicar la actualización de 2008
 
-Cuando se actualiza a una nueva versión principal (por ejemplo, de 1.2005.x a 1.2008.x), se instalan automáticamente las revisiones más recientes (si existen) en la nueva versión principal. A partir de ese momento, si se publica una revisión para una compilación, se debe instalar.
+La versión de 2008 de Azure Stack Hub debe aplicarse sobre la versión 2005 con las revisiones siguientes:
+- [Revisión 1.2005.21.84 de Azure Stack Hub](https://support.microsoft.com/help/4592779)
 
 ### <a name="after-successfully-applying-the-2008-update"></a>Después de aplicar correctamente la actualización 2008
+
+Cuando se actualiza a una nueva versión principal (por ejemplo, de 1.2005.x a 1.2008.x), se instalan automáticamente las revisiones más recientes (si existen) en la nueva versión principal. A partir de ese momento, si se publica una revisión para una compilación, se debe instalar.
 
 Después de la instalación de 2008, si se publica posteriormente alguna revisión de la versión 2008, se debe instalar:
 
@@ -226,7 +238,7 @@ A partir de la versión 2005, cuando se actualiza a una nueva versión principal
 
 Después de la instalación de 2005, si se publican posteriormente algunas revisiones de la versión 2005, se deben instalar:
 
-- [Revisión 1.2005.20.82 de Azure Stack Hub](https://support.microsoft.com/help/4592228)
+- [Revisión 1.2005.21.84 de Azure Stack Hub](https://support.microsoft.com/help/4592779)
 ::: moniker-end
 
 ::: moniker range="azs-2002"
@@ -284,7 +296,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 
 - Las siguientes API de administrador han quedado en desuso:
 
-  | Proveedor de recursos       | Resource              | Versión            |
+  | Proveedor de recursos       | Recurso              | Versión            |
   |-------------------------|-----------------------|--------------------|
   | Microsoft.Storage.Admin | granjas                 | 2015-12-01-preview |
   | Microsoft.Storage.Admin | farms/acquisitions    | 2015-12-01-preview |
@@ -293,7 +305,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 
 - Se han sustituido las siguientes API de administrador por una versión más reciente (2018-09-01):
 
-  | Proveedor de recursos      | Resource              | Versión    |
+  | Proveedor de recursos      | Recurso              | Versión    |
   |------------------------|-----------------------|------------|
   | Microsoft.Backup.Admin | backupLocation         | 2016-05-01 |
   | Microsoft.Backup.Admin | backups                | 2016-05-01 |
@@ -355,7 +367,7 @@ La versión 2002 de Azure Stack Hub debe aplicarse en la versión 1910 con las
 Después de instalar esta actualización, instale todas las revisiones aplicables.
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Revisión 1.2002.61.163 de Azure Stack Hub](https://support.microsoft.com/help/4592241)
+- [Revisión 1.2002.62.165 de Azure Stack Hub](https://support.microsoft.com/help/4594758)
 ::: moniker-end
 
 <!------------------------------------------------------------>

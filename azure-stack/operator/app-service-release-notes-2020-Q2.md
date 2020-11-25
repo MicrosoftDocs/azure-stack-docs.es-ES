@@ -1,19 +1,19 @@
 ---
-title: Notas de la versión de App Service en Azure Stack Hub 2002 Q2
-description: Conozca el contenido de la versión 2002 Q2 de App Service en Azure Stack Hub, los problemas conocidos y la ubicación dónde debe descargarse.
+title: Notas de la versión de App Service en Azure Stack Hub 2020 Q2
+description: Conozca el contenido de la versión 2020 Q2 de App Service en Azure Stack Hub, los problemas conocidos y la ubicación de descarga de la actualización.
 author: apwestgarth
 manager: stefsch
 ms.topic: article
-ms.date: 05/05/2020
+ms.date: 11/17/2020
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 04/30/2020
-ms.openlocfilehash: c5e6ac0a2a500cf43cf94cbc40b2a95c58784d28
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: 6534a4539fc4e0fd699b21e84490f1d25be1dfe1
+ms.sourcegitcommit: 2562b86f47db20e2652d4636227afb9cfd0e03ae
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94544724"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94785862"
 ---
 # <a name="app-service-on-azure-stack-hub-2020-q2-release-notes"></a>Notas de la versión de App Service en Azure Stack Hub 2020 Q2
 
@@ -45,7 +45,7 @@ Antes de comenzar la actualización de Azure App Service en Azure Stack a la ver
   > [!Important]
   > Los operadores de la nube son responsables del mantenimiento y funcionamiento del servidor de archivos y el servidor de SQL Server.  El proveedor de recursos no administra estos recursos.  El operador de la nube es responsable de realizar copias de seguridad de las bases de datos y los recursos compartidos de archivos del contenido del inquilino de App Service.
 
-- Distribuya la **extensión de script personalizado** de la versión  **1.9.3** desde Marketplace.
+- Distribuya la **extensión de script personalizado** de la versión **1.9.3** desde Marketplace.
 
 
 
@@ -59,7 +59,7 @@ La actualización Q2 de Azure App Service en Azure Stack incluye las siguientes
 
 - Actualizaciones en el servicio principal para mejorar la confiabilidad y los mensajes de error, lo cual permite un diagnóstico de problemas comunes más sencillo.
 
-- **Actualizaciones de las herramientas y plataformas de aplicaciones siguientes** :
+- **Actualizaciones de las herramientas y plataformas de aplicaciones siguientes**:
   - ASP.NET Framework 4.7.2
   - ASP.NET Core 3.1.3
   - Módulo ASP.NET Core v2 13.1.19331.0
@@ -76,13 +76,13 @@ La actualización Q2 de Azure App Service en Azure Stack incluye las siguientes
     - 6.12.0
     - 6.13.4
   
-- **Actualizaciones al sistema operativo subyacente de todos los roles** :
+- **Actualizaciones al sistema operativo subyacente de todos los roles**:
   - [Actualización acumulativa 2020-04 para Windows Server 2016 en sistemas basados en x64 (KB4550929)](https://support.microsoft.com/help/4550929)
   - [Actualización 2020-04 de la pila de servicio para Windows Server 2016 en sistemas basados en x64 (KB4550994)](https://support.microsoft.com/help/4550994)
 
 - **Las actualizaciones acumulativas de Windows Server ahora se aplican a los roles de Controlador como parte de la implementación y la actualización**
 
-- **Se han actualizado las SKU de las máquinas virtuales y conjuntos de escalado predeterminados de las nuevas implementaciones** : Para mantener la coherencia con nuestro servicio en la nube pública, las nuevas implementaciones de Azure App Service en Azure Stack Hub usarán las siguientes SKU para las máquinas y conjuntos de escalado subyacentes empleados para operar el proveedor de recursos.
+- **Se han actualizado las SKU de las máquinas virtuales y conjuntos de escalado predeterminados de las nuevas implementaciones**: Para mantener la coherencia con nuestro servicio en la nube pública, las nuevas implementaciones de Azure App Service en Azure Stack Hub usarán las siguientes SKU para las máquinas y conjuntos de escalado subyacentes empleados para operar el proveedor de recursos.
   
   | Role | SKU mínima |
   | --- | --- |
@@ -223,6 +223,17 @@ Cuando se crea una nueva aplicación, los inquilinos pueden crear planes de App 
 - Los dominios personalizados no se admiten en entornos sin conexión.
 
 App Service realiza la comprobación de la propiedad del dominio con los puntos de conexión DNS públicos. Por este motivo, los dominios personalizados no se admiten en escenarios desconectados.
+
+- En algunos casos, los trabajos no pueden completar las comprobaciones de mantenimiento (espacio en disco insuficiente).
+
+En algunos casos, en que se asigna un número elevado de sitios a un trabajo o un sitio controla un gran número de solicitudes, el trabajo generará una gran cantidad de archivos de registro en tiempo de ejecución en C:\DWAS\LogFiles.  Esto se debe a un error en la lógica de limpieza de estos archivos de registro.  
+
+Para mitigar este problema de forma remota al trabajo individual y borrar el contenido de la carpeta.
+
+Este problema se ha corregido en [App Service en Azure Stack Hub 2020 Q3](app-service-release-notes-2020-Q3.md). Se recomienda a los clientes que actualicen a la versión 2020 Q3 lo antes posible.
+
+> [!IMPORTANT]
+> Para actualizar a Azure App Service en Azure Stack Hub 2020 T3, **debe** actualizar a Azure Stack Hub 2008.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
