@@ -3,17 +3,17 @@ title: Creación de una máquina virtual Windows Server con PowerShell en Azure
 description: Cree una máquina virtual con Windows Server mediante PowerShell en Azure Stack Hub.
 author: mattbriggs
 ms.topic: quickstart
-ms.date: 08/24/2020
+ms.date: 11/22/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
-ms.lastreviewed: 11/11/2019
+ms.lastreviewed: 11/22/2020
 ms.custom: conteperfq4
-ms.openlocfilehash: 2691e5aaf222f782f1b70735e8d4992d4e7d29b5
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: c83c65102d77314a0b2c486dd20eedf5fdd421d4
+ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94546725"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95518082"
 ---
 # <a name="quickstart-create-a-windows-server-vm-by-using-powershell-in-azure-stack-hub"></a>Inicio rápido: Creación de una máquina virtual con Windows Server mediante PowerShell en Azure Stack Hub
 
@@ -41,6 +41,8 @@ Un grupo de recursos es un contenedor lógico en el que se implementan y se admi
 > [!NOTE]
 > Se asignan valores para todas las variables en los ejemplos de código. Sin embargo, puede asignar nuevos valores si lo desea.
 
+### <a name="az-modules"></a>[Modules de Az](#tab/az1)
+
 ```powershell
 # Create variables to store the location and resource group names.
 $location = "local"
@@ -50,10 +52,26 @@ New-AzResourceGroup `
   -Name $ResourceGroupName `
   -Location $location
 ```
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm1)
+
+```powershell
+# Create variables to store the location and resource group names.
+$location = "local"
+$ResourceGroupName = "myResourceGroup"
+
+New-AzureRMResourceGroup `
+  -Name $ResourceGroupName `
+  -Location $location
+```
+---
+
+
 
 ## <a name="create-storage-resources"></a>Creación de recursos de almacenamiento
 
 Cree una cuenta de almacenamiento para almacenar la salida de los diagnósticos de arranque.
+
+### <a name="az-modules"></a>[Modules de Az](#tab/az2)
 
 ```powershell
 # Create variables to store the storage account name and the storage account SKU information
@@ -72,10 +90,34 @@ Set-AzCurrentStorageAccount `
   -ResourceGroupName $resourceGroupName
 
 ```
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm2)
+
+```powershell
+# Create variables to store the storage account name and the storage account SKU information
+$StorageAccountName = "mystorageaccount"
+$SkuName = "Standard_LRS"
+
+# Create a new storage account
+$StorageAccount = New-AzureRMStorageAccount `
+  -Location $location `
+  -ResourceGroupName $ResourceGroupName `
+  -Type $SkuName `
+  -Name $StorageAccountName
+
+Set-AzureRMCurrentStorageAccount `
+  -StorageAccountName $storageAccountName `
+  -ResourceGroupName $resourceGroupName
+
+```
+---
+
+
 
 ## <a name="create-networking-resources"></a>Creación de los recursos de red principales
 
 Cree una red virtual, una subred, una dirección IP pública. Estos recursos se utilizan para proporcionar conectividad de red a la máquina virtual.
+
+### <a name="az-modules"></a>[Modules de Az](#tab/az3)
 
 ```powershell
 # Create a subnet configuration
@@ -99,10 +141,39 @@ $pip = New-AzPublicIpAddress `
   -IdleTimeoutInMinutes 4 `
   -Name "mypublicdns$(Get-Random)"
 ```
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm3)
+
+```powershell
+# Create a subnet configuration
+$subnetConfig = New-AzureRMVirtualNetworkSubnetConfig `
+  -Name mySubnet `
+  -AddressPrefix 192.168.1.0/24
+
+# Create a virtual network
+$vnet = New-AzureRMVirtualNetwork `
+  -ResourceGroupName $ResourceGroupName `
+  -Location $location `
+  -Name MyVnet `
+  -AddressPrefix 192.168.0.0/16 `
+  -Subnet $subnetConfig
+
+# Create a public IP address and specify a DNS name
+$pip = New-AzureRMPublicIpAddress `
+  -ResourceGroupName $ResourceGroupName `
+  -Location $location `
+  -AllocationMethod Static `
+  -IdleTimeoutInMinutes 4 `
+  -Name "mypublicdns$(Get-Random)"
+```
+---
+
+
 
 ### <a name="create-a-network-security-group-and-a-network-security-group-rule"></a>Creación de un grupo de seguridad de red y una regla de grupo de seguridad de red
 
 El grupo de seguridad de red protege la máquina virtual con reglas de entrada y de salida. Se creará una regla de entrada para el puerto 3389 para permitir las conexiones entrantes de Escritorio remoto y una regla de entrada para el puerto 80 que permita el tráfico web entrante.
+
+### <a name="az-modules"></a>[Modules de Az](#tab/az4)
 
 ```powershell
 # Create an inbound network security group rule for port 3389
@@ -136,10 +207,49 @@ $nsg = New-AzNetworkSecurityGroup `
   -Name myNetworkSecurityGroup `
   -SecurityRules $nsgRuleRDP,$nsgRuleWeb
 ```
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm4)
+
+```powershell
+# Create an inbound network security group rule for port 3389
+$nsgRuleRDP = New-AzureRMNetworkSecurityRuleConfig `
+  -Name myNetworkSecurityGroupRuleRDP `
+  -Protocol Tcp `
+  -Direction Inbound `
+  -Priority 1000 `
+  -SourceAddressPrefix * `
+  -SourcePortRange * `
+  -DestinationAddressPrefix * `
+  -DestinationPortRange 3389 `
+  -Access Allow
+
+# Create an inbound network security group rule for port 80
+$nsgRuleWeb = New-AzureRMNetworkSecurityRuleConfig `
+  -Name myNetworkSecurityGroupRuleWWW `
+  -Protocol Tcp `
+  -Direction Inbound `
+  -Priority 1001 `
+  -SourceAddressPrefix * `
+  -SourcePortRange * `
+  -DestinationAddressPrefix * `
+  -DestinationPortRange 80 `
+  -Access Allow
+
+# Create a network security group
+$nsg = New-AzureRMNetworkSecurityGroup `
+  -ResourceGroupName $ResourceGroupName `
+  -Location $location `
+  -Name myNetworkSecurityGroup `
+  -SecurityRules $nsgRuleRDP,$nsgRuleWeb
+```
+---
+
+
 
 ### <a name="create-a-network-card-for-the-vm"></a>Creación de una tarjeta de red para la máquina virtual
 
 La tarjeta de red conecta la máquina virtual a una subred, un grupo de seguridad de red y una dirección IP pública.
+
+### <a name="az-modules"></a>[Modules de Az](#tab/az5)
 
 ```powershell
 # Create a virtual network card and associate it with public IP address and NSG
@@ -151,10 +261,27 @@ $nic = New-AzNetworkInterface `
   -PublicIpAddressId $pip.Id `
   -NetworkSecurityGroupId $nsg.Id
 ```
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm5)
+
+```powershell
+# Create a virtual network card and associate it with public IP address and NSG
+$nic = New-AzureRMNetworkInterface `
+  -Name myNic `
+  -ResourceGroupName $ResourceGroupName `
+  -Location $location `
+  -SubnetId $vnet.Subnets[0].Id `
+  -PublicIpAddressId $pip.Id `
+  -NetworkSecurityGroupId $nsg.Id
+```
+---
+
+
 
 ## <a name="create-a-vm"></a>Crear una VM
 
 Creación de una configuración de máquina virtual Esta configuración incluye los valores usados al implementar la máquina virtual. Por ejemplo: credenciales, tamaño e imagen de la máquina virtual.
+
+### <a name="az-modules"></a>[Modules de Az](#tab/az6)
 
 ```powershell
 # Define a credential object to store the username and password for the VM
@@ -197,17 +324,76 @@ New-AzVM `
   -Location $location `
   -VM $VirtualMachine
 ```
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm6)
+
+```powershell
+# Define a credential object to store the username and password for the VM
+$UserName='demouser'
+$Password='Password@123'| ConvertTo-SecureString -Force -AsPlainText
+$Credential=New-Object PSCredential($UserName,$Password)
+
+# Create the VM configuration object
+$VmName = "VirtualMachinelatest"
+$VmSize = "Standard_A1"
+$VirtualMachine = New-AzureRMVMConfig `
+  -VMName $VmName `
+  -VMSize $VmSize
+
+$VirtualMachine = Set-AzureRMVMOperatingSystem `
+  -VM $VirtualMachine `
+  -Windows `
+  -ComputerName "MainComputer" `
+  -Credential $Credential -ProvisionVMAgent
+
+$VirtualMachine = Set-AzureRMVMSourceImage `
+  -VM $VirtualMachine `
+  -PublisherName "MicrosoftWindowsServer" `
+  -Offer "WindowsServer" `
+  -Skus "2016-Datacenter" `
+  -Version "latest"
+
+# Sets the operating system disk properties on a VM.
+$VirtualMachine = Set-AzureRMVMOSDisk `
+  -VM $VirtualMachine `
+  -CreateOption FromImage | `
+  Set-AzureRMVMBootDiagnostics -ResourceGroupName $ResourceGroupName `
+  -StorageAccountName $StorageAccountName -Enable |`
+  Add-AzureRMVMNetworkInterface -Id $nic.Id
+
+
+# Create the VM.
+New-AzureRMVM `
+  -ResourceGroupName $ResourceGroupName `
+  -Location $location `
+  -VM $VirtualMachine
+```
+---
+
+
 
 ## <a name="connect-to-the-vm"></a>Conexión a la máquina virtual
 
 Para conectar de forma remota con la máquina virtual que creó en el paso anterior, necesita su dirección IP pública. Ejecute el comando siguiente para obtenerla:
 
+### <a name="az-modules"></a>[Modules de Az](#tab/az7)
+
+
 ```powershell
 Get-AzPublicIpAddress `
   -ResourceGroupName $ResourceGroupName | Select IpAddress
 ```
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm7)
+
+
+```powershell
+Get-AzureRMPublicIpAddress `
+  -ResourceGroupName $ResourceGroupName | Select IpAddress
+```
+---
+
 
 Utilice el comando siguiente para crear una sesión del Escritorio remoto con la máquina virtual. Reemplace la dirección IP por el valor de *publicIPAddress* de la máquina virtual. Cuando se le pida, especifique el nombre de usuario y la contraseña que proporcionó cuando creó la máquina virtual.
+
 
 ```powershell
 mstsc /v <publicIpAddress>
@@ -216,6 +402,7 @@ mstsc /v <publicIpAddress>
 ## <a name="install-iis-via-powershell"></a>Instalación de IIS mediante PowerShell
 
 Ahora que ha iniciado sesión en la máquina virtual de Azure, puede usar una sola línea de PowerShell para instalar IIS y habilitar la regla de firewall local para permitir el tráfico web. Abra una ventana de PowerShell y ejecute el siguiente comando:
+
 
 ```powershell
 Install-WindowsFeature -name Web-Server -IncludeManagementTools
@@ -231,10 +418,20 @@ Con IIS instalado y el puerto 80 abierto en la máquina virtual, puede usar cual
 
 Cuando ya no sea necesario, use el siguiente comando para quitar el grupo de recursos que contiene la máquina virtual y sus recursos relacionados:
 
+### <a name="az-modules"></a>[Modules de Az](#tab/az8)
+
 ```powershell
 Remove-AzResourceGroup `
   -Name $ResourceGroupName
 ```
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm8)
+ ```powershell
+Remove-AzureRMResourceGroup `
+  -Name $ResourceGroupName
+```
+---
+
+
 
 ## <a name="next-steps"></a>Pasos siguientes
 

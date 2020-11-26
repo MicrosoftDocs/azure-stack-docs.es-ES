@@ -3,16 +3,16 @@ title: Acciones de los nodos de la unidad de escalado en Azure Stack Hub
 description: Obtenga información sobre las acciones de los nodos de la unidad de escalado, incluidas las de conectar, desconectar, deshabilitar y reanudar, así como visualizar el estado de los nodos en los sistemas integrados de Azure Stack Hub.
 author: IngridAtMicrosoft
 ms.topic: how-to
-ms.date: 04/30/2020
+ms.date: 11/19/2020
 ms.author: inhenkel
 ms.reviewer: thoroet
-ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: ddfc8ad0ab6eccd10488f70873c7cefc0cf6668e
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.lastreviewed: 11/19/2020
+ms.openlocfilehash: ecca245124ce30597a535d8c2ca014821d471d67
+ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94545200"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95517691"
 ---
 # <a name="scale-unit-node-actions-in-azure-stack-hub"></a>Acciones de los nodos de la unidad de escalado en Azure Stack Hub
 
@@ -27,10 +27,10 @@ En el portal de administrador, puede ver el estado de una unidad de escalado y s
 
 Para ver el estado de una unidad de escalado:
 
-1. En el icono **Administración de regiones** , seleccione la región.
+1. En el icono **Administración de regiones**, seleccione la región.
 2. A la izquierda, bajo **Infrastructure resources** (Recursos de infraestructura), seleccione **Scale units** (Unidades de escalado).
 3. En los resultados, seleccione la unidad de escalado.
-4. En el lado izquierdo, bajo **General** , seleccione **Nodos**.
+4. En el lado izquierdo, bajo **General**, seleccione **Nodos**.
 
    Vea la siguiente información:
 
@@ -62,12 +62,16 @@ Esto puede ocurrir si la memoria caché del rol Proveedor de recursos de Service
 
 Antes de aplicar los pasos siguientes, asegúrese de que no haya ninguna operación en curso. Actualice el punto de conexión para que coincida con su entorno.
 
+
+
+### <a name="az-modules"></a>[Modules de Az](#tab/az1)
+
 1. Abra PowerShell y agregue el entorno de Azure Stack Hub. Esto requiere que se instale [PowerShell de Azure Stack Hub](./powershell-install-az-module.md) en el equipo.
 
-   ```powershell
-   Add-AzEnvironment -Name AzureStack -ARMEndpoint https://adminmanagement.local.azurestack.external
-   Add-AzAccount -Environment AzureStack
-   ```
+    ```powershell
+    Add-AzEnvironment -Name AzureStack -ARMEndpoint https://adminmanagement.local.azurestack.external
+    Add-AzAccount -Environment AzureStack
+    ```
 
 2. Ejecute el siguiente comando para reiniciar el rol de Proveedor de recursos de Service Fabric.
 
@@ -82,6 +86,32 @@ Antes de aplicar los pasos siguientes, asegúrese de que no haya ninguna operaci
    ```
 
 4. Si el estado operativo del nodo todavía se muestra como **Agregando** abra un incidente de soporte técnico.
+
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm1)
+
+1. Abra PowerShell y agregue el entorno de Azure Stack Hub. Esto requiere que se instale [PowerShell de Azure Stack Hub](./powershell-install-az-module.md) en el equipo.
+
+    ```powershell
+    Add-AzureRMEnvironment -Name AzureStack -ARMEndpoint https://adminmanagement.local.azurestack.external
+    Add-AzureRMAccount -Environment AzureStack
+    ```
+
+2. Ejecute el siguiente comando para reiniciar el rol de Proveedor de recursos de Service Fabric.
+
+   ```powershell
+   Restart-AzsInfrastructureRole -Name FabricResourceProvider
+   ```
+
+3. Valide el estado operativo del nodo afectado de la unidad de escalado que ha cambiado a **En ejecución**. Puede usar el portal de administración o el siguiente comando de PowerShell:
+
+   ```powershell
+   Get-AzsScaleUnitNode |ft name,scaleunitnodestatus,powerstate
+   ```
+
+4. Si el estado operativo del nodo todavía se muestra como **Agregando** abra un incidente de soporte técnico.
+
+---
+
 
 
 ## <a name="scale-unit-node-actions"></a>Acciones de nodo de unidad de escalado
@@ -205,5 +235,5 @@ Para ejecutar la acción de apagado, abra un símbolo de sistema de PowerShell c
 ## <a name="next-steps"></a>Pasos siguientes
 
 - [Instalación de PowerShell de Azure Stack](./powershell-install-az-module.md)
-- [Obtenga información sobre el módulo del operador de Service Fabric de Azure Stack Hub](/powershell/module/azs.fabric.admin/?view=azurestackps-1.6.0)
+- [Obtenga información sobre el módulo del operador de Service Fabric de Azure Stack Hub](/powershell/module/azs.fabric.admin/?view=azurestackps-1.6.0&preserve-view=true)
 - [Supervisión de las operaciones para agregar nodo](./azure-stack-add-scale-node.md#monitor-add-node-operations)

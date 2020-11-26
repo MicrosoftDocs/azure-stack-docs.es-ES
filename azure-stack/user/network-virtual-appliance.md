@@ -3,16 +3,16 @@ title: Solución de problemas de aplicaciones virtuales de red en Azure Stack Hu
 description: Solucione problemas de conectividad de máquina virtual o de VPN al utilizar una aplicación virtual de red (NVA) en Microsoft Azure Stack Hub.
 author: sethmanheim
 ms.author: sethm
-ms.date: 09/08/2020
+ms.date: 11/22/2020
 ms.topic: article
 ms.reviewer: sranthar
-ms.lastreviewed: 05/12/2020
-ms.openlocfilehash: 0facc0cc06ad3ff672531f1eeb7e31eee2f56ee0
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.lastreviewed: 11/22/2020
+ms.openlocfilehash: 271587baa3890a7dbb02d7ac935ceb51e2e405b7
+ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94546895"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95517155"
 ---
 # <a name="troubleshoot-network-virtual-appliance-problems"></a>Solución de problemas de aplicaciones virtuales de red
 
@@ -55,13 +55,13 @@ Cada aplicación virtual de red tiene requisitos básicos de configuración para
 
 ### <a name="check-whether-ip-forwarding-is-enabled-on-the-nva"></a>Comprobación de si está habilitado el reenvío IP en la aplicación virtual de red
 
-#### <a name="use-the-azure-stack-hub-portal"></a>Uso del portal de Azure Stack Hub
+### <a name="portal"></a>[Portal](#tab/portal)
 
 1. Busque el recurso de la aplicación virtual de red en el portal de Azure Stack Hub, seleccione las **redes** y, después, seleccione la interfaz de red.
-2. En la página **Interfaz de red** , seleccione **Configuraciones de IP**.
+2. En la página **Interfaz de red**, seleccione **Configuraciones de IP**.
 3. Asegúrese de que está habilitado el reenvío IP.
 
-#### <a name="use-powershell"></a>Uso de PowerShell
+### <a name="powershell-az"></a>[PowerShell Az](#tab/az)
 
 1. Ejecute el siguiente comando: Reemplace los valores de los corchetes angulares por su información.
 
@@ -81,6 +81,29 @@ Cada aplicación virtual de red tiene requisitos básicos de configuración para
    EnableIPForwarding   : True
    NetworkSecurityGroup : null
    ```
+
+### <a name="powershell-azurerm"></a>[PowerShell AzureRM](#tab/azurerm)
+
+1. Ejecute el siguiente comando: Reemplace los valores de los corchetes angulares por su información.
+
+   ```powershell
+   Get-AzureRMNetworkInterface -ResourceGroupName <ResourceGroupName> -Name <NIC name>
+   ```
+
+2. Compruebe la propiedad **EnableIPForwarding**.
+
+3. Si el reenvío IP no está habilitado, ejecute los siguientes comandos para habilitarlo:
+
+   ```powershell
+   $nic2 = Get-AzureRMNetworkInterface -ResourceGroupName <ResourceGroupName> -Name <NIC name>
+   $nic2.EnableIPForwarding = 1
+   Set-AzureRMNetworkInterface -NetworkInterface $nic2
+   Execute: $nic2 #and check for an expected output:
+   EnableIPForwarding   : True
+   NetworkSecurityGroup : null
+   ```
+
+---
 
 ### <a name="check-whether-traffic-can-be-routed-to-the-nva"></a>Comprobación de si se puede enrutar el tráfico a la aplicación virtual de red
 

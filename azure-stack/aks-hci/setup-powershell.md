@@ -6,10 +6,10 @@ ms.topic: quickstart
 ms.date: 09/23/2020
 ms.author: jeguan
 ms.openlocfilehash: 089488e246bdb7c12bbd0808ef2e92a4c83b0fce
-ms.sourcegitcommit: be445f183d003106192f039990d1fb8ee151c8d7
+ms.sourcegitcommit: b50dd116d6d1f89d42bd35ad0f85bb25c5192921
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/20/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "92253967"
 ---
 # <a name="quickstart-set-up-an-azure-kubernetes-service-host-on-azure-stack-hci-using-powershell"></a>Inicio rápido: Configuración de un host de Azure Kubernetes Service en Azure Stack HCI mediante PowerShell
@@ -94,11 +94,11 @@ Tipo de implementación. Valores aceptados: SingleNode y MultiNode. El valor pre
 
 `-wssdImageDir`
 
-Ruta de acceso al directorio donde Azure Kubernetes Service en Azure Stack HCI almacenará sus imágenes de VHD. El valor predeterminado es `%systemdrive%\wssdimagestore` para las implementaciones de un solo nodo. *En cuanto a las implementaciones de varios nodos, se debe especificar este parámetro* . La ruta de acceso debe apuntar a una ruta de acceso de almacenamiento compartida como  `C:\ClusterStorage\Volume2\ImageStore` o a un recurso compartido de SMB como  `\\FileShare\ImageStore`.
+Ruta de acceso al directorio donde Azure Kubernetes Service en Azure Stack HCI almacenará sus imágenes de VHD. El valor predeterminado es `%systemdrive%\wssdimagestore` para las implementaciones de un solo nodo. *En cuanto a las implementaciones de varios nodos, se debe especificar este parámetro*. La ruta de acceso debe apuntar a una ruta de acceso de almacenamiento compartida como  `C:\ClusterStorage\Volume2\ImageStore` o a un recurso compartido de SMB como  `\\FileShare\ImageStore`.
 
 `-cloudConfigLocation`
 
-Ubicación donde el agente de nube almacenará su configuración. El valor predeterminado es `%systemdrive%\wssdimagestore` para las implementaciones de un solo nodo. La ubicación puede ser la misma que la ruta de acceso del valor  `-wssdImageDir` anterior. En cuanto a las *implementaciones de varios nodos, se debe especificar este parámetro* .
+Ubicación donde el agente de nube almacenará su configuración. El valor predeterminado es `%systemdrive%\wssdimagestore` para las implementaciones de un solo nodo. La ubicación puede ser la misma que la ruta de acceso del valor  `-wssdImageDir` anterior. En cuanto a las *implementaciones de varios nodos, se debe especificar este parámetro*.
 
 `-nodeConfigLocation`
 

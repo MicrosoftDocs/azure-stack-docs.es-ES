@@ -3,16 +3,16 @@ title: Implementación de una máquina virtual de Azure Stack Hub mediante una c
 description: Aprenda a implementar una máquina virtual mediante una contraseña almacenada en un almacén de claves de Azure Stack Hub.
 author: mattbriggs
 ms.topic: conceptual
-ms.date: 5/27/2020
+ms.date: 11/20/2020
 ms.author: mabrigg
 ms.reviewer: ppacent
-ms.lastreviewed: 01/14/2020
-ms.openlocfilehash: 1232a3ea585cbab53daf905ad0f4707f6df156c8
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.lastreviewed: 11/20/2020
+ms.openlocfilehash: 963a4d7bc6cd61ae724e4f087861e19d918fea7d
+ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94546453"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95518184"
 ---
 # <a name="deploy-an-azure-stack-hub-vm-using-a-password-stored-in-key-vault"></a>Implementación de una máquina virtual de Azure Stack Hub mediante una contraseña almacenada en Key Vault
 
@@ -44,6 +44,8 @@ Los pasos siguientes describen el proceso necesario para crear una máquina virt
 
 El script siguiente crea un almacén de claves y almacena en él una contraseña como un secreto. Use el parámetro `-EnabledForDeployment` al crear el almacén de claves. Este parámetro se asegura de que se puede hacer referencia al almacén de claves desde las plantillas de Azure Resource Manager.
 
+### <a name="az-modules"></a>[Modules de Az](#tab/az1)
+
 ```powershell
 
 $vaultName = "contosovault"
@@ -69,6 +71,35 @@ Set-AzureKeyVaultSecret `
   -SecretValue $secretValue
 
 ```
+
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm1)
+
+```powershell
+
+$vaultName = "contosovault"
+$resourceGroup = "contosovaultrg"
+$location = "local"
+$secretName = "MySecret"
+
+New-AzureRMResourceGroup `
+  -Name $resourceGroup `
+  -Location $location
+
+New-AzureRMKeyVault `
+  -VaultName $vaultName `
+  -ResourceGroupName $resourceGroup `
+  -Location $location
+  -EnabledForTemplateDeployment
+
+$secretValue = ConvertTo-SecureString -String '<Password for your virtual machine>' -AsPlainText -Force
+
+Set-AzureKeyVaultSecret `
+  -VaultName $vaultName `
+  -Name $secretName `
+  -SecretValue $secretValue
+
+```
+---
 
 Cuando se ejecuta el script anterior, la salida incluye el identificador URI (identificador uniforme de recursos) del secreto. Anote este URI. Tendrá que hacer referencia a él durante la [implementación de máquina virtual Windows con contraseña en la plantilla de almacén de claves](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/101-vm-windows-create-passwordfromkv). Descargue la carpeta [101-vm-secure-password](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/101-vm-windows-create-passwordfromkv) en el equipo de desarrollo. Esta carpeta contiene los archivos `azuredeploy.json` y `azuredeploy.parameters.json` que necesitará en los pasos siguientes.
 
@@ -109,6 +140,8 @@ Actualice el archivo `azuredeploy.parameters.json` con los valores de KeyVault U
 
 Ahora implemente la plantilla con el siguiente script de PowerShell:
 
+### <a name="az-modules"></a>[Modules de Az](#tab/az2)
+
 ```powershell  
 New-AzResourceGroupDeployment `
   -Name KVPwdDeployment `
@@ -116,6 +149,18 @@ New-AzResourceGroupDeployment `
   -TemplateFile "<Fully qualified path to the azuredeploy.json file>" `
   -TemplateParameterFile "<Fully qualified path to the azuredeploy.parameters.json file>"
 ```
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm2)
+
+```powershell  
+New-AzureRMResourceGroupDeployment `
+  -Name KVPwdDeployment `
+  -ResourceGroupName $resourceGroup `
+  -TemplateFile "<Fully qualified path to the azuredeploy.json file>" `
+  -TemplateParameterFile "<Fully qualified path to the azuredeploy.parameters.json file>"
+```
+
+---
+
 
 Cuando la plantilla se ha implementado correctamente, se producen en la siguiente salida:
 

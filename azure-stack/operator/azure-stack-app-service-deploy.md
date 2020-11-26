@@ -9,10 +9,10 @@ ms.reviewer: anwestg
 ms.lastreviewed: 10/28/2020
 zone_pivot_groups: state-connected-disconnected
 ms.openlocfilehash: 78457d49b35c49cefc458070dc8c1f41391eb9eb
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.sourcegitcommit: b50dd116d6d1f89d42bd35ad0f85bb25c5192921
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "94544584"
 ---
 # <a name="deploy-app-service-in-azure-stack-hub"></a>Implementación de App Service en Azure Stack Hub

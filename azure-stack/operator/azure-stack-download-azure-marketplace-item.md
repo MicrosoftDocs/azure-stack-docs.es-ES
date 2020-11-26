@@ -3,17 +3,17 @@ title: Descarga de elementos de Marketplace desde Azure y publicación en Azure 
 description: Aprenda a descargar elementos de Marketplace desde Azure y a publicarlos en Azure Stack Hub.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 10/16/2020
+ms.date: 11/18/2020
 ms.author: sethm
 ms.reviewer: avishwan
-ms.lastreviewed: 10/16/2020
+ms.lastreviewed: 11/18/2020
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: 41279ef90060d4b6dae156c96c03bd01e1006a94
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: 1e6ef20bd1c04e8fd08af73370f2ed001b0be500
+ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94543959"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95517929"
 ---
 # <a name="download-marketplace-items-to-azure-stack-hub"></a>Descarga de elementos de Marketplace en Azure Stack Hub
 
@@ -21,8 +21,8 @@ Los operadores en la nube pueden descargar elementos de Marketplace en Azure Sta
 
 Existen dos escenarios para descargar productos de Marketplace:
 
-- **Escenario sin conexión o con conexión parcial** : requiere que se acceda a Internet mediante la herramienta de redifusión de Marketplace para descargar los elementos de este. Después, los elementos descargados se transfieren a la instalación desconectada de Azure Stack Hub. Este escenario usa PowerShell.
-- **Escenario conectado** : requiere que el entorno de Azure Stack Hub esté conectado a Internet. El portal de administración de Azure Stack Hub se usa para buscar y descargar elementos.
+- **Escenario sin conexión o con conexión parcial**: requiere que se acceda a Internet mediante la herramienta de redifusión de Marketplace para descargar los elementos de este. Después, los elementos descargados se transfieren a la instalación desconectada de Azure Stack Hub. Este escenario usa PowerShell.
+- **Escenario conectado**: requiere que el entorno de Azure Stack Hub esté conectado a Internet. El portal de administración de Azure Stack Hub se usa para buscar y descargar elementos.
 
 Consulte [Elementos de Azure Marketplace disponibles para Azure Stack Hub](azure-stack-marketplace-azure-items.md) para encontrar una lista completa de los elementos de Marketplace que se pueden descargar. Consulte el artículo [Cambios en Marketplace de Azure Stack Hub](azure-stack-marketplace-changes.md) para ver una lista de adiciones, eliminaciones y actualizaciones recientes en Marketplace de Azure Stack Hub.
 
@@ -72,8 +72,8 @@ La herramienta de redifusión de Marketplace también se puede usar en un escena
 
 Este escenario tiene dos partes:
 
-- **Parte 1** : descarga de elementos de Marketplace. En el equipo con acceso a Internet, configure PowerShell, descargue la herramienta de redifusión y, después, descargue los elementos desde Azure Marketplace.
-- **Parte 2** : carga y publicación en Marketplace de Azure Stack Hub. Mueva los archivos que ha descargado a su entorno de Azure Stack Hub y, después, publíquelos en Marketplace de Azure Stack Hub.
+- **Parte 1**: descarga de elementos de Marketplace. En el equipo con acceso a Internet, configure PowerShell, descargue la herramienta de redifusión y, después, descargue los elementos desde Azure Marketplace.
+- **Parte 2**: carga y publicación en Marketplace de Azure Stack Hub. Mueva los archivos que ha descargado a su entorno de Azure Stack Hub y, después, publíquelos en Marketplace de Azure Stack Hub.
 
 ## <a name="prerequisites"></a>Prerrequisitos
 
@@ -106,6 +106,8 @@ Una vez registrado Azure Stack, puede ignorar el mensaje siguiente que aparece e
 > [!IMPORTANT]
 > Asegúrese de descargar la herramienta de redifusión de Marketplace cada vez que descargue elementos de Marketplace en un escenario desconectado. Se realizan cambios frecuentes en esta herramienta y se debe usar la versión más reciente en cada descarga.
 
+### <a name="az-modules"></a>[Modules de Az](#tab/az)
+
 1. En un equipo con conexión a Internet, abra una consola de PowerShell como administrador.
 
 2. Inicie sesión en la nube de Azure adecuada y en el inquilino de Azure AD con la cuenta de Azure que ha usado para registrar Azure Stack Hub. Para agregar la cuenta, en PowerShell ejecute `Add-AzureRmAccount`:
@@ -117,7 +119,7 @@ Una vez registrado Azure Stack, puede ignorar el mensaje siguiente que aparece e
    Se le solicita que escriba las credenciales de su cuenta de Azure y puede que tenga que utilizar la autenticación en dos fases en función de la configuración de la cuenta.
 
    > [!NOTE]
-   > Si la sesión expira, la contraseña ha cambiado o desea cambiar de cuenta, ejecute el siguiente cmdlet antes de iniciar sesión mediante `Add-AzureRmAccount`: `Remove-AzureRmAccount -Scope Process`.
+   > Si la sesión expira, la contraseña ha cambiado o desea cambiar de cuenta, ejecute el siguiente cmdlet antes de iniciar sesión mediante `Add-AzRmAccount`: `RemoveAzAccount -Scope Process`.
 
 3. Si tiene varias suscripciones, ejecute el siguiente comando para seleccionar la que ha usado para el registro:
 
@@ -155,7 +157,7 @@ Una vez registrado Azure Stack, puede ignorar el mensaje siguiente que aparece e
     $products | Export-AzsMarketplaceItem  -RepositoryDir "Destination folder path in quotes"
     ```
 
-7. El tiempo que tarda la descarga depende del tamaño del elemento. Una vez que se completa la descarga, el elemento está disponible en la carpeta que se especificó en el script. La descarga incluye un archivo VHD (para máquinas virtuales) o un archivo .zip (para extensiones de máquina virtual y proveedores de recursos). También puede incluir un paquete de galería en el formato *.azpkg* , que es un archivo .zip.
+7. El tiempo que tarda la descarga depende del tamaño del elemento. Una vez que se completa la descarga, el elemento está disponible en la carpeta que se especificó en el script. La descarga incluye un archivo VHD (para máquinas virtuales) o un archivo .zip (para extensiones de máquina virtual y proveedores de recursos). También puede incluir un paquete de galería en el formato *.azpkg*, que es un archivo .zip.
 
 8. Si se produce un error en la descarga, puede intentarlo de nuevo volviendo a ejecutar el siguiente cmdlet de PowerShell:
 
@@ -172,11 +174,83 @@ Una vez registrado Azure Stack, puede ignorar el mensaje siguiente que aparece e
     Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name Azs.Syndication.Admin -Path "Destination folder path in quotes" -Force
     ```
 
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm)
+
+1. En un equipo con conexión a Internet, abra una consola de PowerShell como administrador.
+
+2. Inicie sesión en la nube de Azure adecuada y en el inquilino de Azure AD con la cuenta de Azure que ha usado para registrar Azure Stack Hub. Para agregar la cuenta, en PowerShell ejecute `Add-AzureRMureRmAccount`:
+
+   ```powershell  
+   Login-AzureRMAccount -Environment AzureCloud -Tenant '<mydirectory>.onmicrosoft.com'
+   ```
+
+   Se le solicita que escriba las credenciales de su cuenta de Azure y puede que tenga que utilizar la autenticación en dos fases en función de la configuración de la cuenta.
+
+   > [!NOTE]
+   > Si la sesión expira, la contraseña ha cambiado o desea cambiar de cuenta, ejecute el siguiente cmdlet antes de iniciar sesión mediante `Add-AzureRMRmAccount`: `RemoveAzAccount -Scope Process`.
+
+3. Si tiene varias suscripciones, ejecute el siguiente comando para seleccionar la que ha usado para el registro:
+
+   ```powershell  
+   Get-AzureRMSubscription -SubscriptionID 'Your Azure Subscription GUID' | Select-AzureRMSubscription
+   ```
+
+4. Si aún no lo ha hecho en el paso de requisitos previos, descargue la versión más reciente de la herramienta de redifusión de Marketplace:
+
+   ```powershell
+   Install-Module -Name Azs.Syndication.Admin -AllowPrerelease -PassThru
+   ```
+
+5. Para seleccionar elementos de Marketplace como imágenes de máquinas virtuales, extensiones o plantillas de soluciones para descargar, ejecute el siguiente comando:
+
+   ```powershell
+   $products = Select-AzureRMsMarketplaceItem
+   ```
+
+   Esto hará que aparezca una tabla que muestra todos los registros de Azure Stack disponibles en la suscripción seleccionada. Elija el registro que coincida con el entorno de Azure Stack para el que está descargando los elementos de Marketplace y seleccione **Aceptar**.
+
+     ![Captura de pantalla que muestra una lista de todos los registros de Azure Stack disponibles en la suscripción seleccionada.](media/azure-stack-download-azure-marketplace-item/select-registration.png)
+
+   Ahora debería ver una segunda tabla en la que se enumeran todos los elementos de Marketplace que están disponibles para su descarga. Seleccione el elemento que desea descargar y tome nota de la **versión**. Puede mantener presionada la tecla **Ctrl** para seleccionar varias imágenes.
+     ![Captura de pantalla que muestra otra lista de todos los registros de Azure Stack disponibles en la suscripción seleccionada.](media/azure-stack-download-azure-marketplace-item/select-products.png)
+  
+   También puede filtrar la lista de imágenes mediante la opción **Agregar criterios**.
+   ![Selección de registros de Azure Stack](media/azure-stack-download-azure-marketplace-item/select-products-with-filter.png)
+
+   Cuando termine las selecciones, seleccione Aceptar.
+
+6. Los identificadores de los elementos de Marketplace que ha seleccionado para su descarga se guardan en la variable `$products`. Use el comando siguiente para empezar a descargar los elementos seleccionados. Reemplace la ruta de acceso de la carpeta de destino por una ubicación para almacenar los archivos que descargue desde Azure Marketplace:
+
+    ```powershell
+    $products | Export-AzsMarketplaceItem  -RepositoryDir "Destination folder path in quotes"
+    ```
+
+7. El tiempo que tarda la descarga depende del tamaño del elemento. Una vez que se completa la descarga, el elemento está disponible en la carpeta que se especificó en el script. La descarga incluye un archivo VHD (para máquinas virtuales) o un archivo .zip (para extensiones de máquina virtual y proveedores de recursos). También puede incluir un paquete de galería en el formato *.azpkg*, que es un archivo .zip.
+
+8. Si se produce un error en la descarga, puede intentarlo de nuevo volviendo a ejecutar el siguiente cmdlet de PowerShell:
+
+    ```powershell
+    $products | Export-AzsMarketplaceItem  -RepositoryDir "Destination folder path in quotes"
+    ```
+
+9. También debe exportar el módulo **Azs.Syndication.Admin** de forma local para que pueda copiarlo en la máquina desde la que va a importar los elementos de Marketplace hacia Azure Stack Hub.
+
+   > [!NOTE]
+   > La carpeta de destino para la exportación de este módulo debe ser diferente de la ubicación a la que ha exportado los elementos de Marketplace.
+
+    ```powershell
+    Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name Azs.Syndication.Admin -Path "Destination folder path in quotes" -Force
+    ```
+
+---
+
+
+
 ## <a name="import-the-download-and-publish-to-azure-stack-hub-marketplace-using-powershell"></a>Importación de la descarga y publicación en Marketplace de Azure Stack Hub con PowerShell
 
 1. Debe mover los archivos que [descargó anteriormente](#use-the-marketplace-syndication-tool-to-download-marketplace-items) de forma local a una máquina que tenga conexión al entorno de Azure Stack Hub. La herramienta de redifusión de Marketplace debe estar disponible también en su entorno de Azure Stack Hub, ya que necesita usarla para realizar la operación de importación.
 
-   En la siguiente imagen muestra un ejemplo de estructura de carpeta. **D:\downloadfolder** contiene todos los elementos de Marketplace descargados. Cada subcarpeta es un elemento de Marketplace (por ejemplo, **microsoft.custom-script-linux-arm-2.0.3** ) y tienen como nombre el identificador del producto. Dentro de cada subcarpeta se encuentra el contenido descargado del elemento de Marketplace.
+   En la siguiente imagen muestra un ejemplo de estructura de carpeta. **D:\downloadfolder** contiene todos los elementos de Marketplace descargados. Cada subcarpeta es un elemento de Marketplace (por ejemplo, **microsoft.custom-script-linux-arm-2.0.3**) y tienen como nombre el identificador del producto. Dentro de cada subcarpeta se encuentra el contenido descargado del elemento de Marketplace.
 
    ![Estructura de directorios de descarga de Marketplace](media/azure-stack-download-azure-marketplace-item/mp1.png)
 

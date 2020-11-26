@@ -8,10 +8,10 @@ ms.author: inhenkel
 ms.reviewer: ppacent
 ms.lastreviewed: 12/16/2019
 ms.openlocfilehash: ee0ef7119dfb2255cd97e343f8e7339ab715ed7d
-ms.sourcegitcommit: 0e3296fb27b9dabbc2569bf85656c4c7b1d58ba9
+ms.sourcegitcommit: b50dd116d6d1f89d42bd35ad0f85bb25c5192921
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "93049609"
 ---
 # <a name="azure-stack-hub-public-key-infrastructure-pki-certificate-requirements"></a>Requisitos de certificados de la infraestructura de clave pública (PKI) de Azure Stack Hub
@@ -63,7 +63,7 @@ En la tabla de esta sección se describen los certificados PKI públicos del pun
 
 Se requieren certificados con los nombres DNS apropiados para cada punto de conexión de la infraestructura pública de Azure Stack Hub. El nombre DNS de cada punto de conexión se expresa en el formato: *&lt;prefijo>.&lt;región>.&lt;fqdn>* .
 
-En la implementación, los valores de [region] y [externalfqdn] deben coincidir con los nombres de dominio externo y región que eligió para el sistema de Azure Stack Hub. Por ejemplo, si el nombre de la región es *Redmond* y el nombre de dominio externo fuese *contoso.com* , los nombres DNS tendrían el formato *&lt;prefijo>.redmond.contoso.com*. Los valores de *&lt;prefijo>* son designados de antemano por Microsoft para describir el punto de conexión protegido por el certificado. Además, los valores de *&lt;prefijo>* de los puntos de conexión de la infraestructura externa dependen del servicio de Azure Stack Hub que use el punto de conexión concreto.
+En la implementación, los valores de [region] y [externalfqdn] deben coincidir con los nombres de dominio externo y región que eligió para el sistema de Azure Stack Hub. Por ejemplo, si el nombre de la región es *Redmond* y el nombre de dominio externo fuese *contoso.com*, los nombres DNS tendrían el formato *&lt;prefijo>.redmond.contoso.com*. Los valores de *&lt;prefijo>* son designados de antemano por Microsoft para describir el punto de conexión protegido por el certificado. Además, los valores de *&lt;prefijo>* de los puntos de conexión de la infraestructura externa dependen del servicio de Azure Stack Hub que use el punto de conexión concreto.
 
 Para los entornos de producción, se recomienda que se generen certificados individuales para cada punto de conexión y que se copien en el directorio correspondiente. Para los entornos de desarrollo, los certificados se pueden proporcionar como un certificado comodín único que abarque todos los espacios de nombres en los campos de Sujeto y Nombre alternativo del sujeto (SAN) y que se copie en todos los directorios. Un certificado único que abarca todos los servicios y puntos de conexión es una postura insegura y, por tanto, solo para desarrollo. Recuerde que, en ambos casos, debe utilizar certificados comodín para puntos de conexión como **acs** y Key Vault donde sean necesarios.
 

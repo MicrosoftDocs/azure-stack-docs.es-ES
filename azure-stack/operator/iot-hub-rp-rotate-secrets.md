@@ -5,15 +5,15 @@ author: BryanLa
 ms.author: bryanla
 ms.service: azure-stack
 ms.topic: how-to
-ms.date: 10/20/2020
+ms.date: 11/15/2020
 ms.reviewer: bryanla
-ms.lastreviewed: 10/20/2020
-ms.openlocfilehash: f648aaf0b8a8d90ca8f4789cb6dd58bf5c9fb8c9
-ms.sourcegitcommit: 0e3296fb27b9dabbc2569bf85656c4c7b1d58ba9
+ms.lastreviewed: 11/15/2020
+ms.openlocfilehash: d693b73794b71ec32816f2e79370e2f836b00e7b
+ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93050399"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95517565"
 ---
 # <a name="how-to-rotate-secrets-for-iot-hub-on-azure-stack-hub"></a>Rotación de secretos para IoT Hub en Azure Stack Hub
 

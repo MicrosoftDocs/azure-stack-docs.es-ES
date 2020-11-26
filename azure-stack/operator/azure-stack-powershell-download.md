@@ -7,12 +7,12 @@ ms.date: 10/16/2020
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 10/16/2020
-ms.openlocfilehash: 023e04d807ff34f78bd4acbc68487e8893831ba4
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: 1feafa194922cfa0443aedce6eb1f6e051d633c6
+ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94545064"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95517657"
 ---
 # <a name="download-azure-stack-hub-tools-from-github"></a>Descarga de herramientas de Azure Stack Hub desde GitHub
 
@@ -71,10 +71,6 @@ cd AzureStack-Tools-master
 
 ```
 Para más información sobre el uso del módulo AzureRM de Azure Stack Hub, consulte [Instalación del módulo AzureRM de PowerShell para Azure Stack Hub](azure-stack-powershell-install.md).
-
-
-
----
 
 ---
 
