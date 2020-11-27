@@ -88,7 +88,7 @@
               href: azure-stack-validate-adfs.md
             - name: Validación de la integración de gráficos
               href: azure-stack-validate-graph.md
-        - name: Requisitos y procesos de PKI
+        - name: Certificados PKI externos
           items:
             - name: Requisitos de certificados PKI
               href: azure-stack-pki-certs.md
