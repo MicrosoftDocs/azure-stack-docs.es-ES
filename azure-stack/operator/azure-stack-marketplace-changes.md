@@ -3,16 +3,16 @@ title: Novedades de Marketplace de Azure Stack Hub
 description: Consulte las novedades de Marketplace de Azure Stack Hub, incluidos los elementos nuevos, en desuso y actualizados de Marketplace.
 author: sethmanheim
 ms.topic: article
-ms.date: 11/18/2020
+ms.date: 11/19/2020
 ms.author: sethm
 ms.reviewer: gara
 ms.lastreviewed: 05/28/2020
-ms.openlocfilehash: 5c6475a4bf3e330f982627d158f0e6f75f0477bc
-ms.sourcegitcommit: 40d3f3f0ac088d1590d1fb64ca05ac1dabf4e00c
+ms.openlocfilehash: e4b0be90d1e4815957dced211a7a0648458a6777
+ms.sourcegitcommit: 616e65051a94290eb6ff7aa63ee0b33d45fe7ac5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94875083"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94970221"
 ---
 # <a name="azure-stack-hub-marketplace-changes"></a>Cambios en Marketplace de Azure Stack Hub
 
@@ -166,6 +166,12 @@ El artículo [Elementos de Azure Marketplace disponibles para Azure Stack Hub](a
 
 ## <a name="updated-marketplace-items"></a>Elementos de Marketplace actualizados
 
+- 18/11/2020: SQL Server 2019 Standard en Windows Server 2019 en modalidad "Traiga su propia licencia": versión 15.0.20201015
+- 18/11/2020: SQL Server 2019 Standard en Windows Server 2019 en modalidad "Pago por uso": versión 15.0.20201015
+- 18/11/2020: Licencia de SQL Server gratis: SQL 2019 Developer en Windows Server 2019 en modalidad "Traiga su propia licencia": versión 15.0.20201015
+- 18/11/2020: Licencia de SQL Server gratis: SQL 2019 Developer en Windows Server 2019 en modalidad "Pago por uso": versión 15.0.20201015
+- 18/11/2020: SQL Server 2019 Enterprise en Windows Server 2019 en modalidad "Traiga su propia licencia": versión 15.0.20201015
+- 18/11/2020: SQL Server 2019 Enterprise en Windows Server 2019 en modalidad "Pago por uso": versión 15.0.20201015
 - 17/11/2020: Azure Monitor, Update, and Configuration Management: versión 1.13.27
 - 17/11/2020: Azure Monitor Dependency Agent: versión 9.10.6.11730
 - 17/11/2020: Azure Monitor Dependency Agent para VM Linux: versión 9.10.6.11730

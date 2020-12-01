@@ -3,16 +3,16 @@ title: Registro de inquilinos en Azure Stack Hub para el seguimiento de uso
 description: Aprenda a registrar inquilinos y cómo se realiza el seguimiento del uso de estos en Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 09/01/2020
+ms.date: 11/17/2020
 ms.author: sethm
 ms.reviewer: alfredop
-ms.lastreviewed: 10/14/2019
-ms.openlocfilehash: c98893cb686ebb9edb2c6e7257507da4a688c52f
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.lastreviewed: 11/17/2020
+ms.openlocfilehash: 990ac200fdf36e951dbee9d2fed96f4918a9a8bd
+ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94543806"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95517810"
 ---
 # <a name="register-tenants-for-usage-tracking-in-azure-stack-hub"></a>Registro de inquilinos en Azure Stack Hub para el seguimiento de uso
 
@@ -25,7 +25,7 @@ En este artículo se incluye información acerca de las operaciones de registro.
 
 Utilice la operación cuando desee agregar un nuevo inquilino a su registro. Se informa del uso de inquilinos en una suscripción de Azure conectada con el inquilino de Azure Active Directory (Azure AD).
 
-También puede usar la operación para cambiar la suscripción asociada a un inquilino. Llame a PUT o al cmdlet **New-AzResource** de PowerShell para sobrescribir la asignación anterior.
+También puede usar la operación para cambiar la suscripción asociada a un inquilino. Llame a PUT o al cmdlet **New-AzResource** de PowerShell para sobrescribir la asignación anterior. Si usa el módulo de AzureRM de PowerShell, use el cmdlet **New-AzureResource** de PowerShell.
 
 Puede asociar una sola suscripción de Azure a un inquilino. Si intenta agregar una segunda suscripción a un inquilino existente, la primera suscripción se sobrescribe.
 
@@ -47,7 +47,16 @@ Para más información sobre los perfiles de API y Azure Stack Hub, consulte [Ad
 > [!NOTE]  
 > Los inquilinos se deben registrar en cada implementación de Azure Stack Hub que utilicen. Si un inquilino usa más de una implementación de Azure Stack Hub, actualice los registros iniciales de cada implementación con la suscripción del inquilino.
 
+
 ### <a name="powershell"></a>PowerShell
+### <a name="az-modules"></a>[Modules de Az](#tab/az1)
+
+Use el cmdlet **New-AzResource** para agregar un inquilino. [Conéctese a Azure](/powershell/azure/get-started-azureps) y, luego, ejecute el siguiente comando desde el símbolo del sistema con privilegios elevados:
+
+```powershell  
+New-AzResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01
+```
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm1)
 
 Use el cmdlet **New-AzureRmResource** para agregar un inquilino. [Conéctese a Azure](/powershell/azure/get-started-azureps) y, luego, ejecute el siguiente comando desde el símbolo del sistema con privilegios elevados:
 
@@ -55,6 +64,7 @@ Use el cmdlet **New-AzureRmResource** para agregar un inquilino. [Conéctese a A
 New-AzResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01
 ```
 
+---
 ### <a name="api-call"></a>Llamada a la API
 
 **Operation**: PUT  
@@ -79,12 +89,23 @@ Obtenga una lista de todos los inquilinos que se han agregado a un registro.
 
 ### <a name="powershell"></a>PowerShell
 
+### <a name="az-modules"></a>[Modules de Az](#tab/az2)
+
 Use el cmdlet **Get-AzResource** para enumerar todos los inquilinos registrados. [Conéctese a Azure Stack Hub](azure-stack-powershell-configure-admin.md) y, después, desde un símbolo del sistema con privilegios elevados, ejecute el siguiente cmdlet:
 
 ```powershell
 Get-AzResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions" -ApiVersion 2017-06-01
 ```
 
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm2)
+
+Use el cmdlet **Get-AzureRMResource** para enumerar todos los inquilinos registrados. [Conéctese a Azure Stack Hub](azure-stack-powershell-configure-admin.md) y, después, desde un símbolo del sistema con privilegios elevados, ejecute el siguiente cmdlet:
+
+```powershell
+Get-AzureRMResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions" -ApiVersion 2017-06-01
+```
+
+---
 ### <a name="api-call"></a>Llamada a la API
 
 Puede obtener una lista de todas las asignaciones de inquilinos mediante la operación GET.
@@ -128,11 +149,23 @@ Puede quitar un inquilino que se haya agregado a un registro. Si ese inquilino t
 
 ### <a name="powershell"></a>PowerShell
 
+### <a name="az-modules"></a>[Modules de Az](#tab/az3)
+
 Use el cmdlet **Remove-AzResource** para quitar un inquilino. [Conéctese a Azure Stack Hub](azure-stack-powershell-configure-admin.md) y, después, desde un símbolo del sistema con privilegios elevados, ejecute el siguiente cmdlet:
 
 ```powershell
 Remove-AzResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01
 ```
+
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm3)
+
+Use el cmdlet **Remove-AzureRMResource** para quitar un inquilino. [Conéctese a Azure Stack Hub](azure-stack-powershell-configure-admin.md) y, después, desde un símbolo del sistema con privilegios elevados, ejecute el siguiente cmdlet:
+
+```powershell
+Remove-AzureRMResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01
+```
+
+---
 
 ### <a name="api-call"></a>Llamada a la API
 

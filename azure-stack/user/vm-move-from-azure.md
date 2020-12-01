@@ -7,12 +7,12 @@ ms.date: 9/8/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 9/8/2020
-ms.openlocfilehash: c8c68a64f7a05e03c70e138cb4d8c95da7417ec9
-ms.sourcegitcommit: 3e225b30a54159b6b8dbeb2f843a2e5a721b746e
+ms.openlocfilehash: cefc127efcdac2d1610803ef90b54c50e7280e97
+ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91519440"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95516943"
 ---
 # <a name="move-a-vm-from-azure-to-azure-stack-hub"></a>Traslado de una máquina virtual de Azure a Azure Stack Hub
 
@@ -33,7 +33,15 @@ Busque la sección que se adapte mejor a sus necesidades al preparar el disco du
 ::: moniker range="<=azs-1910"
 - Siga las instrucciones de [Descargar un VHD de Windows desde Azure](/azure/virtual-machines/windows/download-vhd) para generalizar y descargar correctamente el disco duro virtual antes de trasladarlo a Azure Stack Hub.
 - Al aprovisionar la máquina virtual en Azure, use PowerShell. Prepárela sin la marca `-ProvisionVMAgent`.
-- Elimine todas las extensiones de la máquina virtual mediante el cmdlet **Remove-AzureRmVMExtension** de la máquina virtual antes de generalizarla en Azure. Para saber qué extensiones de máquina virtual se instalan, vaya a `Windows (C:) > WindowsAzure > Logs > Plugins`.
+- Elimine todas las extensiones de VM mediante el cmdlet de la máquina virtual antes de generalizarla en Azure. Para saber qué extensiones de máquina virtual se instalan, vaya a `Windows (C:) > WindowsAzure > Logs > Plugins`.
+
+Use el módulo de Az de PowerShell:
+
+```powershell  
+Remove-AzVMExtension -ResourceGroupName winvmrg1 -VMName windowsvm -Name "CustomScriptExtension"
+```
+
+Use el módulo de AzureRM de PowerShell:
 
 ```powershell  
 Remove-AzureRmVMExtension -ResourceGroupName winvmrg1 -VMName windowsvm -Name "CustomScriptExtension"

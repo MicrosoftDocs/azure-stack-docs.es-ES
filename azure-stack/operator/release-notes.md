@@ -3,16 +3,16 @@ title: Notas de la versión de Azure Stack Hub
 description: Notas de la versión para los sistemas integrados de Azure Stack Hub, incluidas las actualizaciones y correcciones de errores.
 author: sethmanheim
 ms.topic: article
-ms.date: 11/18/2020
+ms.date: 11/20/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 09/09/2020
-ms.openlocfilehash: 945dd42d0ed4b78f5572abbd679eb8fda7b12d96
-ms.sourcegitcommit: 6db48bd8e6ccfaaa897713ad7eb2846a8d506358
+ms.openlocfilehash: 861dbb6a665664619bd06cd15d1e1b7fe86a9e8e
+ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94885808"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95518371"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Notas de la versión de Azure Stack Hub
 
@@ -130,7 +130,8 @@ Las revisiones de Azure Stack Hub solo son aplicables a los sistemas integrados 
 ### <a name="hotfix-prerequisites-before-applying-the-2008-update"></a>Requisitos previos de la revisión: antes de aplicar la actualización de 2008
 
 La versión de 2008 de Azure Stack Hub debe aplicarse sobre la versión 2005 con las revisiones siguientes:
-- [Revisión 1.2005.21.84 de Azure Stack Hub](https://support.microsoft.com/help/4592779)
+
+- [Revisión 1.2005.23.88 de Azure Stack Hub](https://support.microsoft.com/help/4595068)
 
 ### <a name="after-successfully-applying-the-2008-update"></a>Después de aplicar correctamente la actualización 2008
 
@@ -138,7 +139,7 @@ Cuando se actualiza a una nueva versión principal (por ejemplo, de 1.2005.x a 1
 
 Después de la instalación de 2008, si se publica posteriormente alguna revisión de la versión 2008, se debe instalar:
 
-- No hay ninguna revisión de Azure Stack Hub disponible para la versión 2008.
+- [Revisión 1.2008.15.92 de Azure Stack Hub](https://support.microsoft.com/help/4595069)
 ::: moniker-end
 
 ::: moniker range="azs-2005"
@@ -238,7 +239,7 @@ A partir de la versión 2005, cuando se actualiza a una nueva versión principal
 
 Después de la instalación de 2005, si se publican posteriormente algunas revisiones de la versión 2005, se deben instalar:
 
-- [Revisión 1.2005.21.84 de Azure Stack Hub](https://support.microsoft.com/help/4592779)
+- [Revisión 1.2005.23.88 de Azure Stack Hub](https://support.microsoft.com/help/4595068)
 ::: moniker-end
 
 ::: moniker range="azs-2002"

@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.author: bryanla
 ms.reviewer: caoyang
 ms.lastreviewed: 9/22/2020
-ms.openlocfilehash: e2f3c523dfcbd9c1ceec53bdf5fd55300752fd1f
-ms.sourcegitcommit: 69cfff119ab425d0fbb71e38d1480d051fc91216
+ms.openlocfilehash: 22377e80f52b2a8e3a7827ded6400b17cebdce9c
+ms.sourcegitcommit: af4374755cb4875a7cbed405b821f5703fa1c8cc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91572932"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95812734"
 ---
 # <a name="deploy-the-mysql-resource-provider-on-azure-stack-hub"></a>Implementación del proveedor de recursos MySQL en Azure Stack Hub
 
@@ -35,7 +35,7 @@ Hay varios requisitos previos que se deben cumplir antes de implementar el prove
 
   |Versión de Azure Stack Hub compatible|MySQL RP, versión|Windows Server en el que se está ejecutando el servicio RP
   |-----|-----|-----|
-  |2005|[MySQL RP, versión 1.1.93.0](https://aka.ms/azshmysqlrp11930)|Complemento de Microsoft Azure Stack RP Windows Server (SOLO INTERNO)
+  |2008, 2005|[MySQL RP, versión 1.1.93.0](https://aka.ms/azshmysqlrp11930)|Complemento de Microsoft Azure Stack RP Windows Server (SOLO INTERNO)
   |2005, 2002, 1910|[MySQL RP, versión 1.1.47.0](https://aka.ms/azurestackmysqlrp11470)|Windows Server 2016 Datacenter - Server Core|
   |1908|[MySQL RP, versión 1.1.33.0](https://aka.ms/azurestackmysqlrp11330)|Windows Server 2016 Datacenter - Server Core|
   |     |     |     |
@@ -112,7 +112,7 @@ Una vez que haya instalado todos los requisitos previos, ejecute el script **Dep
 Para implementar el proveedor de recursos de MySQL, abra una **nueva** ventana de PowerShell con privilegios elevados (no de PowerShell ISE) y cambie al directorio en el que ha extraído los archivos binarios del proveedor de recursos de MySQL. 
 
 > [!IMPORTANT]
-> Se recomienda usar una nueva ventana de PowerShell para evitar posibles problemas ocasionados por los módulos de PowerShell que ya están cargados. O bien, puede usar clear-azurermcontext para borrar la memoria caché antes de ejecutar el script de actualización.
+> Le recomendamos que use los comandos **Clear-AzureRmContext -Scope CurrentUser** y **Clear-AzureRmContext -Scope Process** para borrar la memoria caché antes de ejecutar el script de actualización.
 
 Ejecute el script **DeployMySqlProvider.ps1**, que realiza las tareas siguientes:
 

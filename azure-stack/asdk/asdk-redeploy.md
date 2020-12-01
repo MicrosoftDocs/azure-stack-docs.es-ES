@@ -3,16 +3,16 @@ title: Reimplementación del Kit de desarrollo de Azure Stack
 description: Obtenga información sobre cómo implementar el Kit de desarrollo de Azure Stack (ASDK).
 author: myoungerman
 ms.topic: article
-ms.date: 02/12/2019
+ms.date: 11/14/2020
 ms.author: v-myoung
 ms.reviewer: misainat
-ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 7408bcb7317550d7093f97a4cfe10bbc17119467
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.lastreviewed: 11/14/2020
+ms.openlocfilehash: 8b09386c748fe8263973b8812a049ab426585c42
+ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94543636"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95517113"
 ---
 # <a name="redeploy-the-asdk"></a>Reimplementación del Kit de desarrollo de Azure Stack
 En este artículo, aprenderá a volver a implementar el Kit de desarrollo de Azure Stack (ASDK) en un entorno que no sea de producción. Dado que la actualización del Kit de desarrollo de Azure Stack, debe volver a implementarla completamente para pasar a una versión más reciente. También puede volver a implementar el ASDK cuando quiera comenzar desde cero.
@@ -23,7 +23,9 @@ En este artículo, aprenderá a volver a implementar el Kit de desarrollo de Azu
 ## <a name="remove-azure-registration"></a>Quitar el registro de Azure 
 Si ha registrado anteriormente la instalación del ASDK con Azure, debe quitar el recurso de registro antes de volver a implementar el ASDK. Vuelva a registrar el Kit de desarrollo de Azure Stack para habilitar la disponibilidad de los elementos en Marketplace cuando se vuelve a implementar el kit de desarrollo. Si no ha registrado previamente el ASDK con su suscripción a Azure, puede omitir esta sección.
 
-Para quitar el recurso de registro, utilice el cmdlet **Remove-AzsRegistration** para anular el registro de Azure Stack. Después, use el cmdlet **Remove-AzResourceGroup** para eliminar el grupo de recursos de Azure Stack de su suscripción de Azure:
+Para quitar el recurso de registro, utilice el cmdlet **Remove-AzsRegistration** para anular el registro de Azure Stack. Después, use el cmdlet **Remove-AzResourceGroup** para eliminar el grupo de recursos de Azure Stack de su suscripción a Azure.
+
+### <a name="az-modules"></a>[Modules de Az](#tab/az)
 
 1. Abra una consola de PowerShell como administrador en un equipo que tenga acceso al punto de conexión con privilegios. En el caso del ASDK, este es el equipo host del kit de desarrollo.
 
@@ -57,7 +59,40 @@ Para quitar el recurso de registro, utilice el cmdlet **Remove-AzsRegistration**
     `"Deleting the resource..." on target "/subscriptions/<subscription information>"`
     `********** End Log: Remove-AzsRegistration *********`
 
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm)
 
+1. Abra una consola de PowerShell como administrador en un equipo que tenga acceso al punto de conexión con privilegios. En el caso del ASDK, este es el equipo host del kit de desarrollo.
+
+2. Ejecute los siguientes comandos de PowerShell para anular el registro de la instalación de Kit de desarrollo de Azure Stack y eliminar el grupo de recursos **azurestack** de su suscripción de Azure:
+
+   ```powershell    
+   #Import the registration module that was downloaded with the GitHub tools
+   Import-Module C:\AzureStack-Tools-master\Registration\RegisterWithAzure.psm1
+
+   # Provide Azure subscription admin credentials
+   Add-AzureRmAccount
+
+   # Provide ASDK admin credentials
+   $CloudAdminCred = Get-Credential -UserName AZURESTACK\CloudAdmin -Message "Enter the cloud domain credentials to access the privileged endpoint"
+
+   # Unregister Azure Stack
+   Remove-AzsRegistration `
+      -PrivilegedEndpointCredential $CloudAdminCred `
+      -PrivilegedEndpoint AzS-ERCS01
+
+   # Remove the Azure Stack resource group
+   Remove-AzureRmResourceGroup -Name azurestack -Force
+   ```
+
+3. Se le pedirá que inicie sesión tanto en su suscripción a Azure como en la instalación local del ASDK cuando se ejecute el script.
+4. Cuando el script se complete, debería ver mensajes similares a los siguientes ejemplos:
+
+    `De-Activating Azure Stack (this may take up to 10 minutes to complete).` `Your environment is now unable to syndicate items and is no longer reporting usage data.`
+    `Remove registration resource from Azure...`
+    `"Deleting the resource..." on target "/subscriptions/<subscription information>"`
+    `********** End Log: Remove-AzsRegistration *********`
+
+---
 
 Azure Stack ahora puede anular correctamente el registro de la suscripción de Azure. También se debe eliminar el grupo de recursos de Azure Stack. Este grupo de recursos es el que se creó cuando registró por primera vez el ASDK con Azure.
 

@@ -3,16 +3,16 @@ title: Configuraciones posteriores a la implementación del ASDK
 description: Obtenga información sobre los cambios de configuración recomendados después de instalar el Kit de desarrollo de Azure Stack (ASDK).
 author: justinha
 ms.topic: article
-ms.date: 10/16/2020
+ms.date: 11/14/2020
 ms.author: justinha
 ms.reviewer: misainat
-ms.lastreviewed: 10/16/2020
-ms.openlocfilehash: 3eb5a9a4f9f52b6e9de5b33233c571da265b5893
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.lastreviewed: 11/14/2020
+ms.openlocfilehash: efb7d803d8f0c29269bae3e147fc48eec3e29eb3
+ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94543551"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95517317"
 ---
 # <a name="post-deployment-configurations-for-asdk"></a>Configuraciones posteriores a la implementación del ASDK
 
@@ -37,6 +37,7 @@ El módulo de Azure Stack PowerShell más reciente se puede instalar con o sin c
 
 - **Con conexión a Internet** desde el equipo host del ASDK: Ejecute el siguiente script de PowerShell para instalar estos módulos en la instalación del ASDK:
 
+### <a name="az-modules"></a>[Modules de Az](#tab/az1)
 
   ```powershell  
   Get-Module -Name Azs.* -ListAvailable | Uninstall-Module -Force -Verbose
@@ -50,9 +51,29 @@ El módulo de Azure Stack PowerShell más reciente se puede instalar con o sin c
   Install-Module -Name AzureStack -RequiredVersion 2.0.2-preview -AllowPrerelease
   ```
 
-  Si la instalación es correcta, los módulos Az y AzureStack se muestran en la salida.
+Si la instalación es correcta, los módulos Az y AzureStack se muestran en la salida.
+
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm1)
+
+  ```powershell  
+  Get-Module -Name Azs.* -ListAvailable | Uninstall-Module -Force -Verbose
+  Get-Module -Name Azure* -ListAvailable | Uninstall-Module -Force -Verbose
+
+  # Install the AzureRM.BootStrapper module. Select Yes when prompted to install NuGet
+  Install-Module -Name AzureRM.BootStrapper
+
+  # Install and import the API Version Profile required by Azure Stack into the current PowerShell session.
+  Use-AzureRmProfile -Profile 2019-03-01-hybrid -Force
+  Install-Module -Name AzureStack -RequiredVersion 1.8.2
+  ```
+
+Si la instalación es correcta, los módulos AzureRM y AzureStack se muestran en la salida.
+
+---
 
 - **Sin conexión a Internet** desde el equipo host del ASDK: En un escenario sin conexión, primero hay que descargar los módulos de PowerShell en un equipo que tenga conexión a Internet con los siguientes comandos de PowerShell:
+
+### <a name="az-modules"></a>[Modules de Az](#tab/az2)
 
   ```powershell
   $Path = "<Path that is used to save the packages>"
@@ -66,22 +87,53 @@ El módulo de Azure Stack PowerShell más reciente se puede instalar con o sin c
 
   Después, se copian los paquetes descargados al equipo de ASDK y, seguidamente, se registra esta ubicación como el repositorio predeterminado y se instalan los módulos Az y AzureStack desde este repositorio:
 
-    ```powershell  
-    $SourceLocation = "<Location on the development kit that contains the PowerShell packages>"
-    $RepoName = "MyNuGetSource"
+  ```powershell  
+  $SourceLocation = "<Location on the development kit that contains the PowerShell packages>"
+  $RepoName = "MyNuGetSource"
 
-    Register-PSRepository -Name $RepoName -SourceLocation $SourceLocation -InstallationPolicy Trusted
+  Register-PSRepository -Name $RepoName -SourceLocation $SourceLocation -InstallationPolicy Trusted
 
-    Install-Module Az -Repository $RepoName
+  Install-Module Az -Repository $RepoName
 
-    Install-Module AzureStack -Repository $RepoName
-    ```
+  Install-Module AzureStack -Repository $RepoName
+  ```
+
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm2)
+
+  ```powershell
+  $Path = "<Path that is used to save the packages>"
+
+  Save-Package `
+    -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name AzureRM -Path $Path -Force -RequiredVersion 2.3.0
+  
+  Save-Package `
+    -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name AzureStack -Path $Path -Force -RequiredVersion 1.5.0
+  ```
+
+  Después, se copian los paquetes descargados al equipo de ASDK y, seguidamente, se registra esta ubicación como el repositorio predeterminado y se instalan los módulos AzureRM y AzureStack desde este repositorio:
+
+  ```powershell  
+  $SourceLocation = "<Location on the development kit that contains the PowerShell packages>"
+  $RepoName = "MyNuGetSource"
+
+  Register-PSRepository -Name $RepoName -SourceLocation $SourceLocation -InstallationPolicy Trusted
+
+  Install-Module AzureRM -Repository $RepoName
+
+  Install-Module AzureStack -Repository $RepoName
+  ```
+
+---
 
 ## <a name="download-the-azure-stack-tools"></a>Descarga de las herramientas de Azure Stack
 
-[AzureStack-Tools](https://github.com/Azure/AzureStack-Tools) es un repositorio de GitHub que hospeda módulos de PowerShell para administrar e implementar recursos en Azure Stack. Para obtener estas herramientas, clone el repositorio de GitHub o descargue la carpeta AzureStack-Tools-az mediante la ejecución del siguiente script:
+[AzureStack-Tools](https://github.com/Azure/AzureStack-Tools) es un repositorio de GitHub que hospeda módulos de PowerShell para administrar e implementar recursos en Azure Stack. Use las herramientas con los módulos Az PowerShell o los módulos AzureRM.
 
-  ```powershell
+### <a name="az-modules"></a>[Modules de Az](#tab/az3)
+
+Para obtener estas herramientas, clone el repositorio de GitHub de la rama `az` o descargue la carpeta **AzureStack-Tools** mediante la ejecución del script siguiente:
+
+```powershell
 # Change directory to the root directory.
 cd \
 
@@ -98,7 +150,34 @@ expand-archive az.zip `
 
 # Change to the tools directory.
 cd AzureStack-Tools-az
-  ```
+
+```
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm3)
+
+Para obtener estas herramientas, clone el repositorio de GitHub de la rama `master` o descargue la carpeta **AzureStack-Tools** mediante la ejecución del script siguiente en un símbolo del sistema de PowerShell con privilegios elevados:
+
+```powershell
+# Change directory to the root directory.
+cd \
+
+# Download the tools archive.
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+invoke-webrequest `
+  https://github.com/Azure/AzureStack-Tools/archive/master.zip `
+  -OutFile master.zip
+
+# Expand the downloaded files.
+expand-archive master.zip `
+  -DestinationPath . `
+  -Force
+
+# Change to the tools directory.
+cd AzureStack-Tools-master
+
+```
+Para más información sobre el uso del módulo AzureRM de Azure Stack Hub, consulte [Instalación del módulo AzureRM de PowerShell para Azure Stack Hub](../operator/azure-stack-powershell-install.md).
+
+---
 
 ## <a name="validate-the-asdk-installation"></a>Validación de la instalación de ASDK
 

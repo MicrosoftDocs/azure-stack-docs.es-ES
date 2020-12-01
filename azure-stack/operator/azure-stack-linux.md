@@ -3,16 +3,16 @@ title: Adición de imágenes de Linux al Marketplace de Azure Stack Hub
 description: Aprenda a agregar imágenes de Linux al Marketplace de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 08/24/2020
+ms.date: 11/18/2020
 ms.author: sethm
-ms.reviewer: ''
-ms.lastreviewed: 11/16/2019
-ms.openlocfilehash: fb0584b79c3e3555ec59cd225db37847b02a41d2
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.reviewer: thoroet
+ms.lastreviewed: 11/18/2020
+ms.openlocfilehash: 5fc9d8ba2cc12ddbb46156e091227ab2f47e0bd4
+ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94544180"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95517640"
 ---
 # <a name="add-linux-images-to-the-azure-stack-hub-marketplace"></a>Adición de imágenes de Linux al Marketplace de Azure Stack Hub
 
@@ -30,7 +30,7 @@ Siempre que sea posible, descargue las imágenes disponibles a través de la adm
 
 ### <a name="azure-linux-agent"></a>Agente Linux de Azure
 
-El agente Linux de Azure (que suele llamarse **WALinuxAgent** o **walinuxagent** ) es obligatorio, pero no todas las versiones del agente funcionan en Azure Stack Hub. No se admiten las versiones entre 2.2.21 y 2.2.34 (ambas inclusive) en Azure Stack Hub. Para usar las versiones del agente más recientes, superiores a la 2.2.35, aplique las revisiones 1901 o 1902, o actualice Azure Stack Hub a la versión 1903 (o cualquier versión superior). Tenga en cuenta que [cloud-init](https://cloud-init.io/) se admite en versiones de Azure Stack Hub posteriores a la versión 1910.
+El agente Linux de Azure (que suele llamarse **WALinuxAgent** o **walinuxagent**) es obligatorio, pero no todas las versiones del agente funcionan en Azure Stack Hub. No se admiten las versiones entre 2.2.21 y 2.2.34 (ambas inclusive) en Azure Stack Hub. Para usar las versiones del agente más recientes, superiores a la 2.2.35, aplique las revisiones 1901 o 1902, o actualice Azure Stack Hub a la versión 1903 (o cualquier versión superior). Tenga en cuenta que [cloud-init](https://cloud-init.io/) se admite en versiones de Azure Stack Hub posteriores a la versión 1910.
 
 | Compilación de Azure Stack Hub | Compilación del agente Linux de Azure |
 | ------------- | ------------- |
@@ -108,12 +108,23 @@ Actualmente, el uso de cloud-init para la implementación de máquinas virtuales
 
 Puede seguir [estas instrucciones](../user/azure-stack-quick-create-vm-linux-powershell.md) para crear la máquina virtual Linux mediante PowerShell, pero asegúrese de hacer referencia a cloud-init.txt como parte de la marca `-CustomData`:
 
+### <a name="az-modules"></a>[Modules de Az](#tab/az)
+
 ```powershell
 $VirtualMachine =Set-AzVMOperatingSystem -VM $VirtualMachine `
   -Linux `
   -ComputerName "MainComputer" `
   -Credential $cred -CustomData "#include https://cloudinitstrg.blob.core.windows.net/strg/cloud-init.txt"
 ```
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm)
+
+```powershell
+$VirtualMachine =Set-AzureRMVMOperatingSystem -VM $VirtualMachine `
+  -Linux `
+  -ComputerName "MainComputer" `
+  -Credential $cred -CustomData "#include https://cloudinitstrg.blob.core.windows.net/strg/cloud-init.txt"
+```
+---
 
 ## <a name="add-your-image-to-marketplace"></a>Adición de la imagen a Marketplace
 

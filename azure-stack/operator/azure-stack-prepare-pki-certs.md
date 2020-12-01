@@ -8,18 +8,21 @@ ms.date: 10/19/2020
 ms.author: inhenkel
 ms.reviewer: ppacent
 ms.lastreviewed: 10/19/2020
-ms.openlocfilehash: 86e3a87bf869d6bd9980746742a7ba03d142d5fe
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: b0d750c81299b59fb8bab64c327a642f0d58503a
+ms.sourcegitcommit: b50dd116d6d1f89d42bd35ad0f85bb25c5192921
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94545030"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96152869"
 ---
 # <a name="prepare-azure-stack-hub-pki-certificates-for-deployment-or-rotation"></a>Preparación de certificados PKI de Azure Stack Hub para implementación o rotación
 
+> [!NOTE]
+> Este artículo solo se aplica a la preparación de certificados externos, que se usan para proteger los puntos de conexión de los servicios y la infraestructura externos. Los certificados internos se administran por separado, durante el [proceso de rotación de certificados](azure-stack-rotate-secrets.md).
+
 Los archivos de certificado [obtenidos de la entidad de certificación](azure-stack-get-pki-certs.md) deben importarse y exportarse de forma que las propiedades coincidan con los requisitos de certificado de Azure Stack Hub.
 
-En este artículo aprenderá a importar, empaquetar y validar certificados para prepararse para la implementación de Azure Stack Hub o la rotación de secretos. 
+En este artículo, aprenderá a importar, empaquetar y validar certificados externos para prepararse para la implementación de Azure Stack Hub o la rotación de secretos. 
 
 ## <a name="prerequisites"></a>Requisitos previos
 
@@ -133,9 +136,9 @@ Siga estos pasos para empaquetar los certificados de los nuevos certificados PKI
    > [!WARNING]
    > No copie los archivos que ya se han importado, exportado o modificado de alguna forma de los archivos proporcionados directamente por la entidad de certificación.
 
-1. Haga clic con el botón derecho en el certificado y seleccione **Instalar certificado** o **Instalar PFX** , dependiendo de cómo se entrega el certificado desde la entidad de certificación.
+1. Haga clic con el botón derecho en el certificado y seleccione **Instalar certificado** o **Instalar PFX**, dependiendo de cómo se entrega el certificado desde la entidad de certificación.
 
-1. En el **Asistente para importar certificados** , seleccione **Máquina local** como la ubicación de importación. Seleccione **Next** (Siguiente). En la siguiente pantalla, vuelva a seleccionar Siguiente.
+1. En el **Asistente para importar certificados**, seleccione **Máquina local** como la ubicación de importación. Seleccione **Next** (Siguiente). En la siguiente pantalla, vuelva a seleccionar Siguiente.
 
     ![Ubicación de importación de la máquina local para el certificado](./media/prepare-pki-certs/1.png)
 
@@ -143,7 +146,7 @@ Siga estos pasos para empaquetar los certificados de los nuevos certificados PKI
 
    ![Configuración del almacén de certificados para la importación de certificados](./media/prepare-pki-certs/3.png)
 
-   a. Si va a importar un PFX, aparecerá un cuadro de diálogo adicional. En la página **Protección de clave privada** , escriba la contraseña de los archivos de certificado y, luego, habilite **Marcar esta clave como exportable** , que le permite realizar copias de seguridad o transportar las claves más adelante. Seleccione **Next** (Siguiente).
+   a. Si va a importar un PFX, aparecerá un cuadro de diálogo adicional. En la página **Protección de clave privada**, escriba la contraseña de los archivos de certificado y, luego, habilite **Marcar esta clave como exportable** , que le permite realizar copias de seguridad o transportar las claves más adelante. Seleccione **Next** (Siguiente).
 
    ![Marcar clave como exportable](./media/prepare-pki-certs/2.png)
 
@@ -156,7 +159,7 @@ Siga estos pasos para empaquetar los certificados de los nuevos certificados PKI
 
 Abra la consola MMC del administrador de certificados y conéctese al almacén de certificados de la máquina local.
 
-1. Abra Microsoft Management Console. Para abrir la consola en Windows 10, haga clic con el botón derecho en el **menú Inicio** , seleccione **Ejecutar** , escriba **MMC** y presione Entrar.
+1. Abra Microsoft Management Console. Para abrir la consola en Windows 10, haga clic con el botón derecho en el **menú Inicio**, seleccione **Ejecutar**, escriba **MMC** y presione Entrar.
 
 2. Haga clic en **Archivo** > **Agregar o quitar complemento** y, después, seleccione **Certificados** y haga clic en **Agregar**.
 

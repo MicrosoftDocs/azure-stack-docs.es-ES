@@ -3,16 +3,16 @@ title: Integración de una solución de supervisión externa con Azure Stack Hub
 description: Aprenda a integrar Azure Stack Hub con una solución de supervisión externa en el centro de datos.
 author: IngridAtMicrosoft
 ms.topic: article
-ms.date: 04/10/2020
+ms.date: 11/18/2020
 ms.author: inhenkel
 ms.reviewer: thoroet
-ms.lastreviewed: 06/05/2019
-ms.openlocfilehash: 10af23001cd3b7e12aa080a2dbecc136be0acfc8
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.lastreviewed: 11/18/2020
+ms.openlocfilehash: 28da3cf886219eab10fff32d24b62cb7db101cb5
+ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94543602"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95517708"
 ---
 # <a name="integrate-external-monitoring-solution-with-azure-stack-hub"></a>Integración de una solución de supervisión externa con Azure Stack Hub
 
@@ -67,7 +67,7 @@ Se ha desarrollado un complemento de supervisión de Nagios junto con las soluci
 
 Este complemento se escribe en Python y aprovecha la API de REST del proveedor de recursos de mantenimiento. Ofrece la funcionalidad básica para recuperar y cerrar alertas de Azure Stack Hub. Al igual que el módulo de administración de System Center, permite agregar varias implementaciones de Azure Stack Hub y enviar notificaciones.
 
-Con la versión 1.2, el complemento Nagios para Azure Stack Hub aprovecha la biblioteca Microsoft ADAL y admite la autenticación mediante una entidad de servicio con un secreto o certificado. Además, la configuración se ha simplificado mediante el uso de un único archivo de configuración con parámetros nuevos. Ahora admite implementaciones de Azure Stack Hub que usan Azure AD y AD FS como sistema de identidad.
+Con la versión 1.2, el complemento Nagios para Azure Stack Hub aprovecha la biblioteca ADAL de Microsoft y admite la autenticación mediante una entidad de servicio con un secreto o certificado. Además, la configuración se ha simplificado mediante el uso de un único archivo de configuración con parámetros nuevos. Ahora admite implementaciones de Azure Stack Hub que usan Azure AD y AD FS como sistema de identidad.
 
 > [!IMPORTANT]
 > AD FS solo admite sesiones de inicio de sesión interactivo. Si necesita un inicio de sesión no interactivo para un escenario automatizado, debe utilizar un nombre de entidad de seguridad de servicio.
@@ -151,7 +151,7 @@ Los otros archivos de configuración contienen valores de configuración opciona
 
 ### <a name="update-nagios-configuration"></a>Actualización de la configuración de Nagios
 
-La configuración de Nagios debe actualizarse para asegurarse de que el complemento Nagios para Azure Stack Hub está cargado.
+La configuración de Nagios debe actualizarse para garantizar que el complemento Nagios para Azure Stack Hub está cargado.
 
 1. Abra el siguiente archivo:
 
@@ -201,6 +201,8 @@ La solución de problemas del complemento se puede realizar llamando al compleme
 
 Si no utiliza una solución basada en Nagios, Nagios u Operations Manager, puede usar PowerShell para habilitar una amplia gama de soluciones de supervisión que pueden integrarse con Azure Stack Hub.
 
+### <a name="az-modules"></a>[Modules de Az](#tab/az)
+
 1. Para usar PowerShell, asegúrese de tener [PowerShell instalado y configurado](powershell-install-az-module.md) para un entorno de operador de Azure Stack Hub. Instale PowerShell en un equipo local que alcance el punto de conexión de Resource Manager (administrador) (https://adminmanagement.[region].[External_FQDN]).
 
 2. Ejecute los comandos siguientes para conectarse al entorno de Azure Stack Hub como operador de Azure Stack Hub:
@@ -214,26 +216,66 @@ Si no utiliza una solución basada en Nagios, Nagios u Operations Manager, puede
    ```
 
 3. Utilice comandos como los que se indican en los ejemplos siguientes para trabajar con alertas:
+
+```powershell
+# Retrieve all alerts
+$Alerts = Get-AzsAlert
+$Alerts
+
+# Filter for active alerts
+$Active = $Alerts | Where-Object { $_.State -eq "active" }
+$Active
+
+# Close alert
+Close-AzsAlert -AlertID "ID"
+
+#Retrieve resource provider health
+$RPHealth = Get-AzsRPHealth
+$RPHealth
+
+# Retrieve infrastructure role instance health
+$FRPID = $RPHealth | Where-Object { $_.DisplayName -eq "Capacity" }
+   Get-AzsRegistrationHealth -ServiceRegistrationId $FRPID.RegistrationId
+```
+
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm)
+
+1. Para usar PowerShell, asegúrese de tener [PowerShell instalado y configurado](powershell-install-az-module.md) para un entorno de operador de Azure Stack Hub. Instale PowerShell en un equipo local que alcance el punto de conexión de Resource Manager (administrador) (https://adminmanagement.[region].[External_FQDN]).
+
+2. Ejecute los comandos siguientes para conectarse al entorno de Azure Stack Hub como operador de Azure Stack Hub:
+
    ```powershell
-    # Retrieve all alerts
-    $Alerts = Get-AzsAlert
-    $Alerts
+   Add-AzureRMEnvironment -Name "AzureStackAdmin" -ArmEndpoint https://adminmanagement.[Region].[External_FQDN] `
+      -AzureKeyVaultDnsSuffix adminvault.[Region].[External_FQDN] `
+      -AzureKeyVaultServiceEndpointResourceId https://adminvault.[Region].[External_FQDN]
 
-    # Filter for active alerts
-    $Active = $Alerts | Where-Object { $_.State -eq "active" }
-    $Active
+   Connect-AzureRMAccount -EnvironmentName "AzureStackAdmin"
+   ```
 
-    # Close alert
-    Close-AzsAlert -AlertID "ID"
+3. Utilice comandos como los que se indican en los ejemplos siguientes para trabajar con alertas:
 
-    #Retrieve resource provider health
-    $RPHealth = Get-AzsRPHealth
-    $RPHealth
+```powershell
+# Retrieve all alerts
+$Alerts = Get-AzsAlert
+$Alerts
 
-    # Retrieve infrastructure role instance health
-    $FRPID = $RPHealth | Where-Object { $_.DisplayName -eq "Capacity" }
-    Get-AzsRegistrationHealth -ServiceRegistrationId $FRPID.RegistrationId
-    ```
+# Filter for active alerts
+$Active = $Alerts | Where-Object { $_.State -eq "active" }
+$Active
+
+# Close alert
+Close-AzsAlert -AlertID "ID"
+
+#Retrieve resource provider health
+$RPHealth = Get-AzsRPHealth
+$RPHealth
+
+# Retrieve infrastructure role instance health
+$FRPID = $RPHealth | Where-Object { $_.DisplayName -eq "Capacity" }
+Get-AzsRegistrationHealth -ServiceRegistrationId $FRPID.RegistrationId
+```
+
+---
 
 ## <a name="learn-more"></a>Más información
 

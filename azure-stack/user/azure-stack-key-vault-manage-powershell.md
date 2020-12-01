@@ -3,15 +3,15 @@ title: Administración de Key Vault en Azure Stack Hub mediante PowerShell
 description: Aprenda a administrar Key Vault en Azure Stack Hub mediante PowerShell.
 author: sethmanheim
 ms.topic: article
-ms.date: 04/29/2020
+ms.date: 11/20/2020
 ms.author: sethm
-ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: f1cdb082accdef3590bd737a39add61b1ebbc8bb
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.lastreviewed: 11/20/2020
+ms.openlocfilehash: 0d7ce96b1619c21c5f442ab4d5a240a9eed16397
+ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94546317"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95518354"
 ---
 # <a name="manage-key-vault-in-azure-stack-hub-using-powershell"></a>Administración de Key Vault en Azure Stack Hub mediante PowerShell
 
@@ -34,9 +34,19 @@ En este artículo se describe cómo crear y administrar un almacén de claves en
 
 Para poder emitir cualquier operación en un almacén de claves, debe asegurarse de que su suscripción de inquilino esté habilitada para operaciones de almacén. Para verificar si están habilitadas las operaciones de almacén de claves, ejecute el siguiente comando:
 
+### <a name="az-modules"></a>[Modules de Az](#tab/az1)
+
 ```powershell  
 Get-AzResourceProvider -ProviderNamespace Microsoft.KeyVault | ft -Autosize
 ```
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm1)
+ 
+
+ ```powershell  
+Get-AzureRMResourceProvider -ProviderNamespace Microsoft.KeyVault | ft -Autosize
+```
+---
+
 
 Si la suscripción está habilitada para operaciones de almacén, la salida muestra el valor **Registrado** para **RegistrationState** para todos los tipos de recursos de un almacén de claves.
 
@@ -44,9 +54,20 @@ Si la suscripción está habilitada para operaciones de almacén, la salida mues
 
 Si las operaciones de almacén no están habilitadas, emita el comando siguiente para registrar el servicio Key Vault en su suscripción:
 
+### <a name="az-modules"></a>[Modules de Az](#tab/az2)
+
 ```powershell
 Register-AzResourceProvider -ProviderNamespace Microsoft.KeyVault
 ```
+
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm2)
+ 
+ ```powershell
+Register-AzureRMResourceProvider -ProviderNamespace Microsoft.KeyVault
+```
+
+---
+
 
 Si el registro se realiza correctamente, se devuelve la siguiente salida:
 
@@ -58,19 +79,40 @@ Al invocar los comandos de Key Vault, podría recibir un error, como "La suscrip
 
 Antes de crear un almacén de claves, cree un grupo de recursos para que todos los recursos relacionados con dicho almacén de claves se encuentren en un grupo de recursos. Utilice el comando siguiente para crear un nuevo grupo de recursos:
 
+### <a name="az-modules"></a>[Modules de Az](#tab/az3)
+
 ```powershell
 New-AzResourceGroup -Name "VaultRG" -Location local -verbose -Force
 ```
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm3)
+ 
+ ```powershell
+New-AzureRMResourceGroup -Name "VaultRG" -Location local -verbose -Force
+```
+
+---
+
 
 ![Nuevo grupo de recursos generado en Powershell](media/azure-stack-key-vault-manage-powershell/image3.png)
 
-Ahora, utilice el cmdlet **New-AzKeyVault** para crear un almacén de claves en el grupo de recursos que creó anteriormente. Este comando lee tres parámetros obligatorios: el nombre del grupo de recursos, el nombre del almacén de claves y la ubicación geográfica.
+Ahora, utilice el siguiente cmdlet para crear un almacén de claves en el grupo de recursos que creó anteriormente. Este comando lee tres parámetros obligatorios: el nombre del grupo de recursos, el nombre del almacén de claves y la ubicación geográfica.
 
 Ejecute el siguiente comando para crear un almacén de claves:
+
+### <a name="az-modules"></a>[Modules de Az](#tab/az4)
 
 ```powershell
 New-AzKeyVault -VaultName "Vault01" -ResourceGroupName "VaultRG" -Location local -verbose
 ```
+   
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm4)
+ 
+```powershell
+New-AzureRMKeyVault -VaultName "Vault01" -ResourceGroupName "VaultRG" -Location local -verbose
+```
+
+---
+
 
 ![Nuevo almacén de claves generado en Powershell](media/azure-stack-key-vault-manage-powershell/image4.png)
 
@@ -80,6 +122,8 @@ La salida de este comando muestra las propiedades del almacén de claves que ha 
 
 En una implementación de AD FS, podría obtener esta advertencia: "Access policy is not set. No user or application has access permission to use this vault" (La directiva de acceso no está definida. Ningún usuario ni ninguna aplicación tienen permiso de acceso para utilizar este almacén). Para resolver este problema, establezca una directiva de acceso para el almacén mediante el comando [**Set-AzKeyVaultAccessPolicy**](#authorize-an-app-to-use-a-key-or-secret):
 
+### <a name="az-modules"></a>[Modules de Az](#tab/az5)
+
 ```powershell
 # Obtain the security identifier(SID) of the active directory user
 $adUser = Get-ADUser -Filter "Name -eq '{Active directory user name}'"
@@ -88,6 +132,20 @@ $objectSID = $adUser.SID.Value
 # Set the key vault access policy
 Set-AzKeyVaultAccessPolicy -VaultName "{key vault name}" -ResourceGroupName "{resource group name}" -ObjectId "{object SID}" -PermissionsToKeys {permissionsToKeys} -PermissionsToSecrets {permissionsToSecrets} -BypassObjectIdValidation
 ```
+
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm5)
+
+```powershell
+# Obtain the security identifier(SID) of the active directory user
+$adUser = Get-ADUser -Filter "Name -eq '{Active directory user name}'"
+$objectSID = $adUser.SID.Value
+
+# Set the key vault access policy
+Set-AzureRMKeyVaultAccessPolicy -VaultName "{key vault name}" -ResourceGroupName "{resource group name}" -ObjectId "{object SID}" -PermissionsToKeys {permissionsToKeys} -PermissionsToSecrets {permissionsToSecrets} -BypassObjectIdValidation
+```
+
+---
+
 
 ## <a name="manage-keys-and-secrets"></a>Administración de claves y secretos
 
@@ -100,6 +158,7 @@ Use el cmdlet **Add-AzureKeyVaultKey** para crear o importar una clave protegida
 ```powershell
 Add-AzureKeyVaultKey -VaultName "Vault01" -Name "Key01" -verbose -Destination Software
 ```
+
 
 El parámetro `-Destination` se utiliza para especificar que la clave está protegida mediante software. Cuando la clave se crea correctamente, el comando da como salida los detalles de la clave creada.
 
@@ -141,21 +200,42 @@ Después de crear claves y secretos, puede autorizar a aplicaciones externas par
 
 ## <a name="authorize-an-app-to-use-a-key-or-secret"></a>Autorización a una aplicación para que use una clave o un secreto
 
-Para autorizar a una aplicación a acceder a una clave o a un secreto del almacén de claves, use el cmdlet **Set-AzKeyVaultAccessPolicy**.
+Para autorizar a una aplicación a acceder a una clave o a un secreto del almacén de claves, use el cmdlet siguiente.
 
 En el siguiente ejemplo, el nombre del almacén es **ContosoKeyVault** y la aplicación que desea autorizar tiene el identificador de cliente **8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed**. Ejecute el comando siguiente para autorizar a la aplicación. También puede especificar el parámetro **PermissionsToKeys** para establecer permisos para un usuario, una aplicación o un grupo de seguridad.
 
-Cuando use Set-AzKeyVaultAccessPolicy en un entorno de Azure Stack Hub configurado por ADFS, se debe proporcionar el parámetro BypassObjectIdValidation.
+Cuando use el cmdlet en un entorno de Azure Stack Hub configurado por AD FS, se debe proporcionar el parámetro BypassObjectIdValidation.
+
+### <a name="az-modules"></a>[Modules de Az](#tab/az6)
 
 ```powershell
 Set-AzKeyVaultAccessPolicy -VaultName 'ContosoKeyVault' -ServicePrincipalName 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed -PermissionsToKeys decrypt,sign -BypassObjectIdValidation
 ```
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm6)
+
+```powershell
+Set-AzureRMKeyVaultAccessPolicy -VaultName 'ContosoKeyVault' -ServicePrincipalName 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed -PermissionsToKeys decrypt,sign -BypassObjectIdValidation
+```
+
+---
+
 
 Si desea autorizar a esa misma aplicación a leer los secretos del almacén, ejecute el siguiente cmdlet:
+
+### <a name="az-modules"></a>[Modules de Az](#tab/az7)
 
 ```powershell
 Set-AzKeyVaultAccessPolicy -VaultName 'ContosoKeyVault' -ServicePrincipalName 8f8c4bbd-485b-45fd-98f7-ec6300 -PermissionsToKeys Get -BypassObjectIdValidation
 ```
+
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm7)
+
+```powershell
+Set-AzureRMKeyVaultAccessPolicy -VaultName 'ContosoKeyVault' -ServicePrincipalName 8f8c4bbd-485b-45fd-98f7-ec6300 -PermissionsToKeys Get -BypassObjectIdValidation
+```
+
+---
+
 
 ## <a name="next-steps"></a>Pasos siguientes
 

@@ -3,16 +3,16 @@ title: Implementación de ASDK desde la línea de comandos mediante PowerShell
 description: En este artículo aprenderá a implementar ASDK desde la línea de comandos mediante PowerShell.
 author: justinha
 ms.topic: article
-ms.date: 09/23/2020
+ms.date: 10/14/2020
 ms.author: justinha
 ms.reviewer: misainat
-ms.lastreviewed: 09/23/2020
-ms.openlocfilehash: c9931654b6c217d0c9f06bf51b37460046c47c2c
-ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
+ms.lastreviewed: 10/14/2020
+ms.openlocfilehash: 1d6df818c76e564423511a927ee1279cbf3f5279
+ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91106938"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95517385"
 ---
 # <a name="deploy-asdk-from-the-command-line-using-powershell"></a>Implementación de ASDK desde la línea de comandos mediante PowerShell
 
@@ -106,6 +106,7 @@ El proceso de implementación puede tardar unas horas, durante las cuales el sis
 Puede crear scripts para toda la implementación de Azure AD. Estos son unos pocos ejemplos comentados que incluyen algunos parámetros opcionales.
 
 Si la identidad de Azure AD está asociada solo con **un** directorio de Azure AD:
+
 ```powershell
 cd C:\CloudDeployment\Setup 
 $adminpass = Get-Credential Administrator 

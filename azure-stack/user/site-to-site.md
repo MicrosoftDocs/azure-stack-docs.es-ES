@@ -3,16 +3,16 @@ title: Solución de problemas de conexiones VPN de sitio a sitio en Azure Stack 
 description: Pasos para la solución de problemas que puede realizar después de configurar una conexión VPN de sitio a sitio entre una red local y una red virtual de Azure Stack Hub.
 author: sethmanheim
 ms.author: sethm
-ms.date: 10/01/2020
+ms.date: 11/22/2020
 ms.topic: article
 ms.reviewer: sranthar
-ms.lastreviewed: 05/12/2020
-ms.openlocfilehash: 6d677d4b192cef17d44896ba5ef41387b1c95765
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.lastreviewed: 11/22/2020
+ms.openlocfilehash: 88f258f4700cd091f50dc3732fb7167be84d3954
+ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94546878"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95518201"
 ---
 # <a name="troubleshoot-site-to-site-vpn-connections"></a>Solución de problemas de conexiones VPN de sitio a sitio
 
@@ -46,19 +46,37 @@ Los parámetros predeterminados de Azure Stack Hub para IPsec/IKEV2 han cambiado
 
 ## <a name="status-not-connected---intermittent-disconnects"></a>Estado "No conectado": desconexiones intermitentes
 
+### <a name="az-modules"></a>[Modules de Az](#tab/az)
+
 - Compare la clave compartida del dispositivo VPN local y la de la VPN de la red virtual de AzSH para asegurarse de que coinciden. Para ver la clave compartida de la conexión de la VPN de AzSH, use uno de los siguientes métodos:
 
-  - **Portal de inquilino de Azure Stack Hub** : Vaya a la conexión de sitio a sitio de la puerta de enlace VPN que ha creado. En la sección **Settings** (Configuración), seleccione **Shared key** (Clave compartida).
+  - **Portal de inquilino de Azure Stack Hub**: Vaya a la conexión de sitio a sitio de la puerta de enlace VPN que ha creado. En la sección **Settings** (Configuración), seleccione **Shared key** (Clave compartida).
 
       :::image type="content" source="media/site-to-site/vpn-connection.png" alt-text="Conexión VPN":::
 
-  - **Azure PowerShell** : Use el siguiente comando de PowerShell:
+  - **Azure PowerShell**: Use el siguiente comando de PowerShell:
 
-      ```powershell
-      Get-AzVirtualNetworkGatewayConnectionSharedKey -Name <Connection name> -ResourceGroupName <Resource group>
-      ```
+```powershell
+Get-AzVirtualNetworkGatewayConnectionSharedKey -Name <Connection name> -ResourceGroupName <Resource group>
+```
 
-## <a name="status-connected--traffic-not-flowing"></a>Estado "Conectado": el tráfico no fluye
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm)
+
+- Compare la clave compartida del dispositivo VPN local y la de la VPN de la red virtual de AzSH para asegurarse de que coinciden. Para ver la clave compartida de la conexión de la VPN de AzSH, use uno de los siguientes métodos:
+
+  - **Portal de inquilino de Azure Stack Hub**: Vaya a la conexión de sitio a sitio de la puerta de enlace VPN que ha creado. En la sección **Settings** (Configuración), seleccione **Shared key** (Clave compartida).
+
+      :::image type="content" source="media/site-to-site/vpn-connection.png" alt-text="Conexión VPN":::
+
+  - **Azure PowerShell**: Use el siguiente comando de PowerShell:
+
+```powershell
+Get-AzurerRMVirtualNetworkGatewayConnectionSharedKey -Name <Connection name> -ResourceGroupName <Resource group>
+```
+
+---
+
+## <a name="status-connected---traffic-not-flowing"></a>Estado "Conectado": el tráfico no fluye
 
 - Busque y quite el enrutamiento definido por el usuario (UDR) y los grupos de seguridad de red (NSG) de la subred de puerta de enlace y, después, pruebe el resultado. Si se resuelve el problema, valide la configuración de NSG o UDR aplicada.
 

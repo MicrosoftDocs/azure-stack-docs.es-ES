@@ -3,16 +3,16 @@ title: Conectarse al ASDK
 description: Obtenga información sobre cómo conectarse al Kit de desarrollo de Azure Stack (ASDK).
 author: justinha
 ms.topic: article
-ms.date: 05/06/2019
+ms.date: 11/14/2020
 ms.author: justinha
 ms.reviewer: knithinc
-ms.lastreviewed: 10/25/2019
-ms.openlocfilehash: a5250e18ab253a6c1a2b184ba1f261b5837bc879
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.lastreviewed: 11/14/2020
+ms.openlocfilehash: 7970bf0f4e90792f9fe28534eab1bfa53ce7f39b
+ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94543484"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95517487"
 ---
 # <a name="connect-to-the-asdk"></a>Conectarse al ASDK
 
@@ -31,7 +31,7 @@ Un único usuario simultáneo puede administrar los recursos en el portal de adm
 
 1. Abra la Conexión a Escritorio remoto (mstc.exe) y conéctese a la dirección IP del equipo host de ASDK. Asegúrese de usar una cuenta autorizada para iniciar sesión de forma remota en el equipo host de ASDK. De forma predeterminada, **AzureStack\AzureStackAdmin** tiene permisos para iniciar sesión de forma remota en el equipo host de ASDK.  
 
-2. En el equipo host de ASDK, abra el Administrador del servidor (ServerManager.exe). Seleccione **Servidor local** , desactive la opción **Configuración de seguridad mejorada de IE** y cierre el Administrador del servidor.
+2. En el equipo host de ASDK, abra el Administrador del servidor (ServerManager.exe). Seleccione **Servidor local**, desactive la opción **Configuración de seguridad mejorada de IE** y cierre el Administrador del servidor.
 
 3. Inicie sesión en el portal de administración como **AzureStack\CloudAdmin** o use otras credenciales de operador de Azure Stack. La dirección del portal del administrador del ASDK es `https://adminportal.local.azurestack.external`.
 
@@ -58,7 +58,9 @@ Antes de configurar una conexión VPN al ASDK, asegúrese de cumplir los siguien
 
 ### <a name="set-up-vpn-connectivity"></a>Configuración de la conectividad VPN
 
-Para crear una conexión VPN al ASDK, abra PowerShell como administrador en el equipo local basado en Windows. A continuación, ejecute el siguiente script (actualice los valores de dirección IP y contraseña para su entorno):
+Para crear una conexión VPN al ASDK, abra PowerShell como administrador en el equipo local basado en Windows. A continuación, ejecute el siguiente script (actualice los valores de dirección IP y contraseña para su entorno).
+
+### <a name="az-modules"></a>[Modules de Az](#tab/az)
 
 ```powershell
 # Change directories to the default Azure Stack tools directory
@@ -74,7 +76,7 @@ Import-Module .\Connect\AzureStack.Connect.psm1
 
 # Add the ASDK host computer's IP address as the ASDK certificate authority (CA) to the list of trusted hosts. Make sure you update the IP address and password values for your environment.
 
-$hostIP = "<Azure Stack host IP address>"
+$hostIP = "<Azure Stack Hub host IP address>"
 
 $Password = ConvertTo-SecureString `
   "<operator's password provided when deploying Azure Stack>" `
@@ -92,6 +94,40 @@ Add-AzsVpnConnection `
 
 ```
 
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm)
+
+```powershell
+# Change directories to the default Azure Stack tools directory
+cd C:\AzureStack-Tools-master
+
+# Configure Windows Remote Management (WinRM), if it's not already configured.
+winrm quickconfig  
+
+Set-ExecutionPolicy RemoteSigned
+
+# Import the Connect module.
+Import-Module .\Connect\AzureStack.Connect.psm1
+
+# Add the ASDK host computer's IP address as the ASDK certificate authority (CA) to the list of trusted hosts. Make sure you update the IP address and password values for your environment.
+
+$hostIP = "<Azure Stack Hub host IP address>"
+
+$Password = ConvertTo-SecureString `
+  "<operator's password provided when deploying Azure Stack>" `
+  -AsPlainText `
+  -Force
+
+Set-Item wsman:\localhost\Client\TrustedHosts `
+  -Value $hostIP `
+  -Concatenate
+
+# Create a VPN connection entry for the local user.
+Add-AzsVpnConnection `
+  -ServerAddress $hostIP `
+  -Password $Password
+
+```
+---
 Si la instalación se realiza correctamente, **Azure Stack** aparece en la lista de conexiones VPN:
 
 ![Conexiones de red](media/asdk-connect/vpn.png)  
@@ -107,7 +143,7 @@ Si la instalación se realiza correctamente, **Azure Stack** aparece en la lista
       -Password $Password
     ```
 
-  * En el equipo local, seleccione **Configuración de red** > **VPN** > **Azure Stack** > **conectar**. En el símbolo del sistema de inicio de sesión, escriba el nombre de usuario ( **AzureStack\AzureStackAdmin** ) y la contraseña.
+  * En el equipo local, seleccione **Configuración de red** > **VPN** > **Azure Stack** > **conectar**. En el símbolo del sistema de inicio de sesión, escriba el nombre de usuario (**AzureStack\AzureStackAdmin**) y la contraseña.
 
 La primera vez que se conecte, se le pedirá que instale el certificado raíz de Azure Stack de **AzureStackCertificateAuthority** en el almacén de certificados del equipo local. Este paso agrega la autoridad de certificación (CA) de ASDK a la lista de hosts de confianza. Haga clic en **Sí** para instalar el certificado.
 

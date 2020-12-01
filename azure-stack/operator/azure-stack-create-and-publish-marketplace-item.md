@@ -3,16 +3,16 @@ title: Creación y publicación de un elemento de Marketplace en Azure Stack Hub
 description: Aprenda a crear y publicar un elemento de Marketplace de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 08/18/2020
+ms.date: 11/16/2020
 ms.author: sethm
 ms.reviewer: avishwan
-ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 6887e29cca09b6ff0e774bc5898d00f14684e76b
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.lastreviewed: 11/16/2020
+ms.openlocfilehash: db85757fd898d0b75ace50c8fe78ecaa31722bc2
+ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94543942"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95518048"
 ---
 # <a name="create-and-publish-a-custom-azure-stack-hub-marketplace-item"></a>Creación y publicación de un elemento personalizado de Marketplace de Azure Stack Hub
 
@@ -50,7 +50,7 @@ Para crear un elemento de Marketplace personalizado, haga lo siguiente:
    > [!NOTE]  
    > Nunca codifique de forma rígida los secretos, como las claves de producto, contraseñas o cualquier información de identificación del cliente, en la plantilla de Azure Resource Manager. Los archivos de plantilla de JSON son accesibles sin necesidad de autenticación una vez publicados en la galería. Almacene todos los secretos en [Key Vault](/azure/azure-resource-manager/resource-manager-keyvault-parameter) y llámelos desde dentro de la plantilla.
 
-   Se recomienda que antes de publicar su propia plantilla personalizada, intente publicar el ejemplo tal cual y se asegure de que funciona en su entorno. Una vez que haya comprobado que este paso funciona, elimine el ejemplo de la galería y realice cambios iterativos hasta que esté satisfecho con el resultado.
+   Se recomienda que antes de publicar su propia plantilla personalizada, intente publicar el ejemplo tal cual y se asegure de que funciona en su entorno. Una vez que haya verificado que este paso funciona, elimine el ejemplo de la galería y realice cambios iterativos hasta que esté satisfecho con el resultado.
 
    La plantilla siguiente es un ejemplo del archivo Manifest.json:
 
@@ -103,13 +103,13 @@ Para crear un elemento de Marketplace personalizado, haga lo siguiente:
 
     En la lista siguiente se explican los valores numerados anteriores de la plantilla de ejemplo:
 
-    - (1): el nombre de la oferta.
-    - (2): el nombre del editor, sin espacio.
-    - (3): la versión de la plantilla, sin espacio.
-    - (4): el nombre que ven los clientes.
-    - (5): el nombre del editor que ven los clientes.
+    - (1): nombre de la oferta.
+    - (2): nombre del editor, sin espacio.
+    - (3): versión de la plantilla, sin espacio.
+    - (4): nombre que ven los clientes.
+    - (5): nombre del editor que ven los clientes.
     - (6): nombre legal del editor.
-    - (7): la ruta de acceso y el nombre de cada icono.
+    - (7): ruta de acceso y nombre de cada icono.
 
 5. Para todos los campos que hacen referencia a **ms-resource**, tiene que cambiar los valores correspondientes en el archivo **strings/resources.json**:
 
@@ -150,6 +150,8 @@ Para crear un elemento de Marketplace personalizado, haga lo siguiente:
 
 ## <a name="publish-a-marketplace-item"></a>Publicación de un elemento de Marketplace
 
+### <a name="az-modules"></a>[Modules de Az](#tab/az)
+
 1. Use PowerShell o el Explorador de Azure Storage para cargar el elemento de Marketplace (.azpkg) a Azure Blob Storage. Puede realizar la carga en el almacenamiento de Azure Stack Hub local o en Azure Storage, una ubicación temporal del paquete. Asegúrese de que el blob es accesible públicamente.
 
 2. Para importar el paquete de galería en Azure Stack Hub, el primer paso es conectarse de forma remota (RDP) a la máquina virtual cliente para copiar el archivo que acaba de crear en Azure Stack Hub.
@@ -188,10 +190,53 @@ Para crear un elemento de Marketplace personalizado, haga lo siguiente:
    Remove-AzsGalleryItem -Name <Gallery package name> -Verbose
    ```
 
-   > [!NOTE]
-   > La interfaz de usuario de Marketplace puede mostrar un error después de quitar un elemento. Para solucionarlo, haga clic en **Configuración** en el portal. A continuación, seleccione **Descartar modificaciones** en **Personalización del portal**.
-   >
-   >
+> [!Note]  
+> La interfaz de usuario de Marketplace puede mostrar un error después de quitar un elemento. Para solucionarlo, haga clic en **Configuración** en el portal. A continuación, seleccione **Descartar modificaciones** en **Personalización del portal**.
+
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm)
+
+1. Use PowerShell o el Explorador de Azure Storage para cargar el elemento de Marketplace (.azpkg) a Azure Blob Storage. Puede realizar la carga en el almacenamiento de Azure Stack Hub local o en Azure Storage, una ubicación temporal del paquete. Asegúrese de que el blob es accesible públicamente.
+
+2. Para importar el paquete de galería en Azure Stack Hub, el primer paso es conectarse de forma remota (RDP) a la máquina virtual cliente para copiar el archivo que acaba de crear en Azure Stack Hub.
+
+3. Agregue un contexto:
+
+    ```powershell
+    $ArmEndpoint = "https://adminmanagement.local.azurestack.external"
+    Add-AzureRMEnvironment -Name "AzureStackAdmin" -ArmEndpoint $ArmEndpoint
+    Add-AzureRMAccount -EnvironmentName "AzureStackAdmin"
+    ```
+
+4. Ejecute el siguiente script para importar el recurso en la galería:
+
+    ```powershell
+    Add-AzsGalleryItem -GalleryItemUri `
+    https://sample.blob.core.windows.net/<temporary blob name>/<offerName.publisherName.version>.azpkg -Verbose
+    ```
+
+5. Compruebe que tiene una cuenta de almacenamiento válida que está disponible para almacenar el elemento. Puede obtener el valor de `GalleryItemURI` del portal del administrador de Azure Stack Hub. Seleccione **Storage account -> Blob Properties -> URL** (Cuenta de almacenamiento -> Propiedades de blob -> URL), con la extensión .azpkg. La cuenta de almacenamiento es solo para uso temporal, para publicar en Marketplace.
+
+   Después de completar el paquete de galería y de cargarlo con **Add-AzsGalleryItem**, la máquina virtual personalizada aparecerá en Marketplace y en la vista **Crear un recurso**. Tenga en cuenta que el paquete de galería personalizado no es visible en la **administración de Marketplace**.
+
+   [![Elemento de Marketplace personalizado cargado](media/azure-stack-create-and-publish-marketplace-item/pkg6sm.png "Elemento de Marketplace personalizado cargado")](media/azure-stack-create-and-publish-marketplace-item/pkg6.png#lightbox)
+
+6. Una vez que el elemento se ha publicado correctamente en Marketplace, puede eliminar el contenido de la cuenta de almacenamiento.
+
+   Ahora se puede acceder a todos los artefactos de la galería predeterminados y personalizados sin autenticación mediante las direcciones URL siguientes:
+
+   - `https://galleryartifacts.adminhosting.[Region].[externalFQDN]/artifact/20161101/[TemplateName]/DeploymentTemplates/Template.json`
+   - `https://galleryartifacts.hosting.[Region].[externalFQDN]/artifact/20161101/[TemplateName]/DeploymentTemplates/Template.json`
+
+6. Puede quitar un elemento de Marketplace mediante el cmdlet **Remove-AzGalleryItem**. Por ejemplo:
+
+   ```powershell
+   Remove-AzsGalleryItem -Name <Gallery package name> -Verbose
+   ```
+
+> [!Note]  
+> La interfaz de usuario de Marketplace puede mostrar un error después de quitar un elemento. Para solucionarlo, haga clic en **Configuración** en el portal. A continuación, seleccione **Descartar modificaciones** en **Personalización del portal**.
+
+---
 
 ## <a name="reference-marketplace-item-manifestjson"></a>Referencia: manifest.json del elemento de Marketplace
 

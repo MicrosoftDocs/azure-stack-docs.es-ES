@@ -8,12 +8,12 @@ ms.date: 8/19/2020
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 60d9ce421ce4cdede89dd9f0fa9ff4ee4746d039
-ms.sourcegitcommit: 69cfff119ab425d0fbb71e38d1480d051fc91216
+ms.openlocfilehash: a67b950f91d502378a151031e25a68f861494555
+ms.sourcegitcommit: af4374755cb4875a7cbed405b821f5703fa1c8cc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91572864"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95812655"
 ---
 # <a name="update-the-sql-resource-provider"></a>Actualización del proveedor de recursos de SQL
 
@@ -24,7 +24,7 @@ Es posible que cuando Azure Stack Hub se actualice a una nueva compilación, se 
 
 |Versión de Azure Stack Hub compatible|Versión de SQL RP|Windows Server en el que se está ejecutando el servicio RP
   |-----|-----|-----|
-  |2005|[SQL RP, versión 1.1.93.0](https://aka.ms/azshsqlrp11930)|Complemento de Microsoft Azure Stack RP Windows Server (SOLO INTERNO)
+  |2008, 2005|[SQL RP, versión 1.1.93.0](https://aka.ms/azshsqlrp11930)|Complemento de Microsoft Azure Stack RP Windows Server (SOLO INTERNO)
   |2005, 2002, 1910|[SQL RP, versión 1.1.47.0](https://aka.ms/azurestacksqlrp11470)|Windows Server 2016 Datacenter - Server Core|
   |1908|[SQL RP versión 1.1.33.0](https://aka.ms/azurestacksqlrp11330)|Windows Server 2016 Datacenter - Server Core|
   |     |     |     |

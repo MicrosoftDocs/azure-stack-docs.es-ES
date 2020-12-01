@@ -3,16 +3,16 @@ title: Adición de inquilinos a Azure Stack Hub para uso y facturación
 description: Aprenda a agregar inquilinos a Azure Stack Hub para uso y facturación.
 author: sethmanheim
 ms.topic: article
-ms.date: 9/02/2020
+ms.date: 11/17/2020
 ms.author: sethm
 ms.reviewer: alfredop
-ms.lastreviewed: 5/28/2020
-ms.openlocfilehash: 43ceccf55807367606bae5f3aa8fcdebf6f9aace
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.lastreviewed: 11/17/2020
+ms.openlocfilehash: 81cefb08d6fd0d1fc773221d52393c8a3ae6fddf
+ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94543823"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95517895"
 ---
 # <a name="add-tenant-for-usage-and-billing-to-azure-stack-hub"></a>Adición de inquilinos a Azure Stack Hub para uso y facturación
 
@@ -49,6 +49,8 @@ De forma predeterminada, como CSP, no tiene acceso a la suscripción de Azure St
 
 Actualice el registro con la suscripción del nuevo cliente. Azure informa acerca del uso del cliente con la identidad del cliente del Centro de partners. Este paso garantiza que se informa del uso de cada cliente de esa suscripción del CSP individual del cliente. Esto facilita el seguimiento del uso y la facturación. Para realizar este paso, debe [registrar primero Azure Stack Hub](azure-stack-registration.md).
 
+### <a name="az-modules"></a>[Modules de Az](#tab/az)
+
 1. Abra Windows PowerShell en un símbolo del sistema con privilegios elevados y ejecute:  
 
    ```powershell
@@ -65,7 +67,7 @@ Actualice el registro con la suscripción del nuevo cliente. Azure informa acerc
    New-AzResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01
    ```
 
-### <a name="new-azresource-powershell-parameters"></a>Parámetros del comando de PowerShell de New-AzResource
+**Parámetros del comando de PowerShell de New-AzResource**
 
 En la siguiente sección se describen los parámetros para el cmdlet **New-AzResource**:
 
@@ -75,6 +77,38 @@ En la siguiente sección se describen los parámetros para el cmdlet **New-AzRes
 | customerSubscriptionID | La suscripción de Azure (no Azure Stack Hub) a la que pertenece el cliente que se va a registrar. Debe crearse en la oferta de CSP. En la práctica, esto significa mediante el centro de partners. Si un cliente tiene más de un inquilino de Azure Active Directory, esta suscripción debe crearse en el inquilino que se usará para iniciar sesión en Azure Stack Hub. El identificador de suscripción del cliente distingue mayúsculas y minúsculas. |
 | resourceGroup | El grupo de recursos de Azure en el que se almacena el registro. |
 | registrationName | El nombre del registro de Azure Stack Hub. Es un objeto almacenado en Azure.
+
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm)
+
+1. Abra Windows PowerShell en un símbolo del sistema con privilegios elevados y ejecute:  
+
+   ```powershell
+   Add-AzureRMAccount
+   ```
+
+   >[!NOTE]
+   > Si la sesión expira, la contraseña ha cambiado o simplemente desea cambiar de cuenta, ejecute el siguiente cmdlet antes de iniciar sesión con **Add-AzAccount**: `Remove-AzAccount-Scope Process`.
+
+2. Escriba sus credenciales de Azure.
+3. En la sesión de PowerShell, ejecute:
+
+   ```powershell
+   New-AzureRMResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01
+   ```
+
+**Parámetros del comando de PowerShell New-AzureRMResource**
+
+En la siguiente sección se describen los parámetros para el cmdlet **New-AzureRMResource**:
+
+| Parámetro | Descripción |
+| --- | --- |
+|registrationSubscriptionID | La suscripción de Azure que se ha usado para el registro inicial de Azure Stack Hub.|
+| customerSubscriptionID | La suscripción de Azure (no Azure Stack Hub) a la que pertenece el cliente que se va a registrar. Debe crearse en la oferta de CSP. En la práctica, esto significa mediante el centro de partners. Si un cliente tiene más de un inquilino de Azure Active Directory, esta suscripción debe crearse en el inquilino que se usará para iniciar sesión en Azure Stack Hub. El identificador de suscripción del cliente distingue mayúsculas y minúsculas. |
+| resourceGroup | El grupo de recursos de Azure en el que se almacena el registro. |
+| registrationName | El nombre del registro de Azure Stack Hub. Es un objeto almacenado en Azure.
+
+---
+
 
 > [!NOTE]  
 > Los inquilinos se deben registrar en cada instancia de Azure Stack Hub que usen. Si tiene dos implementaciones de Azure Stack Hub y un inquilino usa ambas, debe actualizar los registros iniciales de cada implementación con la suscripción del inquilino.

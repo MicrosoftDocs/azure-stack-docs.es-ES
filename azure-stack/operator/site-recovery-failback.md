@@ -3,16 +3,16 @@ title: Guía de usuario de la herramienta de conmutación por recuperación de A
 description: Aprenda a usar la herramienta de conmutación por recuperación de Azure Site Recovery para proteger máquinas virtuales.
 author: sethmanheim
 ms.author: sethm
-ms.date: 9/18/2020
+ms.date: 11/19/2020
 ms.topic: how-to
 ms.reviewer: rtiberiu
-ms.lastreviewed: 9/18/2020
-ms.openlocfilehash: 2b57527f3a65e97f5b83ada115faa63ace563ea4
-ms.sourcegitcommit: 0f2852c3302c6723e7afad637f55b80359182ae3
+ms.lastreviewed: 11/19/2020
+ms.openlocfilehash: 0cb3bccab11d337a8a8804578233edb95ac02dc6
+ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91366282"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95517232"
 ---
 # <a name="azure-site-recovery-failback-tool"></a>Herramienta de conmutación por recuperación de Azure Site Recovery
 
@@ -20,13 +20,16 @@ En un entorno conectado, puede usar Azure Site Recovery para proteger las máqui
 
 En caso de una interrupción, el operador de Azure Stack Hub pasa por un procedimiento de *conmutación por error*; una vez que Azure Stack Hub vuelve a estar en funcionamiento, pasa por un proceso de *conmutación por recuperación*. El proceso de conmutación por error se describe en [este artículo de Site Recovery](/azure/site-recovery/azure-stack-site-recovery), pero el proceso de conmutación por recuperación implica varios pasos manuales:
 
-- Detenga la máquina virtual en ejecución en Azure.
-- Descargue los discos duros virtuales.
-- Cárguelos en Azure Stack Hub.
-- Vuelva a crear las máquinas virtuales.
-- Por último, inicie la máquina virtual que está en ejecución en Azure Stack Hub. 
+1. Detenga la máquina virtual en ejecución en Azure.
+2. Descargue los discos duros virtuales.
+3. Cárguelos en Azure Stack Hub.
+4. Vuelva a crear las máquinas virtuales.
+5. Por último, inicie la máquina virtual que está en ejecución en Azure Stack Hub. 
 
 Como este proceso puede ser proclive a errores y llevar mucho tiempo, hemos creado scripts para ayudar a acelerarlo y automatizarlo.
+
+> [!Note]  
+> La herramienta Azure Site Recovery requiere los módulos Az de Azure Stack Hub. Si ejecuta los módulos de AzureRM de Azure Stack Hub, tendrá que actualizar la estación de trabajo o usar la herramienta de conmutación por error de Azure Site Recovery en un entorno aislado con los módulos Az. Para obtener más información, consulte [Instalación del módulo Az de PowerShell para Azure Stack Hub](powershell-install-az-module.md).
 
 ## <a name="failback-procedure"></a>Procedimiento de conmutación por recuperación
 
