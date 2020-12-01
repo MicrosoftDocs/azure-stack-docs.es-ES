@@ -129,7 +129,7 @@ Tendrá que saber si el administrador de identidades es Azure AD o ADFS. En la 
 
 3. Después de que Commvault se instala en su máquina virtual, abra Commcell Console. En Inicio, seleccione **Commvault** > **Commvault Commcell Console**.
 
-    ![La consola CommCell tiene un panel de navegación en el lateral derecho denominado CommCell Browser (Explorador CommCell). En dicho panel derecho se muestra una ficha Introducción.](./media/azure-stack-network-howto-backup-commvault/commcell-console.png)
+    ![La consola CommCell tiene un panel de navegación en el lateral izquierdo denominado CommCell Browser (Explorador CommCell). En el panel derecho se muestra una página con la pestaña Introducción.](./media/azure-stack-network-howto-backup-commvault/commcell-console.png)
 
 4. Configure los repositorios de copia de seguridad para usar el almacenamiento externo en Azure Stack Hub en Commcell Console de Commvault. En CommCell Browser, seleccione Storage Resources > Storage Pools (Recursos de almacenamiento > Grupos de almacenamiento). Haga clic con el botón derecho y seleccione **Add Storage Pool** (Agregar grupo de almacenamiento). Seleccione **Nube**.
 
@@ -145,13 +145,13 @@ Tendrá que saber si el administrador de identidades es Azure AD o ADFS. En la 
 
 9. Escriba la información de acceso de la cuenta de almacenamiento. Puede encontrar aquí instrucciones sobre la configuración de una cuenta de Azure Storage. Información de acceso:
 
-    -  **Host de servicio** : obtenga el nombre de la dirección URL de las propiedades del contenedor de blobs en el recurso. Por ejemplo, mi dirección URL era https:\//backuptest.blob.westus.stackpoc.com/mybackups y usé blob.westus.stackpoc.com en el host de servicio.
+    -  **Host de servicio**: obtenga el nombre de la dirección URL de las propiedades del contenedor de blobs en el recurso. Por ejemplo, mi dirección URL era https:\//backuptest.blob.westus.stackpoc.com/mybackups y usé blob.westus.stackpoc.com en el host de servicio.
     
-    -   **Nombre de cuenta** : use el nombre de la cuenta de almacenamiento. Puede encontrarlo en la hoja Access Keys (Claves de acceso) del recurso de almacenamiento.
+    -   **Nombre de cuenta**: use el nombre de la cuenta de almacenamiento. Puede encontrarlo en la hoja Access Keys (Claves de acceso) del recurso de almacenamiento.
     
-    -   **Clave de acceso** : obtenga la clave de acceso en la hoja Access Keys (Claves de acceso) del recurso de almacenamiento.
+    -   **Clave de acceso**: obtenga la clave de acceso en la hoja Access Keys (Claves de acceso) del recurso de almacenamiento.
     
-    -   **Contenedor** : nombre del contenedor. En este caso, mybackups.
+    -   **Contenedor**: nombre del contenedor. En este caso, mybackups.
     
     -   **Storage Class** (Clase de almacenamiento): deje este campo como la clase de almacenamiento predeterminada del contenedor de usuario.
 
