@@ -3,16 +3,16 @@ title: Implementación de una plantilla desde el portal en Azure Stack Hub
 description: Aprenda a usar el portal de Azure Stack Hub para implementar plantillas.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 10/05/2020
+ms.date: 12/2/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 10/05/2020
-ms.openlocfilehash: fa3c25ca3ca46d0ce8533694f8135803b20f87a4
-ms.sourcegitcommit: 8ffa29f71d69191534d42f86f49f719b4198a097
+ms.lastreviewed: 12/2/2020
+ms.openlocfilehash: 7b5508f7c4e1bbd9b21f2160aecb6fd27c9a10e3
+ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92354122"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96525445"
 ---
 # <a name="deploy-a-template-using-the-portal-in-azure-stack-hub"></a>Implementación de una plantilla desde el portal en Azure Stack Hub
 
@@ -42,7 +42,7 @@ Puede usar el portal de usuarios de Azure Stack Hub para implementar plantillas 
 
     Cuando haya terminado de realizar cambios en la plantilla, seleccione **Guardar**.
 
-4. Seleccione**Suscripción**. Elija la suscripción que desee usar. Seleccione **Grupo de recursos**. Puede elegir un grupo de recursos existente o crear uno y, a continuación, seleccionar **Aceptar**. Después, seleccione **Revisar y crear**.
+4. Seleccione **Suscripción**. Elija la suscripción que desee usar. Seleccione **Grupo de recursos**. Puede elegir un grupo de recursos existente o crear uno y, a continuación, seleccionar **Aceptar**. Después, seleccione **Revisar y crear**.
 
    ![Edición de parámetros en el portal de Azure Stack Hub](media/azure-stack-deploy-template-portal/template-deploy4a.png)
 

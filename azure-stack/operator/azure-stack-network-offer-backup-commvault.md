@@ -3,16 +3,16 @@ title: Incorporación de Commvault a Marketplace de Azure Stack Hub
 description: Aprenda a agregar Commvault a Marketplace de Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 04/20/2020
+ms.date: 12/2/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 10/28/2019
-ms.openlocfilehash: 6f61e1d34cd8c8fcd22d4ebb87ece01376dbb5dd
-ms.sourcegitcommit: ddcd083430ca905653d412dc2f7b813218d79509
+ms.lastreviewed: 12/2/2020
+ms.openlocfilehash: f035ce5d08e88a6fa5844e405a4fa5a335fa3e5c
+ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83375132"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96525496"
 ---
 # <a name="add-commvault-to-azure-stack-hub-marketplace"></a>Incorporación de Commvault a Marketplace de Azure Stack Hub
 

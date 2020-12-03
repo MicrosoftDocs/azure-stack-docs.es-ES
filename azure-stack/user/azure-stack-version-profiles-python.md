@@ -3,16 +3,16 @@ title: Uso de perfiles de la versión de la API con Python en Azure Stack Hub
 description: Aprenda a usar los perfiles de la versión de la API con Python en Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 09/03/2020
+ms.date: 12/2/2020
 ms.author: sethm
 ms.reviewer: sijuman
-ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: 88c2ecd1448a210daddd1d7da34ffea03c67a6b1
-ms.sourcegitcommit: 7c01ab4b2e2250a7acd67d1c5ba27d15c1e8bce0
+ms.lastreviewed: 12/2/2020
+ms.openlocfilehash: 676cd4fe93a464df0cd0a4cddeb3e12ddee1f229
+ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89448646"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96526040"
 ---
 # <a name="use-api-version-profiles-with-python-in-azure-stack-hub"></a>Uso de perfiles de la versión de la API con Python en Azure Stack Hub
 

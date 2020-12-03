@@ -3,16 +3,16 @@ title: Uso de los perfiles de la versión de la API con GO en Azure Stack Hub
 description: Aprenda a usar los perfiles de la versión de API con GO en Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 09/02/2020
+ms.date: 12/2/2020
 ms.author: sethm
 ms.reviewer: sijuman
-ms.lastreviewed: 05/26/2019
-ms.openlocfilehash: 3d263759763d1c845365fd5d8d89e7006cedbddc
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.lastreviewed: 12/2/2020
+ms.openlocfilehash: 9a179649753addab0f92f99291a2a54a05e5b8fd
+ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94546504"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96525870"
 ---
 # <a name="use-api-version-profiles-with-go-in-azure-stack-hub"></a>Uso de los perfiles de la versión de la API con GO en Azure Stack Hub
 
@@ -23,7 +23,7 @@ Un perfil es una combinación de diferentes tipos de recursos con distintas vers
 - Estabilidad para la aplicación mediante el bloqueo de versión específicas de API.
 - Compatibilidad de la aplicación tanto con Azure Stack Hub como con los centros de datos de Azure regionales.
 
-En el SDK de Go, los perfiles están disponibles en la ruta de acceso de perfiles. Los números de versión de los perfiles se etiquetan con el formato **AAAA-MM-DD**. La versión más reciente del perfil de API de Azure Stack Hub es **2019-03-01** para la versión 1904 de Azure Stack Hub, o las versiones posteriores. Para importar un servicio determinado de un perfil, importe su módulo correspondiente del perfil. Por ejemplo, para importar el servicio **Compute** del perfil **2019-03-01** , use el siguiente código:
+En el SDK de Go, los perfiles están disponibles en la ruta de acceso de perfiles. Los números de versión de los perfiles se etiquetan con el formato **AAAA-MM-DD**. La versión más reciente del perfil de API de Azure Stack Hub es **2019-03-01** para la versión 1904 de Azure Stack Hub, o las versiones posteriores. Para importar un servicio determinado de un perfil, importe su módulo correspondiente del perfil. Por ejemplo, para importar el servicio **Compute** del perfil **2019-03-01**, use el siguiente código:
 
 ```go
 import "github.com/Azure/azure-sdk-for-go/profiles/2019-03-01/compute/mgmt/compute"
@@ -79,7 +79,7 @@ Para ejecutar un ejemplo de código de Go en Azure Stack Hub, siga estos pasos:
 
 4. Cree una entidad de servicio que utilice un secreto de cliente, con el ámbito **Suscripción** y el rol **Propietario**. Guarde el identificador y el secreto de la entidad de servicio. Para obtener información acerca de la creación de una entidad de servicio para Azure Stack Hub, consulte [Uso de una identidad de aplicación para acceder a recursos](../operator/azure-stack-create-service-principals.md). El entorno de Azure Stack Hub ya está configurado.
 
-5. Importe en el código un módulo de servicio del perfil de SDK para GO. La versión actual del perfil de Azure Stack Hub es **2019-03-01**. Por ejemplo, para importar un módulo de red del tipo de perfil **2019-03-01** , use este código:
+5. Importe en el código un módulo de servicio del perfil de SDK para GO. La versión actual del perfil de Azure Stack Hub es **2019-03-01**. Por ejemplo, para importar un módulo de red del tipo de perfil **2019-03-01**, use este código:
 
    ```go
    package main
@@ -147,7 +147,7 @@ Authorizer se debe establecer como autorizador del cliente de recursos. Hay dist
 
    Establezca `<activeDirectoryEndpoint>` en el valor de la propiedad `loginEndpoint` de los metadatos de `ResourceManagerUrl` recuperados en la sección anterior de este documento. El valor de `<tenantID>` debe ser el identificador de su inquilino de Azure Stack Hub.
 
-4. Por último, cree un token de entidad de servicio mediante el método `NewServicePrincipalToken` del módulo **adal** :
+4. Por último, cree un token de entidad de servicio mediante el método `NewServicePrincipalToken` del módulo **adal**:
 
    ```go
    package main

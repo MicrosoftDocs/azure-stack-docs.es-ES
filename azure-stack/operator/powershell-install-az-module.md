@@ -3,16 +3,16 @@ title: Instalación del módulo Az de PowerShell para Azure Stack Hub
 description: Aprenda a instalar PowerShell para Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 11/17/2020
+ms.date: 12/2/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 11/27/2020
-ms.openlocfilehash: 3666965dd3cfe7827fc9ea4c12b06d40ad210ac6
-ms.sourcegitcommit: 2562b86f47db20e2652d4636227afb9cfd0e03ae
+ms.lastreviewed: 12/2/2020
+ms.openlocfilehash: 8fc2990d49d074f56a53fa02983ffd334804ea1d
+ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94785845"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96525683"
 ---
 # <a name="install-powershell-az-module-for-azure-stack-hub"></a>Instalación del módulo Az de PowerShell para Azure Stack Hub
 

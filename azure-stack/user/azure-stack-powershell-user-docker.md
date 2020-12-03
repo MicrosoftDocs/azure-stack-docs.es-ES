@@ -3,16 +3,16 @@ title: Uso de Docker para ejecutar PowerShell en Azure Stack Hub
 description: Uso de Docker para ejecutar PowerShell en Azure Stack Hub
 author: mattbriggs
 ms.topic: how-to
-ms.date: 10/16/2020
+ms.date: 12/2/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 10/16/2020
-ms.openlocfilehash: 54e0c53c666ae6d936ed34baea43f708f4a262da
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.lastreviewed: 12/2/2020
+ms.openlocfilehash: 802a173239534c6826e90a1d4d4c2095c1abcf9a
+ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94546793"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96525615"
 ---
 # <a name="use-docker-to-run-powershell-for-azure-stack-hub"></a>Uso de Docker para ejecutar PowerShell para Azure Stack Hub
 
@@ -107,7 +107,7 @@ En estas instrucciones, ejecutará una imagen de contenedor basada en Windows e 
 
 ### <a name="install-azure-stack-hub-azurerm-module-on-a-windows-container"></a>Instalación del módulo de AzureRM de Azure Stack Hub en un contenedor de Windows
 
-El archivo Dockerfile abre la imagen de Microsoft *microsoft/windowsservercore* , que tiene instalado Windows PowerShell 5.1. A continuación, el archivo carga NuGet y los módulos de PowerShell de Azure Stack Hub, y descarga las herramientas de Azure Stack Hub.
+El archivo Dockerfile abre la imagen de Microsoft *microsoft/windowsservercore*, que tiene instalado Windows PowerShell 5.1. A continuación, el archivo carga NuGet y los módulos de PowerShell de Azure Stack Hub, y descarga las herramientas de Azure Stack Hub.
 
 1. [Descargue el repositorio azure-stack-powershell](https://github.com/Azure-Samples/azure-stack-hub-powershell-in-docker.git) como archivo ZIP o clone el repositorio.
 

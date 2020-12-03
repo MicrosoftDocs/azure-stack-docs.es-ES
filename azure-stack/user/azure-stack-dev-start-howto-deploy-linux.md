@@ -3,16 +3,16 @@ title: Implementación de una máquina virtual Linux en Azure Stack Hub
 description: Implemente una máquina virtual Linux con una imagen de Ubuntu para hospedar una aplicación web en Azure Stack Hub.
 author: mattbriggs
 ms.topic: overview
-ms.date: 5/27/2020
+ms.date: 12/2/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: 2a3eb313122f5f8798129592f35656bdad443f02
-ms.sourcegitcommit: 8ffa29f71d69191534d42f86f49f719b4198a097
+ms.lastreviewed: 12/2/2020
+ms.openlocfilehash: 3847d321c924d06aaacfadc39feac572404ff113
+ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92353854"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96525394"
 ---
 # <a name="deploy-a-linux-vm-to-host-a-web-app-in-azure-stack-hub"></a>Implementación de una máquina virtual Linux para hospedar una aplicación web en Azure Stack Hub
 

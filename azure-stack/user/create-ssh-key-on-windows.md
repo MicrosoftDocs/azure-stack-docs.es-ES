@@ -3,16 +3,16 @@ title: Creación de una clave SSH para Linux en Azure Stack Hub
 description: Aprenda a crear una clave SSH para Linux en Azure Stack Hub
 author: mattbriggs
 ms.topic: article
-ms.date: 7/24/2020
+ms.date: 12/2/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 2/28/2020
-ms.openlocfilehash: 8b6ddaa6dab41cccce5759622ec15f4e5e886956
-ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
+ms.lastreviewed: 12/2/2020
+ms.openlocfilehash: 4d85a543484fb7dfd33e6fb6c412198a4e646345
+ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87250748"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96525955"
 ---
 # <a name="create-an-ssh-key-for-linux-on-azure-stack-hub"></a>Creación de una clave SSH para Linux en Azure Stack Hub
 

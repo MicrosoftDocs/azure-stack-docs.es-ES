@@ -3,16 +3,16 @@ title: Configuración de una puerta de enlace de VPN para Azure Stack Hub
 description: Aprenda a configurar una puerta de enlace de VPN para Azure Stack Hub.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 08/24/2020
+ms.date: 12/2/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: 3363870fe1a2a487883a3fdc59fb90f017237b56
-ms.sourcegitcommit: 8ffa29f71d69191534d42f86f49f719b4198a097
+ms.lastreviewed: 12/2/2020
+ms.openlocfilehash: bcc1b59795c0b2436f8b9556b35bb6f95dc7cf0e
+ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92355181"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96525734"
 ---
 # <a name="set-up-vpn-gateway-for-azure-stack-hub-using-fortigate-nva"></a>Configuración de una puerta de enlace de VPN para Azure Stack Hub mediante la aplicación virtual de red FortiGate
 

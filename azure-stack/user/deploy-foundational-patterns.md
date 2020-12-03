@@ -3,16 +3,16 @@ title: Implementación de patrones fundamentales en Azure Stack Hub
 description: Aprenda a implementar patrones fundamentales con Azure Stack Hub.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 08/24/2020
+ms.date: 12/2/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 11/06/2019
-ms.openlocfilehash: df603935dc192894dcb96837dc92fa4bc88f239e
-ms.sourcegitcommit: 65a115d1499b5fe16b6fe1c31cce43be21d05ef8
+ms.lastreviewed: 12/2/2020
+ms.openlocfilehash: 5609d9195a909a20a54917555a7309fe0901d7fa
+ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88818409"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96525479"
 ---
 # <a name="deploy-foundational-patterns-overview"></a>Introducción a la implementación de patrones fundamentales
 

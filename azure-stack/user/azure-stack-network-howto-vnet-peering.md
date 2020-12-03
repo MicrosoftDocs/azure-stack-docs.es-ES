@@ -3,16 +3,16 @@ title: Conexión de dos VNET de Azure Stack Hub
 description: Obtenga información sobre cómo conectar dos instancias de Azure Stack Hub.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 5/27/2020
+ms.date: 12/2/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: b6488b98317decf6b592339bfa66d15834f1f55d
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.lastreviewed: 12/2/2020
+ms.openlocfilehash: 3920e0606bc4e101286f22796d7269b0774701d4
+ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94543398"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96525666"
 ---
 # <a name="vnet-to-vnet-connectivity-with-rras"></a>Conectividad de VNet a VNet con RRAS
 

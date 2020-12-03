@@ -3,16 +3,16 @@ title: Copia de seguridad de una máquina virtual en Azure Stack Hub con Commvau
 description: Aprenda a hacer una copia de seguridad de una máquina virtual en Azure Stack Hub con Commvault.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 04/20/2020
+ms.date: 12/2/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 10/30/2019
-ms.openlocfilehash: 9308e8b017201119a7179c78dbeb99006f4ebfff
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.lastreviewed: 12/2/2020
+ms.openlocfilehash: e9f6c41097085a0342b2c0a2fc5b5b995c2d9186
+ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94547099"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96524799"
 ---
 # <a name="back-up-your-vm-on-azure-stack-hub-with-commvault"></a>Copia de seguridad de una máquina virtual en Azure Stack Hub con Commvault
 
@@ -129,7 +129,7 @@ Tendrá que saber si el administrador de identidades es Azure AD o ADFS. En la 
 
 3. Después de que Commvault se instala en su máquina virtual, abra Commcell Console. En Inicio, seleccione **Commvault** > **Commvault Commcell Console**.
 
-    ![La consola CommCell tiene un panel de navegación en el lateral izquierdo denominado CommCell Browser (Explorador CommCell). En el panel derecho se muestra una página con la pestaña Introducción.](./media/azure-stack-network-howto-backup-commvault/commcell-console.png)
+    ![La consola CommCell tiene un panel de navegación en el lateral derecho denominado CommCell Browser (Explorador CommCell). En dicho panel derecho se muestra una ficha Introducción.](./media/azure-stack-network-howto-backup-commvault/commcell-console.png)
 
 4. Configure los repositorios de copia de seguridad para usar el almacenamiento externo en Azure Stack Hub en Commcell Console de Commvault. En CommCell Browser, seleccione Storage Resources > Storage Pools (Recursos de almacenamiento > Grupos de almacenamiento). Haga clic con el botón derecho y seleccione **Add Storage Pool** (Agregar grupo de almacenamiento). Seleccione **Nube**.
 

@@ -3,16 +3,16 @@ title: Implementación de una aplicación de Node.js en una máquina virtual en 
 description: Implementación de una aplicación de Node.js en Azure Stack Hub.
 author: mattbriggs
 ms.topic: overview
-ms.date: 5/27/2020
+ms.date: 12/2/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 10/02/20
-ms.openlocfilehash: 72bd63e7f7c007a7c39c6150d0e2feac29b5d91d
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.lastreviewed: 12/2/2020
+ms.openlocfilehash: 49a709370f5f3ffebe8cc5ee6d365aaf152bf67b
+ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90573996"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96524646"
 ---
 # <a name="deploy-a-nodejs-web-app-to-a-vm-in-azure-stack-hub"></a>Implementación de una aplicación web de Node.js en una máquina virtual en Azure Stack Hub
 

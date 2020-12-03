@@ -3,16 +3,16 @@ title: Conexión a Azure Stack Hub mediante la extensión de la cuenta de Azure 
 description: Conectarse a Azure Stack Hub como desarrollador mediante la extensión de la cuenta de Azure en Visual Studio Code
 author: mattbriggs
 ms.topic: conceptual
-ms.date: 09/21/2020
+ms.date: 12/2/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 09/21/2020
-ms.openlocfilehash: fc07b78253a19d8a7f459aecacd699338a129ea7
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.lastreviewed: 12/2/2020
+ms.openlocfilehash: 3a9603dd4521e63d00d281f8fcd1b8f1912d5836
+ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94546708"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96526006"
 ---
 # <a name="connect-to-azure-stack-hub-using-azure-account-extension-in-visual-studio-code"></a>Conexión a Azure Stack Hub mediante la extensión de la cuenta de Azure en Visual Studio Code
 
@@ -97,13 +97,13 @@ VS Code es un editor ligero para compilar y depurar aplicaciones web y en la nub
       "azure.cloud": "AzurePPE"
       ```
 
-10. Guarde la configuración de usuario y use **Ctrl + Mayús + P** una vez más. Seleccione **Azure: Sign in to Azure Cloud**. Se mostrará la nueva opción, **AzurePPE** , en la lista de destinos.
+10. Guarde la configuración de usuario y use **Ctrl + Mayús + P** una vez más. Seleccione **Azure: Sign in to Azure Cloud**. Se mostrará la nueva opción, **AzurePPE**, en la lista de destinos.
 
 11. Seleccione **AzurePPE**. La página de autenticación se cargará en el explorador. Inicie sesión en el punto de conexión.
 
 12. Para comprobar que ha iniciado sesión correctamente en su suscripción de Azure Stack Hub, use **Ctrl + Mayús + P** y seleccione **Azure: Seleccionar suscripción**. A continuación, compruebe si la suscripción está disponible.
 
-## <a name="commands"></a>Comandos
+## <a name="commands"></a>Comandos:
 
 | Azure: Sign In | Inicie sesión en la suscripción de Azure |
 | --- | --- |

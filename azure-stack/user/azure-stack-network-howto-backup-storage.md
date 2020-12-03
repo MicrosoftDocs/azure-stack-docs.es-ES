@@ -3,16 +3,16 @@ title: Copia de seguridad de las cuentas de almacenamiento en Azure Stack Hub
 description: Aprenda a hacer una copia de seguridad de las cuentas de almacenamiento en Azure Stack Hub.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 5/27/2020
+ms.date: 12/2/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 10/19/2019
-ms.openlocfilehash: e77c05c6f13a3ee3cb23a13a466bb7e0e80394f7
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.lastreviewed: 12/2/2020
+ms.openlocfilehash: 40ec516f2f10f02716257077a4676c5724acf4ec
+ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94546198"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96525700"
 ---
 # <a name="back-up-your-storage-accounts-on-azure-stack-hub"></a>Copia de seguridad de las cuentas de almacenamiento en Azure Stack Hub
 
@@ -80,13 +80,13 @@ Cuando haya configurado el servidor Windows Server, tendrá que instalar [Power
     export AZCOPY_DEFAULT_SERVICE_API_VERSION=2017-11-09
     ```
 
-4. En el servidor intermedio, cree un script. Actualice este comando con la **cuenta de almacenamiento** , la **clave SAS** y la **ruta de acceso del directorio local**. Ejecutará el script para copiar los datos de forma incremental desde la cuenta de almacenamiento de **origen**.
+4. En el servidor intermedio, cree un script. Actualice este comando con la **cuenta de almacenamiento**, la **clave SAS** y la **ruta de acceso del directorio local**. Ejecutará el script para copiar los datos de forma incremental desde la cuenta de almacenamiento de **origen**.
 
     ```
     azcopy sync "https:/<storagaccount>/<container>?<SAS Key>" "C:\\myFolder" --recursive=true --delete-destination=true
     ```
 
-5.  Escriba la **cuenta de almacenamiento** ,** la clave SAS ** y la **ruta de acceso del directorio local.  Los usará para copiar los datos incrementalmente en la cuenta de almacenamiento de **destino**.
+5.  Escriba la **cuenta de almacenamiento**,** la clave SAS ** y la **ruta de acceso del directorio local.  Los usará para copiar los datos incrementalmente en la cuenta de almacenamiento de **destino**.
     
     ```
     azcopy sync "C:\\myFolder" "https:// <storagaccount>/<container>?<SAS Key>" --recursive=true --delete-destination=true

@@ -3,16 +3,16 @@ title: Administración de Azure Stack Hub con la CLI de Azure
 description: Obtenga información sobre cómo usar la interfaz de la línea de comandos (CLI) multiplataforma para administrar e implementar recursos en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 10/26/2020
+ms.date: 12/2/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 10/26/2020
-ms.openlocfilehash: 35378da825d9b2d9c7446148101f1d205a22b2c4
-ms.sourcegitcommit: b960df16e84ec9fbccfce772102b91f0b7ae7060
+ms.lastreviewed: 12/2/2020
+ms.openlocfilehash: 5cd1c1b7dac9e05925488b3543461f3fbd8dd9e5
+ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93291254"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96525887"
 ---
 # <a name="install-azure-cli-on-azure-stack-hub"></a>Instalación de la CLI de Azure en Azure Stack Hub
 
@@ -79,7 +79,7 @@ Esta sección le guiará a través de la configuración de la CLI si usa Azure A
  
 6. Inicie sesión en el entorno de Azure Stack Hub. Para ello, use el comando `az login`. Inicie sesión en el entorno de Azure Stack Hub como un usuario o una [entidad de servicio](/azure/active-directory/develop/app-objects-and-service-principals). 
 
-   - Iniciar sesión como *usuario* : 
+   - Iniciar sesión como *usuario*: 
 
      puede especificar el nombre de usuario y la contraseña directamente en el comando `az login` o autenticarse utilizando un explorador. Debe hacer esto último si la cuenta tiene habilitada la autenticación multifactor:
 
@@ -90,7 +90,7 @@ Esta sección le guiará a través de la configuración de la CLI si usa Azure A
      > [!NOTE]
      > Si su cuenta de usuario tiene la autenticación multifactor habilitada, use el comando `az login` sin proporcionar el parámetro `-u`. Al ejecutar este comando, se le proporciona una URL y un código que debe usar para la autenticación.
 
-   - Inicie sesión como una *entidad de servicio* : 
+   - Inicie sesión como una *entidad de servicio*: 
     
      Antes de iniciar sesión, [cree una entidad de servicio en Azure Portal](../operator/azure-stack-create-service-principals.md?view=azs-2002) o mediante la CLI y asígnele un rol. Ahora, inicie sesión con el siguiente comando:
 
@@ -152,7 +152,7 @@ Esta sección le guiará a través de la configuración de la CLI si usa los Ser
 
 6. Inicie sesión en el entorno de Azure Stack Hub. Para ello, use el comando `az login`. Puede iniciar sesión en el entorno de Azure Stack Hub como un usuario o una [entidad de servicio](/azure/active-directory/develop/app-objects-and-service-principals). 
 
-   - Iniciar sesión como *usuario* :
+   - Iniciar sesión como *usuario*:
 
      puede especificar el nombre de usuario y la contraseña directamente en el comando `az login` o autenticarse utilizando un explorador. Debe hacer esto último si la cuenta tiene habilitada la autenticación multifactor:
 
@@ -163,7 +163,7 @@ Esta sección le guiará a través de la configuración de la CLI si usa los Ser
      > [!NOTE]
      > Si su cuenta de usuario tiene la autenticación multifactor habilitada, use el comando `az login` sin proporcionar el parámetro `-u`. Al ejecutar este comando, se le proporciona una URL y un código que debe usar para la autenticación.
 
-   - Inicie sesión como una *entidad de servicio* : 
+   - Inicie sesión como una *entidad de servicio*: 
     
      Prepare el archivo .pem que se va a usar para el inicio de sesión de la entidad de servicio.
 
@@ -237,7 +237,7 @@ Use los pasos siguientes para conectarse a Azure Stack Hub:
 
 6. Inicie sesión en el entorno de Azure Stack Hub. Para ello, use el comando `az login`. Puede iniciar sesión en el entorno de Azure Stack Hub como un usuario o una [entidad de servicio](/azure/active-directory/develop/app-objects-and-service-principals). 
 
-   * Iniciar sesión como *usuario* :
+   * Iniciar sesión como *usuario*:
 
      puede especificar el nombre de usuario y la contraseña directamente en el comando `az login` o autenticarse utilizando un explorador. Debe hacer esto último si la cuenta tiene habilitada la autenticación multifactor:
 
