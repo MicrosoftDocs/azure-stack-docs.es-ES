@@ -3,16 +3,16 @@ title: Implementación de una aplicación web de C# ASP.NET en una máquina virt
 description: Implemente una aplicación web de C# ASP.NET en una máquina virtual en Azure Stack Hub.
 author: mattbriggs
 ms.topic: overview
-ms.date: 08/24/2020
+ms.date: 12/2/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: c28a5bbb50b4694358eec4375db6c20a00ba9e99
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.lastreviewed: 12/2/2020
+ms.openlocfilehash: 1ff00f354f9ab451bbf9557c1d63b01980d78875
+ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90574200"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96525426"
 ---
 # <a name="deploy-a-c-aspnet-web-app-to-a-vm-in-azure-stack-hub"></a>Implementación de una aplicación web de C# ASP.NET en una máquina virtual en Azure Stack Hub
 
@@ -65,9 +65,9 @@ En este artículo se usa una aplicación C# 6.0 que usa ASP.NET Core 2.2 y se ej
 
     a. En **Origen**, seleccione **Cualquiera**.
 
-    b. En **Intervalo de puertos de origen**, escriba un asterisco ( **\*** ).
+    b. En **Intervalo de puertos de origen**, escriba un asterisco (* *\** ).
 
-    c. En **Destino**, seleccione **Cualquiera**.
+    c. En *Destino**, seleccione **Cualquiera**.
 
     d. En **Intervalo de puertos de destino**, agregue el puerto que quiere abrir.
 
