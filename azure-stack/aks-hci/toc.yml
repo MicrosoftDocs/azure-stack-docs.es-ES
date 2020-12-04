@@ -21,8 +21,6 @@
           href: create-kubernetes-cluster-powershell.md
 - name: Tutoriales
   items:
-    - name: Uso de contenedores de Windows Server
-      href: deploy-windows-application.md
     - name: Uso de contenedores de Linux
       href: deploy-linux-application.md
 - name: Conceptos
@@ -37,8 +35,14 @@
       href: connect-to-arc.md
     - name: Adaptación de aplicaciones para clústeres de Kubernetes de sistemas operativos mixtos
       href: adapt-apps-mixed-os-clusters.md
-    - name: Uso del almacenamiento persistente en un contenedor de Windows y preparación para gMSA
-      href: persistent-storage-windows-nodes.md
+    - name: Uso de contenedores de Windows Server
+      items:
+        - name: Implementación de aplicaciones .NET en AKS en Azure Stack HCI
+          href: deploy-windows-application.md
+        - name: Preparación de nodos de Windows para la compatibilidad con las cuentas de servicio administradas de grupo
+          href: prepare-windows-nodes-gmsa.md
+        - name: Uso de un volumen persistente en un clúster de AKS en Azure Stack HCI
+          href: persistent-volume.md
     - name: Solución de problemas
       href: troubleshoot.md
 - name: Temas relacionados
