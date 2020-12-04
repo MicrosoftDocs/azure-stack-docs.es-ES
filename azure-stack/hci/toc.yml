@@ -32,8 +32,6 @@
       items:
         - name: Creación de un clúster con PowerShell
           href: deploy/create-cluster-powershell.md
-        - name: Implementación de una controladora de red con PowerShell
-          href: deploy/network-controller-powershell.md
 - name: Administrar
   items:
     - name: Administración de máquinas virtuales
