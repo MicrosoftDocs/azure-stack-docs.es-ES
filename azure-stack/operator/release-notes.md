@@ -3,16 +3,16 @@ title: Notas de la versión de Azure Stack Hub
 description: Notas de la versión para los sistemas integrados de Azure Stack Hub, incluidas las actualizaciones y correcciones de errores.
 author: sethmanheim
 ms.topic: article
-ms.date: 11/20/2020
+ms.date: 11/30/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 09/09/2020
-ms.openlocfilehash: 861dbb6a665664619bd06cd15d1e1b7fe86a9e8e
-ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
+ms.openlocfilehash: 3e74f1e77c5c30ec17bf021d95952ce7bb19426b
+ms.sourcegitcommit: a7a2ac1b9be926134826dce03e348154fd212bc9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95518371"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96443324"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Notas de la versión de Azure Stack Hub
 
@@ -131,7 +131,7 @@ Las revisiones de Azure Stack Hub solo son aplicables a los sistemas integrados 
 
 La versión de 2008 de Azure Stack Hub debe aplicarse sobre la versión 2005 con las revisiones siguientes:
 
-- [Revisión 1.2005.23.88 de Azure Stack Hub](https://support.microsoft.com/help/4595068)
+- [Revisión 1.2005.24.90 de Azure Stack Hub](https://support.microsoft.com/help/4595070)
 
 ### <a name="after-successfully-applying-the-2008-update"></a>Después de aplicar correctamente la actualización 2008
 
@@ -139,7 +139,7 @@ Cuando se actualiza a una nueva versión principal (por ejemplo, de 1.2005.x a 1
 
 Después de la instalación de 2008, si se publica posteriormente alguna revisión de la versión 2008, se debe instalar:
 
-- [Revisión 1.2008.15.92 de Azure Stack Hub](https://support.microsoft.com/help/4595069)
+- [Revisión 1.2008.16.94 de Azure Stack Hub](https://support.microsoft.com/help/4595071)
 ::: moniker-end
 
 ::: moniker range="azs-2005"
@@ -231,7 +231,7 @@ Las revisiones de Azure Stack Hub solo son aplicables a los sistemas integrados 
 
 La versión 2005 de Azure Stack Hub debe aplicarse sobre la versión 2002 con las revisiones siguientes:
 
-- [Revisión 1.2002.61.163 de Azure Stack Hub](https://support.microsoft.com/help/4592241)
+- [Revisión 1.2002.63.167 de Azure Stack Hub](https://support.microsoft.com/help/4595072)
 
 ### <a name="after-successfully-applying-the-2005-update"></a>Después de aplicar correctamente la actualización 2005
 
@@ -239,7 +239,7 @@ A partir de la versión 2005, cuando se actualiza a una nueva versión principal
 
 Después de la instalación de 2005, si se publican posteriormente algunas revisiones de la versión 2005, se deben instalar:
 
-- [Revisión 1.2005.23.88 de Azure Stack Hub](https://support.microsoft.com/help/4595068)
+- [Revisión 1.2005.24.90 de Azure Stack Hub](https://support.microsoft.com/help/4595070)
 ::: moniker-end
 
 ::: moniker range="azs-2002"
@@ -297,7 +297,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 
 - Las siguientes API de administrador han quedado en desuso:
 
-  | Proveedor de recursos       | Recurso              | Versión            |
+  | Proveedor de recursos       | Resource              | Versión            |
   |-------------------------|-----------------------|--------------------|
   | Microsoft.Storage.Admin | granjas                 | 2015-12-01-preview |
   | Microsoft.Storage.Admin | farms/acquisitions    | 2015-12-01-preview |
@@ -306,7 +306,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 
 - Se han sustituido las siguientes API de administrador por una versión más reciente (2018-09-01):
 
-  | Proveedor de recursos      | Recurso              | Versión    |
+  | Proveedor de recursos      | Resource              | Versión    |
   |------------------------|-----------------------|------------|
   | Microsoft.Backup.Admin | backupLocation         | 2016-05-01 |
   | Microsoft.Backup.Admin | backups                | 2016-05-01 |
@@ -368,7 +368,7 @@ La versión 2002 de Azure Stack Hub debe aplicarse en la versión 1910 con las
 Después de instalar esta actualización, instale todas las revisiones aplicables.
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Revisión 1.2002.62.165 de Azure Stack Hub](https://support.microsoft.com/help/4594758)
+- [Revisión 1.2002.63.167 de Azure Stack Hub](https://support.microsoft.com/help/4595072)
 ::: moniker-end
 
 <!------------------------------------------------------------>

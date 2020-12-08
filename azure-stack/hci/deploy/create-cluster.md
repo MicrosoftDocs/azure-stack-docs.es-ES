@@ -3,15 +3,15 @@ title: Creación de un clúster de Azure Stack HCI mediante Windows Admin Center
 description: Aprenda a administrar un clúster de servidor para Azure Stack HCI mediante Windows Admin Center.
 author: v-dasis
 ms.topic: how-to
-ms.date: 10/17/2020
+ms.date: 11/30/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: 508bf39e9cdeb55485bc2a517c412cee7f3dcd80
-ms.sourcegitcommit: 296c95cad20ed62bdad0d27f1f5246bfc1c81d5e
+ms.openlocfilehash: 638ede26b1bc720c5975dc7bdf7e0b7f05d9d600
+ms.sourcegitcommit: 26901a61a44390bc9b7804c22018c213036e680d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93064776"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96354180"
 ---
 # <a name="create-an-azure-stack-hci-cluster-using-windows-admin-center"></a>Creación de un clúster de Azure Stack HCI mediante Windows Admin Center
 
@@ -44,10 +44,10 @@ Además, el equipo de administración de Windows Admin Center debe estar unido a
 
 Estos son los pasos principales del Asistente para crear clúster:
 
-1. **Introducción** : garantiza que todos los servidores cumplen los requisitos previos y cuentan con las características que se necesitan para la combinación de clústeres.
-1. **Redes** : asigna y configura los adaptadores de red y crea los conmutadores virtuales para cada servidor.
-1. **Agrupación en clústeres** : valida que el clúster está configurado correctamente. En el caso de los clústeres extendidos, también configura los dos sitios.
-1. **Almacenamiento** : configura Espacios de almacenamiento directo.
+1. **Introducción**: garantiza que todos los servidores cumplen los requisitos previos y cuentan con las características que se necesitan para la combinación de clústeres.
+1. **Redes**: asigna y configura los adaptadores de red y crea los conmutadores virtuales para cada servidor.
+1. **Agrupación en clústeres**: valida que el clúster está configurado correctamente. En el caso de los clústeres extendidos, también configura los dos sitios.
+1. **Almacenamiento**: configura Espacios de almacenamiento directo.
 
 Una vez completado el asistente, configure el testigo del clúster, Regístrese en Azure y cree volúmenes (lo que también configura la replicación entre sitios si está creando un clúster extendido).
 
@@ -130,7 +130,7 @@ El paso 2 del asistente le guía a través de la configuración de conmutadores 
 
 1. Espere a que la columna **Status** (Estado) muestre **Passed** (Superado) para cada servidor y, a continuación, haga clic en **Next** (Siguiente). Este paso comprueba la conectividad de red entre todos los adaptadores con la misma subred y el mismo identificador de VLAN. Las direcciones IP proporcionadas se transfieren desde el adaptador físico a los adaptadores virtuales una vez que se crean los conmutadores virtuales en el paso siguiente. La tarea puede tardar varios minutos en completarse, según el número de adaptadores configurados.
 
-1. En **Conmutador virtual** , seleccione una de las siguientes opciones según corresponda. En función del número de adaptadores presente, es posible que no se muestren todas las opciones:
+1. En **Conmutador virtual**, seleccione una de las siguientes opciones según corresponda. En función del número de adaptadores presente, es posible que no se muestren todas las opciones:
 
     - **Omitir la creación del conmutador virtual**
     - **Crear un conmutador virtual para usarlo para el almacenamiento y el proceso**
@@ -189,7 +189,10 @@ Si la resolución del clúster no se realiza correctamente después de un tiempo
 
 ## <a name="step-5-sdn-optional"></a>Paso 5: SDN (opcional)
 
-Este paso opcional le guía a través de la configuración del componente de Controladora de red de [redes definidas por software (SDN)](../concepts/software-defined-networking.md). Una vez configurado el rol Controladora de red, se puede usar para configurar otros componentes de SDN, como el equilibrador de carga del software y la puerta de enlace de RAS.
+Este paso opcional le guía a través de la configuración del componente de Controladora de red de [redes definidas por software (SDN)](../concepts/software-defined-networking.md). Una vez configurada la controladora de red, puede configurar otros componentes de SDN, como el equilibrador de carga por software (SLB) y la puerta de enlace de RAS, según sea necesario.
+
+> [!NOTE]
+> El asistente no admite la configuración de SLB y la puerta de enlace de RAS hoy en día. Puede usar scripts de SDN Express para configurar estos componentes. Para obtener información sobre cómo hacerlo, consulte el [repositorio de GitHub de SDNExpress](https://github.com/microsoft/SDN/tree/master/SDNExpress/scripts).
 
 > [!NOTE]
 > SDN no se admite o no está disponible para los clústeres extendidos.
@@ -197,22 +200,25 @@ Este paso opcional le guía a través de la configuración del componente de Con
 :::image type="content" source="media/cluster/create-cluster-network-controller.png" alt-text="Asistente de creación de clústeres: Controladora de red de SDN" lightbox="media/cluster/create-cluster-network-controller.png":::
 
 1. Seleccione **Siguiente: SDN**.
-1. En **Host** , escriba un nombre para Controladora de red.
+1. En **Host**, escriba un nombre para Controladora de red. Este es el nombre DNS que usan los clientes de administración (como Windows Admin Center) para comunicarse con la controladora de red.
 1. Especifique una ruta de acceso al archivo VHD de Azure Stack HCI. Use **Examinar** para encontrarlo más rápido.
-1. Especifique el número de máquinas virtuales que se dedicarán a Controladora de red. Se recomiendan entre tres y cinco máquinas virtuales para lograr una alta disponibilidad.
-1. En **Red** , escriba el identificador de VLAN.
+1. Especifique el número de máquinas virtuales que se dedicarán a Controladora de red. Se recomiendan al menos tres máquinas virtuales para lograr una alta disponibilidad.
+1. En **Network** (Red), escriba el identificador de VLAN de la red de administración. La controladora de red necesita conectividad con la misma red de administración que los hosts para comunicarse y configurar los hosts.
 1. En **VM network addressing** (Direcciones de red de VM), seleccione **DHCP** o **Estáticas**.
-1. Si seleccionó **DHCP** , escriba el nombre y la dirección IP de las máquinas virtuales de Controladora de red.
-1. Si seleccionó **Estáticas** , haga lo siguiente:
+1. Si seleccionó **DHCP**, escriba el nombre de las máquinas virtuales de la controladora de red.
+1. Si seleccionó **Estáticas**, haga lo siguiente:
+    1. Especificación de una dirección IP
     1. Especifique un prefijo de subred.
     1. Especifique la puerta de enlace predeterminada.
     1. Especifique uno o varios servidores DNS. Haga clic en **Agregar** para agregar servidores DNS adicionales.
-1. En **Credenciales** , escriba el nombre de usuario y la contraseña usados para unir las máquinas virtuales de Controladora de red al dominio del clúster.
+1. En **Credenciales**, escriba el nombre de usuario y la contraseña usados para unir las máquinas virtuales de Controladora de red al dominio del clúster.
 1. Escriba la contraseña administrativa local para estas máquinas virtuales.
-1. En **Avanzado** , escriba la ruta de acceso a las máquinas virtuales.
+1. En **Avanzado**, escriba la ruta de acceso a las máquinas virtuales.
 1. Escriba los valores de **inicio del grupo de direcciones MAC** y **final del grupo de direcciones MAC**.
 1. Cuando termine, haga clic en **Siguiente**.
 1. Espere hasta que el asistente complete su trabajo. Permanezca en esta página hasta que se completen todas las tareas en curso. Haga clic en **Finalizar**.
+
+1. Una vez creadas las máquinas virtuales de la controladora de red, configure las actualizaciones de DNS dinámico para el nombre del clúster de la controladora de red en el servidor DNS. Para obtener información sobre cómo hacerlo, consulte [Configurar el registro de DNS dinámico para la controladora de red](https://docs.microsoft.com/windows-server/networking/sdn/plan/installation-and-preparation-requirements-for-deploying-network-controller#step-3-configure-dynamic-dns-registration-for-network-controller).
 
 Si se produce un error en la implementación de Controladora de red, haga lo siguiente antes de volver a intentarlo:
 
@@ -229,9 +235,9 @@ Una vez completado el asistente, todavía hay algunas tareas importantes que deb
 La primera tarea consiste en deshabilitar el protocolo de proveedor de compatibilidad para seguridad de credenciales (CredSSP) en cada servidor por motivos de seguridad. Recuerde que CredSSP debe estar habilitado para el asistente. Si tiene problemas con CredSSP, consulte [Solución de problemas de CredSSP](../manage/troubleshoot-credssp.md) para más información.
 
 1. En Windows Admin Center, en **All connections** (Todas las conexiones), seleccione el clúster que acaba de crear.
-1. En **Herramientas** , seleccione **Servidores**.
+1. En **Herramientas**, seleccione **Servidores**.
 1. En el panel derecho, seleccione el primer servidor del clúster.
-1. En **Información general** , seleccione **Disable CredSSP** (Deshabilitar CredSSP). Verá que el banner **CredSSP ENABLED** (CredSSP HABILITADO) de la parte superior desaparece.
+1. En **Información general**, seleccione **Disable CredSSP** (Deshabilitar CredSSP). Verá que el banner **CredSSP ENABLED** (CredSSP HABILITADO) de la parte superior desaparece.
 1. Repita los pasos 3 y 4 para cada servidor del clúster.
 
 Estas son las otras tareas que tendrá que hacer:

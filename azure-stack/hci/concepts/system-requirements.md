@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
 ms.date: 10/29/2020
-ms.openlocfilehash: 68ee5d0635d1ed9dbc62bece417f00430bf61de2
-ms.sourcegitcommit: 296c95cad20ed62bdad0d27f1f5246bfc1c81d5e
+ms.openlocfilehash: 2d4aebd0609dff744f4c8f6ae9113fba1b7b0ba9
+ms.sourcegitcommit: 26901a61a44390bc9b7804c22018c213036e680d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93066001"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96354163"
 ---
 # <a name="system-requirements-for-azure-stack-hci"></a>Requisitos del sistema para Azure Stack HCI
 
@@ -76,7 +76,7 @@ Con Espacios de almacenamiento directo, se debe tener en cuenta el tráfico de r
 
 En el caso de los clústeres extendidos, también hay tráfico adicional de réplica de almacenamiento que fluye entre los sitios. El tráfico de la capa de bus de almacenamiento (SBL) y el del volumen compartido de clúster (CSV) no se dirige entre sitios, solo entre los nodos de servidor dentro de cada sitio.
 
-Para conocer los requisitos y las consideraciones de planeación de redes de host, consulte [Planeamiento de redes de host para Azure Stack HCI](plan-host-networking.md).
+Para conocer los requisitos y las consideraciones sobre redes de host, consulte [Requisitos de red de host para Azure Stack HCI](host-network-requirements.md).
 
 ## <a name="software-defined-networking-sdn-requirements"></a>Requisitos de redes definidas por software (SDN)
 
