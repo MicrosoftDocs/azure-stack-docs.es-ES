@@ -3,17 +3,17 @@ title: Descarga de elementos de Marketplace desde Azure y publicación en Azure 
 description: Aprenda a descargar elementos de Marketplace desde Azure y a publicarlos en Azure Stack Hub.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 11/18/2020
+ms.date: 12/9/2020
 ms.author: sethm
 ms.reviewer: avishwan
-ms.lastreviewed: 11/18/2020
+ms.lastreviewed: 12/9/2020
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: 1e6ef20bd1c04e8fd08af73370f2ed001b0be500
-ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
+ms.openlocfilehash: e66d49fc20a9cfbc70eeeb11a7817bd5bc75d7c0
+ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95517929"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96934971"
 ---
 # <a name="download-marketplace-items-to-azure-stack-hub"></a>Descarga de elementos de Marketplace en Azure Stack Hub
 
@@ -88,14 +88,23 @@ Este escenario tiene dos partes:
   - El equipo que tenga conectividad a Internet debe tener la **versión 1.2.11 del paquete de Azure Stack PowerShell Module** u otra versión posterior. Si no están, [instale los módulos de PowerShell específicos de Azure Stack Hub](powershell-install-az-module.md).
 
   - Para habilitar la importación de un elemento de Marketplace descargado, debe estar configurado el [entorno de PowerShell para el operador de Azure Stack Hub](azure-stack-powershell-configure-admin.md).
+  - .NET Framework 4.7 o superior.
 
-- Descargue el módulo **Azs.Syndication.Admin** de la Galería de PowerShell mediante el comando siguiente:
+Descargue el módulo **Azs.Syndication.Admin** de la Galería de PowerShell mediante el comando siguiente:
+
+### <a name="az-modules"></a>[Modules de Az](#tab/az1)
 
   ```powershell
   Install-Module -Name Azs.Syndication.Admin -AllowPrerelease -PassThru
   ```
-  
-- .NET Framework 4.7 o superior.
+
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm1)
+
+  ```powershell
+  Install-Module -Name Azs.Syndication.Admin -RequiredVersion 0.1.140
+  ```
+
+---
 
 Una vez registrado Azure Stack, puede ignorar el mensaje siguiente que aparece en la hoja de administración de Marketplace, ya que no es aplicable en un caso de uso sin conexión:
 
@@ -106,7 +115,7 @@ Una vez registrado Azure Stack, puede ignorar el mensaje siguiente que aparece e
 > [!IMPORTANT]
 > Asegúrese de descargar la herramienta de redifusión de Marketplace cada vez que descargue elementos de Marketplace en un escenario desconectado. Se realizan cambios frecuentes en esta herramienta y se debe usar la versión más reciente en cada descarga.
 
-### <a name="az-modules"></a>[Modules de Az](#tab/az)
+### <a name="az-modules"></a>[Modules de Az](#tab/az2)
 
 1. En un equipo con conexión a Internet, abra una consola de PowerShell como administrador.
 
@@ -174,7 +183,7 @@ Una vez registrado Azure Stack, puede ignorar el mensaje siguiente que aparece e
     Save-Package -ProviderName NuGet -Source https://www.powershellgallery.com/api/v2 -Name Azs.Syndication.Admin -Path "Destination folder path in quotes" -Force
     ```
 
-### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm)
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm2)
 
 1. En un equipo con conexión a Internet, abra una consola de PowerShell como administrador.
 
@@ -198,7 +207,7 @@ Una vez registrado Azure Stack, puede ignorar el mensaje siguiente que aparece e
 4. Si aún no lo ha hecho en el paso de requisitos previos, descargue la versión más reciente de la herramienta de redifusión de Marketplace:
 
    ```powershell
-   Install-Module -Name Azs.Syndication.Admin -AllowPrerelease -PassThru
+   Install-Module -Name Azs.Syndication.Admin -RequiredVersion 0.1.140
    ```
 
 5. Para seleccionar elementos de Marketplace como imágenes de máquinas virtuales, extensiones o plantillas de soluciones para descargar, ejecute el siguiente comando:

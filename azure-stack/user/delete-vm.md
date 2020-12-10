@@ -3,16 +3,16 @@ title: Eliminación de una máquina virtual con dependencias en Azure Stack Hub
 description: Cómo eliminar una VM (máquina virtual) con dependencias en Azure Stack Hub
 author: mattbriggs
 ms.topic: how-to
-ms.date: 11/22/2020
+ms.date: 12/7/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
-ms.lastreviewed: 11/22/2020
-ms.openlocfilehash: f9e32351dbc73b42e51c485c8e2eb39d4226ea27
-ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
+ms.lastreviewed: 12/7/2020
+ms.openlocfilehash: aaedac367ab9bd12a75e09917acfa6b02dc4930e
+ms.sourcegitcommit: 62eb5964a824adf7faee58c1636b17fedf4347e9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95518218"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96778196"
 ---
 # <a name="how-to-delete-a-vm-virtual-machine-with-dependencies-on-azure-stack-hub"></a>Cómo eliminar una VM (máquina virtual) con dependencias en Azure Stack Hub
 

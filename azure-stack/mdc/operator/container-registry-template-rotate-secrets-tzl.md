@@ -16,12 +16,12 @@ ms.date: 10/26/2020
 ms.author: mabrigg
 ms.reviewer: chasat
 ms.lastreviewed: 10/26/2020
-ms.openlocfilehash: 42d28b38c67384745974110f8ed7cbb185b04f0d
-ms.sourcegitcommit: 9ecf9c58fbcc4bc42c1fdc688f370c643c761a29
+ms.openlocfilehash: eb835552b8f7142878d03aa1bb3bb062cd2cf3f6
+ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93330296"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96934989"
 ---
 # <a name="rotate-container-registry-secrets-in-azure-stack-hub"></a>Rotación de secretos del registro de contenedor en Azure Stack Hub
 
@@ -29,7 +29,7 @@ Los usuarios de Azure Stack Hub pueden rotar los secretos (certificados, nombre 
 
 ## <a name="prerequisites-for-the-user"></a>Requisitos previos del usuario
 
- - El usuario debe tener instalados los módulos de PowerShell para Azure Stack Hub. Para más información, consulte [Instalación de PowerShell de Azure Stack](../../operator/azure-stack-powershell-install.md?toc=https%3A%2F%2Fdocs.microsoft.com%2Fazure-stack%2Fuser%2FTOC.json&bc=https%3A%2F%2Fdocs.microsoft.com%2Fazure-stack%2Fbreadcrumb%2Ftoc.json).
+ - El usuario debe tener instalados los módulos de PowerShell para Azure Stack Hub. Para más información, consulte [Instalación de PowerShell de Azure Stack](../../operator/powershell-install-az-module.md?toc=https%3A%2F%2Fdocs.microsoft.com%2Fazure-stack%2Fuser%2FTOC.json&bc=https%3A%2F%2Fdocs.microsoft.com%2Fazure-stack%2Fbreadcrumb%2Ftoc.json).
 
  - Obtenga los secretos de actualización de la plantilla del registro de contenedor. Puede usar un nuevo certificado SSL o una nueva combinación de nombre de usuario y contraseña para acceder a Docker Registry.
 
@@ -263,7 +263,7 @@ Siga estas instrucciones para configurar los nuevos secretos en Key Vault.
 
     ![Volver a implementar](./media/container-registry-template-rotating-secrets-tzl/redeploy.png)
 
-5.  En **Implementar plantilla de solución** , seleccione **Usar grupo de recursos existente** y seleccione el grupo de recursos que se usó para implementar originalmente la plantilla del registro de contenedor. Para que una reimplementación se realice correctamente, debe usar el mismo grupo de recursos.
+5.  En **Implementar plantilla de solución**, seleccione **Usar grupo de recursos existente** y seleccione el grupo de recursos que se usó para implementar originalmente la plantilla del registro de contenedor. Para que una reimplementación se realice correctamente, debe usar el mismo grupo de recursos.
 
     ![Implementar plantilla de solución](./media/container-registry-template-rotating-secrets-tzl/deploy-solution-template.png)
 

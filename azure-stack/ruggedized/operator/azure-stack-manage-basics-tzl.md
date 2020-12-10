@@ -4,16 +4,16 @@ titleSuffix: Azure Stack Hub
 description: Aprenda los aspectos básicos de la administración de Azure Stack Hub.
 author: justinha
 ms.topic: article
-ms.date: 10/26/2020
+ms.date: 06/16/2020
 ms.author: justinha
 ms.reviewer: thoroet
-ms.lastreviewed: 10/26/2020
-ms.openlocfilehash: 9369f29d802350f71ac4a5a462009768dec5c2cb
+ms.lastreviewed: 06/16/2020
+ms.openlocfilehash: afbfbf5c1fe7149b4d12f1cd96af79b1116e4a3a
 ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 12/09/2020
-ms.locfileid: "96934937"
+ms.locfileid: "96941321"
 ---
 # <a name="azure-stack-hub-administration-basics"></a>Aspectos básicos de la administración de Azure Stack Hub
 
@@ -151,7 +151,7 @@ La información de estos artículos resume las diferencias entre un servicio en 
 
 Los usuarios querrán saber cómo [acceder al portal de usuarios](../../user/azure-stack-use-portal.md) o cómo conectarse a través de PowerShell. En un entorno de sistemas integrados, la dirección del portal de usuarios varía en función de la implementación. Tendrá que proporcionar a los usuarios la dirección URL correcta.
 
-Si usa PowerShell, puede que los usuarios deban registrar proveedores de recursos para poder usar los servicios. Un proveedor de recursos administra un servicio. Por ejemplo, el proveedor de recursos de red administra los recursos, como redes virtuales, interfaces de red y equilibradores de carga. Debe [instalar](../../operator/powershell-install-az-module.md) PowerShell, [descargar](../../operator/azure-stack-powershell-download.md) módulos adicionales y [configurar](../../user/azure-stack-powershell-configure-user.md) PowerShell (que incluye el registro de proveedores de recursos).
+Si usa PowerShell, puede que los usuarios deban registrar proveedores de recursos para poder usar los servicios. Un proveedor de recursos administra un servicio. Por ejemplo, el proveedor de recursos de red administra los recursos, como redes virtuales, interfaces de red y equilibradores de carga. Debe [instalar](../../operator/azure-stack-powershell-install.md) PowerShell, [descargar](../../operator/azure-stack-powershell-download.md) módulos adicionales y [configurar](../../user/azure-stack-powershell-configure-user.md) PowerShell (que incluye el registro de proveedores de recursos).
 
 ### <a name="subscribe-to-an-offer"></a>Suscripción a una oferta
 

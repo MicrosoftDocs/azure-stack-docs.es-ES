@@ -16,12 +16,12 @@ ms.date: 1/10/2020
 ms.author: mabrigg
 ms.reviewer: chasat
 ms.lastreviewed: 12/17/2019
-ms.openlocfilehash: eed164504ce07bcc21ddde002173aaab8992abd1
-ms.sourcegitcommit: c89d8aa6d07d7aec002b58bd07a7976203aa760b
+ms.openlocfilehash: 44cf8fe76ec203fb0a6260a92c4e47641d4f40f8
+ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94674564"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96935010"
 ---
 # <a name="add-a-container-registry-to-azure-stack-hub"></a>Adición de un registro de contenedor a Azure Stack Hub
 
@@ -39,7 +39,7 @@ Deberá tener los elementos siguientes antes de agregar el elemento de Marketpla
 
 | Elemento | Tipo | Detalles |
 | --- | --- | --- |
-| Módulos de PowerShell de Azure Stack Hub (Azs.Gallery.Admin) | Módulos de PowerShell | Solo se requiere si se realiza la carga lateral del elemento de la galería de la plantilla del registro de contenedor, los módulos de PowerShell de Azure Stack Hub se usan para agregar y eliminar elementos de la galería.<br>[Instalación de los módulos de PowerShell de Azure Stack](../../operator/azure-stack-powershell-install.md) |
+| Módulos de PowerShell de Azure Stack Hub (Azs.Gallery.Admin) | Módulos de PowerShell | Solo se requiere si se realiza la carga lateral del elemento de la galería de la plantilla del registro de contenedor, los módulos de PowerShell de Azure Stack Hub se usan para agregar y eliminar elementos de la galería.<br>[Instalación de los módulos de PowerShell de Azure Stack](../../operator/powershell-install-az-module.md) |
 | Plantilla de registro de contenedor | Elemento de Marketplace | Para implementar el registro de contenedor como un usuario de Azure Stack Hub, el elemento de Marketplace de la plantilla del registro de contenedor debe estar disponible en su suscripción, o bien agregarse manualmente (carga lateral) en el Marketplace de Azure Stack Hub. En el caso de la carga lateral, siga las instrucciones para cargar el paquete del archivo `readme.md` del [repositorio de GitHub](https://github.com/msazurestackworkloads/azurestack-gallery/releases/tag/registry-v1.0.1). |
 | Imagen base de Ubuntu 16.04-LTS de AKS, versión de lanzamiento mínima de septiembre de 2019 | Elemento de Marketplace | Para que los usuarios de Azure Stack Hub implementen el registro de contenedor, debe hacer que la imagen base de AKS esté disponible en Marketplace. La plantilla de registro de contenedor usa la imagen al instalar una VM Ubuntu desde la suscripción que hospeda los archivos binarios del registro de contenedor de Docker. |
 | Extensión de script personalizado de Linux 2.0 | Elemento de Marketplace | Para que los usuarios de Azure Stack Hub implementen el registro de contenedor, debe hacer que la extensión de script personalizado de Linux esté disponible en Marketplace. La implementación de la plantilla del registro de contenedor utiliza la extensión para configurar el registro. |

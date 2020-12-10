@@ -15,12 +15,12 @@ ms.date: 10/26/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 10/26/2020
-ms.openlocfilehash: 9aa49c7913817168ed05f29b40d6ec8cf26e85b8
-ms.sourcegitcommit: 9ecf9c58fbcc4bc42c1fdc688f370c643c761a29
+ms.openlocfilehash: 32ba4c16d36622cbe2a9595c58e4ec2e2f46b481
+ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93330318"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96935039"
 ---
 # <a name="download-marketplace-items-to-azure-stack-hub"></a>Descarga de elementos de Marketplace en Azure Stack Hub 
 
@@ -28,8 +28,8 @@ Los operadores en la nube pueden descargar elementos de Marketplace en Azure Sta
 
 Existen dos escenarios para descargar productos de Marketplace:
 
-- **Escenario conectado** : requiere que el entorno de Azure Stack Hub esté conectado a Internet. El portal de administración de Azure Stack Hub se usa para buscar y descargar elementos.
-- **Escenario sin conexión o con conexión parcial** : requiere que se acceda a Internet mediante la herramienta de redifusión de Marketplace para descargar los elementos de este. Después, los elementos descargados se transfieren a la instalación desconectada de Azure Stack. Este escenario usa PowerShell.
+- **Escenario conectado**: requiere que el entorno de Azure Stack Hub esté conectado a Internet. El portal de administración de Azure Stack Hub se usa para buscar y descargar elementos.
+- **Escenario sin conexión o con conexión parcial**: requiere que se acceda a Internet mediante la herramienta de redifusión de Marketplace para descargar los elementos de este. Después, los elementos descargados se transfieren a la instalación desconectada de Azure Stack. Este escenario usa PowerShell.
 
 Consulte [Elementos de Azure Marketplace disponibles para Azure Stack](../../operator/azure-stack-marketplace-azure-items.md) para encontrar una lista completa de los elementos de Marketplace que se pueden descargar. Consulte el artículo [Cambios en Marketplace de Azure Stack](../../operator/azure-stack-marketplace-changes.md) para obtener una lista de adiciones, eliminaciones y actualizaciones recientes en Marketplace de Azure Stack.
 
@@ -90,6 +90,33 @@ Puede [descargar las herramientas de redifusión sin conexión aquí](https://ak
 
 #### <a name="download-items"></a>Descarga de elementos
 
+
+
+### <a name="az-modules"></a>[Modules de Az](#tab/az1)
+
+1. Abra PowerShell y vaya a la carpeta extraída.
+
+2. Ejecute el script **Invoke-AzSMarketplaceDownload.ps1** de PowerShell:
+
+    ```powershell
+    .\Invoke-AzSMarketplaceDownload.ps1 -RegistrationSubscriptionId '<subscription ID>' ` 
+       -RegistrationResourceGroup 'azurestack' -RegistrationName '<registration name>' `
+       -TenantName mytenant.onmicrosoft.com -DownloadFolder 'F:\offlineSyndication'
+    ```
+
+    Como alternativa, si ya ha iniciado sesión mediante Azure PowerShell, puede pasar el contexto de Azure:
+
+    ```powershell
+    Add-AzAccount -Environment AzureCloud -Tenant mytenant.onmicrosoft.com 
+    .\Invoke-AzSMarketplaceDownload.ps1 -RegistrationResourceGroup 'azurestack' -RegistrationName '<registration name>' -DownloadFolder 'F:\offlineSyndication' -AzureContext $(Get-AzureRMContext)
+    ```
+    Si no pasa el contexto de Azure, le pedirá que inicie sesión.
+
+3. Aparece una ventana en la que puede seleccionar el producto que desea descargar. Puede usar Ctrl + clic para seleccionar varios elementos.
+
+4. Seleccione **Aceptar**. Esto descarga el elemento de Marketplace y sus dependencias, si las hay.
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm1)
+
 1. Abra PowerShell y vaya a la carpeta extraída.
 
 2. Ejecute el script **Invoke-AzSMarketplaceDownload.ps1** de PowerShell:
@@ -106,12 +133,13 @@ Puede [descargar las herramientas de redifusión sin conexión aquí](https://ak
     Add-AzureRmAccount -Environment AzureCloud -Tenant mytenant.onmicrosoft.com 
     .\Invoke-AzSMarketplaceDownload.ps1 -RegistrationResourceGroup 'azurestack' -RegistrationName '<registration name>' -DownloadFolder 'F:\offlineSyndication' -AzureContext $(Get-AzureRMContext)
     ```
-
     Si no pasa el contexto de Azure, le pedirá que inicie sesión.
 
 3. Aparece una ventana en la que puede seleccionar el producto que desea descargar. Puede usar Ctrl + clic para seleccionar varios elementos.
 
 4. Seleccione **Aceptar**. Esto descarga el elemento de Marketplace y sus dependencias, si las hay.
+
+---
 
 ### <a name="upload-marketplace-items-to-azure-stack-hub"></a>Carga de elementos de Marketplace en Azure Stack Hub
 
@@ -122,6 +150,30 @@ Puede [descargar las herramientas de redifusión sin conexión aquí](https://ak
 - Acceso a los elementos sin conexión de Marketplace.
 
 #### <a name="upload-items"></a>Carga de elementos
+
+### <a name="az-modules"></a>[Modules de Az](#tab/az2)
+
+1. Abra PowerShell y vaya a la carpeta extraída.
+
+2. Ejecute el script **Invoke-AzSMarketplaceUpload.ps1** de PowerShell:
+
+    ```powershell
+    .\Invoke-AzsMarketplaceUpload.ps1 -AzureStackCloudName "AzureStack-Admin" -AzureStackAdminARMEndpoint https://adminmanagement.<region>.<fqdn> -TenantName mytenant.onmicrosoft.com -DownloadFolder F:\offlineSyndication
+    ```
+
+    Como alternativa, puede configurar el entorno de Azure Stack usted mismo en Azure PowerShell, autenticarse en el punto de conexión de Resource Manager de administración y pasar el contexto al script:
+
+    ```powershell
+    Add-AzEnvironment -Name Redmond-Admin -ARMEndpoint https://adminmanagement.redmond.azurestack.corp.microsoft.com
+
+    Add-AzAccount -Environment Redmond-Admin
+
+    .\Invoke-AzsMarketplaceUpload.ps1 -DownloadFolder F:\Downloads\offlining -AzureContext $(GetAzContext)
+    ```
+
+    Este procedimiento permite cargar los elementos de Marketplace en la instancia de Azure Stack Hub especificada.
+
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm2)
 
 1. Abra PowerShell y vaya a la carpeta extraída.
 
@@ -142,3 +194,5 @@ Puede [descargar las herramientas de redifusión sin conexión aquí](https://ak
     ```
 
     Este procedimiento permite cargar los elementos de Marketplace en la instancia de Azure Stack Hub especificada.
+
+---

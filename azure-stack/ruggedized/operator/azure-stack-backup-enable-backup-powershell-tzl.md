@@ -11,16 +11,16 @@ ms.workload: tzl
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/27/2020
+ms.date: 12/16/2019
 ms.author: sethm
 ms.reviewer: hectorl
-ms.lastreviewed: 10/27/2020
-ms.openlocfilehash: 9f50a6096f0fb7881d37a67df34bdcd6f2487eb9
+ms.lastreviewed: 12/16/2019
+ms.openlocfilehash: f0476f3ee331c014436e9ee2f879afcafb3320d7
 ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 12/09/2020
-ms.locfileid: "96935056"
+ms.locfileid: "96941281"
 ---
 # <a name="configure-backup-for-azure-stack-with-powershell"></a>Configuración de la copia de seguridad para Azure Stack con PowerShell
 
@@ -30,7 +30,7 @@ Puede configurar el servicio Copia de seguridad de infraestructura para exportar
 
 ## <a name="prepare-powershell-environment"></a>Preparación del entorno de PowerShell
 
-Para obtener instrucciones acerca de cómo configurar el entorno de PowerShell, consulte [Instalación de PowerShell para Azure Stack](../../operator/powershell-install-az-module.md). Para iniciar sesión en Azure Stack, consulte [Configuración del entorno de operador e inicio de sesión en Azure Stack](../../operator/azure-stack-powershell-configure-admin.md).
+Para obtener instrucciones acerca de cómo configurar el entorno de PowerShell, consulte [Instalación de PowerShell para Azure Stack](../../operator/azure-stack-powershell-install.md). Para iniciar sesión en Azure Stack, consulte [Configuración del entorno de operador e inicio de sesión en Azure Stack](../../operator/azure-stack-powershell-configure-admin.md).
 
 ## <a name="provide-the-backup-share-credentials-and-encryption-key-to-enable-backup"></a>Provisión del recurso compartido de copia de seguridad, las credenciales y la clave de cifrado para habilitar la copia de seguridad
 

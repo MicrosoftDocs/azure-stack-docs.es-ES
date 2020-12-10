@@ -7,12 +7,12 @@ ms.date: 10/26/2020
 ms.author: justinha
 ms.reviewer: thoroet
 ms.lastreviewed: 10/26/2020
-ms.openlocfilehash: fe5c8901f39c8f6c01c72a1af00c953f792920cf
-ms.sourcegitcommit: 08aa3b381aec7a6a3df4f9591edd6f08928071d2
+ms.openlocfilehash: f7bc89e42b315fea585a87d93795a0e1b0f574f3
+ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93363918"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96934903"
 ---
 # <a name="scale-unit-node-actions-in-azure-stack-hub"></a>Acciones de los nodos de la unidad de escalado en Azure Stack Hub
 
@@ -27,10 +27,10 @@ En el portal de administrador, puede ver el estado de una unidad de escalado y s
 
 Para ver el estado de una unidad de escalado:
 
-1. En el icono **Administración de regiones** , seleccione la región.
+1. En el icono **Administración de regiones**, seleccione la región.
 2. A la izquierda, bajo **Infrastructure resources** (Recursos de infraestructura), seleccione **Scale units** (Unidades de escalado).
 3. En los resultados, seleccione la unidad de escalado.
-4. En el lado izquierdo, bajo **General** , seleccione **Nodos**.
+4. En el lado izquierdo, bajo **General**, seleccione **Nodos**.
 
    Vea la siguiente información:
 
@@ -66,7 +66,7 @@ Al ver la información sobre un nodo de la unidad de escalado, también puede re
 
 El estado operativo del nodo determina qué opciones están disponibles.
 
-Debe instalar los módulos de PowerShell de Azure Stack Hub. Estos cmdlets están en el módulo **Azs.Fabric.Admin**. Para instalar o comprobar la instalación de PowerShell para Azure Stack Hub, consulte [Instalación de PowerShell para Azure Stack Hub](../../operator/azure-stack-powershell-install.md).
+Debe instalar los módulos de PowerShell de Azure Stack Hub. Estos cmdlets están en el módulo **Azs.Fabric.Admin**. Para instalar o comprobar la instalación de PowerShell para Azure Stack Hub, consulte [Instalación de PowerShell para Azure Stack Hub](../../operator/powershell-install-az-module.md).
 
 ## <a name="stop"></a>Stop
 

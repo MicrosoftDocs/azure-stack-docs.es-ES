@@ -6,13 +6,13 @@ author: khdownie
 ms.author: v-kedow
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 11/23/2020
-ms.openlocfilehash: d5e544f339d029eab693d48327abc8596d2f61fa
-ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
+ms.date: 12/7/2020
+ms.openlocfilehash: c6fe98d9f597f40d0a5cefde151eb36736b81d7a
+ms.sourcegitcommit: 61556b7b6e029e3a26a4b7ef97f0b13fbe7cd5a5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95517079"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96761701"
 ---
 # <a name="azure-stack-hci-solution-overview"></a>Introducción a la solución Azure Stack HCI
 
@@ -94,7 +94,7 @@ Azure Stack HCI es una pila de virtualización integrada de primera clase basada
 
 Para empezar, esto es lo que necesita:
 
-- Un clúster de dos o más servidores del [catálogo de Azure Stack HCI](https://azure.microsoft.com/products/azure-stack/hci/catalog/) adquirido a su asociado de hardware de Microsoft preferido
+- Un clúster de dos o más servidores del [catálogo de Azure Stack HCI](https://aka.ms/azurestackhcicatalog) adquirido a su asociado de hardware de Microsoft preferido
 - [Una suscripción de Azure](https://azure.microsoft.com/)
 - Una conexión a Internet para cada servidor del clúster que pueda conectarse mediante el tráfico HTTPS saliente al siguiente punto de conexión al menos cada 30 días: *-azurestackhci-usage.azurewebsites.net
 - En el caso de los clústeres extendidos entre dos sitios, necesita al menos una conexión de 1 GB entre esos sitios (se prefiere una conexión RDMA de 25 GB), con un recorrido de ida y vuelta con una latencia media de 5 ms si desea realizar una replicación sincrónica en la que las escrituras puedan producirse simultáneamente en ambos sitios.
@@ -106,7 +106,7 @@ Para más información, consulte [Requisitos del sistema](concepts/system-requir
 
 Puede adquirir soluciones de Azure Stack HCI validadas a su asociado de Microsoft preferido para empezar a trabajar sin tener que esperar un tiempo prolongado de diseño y compilación. Los asociados de Microsoft también ofrecen un único punto de contacto para los servicios de implementación y soporte técnico. Puede adquirir nodos validados o un sistema integrado, entre los que se incluyen el sistema operativo de Azure Stack HCI preinstalado, así como las extensiones de asociados para las actualizaciones de firmware y de controladores.
 
-Visite la página de [soluciones de Azure Stack HCI](https://azure.microsoft.com/overview/azure-stack/hci) o examine el [catálogo de Azure Stack HCI](https://azure.microsoft.com/products/azure-stack/hci/catalog/) para ver las más de 70 soluciones de Azure Stack HCI que están disponibles actualmente de asociados de Microsoft como ASUS, Axellio, Blue Chip, DataOn, Dell EMC, Fujitsu, HPE, Hitachi, Huawei, Lenovo, NEC, primeLine Solutions, QCT, SecureGUARD y Supermicro.
+Visite la página de [soluciones de Azure Stack HCI](https://azure.microsoft.com/overview/azure-stack/hci) o examine el [catálogo de Azure Stack HCI](https://aka.ms/azurestackhcicatalog) para ver las más de 70 soluciones de Azure Stack HCI que están disponibles actualmente de asociados de Microsoft como ASUS, Axellio, Blue Chip, DataOn, Dell EMC, Fujitsu, HPE, Hitachi, Huawei, Lenovo, NEC, primeLine Solutions, QCT, SecureGUARD y Supermicro.
 
 ## <a name="software-partners"></a>Asociados de software
 
