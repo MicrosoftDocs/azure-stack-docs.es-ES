@@ -6,13 +6,13 @@ ms.author: v-johcob
 ms.topic: tutorial
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 10/28/2020
-ms.openlocfilehash: ba063e4ebff85830ac50c25c2514bda443dce323
-ms.sourcegitcommit: 296c95cad20ed62bdad0d27f1f5246bfc1c81d5e
+ms.date: 12/7/2020
+ms.openlocfilehash: 51a4411e95207d2f7b544fdf507fe8bd8fc98f2e
+ms.sourcegitcommit: 61556b7b6e029e3a26a4b7ef97f0b13fbe7cd5a5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93064742"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96761718"
 ---
 # <a name="deploy-the-azure-stack-hci-operating-system"></a>Implementación del sistema operativo de Azure Stack HCI
 
@@ -21,7 +21,7 @@ ms.locfileid: "93064742"
 El primer paso para la implementación es [descargar Azure Stack HCI](https://azure.microsoft.com/products/azure-stack/hci/hci-download/) e instalarlo en cada servidor que desee agrupar en el clúster. En este artículo se describen diferentes formas de implementar el sistema operativo y de utilizar Windows Admin Center para conectarse a los servidores.
 
 > [!NOTE]
-> Si ha adquirido el hardware de una solución de sistema integrado de Azure Stack HCI en el [catálogo de Azure Stack HCI](https://azure.microsoft.com/en-us/products/azure-stack/hci/catalog/) de su asociado de hardware de Microsoft preferido, este sistema operativo vendrá preinstalado. En ese caso, puede omitir este paso y pasar a la [creación de un clúster de Azure Stack HCI](create-cluster.md).
+> Si ha adquirido el hardware de una solución de sistema integrado de Azure Stack HCI en el [catálogo de Azure Stack HCI](https://aka.ms/azurestackhcicatalog) de su asociado de hardware de Microsoft preferido, este sistema operativo vendrá preinstalado. En ese caso, puede omitir este paso y pasar a la [creación de un clúster de Azure Stack HCI](create-cluster.md).
 
 ## <a name="prerequisites"></a>Requisitos previos
 

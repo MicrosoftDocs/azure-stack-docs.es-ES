@@ -7,12 +7,12 @@ ms.date: 1/22/2020
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/20/2
-ms.openlocfilehash: 60f8ab926bb868517c7b9feeb1c5c4325212607c
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 7c3c33371e50df0dabb7db9fc8c0204fc3caaa83
+ms.sourcegitcommit: 97ecba06aeabf2f30de240ac283b9bb2d49d62f0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80302815"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97011151"
 ---
 # <a name="remove-the-mysql-resource-provider-in-azure-stack-hub"></a>Eliminación del proveedor de recursos MySQL en Azure Stack Hub
 
@@ -37,7 +37,7 @@ Al eliminar el proveedor de recursos de MySQL se eliminarán los planes y cuotas
     - **PrivilegedEndpoint**. Dirección IP o nombre DNS del punto de conexión con privilegios.
     - **AzureEnvironment**. El entorno de Azure usado para implementar Azure Stack Hub. Requerido solo para implementaciones de Azure AD.
     - **CloudAdminCredential**. Credencial del administrador de la nube, necesaria para el acceso al punto de conexión con privilegios.
-    - **AzCredential**. Credencial de la cuenta de administrador de servicio de Azure Stack Hub. Use las mismas credenciales que para la implementación de Azure Stack Hub.
+    - **AzCredential**. Credencial de la cuenta de administrador de servicio de Azure Stack Hub. Use las mismas credenciales que para la implementación de Azure Stack Hub. Se producirá un error en el script si la cuenta que usa con AzCredential requiere autenticación multifactor (MFA).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

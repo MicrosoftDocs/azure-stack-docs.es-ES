@@ -8,12 +8,12 @@ ms.date: 10/02/2019
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/20/2019
-ms.openlocfilehash: 7046eff5aa90504e2f02d7b7d24b1c2a74421270
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: b232bf2efb690ddc0a351d762e6866a75ced4a81
+ms.sourcegitcommit: 97ecba06aeabf2f30de240ac283b9bb2d49d62f0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77697185"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97011372"
 ---
 # <a name="remove-the-sql-resource-provider"></a>Eliminación del proveedor de recursos de SQL
 
@@ -41,7 +41,7 @@ Si quita el proveedor de recursos de SQL, se eliminarán los planes y cuotas aso
     * **PrivilegedEndpoint**. Dirección IP o nombre DNS del punto de conexión con privilegios.
     * **AzureEnvironment**. El entorno de Azure usado para implementar Azure Stack Hub. Requerido solo para implementaciones de Azure AD.
     * **CloudAdminCredential**. Credencial del administrador de la nube, necesaria para el acceso al punto de conexión con privilegios.
-    * **AzCredential**. Credencial de la cuenta de administrador de servicio de Azure Stack Hub. Use las mismas credenciales que para la implementación de Azure Stack Hub.
+    * **AzCredential**. Credencial de la cuenta de administrador de servicio de Azure Stack Hub. Use las mismas credenciales que para la implementación de Azure Stack Hub. Se producirá un error en el script si la cuenta que usa con AzCredential requiere autenticación multifactor (MFA).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

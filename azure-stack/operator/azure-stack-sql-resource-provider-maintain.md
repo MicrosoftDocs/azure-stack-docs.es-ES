@@ -8,12 +8,12 @@ ms.date: 9/22/2020
 ms.author: bryanla
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2020
-ms.openlocfilehash: 0de06d7bf13919be95b3d97aa1113221f4378625
-ms.sourcegitcommit: af4374755cb4875a7cbed405b821f5703fa1c8cc
+ms.openlocfilehash: ec2eebc7aa8195c0560beb8c61f0f98ce1689b07
+ms.sourcegitcommit: 97ecba06aeabf2f30de240ac283b9bb2d49d62f0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96035341"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97011355"
 ---
 # <a name="sql-resource-provider-maintenance-operations"></a>Operaciones de mantenimiento del proveedor de recursos de SQL
 
@@ -108,7 +108,7 @@ Al usar los proveedores de recursos SQL y MySQL con sistemas integrados de Azure
 |Parámetro|Descripción|Comentario|
 |-----|-----|-----|
 |AzureEnvironment|Entorno de Azure de la cuenta de administrador de servicios que se usó para la implementación de Azure Stack Hub. Requerido solo para implementaciones de Azure AD. Los nombres de entorno que se admiten son **AzureCloud**, **AzureUSGovernment** o, si usa una suscripción a Azure Active Directory de China, **AzureChinaCloud**.|Opcional|
-|AzCredential|Credencial de la cuenta de administrador de servicios de Azure Stack Hub.|Mandatory|
+|AzCredential|Credencial de la cuenta de administrador de servicios de Azure Stack Hub. Se producirá un error en el script si la cuenta que usa con AzCredential requiere autenticación multifactor (MFA).|Mandatory|
 |CloudAdminCredential|Credencial de la cuenta de dominio de administración en la nube de Azure Stack Hub.|Mandatory|
 |PrivilegedEndpoint|Punto de conexión con privilegios para acceder a Get-AzureStackStampInformation.|Mandatory|
 |DiagnosticsUserPassword|Contraseña de la cuenta de usuario de diagnóstico.|Opcional|
