@@ -1,0 +1,98 @@
+### YamlMime:Landing
+title: Documentación para usuarios y operadores de Azure Stack Hub resistente
+summary: Aprenda a operar y usar Azure Stack Hub resistente, una plataforma en la nube híbrida que permite proporcionar servicios de Azure desde un dispositivo en la nube versátil y resistente.
+metadata:
+  title: 'Documentación de Azure Stack Hub resistente: tutoriales y referencia de API'
+  description: Microsoft Azure Stack Hub resistente es una plataforma en la nube híbrida que permite proporcionar servicios de Azure desde un centro su datos. Aprenda a administrar la infraestructura de sistemas integrados de Azure Stack Hub resistente y a ofrecer servicios con nuestros tutoriales e inicios rápidos.
+  ms.service: azure-stack
+  ms.topic: landing-page
+  author: justinha
+  ms.author: justinha
+  ms.date: 10/14/2020
+  ms.openlocfilehash: 7e131f116ef28620cda1804782d38c14d5700bad
+  ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
+  ms.translationtype: HT
+  ms.contentlocale: es-ES
+  ms.lasthandoff: 12/09/2020
+  ms.locfileid: "96941497"
+landingContent:
+- title: Acerca de Azure Stack Hub resistente
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: ¿Qué es Azure Stack Hub resistente?
+      url: ruggedized-overview.md
+    - text: Especificaciones del modelo
+      url: azure-stack-capacity-planning-overview.md
+  - linkListType: whats-new
+    links:
+    - text: Actualizaciones de seguridad
+      url: ../operator/release-notes-security-updates.md
+    - text: Notas de la versión
+      url: ../operator/release-notes.md
+- title: Introducción a Azure Stack Hub resistente
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: Uso del portal de administrador
+      url: ../operator/azure-stack-manage-portals.md
+    - text: Oferta de un servicio a los usuarios
+      url: ../operator/tutorial-offer-services.md
+    - text: Prueba de una oferta de un servicio
+      url: ../operator/tutorial-test-offer.md
+  - linkListType: concept
+    links:
+    - text: Comparación de modelos de conexión
+      url: ../operator/azure-stack-connection-models.md
+    - text: Implementación conectada
+      url: ../operator/azure-stack-connected-deployment.md
+    - text: Implementación desconectada
+      url: ../operator/azure-stack-disconnected-deployment.md
+- title: Herramientas de Azure Stack Hub
+  linkLists:
+  - linkListType: download
+    links:
+    - text: Descarga de herramientas de Azure Stack Hub desde GitHub
+      url: ../operator/azure-stack-powershell-download.md
+    - text: Instalación de PowerShell de Azure Stack
+      url: ../operator/powershell-install-az-module.md
+    - text: Uso de Docker para ejecutar PowerShell
+      url: ../user/azure-stack-powershell-user-docker.md
+    - text: Conexión con PowerShell de Azure Stack
+      url: ../operator/azure-stack-powershell-configure-admin.md
+- title: Oferta de servicios de Azure Stack Hub
+  linkLists:
+  - linkListType: deploy
+    links:
+    - text: Creación de una oferta para una máquina virtual
+      url: ../operator/tutorial-offer-services.md
+    - text: Creación de una base de datos MySQL de alta disponibilidad
+      url: ../operator/azure-stack-tutorial-mysql.md
+    - text: Creación de aplicaciones para cualquier plataforma
+      url: ../operator/azure-stack-app-service-overview.md
+- title: Administración de Azure Stack Hub resistente
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Supervisión de estado y alertas
+      url: operator/azure-stack-monitor-health-tzl.md
+    - text: Instalar actualizaciones y supervisar el progreso
+      url: ../operator/azure-stack-apply-updates.md
+    - text: Procedimientos recomendados para realizar operaciones de copia de seguridad y restauración
+      url: operator/azure-stack-backup-best-practices-tzl.md
+- title: Infraestructura como servicio (IaaS) en Azure Stack Hub
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: 'Inicio rápido: Creación de una máquina virtual'
+      url: ../user/azure-stack-quick-linux-portal.md
+  - linkListType: how-to-guide
+    links:
+    - text: Migración de máquinas virtuales
+      url: ../user/vm-move-overview.md
+    - text: Implementación de una máquina virtual en IaaS con una plantilla
+      url: ../user/azure-stack-create-vm-template.md
+    - text: Configuración de una red virtual
+      url: ../user/deploy-foundational-patterns.md
+    - text: Hospedaje de aplicaciones escritas en su código
+      url: ../user/azure-stack-dev-start-deploy-app.md
