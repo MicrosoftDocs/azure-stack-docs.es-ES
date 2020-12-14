@@ -116,6 +116,8 @@
       items:
         - name: Requisitos del sistema
           href: concepts/system-requirements.md
+        - name: Comparación con Windows Server
+          href: concepts/compare-windows-server.md
         - name: Elección de unidades
           href: concepts/choose-drives.md
         - name: Consideraciones de simetría de unidad
