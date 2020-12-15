@@ -6,19 +6,19 @@ author: khdownie
 ms.author: v-kedow
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 12/7/2020
-ms.openlocfilehash: c6fe98d9f597f40d0a5cefde151eb36736b81d7a
-ms.sourcegitcommit: 61556b7b6e029e3a26a4b7ef97f0b13fbe7cd5a5
+ms.date: 12/10/2020
+ms.openlocfilehash: 918bc4fdee076cdfe5b158f9b276eff789c9ecf8
+ms.sourcegitcommit: 97ecba06aeabf2f30de240ac283b9bb2d49d62f0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96761701"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97011202"
 ---
 # <a name="azure-stack-hci-solution-overview"></a>Introducción a la solución Azure Stack HCI
 
-Azure Stack HCI es una solución de clúster de infraestructura hiperconvergida (HCI) que hospeda cargas de trabajo de Windows y Linux y su almacenamiento en un entorno local híbrido. Los servicios híbridos de Azure mejoran el clúster con funcionalidades como la supervisión basada en la nube, Site Recovery y las copias de seguridad de máquinas virtuales, así como con una vista central de todas las implementaciones de Azure Stack HCI en Azure Portal. Puede administrar el clúster con sus herramientas ya existentes como Windows Admin Center, System Center y PowerShell.
+Azure Stack HCI es una solución de clúster de infraestructura hiperconvergida (HCI) que hospeda cargas de trabajo de Windows y Linux y su almacenamiento en un entorno local híbrido. Los servicios híbridos de Azure mejoran el clúster con funcionalidades como la supervisión basada en la nube, Site Recovery y las copias de seguridad de máquinas virtuales, así como con una vista central de todas las implementaciones de Azure Stack HCI en Azure Portal. Puede administrar el clúster con sus herramientas ya existentes como Windows Admin Center, System Center y PowerShell.
 
-Azure Stack HCI, versión 20H2, es un nuevo sistema operativo que se encuentra ahora en versión preliminar pública y que está [disponible para su descarga](https://azure.microsoft.com/products/azure-stack/hci/hci-download/). Está destinado a los clústeres locales que ejecutan cargas de trabajo virtualizadas, con conexiones de nube híbrida integradas. Como tal, Azure Stack HCI se ofrece como un servicio de Azure y se factura en una suscripción de Azure. Azure Stack HCI también incluye la posibilidad de hospedar Azure Kubernetes Service. Para más información, consulte [Azure Kubernetes Service en Azure Stack HCI](../aks-hci/overview.md).
+Azure Stack HCl, versión 20H2 ahora está [disponible para su descarga](https://azure.microsoft.com/products/azure-stack/hci/hci-download/). Está destinado a los clústeres locales que ejecutan cargas de trabajo virtualizadas, con conexiones de nube híbrida integradas. Como tal, Azure Stack HCI se ofrece como un servicio de Azure y se factura en una suscripción de Azure. Azure Stack HCI también incluye la posibilidad de hospedar Azure Kubernetes Service. Para más información, consulte [Azure Kubernetes Service en Azure Stack HCI](../aks-hci/overview.md).
 
 Dedique unos minutos a ver el vídeo sobre las características de alto nivel de Azure Stack HCI:
 
@@ -62,7 +62,7 @@ Azure Stack HCI está en una posición inmejorable para la infraestructura híbr
 Después de registrar el clúster de Azure Stack HCI con Azure, puede usar Azure Portal inicialmente para:
 
 - **Supervisión:** vea todos los clústeres de Azure Stack HCI en una sola vista global en la que puede agruparlos por grupos de recursos y etiquetarlos.
-- **Facturación:** pague por Azure Stack HCI a través de su suscripción de Azure (tenga en cuenta que no hay ningún costo durante la versión preliminar pública).
+- **Facturación:** Pague por Azure Stack HCl mediante su suscripción a Azure.
 
 Nos estamos esforzando para crear funcionalidades adicionales, así que permanezca atento.
 
@@ -96,7 +96,7 @@ Para empezar, esto es lo que necesita:
 
 - Un clúster de dos o más servidores del [catálogo de Azure Stack HCI](https://aka.ms/azurestackhcicatalog) adquirido a su asociado de hardware de Microsoft preferido
 - [Una suscripción de Azure](https://azure.microsoft.com/)
-- Una conexión a Internet para cada servidor del clúster que pueda conectarse mediante el tráfico HTTPS saliente al siguiente punto de conexión al menos cada 30 días: *-azurestackhci-usage.azurewebsites.net
+- Una conexión a Internet para cada servidor del clúster que pueda conectarse mediante el tráfico HTTPS saliente a puntos de conexión de Azure conocidos al menos cada 30 días
 - En el caso de los clústeres extendidos entre dos sitios, necesita al menos una conexión de 1 GB entre esos sitios (se prefiere una conexión RDMA de 25 GB), con un recorrido de ida y vuelta con una latencia media de 5 ms si desea realizar una replicación sincrónica en la que las escrituras puedan producirse simultáneamente en ambos sitios.
 - Si tiene previsto usar redes definidas por software (SDN), necesitará un disco duro virtual (VHD) para que el sistema operativo Azure Stack HCI cree máquinas virtuales de Controladora de red (consulte el [plan de implementación de Controladora de red](concepts/network-controller.md)).
 
@@ -110,7 +110,7 @@ Visite la página de [soluciones de Azure Stack HCI](https://azure.microsoft.com
 
 ## <a name="software-partners"></a>Asociados de software
 
-Hay una gran variedad de asociados de Microsoft que trabajan en software que permite ampliar las capacidades de Azure Stack HCI, a la vez que permite a los administradores de TI usar herramientas conocidas. Por ejemplo, Altaro, un proveedor mundial de soluciones de copia de seguridad y asociado con la categoría Microsoft Gold Partner, se ha comprometido a dar soporte técnico de Azure Stack HCI en su solución de copia de seguridad de máquinas virtuales. Esto permitirá que los clientes y proveedores de servicios administrados realicen copias de seguridad de máquinas virtuales que se ejecutan en Azure Stack HCI de forma gratuita hasta finales de junio de 2021. [Más información sobre este anuncio](http://www.altaro.com/news/single/News-Altaro-applies-its-expertise-in-Hyper-V-backup-to-support-Microsoft.php).
+Hay una gran variedad de asociados de Microsoft que trabajan en software que permite ampliar las capacidades de Azure Stack HCI, a la vez que permite a los administradores de TI usar herramientas conocidas. Para obtener más información, vea [Aplicaciones de utilidades para Azure Stack HCI](concepts/utility-applications.md).
 
 ## <a name="licensing-billing-and-pricing"></a>Licencias, facturación y precios
 
@@ -133,7 +133,6 @@ Para administrar estas tecnologías, puede usar las herramientas de administraci
 - [System Center](https://www.microsoft.com/cloud-platform/system-center)
 - [PowerShell](/powershell/)
 - Otras herramientas de administración, como el [Administrador del servidor](/windows-server/administration/server-manager/server-manager) y complementos MMC
-- Herramientas que no sean de Microsoft, como 5Nine Manager
 
 ## <a name="the-azure-stack-family"></a>La familia Azure Stack
 
@@ -202,20 +201,21 @@ La versión 2009 de Windows Admin Center agrega una serie de características a 
 
 - **Funcionalidades de hospedaje de Azure Kubernetes Service**: ahora puede instalar una versión preliminar de [Azure Kubernetes Service en Azure Stack HCI](https://azure.microsoft.com/products/azure-stack/hci/hci-download/).
 - **Inclusión de redes definidas por software en el asistente de creación de clústeres**: El asistente de creación de clústeres incluye ahora la opción de implementar la característica de Controladora de red denominada [redes definidas por software](concepts/software-defined-networking.md) durante la [creación del clúster](deploy/create-cluster.md#step-5-sdn-optional).
+- **Mejoras de acceso directo a memoria remota (RDMA) del Asistente para crear clústeres**: El Asistente para crear clústeres ahora puede configurar RDMA para los adaptadores de red iWARP y RoCE, incluido Data Center Bridging (DCB).
 
 Para más información acerca de las nuevas características de Windows Admin Center, consulte el [blog de Windows Admin Center](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog).
 
 Los clústeres que ejecutan Azure Stack HCI, versión 20H2, tienen las siguientes características nuevas en comparación con las soluciones basadas en Windows Server 2019:
 
 - **Nuevas funcionalidades de Windows Admin Center**: con la posibilidad de crear y actualizar clústeres hiperconvergidos mediante una interfaz de usuario intuitiva, Azure Stack HCI es más fácil de usar que nunca.
-- **Clústeres extendidos para la conmutación automática por error**: la agrupación en clústeres multisitio con replicación de réplicas de almacenamiento y conmutación automática por error de máquinas virtuales proporciona recuperación ante desastres y continuidad empresarial nativas a los clústeres que usan Espacios de almacenamiento directo.
+- **Clústeres extendidos para la conmutación automática por error**: la agrupación en clústeres multisitio con replicación de réplicas de almacenamiento y conmutación automática por error de VM proporciona recuperación ante desastres y continuidad empresarial nativas.
 - **Reglas de afinidad y de falta de afinidad**: se pueden usar de manera parecida a la forma en que Azure usa Availability Zones para mantener juntas las máquinas virtuales o de manera independiente en clústeres con varios dominios de error como, por ejemplo, los clústeres extendidos.
 - **Integración de Azure Portal**: la experiencia de Azure Portal para Azure Stack HCI está diseñada para ver todos los clústeres de Azure Stack HCI de todo el mundo, con nuevas características en el desarrollo.
 - **Aceleración de GPU para cargas de trabajo de alto rendimiento**: las aplicaciones de inteligencia artificial o de aprendizaje automático pueden beneficiarse del aumento del rendimiento con los procesadores GPU.
 - **Cifrado de BitLocker**: ahora puede usar BitLocker para cifrar el contenido de los volúmenes de datos en Azure Stack HCI, lo cual ayuda a los gobiernos y a otros clientes a cumplir con estándares como FIPS 140-2 e HIPAA.
 - **Mayor velocidad de reparación de los volúmenes de Espacios de almacenamiento directo**: repare los volúmenes de forma rápida y sencilla.
 
-Windows Admin Center, versión 20H2 también proporciona una nueva interfaz de usuario de actualización de clústeres para clústeres basados en Windows Server que incluye las soluciones de Azure Stack HCI originales. Aunque puede usar el Asistente para crear un nuevo clúster con Windows Server, no puede crear clústeres de Windows Server con Espacios de almacenamiento directo. Para eso necesita el sistema operativo de Azure Stack HCI.
+Windows Admin Center, versión 20H2 también proporciona una nueva interfaz de usuario de actualización de clústeres para clústeres basados en Windows Server que incluye las soluciones de Azure Stack HCI originales. Aunque puede usar el Asistente para crear clústeres con Windows Server, no puede crear clústeres de Windows Server con Espacios de almacenamiento directo. Para eso, necesita el sistema operativo de Azure Stack HCI.
 
 ## <a name="roles-you-can-run-without-virtualizing"></a>Roles que se pueden ejecutar sin virtualización
 
@@ -224,7 +224,7 @@ Dado que Azure Stack HCI está pensado como host de virtualización en el que se
 Esto significa que puede ejecutar los siguientes roles de servidor:
 
 - Hyper-V
-- Controlador de red y otros componentes necesarios de las redes definidas por software
+- Controlador de red y otros componentes necesarios de las redes definidas por software (SDN)
 
 Sin embargo, los demás roles y aplicaciones deben ejecutarse dentro de las máquinas virtuales. Tenga en cuenta que puede ejecutar las utilidades, aplicaciones y servicios necesarios para la administración y el estado de las máquinas virtuales hospedadas.
 

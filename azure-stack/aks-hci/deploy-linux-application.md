@@ -3,17 +3,19 @@ title: 'Tutorial: implementación de una aplicación de Linux en AKS en Azure St
 description: En este tutorial deberá implementar una aplicación Linux con varios contenedores en el clúster mediante una imagen personalizada que se almacena en Azure Container Registry.
 author: abha
 ms.topic: tutorial
-ms.date: 09/22/2020
+ms.date: 12/02/2020
 ms.author: abha
 ms.reviewer: ''
-ms.openlocfilehash: 6fd907a44cdaad5f5dfe7ccb3a29f5fc6a0152b6
-ms.sourcegitcommit: dabbe44c3208fbf989b7615301833929f50390ff
+ms.openlocfilehash: e5f7f96956248dc7cc2c92ae678970b40951ece4
+ms.sourcegitcommit: 0efffe1d04a54062a26d5c6ce31a417f511b9dbf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90948745"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96612308"
 ---
 # <a name="tutorial-deploy-linux-applications-in-azure-kubernetes-service-on-azure-stack-hci"></a>Tutorial: Implementación de aplicaciones Linux en Azure Kubernetes Service en Azure Stack HCI
+
+> Se aplica a: AKS en Azure Stack HCI, entorno en tiempo de ejecución de AKS en Windows Server 2019 Datacenter
 
 En este tutorial, implementará una aplicación de varios contenedores que incluye un front-end web y una instancia de base de datos de Redis en el clúster de Azure Kubernetes Service en Azure Stack HCI. A continuación, podrá ver cómo se puede probar y escalar la aplicación. 
 
@@ -27,7 +29,7 @@ Compruebe que tiene listos los requisitos siguientes:
 * Un archivo kubeconfig para obtener acceso al clúster.
 * Tener instalado el módulo de PowerShell correspondiente a Azure Kubernetes Service en Azure Stack HCI.
 * Ejecute los comandos de este documento en una ventana administrativa de PowerShell.
-* Asegúrese de que las cargas de trabajo específicas del sistema operativo se encuentran en el host de contenedor adecuado. Si tiene un clúster de Kubernetes mixto de nodos de trabajo de Windows y Linux, puede usar selectores de nodo o la opción para rechazar o aceptar esos nodos. Para obtener más información, consulte [Uso de los selectores de nodo y la opción para rechazar o aceptarlos](adapt-apps-mixed-os-clusters.md).
+* Asegúrese de que las cargas de trabajo específicas del SO se encuentran en el host de contenedor adecuado. Si tiene un clúster de Kubernetes mixto de nodos de trabajo de Windows y Linux, puede usar selectores de nodo o la opción para rechazar o aceptar esos nodos. Para obtener más información, consulte [Uso de los selectores de nodo y la opción para rechazar o aceptarlos](adapt-apps-mixed-os-clusters.md).
 
 ## <a name="deploy-the-application"></a>Implementación de la aplicación
 
@@ -171,7 +173,7 @@ Hemos creado una única réplica del front-end de Azure Vote y de la instancia d
 kubectl get pods -n default
 ```
 
-La salida del ejemplo siguiente muestra un pod de front-end y un pod de back-end:
+La salida del ejemplo siguiente muestra un pod de front-end y uno de back-end:
 
 ```
 NAME                                READY     STATUS    RESTARTS   AGE
@@ -179,7 +181,7 @@ azure-vote-back-6bdcb87f89-g2pqg    1/1       Running   0          25m
 azure-vote-front-84c8bf64fc-cdq86   1/1       Running   0          25m
 ```
 
-Para cambiar el número de pods en la implementación *azure-vote-front*, use el comando `kubectl scale`. El ejemplo siguiente aumenta el número de pods de front-end a *5*:
+Para cambiar el número de pods en la implementación *azure-vote-front*, use el comando `kubectl scale`. En el ejemplo siguiente se aumenta el número de pods de front-end a *5*:
 
 ```console
 kubectl scale --replicas=5 deployment/azure-vote-front

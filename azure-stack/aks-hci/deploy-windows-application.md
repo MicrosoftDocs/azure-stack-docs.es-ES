@@ -1,21 +1,24 @@
 ---
-title: 'Tutorial: implementación de una aplicación Windows en AKS en Azure Stack HCI'
-description: En este tutorial deberá implementar una aplicación Windows en el clúster mediante una imagen personalizada que se almacena en Azure Container Registry.
+title: Implementación de una aplicación .NET para Windows en AKS en Azure Stack HCI
+description: Descubra cómo implementar una aplicación .NET para Windows en el clúster mediante una imagen personalizada que se almacena en Azure Container Registry.
 author: abha
 ms.topic: tutorial
-ms.date: 09/22/2020
+ms.date: 12/02/2020
 ms.author: abha
 ms.reviewer: ''
-ms.openlocfilehash: f6bc0132dd7ce3ee9972b0aaff6d0718cab86843
-ms.sourcegitcommit: dabbe44c3208fbf989b7615301833929f50390ff
+ms.openlocfilehash: 844bafbb497228d2e4527a5e974574dadb95ee7d
+ms.sourcegitcommit: 0efffe1d04a54062a26d5c6ce31a417f511b9dbf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90948744"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96612325"
 ---
-# <a name="tutorial-deploy-windows-applications-in-azure-kubernetes-service-on-azure-stack-hci"></a>Tutorial: Implementación de aplicaciones Windows en Azure Kubernetes Service en Azure Stack HCI
+# <a name="deploy-windows-applications-in-azure-kubernetes-service-on-azure-stack-hci"></a>Implementación de aplicaciones Windows en Azure Kubernetes Service en Azure Stack HCI
 
-En este tutorial implementará una aplicación de ejemplo de ASP.NET de un contenedor de Windows Server en el clúster de Kubernetes. A continuación, podrá ver la manera de probar y escalar la aplicación. En este tutorial se da por supuesto que tiene un conocimiento básico de los conceptos de Kubernetes. Para obtener más información, consulte [Conceptos básicos de Kubernetes de Azure Kubernetes Service en Azure Stack HCI](kubernetes-concepts.md).
+> Se aplica a: AKS en Azure Stack HCI, entorno en tiempo de ejecución de AKS en Windows Server 2019 Datacenter
+
+En este tutorial implementará una aplicación de ejemplo de ASP.NET de un contenedor de Windows Server en el clúster de Kubernetes y aprenderá a probarla y escalarla. También aprenderá a unir un nodo de Windows a un dominio de Active Directory.
+En este tutorial se da por supuesto que tiene un conocimiento básico de los conceptos de Kubernetes. Para obtener más información, consulte [Conceptos básicos de Kubernetes de Azure Kubernetes Service en Azure Stack HCI](kubernetes-concepts.md).
 
 ## <a name="before-you-begin"></a>Antes de empezar
 
@@ -23,7 +26,7 @@ Compruebe que tiene listos los requisitos siguientes:
 
 * Un clúster de Azure Kubernetes Service en Azure Stack HCI que tenga al menos un nodo de trabajo de Windows en funcionamiento. 
 * Un archivo kubeconfig para obtener acceso al clúster.
-* Debe tener instalado el módulo de PowerShell correspondiente a la instancia de Azure Kubernetes Service en Azure Stack HCI.
+* Tener instalado el módulo de PowerShell correspondiente a Azure Kubernetes Service en Azure Stack HCI.
 * Ejecute los comandos de este documento en una ventana administrativa de PowerShell.
 * Asegúrese de que las cargas de trabajo específicas del sistema operativo se encuentran en el host de contenedor adecuado. Si tiene un clúster de Kubernetes mixto de nodos de trabajo de Windows y Linux, puede usar selectores de nodo o la opción para rechazar o aceptar esos nodos. Para obtener más información, consulte [Uso de los selectores de nodo y la opción para rechazar o aceptarlos](adapt-apps-mixed-os-clusters.md).
 
@@ -149,4 +152,4 @@ kubectl get pods -n default
 ## <a name="next-steps"></a>Pasos siguientes
 
 * [Uso de Azure Monitor para supervisar el clúster y la aplicación](/azure/azure-monitor/insights/container-insights-enable-arc-enabled-clusters).
-* [Use el almacenamiento persistente y configure la compatibilidad con gMSA en un contenedor de Windows](persistent-storage-windows-nodes.md).
+* [Use un volumen persistente en un clúster de Kubernetes](persistent-volume.md).
