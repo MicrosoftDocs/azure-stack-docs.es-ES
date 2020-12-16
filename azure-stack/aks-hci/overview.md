@@ -2,25 +2,26 @@
 title: ¿Qué es Azure Kubernetes Service en Azure Stack HCl?
 description: Azure Kubernetes Service en Azure Stack HCI es una implementación local de Azure Kubernetes Service (AKS) que automatiza la ejecución de aplicaciones en contenedores a gran escala.
 ms.topic: overview
-author: jasongerend
-ms.author: jgerend
-ms.date: 09/22/2020
-ms.openlocfilehash: ef2cc07ca9c228b9d427d11f8065e2d943e1626b
-ms.sourcegitcommit: 296c95cad20ed62bdad0d27f1f5246bfc1c81d5e
+author: v-susbo
+ms.author: v-susbo
+ms.date: 12/02/2020
+ms.openlocfilehash: a7d97d2454e9d77c1760180b46be9ce219d6af68
+ms.sourcegitcommit: 0efffe1d04a54062a26d5c6ce31a417f511b9dbf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93064623"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96612665"
 ---
 # <a name="what-is-azure-kubernetes-service-on-azure-stack-hci"></a>¿Qué es Azure Kubernetes Service en Azure Stack HCl?
+> Se aplica a: AKS en Azure Stack HCI, entorno en tiempo de ejecución de AKS en Windows Server 2019 Datacenter
 
-Azure Kubernetes Service en Azure Stack HCI es una implementación local de Azure Kubernetes Service (AKS) que automatiza la ejecución de aplicaciones en contenedores a gran escala. Azure Kubernetes Service ahora está en versión preliminar en Azure Stack HCl, lo que hace que se tarde menos en empezar a hospedar contenedores de Linux y Windows en un centro de recursos.
+Azure Kubernetes Service en Azure Stack HCI es una implementación local de Azure Kubernetes Service (AKS) que automatiza la ejecución de aplicaciones en contenedores a gran escala. Azure Kubernetes Service ahora está en versión preliminar en Azure Stack HCl y en Windows Server 2019 Datacenter, lo que hace que se tarde menos en empezar a hospedar contenedores de Linux y Windows en un centro de datos.
 
-Para empezar a trabajar con una instancia local de Azure Kubernetes Service, [regístrese para obtener la versión preliminar](https://aka.ms/AKS-HCI-Evaluate) (no tendrá que pagar ningún costo adicional en esta versión). A continuación, consulte [Configuración de Azure Kubernetes Service en Azure Stack HCI](setup.md). Si en su lugar prefiere usar Azure Kubernetes Service para organizar los contenedores basados en la nube, consulte [Azure Kubernetes Service en Azure](/azure/aks/intro-kubernetes).
+Para empezar a trabajar con una instancia local de Azure Kubernetes Service, [regístrese para obtener la versión preliminar](https://aka.ms/AKS-HCI-Evaluate) (no tendrá que pagar ningún costo adicional en esta versión). A continuación, consulte [Configuración de Azure Kubernetes Service en Azure Stack HCI](setup.md). Si en su lugar prefiere usar Azure Kubernetes Service para organizar los contenedores basados en la nube, consulte [Azure Kubernetes Service en Azure](/azure/aks/intro-kubernetes).
 
-En las siguientes secciones se describen algunas de las razones para usar Azure Kubernetes Service en Azure Stack HCI. Asimismo, encontrará varias respuestas a algunas preguntas frecuentes sobre este servicio y cómo comenzar a usarlo. Para obtener información sobre los contenedores, consulte [Ventanas y contenedores](/virtualization/windowscontainers/about/).
+En las siguientes secciones se describen algunas de las razones para usar Azure Kubernetes Service en Azure Stack HCI. Asimismo, encontrará varias respuestas a algunas preguntas frecuentes sobre este servicio y cómo comenzar a usarlo. Para obtener información general sobre los contenedores, vea [Windows y contenedores](/virtualization/windowscontainers/about/) y, para obtener información sobre Kubernetes, vea [Conceptos básicos de Kubernetes](kubernetes-concepts.md) o [Kubernetes.io](https://kubernetes.io).
 
-## <a name="automate-management-of-containerized-applications"></a>Automatización de la administración de aplicaciones en contenedores
+## <a name="use-aks-to-automate-management-of-containerized-applications"></a>Use AKS para automatizar la administración de aplicaciones en contenedores
 
 Aunque puede administrar algunos contenedores de forma manual mediante Docker y Windows, las aplicaciones suelen usar cinco, diez o incluso cientos de contenedores, por lo que es necesario utilizar el orquestador de Kubernetes.
 
@@ -28,22 +29,18 @@ Kubernetes es un orquestador de código abierto para automatizar la administraci
 
 A continuación, se detallan algunas de las funcionalidades que proporciona Azure Kubernetes Service mientras se encuentra en versión preliminar en Azure Stack HCI:
 
-- Implementación de aplicaciones en contenedores a gran escala en un clúster de máquinas virtuales (denominado clúster de Kubernetes) que se ejecutan en el clúster de Azure Stack HCI
-- Conmutación por error cuando se produce un error en un nodo del clúster de Kubernetes
+- Implementación de aplicaciones en contenedores a gran escala en clústeres de Kubernetes que se ejecutan en el clúster de Azure Stack HCI
 - Implementación y administración de aplicaciones en contenedores basadas en Linux y Windows
-- Programación de las cargas de trabajo
-- Supervisión del mantenimiento
+- Implementación de AKS en Azure Stack HCI mediante Windows Admin Center o PowerShell
 - Opción de escalar o reducir verticalmente al agregar o quitar nodos en el clúster de Kubernetes
-- Administración de redes
-- Detección de servicios
-- Coordinación de actualizaciones de aplicaciones
-- Asignación de pods a los nodos de clúster con afinidad de nodo de clúster
-
-Para obtener más información acerca de Kubernetes, consulte [Kubernetes.io](https://kubernetes.io).
+- Administración del almacenamiento y las redes en el clúster de Kubernetes
+- Actualizaciones automáticas para la implementación de Kubernetes
+- Actualización a la versión más reciente de Kubernetes disponible
+- Uso de los servicios populares de Azure mediante Azure Arc para Kubernetes
 
 ## <a name="simplify-setting-up-kubernetes"></a>Simplificación de la configuración de Kubernetes
 
-Azure Kubernetes Service simplifica el proceso de configuración de Kubernetes en Azure Stack HCI e incluye las siguientes características:
+Azure Kubernetes Service simplifica el proceso de configuración de Kubernetes en Azure Stack HCI y Windows Server 2019 Datacenter e incluye las siguientes características:
 
 - Un asistente de Windows Admin Center para configurar Kubernetes y sus dependencias (por ejemplo, kubeadm, kubelet, kubectl y un complemento de red de pod)
 - Un asistente de Windows Admin Center para crear clústeres de Kubernetes a fin de ejecutar aplicaciones en contenedores
@@ -51,10 +48,10 @@ Azure Kubernetes Service simplifica el proceso de configuración de Kubernetes e
 
 ## <a name="view-and-manage-kubernetes-using-on-premises-tools-or-azure-arc"></a>Visualización y administración de Kubernetes mediante herramientas locales o Azure Arc
 
-Una vez que haya configurado Azure Kubernetes Service en el clúster de Azure Stack HCI y creado un clúster de Kubernetes, le proporcionaremos un par de maneras de administrar y supervisar la infraestructura de Kubernetes:
+Una vez que haya configurado Azure Kubernetes Service en el entorno local y creado un clúster de Kubernetes, le proporcionaremos un par de maneras de administrar y supervisar la infraestructura de Kubernetes:
 
-- **En el entorno local mediante herramientas conocidas como Kubectl y el panel de Kubernetes** : use una interfaz web de código abierto para implementar aplicaciones en un clúster de Kubernetes, administrar los recursos del clúster, solucionar problemas y ver las aplicaciones en ejecución.
-- **En Azure Portal con Azure Arc** : use un servicio de Azure para administrar Azure Kubernetes Service y los clústeres de Kubernetes implementados en su nube y en los entornos locales. Puede usar Azure Arc para agregar y quitar los clústeres de Kubernetes y los nodos de un clúster de Kubernetes, cambiar la configuración de red e instalar complementos.
+- **En el entorno local mediante herramientas conocidas como Kubectl y el panel de Kubernetes**: use una interfaz web de código abierto para implementar aplicaciones en un clúster de Kubernetes, administrar los recursos del clúster, solucionar problemas y ver las aplicaciones en ejecución.
+- **En Azure Portal con Azure Arc**: use Azure Arc para administrar las aplicaciones implementadas en clústeres de Kubernetes en entornos en la nube y locales. 
 <br>Asimismo, Azure Arc le permite administrar los clústeres de Kubernetes con otros servicios de Azure, como, por ejemplo:
 
   - Azure Monitor
@@ -63,16 +60,16 @@ Una vez que haya configurado Azure Kubernetes Service en el clúster de Azure St
 
 ## <a name="run-linux-and-windows-containers"></a>Ejecución de contenedores de Linux y Windows
 
-Azure Kubernetes Service es totalmente compatible con los contenedores basados en Linux y en Windows. Al crear un clúster de Kubernetes en Azure Stack HCI, puede elegir si quiere crear grupos de nodos (grupos de máquinas virtuales idénticas) para ejecutar contenedores de Linux, de Windows o ambos. 
+Azure Kubernetes Service es totalmente compatible con los contenedores basados en Linux y en Windows. Al crear un clúster de Kubernetes en Azure Stack HCI, puede elegir si quiere crear grupos de nodos (grupos de nodos de clúster de Kubernetes idénticos) para ejecutar contenedores de Linux, de Windows o ambos. 
 
-Azure Kubernetes Service crea las máquinas virtuales Linux y Windows para que no tenga que administrar directamente los sistemas operativos Linux o Windows.
+Azure Kubernetes Service crea los nodos Linux y Windows para que no tenga que administrar directamente los sistemas operativos Linux o Windows.
 
 ## <a name="secure-your-container-infrastructure"></a>Protección de la infraestructura de contenedores
 
 Azure Kubernetes Service incluye una serie de características que permitirán proteger la infraestructura del contenedor:
 
-- **Aislamiento basado en el hipervisor para los nodos de trabajo** : cada clúster de Kubernetes se ejecuta en su propio conjunto aislado y dedicado de máquinas virtuales, por lo que los inquilinos pueden compartir la misma infraestructura física.
-- **Imágenes de Windows y Linux que mantiene Microsoft para los nodos de trabajo** : los nodos de trabajo ejecutan las imágenes de máquinas virtuales Linux y Windows que crea Microsoft para cumplir con los procedimientos recomendados de seguridad. Asimismo, Microsoft actualiza estas imágenes mensualmente con las actualizaciones de seguridad más recientes.
+- **Aislamiento basado en el hipervisor para los nodos de trabajo**: cada clúster de Kubernetes se ejecuta en su propio conjunto aislado y dedicado de máquinas virtuales, por lo que los inquilinos pueden compartir la misma infraestructura física.
+- **Imágenes de Windows y Linux que mantiene Microsoft para los nodos de trabajo**: los nodos de trabajo ejecutan las imágenes de máquinas virtuales Linux y Windows que crea Microsoft para cumplir con los procedimientos recomendados de seguridad. Asimismo, Microsoft actualiza estas imágenes mensualmente con las actualizaciones de seguridad más recientes.
 
 El área de seguridad se actualiza constantemente en la versión preliminar de Azure Kubernetes Service en Azure Stack HCI, por lo que le recomendamos que siga atento a estos cambios.
 
@@ -82,11 +79,12 @@ Azure Kubernetes Service está disponible en las siguientes plataformas:
 
 - En la nube de Azure a través de [Azure Kubernetes Service en Azure](/azure/aks/intro-kubernetes).
 - De forma local a través de Azure Kubernetes Service en Azure Stack HCI (este es el tema que se trata en este artículo).
+- Entorno local mediante el entorno en tiempo de ejecución de Azure Kubernetes Service Runtime en Windows Server (este artículo también se aplica a AKSr en Windows Server)
 - De forma local en un entorno de Azure Stack Hub mediante el [motor de AKS en Azure Stack Hub](../user/azure-stack-kubernetes-aks-engine-overview.md).
 
 ## <a name="how-does-kubernetes-work-on-azure-stack-hci"></a>¿Cómo funciona Kubernetes en Azure Stack HCI?
 
-El funcionamiento de Azure Kubernetes Service varía ligeramente cuando se ejecuta en Azure Stack HCI que cuando se usa en la nube de Azure:
+El funcionamiento de Azure Kubernetes Service es ligeramente distinto si se ejecuta en Azure Stack HCI o se usa en la nube de Azure:
 
 - El servicio Kubernetes de Azure es un servicio hospedado en el que se administra automáticamente gran parte de la infraestructura de administración de Kubernetes (plano de control). Tanto el plano de control como las aplicaciones en contenedores se ejecutan en máquinas virtuales de Azure.
 - Con Azure Kubernetes Service en Azure Stack HCI, debe configurar el servicio directamente en el clúster de Azure Stack HCI, lo que le permitirá gestionar el plano de control. El plano de control, las aplicaciones en contenedores y la propia instancia de Azure Kubernetes Service se ejecutan en máquinas virtuales que hospeda un clúster hiperconvergido.
@@ -105,16 +103,16 @@ En las secciones siguientes se resumen los elementos que necesita para ejecutar 
 
 ### <a name="on-your-windows-admin-center-system"></a>En el sistema de Windows Admin Center
 
-El sistema de administración de Windows Admin Center presenta los siguientes requisitos:
+La máquina que ejecuta la puerta de enlace de Windows Admin Center tiene los requisitos siguientes:
 
-- Windows 10 (no admitimos los servidores de Windows Admin Center en este momento).
+- Una máquina con Windows 10 (no se admite la ejecución en Windows Admin Center en Azure Stack HCI ni en Windows Server 2019 Datacenter en este momento).
 - 60 GB de espacio disponible
 - Estar registrado en Azure
-- Estar en el mismo dominio que el clúster de Azure Stack HCI.
+- En el mismo dominio que el clúster de Azure Stack HCI o el de Windows Server 2019 Datacenter
 
-### <a name="on-the-azure-stack-hci-cluster-that-hosts-azure-kubernetes-service"></a>En el clúster de Azure Stack HCI que hospeda Azure Kubernetes Service
+### <a name="on-the-azure-stack-hci-cluster-or-windows-server-2019-datacenter-failover-cluster-that-hosts-azure-kubernetes-service"></a>En el clúster de Azure Stack HCI o en el clúster de conmutación por error de Windows Server 2019 Datacenter que hospeda Azure Kubernetes Service
 
-El clúster que ejecuta la versión 20H2 o posterior de Azure Stack HCI presenta los siguientes requisitos:
+El clúster de Azure Stack HCI o el clúster de conmutación por error de Windows Server 2019 Datacenter cumple los requisitos siguientes:
 
 - Un máximo de cuatro servidores en el clúster de esta versión preliminar
 - 1 TB de capacidad disponible en el bloque de almacenamiento para Azure Kubernetes Service
@@ -125,9 +123,7 @@ Para conocer los requisitos generales del sistema Azure Stack HCI, consulte [Req
 
 ### <a name="the-network-configuration-for-azure-stack-hci"></a>Configuración de red para Azure Stack HCI
 
-La red conectada a las máquinas virtuales del clúster de Azure Stack HCI requiere un ámbito dedicado de direcciones IPv4 de DHCP que estén disponibles para Azure Kubernetes Service y que sean accesibles para las máquinas virtuales en el clúster de Azure Stack HCI.
-
-No puede usar las etiquetas VLAN en la red para Azure Kubernetes Service en Azure Stack HCI. Use puertos de acceso (sin etiquetar) en los conmutadores de red para la red que usan Azure Stack HCI y las máquinas virtuales de Azure Kubernetes Service.
+La red conectada a las VM en Azure Stack HCI o Windows Server 2019 Datacenter requiere un ámbito dedicado de direcciones IPv4 de DHCP que estén disponibles para Azure Kubernetes Service y que sean accesibles para las VM en el clúster de Azure Stack HCI o Windows Server 2019 Datacenter.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

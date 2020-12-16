@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.author: bryanla
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2020
-ms.openlocfilehash: ff9c1054f505625e51426fca70bbb2ae7d9115a5
-ms.sourcegitcommit: 69cfff119ab425d0fbb71e38d1480d051fc91216
+ms.openlocfilehash: 681f02fa220331a93a59448cd1c15bc490ee4b24
+ms.sourcegitcommit: 97ecba06aeabf2f30de240ac283b9bb2d49d62f0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91572949"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97011185"
 ---
 # <a name="mysql-resource-provider-maintenance-operations-in-azure-stack-hub"></a>Operaciones de mantenimiento del proveedor de recursos MySQL en Azure Stack Hub
 
@@ -156,7 +156,7 @@ Al usar los proveedores de recursos SQL y MySQL con sistemas integrados de Azure
 |Parámetro|Descripción|Comentario|
 |-----|-----|-----|
 |AzureEnvironment|Entorno de Azure de la cuenta de administrador de servicios que se usó para la implementación de Azure Stack Hub. Requerido solo para implementaciones de Azure AD. Los nombres de entorno que se admiten son **AzureCloud**, **AzureUSGovernment** o, si usa una suscripción a Azure Active Directory de China, **AzureChinaCloud**.|Opcional|
-|AzCredential|Credencial de la cuenta de administrador de servicios de Azure Stack Hub.|Mandatory|
+|AzCredential|Credencial de la cuenta de administrador de servicios de Azure Stack Hub. Se producirá un error en el script si la cuenta que usa con AzCredential requiere autenticación multifactor (MFA).|Mandatory|
 |CloudAdminCredential|Credencial de la cuenta de dominio de administración en la nube de Azure Stack Hub.|Mandatory|
 |PrivilegedEndpoint|Punto de conexión con privilegios para acceder a Get-AzureStackStampInformation.|Mandatory|Opcional|
 |DiagnosticsUserPassword|Contraseña de la cuenta de usuario de diagnóstico.|Opcional|
@@ -240,11 +240,11 @@ La extensión Azure Diagnostics está instalada de manera predeterminada en la m
    
    ![Vaya a Configuración de diagnóstico](media/azure-stack-mysql-resource-provider-maintain/mysqlrp-diagnostics-settings.png)
 
-4. Agregue **Microsoft-AzureStack-DatabaseAdapter/Operational!\*** para recopilar los registros de eventos operativos del proveedor de recursos de MySQL.
+4. Agregue **Microsoft-AzureStack-DatabaseAdapter/Operational!\** para recopilar los registros de eventos operativos del proveedor de recursos de MySQL.
 
    ![Agregar registros de eventos](media/azure-stack-mysql-resource-provider-maintain/mysqlrp-event-logs.png)
 
-5. Para habilitar la colección de registros de IIS, marque **Registros de IIS** y **Error en registros de solicitudes**.
+5. Para habilitar la colección de registros de IIS, marque las opciones _ *Registros de IIS** y **Registros de solicitudes con error**.
 
    ![Agregar registros de IIS](media/azure-stack-mysql-resource-provider-maintain/mysqlrp-iis-logs.png)
 

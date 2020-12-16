@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 11/30/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: 7452437d7f760a688c2403cb4def735b2daaa105
-ms.sourcegitcommit: a7a2ac1b9be926134826dce03e348154fd212bc9
+ms.openlocfilehash: c8ea741534954235fc6de9e32d16602e0c369d6f
+ms.sourcegitcommit: afdae61022037b5dba8345cb264049897e0aca8f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96443290"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97051622"
 ---
 # <a name="physical-network-requirements-for-azure-stack-hci"></a>Requisitos de red física para Azure Stack HCI
 
@@ -69,9 +69,9 @@ Los conmutadores Ethernet deben cumplir con la especificación IEEE 802.1Qaz qu
 
 ### <a name="standard-ieee-8021ab"></a>Estándar: IEEE 802.1AB
 
-Los conmutadores Ethernet deben cumplir la especificación IEEE 802.1AB que define el protocolo de detección de niveles de vínculo (LLDP). Se requiere LLDP para Azure Stack HCI y se admite la formación de equipos para detectar la configuración del conmutador.
+Los conmutadores Ethernet deben cumplir la especificación IEEE 802.1AB que define el protocolo de detección de niveles de vínculo (LLDP). Se requiere LLDP para Azure Stack HCl y permite solucionar problemas de configuraciones de redes físicas.
 
-La configuración del tipo, longitud y valores (TLVs) de LLDP debe estar habilitada dinámicamente. Estos conmutadores no deben requerir configuración adicional más allá de la habilitación de un TLV específico. Por ejemplo, si habilita el subtipo 3 de 802.1, se anunciarán automáticamente todas las redes VLAN disponibles en los puertos del conmutador.
+La configuración del tipo, longitud y valores (TLVs) de LLDP debe estar habilitada dinámicamente. Los conmutadores no deben requerir configuración adicional más allá de la habilitación de un TLV específico. Por ejemplo, si habilita el subtipo 3 de 802.1, se anunciarán automáticamente todas las redes VLAN disponibles en los puertos del conmutador.
 
 ### <a name="custom-tlv-requirements"></a>Requisitos de los TLV personalizados
 

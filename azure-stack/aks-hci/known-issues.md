@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 09/22/2020
 ms.author: abha
 ms.reviewer: ''
-ms.openlocfilehash: f5451a9d30f87c2f4b985e4ae82541b12de52461
-ms.sourcegitcommit: 362081a8c19e7674c3029c8a44d7ddbe2deb247b
+ms.openlocfilehash: 36c2d735f3652f4f195b4b9e1dda30fe8bce858c
+ms.sourcegitcommit: 3534ff416d40518eaba87eac8eca6d3082fc1d3f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91899710"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96557011"
 ---
 # <a name="known-issues-for-azure-kubernetes-service-on-azure-stack-hci-public-preview"></a>Problemas conocidos de Azure Kubernetes Service en Azure Stack HCI (versión preliminar pública)
 En este artículo se describen problemas conocidos con la versión preliminar pública de Azure Kubernetes Service en Azure Stack HCI.
@@ -82,3 +82,6 @@ Windows Admin Center no tiene actualmente ningún proceso para retirar un clúst
 ```PowerShell
 az connectedk8s delete
 ```
+
+## <a name="when-setting-up-an-azure-kubernetes-service-host-using-windows-admin-center-setup-may-fail-if-file-explorer-is-open"></a>Al configurar un host de Azure Kubernetes Service mediante Windows Admin Center, se puede producir un error en la configuración si el explorador de archivos está abierto
+Si el Explorador de archivos está abierto y está en el directorio **C:\Archivos de Files\AksHci** al llegar al paso "Revisar y crear", es posible que se produzca el error "El proceso no pudo acceder al archivo" C:\Archivos de Files\AksHci\wssdcloudagent.exe". Esto se debe a que otro proceso lo está usando. Para evitar este error, cierre el Explorador de archivos o vaya a otro directorio antes de llegar a este paso. 

@@ -4,16 +4,16 @@ titleSuffix: Azure Stack Hub
 description: Aprenda a agregar servidores de hospedaje para el aprovisionamiento mediante el adaptador del proveedor de recursos de SQL.
 author: bryanla
 ms.topic: article
-ms.date: 10/02/2019
+ms.date: 12/07/2020
 ms.author: bryanla
 ms.reviewer: xiaofmao
-ms.lastreviewed: 10/16/2019
-ms.openlocfilehash: 0345c3290b717385d8080dc6be771660ea22a2e1
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.lastreviewed: 12/07/2020
+ms.openlocfilehash: 146ce73bb28b70d44f6eff03a135e6a3a9f22249
+ms.sourcegitcommit: 62eb5964a824adf7faee58c1636b17fedf4347e9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86487913"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96778213"
 ---
 # <a name="add-hosting-servers-for-the-sql-resource-provider"></a>Incorporación de servidores de hospedaje para el proveedor de recursos SQL
 
@@ -66,13 +66,13 @@ La siguiente información proporciona una guía de seguridad adicional:
 
 * Todo el almacenamiento de Azure Stack Hub está cifrado con BitLocker, por lo que cualquier instancia de SQL en Azure Stack Hub utilizará almacenamiento de blobs cifrado.
 * El proveedor de recursos de SQL es totalmente compatible con TLS 1.2. Asegúrese de que cualquier servidor SQL Server que se administra mediante el proveedor de recursos de SQL está configurado _solo_ para TLS 1.2, y que el proveedor de recursos lo usará de forma predeterminada. Todas las versiones compatibles de SQL Server admiten TLS 1.2. Para más información, consulte [Compatibilidad de TLS 1.2 con Microsoft SQL Server](https://support.microsoft.com/help/3135244/tls-1-2-support-for-microsoft-sql-server).
-* Use Administrador de configuración de SQL Server para establecer la opción **ForceEncryption** para garantizar que todas las comunicaciones con SQL server están siempre cifradas. Para más información, consulte [Para configurar el servidor para forzar conexiones cifradas](/sql/database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine?view=sql-server-2017#to-configure-the-server-to-force-encrypted-connections).
+* Use Administrador de configuración de SQL Server para establecer la opción **ForceEncryption** para garantizar que todas las comunicaciones con SQL server están siempre cifradas. Para más información, consulte [Para configurar el servidor para forzar conexiones cifradas](/sql/database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine?view=sql-server-2017&preserve-view=true#to-configure-the-server-to-force-encrypted-connections).
 * Asegúrese de que cualquier aplicación cliente también se comunica a través de una conexión cifrada.
 * El proveedor de recursos está configurado para confiar en los certificados usados por las instancias de SQL Server.
 
 ## <a name="provide-capacity-by-connecting-to-a-standalone-hosting-sql-server"></a>Agregar capacidad a través de la conexión a un servidor SQL de hospedaje independiente
 
-Puede usar servidores SQL (que no sean HA) independientes con cualquier edición de SQL Server 2014 o SQL Server 2016. Asegúrese de que tiene las credenciales de una cuenta con privilegios de administrador del sistema.
+Puede usar servidores SQL (que no sean HA) independientes con cualquier edición de SQL Server 2014 o SQL Server 2016. Asegúrese de que tiene las credenciales de una cuenta con privilegios de administrador del sistema. 
 
 Para agregar un servidor de hospedaje independiente que ya se haya configurado, siga estos pasos:
 
@@ -87,6 +87,9 @@ Para agregar un servidor de hospedaje independiente que ya se haya configurado, 
    ![Panel del adaptador de SQL en el portal del administrador de Azure Stack Hub](./media/azure-stack-sql-rp-deploy/sql-rp-hosting-server.png)
 
 3. En **Agregar**, proporcione los detalles de conexión para la instancia de SQL Server en la hoja **Add a SQL Hosting Server** (Agregar un servidor de hospedaje SQL).
+
+   > [!IMPORTANT]
+   > No elija el **grupo de recursos** `system.<region>.sqladapter` que creó el instalador del proveedor de recursos de SQL durante la implementación. Debe proporcionar un grupo de recursos diferente para el servidor de hospedaje independiente. 
 
    ![Adición de un servidor de hospedaje de SQL en el portal del administrador de Azure Stack Hub](./media/azure-stack-sql-rp-deploy/sql-rp-new-hosting-server.png)
 
@@ -104,10 +107,10 @@ Para agregar un servidor de hospedaje independiente que ya se haya configurado, 
 
 ## <a name="provide-high-availability-using-sql-always-on-availability-groups"></a>Alta disponibilidad mediante grupos de disponibilidad SQL Always On
 
-La configuración de instancias de SQL de Always On requiere pasos adicionales e implica tres máquinas virtuales (o máquinas físicas). En este artículo se da por hecho que ya conoce bien los grupos de disponibilidad Always On. Para más información, consulte los siguientes artículos.
+La configuración de instancias de SQL de Always On requiere pasos adicionales e implica tres máquinas virtuales (o máquinas físicas). En este artículo se da por hecho que ya conoce bien los grupos de disponibilidad Always On. Vea los siguientes artículos para más información:
 
 * [Introducción a los grupos de disponibilidad Always On de SQL Server en Azure Virtual Machines](/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-availability-group-overview)
-* [Grupos de disponibilidad Always On (SQL Server)](/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-2017)
+* [Grupos de disponibilidad Always On (SQL Server)](/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-2017&preserve-view=true)
 
 > [!NOTE]
 > El proveedor de recursos del adaptador SQL _solo_ admite instancias de SQL 2016 SP1 Enterprise o versiones posteriores para grupos de disponibilidad AlwaysOn. Esta configuración de adaptador requiere nuevas características SQL como la propagación automática.
@@ -136,7 +139,7 @@ En los nodos secundarios, ejecute el siguiente comando SQL:
 
 ### <a name="configure-contained-database-authentication"></a>Configuración de autenticación de base de datos independiente
 
-Antes de agregar una base de datos independiente a un grupo de disponibilidad, asegúrese de que la opción de servidor de autenticación de la base de datos independiente se establece en 1 en cada instancia del servidor que hospeda una réplica de disponibilidad para el grupo de disponibilidad. Para más información, consulte la [opción de configuración del servidor de autenticación de base de datos independiente](/sql/database-engine/configure-windows/contained-database-authentication-server-configuration-option?view=sql-server-2017).
+Antes de agregar una base de datos independiente a un grupo de disponibilidad, asegúrese de que la opción de servidor de autenticación de la base de datos independiente se establece en 1 en cada instancia del servidor que hospeda una réplica de disponibilidad para el grupo de disponibilidad. Para más información, consulte la [opción de configuración del servidor de autenticación de base de datos independiente](/sql/database-engine/configure-windows/contained-database-authentication-server-configuration-option?view=sql-server-2017&preserve-view=true).
 
 Use estos comandos para establecer la opción del servidor de autenticación de base de datos independiente para cada instancia:
 
@@ -156,6 +159,9 @@ Use estos comandos para establecer la opción del servidor de autenticación de 
    En **SQL Hosting Servers** (Servidores de hospedaje SQL), puede conectar el proveedor de recursos de SQL Server a instancias reales de SQL Server que actúan como back-end del proveedor de recursos.
 
 3. Rellene el formulario con los detalles de conexión de la instancia de SQL Server. Asegúrese de que usa la dirección FQDN del agente de escucha Always On (y un nombre de instancia y número de puerto opcional). Proporcione la información de la cuenta que ha configurado con privilegios de administrador del sistema.
+
+   > [!IMPORTANT]
+   > No elija el **grupo de recursos** `system.<region>.sqladapter` que creó el instalador del proveedor de recursos de SQL durante la implementación. Debe proporcionar un grupo de recursos diferente para el servidor de hospedaje independiente. 
 
 4. Active la casilla Grupos de disponibilidad Always On para habilitar la compatibilidad con instancias de grupos de disponibilidad SQL Always On.
 

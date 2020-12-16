@@ -3,15 +3,15 @@ title: Solución de problemas de CredSSP
 description: Aprenda a solucionar problemas de CredSSP
 author: v-dasis
 ms.topic: how-to
-ms.date: 08/06/2020
+ms.date: 12/10/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: 24e9483aa9658809adc9be7fbfa4a2cb13daab84
-ms.sourcegitcommit: 952d26ad08fcc28ad3ad83e27644e61497623a44
+ms.openlocfilehash: f90e03c275c4ca7a28a9d8392351bf55d0adb2c0
+ms.sourcegitcommit: 97ecba06aeabf2f30de240ac283b9bb2d49d62f0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87899931"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97010845"
 ---
 # <a name="troubleshoot-credssp"></a>Solución de problemas de CredSSP
 
@@ -32,11 +32,19 @@ Entre las tareas que requieren que se habilite CredSSP se incluyen:
 
 Si tiene problemas con CredSSP, las siguientes sugerencias de solución de problemas pueden ayudarle:
 
+- Para usar el Asistente para crear clústeres al ejecutar Windows Admin Center en un servidor en lugar de un equipo, debe ser miembro del grupo administradores de puerta de enlace en el servidor de Windows Admin Center. Para más información, consulte [Opciones de acceso de usuario con Windows Admin Center](/windows-server/manage/windows-admin-center/plan/user-access-options).
+
 - Cuando se ejecuta el asistente para crear clúster, CredSSP puede notificar un problema si una confianza de Active Directory no está establecida o es incorrecta. Esto pasa cuando se utilizan servidores basados en un grupo de trabajo para la creación del clúster. En este caso, intente reiniciar manualmente cada servidor del clúster.
 
 - Cuando ejecute Windows Admin Center en un servidor (modo de servicio), asegúrese de que la cuenta de usuario es miembro del grupo Administradores de puerta de enlace.
 
+- Se recomienda ejecutar Windows Admin Center en un equipo que sea miembro del mismo dominio que los servidores administrados.
+
 - Para habilitar o deshabilitar CredSSP en un servidor, asegúrese de que pertenece al grupo Administradores de puerta de enlace en ese equipo. Para más información, consulte las dos primeras secciones de [Configuración de los permisos y el control de acceso de usuarios](/windows-server/manage/windows-admin-center/configure/user-access-control#gateway-access-role-definitions).
+
+- Al reiniciar el servicio Administración remota de Windows (WinRM) en los servidores del clúster se le podría pedir que vuelva a establecer la conexión de WinRM entre cada servidor de clúster y Windows Admin Center.
+
+    Una forma de hacerlo es ir a cada servidor de clúster y, en Windows Admin Center, en el menú **Herramientas**, seleccionar **Servicios**, seleccionar **WinRM**, seleccionar **Reiniciar** y, a continuación, en el símbolo del sistema **Reiniciar el servicio**, seleccionar **Sí**.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

@@ -7,12 +7,12 @@ ms.date: 11/16/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 09/09/2020
-ms.openlocfilehash: da21b724e914527ef2a4d5065d1d83a30ad3bb85
-ms.sourcegitcommit: 2562b86f47db20e2652d4636227afb9cfd0e03ae
+ms.openlocfilehash: 161869d04e036e5265ebceb5cab9e193091baa37
+ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94785785"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96935157"
 ---
 # <a name="azure-stack-hub-known-issues"></a>Problemas conocidos de Azure Stack Hub
 
@@ -227,6 +227,12 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 - Causa: si el stamp contiene la versión 1.7 o anterior del proveedor de recursos (RP) de App Service, tras la actualización del stamp no se cargará la hoja de App Service.
 - Corrección: actualice el proveedor de recursos a la versión 2002 Q2.
 
+## <a name="powershell"></a>PowerShell
+
+[!Include[Known issue for install - one](../includes/known-issue-az-install-1.md)]
+
+[!Include[Known issue for install - two](../includes/known-issue-az-install-2.md)]
+
 <!-- ## Storage -->
 <!-- ## SQL and MySQL-->
 <!-- ## App Service -->
@@ -431,6 +437,12 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 - Aplicable a: este problema afecta a la versión 2002.
 - Causa: si el stamp contiene la versión 1.7 o anterior del proveedor de recursos (RP) de App Service, tras la actualización del stamp no se cargará la hoja de App Service.
 - Corrección: actualice el proveedor de recursos a la versión [2020 Q2](azure-stack-app-service-update.md).
+
+## <a name="powershell"></a>PowerShell
+
+[!Include[Known issue for install - one](../includes/known-issue-az-install-1.md)]
+
+[!Include[Known issue for install - two](../includes/known-issue-az-install-2.md)]
 
 <!-- ## Storage -->
 <!-- ## SQL and MySQL-->

@@ -3,16 +3,16 @@ title: Notas de la versión de Azure Stack Hub
 description: Notas de la versión para los sistemas integrados de Azure Stack Hub, incluidas las actualizaciones y correcciones de errores.
 author: sethmanheim
 ms.topic: article
-ms.date: 11/30/2020
+ms.date: 12/07/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 09/09/2020
-ms.openlocfilehash: 3e74f1e77c5c30ec17bf021d95952ce7bb19426b
-ms.sourcegitcommit: a7a2ac1b9be926134826dce03e348154fd212bc9
+ms.openlocfilehash: aed3b9f5eb59ef440503625d807f8ef7b777f7b1
+ms.sourcegitcommit: 85827a2227eb2d1ed1ed44bb9f00e28d96818c84
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96443324"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96869044"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Notas de la versión de Azure Stack Hub
 
@@ -69,8 +69,8 @@ Para obtener más información sobre los tipos de compilación de actualización
 <!-- What's new, also net new experiences and features. -->
 - Azure Stack Hub admite ahora el emparejamiento de VNET, que ofrece la posibilidad de conectar redes virtuales sin una aplicación virtual de red (NVA). Para más información, consulte la [nueva documentación del emparejamiento de VNET](../user/virtual-network-peering.md).
 - El almacenamiento de blobs de Azure Stack Hub permite ahora a los usuarios usar un blob inmutable. Mediante el establecimiento de directivas inmutables en un contenedor, puede almacenar objetos de datos críticos para la empresa en un estado WORM (escribir una vez, leer muchas). En esta versión, las directivas inmutables solo se pueden establecer a través de la API de REST o los SDK de cliente. Escribir blobs en anexos tampoco es posible en esta versión. Para más información sobre los blobs inmutables, vea [Almacenamiento de datos críticos para la empresa con almacenamiento inmutable](/azure/storage/blobs/storage-blob-immutable-storage).
-- Azure Stack Hub Storage admite ahora las API de servicios de Azure Storage, versión 2019-07-07. En el caso de las bibliotecas cliente de Azure que son compatibles con la nueva versión de API de REST, consulte [Herramientas de desarrollo de almacenamiento de Azure Stack Hub](../user/azure-stack-storage-dev.md#azure-client-libraries).
-- El proceso de Azure Stack Hub es ahora compatible con las API de Azure Compute versión 2020-06-01, con un subconjunto de las características totales disponibles.
+- Azure Stack Hub Storage admite ahora las API de servicios de Azure Storage, versión **2019-07-07**. En el caso de las bibliotecas cliente de Azure que son compatibles con la nueva versión de API de REST, consulte [Herramientas de desarrollo de almacenamiento de Azure Stack Hub](../user/azure-stack-storage-dev.md#azure-client-libraries). En el caso de las API de administración de servicios de Azure Storage, se ha agregado compatibilidad con **2018-02-01**, con un subconjunto del total de características disponibles.
+- El proceso de Azure Stack Hub es ahora compatible con las API de Azure Compute versión **2020-06-01**, con un subconjunto de las características totales disponibles.
 - Ahora, los discos administrados de Azure Stack Hub admiten la versión **2019-03-01** de las API de discos de Azure, con un subconjunto de las características disponibles.
 - Versión preliminar de Windows Admin Center que ahora puede conectarse a Azure Stack Hub para proporcionar información detallada sobre la infraestructura durante las operaciones de soporte técnico (se requiere romper el cristal).
 - Capacidad de agregar un banner de inicio de sesión al punto de conexión con privilegios (PEP) en el momento de la implementación.
@@ -103,7 +103,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 
   Tenga en cuenta que estos cambios se agregan en el nivel de host de un sistema de Azure Stack Hub. Póngase en contacto con su OEM para organizar la realización de los cambios necesarios en los conmutadores de red Top-of-rack (ToR). Este cambio de ToR se puede realizar antes o después de actualizar a la versión 2008. Para más información, consulte la [documentación de migración de red](azure-stack-network.md).
 
-  - Los tamaños de máquina virtual compatibles con GPU **NCas_v4 (NVIDIA T4)** se han reemplazado en esta compilación por los tamaños de máquina virtual **NCasT4_v3**, para ser coherentes con Azure. Tenga en cuenta que todavía no están visibles en el portal y solo se pueden usar a través de plantillas de Azure Resource Manager.
+- Los tamaños de máquina virtual compatibles con GPU **NCas_v4 (NVIDIA T4)** se han reemplazado en esta compilación por los tamaños de máquina virtual **NCasT4_v3**, para ser coherentes con Azure. Tenga en cuenta que todavía no están visibles en el portal y solo se pueden usar a través de plantillas de Azure Resource Manager.
 
 ### <a name="fixes"></a>Correcciones
 
@@ -139,7 +139,7 @@ Cuando se actualiza a una nueva versión principal (por ejemplo, de 1.2005.x a 1
 
 Después de la instalación de 2008, si se publica posteriormente alguna revisión de la versión 2008, se debe instalar:
 
-- [Revisión 1.2008.16.94 de Azure Stack Hub](https://support.microsoft.com/help/4595071)
+- [Revisión 1.2008.19.100 de Azure Stack Hub](https://support.microsoft.com/help/4595073)
 ::: moniker-end
 
 ::: moniker range="azs-2005"
@@ -297,7 +297,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 
 - Las siguientes API de administrador han quedado en desuso:
 
-  | Proveedor de recursos       | Resource              | Versión            |
+  | Proveedor de recursos       | Recurso              | Versión            |
   |-------------------------|-----------------------|--------------------|
   | Microsoft.Storage.Admin | granjas                 | 2015-12-01-preview |
   | Microsoft.Storage.Admin | farms/acquisitions    | 2015-12-01-preview |
@@ -306,7 +306,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 
 - Se han sustituido las siguientes API de administrador por una versión más reciente (2018-09-01):
 
-  | Proveedor de recursos      | Resource              | Versión    |
+  | Proveedor de recursos      | Recurso              | Versión    |
   |------------------------|-----------------------|------------|
   | Microsoft.Backup.Admin | backupLocation         | 2016-05-01 |
   | Microsoft.Backup.Admin | backups                | 2016-05-01 |

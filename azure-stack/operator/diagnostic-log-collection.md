@@ -6,13 +6,13 @@ ms.topic: article
 ms.date: 10/30/2020
 ms.author: v-myoung
 ms.reviewer: shisab
-ms.lastreviewed: 10/30/2020
-ms.openlocfilehash: b5f182fcf76fe28855240931e3515d3c9a467ee1
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.lastreviewed: 12/08/2020
+ms.openlocfilehash: 6e2b00d80d600a0cdafa21455c9938e9df7af564
+ms.sourcegitcommit: b0a96f98f2871bd6be28d3f2461949e2237ddaf0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94543313"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96872651"
 ---
 # <a name="diagnostic-log-collection"></a>Recopilación de registros de diagnóstico
 
@@ -28,7 +28,7 @@ Azure Stack Hub tiene varias maneras de recopilar, guardar y enviar registros de
 * [Envío inmediato de registros](#send-logs-now)
 * [Almacenamiento local de los registros](#save-logs-locally)
 
-En el diagrama de flujo siguiente se muestra qué opción utilizar para enviar los registros de diagnóstico en cada caso. Si Azure Stack Hub puede conectarse a Azure, el método recomendado es habilitar la **recopilación proactiva de registros** , que cargará automáticamente los registros de diagnóstico en un blob de almacenamiento controlado por Microsoft en Azure cuando se genere una alerta crítica. Como alternativa, puede recopilar registros a petición mediante **Send logs now** (Enviar registros ahora). Si Azure Stack Hub se desconecta de Azure, puede **guardar los registros localmente**. 
+En el diagrama de flujo siguiente se muestra qué opción utilizar para enviar los registros de diagnóstico en cada caso. Si Azure Stack Hub puede conectarse a Azure, el método recomendado es habilitar la **recopilación proactiva de registros**, que cargará automáticamente los registros de diagnóstico en un blob de almacenamiento controlado por Microsoft en Azure cuando se genere una alerta crítica. Como alternativa, puede recopilar registros a petición mediante **Send logs now** (Enviar registros ahora). Si Azure Stack Hub se desconecta de Azure, puede **guardar los registros localmente**. 
 
 ![Diagrama de flujo que muestra el envío inmediato de registros a Microsoft](media/azure-stack-help-and-support/send-logs-now-flowchart.png)
 
@@ -37,6 +37,12 @@ En el diagrama de flujo siguiente se muestra qué opción utilizar para enviar l
 ## <a name="send-logs-proactively"></a>Envío de registros de forma proactiva
 
 La recopilación de registros proactiva recopila y envía automáticamente los registros de diagnóstico de Azure Stack Hub a Microsoft antes de abrir una incidencia de soporte técnico. Estos registros solo se recopilan cuando se genera una [alerta de mantenimiento del sistema](#proactive-diagnostic-log-collection-alerts) y solo se tiene acceso a ellos desde el equipo de Soporte técnico de Microsoft en el contexto de una incidencia de soporte técnico.
+
+::: moniker range=">= azs-2008"
+
+A partir de Azure Stack Hub versión 2008, la recopilación de registros proactiva usa un algoritmo mejorado que captura los registros incluso durante condiciones de error que no son visibles para un operador. Esto garantiza que la información de diagnóstico correcta se recopila en el momento adecuado sin necesidad de interacción del operador. El servicio de soporte técnico de Microsoft puede comenzar a solucionar problemas antes en algunos casos. Las mejoras del algoritmo inicial se centran en las operaciones de revisión y actualización. Se recomienda habilitar recopilaciones proactivas de registros, ya que se optimizan más operaciones y aumentan las ventajas.
+
+::: moniker-end
 
 La recopilación de registros proactiva puede deshabilitarse y habilitarse de nuevo en cualquier momento. Siga estos pasos para configurar la recopilación de registros proactiva.
 
@@ -56,6 +62,38 @@ Los datos se usarán solo para solucionar problemas de alertas de mantenimiento 
 Los datos recopilados previamente con su consentimiento no se verán afectados por la revocación del permiso.
 
 Los registros recopilados mediante la **recopilación proactiva de registros** se cargan en una cuenta de Azure Storage administrada y controlada por Microsoft. Microsoft puede acceder a estos registros en el contexto de una incidencia de soporte técnico y para mejorar el mantenimiento de Azure Stack Hub.
+
+### <a name="proactive-diagnostic-log-collection-alerts"></a>Alertas de la recopilación proactiva de registros de diagnóstico
+
+Si está habilitada, la recopilación proactiva de registros carga los registros cuando se produce uno de los siguientes eventos.
+
+Por ejemplo, **Error de actualización** es una alerta que desencadena la recopilación proactiva de registros de diagnóstico. Si la opción está habilitada, los registros de diagnóstico se capturarán de forma proactiva durante un error de actualización para ayudar a Soporte técnico de Microsoft a solucionar el problema. Los registros de diagnóstico solo se recopilan cuando se produce la alerta **Error de actualización**.
+
+| Título de la alerta | FaultIdType |
+|---|---|
+|No se puede conectar al servicio remoto | UsageBridge.NetworkError|
+|Error de actualización | Urp.UpdateFailure |
+|Infraestructura del proveedor de recursos de almacenamiento o dependencias no disponibles |    StorageResourceProviderDependencyUnavailable |
+|Nodo no conectado al controlador| ServerHostNotConnectedToController |  
+|Error de publicación de rutas | SlbMuxRoutePublicationFailure |
+|Almacén de datos interno del proveedor de recursos de almacenamiento no disponible |    StorageResourceProvider. DataStoreConnectionFail |
+|Error del dispositivo de almacenamiento | Microsoft.Health.FaultType.VirtualDisks.Detached |
+|El controlador de mantenimiento no puede acceder a la cuenta de almacenamiento | Microsoft.Health.FaultType.StorageError |
+|Se perdió la conectividad con un disco físico | Microsoft.Health.FaultType.PhysicalDisk.LostCommunication |
+|Blob Service no se está ejecutando en un nodo | StorageService.The.blob.service.is.not.running.on.a.node-Critical |
+|rol de infraestructura incorrecto | Microsoft.Health.FaultType.GenericExceptionFault |
+|Errores de Table service | StorageService.Table.service.errors-Critical |
+|Un recurso compartido de archivos está por encima del 80 % de uso | Microsoft.Health.FaultType.FileShare.Capacity.Warning.Infra |
+|Scale unit node is offline (Nodo de la unidad de escalado desconectado) | FRP.Heartbeat.PhysicalNode |
+|Instancia del rol de infraestructura no disponible | FRP.Heartbeat.InfraVM |
+|Instancia del rol de infraestructura no disponible  | FRP.Heartbeat.NonHaVm |
+|El rol de infraestructura, administración de directorios, ha detectado errores de sincronización de hora | DirectoryServiceTimeSynchronizationError |
+|Expiración de certificado externo pendiente | CertificateExpiration.ExternalCert.Warning |
+|Expiración de certificado externo pendiente | CertificateExpiration.ExternalCert.Critical |
+|No se puede aprovisionar máquinas virtuales para la clase y tamaño específicos debido a la baja capacidad de memoria | AzureStack.ComputeController.VmCreationFailure.LowMemory |
+|Node inaccessible for virtual machine placement (Nodo inaccesible para la colocación de la máquina virtual) | AzureStack.ComputeController.HostUnresponsive |
+|Error de la copia de seguridad  | AzureStack.BackupController.BackupFailedGeneralFault |
+|Se omitió la copia de seguridad programada debido a un conflicto con operaciones erróneas    | AzureStack.BackupController.BackupSkippedWithFailedOperationFault |
 
 ## <a name="send-logs-now"></a>Envío inmediato de registros
 
@@ -172,47 +210,15 @@ En la tabla siguiente se enumeran las consideraciones para entornos con conexion
 
 ## <a name="view-log-collection"></a>Visualización de la recopilación de registros
 
-El historial de registros recopilados de Azure Stack Hub aparece en la página **Recopilación de registros** en **Ayuda y soporte técnico** , con las siguientes fechas y horas:
+El historial de registros recopilados de Azure Stack Hub aparece en la página **Recopilación de registros** en **Ayuda y soporte técnico**, con las siguientes fechas y horas:
 
-- **Hora de recopilación** : cuándo se inició la operación de recopilación de registros.
-- **Estado** : en curso o finalizada.
-- **Inicio del registro** : inicio del período de tiempo durante el cual desea llevar a cabo la recopilación.
-- **Fin del registro** : final del período de tiempo.
-- **Tipo** : si se trata de una recopilación de registros manual o proactiva.
+- **Hora de recopilación**: cuándo se inició la operación de recopilación de registros.
+- **Estado**: en curso o finalizada.
+- **Inicio del registro**: inicio del período de tiempo durante el cual desea llevar a cabo la recopilación.
+- **Fin del registro**: final del período de tiempo.
+- **Tipo**: si se trata de una recopilación de registros manual o proactiva.
 
 ![Colecciones de registros en Ayuda y soporte técnico](media/azure-stack-help-and-support/azure-stack-log-collection.png)
-
-## <a name="proactive-diagnostic-log-collection-alerts"></a>Alertas de la recopilación proactiva de registros de diagnóstico
-
-Si está habilitada, la recopilación proactiva de registros carga los registros solo cuando se produce uno de los siguientes eventos.
-
-Por ejemplo, **Error de actualización** es una alerta que desencadena la recopilación proactiva de registros de diagnóstico. Si la opción está habilitada, los registros de diagnóstico se capturarán de forma proactiva durante un error de actualización para ayudar a Soporte técnico de Microsoft a solucionar el problema. Los registros de diagnóstico solo se recopilan cuando se produce la alerta **Error de actualización**.
-
-| Título de la alerta | FaultIdType |
-|---|---|
-|No se puede conectar al servicio remoto | UsageBridge.NetworkError|
-|Error de actualización | Urp.UpdateFailure |
-|Infraestructura del proveedor de recursos de almacenamiento o dependencias no disponibles |    StorageResourceProviderDependencyUnavailable |
-|Nodo no conectado al controlador| ServerHostNotConnectedToController |  
-|Error de publicación de rutas | SlbMuxRoutePublicationFailure |
-|Almacén de datos interno del proveedor de recursos de almacenamiento no disponible |    StorageResourceProvider. DataStoreConnectionFail |
-|Error del dispositivo de almacenamiento | Microsoft.Health.FaultType.VirtualDisks.Detached |
-|El controlador de mantenimiento no puede acceder a la cuenta de almacenamiento | Microsoft.Health.FaultType.StorageError |
-|Se perdió la conectividad con un disco físico | Microsoft.Health.FaultType.PhysicalDisk.LostCommunication |
-|Blob Service no se está ejecutando en un nodo | StorageService.The.blob.service.is.not.running.on.a.node-Critical |
-|rol de infraestructura incorrecto | Microsoft.Health.FaultType.GenericExceptionFault |
-|Errores de Table service | StorageService.Table.service.errors-Critical |
-|Un recurso compartido de archivos está por encima del 80 % de uso | Microsoft.Health.FaultType.FileShare.Capacity.Warning.Infra |
-|Scale unit node is offline (Nodo de la unidad de escalado desconectado) | FRP.Heartbeat.PhysicalNode |
-|Instancia del rol de infraestructura no disponible | FRP.Heartbeat.InfraVM |
-|Instancia del rol de infraestructura no disponible  | FRP.Heartbeat.NonHaVm |
-|El rol de infraestructura, administración de directorios, ha detectado errores de sincronización de hora | DirectoryServiceTimeSynchronizationError |
-|Expiración de certificado externo pendiente | CertificateExpiration.ExternalCert.Warning |
-|Expiración de certificado externo pendiente | CertificateExpiration.ExternalCert.Critical |
-|No se puede aprovisionar máquinas virtuales para la clase y tamaño específicos debido a la baja capacidad de memoria | AzureStack.ComputeController.VmCreationFailure.LowMemory |
-|Node inaccessible for virtual machine placement (Nodo inaccesible para la colocación de la máquina virtual) | AzureStack.ComputeController.HostUnresponsive |
-|Error de la copia de seguridad  | AzureStack.BackupController.BackupFailedGeneralFault |
-|Se omitió la copia de seguridad programada debido a un conflicto con operaciones erróneas    | AzureStack.BackupController.BackupSkippedWithFailedOperationFault |
 
 ## <a name="see-also"></a>Consulte también
 

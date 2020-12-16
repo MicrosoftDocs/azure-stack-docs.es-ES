@@ -3,17 +3,19 @@ title: Conexión de un clúster de Azure Kubernetes Service en Azure Stack HCI a
 description: Conexión de un clúster de Azure Kubernetes Service en Azure Stack HCI a Azure Arc para Kubernetes
 author: abha
 ms.topic: how-to
-ms.date: 09/22/2020
+ms.date: 12/02/2020
 ms.author: abha
 ms.reviewer: ''
-ms.openlocfilehash: 24dc2efdc591404db1bbfc30cf9c1bc83e2ed356
-ms.sourcegitcommit: dabbe44c3208fbf989b7615301833929f50390ff
+ms.openlocfilehash: e7a407e587918a6ee9648c51c2c218ab51e7132f
+ms.sourcegitcommit: 0efffe1d04a54062a26d5c6ce31a417f511b9dbf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90949331"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96612359"
 ---
 # <a name="connect-an-azure-kubernetes-service-on-azure-stack-hci-cluster-to-azure-arc-for-kubernetes"></a>Conexión de un clúster de Azure Kubernetes Service en Azure Stack HCI a Azure Arc para Kubernetes
+
+> Se aplica a: AKS en Azure Stack HCI, entorno en tiempo de ejecución de AKS en Windows Server 2019 Datacenter
 
 Cuando un clúster de Azure Kubernetes Service en Azure Stack HCI esté asociado a Azure Arc, aparecerá en Azure Portal. Tendrá un identificador de Azure Resource Manager y una identidad administrada. Los clústeres se asocian a suscripciones estándar de Azure, viven en un grupo de recursos y pueden recibir etiquetas como cualquier otro recurso de Azure.
 
@@ -31,7 +33,7 @@ Compruebe que tiene listos los requisitos siguientes:
 
 * Necesitará un archivo kubeconfig para acceder al clúster y a al rol administrador del clúster en el clúster para la implementación de los agentes de Kubernetes habilitados para Arc.
 * Tener instalado el módulo de PowerShell correspondiente a Azure Kubernetes Service en Azure Stack HCI.
-* Se requiere la versión 2.3 o posteriores de la CLI de Azure para instalar las extensiones de la CLI de Kubernetes habilitado para Azure Arc. [Instalación de la CLI de Azure](/cli/azure/install-azure-cli?view=azure-cli-latest). También puede actualizar a la última versión para asegurarse de que tiene la versión 2.3 o posterior de la CLI de Azure.
+* Se requiere la versión 2.3 o posteriores de la CLI de Azure para instalar las extensiones de la CLI de Kubernetes habilitado para Azure Arc. [Instalación de la CLI de Azure](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true). También puede actualizar a la última versión para asegurarse de que tiene la versión 2.3 o posterior de la CLI de Azure.
 * Una suscripción de Azure de la que sea propietario o colaborador. 
 * Ejecute los comandos de este documento en una ventana administrativa de PowerShell.
 

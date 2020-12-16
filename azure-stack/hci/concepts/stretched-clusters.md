@@ -3,15 +3,15 @@ title: Información general sobre clústeres extendidos
 description: Más información sobre los clústeres extendidos
 author: v-dasis
 ms.topic: how-to
-ms.date: 11/05/2020
+ms.date: 12/04/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: e9651111e82b3449823ec7d13135154e7f0a447e
-ms.sourcegitcommit: 96bc36a203954622be411fdb038d601e49f97d4e
+ms.openlocfilehash: 13ec96862c6aaf494c96f9e3cb3ff6312bc9ab97
+ms.sourcegitcommit: 0efffe1d04a54062a26d5c6ce31a417f511b9dbf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94441147"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96611630"
 ---
 # <a name="stretched-clusters-overview"></a>Información general sobre clústeres extendidos
 
@@ -23,6 +23,9 @@ La réplica de almacenamiento admite la replicación sincrónica y asincrónica:
 
 - La replicación sincrónica refleja los datos entre sitios en una red de baja latencia con volúmenes coherentes frente a bloqueos para garantizar que no se pierdan datos en el nivel del sistema de archivos durante un error.
 - La Replicación asincrónica refleja los datos entre sitios más allá de los intervalos metropolitanos a través de enlaces de red con latencias superiores, pero sin ninguna garantía de que ambos sitios tengan copias idénticas de los datos en el momento del error.
+
+>[!NOTE]
+> La replicación asincrónica es una conmutación por error manual y requiere que se conecte. Para más información, consulte [Replicación asincrónica](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-overview#asynchronous-replication).
 
 Hay dos tipos de clústeres extendidos: activo-pasivo y activo-activo. Puede configurar la replicación del sitio activo-pasivo, donde hay un sitio y una dirección preferidos para la replicación. La replicación activa-activa es donde la replicación puede producirse de forma bidireccional desde cualquier sitio. En este artículo solo se trata la configuración activa-pasiva.
 
@@ -47,6 +50,7 @@ En el diagrama siguiente se muestran el sitio 1 y el sitio 2 como sitios activos
 
 ## <a name="next-steps"></a>Pasos siguientes
 
+- Más información sobre Réplica de almacenamiento. Consulte [Introducción a Réplica de almacenamiento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-overview).
 - Más información sobre los requisitos de hardware y de otro tipo para los clústeres extendidos. Consulte [Requisitos del sistema](system-requirements.md).
 - Aprenda a implementar un clúster extendido con Windows Admin Center. Consulte [Creación de un clúster con Windows Admin Center](../deploy/create-cluster.md).
 - Aprenda a implementar un clúster extendido con PowerShell. Consulte [Creación de un clúster con PowerShell](../deploy/create-cluster-powershell.md).

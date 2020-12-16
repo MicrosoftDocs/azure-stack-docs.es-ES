@@ -10,12 +10,12 @@ ms.date: 10/19/2020
 ms.author: inhenkel
 ms.reviewer: ppacent
 ms.lastreviewed: 10/19/2020
-ms.openlocfilehash: 201acbad11011731a8e7017d14b39be120e460d3
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: d260c8486090dbe94931c2527102c06cf4b98314
+ms.sourcegitcommit: 61556b7b6e029e3a26a4b7ef97f0b13fbe7cd5a5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94545817"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96761664"
 ---
 # <a name="validate-azure-stack-hub-pki-certificates"></a>Preparación de certificados PKI de Azure Stack Hub
 
@@ -211,9 +211,9 @@ Siga estos pasos para validar los certificados PKI de Azure Stack Hub para la im
 
 ### <a name="known-issues"></a>Problemas conocidos
 
-**Síntoma** : se omiten las pruebas
+**Síntoma**: se omiten las pruebas
 
-**Causa** : AzsReadinessChecker omite varias pruebas si no se cumple una dependencia:
+**Causa**: AzsReadinessChecker omite varias pruebas si no se cumple una dependencia:
 
  - Otros certificados se omiten si se produce un error en la cadena de certificados.
 
@@ -238,6 +238,12 @@ Siga estos pasos para validar los certificados PKI de Azure Stack Hub para la im
     ```
 
 **Solución:** siga las instrucciones de la herramienta que se describen en la sección de detalles en cada conjunto de pruebas de cada certificado.
+
+**Síntoma**: La comprobación de HTTP CRL produce un error a pesar de tener una extensión CDP de HTTP escrita en las extensiones X509.
+
+**Causa**: Actualmente, AzsReadinessChecker no puede comprobar las extensiones CDP de HTTP en algunos idiomas.
+
+**Solución:** Ejecute la validación con el idioma del sistema operativo establecido en EN-US.
 
 ## <a name="certificates"></a>Certificados
 

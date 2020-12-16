@@ -7,12 +7,12 @@ ms.date: 12/2/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/2/2020
-ms.openlocfilehash: 8fc2990d49d074f56a53fa02983ffd334804ea1d
-ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
+ms.openlocfilehash: 91ddbc5aeb9c10b49b21db331e6e7c71a8a15764
+ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96525683"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96935209"
 ---
 # <a name="install-powershell-az-module-for-azure-stack-hub"></a>Instalación del módulo Az de PowerShell para Azure Stack Hub
 
@@ -55,9 +55,9 @@ Se necesita PowerShell Core 6.x o una versión posterior. Consulte este [víncul
 
 ## <a name="3-uninstall-existing-versions-of-the-azure-stack-hub-powershell-modules"></a>3. Desinstale las versiones existentes de los módulos de PowerShell para Azure Stack Hub.
 
-Antes de instalar la versión requerida, asegúrese de desinstalar los módulos de PowerShell Azure Resource Modules o Az para Azure Stack Hub instalados previamente. Desinstale los módulos mediante uno de los dos métodos siguientes:
+Antes de instalar la versión requerida, asegúrese de desinstalar los módulos de Azure Resource Manager o de Az PowerShell para Azure Stack Hub instalados previamente. Desinstale los módulos mediante uno de los dos métodos siguientes:
 
-1. Para desinstalar los módulos de PowerShell Azure Resource Modules y Az existentes, cierre todas las sesiones de PowerShell activas y ejecute los siguientes cmdlets:
+1. Para desinstalar los módulos de PowerShell de Azure Resource Manager y Az existentes, cierre todas las sesiones de PowerShell activas y ejecute los siguientes cmdlets:
 
     ```powershell
     Get-Module -Name Azure* -ListAvailable | Uninstall-Module -Force -Verbose -ErrorAction Continue
@@ -86,7 +86,7 @@ Install-Module -Name AzureStack -RequiredVersion 2.0.2-preview -AllowPrerelease
 > La versión del módulo de Azure Stack Hub 2.0.0 es un cambio importante. Consulte [Migración desde AzureRM a Az de Azure PowerShell en Azure Stack Hub](migrate-azurerm-az.md) para más información.
 
 > [!WARNING]
-> No puede tener los módulos Azure Resource Modules (AzureRM) y Az instalados para PowerShell 5.1 para Windows al mismo tiempo. Si necesita mantener Azure Resource Modules disponible en el sistema, instale el módulo Az para PowerShell Core 6.x o versiones posteriores. Para ello, [instale PowerShell Core 6.x o versiones posteriores](/powershell/scripting/install/installing-powershell-core-on-windows) y, a continuación, siga estas instrucciones en un terminal de PowerShell Core.
+> No puede tener los módulos Azure Resource Manager (AzureRM) y Az instalados para PowerShell 5.1 para Windows al mismo tiempo. Si necesita mantener Azure Resource Manager disponible en el sistema, instale el módulo Az para PowerShell Core 6.x o versiones posteriores. Para ello, [instale PowerShell Core 6.x o versiones posteriores](/powershell/scripting/install/installing-powershell-core-on-windows) y, a continuación, siga estas instrucciones en un terminal de PowerShell Core.
 
 ## <a name="5-disconnected-install-without-internet-connection"></a>5. Escenario desconectado: Instalación sin conexión a Internet
 
@@ -107,7 +107,7 @@ La instalación consta de cinco pasos:
 ::: moniker range=">=azs-2002"
 Azure Stack Hub 2002 o una versión posterior.
 
-Puede usar módulos Azure Resource Modules o AZ. Para Azure Resource Modules, consulte las instrucciones en [Instalación del módulo AzureRM de PowerShell](powershell-install-az-module.md). En el código siguiente se guardan los módulos del repositorio en línea de confianza https://www.powershellgallery.com/.
+Puede usar los módulos de Azure Resource Manager o Az. Para Azure Resource Manager, consulte las instrucciones en [Instalación del módulo AzureRM de PowerShell](powershell-install-az-module.md). En el código siguiente se guardan los módulos del repositorio en línea de confianza https://www.powershellgallery.com/.
 
 ```powershell
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
@@ -181,7 +181,7 @@ En escenarios donde se necesita un servidor proxy para acceder a Internet, prime
 
 ## <a name="7-use-the-az-module"></a>7. Uso del módulo Az
 
-Puede usar los cmdlets y los ejemplos de código basados en Azure Resource Modules. Sin embargo, querrá cambiar el nombre de los módulos y los cmdlets. Los nombres de módulo se han cambiado para que `AzureRM` y Azure se conviertan en `Az` e igual para los cmdlets. Por ejemplo, el nombre del módulo `AzureRM.Compute` ha cambiado a `Az.Compute`. ` New-AzureRMVM` se ha convertido en `Get-AzureStorageBlob` y `Get-AzStorageBlob` ahora es ` New-AzVM`.
+Puede usar los cmdlets y los ejemplos de código basados en Azure Resource Manager. Sin embargo, querrá cambiar el nombre de los módulos y los cmdlets. Los nombres de módulo se han cambiado para que `AzureRM` y Azure se conviertan en `Az` e igual para los cmdlets. Por ejemplo, el nombre del módulo `AzureRM.Compute` ha cambiado a `Az.Compute`. ` New-AzureRMVM` se ha convertido en `Get-AzureStorageBlob` y `Get-AzStorageBlob` ahora es ` New-AzVM`.
 
 Para obtener una explicación más detallada e instrucciones para migrar el script de AzureRM a Az y conocer los cambios importantes en el módulo Az de Azure Stack Hub, consulte [Migración desde AzureRM a Az de Azure PowerShell](migrate-azurerm-az.md).
 

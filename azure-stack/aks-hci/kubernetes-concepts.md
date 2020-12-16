@@ -4,15 +4,18 @@ description: Obtenga información sobre los componentes básicos del clúster y 
 author: daschott
 ms.author: daschott
 ms.topic: conceptual
-ms.date: 09/14/2020
-ms.openlocfilehash: 49ecf74033b2b6c68de1fa5fdfba84136c845397
-ms.sourcegitcommit: dabbe44c3208fbf989b7615301833929f50390ff
+ms.date: 12/02/2020
+ms.openlocfilehash: 9870f2921be561a8fef66f1bfc530b5c18f494b4
+ms.sourcegitcommit: 0efffe1d04a54062a26d5c6ce31a417f511b9dbf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90949335"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96612648"
 ---
 # <a name="kubernetes-core-concepts-for-azure-kubernetes-service-on-azure-stack-hci"></a>Conceptos básicos de Kubernetes para Azure Kubernetes Service en Azure Stack HCI
+
+> Se aplica a: AKS en Azure Stack HCI, entorno en tiempo de ejecución de AKS en Windows Server 2019 Datacenter
+
 Azure Kubernetes Service en Azure Stack HCI es una plataforma de contenedores de Kubernetes de nivel empresarial con tecnología de Azure Stack HCI. Incluye una instancia de Kubernetes principal compatible con Microsoft, complementos, un host de contenedores creado específicamente para Windows y un host de contenedores de Linux compatible con Microsoft, a fin de tener una  **experiencia sencilla de implementación y administración del ciclo de vida**.
 
 Este artículo presenta los componentes centrales de la infraestructura de Kubernetes, como el ​​plano de control, nodos y agrupaciones de nodos. También se presentan los recursos de la carga de trabajo, como los pods, las implementaciones y los conjuntos, junto con información acerca de cómo agrupar los recursos en espacios de nombres.

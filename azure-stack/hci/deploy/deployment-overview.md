@@ -6,13 +6,13 @@ ms.author: v-kedow
 ms.topic: overview
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 10/28/2020
-ms.openlocfilehash: 61cd03f7c4b381a434b5f99175b57b99169cb058
-ms.sourcegitcommit: 296c95cad20ed62bdad0d27f1f5246bfc1c81d5e
+ms.date: 12/7/2020
+ms.openlocfilehash: 11c82a35d17a61fee474123a658f91ea90790221
+ms.sourcegitcommit: 62eb5964a824adf7faee58c1636b17fedf4347e9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93064470"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96778026"
 ---
 # <a name="what-is-the-deployment-process-for-azure-stack-hci"></a>¿Cuál es el proceso de implementación de Azure Stack HCI?
 
@@ -42,7 +42,7 @@ Antes de implementar el sistema operativo, determine si el hardware cumple los [
 
 ### <a name="1-deploy-azure-stack-hci"></a>1. Implementación de Azure Stack HCI
 
-[Descargue Azure Stack HCI](https://azure.microsoft.com/products/azure-stack/hci/hci-download/) e implemente este [sistema operativo](operating-system.md) en cada servidor que desee incluir en el clúster. Si ha adquirido el hardware de una solución de sistema integrado de Azure Stack HCI en el [catálogo de Azure Stack HCI](https://azure.microsoft.com/en-us/products/azure-stack/hci/catalog/) de su asociado de hardware de Microsoft preferido, este sistema operativo vendrá preinstalado. En ese caso, puede omitir este paso y continuar en el paso 2.
+[Descargue Azure Stack HCI](https://azure.microsoft.com/products/azure-stack/hci/hci-download/) e implemente este [sistema operativo](operating-system.md) en cada servidor que desee incluir en el clúster. Si ha adquirido el hardware de una solución de sistema integrado de Azure Stack HCI en el [catálogo de Azure Stack HCI](https://aka.ms/azurestackhcicatalog) de su asociado de hardware de Microsoft preferido, este sistema operativo vendrá preinstalado. En ese caso, puede omitir este paso y continuar en el paso 2.
 
 ### <a name="2-create-the-cluster"></a>2. Creación del clúster
 
@@ -66,7 +66,9 @@ Después de crear y registrar el clúster, [ejecute pruebas de validación de cl
 
 ### <a name="7-deploy-workloads"></a>7. Implementación de cargas de trabajo
 
-Ahora está listo para [crear máquinas virtuales](../manage/vm.md) e implementar cargas de trabajo en Azure Stack HCI mediante Windows Admin Center.
+Ya está listo para implementar cargas de trabajo en Azure Stack HCI mediante Windows Admin Center.
+
+Para más información sobre cómo empezar a implementar una carga de trabajo de Azure Kubernetes Service en Azure Stack HCl, consulte la siguiente información general: [¿Qué es Azure Kubernetes Service en Azure Stack HCl?](https://docs.microsoft.com/azure-stack/aks-hci/overview)
 
 ## <a name="next-steps"></a>Pasos siguientes
 

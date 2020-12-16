@@ -5,13 +5,13 @@ ms.topic: how-to
 author: v-dasis
 ms.author: v-dasis
 ms.reviewer: jgerend
-ms.date: 11/06/2020
-ms.openlocfilehash: 1caa5e6573137ec33680ea3a13e7beeda12de424
-ms.sourcegitcommit: 08ef9545316798c9a21c2f9bc1da8c15cb648982
+ms.date: 12/10/2020
+ms.openlocfilehash: fc52f53a31b8d7cdcb91dd93e0fbe97c94b7e846
+ms.sourcegitcommit: 97ecba06aeabf2f30de240ac283b9bb2d49d62f0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94360197"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97010929"
 ---
 # <a name="add-or-remove-servers-for-an-azure-stack-hci-cluster"></a>Adición o eliminación de servidores para un clúster de Azure Stack HCI
 
@@ -67,7 +67,11 @@ Siempre que agregue o quite servidores de un clúster, asegúrese de ejecutar un
 
 Los clústeres extendidos requieren el mismo número de nodos de servidor y el mismo número de unidades en cada sitio. Al agregar un par de servidores a un clúster extendido, sus unidades se agregan inmediatamente al bloque de almacenamiento de ambos sitios en el clúster extendido. Si el bloque de almacenamiento de cada sitio no tiene el mismo tamaño en el momento de la adición, se rechaza. Esto se debe a que el tamaño del bloque de almacenamiento debe ser el mismo entre sitios.
 
-A diferencia de los clústeres no extendidos, solo se pueden agregar servidores a un clúster extendido o quitarlos de él mediante Windows PowerShell. Con los cmdlets [Get-ClusterFaultDomainXML](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusterfaultdomainxml) y [Set-ClusterFaultDomainXML](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterfaultdomainxml), primero debe modificar la información del sitio (dominio de error) antes de agregar los servidores.
+Dedique unos minutos a ver el vídeo sobre la incorporación de nodos de clúster a un clúster extendido:
+
+> [!VIDEO https://www.youtube.com/embed/AVHPkRmsZ5Y]
+
+Puede agregar o quitar servidores a un clúster extendido mediante Windows PowerShell. Con los cmdlets [Get-ClusterFaultDomainXML](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusterfaultdomainxml) y [Set-ClusterFaultDomainXML](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterfaultdomainxml), primero debe modificar la información del sitio (dominio de error) antes de agregar los servidores.
 
 A continuación, puede agregar el par de servidores a cada sitio simultáneamente mediante el cmdlet [Add-ClusterNode](https://docs.microsoft.com/powershell/module/failoverclusters/add-clusternode), lo que permite agregar también las unidades de cada nuevo servidor al mismo tiempo.
 

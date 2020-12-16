@@ -4,34 +4,39 @@ titleSuffix: Azure Stack Hub
 description: Aprenda a implementar el proveedor de recursos de SQL Server en Azure Stack Hub.
 author: bryanla
 ms.topic: article
-ms.date: 10/02/2019
-ms.lastreviewed: 03/18/2019
+ms.date: 12/07/2020
+ms.lastreviewed: 12/07/2020
 ms.author: bryanla
 ms.reviewer: xiao
-ms.openlocfilehash: 5759c0f43401fd27080b8872810e47af920da984
-ms.sourcegitcommit: af4374755cb4875a7cbed405b821f5703fa1c8cc
+ms.openlocfilehash: e7565634d026d0d9bca5162ed709d76f760685b1
+ms.sourcegitcommit: 62eb5964a824adf7faee58c1636b17fedf4347e9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95812662"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96778179"
 ---
 # <a name="deploy-the-sql-server-resource-provider-on-azure-stack-hub"></a>Implementación del proveedor de recursos de SQL Server en Azure Stack Hub
 
-Use el proveedor de recursos de SQL Server de Azure Stack Hub para exponer las bases de datos SQL como un servicio de Azure Stack Hub. El proveedor de recursos de SQL se ejecuta como un servicio en una máquina virtual de Windows Server 2016 Server Core (para una versión del adaptador < = 1.1.47.0 >) o en una instancia del complemento RP para Windows Server (para una versión del adaptador > = 1.1.93.0).
+Use el proveedor de recursos de SQL Server de Azure Stack Hub para exponer las bases de datos SQL como un servicio de Azure Stack Hub. El proveedor de recursos de SQL se ejecuta como un servicio en una máquina virtual básica con Windows Server 2016 Server (para una versión del adaptador < = 1.1.47.0 >) o en una instancia del complemento RP para Windows Server (para una versión del adaptador > = 1.1.93.0).
 
 > [!IMPORTANT]
-> Solo el proveedor de recursos puede crear elementos en servidores que hospedan SQL o MySQL. Los elementos creados en un servidor host que no se crean con el proveedor de recursos podrían dar lugar a un error de coincidencia de estado.
+> Solo el proveedor de recursos debe crear elementos en servidores que hospedan SQL o MySQL. No se admiten los elementos creados en un servidor host que no se crean con el proveedor de recursos, y dichos elementos podrían dar lugar a un error de coincidencia de estado.
 
 ## <a name="prerequisites"></a>Prerrequisitos
 
-Hay varios requisitos previos que se deben cumplir antes de implementar el proveedor de recursos SQL de Azure Stack Hub. Para cumplir estos requisitos, realice los pasos siguientes en un equipo que pueda acceder a la máquina virtual de punto de conexión con privilegios:
+Hay varios requisitos previos que se deben cumplir antes de implementar el proveedor de recursos SQL de Azure Stack Hub.
+
+- Necesitará un equipo y una cuenta con acceso:
+   - al [portal de administración de Azure Stack Hub](azure-stack-manage-portals.md).
+   - al [punto de conexión con privilegios](azure-stack-privileged-endpoint.md).
+   - al punto de conexión de administración de Azure Resource Manager, `https://management.region.<fqdn>`, donde `<fqdn>` es el nombre de dominio completo (o `https://management.local.azurestack.external` si se usa ASDK)
+   - a Internet, si Azure Stack Hub se implementó para que usara Azure Active Directory (AD) como proveedor de identidades.
 
 - Si aún no lo ha hecho, [registre Azure Stack Hub](azure-stack-registration.md) en Azure para poder descargar elementos de Azure Marketplace.
 
 - Agregue la máquina virtual de Windows Server necesaria a Marketplace de Azure Stack Hub.
-  * Para una versión <= 1.1.47.0 de SQL RP, descargue la imagen de **Windows Server 2016 Datacenter - Server Core**.
-  * Para una versión > = 1.1.93.0 de SQL RP, descargue la imagen de **Complemento de Microsoft Azure Stack RP Windows Server (SOLO INTERNO)** . Esta versión de Windows Server está especializada en la infraestructura del complemento Azure Stack RP y no es visible para el marketplace de inquilinos.
-
+  - Para una versión <= 1.1.47.0 de SQL RP, descargue la imagen de **Windows Server 2016 Datacenter - Server Core**.
+  - Para una versión > = 1.1.93.0 de SQL RP, descargue la imagen de **Complemento de Microsoft Azure Stack RP Windows Server (SOLO INTERNO)** . Esta versión de Windows Server está especializada en la infraestructura del complemento Azure Stack RP y no es visible para el marketplace de inquilinos.
 
 - Descargue la versión compatible del archivo binario del proveedor de recursos SQL según la tabla de asignación de versiones siguiente. Ejecute el autoextractor para extraer el contenido descargado en un directorio temporal. 
 
@@ -102,7 +107,7 @@ _Solo para las instalaciones de sistemas integrados_. Debe proporcionar el certi
 
 ## <a name="deploy-the-sql-resource-provider"></a>Implementar el proveedor de recursos SQL
 
-Una vez que haya instalado todos los requisitos previos, ejecute el script **DeploySqlProvider.ps1** desde un equipo que pueda acceder al punto de conexión de administración de recursos de Azure del administrador de Azure Stack Hub y al punto de conexión con privilegios para implementar el proveedor de recursos de SQL. El script DeploySqlProvider.ps1 se extrae como parte del archivo binario del proveedor de recursos de SQL descargado para su versión de Azure Stack Hub.
+Una vez que haya completado todos los requisitos previos, ejecute el script **DeploySqlProvider.ps1** desde un equipo que pueda acceder al punto de conexión de administración de Azure Resource Manager para Azure Stack Hub y al punto de conexión con privilegios para implementar el proveedor de recursos de MySQL. El script DeploySqlProvider.ps1 se extrae como parte del archivo binario del proveedor de recursos de SQL descargado para su versión de Azure Stack Hub.
 
  > [!IMPORTANT]
  > Antes de implementar el proveedor de recursos, revise las notas de la versión para obtener información sobre las nuevas funciones, correcciones y problemas conocidos que podrían afectar a la implementación.
@@ -134,7 +139,7 @@ Puede especificar los parámetros siguientes en la línea de comandos. Si no lo 
 | **AzCredential** | Credenciales de la cuenta de administrador de servicios de Azure Stack Hub. Use las mismas credenciales que para la implementación de Azure Stack Hub. Se producirá un error en el script si la cuenta que usa con AzCredential requiere autenticación multifactor (MFA).| _Obligatorio_ |
 | **VMLocalCredential** | Credenciales de la cuenta de administrador local de la VM del proveedor de recursos SQL. | _Obligatorio_ |
 | **PrivilegedEndpoint** | Dirección IP o nombre DNS del punto de conexión con privilegios. |  _Obligatorio_ |
-| **AzureEnvironment** | Entorno de Azure de la cuenta de administrador de servicios que se usó para la implementación de Azure Stack Hub. Requerido solo para implementaciones de Azure AD. Los nombres de entorno que se admiten son **AzureCloud**, **AzureUSGovernment** o, si usa una suscripción a Azure Active Directory de China, **AzureChinaCloud**. | AzureCloud |
+| **AzureEnvironment** | Entorno de Azure de la cuenta de administrador de servicios que se usó para la implementación de Azure Stack Hub. Requerido solo para implementaciones de Azure AD. Los nombres de entorno que se admiten son **AzureCloud**, **AzureUSGovernment** o, si usa una instancia de Azure AD de China, **AzureChinaCloud**. | AzureCloud |
 | **DependencyFilesLocalPath** | El archivo .pfx de certificados se debe colocar en este directorio, pero solo en los sistemas integrados. También puede copiar un paquete de Windows Update MSU aquí. | _Opcional_ (_obligatorio_ para sistemas integrados) |
 | **DefaultSSLCertificatePassword** | Contraseña para el certificado .pfx. | _Obligatorio_ |
 | **MaxRetryCount** | El número de veces que quiere volver a intentar cada operación si se produce un error.| 2 |

@@ -3,14 +3,14 @@ title: Solución de problemas de AKS
 description: En este artículo se proporciona información sobre cómo solucionar problemas de Azure Kubernetes Service (AKS) en Azure Stack HCI.
 author: davannaw-msft
 ms.topic: how-to
-ms.date: 09/22/2020
+ms.date: 12/02/2020
 ms.author: dawhite
-ms.openlocfilehash: 4f13aff85c1444197fce5a01c62319026f844fe6
-ms.sourcegitcommit: 30ea43f486895828710297967270cb5b8d6a1a18
+ms.openlocfilehash: 53ee79628f63d4925cdf7c725d1c0ec4231b4ef3
+ms.sourcegitcommit: 0efffe1d04a54062a26d5c6ce31a417f511b9dbf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93415052"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96612461"
 ---
 # <a name="troubleshooting-azure-kubernetes-service-on-azure-stack-hci"></a>Solución de problemas de Azure Kubernetes Service en Azure Stack HCI
 
@@ -79,20 +79,46 @@ GetHelp .\Get-SMEUILogs.ps1 -Examples
 ```
 
 ## <a name="troubleshooting-windows-worker-nodes"></a>Solución de problemas de nodos de trabajo de Windows 
-Para iniciar sesión en un nodo de trabajo de Windows, primero debe obtener la dirección IP del nodo mediante la ejecución de `kubectl get`. Tome nota del valor de `EXTERNAL-IP`.
+Para iniciar sesión en un nodo de trabajo con Windows mediante SSH, primero debe obtener la dirección IP del nodo mediante la ejecución de `kubectl get` y anotar el valor de `EXTERNAL-IP`.
 
-```PowerShell
-kubectl get nodes -o wide
-``` 
-Conéctese con SSH al nodo mediante `ssh Administrator@ip`. Una vez conectado con SSH al nodo, puede ejecutar `net user administrator *` para actualizar la contraseña del administrador. 
+   > [!NOTE]
+   > Debe pasar la ubicación correcta de la clave privada de SSH. En el ejemplo siguiente se usa la ubicación predeterminada %systemdrive%\akshci\.ssh\akshci_rsa, pero puede que tenga que cambiar esta ubicación si solicitó una ruta de acceso diferente al especificar el parámetro `-sshPublicKey` para `Set-AksHciConfig`.
+
+Para obtener la dirección IP del nodo de trabajo con Windows:  
+
+```
+kubectl --kubeconfig=yourkubeconfig get nodes -o wide
+```  
+
+Use `ssh Administrator@ip` para iniciar sesión con SSH en un nodo con Windows:  
+
+```
+ssh -i $env:SYSTEMDRIVE\AksHci\.ssh\akshci_rsa administrator@<IP Address of the Node>
+```
+  
+Una vez conectado con SSH al nodo, puede ejecutar `net user administrator *` para actualizar la contraseña del administrador. 
+
 
 ## <a name="troubleshooting-linux-worker-nodes"></a>Solución de problemas de nodos de trabajo de Linux 
-Para iniciar sesión en un nodo de trabajo de Linux, primero debe obtener la dirección IP del nodo. Para ello, ejecute `kubectl get`. Tome nota del valor de `EXTERNAL-IP`.
+Para iniciar sesión en un nodo de trabajo con Linux mediante SSH, primero debe obtener la dirección IP del nodo mediante la ejecución de `kubectl get` y anotar el valor de `EXTERNAL-IP`.
 
-```PowerShell
-kubectl get nodes -o wide
-``` 
-Conéctese con SSH al nodo mediante `ssh clouduser@ip`. 
+
+   > [!NOTE]
+   > Debe pasar la ubicación correcta de la clave privada de SSH. En el ejemplo siguiente se usa la ubicación predeterminada %systemdrive%\akshci\.ssh\akshci_rsa, pero puede que tenga que cambiar esta ubicación si solicitó una ruta de acceso diferente al especificar el parámetro `-sshPublicKey` para `Set-AksHciConfig`.
+
+Para obtener la dirección IP del nodo de trabajo con Linux:  
+
+```
+kubectl --kubeconfig=yourkubeconfig get nodes -o wide
+```  
+
+Use `ssh clouduser@ip` para iniciar sesión con SSH en el nodo con Linux: 
+
+```
+ssh -i $env:SYSTEMDRIVE\AksHci\.ssh\akshci_rsa clouduser@<IP Address of the Node>
+```  
+
+Una vez conectado con SSH al nodo, puede ejecutar `net user administrator *` para actualizar la contraseña del administrador. 
 
 ## <a name="troubleshooting-azure-arc-kubernetes"></a>Solución de problemas de Azure Arc para Kubernetes
 Para más información sobre la solución de problemas en escenarios comunes relacionados con la conectividad, los permisos y los agentes de Arc, consulte [Solución de problemas de Kubernetes habilitado para Azure Arc](/azure/azure-arc/kubernetes/troubleshooting).

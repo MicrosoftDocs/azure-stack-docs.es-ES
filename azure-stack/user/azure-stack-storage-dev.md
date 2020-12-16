@@ -7,12 +7,12 @@ ms.date: 5/27/2020
 ms.topic: conceptual
 ms.reviewer: jiahan
 ms.lastreviewed: 08/12/2020
-ms.openlocfilehash: 28b1d8ade7b56a767d436b918ad7d386ef4759bd
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.openlocfilehash: fe3d1187ff51a9fa85aaab66186db294a8b25e42
+ms.sourcegitcommit: 85827a2227eb2d1ed1ed44bb9f00e28d96818c84
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90574149"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96869027"
 ---
 # <a name="get-started-with-azure-stack-hub-storage-development-tools"></a>Introducción a las herramientas de desarrollo de Azure Stack Hub Storage
 
@@ -28,13 +28,44 @@ Utilice este artículo como guía de introducción a las herramientas de desarro
 En lo que respecta a las bibliotecas de cliente de almacenamiento, debe conocer cuál es la versión compatible con la API REST. También debe especificar el punto de conexión de Azure Stack Hub en el código.
 
 
-::: moniker range=">=azs-2005"
-### <a name="2005-update-or-newer-versions"></a>Actualización 2005 o versiones más recientes
+::: moniker range=">=azs-2008"
+### <a name="2008-update"></a>Actualización 2008
+
+| Biblioteca de cliente | Versión compatible de Azure Stack Hub | Vínculo | Especificación de punto de conexión |
+|----------------|-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------|
+| .NET | 12.2.0 | Paquete NuGet:<br>Comunes: <https://www.nuget.org/packages/Azure.Storage.common/12.2.0><br>Blob: <https://www.nuget.org/packages/Azure.Storage.Blobs/12.2.0><br>Queue: <https://www.nuget.org/packages/Azure.Storage.queues/12.2.0><br> <br>Versión de GitHub:<br>Comunes: <https://github.com/Azure/azure-sdk-for-net/tree/Azure.Storage.Common_12.2.0/sdk/storage><br>Blob: <https://github.com/Azure/azure-sdk-for-net/tree/Azure.Storage.Blobs_12.2.0/sdk/storage><br>Queue: <https://github.com/Azure/azure-sdk-for-net/tree/Azure.Storage.Queues_12.2.0/sdk/storage>  | archivo app.config |
+| Java | 12.4.0 | Paquete Maven:<br><https://mvnrepository.com/artifact/com.azure/azure-storage-common/12.4.0><br> <br>Versión de GitHub:<br><https://github.com/Azure/azure-sdk-for-java/tree/azure-storage-common_12.4.0/sdk/storage> | Configuración de la cadena de conexión |
+| Node.js | 2.8.3 | Vínculo NPM:<br><https://www.npmjs.com/package/azure-storage><br>(Ejecutar: `npm install azure-storage@2.8.3`)<br> <br>Versión de GitHub:<br><https://github.com/Azure/azure-storage-node/releases/tag/v2.8.3> | Declaración de instancia de servicio |
+| C++ | 7.2.0 | Versión de GitHub:<br><https://github.com/Azure/azure-storage-cpp/releases/tag/v7.2.0> | Configuración de la cadena de conexión |
+| PHP | 1.2.0 | Versión de GitHub:<br>Comunes: <https://github.com/Azure/azure-storage-php/releases/tag/v1.2.0-common><br>Blob: <https://github.com/Azure/azure-storage-php/releases/tag/v1.2.0-blob><br>Queue:<br><https://github.com/Azure/azure-storage-php/releases/tag/v1.1.1-queue><br>Table: <https://github.com/Azure/azure-storage-php/releases/tag/v1.1.0-table><br> <br>Instalación mediante Composer (para obtener más información, [vea los siguientes detalles](#install-php-client-via-composer---current)). | Configuración de la cadena de conexión |
+| Python | 12.2.0 | Versión de GitHub:<br>Blob:<br><https://github.com/Azure/azure-sdk-for-python/tree/azure-storage-blob_12.2.0/sdk/storage/azure-storage-blob><br>Queue:<br><https://github.com/Azure/azure-sdk-for-python/tree/azure-storage-blob_12.2.0/sdk/storage/azure-storage-queue> | Declaración de instancia de servicio |
+| Ruby | 1.0.1 | Paquete de RubyGems:<br>Común:<br><https://rubygems.org/gems/azure-storage-common/versions/1.0.1><br>Blob: <https://rubygems.org/gems/azure-storage-blob/versions/1.0.1><br>Queue: <https://rubygems.org/gems/azure-storage-queue/versions/1.0.1><br>Table: <https://rubygems.org/gems/azure-storage-table/versions/1.0.1><br> <br>Versión de GitHub:<br>Comunes: <https://github.com/Azure/azure-storage-ruby/releases/tag/v1.0.1-common><br>Blob: <https://github.com/Azure/azure-storage-ruby/releases/tag/v1.0.1-blob><br>Queue: <https://github.com/Azure/azure-storage-ruby/releases/tag/v1.0.1-queue><br>Table: <https://github.com/Azure/azure-storage-ruby/releases/tag/v1.0.1-table> | Configuración de la cadena de conexión |
+
+#### <a name="install-php-client-via-composer---current"></a>Instalación del cliente PHP a través de compositor: actual
+
+Para instalar a través de Composer: (usaremos el blob como ejemplo).
+
+1. Cree un archivo llamado **composer.json** en la raíz del proyecto con el código siguiente:
+
+    ```json
+    {
+      "require": {
+      "Microsoft/azure-storage-blob":"1.2.0"
+      }
+    }
+    ```
+
+2. Descargue [composer.phar](https://getcomposer.org/composer.phar) en la raíz del proyecto.
+3. Ejecute `php composer.phar install`.
+::: moniker-end
+
+::: moniker range=">=azs-2005 <azs-2008"
+### <a name="2005-update"></a>Actualización 2005
 
 | Biblioteca de cliente | Versión compatible de Azure Stack Hub | Vínculo | Especificación de punto de conexión |
 |----------------|-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------|
 | .NET | 11.0.0 | Paquete NuGet:<br>Comunes: <https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/11.0.0><br>Blob: <https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/11.0.0><br>Queue:<br><https://www.nuget.org/packages/Microsoft.Azure.Storage.Queue/11.0.0><br> <br>Versión de GitHub:<br><https://github.com/Azure/azure-storage-net/releases/tag/v11.0.0> | archivo app.config |
-| Java | 12.0.0-preview.3 | Paquete Maven:<br><https://mvnrepository.com/artifact/com.azure/azure-storage-file/12.0.0-preview.3><br> <br>Versión de GitHub:<br><https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/storage> | Configuración de la cadena de conexión |
+| Java | 12.0.0-preview.3 | Paquete Maven:<br><https://mvnrepository.com/artifact/com.azure/azure-storage-blob/12.0.0-preview.3><br> <br>Versión de GitHub:<br><https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/storage> | Configuración de la cadena de conexión |
 | Node.js | 2.8.3 | Vínculo NPM:<br><https://www.npmjs.com/package/azure-storage><br>(Ejecutar: `npm install azure-storage@2.8.3`)<br> <br>Versión de GitHub:<br><https://github.com/Azure/azure-storage-node/releases/tag/v2.8.3> | Declaración de instancia de servicio |
 | C++ | 7.1.0 | Versión de GitHub:<br><https://github.com/Azure/azure-storage-cpp/releases/tag/v7.1.0> | Configuración de la cadena de conexión |
 | PHP | 1.2.0 | Versión de GitHub:<br>Comunes: <https://github.com/Azure/azure-storage-php/releases/tag/v1.2.0-common><br>Blob: <https://github.com/Azure/azure-storage-php/releases/tag/v1.2.0-blob><br>Queue:<br><https://github.com/Azure/azure-storage-php/releases/tag/v1.1.1-queue><br>Table: <https://github.com/Azure/azure-storage-php/releases/tag/v1.1.0-table><br> <br>Instalación mediante Composer (para obtener más información, [vea los siguientes detalles](#install-php-client-via-composer---current)). | Configuración de la cadena de conexión |

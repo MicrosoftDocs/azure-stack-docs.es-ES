@@ -6,13 +6,13 @@ ms.author: v-kedow
 ms.topic: conceptual
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 09/01/2020
-ms.openlocfilehash: 22758f9a6b905e2c948a47c5870a05edcb63acdf
-ms.sourcegitcommit: 1c5e7d8419037c0f3ef6fe9d8e6bfb6a59659c84
+ms.date: 11/19/2020
+ms.openlocfilehash: 0cdd8a7f6c0c59eddbe1e8dd93158eb7a280e8ab
+ms.sourcegitcommit: 97ecba06aeabf2f30de240ac283b9bb2d49d62f0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89428488"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97010726"
 ---
 # <a name="azure-stack-hci-billing-and-payment"></a>Facturación y pago de Azure Stack HCl
 
@@ -22,7 +22,7 @@ Azure Stack HCl es un servicio de Azure que se incluye en la factura de suscripc
 
 ## <a name="what-does-azure-stack-hci-charge-for"></a>¿Qué se cobra con Azure Stack HCl?
 
-El modelo de facturación en la nube de Azure Stack HCI es coherente, familiar y fácil para los clientes que ya usan Azure o cualquier otro servicio en la nube. Durante la versión preliminar pública, no se aplica ningún cargo. Una vez finalizada la versión preliminar, la facturación se basará en una tarifa plana por núcleo de procesador físico en un clúster de Azure Stack HCl (se aplican cargos de uso adicionales si se usan otros servicios de Azure).
+El modelo de facturación en la nube de Azure Stack HCI es coherente, familiar y fácil para los clientes que ya usan Azure o cualquier otro servicio en la nube. La facturación se basa en una tarifa plana por núcleo de procesador físico en un clúster de Azure Stack HCl (se aplican cargos de uso adicionales si se usan otros servicios de Azure).
 
 El modelo de precios es diferente de la facturación basada en el uso o en el consumo, que se basa en el número de VM. Aunque el número de núcleos de procesador virtual (vCPU) puede variar a lo largo del mes, no afecta al precio que paga por Azure Stack HCl: sigue pagando en función del número de núcleos físicos presentes en el clúster.
 

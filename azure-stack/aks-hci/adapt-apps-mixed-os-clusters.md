@@ -3,17 +3,19 @@ title: Adaptación de las aplicaciones para su uso en clústeres de Kubernetes c
 description: Uso de selectores de nodo o de intolerancias y tolerancias en Azure Kubernetes Service para garantizar que las aplicaciones de clústeres de Kubernetes con sistema operativo mixto que se ejecutan en Azure Stack HCI estén programadas en el sistema operativo del nodo de trabajo correcto
 author: abha
 ms.topic: how-to
-ms.date: 10/20/2020
+ms.date: 12/02/2020
 ms.author: abha
 ms.reviewer: ''
-ms.openlocfilehash: 04b103fee921cf8bdab82a4004c6c80afd54d687
-ms.sourcegitcommit: be445f183d003106192f039990d1fb8ee151c8d7
+ms.openlocfilehash: 0d4fd0e62e10e4afc4a76c9cac2deaed97e23549
+ms.sourcegitcommit: 61556b7b6e029e3a26a4b7ef97f0b13fbe7cd5a5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253953"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96761565"
 ---
 # <a name="adapt-apps-for-mixed-os-kubernetes-clusters-using-node-selectors-or-taints-and-tolerations"></a>Adaptación de las aplicaciones a los clústeres de Kubernetes con sistemas operativos mixtos mediante selectores de nodo o intolerancias y tolerancias
+
+> Se aplica a: AKS en Azure Stack HCI, entorno en tiempo de ejecución de AKS en Windows Server 2019 Datacenter
 
 Azure Kubernetes Service en Azure Stack HCI le permite ejecutar clústeres de Kubernetes con nodos de Windows y Linux, pero requiere que realice pequeños cambios en las aplicaciones para su uso en estos clústeres con sistema operativo mixto. En esta guía paso a paso, aprenderá a asegurarse de que la aplicación se programa en el sistema operativo del host adecuado mediante el uso de selectores de nodo o de intolerancias y tolerancias.
 
@@ -45,7 +47,7 @@ node.kubernetes.io/os=Windows:NoSchedule
 ```
 Ejecute `kubectl get` e identifique los nodos de trabajo de Windows a los que desea aplicar la intolerancia.
 
-```PowerShell
+```
 kubectl get nodes --all-namespaces -o=custom-columns=NAME:.metadata.name,OS:.status.nodeInfo.operatingSystem
 ```
 Salida:
@@ -58,7 +60,7 @@ my-aks-hci-cluster-md-md-1-5xlwz         windows
 
 Aplique la intolerancia a los nodos de trabajo del servidor de Windows mediante `kubectl taint node`.
 
-```PowerShell
+```
 kubectl taint node my-aks-hci-cluster-md-md-1-5h4bl node.kubernetes.io/os=Windows:NoSchedule
 kubectl taint node my-aks-hci-cluster-md-md-1-5xlwz node.kubernetes.io/os=Windows:NoSchedule
 ```

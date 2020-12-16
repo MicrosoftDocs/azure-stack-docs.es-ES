@@ -3,16 +3,16 @@ title: Adición de servidores de hospedaje de MySQL en Azure Stack Hub
 description: Descubra cómo agregar servidores de hospedaje de MySQL para el aprovisionamiento mediante el proveedor de recursos de adaptador de MySQL.
 author: bryanla
 ms.topic: article
-ms.date: 11/06/2019
+ms.date: 12/07/2020
 ms.author: bryanla
 ms.reviewer: xiaofmao
-ms.lastreviewed: 11/06/2019
-ms.openlocfilehash: bbf96c0716d6bb9fdfca7ce0b52268281e6169c6
-ms.sourcegitcommit: 980be7813e6f39fb59926174a5d3e0d392b04293
+ms.lastreviewed: 12/07/2020
+ms.openlocfilehash: a5c965591a6eb7d11540bf63c298ffa2321e0014
+ms.sourcegitcommit: 62eb5964a824adf7faee58c1636b17fedf4347e9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94414170"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96778434"
 ---
 # <a name="add-mysql-hosting-servers-in-azure-stack-hub"></a>Adición de servidores de hospedaje de MySQL en Azure Stack Hub
 
@@ -116,6 +116,9 @@ Para agregar un servidor de hospedaje, siga estos pasos:
    * No se ha proporcionado ninguna instancia de MySQL, por lo que debe especificar el valor de **Size of Hosting Server in GB** (Tamaño del servidor de hospedaje en GB). Debe ser similar a la capacidad del servidor de bases de datos.
    * Mantenga la configuración predeterminada para **Subscrición**.
    * En el caso de **Grupo de recursos**, cree uno o use un grupo ya existente.
+
+   > [!IMPORTANT]
+   > No elija el **grupo de recursos** `system.<region>.sqladapter` que creó el instalador del proveedor de recursos de MySQL durante la implementación. Debe proporcionar un grupo de recursos diferente para el servidor de hospedaje.    
 
    > [!NOTE]
    > Si Azure Resource Manager del inquilino y del administrador tiene acceso a la instancia de MySQL, puede ponerla bajo el control del proveedor de recursos. Sin embargo, la instancia de MySQL **debe** asignarse exclusivamente al proveedor de recursos.
