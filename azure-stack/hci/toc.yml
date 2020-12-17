@@ -158,6 +158,8 @@
       items:
         - name: Facturación
           href: concepts/billing.md
+        - name: Configuración de firewalls
+          href: concepts/configure-firewalls.md
         - name: Actualizaciones
           href: concepts/updates.md
         - name: Consideraciones sobre la seguridad
