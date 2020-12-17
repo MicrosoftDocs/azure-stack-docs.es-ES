@@ -3,17 +3,17 @@ title: Descarga de elementos de Marketplace desde Azure y publicación en Azure 
 description: Aprenda a descargar elementos de Marketplace desde Azure y a publicarlos en Azure Stack Hub.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 12/9/2020
+ms.date: 12/16/2020
 ms.author: sethm
 ms.reviewer: avishwan
-ms.lastreviewed: 12/9/2020
+ms.lastreviewed: 12/16/2020
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: e66d49fc20a9cfbc70eeeb11a7817bd5bc75d7c0
-ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
+ms.openlocfilehash: f0aafd572aa50760a7b326d5ca699e3f1331b3e9
+ms.sourcegitcommit: f30e5178e0b4be4e3886f4e9f699a2b51286e2a8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96934971"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97620660"
 ---
 # <a name="download-marketplace-items-to-azure-stack-hub"></a>Descarga de elementos de Marketplace en Azure Stack Hub
 
@@ -119,7 +119,7 @@ Una vez registrado Azure Stack, puede ignorar el mensaje siguiente que aparece e
 
 1. En un equipo con conexión a Internet, abra una consola de PowerShell como administrador.
 
-2. Inicie sesión en la nube de Azure adecuada y en el inquilino de Azure AD con la cuenta de Azure que ha usado para registrar Azure Stack Hub. Para agregar la cuenta, en PowerShell ejecute `Add-AzureRmAccount`:
+2. Inicie sesión en la nube de Azure adecuada y en el inquilino de Azure AD con la cuenta de Azure que ha usado para registrar Azure Stack Hub. Para agregar la cuenta, en PowerShell ejecute `Login-AzAccount`:
 
    ```powershell  
    Login-AzAccount -Environment AzureCloud -Tenant '<mydirectory>.onmicrosoft.com'

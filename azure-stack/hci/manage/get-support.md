@@ -4,13 +4,13 @@ description: En este tema se proporcionan instrucciones sobre cómo obtener sopo
 author: JohnCobb1
 ms.author: v-johcob
 ms.topic: how-to
-ms.date: 12/10/2020
-ms.openlocfilehash: a2e679329acca6bcc03363c499d08deb78890b3d
-ms.sourcegitcommit: afdae61022037b5dba8345cb264049897e0aca8f
+ms.date: 12/11/2020
+ms.openlocfilehash: 5b25fdcefd61cb8fa5a497a3477b1f33ab67ece5
+ms.sourcegitcommit: f56a5b287c90b2081ae111385c8b7833931d4059
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97053147"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97343348"
 ---
 # <a name="get-support-for-azure-stack-hci"></a>Obtención de soporte técnico para Azure Stack HCI
 
@@ -32,7 +32,7 @@ Para obtener información sobre otros recursos de soporte técnico de Azure Stac
 ## <a name="partner-support-resources-for-azure-stack-hci"></a>Recursos de soporte técnico de asociados para Azure Stack HCI
 El hardware de la solución del sistema integrado Azure Stack HCI de su asociado de hardware preferido viene con el sistema operativo preinstalado. Puede esperar servicio de hardware, soporte técnico y actualizaciones de seguridad del asociado de hardware durante al menos cinco años. Para más información, consulte [Actualizaciones](../concepts/updates.md). 
 
-Para más información acerca de los asociados del sistema integrado y sus soluciones y ofertas de soporte técnico, consulte[Catálogo de Azure Stack HCI](https://azure.microsoft.com/products/azure-stack/hci/catalog/).
+Para más información acerca de los asociados del sistema integrado y sus soluciones y ofertas de soporte técnico, consulte[Catálogo de Azure Stack HCI](https://hcicatalog.azurewebsites.net).
 
 ## <a name="next-steps"></a>Pasos siguientes
 Para obtener información relacionada, consulte:

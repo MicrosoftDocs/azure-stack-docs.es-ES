@@ -8,16 +8,14 @@ ms.topic: how-to
 ms.date: 12/09/2019
 ms.reviewer: jfggdl
 ms.lastreviewed: 12/09/2019
-ms.openlocfilehash: 45267292e317088adcf9de4e5e34946cabe4d239
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: 2b3fcfb0325689de08e77a9fbf599d023ba26a4c
+ms.sourcegitcommit: f56a5b287c90b2081ae111385c8b7833931d4059
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94545897"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97343520"
 ---
 # <a name="prerequisites-for-installing-event-hubs-on-azure-stack-hub"></a>Requisitos previos para la instalación de Event Hubs en Azure Stack Hub
-
-[!INCLUDE [preview-banner](../includes/event-hubs-preview.md)]
 
 Deben completarse los siguientes requisitos previos para poder instalar Event Hubs en Azure Stack Hub. **Pueden ser necesarios varios días o semanas** para completar todos los pasos.
 
@@ -25,7 +23,7 @@ Deben completarse los siguientes requisitos previos para poder instalar Event Hu
 > En estos requisitos previos, se da por hecho que ya ha implementado al menos un sistema integrado Azure Stack Hub de cuatro nodos. No se admite el proveedor de recursos de Event Hubs en el Kit de desarrollo de Azure Stack (ASDK).
 
 > [!IMPORTANT]
-> Event Hubs necesita la versión de compilación de Azure Stack Hub 2002 o posterior. Tenga en cuenta que las compilaciones de Azure Stack Hub son incrementales. Por ejemplo, si tiene instalada la versión 1910, primero debe actualizar a la versión [2002](./release-notes.md?view=azs-2002#2002-build-reference) y luego a la 2005. Es decir, no puede omitir las compilaciones intermedias.
+> Event Hubs necesita la versión de compilación de Azure Stack Hub 2002 o posterior. Tenga en cuenta que las compilaciones de Azure Stack Hub son incrementales. Por ejemplo, si tiene instalada la versión 1910, primero debe actualizar a la versión [2002](./release-notes.md?view=azs-2002&preserve-view=true#2002-build-reference) y luego a la 2005. Es decir, no puede omitir las compilaciones intermedias.
 
 ## <a name="common-prerequisites"></a>Requisitos previos comunes
 

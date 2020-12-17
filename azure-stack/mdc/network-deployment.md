@@ -8,12 +8,12 @@ ms.date: 01/17/2020
 ms.author: justinha
 ms.reviewer: shisab
 ms.lastreviewed: 01/17/2020
-ms.openlocfilehash: d57e4a276ea93a8be70eb2bba05bdb8b2a318924
-ms.sourcegitcommit: e4e2cc6a68f02c3e856f58ca5ee51b3313c7ff8f
+ms.openlocfilehash: 8744ddd518094026afdba678d524ca981b138610
+ms.sourcegitcommit: 5fbc60b65d27c916ded7a95ba4102328d550c7e5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92183469"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598664"
 ---
 # <a name="network-deployment"></a>Implementación de red
 
@@ -31,8 +31,8 @@ Para proteger la solución Azure Stack, hemos implementado listas de control de 
 
 En la tabla siguiente se correlacionan las referencias de ACL con las redes de Azure Stack.
 
-| Interno de administración de BMC                            | El tráfico se limita a interno únicamente.                                                                                                                                      |   |   |   |   |   |
-|----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|---|---|---|---|
+| Interno de administración de BMC                            | El tráfico se limita a interno únicamente.                                                                                                                                      |
+|----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Externo de administración de BMC                            | ACL permite el acceso más allá del dispositivo de borde.                                                                                                                            |   |   |   |   |   |
 | Administración del almacenamiento extendido                        | Interfaces de administración dedicadas para el sistema de almacenamiento extendido                                                                                                           |   |   |   |   |   |
 | Administración de conmutadores                                  | Interfaces de administración de conmutadores dedicadas.                                                                                                                                   |   |   |   |   |   |
@@ -289,7 +289,7 @@ Puede modificar algunas opciones de configuración del entorno en la configuraci
 Durante la implementación de la solución de Azure Stack, el fabricante de equipos originales (OEM) crea y aplica la configuración del conmutador para TOR y BMC. A continuación, el OEM usa la herramienta de automatización de Azure Stack para confirmar que las opciones necesarias estén configuradas correctamente en los dispositivos. La configuración se basa en la información de la hoja de cálculo de implementación de Azure Stack. 
 
 >[!NOTE]
->**No** modifique la configuración sin el consentimiento del OEM o del equipo de ingeniería de Microsoft Azure Stack. Recuerde que un cambio en la configuración del dispositivo de red puede afectar significativamente a la operación o a la resolución de problemas de red en su instancia de Azure Stack. Para obtener más información acerca de estas funciones en el dispositivo de red o cómo realizar estos cambios, póngase en contacto con el proveedor de hardware del OEM o con el Soporte técnico de Microsoft. El OEM tiene el archivo de configuración que se creó con la herramienta de automatización en función de la hoja de cálculo de implementación de Azure Stack. 
+>**No** modifique la configuración sin el consentimiento del OEM o del equipo de ingeniería de Microsoft Azure Stack. Recuerde que un cambio en la configuración del dispositivo de red puede afectar significativamente a la operación o a la resolución de problemas de red en su instancia de Azure Stack. Para obtener más información acerca de estas funciones en el dispositivo de red o cómo realizar estos cambios, póngase en contacto con el proveedor de hardware del OEM o con el Soporte técnico de Microsoft. El OEM tiene el archivo de configuración que se creó con la herramienta de automatización en función de la hoja de cálculo de implementación de Azure Stack. 
 
 Sin embargo, hay algunos valores que se pueden agregar, quitar o cambiar en la configuración de los conmutadores de red.
 

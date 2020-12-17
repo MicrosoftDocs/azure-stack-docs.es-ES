@@ -8,16 +8,14 @@ ms.topic: how-to
 ms.date: 12/09/2019
 ms.reviewer: jfggdl
 ms.lastreviewed: 12/09/2019
-ms.openlocfilehash: e9f500da4cab68688a6dd33374cfbc1cc166828d
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: aaadabe207146f200d6090c2e59bcc563831c6d4
+ms.sourcegitcommit: f56a5b287c90b2081ae111385c8b7833931d4059
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80424641"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97343593"
 ---
 # <a name="how-to-manage-event-hubs-on-azure-stack-hub"></a>Cómo administrar Event Hubs en Azure Stack Hub
-
-[!INCLUDE [preview-banner](../includes/event-hubs-preview.md)]
 
 La experiencia de administración de Event Hubs permite controlar el servicio y visualizar su estado y sus alertas. 
 

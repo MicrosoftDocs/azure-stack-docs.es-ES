@@ -16,12 +16,12 @@ ms.date: 10/14/2020
 ms.author: justinha
 ms.reviewer: asganesh
 ms.lastreviewed: 10/14/2020
-ms.openlocfilehash: fb9c323c57d608127c8f86e014f008c1d5a09a9e
-ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
+ms.openlocfilehash: f34a449490ab7b57beacc942584f9616fd6d543c
+ms.sourcegitcommit: 5fbc60b65d27c916ded7a95ba4102328d550c7e5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96941258"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598324"
 ---
 # <a name="customer-journey"></a>Recorrido del cliente
 
@@ -33,8 +33,8 @@ En la tabla siguiente se describe lo que se puede esperar durante las distintas 
 
 |   |Proceso de pedido  |Anterior a la implementación |Integración, validación y transporte |Implementación in situ  |Después de la implementación |
 |---|---------------|---------------|-----------------------------------|--------------------|----------------|
-|Microsoft  |- Señal de la entrega a una ubicación de EE. UU.<br>- Azure Stack Hub Ruggedized  = 10 días |Proporciona las herramientas y la documentación necesarias para recopilar los requisitos del centro de datos.  |- Valida los artefactos de configuración y comprueba los resultados de la validación.<br>- Garantiza la entrega del hardware.  |- Bastidor y pila<br>- Integración de red<br>- Implementación de Azure Stack Hub<br>- Entrega al cliente    |Registro y redifusión de Marketplace|
-|Customer   |Compra de señales   |- Rellena los detalles de la red en la hoja de cálculo de implementación.<br>- Recopila certificados.<br>- Obtiene cuentas de Azure AD.<br>- Ejecuta cualquier herramienta de validación proporcionada.    |Garantiza que el sitio está preparado con los requisitos previos de red, alimentación y refrigeración.    |- Prepararse con los artefactos de configuración de la implementación.<br>- El ingeniero de red del cliente está disponible.   |     |
+| **Microsoft** |- Señal de la entrega a una ubicación de EE. UU.<br>- Azure Stack Hub Ruggedized  = 10 días |Proporciona las herramientas y la documentación necesarias para recopilar los requisitos del centro de datos.  |- Valida los artefactos de configuración y comprueba los resultados de la validación.<br>- Garantiza la entrega del hardware.  |- Bastidor y pila<br>- Integración de red<br>- Implementación de Azure Stack Hub<br>- Entrega al cliente    |Registro y redifusión de Marketplace|
+| **Cliente** |Compra de señales    |- Rellena los detalles de la red en la hoja de cálculo de implementación.<br>- Recopila certificados.<br>- Obtiene cuentas de Azure AD.<br>- Ejecuta cualquier herramienta de validación proporcionada.    |Garantiza que el sitio está preparado con los requisitos previos de red, alimentación y refrigeración.    |- Prepararse con los artefactos de configuración de la implementación.<br>- El ingeniero de red del cliente está disponible.   |     |
 
 
 ## <a name="order-process"></a>Proceso de pedido

@@ -7,17 +7,15 @@ ms.service: azure-stack
 ms.topic: how-to
 ms.date: 12/09/2019
 ms.reviewer: jfggdl
-ms.lastreviewed: 12/09/2019
-ms.openlocfilehash: ec369d8f01ed9dc5e6e5635af4922ef80736c4c5
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.lastreviewed: 08/15/2020
+ms.openlocfilehash: 41ce43c3eda27d3ede8e6a90175fb3042fa2bf68
+ms.sourcegitcommit: f56a5b287c90b2081ae111385c8b7833931d4059
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90572160"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97343576"
 ---
 # <a name="how-to-do-capacity-planning-for-event-hubs-on-azure-stack-hub"></a>Planeación de la capacidad de Event Hubs en Azure Stack Hub
-
-[!INCLUDE [preview-banner](../includes/event-hubs-preview.md)]
 
 Como operador, puede administrar la capacidad de Azure Stack Hub mediante [cuotas](azure-stack-quota-types.md) en los recursos. Puede controlar el consumo de recursos de Event Hubs estableciendo cuotas en el número máximo de núcleos que los clústeres de Event Hubs usan. Los usuarios crean clústeres de Event Hubs al implementar un recurso de Event Hubs. También hay varios requisitos de consumo de recursos para el proveedor de recursos, que se describen en este artículo.
 
@@ -35,8 +33,7 @@ Los usuarios deberán crear clústeres de Event Hubs con unidades de capacidad q
 
 Todos los clústeres de Event Hubs usan un tipo de máquina virtual [D11_V2](../user/azure-stack-vm-sizes.md#mo-dv2) para sus nodos. Un tipo de máquina virtual D11_V2 consta de dos núcleos. Por lo tanto, el clúster de Event Hubs de 1 CU usa 5 máquinas virtuales D11_V2, lo que se traduce en que se usan 10 núcleos. A la hora de determinar el número de núcleos que se van a configurar para una cuota, use un múltiplo del número total de núcleos utilizados por 1 CU. Este cálculo refleja el número máximo de unidades de capacidad que permitirá a los usuarios usar al crear clústeres de Event Hubs. Por ejemplo, para configurar una cuota que permita a los usuarios crear un clúster con una capacidad de 2 CU, establezca la cuota en 20 núcleos.
 
-> [!NOTE]
-> **Solo en versión preliminar pública**: la versión disponible de Event Hubs en Azure Stack Hub solo admite la creación de clústeres de 1 CU. La versión de disponibilidad general (GA) de Event Hubs incluirá compatibilidad con diferentes opciones de configuración de CU.
+[!INCLUDE [event-hubs-scale](../includes/event-hubs-scale.md)]
 
 ## <a name="resource-provider-resource-consumption"></a>Consumo de recursos del proveedor de recursos  
 

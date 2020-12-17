@@ -3,16 +3,16 @@ title: Eliminación de una máquina virtual con dependencias en Azure Stack Hub
 description: Cómo eliminar una VM (máquina virtual) con dependencias en Azure Stack Hub
 author: mattbriggs
 ms.topic: how-to
-ms.date: 12/7/2020
+ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
-ms.lastreviewed: 12/7/2020
-ms.openlocfilehash: aaedac367ab9bd12a75e09917acfa6b02dc4930e
-ms.sourcegitcommit: 62eb5964a824adf7faee58c1636b17fedf4347e9
+ms.lastreviewed: 12/16/2020
+ms.openlocfilehash: 63a4ed0c6f1d63b21e221713befa84b0d10c1a95
+ms.sourcegitcommit: f30e5178e0b4be4e3886f4e9f699a2b51286e2a8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96778196"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97620711"
 ---
 # <a name="how-to-delete-a-vm-virtual-machine-with-dependencies-on-azure-stack-hub"></a>Cómo eliminar una VM (máquina virtual) con dependencias en Azure Stack Hub
 
@@ -52,7 +52,7 @@ Si no puede eliminar el grupo de recursos, puede que las dependencias no estén 
     2. Espere a que el recurso se elimine por completo.
     3. Después, puede eliminar la siguiente dependencia.
 
-### <a name="with-powershell"></a>[Con PowerShell](#tab/ps-az)
+### <a name="az-modules"></a>[Modules de Az](#tab/ps-az)
 
 Si no puede eliminar el grupo de recursos, puede que las dependencias no estén en el mismo grupo de recursos o que haya otros recursos. Siga los pasos que se indican a continuación.
 
@@ -126,7 +126,7 @@ Para eliminar la VM, en la misma sesión, ejecute los siguientes cmdlets:
 ```powershell
 $machine | Remove-AzVM -Force
 ```
-### <a name="with-powershell"></a>[Con PowerShell](#tab/ps-azureRM)
+### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/ps-azureRM)
 
 Si no puede eliminar el grupo de recursos, puede que las dependencias no estén en el mismo grupo de recursos o que haya otros recursos. Siga los pasos que se indican a continuación.
 
