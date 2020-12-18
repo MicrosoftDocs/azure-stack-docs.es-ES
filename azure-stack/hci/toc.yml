@@ -26,6 +26,8 @@
       href: deploy/create-cluster.md
     - name: Configuración de un testigo del clúster
       href: deploy/witness.md
+    - name: Implementar una infraestructura de SDN
+      href: deploy/sdn-express.md
     - name: Migración a un nuevo hardware
       href: deploy/migrate-cluster-new-hardware.md
     - name: Migración al mismo hardware
