@@ -8,13 +8,13 @@ ms.date: 05/11/2020
 ms.author: inhenkel
 ms.lastreviewed: 5/5/2020
 ms.reviewer: jiaha
-ms.custom: contperfq4
-ms.openlocfilehash: a60de3bf059522b980d7a3e74295736118334773
-ms.sourcegitcommit: 53b0dde60a6435936a5e0cb9e931245f262d637a
+ms.custom: contperf-fy20q4
+ms.openlocfilehash: 8633e31ac60dfb091997657b02b633d24d39b29d
+ms.sourcegitcommit: e13f27291bab236aac5d8b05401056961e9cc1e9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91106441"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97697609"
 ---
 # <a name="azure-stack-hub-storage-infrastructure-overview"></a>Introducción a la infraestructura de almacenamiento de Azure Stack Hub
 

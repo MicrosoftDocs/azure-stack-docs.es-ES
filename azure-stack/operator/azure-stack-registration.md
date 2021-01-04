@@ -8,14 +8,14 @@ ms.date: 11/19/2020
 ms.author: inhenkel
 ms.reviewer: avishwan
 ms.lastreviewed: 11/19/2020
-ms.custom: contperfq4
+ms.custom: contperf-fy20q4
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: 88928837377f478249e252021c1d610d99606679
-ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
+ms.openlocfilehash: 28c809f70c479c4037061bd7c1504c0954a3584c
+ms.sourcegitcommit: e13f27291bab236aac5d8b05401056961e9cc1e9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95517742"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97697646"
 ---
 # <a name="register-azure-stack-hub-with-azure"></a>Registro de Azure Stack Hub en Azure
 
@@ -471,7 +471,7 @@ El registro se tiene que actualizar en las siguientes circunstancias:
 - Al cambiar el modelo de facturación.
 - Cuando se escalan cambios (se agregan o quitan nodos) para la facturación por capacidad.
 
-### <a name="prerequisites"></a>Requisitos previos
+### <a name="prerequisites"></a>Prerrequisitos
 
 Necesita la siguiente información del [portal de administración](#verify-azure-stack-hub-registration) para renovar o cambiar el registro:
 

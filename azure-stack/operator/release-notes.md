@@ -3,16 +3,16 @@ title: Notas de la versión de Azure Stack Hub
 description: Notas de la versión para los sistemas integrados de Azure Stack Hub, incluidas las actualizaciones y correcciones de errores.
 author: sethmanheim
 ms.topic: article
-ms.date: 12/11/2020
+ms.date: 12/23/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 09/09/2020
-ms.openlocfilehash: c94b91d2144248dd154da5b630b99470461dda67
-ms.sourcegitcommit: 56d7da84672261e2490138011bd8dd4eaf81851d
+ms.openlocfilehash: b2b72ce306d9a3801d7208a748e1bdb3720947ea
+ms.sourcegitcommit: 37e83d0b593d2d61156f4ffd4f8e1afd5f558465
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97492779"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97766604"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Notas de la versión de Azure Stack Hub
 
@@ -297,7 +297,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 
 - Las siguientes API de administrador han quedado en desuso:
 
-  | Proveedor de recursos       | Recurso              | Versión            |
+  | Proveedor de recursos       | Resource              | Versión            |
   |-------------------------|-----------------------|--------------------|
   | Microsoft.Storage.Admin | granjas                 | 2015-12-01-preview |
   | Microsoft.Storage.Admin | farms/acquisitions    | 2015-12-01-preview |
@@ -306,7 +306,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 
 - Se han sustituido las siguientes API de administrador por una versión más reciente (2018-09-01):
 
-  | Proveedor de recursos      | Recurso              | Versión    |
+  | Proveedor de recursos      | Resource              | Versión    |
   |------------------------|-----------------------|------------|
   | Microsoft.Backup.Admin | backupLocation         | 2016-05-01 |
   | Microsoft.Backup.Admin | backups                | 2016-05-01 |
