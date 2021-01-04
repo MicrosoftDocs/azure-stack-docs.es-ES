@@ -3,16 +3,16 @@ title: Notas de la versión de Azure Stack Hub
 description: Notas de la versión para los sistemas integrados de Azure Stack Hub, incluidas las actualizaciones y correcciones de errores.
 author: sethmanheim
 ms.topic: article
-ms.date: 12/07/2020
+ms.date: 12/11/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 09/09/2020
-ms.openlocfilehash: aed3b9f5eb59ef440503625d807f8ef7b777f7b1
-ms.sourcegitcommit: 85827a2227eb2d1ed1ed44bb9f00e28d96818c84
+ms.openlocfilehash: c94b91d2144248dd154da5b630b99470461dda67
+ms.sourcegitcommit: 56d7da84672261e2490138011bd8dd4eaf81851d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96869044"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97492779"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Notas de la versión de Azure Stack Hub
 
@@ -131,7 +131,7 @@ Las revisiones de Azure Stack Hub solo son aplicables a los sistemas integrados 
 
 La versión de 2008 de Azure Stack Hub debe aplicarse sobre la versión 2005 con las revisiones siguientes:
 
-- [Revisión 1.2005.24.90 de Azure Stack Hub](https://support.microsoft.com/help/4595070)
+- [Revisión 1.2005.25.92 de Azure Stack Hub](https://support.microsoft.com/help/4595074)
 
 ### <a name="after-successfully-applying-the-2008-update"></a>Después de aplicar correctamente la actualización 2008
 
@@ -139,7 +139,7 @@ Cuando se actualiza a una nueva versión principal (por ejemplo, de 1.2005.x a 1
 
 Después de la instalación de 2008, si se publica posteriormente alguna revisión de la versión 2008, se debe instalar:
 
-- [Revisión 1.2008.19.100 de Azure Stack Hub](https://support.microsoft.com/help/4595073)
+- [Revisión 1.2008.20.102 de Azure Stack Hub](https://support.microsoft.com/help/4595075)
 ::: moniker-end
 
 ::: moniker range="azs-2005"
@@ -239,7 +239,7 @@ A partir de la versión 2005, cuando se actualiza a una nueva versión principal
 
 Después de la instalación de 2005, si se publican posteriormente algunas revisiones de la versión 2005, se deben instalar:
 
-- [Revisión 1.2005.24.90 de Azure Stack Hub](https://support.microsoft.com/help/4595070)
+- [Revisión 1.2005.25.92 de Azure Stack Hub](https://support.microsoft.com/help/4595074)
 ::: moniker-end
 
 ::: moniker range="azs-2002"

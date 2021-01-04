@@ -9,12 +9,12 @@ ms.reviewer: ppacent
 ms.author: bryanla
 ms.lastreviewed: 08/15/2020
 monikerRange: '>=azs-1803'
-ms.openlocfilehash: 69e1aa757f0285cc39d8df16bbd3531af0d3ea51
-ms.sourcegitcommit: b50dd116d6d1f89d42bd35ad0f85bb25c5192921
+ms.openlocfilehash: 800e6f2173f409283a04259f29b4835e66ced075
+ms.sourcegitcommit: f56a5b287c90b2081ae111385c8b7833931d4059
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96152852"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97343166"
 ---
 # <a name="rotate-secrets-in-azure-stack-hub"></a>Cambio de secretos en Azure Stack Hub
 
@@ -108,7 +108,7 @@ Antes de la rotación de secretos externos:
 3. Guarde una copia de seguridad de los certificados usados para el cambio en una ubicación segura. Si se ejecuta el cambio y, después, se produce un error, reemplace los certificados del recurso compartido de archivos por las copias de seguridad antes de volver a ejecutar el cambio. Conserve las copias de seguridad en la ubicación segura.
 4. Cree un recurso compartido de archivos al que pueda acceder desde las máquinas virtuales de ERCS. El recurso compartido de archivos debe ser de lectura y escritura para la identidad **CloudAdmin**.
 5. Abra una consola de PowerShell ISE desde un equipo que tenga acceso al recurso compartido de archivos. Vaya al recurso compartido de archivos donde se crean los directorios para colocar los certificados externos.
-6. Descargue **[CertDirectoryMaker.ps1](https://www.aka.ms/azssecretrotationhelper)** en un recurso compartido de archivos de red al que se pueda acceder durante la rotación y ejecute el script. El script creará una estructura de carpetas que se parece a **_.\Certificates\AAD_ *_ o _* _.\Certificates\ADFS_ *_, en función del proveedor de identidades. La estructura de carpetas debe empezar por una carpeta _* \\Certificates**, seguida SOLO de una carpeta **\\AAD** o **\\AD FS**. Todos los subdirectorios adicionales estarán incluidos en la estructura anterior. Por ejemplo:
+6. Descargue **[CertDirectoryMaker.ps1](https://www.aka.ms/azssecretrotationhelper)** en el recurso compartido de red y ejecute el script. El script creará una estructura de carpetas que se parece a **_.\Certificates\AAD_ *_ o _* _.\Certificates\ADFS_ *_, en función del proveedor de identidades. La estructura de carpetas debe empezar por una carpeta _* \\Certificates**, seguida SOLO de una carpeta **\\AAD** o **\\AD FS**. Todos los subdirectorios adicionales estarán incluidos en la estructura anterior. Por ejemplo:
     - Recurso compartido de archivos = **\\\\\<IPAddress>\\\<ShareName>**
     - Carpeta raíz del certificado para el proveedor de Azure AD = **\\Certificates\AAD**
     - Ruta de acceso completa = **\\\\\<IPAddress>\\\<ShareName>\Certificates\AAD**

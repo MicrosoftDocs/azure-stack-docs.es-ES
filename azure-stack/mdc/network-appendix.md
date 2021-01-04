@@ -7,12 +7,12 @@ ms.service: azure-stack
 ms.topic: conceptual
 ms.date: 12/30/2019
 ms.lastreviewed: 12/30/2019
-ms.openlocfilehash: 10de658f7e5f8621d44baaa16f2181f58f47811e
-ms.sourcegitcommit: e4e2cc6a68f02c3e856f58ca5ee51b3313c7ff8f
+ms.openlocfilehash: b18f962ce2348a6a0f90a2ad48c1ea84e01fe921
+ms.sourcegitcommit: 5fbc60b65d27c916ded7a95ba4102328d550c7e5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92183456"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598647"
 ---
 # <a name="mdc-network-appendix"></a>Apéndice de red de MDC
 
@@ -53,25 +53,115 @@ El apéndice proporciona información de identidades y parámetros del dispositi
 
 ### <a name="juniper-mx204"></a>MX204 de Juniper
 
-|  |  |  |
-|--|--|--|
-| Layout | Capacidad del sistema | 3 Tbps |
-|        | Orientación de la ranura | N/D |
-|        | Montaje | Frontal o centrado |
-| Especificación física | Dimensiones (ancho x alto x profundidad) | 17,45" x 8,71" x 24,5" (44,3 x 22,1 x 62,2 cm) |
-|                        | Peso totalmente cargado | 130 lb/59 kg |
-|                        | Peso descargado | 52 lb/23,6 kg |
-| Motor de enrutamiento | Memoria predeterminada | 2x16 MB de almacenamiento flash NOR; 64 GB de RAM DDR4; SSD de 2 x 50 GB |
-|                | Número de núcleos | 6 núcleos |
-| Redundancia | Componentes | Fuentes de alimentación, RE, ventiladores |
-| Medioambiental | Flujo de aire | De lado a lado |
-|               | Temperatura de funcionamiento | 32 a 115 °F (0 a 46 °C) en el nivel del mar |
-|               | Humedad operativa | 5 % a 90 % |
-|               | Altitud de funcionamiento | 10 000 ft (3048 m) |
-| Certificaciones | NEBS | • GR-1089-Core EMC y seguridad eléctrica |
-|                | | • Red de enlace común (CBN) |
-|                | | • Código eléctrico nacional (NEC) |
-|                | | • Protección física GR-63-Core |
+:::row:::
+    :::column:::
+        **Diseño**
+    :::column-end:::
+    :::column:::
+        Capacidad del sistema
+
+        Orientación de la ranura
+
+        Montaje
+    :::column-end:::
+    :::column span="2":::
+        3 Tbps
+
+        N/D
+
+        Frontal o centrado
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+        **Especificación física**
+    :::column-end:::
+    :::column:::
+        Dimensiones (ancho x alto x profundidad)
+
+        Peso totalmente cargado
+
+        Peso descargado
+    :::column-end:::
+    :::column span="2":::
+        17,45" x 8,71" x 24,5" (44,3 x 22,1 x 62,2 cm)
+
+        130 lb/59 kg
+
+        52 lb/23,6 kg
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+        **Motor de enrutamiento**
+    :::column-end:::
+    :::column:::
+        Memoria predeterminada
+
+        Número de núcleos
+    :::column-end:::
+    :::column span="2":::
+        2x16 MB de almacenamiento flash NOR; 64 GB de RAM DDR4; SSD de 2 x 50 GB
+
+        6 núcleos
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+        **Redundancia**
+    :::column-end:::
+    :::column:::
+        Componentes
+    :::column-end:::
+    :::column span="2":::
+        Fuentes de alimentación, RE, ventiladores
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+        **Medioambiental**
+    :::column-end:::
+    :::column:::
+        Flujo de aire
+
+        Temperatura de funcionamiento
+
+        Humedad operativa
+
+        Altitud de funcionamiento
+    :::column-end:::
+    :::column span="2":::
+        De lado a lado
+
+        32 a 115 °F (0 a 46 °C) en el nivel del mar
+
+        5 % a 90 %
+
+        10 000 ft (3048 m)
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+        **Certificaciones**
+    :::column-end:::
+    :::column:::
+        NEBS
+    :::column-end:::
+    :::column span="2":::
+        • GR-1089-Core EMC y seguridad eléctrica
+
+        • Red de enlace común (CBN)
+
+        • Código eléctrico nacional (NEC)
+
+        • Protección física GR-63-Core
+    :::column-end:::
+:::row-end:::
 
 ### <a name="dell-emc-s4148f-on"></a>Dell EMC S4148F-ON
 

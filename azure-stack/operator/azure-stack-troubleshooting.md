@@ -2,18 +2,18 @@
 title: Solución de problemas de Azure Stack Hub
 titleSuffix: Azure Stack
 description: Aprenda a solucionar problemas de Azure Stack Hub, como problemas con las máquinas virtuales, el almacenamiento y App Service.
-author: myoungerman
+author: PatAltimore
 ms.topic: article
-ms.date: 07/21/2020
+ms.date: 12/10/2020
 ms.author: v-myoung
 ms.reviewer: prchint
-ms.lastreviewed: 07/21/2020
-ms.openlocfilehash: 290f6ba7a8f3c53aafe131dd5c8de5186b88d752
-ms.sourcegitcommit: 362081a8c19e7674c3029c8a44d7ddbe2deb247b
+ms.lastreviewed: 12/10/2020
+ms.openlocfilehash: 583c0e933e823b1ac0fcf11fd378e81515656099
+ms.sourcegitcommit: f56a5b287c90b2081ae111385c8b7833931d4059
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91899778"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97343662"
 ---
 # <a name="troubleshoot-issues-in-azure-stack-hub"></a>Solución de problemas de Azure Stack Hub
 
@@ -216,6 +216,16 @@ El proceso de revisión y actualización de Azure Stack Hub está diseñado para
 **Causa**: Al intentar instalar la actualización de Azure Stack Hub, es posible que se produzca un error en el estado de esa actualización y dicho estado cambie a `PreparationFailed`. En el caso de los sistemas conectados a Internet, esto suele indicar que el paquete de actualización no se puede descargar correctamente debido a una conexión de Internet débil. 
 
 **Corrección**: Para solucionar este problema, vuelva a hacer clic en **Instalar ahora**. Si el problema persiste, recomendamos cargar manualmente la actualización siguiendo la [sección de instalación de actualizaciones](azure-stack-apply-updates.md?#install-updates-and-monitor-progress).
+
+**Repetición**: Comunes
+
+### <a name="warnings-and-errors-reported-while-update-is-in-progress"></a>Advertencias y errores detectados mientras la actualización está en curso
+
+**Aplicable a**: este problema se aplica a todas las versiones admitidas.
+
+**Causa**: Cuando una actualización de Azure Stack Hub está en el estado **En curso**, pueden aparecer advertencias y errores en el portal. Los componentes pueden agotar el tiempo esperando por otros componentes durante la actualización, lo que genera un error. Azure Stack Hub cuenta con un mecanismo para reintentar o corregir algunas de las tareas debido a errores intermitentes.
+
+**Corrección**: Mientras la actualización de Azure Stack Hub se encuentre en el estado **En curso**, se pueden omitir las advertencias y los errores que se indican en el portal.
 
 **Repetición**: Comunes
 

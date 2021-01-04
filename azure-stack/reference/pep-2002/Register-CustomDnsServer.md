@@ -1,18 +1,18 @@
 ---
 title: Register-CustomDnsServer
-description: 'Referencia del punto de conexión con privilegios de Azure Stack para PowerShell: Close-PrivilegedEndpoint'
+description: 'Obtenga información sobre el script para registrar servidores DNS personalizados en el DNS de Azure Stack Hub: Register-CustomDnsServer.'
 author: mattbriggs
 ms.topic: reference
 ms.date: 04/27/2020
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 04/27/2020
-ms.openlocfilehash: 896ab0f8efa224b4d2224d417dba91e55dea1c19
-ms.sourcegitcommit: 4af79f4fa2598d57c81e994192c10f8c6be5a445
+ms.openlocfilehash: 88d24d8ee32f82f9f19f256249241bf8b0060641
+ms.sourcegitcommit: 5fbc60b65d27c916ded7a95ba4102328d550c7e5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89742663"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598273"
 ---
 # <a name="register-customdnsserver"></a>Register-CustomDnsServer
 

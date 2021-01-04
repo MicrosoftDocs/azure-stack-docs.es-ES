@@ -6,13 +6,13 @@ ms.author: v-kedow
 ms.topic: how-to
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 12/10/2020
-ms.openlocfilehash: 1787218c32feaa0e944946b6b36614432ea529f1
-ms.sourcegitcommit: 97ecba06aeabf2f30de240ac283b9bb2d49d62f0
+ms.date: 12/11/2020
+ms.openlocfilehash: 2d2c122a2fd8a9e0be5d3ffd942f85f310845f2d
+ms.sourcegitcommit: f56a5b287c90b2081ae111385c8b7833931d4059
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97011792"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97343183"
 ---
 # <a name="quickstart-create-an-azure-stack-hci-cluster-and-register-it-with-azure"></a>Inicio rápido: Creación de un clúster de Azure Stack HCI y registro con Azure
 
@@ -24,7 +24,7 @@ En este inicio rápido, aprenderá a implementar un clúster de Azure Stack HCI 
 
 Antes de crear un clúster, haga lo siguiente:
 
-* Compre dos servidores en el [Catálogo de Azure Stack HCI](https://azure.microsoft.com/products/azure-stack/hci/catalog/), a través del asociado de hardware de Microsoft que prefiera, con el sistema operativo Azure Stack HCI preinstalado. Revise los [requisitos del sistema](../concepts/system-requirements.md) para asegurarse de que el hardware que seleccione admitirá las cargas de trabajo que planea ejecutar en el clúster.
+* Compre dos servidores en el [Catálogo de Azure Stack HCI](https://hcicatalog.azurewebsites.net), a través del asociado de hardware de Microsoft que prefiera, con el sistema operativo Azure Stack HCI preinstalado. Revise los [requisitos del sistema](../concepts/system-requirements.md) para asegurarse de que el hardware que seleccione admitirá las cargas de trabajo que planea ejecutar en el clúster. Para una configuración sencilla, se recomienda usar un sistema con adaptadores de red de alta velocidad que usen iWARP.
 * Cree una cuenta de usuario que sea miembro del grupo de administradores local en cada servidor.
 * [Suscríbase a Azure](https://azure.microsoft.com/), si todavía no lo está.
 * [Instale Windows Admin Center](/windows-server/manage/windows-admin-center/deploy/install) en un equipo de administración y [regístrelo con Azure](../manage/register-windows-admin-center.md). Tenga en cuenta que el equipo de administración debe estar unido al mismo dominio de Active Directory en el que va a crear el clúster o a un dominio de plena confianza.
@@ -43,7 +43,7 @@ Siga estos pasos para crear un clúster simple de dos nodos y un solo sitio. Par
 El Asistente para crear clúster tiene cinco secciones, cada una con varios pasos.
 
 1. **Primeros pasos.** En esta sección, comprobará los requisitos previos, agregará servidores, se unirá a un dominio, instalará las características y actualizaciones necesarias y reiniciará los servidores. 
-2. **Redes.** Esta sección del asistente permite comprobar que los adaptadores de red correctos están habilitados y deshabilita los que no se estén usando. Seleccionará adaptadores de administración, modificará una configuración de conmutador virtual y definirá la red proporcionando direcciones IP. Para simplificar las cosas, no seleccione RDMA para este clúster. 
+2. **Redes.** Esta sección del asistente permite comprobar que los adaptadores de red correctos están habilitados y deshabilita los que no se estén usando. Seleccionará adaptadores de administración, modificará una configuración de conmutador virtual y definirá la red proporcionando direcciones IP.
 3. **Agrupación en clústeres.** Esta sección permite validar que los servidores tienen una configuración coherente y que son adecuados para la agrupación en clústeres, y crear el clúster real.
 4. **Almacenamiento**. A continuación, limpiará y comprobará las unidades, validará el almacenamiento y habilitará Espacios de almacenamiento directo.
 5. **SDN.** Puede omitir la sección 5 porque no vamos a usar redes definidas por software (SDN) para este clúster.

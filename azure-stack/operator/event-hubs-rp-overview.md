@@ -1,23 +1,21 @@
 ---
-title: Introducción a Event Hubs en Azure Stack Hub
+title: Introducción al operador de Event Hubs en Azure Stack Hub
 description: Obtenga más información sobre el proveedor de recursos de Event Hubs en Azure Stack Hub.
 author: BryanLa
 ms.author: bryanla
 ms.service: azure-stack
 ms.topic: how-to
-ms.date: 12/09/2019
+ms.date: 12/11/2020
 ms.reviewer: jfggdl
-ms.lastreviewed: 12/09/2019
-ms.openlocfilehash: 2c7574ef54176e4e4b91f5bee8af9e6953d13732
-ms.sourcegitcommit: 4af79f4fa2598d57c81e994192c10f8c6be5a445
+ms.lastreviewed: 12/11/2020
+ms.openlocfilehash: 657cf8eb54bcc7d56224731f0937d8a02d7d4f67
+ms.sourcegitcommit: 79e8df69b139bfa21eb83aceb824b97e7f418c03
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89742645"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97364190"
 ---
-# <a name="event-hubs-on-azure-stack-hub-overview"></a>Introducción a Event Hubs en Azure Stack Hub
-
-[!INCLUDE [preview-banner](../includes/event-hubs-preview.md)]
+# <a name="event-hubs-on-azure-stack-hub-operator-overview"></a>Introducción al operador de Event Hubs en Azure Stack Hub
 
 Event Hubs en Azure Stack Hub permite desarrollar escenarios de nube híbrida. Se admiten las soluciones de streaming y basadas en eventos, tanto en el procesamiento local como en la nube de Azure. Tanto si el escenario es híbrido (conectado) como desconectado, la solución puede admitir el procesamiento de eventos o secuencias a gran escala. El escenario solo está limitado por el tamaño del clúster, que se puede aprovisionar según las necesidades de cada usuario. 
 

@@ -1,7 +1,7 @@
 ---
-title: Actualización del registro de contenedor en Azure Stack Hub | Microsoft Docs
+title: 'Actualización del registro de contenedor en Azure Stack Hub: MDC'
 titleSuffix: Azure Stack
-description: Aprenda a actualizar el registro de contenedor en Azure Stack Hub.
+description: Obtenga información sobre cómo actualizar el registro de contenedor en Azure Stack Hub para centros de datos modulares (MDC).
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -16,14 +16,14 @@ ms.date: 1/8/2020
 ms.author: mabrigg
 ms.reviewer: chasat
 ms.lastreviewed: 12/17/2019
-ms.openlocfilehash: 1d014cfe855bc7e9bb3bdaae6ba7525d3df1e8c7
-ms.sourcegitcommit: 9ecf9c58fbcc4bc42c1fdc688f370c643c761a29
+ms.openlocfilehash: dafd9d485125d7c8da1524b71fddb75af7a4ebba
+ms.sourcegitcommit: 5fbc60b65d27c916ded7a95ba4102328d550c7e5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93330352"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598579"
 ---
-# <a name="update-the-container-registry-in-azure-stack-hub"></a>Actualización del registro de contenedor en Azure Stack Hub
+# <a name="update-the-container-registry-in-azure-stack-hub---modular-data-center-mdc"></a>Actualización del registro de contenedor en Azure Stack Hub: centro de datos modular (MDC)
 
 Los usuarios de Azure Stack Hub pueden actualizar su implementación del registro de contenedor a una SKU de imagen base de AKS más reciente mediante las instrucciones siguientes. La máquina virtual y el servicio de la plantilla del registro de contenedor no tienen estado, ya que el estado y todas las imágenes de contenedor se almacenan en Blob Storage. Una actualización es tan sencilla como implementar la plantilla del registro de contenedor con una versión más reciente del VHD de la imagen base de AKS y redirigir DNS a la nueva máquina virtual. La acción de actualizar el valor de DNS de las máquinas virtuales de la plantilla del registro de contenedor anterior y la nueva dará lugar a una pequeña ventana de conectividad intermitente del registro mientras se propagan los valores.
 
@@ -39,9 +39,9 @@ Los usuarios de Azure Stack Hub pueden actualizar su implementación del registr
 
 1.  Compruebe la SKU de la imagen base de AKS que se usó para implementar la plantilla del registro de contenedor; para ello, vaya al registro de implementación en el grupo de recursos y seleccione **Entradas**.
 
-    ![Entradas](./media/container-registry-template-updating-tzl/inputs.png)
+    ![Captura de pantalla que muestra la página "Entradas".](./media/container-registry-template-updating-tzl/inputs.png)
 
-2.  Determine si hay SKU más recientes de la imagen base de AKS disponibles con la función **Get-VMImageSku** , que requiere el archivo `Import-Module .\pre-reqs.ps1` de los scripts de la plantilla del registro de contenedor.
+2.  Determine si hay SKU más recientes de la imagen base de AKS disponibles con la función **Get-VMImageSku**, que requiere el archivo `Import-Module .\pre-reqs.ps1` de los scripts de la plantilla del registro de contenedor.
 
     ```powershell  
     PS C:\azurestack-galler-master\registry\Scripts> Get-VMImageSku -Location Shanghai
@@ -89,7 +89,7 @@ Los usuarios de Azure Stack Hub pueden actualizar su implementación del registr
 
     ![Seleccionar dirección IP](./media/container-registry-template-updating-tzl/ip.png)
 
-1.  En el recurso de dirección IP pública, vaya a Configuración y modifique la etiqueta de nombre DNS para que se pueda usar para el recurso recién implementado. Tenga en cuenta que una vez que modifique la etiqueta de nombre DNS y seleccione **Guardar** , las llamadas al registro de contenedor comenzarán a producir errores.
+1.  En el recurso de dirección IP pública, vaya a Configuración y modifique la etiqueta de nombre DNS para que se pueda usar para el recurso recién implementado. Tenga en cuenta que una vez que modifique la etiqueta de nombre DNS y seleccione **Guardar**, las llamadas al registro de contenedor comenzarán a producir errores.
 
     ![Cambiar etiqueta DNS](./media/container-registry-template-updating-tzl/dns.png)
     

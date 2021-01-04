@@ -3,20 +3,20 @@ title: Códigos de error de registro de uso y facturación en Azure Stack Hub
 description: Obtenga información sobre los códigos de error de registro de uso y facturación en Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 08/27/2020
+ms.date: 12/15/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 06/27/2019
-ms.openlocfilehash: 0c143a2a997a044e102eef63018dba5a492a3e11
-ms.sourcegitcommit: 03aad17afe8519536066c735c59ad1bdfe8de083
+ms.openlocfilehash: b229d4019e6e7ed99826e311fc62da341c1203dd
+ms.sourcegitcommit: a53ea4a28e715c80a99fa89e9d364bc4556558de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89041611"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97576945"
 ---
 # <a name="usage-and-billing-registration-error-codes"></a>Códigos de error de registro de uso y facturación
 
-A los proveedores de soluciones en la nube (CSP), les pueden aparecer los siguientes mensajes de error al [agregar inquilinos](azure-stack-csp-ref-operations.md#add-tenant-to-registration) a un registro para el uso de informes en el identificador de la suscripción de Azure del cliente.
+A los proveedores de soluciones en la nube (CSP) les pueden aparecer los siguientes mensajes de error al [agregar inquilinos](azure-stack-csp-ref-operations.md#add-tenant-to-registration) a un registro para el uso en informes del identificador de la suscripción de Azure del cliente.
 
 ## <a name="list-of-registration-error-codes"></a>Lista de códigos de error de registro
 

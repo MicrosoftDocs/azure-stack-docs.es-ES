@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mabrigg
 ms.reviewer: wamota
 ms.lastreviewed: 07/10/2019
-ms.openlocfilehash: f47e3c48bf6a43276f9e4b11c2e3f0f43a224f18
-ms.sourcegitcommit: 0aa5f7f20690839661c8bb3bfdbe32f82bec0c64
+ms.openlocfilehash: f081d0fa91e967ca00b46ac2a9ffaf4b56933e87
+ms.sourcegitcommit: 79e8df69b139bfa21eb83aceb824b97e7f418c03
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86567355"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97364122"
 ---
 # <a name="differences-and-considerations-for-azure-stack-hub-networking"></a>Diferencias y consideraciones para las redes de Azure Stack Hub
 
@@ -30,7 +30,7 @@ En este artículo se proporciona información general sobre las consideraciones 
 |  | Conjuntos de registros DNS por zona | 5000 (valor predeterminado)<br>Puede aumentarse a petición. | 5000 |
 |  | Servidores de nombres para la delegación de zona | Azure proporciona cuatro servidores de nombres para cada zona de usuario (inquilino) que se crea. | Azure Stack Hub proporciona dos servidores de nombres para cada zona de usuario (inquilino) que se crea. |
 | Azure Firewall | Servicio de seguridad de red | Azure Firewall es un servicio de seguridad de red administrado y basado en la nube que protege los recursos de Azure Virtual Network. | Todavía no se admite. |
-| Virtual Network | Emparejamiento de redes virtuales de Azure | Conecte dos redes virtuales de la misma región mediante la red troncal de Azure. | Todavía no se admite |
+| Virtual Network | Emparejamiento de redes virtuales de Azure | Conecte dos redes virtuales de la misma región mediante la red troncal de Azure. | El [emparejamiento de red virtual](virtual-network-peering.md) se admite desde la versión 2008. |
 |  | Direcciones IPv6 | Puede asignar una dirección IPv6 como parte de la [configuración de la interfaz de red](/azure/virtual-network/virtual-network-network-interface-addresses#ip-address-versions). | Se admite solo IPv4. |
 |  | Plan de DDoS Protection | Compatible | Todavía no se admite. |
 |  | Configuraciones de direcciones IP del conjunto de escalado | Compatible | Todavía no se admite. |

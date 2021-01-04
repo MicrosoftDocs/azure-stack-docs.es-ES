@@ -1,6 +1,6 @@
 ---
-title: Descarga de elementos de Marketplace desde Azure y publicación en Azure Stack | Microsoft Docs
-description: Aprenda a descargar elementos de Marketplace desde Azure y a publicarlos en Azure Stack.
+title: Descarga de elementos de Marketplace desde Azure y publicación en Azure Stack
+description: Aprenda a descargar elementos de Marketplace desde Azure y a publicarlos en Azure Stack para centros de datos modulares (MDC).
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,14 +15,14 @@ ms.date: 10/26/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 10/26/2020
-ms.openlocfilehash: 32ba4c16d36622cbe2a9595c58e4ec2e2f46b481
-ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
+ms.openlocfilehash: 2a3dec7699911988c4c9a958c31386c127f70694
+ms.sourcegitcommit: 5fbc60b65d27c916ded7a95ba4102328d550c7e5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96935039"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598239"
 ---
-# <a name="download-marketplace-items-to-azure-stack-hub"></a>Descarga de elementos de Marketplace en Azure Stack Hub 
+# <a name="download-marketplace-items-to-azure-stack-hub---modular-data-center-mdc"></a>Descarga de elementos de Marketplace en Azure Stack Hub: centro de datos modular (MDC) 
 
 Los operadores en la nube pueden descargar elementos de Marketplace en Azure Stack Hub y hacer que estén disponibles para todos los usuarios mediante el entorno de Azure Stack Hub. Dichos elementos se pueden elegir en una lista de elementos de Azure Marketplace que se han probados con anterioridad y se sabe que son compatibles con Azure Stack. Con frecuencia se agregan nuevos elementos a esta lista, así que es aconsejable consultar periódicamente si tiene contenido nuevo.
 
@@ -60,11 +60,11 @@ La implementación de Azure Stack Hub debe tener conectividad a Internet y [esta
 
 4. Cada elemento de línea también muestra la versión disponible actualmente. Si hay más de una versión de un elemento de Marketplace disponible, la columna **Version** (Versión) muestra **Multiple** (Múltiples). Puede hacer clic en cada elemento para ver su descripción, así como información adicional, incluido su tamaño de descarga:
 
-   ![Adición desde Azure](media/azure-stack-download-azure-marketplace-item-tzl/add-from-azure-1.png)
+   ![Captura de pantalla que muestra la página "Add from Azure" (Agregar desde Azure).](media/azure-stack-download-azure-marketplace-item-tzl/add-from-azure-1.png)
 
 5. Si la versión de un elemento se muestra como **Multiple** (Múltiples), puede seleccionar ese elemento y, a continuación, elegir una versión específica en la lista desplegable de selección de versión que aparece:
 
-   ![Adición desde Azure](media/azure-stack-download-azure-marketplace-item-tzl/add-from-azure-3.png)
+   ![Captura muestra la página de administración con la lista desplegable del selector de versiones resaltada.](media/azure-stack-download-azure-marketplace-item-tzl/add-from-azure-3.png)
 
 6. Seleccione el elemento que desee y, después, seleccione **Download** (Descargar). Los tiempos de descarga varían y dependen de la conectividad de red. Una vez finalizada la descarga, el nuevo elemento de Marketplace se puede implementar como usuario u operador de Azure Stack.
 

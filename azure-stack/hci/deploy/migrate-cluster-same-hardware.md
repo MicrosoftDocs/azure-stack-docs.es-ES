@@ -6,18 +6,22 @@ ms.topic: how-to
 ms.date: 12/10/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: 08ed2b7272fd8a4f9f28f2721b8aff6552131afc
-ms.sourcegitcommit: afdae61022037b5dba8345cb264049897e0aca8f
+ms.openlocfilehash: ea19dbbdd85f29eb036a0220828bbbb7bca33ea7
+ms.sourcegitcommit: d91d44762383790a0bcfc4a85f43050c8528d5d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 12/10/2020
-ms.locfileid: "97051571"
+ms.locfileid: "97069820"
 ---
 # <a name="migrate-to-azure-stack-hci-on-same-hardware"></a>Migración a Azure Stack HCI en el mismo hardware
 
 > Se aplica a Azure Stack HCI, versión 20H2, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2008 R2.
 
 En este tema se describe cómo migrar un clúster con Windows Server 2016 o Windows Server 2019 a Azure Stack HCI con el hardware de servidor existente. Este proceso instala el nuevo sistema operativo Azure Stack HCI, conserva la configuración y el almacenamiento del clúster existentes e importa las máquinas virtuales.
+
+En el diagrama siguiente se muestra la migración local del clúster con Windows Server con el mismo hardware de servidor. Después de apagar el clúster, Azure Stack HCI está instalado, se vuelve a conectar el almacenamiento y las máquinas virtuales se importan y se hace que sean de alta disponibilidad (HA).
+
+:::image type="content" source="media/migrate/migrate-cluster-same-hardware.png" alt-text="Migración del clúster a Azure Stack HCI en el mismo hardware" lightbox="media/migrate/migrate-cluster-same-hardware.png":::
 
 Para migrar las máquinas virtuales a un nuevo hardware con Azure Stack HCI, consulte [Migración a Azure Stack HCI en hardware nuevo](migrate-cluster-new-hardware.md).
 

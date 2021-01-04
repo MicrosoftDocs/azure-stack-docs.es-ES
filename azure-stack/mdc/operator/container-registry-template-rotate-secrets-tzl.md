@@ -1,7 +1,7 @@
 ---
-title: Rotación de secretos del registro de contenedor en Azure Stack Hub | Microsoft Docs
+title: 'Rotación de secretos del registro de contenedor en Azure Stack Hub: MDC'
 titleSuffix: Azure Stack Hub
-description: Aprenda a rotar los secretos del registro de contenedor en Azure Stack Hub.
+description: Aprenda a rotar los secretos del registro de contenedor en Azure Stack Hub para un centro de datos modular.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -16,14 +16,14 @@ ms.date: 10/26/2020
 ms.author: mabrigg
 ms.reviewer: chasat
 ms.lastreviewed: 10/26/2020
-ms.openlocfilehash: eb835552b8f7142878d03aa1bb3bb062cd2cf3f6
-ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
+ms.openlocfilehash: 932f63ef4b442578baf9f217ae0f25a6fe29290e
+ms.sourcegitcommit: 5fbc60b65d27c916ded7a95ba4102328d550c7e5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96934989"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598222"
 ---
-# <a name="rotate-container-registry-secrets-in-azure-stack-hub"></a>Rotación de secretos del registro de contenedor en Azure Stack Hub
+# <a name="rotate-container-registry-secrets-in-azure-stack-hub---modular-data-center-mdc"></a>Rotación de secretos del registro de contenedor en Azure Stack Hub: Centro de datos modular (MDC)
 
 Los usuarios de Azure Stack Hub pueden rotar los secretos (certificados, nombre de usuario y contraseña) de una implementación de una plantilla del registro de contenedor. Puede ejecutar un script para rellenar los nuevos valores del secreto en Microsoft Azure Key Vault y **volver a implementar** la instancia de la plantilla del registro de contenedor existente. La rotación de secretos en sí no requiere una nueva implementación.
 
@@ -257,11 +257,11 @@ Siga estas instrucciones para configurar los nuevos secretos en Key Vault.
 
 3. Seleccione las implementaciones en **Implementaciones**.
 
-    ![Implementaciones](./media/container-registry-template-rotating-secrets-tzl/deployments.png)
+    ![Captura de pantalla que muestra la página "Implementaciones".](./media/container-registry-template-rotating-secrets-tzl/deployments.png)
 
 4.  Si es la primera rotación de los secretos, seleccione la implementación original. Si no es la primera rotación, seleccione la implementación más reciente y, a continuación, seleccione **Volver a implementar**.
 
-    ![Volver a implementar](./media/container-registry-template-rotating-secrets-tzl/redeploy.png)
+    ![Captura de pantalla que muestra la página de información general con la acción "Volver a implementar" seleccionada.](./media/container-registry-template-rotating-secrets-tzl/redeploy.png)
 
 5.  En **Implementar plantilla de solución**, seleccione **Usar grupo de recursos existente** y seleccione el grupo de recursos que se usó para implementar originalmente la plantilla del registro de contenedor. Para que una reimplementación se realice correctamente, debe usar el mismo grupo de recursos.
 
@@ -273,7 +273,7 @@ Siga estas instrucciones para configurar los nuevos secretos en Key Vault.
 
     - Si va a rotar el certificado, deberá especificar los nuevos valores de PFXKeyVaultSecretURL y PFXThumbprint que se generaron al establecer los nuevos secretos.
 
-    ![Parámetros](./media/container-registry-template-rotating-secrets-tzl/parameters.png)
+    ![Captura de pantalla que muestra la ventana "Parámetros".](./media/container-registry-template-rotating-secrets-tzl/parameters.png)
 
 7.  Seleccione **Aceptar** y, después, **Crear**. La reimplementación continuará. La funcionalidad del registro seguirá funcionando durante la reimplementación.
 

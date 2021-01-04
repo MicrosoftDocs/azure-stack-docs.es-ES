@@ -1,6 +1,6 @@
 ---
 title: Introducción al planeamiento de capacidad de Azure Stack Hub | Microsoft Docs
-description: Obtenga información sobre el planeamiento de capacidad para las implementaciones de Azure Stack Hub.
+description: Obtenga información sobre el planeamiento de capacidad para las implementaciones de Azure Stack Hub. Consulte las especificaciones de los modelos más y menos potentes de Azure Stack Hub Ruggedized.
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -16,12 +16,12 @@ ms.date: 10/14/2020
 ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 10/14/2020
-ms.openlocfilehash: 7ccaee0f134f2aa2a56f0fe14bab8fba72a84726
-ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
+ms.openlocfilehash: b300a787105b39f2d4fa87f61f67e4aee4530440
+ms.sourcegitcommit: 5fbc60b65d27c916ded7a95ba4102328d550c7e5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96941386"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598205"
 ---
 # <a name="overview-of-azure-stack-hub-capacity-planning"></a>Introducción al planeamiento de la capacidad de Azure Stack Hub
 

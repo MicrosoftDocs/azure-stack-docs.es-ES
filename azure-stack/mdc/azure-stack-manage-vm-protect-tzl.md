@@ -1,6 +1,6 @@
 ---
-title: Protección de máquinas virtuales implementadas en Azure Stack | Microsoft Docs
-description: Obtenga información sobre cómo crear un plan de recuperación para proteger las VM implementadas en Azure Stack de la pérdida de datos y el tiempo de inactividad no planeado.
+title: 'Protección de máquinas virtuales implementadas en Azure Stack: MDC | Microsoft Docs'
+description: Obtenga información sobre cómo crear un plan de recuperación para proteger las máquinas virtuales implementadas en Azure Stack de la pérdida de datos y el tiempo de inactividad no planeado para un MDC.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,14 +15,14 @@ ms.date: 11/09/2020
 ms.author: sethm
 ms.reviewer: hectorl
 ms.lastreviewed: 3/19/2018
-ms.openlocfilehash: cfee01600d9db4017e56b7e53c9f90351b3bb323
-ms.sourcegitcommit: 980be7813e6f39fb59926174a5d3e0d392b04293
+ms.openlocfilehash: 4f4de6ee060d63d4a7f7769feba93f918911608d
+ms.sourcegitcommit: 5fbc60b65d27c916ded7a95ba4102328d550c7e5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94414051"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598307"
 ---
-# <a name="protect-vms-deployed-on-azure-stack-hub"></a>Protección de las máquinas virtuales implementadas en Azure Stack Hub
+# <a name="protect-vms-deployed-on-azure-stack-hub---modular-data-center-mdc"></a>Protección de máquinas virtuales implementadas en Azure Stack Hub: centro de datos modular (MDC)
 
 Use este artículo como guía para desarrollar un plan de protección de las máquinas virtuales que los usuarios implementan en Azure Stack Hub.
 

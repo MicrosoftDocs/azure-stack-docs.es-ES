@@ -7,16 +7,16 @@ ms.date: 11/05/2020
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 11/05/2020
-ms.openlocfilehash: 86672961ee2a02f858cfce73a895154c6eb1bcbe
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: fac60db9ad1f3ae8be248b4f61a3c16179763a7e
+ms.sourcegitcommit: 79e8df69b139bfa21eb83aceb824b97e7f418c03
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94544044"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97364207"
 ---
 # <a name="add-additional-scale-unit-nodes-in-azure-stack-hub"></a>Incorporación de nodos de la unidad de escalado adicionales en Azure Stack Hub
 
-Puede aumentar la capacidad total de una unidad de escalado existente mediante la incorporación de un equipo físico adicional. Al equipo físico también se le conoce como nodo de unidad de escalado. Cada nuevo nodo de unidad de escalado que agregue debe ser homogéneo en cuanto al tipo de CPU, memoria y número y tamaño de discos, respecto a los nodos que ya están presentes en dicha unidad.
+Puede aumentar la capacidad total de una unidad de escalado existente mediante la incorporación de un equipo físico adicional. Al equipo físico también se le conoce como nodo de unidad de escalado. Cada nuevo nodo de unidad de escalado que agregue debe ser homogéneo en cuanto al tipo de CPU, memoria y número y tamaño de discos, respecto a los nodos que ya están presentes en dicha unidad. Azure Stack Hub no admite la eliminación de nodos de unidad de escalado con el fin de reducir verticalmente debido a limitaciones de arquitectura. Solo es posible expandir la capacidad mediante la adición de nodos.
 
 Para agregar un nodo de unidad de escalado, debe actuar en Azure Stack Hub y ejecutar las herramientas del fabricante del equipo de hardware (OEM). Las herramientas de OEM se ejecutan en el host del ciclo de vida de hardware (HLH) para asegurarse de que el equipo físico nuevo coincide con el mismo nivel de firmware que los nodos existentes.
 

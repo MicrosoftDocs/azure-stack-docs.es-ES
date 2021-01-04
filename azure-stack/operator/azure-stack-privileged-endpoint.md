@@ -8,12 +8,12 @@ ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 04/28/2020
 ms.custom: conteperfq4
-ms.openlocfilehash: 9009064b2664d09a677ad1b2e21b2a3e5b17b57f
-ms.sourcegitcommit: 08aa3b381aec7a6a3df4f9591edd6f08928071d2
+ms.openlocfilehash: a20e7bf62cf65d1fd7c5ffb0f4f4ddc7313c55b2
+ms.sourcegitcommit: 5fbc60b65d27c916ded7a95ba4102328d550c7e5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93363935"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598256"
 ---
 # <a name="use-the-privileged-endpoint-in-azure-stack-hub"></a>Uso del punto de conexión con privilegios en Azure Stack Hub
 
@@ -34,7 +34,7 @@ El PEP registra cada acción (y su salida correspondiente) que se realiza en la 
 
 ## <a name="access-the-privileged-endpoint"></a>Acceso al punto de conexión con privilegios
 
-El acceso al PEP se realiza mediante una sesión remota de PowerShell en la máquina virtual que lo hospeda. En el ASDK, esta máquina virtual se denomina **AzS-ERCS01**. Si va a usar un sistema integrado, hay tres instancias del PEP, cada una de las cuales se ejecuta en una máquina virtual ( *Prefix* -ERCS01, *Prefix* -ERCS02 o *Prefix* -ERCS03) en diferentes hosts para proporcionar resistencia.
+El acceso al PEP se realiza mediante una sesión remota de PowerShell en la máquina virtual que lo hospeda. En el ASDK, esta máquina virtual se denomina **AzS-ERCS01**. Si va a usar un sistema integrado, hay tres instancias del PEP, cada una de las cuales se ejecuta en una máquina virtual (*Prefix*-ERCS01, *Prefix*-ERCS02 o *Prefix*-ERCS03) en diferentes hosts para proporcionar resistencia.
 
 Antes de comenzar este procedimiento en un sistema integrado, asegúrese de que puede acceder a un PEP bien mediante la dirección IP o a través de DNS. Después de la implementación inicial de Azure Stack Hub, solo puede acceder al PEP mediante la dirección IP, dado que la integración de DNS no está configurada aún. El proveedor de hardware OEM le proporcionará un archivo JSON denominado **AzureStackStampDeploymentInfo** que contiene las direcciones IP del PEP.
 
@@ -47,51 +47,50 @@ Tendrá que establecer la configuración de la referencia cultural actual en `en
 
 1. Establezca la confianza.
 
-      - En un sistema integrado, ejecute el siguiente comando desde una sesión de Windows PowerShell con privilegios elevados para agregar el PEP como host de confianza a la máquina virtual protegida que se ejecuta en el host de ciclo de vida de hardware o en la estación de trabajo de acceso con privilegios.
+   - En un sistema integrado, ejecute el siguiente comando desde una sesión de Windows PowerShell con privilegios elevados para agregar el PEP como host de confianza a la máquina virtual protegida que se ejecuta en el host de ciclo de vida de hardware o en la estación de trabajo de acceso con privilegios.
 
       ```powershell  
-    Set-Item WSMan:\localhost\Client\TrustedHosts -Value '<IP Address of Privileged Endpoint>' -Concatenate
+      Set-Item WSMan:\localhost\Client\TrustedHosts -Value '<IP Address of Privileged Endpoint>' -Concatenate
       ```
+      
+   - Si va a ejecutar el ADSK, inicie sesión en el host del kit de desarrollo.
 
-      - Si va a ejecutar el ADSK, inicie sesión en el host del kit de desarrollo.
-
-2. En la máquina virtual protegida que se ejecuta en el host de ciclo de vida de hardware o en la estación de trabajo de acceso con privilegios, abra una sesión de Windows PowerShell. Ejecute los comandos siguientes para establecer una sesión remota en la máquina virtual que hospeda el PEP:
+1. En la máquina virtual protegida que se ejecuta en el host de ciclo de vida de hardware o en la estación de trabajo de acceso con privilegios, abra una sesión de Windows PowerShell. Ejecute los comandos siguientes para establecer una sesión remota en la máquina virtual que hospeda el PEP:
  
-  - En un sistema integrado:
+   - En un sistema integrado:
 
-    ```powershell  
-    $cred = Get-Credential
+      ```powershell  
+      $cred = Get-Credential
 
-    $pep = New-PSSession -ComputerName <IP_address_of_ERCS> -ConfigurationName PrivilegedEndpoint -Credential $cred -SessionOption (New-PSSessionOption -Culture en-US -UICulture en-US)
-    Enter-PSSession $pep
-    ```
+      $pep = New-PSSession -ComputerName <IP_address_of_ERCS> -ConfigurationName PrivilegedEndpoint -Credential $cred -SessionOption (New-PSSessionOption -Culture en-US -UICulture en-US)
+      Enter-PSSession $pep
+      ```
     
-    El parámetro `ComputerName` puede ser la dirección IP o el nombre DNS de una de las máquinas virtuales que hospeda el PEP.
+      El parámetro `ComputerName` puede ser la dirección IP o el nombre DNS de una de las máquinas virtuales que hospeda el PEP.
 
-    > [!NOTE]  
-    >Azure Stack Hub no realiza ninguna llamada remota al validar la credencial del PEP. Se basa en una clave pública RSA almacenada localmente para hacerlo.
+      > [!NOTE]  
+      > Azure Stack Hub no realiza ninguna llamada remota al validar la credencial del PEP. Se basa en una clave pública RSA almacenada localmente para hacerlo.
 
    - Si va a ejecutar el ADSK:
 
-     ```powershell  
+      ```powershell  
       $cred = Get-Credential
     
       $pep = New-PSSession -ComputerName azs-ercs01 -ConfigurationName PrivilegedEndpoint -Credential $cred -SessionOption (New-PSSessionOption -Culture en-US -UICulture en-US)
       Enter-PSSession $pep
-     ```
+      ```
     
-   - Cuando se le pida, utilice las siguientes credenciales:
+   Cuando se le pida, utilice las siguientes credenciales:
    
-       - **Nombre de usuario** : especifique la cuenta CloudAdmin con el formato **&lt;*dominio de Azure Stack Hub*&gt;\cloudadmin**. (Para ASDK, el nombre de usuario es **azurestack\cloudadmin** ).
-  
-        - **Contraseña** : escriba la misma contraseña que proporcionó durante la instalación de la cuenta del administrador de dominio de AzureStackAdmin.
+   -  **Nombre de usuario**: especifique la cuenta CloudAdmin con el formato **&lt;*dominio de Azure Stack Hub*&gt;\cloudadmin**. En ASDK, el nombre de usuario es **azurestack\cloudadmin**.
+   - **Contraseña**: escriba la misma contraseña que proporcionó durante la instalación de la cuenta del administrador de dominio de AzureStackAdmin.
 
-      > [!NOTE]
-      > Si no puede conectarse al punto de conexión de ERCS, vuelva a intentar los pasos uno y dos con otra dirección IP de la máquina virtual de ERCS.
+   > [!NOTE]
+   > Si no puede conectarse al punto de conexión de ERCS, vuelva a intentar los pasos uno y dos con otra dirección IP de la máquina virtual de ERCS.
 
-3. Después de conectarse, el símbolo del sistema cambia a **[ *dirección IP o nombre de VM de ERCS* ]: PS >** o a **[azs-ercs01]: PS >** , en función del entorno. Desde aquí, ejecute `Get-Command` para ver la lista de los cmdlets disponibles.
+1. Después de conectarse, el símbolo del sistema cambia a **[*dirección IP o nombre de VM de ERCS*]: PS >** o a **[azs-ercs01]: PS >** , en función del entorno. Desde aquí, ejecute `Get-Command` para ver la lista de los cmdlets disponibles.
 
-    Puede encontrar una referencia para los cmdlets en [Referencia del punto de conexión con privilegios elevados de Azure Stack Hub](../reference/pep-2002/index.md)
+   Puede encontrar una referencia para los cmdlets en [Referencia del punto de conexión con privilegios elevados de Azure Stack Hub](../reference/pep-2002/index.md)
 
    Muchos de estos cmdlets están concebidos únicamente para entornos de sistema integrados (por ejemplo, los cmdlets relacionados con la integración de centros de datos). En el ASDK, se han validado los siguientes cmdlets:
 
@@ -130,61 +129,63 @@ Lleve a cabo los siguientes pasos para importar la sesión del PEP al equipo loc
 
 1. Establezca la confianza.
 
-    - En un sistema integrado, ejecute el siguiente comando desde una sesión de Windows PowerShell con privilegios elevados para agregar el PEP como host de confianza a la máquina virtual protegida que se ejecuta en el host de ciclo de vida de hardware o en la estación de trabajo de acceso con privilegios.
+   - En un sistema integrado, ejecute el siguiente comando desde una sesión de Windows PowerShell con privilegios elevados para agregar el PEP como host de confianza a la máquina virtual protegida que se ejecuta en el host de ciclo de vida de hardware o en la estación de trabajo de acceso con privilegios.
 
-    ```powershell
-    winrm s winrm/config/client '@{TrustedHosts="<IP Address of Privileged Endpoint>"}'
-    ```
+      ```powershell
+      winrm s winrm/config/client '@{TrustedHosts="<IP Address of Privileged Endpoint>"}'
+      ```
 
-    - Si va a ejecutar el ADSK, inicie sesión en el host del kit de desarrollo.
+   - Si va a ejecutar el ADSK, inicie sesión en el host del kit de desarrollo.
 
-2. En la máquina virtual protegida que se ejecuta en el host de ciclo de vida de hardware o en la estación de trabajo de acceso con privilegios, abra una sesión de Windows PowerShell. Ejecute los comandos siguientes para establecer una sesión remota en la máquina virtual que hospeda el PEP:
+1. En la máquina virtual protegida que se ejecuta en el host de ciclo de vida de hardware o en la estación de trabajo de acceso con privilegios, abra una sesión de Windows PowerShell. Ejecute los comandos siguientes para establecer una sesión remota en la máquina virtual que hospeda el PEP:
 
-    - En un sistema integrado:
+   - En un sistema integrado:
     
       ```powershell  
-        $cred = Get-Credential
+      $cred = Get-Credential
       
-        $session = New-PSSession -ComputerName <IP_address_of_ERCS> `
-          -ConfigurationName PrivilegedEndpoint -Credential $cred
+      $session = New-PSSession -ComputerName <IP_address_of_ERCS> `
+        -ConfigurationName PrivilegedEndpoint -Credential $cred
       ```
     
       El parámetro `ComputerName` puede ser la dirección IP o el nombre DNS de una de las máquinas virtuales que hospeda el PEP.
 
-    - Si va a ejecutar el ADSK:
+   - Si va a ejecutar el ADSK:
      
-        ```powershell  
-          $cred = Get-Credential
+      ```powershell  
+      $cred = Get-Credential
     
-          $session = New-PSSession -ComputerName azs-ercs01 `
-             -ConfigurationName PrivilegedEndpoint -Credential $cred
-        ```
+      $session = New-PSSession -ComputerName azs-ercs01 `
+        -ConfigurationName PrivilegedEndpoint -Credential $cred
+      ```
 
-     Cuando se le pida, utilice las siguientes credenciales:
+   Cuando se le pida, utilice las siguientes credenciales:
 
-     - **Nombre de usuario** : especifique la cuenta CloudAdmin con el formato **&lt;*dominio de Azure Stack Hub*&gt;\cloudadmin**. (Para ASDK, el nombre de usuario es **azurestack\cloudadmin** ).
-     - **Contraseña** : escriba la misma contraseña que proporcionó durante la instalación de la cuenta del administrador de dominio de AzureStackAdmin.
+   - **Nombre de usuario**: especifique la cuenta CloudAdmin con el formato **&lt;*dominio de Azure Stack Hub*&gt;\cloudadmin**. (Para ASDK, el nombre de usuario es **azurestack\cloudadmin**).
+      
+   - **Contraseña**: escriba la misma contraseña que proporcionó durante la instalación de la cuenta del administrador de dominio de AzureStackAdmin.
 
-3. Importe la sesión PEP a la máquina local:
+1. Importe la sesión PEP a la máquina local:
 
-    ```powershell 
-      Import-PSSession $session
-    ```
+   ```powershell 
+   Import-PSSession $session
+   ```
 
-4. Ahora, puede usar la finalización con tabulación y realizar scripting como de costumbre en la sesión de PowerShell local con todas las funciones y cmdlets del PEP sin reducir la posición de seguridad de Azure Stack Hub. ¡Disfrute!
+1. Ahora, puede usar la finalización con tabulación y realizar scripting como de costumbre en la sesión de PowerShell local con todas las funciones y cmdlets del PEP sin reducir la posición de seguridad de Azure Stack Hub. ¡Disfrute!
+
 
 ## <a name="close-the-privileged-endpoint-session"></a>Cierre de la sesión del punto de conexión con privilegios
 
- Como se mencionó anteriormente, el PEP registra cada una de las acciones (y su salida correspondiente) que realiza en la sesión de PowerShell. Debe cerrar la sesión mediante el cmdlet `Close-PrivilegedEndpoint`. Este cmdlet cierra correctamente el punto de conexión y transfiere los archivos de registro a un recurso compartido de archivos externo donde se retienen.
+Como se mencionó anteriormente, el PEP registra cada una de las acciones (y su salida correspondiente) que realiza en la sesión de PowerShell. Debe cerrar la sesión mediante el cmdlet `Close-PrivilegedEndpoint`. Este cmdlet cierra correctamente el punto de conexión y transfiere los archivos de registro a un recurso compartido de archivos externo donde se retienen.
 
 Para cerrar la sesión del punto de conexión:
 
 1. Cree un recurso compartido de archivos externo al que se pueda acceder mediante el PEP. En un entorno de kit de desarrollo, solo puede crear un recurso compartido de archivos en el host del kit de desarrollo.
-2. Ejecute el siguiente cmdlet:
+1. Ejecute el siguiente cmdlet:
 
-  ```powershell  
-     Close-PrivilegedEndpoint -TranscriptsPathDestination "\\fileshareIP\SharedFolder" -Credential Get-Credential
-  ```
+   ```powershell  
+   Close-PrivilegedEndpoint -TranscriptsPathDestination "\\fileshareIP\SharedFolder" -Credential Get-Credential
+   ```
 
    el cmdlet usa los parámetros de la tabla siguiente:
 
@@ -201,50 +202,51 @@ Una vez los archivos de registro de transcripción se transfieren correctamente 
 
 ## <a name="unlocking-the-privileged-endpoint-for-support-scenarios"></a>Desbloqueo del punto de conexión con privilegios para escenarios de soporte técnico
 
- Durante un escenario de soporte técnico, es posible que el ingeniero de soporte técnico de Microsoft eleve la sesión de PowerShell de punto de conexión con privilegios para acceder a los elementos internos de la infraestructura de Azure Stack Hub. A veces, se hace referencia a este proceso de forma informal como "romper en caso de emergencia" o "desbloquear el PEP". El proceso de elevación de la sesión del PEP es un proceso de autenticación de dos pasos, dos personas y dos organizaciones. El procedimiento de desbloqueo lo inicia el operador de Azure Stack Hub, que conserva el control de su entorno en todo momento. El operador tiene acceso al PEP y ejecuta este cmdlet:
+Durante un escenario de soporte técnico, es posible que el ingeniero de soporte técnico de Microsoft eleve la sesión de PowerShell de punto de conexión con privilegios para acceder a los elementos internos de la infraestructura de Azure Stack Hub. A veces, se hace referencia a este proceso de forma informal como "romper en caso de emergencia" o "desbloquear el PEP". El proceso de elevación de la sesión del PEP es un proceso de autenticación de dos pasos, dos personas y dos organizaciones. El procedimiento de desbloqueo lo inicia el operador de Azure Stack Hub, que conserva el control de su entorno en todo momento. El operador tiene acceso al PEP y ejecuta este cmdlet:
  
  ```powershell  
       Get-SupportSessionToken
-  ```
- El cmdlet devuelve el token de solicitud de la sesión de soporte, una cadena alfanumérica muy larga. A continuación, el operador pasa el token de solicitud al ingeniero de soporte técnico de Microsoft a través de un medio de su elección (por ejemplo, chat, correo electrónico). El ingeniero de soporte técnico de Microsoft utiliza el token de solicitud para generar, si es válido, un token de autorización de la sesión de soporte y lo devuelve al operador de Azure Stack Hub. En la misma sesión de PowerShell del PEP, el operador pasa el token de autorización como entrada a este cmdlet:
+ ```
 
- ```powershell  
+El cmdlet devuelve el token de solicitud de la sesión de soporte, una cadena alfanumérica muy larga. A continuación, el operador pasa el token de solicitud al ingeniero de soporte técnico de Microsoft a través de un medio de su elección (por ejemplo, chat, correo electrónico). El ingeniero de soporte técnico de Microsoft utiliza el token de solicitud para generar, si es válido, un token de autorización de la sesión de soporte y lo devuelve al operador de Azure Stack Hub. En la misma sesión de PowerShell del PEP, el operador pasa el token de autorización como entrada a este cmdlet:
+
+```powershell  
       unlock-supportsession
       cmdlet Unlock-SupportSession at command pipeline position 1
       Supply values for the following parameters:
       ResponseToken:
-  ```
+ ```
 
 Si el token de autorización es válido, se proporcionan capacidades de administración completas y disponibilidad total en la infraestructura para elevar la sesión de PowerShell del PEP. 
 
 > [!NOTE]
 > Todas las operaciones y los cmdlets que se ejecutan en una sesión del PEP elevada deben realizarse bajo una supervisión estricta del ingeniero de soporte técnico de Microsoft. Si no lo hace, podría provocar un tiempo de inactividad grave, pérdida de datos y requerir una reimplementación completa del entorno de Azure Stack Hub.
 
- Una vez finalizada la sesión de soporte, es muy importante volver a cerrar la sesión de PEP elevada mediante el cmdlet **Close-PrivilegedEndpoint** , como se explica en la sección anterior. Una vez finalizada la sesión de PEP, el token de desbloqueo ya no es válido y no se puede volver a usar para desbloquear otra vez la sesión de PEP.
+Una vez finalizada la sesión de soporte, es muy importante volver a cerrar la sesión de PEP elevada mediante el cmdlet **Close-PrivilegedEndpoint**, como se explica en la sección anterior. Una vez finalizada la sesión de PEP, el token de desbloqueo ya no es válido y no se puede volver a usar para desbloquear otra vez la sesión de PEP.
 Una sesión de PEP elevada tiene un período de validez de 8 horas, después del cual, si no se termina, se bloquea de nuevo automáticamente en una sesión de PEP normal.
 
 ## <a name="content-of-the-privileged-endpoint-tokens"></a>Contenido de los tokens de punto de conexión con privilegios
 
- La solicitud y los tokens de autorización de la sesión de soporte de PEP aprovechan la criptografía para proteger el acceso y garantizar que solo los tokens autorizados puedan desbloquear la sesión de PEP. Los tokens están diseñados para garantizar criptográficamente que un token de respuesta solo lo pueda aceptar la sesión de PEP que generó el token de solicitud. Los tokens de PEP no contienen ningún tipo de información que pueda identificar de forma única un entorno de Azure Stack Hub o un cliente. Son completamente anónimos. A continuación se proporcionan los detalles del contenido de cada token.
+La solicitud y los tokens de autorización de la sesión de soporte de PEP aprovechan la criptografía para proteger el acceso y garantizar que solo los tokens autorizados puedan desbloquear la sesión de PEP. Los tokens están diseñados para garantizar criptográficamente que un token de respuesta solo lo pueda aceptar la sesión de PEP que generó el token de solicitud. Los tokens de PEP no contienen ningún tipo de información que pueda identificar de forma única un entorno de Azure Stack Hub o un cliente. Son completamente anónimos. A continuación se proporcionan los detalles del contenido de cada token.
  
 ### <a name="support-session-request-token"></a>Token de solicitud de la sesión de soporte
 
- El token de solicitud de la sesión de soporte de PEP se compone de tres objetos:
+El token de solicitud de la sesión de soporte de PEP se compone de tres objetos:
 
-      - A randomly generated Session ID.
-      - A self-signed certificate, generated for the purpose of having a one-time public/private key pair. The certificate does not contain any information on the environment. 
-      - A time stamp that indicates the request token expiration.
-      
-  A continuación, el token de solicitud se cifra con la clave pública de la nube de Azure en la que está registrado el entorno de Azure Stack Hub.
+- Un identificador de sesión generado aleatoriamente.
+- Un certificado autofirmado, generado con el fin de tener un par de claves pública y privada único. El certificado no incluye información sobre el entorno.
+- Una marca de tiempo que indica la expiración del token de solicitud.
+
+A continuación, el token de solicitud se cifra con la clave pública de la nube de Azure en la que está registrado el entorno de Azure Stack Hub.
  
- ### <a name="support-session-authorization-response-token"></a>Token de respuesta de autorización de la sesión de soporte
+### <a name="support-session-authorization-response-token"></a>Token de respuesta de autorización de la sesión de soporte
 
 El token de respuesta de autorización de soporte del PEP se compone de dos objetos:
 
-      - The randomly generated session ID extracted from the request token.
-      - A time stamp that indicates the response token expiration.
+- El identificador de sesión generado aleatoriamente extraído del token de solicitud.
+- Una marca de tiempo que indica la expiración del token de respuesta.
       
- A continuación, el token de respuesta se cifra con el certificado autofirmado incluido en el token de solicitud. El certificado autofirmado se descifró con la clave privada asociada a la nube de Azure en la que se registró el entorno de Azure Stack Hub.
+A continuación, el token de respuesta se cifra con el certificado autofirmado incluido en el token de solicitud. El certificado autofirmado se descifró con la clave privada asociada a la nube de Azure en la que se registró el entorno de Azure Stack Hub.
 
 
 ## <a name="next-steps"></a>Pasos siguientes

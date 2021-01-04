@@ -1,6 +1,6 @@
 ---
-title: Procedimientos recomendados del servicio Infrastructure Backup para Azure Stack | Microsoft Docs
-description: Siga estos procedimientos recomendados al implementar y administrar Azure Stack para ayudar a mitigar la pérdida de datos en caso de error grave.
+title: 'Procedimientos recomendados del servicio Copia de seguridad de infraestructura para Azure Stack: MDC | Microsoft Docs'
+description: Siga estos procedimientos recomendados al implementar y administrar Azure Stack para un MDC para ayudar a mitigar la pérdida de datos en caso de error grave.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,14 +15,14 @@ ms.date: 10/26/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 10/26/2020
-ms.openlocfilehash: d2775627f9834a6410fcf2888bbb4abca66d958b
-ms.sourcegitcommit: 9ecf9c58fbcc4bc42c1fdc688f370c643c761a29
+ms.openlocfilehash: 0bbe41c26861d2a407641e06a2298ec5d3badf0f
+ms.sourcegitcommit: 5fbc60b65d27c916ded7a95ba4102328d550c7e5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93330330"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598562"
 ---
-# <a name="infrastructure-backup-service-best-practices"></a>Procedimientos recomendados del servicio Infrastructure Backup
+# <a name="infrastructure-backup-service-best-practices---modular-data-center-mdc"></a>Procedimientos recomendados del servicio Copia de seguridad de infraestructura: centro de datos modular (MDC)
 
 *Se aplica a: Centro de datos modular, Azure Stack Hub resistente*
 
@@ -95,9 +95,9 @@ El sistema prevé las siguientes alertas:
 
 El servicio Copia de seguridad de infraestructura incluye los siguientes componentes:
 
-- **Infrastructure Backup Controller** : En cada nube de Azure Stack se genera una instancia de Infrastructure Backup Controller, que además reside en ellas.
+- **Infrastructure Backup Controller**: En cada nube de Azure Stack se genera una instancia de Infrastructure Backup Controller, que además reside en ellas.
 
-- **Backup Resource Provider** : Backup Resource Provider (Backup RP) consta de la interfaz de usuario y las API que exponen la funcionalidad básica de copia de seguridad para la infraestructura de Azure Stack.
+- **Backup Resource Provider**: Backup Resource Provider (Backup RP) consta de la interfaz de usuario y las API que exponen la funcionalidad básica de copia de seguridad para la infraestructura de Azure Stack.
 
 ### <a name="infrastructure-backup-controller"></a>Infrastructure Backup Controller
 
@@ -120,7 +120,7 @@ En esta sección se describen los requisitos importantes del servicio Copia de s
 Estos requisitos son:
 
 - **Requisitos de software:** describe las ubicaciones de almacenamiento admitidas y las orientaciones sobre el ajuste de tamaño.
-- **Requisitos de red** : describe los requisitos de red para las diferentes ubicaciones de almacenamiento.
+- **Requisitos de red**: describe los requisitos de red para las diferentes ubicaciones de almacenamiento.
 
 ### <a name="software-requirements"></a>Requisitos de software
 

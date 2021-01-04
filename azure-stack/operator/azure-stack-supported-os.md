@@ -4,16 +4,16 @@ titleSuffix: Azure Stack
 description: Aprenda qué sistemas operativos invitados pueden usarse en Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 07/27/2020
+ms.date: 12/15/2020
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 06/06/2019
-ms.openlocfilehash: 2275f00f8df77b3822537ca73ec35b342b477617
-ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
+ms.openlocfilehash: 3d535893b75cdaf49b4003fce2382ab092b328fe
+ms.sourcegitcommit: f30e5178e0b4be4e3886f4e9f699a2b51286e2a8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87250306"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97620592"
 ---
 # <a name="guest-operating-systems-supported-on-azure-stack-hub"></a>Sistemas operativos invitados compatibles con Azure Stack Hub
 
@@ -33,7 +33,7 @@ Azure Stack Hub admite los sistemas operativos invitados Windows que se indican 
 | Windows 10 *(vea la nota 1)* | 64 bits, Pro y Enterprise | Traiga su propia imagen |
 
 > [!NOTE]
-> Para implementar sistemas operativos cliente Windows 10 en Azure Stack Hub, debe tener una [licencia por usuario de Windows](https://www.microsoft.com/licensing/product-licensing/windows10.aspx) o adquirir una a través de un proveedor de servicios de hosting cualificado multiinquilino ([QMTH](https://www.microsoft.com/en-us/CloudandHosting/licensing_sca.aspx)).
+> Para implementar sistemas operativos cliente Windows 10 en Azure Stack Hub, debe tener una [licencia por usuario de Windows](https://www.microsoft.com/licensing/product-licensing/windows10.aspx) o adquirir una mediante un [proveedor de servicios de hosting cualificado multiinquilino (QMTH)](https://www.microsoft.com/en-us/CloudandHosting/licensing_sca.aspx).
 
 Las imágenes de Marketplace están disponibles para licencias de pago por uso o BYOL (EA/SPLA). No se admite el uso de ambas en una sola instancia de Azure Stack Hub. Durante la implementación, Azure Stack Hub inserta una versión adecuada del agente invitado en la imagen.
 

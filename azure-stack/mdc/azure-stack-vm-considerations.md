@@ -1,6 +1,6 @@
 ---
 title: Características de las máquinas virtuales de Azure Stack | Microsoft Docs
-description: Obtenga información sobre las diferentes características y aspectos a la hora de trabajar con VM en un Centro de datos modular.
+description: Obtenga información sobre las diferentes características y los aspectos que se deben tener en cuenta a la hora de trabajar con máquinas virtuales en un centro de datos modular.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,14 +15,14 @@ ms.date: 12/20/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 12/20/2019
-ms.openlocfilehash: b8a5d2a0f08ac36b4f4ebc20e0dc3c9eea67218a
-ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
+ms.openlocfilehash: 8bd1231c0a3e9ef7dc55349fb05c872666d47585
+ms.sourcegitcommit: 5fbc60b65d27c916ded7a95ba4102328d550c7e5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96935107"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598341"
 ---
-# <a name="azure-stack-vm-features"></a>Características de las máquinas virtuales de Azure Stack
+# <a name="azure-stack-vm-features---modular-data-center-mdc"></a>Características de las máquinas virtuales de Azure Stack: Centro de datos modular (MDC)
 
 Las máquinas virtuales de Azure Stack proporcionan recursos informáticos escalables y a petición. Para poder implementar máquinas virtuales, debe aprender las diferencias entre las características de las máquinas virtuales disponibles en Azure Stack y en Microsoft Azure. Este artículo describe estas diferencias e identifica las principales consideraciones para planificar implementaciones de máquina virtual. Para obtener información acerca de las diferencias de alto nivel entre Azure y Azure Stack, consulte el artículo [Key considerations](../user/azure-stack-considerations.md) (Consideraciones clave).
 

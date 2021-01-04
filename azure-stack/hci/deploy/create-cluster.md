@@ -3,15 +3,15 @@ title: Creación de un clúster de Azure Stack HCI mediante Windows Admin Center
 description: Aprenda a administrar un clúster de servidor para Azure Stack HCI mediante Windows Admin Center.
 author: v-dasis
 ms.topic: how-to
-ms.date: 12/10/2020
+ms.date: 12/11/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: 011fa558f0e74d0456d9347d63edb6a064dcdcf2
-ms.sourcegitcommit: afdae61022037b5dba8345cb264049897e0aca8f
+ms.openlocfilehash: e33096b2667ad9d620e942b66934f341982e619b
+ms.sourcegitcommit: 79e8df69b139bfa21eb83aceb824b97e7f418c03
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97051656"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97364224"
 ---
 # <a name="create-an-azure-stack-hci-cluster-using-windows-admin-center"></a>Creación de un clúster de Azure Stack HCI mediante Windows Admin Center
 
@@ -52,7 +52,14 @@ Estos son los pasos principales del Asistente para crear clúster:
 
 Una vez completado el asistente, configure el testigo del clúster, Regístrese en Azure y cree volúmenes (lo que también configura la replicación entre sitios si está creando un clúster extendido).
 
-Empecemos:
+Antes de iniciar el asistente, asegúrese de tener instaladas las extensiones más recientes de Windows Admin Center, especialmente la extensión de creación de clústeres. Para ello:
+
+1. Abra el centro de administración de Windows y haga clic en Settings (Configuración) (icono de engranaje) en la esquina superior derecha.
+1. En **Configuración**, seleccione **Extensiones**.
+1. Seleccione **Cluster Creation** (Creación de clústeres) y haga clic en **Install** (Instalar).
+1. Seleccione **Cluster Manager** (Administrador de clústeres) y haga clic en **Install** (Instalar) también mientras está en él.
+
+Ahora ya está listo, vamos a comenzar:
 
 1. En Windows Admin Center, en **All connections** (Todas las conexiones), haga clic en **Add** (Agregar).
 1. En el panel **Add or create resources** (Agregar o crear recursos), en **Server clusters** (Clústeres de servidores), seleccione **Create new** (Crear nuevo).
