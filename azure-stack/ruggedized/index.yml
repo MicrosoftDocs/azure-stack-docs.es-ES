@@ -6,15 +6,15 @@ metadata:
   description: Microsoft Azure Stack Hub resistente es una plataforma en la nube híbrida que permite proporcionar servicios de Azure desde un centro su datos. Aprenda a administrar la infraestructura de sistemas integrados de Azure Stack Hub resistente y a ofrecer servicios con nuestros tutoriales e inicios rápidos.
   ms.service: azure-stack
   ms.topic: landing-page
-  author: justinha
-  ms.author: justinha
+  author: PatAltimore
+  ms.author: patricka
   ms.date: 10/14/2020
-  ms.openlocfilehash: 7e131f116ef28620cda1804782d38c14d5700bad
-  ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
+  ms.openlocfilehash: 896bd56c3e040a1f2d949824037e68bbb5ecbc95
+  ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
   ms.translationtype: HT
   ms.contentlocale: es-ES
-  ms.lasthandoff: 12/09/2020
-  ms.locfileid: "96941497"
+  ms.lasthandoff: 01/05/2021
+  ms.locfileid: "97874394"
 landingContent:
 - title: Acerca de Azure Stack Hub resistente
   linkLists:
