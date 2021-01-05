@@ -4,6 +4,8 @@
   items:
     - name: ¿Qué es Azure Stack HCI?
       href: overview.md
+    - name: Comparación con Windows Server
+      href: concepts/compare-windows-server.md
     - name: Información de versión
       href: release-information.md
     - name: Notas de la versión
@@ -118,8 +120,6 @@
       items:
         - name: Requisitos del sistema
           href: concepts/system-requirements.md
-        - name: Comparación con Windows Server
-          href: concepts/compare-windows-server.md
         - name: Elección de unidades
           href: concepts/choose-drives.md
         - name: Consideraciones de simetría de unidad
@@ -228,3 +228,5 @@
       href: 'https://azure.microsoft.com/pricing/details/azure-stack/hci/'
     - name: Soporte técnico de Azure Stack HCI
       href: manage/get-support.md
+    - name: Notas de la versión archivadas de Azure Stack HCI
+      href: preview-release-notes.md

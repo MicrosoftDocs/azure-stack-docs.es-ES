@@ -285,6 +285,8 @@
           href: azure-stack-delegated-provider.md
         - name: Tipos de cuotas
           href: azure-stack-quota-types.md
+        - name: Uso de PowerShell para administrar planes y ofertas
+          href: azure-stack-powershell-plan-offer.md
     - name: Oferta de soluciones de red
       href: azure-stack-network-solutions-enable.md
     - name: Administración de proveedores de recursos de valor agregado
