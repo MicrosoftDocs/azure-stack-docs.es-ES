@@ -222,11 +222,13 @@
   items:
     - name: Página de producto de Azure Stack HCI
       href: 'https://azure.com/hci'
-    - name: Guía de evaluación de Azure Stack HCI
+    - name: Guía de evaluación
       href: 'https://github.com/Azure/AzureStackHCI-EvalGuide/blob/main/README.md'
-    - name: Precios de Azure Stack HCI
+    - name: Precios
       href: 'https://azure.microsoft.com/pricing/details/azure-stack/hci/'
-    - name: Soporte técnico de Azure Stack HCI
+    - name: Soporte técnico
       href: manage/get-support.md
-    - name: Notas de la versión archivadas de Azure Stack HCI
+    - name: Cursos
+      href: /learn/paths/azure-stack-hci-foundations/
+    - name: Archivado de notas de la versión
       href: preview-release-notes.md
