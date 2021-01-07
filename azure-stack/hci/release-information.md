@@ -6,13 +6,13 @@ ms.author: v-kedow
 ms.topic: conceptual
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 12/10/2020
-ms.openlocfilehash: 79462b14602b915289e79fff358e643f8f5f0292
-ms.sourcegitcommit: afdae61022037b5dba8345cb264049897e0aca8f
+ms.date: 12/18/2020
+ms.openlocfilehash: 22f5ee148952046d78baf6fd44b52136fd81c902
+ms.sourcegitcommit: 5d292b43676a55c0acd635d5253b342de1feca1f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97053146"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97710285"
 ---
 # <a name="azure-stack-hci-release-information"></a>Información de la versión de Azure Stack HCI
 
@@ -33,3 +33,10 @@ Todas las fechas se muestran en formato ISO 8601: *AAAA-MM-DD*
 | **Compilación del sistema operativo** | **Fecha de disponibilidad** | **artículo de KB**                                           |
 |:------------ |:----------------------|:---------------------------------------------------------|
 | 17784.1408   | 2020-12-10            | [KB 4592441](https://support.microsoft.com/help/4592441) |
+
+## <a name="next-steps"></a>Pasos siguientes
+
+Para obtener más información, vea también:
+
+- [Notas de la versión de Azure Stack HCI](https://support.microsoft.com/help/4595086/)
+- [Notas de la versión de Azure Stack HCl, versión 20H2, versiones preliminares](preview-release-notes.md)

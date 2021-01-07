@@ -8,12 +8,12 @@ ms.date: 12/07/2020
 ms.lastreviewed: 12/07/2020
 ms.author: bryanla
 ms.reviewer: xiao
-ms.openlocfilehash: e7565634d026d0d9bca5162ed709d76f760685b1
-ms.sourcegitcommit: 62eb5964a824adf7faee58c1636b17fedf4347e9
+ms.openlocfilehash: 9a88620fa333bd55a99796f4de292555f6cfd159
+ms.sourcegitcommit: a745662c7a5a18f135accf3f70d8508b57e83e2b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96778179"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97737868"
 ---
 # <a name="deploy-the-sql-server-resource-provider-on-azure-stack-hub"></a>Implementación del proveedor de recursos de SQL Server en Azure Stack Hub
 
@@ -36,13 +36,13 @@ Hay varios requisitos previos que se deben cumplir antes de implementar el prove
 
 - Agregue la máquina virtual de Windows Server necesaria a Marketplace de Azure Stack Hub.
   - Para una versión <= 1.1.47.0 de SQL RP, descargue la imagen de **Windows Server 2016 Datacenter - Server Core**.
-  - Para una versión > = 1.1.93.0 de SQL RP, descargue la imagen de **Complemento de Microsoft Azure Stack RP Windows Server (SOLO INTERNO)** . Esta versión de Windows Server está especializada en la infraestructura del complemento Azure Stack RP y no es visible para el marketplace de inquilinos.
+  - Para una versión >= 1.1.93.0 de SQL RP, descargue la imagen **Complemento de Microsoft Azure Stack RP Windows Server**. Esta versión de Windows Server está especializada en la infraestructura del complemento Azure Stack RP y no es visible para el marketplace de inquilinos.
 
 - Descargue la versión compatible del archivo binario del proveedor de recursos SQL según la tabla de asignación de versiones siguiente. Ejecute el autoextractor para extraer el contenido descargado en un directorio temporal. 
 
   |Versión de Azure Stack Hub compatible|Versión de SQL RP|Windows Server en el que se está ejecutando el servicio RP
   |-----|-----|-----|
-  |2008, 2005|[SQL RP, versión 1.1.93.0](https://aka.ms/azshsqlrp11930)|Complemento de Microsoft Azure Stack RP Windows Server (SOLO INTERNO)
+  |2008, 2005|[SQL RP, versión 1.1.93.1](https://aka.ms/azshsqlrp11931)|Complemento de Microsoft Azure Stack RP Windows Server
   |2005, 2002, 1910|[SQL RP, versión 1.1.47.0](https://aka.ms/azurestacksqlrp11470)|Windows Server 2016 Datacenter - Server Core|
   |1908|[SQL RP versión 1.1.33.0](https://aka.ms/azurestacksqlrp11330)|Windows Server 2016 Datacenter - Server Core|
   |     |     |     |

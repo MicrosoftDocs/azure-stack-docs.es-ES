@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 05/07/2020
 ms.author: sethm
 ms.lastreviewed: 12/27/2019
-ms.openlocfilehash: 55f62550521e6b57d08852eb6d3f0c14da735fec
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: 178164148e9d7de069c4ab12dc3042899b83d16d
+ms.sourcegitcommit: 8790b8a4ecf4421409534df5ff510d537cc000da
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94546810"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97801953"
 ---
 # <a name="configure-vpn-gateway-settings-for-azure-stack-hub"></a>Configuración de una puerta de enlace de VPN para Azure Stack Hub
 
@@ -39,7 +39,7 @@ Al crear una puerta de enlace de red virtual, debe especificar la SKU de la puer
 
 Azure Stack Hub ofrece las SKU de VPN Gateway que se muestran en la siguiente tabla:
 
-| | Rendimiento de VPN Gateway |Túneles IPsec máximos de VPN Gateway |
+| | Rendimiento del túnel |Túneles IPsec máximos de VPN Gateway |
 |-------|-------|-------|
 |**SKU básica**  | 100 Mbps    | 20    |
 |**SKU estándar**   | 100 Mbps  | 20 |
@@ -49,7 +49,7 @@ Azure Stack Hub ofrece las SKU de VPN Gateway que se muestran en la siguiente ta
 
 Azure Stack Hub no admite un cambio de tamaño de las SKU entre las SKU heredadas compatibles.
 
-De igual modo, Azure Stack Hub no admite un cambio de tamaño de una SKU heredada compatible ( **Básica** , **Estándar** y **HighPerformance** ), a una SKU más reciente compatible con Azure ( **VpnGw1** , **VpnGw2** y **VpnGw3** ).
+De igual modo, Azure Stack Hub no admite un cambio de tamaño de una SKU heredada compatible (**Básica**, **Estándar** y **HighPerformance**), a una SKU más reciente compatible con Azure (**VpnGw1**, **VpnGw2** y **VpnGw3**).
 
 ### <a name="configure-the-gateway-sku"></a>Configuración de la SKU de puerta de enlace
 
@@ -59,7 +59,7 @@ Si usa el portal de Azure Stack Hub para crear una puerta de enlace de red virtu
 
 #### <a name="powershell"></a>PowerShell
 
-En el siguiente ejemplo de PowerShell se especifica el parámetro `-GatewaySku` como **Standard** :
+En el siguiente ejemplo de PowerShell se especifica el parámetro `-GatewaySku` como **Standard**:
 
 ```powershell
 New-AzVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
@@ -88,12 +88,12 @@ Al crear la puerta de enlace de red virtual para una configuración de puerta de
 >
 > Además, Azure Stack Hub no admite el uso de selectores de tráfico basados en directivas para puertas de enlace basadas en rutas en este momento, ya que las configuraciones de directivas personalizadas de IPSec/IKE no se admiten.
 
-* **PolicyBased** : las VPN basadas en directivas cifran y dirigen los paquetes a través de túneles de IPsec basados en las directivas de IPsec configuradas con las combinaciones de prefijos de dirección entre su red local y la red virtual de Azure Stack Hub. La directiva (o el selector de tráfico) suele ser una lista de acceso en la configuración del dispositivo VPN.
+* **PolicyBased**: las VPN basadas en directivas cifran y dirigen los paquetes a través de túneles de IPsec basados en las directivas de IPsec configuradas con las combinaciones de prefijos de dirección entre su red local y la red virtual de Azure Stack Hub. La directiva (o el selector de tráfico) suele ser una lista de acceso en la configuración del dispositivo VPN.
 
   >[!NOTE]
   >**PolicyBased** es compatible con Azure, pero no con Azure Stack Hub.
 
-* **RouteBased** : las VPN basadas en rutas utilizan rutas que se configuran en la dirección IP de reenvío o en la tabla de enrutamiento para dirigir los paquetes a sus correspondientes interfaces de túnel. A continuación, las interfaces de túnel cifran o descifran los paquetes dentro y fuera de los túneles. La directiva o el selector de tráfico para las VPN **RouteBased** se configuran como una conectividad universal (también se pueden usar caracteres comodín). De forma predeterminada, no se puede cambiar. El valor de un tipo de VPN **basada en ruta** es **RouteBased**.
+* **RouteBased**: las VPN basadas en rutas utilizan rutas que se configuran en la dirección IP de reenvío o en la tabla de enrutamiento para dirigir los paquetes a sus correspondientes interfaces de túnel. A continuación, las interfaces de túnel cifran o descifran los paquetes dentro y fuera de los túneles. La directiva o el selector de tráfico para las VPN **RouteBased** se configuran como una conectividad universal (también se pueden usar caracteres comodín). De forma predeterminada, no se puede cambiar. El valor de un tipo de VPN **basada en ruta** es **RouteBased**.
 
 En el siguiente ejemplo de PowerShell se especifica `-VpnType` como **RouteBased**. Al crear una puerta de enlace, debe asegurarse de que `-VpnType` es correcto para su configuración.
 

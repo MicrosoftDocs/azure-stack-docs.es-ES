@@ -7,12 +7,12 @@ ms.date: 12/07/2020
 ms.author: bryanla
 ms.reviewer: caoyang
 ms.lastreviewed: 12/07/2020
-ms.openlocfilehash: b6d345ecfecaa3859420087bc7cff051b39fbb36
-ms.sourcegitcommit: 62eb5964a824adf7faee58c1636b17fedf4347e9
+ms.openlocfilehash: 0d123679c0394d740876df2fcc78f7347049c61c
+ms.sourcegitcommit: a745662c7a5a18f135accf3f70d8508b57e83e2b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96778162"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97737849"
 ---
 # <a name="deploy-the-mysql-resource-provider-on-azure-stack-hub"></a>Implementación del proveedor de recursos MySQL en Azure Stack Hub
 
@@ -35,13 +35,13 @@ Hay varios requisitos previos que se deben cumplir antes de implementar el prove
 
 - Agregue la máquina virtual de Windows Server necesaria a Marketplace de Azure Stack Hub.
   - Para una versión <= 1.1.47.0 de MySQL RP, descargue la imagen de **Windows Server 2016 Datacenter - Server Core**.
-  - Para una versión > = 1.1.93.0 de MySQL RP, descargue la imagen de **Complemento de Microsoft Azure Stack RP Windows Server (SOLO INTERNO)** . Esta versión de Windows Server está especializada en la infraestructura del complemento Azure Stack RP y no es visible para el marketplace de inquilinos.
+  - Para una versión >= 1.1.93.0 de MySQL RP, descargue la imagen **Complemento de Microsoft Azure Stack RP Windows Server**. Esta versión de Windows Server está especializada en la infraestructura del complemento Azure Stack RP y no es visible para el marketplace de inquilinos.
 
 - Descargue la versión compatible del archivo binario del proveedor de recursos de MySQL según la tabla de asignación de versiones siguiente. Ejecute el autoextractor para extraer el contenido descargado en un directorio temporal. 
 
   |Versión de Azure Stack Hub compatible|MySQL RP, versión|Windows Server en el que se está ejecutando el servicio RP
   |-----|-----|-----|
-  |2008, 2005|[MySQL RP, versión 1.1.93.0](https://aka.ms/azshmysqlrp11930)|Complemento de Microsoft Azure Stack RP Windows Server (SOLO INTERNO)
+  |2008, 2005|[MySQL RP, versión 1.1.93.1](https://aka.ms/azshmysqlrp11931)|Complemento de Microsoft Azure Stack RP Windows Server
   |2005, 2002, 1910|[MySQL RP, versión 1.1.47.0](https://aka.ms/azurestackmysqlrp11470)|Windows Server 2016 Datacenter - Server Core|
   |1908|[MySQL RP, versión 1.1.33.0](https://aka.ms/azurestackmysqlrp11330)|Windows Server 2016 Datacenter - Server Core|
   |     |     |     |

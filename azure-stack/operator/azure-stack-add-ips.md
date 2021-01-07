@@ -7,12 +7,12 @@ ms.date: 05/28/2020
 ms.author: justinha
 ms.reviewer: scottnap
 ms.lastreviewed: 09/10/2019
-ms.openlocfilehash: 423f274dab5569273cc35ec4aac6b082326217f3
-ms.sourcegitcommit: f4c2d5b87bc86ac4accb4d4df5b731b67d1a346c
+ms.openlocfilehash: 245817c62d2c5ddbd0856bdf4af869b7a66dbe18
+ms.sourcegitcommit: 8790b8a4ecf4421409534df5ff510d537cc000da
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84203143"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97802004"
 ---
 # <a name="add-public-ip-addresses"></a>Incorporación de direcciones IP públicas
 
@@ -44,7 +44,7 @@ Lo primero que debe hacer es obtener el bloque de direcciones que quiere agregar
 4. Busque el icono Proveedores de recursos y haga clic en el proveedor de recursos de red.
 5. Haga clic en el icono para usar los grupos de IP públicas.
 6. Haga clic en el botón Agregar grupo de IP.
-7. Escriba un nombre para el grupo de IP. El nombre que elija le ayudará a identificar fácilmente el grupo de IP. Es una buena opción que el nombre sea el mismo que el rango de direcciones, pero no es necesario.
+7. Escriba un nombre para el grupo de IP. El nombre que elija le ayudará a identificar fácilmente el grupo de IP. No se pueden usar caracteres especiales, como "/", en este campo. Es una buena opción que el nombre sea el mismo que el rango de direcciones, pero no es necesario.
 8. Escriba el bloque de direcciones que quiere agregar en la notación CIDR. Por ejemplo: 192.168.203.0/24
 9. Cuando proporcione un intervalo de CIDR válido en el campo Intervalo de direcciones (bloque CIDR), los campos Dirección IP inicial, Dirección IP final y Direcciones IP disponibles se completarán automáticamente. Recuerde que son de solo lectura y que se generan automáticamente; por lo tanto, no podrá cambiar estos campos sin modificar el valor del campo Intervalo de direcciones.
 10. Después de revisar la información en la hoja y confirmar que todo está bien, seleccione **Aceptar** para confirmar el cambio y agregar el intervalo de direcciones a Azure Stack Hub.

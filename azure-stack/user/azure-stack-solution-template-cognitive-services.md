@@ -7,12 +7,12 @@ ms.date: 10/09/2020
 ms.author: mabrigg
 ms.reviewer: guanghu
 ms.lastreviewed: 10/09/2020
-ms.openlocfilehash: 121a26506fbbe2993786c2fa7f7bfe58fc85a3f0
-ms.sourcegitcommit: 1e97e42380734ee7b239ee7e995c302d9dc3e2b3
+ms.openlocfilehash: 4dc6ad30d54b61e05f54be4a4f1301472794db60
+ms.sourcegitcommit: e13f27291bab236aac5d8b05401056961e9cc1e9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91952413"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97697694"
 ---
 # <a name="deploy-azure-cognitive-services-to-azure-stack-hub"></a>Implementación de Azure Cognitive Services en Azure Stack Hub
 
@@ -23,9 +23,10 @@ La creación de contenedores es un método de distribución de software en el qu
 La compatibilidad con contenedores está disponible actualmente para un subconjunto de servicios de Azure Cognitive Services:
 
 - **Voz**
+    - Conversión de voz en texto (estándar)
+    - Conversión de voz en texto (personalizada)
     - Texto a voz (estándar)
-    - Texto a voz (personalizado)
-    - Texto a voz (estándar)
+    - Texto a voz (neuronal)
 - **Lenguaje**
     - Comprensión del lenguaje
     - Text Analytics (análisis de opiniones)

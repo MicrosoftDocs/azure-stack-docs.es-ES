@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 06/15/2020
 ms.author: sethm
 ms.lastreviewed: 05/21/2019
-ms.openlocfilehash: 2393a088e64ec0a3144fe7d5f4c5c3d2c8e25ab1
-ms.sourcegitcommit: c9737939f4e437f1d954e163db972d58b3f98ffd
+ms.openlocfilehash: e21839e5333a03b1a36322f0c632a2b278da9665
+ms.sourcegitcommit: 8790b8a4ecf4421409534df5ff510d537cc000da
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84813724"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97802021"
 ---
 # <a name="create-vpn-gateways-for-azure-stack-hub"></a>Creación de puertas de enlace VPN para Azure Stack Hub
 
@@ -100,11 +100,11 @@ Los escenarios de alta disponibilidad solo se pueden configurar en la SKU de con
 
 Hay tres máquinas virtuales de infraestructura de puerta de enlace multiinquilino en Azure Stack Hub. Dos de estas VM están en modo activo y la tercera está en modo redundante. Las VM activas permite la creación de conexiones VPN en ellas y la VM redundante solo acepta conexiones VPN en el caso de una conmutación por error. Si una VM de puerta de enlace activa no está disponible, la conexión VPN conmuta por error a la VM redundante tras un breve período (unos segundos) de pérdida de conexión.
 
-## <a name="estimated-aggregate-throughput-by-sku"></a>Rendimiento agregado estimado por SKU
+## <a name="estimated-aggregate-tunnel-throughput-by-sku"></a>Rendimiento agregado estimado del túnel por SKU
 
-En la tabla siguiente se muestran los tipos de puerta de enlace y el rendimiento agregado estimado por SKU de puerta de enlace:
+En la tabla siguiente se muestran los tipos de puerta de enlace y el rendimiento agregado estimado de cada túnel o conexión por SKU de puerta de enlace:
 
-|| Rendimiento de VPN Gateway (1) | Túneles IPsec máx. de VPN Gateway (2) |
+|| Rendimiento del túnel (1) | Túneles IPsec máx. de VPN Gateway (2) |
 |-------|-------|-------|
 |**SKU Básico** **(3)** | 100 Mbps | 20 |
 |**SKU estándar** | 100 Mbps | 20 |
@@ -112,7 +112,7 @@ En la tabla siguiente se muestran los tipos de puerta de enlace y el rendimiento
 
 ### <a name="table-notes"></a>Notas de la tabla
 
-**(1)** El rendimiento de la VPN no está garantizado para las conexiones entre locales a través de Internet. Es el valor máximo posible del rendimiento.  
+**(1)** El rendimiento del túnel no está garantizado para las conexiones entre instalaciones locales a través de Internet. Es el valor máximo posible del rendimiento.  
 **(2)** El número de túneles máximo es el total por cada implementación de Azure Stack Hub para todas las suscripciones.  
 **(3)** El enrutamiento de BGP no es compatible con la SKU Básica.
 

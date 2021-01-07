@@ -7,12 +7,12 @@ ms.date: 11/19/2020
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 11/19/2020
-ms.openlocfilehash: 19438a56b487e4c5c167977fbc831bf64dc3695a
-ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
+ms.openlocfilehash: 791923d3b2deacdc886dfcc0167736bd7214f9b8
+ms.sourcegitcommit: e13f27291bab236aac5d8b05401056961e9cc1e9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96035324"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97697620"
 ---
 # <a name="connect-to-azure-stack-hub-with-powershell"></a>Conexión a Azure Stack Hub con PowerShell
 
@@ -123,6 +123,7 @@ New-AzureRmResourceGroup -Name "MyResourceGroup" -Location "Local"
 
 ## <a name="next-steps"></a>Pasos siguientes
 
+- [Uso de PowerShell para administrar suscripciones, planes y ofertas en Azure Stack Hub](azure-stack-powershell-plan-offer.md)
 - [Desarrollo de plantillas para Azure Stack Hub](../user/azure-stack-develop-templates.md).
 - [Implementación de plantillas con PowerShell](../user/azure-stack-deploy-template-powershell.md).
-  - [Referencia sobre el módulo de Azure Stack Hub](/powershell/azure/azure-stack/overview).
+- [Referencia sobre el módulo de Azure Stack Hub](/powershell/azure/azure-stack/overview).
