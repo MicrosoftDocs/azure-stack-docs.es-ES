@@ -1,19 +1,19 @@
 ---
 title: Uso del punto de conexión con privilegios para recopilar registros de diagnóstico
 description: Aprenda a recopilar los registros de diagnóstico a petición en Azure Stack Hub mediante el portal de administración o un script de PowerShell.
-author: justinha
+author: PatAltimore
 ms.custom: conteperfq4
 ms.topic: article
 ms.date: 09/02/2020
-ms.author: justinha
+ms.author: patricka
 ms.reviewer: shisab
 ms.lastreviewed: 09/02/2020
-ms.openlocfilehash: 48add21dfcbf5c83a525e1f0ebd6a9e2123f75e4
-ms.sourcegitcommit: 076ece88c3177db321f0ae32cba1d05179ffc393
+ms.openlocfilehash: 95ca8364e06176f1a96fae388e1d8047eb4a0403
+ms.sourcegitcommit: 6efe456173ce77d52789144709195b6291d0d707
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97794165"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950729"
 ---
 # <a name="send-azure-stack-hub-diagnostic-logs-by-using-the-privileged-endpoint-pep"></a>Envío de los registros de diagnóstico de Azure Stack Hub mediante el punto de conexión con privilegios
 
@@ -85,7 +85,9 @@ if ($session) {
   ```powershell
   Get-AzureStackLog -FilterByResourceProvider <<value-add RP name>>
   ```
- 
+  
+  ::: moniker range=">= azs-2008"
+
   Para recopilar los registros de SQL RP: 
 
   ```powershell
@@ -97,6 +99,8 @@ if ($session) {
   ```powershell
   Get-AzureStackLog -FilterByResourceProvider MySQLAdapter
   ```
+  
+  ::: moniker-end
 
   Para recopilar los registros de IoT Hub: 
 
