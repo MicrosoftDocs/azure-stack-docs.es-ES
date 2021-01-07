@@ -1,18 +1,18 @@
 ---
 title: Aplicación de una actualización de un fabricante de equipos originales en Azure Stack Hub
 description: Aprenda a aplicar la actualización de un fabricante de equipos originales (OEM) a Azure Stack Hub.
-author: IngridAtMicrosoft
+author: PatAltimore
 ms.topic: how-to
 ms.date: 10/15/2019
-ms.author: inhenkel
+ms.author: patricka
 ms.lastreviewed: 03/04/2020
 ms.reviewer: ppacent
-ms.openlocfilehash: f97b42898c106a58ac217738d5936c1686f74042
-ms.sourcegitcommit: ddcd083430ca905653d412dc2f7b813218d79509
+ms.openlocfilehash: 8b8c3a39f61693cad9904b99bd1f82b175d53a7b
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83374964"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97868870"
 ---
 # <a name="apply-azure-stack-hub-original-equipment-manufacturer-oem-updates"></a>Aplicación de actualizaciones del fabricante de equipos originales de Azure Stack Hub
 

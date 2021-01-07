@@ -1,18 +1,18 @@
 ---
 title: Uso del ASDK para validar una copia de seguridad de Azure Stack
 description: Obtenga información sobre cómo validar una copia de seguridad de sistemas integrados de Azure Stack mediante el ASDK.
-author: justinha
+author: PatAltimore
 ms.topic: article
 ms.date: 07/31/2019
-ms.author: justinha
+ms.author: patricka
 ms.reviewer: hectorl
 ms.lastreviewed: 03/11/2020
-ms.openlocfilehash: 268bef58cb4176909ec6a13029324b18de75b52d
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 0829174ab080ebc482e99490b7a5af5c2e0f2806
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "79512021"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97873051"
 ---
 # <a name="use-the-asdk-to-validate-an-azure-stack-backup"></a>Uso del ASDK para validar una copia de seguridad de Azure Stack
 Después de implementar Azure Stack y aprovisionar recursos de usuario, como ofertas, planes, cuotas y suscripciones, debe [habilitar la copia de seguridad de infraestructura de Azure Stack](../operator/azure-stack-backup-enable-backup-console.md). La programación y ejecución de copias de seguridad de infraestructura normales garantizará que los datos de administración de infraestructura no se pierdan si se produce un error muy grave en el servicio o el hardware.

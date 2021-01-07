@@ -1,18 +1,18 @@
 ---
 title: Búsqueda del identificador de nube
 description: Cómo buscar el identificador de nube en Ayuda y soporte técnico de Azure Stack Hub.
-author: myoungerman
+author: PatAltimore
 ms.topic: article
 ms.date: 10/08/2019
-ms.author: v-myoung
+ms.author: patricka
 ms.reviewer: shisab
 ms.lastreviewed: 10/08/2019
-ms.openlocfilehash: e14a2a000b52f09f664112467ce8694134243681
-ms.sourcegitcommit: 868887e4b13b1572f15004a9db2c334e60d8add2
+ms.openlocfilehash: 5483aa6859e839b978da7449d124811d3e2fb0bb
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91778236"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97870586"
 ---
 # <a name="find-your-cloud-id"></a>Búsqueda del identificador de nube
 

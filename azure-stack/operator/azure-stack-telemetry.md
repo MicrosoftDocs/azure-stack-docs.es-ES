@@ -2,18 +2,18 @@
 title: Configuración de la telemetría de Azure Stack Hub
 titleSuffix: Azure Stack
 description: Obtenga información sobre la telemetría de Azure Stack Hub y cómo configurar los valores de telemetría con PowerShell.
-author: IngridAtMicrosoft
+author: PatAltimore
 ms.topic: conceptual
 ms.date: 1/16/2020
-ms.author: inhenkel
+ms.author: patricka
 ms.reviewer: comartin
 ms.lastreviewed: 10/15/2019
-ms.openlocfilehash: 66bd65158222cad224ea1673de666bd4c464dab4
-ms.sourcegitcommit: 30ea43f486895828710297967270cb5b8d6a1a18
+ms.openlocfilehash: 467573e6e964e7c89bdffaf322ac473524d87892
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93415137"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97872643"
 ---
 # <a name="configure-azure-stack-hub-telemetry"></a>Configuración de la telemetría de Azure Stack Hub
 
@@ -78,7 +78,7 @@ Datos de seguridad y datos básicos de mantenimiento y calidad. Información bá
   - Atributos de procesador y memoria, como número de núcleos y cantidad de memoria instalada.
   - Atributos de almacenamiento, como el número de unidades, así como el tipo y tamaño de las unidades.
 
-- *Funcionalidad de telemetría* , que incluye el porcentaje de eventos cargados, eventos descartados y hora de última carga.
+- *Funcionalidad de telemetría*, que incluye el porcentaje de eventos cargados, eventos descartados y hora de última carga.
 - *Información relacionada con la calidad* que ayuda a Microsoft a desarrollar un conocimiento básico del rendimiento de Azure Stack Hub. Por ejemplo, el número de alertas críticas en una configuración de hardware determinada.
 - *Datos de compatibilidad* que ayudan a saber qué proveedores de recursos están instalados en un sistema y en una máquina virtual. Esto identifica posibles problemas de compatibilidad.
 
@@ -89,7 +89,7 @@ Información adicional, que incluye cómo se usan el sistema operativo y los ser
 > Es la configuración de telemetría predeterminada.
 
 **3 (Completo)**</br>
-Todos los datos necesarios para identificar problemas y ayudar a su solución, además de los datos de los niveles **Seguridad** , **Básico** y **Mejorado**.
+Todos los datos necesarios para identificar problemas y ayudar a su solución, además de los datos de los niveles **Seguridad**, **Básico** y **Mejorado**.
 
 > [!IMPORTANT]
 > Estos niveles de telemetría solo se aplican a los componentes de Microsoft Azure Stack Hub. Los componentes y servicios de software que no sean de Microsoft que se ejecutan en el host de ciclo de vida de hardware de los asociados de hardware de Azure Stack Hub se pueden comunicar con sus servicios en la nube fuera de estos niveles de telemetría. Acuda a su proveedor de soluciones de hardware de Azure Stack Hub para que le informe de su directiva de telemetría y cómo puede usarla o no.

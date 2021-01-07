@@ -2,22 +2,22 @@
 title: Validación del registro de Azure
 titleSuffix: Azure Stack Hub
 description: Aprenda a validar el registro de Azure con la herramienta Azure Stack Hub Readiness Checker.
-author: IngridAtMicrosoft
+author: PatAltimore
 ms.topic: how-to
 ms.date: 10/19/2020
-ms.author: inhenkel
+ms.author: patricka
 ms.reviewer: jerskine
 ms.lastreviewed: 10/19/2020
-ms.openlocfilehash: 0034bd17e42aba8ddbbf55c86aaffea9c243a600
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: ffe992c4a2db39f5b2e29d80a002f1486099baaa
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94545794"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97868801"
 ---
 # <a name="validate-azure-registration"></a>Validación del registro de Azure
 
-Use la herramienta Azure Stack Hub Readiness Checker ( **AzsReadinessChecker** ) para validar que su suscripción de Azure está lista para usarse con Azure Stack Hub antes de comenzar la implementación correspondiente. La herramienta Readiness Checker valida que:
+Use la herramienta Azure Stack Hub Readiness Checker (**AzsReadinessChecker**) para validar que su suscripción de Azure está lista para usarse con Azure Stack Hub antes de comenzar la implementación correspondiente. La herramienta Readiness Checker valida que:
 
 - La suscripción de Azure que usa es de tipo compatible. Las suscripciones deben ser un proveedor de soluciones en la nube (CSP) o el contrato Enterprise (EA).
 - La cuenta que se usa para registrar la suscripción en Azure puede iniciar sesión en Azure y es propietaria de una suscripción.
@@ -47,7 +47,7 @@ Tendrá que tener instalados los módulos Az de PowerShell. Para obtener instruc
 
 ### <a name="steps-to-validate-the-azure-registration"></a>Pasos para validar el registro de Azure
 
-1. Abra un símbolo del sistema de PowerShell con privilegios elevados y ejecute el siguiente comando para instalar **AzsReadinessChecker** :
+1. Abra un símbolo del sistema de PowerShell con privilegios elevados y ejecute el siguiente comando para instalar **AzsReadinessChecker**:
 
    ```powershell
    Install-Module -Name Az.BootStrapper -Force -AllowPrerelease
@@ -97,7 +97,7 @@ Tendrá que tener instalados los módulos Az de PowerShell. Para obtener instruc
 #### <a name="the-computer-on-which-the-tool-runs"></a>El equipo en el que se ejecuta la herramienta
 
 - Windows 10 o Windows Server 2016, con conectividad a internet.
-- Azure PowerShell 5.1 o posterior. Para comprobar la versión, ejecute el siguiente cmdlet de PowerShell y luego revise la versión **principal** y las versiones **secundarias** :  
+- Azure PowerShell 5.1 o posterior. Para comprobar la versión, ejecute el siguiente cmdlet de PowerShell y luego revise la versión **principal** y las versiones **secundarias**:  
   ```powershell
   $PSVersionTable.PSVersion
   ```
@@ -108,11 +108,11 @@ Tendrá que tener instalados los módulos Az de PowerShell. Para obtener instruc
 
 - Identifique el nombre de usuario y la contraseña de una cuenta con el rol de propietario de la suscripción de Azure que va a usar con Azure Stack Hub.  
 - Indique el identificador de la suscripción de Azure que va a usar.
-- Identifique la clase **AzureEnvironment** que va a usar. Los valores admitidos para el parámetro de nombre de entorno son **AzureCloud** , **AzureChinaCloud** o **AzureUSGovernment** , dependiendo de la suscripción a Azure que esté utilizando.
+- Identifique la clase **AzureEnvironment** que va a usar. Los valores admitidos para el parámetro de nombre de entorno son **AzureCloud**, **AzureChinaCloud** o **AzureUSGovernment**, dependiendo de la suscripción a Azure que esté utilizando.
 
 ### <a name="steps-to-validate-the-azure-registration"></a>Pasos para validar el registro de Azure
 
-1. En un equipo que cumpla los requisitos previos, abra un símbolo del sistema de PowerShell con privilegios elevados y ejecute el siguiente comando para instalar **AzsReadinessChecker** :
+1. En un equipo que cumpla los requisitos previos, abra un símbolo del sistema de PowerShell con privilegios elevados y ejecute el siguiente comando para instalar **AzsReadinessChecker**:
 
    ```powershell
    Install-Module Microsoft.AzureStack.ReadinessChecker -Force -AllowPrerelease
@@ -135,7 +135,7 @@ Tendrá que tener instalados los módulos Az de PowerShell. Para obtener instruc
 
 4. Desde el símbolo del sistema de PowerShell, ejecute el siguiente comando para iniciar la validación de la suscripción:
 
-   - Especifique el valor de `AzureEnvironment` como **AzureCloud** , **AzureGermanCloud** o **AzureChinaCloud**.  
+   - Especifique el valor de `AzureEnvironment` como **AzureCloud**, **AzureGermanCloud** o **AzureChinaCloud**.  
    - Proporcione el administrador de Azure AD y el nombre del inquilino de Azure AD.
       ```powershell
       Invoke-AzsRegistrationValidation -RegistrationAccount $registrationCredential -AzureEnvironment AzureCloud -RegistrationSubscriptionID $subscriptionID
@@ -185,9 +185,9 @@ Report location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadines
 Invoke-AzsRegistrationValidation Completed
 ```
 
-**Causa** : la cuenta no es un administrador de la suscripción de Azure.
+**Causa**: la cuenta no es un administrador de la suscripción de Azure.
 
-**Resolución** : use una cuenta que tenga un rol de administrador de la suscripción de Azure en la que el uso se facturará a partir de la implementación de Azure Stack Hub.
+**Resolución**: use una cuenta que tenga un rol de administrador de la suscripción de Azure en la que el uso se facturará a partir de la implementación de Azure Stack Hub.
 
 ### <a name="expired-or-temporary-password"></a>Contraseña temporal o expirada
 
@@ -205,9 +205,9 @@ Report location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadines
 Invoke-AzsRegistrationValidation Completed
 ```
 
-**Causa** : la cuenta no puede iniciar sesión porque la contraseña es temporal o ha expirado.
+**Causa**: la cuenta no puede iniciar sesión porque la contraseña es temporal o ha expirado.
 
-**Resolución** : en PowerShell, ejecute el siguiente comando y siga los avisos para restablecer la contraseña.
+**Resolución**: en PowerShell, ejecute el siguiente comando y siga los avisos para restablecer la contraseña.
 
 ```powershell
 Login-AzureRMAccount
@@ -228,9 +228,9 @@ Report location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadines
 Invoke-AzsRegistrationValidation Completed
 ```
 
-**Causa** : la cuenta no puede iniciar sesión en el entorno de Azure AD especificado. En este ejemplo, **AzureChinaCloud** se especifica como valor de **AzureEnvironment**.  
+**Causa**: la cuenta no puede iniciar sesión en el entorno de Azure AD especificado. En este ejemplo, **AzureChinaCloud** se especifica como valor de **AzureEnvironment**.  
 
-**Resolución** : confirme que la cuenta es válida para el entorno de Azure especificado. En PowerShell, ejecute el siguiente comando para comprobar que la cuenta es válida para un entorno concreto:
+**Resolución**: confirme que la cuenta es válida para el entorno de Azure especificado. En PowerShell, ejecute el siguiente comando para comprobar que la cuenta es válida para un entorno concreto:
 
 ```powershell
 Login-AzureRmAccount -EnvironmentName AzureChinaCloud

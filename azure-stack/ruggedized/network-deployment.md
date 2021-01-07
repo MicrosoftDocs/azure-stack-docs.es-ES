@@ -1,19 +1,19 @@
 ---
 title: Implementación de red de Azure Stack para Azure Stack Hub Ruggedized
 description: Obtenga información acerca de la implementación de red de Azure Stack para el dispositivo Azure Stack Hub Ruggedized.
-author: justinha
+author: PatAltimore
 ms.service: azure-stack
 ms.topic: conceptual
 ms.date: 10/14/2020
-ms.author: justinha
+ms.author: patricka
 ms.reviewer: shisab
 ms.lastreviewed: 10/14/2020
-ms.openlocfilehash: d41e7668533d4d67da329d0058f20a50a796555e
-ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
+ms.openlocfilehash: df20e3f9ad04959bf2c85d8912644819cae09ba1
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96941410"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97867696"
 ---
 # <a name="azure-stack-hub-ruggedized-network-deployment"></a>Implementación de red de Azure Stack Hub Ruggedized
 

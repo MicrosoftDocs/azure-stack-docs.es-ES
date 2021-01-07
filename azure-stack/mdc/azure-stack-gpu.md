@@ -3,7 +3,7 @@ title: VM de GPU en Azure Stack | Microsoft Docs
 description: Referencia de computación de GPU en Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: justinha
+author: PatAltimore
 manager: femila
 ms.service: azure-stack
 ms.workload: na
@@ -11,15 +11,15 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 01/02/2020
-ms.author: justinha
+ms.author: patricka
 ms.reviewer: kivenkat
 ms.lastreviewed: 01/02/2020
-ms.openlocfilehash: c80817f7fe92916e1d83ae7bc1e83290d25e2906
-ms.sourcegitcommit: e4e2cc6a68f02c3e856f58ca5ee51b3313c7ff8f
+ms.openlocfilehash: 2b941c47b9c9662998b8d55bc6878e935969d1a4
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92183524"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97872541"
 ---
 # <a name="gpu-vms-on-azure-stack"></a>VM de GPU en Azure Stack 
 

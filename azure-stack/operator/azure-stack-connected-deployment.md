@@ -1,18 +1,18 @@
 ---
 title: Decisiones de implementación conectada a Azure en sistemas integrados de Azure Stack Hub
 description: Determine las decisiones sobre el planeamiento de las implementaciones conectadas a Azure de sistemas integrados de Azure Stack Hub, incluidas la facturación y la identidad.
-author: IngridAtMicrosoft
+author: PatAltimore
 ms.topic: conceptual
 ms.date: 03/04/2020
-ms.author: inhenkel
+ms.author: patricka
 ms.reviewer: wfayed
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: c9defcc7f569ba30628cb16632b52c00ae7f2bec
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: 82317b5212775f37b25ff465a4ea3b4ba085b585
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94543875"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97871079"
 ---
 # <a name="azure-connected-deployment-planning-decisions-for-azure-stack-hub-integrated-systems"></a>Decisiones sobre planeamiento de una implementación conectada a Azure de sistemas integrados de Azure Stack Hub
 Una vez que haya decidido [cómo va a integrar Azure Stack Hub en el entorno de nube híbrida](azure-stack-connection-models.md), puede concluir sus decisiones sobre la implementación de Azure Stack Hub.

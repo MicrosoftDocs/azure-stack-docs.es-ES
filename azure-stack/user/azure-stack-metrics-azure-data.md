@@ -3,15 +3,15 @@ title: Uso de Azure Monitor en Azure Stack Hub
 description: Obtenga información sobre cómo usar Azure Monitor en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 5/27/2020
+ms.date: 12/16/2020
 ms.author: mabrigg
 ms.lastreviewed: 12/01/2019
-ms.openlocfilehash: 7d0a11f8a559f1f40ae797392f27caa815129c69
-ms.sourcegitcommit: a5d3cbe1a10c2a63de95b9e72391dd83473ee299
+ms.openlocfilehash: 7688ebd4aed8ee797cd940da5631e19e4c1ef8ff
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88920787"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97874122"
 ---
 # <a name="use-azure-monitor-on-azure-stack-hub"></a>Uso de Azure Monitor en Azure Stack Hub
 

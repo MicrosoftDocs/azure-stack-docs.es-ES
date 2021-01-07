@@ -3,16 +3,16 @@ title: Problemas conocidos del motor de AKS en Azure Stack Hub
 description: Obtenga más información sobre los problemas conocidos del motor de AKS en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 09/11/2020
+ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 09/11/2020
-ms.openlocfilehash: f12895e82cbe6e4c2370eec6fb33eb90383bb669
-ms.sourcegitcommit: 716ca50bd198fd51a4eec5b40d5247f6f8c16530
+ms.openlocfilehash: e1a7768eee19fb8a2246ec8c3934f5742d23534c
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92898611"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97874173"
 ---
 # <a name="known-issues-with-the-aks-engine-on-azure-stack-hub"></a>Problemas conocidos del motor de AKS en Azure Stack Hub
 
@@ -20,23 +20,23 @@ En este tema se tratan los problemas conocidos del motor de AKS en Azure Stack H
 
 ## <a name="unable-to-resize-cluster-vms-with-the-compute-service"></a>No se puede cambiar el tamaño de las VM del clúster con el servicio de proceso
 
-- **Aplicable a** : Azure Stack Hub, motor de AKS (todo)
-- **Descripción** : el cambio de tamaño de las VM del clúster a través del servicio de proceso no funciona con el motor de AKS. El motor de AKS mantiene el estado del clúster en el archivo JSON del modelo de API. Para asegurarse de que el tamaño de la VM deseado se refleja en todas las operaciones de creación, actualización o escalado realizadas con el motor de AKS, debe actualizar el modelo de API antes de ejecutar cualquiera de esas operaciones. Por ejemplo, si cambia el tamaño de una VM en un clúster ya implementado a un tamaño diferente mediante el servicio de proceso, el estado se perderá cuando se ejecute `aks-engine update`.
-- **Corrección** : para que este trabajo busque el modelo de API del clúster, cambie el tamaño y, a continuación, ejecute `aks-engine update`.
-- **Repetición** : al intentar cambiar el tamaño mediante el servicio de proceso.
+- **Aplicable a**: Azure Stack Hub, motor de AKS (todo)
+- **Descripción**: el cambio de tamaño de las VM del clúster a través del servicio de proceso no funciona con el motor de AKS. El motor de AKS mantiene el estado del clúster en el archivo JSON del modelo de API. Para asegurarse de que el tamaño de la VM deseado se refleja en todas las operaciones de creación, actualización o escalado realizadas con el motor de AKS, debe actualizar el modelo de API antes de ejecutar cualquiera de esas operaciones. Por ejemplo, si cambia el tamaño de una VM en un clúster ya implementado a un tamaño diferente mediante el servicio de proceso, el estado se perderá cuando se ejecute `aks-engine update`.
+- **Corrección**: para que este trabajo busque el modelo de API del clúster, cambie el tamaño y, a continuación, ejecute `aks-engine update`.
+- **Repetición**: al intentar cambiar el tamaño mediante el servicio de proceso.
 
 ## <a name="disk-detach-operation-fails-in-aks-engine-0550"></a>Error en la operación de desasociación de disco en el motor de AKS 0.55.0
 
-- **Aplicable a** : Azure Stack Hub (actualización 2005), motor de AKS 0.55.0
-- **Descripción** : al intentar eliminar una implementación que contiene volúmenes de persistencia, la operación de eliminación desencadena una serie de errores de asociación y desasociación. Esto se debe a un error en el proveedor de nube del motor de AKS v0.55.0. El proveedor de nube llama a Azure Resource Manager mediante una versión más nueva de la API que la que admite actualmente Azure Resource Manager en Azure Stack Hub (actualización 2005).
-- **Corrección** : puede encontrar más detalles y la mitigación en el [repositorio de GitHub del motor de AKS (problema 3817)](https://github.com/Azure/aks-engine/issues/3817#issuecomment-691329443). Actualice en cuanto esté disponible una nueva compilación del motor de AKS y la imagen correspondiente.
-- **Repetición** : al eliminar una implementación que contiene volúmenes de persistencia.
+- **Aplicable a**: Azure Stack Hub (actualización 2005), motor de AKS 0.55.0
+- **Descripción**: al intentar eliminar una implementación que contiene volúmenes de persistencia, la operación de eliminación desencadena una serie de errores de asociación y desasociación. Esto se debe a un error en el proveedor de nube del motor de AKS v0.55.0. El proveedor de nube llama a Azure Resource Manager mediante una versión más nueva de la API que la que admite actualmente Azure Resource Manager en Azure Stack Hub (actualización 2005).
+- **Corrección**: puede encontrar más detalles y la mitigación en el [repositorio de GitHub del motor de AKS (problema 3817)](https://github.com/Azure/aks-engine/issues/3817#issuecomment-691329443). Actualice en cuanto esté disponible una nueva compilación del motor de AKS y la imagen correspondiente.
+- **Repetición**: al eliminar una implementación que contiene volúmenes de persistencia.
 
 
 
 ## <a name="upgrade-issues-in-aks-engine-0510"></a>Problemas de actualización del motor de AKS 0.51.0
 
-* Durante la actualización (aks-engine upgrade) de un clúster de Kubernetes de la versión 1,15.x a 1.16.x, la actualización de los siguientes componentes de Kubernetes requiere pasos manuales adicionales: **kube-proxy** , **azure-cni-networkmonitor** , **csi-secrets-store** , **kubernetes-dashboard** . A continuación se describe lo que puede observar y cómo solucionar los problemas.
+* Durante la actualización (aks-engine upgrade) de un clúster de Kubernetes de la versión 1,15.x a 1.16.x, la actualización de los siguientes componentes de Kubernetes requiere pasos manuales adicionales: **kube-proxy**, **azure-cni-networkmonitor**, **csi-secrets-store**, **kubernetes-dashboard**. A continuación se describe lo que puede observar y cómo solucionar los problemas.
 
   * En entornos conectados, este problema no es evidente, porque no hay ningún signo en el clúster de que los componentes afectados no se hayan actualizado. Todo parece funcionar según lo previsto.
   <!-- * In disconnected environments, you can see this problem when you run a query for the system pods status and see that the pods for the components mentioned below are not in "Ready" state: -->

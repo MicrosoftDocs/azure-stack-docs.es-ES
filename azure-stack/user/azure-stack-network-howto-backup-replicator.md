@@ -3,16 +3,16 @@ title: Replicación de recursos entre varias suscripciones de Azure Stack Hub
 description: Aprenda a replicar recursos mediante el conjunto de scripts del replicador de suscripciones de Azure Stack Hub.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 08/24/2020
+ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: rtiberiu
 ms.lastreviewed: 11/07/2019
-ms.openlocfilehash: 80200b283ba6ef0266513eefaa1fdcb8faf9faa8
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: f638f4a46a805d03d30512f5f32285702c67c20c
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94546742"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97874020"
 ---
 # <a name="replicate-resources-using-the-azure-stack-hub-subscription-replicator"></a>Replicación de recursos mediante el replicador de suscripciones de Azure Stack Hub
 

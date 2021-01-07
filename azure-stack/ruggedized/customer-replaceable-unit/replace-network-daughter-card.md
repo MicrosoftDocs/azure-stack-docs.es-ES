@@ -1,18 +1,18 @@
 ---
 title: Sustitución de una tarjeta secundaria de red
 description: Obtenga información sobre cómo reemplazar una tarjeta secundaria de red.
-author: myoungerman
+author: PatAltimore
 ms.topic: how-to
 ms.date: 11/13/2020
-ms.author: v-myoung
+ms.author: patricka
 ms.reviewer: ''
 ms.lastreviewed: ''
-ms.openlocfilehash: 03a67a92ce8ff873b50fb9e39e4870811ba4b1a5
-ms.sourcegitcommit: 3bd42be22e626564b62e560dc037aed4d462011f
+ms.openlocfilehash: dcf7240b3f62758fc1468890fcd4ce19ccb89bd8
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97393170"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97874615"
 ---
 # <a name="replacing-a-network-daughter-card"></a>Sustitución de una tarjeta secundaria de red
 

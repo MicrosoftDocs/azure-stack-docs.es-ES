@@ -1,18 +1,18 @@
 ---
 title: Conectarse al ASDK
 description: Obtenga información sobre cómo conectarse al Kit de desarrollo de Azure Stack (ASDK).
-author: justinha
+author: PatAltimore
 ms.topic: article
 ms.date: 11/14/2020
-ms.author: justinha
+ms.author: patricka
 ms.reviewer: knithinc
 ms.lastreviewed: 11/14/2020
-ms.openlocfilehash: 7970bf0f4e90792f9fe28534eab1bfa53ce7f39b
-ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
+ms.openlocfilehash: 0bf880cdbb181ae923a16932ba5522cfadc74be0
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95517487"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97873527"
 ---
 # <a name="connect-to-the-asdk"></a>Conectarse al ASDK
 

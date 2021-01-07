@@ -3,16 +3,16 @@ title: Uso de plantillas de Administrador de recursos de Azure en Azure Stack Hu
 description: Aprenda a usar plantillas de Azure Resource Manager en Azure Stack Hub para aprovisionar recursos.
 author: mattbriggs
 ms.topic: article
-ms.date: 5/27/2020
+ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: justini
 ms.lastreviewed: 11/14/2019
-ms.openlocfilehash: 9d5bf245a78bfd2ec77578701c4727c40b98f9e6
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: 8551bd8c8387bd4527a858fc5aeaf58470e828ce
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94545799"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97874241"
 ---
 # <a name="use-azure-resource-manager-templates-in-azure-stack-hub"></a>Uso de plantillas de Administrador de recursos de Azure en Azure Stack Hub
 

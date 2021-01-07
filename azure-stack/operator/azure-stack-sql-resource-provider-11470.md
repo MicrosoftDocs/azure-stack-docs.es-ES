@@ -1,18 +1,18 @@
 ---
 title: Notas de la versión del proveedor de recursos de SQL 1.1.47.0 de Azure Stack Hub
 description: Vea las novedades de la actualización más reciente del proveedor de recursos SQL de Azure Stack Hub, entre las que se incluyen nuevas características, correcciones y problemas conocidos.
-author: justinha
+author: PatAltimore
 ms.topic: article
 ms.date: 11/26/2019
-ms.author: justinha
+ms.author: patricka
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/26/2019
-ms.openlocfilehash: 9f86466ebacaebc74b7799ec1145cc405faf1b7d
-ms.sourcegitcommit: 08a421ab5792ab19cc06b849763be22f051e6d78
+ms.openlocfilehash: d95be92f4cab37c41e1802fdcb18969e3276f459
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89364701"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97869226"
 ---
 # <a name="sql-resource-provider-11470-release-notes"></a>Notas de la versión del proveedor de recursos de SQL 1.1.47.0
 

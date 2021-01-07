@@ -2,20 +2,20 @@
 title: Registro de Azure Stack Hub en Azure
 titleSuffix: Azure Stack Hub
 description: Aprenda a registrar los sistemas integrados de Azure Stack Hub en Azure de forma que pueda descargar elementos de Azure Marketplace y configurar informes de datos.
-author: IngridAtMicrosoft
+author: PatAltimore
 ms.topic: how-to
 ms.date: 11/19/2020
-ms.author: inhenkel
+ms.author: patricka
 ms.reviewer: avishwan
 ms.lastreviewed: 11/19/2020
 ms.custom: contperf-fy20q4
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: 28c809f70c479c4037061bd7c1504c0954a3584c
-ms.sourcegitcommit: e13f27291bab236aac5d8b05401056961e9cc1e9
+ms.openlocfilehash: 7888d23390706a098f814f4cc674d030662c9915
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97697646"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97869566"
 ---
 # <a name="register-azure-stack-hub-with-azure"></a>Registro de Azure Stack Hub en Azure
 
@@ -471,7 +471,7 @@ El registro se tiene que actualizar en las siguientes circunstancias:
 - Al cambiar el modelo de facturación.
 - Cuando se escalan cambios (se agregan o quitan nodos) para la facturación por capacidad.
 
-### <a name="prerequisites"></a>Prerrequisitos
+### <a name="prerequisites"></a>Requisitos previos
 
 Necesita la siguiente información del [portal de administración](#verify-azure-stack-hub-registration) para renovar o cambiar el registro:
 

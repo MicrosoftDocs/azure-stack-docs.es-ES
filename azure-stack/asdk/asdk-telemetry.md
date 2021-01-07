@@ -1,18 +1,18 @@
 ---
 title: Telemetría de Azure Stack
 description: Obtenga información sobre cómo configurar los valores de telemetría de Azure Stack con PowerShell.
-author: justinha
+author: PatAltimore
 ms.topic: article
 ms.date: 02/12/2019
-ms.author: justinha
+ms.author: patricka
 ms.reviewer: misainat
 ms.lastreviewed: 10/15/2019
-ms.openlocfilehash: 34995d8e1d5525e242a0b0919e7b3927c37507ca
-ms.sourcegitcommit: 30ea43f486895828710297967270cb5b8d6a1a18
+ms.openlocfilehash: a3bedcc62645dd518e694cca1052d6002bed5306
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93415154"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97872966"
 ---
 # <a name="azure-stack-telemetry"></a>Telemetría de Azure Stack
 
@@ -23,7 +23,7 @@ Como operador de Azure Stack, la telemetría puede proporcionar información val
 > [!NOTE]
 > Azure Stack también se puede configurar para reenviar información de uso a Azure para la facturación. Esta información es necesaria para los clientes de Azure Stack de varios nodos que eligen la facturación de pago por uso. Los informes de uso se controlan de forma independiente de la telemetría y no son necesarios para los clientes de varios nodos que eligen el modelo de capacidad o para los usuarios del Kit de desarrollo de Azure Stack (ASDK). En estos escenarios, los informes de uso se pueden desactivar [mediante el script de registro](../operator/azure-stack-usage-reporting.md).
 
-La telemetría de Azure Stack se basa en el componente *Experiencia del usuario conectado y telemetría de Windows Server 2016* , que usa la tecnología de registro de [Seguimiento de eventos para Windows (ETW)](/windows/win32/tracelogging/trace-logging-about) para recopilar y almacenar eventos de telemetría y datos. Los componentes de Azure Stack usan la misma tecnología de registro para publicar eventos y datos que se recopilan mediante las API de seguimiento y registro de eventos del sistema operativo. Algunos ejemplos de componentes de Azure Stack son Proveedor de recursos de red, Proveedor de recursos de almacenamiento, Proveedor de recursos de supervisión y Proveedor de recursos de actualización. El componente Experiencia del usuario y telemetría asociadas cifra los datos mediante SSL y usa la asignación de certificados para transmitir datos de telemetría al servicio Microsoft Data Management a través de HTTPS.
+La telemetría de Azure Stack se basa en el componente *Experiencia del usuario conectado y telemetría de Windows Server 2016*, que usa la tecnología de registro de [Seguimiento de eventos para Windows (ETW)](/windows/win32/tracelogging/trace-logging-about) para recopilar y almacenar eventos de telemetría y datos. Los componentes de Azure Stack usan la misma tecnología de registro para publicar eventos y datos que se recopilan mediante las API de seguimiento y registro de eventos del sistema operativo. Algunos ejemplos de componentes de Azure Stack son Proveedor de recursos de red, Proveedor de recursos de almacenamiento, Proveedor de recursos de supervisión y Proveedor de recursos de actualización. El componente Experiencia del usuario y telemetría asociadas cifra los datos mediante SSL y usa la asignación de certificados para transmitir datos de telemetría al servicio Microsoft Data Management a través de HTTPS.
 
 > [!NOTE]
 > Para admitir el flujo de datos de telemetría, el puerto 443 (HTTPS) debe estar abierto en la red. El componente Experiencia del usuario conectado y telemetría se conecta al servicio Administración de datos de Microsoft en `https://v10.vortex-win.data.microsoft.com` y también a `https://settings-win.data.microsoft.com` para descargar la información de configuración.
@@ -81,9 +81,9 @@ Los niveles de telemetría son acumulativos y se clasifican en cuatro niveles (0
   - Atributos de la red, como el número y la velocidad de los adaptadores de red.
   - Atributos del procesador y la memoria, como el número de núcleos y el tamaño de la memoria.
   - Atributos de almacenamiento, como número de unidades, tipo y tamaño
-- **Funcionalidad de telemetría** , que incluye el porcentaje de eventos cargados, eventos descartados y hora de última carga.
+- **Funcionalidad de telemetría**, que incluye el porcentaje de eventos cargados, eventos descartados y hora de última carga.
 - **Información relacionada con la calidad** que ayuda a Microsoft a desarrollar un conocimiento básico del funcionamiento de Azure Stack. Un ejemplo es el número de alertas críticas en una configuración de hardware determinada.
-- **Datos de compatibilidad** , que permiten saber qué proveedores de recursos están instalados en un sistema y en una VM, e identifican posibles problemas de compatibilidad.
+- **Datos de compatibilidad**, que permiten saber qué proveedores de recursos están instalados en un sistema y en una VM, e identifican posibles problemas de compatibilidad.
 
 **2 (Mejorado)** : información adicional, que incluye cómo se usa el sistema operativo y otros servicios de Azure Stack, cuál es su rendimiento, datos avanzados de confiabilidad y datos de los niveles Básico y Seguridad.
 

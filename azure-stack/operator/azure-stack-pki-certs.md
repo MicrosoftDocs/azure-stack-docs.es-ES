@@ -1,18 +1,18 @@
 ---
 title: Requisitos de certificados de la infraestructura de clave pública de Azure Stack Hub
 description: Conozca los requisitos de los certificados PKI de Azure Stack Hub para los sistemas integrados de Azure Stack Hub.
-author: IngridAtMicrosoft
+author: PatAltimore
 ms.topic: conceptual
 ms.date: 08/19/2020
-ms.author: inhenkel
+ms.author: patricka
 ms.reviewer: ppacent
 ms.lastreviewed: 12/16/2019
-ms.openlocfilehash: ee0ef7119dfb2255cd97e343f8e7339ab715ed7d
-ms.sourcegitcommit: b50dd116d6d1f89d42bd35ad0f85bb25c5192921
+ms.openlocfilehash: 8304ef3fe981545ac05de64b335c1edabdf32651
+ms.sourcegitcommit: c5d46662492887b70a599a60f3c3d27e3460a742
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "93049609"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965535"
 ---
 # <a name="azure-stack-hub-public-key-infrastructure-pki-certificate-requirements"></a>Requisitos de certificados de la infraestructura de clave pública (PKI) de Azure Stack Hub
 
@@ -38,7 +38,6 @@ En la lista siguiente se describen los requisitos generales de emisión, segurid
 ::: moniker-end
 - No se admite el uso de certificados autofirmados.
 - Para la implementación y la rotación, se puede usar un certificado único que abarque todos los espacios de nombres en los campos Nombre del firmante y Nombre alternativo del firmante (SAN) del certificado; O BIEN se pueden usar certificados individuales para cada uno de los espacios de nombres siguientes que requieren los servicios de Azure Stack Hub que se van a usar. Para ambos enfoques hay que usar caracteres comodín para los puntos de conexión donde sean necesarios, como **KeyVault** y **KeyVaultInternal**.
-- El cifrado PFX del certificado debe ser 3DES.
 - El algoritmo de firma de certificado no debe ser SHA1.
 - El formato del certificado debe ser PFX, porque las claves públicas y privadas son necesarias para la instalación de Azure Stack Hub. La clave privada debe tener establecido el atributo de clave de la máquina local.
 - El cifrado de PFX debe ser 3DES (este es el valor predeterminado cuando se realiza la exportación desde un cliente de Windows 10 o desde un almacén de certificados de Windows Server 2016).
@@ -109,8 +108,8 @@ En la tabla siguiente se describen los puntos de conexión y los certificados ne
 |App Service|API|api.appservice. *&lt;región>.&lt;fqdn>*<br>(Certificado SSL<sup>2</sup>)|appservice. *&lt;región>.&lt;fqdn>*<br>scm.appservice. *&lt;región>.&lt;fqdn>*|
 |App Service|FTP|ftp.appservice. *&lt;región>.&lt;fqdn>*<br>(Certificado SSL<sup>2</sup>)|appservice. *&lt;región>.&lt;fqdn>*<br>scm.appservice. *&lt;región>.&lt;fqdn>*|
 |App Service|SSO|sso.appservice. *&lt;región>.&lt;fqdn>*<br>(Certificado SSL<sup>2</sup>)|appservice. *&lt;región>.&lt;fqdn>*<br>scm.appservice. *&lt;región>.&lt;fqdn>*|
-|Event Hubs|SSL|&#42;.eventhub. *&lt;region>.&lt;fqdn>* | eventhub. *&lt;región>.&lt;fqdn>* |
-|IoT Hub|SSL|&#42;.mgmtiothub. *&lt;region>.&lt;fqdn>* | mgmtiothub. *&lt;region>.&lt;fqdn>* |
+|Event Hubs|SSL|&#42;.eventhub. *&lt;region>.&lt;fqdn>*<br>(Certificado SSL comodín)|eventhub. *&lt;región>.&lt;fqdn>* |
+|IoT Hub|SSL|&#42;.mgmtiothub. *&lt;region>.&lt;fqdn>*<br>(Certificado SSL comodín)|mgmtiothub. *&lt;region>.&lt;fqdn>* |
 |SQL, MySQL|SQL y MySQL|&#42;.dbadapter. *&lt;región>.&lt;fqdn>*<br>(Certificado SSL comodín)|dbadapter. *&lt;región>.&lt;fqdn>*|
 
 <sup>1</sup> Requiere un certificado con varios nombres alternativos de firmante comodín. Puede que no todas las entidades de certificación públicas admitan varios nombres alternativos del firmante comodín en un solo certificado.

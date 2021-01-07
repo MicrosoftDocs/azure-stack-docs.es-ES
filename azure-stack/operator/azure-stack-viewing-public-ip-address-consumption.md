@@ -2,18 +2,18 @@
 title: Administración de recursos de red
 titleSuffix: Azure Stack Hub
 description: Aprenda a administrar los recursos de red, incluido el grupo de direcciones MAC y el consumo de direcciones IP públicas en una región.
-author: IngridAtMicrosoft
+author: PatAltimore
 ms.topic: conceptual
 ms.date: 1/22/2020
-ms.author: inhenkel
+ms.author: patricka
 ms.reviewer: scottnap
 ms.lastreviewed: 09/17/2019
-ms.openlocfilehash: b96485e74286cbbbd2ff20f2378dc7c452849b52
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: f4fc98a7fae3a58d9467d8c1cafe46fcbef858fc
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86487403"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97868733"
 ---
 # <a name="manage-network-resources-in-azure-stack-hub"></a>Administración de recursos de red en Azure Stack Hub
 

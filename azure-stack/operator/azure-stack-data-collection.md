@@ -1,18 +1,18 @@
 ---
 title: Control de datos de clientes y registro de Azure Stack Hub
 description: Conozca cómo Azure Stack Hub recopila información y datos de clientes.
-author: JustinHall
+author: PatAltimore
 ms.topic: article
 ms.date: 02/24/2020
-ms.author: justinha
+ms.author: patricka
 ms.reviewer: chengwei
 ms.lastreviewed: 02/24/2020
-ms.openlocfilehash: 881df3896d832f3f25ae3d81eda2ec904d308796
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: 2f6c46194328dd8335c2cf39ca4deca13664df63
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86489001"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97870994"
 ---
 # <a name="azure-stack-hub-log-and-customer-data-handling"></a>Control de datos de clientes y registro de Azure Stack Hub 
 

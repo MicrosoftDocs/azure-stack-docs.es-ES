@@ -3,16 +3,16 @@ title: Traslado del clúster del elemento de Marketplace al motor de AKS en Azur
 description: Aprenda a trasladar el clúster del elemento de Marketplace al motor de AKS en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 09/02/2020
+ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 09/02/2020
-ms.openlocfilehash: f80be3811f24a8ee2677543d2229f99f335d9eb3
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.openlocfilehash: 112862f5e73806d2e73d809b70e4bd7fd2e315b5
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90573945"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97874190"
 ---
 # <a name="move-your-marketplace-item-cluster-to-the-aks-engine-on-azure-stack-hub"></a>Traslado del clúster del elemento de Marketplace al motor de AKS en Azure Stack Hub
 

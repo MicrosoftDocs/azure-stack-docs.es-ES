@@ -3,15 +3,15 @@ title: Habilitación de la CLI de Azure para usuarios de Azure Stack Hub
 description: Obtenga información sobre cómo habilitar la interfaz de la línea de comandos (CLI) multiplataforma para administrar e implementar recursos en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 5/27/2020
+ms.date: 12/16/2020
 ms.author: mabrigg
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: 39cb4e97c0a73b1299df3f84ce45d7f4db820262
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: 8b92a7e75d95d173633f5bbbe802166268c5ca8d
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94544265"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97871470"
 ---
 # <a name="enable-azure-cli-for-azure-stack-hub-users"></a>Habilitación de la CLI de Azure para usuarios de Azure Stack Hub
 

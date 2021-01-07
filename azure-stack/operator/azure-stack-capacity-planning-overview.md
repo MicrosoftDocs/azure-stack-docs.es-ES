@@ -2,18 +2,18 @@
 title: Introducción al planeamiento de capacidad
 titleSuffix: Azure Stack Hub
 description: Obtenga información sobre el planeamiento de capacidad para las implementaciones de Azure Stack Hub.
-author: IngridAtMicrosoft
+author: PatAltimore
 ms.topic: conceptual
 ms.date: 05/31/2019
-ms.author: inhenkel
+ms.author: patricka
 ms.reviewer: prchint
 ms.lastreviewed: 05/31/2019
-ms.openlocfilehash: e097904f990f76898253e2d56115b10ce230de36
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 4b3a6b58b6738c4248eaeb5d76b48fa9d1fdb442
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77700993"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97871360"
 ---
 # <a name="capacity-planning-for-azure-stack-hub-overview"></a>Introducción al planeamiento de capacidad de Azure Stack Hub
 
@@ -33,4 +33,4 @@ En las siguientes secciones, se proporcionan más detalles acerca de cada compon
 
 - [Proceso de Azure Stack Hub](azure-stack-capacity-planning-compute.md)
 - [Almacenamiento de Azure Stack Hub](azure-stack-capacity-planning-storage.md)
-- [Capacity Planner de Azure Stack Hub](azure-stack-capacity-planner.md)
+- [Azure Stack Hub Capacity Planner](azure-stack-capacity-planner.md)

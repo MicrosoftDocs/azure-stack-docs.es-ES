@@ -4,15 +4,15 @@ description: Aprenda a publicar servicios de Azure Stack Hub en el centro de dat
 author: myoung
 ms.topic: article
 ms.date: 09/24/2020
-ms.author: v-myoung
+ms.author: patricka
 ms.reviewer: wamota
 ms.lastreviewed: 09/24/2020
-ms.openlocfilehash: ed9f2a8eeeeb2cfdfcc4e96c1672d7da8fff64b2
-ms.sourcegitcommit: 703be61f2f1565bf478b8c184753869c29e5c33c
+ms.openlocfilehash: 989a20216fd5613fa1269009e5c6dc7b918b8300
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91495752"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97870809"
 ---
 # <a name="publish-azure-stack-hub-services-in-your-datacenter"></a>Publicación de servicios de Azure Stack Hub en el centro de datos
 

@@ -3,20 +3,20 @@ title: Escalado de un clúster de Kubernetes en Azure Stack Hub
 description: Aprenda a escalar un clúster de Kubernetes en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 09/02/2020
+ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 09/02/2020
-ms.openlocfilehash: 16ffbd474886d477f37b7e2d39695e896984eb30
-ms.sourcegitcommit: 74b3e14abfa33c8136eccdd4677868eb622c843e
+ms.openlocfilehash: 459ab20333f34f8aa8f067bc8b8c1f8dfd27920a
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92523548"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97874139"
 ---
 # <a name="scale-a-kubernetes-cluster-on-azure-stack-hub"></a>Escalado de un clúster de Kubernetes en Azure Stack Hub
 
-Puede escalar el clúster con el motor de AKS mediante el comando **scale** . El comando **scale** reutiliza el archivo de configuración del clúster (`apimodel.json`) dentro del directorio de salida como entrada para una nueva implementación de Azure Resource Manager. El motor ejecuta la operación de escalado en el grupo de agentes especificado. Cuando se realiza la operación de escalado, el motor actualiza la definición del clúster en ese mismo archivo `apimodel.json` para reflejar el nuevo recuento de nodos con el fin de reflejar la configuración actual y actualizada del clúster.
+Puede escalar el clúster con el motor de AKS mediante el comando **scale**. El comando **scale** reutiliza el archivo de configuración del clúster (`apimodel.json`) dentro del directorio de salida como entrada para una nueva implementación de Azure Resource Manager. El motor ejecuta la operación de escalado en el grupo de agentes especificado. Cuando se realiza la operación de escalado, el motor actualiza la definición del clúster en ese mismo archivo `apimodel.json` para reflejar el nuevo recuento de nodos con el fin de reflejar la configuración actual y actualizada del clúster.
 
 ## <a name="scale-a-cluster"></a>Escalado de un clúster
 

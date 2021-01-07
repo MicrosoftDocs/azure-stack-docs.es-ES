@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 11/30/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: c8ea741534954235fc6de9e32d16602e0c369d6f
-ms.sourcegitcommit: afdae61022037b5dba8345cb264049897e0aca8f
+ms.openlocfilehash: 1e42f830683a1faefd8e068da1e968f9332b7e0a
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97051622"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97872728"
 ---
 # <a name="physical-network-requirements-for-azure-stack-hci"></a>Requisitos de red física para Azure Stack HCI
 
@@ -145,6 +145,6 @@ Azure Stack HCI admite conexiones sin conmutadores (directas) para el tráfico h
 
 - Obtenga información acerca de los requisitos de host y del adaptador de red. Consulte [Requisitos de red de host para Azure Stack HCI](host-network-requirements.md).
 - Repase las aspectos básicos de los clústeres de conmutación por error. Consulte [Aspectos básicos de redes de clústeres de conmutación por error](https://techcommunity.microsoft.com/t5/failover-clustering/.failover-clustering-networking-basics-and-fundamentals/ba-p/1706005?s=09).
-- Repase el uso de SET. Consulte [Acceso directo a memoria remota (RDMA) y Formación de equipos insertada en el conmutador (SET)](https://docs.microsoft.com/windows-server/virtualization/.hyper-v-virtual-switch/rdma-and-switch-embedded-teaming).
+- Repase el uso de SET. Consulte [Acceso directo a memoria remota (RDMA) y Formación de equipos insertada en el conmutador (SET)](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming).
 - Para la implementación, consulte [Creación de un clúster de Azure Stack HCI mediante Windows Admin Center](https://docs.microsoft.com/azure-stack/hci/deploy/create-cluster).
 - Para la implementación, consulte [Creación de un clúster de Azure Stack HCI mediante Windows PowerShell](https://docs.microsoft.com/azure-stack/hci/deploy/create-cluster-powershell).

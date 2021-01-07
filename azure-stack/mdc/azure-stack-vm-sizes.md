@@ -10,16 +10,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: reference
-ms.date: 12/20/2019
+ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 12/20/2019
-ms.openlocfilehash: 79245ddf40d2ab39f4bb8ed7548023b3df6ec556
-ms.sourcegitcommit: 5fbc60b65d27c916ded7a95ba4102328d550c7e5
+ms.openlocfilehash: 13b38a80e782db1a81cccfe5f5e2e5e11b2d59f8
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97598613"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97872507"
 ---
 # <a name="vm-sizes-supported-in-azure-stack---modular-data-center-mdc"></a>Tamaños de máquina virtual admitidos en Azure Stack: centro de datos modular (MDC)
 

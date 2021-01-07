@@ -4,17 +4,17 @@ titleSuffix: Azure Stack Hub
 description: Solucione problemas de validación como servicio de Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 08/24/2020
+ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 06e9958d2311d456e977d72fe37eb88d18008092
-ms.sourcegitcommit: 4922a14fdbc8a3b67df065336e8a21a42f224867
+ms.openlocfilehash: f9a3b4b3ac61447a3dca567ad9ebcb636c8f9bc3
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88764807"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97874632"
 ---
 # <a name="troubleshoot-validation-as-a-service"></a>Solución de problemas de la validación como servicio
 

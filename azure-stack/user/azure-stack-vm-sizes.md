@@ -3,16 +3,16 @@ title: Tamaños de máquina virtual admitidos en Azure Stack Hub
 description: Referencia para los tamaños de máquinas virtuales admitidos en Azure Stack Hub.
 author: mattbriggs
 ms.topic: reference
-ms.date: 07/24/2020
+ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 03/23/2020
-ms.openlocfilehash: 3eb2a58c3ab915be9cf8cf1139880409830429f7
-ms.sourcegitcommit: b2337a9309c52aac9f5a1ffd89f1426d6c178ad5
+ms.openlocfilehash: 01299f2ddd04e66145d781785097c74e5d129e48
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87250765"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97873765"
 ---
 # <a name="vm-sizes-supported-in-azure-stack-hub"></a>Tamaños de máquina virtual admitidos en Azure Stack Hub
 
@@ -31,7 +31,7 @@ Los tamaños de máquina virtual de uso general proporcionan una relación equil
 > [!NOTE]
 > Se han retirado los tamaños de máquina virtual *A básico* para la [creación de conjuntos de escalado de máquinas virtuales](../operator/azure-stack-compute-add-scalesets.md) (VMSS) a través del portal. Para crear un VMSS con este tamaño, use PowerShell o una plantilla.
 
-|Tamaño - Tamaño\nombre |vCPU     |Memoria | Tamaño máximo del disco temporal | Rendimiento máximo del disco del SO: (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Rendimiento de discos de datos máx. (IOPS) | Nº máx. NIC |    
+|Tamaño - Tamaño\nombre |vCPU     |Memoria | Tamaño máximo del disco temporal | Rendimiento de discos del SO máx.: (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Rendimiento de discos de datos máx. (IOPS) | Nº máx. NIC |    
 |-----------------|-----|---------|---------|-----|------|-----------|----|
 |**A0\Basic_A0**  |1    |768 MB   | 20 GB   |300  | 300  |1 / 1x300  |2   |
 |**A1\Basic_A1**  |1    |1,75 GB  | 40 GB   |300  | 300  |2 / 2x300  |2   |
@@ -150,7 +150,7 @@ Los tamaños de las máquinas virtuales optimizadas para memoria ofrecen una rel
 |**Standard_D13**  |8  |56  |400 |500     |24000 |32 / 32x500 |8 |
 |**Standard_D14**  |16 |112 |800 |500     |48000 |64 / 64x500 |8 |
 
-### <a name="ds-series"></a><a name="mo-ds"></a>Series DS
+### <a name="ds-series"></a><a name="mo-ds"></a>Serie DS
 |Size     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
 |-------------------|---|----|----|--------|------|-------------|---------|
 |**Standard_DS11**  |2  |14  |28  |1000    |8000  |8 / 8x2300   |2 |
@@ -167,7 +167,7 @@ Los tamaños de las máquinas virtuales optimizadas para memoria ofrecen una rel
 |**Standard_D14_v2** |16  |112 |800  |500 |48000  |64 / 64x500  |8 |
 
 
-### <a name="dsv2-series"></a><a name="mo-dsv2"></a>Serie DSv2
+### <a name="dsv2-series"></a><a name="mo-dsv2"></a>DSv2-series
 |Size     |vCPU     |Memoria (GiB) | Almacenamiento temporal (GiB)  | Rendimiento de discos del SO máx. (IOPS) | Rendimiento máximo de almacenamiento temporal (IOPS) | Discos de datos máx. / rendimiento (IOPS) | Nº máx. NIC |
 |---------------------|----|----|-----|-----|-------|--------------|---------|
 |**Standard_DS11_v2** |2   |14  |28   |1000 |8000   |4 / 4x2300    |2 |

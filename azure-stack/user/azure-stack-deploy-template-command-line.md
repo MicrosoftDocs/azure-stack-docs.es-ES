@@ -3,16 +3,16 @@ title: Implementación de una plantilla con la línea de comandos en Azure Stack
 description: Aprenda a usar la interfaz de la línea de comandos (CLI) multiplataforma de Azure para implementar plantillas en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 5/27/2020
+ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: unknown
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: 362047bbfa88538140630311f5bdee07508db8a4
-ms.sourcegitcommit: cad40ae88212cc72f40c84a1c88143ea0abb65ef
+ms.openlocfilehash: 81fea12ad205f0e20473c8b46144165c3e62f698
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84112125"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97867254"
 ---
 # <a name="deploy-a-template-with-the-command-line-in-azure-stack-hub"></a>Implementación de una plantilla con la línea de comandos en Azure Stack Hub
 
@@ -20,7 +20,7 @@ Puede usar la interfaz de la línea de comandos (CLI) de Azure para implementar 
 
 ## <a name="deploy-template"></a>Implementar plantilla
 
-1. Examine el [repositorio AzureStack-QuickStart-Templates ](https://aka.ms/AzureStackGitHub) y busque la plantilla **101-create-storage-account**. Guarde la plantilla (`azuredeploy.json`) y los archivos de parámetros (`(azuredeploy.parameters.json`) en una ubicación de la unidad local, por ejemplo, `C:\templates\`.
+1. Examine el [repositorio AzureStack-QuickStart-Templates](https://aka.ms/AzureStackGitHub) y busque la plantilla **101-create-storage-account**. Guarde la plantilla (`azuredeploy.json`) y los archivos de parámetros (`(azuredeploy.parameters.json`) en una ubicación de la unidad local, por ejemplo, `C:\templates\`.
 2. Vaya a la carpeta en la que descargó los archivos. 
 3. [Instale Azure Stack Hub y conéctese](azure-stack-version-profiles-azurecli2.md) a la CLI de Azure.
 4. Actualice la región y la ubicación en el siguiente comando. Utilice `local` para el parámetro de ubicación si usa ASDK. Para implementar la plantilla:

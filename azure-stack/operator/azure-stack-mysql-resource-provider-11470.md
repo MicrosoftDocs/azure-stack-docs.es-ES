@@ -1,18 +1,18 @@
 ---
 title: Notas de la versión del proveedor de recursos de MySQL 1.1.47.0 de Azure Stack Hub
 description: Consulte las notas de la versión para ver las novedades de la actualización 1.1.47.0 del proveedor de recursos MySQL de Azure Stack Hub.
-author: justinha
+author: PatAltimore
 ms.topic: article
 ms.date: 11/26/2019
-ms.author: justinha
+ms.author: patricka
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/26/2019
-ms.openlocfilehash: 5bc03134a859182909e62c60159049d639eb8ffe
-ms.sourcegitcommit: 08a421ab5792ab19cc06b849763be22f051e6d78
+ms.openlocfilehash: d98a4d4c7de76d5a73cab3005893dd279a6e1025
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89364684"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97869855"
 ---
 # <a name="mysql-resource-provider-11470-release-notes"></a>Notas de la versión del proveedor de recursos de MySQL 1.1.47.0
 

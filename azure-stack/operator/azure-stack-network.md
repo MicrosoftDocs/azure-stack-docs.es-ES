@@ -1,18 +1,18 @@
 ---
 title: Planeamiento de la integración de red en Azure Stack Hub
 description: Aprenda a planear la integración de red del centro de datos con los sistemas integrados de Azure Stack Hub.
-author: IngridAtMicrosoft
+author: PatAltimore
 ms.topic: conceptual
 ms.date: 09/09/2020
-ms.author: inhenkel
+ms.author: patricka
 ms.reviewer: wamota
 ms.lastreviewed: 06/04/2019
-ms.openlocfilehash: dc9273ba215c819595099aa35e6b3487623f6cd2
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: a03052ddae302444fa843a6195ef738c61769fa2
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94545251"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97869838"
 ---
 # <a name="network-integration-planning-for-azure-stack"></a>Planeamiento de la capacidad de red de Azure Stack
 

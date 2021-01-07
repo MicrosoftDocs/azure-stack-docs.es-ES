@@ -1,18 +1,18 @@
 ---
 title: Registro del Kit de desarrollo de Azure Stack en Azure
 description: Obtenga información sobre cómo registrar el Kit de desarrollo de Azure Stack (ASDK) con Azure para habilitar la redifusión del Marketplace y los informes de uso.
-author: justinha
+author: PatAltimore
 ms.topic: article
 ms.date: 11/14/2020
-ms.author: justinha
+ms.author: patricka
 ms.reviewer: misainat
 ms.lastreviewed: 11/14/2020
-ms.openlocfilehash: 4fc89c86a2268c4648a7e90fa0f6e90cbc8b260e
-ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
+ms.openlocfilehash: 92b2e5c80069ebb80eec1153f1b17cab8ed943be
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95517249"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97873068"
 ---
 # <a name="register-the-asdk-with-azure"></a>Registro del Kit de desarrollo de Azure Stack en Azure
 
@@ -92,7 +92,7 @@ Siga estos pasos para registrar el ASDK en Azure.
     Register-AzureRMResourceProvider -ProviderNamespace Microsoft.AzureRMureStack
     
     # Import the registration module that was downloaded with the GitHub tools
-    Import-Module C:\zureRMureStack-Tools-AzureRM-master\Registration\RegisterWithAzureRMure.psm1
+    Import-Module C:\AzureRMureStack-Tools-AzureRM-master\Registration\RegisterWithAzureRMure.psm1
     
     # If you have multiple subscriptions, run the following command to select the one you want to use:
     # Get-AzureRMSubscription -SubscriptionID "<subscription ID>" | Select-AzureRMSubscription

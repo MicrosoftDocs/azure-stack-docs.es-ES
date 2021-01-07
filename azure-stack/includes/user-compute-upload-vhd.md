@@ -3,15 +3,15 @@ author: mattbriggs
 ms.author: mabrigg
 ms.service: azure-stack
 ms.topic: include
-ms.date: 08/04/2020
+ms.date: 12/16/2020
 ms.reviewer: thoroet
 ms.lastreviewed: 08/04/2020
-ms.openlocfilehash: 28fe06ca182b2df8104c2d8b23ce9f5c27448064
-ms.sourcegitcommit: 362081a8c19e7674c3029c8a44d7ddbe2deb247b
+ms.openlocfilehash: b8c5c7f439c4526b44299e6e3b33b343b11b61ed
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91936175"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97867311"
 ---
 Puede cargar el disco duro virtual con el portal, o con el contenedor que creó en el portal, mediante AzCopy.
 

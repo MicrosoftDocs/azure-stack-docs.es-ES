@@ -2,18 +2,18 @@
 title: Cifrado de datos en reposo
 titleSuffix: Azure Stack Hub
 description: Obtenga información sobre cómo Azure Stack Hub protege sus datos con el cifrado en reposo.
-author: IngridAtMicrosoft
+author: PatAltimore
 ms.topic: how-to
 ms.date: 03/04/2020
-ms.author: inhenkel
+ms.author: patricka
 ms.reviewer: fiseraci
 ms.lastreviewed: 08/06/2020
-ms.openlocfilehash: 8d188c77ab04044db94e13cdbf36fdb0e7cbe839
-ms.sourcegitcommit: 6a51687a98c417a004cd4295ad06ae813e1978cc
+ms.openlocfilehash: 891c544c27be43834ebd1a1785da76282a0fbf59
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92638825"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97869328"
 ---
 # <a name="data-at-rest-encryption-in-azure-stack-hub"></a>Cifrado de datos en reposo en Azure Stack Hub
 
@@ -38,7 +38,7 @@ Para obtener las claves de recuperación de BitLocker, es necesario acceder al [
 Get-AzsRecoveryKeys -raw
 ```
 
-Parámetros para el cmdlet *Get-AzsRecoveryKeys* :
+Parámetros para el cmdlet *Get-AzsRecoveryKeys*:
 
 | Parámetro | Descripción | Tipo | Obligatorio |
 |---------|---------|---------|---------|

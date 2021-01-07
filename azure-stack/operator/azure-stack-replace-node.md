@@ -2,18 +2,18 @@
 title: Reemplazo de un nodo de la unidad de escalado en un sistema integrado de Azure Stack Hub
 titleSuffix: Azure Stack Hub
 description: Aprenda a reemplazar un nodo físico de la unidad de escalado físico en un sistema integrado de Azure Stack Hub.
-author: IngridAtMicrosoft
+author: PatAltimore
 ms.topic: how-to
 ms.date: 03/04/2020
-ms.author: inhenkel
+ms.author: patricka
 ms.reviewer: thoroet
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: a96ee2a4ffb2abb3c3e11db23d4fb676ace8c1c0
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.openlocfilehash: 5fd19b0531ea025a781c95f100060038cfe6c4b0
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90572637"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97869447"
 ---
 # <a name="replace-a-scale-unit-node-on-an-azure-stack-hub-integrated-system"></a>Reemplazo de un nodo de la unidad de escalado en un sistema integrado de Azure Stack Hub
 

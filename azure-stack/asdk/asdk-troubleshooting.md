@@ -1,18 +1,18 @@
 ---
 title: Solucionar problemas del ASDK
 description: Obtenga información sobre cómo solucionar problemas del Kit de desarrollo de Azure Stack (ASDK).
-author: justinha
+author: PatAltimore
 ms.topic: article
 ms.date: 11/05/2019
-ms.author: justinha
+ms.author: patricka
 ms.reviewer: misainat
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: bc828444a67e1489f2d5b4b51fc0cbd18e6f0641
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: b5b0310aa778cf470c436f0770c9b5ca0d46fd8f
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86489936"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97872949"
 ---
 # <a name="troubleshoot-the-asdk"></a>Solucionar problemas del ASDK
 En este artículo se proporciona información sobre cómo solucionar problemas comunes para el Kit de desarrollo de Azure Stack (ASDK). Para obtener ayuda con los sistemas integrados de Azure Stack, consulte [Solución de problemas de Microsoft Azure Stack](../operator/azure-stack-troubleshooting.md). 

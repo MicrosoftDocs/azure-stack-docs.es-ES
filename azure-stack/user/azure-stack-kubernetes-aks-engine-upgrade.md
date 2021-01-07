@@ -3,16 +3,16 @@ title: Actualización de un clúster de Kubernetes en Azure Stack Hub
 description: Aprenda a actualizar un clúster de Kubernetes en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 09/02/2020
+ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 09/02/2020
-ms.openlocfilehash: 7cfde51b5cfbdaf6d6ad752951ad4df3e4f95823
-ms.sourcegitcommit: b80d529ff47b15b8b612d8a787340c7b0f68165b
+ms.openlocfilehash: fd90bf877c66c05cc3939952ff0d50b8617f2d53
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473051"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97874088"
 ---
 # <a name="upgrade-a-kubernetes-cluster-on-azure-stack-hub"></a>Actualización de un clúster de Kubernetes en Azure Stack Hub
 

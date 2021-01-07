@@ -3,16 +3,16 @@ title: Conexión a Azure Stack Hub
 description: Aprenda a conectarse a Azure Stack Hub.
 author: mattbriggs
 ms.topic: conceptual
-ms.date: 5/27/2020
+ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 01/14/2020
-ms.openlocfilehash: 8661666b4f953d07a96f1a2402782970e32c140b
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: 9369f0d11ba8c39ce27134a85c93328ce2389833
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94545818"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97874258"
 ---
 # <a name="connect-to-azure-stack-hub"></a>Conexión a Azure Stack Hub
 
@@ -26,7 +26,7 @@ Con una conexión a Escritorio remoto, un único usuario simultáneo puede traba
 
 1. Abra una conexión a Escritorio remoto y conecte con el kit de desarrollo. Escriba **AzureStack\AzureStackAdmin** como nombre de usuario y la contraseña de administrador que especificó en la instalación de Azure Stack Hub.  
 
-2. En el equipo del kit de desarrollo, abra el Administrador del servidor, haga clic en **Servidor local** , desactive la opción de seguridad mejorada de Internet Explorer y, a continuación, cierre el Administrador del servidor.
+2. En el equipo del kit de desarrollo, abra el Administrador del servidor, haga clic en **Servidor local**, desactive la opción de seguridad mejorada de Internet Explorer y, a continuación, cierre el Administrador del servidor.
 
 3. Para abrir el portal, vaya a `https://portal.local.azurestack.external/` e inicie sesión con las credenciales de usuario.
 

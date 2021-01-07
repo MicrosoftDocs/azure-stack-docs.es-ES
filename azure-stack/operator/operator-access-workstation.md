@@ -4,15 +4,15 @@ description: Aprenda a descargar y configurar una estación de trabajo de acceso
 author: ashika789
 ms.topic: article
 ms.date: 11/04/2020
-ms.author: justinha
+ms.author: patricka
 ms.reviewer: asganesh
 ms.lastreviewed: 11/04/2020
-ms.openlocfilehash: 3c01f6f4e51adb9d91ee1b3098c11814a618ac1c
-ms.sourcegitcommit: ec00358a8780086dda217f93f2ef813a8b24dd3b
+ms.openlocfilehash: bd94503efe97eb30955b0fd9deb7a5c41e263e7b
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95006827"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97868597"
 ---
 # <a name="azure-stack-hub-operator-access-workstation"></a>Estación de trabajo de acceso del operador de Azure Stack Hub 
 
@@ -210,20 +210,20 @@ En la tabla siguiente se muestra la definición de cada parámetro.
 | SubnetMask                 | Obligatorio | La máscara de subred de IPv4 para configurar TCP/IP en la máquina virtual.                                                   |
 | DefaultGateway             | Obligatorio | La dirección IPv4 de la puerta de enlace predeterminada para configurar TCP/IP en la máquina virtual.                                    |
 | DNS                        | Obligatorio | Servidores DNS para configurar TCP/IP en la máquina virtual.                                                          |
-| ImageFilePath              | Opcional | Ruta de acceso de OAW.vhdx que proporciona Microsoft. El valor predeterminado es **OAW.vhdx** en la misma carpeta principal de este script. |
-| VirtualMachineName         | Opcional | Nombre que se va a asignar a la máquina virtual. Si el prefijo de nomenclatura se puede encontrar en el archivo DeploymentData.json, se usará como nombre predeterminado. De lo contrario, se usará **AzSOAW** como nombre predeterminado. Puede especificar otro nombre para sobrescribir el valor predeterminado. |
-| VirtualMachineMemory       | Opcional | Memoria que se va a asignar a la máquina virtual. El valor predeterminado es **4 GB**.                            |
-| VirtualProcessorCount      | Opcional | Número de procesadores virtuales que se va a asignar a la máquina virtual. El valor predeterminado es **8**.        |
-| VirtualMachineDiffDiskPath | Opcional | Ruta de acceso para almacenar los archivos del disco de diferenciación temporal mientras la máquina virtual de administración estaba activa. El valor predeterminado es el subdirectorio **DiffDisks** en la misma carpeta principal de este script. |
-| AzureStackCertificatePath  | Opcional | Ruta de los certificados que se van a importar a la máquina virtual para el acceso a Azure Stack Hub. |
+| ImageFilePath              | Opcionales | Ruta de acceso de OAW.vhdx que proporciona Microsoft. El valor predeterminado es **OAW.vhdx** en la misma carpeta principal de este script. |
+| VirtualMachineName         | Opcionales | Nombre que se va a asignar a la máquina virtual. Si el prefijo de nomenclatura se puede encontrar en el archivo DeploymentData.json, se usará como nombre predeterminado. De lo contrario, se usará **AzSOAW** como nombre predeterminado. Puede especificar otro nombre para sobrescribir el valor predeterminado. |
+| VirtualMachineMemory       | Opcionales | Memoria que se va a asignar a la máquina virtual. El valor predeterminado es **4 GB**.                            |
+| VirtualProcessorCount      | Opcionales | Número de procesadores virtuales que se va a asignar a la máquina virtual. El valor predeterminado es **8**.        |
+| VirtualMachineDiffDiskPath | Opcionales | Ruta de acceso para almacenar los archivos del disco de diferenciación temporal mientras la máquina virtual de administración estaba activa. El valor predeterminado es el subdirectorio **DiffDisks** en la misma carpeta principal de este script. |
+| AzureStackCertificatePath  | Opcionales | Ruta de los certificados que se van a importar a la máquina virtual para el acceso a Azure Stack Hub. |
 | AzSStampInfoFilePath       | Opcional | Ruta de acceso del archivo AzureStackStampInformation.json donde el script puede recuperar las direcciones IP de la máquina virtual ERCS. |
-| CertificatePassword        | Opcional | Contraseña del certificado que se va a importar a la máquina virtual para el acceso a Azure Stack Hub. |
+| CertificatePassword        | Opcionales | Contraseña del certificado que se va a importar a la máquina virtual para el acceso a Azure Stack Hub. |
 | ERCSVMIP                   | Opcionales | Dirección IP de las máquinas virtuales ERCS de Azure Stack Hub que se van a agregar a la lista de hosts de confianza de la máquina virtual. No surtirá efecto si se establece **-SkipNetworkConfiguration**. |
-SkipNetworkConfiguration     | Opcional | Omite la configuración de red de la máquina virtual para que el usuario puede configurarla más adelante. |
+SkipNetworkConfiguration     | Opcionales | Omite la configuración de red de la máquina virtual para que el usuario puede configurarla más adelante. |
 | DeploymentDataFilePath     | Opcionales | Ruta de acceso del archivo DeploymentData.json. No surtirá efecto si se establece **-SkipNetworkConfiguration**.            |
-| PhysicalAdapterMACAddress  | Opcional | La dirección MAC del adaptador de red del host que se utilizará para conectar la máquina virtual.<br>- Si solo hay un adaptador de red físico, este parámetro no es necesario y se usará el único adaptador de red.<br>- Si hay más de un adaptador de red físico, este parámetro es necesario para especificar cuál se va a usar.<br> |
-| VirtualSwitchName          | Opcional | El nombre del conmutador virtual que debe configurarse en Hyper-V para la máquina virtual.<br>- Si está el parámetro VMSwitch con el nombre proporcionado, se seleccionará ese VMSwitch.<br>- Si no hay ningún parámetro VMSwitch con el nombre proporcionado, se creará uno.<br> |
-| ReCreate                   | Opcional | Elimina y vuelve a crear la máquina virtual si ya existe una máquina virtual con el mismo nombre. |
+| PhysicalAdapterMACAddress  | Opcionales | La dirección MAC del adaptador de red del host que se utilizará para conectar la máquina virtual.<br>- Si solo hay un adaptador de red físico, este parámetro no es necesario y se usará el único adaptador de red.<br>- Si hay más de un adaptador de red físico, este parámetro es necesario para especificar cuál se va a usar.<br> |
+| VirtualSwitchName          | Opcionales | El nombre del conmutador virtual que debe configurarse en Hyper-V para la máquina virtual.<br>- Si está el parámetro VMSwitch con el nombre proporcionado, se seleccionará ese VMSwitch.<br>- Si no hay ningún parámetro VMSwitch con el nombre proporcionado, se creará uno.<br> |
+| ReCreate                   | Opcionales | Elimina y vuelve a crear la máquina virtual si ya existe una máquina virtual con el mismo nombre. |
 
 ## <a name="check-the-oaw-vm-version"></a>Comprobación de la versión de la máquina virtual de OAW
 

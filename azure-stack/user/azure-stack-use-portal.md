@@ -3,16 +3,16 @@ title: Uso del portal de usuarios de Azure Stack Hub
 description: Aprenda a acceder y a usar al portal de usuarios de Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 5/27/2020
+ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: efemmano
 ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: 26225b1b6ba55ed0f5934130e361f1dbab4b664e
-ms.sourcegitcommit: 6306e0c2506106ad01ff50010f36466f3325d0a8
+ms.openlocfilehash: 24734f5e5696a66174287b151b05eb2a67a38ba7
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84631397"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97873816"
 ---
 # <a name="use-the-azure-stack-hub-user-portal"></a>Uso del portal de usuarios de Azure Stack Hub
 

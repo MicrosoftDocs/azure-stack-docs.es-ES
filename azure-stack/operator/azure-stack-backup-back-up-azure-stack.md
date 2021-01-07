@@ -1,18 +1,18 @@
 ---
 title: Copia de seguridad de Azure Stack Hub
 description: Aprenda a realizar una copia de seguridad a petición en Azure Stack Hub.
-author: justinha
+author: PatAltimore
 ms.topic: article
 ms.date: 02/12/2019
-ms.author: justinha
+ms.author: patricka
 ms.reviewer: hectorl
 ms.lastreviewed: 09/05/2019
-ms.openlocfilehash: 2090471cee6fa36a32b9e2147de7941cd4abed54
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: 5df894d32d335b488ad51b09bb38c3011f754e15
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94544282"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97871844"
 ---
 # <a name="back-up-azure-stack-hub"></a>Copia de seguridad de Azure Stack Hub
 
@@ -104,7 +104,7 @@ El resultado debe tener un aspecto similar a la siguiente salida:
 Use el portal del administrador de Azure Stack Hub para verificar si esa copia de seguridad se ha completado correctamente; para ello, siga estos pasos:
 
 1. Abra el [portal del administrador de Azure Stack Hub](azure-stack-manage-portals.md).
-2. Seleccione **Todos los servicios** y, luego, en la categoría **ADMINISTRACIÓN** , seleccione > **Copia de seguridad de infraestructura**. Elija **Configuración** en la hoja **Copia de seguridad de infraestructura**.
+2. Seleccione **Todos los servicios** y, luego, en la categoría **ADMINISTRACIÓN**, seleccione > **Copia de seguridad de infraestructura**. Elija **Configuración** en la hoja **Copia de seguridad de infraestructura**.
 3. Busque el **Nombre** y la **Fecha de finalización** de la copia de seguridad en la lista **Copias de seguridad disponibles**.
 4. Compruebe que el **Estado** es **Correcto**.
 

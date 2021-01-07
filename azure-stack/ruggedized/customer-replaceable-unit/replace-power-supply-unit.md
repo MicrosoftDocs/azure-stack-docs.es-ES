@@ -1,18 +1,18 @@
 ---
 title: Sustitución de una unidad de fuente de alimentación
 description: Obtenga información sobre cómo reemplazar una unidad de fuente de alimentación.
-author: myoungerman
+author: PatAltimore
 ms.topic: how-to
 ms.date: 11/13/2020
-ms.author: v-myoung
+ms.author: patricka
 ms.reviewer: ''
 ms.lastreviewed: ''
-ms.openlocfilehash: 392ad424bfe6eba87d611ca669ab1c1469fdece7
-ms.sourcegitcommit: 3bd42be22e626564b62e560dc037aed4d462011f
+ms.openlocfilehash: 03f2f79a1d849edb65da0097eb4135146ae7a16e
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97393168"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97874479"
 ---
 # <a name="replacing-a-power-supply-unit"></a>Sustitución de una unidad de fuente de alimentación
 

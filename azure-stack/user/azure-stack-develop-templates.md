@@ -3,16 +3,16 @@ title: Desarrollo de plantillas para Azure Stack Hub
 description: Aprenda a desarrollar plantillas de Azure Resource Manager para realizar la portabilidad de aplicaciones entre Azure y Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 5/27/2020
+ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: unknown
 ms.lastreviewed: 05/21/2019
-ms.openlocfilehash: dd43abbf1194aa4aaa3ca1cc75a3e2ff6262bbbc
-ms.sourcegitcommit: db3c9179916a36be78b43a8a47e1fd414aed3c2e
+ms.openlocfilehash: 2d449adc59be9051188c1d942ae54d6a0761d28e
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84146757"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97874224"
 ---
 # <a name="develop-templates-for-azure-stack-hub-with-azure-resource-manager"></a>Desarrollo de plantillas para Azure Stack Hub con Azure Resource Manager
 
@@ -24,7 +24,7 @@ La plantilla que planee implementar debe utilizar solo servicios de Microsoft Az
 
 ## <a name="public-namespaces"></a>Espacios de nombres públicos
 
-Como Azure Stack Hub se hospeda en un centro de datos, tiene espacios de nombres de punto de conexión de servicio diferentes que los de la nube pública de Azure. Como resultado, se producirá un error en los puntos de conexión públicos codificados de forma rígida de las plantillas de Azure Resource Manager al tratar de implementarlos en Azure Stack Hub. Puede compilar dinámicamente puntos de conexión de servicio con las funciones `reference` y `concatenate` para recuperar valores del proveedor de recursos durante la implementación. Por ejemplo, en lugar de codificar de forma rígida `blob.core.windows.net` en la plantilla, recupere [primaryEndpoints.blob ](https://github.com/Azure/AzureStack-QuickStart-Templates/blob/master/101-vm-windows-create/azuredeploy.json#L175)para establecer dinámicamente el punto de conexión *osDisk.URI*:
+Como Azure Stack Hub se hospeda en un centro de datos, tiene espacios de nombres de punto de conexión de servicio diferentes que los de la nube pública de Azure. Como resultado, se producirá un error en los puntos de conexión públicos codificados de forma rígida de las plantillas de Azure Resource Manager al tratar de implementarlos en Azure Stack Hub. Puede compilar dinámicamente puntos de conexión de servicio con las funciones `reference` y `concatenate` para recuperar valores del proveedor de recursos durante la implementación. Por ejemplo, en lugar de codificar de forma rígida `blob.core.windows.net` en la plantilla, recupere [primaryEndpoints.blob](https://github.com/Azure/AzureStack-QuickStart-Templates/blob/master/101-vm-windows-create/azuredeploy.json#L175)para establecer dinámicamente el punto de conexión *osDisk.URI*:
 
 ```json
 "osDisk": {"name": "osdisk","vhd": {"uri":

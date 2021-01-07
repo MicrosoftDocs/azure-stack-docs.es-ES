@@ -1,18 +1,18 @@
 ---
 title: Hoja de cálculo de implementación para Azure Stack Hub
 description: Aprenda a instalar y usar la herramienta de hoja de cálculo de implementación para implementar Azure Stack Hub.
-author: IngridAtMicrosoft
+author: PatAltimore
 ms.topic: article
 ms.date: 04/19/2019
-ms.author: inhenkel
+ms.author: patricka
 ms.reviewer: wamota
 ms.lastreviewed: 04/19/2019
-ms.openlocfilehash: 1949d198c7d85e60c5a3195dfbd5e725cef834c7
-ms.sourcegitcommit: 70c344b3c9c63f8c12867b2cdfdd1794fcc518dc
+ms.openlocfilehash: afdad104cad67e928e1d6d988138ab1c8555631c
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82836137"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97870892"
 ---
 # <a name="deployment-worksheet-for-azure-stack-hub-integrated-systems"></a>Hoja de cálculo de implementación para los sistemas integrados de Azure Stack Hub
 

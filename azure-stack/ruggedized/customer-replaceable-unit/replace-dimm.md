@@ -1,18 +1,18 @@
 ---
 title: Reemplazo de un DIMM
 description: Aprenda a reemplazar un DIMM.
-author: myoungerman
+author: PatAltimore
 ms.topic: how-to
 ms.date: 11/13/2020
-ms.author: v-myoung
+ms.author: patricka
 ms.reviewer: ''
 ms.lastreviewed: ''
-ms.openlocfilehash: dbbeaa330e47fda4208ba0e44211fe41d01a982f
-ms.sourcegitcommit: 3bd42be22e626564b62e560dc037aed4d462011f
+ms.openlocfilehash: 3665ac12c42cac7a87ae9c69f4fc450b4f76cf3d
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97393173"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97867832"
 ---
 # <a name="replacing-a-dimm"></a>Reemplazo de un DIMM
 

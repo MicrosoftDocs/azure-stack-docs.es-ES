@@ -3,16 +3,16 @@ title: Descripción del motor de AKS en Azure Stack Hub
 description: Aprenda a usar la herramienta de línea de comandos del motor de AKS para implementar y administrar clústeres de Kubernetes en Azure y Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 09/02/2020
+ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 09/02/2020
-ms.openlocfilehash: da77872f4b80d3885a903bbd62497af68e148c01
-ms.sourcegitcommit: b80d529ff47b15b8b612d8a787340c7b0f68165b
+ms.openlocfilehash: f1853be7d5e0441eab7afd619c4f6722de03a7c1
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473017"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97874156"
 ---
 # <a name="what-is-the-aks-engine-on-azure-stack-hub"></a>Descripción del motor de AKS en Azure Stack Hub
 

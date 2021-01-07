@@ -4,17 +4,17 @@ titleSuffix: Azure Stack Hub
 description: Conozca los conceptos clave de la validación como servicio de Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 5/27/2020
+ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 10/28/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 9525f1f6286f5621832db5b20b3593fde6bf3546
-ms.sourcegitcommit: cad40ae88212cc72f40c84a1c88143ea0abb65ef
+ms.openlocfilehash: 7419cbe82e6bcd2eb79af486daf30975f6c8cdd0
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84112108"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97874666"
 ---
 # <a name="validation-as-a-service-key-concepts"></a>Conceptos clave de la validación como servicio
 

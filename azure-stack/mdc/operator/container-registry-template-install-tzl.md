@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 1/10/2020
+ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: chasat
 ms.lastreviewed: 12/17/2019
-ms.openlocfilehash: 44cf8fe76ec203fb0a6260a92c4e47641d4f40f8
-ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
+ms.openlocfilehash: cba936293c5771737c2022a24acd9c7202ff78c1
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96935010"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97872116"
 ---
 # <a name="add-a-container-registry-to-azure-stack-hub"></a>Adición de un registro de contenedor a Azure Stack Hub
 

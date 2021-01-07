@@ -1,18 +1,18 @@
 ---
 title: Desempaquetado del calentador y planeamiento de su instalación
 description: Obtenga información sobre cómo desempaquetar el calentador y planear su instalación.
-author: myoungerman
+author: PatAltimore
 ms.topic: how-to
 ms.date: 11/13/2020
-ms.author: v-myoung
+ms.author: patricka
 ms.reviewer: ''
 ms.lastreviewed: ''
-ms.openlocfilehash: 4b7b43c54a0cd90b11ac2bcacb7bebd72305d92a
-ms.sourcegitcommit: 3bd42be22e626564b62e560dc037aed4d462011f
+ms.openlocfilehash: 6fc9e5cb22f1153874090bd57d48cbbbcca63482
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97393110"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97867611"
 ---
 # <a name="unpack-the-heater-and-plan-the-heater-installation"></a>Desempaquetado del calentador y planeamiento de su instalación
 

@@ -1,18 +1,18 @@
 ---
 title: Habilitación de la copia de seguridad para Azure Stack Hub con PowerShell
 description: Aprenda cómo habilitar el servicio Copia de seguridad de infraestructura con PowerShell para que Azure Stack Hub se pueda restaurar si se produce un error.
-author: justinha
+author: PatAltimore
 ms.topic: article
 ms.date: 04/25/2019
-ms.author: justinha
+ms.author: patricka
 ms.reviewer: hectorl
 ms.lastreviewed: 03/14/2019
-ms.openlocfilehash: bc6ce6c36e3aca05015e6acbef3de0d5fd841eb6
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: 0e1bdbf55556d8168e517a5d9cfb30d6747c02f3
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94543925"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97871759"
 ---
 # <a name="enable-backup-for-azure-stack-hub-with-powershell"></a>Habilitación de la copia de seguridad para Azure Stack Hub con PowerShell
 

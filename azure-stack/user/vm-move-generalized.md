@@ -3,16 +3,16 @@ title: Traslado de una máquina virtual generalizada desde un entorno local a Az
 description: Aprenda a trasladar una máquina virtual generalizada desde un entorno local a Azure Stack Hub.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 9/8/2020
+ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 9/8/2020
-ms.openlocfilehash: babc5888ea7ce26c031765dd3f3a61a2e0e7f740
-ms.sourcegitcommit: 9a340b383dcf42c85bc6ec0d01ff3c9ae29dfe4c
+ms.openlocfilehash: 105beaa0805fe0aea1aacfce8bd22f3bd01714b1
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89609923"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97872881"
 ---
 # <a name="move-a-generalized-vm-from-on-premises-to-azure-stack-hub"></a>Traslado de una máquina virtual generalizada desde un entorno local a Azure Stack Hub
 

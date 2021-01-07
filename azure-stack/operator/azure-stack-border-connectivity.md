@@ -1,18 +1,18 @@
 ---
 title: Integración de red y conectividad de borde para sistemas integrados de Azure Stack Hub
 description: Aprenda cómo planear la conectividad de red de borde del centro de datos en los sistemas integrados de Azure Stack Hub.
-author: IngridAtMicrosoft
+author: PatAltimore
 ms.topic: conceptual
 ms.date: 03/04/2020
-ms.author: inhenkel
+ms.author: patricka
 ms.reviewer: wamota
 ms.lastreviewed: 11/15/2019
-ms.openlocfilehash: 020b3c33361207d3c8fad7fb414fff0365a3acf3
-ms.sourcegitcommit: 98f62c33469ba963ba266bd88e206e9144258ea3
+ms.openlocfilehash: 1377f04a9c746a41ed1965a2798a1dbfd3b0db21
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82032814"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97871555"
 ---
 # <a name="border-connectivity"></a>Conectividad de borde 
 El planeamiento de la integración de red es un requisito previo importante para la correcta implementación, operación y administración de sistemas integrados de Azure Stack Hub. El planeamiento de la conectividad de borde comienza con la elección de si se debe usar el enrutamiento dinámico con el protocolo de puerta de enlace de borde (BGP). Esto requiere la asignación de un número de sistema autónomo (ASN) de 16 bits, público o privado, o el uso de enrutamiento estático.

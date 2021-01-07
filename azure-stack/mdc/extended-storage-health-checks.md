@@ -3,7 +3,7 @@ title: 'Azure Stack: comprobaciones de estado en el almacenamiento extendido par
 description: En este artículo se proporcionan instrucciones sobre cómo realizar comprobaciones de estado en el almacenamiento extendido para el almacenamiento de blobs del Centro de datos modular.
 services: azure-stack
 documentationcenter: ''
-author: justinha
+author: PatAltimore
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -12,15 +12,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 10/01/2020
-ms.author: justinha
+ms.author: patricka
 ms.reviewer: karlt
 ms.lastreviewed: 10/01/2020
-ms.openlocfilehash: 9d8e7915cb5c1ca9d0a073c750f67a5688157e74
-ms.sourcegitcommit: e4e2cc6a68f02c3e856f58ca5ee51b3313c7ff8f
+ms.openlocfilehash: ebb39f3eab90b0f976e5fee2896cbe85d0d023f5
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92183452"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97872405"
 ---
 # <a name="extended-storage-health-checks"></a>Comprobaciones de estado del almacenamiento extendido
 
@@ -73,7 +73,7 @@ El siguiente comando comprueba el estado general del clúster en una vista simpl
 isi status
 ```
 
-Si todo es correcto, aparece una **marca de verificación** verde; de lo contrario, aparecen advertencias amarillas o errores rojos en la línea **Estado del clúster** , o en una o varias de las líneas de identificador de nodo de clúster de la tabla siguiente.
+Si todo es correcto, aparece una **marca de verificación** verde; de lo contrario, aparecen advertencias amarillas o errores rojos en la línea **Estado del clúster**, o en una o varias de las líneas de identificador de nodo de clúster de la tabla siguiente.
 
 Si se necesita más información sobre el estado del clúster, se puede ejecutar un comando más detallado en una vista expandida:
 ```console
@@ -92,7 +92,7 @@ Para obtener una vista general de la implementación de Azure Stack integrada co
 
 Los requisitos previos de este script son los siguientes:
 - Archivo de script .\Invoke-ExtendedStorageConfiguration.ps1, que se encuentra en la carpeta C:\OEMSoftware\ExtendedStorage\ del host de ciclo de vida de hardware (HLH)
-- Variable de credencial $AzScred, que se debe rellenar con las credenciales de *DOMAIN* \cloudadmin. Reemplace *DOMAIN* por el nombre de dominio real, como CONTOSO.
+- Variable de credencial $AzScred, que se debe rellenar con las credenciales de *DOMAIN*\cloudadmin. Reemplace *DOMAIN* por el nombre de dominio real, como CONTOSO.
 
 
 ```powershell
