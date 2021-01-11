@@ -42,6 +42,10 @@
       items:
         - name: Creación de un clúster con PowerShell
           href: deploy/create-cluster-powershell.md
+    - name: Implementación de cargas de trabajo
+      items:
+        - name: Implementación de la virtualización empresarial de confianza
+          href: deploy/deploy-trusted-enterprise-virtualization.md
 - name: Administrar
   items:
     - name: Administración de máquinas virtuales
