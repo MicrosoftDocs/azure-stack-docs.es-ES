@@ -1,21 +1,21 @@
 ---
-title: Aspectos básicos de la administración de Azure Stack Hub
+title: Aspectos básicos de la administración de Azure Stack Hub Ruggedized
 titleSuffix: Azure Stack Hub
 description: Aprenda los aspectos básicos de la administración de Azure Stack Hub.
-author: justinha
+author: PatAltimore
 ms.topic: article
 ms.date: 06/16/2020
-ms.author: justinha
+ms.author: patricka
 ms.reviewer: thoroet
 ms.lastreviewed: 06/16/2020
-ms.openlocfilehash: afbfbf5c1fe7149b4d12f1cd96af79b1116e4a3a
-ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
+ms.openlocfilehash: f94a8ba25c595ac231beda9e235245d25541f334
+ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96941321"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97909691"
 ---
-# <a name="azure-stack-hub-administration-basics"></a>Aspectos básicos de la administración de Azure Stack Hub
+# <a name="azure-stack-hub-administration-basics---ruggedized"></a>Aspectos básicos de la administración de Azure Stack Hub Ruggedized
 
 Si no está familiarizado con la administración de Azure Stack Hub, hay varias cosas que debe saber. En este artículo se ofrece información general acerca de su rol como operador de Azure Stack Hub y lo que debe decir a los usuarios para ayudarles a ser productivos.
 

@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: abhilashaagarwala
 ms.author: abha
 ms.date: 12/02/2020
-ms.openlocfilehash: 2bbd32a8117955a18c525a4a0483d152c5a3ed0c
-ms.sourcegitcommit: 0efffe1d04a54062a26d5c6ce31a417f511b9dbf
+ms.openlocfilehash: 3a4ad6203ba14188ff24629f07775285417c306b
+ms.sourcegitcommit: 0e2c814cf2c154ea530a4e51d71aaf0835fb2b5a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96612478"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97918653"
 ---
 # <a name="system-requirements-for-azure-kubernetes-service-on-azure-stack-hci"></a>Requisitos del sistema de Azure Kubernetes Service en Azure Stack HCI
 
@@ -30,9 +30,9 @@ Para que Azure Kubernetes Service en Azure Stack HCI o en Windows Server 2019 D
 
  - Asegúrese de que las cuentas de usuario que agregan actualizaciones y administran clústeres de Azure Kubernetes Service en Azure Stack HCI o en Windows Server 2019 Datacenter tienen los permisos correctos en Active Directory. Si usa unidades organizativas para administrar directivas de grupo para servidores y servicios, las cuentas de usuario requerirán permisos de lista, lectura, modificación y eliminación en todos los objetos de la unidad organizativa. 
 
- - Se recomienda usar una unidad organizativa independiente para los servidores y servicios en los que se agregan los clústeres de Azure Kubernetes Service en Azure Stack HCI o Windows Server 2019 Datacenter. Esto le permitirá controlar el acceso y los permisos con mayor precisión.
+ - Se recomienda usar una unidad organizativa independiente para los servidores y los servicios en los que se agregan los clústeres de Azure Kubernetes Service en Azure Stack HCI o Windows Server 2019 Datacenter. El uso de una unidad organizativa independiente le permitirá controlar el acceso y los permisos con mayor precisión.
 
- - Si utiliza plantillas de GPO en contenedores de Active Directory, asegúrese de que la implementación de AKS-HCI esté exenta de esa directiva. La protección del servidor estará disponible en una versión preliminar posterior.
+ - Si usa plantillas de GPO en contenedores de Active Directory, asegúrese de que la implementación de AKS-HCI esté exenta de la directiva. La protección del servidor estará disponible en una versión preliminar posterior.
 
 ## <a name="compute-requirements"></a>Requisitos de proceso
 
@@ -52,20 +52,14 @@ Los siguientes requisitos se aplican a un clúster de Azure Stack HCI, así como
 
  - Compruebe que ha deshabilitado IPv6 en todos los adaptadores de red. 
 
- - La red debe tener un servidor DHCP disponible para proporcionar direcciones TCP/IP a las máquinas virtuales y los hosts de máquina virtual. El servidor DHCP también debe contener información del host NTP y DNS. 
-
- - También se recomienda tener un servidor DHCP con un ámbito de direcciones IPv4 dedicado accesible para el clúster de Azure Stack HCI. Por ejemplo, puede reservar 10.0.1.1 para la puerta de enlace predeterminada, de 10.0.1.2 a 10.0.1.102 para Kubernetes Services (mediante-vipPoolStartIp y -vipPoolEndIp en Set-AksHciConfig) y usar de 10.0.1.103 a 10.0.1.254 para las máquinas virtuales del clúster de Kubernetes. 
-
- - Para una implementación correcta, los nodos de clúster de Azure Stack HCI y las máquinas virtuales de clúster de Kubernetes deben tener conectividad externa a Internet.
-
- - Las direcciones IPv4 que proporciona el servidor DHCP deben ser enrutables y tener una expiración de concesión de 30 días para evitar la pérdida de conectividad IP en caso de actualización de una máquina virtual o reaprovisionamiento.  
+ - Para una implementación correcta, los nodos de clúster de Azure Stack HCI y las máquinas virtuales de clúster de Kubernetes deben tener conectividad externa a Internet. 
 
  - La resolución de nombres DNS es necesaria para que todos los nodos puedan comunicarse entre sí. En el caso de la resolución de nombres externa de Kubernetes, use los servidores DNS que proporciona el servidor DHCP cuando se obtiene la dirección IP. Para la resolución de nombres interna de Kubernetes, use la solución predeterminada de Kubernetes basada en Core DNS. 
- 
- - Para esta versión preliminar, se proporciona solo compatibilidad con una sola VLAN para toda la implementación.
 
- - En esta versión preliminar, tenemos compatibilidad limitada del proxy con los clústeres de Kubernetes creados con PowerShell.
+ - Para esta versión preliminar, se proporciona solo compatibilidad con una sola VLAN para toda la implementación. 
 
+ - En esta versión preliminar, tenemos compatibilidad limitada del proxy con los clústeres de Kubernetes creados con PowerShell. 
+  
 ### <a name="network-port-and-url-requirements"></a>Requisitos de puerto de red y de dirección URL 
 
 Al crear un clúster de Azure Kubernetes Service en Azure Stack HCI, se abrirán automáticamente los siguientes puertos de firewall en cada servidor del clúster. 
@@ -76,7 +70,8 @@ Al crear un clúster de Azure Kubernetes Service en Azure Stack HCI, se abrirán
 | 45000           | Puerto de servidor wssdagent GPRC           |
 | 45001             | Puerto de autenticación wssdagent GPRC  | 
 | 55 000           | Puerto de servidor wssdcloudagent GPRC           |
-| 55001             | Puerto de autenticación wssdcloudagent GPRC  | 
+| 65000             | Puerto de autenticación wssdcloudagent GPRC  | 
+
 
 
 Las excepciones de URL de firewall son necesarias para la máquina de Windows Admin Center y todos los nodos del clúster de Azure Stack HCI. 

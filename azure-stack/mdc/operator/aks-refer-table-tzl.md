@@ -1,6 +1,6 @@
 ---
-title: Referencias cruzadas de vínculos de ayuda de Azure Stack Hub
-description: Busque los vínculos de referencia del portal para Azure Stack Hub.
+title: 'Referencias cruzadas de vínculos de ayuda de Azure Stack Hub: MDC'
+description: Consulte los vínculos de referencia del portal para Azure Stack Hub cuando opere desde un Centro de datos modular (MDC).
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,14 +15,14 @@ ms.date: 10/26/2020
 ms.author: mabrigg
 ms.lastreviewed: 10/26/2020
 ms.reviewer: efemmano
-ms.openlocfilehash: dd52df36363e45868e586c0e980950b10b7c6836
-ms.sourcegitcommit: 9ecf9c58fbcc4bc42c1fdc688f370c643c761a29
+ms.openlocfilehash: bfc9c4aeb2e3dfb003d3cd1e1fc9dcc71b0caf82
+ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93330286"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97910932"
 ---
-# <a name="alerts-akams-link-reference-for-azure-stack-hub"></a>Referencia del vínculo aka.ms de alertas para Azure Stack Hub
+# <a name="alerts-akams-link-reference-for-azure-stack-hub---modular-data-center-mdc"></a>Referencia del vínculo aka.ms de alertas para Azure Stack Hub: Centro de datos modular (MDC)
 
 En este tema se enumeran las referencias cruzadas de los vínculos que aparecen dentro de las alertas del portal de administración. 
 

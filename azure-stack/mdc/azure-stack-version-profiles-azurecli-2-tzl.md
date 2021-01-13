@@ -1,6 +1,6 @@
 ---
-title: Administración de Azure Stack Hub con la CLI de Azure | Microsoft Docs
-description: Obtenga información sobre cómo usar la interfaz de la línea de comandos (CLI) multiplataforma para administrar e implementar recursos en Azure Stack Hub.
+title: 'Administración de Azure Stack Hub con la CLI de Azure: MDC | Microsoft Docs'
+description: Obtenga información sobre cómo usar la interfaz de la línea de comandos (CLI) multiplataforma para administrar e implementar recursos en Azure Stack Hub para un Centro de datos modular (MDC).
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -14,14 +14,14 @@ ms.date: 12/2/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/2/2020
-ms.openlocfilehash: b9d40c83c31903a582d8130dcb249fa2fca0a49e
-ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
+ms.openlocfilehash: 2296d1228819d32f77ccc0dd35e4f2228908e969
+ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96525581"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97910268"
 ---
-# <a name="manage-and-deploy-resources-to-azure-stack-hub-with-azure-cli"></a>Administración e implementación de recursos en Azure Stack Hub con la CLI de Azure
+# <a name="manage-and-deploy-resources-to-azure-stack-hub-with-azure-cli---modular-data-center-mdc"></a>Administración e implementación de recursos en Azure Stack Hub con la CLI de Azure: Centro de datos modular (MDC)
 
 *Se aplica a: Sistemas integrados de Azure Stack Hub*
 

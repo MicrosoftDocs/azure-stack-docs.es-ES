@@ -1,18 +1,18 @@
 ---
 title: Códigos e indicadores de EMC PowerEdge Tactical
 description: Conozca los códigos e indicadores de EMC PowerEdge Tactical.
-author: myoungerman
+author: PatAltimore
 ms.topic: how-to
 ms.date: 11/13/2020
-ms.author: v-myoung
+ms.author: patricka
 ms.reviewer: ''
 ms.lastreviewed: ''
-ms.openlocfilehash: 5b4920fb2ab174867092c44ca51a5193412a9a9a
-ms.sourcegitcommit: 3bd42be22e626564b62e560dc037aed4d462011f
+ms.openlocfilehash: 8a820d02ef1832343ba5110a244793c70b73aed3
+ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97393226"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97910285"
 ---
 # <a name="dell-emc-poweredge-tactical-indicators-and-codes"></a>Códigos e indicadores de EMC PowerEdge Tactical de Dell
 
@@ -25,7 +25,7 @@ En la figura siguiente se muestra la etiqueta de información del sistema, que s
 
 Figura 10. Comportamiento del LED
 
-![](media/image-75.png)
+![Etiqueta de información del sistema para el comportamiento del LED.](media/image-75.png)
 
 ## <a name="idrac-direct-led-indicator-codes"></a>Códigos del indicador LED de iDRAC Direct
 
@@ -49,7 +49,7 @@ En la figura siguiente se muestran los indicadores de estado y mantenimiento del
 
 Figura 11. Panel de control izquierdo
 
-![](media/image-76.png)
+![Diagrama en el que se muestran los indicadores de estado y mantenimiento del panel de control izquierdo.](media/image-76.png)
 
 En la tabla siguiente se describen las características del panel izquierdo.
 
@@ -58,7 +58,7 @@ Tabla 5. Indicadores de estado y mantenimiento del panel de control izquierdo de
 |    <br>Elemento       |    <br>Indicador o botón                       |    <br>Icono                                |    <br>Descripción                                                                                                  |
 |-------------------|--------------------------------------------------|--------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
 |    <br>1          |    <br>Indicadores LED de estado                     |    <br>N/D                                 |    <br>Indican el estado del sistema. Para obtener más información, consulte la tabla Indicadores LED de estado de PowerEdge.    |
-|    <br>2 y 3    |    <br>Indicadores de identificación y estado del sistema    | ![](media/image-77.png) |    <br>Indica el estado del sistema.                                                                                 |
+|    <br>2 y 3    |    <br>Indicadores de identificación y estado del sistema    | ![Icono de mantenimiento del sistema](media/image-77.png) |    <br>Indica el estado del sistema.                                                                                 |
 
 En la tabla siguiente se incluyen los indicadores LED de estado de PowerEdge.
 
@@ -83,7 +83,7 @@ En la siguiente figura se muestra la PSU de CA.
 
 Ilustración 12. Unidad de fuente de alimentación de CA
 
-![](media/image-83.png)
+![Diagrama en el que se muestra la PSU de CA, con el LED indicado.](media/image-83.png)
 
 En la tabla siguiente se definen los códigos del indicador.
 

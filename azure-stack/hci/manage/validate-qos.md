@@ -3,21 +3,23 @@ title: Solución de problemas de informes de validación de clústeres
 description: Solucionar problemas de generación de informes de validación de clústeres y validar la configuración de QoS para clústeres de Azure Stack HCI
 author: khdownie
 ms.topic: troubleshooting
-ms.date: 07/21/2020
+ms.date: 01/05/2021
 ms.author: v-kedow
 ms.reviewer: JasonGerend
-ms.openlocfilehash: c4da92a6d88a3d2046ee6136f2481ac23e5bd476
-ms.sourcegitcommit: 0e52f460295255b799bac92b40122a22bf994e27
+ms.openlocfilehash: a5b6ef03701daf1c1f4115f88a2a4e44bac1bd61
+ms.sourcegitcommit: 0e2c814cf2c154ea530a4e51d71aaf0835fb2b5a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86868097"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97918632"
 ---
 # <a name="troubleshoot-cluster-validation-reporting"></a>Solución de problemas de informes de validación de clústeres
 
 > Se aplica a: Azure Stack HCI, versión 20H2; Windows Server 2019
 
 Este tema le ayuda a solucionar los problemas de los informes de validación de clústeres para la configuración de QoS (calidad del servicio) de red y almacenamiento en los servidores de un clúster de Azure Stack HCl y comprueba que se han definido reglas importantes. Para lograr una conectividad y un rendimiento óptimos, el proceso de validación de clústeres comprueba que la configuración de QoS del Protocolo de puente del centro de datos (DCB) es coherente y, si está definida, contiene las reglas adecuadas para los clústeres de conmutación por error y las clases de tráfico SMB/SMB directo.
+
+DCB es necesario para redes RDMA sobre Ethernet convergente (RoCE) y es opcional (pero se recomienda) para redes del protocolo RDMA de área extensa de Internet (iWARP).
 
 ## <a name="install-data-center-bridging"></a>Instalar el protocolo de puente del centro de datos
 

@@ -1,6 +1,6 @@
 ---
-title: Oferta del elemento de Marketplace Commvault en Azure Stack | Microsoft Docs
-description: Implementación de Commvault desde el Marketplace de Azure Stack
+title: 'Oferta del elemento Commvault del marketplace en Azure Stack: MDC'
+description: Implemente Commvault desde el marketplace de Azure Stack para un Centro de datos modular (MDC).
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,14 +15,14 @@ ms.date: 10/26/2020
 ms.author: sethm
 ms.reviewer: hectorl
 ms.lastreviewed: 10/26/2020
-ms.openlocfilehash: 6ece6792602d90fd43bc682d7547061180ea9289
-ms.sourcegitcommit: 9ecf9c58fbcc4bc42c1fdc688f370c643c761a29
+ms.openlocfilehash: c2f98725a93dbd471f257d8a038a989d9f892c68
+ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93330326"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97910846"
 ---
-# <a name="offer-commvault-marketplace-item-in-azure-stack"></a>Oferta del elemento de Marketplace Commvault en Azure Stack
+# <a name="offer-commvault-marketplace-item-in-azure-stack---modular-data-center-mdc"></a>Oferta del elemento Commvault del marketplace en Azure Stack: Centro de datos modular (MDC)
 
 *Se aplica a: Centro de datos modular, Azure Stack Hub resistente*
 

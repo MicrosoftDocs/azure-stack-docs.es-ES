@@ -1,18 +1,18 @@
 ---
 title: Encendido de un nodo de unidad de escalado
 description: Aprenda a encender un nodo de unidad de escalado.
-author: myoungerman
+author: PatAltimore
 ms.topic: how-to
 ms.date: 11/13/2020
-ms.author: v-myoung
+ms.author: patricka
 ms.reviewer: ''
 ms.lastreviewed: ''
-ms.openlocfilehash: 65ce2d6eb9244700ac00e2e477dcaaa999a07347
-ms.sourcegitcommit: 3bd42be22e626564b62e560dc037aed4d462011f
+ms.openlocfilehash: 8eaf2442187d18f0fadee316f629686ab25b4780
+ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97393203"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97910710"
 ---
 # <a name="powering-on-a-scale-unit-node"></a>Encendido de un nodo de unidad de escalado
 
@@ -20,15 +20,15 @@ ms.locfileid: "97393203"
 
 1.  Inicie el nodo de unidad de escalado.
 
-    1.  Vuelva al **portal de administración**; si el nodo todavía tiene el estado **Stopped** (Detenido), seleccione el nodo y **Start** (Iniciar): ![](media/image-46.png)
+    1.  Vuelva al **portal de administración**; si el nodo todavía tiene el estado **Detenido**, seleccione el nodo e **Iniciar**: ![Captura de pantalla en la que se muestra la página de administración de nodos con un nodo y la acción "Iniciar" seleccionada.](media/image-46.png)
 
     1.  Seleccione **Yes** (Sí) para confirmar la operación de inicio:
 
-        ![](media/image-47.png)
+        ![Captura de pantalla en la que se muestra la página de administración de nodos con el cuadro de diálogo "Nodo inicial".](media/image-47.png)
         
     1.  Puede ver el progreso en el panel de notificaciones:
     
-        ![](media/image-48.png)
+        ![Captura de pantalla en la que se muestra la página de administración de nodos con el progreso en el panel de notificaciones.](media/image-48.png)
             
     > [!NOTE]
     > También puede usar la consola virtual de iDRAC para comprobar que no hay ningún problema con el componente intercambiado durante la operación POST.
@@ -37,13 +37,13 @@ ms.locfileid: "97393203"
 
     1.  Ahora que el nodo se ha vuelto a conectar correctamente, en el **portal de administración**, seleccione el nodo y **Resume** (Reanudar).
 
-        ![](media/image-49.png)
+        ![Captura de pantalla en la que se muestra la página de administración de nodos con un nodo y la acción "Reanudar" seleccionada.](media/image-49.png)
         
     1.  Seleccione **Yes** (Sí) para confirmar la operación de reanudación:
     
-        ![](media/image-50.png)
+        ![Captura de pantalla en la que se muestra la página de administración de nodos con el cuadro de diálogo para reanudar el nodo.](media/image-50.png)
     
     1.  Puede ver el progreso en el panel de notificaciones:
     
-        ![](media/image-51.png)
+        ![Captura de pantalla en la que se muestra la página de administración de nodos con el progreso del nodo en el panel de notificaciones.](media/image-51.png)
         

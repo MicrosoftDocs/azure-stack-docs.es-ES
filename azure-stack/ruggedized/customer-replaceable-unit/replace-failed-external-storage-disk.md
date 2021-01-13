@@ -1,18 +1,18 @@
 ---
 title: Sustitución de un disco de almacenamiento externo con errores
 description: Obtenga información sobre cómo sustituir un disco de almacenamiento externo con errores.
-author: myoungerman
+author: PatAltimore
 ms.topic: how-to
 ms.date: 11/13/2020
-ms.author: v-myoung
+ms.author: patricka
 ms.reviewer: ''
 ms.lastreviewed: ''
-ms.openlocfilehash: 46320af2b4eeb6eddbca92a6749550eed05f6627
-ms.sourcegitcommit: 3bd42be22e626564b62e560dc037aed4d462011f
+ms.openlocfilehash: e53d81e7606c6440ce535726199af31a1dbfd950
+ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97392859"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97910659"
 ---
 # <a name="replacing-a-failed-external-storage-disk"></a>Sustitución de un disco de almacenamiento externo con errores
 
@@ -69,11 +69,11 @@ Use el procedimiento siguiente para reemplazar un disco externo con errores.
 
     1.  En el menú superior, seleccione **Storage** (Almacenamiento):
 
-        ![](media/image-30.png)
+        ![Captura de pantalla en la que se muestra la página de iDRAC con la acción de almacenamiento seleccionada.](media/image-30.png)
     
     1.  Busque el disco reemplazado y expanda el elemento. Compare el campo **Revision** (Revisión) del disco con la revisión de la matriz de compatibilidad. Si el disco no está en la matriz de compatibilidad, póngase en contacto con el departamento de soporte técnico para corregir el problema.
 
-        ![](media/image-31.png)
+        ![Captura de pantalla en la que se muestra la página de propiedades avanzadas de iDRAC con las opciones de fabricante, identificador de producto y revisión resaltadas.](media/image-31.png)
         
 ## <a name="next-steps"></a>Pasos siguientes
 

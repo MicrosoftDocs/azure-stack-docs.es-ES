@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 1/8/2020
+ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: chasat
 ms.lastreviewed: 12/17/2019
-ms.openlocfilehash: ed1809d44f54ec65c60c5a1e17ca472ee401b5ba
-ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
+ms.openlocfilehash: 60caf869fef5537aa6adc35bd2233a81a4fe749d
+ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96941273"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97909827"
 ---
 # <a name="rotate-container-registry-secrets-in-azure-stack-hub"></a>Rotación de secretos del registro de contenedor en Azure Stack Hub
 
@@ -253,19 +253,19 @@ Siga estas instrucciones para configurar los nuevos secretos en Key Vault.
 
 2.  Vaya al grupo de recursos en el que está implementada la plantilla de máquina virtual del registro de contenedor.
 
-    ![Plantilla de registro de contenedor](./media/container-registry-template-rotating-secrets-tzl/image1.png)
+    ![Captura de pantalla en la que se muestra el grupo de recursos en el que está implementada la máquina virtual de la plantilla de registro de contenedor.](./media/container-registry-template-rotating-secrets-tzl/image1.png)
 
 3. Seleccione las implementaciones en **Implementaciones**.
 
-    ![Plantilla de registro de contenedor](./media/container-registry-template-rotating-secrets-tzl/image2.png)
+    ![Captura de pantalla en la que se muestra una implementación seleccionada en la página de implementaciones.](./media/container-registry-template-rotating-secrets-tzl/image2.png)
 
 4.  Si es la primera rotación de los secretos, seleccione la implementación original. Si no es la primera rotación, seleccione la implementación más reciente y, a continuación, seleccione **Volver a implementar**.
 
-    ![Plantilla de registro de contenedor](./media/container-registry-template-rotating-secrets-tzl/image3.png)
+    ![Captura de pantalla en la que se muestra la página de información general de plantillas con la acción "Volver a implementar" resaltada.](./media/container-registry-template-rotating-secrets-tzl/image3.png)
 
 5.  En **Implementar plantilla de solución**, seleccione **Usar grupo de recursos existente** y seleccione el grupo de recursos que se usó para implementar originalmente la plantilla del registro de contenedor. Para que una reimplementación se realice correctamente, debe usar el mismo grupo de recursos.
 
-    ![Plantilla de registro de contenedor](./media/container-registry-template-rotating-secrets-tzl/image4.png)
+    ![Captura de pantalla en la que se muestran las páginas de implementación de plantilla de solución y de parámetros.](./media/container-registry-template-rotating-secrets-tzl/image4.png)
 
 6.  En **Parámetros** compruebe que los parámetros coinciden con la implementación original. Será necesario agregar el identificador de cliente y el secreto de la entidad de servicio.
 

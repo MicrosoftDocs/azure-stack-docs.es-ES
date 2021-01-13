@@ -3,16 +3,16 @@ title: Elementos de Azure Marketplace disponibles para Azure Stack Hub
 description: Descubra qué elementos de Azure Marketplace se pueden usar en Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 12/9/2020
+ms.date: 01/04/2021
 ms.author: sethm
 ms.reviewer: gara
 ms.lastreviewed: 12/9/2020
-ms.openlocfilehash: ccc190d13d78f3dbbfdca3b05a1868763637f55b
-ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
+ms.openlocfilehash: 475aa05c8274f36ea63763d648c69f2b3778da71
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96935226"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97871810"
 ---
 # <a name="azure-marketplace-items-available-for-azure-stack-hub"></a>Elementos de Azure Marketplace disponibles para Azure Stack Hub
 
@@ -219,7 +219,7 @@ Microsoft Azure Stack Hub es compatible con las siguientes plantillas de solucio
 | ![WordPress Multi-Tier](media/azure-stack-marketplace-azure-items/wordpress.png) | [WordPress Multi-Tier](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.multi-tier-wordpress) | WordPress es la plataforma de administración de contenido y blogs más popular. Eficaz pero sencilla, es la plataforma que usan tanto los estudiantes como las multinacionales para crear sitios web atractivos y funcionales. Esta solución utiliza dos máquinas virtuales: una con el front-end de la aplicación y la otra con la base de datos. Esta plantilla de solución también requiere **Debian 9** y la **extensión Custom Script for Linux 2.0**. | Bitnami |
 | ![WordPress con NGINX y SSL](media/azure-stack-marketplace-azure-items/wordpress.png) | [WordPress con NGINX y SSL](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.wordpresspro) | WordPress con NGINX y SSL combina la aplicación de creación de blogs más popular con la eficacia del servidor web de NGINX. También simplifica la configuración de los certificados Let's Encrypt para protegerlo. | Bitnami |
 | :::image type="icon" source="media/azure-stack-marketplace-azure-items/xoops.png" border="false"::: | [Xoops](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.xoops) | CMS y portal web que crea sitios web dinámicos. | Bitnami |
-| :::image type="icon" source="media/azure-stack-marketplace-azure-items/zurmo.png" border="false"::: | [Zurmo](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.zurmo) | Sistema de CRM de código abierto: móvil, social y gamificado. | Bitnami |
+| :::image type="icon" source="media/azure-stack-marketplace-azure-items/zurmo.png" border="false"::: | [Zurmo](https://sourceforge.net/projects/zurmo/) | Sistema de CRM de código abierto: móvil, social y gamificado. | Bitnami |
 | :::image type="icon" source="media/azure-stack-marketplace-azure-items/zookeeper.png" border="false"::: | [ZooKeeper](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.zookeeper) | ZooKeeper proporciona un registro confiable y centralizado de los servicios y datos de configuración para aplicaciones distribuidas. | Bitnami |
 | ![Clúster de ZooKeeper](media/azure-stack-marketplace-azure-items/zookeeper.png) | [Clúster de ZooKeeper](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.zookeepermultitier) | ZooKeeper proporciona un registro confiable y centralizado de los servicios y datos de configuración para aplicaciones distribuidas. Esta solución proporciona servicios de coordinación y almacenamiento de datos escalables, confiables y centralizados para aplicaciones distribuidas. También aprovisiona un número configurable de nodos que forman un clúster de ZooKeeper con tolerancia a errores. También se puede integrar con otras aplicaciones como Kafka. Esta plantilla de solución también requiere **Debian 9** y la **extensión Custom Script for Linux 2.0**. | Bitnami |
 | ![Check Point CloudGuard IaaS High Availability](media/azure-stack-marketplace-azure-items/checkpoint.png) | [CloudGuard IaaS High Availability](https://azuremarketplace.microsoft.com/marketplace/apps/checkpoint.vsec) | Esta solución permite implementar un clúster de IaaS de Check Point CloudGuard con 2 miembros. Cada miembro tiene 2 interfaces de red. | Punto de comprobación |
@@ -250,4 +250,5 @@ Microsoft Azure Stack Hub es compatible con las siguientes plantillas de solucio
 | ![Teradici Cloud Access Software](media/azure-stack-marketplace-azure-items/teradici.png) | [Teradici Cloud Access Software](https://azuremarketplace.microsoft.com/marketplace/apps/teradici.teradici_cas_azure_stack) | Con tecnología PCoIP&reg;, Cloud Access Software ofrece escritorios y estaciones de trabajo remotos de Azure Stack a cualquier dispositivo y en cualquier lugar. Consolide el almacenamiento de datos, mejore la colaboración, proteja los datos, simplifique la administración del escritorio y mucho más. | Teradici |
 | ![CipherTrust Cloud Key Manager](media/azure-stack-marketplace-azure-items/cckm.png) | [CipherTrust Cloud Key Manager](https://azuremarketplace.microsoft.com/marketplace/apps/thales-vormetric.ciphertrust-ckm) | Al aprovechar Microsoft Azure y otras API de Bring Your Own Key (BYOK) de proveedores de nube, CipherTrust Cloud Key Manager reduce la complejidad de la administración de claves y los costos operativos, al ofrecerle control de nube múltiple del ciclo de vida de las claves de cifrado con administración y visibilidad centralizadas. | Thales eSecurity |
 | ![Veeam Backup & Replication](media/azure-stack-marketplace-azure-items/veeam.png) | [Veeam Backup & Replication](https://azuremarketplace.microsoft.com/marketplace/apps/veeam.veeam-backup-replication?tab=Overview) | Veeam&reg; Backup & Replication&trade; ayuda a las empresas a conseguir una protección de datos completa para todas las cargas de trabajo (virtuales, físicas y basadas en la nube). Con una única consola, puede lograr de manera rápida, flexible y confiable la copia de seguridad, la recuperación y la replicación de todos los datos y aplicaciones. | Veeam Software |
+| ![Sistema operativo Versa (VOS)](media/azure-stack-marketplace-azure-items/versa.png) | [Sistema operativo Versa (VOS)](https://azuremarketplace.microsoft.com/marketplace/apps/versanetworks.versa-operating-system?tab=Overview) | El sistema operativo Versa (VOS) es una aplicación virtual completa y avanzada de última generación que aporta la eficacia de SD-WAN, SD-Routing y SD-Security a la nube de Microsoft Azure. | Versa Networks |
 | ![ZeroDown Software BCaaS](media/azure-stack-marketplace-azure-items/zerodown.png) | [Continuidad empresarial de ZeroDown Software como servicio](https://azuremarketplace.microsoft.com/marketplace/apps/zerodown_software.bcaasforazure) | La tecnología de ZeroDown&reg; Software proporciona a las empresas acceso continuo a sus datos corporativos mediante su arquitectura Business Continuity as a Service (BCaaS)&trade;, además de protección de las aplicaciones y las transacciones en caso de interrupciones de red que normalmente perjudicarían a la empresa. | ZeroDown Software |

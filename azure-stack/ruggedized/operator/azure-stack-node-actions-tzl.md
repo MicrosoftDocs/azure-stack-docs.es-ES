@@ -1,5 +1,5 @@
 ---
-title: Acciones de los nodos de la unidad de escalado en Azure Stack Hub
+title: Acciones del nodo de unidad de escalado en Azure Stack Hub Ruggedized
 description: Obtenga información sobre las acciones de los nodos de la unidad de escalado, incluidas las de conectar, desconectar, deshabilitar y reanudar, así como visualizar el estado de los nodos en los sistemas integrados de Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
@@ -15,14 +15,14 @@ ms.date: 12/20/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 12/20/2020
-ms.openlocfilehash: 768d51257e1d70979c2ee0f43aad4db8430cf8cf
-ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
+ms.openlocfilehash: 48cb9d6e659f8b6f3507f5c0b4d6b7e60622f025
+ms.sourcegitcommit: c5d46662492887b70a599a60f3c3d27e3460a742
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96941290"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965484"
 ---
-# <a name="scale-unit-node-actions-in-azure-stack-hub"></a>Acciones de los nodos de la unidad de escalado en Azure Stack Hub
+# <a name="scale-unit-node-actions-in-azure-stack-hub---ruggedized"></a>Acciones del nodo de unidad de escalado en Azure Stack Hub Ruggedized
 
 En este artículo se describe cómo ver el estado de una unidad de escalado. Puede ver los nodos de la unidad. Puede ejecutar acciones de nodo, como son conectar, desconectar, apagar, purgar, reanudar y reparar. Normalmente, estas acciones de nodo se utilizan durante el reemplazo de componentes o para ayudar a recuperar un nodo.
 
@@ -80,7 +80,7 @@ Debe instalar los módulos de PowerShell de Azure Stack Hub. Estos cmdlets está
 
 La acción **Detener** desactiva el nodo. Equivale a presionar el botón de encendido. No envía una señal de apagado al sistema operativo. Para las operaciones de detención planeadas, intente siempre llevar a cabo la operación de apagado primero.
 
-Esta acción se utiliza normalmente cuando un nodo está en un estado bloqueado y ya no responde a las solicitudes.
+Esta acción se usa normalmente cuando un nodo ya no responde a las solicitudes.
 
 Para ejecutar la acción de detención, abra un símbolo de sistema de PowerShell con privilegios elevados y ejecute el siguiente cmdlet:
 
@@ -169,4 +169,4 @@ Para ejecutar la acción de apagado, abra un símbolo de sistema de PowerShell c
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Obtenga información sobre el módulo del operador de tejido de Azure Stack Hub](https://docs.microsoft.com/powershell/module/azs.fabric.admin/?view=azurestackps-1.6.0).
+[Obtenga información sobre el módulo del operador de tejido de Azure Stack Hub](https://docs.microsoft.com/powershell/module/azs.fabric.admin/).

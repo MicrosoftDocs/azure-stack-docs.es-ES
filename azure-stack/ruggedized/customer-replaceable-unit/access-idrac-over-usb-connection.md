@@ -1,18 +1,18 @@
 ---
 title: Acceso al controlador iDRAC a través de una conexión USB
 description: Aprenda a acceder al controlador iDRAC a través de una conexión USB.
-author: myoungerman
+author: PatAltimore
 ms.topic: how-to
 ms.date: 11/13/2020
-ms.author: v-myoung
+ms.author: patricka
 ms.reviewer: ''
 ms.lastreviewed: ''
-ms.openlocfilehash: 7381aae6b7b08de01e27f895d79519a024a1955a
-ms.sourcegitcommit: 3bd42be22e626564b62e560dc037aed4d462011f
+ms.openlocfilehash: 5c270de88d78bb8cb7ba1f7b9216c4a160a4aae8
+ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97393223"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97910065"
 ---
 # <a name="accessing-the-idrac-interface-over-a-direct-usb-connection"></a>Acceso a la interfaz del controlador iDRAC a través de una conexión USB directa
 
@@ -29,7 +29,7 @@ Para acceder a la interfaz de iDRAC a través del puerto USB, haga lo siguiente 
 2.  Conecte un cable micro USB del portátil al puerto iDRAC Direct, situado en la parte delantera del servidor.
     Consulte el elemento 4 del diagrama.
 
-    ![](media/image-67.png)
+    ![Diagrama en el que se muestra un botón de encendido, un puerto USB y un puerto micro USB.](media/image-67.png)
 
 3.  Espere a que el portátil adquiera la dirección IP 169.254.0.4.
 

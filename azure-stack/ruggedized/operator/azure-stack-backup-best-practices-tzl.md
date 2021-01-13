@@ -15,14 +15,14 @@ ms.date: 12/11/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 12/11/2019
-ms.openlocfilehash: 7b899ab7f0916d34a76f64dd6b89c9d45e2a9d5a
-ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
+ms.openlocfilehash: d54381c185b51b880d452ebf303581c068072f9a
+ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96941282"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97909844"
 ---
-# <a name="infrastructure-backup-service-best-practices"></a>Procedimientos recomendados del servicio Infrastructure Backup
+# <a name="infrastructure-backup-service-best-practices---ruggedized"></a>Procedimientos recomendados del servicio Copia de seguridad de infraestructura para Ruggedized
 
 *Se aplica a: Centro de datos modular, Azure Stack Hub resistente*
 

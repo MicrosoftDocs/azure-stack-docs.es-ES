@@ -1,18 +1,18 @@
 ---
 title: Requisitos y consideraciones de ASDK
 description: Consulte los requisitos de hardware, software y entorno para instalar el Kit de desarrollo de Azure Stack (ASDK).
-author: myoungerman
+author: PatAltimore
 ms.topic: article
 ms.date: 09/23/2020
-ms.author: v-myoung
+ms.author: patricka
 ms.reviewer: misainat
 ms.lastreviewed: 09/23/2020
-ms.openlocfilehash: dbd0398b7f6582c12288c2ae72137c4a673ddfcc
-ms.sourcegitcommit: 950dbc793b3498173923d0bc9fe56662a349abf1
+ms.openlocfilehash: 64b0209ad669c42b7a792498369ca0f48bfcca52
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92082095"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97873289"
 ---
 # <a name="asdk-requirements-and-considerations"></a>Requisitos y consideraciones de ASDK
 
@@ -66,7 +66,7 @@ Para usar una configuración de espejo bidireccional para la resistencia del alm
 
 - Necesita tener una capacidad de HDD en el sistema que sea de más de dos terabytes.
 - Si no tiene ningún SSD en ASDK, necesitará al menos ocho HDD para la configuración de espejo bidireccional.
-- Si dispone de varios SSD en ASDK, junto con HDD, necesitará al menos cinco HDD. Sin embargo, se recomienda seis HDD. Para seis HDD, también es aconsejable tener un mínimo de tres SSD correspondientes en el sistema para que cada disco de caché (SSD) sirva a dos unidades de capacidad (HDD).
+- Si dispone de varios SSD en ASDK, junto con HDD, necesitará al menos cinco HDD. Aun así, se recomiendan seis HDD. Para seis HDD, también es aconsejable tener un mínimo de tres SSD correspondientes en el sistema para que cada disco de caché (SSD) sirva a dos unidades de capacidad (HDD).
 
 Ejemplo de configuración de espejo bidireccional:
 

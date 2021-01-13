@@ -1,6 +1,6 @@
 ---
-title: Copia de seguridad de Azure Stack | Microsoft Docs
-description: Aprenda a realizar una copia de seguridad a petición en Azure Stack.
+title: 'Copia de seguridad de Azure Stack: MDC | Microsoft Docs'
+description: Aprenda a realizar una copia de seguridad a petición en Azure Stack para un Centro de datos modular (MDC).
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,14 +15,14 @@ ms.date: 10/26/2020
 ms.author: sethm
 ms.reviewer: hectorl
 ms.lastreviewed: 10/26/2020
-ms.openlocfilehash: 0455c96449d0547d94d8d904fe59f268145da3a8
-ms.sourcegitcommit: 9ecf9c58fbcc4bc42c1fdc688f370c643c761a29
+ms.openlocfilehash: f64b656b6a0a0d5310b6d6e2fbb8ff26d5206ad1
+ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93330334"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97910898"
 ---
-# <a name="back-up-azure-stack"></a>Copia de seguridad de Azure Stack
+# <a name="back-up-azure-stack---modular-data-center-mdc"></a>Copia de seguridad de Azure Stack: Centro de datos modular (MDC)
 
 *Se aplica a: Centro de datos modular, Azure Stack Hub resistente*
 
@@ -30,7 +30,7 @@ En este artículo se muestra cómo realizar una copia de seguridad a petición d
 
 ## <a name="start-backup"></a>Inicio de la copia de seguridad
 
-Las copias de seguridad se programan automáticamente. Iniciar una copia de seguridad a petición solo es necesario si recibe una alerta para desencadenar manualmente la copia de seguridad. Seleccione **Hacer copia de seguridad ahora** para realizar una copia de seguridad a petición. Una copia de seguridad a petición no modificará la hora de la siguiente copia de seguridad programada. Una vez completada la tarea, puede confirmar la configuración en la hoja **Información esencial** :
+Las copias de seguridad se programan automáticamente. Iniciar una copia de seguridad a petición solo es necesario si recibe una alerta para desencadenar manualmente la copia de seguridad. Seleccione **Hacer copia de seguridad ahora** para realizar una copia de seguridad a petición. Una copia de seguridad a petición no modificará la hora de la siguiente copia de seguridad programada. Una vez completada la tarea, puede confirmar la configuración en la hoja **Información esencial**:
 
 ![Configuración de copia de seguridad](media/azure-stack-backup-back-up-azure-stack-tzl/on-demand-backup.png)
 
@@ -126,7 +126,7 @@ Use el portal de administración de Azure Stack para comprobar que esa copia de 
 
 1. Abra el [portal de administración de Azure Stack](../../operator/azure-stack-manage-portals.md).
 
-2. Seleccione **Todos los servicios** y, a continuación, en la categoría **Administración** , seleccione **Copia de seguridad de infraestructura**. Elija **Configuración** en la hoja **Copia de seguridad de infraestructura**.
+2. Seleccione **Todos los servicios** y, a continuación, en la categoría **Administración**, seleccione **Copia de seguridad de infraestructura**. Elija **Configuración** en la hoja **Copia de seguridad de infraestructura**.
 
 3. Busque el **Nombre** y la **Fecha de finalización** de la copia de seguridad en la lista **Copias de seguridad disponibles**.
 

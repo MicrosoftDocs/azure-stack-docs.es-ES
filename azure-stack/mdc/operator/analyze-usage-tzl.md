@@ -1,6 +1,6 @@
 ---
-title: Análisis del uso de Azure Stack y de la API de uso de los recursos | Microsoft Docs
-description: Análisis del uso de Azure Stack y referencia de la API de uso de recursos, la cual recupera información de uso de Azure Stack.
+title: 'Análisis del uso de Azure Stack y de la API de uso de los recursos: MDC'
+description: Análisis del uso de Azure Stack y referencia de la API de uso de recursos, la cual recupera información de uso de Azure Stack. Para un Centro de datos modular (MDC).
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,14 +15,14 @@ ms.date: 10/27/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 10/27/2020
-ms.openlocfilehash: 9e7bb8b8174423a21c4f08e09cdb10d2a37bf556
-ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
+ms.openlocfilehash: efbbfbb76215cdd3322c57ca0c5def8575f5f023
+ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96935074"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97910915"
 ---
-# <a name="analyze-azure-stack-usage-with-local-usage-meters"></a>Análisis del uso de Azure Stack con medidores de uso locales
+# <a name="analyze-azure-stack-usage-with-local-usage-meters---modular-data-center-mdc"></a>Análisis del uso de Azure Stack con medidores de uso locales: Centro de datos modular (MDC)
 
 La información sobre qué suscripciones usan qué recursos se almacena en una base de datos de uso local. Los administradores pueden recuperar estos datos para analizar qué usuarios consumen recursos.
 

@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
 ms.date: 12/28/2020
-ms.openlocfilehash: de2ad8fecc2d79e8c8ff56e3a53a0769698a6fc1
-ms.sourcegitcommit: 8790b8a4ecf4421409534df5ff510d537cc000da
+ms.openlocfilehash: b2576bed615d6a65a5e0c61e5e3ccbc2c052132b
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97801970"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97872711"
 ---
 # <a name="connect-azure-stack-hci-to-azure"></a>Conexión de Azure Stack HCI a Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "97801970"
 Azure Stack HCl se entrega como servicio de Azure y debe registrarse en un plazo de 30 días a partir de la instalación según los Términos de los Servicios en Línea de Azure. En este tema se explica cómo registrar un clúster de Azure Stack HCI en [Azure Arc](https://azure.microsoft.com/services/azure-arc/) para supervisión, soporte técnico, facturación y servicios híbridos. Tras el registro, se crea un recurso de Azure Resource Manager para representar cada clúster local de Azure Stack HCl, lo que extiende de manera eficaz el plano de administración de Azure a Azure Stack HCl. La información se sincroniza periódicamente entre el recurso de Azure y los clústeres locales.
 
    > [!IMPORTANT]
-   > Es necesario registrarse en Azure y el clúster no es totalmente compatible hasta que el registro esté activo. Si no registra el clúster en Azure en un plazo de 30 días después de la implementación, o si el clúster está registrado pero no se ha conectado a Azure durante más de 30 días, el sistema no permitirá que se creen o agreguen nuevas máquinas virtuales. Cuando esto ocurra, recibirá el siguiente error al intentar crear máquinas virtuales:
+   > Es necesario registrarse en Azure y el clúster no es totalmente compatible hasta que el registro esté activo. Si no registra el clúster en Azure tras la implementación, o si el clúster está registrado pero no se ha conectado a Azure durante más de 30 días, el sistema no permitirá que se creen o agreguen nuevas máquinas virtuales. Cuando esto ocurra, recibirá el siguiente error al intentar crear máquinas virtuales:
    >
    > *Error al configurar el rol de máquina virtual para "vmname". error del trabajo. Error al abrir los roles en clúster de "vmname". El servicio al que se está accediendo tiene una licencia para un número determinado de conexiones. No se pueden realizar más conexiones al servicio en este momento porque ya se ha aceptado el número máximo de conexiones.*
    >

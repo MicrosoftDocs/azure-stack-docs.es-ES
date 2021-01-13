@@ -1,5 +1,5 @@
 ---
-title: Registro de Azure Stack Hub en Azure
+title: 'Registro de Azure Stack Hub con Azure: Ruggedized'
 description: Obtenga información sobre cómo registrar Azure Stack Hub en Azure de forma que pueda descargar elementos de Azure Marketplace y configurar los informes de datos.
 services: azure-stack
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.date: 12/21/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 12/20/2019
-ms.openlocfilehash: 8dd475ffb12d8aafb37f0c6fe3ec588e6cdf1456
-ms.sourcegitcommit: aef251d6771400b21a314bbfbea4591ab263f8fb
+ms.openlocfilehash: 3d24ba3a714c8ea8f17189a7c63a134dab0f8d12
+ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97726193"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97909810"
 ---
 # <a name="register-azure-stack-hub-with-azure---azure-stack-hub-ruggedized"></a>Registro de Azure Stack Hub en Azure: Azure Stack Hub Ruggedized
 
@@ -136,7 +136,7 @@ Los entornos conectados pueden acceder a Internet y a Azure. En estos entornos, 
    Connect-AzureRmAccount -Environment "<environment name>"
    ```
 
-   Para **AzureUSSec**, primero debe inicializar el entorno `CustomCloud` environment y, después, llamar a **Connect-AzureRmAccount**:
+   Para **AzureUSSec**, primero debe inicializar el entorno `CustomCloud` y, después, llamar a **Connect-AzureRmAccount**:
 
    ```powershell
    Initialize-AzureRmEnvironment -Name 'CustomCloud' -CloudManifestFilePath $CloudManifestFilePath

@@ -1,18 +1,18 @@
 ---
 title: Sustitución del calentador
 description: Obtenga información sobre cómo reemplazar el calentador.
-author: myoungerman
+author: PatAltimore
 ms.topic: how-to
 ms.date: 11/13/2020
-ms.author: v-myoung
+ms.author: patricka
 ms.reviewer: ''
 ms.lastreviewed: ''
-ms.openlocfilehash: 956d726d889cbd917a77322ce8bf46a8b3cb3c17
-ms.sourcegitcommit: 3bd42be22e626564b62e560dc037aed4d462011f
+ms.openlocfilehash: 028ad9442961708820f905b73037eb55a11af72a
+ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97392871"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97910540"
 ---
 # <a name="replacing-the-heater"></a>Sustitución del calentador
 
@@ -61,74 +61,74 @@ El calentador se monta en una caja de transporte capaz de albergar la unidad.
 
 1. En la cubierta del pod delantero, gire los ocho pestillos de cubierta en sentido contrario a las agujas del reloj para liberar la cubierta del pod. Mantenga presionada la cubierta mientras libera los ocho pestillos. 
 
-    ![](media/image-86.png)
+    ![Diagrama en el que se muestra la cubierta del pod delantero con los pestillos de la cubierta resaltados.](media/image-86.png)
 
 1. Retire la cubierta del pod. 
 
-    ![](media/image-87.png)
+    ![Retirada de la cubierta del pod delantero.](media/image-87.png)
 
 1. Repita los pasos 1 y 2 para retirar la cubierta del pod trasero. Ahora puede acceder a los componentes que hay dentro de los pods. 
 
 1. Afloje completamente los tornillos y, a continuación, extraiga el ensamblaje del filtro del servidor, tal y como se muestra en las siguientes figuras. 
 
-    ![](media/image-88.png)
+    ![Diagrama en el que se muestra la ubicación de los tornillos en el ensamblaje del filtro.](media/image-88.png)
 
-    ![](media/image-89.png)
+    ![Retirada del ensamblaje del filtro.](media/image-89.png)
 
 1. Tire de las pestañas de liberación hacia fuera del calentador táctico de 1 U (V2) hasta que se libere la cubierta y, a continuación, mueva la cubierta hacia afuera desde el bastidor del chasis del pod. 
 
-    ![](media/image-90.png)
+    ![Diagrama en el que se muestran las pestañas de liberación.](media/image-90.png)
 
 1. Cuando la sección inferior de la cámara despeje la base, tire hacia afuera hasta aproximadamente unos 40 grados. El ángulo le permite desplazar la parte superior de la cámara hacia el servidor o los conmutadores y, a continuación, hacia arriba y hacia fuera antes de extraer la cámara del pod. 
 
-    ![](media/image-91.png)
+    ![Diagrama en el que se muestra cómo se retira la cámara.](media/image-91.png)
 
 1. En la parte frontal de la caja, retire el cierre zip de la parte inferior del calentador táctico de 1 U (V2). Si es necesario, use la herramienta de corte de diagonal. 
 
-    ![](media/image-92.png)
+    ![Diagrama en el que se muestra el soporte del cierre zip y el microconector para el sensor de entrada de temperatura resaltados.](media/image-92.png)
 
 1. Apriete la pestaña frontal de microconector con el pulgar y el dedo índice y tire hacia abajo hasta que se libere la conexión de la parte inferior del calentador. Retire el cable de la trayectoria del calentador. 
 
-    ![](media/image-93.png)
+    ![Diagrama en el que se muestra el sensor de temperatura de entrada del servidor con el cable conectado.](media/image-93.png)
 
 1. En la parte delantera de la caja, quite los cuatro tornillos 10-32, las arandelas de bloqueo y las arandelas planas del servidor de administración o el servidor del nodo de la unidad de escalado inferior. 
 
-    ![](media/image-94.png)
+    ![Diagrama en el que se muestra la ubicación de los tornillos en la parte delantera de la caja.](media/image-94.png)
 
-    ![](media/image-95.png)
+    ![Dos diagramas en los que se muestran los tornillos que se quitan de cada lado de la caja.](media/image-95.png)
 
 1. En la parte delantera de la caja, quite los cuatro tornillos 10-32, las arandelas de bloqueo y las arandelas planas del calentador.
 
-    ![](media/image-96.png)
+    ![Diagrama en el que se muestra la ubicación de los cuatro tornillos en la parte delantera del calentador.](media/image-96.png)
 
-    ![](media/image-97.png)
+    ![Dos diagramas en los que se muestran los tornillos que se quitan de cada lado del calentador.](media/image-97.png)
 
 1. Desenrede los cables Ethernet de la cámara posterior y, a continuación, quite todos los cables conectados al servidor de administración o al servidor del nodo de la unidad de escalado inferior. 
 
 1. En la parte posterior de la caja, afloje las seis correas velcro y extraiga los cables del velcro. 
 
-    ![](media/image-98.png)
+    ![Diagrama en el que se muestra la ubicación de las seis correas velcro en la parte posterior de la caja.](media/image-98.png)
 
 
 1. En la parte posterior de la caja, después de aflojar el velcro, quite los cables de alrededor de los soportes de fijación de los cables. 
 
 1. Deje que todos los cables cuelguen hacia el exterior de la cámara. Los cables que cuelgan no se muestran en la ilustración siguiente. 
 
-    ![](media/image-99.png)
+    ![Diagrama en el que se muestra el espacio para los cables Ethernet y de alimentación.](media/image-99.png)
 
 
 1. En la parte posterior de la caja, tire rápidamente hacia abajo de la puerta de la cámara con el labio superior de la puerta de la cámara. La puerta de la cámara debería desconectarse del enganche, lo que permite que la puerta cuelgue libremente. 
 
 1. Tire de la cámara hacia abajo si el enganche todavía está conectado. 
 
-    ![](media/image-100.png)
+    ![Diagrama en el que se muestra cómo se tira hacia abajo de la cámara desde la parte posterior de la caja.](media/image-100.png)
 
-    ![](media/image-101.png)
+    ![Diagrama en el que se muestra cómo se tira hacia abajo de la cámara desde la parte posterior izquierda.](media/image-101.png)
 
 
 1. En la parte posterior de la caja, desconecte los cables de alimentación del servidor del calentador táctico de 1 U (V2) y deje que cuelguen libremente. 
 
-    ![](media/image-102.png)
+    ![Diagrama en el que se muestra la ubicación de los cables de alimentación del servidor en la parte posterior de la caja.](media/image-102.png)
 
 
 1. Desconecte los cables de alimentación del servidor y deje que cuelguen libremente. 
@@ -147,26 +147,26 @@ El calentador se monta en una caja de transporte capaz de albergar la unidad.
     
     1. dos arandelas 
 
-    ![](media/image-103.png)
+    ![Diagrama en el que se muestra la ubicación del anillo del terminal de conexión.](media/image-103.png)
 
-    ![](media/image-104.png)
+    ![Diagrama en el que se muestra el hardware individual del anillo del terminal de conexión.](media/image-104.png)
 
 
 1. Vuelva a colocar la tuerca hexagonal y las arandelas en el poste de tierra o en una ubicación segura para la reinstalación. 
 
 1. En la parte posterior de la caja, afloje completamente los dos tornillos cautivos que sujetan el soporte de relleno de la derecha.
 
-    ![](media/image-105.png)
+    ![Diagrama en el que se muestra la parte posterior de la caja, con los tornillos cautivos del lado derecho resaltados.](media/image-105.png)
 
-    ![](media/image-106.png)
+    ![Diagrama en el que se muestra cómo se giran los tornillos cautivos.](media/image-106.png)
 
 1. Tire del soporte de relleno de la derecha hacia el centro de la caja para retirarlo. 
 
 1. En la parte posterior de la caja, afloje completamente los dos tornillos cautivos que sujetan el soporte del espacio para cableado de la izquierda. 
 
-    ![](media/image-107.png)
+    ![Diagrama en el que se muestra la parte posterior de la caja, con los tornillos cautivos del lado izquierdo resaltados.](media/image-107.png)
 
-    ![](media/image-108.png)
+    ![Diagrama en el que se muestra cómo se giran los tornillos cautivos y cómo se quita el soporte del espacio para cableado.](media/image-108.png)
 
 
 1. Tire del soporte del espacio para cableado de la izquierda hacia el centro de la caja para retirarlo. 
@@ -175,52 +175,52 @@ El calentador se monta en una caja de transporte capaz de albergar la unidad.
 
 1. En la parte posterior de la caja, retire el cable azul Categoría 6 y los dos cables Ethernet negros de 25 Gbps del servidor de administración o del servidor del nodo de la unidad de escalado inferior. 
 
-    ![](media/image-109.png)
+    ![Diagrama en el que se muestra la ubicación del cable azul Categoría 6 y los cables Ethernet negros de 25 Gbps en la parte posterior de la caja.](media/image-109.png)
 
 
 1. Coloque los cables en una ubicación segura para la reinstalación. 
 
 1. En la parte posterior de la caja, afloje completamente los dos tornillos cautivos que sujetan el soporte del espacio para cableado interior de la izquierda. 
 
-    ![](media/image-110.png)
+    ![Diagrama en el que se muestra la parte posterior de la caja, con los tornillos cautivos del lado izquierdo resaltados.](media/image-110.png)
 
-    ![](media/image-111.png)
+    ![Diagrama en el que se muestra cómo se giran los tornillos cautivos y cómo se quita el soporte del espacio para cableado.](media/image-111.png)
 
 
 1. Tire del soporte del espacio para cableado interior de la izquierda hacia el centro de la caja para retirarlo. 
 
 1. En la parte posterior de la caja, desatornille los seis tornillos de las bisagras de la parte superior del calentador, dejando la puerta y la bisagra ancladas como una unidad. 
 
-    ![](media/image-112.png)
+    ![Diagrama en el que se muestra cómo se quitan los seis tornillos de las bisagras.](media/image-112.png)
 
 1. Coloque el soporte y los tornillos en una ubicación segura para la reinstalación. 
 
 1. En la parte posterior del pod, retire los dos tornillos 10-32 del raíl, las arandelas de bloqueo y las arandelas planas que unen el raíl del servidor al bastidor del pod.
 
-    ![](media/image-113.png)
+    ![Diagrama en el que se muestra la ubicación de los tornillos que unen el raíl del servidor.](media/image-113.png)
 
-    ![](media/image-114.png)
+    ![Diagrama en el que se muestra cómo se quitan los tornillos de la izquierda y de la derecha de la caja que unen el raíl del servidor.](media/image-114.png)
 
 
 1. En la parte posterior del pod, retire los cuatro tornillos 10-32, las arandelas de bloqueo y las arandelas planas que unen el calentador al bastidor del pod. 
 
-    ![](media/image-115.png)
+    ![Diagrama en el que se muestra la ubicación de los cuatro tornillos que unen el calentador.](media/image-115.png)
 
-    ![](media/image-116.png)
+    ![Diagrama en el que se muestra un primer plano de los cuatro tornillos que unen el calentador.](media/image-116.png)
 
 
 1. Asegúrese de que todos los cables están desconectados y cuelgan libremente. 
 
 1. En la parte frontal del pod, deslice el servidor con cuidado hacia afuera. Sostenga el centro del servidor para tener una distribución uniforme del peso mientras se mueve hacia afuera. 
 
-    ![](media/image-117.png)
+    ![Diagrama en el que se muestra cómo se quita el servidor del pod.](media/image-117.png)
 
 
 1. Coloque el servidor en una ubicación con seguridad electrostática. 
 
 1. En la parte frontal del pod, tire del calentador desde la parte inferior del bastidor. Sostenga el centro del calentador para tener una distribución uniforme del peso mientras se mueve hacia afuera. 
 
-    ![](media/image-118.png)
+    ![Diagrama en el que se muestra cómo se quita el calentador del pod.](media/image-118.png)
 
 
 ## <a name="installing-the-heater"></a>Instalación del calentador
@@ -237,41 +237,41 @@ El calentador se monta en una caja de transporte capaz de albergar la unidad.
 
 1. En la parte frontal del pod, deslice un nuevo cierre zip a través del bucle en la parte inferior del calentador táctico de 1 U (V2), pero no fije el cierre. 
 
-    ![](media/image-119.png)
+    ![Diagrama en el que se muestra el bucle en la parte inferior del calentador.](media/image-119.png)
 
 
 1. En la parte frontal del pod, inserte el calentador táctico de 1 U (V2); para ello, deslícelo desde el frente hacia la parte posterior. Asegúrese de que el cierre zip no se caiga. 
 
 1. En la parte frontal del pod, instale los dos tacos de 0,064 pulgadas entre el bastidor y el calentador táctico de 1 U (V2). 
 
-    ![](media/image-120.png)
+    ![Diagrama en el que se muestra la ubicación de los tacos en la parte delantera del pod.](media/image-120.png)
 
 
 1. En la parte posterior del pod, instale los dos tacos de 0,064 pulgadas entre el bastidor y el calentador táctico de 1 U (V2). 
 
-    ![](media/image-121.png)
+    ![Diagrama en el que se muestra la ubicación de los tacos en la parte posterior del pod.](media/image-121.png)
 
 
 1. En la parte frontal del pod, vuelva a conectar los cuatro tornillos 10-32, las arandelas de bloqueo y las arandelas planas. Aplique imprimación y sellador de baja fuerza a las roscas y apriete los tornillos a 27 libras por pulgada. 
 
-    ![](media/image-122.png)
+    ![Diagrama en el que se muestra cómo se vuelven a conectar los tornillos.](media/image-122.png)
 
 
 1. En la parte frontal del pod, instale el servidor de administración o el servidor del nodo de la unidad de escalado inferior; para ello, deslícelo desde el frente hacia la parte posterior. Asegúrese de que no haya cables sueltos en el camino del servidor. 
 
 1. En la parte frontal del pod, vuelva a conectar los cuatro tornillos 10-32, las arandelas de bloqueo y las arandelas planas. Aplique imprimación y sellador de baja fuerza a las roscas y apriete los tornillos a 27 libras por pulgada. 
 
-    ![](media/image-123.png)
+    ![Diagrama en el que se muestra cómo se vuelven a conectar los tornillos del servidor.](media/image-123.png)
 
 
 1. En la parte posterior del pod, vuelva a conectar los dos tornillos 10-32 de montaje posterior del servidor, las arandelas de bloqueo y las arandelas planas. Aplique imprimación y sellador de baja fuerza a las roscas y apriete los tornillos a 27 libras por pulgada. 
 
-    ![](media/image-124.png)
+    ![Diagrama en el que se muestra cómo se vuelven a conectar los dos tornillos de montaje posterior del servidor.](media/image-124.png)
 
 
 1. En la parte posterior del pod, instale los cuatro tornillos 10-32 de montaje posterior del calentador táctico de 1 U (V2), las arandelas de bloqueo y las arandelas planas. Aplique imprimación y sellador de baja fuerza a las roscas y apriete los tornillos a 27 libras por pulgada. 
 
-    ![](media/image-125.png)
+    ![Diagrama en el que se muestra cómo se vuelven a conectar los cuatro tornillos del calentador.](media/image-125.png)
 
 
 1. En la parte posterior del pod, retire los dos tacos que se encuentran debajo del calentador táctico de 1 U (V2) y colóquelos en el kit del calentador para su uso futuro. 
@@ -311,14 +311,14 @@ El calentador se monta en una caja de transporte capaz de albergar la unidad.
 
     Sostenga de forma estable la puerta de la cámara mientras ajusta el brazo detrás de las retenciones de bola. 
     
-    ![](media/image-126.png)
+    ![Diagrama en el que se muestra cómo se ajustan las retenciones de bola.](media/image-126.png)
     
-    ![](media/image-127.png)
+    ![Primer plano de las retenciones de bola.](media/image-127.png)
     
 
 1. En la parte posterior del pod, presione la ubicación A o B con ambos pulgares (presione simultáneamente tanto a la izquierda como a la derecha o arriba y abajo) hasta que se escuche un clic audible del enganche contra la cámara. 
 
-    ![](media/image-128.png)
+    ![Diagrama en el que se muestran las ubicaciones para presionar y enganchar la cámara.](media/image-128.png)
 
 
 1. En la parte posterior del pod, enrolle los seis cables Ethernet (dos cables azules de Categoría 6 y cuatro cables negros de 25 Gbps) alrededor de los soportes de almacenamiento de cables y apriete las seis correas velcro alrededor de los cables. 
@@ -327,12 +327,12 @@ El calentador se monta en una caja de transporte capaz de albergar la unidad.
 
 1. En la parte frontal del pod, enrute el cable debajo del bucle, ajuste el cierre zip alrededor del cable y fíjelo. Recorte el exceso del cierre zip. 
 
-    ![](media/image-129.png)
+    ![Diagrama en el que se muestra el bucle del cierre zip y el sensor de temperatura de entrada del servidor.](media/image-129.png)
 
 
 1. En la parte frontal del pod, instale la cámara delantera, manteniendo la cámara aproximadamente en un ángulo de 40 grados (mínimo), al mismo tiempo que coloca los dos dedos índice en la sección plana del ángulo frontal. Guíe el metal plegado de la cámara en el metal plegado del bastidor del chasis. 
 
-    ![](media/image-130.png)
+    ![Diagrama en el que se muestra cómo se instala la cámara delantera.](media/image-130.png)
 
 
 1. Cuando esté correctamente alineado, use las pestañas de liberación para colocar la cámara en su posición. 

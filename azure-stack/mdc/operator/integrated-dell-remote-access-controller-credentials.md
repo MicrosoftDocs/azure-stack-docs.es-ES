@@ -1,6 +1,6 @@
 ---
-title: Credenciales del controlador integrado de acceso remoto de Dell
-description: Se explica cómo actualizar las credenciales para el controlador integrado de acceso remoto de Dell.
+title: 'Credenciales del controlador integrado de acceso remoto de Dell: MDC'
+description: Obtenga información sobre cómo actualizar las credenciales del controlador integrado de acceso remoto de Dell (iDRAC) en un Centro de datos modular (MDC).
 author: troettinger
 ms.author: thoroet
 ms.service: azure-stack
@@ -8,14 +8,14 @@ ms.topic: article
 ms.date: 10/27/2020
 ms.reviewer: justinha
 ms.lastreviewed: 10/27/2020
-ms.openlocfilehash: 1525872e3c59ab7e5b0cd436ba5ab8e2e3836594
-ms.sourcegitcommit: 9ecf9c58fbcc4bc42c1fdc688f370c643c761a29
+ms.openlocfilehash: d0d2f522038d0788d4942db68b36e5bb21884619
+ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93330293"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97910744"
 ---
-# <a name="update-credentials-for-the-integrated-dell-remote-access-controller"></a>Actualización de credenciales para el controlador integrado de acceso remoto de Dell
+# <a name="update-credentials-for-the-integrated-dell-remote-access-controller---modular-data-center-mdc"></a>Actualización de credenciales para el controlador integrado de acceso remoto de Dell: Centro de datos modular (MDC)
 
 En esta sección se describe cómo cambiar las credenciales del controlador integrado de acceso remoto de Dell (iDRAC). 
 

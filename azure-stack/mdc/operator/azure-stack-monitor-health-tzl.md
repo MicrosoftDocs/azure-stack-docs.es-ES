@@ -1,6 +1,6 @@
 ---
-title: Supervisar el estado y las alertas en Azure Stack | Microsoft Docs
-description: Aprenda cómo supervisar el estado y las alertas en Azure Stack.
+title: 'Supervisión del mantenimiento y las alertas en Azure Stack: MDC | Microsoft Docs'
+description: Aprenda a supervisar el mantenimiento y las alertas en Azure Stack para un Centro de datos modular (MDC).
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -14,14 +14,14 @@ ms.topic: article
 ms.date: 10/26/2020
 ms.author: mabrigg
 ms.lastreviewed: 10/26/2020
-ms.openlocfilehash: 4a14700a081e8c85f29a7edc69c471ba9bd3d249
-ms.sourcegitcommit: 6db48bd8e6ccfaaa897713ad7eb2846a8d506358
+ms.openlocfilehash: bdc027e8c61053fddddd5ad365eff8069acb840d
+ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94885791"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97910829"
 ---
-# <a name="monitor-health-and-alerts-in-azure-stack"></a>Supervisar el estado y las alertas en Azure Stack
+# <a name="monitor-health-and-alerts-in-azure-stack---modular-data-center-mdc"></a>Supervisión del mantenimiento y las alertas en Azure Stack: Centro de datos modular (MDC)
 
 Azure Stack incluye funciones de supervisión de infraestructura que le ayudan a ver el estado y las alertas de una región de Azure Stack. En el icono **Administración de regiones** se muestran todas las regiones implementadas de Azure Stack. Está anclado de forma predeterminada en el portal de administración para la suscripción de proveedor predeterminada. El icono muestra el número de alertas activas críticas y de advertencia para cada región. El icono es el punto de entrada a la funcionalidad de estado y alerta de Azure Stack.
 

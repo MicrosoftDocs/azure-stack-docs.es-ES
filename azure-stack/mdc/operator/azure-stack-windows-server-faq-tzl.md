@@ -1,6 +1,6 @@
 ---
-title: Preguntas frecuentes relacionadas con Windows Server de Azure Stack | Microsoft Docs
-description: Lista de preguntas frecuentes del Marketplace de Azure Stack para Windows Server
+title: 'Preguntas frecuentes relacionadas con Windows Server de Azure Stack: MDC | Microsoft Docs'
+description: Consulte una lista con las preguntas más frecuentes del marketplace de Azure Stack para Windows Server cuando lo opere un Centro de datos modular (MDC).
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,14 +15,14 @@ ms.date: 10/26/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 10/26/2020
-ms.openlocfilehash: 3570eeb9edadd359081c429f821a09e3d9954439
-ms.sourcegitcommit: 9ecf9c58fbcc4bc42c1fdc688f370c643c761a29
+ms.openlocfilehash: 64ccefb0a6644d2cd613a39d8beaaf1f82ee9fc0
+ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93330300"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97910795"
 ---
-# <a name="windows-server-in-azure-stack-marketplace-faq"></a>Preguntas frecuentes sobre Windows Server en el Marketplace de Azure Stack
+# <a name="windows-server-in-azure-stack-marketplace-faq---modular-data-center-mdc"></a>Preguntas frecuentes sobre Windows Server en el marketplace de Azure Stack: Centro de datos modular (MDC)
 
 En este artículo se responden algunas preguntas frecuentes sobre las imágenes de Windows Server en el [Marketplace de Azure Stack Hub](../../operator/azure-stack-marketplace.md).
 
@@ -34,7 +34,7 @@ Los usuarios de Azure Stack Hub resistente y Centro de datos modular tienen dere
 
 Microsoft ofrece dos versiones de imágenes de Windows Server a través de Marketplace de Azure Stack. Solo una versión de esta imagen puede usarse en los entornos de Azure Stack al mismo tiempo.
 
-- **Pago por uso** : Estas imágenes no se deben usar en Azure Stack Hub resistente ni en el Centro de datos modular.
+- **Pago por uso**: Estas imágenes no se deben usar en Azure Stack Hub resistente ni en el Centro de datos modular.
 
 - **Traiga su propia licencia (BYOL)** : Estas imágenes se pueden usar en Azure Stack Hub resistente y en el Centro de datos modular.
 
@@ -50,7 +50,7 @@ A continuación, si los conjuntos de escalado de máquinas virtuales hacen refer
 
 **¿Qué ocurre si descargué la versión incorrecta para los usuarios?**
 
-Primero, debe eliminar la versión incorrecta a través de Administración de Marketplace. Espere a que la eliminación finalice (consulte las notificaciones que indican la finalización, no la hoja **Administración de Marketplace** ). A continuación, descargue la versión correcta.
+Primero, debe eliminar la versión incorrecta a través de Administración de Marketplace. Espere a que la eliminación finalice (consulte las notificaciones que indican la finalización, no la hoja **Administración de Marketplace**). A continuación, descargue la versión correcta.
 
 Si descarga ambas versiones de la imagen, solo la versión más reciente es visible para los clientes finales en la galería de Marketplace.
 

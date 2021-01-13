@@ -1,6 +1,6 @@
 ---
-title: Habilitación de la copia de seguridad de Azure Stack desde el portal de administración | Microsoft Docs
-description: Aprenda a habilitar el servicio Copia de seguridad de infraestructura desde el portal de administración para que Azure Stack se pueda restaurar si se produce un error.
+title: 'Habilitación de la copia de seguridad de Azure Stack desde el portal de administración: MDC'
+description: Aprenda a habilitar el servicio Copia de seguridad de infraestructura desde el portal de administración para que Azure Stack se pueda restaurar si se produce un error. Para un Centro de datos modular.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,14 +15,14 @@ ms.date: 12/16/2019
 ms.author: sethm
 ms.reviewer: hectorl
 ms.lastreviewed: 12/16/2019
-ms.openlocfilehash: 3864183ecda856500db1fcbfe38df84d70f3bae9
-ms.sourcegitcommit: 9ecf9c58fbcc4bc42c1fdc688f370c643c761a29
+ms.openlocfilehash: db0980511b2272a6c92c1644401ce1d577ddcf8d
+ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93330333"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97910949"
 ---
-# <a name="configure-backup-for-azure-stack-hub-from-the-administrator-portal"></a>Configuración de la copia de seguridad de Azure Stack Hub desde el portal del administrador
+# <a name="configure-backup-for-azure-stack-hub-from-the-administrator-portal---modular-data-center-mdc"></a>Configuración de la copia de seguridad de Azure Stack Hub desde el portal del administrador: Centro de datos modular (MDC)
 
 *Se aplica a: Centro de datos modular, Azure Stack Hub resistente*
 
@@ -32,7 +32,7 @@ Puede configurar el servicio Copia de seguridad de infraestructura desde el port
 
 1. Abra el [portal de administración de Azure Stack](../../operator/azure-stack-manage-portals.md).
 
-2. Seleccione **Todos los servicios** y, a continuación, en la categoría **Administración** , seleccione **Copia de seguridad de infraestructura**. Elija **Configuración** en la hoja **Copia de seguridad de infraestructura**.
+2. Seleccione **Todos los servicios** y, a continuación, en la categoría **Administración**, seleccione **Copia de seguridad de infraestructura**. Elija **Configuración** en la hoja **Copia de seguridad de infraestructura**.
 
 3. Escriba la ruta de acceso a la **ubicación de almacenamiento de la copia de seguridad**. Utilice una cadena de convención de nomenclatura universal (UNC) para la ruta de acceso de un recurso compartido de archivos hospedado en un dispositivo independiente. Una cadena UNC especifica la ubicación de recursos como archivos compartidos o dispositivos. Para el servicio, puede usar una dirección IP. Para garantizar la disponibilidad de los datos de copia de seguridad después de un desastre, el dispositivo debe estar en una ubicación independiente.
 
@@ -52,7 +52,7 @@ Puede configurar el servicio Copia de seguridad de infraestructura desde el port
    > [!NOTE]
    > Si desea archivar las copias de seguridad anteriores al período de retención, asegúrese de hacer una copia de seguridad de los archivos antes de que Scheduler las elimine. Si reduce el período de retención de copia de seguridad (por ejemplo, de 7 a 5 días), Scheduler eliminará todas las copias de seguridad anteriores al nuevo período de retención. Asegúrese de que desea que las copias de seguridad se eliminen antes de actualizar este valor.
 
-9. En **Configuración de cifrado** , la huella digital del certificado público es para el certificado proporcionado durante la implementación. No es necesario actualizar el certificado existente.
+9. En **Configuración de cifrado**, la huella digital del certificado público es para el certificado proporcionado durante la implementación. No es necesario actualizar el certificado existente.
 
 10. Seleccione **Aceptar** para guardar la configuración del controlador de copia de seguridad.
 

@@ -2,17 +2,17 @@
 title: Diferencias entre los servicios de red de Azure Stack Hub
 description: Conozca las diferencias y consideraciones al trabajar con redes en Azure Stack Hub.
 author: mattbriggs
-ms.date: 5/27/2020
+ms.date: 12/16/2020
 ms.topic: article
 ms.author: mabrigg
 ms.reviewer: wamota
 ms.lastreviewed: 07/10/2019
-ms.openlocfilehash: f081d0fa91e967ca00b46ac2a9ffaf4b56933e87
-ms.sourcegitcommit: 79e8df69b139bfa21eb83aceb824b97e7f418c03
+ms.openlocfilehash: e93197f1906aba53097d5d7123ccc2e85aec0622
+ms.sourcegitcommit: 0e2c814cf2c154ea530a4e51d71aaf0835fb2b5a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97364122"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97918685"
 ---
 # <a name="differences-and-considerations-for-azure-stack-hub-networking"></a>Diferencias y consideraciones para las redes de Azure Stack Hub
 
@@ -53,7 +53,7 @@ En este artículo se proporciona información general sobre las consideraciones 
 |  | Configuración de disponibilidad | activa/activa | activa/pasiva |
 |  | UsePolicyBasedTrafficSelectors | Azure admite el uso de selectores de tráfico en función de directivas con las conexiones de puerta de enlace basadas en rutas. | Todavía no se admite. |
 |  | Supervisión y alertas | Azure utiliza Azure Monitor para proporcionar la capacidad de configurar alertas para los recursos de VPN. | Todavía no se admite.|
-| Equilibrador de carga | SKU | Se admiten los equilibradores de carga Estándar y Básico. | Solo se admite el equilibrador de carga Básico.<br>La propiedad SKU no se admite.<br>El equilibrador de carga de SKU básico /path/ no puede tener más de cinco configuraciones de IP de front-end.  |
+| Equilibrador de carga | SKU | Se admiten los equilibradores de carga Estándar y Básico. | Solo se admite el equilibrador de carga Básico.<br>La propiedad SKU no se admite.<br>El equilibrador de carga de SKU básico admite 10 configuraciones de IP de front-end para las versiones de 1807 a 1906 y 200 configuraciones de IP de front-end para las versiones 1907 y superiores por cada equilibrador de carga.  |
 |  | Zones | Availability Zones se admite. | Todavía no se admite |
 |  | Las reglas NAT de entrada admiten los puntos de conexión de servicio | Azure permite especificar puntos de conexión de servicio para las reglas NAT de entrada. | Azure Stack Hub todavía no admite puntos de conexión de servicio, por lo que estos no se pueden especificar. |
 |  | Protocolo | Azure permite especificar GRE o ESP. | En Azure Stack Hub no se admite la clase de protocolo. |

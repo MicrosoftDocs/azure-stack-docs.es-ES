@@ -1,6 +1,6 @@
 ---
-title: Recuperación de datos en Azure Stack con el servicio Copia de seguridad de infraestructura | Microsoft Docs
-description: Aprenda a realizar una copia de seguridad de la configuración y los datos de servicio, y a restaurarlos, con el servicio Copia de seguridad de infraestructura.
+title: 'Recuperación de datos en Azure Stack con el servicio Copia de seguridad de infraestructura: MDC'
+description: Aprenda a realizar una copia de seguridad de la configuración y los datos de servicio, y a restaurarlos, con el servicio Copia de seguridad de infraestructura. Para un Centro de datos modular (MDC).
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -14,14 +14,14 @@ ms.date: 10/26/2020
 ms.author: sethm
 ms.reviewer: hectorl
 ms.lastreviewed: 10/26/2020
-ms.openlocfilehash: c32065beeeb446d7d8e494634bc68318e280a693
-ms.sourcegitcommit: 9ecf9c58fbcc4bc42c1fdc688f370c643c761a29
+ms.openlocfilehash: 5a9e8615168714b3346f735d9182c38b2c604cca
+ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93330325"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97910812"
 ---
-# <a name="recover-data-in-azure-stack-with-the-infrastructure-backup-service"></a>Recuperación de datos en Azure Stack con el servicio Copia de seguridad de infraestructura
+# <a name="recover-data-in-azure-stack-with-the-infrastructure-backup-service---modular-data-center-mdc"></a>Recuperación de datos en Azure Stack con el servicio Copia de seguridad de infraestructura: Centro de datos modular (MDC)
 
 *Se aplica a: Centro de datos modular y Azure Stack Hub resistente*
 

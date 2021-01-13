@@ -1,7 +1,7 @@
 ---
-title: Adición de un registro de contenedor a Azure Stack Hub | Microsoft Docs
+title: 'Adición de un registro de contenedor: Azure Stack Hub | Microsoft Docs'
 titleSuffix: Azure Stack
-description: Aprenda a agregar un registro de contenedor al Marketplace de Azure Stack Hub.
+description: Aprenda a agregar un registro de contenedor al marketplace de Azure Stack Hub (Ruggedized).
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -12,18 +12,18 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 1/10/2020
+ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: chasat
 ms.lastreviewed: 12/17/2019
-ms.openlocfilehash: 5d97f12e6bc933edf7b5b335ebd52a86a1a7f01d
-ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
+ms.openlocfilehash: a517fc2bef86584c6bdf5aff6f9b7907ac9c0b1e
+ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96941238"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97910574"
 ---
-# <a name="add-a-container-registry-to-azure-stack-hub"></a>Adición de un registro de contenedor a Azure Stack Hub
+# <a name="add-a-container-registry-to-azure-stack-hub-ruggedized"></a>Adición de un registro de contenedor a Azure Stack Hub (Ruggedized)
 
 Puede agregar el registro de contenedor a su Marketplace de Azure Stack Hub para que los usuarios puedan implementar y mantener su propio registro de contenedor. Esta plantilla de solución instala y configura el registro de contenedor de Docker de código abierto en una suscripción de usuario que se ejecuta en la imagen base de Ubuntu 16.04-LTS de AKS. La plantilla admite implementaciones conectadas y desconectadas (con separación aérea) y admite Azure Active Directory (AAD) e instancias de Azure Stack Hub implementadas en los servicios federados de Active Directory (AD FS).
 
@@ -117,15 +117,15 @@ La instalación de la plantilla de registro de contenedor requiere la creación 
 
 2. Seleccione **Create** > **Compute** > **Container Registry Template** (Crear > Compute > Plantilla de registro de contenedor).
 
-    ![Plantilla de registro de contenedor](./media/container-registry-template-install-tzl/image1.png)
+    ![Captura de pantalla en la que se muestra la página Nuevo del panel, con la opción de proceso seleccionada y la selección de la plantilla de Container Registry a la vista.](./media/container-registry-template-install-tzl/image1.png)
 
 3. Seleccione la suscripción, el grupo de recursos y la ubicación para implementar la plantilla de registro de contenedor.
 
-    ![Plantilla de registro de contenedor](./media/container-registry-template-install-tzl/image2.png)
+    ![Captura de pantalla en la que se muestra la página de conceptos básicos para crear una plantilla de Container Registry.](./media/container-registry-template-install-tzl/image2.png)
 
 4. Complete los detalles de configuración de la máquina virtual. La SKU de la imagen tiene como valor predeterminado **aks-ubuntu-1604-201909**; sin embargo, la salida de la función `Set-ContainerRegistryPrerequisites` incluye una lista de las SKU disponibles que se usarán para la implementación. Si existe más de una SKU, elija la SKU más reciente para la implementación.
 
-    ![Plantilla de registro de contenedor](./media/container-registry-template-install-tzl/image3.png)
+    ![Captura de pantalla en la que se muestra la página de configuración de máquina virtual para crear una plantilla de Container Registry.](./media/container-registry-template-install-tzl/image3.png)
 
     | Parámetro | Detalles |
     | --- | --- |
@@ -141,7 +141,7 @@ La instalación de la plantilla de registro de contenedor requiere la creación 
 
 1. Complete la configuración del almacenamiento y Key Vault.
 
-    ![Plantilla de registro de contenedor](./media/container-registry-template-install-tzl/image4.png)
+    ![Captura de pantalla en la que se muestra la página de configuración de almacenamiento y Key Vault para crear una plantilla de Container Registry.](./media/container-registry-template-install-tzl/image4.png)
 
     | Parámetro | Detalles |
     | --- | --- |

@@ -1,18 +1,18 @@
 ---
 title: Preparación de un host de extensiones de Azure Stack Hub
 description: Aprenda a preparar el host de extensiones en Azure Stack Hub, que se habilita automáticamente mediante un paquete de actualización de Azure Stack Hub posterior a la versión 1808.
-author: IngridAtMicrosoft
-ms.author: inhenkel
+author: PatAltimore
+ms.author: patricka
 ms.date: 1/22/2020
 ms.topic: article
 ms.reviewer: thoroet
 ms.lastreviewed: 03/07/2019
-ms.openlocfilehash: 69c7d14bef07e3664299c7e78ed1e8bf555f19dd
-ms.sourcegitcommit: a630894e5a38666c24e7be350f4691ffce81ab81
+ms.openlocfilehash: 43cb091b3076f26880599e35a770383182e944d0
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77699905"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97870620"
 ---
 # <a name="prepare-for-extension-host-in-azure-stack-hub"></a>Preparación de un host de extensiones de Azure Stack Hub
 
@@ -26,8 +26,8 @@ En la tabla, se muestran los nuevos espacios de nombres y los certificados asoci
 
 | Carpeta de implementación | Nombres alternativos del firmante (SAN) y firmante del certificado requeridos | Ámbito (por región) | Espacio de nombres del subdominio |
 |-----------------------|------------------------------------------------------------------|-----------------------|------------------------------|
-| Administración del host de extensiones | *.adminhosting.\<region>.\<fqdn> (certificados SSL comodín) | Administración del host de extensiones | adminhosting.\<region>.\<fqdn> |
-| Host de extensiones público | *.hosting.\<region>.\<fqdn> (certificados SSL comodín) | Host de extensiones público | hosting.\<region>.\<fqdn> |
+| Administración del host de extensiones | *.adminhosting.\<region>.\<fqdn> (Certificados SSL comodín) | Administración del host de extensiones | adminhosting.\<region>.\<fqdn> |
+| Host de extensiones público | *.hosting.\<region>.\<fqdn> (Certificados SSL comodín) | Host de extensiones público | hosting.\<region>.\<fqdn> |
 
 Para consultar los requisitos detallados de los certificados, consulte [Requisitos de certificados de infraestructura de clave pública de Azure Stack Hub](azure-stack-pki-certs.md).
 
@@ -125,7 +125,7 @@ Si se han configurado registros A de un determinado host para publicar puntos de
 
 | IP | Hostname | Tipo |
 |----|------------------------------|------|
-| \<IP> | *.Adminhosting.\<Region>.\<FQDN> | Un |
+| \<IP> | *.Adminhosting.\<Region>.\<FQDN> | A |
 | \<IP> | *.Hosting.\<Region>.\<FQDN> | Un |
 
 Las direcciones IP asignadas pueden recuperarse utilizando un punto de conexión con privilegios y ejecutando el cmdlet **Get-AzureStackStampInformation**.

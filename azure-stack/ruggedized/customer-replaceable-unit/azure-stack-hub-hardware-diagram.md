@@ -1,18 +1,18 @@
 ---
 title: Diagrama del hardware de Azure Stack Hub
 description: Obtenga información sobre el hardware del dispositivo Tactical Cloud de Azure Stack Hub.
-author: myoungerman
+author: PatAltimore
 ms.topic: how-to
 ms.date: 11/13/2020
-ms.author: v-myoung
+ms.author: patricka
 ms.reviewer: ''
 ms.lastreviewed: ''
-ms.openlocfilehash: d8055e9c4a4676d5449372ba9544dd4f03dc294e
-ms.sourcegitcommit: 3bd42be22e626564b62e560dc037aed4d462011f
+ms.openlocfilehash: b91e5825200f7a05a403bb90db3825377e042cf9
+ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97393130"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97910421"
 ---
 # <a name="azure-stack-hub-hardware-diagram"></a>Diagrama del hardware de Azure Stack Hub
 
@@ -20,9 +20,9 @@ En las figuras siguientes se muestra la pila completa con el host de ciclo de vi
 
 Figura 1. Front
 
-![](media/image-58.png)
+![Diagrama en el que se muestra la parte delantera de una pila completa.](media/image-58.png)
 
 Ilustración 2. Rear
 
-![](media/image-59.png)
+![Diagrama en el que se muestra la parte posterior de una pila completa.](media/image-59.png)
 

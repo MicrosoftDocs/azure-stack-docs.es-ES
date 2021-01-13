@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 1/8/2020
+ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: chasat
 ms.lastreviewed: 12/17/2019
-ms.openlocfilehash: 1239e12235debaa8ab6a3037c34ea27e11da0ce2
-ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
+ms.openlocfilehash: f63f0d550a841902e1d7c27d9c7688a8b5373149
+ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96941365"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97910591"
 ---
 # <a name="update-the-container-registry-in-azure-stack-hub"></a>Actualización del registro de contenedor en Azure Stack Hub
 
@@ -33,13 +33,13 @@ Los usuarios de Azure Stack Hub pueden actualizar su implementación del registr
 
 1.  Distribuya la imagen base de AKS más reciente desde el Marketplace de Azure Stack. La imagen base de AKS se actualiza con una cadencia mensual.
 
-> ![Plantilla de registro de contenedor](./media/container-registry-template-updating-tzl/image1.png)
+> ![Captura de pantalla en la que se muestra la página para agregar desde Azure, con los resultados de la búsqueda de "AKS Base Ubu".](./media/container-registry-template-updating-tzl/image1.png)
 
 ### <a name="user"></a>Usuario
 
 1.  Compruebe la SKU de la imagen base de AKS que se usó para implementar la plantilla del registro de contenedor; para ello, vaya al registro de implementación en el grupo de recursos y seleccione **Entradas**.
 
-    ![Plantilla de registro de contenedor](./media/container-registry-template-updating-tzl/image2.png)
+    ![Captura de pantalla que muestra la página "Entradas".](./media/container-registry-template-updating-tzl/image2.png)
 
 2.  Determine si hay SKU más recientes de la imagen base de AKS disponibles con la función **Get-VMImageSku**, que requiere el archivo `Import-Module .\pre-reqs.ps1` de los scripts de la plantilla del registro de contenedor.
 
@@ -75,29 +75,29 @@ Los usuarios de Azure Stack Hub pueden actualizar su implementación del registr
 
 1.  Instale una nueva instancia de la plantilla del registro de contenedor en un nuevo grupo de recursos.
 
-    ![Plantilla de registro de contenedor](./media/container-registry-template-updating-tzl/image3.png)
+    ![Captura de pantalla en la que se muestra la página de conceptos básicos para crear una plantilla de Container Registry.](./media/container-registry-template-updating-tzl/image3.png)
 
 2.  Especifique la salida de SKU más reciente del script `Get-VMImage` y use el parámetro único **dnsname** de la instalación inicial en la configuración de la máquina virtual, use la misma entidad de servicio y el mismo secreto que la instalación inicial.
 
-    ![Plantilla de registro de contenedor](./media/container-registry-template-updating-tzl/image4.png)
+    ![Captura de pantalla en la que se muestra la página de configuración de máquina virtual para crear una plantilla de Container Registry.](./media/container-registry-template-updating-tzl/image4.png)
 
 3.  Utilice los mismos parámetros de almacenamiento y Key Vault que la instalación inicial para el almacenamiento y la configuración de Key Vault.
 
-    ![Plantilla de registro de contenedor](./media/container-registry-template-updating-tzl/image5.png)
+    ![Captura de pantalla en la que se muestra la página de configuración de almacenamiento y Key Vault para crear una plantilla de Container Registry.](./media/container-registry-template-updating-tzl/image5.png)
 
 1.  Una vez implementada la nueva plantilla del registro de contenedor, vaya al grupo de recursos inicial y seleccione el recurso de dirección IP pública.
 
-    ![Plantilla de registro de contenedor](./media/container-registry-template-updating-tzl/image6.png)
+    ![Captura de pantalla en la que se muestra una lista de recursos de dirección IP pública.](./media/container-registry-template-updating-tzl/image6.png)
 
 1.  En el recurso de dirección IP pública, vaya a Configuración y modifique la etiqueta de nombre DNS para que se pueda usar para el recurso recién implementado. Tenga en cuenta que una vez que modifique la etiqueta de nombre DNS y seleccione **Guardar**, las llamadas al registro de contenedor comenzarán a producir errores.
 
-    ![Plantilla de registro de contenedor](./media/container-registry-template-updating-tzl/image7.png)
+    ![Captura de pantalla en la que se muestra la página de recursos de la dirección IP pública con la opción "Estático" seleccionada.](./media/container-registry-template-updating-tzl/image7.png)
     
-    ![Plantilla de registro de contenedor](./media/container-registry-template-updating-tzl/image8.png)
+    ![Captura de pantalla en la que se muestra la página de recursos de la dirección IP pública con la configuración de etiqueta de nombre DNS (opcional) seleccionada.](./media/container-registry-template-updating-tzl/image8.png)
 
 2.  Vaya al nuevo grupo de recursos utilizado para implementar la nueva instancia de la plantilla del registro de contenedor, seleccione el recurso de dirección IP pública, la configuración y actualice la etiqueta de nombre DNS al nombre correcto usado en la implementación original, que en este ejemplo es `myreg` y seleccione **Guardar**.
 
-    ![Plantilla de registro de contenedor](./media/container-registry-template-updating-tzl/image9.png)
+    ![Captura de pantalla en la que se muestra la página de recursos de la dirección IP pública con la etiqueta de nombre DNS original especificada.](./media/container-registry-template-updating-tzl/image9.png)
     
     ![Plantilla de registro de contenedor](./media/container-registry-template-updating-tzl/image10.png)
 

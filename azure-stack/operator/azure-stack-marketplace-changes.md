@@ -3,16 +3,16 @@ title: Novedades de Marketplace de Azure Stack Hub
 description: Consulte las novedades de Marketplace de Azure Stack Hub, incluidos los elementos nuevos, en desuso y actualizados de Marketplace.
 author: sethmanheim
 ms.topic: article
-ms.date: 12/22/2020
+ms.date: 01/04/2021
 ms.author: sethm
 ms.reviewer: gara
 ms.lastreviewed: 05/28/2020
-ms.openlocfilehash: ac442a5ad52c67fc23472dc54eac0cb52f1b1b50
-ms.sourcegitcommit: f4a1a7e9d0b64ca84105d48170a23e1f473e976c
+ms.openlocfilehash: bd738fab6a424c07bd33a41f80621121e93345c4
+ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97743580"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97869923"
 ---
 # <a name="azure-stack-hub-marketplace-changes"></a>Cambios en Marketplace de Azure Stack Hub
 
@@ -22,6 +22,7 @@ El artículo [Elementos de Azure Marketplace disponibles para Azure Stack Hub](a
 
 ## <a name="new-marketplace-items"></a>Nuevos elementos de Marketplace
 
+- 04/01/2021: Sistema operativo Versa (VOS) 21.1.1, versión 21.1.1
 - 08/09/2020: Qualys Virtual Scanner Appliance
 - 21/01/2020: Teradici Cloud Access Software
 - 26/12/2019: CloudGuard IaaS High Availability

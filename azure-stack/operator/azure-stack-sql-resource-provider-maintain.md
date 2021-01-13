@@ -8,12 +8,12 @@ ms.date: 9/22/2020
 ms.author: bryanla
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2020
-ms.openlocfilehash: ec2eebc7aa8195c0560beb8c61f0f98ce1689b07
-ms.sourcegitcommit: 97ecba06aeabf2f30de240ac283b9bb2d49d62f0
+ms.openlocfilehash: 3472cf330efb250f20eb66a5df50239a66293307
+ms.sourcegitcommit: 6efe456173ce77d52789144709195b6291d0d707
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97011355"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950712"
 ---
 # <a name="sql-resource-provider-maintenance-operations"></a>Operaciones de mantenimiento del proveedor de recursos de SQL
 
@@ -186,6 +186,14 @@ $session | Remove-PSSession
 ```
 
 ## <a name="collect-diagnostic-logs"></a>Recopilación de registros de diagnóstico
+
+::: moniker range=">= azs-2008"
+
+Azure Stack Hub tiene varias maneras de recopilar, guardar y enviar registros de diagnóstico a Soporte técnico de Microsoft. A partir de la versión 1.1.93, el proveedor de recursos de SQL admite la manera estándar de recopilar registros del entorno de Azure Stack Hub. Para obtener más información, consulte [Recopilación de registros de diagnóstico](diagnostic-log-collection.md).
+
+::: moniker-end
+
+A partir de la versión 1.1.93, el proveedor de recursos de SQL admite la manera estándar de recopilar registros del entorno de Azure Stack Hub. Si usa una versión anterior, se recomienda que actualice el proveedor de recursos de SQL a la versión más reciente.
 
 Para recopilar registros de la VM bloqueada, se puede usar el punto de conexión *DBAdapterDiagnostics* de Just Enough Administration (JEA) de PowerShell. Este punto de conexión proporciona los comandos siguientes:
 

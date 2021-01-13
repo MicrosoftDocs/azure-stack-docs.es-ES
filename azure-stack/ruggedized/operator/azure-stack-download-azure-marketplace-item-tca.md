@@ -15,14 +15,14 @@ ms.date: 01/02/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 01/02/2020
-ms.openlocfilehash: 734c84c1226a9e1ed4a9f3e34b787f1677ab6902
-ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
+ms.openlocfilehash: a3d8fcc1c3ffa65539b233a8b89f55d57f61a5ef
+ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96941265"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97910625"
 ---
-# <a name="download-marketplace-items-to-azure-stack-hub"></a>Descarga de elementos de Marketplace en Azure Stack Hub 
+# <a name="download-marketplace-items-to-azure-stack-hub-ruggedized"></a>Descarga de elementos del marketplace en Azure Stack Hub (Ruggedized)
 
 Los operadores en la nube pueden descargar elementos de Marketplace en Azure Stack Hub y hacer que estén disponibles para todos los usuarios mediante el entorno de Azure Stack Hub. Dichos elementos se pueden elegir en una lista de elementos de Azure Marketplace que se han probados con anterioridad y se sabe que son compatibles con Azure Stack. Con frecuencia se agregan nuevos elementos a esta lista, así que es aconsejable consultar periódicamente si tiene contenido nuevo.
 
@@ -60,7 +60,7 @@ La implementación de Azure Stack Hub debe tener conectividad a Internet y [esta
 
 4. Cada elemento de línea también muestra la versión disponible actualmente. Si hay más de una versión de un elemento de Marketplace disponible, la columna **Version** (Versión) muestra **Multiple** (Múltiples). Puede hacer clic en cada elemento para ver su descripción, así como información adicional, incluido su tamaño de descarga:
 
-   ![Adición desde Azure](media/azure-stack-download-azure-marketplace-item-tzl/add-from-azure1.png)
+   ![Captura de pantalla en la que se muestra la página para agregar desde Azure con las entradas de versiones de tipo múltiple resaltadas.](media/azure-stack-download-azure-marketplace-item-tzl/add-from-azure1.png)
 
 5. Si la versión de un elemento se muestra como **Multiple** (Múltiples), puede seleccionar ese elemento y, a continuación, elegir una versión específica en la lista desplegable de selección de versión que aparece:
 

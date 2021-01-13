@@ -7,12 +7,12 @@ ms.date: 12/08/2020
 ms.author: sethm
 ms.reviewer: danlewi
 ms.lastreviewed: 12/08/2020
-ms.openlocfilehash: fac088f56dc7de04d8f78bfef1ab63c87b83f336
-ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
+ms.openlocfilehash: a7765eb44017b8d6521930de24794b630ae22344
+ms.sourcegitcommit: c5d46662492887b70a599a60f3c3d27e3460a742
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96941225"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965467"
 ---
 # <a name="azure-stack-hub-ruggedized-2008-oem-release-notes"></a>Notas de la versión del OEM de Azure Stack Hub Ruggedized 2008
 
@@ -35,7 +35,7 @@ En este documento se describe el contenido de las actualizaciones de origen del 
 
 ### <a name="bios"></a>Bios
 
-| Versión de lanzamiento | Firmware version | Cambios                                                                                                                                                                                                                                                                                                                                                                                                       |   |   |
+| Versión de lanzamiento | Firmware version | Cambios |
 |-----------------|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|---|
 | 2008            | 2.8.2            | Se ha corregido un problema del sector observado en las versiones de BIOS de la 2.6.4 a la 2.8.1, por el que el sistema podía restablecerse durante el encendido en el momento en que aparecía la configuración de memoria en la pantalla de arranque. El problema es aplicable a las configuraciones de memoria DDR4 y NVDIMM-N.<br><br>Mejora para hacer frente a las vulnerabilidades de seguridad (vulnerabilidades y exposiciones comunes CVE) como CVE-2020-0545, CVE-2020-0548 y CVE-2020-0549. |   |   |
 | 2005            | 2.7.7            |                                                                                                                                                                                                                                                                                                                                                                                                               |   |   |
@@ -43,7 +43,7 @@ En este documento se describe el contenido de las actualizaciones de origen del 
 
 ### <a name="idrac"></a>IDRAC
 
-| Versión de lanzamiento | Firmware version | Cambios                                                                                                                                                                                                                                                                          |   |   |
+| Versión de lanzamiento | Firmware version | Cambios |
 |-----------------|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|---|
 | 2008            | 4.22.0.0         | 167411: Se ha corregido un problema por el que se obligaba a forzar el reinicio del sistema al actualizar el firmware a través de la API de Redfish.<br><br>155376: Se ha corregido un problema que hacía que iDRAC se reiniciara al recopilar registros de SupportAssist.<br><br>162778: Se ha corregido una condición de memoria insuficiente en iDRAC debido al servicio de consola virtual. |   |   |
 | 2005            | 4.10.10.10       |                                                                                                                                                                                                                                                                                  |   |   |
@@ -53,7 +53,7 @@ En este documento se describe el contenido de las actualizaciones de origen del 
 
 | Versión de lanzamiento    | Firmware version    | Cambios                                                                                                          |
 |--------------------|---------------------|------------------------------------------------------------------------------------------------------------------|
-|     2008           |     14.27.60.08     | Se ha corregido una aserción fatal de firmware que mostraba un error IRISC HANG debido a que init_hca esperaba la liberación del bloqueo del flujo de temporizadores. |
+|     2008           |     14.27.60.08     | Se ha corregido una aserción grave de firmware que hacía que IRISC dejara de responder debido a que init_hca esperaba la liberación del bloqueo del flujo de temporizadores. |
 |     2005           |     14.26.60.00     |                                                                                                                  |
 
 ### <a name="nic-hlh"></a>NIC-HLH
@@ -74,7 +74,7 @@ En este documento se describe el contenido de las actualizaciones de origen del 
 
 |     Versión de lanzamiento |     Firmware version |     Cambios                                                                                           |
 |---------------------|----------------------|-------------------------------------------------------------------------------------------------------|
-| 2005, 2008          | 25.5.7.0005          | Se corrigió un problema por el que un controlador podía bloquearse en el arranque debido a una configuración incompleta de la memoria no volátil. |
+| 2005, 2008          | 25.5.7.0005          | Se ha corregido un problema por el que un controlador podía dejar de responder en el arranque debido a una configuración incompleta de la memoria no volátil. |
 
 ### <a name="hba---boot-drives"></a>HBA: unidades de arranque
 
@@ -86,7 +86,7 @@ En este documento se describe el contenido de las actualizaciones de origen del 
 
 | Versión de lanzamiento | Firmware version | Cambios                                                                                                                                                                                                |
 |-----------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     2008        |     9.0.6        | Corrige posibles bloqueos de IDRAC durante la actualización del firmware.<br> Se ha agregado el filtrado de ruido de la señal para evitar que se notifiquen errores falsos.<br> Se ha modificado la asignación de memoria del host para evitar la posible deshabilitación del puerto USB frontal. |
+|     2008        |     9.0.6        | Soluciona un posible problema por el que IDRAC podría dejar de responder durante una actualización del firmware.<br> Se ha agregado el filtrado de ruido de la señal para evitar que se notifiquen errores falsos.<br> Se ha modificado la asignación de memoria del host para evitar la posible deshabilitación del puerto USB frontal. |
 |     2005        |     1.0.6        |                                                                                                                                                                                                        |
 
 ### <a name="drive-fw"></a>FW de unidad

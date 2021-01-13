@@ -1,18 +1,18 @@
 ---
 title: Instalación de firmware mediante iDRAC
 description: Obtenga información sobre cómo instalar firmware mediante iDRAC.
-author: myoungerman
+author: PatAltimore
 ms.topic: how-to
 ms.date: 11/13/2020
-ms.author: v-myoung
+ms.author: patricka
 ms.reviewer: ''
 ms.lastreviewed: ''
-ms.openlocfilehash: 5b42b0a1f6be6e9fdf8110854e37f602d25b18ad
-ms.sourcegitcommit: 3bd42be22e626564b62e560dc037aed4d462011f
+ms.openlocfilehash: 3b6a257d5f5f42c951313c2220559306577de15d
+ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97393117"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97910251"
 ---
 # <a name="installing-firmware-using-the-idrac-interface"></a>Instalación de firmware mediante la interfaz de iDRAC
 
@@ -26,7 +26,7 @@ Use el procedimiento siguiente para actualizar el firmware de un solo dispositiv
 
 1.  Vaya a **Maintenance** \**System Update** (Mantenimiento > Actualización del sistema). Se muestra la página **Firmware Update** (Actualización de firmware).
 
-    ![](media/image-85.png)
+    ![Captura de pantalla en la que se muestra la página de mantenimiento de un controlador integrado de acceso remoto de Dell 9 de tipo Enterprise.](media/image-85.png)
 
 2.  En la pestaña **Update** (Actualización), seleccione **Local** como ubicación del archivo.
 
