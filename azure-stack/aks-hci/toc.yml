@@ -37,11 +37,11 @@
       href: adapt-apps-mixed-os-clusters.md
     - name: Uso de contenedores de Windows Server
       items:
-        - name: Implementación de aplicaciones .NET en AKS en Azure Stack HCI
+        - name: Implementación de aplicaciones .NET
           href: deploy-windows-application.md
         - name: Preparación de nodos de Windows para la compatibilidad con las cuentas de servicio administradas de grupo
           href: prepare-windows-nodes-gmsa.md
-        - name: Uso de un volumen persistente en un clúster de AKS en Azure Stack HCI
+        - name: Uso del volumen persistente
           href: persistent-volume.md
     - name: Solución de problemas
       href: troubleshoot.md
