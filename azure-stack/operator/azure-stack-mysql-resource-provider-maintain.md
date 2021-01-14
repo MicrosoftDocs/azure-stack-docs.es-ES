@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.author: bryanla
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2020
-ms.openlocfilehash: e85d20755a92806177e7d5e7a9f1d425e4a18018
-ms.sourcegitcommit: 6efe456173ce77d52789144709195b6291d0d707
+ms.openlocfilehash: 7372cea4544a2cdb4b0d0e6ed54d07253d6d782c
+ms.sourcegitcommit: 1465bca8b7f87ea6f24faf47e86c2ba497943b28
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950695"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103101"
 ---
 # <a name="mysql-resource-provider-maintenance-operations-in-azure-stack-hub"></a>Operaciones de mantenimiento del proveedor de recursos MySQL en Azure Stack Hub
 
@@ -182,6 +182,8 @@ Azure Stack Hub tiene varias maneras de recopilar, guardar y enviar registros de
 
 ::: moniker-end
 
+::: moniker range="< azs-2008"
+
 A partir de la versión 1.1.93, el proveedor de recursos de MySQL admite la manera estándar de recopilar registros del entorno de Azure Stack Hub. Si usa una versión anterior, se recomienda que actualice el proveedor de recursos de MySQL a la versión más reciente.
 
 Para recopilar registros de la VM bloqueada, se puede usar el punto de conexión DBAdapterDiagnostics de JEA (Just Enough Administration) de PowerShell. Este punto de conexión proporciona los comandos siguientes:
@@ -235,6 +237,8 @@ $cleanup = Invoke-Command -Session $session -ScriptBlock {Remove-AzsDBAdapterLog
 $session | Remove-PSSession
 
 ```
+
+::: moniker-end
 
 ## <a name="configure-azure-diagnostics-extension-for-mysql-resource-provider"></a>Configure la extensión Azure Diagnostics para un proveedor de recursos de MySQL
 

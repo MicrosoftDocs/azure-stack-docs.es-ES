@@ -8,12 +8,12 @@ ms.date: 12/10/2020
 ms.author: patricka
 ms.reviewer: prchint
 ms.lastreviewed: 12/10/2020
-ms.openlocfilehash: ef2bbc0fe85b0d6a1db605af440eab2d0e80a805
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: 4c5117469e1a568252e23f2794996f8d367942af
+ms.sourcegitcommit: 52c934f5eeb5fcd8e8f2ce3380f9f03443d1e445
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97868988"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97974258"
 ---
 # <a name="troubleshoot-issues-in-azure-stack-hub"></a>Solución de problemas de Azure Stack Hub
 
@@ -203,7 +203,7 @@ El proceso de revisión y actualización de Azure Stack Hub está diseñado para
 
 1. Siga los pasos de corrección de la alerta de error que se crea cuando se produce un error en la actualización.
 
-2. Si no ha podido resolver el problema, cree una [incidencia de soporte técnico de Azure Stack Hub](./azure-stack-help-and-support-overview.md?view=azs-2002). Asegúrese de que ha [recopilado los registros](./azure-stack-diagnostic-log-collection-overview.md#send-logs-now) del intervalo de tiempo en el que se produjo el problema.
+2. Si no ha podido resolver el problema, cree una [incidencia de soporte técnico de Azure Stack Hub](./azure-stack-help-and-support-overview.md). Asegúrese de que ha [recopilado los registros](./azure-stack-diagnostic-log-collection-overview.md#send-logs-now) del intervalo de tiempo en el que se produjo el problema.
 
 ## <a name="common-azure-stack-hub-patch-and-update-issues"></a>Problemas habituales de revisión y actualización de Azure Stack Hub
 
@@ -236,5 +236,5 @@ El proceso de revisión y actualización de Azure Stack Hub está diseñado para
 
 **Causa**: al intentar instalar la actualización 2002, es posible que se produzca un error de actualización y que se proporcione el siguiente mensaje: `The private network parameter is missing from cloud parameters. Please use set-azsprivatenetwork cmdlet to set private networkTrace`.
 
-**Corrección**: [configure una red interna privada](./azure-stack-network.md?view=azs-2002#private-network).
+**Corrección**: [configure una red interna privada](./azure-stack-network.md?view=azs-2002&preserve-view=true#private-network).
 ::: moniker-end

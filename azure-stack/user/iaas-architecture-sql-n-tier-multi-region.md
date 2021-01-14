@@ -7,12 +7,12 @@ ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: df65f32abdc7c643c953f176ae8a4fd0b47309f5
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: 6978e6c86df577fc3d0446a8ecc8ce13a57781b7
+ms.sourcegitcommit: 52c934f5eeb5fcd8e8f2ce3380f9f03443d1e445
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97873748"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97973592"
 ---
 # <a name="run-an-n-tier-application-in-multiple-azure-stack-hub-regions-for-high-availability"></a>Ejecución de una aplicación de n niveles en varias regiones de Azure Stack Hub para lograr alta disponibilidad
 
@@ -35,9 +35,9 @@ Esta arquitectura se basa en la que se muestra en [Aplicación de n niveles con 
 
 -   **Redes virtuales**. Cree una red virtual independiente para cada región. Asegúrese de que los espacios de direcciones no se superpongan.
 
--   **Grupo de disponibilidad AlwaysOn de SQL Server** Si usa SQL Server, se recomiendan los [grupos de disponibilidad AlwaysOn de SQL](/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-ver15) para conseguir alta disponibilidad. Cree un único grupo de disponibilidad que incluya las instancias de SQL Server en ambas regiones.
+-   **Grupo de disponibilidad AlwaysOn de SQL Server** Si usa SQL Server, se recomiendan los [grupos de disponibilidad AlwaysOn de SQL](/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-ver15&preserve-view=true) para conseguir alta disponibilidad. Cree un único grupo de disponibilidad que incluya las instancias de SQL Server en ambas regiones.
 
--   **Conexión VPN de red virtual a red virtual**. Como Emparejamiento de VNET todavía no está disponible en Azure Stack Hub, use la conexión VPN de red virtual a red virtual para conectar las dos redes virtuales. Consulte [Red virtual a red virtual en Azure Stack Hub](./azure-stack-network-howto-vnet-to-vnet.md?view=azs-1908) para más información.
+-   **Conexión VPN de red virtual a red virtual**. Como Emparejamiento de VNET todavía no está disponible en Azure Stack Hub, use la conexión VPN de red virtual a red virtual para conectar las dos redes virtuales. Consulte [Red virtual a red virtual en Azure Stack Hub](./azure-stack-network-howto-vnet-to-vnet.md) para más información.
 
 ## <a name="recommendations"></a>Recomendaciones
 
@@ -113,7 +113,7 @@ Para configurar el grupo de disponibilidad:
     az network vnet update --resource-group <resource-group> --name <vnet-name> --dns-servers "10.0.0.4,10.0.0.6,172.16.0.4,172.16.0.6"
     ```
 
--   Cree un clúster de [Clústeres de conmutación por error de Windows Server](/sql/sql-server/failover-clusters/windows/windows-server-failover-clustering-wsfc-with-sql-server?view=sql-server-ver15) (WSFC) que incluya las instancias de SQL Server en ambas regiones.
+-   Cree un clúster de [Clústeres de conmutación por error de Windows Server](/sql/sql-server/failover-clusters/windows/windows-server-failover-clustering-wsfc-with-sql-server?view=sql-server-ver15&preserve-view=true) (WSFC) que incluya las instancias de SQL Server en ambas regiones.
 
 -   Cree un grupo de disponibilidad AlwaysOn de SQL Server que incluya las instancias de SQL Server en las regiones primaria y secundaria. Consulte [Extending Always On Availability Group to Remote Azure Datacenter (PowerShell)](https://techcommunity.microsoft.com/t5/DataCAT/Extending-AlwaysOn-Availability-Group-to-Remote-Azure-Datacenter/ba-p/305217) (Extensión de un grupo de disponibilidad AlwaysOn para el acceso remoto a un centro de datos de Azure [PowerShell)] para conocer los pasos.
 
@@ -134,10 +134,10 @@ Traffic Manager es un posible punto de error en el sistema. Si se produce un err
 
 Para el clúster de SQL Server, hay dos escenarios de conmutación por error que se deben tener en cuenta:
 
--   Todas las réplicas de base de datos de SQL Server de la región primaria generarán un error. Esto podría ocurrir, por ejemplo, durante una interrupción regional. En ese caso, debe conmutar por error manualmente el grupo de disponibilidad, aunque Traffic Manager conmute por error automáticamente en el servidor front-end. Siga los pasos que se indican en [Perform a Forced Manual Failover of a SQL Server Availability Group](/sql/database-engine/availability-groups/windows/perform-a-forced-manual-failover-of-an-availability-group-sql-server?view=sql-server-ver15) (Realización de una conmutación por error manual forzada de un grupo de disponibilidad de SQL Server), donde se describe cómo realizar una conmutación por error forzada mediante SQL Server Management Studio, Transact-SQL o PowerShell en SQL Server 2016.
+-   Todas las réplicas de base de datos de SQL Server de la región primaria generarán un error. Esto podría ocurrir, por ejemplo, durante una interrupción regional. En ese caso, debe conmutar por error manualmente el grupo de disponibilidad, aunque Traffic Manager conmute por error automáticamente en el servidor front-end. Siga los pasos que se indican en [Perform a Forced Manual Failover of a SQL Server Availability Group](/sql/database-engine/availability-groups/windows/perform-a-forced-manual-failover-of-an-availability-group-sql-server?view=sql-server-ver15&preserve-view=true) (Realización de una conmutación por error manual forzada de un grupo de disponibilidad de SQL Server), donde se describe cómo realizar una conmutación por error forzada mediante SQL Server Management Studio, Transact-SQL o PowerShell en SQL Server 2016.
 
     > [!Warning]  
-    > Con la conmutación por error forzada, se corre el riesgo de pérdida de datos. Una vez que la región primaria vuelve a estar en línea, tome una instantánea de la base de datos y use [tablediff](/sql/tools/tablediff-utility?view=sql-server-ver15) para encontrar las diferencias.
+    > Con la conmutación por error forzada, se corre el riesgo de pérdida de datos. Una vez que la región primaria vuelve a estar en línea, tome una instantánea de la base de datos y use [tablediff](/sql/tools/tablediff-utility?view=sql-server-ver15&preserve-view=true) para encontrar las diferencias.
 
 -   Traffic Manager conmuta por error a la región secundaria, pero la réplica principal de base de datos SQL Server sigue estando disponible. Por ejemplo, si el nivel de front-end produjera un error, las máquinas virtuales de SQL Server no se verían afectadas. En ese caso, el tráfico de Internet se enrutaría a la región secundaria y esa región podría seguir conectándose a la réplica principal. Sin embargo, habrá una mayor latencia, ya que las conexiones de SQL Server atraviesan las regiones. En esta situación, debe realizar una conmutación por error manual como se indica a continuación:
 

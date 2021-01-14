@@ -8,12 +8,12 @@ ms.date: 12/15/2020
 ms.author: sethm
 ms.reviewer: niy
 ms.lastreviewed: 03/18/2020
-ms.openlocfilehash: 126504ce42ba4c7567e15a6c19378ef2bf2c628b
-ms.sourcegitcommit: 32d77de1a554315f53473407279e464a72aa9aa1
+ms.openlocfilehash: a0f8d5e66f0413446a9efe8c266dfc366446b08a
+ms.sourcegitcommit: 52c934f5eeb5fcd8e8f2ce3380f9f03443d1e445
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97515028"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97974275"
 ---
 # <a name="azure-stack-hub-servicing-policy"></a>Directiva de servicio de Azure Stack Hub
 
@@ -47,9 +47,9 @@ Busque documentación sobre cómo planear y administrar actualizaciones y cómo 
 
 Para obtener información sobre una actualización concreta, incluido cómo descargarla, vea las notas de versión de la actualización:
 
-- [Actualización de Azure Stack Hub 2008](/azure-stack/operator/release-notes?view=azs-2008)
-- [Actualización de Azure Stack Hub 2005](/azure-stack/operator/release-notes?view=azs-2005)
-- [Actualización de Azure Stack Hub 2002](/azure-stack/operator/release-notes?view=azs-2002)
+- [Actualización de Azure Stack Hub 2008](/azure-stack/operator/release-notes?view=azs-2008&preserve-view=true)
+- [Actualización de Azure Stack Hub 2005](/azure-stack/operator/release-notes?view=azs-2005&preserve-view=true)
+- [Actualización de Azure Stack Hub 2002](/azure-stack/operator/release-notes?view=azs-2002&preserve-view=true)
 
 ## <a name="hotfixes"></a>Revisiones
 
@@ -61,8 +61,8 @@ Las revisiones se descargan e instalan del mismo modo que los paquetes de actual
 
 Para más información acerca de las revisiones disponibles actualmente, consulte las notas de la versión de la actualización:
 
-- [Revisión de Azure Stack Hub 2005](/azure-stack/operator/release-notes?view=azs-2005#hotfixes)
-- [Revisión de Azure Stack Hub 2002](/azure-stack/operator/release-notes?view=azs-2002#hotfixes-1)
+- [Revisión de Azure Stack Hub 2005](/azure-stack/operator/release-notes?view=azs-2005&preserve-view=true#hotfixes)
+- [Revisión de Azure Stack Hub 2002](/azure-stack/operator/release-notes?view=azs-2002&preserve-view=true#hotfixes-1)
 
 ## <a name="keep-your-system-under-support"></a>Mantenimiento del sistema dentro del soporte técnico
 

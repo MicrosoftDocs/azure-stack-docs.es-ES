@@ -7,12 +7,12 @@ ms.date: 12/2/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/2/2020
-ms.openlocfilehash: e9f6c41097085a0342b2c0a2fc5b5b995c2d9186
-ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
+ms.openlocfilehash: 0d5b48c04e546d3b8776f436e5562786b8e77f33
+ms.sourcegitcommit: 52c934f5eeb5fcd8e8f2ce3380f9f03443d1e445
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96524799"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97974139"
 ---
 # <a name="back-up-your-vm-on-azure-stack-hub-with-commvault"></a>Copia de seguridad de una máquina virtual en Azure Stack Hub con Commvault
 
@@ -111,12 +111,12 @@ Tendrá que saber si el administrador de identidades es Azure AD o ADFS. En la 
 
 | Elemento | Descripción | Source |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
-| Dirección URL de Azure Resource Manager | Punto de conexión de Resource Manager para Azure Stack Hub. | https://docs.microsoft.com/azure-stack/user/azure-stack-version-profiles-ruby?view=azs-1908#the-azure-stack-hub-resource-manager-endpoint |
+| Dirección URL de Azure Resource Manager | Punto de conexión de Resource Manager para Azure Stack Hub. | https://docs.microsoft.com/azure-stack/user/azure-stack-version-profiles-ruby#the-azure-stack-hub-resource-manager-endpoint |
 | Nombre de la aplicación |  |  |
-| Identificador de aplicación | Id. de la aplicación de la entidad de servicio que guardó al crear dicha entidad de servicio en la sección anterior de este artículo. | https://docs.microsoft.com/azure-stack/operator/azure-stack-create-service-principals?view=azs-1908 |
-| Id. de suscripción | El identificador de suscripción se usa para acceder a las ofertas de Azure Stack Hub. | https://docs.microsoft.com/azure-stack/operator/service-plan-offer-subscription-overview?view=azs-1908#subscriptions |
-| Id. de inquilino (Id. de directorio) | El identificador de inquilino de su instancia de Azure Stack Hub. | https://docs.microsoft.com/azure-stack/operator/azure-stack-identity-overview?view=azs-1908 |
-| Contraseña de aplicación | Secreto de aplicación de la entidad de servicio que guardó al crear dicha entidad de servicio. | https://docs.microsoft.com/azure-stack/operator/azure-stack-create-service-principals?view=azs-1908 |
+| Identificador de aplicación | Id. de la aplicación de la entidad de servicio que guardó al crear dicha entidad de servicio en la sección anterior de este artículo. | https://docs.microsoft.com/azure-stack/operator/azure-stack-create-service-principals |
+| Id. de suscripción | El identificador de suscripción se usa para acceder a las ofertas de Azure Stack Hub. | https://docs.microsoft.com/azure-stack/operator/service-plan-offer-subscription-overview#subscriptions |
+| Id. de inquilino (Id. de directorio) | El identificador de inquilino de su instancia de Azure Stack Hub. | https://docs.microsoft.com/azure-stack/operator/azure-stack-identity-overview |
+| Contraseña de aplicación | Secreto de aplicación de la entidad de servicio que guardó al crear dicha entidad de servicio. | https://docs.microsoft.com/azure-stack/operator/azure-stack-create-service-principals |
 
 ## <a name="configure-backup-using-the-commvault-console"></a>Configuración de la copia de seguridad mediante la consola de Commvault
 

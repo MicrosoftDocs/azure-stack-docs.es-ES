@@ -7,16 +7,16 @@ ms.date: 12/2/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/2/2020
-ms.openlocfilehash: 4b39ce2782f8b99740da5a2fea383892c2de5351
-ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
+ms.openlocfilehash: 1e762ab25250a6414087c1b22e911bb7a8d151ed
+ms.sourcegitcommit: 52c934f5eeb5fcd8e8f2ce3380f9f03443d1e445
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96525989"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97974118"
 ---
 # <a name="get-authentication-information-for-azure-stack-hub"></a>Obtención de información de autenticación para Azure Stack Hub
 
-Para autenticarse en Azure Stack Hub es preciso especificar el identificador de la suscripción, el identificador del inquilino y la ubicación, y el punto de conexión de Resource Manager de Azure Stack Hub. Estos valores se pueden obtener en el [punto de conexión de Resource Manager de Azure Stack](./azure-stack-version-profiles-ruby.md?view=azs-1910#the-azure-stack-hub-resource-manager-endpoint) para Azure Stack Hub. También se puede obtener mediante los pasos que se describen en este artículo.
+Para autenticarse en Azure Stack Hub es preciso especificar el identificador de la suscripción, el identificador del inquilino y la ubicación, y el punto de conexión de Resource Manager de Azure Stack Hub. Estos valores se pueden obtener en el [punto de conexión de Resource Manager de Azure Stack](./azure-stack-version-profiles-ruby.md#the-azure-stack-hub-resource-manager-endpoint) para Azure Stack Hub. También se puede obtener mediante los pasos que se describen en este artículo.
 
 ## <a name="values-needed-to-authenticate"></a>Valores necesarios para la autenticación
 
@@ -74,4 +74,4 @@ Para obtener el punto de conexión de metadatos que apunta a propiedades como el
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Más información sobre el uso de [Resource Manager de Azure Stack Hub](./azure-stack-version-profiles.md?view=azs-1910) con Azure Stack Hub.
+Más información sobre el uso de [Resource Manager de Azure Stack Hub](./azure-stack-version-profiles.md) con Azure Stack Hub.

@@ -7,12 +7,12 @@ ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/16/2020
-ms.openlocfilehash: 798b3d9e94f6263b02c291d2f5725768f1a8522a
-ms.sourcegitcommit: f30e5178e0b4be4e3886f4e9f699a2b51286e2a8
+ms.openlocfilehash: d187058561f166084b672d941262c7979f7deec2
+ms.sourcegitcommit: 52c934f5eeb5fcd8e8f2ce3380f9f03443d1e445
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97620694"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97974054"
 ---
 # <a name="use-docker-to-run-powershell-for-azure-stack-hub"></a>Uso de Docker para ejecutar PowerShell para Azure Stack Hub
 
@@ -34,7 +34,7 @@ En este artículo, puede usar Docker para crear un contenedor en el que se ejecu
 
 Para usar PowerShell para acceder a los recursos de Azure Stack Hub, necesita una entidad de servicio en su inquilino de Azure Active Directory (Azure AD). Los permisos se delegan con el control de acceso basado en rol de usuario (RBAC). Es posible que tenga que solicitar la entidad de servicio a su operador de nube.
 
-1. Para configurar la entidad de servicio, siga las instrucciones del artículo [Creación de entidades de servicio para otorgar a las aplicaciones acceso a los recursos de Azure Stack Hub](../operator/azure-stack-create-service-principals.md?view=azs-2002).
+1. Para configurar la entidad de servicio, siga las instrucciones del artículo [Creación de entidades de servicio para otorgar a las aplicaciones acceso a los recursos de Azure Stack Hub](../operator/azure-stack-create-service-principals.md).
 
 2. Anote el identificador de aplicación, el secreto, el identificador del inquilino y el identificador del objeto para usarlos más tarde.
 

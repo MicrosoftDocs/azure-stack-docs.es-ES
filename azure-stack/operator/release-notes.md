@@ -7,12 +7,12 @@ ms.date: 12/23/2020
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 09/09/2020
-ms.openlocfilehash: b2b72ce306d9a3801d7208a748e1bdb3720947ea
-ms.sourcegitcommit: 37e83d0b593d2d61156f4ffd4f8e1afd5f558465
+ms.openlocfilehash: 3c10ea13f3780a7c7e1e0f999d8203d4d03f4e49
+ms.sourcegitcommit: 52c934f5eeb5fcd8e8f2ce3380f9f03443d1e445
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97766604"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97974156"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Notas de la versión de Azure Stack Hub
 
@@ -271,7 +271,7 @@ Para obtener más información sobre los tipos de compilación de actualización
 - El 15 de abril de 2020 se lanzarán nuevos módulos de inquilino de Azure PowerShell para Azure Stack Hub. Los módulos de Azure Resource Manager no dejarán de funcionar, pero dejarán de actualizarse después de la versión 2002.
 - Se ha agregado una nueva alerta de advertencia en el portal de administración de Azure Stack Hub para notificar problemas de conectividad con el servidor syslog configurado. El título de la alerta es **The Syslog client encountered a networking issue while sending a Syslog message** (El cliente de Syslog ha encontrado un problema de red al enviar un mensaje de Syslog).
 - Se ha agregado una nueva alerta de advertencia en el portal de administración de Azure Stack Hub para notificar problemas de conectividad con el protocolo de tiempo de red (NTP). El título de la alerta es **Invalid Time Source on [node name]** (Origen de hora no válido en [nombre del nodo]).
-- El [SDK de Java](https://azure.microsoft.com/develop/java/) ha publicado nuevos paquetes debido a un cambio importante en la actualización 2002 relacionado con las restricciones de TLS. Debe instalar la nueva dependencia del SDK de Java. Puede encontrar las instrucciones en los [perfiles de versión de Java y API](../user/azure-stack-version-profiles-java.md?view=azs-2002#java-and-api-version-profiles).
+- El [SDK de Java](https://azure.microsoft.com/develop/java/) ha publicado nuevos paquetes debido a un cambio importante en la actualización 2002 relacionado con las restricciones de TLS. Debe instalar la nueva dependencia del SDK de Java. Puede encontrar las instrucciones en los [perfiles de versión de Java y API](../user/azure-stack-version-profiles-java.md?view=azs-2002&preserve-view=true#java-and-api-version-profiles).
 - Hay una nueva versión (1.0.5.10) del módulo de administración de System Center Operations Manager para Azure Stack Hub disponible y obligatoria para todos los sistemas que ejecutan la actualización 2002 debido a cambios importantes en la API. Los cambios de la API afectan a los paneles de rendimiento de copia de seguridad y almacenamiento, y se recomienda que actualice primero todos los sistemas con la actualización 2002 antes de actualizar el módulo de administración.
 
 ### <a name="improvements"></a>Mejoras
@@ -282,8 +282,8 @@ Para obtener más información sobre los tipos de compilación de actualización
 - La herramienta Azure Stack Hub Readiness Checker valida ahora la integración de AD Graph mediante todos los puertos TCP IP asignados a AD Graph.
 - La herramienta de redifusión sin conexión se ha actualizado con mejoras de confiabilidad. La herramienta ya no está disponible en GitHub y se ha [trasladado a la galería de PowerShell](https://www.powershellgallery.com/packages/Azs.Syndication.Admin/). Para más información, consulte [Descarga de elementos de Marketplace existentes desde Azure en Azure Stack Hub](azure-stack-download-azure-marketplace-item.md).
 - Se está incorporando una nueva funcionalidad de supervisión. La plataforma corregirá automáticamente la alerta de espacio en disco insuficiente para los hosts físicos y las máquinas virtuales de infraestructura, y solo si se produce un error en esta acción, la alerta será visible en el portal de administrador de Azure Stack Hub para que el operador tome medidas.
-- Mejoras en la [recopilación de registros de diagnóstico](./azure-stack-diagnostic-log-collection-overview.md?view=azs-2002). La nueva experiencia mejora y simplifica la recopilación de registros de diagnóstico mediante la eliminación de la necesidad de configurar una cuenta de almacenamiento de blobs de antemano. El entorno de almacenamiento está preconfigurado para que pueda enviar registros antes de abrir una incidencia de soporte técnico y gaste menos tiempo en una llamada de soporte técnico.
-- El tiempo que se emplea en la [recopilación proactiva de registros y la recopilación de registros a petición](./azure-stack-diagnostic-log-collection-overview.md?view=azs-2002) se ha reducido en un 80 %. El tiempo de recopilación de registros puede tardar más de lo esperado, pero no será necesaria ninguna acción por parte de los operadores de Azure Stack Hub a menos que se produzca un error en la recopilación de registros.
+- Mejoras en la [recopilación de registros de diagnóstico](./azure-stack-diagnostic-log-collection-overview.md?view=azs-2002&preserve-view=true). La nueva experiencia mejora y simplifica la recopilación de registros de diagnóstico mediante la eliminación de la necesidad de configurar una cuenta de almacenamiento de blobs de antemano. El entorno de almacenamiento está preconfigurado para que pueda enviar registros antes de abrir una incidencia de soporte técnico y gaste menos tiempo en una llamada de soporte técnico.
+- El tiempo que se emplea en la [recopilación proactiva de registros y la recopilación de registros a petición](./azure-stack-diagnostic-log-collection-overview.md?view=azs-2002&preserve-view=true) se ha reducido en un 80 %. El tiempo de recopilación de registros puede tardar más de lo esperado, pero no será necesaria ninguna acción por parte de los operadores de Azure Stack Hub a menos que se produzca un error en la recopilación de registros.
 - El progreso de la descarga de un paquete de actualizaciones de Azure Stack Hub es ahora visible en la hoja de actualización una vez que se inicia una actualización. Esto solo se aplica a los sistemas conectados de Azure Stack Hub que eligen [preparar los paquetes de actualizaciones mediante la descarga automática](azure-stack-update-prepare-package.md#automatic-download-and-preparation-for-update-packages).
 - Se han realizado mejoras de confiabilidad en el agente del host de Controladora de red.
 - Se ha presentado un nuevo microservicio denominado DNS Orchestrator que mejora la lógica de resistencia de los servicios DNS internos durante los procesos de revisión y actualización.

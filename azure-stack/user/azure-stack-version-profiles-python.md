@@ -7,12 +7,12 @@ ms.date: 12/2/2020
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 12/2/2020
-ms.openlocfilehash: 676cd4fe93a464df0cd0a4cddeb3e12ddee1f229
-ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
+ms.openlocfilehash: 1359ce67220040a326251802b35ad72ec526d09e
+ms.sourcegitcommit: 52c934f5eeb5fcd8e8f2ce3380f9f03443d1e445
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96526040"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97973986"
 ---
 # <a name="use-api-version-profiles-with-python-in-azure-stack-hub"></a>Uso de perfiles de la versión de la API con Python en Azure Stack Hub
 
@@ -38,7 +38,7 @@ El SDK de Python es compatible con los siguientes perfiles de la API:
 ## <a name="install-the-azure-python-sdk"></a>Instalación del SDK de Azure para Python
 
 1. [Instale Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
-2. Para obtener instrucciones sobre la instalación del SDK de Python, consulte [Azure para desarrolladores de Python](/python/azure/python-sdk-azure-install?view=azure-python).
+2. Para obtener instrucciones sobre la instalación del SDK de Python, consulte [Azure para desarrolladores de Python](/python/azure/python-sdk-azure-install?view=azure-python&preserve-view=true).
 3. Si no está disponible, cree una suscripción y guarde su identificador para usarlo más adelante. Para instrucciones sobre la creación de una suscripción, consulte [Creación de suscripciones para ofertas en Azure Stack Hub](../operator/azure-stack-subscribe-plan-provision-vm.md).
 4. Cree una entidad de servicio y guarde su identificador y su secreto. Para obtener instrucciones sobre la creación de una entidad de servicio para Azure Stack Hub, consulte [Proporcionar a las aplicaciones acceso a Azure Stack Hub](../operator/azure-stack-create-service-principals.md).
 5. Asegúrese de que la entidad de servicio tenga rol de colaborador o propietario en la suscripción. Para obtener instrucciones sobre cómo asignar un rol a la entidad de servicio, consulte [Proporcionar a las aplicaciones acceso a Azure Stack Hub](../operator/azure-stack-create-service-principals.md).

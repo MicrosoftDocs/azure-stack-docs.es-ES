@@ -8,12 +8,12 @@ ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 04/28/2020
 ms.custom: conteperfq4
-ms.openlocfilehash: 81a27e841565e00c60183de0228896d56b9eede9
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: 18c1935c1e683fab1a2cda8886a45648ee69fbf4
+ms.sourcegitcommit: 52c934f5eeb5fcd8e8f2ce3380f9f03443d1e445
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97869515"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97974292"
 ---
 # <a name="use-the-privileged-endpoint-in-azure-stack-hub"></a>Uso del punto de conexión con privilegios en Azure Stack Hub
 
@@ -251,5 +251,5 @@ A continuación, el token de respuesta se cifra con el certificado autofirmado i
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Herramientas de diagnóstico de Azure Stack Hub](./azure-stack-diagnostic-log-collection-overview.md?view=azs-2002)
+- [Herramientas de diagnóstico de Azure Stack Hub](./azure-stack-diagnostic-log-collection-overview.md)
 - [Referencia del punto de conexión con privilegios elevados de Azure Stack Hub](../reference/pep-2002/index.md)

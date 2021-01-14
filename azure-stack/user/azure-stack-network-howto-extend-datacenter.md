@@ -7,12 +7,12 @@ ms.date: 12/2/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/2/2020
-ms.openlocfilehash: 0d8425fa11f6de0e909a697527074c779acd27da
-ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
+ms.openlocfilehash: 02a3fdb862f3a4c04a63d5e5694487b62435ee16
+ms.sourcegitcommit: 52c934f5eeb5fcd8e8f2ce3380f9f03443d1e445
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96525802"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97974121"
 ---
 # <a name="extending-storage-to-azure-stack-hub"></a>Ampliación del almacenamiento a Azure Stack Hub
 
@@ -50,7 +50,7 @@ En este escenario, implementaremos y configuraremos una máquina virtual con Win
 
 2.  Una vez que tenga una imagen de Windows Server 2019 en el entorno de Azure Stack Hub, **inicie sesión en el portal de usuarios de Azure Stack Hub**.
 
-3.  Una vez que haya iniciado sesión en el portal de usuarios de Azure Stack Hub, asegúrese de que tiene una [suscripción a una oferta](../operator/azure-stack-subscribe-plan-provision-vm.md?view=azs-1908), lo que le permite aprovisionar recursos de IaaS (Compute, Storage y Network).
+3.  Una vez que haya iniciado sesión en el portal de usuarios de Azure Stack Hub, asegúrese de que tiene una [suscripción a una oferta](../operator/azure-stack-subscribe-plan-provision-vm.md), lo que le permite aprovisionar recursos de IaaS (Compute, Storage y Network).
 
 4.  Una vez que tenga una suscripción disponible, vuelva al **panel** del portal de usuarios de Azure Stack Hub, seleccione **Create a resource** (Crear un recurso), seleccione **Compute** y, luego, seleccione el **elemento de la galería Windows Server 2019 Datacenter**.
 

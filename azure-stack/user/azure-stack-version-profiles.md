@@ -7,12 +7,12 @@ ms.date: 12/2/2020
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 12/2/2020
-ms.openlocfilehash: 2f84233e47a5d86b9a22b76cb0d5a6dd993f4464
-ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
+ms.openlocfilehash: fe28503ec5072cb11996563efcb70662bb1025fa
+ms.sourcegitcommit: 52c934f5eeb5fcd8e8f2ce3380f9f03443d1e445
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96526023"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97973969"
 ---
 # <a name="manage-api-version-profiles-in-azure-stack-hub"></a>Administración de perfiles de la versión de API en Azure Stack Hub
 
@@ -74,7 +74,7 @@ Puede encontrar ejemplos de código que le ayudarán a integrar la solución con
 Use el perfil de la API de .NET para obtener la versión más reciente y más estable de cada tipo de recurso de un paquete de proveedor de recursos. Para más información, consulte [Uso de perfiles de la versión de API con .NET en Azure Stack Hub](azure-stack-version-profiles-net.md).
 - **PowerShell**  
 Use el módulo **Az.Bootstrapper** disponible en la Galería de PowerShell para obtener los cmdlets de PowerShell necesarios para trabajar con los perfiles de la versión de la API. Para más información, consulte el artículo sobre el [uso de perfiles de versión de API para PowerShell](azure-stack-version-profiles-powershell.md).
-Use el módulo **AzureRM.Bootstrapper** disponible en la Galería de PowerShell para obtener los cmdlets de PowerShell necesarios para trabajar con los perfiles de la versión de la API. Para más información, consulte el artículo sobre el [uso de perfiles de versión de API para PowerShell](../operator/powershell-install-az-module.md?view=azs-2002).
+Use el módulo **AzureRM.Bootstrapper** disponible en la Galería de PowerShell para obtener los cmdlets de PowerShell necesarios para trabajar con los perfiles de la versión de la API. Para más información, consulte el artículo sobre el [uso de perfiles de versión de API para PowerShell](../operator/powershell-install-az-module.md).
 - **CLI de Azure**  
 Actualice la configuración del entorno para usar el perfil de la versión de API específico de Azure Stack Hub. Para más información, consulte el artículo [Uso de los perfiles de la versión de la API con la CLI de Azure](azure-stack-version-profiles-azurecli2.md).
 - **Go**  

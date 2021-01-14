@@ -7,12 +7,12 @@ ms.date: 04/02/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 01/14/2020
-ms.openlocfilehash: f222334bcc6535b82b105494d907c8a69a463073
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.openlocfilehash: b1aae77d4247c80ace7a94e2b034f29f10220b55
+ms.sourcegitcommit: 52c934f5eeb5fcd8e8f2ce3380f9f03443d1e445
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90573775"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97974037"
 ---
 # <a name="sql-server-best-practices-to-optimize-performance-in-azure-stack-hub"></a>Procedimientos recomendados de SQL Server para optimizar el rendimiento en Azure Stack Hub.
 
@@ -123,14 +123,14 @@ Se recomienda almacenar TempDB en un disco de datos, ya que cada disco de datos 
 
 ## <a name="io-guidance"></a>Orientación sobre E/S
 
-- Considere la posibilidad de habilitar la inicialización instantánea de archivos para reducir el tiempo necesario para la asignación inicial de archivos. Para aprovechar la inicialización instantánea de archivos, se concede la cuenta de servicio de SQL Server (MSSQLSERVER) con **SE_MANAGE_VOLUME_NAME** y se agrega a la directiva de seguridad **Realizar tareas de mantenimiento del volumen**. Si usa una imagen de plataforma de SQL Server para Azure, la cuenta de servicio predeterminada (**NT Service\MSSQLSERVER**) no se agrega a la directiva de seguridad **Realizar tareas de mantenimiento del volumen**. En otras palabras, la inicialización instantánea de archivos no se habilita en una imagen de la plataforma de SQL Server para Azure. Después de agregar la cuenta de servicio de SQL Server a la directiva de seguridad **Realizar tareas de mantenimiento del volumen** , reinicie el servicio de SQL Server. Puede haber consideraciones de seguridad para usar esta característica. Para obtener más información, vea [Inicialización de archivos de base de datos](/sql/relational-databases/databases/database-instant-file-initialization?view=sql-server-ver15).
+- Considere la posibilidad de habilitar la inicialización instantánea de archivos para reducir el tiempo necesario para la asignación inicial de archivos. Para aprovechar la inicialización instantánea de archivos, se concede la cuenta de servicio de SQL Server (MSSQLSERVER) con **SE_MANAGE_VOLUME_NAME** y se agrega a la directiva de seguridad **Realizar tareas de mantenimiento del volumen**. Si usa una imagen de plataforma de SQL Server para Azure, la cuenta de servicio predeterminada (**NT Service\MSSQLSERVER**) no se agrega a la directiva de seguridad **Realizar tareas de mantenimiento del volumen**. En otras palabras, la inicialización instantánea de archivos no se habilita en una imagen de la plataforma de SQL Server para Azure. Después de agregar la cuenta de servicio de SQL Server a la directiva de seguridad **Realizar tareas de mantenimiento del volumen** , reinicie el servicio de SQL Server. Puede haber consideraciones de seguridad para usar esta característica. Para obtener más información, vea [Inicialización de archivos de base de datos](/sql/relational-databases/databases/database-instant-file-initialization?view=sql-server-ver15&preserve-view=true).
 - **Crecimiento automático** es una contingencia para el crecimiento inesperado. No administre el crecimiento de los datos y del registro a diario con el crecimiento automático. Si se usa el crecimiento automático, haga crecer previamente el archivo mediante el modificador **Tamaño**.
 - Asegúrese de que la **reducción automática** está deshabilitada para evitar una sobrecarga innecesaria que puede afectar negativamente al rendimiento.
-- Configure ubicaciones predeterminadas para los archivos de base de datos y de copia de seguridad. Use las recomendaciones de este artículo y realice los cambios necesarios en la ventana Propiedades del servidor. Para obtener instrucciones, consulte [Ver o cambiar las ubicaciones predeterminadas de los archivos de datos y registro (SQL Server Management Studio)](/sql/database-engine/configure-windows/view-or-change-the-default-locations-for-data-and-log-files?view=sql-server-ver15). En la siguiente captura de pantalla se muestra dónde se realizan estos cambios:
+- Configure ubicaciones predeterminadas para los archivos de base de datos y de copia de seguridad. Use las recomendaciones de este artículo y realice los cambios necesarios en la ventana Propiedades del servidor. Para obtener instrucciones, consulte [Ver o cambiar las ubicaciones predeterminadas de los archivos de datos y registro (SQL Server Management Studio)](/sql/database-engine/configure-windows/view-or-change-the-default-locations-for-data-and-log-files?view=sql-server-ver15&preserve-view=true). En la siguiente captura de pantalla se muestra dónde se realizan estos cambios:
 
     > ![Ver o cambiar las ubicaciones predeterminadas](./media/sql-server-vm-considerations/image1.png)
 
-- Habilite páginas bloqueadas para reducir la E/S y las actividades de paginación. Para más información, consulte [Habilitar la opción Bloquear páginas en la memoria (Windows)](/sql/database-engine/configure-windows/enable-the-lock-pages-in-memory-option-windows?view=sql-server-ver15).
+- Habilite páginas bloqueadas para reducir la E/S y las actividades de paginación. Para más información, consulte [Habilitar la opción Bloquear páginas en la memoria (Windows)](/sql/database-engine/configure-windows/enable-the-lock-pages-in-memory-option-windows?view=sql-server-ver15&preserve-view=true).
 
 - Considere la posibilidad de comprimir los archivos de datos a la hora de transferirlos dentro y fuera de Azure Stack Hub, incluidas las copias de seguridad.
 
@@ -140,7 +140,7 @@ Algunas implementaciones pueden lograr ventajas de rendimiento adicionales media
 
 - **Copia de seguridad en Azure** **Storage.** Al realizar copias de seguridad para SQL Server que se ejecutan en máquinas virtuales de Azure Stack Hub, puede usar Copia de seguridad en URL de SQL Server. Esta característica está disponible a partir de SQL Server 2012 SP1 CU2 y se recomienda para las copias de seguridad en los discos de datos conectados.
 
-    Si realiza operaciones de copia de seguridad o restauración mediante Azure Storage, siga las recomendaciones que se ofrecen en [Prácticas recomendadas y solución de problemas de Copia de seguridad en URL de SQL Server](/sql/relational-databases/backup-restore/sql-server-backup-to-url-best-practices-and-troubleshooting?view=sql-server-ver15) y [Restauración a partir de copias de seguridad almacenadas en Microsoft Azure](/sql/relational-databases/backup-restore/restoring-from-backups-stored-in-microsoft-azure?view=sql-server-2017). También puede automatizar estas copias de seguridad con [Automated Backup para SQL Server en Azure Virtual Machines](/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-automated-backup).
+    Si realiza operaciones de copia de seguridad o restauración mediante Azure Storage, siga las recomendaciones que se ofrecen en [Prácticas recomendadas y solución de problemas de Copia de seguridad en URL de SQL Server](/sql/relational-databases/backup-restore/sql-server-backup-to-url-best-practices-and-troubleshooting?view=sql-server-ver15&preserve-view=true) y [Restauración a partir de copias de seguridad almacenadas en Microsoft Azure](/sql/relational-databases/backup-restore/restoring-from-backups-stored-in-microsoft-azure?view=sql-server-2017&preserve-view=true). También puede automatizar estas copias de seguridad con [Automated Backup para SQL Server en Azure Virtual Machines](/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-automated-backup).
 
 -   **Copia de seguridad en Azure Stack Hub Storage.** Puede hacer una copia de seguridad en Azure Stack Hub Storage de forma parecida a la que lo hace en Azure Storage. Cuando se crea una copia de seguridad en SQL Server Management Studio (SSMS), debe escribir manualmente la información de configuración. No se puede usar SSMS para crear el contenedor de almacenamiento ni la firma de acceso compartido. SSMS solo se conecta a suscripciones de Azure, no a suscripciones de Azure Stack Hub. En su lugar, debe crear la cuenta de almacenamiento, el contenedor y la firma de acceso compartido en el portal de Azure Stack Hub o con PowerShell.
 

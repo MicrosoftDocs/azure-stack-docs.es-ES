@@ -5,13 +5,13 @@ ms.topic: how-to
 author: v-dasis
 ms.author: v-dasis
 ms.reviewer: jgerend
-ms.date: 12/10/2020
-ms.openlocfilehash: fc52f53a31b8d7cdcb91dd93e0fbe97c94b7e846
-ms.sourcegitcommit: 97ecba06aeabf2f30de240ac283b9bb2d49d62f0
+ms.date: 01/06/2021
+ms.openlocfilehash: 8b27859b7afab0a6e279774e43d0269f6d58065a
+ms.sourcegitcommit: 1465bca8b7f87ea6f24faf47e86c2ba497943b28
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97010929"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103142"
 ---
 # <a name="add-or-remove-servers-for-an-azure-stack-hci-cluster"></a>Adición o eliminación de servidores para un clúster de Azure Stack HCI
 

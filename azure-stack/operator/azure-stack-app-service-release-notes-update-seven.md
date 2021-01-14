@@ -8,12 +8,12 @@ ms.date: 10/11/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 08/20/2019
-ms.openlocfilehash: 449c1dac3e983aacefe4d69581ee854239d435ae
-ms.sourcegitcommit: e9a1dfa871e525f1d6d2b355b4bbc9bae11720d2
+ms.openlocfilehash: 779bbce3a3dbcf3b19b8bb142b10729f85d960b2
+ms.sourcegitcommit: 52c934f5eeb5fcd8e8f2ce3380f9f03443d1e445
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86489613"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97974224"
 ---
 # <a name="app-service-on-azure-stack-hub-update-7-release-notes"></a>Notas de la versión de la actualización 7 de App Service en Azure Stack Hub
 
@@ -118,7 +118,7 @@ Si decide realizar una implementación en una red virtual existente y en una dir
 
 ## <a name="known-issues-for-cloud-admins-operating-azure-app-service-on-azure-stack-hub"></a>Problemas conocidos para los administradores de la nube que usan Azure App Service en Azure Stack Hub
 
-Consulte la documentación en las [notas de la versión 1907 de Azure Stack Hub](./release-notes.md?view=azs-2002).
+Consulte la documentación en las [notas de la versión 1907 de Azure Stack Hub](./release-notes.md?view=azs-1907&preserve-view=true).
 
 ## <a name="next-steps"></a>Pasos siguientes
 
