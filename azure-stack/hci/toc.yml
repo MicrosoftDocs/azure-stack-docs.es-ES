@@ -181,9 +181,9 @@
 - name: Referencia
   items:
     - name: Comandos de la CLI de Azure para el registro de Azure
-      href: 'https://docs.microsoft.com/cli/azure/ext/stack-hci/stack-hci'
+      href: /cli/azure/ext/stack-hci/stack-hci
     - name: Comandos de PowerShell para el registro de Azure
-      href: 'https://docs.microsoft.com/powershell/module/az.stackhci'
+      href: /powershell/module/az.stackhci
     - name: Paquete de Go para API del servicio Azure Stack HCI de Azure Resource Manager
       href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/azurestackhci/mgmt/2020-10-01/azurestackhci'
     - name: Interfaces y clases de servicio Java de Azure Stack HCI

@@ -117,14 +117,14 @@
                     - name: Implementación de App Service
                       href: ../operator/azure-stack-app-service-deploy.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
                     - name: Implementación de App Service para lograr alta disponibilidad
-                      href: ../operator/app-service-deploy-ha.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
+                      href: ../operator/azure-stack-app-service-deploy.md?bc=%2fazure-stack%2fbreadcrumb%2ftoc.json&toc=%2fazure-stack%2fmdc%2ftoc.json
                     - name: Implementación de App Service sin conexión
-                      href: ../operator/azure-stack-app-service-deploy-offline.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
+                      href: ../operator/azure-stack-app-service-deploy.md?bc=%2fazure-stack%2fbreadcrumb%2ftoc.json&pivots=state-disconnected%3fpivots%3dstate-disconnected&toc=%2fazure-stack%2fmdc%2ftoc.json
                 - name: Event Hubs
                   items:
                     - name: Planificación de capacidad
                       href: ../operator/event-hubs-rp-capacity-planning.md?toc=/azure-stack/tca/toc.json&bc=/azure-stack/breadcrumb/toc.json
-                    - name: Prerrequisitos
+                    - name: Requisitos previos
                       href: ../operator/event-hubs-rp-prerequisites.md?toc=/azure-stack/tca/toc.json&bc=/azure-stack/breadcrumb/toc.json
                     - name: Instalar
                       href: ../operator/event-hubs-rp-install.md?toc=/azure-stack/tca/toc.json&bc=/azure-stack/breadcrumb/toc.json
@@ -149,7 +149,7 @@
                     - name: Implementación de bases de datos SQL de alta disponibilidad
                       href: ../operator/azure-stack-tutorial-sql.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
             - name: Referencia del cmdlet Start-AzsReadiness
-              href: ../operator/azure-stack-azsreadiness-cmdlet.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
+              href: ../operator/azure-stack-validate-identity.md?bc=%2fazure-stack%2fbreadcrumb%2ftoc.json&toc=%2fazure-stack%2fmdc%2ftoc.json
             - name: Ver el informe de preparación
               href: ../operator/azure-stack-validation-report.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
         - name: Configuración de centro de datos
@@ -176,7 +176,7 @@
                   href: ../operator/azure-stack-create-service-principals.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
                 - name: Habilitación de servicios multiinquilino
                   href: ../operator/azure-stack-enable-multitenancy.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
-    - name: Guías de procedimientos
+    - name: Guías paso a paso
       items:
         - name: Comprobaciones de estado del almacenamiento extendido
           href: extended-storage-health-checks.md
@@ -217,7 +217,7 @@
                 - name: Actualización de App Service
                   href: ../operator/azure-stack-app-service-update.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
                 - name: Actualización de App Service sin conexión
-                  href: ../operator/azure-stack-app-service-update-offline.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
+                  href: ../operator/azure-stack-app-service-update.md?bc=%2fazure-stack%2fbreadcrumb%2ftoc.json&pivots=state-disconnected%3fpivots%3dstate-disconnected&toc=%2fazure-stack%2fmdc%2ftoc.json
                 - name: Actualización de Event Hubs
                   href: ../operator/resource-provider-apply-updates.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
                 - name: Actualización de MySQL Server
@@ -329,13 +329,13 @@
                 - name: Implementación de App Service
                   href: ../operator/azure-stack-app-service-deploy.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
                 - name: Implementación de App Service para lograr alta disponibilidad
-                  href: ../operator/app-service-deploy-ha.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
+                  href: ../operator/azure-stack-app-service-deploy.md?bc=%2fazure-stack%2fbreadcrumb%2ftoc.json&toc=%2fazure-stack%2fmdc%2ftoc.json
                 - name: Implementación de App Service sin conexión
-                  href: ../operator/azure-stack-app-service-deploy-offline.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
+                  href: ../operator/azure-stack-app-service-deploy.md?bc=%2fazure-stack%2fbreadcrumb%2ftoc.json&pivots=state-disconnected%3fpivots%3dstate-disconnected&toc=%2fazure-stack%2fmdc%2ftoc.json
                 - name: Actualización de App Service
                   href: ../operator/azure-stack-app-service-update.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
                 - name: Actualización de App Service sin conexión
-                  href: ../operator/azure-stack-app-service-update-offline.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
+                  href: ../operator/azure-stack-app-service-update.md?bc=%2fazure-stack%2fbreadcrumb%2ftoc.json&pivots=state-disconnected%3fpivots%3dstate-disconnected&toc=%2fazure-stack%2fmdc%2ftoc.json
                 - name: Adición de roles de infraestructura de App Service
                   href: ../operator/azure-stack-app-service-add-worker-roles.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
                 - name: Configuración de orígenes de implementación
@@ -356,7 +356,7 @@
                   href: ../operator/event-hubs-rp-overview.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
                 - name: Planificación de capacidad
                   href: ../operator/event-hubs-rp-capacity-planning.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
-                - name: Prerrequisitos
+                - name: Requisitos previos
                   href: ../operator/event-hubs-rp-prerequisites.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
                 - name: Instalar
                   href: ../operator/event-hubs-rp-install.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
@@ -367,7 +367,7 @@
                     - name: Copia de seguridad y restauración
                       href: operator/azure-stack-backup-infrastructure-backup-tzl.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
                     - name: Recopilación de registros
-                      href: ../operator/azure-stack-diagnostic-log-collection-overview.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
+                      href: ../operator/diagnostic-log-collection.md?bc=%2fazure-stack%2fbreadcrumb%2ftoc.json&toc=%2fazure-stack%2fmdc%2ftoc.json
                     - name: Estado y alertas
                       href: operator/azure-stack-monitor-health-tzl.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
                     - name: Administrar
@@ -449,11 +449,11 @@
                 - name: Recopilación de registros de diagnóstico
                   items:
                     - name: Información general
-                      href: ../operator/azure-stack-diagnostic-log-collection-overview.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
+                      href: ../operator/diagnostic-log-collection.md?bc=%2fazure-stack%2fbreadcrumb%2ftoc.json&toc=%2fazure-stack%2fmdc%2ftoc.json
                     - name: Recopilación proactiva
-                      href: ../operator/azure-stack-configure-automatic-diagnostic-log-collection.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
+                      href: ../operator/diagnostic-log-collection.md?bc=%2fazure-stack%2fbreadcrumb%2ftoc.json&toc=%2fazure-stack%2fmdc%2ftoc.json
                     - name: Recopilación a petición
-                      href: ../operator/azure-stack-configure-on-demand-diagnostic-log-collection-portal.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
+                      href: ../operator/diagnostic-log-collection.md?bc=%2fazure-stack%2fbreadcrumb%2ftoc.json&toc=%2fazure-stack%2fmdc%2ftoc.json
             - name: Obtención del estado de Azure Stack Hub
               href: ../operator/azure-stack-diagnostic-test.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
             - name: Solución de problemas
@@ -519,7 +519,7 @@
                     - name: Introducción a PowerShell de Azure Stack
                       href: ../user/azure-stack-powershell-overview.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
                     - name: Instalación de PowerShell de Azure Stack
-                      href: /azure-stack/operator/powershell-install-az-module?toc=/azure-stack/user/toc.json&bc=/azure-stack/breadcrumb/toc.json
+                      href: ../operator/powershell-install-az-module.md?bc=%2fazure-stack%2fbreadcrumb%2ftoc.json&toc=%2fazure-stack%2fuser%2ftoc.json
                       maintainContext: true
                     - name: Conexión con PowerShell
                       href: ../user/azure-stack-powershell-configure-user.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
@@ -584,7 +584,7 @@
                 - name: Uso del control de acceso basado en rol
                   href: ../user/azure-stack-manage-permissions.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
                 - name: Uso de una identidad de aplicación para acceder a recursos
-                  href: /azure-stack/operator/azure-stack-create-service-principals?toc=/azure-stack/user/toc.json&bc=/azure-stack/breadcrumb/toc.json
+                  href: ../operator/azure-stack-create-service-principals.md?bc=%2fazure-stack%2fbreadcrumb%2ftoc.json&toc=%2fazure-stack%2fuser%2ftoc.json
             - name: Uso de servicios
               items:
                 - name: Proceso
@@ -797,4 +797,4 @@
         - name: Stack Overflow
           href: 'https://stackoverflow.com/questions/tagged/azure-stack'
         - name: Aprendizaje y certificación
-          href: /azure-stack/operator/azure-stack-train-and-cert
+          href: ../operator/azure-stack-train-and-cert.md
