@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 03/04/2020
 ms.author: patricka
 ms.lastreviewed: 01/18/2019
-ms.openlocfilehash: de197a87478a666fe20bbd451bda76fc991b5a02
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: 00357a7b16ee1ec6b158ea881d9f4a2c77d69e72
+ms.sourcegitcommit: a90b146769279ffbdb09c68ca0506875a867e177
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97869940"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98123752"
 ---
 # <a name="monitor-health-and-alerts-in-azure-stack-hub"></a>Supervisión de estado y alertas en Azure Stack Hub
 
@@ -69,19 +69,27 @@ Puede hacer clic en una alerta específica para ver los detalles de la alerta. E
 
 ![Hoja de detalles de alerta en el portal del administrador de Azure Stack Hub](media/azure-stack-monitor-health/alert-detail.png)
 
-## <a name="repair-alerts"></a>Reparación de las alertas
+## <a name="alert-remediation"></a>Corrección de alertas
 
-Puede seleccionar **Reparar** en algunas alertas.
+### <a name="automated-remediation"></a>Corrección automatizada
 
-Cuando se selecciona, la acción **Reparar** realiza pasos específicos para la alerta a fin de intentar resolver el problema. Una vez seleccionada, el estado de la acción **Reparar** está disponible como una notificación del portal.
+Algunas alertas admiten una opción de **reparación**, tal como se muestra en la imagen anterior. Cuando se selecciona, la acción **Reparar** realiza pasos específicos para la alerta a fin de intentar resolver el problema. Una vez seleccionada, el estado de la acción **Reparar** está disponible como una notificación del portal.
 
 ![Acción de reparación de alerta en curso](media/azure-stack-monitor-health/repair-in-progress.png)
 
-La acción **Reparar** notificará la finalización correcta o el error al completar la acción en la misma hoja de notificación del portal.  Si se produce un error en una acción de reparación de una alerta, puede volver a ejecutar la acción **Reparar** a partir de los detalles de alerta. Si la acción de **reparación** se completa correctamente, **no** vuelva a ejecutarla.
+La acción **Reparar** notificará la finalización correcta o el error al completar la acción en la misma hoja de notificación del portal.  Si se produce un error en una acción de reparación de una alerta, puede volver a ejecutar la acción **Reparar** a partir de los detalles de alerta. Si la acción de **reparación** se completa correctamente, **no** vuelva a ejecutarla. Después de que la instancia de rol de la infraestructura vuelve a estar en línea, esta alerta se cierra automáticamente.
 
 ![La acción Reparar se completa correctamente](media/azure-stack-monitor-health/repair-completed.png)
 
-Después de que la instancia de rol de la infraestructura vuelve a estar en línea, esta alerta se cierra automáticamente. Muchas alertas, aunque no todas, se cierran automáticamente cuando se resuelve el problema subyacente. Las alertas que proporcionan un botón de acción Reparar se cerrarán de forma automática si Azure Stack Hub resuelve el problema. Para todas las demás alertas, seleccione **Cerrar alerta** cuando haya seguido los pasos de corrección. Si el problema persiste, Azure Stack Hub genera una alerta nueva. Si se resuelve, la alerta permanecerá cerrada y no se tendrán que seguir más pasos.
+### <a name="manual-remediation"></a>Corrección manual
+
+Si la opción **Reparar** no se admite, asegúrese de seguir el conjunto completo de instrucciones de corrección proporcionadas en la alerta. Por ejemplo, los pasos de corrección de la expiración del certificado interno le guiarán a lo largo del proceso de rotación de secretos:
+
+![Corrección de expiración del certificado](media/azure-stack-monitor-health/certificate-expiration.png)
+
+### <a name="alert-closure"></a>Cierre de la alerta
+
+Muchas alertas, aunque no todas, se cierran automáticamente cuando se resuelve el problema subyacente. Las alertas que proporcionan un botón de acción Reparar se cerrarán de forma automática si Azure Stack Hub resuelve el problema. Para todas las demás alertas, seleccione **Cerrar alerta** cuando haya seguido los pasos de corrección. Si el problema persiste, Azure Stack Hub genera una alerta nueva. Si se resuelve, la alerta permanecerá cerrada y no se tendrán que seguir más pasos.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

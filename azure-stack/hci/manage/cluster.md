@@ -5,19 +5,19 @@ ms.topic: how-to
 author: v-dasis
 ms.author: v-dasis
 ms.reviewer: jgerend
-ms.date: 07/21/2020
-ms.openlocfilehash: d1b8556908da268bbd99c7aa9341128c9dc5be36
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.date: 01/12/2021
+ms.openlocfilehash: 7f77855945ecfb31e223db46be8b2e2e3a012c16
+ms.sourcegitcommit: 502df315764bbc4ff6d3de50b957dfd4a6c0043a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90573792"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98130357"
 ---
 # <a name="manage-azure-stack-hci-clusters-using-windows-admin-center"></a>Administración de clústeres de Azure Stack HCI mediante Windows Admin Center
 
 > Se aplica a: Azure Stack HCI, versión 20H2; Windows Server 2019
 
-Windows Admin Center se puede utilizar para administrar los clústeres de Azure Stack HCI. Concretamente, utilizará la extensión del administrador de clústeres de Windows Admin Center para administrar los clústeres.
+Windows Admin Center se puede utilizar para administrar los clústeres de Azure Stack HCI. Concretamente, utilizará la característica Administrador de clústeres de Windows Admin Center para administrar los clústeres.
 
 ## <a name="view-the-cluster-dashboard"></a>Visualización del panel del clúster
 
@@ -38,29 +38,31 @@ Para ver esta información, seleccione el nombre del clúster en **Todas las con
 - Total de operaciones de entrada/salida del clúster por segundo (IOPS)
 - Latencia media del clúster en milisegundos
 
-## <a name="change-cluster-storage-settings"></a>Cambio de la configuración de almacenamiento del clúster
+## <a name="change-storage-settings"></a>Cambio de la configuración d almacenamiento:
 
-Hay dos opciones de configuración que puede cambiar relacionadas con Espacios de almacenamiento directo que se pueden aplicar al clúster.
+Puede seleccionar usar la memoria del servidor para almacenar en caché las lecturas frecuentes y especificar la memoria máxima que se usará por servidor. Para más información, consulte [Descripción de la caché en Azure Stack HCI](../concepts/cache.md).
 
 1. En Windows Admin Center, seleccione **Administrador de clústeres** en la flecha desplegable de la parte superior.
 1. En **Herramientas**, seleccione **Configuración** en la parte inferior.
-1. Para configurar la memoria caché de almacenamiento, seleccione **Espacios de almacenamiento directo** y, a continuación, configure lo siguiente:
-
-   - En **Caché persistente**, seleccione **Habilitada** o **Deshabilitada**.
-
-   - En **Cache mode for HDD** (Modo de caché para HDD), seleccione **Solo lectura**, **Solo escritura** o **Lectura/Escritura**
-
-   - En **Cache mode for SSD** (Mode de caché para SSD), seleccione **Solo lectura**, **Solo escritura** o **Lectura/Escritura**
-
-        :::image type="content" source="media/manage-cluster/cluster-settings-ssd.png" alt-text="pantalla de Espacios de almacenamiento directo del clúster" lightbox="media/manage-cluster/cluster-settings-ssd.png":::
-
-1. Para usar la memoria del servidor para almacenar en caché lecturas frecuentes, seleccione **In-memory cache** (Caché en memoria) y especifique la memoria máxima que se va a usar por servidor. Consulte también [Descripción de la memoria caché en Azure Stack HCI](../concepts/cache.md).
+1. Seleccione **Caché en memoria** y escriba el nombre nuevo.
 
     :::image type="content" source="media/manage-cluster/cluster-settings-memory.png" alt-text="pantalla de caché en memoria del clúster" lightbox="media/manage-cluster/cluster-settings-memory.png":::
 
-## <a name="change-cluster-general-settings"></a>Cambio de la configuración general del clúster
+1. Puede cambiar el nombre del bloque de almacenamiento que Espacios de almacenamiento directo usa. Seleccione **Bloques de almacenamiento** y escriba el nuevo nombre. Esto es aplicable a los clústeres extendidos.
 
-Hay cinco valores generales que se pueden aplicar al clúster. Aquí puede establecer y administrar puntos de acceso, el comportamiento de apagado del nodo, el cifrado de tráfico, el equilibrio de carga de máquinas virtuales y el testigo del clúster.
+    :::image type="content" source="media/manage-cluster/cluster-settings-storage-pools.png" alt-text="Pantalla de bloque de almacenamiento de clúster" lightbox="media/manage-cluster/cluster-settings-storage-pools.png":::
+
+1. Puede cambiar la configuración de Espacios de almacenamiento directo. Seleccione **Espacios de almacenamiento directo** y cambie las siguientes opciones de configuración según sea necesario:
+
+    - **Persistent cache** (Caché persistente): habilite o deshabilite la caché persistente.
+    - **Cache mode for HDD** (Modo de caché para HDD): cambie el modo de caché para las unidades HDD.
+    - **Modo de caché para HDD** (Modo de caché para SSD): cambie la memoria caché de las unidades SSD.
+
+    :::image type="content" source="media/manage-cluster/cluster-settings-storage-spaces-direct.png" alt-text="pantalla de Espacios de almacenamiento directo del clúster" lightbox="media/manage-cluster/cluster-settings-storage-spaces-direct.png":::
+
+## <a name="change-cluster-settings"></a>Cambio de la configuración del clúster
+
+Hay varias opciones de configuración general que se pueden aplicar al clúster. Aquí puede establecer y administrar puntos de acceso, el comportamiento de apagado del nodo, el cifrado de tráfico, el equilibrio de carga de máquinas virtuales y el testigo del clúster.
 
 1. En Windows Admin Center, seleccione **Administrador de clústeres** en la flecha desplegable de la parte superior.
 1. En **Herramientas**, seleccione **Configuración**.
@@ -76,7 +78,7 @@ Hay cinco valores generales que se pueden aplicar al clúster. Aquí puede estab
 
    - **Tráfico principal**: cifra el tráfico enviado a través de NetFT (adaptador virtual de clúster) en el puerto 3343
 
-   - **Tráfico de servidor**: cifra el volumen compartido de clúster (CSV) y el tráfico de la capa de bus de almacenamiento (SBL)
+   - **Storage traffic** (Tráfico de almacenamiento): cifra el tráfico del volumen compartido de clúster (CSV) y la capa de bus de almacenamiento (SBL).
 
         :::image type="content" source="media/manage-cluster/cluster-settings-encryption.png" alt-text="pantalla de cifrado del tráfico del clúster" lightbox="media/manage-cluster/cluster-settings-encryption.png":::
 
@@ -89,19 +91,31 @@ Hay cinco valores generales que se pueden aplicar al clúster. Aquí puede estab
 
         :::image type="content" source="media/manage-cluster/cluster-settings-vm-load.png" alt-text="pantalla de equilibrio de carga de la máquina virtual del clúster" lightbox="media/manage-cluster/cluster-settings-vm-load.png":::
 
-1. Para seleccionar un tipo de testigo de cuórum, seleccione **Testigo** y, después, seleccione una de las opciones siguientes:
+1. Para seleccionar un tipo de testigo de cuórum, seleccione **Testigo** y, a continuación, en **Witness type** (Tipo de testigo), seleccione una de las opciones siguientes:
 
    - **Testigo de la nube**: para usar un recurso de la nube de Azure como testigo
    - **Testigo de disco**: para usar un recurso de disco como testigo (no se usa para clústeres extendidos).
    - **Testigo del recurso compartido de archivos**: para usar un recurso compartido de archivos como testigo
 
-        Para obtener más información, consulte [Descripción del cuórum de clúster y de grupo en Azure Stack HCl](../concepts/quorum.md).
+        Para obtener información detallada sobre cómo configurar un testigo, consulte [Configuración de un testigo del clúster](../deploy/witness.md). Consulte también [Descripción del cuórum de clúster y de grupo en Azure Stack HCl](../concepts/quorum.md).
 
         :::image type="content" source="media/manage-cluster/cluster-settings-witness.png" alt-text="pantalla de testigo del clúster" lightbox="media/manage-cluster/cluster-settings-witness.png":::
 
-## <a name="change-cluster-hyper-v-settings"></a>Cambio de la configuración de Hyper-V del clúster
+1. Para usar las reglas de afinidad para controlar la selección de ubicación de máquinas virtuales en servidores y sitios de host, seleccione **Reglas de afinidad** y, a continuación, haga clic en **Crear regla**. Para obtener información detallada sobre la configuración de reglas, consulte [Creación de reglas de afinidad de sitio y servidor para máquinas virtuales](vm-affinity.md).
 
-Hay cinco valores del host de Hyper-V que se pueden aplicar al clúster.
+    :::image type="content" source="media/manage-cluster/affinity-rules.png" alt-text="Pantalla de reglas de afinidad de clúster" lightbox="media/manage-cluster/affinity-rules.png":::
+
+1. Para seleccionar la cantidad de datos que se enviarán a Microsoft para el diagnóstico, seleccione **Datos de diagnóstico** y, a continuación, una de las siguientes opciones:
+
+    - **Diagnostic data off (Security)** (Datos de diagnóstico desactivados [seguridad]): no se envían datos.
+    - **Required (Basic)** (Requeridos [básicos]): datos mínimos enviados para mantener las cosas seguras y actualizadas.
+    - **Optional (Full)** (Opcional [completos]): se envían todos los datos aplicables.
+
+    :::image type="content" source="media/manage-cluster/cluster-diagnostic-data.png" alt-text="Pantalla de diagnóstico de datos del clúster" lightbox="media/manage-cluster/cluster-diagnostic-data.png":::
+
+## <a name="change-hyper-v-settings"></a>Cambio de la configuración de Hyper-V
+
+Existen varios valores del host de Hyper-V que se pueden aplicar al clúster.
 
 1. En Windows Admin Center, seleccione **Administrador de clústeres** en la flecha desplegable de la parte superior.
 1. En **Herramientas**, seleccione **Configuración**.
@@ -110,8 +124,6 @@ Hay cinco valores del host de Hyper-V que se pueden aplicar al clúster.
    - **Ruta de acceso de discos duros virtuales**: especifique la carpeta predeterminada para almacenar los archivos del disco duro virtual.
 
    - **Ruta de acceso de las máquinas virtuales**: especifique la carpeta predeterminada para almacenar los archivos de configuración de máquina virtual.
-
-   - **Tipo de programador del hipervisor**: seleccione **Core Scheduler** (Programador principal) o **Classic Scheduler** (Programador clásico). Esto determina cómo programa el hipervisor los procesos virtuales para que se ejecuten en los procesadores físicos que usan la tecnología Simultaneous multi-threading (también conocida como SMT o hyper-threading).
 
         :::image type="content" source="media/manage-cluster/cluster-settings-hyperv.png" alt-text="pantalla de configuración general de Hyper-V del clúster" lightbox="media/manage-cluster/cluster-settings-hyperv.png":::
 
@@ -127,16 +139,22 @@ Hay cinco valores del host de Hyper-V que se pueden aplicar al clúster.
 
    - En **Protocolo de autenticación**, seleccione **CredSSP** o **Kerberos**.
 
-   - En **Opción de rendimiento**, seleccione **Compresión** o **SMB**. Los datos comprimidos se envían mediante una conexión TCP/IP.
+   - En **Opciones de rendimiento**, seleccione **Compresión** o **SMB**. Los datos comprimidos se envían mediante una conexión TCP/IP.
 
    - Seleccione la casilla **Use any network** (Usar cualquier red) para usar cualquier red disponible de un nodo para realizar la migración.
 
-        :::image type="content" source="media/manage-cluster/cluster-settings-liv-migration.png" alt-text="pantalla Migración en vivo del clúster" lightbox="media/manage-cluster/cluster-settings-liv-migration.png":::
+        :::image type="content" source="media/manage-cluster/cluster-settings-live-migration.png" alt-text="pantalla Migración en vivo del clúster" lightbox="media/manage-cluster/cluster-settings-live-migration.png":::
 
 1. Para especificar el número de migraciones de almacenamiento que se pueden realizar al mismo tiempo, seleccione **Storage Migration** (Migración de almacenamiento) y, a continuación, seleccione un número.
 
-    :::image type="content" source="media/manage-cluster/cluster-settings-sto-migration.png" alt-text="pantalla de migración de almacenamiento del clúster" lightbox="media/manage-cluster/cluster-settings-sto-migration.png":::
+    :::image type="content" source="media/manage-cluster/cluster-settings-storage-migration.png" alt-text="pantalla de migración de almacenamiento del clúster" lightbox="media/manage-cluster/cluster-settings-storage-migration.png":::
+
+## <a name="register-the-cluster-with-azure"></a>Registro del clúster con Azure.
+
+Para registrar o anular el registro del clúster con Azure, seleccione **Azure Stack HCI registration** (Registro de Azure Stack HCI). Para obtener información detallada sobre cómo hacerlo, consulte [Conexión de Azure Stack HCI a Azure](../deploy/register-with-azure.md).
+
+:::image type="content" source="media/manage-cluster/cluster-registration.png" alt-text="Pantalla de registro de Azure del clúster" lightbox="media/manage-cluster/cluster-registration.png":::
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Para supervisar el clúster, consulte [Supervisión de Azure Stack HCI con Azure Monitor](azure-monitor.md).
+Para supervisar el clúster, consulte [Supervisión de Azure Stack HCI con Azure Monitor](azure-monitor.md).
