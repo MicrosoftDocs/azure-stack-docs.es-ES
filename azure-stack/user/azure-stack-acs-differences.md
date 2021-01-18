@@ -8,12 +8,12 @@ ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviwer: jiahan
 ms.lastreviewed: 08/12/2020
-ms.openlocfilehash: 9cac2ee9798388f955bfd3376395d21438889fc9
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: e49092e87f8e6801343ae0550aff4c71dd40408b
+ms.sourcegitcommit: 1465bca8b7f87ea6f24faf47e86c2ba497943b28
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97867373"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103076"
 ---
 # <a name="azure-stack-hub-storage-differences-and-considerations"></a>Azure Stack Hub Storage: Diferencias y consideraciones
 
@@ -43,7 +43,7 @@ En este artículo se resumen las diferencias entre los servicios de Azure Stack 
 |Clave de partición de tabla y tamaño de clave de fila|1 024 caracteres (2 048 bytes).|400 caracteres (800 bytes).
 |Instantánea de blob|No se limita el número máximo de instantáneas de un blob.|El número máximo de instantáneas de un blob es 1 000.
 |Autenticación de Azure AD para almacenamiento|En versión preliminar. |Todavía no se admite.
-|Blobs inalterables|Disponible en general. |Todavía no se admite.
+|Blobs inalterables|Disponible en general. |Se admite cuando se usa la versión 2008 o posterior.
 |Firewall y reglas de red virtual para almacenamiento|Disponible en general. |Todavía no se admite.|
 
 También hay diferencias en las métricas de almacenamiento:

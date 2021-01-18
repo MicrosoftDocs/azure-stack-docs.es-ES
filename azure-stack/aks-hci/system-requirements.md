@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: abhilashaagarwala
 ms.author: abha
 ms.date: 12/02/2020
-ms.openlocfilehash: 3a4ad6203ba14188ff24629f07775285417c306b
-ms.sourcegitcommit: 0e2c814cf2c154ea530a4e51d71aaf0835fb2b5a
+ms.openlocfilehash: 71c842cf44963988da7926003646b246bf80f802
+ms.sourcegitcommit: 8776cbe4edca5b63537eb10bcd83be4b984c374a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97918653"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98175743"
 ---
 # <a name="system-requirements-for-azure-kubernetes-service-on-azure-stack-hci"></a>Requisitos del sistema de Azure Kubernetes Service en Azure Stack HCI
 
@@ -46,32 +46,70 @@ Para que Azure Kubernetes Service en Azure Stack HCI o en Windows Server 2019 D
 
 ## <a name="network-requirements"></a>Requisitos de red 
 
-Los siguientes requisitos se aplican a un clúster de Azure Stack HCI, así como a un clúster de conmutación por error de Windows Server 2019 Datacenter: 
+Los siguientes requisitos se aplican a un clúster de Azure Stack HCI, así como a un clúster de Windows Server 2019 Datacenter: 
 
  - Compruebe que tiene un conmutador virtual externo existente configurado si va a utilizar Windows Admin Center. En el caso de los clústeres de Azure Stack HCI, este conmutador y su nombre deben ser los mismos en todos los nodos de clúster. 
 
  - Compruebe que ha deshabilitado IPv6 en todos los adaptadores de red. 
 
- - Para una implementación correcta, los nodos de clúster de Azure Stack HCI y las máquinas virtuales de clúster de Kubernetes deben tener conectividad externa a Internet. 
+ - Para una implementación correcta, los nodos de clúster de Azure Stack HCI y las máquinas virtuales de clúster de Kubernetes deben tener conectividad externa a Internet.
+  
+ - Asegúrese de que haya conectividad de red entre los hosts de Azure Stack HCI y las VM de inquilino.
 
  - La resolución de nombres DNS es necesaria para que todos los nodos puedan comunicarse entre sí. En el caso de la resolución de nombres externa de Kubernetes, use los servidores DNS que proporciona el servidor DHCP cuando se obtiene la dirección IP. Para la resolución de nombres interna de Kubernetes, use la solución predeterminada de Kubernetes basada en Core DNS. 
 
  - Para esta versión preliminar, se proporciona solo compatibilidad con una sola VLAN para toda la implementación. 
 
  - En esta versión preliminar, tenemos compatibilidad limitada del proxy con los clústeres de Kubernetes creados con PowerShell. 
+ 
+### <a name="ip-address-assignment"></a>Asignación de dirección IP  
+ 
+Como parte de una instancia de AKS correcta en una implementación de Azure Stack HCI, es recomendable configurar un intervalo de grupos de direcciones IP virtuales con el servidor DHCP. También se recomienda configurar entre tres y cinco nodos de plano de control de alta disponibilidad para todos los clústeres de carga de trabajo. 
+
+> [!NOTE]
+> No se admite el uso de asignaciones de direcciones IP estáticas por sí mismo. Debe configurar un servidor DHCP como parte de esta versión preliminar.
+
+#### <a name="dhcp"></a>DHCP
+Siga estos requisitos al usar DHCP para asignar direcciones IP en todo el clúster:  
+
+ - La red debe tener un servidor DHCP disponible para proporcionar direcciones TCP/IP a las VM y los hosts de VM. El servidor DHCP también debe contener información sobre el protocolo de tiempo de redes (NTP) y el host DNS.
+ 
+ - Un servidor DHCP con un ámbito dedicado de direcciones IPv4 accesible para el clúster de Azure Stack HCI.
+ 
+ - Las direcciones IPv4 que proporciona el servidor DHCP deben ser enrutables y tener una expiración de concesión de 30 días para evitar la pérdida de conectividad IP en caso de actualización de una máquina virtual o reaprovisionamiento.  
+
+Como mínimo, debe reservar el siguiente número de direcciones DHCP:
+
+| Tipo de clúster  | Nodo del plano de control | Nodo de trabajo | Actualizar | Equilibrador de carga  |
+| ------------- | ------------------ | ---------- | ----------| -------------|
+| Host de AKS |  1  |  0  |  2  |  0  |
+| Clúster de carga de trabajo  |  1 por nodo  | 1 por nodo |  5  |  1  |
+
+Puede ver cómo el número de direcciones IP necesarias varía en función del número de clústeres de carga de trabajo y los nodos de trabajo y el plano de control que tenga en su entorno. Se recomienda reservar 256 direcciones IP (subred /24) en el grupo de direcciones IP de DHCP.
+  
+    
+#### <a name="vip-pool-range"></a>Intervalo del grupo de VIP
+
+Los grupos de IP virtuales (VIP) son muy recomendables para AKS en una implementación de Azure Stack HCI. Los grupos de VIP son un intervalo de direcciones IP estáticas reservadas que se usan para implementaciones de larga duración con el fin de garantizar que las cargas de trabajo de implementación y aplicación siempre estén accesibles. Actualmente, solo se admiten direcciones IPv4, por lo que debe comprobar que ha deshabilitado IPv6 en todos los adaptadores de red. Además, asegúrese de que las direcciones IP virtuales no forman parte de la reserva de IP DHCP.
+
+Como mínimo, debe reservar una dirección IP por clúster (carga de trabajo y host de AKS) y una dirección IP por servicio de Kubernetes. El número de direcciones IP necesarias en el intervalo del grupo de VIP varía en función del número de clústeres de carga de trabajo y los servicios de Kubernetes que tenga en su entorno. Se recomienda reservar 16 direcciones IP estáticas para la implementación de AKS-HCl. 
+
+Al configurar el host de AKS, use los parámetros `-vipPoolStartIp` y `-vipPoolEndIp` en `Set-AksHciConfig` para crear un grupo de direcciones VIP.
+
+#### <a name="mac-pool-range"></a>Intervalo del grupo de MAC
+Se recomienda tener un mínimo de 16 direcciones MAC en el intervalo para permitir varios nodos de plano de control en cada clúster. Al configurar el host de AKS, use los parámetros `-macPoolStart` y `-macPoolEnd` en `Set-AksHciConfig` para reservar direcciones MAC desde el grupo de direcciones MAC de DHCP para los servicios de Kubernetes.
   
 ### <a name="network-port-and-url-requirements"></a>Requisitos de puerto de red y de dirección URL 
 
 Al crear un clúster de Azure Kubernetes Service en Azure Stack HCI, se abrirán automáticamente los siguientes puertos de firewall en cada servidor del clúster. 
 
 
-| Puerto de firewall               | Descripción         | 
+| Puerto de firewall               | Descripción     | 
 | ---------------------------- | ------------ | 
-| 45000           | Puerto de servidor wssdagent GPRC           |
+| 45000           | Puerto de servidor wssdagent GPRC     |
 | 45001             | Puerto de autenticación wssdagent GPRC  | 
-| 55 000           | Puerto de servidor wssdcloudagent GPRC           |
-| 65000             | Puerto de autenticación wssdcloudagent GPRC  | 
-
+| 55 000           | Puerto de servidor wssdcloudagent GPRC      |
+| 65000            | Puerto de autenticación wssdcloudagent GPRC  | 
 
 
 Las excepciones de URL de firewall son necesarias para la máquina de Windows Admin Center y todos los nodos del clúster de Azure Stack HCI. 
@@ -82,7 +120,8 @@ https://helm.sh/blog/get-helm-sh/  | 443 | Agente de descarga, WAC | Se usa para
 https://storage.googleapis.com/  | 443 | Cloud Init | Descarga de archivos binarios de Kubernetes 
 https://azurecliprod.blob.core.windows.net/ | 443 | Cloud Init | Descarga de archivos binarios y contenedores 
 https://aka.ms/installazurecliwindows | 443 | WAC | Descarga de la CLI de Azure 
-https://:443 | 443 | TCP | Se usa para admitir los agentes de Azure Arc. 
+https://:443 | 443 | TCP | Se usa para admitir los agentes de Azure Arc.  
+*.blob.core.windows.net | 443 | TCP | Necesario para las descargas
 *.api.cdp.microsoft.com, *.dl.delivery.mp.microsoft.com, *.emdl.ws.microsoft.com | 80, 443 | Descarga del agente | Descarga de metadatos 
 *.dl.delivery.mp.microsoft.com, *.do.dsp.mp.microsoft.com. | 80, 443 | Descarga del agente | Descarga de imágenes de VHD 
 ecpacr.azurecr.io | 443 | Kubernetes | Descarga de imágenes de contenedor 

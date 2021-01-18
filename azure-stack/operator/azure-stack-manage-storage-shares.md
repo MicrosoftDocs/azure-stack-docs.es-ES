@@ -7,12 +7,12 @@ ms.date: 10/16/2020
 ms.author: patricka
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/16/2020
-ms.openlocfilehash: 85f3aed4ebf5b57b1e77a5b58604eeb881204396
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: c6f58a2364378180641a7b3ea2e3a38e4bb4f183
+ms.sourcegitcommit: 330d04d39e0cf3e8965e2ccbc181c968cb71d9ad
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97870042"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98052313"
 ---
 # <a name="manage-storage-capacity-for-azure-stack-hub"></a>Administración de la capacidad de almacenamiento en Azure Stack Hub
 
@@ -69,7 +69,7 @@ Los **discos administrados** simplifican la administración de discos para las m
 
 Se recomienda usar discos administrados para la máquina virtual para facilitar la administración y el equilibrio de la capacidad. No tiene que preparar contenedores ni una cuenta de almacenamiento antes de usar discos administrados. Al crear varios discos administrados, estos se distribuyen en varios volúmenes para equilibrar su capacidad.  
 
-Los **discos no administrados** son archivos VHD almacenados como blobs en páginas en cuentas de Azure Storage. Los blobs en páginas que crean los inquilinos se conocen como discos de máquina virtual y se almacenan en los contenedores de la cuenta de almacenamiento. Se recomienda usar discos no administrados solo para las máquinas virtuales que necesiten compatibilidad con herramientas de terceros que solo admitan discos no administrados de Azure.
+Los **discos no administrados** son archivos VHD almacenados como blobs en páginas en cuentas de Azure Storage. Los blobs en páginas que crean los inquilinos se conocen como discos de máquina virtual y se almacenan en los contenedores de la cuenta de almacenamiento. Se recomienda usar discos no administrados solo para las VM que necesiten compatibilidad con herramientas de terceros que solo admitan discos no administrados de Azure.
 
 La guía para los inquilinos consiste en colocar cada disco en un contenedor independiente para mejorar el rendimiento de la máquina virtual.
 
@@ -345,4 +345,4 @@ El método más extremo para administrar el espacio implica el traslado de disco
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Para más información sobre cómo ofrecer máquinas virtuales a los usuarios, consulte [Administración de la capacidad de almacenamiento en Azure Stack Hub](./tutorial-offer-services.md?view=azs-2002).
+Para más información sobre cómo ofrecer máquinas virtuales a los usuarios, consulte [Administración de la capacidad de almacenamiento en Azure Stack Hub](./tutorial-offer-services.md).

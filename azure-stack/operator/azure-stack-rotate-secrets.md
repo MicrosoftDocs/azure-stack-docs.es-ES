@@ -4,17 +4,17 @@ titleSuffix: Azure Stack Hub
 description: Aprenda a cambiar los secretos en Azure Stack Hub.
 author: BryanLa
 ms.topic: how-to
-ms.date: 06/29/2020
-ms.reviewer: ppacent
+ms.date: 01/07/2021
+ms.reviewer: fiseraci
 ms.author: bryanla
-ms.lastreviewed: 08/15/2020
+ms.lastreviewed: 01/07/2021
 monikerRange: '>=azs-1803'
-ms.openlocfilehash: 800e6f2173f409283a04259f29b4835e66ced075
-ms.sourcegitcommit: f56a5b287c90b2081ae111385c8b7833931d4059
+ms.openlocfilehash: ec65268a76a8616d5fea213d6c4f0551a5b5ba38
+ms.sourcegitcommit: a90b146769279ffbdb09c68ca0506875a867e177
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97343166"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98123704"
 ---
 # <a name="rotate-secrets-in-azure-stack-hub"></a>Cambio de secretos en Azure Stack Hub
 
@@ -24,14 +24,23 @@ En este artículo se proporcionan instrucciones para la rotación de secretos, a
 
 Azure Stack Hub usa secretos para mantener una comunicación segura con los recursos y servicios de la infraestructura. Para mantener la integridad de la infraestructura de Azure Stack Hub, los operadores necesitan la posibilidad de rotar los secretos con una frecuencia que se ajuste a los requisitos de seguridad de la organización.
 
-Cuando faltan menos de 30 días para la expiración de los secretos, se generan las siguientes alertas en el portal de administración. La finalización de la rotación de secretos resolverá estas alertas:
+Cuando se aproxime la expiración de los secretos, se generan las siguientes alertas en el portal de administración. La finalización de la rotación de secretos resolverá estas alertas:
 
 - Expiración de contraseña de cuenta de servicio pendiente
 - Expiración de certificado interno pendiente
 - Expiración de certificado externo pendiente
 
+> [!WARNING]
+> Hay dos fases de alertas que se desencadenan en el portal de administración antes de la expiración:
+> - 90 días antes de la expiración, se genera una alerta de advertencia.
+> - 30 días antes de la expiración, se genera una alerta crítica. 
+>
+> **La rotación de secretos es un paso *crítico* que debe completar si recibe estas notificaciones. Si no lo hace, puede que se pierdan cargas de trabajo y que deba volver a implementar Azure Stack Hub por su cuenta.**
+
+Para obtener más información sobre la supervisión y la corrección de alertas, consulte [Supervisión de estado y alertas en Azure Stack Hub](azure-stack-monitor-health.md).
+
 ::: moniker range="<azs-1811"  
-> [!Note]
+> [!NOTE]
 > Los entornos de Azure Stack Hub de las versiones anteriores a la 1811 pueden ver alertas sobre el vencimiento de certificados o secretos internos pendientes. Estas alertas son inexactas y deben omitirse sin ejecutar el cambio de secretos interno. Las alertas de expiración de secretos internos inexactos son un problema conocido resuelto en la versión 1811. Los secretos internos no expirarán a menos que el entorno haya estado activo durante dos años.
 ::: moniker-end
 
@@ -85,7 +94,7 @@ Antes de la rotación de secretos externos:
 1. Ejecute el cmdlet **[`Test-AzureStack`](azure-stack-diagnostic-test.md)** de PowerShell con el parámetro `-group SecretRotationReadiness`, para confirmar que todas las salidas de prueba son correctas antes de rotar los secretos.
 2. Prepare un nuevo conjunto de certificados externos de reemplazo:
    - El nuevo conjunto debe coincidir con las especificaciones de certificado que se describen en [Requisitos de certificados de infraestructura de clave pública de Azure Stack Hub](azure-stack-pki-certs.md). 
-   - Genere una solicitud de firma de certificados (CSR) para enviarla a la entidad de certificación mediante los pasos que se describen en [Generación de solicitudes de firma de certificados](azure-stack-get-pki-certs.md), así como para prepararlos para utilizarlos en su entorno de Azure Stack Hub siguiendo los pasos de [Preparación de certificados PKI](azure-stack-prepare-pki-certs.md). Azure Stack Hub permite cambiar los secretos con certificados externos de una nueva entidad de certificación (CA) en los contextos siguientes:
+   - Genere una solicitud de firma de certificado (CSR) para enviarla a la entidad de certificación (CA). Use los pasos que se describen en [Generación de solicitudes de firma de certificados](azure-stack-get-pki-certs.md) y prepárelos para usarlos en su entorno de Azure Stack Hub siguiendo los pasos de [Preparación de certificados PKI](azure-stack-prepare-pki-certs.md). Azure Stack Hub permite cambiar los secretos con certificados externos de una nueva entidad de certificación (CA) en los contextos siguientes:
 
      |Rotar desde CA|Rotar a CA|Compatibilidad con la versión de Azure Stack Hub|
      |-----|-----|-----|-----|
@@ -108,7 +117,7 @@ Antes de la rotación de secretos externos:
 3. Guarde una copia de seguridad de los certificados usados para el cambio en una ubicación segura. Si se ejecuta el cambio y, después, se produce un error, reemplace los certificados del recurso compartido de archivos por las copias de seguridad antes de volver a ejecutar el cambio. Conserve las copias de seguridad en la ubicación segura.
 4. Cree un recurso compartido de archivos al que pueda acceder desde las máquinas virtuales de ERCS. El recurso compartido de archivos debe ser de lectura y escritura para la identidad **CloudAdmin**.
 5. Abra una consola de PowerShell ISE desde un equipo que tenga acceso al recurso compartido de archivos. Vaya al recurso compartido de archivos donde se crean los directorios para colocar los certificados externos.
-6. Descargue **[CertDirectoryMaker.ps1](https://www.aka.ms/azssecretrotationhelper)** en el recurso compartido de red y ejecute el script. El script creará una estructura de carpetas que se parece a **_.\Certificates\AAD_ *_ o _* _.\Certificates\ADFS_ *_, en función del proveedor de identidades. La estructura de carpetas debe empezar por una carpeta _* \\Certificates**, seguida SOLO de una carpeta **\\AAD** o **\\AD FS**. Todos los subdirectorios adicionales estarán incluidos en la estructura anterior. Por ejemplo:
+6. Descargue **[CertDirectoryMaker.ps1](https://www.aka.ms/azssecretrotationhelper)** en el recurso compartido de red y ejecute el script. El script creará una estructura de carpetas que se parece a **_.\Certificates\AAD_ *_ o _* _.\Certificates\ADFS_ *_, en función del proveedor de identidades. La estructura de carpetas debe empezar por una carpeta _* \\Certificates**, seguida SOLO de una carpeta **\\AAD** o **\\AD FS**. El resto de subdirectorios estarán incluidos en la estructura anterior. Por ejemplo:
     - Recurso compartido de archivos = **\\\\\<IPAddress>\\\<ShareName>**
     - Carpeta raíz del certificado para el proveedor de Azure AD = **\\Certificates\AAD**
     - Ruta de acceso completa = **\\\\\<IPAddress>\\\<ShareName>\Certificates\AAD**
@@ -213,7 +222,7 @@ Realice los pasos siguientes para rotar los secretos externos:
 
 ## <a name="rotate-internal-secrets"></a>Rotación de secretos internos
 
-Los secretos internos incluyen los certificados, las contraseñas, las cadenas seguras y las claves que utilizan la infraestructura de Azure Stack Hub sin la intervención del operador de este servicio. La rotación de secretos internos solo es necesaria si sospecha que alguno de ellos se ha puesto en peligro o si ha recibido una alerta de expiración. Los secretos internos no expirarán a menos que el entorno haya estado activo durante dos años.
+Los secretos internos incluyen los certificados, las contraseñas, las cadenas seguras y las claves que utilizan la infraestructura de Azure Stack Hub sin la intervención del operador de este servicio. La rotación de secretos internos solo es necesaria si sospecha que alguno de ellos se ha puesto en peligro o si ha recibido una alerta de expiración. 
 ::: moniker range="<azs-1811"  
 En las implementaciones anteriores a 1811, puede ver alertas para las expiraciones de certificados o secretos internos pendientes. Estas alertas no son correctas y deben ignorarse, y son un problema conocido resuelto en la versión 1811.
 ::: moniker-end

@@ -3,22 +3,21 @@ title: Solucionar problemas del ASDK
 description: Obtenga información sobre cómo solucionar problemas del Kit de desarrollo de Azure Stack (ASDK).
 author: PatAltimore
 ms.topic: article
-ms.date: 11/05/2019
+ms.date: 01/06/2021
 ms.author: patricka
 ms.reviewer: misainat
-ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: b5b0310aa778cf470c436f0770c9b5ca0d46fd8f
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.lastreviewed: 01/06/2021
+ms.openlocfilehash: 002015d0d00e09de07e4a46f5ad6525dac2b7254
+ms.sourcegitcommit: 502df315764bbc4ff6d3de50b957dfd4a6c0043a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97872949"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98130231"
 ---
 # <a name="troubleshoot-the-asdk"></a>Solucionar problemas del ASDK
 En este artículo se proporciona información sobre cómo solucionar problemas comunes para el Kit de desarrollo de Azure Stack (ASDK). Para obtener ayuda con los sistemas integrados de Azure Stack, consulte [Solución de problemas de Microsoft Azure Stack](../operator/azure-stack-troubleshooting.md). 
 
-Como ASDK es un entorno de evaluación, Soporte técnico de Microsoft no proporciona dicho soporte. Si tiene alguna incidencia que no esté documentada, puede obtener ayuda de expertos en el [foro de MSDN de Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack). 
-
+Como ASDK es un entorno de evaluación, Soporte técnico de Microsoft no proporciona dicho soporte. Si tiene alguna incidencia que no esté documentada, puede obtener ayuda de expertos en [Microsoft Q&A para Azure Stack](https://docs.microsoft.com/answers/questions/topics/azure-stack-hub.html).
 
 ## <a name="deployment"></a>Implementación
 ### <a name="deployment-failure"></a>Error de implementación
