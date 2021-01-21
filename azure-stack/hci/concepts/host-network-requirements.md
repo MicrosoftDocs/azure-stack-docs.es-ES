@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 11/25/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: 2d31294b2b3a402efcfd4376988d1de6c3dbabd1
-ms.sourcegitcommit: 26901a61a44390bc9b7804c22018c213036e680d
+ms.openlocfilehash: 3e31852e554c85ffab18aacaa336a007a97874f2
+ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96355606"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98255306"
 ---
 # <a name="host-network-requirements-for-azure-stack-hci"></a>Requisitos de red de host para Azure Stack HCI
 
@@ -156,7 +156,7 @@ SET proporciona características adicionales con respecto a LBFO, incluidas las 
 - velocidad (rendimiento)
 - configuración
 
-La manera más sencilla de identificar si los adaptadores son simétricos es comprobar si las velocidades son las mismas y las descripciones de la interfaz coinciden. Solo se admite una diferencia en el número que aparece en la descripción. Use el cmdlet [`Get-NetAdapterAdvancedProperty`](https://docs.microsoft.com/powershell/module/netadapter/get-netadapteradvancedproperty) para asegurarse de que la configuración que se indica muestra los mismos valores de propiedad.
+La manera más sencilla de identificar si los adaptadores son simétricos es comprobar si las velocidades son las mismas y las descripciones de la interfaz coinciden. Solo se admite una diferencia en el número que aparece en la descripción. Use el cmdlet [`Get-NetAdapterAdvancedProperty`](/powershell/module/netadapter/get-netadapteradvancedproperty) para asegurarse de que la configuración que se indica muestra los mismos valores de propiedad.
 
 Consulte la tabla siguiente para obtener un ejemplo de las descripciones de interfaz que solo se diferencian el número (#):
 
@@ -298,6 +298,6 @@ Los clústeres extendidos tienen los siguientes requisitos y características:
 
 - Obtenga información acerca de los requisitos del conmutador de red y de la red física. Consulte [Requisitos de red física para Azure Stack HCI](physical-network-requirements.md).
 - Repase las aspectos básicos de los clústeres de conmutación por error. Consulte [Aspectos básicos de redes de clústeres de conmutación por error](https://techcommunity.microsoft.com/t5/failover-clustering/failover-clustering-networking-basics-and-fundamentals/ba-p/1706005?s=09)
-- Repase el uso de SET. Consulte [Acceso directo a memoria remota (RDMA) y Switch Embedded Teaming (SET)](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming).
-- Para la implementación, consulte [Creación de un clúster con Windows Admin Center](https://docs.microsoft.com/azure-stack/hci/deploy/create-cluster).
-- Para la implementación, consulte [Creación de un clúster con Windows PowerShell](https://docs.microsoft.com/azure-stack/hci/deploy/create-cluster-powershell).
+- Repase el uso de SET. Consulte [Acceso directo a memoria remota (RDMA) y Switch Embedded Teaming (SET)](/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming).
+- Para la implementación, consulte [Creación de un clúster con Windows Admin Center](../deploy/create-cluster.md).
+- Para la implementación, consulte [Creación de un clúster con Windows PowerShell](../deploy/create-cluster-powershell.md).

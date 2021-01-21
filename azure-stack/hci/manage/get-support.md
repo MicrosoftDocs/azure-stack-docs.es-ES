@@ -5,18 +5,18 @@ author: JohnCobb1
 ms.author: v-johcob
 ms.topic: how-to
 ms.date: 12/11/2020
-ms.openlocfilehash: 5b25fdcefd61cb8fa5a497a3477b1f33ab67ece5
-ms.sourcegitcommit: f56a5b287c90b2081ae111385c8b7833931d4059
+ms.openlocfilehash: f5dc475cde9baeb053fbaec1144d1ff65cc4e2ba
+ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97343348"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98254388"
 ---
 # <a name="get-support-for-azure-stack-hci"></a>Obtención de soporte técnico para Azure Stack HCI
 
 >Se aplica a: Azure Stack HCI, versión 20H2
 
-En este tema se proporcionan instrucciones sobre cómo obtener soporte técnico para el sistema operativo Azure Stack HCI. Azure Stack HCI sigue el mismo proceso de soporte técnico que Azure. Los clientes Enterprise pueden seguir el proceso descrito en [Creación de una solicitud de soporte técnico de Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Si es cliente de un proveedor de soluciones en la nube (CSP), póngase en contacto con el CSP para recibir soporte técnico.
+En este tema se proporcionan instrucciones sobre cómo obtener soporte técnico para el sistema operativo Azure Stack HCI. Azure Stack HCI sigue el mismo proceso de soporte técnico que Azure. Los clientes Enterprise pueden seguir el proceso descrito en [Creación de una solicitud de soporte técnico de Azure](/azure/azure-portal/supportability/how-to-create-azure-support-request). Si es cliente de un proveedor de soluciones en la nube (CSP), póngase en contacto con el CSP para recibir soporte técnico.
 
 Para crear una solicitud de soporte técnico de Azure Stack HCI, es necesario un plan de soporte técnico de Azure Estándar o Professional Direct. No se pueden usar los planes Básico y Desarrollador.
 

@@ -15,12 +15,12 @@ ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 12/20/2019
-ms.openlocfilehash: 054a3267d48f823ad6d0767f1946e94667c6e12d
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: 924819805bd0626e68d9e4cb5bcaa7735b44fa90
+ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97872524"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98255578"
 ---
 # <a name="azure-stack-vm-features---modular-data-center-mdc"></a>Características de las máquinas virtuales de Azure Stack: Centro de datos modular (MDC)
 
@@ -41,7 +41,7 @@ Las máquinas virtuales de Azure Stack proporcionan recursos informáticos escal
 | Servicio de metadatos de instancia de Azure | Azure Instance Metadata Service proporciona información sobre instancias de máquina virtual en ejecución que pueden usarse para administrar y configurar la máquina virtual.  | Azure Instance Metadata Service no es compatible con Azure Stack. |
 | Conjuntos de disponibilidad de máquinas virtuales|Varios dominios de error (2 o 3 por región).<br>Varios dominios de actualización.|Varios dominios de error (2 o 3 por región).<br>Dominio de actualización individual, con migración en vivo para proteger las cargas de trabajo durante la actualización. Veinte dominios de actualización admitidos para la compatibilidad de plantillas.<br>La máquina virtual y el conjunto de disponibilidad deben estar en la misma ubicación y grupo de recursos.|
 | Conjuntos de escalado de máquinas virtuales|Compatible con la escalabilidad automática.|No compatible con la escalabilidad automática.<br><br>Agregar más instancias a un conjunto de escalado con el portal, las plantillas de Resource Manager o PowerShell. |
-| Testigo de Cloud | Seleccione los puntos de conexión de las propiedades de la cuenta de almacenamiento disponibles en Azure Stack. | El [testigo en la nube](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness) es un tipo de testigo de cuórum de clúster de conmutación por error que usa Microsoft Azure para proporcionar un voto en el cuórum de clúster.<br>Los puntos de conexión de Azure global en comparación con Azure Stack pueden tener el siguiente aspecto:<br>Para Azure global:<br>`https://mywitness.blob.core.windows.net/`<br>Para Azure Stack:<br>`https://mywitness.blob.<region>.<FQDN>/`|
+| Testigo de Cloud | Seleccione los puntos de conexión de las propiedades de la cuenta de almacenamiento disponibles en Azure Stack. | El [testigo en la nube](/windows-server/failover-clustering/deploy-cloud-witness) es un tipo de testigo de cuórum de clúster de conmutación por error que usa Microsoft Azure para proporcionar un voto en el cuórum de clúster.<br>Los puntos de conexión de Azure global en comparación con Azure Stack pueden tener el siguiente aspecto:<br>Para Azure global:<br>`https://mywitness.blob.core.windows.net/`<br>Para Azure Stack:<br>`https://mywitness.blob.<region>.<FQDN>/`|
 | Diagnóstico de máquina virtual | Se admiten los diagnósticos de máquinas virtuales Linux. | No se admiten los diagnósticos de una máquina virtual Linux en Azure Stack. Si implementa una máquina virtual Linux con diagnósticos de máquina virtual habilitado, se producirá un error en la implementación. Tampoco se podrá realizar la implementación si habilita las métricas básicas de máquina virtual Linux a través de la configuración de diagnóstico. |
 
 ## <a name="vm-sizes"></a>Tamaños de VM
@@ -136,12 +136,12 @@ La lista de versiones de API y tipos de recursos admitidos puede variar si el op
 
 ## <a name="windows-activation"></a>Activación de Windows
 
-Los productos de Windows deben utilizarse de acuerdo con los derechos de uso del producto y los términos de licencia de Microsoft. Azure Stack usa la [activación automática de VM](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303421(v%3dws.11)) (AVMA) para activar máquinas virtuales de Windows Server.
+Los productos de Windows deben utilizarse de acuerdo con los derechos de uso del producto y los términos de licencia de Microsoft. Azure Stack usa la [activación automática de VM](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303421(v%3dws.11)) (AVMA) para activar máquinas virtuales de Windows Server.
 
 - El host de Azure Stack activa Windows con claves de AVMA para Windows Server 2016. Todas las VM que ejecutan Windows Server 2012 R2 o versiones posteriores se activan automáticamente.
-- Las máquinas virtuales que ejecutan Windows Server 2012 o versiones anteriores no se activan automáticamente y este proceso debe realizarse mediante la [activación de MAK](https://technet.microsoft.com/library/ff793438.aspx). Para usar la activación de MAK, debe proporcionar su propia clave de producto.
+- Las máquinas virtuales que ejecutan Windows Server 2012 o versiones anteriores no se activan automáticamente y este proceso debe realizarse mediante la [activación de MAK](/previous-versions/tn-archive/ff793438(v=technet.10)). Para usar la activación de MAK, debe proporcionar su propia clave de producto.
 
-Microsoft Azure utiliza la activación de KMS para activar las VM de Windows. Si traslada una máquina virtual de Azure Stack a Azure y encuentra problemas de activación, consulte [Solución de problemas de activación de máquinas virtuales Windows de Azure](https://docs.microsoft.com/azure/virtual-machines/windows/troubleshoot-activation-problems). Puede encontrar información adicional en la entrada del blog del equipo de soporte técnico de Azure [Troubleshooting Windows activation failures on Azure VMs](https://blogs.msdn.microsoft.com/mast/2017/06/14/troubleshooting-windows-activation-failures-on-azure-vms/) (Solucionar problemas de errores de activación de Windows en máquinas virtuales de Azure).
+Microsoft Azure utiliza la activación de KMS para activar las VM de Windows. Si traslada una máquina virtual de Azure Stack a Azure y encuentra problemas de activación, consulte [Solución de problemas de activación de máquinas virtuales Windows de Azure](/azure/virtual-machines/windows/troubleshoot-activation-problems). Puede encontrar información adicional en la entrada del blog del equipo de soporte técnico de Azure [Troubleshooting Windows activation failures on Azure VMs](/archive/blogs/mast/troubleshooting-windows-activation-failures-on-azure-vms) (Solucionar problemas de errores de activación de Windows en máquinas virtuales de Azure).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

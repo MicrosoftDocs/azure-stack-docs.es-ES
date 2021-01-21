@@ -16,12 +16,12 @@ ms.date: 10/20/2020
 ms.author: patricka
 ms.reviewer: asganesh
 ms.lastreviewed: 10/20/2020
-ms.openlocfilehash: 605ce80e2f88f5c798c955d5ba45a49856086f2e
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: 5d59532308239f9eda95ba9f81599235a8c8f61c
+ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97872490"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98255561"
 ---
 # <a name="mdc-requirements-overview"></a>Información general sobre los requisitos de MDC
 
@@ -65,9 +65,9 @@ De forma general, el proceso de implementación de MDC consta de las fases sigui
 ### <a name="planning-phase"></a>Fase de planeación
 1. Planeamiento de la alimentación del centro de datos.
 1. Planeamiento de la configuración de red lógica de Azure Stack Hub.
-1. Planeamiento de la [integración de la red del centro de datos](https://docs.microsoft.com/azure-stack/operator/azure-stack-network).
-1. Planeamiento de la [integración de identidades y seguridad](https://docs.microsoft.com/azure/security/fundamentals/identity-management-best-practices).
-1. Planeamiento de los [certificados PKI](https://docs.microsoft.com/azure-stack/operator/azure-stack-pki-certs).
+1. Planeamiento de la [integración de la red del centro de datos](../operator/azure-stack-network.md).
+1. Planeamiento de la [integración de identidades y seguridad](/azure/security/fundamentals/identity-management-best-practices).
+1. Planeamiento de los [certificados PKI](../operator/azure-stack-pki-certs.md).
 
 ### <a name="preparation-phase"></a>Fase de preparación
 1. Recopilación del inventario.

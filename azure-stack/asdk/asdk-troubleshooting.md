@@ -7,17 +7,17 @@ ms.date: 01/06/2021
 ms.author: patricka
 ms.reviewer: misainat
 ms.lastreviewed: 01/06/2021
-ms.openlocfilehash: 002015d0d00e09de07e4a46f5ad6525dac2b7254
-ms.sourcegitcommit: 502df315764bbc4ff6d3de50b957dfd4a6c0043a
+ms.openlocfilehash: ab4a7166f0a6ae43259f3f1f919c3b24af017c1e
+ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98130231"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98255221"
 ---
 # <a name="troubleshoot-the-asdk"></a>Solucionar problemas del ASDK
 En este artículo se proporciona información sobre cómo solucionar problemas comunes para el Kit de desarrollo de Azure Stack (ASDK). Para obtener ayuda con los sistemas integrados de Azure Stack, consulte [Solución de problemas de Microsoft Azure Stack](../operator/azure-stack-troubleshooting.md). 
 
-Como ASDK es un entorno de evaluación, Soporte técnico de Microsoft no proporciona dicho soporte. Si tiene alguna incidencia que no esté documentada, puede obtener ayuda de expertos en [Microsoft Q&A para Azure Stack](https://docs.microsoft.com/answers/questions/topics/azure-stack-hub.html).
+Como ASDK es un entorno de evaluación, Soporte técnico de Microsoft no proporciona dicho soporte. Si tiene alguna incidencia que no esté documentada, puede obtener ayuda de expertos en [Microsoft Q&A para Azure Stack](/answers/questions/topics/azure-stack-hub.html).
 
 ## <a name="deployment"></a>Implementación
 ### <a name="deployment-failure"></a>Error de implementación

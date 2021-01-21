@@ -6,13 +6,13 @@ author: khdownie
 ms.author: v-kedow
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 12/15/2020
-ms.openlocfilehash: 6eef8388367bb1bba3f419fba5b61c54fd729743
-ms.sourcegitcommit: 32d77de1a554315f53473407279e464a72aa9aa1
+ms.date: 01/13/2021
+ms.openlocfilehash: c4280a9b120530b84bbaac9f7f963a695c0eaf99
+ms.sourcegitcommit: 649540e30e1018b409f4b1142bf2cb392c9e8b0d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97515010"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98208036"
 ---
 # <a name="azure-stack-hci-solution-overview"></a>Introducción a la solución Azure Stack HCI
 
@@ -136,7 +136,7 @@ Azure Stack HCI forma parte de Azure y la familia de Azure Stack, ya que usa l
 La versión 2009 de Windows Admin Center agrega una serie de características a Azure Stack HCI, entre las que cabe destacar las siguientes:
 
 - **Funcionalidades de hospedaje de Azure Kubernetes Service**: ahora puede instalar una versión preliminar de [Azure Kubernetes Service en Azure Stack HCI](https://azure.microsoft.com/products/azure-stack/hci/hci-download/).
-- **Inclusión de redes definidas por software en el asistente de creación de clústeres**: El asistente de creación de clústeres incluye ahora la opción de implementar la característica de Controladora de red denominada [redes definidas por software](concepts/software-defined-networking.md) durante la [creación del clúster](deploy/create-cluster.md#step-5-sdn-optional).
+
 - **Mejoras de acceso directo a memoria remota (RDMA) del Asistente para crear clústeres**: El Asistente para crear clústeres ahora puede configurar RDMA para los adaptadores de red iWARP y RoCE, incluido Data Center Bridging (DCB).
 
 Para más información acerca de las nuevas características, consulte [Anuncio de la disponibilidad general de la extensión de creación de clústeres en Windows Admin Center](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/announcing-general-availability-of-the-cluster-creation/ba-p/1978332).

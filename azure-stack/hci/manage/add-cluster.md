@@ -6,12 +6,12 @@ author: v-dasis
 ms.author: v-dasis
 ms.reviewer: jgerend
 ms.date: 01/06/2021
-ms.openlocfilehash: 8b27859b7afab0a6e279774e43d0269f6d58065a
-ms.sourcegitcommit: 1465bca8b7f87ea6f24faf47e86c2ba497943b28
+ms.openlocfilehash: 77f1800323f57721d3f6f70050841e4adf0fd4c5
+ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98103142"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98254745"
 ---
 # <a name="add-or-remove-servers-for-an-azure-stack-hci-cluster"></a>Adición o eliminación de servidores para un clúster de Azure Stack HCI
 
@@ -71,9 +71,9 @@ Dedique unos minutos a ver el vídeo sobre la incorporación de nodos de clúste
 
 > [!VIDEO https://www.youtube.com/embed/AVHPkRmsZ5Y]
 
-Puede agregar o quitar servidores a un clúster extendido mediante Windows PowerShell. Con los cmdlets [Get-ClusterFaultDomainXML](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusterfaultdomainxml) y [Set-ClusterFaultDomainXML](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterfaultdomainxml), primero debe modificar la información del sitio (dominio de error) antes de agregar los servidores.
+Puede agregar o quitar servidores a un clúster extendido mediante Windows PowerShell. Con los cmdlets [Get-ClusterFaultDomainXML](/powershell/module/failoverclusters/get-clusterfaultdomainxml) y [Set-ClusterFaultDomainXML](/powershell/module/failoverclusters/set-clusterfaultdomainxml), primero debe modificar la información del sitio (dominio de error) antes de agregar los servidores.
 
-A continuación, puede agregar el par de servidores a cada sitio simultáneamente mediante el cmdlet [Add-ClusterNode](https://docs.microsoft.com/powershell/module/failoverclusters/add-clusternode), lo que permite agregar también las unidades de cada nuevo servidor al mismo tiempo.
+A continuación, puede agregar el par de servidores a cada sitio simultáneamente mediante el cmdlet [Add-ClusterNode](/powershell/module/failoverclusters/add-clusternode), lo que permite agregar también las unidades de cada nuevo servidor al mismo tiempo.
 
 Normalmente, los clústeres se administran desde un equipo remoto, en lugar de hacerlo en un servidor de un clúster. Este equipo remoto se denomina equipo de administración.
 
@@ -167,7 +167,7 @@ Una vez que los servidores se han agregado correctamente, las unidades asociadas
 
 ## <a name="remove-server-pairs-from-a-stretched-cluster"></a>Eliminación de pares de servidores de un clúster extendido
 
-Quitar un par de servidores de un clúster extendido es un proceso similar a agregar un par de servidores, pero con el cmdlet [Remove-ClusterNode](https://docs.microsoft.com/powershell/module/failoverclusters/remove-clusternode) en su lugar.
+Quitar un par de servidores de un clúster extendido es un proceso similar a agregar un par de servidores, pero con el cmdlet [Remove-ClusterNode](/powershell/module/failoverclusters/remove-clusternode) en su lugar.
 
 1. Use los siguientes cmdlets de PowerShell para determinar el estado del clúster:
 

@@ -7,12 +7,12 @@ ms.date: 11/13/2020
 ms.author: patricka
 ms.reviewer: ''
 ms.lastreviewed: ''
-ms.openlocfilehash: a46ae218cbf4b041b836ad2f204093daa449c785
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: 4df7cfa84ff9b4a08d6751aa19ffdb1430a80605
+ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97874564"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98256139"
 ---
 # <a name="required-knowledge-for-working-with-scale-unit-nodes-in-a-tactical-cloud-appliance"></a>Conocimientos necesarios para trabajar con nodos de unidad de escalado en un dispositivo en la nube táctico
 
@@ -30,8 +30,8 @@ Para más información acerca de la estación de trabajo de acceso con privilegi
 ## <a name="azure-stack-hub-administrator-portal"></a>Portal del administrador de Azure Stack Hub
 
 Obtenga del cliente las credenciales y la dirección URL del portal del administrador.
-Para más información, consulte [Uso del portal de administración](https://docs.microsoft.com/azure-stack/operator/azure-stack-manage-portals)
-[de Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-manage-portals).
+Para más información, consulte [Uso del portal de administración](../../operator/azure-stack-manage-portals.md)
+[de Azure Stack Hub](../../operator/azure-stack-manage-portals.md).
 
 ## <a name="dell-emc-poweredge-r640-installation-and-service-manual"></a>Manual de instalación y servicio de EMC PowerEdge R640 de Dell
 
@@ -46,4 +46,3 @@ El manual de servicio del dispositivo en la nube táctico de Microsoft Azure Sta
 ## <a name="dell-emc-poweredge-idrac"></a>iDRAC de EMC PowerEdge de Dell
 
 Debe entender cómo usar y navegar por la interfaz web de iDRAC del servidor EMC PowerEdge de Dell. Para más información sobre el uso de iDRAC, consulte la [Guía del usuario de Integrated Dell Remote Access Controller 9](https://www.dell.com/support/manuals/us/en/04/poweredge-r840/idrac9_4.00.00.00_ug_new/overview-of-idrac?guid=guid-a03c2558-4f39-40c8-88b8-38835d0e9003).
-

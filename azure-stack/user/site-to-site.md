@@ -7,12 +7,12 @@ ms.date: 11/22/2020
 ms.topic: article
 ms.reviewer: sranthar
 ms.lastreviewed: 11/22/2020
-ms.openlocfilehash: 88f258f4700cd091f50dc3732fb7167be84d3954
-ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
+ms.openlocfilehash: a39cbd5a845e79114393710c8ec77d37f30a68a0
+ms.sourcegitcommit: 8526f642ef859b0006c3991d966f93608a87288a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95518201"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98243517"
 ---
 # <a name="troubleshoot-site-to-site-vpn-connections"></a>Solución de problemas de conexiones VPN de sitio a sitio
 
@@ -98,4 +98,4 @@ Get-AzurerRMVirtualNetworkGatewayConnectionSharedKey -Name <Connection name> -Re
 
 ## <a name="create-a-support-ticket"></a>Creación de una incidencia de soporte técnico
 
-Si ninguno de los pasos anteriores soluciona el problema, cree una [incidencia de soporte técnico](../operator/azure-stack-manage-basics.md#where-to-get-support) y use la [herramienta de recopilación de registros a petición](../operator/azure-stack-diagnostic-log-collection-overview.md) para proporcionar registros.
+Si ninguno de los pasos anteriores soluciona el problema, cree una [incidencia de soporte técnico](../operator/azure-stack-manage-basics.md#where-to-get-support) y use la [herramienta de recopilación de registros a petición](../operator/diagnostic-log-collection.md) para proporcionar registros.

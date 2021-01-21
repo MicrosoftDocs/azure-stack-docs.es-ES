@@ -15,12 +15,12 @@ ms.date: 12/20/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 12/20/2020
-ms.openlocfilehash: 48cb9d6e659f8b6f3507f5c0b4d6b7e60622f025
-ms.sourcegitcommit: c5d46662492887b70a599a60f3c3d27e3460a742
+ms.openlocfilehash: d0aa0ce6680d45fb6c8a760ab72908e306efe0a1
+ms.sourcegitcommit: 8526f642ef859b0006c3991d966f93608a87288a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97965484"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98243551"
 ---
 # <a name="scale-unit-node-actions-in-azure-stack-hub---ruggedized"></a>Acciones del nodo de unidad de escalado en Azure Stack Hub Ruggedized
 
@@ -90,7 +90,7 @@ Para ejecutar la acción de detención, abra un símbolo de sistema de PowerShel
 
 En el improbable caso de que la acción de detención no funcione, vuelva a intentar la operación y, si produce un error una segunda vez, use la interfaz web de BMC en su lugar.
 
-Para más información, consulte [Stop-AzsScaleUnitNode](https://docs.microsoft.com/powershell/module/azs.fabric.admin/stop-azsscaleunitnode).
+Para más información, consulte [Stop-AzsScaleUnitNode](/powershell/module/azs.fabric.admin/stop-azsscaleunitnode).
 
 ## <a name="start"></a>Start
 
@@ -104,7 +104,7 @@ Para ejecutar la acción de inicio, abra un símbolo de sistema de PowerShell co
 
 En el caso improbable de que la acción de inicio no funcione, vuelva a intentar la operación. Si se produce un error por segunda vez, utilice la interfaz web de BMC en su lugar.
 
-Para más información, consulte [Start-AzsScaleUnitNode](https://docs.microsoft.com/powershell/module/azs.fabric.admin/start-azsscaleunitnode).
+Para más información, consulte [Start-AzsScaleUnitNode](/powershell/module/azs.fabric.admin/start-azsscaleunitnode).
 
 ## <a name="drain"></a>Purga
 
@@ -121,7 +121,7 @@ Para ejecutar la acción de purga, abra un símbolo de sistema de PowerShell con
   Disable-AzsScaleUnitNode -Location <RegionName> -Name <NodeName>
 ```
 
-Para más información, consulte [Disable-AzsScaleUnitNode](https://docs.microsoft.com/powershell/module/azs.fabric.admin/disable-azsscaleunitnode).
+Para más información, consulte [Disable-AzsScaleUnitNode](/powershell/module/azs.fabric.admin/disable-azsscaleunitnode).
 
 ## <a name="resume"></a>Reanudación
 
@@ -133,7 +133,7 @@ Para reanudar la acción de purga, abra un símbolo de sistema de PowerShell con
   Enable-AzsScaleUnitNode -Location <RegionName> -Name <NodeName>
 ```
 
-Para más información, consulte [Enable-AzsScaleUnitNode](https://docs.microsoft.com/powershell/module/azs.fabric.admin/enable-azsscaleunitnode).
+Para más información, consulte [Enable-AzsScaleUnitNode](/powershell/module/azs.fabric.admin/enable-azsscaleunitnode).
 
 ## <a name="repair"></a>Reparación
 
@@ -169,4 +169,4 @@ Para ejecutar la acción de apagado, abra un símbolo de sistema de PowerShell c
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Obtenga información sobre el módulo del operador de tejido de Azure Stack Hub](https://docs.microsoft.com/powershell/module/azs.fabric.admin/).
+[Obtenga información sobre el módulo del operador de tejido de Azure Stack Hub](/powershell/module/azs.fabric.admin/).

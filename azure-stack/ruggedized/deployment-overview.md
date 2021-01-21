@@ -16,12 +16,12 @@ ms.date: 10/14/2020
 ms.author: patricka
 ms.reviewer: asganesh
 ms.lastreviewed: 10/14/2020
-ms.openlocfilehash: 0fd077f405256ff0a112dd9730cdc3e8fefb10f8
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: e6fccf96e44a481a0e1e0c5bb300ec238937f86b
+ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97867543"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98256190"
 ---
 # <a name="azure-stack-hub-ruggedized-deployment-overview"></a>Información general sobre la implementación de Azure Stack Hub Ruggedized
 
@@ -38,7 +38,7 @@ Esta guía de implementación está pensada para el equipo profesional de campo 
 
 Se requiere experiencia técnica con la virtualización, los servidores, los sistemas operativos, las redes y las soluciones de almacenamiento para comprender totalmente el contenido de esta guía. El ingeniero de implementación debe tener conocimientos de Microsoft Windows Server 2019 con Hyper-V, Azure Stack Hub, Azure y Microsoft PowerShell.
 
-Esta guía se centra en la implementación de los componentes principales de Microsoft Azure Stack Hub y los componentes específicos de la solución Azure Stack Hub Ruggedized. En esta guía no se explican los procedimientos operativos de Azure Stack Hub ni se explican todas las características disponibles en Azure Stack Hub. Para más información, consulte la [guía del operador de Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/).
+Esta guía se centra en la implementación de los componentes principales de Microsoft Azure Stack Hub y los componentes específicos de la solución Azure Stack Hub Ruggedized. En esta guía no se explican los procedimientos operativos de Azure Stack Hub ni se explican todas las características disponibles en Azure Stack Hub. Para más información, consulte la [guía del operador de Azure Stack Hub](../operator/index.yml).
 
 ## <a name="introduction"></a>Introducción
 

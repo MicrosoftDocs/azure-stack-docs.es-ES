@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 12/10/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: ea19dbbdd85f29eb036a0220828bbbb7bca33ea7
-ms.sourcegitcommit: d91d44762383790a0bcfc4a85f43050c8528d5d2
+ms.openlocfilehash: d1e033ed2b8bbae2968be8125c7d0dccb3e9f3cf
+ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97069820"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98254643"
 ---
 # <a name="migrate-to-azure-stack-hci-on-same-hardware"></a>Migración a Azure Stack HCI en el mismo hardware
 
@@ -36,7 +36,7 @@ Hay varios requisitos y aspectos que se deben tener en cuenta antes de comenzar 
 
 - Debe tener credenciales de dominio con permisos de administrador para Azure Stack HCI.
 
-- Realice una copia de seguridad de todas las máquinas virtuales del clúster de origen. Complete una copia de seguridad coherente con el bloqueo de todas las aplicaciones y datos y una copia de seguridad coherente con la aplicación de todas las bases de datos.  Para realizar una copia de seguridad en Azure, consulte [Uso de Azure Backup para hacer una copia de seguridad de las instancias de Windows Server](https://docs.microsoft.com/azure-stack/hci/manage/use-azure-backup).
+- Realice una copia de seguridad de todas las máquinas virtuales del clúster de origen. Complete una copia de seguridad coherente con el bloqueo de todas las aplicaciones y datos y una copia de seguridad coherente con la aplicación de todas las bases de datos.  Para realizar una copia de seguridad en Azure, consulte [Uso de Azure Backup para hacer una copia de seguridad de las instancias de Windows Server](../manage/use-azure-backup.md).
 
 - Recopile el inventario y la configuración de todos los nodos del clúster y la nomenclatura del clúster, la configuración de red, la resistencia y la capacidad del volumen compartido de clúster (CSV) y el testigo de cuórum.
 
@@ -181,7 +181,7 @@ Para más información sobre cómo crear el clúster con PowerShell, consulte [C
     Get-StoragePool | ? IsPrimordial -eq $false | ft FriendlyName,Version
     ```
 
-1. Cree el testigo de cuórum. Para obtener información sobre cómo hacerlo, consulte [Configuración de un testigo del clúster](https://docs.microsoft.com/azure-stack/hci/deploy/witness).
+1. Cree el testigo de cuórum. Para obtener información sobre cómo hacerlo, consulte [Configuración de un testigo del clúster](./witness.md).
 
 1. Utilice lo siguiente para comprobar que los trabajos de reparación del almacenamiento se han completado:
 

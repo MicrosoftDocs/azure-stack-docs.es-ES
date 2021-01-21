@@ -15,18 +15,18 @@ ms.date: 10/01/2020
 ms.author: patricka
 ms.reviewer: karlt
 ms.lastreviewed: 10/01/2020
-ms.openlocfilehash: ebb39f3eab90b0f976e5fee2896cbe85d0d023f5
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: 8dea13880e2703290e1528fca47b777f98fca7b2
+ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97872405"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98255527"
 ---
 # <a name="extended-storage-health-checks"></a>Comprobaciones de estado del almacenamiento extendido
 
 En este artículo se proporcionan instrucciones para comprobar el estado del hardware de almacenamiento extendido del centro de datos y la implementación de Azure Stack Hub.
 
-Antes de empezar, revise y siga los pasos descritos en [Actualización del firmware para el almacenamiento extendido](extended-storage-firmware-updates.md).
+Antes de empezar, revise y siga los pasos descritos en [Actualización del firmware para el almacenamiento extendido]().
 
 El último paso antes de enviar el sistema es cerrarlo. Siga los pasos que se describen en la Guía de inicio rápido.
 
@@ -110,4 +110,4 @@ Para obtener ayuda con la solución de problemas, póngase en contacto con el so
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Actualizar el firmware](extended-storage-firmware-updates.md)
+- [Actualizar el firmware]()

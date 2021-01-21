@@ -15,12 +15,12 @@ ms.date: 12/16/2020
 ms.author: mabrigg
 ms.lastreviewed: 12/05/2019
 ms.reviewer: efemmano
-ms.openlocfilehash: 780a8d7bfde9afca01a0e2c60dd6e8f772e06735
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: f4506ac5eb606d4def07fcc741ed5ad1c4900783
+ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97867356"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98256105"
 ---
 # <a name="alerts-akams-link-reference-for-azure-stack-hub"></a>Referencia del vínculo aka.ms de alertas para Azure Stack Hub
 
@@ -37,7 +37,7 @@ En este artículo se proporciona una referencia cruzada para los vínculos aka.m
 | `https://aka.ms/azurestackaddcapacity` | [Incorporación de nodos de unidad de escalado adicionales en Azure Stack](../../operator/azure-stack-add-scale-node.md) |
 | `https://aka.ms/azurestackaddnode` | [Incorporación de nodos de unidad de escalado adicionales en Azure Stack](../../operator/azure-stack-add-scale-node.md) |
 | `https://aka.ms/azurestackhealthreport` | [https://github.com/Azure/AzureStack-Tools/blob/master/Identity/README.md#retrieve-azure-stack-identity-health-report](https://aka.ms/aa708dy) |
-| `https://aka.ms/azurestacklogfiles` | [Recopilación de registros de diagnóstico de Azure Stack a petición](../../operator/azure-stack-configure-on-demand-diagnostic-log-collection-portal.md) |
+| `https://aka.ms/azurestacklogfiles` | [Recopilación de registros de diagnóstico de Azure Stack a petición](../../operator/diagnostic-log-collection.md) |
 | `https://aka.ms/azurestackpep` | [Uso del punto de conexión con privilegios en Azure Stack](../../operator/azure-stack-privileged-endpoint.md) |
 | `https://aka.ms/azurestackreplacenode` | [Reemplazo de un nodo de la unidad de escalado en un sistema integrado de Azure Stack](../../operator/azure-stack-replace-node.md) |
 | `https://aka.ms/azurestackupdatedirectory` | [https://github.com/Azure/AzureStack-Tools/tree/master/Identity#updating-the-azure-stack-aad-home-directory-after-installing-updates-or-new-resource-providers](https://aka.ms/aa700j2) |

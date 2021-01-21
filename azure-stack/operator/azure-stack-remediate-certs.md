@@ -8,12 +8,12 @@ ms.date: 11/10/2020
 ms.author: bryanla
 ms.reviewer: unknown
 ms.lastreviewed: 10/19/2020
-ms.openlocfilehash: d1d19d79a3a2242ada4e3f7972fa26f61ed600ce
-ms.sourcegitcommit: f56a5b287c90b2081ae111385c8b7833931d4059
+ms.openlocfilehash: f9a7a42fafe55e7b598e6fcb67e5353c2453222e
+ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97343213"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98255833"
 ---
 # <a name="fix-common-issues-with-azure-stack-hub-pki-certificates"></a>Solución de problemas comunes con los certificados PKI de Azure Stack Hub
 
@@ -23,13 +23,13 @@ La información de este artículo le ayudará a reconocer y resolver problemas c
 
 **Problema** : el certificado no contiene la CRL HTTP en la extensión CDP.
 
-**Corrección** : no se trata de un problema de bloqueo. Azure Stack requiere una CRL HTTP para la comprobación de revocación según los [requisitos del certificado de infraestructura de clave pública (PKI) de Azure Stack Hub](https://aka.ms/azspki).  No se detectó ninguna CRL HTTP en el certificado.  Para asegurarse de que la comprobación de la revocación de certificados funciona, la entidad de certificación debe emitir un certificado con una CRL HTTP en la extensión CDP.
+**Corrección** : no se trata de un problema de bloqueo. Azure Stack requiere una CRL HTTP para la comprobación de revocación según los [requisitos del certificado de infraestructura de clave pública (PKI) de Azure Stack Hub](./azure-stack-pki-certs.md).  No se detectó ninguna CRL HTTP en el certificado.  Para asegurarse de que la comprobación de la revocación de certificados funciona, la entidad de certificación debe emitir un certificado con una CRL HTTP en la extensión CDP.
 
 ## <a name="http-crl---fail"></a>CRL HTTP: error
 
 **Problema** : no se puede establecer conexión con la CRL HTTP en la extensión CDP.
 
-**Corrección** : se trata de un problema de bloqueo. Azure Stack requiere conectividad con una CRL de HTTP para la comprobación de revocación según el artículo [Publicación de puertos y direcciones URL de Azure Stack Hub (salientes)](https://docs.microsoft.com/azure-stack/operator/azure-stack-integrate-endpoints#ports-and-urls-outbound).
+**Corrección** : se trata de un problema de bloqueo. Azure Stack requiere conectividad con una CRL de HTTP para la comprobación de revocación según el artículo [Publicación de puertos y direcciones URL de Azure Stack Hub (salientes)](./azure-stack-integrate-endpoints.md#ports-and-urls-outbound).
 
 ## <a name="pfx-encryption"></a>Cifrado de PFX
 

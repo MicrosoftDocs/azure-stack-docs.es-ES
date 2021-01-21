@@ -14,12 +14,12 @@ ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 1/9/2020
-ms.openlocfilehash: c0de30c44d2938d17bbd4c48abbd1372bb7f6f79
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: 34dafb113d2e87dddd0d744878c8be5e406751d0
+ms.sourcegitcommit: 8526f642ef859b0006c3991d966f93608a87288a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97874292"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98243568"
 ---
 # <a name="manage-and-deploy-resources-to-azure-stack-hub-with-azure-cli"></a>Administración e implementación de recursos en Azure Stack Hub con la CLI de Azure
 
@@ -47,7 +47,7 @@ Puede configurar un punto de conexión accesible públicamente que hospede un ar
 
 ### <a name="install-or-upgrade-cli"></a>Instalación o actualización de la CLI
 
-Inicie sesión en la estación de trabajo de desarrollo e instale la CLI. Azure Stack Hub requiere la versión 2.0 o superior de la CLI de Azure. La versión más reciente de los perfiles de API requiere una versión actual de la CLI. Instale la CLI mediante los pasos descritos en el artículo [Instalación de la CLI de Azure](https://docs.microsoft.com/cli/azure/install-azure-cli). 
+Inicie sesión en la estación de trabajo de desarrollo e instale la CLI. Azure Stack Hub requiere la versión 2.0 o superior de la CLI de Azure. La versión más reciente de los perfiles de API requiere una versión actual de la CLI. Instale la CLI mediante los pasos descritos en el artículo [Instalación de la CLI de Azure](/cli/azure/install-azure-cli). 
 
 Para comprobar si la instalación se realizó correctamente, abra un terminal o una ventana del símbolo del sistema y ejecute el siguiente comando:
 
@@ -218,4 +218,4 @@ Existen problemas conocidos cuando se usa la CLI en Azure Stack Hub:
 
 - [Implementación de plantillas con la CLI de Azure](../../user/azure-stack-deploy-template-command-line.md)
 - [Habilitación de la CLI de Azure para usuarios de Azure Stack Hub (operador)](../../operator/azure-stack-cli-admin.md)
-- [Administración de permisos de usuario](../../user/azure-stack-manage-permissions.md) 
+- [Administración de permisos de usuario](../../user/azure-stack-manage-permissions.md)

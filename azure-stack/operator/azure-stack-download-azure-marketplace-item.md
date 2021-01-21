@@ -8,12 +8,12 @@ ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 12/16/2020
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: f0aafd572aa50760a7b326d5ca699e3f1331b3e9
-ms.sourcegitcommit: f30e5178e0b4be4e3886f4e9f699a2b51286e2a8
+ms.openlocfilehash: 9560e9e2fcf5d7b01ca44b409d14a7827cac4060
+ms.sourcegitcommit: 0983c1f90734b7ea5e23ae614eeaed38f9cb3c9a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97620660"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98571406"
 ---
 # <a name="download-marketplace-items-to-azure-stack-hub"></a>Descarga de elementos de Marketplace en Azure Stack Hub
 
@@ -128,7 +128,7 @@ Una vez registrado Azure Stack, puede ignorar el mensaje siguiente que aparece e
    Se le solicita que escriba las credenciales de su cuenta de Azure y puede que tenga que utilizar la autenticación en dos fases en función de la configuración de la cuenta.
 
    > [!NOTE]
-   > Si la sesión expira, la contraseña ha cambiado o desea cambiar de cuenta, ejecute el siguiente cmdlet antes de iniciar sesión mediante `Add-AzRmAccount`: `RemoveAzAccount -Scope Process`.
+   > Si la sesión expira, la contraseña ha cambiado o desea cambiar de cuenta, ejecute el siguiente cmdlet antes de iniciar sesión mediante `Add-AzAccount`: `Remove-AzAccount -Scope Process`.
 
 3. Si tiene varias suscripciones, ejecute el siguiente comando para seleccionar la que ha usado para el registro:
 
@@ -187,7 +187,7 @@ Una vez registrado Azure Stack, puede ignorar el mensaje siguiente que aparece e
 
 1. En un equipo con conexión a Internet, abra una consola de PowerShell como administrador.
 
-2. Inicie sesión en la nube de Azure adecuada y en el inquilino de Azure AD con la cuenta de Azure que ha usado para registrar Azure Stack Hub. Para agregar la cuenta, en PowerShell ejecute `Add-AzureRMureRmAccount`:
+2. Inicie sesión en la nube de Azure adecuada y en el inquilino de Azure AD con la cuenta de Azure que ha usado para registrar Azure Stack Hub. Para agregar la cuenta, en PowerShell ejecute `Add-AzureRMAccount`:
 
    ```powershell  
    Login-AzureRMAccount -Environment AzureCloud -Tenant '<mydirectory>.onmicrosoft.com'
@@ -196,7 +196,7 @@ Una vez registrado Azure Stack, puede ignorar el mensaje siguiente que aparece e
    Se le solicita que escriba las credenciales de su cuenta de Azure y puede que tenga que utilizar la autenticación en dos fases en función de la configuración de la cuenta.
 
    > [!NOTE]
-   > Si la sesión expira, la contraseña ha cambiado o desea cambiar de cuenta, ejecute el siguiente cmdlet antes de iniciar sesión mediante `Add-AzureRMRmAccount`: `RemoveAzAccount -Scope Process`.
+   > Si la sesión expira, la contraseña ha cambiado o desea cambiar de cuenta, ejecute el siguiente cmdlet antes de iniciar sesión mediante `Add-AzureRMAccount`: `Remove-AzureRMAccount -Scope Process`.
 
 3. Si tiene varias suscripciones, ejecute el siguiente comando para seleccionar la que ha usado para el registro:
 
@@ -213,7 +213,7 @@ Una vez registrado Azure Stack, puede ignorar el mensaje siguiente que aparece e
 5. Para seleccionar elementos de Marketplace como imágenes de máquinas virtuales, extensiones o plantillas de soluciones para descargar, ejecute el siguiente comando:
 
    ```powershell
-   $products = Select-AzureRMsMarketplaceItem
+   $products = Select-AzsMarketplaceItem
    ```
 
    Esto hará que aparezca una tabla que muestra todos los registros de Azure Stack disponibles en la suscripción seleccionada. Elija el registro que coincida con el entorno de Azure Stack para el que está descargando los elementos de Marketplace y seleccione **Aceptar**.

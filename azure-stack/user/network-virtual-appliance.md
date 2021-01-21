@@ -7,12 +7,12 @@ ms.date: 11/22/2020
 ms.topic: article
 ms.reviewer: sranthar
 ms.lastreviewed: 11/22/2020
-ms.openlocfilehash: 271587baa3890a7dbb02d7ac935ceb51e2e405b7
-ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
+ms.openlocfilehash: bb5d62b4e5302762b4feddfd7afd7b7a39002187
+ms.sourcegitcommit: 8526f642ef859b0006c3991d966f93608a87288a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95517155"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98243330"
 ---
 # <a name="troubleshoot-network-virtual-appliance-problems"></a>Solución de problemas de aplicaciones virtuales de red
 
@@ -187,4 +187,4 @@ Si necesita ayuda, [póngase en contacto con el proveedor de la aplicación virt
 
 ### <a name="create-a-support-ticket"></a>Creación de una incidencia de soporte técnico
 
-Si los pasos anteriores no solucionan el problema, cree una [incidencia de soporte técnico](../operator/azure-stack-manage-basics.md#where-to-get-support) y use la [herramienta de recopilación de registros a petición](../operator/azure-stack-diagnostic-log-collection-overview.md) para proporcionar registros.
+Si los pasos anteriores no solucionan el problema, cree una [incidencia de soporte técnico](../operator/azure-stack-manage-basics.md#where-to-get-support) y use la [herramienta de recopilación de registros a petición](../operator/diagnostic-log-collection.md) para proporcionar registros.

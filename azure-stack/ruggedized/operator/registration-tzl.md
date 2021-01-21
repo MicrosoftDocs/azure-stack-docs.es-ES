@@ -15,12 +15,12 @@ ms.date: 12/21/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 12/20/2019
-ms.openlocfilehash: 3d24ba3a714c8ea8f17189a7c63a134dab0f8d12
-ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
+ms.openlocfilehash: 34dbff445ed06291712223b17f8443b384b8cac8
+ms.sourcegitcommit: 8526f642ef859b0006c3991d966f93608a87288a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97909810"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98243534"
 ---
 # <a name="register-azure-stack-hub-with-azure---azure-stack-hub-ruggedized"></a>Registro de Azure Stack Hub en Azure: Azure Stack Hub Ruggedized
 
@@ -310,7 +310,7 @@ Puede usar el icono de **administración de regiones** para comprobar si el regi
 
 4. Puede usar Azure Portal para ver los recursos de registro de Azure Stack Hub y, luego, comprobar que el registro se ha realizado correctamente. Inicie sesión en [Azure Portal](https://portal.azure.com/) con una cuenta asociada a la suscripción que usó para registrar Azure Stack Hub. Seleccione **Todos los recursos**, active la casilla **Mostrar tipos ocultos** y, a continuación, seleccione el nombre del registro.
 
-5. Si el registro no se realizó correctamente, debe volver a registrarlo según las instrucciones que se indican en [Errores de registro](https://docs.microsoft.com/azure-stack/operator/azure-stack-registration#change-the-subscription-you-use) para resolver el problema.
+5. Si el registro no se realizó correctamente, debe volver a registrarlo según las instrucciones que se indican en [Errores de registro](../../operator/azure-stack-registration.md#change-the-subscription-you-use) para resolver el problema.
 
 Como alternativa, puede comprobar si el registro es correcto mediante la característica de administración de Marketplace. Si ve una lista de elementos de Marketplace en la hoja **Administración de Marketplace**, significa que su registro se realizó correctamente. Sin embargo, en entornos desconectados, no puede ver los elementos de Marketplace en la administración de Marketplace.
 
@@ -319,4 +319,4 @@ Como alternativa, puede comprobar si el registro es correcto mediante la caracte
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Aspectos básicos de administración de Azure Stack Hub](../../operator/azure-stack-manage-basics.md)  
+[Aspectos básicos de administración de Azure Stack Hub](../../operator/azure-stack-manage-basics.md)

@@ -5,12 +5,12 @@ author: AnirbanPaul
 ms.author: anpaul
 ms.topic: conceptual
 ms.date: 10/7/2020
-ms.openlocfilehash: ec9ddb62dc876fbd4b99ebc2c8e2a3af4a54e8a7
-ms.sourcegitcommit: 9a91dbdaa556725f51bcf3d8e79a4ed2dd5a209f
+ms.openlocfilehash: 3ac17ca9cd54c2ec387ceb39cbda76f7cb539305
+ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91847697"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98255085"
 ---
 # <a name="plan-to-deploy-network-controller"></a>Plan de implementación de Controladora de red
 
@@ -36,11 +36,11 @@ Se requiere lo siguiente para implementar Controladora de red:
 
     **Opción 2**: La red de administración está físicamente separada de las redes de carga de trabajo. Esta opción usa un único conmutador virtual solo para el proceso:
 
-    :::image type="content" source="./media/network-controller/topology-option-2.png" alt-text="Opción 1 para crear una red física para Controladora de red." lightbox="./media/network-controller/topology-option-2.png":::
+    :::image type="content" source="./media/network-controller/topology-option-2.png" alt-text="Opción 2 para crear una red física para Controladora de red." lightbox="./media/network-controller/topology-option-2.png":::
 
     **Opción 3**: La red de administración está físicamente separada de las redes de carga de trabajo. Esta opción usa dos conmutadores virtuales, uno para el proceso y otro para el almacenamiento:
 
-    :::image type="content" source="./media/network-controller/topology-option-3.png" alt-text="Opción 1 para crear una red física para Controladora de red." lightbox="./media/network-controller/topology-option-3.png":::
+    :::image type="content" source="./media/network-controller/topology-option-3.png" alt-text="Opción 3 para crear una red física para Controladora de red." lightbox="./media/network-controller/topology-option-3.png":::
 
 - También puede agrupar los adaptadores físicos de administración para que usen el mismo conmutador de administración. En este caso, se recomienda seguir usando una de las opciones de esta sección.
 - Información de la red de administración que utiliza Controladora de red para comunicarse con Windows Admin Center y los hosts de Hyper-V.
@@ -60,7 +60,7 @@ Ahora está listo para implementar Controladora de red en las máquinas virtuale
 
 Para obtener más información, consulte:
 - [Creación de un clúster de Azure Stack HCI](../deploy/create-cluster.md)
-- [Implementación de controladora de red con Windows PowerShell](../deploy/network-controller-powershell.md)
+- [Implementación de controladora de red con Windows PowerShell](https://github.com/microsoft/SDN/tree/master/SDNExpress/scripts)
 
 ## <a name="see-also"></a>Consulte también
 - [Controladora de red](/windows-server/networking/sdn/technologies/network-controller/network-controller)

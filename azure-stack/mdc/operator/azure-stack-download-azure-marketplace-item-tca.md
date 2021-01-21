@@ -15,12 +15,12 @@ ms.date: 10/26/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 10/26/2020
-ms.openlocfilehash: 2a3dec7699911988c4c9a958c31386c127f70694
-ms.sourcegitcommit: 5fbc60b65d27c916ded7a95ba4102328d550c7e5
+ms.openlocfilehash: 7a296065696200d83e30e33f973ed16e62e789b5
+ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97598239"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98255408"
 ---
 # <a name="download-marketplace-items-to-azure-stack-hub---modular-data-center-mdc"></a>Descarga de elementos de Marketplace en Azure Stack Hub: centro de datos modular (MDC) 
 
@@ -74,7 +74,7 @@ La implementación de Azure Stack Hub debe tener conectividad a Internet y [esta
 
 En un entorno sin conexión, no se pueden descargar elementos de Marketplace desde Azure. Debe usar la herramienta de redifusión sin conexión para descargar los elementos de Marketplace en una unidad local y, a continuación, cargar esos elementos en Azure Stack Hub desde allí.
 
-Puede [descargar las herramientas de redifusión sin conexión aquí](https://aka.ms/azsSyndicationtool).
+Puede [descargar las herramientas de redifusión sin conexión aquí](../../operator/azure-stack-download-azure-marketplace-item.md?pivots=state-disconnected).
 
 ### <a name="download-marketplace-items-from-azure"></a>Descarga de elementos de Marketplace desde Azure
 

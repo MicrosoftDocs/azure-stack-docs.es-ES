@@ -14,12 +14,12 @@ ms.date: 12/2/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/2/2020
-ms.openlocfilehash: 2296d1228819d32f77ccc0dd35e4f2228908e969
-ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
+ms.openlocfilehash: eaf9431e3ca93f5f99c24154a96ad1e343bb2bf8
+ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97910268"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98255646"
 ---
 # <a name="manage-and-deploy-resources-to-azure-stack-hub-with-azure-cli---modular-data-center-mdc"></a>Administración e implementación de recursos en Azure Stack Hub con la CLI de Azure: Centro de datos modular (MDC)
 
@@ -47,7 +47,7 @@ Puede configurar un punto de conexión accesible públicamente que hospede un ar
 
 ### <a name="install-or-upgrade-cli"></a>Instalación o actualización de la CLI
 
-Inicie sesión en la estación de trabajo de desarrollo e instale la CLI. Azure Stack Hub requiere la versión 2.0 o superior de la CLI de Azure. La versión más reciente de los perfiles de API requiere una versión actual de la CLI. Instale la CLI mediante los pasos descritos en el artículo [Instalación de la CLI de Azure](https://docs.microsoft.com/cli/azure/install-azure-cli). 
+Inicie sesión en la estación de trabajo de desarrollo e instale la CLI. Azure Stack Hub requiere la versión 2.0 o superior de la CLI de Azure. La versión más reciente de los perfiles de API requiere una versión actual de la CLI. Instale la CLI mediante los pasos descritos en el artículo [Instalación de la CLI de Azure](/cli/azure/install-azure-cli). 
 
 Para comprobar si la instalación se realizó correctamente, abra un terminal o una ventana del símbolo del sistema y ejecute el siguiente comando:
 
@@ -218,4 +218,4 @@ Existen problemas conocidos cuando se usa la CLI en Azure Stack Hub:
 
 - [Implementación de plantillas con la CLI de Azure](../user/azure-stack-deploy-template-command-line.md)
 - [Habilitación de la CLI de Azure para usuarios de Azure Stack Hub (operador)](../operator/azure-stack-cli-admin.md)
-- [Administración de permisos de usuario](../operator/azure-stack-manage-permissions.md) 
+- [Administración de permisos de usuario](../operator/azure-stack-manage-permissions.md)

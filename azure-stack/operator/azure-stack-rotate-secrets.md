@@ -4,17 +4,17 @@ titleSuffix: Azure Stack Hub
 description: Aprenda a cambiar los secretos en Azure Stack Hub.
 author: BryanLa
 ms.topic: how-to
-ms.date: 01/07/2021
+ms.date: 01/19/2021
 ms.reviewer: fiseraci
 ms.author: bryanla
-ms.lastreviewed: 01/07/2021
+ms.lastreviewed: 01/19/2021
 monikerRange: '>=azs-1803'
-ms.openlocfilehash: ec65268a76a8616d5fea213d6c4f0551a5b5ba38
-ms.sourcegitcommit: a90b146769279ffbdb09c68ca0506875a867e177
+ms.openlocfilehash: d7c75bc9864e564736b03477a3c37140e752d850
+ms.sourcegitcommit: 0983c1f90734b7ea5e23ae614eeaed38f9cb3c9a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98123704"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98571355"
 ---
 # <a name="rotate-secrets-in-azure-stack-hub"></a>Cambio de secretos en Azure Stack Hub
 
@@ -67,6 +67,7 @@ Para obtener más información sobre la supervisión y la corrección de alertas
 > - **El administrador debe administrar manualmente los secretos que no son del certificado, como las claves seguras y las cadenas**. Esto incluye las contraseñas de cuentas de usuario y administrador y las [contraseñas de conmutador de red](azure-stack-customer-defined.md).
 > - **Los secretos del proveedor de recursos (RP) de valor agregado** se describen con instrucciones independientes:
 >    - [App Service en Azure Stack Hub](app-service-rotate-certificates.md)
+>    - [Event Hubs en Azure Stack Hub](event-hubs-rp-rotate-secrets.md)
 >    - [IoT Hub en Azure Stack Hub](iot-hub-rp-rotate-secrets.md)
 >    - [MySQL en Azure Stack Hub](azure-stack-mysql-resource-provider-maintain.md#secrets-rotation)
 >    - [SQL en Azure Stack Hub](azure-stack-sql-resource-provider-maintain.md#secrets-rotation)
@@ -238,9 +239,6 @@ Realice los pasos siguientes para rotar los secretos internos:
     $PEPSession = New-PSSession -ComputerName <IP_address_of_ERCS_Machine> -Credential $PEPCreds -ConfigurationName "PrivilegedEndpoint"
 
     # Run Secret Rotation
-    $CertPassword = ConvertTo-SecureString "<Cert_Password>" -AsPlainText -Force
-    $CertShareCreds = Get-Credential
-    $CertSharePath = "<Network_Path_Of_CertShare>"
     Invoke-Command -Session $PEPSession -ScriptBlock {
         Start-SecretRotation -Internal
     }

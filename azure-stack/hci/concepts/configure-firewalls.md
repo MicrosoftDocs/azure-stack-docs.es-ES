@@ -5,12 +5,12 @@ author: JohnCobb1
 ms.author: v-johcob
 ms.topic: how-to
 ms.date: 01/06/2020
-ms.openlocfilehash: 73e58c69295afc1a1bb106ea078e753647daa08d
-ms.sourcegitcommit: c5d46662492887b70a599a60f3c3d27e3460a742
+ms.openlocfilehash: a67881f2dd4be5e4dce5fb967c88484c27025624
+ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97965501"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98255238"
 ---
 # <a name="configure-firewalls-for-azure-stack-hci"></a>Configuración de firewalls para Azure Stack HCI
 
@@ -29,7 +29,7 @@ Para obtener más información, consulte la sección "Conectividad de Azure Stac
 En este tema se describe cómo se puede usar una configuración de firewall bloqueada para impedir todo el tráfico a todos los destinos, excepto los incluidos en la lista de permitidos.
 
    >[!IMPORTANT]
-   > Si la conectividad saliente está restringida por el firewall corporativo externo o el servidor proxy, asegúrese de que las direcciones URL que aparecen en la tabla siguiente no estén bloqueadas. Para obtener información relacionada, consulte la sección "Configuración de red" de [Información general del agente de servidores habilitados para Azure Arc](https://docs.microsoft.com/azure/azure-arc/servers/agent-overview#networking-configuration).
+   > Si la conectividad saliente está restringida por el firewall corporativo externo o el servidor proxy, asegúrese de que las direcciones URL que aparecen en la tabla siguiente no estén bloqueadas. Para obtener información relacionada, consulte la sección "Configuración de red" de [Información general del agente de servidores habilitados para Azure Arc](/azure/azure-arc/servers/agent-overview#networking-configuration).
 
 
 Como se muestra a continuación, es posible que Azure Stack HCI acceda a Azure con más de un firewall.
@@ -37,7 +37,7 @@ Como se muestra a continuación, es posible que Azure Stack HCI acceda a Azure c
 :::image type="content" source="./media/configure-firewalls/firewalls-diagram.png" alt-text="En el diagrama se muestra cómo Azure Stack HCI accede a los puntos de conexión de las etiquetas de servicio a través del puerto 443 (HTTPS) de los firewalls." lightbox="./media/configure-firewalls/firewalls-diagram.png":::
 
 ## <a name="working-with-service-tags"></a>Trabajo con etiquetas de servicio
-Una *etiqueta de servicio* representa un grupo de direcciones IP de un servicio de Azure determinado. Microsoft administra las direcciones IP incluidas en la etiqueta de servicio y actualiza la etiqueta automáticamente a medida que cambian las direcciones IP para reducir las actualizaciones al mínimo. Para más información, consulte [Etiquetas de servicio de red virtual](https://docs.microsoft.com/azure/virtual-network/service-tags-overview).
+Una *etiqueta de servicio* representa un grupo de direcciones IP de un servicio de Azure determinado. Microsoft administra las direcciones IP incluidas en la etiqueta de servicio y actualiza la etiqueta automáticamente a medida que cambian las direcciones IP para reducir las actualizaciones al mínimo. Para más información, consulte [Etiquetas de servicio de red virtual](/azure/virtual-network/service-tags-overview).
 
 ## <a name="required-endpoint-daily-access-after-azure-registration"></a>Acceso diario a puntos de conexión necesarios (después del registro de Azure)
 Azure mantiene las direcciones IP conocidas de los servicios de Azure que se organizan mediante etiquetas de servicio. Azure publica un archivo JSON semanal de todas las direcciones IP para cada servicio. Aunque las direcciones IP no cambian con frecuencia, sí lo hacen varias veces al año. En la tabla siguiente se muestran los puntos de conexión de etiqueta de servicio a los que el sistema operativo necesita acceder.

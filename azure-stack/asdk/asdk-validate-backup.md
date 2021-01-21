@@ -3,16 +3,16 @@ title: Uso del ASDK para validar una copia de seguridad de Azure Stack
 description: Obtenga información sobre cómo validar una copia de seguridad de sistemas integrados de Azure Stack mediante el ASDK.
 author: PatAltimore
 ms.topic: article
-ms.date: 07/31/2019
+ms.date: 1/15/2020
 ms.author: patricka
 ms.reviewer: hectorl
-ms.lastreviewed: 03/11/2020
-ms.openlocfilehash: 0829174ab080ebc482e99490b7a5af5c2e0f2806
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.lastreviewed: 1/15/2020
+ms.openlocfilehash: d04116cb3eeb74eda7241c35c377d34df97dde28
+ms.sourcegitcommit: 48a46142ea7bccd6c8a609e188dd7f3f6444f3c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97873051"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561985"
 ---
 # <a name="use-the-asdk-to-validate-an-azure-stack-backup"></a>Uso del ASDK para validar una copia de seguridad de Azure Stack
 Después de implementar Azure Stack y aprovisionar recursos de usuario, como ofertas, planes, cuotas y suscripciones, debe [habilitar la copia de seguridad de infraestructura de Azure Stack](../operator/azure-stack-backup-enable-backup-console.md). La programación y ejecución de copias de seguridad de infraestructura normales garantizará que los datos de administración de infraestructura no se pierdan si se produce un error muy grave en el servicio o el hardware.
@@ -162,7 +162,7 @@ Después de iniciar sesión como operador de Azure Stack, [instale PowerShell de
 
 ```powershell
 $decryptioncertpassword = Read-Host -AsSecureString -Prompt "Password for the decryption certificate"
-Restore-AzsBackup -ResourceId "<BackupID>" `
+Restore-AzsBackup -Name "<BackupID>" `
  -DecryptionCertPath "<path to decryption certificate with file name (.pfx)>" `
  -DecryptionCertPassword $decryptioncertpassword
 ```

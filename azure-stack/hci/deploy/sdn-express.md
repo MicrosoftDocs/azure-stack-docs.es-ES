@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 12/16/2020
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: ba28d5904e58d84a913777fe80c5aa05a8ecdffe
-ms.sourcegitcommit: 6a99a188bbad491e7d2817de0b9500a27797107e
+ms.openlocfilehash: 968782c4fd5ac0f4e057815c526fbde8f90164af
+ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97658301"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98254847"
 ---
 # <a name="deploy-an-sdn-infrastructure-using-sdn-express"></a>Implementación de una infraestructura de SDN mediante SDN Express
 
@@ -21,7 +21,7 @@ En este tema, implementará una infraestructura completa de red definida por sof
 
 Los scripts admiten una implementación por fases, en la que solo se puede implementar la controladora de red para lograr un conjunto básico de funcionalidades con requisitos de red mínimos. También puede implementar Controladora de red mediante el asistente de creación del clústeres de Windows Admin Center. Para implementar otros componentes de SDN, como el SLB y la puerta de enlace, debe usar los scripts de SDN Express.
 
-También puede implementar una infraestructura de SDN mediante System Center Virtual Machine Manager (VMM). Para obtener más información, consulte [Administrar recursos de SDN en el tejido de VMM](https://docs.microsoft.com/system-center/vmm/network-sdn).
+También puede implementar una infraestructura de SDN mediante System Center Virtual Machine Manager (VMM). Para obtener más información, consulte [Administrar recursos de SDN en el tejido de VMM](/system-center/vmm/network-sdn).
 
 ## <a name="before-you-begin"></a>Antes de empezar
 
@@ -62,7 +62,7 @@ Asegúrese de que todos los servidores host tengan el sistema operativo Azure St
     SDNExpress\scripts\SDNExpress.ps1 -ConfigurationDataFile MultiNodeSampleConfig.psd1 -Verbose
     ```
 
-1. Una vez creadas las máquinas virtuales de la controladora de red, configure las actualizaciones dinámicas de DNS para el nombre de clúster Network Controller en el servidor DNS. Para más información, consulte el paso 3 de [Requisitos de implementación de Controladora de red](https://docs.microsoft.com/windows-server/networking/sdn/plan/installation-and-preparation-requirements-for-deploying-network-controller#step-3-configure-dynamic-dns-registration-for-network-controller).
+1. Una vez creadas las máquinas virtuales de la controladora de red, configure las actualizaciones dinámicas de DNS para el nombre de clúster Network Controller en el servidor DNS. Para más información, consulte el paso 3 de [Requisitos de implementación de Controladora de red](/windows-server/networking/sdn/plan/installation-and-preparation-requirements-for-deploying-network-controller#step-3-configure-dynamic-dns-registration-for-network-controller).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

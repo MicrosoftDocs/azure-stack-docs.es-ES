@@ -7,12 +7,12 @@ ms.service: azure-stack
 ms.topic: conceptual
 ms.date: 10/14/2020
 ms.lastreviewed: 10/14/2020
-ms.openlocfilehash: fb2fce649ecdda418c899b94a34d435a2050a73f
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: df6f531c2aa9642f52cde4fb2bbfd93375340684
+ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97874445"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98256173"
 ---
 # <a name="azure-stack-hub-ruggedized-network-integration"></a>Integración de red de Azure Stack Hub Ruggedized 
 
@@ -236,6 +236,5 @@ Las VIP de infraestructura interna no se indican porque no son necesarias para l
 |  |&#42;.scm.appservice. *&lt;región>.&lt;fqdn>*|TCP|443 (HTTPS)|
 |  |api.appservice. *&lt;región>.&lt;fqdn>*|TCP|443 (HTTPS)<br>44300 (Azure Resource Manager)|
 |  |ftp.appservice. *&lt;región>.&lt;fqdn>*|TCP, UDP|21, 1021, 10001-10100 (FTP)<br>990 (FTPS)|
-|Puertas de enlace de VPN|     |     |[Consulte las preguntas más frecuentes sobre las puertas de enlace de VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-vpn-faq#can-i-traverse-proxies-and-firewalls-using-point-to-site-capability).|
+|Puertas de enlace de VPN|     |     |[Consulte las preguntas más frecuentes sobre las puertas de enlace de VPN](/azure/vpn-gateway/vpn-gateway-vpn-faq#can-i-traverse-proxies-and-firewalls-using-point-to-site-capability).|
 |     |     |     |     |
-

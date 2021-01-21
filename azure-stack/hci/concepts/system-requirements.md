@@ -6,13 +6,13 @@ ms.author: v-kedow
 ms.topic: how-to
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 10/29/2020
-ms.openlocfilehash: 2d4aebd0609dff744f4c8f6ae9113fba1b7b0ba9
-ms.sourcegitcommit: 26901a61a44390bc9b7804c22018c213036e680d
+ms.date: 01/14/2021
+ms.openlocfilehash: 3b29dfb35bad91ef02feebc22255b89116da1505
+ms.sourcegitcommit: 8526f642ef859b0006c3991d966f93608a87288a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96354163"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98243466"
 ---
 # <a name="system-requirements-for-azure-stack-hci"></a>Requisitos del sistema para Azure Stack HCI
 
@@ -61,20 +61,6 @@ Un clúster de Azure Stack HCI requiere una conexión de red confiable de baja l
 
 - Compruebe que, al menos, un adaptador de red está disponible y dedicado para la administración del clúster.
 - Compruebe que los conmutadores físicos de la red estén configurados para permitir el tráfico en cualquier VLAN que utilice.
-
-Hay varios tipos de comunicación entre los nodos de servidor:
-
-- Comunicación del clúster (combinaciones de nodos, actualizaciones de clúster, actualizaciones del registro)
-- Latidos de clúster
-- Tráfico redirigido del volumen compartido de clúster (CSV)
-- Tráfico de migración en vivo para máquinas virtuales
-
-Con Espacios de almacenamiento directo, se debe tener en cuenta el tráfico de red adicional:
-
-- Capa de bus de almacenamiento (SBL): extensiones, o datos, que se distribuyen entre los nodos
-- Estado: supervisión y administración de objetos (nodos, unidades, tarjetas de red, servicio de clúster)
-
-En el caso de los clústeres extendidos, también hay tráfico adicional de réplica de almacenamiento que fluye entre los sitios. El tráfico de la capa de bus de almacenamiento (SBL) y el del volumen compartido de clúster (CSV) no se dirige entre sitios, solo entre los nodos de servidor dentro de cada sitio.
 
 Para conocer los requisitos y las consideraciones sobre redes de host, consulte [Requisitos de red de host para Azure Stack HCI](host-network-requirements.md).
 

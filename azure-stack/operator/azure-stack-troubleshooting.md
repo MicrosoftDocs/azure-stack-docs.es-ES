@@ -8,12 +8,12 @@ ms.date: 12/10/2020
 ms.author: patricka
 ms.reviewer: prchint
 ms.lastreviewed: 12/10/2020
-ms.openlocfilehash: 4c5117469e1a568252e23f2794996f8d367942af
-ms.sourcegitcommit: 52c934f5eeb5fcd8e8f2ce3380f9f03443d1e445
+ms.openlocfilehash: ff3164e16262ecfd4cdf84bbdb5fbb24942fc6ab
+ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97974258"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98255714"
 ---
 # <a name="troubleshoot-issues-in-azure-stack-hub"></a>Solución de problemas de Azure Stack Hub
 
@@ -30,7 +30,7 @@ En estas secciones se incluyen vínculos a documentos que abordan las preguntas 
 
 ### <a name="updates-and-diagnostics"></a>Actualizaciones y diagnósticos
 
-* [Uso de las herramientas de diagnóstico en Azure Stack Hub](./azure-stack-diagnostic-log-collection-overview.md)
+* [Uso de las herramientas de diagnóstico en Azure Stack Hub](./diagnostic-log-collection.md)
 * [Validación del estado del sistema en Azure Stack Hub](azure-stack-diagnostic-test.md)
 * [Ritmo del lanzamiento de las actualizaciones](azure-stack-servicing-policy.md#update-package-release-cadence)
 * [Comprobación y solución de problemas de estado de nodo](azure-stack-node-actions.md)
@@ -199,11 +199,11 @@ Si se produce un error en el script Create-AADIdentityApp.ps1 necesario para App
 
 El proceso de revisión y actualización de Azure Stack Hub está diseñado para permitir a los operadores aplicar paquetes de actualización de una manera coherente y simplificada. Aunque es poco frecuente, pueden producirse problemas durante la revisión y actualización. Se recomiendan los siguientes pasos en caso de que se produzca un problema durante el proceso de revisión y actualización:
 
-0. **Requisitos previos**: Asegúrese de que ha seguido la [lista de comprobación de la actividad de actualización](release-notes-checklist.md) y de que ha [habilitado la recopilación proactiva de registros](./azure-stack-diagnostic-log-collection-overview.md#send-logs-proactively).
+0. **Requisitos previos**: Asegúrese de que ha seguido la [lista de comprobación de la actividad de actualización](release-notes-checklist.md) y de que ha [habilitado la recopilación proactiva de registros](./diagnostic-log-collection.md#send-logs-proactively).
 
 1. Siga los pasos de corrección de la alerta de error que se crea cuando se produce un error en la actualización.
 
-2. Si no ha podido resolver el problema, cree una [incidencia de soporte técnico de Azure Stack Hub](./azure-stack-help-and-support-overview.md). Asegúrese de que ha [recopilado los registros](./azure-stack-diagnostic-log-collection-overview.md#send-logs-now) del intervalo de tiempo en el que se produjo el problema.
+2. Si no ha podido resolver el problema, cree una [incidencia de soporte técnico de Azure Stack Hub](./azure-stack-help-and-support-overview.md). Asegúrese de que ha [recopilado los registros](./diagnostic-log-collection.md#send-logs-now) del intervalo de tiempo en el que se produjo el problema.
 
 ## <a name="common-azure-stack-hub-patch-and-update-issues"></a>Problemas habituales de revisión y actualización de Azure Stack Hub
 

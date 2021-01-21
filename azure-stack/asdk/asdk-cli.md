@@ -7,18 +7,18 @@ ms.date: 12/2/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/2/2020
-ms.openlocfilehash: 7b408e28ff70e66c0460473f54304cbf50fa2c92
-ms.sourcegitcommit: 9ef2cdc748cf00cd3c8de90705ea0542e29ada97
+ms.openlocfilehash: 32a09b833e2e5a76abf0c9a6c67540ca124bfe94
+ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96524692"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98254592"
 ---
 # <a name="setting-up-certificates-for-azure-cli-on-azure-stack-development-kit"></a>Configuración de certificados para la CLI de Azure en el Kit de desarrollo de Azure Stack
 
 Siga los pasos de este artículo para configurar la Interfaz de la línea de comandos (CLI) de Azure a fin de administrar los recursos del Kit de desarrollo de Azure Stack (ASKD) de las plataformas de cliente de Linux, Mac y Windows.
 
-En este artículo se explica cómo obtener los certificados y confiar en ellos en el equipo de administración remoto. Para instalar la CLI de Azure y conectarse a su entorno, consulte [Instalación de la CLI de Azure en Azure Stack Hub](/azure-stack/user/azure-stack-version-profiles-azurecli2).
+En este artículo se explica cómo obtener los certificados y confiar en ellos en el equipo de administración remoto. Para instalar la CLI de Azure y conectarse a su entorno, consulte [Instalación de la CLI de Azure en Azure Stack Hub](../user/azure-stack-version-profiles-azurecli2.md).
 
 ## <a name="prepare-for-azure-cli"></a>Preparativos para la CLI de Azure
 
@@ -126,7 +126,7 @@ Para usar la CLI de Azure con ASDK, debe confiar en el certificado raíz de CA e
     Write-Host "Python Cert store was updated to allow the Azure Stack Hub CA root certificate"
     ```
 
-Para obtener instrucciones sobre la instalación y conexión con la CLI de Azure, consulte [Administración e implementación de recursos en Azure Stack Hub con la CLI de Azure](/azure-stack/user/azure-stack-version-profiles-azurecli2).
+Para obtener instrucciones sobre la instalación y conexión con la CLI de Azure, consulte [Administración e implementación de recursos en Azure Stack Hub con la CLI de Azure](../user/azure-stack-version-profiles-azurecli2.md).
 
 ### <a name="linux"></a>[Linux](#tab/lin)
 
@@ -154,7 +154,7 @@ Al configurar la CLI, confíe en el certificado raíz de CA de Azure Stack Hub; 
      sudo cat /var/lib/waagent/Certificates.pem >> ~/<yourpath>/cacert.pem
      ```
 
-Para obtener instrucciones sobre la instalación y conexión con la CLI de Azure, consulte [Administración e implementación de recursos en Azure Stack Hub con la CLI de Azure](/azure-stack/user/azure-stack-version-profiles-azurecli2).
+Para obtener instrucciones sobre la instalación y conexión con la CLI de Azure, consulte [Administración e implementación de recursos en Azure Stack Hub con la CLI de Azure](../user/azure-stack-version-profiles-azurecli2.md).
 
 ---
 

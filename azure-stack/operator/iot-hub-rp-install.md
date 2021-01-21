@@ -7,12 +7,12 @@ ms.service: azure-stack
 ms.topic: how-to
 ms.date: 1/6/2020
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: 13bac36ffd7d771d1b5504067bfe1d679cdda5e6
-ms.sourcegitcommit: 0e3296fb27b9dabbc2569bf85656c4c7b1d58ba9
+ms.openlocfilehash: 47d06bc7363a9ce8d4de8971bf26c38bfdb16bcc
+ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93050414"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98256122"
 ---
 # <a name="how-to-install-iot-hub-on-azure-stack-hub"></a>Instalación de IoT Hub en Azure Stack Hub
 
@@ -37,7 +37,7 @@ Para descargar IoT Hub para una implementación conectada, siga estos pasos:
 
     [![Proveedor de recursos de IoT Hub en Marketplace](../operator/media/iot-hub-rp-install/download1.png)](../operator/media/iot-hub-rp-install/download1.png#lightbox)
 
-4. En la página del paquete de **IoT Hub** , seleccione **Descargar**.
+4. En la página del paquete de **IoT Hub**, seleccione **Descargar**.
 
     [![Detalles del paquete de IoT Hub](../operator/media/iot-hub-rp-install/download2.png)](../operator/media/iot-hub-rp-install/download2.png#lightbox)
 
@@ -61,7 +61,7 @@ Para descargar IoT Hub para una implementación desconectada o parcialmente cone
 
 ## <a name="install-iot-hub"></a>Instalación de IoT Hub
 
-En la página de **administración de Marketplace** , siga estos pasos para instalar el paquete de IoT Hub:
+En la página de **administración de Marketplace**, siga estos pasos para instalar el paquete de IoT Hub:
 
 1. Haga clic en la fila de **IoT Hub** y, a continuación, en **Iniciar la instalación**.
 
@@ -105,7 +105,7 @@ En la página de **administración de Marketplace** , siga estos pasos para inst
 
 El proveedor de recursos de IoT Hub se ha instalado correctamente. Para comenzar, realice los pasos siguientes:
 
-1. Si es necesario, siga las instrucciones para [crear un plan, ofertas y la suscripción](azure-stack-plan-offer-quota-overview.md).
+1. Si es necesario, siga las instrucciones para [crear un plan, ofertas y la suscripción](./service-plan-offer-subscription-overview.md).
 
 2. Si ya existe una suscripción, actualice la oferta o el plan asociado para que incluya el servicio **Microsoft.Devices**. Vaya a **Plan** -> **Choose the plan to update (Elegir el plan que desea actualizar)**  -> **Add Service and quota** (Agregar servicio y cuota).
 
