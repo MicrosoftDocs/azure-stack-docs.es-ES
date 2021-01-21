@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 12/09/2019
 ms.reviewer: jfggdl
 ms.lastreviewed: 12/09/2019
-ms.openlocfilehash: aaadabe207146f200d6090c2e59bcc563831c6d4
-ms.sourcegitcommit: f56a5b287c90b2081ae111385c8b7833931d4059
+ms.openlocfilehash: 9cf3339398516688865f7aab3a696562f4974699
+ms.sourcegitcommit: 0983c1f90734b7ea5e23ae614eeaed38f9cb3c9a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97343593"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98571338"
 ---
 # <a name="how-to-manage-event-hubs-on-azure-stack-hub"></a>Cómo administrar Event Hubs en Azure Stack Hub
 
@@ -50,8 +50,8 @@ El proveedor de recursos de Event Hubs admite las siguientes alertas:
 |----------|-------|------|-----------|
 | Rendimiento | | | |
 | | EventHub-CpuUsage | Advertencia | El promedio de % de uso de CPU del clúster de Event Hubs en las últimas seis horas es superior al 50 %. |
-| | EventHub-MemoryUsage | Advertencia | El promedio de % de uso de disco de datos (E:) del clúster de Event Hubs en las últimas seis horas es mayor del 50 %. |
-| | EventHub-DiskUsage | Advertencia | El promedio de % de espacio libre en memoria del clúster de Event Hubs en las últimas seis horas es inferior al 50 %. |
+| | EventHub-MemoryUsage | Advertencia | El promedio de % de espacio libre en memoria del clúster de Event Hubs en las últimas seis horas es inferior al 50 %. |
+| | EventHub-DiskUsage | Advertencia | El promedio de % de uso de disco de datos (E:) del clúster de Event Hubs en las últimas seis horas es mayor del 50 %. |
 | Uso o cuota | | | |
 | | EventHub-QuotaExceeded | Advertencia | Se ha producido un error de cuota superada en las últimas seis horas. |
 | | EventHub-NamespaceCreditUsage | Advertencia | La suma de los usos de los créditos del espacio de nombres en las últimas seis horas es mayor que 10 000. |
@@ -72,7 +72,7 @@ Al seleccionar una alerta de la lista, se muestra el panel **Detalles de alertas
 
 [![Administración de Event hubs: detalles de alertas](media/event-hubs-rp-manage/2-alerts-detail.png)](media/event-hubs-rp-manage/2-alerts-detail.png#lightbox)
 
-Para más información sobre la funcionalidad de supervisión de Azure Stack Hub, incluidas las alertas, consulte [Supervisión de estado y alertas](azure-stack-monitor-health.md). Para más información sobre la recopilación de registros, consulte [Introducción a la recopilación de registros de diagnóstico de Azure Stack Hub](azure-stack-diagnostic-log-collection-overview.md).
+Para más información sobre la funcionalidad de supervisión de Azure Stack Hub, incluidas las alertas, consulte [Supervisión de estado y alertas](azure-stack-monitor-health.md). Para más información sobre la recopilación de registros, consulte [Introducción a la recopilación de registros de diagnóstico de Azure Stack Hub](./diagnostic-log-collection.md).
 
 ## <a name="event-hubs-clusters"></a>Clústeres de Event Hubs
 
@@ -101,17 +101,4 @@ Para más información sobre:
 
 - Los tipos de cuota definidos para Event Hubs, consulte [Tipos de cuotas](azure-stack-quota-types.md#event-hubs-quota-types).
 - Las funcionalidades de supervisión de Azure Stack Hub, incluidas las alertas, consulte [Supervisión de estado y alertas](azure-stack-monitor-health.md). 
-- La colección de registros de Azure Stack Hub, consulte [Introducción a la recopilación de registros de diagnóstico de Azure Stack Hub](azure-stack-diagnostic-log-collection-overview.md).
-
-
-
-
-
-
-
-
-
-
-
-
-
+- La colección de registros de Azure Stack Hub, consulte [Introducción a la recopilación de registros de diagnóstico de Azure Stack Hub](./diagnostic-log-collection.md).

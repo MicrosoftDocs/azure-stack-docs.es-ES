@@ -7,12 +7,12 @@ ms.date: 12/2/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/2/2020
-ms.openlocfilehash: 02a3fdb862f3a4c04a63d5e5694487b62435ee16
-ms.sourcegitcommit: 52c934f5eeb5fcd8e8f2ce3380f9f03443d1e445
+ms.openlocfilehash: 02765dbc33fe1bbcb4100e1523be96526549f367
+ms.sourcegitcommit: 649540e30e1018b409f4b1142bf2cb392c9e8b0d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97974121"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98208104"
 ---
 # <a name="extending-storage-to-azure-stack-hub"></a>Ampliación del almacenamiento a Azure Stack Hub
 
@@ -264,7 +264,7 @@ Para configurar el iniciador iSCSI, en primer lugar, vuelva a iniciar sesión en
 
 15. Repita el proceso con la siguiente información:
 
-    a. ** Dirección IP**: la segunda IP del destino iSCSI.
+    a. **Dirección IP**: la segunda IP del destino iSCSI.
 
     b.  **Adaptador local**: Iniciador iSCSI de Microsoft.
 
@@ -292,7 +292,7 @@ Para configurar el iniciador iSCSI, en primer lugar, vuelva a iniciar sesión en
 
 1.  Repita el proceso con la segunda combinación de iniciador y destino.
 
-    a. ** Adaptador local**: Iniciador iSCSI de Microsoft.
+    a. **Adaptador local**: Iniciador iSCSI de Microsoft.
 
     b.  **IP del iniciador**: 10.10.11.4.
 
