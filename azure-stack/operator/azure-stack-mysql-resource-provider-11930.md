@@ -7,12 +7,12 @@ ms.date: 09/22/2020
 ms.author: caoyang
 ms.reviewer: xiaofmao
 ms.lastreviewed: 09/22/2020
-ms.openlocfilehash: 2312219d67741b9485a6070c00418762e50fac73
-ms.sourcegitcommit: a745662c7a5a18f135accf3f70d8508b57e83e2b
+ms.openlocfilehash: 225c765642dc48b299c899d71eb0d0ce13d4852d
+ms.sourcegitcommit: 0983c1f90734b7ea5e23ae614eeaed38f9cb3c9a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97737848"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98571372"
 ---
 # <a name="mysql-resource-provider-1193x-release-notes"></a>Notas de la versión del proveedor de recursos MySQL 1.1.93.x
 
@@ -42,6 +42,8 @@ Es recomendable que aplique el proveedor de recursos MySQL 1.1.93.1 después de
 
 ## <a name="known-issues"></a>Problemas conocidos
 Se puede producir un error en la implementación de la versión 1.1.93.0 si se usa el contexto AzureRmContext erróneo. Se recomienda actualizar a la versión 1.1.93.1 directamente. Si ya ha actualizado correctamente a la versión 1.1.93.0, puede omitir la versión 1.1.93.1 de forma segura.
+
+Al volver a implementar el proveedor de recursos de MySQL cuando ya se había implementado la misma versión (por ejemplo, cuando el proveedor de recursos de MySQL versión 1.1.93.1 ya está implementado y se vuelve a implementar la misma versión), se detendrá la máquina virtual que hospeda el proveedor de recursos de MySQL. Para corregir este problema, vaya al portal de administración, busque y reinicie la máquina virtual llamada mysqlvm\<version\> en el grupo de recursos llamado system.\<region\>.mysqladapter.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

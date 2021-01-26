@@ -3,16 +3,16 @@ title: Acciones de los nodos de la unidad de escalado en Azure Stack Hub
 description: Obtenga información sobre las acciones de los nodos de la unidad de escalado, incluidas las de conectar, desconectar, deshabilitar y reanudar, así como visualizar el estado de los nodos en los sistemas integrados de Azure Stack Hub.
 author: PatAltimore
 ms.topic: how-to
-ms.date: 11/19/2020
+ms.date: 1/19/2021
 ms.author: patricka
 ms.reviewer: thoroet
-ms.lastreviewed: 11/19/2020
-ms.openlocfilehash: dc98263b16a72e6b9809e7ef3bc0c286b627749d
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.lastreviewed: 1/19/2021
+ms.openlocfilehash: 5bececf48222c9dc7401df7cb84d83f375c93d75
+ms.sourcegitcommit: 01abc9d81ced31bd727626195148b4e00cc2d62e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97869770"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98584286"
 ---
 # <a name="scale-unit-node-actions-in-azure-stack-hub"></a>Acciones de los nodos de la unidad de escalado en Azure Stack Hub
 
@@ -41,12 +41,14 @@ Para ver el estado de una unidad de escalado:
    - La dirección IP del controlador de administración de placa base (BMC).
    - El número total de núcleos.
    - La cantidad total de memoria.
+   
+    Las acciones de nodo también pueden generar alertas esperadas en el portal del administrador. 
 
 ![estado de una unidad de escalado](media/azure-stack-node-actions/multinodeactions.png)
 
 ### <a name="node-operational-states"></a>Estados operativos de nodo
 
-| Estado | Descripción |
+| Status | Descripción |
 |----------------------|-------------------------------------------------------------------|
 | En ejecución | El nodo está participando activamente en la unidad de escalado. |
 | Detenido | El nodo no está disponible. |
@@ -61,8 +63,6 @@ Azure Stack Hub puede mostrar el estado operativo del nodo como **Agregando** de
 Esto puede ocurrir si la memoria caché del rol Proveedor de recursos de Service Fabric no se actualizó después de una operación. 
 
 Antes de aplicar los pasos siguientes, asegúrese de que no haya ninguna operación en curso. Actualice el punto de conexión para que coincida con su entorno.
-
-
 
 ### <a name="az-modules"></a>[Modules de Az](#tab/az1)
 

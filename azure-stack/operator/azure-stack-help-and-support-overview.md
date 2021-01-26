@@ -3,16 +3,16 @@ title: Ayuda y soporte técnico de Azure Stack Hub
 description: Obtenga soporte técnico para Microsoft Azure Stack Hub.
 author: PatAltimore
 ms.topic: article
-ms.date: 02/26/2020
+ms.date: 01/19/2021
 ms.author: patricka
 ms.reviewer: shisab
-ms.lastreviewed: 02/26/2020
-ms.openlocfilehash: cb2fb8ce9ad1b24430cf545eba3f31ac9e754c43
-ms.sourcegitcommit: 52c934f5eeb5fcd8e8f2ce3380f9f03443d1e445
+ms.lastreviewed: 01/19/2021
+ms.openlocfilehash: 88414f6e4198c7db04307eb4d508ee5acd9dfbe9
+ms.sourcegitcommit: 01abc9d81ced31bd727626195148b4e00cc2d62e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97974326"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98584318"
 ---
 # <a name="azure-stack-hub-help-and-support"></a>Ayuda y soporte técnico de Azure Stack Hub
 
@@ -32,7 +32,7 @@ En la parte superior de **Ayuda y soporte técnico** hay opciones que debería p
 
 ![Compatibilidad con el autoservicio en Azure Stack Hub](media/azure-stack-help-and-support/get-support-tiles.png)
 
-- **Documentación** La [documentación del operador de Azure Stack Hub](index.yml) incluye conceptos, temas y tutoriales de procedimientos que muestran cómo ofrecer servicios de Azure Stack Hub. Estos servicios incluyen máquinas virtuales, bases de datos SQL, aplicaciones web, etc.
+- **Documentación** La [documentación del operador de Azure Stack Hub](index.yml) incluye conceptos, instrucciones de procedimientos y tutoriales que muestran cómo ofrecer servicios de Azure Stack Hub. Estos servicios incluyen máquinas virtuales, bases de datos SQL, aplicaciones web, etc.
 
 - **Más información sobre la facturación**. Obtenga sugerencias sobre [el uso y la facturación](azure-stack-billing-and-chargeback.md).
 
@@ -56,6 +56,22 @@ También se puede acceder a los foros de MSDN para tratar un problema o para rea
 
 ![Obtener ayuda experta para Azure Stack Hub](media/azure-stack-help-and-support/get-support-cards.png)
 
+### <a name="information-for-a-support-request"></a>Información para una solicitud de soporte técnico
+
+Para acelerar la experiencia de soporte técnico, tenga disponible la siguiente información:
+
+ - ¿Es un asociado de hardware de Azure Stack Hub?
+ - ¿Cuántos nodos de Azure Stack Hub tiene en su sistema?
+ - ¿Cuál es el nivel de revisión actual del sistema?
+ - ¿Qué número de compilación ejecuta actualmente el sistema?
+ - ¿Cuál es el nombre de la región de la nube?
+ - ¿Es un sistema conectado o desconectado?
+ - ¿Cuándo comenzó el problema?
+ - ¿Puede proporcionar la hora exacta en la que se produjo el último error en la copia de seguridad?
+ - ¿Para qué roles se produce el error de copia de seguridad?
+ - ¿Ha realizado algún cambio reciente? Por ejemplo, ¿ha realizado una actualización, un cambio de hardware o ha aplicado una actualización de OEM?
+ - ¿Es posible proporcionar los registros para investigar el problema?
+
 ### <a name="get-up-to-speed-with-azure-stack-hub"></a>Póngase al día con Azure Stack Hub
 
 Este conjunto de tutoriales se puede personalizar en función de si se ejecutan en ASDK o en sistemas integrados de forma que se pueda poner rápidamente en marcha con su entorno.
@@ -66,8 +82,8 @@ Este conjunto de tutoriales se puede personalizar en función de si se ejecutan 
 
 Los registros de diagnóstico se pueden enviar a Microsoft de dos formas:
 
-- [Envío de registros de forma proactiva](./azure-stack-diagnostic-log-collection-overview.md#send-logs-proactively): si está habilitada, ciertas alertas de estado desencadenan la recopilación de registros.
-- [Envío inmediato de registros](./azure-stack-diagnostic-log-collection-overview.md#send-logs-now) puede elegir manualmente una ventana deslizante específica como período de tiempo de la recopilación de registros.
+- [Envío de registros de forma proactiva](./diagnostic-log-collection.md#send-logs-proactively): si está habilitada, ciertas alertas de estado desencadenan la recopilación de registros.
+- [Envío inmediato de registros](./diagnostic-log-collection.md#send-logs-now) puede elegir manualmente una ventana deslizante específica como período de tiempo de la recopilación de registros.
 
 ![Captura de pantalla que muestra cómo iniciar la recopilación de registros de diagnóstico.](media/azure-stack-help-and-support/banner-enable-automatic-log-collection.png)
 
@@ -83,7 +99,7 @@ A partir de la versión 1907, hay dos nuevas formas de recopilar registros en **
 
 ![Opciones de recopilación de registros de diagnóstico](media/azure-stack-automatic-log-collection/azure-stack-log-collection-overview.png)
 
-Los sistemas integrados pueden compartir los registros de diagnóstico con Soporte técnico de Microsoft. Dado que el Kit de desarrollo de Azure Stack (ASDK) es un entorno de evaluación, no es compatible con Soporte técnico de Microsoft. Para más información, consulte [Información general sobre la recopilación de registros de diagnóstico de Azure Stack Hub](azure-stack-diagnostic-log-collection-overview.md).
+Los sistemas integrados pueden compartir los registros de diagnóstico con Soporte técnico de Microsoft. Dado que el Kit de desarrollo de Azure Stack (ASDK) es un entorno de evaluación, no es compatible con Soporte técnico de Microsoft. Para más información, consulte [Información general sobre la recopilación de registros de diagnóstico de Azure Stack Hub](./diagnostic-log-collection.md).
 
 ## <a name="help-and-support-for-earlier-releases-azure-stack-hub-pre-1905"></a>Ayuda y soporte técnico para las versiones anteriores de Azure Stack Hub (anteriores a la versión 1905)
 
@@ -105,6 +121,6 @@ Seleccione **Ayuda** (signo de interrogación) en la esquina superior derecha de
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Información sobre la [recopilación de registros de diagnóstico](./azure-stack-diagnostic-log-collection-overview.md).
+- Información sobre la [recopilación de registros de diagnóstico](./diagnostic-log-collection.md).
 - Aprenda a [buscar el identificador de su nube](azure-stack-find-cloud-id.md).
 - Aprenda a [solucionar problemas de Azure Stack Hub](azure-stack-troubleshooting.md).

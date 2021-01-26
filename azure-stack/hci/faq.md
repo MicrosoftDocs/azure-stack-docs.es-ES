@@ -6,13 +6,13 @@ author: JohnCobb1
 ms.author: v-johcob
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 11/24/2020
-ms.openlocfilehash: f4c6b9585f41388281c6618fabd21932f6d48c38
-ms.sourcegitcommit: afdae61022037b5dba8345cb264049897e0aca8f
+ms.date: 1/15/2021
+ms.openlocfilehash: 97979a9fb96840337e89a4a3db3e3307cdb70eac
+ms.sourcegitcommit: 8526f642ef859b0006c3991d966f93608a87288a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97051605"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98243398"
 ---
 # <a name="azure-stack-hci-faq"></a>Preguntas más frecuentes sobre Azure Stack HCI
 Las preguntas más frecuentes sobre Azure Stack HCI incluyen una sección sobre conectividad de Azure Stack HCI y una sección de preguntas más frecuentes generales.
@@ -24,7 +24,9 @@ Azure Stack HCI es una pila de infraestructura hiperconvergida local que se entr
 
 **¿Los datos almacenados en Azure Stack HCI se envían a la nube?**
 
-No. Los nombres, los metadatos, la configuración y el contenido de las máquinas virtuales locales nunca se envían a la nube a menos que active servicios adicionales expresamente para ese fin, como Azure Backup o Azure Site Recovery. O a menos que inscriba esas máquinas virtuales de forma individual en servicios de administración en la nube como Azure Arc.
+No. Los datos, incluidos los nombres, los metadatos, la configuración y el contenido de las máquinas virtuales locales nunca se envían a la nube a menos que active servicios adicionales expresamente para ese fin, como Azure Backup o Azure Site Recovery, o salvo que inscriba esas máquinas virtuales de forma individual en servicios de administración en la nube como Azure Arc.
+
+Para más información sobre los datos de diagnóstico que recopilamos para mantener Azure Stack HCI seguro, actualizado y funcionando según lo previsto, consulte [Recopilación de datos de Azure Stack HCI](concepts/data-collection.md) y [Residencia de datos en Azure](https://azure.microsoft.com/global-infrastructure/data-residency/).
 
 ### <a name="edge-local-management-and-control"></a>Control y administración en el entorno local perimetral
 
@@ -68,7 +70,7 @@ Esto depende de las características que utilice. Como mínimo, Azure Stack HCI 
 
 **¿Dónde va realmente la información sincronizada?**
 
-Azure Stack HCI se sincroniza con Azure y almacena los datos en un centro de datos seguro y operado por Microsoft. Para más información, consulte [Recopilación de datos de Azure Stack HCI](concepts/data-collection.md) y [Residencia de datos en Azure](https://azure.microsoft.com/global-infrastructure/data-residency/).
+Azure Stack HCI se sincroniza con Azure y almacena los datos en un centro de datos seguro y operado por Microsoft. Para más información sobre los datos de diagnóstico que recopilamos para mantener Azure Stack HCI seguro, actualizado y funcionando según lo previsto, consulte [Recopilación de datos de Azure Stack HCI](concepts/data-collection.md) y [Residencia de datos en Azure](https://azure.microsoft.com/global-infrastructure/data-residency/).
 
 ### <a name="disconnected-or-air-gapped"></a>Desconectado o "con restricciones en línea"
 

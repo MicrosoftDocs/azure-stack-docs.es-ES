@@ -5,12 +5,12 @@ author: khdownie
 ms.author: v-kedow
 ms.topic: conceptual
 ms.date: 07/21/2020
-ms.openlocfilehash: d60ec2edb4247c72d35e69e199bf3fc28259e2ce
-ms.sourcegitcommit: 3e2460d773332622daff09a09398b95ae9fb4188
+ms.openlocfilehash: 0503e9a97a2ca2b15447dbd837eeac9162b84654
+ms.sourcegitcommit: 48a46142ea7bccd6c8a609e188dd7f3f6444f3c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90572130"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98562002"
 ---
 # <a name="understanding-cluster-and-pool-quorum-on-azure-stack-hci"></a>Descripción del cuórum de clúster y de grupo en Azure Stack HCl
 
@@ -59,11 +59,11 @@ Hay dos maneras en que el clúster puede hacer que el *número total de votos* s
 1. En primer lugar, puede *activar* uno agregando un *testigo* con un voto adicional. Esto requiere la configuración del usuario.
 2. O bien, puede *desactivar* uno si pone a cero el voto de un nodo menos afortunado (se realiza automáticamente según sea necesario).
 
-Siempre que los nodos supervivientes comprueben correctamente que son la *mayoría*, la definición de *mayoría* se actualiza para que estén entre los supervivientes. Esto permite que el clúster pierda un nodo, luego otro, después otro, etc. Este concepto de la adaptación del *número total de votos* después de errores sucesivos se conoce como ***cuórum dinámico***.
+Siempre que los nodos supervivientes comprueben correctamente que son la *mayoría*, la definición de *mayoría* se actualiza para que estén entre los supervivientes. Esto permite que el clúster pierda un nodo, luego otro, después otro, etc. Este concepto de la adaptación del *número total de votos* después de errores sucesivos se conoce como ***cuórum dinámico** _.
 
 ### <a name="dynamic-witness"></a>Testigo dinámico
 
-El testigo dinámico alterna el voto del testigo para asegurarse de que el *número total de votos* sea impar. Si hay un número impar de votos, el testigo no tiene un voto. Si hay un número par de votos, el testigo tiene un voto. El testigo dinámico reduce considerablemente el riesgo de que el clúster se desactive debido a un error del testigo. El clúster decide si usará el voto del testigo en función del número de nodos votantes que estén disponibles en el clúster.
+El testigo dinámico alterna el voto del testigo para asegurarse de que el _número total de votos* sea impar. Si hay un número impar de votos, el testigo no tiene un voto. Si hay un número par de votos, el testigo tiene un voto. El testigo dinámico reduce considerablemente el riesgo de que el clúster se desactive debido a un error del testigo. El clúster decide si usará el voto del testigo en función del número de nodos votantes que estén disponibles en el clúster.
 
 El cuórum dinámico funciona con el testigo dinámico de la manera que se describe a continuación.
 
@@ -72,7 +72,7 @@ El cuórum dinámico funciona con el testigo dinámico de la manera que se descr
 - Si tiene un número **par** de nodos y ningún testigo, *un nodo pone su voto a cero*. Por ejemplo, solo tres de los cuatro nodos obtienen votos, por lo que el *número total de votos* es tres, y dos supervivientes con votos se consideran una mayoría.
 - Si tiene un número **impar** de nodos y ningún testigo, *todos obtienen votos*.
 - Si tiene un número **par** de nodos más un testigo, *el testigo vota*, por lo que el total es impar.
-- Si tiene un número**impar** de nodos más un testigo, *el testigo no vota*.
+- Si tiene un número **impar** de nodos más un testigo, *el testigo no vota*.
 
 El cuórum dinámico ofrece la posibilidad de asignar un voto a un nodo de forma dinámica para evitar la pérdida de la mayoría de los votos y permitir que el clúster se ejecute con un nodo (el último que queda). Vamos a tomar como ejemplo un clúster de cuatro nodos. Supongamos que el cuórum necesita tres votos.
 
@@ -89,11 +89,11 @@ El escenario anterior se aplica a un clúster general que no tiene habilitado Es
 ### <a name="examples"></a>Ejemplos
 
 #### <a name="two-nodes-without-a-witness"></a>Dos nodos sin un testigo.
-El voto de un nodo se pone a cero, por lo que la *mayoría* de votos se determina a partir de un total de **1 voto**. Si el nodo que no vota se vuelve inactivo de manera inesperada, el superviviente tiene 1/1 y el clúster sobrevive. Si el nodo votante se vuelve inactivo de manera inesperada, el superviviente tiene 0/1 y el clúster deja de funcionar. Si el nodo votante se apaga correctamente, el voto se transfiere al otro nodo y el clúster sobrevive. ***Este es el motivo por el que es fundamental configurar un testigo.***
+El voto de un nodo se pone a cero, por lo que la *mayoría* de votos se determina a partir de un total de **1 voto**. Si el nodo que no vota se vuelve inactivo de manera inesperada, el superviviente tiene 1/1 y el clúster sobrevive. Si el nodo votante se vuelve inactivo de manera inesperada, el superviviente tiene 0/1 y el clúster deja de funcionar. Si el nodo votante se apaga correctamente, el voto se transfiere al otro nodo y el clúster sobrevive. **_Este es el motivo por el que es fundamental configurar un testigo._* _
 
 ![Cuórum explicado en el caso de dos nodos sin un testigo](media/quorum/2-node-no-witness.png)
 
-- Puede sobrevivir a un error del servidor: **Cincuenta por ciento de probabilidad**.
+- Puede sobrevivir a un error del servidor: _*cincuenta por ciento de probabilidad**.
 - Puede sobrevivir a un error del servidor y luego a otro: **No**.
 - Puede sobrevivir a dos errores seguidos del servidor: **No**.
 
@@ -159,7 +159,7 @@ Los clústeres de conmutación por error admiten tres tipos de testigos de cuór
 
 - **[Testigo en la nube](/windows-server/failover-clustering/deploy-cloud-witness)** : todos los nodos del clúster pueden acceder al almacenamiento de blobs de Azure. Este testigo mantiene la información de la agrupación en clústeres en un archivo witness.log, pero no almacena una copia de la base de datos del clúster.
 - **Testigo de recurso compartido de archivos**: un recurso compartido de archivos de SMB que se configura en un servidor de archivos que ejecuta Windows Server. Este testigo mantiene la información de la agrupación en clústeres en un archivo witness.log, pero no almacena una copia de la base de datos del clúster.
-- **Testigo de disco**: un pequeño disco agrupado que se encuentra en el grupo de almacenamiento disponible del clúster. Este disco presenta alta disponibilidad y puede conmutar por error entre nodos. Contiene una copia de la base de datos del clúster.  ***No se admite un testigo de disco con Espacios de almacenamiento directo***.
+- **Testigo de disco**: un pequeño disco agrupado que se encuentra en el grupo de almacenamiento disponible del clúster. Este disco presenta alta disponibilidad y puede conmutar por error entre nodos. Contiene una copia de la base de datos del clúster.  **_No se admite un testigo de disco con Espacios de almacenamiento directo_* _.
 
 ## <a name="pool-quorum-overview"></a>Introducción al cuórum de grupo
 
@@ -179,7 +179,7 @@ En la tabla siguiente se proporciona información general sobre los resultados d
 
 ## <a name="how-pool-quorum-works"></a>Funcionamiento del cuórum de grupo
 
-Cuando se produce un error en las unidades, o cuando un subconjunto de unidades pierde el contacto con otro, las unidades supervivientes deben comprobar que constituyen la *mayoría* del grupo para permanecer en línea. Si no pueden comprobarlo, se desconectan. El grupo es la entidad que se desconecta o permanece en línea según si tiene discos suficientes para el cuórum (50 % + 1). El propietario del recurso del grupo (nodo de clúster activo) puede ser el +1.
+Cuando se produce un error en las unidades, o cuando un subconjunto de unidades pierde el contacto con otro, las unidades supervivientes deben comprobar que constituyen la _mayoría* del grupo para permanecer en línea. Si no pueden comprobarlo, se desconectan. El grupo es la entidad que se desconecta o permanece en línea según si tiene discos suficientes para el cuórum (50 % + 1). El propietario del recurso del grupo (nodo de clúster activo) puede ser el +1.
 
 Sin embargo, el cuórum de grupo funciona de forma diferente al cuórum de clúster de las siguientes maneras:
 
@@ -213,8 +213,8 @@ Cada una de las 24 unidades tiene un voto y el nodo dos también tiene un voto (
 ![Cuórum de grupo 3](media/quorum/pool-3.png)
 
 - Puede sobrevivir a un error del servidor: **Sí**.
-- Puede sobrevivir a un error del servidor y luego a otro: **depende** (no puede sobrevivir si los nodos 3 y 4 están inactivos, pero puede sobrevivir en todos los demás escenarios.
-- Puede sobrevivir a dos errores seguidos del servidor: **depende** (no puede sobrevivir si los nodos 3 y 4 están inactivos, pero puede sobrevivir en todos los demás escenarios.
+- Puede sobrevivir a un error del servidor y luego a otro: **depende** (no puede sobrevivir si los nodos 3 y 4 están inactivos, pero puede sobrevivir en todos los demás escenarios).
+- Puede sobrevivir a dos errores seguidos del servidor: **depende** (no puede sobrevivir si los nodos 3 y 4 están inactivos, pero puede sobrevivir en todos los demás escenarios).
 
 ### <a name="pool-quorum-recommendations"></a>Recomendaciones para los cuórums de grupo
 

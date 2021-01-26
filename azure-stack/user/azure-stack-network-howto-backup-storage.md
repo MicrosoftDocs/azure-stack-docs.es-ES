@@ -7,12 +7,12 @@ ms.date: 12/2/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/2/2020
-ms.openlocfilehash: 6bbca7a38e23a0dfadcd0e7654430430d55da3f2
-ms.sourcegitcommit: 52c934f5eeb5fcd8e8f2ce3380f9f03443d1e445
+ms.openlocfilehash: 5067c873b2313f76c9213d89674ce00926efadc1
+ms.sourcegitcommit: 51ce5ba6cf0a377378d25dac63f6f2925339c23d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97974071"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98210978"
 ---
 # <a name="back-up-your-storage-accounts-on-azure-stack-hub"></a>Copia de seguridad de las cuentas de almacenamiento en Azure Stack Hub
 
@@ -86,7 +86,7 @@ Cuando haya configurado el servidor Windows Server, tendrá que instalar [Power
     azcopy sync "https:/<storagaccount>/<container>?<SAS Key>" "C:\\myFolder" --recursive=true --delete-destination=true
     ```
 
-5.  Escriba la **cuenta de almacenamiento**,** la clave SAS ** y la **ruta de acceso del directorio local.  Los usará para copiar los datos incrementalmente en la cuenta de almacenamiento de **destino**.
+5.  Escriba la **cuenta de almacenamiento**, la **clave de SAS** y la **ruta de acceso del directorio local**.  Los usará para copiar los datos incrementalmente en la cuenta de almacenamiento de **destino**.
     
     ```
     azcopy sync "C:\\myFolder" "https:// <storagaccount>/<container>?<SAS Key>" --recursive=true --delete-destination=true

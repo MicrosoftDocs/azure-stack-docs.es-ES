@@ -7,12 +7,12 @@ ms.date: 09/22/2020
 ms.author: caoyang
 ms.reviewer: xiaofmao
 ms.lastreviewed: 09/22/2020
-ms.openlocfilehash: 80caef7369a3cf5ebe79338bc907fa9b31d1a759
-ms.sourcegitcommit: a745662c7a5a18f135accf3f70d8508b57e83e2b
+ms.openlocfilehash: 0f03d1209587bcf27dec2a309b7cec4abc67bf32
+ms.sourcegitcommit: 0983c1f90734b7ea5e23ae614eeaed38f9cb3c9a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97737919"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98571321"
 ---
 # <a name="sql-resource-provider-1193x-release-notes"></a>Notas de la versión del proveedor de recursos SQL 1.1.93.x
 
@@ -42,6 +42,8 @@ Es recomendable que aplique el proveedor de recursos SQL 1.1.93.1 después de a
 
 ## <a name="known-issue"></a>Problema conocido
 Se puede producir un error en la implementación de la versión 1.1.93.0 si se usa el contexto AzureRmContext erróneo. Se recomienda actualizar a la versión 1.1.93.1 directamente. Si ya ha actualizado correctamente a la versión 1.1.93.0, puede omitir la versión 1.1.93.1 de forma segura.
+
+Al volver a implementar el proveedor de recursos de SQL cuando ya se había implementado la misma versión (por ejemplo, cuando el proveedor de recursos de SQL versión 1.1.93.1 ya está implementado y se vuelve a implementar la misma versión), se detendrá la máquina virtual que hospeda el proveedor de recursos de SQL. Para corregir este problema, vaya al portal de administración, busque y reinicie la máquina virtual llamada sqlvm\<version\> en el grupo de recursos llamado system.\<region\>.sqladapter.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

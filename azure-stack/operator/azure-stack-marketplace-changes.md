@@ -3,16 +3,16 @@ title: Novedades de Marketplace de Azure Stack Hub
 description: Consulte las novedades de Marketplace de Azure Stack Hub, incluidos los elementos nuevos, en desuso y actualizados de Marketplace.
 author: sethmanheim
 ms.topic: article
-ms.date: 01/04/2021
+ms.date: 01/15/2021
 ms.author: sethm
 ms.reviewer: gara
 ms.lastreviewed: 05/28/2020
-ms.openlocfilehash: bd738fab6a424c07bd33a41f80621121e93345c4
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: 6a1825577f216ad16b0150ef4adecb237e9e1f1c
+ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97869923"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98256020"
 ---
 # <a name="azure-stack-hub-marketplace-changes"></a>Cambios en Marketplace de Azure Stack Hub
 
@@ -167,6 +167,29 @@ El artículo [Elementos de Azure Marketplace disponibles para Azure Stack Hub](a
 
 ## <a name="updated-marketplace-items"></a>Elementos de Marketplace actualizados
 
+- 06/01/2021: SQL Server 2017 Enterprise en Windows Server 2016 en modalidad "Traiga su propia licencia": versión 14.0.20201111
+- 06/01/2021: SQL Server 2017 Standard en Windows Server 2016 en modalidad "Pago por uso": versión 14.0.20201111
+- 06/01/2021: SQL Server 2017 Standard en Windows Server 2016 en modalidad "Traiga su propia licencia": versión 14.0.20201111
+- 06/01/2021: SQL Server 2019 Enterprise en Windows Server 2019 en modalidad "Pago por uso": versión 15.0.20201111
+- 06/01/2021: SQL Server 2019 Enterprise en Windows Server 2019 en modalidad "Traiga su propia licencia": versión 15.0.20201111
+- 06/01/2021: Licencia de SQL Server gratis: SQL 2019 Developer en Windows Server 2019 en modalidad "Pago por uso": versión 15.0.20201111
+- 06/01/2021: Licencia de SQL Server gratis: SQL 2019 Developer en Windows Server 2019 en modalidad "Traiga su propia licencia": versión 15.0.20201111
+- 06/01/2021: SQL Server 2019 Standard en Windows Server 2019 en modalidad "Pago por uso": versión 15.0.20201111
+- 06/01/2021: SQL Server 2019 Standard en Windows Server 2019 en modalidad "Traiga su propia licencia": versión 15.0.20201111
+- 06/01/2021: Licencia gratuita: SQL Server 2016 SP2 Developer en Windows Server 2016 en modalidad "Pago por uso": versión 13.2.20201111
+- 06/01/2021: Licencia gratuita: SQL Server 2016 SP2 Developer en Windows Server 2016 en modalidad "Traiga su propia licencia": versión 13.2.20201111
+- 06/01/2021: Licencia gratuita: SQL Server 2016 SP2 Express en Windows Server 2016 en modalidad "Pago por uso": versión 13.2.20201111
+- 06/01/2021: Licencia gratuita: SQL Server 2016 SP2 Express en Windows Server 2016 en modalidad "Traiga su propia licencia": versión 13.2.20201111
+- 06/01/2021: Licencia de SQL Server gratis: SQL Server 2017 Developer en Windows Server 2016 en modalidad "Pago por uso": versión 14.0.20201111
+- 06/01/2021: Licencia de SQL Server gratis: SQL Server 2017 Developer en Windows Server 2016 en modalidad "Traiga su propia licencia": versión 14.0.20201111
+- 06/01/2021: Licencia de SQL Server gratis: SQL Server 2017 Express en Windows Server 2016 en modalidad "Pago por uso": versión 14.0.20201111
+- 06/01/2021: Licencia de SQL Server gratis: SQL Server 2017 Express en Windows Server 2016 en modalidad "Traiga su propia licencia": versión 14.0.20201111
+- 06/01/2021: SQL Server 2016 SP2 Enterprise en Windows Server 2016 en modalidad "Pago por uso": versión 13.2.20201111
+- 06/01/2021: SQL Server 2016 SP2 Enterprise en Windows Server 2016 en modalidad "Traiga su propia licencia": versión 13.2.20201111
+- 06/01/2021: SQL Server 2016 SP2 Standard en Windows Server 2016 en modalidad "Pago por uso": versión 13.2.20201111
+- 06/01/2021: SQL Server 2016 SP2 Standard en Windows Server 2016 en modalidad "Traiga su propia licencia": versión 13.2.20201111
+- 06/01/2021: SQL Server 2017 Enterprise en Windows Server 2016 en modalidad "Pago por uso": versión 14.0.20201111
+- 06/01/2021: SqlIaaSExtension 1.3.20560
 - 12/22/2020: Rogue Wave Software Centos 7.8: versión 7.8.2020062400
 - 07/12/2020: Bitnami Elasticsearch Cluster: versión 1.0.2
 - 07/12/2020: Bitnami Cassandra Cluster: versión 1.0.21

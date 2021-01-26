@@ -6,16 +6,16 @@ services: azure-stack
 documentationcenter: ''
 author: sethmanheim
 ms.topic: article
-ms.date: 12/15/2020
+ms.date: 01/14/2021
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 02/26/2019
-ms.openlocfilehash: a4f9744139199f999475f24a3910e1929b0a8b9b
-ms.sourcegitcommit: a53ea4a28e715c80a99fa89e9d364bc4556558de
+ms.openlocfilehash: dc49218a5abce85c1ca1bcfd7ea5ef2077e8265a
+ms.sourcegitcommit: 649540e30e1018b409f4b1142bf2cb392c9e8b0d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97576979"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98208002"
 ---
 # <a name="frequently-asked-questions-about-azure-stack-hub-usage"></a>Preguntas frecuentes sobre el uso de Azure Stack Hub
 
@@ -209,6 +209,18 @@ Se informa del uso para los siguientes proveedores de recursos:
 **Nombre de medidor:** : DatabaseSizeHourMySqlMeter  
 **Unidad**: MB\*horas  
 **Notas**: Capacidad total de BD en la creación. Si llama a la API de uso con una granularidad diaria, el medidor devuelve los MB multiplicados por el número de horas.
+
+### <a name="event-hubs"></a>Event Hubs
+
+**Identificador de medidor**: d3a257e7-cf59-43bd-82c0-cf29ca8f7da0 (medidor de pago)  
+**Nombre de medidor:** : 1 núcleo    
+**Unidad**: Núcleo\*horas  
+**Notas**: Número de núcleos usados por los clústeres de Event Hubs implementados. El número de núcleos se expresa en múltiplos de 10.
+
+**Id. de medidor**: 29ea0bfc-6780-4711-98fc-2c7db191e1a4 (medidor de administración)  
+**Nombre de medidor:** : 1 núcleo administración   
+**Unidad**: Núcleo\*horas  
+**Notas**: Número de núcleos usados por los clústeres de Event Hubs implementados. El número de núcleos se expresa en múltiplos de 10.
 
 ### <a name="key-vault"></a>Key Vault
   
