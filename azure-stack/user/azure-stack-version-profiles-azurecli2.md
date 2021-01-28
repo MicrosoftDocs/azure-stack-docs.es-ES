@@ -7,12 +7,12 @@ ms.date: 12/16/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/16/2020
-ms.openlocfilehash: fe68722e2cabea2cc863bbd6fb6d8414eb91031c
-ms.sourcegitcommit: 8526f642ef859b0006c3991d966f93608a87288a
+ms.openlocfilehash: 8ffab5fa1ffff5012edfbce3da69f35a753ff72e
+ms.sourcegitcommit: e772df8ac78c86d834a68d1a8be83b7f738019b7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98243585"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98772293"
 ---
 # <a name="install-azure-cli-on-azure-stack-hub"></a>Instalación de la CLI de Azure en Azure Stack Hub
 
@@ -53,7 +53,7 @@ Esta sección le guiará a través de la configuración de la CLI si usa Azure A
       | Valor | Ejemplo | Descripción |
       | --- | --- | --- |
       | Nombre del entorno | AzureStackUser | Use `AzureStackUser` para el entorno de usuario. Si es operador, especifique `AzureStackAdmin`. |
-      | Punto de conexión de Resource Manager | `https://management.contoso.onmicrosoft.com` | El valor de **ResourceManagerUrl** del ASDK es el siguiente: `https://management.contoso.onmicrosoft.com/` El valor de **ResourceManagerUrl** en los sistemas integrados es: `https://management.<region>.<fqdn>/` Si tiene alguna pregunta sobre el punto de conexión del sistema integrado, póngase en contacto con su operador de nube. |
+      | Punto de conexión de Resource Manager | `https://management.contoso.onmicrosoft.com` | El valor de **ResourceManagerUrl** del ASDK es el siguiente: `https://management.local.azurestack.external/` El valor de **ResourceManagerUrl** en los sistemas integrados es: `https://management.<region>.<fqdn>/` Si tiene alguna pregunta sobre el punto de conexión del sistema integrado, póngase en contacto con su operador de nube. |
       | Punto de conexión de Storage | local.contoso.onmicrosoft.com | `local.azurestack.external` es para el ASDK. Para un sistema integrado, utilice un punto de conexión del sistema.  |
       | Sufijo de Key Vault | .vault.contoso.onmicrosoft.com | `.vault.local.azurestack.external` es para el ASDK. Para un sistema integrado, utilice un punto de conexión del sistema.  |
       | Identificador de recurso de grafo de Active Directory de punto de conexión | https://graph.windows.net/ | El identificador de recurso de Active Directory. |

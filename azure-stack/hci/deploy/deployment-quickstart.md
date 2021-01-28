@@ -6,13 +6,13 @@ ms.author: v-kedow
 ms.topic: how-to
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 12/11/2020
-ms.openlocfilehash: 2d2c122a2fd8a9e0be5d3ffd942f85f310845f2d
-ms.sourcegitcommit: f56a5b287c90b2081ae111385c8b7833931d4059
+ms.date: 01/22/2021
+ms.openlocfilehash: 6527623ba5b42f40eb24cd6269f5d45bbccb0d25
+ms.sourcegitcommit: e772df8ac78c86d834a68d1a8be83b7f738019b7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97343183"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98772243"
 ---
 # <a name="quickstart-create-an-azure-stack-hci-cluster-and-register-it-with-azure"></a>Inicio rápido: Creación de un clúster de Azure Stack HCI y registro con Azure
 
@@ -58,7 +58,7 @@ Si ha habilitado el protocolo CredSSP en el asistente, puede que desee deshabili
 
 ## <a name="set-up-a-cluster-witness"></a>Configuración de un testigo del clúster
 
-La configuración de un recurso testigo es necesaria para que si uno de los servidores del clúster se queda sin conexión, no haga que el otro nodo deje de estar disponible. En este inicio rápido, vamos a usar un recurso compartido de archivos SMB ubicado en otro servidor como testigo. Es posible que prefiera usar un testigo en la nube de Azure siempre que todos los nodos de servidor del clúster tengan una conexión a Internet confiable. Para más información sobre las opciones del testigo, consulte [Configuración de un testigo del clúster](witness.md).
+La configuración de un recurso testigo es necesaria para que si uno de los servidores del clúster se queda sin conexión, no haga que el otro nodo deje de estar disponible. En este inicio rápido, vamos a usar un recurso compartido de archivos SMB ubicado en otro servidor como testigo. Es posible que prefiera usar un testigo en la nube de Azure siempre que todos los nodos de servidor del clúster tengan una conexión a Internet confiable. Para más información sobre las opciones del testigo, consulte [Configuración de un testigo del clúster](../manage/witness.md).
 
 1. En Windows Admin Center, seleccione **Administrador de clústeres** en la flecha desplegable de la parte superior.
 1. En **Conexiones de clúster**, seleccione el clúster.

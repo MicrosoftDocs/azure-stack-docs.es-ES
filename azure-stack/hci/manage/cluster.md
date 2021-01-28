@@ -5,13 +5,13 @@ ms.topic: how-to
 author: v-dasis
 ms.author: v-dasis
 ms.reviewer: jgerend
-ms.date: 01/12/2021
-ms.openlocfilehash: 7f77855945ecfb31e223db46be8b2e2e3a012c16
-ms.sourcegitcommit: 502df315764bbc4ff6d3de50b957dfd4a6c0043a
+ms.date: 01/22/2021
+ms.openlocfilehash: 4b6e7537a1111ed2e38d1783acf7197a4249b2ac
+ms.sourcegitcommit: e772df8ac78c86d834a68d1a8be83b7f738019b7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98130357"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98772105"
 ---
 # <a name="manage-azure-stack-hci-clusters-using-windows-admin-center"></a>Administración de clústeres de Azure Stack HCI mediante Windows Admin Center
 
@@ -97,7 +97,7 @@ Hay varias opciones de configuración general que se pueden aplicar al clúster.
    - **Testigo de disco**: para usar un recurso de disco como testigo (no se usa para clústeres extendidos).
    - **Testigo del recurso compartido de archivos**: para usar un recurso compartido de archivos como testigo
 
-        Para obtener información detallada sobre cómo configurar un testigo, consulte [Configuración de un testigo del clúster](../deploy/witness.md). Consulte también [Descripción del cuórum de clúster y de grupo en Azure Stack HCl](../concepts/quorum.md).
+        Para obtener información detallada sobre cómo configurar un testigo, consulte [Configuración de un testigo del clúster](witness.md). Consulte también [Descripción del cuórum de clúster y de grupo en Azure Stack HCl](../concepts/quorum.md).
 
         :::image type="content" source="media/manage-cluster/cluster-settings-witness.png" alt-text="pantalla de testigo del clúster" lightbox="media/manage-cluster/cluster-settings-witness.png":::
 

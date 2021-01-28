@@ -6,13 +6,13 @@ ms.author: v-kedow
 ms.topic: conceptual
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 01/13/2021
-ms.openlocfilehash: 579ccb529ff2ac00a864a165fa5086244f0c0870
-ms.sourcegitcommit: 649540e30e1018b409f4b1142bf2cb392c9e8b0d
+ms.date: 01/22/2021
+ms.openlocfilehash: ee4046837b012f5ea55a85db418e2af35f84a7ee
+ms.sourcegitcommit: e772df8ac78c86d834a68d1a8be83b7f738019b7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98208019"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98772261"
 ---
 # <a name="software-defined-networking-sdn-in-azure-stack-hci"></a>Redes definidas por software (SDN) en Azure Stack HCI
 
@@ -38,7 +38,7 @@ La implementación de Controladora de red permite las siguientes funcionalidades
 - Conexión de aplicaciones virtuales a las redes virtuales.
 - Configuración de directivas de Calidad de servicio (QoS) para las máquinas virtuales conectadas a redes virtuales o redes basadas en VLAN tradicionales.
 
-Se recomienda [implementar la Controladora de red mediante SDN Express](../deploy/sdn-express.md) después de crear un clúster de Azure Stack HCI.
+Se recomienda [implementar la Controladora de red mediante SDN Express](../manage/sdn-express.md) después de crear un clúster de Azure Stack HCI.
 
 ## <a name="software-load-balancing"></a>Equilibrio de carga de software
 
@@ -60,4 +60,4 @@ Para obtener información relacionada, consulte:
 
 - [Planeamiento de una infraestructura de red definida por software](plan-software-defined-networking-infrastructure.md)
 - [Introducción a SDN en Windows Server](/windows-server/networking/sdn/software-defined-networking)
-- [Implementación de una infraestructura de SDN mediante SDN Express](../deploy/sdn-express.md)
+- [Implementación de una infraestructura de SDN mediante SDN Express](../manage/sdn-express.md)

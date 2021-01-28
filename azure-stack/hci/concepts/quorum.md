@@ -4,13 +4,13 @@ description: Descripción del cuórum de clúster y de grupo en Espacios de alma
 author: khdownie
 ms.author: v-kedow
 ms.topic: conceptual
-ms.date: 07/21/2020
-ms.openlocfilehash: 0503e9a97a2ca2b15447dbd837eeac9162b84654
-ms.sourcegitcommit: 48a46142ea7bccd6c8a609e188dd7f3f6444f3c4
+ms.date: 01/22/2021
+ms.openlocfilehash: cd352017027b7e122b39e1d16c867d5b2e3576fc
+ms.sourcegitcommit: e772df8ac78c86d834a68d1a8be83b7f738019b7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98562002"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98772218"
 ---
 # <a name="understanding-cluster-and-pool-quorum-on-azure-stack-hci"></a>Descripción del cuórum de clúster y de grupo en Azure Stack HCl
 
@@ -227,4 +227,4 @@ Cada una de las 24 unidades tiene un voto y el nodo dos también tiene un voto (
 Para obtener más información, vea lo siguiente:
 
 - [Configurar y administrar el cuórum](/windows-server/failover-clustering/manage-cluster-quorum)
-- [Configuración de un testigo del clúster](../deploy/witness.md)
+- [Configuración de un testigo del clúster](../manage/witness.md)

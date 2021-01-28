@@ -3,15 +3,15 @@ title: Migración a Azure Stack HCI en el mismo hardware
 description: Obtenga información acerca de cómo migrar un clúster a Azure Stack HCI en el mismo hardware.
 author: v-dasis
 ms.topic: how-to
-ms.date: 12/10/2020
+ms.date: 01/22/2021
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: d1e033ed2b8bbae2968be8125c7d0dccb3e9f3cf
-ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
+ms.openlocfilehash: 35c1de7da10fbecbf6b861a23cdebb752502ca44
+ms.sourcegitcommit: e772df8ac78c86d834a68d1a8be83b7f738019b7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98254643"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98772265"
 ---
 # <a name="migrate-to-azure-stack-hci-on-same-hardware"></a>Migración a Azure Stack HCI en el mismo hardware
 
@@ -181,7 +181,7 @@ Para más información sobre cómo crear el clúster con PowerShell, consulte [C
     Get-StoragePool | ? IsPrimordial -eq $false | ft FriendlyName,Version
     ```
 
-1. Cree el testigo de cuórum. Para obtener información sobre cómo hacerlo, consulte [Configuración de un testigo del clúster](./witness.md).
+1. Cree el testigo de cuórum. Para obtener información sobre cómo hacerlo, consulte [Configuración de un testigo del clúster](../manage/witness.md).
 
 1. Utilice lo siguiente para comprobar que los trabajos de reparación del almacenamiento se han completado:
 
