@@ -102,8 +102,6 @@
           href: manage/add-cluster.md
         - name: Desconexión de un servidor para realizar el mantenimiento
           href: manage/maintain-servers.md
-        - name: Administración del registro de Azure
-          href: manage/manage-azure-registration.md
         - name: Cambio de idiomas
           href: manage/languages.md
         - name: Cambio de la configuración de privacidad
@@ -120,6 +118,8 @@
       items:
         - name: Registro de Windows Admin Center con Azure
           href: manage/register-windows-admin-center.md
+        - name: Administración del registro de clústeres con Azure
+          href: manage/manage-azure-registration.md
         - name: Usar Azure Portal
           href: manage/azure-portal.md
         - name: Supervisión con Azure Monitor

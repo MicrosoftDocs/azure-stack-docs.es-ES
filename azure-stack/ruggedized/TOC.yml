@@ -450,7 +450,7 @@
                   href: ../operator/azure-stack-mysql-resource-provider-11470.md?toc=/azure-stack/ruggedized/toc.json&bc=/azure-stack/breadcrumb/toc.json
             - name: SQL
               items:
-                - name: Información general
+                - name: Introducción
                   href: ../operator/azure-stack-sql-resource-provider.md?toc=/azure-stack/ruggedized/toc.json&bc=/azure-stack/breadcrumb/toc.json
                 - name: Implementar un proveedor de recursos de SQL Server
                   href: ../operator/azure-stack-sql-resource-provider-deploy.md?toc=/azure-stack/ruggedized/toc.json&bc=/azure-stack/breadcrumb/toc.json
@@ -510,7 +510,7 @@
               href: ../operator/azure-stack-troubleshooting.md?toc=/azure-stack/ruggedized/toc.json&bc=/azure-stack/breadcrumb/toc.json
             - name: Referencia de vínculo de soporte técnico
               href: operator/aks-refer-table-tzl.md?toc=/azure-stack/ruggedized/toc.json&bc=/azure-stack/breadcrumb/toc.json
-            - name: Guía de la unidad reemplazable por el cliente del dispositivo Tactical Cloud
+            - name: Unidades que puede reemplazar el cliente
               items:
                 - name: Precauciones en la manipulación
                   href: customer-replaceable-unit/handling-precautions.md
@@ -554,9 +554,9 @@
                   href: customer-replaceable-unit/verify-scale-unit-node-disk-health.md
                 - name: Diagrama del hardware de Azure Stack Hub
                   href: customer-replaceable-unit/azure-stack-hub-hardware-diagram.md
-                - name: "Introducción al servidor EMC PowerEdge Tactical\_R640"
+                - name: Introducción al servidor de
                   href: customer-replaceable-unit/emc-poweredge-tactical-r640-server-overview.md
-                - name: Códigos e indicadores de EMC PowerEdge Tactical
+                - name: Indicadores y códigos
                   href: customer-replaceable-unit/emc-poweredge-tactical-indicators-and-codes.md
                 - name: Acceso a la interfaz de iDRAC mediante conexión USB directa
                   href: customer-replaceable-unit/access-idrac-over-usb-connection.md
@@ -582,7 +582,7 @@
           href: 'https://stackoverflow.com/questions/tagged/azure-stack'
 - name: Usuario
   items:
-    - name: Información general
+    - name: Introducción
       items:
         - name: Consideraciones clave
           href: ../user/azure-stack-considerations.md?toc=/azure-stack/ruggedized/toc.json&bc=/azure-stack/breadcrumb/toc.json
