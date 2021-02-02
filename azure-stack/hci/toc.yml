@@ -114,6 +114,8 @@
       items:
         - name: Implementar una infraestructura de SDN
           href: manage/sdn-express.md
+        - name: Administración de redes virtuales de inquilinos
+          href: manage/tenant-virtual-networks.md
     - name: Administración de servicios de Azure
       items:
         - name: Registro de Windows Admin Center con Azure
