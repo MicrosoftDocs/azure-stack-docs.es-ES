@@ -3,16 +3,16 @@ title: Notas de la versión de Azure Stack Hub
 description: Notas de la versión para los sistemas integrados de Azure Stack Hub, incluidas las actualizaciones y correcciones de errores.
 author: sethmanheim
 ms.topic: article
-ms.date: 12/23/2020
+ms.date: 01/25/2021
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 09/09/2020
-ms.openlocfilehash: 9276cff891cd4f69c35c0890a2bf02108407bbe0
-ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
+ms.openlocfilehash: 196313ed569a701dae9cc558ff1438d9d9df1241
+ms.sourcegitcommit: 82f7d16bc5f4224678edbbda0ba3441c8e07ca0b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98256071"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98763144"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Notas de la versión de Azure Stack Hub
 
@@ -127,19 +127,13 @@ Para más información, consulte nuestra [directiva de servicio](azure-stack-ser
 
 Las revisiones de Azure Stack Hub solo son aplicables a los sistemas integrados de Azure Stack Hub; no intente instalar revisiones en el ASDK.
 
-### <a name="hotfix-prerequisites-before-applying-the-2008-update"></a>Requisitos previos de la revisión: antes de aplicar la actualización de 2008
-
-La versión de 2008 de Azure Stack Hub debe aplicarse sobre la versión 2005 con las revisiones siguientes:
-
-- [Revisión 1.2005.25.92 de Azure Stack Hub](https://support.microsoft.com/help/4595074)
-
 ### <a name="after-successfully-applying-the-2008-update"></a>Después de aplicar correctamente la actualización 2008
 
-Cuando se actualiza a una nueva versión principal (por ejemplo, de 1.2005.x a 1.2008.x), se instalan automáticamente las revisiones más recientes (si existen) en la nueva versión principal. A partir de ese momento, si se publica una revisión para una compilación, se debe instalar.
+Dado que las revisiones de Azure Stack Hub son acumulativas, como práctica recomendada, debe instalar todas las revisiones publicadas para la compilación a fin de garantizar la mejor experiencia de actualización entre las versiones principales. Cuando se actualiza a una nueva versión principal (por ejemplo, de 1.2005.x a 1.2008.x), se instalan automáticamente las revisiones más recientes (si existen) en la nueva versión principal.
 
 Después de la instalación de 2008, si se publica posteriormente alguna revisión de la versión 2008, se debe instalar:
 
-- [Revisión 1.2008.20.102 de Azure Stack Hub](https://support.microsoft.com/help/4595075)
+- [Revisión 1.2008.23.108 de Azure Stack Hub](https://support.microsoft.com/topic/c0d203fd-7585-4c8d-8ea5-ae13897e352e)
 ::: moniker-end
 
 ::: moniker range="azs-2005"
@@ -231,7 +225,7 @@ Las revisiones de Azure Stack Hub solo son aplicables a los sistemas integrados 
 
 La versión 2005 de Azure Stack Hub debe aplicarse sobre la versión 2002 con las revisiones siguientes:
 
-- [Revisión 1.2002.63.167 de Azure Stack Hub](https://support.microsoft.com/help/4595072)
+- [Revisión 1.2002.65.171 de Azure Stack Hub](https://support.microsoft.com/topic/d743db84-df31-496b-b37c-6e5618b4cc8f)
 
 ### <a name="after-successfully-applying-the-2005-update"></a>Después de aplicar correctamente la actualización 2005
 
@@ -239,7 +233,7 @@ A partir de la versión 2005, cuando se actualiza a una nueva versión principal
 
 Después de la instalación de 2005, si se publican posteriormente algunas revisiones de la versión 2005, se deben instalar:
 
-- [Revisión 1.2005.25.92 de Azure Stack Hub](https://support.microsoft.com/help/4595074)
+- [Revisión 1.2005.28.98 de Azure Stack Hub](https://support.microsoft.com/topic/ecf727b1-3dc1-4070-ace8-1291cc437389)
 ::: moniker-end
 
 ::: moniker range="azs-2002"
@@ -368,7 +362,7 @@ La versión 2002 de Azure Stack Hub debe aplicarse en la versión 1910 con las
 Después de instalar esta actualización, instale todas las revisiones aplicables.
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Revisión 1.2002.63.167 de Azure Stack Hub](https://support.microsoft.com/help/4595072)
+- [Revisión 1.2002.65.171 de Azure Stack Hub](https://support.microsoft.com/topic/d743db84-df31-496b-b37c-6e5618b4cc8f)
 ::: moniker-end
 
 <!------------------------------------------------------------>

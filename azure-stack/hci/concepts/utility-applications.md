@@ -4,13 +4,13 @@ description: En este tema se destacan las aplicaciones de utilidades de los asoc
 author: burcuerdemir
 ms.author: burcue
 ms.topic: conceptual
-ms.date: 12/18/2020
-ms.openlocfilehash: ec7623243c09ffc93036ada1927cbe62acad0b9d
-ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
+ms.date: 01/22/2021
+ms.openlocfilehash: 79490100adaef813af6b8df05779620b315765b3
+ms.sourcegitcommit: ea4bb7bf0ba1bd642c769013a0280f24e71550bc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98254966"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98718005"
 ---
 # <a name="utility-applications-for-azure-stack-hci"></a>Aplicaciones de utilidades para Azure Stack HCI
 
@@ -31,6 +31,7 @@ Altaro VM Backup es una solución galardonada de copia de seguridad y replicaci�
 
 - Lista de aplicaciones: [Copia de seguridad y replicación de máquinas virtuales de Hyper-V y VMware](https://www.altaro.com/vm-backup/)
 - Compatibilidad de las aplicaciones: [Compatibilidad de Altaro con Azure Stack HCI](https://www.altaro.com/news/single/News-Altaro-applies-its-expertise-in-Hyper-V-backup-to-support-Microsoft.php)
+- Compatibilidad con la replicación: [Replicación optimizada para WAN de Altaro](https://www.altaro.com/vm-backup/wan-optimized-replication.php)
 
 :::image type="content" source="./media/utility-applications/veeam-logo.png" alt-text="Logotipo de la empresa Veeam" border="false":::
 
@@ -38,6 +39,7 @@ Veeam Backup & Replication es la solución definitiva para una protección senci
 
 - Lista de aplicaciones: [Veeam Backup & Replication](https://www.veeam.com/vm-backup-recovery-replication-software.html)
 - Compatibilidad de las aplicaciones: [Compatibilidad de Veeam con Azure Stack HCI](https://www.veeam.com/kb4047)
+- [Compatibilidad con la replicación para VM de Hyper-V](https://www.veeam.com/vm-advanced-replication.html?ad=in-text-link)
 
 :::image type="content" source="./media/utility-applications/commvault-logo.png" alt-text="Logotipo de la empresa CommVault" border="false":::
 
@@ -45,6 +47,7 @@ CommVault es una plataforma de administración de datos completa para almacenar,
 
 - Lista de aplicaciones: [Microsoft Azure Stack](https://www.commvault.com/supported-technologies/microsoft/azurestack)
 - Compatibilidad de las aplicaciones: [Azure Stack HCI](https://documentation.commvault.com/11.21/essential/132799_microsoft_azure_stack_hci.html)
+- [Commvault Backup and Recovery ahora admite Microsoft Azure Stack HCI](https://www.commvault.com/blogs/commvault-backup-and-recovery-now-supports-microsoft-azure-stack-hci)
 
 :::image type="content" source="./media/utility-applications/veritas-logo.png" alt-text="Logotipo de la empresa Veritas" border="false":::
 
@@ -52,6 +55,7 @@ Veritas Backup Exec es una solución de copia de seguridad y recuperación fáci
 
 - Lista de aplicaciones: [Backup Exec](https://www.veritas.com/protection/backup-exec)
 - Compatibilidad de las aplicaciones: [Protección de Azure Stack HCI con Backup Exec](https://www.veritas.com/support/en_US/article.100048860)
+- [Compatibilidad de Veritas Backup Exec con Microsoft Azure](https://www.veritas.com/protection/backup-exec/azure)
 
 :::image type="content" source="./media/utility-applications/datadog-logo.png" alt-text="Logotipo de la empresa Datadog" border="false":::
 

@@ -6,13 +6,13 @@ author: JohnCobb1
 ms.author: v-johcob
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 1/15/2021
-ms.openlocfilehash: 97979a9fb96840337e89a4a3db3e3307cdb70eac
-ms.sourcegitcommit: 8526f642ef859b0006c3991d966f93608a87288a
+ms.date: 1/21/2021
+ms.openlocfilehash: 6c84bad0de72235c6ccde1b8c23016afeb956cba
+ms.sourcegitcommit: c87d1e26a4f96be4651f63fbf5ea3d98d6f14832
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98243398"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98659364"
 ---
 # <a name="azure-stack-hci-faq"></a>Preguntas más frecuentes sobre Azure Stack HCI
 Las preguntas más frecuentes sobre Azure Stack HCI incluyen una sección sobre conectividad de Azure Stack HCI y una sección de preguntas más frecuentes generales.
@@ -24,7 +24,7 @@ Azure Stack HCI es una pila de infraestructura hiperconvergida local que se entr
 
 **¿Los datos almacenados en Azure Stack HCI se envían a la nube?**
 
-No. Los datos, incluidos los nombres, los metadatos, la configuración y el contenido de las máquinas virtuales locales nunca se envían a la nube a menos que active servicios adicionales expresamente para ese fin, como Azure Backup o Azure Site Recovery, o salvo que inscriba esas máquinas virtuales de forma individual en servicios de administración en la nube como Azure Arc.
+No. Los datos del cliente, incluidos los nombres, los metadatos, la configuración y el contenido de las máquinas virtuales (VM) locales nunca se envían a la nube a menos que active servicios adicionales expresamente para ese fin, como Azure Backup o Azure Site Recovery, o salvo que inscriba esas VM de forma individual en servicios de administración en la nube como Azure Arc.
 
 Para más información sobre los datos de diagnóstico que recopilamos para mantener Azure Stack HCI seguro, actualizado y funcionando según lo previsto, consulte [Recopilación de datos de Azure Stack HCI](concepts/data-collection.md) y [Residencia de datos en Azure](https://azure.microsoft.com/global-infrastructure/data-residency/).
 

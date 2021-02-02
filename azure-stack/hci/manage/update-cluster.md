@@ -4,13 +4,13 @@ description: Cómo aplicar actualizaciones de firmware y del sistema operativo a
 author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
-ms.date: 10/27/2020
-ms.openlocfilehash: 001cf81721423aad770093c0fe5cf92ec6b66af8
-ms.sourcegitcommit: 97ecba06aeabf2f30de240ac283b9bb2d49d62f0
+ms.date: 01/25/2020
+ms.openlocfilehash: 751551b827ef5d3c871f0224bfa60d9f79fc5d45
+ms.sourcegitcommit: e772df8ac78c86d834a68d1a8be83b7f738019b7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97010828"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98772014"
 ---
 # <a name="update-azure-stack-hci-clusters"></a>Actualización de clústeres de Azure Stack HCl
 
@@ -24,14 +24,32 @@ Este tema se centra en el sistema operativo y las actualizaciones de software. S
 
 Windows Admin Center facilita la actualización de un clúster y la aplicación de actualizaciones del sistema operativo y de la solución mediante una sencilla interfaz de usuario. Si ha adquirido un sistema integrado de un asociado de hardware de Microsoft, es fácil obtener los controladores, el firmware y otras actualizaciones más recientes directamente de Windows Admin Center mediante la instalación de las extensiones de actualización de asociado adecuadas. Si el hardware no se compró como sistema integrado, es posible que sea necesario realizar actualizaciones de firmware y de controlador por separado, de acuerdo con las recomendaciones del fabricante del hardware.
 
-Windows Admin Center comprobará si el clúster está configurado correctamente para ejecutar la actualización compatible con clústeres (CAU) y, si es necesario, le preguntará si desea que Windows Admin Center configure la CAU automáticamente, incluida la instalación del rol de clúster de CAU y la habilitación de las reglas de firewall necesarias.
+Siga estos pasos para instalar las actualizaciones:
 
 1. Al conectarse a un clúster, el panel de Windows Admin Center le avisará si uno o más servidores tienen actualizaciones listas para instalarse y proporcionará un vínculo para actualizar ahora. Como alternativa, puede seleccionar **Actualizaciones** en el menú **Herramientas** de la izquierda.
-1. Para usar la herramienta Actualización compatible con clústeres en Windows Admin Center, debe habilitar el proveedor del servicio de seguridad de credenciales (CredSSP) y proporcionar credenciales explícitas. Cuando se le pregunte si CredSSP debe habilitarse, haga clic en **Yes** (Sí).
-1. Especifique su nombre de usuario y contraseña y haga clic en **Continue** (Continuar).
-1. Se mostrarán las actualizaciones disponibles. Haga clic en **Check Available Updates** (Comprobar las actualizaciones disponibles) para actualizar la lista.
-1. Seleccione las actualizaciones que quiera instalar y haga clic en **Apply All Updates** (Aplicar todas las actualizaciones). Se instalarán las actualizaciones en todos los servidores del clúster. Si es necesario reiniciar, los roles de clúster, como las máquinas virtuales, se moverán primero a otro servidor para evitar interrupciones.
-1. Para mejorar la seguridad, deshabilite CredSSP en cuanto termine de instalar las actualizaciones:
+
+2. Si actualiza el clúster por primera vez, Windows Admin Center comprobará si el clúster está configurado correctamente para ejecutar la actualización compatible con clústeres (CAU) y, si es necesario, le preguntará si desea que Windows Admin Center configure la CAU automáticamente, incluida la instalación del rol de clúster de CAU y la habilitación de las reglas de firewall necesarias. Para iniciar el proceso de actualización, haga clic en **Introducción**.
+
+   :::image type="content" source="media/update-cluster/add-cau-role.png" alt-text="Windows Admin Center configurará automáticamente el clúster para ejecutar la actualización compatible con clústeres." lightbox="media/update-cluster/add-cau-role.png":::
+
+   > [!NOTE]
+   > Para usar la herramienta Actualización compatible con clústeres en Windows Admin Center, debe habilitar el proveedor del servicio de seguridad de credenciales (CredSSP) y proporcionar credenciales explícitas. Cuando se le pregunte si CredSSP debe habilitarse, haga clic en **Sí**. Especifique su nombre de usuario y contraseña y haga clic en **Continue** (Continuar).
+
+3. Se mostrará el estado de actualización del clúster. Haga clic en **Buscar actualizaciones** para obtener una lista de las actualizaciones del sistema operativo disponibles para cada servidor del clúster. Es posible que tenga que proporcionar credenciales de administrador. Si no hay ninguna actualización del sistema operativo disponible, haga clic en **Siguiente: actualizaciones de hardware** y continúe con el paso 7.
+
+4. Seleccione **Siguiente: Instale** para continuar con la instalación de las actualizaciones del sistema operativo o haga clic en **Omitir** para excluirlas. 
+
+   :::image type="content" source="media/update-cluster/operating-system-updates.png" alt-text="Haga clic en Siguiente: instalar para continuar con la instalación de las actualizaciones del sistema operativo o en Omitir para excluirlas" lightbox="media/update-cluster/operating-system-updates.png":::.
+
+5. Seleccione **Instalar** para instalar las actualizaciones del sistema operativo en cada servidor del clúster. Verá que el estado de la actualización cambia a "Instalando actualizaciones". Si alguna de las actualizaciones requiere un reinicio, los servidores se reiniciarán de uno en uno y los roles de clúster, como las máquinas virtuales, se moverán entre servidores para evitar posibles tiempos de inactividad.
+
+   :::image type="content" source="media/update-cluster/install-os-updates.png" alt-text="Haga clic en Instalar para instalar las actualizaciones del sistema operativo en cada servidor del clúster" lightbox="media/update-cluster/install-os-updates.png":::.
+
+6. Cuando se hayan completado las actualizaciones del sistema operativo, el estado de la actualización cambiará a "correcto". Haga clic en **Siguiente: actualizaciones de hardware** para continuar en la pantalla actualizaciones de hardware.
+
+7. Windows Admin Center buscará en el clúster extensiones instaladas que admitan el hardware específico del servidor. Haga clic en **Siguiente: instalar** para instalar las actualizaciones de hardware en cada servidor del clúster. Si no se encuentra ninguna extensión o actualización, haga clic en **Salir**.
+
+8. Para mejorar la seguridad, deshabilite CredSSP en cuanto termine de instalar las actualizaciones:
     - En Windows Admin Center, en **All connections** (Todas las conexiones), seleccione el primer servidor del clúster y, a continuación, seleccione **Connect** (Conectar).
     - En la página **Overview** (Información general), seleccione **Disable CredSSP** (Deshabilitar CredSSP) y, a continuación, en la ventana emergente **Disable CredSSP** (Deshabilitar CredSSP), seleccione **Yes** (Yes).
 
