@@ -523,6 +523,54 @@
       href: /hybrid
 - name: Recursos
   items:
+    - name: Archivo de notas de la versión
+      items:
+        - name: Notas de la versión 1910
+          href: ./relnotearchive/release-notes-1910.md
+        - name: "Problemas conocidos de la versión\_1910"
+          href: ./relnotearchive/known-issues-1910.md
+        - name: "Notas de la versión\_1908"
+          href: ./relnotearchive/release-notes-1908.md
+        - name: "Problemas conocidos de la versión\_1908"
+          href: ./relnotearchive/known-issues-1908.md
+        - name: "Notas de la versión\_1907"
+          href: ./relnotearchive/release-notes-1907.md
+        - name: "Problemas conocidos de la versión\_1907"
+          href: ./relnotearchive/known-issues-1907.md
+        - name: Notas de la versión 1906
+          href: ./relnotearchive/release-notes-1906.md
+        - name: "Problemas conocidos de la versión\_1906"
+          href: ./relnotearchive/known-issues-1906.md
+        - name: Notas de la versión 1905
+          href: ./relnotearchive/release-notes-1905.md
+        - name: "Problemas conocidos de la versión\_1905"
+          href: ./relnotearchive/known-issues-1905.md
+        - name: "Notas de la versión\_1904"
+          href: ./relnotearchive/release-notes-1904.md
+        - name: "Problemas conocidos de la versión\_1904"
+          href: ./relnotearchive/known-issues-1904.md
+        - name: "Notas de la versión\_1903"
+          href: ./relnotearchive/release-notes-known-issues-1903.md
+        - name: Notas de la versión 1902
+          href: ./relnotearchive/release-notes-known-issues-1902.md
+        - name: "Notas de la versión\_1901"
+          href: ./relnotearchive/release-notes-known-issues-1901.md
+        - name: "Notas de la versión\_1811"
+          href: ./relnotearchive/release-notes-known-issues-1811.md
+        - name: "Notas de la versión\_1809"
+          href: ./relnotearchive/release-notes-known-issues-1809.md
+        - name: "Notas de la versión\_1808"
+          href: ./relnotearchive/release-notes-known-issues-1808.md
+        - name: "Notas de la versión\_1807"
+          href: ./relnotearchive/release-notes-known-issues-1807.md
+        - name: "Notas de la versión\_1805"
+          href: ./relnotearchive/release-notes-known-issues-1805.md
+        - name: "Notas de la versión\_1804"
+          href: ./relnotearchive/release-notes-known-issues-1804.md
+        - name: "Notas de la versión\_1803"
+          href: ./relnotearchive/release-notes-known-issues-1803.md
+        - name: Notas de la versión 1802
+          href: ./relnotearchive/release-notes-known-issues-1802.md
     - name: Aprendizaje y certificación
       href: azure-stack-train-and-cert.md
     - name: Hoja de ruta de Azure Stack Hub

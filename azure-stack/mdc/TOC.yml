@@ -734,35 +734,39 @@
                   href: ../user/azure-stack-dev-start-howto-vm-nodejs.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
         - name: Implementación de patrones fundamentales
           items:
-            - name: Emparejamiento de VNET
+            - name: Patrones de redes
               items:
-                - name: Emparejamiento de VNet con FortiGate
-                  href: ../user/azure-stack-network-howto-vnet-to-vnet.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
-                - name: Emparejamiento de VNet con máquinas virtuales
+                - name: Uso de NVA de terceros (NVA de Fortinet FortiGate)
+                  items:
+                    - name: Conectividad entre redes virtuales con FortiGate
+                      href: ../user/azure-stack-network-howto-vnet-to-vnet.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
+                    - name: Configuración de VPN como local
+                      href: ../user/azure-stack-network-howto-vnet-to-onprem.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
+                    - name: Conectividad de VNet a VNet entre instancias de Azure Stack Hub
+                      href: ../user/azure-stack-network-howto-vnet-to-vnet-stacks.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
+            - name: Uso de RRAS
+              items:
+                - name: Conectividad de VNet a VNet con RRAS
                   href: ../user/azure-stack-network-howto-vnet-peering.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
-            - name: Configuración de VPN como local
-              href: ../user/azure-stack-network-howto-vnet-to-onprem.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
-            - name: Conexión de red virtual a red virtual
-              href: ../user/azure-stack-network-howto-vnet-to-vnet-stacks.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
-            - name: Ampliación del centro de datos
-              href: ../user/azure-stack-network-howto-extend-datacenter.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
-            - name: Equilibrador de carga F5
-              href: ../user/network-howto-f5.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
-            - name: Conexión al almacenamiento iSCSI
-              href: ../user/azure-stack-network-howto-iscsi-storage.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
-            - name: Configuración de túneles
-              items:
-                - name: Configuración de una VPN de sitio a sitio múltiple
+                - name: Configuración de varios túneles de VPN de sitio a sitio
                   href: ../user/network-howto-vpn-tunnel.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
                 - name: Creación de un túnel VPN (GRE)
                   href: ../user/network-howto-vpn-tunnel-gre.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
                 - name: Creación de un túnel VPN (IPSEC)
                   href: ../user/network-howto-vpn-tunnel-ipsec.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
+            - name: Equilibrador de carga F5
+              href: ../user/network-howto-f5.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
+            - name: Conexión a almacenamiento externo
+              items:
+                - name: Conexión al almacenamiento iSCSI
+                  href: ../user/azure-stack-network-howto-iscsi-storage.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
+                - name: Ampliación del centro de datos
+                  href: ../user/azure-stack-network-howto-extend-datacenter.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
             - name: Copia de seguridad y recuperación
               items:
-                - name: Copia de seguridad de una máquina virtual en MDC con Commvault
+                - name: Copia de seguridad de una máquina virtual en Azure Stack Hub resistente con Commvault
                   href: ../user/azure-stack-network-howto-backup-commvault.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
-                - name: Copia de seguridad de cuentas de almacenamiento en MDC
+                - name: Copia de seguridad de cuentas de almacenamiento en Azure Stack Hub resistente
                   href: ../user/azure-stack-network-howto-backup-storage.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
                 - name: Copia de recursos de suscripción
                   href: ../user/azure-stack-network-howto-backup-replicator.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
