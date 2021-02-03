@@ -305,8 +305,9 @@
         - name: Implementación de un módulo de IoT de GPU
           href: gpu-deploy-sample-module.md
     - name: Implementación de patrones fundamentales
-      href: deploy-foundational-patterns.md
       items:
+        - name: Implementación de patrones fundamentales
+          href: deploy-foundational-patterns.md
         - name: Patrones de redes
           items:
             - name: Uso de NVA de terceros (NVA de Fortinet FortiGate)
