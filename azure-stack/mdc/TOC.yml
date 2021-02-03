@@ -734,6 +734,8 @@
                   href: ../user/azure-stack-dev-start-howto-vm-nodejs.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
         - name: Implementación de patrones fundamentales
           items:
+            - name: Implementación de patrones fundamentales
+              href: ../user/deploy-foundational-patterns.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
             - name: Patrones de redes
               items:
                 - name: Uso de NVA de terceros (NVA de Fortinet FortiGate)
@@ -744,16 +746,16 @@
                       href: ../user/azure-stack-network-howto-vnet-to-onprem.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
                     - name: Conectividad de VNet a VNet entre instancias de Azure Stack Hub
                       href: ../user/azure-stack-network-howto-vnet-to-vnet-stacks.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
-            - name: Uso de RRAS
-              items:
-                - name: Conectividad de VNet a VNet con RRAS
-                  href: ../user/azure-stack-network-howto-vnet-peering.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
-                - name: Configuración de varios túneles de VPN de sitio a sitio
-                  href: ../user/network-howto-vpn-tunnel.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
-                - name: Creación de un túnel VPN (GRE)
-                  href: ../user/network-howto-vpn-tunnel-gre.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
-                - name: Creación de un túnel VPN (IPSEC)
-                  href: ../user/network-howto-vpn-tunnel-ipsec.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
+                - name: Uso de RRAS
+                  items:
+                    - name: Conectividad de VNet a VNet con RRAS
+                      href: ../user/azure-stack-network-howto-vnet-peering.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
+                    - name: Configuración de varios túneles de VPN de sitio a sitio
+                      href: ../user/network-howto-vpn-tunnel.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
+                    - name: Creación de un túnel VPN (GRE)
+                      href: ../user/network-howto-vpn-tunnel-gre.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
+                    - name: Creación de un túnel VPN (IPSEC)
+                      href: ../user/network-howto-vpn-tunnel-ipsec.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
             - name: Equilibrador de carga F5
               href: ../user/network-howto-f5.md?toc=/azure-stack/mdc/toc.json&bc=/azure-stack/breadcrumb/toc.json
             - name: Conexión a almacenamiento externo
