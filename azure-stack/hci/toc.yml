@@ -94,8 +94,6 @@
           href: manage/monitor-cluster.md
         - name: Configuración de un testigo del clúster
           href: manage/witness.md
-        - name: Uso de un firewall de centro de datos
-          href: manage/use-datacenter-firewall.md
         - name: Uso de DISKSPD para probar cargas de trabajo
           href: manage/diskspd-overview.md
         - name: Incorporación o eliminación de servidores
@@ -114,6 +112,10 @@
       items:
         - name: Implementar una infraestructura de SDN
           href: manage/sdn-express.md
+        - name: Uso de un firewall de centro de datos
+          href: manage/use-datacenter-firewall.md
+        - name: Administración de redes lógicas de inquilinos
+          href: manage/tenant-logical-networks.md
         - name: Administración de redes virtuales de inquilinos
           href: manage/tenant-virtual-networks.md
     - name: Administración de servicios de Azure
@@ -132,10 +134,6 @@
           href: manage/use-azure-backup.md
         - name: Uso de un adaptador de red de Azure
           href: manage/use-azure-network-adapter.md
-    - name: Administrar SDN
-      items:
-        - name: Redes lógicas del inquilino
-          href: manage/tenant-logical-networks.md
 - name: Conceptos
   items:
     - name: Almacenamiento y clústeres
