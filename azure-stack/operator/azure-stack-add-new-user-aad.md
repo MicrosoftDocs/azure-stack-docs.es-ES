@@ -7,12 +7,12 @@ ms.date: 05/20/2019
 ms.author: patricka
 ms.reviewer: thoroet
 ms.lastreviewed: 09/17/2019
-ms.openlocfilehash: 9ada0a0c7731b92bc67f85545b5d9cd81e87cd36
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: dcd2779bf1166b6418a0ecbec3b025e889ca048a
+ms.sourcegitcommit: 5f3d37994b8cb63c76e54136c0cc05bc4f475950
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97871980"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99495574"
 ---
 # <a name="add-a-new-azure-stack-hub-user-account-in-azure-active-directory-azure-ad"></a>Adición de una nueva cuenta de usuario de Azure Stack Hub en Azure Active Directory (Azure AD)
 
@@ -54,7 +54,7 @@ Si no tiene una suscripción de Azure, no puede usar Azure Portal para agregar u
 > [!NOTE]
 > Si usa una cuenta Microsoft para implementar el ASDK, no puede usar Azure AD PowerShell para crear una cuenta de inquilino.
 
-1. Instale la versión de **64-bits** del [Ayudante para el inicio de sesión de Microsoft Online Services para profesionales de TI (RTW)](https://go.microsoft.com/fwlink/p/?LinkId=286152).
+1. Instale la versión de **64-bits** del [Ayudante para el inicio de sesión de Microsoft Online Services para profesionales de TI (RTW)](https://www.microsoft.com/download/details.aspx?id=28177).
 
 2. Instale el Módulo Microsoft Azure AD para Windows PowerShell con estos pasos:
 

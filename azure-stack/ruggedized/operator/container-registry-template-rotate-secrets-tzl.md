@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/16/2020
+ms.date: 2/1/2021
 ms.author: mabrigg
 ms.reviewer: chasat
 ms.lastreviewed: 12/17/2019
-ms.openlocfilehash: 60caf869fef5537aa6adc35bd2233a81a4fe749d
-ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
+ms.openlocfilehash: 3bfde6e55883e124379353302e77a439c4de0505
+ms.sourcegitcommit: a6f62a6693e48eb05272c01efb5ca24372875173
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97909827"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99245643"
 ---
 # <a name="rotate-container-registry-secrets-in-azure-stack-hub"></a>Rotación de secretos del registro de contenedor en Azure Stack Hub
 

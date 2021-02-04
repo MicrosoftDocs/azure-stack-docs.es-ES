@@ -8,12 +8,12 @@ ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 12/16/2020
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: 9560e9e2fcf5d7b01ca44b409d14a7827cac4060
-ms.sourcegitcommit: 0983c1f90734b7ea5e23ae614eeaed38f9cb3c9a
+ms.openlocfilehash: 3634862089f3811da314d3f85865fc1a29324f5f
+ms.sourcegitcommit: e88f0a1f2f4ed3bb8442bfb7b754d8b3a51319b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98571406"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534052"
 ---
 # <a name="download-marketplace-items-to-azure-stack-hub"></a>Descarga de elementos de Marketplace en Azure Stack Hub
 
@@ -119,16 +119,16 @@ Una vez registrado Azure Stack, puede ignorar el mensaje siguiente que aparece e
 
 1. En un equipo con conexión a Internet, abra una consola de PowerShell como administrador.
 
-2. Inicie sesión en la nube de Azure adecuada y en el inquilino de Azure AD con la cuenta de Azure que ha usado para registrar Azure Stack Hub. Para agregar la cuenta, en PowerShell ejecute `Login-AzAccount`:
+2. Inicie sesión en la nube de Azure adecuada y en el inquilino de Azure AD con la cuenta de Azure que ha usado para registrar Azure Stack Hub. Para agregar la cuenta, en PowerShell ejecute `Connect-AzAccount`:
 
    ```powershell  
-   Login-AzAccount -Environment AzureCloud -Tenant '<mydirectory>.onmicrosoft.com'
+   Connect-AzAccount -Environment AzureCloud -Tenant '<mydirectory>.onmicrosoft.com'
    ```
 
    Se le solicita que escriba las credenciales de su cuenta de Azure y puede que tenga que utilizar la autenticación en dos fases en función de la configuración de la cuenta.
 
    > [!NOTE]
-   > Si la sesión expira, la contraseña ha cambiado o desea cambiar de cuenta, ejecute el siguiente cmdlet antes de iniciar sesión mediante `Add-AzAccount`: `Remove-AzAccount -Scope Process`.
+   > Si la sesión expira, la contraseña ha cambiado o desea cambiar de cuenta, ejecute el siguiente cmdlet antes de iniciar sesión mediante `Connect-AzAccount`: `Remove-AzAccount -Scope Process`.
 
 3. Si tiene varias suscripciones, ejecute el siguiente comando para seleccionar la que ha usado para el registro:
 

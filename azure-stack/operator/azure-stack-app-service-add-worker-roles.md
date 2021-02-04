@@ -3,16 +3,16 @@ title: Adición de trabajos e infraestructura en App Service en Azure Stack Hub
 description: Guía detallada para escalar Azure App Service en Azure Stack Hub
 author: bryanla
 ms.topic: article
-ms.date: 11/15/2020
+ms.date: 1/29/2020
 ms.author: anwestg
 ms.reviewer: anwestg
-ms.lastreviewed: 11/15/2020
-ms.openlocfilehash: 3265b77fc6a26a4e43b82d0997ec3e883a29f9da
-ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
+ms.lastreviewed: 1/29/2020
+ms.openlocfilehash: 442831a05950342718c0ee0fc0ced2395627eca6
+ms.sourcegitcommit: e88f0a1f2f4ed3bb8442bfb7b754d8b3a51319b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95518099"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534035"
 ---
 # <a name="add-workers-and-infrastructure-in-azure-app-service-on-azure-stack-hub"></a>Adición de trabajos e infraestructura en App Service en Azure Stack Hub
 
@@ -42,7 +42,7 @@ Azure App Service en Azure Stack Hub implementa todos los roles mediante conjunt
     ##### Scale out the AppService Role instances ######
     
     # Set context to AzureStack admin.
-    Login-AzAccount -EnvironmentName AzureStackAdmin
+    Connect-AzAccount -EnvironmentName AzureStackAdmin
                                                     
     ## Name of the Resource group where AppService is deployed.
     $AppServiceResourceGroupName = "AppService.local"
@@ -76,8 +76,8 @@ Azure App Service en Azure Stack Hub implementa todos los roles mediante conjunt
     
     ##### Scale out the AppService Role instances ######
     
-    # Set context to AzureRMureStack admin.
-    Login-AzureRMAccount -EnvironmentName AzureRMureStackAdmin
+    # Set context to AzureStackAdmin admin.
+    Login-AzureRMAccount -EnvironmentName AzureStackAdmin
                                                     
     ## Name of the Resource group where AppService is deployed.
     $AppServiceResourceGroupName = "AppService.local"

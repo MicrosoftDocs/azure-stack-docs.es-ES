@@ -7,12 +7,12 @@ ms.date: 11/22/2020
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/22/2020
-ms.openlocfilehash: cde8b474a27b577beca757a806a6411d934465c0
-ms.sourcegitcommit: a90b146769279ffbdb09c68ca0506875a867e177
+ms.openlocfilehash: 209f42ce605f4c3a5abd5fc1ee7ee9df01a6bca9
+ms.sourcegitcommit: e88f0a1f2f4ed3bb8442bfb7b754d8b3a51319b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98123721"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534205"
 ---
 # <a name="use-data-transfer-tools-in-azure-stack-hub-storage"></a>Uso de herramientas de transferencia de datos en Azure Stack Hub Storage
 
@@ -152,7 +152,7 @@ Add-AzEnvironment -Name $ARMEvnName -ARMEndpoint $ARMEndPoint
 
 # Login
 $TenantID = Get-AzsDirectoryTenantId -AADTenantName $AADTenantName -EnvironmentName $ARMEvnName
-Add-AzAccount -EnvironmentName $ARMEvnName -TenantId $TenantID 
+Connect-AzAccount -EnvironmentName $ARMEvnName -TenantId $TenantID 
 
 # Set a default Azure subscription.
 Select-AzSubscription -SubscriptionName $SubscriptionName
@@ -240,13 +240,13 @@ New-AzureRMStorageAccount -ResourceGroupName $ResourceGroupName -Name $StorageAc
 Set-AzureRMCurrentStorageAccount -StorageAccountName $StorageAccountName -ResourceGroupName $ResourceGroupName 
 
 # Create a new container.
-New-AzureRMureStorageContainer -Name $ContainerName -Permission Off
+New-AzureContainer -Name $ContainerName -Permission Off
 
 # Upload a blob into a container.
-Set-AzureRMureStorageBlobContent -Container $ContainerName -File $ImageToUpload
+Set-AzureBlobContent -Container $ContainerName -File $ImageToUpload
 
 # List all blobs in a container.
-Get-AzureRMureStorageBlob -Container $ContainerName
+Get-AzureBlob -Container $ContainerName
 
 # Download blobs from the container:
 # Get a reference to a list of all blobs in a container.

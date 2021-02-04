@@ -8,12 +8,12 @@ ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 04/28/2020
 ms.custom: conteperfq4
-ms.openlocfilehash: 18c1935c1e683fab1a2cda8886a45648ee69fbf4
-ms.sourcegitcommit: 52c934f5eeb5fcd8e8f2ce3380f9f03443d1e445
+ms.openlocfilehash: 4e1a00be9f4adadee5d1bf1e647c455773211b61
+ms.sourcegitcommit: 5f3d37994b8cb63c76e54136c0cc05bc4f475950
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97974292"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99495540"
 ---
 # <a name="use-the-privileged-endpoint-in-azure-stack-hub"></a>Uso del punto de conexión con privilegios en Azure Stack Hub
 
@@ -43,7 +43,7 @@ También puede encontrar la dirección IP en el portal de administración de Azu
 Tendrá que establecer la configuración de la referencia cultural actual en `en-US` al ejecutar el punto de conexión con privilegios; de lo contrario, los cmdlets como Test-AzureStack o Get-AzureStackLog no funcionarán según lo esperado.
 
 > [!NOTE]
-> Por motivos de seguridad, es necesario conectarse al PEP solo desde una máquina virtual protegida que se ejecute en el host de ciclo de vida de hardware, o desde un equipo seguro dedicado, como una [estación de trabajo de acceso con privilegios](/windows-server/identity/securing-privileged-access/privileged-access-workstations). No se debe modificar la configuración original del host de ciclo de vida de hardware, (incluida la instalación de software nuevo) ni usarse para la conexión al PEP.
+> Por motivos de seguridad, es necesario conectarse al PEP solo desde una máquina virtual protegida que se ejecute en el host de ciclo de vida de hardware, o desde un equipo seguro dedicado, como una [estación de trabajo de acceso con privilegios](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model). No se debe modificar la configuración original del host de ciclo de vida de hardware, (incluida la instalación de software nuevo) ni usarse para la conexión al PEP.
 
 1. Establezca la confianza.
 
@@ -251,5 +251,5 @@ A continuación, el token de respuesta se cifra con el certificado autofirmado i
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Herramientas de diagnóstico de Azure Stack Hub](./azure-stack-diagnostic-log-collection-overview.md)
+- [Herramientas de diagnóstico de Azure Stack Hub](./diagnostic-log-collection.md)
 - [Referencia del punto de conexión con privilegios elevados de Azure Stack Hub](../reference/pep-2002/index.md)

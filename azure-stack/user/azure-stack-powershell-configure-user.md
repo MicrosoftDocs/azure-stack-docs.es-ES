@@ -7,12 +7,12 @@ ms.date: 11/22/2020
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 11/22/2020
-ms.openlocfilehash: bc0eb1beeec831dee64f300aba4d977546a00058
-ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
+ms.openlocfilehash: f89fa7e7e4e8e35b209f0b22a5994c45ede6a17c
+ms.sourcegitcommit: e88f0a1f2f4ed3bb8442bfb7b754d8b3a51319b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95518269"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99533984"
 ---
 # <a name="connect-to-azure-stack-hub-with-powershell-as-a-user"></a>Conexión a Azure Stack Hub con PowerShell como usuario
 
@@ -51,7 +51,7 @@ Asegúrese de reemplazar las siguientes variables de script con los valores de l
 
     # After signing in to your environment, Azure Stack Hub cmdlets
     # can be easily targeted at your Azure Stack Hub instance.
-    Add-AzAccount -EnvironmentName "AzureStackUser" -TenantId $TenantId
+    Connect-AzAccount -EnvironmentName "AzureStackUser" -TenantId $TenantId
 ```
 ### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm1)
  
@@ -79,7 +79,7 @@ Asegúrese de reemplazar las siguientes variables de script con los valores de l
   Add-AzEnvironment -Name "AzureStackUser" -ArmEndpoint "https://management.local.azurestack.external"
 
   # Sign in to your environment
-  Login-AzAccount -EnvironmentName "AzureStackUser"
+  Connect-AzAccount -EnvironmentName "AzureStackUser"
   ```
 ### <a name="azurerm-modules"></a>[Módulos de AzureRM](#tab/azurerm2)
  

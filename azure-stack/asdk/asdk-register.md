@@ -7,12 +7,12 @@ ms.date: 1/20/2021
 ms.author: patricka
 ms.reviewer: misainat
 ms.lastreviewed: 1/20/2021
-ms.openlocfilehash: d5ef14d0e5674c8eefac6b4b4b0877aed8541207
-ms.sourcegitcommit: c87d1e26a4f96be4651f63fbf5ea3d98d6f14832
+ms.openlocfilehash: de7216d99c9f120539fd81dbac6cadc09e31aff6
+ms.sourcegitcommit: e88f0a1f2f4ed3bb8442bfb7b754d8b3a51319b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98659398"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534137"
 ---
 # <a name="register-the-asdk-with-azure"></a>Registro del Kit de desarrollo de Azure Stack en Azure
 
@@ -52,7 +52,7 @@ Siga estos pasos para registrar el ASDK en Azure.
     ```powershell  
     # Add the Azure cloud subscription environment name. 
     # Supported environment names are AzureCloud, AzureChinaCloud, or AzureUSGovernment depending which Azure subscription you're using.
-    Add-AzAccount -EnvironmentName "<environment name>"
+    Connect-AzAccount -EnvironmentName "<environment name>"
     
     # Register the Azure Stack Hub resource provider in your Azure subscription
     Register-AzResourceProvider -ProviderNamespace Microsoft.AzureStack
@@ -175,7 +175,7 @@ En el equipo que está conectado a Internet, utilice los siguientes comandos de 
   ```powershell  
   # Add the Azure cloud subscription environment name. 
   # Supported environment names are AzureCloud, AzureChinaCloud or AzureUSGovernment depending which Azure subscription you are using.
-  Add-AzAccount -EnvironmentName "<environment name>"
+  Connect-AzAccount -EnvironmentName "<environment name>"
 
   # If you have multiple subscriptions, run the following command to select the one you want to use:
   # Get-AzSubscription -SubscriptionID "<subscription ID>" | Select-AzSubscription
@@ -228,7 +228,7 @@ También puede usar el cmdlet **Get-Content** para señalar a un archivo que con
   ```powershell  
   # Add the Azure cloud subscription environment name. 
   # Supported environment names are AzureCloud, AzureChinaCloud or AzureUSGovernment depending which Azure subscription you are using.
-  Add-AzAccount -EnvironmentName "<environment name>"
+  Connect-AzAccount -EnvironmentName "<environment name>"
 
   # If you have multiple subscriptions, run the following command to select the one you want to use:
   # Get-AzSubscription -SubscriptionID "<subscription ID>" | Select-AzSubscription

@@ -3,16 +3,16 @@ title: API de uso de recursos de proveedor de Azure Stack Hub
 description: Referencia de la API de uso de recursos, que recupera información de uso de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 11/09/2020
+ms.date: 02/01/2021
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: b327d7e194de672787c3a7e120857d6c2775a1a1
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: 13eb197cee1da34f5e4e2b934ed05e26446b4970
+ms.sourcegitcommit: e56b0eaf92c633d5d782bfdf17ce521fa88a7256
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94544945"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99227415"
 ---
 # <a name="provider-resource-usage-api"></a>API de uso de recursos de proveedor
 
@@ -26,7 +26,7 @@ El término *proveedor* se aplica al administrador de servicios y a los proveedo
 
 La solicitud obtiene detalles de consumo para las suscripciones y el período de tiempo solicitados. No hay ningún cuerpo de solicitud.
 
-Esta API de uso es una API de proveedor, por lo que se debe asignar al autor de llamada el rol **Propietario** , **Colaborador** o **Lector** en la suscripción del proveedor.
+Esta API de uso es una API de proveedor, por lo que se debe asignar al autor de llamada el rol **Propietario**, **Colaborador** o **Lector** en la suscripción del proveedor.
 
 | Método | URI de solicitud |
 | --- | --- |
@@ -36,7 +36,7 @@ Esta API de uso es una API de proveedor, por lo que se debe asignar al autor de 
 
 | Argumento | Descripción |
 | --- | --- |
-| `armendpoint` |Punto de conexión de Azure Resource Manager del entorno de Azure Stack Hub. La norma en Azure Stack Hub es que el nombre del punto de conexión de Azure Resource Manager esté en el formato `https://adminmanagement.{domain-name}`. Por ejemplo, si en el Kit de desarrollo de Azure Stack (ASDK) el nombre de dominio es *local.azurestack.external* , el punto de conexión de Resource Manager será `https://adminmanagement.local.azurestack.external`. |
+| `armendpoint` |Punto de conexión de Azure Resource Manager del entorno de Azure Stack Hub. La norma en Azure Stack Hub es que el nombre del punto de conexión de Azure Resource Manager esté en el formato `https://adminmanagement.{domain-name}`. Por ejemplo, si en el Kit de desarrollo de Azure Stack (ASDK) el nombre de dominio es *local.azurestack.external*, el punto de conexión de Resource Manager será `https://adminmanagement.local.azurestack.external`. |
 | `subId` |Identificador de suscripción del usuario que realiza la llamada. |
 | `reportedStartTime` |Hora de inicio de la consulta. El valor de `DateTime` debe estar en formato Hora universal coordinada (UTC) y al principio de la hora, por ejemplo, 13:00. Para la agregación diaria, establezca este valor en la medianoche de la hora UTC. El formato se cambia a ISO 8601; por ejemplo, `2015-06-16T18%3a53%3a11%2b00%3a00Z`, donde los dos puntos se cambian por `%3a` y el signo más se cambia por `%2b` para que sea un URI descriptivo. |
 | `reportedEndTime` |Hora de finalización de la consulta. Las restricciones que se aplican a `reportedStartTime` también se aplican a este argumento. El valor de `reportedEndTime` no puede ser una fecha futura ni la actual. Si es así, el resultado se establece en "el procesamiento no está completo". |
@@ -114,13 +114,13 @@ Puede recopilar información de uso de las suscripciones eliminadas mediante la 
 
 | Método | URI de solicitud |
 | --- | --- |
-| GET | `https://{armendpoint}/subscriptions/{subId}/providersMicrosoft.Commerce.Admin/subscriberUsageAggregates?reportedStartTime={start-time}&reportedEndTime={end-endtime}&aggregationGranularity=Hourly&api-version=2015-06-01-preview` |
+| GET | `https://{armendpoint}/subscriptions/{subId}/providers/Microsoft.Commerce.Admin/subscriberUsageAggregates?reportedStartTime={start-time}&reportedEndTime={end-endtime}&aggregationGranularity=Hourly&api-version=2015-06-01-preview` |
 
 #### <a name="return-usage-for-deleted-or-active-tenant"></a>Devolución del uso para el inquilino eliminado o activo
 
 | Método | URI de solicitud |
 | --- | --- |
-| GET |`https://{armendpoint}/subscriptions/{subId}/providersMicrosoft.Commerce.Admin/subscriberUsageAggregates?reportedStartTime={start-time}&reportedEndTime={end-endtime}&aggregationGranularity=Hourly&subscriberId={subscriber-id}&api-version=2015-06-01-preview` |
+| GET |`https://{armendpoint}/subscriptions/{subId}/providers/Microsoft.Commerce.Admin/subscriberUsageAggregates?reportedStartTime={start-time}&reportedEndTime={end-endtime}&aggregationGranularity=Hourly&subscriberId={subscriber-id}&api-version=2015-06-01-preview` |
 
 ## <a name="next-steps"></a>Pasos siguientes
 

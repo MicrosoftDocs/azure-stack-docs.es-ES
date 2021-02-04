@@ -7,12 +7,12 @@ ms.date: 04/02/2020
 ms.author: patricka
 ms.reviewer: wfayed
 ms.lastreviewed: 09/12/2019
-ms.openlocfilehash: 89cb7fe7ee0f8e19c2774d5ebfef988ec0933e03
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: 56b0025de1eee074eb0d6fbcdff8228cdbb9ac4e
+ms.sourcegitcommit: 5f3d37994b8cb63c76e54136c0cc05bc4f475950
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97871028"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99495557"
 ---
 # <a name="datacenter-integration-planning-considerations-for-azure-stack-hub-integrated-systems"></a>Consideraciones sobre el planeamiento de la integración del centro de datos con los sistemas integrados de Azure Stack Hub
 
@@ -201,7 +201,7 @@ Para replicar datos en una ubicación secundaria y orquestar la conmutación por
 ## <a name="learn-more"></a>Más información
 
 - Para obtener información acerca de los casos de uso, las compras, los asociados y los distribuidores de hardware de OEM, consulte la página del producto de [Azure Stack Hub](https://azure.microsoft.com/overview/azure-stack/).
-- Para más información sobre la hoja de ruta y la disponibilidad geográfica de los sistemas integrados de Azure Stack Hub, consulte las notas del producto: [Azure Stack Hub: una extensión de Azure](https://azure.microsoft.com/resources/azure-stack-an-extension-of-azure/). 
+- Para más información sobre la hoja de ruta y la disponibilidad geográfica de los sistemas integrados de Azure Stack Hub, consulte las notas del producto: [Azure Stack Hub: una extensión de Azure](https://azure.microsoft.com/resources/videos/azure-friday-azure-stack-an-extension-of-azure/). 
 
 ## <a name="next-steps"></a>Pasos siguientes
 [Modelos de conexión de la implementación de Azure Stack Hub](azure-stack-connection-models.md)
