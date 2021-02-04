@@ -3,16 +3,16 @@ title: Traslado de una máquina virtual de Azure a Azure Stack Hub
 description: Aprenda a trasladar una máquina virtual de Azure a Azure Stack Hub.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 12/16/2020
+ms.date: 2/1/2021
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 9/8/2020
-ms.openlocfilehash: 0ca338c3a5698d55a54485c8eebe321992ad9842
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: 89dc2d9dc55dcfe74565ad6c998880bd1c991126
+ms.sourcegitcommit: a6f62a6693e48eb05272c01efb5ca24372875173
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97867312"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99245796"
 ---
 # <a name="move-a-vm-from-azure-to-azure-stack-hub"></a>Traslado de una máquina virtual de Azure a Azure Stack Hub
 

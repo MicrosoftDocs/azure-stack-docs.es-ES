@@ -4,15 +4,15 @@ description: Aprenda a solucionar problemas de implementación de Kubernetes en 
 author: mattbriggs
 ms.topic: article
 ms.author: mabrigg
-ms.date: 12/16/2020
+ms.date: 2/1/2021
 ms.reviewer: waltero
 ms.lastreviewed: 11/14/2019
-ms.openlocfilehash: d15b6d3cbd4cac10c3df0d8c215a869c1fa398b7
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: b76bd5aa4e46eba8c7abf7f5beceae79ed5c025a
+ms.sourcegitcommit: a6f62a6693e48eb05272c01efb5ca24372875173
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97873884"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99247751"
 ---
 # <a name="troubleshoot-kubernetes-deployment-to-azure-stack-hub"></a>Solución de problemas de implementación de Kubernetes en Azure Stack Hub
 

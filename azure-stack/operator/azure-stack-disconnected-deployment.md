@@ -7,12 +7,12 @@ ms.date: 03/04/2020
 ms.author: patricka
 ms.reviewer: wfayed
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: 98633108390ee24416c9383ed8171439a4ee1459
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: 53f46732b799e7a638ce7fb61e236ba4a55f2437
+ms.sourcegitcommit: 5f3d37994b8cb63c76e54136c0cc05bc4f475950
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97870858"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99495470"
 ---
 # <a name="azure-disconnected-deployment-planning-decisions-for-azure-stack-hub-integrated-systems"></a>Decisiones de planeamiento de implementación desconectada de Azure en sistemas integrados de Azure Stack Hub
 Una vez que haya decidido [cómo va a integrar Azure Stack Hub en el entorno de nube híbrida](azure-stack-connection-models.md), puede concluir sus decisiones sobre la implementación de Azure Stack Hub.
@@ -50,7 +50,7 @@ Telemetría|No disponible: los datos de telemetría de Azure Stack Hub y todos l
 
 ## <a name="learn-more"></a>Más información
 - Para obtener información acerca de los casos de uso, las compras, los asociados y los distribuidores de hardware de OEM, consulte la página del producto de [Azure Stack Hub](https://azure.microsoft.com/overview/azure-stack/).
-- Para más información sobre la hoja de ruta y la disponibilidad geográfica de los sistemas integrados de Azure Stack Hub, consulte las notas del producto: [Azure Stack Hub: una extensión de Azure](https://azure.microsoft.com/resources/azure-stack-an-extension-of-azure/). 
+- Para más información sobre la hoja de ruta y la disponibilidad geográfica de los sistemas integrados de Azure Stack Hub, consulte las notas del producto: [Azure Stack Hub: una extensión de Azure](https://azure.microsoft.com/resources/videos/azure-friday-azure-stack-an-extension-of-azure/). 
 - Para más información acerca de los paquetes y precios de Microsoft Azure Stack Hub [descargue el archivo .pdf](https://azure.microsoft.com/mediahandler/files/resourcefiles/5bc3f30c-cd57-4513-989e-056325eb95e1/Azure-Stack-packaging-and-pricing-datasheet.pdf). 
 
 ## <a name="next-steps"></a>Pasos siguientes

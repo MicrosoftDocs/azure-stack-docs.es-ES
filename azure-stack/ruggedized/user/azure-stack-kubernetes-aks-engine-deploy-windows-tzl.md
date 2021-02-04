@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/16/2020
+ms.date: 2/1/2021
 ms.author: mabrigg
 ms.reviewer: alfredop
 ms.lastreviewed: 12/20/2019
-ms.openlocfilehash: 8d74f6c8ec16f5efb6ccbdf8fa860830c20a6587
-ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
+ms.openlocfilehash: b9f3aae35c756375f54a7b643a68d3a75dd8cde9
+ms.sourcegitcommit: a6f62a6693e48eb05272c01efb5ca24372875173
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97910983"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99247003"
 ---
 # <a name="install-the-aks-engine-on-windows-in-azure-stack-hub---ruggedized"></a>Instalación del motor de AKS en Windows para Azure Stack Hub Ruggedized
 

@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/16/2020
+ms.date: 2/1/2021
 ms.author: mabrigg
 ms.reviewer: chasat
 ms.lastreviewed: 12/17/2019
-ms.openlocfilehash: 6cac7624a99ccd430f64243586c773238ec8c4c2
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: 8bc77528bec5fdb22e2ea83b45cc4eedc3b7984c
+ms.sourcegitcommit: a6f62a6693e48eb05272c01efb5ca24372875173
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97872082"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99246402"
 ---
 # <a name="update-the-container-registry-in-azure-stack-hub---modular-data-center-mdc"></a>Actualización del registro de contenedor en Azure Stack Hub: centro de datos modular (MDC)
 

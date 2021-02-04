@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 06/16/2020
 ms.author: patricka
 ms.lastreviewed: 06/16/2020
-ms.openlocfilehash: da6e4d78d2464468b75ab2bd22d9bb81dd01e33b
-ms.sourcegitcommit: c5d46662492887b70a599a60f3c3d27e3460a742
+ms.openlocfilehash: a873af575c6d18a72cba19e3c3c9536fe4d95fc8
+ms.sourcegitcommit: 5f3d37994b8cb63c76e54136c0cc05bc4f475950
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97965518"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99495438"
 ---
 # <a name="azure-stack-hub-administration-basics"></a>Aspectos básicos de la administración de Azure Stack Hub
 
@@ -59,7 +59,7 @@ Estos servicios requieren una configuración adicional para que pueda ponerlos a
 
 **Mapa de ruta de los servicios**
 
-Azure Stack Hub continuará agregando compatibilidad con los servicios de Azure. Para información sobre el mapa de ruta previsto, consulte las notas del producto [Azure Stack Hub: una extensión de Azure](https://go.microsoft.com/fwlink/?LinkId=842846&clcid=0x409). También puede supervisar las [publicaciones del blog de Azure Stack Hub](https://techcommunity.microsoft.com/t5/azure-stack-blog/bg-p/AzureStackBlog) para conocer los nuevos anuncios.
+Azure Stack Hub continuará agregando compatibilidad con los servicios de Azure. Para información sobre el mapa de ruta previsto, consulte las notas del producto [Azure Stack Hub: una extensión de Azure](https://azure.microsoft.com/resources/videos/azure-friday-azure-stack-an-extension-of-azure/). También puede supervisar las [publicaciones del blog de Azure Stack Hub](https://techcommunity.microsoft.com/t5/azure-stack-blog/bg-p/AzureStackBlog) para conocer los nuevos anuncios.
 
 ## <a name="what-account-should-i-use"></a>¿Qué cuenta debo usar?
 

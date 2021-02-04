@@ -3,16 +3,16 @@ title: Ejecución de una aplicación de n niveles en varias regiones de Azure St
 description: Obtenga información sobre cómo ejecutar una aplicación de niveles en varias regiones de Azure Stack Hub para lograr alta disponibilidad.
 author: mattbriggs
 ms.topic: how-to
-ms.date: 12/16/2020
+ms.date: 2/1/2021
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: 6978e6c86df577fc3d0446a8ecc8ce13a57781b7
-ms.sourcegitcommit: 52c934f5eeb5fcd8e8f2ce3380f9f03443d1e445
+ms.openlocfilehash: 74f0d38b7101bac23b8fcac300e9800c523a31f5
+ms.sourcegitcommit: a6f62a6693e48eb05272c01efb5ca24372875173
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97973592"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99247067"
 ---
 # <a name="run-an-n-tier-application-in-multiple-azure-stack-hub-regions-for-high-availability"></a>Ejecución de una aplicación de n niveles en varias regiones de Azure Stack Hub para lograr alta disponibilidad
 

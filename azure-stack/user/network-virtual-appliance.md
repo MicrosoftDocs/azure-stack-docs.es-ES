@@ -7,12 +7,12 @@ ms.date: 11/22/2020
 ms.topic: article
 ms.reviewer: sranthar
 ms.lastreviewed: 11/22/2020
-ms.openlocfilehash: bb5d62b4e5302762b4feddfd7afd7b7a39002187
-ms.sourcegitcommit: 8526f642ef859b0006c3991d966f93608a87288a
+ms.openlocfilehash: f247e8c604b9b1060f4cc011acdbd9786b487ab1
+ms.sourcegitcommit: 5f3d37994b8cb63c76e54136c0cc05bc4f475950
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98243330"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99495506"
 ---
 # <a name="troubleshoot-network-virtual-appliance-problems"></a>Solución de problemas de aplicaciones virtuales de red
 
@@ -23,7 +23,7 @@ Este artículo le ayuda a validar los requisitos básicos de la plataforma de Az
 El proveedor de una aplicación virtual de red proporciona soporte técnico para esta y para su integración con la plataforma de Azure Stack Hub.
 
 > [!NOTE]
-> Si tiene un problema de conectividad o de enrutamiento que implica una aplicación virtual de red, debería [ponerse en contacto directamente con el proveedor de la misma](https://support.microsoft.com/help/2984655/support-for-azure-market-place-for-virtual-machines).
+> Si tiene un problema de conectividad o de enrutamiento que implica una aplicación virtual de red, debería [ponerse en contacto directamente con el proveedor de la misma](https://mskb.pkisolutions.com/kb/2984655).
 
 Si en este artículo no se aborda el problema de su aplicación virtual de red con Azure Stack Hub, cree una [incidencia de soporte técnico de Azure Stack](../operator/azure-stack-manage-basics.md#where-to-get-support).
 
@@ -44,7 +44,7 @@ Si en este artículo no se aborda el problema de su aplicación virtual de red c
 
 ## <a name="check-the-minimum-configuration-requirements-for-nvas-on-azure"></a>Comprobación de los requisitos mínimos de la configuración de las aplicaciones virtuales de red en Azure
 
-Cada aplicación virtual de red tiene requisitos básicos de configuración para funcionar correctamente en Azure Stack Hub. En esta sección se muestran los pasos para comprobar estas configuraciones básicas. Para más información, [póngase en contacto con el proveedor de la aplicación virtual de red](https://support.microsoft.com/help/2984655/support-for-azure-market-place-for-virtual-machines).
+Cada aplicación virtual de red tiene requisitos básicos de configuración para funcionar correctamente en Azure Stack Hub. En esta sección se muestran los pasos para comprobar estas configuraciones básicas. Para más información, [póngase en contacto con el proveedor de la aplicación virtual de red](https://mskb.pkisolutions.com/kb/2984655).
 
 > [!IMPORTANT]
 > Si los paquetes usan un túnel S2S, se encapsulan con encabezados adicionales, lo que aumenta el tamaño global de cada paquete.
@@ -135,7 +135,7 @@ Algunos sistemas operativos en el nivel de invitado pueden tener directivas de f
    netstat -an | grep -i listen
    ```
 
-1. Busque los puertos TCP utilizados por el software de la aplicación virtual que aparece en los resultados. Si no los ve, configure la aplicación en la aplicación virtual de red y la máquina virtual para que escuche y responda al tráfico que llega a esos puertos. [Póngase en contacto con el proveedor de la aplicación virtual de red para obtener ayuda](https://support.microsoft.com/help/2984655/support-for-azure-market-place-for-virtual-machines).
+1. Busque los puertos TCP utilizados por el software de la aplicación virtual que aparece en los resultados. Si no los ve, configure la aplicación en la aplicación virtual de red y la máquina virtual para que escuche y responda al tráfico que llega a esos puertos. [Póngase en contacto con el proveedor de la aplicación virtual de red para obtener ayuda](https://mskb.pkisolutions.com/kb/2984655).
 
 ## <a name="check-nva-performance"></a>Comprobación del rendimiento de la aplicación virtual de red
 
@@ -147,7 +147,7 @@ Durante un pico de CPU, investigue qué proceso de la máquina virtual invitada 
 
 También es posible que tenga que cambiar el tamaño de la máquina virtual a un tamaño de SKU más grande o, para un conjunto de escalado de máquinas virtuales, aumentar el número de instancias.
 
-Si necesita ayuda, [póngase en contacto con el proveedor de la aplicación virtual de red](https://support.microsoft.com/help/2984655/support-for-azure-market-place-for-virtual-machines).
+Si necesita ayuda, [póngase en contacto con el proveedor de la aplicación virtual de red](https://mskb.pkisolutions.com/kb/2984655).
 
 ### <a name="validate-vm-network-statistics"></a>Validación de las estadísticas de red de la máquina virtual
 
@@ -183,7 +183,7 @@ Si no ve la entrada de paquetes en el seguimiento de la máquina virtual de back
 
 Si ve que los paquetes entran, pero sin respuesta, puede que tenga que solucionar un problema con una aplicación de máquina virtual o con el firewall.
 
-Si necesita ayuda, [póngase en contacto con el proveedor de la aplicación virtual de red](https://support.microsoft.com/help/2984655/support-for-azure-market-place-for-virtual-machines).
+Si necesita ayuda, [póngase en contacto con el proveedor de la aplicación virtual de red](https://mskb.pkisolutions.com/kb/2984655).
 
 ### <a name="create-a-support-ticket"></a>Creación de una incidencia de soporte técnico
 

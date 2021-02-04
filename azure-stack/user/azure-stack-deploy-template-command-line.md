@@ -3,16 +3,16 @@ title: Implementación de una plantilla con la línea de comandos en Azure Stack
 description: Aprenda a usar la interfaz de la línea de comandos (CLI) multiplataforma de Azure para implementar plantillas en Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 12/16/2020
+ms.date: 2/1/2021
 ms.author: mabrigg
 ms.reviewer: unknown
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: 81fea12ad205f0e20473c8b46144165c3e62f698
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: 38327d2e23fd74c1a5e0a197ccc2a32b65b3fa7a
+ms.sourcegitcommit: a6f62a6693e48eb05272c01efb5ca24372875173
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97867254"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99247819"
 ---
 # <a name="deploy-a-template-with-the-command-line-in-azure-stack-hub"></a>Implementación de una plantilla con la línea de comandos en Azure Stack Hub
 

@@ -3,16 +3,16 @@ title: Implementación de Kubernetes en Azure Stack Hub con los Servicios de fed
 description: Obtenga información sobre cómo implementar Kubernetes en Azure Stack Hub con los Servicios de federación de Active Directory (AD FS).
 author: mattbriggs
 ms.topic: article
-ms.date: 12/16/2020
+ms.date: 2/1/2021
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 3/12/2020
-ms.openlocfilehash: 268157d491b1605ecce442cc4cb348e76657fec2
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: c04d877009e7deaffa20c9e629062ec3fec517c1
+ms.sourcegitcommit: a6f62a6693e48eb05272c01efb5ca24372875173
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97873952"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99247785"
 ---
 # <a name="deploy-kubernetes-to-azure-stack-hub-using-active-directory-federated-services"></a>Implementación de Kubernetes en Azure Stack Hub con los Servicios de federación de Active Directory
 
