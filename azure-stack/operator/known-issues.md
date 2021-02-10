@@ -3,16 +3,16 @@ title: Problemas conocidos de Azure Stack Hub
 description: Obtenga información sobre los problemas conocidos de las versiones de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 11/16/2020
+ms.date: 01/28/2021
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 09/09/2020
-ms.openlocfilehash: 161869d04e036e5265ebceb5cab9e193091baa37
-ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
+ms.openlocfilehash: af4187ecf610543c693aff742b1e74b8d5bef84c
+ms.sourcegitcommit: 659114a3fb90c962316eb4cddab53d2d2da35b03
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96935157"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99065529"
 ---
 # <a name="azure-stack-hub-known-issues"></a>Problemas conocidos de Azure Stack Hub
 
@@ -85,6 +85,18 @@ Para ver los problemas conocidos con las actualizaciones de Azure Stack Hub, con
 
 - Aplicable a: este problema se aplica a todas las versiones admitidas. 
 - Causa: Al habilitar la **afinidad de sesión** en un equilibrador de carga, el hash de tupla 2 emplea la dirección IP física en lugar de las IP privadas asignadas a las máquinas virtuales. En escenarios en los que el tráfico dirigido al equilibrador de carga llega a través de una VPN, o si todas las máquinas virtuales cliente (IP de origen) residen en el mismo nodo y la afinidad de sesión está habilitada, todo el tráfico se dirige a una máquina virtual de back-end.
+- Repetición: Comunes
+
+#### <a name="ipv6-button-visible-in-frontend-ip-configuration"></a>Botón IPv6 visible en la configuración IP de front-end
+
+- Aplicable a: este problema se aplica a la versión 2008.
+- Causa: el botón IPv6 es visible y se habilita al crear la configuración de IP de front-end de un equilibrador de carga público. Se trata de un problema poco importante en el portal. IPv6 no se admite en Azure Stack Hub.
+- Repetición: Comunes
+
+#### <a name="backend-port-and-frontend-port-need-to-be-the-same-when-floating-ip-is-enabled"></a>El puerto de back-end y el puerto de front-end deben ser los mismos cuando la IP flotante esté habilitada
+
+- Aplicable a: este problema afecta a todas las versiones. 
+- Causa: El puerto de front-end y el puerto de back-end deben ser los mismos en la regla de equilibrio de carga cuando la IP flotante esté habilitada. es así por diseño.
 - Repetición: Comunes
 
 <!-- ## Compute -->

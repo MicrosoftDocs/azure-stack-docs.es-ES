@@ -1,22 +1,22 @@
 ---
 title: Plan de implementación de Controladora de red
-description: En este tema se explica cómo planear la implementación de Controladora de red mediante Windows Admin Center en un conjunto de máquinas virtuales que ejecutan el sistema operativo de Azure Stack HCI.
+description: En este tema se explica cómo planear la implementación de Controladora de red mediante Windows Admin Center en un conjunto de máquinas virtuales.
 author: AnirbanPaul
 ms.author: anpaul
 ms.topic: conceptual
-ms.date: 10/7/2020
-ms.openlocfilehash: 3ac17ca9cd54c2ec387ceb39cbda76f7cb539305
-ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
+ms.date: 02/02/2021
+ms.openlocfilehash: bfea9216cefdc64c7749f8b49d5ecc3a422e5130
+ms.sourcegitcommit: 0e58c5cefaa81541d9280c0e8a87034989358647
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98255085"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99510795"
 ---
 # <a name="plan-to-deploy-network-controller"></a>Plan de implementación de Controladora de red
 
->Se aplica a: Azure Stack HCI, versión 20H2; Windows Server 2019
+>Se aplica a: Azure Stack HCI, versión 20H2, Windows Server 2019 y Windows Server 2016
 
-La planeación de la implementación de Controladora de red mediante Windows Admin Center requiere un conjunto de máquinas virtuales que ejecuten el sistema operativo de Azure Stack HCI. Controladora de red es un rol del servidor escalable y de alta disponibilidad que requiere un mínimo de tres máquinas virtuales para proporcionar alta disponibilidad en la red.
+La planeación de la implementación de Controladora de red mediante Windows Admin Center requiere un conjunto de máquinas virtuales que ejecuten el sistema operativo de Azure Stack HCI o Windows Server. Controladora de red es un rol del servidor escalable y de alta disponibilidad que requiere un mínimo de tres máquinas virtuales para proporcionar alta disponibilidad en la red.
 
    >[!NOTE]
    > Es recomendable implementar Controladora de red en sus propias máquinas virtuales dedicadas.
@@ -56,12 +56,10 @@ Puede implementar los nodos de clúster de Controladora de red en la misma subre
 Para más información, consulte [Configuración del registro DNS dinámico para Controladora de red](/windows-server/networking/sdn/plan/installation-and-preparation-requirements-for-deploying-network-controller#step-3-configure-dynamic-dns-registration-for-network-controller).
 
 ## <a name="next-steps"></a>Pasos siguientes
-Ahora está listo para implementar Controladora de red en las máquinas virtuales que ejecutan el sistema operativo.
+Ahora está listo para implementar Controladora de red en las máquinas virtuales.
 
-Para obtener más información, consulte:
+## <a name="see-also"></a>Vea también
 - [Creación de un clúster de Azure Stack HCI](../deploy/create-cluster.md)
-- [Implementación de controladora de red con Windows PowerShell](https://github.com/microsoft/SDN/tree/master/SDNExpress/scripts)
-
-## <a name="see-also"></a>Consulte también
-- [Controladora de red](/windows-server/networking/sdn/technologies/network-controller/network-controller)
+- [Implementación de una infraestructura de SDN mediante SDN Express](../manage/sdn-express.md)
+- [Introducción a la controladora de red](network-controller-overview.md)
 - [Alta disponibilidad de Controladora de red](/windows-server/networking/sdn/technologies/network-controller/network-controller-high-availability)

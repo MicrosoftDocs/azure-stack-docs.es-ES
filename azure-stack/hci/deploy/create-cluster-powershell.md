@@ -3,15 +3,15 @@ title: Creación de un clúster de Azure Stack HCI mediante Windows PowerShell
 description: Aprenda a crear un clúster para Azure Stack HCI mediante Windows PowerShell.
 author: v-dasis
 ms.topic: how-to
-ms.date: 01/22/2021
+ms.date: 02/01/2021
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: 2099d7e9dcd2d01f949d54ad5bd59ce06ecaccbc
-ms.sourcegitcommit: e772df8ac78c86d834a68d1a8be83b7f738019b7
+ms.openlocfilehash: ca2a9448b787a93e297d4bc666a37d81e4d02b28
+ms.sourcegitcommit: e56b0eaf92c633d5d782bfdf17ce521fa88a7256
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98772210"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99227368"
 ---
 # <a name="create-an-azure-stack-hci-cluster-using-windows-powershell"></a>Creación de un clúster de Azure Stack HCI mediante Windows PowerShell
 
@@ -147,9 +147,11 @@ En este paso se configuran varios elementos de red, como conmutadores virtuales 
 
 Para más información sobre RDMA y la red de hosts de Hyper-V para Azure Stack HCI, consulte [Requisitos de la red del host](../concepts/host-network-requirements.md).
 
-### <a name="disable-unused-networks"></a>Deshabilitar redes no usadas
+### <a name="disable-unused-network-adapters"></a>Deshabilitar adaptadores de red no usados
 
-Debe deshabilitar las redes desconectadas o no utilizadas para el tráfico de administración, almacenamiento o cargas de trabajo (por ejemplo, las máquinas virtuales). Aquí se describe cómo identificar las redes no utilizadas:
+Debe deshabilitar todas las redes desconectadas y los adaptadores no utilizados para el tráfico de administración, almacenamiento o cargas de trabajo (por ejemplo, las máquinas virtuales). Esto incluye los adaptadores de red que se usan para la administración desatendida, como los controladores de administración de placa base (BMC).
+
+Aquí se describe cómo identificar las redes no utilizadas:
 
 ```powershell
 $ServerList = "Server1", "Server2", "Server3", "Server4"

@@ -7,12 +7,12 @@ ms.date: 11/17/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 11/17/2020
-ms.openlocfilehash: 81cefb08d6fd0d1fc773221d52393c8a3ae6fddf
-ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
+ms.openlocfilehash: 7db231e1bca513bf3755f8e9c078fb40d00cfa09
+ms.sourcegitcommit: e88f0a1f2f4ed3bb8442bfb7b754d8b3a51319b4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95517895"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99533848"
 ---
 # <a name="add-tenant-for-usage-and-billing-to-azure-stack-hub"></a>Adición de inquilinos a Azure Stack Hub para uso y facturación
 
@@ -54,11 +54,11 @@ Actualice el registro con la suscripción del nuevo cliente. Azure informa acerc
 1. Abra Windows PowerShell en un símbolo del sistema con privilegios elevados y ejecute:  
 
    ```powershell
-   Add-AzAccount
+   Connect-AzAccount
    ```
 
    >[!NOTE]
-   > Si la sesión expira, la contraseña ha cambiado o simplemente desea cambiar de cuenta, ejecute el siguiente cmdlet antes de iniciar sesión con **Add-AzAccount**: `Remove-AzAccount-Scope Process`.
+   > Si la sesión expira, la contraseña ha cambiado o simplemente desea cambiar de cuenta, ejecute el siguiente cmdlet antes de iniciar sesión con **Connect-AzAccount**: `Remove-AzAccount-Scope Process`.
 
 2. Escriba sus credenciales de Azure.
 3. En la sesión de PowerShell, ejecute:
@@ -87,7 +87,7 @@ En la siguiente sección se describen los parámetros para el cmdlet **New-AzRes
    ```
 
    >[!NOTE]
-   > Si la sesión expira, la contraseña ha cambiado o simplemente desea cambiar de cuenta, ejecute el siguiente cmdlet antes de iniciar sesión con **Add-AzAccount**: `Remove-AzAccount-Scope Process`.
+   > Si la sesión expira, la contraseña ha cambiado o simplemente desea cambiar de cuenta, ejecute el siguiente cmdlet antes de iniciar sesión con **Connect-AzAccount**: `Remove-AzAccount-Scope Process`.
 
 2. Escriba sus credenciales de Azure.
 3. En la sesión de PowerShell, ejecute:

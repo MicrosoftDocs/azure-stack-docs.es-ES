@@ -3,16 +3,16 @@ title: Protección de las máquinas virtuales implementadas en Azure Stack Hub
 description: Aprenda a crear un plan de recuperación para proteger las máquinas virtuales implementadas en Azure Stack Hub de la pérdida de datos y el tiempo de inactividad no planeado.
 author: mattbriggs
 ms.topic: conceptual
-ms.date: 12/16/2020
+ms.date: 2/1/2021
 ms.author: mabrigg
 ms.reviewer: hectorl
 ms.lastreviewed: 3/5/2020
-ms.openlocfilehash: 8fe38a530477f080efafcf728e553a8194b74ec6
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: a783c4b0c30b5326220faf8655eb4f8c7a39bb29
+ms.sourcegitcommit: a6f62a6693e48eb05272c01efb5ca24372875173
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97874071"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99247649"
 ---
 # <a name="protect-vms-deployed-on-azure-stack-hub"></a>Protección de las máquinas virtuales implementadas en Azure Stack Hub
 

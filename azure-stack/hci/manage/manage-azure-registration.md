@@ -1,16 +1,16 @@
 ---
 title: Administración del registro de Azure para Azure Stack HCl
-description: Cómo administrar el registro de Azure para Azure Stack HCl y comprender el estado de registro mediante PowerShell.
+description: Administración del registro de Azure para Azure Stack HCI, descripción del estado del registro y anulación del registro del clúster cuando esté listo para la retirada.
 author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
-ms.date: 12/10/2020
-ms.openlocfilehash: a81a1973d7324371cb42b23ca7905d39492401cf
-ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
+ms.date: 01/28/2021
+ms.openlocfilehash: a187730ed43c6c4a57bbe2d1f81d39085d8b94a1
+ms.sourcegitcommit: b461597917b768412036bf852c911aa9871264b2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98254439"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99050100"
 ---
 # <a name="manage-azure-registration"></a>Administración del registro de Azure
 
@@ -18,9 +18,19 @@ ms.locfileid: "98254439"
 
 Una vez creado el clúster de Azure Stack HCI, debe [registrar el clúster con Azure Arc](../deploy/register-with-azure.md). Una vez registrado el clúster, se sincroniza periódicamente la información entre el clúster local y la nube. En este tema se explica cómo entender el estado del registro, otorgar permisos de Azure Active Directory y anular el registro del clúster cuando esté listo para la retirada.
 
-## <a name="understanding-registration-status"></a>Reconocimiento del estado del registro
+## <a name="understanding-registration-status-using-windows-admin-center"></a>Descripción del estado del registro mediante Windows Admin Center
 
-Para comprender el estado de registro, use el cmdlet de PowerShell `Get-AzureStackHCI` y las propiedades `ClusterStatus`, `RegistrationStatus` y `ConnectionStatus`. Por ejemplo, después de instalar el sistema operativo de Azure Stack HCI, antes de unirse a un clúster o crearlo, la propiedad `ClusterStatus` muestra el estado "todavía no":
+Al conectarse a un clúster mediante Windows Admin Center, aparecerá el panel que muestra el estado de la conexión de Azure. **Conectado** significa que el clúster ya está registrado con Azure y se ha sincronizado correctamente con la nube en el último día.
+
+   :::image type="content" source="media/manage-azure-registration/registration-status.png" alt-text="El panel de Windows Admin Center mostrará siempre el estado de la conexión del clúster" lightbox="media/manage-azure-registration/registration-status.png":::
+
+Para más información, seleccione **Configuración** en la parte inferior del menú **Herramientas** de la izquierda y, a continuación, seleccione **Registro de Azure Stack HCl**.
+
+   :::image type="content" source="media/manage-azure-registration/azure-stack-hci-registration.png" alt-text="Seleccione Configuración > Herramientas > Registro de Azure Stack HCI para más información" lightbox="media/manage-azure-registration/azure-stack-hci-registration.png":::.
+
+## <a name="understanding-registration-status-using-powershell"></a>Descripción del estado del registro mediante PowerShell
+
+Para comprender el estado de registro mediante Windows PowerShell, use el cmdlet de PowerShell `Get-AzureStackHCI` y las propiedades `ClusterStatus`, `RegistrationStatus` y `ConnectionStatus`. Por ejemplo, después de instalar el sistema operativo de Azure Stack HCI, antes de unirse a un clúster o crearlo, la propiedad `ClusterStatus` muestra el estado "todavía no":
 
 :::image type="content" source="media/manage-azure-registration/1-get-azurestackhci.png" alt-text="Estado de registro de Azure antes de la creación del clúster":::
 
@@ -40,7 +50,7 @@ Si se supera ese período máximo, `ConnectionStatus` mostrará `OutOfPolicy`.
 
 Además de crear un recurso de Azure en la suscripción, el registro de Azure Stack HCI crea una identidad de aplicación, conceptualmente similar a un usuario, en su inquilino de Azure Active Directory. La identidad de la aplicación hereda el nombre del clúster. Esta identidad actúa en nombre del servicio en la nube de Azure Stack HCI, según corresponda, en la suscripción.
 
-Si el usuario que ejecuta `Register-AzureStackHCI` es un administrador de Azure Active Directory o si se le han delegado permisos suficientes, todo esto sucede automáticamente y no se requiere ninguna acción adicional. Si no es así, puede ser necesaria la aprobación del administrador de Azure Active Directory para completar el registro. El administrador puede conceder consentimiento explícitamente a la aplicación o puede delegar permisos para que pueda conceder consentimiento a la aplicación:
+Si el usuario que registra el clúster es un administrador de Azure Active Directory o si se le han delegado permisos suficientes, todo esto sucede automáticamente y no se requiere ninguna acción adicional. Si no es así, puede ser necesaria la aprobación del administrador de Azure Active Directory para completar el registro. El administrador puede conceder consentimiento explícitamente a la aplicación o puede delegar permisos para que pueda conceder consentimiento a la aplicación:
 
 :::image type="content" source="media/manage-azure-registration/aad-permissions.png" alt-text="Diagrama de identidad y permisos de Azure Active Directory" border="false":::
 
@@ -66,7 +76,7 @@ https://azurestackhci-usage.trafficmanager.net/AzureStackHCI.Census.Sync
 https://azurestackhci-usage.trafficmanager.net/AzureStackHCI.Billing.Sync
 ```
 
-Solicitar la aprobación del administrador de Azure Active Directory podría llevar cierto tiempo, por lo que el cmdlet `Register-AzureStackHCI` saldrá y dejará el registro en el estado "pendiente de consentimiento del administrador"; es decir, parcialmente completado. Una vez concedido el consentimiento, simplemente, vuelva a ejecutar `Register-AzureStackHCI` para completar el registro.
+Solicitar la aprobación del administrador de Azure Active Directory podría llevar cierto tiempo, por lo que el cmdlet `Register-AzStackHCI` saldrá y dejará el registro en el estado "pendiente de consentimiento del administrador"; es decir, parcialmente completado. Una vez concedido el consentimiento, simplemente, vuelva a ejecutar `Register-AzStackHCI` para completar el registro.
 
 ## <a name="azure-active-directory-user-permissions"></a>Permisos de usuario de Azure Active Directory
 
@@ -87,7 +97,7 @@ Esto permitirá a todos los usuarios registrar aplicaciones. Sin embargo, el usu
 
 ### <a name="option-2-assign-cloud-application-administration-role"></a>Opción 2: Asignar rol Administrador de aplicaciones en la nube
 
-Asigne el rol integrado "Administrador de aplicaciones en la nube" de Azure AD al usuario. Esto permitirá al usuario registrar clústeres sin necesidad de consentimiento adicional del administrador de AD.
+Asigne el rol integrado "Administrador de aplicaciones en la nube" de Azure AD al usuario. Esto permitirá al usuario registrar clústeres o anular el registro de estos sin necesidad de consentimiento adicional del administrador de AD.
 
 ### <a name="option-3-create-a-custom-ad-role-and-consent-policy"></a>Opción 3: Crear un rol y una directiva de consentimiento de AD personalizados
 
@@ -147,17 +157,34 @@ La opción más restrictiva es crear un rol de AD personalizado con una directiv
 
    6. Asigne el nuevo rol personalizado de AD al usuario que va a registrar el clúster de Azure Stack HCI con Azure mediante [estas instrucciones](/azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal?context=/azure/active-directory/roles/context/ugr-context).
 
-## <a name="unregister-azure-stack-hci-with-azure"></a>Anulación del registro de Azure Stack HCI con Azure
+## <a name="unregister-azure-stack-hci-using-windows-admin-center"></a>Anulación del registro de Azure Stack HCI mediante Windows Admin Center
 
-Cuando esté listo para retirar su clúster de Azure Stack HCI, use el cmdlet `Unregister-AzStackHCI` para anular el registro. Esto detiene toda la funcionalidad de supervisión, soporte técnico y facturación mediante Azure Arc. Se eliminan el recurso de Azure que representa el clúster y la identidad de la aplicación de Azure Active Directory, pero el grupo de recursos, no, ya que puede contener otros recursos no relacionados.
+Cuando esté listo para retirar el clúster de Azure Stack HCI, solo tiene que conectarse al clúster mediante Windows Admin Center y seleccionar **Configuración** en la parte inferior del menú **Herramientas** de la izquierda. A continuación, seleccione **Registro de Azure Stack HCI** y haga clic en el botón **Anular registro**. El proceso de anulación del registro limpia automáticamente el recurso de Azure que representa el clúster, el grupo de recursos de Azure (si el grupo se creó durante el registro y no contiene ningún otro recurso) y la identidad de la aplicación de Azure AD. Esto detiene toda la funcionalidad de supervisión, soporte técnico y facturación mediante Azure Arc.
 
-Si ejecuta el cmdlet `Unregister-AzStackHCI` en un nodo de clúster, use esta sintaxis y especifique el identificador de la suscripción de Azure así como el nombre del recurso del clúster de Azure Stack HCI cuyo registro desea anular:
+   > [!NOTE]
+   > La anulación del registro de un clúster de Azure Stack HCI requiere un administrador de Azure Active Directory u otro usuario al que se hayan delegado permisos suficientes. Consulte [Permisos de usuario de Azure Active Directory](#azure-active-directory-user-permissions).
+
+## <a name="unregister-azure-stack-hci-using-powershell"></a>Anulación del registro de Azure Stack HCI mediante PowerShell
+
+También puede usar el cmdlet `Unregister-AzStackHCI` para anular el registro de un clúster de Azure Stack HCI. Puede ejecutar el cmdlet en un nodo de clúster o en un equipo de administración.
+
+Puede que tenga que instalar la última versión del módulo `Az.StackHCI`. Si se le pregunta **¿Seguro que quiere instalar los módulos de "PSGallery"?** responda **Sí** (S).
+
+```PowerShell
+Install-Module -Name Az.StackHCI
+```
+
+### <a name="unregister-from-a-cluster-node"></a>Anulación del registro desde un nodo de clúster
+
+Si ejecuta el cmdlet `Unregister-AzStackHCI` en un servidor del clúster, use esta sintaxis y especifique el identificador de la suscripción de Azure así como el nombre del recurso del clúster de Azure Stack HCI cuyo registro desea anular:
 
 ```PowerShell
 Unregister-AzStackHCI -SubscriptionId "e569b8af-6ecc-47fd-a7d5-2ac7f23d8bfe" -ResourceName HCI001
 ```
 
 Se le pedirá que visite microsoft.com/devicelogin en otro dispositivo (como su PC o teléfono), escriba el código e inicie sesión allí para autenticarse con Azure.
+
+### <a name="unregister-from-a-management-pc"></a>Anulación del registro desde un equipo de administración
 
 Si ejecuta el cmdlet desde un equipo de administración, también deberá especificar el nombre de un servidor del clúster:
 
@@ -167,9 +194,14 @@ Unregister-AzStackHCI -ComputerName ClusterNode1 -SubscriptionId "e569b8af-6ecc-
 
 Aparecerá una ventana interactiva de inicio de sesión de Azure. Los mensajes exactos que verá variarán en función de la configuración de seguridad (por ejemplo, la autenticación en dos fases). Siga las indicaciones para iniciar sesión.
 
+## <a name="cleaning-up-after-a-cluster-that-was-not-properly-unregistered"></a>Limpieza después de un clúster cuya anulación del registro no se efectuó correctamente
+
+Si un usuario destruye un clúster de Azure Stack HCI sin anular su registro, por ejemplo, mediante la creación de una nueva imagen de los servidores host o la eliminación de los nodos del clúster virtual, los artefactos se dejarán en Azure. Pasan desapercibidos y no afectan a la facturación ni usan recursos, pero pueden acumularse en Azure Portal. Para limpiarlos, puede eliminarlos manualmente.
+
+Para eliminar el recurso de Azure Stack HCI, vaya a su página en Azure Portal y seleccione **Eliminar** en la barra de acciones de la parte superior. Escriba el nombre del recurso para confirmar la eliminación y luego seleccione **Eliminar**. Para eliminar la identidad de la aplicación de Azure AD, vaya a **Azure AD**, después a **Registros de aplicaciones** y la encontrará en **Todas las aplicaciones**. Seleccione **Eliminar** y confirme.
+
 ## <a name="next-steps"></a>Pasos siguientes
 
 Para obtener información relacionada, consulte:
 
 - [Conexión de Azure Stack HCl a Azure](../deploy/register-with-azure.md)
-- [Supervisión de Azure Stack HCI con Azure Monitor](azure-monitor.md)

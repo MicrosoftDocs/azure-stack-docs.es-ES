@@ -4,19 +4,19 @@ description: Registro de la puerta de enlace de Windows Admin Center con Azure
 author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
-ms.date: 01/25/2021
-ms.openlocfilehash: c2067387d7b03252e7a2cc93aeddcb68dbd4bc83
-ms.sourcegitcommit: 2ac64ac431411b673e655465939d3c95cc94c55d
+ms.date: 01/28/2021
+ms.openlocfilehash: d98cb4f0531903d27d97d9fb055c7ae2db35a65e
+ms.sourcegitcommit: b461597917b768412036bf852c911aa9871264b2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98811018"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99050066"
 ---
 # <a name="register-windows-admin-center-with-azure"></a>Registro de Windows Admin Center con Azure
 
 > Se aplica a Azure Stack HCI v20H2; Windows Server 2019
 
-Para usar los servicios de Azure con Windows Admin Center, primero debe instalar Windows Admin Center en un equipo de administración y completar un registro único de la puerta de enlace de Windows Admin Center. Se trata de un requisito previo para registrar el clúster con Azure y debe realizarse en el mismo equipo de administración que tenga previsto usar para completar el proceso de [registro del clúster](../deploy/register-with-azure.md).
+Para usar los servicios de Azure con Windows Admin Center, primero debe instalar Windows Admin Center en un equipo de administración y completar un registro único de la puerta de enlace de Windows Admin Center. Se trata de un requisito previo para registrar el clúster con Azure y debe realizarse en el mismo equipo de administración que tenga previsto usar para completar el proceso de [registro del clúster](../deploy/register-with-azure.md) mediante el mismo identificador de suscripción y de inquilino de Azure.
 
 ## <a name="complete-the-gateway-registration-process-using-windows-admin-center"></a>Completar el proceso de registro de puerta de enlace con Windows Admin Center
 
@@ -34,7 +34,7 @@ Para usar los servicios de Azure con Windows Admin Center, primero debe instalar
 
    Debería ver el mensaje siguiente: "Ha iniciado sesión en la aplicación de Windows Admin Center en el dispositivo". Cierre la ventana del explorador para volver a la página de registro original.
 
-4. Conéctese a Azure Active Directory. Para hacerlo, proporcione el identificador de Azure Active Directory (inquilino). Si siguió los pasos anteriores, el campo del identificador estará ya rellenado. Deje el campo **Aplicación de Azure Active Directory** definido como **Crear nuevo** si su organización no le proporcionó un identificador existente. Si ya tiene un identificador, haga clic en **Usar existente** y aparecerá un campo vacío para que escriba el identificador que le ha proporcionado el administrador. Después de escribir el identificador, Windows Admin Center confirmará que se ha encontrado una cuenta con ese valor. Si tiene un identificador existente, pero no sabe qué es, siga [estos pasos](/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) para recuperarlo.
+4. Conéctese a Azure Active Directory. Para hacerlo, proporcione el identificador de Azure Active Directory (inquilino). Si ya tiene un identificador de inquilino de Azure y ha seguido los pasos anteriores, el campo ID puede aparecer rellenado previamente. Deje el campo **Aplicación de Azure Active Directory** definido como **Crear nuevo** si su organización no le proporcionó un identificador existente. Si ya tiene un identificador, haga clic en **Usar existente** y aparecerá un campo vacío para que escriba el identificador que le ha proporcionado el administrador. Después de escribir el identificador, Windows Admin Center confirmará que se ha encontrado una cuenta con ese valor. Si tiene un identificador existente, pero no sabe qué es, siga [estos pasos](/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) para recuperarlo.
 
    :::image type="content" source="media/register-wac/connect-to-aad.png" alt-text="Conéctese a Azure Active Directory. Para hacerlo, proporcione el identificador de Azure Active Directory (inquilino) o cree uno nuevo." lightbox="media/register-wac/connect-to-aad.png":::
 

@@ -1,28 +1,28 @@
 ---
-title: Redes definidas por software (SDN) en Azure Stack HCI
+title: Redes definidas por software (SDN) en Azure Stack HCI y Windows Server
 description: SDN proporciona una manera de configurar y administrar de forma centralizada redes y servicios de red como conmutación, enrutamiento y equilibrio de carga en el centro de datos.
 author: khdownie
 ms.author: v-kedow
 ms.topic: conceptual
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 01/22/2021
-ms.openlocfilehash: ee4046837b012f5ea55a85db418e2af35f84a7ee
-ms.sourcegitcommit: e772df8ac78c86d834a68d1a8be83b7f738019b7
+ms.date: 02/02/2021
+ms.openlocfilehash: d67f16b65e13c700360bd85096dd1454745772c0
+ms.sourcegitcommit: 0e58c5cefaa81541d9280c0e8a87034989358647
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98772261"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99510727"
 ---
-# <a name="software-defined-networking-sdn-in-azure-stack-hci"></a>Redes definidas por software (SDN) en Azure Stack HCI
+# <a name="software-defined-networking-sdn-in-azure-stack-hci-and-windows-server"></a>Redes definidas por software (SDN) en Azure Stack HCI y Windows Server
 
-> Se aplica a Azure Stack HCI, versión 20H2; Windows Server 2019
+> Se aplica a Azure Stack HCI, versión 20H2, Windows Server 2019 y Windows Server 2016
 
 SDN proporciona una manera de configurar y administrar de forma centralizada redes y servicios de red como conmutación, enrutamiento y equilibrio de carga en el centro de datos. Puede usar SDN para crear, proteger y conectar dinámicamente su red para satisfacer las necesidades en constante evolución de las aplicaciones. El funcionamiento de las redes de centros de datos a escala global para servicios como Microsoft Azure, que realiza de forma eficaz decenas de miles de cambios de red al día, solo es posible gracias a SDN.
 
 Los elementos de red virtual, como el [conmutador virtual de Hyper-V](/windows-server/virtualization/hyper-v-virtual-switch/hyper-v-virtual-switch), la [virtualización de red de Hyper-V](/windows-server/networking/sdn/technologies/hyper-v-network-virtualization/hyper-v-network-virtualization), el [equilibrio de carga de software](/windows-server/networking/sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn) y la [puerta de enlace de RAS](/windows-server/networking/sdn/technologies/network-function-virtualization/ras-gateway-for-sdn) están diseñados para ser elementos integrales de la infraestructura de SDN. También puede usar los dispositivos compatibles con SDN existentes para lograr una integración más profunda entre las cargas de trabajo que se ejecutan en las redes virtuales y la red física.
 
-Hay tres componentes principales de SDN en Azure Stack HCI y puede elegir cuál desea implementar: Controladora de red, Equilibrador de carga de software y Puerta de enlace.
+Hay tres componentes principales de SDN y puede elegir cuál desea implementar: Controladora de red, Equilibrador de carga de software y Puerta de enlace.
 
    > [!NOTE]
    > SDN no se admite en clústeres extendidos (multisitio).
@@ -38,7 +38,7 @@ La implementación de Controladora de red permite las siguientes funcionalidades
 - Conexión de aplicaciones virtuales a las redes virtuales.
 - Configuración de directivas de Calidad de servicio (QoS) para las máquinas virtuales conectadas a redes virtuales o redes basadas en VLAN tradicionales.
 
-Se recomienda [implementar la Controladora de red mediante SDN Express](../manage/sdn-express.md) después de crear un clúster de Azure Stack HCI.
+Es recomendable implementar [Controladora de red mediante SDN Express](../manage/sdn-express.md).
 
 ## <a name="software-load-balancing"></a>Equilibrio de carga de software
 
@@ -59,5 +59,4 @@ Las puertas de enlace usan [Protocolo de puerta de enlace de borde](/windows-ser
 Para obtener información relacionada, consulte:
 
 - [Planeamiento de una infraestructura de red definida por software](plan-software-defined-networking-infrastructure.md)
-- [Introducción a SDN en Windows Server](/windows-server/networking/sdn/software-defined-networking)
 - [Implementación de una infraestructura de SDN mediante SDN Express](../manage/sdn-express.md)
