@@ -129,7 +129,7 @@ Tendrá que saber si el administrador de identidades es Azure AD o ADFS. En la 
 
 3. Después de que Commvault se instala en su máquina virtual, abra Commcell Console. En Inicio, seleccione **Commvault** > **Commvault Commcell Console**.
 
-    ![La consola CommCell tiene un panel de navegación en el lateral derecho denominado CommCell Browser (Explorador CommCell). En dicho panel derecho se muestra una ficha Introducción.](./media/azure-stack-network-howto-backup-commvault/commcell-console.png)
+    ![La consola CommCell tiene un panel de navegación en el lateral izquierdo denominado CommCell Browser (Explorador CommCell). En el panel derecho se muestra una página con la pestaña Introducción.](./media/azure-stack-network-howto-backup-commvault/commcell-console.png)
 
 4. Configure los repositorios de copia de seguridad para usar el almacenamiento externo en Azure Stack Hub en Commcell Console de Commvault. En CommCell Browser, seleccione Storage Resources > Storage Pools (Recursos de almacenamiento > Grupos de almacenamiento). Haga clic con el botón derecho y seleccione **Add Storage Pool** (Agregar grupo de almacenamiento). Seleccione **Nube**.
 

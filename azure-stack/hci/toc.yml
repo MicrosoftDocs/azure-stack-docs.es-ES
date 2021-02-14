@@ -112,8 +112,8 @@
       items:
         - name: Implementar una infraestructura de SDN
           href: manage/sdn-express.md
-        - name: Uso de un firewall de centro de datos
-          href: manage/use-datacenter-firewall.md
+        - name: Uso de un firewall del centro de datos con PowerShell
+          href: manage/use-datacenter-firewall-powershell.md
         - name: Administración de redes lógicas de inquilinos
           href: manage/tenant-logical-networks.md
         - name: Administración de redes virtuales de inquilinos
