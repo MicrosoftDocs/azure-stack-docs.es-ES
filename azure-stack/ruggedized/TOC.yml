@@ -520,7 +520,7 @@
                   href: customer-replaceable-unit/verify-hardware-lifecycle-host-access-and-health.md
                 - name: Conocimientos necesarios para trabajar con nodos de la unidad de escalado
                   href: customer-replaceable-unit/required-knowledge-scale-unit-nodes.md
-                - name: Comprobación del acceso y estado de los nodo de la unidad de escalado
+                - name: Comprobación del acceso y estado de los nodos de la unidad de escalado
                   href: customer-replaceable-unit/verify-scale-unit-node-access-and-health.md
                 - name: Apagador del host de ciclo de vida de hardware
                   href: customer-replaceable-unit/power-off-hlh.md
@@ -528,7 +528,7 @@
                   href: customer-replaceable-unit/power-off-scu.md
                 - name: Sustitución de DIMM
                   href: customer-replaceable-unit/replace-dimm.md
-                - name: Sustitución de un disco de almacenamiento externo con errores
+                - name: Sustitución de unidad de datos con errores
                   href: customer-replaceable-unit/replace-failed-external-storage-disk.md
                 - name: Sustitución del ventilador de refrigeración
                   href: customer-replaceable-unit/replace-cooling-fan.md
@@ -542,15 +542,15 @@
                   href: customer-replaceable-unit/unpack-heater-and-plan-installation.md
                 - name: Sustitución del calentador
                   href: customer-replaceable-unit/replace-heater.md
-                - name: Encendido de un nodo de unidad de escalado
+                - name: Encendido de un nodo de la unidad de escalado
                   href: customer-replaceable-unit/power-on-scale-unit-node.md
                 - name: Reparación de un nodo de unidad de escalado
                   href: customer-replaceable-unit/repair-scale-unit-node.md
                 - name: Comprobación del estado del host de ciclo de vida de hardware
                   href: customer-replaceable-unit/verify-hardware-lifecycle-host-health.md
-                - name: Comprobación del estado del nodo de unidad de escalado
+                - name: Comprobación del estado de los nodos de la unidad de escalado
                   href: customer-replaceable-unit/verify-scale-unit-node-health.md
-                - name: Comprobación del estado del disco del nodo de unidad de escalado
+                - name: Comprobación del estado del disco del nodo de la unidad de escalado
                   href: customer-replaceable-unit/verify-scale-unit-node-disk-health.md
                 - name: Diagrama del hardware de Azure Stack Hub
                   href: customer-replaceable-unit/azure-stack-hub-hardware-diagram.md
@@ -560,8 +560,6 @@
                   href: customer-replaceable-unit/indicators-and-codes.md
                 - name: Acceso a la interfaz de iDRAC mediante conexión USB directa
                   href: customer-replaceable-unit/access-idrac-over-usb-connection.md
-                - name: Instalación del firmware a través de la interfaz iDRAC
-                  href: customer-replaceable-unit/install-firmware-using-idrac.md
                 - name: Estación de trabajo de acceso con privilegios y acceso al punto de conexión con privilegios
                   href: customer-replaceable-unit/privileged-access-workstation.md
     - name: Referencia
