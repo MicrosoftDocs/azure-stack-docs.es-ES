@@ -342,7 +342,7 @@
               href: event-hubs-rp-overview.md
             - name: Planificación de capacidad
               href: event-hubs-rp-capacity-planning.md
-            - name: Prerrequisitos
+            - name: Requisitos previos
               href: event-hubs-rp-prerequisites.md
             - name: Instalar
               href: event-hubs-rp-install.md
@@ -362,13 +362,17 @@
                   href: event-hubs-rp-rotate-secrets.md
                 - name: Anuncios de actualización del servicio
                   href: 'https://techcommunity.microsoft.com/t5/Event-Hubs-Blog/bg-p/EventHubs'
+            - name: Notas de la versión
+              items:
+                - name: "Notas de la versión\_1.2012.1.0 [febrero de\_2021]"
+                  href: event-hubs-rp-release-1-2012-10.md
             - name: Remove
               href: event-hubs-rp-remove.md
         - name: IoT Hub en Azure Stack Hub
           items:
             - name: Información general
               href: iot-hub-rp-overview.md
-            - name: Prerrequisitos
+            - name: Requisitos previos
               href: iot-hub-rp-prerequisites.md
             - name: Instalar
               href: iot-hub-rp-install.md
