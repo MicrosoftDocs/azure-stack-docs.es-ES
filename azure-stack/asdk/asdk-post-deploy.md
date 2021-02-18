@@ -7,12 +7,12 @@ ms.date: 12/03/2020
 ms.author: patricka
 ms.reviewer: misainat
 ms.lastreviewed: 12/03/2020
-ms.openlocfilehash: f2e039e2b0934e17a4335753e787c6cdf3808644
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: 11e79a4d998f012a58c7f3b0ab8ecb928c861851
+ms.sourcegitcommit: d542b68b299b73e045f30916afb6018e365e9db6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97873323"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99975867"
 ---
 # <a name="post-deployment-configurations-for-asdk"></a>Configuraciones posteriores a la implementación del ASDK
 
@@ -197,7 +197,7 @@ Si se produjo un error, siga los pasos de la solución de problemas para obtener
 
 ## <a name="enable-multi-tenancy"></a>Habilitación de servicios multiinquilino
 
-Para las implementaciones con Azure AD, debe [habilitar los servicios multiinquilino](../operator/azure-stack-enable-multitenancy.md#enable-multi-tenancy) para la instalación de ASDK.
+Para las implementaciones con Azure AD, debe [habilitar los servicios multiinquilino](../operator/azure-stack-enable-multitenancy.md) para la instalación de ASDK.
 
 > [!NOTE]
 > Cuando se utilizan cuentas de administrador o usuario de dominios distintos de los usados para registrarse en Azure Stack para iniciar sesión en un portal de Azure Stack, el nombre de dominio utilizado para registrar Azure Stack debe agregarse a la URL del portal. Por ejemplo, si Azure Stack se ha registrado en fabrikam.onmicrosoft.com y el registro de la cuenta de usuario es admin@contoso.com, la dirección URL que se usa para iniciar sesión en el portal de usuarios sería: https:\:/portal.local.azurestack.external/fabrikam.onmicrosoft.com.

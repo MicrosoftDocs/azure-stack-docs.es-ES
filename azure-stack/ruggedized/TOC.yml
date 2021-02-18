@@ -267,7 +267,7 @@
             - name: Reemplazo de hardware
               items:
                 - name: Acciones de nodo
-                  href: ../operator/azure-stack-node-actions.md?toc=/azure-stack/ruggedized/toc.json&bc=/azure-stack/breadcrumb/toc.json
+                  href: operator/azure-stack-node-actions-tzl.md
         - name: Seguridad y cumplimiento
           items:
             - name: Configuración de seguridad

@@ -16,12 +16,12 @@ ms.date: 10/02/2018
 ms.author: sethm
 ms.reviewer: justini
 ROBOTS: NOINDEX
-ms.openlocfilehash: 7d7ba1e7e3b6686002d24df2e286af81ddda5ce7
-ms.sourcegitcommit: a6f62a6693e48eb05272c01efb5ca24372875173
+ms.openlocfilehash: 3574c55568db86c96d22d43fdf1bb08ac79c061e
+ms.sourcegitcommit: f9be5640dd445b3d926c9ce3e2165e96c72ece89
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99248740"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100009203"
 ---
 # <a name="azure-stack-1808-update"></a>Actualización de Azure Stack 1808
 
@@ -244,7 +244,7 @@ Los siguientes son problemas conocidos posteriores a la instalación de esta com
       2. En la misma suscripción, vaya a **Control de acceso (IAM)** y verifique que **Azure Stack – Managed Disk** (Azure Stack - Disco administrado) aparece en la lista.
    2. Si ha configurado un entorno de varios inquilinos, se puede producir un error con un mensaje de error interno en la implementación de máquinas virtuales en una suscripción asociada con un directorio de invitados. Para solucionar el error, siga estos pasos:
       1. Aplique la [revisión 1808 de Azure Stack](https://support.microsoft.com/help/4465859).
-      2. Siga los pasos de [este artículo](../azure-stack-enable-multitenancy.md#register-azure-stack-hub-with-the-guest-directory) para volver a configurar cada uno de los directorios de invitado.
+      2. Siga los pasos de [este artículo](../azure-stack-enable-multitenancy.md#register-a-guest-directory) para volver a configurar cada uno de los directorios de invitado.
 
 <!-- 2869209 IS, ASDK --> 
 - Cuando se usa el [cmdlet **Add-AzsPlatformImage**](https://docs.microsoft.com/powershell/module/azs.compute.admin/add-azsplatformimage?view=azurestackps-1.4.0&preserve-view=true), se debe usar el parámetro **-OsUri** como el URI de la cuenta de almacenamiento donde se ha cargado el disco. Si usa la ruta de acceso local del disco, se produce el siguiente error en el cmdlet: *Se produjo un problema en la operación de larga ejecución con el estado "Error"* . 

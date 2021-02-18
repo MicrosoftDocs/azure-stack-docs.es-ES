@@ -5,12 +5,12 @@ author: AnirbanPaul
 ms.author: anpaul
 ms.topic: how-to
 ms.date: 02/02/2021
-ms.openlocfilehash: e45ca61a09bd989645998a2e8993f29176d1b9cf
-ms.sourcegitcommit: 5f3d37994b8cb63c76e54136c0cc05bc4f475950
+ms.openlocfilehash: 5cf88e5befd551eb7789388807c9c1e4df671dc9
+ms.sourcegitcommit: 34babe5abf1bceee718011b5c5c25f75e1b03b0c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99501070"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100562949"
 ---
 # <a name="manage-tenant-logical-networks"></a>Administración de redes lógicas de inquilinos
 

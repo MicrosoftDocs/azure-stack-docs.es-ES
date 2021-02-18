@@ -3,16 +3,16 @@ title: Cambio del propietario de facturación de las suscripciones de usuario de
 description: Aprenda a cambiar el propietario de facturación de las suscripciones de usuario de Azure Stack Hub.
 author: PatAltimore
 ms.topic: conceptual
-ms.date: 1/29/2021
+ms.date: 02/17/2021
 ms.author: patricka
 ms.reviewer: shnatara
-ms.lastreviewed: 1/29/2021
-ms.openlocfilehash: 40e4fbff8a04db2a6f2218d60d548df3c75236ba
-ms.sourcegitcommit: e88f0a1f2f4ed3bb8442bfb7b754d8b3a51319b4
+ms.lastreviewed: 02/11/2021
+ms.openlocfilehash: c612ace63515a4df8c8195cfdd1e58797dcd9ba2
+ms.sourcegitcommit: 4c97ed2caf054ebeefa94da1f07cfb6be5929aac
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99533898"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100647851"
 ---
 # <a name="change-the-billing-owner-for-an-azure-stack-hub-user-subscription"></a>Cambio del propietario de facturación de las suscripciones de usuario de Azure Stack Hub
 
@@ -57,7 +57,7 @@ Set-AzContext -Subscription $providerSubscriptionId
 # Change user subscription owner
 $subscription = Get-AzsUserSubscription -SubscriptionId $SubscriptionId
 $Subscription.Owner = $OwnerUpn
-Set-AzsUserSubscription -InputObject $subscription
+$Subscription | Set-AzsUserSubscription | fl *
 ```
 
 [!include[Remove Account](../includes/remove-account-az.md)]
@@ -75,15 +75,12 @@ Write-Output "Setting context to the Default Provider Subscription: $providerSub
 Set-AzureRMContext -Subscription $providerSubscriptionId
 
 # Change user subscription owner
-$subscription = Get-AzureRMsUserSubscription -SubscriptionId $SubscriptionId
+$subscription = Get-AzsUserSubscription -SubscriptionId $SubscriptionId
 $Subscription.Owner = $OwnerUpn
-Set-AzureRMsUserSubscription -InputObject $subscription
+$Subscription | Set-AzsUserSubscription | fl *
 ```
 [!include[Remove Account](../includes/remove-account-azurerm.md)]
 ---
-
-
-
 
 ## <a name="next-steps"></a>Pasos siguientes
 

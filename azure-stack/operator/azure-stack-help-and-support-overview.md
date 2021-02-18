@@ -7,12 +7,12 @@ ms.date: 01/19/2021
 ms.author: patricka
 ms.reviewer: shisab
 ms.lastreviewed: 01/19/2021
-ms.openlocfilehash: 88414f6e4198c7db04307eb4d508ee5acd9dfbe9
-ms.sourcegitcommit: 01abc9d81ced31bd727626195148b4e00cc2d62e
+ms.openlocfilehash: fbe9221e61de46c2af28bf50268d0e23b20d2844
+ms.sourcegitcommit: 69c700a456091adc31e4a8d78e7a681dfb55d248
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98584318"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100013258"
 ---
 # <a name="azure-stack-hub-help-and-support"></a>Ayuda y soporte técnico de Azure Stack Hub
 
@@ -83,7 +83,7 @@ Este conjunto de tutoriales se puede personalizar en función de si se ejecutan 
 Los registros de diagnóstico se pueden enviar a Microsoft de dos formas:
 
 - [Envío de registros de forma proactiva](./diagnostic-log-collection.md#send-logs-proactively): si está habilitada, ciertas alertas de estado desencadenan la recopilación de registros.
-- [Envío inmediato de registros](./diagnostic-log-collection.md#send-logs-now) puede elegir manualmente una ventana deslizante específica como período de tiempo de la recopilación de registros.
+- [Envío inmediato de registros](./diagnostic-log-collection.md#send-logs-now-with-the-administrator-portal) puede elegir manualmente una ventana deslizante específica como período de tiempo de la recopilación de registros.
 
 ![Captura de pantalla que muestra cómo iniciar la recopilación de registros de diagnóstico.](media/azure-stack-help-and-support/banner-enable-automatic-log-collection.png)
 

@@ -3,16 +3,16 @@ title: Adición de una imagen de máquina virtual personalizada a Azure Stack Hu
 description: Aprenda a agregar o quitar una imagen de máquina virtual personalizada en Azure Stack Hub.
 author: sethmanheim
 ms.topic: how-to
-ms.date: 10/12/2020
+ms.date: 02/08/2021
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 9/8/2020
-ms.openlocfilehash: 496d706b6ed930087207b24047d3409f29a53e53
-ms.sourcegitcommit: 8122672409954815e472a5b251bb7319fab8f951
+ms.openlocfilehash: 6b80ea5a25ab83eb5b62842fe1c21e7e698ab51a
+ms.sourcegitcommit: 824fd33fd5d6aa0c0dac06c21b592bdb60378940
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92060130"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99850945"
 ---
 # <a name="add-and-remove-a-custom-vm-image-to-azure-stack-hub"></a>Adición y eliminación de una imagen de máquina virtual personalizada a Azure Stack Hub
 
@@ -48,13 +48,13 @@ Agregue la imagen de máquina virtual como un operador de Azure Stack Hub median
 
    [![Incorporación de una imagen de máquina virtual](./media/azure-stack-add-vm-image/tca4-small.png)](./media/azure-stack-add-vm-image/tca4.png#lightbox)
 
-4. En **Crear imagen**, escriba el **publicador**, la **oferta**, la **SKU**, la **versión** y el identificador URI del blob de disco del sistema operativo. A continuación, seleccione **Crear** para empezar a crear la imagen de máquina virtual.
+2. En **Crear imagen**, escriba el **publicador**, la **oferta**, la **SKU**, la **versión** y el identificador URI del blob de disco del sistema operativo. A continuación, seleccione **Crear** para empezar a crear la imagen de máquina virtual.
 
    [![Interfaz de usuario de la instalación de prueba de la imagen personalizada](./media/azure-stack-add-vm-image/tca5-small.png)](./media/azure-stack-add-vm-image/tca5.png#lightbox)
 
    Cuando la imagen se crea correctamente, el estado de la imagen de máquina virtual cambia a **Correcto**.
 
-5. Cuando agregue una imagen, solo estará disponible para las plantillas basadas en Azure Resource Manager y las implementaciones de PowerShell. Para poner una imagen a disposición de los usuarios como elemento de Marketplace, publique el elemento de Marketplace siguiendo los pasos del artículo [Creación y publicación de un elemento de Marketplace](azure-stack-create-and-publish-marketplace-item.md). Asegúrese de que toma nota de los valores del **publicador**, **oferta**, **SKU** y **versión**. Los necesitará cuando modifique la plantilla de Resource Manager y de manifest.json en el archivo .azpkg personalizado.
+3. Cuando agregue una imagen, solo estará disponible para las plantillas basadas en Azure Resource Manager y las implementaciones de PowerShell. Para poner una imagen a disposición de los usuarios como elemento de Marketplace, publique el elemento de Marketplace siguiendo los pasos del artículo [Creación y publicación de un elemento de Marketplace](azure-stack-create-and-publish-marketplace-item.md). Asegúrese de que toma nota de los valores del **publicador**, **oferta**, **SKU** y **versión**. Los necesitará cuando modifique la plantilla de Resource Manager y de manifest.json en el archivo .azpkg personalizado.
 
 ### <a name="powershell"></a>[PowerShell](#tab/image-add-ps)
 

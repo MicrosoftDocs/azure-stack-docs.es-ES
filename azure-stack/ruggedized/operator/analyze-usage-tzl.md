@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/29/2020
+ms.date: 02/16/2021
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 07/29/2020
-ms.openlocfilehash: f546c1ad783ded0aa686ebdcb7e08f1427bea91e
-ms.sourcegitcommit: 50b362d531c2d35a3a935811fee71252971bd5d8
+ms.openlocfilehash: b3c3f352fbcb6848a2e41f2e9c3f666ba1e3c570
+ms.sourcegitcommit: 34babe5abf1bceee718011b5c5c25f75e1b03b0c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96941377"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100562509"
 ---
 # <a name="analyze-azure-stack-usage-with-local-usage-meters"></a>Análisis del uso de Azure Stack con medidores de uso locales
 
@@ -34,7 +34,7 @@ La solicitud obtiene detalles de consumo para las suscripciones y el período de
 
 Esta API de uso es una API de proveedor, por lo que se debe asignar al autor de llamada el rol **Propietario**, **Colaborador** o **Lector** en la suscripción del proveedor.
 
-| Método | URI de solicitud |
+| Método | URI de la solicitud |
 | --- | --- |
 | GET |`https://{armendpoint}/subscriptions/{subId}/providers/Microsoft.Commerce.Admin/subscriberUsageAggregates?reportedStartTime={reportedStartTime}&reportedEndTime={reportedEndTime}&aggregationGranularity={granularity}&subscriberId={sub1.1}&api-version=2015-06-01-preview&continuationToken={token-value}` |
 
@@ -118,12 +118,12 @@ Puede recopilar información de uso de las suscripciones eliminadas mediante la 
 
 #### <a name="return-all-tenant-usage-for-deleted-for-active-users"></a>Devolución de todo el uso de inquilino para usuarios activos o eliminados
 
-| Método | URI de solicitud |
+| Método | URI de la solicitud |
 | --- | --- |
 | GET | `https://{armendpoint}/subscriptions/{subId}/providersMicrosoft.Commerce.Admin/subscriberUsageAggregates?reportedStartTime={start-time}&reportedEndTime={end-endtime}&aggregationGranularity=Hourly&api-version=2015-06-01-preview` |
 
 #### <a name="return-usage-for-deleted-or-active-tenant"></a>Devolución del uso para el inquilino eliminado o activo
 
-| Método | URI de solicitud |
+| Método | URI de la solicitud |
 | --- | --- |
 | GET |`https://{armendpoint}/subscriptions/{subId}/providersMicrosoft.Commerce.Admin/subscriberUsageAggregates?reportedStartTime={start-time}&reportedEndTime={end-endtime}&aggregationGranularity=Hourly&subscriberId={subscriber-id}&api-version=2015-06-01-preview` |

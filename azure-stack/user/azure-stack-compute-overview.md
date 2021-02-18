@@ -3,16 +3,16 @@ title: Introducción a las máquinas virtuales de Azure Stack Hub
 description: Más información acerca de las máquinas virtuales de Azure Stack Hub.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 10/01/2020
+ms.date: 02/08/2021
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 01/05/2020
-ms.openlocfilehash: ff462a8fbdb2de67e58f15248aaffa79f0abb695
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: 70bbb35b8433e8542fc58303f1e8cc56c28c84d7
+ms.sourcegitcommit: 824fd33fd5d6aa0c0dac06c21b592bdb60378940
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94545808"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99850812"
 ---
 # <a name="introduction-to-azure-stack-hub-vms"></a>Introducción a las máquinas virtuales de Azure Stack Hub
 
@@ -22,11 +22,11 @@ Una máquina virtual de Azure Stack Hub le da la flexibilidad de la virtualizaci
 
 Las máquinas virtuales de Azure Stack Hub pueden usarse de diversas maneras. Por ejemplo:
 
-- **Desarrollo y pruebas** : Las máquinas virtuales de Azure Stack Hub permiten crear un equipo con las configuraciones específicas necesarias para codificar y probar una aplicación.
+- **Desarrollo y pruebas**: Las máquinas virtuales de Azure Stack Hub permiten crear un equipo con las configuraciones específicas necesarias para codificar y probar una aplicación.
 
-- **Aplicaciones en la nube** : Como la demanda de la aplicación puede fluctuar, tendría sentido desde el punto de vista económico ejecutarla en una máquina virtual en Azure Stack Hub. Pagará por las máquinas virtuales adicionales cuando las necesite y las desactivará cuando ya no sean necesarias.
+- **Aplicaciones en la nube**: Como la demanda de la aplicación puede fluctuar, tendría sentido desde el punto de vista económico ejecutarla en una máquina virtual en Azure Stack Hub. Pagará por las máquinas virtuales adicionales cuando las necesite y las desactivará cuando ya no sean necesarias.
 
-- **Centro de datos ampliado** : Las máquinas virtuales de una red virtual de Azure Stack Hub se pueden conectar a la red de una organización o a Azure.
+- **Centro de datos ampliado**: Las máquinas virtuales de una red virtual de Azure Stack Hub se pueden conectar a la red de una organización o a Azure.
 
 Las máquinas virtuales usadas por su aplicación se pueden escalar vertical u horizontalmente a la cifra necesaria para satisfacer sus necesidades.
 
@@ -57,7 +57,7 @@ Su suscripción tiene límites de cuota predeterminados que pueden afectar a la 
 
 ### <a name="operating-system-disks-and-images"></a>Imágenes y discos del sistema operativo
 
-Las máquinas virtuales de Azure Stack Hub se limitan al formato de disco duro virtual de la primera generación (VHD/VHDX). Los discos duros virtuales se pueden usar para almacenar el sistema operativo de la máquina y los datos. Estos discos también se usan para las imágenes que se emplean para instalar un sistema operativo. Azure Stack Hub proporciona un Marketplace para usar con diversas versiones y tipos de sistemas operativos. Las imágenes de Marketplace se identifican mediante el publicador de la imagen, la oferta, la SKU y la versión (normalmente, la última versión se especifica como **la más reciente** ).
+Las máquinas virtuales de Azure Stack Hub se limitan al formato de disco duro virtual de la primera generación (VHD/VHDX). Los discos duros virtuales se pueden usar para almacenar el sistema operativo de la máquina y los datos. Estos discos también se usan para las imágenes que se emplean para instalar un sistema operativo. Azure Stack Hub proporciona un Marketplace para usar con diversas versiones y tipos de sistemas operativos. Las imágenes de Marketplace se identifican mediante el publicador de la imagen, la oferta, la SKU y la versión (normalmente, la última versión se especifica como **la más reciente**).
 
 En la tabla siguiente se muestra como encontrar la información sobre una imagen:
 
@@ -73,11 +73,11 @@ Puede elegir cargar y usar su propia imagen. Si lo hace, el nombre del anunciant
 
 Las extensiones de máquina virtual ofrecen funcionalidades adicionales de máquina virtual por medio de la configuración posterior a la implementación y tareas automatizadas. Puede llevar a cabo estas tareas comunes mediante las extensiones:
 
-- **Ejecutar scripts personalizados** : La extensión de script personalizado ayuda a configurar cargas de trabajo en la máquina virtual al ejecutar su script cuando se aprovisiona la máquina virtual.
+- **Ejecutar scripts personalizados**: La extensión de script personalizado ayuda a configurar cargas de trabajo en la máquina virtual al ejecutar su script cuando se aprovisiona la máquina virtual.
 
-- **Implementar y administrar configuraciones** : La extensión de configuración de estado deseado (DSC) de PowerShell ayuda a configurar DSC en una máquina virtual para administrar entornos y configuraciones.
+- **Implementar y administrar configuraciones**: La extensión de configuración de estado deseado (DSC) de PowerShell ayuda a configurar DSC en una máquina virtual para administrar entornos y configuraciones.
 
-- **Recopilar datos de diagnóstico** : La extensión Azure Diagnostics ayuda a configurar la máquina virtual para que recopile datos de diagnóstico que sirvan para supervisar el estado de la aplicación.
+- **Recopilar datos de diagnóstico**: La extensión Azure Diagnostics ayuda a configurar la máquina virtual para que recopile datos de diagnóstico que sirvan para supervisar el estado de la aplicación.
 
 ### <a name="related-resources"></a>Recursos relacionados
 

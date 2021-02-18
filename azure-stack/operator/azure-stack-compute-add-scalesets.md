@@ -3,16 +3,16 @@ title: Disponibilidad de los conjuntos de escalado de máquinas virtuales en Azu
 description: Conozca cómo un operador de la nube puede agregar conjuntos de escalado de máquinas virtuales a Marketplace de Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 10/07/2020
+ms.date: 02/08/2021
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 10/22/2019
-ms.openlocfilehash: a69f29a168853a2cb2bc1c757f90185e0b56636e
-ms.sourcegitcommit: 2d2ae0b6db2e4f43f8496b184f30cddbb08b2cbd
+ms.openlocfilehash: 08655238a3f0cb1212bde455a0f601211e6edc16
+ms.sourcegitcommit: 824fd33fd5d6aa0c0dac06c21b592bdb60378940
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91815001"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99850962"
 ---
 # <a name="make-virtual-machine-scale-sets-available-in-azure-stack-hub"></a>Disponibilidad de los conjuntos de escalado de máquinas virtuales en Azure Stack Hub
 

@@ -5,12 +5,12 @@ author: AnirbanPaul
 ms.author: anpaul
 ms.topic: how-to
 ms.date: 02/01/2021
-ms.openlocfilehash: 6af08615a25ed93f62f526d92ead7511699c8439
-ms.sourcegitcommit: a6f62a6693e48eb05272c01efb5ca24372875173
+ms.openlocfilehash: fb90a8f9df28ed8fd67330c42ae1e3d2f3aa445c
+ms.sourcegitcommit: 34babe5abf1bceee718011b5c5c25f75e1b03b0c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99248748"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100562939"
 ---
 # <a name="manage-tenant-virtual-networks"></a>Administración de redes virtuales de inquilinos
 

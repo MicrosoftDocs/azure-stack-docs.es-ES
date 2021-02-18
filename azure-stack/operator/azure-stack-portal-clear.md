@@ -3,16 +3,16 @@ title: Eliminación de los datos de usuario del portal a petición desde Azure S
 description: Aprenda a borrar los datos de usuario del portal cuando lo soliciten los usuarios de Azure Stack Hub.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 05/06/2020
+ms.date: 02/08/2021
 ms.author: sethm
 ms.reviewer: troettinger
 ms.lastreviewed: 09/10/2019
-ms.openlocfilehash: 3821eced3f37902b20f13ee4d918b2ff2ea8aca9
-ms.sourcegitcommit: 695f56237826fce7f5b81319c379c9e2c38f0b88
+ms.openlocfilehash: f85f5a06699b11d5316a889c045a33376304a0f0
+ms.sourcegitcommit: d542b68b299b73e045f30916afb6018e365e9db6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94545098"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99975901"
 ---
 # <a name="clear-portal-user-data-from-azure-stack-hub"></a>Eliminación de los datos de usuario del portal de Azure Stack Hub
 
@@ -25,7 +25,7 @@ La eliminación de la configuración de usuario del portal solo debe realizarse 
 > [!NOTE]
 > Todavía puede haber algunos datos de usuario en la sección del sistema de los registros de eventos después de seguir las instrucciones de este artículo. Estos datos pueden permanecer durante varios días hasta que los registros se reviertan automáticamente.
 
-## <a name="requirements"></a>Requisitos
+## <a name="prerequisites"></a>Requisitos previos
 
 - [Instale PowerShell para Azure Stack Hub](powershell-install-az-module.md).
 - [Descargue las herramientas de Azure Stack Hub](azure-stack-powershell-download.md) desde GitHub.
