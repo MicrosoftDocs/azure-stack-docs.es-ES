@@ -302,6 +302,8 @@
               href: azure-stack-dev-start-howto-vm-nodejs.md
         - name: 'Creación de acción de GitHub: inicio de sesión'
           href: ci-cd-github-action-login-cli.md
+        - name: 'Creación de acción de GitHub: implementación de aplicación web'
+          href: ci-cd-github-action-webapp.md
         - name: Implementación de un módulo de IoT de GPU
           href: gpu-deploy-sample-module.md
     - name: Implementación de patrones fundamentales
