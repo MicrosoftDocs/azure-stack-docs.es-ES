@@ -6,13 +6,13 @@ author: khdownie
 ms.author: v-kedow
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 01/13/2021
-ms.openlocfilehash: c4280a9b120530b84bbaac9f7f963a695c0eaf99
-ms.sourcegitcommit: 649540e30e1018b409f4b1142bf2cb392c9e8b0d
+ms.date: 02/10/2021
+ms.openlocfilehash: 66156b01796c483f509b5b0787ca947f85fa6a1a
+ms.sourcegitcommit: 5ea0e915f24c8bcddbcaf8268e3c963aa8877c9d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98208036"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100487874"
 ---
 # <a name="azure-stack-hci-solution-overview"></a>Introducción a la solución Azure Stack HCI
 
@@ -103,6 +103,15 @@ Para empezar, esto es lo que necesita:
 - Si tiene previsto usar redes definidas por software (SDN), necesitará un disco duro virtual (VHD) para que el sistema operativo Azure Stack HCI cree máquinas virtuales de Controladora de red (consulte el [plan de implementación de Controladora de red](concepts/network-controller.md)).
 
 Para más información, consulte [Requisitos del sistema](concepts/system-requirements.md). Para más información, consulte [Requisitos de Azure Kubernetes Service en Azure Stack HCI](../aks-hci/overview.md#what-you-need-to-get-started).
+
+## <a name="availability"></a>Disponibilidad
+
+|Aspecto|Detalles|
+|----|:----|
+|Estado de la versión:|Disponibilidad general (GA)|
+|Precios:|[Se factura en la suscripción a Azure](concepts/billing.md)|
+|Roles y permisos necesarios:|**Administrador de Azure Active Directory** o permisos delegados|
+|||
 
 ## <a name="hardware-partners"></a>Asociados de hardware
 
