@@ -6,13 +6,13 @@ ms.author: v-kedow
 ms.topic: how-to
 ms.service: azure-stack
 ms.subservice: azure-stack-hci
-ms.date: 01/28/2020
-ms.openlocfilehash: 17e8758dfea300f6bc3e02609877dfed8f780383
-ms.sourcegitcommit: b461597917b768412036bf852c911aa9871264b2
+ms.date: 02/10/2020
+ms.openlocfilehash: 3711a0e11bac59f00ce51027ea9544f6858dd297
+ms.sourcegitcommit: 5ea0e915f24c8bcddbcaf8268e3c963aa8877c9d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99050032"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100487330"
 ---
 # <a name="connect-azure-stack-hci-to-azure"></a>Conexión de Azure Stack HCI a Azure
 
@@ -34,11 +34,11 @@ No podrá registrarse en Azure hasta que no haya creado un clúster de Azure Sta
 Para obtener la experiencia de registro más sencilla, haga que un administrador de Azure AD complete el registro mediante Windows Admin Center o PowerShell.
 
    > [!IMPORTANT]
-   > Si tiene previsto registrar el clúster mediante Windows Admin Center, primero debe [registrar la puerta de enlace de Windows Admin Center](../manage/register-windows-admin-center.md) con Azure usando el mismo identificador de suscripción de Azure y el mismo identificador de inquilino que piensa usar para el registro del clúster.
+   > Para registrar un clúster de Azure Stack HCI mediante Windows Admin Center, primero debe [registrar Windows Admin Center con Azure](../manage/register-windows-admin-center.md) mediante el mismo identificador de inquilino de Azure Active Directory que piensa usar para el registro del clúster.
 
 ### <a name="internet-access"></a>Acceso a Internet
 
-Azure Stack HCI necesita conectarse periódicamente a la nube pública de Azure. Si la conectividad saliente está restringida por el firewall corporativo externo o un servidor proxy, estos deben configurarse para permitir el acceso saliente al puerto 443 (HTTPS) en un número limitado de direcciones IP conocidas de Azure. Para obtener información sobre cómo preparar los firewalls, consulte [Configuración de firewalls para Azure Stack HCI](../concepts/configure-firewalls.md).
+Azure Stack HCI necesita conectarse periódicamente a la nube pública de Azure. Si la conectividad saliente está restringida por el firewall corporativo externo o un servidor proxy, estos deben configurarse para permitir el acceso saliente al puerto 443 (HTTPS) en un número limitado de direcciones IP conocidas de Azure. Para más información sobre cómo preparar los firewalls y configurar un servidor proxy, consulte [Configuración de firewalls para Azure Stack HCI](../concepts/configure-firewalls.md).
 
    > [!NOTE]
    > El proceso de registro intenta ponerse en contacto con la Galería de PowerShell para comprobar que tiene la versión más reciente de los módulos de PowerShell necesarios, como Az y AzureAD. Aunque la Galería de PowerShell se hospeda en Azure, actualmente no tiene una etiqueta de servicio. Si no puede ejecutar el cmdlet anterior desde una máquina de administración con acceso saliente a Internet, se recomienda descargar los módulos y transferirlos manualmente a un nodo de clúster en el que se ejecutará el comando `Register-AzStackHCI`. Como alternativa, puede [instalar los módulos en un escenario sin conexión](/powershell/scripting/gallery/how-to/working-with-local-psrepositories?view=powershell-7.1#installing-powershellget-on-a-disconnected-system).
@@ -106,10 +106,10 @@ También necesitará permisos adecuados de Azure Active Directory para completar
 
 La manera más sencilla de registrar el clúster de Azure Stack HCI es usar Windows Admin Center. Recuerde que el usuario debe tener [permisos de Azure Active Directory](../manage/manage-azure-registration.md#azure-active-directory-app-permissions), o el proceso de registro no se completará y, en vez de eso, se cerrará y dejará el registro pendiente de la aprobación del administrador.
 
-1. Antes de comenzar el proceso de registro, primero debe [registrar la puerta de enlace de Windows Admin Center](../manage/register-windows-admin-center.md) con Azure, si aún no lo ha hecho.
+1. Antes de comenzar el proceso de registro, primero debe [registrar Windows Admin Center con Azure](../manage/register-windows-admin-center.md), si aún no lo ha hecho.
 
    > [!IMPORTANT]
-   > Al registrar Windows Admin Center con Azure, es importante usar el mismo identificador de suscripción de Azure y el mismo identificador de inquilino que piensa usar para el registro de clúster real. Un identificador de inquilino de Azure AD representa una instancia específica de Azure AD que contiene cuentas y grupos, mientras que un identificador de suscripción de Azure representa un acuerdo para usar recursos de Azure en los cuales se generan cargos. Para buscar el identificador de inquilino, visite [portal.azure.com](https://portal.azure.com) y seleccione **Azure Active Directory**. El identificador de inquilino se mostrará en **Información del inquilino**. Para obtener el identificador de la suscripción de Azure, vaya a **Suscripciones** y copie y pegue el identificador de la lista.
+   > Al registrar Windows Admin Center con Azure, es importante usar el mismo identificador de inquilino de Azure Active Directory que piensa usar para el registro del clúster real. Un identificador de inquilino de Azure AD representa una instancia específica de Azure AD que contiene cuentas y grupos, mientras que un identificador de suscripción de Azure representa un acuerdo para usar recursos de Azure en los cuales se generan cargos. Para buscar el identificador de inquilino, visite [portal.azure.com](https://portal.azure.com) y seleccione **Azure Active Directory**. El identificador de inquilino se mostrará en **Información del inquilino**. Para obtener el identificador de la suscripción de Azure, vaya a **Suscripciones** y copie y pegue el identificador de la lista.
 
 2. Abra Windows Admin Center y seleccione **Configuración** en la parte inferior del menú **Herramientas** de la izquierda. A continuación, seleccione **Registro de Azure Stack HCI** en la parte inferior del menú **Configuración**. Si el clúster todavía no se ha registrado con Azure, el **estado del registro** será **No registrado**. Haga clic en el botón **Registrar** para continuar.
 

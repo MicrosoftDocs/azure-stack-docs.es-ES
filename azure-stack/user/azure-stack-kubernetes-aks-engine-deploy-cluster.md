@@ -3,16 +3,16 @@ title: Implementación de un clúster de Kubernetes con el motor de AKS en Azure
 description: Implementación de un clúster de Kubernetes en Azure Stack Hub desde una máquina virtual de cliente que ejecute el motor de AKS.
 author: mattbriggs
 ms.topic: article
-ms.date: 2/1/2021
+ms.date: 2/5/2021
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 09/02/2020
-ms.openlocfilehash: 9da037a08aaa7394306c518211fc045453530a71
-ms.sourcegitcommit: a6f62a6693e48eb05272c01efb5ca24372875173
+ms.lastreviewed: 2/5/2021
+ms.openlocfilehash: 3343dc1a4fddbac0e01d0b63fcc8f434084237f0
+ms.sourcegitcommit: 824fd33fd5d6aa0c0dac06c21b592bdb60378940
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99246969"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99850855"
 ---
 # <a name="deploy-a-kubernetes-cluster-with-the-aks-engine-on-azure-stack-hub"></a>Implementación de un clúster de Kubernetes con el motor de AKS en Azure Stack Hub
 
@@ -26,10 +26,10 @@ Puede indicar una especificación de clúster en un archivo de documento mediant
 
 En esta sección se examina la creación de un modelo de API para el clúster.
 
-1.  Empiece a usar un archivo del modelo de API de [ejemplo](https://github.com/Azure/aks-engine/tree/master/examples/azure-stack) de Azure Stack Hub y realice una copia local para su implementación. En la máquina donde ha instalado el motor de AKS, ejecute:
+1.  Empiece a usar un archivo del modelo de API de Azure Stack Hub para [Linux](https://aka.ms/aksengine-json-example-raw) o [Windows](https://aka.ms/aksengine-json-example-raw-win) y realice una copia local para su implementación. En la máquina donde ha instalado el motor de AKS, ejecute:
 
     ```bash
-    curl -o kubernetes-azurestack.json https://raw.githubusercontent.com/Azure/aks-engine/master/examples/azure-stack/kubernetes-azurestack.json
+    curl -o kubernetes-azurestack.json https://raw.githubusercontent.com/Azure/aks-engine/v0.55.4/examples/azure-stack/kubernetes-azurestack.json
     ```
 
     > [!NOTE]  
@@ -75,7 +75,7 @@ En esta sección se examina la creación de un modelo de API para el clúster.
 
     | Campo | Descripción |
     | --- | --- |
-    | count | Escriba el número de agentes que desea para la implementación. El número máximo de nodos que se usarán por suscripción es 50. Si va a implementar más de un clúster por suscripción, asegúrese de que el número total de agentes no supere los 50. Asegúrese de usar los elementos de configuración especificados en [el archivo JSON del modelo de API de ejemplo](https://aka.ms/aksengine-json-example).  |
+    | count | Escriba el número de agentes que desea para la implementación. El número máximo de nodos que se usarán por suscripción es 50. Si va a implementar más de un clúster por suscripción, asegúrese de que el número total de agentes no supere los 50. Asegúrese de usar los elementos de configuración especificados en [el archivo JSON del modelo de API de ejemplo](https://aka.ms/aksengine-json-example-raw).  |
     | vmSize | Escriba [un tamaño admitido por Azure Stack Hub](./azure-stack-vm-sizes.md), ejemplo `Standard_D2_v2`. |
     | Distribuciones | Escriba `aks-ubuntu-16.04`. |
 

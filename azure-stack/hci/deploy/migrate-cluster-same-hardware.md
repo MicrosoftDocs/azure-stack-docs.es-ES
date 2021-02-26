@@ -3,15 +3,15 @@ title: Migración a Azure Stack HCI en el mismo hardware
 description: Obtenga información acerca de cómo migrar un clúster a Azure Stack HCI en el mismo hardware.
 author: v-dasis
 ms.topic: how-to
-ms.date: 01/22/2021
+ms.date: 02/12/2021
 ms.author: v-dasis
 ms.reviewer: JasonGerend
-ms.openlocfilehash: 35c1de7da10fbecbf6b861a23cdebb752502ca44
-ms.sourcegitcommit: e772df8ac78c86d834a68d1a8be83b7f738019b7
+ms.openlocfilehash: 593be52321230f3fc1ae4329f8f2284cf964298a
+ms.sourcegitcommit: 5a8b6dfdf75df1aa9474e062ec3a91ca1b8e58bb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98772265"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100524949"
 ---
 # <a name="migrate-to-azure-stack-hci-on-same-hardware"></a>Migración a Azure Stack HCI en el mismo hardware
 
@@ -215,15 +215,9 @@ Para más información sobre cómo crear el clúster con PowerShell, consulte [C
 
 ## <a name="refs-volumes"></a>Volúmenes ReFS
 
-Si se realiza la migración desde Windows Server 2016, se admiten los volúmenes del Sistema de archivos resistente (ReFS), pero estos volúmenes no se benefician de las siguientes mejoras de rendimiento de Azure Stack HCI:
+Si se realiza la migración desde Windows Server 2016, se admiten los volúmenes del Sistema de archivos resistente (ReFS), pero estos volúmenes no se benefician de las mejoras de rendimiento de Azure Stack HCI que se obtienen del uso de volúmenes con paridad acelerada por reflejo (MAP). Esta mejora requiere la creación de un nuevo volumen de ReFS con el cmdlet `New-Volume` de PowerShell.
 
-- Paridad acelerada por reflejo
-- Omisión del registro de MAP
-
-Estas mejoras requieren la creación de un nuevo volumen ReFS con el cmdlet `New-Volume`.
-
-> [!NOTE]
-> En el caso de los volúmenes con paridad acelerada por reflejo de Windows Server 2016, la compactación de ReFS no está disponible, por lo que volver a conectar estos volúmenes es correcto, pero tendrán menos rendimiento en comparación con la creación de un nuevo volumen MAP en un clúster de Azure Stack HCI.
+En el caso de los volúmenes con paridad acelerada por reflejo (MAP) de Windows Server 2016, la compactación de ReFS no está disponible, por lo que volver a conectar estos volúmenes es correcto, pero tendrán menos rendimiento en comparación con la creación de un nuevo volumen MAP en un clúster de Azure Stack HCI.
 
 ## <a name="import-the-vms"></a>Importación de las máquinas virtuales
 

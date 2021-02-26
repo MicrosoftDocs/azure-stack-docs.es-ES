@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 11/22/2020
 ms.author: sethm
 ms.lastreviewed: 11/22/2020
-ms.openlocfilehash: 27653bcb9cfee29abd4a4587ceee67eb698a93bb
-ms.sourcegitcommit: e13f27291bab236aac5d8b05401056961e9cc1e9
+ms.openlocfilehash: fe0ff0d81ebf863ff2096675ba113a5416136e8f
+ms.sourcegitcommit: f9be5640dd445b3d926c9ce3e2165e96c72ece89
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97697639"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100009084"
 ---
 # <a name="configure-ipsecike-policy-for-site-to-site-vpn-connections"></a>Configuración de la directiva IPsec/IKE para conexiones VPN de sitio a sitio
 
@@ -75,7 +75,7 @@ En la tabla siguiente se enumeran los algoritmos criptográficos y los niveles d
 | Integridad de IKEv2                                      | SHA384, SHA256, SHA1, MD5                                                |
 | Grupo DH                                             | ECP384, DHGroup14, DHGroup2, DHGroup1, ECP256 *, DHGroup24*             |
 | Cifrado IPsec                                     | GCMAES256, GCMAES192, GCMAES128, AES256, AES192, AES128, DES3, DES, No |
-| Integridad de IPsec                                      | GCMAES256, GCMAES192, GCMAES128                                          |
+| Integridad de IPsec                                      | GCMAES256, GCMAES192, GCMAES128, SHA256                                         |
 | Grupo PFS                                            | PFS24, ECP384, ECP256, PFS2048, PFS2, PFS1, PFSMM, Ningún                  |
 | Vigencia de SA QM                                       | (Opcional: Se usan los valores predeterminados si no se especifica ningún valor)<br />                         Segundos (entero; mín. 300/predeterminado 27 000 segundos)<br />                         KBytes (entero; mín. 1024/predeterminado 102 400 000 KBytes) |
 | Selector de tráfico                                     | En Azure Stack Hub no se admiten selectores de tráfico basados en directivas.         |

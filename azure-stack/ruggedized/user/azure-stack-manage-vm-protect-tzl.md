@@ -11,22 +11,22 @@ ms.workload: tzl
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/02/2019
+ms.date: 02/16/2021
 ms.author: sethm
 ms.reviewer: hectorl
 ms.lastreviewed: 3/19/2018
-ms.openlocfilehash: c57e421140dfea9eac949b5dcf97cc90745ab861
-ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
+ms.openlocfilehash: a31b5b4498911b008ec471beca24905466efee4b
+ms.sourcegitcommit: 34babe5abf1bceee718011b5c5c25f75e1b03b0c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97910966"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100562963"
 ---
 # <a name="protect-vms-deployed-on-azure-stack-hub---ruggedized"></a>Protección de las máquinas virtuales implementadas en Azure Stack Hub Ruggedized
 
 Use este artículo como guía para desarrollar un plan de protección de las máquinas virtuales que los usuarios implementan en Azure Stack Hub.
 
-Para protegerse frente a la pérdida de datos y los tiempos de inactividad no planeados, implemente un plan de protección de datos y de recuperación ante desastres para aplicaciones basadas en máquinas virtuales en Azure Stack Hub. El plan de protección implementado dependerá de los requisitos empresariales y del diseño de la aplicación. Este plan debe seguir un marco establecido por la estrategia completa de continuidad empresarial y recuperación ante desastres (BC/DR) de su organización. Para obtener información general de alto nivel sobre los aspectos de continuidad empresarial y recuperación ante desastres para Azure Stack Hub, consulte Azure Stack: Consideraciones sobre continuidad empresarial y recuperación ante desastres.
+Para protegerse frente a la pérdida de datos y los tiempos de inactividad no planeados, implemente un plan de protección de datos y de recuperación ante desastres para aplicaciones basadas en máquinas virtuales en Azure Stack Hub. El plan de protección implementado dependerá de los requisitos empresariales y del diseño de la aplicación. Este plan debe seguir un marco establecido por la estrategia completa de continuidad empresarial y recuperación ante desastres (BC/DR) de su organización. Para obtener información general de alto nivel sobre los aspectos de continuidad empresarial y recuperación ante desastres para Azure Stack Hub, consulte [Azure Stack: Considerations for business continuity and disaster recovery](https://azure.microsoft.com/resources/azure-stack-considerations-for-business-continuity-and-disaster-recovery/) (Azure Stack: Consideraciones sobre continuidad empresarial y recuperación ante desastres).
 
 ## <a name="application-recovery-objectives"></a>Objetivos de recuperación de la aplicación
 
@@ -84,9 +84,9 @@ Important considerations for your Azure Stack deployment: -->
 
 En este artículo se proporcionan instrucciones generales para proteger las máquinas virtuales de usuario implementadas en Azure Stack. Para obtener información sobre el uso de los servicios de Azure para proteger las máquinas virtuales de usuario, consulte:
 
-- [Consideraciones sobre continuidad empresarial y recuperación ante desastres](https://aka.ms/azurestackbcdrconsiderationswp)
+- [Consideraciones sobre continuidad empresarial y recuperación ante desastres](https://azure.microsoft.com/resources/azure-stack-considerations-for-business-continuity-and-disaster-recovery/)
 
 ### <a name="partner-products"></a>Productos de asociado
 
-- [Hoja de datos del Ecosistema de asociados de integración de centros de datos de Azure Stack](https://aka.ms/azurestackbcdrpartners)
+- [Hoja de datos del Ecosistema de asociados de integración de centros de datos de Azure Stack](https://azure.microsoft.com/resources/azure-stack-datacenter-integration-partners/)
 - Para más información sobre los productos de asociados que ofrecen protección de máquina virtual en Azure Stack, consulte [Protección de aplicaciones y datos en Azure Stack](https://azure.microsoft.com/blog/protecting-applications-and-data-on-azure-stack/).

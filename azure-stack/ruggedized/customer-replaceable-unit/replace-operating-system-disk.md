@@ -3,16 +3,16 @@ title: Reemplazo de un disco del sistema operativo
 description: Aprenda a reemplazar un disco del sistema operativo.
 author: PatAltimore
 ms.topic: how-to
-ms.date: 11/13/2020
+ms.date: 02/05/2021
 ms.author: patricka
 ms.reviewer: ''
 ms.lastreviewed: ''
-ms.openlocfilehash: 36050d42a012ffc40db98ab506b1ef81086e609a
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: 24447611a4b3c775b92f4d163bb250060e29417e
+ms.sourcegitcommit: 5ea0e915f24c8bcddbcaf8268e3c963aa8877c9d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97867645"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100487840"
 ---
 # <a name="replacing-an-operating-system-disk"></a>Reemplazo de un disco del sistema operativo
 
@@ -24,13 +24,13 @@ Utilice el siguiente procedimiento para reemplazar un disco del sistema operativ
 
 2.  Revise Precauciones en la manipulación.
 
-3.  Revise Conocimientos necesarios para trabajar con nodos de unidad de escalado en un dispositivo Tactical Cloud, si está trabajando con un nodo de unidad de escalado.
+3.  Conocimientos necesarios para trabajar con nodos de unidad de escalado en Azure Stack Hub Ruggedized, si está trabajando con un nodo de unidad de escalado.
 
 4.  Complete Comprobación del acceso y estado del nodo de unidad de escalado.
 
 5.  Complete Apagado de nodos de unidad de escalado.
 
-    En el caso de los nodos de unidad de escalado de Azure Stack Hub, el sistema operativo se ejecuta desde un par reflejado de módulos SSD M.2 que residen en la tarjeta BOSS (solución de almacenamiento optimizado de arranque) del sistema Dell PowerEdge. El sistema debe estar apagado para reemplazar un disco del sistema operativo.
+    En el caso de los nodos de unidad de escalado de Azure Stack Hub, el sistema operativo se ejecuta desde un par reflejado de módulos SSD M.2 que residen en la tarjeta de solución de almacenamiento optimizado de arranque (BOSS). El sistema debe estar apagado para reemplazar un disco del sistema operativo.
     
 ## <a name="steps"></a>Pasos
 
@@ -43,7 +43,7 @@ Utilice el siguiente procedimiento para reemplazar un disco del sistema operativ
     
 3.  Reemplace el módulo SSD M.2 con errores.
 
-    Siga el proceso de reemplazo del módulo SSD M.2 del [Manual de instalación y servicio de Dell EMC PowerEdge R640](https://www.dell.com/support/manuals/us/en/04/poweredge-r640/per640_ism_pub/dell-emc-poweredge-r640-overview?guid=guid-f39be9ba-158c-45e3-b8b1-f07bb750d6d4) para los nodos de unidad de escalado.
+    Siga el [proceso de reemplazo del módulo SSD M.2](https://www.dell.com/support/manuals/us/en/04/poweredge-r640/per640_ism_pub/dell-emc-poweredge-r640-overview?guid=guid-f39be9ba-158c-45e3-b8b1-f07bb750d6d4) para los nodos de unidad de escalado.
     
 4.  Encienda el nodo.
 

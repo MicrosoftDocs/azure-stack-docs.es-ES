@@ -7,12 +7,12 @@ ms.date: 11/22/2020
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 11/22/2020
-ms.openlocfilehash: b1cadf68de1c072b7dcc8b2f0f5f7c02736eebd7
-ms.sourcegitcommit: 8c745b205ea5a7a82b73b7a9daf1a7880fd1bee9
+ms.openlocfilehash: fd1f827ec9108d1412df544c94044aabf600224a
+ms.sourcegitcommit: d542b68b299b73e045f30916afb6018e365e9db6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95518235"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99975884"
 ---
 # <a name="azure-stack-hub-managed-disks-differences-and-considerations"></a>Discos administrados de Azure Stack Hub: Diferencias y consideraciones
 
@@ -358,7 +358,7 @@ Después de aplicar la actualización 1808 o posterior, debe realizar el siguien
 - Si una suscripción se ha creado antes de la actualización 1808, siga estos pasos para actualizar la suscripción. En caso contrario, la implementación de máquinas virtuales en esta suscripción podría producir un error con un mensaje del tipo "Error interno en el administrador de discos".
    1. En el portal de usuarios de Azure Stack Hub, vaya a **Suscripciones** y busque la suscripción. Haga clic en **Proveedores de recursos**, después en **Microsoft.Compute** y luego en **Volver a registrar**.
    2. En la misma suscripción, vaya a **Control de acceso (IAM)** y compruebe que **Azure Stack Hub – Managed Disk** (Azure Stack Hub - Disco administrado) aparece en la lista.
-- Si usa un entorno de varios inquilinos, pida a su operador de nube (puede ser de su propia organización o del proveedor de servicios) que vuelva a configurar cada uno de los directorios de invitado siguiendo los pasos que se indican en [este artículo](../operator/azure-stack-enable-multitenancy.md#register-azure-stack-hub-with-the-guest-directory). En caso contrario, la implementación de máquinas virtuales en una suscripción asociada con ese directorio de invitado podría producir un error con el mensaje "Error interno en el administrador de discos".
+- Si usa un entorno de varios inquilinos, pida a su operador de nube (puede ser de su propia organización o del proveedor de servicios) que vuelva a configurar cada uno de los directorios de invitado siguiendo los pasos que se indican en [Configuración de los servicios multiinquilino en Azure Stack Hub](../operator/azure-stack-enable-multitenancy.md#configure-guest-directory). En caso contrario, la implementación de máquinas virtuales en una suscripción asociada con ese directorio de invitado podría producir un error con el mensaje "Error interno en el administrador de discos".
 
 ## <a name="next-steps"></a>Pasos siguientes
 

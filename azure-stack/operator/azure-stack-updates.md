@@ -3,16 +3,16 @@ title: Administración de actualizaciones
 description: Aprenda a administrar las actualizaciones en Azure Stack Hub
 author: sethmanheim
 ms.topic: how-to
-ms.date: 09/25/2020
+ms.date: 02/08/2021
 ms.author: sethm
 ms.lastreviewed: 07/16/2020
 ms.reviewer: niy
-ms.openlocfilehash: e769999ce24e1571b93c94a707c62df757460705
-ms.sourcegitcommit: bf7b1a394ede397dba2b75f90bdf953b3ff2f2be
+ms.openlocfilehash: 163485eddb18f0fdc1400aa61fee6b944c397cbf
+ms.sourcegitcommit: 824fd33fd5d6aa0c0dac06c21b592bdb60378940
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91367230"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99850872"
 ---
 # <a name="manage-updates-in-azure-stack-hub"></a>Administración de actualizaciones en Azure Stack Hub
 
@@ -33,7 +33,7 @@ Hay tres tipos de actualizaciones para los sistemas integrados:
 
     Las actualizaciones **rápidas** están limitadas y no actualizan los sistemas operativos subyacentes del host físico.
 
-- **Revisiones de Azure Stack Hub**. Microsoft ofrece [revisiones para Azure Stack Hub](azure-stack-servicing-policy.md#hotfixes) que solucionan un determinado problema que suele ser de naturaleza preventiva o urgente. Todas las revisiones se publican con su correspondiente artículo de Microsoft Knowledge Base que detalla el problema, la causa y la resolución. Descargue e instale revisiones como los paquetes de actualizaciones completas normales para Azure Stack Hub. Las revisiones son acumulativas y pueden instalarse en cuestión de minutos.
+- **Revisiones de Azure Stack Hub**. Microsoft ofrece [revisiones para Azure Stack Hub](azure-stack-servicing-policy.md#hotfixes) que solucionan un determinado problema que suele ser de naturaleza preventiva o urgente. Todas las revisiones se publican con su correspondiente artículo de Microsoft Knowledge Base que detalla las correcciones de ese paquete. Descargue e instale revisiones como los paquetes de actualizaciones completas normales para Azure Stack Hub. Las revisiones son acumulativas y pueden instalarse en cuestión de minutos.
 
    A partir de la compilación 2005, cuando se actualiza a una nueva versión principal (por ejemplo, 1.2002.x a 1.2005.x), se instalan automáticamente las revisiones más recientes (si existen) en la nueva versión principal. A partir de ese momento, si se publica una revisión para una compilación, se debe instalar.
 
@@ -45,7 +45,7 @@ Los tres tipos de actualizaciones se lanzan con la siguiente cadencia:
 
 - **Actualizaciones de software de Azure Stack Hub**. Microsoft publica varios paquetes de actualización de software completos y exprés al año.
 
-- **Revisiones de Azure Stack Hub**. Las revisiones son versiones sujetas a una limitación temporal que se pueden publicar en cualquier momento. Si va a actualizar de una versión principal a otra (por ejemplo, 1.2002.x a 1.2005.x), se instalan automáticamente las revisiones más recientes (si existen) en la nueva versión principal.
+- **Revisiones de Azure Stack Hub**. Las revisiones son versiones sujetas a una limitación temporal que se pueden publicar en cualquier momento. Si va a actualizar de una versión principal a otra (por ejemplo, 1.2002.x a 1.2005.x), se instalan automáticamente las revisiones más recientes (si se ha publicado alguna para esa nueva versión principal).
 
 - **Actualizaciones suministradas por el proveedor de hardware OEM**. Los proveedores de hardware de OEM lanzan sus actualizaciones en función de la necesidad.
 
@@ -59,7 +59,7 @@ El aviso de actualizaciones varía en función de un par de factores, como su co
 
     Aparecerá una alerta de actualización para las actualizaciones y revisiones de software de Microsoft en la hoja **Actualización** para las instancias de Azure Stack Hub que están conectadas a Internet. Si no aparece la hoja **Actualización**, reinicie la máquina virtual del controlador de administración de la infraestructura.
 
-    Si su instancia no está conectada y desea recibir una notificación sobre cada versión de revisión, suscríbase a la fuente [RSS](https://support.microsoft.com/app/content/api/content/feeds/sap/en-us/32d322a8-acae-202d-e9a9-7371dccf381b/rss) o [ATOM](https://support.microsoft.com/app/content/api/content/feeds/sap/en-us/32d322a8-acae-202d-e9a9-7371dccf381b/atom).
+    Si su instancia no está conectada y desea recibir una notificación sobre cada versión de revisión, suscríbase a la [fuente RSS](https://azurestackhubdocs.azurewebsites.net/xml/hotfixes.rss).
 
 - **Actualizaciones suministradas por el proveedor de hardware de OEM**
 

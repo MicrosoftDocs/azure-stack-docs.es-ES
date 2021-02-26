@@ -7,12 +7,12 @@ ms.date: 11/13/2020
 ms.author: patricka
 ms.reviewer: ''
 ms.lastreviewed: ''
-ms.openlocfilehash: 96a4e944b6b86c8b5db314141fd3473a8512d518
-ms.sourcegitcommit: 9b0e1264ef006d2009bb549f21010c672c49b9de
+ms.openlocfilehash: b17bf72931d5e80f9cfebe6df54655856695dba2
+ms.sourcegitcommit: 5ea0e915f24c8bcddbcaf8268e3c963aa8877c9d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98256207"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100487993"
 ---
 # <a name="privileged-access-workstation-and-privileged-endpoint-access"></a>Estación de trabajo de acceso con privilegios y acceso al punto de conexión con privilegios
 
@@ -22,7 +22,7 @@ Para este procedimiento, debe conectarse a la estación de trabajo de acceso con
 
 ## <a name="configuring-the-winrm"></a>Configuración de WinRM
 
-Para permitir conexiones con el punto de conexión con privilegios desde la estación de trabajo con privilegios, asegúrese de que las direcciones IP del punto de conexión con privilegios, tal como están definidas en el portal de administración de Azure Stack Hub, se establecen como host de confianza en la estación de trabajo con privilegios. Las instrucciones para obtener estas direcciones IP desde el portal de administración se encuentran en Comprobación del acceso y estado del nodo de unidad de escalado.
+Para permitir conexiones con el punto de conexión con privilegios desde la estación de trabajo con privilegios, asegúrese de que las direcciones IP del punto de conexión con privilegios, tal como están definidas en el portal de administración de Azure Stack Hub, se establecen como host de confianza en la estación de trabajo con privilegios. Las instrucciones para obtener estas direcciones IP desde el portal de administración se encuentran en Comprobación del acceso y estado del nodo de unidad de escalado en la página 16.
 
 Para ver o editar los hosts de confianza de WinRM, inicie una sesión de PowerShell con privilegios elevados:
 

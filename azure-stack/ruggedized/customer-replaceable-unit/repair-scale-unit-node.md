@@ -3,16 +3,16 @@ title: Encendido y reparación de un nodo de unidad de escalado
 description: Aprenda a encender y reparar un nodo de unidad de escalado.
 author: PatAltimore
 ms.topic: how-to
-ms.date: 11/13/2020
+ms.date: 02/05/2021
 ms.author: patricka
 ms.reviewer: ''
 ms.lastreviewed: ''
-ms.openlocfilehash: d05c696f62aad4d9305137edab777d69b6442814
-ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
+ms.openlocfilehash: 0a2aa54234b5dccc8f1ce3425906425064463910
+ms.sourcegitcommit: 5ea0e915f24c8bcddbcaf8268e3c963aa8877c9d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97909929"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100488129"
 ---
 # <a name="powering-on-and-repairing-a-scale-unit-node"></a>Encendido y reparación de un nodo de unidad de escalado
 
@@ -37,7 +37,7 @@ Para reparar y volver a poner en producción un nodo de unidad de escalado, debe
     
     
     > [!NOTE]
-    > Si el procedimiento de reparación no se completa en tres horas o se produce un problema, abra un caso con el soporte técnico de Dell Technologies, que puede interactuar con el servicio de soporte técnico de Microsoft para solucionar el problema.
+    > Si el procedimiento de reparación no se completa en tres horas o se produce un problema, abra un caso con el soporte técnico de Microsoft para solucionar el problema.
     
     Una vez completado el proceso de reparación, el nodo vuelve a mostrar **Running** (En ejecución) en Operational State (Estado operativo).
     

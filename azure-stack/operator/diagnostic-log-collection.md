@@ -3,32 +3,31 @@ title: Recopilación de registros de diagnóstico
 description: Información sobre la recopilación de registros de diagnóstico.
 author: PatAltimore
 ms.topic: article
-ms.date: 10/30/2020
+ms.date: 02/03/2021
 ms.author: patricka
 ms.reviewer: shisab
-ms.lastreviewed: 12/08/2020
-ms.openlocfilehash: c8913bd91b7d931baf47f249dd214dd6eea71e4a
-ms.sourcegitcommit: 6efe456173ce77d52789144709195b6291d0d707
+ms.lastreviewed: 02/03/2021
+ms.openlocfilehash: ad5f0a7f6028249dba3d63490cdc3c91d7a45e72
+ms.sourcegitcommit: 69c700a456091adc31e4a8d78e7a681dfb55d248
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950746"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100013224"
 ---
 # <a name="diagnostic-log-collection"></a>Recopilación de registros de diagnóstico
 
-Azure Stack Hub es una colección de componentes de Windows y servicios locales de Azure que interactúan entre sí. Todos estos componentes y servicios generan su propio conjunto de registros. Como Soporte técnico de Microsoft usa estos registros para identificar y corregir los problemas, ofrecemos la recopilación de registros de diagnóstico. La recopilación de registros de diagnóstico le ayuda a recopilar y a compartir rápidamente registros de diagnóstico con Soporte técnico de Microsoft.
+Puede compartir los registros de diagnóstico creados por Azure Stack Hub. Los componentes de Windows y los servicios locales de Azure crean estos registros. El equipo de Soporte técnico de Microsoft puede usar los registros para corregir o identificar problemas con la instancia de Azure Stack Hub.
 
-> [!IMPORTANT]
-> Tiene que registrar Azure Stack Hub para usar la recopilación de registros de diagnóstico. Si Azure Stack Hub no está registrado, [utilice el punto de conexión con privilegios (PEP)](azure-stack-get-azurestacklog.md) para compartir los registros. 
+Para empezar a trabajar con la recopilación de registros de diagnóstico de Azure Stack Hub, debe registrar la instancia. Si Azure Stack Hub no está registrado, [utilice el punto de conexión con privilegios (PEP)](azure-stack-get-azurestacklog.md) para compartir los registros. 
 
 ::: moniker range=">= azs-2005"
 
-Azure Stack Hub tiene varias maneras de recopilar, guardar y enviar registros de diagnóstico a Soporte técnico de Microsoft. En función de la conectividad a Azure, las opciones para recopilar y enviar registros son:
+Tiene varias maneras de enviar registros de diagnóstico al equipo de Soporte técnico de Microsoft. En función de la conectividad con Azure, las opciones son:
 * [Envío proactivo de registros (recomendable)](#send-logs-proactively)
 * [Envío inmediato de registros](#send-logs-now)
 * [Almacenamiento local de los registros](#save-logs-locally)
 
-En el diagrama de flujo siguiente se muestra qué opción utilizar para enviar los registros de diagnóstico en cada caso. Si Azure Stack Hub puede conectarse a Azure, el método recomendado es habilitar la **recopilación proactiva de registros**, que cargará automáticamente los registros de diagnóstico en un blob de almacenamiento controlado por Microsoft en Azure cuando se genere una alerta crítica. Como alternativa, puede recopilar registros a petición mediante **Send logs now** (Enviar registros ahora). Si Azure Stack Hub se desconecta de Azure, puede **guardar los registros localmente**. 
+En el diagrama de flujo se muestra qué opción utilizar para enviar los registros de diagnóstico. Si Azure Stack Hub se conecta a Azure, habilite la **recopilación proactiva de registros**. La recopilación proactiva de registros cargará automáticamente los registros de diagnóstico en un blob de almacenamiento controlado por Microsoft en Azure cuando se genere una alerta crítica. También puede recopilar los registros a petición mediante **Send logs now** (Enviar registros ahora). Para un entorno de Azure Stack Hub que se ejecuta en un entorno desconectado, o si tiene problemas de conectividad, elija **Save logs locally** (Guardar los registros localmente).
 
 ![Diagrama de flujo que muestra el envío inmediato de registros a Microsoft](media/azure-stack-help-and-support/send-logs-now-flowchart.png)
 
@@ -36,11 +35,24 @@ En el diagrama de flujo siguiente se muestra qué opción utilizar para enviar l
 
 ## <a name="send-logs-proactively"></a>Envío de registros de forma proactiva
 
-La recopilación de registros proactiva recopila y envía automáticamente los registros de diagnóstico de Azure Stack Hub a Microsoft antes de abrir una incidencia de soporte técnico. Estos registros solo se recopilan cuando se genera una [alerta de mantenimiento del sistema](#proactive-diagnostic-log-collection-alerts) y solo se tiene acceso a ellos desde el equipo de Soporte técnico de Microsoft en el contexto de una incidencia de soporte técnico.
+La recopilación de registros proactiva recopila y envía automáticamente los registros de diagnóstico de Azure Stack Hub a Microsoft antes de abrir una incidencia de soporte técnico. Estos registros solo se recopilan cuando se genera una alerta de mantenimiento del sistema y solo se tiene acceso a ellos desde el equipo de Soporte técnico de Microsoft en el contexto de una incidencia de soporte técnico.
 
 ::: moniker range=">= azs-2008"
 
-A partir de Azure Stack Hub versión 2008, la recopilación de registros proactiva usa un algoritmo mejorado que captura los registros incluso durante condiciones de error que no son visibles para un operador. Esto garantiza que la información de diagnóstico correcta se recopila en el momento adecuado sin necesidad de interacción del operador. El servicio de soporte técnico de Microsoft puede comenzar a solucionar problemas antes en algunos casos. Las mejoras del algoritmo inicial se centran en las operaciones de revisión y actualización. Se recomienda habilitar recopilaciones proactivas de registros, ya que se optimizan más operaciones y aumentan las ventajas.
+A partir de Azure Stack Hub versión 2008, la recopilación proactiva de registros usa un algoritmo mejorado que captura los registros incluso durante condiciones de error que no son visibles para un operador. Esto garantiza que la información de diagnóstico correcta se recopila en el momento adecuado sin necesidad de interacción del operador. El servicio de soporte técnico de Microsoft puede comenzar a solucionar problemas antes en algunos casos. Las mejoras del algoritmo inicial se centran en las operaciones de revisión y actualización.
+
+Azure Stack Hub recopila registros de alertas y otros eventos de error ocultos que no son visibles para el operador.
+
+Azure Stack Hub recopila registros de forma proactiva para:
+
+- Error al actualizar.
+- La actualización necesita atención.
+
+Cuando un evento desencadena estas alertas, Azure Stack Hub envía de forma proactiva los registros a Microsoft.
+
+Además, Azure Stack Hub envía registros a Microsoft desencadenados por otros eventos de error. Estos eventos no son visibles para el operador.
+
+Se recomienda habilitar recopilaciones proactivas de registros, ya que se optimizan más operaciones y aumentan las ventajas.
 
 ::: moniker-end
 
@@ -63,44 +75,12 @@ Los datos recopilados previamente con su consentimiento no se verán afectados p
 
 Los registros recopilados mediante la **recopilación proactiva de registros** se cargan en una cuenta de Azure Storage administrada y controlada por Microsoft. Microsoft puede acceder a estos registros en el contexto de una incidencia de soporte técnico y para mejorar el mantenimiento de Azure Stack Hub.
 
-### <a name="proactive-diagnostic-log-collection-alerts"></a>Alertas de la recopilación proactiva de registros de diagnóstico
-
-Si está habilitada, la recopilación proactiva de registros carga los registros cuando se produce uno de los siguientes eventos.
-
-Por ejemplo, **Error de actualización** es una alerta que desencadena la recopilación proactiva de registros de diagnóstico. Si la opción está habilitada, los registros de diagnóstico se capturarán de forma proactiva durante un error de actualización para ayudar a Soporte técnico de Microsoft a solucionar el problema. Los registros de diagnóstico solo se recopilan cuando se produce la alerta **Error de actualización**.
-
-| Título de la alerta | FaultIdType |
-|---|---|
-|No se puede conectar al servicio remoto | UsageBridge.NetworkError|
-|Error de actualización | Urp.UpdateFailure |
-|Infraestructura del proveedor de recursos de almacenamiento o dependencias no disponibles |    StorageResourceProviderDependencyUnavailable |
-|Nodo no conectado al controlador| ServerHostNotConnectedToController |  
-|Error de publicación de rutas | SlbMuxRoutePublicationFailure |
-|Almacén de datos interno del proveedor de recursos de almacenamiento no disponible |    StorageResourceProvider. DataStoreConnectionFail |
-|Error del dispositivo de almacenamiento | Microsoft.Health.FaultType.VirtualDisks.Detached |
-|El controlador de mantenimiento no puede acceder a la cuenta de almacenamiento | Microsoft.Health.FaultType.StorageError |
-|Se perdió la conectividad con un disco físico | Microsoft.Health.FaultType.PhysicalDisk.LostCommunication |
-|Blob Service no se está ejecutando en un nodo | StorageService.The.blob.service.is.not.running.on.a.node-Critical |
-|rol de infraestructura incorrecto | Microsoft.Health.FaultType.GenericExceptionFault |
-|Errores de Table service | StorageService.Table.service.errors-Critical |
-|Un recurso compartido de archivos está por encima del 80 % de uso | Microsoft.Health.FaultType.FileShare.Capacity.Warning.Infra |
-|Scale unit node is offline (Nodo de la unidad de escalado desconectado) | FRP.Heartbeat.PhysicalNode |
-|Instancia del rol de infraestructura no disponible | FRP.Heartbeat.InfraVM |
-|Instancia del rol de infraestructura no disponible  | FRP.Heartbeat.NonHaVm |
-|El rol de infraestructura, administración de directorios, ha detectado errores de sincronización de hora | DirectoryServiceTimeSynchronizationError |
-|Expiración de certificado externo pendiente | CertificateExpiration.ExternalCert.Warning |
-|Expiración de certificado externo pendiente | CertificateExpiration.ExternalCert.Critical |
-|No se puede aprovisionar máquinas virtuales para la clase y tamaño específicos debido a la baja capacidad de memoria | AzureStack.ComputeController.VmCreationFailure.LowMemory |
-|Node inaccessible for virtual machine placement (Nodo inaccesible para la colocación de la máquina virtual) | AzureStack.ComputeController.HostUnresponsive |
-|Error de la copia de seguridad  | AzureStack.BackupController.BackupFailedGeneralFault |
-|Se omitió la copia de seguridad programada debido a un conflicto con operaciones erróneas    | AzureStack.BackupController.BackupSkippedWithFailedOperationFault |
-
 ## <a name="send-logs-now"></a>Envío inmediato de registros
 
 > [!TIP]
 > Ahorre tiempo mediante la opción [Send logs proactively](#send-logs-proactively) (Enviar recursos de forma proactiva) en lugar de con Send logs now (Enviar registros ahora).
 
-El envío inmediato de registros es una opción en la que se recopilan y cargan manualmente los registros de diagnóstico de Azure Stack Hub, normalmente antes de abrir una incidencia de soporte técnico.
+Send logs now (Enviar registros ahora) es una opción en la que se recopilan y cargan manualmente los registros de diagnóstico de Azure Stack Hub, normalmente antes de abrir una incidencia de soporte técnico.
 
 Hay dos maneras de enviar manualmente los registros de diagnóstico a Soporte técnico de Microsoft:
 * [Portal de administración (recomendado)](#send-logs-now-with-the-administrator-portal)
@@ -117,7 +97,7 @@ Para enviar registros ahora con el portal de administración:
 1. Elija la zona horaria local.
 1. Seleccione **Collect and Upload** (Recopilar y cargar).
 
-Si está desconectado de Internet o solo desea guardar los registros de forma local, use el método [Get-AzureStackLog](azure-stack-get-azurestacklog.md) para enviar los registros.
+Si está desconectado de Internet o desea guardar los registros solo de forma local, use el método [Get-AzureStackLog](azure-stack-get-azurestacklog.md) para enviar los registros.
 
 ### <a name="send-logs-now-with-powershell"></a>Enviar registros ahora con PowerShell
 
@@ -195,7 +175,7 @@ Si usa el método para **enviar registros ahora** y desea usar PowerShell en lug
   ```
 
 > [!NOTE]
-> Si está desconectado de Internet o solo desea guardar los registros de forma local, use el método [Get-AzureStackLog](azure-stack-get-azurestacklog.md) para enviar los registros. 
+> Si está desconectado de Internet o desea guardar los registros solo de forma local, use el método [Get-AzureStackLog](azure-stack-get-azurestacklog.md) para enviar los registros. 
 
 ### <a name="how-the-data-is-handled"></a>Cómo se controlan los datos
 
@@ -205,7 +185,9 @@ Al iniciar la recopilación de registros de diagnóstico desde Azure Stack Hub, 
 
 ## <a name="save-logs-locally"></a>Almacenamiento local de los registros
 
-Se pueden guardar los registros en un recurso compartido de Bloque de mensajes del servidor (SMB) local cuando Azure Stack Hub está desconectado de Azure. En la hoja **Settings** (Configuración), escriba la ruta de acceso y un nombre de usuario y una contraseña con permiso para escribir en el recurso compartido. Durante una incidencia de soporte técnico, Soporte técnico de Microsoft proporcionará pasos detallados sobre cómo se transfieren estos registros locales. Si el portal de administración no está disponible, puede usar [Get-AzureStackLog](azure-stack-get-azurestacklog.md) para guardar los registros localmente.
+Se pueden guardar los registros en un recurso compartido de Bloque de mensajes del servidor (SMB) local cuando Azure Stack Hub está desconectado de Azure. Por ejemplo, puede ejecutar un entorno desconectado. Si está conectado normalmente pero está experimentando problemas de conectividad, puede guardar los registros localmente para ayudar a solucionar los problemas.
+
+ En la hoja **Settings** (Configuración), escriba la ruta de acceso y un nombre de usuario y una contraseña con permiso para escribir en el recurso compartido. Durante una incidencia de soporte técnico, Soporte técnico de Microsoft proporcionará pasos detallados sobre cómo se transfieren estos registros locales. Si el portal de administración no está disponible, puede usar [Get-AzureStackLog](azure-stack-get-azurestacklog.md) para guardar los registros localmente.
 
 ![Captura de pantalla de opciones de recopilación de registros de diagnóstico](media/azure-stack-help-and-support/save-logs-locally.png)
 
@@ -221,7 +203,7 @@ En la tabla siguiente se enumeran las consideraciones para entornos con conexion
 |----|---|
 | Conexión de alta latencia o ancho de banda bajo | La carga de registros tardará mucho tiempo en completarse. |
 | Conexión compartida | La carga solo puede afectar a otras aplicaciones o usuarios que comparten la conexión de red. |
-| Conexión de uso medido | Su ISP puede realizarle un cargo adicional por el uso adicional de la red. |
+| Conexión de uso medido | Su ISP puede realizar otro cargo por el uso adicional de la red. |
 
 ## <a name="view-log-collection"></a>Visualización de la recopilación de registros
 

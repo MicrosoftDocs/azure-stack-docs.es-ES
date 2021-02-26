@@ -4,21 +4,24 @@ description: Registro de la puerta de enlace de Windows Admin Center con Azure
 author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
-ms.date: 01/28/2021
-ms.openlocfilehash: d98cb4f0531903d27d97d9fb055c7ae2db35a65e
-ms.sourcegitcommit: b461597917b768412036bf852c911aa9871264b2
+ms.date: 02/10/2021
+ms.openlocfilehash: 0b80a1e607823385d06a5255244373ca3be1af98
+ms.sourcegitcommit: 5ea0e915f24c8bcddbcaf8268e3c963aa8877c9d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99050066"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100487891"
 ---
 # <a name="register-windows-admin-center-with-azure"></a>Registro de Windows Admin Center con Azure
 
 > Se aplica a Azure Stack HCI v20H2; Windows Server 2019
 
-Para usar los servicios de Azure con Windows Admin Center, primero debe instalar Windows Admin Center en un equipo de administración y completar un registro único de la puerta de enlace de Windows Admin Center. Se trata de un requisito previo para registrar el clúster con Azure y debe realizarse en el mismo equipo de administración que tenga previsto usar para completar el proceso de [registro del clúster](../deploy/register-with-azure.md) mediante el mismo identificador de suscripción y de inquilino de Azure.
+Para usar los servicios de Azure con Windows Admin Center, primero debe [instalar Windows Admin Center](/windows-server/manage/windows-admin-center/deploy/install) en un equipo de administración y completar un registro único de la puerta de enlace de Windows Admin Center. Este es un requisito previo para [registrar el clúster](../deploy/register-with-azure.md) con Azure.
 
-## <a name="complete-the-gateway-registration-process-using-windows-admin-center"></a>Completar el proceso de registro de puerta de enlace con Windows Admin Center
+   > [!IMPORTANT]
+   > Registre Windows Admin Center en el mismo equipo de administración que piensa usar para registrar el clúster con el mismo identificador de inquilino de Azure Active Directory.
+
+## <a name="complete-the-registration-process"></a>Finalización del proceso de registro
 
 1. Inicie Windows Admin Center y haga clic en el icono de engranaje **Configuración** de la parte superior derecha, que le llevará a la página de la cuenta. A continuación, desde el menú **Puerta de enlace** de la izquierda, seleccione **Azure** y haga clic en **Registrar**.
 

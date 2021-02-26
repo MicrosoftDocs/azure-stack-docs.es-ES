@@ -7,12 +7,12 @@ ms.date: 11/13/2020
 ms.author: patricka
 ms.reviewer: ''
 ms.lastreviewed: ''
-ms.openlocfilehash: 028ad9442961708820f905b73037eb55a11af72a
-ms.sourcegitcommit: d719f148005e904fa426a001a687e80730c91fda
+ms.openlocfilehash: 7c9fb834367d5baf1d467db590ab2b0ca7b39efe
+ms.sourcegitcommit: 5ea0e915f24c8bcddbcaf8268e3c963aa8877c9d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97910540"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100488146"
 ---
 # <a name="replacing-the-heater"></a>Sustitución del calentador
 
@@ -20,7 +20,7 @@ Consulte las secciones siguientes antes de retirar el calentador anterior e inst
 
 ## <a name="unpacking-and-taking-inventory-of-the-heater"></a>Desempaquetado e inventario del calentador 
 
-El calentador táctico de 1 U V2 (el calentador) normalmente se distribuye como un subcomponente preinstalado del sistema del Dispositivo en la nube táctico. Cuando se envía por separado, el calentador se envía en un embalaje comercial estándar con material de empaquetado de protección. 
+El calentador resistente de 1 U V2 (el calentador) normalmente se distribuye como un subcomponente preinstalado del sistema del Dispositivo en la nube resistente. Cuando se envía por separado, el calentador se envía en un embalaje comercial estándar con material de empaquetado de protección. 
 
 Retire cuidadosamente el calentador de la caja del envío. Cuando se empaqueta en una caja de envío, el calentador tiene instalados todos los componentes principales en el chasis. Normalmente, el calentador es parte de una caja de transporte y está integrado con un grupo completo de dispositivos en una caja de transporte. Conserve la caja del envío y los materiales de empaquetado para cualquier posible necesidad de volver a enviar el calentador en el futuro. Aunque el calentador tiene una construcción sólida, asegúrese de que la unidad esté empaquetada correctamente para su envío. 
 
@@ -75,7 +75,7 @@ El calentador se monta en una caja de transporte capaz de albergar la unidad.
 
     ![Retirada del ensamblaje del filtro.](media/image-89.png)
 
-1. Tire de las pestañas de liberación hacia fuera del calentador táctico de 1 U (V2) hasta que se libere la cubierta y, a continuación, mueva la cubierta hacia afuera desde el bastidor del chasis del pod. 
+1. Tire de las pestañas de liberación hacia fuera del calentador resistente de 1 U (V2) hasta que se libere la cubierta y, a continuación, mueva la cubierta hacia afuera desde el bastidor del chasis del pod. 
 
     ![Diagrama en el que se muestran las pestañas de liberación.](media/image-90.png)
 
@@ -83,7 +83,7 @@ El calentador se monta en una caja de transporte capaz de albergar la unidad.
 
     ![Diagrama en el que se muestra cómo se retira la cámara.](media/image-91.png)
 
-1. En la parte frontal de la caja, retire el cierre zip de la parte inferior del calentador táctico de 1 U (V2). Si es necesario, use la herramienta de corte de diagonal. 
+1. En la parte frontal de la caja, retire el cierre zip de la parte inferior del calentador resistente de 1 U (V2). Si es necesario, use la herramienta de corte de diagonal. 
 
     ![Diagrama en el que se muestra el soporte del cierre zip y el microconector para el sensor de entrada de temperatura resaltados.](media/image-92.png)
 
@@ -126,7 +126,7 @@ El calentador se monta en una caja de transporte capaz de albergar la unidad.
     ![Diagrama en el que se muestra cómo se tira hacia abajo de la cámara desde la parte posterior izquierda.](media/image-101.png)
 
 
-1. En la parte posterior de la caja, desconecte los cables de alimentación del servidor del calentador táctico de 1 U (V2) y deje que cuelguen libremente. 
+1. En la parte posterior de la caja, desconecte los cables de alimentación del servidor del calentador resistente de 1 U (V2) y deje que cuelguen libremente. 
 
     ![Diagrama en el que se muestra la ubicación de los cables de alimentación del servidor en la parte posterior de la caja.](media/image-102.png)
 
@@ -235,19 +235,19 @@ El calentador se monta en una caja de transporte capaz de albergar la unidad.
 > [!WARNING]
 > Tenga cuidado al levantar el pod para evitar daños en el equipo y daños personales. Para obtener los mejores resultados, use dos personas para la elevación o un equipo de elevación para reducir el riesgo de daño personal, en los componentes o en el pod. 
 
-1. En la parte frontal del pod, deslice un nuevo cierre zip a través del bucle en la parte inferior del calentador táctico de 1 U (V2), pero no fije el cierre. 
+1. En la parte frontal del pod, deslice un nuevo cierre zip a través del bucle en la parte inferior del calentador resistente de 1 U (V2), pero no fije el cierre. 
 
     ![Diagrama en el que se muestra el bucle en la parte inferior del calentador.](media/image-119.png)
 
 
-1. En la parte frontal del pod, inserte el calentador táctico de 1 U (V2); para ello, deslícelo desde el frente hacia la parte posterior. Asegúrese de que el cierre zip no se caiga. 
+1. En la parte frontal del pod, inserte el calentador resistente de 1 U (V2); para ello, deslícelo desde el frente hacia la parte posterior. Asegúrese de que el cierre zip no se caiga. 
 
-1. En la parte frontal del pod, instale los dos tacos de 0,064 pulgadas entre el bastidor y el calentador táctico de 1 U (V2). 
+1. En la parte frontal del pod, instale los dos tacos de 0,064 pulgadas entre el bastidor y el calentador resistente de 1 U (V2). 
 
     ![Diagrama en el que se muestra la ubicación de los tacos en la parte delantera del pod.](media/image-120.png)
 
 
-1. En la parte posterior del pod, instale los dos tacos de 0,064 pulgadas entre el bastidor y el calentador táctico de 1 U (V2). 
+1. En la parte trasera del pod, instale los dos tacos de 0,064 pulgadas entre el bastidor y el calentador resistente de 1 U (V2). 
 
     ![Diagrama en el que se muestra la ubicación de los tacos en la parte posterior del pod.](media/image-121.png)
 
@@ -269,19 +269,19 @@ El calentador se monta en una caja de transporte capaz de albergar la unidad.
     ![Diagrama en el que se muestra cómo se vuelven a conectar los dos tornillos de montaje posterior del servidor.](media/image-124.png)
 
 
-1. En la parte posterior del pod, instale los cuatro tornillos 10-32 de montaje posterior del calentador táctico de 1 U (V2), las arandelas de bloqueo y las arandelas planas. Aplique imprimación y sellador de baja fuerza a las roscas y apriete los tornillos a 27 libras por pulgada. 
+1. En la parte posterior del pod, instale los cuatro tornillos 10-32 de montaje posterior del calentador resistente de 1 U (V2), las arandelas de bloqueo y las arandelas planas. Aplique imprimación y sellador de baja fuerza a las roscas y apriete los tornillos a 27 libras por pulgada. 
 
     ![Diagrama en el que se muestra cómo se vuelven a conectar los cuatro tornillos del calentador.](media/image-125.png)
 
 
-1. En la parte posterior del pod, retire los dos tacos que se encuentran debajo del calentador táctico de 1 U (V2) y colóquelos en el kit del calentador para su uso futuro. 
+1. En la parte posterior del pod, retire los dos tacos que se encuentran debajo del calentador resistente de 1 U (V2) y colóquelos en el kit del calentador para su uso futuro. 
 
-1. En la parte frontal del pod, retire los dos tacos que se encuentran debajo del calentador táctico de 1 U (V2) y colóquelos en el kit del calentador para su uso futuro. 
+1. En la parte trasera del pod, retire los dos tacos que se encuentran debajo del calentador resistente de 1 U (V2) y colóquelos en el kit del calentador para su uso futuro. 
 
-1. En la parte posterior del pod, instale los seis tornillos 4-40 que conectan la bisagra de la cámara al calentador táctico de 1 U (V2). Aplique imprimación y sellador de baja fuerza a las roscas y apriete los tornillos a 4,5 libras por pulgada. 
+1. En la parte posterior del pod, instale los seis tornillos 4-40 que conectan la bisagra de la cámara al calentador resistente de 1 U (V2). Aplique imprimación y sellador de baja fuerza a las roscas y apriete los tornillos a 4,5 libras por pulgada. 
 
     > [!NOTE]
-    > Coloque una bolsa de descarga electrostática (ESD) o una espuma ESD en la ventilación del calentador táctico de 1 U (V2) para evitar que un objeto externo dañe el calentador. 
+    > Coloque una bolsa de descarga electrostática (ESD) o una espuma ESD en la ventilación del calentador resistente de 1 U (V2) para evitar que un objeto externo dañe el calentador. 
 
 1. En la parte posterior del pod, instale el soporte del espacio para cableado interior de la izquierda. Mientras presiona el soporte hacia dentro y hacia el bastidor, apriete completamente los tornillos cautivos 6-32 y, a continuación, apriete los tornillos a 9 libras por pulgada. 
 
@@ -305,7 +305,7 @@ El calentador se monta en una caja de transporte capaz de albergar la unidad.
 
 1. Apriete la tuerca a 16 libras por pulgada. 
 
-1. En la parte posterior del pod, vuelva a conectar los dos cables de alimentación del servidor y, a continuación, los cuatro cables de alimentación del calentador táctico de 1 U (V2) en sus ubicaciones originales. 
+1. En la parte posterior del pod, vuelva a conectar los dos cables de alimentación del servidor y, a continuación, los cuatro cables de alimentación del calentador resistente de 1 U (V2) en sus ubicaciones originales. 
 
 1. En la parte posterior del pod, el enganche debe estar hacia arriba y detrás de las retenciones de bola; de no ser así, mueva el brazo del enganche hasta la posición requerida. 
 

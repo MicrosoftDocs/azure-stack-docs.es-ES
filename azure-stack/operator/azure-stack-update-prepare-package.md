@@ -3,16 +3,16 @@ title: Preparación de un paquete de actualización en Azure Stack Hub
 description: Aprenda a preparar un paquete de actualización en Azure Stack Hub.
 author: sethmanheim
 ms.topic: how-to
-ms.date: 07/22/2020
+ms.date: 02/08/2021
 ms.author: sethm
 ms.lastreviewed: 09/10/2019
 ms.reviewer: sranthar
-ms.openlocfilehash: e0ad221764e116bb2b5f73601da3ac6917681ff0
-ms.sourcegitcommit: 34db213dc6549f21662ed44d090f55359cfe8469
+ms.openlocfilehash: b3d1f3d76d988be3647a1d26fec0a763a681d4cf
+ms.sourcegitcommit: 824fd33fd5d6aa0c0dac06c21b592bdb60378940
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88564792"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99850928"
 ---
 # <a name="prepare-an-azure-stack-hub-update-package"></a>Preparación de un paquete de actualización de Azure Stack Hub
 
@@ -56,7 +56,7 @@ Las actualizaciones de Azure Stack Hub para [actualizaciones completas y rápida
 
 ### <a name="where-to-download-azure-stack-hub-hotfix-packages"></a>Ubicación de descarga de los paquetes de correcciones de Azure Stack Hub
 
-Los paquetes de las [revisiones de Azure Stack Hub](./azure-stack-updates.md#update-package-types) se hospedan en el mismo punto de conexión seguro de Azure que las actualizaciones de Azure Stack Hub. Los operadores de Azure Stack Hub con instancias conectadas verán que las [actualizaciones de Azure Stack Hub aparecen automáticamente en el portal de administración](#automatic-download-and-preparation-for-update-packages) cuando estén disponibles. Puede descargarlas mediante los vínculos insertados en cada uno de los artículos de KB de revisión respectivos, como [Revisión de Azure Stack Hub 1.1906.11.52](https://support.microsoft.com/help/4515650). También podrá encontrar revisiones en las notas de la versión correspondientes a su versión de Azure Stack Hub.
+Los paquetes de las [revisiones de Azure Stack Hub](./azure-stack-updates.md#update-package-types) se hospedan en el mismo punto de conexión seguro de Azure que las actualizaciones de Azure Stack Hub. Los operadores de Azure Stack Hub con instancias conectadas verán que las [actualizaciones de Azure Stack Hub aparecen automáticamente en el portal de administración](#automatic-download-and-preparation-for-update-packages) cuando estén disponibles. Puede descargarlas mediante los vínculos insertados en cada uno de los artículos de KB de revisión respectivos. También podrá encontrar enlaces a los artículos de la knowledge base de revisión en las notas de la versión correspondientes a su versión de Azure Stack Hub.
 
 ### <a name="where-to-download-oem-update-packages"></a>Ubicación de la descarga de las actualizaciones de OEM
 
@@ -73,7 +73,7 @@ El siguiente procedimiento muestra cómo importar e instalar actualizaciones en 
 
     ![Actualización de Azure Stack Hub](./media/azure-stack-update-prepare-package/image1.png)
 
-2. En el cuadro de filtro, escriba **update**y seleccione la cuenta de almacenamiento **updateadminaccount**.
+2. En el cuadro de filtro, escriba **update** y seleccione la cuenta de almacenamiento **updateadminaccount**.
 
 3. En los detalles de la cuenta de almacenamiento, en **Servicios**, seleccione **Blobs**.
 

@@ -3,22 +3,22 @@ title: Realización de solicitudes de API a Azure Stack Hub
 description: Aprenda a recuperar una autenticación de Azure para realizar solicitudes de API a Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 10/01/2020
+ms.date: 02/08/2021
 ms.author: sethm
 ms.reviewer: thoroet
 ms.lastreviewed: 01/14/2020
-ms.openlocfilehash: 70a1a6e1d2fb4eb6766948a4e02d5072f4e04281
-ms.sourcegitcommit: a1e2003fb9c6dacdc76f97614ff5a26a5b197b49
+ms.openlocfilehash: c48eb869ded6be5f2c05171edf4d0cc6a88945ca
+ms.sourcegitcommit: d542b68b299b73e045f30916afb6018e365e9db6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91623326"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99975850"
 ---
 <!--  cblackuk and charliejllewellyn. This is a community contribution by cblackuk-->
 
 # <a name="make-api-requests-to-azure-stack-hub"></a>Realización de solicitudes de API a Azure Stack Hub
 
-Puede usar la API REST de Azure Stack Hub para automatizar operaciones como la incorporación de una máquina virtual a la nube de Azure Stack.
+Puede usar las API REST de Azure Stack Hub para automatizar operaciones, como la incorporación de una máquina virtual a la nube de Azure Stack Hub.
 
 La API requiere que el cliente se autentique en el punto de conexión de inicio de sesión de Microsoft Azure. Este punto de conexión devuelve un token en el encabezado de cada solicitud enviada a las API de Azure Stack Hub. Microsoft Azure usa Oauth 2.0.
 
@@ -212,4 +212,4 @@ https://adminmanagement.local.azurestack.external/subscriptions/800c4168-3eb1-40
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Para más información sobre el uso de los puntos de conexión de REST de Azure, consulte la [referencia de la API REST de Azure](/rest/api/).
+Para más información sobre el uso de los puntos de conexión REST de Azure, consulte [Explorador de API REST](/rest/api/).

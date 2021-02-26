@@ -1,22 +1,22 @@
 ---
-title: Administración del registro de Azure para Azure Stack HCl
-description: Administración del registro de Azure para Azure Stack HCI, descripción del estado del registro y anulación del registro del clúster cuando esté listo para la retirada.
+title: Administración del registro de clústeres de Azure Stack HCI con Azure
+description: Administración del registro de Azure para clústeres de Azure Stack HCI, descripción del estado del registro y anulación del registro del clúster cuando esté listo para la retirada.
 author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
-ms.date: 01/28/2021
-ms.openlocfilehash: a187730ed43c6c4a57bbe2d1f81d39085d8b94a1
-ms.sourcegitcommit: b461597917b768412036bf852c911aa9871264b2
+ms.date: 02/10/2021
+ms.openlocfilehash: 7128ddae1a1b67e0085806ecd988f475c9bf8708
+ms.sourcegitcommit: 5ea0e915f24c8bcddbcaf8268e3c963aa8877c9d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99050100"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100487466"
 ---
-# <a name="manage-azure-registration"></a>Administración del registro de Azure
+# <a name="manage-cluster-registration-with-azure"></a>Administración del registro de clústeres con Azure
 
 > Se aplica a Azure Stack HCI v20H2
 
-Una vez creado el clúster de Azure Stack HCI, debe [registrar el clúster con Azure Arc](../deploy/register-with-azure.md). Una vez registrado el clúster, se sincroniza periódicamente la información entre el clúster local y la nube. En este tema se explica cómo entender el estado del registro, otorgar permisos de Azure Active Directory y anular el registro del clúster cuando esté listo para la retirada.
+Una vez que haya creado un clúster de Azure Stack HCI, debe [registrar Windows Admin Center con Azure](register-windows-admin-center.md) y, después, [registrar el clúster con Azure](../deploy/register-with-azure.md). Una vez registrado el clúster, se sincroniza periódicamente la información entre el clúster local y la nube. En este tema se explica cómo entender el estado del registro, otorgar permisos de Azure Active Directory y anular el registro del clúster cuando esté listo para la retirada.
 
 ## <a name="understanding-registration-status-using-windows-admin-center"></a>Descripción del estado del registro mediante Windows Admin Center
 
@@ -162,7 +162,7 @@ La opción más restrictiva es crear un rol de AD personalizado con una directiv
 Cuando esté listo para retirar el clúster de Azure Stack HCI, solo tiene que conectarse al clúster mediante Windows Admin Center y seleccionar **Configuración** en la parte inferior del menú **Herramientas** de la izquierda. A continuación, seleccione **Registro de Azure Stack HCI** y haga clic en el botón **Anular registro**. El proceso de anulación del registro limpia automáticamente el recurso de Azure que representa el clúster, el grupo de recursos de Azure (si el grupo se creó durante el registro y no contiene ningún otro recurso) y la identidad de la aplicación de Azure AD. Esto detiene toda la funcionalidad de supervisión, soporte técnico y facturación mediante Azure Arc.
 
    > [!NOTE]
-   > La anulación del registro de un clúster de Azure Stack HCI requiere un administrador de Azure Active Directory u otro usuario al que se hayan delegado permisos suficientes. Consulte [Permisos de usuario de Azure Active Directory](#azure-active-directory-user-permissions).
+   > La anulación del registro de un clúster de Azure Stack HCI requiere un administrador de Azure Active Directory u otro usuario al que se hayan delegado permisos suficientes. Consulte [Permisos de usuario de Azure Active Directory](#azure-active-directory-user-permissions). Si la puerta de enlace de Windows Admin Center está registrada en un identificador de Azure Active Directory (inquilino) diferente del que se usó para registrar el clúster por primera vez, es posible que se produzcan problemas al intentar anular el registro del clúster mediante Windows Admin Center. Si esto ocurre, siga las instrucciones de PowerShell que se indican a continuación.
 
 ## <a name="unregister-azure-stack-hci-using-powershell"></a>Anulación del registro de Azure Stack HCI mediante PowerShell
 
@@ -200,8 +200,27 @@ Si un usuario destruye un clúster de Azure Stack HCI sin anular su registro, po
 
 Para eliminar el recurso de Azure Stack HCI, vaya a su página en Azure Portal y seleccione **Eliminar** en la barra de acciones de la parte superior. Escriba el nombre del recurso para confirmar la eliminación y luego seleccione **Eliminar**. Para eliminar la identidad de la aplicación de Azure AD, vaya a **Azure AD**, después a **Registros de aplicaciones** y la encontrará en **Todas las aplicaciones**. Seleccione **Eliminar** y confirme.
 
+También puede eliminar el recurso de Azure Stack HCI mediante PowerShell:
+
+```PowerShell
+Remove-AzResource -ResourceId "HCI001"
+```
+
+Puede que sea necesario instalar el módulo `Az.Resources`:
+
+```PowerShell
+Install-Module -Name Az.Resources
+```
+
+Si el grupo de recursos se creó durante el registro y no contiene otros recursos, puede eliminarlo también:
+
+```PowerShell
+Remove-AzResourceGroup -Name "HCI001-rg"
+```
+
 ## <a name="next-steps"></a>Pasos siguientes
 
 Para obtener información relacionada, consulte:
 
+- [Registro de Windows Admin Center con Azure](register-windows-admin-center.md)
 - [Conexión de Azure Stack HCl a Azure](../deploy/register-with-azure.md)

@@ -3,16 +3,16 @@ title: Notas de la versión de Azure Stack Hub
 description: Notas de la versión para los sistemas integrados de Azure Stack Hub, incluidas las actualizaciones y correcciones de errores.
 author: sethmanheim
 ms.topic: article
-ms.date: 02/03/2021
+ms.date: 02/17/2021
 ms.author: sethm
 ms.reviewer: sranthar
 ms.lastreviewed: 09/09/2020
-ms.openlocfilehash: ea286718f2f4c0fcd2bdf935d5e12d462d07856f
-ms.sourcegitcommit: e88f0a1f2f4ed3bb8442bfb7b754d8b3a51319b4
+ms.openlocfilehash: 441e764231e9ce85de69d7cd4020325883fde7ec
+ms.sourcegitcommit: 4c97ed2caf054ebeefa94da1f07cfb6be5929aac
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99533933"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100648089"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Notas de la versión de Azure Stack Hub
 
@@ -127,13 +127,16 @@ Para más información, consulte nuestra [directiva de servicio](azure-stack-ser
 
 Las revisiones de Azure Stack Hub solo son aplicables a los sistemas integrados de Azure Stack Hub; no intente instalar revisiones en el ASDK.
 
+> [!TIP]
+> Si desea recibir una notificación acerca de cada versión de revisión, suscríbase a la [**fuente RSS**](https://azurestackhubdocs.azurewebsites.net/xml/hotfixes.rss) para recibir notificaciones acerca de cada versión de revisión.
+
 ### <a name="after-successfully-applying-the-2008-update"></a>Después de aplicar correctamente la actualización 2008
 
 Dado que las revisiones de Azure Stack Hub son acumulativas, como práctica recomendada, debe instalar todas las revisiones publicadas para la compilación a fin de garantizar la mejor experiencia de actualización entre las versiones principales. Cuando se actualiza a una nueva versión principal (por ejemplo, 1.2005.x a 1.2008.x), se instalan automáticamente en ella las revisiones más recientes (si hay alguna disponible en el momento de la descarga del paquete).
 
 Después de la instalación de 2008, si se publica posteriormente alguna revisión de la versión 2008, se debe instalar:
 
-- [Revisión 1.2008.25.114 de Azure Stack Hub](https://support.microsoft.com/topic/87ee234e-7f33-4342-bc0a-5779dbb33263)
+- [Revisión 1.2008.25.114 de Azure Stack Hub](hotfix-1-2008-25-114.md)
 ::: moniker-end
 
 ::: moniker range="azs-2005"
@@ -233,7 +236,7 @@ A partir de la versión 2005, cuando se actualiza a una nueva versión principal
 
 Después de la instalación de 2005, si se publican posteriormente algunas revisiones de la versión 2005, se deben instalar:
 
-- [Revisión 1.2005.29.100 de Azure Stack Hub](https://support.microsoft.com/topic/10c1b6e2-7bf7-4f71-8204-f1b12e2f744a)
+- [Revisión 1.2005.29.100 de Azure Stack Hub](hotfix-1-2005-29-100.md)
 ::: moniker-end
 
 ::: moniker range="azs-2002"
