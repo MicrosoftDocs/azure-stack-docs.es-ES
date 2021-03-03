@@ -3,16 +3,16 @@ title: Integración de red y conectividad de borde para sistemas integrados de A
 description: Aprenda cómo planear la conectividad de red de borde del centro de datos en los sistemas integrados de Azure Stack Hub.
 author: PatAltimore
 ms.topic: conceptual
-ms.date: 03/04/2020
+ms.date: 01/14/2021
 ms.author: patricka
 ms.reviewer: wamota
-ms.lastreviewed: 11/15/2019
-ms.openlocfilehash: 1377f04a9c746a41ed1965a2798a1dbfd3b0db21
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.lastreviewed: 01/14/2021
+ms.openlocfilehash: 091b6e5d1ac4c097c39e425cb6b15da4db96a7a1
+ms.sourcegitcommit: 283b1308142e668749345bf24b63d40172559509
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97871555"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99570657"
 ---
 # <a name="border-connectivity"></a>Conectividad de borde 
 El planeamiento de la integración de red es un requisito previo importante para la correcta implementación, operación y administración de sistemas integrados de Azure Stack Hub. El planeamiento de la conectividad de borde comienza con la elección de si se debe usar el enrutamiento dinámico con el protocolo de puerta de enlace de borde (BGP). Esto requiere la asignación de un número de sistema autónomo (ASN) de 16 bits, público o privado, o el uso de enrutamiento estático.
@@ -50,17 +50,7 @@ El enrutamiento estático solo se aplica a los vínculos superiores entre los co
 
 <sup>\*\*\*</sup> La red de administración de conmutadores es necesaria y se puede agregar por separado desde la red de la infraestructura de conmutadores.
 
-## <a name="transparent-proxy"></a>Proxy transparente
-Si el centro de datos requiere que todo el tráfico utilice un proxy, debe configurar un *proxy transparente* para procesar todo el tráfico del bastidor y tratarlo de acuerdo con la directiva, separando el tráfico entre las zonas de la red.
-
-> [!IMPORTANT]
-> La solución de Azure Stack Hub no es compatible con servidores proxy web normales.  
-
-Un proxy transparente (también conocido como proxy interceptor, alineado o forzado) intercepta la comunicación normal en la capa de red sin requerir ninguna configuración especial del cliente. Los clientes no necesitan estar enterados de la existencia del proxy.
-
-![Proxy transparente](media/azure-stack-border-connectivity/transparent-proxy.svg)
-
-[No se admite](azure-stack-firewall.md#ssl-interception) la interceptación de tráfico SSL y puede provocar errores de servicio cuando se accede a los puntos de conexión. El tiempo de expiración máximo admitido para comunicarse con los puntos de conexión necesarios para la identidad es de 60 s con 3 reintentos.
-
 ## <a name="next-steps"></a>Pasos siguientes
-[Integración de DNS](azure-stack-integrate-dns.md)
+
+- [Integración de DNS](azure-stack-integrate-dns.md)
+- [Proxy transparente para Azure Stack Hub](azure-stack-transparent-proxy.md)

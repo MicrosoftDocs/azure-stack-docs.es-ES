@@ -7,12 +7,12 @@ ms.date: 11/13/2020
 ms.author: patricka
 ms.reviewer: ''
 ms.lastreviewed: ''
-ms.openlocfilehash: 6fc9e5cb22f1153874090bd57d48cbbbcca63482
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: d8dd3d2b3cd2bc63f1f15a1cf5c44b82c0ede44e
+ms.sourcegitcommit: 283b1308142e668749345bf24b63d40172559509
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97867611"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99571218"
 ---
 # <a name="unpack-the-heater-and-plan-the-heater-installation"></a>Desempaquetado del calentador y planeamiento de su instalación
 
@@ -20,7 +20,7 @@ Consulte las secciones siguientes antes de reemplazar el calentador.
 
 ## <a name="unpacking-and-taking-inventory-of-the-heater"></a>Desempaquetado e inventario del calentador
 
-El calentador táctico de 1 U V2 (el calentador) normalmente se distribuye como un subcomponente preinstalado del sistema del Dispositivo en la nube táctico.
+El calentador resistente de 1 U V2 (el calentador) normalmente se distribuye como un subcomponente preinstalado del sistema del Dispositivo en la nube resistente.
 Cuando se envía por separado, el calentador se envía en un embalaje comercial estándar con material de empaquetado de protección.
 
 Retire cuidadosamente el calentador de la caja del envío. Cuando se empaqueta en una caja de envío, el calentador tiene instalados todos los componentes principales en el chasis. Normalmente, el calentador es parte de una caja de transporte y está integrado con un grupo completo de dispositivos en una caja de transporte. Conserve la caja del envío y los materiales de empaquetado para cualquier posible necesidad de volver a enviar el calentador en el futuro. Aunque el calentador tiene una construcción sólida, asegúrese de que la unidad esté empaquetada correctamente para su envío.

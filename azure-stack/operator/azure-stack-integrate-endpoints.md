@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.author: patricka
 ms.reviewer: wamota
 ms.lastreviewed: 09/24/2020
-ms.openlocfilehash: 989a20216fd5613fa1269009e5c6dc7b918b8300
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: 23e97f1e91b9ee9a6a76ee6037514bb9c17636b4
+ms.sourcegitcommit: 283b1308142e668749345bf24b63d40172559509
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97870809"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99570623"
 ---
 # <a name="publish-azure-stack-hub-services-in-your-datacenter"></a>Publicación de servicios de Azure Stack Hub en el centro de datos
 
@@ -69,7 +69,7 @@ Con la adición del [host de extensiones](azure-stack-extension-host-prepare.md)
 
 ## <a name="ports-and-urls-outbound"></a>Puertos y direcciones URL (de salida)
 
-Azure Stack Hub solo admite servidores proxy transparentes. En una implementación en la que un proxy transparente establece un vínculo superior a un servidor proxy tradicional, debe permitir los siguientes puertos y direcciones URL para la comunicación saliente.
+Azure Stack Hub solo admite servidores proxy transparentes. En una implementación en la que un proxy transparente establece un vínculo superior a un servidor proxy tradicional, debe permitir los siguientes puertos y direcciones URL para la comunicación saliente. Para más información sobre la configuración de servidores proxy transparentes, consulte [Proxy transparente para Azure Stack Hub](azure-stack-transparent-proxy.md).
 
 [No se admite](azure-stack-firewall.md#ssl-interception) la interceptación de tráfico SSL y puede provocar errores de servicio cuando se accede a los puntos de conexión. El tiempo de expiración máximo admitido para comunicarse con los puntos de conexión necesarios para la identidad es de 60 s.
 

@@ -4,17 +4,17 @@ description: Cómo crear volúmenes en Azure Stack HCI mediante Windows Admin Ce
 author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
-ms.date: 09/10/2020
-ms.openlocfilehash: aa0da05ba1cac74cf558a28627962e61c1418a73
-ms.sourcegitcommit: b147d617c32cea138b5bd4bab568109282e44317
+ms.date: 02/04/2021
+ms.openlocfilehash: 9bb0ff34863f8262d5919e5eae6f735709097bf5
+ms.sourcegitcommit: 283b1308142e668749345bf24b63d40172559509
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010856"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99570742"
 ---
 # <a name="create-volumes-in-azure-stack-hci"></a>Creación de volúmenes en Azure Stack HCI
 
-> Se aplica a: Azure Stack HCI, versión 20H2; Windows Server 2019
+> Se aplica a: Azure Stack HCI, versión 20H2
 
 En este tema se describe cómo crear volúmenes en un clúster de Azure Stack HCI mediante Windows Admin Center y Windows PowerShell, cómo trabajar con archivos en los volúmenes y cómo habilitar la compresión y la desduplicación de datos en los volúmenes. Para aprender a crear volúmenes y configurar la replicación para clústeres extendidos, consulte [Creación de volúmenes extendidos](create-stretched-volumes.md).
 
@@ -22,7 +22,7 @@ En este tema se describe cómo crear volúmenes en un clúster de Azure Stack HC
 
 Para crear un volumen de reflejo tridireccional mediante Windows Admin Center:
 
-1. En Windows Admin Center, conéctese a un clúster de Espacios de almacenamiento directo y seleccione **Volumes** (Volúmenes) en el panel **Tools** (Herramientas).
+1. En Windows Admin Center, conéctese a un clúster y seleccione **Volumes** (Volúmenes) en el panel **Tools** (Herramientas).
 2. En la página **Volumes** (Volúmenes), seleccione la pestaña **Inventory** (Inventario) y, a continuación, seleccione **Create volume** (Crear volumen).
 3. En el panel **Create volume** (Crear volumen), escriba un nombre para el volumen y deje **Resiliency** (Resistencia) como **Three-way mirror** (Reflejo triple).
 4. En **Size on HDD**, especifique el tamaño del volumen. Por ejemplo, 5 TB (terabytes).
@@ -36,11 +36,14 @@ Vea un breve vídeo sobre cómo crear un volumen de reflejo triple.
 
 ## <a name="create-a-mirror-accelerated-parity-volume"></a>Creación de un volumen con paridad acelerada por reflejo
 
-La paridad acelerada por reflejo reduce la superficie de memoria del volumen en el HDD. Por ejemplo, un volumen de reflejo triple significa que, por cada 10 terabytes de tamaño, necesitará 30 terabytes como superficie de memoria. Para reducir la sobrecarga en la superficie de memoria, cree un volumen con paridad acelerada por reflejo. Esto reduce la superficie de memoria de 30 terabytes a tan solo 22 terabytes, incluso con 4 servidores solo. Para ello, se crea un reflejo del 20 % de los datos más activos y se usa la paridad, que es más eficaz, para almacenar el resto. Puede ajustar esta proporción entre paridad y reflejo para lograr el equilibrio entre el rendimiento y capacidad adecuado para su carga de trabajo. Por ejemplo, una paridad del 90 % y un reflejo del 10 % producen menos rendimiento, pero optimiza aún más la superficie de memoria.
+La paridad acelerada por reflejo (MAP) reduce la superficie de memoria del volumen en el HDD. Por ejemplo, un volumen de reflejo triple significa que, por cada 10 terabytes de tamaño, necesitará 30 terabytes como superficie de memoria. Para reducir la sobrecarga en la superficie de memoria, cree un volumen con paridad acelerada por reflejo. Esto reduce la superficie de memoria de 30 terabytes a tan solo 22 terabytes, incluso con 4 servidores solo. Para ello, se crea un reflejo del 20 % de los datos más activos y se usa la paridad, que es más eficaz, para almacenar el resto. Puede ajustar esta proporción entre paridad y reflejo para lograr el equilibrio entre el rendimiento y capacidad adecuado para su carga de trabajo. Por ejemplo, una paridad del 90 % y un reflejo del 10 % producen menos rendimiento, pero optimiza aún más la superficie de memoria.
+
+  >[!NOTE]
+  >Los volúmenes de paridad acelerada por reflejo requieren el sistema de archivos resistente (ReFS).
 
 Para crear un volumen con paridad acelerada por reflejo en Windows Admin Center:
 
-1. En Windows Admin Center, conéctese a un clúster de Espacios de almacenamiento directo y seleccione **Volumes** (Volúmenes) en el panel **Tools** (Herramientas).
+1. En Windows Admin Center, conéctese a un clúster y seleccione **Volumes** (Volúmenes) en el panel **Tools** (Herramientas).
 2. En la página Volumes (Volúmenes), seleccione la pestaña **Inventory** (Inventario) y, a continuación, seleccione **Create volume** (Crear volumen).
 3. En el panel **Create volume** (Crear volumen), escriba un nombre para el volumen.
 4. En **Resiliency** (Resistencia), seleccione **Mirror-accelerated parity** (Paridad acelerada por reflejo).
@@ -55,7 +58,7 @@ Vea un vídeo rápido sobre cómo crear un volumen de paridad acelerada por refl
 
 Para abrir un volumen y agregarle archivos en Windows Admin Center:
 
-1. En Windows Admin Center, conéctese a un clúster de Espacios de almacenamiento directo y seleccione **Volumes** (Volúmenes) en el panel **Tools** (Herramientas).
+1. En Windows Admin Center, conéctese a un clúster y seleccione **Volumes** (Volúmenes) en el panel **Tools** (Herramientas).
 2. En la página **Volumes** (Volúmenes), seleccione la pestaña **Inventory** (Inventario).
 2. En la lista de volúmenes, seleccione el nombre del volumen que quiere abrir.
 
@@ -64,7 +67,7 @@ Para abrir un volumen y agregarle archivos en Windows Admin Center:
 4. En la parte superior de la página, seleccione **Open** (Abrir). Se inicia la herramienta **Files** (Archivos) en Windows Admin Center.
 5. Vaya a la ruta de acceso del volumen. Aquí puede examinar los archivos del volumen.
 6. Seleccione **Upload** (Cargar) y, a continuación, seleccione un archivo para cargarlo.
-7. Use el botón**Back** (Atrás) del explorador para volver al panel **Tools** (Herramientas) de Windows Admin Center.
+7. Use el botón **Back** (Atrás) del explorador para volver al panel **Tools** (Herramientas) de Windows Admin Center.
 
 Vea un vídeo rápido sobre cómo abrir un volumen y agregar archivos.
 
@@ -83,7 +86,7 @@ En primer lugar, inicie Windows PowerShell desde el menú Inicio de Windows. Se 
 El cmdlet **New-Volume** tiene cuatro parámetros que debe proporcionar siempre:
 
 - **FriendlyName:** cualquier cadena que desee, por ejemplo *"Volume1"* .
-- **FileSystem:** **CSVFS_ReFS** (recomendado) o **CSVFS_NTFS**.
+- **FileSystem:** (Sistema de archivos) **CSVFS_ReFS** (recomendado para todos los volúmenes; necesario para volúmenes de paridad acelerada por reflejo) o **CSVFS_NTFS**
 - **StoragePoolFriendlyName:** el nombre del bloque de almacenamiento; por ejemplo *"S2D en ClusterName"* .
 - **Size:** el tamaño del volumen, por ejemplo *"10TB"* .
 
@@ -111,27 +114,105 @@ New-Volume -FriendlyName "Volume2" -FileSystem CSVFS_ReFS -StoragePoolFriendlyNa
 New-Volume -FriendlyName "Volume3" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size 1TB -ResiliencySettingName Parity
 ```
 
-### <a name="example-using-storage-tiers"></a>Ejemplo: Uso de capas de almacenamiento
+## <a name="using-storage-tiers"></a>Uso de capas de almacenamiento
 
 En las implementaciones con tres tipos de unidades, un volumen puede abarcar las capas SSD y HDD, y residir parcialmente en cada uno. Del mismo modo, en implementaciones con cuatro o más servidores, un volumen puede mezclar reflejo y paridad dual para residir parcialmente en cada uno de ellos.
 
-Para ayudarle a crear estos volúmenes, Espacios de almacenamiento directo proporciona plantillas de capa predeterminadas llamadas *Performance* (Rendimiento) y *Capacity* (Capacidad). Incluyen definiciones para la creación de reflejo triple en las unidades más rápidas (si procede) y paridad dual en las unidades más lentas (si procede).
+Para ayudarle a crear estos volúmenes, Azure Stack HCI proporciona las plantillas de nivel predeterminadas llamadas **MirrorOn*MediaType*** y **NestedMirrorOn*MediaType*** (para el rendimiento), y **ParityOn*MediaType*** y **NestedParityOn*MediaType*** (para la capacidad), donde *MediaType* es HDD o SSD. Las plantillas representan niveles de almacenamiento en función del tipo de medio y encapsulan definiciones para la creación de reflejo triple en las unidades más rápidas (si procede) y paridad dual en las unidades más lentas (si procede).
 
-Para verlos, puede ejecutar el cmdlet **Get-StorageTier**.
+Puede verlo mediante la ejecución del cmdlet **Get-StorageTier** en cualquier servidor del clúster.
 
 ```PowerShell
 Get-StorageTier | Select FriendlyName, ResiliencySettingName, PhysicalDiskRedundancy
 ```
 
-![Captura de pantalla de las capas de almacenamiento de PowerShell](media/creating-volumes/storage-tiers-screenshot.png)
+Por ejemplo, si tiene un clúster de dos nodos solo con HDD, la salida podría tener un aspecto similar al siguiente:
+
+```PowerShell
+FriendlyName      ResiliencySettingName PhysicalDiskRedundancy
+------------      --------------------- ----------------------
+NestedParityOnHDD Parity                                     1
+Capacity          Mirror                                     1
+NestedMirrorOnHDD Mirror                                     3
+MirrorOnHDD       Mirror                                     1
+```
 
 Para crear volúmenes en capas, haga referencia a estas plantillas de capa con los parámetros **StorageTierFriendlyNames** y **StorageTierSizes** del cmdlet **New-Volume**. Por ejemplo, el siguiente cmdlet crea un volumen que combina reflejo triple y paridad dual en una proporción 30:70.
 
 ```PowerShell
-New-Volume -FriendlyName "Volume4" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes 300GB, 700GB
+New-Volume -FriendlyName "Volume1" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames MirrorOnHDD, Capacity -StorageTierSizes 300GB, 700GB
 ```
 
-¡Y ya está! Repita el procedimiento si necesita crear más de un volumen.
+Repita el procedimiento si necesita crear más de un volumen.
+
+### <a name="nested-resiliency-volumes"></a>Volúmenes de resistencia anidada
+
+La resistencia anidada solo se aplica a los clústeres de dos servidores; no se puede usar la resistencia anidada si el clúster tiene tres servidores o más. La resistencia anidada permite que un clúster de dos servidores resista varios errores de hardware al mismo tiempo sin perder la disponibilidad del almacenamiento, lo que permite a los usuarios, las aplicaciones y las máquinas virtuales seguir su ejecución sin interrupciones. Para más información, consulte [Planeamiento de volúmenes en Azure Stack HCI: elección del tipo de resistencia](../concepts/plan-volumes.md#choosing-the-resiliency-type).
+
+#### <a name="create-nested-storage-tiers"></a>Creación de niveles de almacenamiento anidados
+
+Para crear un nivel NestedMirror:
+
+```PowerShell
+New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedMirror -ResiliencySettingName Mirror -NumberOfDataCopies 4 -MediaType HDD -CimSession 2nodecluster
+```
+
+Para crear un nivel NestedParity:
+
+```PowerShell
+New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedParity -ResiliencySettingName Parity -NumberOfDataCopies 2 -PhysicalDiskRedundancy 1 -NumberOfGroups 1 -FaultDomainAwareness StorageScaleUnit -ColumnIsolation PhysicalDisk -MediaType HDD -CimSession 2nodecluster
+```
+
+#### <a name="create-nested-volumes"></a>Creación de volúmenes anidados
+
+Para crear un volumen NestedMirror:
+
+```PowerShell
+New-Volume -StoragePoolFriendlyName S2D* -FriendlyName MyMirrorNestedVolume -StorageTierFriendlyNames NestedMirror -StorageTierSizes 500GB -CimSession 2nodecluster
+```
+
+Para crear un volumen NestedParity:
+
+```PowerShell
+New-Volume -StoragePoolFriendlyName S2D* -FriendlyName MyParityNestedVolume -StorageTierFriendlyNames NestedMirror,NestedParity -StorageTierSizes 200GB, 1TB -CimSession 2nodecluster
+```
+
+### <a name="storage-tier-summary-table"></a>Tabla resumen de niveles de almacenamiento
+
+En las tablas siguientes se resumen los niveles de almacenamiento que hay y se pueden crear en Azure Stack HCI.
+
+**NumberOfNodes: 2**
+
+| FriendlyName      | MediaType | ResiliencySettingName | NumberOfDataCopies | PhysicalDiskRedundancy | NumberOfGroups | FaultDomainAwareness | ColumnIsolation | Nota:         |
+| ----------------- | :-------: | :-------------------: | :----------------: | :--------------------: |:--------------:| :------------------: | :-------------: | :----------: |
+| MirrorOnHDD       | HDD       | Reflejo                | 2                  | 1                      | 1              | StorageScaleUnit     | Disco físico    | creación automática |
+| MirrorOnSSD       | SSD       | Reflejo                | 2                  | 1                      | 1              | StorageScaleUnit     | Disco físico    | creación automática |
+| MirrorOnSCM       | SCM       | Reflejo                | 2                  | 1                      | 1              | StorageScaleUnit     | Disco físico    | creación automática |
+| NestedMirrorOnHDD | HDD       | Reflejo                | 4                  | 3                      | 1              | StorageScaleUnit     | Disco físico    | manual       |
+| NestedMirrorOnSSD | SSD       | Reflejo                | 4                  | 3                      | 1              | StorageScaleUnit     | Disco físico    | manual       |
+| NestedMirrorOnSCM | SCM       | Reflejo                | 4                  | 3                      | 1              | StorageScaleUnit     | Disco físico    | manual       |
+| NestedParityOnHDD | HDD       | Parity                | 2                  | 1                      | 1              | StorageScaleUnit     | Disco físico    | manual       |
+| NestedParityOnSSD | SSD       | Parity                | 2                  | 1                      | 1              | StorageScaleUnit     | Disco físico    | manual       |
+| NestedParityOnSCM | SCM       | Parity                | 2                  | 1                      | 1              | StorageScaleUnit     | Disco físico    | manual       |
+
+**NumberOfNodes: 3**
+
+| FriendlyName      | MediaType | ResiliencySettingName | NumberOfDataCopies | PhysicalDiskRedundancy | NumberOfGroups | FaultDomainAwareness | ColumnIsolation | Nota:         |
+| ----------------- | :-------: | :-------------------: | :----------------: | :--------------------: |:--------------:| :------------------: | :-------------: | :----------: |
+| MirrorOnHDD       | HDD       | Reflejo                | 3                  | 2                      | 1              | StorageScaleUnit     | Disco físico    | creación automática |
+| MirrorOnSSD       | SSD       | Reflejo                | 3                  | 2                      | 1              | StorageScaleUnit     | Disco físico    | creación automática |
+| MirrorOnSCM       | SCM       | Reflejo                | 3                  | 2                      | 1              | StorageScaleUnit     | Disco físico    | creación automática |
+
+**NumberOfNodes: 4+**
+
+| FriendlyName      | MediaType | ResiliencySettingName | NumberOfDataCopies | PhysicalDiskRedundancy | NumberOfGroups | FaultDomainAwareness | ColumnIsolation | Nota:         |
+| ----------------- | :-------: | :-------------------: | :----------------: | :--------------------: |:--------------:| :------------------: | :-------------: | :----------: |
+| MirrorOnHDD       | HDD       | Reflejo                | 3                  | 2                      | 1              | StorageScaleUnit     | Disco físico    | creación automática |
+| MirrorOnSSD       | SSD       | Reflejo                | 3                  | 2                      | 1              | StorageScaleUnit     | Disco físico    | creación automática |
+| MirrorOnSCM       | SCM       | Reflejo                | 3                  | 2                      | 1              | StorageScaleUnit     | Disco físico    | creación automática |
+| ParityOnHDD       | HDD       | Parity                | 1                  | 2                      | Auto           | StorageScaleUnit     | StorageScaleUnit| creación automática |
+| ParityOnSSD       | SSD       | Parity                | 1                  | 2                      | Auto           | StorageScaleUnit     | StorageScaleUnit| creación automática |
+| ParityOnSCM       | SCM       | Parity                | 1                  | 2                      | Auto           | StorageScaleUnit     | StorageScaleUnit| creación automática |
 
 ## <a name="next-steps"></a>Pasos siguientes
 

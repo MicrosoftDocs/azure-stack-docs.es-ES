@@ -4,13 +4,13 @@ description: Cómo aplicar actualizaciones de firmware y del sistema operativo a
 author: khdownie
 ms.author: v-kedow
 ms.topic: how-to
-ms.date: 01/25/2020
-ms.openlocfilehash: 751551b827ef5d3c871f0224bfa60d9f79fc5d45
-ms.sourcegitcommit: e772df8ac78c86d834a68d1a8be83b7f738019b7
+ms.date: 02/05/2021
+ms.openlocfilehash: 2ed1a6c2443f7222a873c412e991b4a39b253309
+ms.sourcegitcommit: ec19e8455b5cb90a071afb03ec1446b0a9aafb99
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98772014"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99588655"
 ---
 # <a name="update-azure-stack-hci-clusters"></a>Actualización de clústeres de Azure Stack HCl
 
@@ -24,6 +24,9 @@ Este tema se centra en el sistema operativo y las actualizaciones de software. S
 
 Windows Admin Center facilita la actualización de un clúster y la aplicación de actualizaciones del sistema operativo y de la solución mediante una sencilla interfaz de usuario. Si ha adquirido un sistema integrado de un asociado de hardware de Microsoft, es fácil obtener los controladores, el firmware y otras actualizaciones más recientes directamente de Windows Admin Center mediante la instalación de las extensiones de actualización de asociado adecuadas. Si el hardware no se compró como sistema integrado, es posible que sea necesario realizar actualizaciones de firmware y de controlador por separado, de acuerdo con las recomendaciones del fabricante del hardware.
 
+   > [!WARNING]
+   > Si comienza el proceso de actualización con Windows Admin Center, siga usando el asistente hasta que finalicen las actualizaciones. No intente usar la herramienta de actualización compatible con clústeres ni actualizar un clúster con PowerShell después de completar parcialmente el proceso de actualización en Windows Admin Center. Si desea usar PowerShell para realizar las actualizaciones en lugar de Windows Admin Center, avance hasta [Actualización de un clúster con PowerShell](#update-a-cluster-using-powershell).
+
 Siga estos pasos para instalar las actualizaciones:
 
 1. Al conectarse a un clúster, el panel de Windows Admin Center le avisará si uno o más servidores tienen actualizaciones listas para instalarse y proporcionará un vínculo para actualizar ahora. Como alternativa, puede seleccionar **Actualizaciones** en el menú **Herramientas** de la izquierda.
@@ -36,6 +39,9 @@ Siga estos pasos para instalar las actualizaciones:
    > Para usar la herramienta Actualización compatible con clústeres en Windows Admin Center, debe habilitar el proveedor del servicio de seguridad de credenciales (CredSSP) y proporcionar credenciales explícitas. Cuando se le pregunte si CredSSP debe habilitarse, haga clic en **Sí**. Especifique su nombre de usuario y contraseña y haga clic en **Continue** (Continuar).
 
 3. Se mostrará el estado de actualización del clúster. Haga clic en **Buscar actualizaciones** para obtener una lista de las actualizaciones del sistema operativo disponibles para cada servidor del clúster. Es posible que tenga que proporcionar credenciales de administrador. Si no hay ninguna actualización del sistema operativo disponible, haga clic en **Siguiente: actualizaciones de hardware** y continúe con el paso 7.
+
+   > [!IMPORTANT]
+   > Si sale de la pantalla de actualizaciones mientras está en curso una actualización, puede que se produzca un comportamiento inesperado; por ejemplo, que la sección del historial de la página de actualizaciones no se rellene correctamente hasta que finalice la ejecución actual. Se recomienda abrir Windows Admin Center en una nueva pestaña o ventana del explorador si desea seguir usando la aplicación mientras las actualizaciones están en curso.
 
 4. Seleccione **Siguiente: Instale** para continuar con la instalación de las actualizaciones del sistema operativo o haga clic en **Omitir** para excluirlas. 
 
