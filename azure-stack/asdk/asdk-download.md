@@ -7,12 +7,12 @@ ms.date: 05/06/2019
 ms.author: patricka
 ms.reviewer: misainat
 ms.lastreviewed: 08/10/2019
-ms.openlocfilehash: 3f8a0615f18ddf9ba4a98c2af2b947c49cfdd550
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: de9085ee201fd472a0ffd71cb97f519f66fe3621
+ms.sourcegitcommit: b844c19d1e936c36a85f450b7afcb02149589433
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97873272"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101839681"
 ---
 # <a name="download-and-extract-the-asdk"></a>Descargar y extraer el ASDK
 Después de asegurarse de que el equipo host del kit de desarrollo cumple los requisitos básicos para instalar el Kit de desarrollo de Azure Stack (ASDK), el siguiente paso es descargar y extraer el paquete de implementación de ASDK para obtener Cloudbuilder.vhdx.
@@ -24,7 +24,7 @@ Después de asegurarse de que el equipo host del kit de desarrollo cumple los re
    - [.NET framework 4.6 (o una versión posterior)](https://dotnet.microsoft.com/download/dotnet-framework-runtime/net46) debe estar instalado.
 
 2. [Vaya a la página de introducción](https://azure.microsoft.com/overview/azure-stack/try/?v=try) donde puede descargar el ASDK, proporcione sus datos y, a continuación, haga clic en **Submit** (Enviar).
-3. Descargue y ejecute el [comprobador de implementaciones de ASDK](https://go.microsoft.com/fwlink/?LinkId=828735&clcid=0x409), que es el script de comprobación que constituye un requisito previo. Este script independiente revisa las comprobaciones de requisitos previos que realiza la configuración de ASDK. Ofrece una manera de confirmar que se están cumpliendo los requisitos de hardware y software, antes de descargar el paquete más grande de ASDK.
+3. Descargue y ejecute el [comprobador de implementaciones de ASDK](https://github.com/Azure/AzureStack-Tools/blob/master/Deployment/asdk-prechecker.ps1), que es el script de comprobación que constituye un requisito previo. Este script independiente revisa las comprobaciones de requisitos previos que realiza la configuración de ASDK. Ofrece una manera de confirmar que se están cumpliendo los requisitos de hardware y software, antes de descargar el paquete más grande de ASDK.
 4. En **Descargar el software**, haga clic en **Kit de desarrollo de Azure Stack**.
 
    > [!NOTE]

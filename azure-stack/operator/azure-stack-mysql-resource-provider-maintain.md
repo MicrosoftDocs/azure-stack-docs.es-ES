@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.author: bryanla
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2020
-ms.openlocfilehash: 7372cea4544a2cdb4b0d0e6ed54d07253d6d782c
-ms.sourcegitcommit: 1465bca8b7f87ea6f24faf47e86c2ba497943b28
+ms.openlocfilehash: 593ea0ca882b5aa7d57ff5a3267d35519be3b6f2
+ms.sourcegitcommit: b844c19d1e936c36a85f450b7afcb02149589433
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98103101"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101840072"
 ---
 # <a name="mysql-resource-provider-maintenance-operations-in-azure-stack-hub"></a>Operaciones de mantenimiento del proveedor de recursos MySQL en Azure Stack Hub
 
@@ -51,7 +51,7 @@ Para actualizar las definiciones de Defender se puede editar y ejecutar el scrip
 
 ```powershell
 # Set credentials for the local admin on the resource provider VM.
-$vmLocalAdminPass = ConvertTo-SecureString "<local admin user password>" -AsPlainText -Force
+$vmLocalAdminPass = ConvertTo-SecureString '<local admin user password>' -AsPlainText -Force
 $vmLocalAdminUser = "<local admin user name>"
 $vmLocalAdminCreds = New-Object System.Management.Automation.PSCredential `
     ($vmLocalAdminUser, $vmLocalAdminPass)
@@ -252,11 +252,11 @@ La extensión Azure Diagnostics está instalada de manera predeterminada en la m
    
    ![Vaya a Configuración de diagnóstico](media/azure-stack-mysql-resource-provider-maintain/mysqlrp-diagnostics-settings.png)
 
-4. Agregue **Microsoft-AzureStack-DatabaseAdapter/Operational!\** para recopilar los registros de eventos operativos del proveedor de recursos de MySQL.
+4. Agregue **Microsoft-AzureStack-DatabaseAdapter/Operational!\*** para recopilar los registros de eventos operativos del proveedor de recursos de MySQL.
 
    ![Agregar registros de eventos](media/azure-stack-mysql-resource-provider-maintain/mysqlrp-event-logs.png)
 
-5. Para habilitar la colección de registros de IIS, marque las opciones _ *Registros de IIS** y **Registros de solicitudes con error**.
+5. Para habilitar la colección de registros de IIS, marque **Registros de IIS** y **Error en registros de solicitudes**.
 
    ![Agregar registros de IIS](media/azure-stack-mysql-resource-provider-maintain/mysqlrp-iis-logs.png)
 

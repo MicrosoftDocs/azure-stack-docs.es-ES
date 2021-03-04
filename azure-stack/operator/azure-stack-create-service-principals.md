@@ -8,12 +8,12 @@ ms.date: 11/16/2020
 ms.lastreviewed: 11/16/2020
 ms.custom: contperf-fy20q4
 zone_pivot_groups: state-connected-disconnected
-ms.openlocfilehash: bd66c181aaafafeb34a2da1e56c4ab01ce27b9f1
-ms.sourcegitcommit: e13f27291bab236aac5d8b05401056961e9cc1e9
+ms.openlocfilehash: 57ab28cbc548c8b5b8329fb7c9c8c73aee3b7d93
+ms.sourcegitcommit: b844c19d1e936c36a85f450b7afcb02149589433
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97697699"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101840735"
 ---
 # <a name="use-an-app-identity-to-access-azure-stack-hub-resources"></a>Uso de una identidad de aplicación para acceder a recursos de Azure Stack Hub
 
@@ -83,7 +83,7 @@ Los scripts se deben ejecutar en una consola de PowerShell con privilegios eleva
 
 Al crear una credencial de certificado, deben cumplirse los siguientes requisitos:
 
- - Para producción, el certificado se debe emitir desde una entidad de certificación interna o pública. Si se usa una autoridad pública, es preciso incluirla en la imagen del sistema operativo base como parte del programa de entidades de certificación raíz de confianza de Microsoft (Microsoft Trusted Root Certificate Program). Puede ver la lista completa en el artículo [Microsoft Trusted Root Certificate Program: Participants](https://gallery.technet.microsoft.com/Trusted-Root-Certificate-123665ca) (Programa de entidades de certificación raíz de confianza de Microsoft: Participantes). Más adelante, en la sección [Actualización de credenciales de certificado](#update-a-certificate-credential), se mostrará un ejemplo de creación de un certificado de prueba "autofirmado". 
+ - Para producción, el certificado se debe emitir desde una entidad de certificación interna o pública. Si se usa una autoridad pública, es preciso incluirla en la imagen del sistema operativo base como parte del programa de entidades de certificación raíz de confianza de Microsoft (Microsoft Trusted Root Certificate Program). Para ver la lista completa, consulte [Lista de participantes: Programa de certificados raíz de confianza de Microsoft](/security/trusted-root/participants-list). Más adelante, en la sección [Actualización de credenciales de certificado](#update-a-certificate-credential), se mostrará un ejemplo de creación de un certificado de prueba "autofirmado". 
  - El proveedor de servicios criptográficos debe especificarse como un proveedor de claves del proveedor de servicios criptográficos (CSP) heredado de Microsoft.
  - El certificado debe estar en formato PFX, ya que se requieren claves públicas y privadas. Los servidores de Windows utilizan archivos .pfx que contienen el archivo de claves públicas (archivo de certificado TLS/SSL) y el archivo de claves privadas asociado.
  - La infraestructura de Azure Stack Hub debe tener acceso de red a la ubicación de la lista de revocación de certificados (CRL) de la entidad de certificación publicada en el certificado. Esta lista de revocación de certificados debe ser un punto de conexión de HTTP.

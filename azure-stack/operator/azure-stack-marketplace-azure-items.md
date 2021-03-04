@@ -7,12 +7,12 @@ ms.date: 01/04/2021
 ms.author: sethm
 ms.reviewer: gara
 ms.lastreviewed: 12/9/2020
-ms.openlocfilehash: 475aa05c8274f36ea63763d648c69f2b3778da71
-ms.sourcegitcommit: 733a22985570df1ad466a73cd26397e7aa726719
+ms.openlocfilehash: 3e47b29fa1f475acb64a9071b8fccc8b06dfef6c
+ms.sourcegitcommit: b844c19d1e936c36a85f450b7afcb02149589433
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97871810"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101840888"
 ---
 # <a name="azure-marketplace-items-available-for-azure-stack-hub"></a>Elementos de Azure Marketplace disponibles para Azure Stack Hub
 
@@ -64,7 +64,6 @@ Microsoft Azure Stack Hub es compatible con las siguientes plantillas de solucio
 | ![HPC basado en CentOS](media/azure-stack-marketplace-azure-items/roguewave.png) | [HPC basado en CentOS](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/openlogic.centos-hpc) | Esta distribución de Linux se basa en CentOS y se proporciona a través de Rogue Wave Software. | Rogue Wave Software (antes OpenLogic)  |
 | ![SLES 11 SP4 (BYOS)](media/azure-stack-marketplace-azure-items/suse.png) | [SLES 11 SP4 (BYOS) ](https://azuremarketplace.microsoft.com/marketplace/apps/suse.sles-byos) | SUSE Linux Enterprise Server 11 SP4. | SUSE |
 | ![SLES 12 SP3 (BYOS)](media/azure-stack-marketplace-azure-items/suse.png) | [SLES 12 SP4 (BYOS)](https://azuremarketplace.microsoft.com/marketplace/apps/suse.sles-byos) | SUSE Linux Enterprise Server 12 SP4. | SUSE |
-| ![SLES 15 (BYOS)](media/azure-stack-marketplace-azure-items/suse.png) | [SLES 15 (BYOS)](https://azuremarketplace.microsoft.com/marketplace/apps/suse.sles-byos) | SUSE Linux Enterprise Server 15. | SUSE |
 
 ## <a name="third-party-byol-free-trial-images-and-solution-templates"></a>BYOL de terceros, imágenes de las versiones gratuita y de prueba y plantillas de soluciones
 
