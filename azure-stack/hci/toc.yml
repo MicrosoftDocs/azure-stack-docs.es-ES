@@ -72,7 +72,7 @@
           href: manage/create-stretched-volumes.md
         - name: Protección de volúmenes
           href: manage/volume-encryption-deduplication.md
-        - name: Extensión de volúmenes
+        - name: Expansión de volúmenes
           href: manage/extend-volumes.md
         - name: Eliminar volúmenes
           href: manage/delete-volumes.md
@@ -112,6 +112,8 @@
       items:
         - name: Implementar una infraestructura de SDN
           href: manage/sdn-express.md
+        - name: Uso de un firewall de centro de datos
+          href: manage/use-datacenter-firewall-windows-admin-center.md
         - name: Uso de un firewall del centro de datos con PowerShell
           href: manage/use-datacenter-firewall-powershell.md
         - name: Administración de redes lógicas de inquilinos
@@ -160,7 +162,9 @@
           href: concepts/physical-network-requirements.md
         - name: Requisitos de la red del host
           href: concepts/host-network-requirements.md
-        - name: Redes definidas por software (SDN)
+    - name: Redes definidas por software (SDN)
+      items:
+        - name: Introducción a SDN
           href: concepts/software-defined-networking.md
         - name: Planificación de una infraestructura de SDN
           href: concepts/plan-software-defined-networking-infrastructure.md

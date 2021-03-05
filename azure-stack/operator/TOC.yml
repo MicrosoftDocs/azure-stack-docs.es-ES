@@ -14,10 +14,16 @@
           href: release-notes.md
         - name: Revisiones
           items:
-            - name: "Corrección\_1.2005.29.100"
-              href: hotfix-1-2005-29-100.md
+            - name: "Corrección\_1.2008.26.116"
+              href: hotfix-1-2008-26-116.md
+            - name: "Corrección\_1.2005.30.102"
+              href: hotfix-1-2005-30-102.md
+            - name: "Corrección\_1.2002.66.173"
+              href: hotfix-1-2002-66-173.md
             - name: Corrección 1.2008.25.114
               href: hotfix-1-2008-25-114.md
+            - name: "Corrección\_1.2005.29.100"
+              href: hotfix-1-2005-29-100.md
         - name: Problemas conocidos
           href: known-issues.md
 - name: Guías de inicio rápido
@@ -342,7 +348,7 @@
               href: event-hubs-rp-overview.md
             - name: Planificación de capacidad
               href: event-hubs-rp-capacity-planning.md
-            - name: Requisitos previos
+            - name: Prerrequisitos
               href: event-hubs-rp-prerequisites.md
             - name: Instalar
               href: event-hubs-rp-install.md
@@ -372,7 +378,7 @@
           items:
             - name: Información general
               href: iot-hub-rp-overview.md
-            - name: Requisitos previos
+            - name: Prerrequisitos
               href: iot-hub-rp-prerequisites.md
             - name: Instalar
               href: iot-hub-rp-install.md
