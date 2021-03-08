@@ -260,6 +260,10 @@
                       href: azure-stack-kubernetes-aks-engine-upgrade.md
                     - name: Habilitación de la característica Service Account Token Volume Projection
                       href: kubernetes-aks-engine-service-account.md
+                    - name: Incorporación de Container Storage
+                      href: kubernetes-aks-engine-container-storage-interface.md
+                    - name: Rotación de certificados
+                      href: kubernetes-aks-engine-rotate-certs.md
                     - name: Solución de problemas del motor de AKS
                       href: azure-stack-kubernetes-aks-engine-troubleshoot.md
                     - name: Uso de Azure Monitor para contenedores
